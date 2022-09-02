@@ -44,7 +44,7 @@ From your Observable Networks portal, click **Settings** (gear icon) > **Integra
 
 ### Configure a Collector
 
-Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector). Name the collector "observable" (case-sensitive).
+Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector). Name the collector "observable" (case-sensitive).
 
 **Create an access key**
 
@@ -55,7 +55,7 @@ Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector). Name
 
 ### Configure a Source
 
-Configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Name the new source "observable" (case-sensitive). Deselect the check box **Enable Timestamp Parsing**.
+Configure an [HTTP Source](/docs/send-data//hosted-collectors/http-logs-metrics-source). Name the new source "observable" (case-sensitive). Deselect the check box **Enable Timestamp Parsing**.
 
 When the URL associated with the Source is displayed, copy the URL so you can use it to send files.
 

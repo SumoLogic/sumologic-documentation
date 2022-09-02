@@ -31,7 +31,7 @@ import Iframe from 'react-iframe';
 
 ## CPU usage guidelines
 
-An Installed Collector will use all CPU processing resources available on a machine to collect your data. We have benchmarked CPU performance based on the number of [Local File Sources](../sources/installed-collectors/local-file-source.md) running on an Installed Collector and the size of log messages ingested. The default allocated memory of 128 MB of Java heap space was used.
+An Installed Collector will use all CPU processing resources available on a machine to collect your data. We have benchmarked CPU performance based on the number of [Local File Sources](/docs/send-data/sources/installed-collectors/local-file-source) running on an Installed Collector and the size of log messages ingested. The default allocated memory of 128 MB of Java heap space was used.
 
 :::tip
 The Collector can try to keep CPU usage at a targeted percentage when using Local and Remote File Sources.
@@ -114,7 +114,7 @@ You can update the configuration of an Installed Collector using the Collector M
 
 You can set up as many as 1,000 Sources on a given Collector. A Source should be configured to collect similar data types. For example, you might set up three Local File Sources to collect router activity logs from three locations, and another Local File Source to collect logs from a web application.
 
-Each Source is tagged with its own metadata, as described in [Metadata Naming Conventions](/docs/sources/reference-information/metadata-naming-conventions). The more Sources you set up, the easier it is to isolate one of the Sources in a search since each Source can be identified by its metadata.
+Each Source is tagged with its own metadata, as described in [Metadata Naming Conventions](docs/send-data/sources/reference-information/metadata-naming-conventions.md). The more Sources you set up, the easier it is to isolate one of the Sources in a search since each Source can be identified by its metadata.
 
 When you configure Sources that read from log files, you specify a path expression that defines what files to scan. You can optionally configure a denylist of files to exclude from collection.  
 

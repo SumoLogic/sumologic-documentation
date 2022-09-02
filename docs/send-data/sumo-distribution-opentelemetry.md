@@ -1,6 +1,7 @@
 ---
 id: sumo-distribution-opentelemetry
 title: Sumo Logic Distribution for OpenTelemetry
+sidebar_label: OpenTelemetry Distribution
 hide_table_of_contents: true
 ---
 

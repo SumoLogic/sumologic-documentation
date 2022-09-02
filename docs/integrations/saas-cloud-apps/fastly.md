@@ -43,8 +43,8 @@ This section has instructions for setting up log collection for the Fastly app.
 
 In this step, you configure a collector and source to receive Fastly logs.
 
-1. Add a [Sumo Logic Hosted Collector](/docs/send-data/configure-hosted-collector) to your Sumo Logic Org.
-2. Configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) for your Fastly request logs. Make sure to set the Source Category when configuring the HTTP source. For example, `fastly`. Make a note of the Source Category you assign to the source. You will provide this Source Category value when you install the Fastly app.
+1. Add a [Sumo Logic Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) to your Sumo Logic Org.
+2. Configure an [HTTP Source](/docs/send-data//hosted-collectors/http-logs-metrics-source) for your Fastly request logs. Make sure to set the Source Category when configuring the HTTP source. For example, `fastly`. Make a note of the Source Category you assign to the source. You will provide this Source Category value when you install the Fastly app.
 
 
 ### Step 2. Configure Endpoint in Fastly for CDN Logs
@@ -298,7 +298,7 @@ If you have Fastly's Web Application Firewall (WAF), perform these steps to upda
 
 If you have Fastly's Web Application Firewall (WAF), perform these steps to add a second logging endpoint in Fastly and configure it to send WAF request logs to Sumo Logic.
 
-1. Configure another [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) for debug logs and set its source category. For example, fastly/debug. Make a note of the Source Category you assign to the source. You will provide this Source Category value when you install the Fastly app.
+1. Configure another [HTTP Source](/docs/send-data//hosted-collectors/http-logs-metrics-source) for debug logs and set its source category. For example, fastly/debug. Make a note of the Source Category you assign to the source. You will provide this Source Category value when you install the Fastly app.
 2. Create another logging endpoint in Fastly following the instructions [Step 2](#Step_2._Configure_Sumo_logging_endpoint_in_Fastly), but enter the JSON below in the **Log format** field.
 
   <details><summary>Click to expand snippet</summary>

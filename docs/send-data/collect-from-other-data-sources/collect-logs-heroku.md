@@ -11,7 +11,7 @@ First perform the following prerequisites:
 
  * Create an app in Heroku that generates logs.
  * Install the [Heroku Command Line Interface (CLI)](https://devcenter.heroku.com/articles/heroku-command-line), formerly called the Heroku Toolbelt.
- * Configure a Sumo Logic [Hosted Collector](../configure-hosted-collector.md) with an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+ * Configure a Sumo Logic [Hosted Collector](/docs/send-data//hosted-collectors/configure-hosted-collector) with an [HTTP Source](/docs/send-data//hosted-collectors/http-logs-metrics-source).
 
 ## Upload app data from Heroku
 

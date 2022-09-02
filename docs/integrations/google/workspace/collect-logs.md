@@ -32,7 +32,7 @@ This section provides instructions for configuring log collection for Google Wor
 
 Currently, the source name for Google Workspace is still **G Suite Apps Audit Source**, which will be changed/updated shortly.
 
-Configure one [G Suite Apps Audit Source](/docs/send-data/sources/hosted-collectors/g-suite-apps-audit-source) for each Google App from which you want to collect events:
+Configure one [G Suite Apps Audit Source](/docs/send-data//hosted-collectors/g-suite-apps-audit-source) for each Google App from which you want to collect events:
 
 * Google Admin
 * Google Calendar
@@ -75,7 +75,7 @@ Authentication must be with a new Google Workspace Apps Audit Source. We do not 
 
 ### Configure a Collector
 
-Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector) for Google Apps Audit.
+Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for Google Apps Audit.
 
 
 ### Configure Google Workspace Apps Audit Sources  
@@ -230,7 +230,7 @@ Before creating the HTTP source, identify the Sumo Logic Hosted Collector you wa
 When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this to configure in configuration file.
 
 To add a hosted collector and HTTP source, do the following:
-1. Create a new Sumo Logic Hosted Collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+1. Create a new Sumo Logic Hosted Collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Add an  HTTP Logs and Metrics Source.
 3. In the Advanced Options for Logs, under Timestamp Format, click **Specify a format** and enter the following information in the respective fields:
    * **Format:** `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`

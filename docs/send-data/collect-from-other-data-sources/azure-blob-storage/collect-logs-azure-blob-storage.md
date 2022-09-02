@@ -51,8 +51,8 @@ Make a note of the container name, you will need to supply it later.
 
 In this step, you configure an HTTP source to receive logs from the Azure function.
 
-1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
-1. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Make a note of the URL for the source, you will need it in the next step.
+1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data//hosted-collectors/configure-hosted-collector).
+1. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data//hosted-collectors/http-logs-metrics-source). Make a note of the URL for the source, you will need it in the next step.
 
 ## Step 3. Configure Azure resources using ARM template
 

@@ -404,8 +404,8 @@ You will configure an installed collector on your Jira host with three local fil
 
 In this step, you create a host collector to receive webhooks from Jira, and set up an HTTP source on it.
 
-1. Configure a [hosted collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
-2. Configure an [HTTP source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) on the hosted collector.
+1. Configure a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
+2. Configure an [HTTP source](/docs/send-data//hosted-collectors/http-logs-metrics-source) on the hosted collector.
     * For **Source Category**, specify `Atlassian/Jira/Events`
     * Make a note of the HTTP address for the source. You will supply it when you configure a Jira webhook in the next step.
 

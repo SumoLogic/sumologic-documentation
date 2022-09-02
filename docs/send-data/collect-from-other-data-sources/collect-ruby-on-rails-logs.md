@@ -14,7 +14,7 @@ and the multiline setup.
 
 1. [Install a Collector](/docs/send-data/installed-collectors) on the machine running your application.
 
-1. Create a [Local File Source](../sources/installed-collectors/local-file-source.md). Then, under **File Path**, input the log path specified for `config.log_path`.
+1. Create a [Local File Source](/docs/send-data/sources/installed-collectors/local-file-source). Then, under **File Path**, input the log path specified for `config.log_path`.
 
     :::note
     By default Rails uses `log/#{environment}.log` (e.g. `log/development.log` or `log/production.log`).

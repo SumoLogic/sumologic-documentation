@@ -40,8 +40,8 @@ The sections below are either for FedRamp Sumo Logic deployments or if you have 
 ### Configure an HTTP Source
 
 In this step, you configure an HTTP Source to receive logs from the Azure function.
-1. Select a Hosted Collector where you want to configure the HTTP Source. If desired, create a new Hosted Collector, as described on [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+1. Select a Hosted Collector where you want to configure the HTTP Source. If desired, create a new Hosted Collector, as described on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data//hosted-collectors/http-logs-metrics-source).
 
 
 ### Configure Azure Resources using ARM template

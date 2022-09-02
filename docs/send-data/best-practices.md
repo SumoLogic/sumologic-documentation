@@ -107,9 +107,9 @@ The most important thing is for you to design a deployment that works for your o
 
 The local data collection method collects all data locally from each individual system and sends it to Sumo Logic.
 
-Using an [Installed Collector](/docs/send-data/sources/installed-collectors) with a [Local File Source](../sources/installed-collectors/local-file-source.md) is the overall simplest method of collecting data.
+Using an [Installed Collector](/docs/send-data/sources/installed-collectors) with a [Local File Source](/docs/send-data/sources/installed-collectors/local-file-source) is the overall simplest method of collecting data.
 
-For Windows, using an [Installed Collector](/docs/send-data/sources/installed-collectors) and a [Local Windows Event Log Source](../sources/installed-collectors/local-windows-event-log-source.md) is the most reliable method of collecting data. Depending on your Windows solution, you may also configure a [Local Windows Performance Monitor Log Source](/docs/send-data/sources/installed-collectors/local-windows-performance-monitor-log-source.md).
+For Windows, using an [Installed Collector](/docs/send-data/sources/installed-collectors) and a [Local Windows Event Log Source](/docs/send-data/sources/installed-collectors/local-windows-event-log-source) is the most reliable method of collecting data. Depending on your Windows solution, you may also configure a [Local Windows Performance Monitor Log Source](/docs/send-data/sources/installed-collectors/local-windows-performance-monitor-log-source.md).
 
 **Customers using the local data collection method usually have the following characteristics:**
 

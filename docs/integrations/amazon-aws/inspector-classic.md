@@ -78,8 +78,8 @@ This section provides instructions for configuring data collection for the Amazo
 ### Step 1: Configure Collection in Sumo Logic
 
 To collect data for the Amazon Inspector App, do the following:
-1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. Configure an [HTTP Source](/docs/send-data//hosted-collectors/http-logs-metrics-source).
 
 
 ### Step 2: Configure Amazon Inspector

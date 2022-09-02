@@ -24,7 +24,7 @@ Data Collection API.
 |--|--|
 | Collector Name | Name to identify the Collector in the Web UI. The Collector name must be unique. If you are installing a Collector that would have the same name as an existing Collector, the system automatically appends a 13-digit epoch timestamp to the Collector name. [Learn more.](force-collectors-name-clobber.md) |
 | Host Name | Host name of the machine on which the Collector is running. The host name can be a maximum of 128 characters. |
-| Category | [Source Category](../../design-deployment/best-practices-source-categories.md) to use when a Source does not specify a category. |
+| Category | [Source Category](/docs/send-data/best-practices) to use when a Source does not specify a category. |
 | Description | Description for the Collector. |
 | Time Zone | Time zone to use when it is not extracted from the timestamp. |
 | CPU Target Percentage | You can choose to set a [CPU target](../../../manage/collection/set-collector-cpu-usage-target.md) to limit the amount of CPU processing a Collector uses. |

@@ -75,7 +75,7 @@ When the Sumo collector accesses a log file to read its content, the collector o
 
     You can define a Source Host value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below for details.
 
-   * **Source Category.** The Source Category value is tagged to each log and stored in a searchable metadata field called \_sourceCategory. See our [Best Practices: Good and Bad Source Categories](../../design-deployment/best-practices-source-categories.md). Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 1,024 characters.
+   * **Source Category.** The Source Category value is tagged to each log and stored in a searchable metadata field called \_sourceCategory. See our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices). Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 1,024 characters.
 
     You can define a Source Category value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below for details.
 

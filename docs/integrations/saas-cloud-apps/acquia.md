@@ -157,7 +157,7 @@ To create a new Sumo Logic hosted collector, do the following:
 3. Click **Hosted **Collector.
 4. Provide a **Name** for the Collector.
 5. A **description** is optional.
-6. **Category**. Enter any string to tag the logs collected from this Collector. This Source Category value is stored in a searchable metadata field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/design-deployment/best-practices-source-categories).
+6. **Category**. Enter any string to tag the logs collected from this Collector. This Source Category value is stored in a searchable metadata field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices).
 7. Click the **+Add Field** link in the **Fields** section to define the [fields](/docs/manage/fields.md) you want to associate, each field needs a key and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -182,7 +182,7 @@ It's helpful to know the options you'll need to set before starting a procedure.
 
 * Source:
   * **Name**. (Required) A name is required, the Description is optional.
-  * **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. Example: **Acquia**. For more information, see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
+  * **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. Example: **Acquia**. For more information, see [Best Practices](/docs/send-data/best-practices).
 
 * Advanced
   * **Enable Timestamp Parsing**. True

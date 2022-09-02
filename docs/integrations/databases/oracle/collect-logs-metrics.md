@@ -393,7 +393,7 @@ The instructions for setting up the Oracle performance metrics script vary by op
 **Step 1. Configure a Hosted Collector for Metrics.**
 
 
-    To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) documentation.
+    To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) documentation.
 
 **Step 2. Configure an HTTP Logs & Metrics source:**
 
@@ -401,7 +401,7 @@ The instructions for setting up the Oracle performance metrics script vary by op
 2. Select** HTTP Logs & Metrics_._**
     1. **Name **(Required). Enter a name for the source**.**
     2. **Description **(Optional).
-    3. **Source Category (**Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/design-deployment/best-practices-source-categories). A recommended Source Category may be Prod/DB/Oracle/Metrics.
+    3. **Source Category (**Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/best-practices). A recommended Source Category may be Prod/DB/Oracle/Metrics.
 3. Select** Save.**
 4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL **next to the source on the Collection Management screen.
 

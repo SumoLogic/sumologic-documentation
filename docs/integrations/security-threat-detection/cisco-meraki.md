@@ -112,7 +112,7 @@ In this task, you configure an installed collector with a Syslog source that act
    * **Description.** Optional.
    * **Protocol**. UDP or TCP.  Choose the protocol you configured in Cisco Meraki for Syslog forwarding.
    * **Port**. Port number. Choose the port you configured in Cisco Meraki for Syslog forwarding.
-   * **Source Category**. (Required) Provide a realistic Source Category for this data type. For example: **prod/ciscomeraki**. For more information, see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
+   * **Source Category**. (Required) Provide a realistic Source Category for this data type. For example: **prod/ciscomeraki**. For more information, see [Best Practices](/docs/send-data/best-practices).
 3. Click **Save**.
 
 

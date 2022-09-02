@@ -210,7 +210,7 @@ The Sumo Logic Couchbase app supports the audit log, query log, error log, acces
 2. **Configure an Installed Collector**. If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
 3. **Configure a Collector**. Use one of the following Sumo Logic Collector options:
    1. To collect logs directly from the Couchbase machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
-   2. If you're using a service like Fluentd, or you would like to upload your logs manually, configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
+   2. If you're using a service like Fluentd, or you would like to upload your logs manually, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 4. **Configure a local file source**. Choose one of the options:
 
 <details><summary>4A. <strong>For an Installed Collector</strong> (click to expand)</summary>
@@ -227,7 +227,7 @@ To collect logs directly from your Couchbase machine, use an Installed Collector
     * For Access Log: /opt/couchbase/var/lib/couchbase/logs/http_access.log
     * For Query Log: /opt/couchbase/var/lib/couchbase/logs/query.log
   * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-  * **Source Category**. Enter any string to tag the output collected from this Source, such as Couchbase/AccessLog for access log. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+  * **Source Category**. Enter any string to tag the output collected from this Source, such as Couchbase/AccessLog for access log. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
   * **Fields.** Set the following fields
      ```sql
      component = database
@@ -251,12 +251,12 @@ To collect logs directly from your Couchbase machine, use an Installed Collector
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
-1. Add an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+1. Add an [HTTP Source](/docs/send-data//hosted-collectors/http-logs-metrics-source).
 2. Configure the HTTP Source fields as follows:
 * **Name**. (Required)
 * **Description**. (Optional)
 * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-* **Source Category**. Enter any string to tag the output collected from this Source, such as Couchbase/AccessLog for access log. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+* **Source Category**. Enter any string to tag the output collected from this Source, such as Couchbase/AccessLog for access log. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
 3. Configure the **Advanced **section:
 * **Enable Timestamp Parsing**. Select **Extract timestamp information from log file entries**.
 * **Time Zone**. For Access logs, use the time zone from the log file. For Error logs, make sure to select the correct time zone.
@@ -273,13 +273,13 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 
 #### Configure Metrics Collection
 
-1. To set up a Sumo Logic HTTP Source, you'll need to configure a Hosted Collector for Metrics. To create a new Sumo Logic hosted collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+1. To set up a Sumo Logic HTTP Source, you'll need to configure a Hosted Collector for Metrics. To create a new Sumo Logic hosted collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. **Configure an HTTP Logs and Metrics source**:
     1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
     2. Select **HTTP Logs & Metrics.**
         1. **Name.** (Required). Enter a name for the source.
         2. **Description.** (Optional).
-        3. **Source Category** (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/design-deployment/best-practices-source-categories). A recommended Source Category may be Prod/DBServer/Couchbase/Metrics.
+        3. **Source Category** (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/best-practices). A recommended Source Category may be Prod/DBServer/Couchbase/Metrics.
     3. Select **Save**.
     4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 3. **Install Telegraf, if you haven’t already**, using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).

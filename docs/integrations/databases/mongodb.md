@@ -240,8 +240,8 @@ This section provides instructions for configuring metrics collection for the Su
 
 #### Configure Metrics Collection
 
-1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
-2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Make note of the **HTTP Source URL**.
+1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
+2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data//hosted-collectors/http-logs-metrics-source). Make note of the **HTTP Source URL**.
 3. **Install Telegraf**. Use the following steps [install Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
    1. Configure and start Telegraf. As part of collecting metrics data from Telegraf, we will use the [MongoDB input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic. Create or modify telegraf.conf and copy and paste the text below:
     ```sql
@@ -281,7 +281,7 @@ At this point, MongoDB metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for MongoDB running on a non-Kubernetes environment for the Sumo Logic App for MongoDB. By default, MongoDB logs are stored in a log file. MongoDB also supports forwarding logs via Syslog.
 
-Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/Sources/hosted-collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data//hosted-collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect MongoDB logs and follow the instructions below to set up log collection:
 
@@ -313,7 +313,7 @@ Based on your infrastructure and networking setup choose one of these methods to
          * **Description.** (Optional)
          * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/mongodb/mongodb.log. If you're using a customized path, check the MongoDB.conf file for this information.
          * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-         * **Source Category.** Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+         * **Source Category.** Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
          * **Fields**. Set the following fields:
            * `component = database`
            * `db_system = mongodb`
@@ -334,7 +334,7 @@ Based on your infrastructure and networking setup choose one of these methods to
          * **Description.** (Optional)
          * **Protocol**: UDP
          * **Port**: 514 (as entered while configuring logging in Step b.)
-         * **Source Category.** Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+         * **Source Category.** Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
          * **Fields. **Set the following fields:
            * `component = database`
            * `db_system = MongoDB`

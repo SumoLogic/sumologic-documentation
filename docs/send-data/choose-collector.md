@@ -1,7 +1,7 @@
 ---
 id: choose-collector
 title: Choosing a Sumo Logic Collector Type
-sidebar_label: Choosing a Collector
+sidebar_label: Get Started - Choose a Collector
 ---
 
 To send your data to Sumo Logic, you have a few options. We have two types of installed agents and offer a collector fully hosted by us.
@@ -57,11 +57,11 @@ For details on system requirements, see Installed Collector requirements.
 
 **Hosted Collectors** reside in the Cloud allowing for seamless collection from Amazon Web Services, Google, Microsoft, and many other Cloud services.
 
-Unlike Installed Collectors, [Hosted Collectors](/docs/send-data/sources/hosted-collectors) don't require installation or activation, nor do Hosted Collectors have physical requirements since they're hosted by Sumo Logic in AWS.
+Unlike Installed Collectors, [Hosted Collectors](/docs/send-data//hosted-collectors) don't require installation or activation, nor do Hosted Collectors have physical requirements since they're hosted by Sumo Logic in AWS.
 
 Because there are no performance issues to consider, you can configure as many Sources as you'd like, up to 1,000, for a single Hosted Collector. Consider setting up more than one Hosted Collector if you'd like to tag different data types with different metadata.
 
-See how to [configure a Hosted Collector](../configure-hosted-collector.md) and all of the available [Sources supported on Hosted Collectors](/docs/send-data/sources/hosted-collectors).
+See how to [configure a Hosted Collector](/docs/send-data//hosted-collectors/configure-hosted-collector) and all of the available [Sources supported on Hosted Collectors](/docs/send-data//hosted-collectors).
 
 ### Logging levels
 
@@ -70,7 +70,7 @@ The more sensitive the logging level settings are for your applications and devi
 If you have additional questions, a [Sumo Logic sales representative](https://www.sumologic.com/contact-us/ "https://www.sumologic.com/contact-us/") can help determine specific recommendations for your installation.
 
 
-## Installed Agents vs Hosted Collectors
+## Compare Installed and Hosted Collectors
 
 Depending on the method you'd like to collect logs, and the types of logs you'd like to collect, Sumo Logic has two types of Collectors you can choose from.
 

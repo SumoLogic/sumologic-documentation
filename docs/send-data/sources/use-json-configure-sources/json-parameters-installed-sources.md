@@ -558,7 +558,7 @@ The following parameters are for a host metrics source. 
 |--|--|--|--|--|--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [built-in metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) field _source. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [best practices](../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 | `sourceType` | String | Yes |  | SystemStats | not modifiable |
 | `metrics` | String Array | No | all metrics | Comma-separated list of metrics to collect. Example:  "metrics" : `["CPU_User", "CPU_Sys", "Mem_Used"]` For a full list of available metrics, see [Host Metrics Source for Installed Collectors](json-parameters-installed-sources.md). When omitted, all available host metrics will be collected. | modifiable |
 | `interval` (ms) | Integer | Yes |  | Time interval in milliseconds of the metrics collection. We recommend 60 second granularity (60000). The Sumo Logic UI offers some pre-defined values (10s, 15s, 30s, 1m, 5m). | modifiable |

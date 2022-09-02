@@ -78,18 +78,18 @@ In this step you set up AWS WAF to send log data to an S3 bucket using an Kinesi
 1. Enable WAF logging to a Kinesis Stream, as described in AWS help.
 2. Configure an AWS S3 bucket as the destination of the Kinesis Stream, as described in [Amazon Kinesis Data Firehose Data Delivery](https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html) in AWS help.
 3. Confirm that logs are being delivered to the S3 bucket.
-4. [Grant Sumo Logic Access to the AWS S3 Bucket](/docs/send-data/sources/hosted-collectors/amazon-aws/grant-access-aws-product.md).
+4. [Grant Sumo Logic Access to the AWS S3 Bucket](/docs/send-data//hosted-collectors/amazon-aws/grant-access-aws-product.md).
 
 
 ### Configure a Sumo collector and source to receive AWS WAF logs
 
-1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. To your Hosted Collector, add an [AWS S3 Source](/docs/send-data/Sources/hosted-collectors/amazon-aws/AWS-S3-Source).
+1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. To your Hosted Collector, add an [AWS S3 Source](/docs/send-data//hosted-collectors/amazon-aws/AWS-S3-Source).
     * **Name**. Enter a name to display for the new Source.
     * **Description**. Enter an optional description.
     * **S3 Region**. Select the Amazon Region for your S3 bucket.
     * **Bucket Name**. Enter the exact name of your S3 bucket.
-    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/hosted-collectors/amazon-aws/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data//hosted-collectors/amazon-aws/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category**. Enter a source category. For example, AWS/WAF.
     * **Access Method**. Select the appropriate AWS access control mechanism.
     * **Scan Interval**. Use the default of Automatic, or select a scan interval from the pulldown.
