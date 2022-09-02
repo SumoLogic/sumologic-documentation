@@ -49,7 +49,7 @@ There are two versions of ingest budgets:
 
     ![v1 budget tag.png](/img/ingestion-and-volume/v1-budget-tag.png)
 
-* V2 ingest budgets provide you the ability to assign budgets to your log data by either [Fields](../../fields.md) or the following [built in metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) fields, `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, and `_sourceName`.
+* V2 ingest budgets provide you the ability to assign budgets to your log data by either [Fields](../../fields.md) or the following [built in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields, `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, and `_sourceName`.
 
 :::important
 You can edit an existing **V1** budget by providing a **scope** to change it to a **V2** budget that is metadata based. V2 budgets are manageable with the Ingest Budget Management API **V2**.
@@ -88,7 +88,7 @@ The page displays the following information:
 * **Scope**. The key value pair defining the metadata to include with the ingest budget. See [budget assignment](#budget-assignment) for details.
 * **Capacity**. Maximum amount of data permitted. Bytes are calculated in base 2 (binary format, 1024 based).
 * **Usage**. Percentage of data used. To refresh this information, close and reopen the main Collection tab.
-* **Reset Time**. Time and time zone to reset the data usage tracking in HH:MM [timestamp format](../../../send-data/sources/reference-information-sources/time-reference.md). This is fixed at a 24-hour time interval, so the reset time is triggered every 24 hours. Use the [IANA time zone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) database format.
+* **Reset Time**. Time and time zone to reset the data usage tracking in HH:MM [timestamp format](../../../send-data/sources/reference-information/time-reference.md). This is fixed at a 24-hour time interval, so the reset time is triggered every 24 hours. Use the [IANA time zone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) database format.
 * **Allocated Capacity** (bottom of table). The total allocated capacity from all ingest budgets out of your account's available daily log ingest capacity is provided. If you assign all your log data to ingest budgets you can easily track how much data you are allowing Sumo Logic to ingest compared to your account's available daily log ingest quota.
 
 At the top of the page, you can:

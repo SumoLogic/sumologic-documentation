@@ -156,7 +156,7 @@ You can use both methods together. If there is a name collision between a given
 
 Any fields passed with your data need to exist in your Fields schema defined in Sumo. Any fields not defined in Sumo that are passed through a header are dropped. See how to define fields in the [manage fields](#manage-fields) section.
 
-See [how to upload logs to an HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+See [how to upload logs to an HTTP Source](/docs/send-data/hosted-collectors/http-logs-metrics-source).
 
 #### X-Sumo-Fields HTTP header
 
@@ -184,7 +184,7 @@ The following headers are reserved and can not be used: X-Sumo-Category, X-Sum
 
 ### Tags from EC2
 
-Create a Sumo Logic [AWS Metadata Source](../send-data/sources/hosted-collectors/amazon-web-services/aws-metadata-tag-source.md) to collect custom tags from EC2 instances running on AWS. An Installed Collector automatically pulls [AWS instance identity documents](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-identity-documents.html) (IMDSv2) from instances to get their accountID, availabilityZone, instanceId, instanceType, and region.
+Create a Sumo Logic [AWS Metadata Source](../send-data/hosted-collectors//amazon-aws/aws-metadata-tag-source.md) to collect custom tags from EC2 instances running on AWS. An Installed Collector automatically pulls [AWS instance identity documents](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-identity-documents.html) (IMDSv2) from instances to get their accountID, availabilityZone, instanceId, instanceType, and region.
 
 Logs ingested by Installed Collectors on EC2 instances will be tagged as long as the tag, including instance information tags, exists in the organization's Fields schema. See how to define fields in the [manage fields](#manage-fields) section. EC2 resource tags take precedence over EC2 instance information. Only one AWS Metadata Source is required to collect tags from multiple hosts.
 

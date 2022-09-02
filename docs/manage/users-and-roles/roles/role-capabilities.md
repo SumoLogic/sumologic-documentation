@@ -11,7 +11,7 @@ You can assign any of the following capabilities when you [create roles](creat
 | Capability | Description |
 |--|--|
 | Manage connections | Manage the [connections](/docs/manage/connections-and-integrations) that allow you to send alerts to other tools. |
-| Manage Collectors | Install and manage [installed](/docs/send-data/installed-collectors) and [hosted](../../../send-data/hosted-collectors.md) Collectors and [Sources](/docs/send-data/sources). Manage permission automatically includes view permission. |
+| Manage Collectors | Install and manage [installed](/docs/send-data/installed-collectors) and [hosted](/docs/send-data/hosted-collectors) Collectors and [Sources](/docs/send-data/sources). Manage permission automatically includes view permission. |
 | Manage Ingest Budgets | Manage [ingest budgets](/docs/manage/ingestion-and-volume/ingest-budgets). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them. |
 | Manage data volume feed | [Enable and manage the data volume index](/docs/manage/ingestion-and-volume/data-volume-index/) for your account to avoid using On-Demand Capacity, and to determine when you need to upgrade your account. |
 | View Collectors | View and Collectors and Sources that have already been installed or added. |

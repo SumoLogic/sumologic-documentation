@@ -53,7 +53,7 @@ The G Suite Apps Audit Source cannot be created with JSON. This Source requires
 
 | Field Type | Type Value |
 |--|--|
-| [Akamai SIEM API Source](../hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source.md) | Universal |
+| [Akamai SIEM API Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source.md) | Universal |
 | [Amazon S3 Source](json-parameters-hosted-sources.md#amazon-s3-source) | Polling |
 | [AWS S3 Archive Source](json-parameters-hosted-sources.md#aws-s3-archive-source) | Polling |
 | [AWS CloudFront Source](json-parameters-hosted-sources.md#aws-cloudfront-source) | Polling |
@@ -62,28 +62,28 @@ The G Suite Apps Audit Source cannot be created with JSON. This Source requires
 | [AWS Kinesis Firehose for Logs Source](json-parameters-hosted-sources.md#aws-kinesis-firehose-for-logs-source) | HTTP |
 | [AWS S3 Audit Source](json-parameters-hosted-sources.md#aws-s3-audit-source) | Polling |
 | [AWS Metadata (Tag) Source](json-parameters-hosted-sources.md#aws-metadata-tag-source) | Polling |
-| [Azure Event Hubs Source](../hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md) | Universal |
-| [Carbon Black Cloud Source](../hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source.md) | Universal |
-| [Carbon Black Inventory Source](../hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source.md) | Universal |
+| [Azure Event Hubs Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md) | Universal |
+| [Carbon Black Cloud Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source.md) | Universal |
+| [Carbon Black Inventory Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source.md) | Universal |
 | [Cloud Syslog Source](json-parameters-hosted-sources.md#cloud-syslog-source) | Cloudsyslog |
-| [Cisco AMP Source](../hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source.md) | Universal |
-| [Crowdstrike FDR Source](../hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source.md) | Universal |
-| [CrowdStrike Source](../hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source.md) | 	Universal |
-| [CSE AWS EC2 Inventory Source](../hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source.md) | Universal |
-| [Cybereason Source](../hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source.md) | Universal |
-| [Duo Source](../hosted-collectors/cloud-to-cloud-integration-framework/duo-source.md) | Universal |
+| [Cisco AMP Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source.md) | Universal |
+| [Crowdstrike FDR Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source.md) | Universal |
+| [CrowdStrike Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source.md) | 	Universal |
+| [CSE AWS EC2 Inventory Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source.md) | Universal |
+| [Cybereason Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source.md) | Universal |
+| [Duo Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source.md) | Universal |
 | [Google Cloud Platform Source](json-parameters-hosted-sources.md#google-cloud-platform-source) | HTTP |
 | [HTTP Source](json-parameters-hosted-sources.md#http-source) | HTTP |
-| [Microsoft Graph Security API Source](../hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source.md) | Universal |
-| [Mimecast Source](../hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source.md) | Universal |
-| [Netskope Source](../hosted-collectors/cloud-to-cloud-integration-framework/netskope-source.md) | Universal |
-| [Okta Source](../hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) | Universal |
-| [Palo Alto Cortex XDR](../hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source.md) | Universal |
-| [Proofpoint On Demand Source](../hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source.md) | Universal |
-| [Proofpoint TAP Source](../hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source.md) | Universal |
-| [Salesforce Source](../hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source.md) | Universal |
-| [Sophos Central Source](../hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source.md) | Universal |
-| [Tenable Source](../hosted-collectors/cloud-to-cloud-integration-framework/tenable-source.md) | Universal |
+| [Microsoft Graph Security API Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source.md) | Universal |
+| [Mimecast Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source.md) | Universal |
+| [Netskope Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source.md) | Universal |
+| [Okta Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) | Universal |
+| [Palo Alto Cortex XDR](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source.md) | Universal |
+| [Proofpoint On Demand Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source.md) | Universal |
+| [Proofpoint TAP Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source.md) | Universal |
+| [Salesforce Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source.md) | Universal |
+| [Sophos Central Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source.md) | Universal |
+| [Tenable Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source.md) | Universal |
 
 ### Metrics sources for hosted collectors
 

@@ -265,7 +265,7 @@ This section provides instructions for configuring log collection for SQL Server
       * File Path (Required). Enter the path to your `ERRORLOG` and be sure to account for log rotations by using a wildcard: `C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\Log\ERRORLOG*`
       * Collection should begin. Set this for how far back historically you want to start collecting.
       * Source Host (Optional). Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-      * Source Category (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/design-deployment/best-practices-source-categories). A recommended Source Category may be `Prod/DB/MSSQL/ERRORLOG.`
+      * Source Category (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/best-practices). A recommended Source Category may be `Prod/DB/MSSQL/ERRORLOG.`
      * Fields. Set the following fields:
        * `component = database`
        * `db_system = SQLserver`
@@ -288,13 +288,13 @@ At this point, the installed collector will start scanning the `ERRORLOG` and se
 Set up a Sumo Logic HTTP Source
 
 1. **Configure a Hosted Collector for Metrics. \
-To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) documentation.
+To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) documentation.
 2. Configure an HTTP Logs & Metrics source:
    * On the created Hosted Collector on the Collection Management screen, select **Add Source**.
    * Select **HTTP Logs & Metrics.**
       * **Name.** (Required). Enter a name for the source.
       * **Description.** (Optional).
-      * **Source Category** (Recommended)**.** Be sure to follow the [Best Practices for Source Categories](/docs/send-data/design-deployment/best-practices-source-categories). A recommended Source Category may be Prod/DB/MSSQL/Metrics.
+      * **Source Category** (Recommended)**.** Be sure to follow the [Best Practices for Source Categories](/docs/send-data/best-practices). A recommended Source Category may be Prod/DB/MSSQL/Metrics.
 3. Click **Save**.
 4. Take note of the URL provided once you click **Save**. You can retrieve it again by selecting **Show URL** next to the source on the Collection Management screen.
 

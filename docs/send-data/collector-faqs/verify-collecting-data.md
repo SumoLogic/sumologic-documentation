@@ -43,7 +43,7 @@ To check a Collector's status:
 
 If your log files have missing or faulty time stamp data it can affect the log messages you'll see collected; search results are also affected if time stamp information is incorrect. For example, if a Collector is running on a computer that doesn't contain a UTC offset time (like UTC-0800), the time stamp could be off by several hours, so if you attempted to search logs within the past 15 minutes no search results will appear. 
 
-When you configure a Source, you can choose one of three timestamp options. First, make sure that your log data is using a [supported timestamp and date format](../sources/reference-information-sources/time-reference.md). 
+When you configure a Source, you can choose one of three timestamp options. First, make sure that your log data is using a [supported timestamp and date format](../sources/reference-information/time-reference.md). 
 
 To view Source settings:
 
@@ -61,4 +61,4 @@ To view Source settings:
 Changes you make to this option aren't applied retroactively; they are applied to log messages moving forward. 
 :::
 
-For more information, see [Timestamps, Time Zones, Time Ranges, and Date Formats](../sources/reference-information-sources/time-reference.md). 
+For more information, see [Timestamps, Time Zones, Time Ranges, and Date Formats](../sources/reference-information/time-reference.md). 

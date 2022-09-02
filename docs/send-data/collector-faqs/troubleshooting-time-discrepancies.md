@@ -10,7 +10,7 @@ This page explains the elements that can be involved in time
 discrepancies and offers solutions for troubleshooting your problem.
 
 :::tip
-See details on the supported [Timestamps, Time Zones, Time Ranges, and Date Formats](../sources/reference-information-sources/time-reference.md).
+See details on the supported [Timestamps, Time Zones, Time Ranges, and Date Formats](../sources/reference-information/time-reference.md).
 :::
 
 ## Message time and receipt time

@@ -73,7 +73,7 @@ There are two methods for integrating Opsgenie with Sumo Logic:
 
 To configure log collection for the Opsgenie App, do the following:
 
-1. Configure a [Sumo Logic HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source), an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. Make a note of the URL for the endpoint, as you will need to enter the endpoint URL in step 3.
+1. Configure a [Sumo Logic HTTP Source](/docs/send-data/hosted-collectors/http-logs-metrics-source), an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. Make a note of the URL for the endpoint, as you will need to enter the endpoint URL in step 3.
 2. Follow the [Opsgenie Webhook Integration ](https://docs.opsgenie.com/docs/webhook-integration) instructions to create a Webhook integration for the Opsgenie App. Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming Webhooks.
 3. Specify the following parameters to send Opsgenie alerts to Sumo Logic:
    * For **Webhook URL** field provide Sumo Logic HTTP URL (from step 1).

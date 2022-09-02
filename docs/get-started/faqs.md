@@ -13,7 +13,7 @@ When you have full control over your logging format we recommend human readable
 Whatever you use follow these rules:
 
 * Use key-value pairs in a regular, defined format such as `key=value,` so they're easy to [parse](/docs/search/search-query-language/parse-operators).
-* Start logs with a regular, well-defined timestamp, ideally including a time zone. See [timestamp considerations and supported formats](../send-data/sources/reference-information-sources/time-reference.md) for details.
+* Start logs with a regular, well-defined timestamp, ideally including a time zone. See [timestamp considerations and supported formats](../send-data/sources/reference-information/time-reference.md) for details.
 * Start logs with a regular format to make automatically detecting message boundaries easier. See [collecting multiline logs](../send-data/sources/installed-collectors/define-boundary-regex-multiline-messages.md) for details.
 
 For example, from our own production logs, we use the following:
@@ -38,7 +38,7 @@ The following table lists data types and some of the popular sources that produc
 | Virtual | <ul><li>Citrix</li><li>Microsoft Hyper-V</li><li>VMware</li></ul> |
 | Network | <ul><li>[Cisco ASA] (/07Sumo-Logic-Apps/security-threat-detection/Cisco_ASA)</li><li>[Palo Alto Networks] (/07Sumo-Logic-Apps/security-threat-detection/Palo-Alto-Networks-6)</li><li>McAfee</li><li>Symantec</li></ul> |
 | Content Delivery | <ul><li>[Akamai] (/07Sumo-Logic-Apps/saas-cloud-apps/Akamai_Cloud_Monitor)</li><li>[Amazon CloudFront] (/07Sumo-Logic-Apps/amazon-aws/CloudFront)</li><li>[Fastly] (/07Sumo-Logic-Apps/saas-cloud-apps/Fastly)</li><li>Limelight Networks</li></ul> |
-| IaaS / PaaS | <ul><li>Amazon</li><li>[Heroku](../manage/connections-and-integrations/sumo-logic-heroku.md)</li><li>Windows</li><li>[Google Audit](../cse/cse-ingestion/google-g-suite-apps-audit.md)</li><li>[Google Cloud Platform (GCP)](../send-data/sources/hosted-collectors/google-cloud-platform-source.md)</li></ul> |
+| IaaS / PaaS | <ul><li>Amazon</li><li>[Heroku](../manage/connections-and-integrations/sumo-logic-heroku.md)</li><li>Windows</li><li>[Google Audit](../cse/cse-ingestion/google-g-suite-apps-audit.md)</li><li>[Google Cloud Platform (GCP)](../send-data/hosted-collectors//google-cloud-platform-source.md)</li></ul> |
 | SaaS | <ul><li>[Box] (/07Sumo-Logic-Apps/saas-cloud-apps/Box)</li><li>[ServiceNow](../manage/connections-and-integrations/servicenow/set-up-servicenow-connections.md)</li><li>[Salesforce] (/07Sumo-Logic-Apps/saas-cloud-apps/Salesforce)</li><li>[Microsoft Office 365] (/07Sumo-Logic-Apps/microsoft-azure/Microsoft_Office_365)</li></ul> |
 | Security | <ul><li>Cisco</li><li>McAfee</li><li>Symantec</li><li>Qualys</li></ul> |
 

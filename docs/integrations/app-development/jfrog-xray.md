@@ -128,8 +128,8 @@ Identify an existing Sumo Logic Hosted Collector you want to use, or create a ne
 When you configure the HTTP source, make sure to save the HTTP Source Address URL. You will need it when you configure the webhook in [Step 5](#Step_5:_Set_up_a_collection_method_for_JFrog_Xray).  
 
 To add a hosted collector and HTTP source:
-1. Create a new Sumo Logic hosted collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Create a new HTTP source on the hosted collector created above by following [these instructions](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+1. Create a new Sumo Logic hosted collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. Create a new HTTP source on the hosted collector created above by following [these instructions](/docs/send-data/hosted-collectors/http-logs-metrics-source).
 
 
 ### Step 5: Set up a collection method for JFrog Xray

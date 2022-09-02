@@ -11,8 +11,8 @@ This section has instructions for configuring the Telegraf output plugin for S
 
 In order to send data to Sumo Logic with Telegraf’s Sumo Logic output plugin you need to create a Hosted Collector with an HTTP Source to ingest the data. For instructions see:
 
- * [Configure a Hosted Collector](../../configure-hosted-collector.md)
- * [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source)
+ * [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector)
+ * [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-logs-metrics-source)
 
 ## Configure Sumo Logic output plugin
 
@@ -107,7 +107,7 @@ url = "https://events.sumologic.net/receiver/v1/http/<UniqueHTTPCollectorCode>"
 
 ### data_format
 
-The format of the metrics to be sent. The value you specify will be used to set the `Content-Type` header. For more information about content type headers for metrics, see the [Content type headers for metrics](../../sources/hosted-collectors/http-logs-metrics-source/upload-metrics-to-http-source.md) section of the *Upload Metrics to an HTTP Source* topic.
+The format of the metrics to be sent. The value you specify will be used to set the `Content-Type` header. For more information about content type headers for metrics, see the [Content type headers for metrics](../../hosted-collectors//http-logs-metrics-source/upload-metrics-to-http-source.md) section of the *Upload Metrics to an HTTP Source* topic.
 
 Supported values for `data_format` are: 
 

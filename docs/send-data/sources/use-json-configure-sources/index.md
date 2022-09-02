@@ -75,7 +75,7 @@ Each source can have its own unique fields in addition to the generic fields lis
 
 | Field Type | Type Value |
 |--|--|
-| [Akamai SIEM API Source](../hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source.md) | Universal |
+| [Akamai SIEM API Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source.md) | Universal |
 | [Amazon S3 Source](json-parameters-hosted-sources.md#amazon-s3-source) | Polling |
 | [AWS S3 Archive Source](json-parameters-hosted-sources.md#aws-s3-archive-source) | Polling |
 | [AWS CloudFront Source](json-parameters-hosted-sources.md#aws-cloudfront-source) | Polling |
@@ -84,28 +84,28 @@ Each source can have its own unique fields in addition to the generic fields lis
 | [AWS Kinesis Firehose for Logs Source](json-parameters-hosted-sources.md#aws-kinesis-firehose-for-logs-source) | HTTP |
 | [AWS S3 Audit Source](json-parameters-hosted-sources.md#aws-s3-audit-source) | Polling |
 | [AWS Metadata (Tag) Source](json-parameters-hosted-sources.md#aws-metadata-tag-source) | Polling |
-| [Azure Event Hubs Source](../hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md) | Universal |
-| [Carbon Black Cloud Source](../hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source.md) | Universal |
-| [Carbon Black Inventory Source](../hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source.md) | Universal |
+| [Azure Event Hubs Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md) | Universal |
+| [Carbon Black Cloud Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source.md) | Universal |
+| [Carbon Black Inventory Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source.md) | Universal |
 | [Cloud Syslog Source](json-parameters-hosted-sources.md#cloud-syslog-source) | Cloudsyslog |
-| [Cisco AMP Source](../hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source.md) | Universal |
-| [Crowdstrike FDR Source](../hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source.md) | Universal |
-| [CrowdStrike Source](../hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source.md) | 	Universal |
-| [CSE AWS EC2 Inventory Source](../hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source.md) | Universal |
-| [Cybereason Source](../hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source.md) | Universal |
-| [Duo Source](../hosted-collectors/cloud-to-cloud-integration-framework/duo-source.md) | Universal |
+| [Cisco AMP Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source.md) | Universal |
+| [Crowdstrike FDR Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source.md) | Universal |
+| [CrowdStrike Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source.md) | 	Universal |
+| [CSE AWS EC2 Inventory Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source.md) | Universal |
+| [Cybereason Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source.md) | Universal |
+| [Duo Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source.md) | Universal |
 | [Google Cloud Platform Source](json-parameters-hosted-sources.md#google-cloud-platform-source) | HTTP |
 | [HTTP Source](json-parameters-hosted-sources.md#http-source) | HTTP |
-| [Microsoft Graph Security API Source](../hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source.md) | Universal |
-| [Mimecast Source](../hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source.md) | Universal |
-| [Netskope Source](../hosted-collectors/cloud-to-cloud-integration-framework/netskope-source.md) | Universal |
-| [Okta Source](../hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) | Universal |
-| [Palo Alto Cortex XDR](../hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source.md) | Universal |
-| [Proofpoint On Demand Source](../hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source.md) | Universal |
-| [Proofpoint TAP Source](../hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source.md) | Universal |
-| [Salesforce Source](../hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source.md) | Universal |
-| [Sophos Central Source](../hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source.md) | Universal |
-| [Tenable Source](../hosted-collectors/cloud-to-cloud-integration-framework/tenable-source.md) | Universal |
+| [Microsoft Graph Security API Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source.md) | Universal |
+| [Mimecast Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source.md) | Universal |
+| [Netskope Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source.md) | Universal |
+| [Okta Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) | Universal |
+| [Palo Alto Cortex XDR](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source.md) | Universal |
+| [Proofpoint On Demand Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source.md) | Universal |
+| [Proofpoint TAP Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source.md) | Universal |
+| [Salesforce Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source.md) | Universal |
+| [Sophos Central Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source.md) | Universal |
+| [Tenable Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source.md) | Universal |
 
 ### Metrics sources for hosted collectors
 
@@ -120,11 +120,11 @@ The following parameters are used for log Sources except for Syslog. Syslog Sour
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
 | `sourceType` | String | Yes |  | Type the correct type of Source. | not modifiable |
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [built-in metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_source` and can be a maximum of 128 characters. | modifiable |
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source` and can be a maximum of 128 characters. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `fields` | JSON Object | No | null | JSON map of key-value fields (metadata) to apply to the Collector or Source. | modifiable |
 | `hostName` | String | No | null | Type a host name of the Source. This value is assigned to the built-in metadata field `_sourceHost`. The hostname can be a maximum of 128 characters.<br/>Not supported with Windows Local Event Source and Windows Local Performance Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the built-in metadata field `_sourceCategory`. See [best practices](../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the built-in metadata field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 
 **Timestamp Processing**
 

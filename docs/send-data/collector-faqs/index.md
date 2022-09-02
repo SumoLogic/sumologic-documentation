@@ -1,6 +1,6 @@
 ---
 slug: /send-data/collector-faqs
-title: Collector FAQs
+title: Collector FAQ
 ---
 
 This section provides frequently asked questions about collecting data into Sumo Logic and the answers you need. 

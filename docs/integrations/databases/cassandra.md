@@ -409,7 +409,7 @@ Based on your infrastructure and networking setup choose one of these methods to
       * **Description.** (Optional)
       * **File Path (Required).** Enter the path to your log files. The files are typically located in `/var/log/cassandra/system.log`. If you are using a customized path, check the `logback.xml` file for this information.
       * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-      * **Source Category.** Enter any string to tag the output collected from this Source, such as **Cassandra/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
+      * **Source Category.** Enter any string to tag the output collected from this Source, such as **Cassandra/Logs**. The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices#good-and-bad-source-categories).
        * **Fields**. Set the following fields:
        * `component = database`
        * `db_system = cassandra`
