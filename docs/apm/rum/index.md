@@ -183,7 +183,7 @@ You can view and copy a script anytime by clicking **Show Script** for the so
 
 ### Step 3: Search Traces from the Browser
 
-Create a [trace query](../traces/working-with-tracing-data/view-and-investigate-traces.md) that specifies traces starting with the value you gave to `<name_of_your_web_service>` as a root service name. You can also include the following filters to find appropriate user action types:
+Create a [trace query](../traces/working-with-tracing-data/view-and-investigate-traces.md) that specifies traces starting with the value you gave to `<name_of_your_web_service>` as a root service name. You can also include the following filters as an operation name:
 * `documentLoad` as an operation name to find traces that correspond to page loads.
 * `Click on *` as an operation name to detect click actions that most likely resulted in XHR calls
 * `Navigation: *` as an operation name to detect single-page app navigation changes
@@ -195,11 +195,11 @@ Click on any of the load spans, such as `documentLoad`, `documentFetch`, or `res
 
 ## RUM Metrics Types
 
-RUM metrics (collected from JavaScript) are automatically generated for you from browser traces. They provide insight into your website's overall user experience as well as front-end services, operating systems, geographical locations, and top-loaded page groups and user cohorts categorized by their browsers.
+RUM metrics are automatically generated for you from browser traces. They provide insight into your website's overall user experience as well as front-end services, operating systems, geographical locations, and top-loaded page groups and user cohorts categorized by their browsers.
 
-Metrics are collected for user actions representing document loads, which means actual retrieval and execution of web documents in the browser. We also have metrics available for XHR calls, core web vitals, and longtask events (delays).
+Metrics are collected for user actions representing document loads, which means actual retrieval and execution of web documents in the browser as well as XHR calls and route changes. Measurements include W3C navigation timings, XHR delays, Core Web Vitals KPIs, longtask events (delays) and others.
 
-You can find these metrics in [Metrics Explorer](/docs/metrics/metric-queries-alerts/metrics-explorer.md) by querying for:
+For ad-hoc queries, you can find these metrics in [Metrics Explorer](/docs/metrics/metric-queries-alerts/metrics-explorer.md) by querying for:
 ```sql
 _contenttype=rummetricfromtrace
 ```
@@ -213,11 +213,13 @@ These are performance and navigation timing metrics, available in each trace in 
 | `browser_time_to_dns_resolution_end` | domainLookupEnd - span start time (fetch start) |
 | `browser_time_to_ssl_end` | if secureConnectionStart > 0: connectionEnd - span start time (fetch start) else NaN |
 | `browser_time_to_tcp_established` | if secureConnectionStart > 0: secureConnectionStart - span start time (fetch start) else connectionEnd - span start time (fetch start) |
-| `browser_time_to_request_end` | responseStart - span start time (fetch start) |
+| `browser_time_to_request_end` and `browser_time_to_fb`* | responseStart - span start time (fetch start) |
 | `browser_time_to_response_end` | responseEnd - span start time (fetch start) |
 | `browser_time_to_interactive` | domInteractive - span start time (fetch start) |
 | `browser_time_to_processing_end` | domComplete - span start time (fetch start) |
 | `browser_time_to_page_load_end` | loadEventEnd - span start time (fetch start) |
+
+*Time to First Byte: measures the delay between start of the page load and moment when the first byte of the response appears. It helps identify when a web server is too slow to respond to requests. You'll find this metric on the Navigation Timings chart.
 
 These metrics, presented in the form of areas on the **Website Performance** panels on [RUM dashboards](#viewing-rum-dashboards), can help you understand the sequence of events (pictured below) from user clicks to a fully loaded document.<br/>![Navigation-metrics.png](/img/rum/Navigation-metrics.png)
 
@@ -254,7 +256,6 @@ These are only loosely related to navigation timings and in many cases, some of 
 | `browser_time_fid` | n/a |
 | `browser_time_to_lcp` | `largestContentfulPaint - span start time (fetch start)` |
 | `browser_cls` | n/a |
-| `browser_time_to_fb` | n/a |
 
 CWV focuses on three aspects of the user experience: document loading, interactivity, and visual stability. This includes the following metrics (and their respective thresholds):
 
