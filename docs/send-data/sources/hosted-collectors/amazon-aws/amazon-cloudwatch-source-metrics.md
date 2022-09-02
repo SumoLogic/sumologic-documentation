@@ -1,6 +1,7 @@
 ---
 id: amazon-cloudwatch-source-metrics
 title: Amazon CloudWatch Source for Metrics
+sidebar_label: Amazon CloudWatch Metrics
 ---
 
 

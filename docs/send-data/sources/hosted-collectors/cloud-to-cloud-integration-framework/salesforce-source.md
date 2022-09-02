@@ -1,8 +1,10 @@
 ---
 id: salesforce-source
+title: Salesforce Source
+sidebar_label: Salesforce
 ---
 
-# Salesforce Source
+
 
 The Salesforce Source provides a secure endpoint to receive event data from the Salesforce through its [Rest API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm). The source securely stores the required authentication, scheduling, and state tracking information.
 
@@ -24,11 +26,11 @@ The  Consumer Key and Consumer Secret API tokens from Salesforce are required t
    * Login to Salesforce.  
    * Go to **Setup \> Platform Tools \> Apps \> App Manager**.
    * Select **New Connected App**. Enter the following [Basic Information](https://help.salesforce.com/articleView?id=connected_app_create_basics.htm&type=5).
-   
-     * **App Name**. Enter a name for your connected app name. For Example, Sumo Logic. 
+
+     * **App Name**. Enter a name for your connected app name. For Example, Sumo Logic.
      * **API Name**. It defaults to a version of the app name without spaces. Keep the default value. 
      * **Contact Email**. Enter your email id.   
-   
+
    * API (Enable OAuth Settings)   
      *  Make sure **Enable OAuth Settings** is checked.
      *  Provide the  **Callback URL**, For Example, https://login.salesforce.com/services/oauth2/callback
@@ -43,7 +45,7 @@ The  Consumer Key and Consumer Secret API tokens from Salesforce are required t
 
 ### Create a Salesforce Source
 
-When you create a Salesforce Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
+When you create a Salesforce Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 To configure a Salesforce Source:
 
@@ -59,13 +61,13 @@ To configure a Salesforce Source:
 1. For **Source Category (Optional)**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM.** Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the Forward to SIEM option the following metadata fields are set automatically by the integration (Do not include below fields as custom log metadata Fields):
 
-   * `_siemVendor`: Salesforce 
-   * `_siemProduct`: Salesforce 
+   * `_siemVendor`: Salesforce
+   * `_siemProduct`: Salesforce
    * `_siemFormat`: JSON       
 
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 1. **SignOn URL.** Enter your Sign on URL, e.g.  https://login.salesforce.com/services/oauth2/token.
 1. **User Name.** Enter the username that you used to login to Salesforce.
@@ -131,17 +133,17 @@ Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
-| `password` | String | Yes |  | Type the Salesforce login password for the username. | modifiable | 
-| `username` | String | Yes |  | Type the Salesforce login username. | modifiable | 
-| `start_time` | String | No | Now | Type the collection start time. Available options are Now, 24 Hours ago, 2 Days ago, 3 Days ago, 4 Days ago, 5 Days ago. | modifiable | 
-| `client_id` | String | True | | Type in Consumer Key of the ConnectedApp. | modifiable | 
-| `client_secret` | String | True |  | Type in Consumer Secret of the ConnectedApp. | modifiable | 
-| `user_token` | String | True |  | Type in the  Salesforce user token. | modifiable | 
-| `inmemory_lookup` | Boolean | False | True | Set to true to enable inmemory lookup or to false to disable it.| modifiable | 
+| `password` | String | Yes |  | Type the Salesforce login password for the username. | modifiable |
+| `username` | String | Yes |  | Type the Salesforce login username. | modifiable |
+| `start_time` | String | No | Now | Type the collection start time. Available options are Now, 24 Hours ago, 2 Days ago, 3 Days ago, 4 Days ago, 5 Days ago. | modifiable |
+| `client_id` | String | True | | Type in Consumer Key of the ConnectedApp. | modifiable |
+| `client_secret` | String | True |  | Type in Consumer Secret of the ConnectedApp. | modifiable |
+| `user_token` | String | True |  | Type in the  Salesforce user token. | modifiable |
+| `inmemory_lookup` | Boolean | False | True | Set to true to enable inmemory lookup or to false to disable it.| modifiable |
 
 ### Salesforce Source JSON example:
 

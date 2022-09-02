@@ -75,7 +75,7 @@ To configure a Script Source:
    * **Timestamp Parsing**. By default **Extract timestamp information from log file entries** is selected, meaning that we use the timestamp information from the data you collect. Deselecting this option turns off all timestamp parsing.
    * **Time Zone.** Select an option under **Use time zone from log file, but if none present use**. Or, if you'd like to override all time zones from data you collect, choose an option under **Ignore time zone and instead use**.
 
-1. **Enable** **Multiline Processing**, see [Collecting Multiline Logs](../../reference-information-sources/collect-multiline-logs.md) for details on multiline processing and its options.
+1. **Enable** **Multiline Processing**, see [Collecting Multiline Logs](../../reference-information/collect-multiline-logs.md) for details on multiline processing and its options.
 1. If you'd like to filter data being collected, set **Processing Rule** options. [Hash and Mask filters](/docs/manage/collection/processing-rules/create-processing-rule.md) can be used to obfuscate proprietary information included in data collected from a script source.
 1. Click **Save** to complete the Source setup.
 

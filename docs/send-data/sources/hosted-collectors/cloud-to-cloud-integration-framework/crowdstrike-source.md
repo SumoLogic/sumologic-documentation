@@ -1,8 +1,9 @@
 ---
 id: crowdstrike-source
+title: CrowdStrike Source
+sidebar_label: CrowdStrike
 ---
 
-# CrowdStrike Source
 
 The CrowdStrike Source provides a secure endpoint to receive event data from the CrowdStrike [Streams API](https://falcon.crowdstrike.com/support/documentation/89/event-streams-apis). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -57,7 +58,7 @@ A CrowdStrike Source authenticates with an OAuth2 API key. These are created in 
 
 ## Create a CrowdStrike Source
 
-When you create a CrowdStrike Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
+When you create a CrowdStrike Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 To configure a CrowdStrike Source:
 
@@ -70,7 +71,7 @@ To configure a CrowdStrike Source:
     ![crowdstrike icon.png](/img/send-data/crowdstrike-icon.png)
 
 1. Enter a **Name**for the Source. The description is optional.   
-   
+
     ![crowdstrike src 10.png](/img/send-data/crowdstrike-src.png)
 
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
@@ -83,8 +84,8 @@ To configure a CrowdStrike Source:
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
+   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. **CrowdStrike domain**: Provide your [CrowdStrike domain](https://falcon.crowdstrike.com/support/documentation/89/event-streams-apis ), for example, `api.crowdstrike.com`.
 
@@ -124,13 +125,13 @@ The following table shows the **config** parameters for a CrowdStrike Sourc
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
-| `domain` | String | Yes |  | Your CrowdStrike domain, for example, api.crowdstrike.com. | modifiable | 
-| `clientID` | String | Yes |  | The CrowdStrike Client ID you want to use to authenticate collection requests. | modifiable | 
-| `secretKey` | String | Yes |  | The CrowdStrike API key you want to use to authenticate collection requests. | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
+| `domain` | String | Yes |  | Your CrowdStrike domain, for example, api.crowdstrike.com. | modifiable |
+| `clientID` | String | Yes |  | The CrowdStrike Client ID you want to use to authenticate collection requests. | modifiable |
+| `secretKey` | String | Yes |  | The CrowdStrike API key you want to use to authenticate collection requests. | modifiable |
 
 CrowdStrike Source JSON example:
 

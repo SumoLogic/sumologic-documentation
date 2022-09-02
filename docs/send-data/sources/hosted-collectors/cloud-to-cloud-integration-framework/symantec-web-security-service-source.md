@@ -1,8 +1,10 @@
 ---
 id: symantec-web-security-service-source
+title: Symantec Web Security Service Source
+sidebar_label: Symantec Web Security Service
 ---
 
-# Symantec Web Security Service Source
+
 
 The Symantec Web Security Service Source provides a secure endpoint to receive WSS Access logs from the Symantec WSS API. It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -48,13 +50,13 @@ You need to have a Symantec Web Security Service username and password. To creat
 1. Click **Add API Credentials**.
 1. WSS displays the **Add API Credential** dialog, which contains the random characters **Username** and **Password**.
 
-   ![Symantec generate api creds.png](/img/send-data/Symantec-generate-api-creds.png) 
-   
-   1. Copy the **Username** and **Password** keys into a text file. 
+   ![Symantec generate api creds.png](/img/send-data/Symantec-generate-api-creds.png)
+
+   1. Copy the **Username** and **Password** keys into a text file.
    1. Select the API **Expiry** you'd like to set.
 
-      * Time-based—You define the date and time when this token expires. 
-      * Never expires. 
+      * Time-based—You define the date and time when this token expires.
+      * Never expires.
 
    1. For the **Access** option, select **Reporting Access Logs**.
 
@@ -64,22 +66,22 @@ See [Symantec Security Software documentation](https://techdocs.broadcom.com/us/
 
 ## Create a Symantec Web Security Service Source
 
-When you create a Symantec Web Security Service Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
+When you create a Symantec Web Security Service Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 To configure a Symantec Web Security Service Source:
 
 1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
- 
+
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
- 
+
 1. Select **Symantec Web Security Service**.
 
    ![symantec source icon.png](/img/send-data/symantec-source-icon.png)
- 
+
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 
    ![Symantec WSS version 1.2.3.png](/img/send-data/Symantec-WSS.png)
- 
+
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
 
@@ -90,7 +92,7 @@ To configure a Symantec Web Security Service Source:
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. **API Username** and **Password**. Provide the Symantec Web Security Service user credentials you want to use to authenticate collection requests. This was copied during the [Authentication](#authentication) steps above.
@@ -122,12 +124,12 @@ Security Service Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
-| `apiUsername` | String | Yes |  | Provide the username you want to use to authenticate collection requests. | modifiable | 
-| `apiPassword` | String | Yes |  | Provide the password for the username that you want to use to authenticate collection requests. | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
+| `apiUsername` | String | Yes |  | Provide the username you want to use to authenticate collection requests. | modifiable |
+| `apiPassword` | String | Yes |  | Provide the password for the username that you want to use to authenticate collection requests. | modifiable |
 
 Symantec Web Security Service Source JSON example:
 

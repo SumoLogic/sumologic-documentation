@@ -1,8 +1,10 @@
 ---
 id: proofpoint-tap-source
+title: Proofpoint TAP Source
+sidebar_label: Proofpoint TAP
 ---
 
-# Proofpoint TAP Source
+
 
 The Proofpoint TAP Source provides a secure endpoint to receive data from the Proofpoint [TAP SIEM API](https://help.proofpoint.com/Threat_Insight_Dashboard/API_Documentation/SIEM_API). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -58,7 +60,7 @@ There are two options to be aware of, **Copy logs for each recipient** and **Cop
 ### Copy logs for each recipient
 
 If this is enabled, the integration will create a duplicate log, one for each recipient listed in the `recipients` section of a message. For example, with the following event:  
-  
+
 ```json
 {
         "GUID": "c26dbea0-80d5-463b-b93c-4e8b708219ce",
@@ -151,7 +153,7 @@ Two total event logs would be created, one with the `recipient` field of `cla
 ### Copy logs for each MessagePart
 
 This will create duplicate logs, one for each value within `MessageParts`. Take the above message. If enabled, the integration will log two events. One with `MessageParts` of:  
-  
+
 ```json
 {
     "contentType": "text/plain",
@@ -165,7 +167,7 @@ This will create duplicate logs, one for each value within `MessageParts`. Take
 ```
 
 The other with `MessageParts` of:  
-  
+
 ```json
 {
     "contentType": "application/pdf",
@@ -186,20 +188,20 @@ With both options enabled above, the integration would create and ingest four to
 
 ## Create a Proofpoint TAP Source
 
-When you create a Proofpoint TAP Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
+When you create a Proofpoint TAP Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 To configure a Proofpoint TAP Source:
 
 1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
- 
+
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
- 
+
 1. Select **Proofpoint TAP**.
- 
+
 1. Enter a **Name **for the Source. The description is optional.
 
    ![Proofpoint TAP create pane.png](/img/send-data/Proofpoint-TAP-create-pane.png)
- 
+
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
 
@@ -214,7 +216,7 @@ To configure a Proofpoint TAP Source:
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. **Proofpoint Domain**. Provide a Proofpoint endpoint if different from the default, `tap-api-v2.proofpoint.com`.
@@ -254,17 +256,17 @@ TAP Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
-| `domain` | String | Yes |  | Provide a Proofpoint endpoint if different from the default, tap-api-v2.proofpoint.com.	modifiable| 
-| `api_secret` | String | Yes |  | Provide the Proofpoint API Secret for authenticating collection requests.	modifiable| 
-| `service_principal` | String | Yes |  | Provide the Proofpoint Service Principal for authenticating collection requests.	modifiable| 
-| `supported_events` | JSON Object | Yes |  | The events to collect, options are clicks and messages. | modifiable| 
-| `split_recipients` | Boolean | No | true | Set to true to copy logs for each recipient. | modifiable| 
-| `split_message_parts` | Boolean | No | false	Set to true to copy logs for each MessagePart. | modifiable| 
-| `pollingInterval` | Integer | No | 300 | This sets how often the Source checks for new data. | modifiable| 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
+| `domain` | String | Yes |  | Provide a Proofpoint endpoint if different from the default, tap-api-v2.proofpoint.com.	modifiable|
+| `api_secret` | String | Yes |  | Provide the Proofpoint API Secret for authenticating collection requests.	modifiable|
+| `service_principal` | String | Yes |  | Provide the Proofpoint Service Principal for authenticating collection requests.	modifiable|
+| `supported_events` | JSON Object | Yes |  | The events to collect, options are clicks and messages. | modifiable|
+| `split_recipients` | Boolean | No | true | Set to true to copy logs for each recipient. | modifiable|
+| `split_message_parts` | Boolean | No | false	Set to true to copy logs for each MessagePart. | modifiable|
+| `pollingInterval` | Integer | No | 300 | This sets how often the Source checks for new data. | modifiable|
 
 Proofpoint Source JSON example:
 

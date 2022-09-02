@@ -1,6 +1,7 @@
 ---
 id: aws-metadata-tag-source
 title: AWS Metadata (Tag) Source
+sidebar_label: AWS Metadata (Tag)
 ---
 
 

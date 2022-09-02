@@ -1,9 +1,8 @@
 ---
 id: generate-new-url-http-source
 title: Generate a new URL for an HTTP Source
+sidebar_label: Generate a new URL
 ---
-
-
 
 You can generate a new URL for an HTTP Source at any time. Generating a new URL completely invalidates the old URL.
 

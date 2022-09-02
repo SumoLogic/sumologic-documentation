@@ -337,7 +337,7 @@ New - You can now add the results of Spans queries directly to Dashboards from t
 ---
 ## April 17, 2022 (Apps)
 
-Update - We’ve released an update to the [Amazon S3 app](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-S3-Audit-Source). The key improvement is a new **Threat Intel** dashboard that provides high-level views of threats across your S3 buckets and objects. We also added a new “S3_Bucket” filter to each of the dashboards, so you can slice and dice data by S3 bucket name.
+Update - We’ve released an update to the [Amazon S3 app](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-hosted-collectors/amazon-aws/Amazon-S3-Audit-Source). The key improvement is a new **Threat Intel** dashboard that provides high-level views of threats across your S3 buckets and objects. We also added a new “S3_Bucket” filter to each of the dashboards, so you can slice and dice data by S3 bucket name.
 
 ---
 ## April 7, 2022 (Alerts)
@@ -399,7 +399,7 @@ New - We are delighted to announce the release of the [Sumo Logic Amazon Route 5
 ---
 ## March 25, 2022 (Collection)
 
-Update - The [AWS Kinesis Firehose for Logs Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Logs_Source) now has the option to collect undelivered logs from the backup directory.
+Update - The [AWS Kinesis Firehose for Logs Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-hosted-collectors/amazon-aws/AWS_Kinesis_Firehose_for_Logs_Source) now has the option to collect undelivered logs from the backup directory.
 
 Update - The [Azure Event Hubs Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Azure_Event_Hubs_Source) now supports Processing Rules and timestamp configuration options for logs.
 

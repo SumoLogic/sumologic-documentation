@@ -1,6 +1,7 @@
 ---
 id: google-cloud-platform-source
 title: Google Cloud Platform Source
+sidebar_label: Google Cloud Platform (GCP)
 ---
 
 
@@ -24,7 +25,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
 1. In Sumo Logic select **Manage Data \> Collection \> Collection**. 
 
-1. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](../../configure-hosted-collector.md).
+1. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 1. Click **Add Source** next to the Hosted Collector and click **Google Cloud Platform**.
 
@@ -47,7 +48,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
    * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
    * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be     determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-   * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../reference-information-sources/time-reference.md for more information.
+   * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../reference-information/time-reference.md for more information.
 
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/manage/collection/processing-rules/create-processing-rule.md).
 

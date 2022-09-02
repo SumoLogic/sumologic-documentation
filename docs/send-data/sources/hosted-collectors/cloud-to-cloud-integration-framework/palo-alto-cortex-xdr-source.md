@@ -1,8 +1,9 @@
 ---
 id: palo-alto-cortex-xdr-source
+title: Palo Alto Cortex XDR Source
+sidebar_label: Palo Alto Cortex XDR
 ---
 
-# Palo Alto Cortex XDR Source
 
 The Palo Alto Cortex XDR Source provides a secure endpoint to receive alerts from the [Get Alerts Incident Management API](https://docs.paloaltonetworks.com/cortex/cortex-xdr/cortex-xdr-api/cortex-xdr-apis/incident-management/get-alerts.html#idbad18e18-5c). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -42,7 +43,7 @@ The **API Key** must be assigned the **Standard** security level.
 
 ## Create a Palo Alto Cortex XDR Source
 
-When you create a Palo Alto Cortex XDR Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
+When you create a Palo Alto Cortex XDR Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 To configure a Palo Alto Cortex XDR Source:
 
@@ -63,11 +64,11 @@ To configure a Palo Alto Cortex XDR Source:
    * `_siemVendor`: Palo Alto   
    * `siemProduct`: Cortex      
    * `siemFormat`: JSON        
-   * `siemEventID`: `<category>` 
+   * `siemEventID`: `<category>`
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. **API Key** and **API ID**. Provide the Palo Alto Cortex XDR authentication credentials you want to use to [Authenticate](#authentication) collection requests.
@@ -107,16 +108,16 @@ Cortex XDR Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
 | `api_key` | String | Yes |  | Provide the API Key you want to use to authenticate collection requests.	modifiable
-| `api_id` | String | Yes |  | Provide the API ID for the API Key that you want to use to authenticate collection requests. | modifiable | 
-| `fqdn` | String | Yes |  | The FQDN is a unique host and domain name associated with each tenant. When you generate the API Key and Key ID, you are assigned an individual FQDN. | modifiable | 
-| `ingest_events` | Boolean | No | False | When true the ingestion of all events associated with an alert as a separate set of log lines. Each alert will have all events ingested as individual log lines, each enriched with the original alert ID. | modifiable | 
-| `dup_alerts` | Boolean | No | False	When true all inbound alerts and flatten the host IP field in the alert data structure. Then a duplicate alert is ingested for each, which will be identical except for the host IP field that is flattened from an array. This simplifies working with the alert and the generation of rules or searches based on alert content. | modifiable | 
-| `polling_interval` | Integer | No | 600 | This sets how often the Source checks for new data. | modifiable | 
+| `api_id` | String | Yes |  | Provide the API ID for the API Key that you want to use to authenticate collection requests. | modifiable |
+| `fqdn` | String | Yes |  | The FQDN is a unique host and domain name associated with each tenant. When you generate the API Key and Key ID, you are assigned an individual FQDN. | modifiable |
+| `ingest_events` | Boolean | No | False | When true the ingestion of all events associated with an alert as a separate set of log lines. Each alert will have all events ingested as individual log lines, each enriched with the original alert ID. | modifiable |
+| `dup_alerts` | Boolean | No | False	When true all inbound alerts and flatten the host IP field in the alert data structure. Then a duplicate alert is ingested for each, which will be identical except for the host IP field that is flattened from an array. This simplifies working with the alert and the generation of rules or searches based on alert content. | modifiable |
+| `polling_interval` | Integer | No | 600 | This sets how often the Source checks for new data. | modifiable |
 
 Palo Alto Cortex XDR Source JSON example:
 

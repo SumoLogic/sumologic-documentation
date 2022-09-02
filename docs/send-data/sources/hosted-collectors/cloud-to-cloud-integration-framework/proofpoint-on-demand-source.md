@@ -1,14 +1,16 @@
 ---
 id: proofpoint-on-demand-source
+title: Proofpoint On Demand Source
+sidebar_label: Proofpoint On Demand
 ---
 
-# Proofpoint On Demand Source
+
 
 The Proofpoint On Demand (PoD) Source collects data from the Proofpoint On Demand (PoD) Log Service and uses the secure WebSocket (WSS) protocol to stream logs. It securely stores the required authentication, scheduling, and state tracking information.
 
 :::note
 This Source requires you to be licensed for Proofpoint On Demand’s Remote Syslog feature. Please reach out to Proofpoint for more information.  
-  
+
 The Proofpoint PoD API is not public, you need to request details on the API from Proofpoint.
 :::
 
@@ -52,7 +54,7 @@ the API from Proofpoint.
 
 ## Create a Proofpoint On Demand Source
 
-When you create a Proofpoint On Demand Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
+When you create a Proofpoint On Demand Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 To configure a Proofpoint On Demand Source:
 
@@ -61,7 +63,7 @@ To configure a Proofpoint On Demand Source:
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 
 1. Select **Proofpoint On Demand**.   
-  
+
   ![proofpoint icon.png](/img/send-data/proofpoint-icon.png)
 
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
@@ -72,14 +74,14 @@ To configure a Proofpoint On Demand Source:
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
 
-  * `_siemVendor`: Proofpoint 
-  * `_siemProduct`: POD 
+  * `_siemVendor`: Proofpoint
+  * `_siemProduct`: POD
   * `_siemFormat`	JSON
   * `_siemEventID`: Set to the type of message ingested, either MESSAGE or MAILLOG.
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. **Clust ID** and **Token**. Provide the Proofpoint authentication credentials you want to use to [Authenticate](#authentication) collection requests.
@@ -115,13 +117,13 @@ Demand Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
 | `cluster_id `| String | Yes | Provide your Cluster ID from Proofpoint.	modifiable
 | `api_secret` | String | Yes | Provide your API Token from Proofpoint that you want to use to authenticate collection requests.	modifiable
-| `supported_events` | Array of strings | Yes | There are two types of events you can collect. Specify one or both of the following:<br/>`message`: The main fields in message logs are guid, connection, envelope, msg, msgParts, filter, pps.<br/>`maillog`: Then main fields in maillog logs are data, id, pps, sm, ts.<br/>For example, for both you'd use: `["maillog","message"]`	| modifiable | 
+| `supported_events` | Array of strings | Yes | There are two types of events you can collect. Specify one or both of the following:<br/>`message`: The main fields in message logs are guid, connection, envelope, msg, msgParts, filter, pps.<br/>`maillog`: Then main fields in maillog logs are data, id, pps, sm, ts.<br/>For example, for both you'd use: `["maillog","message"]`	| modifiable |
 
 Proofpoint On Demand Source JSON example:
 

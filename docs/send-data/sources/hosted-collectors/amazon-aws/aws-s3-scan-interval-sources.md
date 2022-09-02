@@ -1,6 +1,7 @@
 ---
 id: aws-s3-scan-interval-sources
 title: AWS S3 Scan Interval for Sources
+sidebar_label: AWS S3 Scan Interval
 ---
 
 

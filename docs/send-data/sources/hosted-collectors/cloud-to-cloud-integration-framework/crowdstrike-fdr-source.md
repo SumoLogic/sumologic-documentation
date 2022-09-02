@@ -1,9 +1,8 @@
 ---
 id: crowdstrike-fdr-source
 title: Crowdstrike FDR Source
+sidebar_label: Crowdstrike FDR
 ---
-
-#
 
 The CrowdStrike Falcon Data Replicator (FDR) Source provides a secure endpoint to ingest [Falcon Data Replicator](https://falcon.crowdstrike.com/support/documentation/9/falcon-data-replicator) events using the S3 ingestion capability by consumed SQS notifications of new S3 objects. It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -51,7 +50,7 @@ Once enabled, in the CrowdStrike console, navigate to **Support \> API Clients
 
 ### Create a CrowdStrike FDR Source
 
-When you create a CrowdStrike FDR Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
+When you create a CrowdStrike FDR Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 To configure a CrowdStrike FDR Source:
 

@@ -1,9 +1,8 @@
 ---
 id: configure-our-aws-source-cloudformation
 title: Configuring your AWS Source with CloudFormation
+sidebar_label: AWS CloudFormation Configuration
 ---
-
-
 
 You can use AWS CloudFormation to leverage AWS products without creating or configuring any AWS infrastructure. With AWS CloudFormation, you declare all of your resources and dependencies in a template file. The template defines a collection of resources as a single unit called a stack. AWS CloudFormation creates and deletes all member resources of the stack together and manages all dependencies between the resources for you.
 

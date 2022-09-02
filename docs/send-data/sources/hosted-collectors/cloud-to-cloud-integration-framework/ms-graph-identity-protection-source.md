@@ -1,8 +1,9 @@
 ---
 id: ms-graph-identity-protection-source
+title: MS Graph Identity Protection Source
+sidebar_label: MS Graph Identity Protection
 ---
 
-# MS Graph Identity Protection Source
 
 The [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Identity Protection Source collects [Risk Detection](https://docs.microsoft.com/en-us/graph/api/riskdetection-list?view=graph-rest-1.0) and [Risky User](https://docs.microsoft.com/en-us/graph/api/riskyuser-list?view=graph-rest-1.0) data from the Microsoft Graph [Identity Protection API](https://docs.microsoft.com/en-us/graph/api/resources/identityprotectionroot?view=graph-rest-1.0). It
 securely stores the required authentication, scheduling, and state tracking information.
@@ -61,29 +62,29 @@ Use the following steps to create a service application:
     ![Azure created app in step 5.png](/img/send-data/Azure-created-app-in-step-5.png)
 
 1. Within the Application configuration page, select **Certificates and Secrets** to create an Application Client Secret Key.
-    
+
     ![Azure AD step 6.png](/img/send-data/Azure-AD-step-6.png)
 
 1. Copy the **Client Secret Value** (pictured below). It's needed later in Sumo Logic when creating the Microsoft Graph Identity Protection Source.
 
     ![Azure AD step 7.png](/img/send-data/Azure-AD-step-7.png)
 
-1. Request the appropriate permissions for the application. Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**. From there select (or search for) the following permissions. An Administrator must approve (grant) these permissions before the integration will function. 
+1. Request the appropriate permissions for the application. Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**. From there select (or search for) the following permissions. An Administrator must approve (grant) these permissions before the integration will function.
 
-| API |  Account Type |  Permissions | 
-|----------------|----------------------------------------|----------------------------| 
-| Risk Detection | Delegated (work or school account)     | IdentityRiskEvent.Read.All | 
-| Risk Detection | Delegated (personal Microsoft account) | Not supported.             | 
-| Risk Detection | Application                            | IdentityRiskEvent.Read.All | 
-| Risky User     | Delegated (work or school account)     | IdentityRiskyUser.Read.All | 
-| Risky User     | Delegated (personal Microsoft account) | Not supported.             | 
+| API |  Account Type |  Permissions |
+|----------------|----------------------------------------|----------------------------|
+| Risk Detection | Delegated (work or school account)     | IdentityRiskEvent.Read.All |
+| Risk Detection | Delegated (personal Microsoft account) | Not supported.             |
+| Risk Detection | Application                            | IdentityRiskEvent.Read.All |
+| Risky User     | Delegated (work or school account)     | IdentityRiskyUser.Read.All |
+| Risky User     | Delegated (personal Microsoft account) | Not supported.             |
 | Risky User     | Application                            | IdentityRiskyUser.Read.All |
- 
+
 ![azure ad step 8.png](/img/send-data/azure-ad-step-8.png)
 
 ## Create a Microsoft Graph Identity Protection Source
 
-When you create a Microsoft Graph Identity Protection Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](../../../configure-hosted-collector.md).
+When you create a Microsoft Graph Identity Protection Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 To configure a Microsoft Graph Identity Protection Source:
 
@@ -95,7 +96,7 @@ To configure a Microsoft Graph Identity Protection Source:
 
     ![MS Graph Identity Protection Icon.png](/img/send-data/MS-Graph-Identity-Protection-Icon.png)
 
-1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional. 
+1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 
     ![MS Graph Identity Proctection version 1 input.png](/img/send-data/MS-Graph-Identity-Proctection-version-1-input.png)
 
@@ -109,7 +110,7 @@ To configure a Microsoft Graph Identity Protection Source:
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
 
 1. Provide the **Directory (tenant) ID** and **Application (client) ID** you got after you registered (created) the Azure Application in step 5 of the setup section.
@@ -145,13 +146,13 @@ Graph Identity Protection Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
-| `tenant_id` | String | Yes |  | Provide the Directory (tenant) ID you got after you registered (created) the Azure Application. | modifiable | 
+| `tenant_id` | String | Yes |  | Provide the Directory (tenant) ID you got after you registered (created) the Azure Application. | modifiable |
 | `secret_key` | String | Yes |  | Provide the Application Client Secret Value you created in Azure. | modifiable
-| `application_id` | String | Yes |  | Provide the Application (client) ID you got after you registered (created) the Azure Application. | modifiable | 
+| `application_id` | String | Yes |  | Provide the Application (client) ID you got after you registered (created) the Azure Application. | modifiable |
 | `supported_apis` | Array of strings | Yes |  | Define one or more of the available APIs to collect: Devices, and Users. For example, for both you'd use: ["Devices","Users"] | modifiable |  
 
 Microsoft Graph Identity Protection Source JSON example:

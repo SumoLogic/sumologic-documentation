@@ -1,11 +1,10 @@
 ---
 id: cloud-to-cloud-source-versions
 title: Cloud-to-Cloud Source Versions
+sidebar_label: Cloud-to-Cloud Versions
 ---
 
-#
-
-Sources in the Cloud-to-Cloud IntegrationFramework need updates over time to maintain data collection. Updates can vary in severity and may not require any input from you.
+Sources in the Cloud-to-Cloud Integration Framework need updates over time to maintain data collection. Updates can vary in severity and may not require any input from you.
 
 Updates are divided using semantic versioning. The syntax of version numbers are in the following format:
 

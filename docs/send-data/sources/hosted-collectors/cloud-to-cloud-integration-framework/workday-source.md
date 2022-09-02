@@ -1,10 +1,10 @@
 ---
 id: workday-source
+title: Workday Source
+sidebar_label: Workday
 ---
 
-# Workday Source
-
-When you create a Workday Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
+When you create a Workday Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 :::note
 The steps below assume that you have already configured in [Step 1 of this page] (/07Sumo-Logic-Apps/saas-cloud-apps/Workday/Collect_Logs_for_the_Workday_App#step-1-configure-the-workday-portal). You will copy and paste configurations from those steps in this source.
@@ -14,7 +14,7 @@ To configure a Workday Source:
 
 1. On the **Manage Data \> Collection \> Collection** page, click **Add Source** next to a Hosted Collector.
 
-1. Select **Workday**. 
+1. Select **Workday**.
 
   ![img](/img/send-data/workday-icon.jpg)
 
@@ -26,14 +26,14 @@ To configure a Workday Source:
 
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set automatically by the integration (Do not include below fields as custom log metadata Fields):
 
-   * `_siemVendor`: Workday 
-   * `_siemProduct`: Workday 
+   * `_siemVendor`: Workday
+   * `_siemProduct`: Workday
    * `_siemFormat`: JSON
    * `_siemEventID`: SignOnLogs or AuditLogs
- 
+
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. **SignOn Report URL**:  Paste the signon report url.
@@ -115,20 +115,20 @@ The following table shows the **config** parameters for Workday Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
-| `isu_password` | String | Yes |  | Type the workday ISU account password for the username  | modifiable  | 
-| `isu_username` | String | Yes | Type integration system user account  name  | modifiable | 
-| `backfill_days` | String | No |  Now | Type the collection start time  | modifiable | 
-| `polling_interval_minutes` | Integer | No | 10 | This sets how often the Source checks for new data The unit is in minutes. | modifiable | 
-| `client_id` | String  | Yes |  | Type in   the API Client ID  | modifiable | 
-| `client_secret` | String  | Yes |  | Type in  the API Client Secret  | modifiable | 
-| `refresh_token` | String | Yes |  |  Type in the generated token endpoint  | modifiable | 
-| `signon_report_url` | String | Yes |  | Type in the signon report url  | modifiable | 
-| `Workday_rest_api_endpoint`  | String | Yes |  | Type in the Workday Rest API endpoint  | modifiable | 
-| `Refresh_token_endpoint` | String | Yes |  | Type in the Workday Rest API Token endpoint  | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
+| `isu_password` | String | Yes |  | Type the workday ISU account password for the username  | modifiable  |
+| `isu_username` | String | Yes | Type integration system user account  name  | modifiable |
+| `backfill_days` | String | No |  Now | Type the collection start time  | modifiable |
+| `polling_interval_minutes` | Integer | No | 10 | This sets how often the Source checks for new data The unit is in minutes. | modifiable |
+| `client_id` | String  | Yes |  | Type in   the API Client ID  | modifiable |
+| `client_secret` | String  | Yes |  | Type in  the API Client Secret  | modifiable |
+| `refresh_token` | String | Yes |  |  Type in the generated token endpoint  | modifiable |
+| `signon_report_url` | String | Yes |  | Type in the signon report url  | modifiable |
+| `Workday_rest_api_endpoint`  | String | Yes |  | Type in the Workday Rest API endpoint  | modifiable |
+| `Refresh_token_endpoint` | String | Yes |  | Type in the Workday Rest API Token endpoint  | modifiable |
 
 Workday Source JSON example:
 

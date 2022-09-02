@@ -1,8 +1,9 @@
 ---
 id: netskope-webtx
+title: Netskope WebTx Source
+sidebar_label: Netskope WebTx
 ---
 
-# Netskope WebTx Source
 
 
 The [Netskope WebTx API](https://docs.netskope.com/en/transaction-event-fields.html) integration ingests Web Transaction logs from Netskope Event Stream.

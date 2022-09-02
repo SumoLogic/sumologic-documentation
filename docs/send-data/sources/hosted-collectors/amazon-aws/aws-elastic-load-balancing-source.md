@@ -1,6 +1,7 @@
 ---
 id: aws-elastic-load-balancing-source
 title: AWS Elastic Load Balancing Source
+sidebar_label: AWS Elastic Load Balancing
 ---
 
 

@@ -1,9 +1,9 @@
 ---
 id: g-suite-apps-audit-source
 title: G Suite Apps Audit Source
+sidebar_label: G Suite Apps Audit
 ---
 
-#
 
 A G Suite Apps Audit Source uses the [Google Apps Reports API](https://developers.google.com/admin-sdk/reports/v1/get-start/getting-started) to ingest all audit logs through watchpoints. [Activity from the following Google apps](https://developers.google.com/admin-sdk/reports/v1/reference/activities/list) can be collected:
 

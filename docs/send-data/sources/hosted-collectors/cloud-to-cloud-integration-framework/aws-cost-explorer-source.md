@@ -1,6 +1,7 @@
 ---
 id: aws-cost-explorer-source
 title: AWS Cost Explorer Source (Beta)
+sidebar_label: AWS Cost Explorer Source (Beta)
 ---
 
 <p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
@@ -13,7 +14,7 @@ This feature is in Beta. To participate, contact your Sumo account executive.
 
 ## Create an AWS Cost Explorer Source
 
-When you create an AWS Cost Explorer collector Source, you add it to an existing Sumo Logic hosted collector. Before creating the Source, identify the hosted collector you want to use or simply create a new hosted collector. For further instructions, see [Create a Hosted Collector](../../../hosted-collectors.md).
+When you create an AWS Cost Explorer collector Source, you add it to an existing Sumo Logic hosted collector. Before creating the Source, identify the hosted collector you want to use or simply create a new hosted collector. For further instructions, see [Create a Hosted Collector](../..//docs/send-data/sources/hosted-collectors).
 
 To configure an AWS Cost Explorer Source:
 
@@ -38,7 +39,7 @@ To configure an AWS Cost Explorer Source:
 
     ![accountField.png](/img/send-data/accountField.png)
 
-1. For the **AWS Access Key** and **AWS Secret Key**, provide the IAM User access key and secret key you want to use to authenticate collection requests. See how to [grant access](../amazon-web-services/grant-access-aws-product.md) to an AWS product for details.
+1. For the **AWS Access Key** and **AWS Secret Key**, provide the IAM User access key and secret key you want to use to authenticate collection requests. See how to [grant access](../amazon-aws/grant-access-aws-product.md) to an AWS product for details.
 
 1. For the **Cost Type**, select one or more of the following types to collect. For details on the types, see Amazon's [Understanding your AWS Cost Datasets: A Cheat Sheet](https://aws.amazon.com/blogs/aws-cloud-financial-management/understanding-your-aws-cost-datasets-a-cheat-sheet/) and [Exploring your data using Cost Explorer](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-exploring-data.html).
 

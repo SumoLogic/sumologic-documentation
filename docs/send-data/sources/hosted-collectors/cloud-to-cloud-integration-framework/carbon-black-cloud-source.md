@@ -1,9 +1,9 @@
 ---
 id: carbon-black-cloud-source
 title: Carbon Black Cloud Source
+sidebar_label: Carbon Black Cloud
 ---
 
-#
 
 The Carbon Black Cloud Source provides a secure endpoint to receive data from the Carbon Black Cloud, Enriched Event Search, and Alerts APIs. It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -54,7 +54,7 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 ## Create a Carbon Black Cloud Source
 
-When you create a Carbon Black Cloud Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
+When you create a Carbon Black Cloud Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 To configure A Carbon Black Cloud Source:
 

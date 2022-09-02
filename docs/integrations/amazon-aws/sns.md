@@ -80,7 +80,7 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 ### Collecting Metrics for Amazon SNS  
 
 1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics) or [AWS Kinesis Firehose for Metrics Source](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/aws-kinesis-firehose-metrics-source) (Recommended).
+2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) or [AWS Kinesis Firehose for Metrics Source](/docs/send-data/Sources/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended).
     1. **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
 3. Click **Save**.
@@ -88,13 +88,13 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 
 ### Collecting Amazon SNS Events using CloudTrail
 
-1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources/hosted-collectors/amazon-web-services/aws-cloudtrail-source.md).
+1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources/hosted-collectors/amazon-aws/aws-cloudtrail-source.md).
     * **Name**. Enter a name to display for the new Source.
     * **Description**. Enter an optional description.
     * **S3 Region**. Select the Amazon Region for your SNS S3 bucket.
     * **Bucket Name**. Enter the exact name of your SNS S3 bucket.
     * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string.
-      * DO NOT use a [leading forward slash](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).
+      * DO NOT use a [leading forward slash](/docs/send-data/Sources/hosted-collectors/amazon-aws/Amazon-Path-Expressions).
       * The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category**. Enter a source category. For example, SNS_event.
     * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).

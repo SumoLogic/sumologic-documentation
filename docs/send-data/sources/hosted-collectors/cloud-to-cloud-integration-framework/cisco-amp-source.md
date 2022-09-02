@@ -1,9 +1,9 @@
 ---
 id: cisco-amp-source
 title: Cisco AMP Source
+sidebar_label: Cisco AMP 
 ---
 
-#
 
 The Cisco AMP Source provides a secure endpoint to receive data from the Cisco Amp [System Log API](https://api-docs.amp.cisco.com/api_resources?api_host=api.amp.cisco.com&api_version=v1). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -39,7 +39,7 @@ The integration requires an Cisco Amp Client ID and API key.
 
 ## Create a Cisco AMP Source
 
-When you create a Cisco AMP Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
+When you create a Cisco AMP Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 To configure a Cisco AMP Source:
 

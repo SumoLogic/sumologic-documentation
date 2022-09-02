@@ -1,9 +1,9 @@
 ---
 id: tenable-source
 title: Tenable Source
+sidebar_label: Tenable
 ---
 
-#
 
 The Tenable Source provides a secure endpoint to ingest audit-log events, vulnerability, and asset data from the [Tenable.io APIs](https://developer.tenable.com). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -47,7 +47,7 @@ The Tenable Source is configured with a Tenable IO Access and Secret Key. Your a
 
 ## Create a Tenable Source
 
-When you create a Tenable Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
+When you create a Tenable Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 To configure A Tenable Source:
 

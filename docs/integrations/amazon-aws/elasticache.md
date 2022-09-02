@@ -107,24 +107,24 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
 ## Collect Logs and Metrics for Amazon ElastiCache
 
 * Sumo Logic supports collecting metrics using two source types:
-    * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/aws-kinesis-firehose-metrics-source) (recommended); or
-    * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
+    * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/Sources/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
+    * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
     * Namespace for **Amazon ElastiCache** service is **AWS/Elasticache**
     * **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
 
 ### Collect Amazon ElastiCache CloudTrail Logs
 
-1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources/hosted-collectors/amazon-web-services/aws-cloudtrail-source.md).
+1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources/hosted-collectors/amazon-aws/aws-cloudtrail-source.md).
    * **Name**. Enter a name to display for the new Source.
    * **Description**. Enter an optional description.
    * **S3 Region**. Select the Amazon Region for your** ElastiCache** S3 bucket.
    * **Bucket Name**. Enter the exact name of your **ElastiCache** S3 bucket.
-   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/hosted-collectors/amazon-aws/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
    * **Source Category**. Enter aws/observability/cloudtrail/logs
    * **Fields**. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
-   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/sources/hosted-collectors/amazon-web-services/aws-sources)
-   * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/sources/hosted-collectors/amazon-web-services/aws-sources).
+   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/sources/hosted-collectors/amazon-aws/aws-sources)
+   * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/sources/hosted-collectors/amazon-aws/aws-sources).
    * **Enable Timestamp Parsing**. Select the check box.
    * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
    * **Timestamp Format.** Select Automatically detect the format.

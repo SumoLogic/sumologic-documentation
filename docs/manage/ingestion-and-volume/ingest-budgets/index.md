@@ -88,7 +88,7 @@ The page displays the following information:
 * **Scope**. The key value pair defining the metadata to include with the ingest budget. See [budget assignment](#budget-assignment) for details.
 * **Capacity**. Maximum amount of data permitted. Bytes are calculated in base 2 (binary format, 1024 based).
 * **Usage**. Percentage of data used. To refresh this information, close and reopen the main Collection tab.
-* **Reset Time**. Time and time zone to reset the data usage tracking in HH:MM [timestamp format](../../../send-data/sources/reference-information-sources/time-reference.md). This is fixed at a 24-hour time interval, so the reset time is triggered every 24 hours. Use the [IANA time zone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) database format.
+* **Reset Time**. Time and time zone to reset the data usage tracking in HH:MM [timestamp format](../../../send-data/sources/reference-information/time-reference.md). This is fixed at a 24-hour time interval, so the reset time is triggered every 24 hours. Use the [IANA time zone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) database format.
 * **Allocated Capacity** (bottom of table). The total allocated capacity from all ingest budgets out of your account's available daily log ingest capacity is provided. If you assign all your log data to ingest budgets you can easily track how much data you are allowing Sumo Logic to ingest compared to your account's available daily log ingest quota.
 
 At the top of the page, you can:

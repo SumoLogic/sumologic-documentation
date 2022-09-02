@@ -1,6 +1,7 @@
 ---
 id: collection-aws-govcloud
 title: Collection from AWS GovCloud
+sidebar_label: AWS GovCloud
 ---
 
 

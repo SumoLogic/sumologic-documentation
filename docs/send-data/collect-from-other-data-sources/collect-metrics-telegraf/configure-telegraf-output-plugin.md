@@ -11,7 +11,7 @@ This section has instructions for configuring the Telegraf output plugin for S
 
 In order to send data to Sumo Logic with Telegraf’s Sumo Logic output plugin you need to create a Hosted Collector with an HTTP Source to ingest the data. For instructions see:
 
- * [Configure a Hosted Collector](../../configure-hosted-collector.md)
+ * [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector)
  * [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source)
 
 ## Configure Sumo Logic output plugin

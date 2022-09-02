@@ -1,8 +1,8 @@
 ---
 slug: /send-data/sources/hosted-collectors/http-logs-metrics-source
 title: HTTP Logs and Metrics Source
+sidebar_label: HTTP Logs and Metrics
 ---
-
 
 
 An HTTP Logs and Metrics Source is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Logs and Metrics Sources as you'd like to a single Hosted Collector.
@@ -39,10 +39,10 @@ To configure an HTTP Logs and Metrics Source:
     **Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
 
       * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-      * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../../reference-information-sources/time-reference.md) for more information.
+      * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../../reference-information/time-reference.md) for more information.
 
 
-    **Multiline Processing.** See [Collecting Multiline Logs](../../reference-information-sources/collect-multiline-logs.md) for details on multiline processing and its options. Check this option if you're working with multiline messages (for example, log4J messages or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files such as a Linux `system.log`.
+    **Multiline Processing.** See [Collecting Multiline Logs](../../reference-information/collect-multiline-logs.md) for details on multiline processing and its options. Check this option if you're working with multiline messages (for example, log4J messages or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files such as a Linux `system.log`.
 
       * **Infer Message Boundaries.**
 
@@ -105,4 +105,4 @@ Sumo expects that the entire content of an individual log message will be sent t
 
 For tools to help you batch messages, see https://github.com/SumoLogic/sumologic-net-appenders.
 
-For details on how the Collector processes multiline logs see [Collecting Multiline Logs](../../reference-information-sources/collect-multiline-logs.md).
+For details on how the Collector processes multiline logs see [Collecting Multiline Logs](../../reference-information/collect-multiline-logs.md).

@@ -156,7 +156,7 @@ Add the following environment variables to your Lambda function:
     }
     ```
 
-   * Configure a [Sumo Logic AWS S3](../sources/hosted-collectors/amazon-web-services/aws-s3-source.md)  source with the same source category as that of the HTTP Source created in Step 1 to read from this bucket.
+   * Configure a [Sumo Logic AWS S3](../sources/hosted-collectors/amazon-aws/aws-s3-source.md)  source with the same source category as that of the HTTP Source created in Step 1 to read from this bucket.
 
     :::note
     Logs from the Sumo Logic Lambda extension are stored and compressed in the following prefix path     `sumologic-extension/<aws-region>/<Function>/<Version>/<Year>/<Month>/<Day>/<Hour>/<Min>/<UUID>.gz`

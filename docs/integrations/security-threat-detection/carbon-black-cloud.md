@@ -76,12 +76,12 @@ In this step, use the AWS Console to create an S3 bucket. Make a note of the nam
 
 In this step, you create two S3 Sources to collect logs from the S3 bucket you created in the previous step. One source will collect event logs from the bucket, the other source will collect alert logs.
 
-As a prerequisite, [Grant Sumo Logic access](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md) to the S3 bucket.
+As a prerequisite, [Grant Sumo Logic access](/docs/send-data/sources/hosted-collectors/amazon-aws/grant-access-aws-product.md) to the S3 bucket.
 
 
 #### S3 Source for event logs
 
-Follow these steps to set up an S3 Source to collect event logs from your S3 bucket. (For detailed instruction on S3 Source configuration options, see [AWS S3 Source](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/AWS-S3-Source).)
+Follow these steps to set up an S3 Source to collect event logs from your S3 bucket. (For detailed instruction on S3 Source configuration options, see [AWS S3 Source](/docs/send-data/Sources/hosted-collectors/amazon-aws/AWS-S3-Source).)
 
 
 1. In Sumo Logic select** Manage Data > Collection > Collection**.
@@ -94,7 +94,7 @@ Follow these steps to set up an S3 Source to collect event logs from your S3 buc
 8. **Path Expression.** Enter: `events/*`
 9. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs.
 10. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.) Make a note of the Source Category you assign; you will need it when you install the  the Carbon Black Cloud App.
-11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md).
+11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/sources/hosted-collectors/amazon-aws/grant-access-aws-product.md).
     * For **Role-based access**, enter the Role ARN that was provided by AWS after creating the role.  
 
     * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.

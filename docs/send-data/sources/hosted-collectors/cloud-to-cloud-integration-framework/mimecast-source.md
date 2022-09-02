@@ -1,8 +1,9 @@
 ---
 id: mimecast-source
+title: Mimecast Source
+sidebar_label: Mimecast
 ---
 
-# Mimecast Source
 
 The Mimecast Source supports collecting SIEM, DLP, Audit, and Hold Message List data from the [Mimecast API](https://www.mimecast.com/tech-connect/documentation/). It securely stores the required authentication, scheduling, and state
 tracking information.
@@ -56,7 +57,7 @@ Consider the Authentication Profile TTL when configuring access. If your creden
 
 ### Create a Mimecast Source
 
-When you create a Mimecast Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
+When you create a Mimecast Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 To configure a Mimecast Source:
 
@@ -75,7 +76,7 @@ To configure a Mimecast Source:
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
 
-   * `_siemVendor`: Mimecast 
+   * `_siemVendor`: Mimecast
    * `_siemProduct`: Mimecast
    * `_siemFormat`: JSON
    * `_siemEventID`: The SIEM event ID is populated by the suffix of the file name, which references the log type. This includes values such as:
@@ -84,12 +85,12 @@ To configure a Mimecast Source:
      * `delivery`
      * `jrnl`
      * `ttp`
-   
+
    The DLP event id is `dlp`.
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
 
 1. **Base URL**. The base URL parameter depends on your global region. See this Mimecast [document](https://www.mimecast.com/tech-connect/documentation/api-overview/global-base-urls/) for guidance on which base URL to use.
@@ -127,16 +128,16 @@ Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
 | `domain` | String | Yes |  | The base URL parameter depends on your global region.	modifiable
 `application_key` | String | Yes |  | The Mimecast key you want to use to authenticate collection requests.	modifiable
-`application_id` | Boolean | Yes |  | he Mimecast application ID you want to use to authenticate collection requests. | modifiable | 
-| `access_key` | String | Yes |  | The Mimecast access key you want to use to authenticate collection requests. | modifiable | 
-| `secret_key` | String | Yes |  | The Mimecast secret key you want to use to authenticate collection requests. | modifiable | 
-| `supported_apis` | Array of strings | Yes |  | efine one or more of the available APIs to collect: `SIEM`, `DLP`, `Audit Events`, and `Hold Message List`. For example, for all you'd use: `["SIEM","DLP","Audit Events","Hold Message List"]` | modifiable | 
+`application_id` | Boolean | Yes |  | he Mimecast application ID you want to use to authenticate collection requests. | modifiable |
+| `access_key` | String | Yes |  | The Mimecast access key you want to use to authenticate collection requests. | modifiable |
+| `secret_key` | String | Yes |  | The Mimecast secret key you want to use to authenticate collection requests. | modifiable |
+| `supported_apis` | Array of strings | Yes |  | efine one or more of the available APIs to collect: `SIEM`, `DLP`, `Audit Events`, and `Hold Message List`. For example, for all you'd use: `["SIEM","DLP","Audit Events","Hold Message List"]` | modifiable |
 
 Mimecast Source JSON example:
 

@@ -1,9 +1,9 @@
 ---
 id: carbon-black-inventory-source
 title: Carbon Black Inventory Source
+sidebar_label: Carbon Black Inventory 
 ---
 
-#
 
 The Carbon Black Inventory Source provides a secure endpoint to receive data from the [CB Devices API](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/devices-api/). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -39,7 +39,7 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 Create a Carbon Black Inventory Source
 
-When you create a Carbon Black Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
+When you create a Carbon Black Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 To configure A Carbon Black Inventory Source:
 

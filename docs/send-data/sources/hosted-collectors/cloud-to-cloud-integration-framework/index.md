@@ -1,8 +1,7 @@
 ---
 slug: /send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework
+title: Cloud-to-Cloud Integration Framework
 ---
-
-# Cloud-to-Cloud Integration Framework
 
 The Cloud-to-Cloud Integration Framework is a fully-managed collection system that collects logs and events directly from SaaS and Cloud platforms. This data often includes custom events and user data critical for operations monitoring, security, and compliance use cases. As a fully managed collection system, integrations running within the Cloud-to-Cloud Integration Framework provide a secure endpoint to receive event data in your account. Integration authentication, scheduling, and state tracking are all managed by the framework
 
@@ -12,8 +11,8 @@ This framework is not available in the Fed deployment.
 
 ## Limitations
 
-* The number of Cloud-to-Cloud Sources is limited to 20. 
-* You are warned when you have 16 Sources or 80% of the limit. 
+* The number of Cloud-to-Cloud Sources is limited to 20.
+* You are warned when you have 16 Sources or 80% of the limit.
 * You are notified when you have reached the Source limit.
 
 ## Static IP addresses

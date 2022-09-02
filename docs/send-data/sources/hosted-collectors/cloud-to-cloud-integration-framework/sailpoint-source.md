@@ -1,8 +1,8 @@
 ---
 id: sailpoint-source
+title: SailPoint Source
+sidebar_label: SailPoint
 ---
-
-# SailPoint Source
 
 The SailPoint Source provides a secure endpoint to receive Events and User Inventory data from the [IdentityNow V3 API](https://developer.sailpoint.com/apis/v3/). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -31,7 +31,7 @@ To generate a [personal access token](https://developer.sailpoint.com/docs/auth
    The New Token button will be disabled when you’ve reached the limit of 10 personal access tokens per user. To avoid reaching this limit, we recommend you delete any tokens that are no longer needed.
    :::
 
-1. Click **Create Token** to generate and view the two components that comprise the token: the `Secret` and the `Client ID`. 
+1. Click **Create Token** to generate and view the two components that comprise the token: the `Secret` and the `Client ID`.
 
    :::important
    After you create the token, the value of the `Client ID` will be visible in the Personal Access Tokens list, but the corresponding `Secret` will not be visible after you close the window. You will need to store the `Secret` somewhere secure.
@@ -66,7 +66,7 @@ the detected issue.
 
 ## Create a SailPoint Source
 
-When you create a SailPoint Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](../../../configure-hosted-collector.md).
+When you create a SailPoint Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 To configure a Duo Source:
 
@@ -83,15 +83,15 @@ To configure a Duo Source:
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
 
-   * `_siemVendor`: Events, Users	SailPoint 
-   * `_siemProduct`: Events, Users	SailPoint 
-   * `_siemFormat`: Events	JSON 
+   * `_siemVendor`: Events, Users	SailPoint
+   * `_siemProduct`: Events, Users	SailPoint
+   * `_siemFormat`: Events	JSON
    * `_siemEventID`: Events	`<technicalName>` Where `<technicalName>` is the value from the technicalName field of the event.
    * `_siemDataType`: Users	Inventory
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. **Tenant Name**. Provide your SailPoint customer-specific organization name, such as, `{organization}.identitynow.com`.
@@ -129,14 +129,14 @@ SailPoint Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
-| `org_name` | String | Yes |  | Provide your SailPoint customer-specific organization name, such as, {organization}.identitynow.com.	modifiable | 
-| `client_id` | String | Yes |  | Provide the SailPoint client ID you want to use to authenticate collection requests.	modifiable | 
-| `client_secret` | String | Yes |  | Provide the SailPoint secret you want to use to authenticate collection requests.	modifiable | 
-| `supported_apis` | Array of strings | Yes |  | Define one or more of the available APIs to collect: Events, and Users.<br/>For example, for both you'd use: `["Events","Users"]` | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
+| `org_name` | String | Yes |  | Provide your SailPoint customer-specific organization name, such as, {organization}.identitynow.com.	modifiable |
+| `client_id` | String | Yes |  | Provide the SailPoint client ID you want to use to authenticate collection requests.	modifiable |
+| `client_secret` | String | Yes |  | Provide the SailPoint secret you want to use to authenticate collection requests.	modifiable |
+| `supported_apis` | Array of strings | Yes |  | Define one or more of the available APIs to collect: Events, and Users.<br/>For example, for both you'd use: `["Events","Users"]` | modifiable |
 
 See how to [create processing rules using JSON](/docs/send-data/sources/use-json-configure-sources).
 

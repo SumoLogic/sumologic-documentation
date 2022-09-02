@@ -1,5 +1,5 @@
 ---
-slug: /send-data/sources/hosted-collectors/amazon-web-services
+slug: /send-data/sources/hosted-collectors/amazon-aws
 title: Amazon Web Services
 ---
 

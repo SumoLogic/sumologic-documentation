@@ -1,6 +1,7 @@
 ---
 id: integrate-halo-event-logs
 title: Integrate Halo Event Logs into Sumo Logic
+sidebar_label: Halo Event Log Integration
 ---
 
 

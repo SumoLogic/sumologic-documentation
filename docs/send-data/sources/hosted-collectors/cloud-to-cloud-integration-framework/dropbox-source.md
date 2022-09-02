@@ -1,8 +1,9 @@
 ---
 id: dropbox-source
+title: Dropbox Source
+sidebar_label: Dropbox
 ---
 
-# Dropbox Source
 
 The Dropbox Source provides a secure endpoint to receive team events from the [Get Events API](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -59,7 +60,7 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 ## Create a Dropbox Source
 
-When you create a Dropbox Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](../../../hosted-collectors.md).
+When you create a Dropbox Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](../..//docs/send-data/sources/hosted-collectors).
 
 To configure a **Dropbox Source
 

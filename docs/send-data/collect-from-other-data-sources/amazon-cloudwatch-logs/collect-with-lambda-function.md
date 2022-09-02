@@ -12,7 +12,7 @@ We strongly recommend the alternative collection process described on [Amazon C
 
 ## Add a Hosted Collector and HTTP Source
 
-1. In Sumo Logic, configure a [Hosted Collector](../../configure-hosted-collector.md).
+1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
 
 :::note

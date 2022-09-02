@@ -1,6 +1,7 @@
 ---
 id: amazon-cloudfront-source
 title: Amazon CloudFront Source
+sidebar_label: Amazon CloudFront
 ---
 
 

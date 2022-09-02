@@ -1,8 +1,10 @@
 ---
 id: cybereason-source
+title: Cybereason Source
+sidebar_label: Cybereason
 ---
 
-# Cybereason Source
+
 
 The Cybereason Source provides a secure endpoint to receive authentication logs from the Cybereason [Malops API](https://nest.cybereason.com/documentation/api-documentation/all-versions/retrieve-all-malops-all-types#getmalopsmalware). It securely stores the required authentication, scheduling, and state
 tracking information.
@@ -44,14 +46,14 @@ You need to have a Cybereason username and password as well as your customer-spe
 
 ## Create a Cybereason Source
 
-When you create a Cybereason Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
+When you create a Cybereason Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/sources/hosted-collectors/configure-hosted-collector).
 
 To configure a Cybereason Source:
 
 1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
- 
+
 1. Select **Cybereason**.
 
     ![cyberReason icon.png](/img/send-data/cyberReason-icon.png)
@@ -70,8 +72,8 @@ To configure a Cybereason Source:
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
+   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. **Cybereason Host**. Provide your customer-specific host, such as `mydomain.cybereason.net`. If you have a customer-specific port this should be included, such as `mydomain.cybereason.net:8443`.
 
@@ -133,16 +135,16 @@ The following table shows the **config** parameters for a Cybereason Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
-| `client_user` | String | Yes |  | Provide the email address you want to use to authenticate collection requests. | modifiable | 
-| `client_password` | String | Yes |  | Provide the password for the user that you want to use to authenticate collection requests. | modifiable | 
-| `polling_interval` | Integer | No | 300 | This sets how often the Source checks for new data. | modifiable | 
-| `back_collection_hours` | Integer | No | 0 | Sets the number of hours of prior MalOps to collect. Supports 0 to 720. | modifiable | 
-| `dup_machines` | Boolean | No | False | Set to true to duplicate logs for each element in the machine array. | modifiable | 
-| `dup_users` | Boolean | No | False | Set to true to duplicate logs for each element in the users array. | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
+| `client_user` | String | Yes |  | Provide the email address you want to use to authenticate collection requests. | modifiable |
+| `client_password` | String | Yes |  | Provide the password for the user that you want to use to authenticate collection requests. | modifiable |
+| `polling_interval` | Integer | No | 300 | This sets how often the Source checks for new data. | modifiable |
+| `back_collection_hours` | Integer | No | 0 | Sets the number of hours of prior MalOps to collect. Supports 0 to 720. | modifiable |
+| `dup_machines` | Boolean | No | False | Set to true to duplicate logs for each element in the machine array. | modifiable |
+| `dup_users` | Boolean | No | False | Set to true to duplicate logs for each element in the users array. | modifiable |
 
 Cybereason Source JSON example:
 
