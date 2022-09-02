@@ -32,7 +32,7 @@ Files are transferred in their compressed form and decompressed when ingested. 
 
 ## AWS S3 Source
 
-When you create an AWS S3 Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
+When you create an AWS S3 Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 ## Rules
 

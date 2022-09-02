@@ -42,8 +42,8 @@ This section has instructions for setting up the ingestion pipeline, from Azure 
 
 In this step, you configure an HTTP Source to receive logs from the Azure function.
 
-1. Select a hosted collector where you want to configure the HTTP Source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
-1. Configure an HTTP Source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors//http-logs-metrics-source). 
+1. Select a hosted collector where you want to configure the HTTP Source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+1. Configure an HTTP Source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-logs-metrics-source). 
 
 ### Step 2. Configure Azure resources using ARM template
 

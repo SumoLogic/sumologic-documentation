@@ -34,8 +34,8 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 
 To add a hosted collector and HTTP source, do the following:
 
-1. Create a new Sumo Logic Hosted Collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
-1. Create a new HTTP Log Source in the hosted collector created above by following [these instructions.](/docs/send-data/hosted-collectors//http-logs-metrics-source)
+1. Create a new Sumo Logic Hosted Collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+1. Create a new HTTP Log Source in the hosted collector created above by following [these instructions.](/docs/send-data/hosted-collectors/http-logs-metrics-source)
 
 ## Step 2: Adding the Sumo Logic Lambda Extension to your AWS Lambda function
 

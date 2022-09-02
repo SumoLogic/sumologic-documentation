@@ -23,7 +23,7 @@ For more information on Netskope, refer to the Netskope [documentation](https://
 
 ## Collect Logs for Netskope
 
-To collect logs from the Netskope platform, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Netskope](/docs/send-data/hosted-collectors//Cloud-to-Cloud-Integration-Framework/Netskope-Source) to create the source and use the same source category while installing the app.
+To collect logs from the Netskope platform, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Netskope](/docs/send-data/hosted-collectors/Cloud-to-Cloud-Integration-Framework/Netskope-Source) to create the source and use the same source category while installing the app.
 
 The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you're using the Sumo Logic FedRamp deployment, use the sections below to configure the collection for this app.
 
@@ -54,7 +54,7 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 **To add a hosted collector and HTTP source, do the following:
 
 1. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Add an [ HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors//http-logs-metrics-source).
+2. Add an [ HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-logs-metrics-source).
 3. In **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
 * Specify **Format** as `epoch`
 * Specify **Timestamp locator** as `\"timestamp\": (.*),`

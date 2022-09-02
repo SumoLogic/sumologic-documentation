@@ -241,7 +241,7 @@ This section provides instructions for configuring metrics collection for the Su
 #### Configure Metrics Collection
 
 1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
-2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/hosted-collectors//http-logs-metrics-source). Make note of the **HTTP Source URL**.
+2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/hosted-collectors/http-logs-metrics-source). Make note of the **HTTP Source URL**.
 3. **Install Telegraf**. Use the following steps [install Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
    1. Configure and start Telegraf. As part of collecting metrics data from Telegraf, we will use the [MongoDB input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic. Create or modify telegraf.conf and copy and paste the text below:
     ```sql
@@ -281,7 +281,7 @@ At this point, MongoDB metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for MongoDB running on a non-Kubernetes environment for the Sumo Logic App for MongoDB. By default, MongoDB logs are stored in a log file. MongoDB also supports forwarding logs via Syslog.
 
-Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors//Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect MongoDB logs and follow the instructions below to set up log collection:
 

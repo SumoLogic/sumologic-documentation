@@ -58,7 +58,7 @@ A CrowdStrike Source authenticates with an OAuth2 API key. These are created in 
 
 ## Create a CrowdStrike Source
 
-When you create a CrowdStrike Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
+When you create a CrowdStrike Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a CrowdStrike Source:
 

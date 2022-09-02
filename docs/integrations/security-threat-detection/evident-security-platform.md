@@ -206,7 +206,7 @@ This page demonstrates how to configure log collection for the Evident.io ESP Ap
 ### Step 1. Add a Sumo Logic Collector and Source
 
 1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Configure an [HTTP Source](/docs/send-data/hosted-collectors//http-logs-metrics-source).
+2. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-logs-metrics-source).
     1. **Name. **Enter Evident.io SNS Integration.  
     2. **Source Category. **Enter security_evident.
 3. In the **Advanced** section, configure:

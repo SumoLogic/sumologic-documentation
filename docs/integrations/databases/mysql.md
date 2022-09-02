@@ -362,7 +362,7 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
 #### Configure Metrics collection
 
 1. **Configure a Hosted Collector**. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. **Configure an HTTP Logs and Metrics Source.** For instructions, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors//http-logs-metrics-source). Make a note of the HTTP Source URL.
+2. **Configure an HTTP Logs and Metrics Source.** For instructions, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-logs-metrics-source). Make a note of the HTTP Source URL.
 3. **Install Telegraf**. For instructions see [Install Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we use the [MySQL input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 5. Create or modify the `telegraf.conf` file, and copy the following into the relevant sections.

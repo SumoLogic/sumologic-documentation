@@ -25,7 +25,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
 1. In Sumo Logic select **Manage Data \> Collection \> Collection**. 
 
-1. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
+1. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 1. Click **Add Source** next to the Hosted Collector and click **Google Cloud Platform**.
 

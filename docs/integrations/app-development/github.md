@@ -112,7 +112,7 @@ The Sumo Logic App for GitHub connects to your GitHub repository at the Organiza
 In this step, you configure a Hosted Collector to receive Webhook Events from Github and set up an HTTP Source on it.
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector), or select an existing hosted collector for the HTTP Source.
-2. Configure an[ HTTP Source](/docs/send-data/hosted-collectors//http-logs-metrics-source) on the Hosted Collector.
+2. Configure an[ HTTP Source](/docs/send-data/hosted-collectors/http-logs-metrics-source) on the Hosted Collector.
     * For Source Category, enter any string to tag the output collected from this Source, such as **GitHub**.
     * Click **+Add Field** and provide the following:
         * **Field Name.** `_convertHeadersToFields`

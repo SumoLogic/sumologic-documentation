@@ -188,7 +188,7 @@ With both options enabled above, the integration would create and ingest four to
 
 ## Create a Proofpoint TAP Source
 
-When you create a Proofpoint TAP Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
+When you create a Proofpoint TAP Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Proofpoint TAP Source:
 

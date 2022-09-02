@@ -8,7 +8,7 @@ This page provides you instructions on how to Collect Logs from the Palo Alto N
 
 To collect logs from Palo Alto Networks Cortex Data Lake: 
 
-1. Create and configure a Cloud Syslog source in your Sumo Logic account using [these instructions](/docs/send-data/hosted-collectors//cloud-syslog-source).
+1. Create and configure a Cloud Syslog source in your Sumo Logic account using [these instructions](/docs/send-data/hosted-collectors/cloud-syslog-source).
 
     :::note
     After configuring the source, you can go to **Collectors and Sources \> Show Token** to display the token for the newly created Cloud Syslog source.

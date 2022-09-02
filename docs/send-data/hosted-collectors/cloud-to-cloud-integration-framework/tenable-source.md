@@ -47,7 +47,7 @@ The Tenable Source is configured with a Tenable IO Access and Secret Key. Your a
 
 ## Create a Tenable Source
 
-When you create a Tenable Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
+When you create a Tenable Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure A Tenable Source:
 

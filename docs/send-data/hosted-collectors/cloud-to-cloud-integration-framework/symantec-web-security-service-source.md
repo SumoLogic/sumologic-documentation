@@ -66,7 +66,7 @@ See [Symantec Security Software documentation](https://techdocs.broadcom.com/us/
 
 ## Create a Symantec Web Security Service Source
 
-When you create a Symantec Web Security Service Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
+When you create a Symantec Web Security Service Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Symantec Web Security Service Source:
 

@@ -84,7 +84,7 @@ Use the following steps to create a service application:
 
 ## Create a Microsoft Graph Identity Protection Source
 
-When you create a Microsoft Graph Identity Protection Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
+When you create a Microsoft Graph Identity Protection Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Microsoft Graph Identity Protection Source:
 

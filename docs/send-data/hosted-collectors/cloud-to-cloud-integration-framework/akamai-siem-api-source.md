@@ -43,7 +43,7 @@ The Akamai SIEM API Source requires you to provide a **Client Token**, **Cli
 
 ## Create an Akamai SIEM API Source
 
-When you create an Akamai SIEM API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
+When you create an Akamai SIEM API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Akamai SIEM API Source:
 

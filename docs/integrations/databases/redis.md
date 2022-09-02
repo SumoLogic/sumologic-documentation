@@ -236,7 +236,7 @@ This section provides instructions for configuring metrics collection for the Su
 #### Configure Metrics Collection
 
 1. Configure a Hosted Collector. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
-2. Configure an HTTP Logs and Metrics Source. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions](/docs/send-data/hosted-collectors//http-logs-metrics-source). Make a note of the **HTTP Source URL**.
+2. Configure an HTTP Logs and Metrics Source. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions](/docs/send-data/hosted-collectors/http-logs-metrics-source). Make a note of the **HTTP Source URL**.
 3. Install Telegraf. Follow the steps in [this document ](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md)Use the [in this document following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. Configure and start Telegraf. As part of collecting metrics data from Telegraf, we will use the [Redis input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.  
    1. Create or modify the telegraf.conf file and copy and paste the text below:   
@@ -275,7 +275,7 @@ At this point, Redis metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for Redis running on a non-Kubernetes environment for the Sumo Logic App for Redis. By default, Redis logs are stored in a log file. Redis also supports forwarding of logs via Syslog.
 
-Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors//Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Sumo Logic Installed collectors](/docs/send-data/Installed-Collectors) which  requires you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work.
+Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Sumo Logic Installed collectors](/docs/send-data/Installed-Collectors) which  requires you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work.
 
 Follow the instructions below to set up log collection:
 

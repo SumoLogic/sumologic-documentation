@@ -61,7 +61,7 @@ Unlike Installed Collectors, [Hosted Collectors](/docs/send-data/hosted-collecto
 
 Because there are no performance issues to consider, you can configure as many Sources as you'd like, up to 1,000, for a single Hosted Collector. Consider setting up more than one Hosted Collector if you'd like to tag different data types with different metadata.
 
-See how to [configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector) and all of the available [Sources supported on Hosted Collectors](/docs/send-data/hosted-collectors/).
+See how to [configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) and all of the available [Sources supported on Hosted Collectors](/docs/send-data/hosted-collectors/).
 
 ### Logging levels
 

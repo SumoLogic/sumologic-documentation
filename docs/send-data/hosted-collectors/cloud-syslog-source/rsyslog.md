@@ -5,7 +5,7 @@ title: rsyslog
 
 
 
-Sumo Logic supports syslog clients such as rsyslog. This document has instructions on how to configure your server to send syslog data. If syslog data does not appear in Sumo Logic, refer to the Troubleshooting section in [Cloud Syslog Source](/docs/send-data/hosted-collectors//cloud-syslog-source).
+Sumo Logic supports syslog clients such as rsyslog. This document has instructions on how to configure your server to send syslog data. If syslog data does not appear in Sumo Logic, refer to the Troubleshooting section in [Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source).
 
 ## Set up TLS
 

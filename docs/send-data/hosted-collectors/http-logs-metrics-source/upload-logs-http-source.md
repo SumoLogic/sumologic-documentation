@@ -5,7 +5,7 @@ sidebar_label: Upload Logs
 ---
 
 
-After you have added an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors//http-logs-metrics-source) to a [Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector) you can begin uploading data. You can upload both logs and metrics to the same HTTP source, however not in the same HTTP request. This document provides instructions on uploading logs, if you are uploading metrics see [Upload Metrics to an HTTP Source](upload-metrics-to-http-source.md).
+After you have added an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-logs-metrics-source) to a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) you can begin uploading data. You can upload both logs and metrics to the same HTTP source, however not in the same HTTP request. This document provides instructions on uploading logs, if you are uploading metrics see [Upload Metrics to an HTTP Source](upload-metrics-to-http-source.md).
 
 :::tip
 To immediately validate the reception of log data use Live Tail. Data sent to an HTTP source may take some time to show up in Search due to indexing delay. If your source does not seem to be receiving data, see [Troubleshooting HTTP Sources](troubleshooting-http-sources.md).

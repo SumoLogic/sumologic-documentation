@@ -61,7 +61,7 @@ To create a new Sumo Logic hosted collector, perform the steps in the[ Configure
   2. **Configure an HTTP Logs and Metrics Source**
 
 
-Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/hosted-collectors//http-logs-metrics-source). Suggestions for setting your source category:
+Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/hosted-collectors/http-logs-metrics-source). Suggestions for setting your source category:
 
 1. For identifying a specific cluster or a group of hosts: `<clustername>/metrics`
 2. For identifying a group of hosts within a given deployment: `<environment name>/<clustername>/metrics`

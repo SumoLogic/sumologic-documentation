@@ -52,7 +52,7 @@ To enable Amazon Virtual Private Cloud (VPC) Flow Logs from the AWS console:
 #### Step 2: Configure hosted collector and HTTP source
 
 1. Configure a [Hosted Collector ](/docs/send-data/hosted-collectors/configure-hosted-collector)in Sumo Logic.
-2. Configure an [HTTP Source](/docs/send-data/hosted-collectors//http-logs-metrics-source) in Sumo Logic. When configuring the source:
+2. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-logs-metrics-source) in Sumo Logic. When configuring the source:
 3. Under **Advanced Options for Logs**, for **Timestamp Format**, click **Specify a format**.
 4. **Format**. Enter: `epoch`
 5. **Timestamp locator**. Enter:
@@ -151,10 +151,10 @@ This section has instructions for collecting Amazon VPC Flow Logs using an AWS S
 
 #### Step 2: Configure AWS S3 source  
 
-1. [Grant Access to an AWS S3 Bucket](/docs/send-data/hosted-collectors//amazon-aws/grant-access-aws-product.md).
+1. [Grant Access to an AWS S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
 2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
 3. When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-4. Add an [AWS Source](/docs/send-data/hosted-collectors//amazon-aws/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic. When you configure the S3 source:
+4. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic. When you configure the S3 source:
     1. In the **Advanced Options for Logs** section, uncheck the **Detect messages spanning multiple lines** option.
     2. In the **Processing Rules for Logs** section, add an **Exclude messages that match** processing rule to ignore the following file header lines: `version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`.
 

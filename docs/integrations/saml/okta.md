@@ -186,7 +186,7 @@ _sourceCategory = "okta" "user.mfa.factor.deactivate"
 
 ## Configuring Okta Log Collection for Non-FedRamp Deployments
 
-Use the [new Cloud to Cloud Integration for Okta](/docs/send-data/hosted-collectors//cloud-to-cloud-integration-framework/okta-source.md) to create the source and use the same source category while installing the app.
+Use the [new Cloud to Cloud Integration for Okta](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) to create the source and use the same source category while installing the app.
 
 The sections below are available for FedRamp Sumo Logic deployments to meet FedRamp's specific compliance requirements. If you're using the Sumo Logic FedRamp deployment, you must use the sections below to configure collection for this app.
 

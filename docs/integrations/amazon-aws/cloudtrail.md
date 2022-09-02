@@ -78,11 +78,11 @@ If you have more than one environment that generates CloudTrail data (such as op
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
 To configure an AWS CloudTrail Source, perform these steps:
-1. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors//amazon-aws/aws-cloudtrail-source.md) to Sumo Logic.
-2. [Grant Sumo Logic access](/docs/send-data/hosted-collectors//amazon-aws/grant-access-aws-product.md) to an Amazon S3 bucket.
+1. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic.
+2. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md) to an Amazon S3 bucket.
   * Generate the Role-Based Access CloudFormation template in Sumo Logic and download the template.
   * Create the CloudFormation stack in AWS Management Console using the template.
-  * Copy the Role ARN from the Outputs tab and paste it in the Role ARN field in Sumo Logic CloudTrail Source created in step 3. For more information, refer [Configuring your AWS source with CloudFormation](/docs/send-data/hosted-collectors//amazon-aws/configure-our-aws-source-cloudformation#set-up-an-iam-role).
+  * Copy the Role ARN from the Outputs tab and paste it in the Role ARN field in Sumo Logic CloudTrail Source created in step 3. For more information, refer [Configuring your AWS source with CloudFormation](/docs/send-data/hosted-collectors/amazon-aws/configure-our-aws-source-cloudformation#set-up-an-iam-role).
 3. [Enable Sumo to track AWS Admin activity](#Enable-Sumo-to-Track-AWS-Admin-Activity). This step is optional, but if you don't do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
 4. Install the Sumo Logic App for AWS CloudTrail.
 
@@ -109,7 +109,7 @@ To track Admin activity in your AWS account, and to provide data for all Adminis
 
 ### Configure an HTTP Source
 
-1. Configure an [HTTP Source](/docs/send-data/hosted-collectors//http-logs-metrics-source) on a Hosted Collector, either the collector where you installed CloudTrail source, or another collector, if you prefer.  Use the using the following settings:
+1. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-logs-metrics-source) on a Hosted Collector, either the collector where you installed CloudTrail source, or another collector, if you prefer.  Use the using the following settings:
     * For **Name**, enter **Administrative Users**.
     * For **Source Category**, enter **admin_users**.
     * Deselect **Enable Timestamp Parsing**.
@@ -129,7 +129,7 @@ To track Admin activity in your AWS account, and to provide data for all Adminis
 
   Your organization's usernames may look different; make sure that only one user name is on each line.
 
-2. [Upload](/docs/send-data/hosted-collectors//http-logs-metrics-source) the admin_users.csv file to the HTTP Source. For example, using cURL, you’d type `curl -X POST -T admin_users.csv “<url>"` making sure to replace `<url>` with the unique URL generated for your HTTP Source.
+2. [Upload](/docs/send-data/hosted-collectors/http-logs-metrics-source) the admin_users.csv file to the HTTP Source. For example, using cURL, you’d type `curl -X POST -T admin_users.csv “<url>"` making sure to replace `<url>` with the unique URL generated for your HTTP Source.
 3. To verify that the data has uploaded, run the following search after about 10 minutes: `_sourceCategory=admin_users`
 4. If the search returns the correct result, run the following search to save the data to a shared location that can be referenced by the Panels in the CloudTrail app:
   ```sql

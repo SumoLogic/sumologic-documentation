@@ -37,7 +37,7 @@ Our new app install flow is now in Beta. It is only enabled for certain customer
 
 ### Before you begin
 
-Enable Elastic Load Balancing logging in your AWS account and configure a Sumo Logic ELB Source, using [these instructions](/docs/send-data/hosted-collectors//amazon-aws/AWS-Elastic-Load-Balancing-Source).
+Enable Elastic Load Balancing logging in your AWS account and configure a Sumo Logic ELB Source, using [these instructions](/docs/send-data/hosted-collectors/amazon-aws/AWS-Elastic-Load-Balancing-Source).
 
 If you have more than one environment that generates Elastic Load Balancing data (such as ops, dev, and so on), you’ll need to configure a separate S3 Source for each environment. This means that you’ll have the three App Dashboards for each environment. To avoid confusion, and in order to identify which environment is generating data, you should name each S3 Source with the environment's name. For example, you might name Sources as ELB-prod, ELB-dev, ELB-test, and so on.
 
@@ -93,10 +93,10 @@ These configuration instructions apply to log collection from all AWS Source typ
 4. Enter a name for the new Source. A description is optional.
 5. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 
-Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](/docs/send-data/hosted-collectors//amazon-aws/collection-aws-govcloud) for details.
+Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](/docs/send-data/hosted-collectors/amazon-aws/collection-aws-govcloud) for details.
 6. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example:
 
-7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one **wildcard (*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](/docs/send-data/hosted-collectors//amazon-aws/Amazon-Path-Expressions) for details.
+7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one **wildcard (*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions) for details.
 8. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
     * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
     * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example `-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m).
@@ -108,14 +108,14 @@ If you paused the Source and want to skip some data when you resume, update the 
 
 * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
 * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
-11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors//amazon-aws/grant-access-aws-product.md).
+11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
     * For **Role-based access** enter** **the Role ARN that was provided by AWS after creating the role.  
     * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 12. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
 
 Sumo Logic highly recommends using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date [Alerts](/docs/alerts/index.md).
     * **Scan Interval.** Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. \
-If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](/docs/send-data/hosted-collectors//amazon-aws/AWS-S3-Scan-Interval-Sources).
+If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Scan-Interval-Sources).
     * **SNS Subscription Endpoint **(**Highly Recommended**). New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file.
         3. To set up the subscription you need to get an endpoint URL from Sumo to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click on **Create URL** and use the provided endpoint URL when creating your subscription in step C.
 
@@ -123,7 +123,7 @@ If the Source is not subscribed to an SNS topic and set to **Automatic** the sca
 
 #### Set up SNS in AWS (Highly Recommended)
 
-The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors//amazon-aws/configure-our-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
+The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-our-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
 
 1. Go to **Services >** **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step.
 Make sure that the topic and the bucket are in the same region.
@@ -258,7 +258,7 @@ Our new app install flow is now in Beta. It is only enabled for certain customer
 
 <details><summary>What if data isn't displaying in all Panels?</summary>
 
-Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS Elastic Load Balancing logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](/docs/send-data/hosted-collectors//amazon-aws/AWS-S3-Scan-Interval-Sources)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
+Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS Elastic Load Balancing logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Scan-Interval-Sources)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
 
 Additionally, you can change the time range of a Panel. Even though these Panels have been preconfigured, they can be edited just like any other Panel. You'll find instructions in Changing the time range of a Panel.
 

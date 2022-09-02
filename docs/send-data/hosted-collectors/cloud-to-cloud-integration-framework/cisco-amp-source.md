@@ -39,7 +39,7 @@ The integration requires an Cisco Amp Client ID and API key.
 
 ## Create a Cisco AMP Source
 
-When you create a Cisco AMP Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
+When you create a Cisco AMP Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Cisco AMP Source:
 

@@ -66,7 +66,7 @@ To configure an HTTP source for Azure, do the following:
 1. Do one of the following:
 * Select a hosted collector on which to configure the HTTP source.
 * Create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-1. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors//http-logs-metrics-source). Make a note of the URL for the source, you will need it in the next step.
+1. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-logs-metrics-source). Make a note of the URL for the source, you will need it in the next step.
 
 
 ### Configure Azure Resources using ARM template

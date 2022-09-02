@@ -65,7 +65,7 @@ To configure Hosted Collector and HTTP Source, do the following:
 
 1. Log in to Sumo Logic.
 2. Follow the instructions for configuring a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-3. Follow the instructions for configuring an [HTTP Source](/docs/send-data/hosted-collectors//http-logs-metrics-source).
+3. Follow the instructions for configuring an [HTTP Source](/docs/send-data/hosted-collectors/http-logs-metrics-source).
 
 
 2.png "image_tooltip")

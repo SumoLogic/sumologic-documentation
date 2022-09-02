@@ -96,7 +96,7 @@ From there select (or search for) the following permissions. An Administrator m
 
 ## Create a Microsoft Azure AD Inventory Source
 
-When you create a Microsoft Azure AD Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
+When you create a Microsoft Azure AD Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Microsoft Azure AD Inventory Source:
 
