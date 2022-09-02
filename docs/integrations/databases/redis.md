@@ -288,7 +288,7 @@ Follow the instructions below to set up log collection:
 
 <details><summary>Option A: Configure Redis logs to go to log files</summary>
 
-With this option, Redis logs written to a log file can be collected via the [Local File Source of a](/docs/send-data/Sources/installed-collectors/Local-File-Source) Sumo Logic Installed collector.
+With this option, Redis logs written to a log file can be collected via the [Local File Source of a](/docs/send-data/installed-collectors/sources/local-file-source) Sumo Logic Installed collector.
 
 To configure the Redis log file, locate your local **redis.conf** configuration file in the database directory. By default, Redis logs are stored in /var/log/redis/redis-server.log.
 
@@ -310,7 +310,7 @@ After determining the location of conf file modify the **redis.conf** configurat
 
 <details><summary>Option B: Configure Redis logs to stream data to a Syslog source</summary>
 
-With this option, Redis logs can be streamed to the [Syslog Source](/docs/send-data/Sources/installed-collectors/Syslog-Source) of a Sumo Logic Installed Collector.
+With this option, Redis logs can be streamed to the [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source) of a Sumo Logic Installed Collector.
 
 To configure the Redis syslog, locate your local **redis.conf** configuration file in the database directory.
 
@@ -340,7 +340,7 @@ After determining the location of conf file, modify the **redis.conf** configura
 
 3. **Configure an Installed Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 4. **Configure a Source**. To add a Local File Source source for Redis, do the following:
-   1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) in the installed collector configured in the previous step.
+   1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:
       * **Name.** (Required)
       * **Description.** (Optional)

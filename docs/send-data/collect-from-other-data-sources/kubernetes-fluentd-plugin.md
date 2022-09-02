@@ -4,7 +4,9 @@ title: Kubernetes Fluentd plugin
 ---
 
 
+:::warning solution deprecated
 The configuration described on this page is deprecated. Sumo Logic recommends using the comprehensive Kubernetes solution instead.  
+:::
 
 To monitor Kubernetes, Sumo recommends using the open source FluentD agent to collect log data, rather than a Sumo collector.  
 

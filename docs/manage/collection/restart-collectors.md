@@ -23,7 +23,7 @@ You cannot restart a Collector if:
 * A software upgrade or downgrade is in progress.
 * A restart was triggered within the past five minutes.
 * The Collector version does not support restarts.
-* The Collector is not running or [offline](../../send-data/installed-collectors/about.md).
+* The Collector is not running or [offline](docs/send-data/installed-collectors).
 * The requesting user does not have the necessary privileges to perform a restart. 
 
 ## Restart a Collector

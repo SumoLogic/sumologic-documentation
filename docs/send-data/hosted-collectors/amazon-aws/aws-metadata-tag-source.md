@@ -9,15 +9,15 @@ sidebar_label: AWS Metadata (Tag)
 A Sumo Logic AWS Metadata Source allows you to collect tags from EC2 instances running on AWS. Tags are returned in your search results and can be referenced in queries. For information about assigning tags to EC2 instances, see [Tagging Your Amazon EC2 Resources](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in AWS help. Only one AWS Metadata Source is required to collect tags from multiple hosts.
 
 :::note
-Collecting AWS Metadata requires [Collector](/docs/send-data/sources/installed-collectors) version 19.162+.
+Collecting AWS Metadata requires [Collector](/docs/send-data/installed-collectors/sources) version 19.162+.
 :::
 
 ## Metrics
 
 Tags are automatically applied to:
 
-* Metrics ingested by [host metric sources](docs/send-data/sources/installed-collectors/host-metrics-source.md) on Installed Collectors.
-* Graphite and Carbon 2.0 metrics ingested by [streaming metric sources](docs/send-data/sources/installed-collectors/streaming-metrics-source.md) on Installed Collectors.
+* Metrics ingested by [host metric sources](docs/send-data/installed-collectors/sources/host-metrics-source.md) on Installed Collectors.
+* Graphite and Carbon 2.0 metrics ingested by [streaming metric sources](docs/send-data/installed-collectors/sources/streaming-metrics-source.md) on Installed Collectors.
 
 You can also apply AWS tags to Graphite and Carbon 2.0 metrics ingested by an HTTP source. To enable tagging of metrics from an HTTP source, you must specify the `InstanceID` and `Region` tags in the header using `X-Sumo-Dimensions` or `X-Sumo-Metadata` as well as to the metric itself. For reference see [Supported HTTP Headers](../http-logs-metrics-source/upload-metrics-to-http-source.md).
 

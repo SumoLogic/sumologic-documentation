@@ -292,9 +292,9 @@ This section provides instructions for configuring log collection for Sumo Logic
    * `notice` (default value): moderately verbose, ideal for production environments
    * `warning`: only very important/critical messages are logged
 
-  All logging settings are located in [Elasticsearch.conf](https://www.elastic.co/guide/en/elasticsearch/reference/current/logging.html). By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`. The default directory for log files is listed in the Elasticsearch.conf file. Logs from the Elasticsearch log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) as explained in the next section.
+  All logging settings are located in [Elasticsearch.conf](https://www.elastic.co/guide/en/elasticsearch/reference/current/logging.html). By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`. The default directory for log files is listed in the Elasticsearch.conf file. Logs from the Elasticsearch log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) as explained in the next section.
 2. **Configure an Installed Collector**. To collect logs directly from the Elasticsearch machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors) and a Local File Source.
-3. Configure a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source), editing the fields as follows:
+3. Configure a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), editing the fields as follows:
    * **Name.** (Required)
    * **Description.** (Optional)
    * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in `/var/log/elasticsearch/elasticsearch-<clustername>.log`. If you're using a customized path, check the Elasticsearch.conf file for this information.

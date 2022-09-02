@@ -23,7 +23,7 @@ See the following topics for additional information:
 * [API Authentication](/docs/api/getting-started#Authentication) for information on API authentication options.
 * [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for a list of API endpoints to use to connect your API client to the Sumo Logic API.
 * [Use JSON to Configure Sources](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources) for a description of Source parameters.
-* [View or Download Collector or Source JSON Configuration](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for instructions on viewing or downloading the current JSON configuration file for a collector or source from the web application.
+* [View or Download Collector or Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for instructions on viewing or downloading the current JSON configuration file for a collector or source from the web application.
 * [Troubleshooting APIs](/docs/api/troubleshooting.md)
 
 There is a community-supported script available on GitHub that allows you to conduct bulk actions to Collectors, see [Collector Management Script](https://github.com/SumoLogic/collector-management-client).
@@ -259,7 +259,7 @@ The following table lists the API response fields for installed and hosted Colle
    <td>For installed Collectors, whether the Collector is using local source configuration management (using a <code>JSON</code> file), or cloud management (using the <code>UI</code>)
    </td>
    <td>Modifiable
-<p>To assign to <code>JSON</code> see <a href="/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management/existing-collectors-and-sources">Local Configuration File Management for Existing Collectors and Sources</a>.</p>
+<p>To assign to <code>JSON</code> see <a href="/docs/send-data/use-json-configure-sources/local-configuration-file-management/existing-collectors-and-sources">Local Configuration File Management for Existing Collectors and Sources</a>.</p>
    </td>
   </tr>
   <tr>
@@ -750,7 +750,7 @@ Use the POST method with a JSON file to create a new Hosted Collector. The requi
 
 
 21
-This method can only be used to create Hosted Collectors. You must [install a Collector manually](/docs/send-data/sources/installed-collectors) to create an Installed Collector.
+This method can only be used to create Hosted Collectors. You must [install a Collector manually](/docs/send-data/installed-collectors/sources) to create an Installed Collector.
 
 **Method: `POST Path: /collectors`**
 
@@ -1137,7 +1137,7 @@ Error Codes and Messages
 
 ## Source API Methods and Examples
 
-The Collector Management API allows you to manage Collectors and Sources from an HTTP endpoint. This topic describes the Source API methods, which you can use to create installed or hosted Sources of any type by specifying the `sourceType` parameter. When using [local configuration file management](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management) you can no longer manage Sources through the Collector Management API.
+The Collector Management API allows you to manage Collectors and Sources from an HTTP endpoint. This topic describes the Source API methods, which you can use to create installed or hosted Sources of any type by specifying the `sourceType` parameter. When using [local configuration file management](/docs/send-data/use-json-configure-sources/local-configuration-file-management) you can no longer manage Sources through the Collector Management API.
 
 You cannot use the Source API to create Microsoft Office 365 sources, Google Audit sources, or any other sources that require OAuth-based authentication with another vendor.
 
