@@ -10,13 +10,13 @@ A Collector is a small application that gathers log data from your servers and s
 
 ## Sumo Logic Collectors and Sources
 
-Sumo Logic [Installed Collectors](/docs/send-data/sources/installed-collectors) receive data from one or more [Sources](/docs/send-data/sources).
+Sumo Logic [Installed Collectors](/docs/send-data/installed-collectors/sources) receive data from one or more [Sources](/docs/send-data/collectors-sources).
 
-Collectors collect raw log data, compress it, encrypt it, and send it to the Sumo Cloud, in real time. A single Sumo Logic Collector can collect up to 15,000 events per second or more and has fault tolerance during network or service outages. If you'd like to collect non-traditional machine data, a [Script Source](/docs/send-data/sources/installed-collectors/script-source) or [Script Action](../send-data/sources/installed-collectors/script-action.md) provide a great deal of flexibility to collect files.
+Collectors collect raw log data, compress it, encrypt it, and send it to the Sumo Cloud, in real time. A single Sumo Logic Collector can collect up to 15,000 events per second or more and has fault tolerance during network or service outages. If you'd like to collect non-traditional machine data, a [Script Source](/docs/send-data/installed-collectors/sources/script-source) or [Script Action](/docs/send-data/installed-collectors/sources/script-action) provide a great deal of flexibility to collect files.
 
 For system requirement details, see [Installed Collector Requirements](system-requirements.md).
 
-Sumo Logic [Hosted Collectors](/docs/send-data/hosted-collectors) are hosted in the Sumo Cloud and receive data from one or more [Sources](/docs/send-data/sources)). You can configure it to collect data from various cloud services like Amazon Web Services, Google Cloud Platform, G Suite, and Microsoft Office 365. It offers [Cloud Syslog Sources](/docs/send-data/hosted-collectors/cloud-syslog-source) to receive syslog data and [HTTP Sources](/docs/send-data/hosted-collectors/http-logs-metrics-source) to receive logs and metrics.
+Sumo Logic [Hosted Collectors](/docs/send-data/hosted-collectors) are hosted in the Sumo Cloud and receive data from one or more [Sources](/docs/send-data/collectors-sources)). You can configure it to collect data from various cloud services like Amazon Web Services, Google Cloud Platform, G Suite, and Microsoft Office 365. It offers [Cloud Syslog Sources](/docs/send-data/hosted-collectors/cloud-syslog-source) to receive syslog data and [HTTP Sources](/docs/send-data/hosted-collectors/http-logs-metrics-source) to receive logs and metrics.
 
 ## Sumo Logic Cloud
 

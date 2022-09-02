@@ -37,7 +37,7 @@ If the Source has any issues during any one of these states it is placed in an 
 
 When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
 
-On the Collection page, the Health and Status for Sources is displayed. Use [Health Events](../../../manage/health-events.md) to investigate issues with collection.
+On the Collection page, the Health and Status for Sources is displayed. Use [Health Events](docs/manage/health-events.md) to investigate issues with collection.
 
 ![netscope error.png](/img/send-data/netscope-error.png)
 
@@ -110,7 +110,7 @@ event log in the Health Event Index.
 
 #### JSON configuration 
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|

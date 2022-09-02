@@ -276,7 +276,7 @@ By default, Memcached logs are stored in a log file. Local log files can be coll
   Save the file and  restart Memcached.
 2. **Configuring a Collector** To collect logs directly from the Memcached machine, configure an[ Installed Collector](/docs/send-data/Installed-Collectors).
 3. **Configuring a Source** To collect logs directly from your Memcached machine, use an Installed Collector and a Local File Source.
-    1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+    1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
     2. Configure the Local File Source fields as follows:
         * **Name**. (Required)
         * **Description**. (Optional)

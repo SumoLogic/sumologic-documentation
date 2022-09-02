@@ -51,7 +51,7 @@ You can bake the Collector into an image, install it manually, or use automat
         * Container Logs
         * Container Metrics
         * Host Logs
-        * Host Metrics (Sumo's [Host Metrics source](../sources/installed-collectors/host-metrics-source.md) is required.)
+        * Host Metrics (Sumo's [Host Metrics source](docs/send-data/installed-collectors/sources/host-metrics-source.md) is required.)
     * Logs are cached locally, so if a source is throttled by Sumo, you won’t drop data.  
     * You can bake Installed Collectors into AMIs to allow for consistent deployments across all your hosts.
     * Configurable metadata. You can use variables available from Docker and the Docker host to configure the sourceCategory and sourceHost for a Docker log source or a Docker stats. For more information, see Configure sourceCategory and sourceHost using variables.

@@ -265,7 +265,7 @@ You setup a Sumo Logic installed collector on the same host as the SIEM Connecto
 To set up an installed collector and local file source, do the following:
 
 1. Install a Sumo Logic collector on the same host as the SIEM Connector. Follow the instructions for your operating system as described in [Installed Collectors](/docs/send-data/Installed-Collectors).
-2. Add a local file source to the collector for Streaming API Events. Follow the steps on [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source), with these additional changes:
+2. Add a local file source to the collector for Streaming API Events. Follow the steps on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), with these additional changes:
 * Set the **Filepath** to**:**  **/var/log/crowdstrike/falconhoseclient/output**
 * Set the **Source Category** to: c**rowdstrike/falcon**
 * Under **Enable Multiline Processing**, check  **Boundary Regex**  and enter the following regex: `^\{.*`.

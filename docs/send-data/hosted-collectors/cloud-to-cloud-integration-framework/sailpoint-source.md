@@ -116,7 +116,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
@@ -138,7 +138,7 @@ SailPoint Source.
 | `client_secret` | String | Yes |  | Provide the SailPoint secret you want to use to authenticate collection requests.	modifiable |
 | `supported_apis` | Array of strings | Yes |  | Define one or more of the available APIs to collect: Events, and Users.<br/>For example, for both you'd use: `["Events","Users"]` | modifiable |
 
-See how to [create processing rules using JSON](/docs/send-data/sources/use-json-configure-sources).
+See how to [create processing rules using JSON](/docs/send-data/use-json-configure-sources).
 
 SailPoint Source JSON example:
 
