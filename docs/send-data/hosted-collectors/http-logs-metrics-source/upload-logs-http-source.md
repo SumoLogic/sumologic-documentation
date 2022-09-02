@@ -47,7 +47,7 @@ We recommend that the POST data payload have a size, before compression, of 100K
 
 The following parameters can be specified via headers when sending data to an HTTP Source. The settings will apply to all messages in the request. For Source Name, Host, and Category, the header value will override any default value already specified for the source and/or collector.
 
-You can configure your Source to process HTTP Headers into metadata fields. See [HTTP Source fields](../../../manage/fields.md) for details.
+You can configure your Source to process HTTP Headers into metadata fields. See [HTTP Source fields](docs/manage/fields.md) for details.
 
 :::note
 Overridden metadata field values are not returned with [Search Autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete).
@@ -59,7 +59,7 @@ Overridden metadata field values are not returned with [Search Autocomplete](/do
 | Custom Source Name | `X-Sumo-Name` | Desired source name.<br/>Useful if you want to override the source name configured for the source. |
 | Custom Source Host | `X-Sumo-Host` | Desired host name.<br/>Useful if you want to override the source host configured for the source. |
 | Custom Source Category | `X-Sumo-Category` | Desired source category.<br/>Useful if you want to override the source category configured for the source. |
-| Fields as custom metadata | `X-Sumo-Fields` | [Fields](../../../manage/fields.md) need to be in a comma separated list of key-value pairs.  |
+| Fields as custom metadata | `X-Sumo-Fields` | [Fields](docs/manage/fields.md) need to be in a comma separated list of key-value pairs.  |
 
 ## Command Line Examples
 

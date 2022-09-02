@@ -141,7 +141,7 @@ Make sure the collector is installed on a machine that belongs to the domain man
 
 ## Step 2: Configure event log sources
 
-If you have installed collectors on each domain controller, as recommended, configure a [Local Windows Event Log Source](/docs/send-data/Sources/installed-collectors/Local-Windows-Event-Log-Source) on each one. Otherwise, configure a [Remote Windows Event Log Source](/docs/send-data/Sources/installed-collectors/Remote-Windows-Event-Log-Source) to collect events from each Active Directory server. For these Windows Event sources, set the source category to **OS/Windows** and **Event Format** as **Collect using legacy format**.
+If you have installed collectors on each domain controller, as recommended, configure a [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Event-Log-Source) on each one. Otherwise, configure a [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/Remote-Windows-Event-Log-Source) to collect events from each Active Directory server. For these Windows Event sources, set the source category to **OS/Windows** and **Event Format** as **Collect using legacy format**.
 
 
 

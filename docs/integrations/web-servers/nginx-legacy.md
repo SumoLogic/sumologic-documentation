@@ -90,7 +90,7 @@ Use one of the following Sumo Logic Collector options:
 
 To collect logs directly from your Nginx machine, use an Installed Collector and a Local File Source.
 
-1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 2. Configure the Local File Source fields as follows:
     * **Name.** (Required)
     * **Description.** (Optional)

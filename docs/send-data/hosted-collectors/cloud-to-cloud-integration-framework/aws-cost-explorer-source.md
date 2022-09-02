@@ -81,7 +81,7 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 When you delete the source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
 
-On the Collection page, the [Health](../../../manage/health-events.md) and Status for Sources is displayed. Use [Health Events](../../../manage/health-events.md) to investigate issues with collection.
+On the Collection page, the [Health](docs/manage/health-events.md) and Status for Sources is displayed. Use [Health Events](docs/manage/health-events.md) to investigate issues with collection.
 
 ## Error types
 
@@ -95,7 +95,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ## JSON Configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details.
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 | Parameter  | Type | Required | Description | Access |
 |--|--|--|--|--|

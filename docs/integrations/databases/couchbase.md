@@ -198,7 +198,7 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
 </TabItem>
 <TabItem value="non-k8s">
 
-For non-Kubernetes environments, we use the Telegraf operator for Couchbase metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about) for collecting Couchbase logs. The diagram below illustrates the components of the Couchbase collection in a non-Kubernetes environment. Telegraf uses the [Couchbase input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) to obtain Couchbase metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Couchbase are collected by a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).<img src={useBaseUrl('img/integrations/databases/couchbase2.png')} alt="couchbase2" />
+For non-Kubernetes environments, we use the Telegraf operator for Couchbase metric collection and the [Installed Collector](/docs/send-data/installed-collectors) for collecting Couchbase logs. The diagram below illustrates the components of the Couchbase collection in a non-Kubernetes environment. Telegraf uses the [Couchbase input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) to obtain Couchbase metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Couchbase are collected by a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).<img src={useBaseUrl('img/integrations/databases/couchbase2.png')} alt="couchbase2" />
 
 The process to set up collection for Couchbase data is done through the following steps.
 
@@ -217,7 +217,7 @@ The Sumo Logic Couchbase app supports the audit log, query log, error log, acces
 
 To collect logs directly from your Couchbase machine, use an Installed Collector and Multi Local File Source. Repeat the below steps for each log source: audit log, query log, error log, access log.
 
-1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 2. Configure the Local File Source fields as follows:
   * **Name**. (Required)
   * **Description**. (Optional)

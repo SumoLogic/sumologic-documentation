@@ -588,13 +588,13 @@ Log format description: [https://tomcat.apache.org/tomcat-8.0-doc/config/valve.h
 Log format description: [https://docs.oracle.com/javase/8/docs/api/java/util/logging/SimpleFormatter.html](https://docs.oracle.com/javase/8/docs/api/java/util/logging/SimpleFormatter.html)
 3. Tomcat Garbage Collection (GC) logs \
 Log format description: [https://stackoverflow.com/questions/4468546/explanation-of-tomcat-gc-log-statements](https://stackoverflow.com/questions/4468546/explanation-of-tomcat-gc-log-statements)
-1. **Configure Tomcat to log to a Local file**. By default, Tomcat logs are stored in /usr/share/tomcat/logs/ The default directory for log files is listed in the /usr/share/tomcat/conf/logging.properties file. Logs from the Tomcat log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) as explained in the next section.
+1. **Configure Tomcat to log to a Local file**. By default, Tomcat logs are stored in /usr/share/tomcat/logs/ The default directory for log files is listed in the /usr/share/tomcat/conf/logging.properties file. Logs from the Tomcat log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) as explained in the next section.
 
 1. **Configuring a Collector**. To collect logs directly from the Tomcat machine, configure an[ Installed Collector](/docs/send-data/Installed-Collectors).
 
 1. **Configuring a Source**. To add a Local File Source source for Apache Tomcat do the following** To collect logs directly from your Tomcat machine, use an Installed Collector and a Local File Source.
 
-1. Add a[ Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+1. Add a[ Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 2. Configure the Local File Source fields as follows:
 * **Name.** (Required)
 * **Description.** (Optional)
