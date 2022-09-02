@@ -1,5 +1,5 @@
 ---
-slug: /send-data//hosted-collectors
+slug: /send-data/hosted-collectors/
 title: Sources for Hosted Collectors
 ---
 
@@ -42,7 +42,7 @@ import Iframe from 'react-iframe';
 1. Click **Hosted Collector**.
 1. Provide a **Name** for the Collector.
 1. A **description** is optional.
-1. **Category**. Enter any string to tag the logs collected from this Collector. This Source Category value is stored in a searchable metadata field called `_sourceCategory`. See our [Best Practices: Good and Bad Source Categories](design-deployment/best-practices-source-categories.md).
+1. **Category**. Enter any string to tag the logs collected from this Collector. This Source Category value is stored in a searchable metadata field called `_sourceCategory`. See our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories).
 
 1. Click the **+Add Field** link in the **Fields** section. Define the fields you want to associate, each field needs a name (key) and value.
 

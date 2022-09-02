@@ -42,7 +42,7 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 ## Create a CSE AWS EC2 Inventory Source
 
-When you create a CSE AWS EC2 Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data//hosted-collectors/configure-hosted-collector).
+When you create a CSE AWS EC2 Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
 
 To configure a CSE AWS EC2 Inventory Source:
 
@@ -104,7 +104,7 @@ The following table shows the ****config**** parameters.
 |--|--|--|--|--|--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
 | `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](..//docs/send-data/best-practices) for details. | modifiable | 
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable | 
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
 | `regions` | String array | Yes |  | Provide a list of AWS regions to query EC2 instances, such as `us-east-2`. Use `["all"]` to support all regions. | modifiable | 
 `access_key` | String | Yes |  | Provide the IAM User access key ID you want to use to authenticate collection requests. | modifiable | 

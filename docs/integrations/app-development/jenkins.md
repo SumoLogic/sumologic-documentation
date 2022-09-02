@@ -298,7 +298,7 @@ To create a new Sumo Logic hosted collector, perform the steps in the [Configure
 
 To create a new HTTP logs and metric source:
 
-1. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions.](/docs/send-data//hosted-collectors/http-logs-metrics-source)
+1. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions.](/docs/send-data/hosted-collectors//http-logs-metrics-source)
 2. Make a note of **HTTP Source URL** and **Source Category**, as you will need them later in the configuration process.
 
 ### Step 3: Install the Jenkins Plugin

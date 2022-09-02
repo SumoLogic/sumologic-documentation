@@ -21,7 +21,7 @@ This Source is not available in the Fed deployment.
 
 ## States
 
-A Mimecast Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](../../../../manage/health-events.md).
+A Mimecast Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](../../../manage/health-events.md).
 
 A Mimecast Source goes through the following states when created:
 
@@ -57,7 +57,7 @@ Consider the Authentication Profile TTL when configuring access. If your creden
 
 ### Create a Mimecast Source
 
-When you create a Mimecast Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data//hosted-collectors/configure-hosted-collector).
+When you create a Mimecast Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
 
 To configure a Mimecast Source:
 
@@ -130,7 +130,7 @@ Source.
 |--|--|--|--|--|--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](..//docs/send-data/best-practices) for details. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
 | `domain` | String | Yes |  | The base URL parameter depends on your global region.	modifiable
 `application_key` | String | Yes |  | The Mimecast key you want to use to authenticate collection requests.	modifiable

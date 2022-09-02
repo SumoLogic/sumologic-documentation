@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Learn how to send data to Sumo Logic. In this section, we will introduce the following concepts:
 
-* [Design your deployment](/docs/send-data/design-your-deployment)
+* [Design your deployment](/docs/send-data/choose-collector)
 * [Installed Collectors](/docs/send-data/installed-collectors)
 * [Hosted Collectors](/docs/send-data/hosted-collectors)
 * [Sources](/docs/send-data/sources)

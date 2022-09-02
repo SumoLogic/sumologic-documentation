@@ -12,7 +12,7 @@ Collection from two APIs is supported:
 * The Cylance Threat API. To collect from this API the Source queries two endpoints and merges the results into a single message. The first API endpoint queried is `/threats/v2` to enumerate a threat based on sha256 hash. Then any involved devices `/threats/v2/<sha256/devices` are merged into the relevant message. One threat event for each affected device is reported.
 * The Cylance Inventory (device) API. Collection from this API is optional. The Source will query the `/devices/v2` endpoint and ingest all the devices managed by Cylance.
 
-If you want to explicitly allow the static IP addresses used for this Source on your firewall see our [table of static IP addresses by deployment](docs/send-data//hosted-collectors/cloud-to-cloud-integration-framework/index.md#Static-IP-addresses).
+If you want to explicitly allow the static IP addresses used for this Source on your firewall see our [table of static IP addresses by deployment](docs/send-data/hosted-collectors//cloud-to-cloud-integration-framework/index.md#Static-IP-addresses).
 
 ## Before You Begin
 

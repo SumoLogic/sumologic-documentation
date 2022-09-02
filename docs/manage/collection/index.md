@@ -23,9 +23,9 @@ You'll need the Manage or View Collectors [role capability](../users-and-roles/r
 
 * [Search for a Collector or Source](search-collector-or-source.md)
 * View the [health of Collectors and Sources](../health-events.md)
-* [Upgrade Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions.md) from the [Cloud-to-Cloud Integration Framework](/docs/send-data//hosted-collectors/cloud-to-cloud-integration-framework))
+* [Upgrade Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions.md) from the [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors//cloud-to-cloud-integration-framework))
 * [Upgrade Collectors](upgrade-collectors.md)
-* Add an [Installed Collector](/docs/send-data/sources/installed-collectors) or a [Hosted Collector](..//docs/send-data/hosted-collectors)
+* Add an [Installed Collector](/docs/send-data/sources/installed-collectors) or a [Hosted Collector](/docs/send-data/hosted-collectors)
 * Use the **Show** options to filter the list
 * Use the **Expand** options to show or hide information about the Sources
 * Use the paging controls to navigate the list of Collectors
@@ -44,8 +44,8 @@ You'll need the Manage or View Collectors [role capability](../users-and-roles/r
 * [Delete a Source](delete-collector-source.md)
 * [Download a JSON configuration file](../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for scripting or backup
 * [Pause or resume a Source](pause-resume-source.md) (cloud polling Sources only)
-* [Show or regenerate a Source URL](../../send-data//hosted-collectors/http-logs-metrics-source/generate-new-url-http-source.md) (HTTP Sources only)
-* [Show or regenerate a Source token](/docs/send-data//hosted-collectors/cloud-syslog-source) (cloud syslog Source only)
+* [Show or regenerate a Source URL](../../send-data/hosted-collectors//http-logs-metrics-source/generate-new-url-http-source.md) (HTTP Sources only)
+* [Show or regenerate a Source token](/docs/send-data/hosted-collectors//cloud-syslog-source) (cloud syslog Source only)
 
 ## Available Information about Collectors and Sources
 

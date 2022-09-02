@@ -96,7 +96,7 @@ From there select (or search for) the following permissions. An Administrator m
 
 ## Create a Microsoft Azure AD Inventory Source
 
-When you create a Microsoft Azure AD Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data//hosted-collectors/configure-hosted-collector).
+When you create a Microsoft Azure AD Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
 
 To configure a Microsoft Azure AD Inventory Source:
 
@@ -159,7 +159,7 @@ Azure AD Inventory Source.
 |--|--|--|--|--|--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](..//docs/send-data/best-practices) for details. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
 | `tenant_id` | String | Yes |  | Provide the Directory (tenant) ID you got after you registered (created) the Azure Application. | modifiable |
 | `secret_key` | String | Yes |  | Provide the Application Client Secret Value you created in Azure. | modifiable

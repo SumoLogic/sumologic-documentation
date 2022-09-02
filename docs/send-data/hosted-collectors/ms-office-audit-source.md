@@ -85,7 +85,7 @@ During the configuration, you will need to authenticate to Microsoft using sta
 :::
 
 1. In Sumo Logic select **Manage Data \> Collection \> Collection**. 
-1. Click **Add Source** next to a Hosted Collector. See [Set Up a Hosted Collector](/docs/send-data//hosted-collectors/configure-hosted-collector) for instructions on setting up a new Hosted Collector.
+1. Click **Add Source** next to a Hosted Collector. See [Set Up a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector) for instructions on setting up a new Hosted Collector.
 1. Select **Office 365 Audit**. 
 1. Enter a name to identify the Source. **Description** is optional.
 1. For **O365 Region**, select the region that corresponds to your Microsoft 365 or Office 365 subscription plan, the supported regions are Commercial, GCC, and GCC High. See [Activity API operations](https://docs.microsoft.com/en-us/office/office-365-management-api/office-365-management-activity-api-reference#activity-api-operations) for more details.

@@ -53,7 +53,7 @@ This allows you to do searches such as:
  * **\_sourceCategory=\*Audit**
  * **\_sourceCategory=\*Application\***
 
-For more information, see [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices). 
+For more information, see [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). 
 
 ## Source Host
 

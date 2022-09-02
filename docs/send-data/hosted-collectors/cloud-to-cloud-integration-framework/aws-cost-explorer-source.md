@@ -14,7 +14,7 @@ This feature is in Beta. To participate, contact your Sumo account executive.
 
 ## Create an AWS Cost Explorer Source
 
-When you create an AWS Cost Explorer collector Source, you add it to an existing Sumo Logic hosted collector. Before creating the Source, identify the hosted collector you want to use or simply create a new hosted collector. For further instructions, see [Create a Hosted Collector](../..//docs/send-data//hosted-collectors).
+When you create an AWS Cost Explorer collector Source, you add it to an existing Sumo Logic hosted collector. Before creating the Source, identify the hosted collector you want to use or simply create a new hosted collector. For further instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/).
 
 To configure an AWS Cost Explorer Source:
 
@@ -81,7 +81,7 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 When you delete the source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
 
-On the Collection page, the [Health](../../../../manage/health-events.md) and Status for Sources is displayed. Use [Health Events](../../../../manage/health-events.md) to investigate issues with collection.
+On the Collection page, the [Health](../../../manage/health-events.md) and Status for Sources is displayed. Use [Health Events](../../../manage/health-events.md) to investigate issues with collection.
 
 ## Error types
 
@@ -108,9 +108,9 @@ Explorer Source.
 
 | Parameter | Type | Required? | Default |Description | Access|
 |-------------------|----------|----|------|-----------|----------------|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_source`. | modifiable |
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](..//docs/send-data/best-practices) for details. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the field `account` to tag logs with a friendly AWS account name. | modifiable |
 | accessID | String | Yes |  | Provide the AWS IAM User access key ID you want to use to authenticate collection requests. | modifiable |
 | accessKey | String | Yes |  | Provide the AWS Secret Key you want to use to authenticate collection requests. | modifiable |

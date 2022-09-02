@@ -4,7 +4,7 @@ title: Workday Source
 sidebar_label: Workday
 ---
 
-When you create a Workday Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data//hosted-collectors/configure-hosted-collector).
+When you create a Workday Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
 
 :::note
 The steps below assume that you have already configured in [Step 1 of this page] (/07Sumo-Logic-Apps/saas-cloud-apps/Workday/Collect_Logs_for_the_Workday_App#step-1-configure-the-workday-portal). You will copy and paste configurations from those steps in this source.
@@ -117,7 +117,7 @@ The following table shows the **config** parameters for Workday Source.
 |--|--|--|--|--|--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](..//docs/send-data/best-practices) for details. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
 | `isu_password` | String | Yes |  | Type the workday ISU account password for the username  | modifiable  |
 | `isu_username` | String | Yes | Type integration system user account  name  | modifiable |

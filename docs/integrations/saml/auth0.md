@@ -45,7 +45,7 @@ Use the in-product setup wizard in the Sumo Logic UI to configure a **Custom App
 
 ### Configure a Source
 
-Source type is [HTTP](/docs/send-data//hosted-collectors/http-logs-metrics-source).
+Source type is [HTTP](/docs/send-data/hosted-collectors//http-logs-metrics-source).
 
 * **Name**: Required
 * **Category**:

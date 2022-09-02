@@ -84,7 +84,7 @@ Data will be dropped during throttling. In that case, the sending HTTP client mu
 
 The following pages will help you troubleshoot a throttling incident:
 
-* [Manage Ingestion](../../../../manage/ingestion-and-volume/log-ingestion.md) (/Manage/Ingestion-and-Volume/01Log_Ingestion), see this page for information about:
+* [Manage Ingestion](/docs/manage/ingestion-and-volume/log-ingestion) (/Manage/Ingestion-and-Volume/01Log_Ingestion), see this page for information about:
 
   * How your account ingestion rate is calculated and throttled.
   * How to figure out how which Collectors are contributing to excess ingestion.
@@ -98,4 +98,4 @@ If you have verified that the HTTP source is receiving data, but you cannot see 
 
 You can figure that out by searching for data from that source using the **Use Receipt Time** option. When you run a search with this option, the results include log data with any timestamp, in reverse order of receipt time, so you can view the difference in timestamp and receipt time to identify sources that may be generating incorrect timestamps. For more information, see Use Receipt Time.
 
-If you determine that the timestamps in your ingested data are not what you would expect, see [Timestamps, Time Zones, Time Ranges, and Date Formats](../../reference-information/time-reference.md) to verify your timestamp format is one that Sumo can automatically parse. If your data has a timestamp format that Sumo doesn’t understand, you can specify a custom timestamp format for the source.
+If you determine that the timestamps in your ingested data are not what you would expect, see [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/sources/reference-information/time-reference) to verify your timestamp format is one that Sumo can automatically parse. If your data has a timestamp format that Sumo doesn’t understand, you can specify a custom timestamp format for the source.

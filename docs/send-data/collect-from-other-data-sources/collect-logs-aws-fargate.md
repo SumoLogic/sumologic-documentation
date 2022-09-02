@@ -36,8 +36,8 @@ AWS Lambda functions are our preferred method for sending Amazon CloudWatch Logs
 
 ## Add a Hosted Collector and HTTP Source
 
-1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data//hosted-collectors/configure-hosted-collector).
-1. In Sumo Logic, configure an [HTTP Source](/docs/send-data//hosted-collectors/http-logs-metrics-source).
+1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
+1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/hosted-collectors//http-logs-metrics-source).
 
 :::important
 When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this to configure the Lambda Function.  

@@ -22,7 +22,7 @@ For information on collecting unified logs and metrics for AWS Elastic Load Bala
 
 To collect AWS Elastic Load Balancing Metrics, perform the following tasks:
 1. [Configure a Hosted Collector](#Collect-Metrics-for-the-AWS-Elastic-Load-Balancing-App)
-2. [Add a CloudWatch Source for Metrics](/docs/send-data//hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+2. [Add a CloudWatch Source for Metrics](/docs/send-data/hosted-collectors//amazon-aws/amazon-cloudwatch-source-metrics)
 
 
 ## Installing the AWS ELB Metrics App

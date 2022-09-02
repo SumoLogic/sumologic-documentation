@@ -64,7 +64,7 @@ When the Sumo collector accesses a log file to read its content, the collector o
      Processing rules could be used to filter logs as needed. This is done in step 6 of this document.
      :::
 
-    Review [timestamp considerations](../reference-information/time-reference.md) to understand how Sumo interprets and processes timestamps.
+    Review [timestamp considerations](/docs/send-data/sources/reference-information/time-reference) to understand how Sumo interprets and processes timestamps.
 
     You can either:
 
@@ -75,7 +75,7 @@ When the Sumo collector accesses a log file to read its content, the collector o
 
     You can define a Source Host value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below for details.
 
-   * **Source Category.** The Source Category value is tagged to each log and stored in a searchable metadata field called \_sourceCategory. See our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices). Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 1,024 characters.
+   * **Source Category.** The Source Category value is tagged to each log and stored in a searchable metadata field called \_sourceCategory. See our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 1,024 characters.
 
     You can define a Source Category value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below for details.
 
@@ -91,7 +91,7 @@ When the Sumo collector accesses a log file to read its content, the collector o
    * **Time Zone.** There are two options for Time Zone.
      * You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message.
      * Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-   * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../reference-information/time-reference.md for more information.
+   * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/sources/reference-information/time-reference for more information.
    * **Encoding.** UTF-8 is the default, but you can choose another encoding format from the menu.
    * **Enable Multiline Processing.** See [Collecting Multiline Logs](../reference-information/collect-multiline-logs.md for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:
 

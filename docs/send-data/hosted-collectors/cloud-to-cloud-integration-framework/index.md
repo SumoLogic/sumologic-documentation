@@ -1,5 +1,5 @@
 ---
-slug: /send-data//hosted-collectors/cloud-to-cloud-integration-framework
+slug: /send-data/hosted-collectors//cloud-to-cloud-integration-framework
 title: Cloud-to-Cloud Integration Framework
 ---
 

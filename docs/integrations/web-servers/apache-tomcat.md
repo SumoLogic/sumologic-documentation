@@ -361,11 +361,11 @@ This section provides instructions for configuring metrics collection for the Su
 
 1. **Configure a Hosted Collector**
 
-    To create a new Sumo Logic hosted collector, perform the steps in the[ Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
+    To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/hosted-collectors#create-a-hosted-collector) section of the Sumo Logic documentation.
 
 1. **Configure an HTTP Logs and Metrics Source**
 
-    Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data//hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
+    Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/hosted-collectors//http-logs-metrics-source)Make a note of the **HTTP Source URL**.
 
 1. **Install Telegraf**
 

@@ -512,7 +512,7 @@ Identify an existing Sumo Logic Hosted Collector you want to use, or create a ne
 
 **To add a hosted collector and HTTP source, do the following:
 1. Create a new Sumo Logic Hosted Collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Create a new HTTP Log Source in the hosted collector created above by following [these instructions.](/docs/send-data//hosted-collectors/http-logs-metrics-source)
+2. Create a new HTTP Log Source in the hosted collector created above by following [these instructions.](/docs/send-data/hosted-collectors//http-logs-metrics-source)
 
 
 #### Configure collection for Slack

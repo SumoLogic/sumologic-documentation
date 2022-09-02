@@ -97,7 +97,7 @@ Each Sumo Logic App has unique requirements, so make sure to follow the specific
 
 If you've installed a Sumo Logic App and no data appears in its Dashboards, you may have chosen the wrong Source Category.
 
-Apps are dependent on the Source Category [metadata](../../search/get-started-with-search/search-basics/built-in-metadata.md) associated with your logs. This metadata is established when Collectors and Sources are configured. Because each organization uses their own metadata methodology check with your Sumo Logic account's Administrator to get a better idea of which Source Category would be the best fit for a given app.
+Apps are dependent on the Source Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) associated with your logs. This metadata is established when Collectors and Sources are configured. Because each organization uses their own metadata methodology check with your Sumo Logic account's Administrator to get a better idea of which Source Category would be the best fit for a given app.
 
 ### How can I change the Source Category associated with an app?
 

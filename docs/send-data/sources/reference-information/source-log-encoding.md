@@ -43,7 +43,7 @@ You can upload UTF-8 log files compressed using the following methods:
 
 Compressed files are decompressed before they are ingested, so they are ingested at the decompressed file size rate.
 
-For more information, see [HTTP Source](/docs/send-data//hosted-collectors/http-logs-metrics-source).
+For more information, see [HTTP Source](/docs/send-data/hosted-collectors//http-logs-metrics-source).
 
 ## AWS S3 sources
 

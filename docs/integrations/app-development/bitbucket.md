@@ -104,9 +104,9 @@ This section provides instructions for configuring log collection for the Bitbuc
 
 ### Step 1: Configure Hosted Collector to Receive Bitbucket events
 
-In this step, you create a Hosted Collector to receive Webhook Events from Bitbucket and set up an HTTP source on it.
+In this step, you configure a Hosted Collector to receive Webhook Events from Bitbucket and set up an HTTP source on it.
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
-2. Configure an [HTTP source](/docs/send-data//hosted-collectors/http-logs-metrics-source) on the hosted collector.
+2. Configure an [HTTP source](/docs/send-data/hosted-collectors//http-logs-metrics-source) on the hosted collector.
     * For Source Category, specify `bitbucket/events`.
     * Click **+Add Field** and provide the following:
         * **Field Name.** `_convertHeadersToFields`

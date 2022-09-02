@@ -120,7 +120,7 @@ The following parameters are used for log Sources except for Syslog. Syslog Sour
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
 | `sourceType` | String | Yes |  | Type the correct type of Source. | not modifiable |
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [built-in metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_source` and can be a maximum of 128 characters. | modifiable |
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source` and can be a maximum of 128 characters. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `fields` | JSON Object | No | null | JSON map of key-value fields (metadata) to apply to the Collector or Source. | modifiable |
 | `hostName` | String | No | null | Type a host name of the Source. This value is assigned to the built-in metadata field `_sourceHost`. The hostname can be a maximum of 128 characters.<br/>Not supported with Windows Local Event Source and Windows Local Performance Source. | modifiable |

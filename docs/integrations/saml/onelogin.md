@@ -23,7 +23,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 * **OneLogin Enterprise** or **Unlimited **plan subscription.
 * **Configure an Event Broadcaster**
    * Add a Sumo Logic [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) to your Sumo Logic Org.
-   * Configure an [HTTP Source](/docs/send-data//hosted-collectors/http-logs-metrics-source) for your OneLogin data. Make sure to set the **Source Category** when configuring the OneLogin source. For example, onelogin.
+   * Configure an [HTTP Source](/docs/send-data/hosted-collectors//http-logs-metrics-source) for your OneLogin data. Make sure to set the **Source Category** when configuring the OneLogin source. For example, onelogin.
    * From OneLogin, configure a broadcaster that points to this endpoint using the instructions in the [OneLogin documentation](https://onelogin.service-now.com/support?id=kb_article&sys_id=43f95543db109700d5505eea4b961959). You must use SIEM (NDJSON) format. Use the Sumo Logic HTTP Source URL as the Listener URL, and custom header is not needed.
 
 

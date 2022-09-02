@@ -31,7 +31,7 @@ For full details on limitations, what's supported, and what's different see our 
 
 **Installed Collectors** are lightweight and efficient. You can choose to install a small number of Collectors to minimize maintenance or to keep your topology simple. Alternatively, you can choose to install many Collectors on many machines to distribute the bandwidth impact across your network rather than having it centralized.
 
-[Installed Collectors](/docs/installed-collectors/about) are deployed in your environment, on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
+[Installed Collectors](/docs/send-data/installed-collectors/about) are deployed in your environment, on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
 
 Consider having an Installed Collector on a dedicated machine when:
 
@@ -49,7 +49,7 @@ Consider having more than one Installed Collector if:
 * You prefer to install many Collectors, for example, one per machine
     to collect local files.
 
-To help design your deployment see [how Installed Collectors work](/docs/send-data/installed-collectors/about) and  [Best Practices: Local and Centralized Data Collection](best-practices.md).
+To help design your deployment see [how Installed Collectors work](/docs/send-data/installed-collectors/about) and [Best Practices: Local and Centralized Data Collection](/docs/send-data/best-practices#local-and-centralized-data-collection).
 
 For details on system requirements, see Installed Collector requirements.
 
@@ -57,11 +57,11 @@ For details on system requirements, see Installed Collector requirements.
 
 **Hosted Collectors** reside in the Cloud allowing for seamless collection from Amazon Web Services, Google, Microsoft, and many other Cloud services.
 
-Unlike Installed Collectors, [Hosted Collectors](/docs/send-data//hosted-collectors) don't require installation or activation, nor do Hosted Collectors have physical requirements since they're hosted by Sumo Logic in AWS.
+Unlike Installed Collectors, [Hosted Collectors](/docs/send-data/hosted-collectors/) don't require installation or activation, nor do Hosted Collectors have physical requirements since they're hosted by Sumo Logic in AWS.
 
 Because there are no performance issues to consider, you can configure as many Sources as you'd like, up to 1,000, for a single Hosted Collector. Consider setting up more than one Hosted Collector if you'd like to tag different data types with different metadata.
 
-See how to [configure a Hosted Collector](/docs/send-data//hosted-collectors/configure-hosted-collector) and all of the available [Sources supported on Hosted Collectors](/docs/send-data//hosted-collectors).
+See how to [configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector) and all of the available [Sources supported on Hosted Collectors](/docs/send-data/hosted-collectors/).
 
 ### Logging levels
 

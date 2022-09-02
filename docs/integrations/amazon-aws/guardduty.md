@@ -189,7 +189,7 @@ This configuration is defined in a [AWS Serverless Application Model (SAM) speci
 ### Step 1: Configure an HTTP source
 
 1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. In Sumo Logic, configure an [HTTP Source](/docs/send-data//hosted-collectors/http-logs-metrics-source). When you configure the source, in the **Advanced Options for Logs** section of the page:
+2. In Sumo Logic, configure an [HTTP Source](/docs/send-data/hosted-collectors//http-logs-metrics-source). When you configure the source, in the **Advanced Options for Logs** section of the page:
     * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
     * Specify **Timestamp locator** as `.*"updatedAt":"(.*)".* \`
 

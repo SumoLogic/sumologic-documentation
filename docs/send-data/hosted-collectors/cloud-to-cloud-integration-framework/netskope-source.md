@@ -37,7 +37,7 @@ If the Source has any issues during any one of these states it is placed in an 
 
 When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
 
-On the Collection page, the Health and Status for Sources is displayed. Use [Health Events](../../../../manage/health-events.md) to investigate issues with collection.
+On the Collection page, the Health and Status for Sources is displayed. Use [Health Events](../../../manage/health-events.md) to investigate issues with collection.
 
 ![netscope error.png](/img/send-data/netscope-error.png)
 
@@ -59,7 +59,7 @@ To obtain a Netskope auth token, do the following:
 
 ## Create a Netskope Source
 
-When you create a Netskope Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data//hosted-collectors/configure-hosted-collector).
+When you create a Netskope Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
 
 To configure A Netskope Source
 
@@ -124,7 +124,7 @@ The following table shows the **config** parameters for a Netskope Source.
 |--|--|--|--|--|--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](..//docs/send-data/best-practices) for details. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
 | `tenantID` | String | Yes |  | Netskope customer specific Tenant ID. Do not provide the entire URL, just the Tenant ID. | modifiable |
 | `apiToken` | String | Yes |  | The Netskope API Token you want to use to authenticate requests. | modifiable |

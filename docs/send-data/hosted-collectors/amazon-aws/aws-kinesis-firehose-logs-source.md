@@ -16,7 +16,7 @@ The following diagram shows the flow of data with an AWS Kinesis Firehose for Lo
 
 ## Create an AWS Kinesis Firehose for Logs Source
 
-When you create an AWS Kinesis Firehose for Logs Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data//hosted-collectors/configure-hosted-collector).
+When you create an AWS Kinesis Firehose for Logs Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
 
 To create an AWS Kinesis Firehose for Logs Source:
 
@@ -58,13 +58,13 @@ To create an AWS Kinesis Firehose for Logs Source:
     **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
 
    * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo completely disregard any time zone information present in logs by forcing a time zone. Whichever option you choose, it's important to set the proper time zone. If the time zone of logs can't be determined, Sumo assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-   * **Timestamp Format.** By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../../reference-information/time-reference.md for more information.
+   * **Timestamp Format.** By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/sources/reference-information/time-reference for more information.
 
-    **Enable Multiline Processing.** See [Collecting Multiline Logs](../../reference-information/collect-multiline-logs.md) for details on multiline processing and its options. Use this option if you're working with multiline messages (for example, log4J messages or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log).
+    **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/sources/reference-information/collect-multiline-logs) for details on multiline processing and its options. Use this option if you're working with multiline messages (for example, log4J messages or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log).
 
    * **Infer Boundaries.** Enable when you want Sumo to automatically attempt to determine which lines belong to the same message.   If you deselect the Infer Boundaries option, enter a regular expression in the **Boundary Regex** field to use for detecting the entire first line of multi-line messages.
    * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression for the full first line of every multiline message in your log files.
-   * **Enable One Message Per Request.** Select this option if you'll be sending a single message with each HTTP request. For more information, see [Multiline options in HTTP sources](/docs/send-data//hosted-collectors/http-logs-metrics-source). 
+   * **Enable One Message Per Request.** Select this option if you'll be sending a single message with each HTTP request. For more information, see [Multiline options in HTTP sources](/docs/send-data/hosted-collectors//http-logs-metrics-source). 
 
 1. **Processing Rules for Logs.** Configure desired filters—such as include, exclude, hash, or mask—as described in Create a Processing Rule. Processing rules are applied to log data, but not to metric data. Note that while the Sumo service will receive your data, data ingestion will be performed in accordance with the regular expressions you specify in processing rules.    
 1. When you are finished configuring the Source click **Save**.    

@@ -219,7 +219,7 @@ Nginx app supports the default access logs and error logs format.
 2. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
 3. **Configure a Collector** Use one of the following Sumo Logic Collector options:
     1. To collect logs directly from the Nginx machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
-    2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+    2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/hosted-collectors#create-a-hosted-collector).
 4. **Configure a local file source**. Choose a method:
 
 <details><summary>For an Installed Collector</summary>
@@ -256,7 +256,7 @@ To collect logs directly from your Nginx machine, use an Installed Collector and
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
-1. Add an [HTTP Source](/docs/send-data//hosted-collectors/http-logs-metrics-source).
+1. Add an [HTTP Source](/docs/send-data/hosted-collectors//http-logs-metrics-source).
 2. Configure the HTTP Source fields as follows:
     * **Name**. (Required)
     * **Description**. (Optional)
@@ -278,7 +278,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 
 #### Set up a Sumo Logic HTTP Source
 
-1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) documentation.
+1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/hosted-collectors#create-a-hosted-collector) documentation.
 2. **Configure an HTTP Logs & Metrics source**:
     1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
     2. Select **HTTP Logs & Metrics.**

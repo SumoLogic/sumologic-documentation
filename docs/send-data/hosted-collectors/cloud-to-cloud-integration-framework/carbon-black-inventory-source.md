@@ -1,7 +1,7 @@
 ---
 id: carbon-black-inventory-source
 title: Carbon Black Inventory Source
-sidebar_label: Carbon Black Inventory 
+sidebar_label: Carbon Black Inventory
 ---
 
 
@@ -29,7 +29,7 @@ If the Source has any issues during any one of these states it is placed in an 
 
 When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
 
-On the Collection page, the Health and Status for Sources is displayed. Use [Health Events](../../../../manage/health-events.md) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
+On the Collection page, the Health and Status for Sources is displayed. Use [Health Events](../../../manage/health-events.md) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
 
 ![Carbon Black Defense error.png](/img/send-data/Carbon-Black-Defense-error.png)
 
@@ -39,7 +39,7 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 Create a Carbon Black Inventory Source
 
-When you create a Carbon Black Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data//hosted-collectors/configure-hosted-collector).
+When you create a Carbon Black Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors//configure-hosted-collector).
 
 To configure A Carbon Black Inventory Source:
 
@@ -102,9 +102,9 @@ The following table shows the **config** parameters for a Carbon Black Invent
 
 | Parameter | Type | Required |  Description | Access |
 |--|--|--|--|--|
-| `name` | String | Yes	 | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_source`. | modifiable |
+| `name` | String | Yes	 | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | modifiable |
 | `description` | String | No |  Type a description of the Source. | modifiable |
-| `category` | String | No |  Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [best practices](..//docs/send-data/best-practices) for details. | modifiable |
+| `category` | String | No |  Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 | `fields` | JSON Object | No |  JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
 | `domain` | String | Yes | Enter your Carbon Black Cloud domain, such as, `dev-prod05.conferdeploy.net`. See this [knowledge base article](https://community.carbonblack.com/t5/Knowledge-Base/Carbon-Black-Cloud-What-URLs-are-used-to-access-the-APIs/ta-p/67346) to determine which domain to use. | modifiable |
 | `api_key` | String | Yes | The Carbon Black Cloud API Key you want to use to authenticate requests. Ensure the key is granted the required permissions for all the APIs listed in the above [Authentication section](/docs/send-data/sources/use-json-configure-sources). | modifiable |

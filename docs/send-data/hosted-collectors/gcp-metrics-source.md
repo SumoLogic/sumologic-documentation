@@ -62,7 +62,7 @@ If you create and manage all service accounts in one project which is different 
 
 For information on available metrics, see [GCP Metrics](https://cloud.google.com/monitoring/api/metrics_gcp).
 
-1. Select an existing Hosted Collector upon which to add the Source. If you do not already have a Collector you would like to use, create one, using the instructions on [Create a Hosted Collector](docs/send-data/configure-hosted-collector.md).
+1. Select an existing Hosted Collector upon which to add the Source. If you do not already have a Collector you would like to use, create one, using the instructions on [Create a Hosted Collector](/docs/send-data/hosted-collectors#create-a-hosted-collector).
 2. In Sumo Logic select** Manage Data > Collection > Collection**.
 3. Click **Add Source** next to a Hosted Collector.
 4. Select **GCP Metrics**. <br/>
@@ -290,20 +290,20 @@ Some metrics do not include or support a region.
 :::note
 Do not use quotes when entering a custom service.
 :::
-10.  <strong>Source Category</strong> (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field called _sourceCategory. See our [Best Practices: Good Source Category, Bad Source Category](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category). Avoid using spaces so you do not have to quote them in [keyword search expressions](https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Build-a-Search/Keyword-Search-Expressions). This can be a maximum of 1,024 characters.
-1.  <strong>Fields</strong>. Click the <strong>+Add </strong>link to add custom log metadata [Fields](docs/manage/fields.md), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
+10.  **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field called _sourceCategory. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices#good-and-bad-source-categories). Avoid using spaces so you do not have to quote them in [keyword search expressions](https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Build-a-Search/Keyword-Search-Expressions). This can be a maximum of 1,024 characters.
+11.  **Fields**. Click the **+Add **link to add custom log metadata [Fields](docs/manage/fields.md), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
  * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
  * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 
 Proceed to the next step.
 
-12.  <strong>GCP Access</strong>. Upload the JSON Google service account credentials file. This allows Sumo Logic to make API calls to Google Cloud.
+12.  **GCP Access**. Upload the JSON Google service account credentials file. This allows Sumo Logic to make API calls to Google Cloud.
 
-13.  <strong>Scan Interval</strong>. Use the default of 1 minute, or change this value to indicate how frequently Sumo Logic should poll the GCP API. To learn more about polling interval considerations, see GCP Scan Interval below.
+13.  **Scan Interval**. Use the default of 1 minute, or change this value to indicate how frequently Sumo Logic should poll the GCP API. To learn more about polling interval considerations, see GCP Scan Interval below.
 
-14.  <strong>Processing Rules</strong>. Configure any desired filters, such as allowlist and denylist, as described in [Metrics Include and Exclude Rules](docs/manage/collection/processing-rules/metrics-include-and-exclude-rules.md).
+14.  **Processing Rules**. Configure any desired filters, such as allowlist and denylist, as described in [Metrics Include and Exclude Rules](docs/manage/collection/processing-rules/metrics-include-and-exclude-rules.md).
 
-15. Click <strong>Save</strong>.
+15. Click **Save**.
 
 ## GCP metric visibility  
 

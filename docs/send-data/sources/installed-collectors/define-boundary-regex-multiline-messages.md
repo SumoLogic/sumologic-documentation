@@ -34,4 +34,4 @@ The boundary regular expression must match the entire first line of each distinc
 
 This expression uses the timestamp format found at the beginning of each new message to define that message as the start for the multiline logs. Note again that the regular expression supplied must match the entire first line of each message from your logs so the **.\*** at the end of the expression is used to detect the rest of the line.
 
-For information on Multiline Options in HTTP Sources, see [HTTP Source](/docs/send-data//hosted-collectors/http-logs-metrics-source). 
+For information on Multiline Options in HTTP Sources, see [HTTP Source](/docs/send-data/hosted-collectors//http-logs-metrics-source). 

@@ -166,7 +166,7 @@ If the error still persists then
     .
     ```
 
-2. If you want to collect only logs from Azure Monitor we recommend to switch to new [Cloud to Cloud collection for Event hub](../..//hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md)
+2. If you want to collect only logs from Azure Monitor we recommend to switch to new [Cloud to Cloud collection for Event hub](../../hosted-collectors//cloud-to-cloud-integration-framework/azure-event-hubs-source.md)
 
 Exception while executing function:  Functions.BlobTaskProducer
 StorageError: The table specified does not exists 
