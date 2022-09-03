@@ -10,8 +10,7 @@ Real Time Alerts are scheduled searches that run nearly continuously. That means
 When an alert condition is satisfied Sumo Logic triggers the selected alert type. Sumo Logic examines ingested data in a rolling window using the Time Range you define. Any time a new result is found, another email is sent.
 
 :::note
-Only use real time schedules when you know your data is ingested within a few minutes of its creation. The [receipt time](../../search/get-started-with-search/build-search/use-receipt-time.md) should be within a few minutes of your log's [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata). See
-how to [troubleshoot timestamp discrepancies](docs/send-data/collector-faq#troubleshooting-time-discrepancies.md).
+Only use real time schedules when you know your data is ingested within a few minutes of its creation. The [receipt time](../../search/get-started-with-search/build-search/use-receipt-time.md) should be within a few minutes of your log's [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata). See how to [troubleshoot timestamp discrepancies](/docs/send-data/collector-faq#troubleshooting-time-discrepancies).
 :::
 
 Real Time Alerts are not duplicated, which means that if a specific raw log message has triggered an alert once already, that same log message will not trigger an alert a second time.

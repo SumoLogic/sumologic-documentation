@@ -130,24 +130,28 @@ In Docusaurus, you can add images, custom files, and embed videos.
 We recommend using .png format for all images.
 
 1. Save your image(s) in the `/static/img` folder.
-2. Add the import line to the top of your doc, under the [front matter header](#front-matter).
+2. Add the import line to the top of your doc, underneath the [front matter header](#front-matter).
   ```
   import useBaseUrl from '@docusaurus/useBaseUrl';
   ```
-3. Paste this image code snippet where you want your images to appear. Replace with file path with your own and ensure it includes the correct subfolder name. In your snippet, the file path starts with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
-  ```
-  <img src={useBaseUrl('img/sumo-square.png')} />
-  ```
-4. Add alt text.
-  ```
-  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" />
-  ```
-5. (Optional) Add width to resize your image, if needed.
-  ```
-  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" width="150"/>
-  ```
+3. Paste the below code snippet where you want your image to appear.
+   * Replace with file path with your own and ensure it includes the correct subfolder name. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
+   * Add alt text and optionally, you can add width parameter to resize your image, if needed.
+   ```
+   <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description" width="150"/>
+   ```
 
-The above snippet produces:
+<details><summary>What is alt text?</summary>
+
+When you insert an image, describe the image in the Alt text, which explains what the image is meant to show. It is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download.
+
+Alt text is not a caption and it doesn't need to describe the details of an image. It's just a label: "Image properties dialog" or "Sumo Logic logo."
+
+Alt text of some kind is required under [US Government GSA Section 508](https://www.section508.gov/section508_faqs) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
+
+If you are editing and you come across an image without Alt text, add it.
+
+</details>
 
 <Tabs
   className="unique-tabs"

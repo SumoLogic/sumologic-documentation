@@ -30,7 +30,7 @@ Sumo Logic tests the service on several browsers to ensure a consistent experie
 * Single core, 512MB RAM
 * 8GB disk space
 
-[Configure Limits for Collector Caching](docs/send-data/collector-faq#configure-limits-collector-caching.md) to adjust the required disk space.
+[Configure Limits for Collector Caching](docs/send-data/collector-faq#configure-limits-collector-caching) to adjust the required disk space.
 
 ### Memory guidelines
 
@@ -43,11 +43,11 @@ The total physical memory consumption of the Jave Virtual Machine (JVM) process�
 * Control structures for the Java heap 
 * Thread stacks
 
-The [memory settings](docs/send-data/collector-faq#increase-collector-memory.md) for the Java virtual machine (Xms and Xmx) set the limits for the available heap for the user executable code within the JVM, and not necessarily for the overall memory footprint. The Xmx and Xms flags configure the class loader limits for the user's code. In this case, the Collector code that tails logs and other things is managed within the JVM.
+The [memory settings](/docs/send-data/collector-faq#increase-collector-memory) for the Java virtual machine (Xms and Xmx) set the limits for the available heap for the user executable code within the JVM, and not necessarily for the overall memory footprint. The Xmx and Xms flags configure the class loader limits for the user's code. In this case, the Collector code that tails logs and other things is managed within the JVM.
 
 Each Collector outputs logs in the `/InstallationDirectory/logs/` directory. The log file that provides the most information about memory issues is named `collector.log`. You can review the log for any memory errors.
 
-For information about increasing Collector memory and monitoring Collector logs, see [Increase Collector Memory](docs/send-data/collector-faq#increase-collector-memory.md).
+For information about increasing Collector memory and monitoring Collector logs, see [Increase Collector Memory](/docs/send-data/collector-faq#increase-collector-memory).
 
 ### Network connection
 

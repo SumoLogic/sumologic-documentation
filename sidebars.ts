@@ -38,6 +38,7 @@ module.exports = {
         },
         'get-started/get-help',
         'get-started/keyboard-shortcuts',
+        'get-started/glossary',
         {
           type: 'category',
           label: 'FAQs',
@@ -1062,7 +1063,6 @@ module.exports = {
   data: [
     'send-data/index',
     'send-data/collectors-sources',
-    'send-data/sumo-distribution-opentelemetry',
     {
       type: 'category',
       label: 'Installed Collectors',
@@ -1145,6 +1145,7 @@ module.exports = {
         },
       ],
     },
+    'send-data/sumo-distribution-opentelemetry',
     {
       type: 'category',
       label: 'Hosted Collectors',
@@ -1991,7 +1992,7 @@ module.exports = {
           label: 'Apache Tomcat',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'global-intelligence/apache/index'},
+          link: {type: 'doc', id: 'global-intelligence/apache-tomcat-app/index'},
           items: [
             'global-intelligence/apache-tomcat-app/install-for-apache-tomcat-view-dashboards',
             'global-intelligence/apache-tomcat-app/collect-logs-tomcat-app',
@@ -2244,7 +2245,7 @@ module.exports = {
           type: 'category',
           label: 'Templates',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           items: [
             'contributing/templates/partner-app',
             'contributing/templates/template-doc'

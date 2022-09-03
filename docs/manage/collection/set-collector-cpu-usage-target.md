@@ -66,4 +66,4 @@ If you have a CPU target set but you continue to see the CPU usage at a higher l
 * Check for any unnecessary denylists within the source configurations and remove them.
 * Review any include/exclude/hash/mask rules on the sources and make sure they are required and optimized for that source.
 * Remove unnecessary sources.
-* Increase the [Collector’s max heap size](docs/send-data/collector-faq#increase-collector-memory.md).
+* Increase the [Collector’s max heap size](/docs/send-data/collector-faq#increase-collector-memory).
