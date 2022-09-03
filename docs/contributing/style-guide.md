@@ -13,7 +13,7 @@ The Sumo Logic Style Guide is a living document. If you have wondered about the 
 
 * We are clear, genuine, and trustworthy. We understand that our customers entrust us with their vital data and never make light about our commitment to data access and security.
 * The reader should feel confident and informed. We should strive to engage our customers, and show them where to get additional assistance when needed.
-* Describe Sumo Logic in a **professional** and **truthful** manner. Avoid generic, unsubstantial adjectives like "we're the best". Instead, illustrate these points by letting our product speak for itself.
+* Describe Sumo Logic in a **professional** and **truthful** manner. Avoid generic, unsubstantial adjectives like "very" or phrases like "we're the best". Instead, illustrate these points by letting our product speak for itself.
 * Avoid using a stiff, institutional voice. Instead, write with an instructive and conversational tone. For example, when linking to the support site, use terms like "Need help? Let us know" instead of "Please email our support personnel" to give our company a friendly face.
 * Use the **active voice** whenever possible. (For example, use "Brutus stabbed Caesar," not "Caesar was stabbed by Brutus.")
 * Our instructional content should be written at approximately the 8th-grade reading level, particularly in introductory sections. (Test content here: [http://www.writingtester.com/tester/grade_level.php](http://www.writingtester.com/tester/grade_level.php) for feedback on readability and grade level). Blog posts should be written at an 8th-grade level to maximize search engine hits (SEO).
@@ -77,7 +77,7 @@ The solution is to resize the image to be 750 px wide. To do so in the visual ed
 
 ### Masking sensitive information
 
-We mask sensitive information, like user names, email addresses, IP addresses, and so on. In Snagit, use the shape tool to mask the text using solid gray,  (RGB 212, 212, 212).
+We mask sensitive information, like user names, email addresses, IP addresses, and so on. In Snagit, use the shape tool to mask the text using solid gray, (RGB 212, 212, 212).
 
 
 ### Callouts
