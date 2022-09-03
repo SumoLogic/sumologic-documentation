@@ -38,7 +38,7 @@ Sumo Logic’s Service Allowlist Settings allow you to explicitly grant access t
 
 The Amazon S3 Audit Source, also called Server Access Logging, tracks and collects your Amazon S3 bucket's activity logs.
 
-**[Apps](https://help.sumologic.com/07Sumo-Logic-Apps)**
+**[Apps](https://help.sumologic.comdocs/integrations)**
 
 Sumo Logic Apps (short for applications) deliver out-of-the-box Dashboards, reports, saved searches, and field extraction for popular data Sources, such as AWS, Windows, Apache, and many more. When a customer installs an app in Sumo Logic, preconfigured searches and Dashboards are customized with the customer's Source configurations and populated in a folder. Customers then can monitor their system's behavior visually using the Dashboards.
 
@@ -181,9 +181,9 @@ Field Extraction can be set up as rules that parse out fields as log messages ar
 
 A fingerprint consists of the first 2048 bytes of a file and is used by Installed Collectors to track what data has been collected.
 
-**[Flow Graph](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_GuardDuty_Benchmark)**
+**[Flow Graph](docs/integrations/amazon-aws/guardduty-benchmark.md)**
 
-A graph or map that dynamically displays a directional flow from a source to a target. Such as the flow of cyber threats from the geographic locations of sources to their targets, dynamically illustrated in the Threat Sources and Targets by Geography panel of the [Amazon GuardDuty Global Baseline](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_GuardDuty_Benchmark/View_the_Amazon_GuardDuty_Benchmark_App_Dashboards) dashboard.
+A graph or map that dynamically displays a directional flow from a source to a target. Such as the flow of cyber threats from the geographic locations of sources to their targets, dynamically illustrated in the Threat Sources and Targets by Geography panel of the [Amazon GuardDuty Global Baseline](docs/integrations/amazon-aws/guardduty-benchmark.md) dashboard.
 
 
 
@@ -211,7 +211,7 @@ Group-by functions include count, count_distinct, sum, avg, stddev, max, min, la
 
 Hash rules replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it's fully hidden.
 
-**[Host Metrics](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics)**
+**[Host Metrics](https://help.sumologic.comdocs/integrations/14Hosts_and_Operating_Systems/Host_Metrics)**
 
 The Sumo Logic app for Host Metrics allows you to collect local host metrics and display them using predefined search queries and dashboards. The app provides dashboards to display analysis of local host metrics for the CPU, disk, memory, network, and TCP.
 
@@ -249,7 +249,7 @@ In Carbon 2.0-formatted metrics, intrinsic tags are the one or more space-separa
 
 ## K
 
-**[Kubernetes Views](https://help.sumologic.com/Observability_Solution/Kubernetes_Solution/02Monitoring_Using_Kubernetes)**
+**[Kubernetes Views](https://help.sumologic.com/docs/observability/Kubernetes_Solution/02Monitoring_Using_Kubernetes)**
 
 Allow you to intuitively filter on four hierarchical components of your Kubernetes system to focus your search on nodes, deployments, services, or namespaces. Kubernetes Views make it easier to traverse your Kubernetes hierarchy to monitor specific components, identify problems, discover root problems, and take progressive action.
 
@@ -331,7 +331,7 @@ Metrics transformation rules allow you control how long raw metrics are retained
 
 A Sumo index to which Sumo writes messages with information about the volume of metrics you are ingesting.
 
-**[Microservices](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development)**
+**[Microservices](https://help.sumologic.comdocs/integrations/08App_Development)**
 
 The microservices architecture enables you to structure applications as collections of loosely coupled services that are fine-grained, with protocols that are lightweight. Building applications using different smaller services improves modularity and provides for the continuous delivery and deployment of large, complex applications.
 
@@ -379,7 +379,7 @@ A Sumo feature you can use to filter or forward log data ingested by Sumo from a
 
 **Prometheus**
 
-A metric format in which a time series is uniquely identified by its metric name and a set of labels in key-value pairs format. Sumo’s [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) and [Streaming Metric source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Streaming-Metrics-Source) support Prometheus metrics. Sumo’s [Kubernetes solution](https://help.sumologic.com/Observability_Solution/Kubernetes_Solution) also collects Prometheus metrics.
+A metric format in which a time series is uniquely identified by its metric name and a set of labels in key-value pairs format. Sumo’s [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) and [Streaming Metric source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Streaming-Metrics-Source) support Prometheus metrics. Sumo’s [Kubernetes solution](https://help.sumologic.com/docs/observability/Kubernetes_Solution) also collects Prometheus metrics.
 
 
 
