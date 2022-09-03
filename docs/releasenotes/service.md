@@ -404,7 +404,7 @@ Update - The [Azure Event Hubs Source](docs/send-data/hosted-collectors/cloud-to
 ---
 ## March 17, 2022 (Apps)
 
-New - We are excited to announce the release of the Sumo Logic [PagerDuty V3](docs/integrations/saas-cloud/PagerDuty-v3) App. The PagerDuty V3 app collects incident messages from your PagerDuty account via a webhook, and displays incident data in pre-configured Dashboards that allow you to monitor and analyze the activity of your PagerDuty account and Services. The Sumo Logic App for PagerDuty V3 uses Webhooks V3, to provide enhanced context for alert object models.
+New - We are excited to announce the release of the Sumo Logic [PagerDuty V3](/docs/integrations/saas-cloud/PagerDuty-v3) App. The PagerDuty V3 app collects incident messages from your PagerDuty account via a webhook, and displays incident data in pre-configured Dashboards that allow you to monitor and analyze the activity of your PagerDuty account and Services. The Sumo Logic App for PagerDuty V3 uses Webhooks V3, to provide enhanced context for alert object models.
 
 ---
 ## March 15, 2022 (Traces)
@@ -452,7 +452,7 @@ Update - The [Monitors page](/docs/Alerts/Monitors#Monitors_page) has a new shor
 ---
 ## February 12, 2022 (Apps)
 
-New - We are delighted to announce the release of the Sumo Logic [Couchbase](docs/integrations/databases/Couchbase) App. The Couchbase app is a unified logs and metrics app that helps you monitor the availability, performance, and resource utilization of Couchbase database clusters. The preconfigured dashboards provide insight into the health of clusters, the status of the buckets, I/O of reading/writing, errors, events of Couchbase servers that help you understand your clusters.
+New - We are delighted to announce the release of the Sumo Logic [Couchbase](/docs/integrations/databases/Couchbase) App. The Couchbase app is a unified logs and metrics app that helps you monitor the availability, performance, and resource utilization of Couchbase database clusters. The preconfigured dashboards provide insight into the health of clusters, the status of the buckets, I/O of reading/writing, errors, events of Couchbase servers that help you understand your clusters.
 
 ---
 ## February 11, 2022 (Manage)
@@ -491,17 +491,17 @@ New - Traces now include [Span Events](/docs/apm/traces/Working-with-Tracing-dat
 ---
 ## January 18, 2022 (Apps)
 
-New - We are delighted to announce the release of the Sumo Logic [MariaDB](docs/integrations/databases/MariaDB) app. The MariaDB app is a unified logs and metrics app that helps you monitor the availability, performance, and resource utilization of MariaDB database clusters. Preconfigured dashboards and searches provide insight into the health of your database clusters, performance metrics, resource metrics, schema metrics, replication, error logs, slow queries, Innodb operations, failed logins, and error logs.
+New - We are delighted to announce the release of the Sumo Logic [MariaDB](/docs/integrations/databases/MariaDB) app. The MariaDB app is a unified logs and metrics app that helps you monitor the availability, performance, and resource utilization of MariaDB database clusters. Preconfigured dashboards and searches provide insight into the health of your database clusters, performance metrics, resource metrics, schema metrics, replication, error logs, slow queries, Innodb operations, failed logins, and error logs.
 
 New - We are excited to release the Sumo Logic [Nginx](/docs/integrations/web-servers/Nginx) app. The Nginx app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Nginx web servers. Preconfigured dashboards and searches provide insight into connections, requests, visitor locations, visitor access types, traffic patterns, errors, web server operations, and access from known malicious sources.
 
 New - We are delighted to release the Sumo Logic [IIS 10](docs/integrations/web-servers/iis-10.md) app. The IIS 10 app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your IIS web servers. Preconfigured dashboards and searches provide insight into application pools, ASP.NET applications, requests, latency, visitor locations, visitor access types, traffic patterns, errors, web server operations, and access from known malicious sources.
 
-Update - We are excited to release the additional Logs and Metrics dashboards added for the Sumo Logic [Oracle](docs/integrations/databases/Oracle) app. The Oracle app is a unified logs and metrics app that helps you monitor the availability, performance, and resource utilization of Oracle database clusters. Preconfigured dashboards and searches provide insight into the health of your database clusters, parallel executions, resource utilization, response time, tablespaces, throughput, wait for class/events, listeners, audit logs, and security.
+Update - We are excited to release the additional Logs and Metrics dashboards added for the Sumo Logic [Oracle](/docs/integrations/databases/Oracle) app. The Oracle app is a unified logs and metrics app that helps you monitor the availability, performance, and resource utilization of Oracle database clusters. Preconfigured dashboards and searches provide insight into the health of your database clusters, parallel executions, resource utilization, response time, tablespaces, throughput, wait for class/events, listeners, audit logs, and security.
 
-Update - We are pleased to announce the availability of additional Logs and Metrics dashboards added for the Sumo Logic [Nginx Ingress](docs/integrations/web-servers/Nginx-Ingress) app. The Nginx Ingress app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Nginx Ingress web servers. Preconfigured dashboards and searches provide insight into connections, requests, ingress controller metrics, visitor locations, visitor access types, traffic patterns, errors, web server operations, and access from known malicious sources.
+Update - We are pleased to announce the availability of additional Logs and Metrics dashboards added for the Sumo Logic [Nginx Ingress](/docs/integrations/web-servers/Nginx-Ingress) app. The Nginx Ingress app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Nginx Ingress web servers. Preconfigured dashboards and searches provide insight into connections, requests, ingress controller metrics, visitor locations, visitor access types, traffic patterns, errors, web server operations, and access from known malicious sources.
 
-Update - We are delighted to release the additional Logs and Metrics dashboards added for the Sumo Logic [Squid Proxy](docs/integrations/web-servers/Squid-Proxy) app. The Squid Proxy app is a unified logs and metrics app that helps you monitor activity in Squid Proxy. The preconfigured dashboards provide insight into served and denied requests; performance metrics; IP domain DNS statistics; traffic details; HTTP response codes; URLs experiencing redirects, client errors, and server errors; and quality of service data that helps you understand your users’ experience.
+Update - We are delighted to release the additional Logs and Metrics dashboards added for the Sumo Logic [Squid Proxy](/docs/integrations/web-servers/Squid-Proxy) app. The Squid Proxy app is a unified logs and metrics app that helps you monitor activity in Squid Proxy. The preconfigured dashboards provide insight into served and denied requests; performance metrics; IP domain DNS statistics; traffic details; HTTP response codes; URLs experiencing redirects, client errors, and server errors; and quality of service data that helps you understand your users’ experience.
 
 ---
 ## January 4, 2022 (Dashboard)

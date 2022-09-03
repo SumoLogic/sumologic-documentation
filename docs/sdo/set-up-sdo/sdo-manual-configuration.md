@@ -27,14 +27,14 @@ Before setting up the SDO solution, you need to complete the following tasks:
 
 To set up the SDO solution manually, configure collection and install apps for each tool that you want to integrate with this solution. Complete the following instructions for each app integration:
 
-* [Jira Cloud] (docs/integrations/app-development/Jira_Cloud/Collect_Logs_for_the_Jira_Cloud_App.md "Collect Logs for the Jira Cloud App")
-* [Jira Server] (docs/integrations/app-development/Jira/Collect_Logs_for_the_Jira_App.md "Collect Logs for the Jira App")
-* [GitHub] (docs/integrations/app-development/GitHub/01Collect-Logs-for-the-GitHub-App.md "Collect Logs for GitHub")
-* [Bitbucket App] (docs/integrations/app-development/Bitbucket/Collect_Logs_for_Bitbucket_App.md "Collect Logs for Bitbucket App")
-* [Jenkins] (docs/integrations/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md "Collect Logs and Metrics for Jenkins")
-* [PagerDuty] (docs/integrations/saas-cloud/PagerDuty_V2/Collect_logs_for_PagerDuty_V2.md "Collect logs for PagerDuty V2")
-* [Opsgenie] (docs/integrations/saas-cloud/Opsgenie/Collect_Logs_for_Opsgenie.md "Collect Logs for Opsgenie")
-* [GitLab] (docs/integrations/app-development/GitLab/Collect_Logs_for_GitLab_App.md "Collect Logs for GitLab App")
+* [Jira Cloud](/docs/integrations/app-development/Jira-Cloud)
+* [Jira Server](docs/integrations/app-development/Jira)
+* [GitHub](/docs/integrations/app-development/GitHub)
+* [Bitbucket App](/docs/integrations/app-development/Bitbucket)
+* [Jenkins](/docs/integrations/app-development/Jenkins)
+* [PagerDuty](/docs/integrations/saas-cloud/PagerDuty-V2)
+* [Opsgenie](/docs/integrations/saas-cloud/Opsgenie)
+* [GitLab](/docs/integrations/app-development/GitLab)
 * [CircleCI](https://circleci.com/docs/2.0/insights-partnerships/#sumo-logic-integration)
 
 ## Create New FERs
