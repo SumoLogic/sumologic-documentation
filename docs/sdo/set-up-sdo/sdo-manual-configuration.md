@@ -28,7 +28,7 @@ Before setting up the SDO solution, you need to complete the following tasks:
 To set up the SDO solution manually, configure collection and install apps for each tool that you want to integrate with this solution. Complete the following instructions for each app integration:
 
 * [Jira Cloud](/docs/integrations/app-development/Jira-Cloud)
-* [Jira Server](docs/integrations/app-development/Jira)
+* [Jira Server](/docs/integrations/app-development/Jira)
 * [GitHub](/docs/integrations/app-development/GitHub)
 * [Bitbucket App](/docs/integrations/app-development/Bitbucket)
 * [Jenkins](/docs/integrations/app-development/Jenkins)
