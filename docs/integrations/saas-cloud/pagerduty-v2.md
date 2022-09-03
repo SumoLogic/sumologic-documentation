@@ -7,7 +7,7 @@ description: The Sumo Logic App for PagerDuty V2 collects incident messages from
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/pagerduty.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/pagerduty.png')} alt="Thumbnail icon" width="75"/>
 
 The Sumo Logic App for PagerDuty V2 collects incident messages from your PagerDuty account via a webhook, and displays incident data in pre-configured Dashboards that allow you to monitor and analyze the activity of your PagerDuty account and Services. The Sumo Logic App for PagerDuty V2 uses Webhooks V2, to provide enhanced context for alert object models.
 
@@ -105,7 +105,7 @@ Use this dashboard to:
 * Analyze detailed information on incidents using the Incident Summary panel.
 * Drill down to examine data on a granular level with filters.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/PagerDutyV2-Overview.png')} alt="PagerDuty V2 dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/PagerDutyV2-Overview.png')} alt="PagerDuty V2 dashboards" />
 
 
 ### Incidents Overview
@@ -117,7 +117,7 @@ Use this dashboard to:
 * Review a high-level view of incidents summaries.
 * Compare the state of incidents with that of a previous time
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/PagerDutyV2-IncidentsOverview.png')} alt="PagerDuty V2 dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/PagerDutyV2-IncidentsOverview.png')} alt="PagerDuty V2 dashboards" />
 
 ### Incidents by Urgency and Escalation Policy
 
@@ -127,4 +127,4 @@ Use this dashboard to:
 * Review see weekly incident summaries.
 * Analyze incidents by severity and escalation policy.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/PagerDutyV2-IncidentsbyUrgencyandEscalation.png')} alt="PagerDuty V2 dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/PagerDutyV2-IncidentsbyUrgencyandEscalation.png')} alt="PagerDuty V2 dashboards" />

@@ -7,7 +7,7 @@ description: Fastly is a content delivery network (CDN) that provides you contro
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/fastly.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/fastly.png')} alt="Thumbnail icon" width="100"/>
 
 Fastly is a content delivery network (CDN) that provides you control over how and where you serve content, access to real-time performance analytics, and the ability to cache unpredictably changing content at the edge.
 
@@ -385,7 +385,7 @@ There are four dashboards for Fastly that you can configure to accommodate your 
 
 The overview dashboard provides a high-level view of your Fastly traffic and identifies potential problems within the service.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/fastly-cdn-overview.png')} alt="Fastly dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/fastly-cdn-overview.png')} alt="Fastly dashboards" />
 
 * **Visitor Geolocations.** Uses geolocation to display visitors by country using their IP addresses.
 * **Download Performance Hotspots** **- Avg Download Above 300ms by Country.** Uses a geolocation operation to display performance download time hotspots on a map of the world by IP addresses, lets you see a count of hits per location over the last 60 minutes.
@@ -400,7 +400,7 @@ The overview dashboard provides a high-level view of your Fastly traffic and ide
 
 Focus in on Origin Host performance to check latencies, slow URLs and error-causing URLs.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/FastlyCDNOriginPerformancepng.png')} alt="Fastly dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/FastlyCDNOriginPerformancepng.png')} alt="Fastly dashboards" />
 
 * **90%-ile Latency (millisecs) by Origin Host. **Displays the 90th percentile of the data center response time latency as a line chart on a timeline for the last hour, using timeslices of one minute.
 * **Median Latency (millisecs) by Origin Host**. Displays the median latency time as a line chart for the past hour.
@@ -416,7 +416,7 @@ Focus in on Origin Host performance to check latencies, slow URLs and error-caus
 
 See where quality of service is below minimum thresholds such as download times, cache performance, and data center performance.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/fastly-cdn-quality-of-service.png')} alt="Fastly dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/fastly-cdn-quality-of-service.png')} alt="Fastly dashboards" />
 
 * **Download Performance Hotspots - Avg Download Above 300ms.**  Uses a geolocation operation to display performance download time hotspots on a map of the world by IP addresses, lets you see a count of hits per location for the last hour.
 * **Cache Performance.** The number of Hits, Passes, and Misses as a percentage over a period of time.
@@ -431,7 +431,7 @@ See where quality of service is below minimum thresholds such as download times,
 
 See where you're getting the most traffic and from where.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/FastlyCDNVisitors.png')} alt="Fastly dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/FastlyCDNVisitors.png')} alt="Fastly dashboards" />
 
 * **Visitor Geolocations.** See where your visitors originate with a map that provides the geolocation of visitor IP addresses.
 * **Requests by Country.** Percentage of requests by country to help you find the origin of traffic to Fastly.
@@ -452,7 +452,7 @@ See where you're getting the most traffic and from where.
 
 See the overview of Fastly WAF including the states, hits, and threat intel on warning and blocked events.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/WAF-Overview.png')} alt="Fastly dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/WAF-Overview.png')} alt="Fastly dashboards" />
 
 * **WAF Analysis**
     * **WAF States. **See the count of requests that triggered WAF. It shows if the request triggered a rule(s) but passed to origin (warn), was blocked (bad), went through WAF and triggered no rules (good), cause an error (failure) for the last 24 hour as a line chart.
@@ -474,7 +474,7 @@ The following panels are grouped as blocking and warning (which triggered a rule
 
 See the details on WAF offenders including the location, client IP addresses for warning and blocked events, and OWASP offenders in different attack categories and threshold exceptions.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/fastly-waf-offenders.png')} alt="Fastly dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/fastly-waf-offenders.png')} alt="Fastly dashboards" />
 
 * **Geo Location of All Users. **See the count and user location where WAF was executed in the last 24 hours on a world map.
 * **Top Clients affected by Threats. **See the top 10 client IP addresses by count that are affected by threats in the last 24 hours.
@@ -495,7 +495,7 @@ See the details on WAF offenders including the location, client IP addresses for
 
 See the overall Open Web Application Security Project (OWASP) anomaly score quartiles and by rule category.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/WAF-OWASP.png')} alt="Fastly dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/WAF-OWASP.png')} alt="Fastly dashboards" />
 
 * **OWASP Thresholds**. The panels in this dashboard show the overall anomaly score quartiles and by rule category. They show the following statistics: minimum, 25th percentile, median, 75th percentile, maximum, and the average in the last hour, for each of the following:
     * **OWASP Overall.**

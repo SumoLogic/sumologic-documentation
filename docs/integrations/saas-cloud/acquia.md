@@ -7,7 +7,7 @@ description: The Sumo Logic App for Acquia provides visibility into the key comp
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/acquia.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/acquia.png')} alt="Thumbnail icon" width="100"/>
 
 The Sumo Logic App for Acquia provides visibility into the key components of the Acquia platform with preconfigured dashboards for Apache, Varnish, PHP, FPM and Drupal.
 
@@ -286,7 +286,7 @@ Use this dashboard to:
 * Identify and troubleshoot configuration issues.
 * Identify ways to fine tune your product based on your data analysis.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/acquia_overview.png')} alt="Dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/acquia_overview.png')} alt="Dashboard" />
 
 ### Errors Overview
 
@@ -297,7 +297,7 @@ Use this dashboard to:
 * Monitor Varnish cache hit and miss rates.
 * Track critical error messages from the various components of the Acquia stack.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Acquia_Errors_Overview.png')} alt="Dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Acquia_Errors_Overview.png')} alt="Dashboard" />
 
 
 ### FPM Overview
@@ -309,7 +309,7 @@ Use this dashboard to:
 * Monitor status codes over time.
 * Monitor response time latency.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Acquia_FPM_Overview.png')} alt="Dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Acquia_FPM_Overview.png')} alt="Dashboard" />
 
 ### Drupal Request Overview
 
@@ -320,4 +320,4 @@ Use this dashboard to:
 * Monitor status codes over time
 * Monitor response time latency
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Acquia_Drupal_Requests_Overview.png')} alt="Dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Acquia_Drupal_Requests_Overview.png')} alt="Dashboard" />

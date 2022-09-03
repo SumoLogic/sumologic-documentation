@@ -1,11 +1,14 @@
 ---
 id: word-list
 title: Word List
+hide_table_of_contents: true
 ---
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
 
 This word list provides an alphabetized list of commonly used terms at Sumo Logic, including components and features of the Sumo Logic Web Application, and other usage issues, such as punctuation and capitalization. This is not a glossary. Here is the [Glossary](/docs/Get-Started/Glossary).
-
 
 See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design-system/style) provided by our UX team.
 
@@ -194,8 +197,6 @@ See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design
 
 **Sources.** When referring to more than one Source, the term Sources is capitalized. The following Sources are available and should be capitalized as shown below:
 
-
-
 * Local File Source
 * Remote File Source
 * Syslog Source
@@ -205,9 +206,6 @@ See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design
 * Script Action
 
 Hosted Collectors can use:
-
-
-
 * Amazon S3 Source
 * HTTP Source
 
@@ -237,11 +235,6 @@ Hosted Collectors can use:
 **Time zone.** Time zone is two words, not one.
 
 
-## U
-
-
-
-
 ## V
 
 **Very.** Avoid the word "very" because it doesn't add any additional information to the user.
@@ -256,16 +249,3 @@ Hosted Collectors can use:
 **Where operator.** A conditional operator that can precede or follow another operator. Example combinations include "where x matches y", "where x in (a, b, c)", "where x not in (a, b, c)" and "where a > 1 and b / 4 &lt; sqrt(x)".
 
 **Wildcard.** Wildcard is one word.
-
-
-## X
-
-
-
-
-## Y
-
-
-
-
-## Z

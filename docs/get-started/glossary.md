@@ -38,7 +38,7 @@ Sumo Logic’s Service Allowlist Settings allow you to explicitly grant access t
 
 The Amazon S3 Audit Source, also called Server Access Logging, tracks and collects your Amazon S3 bucket's activity logs.
 
-**[Apps](https://help.sumologic.com/07Sumo-Logic-Apps)**
+**[Apps](/docs/integrations)**
 
 Sumo Logic Apps (short for applications) deliver out-of-the-box Dashboards, reports, saved searches, and field extraction for popular data Sources, such as AWS, Windows, Apache, and many more. When a customer installs an app in Sumo Logic, preconfigured searches and Dashboards are customized with the customer's Source configurations and populated in a folder. Customers then can monitor their system's behavior visually using the Dashboards.
 
@@ -181,16 +181,22 @@ Field Extraction can be set up as rules that parse out fields as log messages ar
 
 A fingerprint consists of the first 2048 bytes of a file and is used by Installed Collectors to track what data has been collected.
 
+<<<<<<< HEAD
+**[Flow Graph](docs/integrations/amazon-aws/guardduty-benchmark.md)**
+
+A graph or map that dynamically displays a directional flow from a source to a target. Such as the flow of cyber threats from the geographic locations of sources to their targets, dynamically illustrated in the Threat Sources and Targets by Geography panel of the [Amazon GuardDuty Global Baseline](docs/integrations/amazon-aws/guardduty-benchmark.md) dashboard.
+=======
 **[Flow Graph](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_GuardDuty_Benchmark)**
 
 A graph or map that dynamically displays a directional flow from a source to a target. Such as the flow of cyber threats from the geographic locations of sources to their targets, dynamically illustrated in the Threat Sources and Targets by Geography panel of the [Amazon GuardDuty Global Baseline](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_GuardDuty_Benchmark/View_the_Amazon_GuardDuty_Benchmark_App_Dashboards) dashboard.
+>>>>>>> main
 
 
 
 
 ## G
 
-**[Geo lookup](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/Geo-Lookup)**
+**[Geo lookup](/docs/search/search-query-language/search-operators/Geo-Lookup)**
 
 Sumo Logic can match a [parsed](https://help.sumologic.com/05Search/Search-Query-Language/01-Parse-Operators) IPv4 or IPv6 address to its geographical location on a map. To create the map the **lookup** operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated.
 
@@ -211,7 +217,11 @@ Group-by functions include count, count_distinct, sum, avg, stddev, max, min, la
 
 Hash rules replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it's fully hidden.
 
+<<<<<<< HEAD
+**[Host Metrics](https://help.sumologic.comdocs/integrations/14Hosts_and_Operating_Systems/Host_Metrics)**
+=======
 **[Host Metrics](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics)**
+>>>>>>> main
 
 The Sumo Logic app for Host Metrics allows you to collect local host metrics and display them using predefined search queries and dashboards. The app provides dashboards to display analysis of local host metrics for the CPU, disk, memory, network, and TCP.
 
@@ -222,7 +232,7 @@ Hosted Collectors don't require installation or registration, nor do Hosted Coll
 
 ## I
 
-**[If operator](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/if-operator-and)**
+**[If operator](docs/search/search-query-language/search-operators/if-operator-and.md)**
 
 A ternary operator used to evaluate a condition as either true or false, with values assigned for each outcome. It is a shorthand way to express an if-else condition.
 
@@ -249,7 +259,11 @@ In Carbon 2.0-formatted metrics, intrinsic tags are the one or more space-separa
 
 ## K
 
-**[Kubernetes Views](https://help.sumologic.com/Observability_Solution/Kubernetes_Solution/02Monitoring_Using_Kubernetes)**
+<<<<<<< HEAD
+**[Kubernetes Views](https://help.sumologic.com/docs/observability/Kubernetes_Solution/02Monitoring_Using_Kubernetes)**
+=======
+**[Kubernetes Views](https://help.sumologic.com/observability/Kubernetes_Solution/02Monitoring_Using_Kubernetes)**
+>>>>>>> main
 
 Allow you to intuitively filter on four hierarchical components of your Kubernetes system to focus your search on nodes, deployments, services, or namespaces. Kubernetes Views make it easier to traverse your Kubernetes hierarchy to monitor specific components, identify problems, discover root problems, and take progressive action.
 
@@ -331,7 +345,11 @@ Metrics transformation rules allow you control how long raw metrics are retained
 
 A Sumo index to which Sumo writes messages with information about the volume of metrics you are ingesting.
 
+<<<<<<< HEAD
+**[Microservices](https://help.sumologic.comdocs/integrations/08App_Development)**
+=======
 **[Microservices](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development)**
+>>>>>>> main
 
 The microservices architecture enables you to structure applications as collections of loosely coupled services that are fine-grained, with protocols that are lightweight. Building applications using different smaller services improves modularity and provides for the continuous delivery and deployment of large, complex applications.
 
@@ -350,7 +368,7 @@ In Sumo Logic, org, or organization, refers to your company’s Sumo Logic accou
 
 **Outlier**
 
-Outliers are log data or metric values in a sequence that seem unexpected, and might indicate an operational or performance issue. In Sumo Logic, you can use the [outlier operator](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/outlier) to identify outliers in log data. In addition, Sumo has a [metric outlier](https://help.sumologic.com/Metrics/03-Metric-Charts/09-Metrics-Outliers) feature that identifies metric data points that are outside the range of expected values.
+Outliers are log data or metric values in a sequence that seem unexpected, and might indicate an operational or performance issue. In Sumo Logic, you can use the [outlier operator](/docs/search/search-query-language/search-operators/outlier) to identify outliers in log data. In addition, Sumo has a [metric outlier](https://help.sumologic.com/Metrics/03-Metric-Charts/09-Metrics-Outliers) feature that identifies metric data points that are outside the range of expected values.
 
 
 
@@ -379,7 +397,11 @@ A Sumo feature you can use to filter or forward log data ingested by Sumo from a
 
 **Prometheus**
 
-A metric format in which a time series is uniquely identified by its metric name and a set of labels in key-value pairs format. Sumo’s [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) and [Streaming Metric source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Streaming-Metrics-Source) support Prometheus metrics. Sumo’s [Kubernetes solution](https://help.sumologic.com/Observability_Solution/Kubernetes_Solution) also collects Prometheus metrics.
+<<<<<<< HEAD
+A metric format in which a time series is uniquely identified by its metric name and a set of labels in key-value pairs format. Sumo’s [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) and [Streaming Metric source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Streaming-Metrics-Source) support Prometheus metrics. Sumo’s [Kubernetes solution](https://help.sumologic.com/docs/observability/Kubernetes_Solution) also collects Prometheus metrics.
+=======
+A metric format in which a time series is uniquely identified by its metric name and a set of labels in key-value pairs format. Sumo’s [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) and [Streaming Metric source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Streaming-Metrics-Source) support Prometheus metrics. Sumo’s [Kubernetes solution](https://help.sumologic.com/observability/Kubernetes_Solution) also collects Prometheus metrics.
+>>>>>>> main
 
 
 
@@ -390,7 +412,7 @@ A metric format in which a time series is uniquely identified by its metric name
 
 The process by which Sumo aggregates raw metric data points over a particular time bucket. Similar to “timeslice” in logs, Sumo will automatically bucket your datapoints into quantization intervals based on the timerange of your search. For example, 5 second quantization intervals for a 15-minute search and 15 seconds for a 60-minute search.
 
-**[quantize operator](https://help.sumologic.com/Metrics/Metric-Queries-and-Alerts/07Metrics_Operators#quantize)**
+**[quantize operator](https://help.sumologic.com/Metrics/Metric-Queries-Alerts/07Metrics_Operators#quantize)**
 
 An operator you can use is metric queries to specify the size of the time buckets over which Sumo will aggregate metrics, and the aggregation method Sumo will use to quantize the data.
 
@@ -489,7 +511,7 @@ Time Compare uses the compare operator to compare current aggregated search resu
 
 A set of timestamped values of a specific measurement.
 
-**[Timeslice operator](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/timeslice)**
+**[Timeslice operator](/docs/search/search-query-language/search-operators/timeslice)**
 
 Timeslice segregates search results by a time period, or by a number of buckets over a search's time range.
 
@@ -523,6 +545,6 @@ The Sumo Logic product is officially called the Sumo Logic Web Application. The 
 
 A WebHook is an HTTP callback: an HTTP POST that occurs when something happens. WebHook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming WebHooks. You can configure a custom WebHook, or use preconfigured WebHooks for a number of apps, including Slack, HipChat, Datadog, and so on.
 
-**[Where operator](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/where)**
+**[Where operator](/docs/search/search-query-language/search-operators/where)**
 
 A conditional operator that can precede or follow another operator. Example combinations include "where x matches y", "where x in (a, b, c)", "where x not in (a, b, c)" and "where a > 1 and b / 4 &lt; sqrt(x)".

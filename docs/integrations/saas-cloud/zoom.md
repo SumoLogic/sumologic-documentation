@@ -7,7 +7,7 @@ description: The Sumo Logic App for Zoom provides visibility into how Zoom is be
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/zoom.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="Thumbnail icon" width="100"/>
 
 Zoom unifies cloud video and audio conferencing, simple online meetings, and group messaging into one easy-to-use platform. The cloud platform facilitates collaboration across mobile devices, desktops, telephones, and room systems for an on-line meeting space you can depend on. Zoom allows you to stay connected wherever you go with face-to-face video, high quality screen sharing, and instant messaging.
 
@@ -167,7 +167,7 @@ Use this dashboard to:
 * Identify frequently used meeting-ids to prevent Zoom bombing.
 * Assess the number of people in and out of your organization who are using Zoom and their level of activity.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Zoom_Overview.png')} alt="Zoom dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Overview.png')} alt="Zoom dashboards" />
 
 
 ### Availability
@@ -178,7 +178,7 @@ Use this dashboard to:
 * Quickly identify meeting issues such as unstable audio and video connections, and poor screen sharing quality.
 * Quickly identify issues in a Zoom Room device such as low battery or connection issues.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Zoom_Availability.png')} alt="Zoom dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Availability.png')} alt="Zoom dashboards" />
 
 
 ### User Activity
@@ -190,7 +190,7 @@ Use this dashboard to:
 * Determine the types of recordings most frequently used and the size of files generated to assess current resources and plan for growth.
 * Analyze types of content shared during collaboration.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Zoom_User_Activity.png')} alt="Zoom dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Zoom_User_Activity.png')} alt="Zoom dashboards" />
 
 
 ### Guest Activity
@@ -202,7 +202,7 @@ Use this dashboard to:
 * Determine the meeting topics that attracted the most guest participants.
 * Identify which hosts had the most guest participants.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Zoom_Guest_Activity.png')} alt="Zoom dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Guest_Activity.png')} alt="Zoom dashboards" />
 
 
 ### Administrator Activity
@@ -214,7 +214,7 @@ Use this dashboard to:
 * Quickly identify recent account and user changes.
 * Monitor administrator activity trends to identify how to best optimize for the future.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Zoom_Administrator_Activity.png')} alt="Zoom dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Administrator_Activity.png')} alt="Zoom dashboards" />
 
 
 ### Meeting Usage
@@ -225,7 +225,7 @@ Use this dashboard to:
 * Determine the level of collaboration occurring in your organization.
 *  Monitor behavioral trends around how meetings are created, meeting duration, and how often meetings end of time to plan for and allocate required resources.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Zoom_Meeting_Usage.png')} alt="Zoom dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Meeting_Usage.png')} alt="Zoom dashboards" />
 
 ### Authentication
 
@@ -235,7 +235,7 @@ Use this dashboard to:
 * Quickly identify types of devices and Zoom clients used to ensure users are not running vulnerable clients.
 * Determine highest activity times for Zoom activity and collaboration  and plan accordingly.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Zoom_Authentication.png')} alt="Zoom dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Authentication.png')} alt="Zoom dashboards" />
 
 
 ### Meeting Security
@@ -246,7 +246,7 @@ Use this dashboard to:
 * Identify frequently used meeting-ids and personal meetings rooms being used to prevent Zoom bombing.
 * Quickly identify which meetings are being updated to bypass security best practices.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Zoom_Meeting_Security.png')} alt="Zoom dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Meeting_Security.png')} alt="Zoom dashboards" />
 
 
 ### Webinars
@@ -257,4 +257,4 @@ Use this dashboard to:
 * Determine the number and types of webinars and the participants who joined.
 * Identify interest level, participation and assess the success of the webinars.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Zoom_Webinars.png')} alt="Zoom dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Zoom_Webinars.png')} alt="Zoom dashboards" />

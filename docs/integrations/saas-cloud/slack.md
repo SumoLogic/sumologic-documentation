@@ -7,7 +7,7 @@ description: The Sumo Logic App for Slack provides monitoring and data analytics
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/slack.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Thumbnail icon" width="100"/>
 
 The Sumo Logic App for Slack provides monitoring and data analytics for Slack users, channels, access logs for workspaces with free, standard, plus, and enterprise plans. The app is focused on **public channels** only.
 
@@ -813,7 +813,7 @@ Use this dashboard to:
 * Identify the trends around public messages and files shared
 * Monitor locations from which workspaces are being accessed
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Slack_Overview.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Overview.png')} alt="Slack dashboards" />
 
 
 
@@ -826,7 +826,7 @@ Use this dashboard to:
 * Identify inactive members that have not accessed the workspace.
 * Identify members that do not have two factor authentication enabled
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Slack_Members.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Members.png')} alt="Slack dashboards" />
 
 
 ### Bots
@@ -836,7 +836,7 @@ The **Slack - Bots** dashboard displays information on bots, which are software 
 Use this dashboard to:
 * Monitor bots and bot activities across multiple workspaces.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Slack_Bots.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Bots.png')} alt="Slack dashboards" />
 
 
 
@@ -848,7 +848,7 @@ Use this dashboard to:
 * Monitor channel activity across multiple workspaces
 * Identify inactive channels where messages are not being posted
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Slack_Public_Channels.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Public_Channels.png')} alt="Slack dashboards" />
 
 
 ### Public Messages
@@ -859,7 +859,7 @@ Use this dashboard to:
 * Monitor various file types being shared and identify those that pose the greatest risk
 * Investigate the details of file shared via the URL links in the Recent File Shared panel
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Slack_Public_Messages_Investigation.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Public_Messages_Investigation.png')} alt="Slack dashboards" />
 
 
 
@@ -872,7 +872,7 @@ Use this dashboard to:
 * Identify the kinds of mobile or desktop platforms that users are using to access Slack
 * Identify trends for user access patterns across multiple workspaces
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Slack_Access.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Access.png')} alt="Slack dashboards" />
 
 
 ### Audit Overview Dashboard
@@ -883,7 +883,7 @@ Use this dashboard to:
 * Review audit actions and determine which are not approved or need to be corrected
 * Identify and validate that top users performing audit actions
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Slack_Audit_Overview.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Audit_Overview.png')} alt="Slack dashboards" />
 
 
 ### User Audit
@@ -895,7 +895,7 @@ Use this dashboard to:
 * Monitor all role changes for workspaces and identify any suspicious behavior
 * Monitor and validate that all guest activities are in line with what is expected
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Slack_User_Audit.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack_User_Audit.png')} alt="Slack dashboards" />
 
 
 
@@ -909,7 +909,7 @@ Use this dashboard to:
 * Monitor workspace related, data retention, or billing activities
 * Monitor the exports that are performed on workspaces
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Slack_Workspace_Audit.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Workspace_Audit.png')} alt="Slack dashboards" />
 
 
 
@@ -922,7 +922,7 @@ Use this dashboard to:
 * Monitor all the private and public channels joined by members and guests
 * Monitor all the private channels that are created, deleted, and archived by guests
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Slack_Channel_Audit.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack_Channel_Audit.png')} alt="Slack dashboards" />
 
 
 ### File and App Audit
@@ -936,4 +936,4 @@ Use this dashboard to:
 * Identify all guests and members that share, install applications download and upload files across public and private channels
 * Identify the top scopes under which applications are approved and installed
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Slack_File_And_App_Audit.png')} alt="Slack dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Slack_File_And_App_Audit.png')} alt="Slack dashboards" />

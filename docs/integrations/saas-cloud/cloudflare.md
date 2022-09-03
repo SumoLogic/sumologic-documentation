@@ -7,7 +7,7 @@ description: The Cloudflare App provides a set of dashboards to make analyzing C
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/cloudflare.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/cloudflare.png')} alt="Thumbnail icon" width="100"/>
 
 This application has been developed and is supported by Cloudflare. In case of technical questions, please review the technical [documentation](https://developers.cloudflare.com/logs/) for Cloudflare logs or email [analytics@cloudflare.com](mailto:analytics@cloudflare.com).
 
@@ -117,7 +117,7 @@ Use this dashboard to:
 * Monitor the most important web traffic metrics of your websites and applications on the Cloudflare network.
 * View what countries and IPs your traffic is coming from and analyze the breakdown between mobile and desktop traffic, protocol, methods, and content types.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Cloudflare-Snapshot.png')} alt="Cloudflare dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Cloudflare-Snapshot.png')} alt="Cloudflare dashboards" />
 
 
 
@@ -129,7 +129,7 @@ Use this dashboard to:
 
 * Investigate errors on your websites and applications by viewing edge and origin response status codes.
 * Further analyze errors based on status codes by countries, client IPs, hostnames, and other metrics.
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Cloudflare_-_Reliability.png')} alt="Cloudflare dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Cloudflare_-_Reliability.png')} alt="Cloudflare dashboards" />
 
 
 
@@ -141,7 +141,7 @@ Use this dashboard to:
 * Monitor the most important security and threat metrics for your websites and applications.
 * Fine tune and configure your IP firewall.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Cloudflare-Security-Overview.png')} alt="Cloudflare dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Cloudflare-Security-Overview.png')} alt="Cloudflare dashboards" />
 
 
 ### Security (WAF)
@@ -152,7 +152,7 @@ Use this dashboard to:
 * Understand attacks and WAF rules triggered to reveal vulnerabilities and false positives.
 * Fine tune the WAF to target obvious threats and prevent false positives.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Cloudflare-Security_WAF.png')} alt="Cloudflare dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Cloudflare-Security_WAF.png')} alt="Cloudflare dashboards" />
 
 
 ### Security (Rate Limiting)
@@ -163,7 +163,7 @@ Use this dashboard to:
 * Investigate attacks by looking at rate limiting over time, top rate limit actions, top rate limit countries, top banned URIs, and top banned client IPs.
 * Define thresholds or block client IP addresses to protect your website or application from malicious traffic.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Cloudflare_Security-RateLimiting.png')} alt="Cloudflare dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Cloudflare_Security-RateLimiting.png')} alt="Cloudflare dashboards" />
 
 
 ### Security (Bot Management)
@@ -176,7 +176,7 @@ Use this dashboard to:
 * Investigate bot activity on your website to prevent content scraping, checkout fraud, spam registration and other malicious activities.
 * Use insight to tune Cloudflare to prevent bots from excessive usage and abuse across websites, applications, and API endpoints.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Cloudflare_Security_Bot_Management.png')} alt="Cloudflare dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Cloudflare_Security_Bot_Management.png')} alt="Cloudflare dashboards" />
 
 ### Performance (Requests, Bandwidth, Cache)
 
@@ -186,7 +186,7 @@ Use this dashboard to:
 * Monitor caching behavior and identify misconfigurations.
 * Improve configuration and caching ratio.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Cloudflare-Performance_Requests.png')} alt="Cloudflare dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Cloudflare-Performance_Requests.png')} alt="Cloudflare dashboards" />
 
 ### Performance (Hostname, Content Type, Request Methods, Connection Type)
 
@@ -196,7 +196,7 @@ Use this dashboard to:
 * Review the most requested content types, popular hostnames, and top triggered methods and TLS protocols.
 * Compare these metrics over time and in requests per second.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Cloudflare-Performance_Hostname.png')} alt="Cloudflare dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Cloudflare-Performance_Hostname.png')} alt="Cloudflare dashboards" />
 
 
 ### Performance (Static vs. Dynamic Content)
@@ -207,4 +207,4 @@ Use this dashboard to:
 * Compare your static and dynamic content performance.
 * Investigate the cause of slow requested URLs in order to improve performance.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Cloudflare-Performance_Static.png')} alt="Cloudflare dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Cloudflare-Performance_Static.png')} alt="Cloudflare dashboards" />

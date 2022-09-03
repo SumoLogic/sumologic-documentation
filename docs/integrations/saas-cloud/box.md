@@ -7,7 +7,7 @@ description: Provides insight into user behavior patterns, monitors resources, a
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/box.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/box.png')} alt="Thumbnail icon" width="100"/>
 
 The Sumo Logic App for Box provides insight into user behavior patterns, monitors resources, and even tracks administrative activities. The app consists of three predefined Dashboards, providing visibility into your environment for real time analysis.
 
@@ -111,7 +111,7 @@ In this task, you copy the package file to the folder where it will be deployed 
    ```sh
    tar xzvf sumojanus-box-dist.3.0.0.tar.gz
    ```
-   * **On Windows**, you can use Windows Explorer to open the package and copy it to the target folder. After you unpack the file, there should be a folder called **sumojanus-box** that contains files like this:<br/><img src={useBaseUrl('img/integrations/saas-cloud-apps/Box_sumojanux-box_folder.png')} alt="Box_sumojanux-box_folder" />
+   * **On Windows**, you can use Windows Explorer to open the package and copy it to the target folder. After you unpack the file, there should be a folder called **sumojanus-box** that contains files like this:<br/><img src={useBaseUrl('img/integrations/saas-cloud/Box_sumojanux-box_folder.png')} alt="Box_sumojanux-box_folder" />
 
 ### Step 4: Edit the properties file
 
@@ -143,7 +143,7 @@ This section shows you how to set up authentication.
 
 #### Prerequisites
 
-* **You must have Admin or Co-Admin role permissions** to perform this procedure. A Co-Admin user only needs “Runs new report and access existing reports” privilege (under **Reports and Settings** section, as shown in the following image).<br/><img src={useBaseUrl('img/integrations/saas-cloud-apps/box-privileges.png')} alt="box-privileges" width="450" />
+* **You must have Admin or Co-Admin role permissions** to perform this procedure. A Co-Admin user only needs “Runs new report and access existing reports” privilege (under **Reports and Settings** section, as shown in the following image).<br/><img src={useBaseUrl('img/integrations/saas-cloud/box-privileges.png')} alt="box-privileges" width="450" />
 * You need an internet-connected computer with a web browser. We recommended that you use a Chrome or Firefox browser for the authentication procedure, _not_ Internet Explorer (IE).
 * As part of authentication, the script opens and listens to port 8080. It also creates a token file under the **sumojanus-box/data** folder. Make sure the local firewall settings and file permissions allow these operations. On Windows machines, you may need to create a firewall exception rule to allow port 8080 to be opened.
 * Verify the current JRE folder the collector is using by going to the **collector** folder under **config/wrapper.conf**, and looking for the **wrapper.java.command** variable.
@@ -258,7 +258,7 @@ The Script Source is available for Linux or Windows environments with Java Runti
 
 ### Collaborations and Shares
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/box_app_collaborations.png')} alt="Box dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/box_app_collaborations.png')} alt="Box dashboards" />
 
 **Users with Most Collaboration Activities.** Shows the top users with the most collaboration activities and displays them as a column chart for the last 24 hours.
 
@@ -271,7 +271,7 @@ The Script Source is available for Linux or Windows environments with Java Runti
 
 ### Resource Access
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/box_app_resource.png')} alt="Box dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/box_app_resource.png')} alt="Box dashboards" />
 
 **Top 10 Resource Creators.** Displays the top 10 resource creators by showing details of Box upload or create events by user and count as a pie chart for the last 24 hours.
 
@@ -288,7 +288,7 @@ The Script Source is available for Linux or Windows environments with Java Runti
 
 ### User Monitoring
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/box_app_user_monitoring.png')} alt="Box dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/box_app_user_monitoring.png')} alt="Box dashboards" />
 
 **Top 10 Logins by User.** Displays details about the top 10 users with the most logins, such as source user, source login, and event count in an aggregation table for the last 24 hours.
 
