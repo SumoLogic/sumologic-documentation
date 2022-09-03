@@ -37,9 +37,9 @@ The following table lists data types and some of the popular sources that produc
 | Server / OS | <ul><li>HP UX</li><li>[Linux] (docs/integrations/hosts-operating-systems/Linux)</li><li>Mac</li><li>Red Hat</li><li>Ubuntu</li><li>Windows</li></ul> |
 | Virtual | <ul><li>Citrix</li><li>Microsoft Hyper-V</li><li>VMware</li></ul> |
 | Network | <ul><li>[Cisco ASA] (docs/integrations/security-threat-detection/Cisco_ASA)</li><li>[Palo Alto Networks] (docs/integrations/security-threat-detection/Palo-Alto-Networks-6)</li><li>McAfee</li><li>Symantec</li></ul> |
-| Content Delivery | <ul><li>[Akamai] (docs/integrations/saas-cloud-apps/Akamai_Cloud_Monitor)</li><li>[Amazon CloudFront] (docs/integrations/amazon-aws/CloudFront)</li><li>[Fastly] (docs/integrations/saas-cloud-apps/Fastly)</li><li>Limelight Networks</li></ul> |
+| Content Delivery | <ul><li>[Akamai] (docs/integrations/saas-cloud/Akamai_Cloud_Monitor)</li><li>[Amazon CloudFront] (docs/integrations/amazon-aws/CloudFront)</li><li>[Fastly] (docs/integrations/saas-cloud/Fastly)</li><li>Limelight Networks</li></ul> |
 | IaaS / PaaS | <ul><li>Amazon</li><li>[Heroku](docs/manage/connections-and-integrations/sumo-logic-heroku.md)</li><li>Windows</li><li>[Google Audit](../cse/cse-ingestion/google-g-suite-apps-audit.md)</li><li>[Google Cloud Platform (GCP)](docs/send-data/hosted-collectors//google-cloud-platform-source.md)</li></ul> |
-| SaaS | <ul><li>[Box] (docs/integrations/saas-cloud-apps/Box)</li><li>[ServiceNow](docs/manage/connections-and-integrations/servicenow/set-up-servicenow-connections.md)</li><li>[Salesforce] (docs/integrations/saas-cloud-apps/Salesforce)</li><li>[Microsoft Office 365] (docs/integrations/microsoft-azure/Microsoft_Office_365)</li></ul> |
+| SaaS | <ul><li>[Box] (docs/integrations/saas-cloud/Box)</li><li>[ServiceNow](docs/manage/connections-and-integrations/servicenow/set-up-servicenow-connections.md)</li><li>[Salesforce] (docs/integrations/saas-cloud/Salesforce)</li><li>[Microsoft Office 365] (docs/integrations/microsoft-azure/Microsoft_Office_365)</li></ul> |
 | Security | <ul><li>Cisco</li><li>McAfee</li><li>Symantec</li><li>Qualys</li></ul> |
 
 ## Where is My Data Stored?

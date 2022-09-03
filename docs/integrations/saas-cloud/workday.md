@@ -7,7 +7,7 @@ description: The Sumo Logic App for Workday provides insights into the user acco
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/workday.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Thumbnail icon" width="100"/>
 
 Workday is a cloud-based ERP system that manages the business processes and allows organizations to use a system integrated application. Workday is a coherent cloud ERP system for financial analysis, analytical solutions, HCM suites, and better business processes.
 
@@ -619,7 +619,7 @@ Use this dashboard to:
 * Monitor recent user activities from untrusted devices and users with multiple failed login attempt to determine the extent of a potential breach.
 * Quickly identify if users are logging in from expected locations and using supported devices.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Workday-Overview.png')} alt="workday dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Workday-Overview.png')} alt="workday dashboards" />
 
 
 ### Login Activity
@@ -632,7 +632,7 @@ Use this dashboard to:
 * Get insight into trends around login events to determine the times of day your Workday instance is being used the most.
 * Quickly identify if there are an unusually high number of failed logins.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Workday-Login-Activity.png')} alt="workday dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Workday-Login-Activity.png')} alt="workday dashboards" />
 
 ### User Activity
 
@@ -642,7 +642,7 @@ Use this dashboard to:
 * Monitor if Workday tasks executed by users are according to expectations.
 * Get insights into CRUD(Create/Read/Update/Delete) and download activity Quickly identify if login and user activity are originating from known malicious IP addresses.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Workday-User-Activity.png')} alt="workday dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Workday-User-Activity.png')} alt="workday dashboards" />
 
 
 ### System User Activity
@@ -653,14 +653,14 @@ Use this dashboard to:
 * Identify if key configuration changes are in line with expectations.
 * Identify changes related to permission and role assignments.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Workday-SystemUserActivity.png')} alt="workday dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Workday-SystemUserActivity.png')} alt="workday dashboards" />
 
 
 ### API Activity
 
 The **Workday - API Activity** dashboard gives you insight into all analytics for REST API calls and web service related authentications and monitors access attempts from known malicious IP addresses.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Workday-APIActivity1.png')} alt="workday dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Workday-APIActivity1.png')} alt="workday dashboards" />
 
 API activity dashboard populates if there is any API activity happening on in their tenant, may be there isn't any workday rest apis (not SOAP) they are using. They can verify this by going to the User Activity report in their workday tenant and running the report with following filters
 
@@ -672,4 +672,4 @@ Use this dashboard to:
 * Quickly identify any API requests originating from malicious IP addresses.
 * Identify if API requests are being received from devices not supported by your IT teams.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Workday-APIActivity.png')} alt="workday dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Workday-APIActivity.png')} alt="workday dashboards" />

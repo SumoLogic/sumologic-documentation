@@ -7,7 +7,7 @@ description: This Sumo Logic App for Istio  provides visibility into the health 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/istio.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/istio.png')} alt="Thumbnail icon" width="100"/>
 
 [Istio](https://istio.io/) reduces the complexity of managing Kubernetes deployments by providing a uniform platform for securing, connecting, and monitoring microservices.
 
@@ -270,7 +270,7 @@ The **Istio Overview** dashboard provides a high-level view of the number of app
 Use this dashboard to:
 * Monitor application activity by requests, bytes transferred, and latency.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Istio-Overview.png')} alt="Istio dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Istio-Overview.png')} alt="Istio dashboards" />
 
 
 ### Mesh Throughput
@@ -281,7 +281,7 @@ Use this dashboard to:
 * Monitor mesh performance and latency
 * Monitor Errors and request/response size.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Istio-Mesh-Throughput.png')} alt="Istio dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Istio-Mesh-Throughput.png')} alt="Istio dashboards" />
 
 ### Workload
 
@@ -291,7 +291,7 @@ Use this dashboard to:
 * Monitor requests and responses for individual workloads.
 * Analyze inbound and outbound services for workloads.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Istio-Workload.png')} alt="Istio dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Istio-Workload.png')} alt="Istio dashboards" />
 
 
 ### Galley
@@ -301,7 +301,7 @@ The **Istio - Galley** Dashboard allows you to monitor the Istio Galley.
 Use this dashboard to:
 * Monitor resource validation passed/failed events and config updates errors.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Istio-Galley.png')} alt="Istio dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Istio-Galley.png')} alt="Istio dashboards" />
 
 
 ### Resource Usage
@@ -312,7 +312,7 @@ Use this dashboard to:
 * Monitor number of OS threads, GC duration,  File descriptors CPU, and Memory.
 * Analyze the number of outgoing failed requests.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Istio-Resource-Usage.png')} alt="Istio dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Istio-Resource-Usage.png')} alt="Istio dashboards" />
 
 
 ### Pilot Traffic Dashboard
@@ -322,4 +322,4 @@ The Istio - Pilot Traffic dashboard assists in monitoring the Istio Pilot compon
 Use this dashboard to:
 * Monitor Pilot queue time, endpoints connected to Pilot, endpoints not in ready state, and virtual service known to Pilot.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Istio-Pilot-Traffic.png')} alt="Istio dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Istio-Pilot-Traffic.png')} alt="Istio dashboards" />

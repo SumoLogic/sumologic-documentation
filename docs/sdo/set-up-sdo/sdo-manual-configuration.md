@@ -32,8 +32,8 @@ To set up the SDO solution manually, configure collection and install apps for 
 * [GitHub] (docs/integrations/app-development/GitHub/01Collect-Logs-for-the-GitHub-App.md "Collect Logs for GitHub")
 * [Bitbucket App] (docs/integrations/app-development/Bitbucket/Collect_Logs_for_Bitbucket_App.md "Collect Logs for Bitbucket App")
 * [Jenkins] (docs/integrations/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md "Collect Logs and Metrics for Jenkins")
-* [PagerDuty] (docs/integrations/saas-cloud-apps/PagerDuty_V2/Collect_logs_for_PagerDuty_V2.md "Collect logs for PagerDuty V2")
-* [Opsgenie] (docs/integrations/saas-cloud-apps/Opsgenie/Collect_Logs_for_Opsgenie.md "Collect Logs for Opsgenie")
+* [PagerDuty] (docs/integrations/saas-cloud/PagerDuty_V2/Collect_logs_for_PagerDuty_V2.md "Collect logs for PagerDuty V2")
+* [Opsgenie] (docs/integrations/saas-cloud/Opsgenie/Collect_Logs_for_Opsgenie.md "Collect Logs for Opsgenie")
 * [GitLab] (docs/integrations/app-development/GitLab/Collect_Logs_for_GitLab_App.md "Collect Logs for GitLab App")
 * [CircleCI](https://circleci.com/docs/2.0/insights-partnerships/#sumo-logic-integration)
 

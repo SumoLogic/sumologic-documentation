@@ -21,9 +21,9 @@ IIS 10 App is backward compatible with IIS 8.5. IIS 10 App uses default log form
 * For information on how to configure HTTP Error Logs, and for explanations on the various HTTP Error Log fields and their significance see this [link](https://support.microsoft.com/en-us/help/820729/error-logging-in-http-apis).
 
 This section covers the following default log formats for IIS 10 and IIS 8.5:
-* [IIS Access Logs (W3C format)](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#IIS_Access_Logs_(W3C_format))
-* [HTTP Error Logs](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#HTTP_Error_Logs)
-* [Performance Logs](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#Performance_Logs)
+* [IIS Access Logs (W3C format)](#IIS-Access-Logs-W3C-format))
+* [HTTP Error Logs](#HTTP-Error-Logs)
+* [Performance Logs](#Performance-Logs)
 
 IIS Log files are generated as local files. For a standard Windows Server, the default log location is as follows:
 ```bash

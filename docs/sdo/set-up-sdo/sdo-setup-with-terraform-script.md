@@ -332,10 +332,10 @@ Configure these parameters in **sumologic.auto.tfvars**.
 | install_jira_cloud | Install [Sumo Logic Application and WebHooks for Jira Cloud] (docs/integrations/app-development/Jira_Cloud). Options: app, collection, fer, all, and none. | all |
 | install_jira_server | Install [Sumo Logic Application and WebHooks for Jira Server] (docs/integrations/app-development/Jira). Options: app, collection, fer, all, and none. | all |
 | install_bitbucket_cloud | Install [Sumo Logic Application and WebHooks for BitBucket Cloud] (docs/integrations/app-development/Bitbucket). Options: app, collection, fer, all, and none. | all |
-| install_opsgenie | Install [Sumo Logic Application and WebHooks for Opsgenie] (docs/integrations/saas-cloud-apps/Opsgenie). Options: app, collection, fer, all, and none. | all |
+| install_opsgenie | Install [Sumo Logic Application and WebHooks for Opsgenie] (docs/integrations/saas-cloud/Opsgenie). Options: app, collection, fer, all, and none. | all |
 | install_github | Install [Sumo Logic Application and WebHooks for Github] (docs/integrations/app-development/GitHub). Options: app, collection, fer, all, and none.  If you do not wish to install the GitHub collection or application, rename the file github.tf to github.tf_backup. | all |
 | install_gitlab | Install [Sumo Logic Application and WebHooks for GitLab] (docs/integrations/app-development/GitLab). Options: app, collection, fer, all, and none.  If you do not wish to install the Gitlab collection or application, rename the file gitlab.tf to gitlab.tf_backup. | all |
-| install_pagerduty | Install [Sumo Logic Application and WebHooks for Pagerduty] (docs/integrations/saas-cloud-apps/PagerDuty_V2). Options: app, collection, fer, all, and none. | all |
+| install_pagerduty | Install [Sumo Logic Application and WebHooks for Pagerduty] (docs/integrations/saas-cloud/PagerDuty_V2). Options: app, collection, fer, all, and none. | all |
 | install_pagerduty_version | Let's you install either v2 or v3 alertFER/app version. | v3  |
 | install_jenkins | Install [Sumo Logic Application for Jenkins] (docs/integrations/app-development/Jenkins). Options: app, collection, fer, all, and none. The Terraform script does not configure the Jenkins Sumo Logic plugin, choosing `collection` will create http source in Sumo Logic for Jenkins and will configure the Jenkins FERs. | all |
 | install_sdo |  Install [Sumo Logic Application for Software Development Optimization](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-observability-terraform). Options: app or none. | app |
@@ -349,8 +349,8 @@ Configure these parameters in **sumologic.auto.tfvars**.
 | jira_cloud_sc | Source Category for [Jira Cloud] (docs/integrations/app-development/Jira_Cloud) | SDO/Jira/Cloud |
 | jira_server_sc | Source Category for [Jira Server] (docs/integrations/app-development/Jira) | SDO/Jira/Server/Events |
 | bitbucket_sc | Source Category for [BitBucket Cloud] (docs/integrations/app-development/Bitbucket) | SDO/Bitbucket |
-| opsgenie_sc | Source Category for [Opsgenie] (docs/integrations/saas-cloud-apps/Opsgenie) | SDO/Opsgenie |
-| pagerduty_sc | Source Category for [Pagerduty] (docs/integrations/saas-cloud-apps/PagerDuty_V2) | SDO/Pagerduty |
+| opsgenie_sc | Source Category for [Opsgenie] (docs/integrations/saas-cloud/Opsgenie) | SDO/Opsgenie |
+| pagerduty_sc | Source Category for [Pagerduty] (docs/integrations/saas-cloud/PagerDuty_V2) | SDO/Pagerduty |
 | github_sc | Source Category for [GitHub] (docs/integrations/app-development/GitHub) | SDO/Github |
 | gitlab_sc | Source Category for [GitLab] (docs/integrations/app-development/GitLab) | SDO/Gitlab |
 | jenkins_sc | Source Category for [Jenkins] (docs/integrations/app-development/Jenkins) | SDO/Jenkins |

@@ -7,7 +7,7 @@ description: The Opsgenie App provides at-a-glance views and detailed analytics 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/opsgenie.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="Thumbnail icon" width="75"/>
 
 The Opsgenie App provides at-a-glance views and detailed analytics for alerts on your DevOps environment, allowing you to effectively monitor and gain valuable insights into your incidents and incident handling operations.
 
@@ -122,7 +122,7 @@ Use this dashboard to:
 * Track trends for different alert types in the Alerts over Time panel.
 * Identify any spikes or unusual behavior in your DevOps environment, then identify the root cause by drilling further down to view related fields.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/OpsGenie_Overview.png')} alt="OpsGenie dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/OpsGenie_Overview.png')} alt="OpsGenie dashboards" />
 
 
 
@@ -135,7 +135,7 @@ Use this dashboard to:
 * Use panel filters to slice the information by source, priority, team and users.
 * Track outlier in Alert Escalations to notify on-call teams to take appropriate action, and prevent any production outages.
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/OpsGenie_Alert_Details.png')} alt="OpsGenie dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/OpsGenie_Alert_Details.png')} alt="OpsGenie dashboards" />
 
 
 ### Alert Breakdown
@@ -148,4 +148,4 @@ Use this dashboard to:
 * Use bar graphs to identify unusual behavior or spikes across these dimensions.
 * Compare current status of Opsgenie Alerts within your Infrastructure to Yesterday’s status
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/OpsGenie_Alert_Breakdown.png')} alt="OpsGenie dashboards" />
+<img src={useBaseUrl('img/integrations/saas-cloud/OpsGenie_Alert_Breakdown.png')} alt="OpsGenie dashboards" />

@@ -7,7 +7,7 @@ description: Allows you to analyze and correlate Akamai data with origin data.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/akamai.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/akamai.png')} alt="Thumbnail icon" width="100"/>
 
 The Sumo Logic App for Akamai Cloud Monitor allows you to analyze and correlate Akamai data with origin data in order to improve availability and performance of applications, improve end-user experience, gain deeper user insights, and enforce rigorous security controls. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
@@ -208,7 +208,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Overview
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/akamai-overview.png')} alt="akamai_cloud_monitor dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/akamai-overview.png')} alt="akamai_cloud_monitor dashboard" />
 
 **Map (Unique Visitors).** Performs a geo lookup operation and displays the number of visitors to your site and their locations on a map of the world by IP address over the last 15 minutes.
 
@@ -223,7 +223,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Origin Performance
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/akamai_app_origin.png')} alt="akamai_cloud_monitor dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/akamai_app_origin.png')} alt="akamai_cloud_monitor dashboard" />
 
 **90%-ile Latency.** Displays the 90th percentile of the origin response time latency as an aggregation table for the last hour.
 
@@ -246,7 +246,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Quality of Service
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Akamai-QOS.png')} alt="akamai_cloud_monitor dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Akamai-QOS.png')} alt="akamai_cloud_monitor dashboard" />
 
 **Cached Content Download Times.** Shows download times for cached content for the number of requests and the response time in a column chart for the last hour.
 
@@ -263,7 +263,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Security
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/akamai_app_security.png')} alt="akamai_cloud_monitor dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/akamai_app_security.png')} alt="akamai_cloud_monitor dashboard" />
 
 **WAF-Warn Requests per Host.** Displays a count of WAF warning requests per host in a stacked column chart on a timeline using timeslices of one minute for the last hour.
 
@@ -280,7 +280,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Visitors
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Akamai-Visitors.png')} alt="akamai_cloud_monitor dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Akamai-Visitors.png')} alt="akamai_cloud_monitor dashboard" />
 
 **Top Requests.** Displays the top requests by path and count in a bar chart for the last hour.
 
@@ -297,6 +297,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Web Application Firewall - Attacks
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/Akamai-Web-Application.png')} alt="akamai_cloud_monitor dashboard" />
+<img src={useBaseUrl('img/integrations/saas-cloud/Akamai-Web-Application.png')} alt="akamai_cloud_monitor dashboard" />
 
 **Attacks (Individual Warn/Deny Events).** Uses a geo lookup operator to provide information on individual warn and deny events by IP address for the last hour and displays them on a map of the world.
