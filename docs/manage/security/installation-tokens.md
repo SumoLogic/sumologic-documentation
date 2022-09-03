@@ -68,7 +68,7 @@ Select **Delete Token** from the menu on the right of the row on the table or i
 
 ## Using Installation Tokens
 
-This section provides information on using Installation Tokens to register [Installed Collectors](../../send-data/installed-collectors/about.md). For details on Collector installation, see [Install a Collector on Linux](../../send-data/installed-collectors/linux.md), [Install a Collector on MacOS](../../send-data/installed-collectors/macos.md), and [Install a Collector on Windows](../../send-data/installed-collectors/windows.md).
+This section provides information on using Installation Tokens to register [Installed Collectors](docs/send-data/installed-collectors). For details on Collector installation, see [Install a Collector on Linux](docs/send-data/installed-collectors/linux.md), [Install a Collector on MacOS](docs/send-data/installed-collectors/macos.md), and [Install a Collector on Windows](docs/send-data/installed-collectors/windows.md).
 
 <Tabs
   className="unique-tabs"
@@ -83,7 +83,7 @@ This section provides information on using Installation Tokens to register [Ins
 
 ### Command line installer
 
-To register an Installed Collector with the [command line installer](../../send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you need to run the script with the following authentication parameter:
+To register an Installed Collector with the [command line installer](docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you need to run the script with the following authentication parameter:
 
 `-Vsumo.token_and_url`
 
@@ -111,7 +111,7 @@ Click next and enter the **Token String** you want to use to register the Collec
 
 ### user.properties
 
-To register an Installed Collector with [user.properties](../../send-data/installed-collectors/collector-installation-reference/user-properties.md) you need to use the authentication parameters `token` and `url`. To use these two parameters you'll need to manually base64 decode the **Token String**. For example, you can use the following Powershell commands to decode the base64 token:
+To register an Installed Collector with [user.properties](docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) you need to use the authentication parameters `token` and `url`. To use these two parameters you'll need to manually base64 decode the **Token String**. For example, you can use the following Powershell commands to decode the base64 token:
 
 <Tabs
   defaultValue="mac"

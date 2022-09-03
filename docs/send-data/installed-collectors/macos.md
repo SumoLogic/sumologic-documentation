@@ -31,7 +31,7 @@ Install the Collector using either of the following methods:
 * [UI installer](#install-using-the-ui-installer) - This method does not support all advanced settings.
 * [Command line installer](#install-using-the-command-line-installer)
 
-After installing Collectors, you can configure Sources by using the Web Application or by providing the [Source settings in a JSON file](/docs/send-data/sources/use-json-configure-sources). If you're using a UTF-8 encoded JSON file, you must provide the file before starting the Collector.
+After installing Collectors, you can configure Sources by using the Web Application or by providing the [Source settings in a JSON file](/docs/send-data/use-json-configure-sources). If you're using a UTF-8 encoded JSON file, you must provide the file before starting the Collector.
 
 If necessary, you can use the binary package to install a Collector on MacOS. See this [Collector FAQ](collector-installation-reference/binary-package-install-a-collector.md) topic for details.
 

@@ -11,13 +11,12 @@ Thank you for your interest in contributing to Sumo Logic documentation! We welc
 
 The docs in this section provide information on creating files, writing in markdown, using our templates, submitting pull requests and more.
 
-For a complete guide to contributing, creating branches, using Markdown, and more, check out our [repo Wiki](https://github.com/SumoLogic/sumologic-documentation/wiki). You can also learn more in our [GitHub repo](https://github.com/SumoLogic/sumologic-documentation).
+For a complete guide to contributing, creating branches, using Markdown, and more, check out our [GitHub repo](https://github.com/SumoLogic/sumologic-documentation) and [repo Wiki](https://github.com/SumoLogic/sumologic-documentation/wiki).
 
 
 ## Before You Begin
 
 * You must have a [GitHub account](https://github.com/signup/free) to contribute to Sumo Logic documentation
-* You'll need to review and sign our Contributor License Agreement (CLA) upon submitting a pull request
 
 
 ## Ways to Contribute
@@ -48,7 +47,7 @@ While reviewing content on the site, you can click **Edit this page**, located a
 Another option is to clone the GitHub repository and edit locally. This is common for developers, working with GitHub tools, Git commands, and code editors like VSCode or Atom.
 
 :::caution Required Step
-When you submit a pull request, you'll be asked to sign our Contributor License Agreement. We allow both individual contributions and contributions made on behalf of companies. We use an open source tool called [cla-bot](https://colineberhardt.github.io/cla-bot/). If you have any questions about our CLA, please [submit an issue](https://github.com/SumoLogic/sumologic-documentation/issues).
+When you submit a pull request, you'll be asked to sign our Contributor License Agreement (CLA). We allow  individual contributions and contributions made on behalf of companies. We use an open source tool called [cla-bot](https://colineberhardt.github.io/cla-bot/). If you have any questions about our CLA, please [submit an issue](https://github.com/SumoLogic/sumologic-documentation/issues).
 :::
 
 #### Fork and clone
@@ -82,8 +81,6 @@ $ git commit -m "Updating query for metrics"
 
 #### Create a pull request
 
-Doc team members will review and approve your contributions using GitHub.
-
 1. Visit [GitHub](https://github.com/SumoLogic/sumologic-documentation) after pushing your branch. If you see an option to **Compare & Pull Request** for your branch click this.<br/>![compare](/img/contributing/compare-pr.png)
    * If you don't see it, create a new [pull request](https://github.com/SumoLogic/sumologic-documentation/compare).
       1. Select `main` for the base branch. Select your branch for the **compare**.
@@ -94,8 +91,9 @@ Doc team members will review and approve your contributions using GitHub.
    * Include an issue number from GitHub or Jira, etc.
    * Describe what changed, new pages, updates.
 1. Click **Create Pull Request**.<br/> ![pull request](/img/contributing/pull-request.png)
+1. Sign our Contributor License Agreement.
 
-GitHub will generate a pull request for review. Doc team members will review, provide feedback, and approve. When approved, the Doc team will merge and update staging. Updates to production will be handled by the Doc team.
+GitHub will generate a pull request for review. Doc team members will review contributions, provide feedback, and approve. When approved, the Doc team will merge and update staging. Updates to production will be handled by the Doc team.
 
 #### Pull Request Submission Guidelines
 

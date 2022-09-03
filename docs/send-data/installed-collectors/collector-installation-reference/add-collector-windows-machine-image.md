@@ -17,7 +17,7 @@ Download the appropriate collector from the **Manage Data \> Collection \> Coll
 
 1. To configure custom sources, create a source JSON file that lists all the sources you want the collector to scan and submit to the Sumo Logic service. These source configurations are only applied during the initial registration of the collector, any updates to the sources.json file will *not* be applied during a simple restart of the collector.
 
-    The following sample JSON file includes Local File Source and Local Windows Event Source configuration samples. For a full list of available source types and parameters, which can be used within the sources.json file, please review the [JSON help documentation](/docs/send-data/sources/use-json-configure-sources).
+    The following sample JSON file includes Local File Source and Local Windows Event Source configuration samples. For a full list of available source types and parameters, which can be used within the sources.json file, please review the [JSON help documentation](/docs/send-data/use-json-configure-sources).
 
     :::important
     JSON files need to be UTF-8 encoded.
@@ -50,7 +50,7 @@ Download the appropriate collector from the **Manage Data \> Collection \> Coll
 1. Set up auto-registration details for the Collector:  
 
    * [Create a New User](/docs/manage/users-and-roles/users/) account with Administrator permissions or a role with permissions to "Manage Collectors."
-   * Create an [Access Key and Access Id](../../../manage/security/access-keys.md) for this user, which will be used to register the collector.
+   * Create an [Access Key and Access Id](docs/manage/security/access-keys.md) for this user, which will be used to register the collector.
 
 1. Run the installer with the following arguments:
 

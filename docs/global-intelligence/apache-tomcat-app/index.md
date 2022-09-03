@@ -5,6 +5,10 @@ sidebar_label: Global Intelligence for Apache Tomcat App
 description: The Global Intelligence for Apache Tomcat app helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache Tomcat servers.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/web-servers/gi-apache.png')} alt="icon" width="75"/>
+
 Global Intelligence for Apache Tomcat App is a companion to the Apache Tomcat application and helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache Tomcat servers against other Sumo Logic customer’s servers. Such comparisons can help diagnose potential load, throughput or error issues in Apache Tomcat clusters and avoid operational incidents arising from sub-optimal configurations of Tomcat servers.
 
 ## Data Sources 

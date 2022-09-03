@@ -28,7 +28,7 @@ Collection \> Collection** page, or from the list below.
 
 1. To configure custom sources, create a source JSON file that lists all the sources you want the collector to scan and submit to the Sumo Logic service. These source configurations are only applied during the initial registration of the collector, any updates to the sources.json file will *not* be applied during a simple restart of the collector.
 
-    The following sample JSON file includes local file source and syslog source configuration samples. For a full list of available source types and parameters, which can be used within the sources.json file, please review the [JSON help documentation](/docs/send-data/sources/use-json-configure-sources).
+    The following sample JSON file includes local file source and syslog source configuration samples. For a full list of available source types and parameters, which can be used within the sources.json file, please review the [JSON help documentation](/docs/send-data/use-json-configure-sources).
 
     :::important
     JSON files need to be UTF-8 encoded.

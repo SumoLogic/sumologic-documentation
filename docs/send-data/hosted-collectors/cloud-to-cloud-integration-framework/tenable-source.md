@@ -105,7 +105,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following 
 
 #### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
@@ -126,7 +126,7 @@ The following table shows the **config** parameters for a Tenable Source.
 | `include_unlicensed_assets` | Boolean | No | False | Set to true if you want to collect unlicensed objects. | modifiable |
 | `supported_apis` | Array of strings | No | Vulnerability Data | Define one or more of the available APIs to collect:<br/>Vulnerability Data, Audit Logs, and Asset Data.<br/>For example, for both you'd use:["Vulnerability Data","Audit Logs","Asset Data"] | modifiable |
 
-See how to [create processing rules using JSON](/docs/send-data/sources/use-json-configure-sources).
+See how to [create processing rules using JSON](/docs/send-data/use-json-configure-sources).
 
 Tenable Source JSON example:
 

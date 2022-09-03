@@ -39,4 +39,4 @@ Steps to configure a Hosted Collector:
 
 Once you have configured your Hosted Collector, the next step is to configure Sources. 
 
-For instructions, go to [Sources](/docs/send-data/sources), and click the link **Sources for Hosted Collectors**. 
+For instructions, go to [Sources](/docs/send-data/collectors-sources), and click the link **Sources for Hosted Collectors**. 

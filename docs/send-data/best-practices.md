@@ -7,7 +7,7 @@ sidebar_label: Best Practices
 
 ## Good and Bad Source Categories
 
-Setting Source Category values (`_sourceCategory`), especially for a small set of Sources, may seem trivial at first. However, using the [proper naming convention](/docs/send-data/sources/reference-information/metadata-naming-conventions) to create good Source Category values is important for the correct scale and performance of your Sumo Logic deployment in the long term. This topic discusses some best practices around creating good Source Category values.
+Setting Source Category values (`_sourceCategory`), especially for a small set of Sources, may seem trivial at first. However, using the [proper naming convention](/docs/send-data/reference-information/metadata-naming-conventions) to create good Source Category values is important for the correct scale and performance of your Sumo Logic deployment in the long term. This topic discusses some best practices around creating good Source Category values.
 
 Source Categories help you:
 
@@ -107,9 +107,9 @@ The most important thing is for you to design a deployment that works for your o
 
 The local data collection method collects all data locally from each individual system and sends it to Sumo Logic.
 
-Using an [Installed Collector](/docs/send-data/sources/installed-collectors) with a [Local File Source](/docs/send-data/sources/installed-collectors/local-file-source) is the overall simplest method of collecting data.
+Using an [Installed Collector](/docs/send-data/installed-collectors/sources) with a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) is the overall simplest method of collecting data.
 
-For Windows, using an [Installed Collector](/docs/send-data/sources/installed-collectors) and a [Local Windows Event Log Source](/docs/send-data/sources/installed-collectors/local-windows-event-log-source) is the most reliable method of collecting data. Depending on your Windows solution, you may also configure a [Local Windows Performance Monitor Log Source](/docs/send-data/sources/installed-collectors/local-windows-performance-monitor-log-source.md).
+For Windows, using an [Installed Collector](/docs/send-data/installed-collectors/sources) and a [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/local-windows-event-log-source) is the most reliable method of collecting data. Depending on your Windows solution, you may also configure a [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source.md).
 
 **Customers using the local data collection method usually have the following characteristics:**
 
@@ -133,7 +133,7 @@ For Windows, using an [Installed Collector](/docs/send-data/sources/installed-co
 
 ### Centralized Data Collection
 
-The centralized data collection method uses [Installed Collectors](best-practices.md)  with [Remote File Sources](/docs/send-data/sources/installed-collectors/remote-file-source) or [Syslog Sources](/docs/send-data/sources/installed-collectors/syslog-source) to collect all data in a centralized location before sending that data to Sumo Logic. This method is widely used for logs and is familiar to IT systems administrators.
+The centralized data collection method uses [Installed Collectors](best-practices.md)  with [Remote File Sources](/docs/send-data/installed-collectors/sources/remote-file-source) or [Syslog Sources](/docs/send-data/installed-collectors/sources/syslog-source) to collect all data in a centralized location before sending that data to Sumo Logic. This method is widely used for logs and is familiar to IT systems administrators.
 
 :::important
 If you use centralized data collection, be sure to increase collector memory, as the default setting of 128 MB will not suffice. In addition, configure additional disk capacity if you are collecting a large volume of logs.
