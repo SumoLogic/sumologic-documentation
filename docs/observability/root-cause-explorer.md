@@ -142,7 +142,7 @@ If you've read the [Google SRE handbook](https://landing.google.com/sre/sre-boo
 
 ## Set up Root Cause Explorer
 
-Before you begin, ensure that your organization is entitled to the appropriate features. The account types and levels that support Root Cause Explorer are listed in [Availability](#availability), above. The [AWS Observability Solution](/docs/observability/aws-observability-solution/) is a prerequisite for AWS customers. If you have Kubernetes and tracing metrics, collection should be configured. For information about collecting Kubernetes and and Tracing metrics, see [Set up collection for Kubernetes](kubernetes-solution/collection-setup.md) and Getting Started with Transaction Tracing.
+Before you begin, ensure that your organization is entitled to the appropriate features. The account types and levels that support Root Cause Explorer are listed in [Availability](#availability), above. The [AWS Observability Solution](/docs/observability/aws/) is a prerequisite for AWS customers. If you have Kubernetes and tracing metrics, collection should be configured. For information about collecting Kubernetes and and Tracing metrics, see [Set up collection for Kubernetes](kubernetes/collection-setup.md) and Getting Started with Transaction Tracing.
 
 You set up Root Cause Explorer using an [AWS CloudFormation template](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/sumologic_observability.master.template.yaml). The template installs the AWS Inventory Source and optionally, the AWS X-Ray source, in your Sumo Logic account. The AWS Inventory Source collects metadata and topology relationships for resources belonging to the namespaces listed below:
 

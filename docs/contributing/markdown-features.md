@@ -138,7 +138,7 @@ We recommend using .png format for all images.
    * Replace with file path with your own and ensure it includes the correct subfolder name. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
    * Add alt text and optionally, you can add width parameter to resize your image, if needed.
    ```
-   <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description" width="150"/>
+   <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" width="<insert-pixel-number>"/>
    ```
 
 <details><summary>What is alt text?</summary>
@@ -176,17 +176,6 @@ If you are editing and you come across an image without Alt text, add it.
 </Tabs>
 
 
-### Downloadable Files
-
-If you have static files for users to download, save them to the `/static/files` folder. Supported file formats include .json, .js, .doc, and more. You link to the file using the file path of `/files` and file name:
-
-```md
-![Download this Terraform](/files/terraform/script.tf)
-```
-
-If a file is available from another public Sumo Logic repo, please link to that file instead as a URL link.
-
-
 ### Videos
 
 You can embed YouTube videos to any page with the following code. Just copy and paste the following code into your page. Replace the URL ID with the video id. You only need the `import Iframe` line once on the page.
@@ -222,6 +211,16 @@ For example:
 import Iframe from 'react-iframe';
 
 You need to explicitly add `?rel=0` to the end of the URL. This ensures that only videos from the current YouTube channel will be suggested to the viewer after they've finished viewing the embedded video.
+
+### Downloadable Files
+
+If you have static files for users to download, save them to the `/static/files` folder. Supported file formats include .json, .js, .doc, and more. You link to the file using the file path of `/files` and file name:
+
+```md
+![Download this Terraform](/files/terraform/script.tf)
+```
+
+If a file is available from another public Sumo Logic repo, please link to that file instead as a URL link.
 
 
 ## Tables

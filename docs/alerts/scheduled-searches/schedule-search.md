@@ -3,6 +3,7 @@ id: schedule-search
 title: Schedule a Search
 sidebar_label: Schedule a Search
 description: When you save a search, you can add a schedule to run it at a regularly scheduled time, and add alerts.
+hide_table_of_contents: true
 ---
 
 When you save a search, you can add a schedule to run it at a regularly scheduled time, and add alerts. For alert types, see [Scheduled Searches](/docs/alerts/scheduled-searches). 
