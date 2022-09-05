@@ -107,7 +107,7 @@ server machine of your choice:
 
    * Set the following environment variables using the commands below:
 
-        ```
+        ```bash
         export SUMOLOGIC_ENV="YOUR_SUMOLOGIC_DEPLOYMENT"
         export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
         export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
@@ -117,7 +117,7 @@ server machine of your choice:
 
    * Run fields.sh using this command:
 
-        ```
+        ```bash
         $ sh fields.sh
         ```
 
@@ -146,7 +146,7 @@ combination.
 
 **Task:** Example collection setup for the us-east-2 region and for the production AWS account profile.
 
-``` title="Collection Set Up"
+```bash title="Collection Set Up"
 # Region us-east-2, for AWS Account profile production
 provider "aws" {
   profile = "production"
@@ -164,7 +164,7 @@ Given that we have multiple providers, we need to provide an alias that tells Te
 
 1. Comment out the existing provider information in **providers.tf**.
 
-    ``` title="Comment out using #"
+    ```bash title="Comment out using #"
     #provider "aws" {
     #  region = "us-east-1"
     #
@@ -184,7 +184,7 @@ Given that we have multiple providers, we need to provide an alias that tells Te
     :::note
     Do not change or remove the provider **“sumologic”** section:
 
-    ```
+    ```bash
     provider "sumologic" {
     environment = var.sumologic_environment
     access_id   = var.sumologic_access_id
@@ -204,7 +204,7 @@ Given that we have multiple providers, we need to provide an alias that tells Te
     The AWS CLI Account profile will be the same across all regions.
     :::
 
-    ``` title="Add provider per region"
+    ```bash title="Add provider per region"
     # AWS Account profile <AWS_PROFILE_NAME>, Region <REGION>, Alias <ALIAS>
     provider "aws" {
     profile = "<AWS_PROFILE_NAME>"
@@ -215,7 +215,7 @@ Given that we have multiple providers, we need to provide an alias that tells Te
 
     **Example:** Example provider configuration for a production AWS account profile in us-east-1 and us-east-2 regions with the appropriate aliases.
 
-    ``` title="Example configuration"
+    ```bash title="Example configuration"
     # AWS Account profile production, Region us-east-1, Alias production-us-east-1
     provider "aws" {
     profile = "production"
@@ -237,7 +237,7 @@ To see the output messages showing you the deployment process, add output code i
 :::note
 Do not change the **output “Apps”** section.
 
-``` title="Output Apps"
+```bash title="Output Apps"
 output "Apps" {
   value       = module.sumo-module
   description = "All outputs related to apps."
@@ -247,7 +247,7 @@ output "Apps" {
 
 1. Add this output code for each module added in the earlier step at the **main.tf** file, replacing the placeholder module name:
 
-    ``` title="Output code for each module"
+    ```bash title="Output code for each module"
     output "<ALIAS>" {
     value       = module.<ALIAS>
     description = "All outputs related to collection and sources."
@@ -256,7 +256,7 @@ output "Apps" {
 
     **Example:** Example output configuration for modules with module names production-us-east-1 and production-us-east-2:
 
-    ``` title="Example out configuration"
+    ```bash title="Example out configuration"
     output "production-us-east-1" {
     value       = module.production-us-east-1
     description = "All outputs related to collection and sources."
@@ -279,7 +279,7 @@ Given that we have multiple providers, we need to provide an alias that tells Te
 
 1. Comment out the existing provider information in **providers.tf**.
 
-    ``` title="Comment out the following using #"
+    ```bash title="Comment out the following using #"
     #provider "aws" {
     #  region = "us-east-1"
     #
@@ -299,7 +299,7 @@ Given that we have multiple providers, we need to provide an alias that tells Te
     :::note
     Do not change the **output “sumologic”** section.
 
-    ``` title="Output sumologic"
+    ```bash title="Output sumologic"
     provider "sumologic" {
     environment = var.sumologic_environment
     access_id   = var.sumologic_access_id
@@ -318,7 +318,7 @@ Given that we have multiple providers, we need to provide an alias that tells Te
     The AWS CLI Account profile has to be the same across all regions.
     :::
 
-    ``` title="Add provider for each account-region"
+    ```bash title="Add provider for each account-region"
     # Region <REGION>, AWS Account profile <AWS_PROFILE_NAME>, Alias <ALIAS>
     provider "aws" {
     profile = "<AWS_PROFILE_NAME>"
@@ -329,7 +329,7 @@ Given that we have multiple providers, we need to provide an alias that tells Te
 
     **Example:** Example provider configuration for the production AWS account profile in the us-east-1 and us-east-2 regions and a development AWS account profile in the  us-west-1 region with the appropriate aliases.
 
-    ``` title="Example out configuration"
+    ```bash title="Example out configuration"
     # Region us-east-1, AWS Account profile production
     provider "aws" {
     profile = "production"
@@ -356,7 +356,7 @@ To see the output messages showing you the provisioning process, add a collectio
 :::note
 Do not change the output “Apps” section.
 
-``` title="Output Apps"
+```bash title="Output Apps"
 output "Apps" {
   value       = module.sumo-module
   description = "All outputs related to apps."
@@ -366,7 +366,7 @@ output "Apps" {
 
 1. Add this output code for each module added in the earlier step at the main.tf file, replacing the placeholder module name.
 
-    ``` title="Add Alias per module"
+    ```bash title="Add Alias per module"
     output "<ALIAS>" {
     value       = module.<ALIAS>
     description = "All outputs related to collection and sources."
@@ -375,7 +375,7 @@ output "Apps" {
 
     **Example:** Example output configuration for modules with module names production-us-east-1, production-us-east-2 and development-us-west-1.
 
-    ``` title="Example out configuration"
+    ```bash title="Example out configuration"
     output "production-us-east-1" {
     value       = module.production-us-east-1
     description = "All outputs related to collection and sources."
@@ -400,7 +400,7 @@ Configure providers for collection using the Terraform source-module.
 
     Comment out the following code with #:
 
-    ```
+    ```bash
     #module "collection-module" {
     #  source = "./source-module"
 
@@ -415,7 +415,7 @@ Configure providers for collection using the Terraform source-module.
     :::note
     Do not change the module “**sumo-module**” section unless you want to override.
 
-    ```
+    ```bash
     module "sumo-module" {
     source                   = "./app-modules"
     access_id                = var.sumologic_access_id
@@ -580,7 +580,7 @@ The following examples override the following:
 
 **Default example:**
 
-```
+```bash
 module "collection-module" {
  source = "./source-module"
  aws_account_alias         = var.aws_account_alias
@@ -626,7 +626,7 @@ module "collection-module" {
 
 Override the **auto_enable_access_logs** parameter (set to None) to automatically skip enable access logging for an Application Load Balancer.
 
-```
+```bash
 module "collection-module" {
  source = "./source-module"
  aws_account_alias         = var.aws_account_alias
@@ -654,13 +654,13 @@ Options available are:
 
 **Default Value: **
 
-```
+```bash
 "Kinesis Firehose Metrics Source"
 ```
 
 **Default JSON:**
 
-```
+```bash
 collect_cloudwatch_metric = "Kinesis Firehose Metrics Source"
 ```
 
@@ -674,7 +674,7 @@ Supported namespaces are based on the type of CloudWatch Metrics Source you have
 
 **Default value:**
 
-```
+```json
 {
  "bucket_details": {
    "bucket_name": "aws-observability-random-id",
@@ -705,7 +705,7 @@ Supported namespaces are based on the type of CloudWatch Metrics Source you have
 
 The following override example collects only DynamoDB and Lambda namespaces with source_category set to “aws/observability/cloudwatch/metrics/us-east-1”:
 
-```
+```json
 Cloudwatch_metrics_source_details = {
  "bucket_details": {
    "bucket_name": "",
@@ -737,14 +737,14 @@ Use this parameter if you are already collecting CloudWatch Metrics and want to 
 
 The following is a default example:
 
-```
+```json
 cloudwatch_metrics_source_url=””
 ```
 
 
 The following is a specific Source URL example:
 
-```
+```bash
 collect_cloudwatch_metric = "Kinesis Firehose Metrics Source"
 cloudwatch_metrics_source_url="https://api.sumologic.com/api/v1/collectors/1234/sources/9876"
 ```
@@ -764,13 +764,13 @@ When enabling ALB logs (setting to true), you need to provide [elb_source_detail
 
 **Default value:**
 
-```
+```json
 "true"
 ```
 
 **Override Example JSON:**
 
-```
+```json
 collect_elb_logs = true
 ```
 
@@ -786,7 +786,7 @@ To enable collection of application load balancer logs, set [collect_elb_logs](h
 
 **Default value:**
 
-```
+```json
 {
  "source_name": "Elb Logs (Region)",
  "source_category": "aws/observability/alb/logs",
@@ -805,7 +805,7 @@ To enable collection of application load balancer logs, set [collect_elb_logs](h
 
 The following override example uses the bucket “`example-loadbalancer-logs`” with path expression "`*AWSLogs/*/elasticloadbalancing/*/*`":
 
-```
+```sql
 # Enable Collection of ALB Access logs source
 collect_elb_logs   = true
 # Collect ALB Access logs, from user provided s3 bucket
@@ -845,7 +845,7 @@ You have the following options:
 
 Example JSON for newly created ALB resources only.
 
-```
+```json
 auto_enable_access_logs = ”New”
 ```
 

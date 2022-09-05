@@ -17,7 +17,7 @@ In this section, we will introduce the following concepts:
 <div className="box-wrapper" markdown="1">
 <div className="box box1 card">
   <div className="container">
-  <h3><a href="/docs/observability/kubernetes/about-kubernetes-solution">Overview</a></h3>
+  <h3><a href="/docs/observability/kubernetes/about">Overview</a></h3>
   <p>Learn how Sumo Logic brings ease-of-use to Kubernetes, how to get the Kubernetes Solution, and the Sumo Logic apps that are available for Kubernetes platforms.</p>
   </div>
 </div>

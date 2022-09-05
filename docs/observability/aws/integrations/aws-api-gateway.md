@@ -2,7 +2,7 @@
 id: aws-api-gateway
 title: AWS API Gateway
 sidebar_label: AWS API Gateway
-description: tk
+description: The AWS API Gateway ULM app provides insights into API calls, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
