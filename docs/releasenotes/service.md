@@ -52,8 +52,6 @@ Update - we've increased data retention for Trace queries from 7 days to 15 days
 
 Update - We’re happy to announce the release of our **AWS Observability Solution v2.5.0**, which includes.
 
-
-
 * Enhanced dashboards for [EC2 Host OS Metrics](docs/observability/aws/integrations/aws-ec2-metrics.md), including support for [Amazon EC2 CloudWatch](/docs/observability/aws/integrations/AWS-EC2-Metrics): now you can monitor your EC2 instances via CloudWatch and Installed Collector simultaneously and see results side-by-side.
 * Support for [Amazon SNS](/docs/observability/aws/integrations/) - we’ve added out-of-the-box dashboards with the most important information about messages, events, and errors illustrating SNS health and reliability.
 * Enhanced dashboards for supported Amazon services - the following services were updated and revamped DynamoDB, API Gateway, RDS, EC2 Metrics, ElastiCache, and All Load Balancers.
@@ -186,11 +184,7 @@ Update -  We’re continuing to make [alerts and monitors](/docs/Alerts/Monitors
 
 Update - Sumo Logic and AWS are excited to announce an update to [Sumo Logic Integrations for AWS Organizations](https://aws.amazon.com/quickstart/architecture/sumo-logic-for-aws-organizations/). This solution allows joint customers of AWS and Sumo Logic to automate the integration of [AWS Security Reference Architecture](https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/architecture.html)-compliant organizations with [Sumo Logic Cloud SIEM powered by AWS](https://aws.amazon.com/marketplace/pp/prodview-o622lpl6biu6s).
 
-
-
 Our updates support Security Reference Architecture (SRA)-compliant set up of:
-
-
 
 * AWS Security Hub
 * Centralized logging of AWS Network Firewall and AWS WAF
