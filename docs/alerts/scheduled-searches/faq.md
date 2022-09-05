@@ -73,7 +73,7 @@ To create a Scheduled Search:
    * **Alert Type.** Select **Email**.
    * Enter the **email address** where you would like to be alerted.
 
-1. For all configuration options, see [Schedule a Search](../schedule-search.md). 
+1. For all configuration options, see [Schedule a Search](docs/alerts/scheduled-searches/schedule-search.md). 
 1. Click **Save**.
 
 
@@ -140,7 +140,7 @@ Reach out to the Sumo Logic Support team to get guidance on optimizing your quer
 Here are also a few additional things to consider when conducting your performance tests:
 
 * Use a time range outside of the last 24-hour period. For example, if you plan on saving a search with the relative timeframe of the **Last 24 hours**, run a test using the following time range instead: **-48h -24h** (48 hours ago to 24 hours ago). Doing this will trigger the same backend nodes that would be called to run your scheduled search.
-* [Optimize your searches](../../../search/optimize-search-performance.md) as much as possible.
+* [Optimize your searches](docs/search/optimize-search-performance.md) as much as possible.
 * If the data you are testing against is not reflective of the actual volume you’ll be scanning on a recurring basis, then the test itself should be considered invalid. Similarly, avoid scheduling searches preemptively. Wait until you get a good sample size and make sure your live streaming is completely set up.
 * If there are plans to add more data to your account in the near future, please keep that in mind in your testing and include a buffer to make sure that your increased data volume won’t cause your scheduled search to time out.
 
@@ -149,7 +149,7 @@ Here are also a few additional things to consider when conducting your performan
 
 Scheduled Search alert condition thresholds are based on the number of rows returned in your search results. It does not consider any values that may be present within a column of those rows. If your query does not perform any aggregations the Scheduled Search threshold will apply to the number of raw messages returned with a query, as seen under the Messages tab of the search. If a query contains an aggregate operation, for example, count, sum, min, max, etc... the Scheduled Search threshold will be applied to the number of aggregate rows returned by the query, as seen within the Aggregate tab of the results.   
 
-When performing an aggregation as part of a query, and wanting to alert when a specific aggregate value meets a threshold, the threshold for that field value will need to be included as part of the query itself. This can typically be done by providing a [where](../../../search/search-query-language/search-operators/where.md) condition after the aggregation within the query. For example:
+When performing an aggregation as part of a query, and wanting to alert when a specific aggregate value meets a threshold, the threshold for that field value will need to be included as part of the query itself. This can typically be done by providing a [where](docs/search/search-query-language/search-operators/where.md) condition after the aggregation within the query. For example:
 
 ```sql
 _sourceCategory=aws/prod
@@ -183,7 +183,7 @@ Regards,
 The Sumo Logic Team
 ```
 
-Sumo Logic implements an email quota allowing 120 emails to be sent per day per scheduled search. The purpose of this limit is set to prevent service.sumologic.com from spamming an inbox. This is documented in [Scheduled Searches](../receive-email-alerts-scheduled-searches.md). 
+Sumo Logic implements an email quota allowing 120 emails to be sent per day per scheduled search. The purpose of this limit is set to prevent service.sumologic.com from spamming an inbox. This is documented in [Scheduled Searches](docs/alerts/scheduled-searches/receive-email-alerts-scheduled-searches.md). 
 
 The above quota assumes that no more than 5 Alert emails will be triggered per hour or an alert every 12 minutes on average. Sumo Logic expects that Alerts are used as an exception and it is unlikely to find email Alerts being sent at a rate higher than 5 emails per hour.
 
@@ -192,7 +192,7 @@ The above quota assumes that no more than 5 Alert emails will be triggered per h
 
 If you have received an Alert Email from Sumo Logic stating that an issue has been detected with a Scheduled Search, it might not be immediately apparent why your Scheduled Search has failed, and may even be suspended. The Scheduled Search referred to in the email may be one that has run for months without a problem, but now for some reason, it fails.
 
-First, we recommend that you review the scheduled search. (Just click the link at the bottom of the email.) It could be that there's an easy-to-spot typo. Or perhaps an operator is being used improperly. See [how to prevent your scheduled search from failing](failed-scheduled-search.md).
+First, we recommend that you review the scheduled search. (Just click the link at the bottom of the email.) It could be that there's an easy-to-spot typo. Or perhaps an operator is being used improperly. See [how to prevent your scheduled search from failing](/docs/alerts/scheduled-searches/faq#why-would-a-scheduled-search-fail).
 
 ### Why was my Scheduled Search suspended?
 
@@ -235,7 +235,7 @@ Permanent suspensions last forever. You need to create a new scheduled search.�
 
 #### How can I troubleshoot the failure?
 
-For complete details, see [Why Would a Scheduled Search Fail?](failed-scheduled-search.md).
+For complete details, see [Why Would a Scheduled Search Fail?](/docs/alerts/scheduled-searches/faq#why-would-a-scheduled-search-fail).
 
 #### Reactivate a Suspended Scheduled Search
 
