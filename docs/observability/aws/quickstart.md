@@ -2,7 +2,7 @@
 id: quickstart
 title: AWS Observability Quickstart
 sidebar_label: AWS Observability Quickstart
-description: Get started quickly with our AWS Observability integration.
+description: Get up and running in minutes with our AWS Observability integration.
 ---
 
 This guide will walk you through setting up [Sumo Logic's AWS Observability integration](https://www.sumologic.com/application/aws-observability/)

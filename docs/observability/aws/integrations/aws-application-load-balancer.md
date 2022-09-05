@@ -1,8 +1,8 @@
 ---
 id: aws-application-load-balancer
 title: AWS Application Load Balancer
-sidebar_label: AWS Application Load Balancer 
-description: tk
+sidebar_label: AWS Application Load Balancer
+description: Gain visibility into the health of the Application Load Balancer and target groups in your AWS environment. Use the preconfigured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone and target group.
 ---
 
 The [AWS Application Load Balancer](https://aws.amazon.com/elasticloadbalancing/) functions at the application layer receive requests, evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group. 

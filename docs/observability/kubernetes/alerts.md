@@ -2,7 +2,7 @@
 id: alerts
 title: Kubernetes Alerts
 sidebar_label: Alerts / Monitors
-description: tk
+description: To help determine if the Kubernetes cluster is available and performing well, the Sumo Logic monitors are provided with out of box alerts.
 hide_table_of_contents: true
 ---
 

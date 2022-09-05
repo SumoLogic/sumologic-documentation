@@ -1,8 +1,8 @@
 ---
 id: aws-dynamodb
 title: AWS DynamoDB
-sidebar_label: AWS DynamoDB 
-description: tk
+sidebar_label: AWS DynamoDB
+description: The Sumo App for AWS Observability DynamoDB is a unified logs and metrics (ULM) App that provides operational insights into DynamoDB instances across your infrastructure. 
 ---
 
 [AWS DynamoDB](https://aws.amazon.com/dynamodb/) is a fast and flexible NoSQL database service that provides consistent, single-digit millisecond latency at any scale. 
