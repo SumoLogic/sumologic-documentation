@@ -1,6 +1,7 @@
 ---
 id: understand-the-logreduce-relevance-column
 title: Understand the LogReduce Relevance Column
+description: The LogReduce Relevance column displays a numerical score for a signature, predicting which signatures could be most meaningful.
 ---
 
 
@@ -10,7 +11,7 @@ The summarize operator has been renamed the logreduce operator, to match the **L
 logreduce.
 :::
 
-The **LogReduce Relevance** column displays a numerical score for a signature, predicting which signatures could be most meaningful to a
+The **LogReduce &reg Relevance** column displays a numerical score for a signature, predicting which signatures could be most meaningful to a
 user. The Relevance value is computed using your history of [feedback](../logreduce/influence-the-logreduce-outcome.md (**Thumbs Up** and **Thumbs Down**) and the instances when you’ve chosen to view the details of signatures.
 
 LogReduce uses the similarity of signature content (the words in a signature) to predict relevance for signatures, even if a signature hasn’t yet been promoted or demoted a specific signature. For example, if a user has promoted a number of signatures that contain the word “database” then new signatures containing “database” will be scored higher.

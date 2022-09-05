@@ -1,6 +1,7 @@
 ---
 id: influence-the-logreduce-outcome
 title: Influence the LogReduce Outcome
+description: You can influence the algorithm by editing a signature to make the results more general, or see more granular results by splitting a signature.
 ---
 
 

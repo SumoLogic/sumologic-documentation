@@ -1,6 +1,7 @@
 ---
 id: logreduce-operator
 title: LogReduce Operator
+description: Allows you to quickly assess activity patterns for things like a range of devices or traffic on a website.
 ---
 
 
@@ -10,7 +11,7 @@ The summarize operator has been renamed the logreduce operator, to match the **L
 logreduce.
 :::
 
-The LogReduce algorithm uses fuzzy logic to group messages together based on string and pattern similarity. You can use the logreduce operator to quickly assess activity patterns for things like a range of devices or traffic on a website. Focus the LogReduce algorithm on an area of interest by defining that area in the keyword expression.
+The LogReduce &reg; algorithm uses fuzzy logic to group messages together based on string and pattern similarity. You can use the logreduce operator to quickly assess activity patterns for things like a range of devices or traffic on a website. Focus the LogReduce algorithm on an area of interest by defining that area in the keyword expression.
 
 For information on how to interpret and influence the outcome of LogReduce results, see [Detecting Patterns with LogReduce](detect-patterns-with-logreduce.md) and [Influencing the LogReduce Outcome](influence-the-logreduce-outcome.md).
 
