@@ -28,7 +28,7 @@ To create a Scheduled Search:
 
 1. On the **Search** page, enter the sample query provided below as a template for your Scheduled Search. Adjust the **plan_size** and **thresholds** accordingly, as mentioned the comments in the sample query.
 
-    ```sql
+    ```
     _index=sumologic_volume
     | where _sourceCategory="collector_volume"
     | parse regex "(?<collector>\"[^\"]*\")\:{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
@@ -50,12 +50,12 @@ To create a Scheduled Search:
 
 1. In the **Save Search As** dialog, enter a name for this Scheduled Search, such as **90% Data Usage Limit Reached**.
 1. **Run frequency.** Select **Every 4 hours**.
-1. Click **Schedule this search**.  
+1. Click **Schedule this search**. 
 
    * **Time range for the scheduled search.** Select **Today**.
-   * **Alert condition.** Select **Send notification only if the condition below is satisfied:** and enter **Number of results Greater than \> 0**. 
-   * **Alert Type.** Select **Email**. 
+   * **Alert condition.** Select **Send notification only if the condition below is satisfied:** and enter **Number of results Greater than \> 0**.
+   * **Alert Type.** Select **Email**.
    * Enter the **email address** where you would like to be alerted.
 
-1. For all configuration options, see [Schedule a Search](../schedule-search.md). 
+1. For all configuration options, see [Schedule a Search](docs/alerts/scheduled-searches/schedule-search.md). 
 1. Click **Save**.

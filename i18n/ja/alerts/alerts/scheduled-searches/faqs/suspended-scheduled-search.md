@@ -6,7 +6,7 @@ id: suspended-scheduled-search
 
 If you have received an Alert Email from Sumo Logic stating that an issue has been detected with a Scheduled Search, it might not be immediately apparent why your Scheduled Search has failed, and may even be suspended. The Scheduled Search referred to in the email may be one that has run for months without a problem, but now for some reason, it fails.
 
-First, we recommend that you review the scheduled search. (Just click the link at the bottom of the email.) It could be that there's an easy-to-spot typo. Or perhaps an operator is being used improperly. See [how to prevent your scheduled search from failing](failed-scheduled-search.md).
+First, we recommend that you review the scheduled search. (Just click the link at the bottom of the email.) It could be that there's an easy-to-spot typo. Or perhaps an operator is being used improperly. See [how to prevent your scheduled search from failing](/docs/alerts/scheduled-searches/faq#why-would-a-scheduled-search-fail).
 
 ## Why was my Scheduled Search suspended?
 
@@ -48,7 +48,7 @@ Permanent suspensions last forever. You need to create a new scheduled search.�
 
 ### How can I troubleshoot the failure?
 
-For complete details, see [Why Would a Scheduled Search Fail?](failed-scheduled-search.md).
+For complete details, see [Why Would a Scheduled Search Fail?](/docs/alerts/scheduled-searches/faq#why-would-a-scheduled-search-fail).
 
 ### Reactivate a Suspended Scheduled Search
 

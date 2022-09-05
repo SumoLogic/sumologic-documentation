@@ -19,16 +19,16 @@ In this section, we will introduce the following concepts:
 
 Important considerations:
 
-* [How to Prevent your Scheduled Search from Timing Out](faqs/prevent-scheduled-search-timing-out.md).
+* [How to Prevent your Scheduled Search from Timing Out](faq.md#how-to-prevent-your-scheduled-search-from-timing-out).
     Scheduled searches cannot run indefinitely. At some point, the query will be timed out to protect the reliability of the service.
 
-* [Service Alert: Scheduled Search Email Quota Reached for Search](faqs/service-alerts-scheduled-search-email-quota-reached.md).
+* [Service Alert: Scheduled Search Email Quota Reached for Search](/docs/alerts/scheduled-searches/faq#service-alert-scheduled-search-email-quota-reached-for-search).
     Sumo Logic implements an email quota allowing 120 emails to be sent per day per scheduled search.
 
-* [What Happens When a Scheduled Search Is Suspended?](faqs/suspended-scheduled-search.md)
+* [What Happens When a Scheduled Search Is Suspended?](faq.md#what-happens-when-a-scheduled-search-is-suspended)
     Learn what happens when a Scheduled Search is suspended.
 
-* [Why Would a Scheduled Search Fail?](faqs/failed-scheduled-search.md)
+* [Why Would a Scheduled Search Fail?](faq.md#why-would-a-scheduled-search-fail)
     Learn how to troubleshoot a failed Scheduled Search.
 
 :::note

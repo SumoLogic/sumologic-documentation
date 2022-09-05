@@ -240,9 +240,7 @@ Markdown | Less | Pretty
 ## Links
 Adding links to content outside of documentation: `[GitHub](http://github.com)`
 
-Adding links between pages are relative links with the path and name of the file without the .md or .mdx extension:
-
-`[Topic Name](/path/filename.md)`
+Adding links between pages are relative links with the path and name of the file without the .md or .mdx extension.
 
 ## Images
 We recommend saving all images in PNG format. Images are typically saved in the */static/images* folder location. Always include alt text for images.
@@ -271,11 +269,11 @@ A visual example will be provided in a template.
 
 Use the following formats for commands, API method names, and code.
 
-Inline code examples use single ticks around \`text` for code formatting.
+Inline code examples use single ticks around `text` for code formatting.
 
 Here is an example of `code` inline.
 
-For blocks of code, use triple ticks (\```) before and after the code. If you know the code language, include that in the first set of ticks, for example ```json. This applies code highlighting for the language. See [this list](https://prismjs.com/#supported-languages) of available languages.
+For blocks of code, use triple ticks (```) before and after the code. If you know the code language, include that in the first set of ticks, for example ```json. This applies code highlighting for the language. See [this list](https://prismjs.com/#supported-languages) of available languages.
 
 The following is an example of JSON:
 

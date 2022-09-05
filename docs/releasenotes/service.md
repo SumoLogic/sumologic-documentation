@@ -52,10 +52,8 @@ Update - we've increased data retention for Trace queries from 7 days to 15 days
 
 Update - We’re happy to announce the release of our **AWS Observability Solution v2.5.0**, which includes.
 
-
-
-* Enhanced dashboards for [EC2 Host OS Metrics](docs/observability/aws-observability-solution/aws-observability-apps/aws-ec2-metrics.md), including support for [Amazon EC2 CloudWatch](/docs/observability/AWS-Observability-Solution/AWS-Observability-Apps/AWS-EC2-Metrics): now you can monitor your EC2 instances via CloudWatch and Installed Collector simultaneously and see results side-by-side.
-* Support for [Amazon SNS](/docs/observability/AWS-Observability-Solution/AWS-Observability-Apps/) - we’ve added out-of-the-box dashboards with the most important information about messages, events, and errors illustrating SNS health and reliability.
+* Enhanced dashboards for [EC2 Host OS Metrics](docs/observability/aws/integrations/aws-ec2-metrics.md), including support for [Amazon EC2 CloudWatch](/docs/observability/aws/integrations/AWS-EC2-Metrics): now you can monitor your EC2 instances via CloudWatch and Installed Collector simultaneously and see results side-by-side.
+* Support for [Amazon SNS](/docs/observability/aws/integrations/) - we’ve added out-of-the-box dashboards with the most important information about messages, events, and errors illustrating SNS health and reliability.
 * Enhanced dashboards for supported Amazon services - the following services were updated and revamped DynamoDB, API Gateway, RDS, EC2 Metrics, ElastiCache, and All Load Balancers.
 * New CLI-based onboarding flow: now, you can roll out a comprehensive AWS monitoring with just a single CLI command by providing your AWS and Sumo credentials.
 * Streamlining of Root Cause Explorer drill-downs. While you can still find your AWS anomalies in the RCE screen from the new menu and Entities panel, we have removed RCE dedicated “Events of interests” dashboards from the top-level Dashboards drop-down menu.
@@ -102,7 +100,7 @@ New - The Sumo Logic App for [AWS Network Load Balancer](docs/integrations/amazo
 ---
 ## July 14, 2022 (Observability)
 
-New - We’re pleased to announce our new in-product Kubernetes onboarding experience, which guides first-time users step by step through data collection setup (Orchestration, Infrastructure & App Data), the dashboard generation process, and alert monitors installation. To try it out, go to Sumo Logic > **App Catalog** > **Kubernetes** app > then follow the wizard steps. You can also refer to our new [Kubernetes Quickstart](/docs/observability/Kubernetes-Solution/Quickstart) doc, which mirrors the in-product onboarding workflow.
+New - We’re pleased to announce our new in-product Kubernetes onboarding experience, which guides first-time users step by step through data collection setup (Orchestration, Infrastructure & App Data), the dashboard generation process, and alert monitors installation. To try it out, go to Sumo Logic > **App Catalog** > **Kubernetes** app > then follow the wizard steps. You can also refer to our new [Kubernetes Quickstart](/docs/observability/kubernetes/Quickstart) doc, which mirrors the in-product onboarding workflow.
 
 
 ---
@@ -140,7 +138,7 @@ Update - We’ve improved our zoom in feature for metric charts. Up until now, z
 
 ## 2022-07-08 (Observability)
 
-New - We’re pleased to announce our new in-product Kubernetes onboarding experience, which guides first-time users step by step through data collection setup (Orchestration, Infrastructure & App Data), the dashboard generation process, and alert monitors installation. To try it out, go to Sumo Logic > **App Catalog** > **Kubernetes** app > then follow the wizard steps. You can also refer to our [Kubernetes Quickstart](/docs/observability/kubernetes-solution/quickstart.md) doc, which mirrors the in-product onboarding workflow.
+New - We’re pleased to announce our new in-product Kubernetes onboarding experience, which guides first-time users step by step through data collection setup (Orchestration, Infrastructure & App Data), the dashboard generation process, and alert monitors installation. To try it out, go to Sumo Logic > **App Catalog** > **Kubernetes** app > then follow the wizard steps. You can also refer to our [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart.md) doc, which mirrors the in-product onboarding workflow.
 
 ---
 
@@ -186,17 +184,13 @@ Update -  We’re continuing to make [alerts and monitors](/docs/Alerts/Monitors
 
 Update - Sumo Logic and AWS are excited to announce an update to [Sumo Logic Integrations for AWS Organizations](https://aws.amazon.com/quickstart/architecture/sumo-logic-for-aws-organizations/). This solution allows joint customers of AWS and Sumo Logic to automate the integration of [AWS Security Reference Architecture](https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/architecture.html)-compliant organizations with [Sumo Logic Cloud SIEM powered by AWS](https://aws.amazon.com/marketplace/pp/prodview-o622lpl6biu6s).
 
-
-
 Our updates support Security Reference Architecture (SRA)-compliant set up of:
-
-
 
 * AWS Security Hub
 * Centralized logging of AWS Network Firewall and AWS WAF
 * AWS Firewall Manager
 
-New - We are happy to announce the release of [AWS Observability Installation Automation](docs/observability/aws-observability-solution/deploy-use-aws-observability/deploy-with-aws-cloudformation/index.md). This release enables a simplified method of deploying AWS Observability using default parameters with just one quick command requiring only Sumo Access Id and Key. This method features POSIX and PowerShell scripts to trigger the Cloud Formation template for creating a stack to enable complete visibility into your AWS account infrastructure's health and reliability.
+New - We are happy to announce the release of [AWS Observability Installation Automation](docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/index.md). This release enables a simplified method of deploying AWS Observability using default parameters with just one quick command requiring only Sumo Access Id and Key. This method features POSIX and PowerShell scripts to trigger the Cloud Formation template for creating a stack to enable complete visibility into your AWS account infrastructure's health and reliability.
 
 ---
 ## June 23, 2022 (Alerts)
@@ -382,7 +376,7 @@ Update - We’ve updated two Sumo Logic apps for Palo Alto Networks to support P
 ---
 ## March 30, 2022 (AWS Observability Solution)
 
-Update - The AWS Observability Solution 2.4.0 release includes a new [AWS Service - Classic Elastic Load Balancer](/docs/observability/aws-observability-solution/aws-observability-apps/aws-classic-load-balancer) (ELB), install location selection, and sharing options with the Sumo Logic organization during installation. This update also includes updated dashboards for AWS Classic ELB Service, a new AWS ECS - Events dashboard for AWS CloudTrail, enhanced Lambda dashboard for Lambda cold start duration, and updated FERs. [Update](docs/observability/aws-observability-solution/deploy-use-aws-observability/update-aws-observability-stack.md) to the latest version to take advantage of these features. See the [Changelog](docs/observability/aws-observability-solution/deploy-use-aws-observability/aws-observability-change-log.md) for additional details.
+Update - The AWS Observability Solution 2.4.0 release includes a new [AWS Service - Classic Elastic Load Balancer](/docs/observability/aws/integrations/aws-classic-load-balancer) (ELB), install location selection, and sharing options with the Sumo Logic organization during installation. This update also includes updated dashboards for AWS Classic ELB Service, a new AWS ECS - Events dashboard for AWS CloudTrail, enhanced Lambda dashboard for Lambda cold start duration, and updated FERs. [Update](docs/observability/aws/deploy-use-aws-observability/update-aws-observability-stack.md) to the latest version to take advantage of these features. See the [Changelog](docs/observability/aws/deploy-use-aws-observability/aws-observability-change-log.md) for additional details.
 
 ---
 ## March 29, 2022 (Collection)
