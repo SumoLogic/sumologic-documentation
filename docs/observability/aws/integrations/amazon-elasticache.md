@@ -2,7 +2,7 @@
 id: amazon-elasticache
 title: Amazon ElastiCache
 sidebar_label: Amazon ElastiCache
-description: Amazon ElastiCache allows you to set up, run, and scale popular open-source compatible in-memory data stores in the cloud.
+description: The Sumo Logic Observability integration for Amazon ElastiCache provides visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues.
 ---
 
 Amazon ElastiCache allows you to set up, run, and scale popular open-source compatible in-memory data stores in the cloud.

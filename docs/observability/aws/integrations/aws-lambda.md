@@ -1,8 +1,8 @@
 ---
 id: aws-lambda
 title: AWS Lambda
-sidebar_label: AWS Lambda 
-description: tk
+sidebar_label: AWS Lambda
+description: The Sumo Logic AWS Observability Lambda integration utilizes Lambda Logs and Metrics from CloudWatch, as well as CloudTrail Lambda Data Events. 
 ---
 
 [AWS Lambda](https://aws.amazon.com/lambda/) allows you to run code without the burden of provisioning or managing servers. The AWS Lambda ULM App is a unified logs and metrics (ULM) app for monitoring operation and performance trends in the Lambda functions in your account.

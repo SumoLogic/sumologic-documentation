@@ -2,6 +2,7 @@
 id: developer
 title: Developer Release Notes
 sidebar_label: Developer
+description: We'll post new features and changes to our APIs, Collector management, and Live Tail CLI here.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

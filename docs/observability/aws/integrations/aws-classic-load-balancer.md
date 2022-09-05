@@ -1,8 +1,8 @@
 ---
 id: aws-classic-load-balancer
 title: AWS Classic Load Balancer
-sidebar_label: AWS Classic Load Balancer 
-description: tk
+sidebar_label: AWS Classic Load Balancer
+description: The Sumo Logic App for AWS Observability Classic Load Balancer is a unified logs and metrics (ULM) App that gives you visibility into the health of your Classic Load Balancer. 
 ---
 
 The [AWS Classic Load Balancer](https://aws.amazon.com/elasticloadbalancing/classic-load-balancer/) (ELB) distributes incoming application traffic across multiple EC2 instances in multiple Availability Zones and operates at both the request level and connection level.

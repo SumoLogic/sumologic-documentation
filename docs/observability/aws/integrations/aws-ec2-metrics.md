@@ -1,8 +1,8 @@
 ---
 id: aws-ec2-metrics
 title: AWS EC2 Metrics
-sidebar_label: AWS EC2 Metrics 
-description: tk
+sidebar_label: AWS EC2 Metrics
+description: The Sumo Logic App for AWS EC2 allows you to display and gain insight about your EC2 instance metrics (CloudWatch) for cpu, disk, network, EBS and Health Status Check.
 ---
 
 [Amazon Elastic Compute Cloud (Amazon EC2)](https://aws.amazon.com/ec2/) is a web service that provides secure, resizable compute capacity in the cloud, enabling you with complete control of your computing resources. The Sumo Logic app for AWS EC2 Metrics collects local host metrics and displays them using predefined search queries and dashboards. App dashboards provide a visual analysis of local host metrics for CPU, disk, memory, network, and TCP.
