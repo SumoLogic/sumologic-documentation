@@ -2,8 +2,8 @@
 id: data-enrichment
 slug: data-enrichment
 title: Data Enrichment
+description: Add more context to your data.
 ---
-
 
 Data enrichment is the process of adding meaningful information to your data so you have more control and an easier time referencing data in searches. It's simply where you add more context to your data.
 

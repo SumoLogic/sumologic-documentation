@@ -1,6 +1,7 @@
 ---
 id: sdo-setup-from-atlassian-marketplace
 title: SDO Setup from Atlassian Marketplace
+sidebar_label: Set up from Atlassian Marketplace
 description: Learn how to set up the Software Development Optimization (SDO) Solution from the Atlassian Marketplace.
 ---
 

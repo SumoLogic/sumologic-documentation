@@ -2,6 +2,7 @@
 id: ms-office-audit-source
 title: Microsoft Office 365 Audit Source
 sidebar_label: Microsoft Office 365 Audit
+description: Collect Audit Log content types to track and monitor usage of Microsoft Office 365.
 ---
 
 ## Office 365 Audit Log Workload types

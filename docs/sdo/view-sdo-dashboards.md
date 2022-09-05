@@ -1,6 +1,7 @@
 ---
 id: view-sdo-dashboards
 title: View the Software Development Optimization Solution Dashboards
+sidebar_label: Viewing SDO Dashboards
 description: This page describes the apps that comprise the Sumo Logic Software Development Optimization Solution and provides links to the dashboards for each of the apps.
 ---
 

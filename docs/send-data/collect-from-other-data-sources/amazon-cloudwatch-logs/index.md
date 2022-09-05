@@ -1,6 +1,7 @@
 ---
 slug: /send-data/collect-from-other-data-sources/amazon-cloudwatch-logs
 title: Amazon CloudWatch Logs
+description: Learn how to collect Amazon CloudWatch Logs.
 ---
 
 

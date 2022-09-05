@@ -1,6 +1,7 @@
 ---
 id: collect-metrics-vrealize-operations-manager
 title: Collect metrics from VMware vRealize Operations Manager 8 Enterprise
+description: This page provides instructions for collecting metrics from vRops.
 ---
 
 

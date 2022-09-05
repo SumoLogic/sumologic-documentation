@@ -1,6 +1,7 @@
 ---
 id: json-parameters-hosted-sources
 title: JSON Parameters for Hosted Sources
+description: This topic describes JSON Source parameters for hosted Collectors.
 ---
 
 

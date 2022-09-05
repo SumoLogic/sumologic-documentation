@@ -1,6 +1,7 @@
 ---
 id: syslog-source
 title: Syslog Source
+description: The Syslog Source obtains syslog messages by listening on a designated port.
 ---
 
 

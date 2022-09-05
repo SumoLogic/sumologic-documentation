@@ -1,6 +1,7 @@
 ---
 id: windows
 title: Install a Collector on Windows
+description: Install or uninstall a Collector on a Windows system.
 ---
 
 

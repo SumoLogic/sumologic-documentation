@@ -2,6 +2,7 @@
 id: collector-faq
 title: Collector Troubleshooting and FAQ
 sidebar_label: Troubleshooting
+description: Frequently asked questions about collecting data into Sumo Logic that provide the how-to answers you need to setup and troubleshoot collectors.
 ---
 
 :::sumo

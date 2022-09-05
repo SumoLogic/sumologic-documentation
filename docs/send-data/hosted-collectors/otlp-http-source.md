@@ -2,6 +2,7 @@
 id: otlp-http-source
 title: OTLP/HTTP Source
 sidebar_label: OTLP/HTTP
+description: Use an HTTP OTLP Source to collect OTLP formatted Logs, Metrics, and Traces data.
 ---
 
 

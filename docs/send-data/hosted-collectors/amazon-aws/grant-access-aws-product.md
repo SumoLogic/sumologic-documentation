@@ -1,6 +1,7 @@
 ---
 id: grant-access-aws-product
 title: Grant Access to an AWS Product
+description: Before configuring an AWS Source, give Sumo Logic access to your AWS product.
 ---
 
 

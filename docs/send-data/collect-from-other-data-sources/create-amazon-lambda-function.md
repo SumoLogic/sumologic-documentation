@@ -1,6 +1,7 @@
 ---
 id: create-amazon-lambda-function
 title: Create a Sumo Lambda Function
+description: Sumo Logic has created an Amazon Lambda function that you can use with AWS.
 ---
 
 

@@ -19,7 +19,7 @@ The AWS Observability solution can be used with Control Tower-managed accounts t
 * Eliminate data silos
     * Unified logs and metrics data across AWS accounts and services eliminates data silos and makes it easier for teams to quickly identify root causes. 
 * Accelerate time-to-value
-    * Streamlined setup and pre-built dashboards provide instant insights into AWS accounts and services enabling visibility into the most important data out of the box. 
+    * Streamlined setup and pre-built dashboards provide instant insights into AWS accounts and services enabling visibility into the most important data out of the box.  
 
 For more information on the AWS Observability solution, see [About AWS Observability](/docs/observability/aws/deploy-use-aws-observability).
 

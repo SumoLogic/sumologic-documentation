@@ -1,6 +1,7 @@
 ---
 id: collect-logs-sentinelone
 title: Collect Logs for SentinelOne
+description: This page provides instructions for ingesting SentinelOne logs into Sumo Logic.
 ---
 
 

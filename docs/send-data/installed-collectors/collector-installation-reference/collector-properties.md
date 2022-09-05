@@ -1,6 +1,7 @@
 ---
 id: collector-properties
 title: collector.properties
+description: This file allows you to tune the internal processes of Installed Collectors to fit your needs.
 ---
 
 

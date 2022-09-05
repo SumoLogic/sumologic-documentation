@@ -1,6 +1,7 @@
 ---
 id: local-file-source
 title: Local File Source
+description: Create a Local File Source to collect log messages from the same machine where a Collector is installed.
 ---
 
 

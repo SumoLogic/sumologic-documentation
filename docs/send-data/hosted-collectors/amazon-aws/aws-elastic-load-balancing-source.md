@@ -2,6 +2,7 @@
 id: aws-elastic-load-balancing-source
 title: AWS Elastic Load Balancing Source
 sidebar_label: AWS Elastic Load Balancing
+description: Add an AWS ELB Source to upload messages to Sumo Logic.
 ---
 
 

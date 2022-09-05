@@ -2,6 +2,7 @@
 id: best-practices
 title: Best Practices for Data Collection
 sidebar_label: Best Practices
+description: Best practices for creating a naming convention for good Source Category values and choosing the right installed data collector for your environment.
 ---
 
 
@@ -93,7 +94,7 @@ This simple change completely changes your high-level grouping. Both schemes all
 
 ## Local and Centralized Data Collection
 
-When you are setting up your environment with Installed Collectors you must decide how to collect the data you want to send to Sumo Logic.
+When you are setting up your environment with Installed Collectors, you must decide how to collect the data you want to send to Sumo Logic.
 
 Sumo Logic is a highly flexible and scalable solution, and its Installed Collectors can work for any size organization. However, with so much flexibility at your fingertips, what is the best way to design your environment?
 

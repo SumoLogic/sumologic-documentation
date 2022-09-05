@@ -1,6 +1,7 @@
 ---
 id: docker-sources
 title: Docker Sources
+description: Configure a Docker Logs or Docker Stats Source.
 ---
 
 

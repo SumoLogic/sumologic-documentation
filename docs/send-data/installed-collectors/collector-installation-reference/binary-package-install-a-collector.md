@@ -1,6 +1,7 @@
 ---
 id: binary-package-install-a-collector
 title: Use the binary package to install a Collector on Windows or macOS
+description: Use the binary package to install a Collector on MacOS or Windows only if you need to use a particular version of JRE.
 ---
 
 

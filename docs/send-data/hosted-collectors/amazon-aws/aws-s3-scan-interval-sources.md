@@ -2,6 +2,7 @@
 id: aws-s3-scan-interval-sources
 title: AWS S3 Scan Interval for Sources
 sidebar_label: AWS S3 Scan Interval
+description: A scan interval defines the waiting time between scans of the objects in your S3 bucket.
 ---
 
 

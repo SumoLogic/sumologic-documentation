@@ -1,6 +1,7 @@
 ---
 id: docker-collection-methods
 title: Docker Collection Methods
+description: Learn about methods for collecting logs and metrics from Docker.
 ---
 
 

@@ -2,6 +2,7 @@
 id: aws-cloudtrail-source
 title: AWS CloudTrail Source
 sidebar_label: AWS CloudTrail
+description: Add an AWS CloudTrail Source to upload messages to Sumo Logic.
 ---
 
 

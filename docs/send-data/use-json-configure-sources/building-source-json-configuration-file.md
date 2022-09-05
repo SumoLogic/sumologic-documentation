@@ -1,6 +1,7 @@
 ---
 id: building-source-json-configuration-file
 title: Building the Source JSON Configuration File
+description: Don't start from scratch. Use these steps to build the Source JSON configuration file.
 ---
 
 

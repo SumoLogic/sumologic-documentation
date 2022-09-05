@@ -1,6 +1,7 @@
 ---
 id: macos
 title: Install a Collector on MacOS
+description: Install or uninstall a Collector on a MacOS system.
 ---
 
 

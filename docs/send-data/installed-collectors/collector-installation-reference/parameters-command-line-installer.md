@@ -1,6 +1,7 @@
 ---
 id: parameters-command-line-installer
 title: Parameters for the Command Line Installer
+description: This topic lists the parameters that are available when installing a Collector using the command line installer.
 ---
 
 

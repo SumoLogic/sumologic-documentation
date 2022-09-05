@@ -1,6 +1,7 @@
 ---
 slug: /send-data/use-json-configure-sources/local-configuration-file-management
 title: Local Configuration File Management
+description: With Local Configuration File Management, you can set up and manage Sources on an Installed Collector using one or more JSON files.
 ---
 
 

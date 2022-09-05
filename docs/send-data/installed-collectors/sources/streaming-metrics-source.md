@@ -1,6 +1,7 @@
 ---
 id: streaming-metrics-source
 title: Streaming Metrics Source
+description: Add a streaming metric source  to an installed collector to collect Graphite, Carbon 2.0, or Prometheus metrics.
 ---
 
 

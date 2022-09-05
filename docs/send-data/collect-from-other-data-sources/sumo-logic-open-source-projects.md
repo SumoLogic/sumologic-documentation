@@ -1,6 +1,7 @@
 ---
 id: sumo-logic-open-source-projects
 title: Sumo Logic Open Source Projects
+description: Sumo Logic provides open-source solutions and resources for customers through GitHub.
 ---
 
 Sumo Logic provides open-source solutions and resources for customers via GitHub.

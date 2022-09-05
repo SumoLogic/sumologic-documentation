@@ -2,6 +2,7 @@
 id: g-suite-apps-audit-source
 title: G Suite Apps Audit Source
 sidebar_label: G Suite Apps Audit
+description: Add a Google Apps Audit Source to ingest audit logs from Google apps.
 ---
 
 

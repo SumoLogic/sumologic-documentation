@@ -2,10 +2,10 @@
 id: configure-aws-observability-alerts
 title: Configure AWS Observability Alerts
 sidebar_label: Configure AWS Observability Alerts
-description: Sumo Logic has provided out of the box alerts to help you quickly determine if a particular AWS service is available and performing as expected. 
+description: Sumo Logic has provided out-of-the-box alerts to help you quickly determine if a particular AWS service is available and performing as expected. 
 ---
 
-Sumo Logic has provided out of the box alerts to help you quickly determine if a particular AWS service is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations from AWS. These are built for every AWS service that is part of the AWS Observability solution and are installed via installation of CloudFormation template.
+Sumo Logic has provided out-of-the-box alerts to help you quickly determine if a particular AWS service is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations from AWS. These are built for every AWS service that is part of the AWS Observability solution and are installed via installation of CloudFormation template.
 
 Once you have installed the AWS Observability solution with the option to “Install Dashboards and Alerts”, navigate to the AWS Observability folder under **Monitors** to configure them. 
 

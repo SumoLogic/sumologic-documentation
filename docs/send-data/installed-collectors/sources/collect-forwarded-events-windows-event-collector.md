@@ -1,9 +1,10 @@
 ---
 id: collect-forwarded-events-windows-event-collector
 title: Collect Forwarded Events from a Windows Event Collector
+description: Use a Windows Event Source to collect forwarded events from a Windows Event Collector.
 ---
 
-#
+
 
 A Sumo Logic Windows Event Log Source can track and collect forwarded events from a [Windows Event Collector](https://docs.microsoft.com/en-us/windows/win32/wec/windows-event-collector). A Windows Event Collector receives forwarded events from other remote Windows computers.
 

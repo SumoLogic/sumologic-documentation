@@ -517,7 +517,7 @@ The ElasticSearch - Queries dashboard shows Elasticsearch provides analytics on 
 
 ## Elasticsearch Alerts
 
-Sumo Logic has provided out of the box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Elasticsearch database cluster is available and performing as expected.
+Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Elasticsearch database cluster is available and performing as expected.
 
 
 <table>

@@ -1,6 +1,7 @@
 ---
 id: cron-examples-reference
 title: Cron Examples and Reference
+description: Sumo Logic uses Quartz CRON expressions.
 ---
 
 Sumo Logic uses Quartz CRON expressions. The syntax for a Quartz
