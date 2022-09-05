@@ -139,7 +139,7 @@ Logs that do not contain a category field are assigned category UNKNOWN.
 
    * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
    * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-   * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/sources/reference-information/time-reference) for more information.        
+   * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.        
 
 1. When you are finished configuring the Source click **Submit**.
 
@@ -154,7 +154,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ## JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
@@ -177,11 +177,11 @@ The following table shows the **config** parameters for an Azure Event Hubs S
 | `consumer_group` | String | Yes | $Default | If needed, specify a custom consumer group name. When using a custom Consumer Group make sure that it exists for the Event Hub instance. | modifiable |
 | `receive_with_latest_offset` | Boolean | Yes | True | Receive data with the latest offset or from the timestamp. | modifiable |
 | `receive_from_timestamp` | Boolean | No  |  | Set to true when receive_with_latest_offset is false. | modifiable |
-| `timeZone` | String | No | null | Type the time zone you'd like the source to use in TZ database format. Example: `"America/Los_Angeles"`. See [time zone format](/docs/send-data/sources/use-json-configure-sources) for details. | modifiable |
+| `timeZone` | String | No | null | Type the time zone you'd like the source to use in TZ database format. Example: `"America/Los_Angeles"`. See [time zone format](/docs/send-data/use-json-configure-sources) for details. | modifiable |
 | `forceTimeZone` | Boolean | No | false | Type `true` to force the Source to use a specific time zone, otherwise type `false` to use the time zone found in the logs. The default setting is false. | modifiable |
 | `automaticDateParsing` | Boolean | No | true | Determines if timestamp information is parsed or not. Type `true` to enable automatic parsing of dates (the default setting); type `false` to disable. If disabled, no timestamp information is parsed at all. | modifiable |
 | `autoParseTimeFormat` | Boolean | No | true | Sets if the timestamp format is automatically detected by Sumo Logic. If `autoParseTimeFormat` is set to false, then `defaultDateFormats` must be specified. | modifiable |
-| `defaultDateFormats` | Object | array | No | null | Define formats for the dates present in your log messages. You can specify a locator regex to identify where timestamps appear in log lines.<br/>The `defaultDateFormats` object has two elements:<br/>`format` (required)—Specify the date format.<br/>`locator` (optional)—A regular expression that specifies the location of the timestamp in your log lines. For example, `INFO(.*)`<br/>For an example, see [Timestamp example](/docs/send-data/sources/use-json-configure-sources), below.<br/>For more information about timestamp options, see [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/sources/reference-information/time-reference). | modifiable |
+| `defaultDateFormats` | Object | array | No | null | Define formats for the dates present in your log messages. You can specify a locator regex to identify where timestamps appear in log lines.<br/>The `defaultDateFormats` object has two elements:<br/>`format` (required)—Specify the date format.<br/>`locator` (optional)—A regular expression that specifies the location of the timestamp in your log lines. For example, `INFO(.*)`<br/>For an example, see [Timestamp example](/docs/send-data/use-json-configure-sources), below.<br/>For more information about timestamp options, see [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference). | modifiable |
 
 Azure Event Hubs Source JSON example:
 

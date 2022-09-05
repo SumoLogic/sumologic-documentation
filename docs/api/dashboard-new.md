@@ -4,10 +4,10 @@ title: Sumo Logic Dashboard (New) Management APIs
 sidebar_label: Dashboard (New)
 tags: [library]
 description: Use HTTP endpoints to manage content permissions.
- 
+
 ---
 
-The Dashboard (New) Management API allows you to create, retrieve, update, and delete dashboards created with the [Dashboard (New)](/docs/dashboards-new/about-dashboard-new.md) platform from HTTP endpoints to organize your content.
+The Dashboard (New) Management API allows you to create, retrieve, update, and delete dashboards created with the [Dashboard (New)](/docs/dashboards-new/) platform from HTTP endpoints to organize your content.
 
 Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
 

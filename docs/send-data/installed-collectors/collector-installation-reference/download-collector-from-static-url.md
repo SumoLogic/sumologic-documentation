@@ -10,6 +10,7 @@ Use our static URLs to download the most recent version of a Collector. The ver
 This document provides static URLs to download our [Installed Collector](../about.md) agent. If you need our **Distribution of OpenTelemetry**, go to our [GitHub repository](https://github.com/SumoLogic/sumologic-otel-collector/releases).
 :::
 
+
 1. Open a terminal window or command prompt, depending on your host type.
 1. Invoke a web request utility such as wget or Invoke-WebRequest.   For example if you're on a Linux 64-bit host, you can wget the Collector from the command line:
 

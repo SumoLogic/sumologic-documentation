@@ -18,7 +18,7 @@ Sumo Logic has several deployment types, which vary by geographic location and t
 
 You will need:
 
-* An Enterprise account. For more information, see [Cloud Flex](https://help.sumologic.com/Manage/01Manage_Subscription/01Cloud_Flex_Accounts) or [Cloud Flex Credits](https://help.sumologic.com/Manage/01Manage_Subscription/00Cloud_Flex_Credits_Accounts), depending on the Sumo Logic packaging you have.
+* An Enterprise account. For more information, see [Cloud Flex](https://help.sumologic.com/Manage/Manage-Subscription/01Cloud_Flex_Accounts) or [Cloud Flex Credits](https://help.sumologic.com/Manage/Manage-Subscription/00Cloud_Flex_Credits_Accounts), depending on the Sumo Logic packaging you have.
 * An access key/access ID for authentication. Username/password are not supported.
 
 

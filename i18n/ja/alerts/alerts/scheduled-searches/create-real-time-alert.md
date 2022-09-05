@@ -10,8 +10,7 @@ Real Time Alerts are scheduled searches that run nearly continuously. That means
 When an alert condition is satisfied Sumo Logic triggers the selected alert type. Sumo Logic examines ingested data in a rolling window using the Time Range you define. Any time a new result is found, another email is sent.
 
 :::note
-Only use real time schedules when you know your data is ingested within a few minutes of its creation. The [receipt time](../../search/get-started-with-search/build-search/use-receipt-time.md) should be within a few minutes of your log's [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata). See
-how to [troubleshoot timestamp discrepancies](../../send-data/collector-faqs/troubleshooting-time-discrepancies.md).
+Only use real time schedules when you know your data is ingested within a few minutes of its creation. The [receipt time](../../search/get-started-with-search/build-search/use-receipt-time.md) should be within a few minutes of your log's [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata). See how to [troubleshoot timestamp discrepancies](/docs/send-data/collector-faq#troubleshooting-time-discrepancies).
 :::
 
 Real Time Alerts are not duplicated, which means that if a specific raw log message has triggered an alert once already, that same log message will not trigger an alert a second time.
@@ -29,7 +28,7 @@ If the time zone of messages is set incorrectly, those logs won't be picked up b
 * A maximum of 120 emails are sent per day per Real Time Alert.
 * Aggregate real-time scheduled searches evaluate the first 1,000 results per search. For Example, if the scheduled search is supposed to return more than 1,000 results, reduce the scope of the search.
 * Non-Aggregate real-time scheduled searches evaluate the first 100 results per search. For Example, if the scheduled search is supposed to return more than 100 results, either covert it to aggregate scheduled search or reduce the scope of the search.
-* The [\_dataTier](../../manage/partitions-and-data-tiers/data-tiers.md) search modifier is not supported in Real Time Alert searches.
+* The [\_dataTier](docs/manage/partitions-and-data-tiers/data-tiers.md) search modifier is not supported in Real Time Alert searches.
 
 ### Notification Results
 
@@ -37,7 +36,7 @@ The results from your search will vary based on the type of alert selected. The 
 
 | Alert Type | Results in Notification |
 | -- | -- |
-| [Webhook](../../manage/connections-and-integrations/webhook-connections/schedule-searches-webhook-connections.md) | If the **Send a separate alert for each search result checkbox** is selected (in step 6) only new results from subsequent searches are sent in the alert payload. Otherwise, all results are sent. |
+| [Webhook](docs/manage/connections-and-integrations/webhook-connections/schedule-searches-webhook-connections.md) | If the **Send a separate alert for each search result checkbox** is selected (in step 6) only new results from subsequent searches are sent in the alert payload. Otherwise, all results are sent. |
 | [Save to Index](save-to-index.md) | All results are saved from an **aggregate** query.<br/>Only new results from subsequent searches are saved from a **non-aggregate** query. |
 | [Save to Lookup](save-to-lookup.md) | All results are saved. |
 

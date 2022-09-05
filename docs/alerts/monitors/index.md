@@ -21,9 +21,9 @@ See details on how [Scheduled Searches are different](difference-scheduled-searc
 
 ## Rules
 
-* You need the **Manage** or **View Monitors** [role capability](../../manage/users-and-roles/roles/role-capabilities.md)) to manage or view Monitors respectively. These capabilities work in concert with [folder permissions](#grant-permissions-to-monitors-folders) to enable fine-grained permissions.
+* You need the **Manage** or **View Monitors** [role capability](docs/manage/users-and-roles/roles/role-capabilities.md)) to manage or view Monitors respectively. These capabilities work in concert with [folder permissions](#grant-permissions-to-monitors-folders) to enable fine-grained permissions.
 * The frequency a Monitor executes depends upon a variety of factors such as the underlying query, the operators used, and the detection window. It can vary from a couple of seconds to a few minutes. If for example, the detection window of your alert is one day it will be evaluated every couple of minutes, whereas if the detection window of the monitor is 15 minutes then it will be evaluated every couple of seconds.
-* Log Monitors use the [role search filter](../../manage/users-and-roles/roles/construct-search-filter-for-role.md) of their creator.
+* Log Monitors use the [role search filter](docs/manage/users-and-roles/roles/construct-search-filter-for-role.md) of their creator.
 * Log Monitors delay execution by two minutes. This means it won't evaluate data from the current time, but evaluate data from two minutes ago.  This ensures that any delays in ingestion are factored in and won't generate false positive or false negative alerts.
 * Metric Monitors delay execution by one minute.
 * Depending on your account type, you can have up to a certain number of Log and Metric Monitors.
@@ -35,7 +35,7 @@ See details on how [Scheduled Searches are different](difference-scheduled-searc
 ## Limitations
 
 * [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
-* Monitors only support the [Continuous data tier](../../manage/partitions-and-data-tiers/data-tiers.md).
+* Monitors only support the [Continuous data tier](docs/manage/partitions-and-data-tiers/data-tiers.md).
 * An aggregate Metric Monitor can evaluate up to 15,000 time series. A non-aggregate Metric Monitor can evaluate up to 3,000 time series.
 * [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.
 * [Search templates](../../search/get-started-with-search/build-search/search-templates.md) are not supported.
@@ -364,7 +364,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
       * Example: `{{Resultsjson.Env}}` - High CPU. This alert will produce an Alert with the name like PROD - High CPU. Here we are assuming that there is a field name Env in underlying data that has a value of "PROD".
    * **Evaluation Delay**: Collection delays may occur due to your environment and it takes a couple of minutes for data to be processed into Sumo Logic. Since Monitors run on data from the most current time period, it's possible for Monitors to evaluate against incomplete data. As a result, Monitors can generate false positives or negatives that can cause confusion. Set an evaluation delay in seconds to delay the evaluation of a Monitor, so it doesn't look at the most current time (where data can be incomplete) and instead looks at an older period of time, where you have more complete data.<br/> ![additional settings evaluation delay.png](/img/monitors/additional-settings-evaluation-delay.png)
 
-   If your data is coming from the [Amazon CloudWatch Source for Metrics](../../send-data/hosted-collectors//amazon-aws/amazon-cloudwatch-source-metrics.md) we recommend a setting of 900 seconds.
+   If your data is coming from the [Amazon CloudWatch Source for Metrics](docs/send-data/hosted-collectors//amazon-aws/amazon-cloudwatch-source-metrics.md) we recommend a setting of 900 seconds.
 
 7. (Optional) Set **Notifications**: When a trigger condition is met you can send notifications to other people and services. To add notifications click on the **Add Notification** button. You can add more than one notification channel for a Monitor.<br/>  ![monitor notifications input.png](/img/monitors/monitor-notifications-input.png)
 

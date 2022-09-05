@@ -450,7 +450,7 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
     sudo mysql.server restart
     ```
 2. **Configure an [Installed Collector](/docs/send-data/Installed-Collectors)**.
-3. **Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) for MySQL error logs**.
+3. **Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) for MySQL error logs**.
    1. Add a Local File Source in the installed collector configured in the previous step. Configure the Local File Source fields as follows:
       * **Name.** (Required)
       * **Description**. (Optional)
@@ -477,7 +477,7 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
 
 At this point, MySQL error logs should start flowing into Sumo Logic.
 
-4. **Configuring a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) for slow query log**.
+4. **Configuring a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) for slow query log**.
    1. Add a Local File Source in the installed collector configured in the previous step. Configure the Local File Source fields as follows:
       * **Name.** (Required)
       * **Description**. (Optional)

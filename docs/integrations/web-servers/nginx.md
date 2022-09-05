@@ -203,11 +203,11 @@ This section explains the steps to collect Nginx logs from a Kubernetes environm
 </TabItem>
 <TabItem value="non-k8s">
 
-Sumo Logic uses the Telegraf operator for Nginx metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about) for collecting Nginx logs. The diagram below illustrates the components of the Nginx collection in a non-Kubernetes environment.
+Sumo Logic uses the Telegraf operator for Nginx metric collection and the [Installed Collector](/docs/send-data/installed-collectors) for collecting Nginx logs. The diagram below illustrates the components of the Nginx collection in a non-Kubernetes environment.
 
 <img src={useBaseUrl('img/integrations/web-servers/nginx-nonk8s.png')} alt="Web servers" />
 
-Telegraf uses the[ Nginx input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx) to obtain Nginx metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Nginx are collected by a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+Telegraf uses the[ Nginx input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx) to obtain Nginx metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Nginx are collected by a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
 The process to set up collection for Nginx data is done through the following steps.
 
@@ -226,7 +226,7 @@ Nginx app supports the default access logs and error logs format.
 
 To collect logs directly from your Nginx machine, use an Installed Collector and a Local File Source.  
 
-1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 2. Configure the Local File Source fields as follows:
    * **Name**. (Required)
    * **Description**. (Optional)

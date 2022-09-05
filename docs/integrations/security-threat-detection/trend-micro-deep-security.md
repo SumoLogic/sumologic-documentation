@@ -32,7 +32,7 @@ This section provides instructions for configuring on-prem log collection for th
 To collect logs for Deep Security, do the following:
 
 1. Configure a [Installed Collector](/docs/send-data/Installed-Collectors).
-2. Configure a [Syslog Source](/docs/send-data/Sources/installed-collectors/Syslog-Source).
+2. Configure a [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source).
 
 When you configure the Syslog Sources, for Protocol, select UDP.
 
