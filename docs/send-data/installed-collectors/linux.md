@@ -1,6 +1,7 @@
 ---
 id: linux
 title: Install a Collector on Linux
+description: Install or uninstall a Collector on a Linux system.
 ---
 
 

@@ -1,9 +1,10 @@
 ---
 id: preconfigure-machine-collect-remote-windows-events
 title: Preconfigure a Machine to Collect Remote Windows Events
+description: You can configure a system for remote access by a Remote Windows Event Log Source.
 ---
 
-#
+
 
 Use the instructions in this topic to configure a system for remote access by a Remote Windows Event Log Source. For information on collecting local Windows Event Logs, see [Configure a Local Windows Event Log Source](local-windows-event-log-source.md).
 

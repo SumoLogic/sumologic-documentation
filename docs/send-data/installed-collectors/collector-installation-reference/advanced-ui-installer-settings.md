@@ -1,6 +1,7 @@
 ---
 id: advanced-ui-installer-settings
 title: Advanced UI Installer Settings
+description: View the advanced settings for the UI installer.
 ---
 
 

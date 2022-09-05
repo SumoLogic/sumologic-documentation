@@ -2,6 +2,7 @@
 id: sumo-distribution-opentelemetry
 title: Sumo Logic Distribution for OpenTelemetry
 sidebar_label: OpenTelemetry Distro Collector
+description: Use our Sumo Logic Distribution for OpenTelemetry to send data to Sumo Logic.
 hide_table_of_contents: true
 ---
 

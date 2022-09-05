@@ -1,6 +1,7 @@
 ---
 id: windows-event-source-custom-channels
 title: Windows Event Source Custom Channels
+description: Find Windows event channels to collect with a Local Windows Event Source.
 ---
 
 

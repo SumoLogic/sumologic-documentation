@@ -1,6 +1,7 @@
 ---
 id: remote-windows-performance-monitor-log-source
 title: Remote Windows Performance Monitor Log Source
+description: Set up a Remote Windows Performance Monitor Log Source to collect remote performance data from Windows Performance Monitor.
 ---
 
 

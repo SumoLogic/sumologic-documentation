@@ -1,6 +1,7 @@
 ---
 id: syslog-ng
 title: syslog-ng
+description: Learn how to configure your server to send syslog data with syslog-ng.
 ---
 
 

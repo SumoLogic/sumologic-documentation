@@ -1,6 +1,7 @@
 ---
 id: host-metrics-source
 title: Host Metrics Source
+description: An installed Sumo Logic Collector can collect host metrics from a local host.
 ---
 
 

@@ -107,7 +107,7 @@ To install the app, do the following:
 
 ## Installing Kubernetes Monitors
 
-Sumo Logic has provided out of the box alerts available through [Sumo Logic monitors](docs/alerts/monitors/index.md) to help you quickly determine if the Kubernetes cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](docs/alerts/monitors/index.md) to help you quickly determine if the Kubernetes cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing them a JSON or a Terraform script.
 

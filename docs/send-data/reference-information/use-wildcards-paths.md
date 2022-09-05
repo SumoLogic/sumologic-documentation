@@ -1,6 +1,7 @@
 ---
 id: use-wildcards-paths
 title: Using Wildcards in Paths
+description: Rather than entering each file by name, using wildcards in the Source path allows you to collect all files of a certain type.
 ---
 
 

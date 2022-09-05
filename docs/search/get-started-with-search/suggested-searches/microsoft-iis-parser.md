@@ -6,7 +6,7 @@ sidebar_label: Microsoft IIS Parser
 
 These suggested searches cover some of the most common scenarios for monitoring Security, Audit, and Performance issues on a Linux server. You can enter these queries into the Search box as a starting baseline, and then customize the queries for your system.
 
-These are written assuming the messages are parsed by our out of the box IIS W3C access log parser (i.e. parse using public/iis).
+These are written assuming the messages are parsed by our out-of-the-box IIS W3C access log parser (i.e. parse using public/iis).
 
 ## HTTP Status Code Summary Over Time
 

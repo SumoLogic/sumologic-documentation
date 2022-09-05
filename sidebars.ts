@@ -85,7 +85,7 @@ module.exports = {
       link: {type: 'doc', id: 'quickstart/index'},
       items: [
         'observability/aws/quickstart',
-        'sdo/quickstart-sdo-github',
+        'sdo/quickstart',
         'observability/kubernetes/quickstart',
         'apm/traces/quickstart',
       ],
@@ -1999,10 +1999,10 @@ module.exports = {
       items: [
         'sdo/about-sdo',
         'sdo/supported-tools-schema',
-        'sdo/quickstart-sdo-github',
+        'sdo/quickstart',
         {
           type: 'category',
-          label: 'Set Up SDO Solution',
+          label: 'Setting Up SDO',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'sdo/set-up-sdo/index'},
@@ -2014,8 +2014,8 @@ module.exports = {
         },
         `sdo/install-sdo-app-view-dashboards`,
         'sdo/view-sdo-dashboards',
-        'sdo/integrate-tools-with-sdo',
         'sdo/jenkins-plugin-build-deploy-events',
+        'sdo/integrate-tools-with-sdo',
       ],
     },
     {

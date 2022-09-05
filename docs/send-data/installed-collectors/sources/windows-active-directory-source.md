@@ -2,6 +2,7 @@
 id: windows-active-directory-inventory-source
 title: Windows Active Directory Inventory Source
 sidebar_label: Windows Active Directory Inventory Source
+description: A Windows Active Directory Inventory Source collects inventory data from Active Directory Database.
 keywords:
     - windows-active-directory-inventory
     - cloud-SIEM-enterprise

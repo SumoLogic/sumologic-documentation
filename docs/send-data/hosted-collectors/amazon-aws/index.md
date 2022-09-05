@@ -1,6 +1,7 @@
 ---
 slug: /send-data/hosted-collectors//amazon-aws
 title: Amazon Web Services
+description: Sumo Logic offers Sources to collect from many AWS products.
 ---
 
 

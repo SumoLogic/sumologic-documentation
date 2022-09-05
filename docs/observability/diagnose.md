@@ -2,7 +2,7 @@
 id: diagnose
 title: Diagnose with the Observability Solution
 sidebar_label: Diagnosing Issues
-description: Diagnose with the Observability Solution.
+description: Diagnose service issues with the Sumo Logic Observability Solution.
 ---
 
 After you have identified an issue using the available monitoring tools, the next step is to diagnose the issue and narrow down your investigation to specific services. The Observability Solution offers the following features to diagnose application issues.

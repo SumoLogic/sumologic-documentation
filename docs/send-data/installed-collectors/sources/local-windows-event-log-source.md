@@ -1,6 +1,7 @@
 ---
 id: local-windows-event-log-source
 title: Local Windows Event Log Source
+description: You can collect local events from the Windows Events Viewer.
 ---
 
 

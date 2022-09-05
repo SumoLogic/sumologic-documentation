@@ -1,6 +1,7 @@
 ---
 slug: /send-data/installed-collectors/sources/remote-file-source
 title: Remote File Source
+description: You can collect file tail data from a remote system using SSH.
 ---
 
 

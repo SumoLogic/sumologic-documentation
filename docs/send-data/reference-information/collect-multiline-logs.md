@@ -1,6 +1,7 @@
 ---
 id: collect-multiline-logs
 title: Collecting Multiline Logs
+description: Sumo Logic Sources can be configured to detect log boundaries automatically or with a regular expression.
 ---
 
 

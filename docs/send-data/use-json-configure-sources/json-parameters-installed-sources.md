@@ -1,6 +1,7 @@
 ---
 id: json-parameters-installed-sources
 title: JSON Parameters for Installed Sources
+description: This topic describes JSON Source parameters for installed Collectors.
 ---
 
 

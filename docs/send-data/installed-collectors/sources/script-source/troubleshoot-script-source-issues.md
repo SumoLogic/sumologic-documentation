@@ -1,6 +1,7 @@
 ---
 id: troubleshoot-script-source-issues
 title: Troubleshoot Script Source Issues
+description: Use these tips to help resolve collection issues with Script Sources.
 ---
 
 

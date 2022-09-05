@@ -1,6 +1,7 @@
 ---
 id: download-collector-from-static-url
 title: Download a Collector from a Static URL
+description: Static URLs are provided to download the latest Sumo Logic Collector.
 ---
 
 Use our static URLs to download the most recent version of a Collector. The version of the Collector will be updated each time there is a release or patch.

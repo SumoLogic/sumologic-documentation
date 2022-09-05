@@ -2,6 +2,7 @@
 id: aws-kinesis-firehose-logs-source
 title: AWS Kinesis Firehose for Logs Source
 sidebar_label: AWS Kinesis Firehose Logs
+description: Learn how to use the AWS Kinesis Firehose for Logs source to ingest logs from AWS Kinesis Data Firehose.
 ---
 
 

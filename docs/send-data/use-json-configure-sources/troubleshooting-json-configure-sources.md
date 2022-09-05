@@ -1,6 +1,7 @@
 ---
 id: troubleshooting-json-configure-sources
 title: Troubleshooting JSON to Configure Sources
+description: Investigate and solve issues configuring Sources with JSON.
 ---
 
 

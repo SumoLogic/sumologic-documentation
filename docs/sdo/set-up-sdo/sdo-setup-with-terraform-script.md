@@ -1,6 +1,7 @@
 ---
 id: sdo-setup-with-terraform-script
 title: SDO Setup with Terraform Script
+sidebar_label: Set up with Terraform
 description: Learn how to set up the Software Development Optimization (SDO) Solution using a Terraform script.
 ---
 

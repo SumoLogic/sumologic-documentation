@@ -1,6 +1,7 @@
 ---
 id: sumoconf-for-legacy-collectors
 title: sumo.conf for Legacy Collectors
+description: This file passes Collector configuration parameters during installation if the Debian or RPM option is used.
 ---
 
 

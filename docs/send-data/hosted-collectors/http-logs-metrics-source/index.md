@@ -2,6 +2,7 @@
 slug: /send-data/hosted-collectors//http-logs-metrics-source
 title: HTTP Logs and Metrics Source
 sidebar_label: HTTP Logs and Metrics
+description: An HTTP Source is an endpoint for receiving logs and metrics uploaded via a URL.
 ---
 
 

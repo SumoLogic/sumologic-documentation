@@ -1,6 +1,7 @@
 ---
 slug: /send-data/installed-collectors/sources/script-source
 title: Script Source
+description: Uses a script to fetch from custom sources of data, such a database or a third-party monitoring app.
 ---
 
 

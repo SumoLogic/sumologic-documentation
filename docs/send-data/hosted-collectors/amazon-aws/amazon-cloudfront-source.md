@@ -2,6 +2,7 @@
 id: amazon-cloudfront-source
 title: Amazon CloudFront Source
 sidebar_label: Amazon CloudFront
+description: Add an Amazon CloudFront Source to upload messages to Sumo Logic.
 ---
 
 

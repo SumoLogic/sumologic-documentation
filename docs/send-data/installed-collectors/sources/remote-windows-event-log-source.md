@@ -1,9 +1,9 @@
 ---
 id: remote-windows-event-log-source
 title: Remote Windows Event Log Source
+description: Collect Windows event logs from a remote machine.
 ---
 
-#
 
 Set up a Remote Windows Event Log Source to use a single Sumo Logic Collector to collect Windows event log entries from multiple remote systems.
 

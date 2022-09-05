@@ -1,6 +1,7 @@
 ---
 id: define-boundary-regex-multiline-messages
 title: Define Boundary Regex for Multiline Messages
+description: By default, Sumo Logic Sources have multiline processing enabled, which is useful when logs contain messages that span multiple lines separated by line breaks, such as a stack trace.
 ---
 
 

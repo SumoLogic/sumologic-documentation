@@ -1,6 +1,7 @@
 ---
 id: new-collectors-and-sources
 title: Local Configuration File Management for New Collectors and Sources
+description: Local Configuration File Management is a straightforward way to get started in your deployment.
 ---
 
 

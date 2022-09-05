@@ -1,6 +1,7 @@
 ---
 id: script-action
 title: Script Action
+description: A Script Action receives data uploads that are triggered by a scheduled search.
 ---
 
 

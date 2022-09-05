@@ -2,6 +2,7 @@
 id: aws-s3-source
 title: AWS S3 Source
 sidebar_label: AWS S3
+description: Add an Amazon S3 Source to upload messages to Sumo Logic.
 ---
 
 Amazon Simple Storage Service (Amazon S3) provides a web services interface that can be used to store and retrieve any amount of data from anywhere on the web. Use an Amazon S3 Source to upload data to Sumo Logic from S3.

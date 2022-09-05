@@ -1,6 +1,7 @@
 ---
 slug: /send-data/reference-information
 title: Reference Information for Sources
+description: These topics contain reference information for Sources for installed and hosted Collectors.
 ---
 
 These topics contain reference information for Sources for installed and hosted Collectors.

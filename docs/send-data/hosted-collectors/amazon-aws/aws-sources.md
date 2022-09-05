@@ -1,6 +1,7 @@
 ---
 id: aws-sources
 title: AWS Sources
+description: These configuration instructions apply to all AWS Source types.
 ---
 
 

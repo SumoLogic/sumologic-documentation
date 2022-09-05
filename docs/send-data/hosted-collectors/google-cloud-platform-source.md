@@ -2,6 +2,7 @@
 id: google-cloud-platform-source
 title: Google Cloud Platform Source
 sidebar_label: Google Cloud Platform (GCP)
+description: You can export in real time all of the data collected by Stackdriver to Google Cloud Pub/Sub. Sumo Logic uses the Pub/Sub integration to push logs to our platform in real time.
 ---
 
 

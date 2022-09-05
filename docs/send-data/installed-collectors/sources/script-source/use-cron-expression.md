@@ -1,6 +1,7 @@
 ---
 id: use-cron-expression
 title: Advanced - Using a CRON Expression
+description: Set up a CRON job to collect data on a specified schedule.
 ---
 
 

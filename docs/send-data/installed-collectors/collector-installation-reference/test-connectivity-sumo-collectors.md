@@ -1,6 +1,7 @@
 ---
 id: test-connectivity-sumo-collectors
 title: Test Connectivity for Sumo Logic Collectors
+description: Learn how you can test access and connectivity from an installed Collector to the Sumo Logic service.
 ---
 
 

@@ -179,7 +179,7 @@ The field extraction rule created is shown in the diagram below: 
 ![pagerduty-v2-alerts.png](/img/sdo/pagerduty-v2-alerts.png)
 
 
-Examples of mapping field extraction rules to the other out of the box tools can be found in [this JSON file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
+Examples of mapping field extraction rules to the other out-of-the-box tools can be found in [this JSON file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
 
 ## Enriching the schema with additional fields
 

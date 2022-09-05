@@ -1,6 +1,7 @@
 ---
 id: local-windows-performance-monitor-log-source
 title: Local Windows Performance Monitor Log Source
+description: Collect local performance data from the Windows Performance Monitor.
 ---
 
 

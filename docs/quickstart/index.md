@@ -1,6 +1,7 @@
 ---
 slug: /quickstart
 title: Quickstart your Sumo experience
+description: Get up and running with Sumo Logic in minutes.
 ---
 
 Sumo Logic provides extensive features and options to gather, monitor, and analyze data, manage your infrastructure, integrate with third party applications, and so much more!
