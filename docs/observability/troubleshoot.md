@@ -2,7 +2,7 @@
 id: troubleshoot
 title: Troubleshooting with Sumo Logic Observability
 sidebar_label: Troubleshooting with Observability
-description: tk
+description: Use Observability to troubleshoot and diagnose issues across a variety of environments.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

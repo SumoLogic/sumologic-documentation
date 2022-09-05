@@ -10,7 +10,7 @@ These quick start guides help you connect, integrate, configure, and start using
 <div className="box-wrapper" markdown="1">
 <div className="box box1 card">
   <div className="container">
-  <h3><a href="/docs/observability/aws/quickstart-aws">AWS Observability</a></h3>
+  <h3><a href="/docs/observability/aws/quickstart">AWS Observability</a></h3>
   <p>This guide will walk you through setting up Sumo Logic's AWS Observability integration.</p>
   </div>
 </div>

@@ -240,9 +240,7 @@ Markdown | Less | Pretty
 ## Links
 Adding links to content outside of documentation: `[GitHub](http://github.com)`
 
-Adding links between pages are relative links with the path and name of the file without the .md or .mdx extension:
-
-`[Topic Name](/path/filename.md)`
+Adding links between pages are relative links with the path and name of the file without the .md or .mdx extension.
 
 ## Images
 We recommend saving all images in PNG format. Images are typically saved in the */static/images* folder location. Always include alt text for images.
