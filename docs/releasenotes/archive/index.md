@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/archive.png')} alt="Thumbnail icon" width="75"/>
 
-Welcome to the archive. Deprecated features are posted here.
+Welcome to the Sumo Logic release notes archive. Deprecated features are posted here.
 
 <div className="box-wrapper" markdown="1">
 <div className="box box1 card">

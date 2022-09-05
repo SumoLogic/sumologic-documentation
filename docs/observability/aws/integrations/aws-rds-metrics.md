@@ -2,7 +2,7 @@
 id: aws-rds-metrics
 title: AWS RDS Metrics
 sidebar_label: AWS RDS Metrics
-description: tk
+description: The Sumo Logic App for AWS Observability RDS Metrics provides visibility into your Amazon Relational Database Service (RDS) metrics collected with a CloudWatch metrics source.
 ---
 
 [Amazon Relational Database Service (Amazon RDS)](https://aws.amazon.com/rds/) is optimized to run in the cloud. The

@@ -2,7 +2,7 @@
 id: amazon-ecs
 title: Amazon ECS
 sidebar_label: Amazon ECS
-description: Learn about the apps in the AWS Observability Solution.
+description: With Sumo Logic dashboards for Amazon ECS, you can monitor capacity and resource utilization of ECS components as well as quickly identify changes made to your clusters to help with troubleshooting.
 ---
 
 Amazon Elastic Container Service is a scalable, container management service that is used to manage containers in a cluster. With dashboards for Amazon ECS, you can monitor capacity and resource utilization of ECS components as well as quickly identify changes made to your clusters to help with troubleshooting.
