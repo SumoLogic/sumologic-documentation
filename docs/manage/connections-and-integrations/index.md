@@ -6,6 +6,8 @@ description: Webhook connections send alerts to third-party applications.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/icons/operations/integration.png')} alt="icon" width="75"/>
+
 On the **Manage Data \> Monitoring \> Connections** page, you can configure:
 
 * [Webhook Connections](/docs/manage/connections-and-integrations/webhook-connections)

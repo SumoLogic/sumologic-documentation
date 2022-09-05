@@ -3,7 +3,6 @@ id: metrics
 title: Sumo Logic Metrics APIs
 sidebar_label: Metrics
 description: Use HTTP endpoints to access your metric data.
-
 ---
 
 The Metrics Query API lets you execute Metrics queries from third-party scripts and applications so that you can reformat the results as desired.

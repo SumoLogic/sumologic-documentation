@@ -43,7 +43,7 @@ Results can be returned in two ways:
 * When not specifying a field with the `field=` option don't parse any fields. If you parse any fields they are excluded from the schema in your results. 
 * A maximum of 100 keys are automatically parsed.
 * Keys in arrays are not supported.
-* The [Time Compare](../time-compare.md) button will not work on LogReduce Keys results, you need to manually input the [compare operator](../search-query-language/search-operators/Compare.md) instead.
+* The [Time Compare](../time-compare.md) button will not work on LogReduce Keys results, you need to manually input the [compare operator](docs/search/search-query-language/search-operators/Compare.md) instead.
 * Response fields `_signature_id`, `_schema`, and `_count` are not supported with [Dashboard filters](../../dashboards/edit-dashboards/use-filters-dashboards.md).
 
 ## _count link
