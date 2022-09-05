@@ -1,6 +1,7 @@
 ---
 id: collect-prometheus-metrics
 title: Collect Prometheus Metrics
+description: You can collect Prometheus metrics in Kubernetes or outside of Kubernetes using Telegraf to collect and a plugin to send data to Sumo Logic.
 ---
 
 

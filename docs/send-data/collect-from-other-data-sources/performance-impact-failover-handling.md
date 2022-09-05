@@ -1,6 +1,7 @@
 ---
 id: performance-impact-failover-handling
 title: Performance Impact and Failover Handling
+description: Learn how AWS Lambda Extensions can impact the performance and execution time of your AWS Lambda functions.
 ---
 
 ## Performance Impact on your AWS Lambda function

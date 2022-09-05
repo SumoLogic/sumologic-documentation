@@ -1,6 +1,7 @@
 ---
 id: install-telegraf
 title: Installing Telegraf for Sumo Logic
+description: Learn out to install Telegraf.
 ---
 
 This topic has instructions for installing Telegraf to work with Sumo Logic. We provide two sets of instructions:

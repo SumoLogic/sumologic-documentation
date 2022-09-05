@@ -1,6 +1,7 @@
 ---
 id: collect-aws-lambda-logs-extension
 title: Collect AWS Lambda Logs using an Extension
+description: Learn to collect the AWS Lambda logs through an extension.
 ---
 
 

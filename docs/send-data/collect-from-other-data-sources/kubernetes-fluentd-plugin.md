@@ -1,6 +1,7 @@
 ---
 id: kubernetes-fluentd-plugin
 title: Kubernetes Fluentd plugin
+description: Information on using the Sumo Kubernetes Fluentd plugin to collect logs from Kubernetes.
 ---
 
 

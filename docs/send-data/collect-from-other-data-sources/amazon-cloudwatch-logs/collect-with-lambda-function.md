@@ -1,6 +1,7 @@
 ---
 id: collect-with-lambda-function
 title: Collect Amazon CloudWatch Logs using a Lambda Function
+description: Learn how to collect Amazon CloudWatch Logs with a Lambda function.
 ---
 
 
