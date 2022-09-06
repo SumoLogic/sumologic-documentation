@@ -1,6 +1,7 @@
 ---
 id: about-live-tail
 title: About Live Tail
+description: Sumo Logic Live Tail allows you to see a real-time live feed of log events for development and troubleshooting.
 ---
 
 

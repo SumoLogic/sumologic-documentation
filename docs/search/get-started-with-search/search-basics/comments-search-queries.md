@@ -1,6 +1,7 @@
 ---
 id: comments-search-queries
 title: Comments in Search Queries
+description: You can add comments to a search query, or even comment out lines of your search query using comment formatting.
 ---
 
 

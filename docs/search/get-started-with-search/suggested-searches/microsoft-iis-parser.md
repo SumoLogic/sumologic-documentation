@@ -2,6 +2,7 @@
 id: microsoft-iis-parser
 title: Suggested Searches for the Microsoft IIS Parser
 sidebar_label: Microsoft IIS Parser
+description: The following searches were built for use with the Microsoft IIS Parser. Copy and paste these searches into the search query field and save them for use later.
 ---
 
 These suggested searches cover some of the most common scenarios for monitoring Security, Audit, and Performance issues on a Linux server. You can enter these queries into the Search box as a starting baseline, and then customize the queries for your system.

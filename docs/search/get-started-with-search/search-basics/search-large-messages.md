@@ -1,6 +1,7 @@
 ---
 id: search-large-messages
 title: Search Large Messages
+description: When collecting log messages or event logs that are larger than 64KB in size, Sumo Logic slices the messages into a stream of smaller message chunks.
 ---
 
 

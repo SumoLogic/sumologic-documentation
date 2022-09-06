@@ -1,6 +1,7 @@
 ---
 id: logreduce-values
 title: LogReduce Values
+description: Group by the values of specific keys in JSON logs.
 ---
 
 
@@ -87,7 +88,7 @@ To see all the logs by cluster identifiers for further processing, you'd use
 ### _count link 
 
 * Searches opened by clicking the link provided in the `_count` response field:
-    * are run against [message time](../get-started-with-search/search-basics/built-in-metadata.md).
+    * are run against [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata).
     * can return different results due to variations in your data.
 * When provided in a Scheduled Search alert, the link from the `_count` response field is invalid and will not work.
 

@@ -39,19 +39,19 @@ Details of these data fields can be found in [Neustar's documentation](https://i
 
 The Geo Lookup operator uses [lookup](lookup-classic.md "lookup") with a specific path, `geo://location`, to produce a map. 
 
-To map the IP addresses properly you must [count](../group-aggregate-operators/count-count-distinct-and-count-frequent.md) by the `latitude` and `longitude` fields. You must have the `_count` field in your results. If you want to use a different field's value [rename](as-operator.md "as operator") it to `_count` so the map uses the field.
+To map the IP addresses properly you must [count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent) by the `latitude` and `longitude` fields. You must have the `_count` field in your results. If you want to use a different field's value [rename](as-operator.md "as operator") it to `_count` so the map uses the field.
 
 Your query should use the following syntax:
 
 ```sql
 | parse "[ip_fieldname]" as [ip_address]
 | lookup latitude, longitude [optional_geo_locator fields]
-  from geo://location on ip=[ip_address] 
-| count by latitude, longitude, [other geo_locator fields] 
+  from geo://location on ip=[ip_address]
+| count by latitude, longitude, [other geo_locator fields]
 | sort _count
 ```
 
-This syntax produces aggregate results, so you can add a map to a Dashboard. 
+This syntax produces aggregate results, so you can add a map to a Dashboard.
 
 ## Limitations
 

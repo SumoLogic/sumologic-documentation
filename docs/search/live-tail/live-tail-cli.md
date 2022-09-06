@@ -1,6 +1,7 @@
 ---
 id: live-tail-cli
 title: Live Tail CLI
+description: The Live Tail Command Line Interface (CLI) is a standalone application that allows you to start and use a Live Tail session from the command line.
 ---
 
 The Live Tail Command Line Interface (CLI) is a standalone application that allows you to start and use a Live Tail session from the command line.

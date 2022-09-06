@@ -1,6 +1,7 @@
 ---
 id: use-receipt-time
 title: Use Receipt Time
+description: You can display search results in the order that the Collector received the messages in milliseconds.
 ---
 
 

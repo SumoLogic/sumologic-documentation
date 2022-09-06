@@ -31,7 +31,7 @@ Specify an escape, and quote character:
 ## Rules
 
 * By default, the CSV operator uses a comma (,) for a delimiter, backlash (\\) for an escape character, and (“) quote for a quote character.
-* A field to extract from is always required. To extract from your original message use the `_raw` [metadata](../../get-started-with-search/search-basics/built-in-metadata.md) field.
+* A field to extract from is always required. To extract from your original message use the `_raw` [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field.
 
 ## Examples
 
@@ -61,4 +61,4 @@ This produces results like:
 
 ![csv operator](/img/reuse/query-search/csv_operator_example_695x65.png)
 
-For more information on parsing CSV files, see [Lookup](../search-operators/lookup-classic.md) operator and [Save](../search-operators/save-lookups-classic.md) operator.
+For more information on parsing CSV files, see [Lookup](docs/search/search-query-language/search-operators/lookup-classic.md) operator and [Save](docs/search/search-query-language/search-operators/save-lookups-classic.md) operator.

@@ -397,7 +397,7 @@ _sourceCategory=weblogs
 
 ### Reference data from child query using save and lookup
 
-When you want to correlate data from different sources or conduct further aggregation on data from a child query without passing it with compose, since it would act upon the scope of the query limiting results, you can use the [save](search-query-language/search-operators/save-lookups-classic.md) and [lookup](search-query-language/search-operators/lookup-classic.md) operators to get the data you need in the parent query.
+When you want to correlate data from different sources or conduct further aggregation on data from a child query without passing it with compose, since it would act upon the scope of the query limiting results, you can use the [save](docs/search/search-query-language/search-operators/save-lookups-classic.md) and [lookup](docs/search/search-query-language/search-operators/lookup-classic.md) operators to get the data you need in the parent query.
 
 This query identifies specific sessions and correlates them to status messages across services from different data sources:
 

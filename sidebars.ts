@@ -774,26 +774,7 @@ module.exports = {
             'search/search-query-language/parse-operators/parse-hex',
           ],
         },
-        {
-          type: 'category',
-          label: 'Group or Aggregate Operators',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'search/search-query-language/group-aggregate-operators/index'},
-          items: [
-            'search/search-query-language/group-aggregate-operators/avg',
-            'search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent',
-            'search/search-query-language/group-aggregate-operators/first-and-last',
-            'search/search-query-language/group-aggregate-operators/median',
-            'search/search-query-language/group-aggregate-operators/min-and-max',
-            'search/search-query-language/group-aggregate-operators/most-recent-and-least-recent',
-            'search/search-query-language/group-aggregate-operators/percentile-pct',
-            'search/search-query-language/group-aggregate-operators/pct-sampling',
-            'search/search-query-language/group-aggregate-operators/standard-deviation',
-            'search/search-query-language/group-aggregate-operators/sum',
-            'search/search-query-language/group-aggregate-operators/values',
-          ],
-        },
+        'search/search-query-language/group-aggregate-operators',
         'search/search-query-language/field-expressions',
         {
           type: 'category',
@@ -928,17 +909,7 @@ module.exports = {
         },
       ],
     },
-    {
-      type: 'category',
-      label: 'Search FAQ',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        'search/search-faqs/export-results-of-saved-file',
-        'search/search-faqs/group-messages-based-on-field',
-        'search/search-faqs/searching-by-keyword-returns-no-results',
-      ],
-    },
+    'search/faq',
   ],
 // *** METRICS & LOGS: all metrics content
   metricslogs: [

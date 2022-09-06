@@ -1,6 +1,7 @@
 ---
 id: best-practices-search
 title: Best Practices for Searches
+description: Use these easy to follow rules to get the most out of your Sumo Logic searches.
 ---
 
 
@@ -95,7 +96,7 @@ If your search contains filtering criteria that could change each time the sear
 
 ## Aggregate before a lookup
 
-Whenever possible, you should aggregate data prior to doing a [lookup](../../search-query-language/search-operators/lookup-classic.md). In some cases, this will significantly reduce the amount of data the lookup is referencing.
+Whenever possible, you should aggregate data prior to doing a [lookup](docs/search/search-query-language/search-operators/lookup-classic.md). In some cases, this will significantly reduce the amount of data the lookup is referencing.
 
 **Best approach:**
 

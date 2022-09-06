@@ -1,6 +1,7 @@
 ---
 id: about-search-basics
 title: About Search Basics
+description: Sumo Logic search syntax is based on a funnel or "pipeline" concept and it uses logical and familiar operators letting you to create ad hoc queries quickly.
 ---
 
 

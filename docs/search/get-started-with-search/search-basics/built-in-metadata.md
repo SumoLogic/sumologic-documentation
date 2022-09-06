@@ -1,6 +1,7 @@
 ---
 id: built-in-metadata
 title: Built-in Metadata
+description: Metadata tags are attached to your log messages at ingest, which is very useful when you're searching log data.
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 id: view-traces-search-results
 title: View Traces Search Results
+description: Open and review traces from search log results.
 ---
 
 

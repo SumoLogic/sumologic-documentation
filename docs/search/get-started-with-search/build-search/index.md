@@ -1,6 +1,7 @@
 ---
 slug: /search/get-started-with-search/build-search
 title: Build Searches
+description: Details on building a search - best practices, syntax, time range, and efficient searches. These simple queries will help you discover what data you have in your Sumo Logic environment. An efficient search query returns targeted results as quickly as possible, with as little "noise" as possible.
 ---
 
 This guide provides information on building searches.

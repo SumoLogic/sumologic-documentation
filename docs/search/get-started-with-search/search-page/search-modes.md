@@ -1,6 +1,7 @@
 ---
 id: search-modes
 title: Search Modes
+description: Learn about the new search modes of our Log Search page.
 ---
 
 

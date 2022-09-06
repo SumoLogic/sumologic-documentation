@@ -1,6 +1,7 @@
 ---
 slug: /search/lookup-tables
 title: Lookup Tables
+description: Learn about Lookup tables and the search operators you can use with them.
 ---
 
 

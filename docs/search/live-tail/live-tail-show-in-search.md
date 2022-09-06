@@ -1,6 +1,7 @@
 ---
 id: live-tail-show-in-search
-title: Live Tail Show in Search
+title: Show Live Tail in Search
+description: Start a Live Tail session from the Search page or the Live Tail page.
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 id: manage-and-update-lookup-tables
 title: Manage and Update Lookup Tables
+description: Learn how to update, export, and share Lookup Tables.
 ---
 
 
