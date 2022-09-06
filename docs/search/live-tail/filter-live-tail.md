@@ -1,6 +1,7 @@
 ---
 id: filter-live-tail
 title: Filter Live Tail
+description: To find specific information, you can filter by keyword.
 ---
 
 

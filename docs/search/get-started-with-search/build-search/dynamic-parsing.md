@@ -1,6 +1,7 @@
 ---
 id: dynamic-parsing
 title: Dynamic Parsing
+description: Dynamic Parsing allows you to configure automatic parsing of JSON logs.
 ---
 
 

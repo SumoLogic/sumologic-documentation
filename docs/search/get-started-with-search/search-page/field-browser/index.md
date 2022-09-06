@@ -1,6 +1,7 @@
 ---
 slug: /search/get-started-with-search/search-page/field-browser
 title: Field Browser
+description: The Field Browser allows you to display or hide selected fields without having to parse them.
 ---
 
 

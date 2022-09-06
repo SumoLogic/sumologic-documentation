@@ -1,6 +1,7 @@
 ---
 slug: /search/search-cheat-sheets
 title: Search Cheat Sheets
+description: Cheat sheets provide examples of useful search queries for different use cases.
 ---
 
 

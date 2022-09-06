@@ -217,7 +217,7 @@ To see content that has been shared with you, do the following:
 
 After you start a search, you can “pin” it, and it will run in the background for up to 24 hours. If the search does not finish in that time frame, it is paused. You can restart the search at any time. Search results are available for three days.
 
-There is a limit of ten pinned searches per user. Also, queries that use the [save operator](../search/search-query-language/search-operators/save-lookups-classic.md) cannot be pinned.
+There is a limit of ten pinned searches per user. Also, queries that use the [save operator](docs/search/search-query-language/search-operators/save-lookups-classic.md) cannot be pinned.
 
 You must start a search for the Pin option to appear. Once a search is pinned, it cannot be unpinned, but it can be removed from the Pinned Searches tab.
 

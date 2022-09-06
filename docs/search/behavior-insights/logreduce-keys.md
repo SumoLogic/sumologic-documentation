@@ -1,6 +1,7 @@
 ---
 id: logreduce-keys
 title: LogReduce Keys
+description: Group by the keys of JSON or keyvalue logs.
 ---
 
 
@@ -30,12 +31,12 @@ With the provided results you can:
 | -- | -- | -- |
 | parser | The parsing library to use, either `json` or `keyvalue`. | json |
 | maxdepth | The maximum depth of the JSON parser. | 5 |
-| field | The field to automatically parse. | Raw message ([`_raw`](../get-started-with-search/search-basics/built-in-metadata.md)) |
+| field | The field to automatically parse. | Raw message ([`_raw`](/docs/search/get-started-with-search/search-basics/built-in-metadata)) |
 | noaggregate | Use to return LogReduce results as raw messages. Using this option disables the aggregation process that runs by default. | Null |
 
 Results can be returned in two ways:
 
-* If the operator is last in the query (no operations follow it) it provides aggregate results by performing a [count by](../search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent.md) operation.
+* If the operator is last in the query (no operations follow it) it provides aggregate results by performing a [count by](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent) operation.
 * If you want to use operators after LogReduce you need to specify the `noaggregate` option so your results are returned non-aggregated.
 
 ## Limitations
@@ -50,7 +51,7 @@ Results can be returned in two ways:
 
 * Searches opened by clicking the link provided in the `_count` response field:
 
-    * are run against [message time](../get-started-with-search/search-basics/built-in-metadata.md).
+    * are run against [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata).
     * can return different results due to variations in your data.
 
 * When provided in a Scheduled Search alert, the link from the `_count` response field is invalid and will not work.

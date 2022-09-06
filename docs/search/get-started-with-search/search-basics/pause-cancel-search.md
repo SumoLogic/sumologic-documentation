@@ -1,6 +1,7 @@
 ---
 id: pause-cancel-search
 title: Pause or Cancel a Search
+description: When a search is in progress, the options to Cancel or Pause the search appear.
 ---
 
 

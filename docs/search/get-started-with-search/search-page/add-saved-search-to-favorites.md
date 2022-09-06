@@ -1,6 +1,7 @@
 ---
 id: add-saved-search-favorites
 title: Add a Saved Search to Favorites
+description: You can mark a saved search as a favorite on the Search page so it appears in the Library on the Favorites tab.
 ---
 
 

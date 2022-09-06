@@ -1,6 +1,7 @@
 ---
 id: multiple-live-tails
 title: Multiple Live Tails
+description: You can run two Live Tail sessions at a time per browser tab.
 ---
 
 

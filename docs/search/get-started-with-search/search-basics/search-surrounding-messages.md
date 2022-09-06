@@ -1,6 +1,7 @@
 ---
 id: search-surrounding-messages
 title: Search Surrounding Messages
+description: Surrounding messages allow you to investigate events surrounding a message.
 ---
 
 

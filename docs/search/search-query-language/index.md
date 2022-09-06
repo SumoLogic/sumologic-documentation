@@ -1,6 +1,7 @@
 ---
 slug: /search/search-query-language
 title: Search Query Language
+description: Sumo Logic’s extensive query options help you gain valuable insight into your log messages.
 ---
 
 

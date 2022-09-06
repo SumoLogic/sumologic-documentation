@@ -1,6 +1,7 @@
 ---
 id: keyword-search-expressions
 title: Keyword Search Expressions
+description: The text that comes before the first pipe symbol in a query is called the keyword expression or scope.
 ---
 
 

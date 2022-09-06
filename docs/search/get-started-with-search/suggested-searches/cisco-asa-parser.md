@@ -2,6 +2,7 @@
 id: cisco-asa-parser
 title: Suggested Searches for the Cisco ASA Parser
 sidebar_label: Cisco ASA Parser
+description: These suggested searches cover some of the most common scenarios for monitoring issues on a Linux server.
 ---
 
 

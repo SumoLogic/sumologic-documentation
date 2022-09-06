@@ -1,6 +1,7 @@
 ---
 id: search-load-indicator
 title: Search Load Indicator
+description: The search load indicator gives you feedback on the amount of system load and provides suggestions on what you can do to reduce the load by making your query more specific.
 ---
 
 

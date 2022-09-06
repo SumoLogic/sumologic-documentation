@@ -33,5 +33,5 @@ Once you have a created a Lookup Table, there are several search operators you c
 
 * You can use the [lookup operator](../search/search-query-language/search-operators/lookup.md) to enrich your log data with contextual information from the Lookup Table.
 * You can use the [lookupContains](../search/search-query-language/search-operators/lookupContains.md) operator to see whether a key exists in a Lookup Table.
-* You can use the [cat](../search/search-query-language/search-operators/cat.md) operator to list the contents of a Lookup Table.
+* You can use the [cat](docs/search/search-query-language/search-operators/cat.md) operator to list the contents of a Lookup Table.
 * You can use the can [save operator](../search/search-query-language/search-operators/save.md) to update the contents of an existing Lookup Table.

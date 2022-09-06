@@ -1,6 +1,7 @@
 ---
 id: troubleshooting-live-tail
 title: Troubleshooting Live Tail
+description: Troubleshooting tips for Sumo Logic Live Tail.
 ---
 
 
