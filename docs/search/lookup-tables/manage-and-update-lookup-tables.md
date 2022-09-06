@@ -4,8 +4,6 @@ title: Manage and Update Lookup Tables
 description: Learn how to update, export, and share Lookup Tables.
 ---
 
-
-
 The page has information about updating, exporting, and sharing Lookup Tables. For information about creating a new Lookup Table, see [Create a Lookup Table](create-a-lookup-table.md).
 
 :::note

@@ -1,6 +1,7 @@
 ---
 id: group-aggregate-operators
 title: Group or Aggregate Operators
+description: Evaluate messages and place them into groups.
 ---
 
 Aggregating (group-by) functions evaluate messages and place them into groups. The group operator is used in conjunction with group-by functions.
@@ -187,7 +188,7 @@ The same example above with an alias field name, `countOfPort`, and an addition
 | sort by countOfPort
 ```
 
-When you want to count more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the `_count` fields.
+When you want to count more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as-operator) to rename the `_count` fields.
 
 #### `count_distinct`
 
@@ -231,7 +232,7 @@ So for example, if the true count of distinct items is 1,000, the result returne
 
 The error parameter value is important to making the **count_distinct** function return results quickly and in a scalable way.
 
-Also, note that when you want to count the distinct occurrences of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the \_count_distinct fields. See this example:
+Also, note that when you want to count the distinct occurrences of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as-operator) to rename the \_count_distinct fields. See this example:
 
 ```sql
 _sourceCategory=PaloAltoNetworks
@@ -308,7 +309,7 @@ first(<field>) [as <field>] [by <field>]
 ```
 
 Note that when you find the first occurrence of more than one field, you must create an alias using the [as
-operator](/docs/search/search-query-language/search-operators/as) to rename the \_first fields. See this example:
+operator](/docs/search/search-query-language/search-operators/as-operator) to rename the \_first fields. See this example:
 
 ```sql
 _sourceCategory=Apache/Access
@@ -353,7 +354,7 @@ disk*
 
 This query finds all messages that contain the term **disk\*** and parses out all that have a **diskutilization=** value. It then extracts the value of diskutilization into field **disk**. It then determines if that value is greater than 80% and will find the last occurrence of that value per host effectively producing a list of hosts that have disk utilization that is over 80%.
 
-Note that when you find the last occurrence of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the `_last` fields. See this example:
+Note that when you find the last occurrence of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as-operator) to rename the `_last` fields. See this example:
 
 ```sql
 _sourceCategory=Apache/Access
@@ -423,7 +424,7 @@ max(<numerical_field>) [as <field>] [by <field>]
 ... | max(request_received) as max_request_received, max(request_sent) as max_request_sent
 ```
 
-When you calculate the maximum value of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the max fields.
+When you calculate the maximum value of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as-operator) to rename the max fields.
 
 See this example:
 
@@ -457,7 +458,7 @@ min(numerical_field) [as <field>] [by <field>]
 ​... | min(request_received) as min_request_received, max(request_sent) as max_request_sent
 ```
 
-When you calculate the minimum value of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the min fields.
+When you calculate the minimum value of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as-operator) to rename the min fields.
 
 See this example:
 
@@ -639,7 +640,7 @@ _source=CollectD
 
 ![avg results](/img/search/searchquerylanguage/group-aggregate-operators/stddev.png)
 
-When you calculate the standard deviation of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the stddev fields. See this example:
+When you calculate the standard deviation of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as-operator) to rename the stddev fields. See this example:
 
 ```sql
 _sourceCategory="OS/Windows"
@@ -685,7 +686,7 @@ have a **filesize=value**. It will then extract the value of filesize
 and will add all those values per host where those log messages are
 generated.
 
-When you calculate the sum of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the sum fields. See this example:
+When you calculate the sum of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as-operator) to rename the sum fields. See this example:
 
 ```sql
 _sourceCategory="OS/Windows"
