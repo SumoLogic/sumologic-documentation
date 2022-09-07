@@ -6,7 +6,7 @@ description: Learn about the three ways to receive the results of scheduled sear
 ---
 
 :::note
-A maximum of 120 emails are sent per day per scheduled search.
+A maximum of 100 emails are sent per day per scheduled search.
 :::
 
 There are three ways to receive the results of scheduled searches in email:

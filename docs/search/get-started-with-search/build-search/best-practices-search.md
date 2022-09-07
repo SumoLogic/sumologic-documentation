@@ -4,7 +4,7 @@ title: Best Practices for Searches
 description: Use these easy to follow rules to get the most out of your Sumo Logic searches.
 ---
 
-
+Use these easy-to-follow rules to get the most out of your Sumo Logic searches.
 
 ## Be specific with search scope
 
