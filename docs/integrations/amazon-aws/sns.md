@@ -81,8 +81,7 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) or [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended).
-    1. **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
-
+   * **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 3. Click **Save**.
 
 
@@ -113,7 +112,7 @@ Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the `"topicna
 
 ### Field Extraction Rule(s)
 
-Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
+Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
 ```sql
 Rule Name: AwsObservabilitySNSCloudTrailLogsFER
@@ -121,9 +120,7 @@ Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource \"sns.amazonaws.com\"
 ```
 
-
 **Parse Expression**:
-
 
 ```sql
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountId", "requestParameters", "responseElements" as userIdentity, event_source, event_name, region, recipient_account_id, requestParameters, responseElements nodrop
@@ -171,123 +168,66 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Overview
 
-See the overview of your SNS service including the successful and failed events, messages published, notifications, and users.
+The **Amazon SNS - Overview** dashboard provides insights across Cloudtrail events and metrics .
 
-<img src={useBaseUrl('img/integrations/amazon-aws/SNS-Overview.png')} alt="Amazon SNS" />
+**Use this dashboard to:**
 
-**Successful Events Location**. See the count and location of successful events in your SNS in the last 24 hours on a world map.
+* Monitor events by status, type, topic names and  users.** **
+* Monitor number of messages and messages by publish size.
+* Monitor delivered and failed notifications.
 
-**Failure Events Location**. See the count and location of failed events in your SNS in the last 24 hours on a world map.
-
-**Number of Messages Published**. See the sum of the metric number of messages published in the last 24 hours on a line chart.
-
-**Successful Events**. See the count and percentage of successful events on the last 24 hours on a pie chart.
-
-**Failed Events**. See the count and percentage of failed events on the last 24 hours on a pie chart.
-
-**Message Publish Size**. See the average of the metric publish size in the last 24 hours for the different regions and topic names on a line chart.
-
-**Number of Notifications Delivered.** See the sum on the metric number of notifications delivered in the last 24 hours for the different regions and topic names.
-
-**Top Users**. See the top 10 users by event count in the last 24 hours on a bar chart.
-
-**Events Trend by Event Name**. See the event trend by event name in the last 24 hours on a stacked column chart.
-
-**Number of Notifications Failed**. See the sum on the metric number of notifications failed in the last 24 hours for the different regions and topic names.
-
-**Published Messages Comparison**. See the difference between the metrics number of messages published in the last two days on a line chart.
-
-**Message Publish Size Comparison**. See the difference between the metrics publish size in the last two days on a line chart.
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Overview.png')} alt="Amazon SNS" />
 
 
-### CloudTrail Events
+### Amazon SNS - Audit Events  
 
-See the details of failed, and successful events, error codes, event status trend, users, and topic names.
+The**  Amazon SNS - Audit Events **dashboard provides insights across Cloudtrail events across location, status, and topic names.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/SNS-CloudTrailEvents.png')} alt="Amazon SNS" />
+Use this dashboard to:
 
-**Successful Events Location**. See the count and location of successful events in your SNS in the last 24 hours on a world map.
+* Monitor successful and failed events by location.
+* Get trends of events by status, type.** **
+* Monitor successful and error events with error code in detail.
+* Get details of active topic names and users of both successful and error events.
 
-**Failure Events Location**. See the count and location of failed events in your SNS in the last 24 hours on a world map.
-
-**Event Status**. See the count and percentage of event statuses in the last 24 hours on a pie chart.
-
-**Top Error Codes**. See the top 10 error codes by event count in the last 24 hours on a table.
-
-**Event Status Trend**. See the event status trend in the last seven days with failures on a line chart and successes on a column chart.
-
-**Failed Events**. See the count and percentage of the different failed events in the last 24 hours on a pie chart.
-
-**Failed Event Details**. See the details of failed events in the last 24 hours including the time, event name, error code, error message, AWS region, source IP address, account ID, user, type, and event count, displayed in a table.
-
-**Successful Events**. See the count and percentage of the different successful events in the last 24 hours on a pie chart.
-
-**Successful Event Details**. See the details of successful events in the last 24 hours including the time, event name, AWS region, source IP address, account ID, user, type, request ID, name, topic ARN, user agent, and event count, displayed in a table.
-
-**Top Users**. See the top 10 users by event count in the last 24 hours.
-
-**Events by User**. See the count and name of the different events by users in the last 24 hours.
-
-**Most Active TopicNames**. See the top 10 active topic names by event count in the last 24 hours.
-
-**Events Trend by Event Name**. See the event trend by event name in the last 24 hours on a stacked column chart.
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Audit-Events.png')} alt="Amazon SNS" />
 
 
-### Metrics by Application and Platform
+### Amazon SNS - Messages, Notifications  
 
-See the details of the metrics messages published, message publish size, notifications delivered, notifications failed, and SMS success rate.
+The**  Amazon SNS - **Messages, Notifications** **dashboard provides insights across metrics by messages, notifications, SMS rates.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/SNS-ByApplicationAndPlatform.png')} alt="Amazon SNS" />
+Use this dashboard to:
+* Monitor details of messages published and message size .
+* Monitor details of notifications delivered, failed , filtered out, redriven to dlq and failed to redriven to dlq.
+* Get details of SMS success rate and spends.
+* Get the details of top topic names by messages published, notifications delivered and notifications failed.
+* Compare messages published and message size by today, yesterday, last week.  
+* Compare notifications delivered and failed by today, yesterday, last week.
 
-#### Application
-
-**Number of Messages Published.** See the sum of the metric number of messages published by applications in the last 24 hours on a line chart.
-
-**Message Publish Size**. See the average of the metric publish size by applications in the last 24 hours on a line chart.
-
-**Number of Notifications Delivered**. See the sum of the metric number of notifications delivered by application in the last 24 hours on a line chart.
-
-**Number of Notifications Failed**. See the sum of the metric number of notifications failed by application in the last 24 hours on a line chart.
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Messages-Notifications.png')} alt="Amazon SNS" />
 
 
-#### Platform
+### Amazon SNS - Threat Intel  
 
-**Number of Messages Published**. See the sum of the metric number of messages published by platforms in the last 24 hours on a line chart.
+The**  Amazon SNS - **Threat Intel** **dashboard provides insights across threat locations, count, malicious confidence and details.
 
-**Message Publish Size.** See the average of the metric publish size by platforms in the last 24 hours on a line chart.
+**Use this dashboard to**:
+* Monitor details of threat locations and count .
+* Get details of threats by malicious confidence and malicious IPs.
+* Get details of all threats by IPs.
 
-**Number of Notifications Delivered**. See the sum of the metric number of notifications delivered by platforms in the last 24 hours on a line chart.
-
-**Number of Notifications Failed**. See the sum of the metric number of notifications failed by platforms in the last 24 hours on a line chart.
-
-**SMS Success Rate**. See the average of the metric SMS success rate by SMS type and country in the last 24 hours on a line chart.
-
-
-### Metrics by Region
-
-See the details of the metrics messages published, message publish size, notifications delivered, and notifications failed by region.
-
-<img src={useBaseUrl('img/integrations/amazon-aws/SNS-ByRegion.png')} alt="Amazon SNS" />
-
-**Number of Messages Published**. See the sum of the metric number of messages published by regions in the last 24 hours on a line chart.
-
-**Message Publish Size**. See the average of the metric publish size by regions in the last 24 hours on a line chart.
-
-**Number of Notifications Delivered**. See the sum of the metric number of notifications delivered by regions in the last 24 hours on a line chart.
-
-**Number of Notifications Failed**. See the sum of the metric number of notifications failed by regions in the last 24 hours on a line chart.
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Threat-Intel.png')} alt="Amazon SNS" />
 
 
-### Metrics by TopicName
 
-See the details of the metrics messages published, message publish size, notifications delivered, and notifications failed by topic name.
+### Amazon SNS - Audit Events Details
 
-<img src={useBaseUrl('img/integrations/amazon-aws/SNS-ByTopicName.png')} alt="Amazon SNS" />
+The **Amazon SNS - Audit Events Details** **dashboard provides insights across topics, subscriptions, read only and non read only events.
 
-**Number of Messages Published.** See the sum of the metric number of messages published by topic name in the last 24 hours on a line chart.
+Use this dashboard to:
+* Monitor details of topics created and deleted.
+* Get all details of all subscription events.
+* Get details of all read only and non read only events.
 
-**Message Publish Size.** See the average of the metric publish size by topic name in the last 24 hours on a line chart.
-
-**Number of Notifications Delivered.** See the sum of the metric number of notifications delivered by topic name in the last 24 hours on a line chart.
-
-**Number of Notifications Failed.** See the sum of the metric number of notifications failed by topic name in the last 24 hours on a line chart.  
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Audit-Events-Details.png')} alt="Amazon SNS" />
