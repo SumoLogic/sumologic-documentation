@@ -4,6 +4,11 @@ title: Sumo Logic Style Guide
 sidebar_label: Style Guide
 ---
 
+:::caution
+
+&#128679; Under construction &#128679;
+:::
+
 The Sumo Logic Style Guide is a guide to language at Sumo Logic, so that we can speak as one company with a unified voice, and know what we mean when we talk about our product. The Style Guide began as a document used by the Documentation team to make decisions about tone, voice, and word usage. We thought it would be useful to share with everyone at the company.
 
 The Sumo Logic Style Guide is a living document. If you have wondered about the usage of the name of a component or feature in the UI, or any other word usage, and you don't find that term here, please add it. If you're not sure about the usage, just add a question mark. The Documentation team will look it up and add usage guidance. Likewise, if you disagree with any usage defined here, please let us know and we'll update as necessary.
@@ -28,13 +33,16 @@ For a general overview of how to improve your writing, see [Tips for Better Writ
 
 For clarity and search engine discoverability:
 
-* Doc titles (which are the H1 header) are extremely important for SEO. Use primary target keywords and keep them under 60 characters. Example: _Sumo Logic Observability Solution_.
-* Use H2 sections to break up content and try to use primary keywords here as well. Example: _AWS Observability Solution_.
-* H3 and H4 headers don't impact SEO as much. Use short, meaningful titles for readability and search. Example: _System architecture and monitoring_.
+* Doc titles are very important for SEO. Use primary target keywords, try to mention "Sumo Logic, and keep length under 60 characters.
+   * Example: ~~_Monitoring with the Observability Solution_~~ &rarr; _Monitoring with Sumo Logic Observability_
+* Use H2 sections to break up content and try to use primary keywords here as well.
+   * Example: _AWS Observability Solution_.
+* H3 and H4 headers don't impact SEO as much. Use short, meaningful titles for readability and search.
+   * Example: _System architecture and monitoring_.
 
 :::sumo For internal contributors
-* If you change a URL, set up a 301 redirect so that users don’t get a 404 page.
-* When in doubt, your content strategy decisions (e.g., taxonomy and metadata) should be driven by data, such as Google Analytics and user acceptance testing.
+* If you change a URL, set up a redirect so that users don’t get a 404 page.
+* Use Google Analytics to make data-driven decisions.
 :::
 
 

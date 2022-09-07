@@ -237,7 +237,7 @@ The Sumo Logic Kubernetes App provides the services for managing and monitoring 
 By default, GKE clusters are natively integrated with Cloud Logging (and Monitoring). When you create a GKE cluster, both Monitoring and Cloud Logging are enabled by default. The GKE Sumo Logic App uses Google Cloud Logging.
 
 
-#### Install the App
+### Install the App
 
 **To set up and install the Kubernetes app**, follow the instructions in [this document](/docs/integrations/containers-orchestration/Kubernetes).
 

@@ -3,7 +3,6 @@ id: manage-indexes-variable-retention
 title: Manage Indexes with Variable Retention
 ---
 
-#
 
 Your company log data comes in many types, and different types of data may require different retention periods. For example, some sensitive information may require a short life span, while other vital data, such as customer logins, may require a longer lifespan for daily use. Still other data may need to be available for historical analysis and to gather metrics to make business decisions, though it is not accessed every day.
 
@@ -17,7 +16,7 @@ The minimum retention period is 1 day, and the maximum retention period is 5,000
 
 On the **Manage Data** \> **Logs** page, there is a tab for **Partitions** and a tab for **Scheduled Views**.
 
-On the **Partitions** tab, the first entry is the Default Continuous Partition, which contains all ingested data that is not assigned to a partition or to views populated by Scheduled Searches. The default retention period of the Default Continuous Partition is 30 days.
+On the **Partitions** tab, the first entry is the Default Partition, which contains all ingested data that is not assigned to a partition or to views populated by Scheduled Searches. The default retention period of the Default Partition is 30 days.
 
 Here you can see the total volume ingested in each Partition, including:
 

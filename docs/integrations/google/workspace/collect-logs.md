@@ -15,7 +15,7 @@ This procedure explains how to collect logs from Google Workspace and ingest the
 
 **Google Workspace Apps** each have a log that records actions in JSON format. The logs are all structurally similar—most have an ID, actor, and an IP Address. The differences are in the events section of the JSON where the actions are recorded.
 
-**Google Workspace Alert Center** alerts are in JSON format. Most of the alerts have a few common fields. The differences are in the data section of the JSON where the alert type specific details are recorded. For more information, see this Google Workspace[ Alert document](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types).
+**Google Workspace Alert Center** alerts are in JSON format. Most of the alerts have a few common fields. The differences are in the data section of the JSON where the alert type specific details are recorded. For more information, see this Google Workspace [Alert document](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types).
 
 
 ## Configure Collection for Google Workspace Audit Source
@@ -316,7 +316,7 @@ To configure Google Workspace Alert Center collection in your GCP environment, d
 3. Edit the `sumo_gsuite_alerts_collector_deploy.sh` bash script to configure following variables:
    * `region`: The Region where the Google function will be deployed. For example: "us-central1"
    * `project_id`: The project id of the project where the collector and all its resources will be deployed
-   * `delegated_email`: The valid email address of one of your org's Google Workspace super admin users.
+   * `delegated_email`: The valid email address of one of your org's G Suite super admin users.
    * `Sumo_endpoint`: The Sumo Logic HTTP endpoint created in Step 1
 4. Run the following script:
   ```bash
