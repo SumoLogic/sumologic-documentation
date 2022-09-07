@@ -79,7 +79,7 @@ To create a Scheduled Search:
 
 ## Why Would a Scheduled Search Fail?
 
-A Scheduled Search may fail and be suspended for several reasons falling into three general areas.
+A Scheduled Search may fail and be suspended for several reasons, with the failures falling into three general areas.
 
 ### Scheduled Search Query
 
@@ -93,7 +93,7 @@ Failures could be related to the Scheduled Search query. Check the following pos
 
 ### Sumo Logic Backend Issues
 
-Failures may be seen across many Scheduled Searches due to backend infrastructure issues at Sumo Logic, and nothing specific to that particular query. In this case, just wait until Sumo Logic service is restored and be ready to test your query for normal performance.
+Failures can be seen across many Scheduled Searches due to backend infrastructure issues at Sumo Logic, and nothing specific to that particular query. In this case, just wait until Sumo Logic service is restored and be ready to test your query for normal performance.
 
 * Check http://status.sumologic.com for outages impacting multiple customers and specific functionality such as searches, real time alerts, etc.
 * Sumo Logic reports Scheduled Search failures in the [Audit Index](docs/manage/security/audit-index.md). You can determine if many Scheduled Search failures occurred at the same time of your failure. In this case, the Sumo Logic operations team is alerted to any infrastructure issues and will take action to address them as soon as possible. 
@@ -103,6 +103,7 @@ Failures may be seen across many Scheduled Searches due to backend infrastructur
 Scheduled Search failures could be the result of other factors, such as a spike in data being processed by the Scheduled Search. 
 
 * If you have a query that normally runs, but is close to reaching the [timeout period limit](#how-to-prevent-your-scheduled-search-from-timing-out), it could finally fail due to changes in your account, such as the content and size of log messages, or the volume or number of messages sent during a specific time range. Choosing a narrower time range can help.
+* You have a lot of scheduled searches running today. 6,000 per person is the maximum.
 * Even if the query normally runs well within the timeout period limit, there a data surge could cause the need for more processing time
 * There could be normal growth factors within an account such as increased Collector deployment that would cause some Source Categories to have a data surge. You should test your Scheduled Searches for performance periodically to address this possibility.
 
@@ -183,7 +184,7 @@ Regards,
 The Sumo Logic Team
 ```
 
-Sumo Logic implements an email quota allowing 120 emails to be sent per day per scheduled search. The purpose of this limit is set to prevent service.sumologic.com from spamming an inbox. This is documented in [Scheduled Searches](docs/alerts/scheduled-searches/receive-email-alerts-scheduled-searches.md). 
+Sumo Logic implements an email quota allowing 100 emails to be sent per day per scheduled search. The purpose of this limit is set to prevent service.sumologic.com from spamming an inbox. This is documented in [Scheduled Searches](docs/alerts/scheduled-searches/receive-email-alerts-scheduled-searches.md). 
 
 The above quota assumes that no more than 5 Alert emails will be triggered per hour or an alert every 12 minutes on average. Sumo Logic expects that Alerts are used as an exception and it is unlikely to find email Alerts being sent at a rate higher than 5 emails per hour.
 

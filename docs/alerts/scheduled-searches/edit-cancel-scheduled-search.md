@@ -25,7 +25,7 @@ If the user who "owns" a Scheduled Search is deleted, the Scheduled Search will 
 1. From the **Run Frequency** menu, choose **Never** to cancel the scheduled search.
 1. Click **Update**.
 
-## Edit a scheduled search's schedule
+## Edit the schedule for a scheduled search
 
 1. From the Library, find the scheduled search. For information about finding an item in the Library, see [Search the Library](../../get-started/library/search-the-library.md). 
 1. Click the more options menu to the right of the scheduled search and select **Edit**. 

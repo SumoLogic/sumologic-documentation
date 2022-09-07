@@ -318,7 +318,6 @@ Of course, in a real situation, only the top level symptom, in this case, either
 
 1. View an alert indicating that "ELB 5xx (unhealthy targets) has spiked in AWS account = 1234". This could be an alert on CloudWatch metrics triggered by a Sumo Logic monitor. 
 1. In AWS Observability, navigate to the AWS account = 1234.
-1. In AWS Observability, launch the Root Cause Explorer tab from AWS account = 1234 node.
 
 In Root Cause Explorer, perform the following steps:
 

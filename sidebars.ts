@@ -1133,6 +1133,7 @@ module.exports = {
             'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source',
             'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source',
             'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
+            'send-data/hosted-collectors/cloud-to-cloud-integration-framework/box',
             'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source',
             'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source',
             'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source',
