@@ -64,7 +64,7 @@ This section provides instructions for collecting logs and metrics for VMware.
 
 ### Step 1: Set up a server, host, or VM to collect data
 
-You can use following method for setting up a server to collect data for the VMware App:
+You can use the following method for setting up a server to collect data for the VMware App:
 
 If you have an existing VM, you can go directly to [Installing the Sumo Logic scripts on a VM](#Installing_Sumo_Logic_scripts_on_a_vCenter_server.2C_another_host.2C_or_VM) and proceed with following the instructions.
 

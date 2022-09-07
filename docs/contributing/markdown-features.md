@@ -7,6 +7,11 @@ description: Learn about markdown features Docusaurus supports.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+:::caution
+
+&#128679; Under construction &#128679;
+:::
+
 This is a guide to writing docs in GitHub-flavored markdown, the language in which our docs are written.
 
 ## Front Matter

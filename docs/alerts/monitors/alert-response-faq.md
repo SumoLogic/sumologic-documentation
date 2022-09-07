@@ -7,7 +7,7 @@ description: Our commonly asked questions about Alert Response are documented fo
 
 ## Is Alert Response available in all Sumo Logic packages? 
 
-Overall, yes Alert Response is available in all the Sumo Logic packages. However, there are specific features within Alert Response that only work on specific packages. See the table below for details. 
+Overall, yes. Alert Response is available in all the Sumo Logic packages. However, there are specific features within Alert Response that only work on specific packages. See the table below for details. 
 
 **Alert Details**
 

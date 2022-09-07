@@ -1,8 +1,9 @@
 ---
 id: cse-aws-ec-inventory-source
+title: CSE AWS EC2 Inventory Source
+sidebar_label: CSE AWS EC2 Inventory
 ---
 
-# CSE AWS EC2 Inventory Source
 
 The CSE AWS EC2 Inventory Source provides a secure endpoint to receive event data from the [EC2 describe instances API](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -61,14 +62,14 @@ To configure a CSE AWS EC2 Inventory Source:
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
 
-    * `_siemVendor`: Amazon 
+    * `_siemVendor`: Amazon
     * `_siemProduct`: AWS EC2 Inventory
     * `_siemDataType`: Inventory
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
+   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. **AWS Access Key** and **AWS Secret Key**. Provide the IAM User access key ID and secret key you want to use to authenticate collection requests.
 
@@ -102,14 +103,14 @@ The following table shows the ****config**** parameters.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
-| `regions` | String array | Yes |  | Provide a list of AWS regions to query EC2 instances, such as `us-east-2`. Use `["all"]` to support all regions. | modifiable | 
-`access_key` | String | Yes |  | Provide the IAM User access key ID you want to use to authenticate collection requests. | modifiable | 
-`secret_key` | String | Yes |  | Provide the Secret Key you want to use to authenticate collection requests. | modifiable | 
-`polling_interval` | Integer | No | 600 | The minutes in between checks for new data. | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
+| `regions` | String array | Yes |  | Provide a list of AWS regions to query EC2 instances, such as `us-east-2`. Use `["all"]` to support all regions. | modifiable |
+`access_key` | String | Yes |  | Provide the IAM User access key ID you want to use to authenticate collection requests. | modifiable |
+`secret_key` | String | Yes |  | Provide the Secret Key you want to use to authenticate collection requests. | modifiable |
+`polling_interval` | Integer | No | 600 | The minutes in between checks for new data. | modifiable |
 
 CSE AWS EC2 Inventory Source JSON example:
 

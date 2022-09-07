@@ -1826,6 +1826,7 @@ module.exports = {
       link: {type: 'doc', id: 'integrations/sumo-apps/index'},
       items: [
         'integrations/sumo-apps/audit',
+        'integrations/sumo-apps/cse',
         'integrations/sumo-apps/data-volume',
         'integrations/sumo-apps/data-volume-legacy',
         'integrations/sumo-apps/enterprise-audit',

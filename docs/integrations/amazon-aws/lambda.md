@@ -227,12 +227,12 @@ These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metri
 
 ### Field in Field Schema
 
-Login to Sumo Logic,  go to Manage Data > Logs > Fields. Search for the “**functionname**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
+Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**functionname**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
 ### Field Extraction Rule(s)
 
-Create Field Extraction Rule for AWS Lambda. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
+Create a Field Extraction Rule for AWS Lambda. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
 
 ### Cloud Trail FER
