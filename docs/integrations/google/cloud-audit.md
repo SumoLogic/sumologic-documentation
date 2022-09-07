@@ -174,7 +174,7 @@ We recommend the following:
 
 ### Create export of Cloud Audit logs from Google Logging
 
-In this step you export logs to the Pub/Sub topic you created in the previous step.
+In this step, you export logs to the Pub/Sub topic you created in the previous step.
 
 1. Go to **Logging** and click **Logs Router**.<br/><img src={useBaseUrl('img/integrations/google/GCP_logging_1.png')} alt="Google integrations" />
 2. Click **Create Sink**.<br/><img src={useBaseUrl('img/integrations/google/sink.png')} alt="Google integrations" />
@@ -182,19 +182,19 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
    1. Enter a Sink Name. For example, "gce-vm-instance".
    2. Select "Cloud Pub/Sub" as the **Sink Service**.
    3. Set **Sink Destination** to the Pub/Sub topic you created in the Google Cloud Platform Source procedure. For example, "pub-sub-logs".
-   4. In **Choose logs to include in sink** section, use `logName` Filter, as follows:
+   4. In **Choose logs to include in sink** section, use `logName` Filter as follows:
    ```bash
    logName="projects/<Project_Id>/logs/cloudaudit.googleapis.com%2Factivity"
    #replace <Project_Id> with your project Id
    ```
-   5. Click Create Sync.
+   5. Click **Create Sync**.
 
 
 
-## Create a Topic and a Subscription with Pub/Sub in Google Cloud
+## Create Topic and Subscription with Pub/Sub in Google Cloud
 
 1. From Google Cloud console’s main navigation, choose Pub/Sub.
-2. Click Create a Topic.<br/><img src={useBaseUrl('img/integrations/google/create-topic.png')} alt="Google integrations" />
+2. Click Create Topic.<br/><img src={useBaseUrl('img/integrations/google/create-topic.png')} alt="Google integrations" />
 3. Set the topic name. For example, “gcp-all-sumo”, click **Create Topic**.<br/><img src={useBaseUrl('img/integrations/google/create-topic1.png')} alt="Google integrations" />
 4. From the Topics dashboard, click on the Pub/Sub menu and select the newly created topic.<br/><img src={useBaseUrl('img/integrations/google/create-topic2.png')} alt="Google integrations" />
 5. Select Create Subscription. <br/><img src={useBaseUrl('img/integrations/google/create-topic3.png')} alt="Google integrations" />

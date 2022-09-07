@@ -17,6 +17,14 @@ The top half of a metric query tabs contains a visualization. This section descr
 
 ![chart-interaction.png](/img/metrics/chart-interaction.png)
 
+### Zoom in on a time series chart
+When you’re viewing a metric chart whose Panel Type is “time series”, you can zoom in for greater detail. Note that, if your time series query uses automatic quantization, when you zoom in, the chart presents results based on more granular data: the bucket size across which results are quantized is reduced.
+
+To zoom in on a chart, depress the left button on your mouse, keep the button pressed and move the mouse across the chart to the desired spot and release the button. As you select a chart area, it will be highlighted. When you release the button, the chart is zoomed, and an icon appears that you can use to reset the chart.
+
+![zoom-chart](/img/metrics/zoom-chart.png)
+
+
 ### Change the time range
 
 You can specify a time range for the query relative to the current time, or specify a custom time range. To set time ranges, click the time range currently shown near the top of the page, marked 2 in the screenshot above.

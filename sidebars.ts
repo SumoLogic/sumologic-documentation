@@ -1574,6 +1574,7 @@ module.exports = {
         'integrations/amazon-aws/cloudtrail-pci-compliance',
         'integrations/amazon-aws/config',
         'integrations/amazon-aws/ec2-cloudwatch-metrics',
+        'integrations/amazon-aws/ec2-host-metrics',
         'integrations/amazon-aws/elastic-load-balancer-app',
         'integrations/amazon-aws/elastic-load-balancing',
         'integrations/amazon-aws/elastic-load-balancing-classic',
