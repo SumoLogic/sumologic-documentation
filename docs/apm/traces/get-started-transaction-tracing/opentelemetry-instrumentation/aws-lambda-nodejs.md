@@ -44,7 +44,7 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
    * `OTEL_TRACES_SAMPLER = always_on` - enables traces sampling.
    * `OTEL_SERVICE_NAME = YOUR_SERVICE_NAME` - ensure you define it as a string value that represents the function name and its business logic such as "Check SQS Lambda". This will appear as the tracing service name in Sumo Logic.
 
-   * `Tracing **application **and **cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable.
+   * Tracing **application** and **cloud.account.id** are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable.
 
          * `application=YOUR_APPLICATION_NAME` - the string value, if the function is a part of complex system/application then set it for all other functions/applications.
 

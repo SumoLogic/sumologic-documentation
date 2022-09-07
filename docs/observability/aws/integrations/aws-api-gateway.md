@@ -98,7 +98,7 @@ The [Amazon API Gateway](https://aws.amazon.com/api-gateway/) service allows you
 
 The Sumo Logic AWS Observability API Gateway dashboards provide insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization, and access control, throttling, monitoring, and API version management.
 
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-aws-observability-solution-dashboards.md) of the AWS Observability solution.
+We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
 
 ### 1. AWS API Gateway - Overview
 

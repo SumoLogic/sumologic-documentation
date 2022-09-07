@@ -1,5 +1,5 @@
 ---
-id: aws-observability-change-log
+id: changelog
 title: Change Log
 sidebar_label: Change Log
 description: This section provides details on the available versions of the AWS Observability Cloud Formation template.

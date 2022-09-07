@@ -9,7 +9,7 @@ You can update an existing observability stack using Terraform or an AWS CloudFo
 
 ## Update with Terraform
 
-The AWS Observability Terraform scripts reside in Github and updates will be posted on the [Change Log](aws-observability-change-log.md).
+The AWS Observability Terraform scripts reside in Github and updates will be posted on the [Change Log](changelog.md).
 
 To update the deployed solution:
 
@@ -45,7 +45,7 @@ To update an existing stack to the latest version:
 1. Select ‘**Replace Current Template**’ and paste the URL - https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.4.0/sumologic_observability.master.template.yaml in the Amazon S3 URL option and select **Next**.
 
     :::note
-    If you would like to download or inspect this or other versions of this template, please visit the [Change Log](aws-observability-change-log.md) page.
+    If you would like to download or inspect this or other versions of this template, please visit the [Change Log](changelog.md) page.
     :::
 
     ![aws-create-stack.png](/img/observability/aws-create-stack.png)

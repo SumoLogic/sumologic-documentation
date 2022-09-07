@@ -1,5 +1,5 @@
 ---
-id: view-aws-observability-solution-dashboards
+id: view-dashboards
 title: View AWS Observability Solution Dashboards
 sidebar_label: View AWS Observability Solution Dashboards
 description: Learn how to use Explore to navigate your AWS Observability infrastructure, as well as providing links to the app dashboards.

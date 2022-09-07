@@ -564,7 +564,7 @@ To uninstall the AWS Observability solution deployed using Terraform, navigate t
 $ terraform destroy
 ```
 
-This will destroy all [resources](aws-observability-resources.md) and configuration previously set up.
+This will destroy all [resources](resources.md) and configuration previously set up.
 
 ## Appendix
 

@@ -23,7 +23,7 @@ Due to the fact that vital metadata (information about the host and its OS) is a
 ## Installation steps for OpenTelemetry Collector Gateway
 
 :::tip
-[What if I don't want to send all the tracing data to Sumo Logic?](../advanced-configuration/limit-sending-tracing-data.md)
+[What if I don't want to send all the tracing data to Sumo Logic?](../advanced-configuration/filter-shape-tracing-data.md)
 :::
 
 ### Step 1 - Generating tracing endpoint URL

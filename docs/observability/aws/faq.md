@@ -94,7 +94,7 @@ and want to move to Terraform, we recommend that you:
 
 ### What resources are generated during set up?
 
-See [Resources](docs/observability/aws/deploy-use-aws-observability/aws-observability-resources.md) in AWS Observability Solution for a complete list of resources the CloudFormation (CFN) template and Terraform Script creates at deployment, in AWS, and in Sumo Logic. 
+See [Resources](docs/observability/aws/deploy-use-aws-observability/resources.md) in AWS Observability Solution for a complete list of resources the CloudFormation (CFN) template and Terraform Script creates at deployment, in AWS, and in Sumo Logic. 
 
 ### Why are Field Extraction Rules and Metrics Rules created as part of the installation scripts?
 
@@ -114,12 +114,12 @@ and maintain the state in Terraform.
 
 Renaming an existing FER has no effect on FER usage.
 
-See [AWS Observability Resources](docs/observability/aws/deploy-use-aws-observability/aws-observability-resources.md)
+See [AWS Observability Resources](docs/observability/aws/deploy-use-aws-observability/resources.md)
 for the list of Field Extraction Rules in the resources.
 
 ### How do you keep track of changes and make feature updates?
 
-Sumo Logic provides updates to the AWS Observability solution via CloudFormation and Terraform. See the [changelog](docs/observability/aws/deploy-use-aws-observability/aws-observability-change-log.md) to review all the changes and pointers to the CloudFormation templates associated with each version. AWS provides the ability to update a CloudFormation stack. To learn more about how to update your stack, see [Update the AWS Observability Stack](docs/observability/aws/deploy-use-aws-observability/update-aws-observability-stack.md).
+Sumo Logic provides updates to the AWS Observability solution via CloudFormation and Terraform. See the [changelog](docs/observability/aws/deploy-use-aws-observability/changelog.md) to review all the changes and pointers to the CloudFormation templates associated with each version. AWS provides the ability to update a CloudFormation stack. To learn more about how to update your stack, see [Update the AWS Observability Stack](docs/observability/aws/deploy-use-aws-observability/update-aws-observability-stack.md).
 
 ### Can I use an Installed Collector instead of relying on Cloudwatch for EC2 Host Metrics?
 

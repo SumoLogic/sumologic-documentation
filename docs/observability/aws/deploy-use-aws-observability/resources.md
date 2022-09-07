@@ -1,5 +1,5 @@
 ---
-id: aws-observability-resources
+id: resources
 title: AWS Observability Resources
 sidebar_label: AWS Observability Resources
 description: Learn more about AWS Observability resources created and modified at deployment using Terraform and CloudFormation.

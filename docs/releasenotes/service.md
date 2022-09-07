@@ -378,7 +378,7 @@ Update - We’ve updated two Sumo Logic apps for Palo Alto Networks to support P
 ---
 ## March 30, 2022 (AWS Observability Solution)
 
-Update - The AWS Observability Solution 2.4.0 release includes a new [AWS Service - Classic Elastic Load Balancer](/docs/observability/aws/integrations/aws-classic-load-balancer) (ELB), install location selection, and sharing options with the Sumo Logic organization during installation. This update also includes updated dashboards for AWS Classic ELB Service, a new AWS ECS - Events dashboard for AWS CloudTrail, enhanced Lambda dashboard for Lambda cold start duration, and updated FERs. [Update](docs/observability/aws/deploy-use-aws-observability/update-aws-observability-stack.md) to the latest version to take advantage of these features. See the [Changelog](docs/observability/aws/deploy-use-aws-observability/aws-observability-change-log.md) for additional details.
+Update - The AWS Observability Solution 2.4.0 release includes a new [AWS Service - Classic Elastic Load Balancer](/docs/observability/aws/integrations/aws-classic-load-balancer) (ELB), install location selection, and sharing options with the Sumo Logic organization during installation. This update also includes updated dashboards for AWS Classic ELB Service, a new AWS ECS - Events dashboard for AWS CloudTrail, enhanced Lambda dashboard for Lambda cold start duration, and updated FERs. [Update](docs/observability/aws/deploy-use-aws-observability/update-aws-observability-stack.md) to the latest version to take advantage of these features. See the [Changelog](docs/observability/aws/deploy-use-aws-observability/changelog.md) for additional details.
 
 ---
 ## March 29, 2022 (Collection)

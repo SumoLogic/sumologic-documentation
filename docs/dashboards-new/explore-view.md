@@ -14,7 +14,7 @@ Explore can be used with:
 
 ### AWS Observability
 
-[AWS Observability Solution](/docs/observability/aws/index.md): Explore provides an intuitive dashboard framework that mirrors industry-standard AWS hierarchies. You can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. From the Explore tab, you can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. See [View AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/view-aws-observability-solution-dashboards.md) for details.
+[AWS Observability Solution](/docs/observability/aws/index.md): Explore provides an intuitive dashboard framework that mirrors industry-standard AWS hierarchies. You can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. From the Explore tab, you can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. See [View AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/view-dashboards.md) for details.
 
 ### Kubernetes Observability
 

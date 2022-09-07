@@ -1,5 +1,5 @@
 ---
-id: comment-out
+id: query-comments
 title: Using Comments in Metric Queries
 sidebar_label: Using Comments in Queries
 ---

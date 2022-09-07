@@ -51,7 +51,7 @@ The AWS Application Load Balancer serves as the single point of contact for clie
 The Sumo Logic AWS Observability Application Load Balancer Dashboards provides visibility into the health of Application Load Balancer and target groups in your AWS environment. Use the pre-configured dashboards to understand the load, errors, response codes, and latency by target groups, hosts as well as requests from malicious sources, and HTTP response codes.
 
 :::note
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-aws-observability-solution-dashboards.md) of the AWS Observability solution.
+We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
 :::
 
 ### AWS Application Load Balancer - Overview

@@ -33,7 +33,7 @@ AWS Observability integrates with Explore by populating metadata and only shows
 ## Step 1: Open the CloudFormation template
 
 1. Sign on to the AWS Management console.
-1. Click this [URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.4.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template. If you would like to download or inspect this or other versions of this template, please visit [Change Log](../aws-observability-change-log.md).
+1. Click this [URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.4.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template. If you would like to download or inspect this or other versions of this template, please visit [Change Log](../changelog.md).
 
     :::note
     In case you want to modify the Collector Name and Source Categories of the Sumo Logic sources that will be created by default, you can do so by downloading CloudFormation template version 2.1.0 or greater and following [these instructions](#modify-the-collector-name-and-source-categories) before proceeding to the next step. 
@@ -173,7 +173,7 @@ Do not update the source names as created by CloudFormation template in Sumo Log
 
 Follow the steps below to change the default collector name and source categories
 
-1. Download the template version 2.1.0 or later from the [change log](../aws-observability-change-log.md) page.
+1. Download the template version 2.1.0 or later from the [change log](../changelog.md) page.
 
 1. Modify the collector name and source categories in the Mapping section of the CloudFormation template.
 
@@ -239,7 +239,7 @@ The S3 Bucket is not present in S3 but is referenced by some other AWS CloudForm
 
 ### Rolling back the AWS Observability Solution
 
-When you roll back the AWS Observability Solution, all the [resources](../aws-observability-resources.md) that were created with the AWS CloudFormation stack are deleted. The resources deleted with a rollback include AWS Observability Solution apps, collectors, sources, S3 buckets, Lambda functions, IAM roles, bucket policy, SNS topic, and SNS subscriptions. 
+When you roll back the AWS Observability Solution, all the [resources](../resources.md) that were created with the AWS CloudFormation stack are deleted. The resources deleted with a rollback include AWS Observability Solution apps, collectors, sources, S3 buckets, Lambda functions, IAM roles, bucket policy, SNS topic, and SNS subscriptions. 
 
 Rolling back the AWS Observability Solution deletes the main AWS CloudFormation stack, including the nested stack and associated Sumo Logic and AWS resources. The following rollback guidelines apply:
 

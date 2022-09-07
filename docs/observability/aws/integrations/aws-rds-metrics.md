@@ -33,7 +33,7 @@ RDS Amazon Web Service (AWS) simplifies the setup, operation, and scaling of rel
 The Sumo Logic AWS Observability RDS dashboards provide visibility into the performance and operations of your  Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS cluster including  CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. Audit activity dashboards help you keep monitor activities performed on your RDS infrastructure.
 
 :::note
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-aws-observability-solution-dashboards.md) of the AWS Observability solution.
+We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
 :::
 
 ### Amazon RDS Overview
