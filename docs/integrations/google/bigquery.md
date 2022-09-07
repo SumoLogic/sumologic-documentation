@@ -119,7 +119,7 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
    1. Enter a Sink Name. For example, "gce-vm-instance".
    2. Select "Cloud Pub/Sub" as the **Sink Service**.
    3. Set **Sink Destination** to the Pub/Sub topic you created in the Google Cloud Platform Source procedure. For example, "pub-sub-logs".
-   4. In **Choose logs to include in sink** section for resource_type, replace "<resource_variable>" with "bigquery_resource".<br/><img src={useBaseUrl('img/integrations/google/resourcevar.png')} alt="Google integrations" />
+   4. In **Choose logs to include in sink** section for resource_type, replace "`<resource_variable>`" with "`bigquery_resource`".<br/><img src={useBaseUrl('img/integrations/google/resourcevar.png')} alt="Google integrations" />
    5. Click **Create Sync**.
 
 

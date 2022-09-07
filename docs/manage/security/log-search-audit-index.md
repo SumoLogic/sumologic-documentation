@@ -3,8 +3,6 @@ id: log-search-audit-index
 title: Log Search Audit Index
 ---
 
-#
-
 The Search Audit Index is populated with log messages and the message contains search usage and activities for your account. You can query the search audit index just like any other message using the Sumo Logic search page.
 
 ## Query the Log Search Audit Index
@@ -60,4 +58,4 @@ The table below shows the possible values for the field, query_type.
 
 ## Index retention period
 
-By default, the retention period of the Log Search Audit index is the same as the retention period of your Default Continuous Partition. You can change the retention period by editing the partition that contains the index, `sumologic_search_usage_per_query`. For more information, see [Edit a Partition](../partitions-and-data-tiers/edit-partition.md).
+By default, the retention period of the Log Search Audit index is the same as the retention period of your Default Partition. You can change the retention period by editing the partition that contains the index, `sumologic_search_usage_per_query`. For more information, see [Edit a Partition](../partitions-and-data-tiers/edit-partition.md).
