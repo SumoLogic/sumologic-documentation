@@ -5,11 +5,13 @@ sidebar_label: AWS Lambda - Java
 description: Learn how to install and configure OpenTelemetry distributed tracing for AWS Java-based Lambda functions and send data to Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This document covers how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions based on Java and send the data to Sumo Logic.
 
 ## Requirements
 
-It is very simple to instrument your AWS Java Lambda function using the [Sumo Logic AWS distro Lambda layer](https://github.com/SumoLogic/opentelemetry-lambda/tree/main/java). By default calls to the Lambda function and AWS Services are instrumented, see the [Manual Instrumentation](#optional-manual-instrumentation) section below if your function is performing some other calls like HTTP requests or database calls.
+You can instrument your AWS Java Lambda function using the [Sumo Logic AWS distro Lambda layer](https://github.com/SumoLogic/opentelemetry-lambda/tree/main/java). By default calls to the Lambda function and AWS Services are instrumented, see the [Manual Instrumentation](#optional-manual-instrumentation) section below if your function is performing some other calls like HTTP requests or database calls.
 
 You'll need the following:
 
@@ -87,12 +89,6 @@ library.
 This will generate all the spans related to the calls made by the OkHttp
 library.
 
-## Context propagation
-
-In case of external request to the Lambda function, it is important to propagate the context. Enabling [AWS X-Ray context propagation](https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader) on the client side will help to visualize the complex flow of the trace. For applications instrumented by OpenTelemetry SDK it is enough to install AWS X-Ray propagator dependency specific for an
-instrumentation and configure [`OTEL_PROPAGATORS` environment variable](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/sdk-environment-variables.md#general-sdk-configuration)
-(for example: `export OTEL_PROPAGATORS= tracecontext,baggage,xray`).
-
 ## amd64 architecture
 
 The following are Sumo Logic AWS Distro Lambda layers for AWS Region amd64 (x86_64) architecture.
@@ -138,3 +134,55 @@ The following are Sumo Logic AWS Distro Lambda layers for AWS Region arm64 arch
 | Europe (Frankfurt) eu-central-1         | arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-java-arm64-ver-1-12-1:1   |
 | Europe (Ireland) eu-west-1              | arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-java-arm64-ver-1-12-1:1      |
 | Europe (London) eu-west-2               | arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-java-arm64-ver-1-12-1:1      |
+
+
+## Sumo Logic AWS OTel Lambda container instrumentation
+
+Sumo Logic AWS OTel Lambda also provides packed [OpenTelemetry Java](https://github.com/open-telemetry/opentelemetry-java) libraries for container-based Lambda functions.
+
+
+### Requirements
+
+Instrumentation of container-based AWS Lambda function requires some changes in the Dockerfile and image rebuild. You'll need the following:
+* Docker
+* Java 1.8+
+* HTTP Traces Source endpoint URL
+   * To send spans from the instrumented Lambda function to Sumo Logic you'll need an [endpoint URL](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/HTTP_Traces_Source#view-the-endpoint-url) from an [HTTP Traces Source](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/HTTP_Traces_Source).
+
+
+### Lambda function image changes
+
+1. Download and extract Sumo Logic AWS OTel Lambda archive with instrumentation packages specific for your architecture,  [amd64 (x86_64)](https://github.com/SumoLogic/opentelemetry-lambda/releases/download/java-v1.12.1/opentelemetry-java-wrapper-amd64.zip) or [arm64](https://github.com/SumoLogic/opentelemetry-lambda/releases/download/java-v1.12.1/opentelemetry-java-wrapper-arm64.zip).
+2. Extracted instrumentation libraries have to be added to the image in /opt directory. See the Dockerfile example:
+ ```bash
+ FROM public.ecr.aws/lambda/java:11-arm64
+ # Lambda Function Code
+ COPY lambda-function-.jar /opt/java/lib/
+ # Copy OT Instrumentation
+ COPY collector-config/ /opt/collector-config/
+ COPY extensions/ /opt/extensions/
+ COPY java/ /opt/java/
+ COPY otel-handler /opt/
+ COPY otel-proxy-handler /opt/
+ COPY otel-stream-handler /opt/
+ CMD ["your.lambda.function.RequestHandler::lambdaHandler"]
+ ```
+3. Rebuild the Docker image.
+
+
+### Deployment
+
+1. Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
+2. Deploy new function image.
+3. Navigate to the **Configuration > Environment variables** section and set up the following environment variables:
+   * **AWS_LAMBDA_EXEC_WRAPPER** environment variable configures the appropriate wrapper for a specific type of lambda handler function. Set the value appropriate for your handler:
+     * **/opt/otel-handler** - if implementing **RequestHandler**
+     * **/opt/otel-proxy-handler** - if implementing **RequestHandler** but proxied through **API Gateway**
+     * **/opt/otel-stream-handler - **if implementing **RequestStreamHandler**
+   * **OTEL_SERVICE_NAME = YOUR_SERVICE_NAME** - Ensure you define it as a string value that represents the function name and its business logic such as "Check SQS Lambda". This will appear as the tracing service name in Sumo Logic.
+   * **OTEL_TRACES_SAMPLER = always_on** - enables traces sampling
+   * Tracing **application **and **cloud.account.id** are set with the **OTEL_RESOURCE_ATTRIBUTES** environment variable.
+     * **application=YOUR_APPLICATION_NAME** - the string value, if the function is a part of complex system/application then set it for all other functions/applications.
+     * **cloud.account.id=YOUR_CLOUD_ACCOUNT_ID** - set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data. All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, **OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012**.
+   * **SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL** has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/HTTP_Traces_Source#view-the-endpoint-url). You can use an existing Source or create a new one if needed. <br/><img src={useBaseUrl('img/traces/image2.png')} alt="otel" />
+4. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](https://help.sumologic.com/Traces/02Working_with_Tracing_data/03View_and_investigate_traces). The instructions above instrument only requests related to the handler function. To instrument other calls like HTTP calls, DB calls additional libraries have to be added to the Docker image. See [supported libraries, frameworks and application servers](https://github.com/open-telemetry/opentelemetry-java-instrumentation#supported-libraries-frameworks-and-application-servers).

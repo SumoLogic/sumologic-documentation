@@ -7,6 +7,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="75"/>
 
+:::caution
+
+&#128679; Under construction &#128679;
+:::
+
 Thank you for your interest in contributing to Sumo Logic documentation! We welcome all contributions, from minor typo fixes to new topics and tutorials. Your expertise and sharing helps fellow users learn and expand their knowledge of Sumo Logic. Sumo Logic Documentation is an Open Source project available as a [GitHub repository](https://github.com/SumoLogic/sumologic-documentation). This section will grow as we answer questions and provide support for submissions and new content.
 
 The docs in this section provide information on creating files, writing in markdown, using our templates, submitting pull requests and more.

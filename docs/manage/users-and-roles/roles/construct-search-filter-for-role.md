@@ -215,9 +215,9 @@ When a user with that role filter runs a query, Sumo runs it like this:
 
 ### Multiple role filters and filter precedence
 
-When a user is assigned to multiple Sumo roles, Sumo combines the role filters from each of the roles using OR to come up with the combined role filter. 
+When a user is assigned to multiple Sumo roles, Sumo combines the role filters from each of the roles using a logical OR to come up with the combined role filter.
 
-When multiple roles filters are applied to a query, the least restrictive filter takes precedence, provided none of the role filters are empty, in which case the more restrictive role filter takes precedence. To avoid confusion and guarantee unrestricted access to a role, you can use ( \* ) in the search filter while defining the role.
+When multiple roles filters are applied to a query, the least restrictive filter takes precedence. That this rule doesn’t apply if any of the role filters applied to a query is simply blank, which effectively grants access to all data, and would be the least restrictive filter. If the combined search filters applied to a query includes filters that are blank, the blank search filter is ignored and the next least restrictive filter takes precedence. So, if you actually want to grant a role access to all data, set the search filter to an asterisk (`*`). A search filter that is configured in that fashion will take precedence when combined with more restrictive search filters. 
 
 #### Example 1
 

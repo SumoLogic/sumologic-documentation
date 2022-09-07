@@ -8,6 +8,11 @@ hide_table_of_contents: true
   <meta name="robots" content="noindex" />
 </head>
 
+:::caution
+
+&#128679; Under construction &#128679;
+:::
+
 This word list provides an alphabetized list of commonly used terms at Sumo Logic, including components and features of the Sumo Logic Web Application, and other usage issues, such as punctuation and capitalization. This is not a glossary. Here is the [Glossary](/docs/Get-Started/Glossary).
 
 See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design-system/style) provided by our UX team.

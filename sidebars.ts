@@ -1133,6 +1133,7 @@ module.exports = {
             'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source',
             'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source',
             'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
+            'send-data/hosted-collectors/cloud-to-cloud-integration-framework/box',
             'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source',
             'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source',
             'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source',
@@ -1573,6 +1574,7 @@ module.exports = {
         'integrations/amazon-aws/cloudtrail-pci-compliance',
         'integrations/amazon-aws/config',
         'integrations/amazon-aws/ec2-cloudwatch-metrics',
+        'integrations/amazon-aws/ec2-host-metrics',
         'integrations/amazon-aws/elastic-load-balancer-app',
         'integrations/amazon-aws/elastic-load-balancing',
         'integrations/amazon-aws/elastic-load-balancing-classic',
@@ -1825,6 +1827,7 @@ module.exports = {
       link: {type: 'doc', id: 'integrations/sumo-apps/index'},
       items: [
         'integrations/sumo-apps/audit',
+        'integrations/sumo-apps/cse',
         'integrations/sumo-apps/data-volume',
         'integrations/sumo-apps/data-volume-legacy',
         'integrations/sumo-apps/enterprise-audit',

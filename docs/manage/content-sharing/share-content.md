@@ -3,8 +3,6 @@ id: share-content
 title: Share Content
 ---
 
-#
-
 You can share log searches, metric searches, dashboards, and folders with a user, a role, or combinations of the two. You can edit the
 sharing permissions at any time and share and revoke as needed from the **Share** dialog:  
 

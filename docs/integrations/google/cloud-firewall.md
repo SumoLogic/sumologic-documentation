@@ -145,7 +145,7 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
    2. Select "Cloud Pub/Sub" as the **Sink Service**.
    3. Set **Sink Destination** to the Pub/Sub topic you created in the Google Cloud Platform Source procedure. For example, "pub-sub-logs".
    4. In **Choose logs to include in sink** section for `resource_type`, replace `"<resource_variable>"` with `"gce_subnetwork"`.
-   5. Click Create Sync.
+   5. Click **Create Sync**.
 
 
 ## Installing the Google Cloud Firewall App

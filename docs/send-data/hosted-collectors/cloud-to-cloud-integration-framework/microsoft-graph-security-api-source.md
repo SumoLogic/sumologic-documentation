@@ -95,7 +95,7 @@ To configure a Microsoft Graph Security API Source:
 
 1. Enter a **Name** for the Source. The description is optional.
 
-    ![Mircrosoft Graph Security API Source input.png](/img/send-data/Mircrosoft-Graph-Security-API-Source-input.png)
+    ![Mircrosoft Graph Security API Source input.png](/img/send-data/Microsoft-Graph-Security-API-Source-input.png)
 
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. If you click the checkbox, another option appears: Use **Dynamic Vendor and Product SIEM Metadata**.

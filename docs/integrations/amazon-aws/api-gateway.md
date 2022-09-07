@@ -24,40 +24,44 @@ The AWS API Gateway app uses the following logs and metrics:
 
 ```json title="Sample CloudTrail Log Message"
 {
-  "eventVersion": "1.05",
-  "userIdentity": {
-    "type": "IAMUser",
-    "principalId": "A12445W32RZN24HABCD12",
-    "arn": "arn:aws:iam::123408221234:user/bob",
-    "accountId": "123408221234",
-    "accessKeyId": "ASIAZ123456Y3IMWK7X5",
-    "userName": "bob",
-    "sessionContext": {
-      "sessionIssuer": {},
-      "webIdFederationData": {},
-      "attributes": {
-        "mfaAuthenticated": "true",
-        "creationDate": "2020-02-17T08:08:01Z"
-      }
-    },
-    "invokedBy": "signin.amazonaws.com"
-  },
-  "eventTime": "2020-02-17T08:08:01Z",
-  "eventSource": "apigateway.amazonaws.com",
-  "eventName": "GetRestApi",
-  "awsRegion": "us-east-1",
-  "sourceIPAddress": "149.236.17.11",
-  "userAgent": "signin.amazonaws.com",
-  "requestParameters": {
-    "restApiId": "w1234nsgjxf",
-    "template": false
-  },
-  "responseElements": null,
-  "requestID": "1234169e-e70a-44a1-a691-3cd3f857092a",
-  "eventID": "051572b0-83ef-49a3-82f6-bbef1ac8c488",
-  "readOnly": true,
-  "eventType": "AwsApiCall",
-  "recipientAccountId": "123408221234"
+   "eventVersion":"1.05",
+   "userIdentity":{
+      "type":"IAMUser",
+      "principalId":"A12445W32RZN24HABCD12",
+      "arn":"arn:aws:iam::123408221234:user/bob",
+      "accountId":"123408221234",
+      "accessKeyId":"ASIAZ123456Y3IMWK7X5",
+      "userName":"bob",
+      "sessionContext":{
+         "sessionIssuer":{
+
+         },
+         "webIdFederationData":{
+
+         },
+         "attributes":{
+            "mfaAuthenticated":"true",
+            "creationDate":"2020-02-17T08:08:01Z"
+         }
+      },
+      "invokedBy":"signin.amazonaws.com"
+   },
+   "eventTime":"2020-02-17T08:08:01Z",
+   "eventSource":"apigateway.amazonaws.com",
+   "eventName":"GetRestApi",
+   "awsRegion":"us-east-1",
+   "sourceIPAddress":"149.236.17.11",
+   "userAgent":"signin.amazonaws.com",
+   "requestParameters":{
+      "restApiId":"w1234nsgjxf",
+      "template":false
+   },
+   "responseElements":null,
+   "requestID":"1234169e-e70a-44a1-a691-3cd3f857092a",
+   "eventID":"051572b0-83ef-49a3-82f6-bbef1ac8c488",
+   "readOnly":true,
+   "eventType":"AwsApiCall",
+   "recipientAccountId":"123408221234"
 }
 ```
 
