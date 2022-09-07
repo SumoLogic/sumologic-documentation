@@ -23,29 +23,29 @@ You'll need the Manage or View Collectors [role capability](../users-and-roles/r
 
 * [Search for a Collector or Source](search-collector-or-source.md)
 * View the [health of Collectors and Sources](../health-events.md)
-* [Upgrade Sources](../../send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions.md) from the [Cloud-to-Cloud Integration Framework](/docs/send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework))
+* [Upgrade Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions.md) from the [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework))
 * [Upgrade Collectors](upgrade-collectors.md)
-* Add an [Installed Collector](/docs/send-data/sources/installed-collectors) or a [Hosted Collector](../../send-data/hosted-collectors.md)
+* Add an [Installed Collector](/docs/send-data/installed-collectors/sources) or a [Hosted Collector](/docs/send-data/hosted-collectors)
 * Use the **Show** options to filter the list
 * Use the **Expand** options to show or hide information about the Sources
 * Use the paging controls to navigate the list of Collectors
 
 ## Collector Actions
 
-* [Add a Source](/docs/send-data/sources)
+* [Add a Source](/docs/send-data/collectors-sources)
 * [Edit a Collector](edit-collector.md)
 * [Delete a Collector](delete-collector-source.md)
-* [Download a JSON configuration file](../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for scripting or backup
+* [Download a JSON configuration file](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for scripting or backup
 * [Restart a Collector](restart-collectors.md)
 
 ## Source Actions
 
 * [Edit the Source](edit-source.md)
 * [Delete a Source](delete-collector-source.md)
-* [Download a JSON configuration file](../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for scripting or backup
+* [Download a JSON configuration file](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for scripting or backup
 * [Pause or resume a Source](pause-resume-source.md) (cloud polling Sources only)
-* [Show or regenerate a Source URL](../../send-data/sources/hosted-collectors/http-logs-metrics-source/generate-new-url-http-source.md) (HTTP Sources only)
-* [Show or regenerate a Source token](/docs/send-data/sources/hosted-collectors/cloud-syslog-source) (cloud syslog Source only)
+* [Show or regenerate a Source URL](docs/send-data/hosted-collectors//http-logs-metrics-source/generate-new-url-http-source.md) (HTTP Sources only)
+* [Show or regenerate a Source token](/docs/send-data/hosted-collectors/cloud-syslog-source) (cloud syslog Source only)
 
 ## Available Information about Collectors and Sources
 
@@ -59,7 +59,7 @@ You'll need the Manage or View Collectors [role capability](../users-and-roles/r
 
 * **Health**. Shows color-coded healthy, error, and warning states for Collectors and Sources so you can quickly determine the [health of your Collectors and Sources](../health-events.md).
 
-  If an Installed Collector appears offline try [restarting the service](pause-resume-source.md) and [testing connectivity](../../send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors.md).
+  If an Installed Collector appears offline try [restarting the service](pause-resume-source.md) and [testing connectivity](docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors.md).
 * **Type**. Displays whether the Collector is an Installed or Hosted Collector.
 * **Status**. Shows the status of Sources manually paused by users.
 * **Source Category**. Displays the name of the configured Source Category for this Collector or Source.

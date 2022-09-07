@@ -170,7 +170,7 @@ To assign a Collector to an ingest budget you need to get and update the Collect
 First make a GET request to get the Collector's JSON configuration:
 
 :::note
-Customize `<accessid:accesskey>`, `<your deployment>`, and collector ID like `150905330`. Replace the value `150905330` with the `id` value of your Collector. You can use the Sumo [web interface](../../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) to get an `id`.
+Customize `<accessid:accesskey>`, `<your deployment>`, and collector ID like `150905330`. Replace the value `150905330` with the `id` value of your Collector. You can use the Sumo [web interface](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) to get an `id`.
 :::
 
 ```bash

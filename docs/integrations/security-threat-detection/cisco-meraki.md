@@ -106,13 +106,13 @@ This section provides instructions for configuring log collection for the Cisco 
 
 In this task, you configure an installed collector with a Syslog source that acts as a Syslog server to receive logs and events from Cisco Meraki.
 
-1. Configure an [Installed Collector](/docs/send-data/installed-collectors/about).
-2. Add a [Syslog source](/docs/send-data/Sources/installed-collectors/Syslog-Source) to the installed collector:
+1. Configure an [Installed Collector](/docs/send-data/installed-collectors).
+2. Add a [Syslog source](/docs/send-data/installed-collectors/sources/Syslog-Source) to the installed collector:
    * **Name**. (Required) A name is required.
    * **Description.** Optional.
    * **Protocol**. UDP or TCP.  Choose the protocol you configured in Cisco Meraki for Syslog forwarding.
    * **Port**. Port number. Choose the port you configured in Cisco Meraki for Syslog forwarding.
-   * **Source Category**. (Required) Provide a realistic Source Category for this data type. For example: **prod/ciscomeraki**. For more information, see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
+   * **Source Category**. (Required) Provide a realistic Source Category for this data type. For example: **prod/ciscomeraki**. For more information, see [Best Practices](/docs/send-data/best-practices).
 3. Click **Save**.
 
 

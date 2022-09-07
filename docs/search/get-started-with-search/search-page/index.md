@@ -1,6 +1,7 @@
 ---
 slug: /search/get-started-with-search/search-page
 title: How to Use the Search Page
+description: Understand the basic components of the Search window and how they can help you investigate your issues.
 ---
 
 

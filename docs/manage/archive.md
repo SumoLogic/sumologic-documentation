@@ -35,7 +35,7 @@ You need the **Manage S3 data forwarding** role capability to create an AWS Ar
     :::
 
    * **Description**. You can provide a meaningful description of the connection.
-   * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. This was completed in step 1, [Grant Sumo Logic access to an AWS Product](../send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md).
+   * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. This was completed in step 1, [Grant Sumo Logic access to an AWS Product](docs/send-data/hosted-collectors//amazon-aws/grant-access-aws-product.md).
 
       * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
       * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
@@ -105,7 +105,7 @@ Example format of an Archived log message:
 
 ## Batching
 
-By default, the Collector will complete writing logs to an archive file once the uncompressed size of the file reaches 1 MB in size. You can configure the buffer size with the following [collector.properties](../send-data/installed-collectors/collector-installation-reference/collector-properties.md) parameter.
+By default, the Collector will complete writing logs to an archive file once the uncompressed size of the file reaches 1 MB in size. You can configure the buffer size with the following [collector.properties](docs/send-data/installed-collectors/collector-installation-reference/collector-properties.md) parameter.
 
 ### collector.properties buffer parameter
 

@@ -1,6 +1,7 @@
 ---
 id: force-collectors-name-clobber
 title: Force a Collector's Name with Clobber
+description: During the installation process, use the clobber flag in situations where you're creating a new Collector that will use a name that is already in use by another Collector.
 ---
 
 

@@ -16,7 +16,7 @@ The process consists of configuring a source or collector to forward messages to
 The diagram below is a high level illustration of several alternative processing flows from a data source to a Sumo Logic collector or source, and on to CSE. 
 
 :::note
-You can only send log data that resides in the [Continuous data tier](../../manage/partitions-and-data-tiers/data-tiers.md) to CSE.
+You can only send log data that resides in the [Continuous data tier](docs/manage/partitions-and-data-tiers/data-tiers.md) to CSE.
 :::
 
 ![cip-to-cse.png](/img/cse/cip-to-cse.png)

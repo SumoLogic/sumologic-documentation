@@ -100,7 +100,7 @@ For more information on SNS, see [http://docs.aws.amazon.com/sns/latest/dg/Getti
 
 ### Configure a Collector
 
-In Sumo Logic, create a [Hosted Collector](/docs/send-data/configure-hosted-collector). Be sure to name the Source Category **aws_config**.
+In Sumo Logic, create a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector). Be sure to name the Source Category **aws_config**.
 
 
 ### Configure a Source

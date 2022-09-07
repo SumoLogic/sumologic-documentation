@@ -1,6 +1,7 @@
 ---
 id: chart-search-results
 title: Chart Search Results
+description: In the Aggregates tab, in addition to the standard table view, you can view search results as a chart, such as a bar or column chart.
 ---
 
 

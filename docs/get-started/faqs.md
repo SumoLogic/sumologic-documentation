@@ -13,8 +13,8 @@ When you have full control over your logging format we recommend human readable
 Whatever you use follow these rules:
 
 * Use key-value pairs in a regular, defined format such as `key=value,` so they're easy to [parse](/docs/search/search-query-language/parse-operators).
-* Start logs with a regular, well-defined timestamp, ideally including a time zone. See [timestamp considerations and supported formats](../send-data/sources/reference-information-sources/time-reference.md) for details.
-* Start logs with a regular format to make automatically detecting message boundaries easier. See [collecting multiline logs](../send-data/sources/installed-collectors/define-boundary-regex-multiline-messages.md) for details.
+* Start logs with a regular, well-defined timestamp, ideally including a time zone. See [timestamp considerations and supported formats](docs/send-data/reference-information/time-reference.md) for details.
+* Start logs with a regular format to make automatically detecting message boundaries easier. See [collecting multiline logs](docs/send-data/installed-collectors/sources/define-boundary-regex-multiline-messages.md) for details.
 
 For example, from our own production logs, we use the following:
 
@@ -30,16 +30,16 @@ The following table lists data types and some of the popular sources that produc
 
 | Data Type | Popular Log Sources |
 | -- | -- |
-| Custom App Code | <ul><li>Java</li><li>[Log4J](../send-data/collect-from-other-data-sources/sumo-logic-open-source-projects.md)</li><li>Log4J 2</li><li>Microsoft .NET</li><li>Rails</li></ul> |
-| Open Source | <ul><li>Apache</li><li>[Apache Tomcat] (/07Sumo-Logic-Apps/web-servers/Apache_Tomcat)</li><li>Hadoop</li><li>Lucene</li></ul> |
+| Custom App Code | <ul><li>Java</li><li>[Log4J](docs/send-data/collect-from-other-data-sources/sumo-logic-open-source-projects.md)</li><li>Log4J 2</li><li>Microsoft .NET</li><li>Rails</li></ul> |
+| Open Source | <ul><li>Apache</li><li>[Apache Tomcat] (docs/integrations/web-servers/Apache_Tomcat)</li><li>Hadoop</li><li>Lucene</li></ul> |
 | Middleware | <ul><li>JBoss</li><li>Oracle WebLogic</li><li>webMethods</li><li>WebSphere</li></ul> |
-| Databases	 | <ul><li>IBM DB2</li><li>[MySQL] (/07Sumo-Logic-Apps/databases/MySQL)</li><li>[Microsoft SQL Server] (/07Sumo-Logic-Apps/microsoft-azure/Microsoft_SQL_Server/01Collect-Logs-for-the-Microsoft-SQL-Server-App)</li><li>Oracle</li></ul> |
-| Server / OS | <ul><li>HP UX</li><li>[Linux] (/07Sumo-Logic-Apps/hosts-operating-systems/Linux)</li><li>Mac</li><li>Red Hat</li><li>Ubuntu</li><li>Windows</li></ul> |
+| Databases	 | <ul><li>IBM DB2</li><li>[MySQL] (docs/integrations/databases/MySQL)</li><li>[Microsoft SQL Server] (docs/integrations/microsoft-azure/Microsoft_SQL_Server/01Collect-Logs-for-the-Microsoft-SQL-Server-App)</li><li>Oracle</li></ul> |
+| Server / OS | <ul><li>HP UX</li><li>[Linux] (docs/integrations/hosts-operating-systems/Linux)</li><li>Mac</li><li>Red Hat</li><li>Ubuntu</li><li>Windows</li></ul> |
 | Virtual | <ul><li>Citrix</li><li>Microsoft Hyper-V</li><li>VMware</li></ul> |
-| Network | <ul><li>[Cisco ASA] (/07Sumo-Logic-Apps/security-threat-detection/Cisco_ASA)</li><li>[Palo Alto Networks] (/07Sumo-Logic-Apps/security-threat-detection/Palo-Alto-Networks-6)</li><li>McAfee</li><li>Symantec</li></ul> |
-| Content Delivery | <ul><li>[Akamai] (/07Sumo-Logic-Apps/saas-cloud-apps/Akamai_Cloud_Monitor)</li><li>[Amazon CloudFront] (/07Sumo-Logic-Apps/amazon-aws/CloudFront)</li><li>[Fastly] (/07Sumo-Logic-Apps/saas-cloud-apps/Fastly)</li><li>Limelight Networks</li></ul> |
-| IaaS / PaaS | <ul><li>Amazon</li><li>[Heroku](../manage/connections-and-integrations/sumo-logic-heroku.md)</li><li>Windows</li><li>[Google Audit](../cse/cse-ingestion/google-g-suite-apps-audit.md)</li><li>[Google Cloud Platform (GCP)](../send-data/sources/hosted-collectors/google-cloud-platform-source.md)</li></ul> |
-| SaaS | <ul><li>[Box] (/07Sumo-Logic-Apps/saas-cloud-apps/Box)</li><li>[ServiceNow](../manage/connections-and-integrations/servicenow/set-up-servicenow-connections.md)</li><li>[Salesforce] (/07Sumo-Logic-Apps/saas-cloud-apps/Salesforce)</li><li>[Microsoft Office 365] (/07Sumo-Logic-Apps/microsoft-azure/Microsoft_Office_365)</li></ul> |
+| Network | <ul><li>[Cisco ASA] (docs/integrations/security-threat-detection/Cisco_ASA)</li><li>[Palo Alto Networks] (docs/integrations/security-threat-detection/Palo-Alto-Networks-6)</li><li>McAfee</li><li>Symantec</li></ul> |
+| Content Delivery | <ul><li>[Akamai] (docs/integrations/saas-cloud/Akamai_Cloud_Monitor)</li><li>[Amazon CloudFront] (docs/integrations/amazon-aws/CloudFront)</li><li>[Fastly] (docs/integrations/saas-cloud/Fastly)</li><li>Limelight Networks</li></ul> |
+| IaaS / PaaS | <ul><li>Amazon</li><li>[Heroku](docs/manage/connections-and-integrations/sumo-logic-heroku.md)</li><li>Windows</li><li>[Google Audit](../cse/cse-ingestion/google-g-suite-apps-audit.md)</li><li>[Google Cloud Platform (GCP)](docs/send-data/hosted-collectors//google-cloud-platform-source.md)</li></ul> |
+| SaaS | <ul><li>[Box] (docs/integrations/saas-cloud/Box)</li><li>[ServiceNow](docs/manage/connections-and-integrations/servicenow/set-up-servicenow-connections.md)</li><li>[Salesforce] (docs/integrations/saas-cloud/Salesforce)</li><li>[Microsoft Office 365] (docs/integrations/microsoft-azure/Microsoft_Office_365)</li></ul> |
 | Security | <ul><li>Cisco</li><li>McAfee</li><li>Symantec</li><li>Qualys</li></ul> |
 
 ## Where is My Data Stored?

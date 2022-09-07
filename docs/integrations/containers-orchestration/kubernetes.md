@@ -16,7 +16,7 @@ In conjunction with the Kubernetes App, the AKS Control Plane, GKE Control Plane
 [Kubernetes](https://kubernetes.io/) is a system that automates the deployment, management, scaling, networking, and availability of container-based applications. Kubernetes container-orchestration allows you to easily deploy and manage multi-container applications at scale.
 
 :::tip
-For an end-to-end solution for deploying, managing, monitoring, and administering your Kubernetes environment, see the [Kubernetes Solution pages](docs/observability/kubernetes-solution/index.md).
+For an end-to-end solution for deploying, managing, monitoring, and administering your Kubernetes environment, see the [Kubernetes Solution pages](docs/observability/kubernetes/index.md).
 :::
 
 ## Supported versions
@@ -107,11 +107,11 @@ To install the app, do the following:
 
 ## Installing Kubernetes Monitors
 
-Sumo Logic has provided out of the box alerts available through [Sumo Logic monitors](docs/alerts/monitors/index.md) to help you quickly determine if the Kubernetes cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](docs/alerts/monitors/index.md) to help you quickly determine if the Kubernetes cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing them a JSON or a Terraform script.
 
-For details on the individual alerts, see [Kubernetes Alerts](/docs/observability/kubernetes-solution/alerts).
+For details on the individual alerts, see [Kubernetes Alerts](/docs/observability/kubernetes/alerts).
 
 ### Method A: Importing a JSON file
 

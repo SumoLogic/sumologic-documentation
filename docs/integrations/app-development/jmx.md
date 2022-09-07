@@ -80,8 +80,8 @@ This section provides instructions for configuring metrics collection for the Su
    #Jolokia is already attached to PID 723#http://127.0.0.1:8778/${agentContext}/
    ```
    More information can be found using a [JVM agent](https://jolokia.org/reference/html/agents.html#agents-jvm). Make a note of the URL that will be used in telegraf configuration.
-2. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector ](/docs/send-data/configure-hosted-collector)section of the Sumo Logic documentation
-3. **Configure a HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source)
+2. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector ](/docs/send-data/hosted-collectors/configure-hosted-collector)section of the Sumo Logic documentation
+3. **Configure a HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/hosted-collectors/http-logs-metrics-source)
    * Make a note of **HTTP Source URL**.
 4. **Install Telegraf**. Use the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 5. **Configure and start Telegraf**. Create a file called telegraf.conf and add the appropriate configuration. The following is a basic example:

@@ -1,6 +1,7 @@
 ---
 id: export-search-results
 title: Export Search Results
+description: Up to 100,000 rows can be exported as a CSV (comma-separated values) text file.
 ---
 
 

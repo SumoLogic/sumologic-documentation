@@ -10,7 +10,7 @@ This page has information about how to search different Data Tiers, and when yo
 In Sumo Logic, a search modifier is a tag that gives the Sumo Logic backend information about how to process a query. The `_dataTier` modifier tells Sumo Logic which Data Tier a query should run against: Continuous, Frequent, or Infrequent.
 
 :::note
-Search modifiers are different from Sumo Logic’s [built-in metadata fields](../../search/get-started-with-search/search-basics/built-in-metadata.md), which are key-value pairs that are tagged to incoming log data, and then can be used to find that data easily, later. 
+Search modifiers are different from Sumo Logic’s [built-in metadata fields](/docs/search/get-started-with-search/search-basics/built-in-metadata), which are key-value pairs that are tagged to incoming log data, and then can be used to find that data easily, later. 
 :::
 
 When you include the `_dataTier` modifier in a query, the query will run against only the tier or tiers you specify. If you do not specify one or more partitions in the query, using `_index`, the query will run against all partitions in the tier you specified with `_dataTier`. The `_dataTier` modifier acts as an alias for all the indexes part of the tier or tiers selected. 

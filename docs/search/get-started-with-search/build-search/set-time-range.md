@@ -1,6 +1,7 @@
 ---
 id: set-time-range
 title: Set the Time Range
+description: You can adjust the time range for searches and metrics to get the information that will be of most use.
 ---
 
 

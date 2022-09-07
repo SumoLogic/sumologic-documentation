@@ -1,12 +1,13 @@
 ---
 id: field-expressions
 title: Field Expressions
+description: Overview of the expressions that create user-defined numeric, boolean, or string fields.
 ---
 
 
 The Sumo Query Language can be used to create fields based on calculated expressions, such as:
 
-```
+```sql
 | 3 + 2 as val
 | "Hello, world" as welcome
 | 34 % 10 as remainder

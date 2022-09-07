@@ -1,6 +1,7 @@
 ---
 id: jenkins-plugin-build-deploy-events
 title: Jenkins Plugin - Send Build and Deploy Event to Sumo Logic from Jenkins Pipeline
+sidebar_label: Jenkins Plugin
 description: Learn how to send build and deploy events to Sumo Logic from Jenkins Pipeline.
 ---
 

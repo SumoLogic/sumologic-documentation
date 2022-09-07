@@ -136,13 +136,13 @@ Refer [PAN-OS 8](https://docs.paloaltonetworks.com/pan-os/8-0/pan-os-admin/monit
 
 In this step you configure a installed collector with a Syslog source that will act as Syslog server to receive logs and events from Palo Alto Networks 8 devices.
 
-1. Configure an [Installed Collector](/docs/send-data/installed-collectors/about)
+1. Configure an [Installed Collector](/docs/send-data/installed-collectors)
 2. Add a Syslog source to the installed collector:
     1. **Name**. (Required) A name is required.
     2. **Description.** Optional.
     3. **Protocol**. UDP or TCP.  Choose the protocol you configured in Palo Alto Networks 8 for Syslog monitoring.
     4. **Port**. Port number. Choose the port you configured in Palo Alto Networks 8 for Syslog monitoring.
-    5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
+    5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).
     6. Click **Save**.
 
 

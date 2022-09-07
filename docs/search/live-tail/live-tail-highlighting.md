@@ -1,6 +1,7 @@
 ---
 id: live-tail-highlighting
 title: Live Tail Highlighting
+description: Highlight keywords that appear in your running Live Tail.
 ---
 
 

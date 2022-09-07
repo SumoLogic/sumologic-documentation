@@ -1,6 +1,7 @@
 ---
 id: modify-search-from-messages-tab
 title: Modify a Search from the results table
+description: After running a search, you can modify subsequent searches by selecting text displayed in the Messages tab.
 ---
 
 

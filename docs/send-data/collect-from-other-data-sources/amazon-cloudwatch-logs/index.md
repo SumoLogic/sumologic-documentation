@@ -1,6 +1,7 @@
 ---
 slug: /send-data/collect-from-other-data-sources/amazon-cloudwatch-logs
 title: Amazon CloudWatch Logs
+description: Learn how to collect Amazon CloudWatch Logs.
 ---
 
 
@@ -23,8 +24,8 @@ AWS Lambda functions are our preferred method for sending Amazon CloudWatch Logs
 
 ## Add a Hosted Collector and HTTP Source
 
-1. In Sumo Logic, configure a [Hosted Collector](../../configure-hosted-collector.md).
-1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/hosted-collectors/http-logs-metrics-source).
 
 :::important
 When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this to configure the Lambda Function.  
@@ -230,8 +231,8 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 1. Select the Lambda function that begins with "SumoCWLogsLambda", then click **Next**.
 
     ![lambda-function.png](/img/send-data/lambda-function.png)
-1. Select the appropriate log format, then click **Next.**
-1. Confirm the details on the next screen, then click **Start Streaming**.
+1. On the **Create Lambda subscription filter** page, select a **Log format**, and enter a **Subscription filter pattern** and **Subscription filter name**.
+1. Select the log data to test, then click **Test pattern**. If test results look fine, click **Start Streaming**.
 
 ### Auto-subscribe other log groups to SumoCWLogsLambda function
 

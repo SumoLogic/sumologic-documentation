@@ -21,7 +21,7 @@ description: Create a Scheduled Search Email Alert.
      * **Fewer than or equal to.** Choose if you want to be notified only if the search results include fewer than or equal to that number of messages or groups you set in the text box.
 
 1. **Alert Type**. Select **Email**.
-1. **Send email on failure to search owner.** Selecting this option will send an email notification to the search owner if the Scheduled Search fails to run. To troubleshoot a failed Scheduled Search, see [Why Would a Scheduled Search Fail](faqs/failed-scheduled-search.md) and [What Happens When a Scheduled Search Is Suspended](faqs/suspended-scheduled-search.md).
+1. **Send email on failure to search owner.** Selecting this option will send an email notification to the search owner if the Scheduled Search fails to run. To troubleshoot a failed Scheduled Search, see [Why Would a Scheduled Search Fail](/docs/alerts/scheduled-searches/faq#why-would-a-scheduled-search-fail) and [What Happens When a Scheduled Search Is Suspended](/docs/alerts/scheduled-searches/faq#what-happens-when-a-scheduled-search-is-suspended).
 1. **Recipients**. Enter the recipients of your scheduled search email. Separate multiple email addresses with commas.
 1. **Email Subject.** Provide a subject for the email. You can use alert variables to customize the subject of your email.
 1. **Include in email.** Select the features you want to include in your email results:

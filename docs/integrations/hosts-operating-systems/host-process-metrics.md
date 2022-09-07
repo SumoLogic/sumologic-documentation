@@ -55,13 +55,13 @@ This section provides instructions for configuring metrics collection for the Su
   1. **Configure a Hosted Collector**
 
 
-To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
+To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
 
 
   2. **Configure an HTTP Logs and Metrics Source**
 
 
-Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Suggestions for setting your source category:
+Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/hosted-collectors/http-logs-metrics-source). Suggestions for setting your source category:
 
 1. For identifying a specific cluster or a group of hosts: `<clustername>/metrics`
 2. For identifying a group of hosts within a given deployment: `<environment name>/<clustername>/metrics`
@@ -234,7 +234,7 @@ metric=procstat_cpu_usage host.name=*  process.executable.name=* | avg by host.n
 
 The next few sections provide instructions for installing the Sumo App and Alerts for hosts and processes, as well as the descriptions of each of the app dashboards. These instructions assume you have already set up a collection as described in Collecting Metrics for Host and Processes.
 
-Sumo Logic has provided out of the box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your hosts and processes. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your hosts and processes. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
 For details on the individual alerts, see [last section](#host-and-process-metrics-alerts).
 
@@ -490,7 +490,7 @@ Use this dashboard to:
 
 ### For Host Metrics
 
-Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 | Alert Name                                    | Alert Description                                                                                                                        | Alert Condition | Recover Condition |
 |-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|-----------------|-------------------|
@@ -508,7 +508,7 @@ Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/d
 
 ### For Process Metrics
 
-Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 | Alert Name                                   | Alert Description                                                                                                      | Alert Condition | Recover Condition |
 |----------------------------------------------|------------------------------------------------------------------------------------------------------------------------|-----------------|-------------------|

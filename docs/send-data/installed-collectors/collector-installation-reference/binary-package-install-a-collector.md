@@ -1,6 +1,7 @@
 ---
 id: binary-package-install-a-collector
 title: Use the binary package to install a Collector on Windows or macOS
+description: Use the binary package to install a Collector on MacOS or Windows only if you need to use a particular version of JRE.
 ---
 
 
@@ -41,7 +42,7 @@ Before you begin:
 
 ## (Optional) Configure sources
 
-The Collector Management API allows you to pass all Source settings in a JSON file, including Source name, metadata tags, and pointer to the files you want to collect. For instructions, see [Using JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources).
+The Collector Management API allows you to pass all Source settings in a JSON file, including Source name, metadata tags, and pointer to the files you want to collect. For instructions, see [Using JSON to configure Sources](/docs/send-data/use-json-configure-sources).
 
 Optionally, you can configure Source using the Sumo Logic Web Application after the Collector has been installed.
 

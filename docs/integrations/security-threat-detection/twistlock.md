@@ -41,14 +41,14 @@ This section provides instructions for configuring log collection for the Sumo L
 
 In this step you configure an installed collector with a Syslog source that will act as Syslog server to receive logs and events from Twistlock.
 
-1. Configure an [Installed Collector for each Twistlock Console instance](/docs/send-data/installed-collectors/about).
-2. Add a [Syslog Source](/docs/send-data/Sources/installed-collectors/Syslog-Source) to the Installed Collector, and specify the following:
+1. Configure an [Installed Collector for each Twistlock Console instance](/docs/send-data/installed-collectors).
+2. Add a [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source) to the Installed Collector, and specify the following:
 1. **Name**. (Required) A name is required.
 2. **Description.** Optional.
 3. **Protocol**. UDP or TCP.  Choose the protocol you configured in Twistlock Console for Syslog forwarding.
 4. **Port**. Port number. Choose the port you configured in Twistlock Console for Syslog forwarding.
-5. **Source Category**. (Required) Provide a Source Category for this data type. For example: **prod/twistlock**. For more information, see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
-6. For Kubernetes customers, we recommend adding a [custom field](/docs/manage/fields.md) to the Syslog Source so you can reference it in the [Sumo Explorer view](/docs/observability/kubernetes-solution). Each field contains a key-value pair, where the field name is the key. To add a field click the **+Add Field** link in the **Fields** section. You could add a field named **cluster** where you set the name of the cluster to tag to the logs. For example, **cluster** = **k8s.dev.sumo.sumologic.net**.
+5. **Source Category**. (Required) Provide a Source Category for this data type. For example: **prod/twistlock**. For more information, see [Best Practices](/docs/send-data/best-practices).
+6. For Kubernetes customers, we recommend adding a [custom field](/docs/manage/fields.md) to the Syslog Source so you can reference it in the [Sumo Explorer view](/docs/observability/kubernetes). Each field contains a key-value pair, where the field name is the key. To add a field click the **+Add Field** link in the **Fields** section. You could add a field named **cluster** where you set the name of the cluster to tag to the logs. For example, **cluster** = **k8s.dev.sumo.sumologic.net**.
 1. Click **Save**.
 
 

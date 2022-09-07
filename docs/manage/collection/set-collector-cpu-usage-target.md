@@ -46,7 +46,7 @@ The CPU Target value can be set in three ways:
 
 1. Update the **CPU Target** value by editing the collector under **Manage Data \> Collection \> Collection**.
 1. Update the collector configuration via the [Collector Management API] (../../APIs/Collector-Management-API/Collector-API-Methods-and-Examples.md).  
-1. Either supply the **targetCPU** parameter to the [user.properties](../../send-data/installed-collectors/collector-installation-reference/user-properties.md) file or **-VtargetCPU** [command line argument](../../send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) during the initial installation and registration of the collector.
+1. Either supply the **targetCPU** parameter to the [user.properties](docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) file or **-VtargetCPU** [command line argument](docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) during the initial installation and registration of the collector.
 
 ## How do you know targeting is applied?
 
@@ -66,4 +66,4 @@ If you have a CPU target set but you continue to see the CPU usage at a higher l
 * Check for any unnecessary denylists within the source configurations and remove them.
 * Review any include/exclude/hash/mask rules on the sources and make sure they are required and optimized for that source.
 * Remove unnecessary sources.
-* Increase the [Collector’s max heap size](../../send-data/collector-faqs/increase-collector-memory.md).
+* Increase the [Collector’s max heap size](/docs/send-data/collector-faq#increase-collector-memory).

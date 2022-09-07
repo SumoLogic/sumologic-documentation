@@ -1,6 +1,7 @@
 ---
 id: search-large-messages
 title: Search Large Messages
+description: When collecting log messages or event logs that are larger than 64KB in size, Sumo Logic slices the messages into a stream of smaller message chunks.
 ---
 
 
@@ -9,9 +10,9 @@ When collecting log messages or event logs that are larger than 64KB in size, S
 
 Chunks are ideally created at a line break depending on the Source type, protocol, and size of the message. Each section of the large messages is annotated with metadata to keep the message in order when viewing or searching the log.
 
-See [Collecting Multiline Logs](../../../send-data/sources/reference-information-sources/collect-multiline-logs.md) for information on caveats and your configuration options.
+See [Collecting Multiline Logs](docs/send-data/reference-information/collect-multiline-logs.md) for information on caveats and your configuration options.
 
-For additional information on collecting large messages review the relevant [Source's documentation](/docs/send-data/sources).
+For additional information on collecting large messages review the relevant [Source's documentation](/docs/send-data/collectors-sources).
 
 ## Query to Identify Truncated Logs 
 

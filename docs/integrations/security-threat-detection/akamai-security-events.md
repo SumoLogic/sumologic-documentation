@@ -12,7 +12,7 @@ Akamai Security Events App allows you to visualize security events generated on 
 
 ## Log Types  
 
-The Akamai Security Events App uses security events generated on the Akamai platform by leveraging the [V1 SIEM API](https://developer.akamai.com/api/cloud_security/siem/v1.html) and Sumo Logic’s [Akamai SIEM API Source](/docs/send-data/Sources/hosted-collectors/Cloud-to-Cloud-Integration-Framework/akamai-siem-api-source).
+The Akamai Security Events App uses security events generated on the Akamai platform by leveraging the [V1 SIEM API](https://developer.akamai.com/api/cloud_security/siem/v1.html) and Sumo Logic’s [Akamai SIEM API Source](/docs/send-data/hosted-collectors/Cloud-to-Cloud-Integration-Framework/akamai-siem-api-source).
 
 
 ### Sample Log Message
@@ -83,7 +83,7 @@ _sourceCategory=<akamai-foo>
 
 To begin collecting logs for the Sumo App for Akamai Security Events:
 
-1. Create an Akamai SIEM API Source as described [here](/docs/send-data/Sources/hosted-collectors/Cloud-to-Cloud-Integration-Framework/akamai-siem-api-source#create-an%C2%A0akamai-siem-api%C2%A0source)
+1. Create an Akamai SIEM API Source as described [here](/docs/send-data/hosted-collectors/Cloud-to-Cloud-Integration-Framework/akamai-siem-api-source#create-an%C2%A0akamai-siem-api%C2%A0source)
 2. Enable both Parsing options while creating the Akamai SIEM API Source. Parsing options:
    * Decode httpMessage fields
    * Duplicate Events once for each rule associated with the event

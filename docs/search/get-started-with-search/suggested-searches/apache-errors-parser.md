@@ -2,6 +2,7 @@
 id: apache-errors-parser
 title: Suggested Searches for the Apache Errors Parser
 sidebar_label: Apache Errors Parser
+description: The following searches were built for use with the Apache Access Parser. Copy and paste these searches into the search query field and save them for later use.
 ---
 
 The following searches were built for use with the Apache Errors Parser. Copy and paste these searches into the search query field and save them for use later.

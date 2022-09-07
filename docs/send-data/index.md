@@ -1,21 +1,19 @@
 ---
 slug: /send-data
-id: index
 title: Send Data
+description: Sumo Logic can ingest data from almost any kind of data source.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/send-data.png')} alt="icon" width="50"/>
 
-Learn how to send data to Sumo Logic.
+Learn how to send data to Sumo Logic. In this section, we will introduce the following concepts:
 
-To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Collect Data Forum](https://community.sumologic.com/s/topic/0TOE0000000g6anOAA/Collect-Data). 
-
-* [Design your deployment](/docs/send-data/design-your-deployment)
-* [Installed Collectors](/docs/send-data/installed-collectors)
+* [Design Your Deployment: Choose a Collector and Source](/docs/send-data/collectors-sources)
+* Installed Agents:
+   * [Installed Collectors](/docs/send-data/installed-collectors)
+   * [OpenTelemetry distribution](docs/send-data/sumo-distribution-opentelemetry.md)
 * [Hosted Collectors](/docs/send-data/hosted-collectors)
-* [Sources](/docs/send-data/sources)
-* [Collect from other data sources](/docs/send-data/collect-from-other-data-sources)
-
-For more information, see [Collector FAQs](/docs/send-data/collector-faqs).
+* [Collecting from Other Data Sources](/docs/send-data/collect-from-other-data-sources)
+* [Collector FAQs](/docs/send-data/collector-faq)

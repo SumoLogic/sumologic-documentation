@@ -1,6 +1,7 @@
 ---
 id: search-syntax-overview
 title: Search Syntax Overview
+description: Learn about query syntax and how to construct a search.
 ---
 
 

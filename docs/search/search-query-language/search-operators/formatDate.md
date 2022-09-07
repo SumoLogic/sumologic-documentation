@@ -19,7 +19,7 @@ A date String, in US-style date format if no format is specified. The date is in
 **Parameters:**
 
 * **date** - milliseconds (13 digits), as a Long. You can also use formatDate with the [Now](now.md) operator.
-* **format** - any valid date and time pattern String accepted by Java’s [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html). For more details about specifying the **format** see [Timestamps, Time  Zones, Time Ranges, and Date Formats](../../../send-data/sources/reference-information-sources/time-reference.md).
+* **format** - any valid date and time pattern String accepted by Java’s [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html). For more details about specifying the **format** see [Timestamps, Time  Zones, Time Ranges, and Date Formats](docs/send-data/reference-information/time-reference.md).
 * **timeZone** - a String, such as "America/Los Angeles" or "Europe/London"
  
 :::important
@@ -97,7 +97,7 @@ Which produces results like this:
 
 ### Messages by Day of the Week
 
-To get the day of the week from your logs, you can reference your log's timestamps, which are stored as the [metadata](../../get-started-with-search/search-basics/built-in-metadata.md) field **\_messageTime**. You can also parse out any dates in your logs and use the [formatDate](formatDate.md) operator to get the day of the week.  
+To get the day of the week from your logs, you can reference your log's timestamps, which are stored as the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field **\_messageTime**. You can also parse out any dates in your logs and use the [formatDate](formatDate.md) operator to get the day of the week.  
   
 Beginning with the **\_messageTime** field, you can determine the day of the week, and then remove the days you don't want using the formatDate operator. This example query provides results only for Mondays:
 

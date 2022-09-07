@@ -1,6 +1,7 @@
 ---
 slug: /search/search-query-language/transaction-analytics
 title: Transaction Analytics
+description: Find and group related log data.
 ---
 
 

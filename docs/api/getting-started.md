@@ -245,12 +245,12 @@ The following image has an example URL from the US2 pod.
 
 The specific collection endpoint will vary per account. The general format is: `endpoint[N].collection.[deploymentID].sumologic.com`.
 
-You can also determine which deployment pod your account is using by creating an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source/index.md) and looking at the provided URL.
+You can also determine which deployment pod your account is using by creating an [HTTP Source](/docs/send-data/hosted-collectors/http-logs-metrics-source/index.md) and looking at the provided URL.
 
 
 ### Securing access to Sumo Logic infrastructure via DNS name or IP address
 
-See the [static IP addresses for Cloud-to-Cloud Integration](/docs/send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/index.md#Static-IP-addresses) Sources.
+See the [static IP addresses for Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/index.md#Static-IP-addresses) Sources.
 
 For collection to work, your firewall must allow outbound traffic to Sumo Logic. Refer to [Test Connectivity for Sumo Logic Collectors](/docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors.md) for instructions on allowing outbound traffic over port 443.
 

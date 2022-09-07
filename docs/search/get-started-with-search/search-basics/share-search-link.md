@@ -1,7 +1,7 @@
 ---
 id: share-link-to-search
 title: Share a Link to a Search
-description: Share a link to search query results.
+description: Share a link to search query results. Copy and paste the a link to share a search via email or IM.
 ---
 
 

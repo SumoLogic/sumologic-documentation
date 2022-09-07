@@ -32,7 +32,7 @@ Specify a delimiter, escape, and quote character:
 
 * By default, the Split operator uses a comma (`,`) for a delimiter, backlash (`\`) for an escape character, and (`"`) quote for a quote character, though you can define your own if you like.
 * If you define your own escape, delimiter, or quote characters, they must all be different and be a single character matching the Java regular expression `[\s\S]`.
-* A field to extract from is always required. To extract from your original message use the `_raw` [metadata](../../get-started-with-search/search-basics/built-in-metadata.md) field.
+* A field to extract from is always required. To extract from your original message use the `_raw` [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field.
 
 ## Examples
 
