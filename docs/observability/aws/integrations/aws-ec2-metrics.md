@@ -46,7 +46,7 @@ This page provides examples and descriptions for each of the AWS Observability 
 The Sumo Logic AWS Observability EC2 Metrics Dashboards collects local host metrics and displays them using dashboards to aid with troubleshooting issues and to optimize resource allocation and costs. App dashboards provide a visual analysis of local host metrics for CPU, disk, memory, network, and TCP traffic.
 
 :::note
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-aws-observability-solution-dashboards.md) of the AWS Observability solution.
+We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
 :::
 
 ### AWS EC2 Metrics - Overview

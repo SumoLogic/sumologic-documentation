@@ -1,13 +1,50 @@
 ---
-id: aws-observability-change-log
-title: Change Log
-sidebar_label: Change Log
+id: changelog
+title: AWS Observability Terraform script and CloudFormation Changelog
+sidebar_label: Changelog
 description: This section provides details on the available versions of the AWS Observability Cloud Formation template.
 ---
 
 This section provides details on the available versions of the AWS Observability Terraform script and CloudFormation template. The details also include all the AWS and Sumo Logic resources that will be updated and resolved bugs when upgrading the existing version of the Terraform script or CloudFormation template to the latest version.
 
 To install or upgrade to the required version of the CloudFormation template, use the URL of the YAML file corresponding to the right version number as the Amazon S3 URL in the AWS CloudFormation section of the AWS Management Console. See [Selecting a stack template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for more information.
+
+
+
+## v2.5.0, 29-July-2022
+
+AWS Observability Solution (S3 Link for cloudformation template):`https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.5.0/sumologic_observability.master.template.yaml`
+
+AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates)
+
+New Features:
+
+* Support for Amazon EC2 CloudWatch Metric
+* Support for Amazon SNS service
+* New onboarding method via script for linux and windows
+
+Enhancements / Updates:
+
+* Updated “AWS Account Overview” and “AWS Region Overview” dashboards to monitor newly added Amazon SNS.
+* Simplified Terraform onboarding by importing existing SumoLogic Fields and FERs to TF state file via fields.sh script
+* Enhanced / optimized dashboards for AWS DynamoDB, AWS API Gateway, AWS Classic Load Balancer, Amazon RDS, AWS Application Load Balancer, Amazon EC2 Metrics, Amazon ElastiCache, AWS Network Load Balancer
+* Terraform solution will use Sumo Logic terraform provider >= v2.16.2
+
+Bug Fixes:
+
+* Fixed lambda cloudwatch logs FER (AwsObservabilityLambdaCloudWatchLogsFER)
+* Added new FER (AwsObservabilityGenericCloudWatchLogsFER) to handle generic cloudwatch logs namespace identification.
+* Fixed creation of extra resources with terraform when user selects none to deployed
+* Fixed issue with collection of generic aws namespace metric
+* Fixed query for “Network Bytes In” panel in Amazon Elasticache dashboard
+* Fixed / updated documentation for Terraform solution
+
+Deprecation:
+
+* RCE Dashboards are deprecated from the AWS Observability solution.
+
+
+
 
 ## v2.4.0, 30-March-2022
 AWS Observability Solution (S3 Link for cloudformation template):

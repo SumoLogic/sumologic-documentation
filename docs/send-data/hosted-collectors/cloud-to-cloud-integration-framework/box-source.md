@@ -1,5 +1,5 @@
 ---
-id: box
+id: box-source
 title: Box Source
 sidebar_label: Box
 ---

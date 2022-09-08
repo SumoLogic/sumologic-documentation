@@ -100,7 +100,7 @@ dashboards help in monitoring operation and performance trends in the Lambda fun
 
 The Sumo Logic AWS Observability Lambda dashboards utilize AWS Lambda logs and metrics data from AWS CloudWatch and AWS CloudTrail. Preconfigured dashboards provide insights into executions, such as memory and duration usage by function versions or aliases, as well as performance metrics such as errors, throttles, invocations, and concurrent executions.
 
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-aws-observability-solution-dashboards.md) of the AWS Observability solution.
+We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
 
 ## About measurements
 

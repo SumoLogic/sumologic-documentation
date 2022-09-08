@@ -54,10 +54,10 @@ In case you do not provide a CSV file or if we detect that it does not have the 
 1. Go to [Stack Sets](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacksets)
     in your AWS account.
 1. Click **Create StackSet**.  
-    ![ClodFormation_Stackset 1.png](/img/observability/ClodFormation_Stackset_1.png)
-1. Paste the URL - https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.4.0/sumologic_observability.master.template.yaml in the Amazon S3 URL option and click **Next**.
+    ![CloudFormation_Stackset 1.png](/img/observability/ClodFormation_Stackset_1.png)
+1. Paste the URL - https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.5.0/sumologic_observability.master.template.yaml in the Amazon S3 URL option and click **Next**.
 
-    If you would like to download or inspect this or other versions of this template, please visit the [change log](../aws-observability-change-log.md) page.
+    If you would like to download or inspect this or other versions of this template, please visit the [change log](../changelog.md) page.
 
     ![multi-create-stack.png](/img/observability/multi-create-stack.png)
 

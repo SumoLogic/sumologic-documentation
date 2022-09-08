@@ -92,7 +92,7 @@ throttle events, errors, latency and help you plan the capacity of
 DynamoDB instances in your environment.
 
 :::note
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-aws-observability-solution-dashboards.md) of the AWS Observability solution.
+We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
 :::
 
 ### 1. AWS DynamoDB - Overview

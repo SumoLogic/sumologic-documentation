@@ -128,9 +128,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing EC2 Host Metrics Dashboards
 
-### AWS EC2 - Overview (Host Metrics)
+### AWS EC2 - Overview (Host OS Metrics)
 
-The** AWS EC2 - Overview (Host Metrics) **dashboard provides insights into EC2 performance throughout your infrastructure, including CPU utilization, network rates, disk, and memory usage.
+The **AWS EC2 - Overview (Host OS Metrics)** dashboard provides insights into EC2 performance throughout your infrastructure, including CPU utilization, network rates, disk, and memory usage.
 
 Use this dashboard to:
 
@@ -141,9 +141,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-Overview-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
 
-### AWS EC2 - Summary (Host Metrics)
+### AWS EC2 - Summary (Host OS Metrics)
 
-The **AWS EC2 - Summary (Host Metrics)** dashboard provides resource utilization insights for a specific EC2 instance.
+The **AWS EC2 - Summary (Host OS Metrics)** dashboard provides resource utilization insights for a specific EC2 instance.
 
 Use this dashboard to:
 
@@ -156,7 +156,7 @@ Use this dashboard to:
 
 ### AWS EC2 - CPU
 
-The **AWS EC2 - CPU (Host Metrics)** dashboard provides insights into EC2 CPU performance throughout your infrastructure, including average CPU load, system, user, idle, and wait times, as well as statistics per instance.
+The **AWS EC2 - CPU (Host OS Metrics)** dashboard provides insights into EC2 CPU performance throughout your infrastructure, including average CPU load, system, user, idle, and wait times, as well as statistics per instance.
 
 Use this dashboard to:
 * Quickly identify if high CPU utilization for an EC2 instance is potentially causing a production issue.
@@ -166,9 +166,9 @@ Use this dashboard to:
 
 
 
-### AWS EC2 - Memory (Host Metrics)
+### AWS EC2 - Memory (Host OS Metrics)
 
-The **AWS EC2 - Memory (Host Metrics)** dashboard provides insights into EC2 memory usage per instance for total and percentage memory usage, free memory use, buffers, cache memory, and system memory.
+The **AWS EC2 - Memory (Host OS Metrics)** dashboard provides insights into EC2 memory usage per instance for total and percentage memory usage, free memory use, buffers, cache memory, and system memory.
 
 Use this dashboard to:
 * Quickly identify if high memory utilization for an EC2 instance is potentially causing a production issue
@@ -177,9 +177,9 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-Memory-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
 
 
-### AWS EC2 - Disk (Host Metrics)
+### AWS EC2 - Disk (Host OS Metrics)
 
-The **AWS EC2 - Disk (Host Metrics)** dashboard provides insights into EC2 disk usage per instance throughout your infrastructure, including directory, writes and usage, available bytes, used bytes, and byte read and write rates.
+The **AWS EC2 - Disk (Host OS Metrics)** dashboard provides insights into EC2 disk usage per instance throughout your infrastructure, including directory, writes and usage, available bytes, used bytes, and byte read and write rates.
 
 Use this dashboard to:
 * Quickly identify if high disk utilization for an EC2 instance is potentially causing a production issue.
@@ -189,9 +189,9 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-Disk-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
 
 
-### AWS EC2 - Network (Host Metrics)
+### AWS EC2 - Network (Host OS Metrics)
 
-The** AWS EC2 - Network (Host Metrics)** dashboard provides insights into EC2 network performance per instance across your infrastructure, including metrics for the average number of packets in and out, packet rate in and out, and byte rate in and out.
+The** AWS EC2 - Network (Host OS Metrics)** dashboard provides insights into EC2 network performance per instance across your infrastructure, including metrics for the average number of packets in and out, packet rate in and out, and byte rate in and out.
 
 Use this dashboard to:
 * Quickly identify if traffic sent and received rates for an EC2 instance is potentially causing a production issue.
@@ -200,9 +200,9 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-Network-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
 
 
-### AWS EC2 - TCP (Host Metrics)
+### AWS EC2 - TCP (Host OS Metrics)
 
-The **AWS EC2 - TCP (Host Metrics)** dashboard  provides insights into TCP traffic performance per EC2 instance throughout your infrastructure, including metrics for inbound and outbound connections, listen and established connections, and close wait and time wait connections.
+The **AWS EC2 - TCP (Host OS Metrics)** dashboard  provides insights into TCP traffic performance per EC2 instance throughout your infrastructure, including metrics for inbound and outbound connections, listen and established connections, and close wait and time wait connections.
 
 Use this dashboard to:
 * Quickly identify if TCP traffic for an EC2 instance is potentially causing a production issue.

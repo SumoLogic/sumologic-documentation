@@ -31,7 +31,7 @@ We recommend you familiarize yourself with the AWS Observability Solution. For m
 
 * [About AWS Observability](docs/observability/aws/about.md)
 * [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability)
-* [View the AWS Observability Dashboards](../deploy-use-aws-observability/view-aws-observability-solution-dashboards.md)
+* [View the AWS Observability Dashboards](../deploy-use-aws-observability/view-dashboards.md)
 
 ## Integrate AWS Control Tower-managed accounts with the AWS Observability solution
 
@@ -133,4 +133,4 @@ You must have a role that grants you the Manage Field Extractions capability to 
 
 ## Step 4: View the AWS Observability dashboards
 
-Now you can start monitoring your AWS services in AWS Control Tower managed accounts. For information about the solution dashboards, see [View the AWS Observability Dashboards](../deploy-use-aws-observability/view-aws-observability-solution-dashboards.md).
+Now you can start monitoring your AWS services in AWS Control Tower managed accounts. For information about the solution dashboards, see [View the AWS Observability Dashboards](../deploy-use-aws-observability/view-dashboards.md).

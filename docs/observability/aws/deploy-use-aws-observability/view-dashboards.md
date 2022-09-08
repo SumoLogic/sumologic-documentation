@@ -1,7 +1,7 @@
 ---
-id: view-aws-observability-solution-dashboards
+id: view-dashboards
 title: View AWS Observability Solution Dashboards
-sidebar_label: View AWS Observability Solution Dashboards
+sidebar_label: View AWS Dashboards
 description: Learn how to use Explore to navigate your AWS Observability infrastructure, as well as providing links to the app dashboards.
 ---
 
@@ -97,15 +97,17 @@ Click a link for information on the individual app dashboards:
 
 * [AWS API Gateway Dashboards](../integrations/aws-api-gateway.md)
 * [AWS Application Load Balancer Dashboards](../integrations/aws-application-load-balancer.md)
+* [AWS DynamoDB Dashboards](../integrations/aws-dynamodb.md)
 * [AWS EC2 Metrics Dashboards](../integrations/aws-ec2-metrics.md)
 * [AWS Lambda Dashboards](../integrations/aws-lambda.md)
-* [AWS DynamoDB Dashboards](../integrations/aws-dynamodb.md)
 * [Amazon RDS Dashboards](../integrations/aws-rds-metrics.md)
 * [Amazon ElastiCache Dashboards](../integrations/amazon-elasticache.md)
 * [Amazon ECS Dashboards](../integrations/amazon-ecs.md)
-* [AWS NetworkELB Dashboards](../integrations/aws-network-load-balancer.md)
-* Global Intelligence for AWS CloudTrail DevOps
+* [AWS Network ELB Dashboards](../integrations/aws-network-load-balancer.md)
+* [Global Intelligence for AWS CloudTrail DevOps](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Global_Intelligence_for_AWS_CloudTrail_DevOps)
 * [AWS Classic Load Balancer Dashboards](../integrations/aws-classic-load-balancer.md)
+* [Amazon RDS Dashboards](docs/observability/aws/integrations/aws-rds-metrics.md)
+* [Amazon SNS Dashboards](docs/observability/aws/integrations/amazon-sns.md)
 
 ## More Information
 

@@ -54,8 +54,8 @@ System Files:
  * [providers.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/providers.tf): Provides Terraform configurations to declare the providers they require to have Terraform install and use them. See [Providers Configuration Language](https://www.terraform.io/docs/language/providers/index.html) for more information.
  * [variables.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/variables.tf): Provides parameters for a Terraform module, allowing aspects of the module to be customized without altering the module's own source code, and allowing modules to be shared between different configurations. See [Input Variables](https://www.terraform.io/docs/language/values/variables.html) for more information.
  * [output.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/output.tf): Provides specific return values for a Terraform module. See [Output Values](https://www.terraform.io/docs/language/values/outputs.html) for more information.
- * [field.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/field.tf): creates fields in sumo logic field schema 
- * [fields.sh](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/fields.sh): This script imports the existing fields (required by AWS Observability Solution) present in the user's Sumo Logic account.
+ * [field.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/field.tf): creates fields and FERs in sumo logic field schema 
+ * [fields.sh](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/fields.sh): This script imports the existing fields and FERs (required by AWS Observability Solution) present in the user's Sumo Logic account.
   
 ## Step 1: Set up the Terraform environment
 
@@ -564,7 +564,7 @@ To uninstall the AWS Observability solution deployed using Terraform, navigate t
 $ terraform destroy
 ```
 
-This will destroy all [resources](aws-observability-resources.md) and configuration previously set up.
+This will destroy all [resources](resources.md) and configuration previously set up.
 
 ## Appendix
 
@@ -1463,7 +1463,7 @@ Parameters will take default values as defined under the default column.
 
 This installs the following:
 
-* Apps: AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache and AWS NLB
+* Apps: AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, AWS NLB, and AWS SNS.
   * Default location: “AWS Observability Apps” Personal folder in Sumo Logic
 * Alerts for the AWS Observability Solution
   * Default location: “AWS Observability Monitors” folder of the Monitors folder
@@ -1545,6 +1545,7 @@ The following table provides a list of all source parameters and their default v
 | `folder_share_with_org` | Indicates if “AWS Observability App” folder should be shared with the entire organization. true to enable sharing; false to disable sharing. | `true` |
 | `alb_monitors_disabled` | Indicates if the ALB Apps monitors should be enabled or disabled. | `true` |
 | `apigateway_monitors_disabled` | Indicates if the API Gateway Apps monitors should be enabled or disabled. | `true` |
+| `sns_monitors_disabled` | Indicates if the SNS Apps monitors should be enabled | `true` |
 | `dynamodb_monitors_disabled` | Indicates if the DynamoDB Apps monitors should be enabled or disabled. | `true` |
 | `ec2metrics_monitors_disabled` | Indicates if the EC2 Metrics Apps monitors should be enabled or disabled.
 `true` |

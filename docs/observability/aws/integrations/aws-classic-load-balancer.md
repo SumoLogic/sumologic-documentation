@@ -57,7 +57,7 @@ servers, hosts as well as requests from malicious sources, and HTTP
 response codes.
 
 :::note
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-aws-observability-solution-dashboards.md) of the AWS Observability solution.
+We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
 :::
 
 ### AWS Classic Load Balancer - Overview

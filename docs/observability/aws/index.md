@@ -12,7 +12,7 @@ This feature is available in the following account plans.
 
 | Account Type | Account Level                                                                        |
 |--------------|--------------------------------------------------------------------------------------|
-| Cloud Flex   | Trial, Professional, and Enterprise                                                  |
+| Cloud Flex   | Trial and Enterprise    |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, and  Enterprise Suite |
 
 AWS Observability Solution provides a framework to simplify the monitoring and troubleshooting of your AWS cloud infrastructure. The Sumo Logic apps for the AWS Observability Solution provide the ability to isolate and solve problems faster with specialized pre-configured dashboards:

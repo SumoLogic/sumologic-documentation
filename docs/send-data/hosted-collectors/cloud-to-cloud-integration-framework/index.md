@@ -1,6 +1,6 @@
 ---
 slug: /send-data/hosted-collectors//cloud-to-cloud-integration-framework
-title: Cloud-to-Cloud Integration Framework
+title: Cloud-to-Cloud Integration Framework Sources
 ---
 
 The Cloud-to-Cloud Integration Framework is a fully-managed collection system that collects logs and events directly from SaaS and Cloud platforms. This data often includes custom events and user data critical for operations monitoring, security, and compliance use cases. As a fully managed collection system, integrations running within the Cloud-to-Cloud Integration Framework provide a secure endpoint to receive event data in your account. Integration authentication, scheduling, and state tracking are all managed by the framework
