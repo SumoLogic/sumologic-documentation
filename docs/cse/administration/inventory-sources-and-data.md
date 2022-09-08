@@ -198,6 +198,3 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 | lastName | sn |   |    
 | emails | mail |   | 
 | groups | memberOf | Windows groups are reformatted from the LDAP form to a basic name. |  
-
-
-

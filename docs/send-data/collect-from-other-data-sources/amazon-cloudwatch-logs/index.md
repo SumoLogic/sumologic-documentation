@@ -231,6 +231,13 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 1. Select the log data to test, then click Test pattern. If test results look fine, then click **Start Streaming**.<br/> ![test-pattern.png](/img/send-data/test-pattern.png)
 
 
+    ![stream-to-aws-lambda.png](/img/send-data/stream-to-aws-lambda.png)
+1. Select the Lambda function that begins with "SumoCWLogsLambda", then click **Next**.
+
+    ![lambda-function.png](/img/send-data/lambda-function.png)
+1. On the **Create Lambda subscription filter** page, select a **Log format**, and enter a **Subscription filter pattern** and **Subscription filter name**.
+1. Select the log data to test, then click **Test pattern**. If test results look fine, click **Start Streaming**.
+
 ### Auto-subscribe other log groups to SumoCWLogsLambda function
 
 If you want to collect logs from multiple Log Groups, you can use Sumo’s LogGroup Lambda Connector to subscribe additional Log Groups to the Lambda function. To do so, follow the instructions in [Auto-Subscribe AWS Log Groups to a Lambda Function](../autosubscribe-arn-destination.md).  When you edit the CloudFormation template for the connector, point the `LAMBDA_ARN` environment variable to the `SumoCWLogsLambda` function.
