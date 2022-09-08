@@ -10,6 +10,28 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Service Release Notes for the current year are listed here. If you need to see previous Service Release Notes, check the [Archive](docs/releasenotes/archive/index.md).
 
 ---
+## September 8, 2022 (Traces)
+
+New - we're happy to share extended coverage for [Real User Monitoring (RUM)](/docs/apm/rum), our solution that provides insight into your users' end-to-end browser experience interacting with your web apps. New RUM capabilities include:
+
+* New dashboard panels for the following metrics:
+   * XHR timing
+   * longtask delays (browser freezes)
+   * Core Web Vitals KPIs
+   * Geolocation
+* Single-page app support:
+   * Monitoring of XHR calls and navigation/route changes
+   * XHR performance and availability metrics
+   * New specific Action names for XHR actions ("Click on [button] on [page]") and single-page app navigation/route change actions ("Route to [page]")
+* New Explore tree levels for three new action types: document loads, XHR actions and route changes
+* Browsers errors (e.g., unhandled errors/rejections, failed resources, console errors) are now captured automatically and populated in the `_index=sumologic_rum_errors` log index and dashboards
+   * Browser errors ingest volume is now added to your Continuous tiers budgets and credits consumption.
+
+This new functionality requires RUM script in version 4 or higher (`https://rum.sumologic.com/sumologic-rum-v4.js`). Please ensure you are using the correct version in your pages. For automatic updates, use `https://rum.sumologic.com/sumologic-rum.js`.
+
+
+
+---
 ## August 17, 2022 (Search)
 
 Update - For Enterprise Suite customers, we’ve doubled the number of [Fields](/docs/manage/Fields) you can create. The per account Fields limit is now 400. The limit applies to Fields that you configure for sources or collectors and those you create using [Field Extraction Rules](/docs/manage/Field-Extractions).
