@@ -33,7 +33,9 @@ AWS Observability integrates with Explore by populating metadata and only shows
 ## Step 1: Open the CloudFormation template
 
 1. Sign on to the AWS Management console.
-1. Click this [URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.4.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template. If you would like to download or inspect this or other versions of this template, please visit [Change Log](../changelog.md).
+1. Choose an option:
+   * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.5.0/sumologic_observability.master.template.yaml)
+   * Click the AWS Observability Solution (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.5.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template. If you would like to download or inspect this or other versions of this template, please visit [Change Log](../changelog.md).
 
     :::note
     In case you want to modify the Collector Name and Source Categories of the Sumo Logic sources that will be created by default, you can do so by downloading CloudFormation template version 2.1.0 or greater and following [these instructions](#modify-the-collector-name-and-source-categories) before proceeding to the next step. 
@@ -224,6 +226,7 @@ For instructions, see Create a Processing Rule. Create the following rules, sel
 .*\"eventSource\":\"apigateway\.amazonaws\.com\".*
 .*\"eventSource\":\"ecs\.amazonaws\.com\".*
 .*\"eventSource\":\"elasticache\.amazonaws\.com\".*
+.*\"eventsource\":\"sns\.amazonaws\.com\".*
 ```
 
 ### Common errors
