@@ -1,7 +1,7 @@
 ---
 id: configure-alerts
 title: Configure AWS Observability Alerts
-sidebar_label: Configure AWS Observability Alerts
+sidebar_label: Configure Alerts
 description: Sumo Logic has provided out-of-the-box alerts to help you quickly determine if a particular AWS service is available and performing as expected.
 ---
 
@@ -53,6 +53,11 @@ Sumo Logic provides the following out-of-the-box alerts:
 | AWS Classic Load Balancer - High 4XX Errors | This alert fires when there are too many HTTP requests (\>5%) with a response status of 4xx within an interval of 5 minutes. | \>= 5 | \< 5 |
 | AWS Classic Load Balancer - High 5XX Errors | This alert fires when there are too many HTTP requests (\>5%) with a response status of 5xx within an interval of 5 minutes. | \>= 5 | \< 5 |
 | AWS Classic Load Balancer - Access from Highly Malicious Sources | This alert fires when the Classic load balancer is accessed from highly malicious IP addresses within last 5 minutes. | \\> 0 | \< 0 |
+| AWS SNS - Failed Notifications | This alert fires where there are many failed notifications (>2) within an interval of 5 minutes. | >2 | <=2 |
+| AWS SNS -  Access from Highly Malicious Sources | This alert fires when an Application AWS - SNS is accessed from highly malicious IP addresses within last 5 minutes | >0 | <=0 |
+| AWS SNS - Failed Events | This alert fires when an SNS app has high number of  failed events (>5) within last 5 minutes | >5 | <=5 |
+
+
 
 :::note
 The information is provided for both Alert conditions and Recover conditions.

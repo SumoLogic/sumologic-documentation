@@ -20,13 +20,12 @@ See [About the Observability Solution](docs/observability/about.md) to learn mor
 Our AWS Observability solution enables you to view your entire AWS environment in a single pane of glass, while seamlessly surfacing anomalous events of interest correlated with application incidents. It includes the AWS Observability Solution and Root Cause Explorer:
 
 * **AWS Observability Solution** - Sumo Logic’s AWS Observability solution pulls in data across key AWS services and accounts to give a unified view of AWS environments. Easily navigate from overview dashboards into account, region, availability zone, or service specific views. Intuitive navigation ensures teams can quickly resolve issues, minimize downtime, and improve system availability. See [About AWS Observability](docs/observability/aws/about.md).
-* **Root Cause Explorer (RCE)** - Sumo Logic's Root Cause Explorer makes it easy to visualize anomalous events of interest across multiple AWS services to quickly identify the root cause of application incidents. It relies on AWS CloudWatch metrics to enable on-call staff, DevOps, and infrastructure engineers to expedite troubleshooting and root cause isolation for incidents in their apps and microservices running on AWS infrastructure. Sumo Logic establishes an activity baseline and surfaces only high deviation events of interest. Cut down issue resolution time with seamless visibility into impacted services. See [Root Cause Explorer](docs/observability/root-cause-explorer.md)).
 
-See [AWS Observability Apps](/docs/observability/aws/integrations) for detailed information on all supported apps including Application and Network Load Balancer, DynamoDB, EC2, RDS, API Gateway, ECS, and ElastiCache.
+See [AWS Observability Apps](/docs/observability/aws/integrations) for detailed information on all supported apps including Application, Classic, and Network Load Balancer, DynamoDB, EC2, RDS, API Gateway, ECS, ElastiCache, Lambda, and SNS.
 
 ### What AWS services are supported?
 
-Sumo Logic AWS Observability supports the following AWS services: EC2, ECS, RDS, ElastiCache, API Gateway, Lambda, DynamoDB, Application ELB, Classic ELB, and Network ELB.
+Sumo Logic AWS Observability supports the following AWS services: EC2, ECS, RDS, ElastiCache, API Gateway, Lambda, DynamoDB, Application ELB, Classic ELB, Amazon SNS, and Network ELB.
 
 Sumo Logic Root Cause Explorer analyzes and correlates metrics from all supported AWS Observability services and EBS, Autoscaling, X-ray, SNS, and SQS.
 
@@ -37,7 +36,7 @@ AWS Observability provides a view across AWS accounts, regions, namespaces, and
 Adding a service requires:
 
 * The AWS Observability solution must be installed for at least one supported service.
-* Collect metrics for your service using a Sumo Logic AWS Cloudwatch  metrics source for an AWS account currently monitored by the AWS Observability solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
+* Collect metrics for your service using a [Sumo Logic AWS Cloudwatch  metrics source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics) for an AWS account currently monitored by the AWS Observability solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
 * Create at least one Sumo Logic dashboard based on CloudWatch metrics and log data to monitor the operations of the AWS Service.
 
 See [Add a New AWS Service to the AWS Observability Explore Hierarchy](docs/observability/aws/other-configurations-tools/add-new-aws-service.md) to add a new service to the AWS Observability hierarchy. 
@@ -49,8 +48,6 @@ For full functionality of the out-of-the-box dashboards, the solution requires C
 ### Who can use the new features? 
 
 Any Sumo Logic customer can leverage Sumo Logic AWS Observability solution features. 
-
-Root Cause Explorer is available for CloudFlex/Enterprise, Credits/Enterprise Operations, and Credits/Enterprise Suite account plans.
 
 ### Is there a demo of the solution?
 
@@ -79,7 +76,7 @@ to CloudFormation, we recommend that you:
 
 * Start with an existing AWS account and region combination (preferably a non-production dev/test account), delete the AWS Observability Terraform stack associated with it, then on-board that account-region combination using CloudFormation template.
 
-* Once you confirm that the solution has been deployed successfully, you can then repeat the process for additional AWS accounts and region.
+* Once you confirm that the solution has been deployed successfully, you can then repeat the process for additional AWS accounts and regions.
 
 ### Can I deploy with Terraform?
 
@@ -108,9 +105,7 @@ an existing source in the CloudFormation or Terraform installation, your
 FERs will not be changed in any way unless the names are the same.
 Multiple FERs can co-exist on the same source or metadata.
 
-As of our current release, FERs are not imported using Terraform. You
-must rename any existing FERs. The Terraform script will create new FERs
-and maintain the state in Terraform.
+As of our current release, Fields and FERs will be imported into Terraform. You can also rename any existing FERs. The Terraform script will create new FERs and maintain the state in Terraform.
 
 Renaming an existing FER has no effect on FER usage.
 
@@ -119,24 +114,17 @@ for the list of Field Extraction Rules in the resources.
 
 ### How do you keep track of changes and make feature updates?
 
-Sumo Logic provides updates to the AWS Observability solution via CloudFormation and Terraform. See the [changelog](docs/observability/aws/deploy-use-aws-observability/changelog.md) to review all the changes and pointers to the CloudFormation templates associated with each version. AWS provides the ability to update a CloudFormation stack. To learn more about how to update your stack, see [Update the AWS Observability Stack](docs/observability/aws/deploy-use-aws-observability/update-aws-observability-stack.md).
+Sumo Logic provides updates to the AWS Observability solution through CloudFormation and Terraform. See the [changelog](docs/observability/aws/deploy-use-aws-observability/changelog.md) to review all the changes and pointers to the CloudFormation templates associated with each version. AWS provides the ability to update a CloudFormation stack. To learn more about how to update your stack, see [Update the AWS Observability Stack](docs/observability/aws/deploy-use-aws-observability/update-aws-observability-stack.md).
 
-### Can I use an Installed Collector instead of relying on Cloudwatch for EC2 Host Metrics?
+### What are options to monitor EC2 Host Metrics?
 
-Yes, Sumo Logic’s Installed Collectors are used on EC2 hosts. Sumo Logic does rely on Cloudwatch (not the installed collectors) for other AWS Services including RDS, API Gateway, DynamoDB, Lambda, Application ELB, Elasticache, Network Loadbalancer, and ECS. See [*Configure Host Metrics sources*](docs/observability/aws/deploy-use-aws-observability/before-you-deploy.md) for more details.
+There are two ways EC2 can be monitored. One way is to use the [CloudWatch metrics for EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html) which are collected by default in the solution. Another way is to install [Sumo Logic Collector for Host Metrics](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Host-Metrics-Source#collected-metrics) on EC2 instance. The list of metrics and their details from the two methods can be fetched using the embedded links. In addition to this, there are two Apps for EC2 which are provided out of the box with AWS Observability Solution :
 
-### Can I use CloudWatch to collect EC2 metrics instead of using an Installed Collector?
+* AWS EC2 - Uses CloudWatch Metrics for EC2 and CloudTrail events
+* Host Metrics (EC2) - Uses metrics from Installed Collector.
 
-We recommend that you use the Sumo logic Installed Collector to collect 
-host metrics for cost reasons. However, you can also choose to collect
-EC2 metrics via CloudWatch if you choose to do so. Simply add the
-AWS/EC2 namespace when selecting the list of namespaces in either
-CloudFormation or Terraform.
+The two types of metrics collected are not comparable thus can have different values for the same metrics.
 
-The OOTB dashboards are designed to only operate on EC2 host metrics
-from installed collectors and will not work with CloudWatch metrics
-however, Root Cause Explorer will also work on EC2 Metrics from
-CloudWatch if you do not want to use installed collectors.
 
 ### Will new Lambdas or services get automatically added to the AWS Observability explore tab?
 

@@ -1,7 +1,7 @@
 ---
 id: update-aws-observability-stack
 title: Update the AWS Observability Stack
-sidebar_label: Update the AWS Observability Stack
+sidebar_label: Update Observability Stack
 description: Learn how to update the AWS Observability stack.
 ---
 
@@ -42,7 +42,7 @@ To update an existing stack to the latest version:
 1. Locate the **Main Stack** created using AWS CloudFormation template and Click **Update**.  
     ![Stack_Step1.png](/img/observability/Stack_Step1.png)
 
-1. Select ‘**Replace Current Template**’ and paste the URL - https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.4.0/sumologic_observability.master.template.yaml in the Amazon S3 URL option and select **Next**.
+1. Select ‘**Replace Current Template**’ and paste the URL - https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.5.0/sumologic_observability.master.template.yaml in the Amazon S3 URL option and select **Next**.
 
     :::note
     If you would like to download or inspect this or other versions of this template, please visit the [Change Log](changelog.md) page.
