@@ -19,17 +19,11 @@ values.
 
 #### accum example
 
-This query calculates the running total for the `success.count` metric.
+This query calculates the running total for the `success.count` metric: `success.count | accum`.
 
-`success.count | accum`
+If the values of success.count during the time range are: `59, 69, 57, 64, 47, 51, 62, 58, 70, 60`.
 
-If the values of success.count during the time range are:
-
-`59, 69, 57, 64, 47, 51, 62, 58, 70, 60 `
-
-`accum` produces the following accumulated totals for those values:
-
-`59, 128, 185, 249, 296, 347, 409, 467, 537, 597`
+`accum` produces the following accumulated totals for those values: `59, 128, 185, 249, 296, 347, 409, 467, 537, 597`.
 
 In the metric chart below, the green time series is the result of using
 `accum`:
@@ -46,8 +40,7 @@ The orange time series shows the results without the `accum` operator.
 The `along` operator joins metric queries to have Sumo evaluate and perform expressions by comparing one or more metric fields. It considers multiple query rows and metrics referenced by another row according to one field or multiple fields separated by a comma (#A, #B,...).
 
 `along` is helpful in the following usage:
-
-* Simple row references (#A to #F) with math expressions. For example: `#A * 100`  Math expressions support the same set of functions as the eval operator so you can use sin, cos, abs, log, round, ceil, floor, tan, exp, sqrt, min, and max.
+* Simple row references (#A to #F) with math expressions. For example, `#A * 100` Math expressions support the same set of functions as the eval operator so you can use sin, cos, abs, log, round, ceil, floor, tan, exp, sqrt, min, and max.
 * Evaluate multiple metrics. A single row can contain references to multiple rows, comparing metrics by joining them together in another row, or to to filter results of a query (row) by metadata from another row. For example: `#C: #B - #A along _sourceHost`
 
 We recommend using `along` to refine your queries when comparing and using data from multiple queries. Otherwise, you will receive many-to-many relations.
@@ -281,60 +274,177 @@ In this query, we're searching for how many 4xx errors occurred by different met
 
 ![count-example.png](/img/metrics/count-example.png)
 
-## delta
 
+
+## delta
 
 Computes the backward difference at each data point in the time series to determine how much the metric has changed from its last value in the series.
 
-The `delta` operator updates the `metric` dimension, if present, to `delta($metric)`. If the original time series does not have a `metric` dimension, it creates `metric=delta` dimension. Other dimensions remain unaffected.
+The `delta` operator updates the `metric` dimension, if present,  to `delta($metric)`. If the original time series does not have a `metric` dimension, it creates `metric=delta` dimension. Other dimensions remain unaffected.
+
+You can use the `increasing` or `decreasing` option, to make `delta` consider only pairs of consecutive points where the second point is greater or less than the first point. This functionality is useful when you are calculating the positive or the negative difference of a counter over time.
 
 #### delta syntax
 
 ```sql
-metric query | delta
+metric query | delta [increasing | decreasing]
 ```
 
 #### delta examples
 
 #### Difference in a metric value from previous point
 
-This query returns a time series that reflects the difference in the `Net_InBytes`  metric for the eth0 interface  between a charted value and the one preceding it. 
+This query returns a time series that reflects the difference in the `Net_InBytes`  metric for the eth0 interface  between a charted value and the one preceding it.
 
 ```sql
 metric=Net_InBytes Interface=eth0 | delta
-```  
+```
+
+#### Positive difference in a metric over time
+
+This query returns a time series that reflects the difference in the `elasticsearch_jvm_mem_heap_used_in_bytes`  metric between a charted value and the one preceding it, only considering pairs of consecutive points where the second point is greater than the first point.
+
+```sql
+metric=elasticsearch_jvm_mem_heap_used_in_bytes | delta increasing
+```
+
 
 
 ## eval
 
-Evaluates a time series based on a user-specified math expression.
+Evaluates a time series based on a user-specified arithmetic or mathematical function.
 
-#### eval syntax
+
+#### eval syntax
 
 ```sql
-metrics query | eval <math expression>
+metrics query | eval expr([REDUCER BOOLEAN EXPRESSION | _value] [_granularity])
 ```
 
-where `<math expression>` is a valid math expression  with `_value` as the placeholder for each data point in the time series.
+* `expr` is basic arithmetic or mathematical function:  +, -, *, /, sin, cos, abs, log, round, ceil, floor, tan, exp, sqrt, min, max
+* `_value` is the placeholder for each data point in the time series.
+* `REDUCER BOOLEAN EXPRESSION` is an expression that takes all the values of a given time series, uses a function to reduce them to a single value, and evaluates that value. The supported functions are:
+    * `avg`. Returns the average of the time series.
+    * `min`. Returns the minimum value in the time series.
+    * `max`. Returns the maximum value in the time series.
+    * `sum`. Returns the sum of the values in the time series.
+    * `count`. Returns the count of data points in the time series.
+    * `pct(n)`. Returns the nth percentile of the values in the time series.
+    * `latest`. Returns the last data point in the time series.
+    * `stddev`. Returns standard deviation of the points in the time series.
+* `_granularity`. Returns the length of the [quantization](https://help.sumologic.com/Metrics/Introduction-to-Metrics/Metric_Quantization) bucket in milliseconds. You can use this placeholder in your query.
 
-Supported Basic operations:
 
-`+`, `-`, `*`, `/`
+#### Examples
 
-Supported Math functions:
+**Example 1**
 
-`sin`, `cos`, `abs`, `log`, `round`, `ceil`, `floor`, `tan`, `exp`, `sqrt`, `min`, `max`,` avg`, `pct`
+This query returns the value of the cpu_idle metric, multiplied by 100.
 
-#### Eval examples
+```
+_sourceCategory=ApacheHttpServer metrics=cpu_idle | eval _value * 100
+```
 
-#### Multiply a metric 
+**Example 2**
 
-This query returns the value of the `cpu_idle` metric, multiplied by
-100.
+This query sets the value of each point in a single time series to the average of all values in that time series.
 
-```sql
-_sourceCategory=ApacheHttpServer metrics=cpu_idle | eval _value * 10
-```  
+```
+metrics query | eval avg
+```
+
+For example, if you have this series, where the points are `(timestamp, value)`:
+
+```
+m1: (0, 1) (1, 2) (2, 3)
+m2: (0, 3) (1, 6) (2, 9)
+```
+
+then `eval avg` would produce:
+
+```
+m1: (0, 2) (1, 2) (2, 2)
+m2: (0, 6) (1, 6) (2, 6)
+```
+
+**Example 3**
+
+This query returns the rate of change per second for the metric.
+
+```
+metrics query | sum | eval 1000 * _value/_granularity
+```
+
+
+## ewma
+
+Currently the `ewma` operator is supported only in the Metrics Explorer’s advanced mode, not basic mode.
+
+The `ewma` operator computes an Exponentially Weighted Moving Average (EWMA) on the data points returned by the query for the selected time range. This allows you to smooth out short-term fluctuations (outliers) and display long-term trends.
+
+EWMA is a quantitative measure used to model or describe a time series, and is broadly used for technical analysis and volatility modeling. You can use the `ewma` operator to smooth out short-term fluctuations (outliers) and display long-term trends in your metric data.
+
+The moving average gives lower weights to older observations, and the weights reduce exponentially as the data points get older.
+
+When you run the `ewma `operator, the `alpha` parameter sets the importance of the current observation in the calculation of the moving average. The higher the value of `alpha`, the more closely the EWMA tracks the original time series.
+
+You can optionally run `ewma` with either:
+
+* An explicit `alpha` smoothing parameter to smooth time series while preserving trends. This is useful if you want to explicitly set the smoothing parameter value.
+* An explicit `span` over a number of points. `span` value is the number of data points that will be used to calculate the average. Internally, we translate span to an alpha smoothing equivalent using this formula: \
+`alpha = 2/(span + 1)`
+
+The most commonly used parameter is `span`, which allows you to specify the number of data points you want to use for smoothing. The higher the value of `span`, the smoother the time series will be. You might choose to use `alpha` if you know what smoothing parameter value you want use. Keep in mind that the lower the `alpha` value is, the smoother the time series will be.
+
+If you run `ewma` without specifying either `alpha` or `span`, it runs by default with `alpha=0.5` (or`span=3`).
+
+
+### ewma syntax
+
+```
+metric query | ewma [alpha=<#> |span=<#>]
+```
+
+
+#### Syntax using alpha parameter
+
+```
+query selector | ewma alpha=<#>
+```
+
+
+Where:
+
+* `alpha`, the smoothing parameter, is a decimal value (0.0 ≤ alpha ≤ 1.0)
+* The default value of `alpha` is 0.5
+
+**Example**
+
+```
+metrics=xyz | ewma alpha=0.1
+```
+
+
+
+#### Syntax using span parameter  
+
+```
+query selector | ewma span=<#>
+```
+
+
+Where:
+
+* `span` is the number of data points. Must be an integer value greater than zero. If you set `span=5`, the last five data points will be used to calculate the average.
+* The default value of `span` is 3.
+
+**Example**
+
+```
+metrics=xyz | ewma span=10
+```
+
+
 
 
 ## fillmissing
@@ -544,6 +654,31 @@ metric=apiserver_request_latencies_bucket | quantize using max | delta | histogr
 :::note
 You must include the `quantize` and delta clauses to get the same results as the PromQL query would produce.
 :::
+
+
+## in
+
+The `in` functionality can be used in a metrics query selector as shorthand for multiple OR conditions.
+
+#### Syntax
+
+`selectors dimension = (value1, value2, value3, …)| metric query `
+
+Where:
+
+* `selectors` is one or more metadata key-value pairs or keywords that scope your query.
+* `dimension` is the dimension (field) you want to match.
+`value1`, `value2`, `value3`, and so on are values of dimension that you want to limit your query to.
+
+#### Example
+This example will match time series in which the value of the dimX field is one of the strings in the array enclosed in parentheses.
+
+```sql
+metric=CPU_Total dimX=(123, 345, 567)
+```
+
+
+
 
 
 ## max
@@ -785,7 +920,44 @@ This query calculates the increase or decrease per second in the `Net_InBytes` 
 ```sql
 metric=Net_InBytes Interface=eth0 | rate
 ```  
- 
+
+
+
+
+## Rollup Selector
+
+Currently, Rollup Selector is available in the Metric Explorer's advanced mode only, not in basic mode.
+
+In a metric query selector, before the first pipe in your query, you can use a Rollup Selector to specify how you want the raw data points to be aggregated. Specifically, you can select what rollup function to use (avg, min, max, count, or sum), and the duration of time over which you want to aggregate data points.
+
+This control over rollup behavior is useful because otherwise,
+
+Sumo Logic will use the default rollup, which is usually avg. (Exceptions: if a query has a max or min aggregation after the first pipe, the query will run against the max or min rollup respectively.)
+Sumo Logic will and will automatically choose a rollup duration to limit the number of data points per returned time series to 300.
+
+#### Syntax
+You include a rollup selection in the scope of your query, before the first pipe.
+```
+query selector aggregator over duration
+```
+Where:
+
+* `aggregator` is one of avg, min, max, count, or sum.
+* `duration` is the length of time over which you want to aggregate the data, in milliseconds (ms), seconds (s), minutes (m), hours (h), or days (d).
+
+#### Rules
+
+You must supply both an aggregation function and duration.
+Sumo Logic supports a maximum of 300 data points per time series, so, if you choose a duration that would return more than that, we will automatically choose a more granular duration.
+
+#### Example
+When this query is run, the matching data points will be rolled up using the sum rollup type, over a 5 minute duration.
+
+```
+metric=cpu_idle [sum over 5m] | max
+```
+
+
 
 ## stddev
 
@@ -796,14 +968,13 @@ Often used in financial applications, calculating standard deviations also has v
 `stddev` calculates the standard deviation at each time interval across all the time series, resulting in one time series that contains the standard deviation per time slot. If you group the results by a dimension, the standard deviation for the time series in each group is calculated. The result is returned as a metric named _stddev_.
 
 
-#### Syntax
+#### stddev syntax
 
 ```sql
 metric query | stddev [by FIELD [, FIELD, ...]]
 ```
 
 `stddev` isn’t supported in queries that use the `quantize` operator.
-
 
 #### Examples
 
@@ -822,6 +993,8 @@ This query returns the standard deviation of the `cpu_system` metric from the _p
 ```sql
 dep=prod metric=cpu_system | stddev by _source
 ```
+
+
 
 ## sum
 
@@ -850,10 +1023,35 @@ This query calculates the total of the `cpu_system` metric values across all tim
 ```sql
 cluster=search metric=cpu_idle | sum by node
 ```  
+
+
+
+## timeslice
+
+The `timeslice` operator allows you to aggregate individual data points over a specified duration using a specified rollup function, one of: avg, min, max, sum, count, or rate.
+
+The timeslice operator is currently supported in the Metric Explorer's advanced mode, not in basic mode.
+
+#### Syntax
+```
+metrics query | timeslice <avg/min/max/count/sum/rate> over <duration>
+```
+
+Where:
+
+duration is the length of time over which you want to aggregate the data, in milliseconds (ms), seconds (s), minutes (m), hours (h), or days (d).
+
+#### Example
+
+```
+cluster=search metric=cpu_idle | timeslice max over 3m
+```
+
+
+
  
 
 ## topk
-
 
 The `topk` operator applies a specified aggregation function to the time series that match the query selector, and returns the *n* time series that have the highest evaluated value over the query time range.  
 
@@ -898,8 +1096,7 @@ metric=cpu_system |topk (10, max /avg * 2)
 
 You can use the `where` operator to filter data points by value.
 
-where is somewhat analogous to the [filter](https://help.sumologic.com/Metrics/Metric-Queries-and-Alerts/07Metrics_Operators/filter). metrics operator. However, `filter` only supports filtering entire time series; in contrast, `where` allows you to filter by data point value.
-
+`where` is somewhat analogous to the [filter](https://help.sumologic.com/Metrics/Metric-Queries-and-Alerts/07Metrics_Operators/filter) metrics operator. However, `filter` only supports filtering entire time series; in contrast, `where` allows you to filter by data point value.
 
 The `where` operator is currently supported in the Metric Explorer's [advanced mode](https://help.sumologic.com/Metrics/Metric-Queries-and-Alerts/02Metrics_Explorer#About_Advanced_Mode_UI), not in basic mode.
 
@@ -909,9 +1106,6 @@ The `where` operator is currently supported in the Metric Explorer's [advanced m
 ```sql
 selectors | where _value [VALUE BOOLEAN EXPRESSION | REDUCER BOOLEAN EXPRESSION] [_granularity]
 ```
-
-
-Where:
 
 * `_value` is the placeholder for each data point in the time series.
 * `_granularity` is the placeholder value for the length of the quantization bucket in milliseconds.
@@ -928,7 +1122,6 @@ This query returns the data points in which the value is greater than 10 and les
 ```sql
 metric=xyz | where _value > 10 and _value < 30
 ```
-
 
 **Example 2**
 
