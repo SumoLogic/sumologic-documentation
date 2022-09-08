@@ -18,7 +18,7 @@ To [create a metrics visualization](../metric-charts/create-metrics-visualizati
 * Each metrics query must include one or more selectors (filters), which can be either of the following:
     * Sequence of space-separated `tag=value` pairs: `cluster=search node=search-1`
     * Unqualified strings (value with no key):  `statistic`
-* Each query can optionally include one or more [operators](/docs/metrics/metric-queries-alerts/metrics-operators) (avg, count, min, max, sum, and so on): `dep=prod metric=cpu_system | avg`
+* Each query can optionally include one or more [operators](/docs/metrics/metric-queries-alertsoperators) (avg, count, min, max, sum, and so on): `dep=prod metric=cpu_system | avg`
 * Grouping of results by operator is supported, as in this example, which groups average results by node: `dep=prod metric=cpu_system | avg by node`
 * Logical operators are supported, as in this example which uses NOT, OR, and AND: `not node=forge-12 and cluster=forge and (CPU_Idle or Idle_CPU) | avg`
 
