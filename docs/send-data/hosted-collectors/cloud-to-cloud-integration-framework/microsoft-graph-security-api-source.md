@@ -3,7 +3,7 @@ id: microsoft-graph-security-api-source
 title: Microsoft Graph Security API Source
 sidebar_label: Microsoft Graph Security API
 ---
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each
 affected device.
@@ -98,31 +98,37 @@ To configure a Microsoft Graph Security API Source:
     ![Mircrosoft Graph Security API Source input.png](/img/send-data/Microsoft-Graph-Security-API-Source-input.png)
 
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. By default, no metadata fields are set. You can have these set by checking the **Set SIEM metadata fields** option, in step 9 below.
-1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. If you click the checkbox, another option appears: Use **Dynamic Vendor and Product SIEM Metadata**.
+   *  If you don't checkmark **Use Dynamic Vendor and Product SIEM Metadata**, the metadata fields that identify vendor and product (`_siemVendor` and `_siemProduct`) will be set to _Security Graph API_.* If you do checkmark **Use Dynamic Vendor and Product SIEM Metadata**, CSE will retain the original product information. This is helpful when multiple data sources from multiple vendors and products are proxied through the Microsoft Security Graph API and you want the original vendor and product metadata information reflected in CSE. The table below shows the metadata fields that CSE sets.
+   <br/>
+
+   | Field Name | Value   |
+   | :-- | :-- | :-- |
+   | _siemForward  | true |  
+   | _siemVendor  | This field is dynamically set based on the value of the vendor information in the log. <br/> `MS Sec Graph API {{vendorInformation.vendor}}`  |
+   | _siemProduct | This field is dynamically set based on the value of the vendor information in the log. <br/> `MS Sec Graph API{{vendorInformation.provider}}` |  
+   | _siemFormat	| JSON |
+   | _siemEventID| 	This field is dynamically set based on the value of the category key in the log. <br/> `{{category}}` |
+
+  
+2. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
-1. Enter the **Directory (tenant) ID**, **Application (client) ID**, and **Application Client Secret Value** you got from the Application you created in the [prerequisite](#prerequisite) step.
+3. Enter the **Directory (tenant) ID**, **Application (client) ID**, and **Application Client Secret Value** you got from the Application you created in the [prerequisite](#prerequisite) step.
 
-1. **Set SIEM metadata fields**. Check the checkbox to set metadata fields for Cloud SIEM Enterprise. This is beneficial when Microsoft providers are consumed through the Security Graph API. Conversely, when third-party data is consumed, it may be beneficial to not set these fields and instead create a Sumo Logic Ingest Map within CSE to properly set the metadata needed to parse and map your data. When checked, the following metadata fields are set:
+4. The **Polling Interval** is set to 300 seconds by default, you can adjust it based on your needs.
+5. **Use Dynamic Vendor and Product SIEM Metadata**. Check the checkbox to dynamically set the vendor and product metadata information  (`_siemVendor` and `_siemProduct`) so that CSE retains the original product information. This is helpful when multiple data sources from multiple vendors and products are proxied through the Microsoft Security Graph API and you want the original vendor and product metadata information reflected in CSE.
 
-    * `_siemVendor`: [Security Vendor Information](https://docs.microsoft.com/en-us/graph/api/resources/securityvendorinformation?view=graph-rest-1.0) - Vendor
-    * `_siemProduct`: [Security Vendor Information](https://docs.microsoft.com/en-us/graph/api/resources/securityvendorinformation?view=graph-rest-1.0) - Provider
-    * `_siemFormat`: JSON
-    * `_siemEventID`: msgraph.alert
-
-1. The **Polling Interval** is set to 300 seconds by default, you can adjust it based on your needs.
-
-1. When you are finished configuring the Source click **Submit**.
+6. When you are finished configuring the Source click **Submit**.
 
 ### Error types
 
 When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
-|--|--|--|--|--|
+| :-- | :-- | :-- |
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
