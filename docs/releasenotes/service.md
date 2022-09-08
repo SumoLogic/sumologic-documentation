@@ -129,7 +129,7 @@ Update - The Sumo Logic App for [AWS Application Load Balancer](/docs/integratio
 
 New - Care to comment? Now you can. In the [Metrics Explorer,](/docs/metrics/metric-queries-alerts/metrics-explorer) in Advanced Mode you can add comments to a metrics query and comment out portions of the query by using comment formatting. Comments are helpful for troubleshooting during query development, and also for other users who may use or edit your queries at a later date—comments you add will be visible in saved and shared queries. For more information, see [Comments in Metric Queries](/docs/metrics/metric-queries-alerts/metrics-explorer).
 
-Update - The [eval](/docs/metrics/metric-queries-alertsoperators#eval) metrics operator has been enhanced to support a `_granularity` option that provides the length, in milliseconds, of the bucket used for quantization, for use in metric queries.
+Update - The [eval](/docs/metrics/metric-queries-alerts/operators#eval) metrics operator has been enhanced to support a `_granularity` option that provides the length, in milliseconds, of the bucket used for quantization, for use in metric queries.
 
 ---
 ## July 7, 2022

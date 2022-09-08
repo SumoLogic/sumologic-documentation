@@ -6,32 +6,179 @@ description: Learn more about AWS Observability resources created and modified a
 ---
 
 
-Deployment using Terraform and the CloudFormation template creates a number of resources in AWS and in Sumo Logic.
+The CloudFormation template (CFN) creates a number of resources at deployment, in AWS, and in Sumo Logic. You will use the template when setting up the solution. See [Before You Deploy](https://help.sumologic.com/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/03_Before_You_Deploy) for prerequisites and instructions to configure.
 
-* [Resources created in AWS](#resources-created-in-aws)
-* [Terraform resources](#terraform) created in Sumo Logic
-* [AWS CloudFormation resources](#aws-cloudformation) created in Sumo Logic
+* For more information on the solution and features, see [About AWS Observability](https://help.sumologic.com/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/01_About_AWS_Observability).
+
 
 ## Resources created in AWS
 
-Executing the Terraform script and the AWS CloudFormation template creates or modifies the following resources in the AWS account if you are not already collecting data from those AWS services. If you are, the AWS CloudFormation template will simply integrate with your existing collector sources.
+Executing the Terraform script and the AWS CloudFormation template creates or modifies the following resources in the AWS account if you are not already collecting data from those AWS services. If you are, the AWS CloudFormation template will simply integrate with your existing collector sources.
 
-:::note
 In the table below, the "Applicable AWS Observability Dashboards" column lists the app dashboards that make use of the data source in the "AWS Data Source" column.
-:::
 
-|AWS Data Source | AWS Resources Created | Applicable AWS Observability Dashboards |
-|--|--|--|
-| AWS CloudTrail Logs | S3 Bucket<br/>SNS Topic<br/>AWS Trail<br/>SNS Subscription<br/>AWS Lambda<br/>IAM Roles | AWS API Gateway<br/>AWS Lambda<br/>Amazon DynamoDB<br/>Amazon RDS<br/>Amazon ECS<br/>Amazon ElastiCache |
-| Amazon CloudWatch Metrics | AWS Lambda<br/>IAM Roles<br/>Kinesis Firehose<br/>CloudWatch Metrics Stream | AWS API Gateway<br/>AWS Lambda<br/>Amazon DynamoDB<br/>AWS Application Load Balancer <br/>Amazon RDS<br/>Amazon ECS<br/>Amazon ElastiCache<br/>AWS Network Load Balancer |
-| Amazon Application Load Balancer logs | S3 Bucket<br/>SNS Topic<br/>SNS Subscription<br/>AWS Lambda<br/>IAM Role | AWS Application Load Balancer  |
-| AWS Lambda CloudWatch logs | AWS Lambda<br/>IAM Roles | AWS Lambda  |
-| AWS Classic Load Balancer Logs | S3 Bucket<br/>SNS Topic<br/>SNS Subscription<br/>AWS Lambda<br/>IAM Role | AWS Classic Load Balancer |
+<table>
+  <tr>
+   <td>AWS Data Source
+   </td>
+   <td>AWS Resources Created
+   </td>
+   <td>Applicable AWS Observability Dashboards
+   </td>
+  </tr>
+  <tr>
+   <td>AWS CloudTrail Logs
+   </td>
+   <td>S3 Bucket
+<br/>
+SNS Topic
+<br/>
+AWS Trail
+<br/>
+SNS Subscription
+<br/>
+AWS Lambda
+<br/>
+IAM Roles
+   </td>
+   <td>AWS API Gateway
+<br/>
+AWS Lambda
+<br/>
+Amazon DynamoDB
+<br/>
+Amazon RDS
+<br/>
+Amazon ECS
+<br/>
+Amazon ElastiCache
+<br/>
+Amazon SNS
+<br/>
+AWS EC2
+   </td>
+  </tr>
+  <tr>
+   <td>Amazon CloudWatch Metrics Source
+<br/>
+
+   </td>
+   <td>AWS Lambda
+<br/>
+IAM Roles
+<br/>
+
+   </td>
+   <td>AWS API Gateway
+<br/>
+AWS Lambda
+<br/>
+Amazon DynamoDB
+<br/>
+AWS Application Load Balancer
+<br/>
+Amazon RDS
+<br/>
+Amazon ECS
+<br/>
+Amazon ElastiCache
+<br/>
+AWS Network Load Balancer
+<br/>
+Amazon SNS
+<br/>
+AWS EC2
+   </td>
+  </tr>
+  <tr>
+   <td>Amazon Kinesis Firehose Metric Source
+   </td>
+   <td>Kinesis Firehose
+<br/>
+CloudWatch Metrics Stream
+   </td>
+   <td>AWS API Gateway
+<br/>
+AWS Lambda
+<br/>
+Amazon DynamoDB
+<br/>
+AWS Application Load Balancer
+<br/>
+Amazon RDS
+<br/>
+Amazon ECS
+<br/>
+Amazon ElastiCache
+<br/>
+AWS Network Load Balancer
+<br/>
+Amazon SNS
+<br/>
+AWS EC2
+   </td>
+  </tr>
+  <tr>
+   <td>Amazon Application Load Balancer logs
+   </td>
+   <td>S3 Bucket
+<br/>
+SNS Topic
+<br/>
+SNS Subscription
+<br/>
+AWS Lambda
+<br/>
+IAM Role
+   </td>
+   <td>AWS Application Load Balancer
+   </td>
+  </tr>
+  <tr>
+   <td>AWS Lambda CloudWatch logs (Lambda Log Forwarder)
+   </td>
+   <td>AWS Lambda
+<br/>
+IAM Roles
+   </td>
+   <td>AWS Lambda
+   </td>
+  </tr>
+  <tr>
+   <td>AWS CloudWatch Logs (Kinesis Firehose Log source)
+   </td>
+   <td>Kinesis Firehose
+<br/>
+S3 Bucket*
+   </td>
+   <td>AWS Lambda
+   </td>
+  </tr>
+  <tr>
+   <td>AWS Classic Load Balancer Logs
+   </td>
+   <td>S3 Bucket
+<br/>
+SNS Topic
+<br/>
+SNS Subscription
+<br/>
+AWS Lambda
+<br/>
+IAM Role
+   </td>
+   <td>AWS Classic Load Balancer
+   </td>
+  </tr>
+</table>
 
 
-If you're using an existing bucket to collect AWS ELB logs, the Amazon S3 bucket policy for this bucket will be updated to include the policy below, if in case the policy does not already exist:
+* For failed logs only.
 
-```
+If you are using an existing bucket to collect AWS ELB logs, the Amazon S3 bucket policy for this bucket will be updated to include the policy below, if in case the policy does not already exist:
+
+
+```json
 {
 "Sid": "AwsAlbLogs",
 "Effect": "Allow",
@@ -45,52 +192,270 @@ If you're using an existing bucket to collect AWS ELB logs, the Amazon S3 bucket
 }
 ```
 
+
 ## Resources created in Sumo Logic
+
 
 ### Terraform
 
-[Terraform](deploy-with-terraform.md) execution creates the following resources in Sumo Logic.
+[Terraform](https://help.sumologic.com/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/05_Deploy_AWS_Observability/Deploy_with_Terraform) execution creates the following resources in Sumo Logic.
 
-| Resource                                           | Name                                                 |
-|----------------------------------------------------|------------------------------------------------------|
-| CloudTrail Logs Source                             | CloudTrail Logs \<AWS Region\>                        |
-| Application Load Balancer - Access Logs Source     | Elb Logs \<AWS Region\>                               |
-| Metrics - AWS CloudWatch Metric Source             | CloudWatch Metrics \<AWS Region\> \<AWS Service name\> |
-| Metrics - Kinesis Firehose for Metrics Source      | CloudWatch Metrics \<AWS Region\>                     |
-| CloudWatch Logs - Lambda Log forwarder Source      | CloudWatch Logs \<AWS Region\>                        |
-| CloudWatch Logs - Kinesis Firehose for Logs Source | CloudWatch Logs \<AWS Region\>                        |
-| Inventory Source                                   | AWS Inventory \<AWS Region\>                          |
-| Xray Source                                        | AWS Xray \<AWS Region\>                               |
 
-#### AWS CloudFormation
+<table>
+  <tr>
+   <td>Resource
+   </td>
+   <td>Name
+   </td>
+  </tr>
+  <tr>
+   <td>CloudTrail Logs Source
+   </td>
+   <td>CloudTrail Logs &#60;AWS Region&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>Application Load Balancer - Access Logs Source
+   </td>
+   <td>Elb Logs &#60;AWS Region&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>Metrics - AWS CloudWatch Metric Source
+   </td>
+   <td>CloudWatch Metrics &#60;AWS Region&#62; &#60;AWS Service name&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>Metrics - Kinesis Firehose for Metrics Source
+   </td>
+   <td>CloudWatch Metrics &#60;AWS Region&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>CloudWatch Logs - Lambda Log forwarder Source
+   </td>
+   <td>CloudWatch Logs &#60;AWS Region&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>CloudWatch Logs - Kinesis Firehose for Logs Source
+   </td>
+   <td>CloudWatch Logs &#60;AWS Region&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>Inventory Source
+   </td>
+   <td>AWS Inventory &#60;AWS Region&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>Xray Source
+   </td>
+   <td>AWS Xray &#60;AWS Region&#62;
+   </td>
+  </tr>
+</table>
 
-The [AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) template execution creates the following resources in Sumo Logic.
 
-| Resource                                           | Name                                                 |
-|----------------------------------------------------|------------------------------------------------------|
-| App folder | AWS Observability-\<Version\> \<Date of installation\> |
-| Alerts | 	
-AWS Observability \<Version\> \<Date and Time of Installation\> |
-| Hosted Collector | aws-observability-\<AccountAlias\>-\<AccountID\> |
-| Field Extraction Rule | AwsObservabilityFieldExtractionRule<br/>AwsObservabilityAlbAccessLogsFER<br/>AwsObservabilityApiGatewayCloudTrailLogsFER<br/>AwsObservabilityDynamoDBCloudTrailLogsFER<br/>AwsObservabilityLambdaCloudWatchLogsFER<br/>AwsObservabilityRdsCloudTrailLogsFER<br/>AwsObservabilityECSCloudTrailLogsFER<br/>AwsObservabilityElastiCacheCloudTrailLogsFER<br/>AwsObservabilityElbAccessLogsFER<br/>AwsObservabilityEC2CloudTrailLogsFER |
-| Explorer View | 	
-AWS Observability |
-| Metric Rules | AwsObservabilityRDSClusterMetricsEntityRule<br/>AwsObservabilityRDSInstanceMetricsEntityRule<br/>AwsObservabilityNLBMetricsEntityRule |
-| CloudTrail source | cloudtrail-logs-\<AWS::Region\> |
-| CloudWatch logs (HTTP) source | cloudwatch-logs-\<AWS::Region\> |
-| Kinesis Firehose for Metrics | cloudwatch-metrics-\<AWS::Region\> |
-| CloudWatch Metrics source | cloudwatch-metrics-\<AWS::Region\>-ApplicationELB<br/>cloudwatch-metrics-\<AWS::Region\>-ApiGateway<br/>cloudwatch-metrics-\<AWS::Region\>-DynamoDB<br/>cloudwatch-metrics-\<AWS::Region\>-Lambda<br/>cloudwatch-metrics-\<AWS::Region\>-ELB<br/>cloudwatch-metrics-\<AWS::Region\>-RDS<br/>cloudwatch-metrics-\<AWS::Region\>-ECS<br/>cloudwatch-metrics-\<AWS::Region\>-NetworkELB<br/>cloudwatch-metrics-\<AWS::Region\>-ElastiCache<br/>cloudwatch-metrics-\<AWS::Region\>-SQS<br/>cloudwatch-metrics-<AWS::Region>-SNS |
-| Amazon S3 Alb log source | alb-logs-\<AWS::Region\> |
-| Amazon S3 Classic Load Balancer log source | classic-lb-logs-\<AWS::Region\> |
-| Kinesis Firehose for Logs | kinesis-firehose-cloudwatch-logs-\<AWS::Region\> |
-| Inventory Source | inventory-\<AWS::Region\> |
-| XRay Source | xray-\<AWS::Region\> |
-| S3 Bucket Name | aws-observability-logs-\<StackID\> |
-| Fields | account<br/>accountid<br/>region<br/>namespace<br/>tablename<br/>loadbalancer<br/>functionname<br/>apiname<br/>dbidentifier<br/>dbinstanceidentifier<br/>dbclusteridentifier<br/>instanceid<br/>clustername<br/>cacheclusterid<br/>networkloadbalancer<br/>loadbalancername |
 
-:::note
-To improve the solution performance the configurations below are done by
-CloudFormation template.
+### AWS CloudFormation
 
-Sumo Logic hosted collector is created for each AWS Account.
-:::
+The [AWS CloudFormation](https://help.sumologic.com/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/05_Deploy_AWS_Observability/Deploy_with_AWS_CloudFormation) template execution creates the following resources in Sumo Logic.
+
+
+<table>
+  <tr>
+   <td>Resource
+   </td>
+   <td>Name
+   </td>
+  </tr>
+  <tr>
+   <td>App folder
+   </td>
+   <td>AWS Observability-&#60;Version&#62; &#60;Date of installation&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>Alerts
+   </td>
+   <td>AWS Observability &#60;Version&#62; &#60;Date and Time of Installation&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>Hosted Collector
+   </td>
+   <td>aws-observability-&#60;AccountAlias&#62;-&#60;AccountID&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>Field Extraction Rule
+   </td>
+   <td>AwsObservabilityAlbAccessLogsFER
+<br/>
+AwsObservabilityApiGatewayCloudTrailLogsFER
+<br/>
+AwsObservabilityDynamoDBCloudTrailLogsFER
+<br/>
+AwsObservabilityEC2CloudTrailLogsFER
+<br/>
+AwsObservabilityECSCloudTrailLogsFER
+<br/>
+AwsObservabilityElastiCacheCloudTrailLogsFER
+<br/>
+AwsObservabilityElbAccessLogsFER
+<br/>
+AwsObservabilityFieldExtractionRule
+<br/>
+AwsObservabilityGenericCloudWatchLogsFER
+<br/>
+AwsObservabilityLambdaCloudWatchLogsFER
+<br/>
+AwsObservabilityRdsCloudTrailLogsFER
+<br/>
+AwsObservabilitySNSCloudTrailLogsFER
+   </td>
+  </tr>
+  <tr>
+   <td>Explorer View
+   </td>
+   <td>AWS Observability
+   </td>
+  </tr>
+  <tr>
+   <td>Metric Rules
+   </td>
+   <td>AwsObservabilityRDSClusterMetricsEntityRule
+<br/>
+AwsObservabilityRDSInstanceMetricsEntityRule
+<br/>
+AwsObservabilityNLBMetricsEntityRule
+   </td>
+  </tr>
+  <tr>
+   <td>CloudTrail source
+   </td>
+   <td>cloudtrail-logs-&#60;AWS::Region&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>CloudWatch logs (HTTP) source
+   </td>
+   <td>cloudwatch-logs-&#60;AWS::Region&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>Kinesis Firehose for Metrics
+   </td>
+   <td>cloudwatch-metrics-&#60;AWS::Region&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>CloudWatch Metrics source
+   </td>
+   <td>cloudwatch-metrics-&#60;AWS::Region&#62;-ApplicationELB
+<br/>
+cloudwatch-metrics-&#60;AWS::Region&#62;-ApiGateway
+<br/>
+cloudwatch-metrics-&#60;AWS::Region&#62;-DynamoDB
+<br/>
+cloudwatch-metrics-&#60;AWS::Region&#62;-Lambda
+<br/>
+cloudwatch-metrics-&#60;AWS::Region&#62;-EC2
+<br/>
+cloudwatch-metrics-&#60;AWS::Region&#62;-ELB
+<br/>
+cloudwatch-metrics-&#60;AWS::Region&#62;-RDS
+<br/>
+cloudwatch-metrics-&#60;AWS::Region&#62;-ECS
+<br/>
+cloudwatch-metrics-&#60;AWS::Region&#62;-NetworkELB
+<br/>
+cloudwatch-metrics-&#60;AWS::Region&#62;-ElastiCache
+<br/>
+cloudwatch-metrics-&#60;AWS::Region&#62;-SQS
+<br/>
+cloudwatch-metrics-&#60;AWS::Region&#62;-SNS
+   </td>
+  </tr>
+  <tr>
+   <td>Amazon S3 Alb log source
+   </td>
+   <td>alb-logs-&#60;AWS::Region&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>Amazon S3 Classic Load Balancer log source
+   </td>
+   <td>classic-lb-logs-&#60;AWS::Region&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>Kinesis Firehose for Logs
+   </td>
+   <td>kinesis-firehose-cloudwatch-logs-&#60;AWS::Region&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>Inventory Source
+   </td>
+   <td>inventory-&#60;AWS::Region&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>XRay Source
+   </td>
+   <td>xray-&#60;AWS::Region&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>S3 Bucket Name
+   </td>
+   <td>aws-observability-logs-&#60;StackID&#62;
+   </td>
+  </tr>
+  <tr>
+   <td>Fields
+   </td>
+   <td>account
+<br/>
+accountid
+<br/>
+apiname
+<br/>
+cacheclusterid
+<br/>
+clustername
+<br/>
+dbclusteridentifier
+<br/>
+dbidentifier
+<br/>
+dbinstanceidentifier
+<br/>
+functionname
+<br/>
+instanceid
+<br/>
+loadbalancer
+<br/>
+loadbalancername
+<br/>
+namespace
+<br/>
+networkloadbalancer
+<br/>
+region
+<br/>
+tablename
+<br/>
+topicname
+   </td>
+  </tr>
+</table>
+
+To improve the solution performance the configurations below are done by CloudFormation template.
+
+* Sumo Logic hosted collector is created for each AWS Account.

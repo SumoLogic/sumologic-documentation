@@ -105,7 +105,7 @@ Filters, sometimes referred to as selectors, narrow the scope of your query. If 
 
 You can use metric operators of various sorts to process the metric data that matches your selectors. For example, you can use aggregation operators like `avg`, `max`, `min`, `sum`, and `count`; statistical operators like `pct` and `rate`;  and select time series that have the highest or lowest values of a particular metric using `topk` and `bottomk`. 
 
-For more information, see [Metric Operators](/docs/metrics/metric-queries-alertsoperators).
+For more information, see [Metric Operators](/docs/metrics/metric-queries-alerts/operators).
 
 ## Creating a query
 
