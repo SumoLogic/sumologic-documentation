@@ -387,7 +387,7 @@ You can select the timing metric type in the **statistic** dropdown on the dashb
 
 ### RUM Performance Analytics Application/Service
 
-The **RUM Performance Analytics Application/Service** dashboards show the page performance and requests for a cohort of users specified by selecting the desired combination of dimensions.
+The **RUM Performance Analytics Application** and **Service** dashboards show the page performance and requests for a cohort of users specified by selecting the desired combination of dimensions.
 
 Use this dashboard to:
 * Filter data for specific combinations of application, browser, operating system, and/or geolocation.
