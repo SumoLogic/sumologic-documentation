@@ -130,7 +130,7 @@ New - We’re pleased to announce our new in-product Kubernetes onboarding exper
 ---
 ## July 14, 2022 (Collection)
 
-New - We’re pleased to announce the release of the [GCP Metrics Source](docs/send-data/hosted-collectors/gcp-metrics-source.md). The new source gives you visibility into Google Cloud Platform (GCP) infrastructure and managed services using an integrated Google Service account. You can collect metrics from 35 native GCP services, as well as from custom services running on GCP.
+New - We’re pleased to announce the release of the [GCP Metrics Source](docs/send-data/hosted-collectors/google-source/gcp-metrics-source.md). The new source gives you visibility into Google Cloud Platform (GCP) infrastructure and managed services using an integrated Google Service account. You can collect metrics from 35 native GCP services, as well as from custom services running on GCP.
 
 ---
 ## July 13, 2022 (Manage)
