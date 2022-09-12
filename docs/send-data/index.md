@@ -23,7 +23,7 @@ Learn how to send data to Sumo Logic. In this section, we will introduce the fol
   <h3>Installed Agents</h3>
   <ul>
   <li><a href="/docs/send-data/installed-collectors">Installed Collectors</a></li>
-  <li><a href="docs/send-data/sumo-distribution-opentelemetry.md">OpenTelemetry Distribution</a></li>
+  <li><a href="/docs/send-data/sumo-distribution-opentelemetry">OpenTelemetry Distribution</a></li>
   </ul>
   </div>
 </div>
