@@ -77,7 +77,7 @@ Locate and install the app you need from the App Catalog. If you want to see a p
 1. Select the version of the service you are using and click **Add to Library**.
 
     :::note
-    Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
+    Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
     :::
 
 3. To install the app, complete the following fields.
@@ -112,7 +112,7 @@ Replace sample image with panel from your App Dashboard, using red box callout:
 
 
 
-Use the instructions from [Install Sumo Logic Apps](../../get-started/library/install-apps.md) to install the "Partner" App.
+Use the instructions from [Install Sumo Logic Apps](/docs/get-started/sumo-logic-apps#install-apps-from-the-library) to install the "Partner" App.
 
 ## Dashboard name
 Copy, paste, and fill in this dashboard section for each dashboard. Enter a dashboard description from above.

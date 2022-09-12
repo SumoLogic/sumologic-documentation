@@ -17,69 +17,30 @@ module.exports = {
   docs: [
     {
       type: 'category',
-      label: 'Get Started',
+      label: 'Welcome to Sumo Logic',
       collapsible: true,
-      collapsed: true,
+      collapsed: false,
       link: {type: 'doc', id: 'get-started/index'},
       items: [
+        'get-started/onboarding',
         'get-started/sign-up',
         'get-started/system-requirements',
         'get-started/manage-account',
-        {
-          type: 'category',
-          label: 'Checklists',
-          collapsible: true,
-          collapsed: true,
-          items: [
-            'get-started/checklist',
-            'get-started/checklist-analyst',
-            'get-started/checklist-admins',
-          ]
-        },
-        'get-started/get-help',
+        'get-started/analyst',
+        'get-started/admin',
+        'get-started/library',
+        'get-started/sumo-logic-apps',
+        'get-started/sumo-logic-ui',
         'get-started/keyboard-shortcuts',
         'get-started/glossary',
-        {
-          type: 'category',
-          label: 'FAQs',
-          collapsible: true,
-          collapsed: true,
-          items: [
-            'get-started/sumo-faqs',
-            'get-started/certification-faqs',
-          ]
-        },
-        'get-started/sumo-logic-components',
-        'get-started/sumo-logic-ui',
-        {
-          type: 'category',
-          label: 'Library',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'get-started/library/index'},
-          items: [
-            'get-started/library/manage-library',
-            'get-started/library/search-the-library',
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Sumo Logic Apps',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'get-started/library/sumo-logic-apps'},
-          items: [
-            'get-started/library/install-apps',
-            'get-started/library/run-searches-from-apps',
-            'get-started/library/log-analysis-quickstart-app'
-          ]
-        },
+        'get-started/help',
+        'get-started/faq',
       ],
     },
     {
 // *** QUICKSTARTS & TUTORIALS
       type: 'category',
-      label: 'Quickstarts and Tutorials',
+      label: 'Quickstart Tutorials',
       collapsible: true,
       collapsed: true,
       link: {type: 'doc', id: 'quickstart/index'},
@@ -962,7 +923,8 @@ module.exports = {
   // *** SEND DATA: collectors, sources
   data: [
     'send-data/index',
-    'send-data/collectors-sources',
+    'send-data/choose-collector-source',
+    'send-data/setup-wizard',
     {
       type: 'category',
       label: 'Installed Collectors',
@@ -2134,6 +2096,7 @@ module.exports = {
         'contributing/markdown-features',
         'contributing/style-guide',
         'contributing/code-of-conduct',
+        'get-started/glossary',
         'contributing/translations',
         {
           type: 'category',

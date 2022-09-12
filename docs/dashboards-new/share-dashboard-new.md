@@ -32,7 +32,7 @@ This section walks you through the process of sharing a dashboard with other peo
 
 To share a dashboard within your organization, do the following:
 
-1. Click the share icon on the dashboard or share it from the [Library](/docs/get-started/library/sumo-logic-library).
+1. Click the share icon on the dashboard or share it from the [Library](/docs/get-started/library).
 
     ![share icon.png](/img/dashboards-new/share-dashboard-new/share-icon.png)
 

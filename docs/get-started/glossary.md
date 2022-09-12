@@ -3,6 +3,7 @@ id: glossary
 title: Glossary
 ---
 
+This glossary provides definitions for technical terms used in Sumo Logic.
 
 ## A
 
@@ -74,7 +75,7 @@ Refers to the uniqueness of values in a database column or metric dimension. Hig
 
 During the installation process, use the clobber flag in situations where you're creating a new Collector that will use a name that is already in use by another Collector. Clobber deletes (clobbers) the existing collector with the same name.
 
-**[Cloud](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/Sumo-Logic-Components)**
+**[Cloud](/docs/get-started#sumo-logic-cloud)**
 
 The Sumo Logic Cloud is a secure, scalable repository for all of your operations, security, compliance, development, and other log data. The Sumo Logic Cloud stores, indexes, parses, and analyzes data, and provides unlimited horsepower with elastic scalability.
 

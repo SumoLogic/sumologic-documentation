@@ -147,7 +147,7 @@ Under the **More Actions** menu you can:
 * **Copy Path**. Copy the path of the Monitor to your computer clipboard.
 * **Duplicate**. Make another Monitor based on the same settings.
 * **Move**. Move the Monitor to a different path.
-* **Export**. Provides JSON of the Monitor, allowing you to transfer content within Sumo Logic by copying this JSON, then pasting it into the import dialog in the [Library](/docs/get-started/library/sumo-logic-library) location you choose. This JSON format may change without notice. 
+* **Export**. Provides JSON of the Monitor, allowing you to transfer content within Sumo Logic by copying this JSON, then pasting it into the import dialog in the [Library](/docs/get-started/library) location you choose. This JSON format may change without notice. 
 * **Delete**.
 
 ![monitor more actions](/img/monitors/monitor-actions.png)

@@ -21,7 +21,7 @@ You will need to remember the path where you point the save operator to put the 
 ## Rules
 
 * The file size limit for saved data is 500MB.
-* Queries that use the Save operator can't be [pinned](../../../get-started/library/search-the-library.md).
+* Queries that use the Save operator can't be [pinned](/docs/get-started/library#search-the-library).
 
 ## Examples
 
@@ -77,11 +77,11 @@ If you don't use "append" the previously saved data will be overwritten.
 Let's say that you'd like to append to your **newDailyUsers** file each day by scheduling this search to run every 24 hours:
 
 ```sql
-| parse "name=*," as name 
-| parse "action=*," as action 
-| parse "date=*," as date 
-| where action="sign-up" 
-| first(date) as date, first(action) as action by name 
+| parse "name=*," as name
+| parse "action=*," as action
+| parse "date=*," as date
+| where action="sign-up"
+| first(date) as date, first(action) as action by name
 | save append myFolder/mySubFolder/newDailyUsers
 ```
 
