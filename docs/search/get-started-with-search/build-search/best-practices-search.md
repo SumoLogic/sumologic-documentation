@@ -130,4 +130,4 @@ _sourceCategory=Apache/Access and GET | parse "\"GET * HTTP/1.1\"\" * * \"\"*\"\
 ## Pin searches with long time ranges
 
 A query with a longer time range can run past the default time window for Sumo Logic. To protect against an interruption in a query with a
-significant time range, [pin it](../../../get-started/library/search-the-library.md#pinned-searches). A pinned search can run in the background for up to 24 hours.
+significant time range, [pin it](/docs/get-started/library#pinned-searches). A pinned search can run in the background for up to 24 hours.

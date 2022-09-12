@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Learn how to send data to Sumo Logic. In this section, we will introduce the following concepts:
 
-* [Design Your Deployment: Choose a Collector and Source](/docs/send-data/collectors-sources)
+* [Design Your Deployment: Choose a Collector and Source](/docs/send-data/choose-collector-source)
 * Installed Agents:
    * [Installed Collectors](/docs/send-data/installed-collectors)
    * [OpenTelemetry distribution](docs/send-data/sumo-distribution-opentelemetry.md)

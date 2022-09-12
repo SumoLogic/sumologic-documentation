@@ -12,7 +12,7 @@ Chunks are ideally created at a line break depending on the Source type, protoco
 
 See [Collecting Multiline Logs](docs/send-data/reference-information/collect-multiline-logs.md) for information on caveats and your configuration options.
 
-For additional information on collecting large messages review the relevant [Source's documentation](/docs/send-data/collectors-sources).
+For additional information on collecting large messages review the relevant [Source's documentation](/docs/send-data/choose-collector-source).
 
 ## Query to Identify Truncated Logs 
 

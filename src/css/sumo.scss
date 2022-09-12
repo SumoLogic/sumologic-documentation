@@ -874,23 +874,17 @@ html[data-theme='dark'] .node polygon {
   grid-gap: 30px;
 }
 
-.box1 {
-  grid-column: 1;
-  grid-row: 1;
-  padding: 8px;
-  font-size: .9rem;
-}
-
-.box1 h2,
-.box2 h2,
-.box3 h2,
-.box4 h2,
-.box5 h2,
-.box6 h2,
-.box7 h2,
-.box8 h2,
-.box9 h2,
-.box10 h2 {
+.box1 h3,
+.box2 h3,
+.box3 h3,
+.box4 h3,
+.box5 h3,
+.box6 h3,
+.box7 h3,
+.box8 h3,
+.box9 h3,
+.box10 h3
+.boxwidetop h3 {
   margin-top: 24px;
 }
 
@@ -903,8 +897,16 @@ html[data-theme='dark'] .node polygon {
 .box7 img,
 .box8 img,
 .box9 img,
-.box10 img {
+.box10 img
+.boxwidetop img {
   margin-top: 16px;
+}
+
+.box1 {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 8px;
+  font-size: .9rem;
 }
 
 .box2 {

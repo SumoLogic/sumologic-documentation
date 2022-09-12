@@ -1,8 +1,9 @@
 ---
 id: system-requirements
+title: Sumo Logic System Requirements
+sidebar_label: System Requirements
 ---
 
-# System Requirements
 
 Sumo Logic has a few system requirements, which are documented in the following topics.
 

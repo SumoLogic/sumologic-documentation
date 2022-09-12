@@ -124,7 +124,7 @@ To install the Sumo Logic App for Amazon Inspector:
 3. To install the app, complete the following fields.
     * **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a [custom data filter](/docs/get-started/library/run-searches-apps.md). 
+        * Choose **Enter a Custom Data Filter**, and enter a [custom data filter](/docs/get-started/sumo-logic-apps#custom-data-filters). 
     * **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 

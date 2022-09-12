@@ -10,7 +10,7 @@ With local configuration file management, you cannot use the API or the web ap
 
 ## Step 1. Determine the Sources you need
 
-Depending on the data you’re planning to upload to Sumo Logic, there are several Sources you can configure. For details, see [Sources](/docs/send-data/collectors-sources).
+Depending on the data you’re planning to upload to Sumo Logic, there are several Sources you can configure. For details, see [Sources](/docs/send-data/choose-collector-source).
 
 ## Step 2. Build the Source JSON configuration file(s)
 

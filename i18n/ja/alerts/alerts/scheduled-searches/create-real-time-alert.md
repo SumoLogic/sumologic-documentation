@@ -54,7 +54,7 @@ The results from your search will vary based on the type of alert selected. The 
 
 To set up a Real Time alert:
 
-1. [Save a search](../../search/get-started-with-search/search-basics/save-search.md). 
+1. [Save a search](/docs/search/get-started-with-search/search-basics/save-search). 
 1. Click **Schedule this search**.
 
     ![RealTimeAlert.png](/img/alerts/RealTimeAlert.png)

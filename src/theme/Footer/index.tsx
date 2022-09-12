@@ -126,11 +126,11 @@ function Footer(): JSX.Element | null {
             ))}
           </div>
         )}
-        
+
         </div>
         {(copyright) && (
           <div className='footer__bottom'>
-            
+
             {copyright ? (
               <div
                 className='footer__copyright' // Developer provided the HTML, so assume it is safe.

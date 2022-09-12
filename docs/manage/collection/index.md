@@ -32,7 +32,7 @@ You'll need the Manage or View Collectors [role capability](../users-and-roles/r
 
 ## Collector Actions
 
-* [Add a Source](/docs/send-data/collectors-sources)
+* [Add a Source](/docs/send-data/choose-collector-source)
 * [Edit a Collector](edit-collector.md)
 * [Delete a Collector](delete-collector-source.md)
 * [Download a JSON configuration file](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for scripting or backup

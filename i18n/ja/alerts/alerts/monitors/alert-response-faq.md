@@ -52,7 +52,7 @@ Log Fluctuation and Dimensional Explanation cards work on log data. As a result,
 
 ## I don’t see Log Fluctuation Card for logs-based Alert?
 
-Sometimes because of internal system errors Log Fluctuation cards might not appear. If the problem persists please [contact the Sumo Logic support team](../../get-started/help-menu.md).
+Sometimes because of internal system errors Log Fluctuation cards might not appear. If the problem persists please [contact the Sumo Logic support team](/docs/get-started/help).
 
 ## I only see "Others" as a signature in Log Fluctuation Card. Is that expected?
 
