@@ -210,6 +210,7 @@ module.exports = {
                 label: 'Getting Started',
                 items: [
                   {
+              //    className: 'horizontal-rule',
                     label: 'Get Started',
                     sublabel: 'Accounts, concepts, & more',
                     to: '/docs/get-started',
@@ -241,7 +242,7 @@ module.exports = {
               },
               {
                 // 1
-                label: 'Metrics and Logs',
+                label: 'Search, Metrics, Logs',
                 items: [
                   {
                     label: 'Search and Logs',
