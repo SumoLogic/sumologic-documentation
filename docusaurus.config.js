@@ -242,7 +242,7 @@ module.exports = {
               },
               {
                 // 1
-                label: 'Search, Metrics, Logs',
+                label: 'Metrics and Logs',
                 items: [
                   {
                     label: 'Search and Logs',
