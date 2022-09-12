@@ -43,7 +43,7 @@ To configure a RUM HTTP Traces source:
 
 1. From Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Select **RUM HTTP Traces**. Complete source and advanced options. A list of FAQs on the page provides help for these options.<br/><img src={useBaseUrl('img/rum/rum-icon.png')} alt="Real User Monitoring" width="120"/><br/>
+1. Select **RUM HTTP Traces**. <br/><img src={useBaseUrl('img/rum/rum-icon.png')} alt="Real User Monitoring" width="120"/>
 1. Under **Source Type: RUM HTTP Traces**, enter the following information:
    * **Name** for the Source.
    * **Description** for the Source (optional).
