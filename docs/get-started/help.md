@@ -42,7 +42,7 @@ Depending on your account type, you may also log a ticket with Sumo Logic Suppor
 
 ## Training and Certification
 
-Sumo Logic provides training for your enterprise needs. For more information on upcoming training classes, visit [www.sumologic.com/training](https://www.sumologic.com/training/) or email [training@sumologic.com](training@sumologic.com).
+Sumo Logic provides training for your enterprise needs. For more information on upcoming training classes, visit [www.sumologic.com/training](https://www.sumologic.com/training/) or email [training@sumologic.com](mailto:training@sumologic.com).
 
 You can learn Sumo Logic courses at your own pace, anywhere, without time constraints, with our Self-Paced eLearning. By the end of the self-paced program, you will be prepared to pass your Sumo Logic certification exam.
 
