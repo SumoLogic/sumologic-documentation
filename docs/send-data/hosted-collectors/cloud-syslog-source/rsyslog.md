@@ -1,6 +1,7 @@
 ---
 id: rsyslog
 title: rsyslog
+description: Learn how to configure your server to send syslog data with rsyslog.
 ---
 
 

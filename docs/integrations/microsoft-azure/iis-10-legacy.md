@@ -21,9 +21,9 @@ IIS 10 App is backward compatible with IIS 8.5. IIS 10 App uses default log form
 * For information on how to configure HTTP Error Logs, and for explanations on the various HTTP Error Log fields and their significance see this [link](https://support.microsoft.com/en-us/help/820729/error-logging-in-http-apis).
 
 This section covers the following default log formats for IIS 10 and IIS 8.5:
-* [IIS Access Logs (W3C format)](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#IIS_Access_Logs_(W3C_format))
-* [HTTP Error Logs](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#HTTP_Error_Logs)
-* [Performance Logs](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#Performance_Logs)
+* [IIS Access Logs (W3C format)](#IIS-Access-Logs-W3C-format))
+* [HTTP Error Logs](#HTTP-Error-Logs)
+* [Performance Logs](#Performance-Logs)
 
 IIS Log files are generated as local files. For a standard Windows Server, the default log location is as follows:
 ```bash
@@ -273,13 +273,13 @@ This section demonstrates how to configure sources for the following log types:
 
 #### Configure Source for IIS Access Logs
 
-This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/installed-collectors/Remote-File-Source), but the configuration is more complex.
+This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/Remote-File-Source), but the configuration is more complex.
 
 Sumo Logic recommends using a Local File Source whenever possible.
 
 To configure a local file source for IIS Access Logs, do the following:
 
-1. Configure a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+1. Configure a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 2. Specify Local File Source Fields as follows:
     1. **Name**: Required (for example, "IIS")
     2. **Description**. (Optional)
@@ -301,14 +301,14 @@ After a few minutes, your new Source should be propagated down to the Collector 
 
 #### Configure Source for HTTP Error Logs
 
-This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/installed-collectors/Remote-File-Source), but the configuration is more complex.
+This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/Remote-File-Source), but the configuration is more complex.
 
 
 Sumo Logic recommends using a Local File Source whenever possible.
 
 To configure a local file source for HTTP Error Logs, do the following:
 
-1. Configure a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+1. Configure a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 2. Specify the Local File Source Fields as follows:
     1. **Name**: Required (for example, "HTTP Error Logs")
     2. **Description**. (Optional)
@@ -336,13 +336,13 @@ Sumo Logic recommends using a Local Windows Performance source whenever possible
 
 Use the appropriate source for your environment:
 
-* [Local Windows Performance Monitor Log Source](/docs/send-data/Sources/installed-collectors/Local-Windows-Performance-Monitor-Log-Source)
-* [Remote Windows Performance Monitor Log Source](/docs/send-data/Sources/installed-collectors/Remote-Windows-Performance-Monitor-Log-Source)
+* [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Performance-Monitor-Log-Source)
+* [Remote Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/Remote-Windows-Performance-Monitor-Log-Source)
 
 
 To configure a Source for IIS Performance Logs, do the following:  
 
-1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/Sources/installed-collectors/Local-Windows-Performance-Monitor-Log-Source).
+1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Performance-Monitor-Log-Source).
 2. Configure the Local Windows Performance Source Fields as follows:
 * **Name**: Required (for example, "IIS Performance")
 * **Source Category** (Required). For example, **Webserver/IIS/PerfCounter**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
@@ -509,7 +509,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

@@ -1,6 +1,7 @@
 ---
 id: configure-telegraf-output-plugin
 title: Configure Telegraf Output Plugin for Sumo Logic
+description: Learn how to configure the Telegraf output plugin for Sumo Logic to send metrics to Sumo Logic.
 ---
 
 

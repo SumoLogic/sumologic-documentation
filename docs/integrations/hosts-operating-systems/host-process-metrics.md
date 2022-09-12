@@ -234,7 +234,7 @@ metric=procstat_cpu_usage host.name=*  process.executable.name=* | avg by host.n
 
 The next few sections provide instructions for installing the Sumo App and Alerts for hosts and processes, as well as the descriptions of each of the app dashboards. These instructions assume you have already set up a collection as described in Collecting Metrics for Host and Processes.
 
-Sumo Logic has provided out of the box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your hosts and processes. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your hosts and processes. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
 For details on the individual alerts, see [last section](#host-and-process-metrics-alerts).
 
@@ -366,7 +366,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**. \
 
 7
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
@@ -490,7 +490,7 @@ Use this dashboard to:
 
 ### For Host Metrics
 
-Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 | Alert Name                                    | Alert Description                                                                                                                        | Alert Condition | Recover Condition |
 |-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|-----------------|-------------------|
@@ -508,7 +508,7 @@ Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/d
 
 ### For Process Metrics
 
-Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 | Alert Name                                   | Alert Description                                                                                                      | Alert Condition | Recover Condition |
 |----------------------------------------------|------------------------------------------------------------------------------------------------------------------------|-----------------|-------------------|

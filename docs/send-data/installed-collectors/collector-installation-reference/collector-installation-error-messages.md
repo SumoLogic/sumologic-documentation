@@ -1,6 +1,7 @@
 ---
 id: collector-installation-error-messages
 title: Collector Installation Error Messages
+description: Use this information to help troubleshoot issues that arise during installation using any of the installation methods.
 ---
 
 

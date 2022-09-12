@@ -140,7 +140,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 8. **Advanced Options for Logs**.<br/><img src={useBaseUrl('img/integrations/google/GCP-advanced-options-Jan-22.png')} alt="Google integrations" />
    * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
    * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-   * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/sources/reference-information/time-reference) for more information.
+   * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
 9. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/manage/collection/processing-rules/create-processing-rule.md).
 10. When you are finished configuring the Source, click **Save**.
 
@@ -174,7 +174,7 @@ We recommend the following:
 
 ### Create export of Cloud Audit logs from Google Logging
 
-In this step you export logs to the Pub/Sub topic you created in the previous step.
+In this step, you export logs to the Pub/Sub topic you created in the previous step.
 
 1. Go to **Logging** and click **Logs Router**.<br/><img src={useBaseUrl('img/integrations/google/GCP_logging_1.png')} alt="Google integrations" />
 2. Click **Create Sink**.<br/><img src={useBaseUrl('img/integrations/google/sink.png')} alt="Google integrations" />
@@ -182,19 +182,19 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
    1. Enter a Sink Name. For example, "gce-vm-instance".
    2. Select "Cloud Pub/Sub" as the **Sink Service**.
    3. Set **Sink Destination** to the Pub/Sub topic you created in the Google Cloud Platform Source procedure. For example, "pub-sub-logs".
-   4. In **Choose logs to include in sink** section, use `logName` Filter, as follows:
+   4. In **Choose logs to include in sink** section, use `logName` Filter as follows:
    ```bash
    logName="projects/<Project_Id>/logs/cloudaudit.googleapis.com%2Factivity"
    #replace <Project_Id> with your project Id
    ```
-   5. Click Create Sync.
+   5. Click **Create Sync**.
 
 
 
-## Create a Topic and a Subscription with Pub/Sub in Google Cloud
+## Create Topic and Subscription with Pub/Sub in Google Cloud
 
 1. From Google Cloud console’s main navigation, choose Pub/Sub.
-2. Click Create a Topic.<br/><img src={useBaseUrl('img/integrations/google/create-topic.png')} alt="Google integrations" />
+2. Click Create Topic.<br/><img src={useBaseUrl('img/integrations/google/create-topic.png')} alt="Google integrations" />
 3. Set the topic name. For example, “gcp-all-sumo”, click **Create Topic**.<br/><img src={useBaseUrl('img/integrations/google/create-topic1.png')} alt="Google integrations" />
 4. From the Topics dashboard, click on the Pub/Sub menu and select the newly created topic.<br/><img src={useBaseUrl('img/integrations/google/create-topic2.png')} alt="Google integrations" />
 5. Select Create Subscription. <br/><img src={useBaseUrl('img/integrations/google/create-topic3.png')} alt="Google integrations" />
@@ -216,7 +216,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

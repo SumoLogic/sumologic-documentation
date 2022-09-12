@@ -3,6 +3,7 @@ id: schedule-search
 title: Schedule a Search
 sidebar_label: Schedule a Search
 description: When you save a search, you can add a schedule to run it at a regularly scheduled time, and add alerts.
+hide_table_of_contents: true
 ---
 
 When you save a search, you can add a schedule to run it at a regularly scheduled time, and add alerts. For alert types, see [Scheduled Searches](/docs/alerts/scheduled-searches). 
@@ -37,7 +38,7 @@ You can create a scheduled search at the time you create a search, or edit a s
     :::
 
     * For users in timezones that are +/- 30 minutes, the minute is based on UTC. So for customers in the IST timezone, there will be a 30-minute offset. So instead of starting at :00, it will be :30.
-    * **Custom Cron**. Enter a custom CRON expression. The run frequency for a CRON expression must not be less than every 15 minutes. For details, see [Cron Examples and Reference](../../send-data/sources/installed-collectors/script-source/cron-examples-reference.md). 
+    * **Custom Cron**. Enter a custom CRON expression. The run frequency for a CRON expression must not be less than every 15 minutes. For details, see [Cron Examples and Reference](docs/send-data/installed-collectors/sources/script-source/cron-examples-reference.md). 
     * **Weekly**. The search will run every week. You may also select the day of the week that it runs and the time. 
     * **Daily.** You may also select that your search runs every **Day**, every **Weekday (Mon-Fri)** or **Weekend (Sat-Sun)** and the time. A Daily search will cover exactly 24 hours of activity. You can change the schedule whenever you'd like. Be aware that a scheduled search will run according to the time zone set on your computer at the time you configure the search. For example, if you are in San Francisco and set a search to run at 7:00 AM, it will run at 7:00 AM PST. If you then fly to New York, and your computer resets to EST, when you schedule a new search at 7:00 AM, it will run at 7:00 AM EST. These two searches will run at different times.
     * **Every 2, 4, 6, 8, or 12 Hours.** The search will run for the first time at the top of the hour you choose. * **Hourly.** The search will run every hour. We guarantee that hourly searches run every hour but not exactly at :00.
@@ -74,7 +75,7 @@ Consider adding an offset to your time range to ensure that all recent events ar
    * **Every time a search is complete.** Select this option if you want an email with search results every time the search is run (depending on the frequency, you could get an email every 15 minutes, every hour, or once a day).
    * **If the following condition is met**. Select this option if you'd like to set up a scheduled search that alerts you to specific events.
 
-     * **Number of results.** Depending on the search, set a condition to receive an email by the number of results. If your saved search returns log messages, then the alert will use the number of messages you specify. If your query produces aggregate results, the alert will use the number of rows or aggregates (or groups) and will not trigger on the number of raw results. For more control of your query, you can build in a threshold (for example `| where _count\> 30`) into the Search itself and set the alerts condition here to Greater than 0. That way the query will generate results if the expected condition is met. See this [FAQ](faqs/real-time-alert-with-greater-than-results.md) for an example.
+     * **Number of results.** Depending on the search, set a condition to receive an email by the number of results. If your saved search returns log messages, then the alert will use the number of messages you specify. If your query produces aggregate results, the alert will use the number of rows or aggregates (or groups) and will not trigger on the number of raw results. For more control of your query, you can build in a threshold (for example `| where _count\> 30`) into the Search itself and set the alerts condition here to Greater than 0. That way the query will generate results if the expected condition is met. See this [FAQ](/docs/alerts/scheduled-searches/faq#real-time-alert-with-greater-than-1000-results) for an example.
 
        * **Equal to.** Choose if there is an exact number of records in a search result at which you want to be notified.
        * **Greater than.** Choose if you want to be notified only if the search results include greater than the number of messages or groups you set in the text box.

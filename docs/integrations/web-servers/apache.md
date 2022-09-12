@@ -376,7 +376,7 @@ Apache logs (access logs and error logs) are stored in log files.
 
 Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Sumo Logic Installed collectors,](/docs/send-data/Installed-Collectors) which requires you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work.
 
-1. **Configure Apache to log to a local file(s)**. Apache logs written to a log file can be collected via the [Local File Source of a](/docs/send-data/Sources/installed-collectors/Local-File-Source) Sumo Logic Installed collector. Before you can configure Sumo Logic to ingest logs, you must configure the logging of access logs and error logs via the instructions described in their [documentation](https://httpd.apache.org/docs/2.4/logs.html).
+1. **Configure Apache to log to a local file(s)**. Apache logs written to a log file can be collected via the [Local File Source of a](/docs/send-data/installed-collectors/sources/local-file-source) Sumo Logic Installed collector. Before you can configure Sumo Logic to ingest logs, you must configure the logging of access logs and error logs via the instructions described in their [documentation](https://httpd.apache.org/docs/2.4/logs.html).
 
 To configure the Apache log file(s), locate your local **httpd.conf** configuration file in the Apache directory. After determining the location of the conf file, modify the **httpd.conf** configuration file logging parameters if required.
 
@@ -388,7 +388,7 @@ For error logs, following directives are to be noted:
 * LogLevel: to control the number of messages logged to the error_log
 2. **Configure an Installed Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 3. **Configure a Local File Source for Apache access logs**. To add a Local File Source for Apache access log do the following
-   1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) in the installed collector configured in the previous step.
+   1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:
    * **Name.** (Required)
    * **Description.** (Optional)
@@ -409,7 +409,7 @@ For error logs, following directives are to be noted:
    * Apache Access logs are single-line logs, uncheck **Detect messages spanning multiple lines.**
    3. Click **Save**. At this point, Apache access logs should start flowing into Sumo Logic.
 4. **Configure a Local File Source for Apache error logs**. To add a Local File Source for Apache error log do the following
-   1. Add a[ Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) in the installed collector configured in the previous step.
+   1. Add a[ Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:
     * **Name.** (Required)
     * **Description.** (Optional)
@@ -542,7 +542,7 @@ To install the app, do the following:
      * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 5. Click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -684,7 +684,7 @@ Use this dashboard to:
 
 ## Apache Alerts
 
-Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 <details><summary>Click to expand. Here are the alerts available for Apache.</summary>
 

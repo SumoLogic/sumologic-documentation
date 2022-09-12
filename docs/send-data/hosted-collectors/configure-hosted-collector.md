@@ -2,7 +2,7 @@
 id: configure-hosted-collector
 title: Configure a Hosted Collector
 sidebar_label: Configure a Hosted Collector
-description: Hosted Collectors allow you to upload data stored in the cloud to Sumo Logic.
+description: Set up Hosted Collectors so you can move data from an Amazon S3 bucket or HTTP Source to Sumo Logic.
 ---
 
 :::note
@@ -39,4 +39,4 @@ Steps to configure a Hosted Collector:
 
 Once you have configured your Hosted Collector, the next step is to configure Sources. 
 
-For instructions, go to [Sources](/docs/send-data/sources), and click the link **Sources for Hosted Collectors**. 
+For instructions, go to [Sources](/docs/send-data/choose-collector-source), and click the link **Sources for Hosted Collectors**. 

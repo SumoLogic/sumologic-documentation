@@ -1,6 +1,7 @@
 ---
 id: vmware-airwatch-integration
 title: VMware AirWatch Integration for Sumo Logic
+description: This page shows you how to configure AirWatch cloud syslog events for use with Sumo Logic.
 ---
 
 

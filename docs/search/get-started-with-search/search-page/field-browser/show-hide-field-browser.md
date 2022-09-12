@@ -1,6 +1,7 @@
 ---
 id: show-hide-fields-in-field-browser
 title: Show and Hide Fields in the Field Browser
+description: Change the fields that are displayed in search results by showing or hiding in the Field Browser.
 ---
 
 

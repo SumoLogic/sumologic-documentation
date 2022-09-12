@@ -189,7 +189,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
    </td>
    <td>Yes
    </td>
-   <td>Contains the <a href="https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Okta_Source#configParameters">configuration parameters</a> for the Source.
+   <td>Contains the <a href="https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Okta_Source#configParameters">configuration parameters</a> for the Source.
    </td>
    <td>
    </td>

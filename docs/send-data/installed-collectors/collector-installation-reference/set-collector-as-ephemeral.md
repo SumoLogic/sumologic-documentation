@@ -1,6 +1,7 @@
 ---
 id: set-collector-as-ephemeral
 title: Set a Collector as Ephemeral
+description: During the installation process, if a Collector is flagged as ephemeral, the Collector will be deleted automatically after being offline for 12 hours.
 ---
 
 

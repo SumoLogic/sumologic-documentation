@@ -7,7 +7,7 @@ sidebar_label: Workday
 When you create a Workday Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 :::note
-The steps below assume that you have already configured in [Step 1 of this page] (/07Sumo-Logic-Apps/saas-cloud-apps/Workday/Collect_Logs_for_the_Workday_App#step-1-configure-the-workday-portal). You will copy and paste configurations from those steps in this source.
+The steps below assume that you have already configured in [Step 1 of this page] (docs/integrations/saas-cloud/Workday/Collect_Logs_for_the_Workday_App#step-1-configure-the-workday-portal). You will copy and paste configurations from those steps in this source.
 :::
 
 To configure a Workday Source:
@@ -103,7 +103,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|

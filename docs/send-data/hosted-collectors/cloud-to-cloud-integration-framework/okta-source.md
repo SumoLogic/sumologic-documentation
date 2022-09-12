@@ -10,7 +10,7 @@ keywords:
 The Okta Source provides a secure endpoint to receive event data from the Okta [System Log API](https://developer.okta.com/docs/reference/api/system-log/) and [Users API](https://developer.okta.com/docs/reference/api/users/).
 It securely stores the required authentication, scheduling, and state tracking information.
 
-This Source is not available in the [Fed deployment] (/APIs/Troubleshooting-APIs/Deployments-and-Sumo-Logic-Endpoints). Use the [legacy collection method for Okta] (/07Sumo-Logic-Apps/saml/Okta/Collect_logs_for_Okta).
+This Source is not available in the [Fed deployment] (/APIs/Troubleshooting-APIs/Deployments-and-Sumo-Logic-Endpoints). Use the [legacy collection method for Okta] (docs/integrations/saml/Okta/Collect_logs_for_Okta).
 
 ## Okta API rate limits
 
@@ -18,7 +18,7 @@ During a polling interval, an Okta Source will make a request for every 1,000 
 
 ## States
 
-An Okta Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](../../../manage/health-events.md).
+An Okta Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](docs/manage/health-events.md).
 
 An Okta Source goes through the following states when created:
 
@@ -101,7 +101,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|

@@ -1,6 +1,7 @@
 ---
 id: deploy-collectors-aws-opsworks
 title: Deploy Sumo Logic Collectors on AWS OpsWorks
+description: Learn how to deploy Sumo Logic Collectors on AWS OpsWorks.
 ---
 
 

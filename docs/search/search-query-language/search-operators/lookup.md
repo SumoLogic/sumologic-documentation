@@ -75,7 +75,7 @@ Where:
       
     `/Library/Users/myusername@sumologic.com/Suspicious Users`
 
-    If the lookup table is in an [Admin Recommended](../../../manage/content-sharing/admin-mode.md) folder, the path looks like this:  
+    If the lookup table is in an [Admin Recommended](docs/manage/content-sharing/admin-mode.md) folder, the path looks like this:  
       
     `/Library/Admin Recommended/Lookups/Approved Cloud Jump Stations`  
       

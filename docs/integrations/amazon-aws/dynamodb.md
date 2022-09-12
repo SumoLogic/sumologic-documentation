@@ -181,7 +181,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 The Sumo Logic AWS Observability DynamoDB Dashboards for AWS DynamoDB provides operational insights into DynamoDB instances. Preconfigured dashboards allow you to monitor key metrics and view the throttle events, errors, and latency. They also help you plan DynamoDB instances' capacity in your environment.
 
-We highly recommend you view these dashboards in the [Explore View](/docs/observability/aws-observability-solution/deploy-use-aws-observability/view-aws-observability-solution-dashboards.md) of the AWS Observability solution.
+We highly recommend you view these dashboards in the [Explore View](/docs/observability/aws/deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
 
 
 ### Overview

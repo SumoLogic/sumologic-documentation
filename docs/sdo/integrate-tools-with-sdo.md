@@ -1,6 +1,7 @@
 ---
 id: integrate-tools-with-sdo
 title: Integrate Other Tools with the Software Development Optimization Solution (Optional)
+sidebar_label: Integrating Other DevOps Tools
 description: Learn how to integrate other tools with the Software Development Optimization Solution.
 ---
 
@@ -8,7 +9,7 @@ If your DevOps pipeline has tools which are not supported at present by the Soft
 
 ## Extending the current schema beyond the supported toolset OOTB toolset/FERs
 
-If your DevOps pipeline has tools that are not supported by Out of the Box toolset of Software Development Optimization Solution then you can integrate your tool, and map it to the relevant schema model. 
+If your DevOps pipeline has tools that are not supported by out-of-the-box toolset of Software Development Optimization Solution then you can integrate your tool, and map it to the relevant schema model. 
 
 For example, if you were to integrate Azure DevOps, which provides developer services to support teams to plan work, collaborate on code development, and build and deploy applications, with the SDO solution, you would first:
 

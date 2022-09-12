@@ -32,7 +32,7 @@ Read the "Limitations section" on [Set Up SAML for Single Sign-On](set-up-saml.
      
 1. On the **Add Sumo Logic** page:
 
-    * ***Display Name**. This is the display name that will appear on your OneLogin portal page. Edit as desired. 
+    * **Display Name**. This is the display name that will appear on your OneLogin portal page. Edit as desired. 
     * **Visible in portal**. Toggle this option off if you do not want Sumo Logic to appear on your OneLogin portal page.
     * **Icons**. (Optional) If desired, you can upload different icons to display on your OneLogin portal page.
     * **Description**. (Optional) Provide a short description for this application.
@@ -45,7 +45,7 @@ Read the "Limitations section" on [Set Up SAML for Single Sign-On](set-up-saml.
     * **First Name**. Select “First Name”.
     * **Last Name**.  Select “Last Name”. 
     * **NameID**. Select "Email" or something equivalent to the users email to use as the Sumo Logic credential.
-    * **Role**. If you will be sending multiple Okta roles then change this to "**Semicolon Delimited Input (multi-value output)**"           
+    * **Role**. If you will be sending multiple OneLogin roles then change this to "**Semicolon Delimited Input (multi-value output)**"           
 
     ![role inst.png](/img/security/role-inst.png)  
           
@@ -112,7 +112,7 @@ features.
 ### Configure SP-initiated login
 
 :::tip
-SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](../../manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
+SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](docs/manage/manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
 :::
 
 This configuration enables a Sumo user to initiate login from the Sumo Logic web app. Sumo redirects the user to OneLogin with a SAML AuthnRequest with the  information that OneLogin needs to authenticate the user. OneLogin replies to Sumo with a SAML Assertion (SAMLResponse). 

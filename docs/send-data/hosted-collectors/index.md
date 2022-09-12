@@ -1,6 +1,7 @@
 ---
 slug: /send-data/hosted-collectors/
 title: Sources for Hosted Collectors
+description: Hosted Collectors allow you to upload data stored in the cloud to Sumo Logic. You can configure Sources for Collectors that are hosted in Amazon Web Services (AWS), Microsoft, or other hosting services.
 ---
 
 import DocCardList from '@theme/DocCardList';

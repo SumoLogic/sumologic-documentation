@@ -156,7 +156,7 @@ The response has the updated JSON and the Collector is now assigned to the inge
 
 ## user.properties
 
-When registering a new Collector you can specify the parameter `fields` in [user.properties](../../../send-data/installed-collectors/collector-installation-reference/user-properties.md) to assign the Collector to an existing ingest budget.
+When registering a new Collector you can specify the parameter `fields` in [user.properties](docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) to assign the Collector to an existing ingest budget.
 
 | Parameter | Description | Can be changed after installation? |
 |--|--|--|
@@ -164,7 +164,7 @@ When registering a new Collector you can specify the parameter `fields` in 
 
 ## Command line installation
 
-When using the [command line (shell script) installer](../../../send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you can assign the Collector to an existing ingest budget with the `-Vfields` parameter. For details and example commands on Collector installation, see [Install a Collector on Linux](../../../send-data/installed-collectors/linux.md), [Install a Collector on MacOS](../../../send-data/installed-collectors/macos.md), and [Install a Collector on Windows](../../../send-data/installed-collectors/windows.md).
+When using the [command line (shell script) installer](docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you can assign the Collector to an existing ingest budget with the `-Vfields` parameter. For details and example commands on Collector installation, see [Install a Collector on Linux](docs/send-data/installed-collectors/linux.md), [Install a Collector on MacOS](docs/send-data/installed-collectors/macos.md), and [Install a Collector on Windows](docs/send-data/installed-collectors/windows.md).
 
 | Parameter | Description |
 |--|--|

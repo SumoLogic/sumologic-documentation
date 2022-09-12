@@ -1,6 +1,7 @@
 ---
 id: navigate-through-search-results
 title: Navigate through Search Results
+description: When you run a search query, messages display in the Message, Aggregates, or Summarize tabs in the lower half of the browser window.
 ---
 
 

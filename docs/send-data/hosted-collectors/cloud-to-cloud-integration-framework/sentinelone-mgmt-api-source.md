@@ -18,6 +18,10 @@ Data from the following object types are collected from [SentinalOne APIs](https
 
 Once the Source is created it will start collecting historical data and maintain a polling interval of five minutes.
 
+::note
+This Source is available in the Fed deployment.
+:::
+
 ## States
 
 A SentinelOne Mgmt API Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing Health Events.
@@ -80,28 +84,24 @@ To configure a SentinelOne Mgmt API Source:**
 
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 
-   ![SentinalOne create pane.png](/img/send-data/SentinalOne-create-pane.png)
+   ![SentinelOne create pane.png](/img/send-data/SentinalOne-create-pane.png)
 
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
-
    * `_siemVendor`: SentinelOne
    * `_siemProduct`: MGMT API
    * `_siemFormat`: JSON
-   * `_siemEventID`: The type of data ingested. Possible options are `activities - {id}`, `threats - {id}`, or `agents`. Agents has a `_siemDataType` of `Inventory`. |
-
+   * `_siemEventID`: The type of data ingested. Values include `activities - {id}`, `threats - {id}`, or `agents`. Agents has a `_siemDataType` of `Inventory`.
+:::note
+If you entered actions in Supported APIs to collect above, the `_siemDataType` field will be set to `Inventory`.
+:::
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
-
 1. **Base URL**. Provide your SentinalOne Management URL. It's in this format: `https:/\<your_management_ur\>`.
-
 1. **API Token**. Provide the API Token you got from the SentinelOne Management Console. See Authentication above for details.
-
 1. **Supported APIs to collect**. Select one or more of the available APIs: **activities**, **agents**, and **threats**.
-
-1. When you are finished configuring the Source click **Submit**.
+1. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
@@ -115,7 +115,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|

@@ -117,7 +117,7 @@ The first service in the pipeline is Telegraf. Telegraf collects metrics from Ng
 Nginx Plus app supports the default access logs and error logs format.
 
 1. Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the [Ngnix Plus Configuring Logging documentation](https://www.nginx.com/resources/admin-guide/logging-and-monitoring/).
-2. Use the Sumologic-Kubernetes-Collection, to send the logs to Sumologic. For more information, [visit](/docs/observability/kubernetes-solution/collection-setup).
+2. Use the Sumologic-Kubernetes-Collection, to send the logs to Sumologic. For more information, [visit](/docs/observability/kubernetes/collection-setup).
 3. Identifying the logs metadata: For example, to get **Logs** data from the pod, you can use the following source `_sourcecategory = "kubernetes/default/nginx"` where `kubernetes` is Cluster name, `default` is Namespace, `nginx` is application.
 4. To get log data from Nginx Pods - all nginx logs must be redirected to standard output “**stdout**” and standard error “**stderr**”.
 
@@ -175,7 +175,7 @@ This section provides instructions for configuring log collection for the Sumo L
 
 To collect logs directly from your Nginx Plus machine, use an Installed Collector and a Local File Source.
 
-1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 2. Configure the Local File Source fields as follows:
     * **Name.** (Required)
     * **Description.** (Optional)
@@ -375,7 +375,7 @@ This section has instructions for installing the Sumo App for Nginx Plus. The in
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
@@ -391,7 +391,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Nginx Plus Alerts
 
-Sumo Logic has provided out of the box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Nginx Plus server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
+Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Nginx Plus server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
 
 <table>
   <tr>

@@ -3,8 +3,6 @@ id: audit-event-index
 title: Audit Event Index
 ---
 
-#
-
 ## Availability
 
 | Account Type | Account Level |
@@ -12,7 +10,7 @@ title: Audit Event Index
 | Cloud Flex | Trial, Enterprise |
 | Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-The **Audit Event Index** provides event logs in JSON on activities from your account allowing you to monitor and audit changes. Enterprise accounts have the Audit Event Index enabled and available to search by default. You can use the [Enterprise Audit Apps] (../../07Sumo-Logic-Apps/sumo-apps/Enterprise-Audit.md "Enterprise Audit Apps") to visually display data from the Audit Event Index for monitoring and analysis.
+The **Audit Event Index** contains event logs in JSON format on account activities, allowing you to monitor and audit changes. Enterprise accounts have the Audit Event Index enabled and available to search by default. You can use the [Enterprise Audit Apps] (docs/integrations/sumo-apps/Enterprise-Audit.md "Enterprise Audit Apps") to visually display data from the Audit Event Index for monitoring and analysis.
 
 This index is improved and different from the [Audit Index](audit-index.md), and there is some overlap of audited events. The Audit Index provides event logs in plain text and audits when account limits are reached and operation failures, like throttling and scheduled search events.
 
@@ -142,4 +140,4 @@ Each audit event log has common keys that categorize it to a product area and pr
 
 ## Index retention period
 
-By default, the retention period of the Audit Event index is the same as the retention period of your Default Continuous Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Edit a Partition](../partitions-and-data-tiers/edit-partition.md).
+By default, the retention period of the Audit Event index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Edit a Partition](../partitions-and-data-tiers/edit-partition.md).

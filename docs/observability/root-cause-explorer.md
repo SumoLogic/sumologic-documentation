@@ -142,7 +142,7 @@ If you've read the [Google SRE handbook](https://landing.google.com/sre/sre-boo
 
 ## Set up Root Cause Explorer
 
-Before you begin, ensure that your organization is entitled to the appropriate features. The account types and levels that support Root Cause Explorer are listed in [Availability](#availability), above. The [AWS Observability Solution](/docs/observability/aws-observability-solution/) is a prerequisite for AWS customers. If you have Kubernetes and tracing metrics, collection should be configured. For information about collecting Kubernetes and and Tracing metrics, see [Set up collection for Kubernetes](kubernetes-solution/collection-setup.md) and Getting Started with Transaction Tracing.
+Before you begin, ensure that your organization is entitled to the appropriate features. The account types and levels that support Root Cause Explorer are listed in [Availability](#availability), above. The [AWS Observability Solution](/docs/observability/aws/) is a prerequisite for AWS customers. If you have Kubernetes and tracing metrics, collection should be configured. For information about collecting Kubernetes and and Tracing metrics, see [Set up collection for Kubernetes](kubernetes/collection-setup.md) and Getting Started with Transaction Tracing.
 
 You set up Root Cause Explorer using an [AWS CloudFormation template](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/sumologic_observability.master.template.yaml). The template installs the AWS Inventory Source and optionally, the AWS X-Ray source, in your Sumo Logic account. The AWS Inventory Source collects metadata and topology relationships for resources belonging to the namespaces listed below:
 
@@ -318,7 +318,6 @@ Of course, in a real situation, only the top level symptom, in this case, either
 
 1. View an alert indicating that "ELB 5xx (unhealthy targets) has spiked in AWS account = 1234". This could be an alert on CloudWatch metrics triggered by a Sumo Logic monitor. 
 1. In AWS Observability, navigate to the AWS account = 1234.
-1. In AWS Observability, launch the Root Cause Explorer tab from AWS account = 1234 node.
 
 In Root Cause Explorer, perform the following steps:
 
@@ -350,7 +349,7 @@ The attributes in the view are defined in the table below.
 |--|--|
 | `anomalyValues` | Statistics about the time series in the EOI window - min, max, avg.
 | `autoCorrelation` | A measure of the periodicity of the underlying time series.
-| `domain` | Identifies the source of the time series data:<ul><li>aws</li><li>k8s</li><li>app. Application services instrumented with Sumo Logic [Tracing](/docs/apm/traces).</li><li>host. A [Host Metrics source](../send-data/sources/installed-collectors/host-metrics-source.md) on a Sumo Logic Installed Collector.</li></ul> |
+| `domain` | Identifies the source of the time series data:<ul><li>aws</li><li>k8s</li><li>app. Application services instrumented with Sumo Logic [Tracing](/docs/apm/traces).</li><li>host. A [Host Metrics source](docs/send-data/installed-collectors/sources/host-metrics-source.md) on a Sumo Logic Installed Collector.</li></ul> |
 | `drift` | The percentage deviation of the time series from the expected value. |
 | `endTime` | The end time of the EOI, in epoch milliseconds. |
 | `eventType` | The golden signal class for the EOI: Latency, Load, Bottleneck, Error, Throughput, Success, or Availability. For more information about golden signals, see the [Google SRE handbook](https://landing.google.com/sre/sre-book/chapters/preface/). |
@@ -507,7 +506,7 @@ event in groups to be returned.
 
 ### Amazon CloudWatch Source Metrics Source
 
-For information about Sumo Logic's CloudWatch source, see [Amazon CloudWatch Source for Metrics](../send-data/hosted-collectors//amazon-aws/amazon-cloudwatch-source-metrics.md).
+For information about Sumo Logic's CloudWatch source, see [Amazon CloudWatch Source for Metrics](docs/send-data/hosted-collectors//amazon-aws/amazon-cloudwatch-source-metrics.md).
 
 ### AWS Inventory Source
 

@@ -1,7 +1,8 @@
 ---
 id: general-search-examples-cheatsheet
 title: General Search Examples Cheat Sheet
-description: Find query examples in this search cheatsheet.
+sidebar_label: General Search Examples
+description: The General Search Examples cheat sheet provides examples of useful search queries for different use cases.
 ---
 
 
@@ -156,7 +157,7 @@ _sourceCategory=apache 
 ```
 
 :::sumo More Info
-For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](../search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent.md), and [Top](../search-query-language/search-operators/top.md).
+For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent), and [Top](../search-query-language/search-operators/top.md).
 :::
 
 ## Timeslice and Transpose
@@ -216,7 +217,7 @@ if(status_code matches "50*","500s","Other")))) as status_code_group
 ```
 
 :::sumo More Info
-For more information, see [Timeslice](../search-query-language/search-operators/timeslice.md) and [Transpose](../search-query-language/search-operators/transpose.md).
+For more information, see [Timeslice](docs/search/search-query-language/search-operators/timeslice.md) and [Transpose](../search-query-language/search-operators/transpose.md).
 :::
 
 ## Conditional Operators
@@ -285,4 +286,4 @@ For any query, you can increase specificity by adding metadata fields to the key
 
 Edit Source metadata in the **Collection** tab.
 
-For details see [Search Metadata](../get-started-with-search/search-basics/built-in-metadata.md).
+For details see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).

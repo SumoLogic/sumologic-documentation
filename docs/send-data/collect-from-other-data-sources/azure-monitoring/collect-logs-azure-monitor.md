@@ -1,6 +1,7 @@
 ---
 id: collect-logs-azure-monitor
 title: Collect Logs from Azure Monitor
+description: Instructions for configuring a pipeline for shipping logs available from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP source on an hosted collector in Sumo Logic.
 ---
 
 To collect logs from the Azure Monitor, if you are not using the Sumo Logic FedRamp deployment,  use the new [Cloud to Cloud Integration for Azure](../../hosted-collectors//cloud-to-cloud-integration-framework/azure-event-hubs-source.md) to create the source and use the same source category while installing the app. 

@@ -2,6 +2,7 @@
 id: aws-s3-source
 title: AWS S3 Source
 sidebar_label: AWS S3
+description: Add an Amazon S3 Source to upload messages to Sumo Logic.
 ---
 
 Amazon Simple Storage Service (Amazon S3) provides a web services interface that can be used to store and retrieve any amount of data from anywhere on the web. Use an Amazon S3 Source to upload data to Sumo Logic from S3.
@@ -85,7 +86,7 @@ import Iframe from 'react-iframe';
 1. Select **Amazon S3**.
 1. Enter a name for the new Source. A description is optional.
 1. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account. Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](collection-aws-govcloud.md) for details.
-1. **Use AWS versioned APIs**? Select **Yes** to collect from managed buckets where versioning is not enabled, such as Cisco Umbrella. This uses the list-object-versions and get-object-version AWS S3 APIs. Selecting **Yes** requires your credentials to have **ListObjectVersions** and **GetObjectVersion** permissions.  If you're collecting from a Cisco Umbrella bucket this must be set to **No**.
+1. **Use AWS versioned APIs**? Select **Yes** to collect from buckets where versioning is enabled. This uses the list-object-versions and get-object-version AWS S3 APIs. Selecting **Yes** requires your credentials to have **ListObjectVersions** and **GetObjectVersion** permissions.
 
     ![versioned apis options.png](/img/send-data/versioned-apis-options.png)
 
@@ -173,9 +174,9 @@ The following steps use the AWS SNS Console. You may instead use AWS CloudForma
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
 
      * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be     determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-     * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/sources/reference-information/time-reference for more information.
+     * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference for more information.
 
-   * **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/sources/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:
+   * **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:
 
      * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
      * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.

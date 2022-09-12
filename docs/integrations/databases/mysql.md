@@ -450,7 +450,7 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
     sudo mysql.server restart
     ```
 2. **Configure an [Installed Collector](/docs/send-data/Installed-Collectors)**.
-3. **Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) for MySQL error logs**.
+3. **Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) for MySQL error logs**.
    1. Add a Local File Source in the installed collector configured in the previous step. Configure the Local File Source fields as follows:
       * **Name.** (Required)
       * **Description**. (Optional)
@@ -477,7 +477,7 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
 
 At this point, MySQL error logs should start flowing into Sumo Logic.
 
-4. **Configuring a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) for slow query log**.
+4. **Configuring a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) for slow query log**.
    1. Add a Local File Source in the installed collector configured in the previous step. Configure the Local File Source fields as follows:
       * **Name.** (Required)
       * **Description**. (Optional)
@@ -601,7 +601,7 @@ Now that you have set up collection for MySQL, install the Sumo Logic App for My
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps.md)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom filter. For example:

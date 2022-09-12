@@ -428,10 +428,10 @@ Based on your infrastructure and networking setup choose one of these methods to
    log4j.appender.logfile.maxFileSize=10240MB
    log4j.logger.org.apache.activemq=DEBUG
    ```
-   * Logs from the ActiveMQ log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) as explained in the next section.
+   * Logs from the ActiveMQ log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) as explained in the next section.
 3. **Configuring a Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 4. **Configuring a Source**. To collect logs directly from your ActiveMQ machine, use an Installed Collector and a Local File Source:
-   1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+   1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
    2. Configure the Local File Source fields as follows:
      * **Name.** (Required)
      * **Description.** (Optional)
@@ -465,7 +465,7 @@ This section and below contain instructions for installing Sumo Logic Monitors f
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
 
-Sumo Logic provides out of the box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your ActiveMQ clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations. For details, see [ActiveMQ Alerts](#activemq-alerts).
+Sumo Logic provides out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your ActiveMQ clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations. For details, see [ActiveMQ Alerts](#activemq-alerts).
 
 :::note
 There are limits to how many alerts can be enabled - please see the[ Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
@@ -562,7 +562,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps) document.
+Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library) document.
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -580,7 +580,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## ActiveMQ Alerts
 
-Sumo Logic has provided out of the box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the ActiveMQ database cluster is available and performing as expected.
+Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the ActiveMQ database cluster is available and performing as expected.
 
 <table>
   <tr>

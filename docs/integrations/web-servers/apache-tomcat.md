@@ -342,7 +342,7 @@ We use the Telegraf operator for Apache Tomcat metric collection and Sumo Logic 
 
 <img src={useBaseUrl('img/integrations/web-servers/apache-nonk8s.png')} alt="apache-nonk8s" />
 
-Telegraf runs on the same system as Apache Tomcat and uses the [Apache Tomcat ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached#configuration) and [Jolokia2](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) input plugin to obtain Apache Tomcat metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Apache Tomcat on the other hand are sent to a Sumo Logic Local File source.
+Telegraf runs on the same system as Apache Tomcat and uses the [Apache Tomcat](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached#configuration) and [Jolokia2](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) input plugin to obtain Apache Tomcat metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Apache Tomcat on the other hand are sent to a Sumo Logic Local File source.
 
 This section provides instructions for configuring metrics collection for the Sumo Logic App for Apache Tomcat. Follow the below instructions to set up the metric collection:
 
@@ -588,13 +588,13 @@ Log format description: [https://tomcat.apache.org/tomcat-8.0-doc/config/valve.h
 Log format description: [https://docs.oracle.com/javase/8/docs/api/java/util/logging/SimpleFormatter.html](https://docs.oracle.com/javase/8/docs/api/java/util/logging/SimpleFormatter.html)
 3. Tomcat Garbage Collection (GC) logs \
 Log format description: [https://stackoverflow.com/questions/4468546/explanation-of-tomcat-gc-log-statements](https://stackoverflow.com/questions/4468546/explanation-of-tomcat-gc-log-statements)
-1. **Configure Tomcat to log to a Local file**. By default, Tomcat logs are stored in /usr/share/tomcat/logs/ The default directory for log files is listed in the /usr/share/tomcat/conf/logging.properties file. Logs from the Tomcat log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) as explained in the next section.
+1. **Configure Tomcat to log to a Local file**. By default, Tomcat logs are stored in /usr/share/tomcat/logs/ The default directory for log files is listed in the /usr/share/tomcat/conf/logging.properties file. Logs from the Tomcat log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) as explained in the next section.
 
 1. **Configuring a Collector**. To collect logs directly from the Tomcat machine, configure an[ Installed Collector](/docs/send-data/Installed-Collectors).
 
 1. **Configuring a Source**. To add a Local File Source source for Apache Tomcat do the following** To collect logs directly from your Tomcat machine, use an Installed Collector and a Local File Source.
 
-1. Add a[ Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+1. Add a[ Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 2. Configure the Local File Source fields as follows:
 * **Name.** (Required)
 * **Description.** (Optional)
@@ -786,7 +786,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
+Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 
 3. To install the app, complete the following fields.
 1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

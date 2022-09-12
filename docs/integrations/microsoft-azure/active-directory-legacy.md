@@ -141,7 +141,7 @@ Make sure the collector is installed on a machine that belongs to the domain man
 
 ## Step 2: Configure event log sources
 
-If you have installed collectors on each domain controller, as recommended, configure a [Local Windows Event Log Source](/docs/send-data/Sources/installed-collectors/Local-Windows-Event-Log-Source) on each one. Otherwise, configure a [Remote Windows Event Log Source](/docs/send-data/Sources/installed-collectors/Remote-Windows-Event-Log-Source) to collect events from each Active Directory server. For these Windows Event sources, set the source category to **OS/Windows** and **Event Format** as **Collect using legacy format**.
+If you have installed collectors on each domain controller, as recommended, configure a [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Event-Log-Source) on each one. Otherwise, configure a [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/Remote-Windows-Event-Log-Source) to collect events from each Active Directory server. For these Windows Event sources, set the source category to **OS/Windows** and **Event Format** as **Collect using legacy format**.
 
 
 
@@ -205,7 +205,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 3. Click **Add to Library**.
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](/docs/get-started/library/index.md) for information on working with the library in the new UI.
+Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](/docs/get-started/library) for information on working with the library in the new UI.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 

@@ -349,7 +349,7 @@ For all other parameters, see [this doc](/docs/send-data/collect-from-other-data
 </TabItem>
 <TabItem value="non-k8s">
 
-Sumo Logic uses the Telegraf operator for Squid Proxy metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about) for collecting Squid Proxy logs. The diagram below illustrates the components of the Squid Proxy collection in a non-Kubernetes environment. Telegraf uses the [SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to obtain Squid Proxy metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Squid Proxy are collected by a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+Sumo Logic uses the Telegraf operator for Squid Proxy metric collection and the [Installed Collector](/docs/send-data/installed-collectors) for collecting Squid Proxy logs. The diagram below illustrates the components of the Squid Proxy collection in a non-Kubernetes environment. Telegraf uses the [SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to obtain Squid Proxy metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Squid Proxy are collected by a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
 <img src={useBaseUrl('img/integrations/web-servers/non-k8s-flow.png')} alt="Squid Proxy" />
 
@@ -370,7 +370,7 @@ Squid Proxy app supports the default access logs and cache logs format.
 
 To collect logs directly from your Squid Proxy machine, use an Installed Collector and a Local File Source.  
 
-1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 2. Configure the Local File Source fields as follows:
 * **Name**. (Required)
 * **Description**. (Optional)
@@ -755,7 +755,7 @@ This section demonstrates how to install the Squid Proxy App.
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Squid Proxy cluster filter. Examples:

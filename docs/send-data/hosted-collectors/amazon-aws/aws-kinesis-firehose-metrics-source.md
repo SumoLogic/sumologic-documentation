@@ -2,6 +2,7 @@
 id: aws-kinesis-firehose-metrics-source
 title: AWS Kinesis Firehose for Metrics Source
 sidebar_label: AWS Kinesis Firehose Metrics
+description: Learn how to use the AWS Kinesis Firehose for Metrics source to ingest CloudWatch metrics from the AWS Kinesis Data Firehose.
 ---
 
 

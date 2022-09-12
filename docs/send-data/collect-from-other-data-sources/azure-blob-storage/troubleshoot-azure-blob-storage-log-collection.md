@@ -1,6 +1,7 @@
 ---
 id: troubleshoot-azure-blob-storage-log-collection
 title: Troubleshoot Azure Blob Storage Log Collection
+description: Follow these steps to learn why log data is not flowing into Sumo from Azure Blob Storage.
 ---
 
 If logs don't start flowing into Sumo Logic after you perform the [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md) procedure, see the troubleshooting tips below.

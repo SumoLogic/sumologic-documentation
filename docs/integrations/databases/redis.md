@@ -288,7 +288,7 @@ Follow the instructions below to set up log collection:
 
 <details><summary>Option A: Configure Redis logs to go to log files</summary>
 
-With this option, Redis logs written to a log file can be collected via the [Local File Source of a](/docs/send-data/Sources/installed-collectors/Local-File-Source) Sumo Logic Installed collector.
+With this option, Redis logs written to a log file can be collected via the [Local File Source of a](/docs/send-data/installed-collectors/sources/local-file-source) Sumo Logic Installed collector.
 
 To configure the Redis log file, locate your local **redis.conf** configuration file in the database directory. By default, Redis logs are stored in /var/log/redis/redis-server.log.
 
@@ -310,7 +310,7 @@ After determining the location of conf file modify the **redis.conf** configurat
 
 <details><summary>Option B: Configure Redis logs to stream data to a Syslog source</summary>
 
-With this option, Redis logs can be streamed to the [Syslog Source](/docs/send-data/Sources/installed-collectors/Syslog-Source) of a Sumo Logic Installed Collector.
+With this option, Redis logs can be streamed to the [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source) of a Sumo Logic Installed Collector.
 
 To configure the Redis syslog, locate your local **redis.conf** configuration file in the database directory.
 
@@ -340,7 +340,7 @@ After determining the location of conf file, modify the **redis.conf** configura
 
 3. **Configure an Installed Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 4. **Configure a Source**. To add a Local File Source source for Redis, do the following:
-   1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) in the installed collector configured in the previous step.
+   1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:
       * **Name.** (Required)
       * **Description.** (Optional)
@@ -373,7 +373,7 @@ After determining the location of conf file, modify the **redis.conf** configura
 
 This section has instructions for installing the Sumo App and Alerts for Redis ULM, as well as descriptions and examples for each of the dashboards. These instructions assume you have already set up collection as described in the **Collecting Logs and Metrics for Redis App** section.
 
-Sumo Logic has provided out of the box alerting capabilities available via [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Redis database cluster is available and performing as expected. These monitors fire alerts (notifications) on top of preset thresholds on metrics data using industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerting capabilities available via [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Redis database cluster is available and performing as expected. These monitors fire alerts (notifications) on top of preset thresholds on metrics data using industry best practices and recommendations.
 
 For details on the individual monitors, please see [Alerts](#Redis-Alerts).
 
@@ -472,7 +472,7 @@ This section demonstrates how to install the Redis ULM App.
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    2. **Data Source.**  Choose **Enter a Custom Data Filter** and enter a custom Redis cluster filter. Examples:
@@ -554,7 +554,7 @@ Use this dashboard to:
 
 ## Redis Alerts
 
-Sumo Logic has provided out of the box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Redis database cluster is available and performing as expected.
+Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Redis database cluster is available and performing as expected.
 
 
 <table>

@@ -1,6 +1,7 @@
 ---
 id: collector-properties
 title: collector.properties
+description: This file allows you to tune the internal processes of Installed Collectors to fit your needs.
 ---
 
 
@@ -46,7 +47,7 @@ Windows:
 
 The example below has parameters that were automatically added by the Collector based on the configuration of the [user.properties](user-properties.md) file, such as `cpuTarget`. The collector.properties file is different, only modify parameters found in the [parameters table](#collectorproperties) below. If you see another parameter you want to adjust, check user.properties to see if it's an available configuration parameter.
 
-The collector.properties parameter `collector.localfile.inputType` has been added and set to `nonblocking` to tell the Collector to use the [Windows Rollable path for UNC file paths](../../collector-faqs/file-locking-problems.md). That is the only collector.properties parameter in this example.
+The collector.properties parameter `collector.localfile.inputType` has been added and set to `nonblocking` to tell the Collector to use the [Windows Rollable path for UNC file paths](/docs/send-data/collector-faq#file-locking-problems). That is the only collector.properties parameter in this example.
 
 ```
 receiver.url = https://collectors.sumologic.com
@@ -126,8 +127,8 @@ Collector versions 19.253-26+ support **wrapper** configuration parameters.
 | LogSender.pause.override | boolean  | Pause sending HTTP data from the log sender to Sumo Logic. | false |
 | metadata.cache.expiration.sec | integer  | Duration in seconds to expire and retry fetching local metadata cached by the Collector. | 600 |
 | MetricsSender.pause.override | boolean  | Pause sending HTTP data from the metric sender to Sumo Logic. | false |
-| multiline.maxCharLength | integer  | Sets the size in KB the Collector reads up to for detecting multiline messages. See [Collecting Multiline Logs](../../sources/reference-information/collect-multiline-logs.md for details. | 524288                                                           |
-| multiline.maxLines | integer  | Sets the number of lines the Collector reads up to for detecting multiline messages. See [Collecting Multiline Logs](../../sources/reference-information/collect-multiline-logs.md) for details. | 2000 |
+| multiline.maxCharLength | integer  | Sets the size in KB the Collector reads up to for detecting multiline messages. See [Collecting Multiline Logs](docs/send-data/reference-information/collect-multiline-logs.md for details. | 524288                                                           |
+| multiline.maxLines | integer  | Sets the number of lines the Collector reads up to for detecting multiline messages. See [Collecting Multiline Logs](docs/send-data/reference-information/collect-multiline-logs.md) for details. | 2000 |
 | offline.numRetries | integer  | Number of retry attempts before entering offline collection mode on connection failure. | 3 |
 | paging.lowerbound.mb | integer  | Size in megabytes of free storage space available after which the Collector exits flushing mode. | 32 |
 | paging.upperbound.mb | integer  | Size in megabytes of free storage space available after which the collector enters flushing mode. | 2048 |

@@ -1,6 +1,7 @@
 ---
 id: use-url-to-run-search
 title: Use a URL to Run a Search
+description: You can create a custom URL to launch a log search in Sumo Logic.
 ---
 
 You can create a custom URL to launch a log search in Sumo Logic.

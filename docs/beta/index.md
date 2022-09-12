@@ -9,7 +9,7 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 <img src={useBaseUrl('img/icons/business/beta.png')} alt="icon" width="75"/>
 
-Learn about our Beta features are coming soon to general availability. To participate, contact your Sumo account executive.
+Learn about our Beta features that are coming soon to general availability. To participate, contact your Sumo account executive.
 
 Betas are different than our generally available services in that they have additional terms and conditions for participation. You can [opt-in to beta terms and conditions](docs/manage/manage-subscription/beta-opt-in.md), so that you only need to agree to the terms once.
 
