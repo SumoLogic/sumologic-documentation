@@ -285,7 +285,7 @@ From the URL, remove any query parameters like json, From Moment and To Moment. 
 In this step, you create a hosted collector and HTTP source to receive data from the scripts that collect data from your Workday tenant.
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
-2. Configure an [HTTP source](/docs/send-data/hosted-collectors/http-logs-metrics-source) on the hosted collector
+2. Configure an [HTTP source](/docs/send-data/hosted-collectors/http-source/logs-metrics) on the hosted collector
 
 Make a note of the HTTP address for the source. You will need it when you configure the collection for the Workday scripts in the next step.
 

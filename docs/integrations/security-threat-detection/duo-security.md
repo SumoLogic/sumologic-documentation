@@ -32,7 +32,7 @@ This page demonstrates how to configure log collection for the Duo Security App.
 #### Step 1. Create Hosted Collector and HTTP Source
 
 1. Create a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Create an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-logs-metrics-source) on the Collector you created in the previous step. \
+2. Create an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) on the Collector you created in the previous step. \
 When you have configured the HTTP Source, Sumo will display the URL of the HTTP endpoint. Make a note of the URL. You will use it when you configure the Lambda Function to send data to Sumo.
 
 

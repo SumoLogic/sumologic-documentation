@@ -112,7 +112,7 @@ To collect logs directly from your Nginx machine, use an Installed Collector and
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
-1. Add an [HTTP Source](/docs/send-data/hosted-collectors/http-logs-metrics-source).
+1. Add an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 2. Configure the HTTP Source fields as follows:
     * **Name.** (Required)
     * **Description.** (Optional)

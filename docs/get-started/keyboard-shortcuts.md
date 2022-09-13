@@ -8,7 +8,7 @@ Sumo Logic keyboard shortcuts are enabled by default. To display the list of sho
 
 For security, shortcuts for some pages are visible only for users with an Admin account.
 
-To disable keyboard shortcuts, for example, if they conflict with an international keyboard, click your name in the left nav, select **[Preferences](manage-account.md#my-preferences)**, and deselect **Enable keyboard shortcuts**.
+To disable keyboard shortcuts, for example, if they conflict with an international keyboard, click your name in the left nav, select **[Preferences](account-setup.md#my-preferences)**, and deselect **Enable keyboard shortcuts**.
 
 ## Limitations
 

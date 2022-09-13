@@ -1,6 +1,7 @@
 ---
-id: http-traces-source
-title: HTTP Traces Source
+id: traces
+title: Configure HTTP Source for Traces
+sidebar_label: Configure for Traces
 description: An HTTP Traces Source is an endpoint for receiving traces.
 ---
 

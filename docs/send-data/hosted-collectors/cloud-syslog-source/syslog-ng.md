@@ -37,7 +37,7 @@ $ sudo ln -s digicert_ca.crt `openssl x509 -noout -hash -in digicert_ca.crt`.0
 
 ### Send data to a Cloud Syslog Source with syslog-ng
 
-If you are new to syslog-ng, follow this [link to install syslog-ng](Install-syslog-ng.md). 
+If you are new to syslog-ng, follow this [link to install syslog-ng](/docs/send-data/hosted-collectors/cloud-syslog-source/install-syslog-ng). 
 
 This section shows how to configure a syslog client using syslog-ng that will send the syslog message to be received by the Sumo cloud syslog service. You must specify a template, a destination, and a source.
 

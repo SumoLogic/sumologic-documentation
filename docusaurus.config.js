@@ -21,15 +21,15 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
-  i18n: {
+//i18n: {
     // https://docusaurus.io/docs/i18n/tutorial
-    defaultLocale: 'en',
-    locales: ['en', 'ja'],
-    localeConfigs: {
-      en: { label: 'English' },
-      ja: { label: '日本語' },
-    },
-  },
+  //defaultLocale: 'en',
+  //locales: ['en', 'ja'],
+  //localeConfigs: {
+  //  en: { label: 'English' },
+  //  ja: { label: '日本語' },
+  //},
+//},
   webpack: {
     jsLoader: (isServer) => ({
       loader: require.resolve('swc-loader'),
@@ -416,11 +416,11 @@ module.exports = {
             position: 'right',
             className: 'navbar-trial',
           },
-          {
-            // i18n
-            type: 'localeDropdown',
-            position: 'right',
-          },
+      //  {
+      //    i18n
+      //    type: 'localeDropdown',
+      //    position: 'right',
+      //  },
           {
             position: 'right',
             className: 'header-github-link',
