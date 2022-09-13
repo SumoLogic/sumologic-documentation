@@ -1,6 +1,7 @@
 ---
-id: otlp-http-source
+id: otlp
 title: OTLP/HTTP Source
+sidebar_label: Configure for OpenTelemetry
 description: Use an HTTP OTLP Source to collect OTLP formatted Logs, Metrics, and Traces data.
 ---
 

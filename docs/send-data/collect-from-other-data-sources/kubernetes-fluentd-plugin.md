@@ -29,7 +29,7 @@ In this step you create, on the Sumo service, an HTTP endpoint to receive your l
 
 1. If you don’t already have a Sumo account, you can create one by clicking the Free Trial button on https://www.sumologic.com/.
 1. Create a hosted collector, following the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) in Sumo help. (If you already have a Sumo hosted collector that you want to use, skip this step.)
-1. Create an HTTP source on the collector you created in the previous step. For instructions, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-logs-metrics-source) in Sumo help.
+1. Create an HTTP source on the collector you created in the previous step. For instructions, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) in Sumo help.
 1. When you have configured the HTTP source, Sumo will display the URL of the HTTP endpoint. Make a note of the URL. You will use it when you configure the Kubernetes service to send data to Sumo.
 
 ## Step 2: Create a Kubernetes secret

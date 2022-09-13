@@ -54,7 +54,7 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 **To add a hosted collector and HTTP source, do the following:
 
 1. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Add an [ HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-logs-metrics-source).
+2. Add an [ HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 3. In **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
 * Specify **Format** as `epoch`
 * Specify **Timestamp locator** as `\"timestamp\": (.*),`

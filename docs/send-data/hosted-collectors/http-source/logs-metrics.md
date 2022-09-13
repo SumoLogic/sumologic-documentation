@@ -1,16 +1,15 @@
 ---
-slug: /send-data/hosted-collectors//http-logs-metrics-source
-title: HTTP Logs and Metrics Source
-sidebar_label: HTTP Logs and Metrics
-description: An HTTP Source is an endpoint for receiving logs and metrics uploaded via a URL.
+id: logs-metrics
+title: Configure HTTP Source for Logs and Metrics
+sidebar_label: Configure for Logs and Metrics
+description: An HTTP Source is an endpoint for receiving logs and metrics, uploaded via a URL.
 ---
-
 
 An HTTP Logs and Metrics Source is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Logs and Metrics Sources as you'd like to a single Hosted Collector.
 
 With an HTTP Logs and Metrics Source you can upload logs and metrics from data sources where you cannot install a Collector. For example, you can export data from a platform as a service (PaaS) or an infrastructure as a service (IaaS) provider, allowing you to gain visibility, for instance, into your billing system service provider, leveraging the same Sumo tools your organization already uses. Check with your IaaS or PaaS providers for information about using their APIs to forward log or metric data to Sumo Logic's HTTP endpoint.
 
-When you set up an HTTP Logs and Metrics Source, a unique URL is assigned to that source. The generated URL is a long string of letters and numbers. You can generate a new URL at any time. For more information see [Generating a new URL](generate-new-url-http-source.md).
+When you set up an HTTP Logs and Metrics Source, a unique URL is assigned to that source. The generated URL is a long string of letters and numbers. You can generate a new URL at any time. For more information see [Generating a new URL](generate-new-url.md).
 
 ## Data payload considerations
 
@@ -62,8 +61,8 @@ To configure an HTTP Logs and Metrics Source:
 
 You can upload both logs and supported metric types to an HTTP Source. There are different requirements depending on whether you are uploading logs or metrics to the Source. 
 
- * [Upload Logs to an HTTP Source](upload-logs-http-source.md)
- * [Upload Metrics to an HTTP Source](upload-metrics-to-http-source.md)
+ * [Upload Logs to an HTTP Source](upload-logs.md)
+ * [Upload Metrics to an HTTP Source](upload-metrics.md)
 
 ## HTTP Access Control (CORS)
 

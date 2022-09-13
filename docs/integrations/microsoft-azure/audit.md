@@ -49,7 +49,7 @@ Here’s how the solution fits together:
 In this step, you configure an HTTP source to which the Azure function will send Azure Activity logs.
 
 1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-logs-metrics-source).
+2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 
 ### Configure Azure resources using ARM template

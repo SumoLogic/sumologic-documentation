@@ -12,7 +12,7 @@ Click each link to go to each Help topic for all the details, then come back to 
 These topics provide basic information about your Sumo Logic account.
 
 * [Sumo Logic Account Types](/docs/manage/manage-subscription) The feature set of your Sumo Logic organization will depend on what type of Sumo Logic account you have. Review the list to make sure your account fits your use case. You can upgrade at any time.
-* [Preferences](manage-account.md#my-preferences) Set the Preferences on your personal Sumo Logic account for settings such as your password, web session timeout, default time zone, and more. 
+* [Preferences](account-setup.md#my-preferences) Set the Preferences on your personal Sumo Logic account for settings such as your password, web session timeout, default time zone, and more. 
 
 ## Searching log data
 

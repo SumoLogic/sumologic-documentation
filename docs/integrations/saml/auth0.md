@@ -45,7 +45,7 @@ Use the in-product [setup wizard](/docs/send-data/setup-wizard) in the Sumo Logi
 
 ### Configure a Source
 
-Source type is [HTTP](/docs/send-data/hosted-collectors/http-logs-metrics-source).
+Source type is [HTTP](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 * **Name**: Required
 * **Category**:

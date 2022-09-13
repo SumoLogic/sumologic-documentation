@@ -244,7 +244,7 @@ To manage your personal Sumo account preferences, do the following:
     * **My Access Keys**: add, edit, and remove access keys
     * **My Preferences**: your account session settings
 
-For more information, see the [Preferences Page](manage-account.md).
+For more information, see the [Preferences Page](account-setup.md).
 
 ### Get help: docs, community, and more
 

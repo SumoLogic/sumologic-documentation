@@ -1,7 +1,7 @@
 ---
 id: sumo-logic-apps
 title: Sumo Logic Apps/Integrations
-sidebar_label: Apps/Integrations
+sidebar_label: Installing Apps/Integrations
 ---
 
 

@@ -1,14 +1,14 @@
 ---
-id: upload-logs-http-source
+id: upload-logs
 title: Upload Logs to an HTTP Source
-sidebar_label: Upload Logs
+sidebar_label: Upload Logs to HTTP Source
 ---
 
 
-After you have added an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-logs-metrics-source) to a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) you can begin uploading data. You can upload both logs and metrics to the same HTTP source, however not in the same HTTP request. This document provides instructions on uploading logs, if you are uploading metrics see [Upload Metrics to an HTTP Source](upload-metrics-to-http-source.md).
+After you have added an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source) to a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) you can begin uploading data. You can upload both logs and metrics to the same HTTP source, however not in the same HTTP request. This document provides instructions on uploading logs, if you are uploading metrics see [Upload Metrics to an HTTP Source](upload-metrics.md).
 
 :::tip
-To immediately validate the reception of log data use Live Tail. Data sent to an HTTP source may take some time to show up in Search due to indexing delay. If your source does not seem to be receiving data, see [Troubleshooting HTTP Sources](troubleshooting-http-sources.md).
+To immediately validate the reception of log data use Live Tail. Data sent to an HTTP source may take some time to show up in Search due to indexing delay. If your source does not seem to be receiving data, see [Troubleshooting HTTP Sources](troubleshooting.md).
 :::
 
 ## Upload log data
@@ -22,7 +22,7 @@ Data needs to be in UTF-8 encoding.
 To upload log data with a POST request, include the complete data payload as the request body. Any query parameters will be ignored.
 
 :::important
-We recommend that the POST data payload have a size, before compression, of 100KB to 1MB. See [data payload considerations](upload-logs-http-source.md)  for details.
+We recommend that the POST data payload have a size, before compression, of 100KB to 1MB. See [data payload considerations](upload-logs.md)  for details.
 :::
 
 * Data payload:

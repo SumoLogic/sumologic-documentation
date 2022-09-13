@@ -55,7 +55,7 @@ Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hoste
 
 ### Configure a Source
 
-Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-logs-metrics-source). Name the new source "observable" (case-sensitive). Deselect the check box **Enable Timestamp Parsing**.
+Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Name the new source "observable" (case-sensitive). Deselect the check box **Enable Timestamp Parsing**.
 
 When the URL associated with the Source is displayed, copy the URL so you can use it to send files.
 
