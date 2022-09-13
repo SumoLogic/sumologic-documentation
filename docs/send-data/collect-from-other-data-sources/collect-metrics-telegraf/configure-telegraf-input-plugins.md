@@ -1,6 +1,7 @@
 ---
 id: configure-telegraf-input-plugins
 title: Configure Telegraf Input Plugins
+description: Learn how to configure Telegraf input plugins to collect metrics from an application or service.
 ---
 
 

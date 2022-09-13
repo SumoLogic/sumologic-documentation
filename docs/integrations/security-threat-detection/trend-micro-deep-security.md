@@ -32,7 +32,7 @@ This section provides instructions for configuring on-prem log collection for th
 To collect logs for Deep Security, do the following:
 
 1. Configure a [Installed Collector](/docs/send-data/Installed-Collectors).
-2. Configure a [Syslog Source](/docs/send-data/Sources/installed-collectors/Syslog-Source).
+2. Configure a [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source).
 
 When you configure the Syslog Sources, for Protocol, select UDP.
 
@@ -102,7 +102,7 @@ This section has instructions for collecting logs for the Trend Micro Deep Secur
 #### Step 1: Create a Cloud Syslog source on a hosted collector
 
 1. Select an existing [hosted collector](/docs/send-data/Hosted-Collectors), or create a new one.
-2. Add a [Cloud Syslog source](/docs/send-data/Sources/hosted-collectors/Cloud-Syslog-Source) to the hosted collector.
+2. Add a [Cloud Syslog source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source) to the hosted collector.
 
     1. Give the source a name
     2. Enter a Source Category.
@@ -176,7 +176,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 
 
 3. To install the app, complete the following fields.

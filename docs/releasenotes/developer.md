@@ -2,6 +2,7 @@
 id: developer
 title: Developer Release Notes
 sidebar_label: Developer
+description: We'll post new features and changes to our APIs, Collector management, and Live Tail CLI here.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -47,7 +48,7 @@ New - The [Dynamic Parsing Management API](/docs/api/Dynamic-Parsing) allows you
 ---
 ### December 21, 2020 - APIs
 
-New - The [Account Management API](/docs/api/Account-Management) allows you to manage the [custom subdomain](https://help.sumologic.com/Manage/01Manage_Subscription/12Manage_Organizational_Settings#Set_up_a_custom_subdomain) for the URL used to access your Sumo Logic account.
+New - The [Account Management API](/docs/api/Account-Management) allows you to manage the [custom subdomain](https://help.sumologic.com/Manage/Manage-Subscription/12Manage_Organizational_Settings#Set_up_a_custom_subdomain) for the URL used to access your Sumo Logic account.
 
 New - [Ingest Budget Management API V2](/docs/api/Ingest-Budget-V2) allows you to manage metadata-based [ingest budgets](https://help.sumologic.com/Manage/Ingestion-and-Volume/Ingest_Budgets) (with a scope) from HTTP endpoints.
 

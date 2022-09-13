@@ -3,8 +3,6 @@ id: audit-index
 title: Audit Index
 ---
 
-#
-
 ## Availability
 
 | Account Type | Account Level |
@@ -165,7 +163,7 @@ yields the following throttling notification.
 
 AWS automatically throttles CloudWatch data if the limits that Amazon sets for the associated APIs are exceeded.  If you have a high volume of metrics data points in your account, it is likely that Amazon will throttle your CloudWatch data.
 
-If no adjustments are made on the Sumo Logic side, throttling on the Amazon side can cause metrics data to be dropped. To prevent this from occurring, Sumo Logic automatically doubles the CloudWatch scan interval if more than one throttling message is received in a single interval. However, the change in scan interval isn't reflected in the Sumo Logic UI. The original configured interval is still shown. See [Amazon CloudWatch Source for Metrics](../../send-data/sources/hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics.md) for instructions on setting the CloudWatch scan interval. 
+If no adjustments are made on the Sumo Logic side, throttling on the Amazon side can cause metrics data to be dropped. To prevent this from occurring, Sumo Logic automatically doubles the CloudWatch scan interval if more than one throttling message is received in a single interval. However, the change in scan interval isn't reflected in the Sumo Logic UI. The original configured interval is still shown. See [Amazon CloudWatch Source for Metrics](docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) for instructions on setting the CloudWatch scan interval. 
 
 When the scan interval is increased, a message is added to the audit log. No action is required by the Sumo Logic user. 
 
@@ -276,9 +274,9 @@ The table below shows the value of the `class` and `action` fields for schedule
 | Finish | Scheduled search finished successfully. |
 | Delete | Scheduled search was deleted. |
 | Modify | The alert condition for the scheduled search was met and the alert action was fired. |
-| Timeout | Scheduled search did not complete within the timeout period, which is 20 minutes to an hour, depending on the time range set for the query.<br/>For more information, see [How to Prevent your Scheduled Search from Timing Out](../../alerts/scheduled-searches/faqs/prevent-scheduled-search-timing-out.md). |
+| Timeout | Scheduled search did not complete within the timeout period, which is 20 minutes to an hour, depending on the time range set for the query.<br/>For more information, see [How to Prevent your Scheduled Search from Timing Out](../../alerts/scheduled-searches/faq#how-to-prevent-your-scheduled-search-from-timing-out). |
 | Suspend | Indicates that Sumo has suspended the search because it has timed out repeatedly.<br/><br/>When a Scheduled Search query fails, Sumo Logic attempts to run the query again two more times, for a total of three tries. If all attempts fail, then an Alert Email is sent with a notification of the failure. The Scheduled Search is not run again until the next time it is scheduled to do so.<br/><br/>The next time the Scheduled Search runs, if it fails again after the three tries, then it is suspended. Another Alert Email is sent to notify you that the query has been suspended.<br/><br/>The Scheduled Search will remain suspended for four hours for non-daily searches (for example, searches recurring every 15 minutes, every 1 hour, etc.) and for up to an extra day for a daily search (two failed executions on two days and skips the third day). |
-| Skip | Scheduled search was skipped, because it was in a suspended state at a time when it was scheduled to run. For more information, see [What Happens When a Scheduled Search Is Suspended?](../../alerts/scheduled-searches/faqs/suspended-scheduled-search.md) |
+| Skip | Scheduled search was skipped, because it was in a suspended state at a time when it was scheduled to run. For more information, see [What Happens When a Scheduled Search Is Suspended?](/docs/alerts/scheduled-searches/faq#suspended-scheduled-search) |
 | Unsuspend | Indicates that Sumo has unsuspended a suspended scheduled search. |
 
 Suspend events only occur if Sumo Logic has manually suspended a search for some reason. If you see a suspended search and feel that this is in error, contact Sumo Logic Support.
@@ -298,4 +296,4 @@ The table below shows the value of the `class` and `action` fields for metric 
 
 ### Index retention period
 
-By default, the retention period of the Audit Index is the same as the retention period of your Default Continuous Partition. You can change the retention period by editing the partition that contains the index, `sumologic_audit`. For more information, see [Edit a Partition](../partitions-and-data-tiers/edit-partition.md).
+By default, the retention period of the Audit Index is the same as the retention period of your Default Partition. You can change the retention period by editing the partition that contains the index, `sumologic_audit`. For more information, see [Edit a Partition](../partitions-and-data-tiers/edit-partition.md).

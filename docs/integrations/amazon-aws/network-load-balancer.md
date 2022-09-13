@@ -25,8 +25,8 @@ account=* region=* LoadBalancer=* Namespace=aws/NetworkELB metric=ActiveFlowCoun
 ## Collecting Metrics for AWS Network Load Balancer App
 
 Sumo Logic supports collecting metrics using two source types:
-* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/aws-kinesis-firehose-metrics-source) (Recommended); or
-* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended); or
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
 Namespace for **Amazon Network Load Balancer **Service is **AWS/NetworkELB.**
 

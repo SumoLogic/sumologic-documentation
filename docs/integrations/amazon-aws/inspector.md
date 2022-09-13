@@ -34,9 +34,9 @@ An AWS Source must be associated with a Sumo Logic Hosted Collector. Before crea
 
 To add a hosted collector and AWS S3 source:
 
-1. [Grant Access to an AWS S3 Bucket.](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md)
-2. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector)
-3. Add an [AWS Source](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
+1. [Grant Access to an AWS S3 Bucket.](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md)
+2. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector)
+3. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
     * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
     * Specify **Timestamp locator** as `.*"UpdatedAt":"(.*)".*`
     * Click **Add**.
@@ -124,7 +124,7 @@ To install the Sumo Logic App for Amazon Inspector:
 3. To install the app, complete the following fields.
     * **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a [custom data filter](/docs/get-started/library/run-searches-apps.md). 
+        * Choose **Enter a Custom Data Filter**, and enter a [custom data filter](/docs/get-started/sumo-logic-apps#custom-data-filters). 
     * **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 

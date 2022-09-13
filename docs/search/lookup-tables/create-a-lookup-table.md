@@ -1,9 +1,8 @@
 ---
 id: create-a-lookup-table
 title: Create a Lookup Table
+description: Learn about lookup tables and how to create and manage them.
 ---
-
-
 
 This section has instructions for creating and and managing Lookup Tables using the Sumo Logic UI.
 
@@ -43,12 +42,12 @@ When you create a Lookup Table schema, note the following requirements:
 
     "pkv", "tid-cid-s", "mt", "tid-sk-1", "tid-sk-2", "tid-sk-3", "tid-sk-4", "tid-sk-5", "tid-sk-6", "tid-sk-7", "tid-sk-8", "tid-sk-9", "tid-sk-10", "tid-sk-11", "tid-sk-12", "tid-sk-13", "tid-sk-14", "tid-sk-15", "tid-sk-16", "tid-sk-17", "tid-sk-18", "tid-sk-19", "tid-sk-20", "`_messagetime`", "`_receipttime`", "`_sourceCategory`", "`_sourceHost`", "`_sourceName`", "`_source`", "`_sourceid`", "`_collector`", "`_collectorid`", "`_view`", "`_index`"
 
-* Field names can't contain two tilde characters in a row (~~). 
+* Field names can't contain two tilde characters in a row (`~~`). 
 * Field names are not case-sensitive. For example, you can't have both "Name" and "name" fields.
 
 ### Lookup Tables and Search Templates
 
-Currently, the ability to reference a field in a new style Lookup Table in a [Search Template](../get-started-with-search/build-search/search-templates.md) is not supported. However, you can refer to [classic Lookup Tables](../search-query-language/search-operators/lookup-classic.md) in Search Templates.  
+Currently, the ability to reference a field in a new style Lookup Table in a [Search Template](../get-started-with-search/build-search/search-templates.md) is not supported. However, you can refer to [classic Lookup Tables](docs/search/search-query-language/search-operators/lookup-classic.md) in Search Templates.  
 
 ## How many Lookup Tables can you have?
 
@@ -89,7 +88,7 @@ schema without populating the table.
 
     ![create-lookup-table.png](/img/search/lookup-tables/create-lookup-table.png)
 
-   * ***Lookup Name**. Enter a name for the Lookup Table.
+   * **Lookup Name**. Enter a name for the Lookup Table.
    * **Description.** (Optional.)  Enter a description of the Lookup Table.
    * **Do you want a TTL for table entries?** A TTL specifies a time limit beyond which an unchanged row in the table will be unavailable for reads and will be deleted. For example, if you set a TTL of 5 minutes for a lookup table, when 5 minutes pass without a row being updated, that row will no longer be returned by lookups and will be deleted from the lookups table. A TTL is useful for managing the freshness of the data and the size of the table.
 
@@ -204,7 +203,7 @@ When you run search operators that work with Lookup Tables (described in the fol
 
 You can use the following operators with Lookup Tables in Sumo Logic log searches and in Cloud SIEM rules:
 
-* `cat`—You can view the contents of a Lookup Table using the `cat` operator in a Sumo Logic log search tab. For more information, see [cat](../search-query-language/search-operators/cat.md).
+* `cat`—You can view the contents of a Lookup Table using the `cat` operator in a Sumo Logic log search tab. For more information, see [cat](docs/search/search-query-language/search-operators/cat.md).
 * `lookup`—You can use the `lookup` operator to return one or more fields from a Lookup Table. For more information, see [lookup](../search-query-language/search-operators/lookup.md).
 * `lookupContains`—You can use the `lookupContains` operator to see whether a key exists in a Lookup Table. For more information, see [lookupContains](../search-query-language/search-operators/lookupContains.md).
 * `save`—You can use the `save` operator to save the results of a Sumo log query to a Lookup Table you created using the Lookup UI or API. For more information, see [save](../search-query-language/search-operators/save.md).  

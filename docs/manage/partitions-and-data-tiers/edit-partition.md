@@ -43,7 +43,7 @@ Before changing the routing expression for a partition, consider the impact of t
 
     ![edit-partition-pane.png](/img/partitions-and-data-tiers/edit-partition-pane.png)
 
-1. **Routing Expression**.  Enter a [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that matches the data you want to have in the partition, using [built-in metadata](../../search/get-started-with-search/search-basics/built-in-metadata.md) or [custom metadata fields](../fields.md).
+1. **Routing Expression**.  Enter a [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that matches the data you want to have in the partition, using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) or [custom metadata fields](../fields.md).
 1. **Retention Period.** Enter the number of days you wish to retain the data in the partition, or click **Apply the retention period of the Default Continuous Index**.
 1. **Data Forwarding**. You can configure Data Forwarding, or if Data Forwarding is already configured, modify the configuration. For more information, see [Data Forwarding](/docs/manage/data-forwarding).
 

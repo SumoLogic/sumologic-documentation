@@ -161,7 +161,7 @@ The table below shows how Issue events are represented in the schema.
 
 ## Examples
 
-The mapping of events from tool sets to this event schema is achieved via Sumo Logic [FERs](../manage/field-extractions/create-field-extraction-rule.md). For Example, For [PagerDuty V2 Incidents](https://developer.pagerduty.com/docs/webhooks/v2-overview/), we map the incident payload to the alert event schema using the following **Parse Expression.**
+The mapping of events from tool sets to this event schema is achieved via Sumo Logic [FERs](docs/manage/field-extractions/create-field-extraction-rule.md). For Example, For [PagerDuty V2 Incidents](https://developer.pagerduty.com/docs/webhooks/v2-overview/), we map the incident payload to the alert event schema using the following **Parse Expression.**
 
 ```sql
 parse regex "(?<event>\{\"event\":\"incident\..+?\}(?=,\{\"event\":\"incident\..+|\]\}$))"
@@ -179,7 +179,7 @@ The field extraction rule created is shown in the diagram below: 
 ![pagerduty-v2-alerts.png](/img/sdo/pagerduty-v2-alerts.png)
 
 
-Examples of mapping field extraction rules to the other out of the box tools can be found in [this JSON file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
+Examples of mapping field extraction rules to the other out-of-the-box tools can be found in [this JSON file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
 
 ## Enriching the schema with additional fields
 

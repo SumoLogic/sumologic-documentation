@@ -1,6 +1,7 @@
 ---
 id: live-tail-preferences
 title: Live Tail Preferences
+description: You can change the preferences for Live Tail line spacing, message text size, and message color.
 ---
 
 

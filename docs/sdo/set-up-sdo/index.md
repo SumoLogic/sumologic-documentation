@@ -28,4 +28,4 @@ These include:
   * Manage Fields
   * Manage connections
   * Manage Content
-* Create a [Sumo Logic API key and ID](../../manage/security/access-keys.md) for the above user.
+* Create a [Sumo Logic API key and ID](docs/manage/security/access-keys.md) for the above user.

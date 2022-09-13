@@ -1,6 +1,7 @@
 ---
 id: parameters-command-line-installer
 title: Parameters for the Command Line Installer
+description: This topic lists the parameters that are available when installing a Collector using the command line installer.
 ---
 
 
@@ -33,8 +34,8 @@ Collector.
 | Parameter | Description |
 |--|--|
 | `-VskipRegistration=[boolean]` | When specified as `true` the installer will skip registration.<br/>Collectors will normally register with Sumo Logic during the installation process, but you can pass the `‑VskipRegistration=true` flag to skip registration. This way, the Collector is installed as a service that will start and register automatically when the instance is launched. |
-| `-Vsumo.accessid=[accessId]`<br/>`-Vsumo.accesskey=[accessKey]` | An authentication option is required, either this option or the token option (see next entry in this table). If you have a Sumo Logic access ID and access key, include both. `-Vsumo.accessid` and `-Vsumo.accesskey` Admins can generate an access ID/access key pair on the Preferences page in the Web application. See [Access Keys](../../../manage/security/access-keys.md).<br/>Many operating systems allow a user to list information about processes that are owned by other users. This information could include command line arguments. For enhanced security, we recommend using the -varfile option to specify Sumo Logic credentials. |
-| `-Vsumo.token_and_url=[token]` | An authentication option is required, either this option or the access ID/access key option (see the above entry in the table).<br/>Token can be either an [Installation Token](../../../manage/security/installation-tokens.md) or Setup Wizard Token. |
+| `-Vsumo.accessid=[accessId]`<br/>`-Vsumo.accesskey=[accessKey]` | An authentication option is required, either this option or the token option (see next entry in this table). If you have a Sumo Logic access ID and access key, include both. `-Vsumo.accessid` and `-Vsumo.accesskey` Admins can generate an access ID/access key pair on the Preferences page in the Web application. See [Access Keys](docs/manage/security/access-keys.md).<br/>Many operating systems allow a user to list information about processes that are owned by other users. This information could include command line arguments. For enhanced security, we recommend using the -varfile option to specify Sumo Logic credentials. |
+| `-Vsumo.token_and_url=[token]` | An authentication option is required, either this option or the access ID/access key option (see the above entry in the table).<br/>Token can be either an [Installation Token](docs/manage/security/installation-tokens.md) or Setup Wizard Token. |
 
 ## user.properties parameters
 

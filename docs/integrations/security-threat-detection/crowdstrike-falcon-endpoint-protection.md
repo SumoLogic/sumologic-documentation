@@ -187,7 +187,7 @@ _sourceCategory=*Crowdstrike*  UserActivityAuditEvent
 This section shows you how to configure log collection from CrowdStrike Falcon Endpoint Protection and have them sent to Sumo Logic. CrowdStrike Falcon Endpoint Protection provides endpoint detection and response, next-gen antivirus, and threat intelligence services through the cloud. Multiple security functions are consolidated into a single lightweight agent, for visibility across using central security analytics with Sumo Logic.
 
 :::caution
-To collect logs from CrowdStrike Falcon Endpoint Protection, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Crowdstrike ](/docs/send-data/Sources/hosted-collectors/Cloud-to-Cloud-Integration-Framework/CrowdStrike-Source) to create the source and use the same source category while installing the app.
+To collect logs from CrowdStrike Falcon Endpoint Protection, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Crowdstrike ](/docs/send-data/hosted-collectors/Cloud-to-Cloud-Integration-Framework/CrowdStrike-Source) to create the source and use the same source category while installing the app.
 
 The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you're using the Sumo Logic FedRamp deployment, use the sections below to configure the collection for this app.
 :::
@@ -265,7 +265,7 @@ You setup a Sumo Logic installed collector on the same host as the SIEM Connecto
 To set up an installed collector and local file source, do the following:
 
 1. Install a Sumo Logic collector on the same host as the SIEM Connector. Follow the instructions for your operating system as described in [Installed Collectors](/docs/send-data/Installed-Collectors).
-2. Add a local file source to the collector for Streaming API Events. Follow the steps on [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source), with these additional changes:
+2. Add a local file source to the collector for Streaming API Events. Follow the steps on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), with these additional changes:
 * Set the **Filepath** to**:**  **/var/log/crowdstrike/falconhoseclient/output**
 * Set the **Source Category** to: c**rowdstrike/falcon**
 * Under **Enable Multiline Processing**, check  **Boundary Regex**  and enter the following regex: `^\{.*`.
@@ -285,7 +285,7 @@ To install the app, do the following:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

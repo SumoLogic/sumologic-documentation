@@ -12,7 +12,7 @@ Akamai Security Events App allows you to visualize security events generated on 
 
 ## Log Types  
 
-The Akamai Security Events App uses security events generated on the Akamai platform by leveraging the [V1 SIEM API](https://developer.akamai.com/api/cloud_security/siem/v1.html) and Sumo Logic’s [Akamai SIEM API Source](/docs/send-data/Sources/hosted-collectors/Cloud-to-Cloud-Integration-Framework/akamai-siem-api-source).
+The Akamai Security Events App uses security events generated on the Akamai platform by leveraging the [V1 SIEM API](https://developer.akamai.com/api/cloud_security/siem/v1.html) and Sumo Logic’s [Akamai SIEM API Source](/docs/send-data/hosted-collectors/Cloud-to-Cloud-Integration-Framework/akamai-siem-api-source).
 
 
 ### Sample Log Message
@@ -83,7 +83,7 @@ _sourceCategory=<akamai-foo>
 
 To begin collecting logs for the Sumo App for Akamai Security Events:
 
-1. Create an Akamai SIEM API Source as described [here](/docs/send-data/Sources/hosted-collectors/Cloud-to-Cloud-Integration-Framework/akamai-siem-api-source#create-an%C2%A0akamai-siem-api%C2%A0source)
+1. Create an Akamai SIEM API Source as described [here](/docs/send-data/hosted-collectors/Cloud-to-Cloud-Integration-Framework/akamai-siem-api-source#create-an%C2%A0akamai-siem-api%C2%A0source)
 2. Enable both Parsing options while creating the Akamai SIEM API Source. Parsing options:
    * Decode httpMessage fields
    * Duplicate Events once for each rule associated with the event
@@ -96,7 +96,7 @@ This section has instructions for installing the Sumo App for Akamai Security Ev
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
    * **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source**. Select either of these options for the data source. 

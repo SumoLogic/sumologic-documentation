@@ -14,7 +14,7 @@ The payload for each scheduled search can be customized (depending on the tool y
 
 To set up a scheduled search for a Webhook Connection:
 
-1. [Save a search](../../../search/get-started-with-search/search-basics/save-search.md). 
+1. [Save a search](/docs/search/get-started-with-search/search-basics/save-search). 
 1. On the **Save Item** page, click **Schedule this search**.
 
    ![schedule frequency.png](/img/connection-and-integration/schedule-frequency.png)

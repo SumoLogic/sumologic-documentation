@@ -309,10 +309,9 @@ Clone the Sumo Logic Python performance metrics script and configuration files f
 $ git clone git@github.com:SumoLogic/sumologic-oracle-perf-monitor.git
 ```
 
+Once the script is cloned, navigate to oracle_script/sumooracle.
 
-Once the script is cloned, navigate to oracle_script/sumooracle
-
-Two files [oracle-perf-monitor.cfg](https://github.com/SumoLogic/sumologic-oracle-perf-monitor/blob/main/sumooracle/oracle-perf-monitor.cfg) and [oracle-perf-monitor.py](https://github.com/SumoLogic/sumologic-oracle-perf-monitor/blob/main/sumooracle/oracle-perf-monitor.py) should be present .
+Two files [oracle-perf-monitor.cfg](https://github.com/SumoLogic/sumologic-oracle-perf-monitor/blob/main/sumooracle/oracle-perf-monitor.cfg) and [oracle-perf-monitor.py](https://github.com/SumoLogic/sumologic-oracle-perf-monitor/blob/main/sumooracle/oracle-perf-monitor.py) should be present.
 
 
 #### Configure the script

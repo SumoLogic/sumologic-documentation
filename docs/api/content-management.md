@@ -7,7 +7,7 @@ description: The Content Management API allows you to manage content in your org
 
 ---
 
-The Content Management API allows you to manage content in your organization’s [Library](docs/get-started/library/index.md) from HTTP endpoints.
+The Content Management API allows you to manage content in your organization’s [Library](docs/get-started/library) from HTTP endpoints.
 
 Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
 

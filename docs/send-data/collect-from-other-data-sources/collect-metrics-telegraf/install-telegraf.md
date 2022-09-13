@@ -1,12 +1,15 @@
 ---
 id: install-telegraf
 title: Installing Telegraf for Sumo Logic
+description: Learn how to install Telegraf.
 ---
 
 This topic has instructions for installing Telegraf to work with Sumo Logic. We provide two sets of instructions:
 
  * Install Telegraf in a non-Kubernetes environment
  * Install Telegraf in a Kubenetes environment
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::note
 If you’re new to Telegraf, see [Telegraf Collection Architecture](telegraf-collection-architecture.md), which has an overview of Telegraf and the metric collection pipelines for both Kubernetes and non-Kubernetes environments.
@@ -145,6 +148,11 @@ When Telegraf runs as a Windows service, Telegraf logs messages to Windows event
 | `telegraf.exe --service uninstall` | Remove the telegraf service   |
 | `telegraf.exe --service start    ` | Start the telegraf service    |
 | `telegraf.exe --service stop`      | Stop the telegraf service     |
+
+
+If you're seeing the following error in Microsoft’s Services Control Panel Application (“Services.msc”) after clicking on telegraf service, please verify whether you have opened the powershell as administrator. [Learn more](https://github.com/influxdata/telegraf/issues/4235).<br/><img src={useBaseUrl('img/send-data/ms-error.png')} alt="MS" width="400"/>
+
+
 
 ## Install Telegraf in a Kubernetes environment
 

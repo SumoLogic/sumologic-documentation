@@ -236,9 +236,9 @@ This section demonstrates how to add a hosted Sumo Logic collector and AWS sourc
 An AWS Source must be associated with a Sumo Logic Hosted Collector. Before creating the S3 source, identify the Sumo Logic Hosted Collector you want to use, or create a new Hosted Collector as described in the following task.
 
 To add a hosted collector and AWS S3 source:
-1. [Grant Access to an AWS S3 Bucket.](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md)
-2. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector)
-3. Add an [AWS Source](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
+1. [Grant Access to an AWS S3 Bucket.](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md)
+2. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector)
+3. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
     1. Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
     2. Specify **Timestamp locator** as `.*"UpdatedAt":"(.*)".*`
     3. Click **Add**.
@@ -324,7 +324,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

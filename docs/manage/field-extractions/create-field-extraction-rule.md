@@ -47,14 +47,14 @@ To create a Field Extraction Rule:
         * Time - During a search when using **Auto Parse Mode** from [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md).
    * **Scope**. Select either **All Data** or **Specific Data**. When specifying data the options for the scope differ depending on when the rule is applied.
      * For an **Ingest Time** rule, type a [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that points to the subset of logs you'd like to parse. Think of the Scope as the first portion of an ad hoc search, before the first pipe (`|`). You'll use the Scope to run a search against the rule. Custom metadata fields are not supported here, they have not been indexed to your data yet at this point in collection.
-     * For a **Run Time** rule, define the scope of your JSON data. You can define your JSON data source as a [Partition](../partitions-and-data-tiers/about-partitions.md) Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](../../search/get-started-with-search/search-basics/built-in-metadata.md) that describes your JSON data. Think of the Scope as the first portion of an ad hoc search, before the first pipe (`|`). You'll use the Scope to run a search against the rule. You cannot use keywords like “info” or “error” in your scope.
+     * For a **Run Time** rule, define the scope of your JSON data. You can define your JSON data source as a [Partition](../partitions-and-data-tiers/about-partitions.md) Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) that describes your JSON data. Think of the Scope as the first portion of an ad hoc search, before the first pipe (`|`). You'll use the Scope to run a search against the rule. You cannot use keywords like “info” or “error” in your scope.
 
     :::note
     Always set up JSON auto extraction (Run Time field extraction) on a specific Partition name (recommended) or a particular Source. Failing to do so might cause the auto parsing logic to run on data sources where it is not applicable and will add additional overhead that might deteriorate the performance of your queries.
     :::
 
     :::sumo Best Practices
-    If you are not using Partitions we recommend using [metadata](../../search/get-started-with-search/search-basics/built-in-metadata.md) fields like `_sourceCategory`, `_sourceHost` or `_collector` to define the scope.
+    If you are not using Partitions we recommend using [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields like `_sourceCategory`, `_sourceHost` or `_collector` to define the scope.
 
     We recommend creating a separate Partition for your JSON dataset and use that Partition as the scope for run time field extraction. For example, let's say you have AWS Cloudtrail logs, and they are stored in `_view=cloudtrail` Partition in Sumo. You can create a Run Time FER with the scope `_view=cloudtrail`. Creating a separate Partition and using it as scope for a run time field extraction ensures that auto parsing logic only applies to necessary Partitions.
     :::

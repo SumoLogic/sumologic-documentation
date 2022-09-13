@@ -3,25 +3,15 @@ id: pause-disable-scheduled-views
 title: Pause or Disable Scheduled Views
 ---
 
-#
-
 Pausing a view stops new data from being indexed. You can resume indexing at any time.
 
-To pause a scheduled view:
+## Pause a scheduled view
 
 1. Go to **Manage Data** \> **Logs** \> **Scheduled Views**.
 1. Click the three-dot icon to the right of the scheduled view, then click **Pause** from the menu.
 
 To resume indexing at a later time, click **Start**.
 
-## View details about a scheduled view
-
-Details include who created a scheduled view, along with the creation date, the [lag time](scheduled-view-lag-time.md), and the query used to configure the scheduled view.
-
-To view details of a scheduled view:
-
-1. Go to **Manage Data** \> **Logs** \> **Scheduled Views**.
-1. Click the three-dot icon to the right of the scheduled view, then click **View Details**.
 
 ## Disable a scheduled view
 

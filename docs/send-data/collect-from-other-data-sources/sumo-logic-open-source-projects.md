@@ -1,6 +1,7 @@
 ---
 id: sumo-logic-open-source-projects
 title: Sumo Logic Open Source Projects
+description: Sumo Logic provides open-source solutions and resources for customers through GitHub.
 ---
 
 Sumo Logic provides open-source solutions and resources for customers via GitHub.
@@ -68,7 +69,7 @@ The following open-source solutions are collected in Sumo Logic’s GitHub repos
 | [sumo-collector-puppet-module](https://github.com/SumoLogic/sumo-collector-puppet-module)| This solution is a Puppet module for installing the Sumo Logic Collector. This downloads the Collector from the Internet, so Internet access is required on your machines.|
 | [sumo-java-client](https://github.com/SumoLogic/sumo-java-client)| This library provides a Java client to execute searches on the data collected by Sumo Logic. |
 | [sumo-powershell-sdk](https://github.com/SumoLogic/sumo-powershell-sdk)| This is a community-supported Windows PowerShell Module to work with the Sumo Logic REST API. It is free and open source, subject to the terms of the Apache 2.0 license. |
-| [sumologic-collector-chef-cookbook](https://github.com/SumoLogic/sumologic-collector-chef-cookbook) | This solution is a Chef Cookbook for installing and configuring the Sumo Logic Collector. The Cookbook installs the Collector or updates an existing one if it was set to use [Local Configuration File Management](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management). |
+| [sumologic-collector-chef-cookbook](https://github.com/SumoLogic/sumologic-collector-chef-cookbook) | This solution is a Chef Cookbook for installing and configuring the Sumo Logic Collector. The Cookbook installs the Collector or updates an existing one if it was set to use [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). |
 | [sumologic-python-sdk](https://github.com/SumoLogic/sumologic-python-sdk)| This solution is a Community-supported Python interface to the Sumo Logic REST API.|
 | [Sumotoolbox](https://github.com/voltaire321/sumologictoolbox)| This is a GUI utility for accessing the various Sumo Logic APIs (currently the search, content, and collector APIs.) The idea is to make it easier to perform common API tasks such as copying sources and generating CSV files from searches.|
 

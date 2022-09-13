@@ -21,9 +21,6 @@ Yes, yes you can. The experience is consistent with the Dashboards (New) experie
 
 Event overlay support is planned for a future release of Metrics Explorer.
 
-## I find Basic mode a bit restrictive. When will Advanced mode support autocomplete?
-
-Advanced mode autocomplete and other UI enhancements are coming in future releases of Metrics Explorer.
 
 ## How does autocomplete when searching metrics work?
 

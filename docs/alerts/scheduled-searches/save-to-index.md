@@ -34,7 +34,7 @@ In most cases, if you can use a [Scheduled View](/docs/manage/scheduled-views)�
 
 ## Save the results of a scheduled search as an Index
 
-1. [Save a search](../../search/get-started-with-search/search-basics/save-search.md). 
+1. [Save a search](/docs/search/get-started-with-search/search-basics/save-search). 
 1. Click **Schedule this search**.
 
     ![SaveToIndex.png](/img/alerts/SaveToIndex.png)

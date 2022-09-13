@@ -5,7 +5,7 @@ sidebar_label: Cloud SIEM Enterprise
 description: The Cloud SIEM Enterprise (CSE) API allows you to create and manage Entities, Custom Insights, log mappings, Match Lists, Network Blocks and other CSE features.
 ---
 
-The [Cloud SIEM Enterprise ](https://help.sumologic.com/Cloud_SIEM_Enterprise)(CSE) API allows you to create and manage Entities, Custom Insights, log mappings, Match Lists, Network Blocks and other CSE features.
+The [Cloud SIEM Enterprise ](/docs/cse)(CSE) API allows you to create and manage Entities, Custom Insights, log mappings, Match Lists, Network Blocks and other CSE features.
 
 Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
 

@@ -17,7 +17,7 @@ If you prefer to use the Classic metrics UI, see [Switch to the Classic metrics
 The Metrics Explorer appears when you open a new metrics tab. The page
 has two modes:
 
-* **Basic**. Basic Mode provides a query builder UI: you can construct metric queries by selecting metadata fields, dimensions, metrics, and operators from pull-down lists. This makes it easier to create your search scope and to apply operators to the metrics that are returned. You’ll still want to understand the functionality of [metric operators](/docs/metrics/metric-queries-alerts/metrics-operators), but the Metrics Explorer helps you by prompting you with a list of available operators, and after you choose an operator, the options or qualifiers that the operator supports. For more information about the Basic UI, see [About Basic Mode UI](metrics-explorer.md).
+* **Basic**. Basic Mode provides a query builder UI: you can construct metric queries by selecting metadata fields, dimensions, metrics, and operators from pull-down lists. This makes it easier to create your search scope and to apply operators to the metrics that are returned. You’ll still want to understand the functionality of [metric operators](/docs/metrics/metric-queries-alerts/operators), but the Metrics Explorer helps you by prompting you with a list of available operators, and after you choose an operator, the options or qualifiers that the operator supports. For more information about the Basic UI, see [About Basic Mode UI](metrics-explorer.md).
 * **Advanced**. In Advanced Mode, you can enter free-form metric queries. You can enter your entire query manually, but Advanced Mode will also prompt you with pull-down lists of metadata fields, dimensions, metrics, and operators. For more information, see [About the Advanced Mode UI](metrics-explorer.md).
 
 If your query supports basic mode, you can freely move between basic and advanced mode to build and run your query.
@@ -60,7 +60,7 @@ The key components of the UI are:
 | A | In the **Metric** area, you select the metric you want to return. When you click in this area, you’re presented with a list of metrics. In our example query, we selected the `CPU_LoadAvg_15min` metric. As you enter changes to your query, a message displays indicating if you need to execute the query to see updated results. |
 | B | In the **Filters** area, you can narrow down the scope of your query, using metadata and metric dimensions. When you click in this area, you’re presented with a drop down list of the metadata fields and dimensions associated with the metric you selected. When you select a metadata field or dimension, you’re presented with a list of values for the selected field or dimension. In our example query, we selected one metadata field, `_sourceCategory=bloomfilter`. The more metadata fields and dimensions you select, the narrower your query will be. After you've selected a filter and filter value, you can click the chip for the filter setting to edit it. |
 | C | In this area, you can apply one or more metric operators to metric query results. When you click **Add Operator**, you’re presented with a list of metric operators. In our example query, we selected the `topk` operator.     |
-| D | By default, the left pane below the query builder section presents a Preview Table of the time series returned by your query. You can click **Chart** to view a visualization instead. When you switch to the chart view, by default, a time series plot is presented. You can select a different visualization method, although not all visualizations make sense for every query.  |
+| D | By default, the left pane below the query builder section presents Time Series Table of the time series returned by your query. You can click **Chart** to view a visualization instead. When you switch to the chart view, by default, a time series plot is presented. You can select a different visualization method, although not all visualizations make sense for every query.  |
 | E | In the **Panel Type** area, you can select a different chart type: Categorical, Single Value, Map, and Honeycomb. The **Visual Settings** options allow you to customize your chart.  |
 | F | The icons on the right of the **Panel Type** area allow you to add a query, hide a query, clear a query, enter advanced mode, and duplicate a query. |
 | G | The icons in this area allow you to add another query row, hide a query, and open the more options menu.
@@ -81,32 +81,53 @@ The listed shortcuts display for your Operating System. The following list displ
 
 ![keyboard-shortcuts.png](/img/metrics/keyboard-shortcuts.png)
 
-### What's in the Preview Table?
+### What's in the Time Series Table?
 
-The screenshot below shows a portion of the **Preview Table** for a metric query. (There are too many columns to show in a screenshot.)
+The screenshot below shows a portion of the **Time Series Table** for a metric query. (There are too many columns to show in a screenshot.)
 
-:::tip
-You can drag the columns in the table to rearrange them, and double-click a column to expand it.
-:::
+![keyboard-shortcuts.png](/img/metrics/preview-table.png)
 
-![preview-table.png](/img/metrics/preview-table.png)
+### Contents of the Time Series Table
 
-The **Preview Table** contains a row for each time series returned by a query. A row contains the following information:
+The **Time Series Table** contains a row for each time series returned by a query. A row contains the following information:
 
-* Row label. Indicates which query returned the time series, for example `#A` or `#B`.
-* Metric name. The name of the metric returned, for example `CPU_LoadAvg_15min`.
-* An array of metadata fields and metric dimensions associated with the time series, in key=value format.
+* Query. Indicates which query returned the time series, for example `#A` or `#B`.
+* Metric. The name of the metric returned, for example `CPU_LoadAvg_15min`.
+* dimensions. A column appears for each dimension associated with the metric. Dimensions include standard Sumo Logic metadata fields, such as `_sourceCategory`, `_collectorId`, `_sourceHost`, and any other dimensions added to the metric by other means, for instance, using the [Metric Rules Editor](/docs/metrics/metric-rules-editor).
+* Data. The columns furthest to the right of the Time Series table present the current value of the metric, and minimum, maximum, average, current, count, and sum of the metric value over the query time range.
 
-  * The metadata fields that appear includes standard Sumo Logic metadata fields, such as `_sourceCategory`, `_collectorId`, `_sourceHost`, `_sourceName`, and so on.
-  * The dimensions that appear are whatever dimensions were attached to the incoming metrics, or added to the metrics in Sumo Logic using the [Metric Rules Editor](/docs/metrics/metric-rules-editor). The query in the screenshot above returns metrics that were collected by a host metric source running on an Installed Collector on an AWS EC2 instance. Such metrics are automatically tagged with the following EC2 tags:
+You can search the query results by entering a string in the search area above the Time Series table and clicking the magnifying glass icon.
 
-    * InstanceID
-    * Instance type
-    * Availability Zone
-    * Region
-    * AccountID 
+You can add or remove a column from the Time Series table using the checkbox next to the column name in the pane to the left of the table.
 
-* Metric value stats. The rightmost columns of the table present the current value of the metric, and minimum, maximum, average, current, and sum of the metric value over the query time range.
+### Context menu
+
+When you mouse over a cell in the Time SeriesEC2 table, a three-dot icon appears. Click it to display a context menu.
+
+The context menu is available in both Basic and Advanced mode.
+
+![time-series-context-menu](/img/metrics/time-series-context-menu.png)
+
+
+The menu options are:
+
+* Copy value. Copies the value in the cell to the clipboard.
+* Copy dimension and value. Copies the dimension and the value in the cell to the clipboard as a key:value pair.
+* Copy entire time series. Copies the complete time series to the clipboard as an array of key:value pairs.
+* Add to query. Adds the dimension to the query.
+* Add to query and run. Adds the dimension to the query and runs the query.
+* Add to query as NOT. Adds the dimension to the query with a NOT.
+* Add to query as NOT and run. Adds the dimension to the query with a NOT and runs the query.
+
+### Export query results
+
+You can export the results of a query to a .cvs file by clicking the download icon at the right end of the search bar.
+
+![download-icon.png](/img/metrics/download-icon.png)
+
+You’ll be prompted with the options to:
+* Include data points. If you select this option, the export will include the individual data points collected during the currently selected time range.
+* Export only selected fields. You can use this option to export a subset of the data and dimensions returned by your query. In the left pane, deselect the items you don’t want to export, and then choose Export only selected fields.
 
 ## Create a metric query
 
@@ -122,7 +143,7 @@ The **Preview Table** contains a row for each time series returned by a query.
 1. Scroll through the list, or begin typing to dynamically narrow the list. Click the desired value. The **Filter** field now contains the key-value pair you selected. You can click a filter setting to edit it. You can preface a filter value with and exclamation point (!) to NOT the value.
 1. As desired, repeat the previous steps to add additional filters to the query. 
 1. When you are ready to run your query, click the run button: ![run-button.png](/img/metrics/run-button.png)
-1. The metrics returned by your query appear in the **Preview Table**.
+1. The metrics returned by your query appear in the **Time Series Table**.
 
     ![results-in-table.png](/img/metrics/results-in-table.png)
 
@@ -197,7 +218,7 @@ You can hide a query so that it is not visualized in the chart.
 
 1. Follow the instructions to add a Monitor.
 
-## Convert query modes
+## Convert query mode
 
 The Metrics Explorer opens in Basic Mode by default. You can convert
 between Basic and Advanced anytime.
