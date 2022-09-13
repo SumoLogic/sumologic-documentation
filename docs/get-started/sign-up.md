@@ -1,13 +1,13 @@
 ---
 id: sign-up
+title: Sign Up and Activate
 description: Sign Up with Sumo Logic, creating and activating your account.
 ---
 
-# Sign Up and Activate
 
-Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data—without having to manage and scale any hardware or storage. With Sumo Logic Free, you can open a free account and start using Sumo Logic right away. 
+Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data—without having to manage and scale any hardware or storage. With Sumo Logic Free, you can open a free account and start using Sumo Logic right away.
 
-Users who sign up for a free account are automatically signed up for a Sumo Logic Trial account, and after 30 days they are switched over to a Sumo Logic Free account. Users can upgrade at any time. 
+Users who sign up for a free account are automatically signed up for a Sumo Logic Trial account, and after 30 days they are switched over to a Sumo Logic Free account. Users can upgrade at any time.
 
 Trial accounts allow access to:
 
@@ -56,11 +56,11 @@ Remember your deployment region selection. You may need it when integrating apps
 
 1. Once your account is activated, click the ![close](/img/get-started/github/close-icon.png) at the top right of the *Welcome to Sumo Logic* web page. You will not need to follow the in-application guide.
 
-Sumo Logic sends you an email to activate your account, and the Sumo Logic Setup Wizard is displayed.
+Sumo Logic sends you an email to activate your account, and the [Sumo Logic Setup Wizard](/docs/send-data/setup-wizard) is displayed.
 
 ## Activate Your Sumo Logic Account
 
-Activate your account using the email from Sumo Logic. If you did not find an email, check your Spam and Trash folders. 
+Activate your account using the email from Sumo Logic. If you did not find an email, check your Spam and Trash folders.
 
 :::note
 You have three days to activate or it will be removed. You can sign up again if you miss activating your account.
@@ -69,14 +69,14 @@ You have three days to activate or it will be removed. You can sign up again if 
 To activate your Sumo Logic Free Trial account:
 
 1. Locate and review the activation Sumo Logic email, then click **Activate Now**.
-1. Fill out the **Activate Your Account** form. 
+1. Fill out the **Activate Your Account** form.
 1. Click **Activate**.
 
     In a few minutes, your account is activated and the Sumo Logic Setup Wizard displays in a new browser tab.
 
 Next, use the [Setup Wizard] to send your logs to Sumo Logic.
 
-## AWS Marketplace 
+## AWS Marketplace
 
 Signing up for a Sumo Logic account through the AWS Marketplace creates a new Sumo Logic organization and account. It allows you to pay your bill using your Amazon account. All you need to sign up is a company email address and your location: North America, Europe, or Australia.
 
@@ -134,7 +134,7 @@ Sumo Logic sends you an email to activate your account, and the Sumo Logic Setup
 
 ### Activate Your Sumo Logic Account
 
-Activate your account using the email from Sumo Logic. If you did not find an email, check your Spam and Trash folders. 
+Activate your account using the email from Sumo Logic. If you did not find an email, check your Spam and Trash folders.
 
 :::note
 You have three days to activate or it will be removed. You can sign up again if you miss activating your account.
@@ -143,12 +143,12 @@ You have three days to activate or it will be removed. You can sign up again if 
 To activate your Sumo Logic Free Trial account:
 
 1. Locate and review the activation Sumo Logic email, then click **Activate Now**.
-1. Fill out the **Activate Your Account** form. 
+1. Fill out the **Activate Your Account** form.
 1. Click **Activate**.
 
     In a few minutes, your account is activated and the Sumo Logic Setup Wizard displays in a new browser tab.
 
-Next, use the [Setup Wizard] to send your logs to Sumo Logic.
+Next, use the [Setup Wizard](/docs/send-data/setup-wizard) to send your logs to Sumo Logic.
 
 ### Cancel your Account through AWS Marketplace
 

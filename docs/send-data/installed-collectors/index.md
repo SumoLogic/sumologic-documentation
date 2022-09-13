@@ -10,7 +10,7 @@ A Sumo Source is an object configured for a specific Collector that sends data
 
 For details on supported operating systems and hardware restrictions see Installed Collector requirements.
 
-See [how to choose a collector](/docs/send-data/collectors-sources) for details on when to use a single or multiple Installed Collectors.
+See [how to choose a collector](/docs/send-data/choose-collector-source) for details on when to use a single or multiple Installed Collectors.
 
 :::note
 The maximum number of Collectors allowed per organization is 10,000.

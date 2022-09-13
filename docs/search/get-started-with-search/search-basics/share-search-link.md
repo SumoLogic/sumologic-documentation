@@ -47,4 +47,4 @@ To share a link to a search:
 
     ![share saved search.png](/img/search/get-started-search/search-basics/share-saved-search.png)
 
-    * For information on publishing a search, see [Publishing a Search from the Library](../../../get-started/library/search-the-library.md).
+    * For information on publishing a search, see [Publishing a Search from the Library](/docs/get-started/library#search-the-library).

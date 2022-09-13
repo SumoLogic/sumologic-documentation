@@ -77,7 +77,7 @@ To work around this problem of opening the dashboards, in the web browser that y
 
 When you create a Dashboard and publish it or install an App, you are the owner of the Dashboard, so you have the ability to edit or adjust it at any time. But If you're using a Dashboard that is published by someone else in your organization, you won't see the **Edit** toggle on the **Dashboard** page, and you won't have the ability to edit it directly.
 
-To workaround this issue, you can always make a copy of the Dashboard from the **Library**. Then you can edit the copy as you like, because you own the copy. For instructions, see [Copy Content in the Library](../get-started/library/manage-library.md).
+To workaround this issue, you can always make a copy of the Dashboard from the **Library**. Then you can edit the copy as you like, because you own the copy. For instructions, see [Copy Content in the Library](../get-started/library).
 
 ## Why can't I view a search from a Dashboard?
 
@@ -86,4 +86,4 @@ There are several reasons why you may not be able to open a search from a Dashbo
 * If you don't own a Dashboard, you may not be able to open a search query from a Dashboard by using **Show in Search.**
 * Or it may be that the original [Dashboard Link](get-started/add-dashboard-link.md) has been changed to drill down to another Dashboard, instead of showing the query in the **Search** page. How would you know? This can be confusing when you just want to view the query and the messages it returns in the **Search** page.
 
-To workaround these issues, you can always make a copy of the Dashboard from the **Library**. Then you can edit the copy as you like, because you own the copy. For instructions, see [Copy Contents in the Library](../get-started/library/manage-library.md). 
+To workaround these issues, you can always make a copy of the Dashboard from the **Library**. Then you can edit the copy as you like, because you own the copy. For instructions, see [Copy Contents in the Library](../get-started/library). 

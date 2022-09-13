@@ -1,28 +1,17 @@
 ---
 id: sumo-logic-ui
+title: Tour the Sumo Logic UI
 ---
 
-# Tour the Sumo Logic UI
-
-Welcome to Sumo Logic introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, then sharing your findings with your colleagues. This page familiarizes you with the Sumo Logic user interface (UI) by showing you how to:
-
-* [Use the Left Navigation Bar](#using-the-left-navigation-bar)
-* [Work with tabs](#working-with-tabs)
-* [Master everyday tasks](#mastering-everyday-tasks)
-* [Become a Sumo Pro user](#become-a-sumo-pro-user)
+[**Get Started**](/docs/get-started) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, then sharing your findings with your colleagues. This page will help you get to know the Sumo Logic user interface (UI).
 
 ## Using the Left Navigation Bar
 
-You land on the Sumo Logic Home page when you first log in. The **Left Nav Bar** menu bar is a one-stop location where you can:
-
-* [Access dashboard and searches](#access-dashboards-and-searches)
-* [Search and switch browsing modes](#search-and-switch-browsing-modes)
-* [Hide and show the Left Nav Bar](#hide-and-show-the-left-nav-bar)
-* [Access Apps, Admin features, and Help](#access-apps-admin-features-and-help)
+When you first log in, you'll land on the Sumo Logic Home page. The **Left Nav Bar** menu bar is a one-stop location where you can access the following:
 
 ### Access dashboards and searches
 
-The **Left Nav Bar** provides easy access to libraries, personal collections of dashboards, searches, and folders. Click the icons at the top of the Left Nav Bar (left to right ) to view:
+The **Left Nav Bar** provides easy access to libraries, personal collections of dashboards, searches, and folders. Click the icons at the top of the Left Nav Bar (left to right) to view:
 
 * **Recent** dashboards and searches,
 * a list of your **Favorites** (dashboards and searches),
@@ -55,7 +44,7 @@ You can easily hide the **Left Nav Bar** to enlarge the working area. Then, ju
 
 ### Access Apps, Admin features, and Help
 
-In the lower section of the Left Nav Bar, you can access the [App Catalog](library/sumo-logic-apps.md), [Manage Data and Administration](/docs/manage) features, and [get help](#get-help-docs-community-and-more). 
+In the lower section of the Left Nav Bar, you can access the [App Catalog](sumo-logic-apps.md), [Manage Data and Administration](/docs/manage) features, and [get help](#get-help-docs-community-and-more). 
 
 ![TUI_App-Admin-Help.png](/img/get-started/ui/TUI_App-Admin-Help.png)
 
@@ -183,7 +172,7 @@ To view Favorites and add to the list, do the following:
 
 1. To add a search to the Favorites list, do the following:
 
-   1. [Save the search](../search/get-started-with-search/search-basics/save-search.md) (if not already saved) by clicking **Save As**, then in the Save Item dialog enter a name, description, and select a folder in which to save the search.
+   1. [Save the search](/docs/search/get-started-with-search/search-basics/save-search) (if not already saved) by clicking **Save As**, then in the Save Item dialog enter a name, description, and select a folder in which to save the search.
    1. Click **Save**.
    1. Click the three-dot icon and click **Favorite** from the provided options. 
 
@@ -235,7 +224,7 @@ To pin a search, do the following:
 
 1. To change the name of a Pinned Search, double-click the Search tab and enter a new name in the name field.
 
-For information on how to manage pinned searches, see the [Pinned Searches](library/search-the-library.md) page.
+For information on how to manage pinned searches, see the [Pinned Searches](/docs/get-started/library#pinned-searches) page.
 
 ### Manage your personal account preferences
 
@@ -269,7 +258,7 @@ Whenever you have a question, there are a number of ways in which you can get 
 * Try our **Customer Slack** channel
 
 :::sumo Getting Help
-See [Getting Help and Contacts](help-menu.md) for full information.
+See [Getting Help and Contacts](/docs/get-started/help) for full information.
 :::
 
 ### Admin: Manage data collection, data settings, and alerts
@@ -309,6 +298,6 @@ To administer Sumo Logic accounts, users, and security, do the following:
 
 Now that you're familiar with the layout and features in the Sumo Logic user interface (UI), you're ready to ramp up your Sumo skills with [self-paced training](https://www.sumologic.com/self-paced-training/).
 
-You don't have to stop there either. You can take the next step and become Sumo Certified. For more information on the Sumo Logic Certification program courses, go to the **Home** page and click the **Certification** tab. See [Certification FAQs](certification-faqs.md) for more information.
+You don't have to stop there either. You can take the next step and become Sumo Certified. For more information on the Sumo Logic Certification program courses, go to the **Home** page and click the **Certification** tab. See [Certification FAQs](/docs/get-started/faq#certification-faq) for more information.
 
 ![WTS_UI_Certification.png](/img/get-started/ui/WTS_UI_Certification.png)

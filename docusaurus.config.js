@@ -217,11 +217,18 @@ module.exports = {
                     activeBaseRegex: '^/docs/get-started/.*',
                   },
                   {
-                    label: 'Quickstart',
-                    sublabel: 'Fast-track Sumo setup',
-                    to: '/docs/quickstart',
-                    icon: 'backup_table',
-                    activeBaseRegex: '^/docs/quickstart/.*',
+                    label: 'Send Data',
+                    sublabel: 'Set up collectors, data sources',
+                    to: '/docs/send-data',
+                    icon: 'open_in_new',
+                    activeBaseRegex: '^/docs/send-data/.*',
+                  },
+                  {
+                    label: 'Apps/Integrations',
+                    sublabel: 'Insights from data sources',
+                    to: 'docs/integrations',
+                    icon: 'apps',
+                    activeBaseRegex: '^/docs/integrations/.*',
                   },
                   {
                     label: 'Manage Sumo',
@@ -231,38 +238,31 @@ module.exports = {
                     activeBaseRegex: '^/docs/manage/.*',
                   },
                   {
-                    label: 'Integrations',
-                    sublabel: 'Insights from data sources',
-                    to: 'docs/integrations',
-                    icon: 'apps',
-                    activeBaseRegex: '^/docs/integrations/.*',
-                  },
-                  {
-                    label: 'Send Data',
-                    sublabel: 'Set up collectors, data sources',
-                    to: '/docs/send-data',
-                    icon: 'open_in_new',
-                    activeBaseRegex: '^/docs/send-data/.*',
+                    label: 'Quickstart Tutorials',
+                    sublabel: 'Fast-track Sumo setup',
+                    to: '/docs/quickstart',
+                    icon: 'backup_table',
+                    activeBaseRegex: '^/docs/quickstart/.*',
                   },
                 ],
               },
               {
                 // 1
-                label: 'Metrics and Logs',
+                label: 'Search, Metrics, Logs',
                 items: [
+                  {
+                    label: 'Search and Logs',
+                    sublabel: 'Find data with queries',
+                    to: '/docs/search',
+                    icon: 'view_day',
+                    activeBaseRegex: '^/docs/search/.*',
+                  },
                   {
                     label: 'Alerts and Dashboards',
                     sublabel: 'Visualize data and set alerts',
                     to: '/docs/alerts',
                     icon: 'dashboard',
                     activeBaseRegex: '^/docs/(dashboards|dashboards-new|alerts)',
-                  },
-                  {
-                    label: 'Logs and Search',
-                    sublabel: 'Find data with queries',
-                    to: '/docs/search',
-                    icon: 'view_day',
-                    activeBaseRegex: '^/docs/search/.*',
                   },
                   {
                     label: 'Metrics',
@@ -381,8 +381,20 @@ module.exports = {
           },
           {
             label: 'API',
-            to: '/sumoapi',
             position: 'left',
+            type: 'dropdown',
+            items:[
+              {
+                label: 'Docs',
+                to: '/docs/api',
+              },
+              {
+                label: 'Reference',
+                href: 'https://api.sumologic.com/docs/',
+            // Redocusaurus
+            // to: '/sumoapi',
+              },
+            ]
           },
           {
             label: 'Contributing',

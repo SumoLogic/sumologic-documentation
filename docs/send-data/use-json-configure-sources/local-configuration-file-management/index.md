@@ -4,8 +4,6 @@ title: Local Configuration File Management
 description: With Local Configuration File Management, you can set up and manage Sources on an Installed Collector using one or more JSON files.
 ---
 
-
-
 With local configuration file management, you can configure Sources for an Installed Collector in one or more UTF-8 encoded JSON files.
 
 After you switch over to local configuration file management, you can no longer manage Sources through the Sumo web application or the Collector Management API. In the Sumo web application, the **Add Source** option is disabled on the **Manage Data \> Collection \> Collection** page.

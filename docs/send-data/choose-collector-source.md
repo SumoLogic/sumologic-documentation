@@ -1,7 +1,7 @@
 ---
-id: collectors-sources
+id: choose-collector-source
 title: Choosing a Sumo Logic Collector and Source
-sidebar_label: Getting Started Guide
+sidebar_label: Choose a Collector and Source
 description: Design a Sumo Logic deployment that's right for your organization.
 ---
 

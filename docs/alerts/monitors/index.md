@@ -147,7 +147,7 @@ Under the **More Actions** menu you can:
 * **Copy Path**. Copy the path of the Monitor to your computer clipboard.
 * **Duplicate**. Make another Monitor based on the same settings.
 * **Move**. Move the Monitor to a different path.
-* **Export**. Provides JSON of the Monitor, allowing you to transfer content within Sumo Logic by copying this JSON, then pasting it into the import dialog in the [Library](/docs/get-started/library/sumo-logic-library) location you choose. This JSON format may change without notice. 
+* **Export**. Provides JSON of the Monitor, allowing you to transfer content within Sumo Logic by copying this JSON, then pasting it into the import dialog in the [Library](/docs/get-started/library) location you choose. This JSON format may change without notice. 
 * **Delete**.
 
 ![monitor more actions](/img/monitors/monitor-actions.png)
@@ -364,7 +364,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
       * Example: `{{Resultsjson.Env}}` - High CPU. This alert will produce an Alert with the name like PROD - High CPU. Here we are assuming that there is a field name Env in underlying data that has a value of "PROD".
    * **Evaluation Delay**: Collection delays may occur due to your environment and it takes a couple of minutes for data to be processed into Sumo Logic. Since Monitors run on data from the most current time period, it's possible for Monitors to evaluate against incomplete data. As a result, Monitors can generate false positives or negatives that can cause confusion. Set an evaluation delay in seconds to delay the evaluation of a Monitor, so it doesn't look at the most current time (where data can be incomplete) and instead looks at an older period of time, where you have more complete data.<br/> ![additional settings evaluation delay.png](/img/monitors/additional-settings-evaluation-delay.png)
 
-   If your data is coming from the [Amazon CloudWatch Source for Metrics](docs/send-data/hosted-collectors//amazon-aws/amazon-cloudwatch-source-metrics.md) we recommend a setting of 900 seconds.
+   If your data is coming from the [Amazon CloudWatch Source for Metrics](docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) we recommend a setting of 900 seconds.
 
 7. (Optional) Set **Notifications**: When a trigger condition is met you can send notifications to other people and services. To add notifications click on the **Add Notification** button. You can add more than one notification channel for a Monitor.<br/>  ![monitor notifications input.png](/img/monitors/monitor-notifications-input.png)
 

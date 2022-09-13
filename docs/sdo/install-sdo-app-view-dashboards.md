@@ -19,7 +19,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. Select the version of the service you're using and click **Add to Library**.
 
     :::note
-    Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](../get-started/library/install-apps.md).
+    Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
     :::
 
 3. To install the app, complete the following fields.

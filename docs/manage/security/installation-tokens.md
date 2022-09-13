@@ -100,7 +100,7 @@ Where `<installationToken>` is the **Token String** you want to use to register
 
 ### Setup Wizard UI installer
 
-To register an Installed Collector with the Setup Wizard select the **Setup Wizard Token** authentication option. The Setup Wizard does not provide an option for Installation Tokens.
+To register an Installed Collector with the [Setup Wizard](/docs/send-data/setup-wizard) select the **Setup Wizard Token** authentication option. The Setup Wizard does not provide an option for Installation Tokens.
 
 ![wizard authentication step.png](/img/security/installation-tokens/wizard-authentication.png)
 
@@ -155,7 +155,7 @@ url=https://collectors.sumologic.com token=SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ## Audit Tokens
 
-You can use the Audit Event Index to review the management of installation tokens and when they're used to register Collectors. For full details on the event log schema and common parameters see Audit Event Index documentation. 
+You can use the Audit Event Index to review the management of installation tokens and when they're used to register Collectors. For full details on the event log schema and common parameters see Audit Event Index documentation.
 
 ### Token management events
 

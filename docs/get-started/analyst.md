@@ -1,8 +1,9 @@
 ---
-id: checklist-analyst
+id: analyst
+title: Getting Started Checklist for Analysts
+sidebar_label: For Analyst Roles
 ---
 
-# Getting Started Checklist for Analysts
 
 Click each link to go to each Help topic for all the details, then come back to this checklist to continue.
 
@@ -51,7 +52,7 @@ Once you have created search queries, you can visualize your data using charts, 
 
 ## Monitoring
 
-* [Save a Search](../search/get-started-with-search/search-basics/save-search.md): Whether you are running ad hoc searches during a forensic investigation or running standard searches for health checks, you can save any search to run later.
+* [Save a Search](/docs/search/get-started-with-search/search-basics/save-search): Whether you are running ad hoc searches during a forensic investigation or running standard searches for health checks, you can save any search to run later.
 * [Schedule a Search](/docs/alerts/scheduled-searches) When you save a search, you have the option to set up the saved search to run at a scheduled interval with an automated notification by email of the search results. You can edit a saved search at any time.
 * [Receive Email Alerts from Scheduled Searches](../alerts/scheduled-searches/receive-email-alerts-scheduled-searches.md): ​There are three ways to receive the results of scheduled searches in  email : scheduled email, alert email, and  Real Time  Alerts. 
 
@@ -66,9 +67,9 @@ Sumo supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To l
 
 Sumo Logic Applications deliver out-of-the box Dashboards, reports, saved searches, and field extraction for popular data Sources. When you install a Sumo Logic App, these pre-set searches and Dashboards are customized with your Source configurations and populated in a folder in the Library selected by you.
 
-* [Run Searches from Sumo Logic Apps](library/run-searches-apps.md): Sumo Logic Apps provide a host of pre-built saved searches for popular data Sources that you can run against your data without installing the App itself. This way, you can try the searches in an App against your data before you decide to install it. Or you can view the searches to see how good example queries are written.
-* [Install Sumo Logic Apps](library/install-apps.md):  Sumo Logic Apps are available in the Library. Select from a long list of popular data Sources and install them right from the Library. Certain Apps have specific installation requirements. Be sure to check the Help topic for your App for specific instructions.
-* [Log Analysis QuickStart App](library/log-analysis-quickstart-app.md): The Log Analysis QuickStart App, created especially for new users of Sumo Logic, includes searches to extract important information from your log files, independent of where they get generated. Whether you are new to log management or plan to migrate from other products, the Log Analysis QuickStart app will bring you up to speed with the Sumo Logic search, visualization, and analytics capabilities.
+* [Run Searches from Sumo Logic Apps](/docs/get-started/sumo-logic-apps#run-searches-from-sumo-logic-apps): Sumo Logic Apps provide a host of pre-built saved searches for popular data Sources that you can run against your data without installing the App itself. This way, you can try the searches in an App against your data before you decide to install it. Or you can view the searches to see how good example queries are written.
+* [Install Sumo Logic Apps](/docs/get-started/sumo-logic-apps#install-apps-from-the-library):  Sumo Logic Apps are available in the Library. Select from a long list of popular data Sources and install them right from the Library. Certain Apps have specific installation requirements. Be sure to check the Help topic for your App for specific instructions.
+* [Log Analysis QuickStart App](/docs/get-started/sumo-logic-apps#log-analysis-quickstart-app): The Log Analysis QuickStart App, created especially for new users of Sumo Logic, includes searches to extract important information from your log files, independent of where they get generated. Whether you are new to log management or plan to migrate from other products, the Log Analysis QuickStart app will bring you up to speed with the Sumo Logic search, visualization, and analytics capabilities.
 * [Data Volume App] (docs/integrations/sumo-apps/Data_Volume_App_-_Legacy.md): The Sumo Logic App for Data Volume allows you to view at a glance your account's data usage volume by category, Collector, Source name, and hosts. The app uses predefined searches and a Dashboard that provide visibility into your environment for real-time analysis of overall usage.
 
  

@@ -139,7 +139,7 @@ Replace _XXX-XX_ in the command above with the version number of the package you
    Starting with collector 19.170+, the installation directory is secured to users belonging to the `sumologic_collector` group. Modifying `user.properties` may require sudo privileges. For more information see [Enhanced File System Security for Installed Collectors](collector-installation-reference/enhanced-file-system-security-installed-collectors.md).
    :::
 
-1. (Optional) Provide a JSON Source information.  You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See [Using JSON to configure Sources](/docs/send-data/use-json-configure-sources). Alternatively, you can configure Sources at any time by using the Sumo web app. See [Sources](/docs/send-data/collectors-sources).
+1. (Optional) Provide a JSON Source information.  You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See [Using JSON to configure Sources](/docs/send-data/use-json-configure-sources). Alternatively, you can configure Sources at any time by using the Sumo web app. See [Sources](/docs/send-data/choose-collector-source).
 1. (Optional) Set the run a user for the Collector if you want the Collector to run as a user other than root. See [run as for a Collector](collector-installation-reference/set-run-as-user-for-collector.md).
 1. (Optional on Collector version 19.253-3+ in the Fed deployment) Enable FIPS 140-2 compliant Java Cryptography Extension (JCE) to encrypt your data to Sumo Logic's Fed deployment in US1 only. FIPS mode is not supported for any other deployment. If you are unsure whether you are on the Fed deployment, check our deployments. To enable, locate and run the script **configureFipsMode.sh** contained in Collector's installation directory under **/script**:      
 
@@ -215,7 +215,7 @@ Replace _XXX-XX_ in the command above with the version number of the package you
    sudo script/secureFiles.sh
    ```
 
-1. (Optional) Provide JSON Source information. You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See [Using JSON to configure Sources](/docs/send-data/use-json-configure-sources). Alternatively, you can configure sources at any time by using the Sumo web app. See [Sources](/docs/send-data/collectors-sources).
+1. (Optional) Provide JSON Source information. You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See [Using JSON to configure Sources](/docs/send-data/use-json-configure-sources). Alternatively, you can configure sources at any time by using the Sumo web app. See [Sources](/docs/send-data/choose-collector-source).
 
 1. (Optional) Set the run as user for the Collector if you want the Collector to run as a user other than root. See [run as for a Collector](collector-installation-reference/set-run-as-user-for-collector.md).
 
