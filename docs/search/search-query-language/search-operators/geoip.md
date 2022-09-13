@@ -40,7 +40,7 @@ Details of these data fields can be found in [Neustar's documentation](https://i
 
 ## Syntax to Map
 
-To map the IP addresses properly you must [count](../group-aggregate-operators/count-count-distinct-and-count-frequent.md) by the `latitude` and `longitude` fields. You must have the `_count` field in your results. If you want to use a different field's value [rename](as-operator.md) it to `_count` so the map uses the field.
+To map the IP addresses properly you must [count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent) by the `latitude` and `longitude` fields. You must have the `_count` field in your results. If you want to use a different field's value [rename](as-operator.md) it to `_count` so the map uses the field.
 
 Your query should use the following syntax:
 

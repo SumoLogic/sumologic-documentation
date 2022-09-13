@@ -1,6 +1,7 @@
 ---
 id: reference-field-special-characters
 title: Reference a Field with Special Characters
+description: Solution to reference a field name that contains a special character.
 ---
 
 

@@ -27,14 +27,14 @@ This section provides instructions for collecting logs for the Keeper Security A
 
 ### Step 1: Configure a collector
 
-To configure a collector for Keeper Security, follow the instructions in the [Hosted Collector](/docs/send-data/configure-hosted-collector) document.
+To configure a collector for Keeper Security, follow the instructions in the [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) document.
 
 ### Step 2: Configure an HTTP source
 
 You can configure sources for collectors that are hosted in Amazon Web Services (AWS), Microsoft, or other hosting services.
 
 To configure an HTTP source for Keeper, do the following:
-1. Go to the [Sources for Hosted Collectors](/docs/send-data/Sources/hosted-collectors) page.
+1. Go to the [Sources for Hosted Collectors](/docs/send-data/hosted-collectors/) page.
 2. Select the hosting service appropriate for your environment.
 3. Follow the instructions for adding an **HTTP Log Source**, using the default options.
 
@@ -85,7 +85,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     * **Data Source.** Select either of these options for the data source. 

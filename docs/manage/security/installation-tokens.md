@@ -68,7 +68,7 @@ Select **Delete Token** from the menu on the right of the row on the table or i
 
 ## Using Installation Tokens
 
-This section provides information on using Installation Tokens to register [Installed Collectors](../../send-data/installed-collectors/about.md). For details on Collector installation, see [Install a Collector on Linux](../../send-data/installed-collectors/linux.md), [Install a Collector on MacOS](../../send-data/installed-collectors/macos.md), and [Install a Collector on Windows](../../send-data/installed-collectors/windows.md).
+This section provides information on using Installation Tokens to register [Installed Collectors](docs/send-data/installed-collectors). For details on Collector installation, see [Install a Collector on Linux](docs/send-data/installed-collectors/linux.md), [Install a Collector on MacOS](docs/send-data/installed-collectors/macos.md), and [Install a Collector on Windows](docs/send-data/installed-collectors/windows.md).
 
 <Tabs
   className="unique-tabs"
@@ -83,7 +83,7 @@ This section provides information on using Installation Tokens to register [Ins
 
 ### Command line installer
 
-To register an Installed Collector with the [command line installer](../../send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you need to run the script with the following authentication parameter:
+To register an Installed Collector with the [command line installer](docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you need to run the script with the following authentication parameter:
 
 `-Vsumo.token_and_url`
 
@@ -100,7 +100,7 @@ Where `<installationToken>` is the **Token String** you want to use to register
 
 ### Setup Wizard UI installer
 
-To register an Installed Collector with the Setup Wizard select the **Setup Wizard Token** authentication option. The Setup Wizard does not provide an option for Installation Tokens.
+To register an Installed Collector with the [Setup Wizard](/docs/send-data/setup-wizard) select the **Setup Wizard Token** authentication option. The Setup Wizard does not provide an option for Installation Tokens.
 
 ![wizard authentication step.png](/img/security/installation-tokens/wizard-authentication.png)
 
@@ -111,7 +111,7 @@ Click next and enter the **Token String** you want to use to register the Collec
 
 ### user.properties
 
-To register an Installed Collector with [user.properties](../../send-data/installed-collectors/collector-installation-reference/user-properties.md) you need to use the authentication parameters `token` and `url`. To use these two parameters you'll need to manually base64 decode the **Token String**. For example, you can use the following Powershell commands to decode the base64 token:
+To register an Installed Collector with [user.properties](docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) you need to use the authentication parameters `token` and `url`. To use these two parameters you'll need to manually base64 decode the **Token String**. For example, you can use the following Powershell commands to decode the base64 token:
 
 <Tabs
   defaultValue="mac"
@@ -155,7 +155,7 @@ url=https://collectors.sumologic.com token=SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ## Audit Tokens
 
-You can use the Audit Event Index to review the management of installation tokens and when they're used to register Collectors. For full details on the event log schema and common parameters see Audit Event Index documentation. 
+You can use the Audit Event Index to review the management of installation tokens and when they're used to register Collectors. For full details on the event log schema and common parameters see Audit Event Index documentation.
 
 ### Token management events
 

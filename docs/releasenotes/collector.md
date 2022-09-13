@@ -7,7 +7,7 @@ description: You'll find a list of new Collector features and relevant bug fixes
 
 Collector Release Notes for the current year are listed here. If you need to see previous Collector Release Notes, check the [archive](/docs/releasenotes/archive).
 
-You can upgrade [Installed Collectors](/docs/send-data/installed-collectors/about.md) in the following ways:
+You can upgrade [Installed Collectors](/docs/send-data/installed-collectors) in the following ways:
 
 * [Web Application](/docs/manage/collection/upgrade-collectors.md)
 * [Command Line](/docs/manage/collection/upgrade-collectors.md)

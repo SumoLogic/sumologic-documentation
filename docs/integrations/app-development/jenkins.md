@@ -292,13 +292,13 @@ Sumo Logic Jenkins plugin is compatible with Jenkins version 2.60.1 and above. F
 
 ### Step 1: Configure a Collector
 
-To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
+To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
 
 ### Step 2: Configure an HTTP Log and Metric Source
 
 To create a new HTTP logs and metric source:
 
-1. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions.](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source)
+1. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions.](/docs/send-data/hosted-collectors/http-logs-metrics-source)
 2. Make a note of **HTTP Source URL** and **Source Category**, as you will need them later in the configuration process.
 
 ### Step 3: Install the Jenkins Plugin
@@ -413,7 +413,7 @@ To install the app, do the following:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     *  **Data Source.** Select either of these options for the data source. 

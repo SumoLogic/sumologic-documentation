@@ -1,6 +1,8 @@
 ---
 id: grep-searching-with-sumo-cheatsheet
 title: grep to Searching with Sumo Cheat Sheet
+sidebar_label: grep to Searching with Sumo
+description: This cheat sheet helps you move from grep to searching with Sumo.
 ---
 
 Searching across multiple servers and aggregating the results is where the power of Sumo really lies. This cheat sheet can make it easier for you to move from greping logs to more in-depth querying with Sumo Logic.

@@ -31,7 +31,7 @@ For more details on Nginx Ingress Metrics, see [https://docs.nginx.com/nginx-ing
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx Ingress.
 
-In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this [here](docs/observability/kubernetes-solution/collection-setup).
+In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this [here](docs/observability/kubernetes/collection-setup).
 
 Configuring log and metric collection for the Nginx Ingress App includes the following tasks:
 
@@ -191,7 +191,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
+Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 
 3. To install the app, complete the following fields.
    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

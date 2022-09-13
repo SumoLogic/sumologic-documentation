@@ -10,7 +10,7 @@ Queries that contain Views can be saved as scheduled searches, as Dashboard Pane
 
 To run a search against a Scheduled View:
 
-1. Begin the search with `_view=ScheduledViewName`, specifying the name of the Scheduled View that has indexed the data you want to search.
+1. Begin the search with `_view=ScheduledViewName`, specifying the name of the Scheduled View that has indexed the data you want to search. The use of `_view` is only supported in the scope of a query, that is, before the first pipe (`|`).
 1. Type the rest of the query, using any operators you prefer.
 
     For our example, we're running a search against a Scheduled View named fraudTroller, which indexes NGINX logs. By specifying that subset of data, we can dive into the prior day's logs, and get search results very quickly because the data has already been aggregated. Depending on the operators in the query, we could use this as a scheduled search or even a Dashboard Panel.  

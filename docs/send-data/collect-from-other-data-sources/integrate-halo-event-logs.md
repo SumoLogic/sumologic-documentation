@@ -1,6 +1,8 @@
 ---
 id: integrate-halo-event-logs
 title: Integrate Halo Event Logs into Sumo Logic
+sidebar_label: Halo Event Log Integration
+description: The Halo Event Connector enables you to pull security event logs from Halo into Sumo Logic.
 ---
 
 

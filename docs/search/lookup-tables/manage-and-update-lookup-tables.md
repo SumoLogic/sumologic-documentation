@@ -1,9 +1,8 @@
 ---
 id: manage-and-update-lookup-tables
 title: Manage and Update Lookup Tables
+description: Learn how to update, export, and share Lookup Tables.
 ---
-
-
 
 The page has information about updating, exporting, and sharing Lookup Tables. For information about creating a new Lookup Table, see [Create a Lookup Table](create-a-lookup-table.md).
 
@@ -121,7 +120,7 @@ If you want to replicate a lookup table schema in a different folder in the Libr
 
 1. Click **Copy** to copy the JSON to the clipboard, or **Download** to download a JSON file.
 1. Click **Done**. 
-1. To create new lookup table with the JSON, follow the instructions in [Import Content in the Library](../../get-started/library/manage-library.md).
+1. To create new lookup table with the JSON, follow the instructions in [Import Content in the Library](/docs/get-started/library#import-content).
 
 ## Share a lookup table
 
@@ -129,7 +128,7 @@ You can share a lookup table with other users, a role, or a combination
 of the two. 
 
 1. Go to the Sumo Logic Library.
-1. Mouse over the row for a lookup table you want to share, and click the sharing icon towards the right side of the row. You’ll be prompted to enter the user and roles with whom you want to share the table, the level of access you want to grant, and other sharing options. For information about sharing, see [Share Content](../../manage/content-sharing/share-content.md).
+1. Mouse over the row for a lookup table you want to share, and click the sharing icon towards the right side of the row. You’ll be prompted to enter the user and roles with whom you want to share the table, the level of access you want to grant, and other sharing options. For information about sharing, see [Share Content](docs/manage/content-sharing/share-content.md).
 
 ## Delete a lookup table
 

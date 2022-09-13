@@ -33,7 +33,7 @@ To collect logs for Zscaler, perform these steps, detailed in the following sect
 To collect logs for Zscaler Web Security, do the following in Sumo Logic:
 
 1. Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
-2. Configure a [Syslog Source](/docs/send-data/Sources/installed-collectors/Syslog-Source). For protocol, use **TCP**.
+2. Configure a [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source). For protocol, use **TCP**.
 
 Note the **Port** number, as you will need this to configure Zscaler NSS.  \
 
@@ -143,7 +143,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 13
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 
 
 

@@ -1,6 +1,7 @@
 ---
 slug: /search/get-started-with-search
 title: Getting Started with Search
+description: Start here to begin exploring your data in Sumo Logic.
 ---
 
 import DocCardList from '@theme/DocCardList';

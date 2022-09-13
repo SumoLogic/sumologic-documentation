@@ -23,27 +23,27 @@ When you generate the Duo credentials, you should do it for the Admin API applic
 
 ## Collecting Logs for the Duo Security App (DEPRECATED)
 
-To collect logs from the Duo Security App, if you are not using the Sumo Logic FedRamp deployment,  use the new [Cloud to Cloud Integration for Duo Security App](/docs/send-data/Sources/hosted-collectors/Cloud-to-Cloud-Integration-Framework/Duo-Source) to create the source and use the same source category while installing the app.
+To collect logs from the Duo Security App, if you are not using the Sumo Logic FedRamp deployment,  use the new [Cloud to Cloud Integration for Duo Security App](/docs/send-data/hosted-collectors/Cloud-to-Cloud-Integration-Framework/Duo-Source) to create the source and use the same source category while installing the app.
 
 The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you're using the Sumo Logic FedRamp deployment, use the sections below to configure collection for this app.
 
 This page demonstrates how to configure log collection for the Duo Security App.
 
-#### Step 1. Create Hosted Collector and HTTP Source (DEPRECATED)
+#### Step 1. Create Hosted Collector and HTTP Source
 
-1. Create a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Create an [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) on the Collector you created in the previous step. \
+1. Create a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. Create an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-logs-metrics-source) on the Collector you created in the previous step. \
 When you have configured the HTTP Source, Sumo will display the URL of the HTTP endpoint. Make a note of the URL. You will use it when you configure the Lambda Function to send data to Sumo.
 
 
-#### Step 2. Create an integration key, secret key, and API hostname in Duo (DEPRECATED)
+#### Step 2. Create an integration key, secret key, and API hostname in Duo
 
 The Duo Admin API allows you to integrate your application with Duo Security’s platform at a low level. The API has methods for creating, retrieving, updating, and deleting the core objects in Duo’s system for seamless [integrations](https://duo.com/docs/adminapi#integrations).
 
 To create an integration key, secret key, and API hostname in Duo, see the [Duo Admin API documentation](https://duo.com/docs/adminapi#about-the-admin-api).
 
 
-#### Step 3. Download Lambda Function code and Import it to AWS Lambda (DEPRECATED)
+#### Step 3. Download Lambda Function code and Import it to AWS Lambda
 
 1. Do one of the following:
 * Download the zip file from Sumo's [archive](https://s3.amazonaws.com/script-collection/Duo/Archive.zip).
@@ -57,7 +57,7 @@ For any enhancements or suggestions submit a pull request on the repository.
 5. Click **Save**.
 6. The **Function code** directory structure should look like this, make sure there isn't an extra folder between the **root** folder **duo_test2** and the **duo_client **folder. The **lambda_function.py** file needs to be directly under the **root** folder.
 
-#### Step 4. Define Environment Variables for Lambda Function (DEPRECATED)
+#### Step 4. Define Environment Variables for Lambda Function
 
 Define the following environment variables on the AWS Lambda Function page:
 
@@ -66,7 +66,7 @@ Define the following environment variables on the AWS Lambda Function page:
 * **I_KEY**, **S_KEY**, **HOST** : Duo’s integration key, secret key, and API hostname. See [Duo's documentation](https://duo.com/docs/adminapi#first-steps) for details.
 
 
-#### Step 5. Add Timer trigger for the Lambda Function (DEPRECATED)
+#### Step 5. Add Timer trigger for the Lambda Function
 
 Create a rule to run your Lambda function on a schedule. To create a rule using the console:
 
@@ -95,7 +95,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

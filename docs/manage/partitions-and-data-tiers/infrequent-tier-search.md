@@ -61,4 +61,4 @@ The dashboard presents the following information for the currently selected time
 * **Scheduled Search by Status**. A breakdown by status—Finished, Cancelled, or Failed—of the schedule searches that were run.
 * **Top 10 Failed Scheduled Search Queries**. The queries are ordered by most recent failed date.
 
-You can download the JSON for the dashboard [here](https://sumologic-app-data.s3.amazonaws.com/Infrequent_Scheduled_Search_Dashboard.json). For information about importing dashboards and other content see [Import Content in the Library](/docs/get-started/library/manage-library). 
+You can download the JSON for the dashboard [here](https://sumologic-app-data.s3.amazonaws.com/Infrequent_Scheduled_Search_Dashboard.json). For information about importing dashboards and other content see [Import Content in the Library](/docs/get-started/library#import-content). 

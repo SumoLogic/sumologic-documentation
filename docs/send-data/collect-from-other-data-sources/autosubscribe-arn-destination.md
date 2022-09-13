@@ -1,6 +1,7 @@
 ---
 id: autosubscribe-arn-destination
 title: Auto-Subscribe ARN (Amazon Resource Name) Destination
+description: You can use an Amazon CloudWatch Log Group subscription to access log events from CloudWatch Logs in real time, and send them to Sumo Logic.
 ---
 
 

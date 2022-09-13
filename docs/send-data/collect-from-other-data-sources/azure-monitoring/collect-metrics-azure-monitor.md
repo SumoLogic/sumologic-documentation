@@ -1,6 +1,7 @@
 ---
 id: collect-metrics-azure-monitor
 title: Collect Metrics from Azure Monitor
+description: Instructions for configuring a pipeline for shipping metrics available from Azure Monitor to  Sumo Logic.
 ---
 
 This section has instructions for configuring a pipeline for shipping metrics available from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic. Azure Monitor collects metrics and well as logs. The pipeline described below is for metrics, not logs. 
@@ -25,8 +26,8 @@ This section has instructions for configuring collection of metrics from Azure M
 
 In this step, you configure an HTTP source to receive logs from the Azure function.
 
-1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](../../configure-hosted-collector.md).
-1. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). 
+1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+1. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-logs-metrics-source). 
 
 ### Step 2. Configure Azure resources using ARM template
 

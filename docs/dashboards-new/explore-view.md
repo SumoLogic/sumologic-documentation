@@ -14,11 +14,11 @@ Explore can be used with:
 
 ### AWS Observability
 
-[AWS Observability Solution](/docs/observability/aws-observability-solution/index.md): Explore provides an intuitive dashboard framework that mirrors industry-standard AWS hierarchies. You can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. From the Explore tab, you can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. See [View AWS Observability Solution Dashboards](/docs/observability/aws-observability-solution/deploy-use-aws-observability/view-aws-observability-solution-dashboards.md) for details.
+[AWS Observability Solution](/docs/observability/aws/index.md): Explore provides an intuitive dashboard framework that mirrors industry-standard AWS hierarchies. You can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. From the Explore tab, you can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. See [View AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/view-dashboards.md) for details.
 
 ### Kubernetes Observability
 
-[Kubernetes Solution](/docs/observability/kubernetes-solution/index.md): Explore provides a visual hierarchy of the clusters in your environment that allows you to view and switch between clusters with a single click. Explore, used in conjunction with the Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes.md), allows you to intuitively monitor and troubleshoot issues as they arise. From the Explore tab, you can intuitively filter on four hierarchical views of your Kubernetes system: Node, Deployment, Service, and Namespace. Details are available in [Monitoring Using the Sumo Logic Kubernetes Solution](/docs/observability/kubernetes-solution/monitoring.md).
+[Kubernetes Solution](/docs/observability/kubernetes/index.md): Explore provides a visual hierarchy of the clusters in your environment that allows you to view and switch between clusters with a single click. Explore, used in conjunction with the Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes.md), allows you to intuitively monitor and troubleshoot issues as they arise. From the Explore tab, you can intuitively filter on four hierarchical views of your Kubernetes system: Node, Deployment, Service, and Namespace. Details are available in [Monitoring Using the Sumo Logic Kubernetes Solution](/docs/observability/kubernetes/monitoring.md).
 
 ### Real User Monitoring
 

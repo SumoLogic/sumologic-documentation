@@ -2,6 +2,7 @@
 id: windows-events
 title: Suggested Searches for Windows Events
 sidebar_label: Windows Events
+description: The following searches were built for use with Windows 2008 Events.
 ---
 
 The following searches were built for use with Windows 2008 Events.

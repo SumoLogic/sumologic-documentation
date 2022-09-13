@@ -1,6 +1,7 @@
 ---
 slug: /send-data/collect-from-other-data-sources/azure-monitoring
 title: Azure Monitoring
+description: Overview of strategy for collecting application and infrastructure data (logs and metrics) for Azure services using Azure Monitor.
 ---
 
 This page has information about Sumo’s solution for obtaining application and infrastructure data (logs and metrics) for Azure services using Azure Monitor. This solution enables you to monitor:

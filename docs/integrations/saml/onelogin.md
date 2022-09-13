@@ -22,8 +22,8 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 
 * **OneLogin Enterprise** or **Unlimited **plan subscription.
 * **Configure an Event Broadcaster**
-   * Add a Sumo Logic [Hosted Collector](/docs/send-data/configure-hosted-collector) to your Sumo Logic Org.
-   * Configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) for your OneLogin data. Make sure to set the **Source Category** when configuring the OneLogin source. For example, onelogin.
+   * Add a Sumo Logic [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) to your Sumo Logic Org.
+   * Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-logs-metrics-source) for your OneLogin data. Make sure to set the **Source Category** when configuring the OneLogin source. For example, onelogin.
    * From OneLogin, configure a broadcaster that points to this endpoint using the instructions in the [OneLogin documentation](https://onelogin.service-now.com/support?id=kb_article&sys_id=43f95543db109700d5505eea4b961959). You must use SIEM (NDJSON) format. Use the Sumo Logic HTTP Source URL as the Listener URL, and custom header is not needed.
 
 
@@ -131,7 +131,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

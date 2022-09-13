@@ -162,7 +162,7 @@ An event is an action that triggers an event message on a vCenter Server. Event 
 
 ### Step 1: Configure a Syslog Source for the Collector  
 
-A Sumo Logic [Syslog Source](/docs/send-data/Sources/installed-collectors/Syslog-Source) operates like a Syslog server listening on the designated port to receive Syslog messages.
+A Sumo Logic [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source) operates like a Syslog server listening on the designated port to receive Syslog messages.
 
 1. Go to **Manage Data > Collection > Collection**, and click **Add Source**.
 2. Select **Syslog** for the Source type.
@@ -201,7 +201,7 @@ Collecting performance logs involves using VMware tools and scripts running on v
 
 ### Step 1: Configure a Local File Source
 
-Configure a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+Configure a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
 1. Go to **Manage Data > Collection > Collection**, and click **Add Source** for your vCenter Server Collector.
 2. Select **Local File** for the Source type.
@@ -362,7 +362,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

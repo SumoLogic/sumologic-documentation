@@ -98,8 +98,8 @@ Perform the following tasks to configure log collection for the F5 - BIG-IP LTM 
 
 #### Step 1: Create a Sumo Logic Hosted Collector
 
-1. Configure a Hosted Collector in Sumo Logic using [these instructions](/docs/send-data/configure-hosted-collector).
-2. Add an [HTTP source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source), configuring the Source Category with the string f5 in it (e.g. “f5/ltm”). \
+1. Configure a Hosted Collector in Sumo Logic using [these instructions](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. Add an [HTTP source](/docs/send-data/hosted-collectors/http-logs-metrics-source), configuring the Source Category with the string f5 in it (e.g. “f5/ltm”). \
 Make a note of the URL for the HTTP source, as you will need it in the following steps. The URL for our example is: [https://collectors.us2.sumologic.com/receiver/v1/http/Thisis4fakeendpoint4testing==](https://collectors.us2.sumologic.com/receiver/v1/http/Thisis4fakeendpoint4testing==)
 
 
@@ -135,13 +135,13 @@ curl -k --user admin:<BIGIP PWD> -H "Accept: application/json" -H "Content-Type:
 
 This section provides instructions for installing the F5 - BIG-IP LTM App, as well as examples and explanations for each of the predefined dashboards.
 
-Using [these instructions](/docs/get-started/library/index.md) imports the JSON into your Sumo Logic environment
+Using [these instructions](/docs/get-started/library) imports the JSON into your Sumo Logic environment
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 

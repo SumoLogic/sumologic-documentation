@@ -26,7 +26,7 @@ The Sumo Logic App for CIS AWS Foundations Benchmark uses [CloudTrail](/docs/int
 
 The CIS AWS Foundation Benchmark App ingests [AWS CloudTrail](/docs/integrations/amazon-aws/cloudtrail.md) data. To collect logs for the CIS AWS Foundation Benchmark App, perform the following steps:
 
-1. Add a Sumo Logic [Hosted Collector](/docs/send-data/configure-hosted-collector) to your Sumo Logic Org.
+1. Add a Sumo Logic [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) to your Sumo Logic Org.
 2. Configure an [AWS CloudTrail Source](docs/integrations/amazon-aws/cloudtrail#Collect-logs-for-the-AWS-CloudTrail-App).
 3. Set your `_sourceCategory` (example: `aws/cloudtrail`).
 
@@ -42,7 +42,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
