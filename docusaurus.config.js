@@ -237,11 +237,18 @@ module.exports = {
                     icon: 'start',
                     activeBaseRegex: '^/docs/manage/.*',
                   },
+                  {
+                    label: 'Quickstart Tutorials',
+                    sublabel: 'Fast-track Sumo setup',
+                    to: '/docs/quickstart',
+                    icon: 'backup_table',
+                    activeBaseRegex: '^/docs/quickstart/.*',
+                  },
                 ],
               },
               {
                 // 1
-                label: 'Metrics and Logs',
+                label: 'Search, Metrics, Logs',
                 items: [
                   {
                     label: 'Search and Logs',

@@ -1,7 +1,7 @@
 ---
 id: ms-office-audit-source
 title: Microsoft Office 365 Audit Source
-sidebar_label: Microsoft Office 365 Audit
+sidebar_label: MS Office 365 Audit Source
 description: Collect Audit Log content types to track and monitor usage of Microsoft Office 365.
 ---
 

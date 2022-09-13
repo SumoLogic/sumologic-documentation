@@ -1,5 +1,5 @@
 ---
-slug: /send-data/hosted-collectors//cloud-syslog-source
+slug: /send-data/hosted-collectors/cloud-syslog-source
 title: Cloud Syslog Source
 sidebar_label: Cloud Syslog
 description: You can configure a cloud syslog source to allow a syslog client to send syslog data to Sumo Logic.
