@@ -21,21 +21,22 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
+  // sitesearch360
   scripts: [
     {
       src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
       async: true,
     },
   ],
-    //i18n: {
+  i18n: {
     // https://docusaurus.io/docs/i18n/tutorial
-    //defaultLocale: 'en',
-    //locales: ['en', 'ja'],
-    //localeConfigs: {
-    //  en: { label: 'English' },
-    //  ja: { label: '日本語' },
-    //},
-    //},
+    defaultLocale: 'en',
+    locales: ['en', 'ja'],
+    localeConfigs: {
+      en: { label: 'English' },
+      ja: { label: '日本語' },
+    },
+  },
   webpack: {
     jsLoader: (isServer) => ({
       loader: require.resolve('swc-loader'),
@@ -96,12 +97,14 @@ module.exports = {
     [
       'redocusaurus',
       {
-        specs: [{
+        specs: [
+          {
             id: 'sumoapi',
             //specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
             spec: 'sumologic-api.yaml',
             route: '/sumoapi/',
-          },],
+          },
+        ],
       },
     ],
   ],
@@ -420,7 +423,7 @@ module.exports = {
             className: 'navbar-trial',
           },
       //  {
-      //    i18n
+      //    i18n -- add this back when we are ready for translations
       //    type: 'localeDropdown',
       //    position: 'right',
       //  },
