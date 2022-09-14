@@ -109,7 +109,7 @@ To track Admin activity in your AWS account, and to provide data for all Adminis
 
 ### Configure an HTTP Source
 
-1. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-logs-metrics-source) on a Hosted Collector, either the collector where you installed CloudTrail source, or another collector, if you prefer.  Use the using the following settings:
+1. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) on a Hosted Collector, either the collector where you installed CloudTrail source, or another collector, if you prefer.  Use the using the following settings:
     * For **Name**, enter **Administrative Users**.
     * For **Source Category**, enter **admin_users**.
     * Deselect **Enable Timestamp Parsing**.
@@ -129,7 +129,7 @@ To track Admin activity in your AWS account, and to provide data for all Adminis
 
   Your organization's usernames may look different; make sure that only one user name is on each line.
 
-2. [Upload](/docs/send-data/hosted-collectors/http-logs-metrics-source) the admin_users.csv file to the HTTP Source. For example, using cURL, you’d type `curl -X POST -T admin_users.csv “<url>"` making sure to replace `<url>` with the unique URL generated for your HTTP Source.
+2. [Upload](/docs/send-data/hosted-collectors/http-source/logs-metrics) the admin_users.csv file to the HTTP Source. For example, using cURL, you’d type `curl -X POST -T admin_users.csv “<url>"` making sure to replace `<url>` with the unique URL generated for your HTTP Source.
 3. To verify that the data has uploaded, run the following search after about 10 minutes: `_sourceCategory=admin_users`
 4. If the search returns the correct result, run the following search to save the data to a shared location that can be referenced by the Panels in the CloudTrail app:
   ```sql

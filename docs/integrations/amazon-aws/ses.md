@@ -190,7 +190,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 ### Step 4: Configure and collect Amazon SNS notifications for Amazon SES
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Configure an  [HTTP](/docs/send-data/hosted-collectors/http-logs-metrics-source) source.
+2. Configure an  [HTTP](/docs/send-data/hosted-collectors/http-source/logs-metrics) source.
 * **Name—**Enter a name to display for the new Source.
 * **Description—**Enter an optional description.
 * **Source Category—**Enter a source category, such as: AWS/SES/Events/Notifications

@@ -18,7 +18,7 @@ In this step, you set up a Sumo Logic hosted collector and then configure an HTT
 To configure a collector and source, do the following:
 
 1. Set up a [Hosted Collector](/docs/send-data/hosted-collectors/).
-1. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-logs-metrics-source).
+1. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 ## Step 2: Create a client machine
 

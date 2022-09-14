@@ -3,7 +3,6 @@ slug: /send-data/hosted-collectors/google-source
 title: Google Sources for Sumo Logic
 ---
 
-
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 

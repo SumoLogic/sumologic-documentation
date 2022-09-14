@@ -47,7 +47,7 @@ Sumo supports the Graphite, Carbon 2.0, and Prometheus metric formats. For more
 
 Currently available metric sources are:
 
-* [HTTP Logs and Metrics source.](/docs/send-data/hosted-collectors/http-logs-metrics-source) You can use an HTTP source on hosted collector to collect Graphite, Carbon 2.0, and Prometheus metrics from environments where it is impractical to deploy an installed collector.
+* [HTTP Logs and Metrics source.](/docs/send-data/hosted-collectors/http-source/logs-metrics) You can use an HTTP source on hosted collector to collect Graphite, Carbon 2.0, and Prometheus metrics from environments where it is impractical to deploy an installed collector.
 
 * [Host Metrics source.](docs/send-data/installed-collectors/sources/host-metrics-source.md) You can use a host metrics source on an installed collector to collect CPU, memory, TCP, networking, and disk metrics on Linux and Windows machines.
 
