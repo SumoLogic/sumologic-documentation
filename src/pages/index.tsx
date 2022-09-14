@@ -184,8 +184,7 @@ export default function Home(): JSX.Element {
                 ))}
             </div></div>
           </section>
-        )}
-      <script async src="https://js.sitesearch360.com/plugin/bundle/3531.js"></script>  
+        )} 
       </main>
     </Layout>
   );
