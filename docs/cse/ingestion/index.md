@@ -1,5 +1,5 @@
 ---
-slug: /cse/cse-ingestion
+slug: /cse/ingestion
 title: CSE Ingestion
 sidebar_label: CSE Ingestion
 description: Learn how to configure ingestion for supported products and services.

@@ -53,31 +53,31 @@ If it is set, it is transmitted as a tag with each event log to identify the ten
 
 **Default**: none
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). A list of the LDAP Names of Active Directory attributes to report, in addition to the default list.
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). A list of the LDAP Names of Active Directory attributes to report, in addition to the default list.
 
 ## DirectoryEnabled
 
 **Default**: true
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). You can use this property to disable the Active Directory Monitor. Note Active Directory monitoring is automatically disabled if the Windows service that runs the sensor detects that the machine is not part of a domain.
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). You can use this property to disable the Active Directory Monitor. Note Active Directory monitoring is automatically disabled if the Windows service that runs the sensor detects that the machine is not part of a domain.
 
 ## DirectoryEnableSerializeContacts
 
 **Default**: false
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). Set to true to configure the Active Directory Monitor to report on Active Directory contacts.
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). Set to true to configure the Active Directory Monitor to report on Active Directory contacts.
 
 ## DirectoryExcludedAttributes
 
 **Default**: none
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). A comma-separated list of the LDAP Names of Active Directory attributes to exclude from the report that the sensor sends to the Sumo Logic platform (or the legacy CSE server).
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). A comma-separated list of the LDAP Names of Active Directory attributes to exclude from the report that the sensor sends to the Sumo Logic platform (or the legacy CSE server).
 
 ## DirectoryExcludeDistinguishedNameSuffixes
 
 **Default**: none
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). If set, the Windows Sensor won't report any records that contain the Distinguished Name suffixes specified. Example usage:
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). If set, the Windows Sensor won't report any records that contain the Distinguished Name suffixes specified. Example usage:
 
 ```
 "DirectoryExcludeDistinguishedNameSuffixes": ["CN=Users,DC=ignoreme,DC=local", "CN=Users,DC=andmetoo,DC=local"]
@@ -87,32 +87,32 @@ If it is set, it is transmitted as a tag with each event log to identify the ten
 
 **Default**: 86400
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). How long to wait before attempting to export Active Directory again, in seconds. This specifies the span of time between consecutive Active Directory dumps. It measures the time *between* the dumps, not the time between *starting* dumps.
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). How long to wait before attempting to export Active Directory again, in seconds. This specifies the span of time between consecutive Active Directory dumps. It measures the time *between* the dumps, not the time between *starting* dumps.
 
 ## DirectoryFilter
 
 **Default**: none
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). Specifies a filter to use when searching for Domain Objects in Active Directory. For more information on creating an LDAP filter, see:
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). Specifies a filter to use when searching for Domain Objects in Active Directory. For more information on creating an LDAP filter, see:
 https://social.technet.microsoft.com/wiki/contents/articles/5392.active-directory-ldap-syntax-filters.aspx#Filter_on_objectCategory_and_objectClass
 
 ## DirectoryMaxAppends
 
 **Default**: 1000
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). Specifies how many records to append to the Active Directory dump file before stopping to send the file. This value works with the [DirectoryQueueMaxFileOpenTime](#directoryqueuemaxfileopentime) setting to control how long the Windows Sensor waits before sending a file to which it is still appending.
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). Specifies how many records to append to the Active Directory dump file before stopping to send the file. This value works with the [DirectoryQueueMaxFileOpenTime](#directoryqueuemaxfileopentime) setting to control how long the Windows Sensor waits before sending a file to which it is still appending.
 
 ## DirectoryMaxBytes
 
 **Default**: 20000000 (20 MB)
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). Specifies the maximum file size (in bytes) for an Active Directory snapshot file (used to queue Active Directory records for upload).
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). Specifies the maximum file size (in bytes) for an Active Directory snapshot file (used to queue Active Directory records for upload).
 
 ## DirectoryMaxParallelUploads
 
 **Default**: 4
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). Specifies how many Active Directory files that the sensor will attempt to upload at the same time, in parallel. This value can be adjusted based on the host machines computing resources.
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). Specifies how many Active Directory files that the sensor will attempt to upload at the same time, in parallel. This value can be adjusted based on the host machines computing resources.
 
 ## DirectoryQueueBacklogWarningThresholdMaxFileAgeHours 
 
@@ -130,13 +130,13 @@ https://social.technet.microsoft.com/wiki/contents/articles/5392.active-director
 
 **Default**: 300
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). The amount of time the Active Directory snapshot file can remain open, in seconds The Active Directory dump can take a long time. As it runs, the Windows Sensor can upload what data it has already collected instead of waiting for the entire dump to complete. This field specifies how long the file will remain open during long-running dumps.
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). The amount of time the Active Directory snapshot file can remain open, in seconds The Active Directory dump can take a long time. As it runs, the Windows Sensor can upload what data it has already collected instead of waiting for the entire dump to complete. This field specifies how long the file will remain open during long-running dumps.
 
 ## DirectoryUploadBatchSizeTarget
 
 **Default**: 1 MB
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). This setting applies only to uploads to Sumo Logic platform, not to the legacy CSE server. The Windows Sensor uploads Active Directory records to the Sumo Logic platform in batches. This setting specifies the target size of the batch that is uploaded. There is rarely a reason to change the value of this setting.
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). This setting applies only to uploads to Sumo Logic platform, not to the legacy CSE server. The Windows Sensor uploads Active Directory records to the Sumo Logic platform in batches. This setting specifies the target size of the batch that is uploaded. There is rarely a reason to change the value of this setting.
 
 ## DirectoryUploadCategory
 
@@ -147,31 +147,31 @@ https://social.technet.microsoft.com/wiki/contents/articles/5392.active-director
 ## DirectoryUploaderRestDuration
 
 **Default**: 100ms
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). Specifies how long the thread should pause between uploading files, in milliseconds. This specifies low long the thread will rest before checking for another file to send. This is here to avoid pegging out the CPU.
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). Specifies how long the thread should pause between uploading files, in milliseconds. This specifies low long the thread will rest before checking for another file to send. This is here to avoid pegging out the CPU.
 
 ## DirectoryUploadPause
 
 **Default**: false
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). Useful for technical support. When this is enabled, the sensor will create dumps, but will not attempt to upload them.
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). Useful for technical support. When this is enabled, the sensor will create dumps, but will not attempt to upload them.
 
 ## DirectoryUploadSiemForwarding
 
 **Default**: true
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). This setting  applies to configurations in which the sensor uploads to the Sumo Logic platform (as opposed to the legacy CSE server). For Active Directory uploads, the sensor will use this setting to populate the value in the `_siemForwarding` header.
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). This setting  applies to configurations in which the sensor uploads to the Sumo Logic platform (as opposed to the legacy CSE server). For Active Directory uploads, the sensor will use this setting to populate the value in the `_siemForwarding` header.
 
 ## DirectoryUploadUrlPath
 
 **Default**: “/inventory”
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). The path to the API endpoint where directories are uploaded.
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). The path to the API endpoint where directories are uploaded.
 
 ## DirectoryVerboseTrace
 
 **Default**: “/inventory”
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). If set to true, low-level information about the process of retrieving Active Directory objects and dumping them to snapshot files will be logged as Trace messages.
+**Description**: This setting relates to the [Active Directory Monitor](/docs/cse/sensors/windows-sensor-overview#active-directory-monitor). If set to true, low-level information about the process of retrieving Active Directory objects and dumping them to snapshot files will be logged as Trace messages.
 
 :::note
 The minimum log level must also be set to “Trace” in the `Nlog.config` file located in `C:\Program Files\Sumo Logic\CSE Windows Sensor`
@@ -191,7 +191,7 @@ The minimum log level must also be set to “Trace” in the `Nlog.config` file 
 
 **Default**: 4 hours
 
-**Description**: This setting relates to the [Domain Controller Monitor](windows-sensor-overview.md#domain-controller-monitor). Specifies how long to wait until we attempt to detect Domain Controllers again. Domain Controllers are always detected at least once at startup, regardless of this setting.
+**Description**: This setting relates to the [Domain Controller Monitor](/docs/cse/sensors/windows-sensor-overview#domain-controller-monitor). Specifies how long to wait until we attempt to detect Domain Controllers again. Domain Controllers are always detected at least once at startup, regardless of this setting.
 
 ## Environment
 
@@ -264,7 +264,7 @@ For more information about security-related events, see [Events to Monitor](http
 
 **Default**: false
 
-**Description**: Enables the [Localhost Monitor](windows-sensor-overview.md#localhost-monitor) to monitor local events on the machine that is running the sensor.
+**Description**: Enables the [Localhost Monitor](/docs/cse/sensors/windows-sensor-overview#localhost-monitor) to monitor local events on the machine that is running the sensor.
 
 ## EventLogEnablePeriodicReAttach
 
@@ -321,7 +321,7 @@ This setting is available in sensor versions 1.9 and higher. It replaces the Eve
 
 ## EventLogForwarderEnable
 
-This option is not in `settings.conf` by default. Add this option to enable the [Windows Event Collector (WEC) Monitor](windows-sensor-overview.md). 
+This option is not in `settings.conf` by default. Add this option to enable the [Windows Event Collector (WEC) Monitor]/docs/cse/sensors/windows-sensor-overview. 
 
 **Default**: false
 

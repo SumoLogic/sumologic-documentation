@@ -47,4 +47,4 @@ If you use the [Insight Enrichment Server](../integrations/insight-enrichment-se
 The following CSE UI pages will be removed by this update:
 
 * The **Accounts**, **Invitations**, **Roles,** and **Teams** pages; these are now managed centrally in the Sumo Logic platform UI. For more information, see Users and Roles.
-* The **Sensors** page; sensors are now managed by the platform UI. For current download links, see [Sensor Download Locations](../cse-sensors/sensor-download-locations.md).
+* The **Sensors** page; sensors are now managed by the platform UI. For current download links, see [Sensor Download Locations](../sensors/sensor-download-locations.md).

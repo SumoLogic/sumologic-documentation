@@ -12,16 +12,16 @@ Cloud SIEM Enterprise (CSE) uses [Zeek](https://zeek.org/) (formerly known as 
 
 ## Best collection method: Network Sensor
 
-Sumo Logic recommends using CSE’s Network Sensor to collect Zeek logs and upload them to an HTTP Source on a Sumo Logic Hosted Collector. This is far and away the preferred method: it ensures that supported Bro policies are enabled and that the supported Bro output format is configured. It also results in the creation of CSE Records from the raw Zeek log messages. For instructions, see [Network Sensor Deployment Guide](network-sensor-deployment-guide.md). 
+Sumo Logic recommends using CSE’s Network Sensor to collect Zeek logs and upload them to an HTTP Source on a Sumo Logic Hosted Collector. This is far and away the preferred method: it ensures that supported Bro policies are enabled and that the supported Bro output format is configured. It also results in the creation of CSE Records from the raw Zeek log messages. For instructions, see [Network Sensor Deployment Guide](/docs/cse/sensors/network-sensor-deployment-guide). 
 
-The Network Sensor extracts files observed over cleartext protocols that match selected MIME types. You can configure what types will be extracted using the [extracted_file_types](network-sensor-deployment-guide.md) property in the Network Sensor’s configuration file, `trident-sensor.cfg`. By default the sensor will upload password-protected zip files and the following types of executables:
+The Network Sensor extracts files observed over cleartext protocols that match selected MIME types. You can configure what types will be extracted using the [extracted_file_types](/docs/cse/sensors/network-sensor-deployment-guide) property in the Network Sensor’s configuration file, `trident-sensor.cfg`. By default the sensor will upload password-protected zip files and the following types of executables:
 
 * `application/x-dosexec`
 * `application/x-msdownload`
 * `application/x-msdos-program`
 
 :::note
-YARA [file analysis](../cse-rules/import-yara-rules.md) is supported only for files extracted by the Network Sensor. If you use
+YARA [file analysis](/docs/cse/rules/import-yara-rules) is supported only for files extracted by the Network Sensor. If you use
 your own Zeek deployment and ingest logs using a Sumo Logic Source you can't also upload extracted files. 
 :::
 
@@ -29,7 +29,7 @@ your own Zeek deployment and ingest logs using a Sumo Logic Source you can't al
 
 This section describes two methods you can use to filter the logs that the Network Sensor sends to CSE.
 
-* You can configure a Berkeley Packet Filter (BPF) filter using the [filter](network-sensor-deployment-guide.md) parameter in Network Sensor’s configuration file, `trident-sensor.cfg`. This is the most efficient filtering mechanism as it is performed before Network Sensor processing.
+* You can configure a Berkeley Packet Filter (BPF) filter using the [filter](/docs/cse/sensors/network-sensor-deployment-guide) parameter in Network Sensor’s configuration file, `trident-sensor.cfg`. This is the most efficient filtering mechanism as it is performed before Network Sensor processing.
 
     The value of the `filter` parameter is an expression that begins with `not`. This example expression ensures the that the Network Sensor won't process any traffic involving host `a.b.c.com` or host `d.e.f.com`:
 
@@ -37,7 +37,7 @@ This section describes two methods you can use to filter the logs that the Netwo
 
     For information about BPF filter syntax, see https://biot.com/capstats/bpf.html.  
      
-* You can also filter by Zeek log type using the [skipped_log_types](network-sensor-deployment-guide.md) property in `trident-sensor.cfg`. The default value of `skipped_log_types` is:
+* You can also filter by Zeek log type using the [skipped_log_types](/docs/cse/sensors/network-sensor-deployment-guide) property in `trident-sensor.cfg`. The default value of `skipped_log_types` is:
 
    ```
    dpd,weird,syslog,pe,tunnel,communication,conn-summary,known_hosts,software,stdout.stderr,loaded_scripts,ntp

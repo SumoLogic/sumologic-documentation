@@ -110,7 +110,7 @@ At the top of the **Insight \> Details** page, you’ll see a Signal timeline th
    * Rules—Signals that were triggered by Match or Chain rules.
    * Anomalies—Signals that were triggered by Threshold or Aggregation rules.
    * Threat intelligence—Signals that were fired by Threat Intel rules. (These are Match rules that leverage threat intel matches.)
-   * File Analysis—Signals that were triggered by [Yara file analysis rules](../cse-rules/import-yara-rules.md).
+   * File Analysis—Signals that were triggered by [Yara file analysis rules](/docs/cse/rules/import-yara-rules).
 1. **Show Related Signals**. Click this link to show Related Signals in addition to Attached Signals. 
 1. **Sort options**. You can sort the Signals list by Content Type, Event Time, Created Time, Name, or Severity. Note that you can further sort by ascending or descending value.
 1. **Add Signals**. Click this option if you want to add a Signal to the Insight. You’ll be prompted with a list of Signals that have the same Entity as the current Insight (if there are any), and are not already attached to another Insight. A Signal that you add to an Insight manually is considered an Attached Signal.

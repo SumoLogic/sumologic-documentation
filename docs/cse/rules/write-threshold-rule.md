@@ -7,7 +7,7 @@ description: Learn how to write a Threshold rule.
 
 This topic has information about the Threshold rules and how to create them in the CSE UI.
 
-If you are new to writing rules, see [About CSE Rules](about-cse-rules.md for information about rule expressions and other rule options.
+If you are new to writing rules, see [About CSE Rules](about-cse-rules.md) for information about rule expressions and other rule options.
 
 ## About Threshold rules
 

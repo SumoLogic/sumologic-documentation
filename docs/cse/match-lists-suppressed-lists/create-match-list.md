@@ -52,7 +52,7 @@ In a rule, you look for matches by extending  a rule expression with an `array_
  
 If any of the IP addresses within the Record match one of the “vuln_scanner” IPs, the `listMatches` field will have a value of `['vuln_scanners']`. Thus, the check above will effectively prevent Signals from firing for those rules on the scanner IP addresses.
 
-For more information about referring to Match List data in rules, see [Match Lists](../cse-rules/about-cse-rules.md) in the *About CSE Rules* topic.
+For more information about referring to Match List data in rules, see [Match Lists](../rules/about-cse-rules.md) in the *About CSE Rules* topic.
 
 ## Match List or Threat Intel: which to use?
 

@@ -15,7 +15,7 @@ After downloading the Network sensor appropriate for your system architecture, r
 sudo wget -q -O - <URL> | sudo /bin/bash
 ```
 
-For information about the installer prompts, see [Network Sensor Deployment Guide](network-sensor-deployment-guide.md).
+For information about the installer prompts, see [Network Sensor Deployment Guide](/docs/cse/sensors/network-sensor-deployment-guide).
 
 ## Sensor download URLs for the AU region
 

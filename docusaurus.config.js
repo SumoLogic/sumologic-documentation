@@ -23,11 +23,11 @@ module.exports = {
   ],
   scripts: [
     {
-      src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
+      src: 'https://js.sitesearch360.com/plugin/bundle/3531.js',
       async: true,
     },
   ],
-//i18n: {
+  //i18n: {
     // https://docusaurus.io/docs/i18n/tutorial
   //defaultLocale: 'en',
   //locales: ['en', 'ja'],
@@ -230,7 +230,7 @@ module.exports = {
                     activeBaseRegex: '^/docs/send-data/.*',
                   },
                   {
-                    label: 'Apps/Integrations',
+                    label: 'Apps and Integrations',
                     sublabel: 'Insights from data sources',
                     to: 'docs/integrations',
                     icon: 'apps',
@@ -403,17 +403,14 @@ module.exports = {
             ]
           },
           {
-            label: 'Contributing',
-            to: '/docs/contributing',
-            position: 'left',
-          },
-          {
             label: 'Release Notes',
             to: '/docs/releasenotes',
+            position: 'left',
           },
           {
             label: 'Support',
             to: 'https://support.sumologic.com/hc/en-us',
+            position: 'left',
           },
           {
             //Trial button
@@ -434,12 +431,12 @@ module.exports = {
             'aria-label': 'GitHub repository',
             items:[
               {
-                label: 'Contribution Guide',
-                href: '/docs/contributing',
-              },
-              {
                 label: 'Docs GitHub',
                 href: 'https://github.com/SumoLogic/sumologic-documentation',
+              },
+              {
+                label: 'Contribution Guide',
+                href: '/docs/contributing',
               },
             ]
           },

@@ -71,7 +71,7 @@ The sections that follow have instructions for setting up each type of mapping:
   - [standard mapping](#standard-mapping)
   - [time mapping](#time-mapping)
 
-If you are creating a mapping for a source whose messages you want to be processed by CSE's [normalized threat rules](../cse-rules/normalized-threat-rules.md), see [Field Mapping for Security Event Sources](field-mapping-security-event-sources.md).
+If you are creating a mapping for a source whose messages you want to be processed by CSE's [normalized threat rules](../rules/normalized-threat-rules.md), see [Field Mapping for Security Event Sources](field-mapping-security-event-sources.md).
 
 ### constant mapping
 

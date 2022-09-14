@@ -80,13 +80,13 @@ const features = [
   {
     title: translate({
       id: 'landing.feature.integrations.title',
-      message: 'Integrations',
-      description: 'Title for Integrations',
+      message: 'Apps and Integrations',
+      description: 'Title for Apps',
     }),
     imageUrl: 'img/icons/integrations.png',
     description: (<Translate
       id="landing.feature.integrations.desc"
-      description="Integrations description">
+      description="Apps description">
         Install and configure third-party app integrations and services.
       </Translate>),
     link: 'docs/integrations',

@@ -59,5 +59,5 @@ Perform these steps for each CSE data set you want to send to Sumo Logic,
    * **Signals**. CSE will send Signals to the Sumo Logic platform.
 
 1. **Index URL**. Enter the URL for the HTTP Source you created above.
-1. **Filter Expression**. (Optional) If you enter a filter expression, only data that matches the expression will be sent to the specified HTTP Source. Filtering is most useful when you're forwarding Records (as opposed to raw messages or Signals. To filter Records, you can use any of the functions supported in rule expressions. For more information, see [CSE Rules Syntax](../cse-rules/cse-rules-syntax.md).
+1. **Filter Expression**. (Optional) If you enter a filter expression, only data that matches the expression will be sent to the specified HTTP Source. Filtering is most useful when you're forwarding Records (as opposed to raw messages or Signals. To filter Records, you can use any of the functions supported in rule expressions. For more information, see [CSE Rules Syntax](../rules/cse-rules-syntax.md).
 1. Click **Create**.
