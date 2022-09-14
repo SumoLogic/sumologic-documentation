@@ -12,7 +12,7 @@ The CSE Windows Sensor has reached end of life and is no longer supported. Pleas
 
 This topic has instructions for installing the Windows Sensor to send data to Sumo Logic CIP.
 
-For information about Windows Sensor functionality, see [Windows Sensor Overview](windows-sensor-overview.md).
+For information about Windows Sensor functionality, see [Windows Sensor Overview]/docs/cse/sensors/windows-sensor-overview.
 
 ## Requirements
 

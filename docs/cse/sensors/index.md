@@ -1,5 +1,5 @@
 ---
-slug: /cse/cse-sensors
+slug: /cse/sensors
 title: CSE Sensors
 description: CSE Sensors collect log and event data from your infrastructure and applications.
 ---

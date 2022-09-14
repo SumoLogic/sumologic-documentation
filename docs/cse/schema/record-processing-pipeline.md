@@ -2,7 +2,7 @@
 id: record-processing-pipeline
 title: Record Processing Pipeline
 sidebar_label: Record Processing Pipeline
-description: How CSE transforms incoming raw messages into Records. 
+description: How CSE transforms incoming raw messages into Records.
 ---
 
 This topic describes how CSE transforms incoming raw messages into Records. For each message received, CSE creates a Record, or in rare cases, multiple Records. 
@@ -33,7 +33,7 @@ The key-value pairs are input to the next step of the process: mapping.
 
 The mapping process creates a Record from the key-value pairs that were extracted from a message, and maps a subset of the keys to CSE schema attributes. 
 
-Mapping solves a particular problem: messages from different products use different names to identify users, applications, devices and so on. For example, some messages may refer to a source IP address as `sourceIP`, while others use `sourceIpAddress`. We need a standard set of names for the data that most messages are likely to contain. The [CSE schema](/docs/cse/cse-schema) defines that standard set of names. 
+Mapping solves a particular problem: messages from different products use different names to identify users, applications, devices and so on. For example, some messages may refer to a source IP address as `sourceIP`, while others use `sourceIpAddress`. We need a standard set of names for the data that most messages are likely to contain. The [CSE schema](/docs/cse/schema) defines that standard set of names. 
 
 What’s the benefit of mapping? It results in Records that use a common (standard) name for fields that hold the same sort of data, regardless of the source of the incoming message. The result: the same CSE rule can be applied to all Records, regardless of the message source.
 
@@ -86,4 +86,4 @@ CSE’s Suppressed Lists feature is similar to Match Lists. A Suppressed List i
 
 CSE has another feature that is similar to Match Lists: Threat Intel. Like Match Lists, Threat Intel lists are lists of indicators and identifiers configured by a CSE analyst. While similar to Match Lists, Threat Intel lists are intended for negative identifiers that should definitely fire a Signal. So, whenever a rule detects a Record field that matches an item on a Threat Intel list, it always results in a Signal. 
 
-CSE’s Threat Intel list processing is similar to Match List processing. Incoming messages are compared to all Threat Intel lists. When a match is found, CSE updates the `listMatches` field in the Record with the name of the matched threat list, the matching key-value pair from the message, and the string “threat”. For more information, see the [Threat Intel](../cse-rules/about-cse-rules.md) section in the *About CSE Rules* topic.  
+CSE’s Threat Intel list processing is similar to Match List processing. Incoming messages are compared to all Threat Intel lists. When a match is found, CSE updates the `listMatches` field in the Record with the name of the matched threat list, the matching key-value pair from the message, and the string “threat”. For more information, see the [Threat Intel](../rules/about-cse-rules.md) section in the *About CSE Rules* topic.  

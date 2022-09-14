@@ -61,8 +61,8 @@ enable Signal generation:
 
 ### Renaming message fields
 
-When you configure a Scheduled Search to create CSE Signals, you are prompted to select a [CSE Record type](../../cse/cse-schema/cse-record-types.md). The fields returned by your search must match an attribute in the Record
-type you select. A field whose name does not match a CSE attribute will not be populated in the Record created from the Schedule Search results. For more about CSE attribute names, see [Attributes You Can Map to Records](../../cse/cse-schema/attributes-map-to-records.md).
+When you configure a Scheduled Search to create CSE Signals, you are prompted to select a [CSE Record type](../../cse/schema/cse-record-types.md). The fields returned by your search must match an attribute in the Record
+type you select. A field whose name does not match a CSE attribute will not be populated in the Record created from the Schedule Search results. For more about CSE attribute names, see [Attributes You Can Map to Records](../../cse/schema/attributes-map-to-records.md).
 
 ## Scheduling the search
 
@@ -91,7 +91,7 @@ type you select. A field whose name does not match a CSE attribute will not be p
 
     ![alert-type-selected.png](/img/alerts/alert-type-selected.png)
 
-1. **Record Type**. Select a [Record Type](../../cse/cse-schema/cse-record-types.md).
+1. **Record Type**. Select a [Record Type](../../cse/schema/cse-record-types.md).
 1. Click **Save**.
 
 ## View Signals in CSE

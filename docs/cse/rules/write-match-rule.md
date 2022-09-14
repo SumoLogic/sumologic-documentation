@@ -10,7 +10,7 @@ description: Learn how to write a match rule.
 This topic has information about the Match rules and how to create them in the CSE UI.
 
 :::tip
-If you are new to writing rules, see [About CSE Rules](about-cse-rules.md for information about rule expressions and other rule options.
+If you are new to writing rules, see [About CSE Rules](about-cse-rules.md) for information about rule expressions and other rule options.
 :::
 
 ## About Match rules

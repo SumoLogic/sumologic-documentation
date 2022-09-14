@@ -75,12 +75,12 @@ To create a role:
 
 | Permission | Description |
 |--|--|
-| Create Rules | Create [Rules](/docs/cse/cse-rules). |
-| Delete Rules | Delete [Rules](/docs/cse/cse-rules). |
-| Edit Rules | Edit [Rules](/docs/cse/cse-rules). |
+| Create Rules | Create [Rules](/docs/cse/rules). |
+| Delete Rules | Delete [Rules](/docs/cse/rules). |
+| Edit Rules | Edit [Rules](/docs/cse/rules). |
 | Manage Threat Intelligence | Create, edit, and delete threat intelligence sources. |
 | Manage Match Lists | Create, edit, and delete [Match Lists](../match-lists-suppressed-lists/create-match-list.md). |
-| Manage File Analysis | Create, edit, and delete [YARA rules](../cse-rules/import-yara-rules.md). |
+| Manage File Analysis | Create, edit, and delete [YARA rules](/docs/cse/rules/import-yara-rules). |
 | Manage Custom Insights | Create, edit, and delete custom Insights. |
 | Manage Network Blocks | Create, edit, and delete network blocks. |
 | Manage Suppressed Entities | Suppress and unsuppress Entities. |
@@ -105,7 +105,7 @@ To create a role:
 
 | Permission | Description |
 |--|--|
-| Manage Domain Normalization | Update the configurations on CSE’s [Domain Normalization](../cse-schema/username-and-hostname-normalization.md) page. |
+| Manage Domain Normalization | Update the configurations on CSE’s [Domain Normalization](../schema/username-and-hostname-normalization.md) page. |
 | Manage Entity Criticality   | Create, edit, and delete [Entity Criticalities](../records-signals-entities-insights/entity-criticality.md).                  |
 
 ### Configuration \> Users
@@ -120,7 +120,7 @@ To create a role:
 
 | Permission | Description |
 |--|--|
-| Manage Sumo Logic Integrations | Create, edit, and delete Sumo Logic [ingest mappings](../cse-ingestion/sumo-logic-ingest-mapping.md). |
+| Manage Sumo Logic Integrations | Create, edit, and delete Sumo Logic [ingest mappings](../ingestion/sumo-logic-ingest-mapping.md). |
 | Manage Context Actions | Create, edit, and delete Context Actions. |
 | Manage Actions | Create, edit, and delete the Actions. Actions are CSE notifications you can set up to occur automatically when certain state changes occur to Insights, sensors, or rules. Actions can also be invoked on-demand from an Insight in the CSE UI. |
 | Manage Enrichments | Upload Insight, Signal, and Entity enrichments using the CSE API. |
