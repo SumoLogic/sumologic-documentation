@@ -184,7 +184,7 @@ export default function Home(): JSX.Element {
                 ))}
             </div></div>
           </section>
-        )} 
+        )}
       </main>
     </Layout>
   );
