@@ -23,9 +23,9 @@ module.exports = {
   ],
   scripts: [
     {
-      src: 'https://js.sitesearch360.com/plugin/bundle/3531.js',
+      src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
       async: true,
-    }
+    },
   ],
   i18n: {
     // https://docusaurus.io/docs/i18n/tutorial
