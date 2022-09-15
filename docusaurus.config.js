@@ -25,7 +25,7 @@ module.exports = {
     {
       src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
       async: true,
-    }
+    },
   ],
   i18n: {
     // https://docusaurus.io/docs/i18n/tutorial
@@ -183,12 +183,12 @@ module.exports = {
     colorMode: {
       defaultMode: 'dark',
     },
-    algolia: {
+    //algolia: {
      // The application ID provided by Algolia
-      appId: 'YKDUX9XT89',
+      //appId: 'YKDUX9XT89',
       // Public API key: it is safe to commit it
-      apiKey: '72699d7d65c635f1fb1505dec1bedc51',
-      indexName: 'sumo-docs-staging',
+      //apiKey: '72699d7d65c635f1fb1505dec1bedc51',
+      //indexName: 'sumo-docs-staging',
       // Optional: see doc section below
       //contextualSearch: true,
       // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
@@ -198,7 +198,7 @@ module.exports = {
       // Optional: path for search page that enabled by default (`false` to disable it)
       //searchPagePath: 'search',
       //... other Algolia params
-    },
+    //},
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
