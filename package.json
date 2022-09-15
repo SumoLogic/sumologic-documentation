@@ -24,7 +24,7 @@
     "@docusaurus/plugin-sitemap": "2.1.0",
     "@docusaurus/preset-classic": "2.1.0",
     "@docusaurus/theme-classic": "2.1.0",
-    "@docusaurus/theme-search-algolia": "2.1.0",
+    "@docusaurus/theme-search-algolia": "^2.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
