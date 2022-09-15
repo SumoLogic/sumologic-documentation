@@ -21,6 +21,12 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
+  scripts: [
+    {
+      src: 'https://js.sitesearch360.com/plugin/bundle/3531.js',
+      async: true,
+    }
+  ],
   i18n: {
     // https://docusaurus.io/docs/i18n/tutorial
     defaultLocale: 'en',
