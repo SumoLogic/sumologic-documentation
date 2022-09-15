@@ -248,6 +248,41 @@ html[data-theme='light'] {
     no-repeat;
 }
 
+
+
+
+
+.header-search-link:hover {
+  opacity: 0.6;
+}
+
+.header-search-link::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  display: inline-flex;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/a/a4/Inkscape_icons_zoom.svg")
+    no-repeat;
+}
+
+.header-search-link::after {
+    display: none !important;
+    content: none !important;
+}
+
+[data-theme='dark'] .header-search-link::before {
+  background: url("https://upload.wikimedia.org/wikipedia/commons/a/a4/Inkscape_icons_zoom.svg")
+    no-repeat;
+}
+
+
+
+
+
+
+
+
 .DocSearch.DocSearch-Button {
   width: 32px !important;
   height: 32px !important;
@@ -556,6 +591,25 @@ html[data-theme='dark'] .navbar-item-github:before {
   cursor: pointer;
   margin-right: 10px;
 }
+
+
+.search-404 {
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+.search-404 {
+  background-color: #F1F1F1;
+  color: white;
+  padding: 8px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 10px;
+  border: 1px solid #FFFFFF;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
 
 @media screen and (max-width: 996px) {
   .backtohome-404 {

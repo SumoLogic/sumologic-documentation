@@ -51,6 +51,12 @@ export default function NotFound(): JSX.Element {
                   <a href="https://github.com/SumoLogic/sumologic-documentation/issues/new/choose">Let us know</a>
               </button>
               </p>
+              <p align="center">
+              <button className="search-404"
+                  description="Search">
+                  <a href="https://app.sitesearch360.com/demo/18891?auth=627bf5a32ba2ed7f1e7dbe02a13a5a5ae13c5c4d">Search Docs Site</a>
+              </button>
+              </p>
             </div>
           </div>
         </main>
