@@ -78,7 +78,16 @@ If you have additional questions, a [Sumo Logic sales representative](https://w
 
 Depending on the method you'd like to collect logs, and the types of logs you'd like to collect, Sumo Logic has two types of Collectors you can choose from.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
 
 The following table shows the major differences between them.
 

@@ -52,10 +52,8 @@ export default function NotFound(): JSX.Element {
               </button>
               </p>
               <p align="center">
-              <button className="search-404"
-                  description="Search">
-                  <a href="https://app.sitesearch360.com/demo/18891?auth=627bf5a32ba2ed7f1e7dbe02a13a5a5ae13c5c4d">Search Docs Site</a>
-              </button>
+              <a href="https://app.sitesearch360.com/demo/18891?auth=627bf5a32ba2ed7f1e7dbe02a13a5a5ae13c5c4d"> <img class="svg" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Blue_magnifying_glass_icon.svg" width="50"></img></a>
+
               </p>
             </div>
           </div>
