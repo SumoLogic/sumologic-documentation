@@ -1,7 +1,7 @@
 ---
 id: set-insight-generation-window-threshold
 title: Set Insight Generation Window and Threshold
-sidebar_label: Insigght Generation Settings
+sidebar_label: Insight Generation Settings
 description: Learn how to configure the detection window and the threshold Activity Score for Insight generation.
 ---
 
