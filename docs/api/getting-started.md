@@ -402,7 +402,7 @@ Generic status codes that apply to all our APIs. See the [HTTP status code regis
     <tr>
       <td> 429 </td>
       <td> rate.limit.exceeded </td>
-      <td> The API request rate is higher than 4 request per second or inflight API requests are higher than 10 request per second. </td>
+      <td> The API request rate is higher than 4 request per second or in-flight API requests are higher than 10 request per second. </td>
     </tr>
     <tr>
       <td> 500 </td>
