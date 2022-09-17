@@ -179,7 +179,7 @@ In the CloudFormation template, define the number of messages in the Dead Letter
    * **EmailID** (Optional) Used for alerts.
    * **IncludeLogGroupInfo.**  Set to true to include loggroup/logstream values in logs. The default value is     False. For AWS Lambda Logs **IncludeLogGroupInfo** must be set to **True**; for VPC Flow Logs it's optional. 
    * **LogFormat.** For VPC logs, choose either VPC-JSON (JSON format) or VPC-RAW (raw messages). The default value is Others. 
-   * **LogStreamPrefix** (Optional) Enter comma separated list of logStream name prefixes to filter by logStream. Please note this is seperate from a logGroup. This is used to only send certain logStreams within a cloudwatch logGroup(s).  LogGroup(s) still need to be subscribed to the created Lambda function     (`SumoCWLogsLambda-<Auto-Genereted-Suffix>`), regardless of what is input for this value.
+   * **LogStreamPrefix** (Optional) Enter comma separated list of logStream name prefixes to filter by logStream. Please note this is separate from a logGroup. This is used to only send certain logStreams within a cloudwatch logGroup(s).  LogGroup(s) still need to be subscribed to the created Lambda function     (`SumoCWLogsLambda-<Auto-Genereted-Suffix>`), regardless of what is input for this value.
 
     :::note
     LogStreamPrefix field does not accept special characters (`[|\\{}()[\]^$+*?.-]`). For example, you can use the comma-separated list like test-name, test-logs as the LogStream name prefixes.
@@ -190,7 +190,7 @@ In the CloudFormation template, define the number of messages in the Dead Letter
 
     ![Specify_Stack_Details.png](/img/send-data/Specify_Stack_Details.png)
 
-1. Click **Next**. The **Configure Stack Options** screen will appear. You can optinally add AWS tags to tag the resources created by this Cloudformation stack. Click **Next** to get to the final **Review** window.
+1. Click **Next**. The **Configure Stack Options** screen will appear. You can optionally add AWS tags to tag the resources created by this Cloudformation stack. Click **Next** to get to the final **Review** window.
 1. In the **Review** window, click the checkbox acknowledging that you understand the the template creates IAM resources, and click **Create**.
 
 After few minutes you will see CREATE_COMPLETE in the Status column.

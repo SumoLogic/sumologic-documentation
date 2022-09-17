@@ -165,7 +165,7 @@ _sourceCategory=sourceCategory
 
 ### Format a seconds (10 digits) epoch value
 
-If your timestamp is a normal Unix timestamp it is in seconds since January 1, 1970 at 00:00:00 GMT. The formatDate operator requires your timestamp to be in milliseconds. Therefor, you need to convert by multiplying by 1,000 since there are 1,000 milliseconds in a second.
+If your timestamp is a normal Unix timestamp it is in seconds since January 1, 1970 at 00:00:00 GMT. The formatDate operator requires your timestamp to be in milliseconds. Therefore, you need to convert by multiplying by 1,000 since there are 1,000 milliseconds in a second.
 
 ```sql
 ...

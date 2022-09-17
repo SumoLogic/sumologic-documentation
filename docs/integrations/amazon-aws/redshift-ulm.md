@@ -448,7 +448,7 @@ See information about CloudTrail events for Amazon Redshift, including event loc
 
 **Top Cluster Identifiers**. Shows a list of the top cluster identifiers along with the number of events in the last 24 hours.
 
-**Events Trend by Event Nam**e. Shows trends in events by the event name on a column chart with a count for each event name for the last 24 hours.
+**Events Trend by Event Name**. Shows trends in events by the event name on a column chart with a count for each event name for the last 24 hours.
 
 **Events by AccountId**. Shows a count of events by account id on a bar chart, broken up into the type of events for the last 24 hours.
 

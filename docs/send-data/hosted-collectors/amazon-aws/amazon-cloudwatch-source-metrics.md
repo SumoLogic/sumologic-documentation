@@ -39,7 +39,7 @@ Here’s how tag filtering works:
 
    ![same-namespace-same-line.png](/img/send-data/same-namespace-same-line.png)
 
-* You can use multiple lines to define filters for different tags in the same namepace. Filters on the same namespace but in different lines are AND’ed together. For example, with the following setting the source will collect metrics from resources in the AWS/DynamoDB namespace whose whose `owner` tag is “Veronica” *and* `Env` tag is = “prod”.   
+* You can use multiple lines to define filters for different tags in the same namespace. Filters on the same namespace but in different lines are AND’ed together. For example, with the following setting the source will collect metrics from resources in the AWS/DynamoDB namespace whose whose `owner` tag is “Veronica” *and* `Env` tag is = “prod”.   
 
    ![same-namespace-mult-lines.png](/img/send-data/same-namespace-mult-lines.png)
 

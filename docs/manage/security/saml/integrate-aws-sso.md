@@ -79,7 +79,7 @@ This section has instructions for configuring basic SAML in Sumo Logic.
 
     ![application-metadata.png](/img/security/application-metadata.png)
 
-1. Paste the **Entity Id** value from Sumo Logic inot the **Application SAML audience** field in the **Application Metadata** section of the page. 
+1. Paste the **Entity Id** value from Sumo Logic into the **Application SAML audience** field in the **Application Metadata** section of the page. 
 1. Click **Save Changes**. 
 1. On the **Assigned Users** tab of your new AWS SSO configuration, click **Assign users**.    
 

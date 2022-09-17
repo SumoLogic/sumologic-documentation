@@ -19,7 +19,7 @@ Hub destinations. Platform logs include:
 
 :::note
 This Source is available in the Fed deployment.
-::: 
+:::
 
 Third party apps or services can be configured to send event data to Event Hubs as well, including [Auth0](https://auth0.com/docs/logs/streams/azure-event-grid).
 
@@ -92,7 +92,7 @@ On the Collection page, the Health and Status for Sources is displayed. Use Heal
 
 ![Azure Event Hubs error.png](/img/send-data/Azure-Event-Hubs-error.png)
 
-Hover your mouse over the status icon to view a tooltip with details onthe detected issue.
+Hover your mouse over the status icon to view a tooltip with details on the detected issue.
 
 ![health error generic.png](/img/send-data/azure_health_error_generic.png)
 

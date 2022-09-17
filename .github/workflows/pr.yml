@@ -44,5 +44,5 @@ jobs:
         name: Check spelling
         with:
           skip: "*.svg,*.js,*.map,*.css,*.scss"
-          ignore_words_list: "ot,aks,ist,fiel,shttp"
+          ignore_words_list: "ot,aks,ist,fiel,shttp,atleast,pullrequest"
           path: docs

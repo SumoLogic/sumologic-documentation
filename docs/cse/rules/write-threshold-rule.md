@@ -24,7 +24,7 @@ A Threshold rule fires when its rule expression is matched at least a certain nu
    1. **Name**. Enter a name for the rule.
    1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.       
 
-    ![threshhold.png](/img/cse/threshhold.png)
+    ![threshold.png](/img/cse/threshold.png)
 
 ## Configure “If Triggered” settings
 

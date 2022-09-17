@@ -165,7 +165,7 @@ _sourceCategory=OS/Linux* ("su:" or "sudo:" or "sshd:" or "sshd[" or "pam:") (("
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<_sourceHost>\S*)\s" nodrop
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_host>\S*)\s(?:\w*):\s+(?<message>.*)$" nodrop
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_host>\S*)\s(?:\S*)\[\d+\]:\s+(?<message>.*)$" nodrop
-| parse field=message "pam_unix(*:*):" as deamon, ltype nodrop | if (deamon="sshd", "ssh", "") as protocol | fields -deamon, ltype
+| parse field=message "pam_unix(*:*):" as daemon, ltype nodrop | if (daemon="sshd", "ssh", "") as protocol | fields -daemon, ltype
 | parse "session * for user * by *(uid=" as action, dest_user, src_user nodrop
 | parse regex "session (?<action>\w*) for user (?<dest_user>\S*)" nodrop
 | parse "rhost=* " as src_host nodrop

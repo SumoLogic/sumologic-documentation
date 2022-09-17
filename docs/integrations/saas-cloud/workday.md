@@ -457,7 +457,7 @@ The following table provides a list of variables for Workday that you can option
    </td>
   </tr>
   <tr>
-   <td>MAX_FETCH_INTERVAL And MIN_FETCH_INTERVAL In Workday_Report_Config secction
+   <td>MAX_FETCH_INTERVAL And MIN_FETCH_INTERVAL In Workday_Report_Config section
    </td>
    <td>The Workday RAAS API fetches data between a start and end interval. Depending on the users in your tenant the data may exceed 2 GB. The maximum and minimum interval between start and end time is controlled by these two settings. Calibrate these two settings such that MIN_FETCH_INTERVAL contains less than 2GB data always. Set the MAX_FETCH_INTERVAL in such a way that it does not put too much load on your tenant.
    </td>

@@ -696,7 +696,7 @@ attribute.
     Currently, to use the `json` operator in CSE you must supply a field and an alias, as shown in the syntax above. Currently, the `json` operator is the only Sumo Logic search operator that you can use an alias with in CSE.
     :::
 
-* As part of the ingestion process, the `fields` field in CSE is mapped tothe  `_raw` field in CIP.  For easy copy/paste functionality, CSE accepts `_raw` as an alias to `fields`.
+* As part of the ingestion process, the `fields` field in CSE is mapped to the `_raw` field in CIP.  For easy copy/paste functionality, CSE accepts `_raw` as an alias to `fields`.
 * The pipe character before the first `json` clause is optional.
 * You can use multiple `json` clauses in a query.
 * You can use only one `where` clause per query.

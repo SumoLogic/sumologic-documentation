@@ -147,7 +147,7 @@ disabling/deleting logs is a higher severity than enabling logs.
 
 ## AWS CloudTrail - OpsWorks Describe Permissions Event
 
-This event sourced from AWS OpsWorks occurrs rarely. It could indicate
+This event sourced from AWS OpsWorks occurs rarely. It could indicate
 that an adversary is attempting to collect information for later attack.
 When successful, the Describe Permissions event returns information
 regarding a specified stack's permissions for access.
@@ -177,7 +177,7 @@ story.
 ## AWS CloudTrail - Root Console Successful Login Observed
 
 This signal detects when a successful root account login occurred within
-an AWS account. This privileged account should seldomly be used within
+an AWS account. This privileged account should seldom be used within
 an AWS cloud environment. Amazon's best practices state you should only
 use the root account to create the initial local IAM users and assigned
 one of the accounts administrative privileges or to perform rare tasks
@@ -186,7 +186,7 @@ be aware when the AWS root account is accessed.
 
 ## AWS CloudTrail - SQS List Queues Event
 
-This event sourced from AWS SQS occurrs rarely. It could indicate that
+This event sourced from AWS SQS occurs rarely. It could indicate that
 an adversary is attempting to collect information for later attack. When
 successful, the List Queues event returns all SQS queues that may be
 valid targets for further probing/attack.
@@ -213,11 +213,11 @@ sensitive.
 ## AWS CloudTrail - sensitive activity in KMS
 
 AWS KMS is an encryption and key management web service. Besides
-encrypting and decrypting data, users and adminstrators can use this
+encrypting and decrypting data, users and administrators can use this
 service to create keys, manage keys etc. This signal indicates activity
 that enables and disables keys explicitly. This activity has been
 surveyed to be a low volume event and could be considered suspicious
-given other activity involving the entitiy. Additionally, monitoring for
+given other activity involving the entity. Additionally, monitoring for
 these events is required to achieve certain industry audit compliance.
 
 ## AWS CloudTrail Network Access Control List Deleted
@@ -430,11 +430,11 @@ Use this signal in context of other activity to determine intent.
 ## Alibaba ActionTrail KMS Activity
 
 Alibaba KMS is an encryption and key management web service. Besides
-encrypting and decrypting data, users and adminstrators can use this
+encrypting and decrypting data, users and administrators can use this
 service to create keys, manage keys etc. This signal indicates activity
 that enables and disables keys explicitly. This activity has been
 surveyed to be a low volume event and could be considered suspicious
-given other activity involving the entitiy. Additionally, monitoring for
+given other activity involving the entity. Additionally, monitoring for
 these events is required to achieve certain industry audit compliance.
 
 ## Alibaba ActionTrail Key Deleted or Disabled
@@ -470,7 +470,7 @@ instance from anywhere.
 ## Alibaba ActionTrail Root Login
 
 This signal detects when a successful root account login occurred within
-an Alibaba account. This privileged account should seldomly be used
+an Alibaba account. This privileged account should seldom be used
 within an Alibaba cloud environment.
 
 ## Alibaba ActionTrail Secrets Manager Activity
@@ -543,7 +543,7 @@ HKLM\\System HKLM\\Security\\Policy\\Secrets HKLM\\Sam
 ## Attrib.exe use to Hide Files and Folders
 
 Observes for use of attrib.exe with the hide flag. The built in Windows
-utilty attrib.exe can be used by adversaries to hide files and folders
+utility attrib.exe can be used by adversaries to hide files and folders
 from the end user, a form of defense evasion.
 
 ## Auth0 - High Risk Event
@@ -584,7 +584,7 @@ exclude non-sensitive groups, or to only include sensitive groups.
 ## Azure - Add Member to Role Outside of PIM
 
 Privileged Identity Management (PIM) allows administrators to provide
-users privileged access with greater oversight of activties undertaken
+users privileged access with greater oversight of activities undertaken
 while said access is granted as well as control over the duration of
 access. Adding a user to a role, especially one with administrative
 privileges, outside of PIM may indicate a threat actor attempting to
@@ -1299,7 +1299,7 @@ Execution of well known tools for data exfiltration and tunneling.
 
 ## External Device Installation Denied
 
-Detects a denied attempt to attached a removeable media device. External
+Detects a denied attempt to attached a removable media device. External
 media can be used to exfiltrate sensitive data and is also a common
 source of infections. Attempts to use these devices could indicate the
 intent for malicious activity.
@@ -1447,11 +1447,11 @@ operations.
 ## GCP Audit KMS Activity
 
 GCP KMS is an encryption and key management web service. Besides
-encrypting and decrypting data, users and adminstrators can use this
+encrypting and decrypting data, users and administrators can use this
 service to create keys, manage keys etc. This signal indicates activity
 that enables and disables keys explicitly. This activity has been
 surveyed to be a low volume event and could be considered suspicious
-given other activity involving the entitiy. Additionally, monitoring for
+given other activity involving the entity. Additionally, monitoring for
 these events is required to achieve certain industry audit compliance.
 
 ## GCP Audit Key Deleted or Disabled
@@ -2220,7 +2220,7 @@ a network.
 
 ## MsiExec Web Install
 
-Detects suspicious msiexec process starts with web addreses as
+Detects suspicious msiexec process starts with web addresses as
 parameter.
 
 ## Multiple File Extensions
@@ -2366,7 +2366,7 @@ the severity accordingly based on the severity provided in the log.
 ## NotPetya Ransomware Activity
 
 Detects NotPetya ransomware activity by identifying one of these
-occuring: the extracted passwords are passed back to the main module via
+occurring: the extracted passwords are passed back to the main module via
 named pipe, the file system journal of drive C is deleted or windows
 eventlogs are cleared using wevtutil.
 
@@ -2412,12 +2412,12 @@ through credential resets.
 
 ## Okta Admin App Access Attempt Failed
 
-Detects failed acccess attempts to the Okta admin app. This is where
+Detects failed access attempts to the Okta admin app. This is where
 policies are set, users are managed, and apps are controlled.
 
 ## Okta Admin App Accessed
 
-Detects acccess to the Okta admin app. This is where policies are set,
+Detects access to the Okta admin app. This is where policies are set,
 users are managed, and apps are controlled. The match list Okta_Admins
 should be populated with users authorized to access the Okta admin app.
 
@@ -2524,7 +2524,7 @@ Observes for creation of a PSExec named pipe not by PSExec. This may be
 an indication of a malicious process coopting a privileged named pipe
 used by PSExec.
 
-## PXELoot Utilty
+## PXELoot Utility
 
 From FireEye Red Team Tool Countermeasures: PXELoot (PAL) is a C# tool
 designed to aid in the discovery and exploitation of misconfigurations
@@ -2651,17 +2651,17 @@ persistence.
 
 ## Potential Pass the Hash Activity
 
-The behavior discovered here loosly matches the behavior of known pass
+The behavior discovered here loosely matches the behavior of known pass
 the hash tools. A Pass the Hash (PtH) attack is a way for an attacker to
 move laterally through a type of credential theft. Because this behavior
 is known to occur in some environments during normal activity, tuning is
-recommended and attention payed to a possible spike in signals after
-enableing this rule.
+recommended and attention paid to a possible spike in signals after
+enabling this rule.
 
 ## Potential Reconnaissance Obfuscation
 
 From Solorigate TTPs: Firewall rules were added via command line to
-reduce noise from subsequent reconnaisance using NSLOOKUP and ADFIND.
+reduce noise from subsequent reconnaissance using NSLOOKUP and ADFIND.
 
 ## Potential malicious JVM download
 
@@ -2842,7 +2842,7 @@ Observes for Qbot process creation behavior
 
 ## QuarksPwDump Dump File Observed
 
-Signal identifies the observance of a filename consistant with
+Signal identifies the observance of a filename consistent with
 QuarksPwDump file password dumper.
 
 ## RDP Brute Force - Success
@@ -2894,7 +2894,7 @@ nefarious purposes.
 
 ## Registry Modification - Active Setup
 
-Detects modifications to the active setup regsitry key. Active setup can
+Detects modifications to the active setup registry key. Active setup can
 be used to execute programs at user login.
 
 ## Registry Modification - Authentication Package
@@ -2914,7 +2914,7 @@ development process.
 ## Registry Modification - Microsoft Office Test Function Registry Entry
 
 Observes for modifications to the Microsoft Office Test registry key.
-This key allows for an abritrary DLL to be executed on Office launch.
+This key allows for an arbitrary DLL to be executed on Office launch.
 This can be used by an adversary to establish persistence.
 
 ## Registry Modification - Print Processors
@@ -3330,7 +3330,7 @@ services.
 ## Spaces Before File Extension
 
 Observes for files being executed that contain at least 5 spaces
-preceeding the file extension. This may indicate an attempt to hide the
+preceding the file extension. This may indicate an attempt to hide the
 true extension of a file.
 
 ## Spoolsv Child Process Created
@@ -3416,7 +3416,7 @@ searchindexer process to evade detection.
 
 ## Suspicious External Device Installation
 
-Detects removeable media attached to a device that was previously denied
+Detects removable media attached to a device that was previously denied
 by policy. External media can be used to exfiltrate sensitive data and
 is also a common source of infections, so some organizations block their
 use. Attempts to use these devices could indicate the intent for
@@ -3486,7 +3486,7 @@ explorer.exe.
 ## Suspicious use of Dev-Tools-Launcher
 
 DevToolsLauncher.exe has a switch 'LaunchForDeploy' that takes the
-location of another bianry to launch. Attackers have abused this ability
+location of another binary to launch. Attackers have abused this ability
 to launch their own non-trusted code.
 
 ## Sysmon - RawAccessRead Event
@@ -3500,7 +3500,7 @@ indicates the source process and target device.
 ## TAIDOOR RAT DLL Load
 
 Looks for process creation with command line references that are
-consistant with the Chinese TAIDOOR remote access trojan (RAT)
+consistent with the Chinese TAIDOOR remote access trojan (RAT)
 
 ## Telegram API Access
 

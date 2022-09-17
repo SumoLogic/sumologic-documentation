@@ -13,7 +13,7 @@ You have three options for set up and configuration:
 
 ## Prerequisites
 
-Each set up and configuration method includes a list of prerequisities.
+Each set up and configuration method includes a list of prerequisites.
 
 These include:
 
