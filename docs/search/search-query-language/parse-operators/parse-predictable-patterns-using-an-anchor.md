@@ -39,14 +39,14 @@ You can use the parse anchor UI tool to highlight the message text to parse, id
 1. Highlight the text, right-click, and select **Parse the selected text**.  
 
     ![parse selected text UI option.png](/img/search/searchquerylanguage/parse-operators/anchor/parse-selected-text-UI-option.png)  
-      
+
     The **Parse Text** dialog box opens and displays the text you highlighted.  
 
     ![parse text window.png](/img/search/searchquerylanguage/parse-operators/anchor/parse-text-window.png)  
      
 1. Select the text for the first parsing field, and click **Click to extract this value**.   The text you highlighted is replaced by an asterisk (\*).  
 
-    ![hightlighted term in parse text window.png](/img/search/searchquerylanguage/parse-operators/anchor/hightlighted-term-in-parse-text-window.png)  
+    ![highlighted term in parse text window.png](/img/search/searchquerylanguage/parse-operators/anchor/highlighted-term-in-parse-text-window.png)  
      
 1. Enter a name (no spaces) for the parsing field in the **Fields** area.  
 
@@ -114,8 +114,8 @@ If your logs are delivered in a multi-line format, you may want to parse up unti
 For example, if we have the following message in our logs:
 
 ```
-12:08:10,651 INFO sample_server ReportEmailer:178 - DEBUG SENDING MESSAGE: 
-    To: example@sumologic.com 
+12:08:10,651 INFO sample_server ReportEmailer:178 - DEBUG SENDING MESSAGE:
+    To: example@sumologic.com
     Subject: New line Breaks in Message
 ```
 

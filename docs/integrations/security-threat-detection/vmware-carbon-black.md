@@ -56,7 +56,7 @@ To configure collection, add an HTTP Source, get credentials for VMware Carbon B
 
 **To add an HTTP source for VMware Carbon Black EDR do the following:
 
-1. Add [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-logs-metrics-source) for VMware Carbon Black EDR. \
+1. Add [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for VMware Carbon Black EDR. \
 
 
 

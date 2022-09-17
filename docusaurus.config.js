@@ -21,6 +21,12 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
+  scripts: [
+    {
+      src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
+      async: true,
+    },
+  ],
   i18n: {
     // https://docusaurus.io/docs/i18n/tutorial
     defaultLocale: 'en',
@@ -90,12 +96,14 @@ module.exports = {
     [
       'redocusaurus',
       {
-        specs: [{
+        specs: [
+          {
             id: 'sumoapi',
             //specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
             spec: 'sumologic-api.yaml',
             route: '/sumoapi/',
-          },],
+          },
+        ],
       },
     ],
   ],
@@ -175,6 +183,22 @@ module.exports = {
     colorMode: {
       defaultMode: 'dark',
     },
+    //algolia: {
+     // The application ID provided by Algolia
+      //appId: 'YKDUX9XT89',
+      // Public API key: it is safe to commit it
+      //apiKey: '72699d7d65c635f1fb1505dec1bedc51',
+      //indexName: 'sumo-docs-staging',
+      // Optional: see doc section below
+      //contextualSearch: true,
+      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+      //externalUrlRegex: 'external\\.com|domain\\.com',
+      // Optional: Algolia search parameters
+      //searchParameters: {},
+      // Optional: path for search page that enabled by default (`false` to disable it)
+      //searchPagePath: 'search',
+      //... other Algolia params
+    //},
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
@@ -225,7 +249,7 @@ module.exports = {
                     activeBaseRegex: '^/docs/send-data/.*',
                   },
                   {
-                    label: 'Apps/Integrations',
+                    label: 'Apps and Integrations',
                     sublabel: 'Insights from data sources',
                     to: 'docs/integrations',
                     icon: 'apps',
@@ -238,11 +262,18 @@ module.exports = {
                     icon: 'start',
                     activeBaseRegex: '^/docs/manage/.*',
                   },
+                  {
+                    label: 'Quickstart Tutorials',
+                    sublabel: 'Fast-track Sumo setup',
+                    to: '/docs/quickstart',
+                    icon: 'backup_table',
+                    activeBaseRegex: '^/docs/quickstart/.*',
+                  },
                 ],
               },
               {
                 // 1
-                label: 'Metrics and Logs',
+                label: 'Search, Metrics, Logs',
                 items: [
                   {
                     label: 'Search and Logs',
@@ -391,17 +422,14 @@ module.exports = {
             ]
           },
           {
-            label: 'Contributing',
-            to: '/docs/contributing',
-            position: 'left',
-          },
-          {
             label: 'Release Notes',
             to: '/docs/releasenotes',
+            position: 'left',
           },
           {
             label: 'Support',
             to: 'https://support.sumologic.com/hc/en-us',
+            position: 'left',
           },
           {
             //Trial button
@@ -410,11 +438,11 @@ module.exports = {
             position: 'right',
             className: 'navbar-trial',
           },
-          {
-            // i18n
-            type: 'localeDropdown',
-            position: 'right',
-          },
+      //  {
+      //    i18n -- add this back when we are ready for translations
+      //    type: 'localeDropdown',
+      //    position: 'right',
+      //  },
           {
             position: 'right',
             className: 'header-github-link',
@@ -422,14 +450,20 @@ module.exports = {
             'aria-label': 'GitHub repository',
             items:[
               {
-                label: 'Contribution Guide',
-                href: '/docs/contributing',
-              },
-              {
                 label: 'Docs GitHub',
                 href: 'https://github.com/SumoLogic/sumologic-documentation',
               },
+              {
+                label: 'Contribution Guide',
+                href: '/docs/contributing',
+              },
             ]
+          },
+          {
+            label: ' ',
+            className: 'header-search-link',
+            to: 'https://app.sitesearch360.com/demo/18891?auth=627bf5a32ba2ed7f1e7dbe02a13a5a5ae13c5c4d',
+            position: 'right',
           },
         ],
       },

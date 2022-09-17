@@ -145,7 +145,7 @@ To configure a local file source for IIS Access Logs, do the following:
 
 3. Configure the Advanced section:
     8. Timestamp Parsing Settings: Make sure the setting matches the timezone on the log files.
-    9. Enable Timetamp Parsing: Select Extract timestamp information from log file entries.
+    9. Enable Timestamp Parsing: Select Extract timestamp information from log file entries.
     10. Time Zone: Select the option to Use time zone from log file. If none is present use: and set the timezone to UTC.
     11. Timestamp Format: Select the option to Automatically detect the format.
     12. Encoding. UTF-8 is the default, but you can choose another encoding format from the menu if your IIS logs are encoded differently.
@@ -178,7 +178,7 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
 
 3. Configure the Advanced section:
     8. Timestamp Parsing Settings: Make sure the setting matches the timezone on the log files.
-    9. Enable Timetamp Parsing: Select Extract timestamp information from log file entries.
+    9. Enable Timestamp Parsing: Select Extract timestamp information from log file entries.
     10. Time Zone: Select the option to Use time zone from log file. If none is present use: and set the timezone to UTC.
     11. Timestamp Format: Select the option to Automatically detect the format.
     12. Encoding. UTF-8 is the default, but you can choose another encoding format from the menu if your IIS logs are encoded differently.

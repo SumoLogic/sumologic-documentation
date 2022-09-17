@@ -8,6 +8,7 @@ description: Real User Monitoring (RUM) gives you the ability to understand how 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Iframe from 'react-iframe';
 
 Real User Monitoring (RUM) gives you the ability to understand how users interact with the digital interfaces of your business and if their experience is satisfactory or not. This open-source powered and flexible capability brings you full visibility into what’s happening in your user's browser while interacting with your web applications.
 
@@ -16,7 +17,17 @@ RUM provides you visibility into end-to-end individual user transactions to quic
 :::sumo Micro Lesson
 See Real User Monitoring in action.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/n-khmblaQN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<Iframe url="https://www.youtube.com/embed/n-khmblaQN4?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
 :::
 
 ## How it works
@@ -43,10 +54,10 @@ To configure a RUM HTTP Traces source:
 
 1. From Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Select **RUM HTTP Traces**.<br/><img src={useBaseUrl('img/rum/rum-icon.png')} alt="Real User Monitoring" width="120"/><br/>
+1. Select **RUM HTTP Traces**. <br/><img src={useBaseUrl('img/rum/rum-icon.png')} alt="Real User Monitoring" width="120"/>
 1. Under **Source Type: RUM HTTP Traces**, enter the following information:
-   * **Name** (optional) for the Source.
-   * **Description** for the Source.
+   * **Name** for the Source.
+   * **Description** for the Source (optional).
    * **Source Host** and **Source Category** (optional): enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md) fields that allow you to organize your data. We recommend you specify a Source Category indicating the data is from a browser.<br/><img src={useBaseUrl('/img/rum/RUM-HTTP-Traces-Source.png')} alt="Real User Monitoring" width="300"/>
 1. Enter **Advanced options for Browser RUM**. A list of FAQs on the page can provide help for these options. A table with all the available configuration parameters is available in the [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) README file.<br/><img src={useBaseUrl('img/rum/RUM-HTTP-Traces-Source-Advanced.png')} alt="Real User Monitoring" width="300"/>
    * **Application Name** (recommended): Add an **Application Name** tag of a text string to show for the app name in spans, for example `bookings-app`. This groups services in the Application Service View. If left blank, services will belong to a "default" application. See [Application Service Dashboards](../traces/working-with-tracing-data/service-map.md) for more information. This setting is saved in the script for `name_of_your_web_application`.
@@ -78,9 +89,8 @@ To configure a RUM HTTP Traces source:
    * **Geolocation recognition**: Select a **Geolocation recognition** option to automatically recognize geographical locations of your end clients from:
      * The country down to state (recommended for global websites)
      * A single country down to city level (recommended for local, country specific websites)
-
 1. When you are finished configuring the Source, click **Submit**.
-1. An HTTP Source Script is displayed in a pop-up with three different formats: synchronous, asynchronous, and npm. These are examples of scripts you can use with all configurations you entered when creating the source, including advanced options. Select a format and click **Copy to Clipboard**. <br/><br/><img src={useBaseUrl('img/rum/RUM-HTTP-Traces-Script.png')} alt="Real User Monitoring" width="400"/>
+1. An HTTP Source Script is displayed in a pop-up with three different formats: synchronous, asynchronous, and npm. These are examples of scripts you can use with all configurations you entered when creating the source, including advanced options. Select a format and click **Copy to Clipboard**. <br/><img src={useBaseUrl('img/rum/RUM-HTTP-Traces-Script.png')} alt="Real User Monitoring" width="400"/>
 
   The script includes a RUM HTTP Traces Source URL for `collectionSourceUrl` in the generated script. This is saved for the script as `sumo_logic_http_traces_source_url`. Your user's browser should be allowed to POST data to this URL.  
 
@@ -105,7 +115,7 @@ Use the copied script in your page head inside the `<head>` `</head>` tags. 
 <script
   src="https://rum.sumologic.com/sumologic-rum-v3.js"
   type="text/javascript"
-></script>
+</script>
 <script>
   window.sumoLogicOpenTelemetryRum &&
     window.sumoLogicOpenTelemetryRum.initialize({
@@ -189,7 +199,7 @@ You can view and copy a script anytime by clicking **Show Script** for the so
 
 ### Step 3: Search Traces from the Browser
 
-Create a [trace query](../traces/working-with-tracing-data/view-and-investigate-traces.md) that specifies traces starting with the value you gave to `<name_of_your_web_service>` as a root service name. You can also include the following filters to find appropriate user action types:
+Create a [trace query](../traces/working-with-tracing-data/view-and-investigate-traces.md) that specifies traces starting with the value you gave to `<name_of_your_web_service>` as a root service name. You can also include the following filters as an operation name:
 * `documentLoad` as an operation name to find traces that correspond to page loads.
 * `Click on *` as an operation name to detect click actions that most likely resulted in XHR calls
 * `Navigation: *` as an operation name to detect single-page app navigation changes
@@ -245,9 +255,9 @@ These metrics, which populate in the **UI Paint Timings** panel on RUM dashboard
 | `browser_time_to_lcp` | largestContentfulPaint - span start time (fetch start) |
 
 
-* [First Paint](https://developer.mozilla.org/en-US/docs/Glossary/First_paint) (`browser_time_to_fp`): measures the time from page fetch start (span start time) to the moment when the browser renders the first pixels to the screen, rendering anything that is visually different from what was on the screen prior to navigation. It answers the question, "Is it happening?" 
-* [First Contentful Paint](https://web.dev/fcp/) (`browser_time_to_fcp`): measures the time from page fetch start (span start time) to the moment when any part of the page's content is rendered on the screen. For this metric, "content" refers to text, images (including background images), `<svg>` elements, or non-white `<canvas>` elements.
-* [Largest Contentful Paint](https://web.dev/lcp/) (`browser_time_to_lcp`): measures the time from page fetch start (span start time) to the moment when the largest image or text block visible within the viewport is rendered.
+* [First Paint](https://developer.mozilla.org/en-US/docs/Glossary/First_paint): measures the time from page fetch start (span start time) to the moment when the browser renders the first pixels to the screen, rendering anything that is visually different from what was on the screen prior to navigation. It answers the question, "Is it happening?" 
+* [First Contentful Paint](https://web.dev/fcp/): measures the time from page fetch start (span start time) to the moment when any part of the page's content is rendered on the screen. For this metric, "content" refers to text, images (including background images), `<svg>` elements, or non-white `<canvas>` elements.
+* [Largest Contentful Paint](https://web.dev/lcp/): measures the time from page fetch start (span start time) to the moment when the largest image or text block visible within the viewport is rendered.
 
 These are only loosely related to navigation timings and in many cases, some of them may appear long after the page is fully loaded in the browser, which indicates rendering slowdowns.
 
@@ -341,9 +351,9 @@ Explore organizes RUM data on four levels:
 * **Application**: corresponds to the value of the application tag set in your RUM JavaScript script above. This should correspond to your whole website defined by its business function, such as "Coffee shop".
 * **Service**: corresponds to the name of the service in your RUM JavaScript script above. This should correspond to a JS code executed in the browser, such as "coffee-shop-web". You can have multiple services for each application. 
 * **Action Type**: can be one of:
-   * document loads: representing loading of actual documents and their resources into the browser
-   * XHR actions: representing any interaction with a page like click or submit that executes AJAX requests in the background to communicate with the backend, or
-   * route changes: single-page-app specific way to navigate to a new page/view without having to load a new document.
+   * **document loads**: representing loading of actual documents and their resources into the browser
+   * **XHR actions**: representing any interaction with a page like click or submit that executes AJAX requests in the background to communicate with the backend, or
+   * **route changes**: single-page-app specific way to navigate to a new page/view without having to load a new document.
 * **Action Name**: automatically generated from URLs. No configuration is required. The specifics of it will depend on action type.
 
 Action names can contain asterisks (`*`) to replace automatically-detected dynamic parts of the URL. If you have action names that overlap, the action name with an asterisk contains data for page loads NOT contained in more specific action names:
@@ -388,7 +398,7 @@ You can select the timing metric type in the **statistic** dropdown on the dashb
 
 ### RUM Performance Analytics Application/Service
 
-The **RUM Performance Analytics Application-Service** dashboards show the page performance and requests for a cohort of users specified by selecting the desired combination of dimensions.
+The **RUM Performance Analytics Application** and **Service** dashboards show the page performance and requests for a cohort of users specified by selecting the desired combination of dimensions.
 
 Use this dashboard to:
 * Filter data for specific combinations of application, browser, operating system, and/or geolocation.

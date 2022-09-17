@@ -12,7 +12,7 @@ The concept of an *entity* is central to the process CSE uses to correlate Signa
 
 ## Entities in messages are mapped to entity-type schema attributes
 
-During the next step of the [Record processing flow](../cse-schema/record-processing-pipeline.md)—log mapping—message fields are mapped to CSE schema attributes. During this process, each entity field from a message is mapped to one of the following CSE schema entity attributes:
+During the next step of the [Record processing flow](../schema/record-processing-pipeline.md)—log mapping—message fields are mapped to CSE schema attributes. During this process, each entity field from a message is mapped to one of the following CSE schema entity attributes:
 
 * `device_hostname`
 * `device_hostname_raw`
@@ -35,7 +35,7 @@ During the next step of the [Record processing flow](../cse-schema/record-proces
 * `user_username`
 * `user_username_raw`
 
-Which particular attribute an entity gets mapped to depends on the [field mappings](../cse-schema/create-structured-log-mapping.md) in the log mapper for the message source. Given the example message above, “thedude” might be mapped to `user_username` and "185.35.135.245"
+Which particular attribute an entity gets mapped to depends on the [field mappings](../schema/create-structured-log-mapping.md) in the log mapper for the message source. Given the example message above, “thedude” might be mapped to `user_username` and "185.35.135.245"
 to `srcDevice_ip`. 
 
 ## Rules have one or more On Entity attributes

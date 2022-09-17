@@ -130,7 +130,7 @@ New - We’re pleased to announce our new in-product Kubernetes onboarding exper
 ---
 ## July 14, 2022 (Collection)
 
-New - We’re pleased to announce the release of the [GCP Metrics Source](docs/send-data/hosted-collectors/gcp-metrics-source.md). The new source gives you visibility into Google Cloud Platform (GCP) infrastructure and managed services using an integrated Google Service account. You can collect metrics from 35 native GCP services, as well as from custom services running on GCP.
+New - We’re pleased to announce the release of the [GCP Metrics Source](docs/send-data/hosted-collectors/google-source/gcp-metrics-source.md). The new source gives you visibility into Google Cloud Platform (GCP) infrastructure and managed services using an integrated Google Service account. You can collect metrics from 35 native GCP services, as well as from custom services running on GCP.
 
 ---
 ## July 13, 2022 (Manage)
@@ -138,7 +138,7 @@ New - We’re pleased to announce the release of the [GCP Metrics Source](docs/s
 Update - We have renamed our default partition from “Default Continuous Partition” to “sumologic_default”. Now you can directly query the data stored in the default partition, where all data is ingested unless explicitly routed into another partition. Any APIs that reference the default partition by its previous name, “Default Continuous Partition”, should be updated to refer to “sumologic_default” instead. For more information, see [Search the Default Partition](/docs/manage/partitions-and-data-tiers/run-search-against-partition#Search-the-default-partition).  
 
 ---
-## July 8, 2022
+## July 8, 2022 (Apps)
 
 Update - The Sumo Logic App for [AWS Observability Classic Load Balancer](/docs/integrations/amazon-aws/Classic-Load-Balancer) uses CW logs and metrics to give you visibility into the health of your Classic Load Balancer. Use the pre-configured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone. This app is updated from the AWS observability solution in the App Catalog. Updates include upgrading all dashboards to Dashboards(New), additional Dashboards to analyze Request and Process Bytes, and Dashboard to monitor Threat Intel.
 
@@ -147,14 +147,14 @@ Update - The Sumo Logic App for [Amazon ElastiCache](/docs/integrations/amazon-a
 Update - The Sumo Logic App for [AWS Application Load Balancer](/docs/integrations/amazon-aws/Application-Load-Balancer) uses CW logs and metrics to give you visibility into the health of your Application Load Balancer and target groups. Use the preconfigured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone and target group. This app is updated from the AWS observability solution in the App Catalog. Updates include upgrading all dashboards to Dashboards(New) and new Dashboards for Response Analysis, Target Group Response Analysis, and Request and Processed Bytes.
 
 ---
-## July 8, 2022
+## July 8, 2022 (Metrics)
 
 New - Care to comment? Now you can. In the [Metrics Explorer,](/docs/metrics/metric-queries-alerts/metrics-explorer) in Advanced Mode you can add comments to a metrics query and comment out portions of the query by using comment formatting. Comments are helpful for troubleshooting during query development, and also for other users who may use or edit your queries at a later date—comments you add will be visible in saved and shared queries. For more information, see [Comments in Metric Queries](/docs/metrics/metric-queries-alerts/metrics-explorer).
 
 Update - The [eval](/docs/metrics/metric-queries-alerts/operators#eval) metrics operator has been enhanced to support a `_granularity` option that provides the length, in milliseconds, of the bucket used for quantization, for use in metric queries.
 
 ---
-## July 7, 2022
+## July 7, 2022 (Metrics)
 
 Update - We’ve improved our zoom in feature for metric charts. Up until now, zooming into a metric chart simply increased the size of the chart. Now, for time series charts in which the query uses automatic quantization, when you zoom in the chart presents results based on more granular data: the bucket size across which results are quantized is reduced. For more information, see [Zoom in on a time series chart](/docs/metrics/metric-charts/interacting-metric-charts#Zoom-in-on-a-time-series-chart).
 

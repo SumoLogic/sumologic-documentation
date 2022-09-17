@@ -91,7 +91,7 @@ The Jenkins App uses the following Log Types:
   "isOnline": true,
   "isRemoved": false,
   "isConnecting": false,
-  "nodeURL": "https://localhost:8080/computer/buil...00c4cda1f30b)/",
+  "nodeURL": "https://localhost:8080/computer/build...00c4cda1f30b)/",
   "eventSource": "Periodic_Update",
   "monitorData": {
     "SwapSpaceMonitor": "Memory:48519/63624MB  Swap:0/0MB",
@@ -298,7 +298,7 @@ To create a new Sumo Logic hosted collector, perform the steps in the [Configure
 
 To create a new HTTP logs and metric source:
 
-1. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions.](/docs/send-data/hosted-collectors/http-logs-metrics-source)
+1. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions.](/docs/send-data/hosted-collectors/http-source/logs-metrics)
 2. Make a note of **HTTP Source URL** and **Source Category**, as you will need them later in the configuration process.
 
 ### Step 3: Install the Jenkins Plugin

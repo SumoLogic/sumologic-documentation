@@ -89,7 +89,7 @@ This limit does not apply to the Kubernetes dimensions, Docker dimensions, or th
 * `container.imageid`
 * `container.imagename`
 * `container.imagefullid`
-* `container.deamonname`
+* `container.daemonname`
 * `label.com.docker.swarm.task.id`
 * `label.com.docker.swarm.task.name`
 

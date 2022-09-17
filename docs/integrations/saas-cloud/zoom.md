@@ -100,7 +100,7 @@ To add a hosted collector and HTTP source, do the following:
 1. Do one of the following:
    * If you already have a Sumo Logic Hosted Collector, identify the one you want to use.
    * Create a new Hosted Collector as described in this document: [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Add an HTTP source for logs, as described in this document: [HTTP Metrics and Logs Source](/docs/send-data/hosted-collectors/http-logs-metrics-source).
+2. Add an HTTP source for logs, as described in this document: [HTTP Metrics and Logs Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 
 ### Step 2: Configure Webhooks for events collection

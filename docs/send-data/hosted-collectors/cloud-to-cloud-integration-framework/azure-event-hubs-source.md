@@ -17,6 +17,10 @@ Hub destinations. Platform logs include:
 * [Resource Logs](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/resource-logs-schema)
 * [Activity Logs](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/activity-log-schema)
 
+:::note
+This Source is available in the Fed deployment.
+:::
+
 Third party apps or services can be configured to send event data to Event Hubs as well, including [Auth0](https://auth0.com/docs/logs/streams/azure-event-grid).
 
 ## Prerequisites
@@ -66,8 +70,7 @@ Third party apps or services can be configured to send event data to Event Hubs 
 | Shared Access Policy Name  | SumoCollectionPolicy |
 | Shared Access Policy Key   | mOsLf3RE…            |
 
-
-    ![azure-event-configs.png](/img/send-data/azure-event-configs.png)
+![azure-event-configs.png](/img/send-data/azure-event-configs.png)
 
 ## States
 
@@ -89,7 +92,7 @@ On the Collection page, the Health and Status for Sources is displayed. Use Heal
 
 ![Azure Event Hubs error.png](/img/send-data/Azure-Event-Hubs-error.png)
 
-Hover your mouse over the status icon to view a tooltip with details onthe detected issue.
+Hover your mouse over the status icon to view a tooltip with details on the detected issue.
 
 ![health error generic.png](/img/send-data/azure_health_error_generic.png)
 
@@ -99,13 +102,13 @@ When you create an Azure Event Hubs Source, you add it to a Hosted Collector. Be
 
 To configure an Azure Event Hubs Source:
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**.
 1. On the Collectors page, click **Add Source** next to a **HostedCollector**.
 1. Select **Azure Event Hubs**.
 
     ![Azure Event Hubs Icon.png](/img/send-data/Azure-Event-Hubs-Icon.png)
 
-1. Enter a **Name**for the Source. The description is optional.
+1. Enter a **Name** for the Source. The description is optional.
 
     ![azure-event-hubs-input.png](/img/send-data/azure-event-hubs-input.png)
 
@@ -146,8 +149,8 @@ Logs that do not contain a category field are assigned category UNKNOWN.
 ## Error types
 When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
-| Type | Reason | Retries | Retry | Behavior | Health Event Name |
-|--|--|--|--|--|--|
+| Type | Reason | Retries | Retry Behavior | Health Event Name |
+|--|--|--|--|--|
 | ThirdPartyConfig | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | FirstPartyGenericError |

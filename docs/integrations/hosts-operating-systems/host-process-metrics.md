@@ -61,7 +61,7 @@ To create a new Sumo Logic hosted collector, perform the steps in the[ Configure
   2. **Configure an HTTP Logs and Metrics Source**
 
 
-Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/hosted-collectors/http-logs-metrics-source). Suggestions for setting your source category:
+Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/hosted-collectors/http-source/logs-metrics). Suggestions for setting your source category:
 
 1. For identifying a specific cluster or a group of hosts: `<clustername>/metrics`
 2. For identifying a group of hosts within a given deployment: `<environment name>/<clustername>/metrics`
@@ -498,9 +498,9 @@ Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/d
 | Host Metrics - High Network Errors            | This alert fires when a host has encountered network errors in the last five minutes.                                                    | > 1%            | <= 1%             |
 | Host Metrics - Unusual network throughput in  | This alert fires when host network interfaces are receiving an unusually high amount of data (> 100 MB/s) over a 5-minute time interval. | > 100 MB/sec    | <= 100 MB/sec     |
 | Host Metrics - Unusual network throughput out | This alert fires when host network interfaces are sending an unusually high amount of data (> 100 MB/s) over a 5-minute time interval.   | > 100 MB/sec    | <= 100 MB/sec     |
-| Host Metrics - Host out of memory             | This alert fires when memory utilisation is over 90%.                                                                                    | > 90 %          | <= 90 %           |
+| Host Metrics - Host out of memory             | This alert fires when memory utilization is over 90%.                                                                                    | > 90 %          | <= 90 %           |
 | Host Metrics - Host out of inodes             | This alert fires when a host's filesystem is close to running out of available iNodes (> 90% used).                                      | > 90 %          | <= 90 %           |
-| Host Metrics - Host swap is filling up        | This alert fires when swap utilitization is over 80%.                                                                                    | > 80 %          | <= 80 %           |
+| Host Metrics - Host swap is filling up        | This alert fires when swap utilization is over 80%.                                                                                    | > 80 %          | <= 80 %           |
 | Host Metrics - Host out of disk space         | This alert fires when disk utilization is over 90%.                                                                                      | > 90 %          | <= 90 %           |
 | Host Metrics - Unusual disk read rate         | This alert fires when the disk is reading an unusually high amount of data (> 50 MB/s) over a 5-minute time interval.                    | > 50 MB/sec     | <= 50 MB/sec      |
 | Host Metrics - Unusual disk write rate        | This alert fires when the Disk is writing an unusually high amount of data (> 50 MB/s) over a 5-minute time interval.                    | > 50 MB/sec     | <= 50 MB/sec      |

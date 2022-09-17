@@ -44,7 +44,7 @@ You'll need the Manage or View Collectors [role capability](../users-and-roles/r
 * [Delete a Source](delete-collector-source.md)
 * [Download a JSON configuration file](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for scripting or backup
 * [Pause or resume a Source](pause-resume-source.md) (cloud polling Sources only)
-* [Show or regenerate a Source URL](docs/send-data/hosted-collectors//http-logs-metrics-source/generate-new-url-http-source.md) (HTTP Sources only)
+* [Show or regenerate a Source URL](docs/send-data/hosted-collectors/http-source/generate-new-url.md) (HTTP Sources only)
 * [Show or regenerate a Source token](/docs/send-data/hosted-collectors/cloud-syslog-source) (cloud syslog Source only)
 
 ## Available Information about Collectors and Sources

@@ -5,7 +5,7 @@ hide_table_of_contents: true
 description: Processing rules can filter and forward data sent to Sumo Logic.
 ---
 
-There are two user interfaces (UI) to create a Processing Rule, classic and new. The new interface is only available on certain Sources and is being released incrementally. sEach UI is documented in a separate tab below.
+There are two user interfaces (UI) to create a Processing Rule, classic and new. The new interface is only available on certain Sources and is being released incrementally. Each UI is documented in a separate tab below.
 
 <Tabs
   className="unique-tabs"

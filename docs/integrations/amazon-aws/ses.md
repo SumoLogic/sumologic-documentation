@@ -71,7 +71,7 @@ Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and rece
 
 ```json title="SES log"
 {"notificationType":"Delivery","mail":{"timestamp":"2018-02-08T18:18:09.060Z","source":"Sumo Logic <service@sumologic.com>","sourceArn":"arn:aws:ses:us-west-3:123456789029:identity/service@sumologic.com","sourceIp":"19.171.22.2","sendingAccountId":"122226337001","messageId":"010001606dc7dea0-91abab6b-b5fc-47as-921f-813c92ac40ud-000000","destination":["bob@example.com"]},"delivery":{"timestamp":"2017-12-19T07:58:23.735Z","processingTimeMillis":865,"recipients":["jason@sumo.com"],"smtpResponse":"250 2.0.0 OK 1513670303 h58si3264405qta.418 - gsmtp","remoteMtaIp":"169.107.162.237","reportingMTA":"a9-19.smtp-out.amazonses.com"}}
-{"notificationType":"Bounce","bounce":{"bounceType":"Permanent","bounceSubType":"Suppressed","bouncedRecipients":[{"emailAddress":"larry@customer.com","action":"failed","status":"5.1.1","diagnosticCode":"Amazon SES has suppressed sending to this address because it has a recent history of bouncing as an invalid address. For more information about how to remove an address from the suppression list, see the Amazon SES Developer Guide: http://docs.aws.amazon.com/ses/lates...ssionlist.html "}],"timestamp":"2018-04-12T11:46:41.807Z","feedbackId":"010001606e10a2db-3807dda0-4311-4b62-b883-8e0cb4122954-000000","reportingMTA":"dns; amazonses.com"},"mail":{"timestamp":"2017-12-19T09:17:52.309Z","source":"Sumo Logic <service@sumologic.com>","sourceArn":"arn:aws:ses:us-east-3:123456789029:identity/service@sumologic.com","sourceIp":"169.107.162.237","sendingAccountId":"123456789029","messageId":"010001606e109e93-29782834-7101-4a4a-abbd-2d3e971d1173-000000","destination":["naren@demo.com"]}}
+{"notificationType":"Bounce","bounce":{"bounceType":"Permanent","bounceSubType":"Suppressed","bouncedRecipients":[{"emailAddress":"larry@customer.com","action":"failed","status":"5.1.1","diagnosticCode":"Amazon SES has suppressed sending to this address because it has a recent history of bouncing as an invalid address. For more information about how to remove an address from the suppression list, see the Amazon SES Developer Guide: http://docs.aws.amazon.com/ses/latest...ssionlist.html "}],"timestamp":"2018-04-12T11:46:41.807Z","feedbackId":"010001606e10a2db-3807dda0-4311-4b62-b883-8e0cb4122954-000000","reportingMTA":"dns; amazonses.com"},"mail":{"timestamp":"2017-12-19T09:17:52.309Z","source":"Sumo Logic <service@sumologic.com>","sourceArn":"arn:aws:ses:us-east-3:123456789029:identity/service@sumologic.com","sourceIp":"169.107.162.237","sendingAccountId":"123456789029","messageId":"010001606e109e93-29782834-7101-4a4a-abbd-2d3e971d1173-000000","destination":["naren@demo.com"]}}
 {"notificationType":"Complaint","complaint":{"complainedRecipients":[{"emailAddress":"nathan@sumodemoacme.com"}],"timestamp":"2018-04-12T12:25:07.641Z","feedbackId":"01000162b539f06b-d701b0a8-bde5-48ea-85b2-a8a58e4de012-000000","userAgent":"AOL SComp","complaintFeedbackType":"abuse","arrivalDate":"2018-04-12T12:25:07.641Z"},"mail":{"timestamp":"2018-04-12T12:25:07.641Z","source":"Sumo Logic Information <service@sumologic.com>","sourceArn":"arn:aws:ses:us-west-2:123456789029:identity/service@sumologic.com","sourceIp":"147.106.118.104","sendingAccountId":"123456789029","messageId":"0100016292d33f2f-6a6d0111-cfb3-499b-a667-9edae2d901c5-000000","destination":(["jackson@longsumo.com"]}}
 ```
 
@@ -190,7 +190,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 ### Step 4: Configure and collect Amazon SNS notifications for Amazon SES
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Configure an  [HTTP](/docs/send-data/hosted-collectors/http-logs-metrics-source) source.
+2. Configure an  [HTTP](/docs/send-data/hosted-collectors/http-source/logs-metrics) source.
 * **Name—**Enter a name to display for the new Source.
 * **Description—**Enter an optional description.
 * **Source Category—**Enter a source category, such as: AWS/SES/Events/Notifications
@@ -241,7 +241,7 @@ To install the app:
             * For SES CloudTrail Logs, provide sourceCategory as **AWS/Cloudtrail**
             * For SES Notification Logs, provide sourceCategory as **AWS/SES/Notifications**
         * **Choose Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`).
-3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folde**r to add a new folder.
+3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library] for information on working with the library in the new UI.

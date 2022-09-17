@@ -91,7 +91,7 @@ At the top of the page, you can:
 
 * **Search Monitors**. Use the search field to filter Monitors by name and status. For example, you can view all Monitors that are currently triggered in the system by clicking the **Status: All Triggered**.
 
-    ![seach monitors input.png](/img/monitors/seach-monitors-input.png)
+    ![search monitors input.png](/img/monitors/search-monitors-input.png)
 
 * Click **Add** to:   
 
@@ -369,7 +369,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
     ![additional settings evaluation delay.png](/img/monitors/additional-settings-evaluation-delay.png)
 
-    If your data is coming from the [Amazon CloudWatch Source for Metrics](docs/send-data/hosted-collectors//amazon-aws/amazon-cloudwatch-source-metrics.md) we recommend a setting of 900 seconds.
+    If your data is coming from the [Amazon CloudWatch Source for Metrics](docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) we recommend a setting of 900 seconds.
 
 1. (Optional) Set **Notifications**, when a trigger condition is met you can send notifications to other people and services. To add notifications click on the **Add Notification** button. You can add more than one notification channel for a Monitor.
 

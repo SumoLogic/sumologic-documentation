@@ -52,7 +52,7 @@ To enable Amazon Virtual Private Cloud (VPC) Flow Logs from the AWS console:
 ### Step 2: Configure hosted collector and HTTP source
 
 1. [Create a Hosted Collector](/docs/send-data/hosted-collectors#Create-a-Hosted-Collector)in Sumo Logic.
-2. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-logs-metrics-source) in Sumo Logic. When configuring the source:
+2. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) in Sumo Logic. When configuring the source:
 3. Under **Advanced Options for Logs**, for **Timestamp Format**, click **Specify a format**.
 4. Under **Format**, enter: `epoch`.
 5. Under  **Timestamp locator**, enter: `\s(\d{10,13})\s\d{10,13}`.

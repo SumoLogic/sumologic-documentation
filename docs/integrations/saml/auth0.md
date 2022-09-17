@@ -45,12 +45,12 @@ Use the in-product [setup wizard](/docs/send-data/setup-wizard) in the Sumo Logi
 
 ### Configure a Source
 
-Source type is [HTTP](/docs/send-data/hosted-collectors/http-logs-metrics-source).
+Source type is [HTTP](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 * **Name**: Required
 * **Category**:
 * **Timestamp Parsing Settings**:
-  * **Enable Timestamp Parsin**g: True
+  * **Enable Timestamp Parsing**: True
   * **Timezone**: Logs are sent in UTC by default and can be automatically detected
   * **Timestamp Format**: Select **Specify a format** and use the following, \
 Format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z' \
@@ -98,7 +98,7 @@ Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_
       }
    },
    "user_id": "auth0|123ASD987",
-   "user_name": "noone@sumologic.com",
+   "user_name": "no-one@sumologic.com",
    "strategy": "auth0",
    "strategy_type": "database",
    "_id": "321654987654321654987654321",

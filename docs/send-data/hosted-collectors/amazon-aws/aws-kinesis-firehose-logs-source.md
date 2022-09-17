@@ -65,7 +65,7 @@ To create an AWS Kinesis Firehose for Logs Source:
 
    * **Infer Boundaries.** Enable when you want Sumo to automatically attempt to determine which lines belong to the same message.   If you deselect the Infer Boundaries option, enter a regular expression in the **Boundary Regex** field to use for detecting the entire first line of multi-line messages.
    * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression for the full first line of every multiline message in your log files.
-   * **Enable One Message Per Request.** Select this option if you'll be sending a single message with each HTTP request. For more information, see [Multiline options in HTTP sources](/docs/send-data/hosted-collectors/http-logs-metrics-source). 
+   * **Enable One Message Per Request.** Select this option if you'll be sending a single message with each HTTP request. For more information, see [Multiline options in HTTP sources](/docs/send-data/hosted-collectors/http-source/logs-metrics). 
 
 1. **Processing Rules for Logs.** Configure desired filters—such as include, exclude, hash, or mask—as described in Create a Processing Rule. Processing rules are applied to log data, but not to metric data. Note that while the Sumo service will receive your data, data ingestion will be performed in accordance with the regular expressions you specify in processing rules.    
 1. When you are finished configuring the Source click **Save**.    

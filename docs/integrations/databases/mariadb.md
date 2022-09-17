@@ -284,7 +284,7 @@ This section demonstrates how to configure a Local File Source for MariaDB Error
      * `environment = <Your_Environment_Name`> (for example, Dev, QA, or Prod)
 4. In the **Advanced** section, select the following options:
    1. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
-   2. **Enable Timetamp Parsing**: Select **Extract timestamp information from log file entries**.
+   2. **Enable Timestamp Parsing**: Select **Extract timestamp information from log file entries**.
    3. **Time Zone**: Select the option to **Use time zone from log file. If none is present use**: and set the timezone to **UTC**.
    4. **Timestamp Format**: Select the option to **Automatically detect the format**.
    5. **Encoding**. UTF-8 is the default, but you can choose another encoding format from the menu if your MariaDB logs are encoded differently.
@@ -313,7 +313,7 @@ This section demonstrates how to configure a Local File Source for MariaDB Slow 
      * `environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod)
 4. In the **Advanced** section, select the following options:
    1. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
-   2. **Enable Timetamp Parsing**: Select **Extract timestamp information from log file entries**.
+   2. **Enable Timestamp Parsing**: Select **Extract timestamp information from log file entries**.
    3. **Time Zone**: Select the option to **Use time zone from log file**. If none is present, use and set the timezone to **UTC**.
    4. **Timestamp Format**: Select the option to **Automatically detect the format**.
    5. **Encoding**. UTF-8 is the default, but you can choose another encoding format from the menu if your MariaDB logs are encoded differently.

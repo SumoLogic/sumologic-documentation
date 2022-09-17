@@ -1,6 +1,7 @@
 ---
 slug: /cse/integrations
-title: Integrations
+title: CSE Integrations
+sidebar_label: CSE Integrations
 description: Learn about the integration of CSE with the Sumo Logic platform, how to integrate threat intel sources, and leveraging the CSE Insight Enrichment Server.
 ---
 

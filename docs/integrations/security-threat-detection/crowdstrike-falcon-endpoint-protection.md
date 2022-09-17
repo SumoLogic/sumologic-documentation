@@ -55,7 +55,7 @@ For more information on Events, please refer to [Streaming API Event Dictionary]
         "SHA256String": "6a671b92a69755de6fd063fcbe4ba926d83b49f78c42dbaeed8cdb6bbc57576a",
         "MD5String": "ac4c51eb24aa95b77f705ab159189e24",
         "MachineDomain": "CS-SE-EZ64",
-        "FalconHostLink": "<a href="https://falcon.crowdstrike.com/activity/detections/detail/ec86abd353824e96765ecbe18eb4f0b4/38655257584?_cid=xxxxxxxxxxxxxxxxxx">https://falcon.crowdstrike.com/activ...xxxxxxxxxxxxxx</a>",
+        "FalconHostLink": "<a href="https://falcon.crowdstrike.com/activity/detections/detail/ec86abd353824e96765ecbe18eb4f0b4/38655257584?_cid=xxxxxxxxxxxxxxxxxx">https://falcon.crowdstrike.com/activity...xxxxxxxxxxxxxx</a>",
         "SensorId": "ec86abd353824e96765ecbe18eb4f0b4",
         "DetectId": "ldt:ec86abd353824e96765ecbe18eb4f0b4:38655257584",
         "LocalIP": "xx.xx.xx.xx",
