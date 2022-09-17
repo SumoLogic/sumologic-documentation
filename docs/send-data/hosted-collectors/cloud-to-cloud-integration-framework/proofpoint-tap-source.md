@@ -14,7 +14,7 @@ The Proofpoint integration supports the following four event types:
  * Clicks Blocked
 
 :::note
-This Source is available in the [Fed deployment](/APIs/Troubleshooting-APIs/Deployments-and-Sumo-Logic-Endpoints).
+This Source is available in the [Fed deployment](/docs/api/troubleshooting#deployments-and-sumo-logic-endpoints).
 :::
 
 ## States
