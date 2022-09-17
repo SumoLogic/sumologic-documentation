@@ -2503,7 +2503,7 @@ on a compromised machine and establish persistence.
 
 Detects modifications to the Microsoft Outlook Homepage. Outlook
 Homepage is a legacy feature that can be leveraged by an adversary to
-insert malicous code and establish persistence.
+insert malicious code and establish persistence.
 
 ## Overly Permissive Chmod Command
 
