@@ -44,4 +44,5 @@ jobs:
         name: Check spelling
         with:
           skip: "*.svg,*.js,*.map,*.css,*.scss"
+          ignore_words_file: "codespell/ignore.txt"
           path: docs
