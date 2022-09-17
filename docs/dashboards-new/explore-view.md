@@ -4,6 +4,7 @@ title: Navigating Sumo Logic Dashboards with Explore
 sidebar_label: Explore View
 ---
 
+import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Explore is a navigation tool that provides an intuitive visual hierarchy of your environment. Use Explore to facilitate successful monitoring, managing, and troubleshooting.
@@ -146,7 +147,17 @@ https://service.us2.sumologic.com/ui/#/explore/@1601092800000,1601389990282@clus
 
 Explore navigation capabilities allow you to quickly locate the object that needs debugging in a physical stack. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CEBN4lRp4SU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<Iframe url="https://www.youtube.com/embed/CEBN4lRp4SU?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
 
 ### Step 1: Analyzing the cluster
 

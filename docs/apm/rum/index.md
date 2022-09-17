@@ -8,6 +8,7 @@ description: Real User Monitoring (RUM) gives you the ability to understand how 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Iframe from 'react-iframe';
 
 Real User Monitoring (RUM) gives you the ability to understand how users interact with the digital interfaces of your business and if their experience is satisfactory or not. This open-source powered and flexible capability brings you full visibility into what’s happening in your user's browser while interacting with your web applications.
 
@@ -16,7 +17,17 @@ RUM provides you visibility into end-to-end individual user transactions to quic
 :::sumo Micro Lesson
 See Real User Monitoring in action.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/n-khmblaQN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<Iframe url="https://www.youtube.com/embed/n-khmblaQN4?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
 :::
 
 ## How it works

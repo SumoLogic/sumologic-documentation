@@ -262,7 +262,7 @@ html[data-theme='light'] {
   height: 30px;
   margin-top: 10px;
   display: inline-flex;
-  background: url("https://upload.wikimedia.org/wikipedia/commons/a/a4/Inkscape_icons_zoom.svg")
+  background: url("../../static/img/icons/magnifying-glass-header.png")
     no-repeat;
 }
 
@@ -270,14 +270,6 @@ html[data-theme='light'] {
     display: none !important;
     content: none !important;
 }
-
-[data-theme='dark'] .header-search-link::before {
-  background: url("https://upload.wikimedia.org/wikipedia/commons/a/a4/Inkscape_icons_zoom.svg")
-    no-repeat;
-}
-
-
-
 
 
 
@@ -588,24 +580,6 @@ html[data-theme='dark'] .navbar-item-github:before {
   font-weight: 600;
   text-decoration: none;
   border: 1px solid #3578e5;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-
-.search-404 {
-  border-bottom: 1px solid var(--ifm-toc-border-color);
-}
-
-.search-404 {
-  background-color: #F1F1F1;
-  color: white;
-  padding: 8px 25px;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  margin-right: 10px;
-  border: 1px solid #FFFFFF;
   cursor: pointer;
   margin-right: 10px;
 }
