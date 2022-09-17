@@ -7,7 +7,6 @@ keywords:
     - cloud-SIEM-enterprise
 ---
 
-
 The SentinelOne Mgmt API Source collects data from the SentinelOne Management Console. It securely stores the required authentication, scheduling, and state tracking information.
 
 Data from the following object types are collected from [SentinalOne APIs](https://usea1-partners.sentinelone.net/api-doc/overview):
@@ -18,9 +17,9 @@ Data from the following object types are collected from [SentinalOne APIs](https
 
 Once the Source is created it will start collecting historical data and maintain a polling interval of five minutes.
 
-::note
+:::note
 This Source is available in the Fed deployment.
-:::
+::: 
 
 ## States
 
