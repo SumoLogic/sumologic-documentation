@@ -36,13 +36,3 @@ jobs:
           env:
             NODE_OPTIONS: "--max-old-space-size=8192"
           run: yarn build
-    spellcheck:
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@v2
-      - uses: codespell-project/actions-codespell@master
-        name: Check spelling
-        with:
-          skip: "*.svg,*.js,*.map,*.css,*.scss"
-          ignore_words_file: "codespell/ignore.txt"
-          path: docs
