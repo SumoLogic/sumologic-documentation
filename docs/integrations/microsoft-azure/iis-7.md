@@ -157,7 +157,7 @@ To collect logs from IIS 7, use an Installed Collector and a Local File Source. 
     6. **Source Category** (Required). For example, "IIS_prod". (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
 3. Configure the **Advanced** section:
     7. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
-    8. **Enable Timetamp Parsing**: Select **Extract timestamp information from log file entries**.
+    8. **Enable Timestamp Parsing**: Select **Extract timestamp information from log file entries**.
     9. **Time Zone**: Select the option to **Use time zone from log file. If none is present use:** and set the timezone to **UTC**.
     10. **Timestamp Format**: Select the option to **Automatically detect the format**.
     11. **Encoding**. UTF-8 is the default, but you can choose another encoding format from the menu if your IIS logs are encoded differently.

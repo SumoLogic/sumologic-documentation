@@ -87,7 +87,7 @@ node_ip = "10.180.1.1"
 pod_scrape_interval = 60
 ```
 
-**Retrict namespace.** Set options to restrict Kubernetes monitoring to a single namespace.
+**Restrict namespace.** Set options to restrict Kubernetes monitoring to a single namespace.
 
 ```sql
 monitor_kubernetes_pods_namespace = ""

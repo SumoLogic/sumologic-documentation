@@ -74,7 +74,7 @@ With the cursor still in the time range field, press **Delete** then press **Re
 
 You can specify a time interval for a dashboard as a whole, and the changes are applied to all the panels on the dashboard that don't have customized time range settings.
 
-Panels with customized time range settings can't be overriden by a dashboard-level time range. Panels with customized time ranges maintain their customized setting .
+Panels with customized time range settings can't be overridden by a dashboard-level time range. Panels with customized time ranges maintain their customized setting .
 
 To specify a dashboard-level time range setting, do the following:
 

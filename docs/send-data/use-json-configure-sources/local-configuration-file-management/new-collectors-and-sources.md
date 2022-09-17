@@ -34,7 +34,7 @@ When installing the Collector, specify the `syncSources` parameter. See the to
 For example, for command-line installation, supplying the Access ID and
 Access Key, `syncSources`, and the Collector name:
 
-`sudo ./SumoCollector.sh -q -Vsumo.accessid\<accessI\> -Vsumo.accesskey\<accessKe\> -VsyncSources\<filepat\> -Vcollector.name\<nam\>`
+`sudo ./SumoCollector.sh -q -Vsumo.accessid\<accessI\> -Vsumo.accesskey\<accessKe\> -VsyncSources\<filepat\> -Vcollector.name\<name\>`
 
 For Collector versions prior to 19.137 add the `syncSources` parameter to the [**sumo.conf**](docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) file before starting the Collector for the first time.
 

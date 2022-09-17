@@ -9,7 +9,7 @@ keywords:
 
 The SentinelOne Mgmt API Source collects data from the SentinelOne Management Console. It securely stores the required authentication, scheduling, and state tracking information.
 
-Data from the following object types are collected from [SentinalOne APIs](https://usea1-partners.sentinelone.net/api-doc/overview):
+Data from the following object types are collected from [SentinelOne APIs](https://usea1-partners.sentinelone.net/api-doc/overview):
 
  * `activities`
  * `agents`
@@ -39,7 +39,7 @@ When you delete the Source it is placed in a **Stopping** state, when it has s
 
 On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection.
 
-![sentinalOne health.png](/img/send-data/sentinalOne-health.png)
+![sentinelOne health.png](/img/send-data/sentinalOne-health.png)
 
 Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings.
 
@@ -49,7 +49,7 @@ You can click on the status icon to open a Health Events panel with details on e
 
 ## Authentication
 
-The SentinelOne Mgmt API Source requires authentication with a token associated with ApiToken. See [how to generate an API Token from SentinalOne documentation](https://usea1-partners.sentinelone.net/docs/en/generating-api-tokens.html). The following steps are provided as a guide.
+The SentinelOne Mgmt API Source requires authentication with a token associated with ApiToken. See [how to generate an API Token from SentinelOne documentation](https://usea1-partners.sentinelone.net/docs/en/generating-api-tokens.html). The following steps are provided as a guide.
 
 To generate an API token:
 
@@ -79,7 +79,7 @@ To configure a SentinelOne Mgmt API Source:**
 
 1. Select **SentinelOne Mgmt API**.
 
-   ![sentinal one icon.png](/img/send-data/sentinal-one-icon.png)
+   ![sentinel one icon.png](/img/send-data/sentinal-one-icon.png)
 
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 
@@ -97,7 +97,7 @@ If you entered actions in Supported APIs to collect above, the `_siemDataType` f
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
-1. **Base URL**. Provide your SentinalOne Management URL. It's in this format: `https:/\<your_management_ur\>`.
+1. **Base URL**. Provide your SentinelOne Management URL. It's in this format: `https:/\<your_management_ur\>`.
 1. **API Token**. Provide the API Token you got from the SentinelOne Management Console. See Authentication above for details.
 1. **Supported APIs to collect**. Select one or more of the available APIs: **activities**, **agents**, and **threats**.
 1. When you are finished configuring the Source, click **Submit**.
@@ -130,8 +130,8 @@ The following table shows the **config** parameters for a SentinelOne Mgmt API�
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
-| `base_url` | String | Yes |  | Provide your SentinalOne Management URL. It's in this format: `https://<your_management_url>`. | modifiable |
-| `api_secret` | String | Yes |  | Provide your API Token from SentinalOne that you want to use to authenticate collection requests. | modifiable |
+| `base_url` | String | Yes |  | Provide your SentinelOne Management URL. It's in this format: `https://<your_management_url>`. | modifiable |
+| `api_secret` | String | Yes |  | Provide your API Token from SentinelOne that you want to use to authenticate collection requests. | modifiable |
 | `supported_apis` | Array of strings | Yes |  | Define one or more of the available APIs to collect: activities, agents, and threats.<br/>For example, for all three you'd use: `["activities","agents","threats"]` | modifiable |
 
 SentinelOne Mgmt API Source JSON example:

@@ -1,7 +1,7 @@
 ---
 id: network-sensor-deployment-guide
 title: Network Sensor Deployment Guide
-sidebar_label: Netwrok Sensor Deployment
+sidebar_label: Network Sensor Deployment
 description: Learn about Network Sensor deployment planning, standard sensor placement, sensor requirements, installation, general configuration, and helpful commands.
 ---
 
@@ -698,15 +698,15 @@ If an Ubuntu VM (possibly other Linux distributions) does not show both interfac
    
 You can temporarily put the interface in the UP state, using the following command:
 
-`$ ip link set\<<interface nam\>> up`  
+`$ ip link set\<<interface name\>> up`  
    
 To make the UP state persist through a reboot or service restart, edit the `/etc/network/interfaces` file with your choice of editor.  Remember to use sudo. Add the following line to this file:  
    
-`auto\<<interface nam\>>`  
+`auto\<<interface name\>>`  
    
 After you save this file, clear any existing IPs from the interface by running:  
    
-`$ sudo ip addr flush\<<interface nam\>>`
+`$ sudo ip addr flush\<<interface name\>>`
 
 ### Troubleshoot Bro/Zeek
 

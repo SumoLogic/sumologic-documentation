@@ -182,7 +182,7 @@ See information about Google BigQuery operations, including an operations breakd
 
 **Operations by Project. **Shows trends in operations by project in the last 24 hours on a line graph.
 
-**Table Service Operations Over Time. **Shows the number of table service operations and erros over time in the last 24 hours on a line graph.
+**Table Service Operations Over Time. **Shows the number of table service operations and errors over time in the last 24 hours on a line graph.
 
 **Operation Failures by Project. **Shows trends operation failures by project in the last 24 hours on a line graph.
 

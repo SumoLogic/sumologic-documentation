@@ -850,7 +850,7 @@ If `<field_name>` isn’t specified, the field dictionary is passed through inst
 
 ### TRANSFORM_ALL
 
-Applies \<transfer_stanza_nam\>` stanza to all fields (that have already been parsed or created by SET) that match the regular expression.
+Applies `<transfer_stanza_nam>` stanza to all fields (that have already been parsed or created by SET) that match the regular expression.
 
 Like any other transform statement, TRANSFORM_ALL uses the parsing of the transform it's attached on the log entry or field, but it repeatedly tries to match the regex associated with the transform, starting from the last point the previous attempt finished, applying all the other parse actions associated with the transform on each successful parse.
 
@@ -1076,7 +1076,7 @@ Takes keys and values in separate fields from a JSON event and combines them tog
 
 **Syntax**
 
-`ZIP\<ke\>\<valu\> =\<prefix or %s templat\>`
+`ZIP\<ke\>\<value\> =\<prefix or %s template\>`
 
 **Non-regex method**
 

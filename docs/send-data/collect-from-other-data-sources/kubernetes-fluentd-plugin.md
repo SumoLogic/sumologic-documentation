@@ -203,7 +203,7 @@ spec:
 
 The recommended way to collect metrics from Kubernetes clusters is to use Heapster and a Sumo collector with a streaming metrics source.
 
-Heapster aggregates metrics across a Kubenetes cluster. Heapster runs as a pod in the cluster, and discovers all nodes in the cluster and queries usage information from each node's kubelet—the on-machine Kubernetes agent.
+Heapster aggregates metrics across a Kubernetes cluster. Heapster runs as a pod in the cluster, and discovers all nodes in the cluster and queries usage information from each node's kubelet—the on-machine Kubernetes agent.
 
 Heapster provides metrics at the cluster, node and pod level.
 

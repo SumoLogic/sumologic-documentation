@@ -64,7 +64,7 @@ Statistic=Sum | sum by account, region, namespace, loadbalancername
 ```
 
 
-## Collecing Logs and Metrics for the AWS Classic Load Balancer
+## Collecting Logs and Metrics for the AWS Classic Load Balancer
 
 ### Collect Metrics for AWS Classic Load Balancer
 

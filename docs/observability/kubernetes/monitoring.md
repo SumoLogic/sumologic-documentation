@@ -36,7 +36,7 @@ To navigate Kubernetes environment and analyze the landscape, do the following:
 
 1. At the top of the navigation panel, click **Explore By** to expand the menu and make a selection for the top level hierarchy. The contents of your selection appear below.<br/>![Explore_By_Options.png](/img/kubernetes/Explore_By_Options.png)
 1. Click the arrow to the left of a content name to expand and view its contents.<br/> ![Explore_cluster_contents.png](/img/kubernetes/Explore_cluster_contents.png)
-1. Dead entities are shown faded:<br/> ![faded entitiyexplore.png](/img/kubernetes/faded-entitiy-explore.png)
+1. Dead entities are shown faded:<br/> ![faded entityexplore.png](/img/kubernetes/faded-entity-explore.png)
 1. Drill down into the clusters to view the pods and containers. The data for your selection is displayed in the panels of the dashboard on the right.<br/> ![Explore_Drill-Down.png](/img/kubernetes/Explore_Drill-Down.png)
 1. Optional: Select another type of dashboard display from the drop-down menu at the top of the dashboard, and select another time interval.<br/>![Explore_Drill-Down_Dashboard_options.png](/img/kubernetes/Explore_Drill-Down_Dashboard_options.png)
 
