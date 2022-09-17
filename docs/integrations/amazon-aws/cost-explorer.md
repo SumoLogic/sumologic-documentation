@@ -146,7 +146,7 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 When you delete the source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
 
-On the Collection page, the [Health](/docs/Manage/Health-Events#Collection-page) and Status for Sources is displayed. Use [Health Events](/docs/Manage/Health_Events) to investigate issues with collection.
+On the Collection page, the [Health](/docs/Manage/Health-Events#Collection-page) and Status for Sources is displayed. Use [Health Events](/docs/Manage/Health-Events) to investigate issues with collection.
 
 
 ### Error types
@@ -208,7 +208,7 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/Manage/H
 
 ### JSON Configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/API/Collector). See [how to use JSON to configure Sources](/docs/Send-Data/Sources/Use-JSON-to-Configure-Sources) for details.
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/API/Collector). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 <table>
   <tr>
@@ -230,7 +230,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
    </td>
    <td>Yes
    </td>
-   <td>Contains the <a href="/docs/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Salesforce_Source#configParameters">configuration parameters</a> for the Source.
+   <td>Contains the <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source#configParameters">configuration parameters</a> for the Source.
    </td>
    <td>
    </td>
@@ -288,7 +288,7 @@ The following table shows the **config** parameters for an AWS Cost Explorer Sou
    </td>
    <td>
    </td>
-   <td>Type the desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata</a> field _source.</td>
+   <td>Type the desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata</a> field _source.</td>
    <td>modifiable
    </td>
   </tr>
@@ -315,7 +315,7 @@ The following table shows the **config** parameters for an AWS Cost Explorer Sou
    </td>
    <td>Null
    </td>
-   <td>Type a category of the source. This value is assigned to the <a href="/docs/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata</a> field <code>_sourceCategory</code>. See <a href="/docs/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category">best practices</a> for details.
+   <td>Type a category of the source. This value is assigned to the <a href="/docs/Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata</a> field <code>_sourceCategory</code>. See <a href="/docs/send-data/best-practices">best practices</a> for details.
    </td>
    <td>modifiable
    </td>
