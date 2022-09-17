@@ -55,7 +55,7 @@ To request installation of the PCI app in the classic UI:
 Unlike Dashboards and scheduled searches, reports can be modified, allowing flexibility, including:
 
 * **Identify long term trends.** Change the time range of a report to get additional information that extends beyond the reach of Dashboards.
-* **Modify to get a closer look.** Need additional insight into events on a singe host? Or perhaps trying to find more details of a user's activity? Reports can return very granular information by making just a few edits to the query. You can choose to save an edited report as a saved search on its own.
+* **Modify to get a closer look.** Need additional insight into events on a single host? Or perhaps trying to find more details of a user's activity? Reports can return very granular information by making just a few edits to the query. You can choose to save an edited report as a saved search on its own.
 * **Concentrate efforts.** If one area of your deployment is trickier to keep in compliance, run a report more target report at a more frequent interval.
 
 ### Included PCI Reports

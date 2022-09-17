@@ -91,7 +91,7 @@ The Jenkins App uses the following Log Types:
   "isOnline": true,
   "isRemoved": false,
   "isConnecting": false,
-  "nodeURL": "https://localhost:8080/computer/buil...00c4cda1f30b)/",
+  "nodeURL": "https://localhost:8080/computer/build...00c4cda1f30b)/",
   "eventSource": "Periodic_Update",
   "monitorData": {
     "SwapSpaceMonitor": "Memory:48519/63624MB  Swap:0/0MB",

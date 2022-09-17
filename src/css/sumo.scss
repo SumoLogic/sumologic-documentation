@@ -248,6 +248,33 @@ html[data-theme='light'] {
     no-repeat;
 }
 
+
+
+
+
+.header-search-link:hover {
+  opacity: 0.6;
+}
+
+.header-search-link::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  display: inline-flex;
+  background: url("../../static/img/icons/magnifying-glass-header.png")
+    no-repeat;
+}
+
+.header-search-link::after {
+    display: none !important;
+    content: none !important;
+}
+
+
+
+
+
 .DocSearch.DocSearch-Button {
   width: 32px !important;
   height: 32px !important;
@@ -556,6 +583,7 @@ html[data-theme='dark'] .navbar-item-github:before {
   cursor: pointer;
   margin-right: 10px;
 }
+
 
 @media screen and (max-width: 996px) {
   .backtohome-404 {

@@ -48,5 +48,5 @@ You cannot have blank values, like `name=` .
 | `proxyUser` | The user name a Collector uses to connect via a proxy.  | `proxyUser=userName` | Optional |
 | `proxyPassword` | The password associated with the proxyUser setting.  | `proxyPassword=password` | Optional |
 | `proxyNtlmDomain` | When using an NTML proxy, the URL used to connect. | `proxyNtlmDomain=sumoexchange.com` | Optional |
-| `syncSources` | When using the Local File Configurtion management method, provides the file path and the name of the JSON file that contains all Source information for the Collector. | syncSources=[file path]/sources.json | Optional |
+| `syncSources` | When using the Local File Configuration management method, provides the file path and the name of the JSON file that contains all Source information for the Collector. | syncSources=[file path]/sources.json | Optional |
 | `url=[url]` | Sets URL used to register Collector for data collection API. | `url=https://collectors.eu.sumologic.com` | Optional |

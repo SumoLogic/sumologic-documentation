@@ -51,7 +51,7 @@ Set the value of this field to “N/A” if not available. | Optional |
 | message | This field is used to indicate any message Set the value of this field to “N/A” if not available.| Optional |
 | title | This field can be used to indicate a deploy job name, description of pipeline/stage. Set the value of this field to “N/A” if not available.	Optional |
 | user | This field indicates the user associated with a deploy event. Set the value of this field to “N/A” if not available. | Optional |
-| service | Thei field indicates the service that got deployed. Set the value of this field to “N/A” if not available. | Optional |
+| service | This field indicates the service that got deployed. Set the value of this field to “N/A” if not available. | Optional |
 | team | This field indicates the team for which a deploy event occurred. Set the value of this field to “N/A” if not available. | Optional |
 
 **Build Event.** These events describe the chain of events when a  source code repository is compiled into executable artifacts, after which a series of automated unit and regressions tests are run.  

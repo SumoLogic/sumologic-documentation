@@ -1,7 +1,7 @@
 ---
 id: telegraf-collection-architecture
 title: Telegraf Collection Architecture
-description: Learn about using Telegraf in metric collection pipelines, inside Kubernetes and in non-Kubernetes enviroments.
+description: Learn about using Telegraf in metric collection pipelines, inside Kubernetes and in non-Kubernetes environments.
 ---
 
 

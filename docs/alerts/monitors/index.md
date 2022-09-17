@@ -97,7 +97,7 @@ At the top of the page, you can:
 
 * **Search Monitors**. Use the search field to filter Monitors by name and status. For example, you can view all Monitors that are currently triggered in the system by clicking the **Status: All Triggered**.
 
-    ![seach monitors input.png](/img/monitors/seach-monitors-input.png)
+    ![search monitors input.png](/img/monitors/search-monitors-input.png)
 
 * Click **Add** to:   
 

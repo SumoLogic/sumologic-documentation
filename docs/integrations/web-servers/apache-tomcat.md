@@ -215,7 +215,7 @@ Enter in values for the following parameters (marked `CHANGEME` above):
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Tomcat Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Tomcat input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section, which is `[[inputs.Tomcat]]`:
         * `servers` - The URL to the Tomcat server. This can be a comma-separated list to connect to multiple Tomcat servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/tomcat) for more information on additional parameters for configuring the Tomcat input plugin for Telegraf.
-    * In the tags section, whis is `[inputs.Tomcat.tags]`
+    * In the tags section, which is `[inputs.Tomcat.tags]`
         * `environment` - This is the deployment environment where the Tomcat farm identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `webserver_farm` - Enter a name to identify this Tomcat farm. This farm name will be shown in the Sumo Logic dashboards.
     * In the input plugins section, which is `[[inputs.jolokia2_agent]]`:
@@ -831,7 +831,7 @@ The **Apache Tomcat - Visitor Locations** Dashboard provides a high-level view o
 * **Worldwide.** Uses a geo lookup operation to display worldwide visitor locations by IP address on a map of the world, which allows you to see a count of hits per location for the last 24 hours.
 * **Visits by Country Over Time.** Displays the number of visitors by country in a stacked column chart on a timeline for the last hour.
 * **United States.** Uses a geo lookup operation to display US visitor locations by IP address on a map of the world, which allows you to see a count of hits per location for the last 24 hours.
-* **Visits by US Sate Over Time.** Displays the number of US visitors by state in a stacked column chart on a timeline for the last hour.
+* **Visits by US State Over Time.** Displays the number of US visitors by state in a stacked column chart on a timeline for the last hour.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Visitor-Locations.png')} alt="test" />
 

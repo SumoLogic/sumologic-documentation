@@ -233,7 +233,7 @@ _sourceCategory=apache*
 For the Source Category "apache", count hits by browser:
 
 ```sql
-_sourceCategory=Apache/Acces
+_sourceCategory=Apache/Access
 | extract "\"[A-Z]+ \S+ HTTP/[\d\.]+\" \S+ \S+ \S+ \"(?<agent>[^\"]+?)\""
 | if (agent matches "*MSIE*",1,0) as ie
 | if (agent matches "*Firefox*",1,0) as firefox

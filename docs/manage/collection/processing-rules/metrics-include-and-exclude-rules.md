@@ -23,7 +23,7 @@ You configure metrics processing rules on the **Collection \> Collectors and Sou
 
 ## Exclude metrics example
 
-Because we support multiple metrics formats, Sumo Logic leverages the filtering based on how data is serialized regardless of the format that is sent. You can use the metric name, a space, and a comma-seperated list of dimensions and metatags.
+Because we support multiple metrics formats, Sumo Logic leverages the filtering based on how data is serialized regardless of the format that is sent. You can use the metric name, a space, and a comma-separated list of dimensions and metatags.
 
 Assume you have a `CPU_Usage` metric with this structure:
 
