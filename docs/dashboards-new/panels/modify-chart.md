@@ -259,7 +259,7 @@ use the following JSON:
 ]
 ```
 
-### Marker visability
+### Marker visibility
 
 To enhance markers in a time series:
 

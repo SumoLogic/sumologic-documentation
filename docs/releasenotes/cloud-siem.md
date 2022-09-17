@@ -20,7 +20,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 * [New] An API endpoint has been added which enables user to delete multiple entries in a match list in one operation: `POST: /match-list-items/bulk-delete`
 * [Updated] When inventory data for hosts includes both private and public IP addresses, that data will be attached to both Entities. Previously it was only attached to one of the IP address Entities.
-* [Updated] Previously we announced that the severity attribute for Insights in the Audit Logs would be switching from numbers (1-4) to text (LOW, MEDIUM, HIGH, etc). Instead, we have retained the existing numerical attribute and added a new attribute `severityName` containing the human-readable text. 
+* [Updated] Previously we announced that the severity attribute for Insights in the Audit Logs would be switching from numbers (1-4) to text (LOW, MEDIUM, HIGH, etc). Instead, we have retained the existing numerical attribute and added a new attribute `severityName` containing the human-readable text.
 
 #### Resolved Issues
 
@@ -57,13 +57,13 @@ In 1 week (2022-09-15) we will be removing CHAIN-S00009 - 'Proofpoint TAP Click 
 #### Announcements
 
 * Starting October 1, 2022, _suppressed _Signals will be retained in CSE for 30 days (previously, they were retained for 90 days). All Signals are automatically stored in the Sumo sec_signals index for 2 years, so users searching for suppressed Signals more than 30 days old should search in that index instead of in the CSE UI.
-    * Note also that in the past, Signals attached to Insights were searchable from the CSE Signals list page indefinitely. Starting on October 1, they will only be searchable for 365 days. (They will still be visible from the Insight details page beyond that period.) 
+    * Note also that in the past, Signals attached to Insights were searchable from the CSE Signals list page indefinitely. Starting on October 1, they will only be searchable for 365 days. (They will still be visible from the Insight details page beyond that period.)
 * As previously announced, the Sensor and IBM Resilient actions are no longer supported. They will be removed from CSE by the end of this month.
 
 #### Minor Changes and Enhancements
 
-* [New] In the Audit Log, when an Insight is created, the sum of the included Signals' severity is now included with the insight in the `risk_score` field (i.e. if there were three Signals each with a severity of 4, the sum of 12 will be included). 
-* [Updated] The "Copy Expression" mouse action for record fields can now be activated using Shift+Click. The Click action now brings up a "Copy Value" action instead. 
+* [New] In the Audit Log, when an Insight is created, the sum of the included Signals' severity is now included with the insight in the `risk_score` field (i.e. if there were three Signals each with a severity of 4, the sum of 12 will be included).
+* [Updated] The "Copy Expression" mouse action for record fields can now be activated using Shift+Click. The Click action now brings up a "Copy Value" action instead.
 * [New] Users can now delete Match Lists from the list view (i.e. users no longer have to go into the details).
 * [New] On the Criticality list page, the number of Entity Groups associated with each Criticality is now listed on the cards.
 
@@ -129,7 +129,7 @@ This app is available to all licensed CSE customers in the Sumo Logic App Catalo
 * [New] /Parsers/System/Check Point/Check Point Avanan JSON
 * [New] /Parsers/System/Cisco/Cisco ISE
 * [New] /Parsers/System/FireEye/FireEye Web MPS JSON
-  
+
   ---
 
 ### August 18, 2022 - Application Update
@@ -429,7 +429,7 @@ If you have any questions or concerns, please contact Sumo Logic customer suppor
 
 ---
 
-#### June 24, 2022 -  Application Update 
+#### June 24, 2022 -  Application Update
 
 #### Minor Changes and Enhancements
 
@@ -437,7 +437,7 @@ If you have any questions or concerns, please contact Sumo Logic customer suppor
 
 #### Resolved Issues
 
-* The `/sec/v1/insights/{}/tags` API endpoint was returning a 500/INTERNAL_SERVER_ERROR. 
+* The `/sec/v1/insights/{}/tags` API endpoint was returning a 500/INTERNAL_SERVER_ERROR.
 
 ---
 
@@ -454,7 +454,7 @@ If you have any questions or concerns, please contact Sumo Logic customer suppor
 
 ---
 
-### June 15, 2022 - Content Release 
+### June 15, 2022 - Content Release
 
 #### Rules
 
@@ -474,20 +474,20 @@ If you have any questions or concerns, please contact Sumo Logic customer suppor
 
 ### June 13, 2022 Application Update  
 
-#### Minor Changes and Enhancements 
+#### Minor Changes and Enhancements
 
 * [Updated] List filters have been updated to better support custom Entity types; users no longer have to specify the Entity type in order to filter by Entity value (i.e. name). (Old bookmark will continue to work.)
 * [Updated] On the Insight Details pages, the sort order for Signals has been reverted to oldest first. As always, the user can change the sort order and in an upcoming release, the UI will be updated to retain the user's selected sort order across sessions.
 * [Deleted] The standalone **Suppressed Entities** list page has been removed from the UI as it was confusing to users. To retrieve a list of suppressed Entities, users should filter the Entities list page.
 
-#### Resolved Issues 
+#### Resolved Issues
 
 * CSV upload for Network Blocks was not working unless the (optional) "label" field was provided.
 * Then filtering lists by date, the "include current" checkbox was not working consistently.
 
 ---
 
-### June 9, 2022 - Content Release 
+### June 9, 2022 - Content Release
 
 
 #### Rules
@@ -611,9 +611,9 @@ If you have any questions or concerns, please contact Sumo Logic customer suppor
 
 ---
 
-### June 1, 2022 -Announcement 
+### June 1, 2022 -Announcement
 
-#### Geographical Data for IP Addresses 
+#### Geographical Data for IP Addresses
 
 * As previously announced, CSE has switched to a new provider for geographical data for IP addresses. One consequence of this change is that the various `_isp` enrichment fields (listed below) are no longer being populated. However, that data is available in the equivalent `_asnOrg` fields (such as `device_ip_asnOrg`). If you have any rules that leverage the `_isp` fields, please switch to the `_asnOrg` fields as soon as possible.
 * Because these fields will no longer be populated, they will be removed on **June 7, 2022**:
@@ -624,7 +624,7 @@ If you have any questions or concerns, please contact Sumo Logic customer suppor
     * `dstDevice_natIp_isp`
     * `srcDevice_ip_isp`
     * `srcDevice_natIp_isp`
- 
+
  ---
 
 ### May 31, 2022 - Content Release
@@ -780,7 +780,7 @@ If you have any questions or concerns, please contact Sumo Logic customer suppor
 
 ---
 
-### May 26, 2022 - Content Release 
+### May 26, 2022 - Content Release
 
 #### Rules
 
@@ -823,19 +823,19 @@ If you have any questions or concerns, please contact Sumo Logic customer suppor
 #### Minor Changes and Enhancements
 
 * [Updated] The `_sourceName` and `_sourceHost` values in records ingested by CSE will now reflect the original values defined when ingested into the Sumo Logic platform.
-* [Updated] The "Board" list view for Insights has been updated to include the resolution: 
+* [Updated] The "Board" list view for Insights has been updated to include the resolution:
 <img src={useBaseUrl('img/cse/Resolved-Board-view.png')} alt="board-view" />
 
 #### Resolved Issues
 
 * In the new Entities tab in Insights, duplicate Entities were sometimes listed if the raw and normalized names didn't match. Also, the cards will now respond better to very low screen/browser widths.
-* When viewing some verbose content (like Record properties), mousing over the content would cause it to reflow. 
+* When viewing some verbose content (like Record properties), mousing over the content would cause it to reflow.
 * When creating match list items via Terraform, the process was occasionally timing out.
 * Email-based actions were not functioning properly on instances with domains ending in `jask.ai`.
 
 ---
 
-### May 12, 2022 - Content Release 
+### May 12, 2022 - Content Release
 
 #### Rules
 
@@ -954,27 +954,27 @@ If you have any questions or concerns, please contact Sumo Logic customer suppor
 * [New] /Parsers/System/Cisco/Cisco Firepower JSON
 * [Updated] /Parsers/System/AWS/AWS WAF
 * [Updated] /Parsers/System/Zscaler/Zscaler Nanolog Streaming Service/Zscaler Nanolog Streaming Service-JSON
-  
+
 ---
 
-### April 29, 2022 - Application Update 
+### April 29, 2022 - Application Update
 
 #### Related Entities
 
-[New] The Cloud SIEM Enterprise team is excited to announce a newly enhanced feature: Related Entities. Although Insights and the Signals they contain are focused on a single Entity (a user, or host for example), there are often a number of additional Entities referenced in the Records/Signals contained in the Insight. In addition, CSE can detect relationships between Entities (for example, determining that an IP address was associated with a given hostname during the Insight detection window). 
+[New] The Cloud SIEM Enterprise team is excited to announce a newly enhanced feature: Related Entities. Although Insights and the Signals they contain are focused on a single Entity (a user, or host for example), there are often a number of additional Entities referenced in the Records/Signals contained in the Insight. In addition, CSE can detect relationships between Entities (for example, determining that an IP address was associated with a given hostname during the Insight detection window).
 
 To provide an easy way for analysts to explore all of these Related Entities, a new tab has been added to the Insight Details page:
 
 
 
 
-The **Entities **tab contains a list of all of the Entities detected in the Insight’s Signals and Records. The Primary Entity is listed first, and then the other Related Entities are listed in descending order of appearance. Where CSE has determined a relationship between entities, that is called out (for example, 192.168.1.101 may also be hostname ‘na’). 
+The **Entities **tab contains a list of all of the Entities detected in the Insight’s Signals and Records. The Primary Entity is listed first, and then the other Related Entities are listed in descending order of appearance. Where CSE has determined a relationship between entities, that is called out (for example, 192.168.1.101 may also be hostname ‘na’).
 
-Details listed with each entity include tags, the number of Signals the Entity was seen in, the number of recent Insights and Signals that featured that Entity, and the total sum of the Severities for those Signals. 
+Details listed with each entity include tags, the number of Signals the Entity was seen in, the number of recent Insights and Signals that featured that Entity, and the total sum of the Severities for those Signals.
 
-As each Entity is selected by the user, the right column changes to show more details, such as a link to the full Entity Details page, inventory and other metadata, a Signal timeline, and a list of the recent Signals and Insights (containing links to those individual details pages). 
+As each Entity is selected by the user, the right column changes to show more details, such as a link to the full Entity Details page, inventory and other metadata, a Signal timeline, and a list of the recent Signals and Insights (containing links to those individual details pages).
 
-This new feature should help users understand the context of security events more quickly by providing this data at a glance, reducing the amount of time it would have previously taken to gather that same information. 
+This new feature should help users understand the context of security events more quickly by providing this data at a glance, reducing the amount of time it would have previously taken to gather that same information.
 
 More information can be found in the [online documentation](https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/About_the_CSE_Insight_UI#Entities_tab).
 
@@ -1022,7 +1022,7 @@ More information can be found in the [online documentation](https://help.sumolog
 
 ---
 
-### April 26, 2022 - Content Release 
+### April 26, 2022 - Content Release
 
 #### Rules
 
@@ -1085,7 +1085,7 @@ More information can be found in the [online documentation](https://help.sumolog
 
 ---
 
-### April 19, 2022 - Announcement 
+### April 19, 2022 - Announcement
 
 We will be consolidating Authentication Brute Force Attempt **MATCH-S00258** on Tuesday May 10 into the normalized intrusion rule set. For more information on the normalized intrusion rule set, please visit the [help page](docs/cse/rules/normalized-threat-rules.md).
 
@@ -1111,7 +1111,7 @@ We will be consolidating Authentication Brute Force Attempt **MATCH-S00258** on 
 
 ---
 
-### April 14, 2022 - Content Release 
+### April 14, 2022 - Content Release
 
 #### Rules
 
@@ -1388,8 +1388,8 @@ We will be consolidating Authentication Brute Force Attempt **MATCH-S00258** on 
 * [Deleted] Infoblox DHCPNAK Samples
 * [Deleted] Infoblox DHCPOFFER UID Samples
 * [Deleted] Infoblox DHCPRELEASE Samples
-* [Deleted] Infoblox DNS Reqest AXRF Ended
-* [Deleted] Infoblox DNS Reqest AXRF Started
+* [Deleted] Infoblox DNS Request AXRF Ended
+* [Deleted] Infoblox DNS Request AXRF Started
 * [Deleted] Infoblox DNS Response
 * [Deleted] Infoblox DNS Zone Update 1
 * [Deleted] Infoblox DNS Zone Update 2
@@ -1834,7 +1834,7 @@ We will be consolidating Authentication Brute Force Attempt **MATCH-S00258** on 
 
 ### April 7, 2022 - Announcement
 
-On April 21, 2022 we will be removing the following legacy log mappers related to the CIP Windows collector from the CSE platform. These log mappers are in use with only a small portion of our customer base and we are working with our technical account teams to reach out directly to those impacted and migrate to our newer Sumo parsers. 
+On April 21, 2022 we will be removing the following legacy log mappers related to the CIP Windows collector from the CSE platform. These log mappers are in use with only a small portion of our customer base and we are working with our technical account teams to reach out directly to those impacted and migrate to our newer Sumo parsers.
 
 No loss of out-of-the-box functionality will occur and no out-of-the-box rules are impacted as the Sumo parsers map all of the same information. Please be sure to check any custom rules that leverage Windows logging for compatibility with the new parsing and mapping, particularly where the "fields" field is referenced.
 
@@ -1943,7 +1943,7 @@ No loss of out-of-the-box functionality will occur and no out-of-the-box rules a
 
 On Tuesday, April 12th, **unused **legacy grok parsers and their corresponding log mappers will be removed from CSE.
 
-This update is part of a longer transition as we begin decommissioning legacy grok parsers in favor of our current parser set. Sumo Logic has confirmed customers are **NOT **actively using any of the legacy grok parsers or log mappers we plan to remove in this future update. 
+This update is part of a longer transition as we begin decommissioning legacy grok parsers in favor of our current parser set. Sumo Logic has confirmed customers are **NOT **actively using any of the legacy grok parsers or log mappers we plan to remove in this future update.
 
 It's important to note that this future content update does **NOT **remove or change existing legacy grok parsers or associated log mappers still used by customers today. We do not expect this update to cause any operational changes.
 
@@ -1976,4 +1976,3 @@ A new Rule is being deployed designed to detect attempts to exploit Spring4Shell
 * [Updated] AWS WAF Block Logs
 * [Updated] Microsoft Office 365 Active Directory Authentication Events
 * [Updated] Tenable.io Vulnerability
-   

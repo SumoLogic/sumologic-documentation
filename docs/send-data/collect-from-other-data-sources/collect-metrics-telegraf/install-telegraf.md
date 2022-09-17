@@ -7,7 +7,7 @@ description: Learn how to install Telegraf.
 This topic has instructions for installing Telegraf to work with Sumo Logic. We provide two sets of instructions:
 
  * Install Telegraf in a non-Kubernetes environment
- * Install Telegraf in a Kubenetes environment
+ * Install Telegraf in a Kubernetes environment
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -107,7 +107,7 @@ You must have administrative permissions to install a Windows service. Be sure t
 :::
 
 1. Launch PowerShell as an administrator.
-1. Download the Telegraf binary from the Telegraf section of the [downloads page](https://portal.influxdata.com/downloads/) and unzip its contents to `C:\Program Files\InfluxData\Telegraf`. The InfluxData [GitHub repositiory](https://github.com/influxdata/telegraf/releases) provides a list of all available releases.   You can also use the following Invoke-WebRequest PowerShell command with a specific Telegraf version (1.80.0 in this example):   
+1. Download the Telegraf binary from the Telegraf section of the [downloads page](https://portal.influxdata.com/downloads/) and unzip its contents to `C:\Program Files\InfluxData\Telegraf`. The InfluxData [GitHub repository](https://github.com/influxdata/telegraf/releases) provides a list of all available releases.   You can also use the following Invoke-WebRequest PowerShell command with a specific Telegraf version (1.80.0 in this example):   
 
     ```bash
     > Invoke-WebRequest https://dl.influxdata.com/telegraf/releases/telegraf-1.80.0_windows_amd64.zip -OutFile telegraf.zip

@@ -123,7 +123,7 @@ Using OTLP HTTP is recommended:
 
 * OTLP HTTP: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:4318`
 
-Alternatively, if requried, you can use other supported formats as well:
+Alternatively, if required, you can use other supported formats as well:
 
 * Jaeger GRPC: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:14250`
 * Jaeger Thrift HTTP: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:14268`

@@ -123,7 +123,7 @@ Use this dashboard for details on potential threats and IOCs for Elastic Load Ba
 * **Threats by Geo Location. **View the latest threats identified the geo location of their by source IP address.
 * **Threats Associated with Client IP. ** View an aggregation table of threats by client IP with a malicious confidence of High that contains the ELB server, ELB status code, full request, source IP,  source port, back end host, destination port, malicious confidence, label name, threat malware families, and threat last updated.
 * **Client IP threats by ELB Server.** View threats by client IP with a malicious confidence of High by ELB Server.
-* **Threats By Actor. **View a count of total threats with a malicious confidence fo High for the last 24 hours, broken up by Actor.
+* **Threats By Actor. **View a count of total threats with a malicious confidence of High for the last 24 hours, broken up by Actor.
 * **Client IP Threats Over Time by ELB Server. **View a line chart of the threats by client IP address with high malicious confidence over the last 24 hours.
 * **Threats Associated with Hostname.** View an aggregation table of threats by hostname with a malicious confidence of High that contains the ELB server, ELB status code, full request, host name,  source port, back end host, destination port, malicious confidence, label name, threat malware families, and threat last updated over the last 24 hours.
 * **Threats Associated with URL (Request).** View threats by URL where the malicious confidence is high over the last 24 hours.

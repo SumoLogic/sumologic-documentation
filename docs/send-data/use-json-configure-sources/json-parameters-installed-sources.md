@@ -502,7 +502,7 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
 | `specifiedContainers` | List |  |  | Comma-separated list of Docker containers. Collection will be only from running containers.  If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see More about defining container filters. | modifiable |
 | `allContainers` | Boolean | Yes |  | Flag indicating whether the Source includes all running containers (true) or only the containers listed in specifiedContainers (false). | modifiable |
 | `certPath` | String | * |  | Enter the path to the cert files on the local machine where the Collector is running. Required if the URI uses HTTPS. | modifiable |
-| `pollInterval` | Long | No | Continous (By default, polling occurs continuously, rather than on a periodic basis.) | The frequency, in milliseconds, at which stats are polled. The minimum acceptable polling frequency is 1 second. | modifiable |
+| `pollInterval` | Long | No | Continuous (By default, polling occurs continuously, rather than on a periodic basis.) | The frequency, in milliseconds, at which stats are polled. The minimum acceptable polling frequency is 1 second. | modifiable |
 
 Example source JSON with all containers:
 
