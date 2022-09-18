@@ -51,7 +51,7 @@ account={{account}} region CostUsd CostType StartDate EndDate MetricType Granula
 
 ## Create an AWS Cost Explorer Source
 
-When you create an AWS Cost Explorer collector Source, you add it to an existing Sumo Logic hosted collector. Before creating the Source, you can add Field-in-Field Schema, Field Extraction Rules, or identify the hosted collector you want to use, or simply create a new hosted collector. For further instructions, see [Create a Hosted Collector](/docs/Send-Data/Hosted-Collectors#Create-a-Hosted-Collector).
+When you create an AWS Cost Explorer collector Source, you add it to an existing Sumo Logic hosted collector. Before creating the Source, you'll need to add a Field-in-Field Schema, Field Extraction Rules, and identify or create the hosted collector you want to use. For further instructions, see [Create a Hosted Collector](/docs/Send-Data/Hosted-Collectors#Create-a-Hosted-Collector).
 
 
 ### Field-in-Field Schema
@@ -108,7 +108,7 @@ Make sure your IAM user has the following IAM policy attached with it.
     ]
 }
 ```
-7. For the **Enable Regions** field, provide the regions which need to be monitored for cost. The cost incurred across these regions will be fetched separately.The region list here includes all the standard AWS regions along with “global” and “No Region”. “Global” region includes services like Amazon CloudFront, Amazon Route 53, Amazon IAM, whereas costs like “Tax” and “Refunds” are part of “No Region”. If the field is left empty (default behavior), then data will be fetched from all the enabled regions of the respective AWS account. It is recommended to provide only the regions which are actively used and need to be monitored for cost. This will save the AWS cost for running this source on unused regions.
+7. For the **Enable Regions** field, provide the regions which need to be monitored for cost. The cost incurred across these regions will be fetched separately. The region list here includes all the standard AWS regions along with “global”. “Global” region includes services like Amazon CloudFront, Amazon Route 53, Amazon IAM. If the field is left empty (default behavior), then data will be fetched from all the enabled regions of the respective AWS account. It is recommended to provide only the regions which are actively used and need to be monitored for cost. This will save the AWS cost for running this source on unused regions.
 8. For the **Cost Type**, provide supported cost types / MetricTypes. For details on the CostType, see Amazon's [Understanding your AWS Cost Datasets: A Cheat Sheet](https://aws.amazon.com/blogs/aws-cloud-financial-management/understanding-your-aws-cost-datasets-a-cheat-sheet/).
     * AmortizedCost
     * BlendedCost
@@ -153,8 +153,7 @@ On the Collection page, the [Health](/docs/Manage/Health-Events#Collection-page)
 
 When Sumo Logic detects an issue it is tracked by [Health Events](/docs/Manage/Health-Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
-
-<table>
+<table><small>
   <tr>
    <td>Type
    </td>
@@ -202,7 +201,7 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/Manage/H
    </td>
    <td>FirstPartyGenericError
    </td>
-  </tr>
+  </tr></small>
 </table>
 
 
@@ -210,7 +209,7 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/Manage/H
 
 Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/API/Collector). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
-<table>
+<table><small>
   <tr>
    <td>Parameter
    </td>
@@ -242,7 +241,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
    </td>
    <td>Yes
    </td>
-   <td>Use <code>&#123;"type":"AWS Cost Explorer"&#125; </code> for an AWS Cost Explorer Source.
+   <td>Use <code>&#123;"type":"AWS Cost Explorer"&#125;</code> for an AWS Cost Explorer Source.
    </td>
    <td>Not modifiable
    </td>
@@ -257,14 +256,14 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
    <td>Use Universal for an AWS Cost Explorer Source.</td>
    <td>Not modifiable
    </td>
-  </tr>
+  </tr></small>
 </table>
 
 
 The following table shows the **config** parameters for an AWS Cost Explorer Source.
 
 
-<table>
+<table><small>
   <tr>
    <td>Parameter
    </td>
@@ -405,7 +404,7 @@ The following table shows the **config** parameters for an AWS Cost Explorer Sou
    <td>Provide a list, such as <code>["US East (Ohio)","US West (Oregon)"] </code></td>
    <td>modifiable
    </td>
-  </tr>
+  </tr></small>
 </table>
 
 

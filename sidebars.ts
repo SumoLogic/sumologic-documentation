@@ -1481,7 +1481,7 @@ module.exports = {
       ],
     },
   ],
-// *** INTEGRATIONS: Sumo Logic Apps, no longer called APPS
+// *** Sumo Logic Apps
   integrations: [
     'integrations/integrations',
     {
