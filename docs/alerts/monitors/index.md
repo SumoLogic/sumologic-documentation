@@ -228,11 +228,11 @@ Use the **Edit Recovery Settings** option to set the recovery to the opposite o
 
 ![logs trigger recovery toggle.png](/img/monitors/edit-recovery-settings1.png)  
 
-For example, when the alert is set to `> 10` the recovery would be set to `<= 10` when inferred.
+For example, when the alert is set to `> 10` the recovery would be set to `<= 10` when inferred. Sumo Logic automatically resolves the incident when the resolution condition is satisfied. `Recover automatically when result is <threshold type> <threshold> for the selected time period`.
 
-Sumo Logic automatically resolves the incident when the resolution condition is satisfied.
+#### Configurable Resolution Window
 
-`Recover automatically when result is <threshold type> <threshold> for the selected time period`
+When configuring monitor trigger conditions, you can set a resolution window to quickly resolve alerts when the underlying issues are fixed. This controls how long a monitor will wait prior to resolving the alert, when the underlying issues was corrected. For example, if your monitor is evaluating the last 60 minutes, you can specify a resolution window of 15 minutes. Once 15 minutes has elapsed with your monitor resolution window continuously satisfied, the alert will resolve. <br/>![config-resolution-window-2](/img/monitors/config-resolution-window-2.png)  
 
 | Parameter | Description |
 |--|--|
@@ -240,7 +240,7 @@ Sumo Logic automatically resolves the incident when the resolution condition is 
 | Threshold | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
 | Occurrence Type	| The time condition you want for recovering the alert. Select either at any time within or at all times. Choose at all times if you want all the data points for the given metric to meet threshold conditions in a given time range, before recovering an alert. Alternatively, choose at any time within if you want to recover an alert when only a single data point meets the threshold condition for the given time range. |
 
-For Metrics Monitor, you can choose to recover based on a single data point below the threshold, or all data points below the threshold.
+For Metrics monitors, you can choose to recover based on a single data point below the threshold, or all data points below the threshold.
 
 ![monitors.png](/img/monitors/metricsmonitor.png)
 
@@ -281,7 +281,7 @@ Recover
 
 </details>
 
-<details><summary><strong>Expand:</strong> Logs Trigger Types</summary>
+<details><summary><strong>Expand:</strong> Metrics Trigger Types</summary>
 
 ### Metrics Trigger Types
 
@@ -360,7 +360,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
 
 6. (Optional) **Additional Settings** 
-   * **Alert Name**: Alert Name allows you to customize the name that appears on the Alert Page. By default, the Alert name is the monitor name, but you may want to create a custom name based on your use case. You can include any of the available alert variables, except `{{AlertName}}`, `{{AlertResponseURL}}`, and `{{ResultsJson}}`, in the name such as the type of monitor or trigger condition. You can check the alert variables list for details.
+   * **Alert Name**: Alert Name allows you to customize the name that appears on the Alert Page. By default, the Alert name is the monitor name, but you may want to create a custom name based on your use case. You can include any of the available alert variables, except `{{AlertName}}`, `Playbook`, `{{AlertResponseURL}}`, and `{{ResultsJson}}`, in the name such as the type of monitor or trigger condition. You can check the alert variables list for details.
       * Example: `{{Resultsjson.Env}}` - High CPU. This alert will produce an Alert with the name like PROD - High CPU. Here we are assuming that there is a field name Env in underlying data that has a value of "PROD".
    * **Evaluation Delay**: Collection delays may occur due to your environment and it takes a couple of minutes for data to be processed into Sumo Logic. Since Monitors run on data from the most current time period, it's possible for Monitors to evaluate against incomplete data. As a result, Monitors can generate false positives or negatives that can cause confusion. Set an evaluation delay in seconds to delay the evaluation of a Monitor, so it doesn't look at the most current time (where data can be incomplete) and instead looks at an older period of time, where you have more complete data.<br/> ![additional settings evaluation delay.png](/img/monitors/additional-settings-evaluation-delay.png)
 

@@ -141,9 +141,9 @@ It's assumed that common Linux OS logs are collected (for example: `/var/log/*`)
 
 The `_sourceCategory` fields shown in these sample queries are based on the following Linux logs and their metadata:
 
-* **Generic system log:** Typically named `/var/log/syslog` or `/var/log/messages` \
+* **Generic system log:** Typically named `/var/log/syslog` or `/var/log/messages`
 Meta field: `SourceCategory = OS/Linux/System`
-* Authentication log: Typically named `/var/log/auth` or `/var/log/auth.log` \
+* Authentication log: Typically named `/var/log/auth` or `/var/log/auth.log` 
 Meta field: `SourceCategory=OS/Linux/Security`
 
 These logs might have also been collected by the Collector (if selected during its installation).
@@ -156,9 +156,7 @@ These searches are intended to help you understand how privileged and non-privil
 
 #### Successful User Login events
 
-Returns all successful remote and local logins by a user.
-
-Suggested time range: -1 day
+Returns all successful remote and local logins by a user. Suggested time range: -1 day.
 
 ```sql
 _sourceCategory=OS/Linux* ("su:" or "sudo:" or "sshd:" or "sshd[" or "pam:") (("Accepted" and "pam") or "session" or ("to" and "on")) !"closed"
@@ -183,7 +181,7 @@ _sourceCategory=OS/Linux* ("su:" or "sudo:" or "sshd:" or "sshd[" or "pam:") (("
 
 #### All Failed authentication attempts
 
-Returns all failed authentication attempts by either a user or a process. Suggested time range: -1 day
+Returns all failed authentication attempts by either a user or a process. Suggested time range: -1 day.
 
 
 ```
@@ -217,7 +215,7 @@ _sourceCategory=*linux* ("authentication failure" or "FAILED SU" or "input_usera
 
 Returns all sudo/su attempts, or activities by "root" user. Modify to include other privileged users that you want to track in your environment.
 
-```
+```sql
 _​sourceCategory=OS/Linux/Security ("sudo" or "root" or "su")
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S*)\s" nodrop
 | extract "sudo:\s+(?<src_user>[^ ]+?)\s:.+?USER=(?<dest_user>[^ ]+?)\s+" nodrop
@@ -267,7 +265,7 @@ Returns a list of all new users.
 Suggested time range: -1 day
 
 ```sql
-_ sourceCategory=OS/Linux/S* "useradd" and (("new user") or ("new account"))
+_sourceCategory=OS/Linux/S* "useradd" and (("new user") or ("new account"))
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S*)\s(?<process_name>\w*)(?:\[|:)" nodrop
 | parse "name=*, UID=*, GID=*, home=*, shell=*" as dest_user,dest_uid,dest_gid,home_dir,shell nodrop
 | parse "account=*, uid=*, gid=*, home=*, shell=*," as dest_user,dest_uid,dest_gid,home_dir,shell nodrop

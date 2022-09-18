@@ -191,12 +191,11 @@ To create a new SLO:
     * **Throughput**. Select to track the throughput of services and processing.
     * **Availability**. Select to monitor the uptime of services.
     * **Other**. Select to monitor any other metric or log for SLIs.<br/><img src={useBaseUrl('img/observability/slo-create-type.png')} alt="Reliability Management SLO SLI" />
-
 4. Select the Evaluation Type which determines how the events are measured:
     * **Window-based**. Select the time frame window for the events. Window sizes should be between 1m to 60m.<br/><img src={useBaseUrl('img/observability/slo-create-window-base.png')} alt="Reliability Management SLO SLI" />
     * **Request-based.**<br/><img src={useBaseUrl('img/observability/slo-create-request-base.png')} alt="Reliability Management SLO SLI" />
 
-Select the **Query Type **to select and build your queries for the SLI data. You have a choice of Metrics or Logs with a ratio-based (partial against the total) or threshold-based (events amount against a set threshold amount) calculation. Review [Query recommendations](#Query_recommendations) before building.
+Select the **Query Type **to select and build your queries for the SLI data. You have a choice of Metrics or Logs with a ratio-based (partial against the total) or threshold-based (events amount against a set threshold amount) calculation. Review [Query recommendations](#Query-recommendations) before building.
 
 Follow the instructions below based on the query type:
 
@@ -208,17 +207,16 @@ Follow the instructions below based on the query type:
    </td>
   </tr>
   <tr>
-   <td>
-    For <strong>Ratio-based</strong> definition, define queries for the successful or unsuccessful events to calculate against total events:
+   <td>For <strong>Ratio-based</strong> definition, define queries for the successful or unsuccessful events to calculate against total events:
 <ol>
-<li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
+<li>Specify Total Events query.</li>
 <li>Build a query using metrics and filters. See <a href="/docs/metrics/introduction-metrics/overview-sumo-metrics">Overview of Metrics in Sumo</a>.</li>
 <li>Select the values to use from <strong>Number of data points </strong>or <strong>Metric value</strong>.</li>
 <li>Configure the Total Events, including a query and values, to use <strong>Number of data points</strong> or <strong>Metric value</strong>. You can copy and paste the previous query, removing filters to get the total.</li>
 </ol>
    </td>
    <td>
-    For <strong>Threshold-based</strong> definitions, which calculates against success criteria:
+    For <strong>Threshold-based</strong> definitions, which calculate against success criteria:
 <ol>
 <li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
 <li>Build a query using metrics and filters. See <a href="/docs/metrics/introduction-metrics/overview-sumo-metrics">Overview of Metrics in Sumo</a> for more information.</li>
@@ -240,7 +238,7 @@ Follow the instructions below based on the query type:
   </tr>
   <tr>
    <td>For <strong>Ratio-based</strong> definitions, which calculate successful or unsuccessful events against total events:
-<ol><li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
+<ol><li>Specify Total Events query.</li>
 <li>Search logs selecting and entering a log query. See <a href="/docs/search/get-started-with-search/search-basics/about-search-basics">About Search Basics</a> for more information.</li>
 <li>For <strong>Use values from</strong>, select the numeric value available for that query to pull data from.</li>
 <li>Then configure the <strong>Total Events</strong>, including a query and values. You can copy and paste the previous query, perhaps with filters removed to get the total.</li>
