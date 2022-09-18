@@ -86,13 +86,13 @@ The **Infrastructure** tab provides the following **Troubleshooting Links** f
 
 ![infrastructure](/img/kubernetes/infrastructure.png)
 
-### Custom dashboards in Explorer View
+### Custom dashboards in Explore View
 
-You can make your own custom dashboards to show up in the Explorer view by using the stack linking capability within Dashboards (New).
+You can make your own custom dashboards to show up in the Explore view by using the stack linking capability within Dashboards (New).
 
 In order to link a dashboard to an existing Kubernetes hierarchy, your entity key in Stack Linking must be the same as the explored entity on the Explorer View.
 
-For example, if I want my custom Kubernetes deployment dashboard to show up in explorer, I will have to add the following entities in the stack linking (as shown below), since those entities are used as filters on the Explorer View
+For example, if you want you custom Kubernetes deployment dashboard to show up in explorer, you will have to add the following entities in the stack linking (as shown below), since those entities are used as filters on the Explore View:
 
 * Cluster
 * Namespace
