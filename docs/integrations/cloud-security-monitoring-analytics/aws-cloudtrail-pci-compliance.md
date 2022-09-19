@@ -159,7 +159,7 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 
 ### AWS CloudTrail - Security Analytics - Privileged Activity
 
-**Description: **Provides analytics on events that require elevated privilages.
+**Description: **Provides analytics on events that require elevated privileges.
 
 **Use Case:** Provides top events, trending and outliers on configuration changes, security group events, and security policy changes.
 

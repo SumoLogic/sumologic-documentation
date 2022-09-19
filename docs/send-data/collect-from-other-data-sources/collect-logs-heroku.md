@@ -1,9 +1,10 @@
 ---
 id: collect-logs-heroku
 title: Collect Logs from Heroku
+description: Learn how to upload data from your Heroku app directly to the Sumo Logic Cloud by pointing a Heroku log drain to the URL for an HTTP Source.
 ---
 
-#
+
 
 You can upload data from your Heroku app directly to Sumo Logic by pointing a [Heroku log drain](https://devcenter.heroku.com/articles/log-drains) to the URL for an HTTP Source. The log drain forwards batches of data directly to the HTTP Source.
 
@@ -11,7 +12,7 @@ First perform the following prerequisites:
 
  * Create an app in Heroku that generates logs.
  * Install the [Heroku Command Line Interface (CLI)](https://devcenter.heroku.com/articles/heroku-command-line), formerly called the Heroku Toolbelt.
- * Configure a Sumo Logic [Hosted Collector](../configure-hosted-collector.md) with an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+ * Configure a Sumo Logic [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) with an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 ## Upload app data from Heroku
 

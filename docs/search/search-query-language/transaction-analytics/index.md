@@ -1,8 +1,9 @@
 ---
 slug: /search/search-query-language/transaction-analytics
+title: Transaction Analytics
+description: Find and group related log data.
 ---
 
-# Transaction Analytics
 
 Transaction Analytics provides insight into correlated events helping you identify issues and visualize the flow of data. There are a few operators that group your logs based on transaction information that you provide.
 

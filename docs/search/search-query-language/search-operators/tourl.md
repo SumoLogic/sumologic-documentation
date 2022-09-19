@@ -18,8 +18,8 @@ tourl(<url_column_name>, <url_short_name_column>, <url_short_name_prefix>, <url_
 
 Where:
 
-* `url_column_name` is the column having the URL to which you want to assign a short name. 
-* `url_short_name_``column` is the short name for the URL. It can be a static name that you specify, or it can be a variable that uses a value from a column. 
+* `url_column_name` is the column having the URL to which you want to assign a short name.
+* `url_short_name_``column` is the short name for the URL. It can be a static name that you specify, or it can be a variable that uses a value from a column.
 * `url_short_name_prefix` (optional) is the prefix, if any, to the short name. Requires suffix.
 * `url_short_name_suffix` (optional) is the suffix, if any, to the short name. Requires prefix.
 
@@ -28,6 +28,7 @@ Where:
 * If you choose to specify one optional parameter, you must specify both the optional parameters - prefix and suffix. You should provide an empty string ("") if you don't have a value for one.
 * Only fully-formed URLs (for example, `https://google.com`) are supported as values for `url_column_name`.
 * For the link to be clickable your query needs to aggregate by the returned field.
+* You can only specify a single URL. `tourl` does not support merging multiple outputs into a single field.
 
 ## Tabs
 

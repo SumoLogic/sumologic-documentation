@@ -1,8 +1,10 @@
 ---
 id: logreduce-values
+title: LogReduce Values
+description: Group by the values of specific keys in JSON logs.
 ---
 
-# LogReduce Values
+
 
 The **LogReduce Values** operator allows you to quickly explore structured logs by known keys. Structured logs can be in JSON, CSV, key-value, or any structured format. Unlike the LogReduce Keys operator, you need to specify the keys you want to explore. The values of each specified key are parsed and aggregated for you to explore.
 
@@ -41,15 +43,15 @@ There are two methods you have to use the details option:
 * Click on the `_count` field value from the LogReduce Values search results.  
 
     ![details option by link.png](/img/search/behavior-insights/details-option-by-link.png)  
-      
+
     A new search is created with the necessary identifiers from your initial LogReduce Values search. The search contains all of the raw logs from the selected data cluster.  
      
 * Manually provide the necessary identifiers. You can provide identifiers from previously run LogReduce Values searches. However, the only way to get the search identifier, given with the `shortcodeID` parameter, is to click the `_count` link from the interface. The query of the created search has the identifier that you can save for later use, up to 1,095 days. For example, the following query was created by clicking the `_count` link:  
-      
+
     ```sql
     | logreduce values details on %"region", %"partition" pCV6qgaOvASgi1j9KhcGaE6mts6jfOEk "C049BE180425642A"
     ```  
-      
+
     The `pCV6qgaOvASgi1j9KhcGaE6mts6jfOEk` value is the `shortcodeID`. While `C049BE180425642A` is a `cluster_id`.
 
 ### Details Syntax
@@ -78,15 +80,15 @@ To see all the logs by cluster identifiers for further processing, you'd use
 
 ## Limitations
 
-* Not supported with [Real Time alerts](../../alerts/scheduled-searches/faqs/real-time-alert-with-greater-than-results.md).
-* [Time Compare](../time-compare.md) and the [compare operator](../search-query-language/search-operators/Compare.md) are not supported against LogReduce Values results.
+* Not supported with [Real Time alerts](/docs/alerts/scheduled-searches/faq#real-time-alert-with-greater-than-1000-results).
+* [Time Compare](../time-compare.md) and the [compare operator](docs/search/search-query-language/search-operators/Compare.md) are not supported against LogReduce Values results.
 * If you reach the memory limit you can try to shorten the time range or the number of specified fields. When the memory limit is reached you will get partial results on a subset of your data.
 * Response fields `_cluster_id`, `_signature`, and `_count` are not supported with [Dashboard filters](../../dashboards/edit-dashboards/use-filters-dashboards.md).
 
 ### _count link 
 
 * Searches opened by clicking the link provided in the `_count` response field:
-    * are run against [message time](../get-started-with-search/search-basics/built-in-metadata.md).
+    * are run against [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata).
     * can return different results due to variations in your data.
 * When provided in a Scheduled Search alert, the link from the `_count` response field is invalid and will not work.
 
@@ -97,10 +99,10 @@ To see all the logs by cluster identifiers for further processing, you'd use
 In this example, the user wants to cluster AWS CloudTrail logs to understand errorCodes, like "AccessDenied", eventSource, like Ec2 or S3, and eventName. This can reveal patterns such as certain eventSources contributing more errors than others.
 
 ```sql
-_sourceCategory= *cloudtrail* errorCode 
-| json field=_raw "eventSource" as eventSource 
-| json field=_raw "eventName" as eventName 
-| json field=_raw "errorCode" as errorCode 
+_sourceCategory= *cloudtrail* errorCode
+| json field=_raw "eventSource" as eventSource
+| json field=_raw "eventName" as eventName
+| json field=_raw "errorCode" as errorCode
 | logreduce values on eventSource, eventName, errorCode
 ```
 
@@ -109,9 +111,9 @@ _sourceCategory= *cloudtrail* errorCode
 After using [LogReduce Keys to scan your logs for schemas](logreduce-keys.md) you can use LogReduce Values to explore them further based on specific keys.
 
 ```sql
-_sourceCategory="primary-eks/events" 
-| where _raw contains "forge" 
-| json auto "object.reason", "object.involvedObject.name", "object.message", "object.involvedobject.kind", "object.source.component", "object.metadata.namespace" as reason, objectName, message, kind, component, namespace 
+_sourceCategory="primary-eks/events"
+| where _raw contains "forge"
+| json auto "object.reason", "object.involvedObject.name", "object.message", "object.involvedobject.kind", "object.source.component", "object.metadata.namespace" as reason, objectName, message, kind, component, namespace
 | logreduce values on reason, objectName, message, kind, component, namespace
 ```
 
@@ -122,20 +124,20 @@ Next, use [LogExplain to determine how frequently your `reason` is ](logexpla
 The following query helps you see which groups of users, IP addresses, AWS regions, and S3 event names are prevalent in your AWS CloudTrail logs that reference AccessDenied errors for AWS. Knowing these clusters can help plan remediation efforts.
 
 ```sql
-_sourceCategory=*cloudtrail* *AccessDenied* 
-| json field=_raw "userIdentity.userName" as userName nodrop 
-| json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName_role nodrop 
-| if (isNull(userName), if(!isNull(userName_role),userName_role, "Null_UserName"), userName) as userName  
-| json field=_raw "eventSource" as eventSource 
-| json field=_raw "eventName" as eventName 
-| json field=_raw "awsRegion" as awsRegion 
-| json field=_raw "errorCode" as errorCode nodrop 
-| json field=_raw "errorMessage" as errorMessage nodrop 
-| json field=_raw "sourceIPAddress" as sourceIp nodrop 
-| json field=_raw "recipientAccountId" as accountId 
-| json field=_raw "requestParameters.bucketName" as bucketName nodrop 
-| where errorCode matches "*AccessDenied*" and eventSource matches "s3.amazonaws.com"  and accountId matches "*" 
-| logreduce values on eventName, userName, sourceIp, awsRegion, bucketName 
+_sourceCategory=*cloudtrail* *AccessDenied*
+| json field=_raw "userIdentity.userName" as userName nodrop
+| json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName_role nodrop
+| if (isNull(userName), if(!isNull(userName_role),userName_role, "Null_UserName"), userName) as userName 
+| json field=_raw "eventSource" as eventSource
+| json field=_raw "eventName" as eventName
+| json field=_raw "awsRegion" as awsRegion
+| json field=_raw "errorCode" as errorCode nodrop
+| json field=_raw "errorMessage" as errorMessage nodrop
+| json field=_raw "sourceIPAddress" as sourceIp nodrop
+| json field=_raw "recipientAccountId" as accountId
+| json field=_raw "requestParameters.bucketName" as bucketName nodrop
+| where errorCode matches "*AccessDenied*" and eventSource matches "s3.amazonaws.com"  and accountId matches "*"
+| logreduce values on eventName, userName, sourceIp, awsRegion, bucketName
 | sort _count desc
 ```
 
@@ -150,17 +152,17 @@ Next, use [LogExplain](logexplain.md) to analyze which users, IP addresses, AWS
 If the user wants to drill down on a particular logreduce values query id and cluster id, we provide a link that leads to the following query. 
 
 ```sql
-_sourceCategory="aws/cloudtrail/production" and _collector="AWS" 
-| json "eventName", "eventSource", "awsRegion", "userAgent", "userIdentity.type", "managementEvent", "readOnly" 
+_sourceCategory="aws/cloudtrail/production" and _collector="AWS"
+| json "eventName", "eventSource", "awsRegion", "userAgent", "userIdentity.type", "managementEvent", "readOnly"
 | logreduce values-details\<shortcodeI\> [clusterId\<cluster i\>]
 ```
 
 If the user wants to label the raw logs by their cluster ids for further processing, they can use the following query:
 
 ```sql
-_sourceCategory="aws/cloudtrail/production" and _collector="AWS" 
-| json "eventName", "eventSource", "awsRegion", "userAgent", "userIdentity.type", "managementEvent", "readOnly" 
-| logreduce values-details\<shortcodeI\> 
+_sourceCategory="aws/cloudtrail/production" and _collector="AWS"
+| json "eventName", "eventSource", "awsRegion", "userAgent", "userIdentity.type", "managementEvent", "readOnly"
+| logreduce values-details\<shortcodeI\>
 | ...
 ```
 

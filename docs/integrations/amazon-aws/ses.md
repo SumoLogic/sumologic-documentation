@@ -71,7 +71,7 @@ Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and rece
 
 ```json title="SES log"
 {"notificationType":"Delivery","mail":{"timestamp":"2018-02-08T18:18:09.060Z","source":"Sumo Logic <service@sumologic.com>","sourceArn":"arn:aws:ses:us-west-3:123456789029:identity/service@sumologic.com","sourceIp":"19.171.22.2","sendingAccountId":"122226337001","messageId":"010001606dc7dea0-91abab6b-b5fc-47as-921f-813c92ac40ud-000000","destination":["bob@example.com"]},"delivery":{"timestamp":"2017-12-19T07:58:23.735Z","processingTimeMillis":865,"recipients":["jason@sumo.com"],"smtpResponse":"250 2.0.0 OK 1513670303 h58si3264405qta.418 - gsmtp","remoteMtaIp":"169.107.162.237","reportingMTA":"a9-19.smtp-out.amazonses.com"}}
-{"notificationType":"Bounce","bounce":{"bounceType":"Permanent","bounceSubType":"Suppressed","bouncedRecipients":[{"emailAddress":"larry@customer.com","action":"failed","status":"5.1.1","diagnosticCode":"Amazon SES has suppressed sending to this address because it has a recent history of bouncing as an invalid address. For more information about how to remove an address from the suppression list, see the Amazon SES Developer Guide: http://docs.aws.amazon.com/ses/lates...ssionlist.html "}],"timestamp":"2018-04-12T11:46:41.807Z","feedbackId":"010001606e10a2db-3807dda0-4311-4b62-b883-8e0cb4122954-000000","reportingMTA":"dns; amazonses.com"},"mail":{"timestamp":"2017-12-19T09:17:52.309Z","source":"Sumo Logic <service@sumologic.com>","sourceArn":"arn:aws:ses:us-east-3:123456789029:identity/service@sumologic.com","sourceIp":"169.107.162.237","sendingAccountId":"123456789029","messageId":"010001606e109e93-29782834-7101-4a4a-abbd-2d3e971d1173-000000","destination":["naren@demo.com"]}}
+{"notificationType":"Bounce","bounce":{"bounceType":"Permanent","bounceSubType":"Suppressed","bouncedRecipients":[{"emailAddress":"larry@customer.com","action":"failed","status":"5.1.1","diagnosticCode":"Amazon SES has suppressed sending to this address because it has a recent history of bouncing as an invalid address. For more information about how to remove an address from the suppression list, see the Amazon SES Developer Guide: http://docs.aws.amazon.com/ses/latest...ssionlist.html "}],"timestamp":"2018-04-12T11:46:41.807Z","feedbackId":"010001606e10a2db-3807dda0-4311-4b62-b883-8e0cb4122954-000000","reportingMTA":"dns; amazonses.com"},"mail":{"timestamp":"2017-12-19T09:17:52.309Z","source":"Sumo Logic <service@sumologic.com>","sourceArn":"arn:aws:ses:us-east-3:123456789029:identity/service@sumologic.com","sourceIp":"169.107.162.237","sendingAccountId":"123456789029","messageId":"010001606e109e93-29782834-7101-4a4a-abbd-2d3e971d1173-000000","destination":["naren@demo.com"]}}
 {"notificationType":"Complaint","complaint":{"complainedRecipients":[{"emailAddress":"nathan@sumodemoacme.com"}],"timestamp":"2018-04-12T12:25:07.641Z","feedbackId":"01000162b539f06b-d701b0a8-bde5-48ea-85b2-a8a58e4de012-000000","userAgent":"AOL SComp","complaintFeedbackType":"abuse","arrivalDate":"2018-04-12T12:25:07.641Z"},"mail":{"timestamp":"2018-04-12T12:25:07.641Z","source":"Sumo Logic Information <service@sumologic.com>","sourceArn":"arn:aws:ses:us-west-2:123456789029:identity/service@sumologic.com","sourceIp":"147.106.118.104","sendingAccountId":"123456789029","messageId":"0100016292d33f2f-6a6d0111-cfb3-499b-a667-9edae2d901c5-000000","destination":(["jackson@longsumo.com"]}}
 ```
 
@@ -108,7 +108,7 @@ Before you configure the log sources for the Amazon SES app, decide on the sourc
 ### Step 2: Configure CloudTrail
 
 1. Enable CloudTrail in your AWS account. You'll be offered the option to create an S3 bucket.
-2. [Grant Sumo Logic access](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md) to the Amazon S3 bucket created or selected above.
+2. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md) to the Amazon S3 bucket created or selected above.
 
 
 ### Step 3: Collect Amazon SES events using CloudTrail
@@ -120,12 +120,12 @@ Before you configure the log sources for the Amazon SES app, decide on the sourc
 5. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 
 :::info
-Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/collection-aws-govcloud) for details.
+Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](/docs/send-data/hosted-collectors/amazon-aws/collection-aws-govcloud) for details.
 :::
 
 6. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example:
 
-7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one **wildcard (*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions) for details.
+7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one **wildcard (*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions) for details.
 8. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
     * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
     * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example `-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m). If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
@@ -133,16 +133,16 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md). Then define the fields you want to associate, each field needs a name (key) and value.
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
-11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md).
+11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
     * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.  \
     * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 12. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
-    * **Scan Interval.** Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/AWS-S3-Scan-Interval-Sources).
+    * **Scan Interval.** Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Scan-Interval-Sources).
     * **SNS Subscription Endpoint (Highly Recommended**). New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file. Click the box below to open instructions:
 
     <details><summary>Set up SNS in AWS</summary>
 
-    The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/configure-our-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
+    The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-our-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
 
     1. To set up the subscription you need to get an endpoint URL from Sumo to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click **Create URL** and use the provided endpoint URL when creating your subscription in step 3.
 
@@ -179,8 +179,8 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 13. Set any of the following under **Advanced**:
   * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
     * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-    * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/sources/reference-information-sources/time-reference) for more information.
-* **Enable Multiline Processing. **See [Collecting Multiline Logs](/docs/send-data/sources/reference-information-sources/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
+    * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
+* **Enable Multiline Processing. **See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
     * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
     * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
 14. [Create any Processing Rules](/docs/manage/collection/processing-rules/create-processing-rule.md) you'd like for the AWS Source.
@@ -189,8 +189,8 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 
 ### Step 4: Configure and collect Amazon SNS notifications for Amazon SES
 
-1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Configure an  [HTTP](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) source.
+1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. Configure an  [HTTP](/docs/send-data/hosted-collectors/http-source/logs-metrics) source.
 * **Name—**Enter a name to display for the new Source.
 * **Description—**Enter an optional description.
 * **Source Category—**Enter a source category, such as: AWS/SES/Events/Notifications
@@ -241,7 +241,7 @@ To install the app:
             * For SES CloudTrail Logs, provide sourceCategory as **AWS/Cloudtrail**
             * For SES Notification Logs, provide sourceCategory as **AWS/SES/Notifications**
         * **Choose Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`).
-3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folde**r to add a new folder.
+3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library] for information on working with the library in the new UI.

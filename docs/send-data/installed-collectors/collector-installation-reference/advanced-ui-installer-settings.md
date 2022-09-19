@@ -1,8 +1,10 @@
 ---
 id: advanced-ui-installer-settings
+title: Advanced UI Installer Settings
+description: View the advanced settings for the UI installer.
 ---
 
-# Advanced UI Installer Settings
+
 
 These options appear if you click **Advanced Settings** on the Confirmation dialog in the UI Installer. Click each tab to specify settings, and then click **Next** to return to the main UI installer flow.
 
@@ -23,10 +25,10 @@ Data Collection API.
 |--|--|
 | Collector Name | Name to identify the Collector in the Web UI. The Collector name must be unique. If you are installing a Collector that would have the same name as an existing Collector, the system automatically appends a 13-digit epoch timestamp to the Collector name. [Learn more.](force-collectors-name-clobber.md) |
 | Host Name | Host name of the machine on which the Collector is running. The host name can be a maximum of 128 characters. |
-| Category | [Source Category](../../design-deployment/best-practices-source-categories.md) to use when a Source does not specify a category. |
+| Category | [Source Category](/docs/send-data/best-practices) to use when a Source does not specify a category. |
 | Description | Description for the Collector. |
 | Time Zone | Time zone to use when it is not extracted from the timestamp. |
-| CPU Target Percentage | You can choose to set a [CPU target](../../../manage/collection/set-collector-cpu-usage-target.md) to limit the amount of CPU processing a Collector uses. |
+| CPU Target Percentage | You can choose to set a [CPU target](docs/manage/collection/set-collector-cpu-usage-target.md) to limit the amount of CPU processing a Collector uses. |
 | Ephemeral | When true, the collector will be deleted after 12 hours of inactivity. For more information, see [Setting a Collector as Ephemeral](set-collector-as-ephemeral.md). |
 | Clobber | When selected, if there is any existing Collector with the same name, that Collector will be deleted (clobbered). See Forcing a Collector's Name with Clobber for more information. |
 | FIPS-compliant JCE | When selected, FIPS 140-2 compliant Java Cryptography Extension (JCE) will be enabled.<br/>This option is only supported in specific deployments, ask your Sumo account representative for details. |
@@ -40,6 +42,6 @@ Configure these settings if you want to use a proxy.
 | Proxy Host | Host name of the proxy server. |
 | Proxy Port | Port used by the proxy server. |
 | Authentication Type | If authentication is required, we support two different types:<br/>Basic Authentication (Username, Password)<br/>NTLM domain used to log into the proxy server. Required only for NTLM authentication. |
-| Proxy User | (Optional) User name to log into proxy server. Required for basic and NTLM authentication. 
+| Proxy User | (Optional) User name to log into proxy server. Required for basic and NTLM authentication.
 | Proxy Password | (Optional) Password to log into proxy server. Required for basic and NTLM authentication. |
 | NTLM Domain | (Optional) NTLM Authentication (Username, Password, NTLM Domain) |

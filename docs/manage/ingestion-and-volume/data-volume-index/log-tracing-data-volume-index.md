@@ -4,7 +4,7 @@ title: Log and Tracing Data Volume Index
 ---
 
 
-The data volume index is populated with a set of log messages every five minutes. The messages contain information on how much data (by bytes and messages count) your account is ingesting. Your data volume is calculated based on when your logs were received, in Sumo this timestamp is stored with the \_receiptTime [metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) field. Each log message includes information based on one of the following index source categories.
+The data volume index is populated with a set of log messages every five minutes. The messages contain information on how much data (by bytes and messages count) your account is ingesting. Your data volume is calculated based on when your logs were received, in Sumo this timestamp is stored with the `_receiptTime` [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field. Each log message includes information based on one of the following index source categories.
 
 | Index Log Type | Index Source Category |
 |--------------------|--------------------------------|
@@ -21,11 +21,11 @@ The data volume index is populated with a set of log messages every five minutes
 | SourceHost         | sourcehost_volume              |
 | View               | view_volume                    |
 
-You can query the data volume index just like any other message using the Sumo Logic search page. To see the data created within the data volume index, when you search, specify the **\_index** metadata field with a value of **sumologic_volume**. For more information, see [Search Metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md).
+You can query the data volume index just like any other message using the Sumo Logic search page. To see the data created within the data volume index, when you search, specify the **\_index** metadata field with a value of **sumologic_volume**. For more information, see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
 
 ## Sumo Logic App for Data Volume
 
-Sumo Logic provides an application that utilizes the data volume index to see your account's volume usage as a glance. For details, see [Data Volume app] (../../../07Sumo-Logic-Apps/sumo-apps/Data_Volume_App.md "Data Volume App").
+Sumo Logic provides an application that utilizes the data volume index to see your account's volume usage as a glance. For details, see [Data Volume app] (docs/integrations/sumo-apps/Data_Volume_App.md "Data Volume App").
 
 ## Known Issue
 
@@ -261,7 +261,7 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 This query runs against the tracing volume index and uses the [*predict*](../../../search/search-query-language/search-operators/predict.md) operator to predict future values.
 
-```sql
+```
 _index=sumologic_volume _sourcecategory=sourcecategory_tracing_volume
 | parse regex "\"(?<collector>[^\"]+)\"\:\{\"billedBytes\"\:(?<billedBytes>\d+)\,\"spansCount\"\:(?<spansCount>\d+)\}" multi
 | timeslice 1h
@@ -274,4 +274,4 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 ### Index retention period
 
-By default, the retention period of the Data Volume index is the same as the retention period of your Default Continuous Partition. You can change the retention period by editing the partition that contains the index, `sumologic_volume`. For more information, see [Edit a Partition](../../partitions-and-data-tiers/edit-partition.md).
+By default, the retention period of the Data Volume index is the same as the retention period of your Default Partition. You can change the retention period by editing the partition that contains the index, `sumologic_volume`. For more information, see [Edit a Partition](../../partitions-and-data-tiers/edit-partition.md).

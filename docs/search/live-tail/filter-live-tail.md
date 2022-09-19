@@ -1,8 +1,10 @@
 ---
 id: filter-live-tail
+title: Filter Live Tail
+description: To find specific information, you can filter by keyword.
 ---
 
-# Filter Live Tail
+
 
 To find specific logs, you can filter with keywords. You may use keywords after providing at least one metadata field to the Live Tail query and click Run or press Enter.
 

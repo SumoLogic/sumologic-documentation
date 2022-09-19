@@ -1,8 +1,10 @@
 ---
 id: search-from-field-browser
+title: Search from the Field Browser
+description: Drilling down into a field from the Field Browser is seamless for non-aggregate queries.
 ---
 
-# Search from the Field Browser
+
 
 Depending on the type of field you want to drill down into, you can run searches in two ways:
 

@@ -4,8 +4,6 @@ sidebar_title: LogCompare
 hide_table_of_contents: true
 ---
 
-# LogCompare
-
 LogCompare allows you to easily compare log data from different time periods to detect major changes or anomalies. LogCompare runs a delta analysis that helps you troubleshoot and discover root causes. For example,  you could determine what was different right before a failure compared to the previous day or previous week. Or, you could easily check if a new release introduced a new issue by reviewing the difference in log streams across time.
 
 <Tabs

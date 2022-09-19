@@ -201,13 +201,13 @@ For information about connection logs and user logs, see [STL_CONNECTION_LOG](ht
 
 ### Step 3: Configure AWS S3 source for Amazon Redshift Audit logs collection
 
-1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. To your Hosted Collector, add an [AWS S3 Source](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/AWS-S3-Source).
+1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. To your Hosted Collector, add an [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source).
    * **Name**. Enter a name to display for the new Source.
    * **Description**. Enter an optional description.
    * **S3 Region**. Select the Amazon Region for your Redshift Audit Log S3 bucket.
    * **Bucket Name**. Enter the exact name of your Redshift Audit Log S3 bucket.
-   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expressio
+   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expressio
    * **Source Category**. AWS/Redshift/Audit
    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
    * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
@@ -220,13 +220,13 @@ For information about connection logs and user logs, see [STL_CONNECTION_LOG](ht
 
 ### Step 4. Configure AWS CloudTrail source for Redshift CloudTrail Events  
 
-1. Configure a [Hosted Collector.](/docs/send-data/configure-hosted-collector.md)
-2. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources/hosted-collectors/amazon-web-services/aws-cloudtrail-source.md).
+1. Configure a [Hosted Collector.](/docs/send-data/hosted-collectors/configure-hosted-collector.md)
+2. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md).
    * **Name**. Enter a name to display for the new Source.
    * **Description**. Enter an optional description.
    * **S3 Region**. Select the Amazon Region for your CloudTrail Redshift S3 bucket.
    *    * **Bucket Name**. Enter the exact name of your CloudTrail Redshift S3 bucket.
-   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions)..)The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions)..)The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
    * **Source Category**. Enter a source category. For example, AWS/Cloudtrail.
    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
    * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
@@ -239,8 +239,8 @@ For information about connection logs and user logs, see [STL_CONNECTION_LOG](ht
 
 ### Step 5: Configure AWS CloudWatch source for Redshift metrics  
 
-1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Configure an [AWS CloudTrail Source](/docs/send-data/sources/hosted-collectors/amazon-web-services/aws-cloudtrail-source.md).
+1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. Configure an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md).
     1. **Name**. Enter a name to display for the new Source.
     2. **Description**. Enter an optional description.
     3. **Regions**. Select your Amazon Regions for Amazon Redshift.
@@ -260,7 +260,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
@@ -448,7 +448,7 @@ See information about CloudTrail events for Amazon Redshift, including event loc
 
 **Top Cluster Identifiers**. Shows a list of the top cluster identifiers along with the number of events in the last 24 hours.
 
-**Events Trend by Event Nam**e. Shows trends in events by the event name on a column chart with a count for each event name for the last 24 hours.
+**Events Trend by Event Name**. Shows trends in events by the event name on a column chart with a count for each event name for the last 24 hours.
 
 **Events by AccountId**. Shows a count of events by account id on a bar chart, broken up into the type of events for the last 24 hours.
 

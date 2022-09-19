@@ -2,7 +2,7 @@
 id: metrics-transformation-rules
 title: Metrics Transformation Rules
 sidebar_label: Metrics Transformation Rules
-description: Metrics transformation rules allow you control how long raw metrics are retained. 
+description: Metrics transformation rules allow you control how long raw metrics are retained.
 ---
 
 Metrics transformation rules allow you control how long raw metrics are retained. You can also aggregate metrics at collection time and specify a separate retention period for the aggregated metrics.
@@ -11,7 +11,7 @@ Metrics transformation rules are useful when:
 
 * You want to store highly ephemeral, high cardinality data for only 15 days, and to aggregate the metrics into business-level KPIs for long term storage and trending.
 * You want to store metrics from development and test environments for only 15 days, because after that you have no interest in them. 
-* You want to pre-aggregate raw metrics to improve query performance, nd not retain raw metrics at all.
+* You want to pre-aggregate raw metrics to improve query performance, and not retain raw metrics at all.
 
 ## Key facts about metrics transformation rules
 

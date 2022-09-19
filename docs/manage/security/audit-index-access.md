@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
 
-Sumo Logic has added new [role capabilities](https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities) that allow you to grant access to the following audit indexes:
+Sumo Logic has added new [role capabilities](/docs/manage/users-and-roles/roles/role-capabilities) that allow you to grant access to the following audit indexes:
 
 * [Search Audit Index](https://help.sumologic.com/Manage/Security/Search_Audit_Index). Contains logs on search usage and activities for your account, and is stored in the `sumologic_search_usage_per_query` partition.
 * [Data Volume Index](https://help.sumologic.com/Manage/Ingestion-and-Volume/Data_Volume_Index). Contains logs that provide visibility in ingest volume, and is stored in the  `sumologic_volume_index` partition.

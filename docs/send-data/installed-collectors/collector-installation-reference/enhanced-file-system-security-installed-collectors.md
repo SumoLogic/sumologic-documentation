@@ -1,8 +1,10 @@
 ---
 id: enhanced-file-system-security-installed-collectors
+title: Enhanced File System Security for Installed Collectors
+description: Enhanced file system security protects the log cache and configuration files for installed Collectors.
 ---
 
-# Enhanced File System Security for Installed Collectors
+
 
 The log cache and configuration files for an installed Collector can contain sensitive information. To address possible security issues associated with the cache and configuration files, Collector release 19.170 introduces an enhanced file system security mode for Collector installation.
 
@@ -16,7 +18,7 @@ When you [install a Collector](/docs/send-data/installed-collectors) using the 
 * Only members of the **sumologic\_collector** group can access the Collector folder. All members of this group have full permissions to the folder.  
 * The following users are automatically added to the **sumologic\_collector** group.  
 
-  * Admin users (including root) 
+  * Admin users (including root)
   * The user who launched the UI installer  
   * The Run As user, if provided
 

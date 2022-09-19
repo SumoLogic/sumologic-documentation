@@ -15,7 +15,7 @@ This procedure explains how to collect logs from Google Workspace and ingest the
 
 **Google Workspace Apps** each have a log that records actions in JSON format. The logs are all structurally similar—most have an ID, actor, and an IP Address. The differences are in the events section of the JSON where the actions are recorded.
 
-**Google Workspace Alert Center** alerts are in JSON format. Most of the alerts have a few common fields. The differences are in the data section of the JSON where the alert type specific details are recorded. For more information, see this Google Workspace[ Alert document](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types).
+**Google Workspace Alert Center** alerts are in JSON format. Most of the alerts have a few common fields. The differences are in the data section of the JSON where the alert type specific details are recorded. For more information, see this Google Workspace [Alert document](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types).
 
 
 ## Configure Collection for Google Workspace Audit Source
@@ -32,7 +32,7 @@ This section provides instructions for configuring log collection for Google Wor
 
 Currently, the source name for Google Workspace is still **G Suite Apps Audit Source**, which will be changed/updated shortly.
 
-Configure one [G Suite Apps Audit Source](/docs/send-data/sources/hosted-collectors/g-suite-apps-audit-source) for each Google App from which you want to collect events:
+Configure one [G Suite Apps Audit Source](/docs/send-data/hosted-collectors/google-source/g-suite-apps-audit-source) for each Google App from which you want to collect events:
 
 * Google Admin
 * Google Calendar
@@ -75,7 +75,7 @@ Authentication must be with a new Google Workspace Apps Audit Source. We do not 
 
 ### Configure a Collector
 
-Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector) for Google Apps Audit.
+Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for Google Apps Audit.
 
 
 ### Configure Google Workspace Apps Audit Sources  
@@ -230,7 +230,7 @@ Before creating the HTTP source, identify the Sumo Logic Hosted Collector you wa
 When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this to configure in configuration file.
 
 To add a hosted collector and HTTP source, do the following:
-1. Create a new Sumo Logic Hosted Collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+1. Create a new Sumo Logic Hosted Collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Add an  HTTP Logs and Metrics Source.
 3. In the Advanced Options for Logs, under Timestamp Format, click **Specify a format** and enter the following information in the respective fields:
    * **Format:** `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
@@ -316,7 +316,7 @@ To configure Google Workspace Alert Center collection in your GCP environment, d
 3. Edit the `sumo_gsuite_alerts_collector_deploy.sh` bash script to configure following variables:
    * `region`: The Region where the Google function will be deployed. For example: "us-central1"
    * `project_id`: The project id of the project where the collector and all its resources will be deployed
-   * `delegated_email`:The valid email address of one of your org's Google Workspace super admin users.
+   * `delegated_email`: The valid email address of one of your org's G Suite super admin users.
    * `Sumo_endpoint`: The Sumo Logic HTTP endpoint created in Step 1
 4. Run the following script:
   ```bash

@@ -13,7 +13,7 @@ const features = [
       message: 'Get Started with Sumo',
       description: 'Title for get started',
     }),
-    imageUrl: 'img/icons/send-data.png',
+    imageUrl: 'img/icons/get-started.png',
     description: (<Translate
       id="landing.feature.get-started.desc"
       description="Get started description">
@@ -23,17 +23,31 @@ const features = [
   },
   {
     title: translate({
-      id: 'landing.feature.dashboards.title',
-      message: 'Dashboards and Visuals',
-      description: 'Title for dashboards',
+      id: 'landing.feature.send-data.title',
+      message: 'Send Data to Sumo',
+      description: 'Title for get started',
     }),
-    imageUrl: 'img/icons/dashboards.png',
+    imageUrl: 'img/icons/send-data.png',
     description: (<Translate
-        id="landing.feature.dashboards.desc"
-        description="Dashboards description">
-          Create visualizations, monitors, and alerts for your apps.
-        </Translate>),
-    link: 'docs/dashboards-new',
+      id="landing.feature.send-data.desc"
+      description="Get started description">
+        Choose a collector and source to start sending data to Sumo Logic.
+      </Translate>),
+    link: 'docs/send-data',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.searches-logs.title',
+      message: 'Searches and Logs',
+      description: 'Title for searches & logs',
+    }),
+    imageUrl: 'img/icons/search.png',
+    description: (<Translate
+      id="landing.feature.searches-logs.desc"
+      description="Searches and logs description">
+        Search, query and analyze your log data sent to Sumo Logic.
+      </Translate>),
+    link: 'docs/search',
   },
   {
     title: translate({
@@ -51,17 +65,31 @@ const features = [
   },
   {
     title: translate({
-      id: 'landing.feature.searches-logs.title',
-      message: 'Searches and Logs',
-      description: 'Title for searches & logs',
+      id: 'landing.feature.dashboards.title',
+      message: 'Dashboards and Visuals',
+      description: 'Title for dashboards',
     }),
-    imageUrl: 'img/icons/search.png',
+    imageUrl: 'img/icons/dashboards.png',
     description: (<Translate
-      id="landing.feature.searches-logs.desc"
-      description="Searches and logs description">
-        Query and analyze log data sent to Sumo Logic, Search Language, LogReduce, LogExplain, and more.
+        id="landing.feature.dashboards.desc"
+        description="Dashboards description">
+          Create visualizations, monitors, and alerts for your apps.
+        </Translate>),
+    link: 'docs/dashboards-new',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.integrations.title',
+      message: 'Apps and Integrations',
+      description: 'Title for Apps',
+    }),
+    imageUrl: 'img/icons/integrations.png',
+    description: (<Translate
+      id="landing.feature.integrations.desc"
+      description="Apps description">
+        Install and configure third-party app integrations and services.
       </Translate>),
-    link: 'docs/search',
+    link: 'docs/integrations',
   },
   {
     title: translate({
@@ -73,14 +101,14 @@ const features = [
     description: (<Translate
       id="landing.feature.metrics.desc"
       description="Metrics description">
-        Review numeric performance and activity data collected to monitor, troubleshoot, and identify root causes.
+        Review performance and activity data collected to monitor and troubleshoot.
       </Translate>),
     link: 'docs/metrics',
   },
   {
     title: translate({
       id: 'landing.feature.apm.title',
-      message: 'Application Performance Monitoring',
+      message: 'APM',
       description: 'Title for APM',
     }),
     imageUrl: 'img/icons/apm.png',
@@ -104,34 +132,6 @@ const features = [
         Deploy and configure solutions to monitor apps and analyze root causes.
       </Translate>),
     link: 'docs/observability',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.integrations.title',
-      message: 'Integrations',
-      description: 'Title for Integrations',
-    }),
-    imageUrl: 'img/icons/integrations.png',
-    description: (<Translate
-      id="landing.feature.integrations.desc"
-      description="Integrations description">
-        Find, install, and configure integrations with third-party apps and services.
-      </Translate>),
-    link: 'docs/integrations',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.integrations.title',
-      message: 'API',
-      description: 'Title for API',
-    }),
-    imageUrl: 'img/icons/cloud/api2.png',
-    description: (<Translate
-      id="landing.feature.api.desc"
-      description="API description">
-        Use our APIs to access resources and data programmatically from third-party scripts and apps.
-      </Translate>),
-    link: 'docs/api',
   },
 ];
 

@@ -1,8 +1,10 @@
 ---
 id: quick-search-collectors-sources
+title: Quick Search for Collectors and Sources
+description: You can quickly start a search for a Collector, Source, or Source Category from the Manage Collection page.
 ---
 
-# Quick Search for Collectors and Sources
+
 
 You can quickly start a search for a Collector, Source, or Source Category from the **Manage Collection** page. 
 

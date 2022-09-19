@@ -19,7 +19,7 @@ The JFrog Artifactory Sumo Logic integration provides a new Sumo Logic Free acco
 
 **If you have an existing Sumo Logic account:**
 
-You can configure Artifactory Online to send data (described below) to an existing Sumo Logic [HTTP Logs and Metrics](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) source.
+You can configure Artifactory Online to send data (described below) to an existing Sumo Logic [HTTP Logs and Metrics](/docs/send-data/hosted-collectors/http-source/logs-metrics) source.
 
 ## Artifactory logs
 
@@ -77,16 +77,16 @@ If you already have an existing connection set up via Artifactory Online:
 
 If you already have an existing Sumo Logic Account created outside of Artifactory Online:
 
-1. Select “Connection URL” and copy and paste the URL of an existing Sumo Logic [HTTP Logs and Metrics Source in the Connection URL text box](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source)
+1. Select “Connection URL” and copy and paste the URL of an existing Sumo Logic [HTTP Logs and Metrics Source in the Connection URL text box](/docs/send-data/hosted-collectors/http-source/logs-metrics)
 
     ![jfrog 7](/img/connection-and-integration/jfrog7.png)
 
 1. Login to Sumo Logic and verify that the logs are flowing in as expected
-1. Install the [Sumo Logic App for Artifactory] (../../07Sumo-Logic-Apps/app-development/Artifactory/Artifactory-App-Dashboards.md) (version 7.x) to get instant insight into your Artifactory logs. 
+1. Install the [Sumo Logic App for Artifactory] (docs/integrations/app-development/Artifactory/Artifactory-App-Dashboards.md) (version 7.x) to get instant insight into your Artifactory logs. 
 
 ## For More Details
 
-For complete details on the Sumo Logic App for Artifactory and its Dashboards, see the [Artifactory App] (../../07Sumo-Logic-Apps/app-development/Artifactory.md).
+For complete details on the Sumo Logic App for Artifactory and its Dashboards, see the [Artifactory App] (docs/integrations/app-development/Artifactory.md).
 
 :::note
 For more information about JFrog Artifactory, see the Sumo Logic DevOps blog, [Using Node.js npm with Artifactory via the API and CLI](https://www.sumologic.com/blog/using-node-js-npm-with-jfrog-artifactory-via-the-api-and-cli/).

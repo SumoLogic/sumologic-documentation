@@ -1,8 +1,9 @@
 ---
 id: logreduce-keys
+title: LogReduce Keys
+description: Group by the keys of JSON or keyvalue logs.
 ---
 
-# LogReduce Keys
 
 The **LogReduce Keys** operator allows you to quickly explore JSON or key-value formatted logs by schemas. If you have a large volume of JSON or key-value logs with different formats and aren't sure which ones you need to focus on, this operator can process them into their object schemas so you can review which ones are relevant to your needs.
 
@@ -30,12 +31,12 @@ With the provided results you can:
 | -- | -- | -- |
 | parser | The parsing library to use, either `json` or `keyvalue`. | json |
 | maxdepth | The maximum depth of the JSON parser. | 5 |
-| field | The field to automatically parse. | Raw message ([`_raw`](../get-started-with-search/search-basics/built-in-metadata.md)) |
+| field | The field to automatically parse. | Raw message ([`_raw`](/docs/search/get-started-with-search/search-basics/built-in-metadata)) |
 | noaggregate | Use to return LogReduce results as raw messages. Using this option disables the aggregation process that runs by default. | Null |
 
 Results can be returned in two ways:
 
-* If the operator is last in the query (no operations follow it) it provides aggregate results by performing a [count by](../search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent.md) operation.
+* If the operator is last in the query (no operations follow it) it provides aggregate results by performing a [count by](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent) operation.
 * If you want to use operators after LogReduce you need to specify the `noaggregate` option so your results are returned non-aggregated.
 
 ## Limitations
@@ -43,14 +44,14 @@ Results can be returned in two ways:
 * When not specifying a field with the `field=` option don't parse any fields. If you parse any fields they are excluded from the schema in your results. 
 * A maximum of 100 keys are automatically parsed.
 * Keys in arrays are not supported.
-* The [Time Compare](../time-compare.md) button will not work on LogReduce Keys results, you need to manually input the [compare operator](../search-query-language/search-operators/Compare.md) instead.
+* The [Time Compare](../time-compare.md) button will not work on LogReduce Keys results, you need to manually input the [compare operator](docs/search/search-query-language/search-operators/Compare.md) instead.
 * Response fields `_signature_id`, `_schema`, and `_count` are not supported with [Dashboard filters](../../dashboards/edit-dashboards/use-filters-dashboards.md).
 
 ## _count link
 
 * Searches opened by clicking the link provided in the `_count` response field:
 
-    * are run against [message time](../get-started-with-search/search-basics/built-in-metadata.md).
+    * are run against [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata).
     * can return different results due to variations in your data.
 
 * When provided in a Scheduled Search alert, the link from the `_count` response field is invalid and will not work.
@@ -58,8 +59,8 @@ Results can be returned in two ways:
 ## Examples
 
 ```sql
-_sourcecategory = "Labs/AWS/GuardDuty_V8" 
-| json keys "region", "partition", "resource" 
+_sourcecategory = "Labs/AWS/GuardDuty_V8"
+| json keys "region", "partition", "resource"
 | logreduce keys field=resource
 ```
 
@@ -68,7 +69,7 @@ _sourcecategory = "Labs/AWS/GuardDuty_V8"
 To get a summary of patterns in Kubernetes event logs you can quickly scan for unique schemas with LogReduce Keys:
 
 ```sql
-_sourceCategory="primary-eks/events" 
+_sourceCategory="primary-eks/events"
 | logreduce keys
 ```
 
@@ -85,19 +86,19 @@ Next, use [LogReduce Values to explore the schema based on specific keys](logr
 To get a summary of patterns in AWS CloudTrail logs that reference AccessDenied errors for AWS you'd use a query such as the following:
 
 ```sql {13}
-_sourceCategory=*cloudtrail* *AccessDenied*  
-| json field=_raw "userIdentity.userName" as userName nodrop 
-| json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName_role nodrop 
-| if (isNull(userName), if(!isNull(userName_role),userName_role, "Null_UserName"), userName) as userName  
-| json field=_raw "eventSource" as eventSource 
-| json field=_raw "eventName" as eventName 
-| json field=_raw "awsRegion" as awsRegion 
-| json field=_raw "errorCode" as errorCode nodrop 
-| json field=_raw "errorMessage" as errorMessage nodrop 
-| json field=_raw "requestParameters.bucketName" as bucketName nodrop 
-| json field=_raw "recipientAccountId" as accountId 
-| where errorCode matches "*AccessDenied*" and eventSource matches "s3.amazonaws.com"  and accountId matches "*" 
-| logreduce keys  
+_sourceCategory=*cloudtrail* *AccessDenied* 
+| json field=_raw "userIdentity.userName" as userName nodrop
+| json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName_role nodrop
+| if (isNull(userName), if(!isNull(userName_role),userName_role, "Null_UserName"), userName) as userName 
+| json field=_raw "eventSource" as eventSource
+| json field=_raw "eventName" as eventName
+| json field=_raw "awsRegion" as awsRegion
+| json field=_raw "errorCode" as errorCode nodrop
+| json field=_raw "errorMessage" as errorMessage nodrop
+| json field=_raw "requestParameters.bucketName" as bucketName nodrop
+| json field=_raw "recipientAccountId" as accountId
+| where errorCode matches "*AccessDenied*" and eventSource matches "s3.amazonaws.com"  and accountId matches "*"
+| logreduce keys 
 | sort by _count desc
 ```
 

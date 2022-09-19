@@ -1,8 +1,9 @@
 ---
 id: logexplain
+title: LogExplain
+description: Group by the keys of JSON or keyvalue logs.
 ---
 
-# LogExplain
 
 The **LogExplain** operator allows you to compare sets of structured logs based on events you are interested in. Structured logs can be in JSON, CSV, key-value, or any structured format. Often logs relevant to troubleshooting and security insights are scattered among other logs that show the expected behavior and performance. These logs normally consist of different content, where it is helpful to see which values occur more often in events of interest versus normal operation logs. For example, events of interest often contain information relevant to persistent errors, excess load, and high latency.
 
@@ -52,15 +53,15 @@ With the provided results you can:
 ### Limitations
 
 * Field values must be categorical.
-* [Built-in metadata fields](../get-started-with-search/search-basics/built-in-metadata.md) are not supported.
+* [Built-in metadata fields](/docs/search/get-started-with-search/search-basics/built-in-metadata) are not supported.
 * Not supported with [Real Time alerts](../../alerts/scheduled-searches/create-real-time-alert.md).
-* [Time Compare](../time-compare.md) and the [compare operator](../search-query-language/search-operators/Compare.md) are not supported against LogExplain results.
+* [Time Compare](../time-compare.md) and the [compare operator](docs/search/search-query-language/search-operators/Compare.md) are not supported against LogExplain results.
 * Response fields `_explanation`, `_relevance`, `_test_coverage`,  and  `_control_coverage` are not supported with [Dashboard filters](../../dashboards/edit-dashboards/use-filters-dashboards.md).
 * If you reach the memory limit you can try to shorten the time range or the number of specified fields. When the memory limit is reached you will get partial results on a subset of your data.
 
 ### Response links
 
-* Drill down searches opened by clicking the link provided from the `_test_coverage ` and `_control_coverage` fields are run against [message time](../get-started-with-search/search-basics/built-in-metadata.md).
+* Drill down searches opened by clicking the link provided from the `_test_coverage ` and `_control_coverage` fields are run against [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata).
 * When provided in a Scheduled Search alert, the links from the `_test_coverage ` and `_control_coverage` fields are invalid and will not work.
 
 ## Examples
@@ -68,8 +69,8 @@ With the provided results you can:
 ### Errors by host
 
 ```sql {3}
-__sourceCategory=stream  
-| if(_raw matches "error", 1, 0) as hasError 
+__sourceCategory=stream 
+| if(_raw matches "error", 1, 0) as hasError
 | logexplain hasError == 1 on _sourceHost
 ```
 
@@ -78,15 +79,15 @@ __sourceCategory=stream 
 Having seen that there are a lot of "AccessDenied" errors, in the example below, we want to explain which combinations of eventName, userName, or AWS service ("invokedBy") might be responsible for errorCode having a value of "AccessDenied" by comparing logs with AccessDenied errors against logs with other errorCodes. Values from userNames or invokedBys might be candidates for further investigation. 
 
 ```sql {10}
-_sourceCategory= *cloudtrail* errorCode 
-| json field=_raw "eventSource" as eventSource 
-| json field=_raw "eventName" as eventName 
-| json field=_raw "errorCode" as errorCode 
-| json field=_raw "recipientAccountId" as recAccountId 
-| json field=_raw "userIdentity.accountId" as srcAccountId 
-| json field=_raw "userIdentity.invokedBy" as invokedBy nodrop 
-| json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName nodrop 
-| json field=_raw "sourceIPAddress" as sourceIp 
+_sourceCategory= *cloudtrail* errorCode
+| json field=_raw "eventSource" as eventSource
+| json field=_raw "eventName" as eventName
+| json field=_raw "errorCode" as errorCode
+| json field=_raw "recipientAccountId" as recAccountId
+| json field=_raw "userIdentity.accountId" as srcAccountId
+| json field=_raw "userIdentity.invokedBy" as invokedBy nodrop
+| json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName nodrop
+| json field=_raw "sourceIPAddress" as sourceIp
 | logexplain (errorCode="AccessDenied") on eventName, userName, invokedBy, sourceIp
 ```
 
@@ -98,9 +99,9 @@ If a cluster of logs has `reason="FailedScheduling" ` indicating the Kubernet
 run in.
 
 ```sql
-_sourceCategory="nite-primary-eks/events" 
-| where _raw contains "forge" 
-| json auto "object.reason", "object.involvedObject.name", "object.message" as reason, objectName, message 
+_sourceCategory="nite-primary-eks/events"
+| where _raw contains "forge"
+| json auto "object.reason", "object.involvedObject.name", "object.message" as reason, objectName, message
 | logexplain (reason="FailedScheduling") on objectName, message
 ```
 
@@ -109,19 +110,19 @@ _sourceCategory="nite-primary-eks/events"
 After using [LogReduce Values to explore your event logs based on specific keys](logreduce-values.md) you can use LogExplain to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that don't contain these errors.
 
 ```sql {14}
-_sourceCategory=*cloudtrail* 
-| json field=_raw "userIdentity.userName" as userName nodrop 
-| json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName_role nodrop 
-| if (isNull(userName), if(!isNull(userName_role),userName_role, "Null_UserName"), userName) as userName  
-| json field=_raw "eventSource" as eventSource 
-| json field=_raw "eventName" as eventName 
-| json field=_raw "awsRegion" as awsRegion 
-| json field=_raw "errorCode" as errorCode nodrop 
-| json field=_raw "errorMessage" as errorMessage nodrop 
-| json field=_raw "sourceIPAddress" as sourceIp nodrop 
-| json field=_raw "requestParameters.bucketName" as bucketName nodrop 
-| json field=_raw "recipientAccountId" as accountId 
-| where eventSource matches "s3.amazonaws.com"  and accountId matches "*" 
+_sourceCategory=*cloudtrail*
+| json field=_raw "userIdentity.userName" as userName nodrop
+| json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName_role nodrop
+| if (isNull(userName), if(!isNull(userName_role),userName_role, "Null_UserName"), userName) as userName 
+| json field=_raw "eventSource" as eventSource
+| json field=_raw "eventName" as eventName
+| json field=_raw "awsRegion" as awsRegion
+| json field=_raw "errorCode" as errorCode nodrop
+| json field=_raw "errorMessage" as errorMessage nodrop
+| json field=_raw "sourceIPAddress" as sourceIp nodrop
+| json field=_raw "requestParameters.bucketName" as bucketName nodrop
+| json field=_raw "recipientAccountId" as accountId
+| where eventSource matches "s3.amazonaws.com"  and accountId matches "*"
 | logexplain (errorCode matches "*AccessDenied*") on sourceIp, userName, awsRegion, eventName, bucketName
 ```
 

@@ -21,7 +21,7 @@ You will need to remember the path where you point the save operator to put the 
 ## Rules
 
 * The file size limit for saved data is 500MB.
-* Queries that use the Save operator can't be [pinned](../../../get-started/library/search-the-library.md).
+* Queries that use the Save operator can't be [pinned](/docs/get-started/library#search-the-library).
 
 ## Examples
 
@@ -50,7 +50,7 @@ Aggregate results can also be saved with the save operator.
 
 ### Use the Fields operator to remove unnecessary fields
 
-When creating a save file, make sure that the file is as small as possible to work more quickly. A good way to do this is to remove unnecessary fields using the [Fields](fields-operator.md) operator. This includes [built-in metadata fields](../../get-started-with-search/search-basics/built-in-metadata.md), like `_raw`.
+When creating a save file, make sure that the file is as small as possible to work more quickly. A good way to do this is to remove unnecessary fields using the [Fields](fields-operator.md) operator. This includes [built-in metadata fields](/docs/search/get-started-with-search/search-basics/built-in-metadata), like `_raw`.
 
 ### Saving files to a shared location
 
@@ -77,11 +77,11 @@ If you don't use "append" the previously saved data will be overwritten.
 Let's say that you'd like to append to your **newDailyUsers** file each day by scheduling this search to run every 24 hours:
 
 ```sql
-| parse "name=*," as name 
-| parse "action=*," as action 
-| parse "date=*," as date 
-| where action="sign-up" 
-| first(date) as date, first(action) as action by name 
+| parse "name=*," as name
+| parse "action=*," as action
+| parse "date=*," as date
+| where action="sign-up"
+| first(date) as date, first(action) as action by name
 | save append myFolder/mySubFolder/newDailyUsers
 ```
 

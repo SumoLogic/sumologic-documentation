@@ -5,6 +5,8 @@ sidebar_label: Audit Logging
 description: Learn how to search the Audit Event Index for CSE log events.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Audit Event Index provides event logs in JSON format on your account activity so you to monitor and audit changes. By default the Audit Event Index is enabled for CSE and Enterprise accounts. 
 
 :::note
@@ -55,35 +57,35 @@ The table below shows the `_sourceCategory` that is assigned to event logs by CS
 | Product Feature | _sourceCategory Value |
 | -- | -- |
 | [Action](create-cse-actions.md) | `cseAction` |
-| [Aggregation Rule](../cse-rules/write-aggregation-rule.md) | `cseRule` |
+| [Aggregation Rule](docs/cse/rules/write-aggregation-rule.md) | `cseRule` |
 | Configure Assigned Insight Emails<br/>(Relates to the option, on the Actions page, that causes a user to receive an email whenever another user assigns an Insight to them. | `cseConfiguration` |
-| [Chain Rule](../cse-rules/write-chain-rule.md) | `cseRule` |
+| [Chain Rule](docs/cse/rules/write-chain-rule.md) | `cseRule` |
 | Cloud SOAR Incident | `cseCloudSoar` |
 | [Context Action](create-cse-context-actions.md)  | `cseContextAction` |
 | [Custom Entity Type](../records-signals-entities-insights/create-custom-entity-type.md) | `cseCustomEntityType` |
 | [Custom Insight](cse-audit-logging.md) | `cseCustomInsight` |
 | [Custom Match List Column](../match-lists-suppressed-lists/custom-match-list-columns.md) | `cseCustomMatchListColumn` |
 | [Custom Tag Schema](create-a-custom-tag-schema.md) | `cseCustomTagSchema` |
-| Customer Sourced Entity Lookup Table | `cseCustomerSourcedEntityLookupTable` |
+| [Customer Sourced Entity Lookup Table](docs/cse/records-signals-entities-insights/save-inventory-data-lookup-table.md) | `cseCustomerSourcedEntityLookupTable` |
 | [Entity](../records-signals-entities-insights/view-manage-entities.md)  | `cseEntity` |
 | [Entity Criticality Config](../records-signals-entities-insights/entity-criticality.md) | `cseEntityCriticalityConfig` |
-| [Entity Domain Configuration](../cse-schema/username-and-hostname-normalization.md)  | `cseEntityNormalization` |
+| [Entity Domain Configuration](../schema/username-and-hostname-normalization.md)  | `cseEntityNormalization` |
 | Favorite Field | `cseFavoriteField` |
 | [Insight](../records-signals-entities-insights/about-cse-insight-ui.md) | `cseInsight` |
 | Inventory Entity Lookup Table | `cseInventoryEntityLookupTable` |
-| [Log Mapping](../cse-schema/create-structured-log-mapping.md)  | `cseLogMapping` |
+| [Log Mapping](../schema/create-structured-log-mapping.md)  | `cseLogMapping` |
 | [Match List](../match-lists-suppressed-lists/create-match-list.md) | `cseMatchList` |
-| [Match Rule](../cse-rules/write-match-rule.md) | `cseRule` |
+| [Match Rule](docs/cse/rules/write-match-rule.md) | `cseRule` |
 | [Network Block](create-use-network-blocks.md) | `cseNetworkBlock` |
-| [Streaming Export Configuration](../cse-ingestion/sumo-logic-ingest-mapping.md)  | `cseStreamingExportConfiguration` |
-| [Sumo Mapping](../cse-ingestion/sumo-logic-ingest-mapping.md)  | `cseSumoMapping` |
+| [Streaming Export Configuration](../ingestion/sumo-logic-ingest-mapping.md)  | `cseStreamingExportConfiguration` |
+| [Sumo Mapping](../ingestion/sumo-logic-ingest-mapping.md)  | `cseSumoMapping` |
 | [Suppressed List](/docs/cse/match-lists-suppressed-lists)  | `cseSuppressList` |
 | Templated Match Rule  | `cseRule` |
 | Threat Intel Sources<br/>(Applies to all source types on the **Threat Intel** page.) | `cseThreatIntelSource` |
-| [Threshold Rule](../cse-rules/write-threshold-rule.md) | `cseRule` |
+| [Threshold Rule](/docs/cse/rules/write-threshold-rule) | `cseRule` |
 | Virus Total Configuration | `cseConfiguration` |
-| [Yara Rule](../cse-rules/import-yara-rules.md) | `cseYara` |
-| [Yara Source](../cse-rules/import-yara-rules.md) | `cseYara` |
+| [Yara Rule](/docs/cse/rules/import-yara-rules) | `cseYara` |
+| [Yara Source](/docs/cse/rules/import-yara-rules) | `cseYara` |
 
 ## \_sourceName and \_sourceHost assignment
 
@@ -115,28 +117,22 @@ area and provide details of the event.
 To search the Audit Event Index for logs that describe CSE events:
 
 1. Open a search tab in the Sumo Logic UI by clicking **+ New** and choosing **Log Search**.  
-
-    ![new-log-search.png](/img/cse/new-log-search.png)
-
-1. In the search tab, enter a search using `_index` to specify the partition you want to search, other metadata or fields to further scope you search. For example:  
-
+   <img src={useBaseUrl('img/cse/new-log-search.png')} alt="new-log-search.png" />
+2. In the search tab, enter a search using `_index` to specify the partition you want to search, other metadata or fields to further scope you search. For example:  
     ```sql
     _index=sumologic_system_events
     | json auto
     | where subsystem="cse"
     ```
-
-1. Choose the time range for your search.
-1. Click **Start** to run the search.
+3. Choose the time range for your search.
+4. Click **Start** to run the search.
 
 ## Example event log
 
-Here is an example `InsightCreated` event log.
-
-![example-event.png](/img/cse/example-event.png)
+Here is an example `InsightCreated` event log.<br/><img src={useBaseUrl('img/cse/example-event.png')}  alt="example.png" />
 
 ## Index retention period 
 
-By default, the retention period of the Audit Event Index is the same as the retention period of your Default Continuous Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see Edit a Partition.  
+By default, the retention period of the Audit Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Edit a Partition](/docs/manage/partitions-and-data-tiers/edit-partition.md).  
    
  

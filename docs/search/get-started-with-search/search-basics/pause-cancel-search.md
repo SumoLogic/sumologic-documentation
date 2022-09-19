@@ -1,8 +1,10 @@
 ---
 id: pause-cancel-search
+title: Pause or Cancel a Search
+description: When a search is in progress, the options to Cancel or Pause the search appear.
 ---
 
-# Pause or Cancel a Search
+
 
 You can pause or cancel a search when it is in progress. Most users want to cancel a search in progress that is taking too long. You can stop the search and improve your query. You can also pause a search and check timestamps to see what data has been searched so far.
 

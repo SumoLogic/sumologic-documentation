@@ -1,8 +1,10 @@
 ---
 slug: /search/get-started-with-search/search-page/field-browser
+title: Field Browser
+description: The Field Browser allows you to display or hide selected fields without having to parse them.
 ---
 
-# Field Browser
+
 
 The Field Browser appears on the left side of the **Messages** tab of the Search page for both aggregate and non-aggregate queries. The Field Browser allows you to zero in on just the fields of interest in a search by displaying or hiding selected fields without having to parse them. You can focus on the fields you’re interested in, avoiding the “noise” of fields you don’t want to see.
 

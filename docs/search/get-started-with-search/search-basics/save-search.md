@@ -1,12 +1,13 @@
 ---
 id: save-search
+title: Save a Search
+description: Whether you are running ad hoc searches during a forensic investigation or running standard searches for health checks, you can save any search to run later.
 ---
 
-# Save a Search
 
 Whether you are running ad hoc searches during a forensic investigation or running standard searches for health checks, you can save any search to run again later.
 
-When you create a search that you'd like to reuse, you can save it to the [Library](/docs/get-started/library/sumo-logic-library). From there you can run it again, share with others, edit the search, or create a [Scheduled Search](../../../alerts/scheduled-searches/schedule-search.md) to run at a regularly scheduled time, and set up [alerts](/docs/alerts). 
+When you create a search that you'd like to reuse, you can save it to the [Library](/docs/get-started/library). From there you can run it again, share with others, edit the search, or create a [Scheduled Search](../../../alerts/scheduled-searches/schedule-search.md) to run at a regularly scheduled time, and set up [alerts](/docs/alerts). 
 
 The saved search will also include any charts you have created in the **Aggregates** tab. 
 

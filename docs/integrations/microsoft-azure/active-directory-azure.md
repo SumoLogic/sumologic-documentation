@@ -40,8 +40,8 @@ The sections below are either for FedRamp Sumo Logic deployments or if you have 
 ### Configure an HTTP Source
 
 In this step, you configure an HTTP Source to receive logs from the Azure function.
-1. Select a Hosted Collector where you want to configure the HTTP Source. If desired, create a new Hosted Collector, as described on [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+1. Select a Hosted Collector where you want to configure the HTTP Source. If desired, create a new Hosted Collector, as described on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 
 ### Configure Azure Resources using ARM template
@@ -80,7 +80,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     * **Data Source.** Select either of these options for the data source. 

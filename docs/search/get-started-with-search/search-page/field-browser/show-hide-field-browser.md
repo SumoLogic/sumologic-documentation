@@ -1,8 +1,10 @@
 ---
 id: show-hide-fields-in-field-browser
+title: Show and Hide Fields in the Field Browser
+description: Change the fields that are displayed in search results by showing or hiding in the Field Browser.
 ---
 
-# Show and Hide Fields in the Field Browser
+
 
 You can change the fields displayed in your search results in the Field Browser. Displayed fields are shown in the **Display Fields** section and are checked, while hidden fields are in the **Hidden Fields** section and do not have a checkmark.
 

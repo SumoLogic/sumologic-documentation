@@ -18,7 +18,7 @@ description: Use Root Cause Explorer for AWS to troubleshoot incidents with apps
 
 Root Cause Explorer helps you correlate unusual spikes, referred to as *Events of Interest (EOIs)*, in AWS CloudWatch metrics, Open Telemetry trace metrics, host metrics, and Kubernetes metrics using the context associated with the incident. Such incident context includes timeline, stack (for example, AWS, Kubernetes, Application/Services), namespaces, resource identifiers, tags, metric type, metric name and more.
 
-Given an alert, for instance, a microservice in AWS us-west-2 experiencing unusual user response times, an on-call user can use Root Cause Explorer to correlate EOIs on over 500 AWS CloudWatch metrics over 15 AWS service namespaces (such as EC2, RDS, and so on), Kubenetes metrics, and trace data, to isolate the probable cause to a specific set of EC2 instances, serving the given microservice in AWS us-west-2 that may be overloaded. 
+Given an alert, for instance, a microservice in AWS us-west-2 experiencing unusual user response times, an on-call user can use Root Cause Explorer to correlate EOIs on over 500 AWS CloudWatch metrics over 15 AWS service namespaces (such as EC2, RDS, and so on), Kubernetes metrics, and trace data, to isolate the probable cause to a specific set of EC2 instances, serving the given microservice in AWS us-west-2 that may be overloaded. 
 
 Root Cause Explorer supports the following AWS namespaces by processing CloudWatch metrics data and computing EOIs:
 
@@ -53,7 +53,7 @@ The screenshot below shows the Root Cause Explorer UI.
 
 Root Cause Explorer is built to enable six concepts that accelerate troubleshooting and issue resolution. These concepts should be familiar to on-call staff, DevOps, and infrastructure engineers. 
 
-### Concept 1:Abnormal spikes are symptoms of an underlying problem
+### Concept 1: Abnormal spikes are symptoms of an underlying problem
 
 A spike in a metric on a resource is a sign of an underlying problem. Larger spikes compared to the expected baseline and longer-lasting spikes require closer attention than other spikes. 
 
@@ -74,19 +74,15 @@ In a complex system, many resources may behave anomalously within the short time
 * AWS region
 * AWS Namespace
 * Entity (resource identifier)
-
-    :::note
-    If an AWS X-Ray source is configured, services show as entities in the entity dimension. 
-    :::
-
+:::note
+If an AWS X-Ray source is configured, services show as entities in the entity dimension. 
+:::
 * AWS tags
 * Golden signals: error, latency, throughput, bottleneck
 * Metric name  
-
-    :::note
-    If an X-Ray source is configured, throughput, load, latency, and error metrics corresponding to service entities are shown in this dimension.
-    :::
-
+  :::note
+  If an X-Ray source is configured, throughput, load, latency, and error metrics corresponding to service entities are shown in this dimension.
+  :::
 * Advanced filters
     * Metric periodicity
     * Metric stability
@@ -146,7 +142,7 @@ If you've read the [Google SRE handbook](https://landing.google.com/sre/sre-boo
 
 ## Set up Root Cause Explorer
 
-Before you begin, ensure that your organization is entitled to the appropriate features. The account types and levels that support Root Cause Explorer are listed in [Availability](#availability), above. The [AWS Observability Solution](/docs/observability/aws-observability-solution/) is a prerequisite for AWS customers. If you have Kubernetes and tracing metrics, collection should be configured. For information about collecting Kubernetes and and Tracing metrics, see [Set up collection for Kubernetes](kubernetes-solution/collection-setup.md) and Getting Started with Transaction Tracing.
+Before you begin, ensure that your organization is entitled to the appropriate features. The account types and levels that support Root Cause Explorer are listed in [Availability](#availability), above. The [AWS Observability Solution](/docs/observability/aws/) is a prerequisite for AWS customers. If you have Kubernetes and tracing metrics, collection should be configured. For information about collecting Kubernetes and and Tracing metrics, see [Set up collection for Kubernetes](kubernetes/collection-setup.md) and Getting Started with Transaction Tracing.
 
 You set up Root Cause Explorer using an [AWS CloudFormation template](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/sumologic_observability.master.template.yaml). The template installs the AWS Inventory Source and optionally, the AWS X-Ray source, in your Sumo Logic account. The AWS Inventory Source collects metadata and topology relationships for resources belonging to the namespaces listed below:
 
@@ -161,11 +157,7 @@ You set up Root Cause Explorer using an [AWS CloudFormation template](https://su
 * AWS/API Gateway
 * AWS/ECS 
 * AWS/Elasticache
-* AWS/Autoscaling. 
-
-    :::note
-    Auto Scaling data is used only for topology inference. CloudWatch metrics related to Auto Scaling groups are not supported at this time.
-    :::
+* AWS/Autoscaling. Auto Scaling data is used only for topology inference. CloudWatch metrics related to Auto Scaling groups are not supported at this time.
 
 If you don’t already have the Sumo Logic CloudWatch Source for Metrics configured, the template will install the source to collect AWS CloudWatch metrics from the account permissioned by the credential provided in the template. The CloudFormation template gives you the option to configure an AWS X-Ray source, if required. 
 
@@ -173,28 +165,11 @@ The CloudFormation template relies on the IAM role policies listed in the [Appen
 
 ## Root Cause Explorer features
 
-Root Cause Explorer adds dashboards at the following levels in the AWS Observability hierarchy:
+Root Cause Explorer provides filters that you can use to narrow your EOIs. For more information, see [Search Filters for AWS and hosts](#search-filters-for-aws-and-hosts).
 
-* Account
-* Region
-* Namespace
-* Entity
+You can also adjust the timeline to match the context—for example, if you know that an incident happened in the last 60 minutes, pick that duration in the duration picker. If you are concerned about errors, pick the Error legend in the EOI panel to filter EOIs by metric type. Click an error EOI to view its details.
 
-Each AWS Observability dashboard shows EOIs filtered for that level in the hierarchy. Each dashboard renders a scatter plot of EOIs at the appropriate level in the Explore hierarchy. The x-axis shows the duration based on start and end time of the EOI. The y-axis renders the intensity, measured by the percent of drift from the expected value. 
-
-From the Events of Interest panel at the account, region, namespace, or entity levels, launch the Root Cause Explorer tab to begin troubleshooting.
-
-![open-in-rce.png](/img/rce/open-in-rce.png)
-
-Note that the context of the EOI is carried over from the Explore view. For example, if the Events of Interest view is launched from the region-level Events of Interest dashboard, the region filter will be pre-filled in the Events of Interest tab. 
-
-![rce-top-entities.png](/img/rce/rce-top-entities.png)
-
-You can expand the filters area to view and use advanced filters. For more information, see [Search Filters for AWS and hosts](#search-filters-for-aws-and-hosts).
-
-Next, change the time line to match the context—for example, if you know that an incident happened in the last 60 minutes, pick that duration in the duration picker. If you are concerned about errors, pick the Error legend in the EOI panel to filter EOIs by metric type. Click an error EOI to view its details. 
-
-In the screenshot below, an EOI on a DynamoDB is shown. Click an EOI bubble to view its details and the details of the underlying time series in the right-hand panel. Next, click the namespace filter and view the list of impacted namespaces with their count of EOIs. Pick the top namespaces based on EOI count—these represent the prime suspects with respect to the incident. 
+In the screenshot below, an EOI on a DynamoDB is shown. Click an EOI bubble to view its details and the details of the underlying time series in the right-hand panel. Next, click the namespace filter and view the list of impacted namespaces with their count of EOIs. Pick the top namespaces based on EOI count—these represent the prime suspects with respect to the incident.
 
 ![rce-summary-infrastructure2.png](/img/rce/rce-summary-infrastructure2.png)
 
@@ -216,38 +191,20 @@ You can open the Root Cause Explorer by clicking **+ New** in the Sumo Logic UI,
 
 To open the Root Cause Explorer from the Explore UI:
 
-1. Click **+ New** and select **Explore**.   
+1. Click **+ New** and select **Root Cause**.<br/> ![new root cause.png](/img/rce/new-explore.png)  
+2. Root Cause Explorer opens, displaying EOIs for the currently selected filters and time range.![rce](/img/rce/rce1.png)
 
-    ![new-explore.png](/img/rce/new-explore.png)  
-     
-1. Explore appears. The left pane displays your collapsed AWS resource hierarchy showing the top level resources, AWS accounts. The right pane displays the **AWS Account Overview** dashboard for the AWS account that’s selected in the left pane.  
+If resources are connected based on the infrastructure topology or Service Map linkages, Root Cause Explorer may group multiple EOI into a single EOI on the scatter plot. For example, CPU spikes on 10 EC2 instances in the same autoscaling group would appear as a EOI in the scatter plot. In this case, the composite EOI is considered the parent EOI, and the 10 others, its children.
 
-    ![explorer-default.png](/img/rce/explorer-default.png)  
-     
-1. Use the controls in the left pane to expand the resource hierarchy and select the desired resource.  
+Until you click on an EOI, the right pane will list the **Top Contributing Entities**—the entities that are likely to be related to the root cause based on timeline, duration and other factors.  
 
-    ![prod-hierarchy.png](/img/rce/prod-hierarchy.png)  
-     
-1. Select the **\<resource-type\> Events of Interest** dashboard from
-    the **Dashboards** pulldown.  
+3. Click an EOI. Note that a popup, described below in [EOI stats](#eoi-stats), displays key information about the event. The right pane now contains a Summary tab and an Entities tab, described below in [Summary tab](#summary-tab) and [Entities tab](#entities-tab).  
 
-    ![select-dashboard.png](/img/rce/select-dashboard.png)  
-     
-1. Select **Open in Root Cause Explorer** from the three-dot menu in
-    the visualization pane.  
-
-    ![open-in-rce.png](/img/rce/open-in-rce.png)
-1. Root Cause Explorer opens, displaying EOIs for the currently selected filters and time range.  If resources are connected based on the infrastructure topology or Service Map linkages, Root Cause Explorer may group multiple EOI into a single EOI on the scatter plot. For example, CPU spikes on 10 EC2 instances in the same autoscaling group would appear as a EOI in the scatter plot. In this case, the composite EOI is considered the parent EOI, and the 10 others, its children. Until you click on an EOI, the right pane will list the **Top Contributing Entities**—the entities that are likely to be related to the root cause based on timeline, duration and other factors.  
-
-    ![rce-top-entities.png](/img/rce/rce-top-entities.png)
-
-1. Click an EOI. Note that a popup, described below in [EOI stats](#eoi-stats), displays key information about the event. The right pane now contains a Summary tab and an E tab, described below in [Summary tab](#summary-tab) and [Entities tab](#entities-tab).  
-
-    ![rce-summary-infrastructure2.png](/img/rce/rce-summary-infrastructure2.png)
+    ![rce2](/img/rce/rce2.png)
 
 ### Search Filters for AWS and hosts
 
-The filters at the top of the Root Cause Explorer page allow you to filter the EOIs that appear. Correlation of Events of Interest at the application/service, Kubernetes, AWS and host layers of the stack is a key strategy for root cause analysis. Search filters allow users to analyze such correlations. 
+The filters at the top of the Root Cause Explorer page allow you to filter the EOIs that appear. Correlation of Events of Interest at the application/service, Kubernetes, AWS and host layers of the stack is a key strategy for root cause analysis. Search filters allow users to analyze such correlations.
 
 ![automatic-filters.png](/img/rce/automatic-filters.png)
 
@@ -361,7 +318,6 @@ Of course, in a real situation, only the top level symptom, in this case, either
 
 1. View an alert indicating that "ELB 5xx (unhealthy targets) has spiked in AWS account = 1234". This could be an alert on CloudWatch metrics triggered by a Sumo Logic monitor. 
 1. In AWS Observability, navigate to the AWS account = 1234.
-1. In AWS Observability, launch the Root Cause Explorer tab from AWS account = 1234 node.
 
 In Root Cause Explorer, perform the following steps:
 
@@ -393,7 +349,7 @@ The attributes in the view are defined in the table below.
 |--|--|
 | `anomalyValues` | Statistics about the time series in the EOI window - min, max, avg.
 | `autoCorrelation` | A measure of the periodicity of the underlying time series.
-| `domain` | Identifies the source of the time series data:<ul><li>aws</li><li>k8s</li><li>app. Application services instrumented with Sumo Logic [Tracing](/docs/apm/traces).</li><li>host. A [Host Metrics source](../send-data/sources/installed-collectors/host-metrics-source.md) on a Sumo Logic Installed Collector.</li></ul> |
+| `domain` | Identifies the source of the time series data:<ul><li>aws</li><li>k8s</li><li>app. Application services instrumented with Sumo Logic [Tracing](/docs/apm/traces).</li><li>host. A [Host Metrics source](docs/send-data/installed-collectors/sources/host-metrics-source.md) on a Sumo Logic Installed Collector.</li></ul> |
 | `drift` | The percentage deviation of the time series from the expected value. |
 | `endTime` | The end time of the EOI, in epoch milliseconds. |
 | `eventType` | The golden signal class for the EOI: Latency, Load, Bottleneck, Error, Throughput, Success, or Availability. For more information about golden signals, see the [Google SRE handbook](https://landing.google.com/sre/sre-book/chapters/preface/). |
@@ -550,7 +506,7 @@ event in groups to be returned.
 
 ### Amazon CloudWatch Source Metrics Source
 
-For information about Sumo Logic's CloudWatch source, see [Amazon CloudWatch Source for Metrics](../send-data/sources/hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics.md).
+For information about Sumo Logic's CloudWatch source, see [Amazon CloudWatch Source for Metrics](docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md).
 
 ### AWS Inventory Source
 

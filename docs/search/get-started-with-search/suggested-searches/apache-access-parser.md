@@ -2,6 +2,7 @@
 id: apache-access-parser
 title: Suggested Searches for the Apache Access Parser
 sidebar_label: Apache Access Parser
+description: The following searches were built for use with the Apache Errors Parser.
 ---
 
 

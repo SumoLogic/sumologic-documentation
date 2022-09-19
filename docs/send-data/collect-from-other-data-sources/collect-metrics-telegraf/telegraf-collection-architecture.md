@@ -1,9 +1,10 @@
 ---
 id: telegraf-collection-architecture
 title: Telegraf Collection Architecture
+description: Learn about using Telegraf in metric collection pipelines, inside Kubernetes and in non-Kubernetes environments.
 ---
 
-#
+
 
 This topic has information about using Telegraf to obtain metrics from an application and to send those metrics to Sumo Logic. 
 

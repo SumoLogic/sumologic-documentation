@@ -215,7 +215,7 @@ Enter in values for the following parameters (marked `CHANGEME` above):
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Tomcat Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Tomcat input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section, which is `[[inputs.Tomcat]]`:
         * `servers` - The URL to the Tomcat server. This can be a comma-separated list to connect to multiple Tomcat servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/tomcat) for more information on additional parameters for configuring the Tomcat input plugin for Telegraf.
-    * In the tags section, whis is `[inputs.Tomcat.tags]`
+    * In the tags section, which is `[inputs.Tomcat.tags]`
         * `environment` - This is the deployment environment where the Tomcat farm identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `webserver_farm` - Enter a name to identify this Tomcat farm. This farm name will be shown in the Sumo Logic dashboards.
     * In the input plugins section, which is `[[inputs.jolokia2_agent]]`:
@@ -342,7 +342,7 @@ We use the Telegraf operator for Apache Tomcat metric collection and Sumo Logic 
 
 <img src={useBaseUrl('img/integrations/web-servers/apache-nonk8s.png')} alt="apache-nonk8s" />
 
-Telegraf runs on the same system as Apache Tomcat and uses the [Apache Tomcat ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached#configuration) and [Jolokia2](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) input plugin to obtain Apache Tomcat metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Apache Tomcat on the other hand are sent to a Sumo Logic Local File source.
+Telegraf runs on the same system as Apache Tomcat and uses the [Apache Tomcat](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached#configuration) and [Jolokia2](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) input plugin to obtain Apache Tomcat metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Apache Tomcat on the other hand are sent to a Sumo Logic Local File source.
 
 This section provides instructions for configuring metrics collection for the Sumo Logic App for Apache Tomcat. Follow the below instructions to set up the metric collection:
 
@@ -361,11 +361,11 @@ This section provides instructions for configuring metrics collection for the Su
 
 1. **Configure a Hosted Collector**
 
-    To create a new Sumo Logic hosted collector, perform the steps in the[ Create a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
+    To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/hosted-collectors#create-a-hosted-collector) section of the Sumo Logic documentation.
 
 1. **Configure an HTTP Logs and Metrics Source**
 
-    Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
+    Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/hosted-collectors/http-source/logs-metrics)Make a note of the **HTTP Source URL**.
 
 1. **Install Telegraf**
 
@@ -588,19 +588,19 @@ Log format description: [https://tomcat.apache.org/tomcat-8.0-doc/config/valve.h
 Log format description: [https://docs.oracle.com/javase/8/docs/api/java/util/logging/SimpleFormatter.html](https://docs.oracle.com/javase/8/docs/api/java/util/logging/SimpleFormatter.html)
 3. Tomcat Garbage Collection (GC) logs \
 Log format description: [https://stackoverflow.com/questions/4468546/explanation-of-tomcat-gc-log-statements](https://stackoverflow.com/questions/4468546/explanation-of-tomcat-gc-log-statements)
-1. **Configure Tomcat to log to a Local file**. By default, Tomcat logs are stored in /usr/share/tomcat/logs/ The default directory for log files is listed in the /usr/share/tomcat/conf/logging.properties file. Logs from the Tomcat log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) as explained in the next section.
+1. **Configure Tomcat to log to a Local file**. By default, Tomcat logs are stored in /usr/share/tomcat/logs/ The default directory for log files is listed in the /usr/share/tomcat/conf/logging.properties file. Logs from the Tomcat log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) as explained in the next section.
 
 1. **Configuring a Collector**. To collect logs directly from the Tomcat machine, configure an[ Installed Collector](/docs/send-data/Installed-Collectors).
 
 1. **Configuring a Source**. To add a Local File Source source for Apache Tomcat do the following** To collect logs directly from your Tomcat machine, use an Installed Collector and a Local File Source.
 
-1. Add a[ Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+1. Add a[ Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 2. Configure the Local File Source fields as follows:
 * **Name.** (Required)
 * **Description.** (Optional)
 * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in **/usr/share/tomcat/logs/***. If you're using a customized path, check the Tomcat.conf file for this information.
 * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-* **Source Category.** Enter any string to tag the output collected from this Source, such as **Tomcat/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+* **Source Category.** Enter any string to tag the output collected from this Source, such as **Tomcat/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
 
         **Fields. **Set the following fields:
 
@@ -786,7 +786,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
+Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 
 3. To install the app, complete the following fields.
 1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -831,7 +831,7 @@ The **Apache Tomcat - Visitor Locations** Dashboard provides a high-level view o
 * **Worldwide.** Uses a geo lookup operation to display worldwide visitor locations by IP address on a map of the world, which allows you to see a count of hits per location for the last 24 hours.
 * **Visits by Country Over Time.** Displays the number of visitors by country in a stacked column chart on a timeline for the last hour.
 * **United States.** Uses a geo lookup operation to display US visitor locations by IP address on a map of the world, which allows you to see a count of hits per location for the last 24 hours.
-* **Visits by US Sate Over Time.** Displays the number of US visitors by state in a stacked column chart on a timeline for the last hour.
+* **Visits by US State Over Time.** Displays the number of US visitors by state in a stacked column chart on a timeline for the last hour.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Visitor-Locations.png')} alt="test" />
 

@@ -1,8 +1,10 @@
 ---
 id: view-search-results-json-logs
+title: View Search Results for JSON Logs
+description: If your search results contain JSON logs, you can expand or collapse the view on the Messages tab to show or hide the JSON format and structure.
 ---
 
-# View Search Results for JSON Logs
+
 
 If your search returns fields that are valid JSON objects, you can expand or collapse the view on the **Messages** tab to show or hide the JSON substructure, or present the messages as formatted JSON code.
 

@@ -1,16 +1,17 @@
 ---
 id: general-search-examples-cheatsheet
-description: Find query examples in this search cheatsheet.
+title: General Search Examples Cheat Sheet
+sidebar_label: General Search Examples
+description: The General Search Examples cheat sheet provides examples of useful search queries for different use cases.
 ---
 
-# General Search Examples Cheat Sheet
 
 :::sumo Query Library
 For a collection of customer created search queries and their use cases, see the [Sumo Logic Community Query Library](https://community.sumologic.com/s/topic/0TOE0000000g86fOAA/Query-Library).
 :::
 
 :::note
-For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quick Start Tutorial](/docs/quickstart).  
+For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quick Start Tutorial](https://learn.sumologic.com).  
 :::
 
 The examples use this sample Apache log message where applicable:
@@ -54,7 +55,7 @@ Extract "from" and "to" fields. For example, if a raw event contains "From: Jane
 * | parse "From: * To: *" as (from, to)
 ```
 
-Extract the source IP addresses using a regular expression for the four octets of an IP address. 
+Extract the source IP addresses using a regular expression for the four octets of an IP address.
 
 ```sql
 *| parse regex "(\<src_i\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
@@ -63,16 +64,16 @@ Extract the source IP addresses using a regular expression for the four octets 
 Identify all URL addresses visited, extract them as the "url" field.                                                         
 
 ```sql
-_sourceCategory=apache  
+_sourceCategory=apache 
 | parse "GET * " as url
 ```
 
 Identify traffic from Source Category "apache" and extract the source addresses, message sizes, and the URLs visited.
 
 ```sql
-_sourceCategory=apache 
-| parse "* " as src_IP 
-| parse " 200 * " as size 
+_sourceCategory=apache
+| parse "* " as src_IP
+| parse " 200 * " as size
 | parse "GET * " as url
 ```
 
@@ -93,7 +94,7 @@ _sourceCategory=apache 
 | avg(size)
 ```
 
-For the Source Category "apache", extract src, size, and URL even if the size field is missing from the log message (nodrop). 
+For the Source Category "apache", extract src, size, and URL even if the size field is missing from the log message (nodrop).
 
 ```sql
 _sourceCategory=apache 
@@ -102,7 +103,7 @@ _sourceCategory=apache 
 | parse "GET * " as url
 ```
 
-Identify the number of times a URL has been visited. 
+Identify the number of times a URL has been visited.
 
 ```sql
 _sourceCategory=apache 
@@ -156,36 +157,36 @@ _sourceCategory=apache 
 ```
 
 :::sumo More Info
-For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](../search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent.md), and [Top](../search-query-language/search-operators/top.md).
+For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent), and [Top](../search-query-language/search-operators/top.md).
 :::
 
 ## Timeslice and Transpose
 
-For the Source Category "apache", count by status_code and timeslice of 1 hour.	
+For the Source Category "apache", count by status_code and timeslice of 1 hour.
 
 ```sql
-_sourceCategory=apache* 
-| parse "HTTP/1.1\" * * \"" as (status_code, size) 
-| timeslice 1h 
+_sourceCategory=apache*
+| parse "HTTP/1.1\" * * \"" as (status_code, size)
+| timeslice 1h
 | count by _timeslice, status_code
 ```
 
 For the Source Category "apache", count by status_code and timeslice of 1 hour, transpose status_code to column.
 
 ```sql
-_sourceCategory=apache* 
-| parse "HTTP/1.1\" * * \"" as (status_code, size) 
-| timeslice 1h 
-| count by _timeslice, status_code 
+_sourceCategory=apache*
+| parse "HTTP/1.1\" * * \"" as (status_code, size)
+| timeslice 1h
+| count by _timeslice, status_code
 | transpose row _timeslice column status_code
 ```
 
 For the Source Category "apache", count by status_code and timeslice into 5 buckets over search result.
 
 ```sql
-_sourceCategory=apache* 
-| parse "HTTP/1.1\" * * \"" as (status_code, size) 
-| timeslice 5 buckets 
+_sourceCategory=apache*
+| parse "HTTP/1.1\" * * \"" as (status_code, size)
+| timeslice 5 buckets
 | count by _timeslice, status_code
 ```
 
@@ -206,17 +207,17 @@ Or alternately you can use:
 
 ```sql
 _sourceCategory=Apache/Access
-| timeslice 15m 
+| timeslice 15m
 | if(status_code matches "20*","200s",
 if(status_code matches "30*","300s",
 if(status_code matches "40*","400s",
 if(status_code matches "50*","500s","Other")))) as status_code_group
 | count by _timeslice, status_code_group
-| transpose row _timeslice column status_code_group 
+| transpose row _timeslice column status_code_group
 ```
 
 :::sumo More Info
-For more information, see [Timeslice](../search-query-language/search-operators/timeslice.md) and [Transpose](../search-query-language/search-operators/transpose.md).
+For more information, see [Timeslice](docs/search/search-query-language/search-operators/timeslice.md) and [Transpose](../search-query-language/search-operators/transpose.md).
 :::
 
 ## Conditional Operators
@@ -224,41 +225,41 @@ For more information, see [Timeslice](../search-query-language/search-operators
 For the Source Category "apache", find all messages with a client error status code (40*):
 
 ```sql
-_sourceCategory=apache* 
-| parse "HTTP/1.1\" * * \"" as (status_code, size) 
+_sourceCategory=apache*
+| parse "HTTP/1.1\" * * \"" as (status_code, size)
 | where status_code matches "40*"
 ```
 
 For the Source Category "apache", count hits by browser:
 
 ```sql
-_sourceCategory=Apache/Acces
-| extract "\"[A-Z]+ \S+ HTTP/[\d\.]+\" \S+ \S+ \S+ \"(?<agent>[^\"]+?)\"" 
-| if (agent matches "*MSIE*",1,0) as ie 
-| if (agent matches "*Firefox*",1,0) as firefox 
-| if (agent matches "*Safari*",1,0) as safari 
-| if (agent matches "*Chrome*",1,0) as chrome 
+_sourceCategory=Apache/Access
+| extract "\"[A-Z]+ \S+ HTTP/[\d\.]+\" \S+ \S+ \S+ \"(?<agent>[^\"]+?)\""
+| if (agent matches "*MSIE*",1,0) as ie
+| if (agent matches "*Firefox*",1,0) as firefox
+| if (agent matches "*Safari*",1,0) as safari
+| if (agent matches "*Chrome*",1,0) as chrome
 | sum(ie) as ie, sum(firefox) as firefox, sum(safari) as safari, sum(chrome) as chrome
 ```
 
 Use the where operator to match only weekend days.
 
 ```sql
-* | parse "day=*:" as day_of_week 
+* | parse "day=*:" as day_of_week
 | where day_of_week in ("Saturday","Sunday")
 ```
 
 Identify all URLs that contain the subdirectory "Courses" in the path.
 
 ```sql
-*| parse "GET * " as url 
+*| parse "GET * " as url
 | where url matches "*Courses*"
 ```
 
-Find version numbers that match numeric values 2, 3 or 1. Use the num operator to change the string into a number.	
+Find version numbers that match numeric values 2, 3 or 1. Use the num operator to change the string into a number.
 
 ```sql
-* | parse "Version=*." as number | num(number) 
+* | parse "Version=*." as number | num(number)
 | where number in (2,3,6)
 ```
 
@@ -271,7 +272,7 @@ For more information, see [Where](../search-query-language/search-operators/wher
 Use Sumo Logic’s clustering algorithm to look for patterns in error/exception incidents in your deployment.
 
 ```sql
-exception* or fail* or error* or fatal* 
+exception* or fail* or error* or fatal*
 | logreduce
 ```
 
@@ -285,4 +286,4 @@ For any query, you can increase specificity by adding metadata fields to the key
 
 Edit Source metadata in the **Collection** tab.
 
-For details see [Search Metadata](../get-started-with-search/search-basics/built-in-metadata.md).
+For details see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).

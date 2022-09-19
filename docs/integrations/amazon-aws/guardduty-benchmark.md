@@ -17,7 +17,7 @@ For Trial and Enterprise account plans.
 
 The Sumo Logic **Amazon GuardDuty Benchmark App** integrates **Global Intelligence Service (GIS)** with Amazon GuardDuty for continuous machine learning and statistical baselines for KPIs (key performance indicators) and KRIs (key risk indicators). These baselines enable you to optimize security configuration and threat detection on all your AWS accounts.  
 
-Global Intelligence baselines are computed by aggregating data for a given customer across all source categories defined for Amazon GuardDuty. As result, to enable meaningful comparisons, the app must be provided with all the source categories in your Sumo Logic account that are associated with AWS GuardDuty. Follow the instructions on the [Custom Data Filters](/docs/get-started/library/run-searches-apps.md) page to set up your app with custom data filters, specifying multiple source categories for Amazon GuardDuty.
+Global Intelligence baselines are computed by aggregating data for a given customer across all source categories defined for Amazon GuardDuty. As result, to enable meaningful comparisons, the app must be provided with all the source categories in your Sumo Logic account that are associated with AWS GuardDuty. Follow the instructions on the [Custom Data Filters](/docs/get-started/sumo-logic-apps#custom-data-filters) page to set up your app with custom data filters, specifying multiple source categories for Amazon GuardDuty.
 
 The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment, including threat sources and targets by geographic locations.
 
@@ -33,7 +33,7 @@ If you have already Amazon GuardDuty data flowing into Sumo Logic, you can skip 
 :::
 
 :::note
-These tasks require the Manage Collectors and Manage Access Keys [role capabilities](https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities).
+These tasks require the Manage Collectors and Manage Access Keys [role capabilities](/docs/manage/users-and-roles/roles/role-capabilities).
 :::
 
 Sumo Logic provides a SAM application based on [AWS Serverless Application Model (SAM) specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html), and is published in the [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/). This SAM deployment:

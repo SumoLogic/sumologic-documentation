@@ -240,8 +240,8 @@ This section provides instructions for configuring metrics collection for the Su
 
 #### Configure Metrics Collection  
 
-1. Configure a Hosted Collector. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
-2. Configure a HTTP Logs and Metrics Source. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Make a note of the **HTTP Source URL**.
+1. Configure a Hosted Collector. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
+2. Configure a HTTP Logs and Metrics Source. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the **HTTP Source URL**.
 3. Install Telegraf. Use the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf on each database server node
 4. Configure and start Telegraf. As part of collecting metrics data from Telegraf, we will use the [Postgresql extensible input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/postgresql_extensible) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
    1. Create or modify telegraf.conf in `/etc/telegraf/telegraf.d/` and copy and paste the text from this [file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_input_output_plugin_onprem.txt).
@@ -294,13 +294,13 @@ Perform the steps outlined below for each PostgreSQL database server.
      ```
 2. Configure an Installed Collector. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector](/docs/send-data/Installed-Collectors).
 3. Configuring a Local File Source. To add a Local File Source source for PostgreSQL do the following:
-   1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) in the installed collector configured in the previous step.
+   1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:
      * **Name.** (Required)
      * **Description.** (Optional)
      * **File Path (Required).** Enter the path to your log file.By default postgreSQL log files are located in `/var/lib/pgsql/<version>/data/log/*.log`  
      * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
-     * **Source Category.** Enter any string to tag the output collected from this Source, such as **PostgreSQL/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+     * **Source Category.** Enter any string to tag the output collected from this Source, such as **PostgreSQL/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
    * **Fields.** Set the following fields:
     ```sql
     component = database
@@ -360,7 +360,7 @@ At this point, PostgreSQL logs should start flowing into Sumo Logic.
 
 This section provides instructions for installing the Sumo App and Alerts for PostgreSQL, as well as the descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in the Collect Logs and Metrics from PostgreSQL App section.
 
-Sumo Logic has provided out of the box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your PostgreSQL cluster. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations. For details on the individual alerts, please see [the alerts section](#Alerts).
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your PostgreSQL cluster. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations. For details on the individual alerts, please see [the alerts section](#Alerts).
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing them a JSON or a Terraform script.
 
@@ -457,7 +457,7 @@ Now that you have set up log and metric collection for PostgreSQL, you can insta
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom PostgreSQL cluster filter. Examples:
@@ -765,7 +765,7 @@ Here are the metrics available for PostgreSQL.
 
 ## PostgreSQL Alerts
 
-Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 **Sumo Logic provides the following out-of-the-box alerts for PostgreSQL:**
 

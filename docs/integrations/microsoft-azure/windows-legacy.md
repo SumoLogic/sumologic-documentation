@@ -77,7 +77,7 @@ To configure a collector and source, do the following:
 
 Events retain their default text format from Windows.
 
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/installed-collectors/Remote-Windows-Event-Log-Source).
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/Remote-Windows-Event-Log-Source).
 
 
 ## Installing the Windows Legacy App
@@ -89,7 +89,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     * **Data Source.** Select either of these options for the data source. 

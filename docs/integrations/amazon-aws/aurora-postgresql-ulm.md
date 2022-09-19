@@ -173,13 +173,13 @@ This section provides instructions for setting up AWS CloudTrail Source to colle
 
 To collect AWS CloudTrail events, do the following:
 
-1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Add an [AWS CloudTrail Source](/docs/send-data/sources/hosted-collectors/amazon-web-services/aws-cloudtrail-source.md) to the Hosted Collector, providing the following information:
+1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to the Hosted Collector, providing the following information:
    * **Name** - Enter a name to display for the new Source.
    * **Description** - Enter an optional description.
    * **S3 Region** - Select the Amazon Region for your CloudTrail Aurora S3 bucket.
    * **Bucket Name** - Enter the exact name of your CloudTrail Aurora S3 bucket.
-   * **Path Expression** - Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string. DO NOT use a leading forward slash; see [Amazon Path Expressions](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions)) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+   * **Path Expression** - Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string. DO NOT use a leading forward slash; see [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions)) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
    * **Source Category** - Enter a source category, for example, AWS/Cloudtrail.
    * **Access Key ID and Secret Access Key** - Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
    * **Scan Interval**. Use the default of 5 minutes, or enter a time interval frequency at which Sumo Logic will scan your S3 bucket for new data.
@@ -196,8 +196,8 @@ This section provides instructions setting up the collection of Aurora CloudWatc
 
 To collect Aurora CloudWatch metrics, do the following:
 
-1. Configure a [Hosted Collector.](/docs/send-data/configure-hosted-collector)
-2. Configure an [Amazon CloudWatch Metrics Source](/docs/send-data/sources/hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics), providing the following information:
+1. Configure a [Hosted Collector.](/docs/send-data/hosted-collectors/configure-hosted-collector)
+2. Configure an [Amazon CloudWatch Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics), providing the following information:
    * **Name** - Enter a name to display for the new Source.
    * **Description** - Enter an optional description.
    * **Regions** - Select your Amazon Regions for Amazon RDS.
@@ -215,7 +215,7 @@ To install the app, do the following:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 

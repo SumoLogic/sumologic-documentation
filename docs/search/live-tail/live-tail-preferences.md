@@ -1,8 +1,10 @@
 ---
 id: live-tail-preferences
+title: Live Tail Preferences
+description: You can change the preferences for Live Tail line spacing, message text size, and message color.
 ---
 
-# Live Tail Preferences
+
 
 Live Tail preferences allow you to change the appearance of line spacing, size of your message text, and your message color.
 

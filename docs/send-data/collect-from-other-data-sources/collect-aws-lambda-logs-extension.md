@@ -1,9 +1,10 @@
 ---
 id: collect-aws-lambda-logs-extension
 title: Collect AWS Lambda Logs using an Extension
+description: Learn to collect the AWS Lambda logs through an extension.
 ---
 
-#
+
 
 [AWS Lambda Extensions](https://aws.amazon.com/blogs/compute/introducing-aws-lambda-extensions-in-preview/) enable us to more easily integrate into the AWS Lambda execution environment to control and participate in the AWS Lambda lifecycle and the AWS Lambda Logs API enables us to collect AWS Lambda logs. Sumo Logic, therefore, has developed a new open-source AWS Lambda extension that is a lightweight process that runs within the same execution environment as your Lambda functions and uses the Lambda logs API to send platform, function, and extension logs to Sumo Logic. Sumo Logic's Lambda Extension works with AWS Lambda functions that are built for both x86_64 and ARM 64 (Graviton2) architectures. 
 
@@ -34,8 +35,8 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 
 To add a hosted collector and HTTP source, do the following:
 
-1. Create a new Sumo Logic Hosted Collector by performing the steps in [Configure a Hosted Collector](../configure-hosted-collector.md).
-1. Create a new HTTP Log Source in the hosted collector created above by following [these instructions.](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source)
+1. Create a new Sumo Logic Hosted Collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+1. Create a new HTTP Log Source in the hosted collector created above by following [these instructions.](/docs/send-data/hosted-collectors/http-source/logs-metrics)
 
 ## Step 2: Adding the Sumo Logic Lambda Extension to your AWS Lambda function
 
@@ -156,7 +157,7 @@ Add the following environment variables to your Lambda function:
     }
     ```
 
-   * Configure a [Sumo Logic AWS S3](../sources/hosted-collectors/amazon-web-services/aws-s3-source.md)  source with the same source category as that of the HTTP Source created in Step 1 to read from this bucket.
+   * Configure a [Sumo Logic AWS S3](../hosted-collectors/amazon-aws/aws-s3-source.md)  source with the same source category as that of the HTTP Source created in Step 1 to read from this bucket.
 
     :::note
     Logs from the Sumo Logic Lambda extension are stored and compressed in the following prefix path     `sumologic-extension/<aws-region>/<Function>/<Version>/<Year>/<Month>/<Day>/<Hour>/<Min>/<UUID>.gz`

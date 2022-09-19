@@ -80,7 +80,7 @@ will produce results with each module represented with a distinct color, similar
 
 ![Transpose_operator_errors_by_module](/img/reuse/query-search/Transpose_operator_errors_by_module.png)
 
-Try changing the Stacking setting (under Change Properties) to **Normal** to see how graphs are affected by this option. For more information, see [Chart Search Results](../../get-started-with-search/search-basics/chart-search-results.md).
+Try changing the Stacking setting (under Change Properties) to **Normal** to see how graphs are affected by this option. For more information, see [Chart Search Results](/docs/search/get-started-with-search/search-basics/chart-search-results).
 
 ### View successful logins by user
 

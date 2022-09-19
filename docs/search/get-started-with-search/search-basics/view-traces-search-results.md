@@ -1,8 +1,10 @@
 ---
 id: view-traces-search-results
+title: View Traces Search Results
+description: Open and review traces from search log results.
 ---
 
-# View Traces Search Results
+
 
 In the Messages tab, some search results may have associated Traces data to review. You can right-click to drill-down and view the Trace View for any log entry with a Trace ID (`trace_id...`) or Span ID (`span_id...`). See View and [Investigate Traces] and [Traces] for more information.
 

@@ -51,7 +51,7 @@ Sumo Logic supports the collection of logs and metrics data from IIS server in s
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-flow.png')} alt="Collect Internet Information Services (IIS) Logs and Metrics for Standalone environments" />
 
-Sumo Logic uses the Telegraf operator for IIS metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about) for collecting IIS logs. The diagram below illustrates the components of the IIS collection in a standalone environment. Telegraf uses the [Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain IIS metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from IIS Server are collected by a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+Sumo Logic uses the Telegraf operator for IIS metric collection and the [Installed Collector](/docs/send-data/installed-collectors) for collecting IIS logs. The diagram below illustrates the components of the IIS collection in a standalone environment. Telegraf uses the [Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain IIS metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from IIS Server are collected by a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
 
 #### Configure Logs Collection
@@ -119,13 +119,13 @@ This section demonstrates how to configure sources for the following log types:
 * IIS Performance (Perfmon) Logs
 * **Configure Source for IIS Access Logs**
 
-This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/installed-collectors/Remote-File-Source), but the configuration is more complex.
+This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/Remote-File-Source), but the configuration is more complex.
 
 Sumo Logic recommends using a Local File Source whenever possible.
 
 To configure a local file source for IIS Access Logs, do the following:
 
-1. Configure a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+1. Configure a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 2. Specify Local File Source Fields as follows:
     1. **Name**: Required (for example, "IIS")
     2. **Description**. (Optional)
@@ -145,7 +145,7 @@ To configure a local file source for IIS Access Logs, do the following:
 
 3. Configure the Advanced section:
     8. Timestamp Parsing Settings: Make sure the setting matches the timezone on the log files.
-    9. Enable Timetamp Parsing: Select Extract timestamp information from log file entries.
+    9. Enable Timestamp Parsing: Select Extract timestamp information from log file entries.
     10. Time Zone: Select the option to Use time zone from log file. If none is present use: and set the timezone to UTC.
     11. Timestamp Format: Select the option to Automatically detect the format.
     12. Encoding. UTF-8 is the default, but you can choose another encoding format from the menu if your IIS logs are encoded differently.
@@ -160,7 +160,7 @@ This section demonstrates how to configure a Local File Source for HTTP Error Lo
 
 To configure a local file source for HTTP Error Logs, do the following:
 
-1. Configure a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+1. Configure a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 2. Specify the Local File Source Fields as follows:
     1. **Name**: Required (for example, "HTTP Error Logs")
     2. **Description**. (Optional)
@@ -178,7 +178,7 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
 
 3. Configure the Advanced section:
     8. Timestamp Parsing Settings: Make sure the setting matches the timezone on the log files.
-    9. Enable Timetamp Parsing: Select Extract timestamp information from log file entries.
+    9. Enable Timestamp Parsing: Select Extract timestamp information from log file entries.
     10. Time Zone: Select the option to Use time zone from log file. If none is present use: and set the timezone to UTC.
     11. Timestamp Format: Select the option to Automatically detect the format.
     12. Encoding. UTF-8 is the default, but you can choose another encoding format from the menu if your IIS logs are encoded differently.
@@ -193,12 +193,12 @@ This section demonstrates how to configure a Windows Performance Source, for use
 Sumo Logic recommends using a Local Windows Performance source whenever possible.
 
 Use the appropriate source for your environment:
-* [Local Windows Performance Monitor Log Source](/docs/send-data/sources/installed-collectors/local-windows-performance-monitor-log-source.md)
-* [Remote Windows Performance Monitor Log Source](/docs/send-data/sources/installed-collectors/remote-windows-performance-monitor-log-source.md)
+* [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source.md)
+* [Remote Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/remote-windows-performance-monitor-log-source.md)
 
 To configure a Source for IIS Performance Logs, do the following:
 
-1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/sources/installed-collectors/local-windows-performance-monitor-log-source.md).
+1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source.md).
 2. Configure the Local Windows Performance Source Fields as follows:
     * **Name**: Required (for example, "IIS Performance")
     * **Source Category** (Required). For example, Webserver/IIS/PerfCounter.
@@ -225,7 +225,7 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
 
 #### Set up a Sumo Logic HTTP Source
 
-1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/configure-hosted-collector.md) documentation.
+1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md) documentation.
 2. **Configure an HTTP Logs & Metrics source**:
     1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
     2. Select **HTTP Logs & Metrics_._**
@@ -543,7 +543,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom IIS Server farm filter. Examples:

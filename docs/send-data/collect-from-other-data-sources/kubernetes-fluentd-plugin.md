@@ -1,11 +1,13 @@
 ---
 id: kubernetes-fluentd-plugin
 title: Kubernetes Fluentd plugin
+description: Information on using the Sumo Kubernetes Fluentd plugin to collect logs from Kubernetes.
 ---
 
-#
 
+:::warning solution deprecated
 The configuration described on this page is deprecated. Sumo Logic recommends using the comprehensive Kubernetes solution instead.  
+:::
 
 To monitor Kubernetes, Sumo recommends using the open source FluentD agent to collect log data, rather than a Sumo collector.  
 
@@ -26,8 +28,8 @@ This integration is supported by Sumo Logic, with the help of a community of ope
 In this step you create, on the Sumo service, an HTTP endpoint to receive your logs. This process involves creating an HTTP source on a hosted collector in Sumo. In Sumo, collectors use sources to receive data.
 
 1. If you don’t already have a Sumo account, you can create one by clicking the Free Trial button on https://www.sumologic.com/.
-1. Create a hosted collector, following the instructions on [Configure a Hosted Collector](../configure-hosted-collector.md) in Sumo help. (If you already have a Sumo hosted collector that you want to use, skip this step.)
-1. Create an HTTP source on the collector you created in the previous step. For instructions, see [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) in Sumo help.
+1. Create a hosted collector, following the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) in Sumo help. (If you already have a Sumo hosted collector that you want to use, skip this step.)
+1. Create an HTTP source on the collector you created in the previous step. For instructions, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) in Sumo help.
 1. When you have configured the HTTP source, Sumo will display the URL of the HTTP endpoint. Make a note of the URL. You will use it when you configure the Kubernetes service to send data to Sumo.
 
 ## Step 2: Create a Kubernetes secret
@@ -201,7 +203,7 @@ spec:
 
 The recommended way to collect metrics from Kubernetes clusters is to use Heapster and a Sumo collector with a streaming metrics source.
 
-Heapster aggregates metrics across a Kubenetes cluster. Heapster runs as a pod in the cluster, and discovers all nodes in the cluster and queries usage information from each node's kubelet—the on-machine Kubernetes agent.
+Heapster aggregates metrics across a Kubernetes cluster. Heapster runs as a pod in the cluster, and discovers all nodes in the cluster and queries usage information from each node's kubelet—the on-machine Kubernetes agent.
 
 Heapster provides metrics at the cluster, node and pod level.
 

@@ -191,12 +191,11 @@ To create a new SLO:
     * **Throughput**. Select to track the throughput of services and processing.
     * **Availability**. Select to monitor the uptime of services.
     * **Other**. Select to monitor any other metric or log for SLIs.<br/><img src={useBaseUrl('img/observability/slo-create-type.png')} alt="Reliability Management SLO SLI" />
-
 4. Select the Evaluation Type which determines how the events are measured:
     * **Window-based**. Select the time frame window for the events. Window sizes should be between 1m to 60m.<br/><img src={useBaseUrl('img/observability/slo-create-window-base.png')} alt="Reliability Management SLO SLI" />
     * **Request-based.**<br/><img src={useBaseUrl('img/observability/slo-create-request-base.png')} alt="Reliability Management SLO SLI" />
 
-Select the **Query Type **to select and build your queries for the SLI data. You have a choice of Metrics or Logs with a ratio-based (partial against the total) or threshold-based (events amount against a set threshold amount) calculation. Review [Query recommendations](#Query_recommendations) before building.
+Select the **Query Type **to select and build your queries for the SLI data. You have a choice of Metrics or Logs with a ratio-based (partial against the total) or threshold-based (events amount against a set threshold amount) calculation. Review [Query recommendations](#Query-recommendations) before building.
 
 Follow the instructions below based on the query type:
 
@@ -208,17 +207,16 @@ Follow the instructions below based on the query type:
    </td>
   </tr>
   <tr>
-   <td>
-    For <strong>Ratio-based</strong> definition, define queries for the successful or unsuccessful events to calculate against total events:
+   <td>For <strong>Ratio-based</strong> definition, define queries for the successful or unsuccessful events to calculate against total events:
 <ol>
-<li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
+<li>Specify Total Events query.</li>
 <li>Build a query using metrics and filters. See <a href="/docs/metrics/introduction-metrics/overview-sumo-metrics">Overview of Metrics in Sumo</a>.</li>
 <li>Select the values to use from <strong>Number of data points </strong>or <strong>Metric value</strong>.</li>
 <li>Configure the Total Events, including a query and values, to use <strong>Number of data points</strong> or <strong>Metric value</strong>. You can copy and paste the previous query, removing filters to get the total.</li>
 </ol>
    </td>
    <td>
-    For <strong>Threshold-based</strong> definitions, which calculates against success criteria:
+    For <strong>Threshold-based</strong> definitions, which calculate against success criteria:
 <ol>
 <li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
 <li>Build a query using metrics and filters. See <a href="/docs/metrics/introduction-metrics/overview-sumo-metrics">Overview of Metrics in Sumo</a> for more information.</li>
@@ -240,7 +238,7 @@ Follow the instructions below based on the query type:
   </tr>
   <tr>
    <td>For <strong>Ratio-based</strong> definitions, which calculate successful or unsuccessful events against total events:
-<ol><li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
+<ol><li>Specify Total Events query.</li>
 <li>Search logs selecting and entering a log query. See <a href="/docs/search/get-started-with-search/search-basics/about-search-basics">About Search Basics</a> for more information.</li>
 <li>For <strong>Use values from</strong>, select the numeric value available for that query to pull data from.</li>
 <li>Then configure the <strong>Total Events</strong>, including a query and values. You can copy and paste the previous query, perhaps with filters removed to get the total.</li>
@@ -271,7 +269,7 @@ Follow the instructions below based on the query type:
 
 ### Importing SLOs (optional)
 
-To transfer data immediately and create an SLO using an import, you should first export JSON content to use that formatting. The Sumo Logic JSON format may change without notice. See [Export and Import Content in the Library](/docs/get-started/library/index.md) for complete details.
+To transfer data immediately and create an SLO using an import, you should first export JSON content to use that formatting. The Sumo Logic JSON format may change without notice. See [Export and Import Content in the Library](/docs/get-started/library#import-content) for complete details.
 
 To import an SLO:
 
@@ -519,7 +517,9 @@ Sumo Logic continuously computes data for your SLO behind the scenes. This data,
 View the schema by executing the following query:
 
 ```sql
-_view=sumologic_slo_output sloId = "000000000000008A"
+_view=sumologic_slo_output sloId="<your-SLO-ID>"
+| where [subquery: _view=sumologic_slo_output sloId="<your-SLO-ID>"
+| max(sloVersion) as sloVersion | compose sloVersion]
 -- (replace with a valid SLO Id)
 ```
 
@@ -536,7 +536,9 @@ A developer responsible for a microservice wants to create dashboard panels that
 The following query computes hourly SLI and error budget trend for a window-based SLO:
 
 ```sql
-_view=sumologic_slo_output sloId="<your-SLO-Id>"
+_view=sumologic_slo_output sloId="<your-SLO-ID>"
+| where [subquery: _view=sumologic_slo_output sloId="<your-SLO-ID>"
+| max(sloVersion) as sloVersion | compose sloVersion]
 | dedup by _messagetime
 | timeslice 1h  // data granularity for this panel
 | sum(goodCount) as goodWindows, sum(totalCount) as totalWindows by _timeslice
@@ -562,7 +564,9 @@ Adjust the chart by changing the “maximum value” to 100 and the “minimum v
 The following query computes hourly SLI and error budget trend for a request-based SLO:
 
 ```sql
-_view=sumologic_slo_output sloId="<your-SLO-Id>"
+_view=sumologic_slo_output sloId="<your-SLO-ID>"
+| where [subquery: _view=sumologic_slo_output sloId="<your-SLO-ID>"
+| max(sloVersion) as sloVersion | compose sloVersion]
 | dedup by _messagetime
 | timeslice 1h  // data granularity for this panel
 | sum(goodCount) as goodRequests, sum(totalCount) as totalRequests by _timeslice
@@ -587,7 +591,9 @@ Adjust the chart by changing the “maximum value” to 100 and the “minimum v
 The following query computes SLI, Error Budget Remaining and Error Budget Remaining Minutes for a 30-day compliance and window-based SLO:
 
 ```sql
-_view=sumologic_slo_output sloId="<your-SLO-Id>"
+_view=sumologic_slo_output sloId="<your-SLO-ID>"
+| where [subquery: _view=sumologic_slo_output sloId="<your-SLO-ID>"
+| max(sloVersion) as sloVersion | compose sloVersion]
 | dedup by _messagetime
 | sum(goodCount) as goodCount, sum(totalCount) as totalCount
 | goodCount*100/totalCount as sli
@@ -607,7 +613,9 @@ This query can recreate panels similar to the one below:<br/><img src={useBaseUr
 The following query computes event history for an SLO:
 
 ```sql
-_view=sumologic_slo_output sloId="<your SLO Id>"
+_view=sumologic_slo_output sloId="<your-SLO-ID>"
+| where [subquery: _view=sumologic_slo_output sloId="<your-SLO-ID>"
+| max(sloVersion) as sloVersion | compose sloVersion]
 | dedup by _messagetime
 | timeslice 1h // granularity of data
 | sum(goodCount) as goodCount, sum(totalCount) as totalCount by _timeslice
@@ -629,7 +637,9 @@ The following query computes SLI trend over multiple 7d calendar compliance peri
 -- REQUEST-BASED, CALENDAR COMPLIANCE
 -- Coffee Prep Latency should not exceed 1 second for 95% of requests in calendar 7d
 -- This query works for both request based and window based SLOs
-_view=sumologic_slo_output sloId="<your-SLO-Id>"
+_view=sumologic_slo_output sloId="<your-SLO-ID>"
+| where [subquery: _view=sumologic_slo_output sloId="<your-SLO-ID>"
+| max(sloVersion) as sloVersion | compose sloVersion]
 | dedup by _messagetime
 | timeslice 7d // put compliance period here
 | sum(goodCount) as goodRequests, sum(totalCount) as totalRequests by _timeslice

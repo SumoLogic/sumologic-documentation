@@ -249,8 +249,8 @@ Configure Logs Collection
 
 #### Configure Metrics Collection
 
-1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
-2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Make a note of the HTTP Source URL.
+1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
+2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the HTTP Source URL.
 3. **Install Telegraf**. Use the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [RabbitMQ input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/rabbitmq) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
@@ -327,16 +327,16 @@ log.file = rabbitmq.log
 log.file.level = debug
 ```
 
-Logs from the RabbitMQ log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) as explained in the next section.
+Logs from the RabbitMQ log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) as explained in the next section.
 3. **Configuring a Collector**. To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 4. **Configuring a Source**. To add a Local File Source source for RabbitMQ, do the following. To collect logs directly from your RabbitMQ machine, use an Installed Collector and a Local File Source.
-   1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+   1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
    2. Configure the Local File Source fields as follows:
      * **Name.** (Required)
      * **Description.** (Optional)
      * **File Path (Required).** Enter the path to your rabbitmq.log. The files are typically located in /var/log/rabbitmq/rabbitmq.log. If you're using a customized path, check the RabbitMQ.conf file for this information.
      * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-     * **Source Category.** Enter any string to tag the output collected from this Source, such as **RabbitMQ/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+     * **Source Category.** Enter any string to tag the output collected from this Source, such as **RabbitMQ/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
      * **Fields**. Set the following fields:
        * `component = messaging`
        * `messaging_system = rabbitmq`
@@ -453,7 +453,7 @@ email_notifications = [
 This section demonstrates how to install the RabbitMQ App. Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom RabbitMQ cluster filter. Examples:
@@ -546,7 +546,7 @@ Use this dashboard to:
 
 ## RabbitMQ Alerts
 
-Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 <table>
   <tr>

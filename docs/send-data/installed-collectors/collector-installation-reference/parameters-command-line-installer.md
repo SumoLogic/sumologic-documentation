@@ -1,10 +1,12 @@
 ---
 id: parameters-command-line-installer
+title: Parameters for the Command Line Installer
+description: This topic lists the parameters that are available when installing a Collector using the command line installer.
 ---
 
-# Parameters for the Command Line Installer
 
-The following tables provide and reference the available parameters for Collector installation using the command line installer. For details and example commands on Collector installation, see [Install a Collector on Linux](../linux.md), [Install a Collector on MacOS](../macos.md), and [Install a Collector on Windows](../windows.md). 
+
+The following tables provide and reference the available parameters for Collector installation using the command line installer. For details and example commands on Collector installation, see [Install a Collector on Linux](../linux.md), [Install a Collector on MacOS](../macos.md), and [Install a Collector on Windows](../windows.md).
 
 :::important
 Collector versions 19.253-26+ support wrapper configuration parameters.
@@ -32,13 +34,13 @@ Collector.
 | Parameter | Description |
 |--|--|
 | `-VskipRegistration=[boolean]` | When specified as `true` the installer will skip registration.<br/>Collectors will normally register with Sumo Logic during the installation process, but you can pass the `‑VskipRegistration=true` flag to skip registration. This way, the Collector is installed as a service that will start and register automatically when the instance is launched. |
-| `-Vsumo.accessid=[accessId]`<br/>`-Vsumo.accesskey=[accessKey]` | An authentication option is required, either this option or the token option (see next entry in this table). If you have a Sumo Logic access ID and access key, include both. `-Vsumo.accessid` and `-Vsumo.accesskey` Admins can generate an access ID/access key pair on the Preferences page in the Web application. See [Access Keys](../../../manage/security/access-keys.md).<br/>Many operating systems allow a user to list information about processes that are owned by other users. This information could include command line arguments. For enhanced security, we recommend using the -varfile option to specify Sumo Logic credentials. |
-| `-Vsumo.token_and_url=[token]` | An authentication option is required, either this option or the access ID/access key option (see the above entry in the table).<br/>Token can be either an [Installation Token](../../../manage/security/installation-tokens.md) or Setup Wizard Token. |
+| `-Vsumo.accessid=[accessId]`<br/>`-Vsumo.accesskey=[accessKey]` | An authentication option is required, either this option or the token option (see next entry in this table). If you have a Sumo Logic access ID and access key, include both. `-Vsumo.accessid` and `-Vsumo.accesskey` Admins can generate an access ID/access key pair on the Preferences page in the Web application. See [Access Keys](docs/manage/security/access-keys.md).<br/>Many operating systems allow a user to list information about processes that are owned by other users. This information could include command line arguments. For enhanced security, we recommend using the -varfile option to specify Sumo Logic credentials. |
+| `-Vsumo.token_and_url=[token]` | An authentication option is required, either this option or the access ID/access key option (see the above entry in the table).<br/>Token can be either an [Installation Token](docs/manage/security/installation-tokens.md) or Setup Wizard Token. |
 
 ## user.properties parameters
 
 The command line installer can use all of the parameters available in the [user.properties](user-properties.md) file. To use parameters from user.properties just add a `-V` to the beginning of the parameter without a space character. For example, to use the `sources` parameter you would specify it as `-Vsources`.  
-  
+
 For reference, see the available [user.properties parameters](user-properties.md).
 
 ### Parameters with a different format
@@ -58,7 +60,7 @@ formatting when used with the command line installer.
 
 ## collector.properties parameters
 
-The command line installer can use any of the parameters available in the [collector.properties](collector-properties.md) file. To use parameters from collector.properties just add a `-V` to the beginning of the parameter without a space character. For example, to use the `source.max.threads.num` parameter you would specify it as `-Vsource.max.threads.num`. 
+The command line installer can use any of the parameters available in the [collector.properties](collector-properties.md) file. To use parameters from collector.properties just add a `-V` to the beginning of the parameter without a space character. For example, to use the `source.max.threads.num` parameter you would specify it as `-Vsource.max.threads.num`.
 
 For reference, see the available [collector.properties parameters](collector-properties.md).
 

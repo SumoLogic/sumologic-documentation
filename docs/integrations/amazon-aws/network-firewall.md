@@ -26,7 +26,7 @@ Before you begin, you must:
 
 1. Enable logging from the AWS Network Firewall to an Amazon S3 bucket as described in the [AWS Network Firewall documentation](https://docs.aws.amazon.com/network-firewall/latest/developerguide/logging-s3.html).
 2. Confirm that logs are being delivered to the S3 bucket.
-3. [Grant Sumo Logic Access to the AWS S3 Bucket](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md)
+3. [Grant Sumo Logic Access to the AWS S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md)
 
 
 ## Collecting Logs for AWS Network Firewall
@@ -35,7 +35,7 @@ This section has instructions for collecting logs for the Sumo Logic App for AWS
 
 ### Enable S3 Ingestion
 
-Follow steps to create [AWS S3 Source](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/AWS-S3-Source).
+Follow steps to create [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source).
 
 The following is an example of a path expression that supports ingesting alerts.
 
@@ -132,7 +132,7 @@ This section provides instructions for installing the Sumo Logic App for AWS Net
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps).
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

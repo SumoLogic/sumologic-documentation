@@ -1,8 +1,8 @@
 ---
 id: use-url-to-run-search
+title: Use a URL to Run a Search
+description: You can create a custom URL to launch a log search in Sumo Logic.
 ---
-
-# Use a URL to Run a Search
 
 You can create a custom URL to launch a log search in Sumo Logic.
 
@@ -21,7 +21,7 @@ https://<endpoint>/ui/#/search/create?query=<urlEncodedQuery>&startTime=<start>&
         expression](../search-basics/time-range-expressions.md).
 
 * `<end>` is the end of your log query time range, the value can be either:
-    
+
     * in milliseconds since epoch.
     * a [relative time range expression](../search-basics/time-range-expressions.md).  You can omit the \<en\>` value and the current time (`now`) is assumed.
 

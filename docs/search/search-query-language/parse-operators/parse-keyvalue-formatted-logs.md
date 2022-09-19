@@ -96,7 +96,7 @@ The **keyvalue** operator supports an optional auto mode when using the defaul
 * Auto can extract up to 100 non-referenced fields, fields that are not explicitly included in the form **"keys foo,bar,..."**.
 * If the message includes more than 100 key value pairs, the operator extracts the first 100 key value pairs from left to right in the message. If there are duplicates, the last occurrence is extracted.
 * If you want to be able to use the keys later in the query, they must be referred to specifically.
-* You can separate the key and value in a key-value pair using any ofthese delimiters:
+* You can separate the key and value in a key-value pair using any of these delimiters:
 
     ```sql
     : = ->
@@ -113,7 +113,7 @@ one delimiter to use when extracting.
 
 ## Additional options
 
-* **Aliases (renaming)** using [**as**](../search-operators/as-operator.md "as operator") are supported. For example:
+* **Aliases (renaming)** using [**as**](/docs/search/search-query-language/search-operators/as-operator) are supported. For example:
 
     ```sql
     * | keyvalue auto keys "<key1>", "<key2>" as <field1>, <field2>

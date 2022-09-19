@@ -19,16 +19,16 @@ In this section, we will introduce the following concepts:
 
 Important considerations:
 
-* [How to Prevent your Scheduled Search from Timing Out](faqs/prevent-scheduled-search-timing-out.md).
+* [How to Prevent your Scheduled Search from Timing Out](faq.md#how-to-prevent-your-scheduled-search-from-timing-out).
     Scheduled searches cannot run indefinitely. At some point, the query will be timed out to protect the reliability of the service.
 
-* [Service Alert: Scheduled Search Email Quota Reached for Search](faqs/service-alerts-scheduled-search-email-quota-reached.md).
+* [Service Alert: Scheduled Search Email Quota Reached for Search](/docs/alerts/scheduled-searches/faq#service-alert-scheduled-search-email-quota-reached-for-search).
     Sumo Logic implements an email quota allowing 120 emails to be sent per day per scheduled search.
 
-* [What Happens When a Scheduled Search Is Suspended?](faqs/suspended-scheduled-search.md)
+* [What Happens When a Scheduled Search Is Suspended?](faq.md#what-happens-when-a-scheduled-search-is-suspended)
     Learn what happens when a Scheduled Search is suspended.
 
-* [Why Would a Scheduled Search Fail?](faqs/failed-scheduled-search.md)
+* [Why Would a Scheduled Search Fail?](faq.md#why-would-a-scheduled-search-fail)
     Learn how to troubleshoot a failed Scheduled Search.
 
 :::note
@@ -52,10 +52,10 @@ A Script Action is a Source type that receives data uploads triggered by a sched
 After setting up a Script Action, create a scheduled search. Each time the search query executes, the Collector runs the script configured in the Script Action.
 
 :::note
-You need the [View Collectors role capability](../../manage/users-and-roles/roles/role-capabilities.md) to alert with a Script Action.
+You need the [View Collectors role capability](docs/manage/users-and-roles/roles/role-capabilities.md) to alert with a Script Action.
 :::
 
-For instructions, see [Script Action](../../send-data/sources/installed-collectors/script-action.md).
+For instructions, see [Script Action](/docs/send-data/installed-collectors/sources/script-action).
 
 ### ServiceNow Connection
 
@@ -69,7 +69,7 @@ For instructions, see [ServiceNow](/docs/manage/connections-and-integrations/se
 
 Webhooks connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks. For example, once you set up a Webhook connection in Sumo Logic, and create a scheduled search, then you can send an alert from that scheduled search as a post to a Slack channel, or integrate with third-party systems.
 
-For instructions, see [Scheduled Searches for Webhook Connections](../../manage/connections-and-integrations/webhook-connections/schedule-searches-webhook-connections.md).
+For instructions, see [Scheduled Searches for Webhook Connections](docs/manage/connections-and-integrations/webhook-connections/schedule-searches-webhook-connections.md).
 
 ### Save to Index
 

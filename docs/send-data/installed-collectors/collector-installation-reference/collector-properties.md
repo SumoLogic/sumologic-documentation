@@ -1,8 +1,9 @@
 ---
 id: collector-properties
+title: collector.properties
+description: This file allows you to tune the internal processes of Installed Collectors to fit your needs.
 ---
 
-# collector.properties
 
 For Collector versions 19.182-25 and later the `collector.properties` file can be modified on existing Collectors allowing you to configure its internal processes for specific uses. This file is generated automatically when installing a Collector.
 
@@ -12,12 +13,12 @@ Starting with collector 19.170+, the installation directory is secured to users 
 
 ## Configure collector.properties
 
-1. Stop the Sumo Logic Collector service. 
+1. Stop the Sumo Logic Collector service.
 
     * On Windows: `net stop sumo-collector`      
     * On Linux: `sudo ./collector stop`    
 1. Navigate to the installation directory of an existing Installed Collector and open the `collector.properties` file in the **config** directory with a text editor. An example path is: `/<sumo_home>/config/collector.properties`
-1. Add the parameters you need, see all of the available parameters in the [collector.properties parameters](#collectorproperties) table below. 
+1. Add the parameters you need, see all of the available parameters in the [collector.properties parameters](#collectorproperties) table below.
 
     :::important
     Keep all of the existing parameters already in the file. If you remove any, the Collector will not be able to restore them and could result in collection issues.
@@ -25,7 +26,7 @@ Starting with collector 19.170+, the installation directory is secured to users 
 
 1. Save the file in the same location. Maintain UTF-8 format.
 1. Start the Sumo Logic Collector service.
-    
+
     * On Windows: `net start sumo-collector`
     * On Linux: `sudo ./collector start`
 
@@ -46,7 +47,7 @@ Windows:
 
 The example below has parameters that were automatically added by the Collector based on the configuration of the [user.properties](user-properties.md) file, such as `cpuTarget`. The collector.properties file is different, only modify parameters found in the [parameters table](#collectorproperties) below. If you see another parameter you want to adjust, check user.properties to see if it's an available configuration parameter.
 
-The collector.properties parameter `collector.localfile.inputType` has been added and set to `nonblocking` to tell the Collector to use the [Windows Rollable path for UNC file paths](../../collector-faqs/file-locking-problems.md). That is the only collector.properties parameter in this example.
+The collector.properties parameter `collector.localfile.inputType` has been added and set to `nonblocking` to tell the Collector to use the [Windows Rollable path for UNC file paths](/docs/send-data/collector-faq#file-locking-problems). That is the only collector.properties parameter in this example.
 
 ```
 receiver.url = https://collectors.sumologic.com
@@ -63,8 +64,8 @@ collector.localfile.inputType = nonblocking
 The table below has parameters that you can manage.
 
 :::important
-Do not modify any other parameters found in the collector.properties file, it could result in collection issues. 
-  
+Do not modify any other parameters found in the collector.properties file, it could result in collection issues.
+
 Collector versions 19.253-26+ support **wrapper** configuration parameters.
 :::
 
@@ -126,8 +127,8 @@ Collector versions 19.253-26+ support **wrapper** configuration parameters.
 | LogSender.pause.override | boolean  | Pause sending HTTP data from the log sender to Sumo Logic. | false |
 | metadata.cache.expiration.sec | integer  | Duration in seconds to expire and retry fetching local metadata cached by the Collector. | 600 |
 | MetricsSender.pause.override | boolean  | Pause sending HTTP data from the metric sender to Sumo Logic. | false |
-| multiline.maxCharLength | integer  | Sets the size in KB the Collector reads up to for detecting multiline messages. See [Collecting Multiline Logs](../../sources/reference-information-sources/collect-multiline-logs.md for details. | 524288                                                           |
-| multiline.maxLines | integer  | Sets the number of lines the Collector reads up to for detecting multiline messages. See [Collecting Multiline Logs](../../sources/reference-information-sources/collect-multiline-logs.md) for details. | 2000 |
+| multiline.maxCharLength | integer  | Sets the size in KB the Collector reads up to for detecting multiline messages. See [Collecting Multiline Logs](docs/send-data/reference-information/collect-multiline-logs.md for details. | 524288                                                           |
+| multiline.maxLines | integer  | Sets the number of lines the Collector reads up to for detecting multiline messages. See [Collecting Multiline Logs](docs/send-data/reference-information/collect-multiline-logs.md) for details. | 2000 |
 | offline.numRetries | integer  | Number of retry attempts before entering offline collection mode on connection failure. | 3 |
 | paging.lowerbound.mb | integer  | Size in megabytes of free storage space available after which the Collector exits flushing mode. | 32 |
 | paging.upperbound.mb | integer  | Size in megabytes of free storage space available after which the collector enters flushing mode. | 2048 |
@@ -162,4 +163,3 @@ Collector versions 19.253-26+ support **wrapper** configuration parameters.
 | windows.local.jni | boolean  | Enable using JNI for local Windows Event Log Sources. | true |
 | wrapper.out.oom | string   | Custom message to log upon OutOfMemory exception from Wrapper. | The JVM has run out of memory. |
 | wrapper.out.stop | string   | Custom message to log upon stopping the Wrapper. | Wrapper Stopped |
-

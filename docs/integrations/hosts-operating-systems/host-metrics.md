@@ -27,7 +27,7 @@ Configure an [Installed Collector](/docs/send-data/Installed-Collectors). Collec
 2. Configure the Source Fields as follows:
     1. **Name.** Required. Description is optional. The source name is stored in a searchable field called `_sourceName`.
     2. **Source Host**. Enter the host name of the machine from which the metrics will be collected.
-    3. **Source Category.** Required. The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
+    3. **Source Category.** Required. The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).
     4. **Scan Interval**. Select the frequency for the Source to scan for hostmetrics data. Selecting a short interval will increase the message volume and could cause your deployment to incur additional charges. The default is 1 minute.
     5. **Metrics**. Select check boxes for the metrics to collect. By default, all CPU and memory metrics are collected. Select the top level check box to select all metrics in that category. A blue checkmark icon indicates that the category is selected. To select individual metrics, click the right-facing arrow to expand the category and select the individual metrics. The icon changes to <img src={useBaseUrl('img/integrations/hosts-operating-systems/icon_blue_minus.png')} alt="icon_blue_minus" />, as shown below.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/host_metrics_config_window.png')} alt="host_metrics_config_window" />
 3. Click **Save**.
@@ -42,7 +42,7 @@ Available metrics include:
 * Network
 * Disk
 
-The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/Sources/installed-collectors/Host-Metrics-Source#Collected_Metrics).
+The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/Host-Metrics-Source#Collected_Metrics).
 
 Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar).
 
@@ -489,7 +489,7 @@ The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or lon
 
 ### AWS Metadata
 
-Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  For more information, see [AWS Metadata Source for Metrics](/docs/send-data/sources/hosted-collectors/amazon-web-services/aws-metadata-tag-source).
+Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source).
 
 Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts.
 
@@ -503,7 +503,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

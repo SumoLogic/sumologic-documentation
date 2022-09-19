@@ -15,13 +15,13 @@ If the OTLP Java exporter fails due to missing system libraries, we recommend us
 
 The Java agent and configuration needs to be provided for each of the monitored service instances. The address of the OpenTelemetry Collector (or Collector/Agent) needs to be prepared first (`COLLECTOR_HOSTNAME`) and the desired name of the service (`SERVICE_NAME`) and application (`APPLICATION_NAME`).
 
-Instruction below applies to **OpenTelemetry Java Auto Instrumentation** in version **1.11.1**.
+Instruction below applies to **OpenTelemetry Java Auto Instrumentation** in version **1.16.0**.
 
 ## Step 1: Download and distribute the agent JAR
 
-The [agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v1.11.1/opentelemetry-javaagent.jar) should be downloaded and distributed to each of the service hosts or containers, as the JVM will need access to it.
+The [agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v1.16.0/opentelemetry-javaagent.jar) should be downloaded and distributed to each of the service hosts or containers, as the JVM will need access to it.
 
-## Step 2: Update the JVM configuration (valid for version 1.11.1)
+## Step 2: Update the JVM configuration (valid for version 1.16.0)
 
 Either of the following options could be used as the template, with the following changes:
 
@@ -42,7 +42,8 @@ The following environment variables need to be made accessible by JVM:
 JAVA_TOOL_OPTIONS="-javaagent:path/to/opentelemetry-javaagent.jar"
 
 OTEL_TRACES_EXPORTER=otlp
-OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=http://COLLECTOR_HOSTNAME:55681/v1/traces
+OTEL_METRICS_EXPORTER=none
+OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=http://COLLECTOR_HOSTNAME:4318/v1/traces
 OTEL_EXPORTER_OTLP_TRACES_PROTOCOL=http/protobuf
 OTEL_SERVICE_NAME=SERVICE_NAME
 OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME
@@ -56,7 +57,8 @@ attributes:
 ```
 java -javaagent:path/to/opentelemetry-javaagent.jar \
     -Dotel.traces.exporter=otlp \
-    -Dotel.exporter.otlp.traces.endpoint=http://COLLECTOR_HOSTNAME:55681/v1/traces \
+    -Dotel.metrics.exporter=none \
+    -Dotel.exporter.otlp.traces.endpoint=http://COLLECTOR_HOSTNAME:4318/v1/traces \
     -Dotel.exporter.otlp.traces.protocol=http/protobuf \
     -Dotel.service.name=SERVICE_NAME \
     -Dotel.resource.attributes=application=APPLICATION_NAME \
@@ -68,8 +70,7 @@ java -javaagent:path/to/opentelemetry-javaagent.jar \
 To confirm the instrumentation was installed, after starting the service, the following log lines are to be expected in the console:
 
 ```
-Picked up JAVA_TOOL_OPTIONS: -javaagent:/agent/opentelemetry-javaagent.jar
-[otel.javaagent 2022-02-28 11:36:32:527 +0000] [main] INFO io.opentelemetry.javaagent.tooling.VersionLogger - opentelemetry-javaagent - version: 1.11.1
+[otel.javaagent 2022-08-19 09:58:00:822 +0000] [main] INFO io.opentelemetry.javaagent.tooling.VersionLogger - opentelemetry-javaagent - version: 1.16.0
 ```
 
 When errors are present in the console, describing that some system libraries are missing or that connection cannot be established, a Zipkin exporter can be used instead of OTLP, for example:

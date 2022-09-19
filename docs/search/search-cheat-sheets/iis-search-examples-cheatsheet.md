@@ -1,14 +1,16 @@
 ---
 id: iis-search-examples-cheatsheet
+title: IIS Search Examples Cheat Sheet
+sidebar_label: IIS Search Examples
+description: The IIS Search Examples cheat sheet provides examples of useful IIS search queries for different use cases.
 ---
 
-# IIS Search Examples Cheat Sheet
 
 The IIS Search Examples cheat sheet provides examples of useful IIS search queries for different use cases.
 
 The examples use this sample Access log message where applicable:
 
-```
+```json
 2015-06-03 00:02:48 GET /myurl dp=mysearch 8200 10.1.1.1 Windows-RSS-Platform/2.0+(IE+11.0;+Windows+NT+6.2) - - abcd.com 200 0 0 2583 271 15
 ```
 
@@ -48,7 +50,7 @@ If the "sc_substatus" field is missing don't exclude those messages (nodrop)…o
 | Identify the top 100 client IP addresses by number of hits.| `| count by c_ip | top 100 c_ip by _count` |
 
 :::sumo More Info
-For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](../search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent.md), and [Top](../search-query-language/search-operators/top.md).
+For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent), and [Top](../search-query-language/search-operators/top.md).
 :::
 
 ## Timeslice and Transpose
@@ -58,8 +60,8 @@ For more information, see [Parsing](/docs/search/search-query-language/parse-op
 | For the host / domain "abcd.com", count by sc_status with a timeslice of 15m | `source=IIS  | parse "abcd.com * " as sc_status | timeslice 15m | count by _timeslice, sc_status` |
 | Pivot the results so that time is on the X axis and sc_status is on the Y axis (values can be displayed in legend) | `| transpose row _timeslice column sc_status` |
 
-:::sumo More Info
-For more information, see [Timeslice](../search-query-language/search-operators/timeslice.md) and [Transpose](../search-query-language/search-operators/transpose.md).
+:::info
+For more information, see [Timeslice](docs/search/search-query-language/search-operators/timeslice.md) and [Transpose](../search-query-language/search-operators/transpose.md).
 :::
 
 ## Conditional Operators
@@ -77,4 +79,4 @@ For more information, see [Where](../search-query-language/search-operators/wher
 :::
 
 For any query, you can increase specificity by adding metadata fields to the keyword expression. Metadata fields include `_sourceCategory`,
-`_sourceHost `, and `_sourceName`. Edit Source metadata in the **Collection** tab. For details see [Search Metadata.](../get-started-with-search/search-basics/built-in-metadata.md) 
+`_sourceHost `, and `_sourceName`. Edit Source metadata in the **Collection** tab. For details see [Search Metadata.](/docs/search/get-started-with-search/search-basics/built-in-metadata) 

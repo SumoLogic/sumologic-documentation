@@ -1,8 +1,8 @@
 ---
 id: live-tail-cli
+title: Live Tail CLI
+description: The Live Tail Command Line Interface (CLI) is a standalone application that allows you to start and use a Live Tail session from the command line.
 ---
-
-# Live Tail CLI
 
 The Live Tail Command Line Interface (CLI) is a standalone application that allows you to start and use a Live Tail session from the command line.
 
@@ -16,7 +16,7 @@ The Live Tail CLI supports the following operating systems:
 
 The limitations for the Live Tail CLI are the same as the [Live Tail](about-live-tail.md) feature in the Sumo Logic Web Application, but for these exceptions:
 
-* You can tail logs ingested from Sources configured on Installed Collectors and from HTTP and Cloud Syslog Sources on Hosted Collectors. 
+* You can tail logs ingested from Sources configured on Installed Collectors and from HTTP and Cloud Syslog Sources on Hosted Collectors.
 
   :::note
   Data ingested from Amazon S3 can't be tailed because of restrictions from Amazon.
@@ -38,7 +38,7 @@ The metadata field and filter must be enclosed in quotes.
 1. Download your platform-specific binaries from [Releases](https://github.com/SumoLogic/livetail-cli/release) to a location where you have read, write, and execute permissions.
 1. In the command prompt, navigate to the directory where the files are saved.
 1. Enter `./livetail -h`
-1. When you run livetail the first time you need to provide the [deployment] (/APIs/Troubleshooting-APIs/Deployments-and-Sumo-Logic-Endpoints) of the account and [access ID/key](../../manage/security/access-keys.md) to authenticate.
+1. When you run livetail the first time you need to provide the [deployment] (/APIs/Troubleshooting-APIs/Deployments-and-Sumo-Logic-Endpoints) of the account and [access ID/key](docs/manage/security/access-keys.md) to authenticate.
 
     ![session start](/img/search/livetail/cli-live-tail-sessions-start.png)
 

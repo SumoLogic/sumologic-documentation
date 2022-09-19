@@ -44,7 +44,7 @@ Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
 
 ### Configure a Source
 
-To configure a source for collecting Linux logs, you create a Local File Source. Following the instructions on [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source). When you define a Source Category for the source, we recommend something like: prod/os/linux. For more information about Source Categories, see see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
+To configure a source for collecting Linux logs, you create a Local File Source. Following the instructions on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source). When you define a Source Category for the source, we recommend something like: prod/os/linux. For more information about Source Categories, see see [Best Practices](/docs/send-data/best-practices).
 
 ### Sample Log Messages
 
@@ -70,7 +70,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
@@ -141,9 +141,9 @@ It's assumed that common Linux OS logs are collected (for example: `/var/log/*`)
 
 The `_sourceCategory` fields shown in these sample queries are based on the following Linux logs and their metadata:
 
-* **Generic system log:** Typically named `/var/log/syslog` or `/var/log/messages` \
+* **Generic system log:** Typically named `/var/log/syslog` or `/var/log/messages`
 Meta field: `SourceCategory = OS/Linux/System`
-* Authentication log: Typically named `/var/log/auth` or `/var/log/auth.log` \
+* Authentication log: Typically named `/var/log/auth` or `/var/log/auth.log` 
 Meta field: `SourceCategory=OS/Linux/Security`
 
 These logs might have also been collected by the Collector (if selected during its installation).
@@ -156,16 +156,14 @@ These searches are intended to help you understand how privileged and non-privil
 
 #### Successful User Login events
 
-Returns all successful remote and local logins by a user.
-
-Suggested time range: -1 day
+Returns all successful remote and local logins by a user. Suggested time range: -1 day.
 
 ```sql
 _sourceCategory=OS/Linux* ("su:" or "sudo:" or "sshd:" or "sshd[" or "pam:") (("Accepted" and "pam") or "session" or ("to" and "on")) !"closed"
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<_sourceHost>\S*)\s" nodrop
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_host>\S*)\s(?:\w*):\s+(?<message>.*)$" nodrop
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_host>\S*)\s(?:\S*)\[\d+\]:\s+(?<message>.*)$" nodrop
-| parse field=message "pam_unix(*:*):" as deamon, ltype nodrop | if (deamon="sshd", "ssh", "") as protocol | fields -deamon, ltype
+| parse field=message "pam_unix(*:*):" as daemon, ltype nodrop | if (daemon="sshd", "ssh", "") as protocol | fields -daemon, ltype
 | parse "session * for user * by *(uid=" as action, dest_user, src_user nodrop
 | parse regex "session (?<action>\w*) for user (?<dest_user>\S*)" nodrop
 | parse "rhost=* " as src_host nodrop
@@ -183,7 +181,7 @@ _sourceCategory=OS/Linux* ("su:" or "sudo:" or "sshd:" or "sshd[" or "pam:") (("
 
 #### All Failed authentication attempts
 
-Returns all failed authentication attempts by either a user or a process. Suggested time range: -1 day
+Returns all failed authentication attempts by either a user or a process. Suggested time range: -1 day.
 
 
 ```
@@ -217,7 +215,7 @@ _sourceCategory=*linux* ("authentication failure" or "FAILED SU" or "input_usera
 
 Returns all sudo/su attempts, or activities by "root" user. Modify to include other privileged users that you want to track in your environment.
 
-```
+```sql
 _​sourceCategory=OS/Linux/Security ("sudo" or "root" or "su")
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S*)\s" nodrop
 | extract "sudo:\s+(?<src_user>[^ ]+?)\s:.+?USER=(?<dest_user>[^ ]+?)\s+" nodrop
@@ -267,7 +265,7 @@ Returns a list of all new users.
 Suggested time range: -1 day
 
 ```sql
-_ sourceCategory=OS/Linux/S* "useradd" and (("new user") or ("new account"))
+_sourceCategory=OS/Linux/S* "useradd" and (("new user") or ("new account"))
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S*)\s(?<process_name>\w*)(?:\[|:)" nodrop
 | parse "name=*, UID=*, GID=*, home=*, shell=*" as dest_user,dest_uid,dest_gid,home_dir,shell nodrop
 | parse "account=*, uid=*, gid=*, home=*, shell=*," as dest_user,dest_uid,dest_gid,home_dir,shell nodrop

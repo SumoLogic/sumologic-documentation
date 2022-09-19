@@ -12,15 +12,15 @@ To do this, the Outlier operator tracks the moving average and standard deviatio
 
 ```sql
 ...
-| timeslice <time_period> 
+| timeslice <time_period>
 | <aggregate operator> as <field> by _timeslice
 | outlier <field> [window=<#>, threshold=<#>, consecutive=<#>, direction=<+->]
 ```
 
 ```sql
 ...
-| timeslice <time_period> 
-| <aggregate operator> by _timeslice, <field> 
+| timeslice <time_period>
+| <aggregate operator> by _timeslice, <field>
 | outlier <_aggregate> by <field> [window=<#>, threshold=<#>, consecutive=<#>, direction=<+->]
 ```
 
@@ -81,7 +81,7 @@ Run the following query to find outlier values in IIS logs over the last
 _sourceCategory=IIS/Access
 | parse regex "\d+-\d+-\d+ \d+:\d+:\d+ (?<server_ip>\S+) (?<method>\S+) (?<cs_uri_stem>/\S+?) \S+ \d+ (?<user>\S+) (?<client_ip>[\.\d]+) "
 | parse regex "\d+ \d+ \d+ (?<response_time>\d+)$"
-| timeslice 15m 
+| timeslice 15m
 | max(response_time) as response_time by _timeslice
 | outlier response_time window=5,threshold=3,consecutive=2,direction=+-
 ```
@@ -95,11 +95,11 @@ The outlier values are represented by the pink triangles in the resulting chart.
 Run the following query to find outlier values in Apache logs over the
 last 3 hours.
 
-```sql
+```
 _sourceCategory=Apache/Access
 | parse "HTTP/1.1\" * " as status_code
 | where status_code matches "5*"
-| timeslice 5m 
+| timeslice 5m
 | count(status_code) as status_code by _timeslice
 | outlier status_code window=5,threshold=3,consecutive=1,direction=+-
 ```
@@ -168,7 +168,7 @@ You can display the raw results of a multidimensional time series in a table cha
 In the following table chart, a value of 1 in the **\_count_violation** column indicates that the data point corresponding to that timeslice is
 an outlier.
 
-![Multidimension](/img/search/searchquerylanguage/search-operators/Multidimension.png)
+![Multidimensional](/img/search/searchquerylanguage/search-operators/Multidimensional.png)
 
 ### Alerts Based on Multidimensional Outlier Results
 

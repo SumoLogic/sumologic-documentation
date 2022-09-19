@@ -7,9 +7,8 @@ description: This guide provides information to help you troubleshoot errors you
 
 This guide provides information to help you troubleshoot errors you may find when using the Sumo APIs.
 
-:::note Deployments and Sumo Logic Endpoints
+## Deployments and Sumo Logic Endpoints
 Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside `us1`. You need to specify your deployment in the endpoint. For example, `api.YOUR_DEPLOYMENT.sumologic.com` you would specify `YOUR_DEPLOYMENT` as either `au`, `ca`, `de`, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
 
 ## API - 301 Error - Moved
 
@@ -81,7 +80,7 @@ API- 403 error occurs when you do not have access to the Search Job API.  For ac
 
 #### Answer
 
-The Search Job APIs is only available within Enterprise level accounts. If you are currently on Sumo Logic Free or Professional accounts, you receive this error message if you try to access these APIs. If you need access to these APIs please reach out to your Sumo Logic Sales Associate at sales@sumologic.com or [contact us](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/Contact-Us) for more information on upgrading your existing account.
+The Search Job APIs is only available within Enterprise level accounts. If you are currently on Sumo Logic Free or Professional accounts, you receive this error message if you try to access these APIs. If you need access to these APIs please reach out to your Sumo Logic Sales Associate at sales@sumologic.com or [contact us](https://www.sumologic.com/contact-us/) for more information on upgrading your existing account.
 
 
 ## Receiving 500 errors when using the Search Job API

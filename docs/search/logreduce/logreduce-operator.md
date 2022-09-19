@@ -1,22 +1,21 @@
 ---
 id: logreduce-operator
+title: LogReduce Operator
+description: Allows you to quickly assess activity patterns for things like a range of devices or traffic on a website.
 ---
 
-# LogReduce Operator
-
 :::important
-The summarize operator has been renamed the logreduce operator, to match the **LogReduce** button on the **Messages** tab. Both operators will continue to work in search queries as synonyms for a limited time. We recommend that you rewrite saved queries replacing summarize with
-logreduce.
+The summarize operator has been renamed the LogReduce operator, to match the **LogReduce** button on the **Messages** tab. Both operators will continue to work in search queries as synonyms for a limited time. We recommend that you rewrite saved queries replacing summarize with logreduce.
 :::
 
-The LogReduce algorithm uses fuzzy logic to group messages together based on string and pattern similarity. You can use the logreduce operator to quickly assess activity patterns for things like a range of devices or traffic on a website. Focus the LogReduce algorithm on an area of interest by defining that area in the keyword expression.
-
-For information on how to interpret and influence the outcome of LogReduce results, see [Detecting Patterns with LogReduce](detect-patterns-with-logreduce.md) and [Influencing the LogReduce Outcome](influence-the-logreduce-outcome.md).
+The LogReduce &reg; algorithm uses fuzzy logic to group messages together based on string and pattern similarity. You can use the logreduce operator to quickly assess activity patterns for things like a range of devices or traffic on a website. Focus the LogReduce algorithm on an area of interest by defining that area in the keyword expression.
 
 There are two ways to use the operator.
 
 * Use the **LogReduce** [button](#logreduce-button) displayed on the results table after running a search.
 * Manually add the operator to your query following its [syntax](#syntax).
+
+For information on how to interpret and influence the outcome of LogReduce results, see [Detecting Patterns with LogReduce](detect-patterns-with-logreduce.md) and [Influencing the LogReduce Outcome](influence-the-logreduce-outcome.md).
 
 ### LogReduce button
 
@@ -24,7 +23,7 @@ When you've already run a search query with non-aggregate results, you can use t
 
 1. Run a search query with non-aggregate results.
 1. In the **Messages** tab, the **LogReduce** button displays. Click it to automatically apply the LogReduce operator to your results.  
-      
+
     ![button](/img/search/logreduce/logreduce-button.png)
      
 1. The **Signatures** tab is displayed with your results. 
@@ -91,7 +90,7 @@ _sourceCategory=cloudtrail
 
 
 ```sql
-_sourceCategory=kubernetes-audit 
+_sourceCategory=kubernetes-audit
 | json auto
 | logreduce field=object optimize
 ```
@@ -115,18 +114,18 @@ _sourceCategory=kubernetes-audit
     ```
      
 1. The LogReduce operator can act as an aggregate operator, supporting grouping by `_timeslice` as well as by other dimensions, such as `_sourcehost`.  
-      
+
     ```sql
     ...     | logreduce by _sourcehost
     ```
-      
+
     By grouping by `timeslice`, you can determine how signature counts
     change over a period of time.   
-      
+
     ```sql
     ...     | timeslice 1m       | logreduce by _timeslice
     ```  
-      
+
      
 1. LogReduce by timeslice:
 

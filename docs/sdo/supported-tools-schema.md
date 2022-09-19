@@ -51,7 +51,7 @@ Set the value of this field to “N/A” if not available. | Optional |
 | message | This field is used to indicate any message Set the value of this field to “N/A” if not available.| Optional |
 | title | This field can be used to indicate a deploy job name, description of pipeline/stage. Set the value of this field to “N/A” if not available.	Optional |
 | user | This field indicates the user associated with a deploy event. Set the value of this field to “N/A” if not available. | Optional |
-| service | Thei field indicates the service that got deployed. Set the value of this field to “N/A” if not available. | Optional |
+| service | This field indicates the service that got deployed. Set the value of this field to “N/A” if not available. | Optional |
 | team | This field indicates the team for which a deploy event occurred. Set the value of this field to “N/A” if not available. | Optional |
 
 **Build Event.** These events describe the chain of events when a  source code repository is compiled into executable artifacts, after which a series of automated unit and regressions tests are run.  
@@ -161,7 +161,7 @@ The table below shows how Issue events are represented in the schema.
 
 ## Examples
 
-The mapping of events from tool sets to this event schema is achieved via Sumo Logic [FERs](../manage/field-extractions/create-field-extraction-rule.md). For Example, For [PagerDuty V2 Incidents](https://developer.pagerduty.com/docs/webhooks/v2-overview/), we map the incident payload to the alert event schema using the following **Parse Expression.**
+The mapping of events from tool sets to this event schema is achieved via Sumo Logic [FERs](docs/manage/field-extractions/create-field-extraction-rule.md). For Example, For [PagerDuty V2 Incidents](https://developer.pagerduty.com/docs/webhooks/v2-overview/), we map the incident payload to the alert event schema using the following **Parse Expression.**
 
 ```sql
 parse regex "(?<event>\{\"event\":\"incident\..+?\}(?=,\{\"event\":\"incident\..+|\]\}$))"
@@ -179,7 +179,7 @@ The field extraction rule created is shown in the diagram below: 
 ![pagerduty-v2-alerts.png](/img/sdo/pagerduty-v2-alerts.png)
 
 
-Examples of mapping field extraction rules to the other out of the box tools can be found in [this JSON file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
+Examples of mapping field extraction rules to the other out-of-the-box tools can be found in [this JSON file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
 
 ## Enriching the schema with additional fields
 

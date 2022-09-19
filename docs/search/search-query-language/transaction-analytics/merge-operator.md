@@ -1,8 +1,9 @@
 ---
 id: merge-operator
+title: Merge Operator
 ---
 
-# Merge Operator
+
 
 The Merge operator reduces a stream of events to a single event using a specified merge strategy. It is particularly useful as a subquery for the [Transactionize](transactionize-operator.md) operator. Each field can have a different merge strategy:
 
@@ -15,7 +16,7 @@ The Merge operator reduces a stream of events to a single event using a specifie
 
 * `merge`  
 
-    Merge [\_raw](../../get-started-with-search/search-basics/built-in-metadata.md) values and separate them with newlines. Adds a Time field containing the earliest timestamp.
+    Merge [\_raw](/docs/search/get-started-with-search/search-basics/built-in-metadata) values and separate them with newlines. Adds a Time field containing the earliest timestamp.
 
 * `merge <field> `   
 
@@ -31,14 +32,14 @@ The Merge operator reduces a stream of events to a single event using a specifie
 
 ## Limitation
 
-* The [metadata](../../get-started-with-search/search-basics/built-in-metadata.md) field \_messageTime can only use strategies takeFirst and takeLast.
+* The [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field \_messageTime can only use strategies takeFirst and takeLast.
 
 ## Examples
 
 The following query:
 
 ```sql
-*  | parse "BytesSentPersec = \"*\"" as BytesPersec 
+*  | parse "BytesSentPersec = \"*\"" as BytesPersec
 | merge BytesPersec join with "--", _messageTime takeLast
 ```
 
@@ -51,7 +52,7 @@ A common case for using the merge operator with the [Transactionize](transaction
 ```sql
 _sourceCategory=travelweb
 | parse regex "(?<ip>[0-9]+\.[0-9]+\.[0-9]+\.[0-9]) - "
-| transactionize ip (merge ip takeFirst, _raw join with "\n\n\n") 
+| transactionize ip (merge ip takeFirst, _raw join with "\n\n\n")
 ```
 
 Which provides results like the following. Notice that all the logs from the same IP are now grouped in one record.

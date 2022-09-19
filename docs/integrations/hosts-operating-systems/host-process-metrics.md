@@ -55,13 +55,13 @@ This section provides instructions for configuring metrics collection for the Su
   1. **Configure a Hosted Collector**
 
 
-To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
+To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
 
 
   2. **Configure an HTTP Logs and Metrics Source**
 
 
-Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Suggestions for setting your source category:
+Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/hosted-collectors/http-source/logs-metrics). Suggestions for setting your source category:
 
 1. For identifying a specific cluster or a group of hosts: `<clustername>/metrics`
 2. For identifying a group of hosts within a given deployment: `<environment name>/<clustername>/metrics`
@@ -234,7 +234,7 @@ metric=procstat_cpu_usage host.name=*  process.executable.name=* | avg by host.n
 
 The next few sections provide instructions for installing the Sumo App and Alerts for hosts and processes, as well as the descriptions of each of the app dashboards. These instructions assume you have already set up a collection as described in Collecting Metrics for Host and Processes.
 
-Sumo Logic has provided out of the box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your hosts and processes. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your hosts and processes. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
 For details on the individual alerts, see [last section](#host-and-process-metrics-alerts).
 
@@ -366,7 +366,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**. \
 
 7
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
@@ -490,7 +490,7 @@ Use this dashboard to:
 
 ### For Host Metrics
 
-Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 | Alert Name                                    | Alert Description                                                                                                                        | Alert Condition | Recover Condition |
 |-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|-----------------|-------------------|
@@ -498,9 +498,9 @@ Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/d
 | Host Metrics - High Network Errors            | This alert fires when a host has encountered network errors in the last five minutes.                                                    | > 1%            | <= 1%             |
 | Host Metrics - Unusual network throughput in  | This alert fires when host network interfaces are receiving an unusually high amount of data (> 100 MB/s) over a 5-minute time interval. | > 100 MB/sec    | <= 100 MB/sec     |
 | Host Metrics - Unusual network throughput out | This alert fires when host network interfaces are sending an unusually high amount of data (> 100 MB/s) over a 5-minute time interval.   | > 100 MB/sec    | <= 100 MB/sec     |
-| Host Metrics - Host out of memory             | This alert fires when memory utilisation is over 90%.                                                                                    | > 90 %          | <= 90 %           |
+| Host Metrics - Host out of memory             | This alert fires when memory utilization is over 90%.                                                                                    | > 90 %          | <= 90 %           |
 | Host Metrics - Host out of inodes             | This alert fires when a host's filesystem is close to running out of available iNodes (> 90% used).                                      | > 90 %          | <= 90 %           |
-| Host Metrics - Host swap is filling up        | This alert fires when swap utilitization is over 80%.                                                                                    | > 80 %          | <= 80 %           |
+| Host Metrics - Host swap is filling up        | This alert fires when swap utilization is over 80%.                                                                                    | > 80 %          | <= 80 %           |
 | Host Metrics - Host out of disk space         | This alert fires when disk utilization is over 90%.                                                                                      | > 90 %          | <= 90 %           |
 | Host Metrics - Unusual disk read rate         | This alert fires when the disk is reading an unusually high amount of data (> 50 MB/s) over a 5-minute time interval.                    | > 50 MB/sec     | <= 50 MB/sec      |
 | Host Metrics - Unusual disk write rate        | This alert fires when the Disk is writing an unusually high amount of data (> 50 MB/s) over a 5-minute time interval.                    | > 50 MB/sec     | <= 50 MB/sec      |
@@ -508,7 +508,7 @@ Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/d
 
 ### For Process Metrics
 
-Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 | Alert Name                                   | Alert Description                                                                                                      | Alert Condition | Recover Condition |
 |----------------------------------------------|------------------------------------------------------------------------------------------------------------------------|-----------------|-------------------|
