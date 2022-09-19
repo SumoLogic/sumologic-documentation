@@ -88,6 +88,9 @@ module.exports = {
             ],
           },
         },
+        googleAnalytics: {
+          trackingID: 'UA-16579649-3',
+        },
         theme: {
           customCss: require.resolve('./src/css/sumo.scss'),
         },
@@ -426,6 +429,11 @@ module.exports = {
             position: 'left',
           },
           {
+            label: 'Contribute',
+            to: '/docs/contributing',
+            position: 'left',
+          },
+          {
             label: 'Support',
             to: 'https://support.sumologic.com/hc/en-us',
             position: 'left',
@@ -443,21 +451,22 @@ module.exports = {
       //    position: 'right',
       //  },
           {
-            position: 'right',
             className: 'header-github-link',
-            type: 'dropdown',
             'aria-label': 'GitHub repository',
-            items:[
-              {
-                label: 'Docs GitHub',
-                href: 'https://github.com/SumoLogic/sumologic-documentation',
-              },
-              {
-                label: 'Contribution Guide',
-                href: '/docs/contributing',
-              },
-            ]
+            position: 'right',
+            to: 'https://github.com/SumoLogic/sumologic-documentation',
           },
+//            items:[
+//              {
+  //              label: 'Docs GitHub',
+    //            href: 'https://github.com/SumoLogic/sumologic-documentation',
+      //        },
+        //      {
+//                label: 'Contribution Guide',
+//                href: '/docs/contributing',
+//              },
+//            ]
+//          },
           {
             label: ' ',
             className: 'header-search-link',
