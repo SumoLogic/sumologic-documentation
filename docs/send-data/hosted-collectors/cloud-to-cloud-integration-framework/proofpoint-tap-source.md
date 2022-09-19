@@ -4,8 +4,6 @@ title: Proofpoint TAP Source
 sidebar_label: Proofpoint TAP
 ---
 
-
-
 The Proofpoint TAP Source provides a secure endpoint to receive data from the Proofpoint [TAP SIEM API](https://help.proofpoint.com/Threat_Insight_Dashboard/API_Documentation/SIEM_API). It securely stores the required authentication, scheduling, and state tracking information.
 
 The Proofpoint integration supports the following four event types:
@@ -16,7 +14,7 @@ The Proofpoint integration supports the following four event types:
  * Clicks Blocked
 
 :::note
-This Source is not available in the [Fed deployment] (/APIs/Troubleshooting-APIs/Deployments-and-Sumo-Logic-Endpoints).
+This Source is available in the [Fed deployment](/docs/api/troubleshooting#deployments-and-sumo-logic-endpoints).
 :::
 
 ## States
@@ -240,6 +238,16 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable                                                    | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
+
+### Error Types
+
+When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/health-events/). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+
+|Type | Reason | Retries | Retry Behavior | Health Event Name |
+| :-- | :-- | :-- | :-- | :-- | 
+| ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable |ThirdPartyConfigError  |   
+| ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. |ThirdPartyGenericError | 
+| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |  
 
 ### JSON configuration
 
