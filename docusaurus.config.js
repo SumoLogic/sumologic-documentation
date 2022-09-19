@@ -127,6 +127,13 @@ module.exports = {
     'docusaurus-plugin-sass',
     'plugin-image-zoom',
     'react-iframe',
+    ['@docusaurus/plugin-content-blog',
+      {
+        id: 'release-notes-cse',
+        routeBasePath: 'release-notes-cse',
+        path: './release-notes-cse',
+      },
+    ],
     ['@docusaurus/plugin-client-redirects',
       {
         redirects: [
@@ -446,30 +453,29 @@ module.exports = {
             to: 'https://support.sumologic.com/hc/en-us',
             position: 'left',
           },
-  //        {
-//            label: 'Release Notes Blog',
-  //          position: 'left',
-//            to: 'release-notes',
-  //          type: 'dropdown',
-  //          items:[
-    //          {
-  //              label: 'Service',
-  //              href: '/release-notes/tags/service',
-  //            },
-  //            {
-  //              label: 'Cloud SIEM Enterprise',
-  //              href: '/release-notes/tags/cloud-siem',
-  //            },
-  //            {
-    //            label: 'Collector',
-    //            href: '/release-notes/tags/collector',
-//              },
-//              {
-  //              label: 'Developer',
-  //              href: '/release-notes/tags/developer',
-  //            },
-  //          ]
-//        },
+          {
+            label: 'Release Notes Blog',
+            position: 'left',
+            type: 'dropdown',
+            items:[
+              {
+                label: 'Service',
+                href: '/release-notes/tags/service',
+              },
+              {
+                label: 'Cloud SIEM Enterprise',
+                href: '/release-notes-cse',
+              },
+              {
+                label: 'Collector',
+                href: '/release-notes/tags/collector',
+              },
+              {
+                label: 'Developer',
+                href: '/release-notes/tags/developer',
+              },
+            ]
+          },
           {
             //Trial button
             label: 'Start a Free Trial',
