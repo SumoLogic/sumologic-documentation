@@ -59,7 +59,7 @@ In this step, you configure a Sumo Logic Ingest Mapping in CSE for the source ca
     ![ingest-mappipngs.png](/img/cse/ingest-mappipngs.png)
 1. On the Create Sumo Logic Mapping popup:
     1. Source Category. Enter the category you assigned to the HTTP Source or Hosted Collector in [Step 1](#step-1-configure-collection). 
-    1. **Format**. Enter `Windows`.
+    1. **Format**. Enter `JSON`.
     1. **Vendor**. Enter `Microsoft`.
     1. **Product**. Enter `Windows`.
     1. **Event ID**. `Enter .*`  
