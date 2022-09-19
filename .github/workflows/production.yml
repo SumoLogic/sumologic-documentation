@@ -2,7 +2,8 @@ name: deploy-to-production
 
 on:
   push:
-    tags: [v*]
+    tags: 
+      - '[v*]+'
 #     - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
