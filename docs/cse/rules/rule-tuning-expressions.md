@@ -5,12 +5,11 @@ sidebar_label: Rule Tuning
 description: Rule tuning expressions allow you to tailor the logic of a built-in rule without logic without replicating and modifying the rule.
 ---
 
-
 This topic has instructions for creating and using tuning expressions for Rules.
 
 ## What’s a rule tuning expression?
 
-Every CSE rule has a rule expression, to which incoming Records are compared. When a Record matches a rule expression, and other rule criteria are satisfied, the rule generates a Signal. Like a rule expression, a tuning expression is matched against incoming Records. The difference is, if a Record matches a Rule’s tuning expression in addition to its rule expression, the rule will not generate a Signal.
+Every CSE rule has a rule expression, to which incoming Records are compared. When a Record matches a rule expression, and other rule criteria are satisfied, the rule generates a Signal. A rule tuning expressing allows you to extend a rule expression. A rule tuning expression is combined with a rule expression—either with a logical AND or NOT—and the rule will only generate a Signal if a Record matches the combined expression.  
 
 As an example, consider the following rule expression, which detects that an attempt was made to clear the Windows Security Event Log.
 
@@ -18,11 +17,9 @@ As an example, consider the following rule expression, which detects that an att
 metadata_vendor = 'Microsoft' and metadata_product = 'Windows' and metadata_deviceEventId = 'Security-1102' and fields['Provider.Name'] = 'Microsoft-Windows-Eventlog'
 ```
 
-If you don’t want the rule to generate a Signal if the person performing the action is “jdoe”, you can add a tuning expression like this to the rule:
+If you don’t want the rule to generate a Signal if the person performing the action is “jdoe”, you can add a tuning expression like this to the rule, and configure the tuning expression to exclude Records that match the tuning expression.
 
-`user_userId != jdoe`
-
-The tuning expression is AND’d with the rule expression—the rule will only generate a Signal if a Record matches both expressions. 
+`user_userId = jdoe`
 
 Rule tuning expressions allow you to tailor the logic of a built-in rule without replicating and modifying the rule. The benefit of using a tuning expression, over the copy and edit method, is that when CSE updates built-in rules, your tuning expressions are preserved. This division of logic means that you don’t need to create as many custom rules. If you use tuning expressions in combination with multi-entity rules you’ll further reduce the need for custom rules.   
 
@@ -31,6 +28,10 @@ There is another benefit of using tuning built-in rules instead of writing custo
 :::
 
 You can apply multiple tuning expressions to a rule. You can assign a tuning expression to selected rules, or to all of your rules. You can also create a tuning expression without immediately assigning it to any rules.
+
+## Writing a tuning expression
+
+Writing a tuning expression is just like writing a rule expression. A tuning expression can use metadata, record fields, and CSE [rules language](docs/cse/rules/cse-rules-syntax.md) functions. For more information, see [About rule expressions](about-cse-rules.md#About_rule_expressions).
 
 ## Example tuning expression
 
@@ -41,32 +42,21 @@ Here’s what the example tuning expression looks like in the CSE UI.
 ## Create a tuning expression
 
 1. Select **Rule Tuning** from the **Content** menu.
-
-    [rule-tuning-option.png](/img/cse/rule-tuning-option.png)
+    ![rule-tuning-option.png](/img/cse/rule-tuning-option.png)
 1. On the **Rule Tuning** page, click **Create**.
-
     ![rule-tuning-page.png](/img/cse/rule-tuning-page.png)
 1. The **New Rule Tuning Expression** page appears.
-
     ![annotated-expression.png](/img/cse/annotated-expression.png)
 1. **Name**. Enter a name for the tuning expression. 
-1. **Tune \[selected\|all\] Rules**. Choose whether you want to apply the tuning expression to all of your rules, or only selected rules. 
-1. If you chose  “selected” in the previous step, follow the instructions in [Apply tuning expression to selected rules](#apply-tuning-expression-to-selected-rules). If you chose “all”, follow the instructions in [Apply tuning expression to all rules](#apply-tuning-expression-to-all-rules).
-
-### Apply tuning expression to selected rules
-
-1. In the **Type to add a rule** area, enter a search string that matches Rule names or Rule IDs. To search by Rule name, you can enter a string that the Rule name contains. To search by Rule ID, you can enter the complete ID, or a subset of the ID, starting with the leading character.  The name and ID of rules that match will appear on the page.
-1. In the **To only match Records...** area, enter a tuning expression. 
-1. Click **Submit**.
-
-    ![selected-rules.png](/img/cse/selected-rules.png)
-
-### Apply tuning expression to all rules
-
-1. In the **To only match Records...** area, enter a tuning expression. 
-1. Click **Submit**.
-
-    ![all-option.png](/img/cse/all-option.png)
+1. In the **Tune \[selected\|all\] Rules** section: 
+   * To apply the expression to all rules, choose **all**.
+   * To apply the expression to some but not all rules, choose **selected**. In the **Type to add a rule area**, enter a search string that matches Rule names or Rule IDs. To search by Rule name, you can enter a string that the Rule name contains. To search by Rule ID, you can enter the complete ID, or a subset of the ID, starting with the leading character.  The name and ID of rules that match will appear on the page..
+1. In the **To \[include|exclude\]... area**:
+   * Leave **include** selected if you want Signals to be fired for Records that match both the rule expression and the tuning expression.
+   * Select **exclude** from the pulldown if you want Signals to be fired for Records that match the rule expression and don't match the tuning expression.
+1. Enter a tuning expression. 
+2. Click **Submit**.
+   ![new-expression.png](/img/cse/new-expression.png)
 
 ### Create tuning expression without applying it to rules
 
