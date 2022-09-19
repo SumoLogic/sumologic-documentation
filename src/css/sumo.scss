@@ -91,7 +91,7 @@
 }
 
 .navbar__item {
-  font-size: .95rem;
+  font-size: .85rem;
 }
 
 @media (min-width: 1440px) {
@@ -260,7 +260,7 @@ html[data-theme='light'] {
   content: '';
   width: 30px;
   height: 30px;
-  margin-top: 10px;
+  margin-top: 9px;
   display: inline-flex;
   background: url("../../static/img/icons/magnifying-glass-header.png")
     no-repeat;
@@ -270,9 +270,6 @@ html[data-theme='light'] {
     display: none !important;
     content: none !important;
 }
-
-
-
 
 
 .DocSearch.DocSearch-Button {
@@ -893,7 +890,7 @@ html[data-theme='dark'] .node polygon {
 
 
 
-// Hub pages (e.g., /docs/integrations/databases/index)
+// Hub pages 
 
 .box-wrapper {
   display: grid;
