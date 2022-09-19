@@ -171,7 +171,6 @@ module.exports = {
               items: [
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source',
@@ -1482,7 +1481,7 @@ module.exports = {
       ],
     },
   ],
-// *** INTEGRATIONS: Sumo Logic Apps, no longer called APPS
+// *** Sumo Logic Apps
   integrations: [
     'integrations/integrations',
     {
@@ -1495,7 +1494,6 @@ module.exports = {
         'integrations/amazon-aws/aurora-mysql-ulm',
         'integrations/amazon-aws/aurora-postgresql-ulm',
         'integrations/amazon-aws/cloudfront',
-        'integrations/amazon-aws/cost-explorer',
         'integrations/amazon-aws/dynamodb',
         'integrations/amazon-aws/eks-control-plane',
         'integrations/amazon-aws/elasticache',
@@ -1525,6 +1523,7 @@ module.exports = {
         'integrations/amazon-aws/global-intelligence-cloudtrail-devops',
         'integrations/amazon-aws/cloudtrail-pci-compliance',
         'integrations/amazon-aws/config',
+        'integrations/amazon-aws/cost-explorer',
         'integrations/amazon-aws/ec2-cloudwatch-metrics',
         'integrations/amazon-aws/ec2-host-metrics',
         'integrations/amazon-aws/elastic-load-balancer-app',
@@ -2182,9 +2181,6 @@ module.exports = {
       link: {type: 'doc', id: 'beta/index'},
       items: [
         'manage/manage-subscription/beta-opt-in',
-        'alerts/monitors/alert-grouping',
-        'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source',
-        'integrations/amazon-aws/cost-explorer',
         'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cylance-source',
         'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes',
         'manage/partitions-and-data-tiers/infrequent-tier-search',

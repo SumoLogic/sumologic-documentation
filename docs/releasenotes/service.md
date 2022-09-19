@@ -10,6 +10,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Service Release Notes for the current year are listed here. If you need to see previous Service Release Notes, check the [Archive](docs/releasenotes/archive/index.md).
 
 ---
+### September 12, 2022 (Alerts)
+
+New - We’re happy to announce the release of Alert Grouping, which allows you to generate more than one alert from a given monitor by specifying a group condition on one or more fields. For example, rather than creating multiple monitors for each `service`, you could create one single monitor that notifies you when some metric (i.e., CPU utilization, error count) goes above the threshold for a given `service`. [Learn more](docs/alerts/monitors/alert-grouping.md).
+
+New - Configurable Resolution Window for Logs allows more quickly resolve alerts when the underlying issues are fixed. You can configure how long a monitor will wait, before resolving the alert, when the underlying issues was corrected (earlier the monitor waited one complete window before resolving). [Learn more](docs/alerts/monitors#Configurable-Resolution-Window-for-Logs).
+
+New - You can now access your monitor playbook as a template variable, `{{playbook}}`. You can reference this template variable to customize your notification payloads similar to any other template variable. [Learn more](docs/alerts/alert-variables.md).
+
+
+---
 ## September 8, 2022 (Traces)
 
 New - we're happy to share extended coverage for [Real User Monitoring (RUM)](/docs/apm/rum), our solution that provides insight into your users' end-to-end browser experience interacting with your web apps. New RUM capabilities include:

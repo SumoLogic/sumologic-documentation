@@ -46,6 +46,10 @@ We want to build a chain of events from the compromised host to try to determine
 
 We want to trace all Windows logins moving forward (+), starting from John's workstation (which may be compromised), to build a chain of events. We can use a trace operator query to produce the following results:
 
+```
+* "EventIdentifier 4624" "\nLogon Type:\t\t\t10" OR "\nLogon Type:\t\t\t2"| trace + "(?:Computer|Workstation )Name(?: = \"|:\\t)?(.+?)(?:\"|\s)" "JohnWorkstation.example.com" | extract "ComputerName = \"(?<dest_host>.+?)\"" | extract "Workstation Name:\\t(?<src_host>.+?)\s" | extract "New Logon:[\s\S]+?Account Name:\\t\\t(?<login_user>.*?)\s"
+```
+
 ![](/img/reuse/query-search/trace_forward_example.png)
 
 Trace tells us that from John's Workstation there was a login event to WIN1.example.com, from which there was a login to WIN2.example.com and then to WIN3.example.com within the same time frame. While we may not know if these login events were from the same person, it helps to determine potentially affected hosts (especially since generic usernames were used as well as an Administrator).
@@ -53,6 +57,10 @@ Trace tells us that from John's Workstation there was a login event to WIN1.exam
 ### Tracing backward
 
 We want to build a chain of events going backwards in time (-) from a compromised host, Win3.example.com, to try to determine the identity of the hacker. We want to trace all Windows logins moving backward, starting from Win3.example.com to build a chain of events. We can use a trace operator query to produce the following results:
+
+```
+* "EventIdentifier = 4624" "\nLogon Type:\t\t\t10" OR "\nLogon Type:\t\t\t3"| trace - "(?:Computer|Workstation )Name(?: = \"|:\\t)?(.+?)(?:\"|\s)" "WIN3.example.com" | extract "ComputerName = \"(?<dest_host>.+?)\"" | extract "Workstation Name:\\t(?<src host>.+?)\s" | extract "New Logon:[\s\S]+?Account Name:\\t\\t(?<login_user>.*?)\s"
+```
 
 ![](/img/reuse/query-search/trace_backwards_example.png)
 

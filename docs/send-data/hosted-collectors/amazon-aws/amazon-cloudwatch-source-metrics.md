@@ -5,8 +5,6 @@ sidebar_label: Amazon CloudWatch Metrics
 description: A Sumo Logic CloudWatch Source allows you to gather metrics data from an Amazon resource.
 ---
 
-
-
 A Sumo Logic CloudWatch Source allows you to gather metrics data from an Amazon resource. 
 
 :::tip

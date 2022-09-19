@@ -407,19 +407,19 @@ module.exports = {
           {
             label: 'API',
             position: 'left',
-            type: 'dropdown',
-            items:[
-              {
-                label: 'Docs',
-                to: '/docs/api',
-              },
-              {
-                label: 'Reference',
-                href: 'https://api.sumologic.com/docs/',
             // Redocusaurus
-            // to: '/sumoapi',
-              },
-            ]
+            to: '/sumoapi',
+            //type: 'dropdown',
+            //items:[
+              //{
+                //label: 'Docs',
+                //to: '/docs/api',
+              //},
+              //{
+                //label: 'Reference',
+                //href: 'https://api.sumologic.com/docs/',
+              //},
+            //]
           },
           {
             label: 'Release Notes',
