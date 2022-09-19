@@ -20,7 +20,7 @@ You can share a dashboard with all external users (“the world”), or with a s
 
 Before you can share a dashboard with users external to your org, you must enable a security policy, ensure that you have the right role capabilities, and depending on your option selection, enable the service allowlist.
 
-## Step 1. Enable the Sumo Logic policy
+## Enable the Sumo Logic policy
 
 In this step you enable sharing of dashboards outside your organization. You must have Admin privileges to enable the policy.
 
@@ -28,18 +28,16 @@ In this step you enable sharing of dashboards outside your organization. You mus
 1. Select the **Enable** check box for **Share Dashboards Outside of the Organization**.
 1. The policy is changed. It can take up to 5 minutes for the policy to go into effect.
 
-## Step 2. Verify your role allows external sharing
+## Verify your role allows external sharing
 
-You must have specific role capabilities to share a dashboard with
-external users:
+You must have specific role capabilities to share a dashboard with external users:
 
-* The **Share Dashboards outside of Organization** capability is required to share dashboards with users who do not have a Sumo account.
-* The **Share Dashboards with the Allowlist** capability is required to share dashboards with users on the allowlist.
-* The **Share Dashboards with the World** capability is required to share dashboards with external user users. 
+* **Share Dashboards with the Allowlist.** Share dashboards with users on the allowlist.
+* The **Share Dashboards with the World.** Share dashboards with external user users. 
 
 If you do not already have a role that grants you the required capability, an Admin user can assign you one, as described on [Assign Roles to Users](docs/manage/users-and-roles/roles/add-remove-users-role.md) , or create a new one as necessary, as described on [Create a New Role](docs/manage/users-and-roles/roles/create-manage-roles.md). 
 
-## Step 3. Add external users to service allowlist
+## Add external users to service allowlist
 
 If you want to share dashboards with specific external users, rather than the world, the service allowlist must be enabled, and you must provide the list of IPs or CIDRs that will be able to view dashboards without logging in. For instructions, see [Enable Dashboard Allowlist](docs/manage/security/create-allowlist-ip-cidr-addresses.md).
 
@@ -47,7 +45,7 @@ If you want to share dashboards with specific external users, rather than the wo
 Administrator privileges are required to enable the service allowlist.
 :::
 
-## Step 4. Share the dashboard
+## Share the dashboard
 
 1.  In the left navigation pane, right-click the dashboard you want to share, and click **Share** in the context menu.   
       
@@ -65,15 +63,13 @@ Administrator privileges are required to enable the service allowlist.
 
 The URL that external users can use to access the dashboard appears under the **Shareable URL** section of the page. 
 
-## Step 5. Get an iframe element for the dashboard (Optional)
+## Get an iframe element for the dashboard (Optional)
 
 If you would like to embed the shared dashboard in a web page, you can get an iframe element for the dashboard.
 
 1.  Perform the first three substeps of [Step 4](#step-4-share-the-dashboard) above.
 2.  Click **Embed** in the **Shareable URL** section of the page.  
       
-    ![embed-button.png](/img/dashboards/embed-button.png)
-
 3.  The HTML for embedding the dashboard in an iframe appears.  
       
     ![iframe-code.png](/img/dashboards/iframe-code.png)
