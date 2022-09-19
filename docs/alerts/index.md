@@ -18,5 +18,3 @@ Sumo Logic offers several alerting features. See the topics below for details on
 :::note
 You can configure Sumo Logic Monitors using [Terraform modules](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor).
 :::
-
- 
