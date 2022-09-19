@@ -88,6 +88,22 @@ module.exports = {
             ],
           },
         },
+        blog: {
+          blogTitle: 'Release Notes',
+          blogDescription: 'Sumo Logic Release Notes',
+          blogSidebarTitle: 'All Releases',
+          blogSidebarCount: 'ALL',
+          postsPerPage: 'ALL',
+          path: 'blog',
+          routeBasePath: 'release-notes',
+          showReadingTime: false,
+          feedOptions: {
+            type: 'rss',
+            title: 'Sumo Logic Release Notes',
+            description: 'Here you will find a chronological list of the newest Sumo Logic features and bug fixes',
+            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+          },
+        },
         theme: {
           customCss: require.resolve('./src/css/sumo.scss'),
         },
@@ -430,6 +446,30 @@ module.exports = {
             to: 'https://support.sumologic.com/hc/en-us',
             position: 'left',
           },
+  //        {
+//            label: 'Release Notes Blog',
+  //          position: 'left',
+//            to: 'release-notes',
+  //          type: 'dropdown',
+  //          items:[
+    //          {
+  //              label: 'Service',
+  //              href: '/release-notes/tags/service',
+  //            },
+  //            {
+  //              label: 'Cloud SIEM Enterprise',
+  //              href: '/release-notes/tags/cloud-siem',
+  //            },
+  //            {
+    //            label: 'Collector',
+    //            href: '/release-notes/tags/collector',
+//              },
+//              {
+  //              label: 'Developer',
+  //              href: '/release-notes/tags/developer',
+  //            },
+  //          ]
+//        },
           {
             //Trial button
             label: 'Start a Free Trial',

@@ -2,6 +2,7 @@
 slug: /releasenotes
 title: Sumo Logic Release Notes
 description: Here you'll find a chronological list of the newest Sumo Logic features and bug fixes.
+hide_table_of_contents: true
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
