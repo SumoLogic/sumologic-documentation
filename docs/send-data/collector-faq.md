@@ -543,7 +543,7 @@ For both searches above, it’s a good idea to use a relative time range that lo
 
 After installing a Collector and configuring a Source, your data should appear in Sumo Logic in a matter of minutes. How can you confirm that your data is being collected? Try any of the following options. 
 
-#### Check the Status page of the Sumo Logic Web Application
+#### Check the Status page of Sumo Logic
 
 In Sumo Logic select **Manage Data \> Collection \> Status** to view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
 

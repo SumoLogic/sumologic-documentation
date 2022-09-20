@@ -2,7 +2,12 @@
 id: panels
 title: Dashboard (New) Panels
 sidebar_label: Panels
+description: Learn about the different panel types available in Dashboard (New) and the types of data best suited for each.
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 
 Panels are the building blocks used to create a dashboard. Each panel displays analytics for a specific query. The type of panel you choose to display your data depends on the type of query you want to run.
 
@@ -188,7 +193,7 @@ The [Service Map](../apm/traces/working-with-tracing-data/service-map.md) is a h
 
 The panel gives you a fully functioning map to zoom in and out and move through services. The size and color of application entities shows status and activity. Click on a service to open the Entity Inspector to drill down to traces, metrics, and the service dashboard.
 
-You can filter the map according to application and service. See the [Dashboard (New)](about-dashboard-new.md) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
+You can filter the map according to application and service. See the [Dashboard (New)](about.md) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
 
 ![panel-service.png](/img/dashboards-new/panels/panel-service.png)
 
@@ -227,7 +232,7 @@ To add a Service Map panel:
 
 Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real-time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans](../apm/traces/working-with-tracing-data/spans.md), and a breakdown of services. The panel panel displays the [Traces page] table to give at-a-glance tracking for traces through your Dashboard. To view transaction and service details, click a trace from the panel to open the [Trace View](../apm/traces/working-with-tracing-data/view-and-investigate-traces.md). 
 
-See the [Dashboard (New)](./about-dashboard-new.md) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers and more.
+See the [Dashboard (New)](./about.md) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers and more.
 
 :::note
 You are limited to 3 Trace List panels in a dashboard.
@@ -291,6 +296,3 @@ You can delete a panel that you no longer need.
 1. Select **Delete**.  
 
     ![delete a panel.png](/img/dashboards-new/panels/delete-panel/delete-a-panel.png)
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';

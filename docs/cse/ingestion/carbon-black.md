@@ -43,7 +43,7 @@ The bucket you designate for Carbon Black Cloud data must be exclusively used fo
 1. [Grant Sumo Logic access](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product) to an Amazon S3 bucket.
 2. [Enable logging in AWS](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html) using the Amazon Console.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. In the Sumo Logic web app, select **Manage Data > Collection > Collection**.
+4. In Sumo Logic, select **Manage Data > Collection > Collection**.
 5. Navigate to the Hosted Collector where you want to create the source.
 6. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 7. Select **Amazon S3**.

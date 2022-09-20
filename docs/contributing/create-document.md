@@ -20,11 +20,11 @@ Create a markdown file with filename.md in a /docs folder that best matches the 
 
 ## 2. Add doc title and metadata
 
-See [Markdown Features > Front Matter](/docs/contributing/markdown-features#front-matter) to learn how.
+See [Markdown Features > Front Matter](/docs/contributing/markdown-cheat-sheet#frontmatter) to learn how.
 
 ## 3. Add doc content
 
-See [Markdown Cheat Sheet](markdown-features.md) to learn about how to write in markdown. Doc body text content is written in GitHub-flavored markdown, with some customizations.
+See [Markdown Cheat Sheet](markdown-cheat-sheet.md) to learn about how to write in markdown. Doc body text content is written in GitHub-flavored markdown, with some customizations.
 
 ### Code of Conduct
 
@@ -63,7 +63,7 @@ The `sidebars.ts` file (in repo root) controls the side navigation for the entir
       link: {type: 'doc', id: 'contributing/index'},
       items: [
         'contributing/create-document',
-        'contributing/markdown-features',
+        'contributing/markdown-cheat-sheet',
         'contributing/release-notes',
         'contributing/build-deploy',
         'contributing/translations',

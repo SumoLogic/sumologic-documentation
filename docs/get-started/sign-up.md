@@ -170,6 +170,6 @@ If upgrades are allowed for your AWS account, you can upgrade your active accoun
 
 To upgrade:
 
-1. Click **Upgrade** on the left navigation pane in the Sumo Logic web app.
+1. Click **Upgrade** on the left navigation pane in Sumo Logic.
 1. The **Upgrade** button is visible if you have an active AWS account for which upgrades are permitted.
 1. On the Upgrade request form, enter Log Ingest level you want to upgrade to. Within 24 to 48 hours, your account will be updated to reflect the change. Once the account is upgraded, the AWS Marketplace will be notified of the change.  

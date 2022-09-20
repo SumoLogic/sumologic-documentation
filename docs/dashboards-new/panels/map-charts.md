@@ -1,8 +1,9 @@
 ---
 id: map-charts
+title: Map Charts
+description: Map charts are useful for showing IP addresses from log messages on a map.
 ---
 
-# Map Charts
 
 Map charts show the location and number of hits from data on a map.
 
@@ -14,19 +15,19 @@ To map your data you can: 
 For example, you'd use the geoip operator to create a map chart:
 
 ```sql
-| parse "remote_ip=*]" as client_ip 
-| geoip client_ip 
-| count by latitude, longitude 
+| parse "remote_ip=*]" as client_ip
+| geoip client_ip
+| count by latitude, longitude
 | sort _count
 ```
 
 Or, you'd use the geo lookup operator to create a map chart:
 
 ```sql
-_sourceCategory=Error 
-| parse regex "(\<client_i\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" 
-| lookup latitude, longitude, country_code, country_name, region, city, postal_code from geo://location on ip = client_ip 
-| count by latitude, longitude, country_code, country_name, region, city, postal_code 
+_sourceCategory=Error
+| parse regex "(\<client_i\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+| lookup latitude, longitude, country_code, country_name, region, city, postal_code from geo://location on ip = client_ip
+| count by latitude, longitude, country_code, country_name, region, city, postal_code
 | sort _count
 ```
 

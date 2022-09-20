@@ -11,7 +11,7 @@ Click each link to go to each Help topic for all the details, then come back to 
 These topics provide basic information about your Sumo Logic account, and how to design your Sumo Logic implementation for your use case.
 
 * [Sumo Logic Account Types](/docs/manage/manage-subscription): The feature set of your Sumo Logic organization will depend on what type of Sumo Logic account you have. Review the list to make sure your account fits your use case. You can upgrade at any time.
-* [Sumo Logic Components](/docs/get-started#sumo-logic-components): Sumo Logic is comprised of just a few components: Collectors, Sources, the Sumo Logic Cloud, and the Sumo Logic Web Application. Learn how these components work together here.
+* [Sumo Logic Components](/docs/get-started#sumo-logic-components): Sumo Logic is comprised of just a few components: Collectors, Sources, the Sumo Logic Cloud, and Sumo Logic. Learn how these components work together here.
 * [Choose a Collector Type](/docs/send-data/choose-collector-source) Depending on your use case, you may need to use Installed or Hosted Collectors. Use this topic to help you determine what your organization will need.
 * [Best Practices: Local and Centralized Data Collection](/docs/send-data/best-practices#local-and-centralized-data-collection): Which method is right for you? 
 * [System Requirements](system-requirements.md): These topics include information on basic hardware requirements for Sumo Logic Collectors, supported web browsers for best performance, and supported log encoding.

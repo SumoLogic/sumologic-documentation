@@ -56,7 +56,7 @@ When you create a Sophos Central Source, you add it to a Hosted Collector. Befo
 
 To configure a Sophos Central Source:
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 

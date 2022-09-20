@@ -2,6 +2,7 @@
 id: explore-view
 title: Navigating Sumo Logic Dashboards with Explore
 sidebar_label: Explore View
+description: Explore gives you an easy way to view and navigate the hierarchy of your environment.
 ---
 
 import Iframe from 'react-iframe';
@@ -24,7 +25,7 @@ Explore can be accessed using Dashboard (New) in conjunction with the below apps
 
 ### Stack Linking
 
-Stack linking connects **Dashboard (New)** to Explore so you can view dashboards when exploring infrastructure components. [Learn more](/docs/dashboards-new/link-dashboard-explore.md). <br/><img src={useBaseUrl('img/dashboards-new/explore/stack-linking.png')} alt="Explore" />
+Stack linking connects **Dashboard (New)** to Explore so you can view dashboards when exploring infrastructure components. [Learn more](/docs/dashboards-new/link-dashboards.md). <br/><img src={useBaseUrl('img/dashboards-new/explore/stack-linking.png')} alt="Explore" />
 
 ### AWS Observability
 
@@ -111,7 +112,7 @@ The default filter is displayed in the **Filter** drop down menu with a **Defaul
 
 ### Obtaining Links
 
-Use the link button to the right of the Dashboard title in Explore to copy the link to your specific entity view in the dashboard. This is related to [Stack Linking](/docs/dashboards-new/link-dashboard-explore.md).<br/><img src={useBaseUrl('img/dashboards-new/explore/link-explore-dashboard.png')} alt="Explore" />
+Use the link button to the right of the Dashboard title in Explore to copy the link to your specific entity view in the dashboard. This is related to [Stack Linking](/docs/dashboards-new/link-dashboards.md).<br/><img src={useBaseUrl('img/dashboards-new/explore/link-explore-dashboard.png')} alt="Explore" />
 
 ### Manually Creating Links
 

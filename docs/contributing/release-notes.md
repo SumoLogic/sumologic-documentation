@@ -3,6 +3,10 @@ id: release-notes
 title: Release Notes
 ---
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 :::caution
 
 &#128679; Under construction &#128679;

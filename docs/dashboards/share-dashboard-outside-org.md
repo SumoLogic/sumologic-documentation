@@ -13,7 +13,7 @@ This page has information about sharing dashboards with users who do not have a 
 Dashboards often contain sensitive information, so typically you share them only with people within your organization. But sometimes you may want to allow people outside your organization to view a dashboard without logging in, for example if your dashboard is displayed on a monitor in your operations center, or if you want to send an external person a link to a dashboard that reveals a critical problem.
 
 :::note
-Sharing outside an organization is always view-only and in live mode, and not all [operators are compatible with live mode](restricted-operators-dashboards.md). Also, if this is the first time that live mode is being enabled, it may take some time to backfill the data depending on your queries and timeranges. See [About Dashboards](about-dashboards.md).
+Sharing outside an organization is always view-only and in live mode, and not all [operators are compatible with live mode](restricted-operators-dashboards.md). Also, if this is the first time that live mode is being enabled, it may take some time to backfill the data depending on your queries and timeranges. See [About Dashboards](about.md).
 :::
 
 You can share a dashboard with all external users (“the world”), or with a selected set of external users that you specify in the service allowlist. 
@@ -48,7 +48,7 @@ Administrator privileges are required to enable the service allowlist.
 ## Share the dashboard
 
 1.  In the left navigation pane, right-click the dashboard you want to share, and click **Share** in the context menu.   
-      
+
     ![share-option.png](/img/dashboards/share-option.png)
 
 2.  The Share Dashboard dialog appears.
@@ -69,9 +69,8 @@ If you would like to embed the shared dashboard in a web page, you can get an i
 
 1.  Perform the first three substeps of [Step 4](#step-4-share-the-dashboard) above.
 2.  Click **Embed** in the **Shareable URL** section of the page.  
-      
 3.  The HTML for embedding the dashboard in an iframe appears.  
-      
+
     ![iframe-code.png](/img/dashboards/iframe-code.png)
 
 4.  Click **Copy** to copy the HTML.
@@ -132,7 +131,7 @@ _index=sumologic_audit and _sourceName=REPORT "Viewed Report"
 _index=sumologic_audit and _sourceName=REPORT "Viewed Report"
 | parse "Name=*, Id=Some(*)," as dashboardName,dashboardId
 | parse "URL=*, ViewerIP=*" as url,viewerip
-| lookup latitude, longitude from geo://location on ip=viewerip 
+| lookup latitude, longitude from geo://location on ip=viewerip
 | count by latitude, longitude
 | sort _count
 ```

@@ -90,7 +90,7 @@ $ git commit -m "Updating query for metrics"
 #### Create a branch
 
 1. Create a new branch from your cloned repo/fork using a name that best describes the work or references a GitHub issue number. For example: `<your initials>-tracing-update` or `<your initials>-apps-gitlab`
-1. Edit or create markdown (.md) files in your branch. See [Create a Document](create-document.md) and [Markdown Features](markdown-features.md) for more info.
+1. Edit or create markdown (.md) files in your branch. See [Create a Document](create-document.md) and [Markdown Features](markdown-cheat-sheet.md) for more info.
 
 #### Push your changes
 
