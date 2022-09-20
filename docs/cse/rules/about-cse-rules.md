@@ -99,7 +99,7 @@ Here’s an example of a Match List in the CSE UI, at **Content \> Match Lists**
 
 You can take advantage of Match Lists in rules, but Match Lists actually come into play when Records are ingested. Here’s how it works:  When a Record is ingested, CSE compares the entries in all Match Lists to fields in the Record. Of course, CSE doesn’t compare the entries in a given Match List to all fields in a Record; it wouldn’t make sense to compare a domain name to an IP address. You could say that CSE understands the difference between apples and oranges: CSE distinguishes which Record fields contain IP addresses, which contain domain name and so on. So, CSE compares a Match List of IP addresses to Record fields that contain IP addresses. Similarly, CSEs compares a Match List of usernames to Record fields that contain usernames. For more information about how that works, see [Match Fields Reference](../match-lists-suppressed-lists/match-fields-reference.md). 
 
-When a Record contains a value that matches one or more Match Lists, two fields in the Record get populated:
+When a Record contains a value that *exactly* matches one or more Match Lists (partial matches are not supported), two fields in the Record get populated:
 
 * `listMatches.` CSE adds the names of the Match Lists that the Record matched, and the column values of those lists. For example, if an IP address in a Record matches the `SourceIP` address in the “vuln_scanners” Match List, the `listMatches` field would look like this: `listMatches: ['vuln_scanners', 'column:SourceIp']`    
 * `matchedItems`. CSE adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” Match List contained an entry “5.6.7.8”, and the Record’s `SourceIp `is also “5.6.7.8”, the assuming the `SourceIP` address in the “vuln_scanners” Match List, the `matchedItems` field would like like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
@@ -119,10 +119,10 @@ array_contains(listMatches, "match-list-name")
 where 
 
 * `match-list-name` is the name of the match list.
-
-    :::note
-    If the name of the list you are referencing with `array_contains` contains any spaces, replace the spaces with underscores. For example, if the list name is *my list*, refer to it as *my_list*.
-    :::
+  
+:::note
+If the name of the list you are referencing with `array_contains` contains any spaces, replace the spaces with underscores. For example, if the list name is *my list*, refer to it as *my_list*.
+:::
 
 Depending on your goal, you precede the `array_contains` function with either AND or AND NOT. 
 
@@ -150,12 +150,22 @@ Like Match Lists, Threat Intel lists are used at the time of Record ingestion. W
 
 When a Record contains a value that matches an entry in one or more Threat Intel lists, just like with Match List data, two fields in the Record get populated: a `listMatches` field that contains the names of Threat Intel lists that the Record matched, and a `matchedItems` field that contains the actual key-value pairs that were matched. In addition, the string “threat” is added to the `listMatches` field.  
 
-For example, given a Record whose `SourceIp` column matches a entry in My Threat Intel List, the `listMatches` field added to the record would look like this:
+For example, given a Record whose `SourceIp` column matches a entry in My Threat Intel List, the `listMatches` field added to the Record would look like this:
 
 ```sql
-listMatches: ['My Threat Intel List', 'column:SourceIp', 'threat']
+listMatches: \['threat_Ip_My_Threat_Intel_List', 'source:My_Threat_Intel_List', 'column:Ip', 'column:SrcIp' 'threat'\]
 ```
+where:
 
+* `threat_Ip_My_Threat_Intel_List` is formed by concatenating the following, separated by underscore characters (_):
+   * the string `threat` 
+   * the type of the column–Ip Domain, FileHash, and so on–in the Record that matched an Indicator from the threat intel source
+* The name of the threat intel source, with embedded spaces replaced by underscore characters (_).
+* `source:My_Threat_Intel_List` identifies the threat intel list.
+* `column:Ip` identifies the type of the field where the match was found.
+* `column:SrcI`p identifies the name of the field where the match was found.
+* `threat `is a string that CSE uses to indicate that the Record field matched a threat source, rather than another type of list.
+  
 Because the threat intel information is persisted within Records, you can reference it downstream in both rules and search. To leverage the information in a rule, you extend your rule expression with the `array_contains` function. The syntax is:
 
 ```sql
@@ -165,3 +175,7 @@ array_contains(listMatches, "threat-intel-list-name")
 where 
 
 `threat-intel-list`  is the name of the Threat Intel list.
+
+:::note
+If your `array_contains` statement refers to a threat intel source whose name contains embedded spaces, be sure to replace the spaces with underscores.
+::: 
