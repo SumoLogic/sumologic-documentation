@@ -3,8 +3,6 @@ id: jfrog-artifactory-sumo-logic-integration
 title: JFrog Artifactory Online Sumo Logic Integration
 ---
 
-#
-
 :::important
 If you do not currently have a Sumo Logic account, the JFrog Artifactory Sumo Logic integration is the most convenient way to start using Sumo Logic directly from Artifactory. You can also choose to use an existing Sumo Logic account to integrate with Artifactory Online.
 :::
@@ -82,11 +80,11 @@ If you already have an existing Sumo Logic Account created outside of Artifactor
     ![jfrog 7](/img/connection-and-integration/jfrog7.png)
 
 1. Login to Sumo Logic and verify that the logs are flowing in as expected
-1. Install the [Sumo Logic App for Artifactory] (docs/integrations/app-development/Artifactory/Artifactory-App-Dashboards.md) (version 7.x) to get instant insight into your Artifactory logs. 
+1. Install the [Sumo Logic App for Artifactory](docs/integrations/app-development/jfrog-artifactory.md) (version 7.x) to get instant insight into your Artifactory logs. 
 
 ## For More Details
 
-For complete details on the Sumo Logic App for Artifactory and its Dashboards, see the [Artifactory App] (docs/integrations/app-development/Artifactory.md).
+For complete details on the Sumo Logic App for Artifactory and its Dashboards, see the [Artifactory App](docs/integrations/app-development/jfrog-artifactory.md).
 
 :::note
 For more information about JFrog Artifactory, see the Sumo Logic DevOps blog, [Using Node.js npm with Artifactory via the API and CLI](https://www.sumologic.com/blog/using-node-js-npm-with-jfrog-artifactory-via-the-api-and-cli/).

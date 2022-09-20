@@ -62,7 +62,7 @@ There are several methods you can use to configure processing rules: 
 
 * Sumo Web Application - See the instructions below.
 * With JSON - See [Creating Processing Rules Using a JSON File](/docs/send-data/use-json-configure-sources). 
-* Collector Management API - See [Collector Management API] (../../APIs/Collector-Management-API.md "Collector Management API") for instructions on using the API to configure sources for Data Forwarding.
+* Collector Management API - See [Collector Management API](/docs/api/collectors) for instructions on using the API to configure sources for Data Forwarding.
 * Local Source configuration files -  See [Local File Configuration Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management) for general information on managing sources using local file configuration.
 
 To configure processing rules for data forwarding using the web

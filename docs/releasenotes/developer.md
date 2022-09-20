@@ -129,7 +129,7 @@ New - [Content](/docs/api/Content-Management), [Folder](/docs/api/Folders), and 
 
 ---
 ### June 26, 2019 - APIs
-Update - The [Collector Management API](/docs/api/Collector) can return Collectors by name and manage offline Collectors with the `aliveBeforeDays` parameter.
+Update - The [Collector Management API](/docs/api/Collectors) can return Collectors by name and manage offline Collectors with the `aliveBeforeDays` parameter.
 
 
 ---

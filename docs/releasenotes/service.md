@@ -56,7 +56,7 @@ The new UI for creating and managing [Scheduled Views](/docs/manage/Scheduled-Vi
 
 New - We’re happy to announce the release of The Sumo Logic App for [Host Metrics (EC2)](docs/integrations/amazon-aws/ec2-cloudwatch-metrics.md)). This App allows you to collect your EC2 instance metrics using Sumo Logic Installed Collector and display them using predefined search queries and Dashboards. The App provides Dashboards to analyze EC2 instance metrics for CPU, disk, memory, and network.
 
-Update - We are glad to update that the Sumo Logic App for [MongoDB Atlas](docs/integrations/databases/mongodb-atlas) now allows you to monitor database operations and performance KPIs and provides visibility into the security posture of your clusters.
+Update - We are glad to update that the Sumo Logic App for [MongoDB Atlas](/docs/integrations/databases/mongodb-atlas) now allows you to monitor database operations and performance KPIs and provides visibility into the security posture of your clusters.
 
 ---
 ## August 4, 2022 (Search)
@@ -111,7 +111,7 @@ New - The Sumo Logic App for [AWS EC2](docs/integrations/amazon-aws/ec2-cloudwat
 
 Update - [Amazon Simple Notification Service](http://docs.aws.amazon.com/sns/latest/dg/welcome.html) (SNS) is a pub/sub messaging and mobile notifications service for coordinating the delivery of messages to subscribing endpoints and clients.
 
-The Sumo Logic App for [Amazon SNS](docs/integrations/amazon-aws) collects CloudTrail logs and CloudWatch metrics to provide insights into the operations and utilization of your SNS service. This includes tracking the most active topics, failures, errors, and geographical locations of SNS clients.
+The Sumo Logic App for [Amazon SNS](/docs/integrations/amazon-aws) collects CloudTrail logs and CloudWatch metrics to provide insights into the operations and utilization of your SNS service. This includes tracking the most active topics, failures, errors, and geographical locations of SNS clients.
 
 ---
 ## July 21, 2022 (Metrics)
