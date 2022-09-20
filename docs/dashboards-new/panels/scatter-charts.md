@@ -4,7 +4,7 @@ id: scatter-charts
 
 # Scatter Charts
 
-Scatter charts are available in the [Dashboard (New)](../about-dashboard-new.md) platform.
+Scatter charts are available in the [Dashboard (New)](../about.md) platform.
 
 Scatter charts display two independent numeric fields allowing you to see any correlation between them. You can visually determine how your fields relate to and affect one another.
 

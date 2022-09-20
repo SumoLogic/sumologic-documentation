@@ -263,7 +263,7 @@ sudo systemctl daemon-reload
 </details>
 
 
-2. **Remove the collector from the Sumo Logic Web Application**:
+2. **Remove the collector from Sumo Logic**:
    1. In Sumo Logic select **Manage Data > Collection > Collection**.
    2. Find the collector you want to remove, and click **Delete**.
    3. When the Confirm dialog displays, click **OK**.

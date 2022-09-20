@@ -37,7 +37,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 
 Each Microsoft 365 Content Type must have its own source. Follow these steps for each Microsoft 365 Content Type you wish to collect.
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 1. Navigate to the Hosted Collector where you want to create the source.
 1. Click **Add Source** next to  the Hosted Collector.
 1. Select **Office 365 Audit.** 

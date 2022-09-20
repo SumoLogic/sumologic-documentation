@@ -119,7 +119,7 @@ module.exports = {
         redirects: [
           {
             //CID REDIRECTS: Enter a from: of the /cid=##### with the path to the file for to: for each CID!
-            to: '/docs/contributing/markdown-features',
+            to: '/docs/contributing/markdown-cheat-sheet',
             from: '/cid=1234',
           },
         ]

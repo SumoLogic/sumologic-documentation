@@ -49,7 +49,7 @@ When you create an Netskope WebTx API Source, you add it to a Hosted Collector. 
 
 **To configure an Netskope WebTx API Source:**
 
-1. In the Sumo Logic web app, select** Manage Data > Collection > Collection**.
+1. In Sumo Logic, select** Manage Data > Collection > Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted** **Collector.
 1. Select **Netskope WebTx API**.
 1. Enter a **Name** to display the Source in the Sumo web application. The description is optional.

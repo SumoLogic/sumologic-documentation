@@ -166,7 +166,7 @@ The following parameters are automatically configured by the Sumo Logic Servic
 
 ## Time zone format
 
-In a JSON source configuration, a string for the `timeZone` setting does not follow the same format as the time zone setting shown in the Sumo Logic Web Application. The JSON `timeZone` property uses the underlying TZ database time zone format instead of (GMT+11:00) style values.
+In a JSON source configuration, a string for the `timeZone` setting does not follow the same format as the time zone setting shown in Sumo Logic. The JSON `timeZone` property uses the underlying TZ database time zone format instead of (GMT+11:00) style values.
 
 Example:
 

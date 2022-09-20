@@ -29,7 +29,7 @@ In this step, you configure a Cloud Syslog Source to collect SentinelOne log mes
 
 ### Configure a Cloud Syslog Source
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 1. Navigate to the Hosted Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to the Hosted
     Collector.

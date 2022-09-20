@@ -12,7 +12,7 @@ For example, to find the most recent value of services you'd use the following o
 The operator is supported in the following features:
 
 * [Log Search](/docs/search)
-* [Dashboards (New)](../../../dashboards-new/about-dashboard-new.md)
+* [Dashboards (New)](../../../dashboards-new/about.md)
 * [Dashboards](/docs/dashboards), including live mode
 * [Scheduled Searches](../../../alerts/scheduled-searches/schedule-search.md)
 

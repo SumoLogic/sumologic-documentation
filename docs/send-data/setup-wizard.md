@@ -23,7 +23,7 @@ Keyboard shortcuts are not available when the Setup Wizard is open.
 
 A great way to try out Sumo Logic for the first time is to upload a local log file. To do this, click **Upload Log Files**. You can upload up to 20 files and 100MB total per upload.
 
-Uploading a local file allows you to try Sumo Logic without configuring a Collector to ingest live, streaming data. To continuously monitor a file in your environment, [configure a Collector and Source](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment) within the Sumo Logic Web Application.
+Uploading a local file allows you to try Sumo Logic without configuring a Collector to ingest live, streaming data. To continuously monitor a file in your environment, [configure a Collector and Source](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment) within Sumo Logic.
 
 The following file types are **not** supported:
 

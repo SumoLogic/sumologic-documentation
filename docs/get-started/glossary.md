@@ -1,9 +1,10 @@
 ---
 id: glossary
 title: Glossary
+description: This glossary provides an alphabetized list of technical term definitions used in Sumo Logic.
 ---
 
-This glossary provides definitions for technical terms used in Sumo Logic.
+This glossary provides an alphabetized list of technical term definitions used in Sumo Logic. If you're looking for usage guidance, see [Word List](docs/contributing/word-list.md).
 
 ## A
 
