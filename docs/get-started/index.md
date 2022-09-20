@@ -25,7 +25,7 @@ Get to know Sumo Logic through our video on "Introduction to Sumo Logic".
 
 ## Sumo Logic Benefits
 
-Sumo Logic is beneficial to the businesses building, running, and securing modern applications. Get to know about benefits through our video "Benefits of Using Sumo Logic".
+Sumo Logic helps businesses building, running, and securing modern applications. Get to know about benefits through our video "Benefits of Using Sumo Logic".
 
 <Iframe url="https://www.youtube.com/embed/D4WO5DlqD6o"
         width="854px"
