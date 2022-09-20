@@ -2,6 +2,7 @@
 id: explore-view
 title: Navigating Sumo Logic Dashboards with Explore
 sidebar_label: Explore View
+description: Explore gives you an easy way to view and navigate the hierarchy of your environment.
 ---
 
 import Iframe from 'react-iframe';

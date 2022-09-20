@@ -2,6 +2,7 @@
 id: faq
 title: Dashboard (New) FAQ
 sidebar_label: FAQ
+description: Find answers to frequently asked questions about our new Dashboards.
 ---
 
 ## How do I convert a Classic Dashboard to the new dashboard framework?

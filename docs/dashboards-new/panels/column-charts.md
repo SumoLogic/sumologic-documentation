@@ -1,8 +1,10 @@
 ---
 id: column-charts
+title: Column Charts
+description: Column charts are useful for visually comparing the number of events that have occurred.
 ---
 
-# Column Charts
+
 
 Column charts are useful for visually comparing the number of events that have occurred, such as the type of error that occurs the most in your system. To create a Column chart, use a search query that provides at least a few data points in the **Aggregates** tab.
 

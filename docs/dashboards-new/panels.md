@@ -2,6 +2,7 @@
 id: panels
 title: Dashboard (New) Panels
 sidebar_label: Panels
+description: Learn about the different panel types available in Dashboard (New) and the types of data best suited for each.
 ---
 
 import Tabs from '@theme/Tabs';
