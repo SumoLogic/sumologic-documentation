@@ -172,7 +172,7 @@ _index=sec_record_authentication
 
 ![extracted-field.png](/img/cse/extracted-field.png)
 
-## Security index seach limitations
+## Security index search limitations
 
 * When you use wildcards for field values in a query scope, only Records in which those fields are present and not null will be returned. For example, the following query will only return Records if the `srcDevice_ip` is present and not null:
     ```
