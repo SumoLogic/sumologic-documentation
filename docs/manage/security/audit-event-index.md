@@ -10,13 +10,13 @@ title: Audit Event Index
 | Cloud Flex | Trial, Enterprise |
 | Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-The **Audit Event Index** contains event logs in JSON format on account activities, allowing you to monitor and audit changes. Enterprise accounts have the Audit Event Index enabled and available to search by default. You can use the [Enterprise Audit Apps] (docs/integrations/sumo-apps/Enterprise-Audit.md "Enterprise Audit Apps") to visually display data from the Audit Event Index for monitoring and analysis.
+The **Audit Event Index** contains event logs in JSON format on account activities, allowing you to monitor and audit changes. Enterprise accounts have the Audit Event Index enabled and available to search by default. You can use the [Enterprise Audit Apps](/docs/integrations/sumo-apps/Enterprise-Audit) to visually display data from the Audit Event Index for monitoring and analysis.
 
 This index is improved and different from the [Audit Index](audit-index.md), and there is some overlap of audited events. The Audit Index provides event logs in plain text and audits when account limits are reached and operation failures, like throttling and scheduled search events.
 
 ## Documentation 
 
-All available audited events are documented for your reference. This documentation is hosted on each deployment, instead of on this document. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use] (../../APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security.md "Sumo Logic Endpoints and Firewall Security") if you are unsure.
+All available audited events are documented for your reference. This documentation is hosted on each deployment, instead of on this document. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security") if you are unsure.
 
 Select the documentation link for your deployment:
 

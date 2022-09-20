@@ -125,7 +125,7 @@ A Data Type is a specific type of log used with a Sumo Logic Source or App, such
 
 The Data Volume Index automatically provides data that allows you to understand your account’s data ingest volume in bytes and number of log messages processed overall. The Data Volume Index gives you better visibility into how much data you are sending to Sumo Logic, allowing you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription.
 
-**[Deployment](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security#How_can_I_determine_which_endpoint_I_should_use.3F)**
+**[Deployment](https://help.sumologic.com/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security#How_can_I_determine_which_endpoint_I_should_use.3F)**
 
 Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created.
 
@@ -150,7 +150,7 @@ Stands for data points per minute. Metric data volume is measured in DPM. For ex
 
 Refers to data sources, such as containers, that are created and destroyed as appropriate, resulting in a high volume log data or metrics. In Sumo Logic, you can set a collector to be ephemeral—Sumo deletes an ephemeral collector automatically after it has been offline for 12 hours.
 
-**[Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)**
+**[Endpoints](https://help.sumologic.com/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)**
 
 Sumo Logic has several pods that are assigned depending on the geographic location and the date an account is created. Sumo Logic redirects your browser to the correct login URL and also redirects Collectors to the correct endpoint. However, if you're using an API you'll need to manually direct requests to the correct API endpoint; API calls are not redirected to another endpoint.
 
