@@ -43,7 +43,7 @@ When you create a Carbon Black Inventory Source, you add it to a Hosted Collect
 
 To configure A Carbon Black Inventory Source:
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **Carbon Black Inventory**.
 

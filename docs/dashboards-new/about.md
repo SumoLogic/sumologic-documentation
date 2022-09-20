@@ -1,6 +1,8 @@
 ---
-slug: /dashboards-new
+id: about
 title: About Dashboard (New)
+sidebar_label: Getting Started
+description: Learn the benefits of Dashboard (New) and how it seamlessly integrates log, metric, and trace data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -56,11 +58,11 @@ Live mode restrictions do not apply to Dashboard (New). 
 
 * Auto Refresh applies to the whole dashboard, you can't configure it by panel.
 * If there are two or more queries in a panel, the refresh interval for the panel is set to the maximum supported interval.
-* If the requested refresh interval is not possible, you will get an error message indicating the actual refresh rate is slower than requested. Reasons why the refresh interval is not possible are the following:
-
-  * The time range is too long to refresh at this rate. Reduce the time range to allow a faster refresh interval.
-  * An operator is not supported at this refresh interval.
-  * The number of grouped elements is too large for the requested interval.
+* Panels with an [absolute time range](../search/get-started-with-search/search-basics/time-range-expressions.md) are not supported.
+* If the requested refresh interval is not possible, you'll get an error message indicating the actual refresh rate is slower than requested. This can be due to one of the following reasons:
+   * The time range is too long to refresh at this rate. Reduce the time range to allow a faster refresh interval.
+   * An operator is not supported at this refresh interval.
+   * The number of grouped elements is too large for the requested interval.
 
 ## Auto Refresh
 
@@ -72,16 +74,6 @@ A list of the refresh interval rates is provided for you to select from.
 
 ![dashboard new refresh interval options.png](/img/dashboards-new/about-dashboard-new/dashboard-new-refresh-interval-options.png)
 
-### Rules
-
-* Auto Refresh applies to the whole dashboard, individual panels cannot be configured.
-* If there are two or more queries in a panel, the refresh interval for the panel is set to the maximum supported interval.
-* Panels with an [absolute time range](../search/get-started-with-search/search-basics/time-range-expressions.md) are not supported.
-* If the requested refresh interval is not possible, you will get an error message indicating the actual refresh rate is slower than requested. The following are reasons why setting the refresh interval is not possible:
-
-  * The time range is too long to refresh at this rate. Reduce the time range to allow a faster refresh interval.
-  * An operator is not supported at this refresh interval.
-  * The number of grouped elements is too large for the requested interval.
 
 ## Dark Theme
 
@@ -134,15 +126,6 @@ Dashboards and Dashboard (New).
 | Dark Theme | Supported | Supported |
 | Configured Dashboard Linking | Supported | Supported |
 | Recommended Dashboards & Logs Drilldowns | Not supported | Supported by clicking on data points or slices/sections of pie charts, bar charts, column charts, area charts, and line charts. |
-| Combined Metrics & Logs Panel | Not supported | Supported. See how to [overlay logs and metrics in a panel](./dashboard-new-faqs.md#how-do-i-overlay-logs-and-metrics-on-one-panel). |
+| Combined Metrics & Logs Panel | Not supported | Supported. See how to [overlay logs and metrics in a panel](./faq#how-do-i-overlay-logs-and-metrics-on-one-panel). |
 | Styling Queries and Series | 	Ability to style through settings on the search page.<br/>Can not set color per time series or query.<br/>Restricted ability to override displays. | Ability to style through display overrides inside the panel settings.<br/>Ability to set the color per query/series.<br/>Multiple layers of expressiveness for display overrides.<br/>For details, see how to modify a chart. |
 | Colors by Value Range | Supported | Not supported |
-
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-## Guide contents
-
-In this section, we will introduce the following concepts:
-
-<DocCardList items={useCurrentSidebarCategory().items}/>

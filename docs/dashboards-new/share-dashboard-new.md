@@ -1,6 +1,7 @@
 ---
 id: share-a-dashboard-new
 title: Share a Dashboard (New)
+description: Learn how to save a custom dashboard and then share it with others.
 ---
 
 After you have created a custom Dashboard (New) you may also want to share it with coworkers within your organization. This page walks you through these tasks.

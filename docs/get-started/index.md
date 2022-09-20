@@ -42,7 +42,7 @@ Sumo Logic is a highly flexible and scalable solution. It provides solutions tha
 
 ## Sumo Logic Components
 
-A Collector is a small application that gathers log data from your servers and sends it to the Sumo Logic Cloud. Using the Sumo Logic Web Application, you can interact with and analyze your data in the cloud in real time.<br/>![Collectors M.png](/img/get-started/CollectorsM.png)
+A Collector is a small application that gathers log data from your servers and sends it to the Sumo Logic Cloud. Using Sumo Logic, you can interact with and analyze your data in the cloud in real time.<br/>![Collectors M.png](/img/get-started/CollectorsM.png)
 
 ### Sumo Logic Collectors and Sources
 
@@ -58,9 +58,9 @@ Sumo Logic [Hosted Collectors](/docs/send-data/hosted-collectors) are hosted 
 
 The Sumo Logic Cloud is a secure, scalable repository for all of your operations, security, compliance, development, and other log data. The Sumo Logic Cloud stores, indexes, parses, and analyzes data, and provides unlimited horsepower with elastic scalability.
 
-### Sumo Logic Web Application
+### Sumo Logic UI
 
-The Sumo Logic Web Application allows you to view and analyze your log data in the cloud. With a powerful and intuitive search capability, you can use the web application to expedite functions like forensic analysis, troubleshooting, and system health checks. The Sumo Logic Web Application provides access from anywhere since it is fully browser based. It also provides all required administration tools for managing your installation. This includes tools for administration, checking system status, managing your deployment, and direct access to download  and activate Collectors.
+Sumo Logic allows you to view and analyze your log data in the cloud. With a powerful and intuitive search capability, you can use the web application to expedite functions like forensic analysis, troubleshooting, and system health checks. Sumo Logic provides access from anywhere since it is fully browser based. It also provides all required administration tools for managing your installation. This includes tools for administration, checking system status, managing your deployment, and direct access to download  and activate Collectors.
 
 ## Data Collection Strategy
 

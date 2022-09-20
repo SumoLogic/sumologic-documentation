@@ -1,9 +1,8 @@
 ---
 id: box-plot-charts
+title: Box Plot Charts
 description: Box Plot Chart graphically depicts groups of data using quartiles, which are the values that divide a list of numbers into quarters.
 ---
-
-# Box Plot Charts
 
 A Box Plot Chart graphically depicts groups of data using quartiles, which are the values that divide a list of numbers into quarters. In Box Plot charts, the bottom and top of the box represent the first and third quartiles; the band inside the box represents the median.
 

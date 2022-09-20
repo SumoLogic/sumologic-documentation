@@ -119,7 +119,7 @@ module.exports = {
         redirects: [
           {
             //CID REDIRECTS: Enter a from: of the /cid=##### with the path to the file for to: for each CID!
-            to: '/docs/contributing/markdown-features',
+            to: '/docs/contributing/markdown-cheat-sheet',
             from: '/cid=1234',
           },
         ]
@@ -237,6 +237,7 @@ module.exports = {
                 label: 'Getting Started',
                 items: [
                   {
+                    className: 'horizontal-rule',
                     label: 'Get Started',
                     sublabel: 'Accounts, concepts, & more',
                     to: '/docs/get-started',
@@ -278,6 +279,7 @@ module.exports = {
                 label: 'Search, Metrics, Logs',
                 items: [
                   {
+                    className: 'horizontal-rule',
                     label: 'Search and Logs',
                     sublabel: 'Find data with queries',
                     to: '/docs/search',
@@ -305,6 +307,7 @@ module.exports = {
                 label: 'App Performance',
                 items: [
                   {
+                    className: 'horizontal-rule',
                     label: 'Traces',
                     sublabel: 'Review traces and spans',
                     to: '/docs/apm/traces',
@@ -322,9 +325,10 @@ module.exports = {
               },
               {
                 // 3
-                label: 'Infrastructure Monitoring',
+                label: 'Observability',
                 items: [
                   {
+                    className: 'horizontal-rule',
                     label: 'About Observability',
                     sublabel: 'Learn about Observability',
                     to: '/docs/observability',
@@ -360,6 +364,7 @@ module.exports = {
                 label: 'Security and Incidents',
                 items: [
                   {
+                    className: 'horizontal-rule',
                     label: 'Cloud SIEM Enterprise',
                     sublabel: 'Security event management',
                     to: '/docs/cse',
@@ -389,6 +394,7 @@ module.exports = {
                 label: 'Other Solutions',
                 items: [
                   {
+                    className: 'horizontal-rule',
                     label: 'Global Intelligence',
                     sublabel: 'Review security issues',
                     to: '/docs/global-intelligence',

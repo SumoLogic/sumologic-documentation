@@ -6,7 +6,7 @@ description: Example template for creating a document in the Sumo Logic guides.
 ---
 
 :::note
-Copy this markdown file and fill it out for documentation. See the markdown code to see how it all works. For full markdown code and options, see [Markdown Features](../markdown-features.md).
+Copy this markdown file and fill it out for documentation. See the markdown code to see how it all works. For full markdown code and options, see [Markdown Features](../markdown-cheat-sheet.md).
 :::
 
 Replace the H1 title above with the title for your documentation page. You should only every have one H1 entry used for the title. All other sections should be H2, H3, ...H5.

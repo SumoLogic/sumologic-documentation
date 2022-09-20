@@ -31,7 +31,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 
 Each G Suite App must have its own source. Follow these steps for each G Suite App you wish to collect.
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 1. Navigate to the Hosted Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to the Hosted Collector.
 1. Select **G Suite Apps Audit.** 

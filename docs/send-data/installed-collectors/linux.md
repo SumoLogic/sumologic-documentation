@@ -250,7 +250,7 @@ Uninstalling a collector requires the following two steps:
 * [RPM/Debian package](#uninstall-using-the-rpm-or-debian-package)
 * [Binary package](#uninstall-using-the-binary-package)
 
-1. [Remove the collector from the Sumo Logic Web Application](#remove-the-collector-from-the-web-app)
+1. [Remove the collector from Sumo Logic](#remove-the-collector-from-the-web-app)
 
 ### Uninstall using the UI Installer
 

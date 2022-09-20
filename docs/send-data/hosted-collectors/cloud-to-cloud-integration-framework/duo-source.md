@@ -49,7 +49,7 @@ When you create a Duo Source, you add it to a Hosted Collector. Before creating
 
 To configure a Duo Source:
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Duo**.
 

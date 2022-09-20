@@ -1,17 +1,19 @@
 ---
 id: combo-charts
+title: Combo Charts
+description: Column charts are useful for visually comparing the number of events that have occurred.
 ---
 
-# Combo Charts
+
 
 Combo charts have a secondary vertical axis allowing you to view two aggregates on the same chart. A common combo chart is a bar or column chart with a secondary vertical axis as a separate line as a comparison.
 
 For example, say we're running a query like:
 
-```sql
-_sourceCategory=*apache* 
-| parse "HTTP/1.1\" * * * " as status_code, size, referrer 
-| timeslice 5m 
+```
+_sourceCategory=*apache*
+| parse "HTTP/1.1\" * * * " as status_code, size, referrer
+| timeslice 5m
 | avg(size), count by _timeslice
 ```
 
