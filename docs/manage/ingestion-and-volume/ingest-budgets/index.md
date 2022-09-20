@@ -72,8 +72,8 @@ A few Sources on Hosted Collectors behave differently when instructed tostop col
 
 ## Tools
 
-* [Ingest Budget Management API V2] (../../APIs/Ingest_Budget_Management_API_V2.md "Ingest Budget Management API V2")
-* [Ingest Budget Management API V1] (../../APIs/Ingest_Budget_Management_API.md "Ingest Budget Management API")
+* [Ingest Budget Management API V2](docs/api/Ingest_Budget_Management_API_V2.md "Ingest Budget Management API V2")
+* [Ingest Budget Management API V1](docs/api/Ingest_Budget_Management_API.md "Ingest Budget Management API")
 * Terraform provider: [sumologic_ingest_budget_v2](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/ingest_budget_v2)
 
 ### Manage ingest budgets

@@ -35,7 +35,7 @@ To send your data to Sumo Logic, you’ll need to learn how to configure Collect
 
 Sumo provides a tool for tracking and managing collection and data volume.
 
-* [Log Ingest Data Volume Index](docs/manage/ingestion-and-volume/data-volume-index/log-tracing-data-volume-index.md): Sumo writes messages to the index about how much log data your account is ingesting. You can query the index, and if desired, install the [Sumo Logic Data Volume app] (docs/integrations/sumo-apps/Data_Volume_App_-_Legacy.md), which provides pre-configured searches and dashboards for analyzing log ingestion. 
+* [Log Ingest Data Volume Index](docs/manage/ingestion-and-volume/data-volume-index/log-tracing-data-volume-index.md): Sumo writes messages to the index about how much log data your account is ingesting. You can query the index, and if desired, install the [Sumo Logic Data Volume app](/docs/integrations/sumo-apps/data-volume-legacy), which provides pre-configured searches and dashboards for analyzing log ingestion. 
 * [Metric Ingest Data Volume Index](docs/manage/ingestion-and-volume/data-volume-index/metrics-data-volume-index.md): The Metrics Data Volume Index is populated with a set of index messages every five minutes. The messages contain information on how much metrics (by data points) your account is ingesting. 
 
 ## Searching
@@ -86,9 +86,9 @@ Sumo supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To l
 
 For customers with Enterprise accounts, Sumo Logic provides different APIs to interact with third-party scripts and applications.
 
-* [Sumo Logic Endpoints] (../../../APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security.md): Sumo Logic has five deployments, or pods, that are assigned depending on the geographic location and the date a Sumo Logic account is created.
-* [Collector Management API] (../../../APIs/Collector-Management-API.md): The Collector Management API allows you to define an initial Source configuration for your Collectors using a JSON file. It also allows you to create, update, and delete Collectors and Sources from an HTTP endpoint.
-* [Search Job API] (../../../APIs/Search-Job-API/About-the-Search-Job-API.md): Sumo Logic exposes the Search Job API for access to resources and log data from third-party scripts and applications. The API follows Representational State Transfer (REST) patterns and is optimized for ease of use and consistency.
+* [Sumo Logic Endpoints](docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security): Sumo Logic has five deployments, or pods, that are assigned depending on the geographic location and the date a Sumo Logic account is created.
+* [Collector Management API](/docs/api/collectors): The Collector Management API allows you to define an initial Source configuration for your Collectors using a JSON file. It also allows you to create, update, and delete Collectors and Sources from an HTTP endpoint.
+* [Search Job API](/docs/api/Search-Job): Sumo Logic exposes the Search Job API for access to resources and log data from third-party scripts and applications. The API follows Representational State Transfer (REST) patterns and is optimized for ease of use and consistency.
 
 ## Sumo Logic apps
 

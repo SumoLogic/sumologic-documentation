@@ -94,16 +94,16 @@ Complete the configuration for the build and deploy tool you use.
 1. Search for *Software Development Optimization* Collector.
 1. Under this Collector, click on **Show URL** for the source **Bitbucket Cloud.** Make a note of this **URL** and use this URL to configure the Bitbucket CI/CD Pipeline to collect deploy events:
 
-   * **Deploy**: Follow the steps outlined in [this document] (docs/integrations/app-development/Bitbucket/Collect_Logs_for_Bitbucket_App.md) to configure the Bitbucket CI/CD Pipeline to collect deploy events.
+   * **Deploy**: Follow the steps outlined in [this document](docs/integrations/app-development/Bitbucket/Collect_Logs_for_Bitbucket_App.md) to configure the Bitbucket CI/CD Pipeline to collect deploy events.
 
 ### Jenkins for build and deploy
 
-1. Install the latest Jenkins Plugin as described [here] (docs/integrations/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md).
+1. Install the latest Jenkins Plugin as described [here](docs/integrations/app-development/Jenkins.md#Collecting-Logs-and-Metrics-for-Jenkins).
 1. Access the Sumo Logic Platform and navigate to **Manage Data** \> **Collection** page.
 1. Search for *Software Development Optimization* Collector.
 1. Under this Collector, click on **Show URL** for the source **Jenkins.** Make a note of this **URL** and **Source Category,** you will use these to configure the Jenkins Plugin :
 
-    * **Build Pipeline Stages**: Follow [Configure Jenkins Plugin,] (docs/integrations/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md) and optionally [Optional - Advance Configuration] (docs/integrations/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md) to configure the Jenkins Sumo Logic plugin.
+    * **Build Pipeline Stages**: Follow [Configure Jenkins Plugin,](docs/integrations/app-development/Jenkins.md#Collecting-Logs-and-Metrics-for-Jenkins) and optionally [Optional - Advance Configuration](docs/integrations/app-development/Jenkins.md#Collecting-Logs-and-Metrics-for-Jenkins) to configure the Jenkins Sumo Logic plugin.
     * **Build**: Follow [this](../jenkins-plugin-build-deploy-events.md) doc to modify your Jenkins plugin to explicitly identify, enrich, and send Build Events to Sumo Logic.
     * **Deploy**: Follow [this](../jenkins-plugin-build-deploy-events.md) doc to modify your Jenkins plugin to explicitly identify, enrich, and send Deploy Events to Sumo Logic.
 

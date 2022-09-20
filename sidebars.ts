@@ -2139,7 +2139,7 @@ module.exports = {
         'api/access-keys',
         'api/account-management',
         'api/archive-ingestion',
-        'api/collector',
+        'api/collectors',
         'api/content-permissions',
         'api/content-management',
         'api/cse',
