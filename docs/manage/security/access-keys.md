@@ -46,7 +46,7 @@ If you have the **Create Access Keys** role capability, you can use the **Prefer
 
 To create your own access keys:
 
-1. In the Sumo Logic web app, click your name in the left-nav and open the **Preferences** page.
+1. In Sumo Logic, click your name in the left-nav and open the **Preferences** page.
 1. In the **My Access Keys** section, click **+ Add Access Key**.
 
     ![access-key-preferences-page-2.png](/img/security/access-key-preferences-page-2.png)

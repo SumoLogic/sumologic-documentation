@@ -1,6 +1,6 @@
 ---
-id: dashboard-new-faqs
-title: Dashboard (New) FAQs
+id: faq
+title: Dashboard (New) FAQ
 sidebar_label: FAQ
 ---
 
@@ -20,7 +20,7 @@ The biggest differences between variables and filters are:
 
 1. Unlike filters, you have to declare variables in your query in order for them to filter the panel. To leverage a variable in a query you can reference it via mustache syntax as follows:
 
-    ```
+    ```sql
     {\<variable_nam\>}}
     ```
 

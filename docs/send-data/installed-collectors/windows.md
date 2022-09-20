@@ -105,7 +105,7 @@ Uninstalling a Sumo Logic installed Collector requires the following steps:
 * [Uninstall using the installer](#uninstall-using-the-installer)
 * [Uninstall from the command line](#uninstall-from-the-command-line)
 
-1. [Remove the Collector from the Sumo Logic Web Application](#remove-the-collector-from-the-web-application)
+1. [Remove the Collector from Sumo Logic](#remove-the-collector-from-the-web-application)
 
 ### Uninstall using the installer
 

@@ -6,7 +6,7 @@ title: Upgrade Collectors
 
 ## Upgrade Collectors using the Web Application
 
-Deploying an upgrade to one or more collectors can be done through the Sumo Logic Web Application. When you initiate a collector upgrade, the installed collector downloads the upgrade package directly from the Sumo
+Deploying an upgrade to one or more collectors can be done through Sumo Logic. When you initiate a collector upgrade, the installed collector downloads the upgrade package directly from the Sumo
 Logic service. We recommend you follow our [best practices](#collector-upgrade-best-practices) when you upgrade your Collectors.
 
 You can also downgrade a collector to a previous version, as described in this topic.
@@ -58,7 +58,7 @@ You can choose to downgrade a Collector or Collectors to an earlier version for 
 
 To downgrade one or more collectors to an earlier build:
 
-1. In the Sumo Logic Web Application select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
 1. Click the **Edit** link on the right of an installed collector.
 1. Click the **Change Version** beside the current version.
 1. Select the version to install. 

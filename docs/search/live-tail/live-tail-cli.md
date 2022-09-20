@@ -14,7 +14,7 @@ The Live Tail CLI supports the following operating systems:
 
 ## Limitations
 
-The limitations for the Live Tail CLI are the same as the [Live Tail](about-live-tail.md) feature in the Sumo Logic Web Application, but for these exceptions:
+The limitations for the Live Tail CLI are the same as the [Live Tail](about-live-tail.md) feature in Sumo Logic, but for these exceptions:
 
 * You can tail logs ingested from Sources configured on Installed Collectors and from HTTP and Cloud Syslog Sources on Hosted Collectors.
 
@@ -54,7 +54,7 @@ The metadata field and filter must be enclosed in quotes.
 
 ### Search
 
-With the Live Tail CLI, just as with [Live Tail](about-live-tail.md) in the Sumo Logic Web Application, you can search with the following metadata fields:
+With the Live Tail CLI, just as with [Live Tail](about-live-tail.md) in Sumo Logic, you can search with the following metadata fields:
 
 * `_sourceCategory`
 * `_sourceHost`

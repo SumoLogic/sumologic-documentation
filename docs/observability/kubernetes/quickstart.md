@@ -107,4 +107,4 @@ You will have to install other K8s-related apps depending upon whether you want 
 
 * [Full List of Configuration Options](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy/helm/sumologic#configuration)
 * [Share a Dashboard (New)](/docs/dashboards-new/share-dashboard-new.md)
-* [Link a dashboard to Explore](/docs/dashboards-new/link-dashboard-explore.md)
+* [Link a dashboard to Explore](/docs/dashboards-new/link-dashboards.md)

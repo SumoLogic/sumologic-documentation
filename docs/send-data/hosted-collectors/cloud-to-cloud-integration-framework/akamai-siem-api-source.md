@@ -47,7 +47,7 @@ When you create an Akamai SIEM API Source, you add it to a Hosted Collector. Be
 
 To configure an Akamai SIEM API Source:
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 1. On the Collection page, click **Add Source** next to a HostedCollector.
 1. Select **Akamai SIEM API**.   
 

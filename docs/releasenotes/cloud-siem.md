@@ -1095,8 +1095,8 @@ We will be consolidating Authentication Brute Force Attempt **MATCH-S00258** on 
 
 #### Minor Changes and Enhancements
 
-* [New] API endpoints are now available to add or remove a given Signal to/from a given Insight, <code>PUT "/insights/<em>&lt;insightId></em>/signals"</code> and <code>DELETE "/insights/<em>&lt;insightId></em>/signals"</code> respectively. (For both endpoints, the request body is a list containing signal ID(s) to add or remove from the insight as the request body, the response is the updated Insight.)
-* [Update] The way CSE displays group membership in Active Directory inventory objects is changing. Previously, it was displayed in LDAP form (i.e. <code>cn=groupname,dc=something,dc=domain,dc=com</code>); now it will just show the group name.
+* [New] API endpoints are now available to add or remove a given Signal to/from a given Insight, `PUT "/insights/<insightId>/signals"` and `DELETE "/insights/<insightId>/signals"` respectively. (For both endpoints, the request body is a list containing signal ID(s) to add or remove from the insight as the request body, the response is the updated Insight.)
+* [Update] The way CSE displays group membership in Active Directory inventory objects is changing. Previously, it was displayed in LDAP form (i.e., `cn=groupname,dc=something,dc=domain,dc=com`); now it will just show the group name.
 
 #### Resolved Issues
 

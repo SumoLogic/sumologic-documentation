@@ -173,9 +173,9 @@ After a few minutes, your new Source should be propagated down to the Collector 
 * **Scope**: Use the source category set above, such as "IIS_prod"
 * **Parse Expression:**
 ```
-parse regex "^[^#].*?(?&lt;s_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?&lt;cs_method>\S+?)
-(?&lt;cs_uri_stem>\S+?) (?&lt;cs_uri_query>\S+?) (?&lt;s_port>\d+?) (?&lt;cs_username>\S+?)
-(?&lt;c_ip>.+?) (?&lt;cs_User_Agent>\S+?) (?&lt;cs_Referer>\S+?) (?&lt;sc_status>\d+?)
+parse regex "^[^#].*?(?<s_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<cs_method>\S+?)
+(?<cs_uri_stem>\S+?) (?<cs_uri_query>\S+?) (?<s_port>\d+?) (?<cs_username>\S+?)
+(?<c_ip>.+?) (?<cs_User_Agent>\S+?) (?<cs_Referer>\S+?) (?<sc_status>\d+?)
 (?<sc_substatus>\d+?) (?<sc_win32_status>\d+?) (?<time_taken>\d+?)$"
 ```
 

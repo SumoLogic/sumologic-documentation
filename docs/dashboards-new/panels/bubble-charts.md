@@ -4,7 +4,7 @@ id: bubble-charts
 
 # Bubble Charts
 
-Bubble charts are available in the [Dashboard (New)](../about-dashboard-new.md) platform.
+Bubble charts are available in the [Dashboard (New)](../about.md) platform.
 
 Bubble charts display three dimensions of data. A bubble chart is a two dimensional scatter chart where each data point is represented by its size, the third dimension. This allows you to visualize the counts associated with each point. Bubble charts require at least one aggregate dimension and two other numeric dimensions.
 

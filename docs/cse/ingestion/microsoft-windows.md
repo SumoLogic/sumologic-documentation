@@ -31,7 +31,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 
 ### Configure a Local Windows Event Log Source
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 1. Navigate to the Installed Collector where you want to create the source.
 1. Click **Add Source** next to the Installed Collector.
 1. Select **Windows Event Log**. 

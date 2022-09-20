@@ -1,5 +1,5 @@
 ---
-id: markdown-features
+id: markdown-cheat-sheet
 title: Markdown Cheat Sheet
 sidebar_label: Markdown Cheat Sheet
 description: Learn about markdown features Docusaurus supports.
@@ -14,9 +14,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This is a guide to writing docs in GitHub-flavored markdown, the language in which our docs are written.
 
-## Front Matter
+## What is Markdown?
 
-Markdown documents have metadata at the top called [front matter](https://jekyllrb.com/docs/front-matter/). Every page should have an `id` used for sidebar navigation.
+Markdown is a simple, text-based format you can write using text editors, IDEs, or the GitHub website to write content. We use Docusaurus to manage, style, and build our site. We use GitHub-flavored Markdown with some additional options. Here are more guides and options:
+
+* [Markdown Guide](https://www.markdownguide.org/)
+* [Markdown Cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+
+
+## Frontmatter
+
+Markdown documents have metadata at the top called [frontmatter](https://jekyllrb.com/docs/front-matter/). Every page should have an `id` used for sidebar navigation.
 
 ```markdown
 ---
@@ -242,7 +250,7 @@ Tables use plain markdown with one header, default left aligned columns, and mul
 
 <TabItem value="Markdown">
 
-```markdown
+```
 | Column Name | Example Value | Description |
 | :-- | :-- | :-- |
 | Trace ID | ffaf2f69ee8ad0c1 | The unique identifier of the trace. |
@@ -253,6 +261,26 @@ Tables use plain markdown with one header, default left aligned columns, and mul
 | Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![span hover](/img/apm/traces/span-hover-view.png) |
 | Number of errors | 0 | The number of errors in the trace. |
 | Status | 200 | The HTTP status code of the trace. |
+```
+
+
+```
+Colons can be used to align columns.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+There must be at least 3 dashes separating each header cell.
+The outer pipes (|) are optional, and you don't need to make the
+raw Markdown line up prettily. You can also use inline Markdown.
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
 ```
 
 </TabItem>
@@ -268,6 +296,28 @@ Tables use plain markdown with one header, default left aligned columns, and mul
 | Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![span hover](/img/apm/traces/span-hover-view.png) |
 | Number of errors | 0 | The number of errors in the trace. |
 | Status | 200 | The HTTP status code of the trace. |
+
+
+
+Colons can be used to align columns.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+There must be at least 3 dashes separating each header cell.
+The outer pipes (|) are optional, and you don't need to make the
+raw Markdown line up prettily. You can also use inline Markdown.
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
+
+
+
 
 </TabItem>
 </Tabs>
@@ -414,11 +464,11 @@ Here's a cool tip.
 
 ## Lists
 
-You can mix ordered (or numbered) and unordered (or bulleted) lists together.  Use extra lines and tabs (or 2 spaces) to move content under these bullets, including other bullets, paragraphs, images, and more. Be careful of tabbing over too far. A third tab will automatically render as code.
+You can mix ordered (or numbered) and unordered (or bulleted) lists together. Use extra lines and tabs (or 2 spaces) to move content under these bullets, including other bullets, paragraphs, images, and more. Be careful of tabbing over too far. A third tab will automatically render as code.
 
 ### Numbered Lists
 
-Always start with `1.` for numbered, ordered lists. The generator will automatically number the list correctly when building the site:
+Always start with `1.` for numbered, ordered lists. The generator will automatically number the list correctly when building the site. This can be helpful when you need to add or change the order of instructions (no need to edit every number).
 
 ```markdown title="Markdown Ordered List"
 1. First ordered list item.
@@ -488,9 +538,12 @@ You can configure your editor to always use this format for lists. For Visual St
 * **Ordered List: Marker** set to *one*.
 * **Unordered List: Marker** set to *.
 
+
 ## Code Blocks
 
-Markdown code blocks are supported with Syntax highlighting. Always use [code block](#code-blocks) to format programming language (i.e., SQL for Sumo queries, JSON for logs).
+Always use [code block](#code-blocks) to format programming language scripts (i.e., SQL for Sumo queries, JSON for logs). Format blocks of code by placing triple backticks before and after the code.
+
+Markdown code blocks support Syntax highlighting. If you know the code language, include that in the first set of ticks. This applies code highlighting for the language. See [this list](https://prismjs.com/#supported-languages) of available languages.
 
 To highlight lines in the code, use `{#}` in the title line with lines numbers. This example highlights lines 2 through 6.
 
@@ -537,7 +590,7 @@ function HelloDocusaurus() {
 </TabItem>
 </Tabs>
 
-For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/docs/markdown-features/code-blocks).
+For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/docs/markdown-cheat-sheet/code-blocks).
 
 ### Import GitHub Repo File
 

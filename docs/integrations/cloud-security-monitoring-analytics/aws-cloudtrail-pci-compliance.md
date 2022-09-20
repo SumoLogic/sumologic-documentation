@@ -78,7 +78,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
 | parse "\"userName\":\"*\"" as user
 | parse "\"eventName\":\"*\"" as event
-| parse regex field=event "^(?&lt;event_type>[A-Z][a-z]+?)[A-Z]"
+| parse regex field=event "^(?<event_type>[A-Z][a-z]+?)[A-Z]"
 | where (event matches "*Security*" OR event matches "*Network*") and event_type in ("Create","Delete")
 | count by event
 | sort _count
