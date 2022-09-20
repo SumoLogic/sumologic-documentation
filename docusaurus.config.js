@@ -88,6 +88,9 @@ module.exports = {
             ],
           },
         },
+        googleAnalytics: {
+          trackingID: 'UA-16579649-3',
+        },
         theme: {
           customCss: require.resolve('./src/css/sumo.scss'),
         },
@@ -234,6 +237,7 @@ module.exports = {
                 label: 'Getting Started',
                 items: [
                   {
+                    className: 'horizontal-rule',
                     label: 'Get Started',
                     sublabel: 'Accounts, concepts, & more',
                     to: '/docs/get-started',
@@ -275,6 +279,7 @@ module.exports = {
                 label: 'Search, Metrics, Logs',
                 items: [
                   {
+                    className: 'horizontal-rule',
                     label: 'Search and Logs',
                     sublabel: 'Find data with queries',
                     to: '/docs/search',
@@ -302,6 +307,7 @@ module.exports = {
                 label: 'App Performance',
                 items: [
                   {
+                    className: 'horizontal-rule',
                     label: 'Traces',
                     sublabel: 'Review traces and spans',
                     to: '/docs/apm/traces',
@@ -319,9 +325,10 @@ module.exports = {
               },
               {
                 // 3
-                label: 'Infrastructure Monitoring',
+                label: 'Observability',
                 items: [
                   {
+                    className: 'horizontal-rule',
                     label: 'About Observability',
                     sublabel: 'Learn about Observability',
                     to: '/docs/observability',
@@ -357,6 +364,7 @@ module.exports = {
                 label: 'Security and Incidents',
                 items: [
                   {
+                    className: 'horizontal-rule',
                     label: 'Cloud SIEM Enterprise',
                     sublabel: 'Security event management',
                     to: '/docs/cse',
@@ -386,6 +394,7 @@ module.exports = {
                 label: 'Other Solutions',
                 items: [
                   {
+                    className: 'horizontal-rule',
                     label: 'Global Intelligence',
                     sublabel: 'Review security issues',
                     to: '/docs/global-intelligence',
@@ -426,6 +435,11 @@ module.exports = {
             position: 'left',
           },
           {
+            label: 'Contribute',
+            to: '/docs/contributing',
+            position: 'left',
+          },
+          {
             label: 'Support',
             to: 'https://support.sumologic.com/hc/en-us',
             position: 'left',
@@ -443,21 +457,22 @@ module.exports = {
       //    position: 'right',
       //  },
           {
-            position: 'right',
             className: 'header-github-link',
-            type: 'dropdown',
             'aria-label': 'GitHub repository',
-            items:[
-              {
-                label: 'Docs GitHub',
-                href: 'https://github.com/SumoLogic/sumologic-documentation',
-              },
-              {
-                label: 'Contribution Guide',
-                href: '/docs/contributing',
-              },
-            ]
+            position: 'right',
+            to: 'https://github.com/SumoLogic/sumologic-documentation',
           },
+//            items:[
+//              {
+  //              label: 'Docs GitHub',
+    //            href: 'https://github.com/SumoLogic/sumologic-documentation',
+      //        },
+        //      {
+//                label: 'Contribution Guide',
+//                href: '/docs/contributing',
+//              },
+//            ]
+//          },
           {
             label: ' ',
             className: 'header-search-link',
