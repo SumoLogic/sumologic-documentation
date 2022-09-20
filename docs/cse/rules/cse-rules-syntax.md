@@ -258,13 +258,44 @@ Returns the four-quadrant inverse tangent of the two arguments supplied.
 
 Returns “true” if a specified array contains a particular value. 
 
-The `array_contains` function is used in CSE rules to check for the existence of a specific value in a Record’s listMatches field in a Match List. For more information, see [Match Lists](about-cse-rules.md) in the *About CSE Rules* topic.
+CSE rules use `array_contains` statements to look for a value in a Record field. This is useful if you want to check a Record’s `listMatches field` for [Match Lists](about-cse-rules.md) or threat intel list matches. You can also check the contents of the `fieldsTags` field to see if matches a keyword tag or schema key tag value.
 
-**Syntax**
+**Syntax for matching to lists**
 
-The syntax for checking for the existence of a Match List name in a Record’s `listMatches` field is: 
+The syntax for checking for the existence of a Match List name or a threat intel list name in a Record’s `listMatches` field is: 
 
 `array_contains(listMatches, 'match_list_name')`
+
+where:
+
+* `list_name` is the name of a Match List or a threat intel list
+
+:::note
+When you reference a threat intel  list using array_contains, you must substitute underscores for spaces in the threat intel list name.
+:::  
+
+**Syntax for matching to a keyword tag**
+
+The syntax for checking to see if the the `fieldsTag` field contains a particular keyword tag is: 
+
+`array_contains(fieldsTags["field"], "keyword-tag")`
+
+where:
+
+* `field `is the name of a Record field
+* `keyword-tag` is a keyword tag
+
+**Syntax for matching to a schema key tag**
+
+The syntax for checking to see if the the `fieldsTag` field contains a particular schema key tag is: 
+
+`array_contains(fieldsTags["field"], "schema-key:schema-value")`
+
+where:
+
+* `field` is the name of a Record field
+* `schema-key` is the name of a schema key tag
+* `schema-value` is the value of a schema key tag
 
 **Example**
 

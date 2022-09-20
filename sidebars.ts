@@ -2053,6 +2053,7 @@ module.exports = {
             'cse/integrations/forward-cse-data-to-sumo',
             'cse/integrations/forward-cse-signals-to-sumo',
             'cse/integrations/insight-enrichment-server',
+            'cse/integrations/enable-virustotal-enrichment',
             'cse/integrations/integrate-cse-with-taxii-feed',
             'cse/integrations/security-incident-response-integration',
           ],
