@@ -1,6 +1,7 @@
 ---
 id: link-dashboards
 title: Linking Dashboards (New)
+description: Easily link dashboards together to quickly view related data.
 ---
 
 ## Link Multiple Dashboards Together

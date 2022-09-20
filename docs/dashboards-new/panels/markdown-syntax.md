@@ -1,8 +1,10 @@
 ---
 id: markdown-syntax
+title: Markdown Syntax
+description: Markdown Syntax options are supported in Dashboards.
 ---
 
-# Markdown Syntax
+
 
 The following Markdown Syntax options are supported in Dashboards. When your syntax is supported, you will see "Markdown Supported" near the bottom left corner of the text box. Unsupported syntax prevents you from clicking the **Submit** button.
 

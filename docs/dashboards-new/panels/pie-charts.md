@@ -1,8 +1,10 @@
 ---
 id: pie-charts
+title: Pie Charts
+description: Donut or Pie charts are useful for visually comparing the percentage of events that have occurred for a particular field.
 ---
 
-# Pie Charts
+
 
 Pie charts are useful for visually comparing the percentage of events that have occurred, such as the type of error that occurs the most in your system. A pie chart will compare different values for the same field. If you want to compare values for different fields consider using a histogram.
 
