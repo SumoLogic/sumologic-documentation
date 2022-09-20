@@ -72,7 +72,7 @@ The application setup wizard automates the setup of all the necessary resources 
 
 * The application setup wizard allows you to quickly get started by installing a copy of the configured applications. After the initial setup, if you need additional copies of the Sumo Logic applications, you can install them from the Sumo Logic App catalog.
 
-* If you plan to integrate Jenkins with this solution, the Jenkins plugin is not configured during setup. To configure Jenkins collection, see [Install the Jenkins Plugin](docs/integrations/app-development/Jenkins.md#Collecting-Logs-and-Metrics-for-Jenkins "Collect Logs and Metrics for Jenkins"), [Configure Jenkins Plugin](docs/integrations/app-development/Jenkins.md#Collecting-Logs-and-Metrics-for-Jenkins "Collect Logs and Metrics for Jenkins") (use **SDO/Jenkins** as the source category), and [Optional - Advanced Configuration](docs/integrations/app-development/Jenkins.md#Collecting-Logs-and-Metrics-for-Jenkins "Collect Logs and Metrics for Jenkins") to install and configure the Jenkins Sumo Logic plugin.
+* If you plan to integrate Jenkins with this solution, the Jenkins plugin is not configured during setup. To configure Jenkins collection, see [Install the Jenkins Plugin](/docs/integrations/app-development/Jenkins#Collecting-Logs-and-Metrics-for-Jenkins), [Configure Jenkins Plugin](/docs/integrations/app-development/Jenkins#Collecting-Logs-and-Metrics-for-Jenkins) (use **SDO/Jenkins** as the source category), and [Optional - Advanced Configuration](/docs/integrations/app-development/Jenkins#Collecting-Logs-and-Metrics-for-Jenkins) to install and configure the Jenkins Sumo Logic plugin.
 
 * Currently only Jira Cloud is supported as an issue management application.
 
@@ -290,18 +290,18 @@ Complete the configuration for the build and deploy tool you use.
 
 1. Under this Collector, click on **Show URL** for the source **Bitbucket Cloud.** Make a note of this **URL** and use this URL to configure the Bitbucket CI/CD Pipeline to collect deploy events:
 
-   * **Deploy**: Follow the steps outlined in [this document](docs/integrations/app-development/Bitbucket/Collect_Logs_for_Bitbucket_App.md) to configure the Bitbucket CI/CD Pipeline to collect deploy events.
+   * **Deploy**: Follow the steps outlined in [this document](/docs/integrations/app-development/Bitbucket#Collecting-Logs-for-Bitbucket-app) to configure the Bitbucket CI/CD Pipeline to collect deploy events.
 
 ### Jenkins for build and deploy
 
-1. Install the latest Jenkins Plugin as described [here](docs/integrations/app-development/Jenkins.md#Collecting-Logs-and-Metrics-for-Jenkins)
+1. Install the latest Jenkins Plugin as described [here](/docs/integrations/app-development/Jenkins#Collecting-Logs-and-Metrics-for-Jenkins)
 
 1. Access the Sumo Logic Platform and navigate to **Manage Data** \> **Collection** page.
 
 1. Search for *Software Development Optimization* Collector.
 
 1. Under this Collector, click on **Show URL** for the source **Jenkins.** Make a note of this **URL** and **Source Category,** you will use these to configure the Jenkins Plugin :
- * **Build Pipeline Stages**: Follow [Configure Jenkins Plugin,](docs/integrations/app-development/Jenkins.md#Collecting-Logs-and-Metrics-for-Jenkins) and optionally [Optional - Advance Configuration](docs/integrations/app-development/Jenkins.md#Collecting-Logs-and-Metrics-for-Jenkins) to configure the Jenkins Sumo Logic plugin.
+ * **Build Pipeline Stages**: Follow [Configure Jenkins Plugin,](/docs/integrations/app-development/Jenkins#Collecting-Logs-and-Metrics-for-Jenkins) and optionally [Optional - Advance Configuration](/docs/integrations/app-development/Jenkins#Collecting-Logs-and-Metrics-for-Jenkins) to configure the Jenkins Sumo Logic plugin.
  * **Build**: Follow [this](../jenkins-plugin-build-deploy-events.md) doc to modify your Jenkins plugin to explicitly identify, enrich, and send Build Events to Sumo Logic.
  * **Deploy**: Follow [this](../jenkins-plugin-build-deploy-events.md) doc to modify your Jenkins plugin to explicitly identify, enrich, and send Deploy Events to Sumo Logic.
 

@@ -62,4 +62,4 @@ To add a dashboard or search to Admin Recommended:
 
 ## Track content changes in your org
 
-If you need to track what content has been shared in your organization, or recently changed by another Content Administrator, you can find dashboards to help you track that information in the [Audit App](docs/integrations/sumo-apps/Audit_App.md "Audit App").
+If you need to track what content has been shared in your organization, or recently changed by another Content Administrator, you can find dashboards to help you track that information in the [Audit App](/docs/integrations/sumo-apps/Audit).

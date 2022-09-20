@@ -22,7 +22,7 @@ When one or more collectors in your Sumo Logic account are eligible for an u
 ![Upgrade collectors](/img/collector/upgrade-collectors-icon.png)
 
 :::important
-The user interface will show up to 50 Collectors at a time. After upgrading one or more Collectors you can close and reopen the 'Upgrade Collectors' window to display other upgradable Collectors. You may consider conducting upgrades with the [Collector Management API](docs/api/collectors/Upgrade-or-Downgrade-Collectors-Using-the-API.md).
+The user interface will show up to 50 Collectors at a time. After upgrading one or more Collectors you can close and reopen the 'Upgrade Collectors' window to display other upgradable Collectors. You may consider conducting upgrades with the [Collector Management API](/docs/api/collectors#Upgrade-or-Downgrade-Collectors-Using-the-API).
 :::
 
 ### Upgrade collectors to the latest build
@@ -118,7 +118,7 @@ There is a community supported script available on GitHub that uses the Collecto
 
 ### Stay Current
 
-While we make every effort to keep backwards compatibility for collectors, many new collector versions contain important bug fixes along with new functionality, so we recommend keeping up-to-date with collector versions you’re using in your production environments.  You can read the [Release Notes](../../Release-Notes/Collector-Release-Notes.md) for each Collector version here, so you know exactly what changes are made.
+While we make every effort to keep backwards compatibility for collectors, many new collector versions contain important bug fixes along with new functionality, so we recommend keeping up-to-date with collector versions you’re using in your production environments.  You can read the [Release Notes](docs/releasenotes/collector.md) for each Collector version here, so you know exactly what changes are made.
 
 ### Use the Sumo Logic User Interface to Upgrade
 

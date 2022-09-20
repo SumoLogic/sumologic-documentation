@@ -92,7 +92,7 @@ server machine of your choice:
 
 1. Configure the following mandatory parameters in the **main.auto.tfvars** file.
 
-   * `sumologic_environment`: [Sumo Logic Deployment](/api/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) Enter au, ca, de, eu, jp, us2, in, fed or us1.
+   * `sumologic_environment`: [Sumo Logic Deployment](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) Enter au, ca, de, eu, jp, us2, in, fed or us1.
    * `sumologic_access_id`: [Sumo Logic Access ID](docs/manage/security/access-keys.md) Sumo Logic Access ID.
    * `sumologic_access_key`: [Sumo Logic Access Key](docs/manage/security/access-keys.md) Sumo Logic Access Key used for Sumo Logic API calls.
    * `sumologic_organization_id`: [Sumo Logic Organization ID](../../../get-started/account-setup.md) You can find your org on the Preferences page in the Sumo Logic UI. For more information, see [Preferences Page](../../../get-started/account-setup.md). Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.

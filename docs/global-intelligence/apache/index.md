@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/web-servers/gi-apache1.png')} alt="icon" width="75"/>
 
-The Global Intelligence for Apache App is a companion to the [Apache](integrations/web-servers/Apache.md) App and helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache servers against other Sumo Logic customer’s servers. Such comparisons can help diagnose potential load, throughput, or error issues in Apache clusters and avoid operational incidents arising from sub-optimal configurations of Apache clusters.
+The Global Intelligence for Apache App is a companion to the [Apache](/docs/integrations/web-servers/Apache) App and helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache servers against other Sumo Logic customer’s servers. Such comparisons can help diagnose potential load, throughput, or error issues in Apache clusters and avoid operational incidents arising from sub-optimal configurations of Apache clusters.
 
 ## Availability
 

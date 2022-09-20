@@ -69,8 +69,8 @@ The query sample provided in this section is from the **Failed Login Reasons **p
 
 **Parameters**
 
-* Failed_Signon:*
-* Authentication_Failure_Message:*
+* `Failed_Signon:`*
+* `Authentication_Failure_Message:*`
 
 ```sql title="Query String"
 _sourceCategory=workday_logs and _sourceName=signonlogs
@@ -88,55 +88,33 @@ This section explains how to collect logs from Workday and ingest them into Sumo
 
 The instructions below assume that the following security groups -  Security Administrator, System Auditor, and Report Administrator are assigned to the user who will be configuring the collection in the Workday portal. Make sure the account used doesn't belong to an employee otherwise custom reports created by the user may no longer be available when they leave the organization.
 
-* [Collection Overview](#Collection-Overview)
-* [Sample Log Messages](#Sample-Log-Messages)
-* [Query Sample](#Query-Sample)
-
-
-### Collection Overview
-
 Sumo Logic collects logs from Workday via a script that calls the Workday APIs. As part of the script configuration, you need to first configure log types that need to be collected, and these logs are then forwarded to Sumo Logic’s HTTPS source.
 
 By default, the collection starts from the current date and time, but this setting is also configurable. For more information, see the [Advanced Configuration](#Advanced_Configuration) options.
 
 
-#### Before You Deploy
+### Before You Deploy
 
 Sumo Logic collects data from the User Activity and Signon Activity Reports via the Workday APIs. Once data collection is set up, the data in the Sumo Logic platform is analyzed via the Workday app in the Sumo Logic app catalog.
 
 User activity data is collected through the Workday Audit Logs API. To ensure that no sensitive information is being sent to Sumo Logic via this report, please run the “User Activity” Report and check the columns (specifically the Target column). If the data does have any sensitive info, you can enable data masking for the security group created in the steps outlined below by following the instructions in [this doc](https://doc.workday.com/reader/Z9lz_01hqDMDg6NSf7wCBQ/uHBXsJmAzuJ2QFVU6D3o2w).
 
 
-#### Recommended Deployment Process
+### Recommended Deployment Process
 
-We recommend you to deploy the Sumo Logic - Workday integration using the following guidelines.
+We recommend deploying the Sumo Logic Workday integration using the following guidelines.
 
 1. Start by configuring the collector source as described in the sections below for your Workday Sandbox environment.
 2. Once the integration has been successfully deployed and tested in your Workday Sandbox environment, only then should you move to configuring this integration in your Workday production environment.  
 
 After the integration has been configured, if you run into performance issues in your Workday production environment, please file a ticket with Workday to determine what is causing the degradation. Please disable the right Sumo Logic Workday collector source if the Workday team determines that it is causing performance problems and then file a support ticket with Sumo Logic to resolve it.
 
-Configuring collection for Workday includes the following tasks:
-
-* [Step 1: Configure the Workday Portal](#Step_1:_Configure_the_Workday_Portal)
-* [Step 2: Add a Hosted Collector and HTTP Source](#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source)
-* [Step 3: Configure Collection for Workday](#Step_3:_Configure_Collection_for_Workday)
-* [Advanced Configuration](#Advanced_Configuration)
-* [Troubleshooting](#Troubleshooting)
-
-
-The instructions below assume that following security groups -  **Security Administrator, System Auditor, and Report Administrator** are assigned to the user who will be configuring the collection in the Workday portal.
+Configuring collection for Workday includes the following tasks. The instructions below assume that following security groups -  **Security Administrator, System Auditor, and Report Administrator** are assigned to the user who will be configuring the collection in the Workday portal.
 
 
 #### Step 1: Configure the Workday Portal
 
 This section demonstrates how to configure the Workday portal to integrate with Sumo Logic’s collection scripts. Configuring the Workday portal involves the following steps:
-
-[Step 1.1: Create an Integration System User](#Step_1.1:_Create_an_Integration_System_User)
-[Step 1.2: Create a Security Group](#Step_1.2:_Create_a_Security_Group)
-[Step 1.3: Register the API Client](#Step_1.3:_Register_the_API_Client)
-[Step 1.4: Enable your tenant to send data](#Step_1.4:_Enable_your_tenant_to_send_data)
-[Step 1.5: Create a Custom sign on report](#Step_1.5:_Create_a_Custom_signon_report)
 
 #### Step 1.1: Create an Integration System User
 
@@ -165,13 +143,13 @@ This section demonstrates how to configure the Workday portal to integrate with 
 
 3. Click **OK**.
 4. To attach the security group to a domain, access the **View Domain** task for the domain System Auditing.
-5. Select **Domain > Edit Security Policy Permissions** from the **System Auditing** related **Actions** menu. \
- \
+5. Select **Domain > Edit Security Policy Permissions** from the **System Auditing** related **Actions** menu.
+
 
 6. Add the SumoLogic Client Security Group you created to both the tables as below:
     * **Report/Task Permissions table.** View access
     * **Integration Permissions table**. Get access \
- \
+
 
 
 
@@ -329,10 +307,9 @@ To deploy the Sumo Logic Workday SAM Application, do the following:
 6. After the deployment, you can verify whether all the resources are created completely. \
 
 
-##### Configure script-based collection for Workday
+#### Configure script-based collection for Workday
 
 This section shows you how to configure script-based log collection for the Sumo Logic Workday App.
-
 
 The sumologic-workday script is compatible with python 3.7 and python 2.7, and has been tested on Ubuntu 18.04 LTS.
 
@@ -344,7 +321,7 @@ This task makes the following assumptions:
 * You are logged in to a Linux machine as the user account with which you will install the collector. If not, use the following command to switch to that account: `sudo su <user_name>`
 
 
-##### Configure the script on a Linux machine
+#### Configure the script on a Linux machine
 
 This task shows you how to install the script on a Linux machine.
 
@@ -427,7 +404,6 @@ The Workday specific configuration is shown in below two sections:
 * Workday_API_Config section - Remove this section to stop collecting audit logs via REST API.
 
 You can view the entire configuration with default settings [here](https://github.com/SumoLogic/sumologic-workday/blob/master/sumoworkdaycollector/sumoworkdaycollector.yaml). For SAM deployments you can update `sumoworkdaycollector.yaml` file in the AWS Lambda console editor.
-
 
 The following table provides a list of variables for Workday that you can optionally define in the configuration file.
 
