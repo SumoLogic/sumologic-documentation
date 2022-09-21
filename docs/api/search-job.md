@@ -14,6 +14,7 @@ Search Job APIs are not yet built with OpenAPI specifications and therefore not 
 Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
 
 Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+
 ## Before You Begin
 
 The Search Job API is available to Enterprise accounts.
@@ -254,7 +255,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>invalid.timestamp.to
    </td>
-   <td>The 'to' field contains an invalid time. 
+   <td>The 'to' field contains an invalid time.
    </td>
   </tr>
   <tr>
@@ -262,7 +263,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>invalid.timestamp.from
    </td>
-   <td>The 'from' field contains an invalid time. 
+   <td>The 'from' field contains an invalid time.
    </td>
   </tr>
   <tr>
@@ -286,7 +287,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>empty.timezone
    </td>
-   <td>The 'timezone' cannot be blank. 
+   <td>The 'timezone' cannot be blank.
    </td>
   </tr>
   <tr>
@@ -294,7 +295,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>no.query
    </td>
-   <td>No 'query' parameter was provided. 
+   <td>No 'query' parameter was provided.
    </td>
   </tr>
   <tr>
@@ -302,7 +303,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>unknown.time.type
    </td>
-   <td>Time type is not correct .
+   <td>Time type is not correct.
    </td>
   </tr>
   <tr>
@@ -364,7 +365,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>"offset.missing"
    </td>
-   <td>"Offset is missing." 
+   <td>"Offset is missing."
    </td>
   </tr>
   <tr>
@@ -372,7 +373,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>"offset.negative"
    </td>
-   <td>"Offset cannot be negative." 
+   <td>"Offset cannot be negative."
    </td>
   </tr>
   <tr>
@@ -380,7 +381,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>"limit.missing"
    </td>
-   <td>"Limit is missing." 
+   <td>"Limit is missing."
    </td>
   </tr>
   <tr>
@@ -388,7 +389,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>"limit.zero"
    </td>
-   <td>"Limit cannot be 0." 
+   <td>"Limit cannot be 0."
    </td>
   </tr>
   <tr>
@@ -504,7 +505,7 @@ Sumo Logic endpoints like `api.sumologic.com` are different in deployments outsi
    </td>
    <td>Yes
    </td>
-   <td>The time zone if from/to is not in milliseconds.  See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes.
+   <td>The time zone if from/to is not in milliseconds.  See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes. <br/><br/>
 <p><strong>Note</strong> Alternatively, you can use the parameter timezone instead of timeZone.</p>
    </td>
   </tr>
@@ -525,7 +526,7 @@ Sumo Logic endpoints like `api.sumologic.com` are different in deployments outsi
    </td>
    <td>No
    </td>
-   <td>This enables <a href="https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing">dynamic parsing</a>, when specified as <code>intelligent</code>, Sumo automatically runs field extraction on your JSON log messages when you run a search. By default, searches run in <code>performance</code> mode.
+   <td>This enables <a href="https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing">dynamic parsing</a>. Values are: <br/><br/><code>AutoParse</code> - Sumo Logic will performfield extraction on JSON log messages when you run a search.<br/><br/><code>Manual</code> - (Default value) Sumo Logic will not autoparse JSON logs at search time. <br/><br/><strong>Note</strong> Previously, the supported values for this parameter were <code>performance</code>, <code>intelligent</code>, and <code>verbose</code>. These values still function, but are deprecated. Sumo Logic recommends the use of the new supported values: <code>AutoParse</code> and <code>Manual</code>.
    </td>
   </tr>
 </table>
