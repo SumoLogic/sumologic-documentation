@@ -10,7 +10,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Service Release Notes for the current year are listed here. If you need to see previous Service Release Notes, check the [Archive](docs/releasenotes/archive/index.md).
 
 ---
-### September 12, 2022 (Alerts)
+
+## September 19, 2022 (Security)
+
+Update - We've improved out Access Key UI to make it easy to spot Access Keys that haven't been used lately. Now the Access Keys management page displays the date and time an Access Key was last used to make a request to an API endpoint. For more information, see [Access Keys](docs/manage/security/access-keys.md) .
+
+In a future update, Sumo Logic will, by default, automatically disable Access Keys that have not been used for 30 days. Your Sumo Logic admin will be able to configure the period of time before an unused key will be disabled.  
+
+---
+
+## September 15, 2022 (Apps)
+
+Update - GitHub Advanced Security dashboards are now available for the Sumo Logic App for GitHub. These new dashbaords include Code Scanning Alerts, Pushes, Secret Scanning Alerts, Security and analyses and Repository Vulnerability alerts.
+
+---
+
+## September 12, 2022 (Alerts)
 
 New - We’re happy to announce the release of Alert Grouping, which allows you to generate more than one alert from a given monitor by specifying a group condition on one or more fields. For example, rather than creating multiple monitors for each `service`, you could create one single monitor that notifies you when some metric (i.e., CPU utilization, error count) goes above the threshold for a given `service`. [Learn more](docs/alerts/monitors/alert-grouping.md).
 
@@ -18,6 +33,31 @@ New - Configurable Resolution Window for Logs allows more quickly resolve alerts
 
 New - You can now access your monitor playbook as a template variable, `{{playbook}}`. You can reference this template variable to customize your notification payloads similar to any other template variable. [Learn more](docs/alerts/alert-variables.md).
 
+---
+
+## September 9, 2022 (Apps)
+
+New - LambdaTest allows you to analyze your testing behavior and error trends. LambdaTest is a continuous quality testing cloud platform that helps developers and testers ship code faster. The [LambdaTest](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/LambdaTest) platform provides secure, scalable, and insightful test orchestration for customers at different points in their DevOps (CI/CD) lifecycle.
+
+New - we’re happy to announce the release of the [Sumo Logic App for AWS Cost Explorer](docs/integrations/amazon-aws/cost-explorer.md), which allows you to visualize, understand, and manage your AWS costs and usage over time. 
+
+With the Sumo Logic App for AWS Cost Explorer, you can use our out-of-the-box dashboards as well as filtering and grouping capabilities to dive deeper into your cost and usage data and generate custom insights. Gain a better understanding of your cost trends and see detailed information about the costs and usage associated with your top cost-accruing AWS accounts, regions, services, and operations.
+
+Update - We are happy to announce the release of a new Explore Hierarchy for Database [Application Components](docs/observability/app-components.md), together with the support of related Database Entities in Entity Inspector. This functionality allows you to organize your data in a structured hierarchy and utilize the database dashboards available out-of-the-box from App Catalog. Currently, the following Database engines are supported by this feature:
+
+* [Cassandra](docs/integrations/databases/cassandra.md)
+* [Couchbase](docs/integrations/databases/couchbase.md)
+* [Elasticsearch](docs/integrations/databases/elasticsearch.md)
+* [MongoDB](docs/integrations/databases/mongodb.md)
+* [MySQL](docs/integrations/databases/mysql.md)
+* [PostgreSQL](docs/integrations/databases/postgresql.md)
+* [Redis](docs/integrations/databases/redis.md)
+* [SQL Server](docs/integrations/microsoft-azure/sql-server.md)
+* [MariaDB](docs/integrations/databases/mariadb.md)
+* [Memcached](docs/integrations/databases/memcached.md)
+* [Oracle](docs/integrations/databases/oracle/index.md)
+  
+If you already use one of the above apps, you will need to reinstall it to benefit from the newly added functionality.
 
 ---
 ## September 8, 2022 (Traces)
@@ -39,7 +79,25 @@ New - we're happy to share extended coverage for [Real User Monitoring (RUM)](/d
 
 This new functionality requires RUM script in version 4 or higher (`https://rum.sumologic.com/sumologic-rum-v4.js`). Please ensure you are using the correct version in your pages. For automatic updates, use `https://rum.sumologic.com/sumologic-rum.js`.
 
+---
+## August 30, 2022 (Metrics) 
 
+We're delighted to announce the availability of these new operators: 
+
+* [stddev](docs/metrics/metric-queries-alerts/operators.md#stddev)—Calculates the standard deviation of the metrics values that match the query.
+* [in](docs/metrics/metric-queries-alerts/operators.md#in)—You can use this operator in a metrics query selector as shorthand for multiple OR conditions. 
+
+---
+
+## August 25, 2022 (Collection)
+
+Update - We are pleased to announce that the following [Cloud-to-Cloud Integration Framework[docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework] sources are now available in Sumo Logic’s FedRAMP deployment: 
+
+* [Crowdstrike](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source.md)
+* [Crowdstrike FDR](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source.md)
+* [Duo](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source.md)
+* [Sentinel One Mgmt API](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source.md) 
+* [Proofpoint Tap](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source.md)
 
 ---
 ## August 17, 2022 (Search)
@@ -54,7 +112,7 @@ The new UI for creating and managing [Scheduled Views](/docs/manage/Scheduled-Vi
 ---
 ## August 5, 2022 (Apps)
 
-New - We’re happy to announce the release of The Sumo Logic App for [Host Metrics (EC2)](docs/integrations/amazon-aws/ec2-cloudwatch-metrics.md)). This App allows you to collect your EC2 instance metrics using Sumo Logic Installed Collector and display them using predefined search queries and Dashboards. The App provides Dashboards to analyze EC2 instance metrics for CPU, disk, memory, and network.
+New - We’re happy to announce the release of The Sumo Logic App for [Host Metrics (EC2)](docs/integrations/amazon-aws/ec2-cloudwatch-metrics.md). This App allows you to collect your EC2 instance metrics using Sumo Logic Installed Collector and display them using predefined search queries and Dashboards. The App provides Dashboards to analyze EC2 instance metrics for CPU, disk, memory, and network.
 
 Update - We are glad to update that the Sumo Logic App for [MongoDB Atlas](/docs/integrations/databases/mongodb-atlas) now allows you to monitor database operations and performance KPIs and provides visibility into the security posture of your clusters.
 
