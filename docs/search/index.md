@@ -1,6 +1,5 @@
 ---
 slug: /search
-id: index
 title: Search and Logs
 description: Learn about the Sumo Logic search language, operators, and search features.
 ---
