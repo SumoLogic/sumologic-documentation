@@ -28,7 +28,7 @@ You must update all of the indicated fields for the search to save successfully
 1. Enable the Data Volume Index. See [Enable and Manage the Data Volume Index]v for instructions.
 
 1. Substitute the correct values of `X` for the following parameters in the search query (see entries in yellow in the query below). For the billing start and end values, use the day of the month. For example, in the screenshot, the value for `billing_start` is 17 so the updated line from the search becomes `17 as billing_start`.
-
+===X=== 
     ```
     X as billing_start
     X as billing_end

@@ -53,7 +53,7 @@ Building a query made up of key-value pairs is easier, because Sumo prompts you 
 
 A metric rule is made up of two parts: a *metric match expression* that defines the scope of the rule, and one or more variables that define the tags that will be applied to metrics that match the match expression.
 
-You use the metric rules editor to build a metric rule. On the **Metric Rules** page (**Manage Data \> Metrics�\> Metric Rules),** metric rules are listed like this:
+You use the metric rules editor to build a metric rule. On the **Metric Rules** page (**Manage Data \> Metrics\> Metric Rules),** metric rules are listed like this:
 
 ![named-rule.png](/img/metrics/named-rule.png)
 
