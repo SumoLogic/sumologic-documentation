@@ -146,7 +146,7 @@ You can also enable Data Forwarding when you first create a Partition or Schedul
 
 An error or alert condition can occur with an S3 data forwarding destination for the following reasons:
 
-* If Sumo Logic is not able to verify the S3 credentials when the destination is saved, an error message indicates that the credentials were rejected by Amazon. If this occurs, verify **Access Key ID,** **Secret Access Key **and the bucket configuration, re-select the **Active** check box, and save again.
+* If Sumo Logic is not able to verify the S3 credentials when the destination is saved, an error message indicates that the credentials were rejected by Amazon. If this occurs, verify **Access Key ID,** **Secret Access Key **and the bucket configuration, re-select the **Active** check box, and save again. 
 
     ![dfd01.png](/img/data-forwarding/dfd01.png) 
 
