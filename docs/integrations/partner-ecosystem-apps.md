@@ -26,7 +26,7 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [Lucidum](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Lucidum)
 * [Mimecast](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Tessian)
 * [Nucleon](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Nucleon)
-* [Spinnaker](https://docs.armory.io/spinnaker-install-admin-guides/sumologic-dashboard/)
+* [Spinnaker](https://docs.armory.io/armory-enterprise/armory-admin/observe/integrations-sumologic/)
 * [StackRox](https://cdn.stackrox.io/integrations/sumologic-stackrox-app.pdf)
 * [Sauce Labs](https://docs.saucelabs.com/basics/integrations/sumo/)
 * [ZeroFox](https://drive.google.com/file/d/13svc5FP0WP3WAES6DvXhK1O8WRiPenf3/edit)
