@@ -121,14 +121,14 @@ By default the threshold Entity Activity Score for Insight generation is 12.The 
 
 | Insight Severity value | Activity Score |
 |------------------------|----------------|
-| Low                    | 13-14          |
-| Medium                 | 15-16          |
-| High                   | 17 or higher   |
+| Low                    | 13          |
+| Medium                 | 14 or 15          |
+| High                   | 16 or higher   |
 
 If your Entity Activity Score threshold value is set to a value other than 12, you can work out the mapping yourself. If `t` is your configured threshold:
 
 ```
-Low = (t + 1) to (t + 2)
-Medium = (t + 3) to (t + 4)
-High = (t + 5) or higher
+Low = (t + 1) 
+Medium = (t + 2) to (t + 3)
+High = (t + 4) or higher
 ```

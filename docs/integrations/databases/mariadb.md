@@ -603,8 +603,11 @@ The **MariaDB - InnoDB** Metrics dashboard shows replication events, errors, war
 
 <img src={useBaseUrl('img/integrations/databases/MariaDB-InnoDB-Metrics.png')} alt="mariadb dashboards" />
 
+### Table Performance Metrics
+  
+The **MariaDB - Table Performance dashboard**, shows performance schema for Table I/O waits and Table Lock waits.
 
-
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB/MariaDB-Table-Peformance-Metrics.png')} alt="mariadb dashboards" />
 
 ## MariaDB Alerts
 
