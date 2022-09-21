@@ -356,9 +356,16 @@ module.exports = {
                     icon: 'widgets',
                     activeBaseRegex: '^/docs/observability/root-cause-explorer',
                   },
+                  // Links to Sensu docs currently
+                  {
+                    label: 'Sensu',
+                    sublabel: 'Investigate issues',
+                    to: 'https://docs.sensu.io/sensu-go/latest/',
+                    icon: 'model_training',
+                    activeBaseRegex: '^/docs/(incidents)/.*',
+                  },
                 ],
               },
-
               {
                 // 4 - What would this link to?
                 label: 'Security and Incidents',
@@ -378,14 +385,6 @@ module.exports = {
                     to: 'https://www.sumologic.com/solutions/cloud-soar/',
                     icon: 'grid_4x4',
                     activeBaseRegex: '^/docs/security/.*',
-                  },
-                  // Links to Sensu docs currently
-                  {
-                    label: 'Sensu',
-                    sublabel: 'Investigate issues',
-                    to: 'https://docs.sensu.io/sensu-go/latest/',
-                    icon: 'model_training',
-                    activeBaseRegex: '^/docs/(incidents)/.*',
                   },
                 ],
               },
