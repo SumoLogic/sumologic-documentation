@@ -64,7 +64,7 @@ When you create a Dropbox Source, you add it to a Hosted Collector. Before crea
 
 To configure a **Dropbox Source
 
-1. In the Sumo Logic web app, navigate to** Manage Data \> Collection** and open the **Collection** tab. 
+1. In Sumo Logic, navigate to** Manage Data \> Collection** and open the **Collection** tab. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Dropbox**.
 

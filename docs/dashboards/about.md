@@ -1,5 +1,5 @@
 ---
-id: about-dashboards
+id: about
 ---
 
 # About Dashboards

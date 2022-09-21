@@ -36,7 +36,7 @@ Forgot your password? You can also reset it from the login screen. <br/><img src
 
 ## Preferences
 
-The **Preferences** page contains settings that apply just to your account. Options on this page don't affect any other users in your organization. Find this page in the menu under your account name in the left nav of the Sumo Logic Web Application.
+The **Preferences** page contains settings that apply just to your account. Options on this page don't affect any other users in your organization. Find this page in the menu under your account name in the left nav of Sumo Logic.
 
 ### My Profile
 

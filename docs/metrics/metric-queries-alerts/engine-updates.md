@@ -90,7 +90,7 @@ The Sumo Logic metric query language supports the following reducer functions: `
 
 Queries that meet all the following conditions will be affected by this change.
 
-* Don’t contain an explicit `quantize using &lt;agg>` statement (where `&lt;agg>` is a quantization method).
+* Don’t contain an explicit `quantize using <agg>` statement (where `<agg>` is a quantization method).
 * Do contain a reducer function that uses at least one of these aggregation functions: `min`, `max`, `sum`, `count`.
 * The quantization used on the selector level (implicitly or explicitly) is less granular than the reporting interval. Of course, it depends on the underlying data, but typically, the quantization must be bigger than 1 minute so that a query can be affected.
 
@@ -111,7 +111,7 @@ The query results that appear on the chart view are based upon quantizing the da
 
 We use `avg` as the quantization method:
 
-* if the query does not contain using `&lt;agg>` (because `avg` is the default when method is not specified), or
+* if the query does not contain using `<agg>` (because `avg` is the default when method is not specified), or
 * if the query does contain `using avg`.
 
 If another quantization method is explicitly specified in the query, for example `using sum`, we use that method.

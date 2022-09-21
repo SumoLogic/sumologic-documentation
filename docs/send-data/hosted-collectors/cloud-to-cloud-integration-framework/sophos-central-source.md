@@ -14,7 +14,7 @@ The Sophos Central Source ingests:
  * Events from the Sophos [Events API Endpoint](https://developer.sophos.com/docs/siem-v1/1/routes/events/get)
 
 :::note
-This Source is not available in the [Fed deployment] (/APIs/Troubleshooting-APIs/Deployments-and-Sumo-Logic-Endpoints).
+This Source is not available in the [Fed deployment](/docs/api/Troubleshooting#Deployments-and-Sumo-Logic-Endpoints).
 :::
 
 ## States
@@ -56,7 +56,7 @@ When you create a Sophos Central Source, you add it to a Hosted Collector. Befo
 
 To configure a Sophos Central Source:
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 

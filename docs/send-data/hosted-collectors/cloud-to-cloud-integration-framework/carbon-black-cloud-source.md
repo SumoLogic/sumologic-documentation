@@ -58,7 +58,7 @@ When you create a Carbon Black Cloud Source, you add it to a Hosted Collector. 
 
 To configure A Carbon Black Cloud Source:
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 1. On the Collectors page, click **Add Source** next to a **Hosted Collector**.
 1. Select **Carbon Black Cloud**.
 
@@ -80,7 +80,7 @@ To configure A Carbon Black Cloud Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
-1. **CB Cloud Domain**. Enter your Carbon Black Cloud domain, such as, `dev-prod05.conferdeploy.net`. See [this knowledge base article](https://community.carbonblack.com/t5/Knowledge-Base/Carbon-Black-Cloud-What-URLs-are-used-to-access-the-APIs/ta-p/67346) to determine which domain to use.
+1. **CB Cloud Domain**. Enter your Carbon Black Cloud domain, such as, `dev-prod05.conferdeploy.net`. See [this knowledge base article](https://community.carbonblack.com/t5/Knowledge-Base/Carbon-Black-Cloud-What-URLs-are-used-to-access-the-api/ta-p/67346) to determine which domain to use.
 
 1. **API Key**. Enter the Carbon Black Cloud API Key you want to use to authenticate requests. Ensure the key is granted the required permissions for all the APIs listed in the above [Authentication section](#authentication).
 
@@ -118,7 +118,7 @@ Cloud Source.
 | `description` | String | No |  Type a description of the Source. | modifiable |
 | `category` | String | No |  Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 | `fields` | JSON Object | No |  JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
-| `domain` | String | Yes | Enter your Carbon Black Cloud domain, such as, `dev-prod05.conferdeploy.net`. See this [knowledge base article](https://community.carbonblack.com/t5/Knowledge-Base/Carbon-Black-Cloud-What-URLs-are-used-to-access-the-APIs/ta-p/67346) to determine which domain to use. | modifiable |
+| `domain` | String | Yes | Enter your Carbon Black Cloud domain, such as, `dev-prod05.conferdeploy.net`. See this [knowledge base article](https://community.carbonblack.com/t5/Knowledge-Base/Carbon-Black-Cloud-What-URLs-are-used-to-access-the-api/ta-p/67346) to determine which domain to use. | modifiable |
 | `api_key` | String | Yes | The Carbon Black Cloud API Key you want to use to authenticate requests. Ensure the key is granted the required permissions for all the APIs listed in the above [Authentication section](#authentication). | modifiable |
 | `api_id` | String | Yes | The Carbon Black Cloud API ID correlated to your API key. | modifiable |
 | `org_key` | String | Yes | Your Carbon Black Cloud Org key, found in your Carbon Black product console under Settings > API Access > API Keys. | modifiable |

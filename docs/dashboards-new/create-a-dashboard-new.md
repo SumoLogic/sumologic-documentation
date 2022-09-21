@@ -1,6 +1,7 @@
 ---
 id: create-a-dashboard-new
 title: Create a Dashboard (New)
+description: Learn how to create your own custom Dashboard (New) with a panel and query, then customize a chart and add the chart to the dashboard.
 ---
 
 This page demonstrates how to create a Dashboard (New), add a query, and then add the chart to the dashboard. You create your Dashboard (New) by selecting template options from menus and drop-downs.

@@ -34,7 +34,7 @@ The following table provides a summary list of key features by Sumo Logic Cloud 
 |-- | -- | -- | -- | -- |
 | Audit Index |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Audit Event Index |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) |
-| [Collector Management API](https://github.com/SumoLogic/sumo-api-doc/wiki/collector-management-api) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| [Collector Management API](https://github.com/SumoLogic/sumo-api-doc/wiki/collectors) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Dashboards - Live Mode  | 7 days | 30 days | 30 days | 30 days |
 | [Data Forwarding](/docs/manage/data-forwarding) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | [Data Volume Index](/docs/manage/ingestion-and-volume/data-volume-index) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
@@ -95,8 +95,8 @@ Using a Free account is a great way to get to know Sumo Logic. While you're try
 * If you begin to reach the 500 MB daily limit, Sumo Logic sends an email to let you know. You can take action to [reduce the amount of data](../partitions-and-data-tiers/manage-indexes-variable-retention.md) you're uploading in order to stay below the limit.
 * If the 500 MB limit is surpassed, you'll receive an email letting you know that data in the Sumo Logic Cloud can no longer be searched (but additional data is still collected). However, if the data limit is fully exceeded, data collection stops (in addition to search being disabled). Disabled features will be available after your usage falls below 4 GB when averaged over seven days (this could take one day, or up to seven days, depending on the amount of data you've uploaded and where you've uploaded it).
 * In extreme situations, Free accounts may be disabled if the data volume continues to exceed the limits.
-* Free accounts are limited to 20 continuous queries, including [Dashboard Panels](../../dashboards/about-dashboards.md).
-* Because Free accounts run on seven-day intervals, [Dashboard Panel](../../dashboards/about-dashboards.md) queries may not use a time range longer than seven days.
+* Free accounts are limited to 20 continuous queries, including [Dashboard Panels](/docs/dashboards/about).
+* Because Free accounts run on seven-day intervals, [Dashboard Panel](/docs/dashboards/about) queries may not use a time range longer than seven days.
 * For Sumo Logic Apps, Free accounts are limited to install the [Log Analysis QuickStart app](/docs/get-started/sumo-logic-apps#log-analysis-quickstart-app).
 * The limitations of a Free account can't be changed, but you can upgrade to a Professional account at any time.
 * For information on throttling and account caps, see [Manage Ingestion](../ingestion-and-volume/log-ingestion.md).

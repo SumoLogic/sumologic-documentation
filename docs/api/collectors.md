@@ -1,5 +1,5 @@
 ---
-id: collector
+id: collectors
 title: Sumo Logic Collector Management APIs
 sidebar_label: Collector Management
 description: The Collector Management API gives you the ability to manage Collectors and Sources from HTTP endpoints.

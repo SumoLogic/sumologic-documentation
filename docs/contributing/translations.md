@@ -5,6 +5,11 @@ sidebar_label: Translating Docs
 description: Learn about our doc translation process.
 ---
 
+:::caution
+
+&#128679; Under construction &#128679;
+:::
+
 All content in /docs folder is the English language documentation, the source of truth for all content. For full information on translations and commands, see [Docusaurus i18n](https://docusaurus.io/docs/i18n/introduction).
 
 :::sumo Doc Team Support

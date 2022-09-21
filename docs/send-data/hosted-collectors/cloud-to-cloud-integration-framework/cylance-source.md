@@ -49,7 +49,7 @@ When you create a Cylance Source, you add it to a Hosted Collector. Before creat
 
 To configure a Cylance Source:
 
-1. In the Sumo Logic web app, select** Manage Data > Collection > Collection**.
+1. In Sumo Logic, select** Manage Data > Collection > Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted** **Collector.
 1. Select **Cylance**.
 1. Enter a **Name **for the Source. The description is optional.
@@ -97,7 +97,7 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/h
 
 ## JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collectors). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 
 | Parameter | Type | Required? | Description | Access |

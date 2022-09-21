@@ -3,7 +3,7 @@ id: changing-alerts
 title: Changing Other Alerts
 ---
 
-#
+
 
 The ability to modify or turn off alerts created by another user is now possible with Content Sharing. Sometimes the need or frequency of a log alert changes while the creator is unavailable and with Content Sharing you can give that ability to another Role or user within your Organization.
 

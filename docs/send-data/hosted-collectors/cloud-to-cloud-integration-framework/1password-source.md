@@ -67,7 +67,7 @@ When you create a 1Password Source, you add it to a Hosted Collector. Before cre
 
 To configure a 1Password Source:
 
-1. In the Sumo Logic web app, select** Manage Data > Collection > Collection**.
+1. In Sumo Logic, select** Manage Data > Collection > Collection**.
 2. On the Collectors page, click **Add Source** next to a Hosted** **Collector.
 3. Select **1Password**.
 4. Enter a **Name **for the Source. The **description** is optional.
@@ -198,7 +198,7 @@ When Sumo Logic detects an issue it is tracked by [Health Events](https://help.s
 
 #### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](https://help.sumologic.com/APIs/Collector-Management-API). See [how to use JSON to configure Sources](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources) for details.
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](https://help.sumologic.com/api/collectors). See [how to use JSON to configure Sources](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources) for details.
 
 <table>
   <tr>

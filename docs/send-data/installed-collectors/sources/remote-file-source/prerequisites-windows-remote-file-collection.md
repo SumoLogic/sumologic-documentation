@@ -43,12 +43,12 @@ where files reside.
 
     ![img](/img/send-data/Win-UNC-share-permissions-sm.png)
 
-1. Click **OK**. When the Permissions dialog closes, you will see your UNC path listed under Network Path. This is the exact path you will enter when you are configuring a Local File Source in the Sumo Logic Web Application.
+1. Click **OK**. When the Permissions dialog closes, you will see your UNC path listed under Network Path. This is the exact path you will enter when you are configuring a Local File Source in Sumo Logic.
 
     ![img](/img/send-data/Win-UNC-path.png)
 
 1. Verify that you have set up the share correctly. Open Explorer on the machine where the Collector is installed. Type in the UNC share path. If you can see the log files listed, you can collect them. If Explorer asks you to enter a password, then you have not set up permissions correctly. Make sure that permissions for the folder are set to "Everyone" and "Read-Only."
-1. From the Sumo Logic Web Application, [create a new Local File Source](../local-file-source.md).
+1. From Sumo Logic, [create a new Local File Source](../local-file-source.md).
 1. Enter the file path to the UNC share. For this example, the UNC path looks like this:  **\\\\WIN-QR0406514NE\\LogFiles**
 
     In general, a UNC path has this format: **\\\\server\\share\\file_path**.

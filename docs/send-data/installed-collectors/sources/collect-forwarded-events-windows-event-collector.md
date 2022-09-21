@@ -39,7 +39,7 @@ To configure a Windows Event Log Source:
 
     ![type of windows event log source.png](/img/send-data/windows-event-log-source.png)
 
-1. Set the following: * **Name.** Type the name you'd like to display for this source in the Sumo Logic Web Application. 
+1. Set the following: * **Name.** Type the name you'd like to display for this source in Sumo Logic. 
 
    * **Description.** Optional description.
    * **Windows host(s).** **(Remote Source only)**Enter one or more hostnames for the Windows machines from which you want to collect Windows Events. If you'd like to collect from more than one remote host, separate the hostnames with a comma. (If you enter more than one hostname, each host must allow event log access from the same domain user. See the [prerequisites](preconfigure-machine-collect-remote-windows-events.md) for more information.) The hostname can be a maximum of 128 characters. The hostname values are parsed and applied to your event logs as \_sourceHost [metadata](remote-windows-event-log-source.md) automatically. The value is parsed from the field `Computer` in your event logs.

@@ -15,7 +15,7 @@ Data collection flow for S3 buckets and HTTP requests:
 
 ![team built hosted diagram.png](/img/send-data/team-built-hosted-diagram.png)
 
-Just as Installed Collectors, you can monitor the activity of Hosted Collectors using the Status tab of the Sumo Logic Web Application.
+Just as Installed Collectors, you can monitor the activity of Hosted Collectors using the Status tab.
 
 :::note
 The maximum number of Collectors allowed per organization is 10,000.

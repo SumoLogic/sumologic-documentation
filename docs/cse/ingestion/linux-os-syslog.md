@@ -62,7 +62,7 @@ In this step, you configure a Syslog Source to collect Linux OS log messages. Yo
 
 ### Configure a Syslog Source
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \>
+1. In Sumo Logic, select **Manage Data \> Collection \>
     Collection**. 
 1. Navigate to the Installed Collector where you want to create the
     source.

@@ -14,7 +14,7 @@ The Live Tail CLI supports the following operating systems:
 
 ## Limitations
 
-The limitations for the Live Tail CLI are the same as the [Live Tail](about-live-tail.md) feature in the Sumo Logic Web Application, but for these exceptions:
+The limitations for the Live Tail CLI are the same as the [Live Tail](about-live-tail.md) feature in Sumo Logic, but for these exceptions:
 
 * You can tail logs ingested from Sources configured on Installed Collectors and from HTTP and Cloud Syslog Sources on Hosted Collectors.
 
@@ -38,7 +38,7 @@ The metadata field and filter must be enclosed in quotes.
 1. Download your platform-specific binaries from [Releases](https://github.com/SumoLogic/livetail-cli/release) to a location where you have read, write, and execute permissions.
 1. In the command prompt, navigate to the directory where the files are saved.
 1. Enter `./livetail -h`
-1. When you run livetail the first time you need to provide the [deployment] (/APIs/Troubleshooting-APIs/Deployments-and-Sumo-Logic-Endpoints) of the account and [access ID/key](docs/manage/security/access-keys.md) to authenticate.
+1. When you run livetail the first time you need to provide the [deployment](/docs/api/Troubleshooting#Deployments-and-Sumo-Logic-Endpoints) of the account and [access ID/key](docs/manage/security/access-keys.md) to authenticate.
 
     ![session start](/img/search/livetail/cli-live-tail-sessions-start.png)
 
@@ -54,7 +54,7 @@ The metadata field and filter must be enclosed in quotes.
 
 ### Search
 
-With the Live Tail CLI, just as with [Live Tail](about-live-tail.md) in the Sumo Logic Web Application, you can search with the following metadata fields:
+With the Live Tail CLI, just as with [Live Tail](about-live-tail.md) in Sumo Logic, you can search with the following metadata fields:
 
 * `_sourceCategory`
 * `_sourceHost`
