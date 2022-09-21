@@ -6,7 +6,7 @@ on:
         - main
 
 jobs:
-  deploy-to-staging:
+  deploy-to-production:
     uses: SumoLogic/sumologic-documentation/.github/workflows/build_and_deploy.yml@main
     with:
       hostname: https://d3f0cnhsmnxacx.cloudfront.net
