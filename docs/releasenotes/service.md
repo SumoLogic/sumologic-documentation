@@ -10,7 +10,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Service Release Notes for the current year are listed here. If you need to see previous Service Release Notes, check the [Archive](docs/releasenotes/archive/index.md).
 
 ---
-
 ## September 19, 2022 (Security)
 
 Update - We've improved out Access Key UI to make it easy to spot Access Keys that haven't been used lately. Now the Access Keys management page displays the date and time an Access Key was last used to make a request to an API endpoint. For more information, see [Access Keys](docs/manage/security/access-keys.md) .
@@ -18,13 +17,11 @@ Update - We've improved out Access Key UI to make it easy to spot Access Keys th
 In a future update, Sumo Logic will, by default, automatically disable Access Keys that have not been used for 30 days. Your Sumo Logic admin will be able to configure the period of time before an unused key will be disabled.  
 
 ---
-
 ## September 15, 2022 (Apps)
 
 Update - GitHub Advanced Security dashboards are now available for the Sumo Logic App for GitHub. These new dashbaords include Code Scanning Alerts, Pushes, Secret Scanning Alerts, Security and analyses and Repository Vulnerability alerts.
 
 ---
-
 ## September 12, 2022 (Alerts)
 
 New - We’re happy to announce the release of Alert Grouping, which allows you to generate more than one alert from a given monitor by specifying a group condition on one or more fields. For example, rather than creating multiple monitors for each `service`, you could create one single monitor that notifies you when some metric (i.e., CPU utilization, error count) goes above the threshold for a given `service`. [Learn more](docs/alerts/monitors/alert-grouping.md).
@@ -34,7 +31,6 @@ New - Configurable Resolution Window for Logs allows more quickly resolve alerts
 New - You can now access your monitor playbook as a template variable, `{{playbook}}`. You can reference this template variable to customize your notification payloads similar to any other template variable. [Learn more](docs/alerts/alert-variables.md).
 
 ---
-
 ## September 9, 2022 (Apps)
 
 New - LambdaTest allows you to analyze your testing behavior and error trends. LambdaTest is a continuous quality testing cloud platform that helps developers and testers ship code faster. The [LambdaTest](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/LambdaTest) platform provides secure, scalable, and insightful test orchestration for customers at different points in their DevOps (CI/CD) lifecycle.
@@ -88,7 +84,6 @@ We're delighted to announce the availability of these new operators:
 * [in](docs/metrics/metric-queries-alerts/operators.md#in)—You can use this operator in a metrics query selector as shorthand for multiple OR conditions. 
 
 ---
-
 ## August 25, 2022 (Collection)
 
 Update - We are pleased to announce that the following [Cloud-to-Cloud Integration Framework[docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework] sources are now available in Sumo Logic’s FedRAMP deployment: 
