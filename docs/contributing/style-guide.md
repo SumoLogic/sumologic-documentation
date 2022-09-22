@@ -19,7 +19,11 @@ The Sumo Logic Style Guide is a living document. If you have wondered about the 
 
 ## Grammar and Style
 
-If you need help with a convention, word to use, or format to follow, we will keep a cheatsheet of styles here. We also follow [Microsoft Manual of Style](https://docs.microsoft.com/en-us/style-guide/welcome/).
+If you need help with a convention, word to use, or format to follow, we will keep a cheatsheet of styles here. We also follow:
+
+* [Merriam-Webster Dictionary](https://www.merriam-webster.com/)
+* *[The Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html)*
+* [Microsoft Manual of Style](https://docs.microsoft.com/en-us/style-guide/welcome/)
 
 For terminology usage guidance, see [Word List](docs/contributing/word-list.md).
 
@@ -168,6 +172,10 @@ Use code blocks to format scripts, such as the JSON example below. This is impor
     }  
 }  
 ```
+
+### Punctuation
+
+Punctuation is placed outside of quotation marks, British English style. For everything else (dates, times, spelling), we use American English style.
 
 ### Numbered lists
 

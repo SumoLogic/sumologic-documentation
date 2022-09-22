@@ -48,7 +48,7 @@ account=dev region=us-east-1 namespace=aws/ecs metric=CPUUtilization statistic=A
 
 Amazon Elastic Container Service is a scalable, container management service that is used to manage containers in a cluster. With dashboards for Amazon ECS, you can monitor capacity and resource utilization of ECS components as well as quickly identify changes made to your clusters to help with troubleshooting.
 
-### 1. Amazon ECS - Overview
+### Overview
 
 **The Amazon ECS - Overview** dashboard provides an overview of CPU and memory utilization across all your ECS clusters and services. The customer upon checking the dashboard can determine which services are high in utilization and accordingly make decisions for the ECS deployment.
 
@@ -60,7 +60,7 @@ Use this dashboard to: 
 
 ![img](/img/observability/ecs1.jpeg)
 
-### 2. Amazon ECS - Audit Events
+### Audit Events
 
 **The Amazon ECS - Audit Events** dashboard provides insights into changes to your ECS environment including top IAM users, locations of events. The dashboard also shows the created, updated, and deleted events with respect to time, along with the details for the top 10 AWS Identity and Access Management users, and the last 20 Container Registration and Deregistration Events.
 
@@ -72,7 +72,7 @@ Use this dashboard to:
 
 ![img](/img/observability/ecs2.jpeg)
 
-### 1. Amazon ECS - Resource Utilization
+### Resource Utilization
 
 **The Amazon ECS - Resource Utilization** dashboard provides trends around CPU and Memory utilization for clusters and services. 
 
@@ -85,7 +85,7 @@ Use this dashboard to:
 
 ![img](/img/observability/ecs3.jpeg)
 
-### 2. Amazon ECS - Resource Reservation
+### Resource Reservation
 
 **The Amazon ECS - Resource Reservation** dashboard provides detailed insights into the average reservation (units utilized) by CPU, Memory, and GPU for a given cluster.
 
