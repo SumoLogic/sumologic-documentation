@@ -393,7 +393,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
      * For alerts applicable only to a specific cluster, your custom filter would be: `messaging_cluster=Kafka-prod.01`
      * For alerts applicable to all clusters that start with Kafka-prod, your custom filter would be: `messaging_cluster=Kafka-prod*`
      * For alerts applicable to a specific cluster within a production environment, your custom filter would be: `messaging_cluster=Kafka-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection)
-   2. Go to Manage Data > Alerts > Monitors.
+   2. Go to **Manage Data > Alerts > Monitors**.
    3. Click **Add**
    4. Click Import to import monitors from the JSON above.
 
@@ -420,7 +420,7 @@ All monitors are disabled by default on installation, if you would like to enabl
 
 By default, the monitors are configured in a monitor folder called “Kafka”, if you would like to change the name of the folder, update the monitor folder name in this file.
 
-5. To send email or connection notifications, modify the file `notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See [this document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md) for creating payloads with other connection types.
+5. To send email or connection notifications, modify the file `notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See [this document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types.
 
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [
