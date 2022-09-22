@@ -128,7 +128,7 @@ Follow these steps to collect metrics from a Kubernetes environment:
 
 1. **Setup Kubernetes Collection with the Telegraf operator**. Ensure that you are monitoring your Kubernetes clusters with the Telegraf operator **enabled**. If you are not, then follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to do so.
 2. **Add annotations on your Kafka pods**.
-   1. Open [this yaml file](https://sumologic-app-data.s3.amazonaws.com/Kafka/KAfka_PodAnnotations.yaml) and add the annotations mentioned there.
+   1. Open[ this yaml file](https://sumologic-app-data.s3.amazonaws.com/Kafka/KAfka_PodAnnotations.yaml) and add the annotations mentioned there.
    2. Enter in values for the parameters marked with `CHANGE_ME` in the yaml file:
      * `telegraf.influxdata.com/inputs` - As telegraf will be run as a sidecar the `urls` should always be localhost.
      * In the input plugins section:
@@ -149,7 +149,7 @@ Here’s an explanation for additional values set by this configuration that we 
 
 For more information on all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
-For more information on configuring the Joloka input plugin for Telegraf see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2).
+For more information on configuring the Joloka input plugin for Telegraf see[ this doc] (https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2).
 
 3. Configure your Kafka Pod to use the Jolokia Telegraf Input Plugin. Jolokia agent needs to be available to the Kafka Pods. Starting Kubernetes 1.10.0, you can store a binary file in a [configMap](https://kubernetes.io/docs/concepts/storage/volumes/#configmap). This makes it very easy to load the Jolokia jar file, and make it available to your pods.
 4. Download the latest version of the **Jolokia JVM-Agent** from [Jolokia](https://jolokia.org/download.html).
@@ -336,17 +336,17 @@ We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro Collector for Ka
  * Configure and start sumologic-otel-collector.
 As part of collecting metrics data from Kafka, we will use the jolokia2 input plugin for Telegraf to get data from otel and then send data to Sumo Logic. 
 
-Create or modify config.yaml. Refer sample config here.
+Create or modify config.yaml. Refer to the sample config [here](https://ot-distro.s3.amazonaws.com/config_kafka.yaml).
 
  * Enter Sumo Logic collection details in the section; extensions > sumologic by referring to these[instructions] (https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/extension/sumologicextension). Configure details like collector name, category, install token etc.
 
  * Enter values for the following parameters (marked with CHANGE_ME) in the downloaded file, referenced here:
 
-     *  In the **receivers > telegraf > agent_config > input plugins** section which is :
+     *  In the **receivers > telegraf > agent_config > input plugins** section which is:
 
         * **urls.** In the section. The URL to the Kafka server. This can be a comma-separated list to connect to multiple Kafka servers. Please see this doc for more information on additional parameters for configuring the Jolokia input plugin for Telegraf.
 
-     * In the tags sections (total 3) which is section[inputs.jolokia2_agent.tags], and [inputs.disk.tags]
+     * In the tags sections (total 3) which is in section inputs.jolokia2_agent.tags, and inputs.disk.tags
 
          * **environment.**  This is the deployment environment where the Kafka cluster identified by the value of urls parameter resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it. 
 
@@ -379,11 +379,11 @@ This section and below provide instructions for installing the Sumo App and Aler
 
 #### Pre-Packaged Alerts
 
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Kafka cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations. See [Kafka Alerts](#kafka-alerts) for more details.
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Kafka cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations. See [Kafka Alerts](#kafka-alerts) for more details.
 
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON or a Terraform script.
-* There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
+* There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
  
 
 ### Method A: Importing a JSON file
@@ -397,7 +397,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
    3. Click **Add**
    4. Click Import to import monitors from the JSON above.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kafka folder under Monitors to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors., To send notifications to teams or connections see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kafka folder under Monitors to configure them. See [this](/docs/alerts/monitors) document to enable monitors., To send notifications to teams or connections see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
 
 ### Method B: Using a Terraform script
 
