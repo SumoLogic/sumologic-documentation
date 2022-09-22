@@ -360,7 +360,7 @@ At this point, RabbitMQ logs should start flowing into Sumo Logic.
 
 These instructions assume you have already set up collection as described in the [Collect Logs and Metrics for RabbitMQ](#collecting-logs-and-metrics-for-rabbitmq).
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively determine if a RabbitMQ cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [RabbitMQ Alerts](#rabbitmq-alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a RabbitMQ cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [RabbitMQ Alerts](#rabbitmq-alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability.
 
@@ -380,7 +380,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 4. Click **Add**.
 5. Click **Import.
 6. On the** Import Content popup**, enter **RabbitMQ** in the Name field, paste in the JSON into the the popup, and click **Import**.
-7. The monitors are created in a "RabbitMQ" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors/index.md) topic for information about enabling monitors and configuring notifications or connections.
+7. The monitors are created in a "RabbitMQ" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 #### Method B: Install Monitors using a Terraform script
 
@@ -546,7 +546,7 @@ Use this dashboard to:
 
 ## RabbitMQ Alerts
 
-Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 <table>
   <tr>

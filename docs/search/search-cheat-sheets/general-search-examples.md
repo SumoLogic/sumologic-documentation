@@ -1,5 +1,5 @@
 ---
-id: general-search-examples-cheatsheet
+id: general-search-examples
 title: General Search Examples Cheat Sheet
 sidebar_label: General Search Examples
 description: The General Search Examples cheat sheet provides examples of useful search queries for different use cases.
@@ -157,7 +157,7 @@ _sourceCategory=apache 
 ```
 
 :::sumo More Info
-For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent), and [Top](../search-query-language/search-operators/top.md).
+For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent), and [Top](../search-query-language/operators#top).
 :::
 
 ## Timeslice and Transpose
@@ -217,7 +217,7 @@ if(status_code matches "50*","500s","Other")))) as status_code_group
 ```
 
 :::sumo More Info
-For more information, see [Timeslice](docs/search/search-query-language/search-operators/timeslice.md) and [Transpose](../search-query-language/search-operators/transpose.md).
+For more information, see [Timeslice](docs/search/search-query-language/operators#timeslice) and [Transpose](../search-query-language/operators#transpose).
 :::
 
 ## Conditional Operators
@@ -264,7 +264,7 @@ Find version numbers that match numeric values 2, 3 or 1. Use the num operator t
 ```
 
 :::sumo More Info
-For more information, see [Where](../search-query-language/search-operators/where.md) and [If](../search-query-language/search-operators/if-operator-and.md).
+For more information, see [Where](../search-query-language/operators#where) and [If](../search-query-language/operators#if-operator-and).
 :::
 
 ## LogReduce Operator

@@ -1,8 +1,8 @@
 ---
 id: parse-xml-formatted-logs
+title: Parse XML Formatted Logs
 ---
 
-# Parse XML Formatted Logs
 
 The **XML** operator uses a subset of the XPath 1.0 specification to provide a way for you to parse fields from XML logs. Using it, you can specify what to parse from an XML log using an XPath reference.
 

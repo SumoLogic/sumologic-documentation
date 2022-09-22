@@ -14,7 +14,7 @@ The Sophos Central Source ingests:
  * Events from the Sophos [Events API Endpoint](https://developer.sophos.com/docs/siem-v1/1/routes/events/get)
 
 :::note
-This Source is not available in the [Fed deployment](/docs/api/Troubleshooting#Deployments-and-Sumo-Logic-Endpoints).
+This Source is not available in the [Fed deployment](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints).
 :::
 
 ## States

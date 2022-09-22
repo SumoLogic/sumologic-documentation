@@ -40,7 +40,7 @@ Sumo Logic APIs follow Representational State Transfer (REST) patterns and are o
   <tr>
    <td>Search Job
    </td>
-   <td><a href="https://api.de.sumologic.com/docs/">/docs/API/Search-Job-API</a>
+   <td><a href="https://api.de.sumologic.com/docs/">/docs/api/Search-Job-API</a>
    </td>
   </tr>
 </table>
@@ -250,7 +250,7 @@ You can also determine which deployment pod your account is using by creating an
 
 ### Securing access to Sumo Logic infrastructure via DNS name or IP address
 
-See the [static IP addresses for Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/index.md#Static-IP-addresses) Sources.
+See the [static IP addresses for Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework#Static-IP-addresses) Sources.
 
 For collection to work, your firewall must allow outbound traffic to Sumo Logic. Refer to [Test Connectivity for Sumo Logic Collectors](/docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors.md) for instructions on allowing outbound traffic over port 443.
 
@@ -372,7 +372,7 @@ Generic status codes that apply to all our APIs. See the [HTTP status code regis
     <tr>
       <td> 301 </td>
       <td> moved </td>
-      <td> The requested resource SHOULD be accessed through returned URI in Location Header. See [troubleshooting](/docs/API/Troubleshooting) for details.</td>
+      <td> The requested resource SHOULD be accessed through returned URI in Location Header. See [troubleshooting](/docs/api/troubleshooting) for details.</td>
     </tr>
     <tr>
       <td> 401 </td>
@@ -382,7 +382,7 @@ Generic status codes that apply to all our APIs. See the [HTTP status code regis
     <tr>
       <td> 403 </td>
       <td> forbidden </td>
-      <td> This operation is not allowed for your account type or the user doesn't have the role capability to perform this action. See [troubleshooting](/docs/API/Troubleshooting) for details.</td>
+      <td> This operation is not allowed for your account type or the user doesn't have the role capability to perform this action. See [troubleshooting](/docs/api/troubleshooting) for details.</td>
     </tr>
     <tr>
       <td> 404 </td>

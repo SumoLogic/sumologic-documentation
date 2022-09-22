@@ -13,9 +13,9 @@ This guide provides answers to frequently asked questions (FAQs) about integrati
 
 ## Integration overview
 
-For an introduction to Sumo Logic’s solution for obtaining application and infrastructure data (logs and metrics) for Azure services using Azure Monitor, see [Azure Monitoring](/docs/send-data/collect-from-other-data-sources/azure-monitoring/index.md).
+For an introduction to Sumo Logic’s solution for obtaining application and infrastructure data (logs and metrics) for Azure services using Azure Monitor, see [Azure Monitoring](/docs/send-data/collect-from-other-data-sources/azure-monitoring).
 
-For an introduction to Sumo Logic's solution for obtaining logs and metrics using an event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic, see [Azure Blog Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/index.md).
+For an introduction to Sumo Logic's solution for obtaining logs and metrics using an event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic, see [Azure Blog Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage).
 
 
 ## General FAQs

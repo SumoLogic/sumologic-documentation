@@ -9,18 +9,18 @@ sidebar_label: FAQ
 
 This was an advanced task designed to fulfill a missing feature in Sumo.
 
-With the [catoperator](docs/search/search-query-language/search-operators/cat.md) you can simply retrieve your results and use the [export](docs/search/get-started-with-search/search-basics/export-search-results.md) feature.
+With the [catoperator](docs/search/search-query-language/operators#cat) you can simply retrieve your results and use the [export](docs/search/get-started-with-search/search-basics/export-search-results.md) feature.
 
 ### Deprecated
 
-Sumo Logic provides the ability to save a file using the [save](docs/search/search-query-language/search-operators/save-lookups-classic.md) operator, but it does not allow you to export the results of that saved file. To do so, you'd have to re-run the original query and export the results.
+Sumo Logic provides the ability to save a file using the [save](docs/search/search-query-language/operators#save-lookups-classic) operator, but it does not allow you to export the results of that saved file. To do so, you'd have to re-run the original query and export the results.
 
-But if you know you will need to export your saved files results routinely, you can create another column in the results that are saved to the file that acts as a primary key for each result. This key then allows you to conduct a [lookup](docs/search/search-query-language/search-operators/lookup-classic.md)
+But if you know you will need to export your saved files results routinely, you can create another column in the results that are saved to the file that acts as a primary key for each result. This key then allows you to conduct a [lookup](docs/search/search-query-language/operators#lookup-classic)
 operation matching the key.
 
 To create keys in your saved file:
 
-1. In your query that is saving the file with the save operator, you need to add numbers to act as the primary key. You can start at `1` and increment by `1` for each result, as shown. Add a group by if needed, such as a [`timeslice`](docs/search/search-query-language/search-operators/timeslice.md):
+1. In your query that is saving the file with the save operator, you need to add numbers to act as the primary key. You can start at `1` and increment by `1` for each result, as shown. Add a group by if needed, such as a [`timeslice`](docs/search/search-query-language/operators#timeslice):
 
     ```sql
     | 1 as number
@@ -52,7 +52,7 @@ To create keys in your saved file:
 
 ## Group Messages Using a Defined Field
 
-You can group messages together with a user-defined field using the [Sessionize](docs/search/search-query-language/search-operators/sessionize.md) operator (similar to transaction in Splunk). By defining multiple parse expressions that match different kinds of log lines, you can weave together the extracted fields into one session.
+You can group messages together with a user-defined field using the [Sessionize](/docs/search/search-query-language/operators#sessionize) operator (similar to transaction in Splunk). By defining multiple parse expressions that match different kinds of log lines, you can weave together the extracted fields into one session.
 
 Here's an example:
 
