@@ -2,7 +2,7 @@
 id: markdown-cheat-sheet
 title: Markdown Cheat Sheet
 sidebar_label: Markdown Cheat Sheet
-description: Learn about markdown features Docusaurus supports.
+description: Learn the markdown features that are supported by the Sumo Docs platform, built on Docusaurus.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
