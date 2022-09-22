@@ -12,7 +12,7 @@
     "perk-sumo",
     "astencel-sumo"
   ],
-  "message": "Thank you for your contribution! As with many open source projects, we require contributors to sign our Contributor License Agreement and do not have yours on file. In order for us to review and merge your code, please [sign it](https://forms.gle/YgLddrckeJaCdZYA6) and we'll add your name to our [contributors list](https://github.com/SumoLogic/sumologic-documentation/blob/main/.clabot).",
+  "message": "Thank you for your contribution! As with many open source projects, we require contributors to sign our Contributor License Agreement and do not have yours on file. In order for us to review and merge your code, please [sign it](https://forms.gle/YgLddrckeJaCdZYA6) and add your name to our [contributors list](https://github.com/SumoLogic/sumologic-documentation/blob/main/.clabot).",
   "label": "cla-signed",
   "recheckComment": "The GitHub CLA Bot is rechecking to see that you have signed our CLA."
 }
