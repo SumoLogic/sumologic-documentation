@@ -1,8 +1,9 @@
 ---
 id: parse-csv-formatted-logs
+title: Parse CSV Formatted Logs
 ---
 
-# Parse CSV Formatted Logs
+
 
 The **CSV** operator allows you to parse CSV (Comma Separated Values) formatted log entries. It uses a comma as the default delimiter.
 

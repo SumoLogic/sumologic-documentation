@@ -399,7 +399,7 @@ _sourceCategory=weblogs
 
 When you want to correlate data from different sources or conduct further aggregation on data from a child query without passing it with compose, since it would act upon the scope of the query limiting results, you can use the [save](docs/search/search-query-language/search-operators/save-lookups-classic.md) and [lookup](docs/search/search-query-language/search-operators/lookup-classic.md) operators to get the data you need in the parent query.
 
-Updates to the newer version of [Lookup Tables](docs/search/lookup-tables/index.md) are performed asynchronously. For this reason, saving to such lookup tables from a subquery isn't allowed. If you were to save data to a lookup table from a subquery and then query the same table from the parent query, it's possible that the data written to the table by the subquery might not be available, resulting in incorrect results.
+Updates to the newer version of [Lookup Tables](docs/search/lookup-tables) are performed asynchronously. For this reason, saving to such lookup tables from a subquery isn't allowed. If you were to save data to a lookup table from a subquery and then query the same table from the parent query, it's possible that the data written to the table by the subquery might not be available, resulting in incorrect results.
 
 This query identifies specific sessions and correlates them to status messages across services from different data sources:
 

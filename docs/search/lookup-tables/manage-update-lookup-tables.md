@@ -1,10 +1,10 @@
 ---
-id: manage-and-update-lookup-tables
+id: manage-update-lookup-tables
 title: Manage and Update Lookup Tables
 description: Learn how to update, export, and share Lookup Tables.
 ---
 
-The page has information about updating, exporting, and sharing Lookup Tables. For information about creating a new Lookup Table, see [Create a Lookup Table](create-a-lookup-table.md).
+The page has information about updating, exporting, and sharing Lookup Tables. For information about creating a new Lookup Table, see [Create a Lookup Table](create-lookup-table.md).
 
 :::note
 New Lookup Tables are available in all deployments except Sumo Logic's Montreal deployment, pending AWS providing a required AWS service in the Montreal region.

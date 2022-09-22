@@ -211,7 +211,7 @@ This Dashboard provides general information of the NSG flow logs, including Pane
 
 **Flow Traffic by Protocol. **Displays trend of traffic by protocol (TCP/UDP).
 
-**Denied Traffic per Hour - Outlier. **Using Sumo Logic machine learning [Outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) operator, shows any unexpected sequence in denied traffic.
+**Denied Traffic per Hour - Outlier. **Using Sumo Logic machine learning [Outlier](/docs/search/Search-Query-Language/Search-Operators/outlier) operator, shows any unexpected sequence in denied traffic.
 
 **Denied Traffic Comparison (Today Vs Yesterday) - Outlier. **Compares denied traffic of last 24 hours with previous 24 hours and shows any unexpected difference between two time periods.
 
@@ -234,4 +234,4 @@ This Dashboard drills down on denied traffic flow logs, shows geographic hotspot
 
 **Top 10 Denied Destination IP, Port. **Displays a table of destination IP addresses and ports with denied traffic flow.
 
-**Denied Traffic per Hour -  Outlier. **Using Sumo Logic machine learning [Outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) operator, shows any unexpected sequence in denied traffic.
+**Denied Traffic per Hour -  Outlier. **Using Sumo Logic machine learning [Outlier](/docs/search/Search-Query-Language/Search-Operators/outlier) operator, shows any unexpected sequence in denied traffic.

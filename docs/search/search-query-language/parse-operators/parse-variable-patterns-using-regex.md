@@ -1,8 +1,9 @@
 ---
 id: parse-variable-patterns-using-regex
+title: Parse Variable Patterns Using Regex
 ---
 
-# Parse Variable Patterns Using Regex
+
 
 The Parse Regex operator (also called the extract operator) enables users comfortable with regular expression syntax to extract more complex data from log lines. Parse regex can be used, for example, to extract nested fields.
 

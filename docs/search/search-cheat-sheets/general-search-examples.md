@@ -1,5 +1,5 @@
 ---
-id: general-search-examples-cheatsheet
+id: general-search-examples
 title: General Search Examples Cheat Sheet
 sidebar_label: General Search Examples
 description: The General Search Examples cheat sheet provides examples of useful search queries for different use cases.

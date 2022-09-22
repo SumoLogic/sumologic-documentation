@@ -1,5 +1,5 @@
 ---
-id: iis-search-examples-cheatsheet
+id: iis-search-examples
 title: IIS Search Examples Cheat Sheet
 sidebar_label: IIS Search Examples
 description: The IIS Search Examples cheat sheet provides examples of useful IIS search queries for different use cases.

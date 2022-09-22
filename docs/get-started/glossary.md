@@ -171,7 +171,7 @@ Explore is an intuitive navigational framework that provides a visual map of the
 
 The Favorites tab displays searches and Dashboards that you refer to frequently, or content that you want to keep handy. In the Library, on the Personal and Org tabs, you can "favorite" content to make it appear on the Favorites tab. Just click the star icon for your saved search, Dashboard, installed app, or folder, and it will be saved to the Favorites tab for easy access. You can also favorite saved searches from the Search page, and favorite Dashboards from the Dashboards page.
 
-**[Fields](https://help.sumologic.com/Manage/Fields)**
+**[Fields](https://help.sumologic.com/manage/fields)**
 
 Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. Fields may be referred to as Log Metadata Fields.
 

@@ -139,7 +139,7 @@ No, we do not allow an export of the threat Intel feeds as that is confidential 
 
 #### Is threat lookup real-time using Continuous Queries (CQs)?
 
-Yes. You can scan for malicious Indicators of Compromise (IOCs) in real time using our [lookup](/docs/search/index.md/Search-Query-Language/Search-Operators/lookup-classic) operator.
+Yes. You can scan for malicious Indicators of Compromise (IOCs) in real time using our [lookup](/docs/search/Search-Query-Language/Search-Operators/lookup-classic) operator.
 
 
 #### Can I historically search my logs for threats?
@@ -438,7 +438,7 @@ Yes, you can run scheduled searches that can be set up with a run frequency of R
 
 #### Can I bring my own threat feed into Sumo Logic?
 
-This isn't currently available as an App. You could create your own [lookup](/docs/search/index.md/Search-Query-Language/Search-Operators/lookup-classic) using a shared file.
+This isn't currently available as an App. You could create your own [lookup](/docs/search/Search-Query-Language/Search-Operators/lookup-classic) using a shared file.
 
 
 #### What do I do if I find a bad IP (malicious level = high)?

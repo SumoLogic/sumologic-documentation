@@ -1,5 +1,5 @@
 ---
-id: create-a-lookup-table
+id: create-lookup-table
 title: Create a Lookup Table
 description: Learn about lookup tables and how to create and manage them.
 ---
@@ -10,7 +10,7 @@ This section has instructions for creating and and managing Lookup Tables using 
 You can also use the [Lookups API](https://api.sumologic.com/docs/#tag/lookupManagement) to create and manage Lookup Tables. 
 :::
 
-For information about updating, exporting, and sharing Lookup Tables, see [Manage and Update Lookup Tables](manage-and-update-lookup-tables.md).
+For information about updating, exporting, and sharing Lookup Tables, see [Manage and Update Lookup Tables](manage-update-lookup-tables.md).
 
 :::note
 New Lookup Tables are available in all deployments except Sumo Logic's Montreal deployment, pending AWS providing a required AWS service in the Montreal region.
@@ -106,7 +106,7 @@ schema without populating the table.
 
 1. **Schema**. For the first column in the table, enter:
 
-    * **Field**. Enter a name for the field. As you name your fields, note reserved keywords listed in [Reserved keywords](create-a-lookup-table.md).
+    * **Field**. Enter a name for the field. As you name your fields, note reserved keywords listed in [Reserved keywords](create-lookup-table.md).
     * **Value Type**. Choose the value type: boolean, int, long, double, or string (default).
     * **Primary Key**. Click the **Yes** checkbox if the field is part of the primary key for the table. If your table's primary key is a composite key, you will check this checkbox for each field that is part of the key. You must define a primary key for your Lookup Table.
 

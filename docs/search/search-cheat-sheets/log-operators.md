@@ -1,5 +1,5 @@
 ---
-id: log-operators-cheat-sheet
+id: log-operators
 title: Log Operators Cheat Sheet
 sidebar_label: Log Operators
 description: The Search Operators cheat sheet provides a list of available Sumo Logic parsers, aggregators, search operators, and mathematical expressions with links to full details for each item.

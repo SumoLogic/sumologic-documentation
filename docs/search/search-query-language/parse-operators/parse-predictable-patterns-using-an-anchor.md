@@ -1,8 +1,9 @@
 ---
 id: parse-predictable-patterns-using-an-anchor
+title: Parse Predictable Patterns Using an Anchor
 ---
 
-# Parse Predictable Patterns Using an Anchor
+
 
 The parse operator (also called the parse anchor) parses strings according to specified start and stop anchors, and then labels them as fields for use in subsequent aggregation functions in the query such as sorting, grouping, or other functions.
 

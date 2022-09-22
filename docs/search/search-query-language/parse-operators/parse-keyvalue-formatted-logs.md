@@ -1,8 +1,8 @@
 ---
 id: parse-keyvalue-formatted-logs
+title: Parse Keyvalue Formatted Logs
 ---
 
-# Parse Keyvalue Formatted Logs
 
 Typically, log files contain information that follow a key-value pair structure. The keyvalue operator allows you to get values from a log message by specifying the key paired with each value.
 
