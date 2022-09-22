@@ -526,7 +526,7 @@ Sumo Logic endpoints like `api.sumologic.com` are different in deployments outsi
    </td>
    <td>No
    </td>
-   <td>This enables <a href="https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing">dynamic parsing</a>. Values are: <br/><br/><code>AutoParse</code> - Sumo Logic will performfield extraction on JSON log messages when you run a search.<br/><br/><code>Manual</code> - (Default value) Sumo Logic will not autoparse JSON logs at search time. <br/><br/><strong>Note</strong> Previously, the supported values for this parameter were <code>performance</code>, <code>intelligent</code>, and <code>verbose</code>. These values still function, but are deprecated. Sumo Logic recommends the use of the new supported values: <code>AutoParse</code> and <code>Manual</code>.
+   <td>This enables <a href="https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing">dynamic parsing</a>. Values are: <br/><br/><code>AutoParse</code> - Sumo Logic will perform field extraction on JSON log messages when you run a search.<br/><br/><code>Manual</code> - (Default value) Sumo Logic will not autoparse JSON logs at search time. <br/><br/><strong>Note</strong> Previously, the supported values for this parameter were <code>performance</code>, <code>intelligent</code>, and <code>verbose</code>. These values still function, but are deprecated. Sumo Logic recommends the use of the new supported values: <code>AutoParse</code> and <code>Manual</code>.
    </td>
   </tr>
 </table>
