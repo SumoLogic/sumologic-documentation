@@ -29,7 +29,7 @@ To search specific Data Tiers. See [Searching Data Tiers](/docs/manage/partition
 
 ## Traces
 
-Traces are collected with SumoLogic Kubernetes Collection or a standalone OpenTelemetry collector through an HTTP Traces Source.
+Traces are collected with SumoLogic Kubernetes Collection or a standalone OpenTelemetry collector through an HTTP Traces Source. 
 
 * Search raw spans from tracing data from the last seven days. See [Search Query Language support for Traces](get-started-with-search/search-basics/view-traces-search-results.md).
 * View tracing data from search log messages by right-clicking an entry and selecting **Open Trace**. See [View Traces] from Search Results.
