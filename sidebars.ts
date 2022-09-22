@@ -1057,6 +1057,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'search/search-query-language/index'},
       items: [
+        'search/search-query-language/operators',
         {
           type: 'category',
           label: 'Parse Operators',
@@ -1850,6 +1851,7 @@ module.exports = {
             'cse/administration/create-cse-actions',
             'cse/administration/create-cse-context-actions',
             'cse/administration/cse-apis',
+            'cse/administration/cse-data-retention',
             'cse/administration/cse-audit-logging',
             'cse/administration/cse-user-accounts-and-roles',
             'cse/administration/manage-custom-insight-resolutions',
@@ -2000,10 +2002,11 @@ module.exports = {
           items: [
             'cse/records-signals-entities-insights/insight-generation-process',
             'cse/records-signals-entities-insights/view-manage-entities',
+            'cse/records-signals-entities-insights/create-custom-entity-type',
+            'cse/records-signals-entities-insights/create-an-entity-group',
             'cse/records-signals-entities-insights/set-insight-generation-window-threshold',
             'cse/records-signals-entities-insights/entity-criticality',
             'cse/records-signals-entities-insights/global-intelligence-security-insights',
-            'cse/records-signals-entities-insights/create-custom-entity-type',
             'cse/records-signals-entities-insights/tags-insights-signals-entitiesc-rules',
             'cse/records-signals-entities-insights/search-cse-records-in-sumo',
             'cse/records-signals-entities-insights/view-records-signal',
