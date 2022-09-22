@@ -117,6 +117,11 @@ For clarity and search engine discoverability:
 
 A Markdown file has a filename and extension of .md. We recommend keeping the filename short. It does not affect the canonical link.
 
+## Beta Releases
+
+For Beta docs, we want to publish them, but exclude them from the nav and search engine results so that you need the physical link to access them. [Learn how to write it in markdown](/docs/contributing/markdown-cheat-sheet#beta-releases).
+
+
 ## Metadata
 
 We refer to our doc site metadata (i.e., title, description, and search keywords), located in the header, as _frontmatter_. [Learn more](/docs/contributing/markdown-cheat-sheet#frontmatter).
