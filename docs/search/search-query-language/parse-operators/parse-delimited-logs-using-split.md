@@ -1,8 +1,9 @@
 ---
 id: parse-delimited-logs-using-split
+title: Parse Delimited Logs Using Split
 ---
 
-# Parse Delimited Logs Using Split
+
 
 The **split** operator allows you to split strings into multiple strings, and parse delimited log entries, such as space-delimited formats.
 
@@ -48,8 +49,8 @@ For example, if you had a file with the following colon delimited log message:
 You could parse the fields using the following query:
 
 ```sql
-_sourceCategory=colon 
-| parse "] * *" as log_level, split_field 
+_sourceCategory=colon
+| parse "] * *" as log_level, split_field
 | split split_field delim=':' extract 1 as user, 2 as account_id, 3 as session_id, 4 as result
 ```
 
@@ -60,7 +61,7 @@ which produces results such as:
 In another example, you'd use the following query:
 
 ```sql
-_sourceCategory=colon 
+_sourceCategory=colon
 | split _raw delim=':' extract 1 as user2, 2 as id, 3 as name
 ```
 
@@ -73,7 +74,7 @@ which provides results like:
 Use the following query to extract comma delimited fields as specified:
 
 ```sql
-_sourceCategory=csv 
+_sourceCategory=csv
 | split _raw delim=',' extract 1 as user2, 2 as id, 3 as name
 ```
 
@@ -88,7 +89,7 @@ Use this query to extract fields from a tab delimited log file. 
 You have to manually specify the tab character for the delim value.
 
 ```sql
-_sourceCategory=sumo/zscaler 
+_sourceCategory=sumo/zscaler
 | split _raw delim='    ' extract 1 as Column1, 2 as dlpeng, 3 as cat
 ```
 

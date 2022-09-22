@@ -1,5 +1,5 @@
 ---
-id: create-a-lookup-table
+id: create-lookup-table
 title: Create a Lookup Table
 description: Learn about lookup tables and how to create and manage them.
 ---
@@ -10,7 +10,7 @@ This section has instructions for creating and and managing Lookup Tables using 
 You can also use the [Lookups API](https://api.sumologic.com/docs/#tag/lookupManagement) to create and manage Lookup Tables. 
 :::
 
-For information about updating, exporting, and sharing Lookup Tables, see [Manage and Update Lookup Tables](manage-and-update-lookup-tables.md).
+For information about updating, exporting, and sharing Lookup Tables, see [Manage and Update Lookup Tables](manage-update-lookup-tables.md).
 
 :::note
 New Lookup Tables are available in all deployments except Sumo Logic's Montreal deployment, pending AWS providing a required AWS service in the Montreal region.
@@ -47,7 +47,7 @@ When you create a Lookup Table schema, note the following requirements:
 
 ### Lookup Tables and Search Templates
 
-Currently, the ability to reference a field in a new style Lookup Table in a [Search Template](../get-started-with-search/build-search/search-templates.md) is not supported. However, you can refer to [classic Lookup Tables](docs/search/search-query-language/search-operators/lookup-classic.md) in Search Templates.  
+Currently, the ability to reference a field in a new style Lookup Table in a [Search Template](../get-started-with-search/build-search/search-templates.md) is not supported. However, you can refer to [classic Lookup Tables](docs/search/search-query-language/operators#lookup-classic) in Search Templates.  
 
 ## How many Lookup Tables can you have?
 
@@ -106,7 +106,7 @@ schema without populating the table.
 
 1. **Schema**. For the first column in the table, enter:
 
-    * **Field**. Enter a name for the field. As you name your fields, note reserved keywords listed in [Reserved keywords](create-a-lookup-table.md).
+    * **Field**. Enter a name for the field. As you name your fields, note reserved keywords listed in [Reserved keywords](create-lookup-table.md).
     * **Value Type**. Choose the value type: boolean, int, long, double, or string (default).
     * **Primary Key**. Click the **Yes** checkbox if the field is part of the primary key for the table. If your table's primary key is a composite key, you will check this checkbox for each field that is part of the key. You must define a primary key for your Lookup Table.
 
@@ -203,8 +203,8 @@ When you run search operators that work with Lookup Tables (described in the fol
 
 You can use the following operators with Lookup Tables in Sumo Logic log searches and in Cloud SIEM rules:
 
-* `cat`—You can view the contents of a Lookup Table using the `cat` operator in a Sumo Logic log search tab. For more information, see [cat](docs/search/search-query-language/search-operators/cat.md).
-* `lookup`—You can use the `lookup` operator to return one or more fields from a Lookup Table. For more information, see [lookup](../search-query-language/search-operators/lookup.md).
-* `lookupContains`—You can use the `lookupContains` operator to see whether a key exists in a Lookup Table. For more information, see [lookupContains](../search-query-language/search-operators/lookupContains.md).
-* `save`—You can use the `save` operator to save the results of a Sumo log query to a Lookup Table you created using the Lookup UI or API. For more information, see [save](../search-query-language/search-operators/save.md).  
+* `cat`—You can view the contents of a Lookup Table using the `cat` operator in a Sumo Logic log search tab. For more information, see [cat](docs/search/search-query-language/operators#cat).
+* `lookup`—You can use the `lookup` operator to return one or more fields from a Lookup Table. For more information, see [lookup](../search-query-language/operators#lookup).
+* `lookupContains`—You can use the `lookupContains` operator to see whether a key exists in a Lookup Table. For more information, see [lookupContains](../search-query-language/operators#lookupContains).
+* `save`—You can use the `save` operator to save the results of a Sumo log query to a Lookup Table you created using the Lookup UI or API. For more information, see [save](../search-query-language/operators#save).  
      

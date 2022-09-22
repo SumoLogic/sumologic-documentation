@@ -1,14 +1,14 @@
 ---
 id: parse-nodrop-option
+title: Parse nodrop option
 ---
 
-# Parse nodrop option
 
 The **nodrop** option forces results to also include messages that don't match any segment of the parse expression.
 
 For all parse operators, messages must match at least one segment of the parse expression or they are dropped from the results. Adding the nodrop option forces results to also include messages that don't match any segment of the parse expression.
 
-When your query has multiple parse expressions, using nodrop acts as an **OR** condition. In this case, using nodrop will pass any non-matching logs to the next parse expression. If the following parse expression does not use nodrop, the results from the first parse expression using nodrop, even when they don't match the following parse expression are still returned in your search results. 
+When your query has multiple parse expressions, using nodrop acts as an **OR** condition. In this case, using nodrop will pass any non-matching logs to the next parse expression. If the following parse expression does not use nodrop, the results from the first parse expression using nodrop, even when they don't match the following parse expression are still returned in your search results.
 
 ## Syntax
 
@@ -43,7 +43,7 @@ When your query has multiple parse expressions, using nodrop acts as an **OR**
 Queries can use the nodrop option with a parser:
 
 ```sql
-_sourceCategory=Apache*  
+_sourceCategory=Apache* 
 | parse "[sessionId=*]" as sessionid nodrop
 ```
 
@@ -52,7 +52,7 @@ _sourceCategory=Apache* 
 You can parse out an IP address using parse regex and parse nodrop:
 
 ```sql
-_sourceCategory=Apache*  
+_sourceCategory=Apache* 
 | parse regex "(\<src_i\>\d{1,3}\.\d{1,3}.\d{1,3}\.\d{1,3})" nodrop
 ```
 
@@ -61,7 +61,7 @@ _sourceCategory=Apache* 
 When specifying nodrop in one parse expression but not another the search will return logs that match **either** the first **OR** second parse statements. For example, you can return logs that match either `GET` or `POST` in a URL:
 
 ```sql
-_sourceCategory=Apache* 
-| parse "GET * HTTP" as url nodrop  
+_sourceCategory=Apache*
+| parse "GET * HTTP" as url nodrop 
 | parse "POST * HTTP" as url
 ```

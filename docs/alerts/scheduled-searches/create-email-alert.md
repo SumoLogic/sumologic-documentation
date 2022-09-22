@@ -31,12 +31,12 @@ description: Create a Scheduled Search Email Alert.
     * **Histogram.**
     * **Results as a CSV attachment.** The maximum CSV file size allowed is 5 MB or 1,000 results. 
 
-1. Click **Save** to add the search to the **Library**.** The columns in an alert email are alphabetically ordered. To set the column order in the email alert, you can use the [fields](../../search/search-query-language/search-operators/fields-operator.md) operator in your query.
+1. Click **Save** to add the search to the **Library**.** The columns in an alert email are alphabetically ordered. To set the column order in the email alert, you can use the [fields](/docs/search/search-query-language/operators#fields) operator in your query.
 
 ### Rules
 
 * A maximum of 120 emails are sent per day per scheduled search.
-* The columns in an alert email are alphabetically ordered. To set the column order in the email alert, you can use the [fields](../../search/search-query-language/search-operators/fields-operator.md) operator in your query.
+* The columns in an alert email are alphabetically ordered. To set the column order in the email alert, you can use the [fields](/docs/search/search-query-language/operators#fields) operator in your query.
 * An email address will be denylisted for six hours after receiving a bounce notification. When an email address is denylisted no emails are sent to the address.
 * The metadata field `_messageTime` needs to remain in UNIX format.
 

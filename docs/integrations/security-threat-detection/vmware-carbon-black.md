@@ -157,7 +157,7 @@ In Sumo, open a Live Tail tab and run a search to verify Sumo is receiving findi
 _sourceCategory="cb_edr_events" or _sourceCategory="cb_endpoint_standard_events"
 ```
 
-For more information, see [Live Tail](/docs/search/index.md/Live-Tail).
+For more information, see [Live Tail](/docs/search/Live-Tail).
 
 
 ### Sample Log Messages

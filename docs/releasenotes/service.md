@@ -7,7 +7,7 @@ description: Looking for more information about new features in the Sumo Logic S
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Service Release Notes for the current year are listed here. If you need to see previous Service Release Notes, check the [Archive](docs/releasenotes/archive/index.md).
+Service Release Notes for the current year are listed here. If you need to see previous Service Release Notes, check the [Archive](docs/releasenotes/archive).
 
 ---
 ## September 19, 2022 (Security)
@@ -254,7 +254,7 @@ Update - The Sumo Logic Amazon RDS App dashboards provide visibility into your A
 ---
 ## 2022-07-04 (Alerts)
 
-Update -  We’re continuing to make [alerts and monitors](/docs/Alerts/Monitors) more customizable to give you control over how often you are notified. You can now:
+Update -  We’re continuing to make [alerts and monitors](/docs/alerts/monitors) more customizable to give you control over how often you are notified. You can now:
 
 * **Visually indicate Alerting Query**: For Metrics monitors with multiple query rows, we now visually indicate the alerting query row with a notification bell icon.
 * **Improved JSON Validations for Connection Payloads**: We're enforcing stricter JSON validation during creation and updating of Connections to prevent errors that could cause notification failures in the future. There are two major validations that we have started enforcing:
@@ -277,12 +277,12 @@ Our updates support Security Reference Architecture (SRA)-compliant set up of:
 * Centralized logging of AWS Network Firewall and AWS WAF
 * AWS Firewall Manager
 
-New - We are happy to announce the release of [AWS Observability Installation Automation](docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/index.md). This release enables a simplified method of deploying AWS Observability using default parameters with just one quick command requiring only Sumo Access Id and Key. This method features POSIX and PowerShell scripts to trigger the Cloud Formation template for creating a stack to enable complete visibility into your AWS account infrastructure's health and reliability.
+New - We are happy to announce the release of [AWS Observability Installation Automation](docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation). This release enables a simplified method of deploying AWS Observability using default parameters with just one quick command requiring only Sumo Access Id and Key. This method features POSIX and PowerShell scripts to trigger the Cloud Formation template for creating a stack to enable complete visibility into your AWS account infrastructure's health and reliability.
 
 ---
 ## June 23, 2022 (Alerts)
 
-Update -  We’ve made [alerts and monitors](/docs/Alerts/Monitors) more customizable to give you control over how often you are notified. You can now:
+Update -  We’ve made [alerts and monitors](/docs/alerts/monitors) more customizable to give you control over how often you are notified. You can now:
 
 
 
@@ -320,7 +320,7 @@ Update - We’re happy to announce a new and improved [Time Series tab](/docs/me
 ---
 ## June 10, 2022 (Collection)
 
-New - Our [Cloud-to-Cloud Integration Framework](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/index.md) has two new Sources, [Netskope WebTx](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Netskope-WebTx): The Netskope WebTx API integration ingests Web Transaction logs from Netskope Event Steam and [Box](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework): The Box API integration ingests events from the Get Events API. It securely stores the required authentication, scheduling, and state tracking information.
+New - Our [Cloud-to-Cloud Integration Framework](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework) has two new Sources, [Netskope WebTx](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Netskope-WebTx): The Netskope WebTx API integration ingests Web Transaction logs from Netskope Event Steam and [Box](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework): The Box API integration ingests events from the Get Events API. It securely stores the required authentication, scheduling, and state tracking information.
 
 ---
 ## June 9, 2022 (Traces)
@@ -359,7 +359,7 @@ New - We're happy to announce that you can now instrument Lambda layers for Java
 ---
 ## May 20, 2022 (Alerts)
 
-Updated - We’re pleased to announce the availability of permissions for Monitors folders. This feature enables folder-level control of who can view, update, create, delete, and manage Monitors. For more information, see [Grant permissions to Monitors](/docs/Alerts/Monitors#Grant_permissions_to_Monitors_folders) folders.
+Updated - We’re pleased to announce the availability of permissions for Monitors folders. This feature enables folder-level control of who can view, update, create, delete, and manage Monitors. For more information, see [Grant permissions to Monitors](/docs/alerts/monitors#Grant_permissions_to_Monitors_folders) folders.
 
 This feature is not enabled by default. Contact Sumo Logic Support to have it enabled.
 
@@ -440,7 +440,7 @@ _index=sumologic_system_events _sourceCategory=alerts
 ---
 ## April 6, 2022 (Monitors)
 
-Update - The [alert history](/docs/Alerts/Monitors#Monitor_History) of a Monitor is now quickly accessible on a new tab of the details pane.
+Update - The [alert history](/docs/alerts/monitors#Monitor_History) of a Monitor is now quickly accessible on a new tab of the details pane.
 
 
 ---
@@ -511,7 +511,7 @@ New - If you are using [Sumo Logic Cloud SOAR](https://www.sumologic.com/solutio
 ---
 ## February 24, 2022 (Search)
 
-New - The [Search Query Language](/docs/Search/Search-Query-Language) has a new operator, [dedup](/docs/Search/Search-Query-Language/Search-Operators/dedup) allows you to:
+New - The [Search Query Language](/docs/Search/Search-Query-Language) has a new operator, [dedup](/docs/Search/Search-Query-Language/operators#dedup) allows you to:
 
 
 
@@ -522,12 +522,12 @@ New - The [Search Query Language](/docs/Search/Search-Query-Language) has a new 
 ---
 ## February 18, 2022 (Security)
 
-Update - We’ve eased the process of offboarding Sumo Logic users. Now, when you delete a user’s Sumo Logic account, you can transfer the user’s [Monitors](/docs/Alerts/Monitors) to another user, along with folders, searches, scheduled searches, scheduled views, monitors, and dashboards. For more information, see [Delete a User](docs/manage/users-and-roles/users/delete-user.md).
+Update - We’ve eased the process of offboarding Sumo Logic users. Now, when you delete a user’s Sumo Logic account, you can transfer the user’s [Monitors](/docs/alerts/monitors) to another user, along with folders, searches, scheduled searches, scheduled views, monitors, and dashboards. For more information, see [Delete a User](docs/manage/users-and-roles/users/delete-user.md).
 
 ---
 ## February 18, 2022 (Monitors)
 
-Update - The [Monitors page](/docs/Alerts/Monitors#Monitors_page) has a new shortcut to quickly view triggered alerts from a Monitor. Hover your cursor over the Status column of a Monitor and click the icon to open [Alert List](/docs/Alerts/Monitors/Alert-Response#Alert-List).
+Update - The [Monitors page](/docs/alerts/monitors#Monitors_page) has a new shortcut to quickly view triggered alerts from a Monitor. Hover your cursor over the Status column of a Monitor and click the icon to open [Alert List](/docs/alerts/monitors/Alert-Response#Alert-List).
 
 
 ---

@@ -327,14 +327,14 @@ At this point, Kafka logs should start flowing into Sumo Logic.
 
 </TabItem>
 </Tabs>
-	
-## Using Open Telemetry 
+
+## Using Open Telemetry
 We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro Collector for Kafka metric collection and the Filelog receiver for collecting Kafka logs. Sumo Logic OT distro runs on the same system as Kafka, and uses the Kafka Jolokia input plugin for Telegraf to obtain Kafka metrics, and the Sumo Logic exporter to send the metrics to Sumo Logic. Kafka Logs are sent to Sumo Logic via the Filelog receiver.
 
-### Configure Collection of Kafka Metrics and Logs 
+### Configure Collection of Kafka Metrics and Logs
  * Install sumologic-otel-collector by following the instructions mentioned here.
  * Configure and start sumologic-otel-collector.
-As part of collecting metrics data from Kafka, we will use the jolokia2 input plugin for Telegraf to get data from otel and then send data to Sumo Logic. 
+As part of collecting metrics data from Kafka, we will use the jolokia2 input plugin for Telegraf to get data from otel and then send data to Sumo Logic.
 
 Create or modify config.yaml. Refer to the sample config [here](https://ot-distro.s3.amazonaws.com/config_kafka.yaml).
 
@@ -348,13 +348,13 @@ Create or modify config.yaml. Refer to the sample config [here](https://ot-distr
 
      * In the tags sections (total 3) which is in section inputs.jolokia2_agent.tags, and inputs.disk.tags
 
-         * **environment.**  This is the deployment environment where the Kafka cluster identified by the value of urls parameter resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it. 
+         * **environment.**  This is the deployment environment where the Kafka cluster identified by the value of urls parameter resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
 
-         * **messaging_cluster.** Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards. 
+         * **messaging_cluster.** Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
     * In the **receivers > filelog** section, refer instructions here:
 
-        * include: list of kafka log files with full directory path. 
+        * include: list of kafka log files with full directory path.
 
     * Configure sumologic exporter and service as defined here.
 
@@ -367,11 +367,13 @@ Here’s an explanation for additional values set by this Telegraf configuration
 
 For all other parameters see this doc for more properties that can be configured in the Telegraf agent globally.
 
-Run the Sumo Logic OT Distro using the following command: 
+Run the Sumo Logic OT Distro using the following command:
 
-```otelcol-sumo --config config.yaml```
+```
+otelcol-sumo --config config.yaml
+```
 
-At this point, Kafka metrics and logs should start flowing into Sumo Logic.	
+At this point, Kafka metrics and logs should start flowing into Sumo Logic.
 
 ## Installing Kafka Alerts
 
@@ -384,7 +386,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON or a Terraform script.
 * There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
- 
+
 
 ### Method A: Importing a JSON file
 
@@ -397,7 +399,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
    3. Click **Add**
    4. Click Import to import monitors from the JSON above.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kafka folder under Monitors to configure them. See [this](/docs/alerts/monitors) document to enable monitors., To send notifications to teams or connections see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kafka folder under Monitors to configure them. See [this](/docs/alerts/monitors) document to enable monitors. To send notifications to teams or connections, see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
 
 ### Method B: Using a Terraform script
 

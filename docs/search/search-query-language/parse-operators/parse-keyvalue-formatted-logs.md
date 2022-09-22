@@ -1,8 +1,8 @@
 ---
 id: parse-keyvalue-formatted-logs
+title: Parse Keyvalue Formatted Logs
 ---
 
-# Parse Keyvalue Formatted Logs
 
 Typically, log files contain information that follow a key-value pair structure. The keyvalue operator allows you to get values from a log message by specifying the key paired with each value.
 
@@ -113,7 +113,7 @@ one delimiter to use when extracting.
 
 ## Additional options
 
-* **Aliases (renaming)** using [**as**](/docs/search/search-query-language/search-operators/as-operator) are supported. For example:
+* **Aliases (renaming)** using [**as**](/docs/search/search-query-language/operators#as-operator) are supported. For example:
 
     ```sql
     * | keyvalue auto keys "<key1>", "<key2>" as <field1>, <field2>

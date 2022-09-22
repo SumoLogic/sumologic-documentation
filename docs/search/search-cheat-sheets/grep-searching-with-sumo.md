@@ -1,5 +1,5 @@
 ---
-id: grep-searching-with-sumo-cheatsheet
+id: grep-searching-with-sumo
 title: grep to Searching with Sumo Cheat Sheet
 sidebar_label: grep to Searching with Sumo
 description: This cheat sheet helps you move from grep to searching with Sumo.

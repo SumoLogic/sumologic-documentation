@@ -48,13 +48,13 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>View fields
    </td>
-   <td>View <a href="https://help.sumologic.com/Manage/Fields">fields</a>, which are custom metadata fields you can assign to logs.
+   <td>View <a href="https://help.sumologic.com/manage/fields">fields</a>, which are custom metadata fields you can assign to logs.
    </td>
   </tr>
   <tr>
    <td>Manage fields
    </td>
-   <td>Manage <a href="https://help.sumologic.com/Manage/Fields">fields</a>, which are custom metadata fields you can assign to logs.
+   <td>Manage <a href="https://help.sumologic.com/manage/fields">fields</a>, which are custom metadata fields you can assign to logs.
 <p>Note that if you grant a role the Manage Fields capability, users with that role will also have the View Fields and View field extraction rules capabilities.</p>
    </td>
   </tr>

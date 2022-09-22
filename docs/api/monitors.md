@@ -9,7 +9,7 @@ description: Use HTTP endpoints to manage your account's Monitors.
 The Monitors Management API allows you to manage Monitors from HTTP endpoints. Monitors continuously query your data to monitor and send notifications when specific events occur. For more information see [Monitors](https://help.sumologic.com/?cid=10020).
 
 
-Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
+Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 
 
 Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).

@@ -44,7 +44,7 @@ These are best used for looking at statistics taken over time. Things like CPU,�
 Time series panels accept aggregate fields with epoch values (milliseconds since 1970).
 
 :::note
-Log queries can use the [timeslice operator](../search/search-query-language/search-operators/timeslice-joinresults.md) to provide a time series.
+Log queries can use the [timeslice operator](../search/search-query-language/operators#timeslice-joinresults) to provide a time series.
 :::
 
 Available chart types:
@@ -119,7 +119,7 @@ Only [single value charts](panels/single-value-charts.md) are supported.
 
 ![map panel.png](/img/dashboards-new/panels/map-panel.png)
 
-Maps identify where requests are coming from. These are ideal for [geolocation](../search/search-query-language/search-operators/Geo-Lookup.md) data.
+Maps identify where requests are coming from. These are ideal for [geolocation](../search/search-query-language/operators#geo-lookup-map) data.
 
 :::note
 You may not see map panels render if hardware acceleration is disabled on your browser.
