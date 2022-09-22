@@ -210,7 +210,7 @@ You can filter the Overview dashboard by any combination of `DestinationIP`, `So
 
 
 #### Filtering the Accepts dashboard
-In the filters pane, you can can configure these parameters for the [outlier](/docs/search/Search-Query-Language/Search-Operators/outlier) analysis performed by the "Accepts by Minute - Outlier" panel:  Consecutive, Threshold, Window, and Timeslice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/Search-Query-Language/operators#outlier) analysis performed by the "Accepts by Minute - Outlier" panel:  Consecutive, Threshold, Window, and Timeslice.
 
 You can also filter Accepts dashboard by any combination of `DestinationIP`, `SourceIP`, `dest_port`, `interfaceid`, `protocol`, and `src_port`.
 
@@ -227,7 +227,7 @@ You can also filter Accepts dashboard by any combination of `DestinationIP`, `So
 
 #### Filtering the Rejects dashboard
 
-In the filters pane, you can can configure these parameters for the [outlier](/docs/search/Search-Query-Language/Search-Operators/outlier) analysis performed by the "Rejects by Minute - Outlier" panel: Consecutive, Threshold, Window, and Timeslice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/Search-Query-Language/operators#outlier) analysis performed by the "Rejects by Minute - Outlier" panel: Consecutive, Threshold, Window, and Timeslice.
 
 You can also filter the Rejects dashboard by any combination of `DestinationIP`, `SourceIP`, `dest_port`, `interfaceid`, `protocol`, and `src_port`.
 
@@ -243,7 +243,7 @@ You can also filter the Rejects dashboard by any combination of `DestinationIP`,
 
 #### Filtering the Traffic dashboard
 
-In the filters pane, you can can configure these parameters for the [outlier](/docs/search/Search-Query-Language/Search-Operators/outlier) analysis performed by several panels: Consecutive, Threshold, Window, and Timelice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/Search-Query-Language/operators#outlier) analysis performed by several panels: Consecutive, Threshold, Window, and Timelice.
 
 You can also filter the Traffic dashboard by any combination of `DestinationIP`, `SourceIP`, `action`, `dest_port`, `interfaceid`, `protocol`, and `src_port`.
 
@@ -266,6 +266,6 @@ Key facts about this dashboard:
 
 #### Filtering the Security Groups dashboard
 
-In the filters pane, you can can configure these parameters for the [outlier](/docs/search/Search-Query-Language/Search-Operators/outlier) analysis performed by several panels:  Consecutive, Threshold, Window, and Timeslice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/Search-Query-Language/operators#outlier) analysis performed by several panels:  Consecutive, Threshold, Window, and Timeslice.
 
 You can also filter the Security Groups dashboard by any combination of `DestinationIP`, `SourceIP`, `action`, `dest_port`, `interfaceid`, `protocol`, `security_grp_id`,  `src_port`, `subnet_id`, and `vpc_id`.

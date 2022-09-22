@@ -8,7 +8,7 @@ A Scheduled View reduces aggregate data down to the bare minimum, so they conta
 These items are required in Scheduled View queries:
 
 * **Always use an [aggregate](/docs/search/search-query-language/group-aggregate-operators) operator.** This will allow you to avoid duplicating data.
-* **Always run an aggregation by a [timeslice](../../search/search-query-language/search-operators/timeslice.md) operator.** If you don't, [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) will be used.
+* **Always run an aggregation by a [timeslice](../../search/search-query-language/operators#timeslice) operator.** If you don't, [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) will be used.
 
 Also, keep the following things in mind when you're creating Scheduled View queries:
 

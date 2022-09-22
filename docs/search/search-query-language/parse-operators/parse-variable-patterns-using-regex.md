@@ -175,4 +175,4 @@ Use the following parse regex expression to match the "error" in the logs. The *
 | Error         | Line2: The following exception was reported: Error in log |
 | error         | Line1: The following exception was reported: error in log |
 
-You can also use the [toLowerCase and toUpperCase](../search-operators/toLowerCase-and-toUpperCase.md) operators. 
+You can also use the [toLowerCase and toUpperCase](../operators#toLowerCase-and-toUpperCase) operators. 

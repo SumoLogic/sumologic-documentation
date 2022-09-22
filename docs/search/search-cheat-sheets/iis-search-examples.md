@@ -50,7 +50,7 @@ If the "sc_substatus" field is missing don't exclude those messages (nodrop)…o
 | Identify the top 100 client IP addresses by number of hits.| `| count by c_ip | top 100 c_ip by _count` |
 
 :::sumo More Info
-For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent), and [Top](../search-query-language/search-operators/top.md).
+For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent), and [Top](../search-query-language/operators#top).
 :::
 
 ## Timeslice and Transpose
@@ -61,7 +61,7 @@ For more information, see [Parsing](/docs/search/search-query-language/parse-op
 | Pivot the results so that time is on the X axis and sc_status is on the Y axis (values can be displayed in legend) | `| transpose row _timeslice column sc_status` |
 
 :::info
-For more information, see [Timeslice](docs/search/search-query-language/search-operators/timeslice.md) and [Transpose](../search-query-language/search-operators/transpose.md).
+For more information, see [Timeslice](docs/search/search-query-language/operators#timeslice) and [Transpose](../search-query-language/operators#transpose).
 :::
 
 ## Conditional Operators
@@ -75,7 +75,7 @@ For more information, see [Timeslice](docs/search/search-query-language/search-
 | Find version numbers that match numeric values 2, 3 or 1. Use the num operator to change the string into a number. | `* | parse "Version=*." as number  | num(number) | where number in (2,3,6)` |
 
 :::sumo More Info
-For more information, see [Where](../search-query-language/search-operators/where.md) and [If](../search-query-language/search-operators/if-operator-and.md). 
+For more information, see [Where](../search-query-language/operators#where) and [If](../search-query-language/operators#if-operator-and). 
 :::
 
 For any query, you can increase specificity by adding metadata fields to the keyword expression. Metadata fields include `_sourceCategory`,

@@ -563,7 +563,7 @@ Where:
 ---
 ## Compare
 
-<details><summary><small>The compare operator can be used with the <strong>Time Compare</strong> button in the Sumo interface, which automatically generates the appropriate syntax and adds it to your aggregate query. See <a href="docs/search/time-compare.md">Time Compare</a> for details. The following information can also be found documented in Time Compare.</small></summary>
+<details><summary><small>The compare operator can be used with the <strong>Time Compare</strong> button in the Sumo interface, which automatically generates the appropriate syntax and adds it to your aggregate query. See <a href="/docs/search/time-compare">Time Compare</a> for details. The following information can also be found documented in Time Compare.</small></summary>
 
 You can use compare to:
 
@@ -1150,7 +1150,7 @@ appears when you attempt to add it.
 </details>
 
 ---
-## fields operator
+## fields
 
 <details><summary><small>Allows you to specify which fields to display and their order in the results of a query. Use a fields operator to reduce the "clutter" of a search output that contains fields that aren't completely relevant to your query.</small></summary>
 
@@ -1879,7 +1879,7 @@ If your timestamp is a normal Unix timestamp it is in seconds since January 1, 
 Any IP addresses that don't have a location, such as internal addresses, will return null values.
 
 :::note
-The Geo Lookup (Map) operator is the first step in creating [Map Charts](../../dashboards-new/panels/map-charts.md).
+The Geo Lookup (Map) operator is the first step in creating [Map Charts](/docs/dashboards-new/panels/map-charts).
 :::
 
 Required fields:
@@ -1991,7 +1991,7 @@ returns results similar to:
 ---
 ## geoip
 
-<details><summary><small>Sumo Logic can match a <a href="/docs/search/search-query-language/parse-operators">parsed</a> IPv4 or IPv6 address to its geographical location on a <a href="../../dashboards-new/panels/map-charts.md">map chart</a>. To create the map, the <code>geoip</code> operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. </small></summary>
+<details><summary><small>Sumo Logic can match a <a href="/docs/search/search-query-language/parse-operators">parsed</a> IPv4 or IPv6 address to its geographical location on a <a href="/docs/dashboards-new/panels/map-charts">map chart</a>. To create the map, the <code>geoip</code> operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. </small></summary>
 
 Any IP addresses that don't have a location, such as internal addresses, will return null values.
 
