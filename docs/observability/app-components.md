@@ -19,7 +19,7 @@ The Terraform script performs the following actions:
 * Creates Application Components View hierarchy in Explore.
 * Sets up Sumo Logic Field Extraction Rules ([FERs](https://help.sumologic.com/Manage/Field-Extractions)) to enrich the data.
 * Installs Sumo Logic Apps(Database apps and App Components app) in the Admin recommended folder.
-* Creates [Fields](https://help.sumologic.com/Manage/Fields).
+* Creates [Fields](https://help.sumologic.com/manage/fields).
 * Installs Monitors for each of the selected databases.
 
 
@@ -221,7 +221,7 @@ Navigate to the directory **sumologic-solution-templates/app-component-observabi
 
 ### Configure Fields in Sumo Logic
 
-Create the following Fields in collection sources both for logs and metrics. This ensures that your logs and metrics are tagged with relevant metadata, which the app dashboards require. For information on setting up Fields, see the [Fields](https://help.sumologic.com/Manage/Fields) topic.
+Create the following Fields in collection sources both for logs and metrics. This ensures that your logs and metrics are tagged with relevant metadata, which the app dashboards require. For information on setting up Fields, see the [Fields](https://help.sumologic.com/manage/fields) topic.
 
 * `component`
 * `environment`

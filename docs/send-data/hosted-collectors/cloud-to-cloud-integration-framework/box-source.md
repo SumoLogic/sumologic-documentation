@@ -97,7 +97,7 @@ Field Name
 </table>
 
 
-1. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](https://help.sumologic.com/Manage/Fields).
+1. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](https://help.sumologic.com/manage/fields).
     * Define the fields you want to associate, each field needs a name (key) and value.
         * A green circle with a checkmark is shown when the field exists and is enabled in the Fields table schema.
         * An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.

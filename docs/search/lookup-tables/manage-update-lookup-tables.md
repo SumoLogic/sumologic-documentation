@@ -1,10 +1,10 @@
 ---
-id: manage-and-update-lookup-tables
+id: manage-update-lookup-tables
 title: Manage and Update Lookup Tables
 description: Learn how to update, export, and share Lookup Tables.
 ---
 
-The page has information about updating, exporting, and sharing Lookup Tables. For information about creating a new Lookup Table, see [Create a Lookup Table](create-a-lookup-table.md).
+The page has information about updating, exporting, and sharing Lookup Tables. For information about creating a new Lookup Table, see [Create a Lookup Table](create-lookup-table.md).
 
 :::note
 New Lookup Tables are available in all deployments except Sumo Logic's Montreal deployment, pending AWS providing a required AWS service in the Montreal region.
@@ -106,7 +106,7 @@ Follow the steps below to delete all of the contents of a lookup table:
 
 ### Update a lookup table with the save operator
 
-You can use the `save` operator to save the results of a Sumo log query to a lookup table you created using the Lookup UI or API. For more information, see [save Operator](../search-query-language/search-operators/save.md).
+You can use the `save` operator to save the results of a Sumo log query to a lookup table you created using the Lookup UI or API. For more information, see [save Operator](../search-query-language/operators#save).
 
 ## Export a lookup table schema
 

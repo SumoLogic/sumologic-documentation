@@ -171,7 +171,7 @@ Explore is an intuitive navigational framework that provides a visual map of the
 
 The Favorites tab displays searches and Dashboards that you refer to frequently, or content that you want to keep handy. In the Library, on the Personal and Org tabs, you can "favorite" content to make it appear on the Favorites tab. Just click the star icon for your saved search, Dashboard, installed app, or folder, and it will be saved to the Favorites tab for easy access. You can also favorite saved searches from the Search page, and favorite Dashboards from the Dashboards page.
 
-**[Fields](https://help.sumologic.com/Manage/Fields)**
+**[Fields](https://help.sumologic.com/manage/fields)**
 
 Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. Fields may be referred to as Log Metadata Fields.
 
@@ -198,7 +198,7 @@ A graph or map that dynamically displays a directional flow from a source to a t
 
 ## G
 
-**[Geo lookup](/docs/search/search-query-language/search-operators/Geo-Lookup)**
+**[Geo lookup](/docs/search/search-query-language/operators#geo-lookup-map)**
 
 Sumo Logic can match a [parsed](https://help.sumologic.com/05Search/Search-Query-Language/01-Parse-Operators) IPv4 or IPv6 address to its geographical location on a map. To create the map the **lookup** operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated.
 
@@ -234,7 +234,7 @@ Hosted Collectors don't require installation or registration, nor do Hosted Coll
 
 ## I
 
-**[If operator](docs/search/search-query-language/search-operators/if-operator-and.md)**
+**[If operator](docs/search/search-query-language/operators#if-operator-and)**
 
 A ternary operator used to evaluate a condition as either true or false, with values assigned for each outcome. It is a shorthand way to express an if-else condition.
 
@@ -370,7 +370,7 @@ In Sumo Logic, org, or organization, refers to your company’s Sumo Logic accou
 
 **Outlier**
 
-Outliers are log data or metric values in a sequence that seem unexpected, and might indicate an operational or performance issue. In Sumo Logic, you can use the [outlier operator](/docs/search/search-query-language/search-operators/outlier) to identify outliers in log data. In addition, Sumo has a [metric outlier](https://help.sumologic.com/Metrics/03-Metric-Charts/09-Metrics-Outliers) feature that identifies metric data points that are outside the range of expected values.
+Outliers are log data or metric values in a sequence that seem unexpected, and might indicate an operational or performance issue. In Sumo Logic, you can use the [outlier operator](/docs/search/search-query-language/operators#outlier) to identify outliers in log data. In addition, Sumo has a [metric outlier](https://help.sumologic.com/Metrics/03-Metric-Charts/09-Metrics-Outliers) feature that identifies metric data points that are outside the range of expected values.
 
 
 
@@ -513,7 +513,7 @@ Time Compare uses the compare operator to compare current aggregated search resu
 
 A set of timestamped values of a specific measurement.
 
-**[Timeslice operator](/docs/search/search-query-language/search-operators/timeslice)**
+**[Timeslice operator](/docs/search/search-query-language/operators#timeslice)**
 
 Timeslice segregates search results by a time period, or by a number of buckets over a search's time range.
 
@@ -547,6 +547,6 @@ The Sumo Logic product is officially called the Sumo Logic Web Application. The 
 
 A WebHook is an HTTP callback: an HTTP POST that occurs when something happens. WebHook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming WebHooks. You can configure a custom WebHook, or use preconfigured WebHooks for a number of apps, including Slack, HipChat, Datadog, and so on.
 
-**[Where operator](/docs/search/search-query-language/search-operators/where)**
+**[Where operator](/docs/search/search-query-language/operators#where)**
 
 A conditional operator that can precede or follow another operator. Example combinations include "where x matches y", "where x in (a, b, c)", "where x not in (a, b, c)" and "where a > 1 and b / 4 &lt; sqrt(x)".
