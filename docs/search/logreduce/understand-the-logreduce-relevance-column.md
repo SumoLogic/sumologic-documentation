@@ -1,6 +1,7 @@
 ---
 id: understand-the-logreduce-relevance-column
 title: Understand the LogReduce Relevance Column
+sidebar_label: LogReduce Relevance Column
 description: The LogReduce Relevance column displays a numerical score for a signature, predicting which signatures could be most meaningful.
 ---
 

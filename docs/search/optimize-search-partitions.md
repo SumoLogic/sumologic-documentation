@@ -1,6 +1,7 @@
 ---
-id: optimizing-search-with-partitions
+id: optimize-search-partitions
 title: Optimize Your Search with Partitions
+sidebar_label: Optimize Search with Partitions
 ---
 
 

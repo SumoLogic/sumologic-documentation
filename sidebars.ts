@@ -1035,7 +1035,7 @@ module.exports = {
       ],
     },
     'search/optimize-search-performance',
-    'search/optimizing-search-with-partitions',
+    'search/optimize-search-partitions',
     'search/subqueries',
     {
       type: 'category',
@@ -1057,7 +1057,6 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'search/search-query-language/index'},
       items: [
-        'search/search-query-language/operators',
         {
           type: 'category',
           label: 'Parse Operators',
@@ -1078,6 +1077,7 @@ module.exports = {
             'search/search-query-language/parse-operators/parse-hex',
           ],
         },
+        'search/search-query-language/operators',
         'search/search-query-language/group-aggregate-operators',
         'search/search-query-language/field-expressions',
         'search/search-query-language/math-expressions',
@@ -1122,7 +1122,7 @@ module.exports = {
       type: 'category',
       label: 'Metric Queries and Alerts',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'metrics/metric-queries-alerts/index'},
       items: [
         'metrics/metric-queries-alerts/metrics-explorer',
@@ -1140,7 +1140,7 @@ module.exports = {
       type: 'category',
       label: 'Metric Charts',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'metrics/metric-charts/index'},
       items: [
         'metrics/metric-charts/create-metrics-visualization',
@@ -1155,9 +1155,9 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Understand and Manage Metric Volume',
+      label: 'Managing Metric Volume',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'metrics/understand-manage-metric-volume/index'},
       items: [
         'metrics/understand-manage-metric-volume/data-limits-for-metrics',
@@ -1170,7 +1170,7 @@ module.exports = {
       type: 'category',
       label: 'Metric Rules Editor',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'metrics/metric-rules-editor/index'},
       items: [
         'metrics/metric-rules-editor/about-metric-rules',
@@ -1361,17 +1361,17 @@ module.exports = {
               collapsed: true,
               link: {type: 'doc', id: 'observability/aws/integrations/index'},
               items: [
+                'observability/aws/integrations/aws-api-gateway',
                 'observability/aws/integrations/aws-application-load-balancer',
+                'observability/aws/integrations/aws-classic-load-balancer',
                 'observability/aws/integrations/aws-dynamodb',
                 'observability/aws/integrations/aws-ec2-metrics',
                 'observability/aws/integrations/aws-lambda',
-                'observability/aws/integrations/amazon-sns',
+                'observability/aws/integrations/aws-network-load-balancer',
                 'observability/aws/integrations/aws-rds-metrics',
-                'observability/aws/integrations/aws-api-gateway',
                 'observability/aws/integrations/amazon-ecs',
                 'observability/aws/integrations/amazon-elasticache',
-                'observability/aws/integrations/aws-network-load-balancer',
-                'observability/aws/integrations/aws-classic-load-balancer',
+                'observability/aws/integrations/amazon-sns',
               ],
             },
             'observability/aws/faq',

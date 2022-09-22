@@ -61,5 +61,5 @@ If you have a Sumo Logic Enterprise Suite account, you can take advantage of th
 
 ## Enhance search and retention
 
-* See [Run a Search Against a Partition](run-search-against-partition.md) and [Optimize Your Search with Partitions](../../search/optimizing-search-with-partitions.md) for information on the various ways to run a search against a Partition.
+* See [Run a Search Against a Partition](run-search-against-partition.md) and [Optimize Your Search with Partitions](../../search/optimize-search-partitions.md) for information on the various ways to run a search against a Partition.
 * See [Manage Indexes with Variable Retention](manage-indexes-variable-retention.md) for information on data retention periods and how to modify them.

@@ -7,7 +7,9 @@ description: Process data in meaningful ways and provide logic to queries with s
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Process data in meaningful ways and provide logic to queries with search operators. This page lists the available search operators in Sumo's search query language. Click to expand each description to see syntaxes and example code.
+Process data in meaningful ways and provide logic to queries with search operators. This page lists the available search operators in Sumo's search query language.
+
+Use the right-nav menu to search operators, then click on a description to expand and see syntaxes and example code.
 
 
 ---
@@ -173,10 +175,10 @@ _sourceCategory=Apache/Access status_code=404
 
 **Syntax**
 
-The ASN Lookup operator uses [lookup](#lookup-classic) with a specific path, `asn://default`, to provide the ASN and associated organization.
+The ASN Lookup operator uses <a href="#lookup-classic">lookup</a> with a specific path, `asn://default`, to provide the ASN and associated organization.
 
 ```sql
-lookup\<field\> from asn://default on ip\<ip_addres\>
+lookup\<field\> from asn://default on ip\<ip_address\>
 ```
 
 |  Lookup fields |  Description |
@@ -1874,7 +1876,7 @@ If your timestamp is a normal Unix timestamp it is in seconds since January 1, 
 ---
 ## Geo Lookup (Map)
 
-<details><summary><small>Sumo Logic can match a <a href="/docs/search/search-query-language/parse-operators">parsed</a> IPv4 or IPv6 address to its geographical location on a map. To create the map the **lookup** operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. </small></summary>
+<details><summary><small>Sumo Logic can match a <a href="/docs/search/search-query-language/parse-operators">parsed</a> IPv4 or IPv6 address to its geographical location on a map. To create the map the <code>lookup</code> operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. </small></summary>
 
 Any IP addresses that don't have a location, such as internal addresses, will return null values.
 
@@ -1907,7 +1909,7 @@ Details of these data fields can be found in [Neustar's documentation](https://i
 
 **Syntax**
 
-The Geo Lookup operator uses [lookup](#lookup-classic "lookup") with a specific path, `geo://location`, to produce a map. 
+The Geo Lookup operator uses <a href="#lookup-classic">lookup</a> with a specific path, `geo://location`, to produce a map. 
 
 To map the IP addresses properly you must [count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent) by the `latitude` and `longitude` fields. You must have the `_count` field in your results. If you want to use a different field's value [rename](#as-operator "as operator") it to `_count` so the map uses the field.
 
@@ -2432,8 +2434,8 @@ would produce results like:
 ## isNull, isEmpty, isBlank
 
 <details><summary><small><ul>
-<li>The **isNull** operator checks a string and returns a boolean value: true if the string is null, or false if the string is not null.</li>
-<li>The **isEmpty** operator checks if a string contains no characters and is only whitespace.</li><li> The **isBlank** operator checks if a string contains no characters, is only whitespace, and is null.</li>
+<li>The <code>isNull</code> operator checks a string and returns a boolean value: true if the string is null, or false if the string is not null.</li>
+<li>The <code>isEmpty</code> operator checks if a string contains no characters and is only whitespace.</li><li> The <code>isBlank</code> operator checks if a string contains no characters, is only whitespace, and is null.</li>
 </ul></small></summary>
 
 #### When is a field null?
@@ -2441,7 +2443,7 @@ would produce results like:
 Fields can hold a null value for the following reasons:
 
 * A [parsing operation](/docs/search/search-query-language/parse-operators) failed to parse a value.
-* There is a mismatch from a [lookup](#lookup-classic) operator query.
+* There is a mismatch from a <a href="#lookup-classic">lookup</a> operator query.
 * There is a missing field from a [geo lookup](#geo-lookup-map) operator query.
 * There is a missing field from a [transpose](#transpose) operator query.
 
@@ -3080,7 +3082,7 @@ In either case, you will point the operator to one of the following:
 * A CSV file hosted on an HTTPS server. Attempting to run the lookup operator against a CSV hosted on an HTTP server will not be loaded in Sumo Logic.
 
 :::note
-This topic has information about the classic version of the `lookup` operator that works with the classic Lookup Tables feature. For information about the new, more scalable Lookup Tables feature and the new `lookup` operator that works with it, see [Lookup Tables](/docs/search/lookup-tables) and [lookup](#lookup).
+This topic has information about the classic version of the `lookup` operator that works with the classic Lookup Tables feature. For information about the new, more scalable Lookup Tables feature and the new `lookup` operator that works with it, see <a href="/docs/search/lookup-tables">Lookup Tables</a> and <a href="#lookup">lookup</a>.
 :::
 
 **Syntax**
@@ -3243,7 +3245,7 @@ For example, if you are searching your Apache Access logs from 34.87.4.6 and you
 ---
 ## lookup
 
-<details><summary><small>The <code>lookup</code> operator can return one or more fields from a lookup table hosted by Sumo Logic and add the fields to the log messages returned by your query. You create a lookup table using the lookup UI or the [Lookup API](https://api.sumologic.com/docs/#tag/lookupManagement). You can populate a lookup table by uploading a CSV file using the Lookup API, or by using the [save operator](#save) to save the results of a log query. </small></summary>
+<details><summary><small>The <code>lookup</code> operator can return one or more fields from a lookup table hosted by Sumo Logic and add the fields to the log messages returned by your query. You create a lookup table using the lookup UI or the <a href="https://api.sumologic.com/docs/#tag/lookupManagement">Lookup API</a>. You can populate a lookup table by uploading a CSV file using the Lookup API, or by using the <a href="#save"><code>save</code> operator</a> to save the results of a log query. </small></summary>
 
 :::note
 New Lookup Tables are available in all deployments except Sumo Logic's Montreal deployment, pending AWS providing a required AWS service in the Montreal region.
@@ -3476,7 +3478,7 @@ Where:
 ---
 ## Luhn
 
-<details><summary><small>The **Luhn** operator uses Luhn’s algorithm to check message logs for strings of numbers that may be credit card numbers and then validates them. It takes a string as an input, strips out all characters that are not numerals, and checks if the resulting string is a valid credit card number, returning true or false accordingly.</small></summary>
+<details><summary><small>Uses Luhn’s algorithm to check message logs for strings of numbers that may be credit card numbers and then validates them. It takes a string as an input, strips out all characters that are not numerals, and checks if the resulting string is a valid credit card number, returning true or false accordingly.</small></summary>
 
 **Syntax**
 
@@ -4002,7 +4004,7 @@ This approach effectively displays the severity of the outlier, because the spik
 ---
 ## predict
 
-<details><summary><small>Uses a series of time-stamped numerical values to predict future values. The `predict` operator can be useful in the following cases:
+<details><summary><small>Uses a series of time-stamped numerical values to predict future values. The <code>predict</code> operator can be useful in the following cases:
 <ul><li>As an early warning system, alerting you when a threshold is about to be reached.</li>
 <li>For resource and capacity planning, helpful for determining seasonal impacts, like a Cyber Monday rush on an ecommerce site.</li>
 <li>Improved risk calculation.</li></ul></small></summary>
@@ -4135,7 +4137,7 @@ Note that, if desired, you can display the `_count_linear` series, to see the va
 ---
 ## queryEndTime()
 
-<details><summary><small>Returns the end time of the search [time range](../get-started-with-search/build-search/set-time-range.md) in milliseconds. You can use it in combination with [queryStartTime()](#queryStartTime) to establish times and ranges for your non-continuous queries.</small></summary>
+<details><summary><small>Returns the end time of the search <a href="../get-started-with-search/build-search/set-time-range.md">time range</a> in milliseconds. You can use it in combination with <a href="#queryStartTime">queryStartTime()</a> to establish times and ranges for your non-continuous queries.</small></summary>
 
 :::note
 For dashboards in live mode or real time scheduled searches queryTimeRange() is a more suitable option. In most cases the results would still be the same as using queryStartTime() and queryEndTime(), but the latter can be off from the real range by a few milliseconds.
@@ -4174,7 +4176,7 @@ error
 ---
 ## queryStartTime()
 
-<details><summary><small>Returns the start time of the search [time range](../get-started-with-search/build-search/set-time-range.md) in milliseconds. You can use it in combination with [queryEndTime()](#queryEndTime) to establish times and ranges for your non-continuous queries.</small></summary>
+<details><summary><small>Returns the start time of the search <a href="../get-started-with-search/build-search/set-time-range.md">time range</a> in milliseconds. You can use it in combination with <a href="#queryEndTime">queryEndTime()</a> to establish times and ranges for your non-continuous queries.</small></summary>
 
 :::note
 For dashboards in live mode or real time scheduled searches, queryTimeRange() is a more suitable option. In most cases the results would still be the same as using queryStartTime() and queryEndTime(), but the latter can be off from the real range by a few milliseconds.
@@ -4213,7 +4215,7 @@ error
 ---
 ## queryTimeRange()
 
-<details><summary><small>The queryTimeRange() operator returns the time duration for the query being executed in milliseconds. You can use it to establish time ranges for your continuous queries (CQs). This is a preferred operator for queries that are run in live dashboards or real time scheduled searches since it is more accurate than [queryStartTime()](#queryStartTime) and [queryEndTime()](#queryEndTime) operators in these cases.</small></summary>
+<details><summary><small>The queryTimeRange() operator returns the time duration for the query being executed in milliseconds. You can use it to establish time ranges for your continuous queries (CQs). This is a preferred operator for queries that are run in live dashboards or real time scheduled searches since it is more accurate than <a href="#queryStartTime">queryStartTime()</a> and <a href="#queryEndTime">queryEndTime()</a> operators in these cases.</small></summary>
 
 
 **Syntax**
@@ -4492,7 +4494,7 @@ Rollingstd is also used with the [Backshift](#backshift) operator.
 ---
 ## save (Lookups Classic)
 
-<details><summary><small>This is the classic version of the `save` operator that works with the classic Lookup Tables feature. For information about the new, more scalable Lookup Tables feature and the new `save` operator that works with it, see [Lookup Tables](/docs/search/lookup-tables) and [save](#save). The new `save` operator allows you to merge new and changed rows, whereas, this classic `save` operator can only append to existing rows.</small></summary>
+<details><summary><small>This is the classic version of the `save` operator that works with the classic Lookup Tables feature. For information about the new, more scalable Lookup Tables feature and the new `save` operator that works with it, see <a href="/docs/search/lookup-tables">Lookup Tables</a> and [save](#save). The new `save` operator allows you to merge new and changed rows, whereas, this classic `save` operator can only append to existing rows.</small></summary>
 
 Using the **save** operator allows you to save the results of a query into the Sumo Logic file system. Later, you can use the lookup operator to access the saved data. The save operator saves data in a simple format to a location you choose.
 
@@ -4591,7 +4593,7 @@ _source=config | parse "_user=[*]" as name
 ---
 ## save
 
-<details><summary><small>Allows you to save the results of a query to a lookup table you have already created, as described in [Create a Lookup Table](docs/search/lookup-tables/create-lookup-table.md). You can use the [lookup](#lookup) and [cat](#cat) operator to access the saved data.</small></summary>
+<details><summary><small>Allows you to save the results of a query to a lookup table you have already created, as described in <a href="docs/search/lookup-tables/create-lookup-table.md">Create a Lookup Table</a>. You can use the <a href="#lookup">lookup</a> and <a href="#cat">cat</a> operator to access the saved data.</small></summary>
 
 You can use the `append` option with `save` to merge new and changed rows into a lookup table. If you use `save` without `append`, any existing rows in the lookup table will be overwritten by your search results. 
 
@@ -5023,7 +5025,7 @@ _sourceCategory=Labs/*
 ---
 ## Timeslice Join Results
 
-<details><summary><small>The <code>timeslice</code> operator uses the metadata field **_messagetime** to organize the logs by slices. In your query, you need to specify the <code>timeslice</code> operation before the <code>join</code>, because the **_messagetime** field will no longer exist after the <code>join</code> operation is performed. When you add the <code>timeslice</code> before the <code>join</code>, each of the tables created by the <code>join</code> will now include a <code>_timeslice</code> field. </small></summary>
+<details><summary><small>The <code>timeslice</code> operator uses the metadata field <code>_messagetime</code> to organize the logs by slices. In your query, you need to specify the <code>timeslice</code> operation before the <code>join</code>, because the <code>_messagetime</code> field will no longer exist after the <code>join</code> operation is performed. When you add the <code>timeslice</code> before the <code>join</code>, each of the tables created by the <code>join</code> will now include a <code>_timeslice</code> field. </small></summary>
 
 You can reference the table's `_timeslice` field to use in your `group by` operation. The name of the table is appended to the table's fields.
 
@@ -5508,7 +5510,7 @@ Where:
 * For the link to be clickable your query needs to aggregate by the returned field.
 * You can only specify a single URL. `tourl` does not support merging multiple outputs into a single field.
 
-## Tabs
+#### Tabs
 
 When your URL points to another Sumo Logic feature from your account, such as a Dashboard (New), Search, Traces, or Collection page, you will have the option to open the link in another Sumo Logic tab or browser tab.
 
