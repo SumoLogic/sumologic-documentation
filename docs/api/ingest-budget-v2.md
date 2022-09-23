@@ -8,7 +8,7 @@ description: The Ingest Budget Management API V2 allows you to manage metadata-b
 
 The Ingest Budget Management API **V2** allows you to manage metadata-based [ingest budgets](https://help.sumologic.com/Manage/Ingestion-and-Volume/Ingest_Budgets) (with a scope) from HTTP endpoints.
 
-See [V1 API](/docs/api/Ingest-Budget-v1) for management of ingest budgets with a Field Value.
+See [V1 API](/docs/api/ingest-budget-v1) for management of ingest budgets with a Field Value.
 
 To manage ingest budgets you must have the **Manage Ingest Budgets** [role capability](/docs/manage/users-and-roles/roles/role-capabilities). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them. For more information see [Ingest Budgets](https://help.sumologic.com/Manage/Ingestion-and-Volume/Ingest_Budgets).
 
@@ -27,7 +27,7 @@ To manage ingest budgets you must have the **Manage Ingest Budgets** [role capab
   </tr>
 </table>
 
-Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
+Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 
 Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
 

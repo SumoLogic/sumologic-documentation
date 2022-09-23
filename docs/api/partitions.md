@@ -8,7 +8,7 @@ tags: [settings]
 
 The Partition Management API allows you to improve search performance by searching over a smaller number of messages. For more information see [Manage Partitions](https://help.sumologic.com/?cid=5231).
 
-Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
+Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 
 Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
 

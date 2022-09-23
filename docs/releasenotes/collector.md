@@ -11,7 +11,7 @@ You can upgrade [Installed Collectors](/docs/send-data/installed-collectors) in 
 
 * [Web Application](/docs/manage/collection/upgrade-collectors.md)
 * [Command Line](/docs/manage/collection/upgrade-collectors.md)
-* [Collector Management API](/docs/API/Collectors#Upgrade-or-Downgrade-Collectors-Using-the-API)
+* [Collector Management API](/docs/api/collectors#Upgrade-or-Downgrade-Collectors-Using-the-API)
 
 :::note
 Our [static URLs](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url.md) are available to download the most recent Collector version.

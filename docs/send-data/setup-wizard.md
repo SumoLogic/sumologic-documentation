@@ -7,7 +7,7 @@ description: Use the Setup Wizard to quickly get started sending data to Sumo Lo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Setup Wizard allows you to get data in your Sumo Logic account quickly. It guides you step-by-step based on the type of data you want to send. Once data collection is running, the Setup Wizard installs a Sumo Logic App with pre-configured Dashboards that allow you to analyze your data. The Setup Wizard provides detailed instructions to help you with each step of the configuration.
+The Setup Wizard lets you get data in your Sumo Logic account quickly. It guides you step-by-step based on the type of data you want to send. After data collection is running, the Setup Wizard installs a Sumo Logic App with pre-configured Dashboards that allow you to analyze your data. The Setup Wizard provides detailed instructions to help you with each step of the configuration.
 
 Before you begin, [sign up](https://help.sumologic.com/01Start-Here/04Getting-Started/01-How-to-Sign-Up-for-Sumo-Logic) for a Sumo Logic account and activate it.
 

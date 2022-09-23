@@ -182,7 +182,7 @@ The following table lists the API response fields for installed and hosted Colle
    </td>
    <td>
    </td>
-   <td>JSON map of key-value <a href="https://help.sumologic.com/Manage/Fields">fields</a> (metadata) to apply to the Collector.
+   <td>JSON map of key-value <a href="https://help.sumologic.com/manage/fields">fields</a> (metadata) to apply to the Collector.
 
 <p>To assign an <a href="https://help.sumologic.com/Manage/Ingestion-and-Volume/Ingest_Budgets">Ingest Budget</a> to the Collector use the field <code>_budget</code> with the Field Value of the Ingest Budget to assign. For example, if you have a budget with a Field Value of <code>Dev_20GB</code>, you would add:</p>
 

@@ -630,7 +630,7 @@ This section has instructions for installing Sumo Logic Monitors for Apache Tomc
 
 ## Installing Apache Tomcat Monitors
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively determine if an Apache Tomcat webserver farm is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Apache Tomcat Alerts](/docs/integrations/web-servers/Apache-Tomcat#Apache_Tomcat_Alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Apache Tomcat webserver farm is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Apache Tomcat Alerts](/docs/integrations/web-servers/apache-tomcat#apache-tomcat-alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability.
 
@@ -655,7 +655,7 @@ Custom filter examples:
 2. Click **Add**.
 3. Click **Import**.
 4. On the** Import Content popup**, enter **Apache Tomcat** in the Name field, paste in the JSON into the popup, and click **Import**.
-5. The monitors are created in a "Apache Tomcat" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors/index.md) topic for information about enabling monitors and configuring notifications or connections.
+5. The monitors are created in a "Apache Tomcat" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 
 ### Method B: Using a Terraform script
@@ -982,7 +982,7 @@ Apache Tomcat  - MemoryPool dashboard provides a memory of your JMX Apache Tomca
 
 
 
-To help determine if the Apache Tomcat server is available and performing well, the [Sumo Logic monitors](/docs/alerts/monitors/index.md) are provided with out-of-box alerts.
+To help determine if the Apache Tomcat server is available and performing well, the [Sumo Logic monitors](/docs/alerts/monitors) are provided with out-of-box alerts.
 
 
 ## Apache Tomcat Alerts

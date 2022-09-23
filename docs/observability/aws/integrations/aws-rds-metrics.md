@@ -36,7 +36,7 @@ The Sumo Logic AWS Observability RDS dashboards provide visibility into the perf
 We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
 :::
 
-### Amazon RDS Overview
+### Overview
 
 The **Amazon RDS Overview** dashboard provides insights into RDS resource statistics and utilization throughout your infrastructure, including CPU, memory, latency, storage, and network throughput.
 
@@ -48,7 +48,7 @@ Use this dashboard to:
 
 ![1. Amazon RDS Overview.png](/img/observability/rds-overview.png)
 
-### 2. Amazon RDS CloudTrail Audit Events
+### CloudTrail Audit Events
 
 The **Amazon RDS CloudTrail Audit Events** dashboard provides insights
 into audit events of your database clusters.
@@ -62,7 +62,7 @@ Use this dashboard to:
 
 ![2. Amazon RDS CloudTrail Audit Events.png](/img/observability/rds-audit-events.png)
 
-### 3. Amazon RDS Non-Describe CloudTrail Audit Events 
+### Non-Describe CloudTrail Audit Events 
 
 The **Amazon RDS Non-Describe CloudTrail Audit Events** dashboard
 provides statistical and detailed insights into Non-Describe DB
@@ -78,7 +78,7 @@ Use this dashboard to:
 
 ![3. Amazon RDS Non-Describe CloudTrail Audit Events .png](/img/observability/rds-non-describe-audit-events.png)
 
-### 1. Amazon RDS Overview By Database Instance
+### Overview By Database Instance
 
 The **Amazon RDS Overview By Database Instance** dashboard provides
 insights into resource statistics and utilization per database instance
@@ -91,7 +91,7 @@ Use this dashboard to: 
 * Monitor resource utilization with trend panels for CPU usage, available memory, network receive and transmit throughput, read and write IOPS, available free storage, and database connections across your Amazon RDS clusters and database instances.
 * ![1. Amazon RDS Overview By Database Instance.png](/img/observability/rds-database-instance.png)
 
-### 2. Amazon RDS Performance Insights 
+### Performance Insights 
 
 The **Amazon RDS Performance Insights** dashboard provides intuitive
 performance data from throughout your RDS infrastructure across CPU
@@ -104,7 +104,7 @@ Use this dashboard to:
 * Identify high and consistent instances of any wait state (Non-CPU Load)  that indicate potential bottlenecks or resource contention issues that need to be resolved, which can be an issue even when the load doesn't exceed maximum CPU.
 * ![2. Amazon RDS Performance Insights .png](/img/observability/rds-performance-insights.png)
 
-### 3. Amazon RDS Aurora Generic
+### Aurora Generic
 
 The **Amazon RDS Aurora Generic** dashboard provides generic AWS Aurora
 performance statistics across your infrastructure for uptime, replica
@@ -120,7 +120,7 @@ Use this dashboard to:
 
 ![3. Amazon RDS Aurora Generic.png](/img/observability/rds-aurora-generic.png)
 
-### 4. Amazon RDS Aurora MySQL
+### Aurora MySQL
 
 The **Amazon RDS Aurora MySQL** dashboard provides intuitive Aurora
 MySQL performance data from across your infrastructure for latency,
@@ -137,7 +137,7 @@ Use this dashboard to:
 
 ![4. Amazon RDS Aurora MySQL.png](/img/observability/rds-aurora-mysql.png)
 
-### 5. Amazon RDS Aurora MySQL Global Database and BackTrack Activity
+### Aurora MySQL Global Database and BackTrack Activity
 
 The **Amazon RDS Aurora MySQL Global Database and BackTrack Activity**
 dashboard provides insights into Aurora MySQL performance data from

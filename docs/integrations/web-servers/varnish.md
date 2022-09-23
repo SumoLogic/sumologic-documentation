@@ -327,7 +327,7 @@ At this point, Varnish logs should start flowing into Sumo Logic.
 
 ## Installing Varnish Monitors
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively determine if a Varnish cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Varnish Alerts](#Varnish-Alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a Varnish cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Varnish Alerts](#Varnish-Alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability.
 
@@ -346,7 +346,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
 4. Click **Add**.
 5. Click **Import.**
 6. On the** Import Content popup**, enter **Varnish** in the Name field, paste the JSON into the popup, and click **Import**.
-7. The monitors are created in a "Varnish" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors/index.md) topic for information about enabling monitors and configuring notifications or connections.
+7. The monitors are created in a "Varnish" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 
 ### Method B: Using a Terraform script
@@ -567,7 +567,7 @@ Use this dashboard to:
 
 ## Varnish Alerts
 
-Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Varnish cache is available and performing as expected.
+Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Varnish cache is available and performing as expected.
 
 
 <table>
