@@ -295,7 +295,7 @@ module.exports = {
                   },
                   {
                     label: 'Metrics',
-                    sublabel: 'Assess and track performance',
+                    sublabel: 'Assess & track performance',
                     to: '/docs/metrics',
                     icon: 'timeline',
                     activeBaseRegex: '^/docs/metrics/.*',
@@ -337,7 +337,7 @@ module.exports = {
                   },
                   {
                     label: 'Kubernetes Observability',
-                    sublabel: 'Deploy and monitor Kubernetes',
+                    sublabel: 'Deploy and monitor K8s',
                     to: '/docs/observability/kubernetes',
                     icon: 'settings_suggest',
                     activeBaseRegex: '^/docs/observability/kubernetes/.*',
@@ -351,7 +351,7 @@ module.exports = {
                   },
                   {
                     label: 'Root Cause Explorer',
-                    sublabel: 'Troubleshoot apps and services',
+                    sublabel: 'Troubleshoot apps & services',
                     to: '/docs/observability/root-cause-explorer',
                     icon: 'widgets',
                     activeBaseRegex: '^/docs/observability/root-cause-explorer',
