@@ -62,7 +62,7 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 ## E
 
-**E.g., i.e., and etc.,** These abbreviations are parenthetical, which means they take a comma after. In general, don't use e.g., and i.e. Spell out "for example" instead.
+**E.g., i.e., and etc.,** These abbreviations are parenthetical, which means they take a comma after.
 
 **Email.** Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.  
 
@@ -71,20 +71,13 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 **Exclamation points ! .**  Use exclamation points only in warnings and greetings. Let your text convey the enthusiasm or importance of the statement. Don't make the reader wait until the exclamation point to find out the text is significant.
 
 
-## F
-
-**Facet.**
-
-**Field count.**
-
-
 ## G
 
 **GB and Gbit.** GB is the acronym for gigabytes. Gbit or Gb is the acronym for gigabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10GB or 15Gbit.)
 
 **Geolocation. **Geolocation is one word. It is not capitalized unless used at the beginning of a sentence.
 
-**Geo lookup.** The geo lookup operator is two words.
+**Geo lookup operator.** geo lookup is two words.
 
 
 ## H
@@ -126,8 +119,6 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 **Menu.** When referring to a menu in the UI, use the word menu alone. Don't use drop-down menu, list, or selector.
 
 **Messages tab.** When referring to the Messages tab (where non-aggregate search results are displayed) the term Messages is capitalized.
-
-**Monitor.** (Obsolete.) Dashboard Monitors are now referred to as Panels. See Panel.
 
 **Multiline.** Should be one word, not two, or hyphenated.
 
@@ -173,7 +164,7 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 **Search.** Search is not capitalized, unless you are referring to the Search page.
 
-**Search Autocomplete. **One word, not two. The Sumo Logic feature is called Search Autocomplete.
+**Search Autocomplete.** One word, not two. The Sumo Logic feature is called Search Autocomplete.
 
 **Setup vs Set up.** Setup as one word is a _noun_ or an _adjective_. Set up as two words is a _verb_. For example, "You can set up your Collector using the setup procedure."
 
@@ -225,6 +216,6 @@ Hosted Collectors can use:
 
 **Website.** Website or websites is one word.
 
-**Where operator.** A conditional operator that can precede or follow another operator. Example combinations include "where x matches y", "where x in (a, b, c)", "where x not in (a, b, c)" and "where a > 1 and b / 4 < sqrt(x)".
+**Where operator.** A conditional operator that can precede or follow another operator. Example combinations include `where x matches y`, `where x in (a, b, c)`, `where x not in (a, b, c)` and `where a > 1 and b / 4 < sqrt(x)`.
 
 **Wildcard.** Wildcard is one word.
