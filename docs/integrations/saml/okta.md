@@ -324,9 +324,9 @@ For guidance creating your Source Category naming convention, see [Best Practice
 
 To configure a Script Source, do the following:
 
-1. Configure a [Script Source](/docs/send-data/installed-collectors/sources/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default. \
+1. Configure a [Script Source](/docs/send-data/installed-collectors/sources/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
 
-To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector. \
+To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector.
 Linux
 
 Windows

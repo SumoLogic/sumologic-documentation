@@ -1,6 +1,7 @@
 ---
-id: set-up-servicenow-connections
+id: set-up-connections
 title: Set Up ServiceNow Connections
+sidebar_label: Set Up Connections
 ---
 
 
@@ -10,7 +11,7 @@ There are two ServiceNow connections available in Sumo Logic.
 * [ServiceNow](#set-up-a-servicenow-connection) can create **Events** or ****ITSM **Incidents**.
 * [ServiceNow (Legacy)](#set-up-a-servicenow-legacy-connection) is the older connection and only creates **Events** in ServiceNow.
 
-If you are interested in creating **Security Incidents**, see [Set Up a ServiceNow Security Incident Webhook Connection](set-up-servicenow-incident-webhook-connection.md).
+If you are interested in creating **Security Incidents**, see [Set Up a ServiceNow Security Incident Webhook Connection](set-up-security-incident-webhook.md).
 :::
 
 A Webhook is an HTTP callback: an HTTP POST that occurs when something happens. Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming Webhooks.
@@ -62,7 +63,7 @@ To set up a ServiceNow Webhook connection:
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
 1. For **Payload**, enter a JSON object that defines the structure of what you want sent to ServiceNow. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](../webhook-connections/set-up-webhook-connections.md). 
 1. Click ****Save****.
-1. After configuring the connection, continue with [Testing the connection](set-up-servicenow-connections.md), then [create a scheduled search](../webhook-connections/schedule-searches-webhook-connections.md) to send alerts to this connection.
+1. After configuring the connection, continue with [Testing the connection](set-up-connections.md), then [create a scheduled search](../webhook-connections/schedule-searches-webhook-connections.md) to send alerts to this connection.
 
 ## Test the connection
 

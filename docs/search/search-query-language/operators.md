@@ -772,7 +772,7 @@ Create a line chart to visualize the results.
 
 #### Compare categorical data parsed from logs
 
-Use compare to analyze the change in delays on different \_sourceHosts
+Use compare to analyze the change in delays on different _sourceHosts
 using parsed data from logs.
 
 ```sql
@@ -1108,7 +1108,7 @@ Adding a group by function to a diff operator query calculates the difference 
 
 **Rules**
 
-* An alias for diff is optional. When an alias is not provided, \_diff
+* An alias for diff is optional. When an alias is not provided, _diff
     is the default alias.
 * Specified fields must contain numeric values.
 * If a row contains non-numeric values, that row will be
@@ -1182,7 +1182,7 @@ The search results would look like this:
 
 ![Fields](/img/search/searchquerylanguage/search-operators/Fields.png)
 
-Allowlist queries allow all system internal fields (fields prefixed with an underscore "\_") to pass.
+Allowlist queries allow all system internal fields (fields prefixed with an underscore "_") to pass.
 
 #### Denylist
 
@@ -1795,9 +1795,9 @@ Which produces results like this:
 
 ##### Messages by Day of the Week
 
-To get the day of the week from your logs, you can reference your log's timestamps, which are stored as the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field **_messageTime**. You can also parse out any dates in your logs and use the [formatDate](#formatDate) operator to get the day of the week.  
+To get the day of the week from your logs, you can reference your log's timestamps, which are stored as the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_messageTime`. You can also parse out any dates in your logs and use the [formatDate](#formatDate) operator to get the day of the week.  
 
-Beginning with the **_messageTime** field, you can determine the day of the week, and then remove the days you don't want using the formatDate operator. This example query provides results only for Mondays:
+Beginning with the `_messageTime` field, you can determine the day of the week, and then remove the days you don't want using the formatDate operator. This example query provides results only for Mondays:
 
 ```sql
 | formatDate(_messagetime, "EEE") as day
@@ -1811,7 +1811,7 @@ This example query provides only weekday results:
 | where !(day="Sat" or day="Sun")
 ```
 
-If you don't use **_messageTime**, and instead parse out another timestamp, you can convert it to milliseconds and determine the day this way:
+If you don't use `_messageTime`, and instead parse out another timestamp, you can convert it to milliseconds and determine the day this way:
 
 ```sql
 | parseDate(parsedtime, "MM/dd/yyyy HH:mm:ss a") as inMilliseconds
@@ -1835,7 +1835,7 @@ You get the following results:
 |  2     | 6uklr9UDkTOg79je | 412         | 1.35844e+12 | 1.35844e+12 |
 |  3     | q0K6ztX9IvpZWh1p | 18          | 1.35844e+12 | 1.35844e+12 |
 
-In the results, the **_min** and **_max** values are displayed as an epoch value. You can format these epoch values into a readable date with an experimental operator, **toLong**.
+In the results, the **`_min`** and **`_max`** values are displayed as an epoch value. You can format these epoch values into a readable date with an experimental operator, **`toLong`**.
 
 * [toLong](#casting-data-to-a-number-or-string) casts the data into a Long data type as milliseconds.
 
@@ -2911,7 +2911,7 @@ on t1.s1 = t2.s2
 
 produces results similar to:
 
-| s1 | time | s2 | v2 | \_diff |
+| s1 | time | s2 | v2 | _diff |
 |--------|----------|--------|--------|------------|
 | 12345  | 20170512 | 12345  | 50     | null       |
 | 12345  | 20170512 | 12345  | 100    | 50         |
@@ -3909,7 +3909,7 @@ Other examples include:
 * Monitoring the performance of every workstation simultaneously, without the need to build an outlier report for each one.
 * Monitoring failed image uploads for every user of an application (not total failed uploads across all users).
 
-If you have used the outlier operator, it is easy to create a multidimensional outlier operation. Just add **by \<dimension\>** to the end of the query.
+If you have used the outlier operator, it is easy to create a multidimensional outlier operation. Just add **`by <dimension>`** to the end of the query.
 
 For example, the following example query will determine many time series, one per each `_sourceHost`:
 
@@ -3922,14 +3922,14 @@ _sourceCategory=Apache/Access
 
 You can display the raw results of a multidimensional time series in a table chart, but currently other chart options are not available.
 
-In the following table chart, a value of 1 in the **_count_violation** column indicates that the data point corresponding to that timeslice is
+In the following table chart, a value of 1 in the `_count_violation` column indicates that the data point corresponding to that timeslice is
 an outlier.
 
 ![Multidimensional](/img/search/searchquerylanguage/search-operators/Multidimensional.png)
 
 #### Alerts Based on Multidimensional Outlier Results
 
-To create an alert based on the multi-series outlier table above, extract **_count_violation**.
+To create an alert based on the multi-series outlier table above, extract `_count_violation`.
 
 This way, you will not need to build an alert for each series of data (each `_sourceHost` in the previous example), and you can automatically monitor a dynamic series for deviating behavior.
 
@@ -3959,7 +3959,7 @@ This section provides two examples of how to display multidimensional outlier re
 
 **Example** 1: Outlier Distribution Across Time
 
-In this example, we’ll extract **_count_violation** from the multi-series outlier table and display that. This allows you to display the distribution of outliers among various time-series.
+In this example, we’ll extract `_count_violation` from the multi-series outlier table and display that. This allows you to display the distribution of outliers among various time-series.
 
 ```sql
 error (_sourceCategory=Apache* or _sourceCategory=IIS*)
@@ -3976,7 +3976,7 @@ When you select a [line chart](../../dashboards-new/panels/line-charts.md), this
 
 **Example** 2: Outlier Ranking
 
-This example query uses the **_count_error** (distance from the expected value for that timeslice) and the value of the standard deviation for the baseline, then determines how many standard deviation a data point is from its expected value.
+This example query uses the **`_count_error`** (distance from the expected value for that timeslice) and the value of the standard deviation for the baseline, then determines how many standard deviation a data point is from its expected value.
 
 This way, you can display outliers visually in terms of deviation from the expected value.
 
@@ -4425,7 +4425,7 @@ rollingstd <field> [, window_length] [as <field>]
 
 **Rules**
 
-* An alias for rollingstd is optional. When an alias is not provided, **_rollingstd** is the default alias.
+* An alias for rollingstd is optional. When an alias is not provided, **`_rollingstd`** is the default alias.
 * Specified fields must contain numeric values.
 * To add a query that includes a rollingstd operator to a Dashboard, you must add a group by function **before** the rollingstd operator.
 * The default window length is 10.
@@ -4756,7 +4756,7 @@ smooth <field> [, <window length>] [as <field>]
 
 **Rules**
 
-* An alias for smooth is optional. When an alias is not provided, **_smooth** is the default alias.
+* An alias for smooth is optional. When an alias is not provided, `_smooth` is the default alias.
 * The specified field must contain numeric values.
 * To add a query that includes a smooth operator to a Dashboard, you must add a group by function before the smooth operator.
 * The default window length is 10.
@@ -5029,7 +5029,7 @@ _sourceCategory=Labs/*
 
 You can reference the table's `_timeslice` field to use in your `group by` operation. The name of the table is appended to the table's fields.
 
-For example, if your table is named **errors**, your field would be **errors\_\_timeslice**. (Notice that the name uses *two* underscores.)
+For example, if your table is named **errors**, your field would be **errors__timeslice**. (Notice that the name uses *two* underscores.)
 
 Here's an example query:
 
@@ -5070,7 +5070,7 @@ timeslice <#> buckets [as <field>] | <aggregating_operator> by <field>
 
 Supported `<time_period>` values are weeks (`w`), days (`d`), hours (`h`), minutes (`m`), and seconds (`s`).
 
-To group data by (M) month you can use the formatDate operator to format \_timeslice to a month format, like this:
+To group data by (M) month you can use the formatDate operator to format _timeslice to a month format, like this:
 
 ```sql
 | timeslice 1d
@@ -5086,7 +5086,7 @@ To group data by (M) month you can use the formatDate operator to format \_times
 * The timeslice operator is commonly used in conjunction with the transpose operator. After you’ve timesliced the data into buckets, the transpose operator allows you to plot aggregated data in a time series.
 * The timeslice operator must be used with an aggregating operator such as **count by** or **group by**.
 * The number of buckets in your query is a target or maximum, not necessarily the exact number of buckets that will be returned. For example, if your query specifies 150 buckets, Sumo Logic will find a reasonable clock-aligned resolution to return approximately 150 buckets in the query results.
-* If you use timeslice with the compare or outlier operators, **don't** alias timeslice. They expect \_timeslice.
+* If you use timeslice with the compare or outlier operators, **don't** alias timeslice. They expect _timeslice.
 * If no time period or bucket is specified it defaults to the time range of the Search.
 
 **Example**
@@ -5116,7 +5116,7 @@ In another example, if you had a 4h timeslice, you would usually see results at 
 
 **Timeslice 5m**   
 
-Fixed-size buckets at 5 minutes. The output field is **default \_timeslice**.
+Fixed-size buckets at 5 minutes. The output field is **default _timeslice**.
 
 **Timeslice 2h as 2hrs** 
 
@@ -5126,25 +5126,25 @@ Fixed-size buckets that are 2 hours long. The output field name is aliased to *
 
 Bucketing to 150 buckets over the search results.
 
-**Timeslice 1m as my_time_bucket_field_name**   
+**Timeslice 1m as `my_time_bucket_field_name`**   
 
-Fixed-size buckets of 1 minute each. The output field name is aliased to **my_time_bucket_field_name**.
+Fixed-size buckets of 1 minute each. The output field name is aliased to **`my_time_bucket_field_name`**.
 
 **Example** in queries
 
-This outputs a table in the Aggregates tab with columns **_count** and **_timeslice** with the timeslices spaced in 5 minute intervals:
+This outputs a table in the Aggregates tab with columns `_count` and **`_timeslice`** with the timeslices spaced in 5 minute intervals:
 
 ```sql
 * | timeslice 5m | count by _timeslice 
 ```
 
-This outputs three columns: **_count**, **_sourceCategory**, and **my_field_name_alias**:
+This outputs three columns: `_count`, `_sourceCategory`, and **`my_field_name_alias`**:
 
 ```sql
 * | timeslice 5m as my_field_name_alias | count by _sourceCategory, my_field_name_alias
 ```
 
-This outputs a table in the Aggregates tab with columns **_count**, **_sourceCategory**, and **_timeslice** with 10 rows for each **_sourceCategory** in that table if you have messages covering the entire search period:
+This outputs a table in the Aggregates tab with columns `_count`, `_sourceCategory`, and `_timeslice` with 10 rows for each `_sourceCategory` in that table if you have messages covering the entire search period:
 
 ```sql
 * | timeslice 10 buckets | count by _sourceCategory, _timeslice
@@ -5404,7 +5404,7 @@ We can specify more than one argument to group by. In the query above, we are lo
 
 **Syntax**
 
-Create a new field (named **_total** by default) containing the sum of the specified field:
+Create a new field (named **`_total`** by default) containing the sum of the specified field:
 
 ```sql
 total <field>
@@ -5418,7 +5418,7 @@ total <field> [as <field>] [by <field1>, <field2>, ...]
 
 **Rules**
 
-* An alias for total is optional. If no alias is given, **_total** is used by default.
+* An alias for total is optional. If no alias is given, **`_total`** is used by default.
 * Rows in which the specified field contains non-numeric values will be skipped.
 * There is a limit of 100k messages that can be totaled. 
 
@@ -5439,7 +5439,7 @@ produces results similar to:
 
 Note that the t_data value of 16,761,621,241.25455 is the sum of the data field in all rows, many of which are not visible  here.
 
-This query produces only three results, illustrating that \_total is simply the sum of ps:
+This query produces only three results, illustrating that _total is simply the sum of ps:
 
 ```sql
 * | parse "BytesTotalPersec = \"*\"" as ps
@@ -5451,7 +5451,7 @@ This query produces only three results, illustrating that \_total is simply the 
 
 #### Calculate totals by message time
 
-To group rows by their message time and calculate different totals for each time, use the **_messagetime** field:
+To group rows by their message time and calculate different totals for each time, use the `_messageTime` field:
 
 ```sql
 * | limit 10

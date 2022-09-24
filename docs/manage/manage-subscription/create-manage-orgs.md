@@ -3,7 +3,7 @@ id: create-manage-orgs
 title: Create and Manage Orgs
 ---
 
-#
+
 
 :::note
 If you are a Sumo Logic Service Provider, see [Create and Manage Orgs (Service Providers)](create-manage-orgs-service-providers.md).

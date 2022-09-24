@@ -65,14 +65,14 @@ The table below lists defines the fields returned for an audit event. Note that 
 
 | Field | Description |
 |--|--|
-| Time (\_messagetime) | The time that the event occurred |
-| Message (\_raw) | The raw log message written to the audit index.  |
+| Time (_messagetime) | The time that the event occurred |
+| Message (_raw) | The raw log message written to the audit index.  |
 | Action | The action that was performed. Actions vary by event type. For more information, see [Audit event classes and actions](#audit-event-classes-and-actions).    |
 | Class | The object affected by the event. Classes vary by event type. For more information, see [Audit event classes and actions](#audit-event-classes-and-actions). |
 | Collector | Values include "InternalCollector".  |
 | Interface | Indicates how the event was initiated from the Sumo UI or using an API. Values include: "UI", "API", and "INTERNAL". |
-| \_sourceCategory | The source category associated with the event type. For more information, see [Audit index source](#audit-index) categories below. |
-| \_sourcehost | IP address of the source's host, or "no_sourcehost". |
+| _sourceCategory | The source category associated with the event type. For more information, see [Audit index source](#audit-index) categories below. |
+| _sourcehost | IP address of the source's host, or "no_sourcehost". |
 | sourceSession | The session ID associated with the event, or "no_session". |
 | sourceUser | The Sumo username associated with the event.  |
 | Status | The status of the action, which can be success or failure |
@@ -219,7 +219,7 @@ The table below shows the value of the `class` and `action` fields for user acti
 
 If you upgrade or downgrade a collector through the Web UI, an entry is written to the audit index.
 
-The status is provided to the audit index (\_index=sumologic_audit) for each event in the user activity source category ( \_sourceCategory=user_activity), and collector source (\_sourceName=COLLECTOR), including the returned log message of success or failure.
+The status is provided to the audit index (_index=sumologic_audit) for each event in the user activity source category ( _sourceCategory=user_activity), and collector source (_sourceName=COLLECTOR), including the returned log message of success or failure.
 
 Collector upgrade events reported for your account include the
 following:

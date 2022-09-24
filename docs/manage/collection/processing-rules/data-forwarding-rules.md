@@ -1,9 +1,9 @@
 ---
 id: data-forwarding-rules
 title: Data Forwarding Rules
+description: Data Forwarding rules forward data collected from an Installed Collector to non-Sumo Logic destinations.
 ---
 
-#
 
 A data forwarding rule specifies how data is forwarded from an Installed Collector Source to non-Sumo Logic destinations, so that data is made available immediately to all the systems that need to consume it. Data forwarding rules are processed after all other processing rules.
 

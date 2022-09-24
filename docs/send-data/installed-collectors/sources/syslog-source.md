@@ -27,10 +27,10 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
 
     ![syslog source.png](/img/send-data/syslog-source.png)
 
-   * **Name.** Enter the name you'd like to display for the new Source. **Description** is optional. The Source's name is stored as the metadata field **\_sourceName**.
+   * **Name.** Enter the name you'd like to display for the new Source. **Description** is optional. The Source's name is stored as the metadata field `_sourceCategory`.
    * **Protocol.** Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more information, see [Choosing TCP or UDP](syslog-source.md).
    * **Port.** Enter the port number for the Source to listen to. If the collector runs as root (default), use 51. Otherwise, consider 1514 or 5140. Make sure the devices are sending to the same port.
-   * **Source Category.** Enter a string to tag the collected messages with the searchable metadata field **\_sourceCategory**. For example, enter **firewall** to tag all collected messages in a field called **\_sourceCategory**. Type **\_sourceCategory=firewall** in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories).
+   * **Source Category.** Enter a string to tag the collected messages with the searchable metadata field `_sourceCategory`. For example, enter **firewall** to tag all collected messages in a field called `_sourceCategory`. Type **`_sourceCategory=firewall`** in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories).
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.

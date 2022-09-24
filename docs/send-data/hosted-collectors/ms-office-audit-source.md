@@ -96,7 +96,7 @@ During the configuration, you will need to authenticate to Microsoft using sta
   :::
 
 1. For **Content Type**, select the type of log to collect. If you want to collect from additional content types, create additional instances of this Source type.
-1. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called **\_sourceCategory**.) This is an important part of limiting access to this content using RBAC. Recommended Source Category naming conventions:
+1. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called `_sourceCategory`.) This is an important part of limiting access to this content using RBAC. Recommended Source Category naming conventions:
 
   * For SharePoint: **O365/SharePoint**
   * For Exchange: **O365/Exchange**

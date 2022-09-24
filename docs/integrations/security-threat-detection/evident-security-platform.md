@@ -243,7 +243,7 @@ If this is a new SNS topic, first subscribe an email address to it to make sure 
 4. Under **Protocol**, select **HTTPS**, and paste the Sumo Logic HTTP Source URL you created in the first step into the **Endpoint** field.
 5. Click **Create Subscription**.
 6. In a few minutes, a confirmation message is sent to Sumo Logic.
-7. In Sumo Logic, find the confirmation message from your HTTP Source by searching for `SubscribeURL`. \
+7. In Sumo Logic, find the confirmation message from your HTTP Source by searching for `SubscribeURL`.
 For example, use the query: `_sourceCategory=security_evident SubscribeURL`
 8. Then, in the **Messages** tab, find the JSON field `SubscribeURL`, and copy the URL to your clipboard, as shown.
 

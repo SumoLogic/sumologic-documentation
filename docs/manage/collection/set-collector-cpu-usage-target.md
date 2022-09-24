@@ -1,6 +1,7 @@
 ---
 id: set-collector-cpu-usage-target
 title: Set the Collector CPU Usage Target
+description: Set a CPU Target to limit the amount of CPU processing a Collector uses, if required.
 ---
 
 

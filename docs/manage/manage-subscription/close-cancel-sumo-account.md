@@ -3,7 +3,7 @@ id: close-cancel-sumo-account
 title: Close or Cancel a Sumo Logic Account
 ---
 
-#
+
 
 This topic covers how to delete your organization from a Sumo Logic Free or Trial account and permanently close the account. It also provides instructions for cancelling a Sumo Logic licensed account. 
 

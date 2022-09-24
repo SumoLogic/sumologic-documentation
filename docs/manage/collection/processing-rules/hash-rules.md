@@ -1,6 +1,7 @@
 ---
 id: hash-rules
 title: Hash Rules
+description: With a hash rule, an expression you choose will be replaced by a hash code.
 ---
 
 

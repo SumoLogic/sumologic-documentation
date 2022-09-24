@@ -131,7 +131,7 @@ Remote file source JSON example:
 
 ### Local Windows event log source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), except hostName, the following parameters are for local Windows event log source. The Source Host (\_sourceHost) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources), except hostName, the following parameters are for local Windows event log source. The Source Host (_sourceHost) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
@@ -163,7 +163,7 @@ Local Windows event log source JSON example:
 
 ### Remote Windows event log source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), except hostName, the following parameters are for remote Windows event log source. The Source Host (\_sourceHost) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources), except hostName, the following parameters are for remote Windows event log source. The Source Host (_sourceHost) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|

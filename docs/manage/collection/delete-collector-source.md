@@ -2,7 +2,7 @@
 id: delete-collector-or-source
 title: Delete a Collector or Source
 sidebar_label: Delete a Collector or Source
-description: tk
+description: You can delete a Collector or Source from the Web Application.
 ---
 
 Deleting a Collector deregisters it with Sumo. This cannot be undone. Installed Collectors shutdown when receiving a 401 response that its credentials are no longer accepted. The Collector and its Sources are removed from the **Manage Data** \> **Collection** \> **Collection** page. Data already collected is not affected and is still searchable.

@@ -71,7 +71,7 @@ For example, the first time you use AWS Application Load Balancer (ALB), you int
 
 ### Contractions
 
-For writing in English, contractions feel like normal, everyday speech. But they can cause issues with translation, especially if someone uses Google Chrome translation or other tools and when we hire companies to translate content. We recommend not using contractions. Spell out all words. This includes don't, it's, haven't, and so on.
+Do not use negative contractions (e.g., don't, can't, shouldn't). Spell out those words. Negative contractions can be mistaken for the opposite meaning, especially if someone is reading quickly.  
 
 ### UI Element Names
 

@@ -84,7 +84,7 @@ Within the folder, you will find subfolders for each site configured with IIS. T
 For information on how to configure HTTP Error Logs, and for explanations on the various HTTP Error Log fields and their significance see this [link](https://support.microsoft.com/en-us/help/820729/error-logging-in-http-apis).
 * **Performance Logs** These logs are output of Perfmon queries which will be configured at Installed Collector, "**Windows Performance**" Source.
 1. **Make sure logging is turned on in IIS Server.**
-* **Enable logging on your IIS Server**. Perform the following task, if logging on your IIS Server is not already enabled. \
+* **Enable logging on your IIS Server**. Perform the following task, if logging on your IIS Server is not already enabled.
 To enable logging on your IIS Server, do the following:
 1. Open IIS Manager.
 2. Select the site or server in the **Connections** pane, then double-click **Logging**.
@@ -171,7 +171,7 @@ To configure a local file source for HTTP Error Logs, do the following:
     7. **Fields. **Set the following fields**: \
 `component = webserver \
 webserver_system = iis \
-webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one. \
+webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one.
 `environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod) \
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-http-logs.png')} alt="IIS-access-logs" width="500"/>
@@ -183,7 +183,7 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
     11. Timestamp Format: Select the option to Automatically detect the format.
     12. Encoding. UTF-8 is the default, but you can choose another encoding format from the menu if your IIS logs are encoded differently.
     13. Enable Multiline Processing. Uncheck the box to Detect messages spanning multiple lines. Since IIS Error logs are single line log files, disabling this option will ensure that your messages are collected correctly.
-4. Click Save. \
+4. Click Save.
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your IIS HTTP Error log files to the Sumo Logic service.
 * Configure Source for IIS Performance (Perfmon) Logs
 

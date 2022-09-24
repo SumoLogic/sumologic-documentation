@@ -1,6 +1,7 @@
 ---
 id: edit-source
 title: Edit Source
+description: Edit characteristics of a Source.
 ---
 
 

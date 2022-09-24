@@ -73,7 +73,7 @@ You can collect kube-controller-manager metrics in a Kubernetes deployment you 
 
 ### kube-controller-manager metrics to collect
 
-`cloudprovider\_\*\_api_request_duration_seconds\*`
+`cloudprovider_\*_api_request_duration_seconds\*`
 
 ### View kube-controller-manager metrics 
 

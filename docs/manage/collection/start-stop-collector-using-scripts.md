@@ -1,6 +1,7 @@
 ---
 id: start-stop-collector-using-scripts
 title: Start or Stop a Collector using Scripts
+description: Use scripts used to start, stop, and check the status of the Collector process (Linux/Unix) and service (Windows).
 ---
 
 

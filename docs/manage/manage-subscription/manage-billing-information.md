@@ -3,7 +3,6 @@ id: manage-billing-information
 title: Manage Billing Information
 ---
 
-#
 
 The **Billing** page allows admin users to add or update the credit card information for self-service accounts. These are the accounts that have upgraded from a trial or free account with a credit card (self-service), using the in-product Upgrade feature.  
 

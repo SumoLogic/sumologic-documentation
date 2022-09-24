@@ -24,7 +24,7 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 * [Traces](/docs/apm/traces) are not calculated and are not supported.
 * Ingest budgets require the **Manage Ingest Budgets** [role capability](../../users-and-roles/roles/role-capabilities.md).
 * Fields assigned with Field Extraction Rules are not supported in the **scope** of an Ingest Budget.
-* **\_budget** is a reserved keyword used by legacy ingest budgets, do not use this reserved field when creating a new V2 ingest budget.
+* **`_budget`** is a reserved keyword used by legacy ingest budgets, do not use this reserved field when creating a new V2 ingest budget.
 * Data is not automatically recovered or ingested later once the capacity tracking is reset.
 * In the **scope**, do not wrap values in quotes, unless the value explicitly has quotes. For example, if you want to assign the scope with `_collector` and the name of the Collector is `CloudTrail`, you would assign the scope as `_collector=CloudTrail` instead of `_collector="CloudTrail"`.
 
@@ -33,11 +33,11 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 The **scope** supports the option to assign ingest budgets to your log data by either:
 
 * A Field that is enabled in the [Fields table](../../fields.md). Fields are created in many ways, see [Fields](../../fields.md) for details.
-* One of the following built-in metadata fields: \_collector, \_source, \_sourceCategory, \_sourceHost, or \_sourceName.
+* One of the following built-in metadata fields: `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, or `_sourceName`.
 
-The value supports a single wildcard, such as **\_sourceCategory=prod\*payment**.
+The value supports a single wildcard, such as `_sourceCategory=prod*payment`.
 
-For example, a **scope** expression like **\_sourceCategory=/dev/catalog/\*** implies that all incoming logs ingested into Sumo Logic with a matching \_sourceCategory will fall under the scope of the given budget.
+For example, a **scope** expression like `_sourceCategory=/dev/catalog/*` implies that all incoming logs ingested into Sumo Logic with a matching _sourceCategory will fall under the scope of the given budget.
 
 See more [budget assignment examples](#budget-assignment) below and review the [rules](#rules) above.
 
@@ -169,13 +169,13 @@ Log messages can match against multiple budgets if two or more budgets have ove
 
 * Budget #1
 
-    * Scope = "\_sourceCategory=/service/payment/\*"  
+    * Scope = "_sourceCategory=/service/payment/\*"  
     * Action = "stop collecting"  
     * Capacity= 10 GB
 
 * Budget #2
 
-    * Scope = "\_sourceCategory=/service/payment/component/oracle"  
+    * Scope = "_sourceCategory=/service/payment/component/oracle"  
     * Action = "stop collecting"  
     * Capacity= 2 GB
 

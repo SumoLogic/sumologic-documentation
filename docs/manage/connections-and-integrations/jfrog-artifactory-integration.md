@@ -1,6 +1,7 @@
 ---
 id: jfrog-artifactory-sumo-logic-integration
 title: JFrog Artifactory Online Sumo Logic Integration
+sidebar_label: JFrog Artifactory
 ---
 
 :::important

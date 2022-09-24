@@ -1,13 +1,13 @@
 ---
 id: metrics-include-and-exclude-rules
 title: Metrics Include and Exclude Rules
+description: You can use metrics processing rules to specify what metrics a metrics source are sen to Sumo Logic.
 ---
 
-#
 
 This page describes metrics include and exclude processing rules, which you can apply to a metrics source to control metrics are sent to Sumo Logic.
 
-* An exclude rule functions as a denylist or blacklist filter where all data is sent except matching data to Sumo Logic.
+* An exclude rule functions as a denylist filter where all data is sent except matching data to Sumo Logic.
 * An include rule functions as an allowlist filter where only matching data is sent to Sumo Logic.
 
 You can use metrics include and exclude rules with any metrics source, except the AWS Kinesis Firehose for Metrics source.

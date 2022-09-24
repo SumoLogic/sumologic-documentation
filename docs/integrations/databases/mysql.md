@@ -328,7 +328,7 @@ Sumo Logic Kubernetes collection will automatically start collecting logs from t
 2. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments are automatically prefixed with pod_labels. To normalize these for our app to work, we'll create a [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md), Database Application Components, assuming it does not already exist:
    1. Go to **Manage Data > Logs > Field Extraction Rules**.
    2. Click the **+ Add**.
-   3. The **Add Field Extraction** pane appears. \
+   3. The **Add Field Extraction** pane appears.
    4. **Rule Name.** Enter "App Observability - Database".
    5. **Applied At**. Choose "Ingest Time".
    6. **Scope**. Select "Specific Data".
@@ -488,7 +488,7 @@ At this point, MySQL error logs should start flowing into Sumo Logic.
         * `component = database`
         * `db_system = mysql`
         * `db_cluster = <your_mysql_cluster_name>`
-        * `environment = <Environment_Name>`, such as dev, qa, or prod. \
+        * `environment = <Environment_Name>`, such as dev, qa, or prod.
        The values of `db_cluster` and `environment` should match those configured in the [Setting values in telegraf.conf](#Setting_values_in_telegraf.conf) above.
    2. In the **Advanced Options for Logs** section:
       * **Enable Timestamp Parsing**. Select "Extract timestamp information from log file entries".

@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="75"/>
 
-Use the **Collection** page to manage all of your Collectors and Sources. To access the Collection page, go to **Manage Data \> Collection \> Collection**.
+Use the **Collection** page to manage all of your Collectors and Sources. To access the Collection page, go to **Manage Data > Collection > Collection**.
 
 ![Collection page June 2021.png](/img/collector/collection-page.png)
 

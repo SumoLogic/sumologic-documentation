@@ -1,11 +1,12 @@
 ---
-id: set-up-a-servicenow-incident-webhook-connection
+id: set-up-security-incident-webhook
 title: Set Up a ServiceNow Security Incident Webhook Connection
+sidebar_label: Set Up Security Incident Webhooks
 ---
 
 This page shows you how to set up a ServiceNow Security Incident Webhook connection and create scheduled searches for the connection.
 
-If you want to create **Events** or **ITSM Incidents** see [Set Up ServiceNow Connections](set-up-servicenow-connections.md) for instructions.
+If you want to create **Events** or **ITSM Incidents** see [Set Up ServiceNow Connections](set-up-connections.md) for instructions.
 
 ### About Webhooks and ServiceNow Incidents
 

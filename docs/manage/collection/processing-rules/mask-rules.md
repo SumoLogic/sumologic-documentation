@@ -1,9 +1,9 @@
 ---
 id: mask-rules
 title: Mask Rules
+description: Create a mask rule to replace an expression with a mask string.
 ---
 
-#
 
 A mask rule is a type of processing rule that hides irrelevant or sensitive information from logs before ingestion. When you create a mask rule, whatever expression you choose to mask will be replaced with a mask string before it is sent to Sumo Logic. You can provide a mask string, or use the default, "#." 
 
