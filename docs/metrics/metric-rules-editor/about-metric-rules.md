@@ -150,7 +150,7 @@ You could define the Tag Sequence like this:
 
 to extract the third component of the metric match expression.
 
-### What if you want to match the expression against \_rawName field?
+### What if you want to match the expression against _rawName field?
 
 You can. Use the `$_field_sequence` format, specifying the `_rawName` field. For example, given this Tag Sequence:
 

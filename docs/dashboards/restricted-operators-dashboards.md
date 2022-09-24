@@ -43,7 +43,7 @@ The following operators can't be used in Live mode:
 
 The following search modifier cannot be used in Live mode.
 
-* \_dataTier
+* _dataTier
 
 ### Include only after the first group-by phrase
 

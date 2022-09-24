@@ -506,10 +506,10 @@ The APIs return operation failures with a description and error code, including 
 #### Rate limit throttling  
 
 * A rate limit of four API requests per second (240 requests per minute) applies to all API calls from a user.
-* A rate limit of 10 concurrent requests to any API endpoint applies to an access key. \
+* A rate limit of 10 concurrent requests to any API endpoint applies to an access key.
  \
 If a rate is exceeded, a rate limit exceeded 429 status code is returned.
-* A limit of 10 active concurrent trace search requests applies to your organization. Bear in mind that a single API request can consist of multiple queries and each query is treated as a separate trace search. \
+* A limit of 10 active concurrent trace search requests applies to your organization. Bear in mind that a single API request can consist of multiple queries and each query is treated as a separate trace search.
  \
 Once you reach the limit of 10 concurrent active searches, attempting an additional search will result in a status code of _429 Too Many Requests_ telling you that you are over the allowed concurrent search requests limit.
 

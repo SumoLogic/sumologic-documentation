@@ -58,7 +58,7 @@ Review the following considerations before proceeding with the Terraform templat
 
     See [*this sample*](https://sumologic-app-data.s3.amazonaws.com/SDO/config.yml.zip) CircleCI Configuration file which sends CircleCI data, including custom-data, to Sumo Logic.
 
-  * The Terraform script also allows you to only install the CircleCI app from the app catalog. It creates a source with placeholder value for \_sourceCategory from the **sumologic.auto.tfvars** file.
+  * The Terraform script also allows you to only install the CircleCI app from the app catalog. It creates a source with placeholder value for _sourceCategory from the **sumologic.auto.tfvars** file.
 
 * Sumo Logic to Jira and Sumo Logic to Opsgenie Webhooks are in Beta. To participate, contact your Sumo account executive.
 
@@ -190,9 +190,9 @@ You have the following available methods to install the Software Development Opt
 
 This procedure will configure collection in other systems (for example Jira Cloud) and create sources and FERs/Fields and connections in Sumo Logic along with App installation:
 
-1.  Set install\_(app) variables as `all` for the required applications in **sumologic.auto.tfvars**, as defined in [this](#configurable-parameters) section. This configuration will result in installing Sumo Logic apps, configuring collectors, and creating field extraction rules and fields in Sumo Logic.
-2.  Set install\_(app) variable as `none` for the tools that are not applicable to your environment.
-3.  To install the outbound connections in Sumo Logic, configure the install_sumo_to\_(app)\_webhook variables as 'true' as defined in [this](#install-the-sumo-logic-outgoing-connections) section.
+1.  Set install_(app) variables as `all` for the required applications in **sumologic.auto.tfvars**, as defined in [this](#configurable-parameters) section. This configuration will result in installing Sumo Logic apps, configuring collectors, and creating field extraction rules and fields in Sumo Logic.
+2.  Set install_(app) variable as `none` for the tools that are not applicable to your environment.
+3.  To install the outbound connections in Sumo Logic, configure the install_sumo_to_(app)_webhook variables as 'true' as defined in [this](#install-the-sumo-logic-outgoing-connections) section.
 4.  Configure required variables in **sumologic.auto.tfvars, atlassian.auto.tfvars**, **github.auto.tfvars**, **gitlab.auto.tfvars**, **pagerdutyv2.auto.tfvars**, **pagerdutyv3.auto.tfvars**,and **circleci.auto.tfvars**.
 5.  Navigate to the directory **sumologic-solution-templates/software-development-optimization-terraform** and execute the commands below:
 
@@ -217,10 +217,10 @@ To use existing sources, FERs/Fields, or configure these manually and install on
 
 1. Other than the SDO app, configure collection in Sumo Logic if not already done Based on the app documentation
 1. Populate source categories that you set up during the collection phase in **sumologic.auto.tfvars**, as defined in [this](#configurable-parameters) section.
-1. Set install\_(app) variables as `app` for the required applications in **sumologic.auto.tfvars**, as defined in [this](#configurable-parameters) section.
+1. Set install_(app) variables as `app` for the required applications in **sumologic.auto.tfvars**, as defined in [this](#configurable-parameters) section.
 1. Setting this flag as `app` will result in app installation in Sumo Logic, it will not configure collection in other systems (for example Jira Cloud) and it will not create sources and FERs/Fields in Sumo Logic.
-1. Set install\_(app) variables as ‘none’ for the applications which should not be configured.
-1. Set install_sumo_to\_(app)\_webhook variables as ‘false’ for the Sumo Logic connections if you do not wish to configure the outgoing connections in Sumo Logic.
+1. Set install_(app) variables as ‘none’ for the applications which should not be configured.
+1. Set install_sumo_to_(app)_webhook variables as ‘false’ for the Sumo Logic connections if you do not wish to configure the outgoing connections in Sumo Logic.
 1. For pagerduty, set install_pagerduty_version = “v2” or “v3” to install either version of the app.
 1. Navigate to the directory **sumologic-solution-templates/software-development-optimization-terraform** and execute the commands:
 
@@ -236,8 +236,8 @@ To use existing sources and apps, or configure these manually:
 1. Configure sources and source categories in Sumo Logic.
 1. Configure collection in respective systems for example Jira Cloud.
 1. Populate source categories in **sumologic.auto.tfvars**, as defined in [this](#configurable-parameters) section.
-1. Set install\_(app) variable as `fer` for the required applications in **sumologic.auto.tfvars**, as defined in [this](#configurable-parameters) section.
-1. Setting install\_(app) variable as `fer` will result in FER configuration in Sumo Logic, it will not configure collection in other systems (for example Jira Cloud) and it will not create sources and Fields in Sumo Logic and will not install Apps.
+1. Set install_(app) variable as `fer` for the required applications in **sumologic.auto.tfvars**, as defined in [this](#configurable-parameters) section.
+1. Setting install_(app) variable as `fer` will result in FER configuration in Sumo Logic, it will not configure collection in other systems (for example Jira Cloud) and it will not create sources and Fields in Sumo Logic and will not install Apps.
 1. Navigate to the directory **sumologic-solution-templates/software-development-optimization-terraform** and execute the commands:
 
 ```bash
@@ -248,8 +248,8 @@ $ terraform apply
 ### Install the Sumo Logic outgoing connections
 
 To configure the Sumo Logic connections only:
-1. Set install\_(app)\_webhook variables as ‘none’ for all the applications except Opsgenie. Opsgenie connection cannot be installed without configuring Opsgenie collection as there is a cyclic dependency.
-1. Set install_sumo_to\_(app)\_webhook variables as ‘true’ for the Sumo Logic connections which should be configured in Sumo Logic.
+1. Set install_(app)_webhook variables as ‘none’ for all the applications except Opsgenie. Opsgenie connection cannot be installed without configuring Opsgenie collection as there is a cyclic dependency.
+1. Set install_sumo_to_(app)_webhook variables as ‘true’ for the Sumo Logic connections which should be configured in Sumo Logic.
 1. Configure required variables in **sumologic_webhooks.auto.tfvars.**
 1. Navigate to the directory **sumologic-solution-templates/software-development-optimization-terraform** and execute the commands:
 
@@ -363,8 +363,8 @@ Configure these parameters in **sumologic_fer.auto.tfvars**. There is a set of 
 
 | Parameter | Description |
 |-- | --|
-| (app)\_pull_request_fer_scope | A [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that points to the subset of logs you'd like to parse. For more details see [FER](docs/manage/field-extractions/create-field-extraction-rule.md). |
-| (app)\_pull_request_fer_parse | A valid parse expression with [supported parse and search operators.](docs/manage/field-extractions/create-field-extraction-rule.md) For more details see [FER](docs/manage/field-extractions/create-field-extraction-rule.md). |
+| (app)_pull_request_fer_scope | A [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that points to the subset of logs you'd like to parse. For more details see [FER](docs/manage/field-extractions/create-field-extraction-rule.md). |
+| (app)_pull_request_fer_parse | A valid parse expression with [supported parse and search operators.](docs/manage/field-extractions/create-field-extraction-rule.md) For more details see [FER](docs/manage/field-extractions/create-field-extraction-rule.md). |
 
 :::note
 The App can be jira_cloud, jira_server, Github, GitLab, Bitbucket, PagerDuty, Opsgenie, Jenkins, or CircleCI.

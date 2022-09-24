@@ -1,6 +1,7 @@
 ---
 id: upgrade-collectors
 title: Upgrade Collectors
+description: When you upgrade a Collector, the upgrade file is automatically downloaded and executed from Sumo Logic. You can also download the latest Collector version and upgrade your installed Collector using operating system commands.
 ---
 
 

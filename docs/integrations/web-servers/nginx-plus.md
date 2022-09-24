@@ -538,7 +538,7 @@ Use this dashboard to:
 The **Nginx Plus - Visitor Access Types** dashboard provides insights into visitor platform types, browsers, and operating systems, as well as the most popular mobile devices, PC and Mac versions used.
 
 Use this dashboard to:
-* Understand which platform and browsers are used to gain access to your infrastructure. \
+* Understand which platform and browsers are used to gain access to your infrastructure.
 These insights can be useful for planning in which browsers, platforms, and operating systems (OS) should be supported by different software services.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Visitor-Access-Types.png')} alt="tk" />

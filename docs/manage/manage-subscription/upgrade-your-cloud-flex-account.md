@@ -3,7 +3,6 @@ id: upgrade-your-cloud-flex-account
 title: Upgrade Your Cloud Flex Account
 ---
 
-#
 
 This page has information about upgrading a Sumo Logic CloudFlex account. The Cloud Flex plan has the following account types: Free, Trial, Professional, and Enterprise. For information about each account type, see [Cloud Flex Accounts](cloud-flex-accounts.md). 
 

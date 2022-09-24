@@ -1,6 +1,7 @@
 ---
 id: restart-collectors
 title: Restart Collectors
+description: Learn how to restart a Collector from the Collection page.
 ---
 
 This document explains how to initiate a request to restart an Installed

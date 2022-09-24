@@ -1,6 +1,7 @@
 ---
 id: include-and-exclude-rules
 title: Include and Exclude Rules
+description: Use include and exclude processing rules to specify what kind of data is sent to Sumo Logic.
 ---
 
 
@@ -10,8 +11,7 @@ You can use include and exclude [processing rules](/docs/manage/collection/p
 * An exclude rule functions as a denylist filter where the matching data is not sent to Sumo Logic.
 * An include rule functions as an allowlist filter where only matching data is sent to Sumo Logic.
 
-As a best practice, specify these rules to match the lesser volume of
-data.
+As a best practice, specify these rules to match the lesser volume of data.
 
 * If you want to **collect the majority of data** from the Source's path provide **exclude** rules to match (filter out) the lesser volume of data.
 * If you want to **collect a small set of data** from the Source's path provide **include** rules to match (filter in) the lesser volume of data.

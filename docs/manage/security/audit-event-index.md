@@ -58,7 +58,7 @@ This index has detailed JSON logs for the following features. To search audit ev
 _index=sumologic_audit_``events _sourceCategory=accessKeys
 ```
 
-| Product Feature | \_sourceCategory Value  |
+| Product Feature | _sourceCategory Value  |
 | -- | -- |
 | [Access Keys](access-keys.md) | `accessKeys` |
 | [Collection](/docs/manage/collection) | `collection` |
@@ -89,9 +89,9 @@ _index=sumologic_audit_``events _sourceCategory=accessKeys
 
 | Metadata Field | Assignment Description |
 | -- | -- |
-| \_sourceCategory   | Value of the [common parameter](audit-event-index.md), `subsystem`. |
-| \_sourceName | Value of the [common parameter](audit-event-index.md), `eventName`. |
-| \_sourceHost | The remote IP address of the host that made the request. If not available the value will be `no_sourceHost`. |
+| _sourceCategory   | Value of the [common parameter](audit-event-index.md), `subsystem`. |
+| _sourceName | Value of the [common parameter](audit-event-index.md), `eventName`. |
+| _sourceHost | The remote IP address of the host that made the request. If not available the value will be `no_sourceHost`. |
 
 ## Common parameters
 

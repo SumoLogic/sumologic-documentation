@@ -109,7 +109,7 @@ You can use a transformation rule to aggregate high cardinality data from ephem
 
 Here’s what the rule does:
 
-1. The rule is applied to metrics that match the selector metric=container\_\*.  (Metrics whose name begin with “container\_”.)  For this example, assume that these are the matching metrics:  
+1. The rule is applied to metrics that match the selector metric=container_\*.  (Metrics whose name begin with “container_”.)  For this example, assume that these are the matching metrics:  
 
     ```
     metric=container_memory_usage_bytes service=foo container=1234 pod=abcd
@@ -124,7 +124,7 @@ Here’s what the rule does:
 
     Only the dimensions upon which the raw metrics were aggregated are preserved in the aggregated metrics. The `container` and `pod` dimensions are not included in the aggregated metrics.
 
-1. The aggregated metrics will have the value of the metric dimension modified to have a suffix of “\_agg”, like this:  
+1. The aggregated metrics will have the value of the metric dimension modified to have a suffix of “_agg”, like this:  
 
     ```
     metric=container_memory_usage_bytes_agg service=foo metric=container_fs_bytes_agg service=foo

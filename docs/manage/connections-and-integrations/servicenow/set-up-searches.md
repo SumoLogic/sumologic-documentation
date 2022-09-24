@@ -1,13 +1,14 @@
 ---
-id: set-up-searches-for-servicenow-integration
+id: set-up-searches
 title: Set Up Searches for ServiceNow Integration
+sidebar_label: Set Up Searches
 ---
 
 [Scheduled searches](/docs/alerts/scheduled-searches) are saved searches that run automatically at specified intervals. When a scheduled search is set to upload search results to ServiceNow, you can combine services for round-trip investigations.
 
 You can create a brand new search, or you can base a search on an existing saved or scheduled search. If you'd like to use an existing search, you'll need to save the query as a new search to not override the search's current schedule.
 
-Before you can set up searches for ServiceNow, you'll need to configure a [ServiceNow Connection](set-up-servicenow-connections.md).
+Before you can set up searches for ServiceNow, you'll need to configure a [ServiceNow Connection](set-up-connections.md).
 
 **To set up a search for ServiceNow integration**
 

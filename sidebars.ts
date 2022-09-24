@@ -471,9 +471,9 @@ module.exports = {
           link: {type: 'doc', id: 'manage/connections-and-integrations/servicenow/index'},
           items: [
             'manage/connections-and-integrations/servicenow/launch-investigations',
-            'manage/connections-and-integrations/servicenow/set-up-searches-for-servicenow-integration',
-            'manage/connections-and-integrations/servicenow/set-up-servicenow-connections',
-            'manage/connections-and-integrations/servicenow/set-up-a-servicenow-incident-webhook-connection',
+            'manage/connections-and-integrations/servicenow/set-up-searches',
+            'manage/connections-and-integrations/servicenow/set-up-connections',
+            'manage/connections-and-integrations/servicenow/set-up-security-incident-webhook',
           ],
         },
         'manage/connections-and-integrations/sumo-logic-add-on-for-heroku',
@@ -490,7 +490,6 @@ module.exports = {
         'manage/content-sharing/admin-mode',
         'manage/content-sharing/changing-alerts',
         'manage/content-sharing/content-sharing-faq',
-        'manage/content-sharing/share-content',
       ]
     },
     {

@@ -1,6 +1,7 @@
 ---
 slug: /manage/collection/processing-rules
 title: Processing Rules
+description: Processing rules filter data at ingest,  and can also be used to forward data.
 ---
 
 

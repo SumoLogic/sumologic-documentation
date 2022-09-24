@@ -35,7 +35,7 @@ A host metric source running on an Installed Collector on an AWS EC2 instances w
 
 ## Manually Configure a Host Metrics Source
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic select **Manage Data > Collection > Collection**.
 1. Find the name of the installed collector to which you'd like to add a source. Click **Add** and then choose **Add Source**.
 
     ![add-source2.png](/img/send-data/add-source2.png)
@@ -45,9 +45,9 @@ A host metric source running on an Installed Collector on an AWS EC2 instances w
     ![InstalledCollector.png](/img/send-data/host-metrics-icon.png)
 1. Set the following:
 
-   * **Name**. Enter the name you'd like to display for the new Source. Description is optional. Source name metadata is stored in a searchable field called **\_sourceName**.
+   * **Name**. Enter the name you'd like to display for the new Source. Description is optional. Source name metadata is stored in a searchable field called `_sourceCategory`.
    * **Source Host**. Enter the host name of the machine from which the metrics will be collected.
-   * **Source Category**. Enter any string to tag the output collected from this Source with searchable metadata. For example, enter **firewall** to tag all entries from this Source in a field called **\_sourceCategory**. Type **\_sourceCategory=firewall** in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](docs/send-data/reference-information/metadata-naming-conventions.md).
+   * **Source Category**. Enter any string to tag the output collected from this Source with searchable metadata. For example, enter **firewall** to tag all entries from this Source in a field called `_sourceCategory`. Type `_sourceCategory=firewall` in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](docs/send-data/reference-information/metadata-naming-conventions.md).
    * **Fields**. Click the **+Add Field** link to add custom metric metadata. Define the fields you want to associate, providing a name (key) and value for each.
    * **Scan Interval**. Select the frequency for the Source to scan for host metrics data. Selecting a short interval will increase the message volume and could cause your deployment to incur additional charges. The default is 1 minute.
    * **Metrics**. Select check boxes for the metrics to collect. By default, all CPU and memory metrics are collected.

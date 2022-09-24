@@ -87,7 +87,7 @@ The table below shows the `_sourceCategory` that is assigned to event logs by CS
 | [Yara Rule](/docs/cse/rules/import-yara-rules) | `cseYara` |
 | [Yara Source](/docs/cse/rules/import-yara-rules) | `cseYara` |
 
-## \_sourceName and \_sourceHost assignment
+## _sourceName and _sourceHost assignment
 
 The `_sourceName` and `_sourceHost` fields are assigned to audit event
 logs as follows.

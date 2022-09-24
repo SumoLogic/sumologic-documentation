@@ -132,7 +132,7 @@ The following are examples that use fields generated from LogCompare.
 
 **Show only signatures that are missing in the baseline query:**
 
-Use the where operator against the **_isNew** field to return only new clusters:
+Use the where operator against the **`_isNew`** field to return only new clusters:
 
 ```
 error | logcompare timeshift -1d   

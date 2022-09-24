@@ -3,7 +3,6 @@ id: cloud-flex-accounts
 title: Cloud Flex Accounts
 ---
 
-#
 
 Sumo Logic provides flexible account types within its Cloud Flex packaging for any size organization. This page provides information on the Cloud Flex account types from which you can choose, then explains how you can intuitively monitor and manage your account.
 

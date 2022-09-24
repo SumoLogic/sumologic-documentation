@@ -44,7 +44,7 @@ You can run this query in Sumo to confirm the issue:
 If there is are output buffer overflow errors, the query will return
 output like this:
 
-| #      |   \_collector |   \_source |  \_count |
+| #      |   _collector |   _source |  _count |
 |-------|------------------|--------------|-------------|
 | 1     | Alpha Production | source-alpha | 21          |
 | 2     | Beta Production  | source-beta  | 69          |

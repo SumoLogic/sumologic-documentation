@@ -24,8 +24,8 @@ To configure a Remote File Source:
 
 1. Set the following:
 
-   * **Name.** Type the name you'd like to display for the new Source. **Description** is optional. Source name metadata is stored in a searchable field called **\_sourceName**.
-   * **Host.** Enter the hostname or the IP address of the remote machine (the hostname entered must be the system hostname or IP address and cannot be changed). The hostname is stored in a searchable field called **\_sourceHost**. The hostname can be a maximum of 128 characters. You can define a Source Host value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below.
+   * **Name.** Type the name you'd like to display for the new Source. **Description** is optional. Source name metadata is stored in a searchable field called `_sourceCategory`.
+   * **Host.** Enter the hostname or the IP address of the remote machine (the hostname entered must be the system hostname or IP address and cannot be changed). The hostname is stored in a searchable field called `_sourceHost`. The hostname can be a maximum of 128 characters. You can define a Source Host value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below.
    * **Port.** If your SSH server is listening on a nonstandard port, type the port number.
    * **Path Expression.** Enter the absolute path expression to the file the Source should tail. Remote File Sources support wildcards in file paths. If the timestamp formats for the files are not identical, set up a separate Remote File Source for each file. [For Windows collections using Open SSH and Cygwin](prerequisites-windows-remote-file-collection.md), specify the File path starting with **/cygdrive**. For example, if the path is "**C:\\mandy test\\6.log**" enter "**/cygdrive/c/mandy\\ test/6.log**" in the File field. Use "\\" to escape any spaces if they are present in the file path.
    * **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
@@ -33,7 +33,7 @@ To configure a Remote File Source:
      * Choose a predefined value from dropdown list, ranging from “Now” to “24 hours ago” to “All Time”.
      * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example “-1w”. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h) and minutes (m).
 
-   * **Source Category.** Type any string to tag the logs collected from this Source with searchable metadata. For example, type firewall to tag all entries from this Source in a field called \_sourceCategory. See our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). You can define a Source Category value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below.
+   * **Source Category.** Type any string to tag the logs collected from this Source with searchable metadata. For example, type firewall to tag all entries from this Source in a field called _sourceCategory. See our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). You can define a Source Category value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below.
 
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 

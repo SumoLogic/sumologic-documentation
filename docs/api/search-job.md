@@ -5,7 +5,7 @@ sidebar_label: Search Job
 description: The Search Job API provides access to resources and log data from third-party scripts and applications.
 ---
 
-The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication. 
+The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication.
 
 :::note
 Search Job APIs are not yet built with OpenAPI specifications and therefore not documented with the rest of the APIs. Instead, refer to the instructions below for details.
@@ -134,7 +134,7 @@ The following figure shows the process flow for search jobs.
 1. **Request.** You request a search job, giving the query and time range.
 2. **Response.** Sumo responds with a job ID. If there’s a problem with the request, an error code is provided (see the list of error codes following the figure).
 3. **Request. **Use the job ID to request search status. This needs to be done at least every 20-30 seconds so the search session is not canceled due to inactivity.
-4. **Response.** Sumo responds with job status. An error code (404) is returned if the request could not be completed. \
+4. **Response.** Sumo responds with job status. An error code (404) is returned if the request could not be completed.
 The status includes the current state of the search job (gathering results, done executing, etc.). It also includes the message and record counts based on how many results have already been found while executing the search. For non-aggregation queries, only the number of messages is reported. For aggregation queries, the number of records produced is also reported. The search job status provides access to an implicitly generated histogram of the distribution of found messages over the time range specified for the search job. During and after execution, the API can be used to request available messages and records in a paging fashion.
 5. **Request.** You request results. It’s not necessary for the search to be complete for the user to request results; the process works asynchronously. You can repeat the request as often as needed to keep seeing updated results, keeping in mind the rate limits. The Search Job API can return up to 10 million records per search query.
 6. **Response.** Sumo delivers JSON-formatted search results as requested. The API can deliver partial results that the user can start paging through, even as new results continue to come in. If there’s a problem with the results, an error code is provided (see the list of error codes following the figure).
@@ -797,7 +797,7 @@ Fields are not returned in the specified order and are all lowercase.
 
 ### Paging through the messages found by a search job
 
-The search job status informs the user about the number of found messages. The messages can be requested using a paging API call (step 6 in the process flow). Messages are always ordered by the latest **_messageTime **value.
+The search job status informs the user about the number of found messages. The messages can be requested using a paging API call (step 6 in the process flow). Messages are always ordered by the latest `_messageTime` value.
 
 **Method:** `GET`
 
@@ -997,13 +997,13 @@ The result contains two lists, **fields** and **messages**.
 * **fields** contains a list of all the fields defined for each of the messages returned. For each field, the field name and field type are returned.
 * **messages** contains a list of maps, one map per message. Each **map** maps from the fields described in the fields list to the actual value for the message.
 
-For example, the field **_raw** contains the raw collected log message.
+For example, the field `_raw` contains the raw collected log message.
 
-**_messagetime** is the number of milliseconds since the epoch of the timestamp extracted from the message itself.
+`_messageTime` is the number of milliseconds since the epoch of the timestamp extracted from the message itself.
 
-**_receipttime** is the number of milliseconds since the epoch of the timestamp of arrival of the message in the Sumo Logic system.
+`_receipttime` is the number of milliseconds since the epoch of the timestamp of arrival of the message in the Sumo Logic system.
 
-The metadata fields **_sourcehost**, **_sourcename**, and **_sourcecategory**, which are also featured in Sumo Logic, are available here.
+The metadata fields `_sourcehost`, `_sourcename`, and `_sourceCategory`, which are also featured in Sumo Logic, are available here.
 
 
 ### Paging through the records found by a Search Job

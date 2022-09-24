@@ -1,11 +1,11 @@
 ---
 id: pause-and-resume-source
 title: Pause and Resume a Source
+description: You can pause a cloud polling Source at any time to stop the Source from sending data from the Source to Sumo Logic.
 ---
 
 
-You can pause some types of Sources to stop them from sending data to
-Sumo Logic, and then resume at a later time.
+You can pause some types of Sources to stop them from sending data to Sumo Logic, and then resume at a later time.
 
 The following Sources can use pause/resume:
 

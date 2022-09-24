@@ -24,7 +24,7 @@ bit like this:
 
 ![Bar chart before combo plot](/img/dashboards/Without-combo.png)
 
-But with a combo chart, you can set the **\_count** to display as a line chart on a second axis, so the count value is represented by a line instead of a bar. You will be able to see the number of requests over time (\_count), against the average number of bytes per request (\_avg=avg(size)).
+But with a combo chart, you can set the `_count` to display as a line chart on a second axis, so the count value is represented by a line instead of a bar. You will be able to see the number of requests over time (_count), against the average number of bytes per request (_avg=avg(size)).
 
 ![Combo chart](/img/dashboards/Combo-plot.png)
 
@@ -38,7 +38,7 @@ To create a combo chart:
     ![Charts - column](/img/dashboards/charts_column.png)
 
 1. To add a second axis, click the **Settings** icon in the **Aggregates** pane, then choose **Change Series**.
-1. In the **Change Series** dialog box, choose the value you'd like to add as a secondary axis and chart type. In our example, for the **\_count** value, we set: 
+1. In the **Change Series** dialog box, choose the value you'd like to add as a secondary axis and chart type. In our example, for the `_count` value, we set: 
 
    * For **Chart Type**, select **Line Chart**.
    * For  **Vertical Axis**, select **Secondary Axis**.

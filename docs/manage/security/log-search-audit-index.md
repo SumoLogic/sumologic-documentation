@@ -33,7 +33,7 @@ The following table provides details on the fields returned by the index:
 | `query_type` | Identifies the type of query run within the account such as API, UI, Scheduled Views, etc. The values and their detailed description are provided in the next section. |
 | `remote_ip` | The remote IP of the source from where the query originated. |
 | `retrieved_message_count` | The number of messages returned by the search result. This represents the approximate count of messages that match the source expression of the query and are retrieved from scanning. |
-| `scanned_message_count`   | The number of messages scanned by the search. This is an approximation, as scanned_message\_ count is captured at intermittent time intervals and averaged over a query time range. *(May be less than retrieved_message_count in some cases due to this approximation.)* |
+| `scanned_message_count`   | The number of messages scanned by the search. This is an approximation, as scanned_message_ count is captured at intermittent time intervals and averaged over a query time range. *(May be less than retrieved_message_count in some cases due to this approximation.)* |
 | `scanned_partition_count` | The number of partitions scanned by the search. This is an approximation as scanned message bytes are captured at intermittent time intervals and averaged over a query time range. *(May be less than retrieved bytes in some cases due to this approximation)* |
 | `session_id` | An identifier for every search run within the account. This is the same SESSION number displayed in the UI in the search tab. |
 | `status_message` | It gives the Status of the search. The values include: Finished successfully, Query failed, and Query canceled. |

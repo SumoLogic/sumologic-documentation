@@ -21,7 +21,7 @@ The data volume index is populated with a set of log messages every five minutes
 | SourceHost         | sourcehost_volume              |
 | View               | view_volume                    |
 
-You can query the data volume index just like any other message using the Sumo Logic search page. To see the data created within the data volume index, when you search, specify the **\_index** metadata field with a value of **sumologic_volume**. For more information, see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
+You can query the data volume index just like any other message using the Sumo Logic search page. To see the data created within the data volume index, when you search, specify the `_index` metadata field with a value of `sumologic_volume`. For more information, see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
 
 ## Sumo Logic App for Data Volume
 
@@ -29,7 +29,7 @@ Sumo Logic provides an application that utilizes the data volume index to see y
 
 ## Known Issue
 
-There is a known issue when searching against \_sourceCategory values where scheduled views show up blank. This causes results to be returned with numbers as the \_sourceCategory values.
+There is a known issue when searching against _sourceCategory values where scheduled views show up blank. This causes results to be returned with numbers as the _sourceCategory values.
 
 For example, you would see:
 
@@ -38,11 +38,11 @@ For example, you would see:
 "count":353325
 ```
 
-In this case, the \_sourceCategory returns `2862`, which is the actual size of the default index from the scheduled view.
+In this case, the _sourceCategory returns `2862`, which is the actual size of the default index from the scheduled view.
 
 ## Query the Data Volume Index
 
-1. In the Search page, enter the query **\_index=sumologic_volume**.
+1. In the Search page, enter the query **`_index=sumologic_volume`**.
 
     :::important
     Make sure to enter the query exactly as shown to search against this specific source.
@@ -51,7 +51,7 @@ In this case, the \_sourceCategory returns `2862`, which is the actual size o
 1. Choose the time range for the data that you'd like to review.
 1. Click **Start** to run the search. Results return in the **Messages** tab.
 
-To further limit the search results to the data volume index data for a specific volume category, you can supply the index source category using the **\_sourceCategory** metadata and one of the index source categories from the previous table. For example:
+To further limit the search results to the data volume index data for a specific volume category, you can supply the index source category using the `_sourceCategory` metadata and one of the index source categories from the previous table. For example:
 
 ```sql
 _index=sumologic_volume AND _sourceCategory=collector_and_tier_volume

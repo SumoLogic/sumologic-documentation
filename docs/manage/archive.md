@@ -155,7 +155,7 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
     * can **NOT** have the S3 bucket name.
 1. For **Source Category**, enter any string to tag to the
     data collected from this Source. Category metadata is stored in a
-    searchable field called \_sourceCategory.
+    searchable field called _sourceCategory.
 1. **Fields**. Click the **+Add Field** link to add custom metadata Fields. Define the fields you want to associate, each field needs a name (key) and value.
 
     :::note
@@ -233,8 +233,8 @@ The metadata field `_archiveJob` is automatically created in your account and
 
 | Field          | Description                                                         |
 |----------------|---------------------------------------------------------------------|
-| \_archiveJob   | The name of the ingestion job assigned to ingest your Archive data. |
-| \_archiveJobId | The unique identifier of the ingestion job.                         |
+| _archiveJob   | The name of the ingestion job assigned to ingest your Archive data. |
+| _archiveJobId | The unique identifier of the ingestion job.                         |
 
 ## Audit ingestion job requests
 

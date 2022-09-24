@@ -71,9 +71,9 @@ To configure A Carbon Black Cloud Source:
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
 
-   * `\_siemVendor`: CarbonBlack
-   * `\_siemProduct`: Cloud
-   * `\_siemFormat`: JSON
+   * `_siemVendor`: CarbonBlack
+   * `_siemProduct`: Cloud
+   * `_siemFormat`: JSON
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
