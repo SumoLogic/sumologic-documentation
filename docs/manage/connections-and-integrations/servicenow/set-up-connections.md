@@ -11,7 +11,7 @@ There are two ServiceNow connections available in Sumo Logic.
 * [ServiceNow](#set-up-a-servicenow-connection) can create **Events** or ****ITSM **Incidents**.
 * [ServiceNow (Legacy)](#set-up-a-servicenow-legacy-connection) is the older connection and only creates **Events** in ServiceNow.
 
-If you are interested in creating **Security Incidents**, see [Set Up a ServiceNow Security Incident Webhook Connection](set-up-servicenow-incident-webhook-connection.md).
+If you are interested in creating **Security Incidents**, see [Set Up a ServiceNow Security Incident Webhook Connection](set-up-security-incident-webhook.md).
 :::
 
 A Webhook is an HTTP callback: an HTTP POST that occurs when something happens. Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming Webhooks.

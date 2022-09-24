@@ -45,7 +45,7 @@ To set up a scheduled search for a Webhook Connection:
         * `17.233.159.60 had 381 errors`
         * `169.107.162.237 had 319 ``errors`
 
-   * If you have selected this checkbox and are scheduling this search to send results to a [ServiceNow security or ITSM incident](../servicenow/set-up-servicenow-incident-webhook-connection.md), you will need to set a field called `correlation_id` to be unique across each search result. For example, if you wanted to create a separate alert for each IP address in your search results, you would create the field as follows: 
+   * If you have selected this checkbox and are scheduling this search to send results to a [ServiceNow security or ITSM incident](../servicenow/set-up-security-incident-webhook.md), you will need to set a field called `correlation_id` to be unique across each search result. For example, if you wanted to create a separate alert for each IP address in your search results, you would create the field as follows: 
 
         ```
         | now() as timestamp | base64Encode(source_ip) as random | concat(timestamp, random) as correlation_id

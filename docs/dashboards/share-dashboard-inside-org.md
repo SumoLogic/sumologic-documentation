@@ -6,7 +6,7 @@ id: share-dashboard-inside-org
 
 Sharing dashboards lets you provide the insights you gain from Sumo with those you trust. You can share dashboards with other people in your organization or people outside your organization. 
 
-When you share a dashboard with other Sumo users, you select the access right—View, Edit, or Manage—those users will have to the dashboard. The access rights are described in the [Available Permission Levels of the Share Content](/docs/manage/content-sharing/share-content) page. You have the following options for sharing a dashboard:
+When you share a dashboard with other Sumo users, you select the access right—View, Edit, or Manage—those users will have to the dashboard. The access rights are described in the [Available Permission Levels of the Share Content](/docs/manage/content-sharing) page. You have the following options for sharing a dashboard:
 
 * with filters applied
 * with time ranges applied
@@ -34,7 +34,7 @@ The following example shows the Share Dashboard dialog options you'll specify t
 
 When you share a dashboard with other Sumo users, you select the access right—View, Edit, or Manage—those users will have to the dashboard.
 
-The access rights are described in the Available Permission Levels section of the [Share Content](/docs/manage/content-sharing/share-content) page. Sharing outside your organization is always view-only.
+The access rights are described in the Available Permission Levels section of the [Share Content](/docs/manage/content-sharing) page. Sharing outside your organization is always view-only.
 
 You can grant the same access right to everyone with whom you share the dashboard. Or, you can give some users View access, other users Edit access, and still other users Manage access.  
 
@@ -54,7 +54,7 @@ If you are going to grant different access rights to different users, be prepare
 
     1. If you want to share the dashboard with all users in your org, select **Your Entire Organization**. If you choose this option, note that all users in the org will have the access level you choose in step c, below. 
     1. Otherwise, select the individual roles and/or users with whom you want to share the dashboard.
-    1. In the **Access** area, select the level of access you want to grant—**Edit**, **View**, or **Manage**—from the drop-down list. As desired, select an advanced access option. For information about access levels and advanced access options, see the Available Permission Levels section of the [Share Content](/docs/manage/content-sharing/share-content) page.
+    1. In the **Access** area, select the level of access you want to grant—**Edit**, **View**, or **Manage**—from the drop-down list. As desired, select an advanced access option. For information about access levels and advanced access options, see the Available Permission Levels section of the [Share Content](/docs/manage/content-sharing) page.
     1. If you want to share the dashboard with another set of users, but with different  access permissions, click **Add users with another access level** and repeat the previous sub-steps, starting with b. 
 
 1. **To** **share a dashboard with filters** applied, click **Shareable URL** and toggle **Share with filter values**.   

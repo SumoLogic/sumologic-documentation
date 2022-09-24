@@ -129,7 +129,7 @@ You can share a lookup table with other users, a role, or a combination
 of the two. 
 
 1. Go to the Sumo Logic Library.
-1. Mouse over the row for a lookup table you want to share, and click the sharing icon towards the right side of the row. You’ll be prompted to enter the user and roles with whom you want to share the table, the level of access you want to grant, and other sharing options. For information about sharing, see [Share Content](/docs/manage/content-sharing/share-content).
+1. Mouse over the row for a lookup table you want to share, and click the sharing icon towards the right side of the row. You’ll be prompted to enter the user and roles with whom you want to share the table, the level of access you want to grant, and other sharing options. For information about sharing, see [Share Content](/docs/manage/content-sharing).
 
 ## Delete a lookup table
 

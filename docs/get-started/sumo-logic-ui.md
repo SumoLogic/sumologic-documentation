@@ -189,7 +189,7 @@ You can share dashboards, searches, and folders with users and roles. You can e
 * **left nav bar.** Recommended when you are familiar with the content and need to quickly share with another user.
 * **Library.** Recommended when you need a detailed view of the content, who created it, and when it was last modified.
 
-For walkthrough instructions, go to the [Share Content](/docs/manage/content-sharing/share-content) page. 
+For walkthrough instructions, go to the [Share Content](/docs/manage/content-sharing) page. 
 
 ### View content that is shared with you
 
