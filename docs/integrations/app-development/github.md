@@ -290,7 +290,7 @@ Use this dashboard to display:
 * Commit/alert ratio 
 * Alerts by tool, severity, or repo 
 
-<h3 dir="ltr"><img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Code-Scanning-Alerts.png" /></h3>
+<img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Code-Scanning-Alerts.png" />
 
 ### GHAS - Dependabot Alerts 
 
