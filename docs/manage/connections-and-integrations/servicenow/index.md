@@ -1,6 +1,7 @@
 ---
 slug: /manage/connections-and-integrations/servicenow
 title: ServiceNow
+description: With the ServiceNow integration, search results from Sumo Logic can be uploaded to your organization's ServiceNow account.
 ---
 
 

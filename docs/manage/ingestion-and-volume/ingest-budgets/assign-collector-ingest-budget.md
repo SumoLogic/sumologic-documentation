@@ -1,6 +1,7 @@
 ---
 id: assign-collector-ingest-budget
 title: Assign Collector to Ingest Budget
+description: Learn how to assign a Collector to an ingest budget.
 ---
 
 

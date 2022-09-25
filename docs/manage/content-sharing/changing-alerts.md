@@ -1,6 +1,7 @@
 ---
 id: changing-alerts
 title: Changing Other Alerts
+description: You can modify or cancel alerts that are no longer valuable to your organization if you have Edit permission.
 ---
 
 

@@ -2,6 +2,7 @@
 id: content-sharing-faq
 title: Content Sharing FAQ
 sidebar_label: FAQ
+description: This FAQ answers your basic questions around content sharing.
 ---
 
 

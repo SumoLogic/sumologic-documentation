@@ -1,9 +1,9 @@
 ---
 id: varnish-logs
 title: Varnish Logs Extraction Template
+description: Parse the common fields in your Varnish Logs using the FER template.
 ---
 
-#
 
 **Log Type**: Varnish
 

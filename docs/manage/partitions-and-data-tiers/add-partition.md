@@ -1,6 +1,7 @@
 ---
 id: add-partition
 title: Add a Partition
+description: Learn how to create a Partition in an Index.
 ---
 
 

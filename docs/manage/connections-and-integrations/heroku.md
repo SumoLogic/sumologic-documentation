@@ -1,7 +1,8 @@
 ---
-id: sumo-logic-add-on-for-heroku
+id: heroku
 title: Sumo Logic Add-on for Heroku
 sidebar_label: Heroku
+description: Sumo Logic provides an add-on for Heroku that fully integrates the power of Sumo Logic log analytics for Heroku users.
 ---
 
 

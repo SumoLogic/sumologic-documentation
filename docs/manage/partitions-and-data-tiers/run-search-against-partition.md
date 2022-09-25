@@ -2,7 +2,7 @@
 id: run-search-against-partition
 title: Run a Search Against a Partition
 sidebar_label: Search a Partition
-description: Running a search against the data in a partition is much faster.
+description: Learn how to run a search against data in a partition.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

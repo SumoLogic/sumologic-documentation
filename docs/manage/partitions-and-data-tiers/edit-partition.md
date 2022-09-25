@@ -1,9 +1,10 @@
 ---
 id: edit-partition
 title: Edit a Partition
+description: Learn how to update an existing partition.
 ---
 
-#
+
 
 This section has instructions for editing a partition.  
 

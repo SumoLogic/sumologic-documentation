@@ -1,6 +1,7 @@
 ---
 id: cisco-fwsm-fer
 title: Sample Cisco FWSM Field Extraction Rule
+description: Create field extraction rules for Cisco FWSM.
 ---
 
 

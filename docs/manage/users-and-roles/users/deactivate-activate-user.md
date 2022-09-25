@@ -1,6 +1,7 @@
 ---
 id: deactivate-activate-user
 title: Deactivate or Activate a User
+description: Deactivate a user to make the user inactive without removing the user account, or reactivate a previously deactivated user.
 ---
 
 

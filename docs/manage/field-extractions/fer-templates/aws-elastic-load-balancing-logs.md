@@ -1,9 +1,10 @@
 ---
 id: aws-elastic-load-balancing-logs
 title: AWS Elastic Load Balancing Logs
+description: Parse the common fields in your AWS Elastic Load Balancing Logs using the FER template.
 ---
 
-#
+
 
 **Log Type**: AWS Elastic Load Balancing
 

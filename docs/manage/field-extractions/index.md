@@ -1,6 +1,7 @@
 ---
 slug: /manage/field-extractions
 title: Field Extractions
+description: Field Extraction speeds the search process by parsing fields as log messages are ingested.
 ---
 
 

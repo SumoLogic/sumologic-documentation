@@ -16004,7 +16004,7 @@ components:
             type: boolean
             description: "This has the value `true` if the user's account has been\
               \ locked. If a user tries to log into their account several times and\
-              \ fails, his or her account will be locked for security reasons."
+              \ fails, their account will be locked for security reasons."
             example: false
           isMfaEnabled:
             type: boolean

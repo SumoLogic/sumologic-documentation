@@ -1,6 +1,7 @@
 ---
 id: apache-access-logs
 title: Apache Access Logs
+description: Parse the common fields in your Apache Access Logs using the FER template.
 ---
 
 

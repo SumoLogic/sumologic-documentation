@@ -1,6 +1,7 @@
 ---
 id: role-capabilities
 title: Role Capabilities
+description: Assign any of these capabilities when you create user roles.
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 id: log-tracing-data-volume-index
 title: Log and Tracing Data Volume Index
+description: The Data Volume Index is populated with a set of log messages that contain information on how much data (by bytes and messages count) your account is ingesting.
 ---
 
 

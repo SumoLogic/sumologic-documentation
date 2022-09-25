@@ -389,6 +389,7 @@ module.exports = {
             'sdo/quickstart',
             'observability/kubernetes/quickstart',
             'apm/traces/quickstart',
+            'manage/ingestion-and-volume/ingest-budgets/quickstart',
           ],
         },
       ],
@@ -446,7 +447,7 @@ module.exports = {
           items: [
             'manage/connections-and-integrations/webhook-connections/schedule-searches-for-webhook-connections',
             'manage/connections-and-integrations/webhook-connections/set-up-webhook-connections',
-            'manage/connections-and-integrations/webhook-connections/use-the-audit-index-with-webhook-connections',
+            'manage/connections-and-integrations/webhook-connections/audit-index',
             'manage/connections-and-integrations/webhook-connections/aws-lambda',
             'manage/connections-and-integrations/webhook-connections/cloud-soar',
             'manage/connections-and-integrations/webhook-connections/datadog',
@@ -476,8 +477,8 @@ module.exports = {
             'manage/connections-and-integrations/servicenow/set-up-security-incident-webhook',
           ],
         },
-        'manage/connections-and-integrations/sumo-logic-add-on-for-heroku',
-        'manage/connections-and-integrations/jfrog-artifactory-sumo-logic-integration',
+        'manage/connections-and-integrations/heroku',
+        'manage/connections-and-integrations/jfrog-artifactory',
       ],
     },
     {
@@ -569,7 +570,7 @@ module.exports = {
           link: {type: 'doc', id: 'manage/ingestion-and-volume/ingest-budgets/index'},
           items: [
             'manage/ingestion-and-volume/ingest-budgets/assign-collector-ingest-budget',
-            'manage/ingestion-and-volume/ingest-budgets/ingest-budgets-quick-start-tutorial',
+            'manage/ingestion-and-volume/ingest-budgets/quickstart',
           ]
         },
         'manage/ingestion-and-volume/monitor-ingestion-receive-alerts',
@@ -585,12 +586,11 @@ module.exports = {
         'manage/manage-subscription/cloud-flex-credits-accounts',
         'manage/manage-subscription/cloud-flex-accounts',
         'manage/manage-subscription/upgrade-cloud-flex-credits-account',
-        'manage/manage-subscription/upgrade-your-cloud-flex-account',
+        'manage/manage-subscription/upgrade-cloud-flex-account',
         'manage/manage-subscription/manage-billing-information',
         'manage/manage-subscription/create-manage-orgs',
         'manage/manage-subscription/create-manage-orgs-service-providers',
         'manage/manage-subscription/manage-org-settings',
-        'manage/manage-subscription/account-locked',
         'manage/manage-subscription/beta-opt-in',
         'manage/manage-subscription/close-cancel-sumo-account',
       ]
@@ -602,7 +602,6 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/partitions-and-data-tiers/index'},
       items: [
-        'manage/partitions-and-data-tiers/about-partitions',
         'manage/partitions-and-data-tiers/add-partition',
         'manage/partitions-and-data-tiers/edit-partition',
         'manage/partitions-and-data-tiers/run-search-against-partition',
@@ -705,6 +704,7 @@ module.exports = {
           items: [
             'manage/users-and-roles/users/create-edit-users',
             'manage/users-and-roles/users/change-users-email-address',
+            'manage/users-and-roles/users/account-locked',
             'manage/users-and-roles/users/reset-user-password',
             'manage/users-and-roles/users/unlock-user-account',
             'manage/users-and-roles/users/deactivate-activate-user',

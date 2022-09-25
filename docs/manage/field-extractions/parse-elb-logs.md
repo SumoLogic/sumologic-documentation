@@ -1,6 +1,7 @@
 ---
 id: parse-elb-logs
 title: Parse ELB Logs
+description: Parse the common fields in AWS ELB logs.
 ---
 
 

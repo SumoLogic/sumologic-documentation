@@ -1,6 +1,7 @@
 ---
 id: apache-tomcat-access-log-fer
 title: Sample Apache Tomcat 7 Access Log Field Extraction Rule
+description: Create a field extraction rule for Apache Tomcat 7 Access Logs.
 ---
 
 **Rule Name:** Tomcat Access Log  

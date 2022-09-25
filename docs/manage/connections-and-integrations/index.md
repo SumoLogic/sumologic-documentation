@@ -1,7 +1,8 @@
 ---
 slug: /manage/connections-and-integrations
 title: Connections and Integrations
-description: Webhook connections send alerts to third-party applications.
+description: Learn how to set up connections to send alerts to other tools.
+
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -1,6 +1,7 @@
 ---
 id: upgrade-cloud-flex-credits-account
 title: Upgrade a Cloud Flex Credits Account
+description: Learn how to upgrade a Free or Trial account to an Essentials subscription.
 ---
 
 This page has instructions for upgrading a Sumo Logic Free or Trial account to an Essentials account, and for updating an existing Essentials account.
@@ -18,7 +19,7 @@ You must be an admin to upgrade your CloudFlex Credits free or trial account.
 :::
 
 1. To initiate your account upgrade, click the **Upgrade** link at the top of the Sumo Logic UI in your account, or go to **Administration** \> **Account** \> **Manage Plan**.
-2. The **Manage Plan** page appears. 
+2. The **Manage Plan** page appears.
     ![step-1.png](/img/subscriptions/manage-plan-upgrade-to-essentials.png)
 3. Click **Upgrade**. The page refreshes to display the **Customize Plan** step.
     ![step-2.png](/img/subscriptions/customize-plan-new-levels.png)
@@ -68,13 +69,13 @@ When you update the product variables for a monthly plan (without changing to an
     * **Remaining Days**. The number of days remaining in your billing cycle.
     * **Prorated Credits**. The number of credits for your new product variable levels through the end of your billing cycle.
     * **Prorated Cost**. The cost of the credits for your new product variable levels through the end of your billing cycle. This is the amount you’ll be charged in the next billing cycle.
-    
+
     :::note
     If your plan is annual, rather than monthly, you won't be prompted with the option to upgrade immediately.
-    ::: 
+    :::
 
    ![confirm-payment-method.png](/img/subscriptions/confirm-payment-method.png)
-9. To upgrade immediately leave the **Immediately** option selected in the **When do you want the upgrade to take effect section**. Otherwise select **When subscription next bills…** 
+9. To upgrade immediately leave the **Immediately** option selected in the **When do you want the upgrade to take effect section**. Otherwise select **When subscription next bills…**
 10. Click **Service Level Agreements** to review the terms of your plan, and then click **Confirm** to complete the upgrade.
-11. The page refreshes and displays the **Upgrade Successful** message. 
+11. The page refreshes and displays the **Upgrade Successful** message.
     ![upgrade-successful.png](/img/subscriptions/upgrade-success.png)

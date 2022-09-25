@@ -2,6 +2,7 @@
 id: admin-mode
 title: Admin Mode for Content Administrators
 sidebar_label: Admin Mode
+description: Admin mode allows you to control the content for your organization and to put important items in the Admin Recommended folder.
 ---
 
 

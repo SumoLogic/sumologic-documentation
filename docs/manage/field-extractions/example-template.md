@@ -1,6 +1,7 @@
 ---
 id: example-template
 title: Example Template
+description: Provides an example for a Field Extraction Rule.
 ---
 
 **Rule Name:** Fake Log Parse

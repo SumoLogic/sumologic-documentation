@@ -1,6 +1,7 @@
 ---
 id: searching-data-tiers
 title: Searching Data Tiers
+description: Learn how to search specific Data Tiers.
 ---
 
 This page has information about how to search different Data Tiers, and when you should use `_dataTier`, a *search modifier* that restricts your search to a single tier. 

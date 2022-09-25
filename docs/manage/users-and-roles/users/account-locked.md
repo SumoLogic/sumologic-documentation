@@ -1,6 +1,7 @@
 ---
 id: account-locked
 title: What to Do if Your Account is Locked
+description: Administrators can unlock a user's account, though they are not required to do so. Your account will be unlocked once the lockout period has passed.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

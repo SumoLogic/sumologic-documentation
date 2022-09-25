@@ -1,6 +1,8 @@
 ---
 slug: /manage/ingestion-and-volume/ingest-budgets
 title: Ingest Budgets
+description: Control the capacity of daily log ingestion volume sent to Sumo Logic from Collectors.
+
 ---
 
 ## Availability

@@ -1,6 +1,7 @@
 ---
 id: edit-field-extraction-rules
 title: Edit Field Extraction Rules
+description: You can change Field Extraction Rules.
 ---
 
 :::important

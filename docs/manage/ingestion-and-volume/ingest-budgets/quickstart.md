@@ -1,6 +1,7 @@
 ---
-id: ingest-budgets-quick-start-tutorial
+id: quickstart
 title: Ingest Budgets Quick Start Tutorial
+description: Learn how to create and use Ingest Budgets.
 ---
 
 

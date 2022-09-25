@@ -2,6 +2,7 @@
 id: set-up-connections
 title: Set Up ServiceNow Connections
 sidebar_label: Set Up Connections
+description: Set up connections for ServiceNow integration. 
 ---
 
 
