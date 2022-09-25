@@ -13,7 +13,7 @@ These items are required in Scheduled View queries:
 Also, keep the following things in mind when you're creating Scheduled View queries:
 
 * **Avoid using queries that are likely to change.** A key benefit of using Scheduled Views is that they can index historical data, allowing you to identify long-term trends. If a query changes, you may lose some of the historical perspective.
-* **Keep the query flexible.** Using a flexible query, like **\_sourceCategory=\*Apache\*** so that metadata changes don't break the query.
+* **Keep the query flexible.** Using a flexible query, like `_sourceCategory=*Apache*` so that metadata changes don't break the query.
 * **Consider using fields with more general values (fields with less specificity).** For example, you'd want to use "country" and "city" fields instead of "latitude" and "longitude".
 * **Use Partitions.** [Partitions](/docs/manage/partitions-and-data-tiers) allow you to reduce your query time even more. 
 * **Access historical data. **Your Scheduled View can go as far back as your retention period.
@@ -188,7 +188,7 @@ _view=myScheduledView2
 ```
 
 :::note
-Notice the parse statement will drop any log entries that do not contain the 192.\* internal IP string from the \_sourceCategory. This will create a smaller subset of data that may be more appropriate for a Scheduled View. If you were searching through all of the IIS logs on a regular basis, a partition may be a better solution to improve query performance.
+Notice the parse statement will drop any log entries that do not contain the 192.\* internal IP string from the _sourceCategory. This will create a smaller subset of data that may be more appropriate for a Scheduled View. If you were searching through all of the IIS logs on a regular basis, a partition may be a better solution to improve query performance.
 :::
 
 ### Lightweight vs Robust Scheduled View

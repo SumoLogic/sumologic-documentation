@@ -1,6 +1,7 @@
 ---
 id: edit-collector
 title: Edit a Collector
+description: Edit some characteristics of a Collector, including its name, version, description, Host Name, and Category.
 ---
 
 

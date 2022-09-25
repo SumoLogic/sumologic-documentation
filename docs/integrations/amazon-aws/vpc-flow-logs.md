@@ -39,7 +39,7 @@ To enable Amazon Virtual Private Cloud (VPC) Flow Logs from the AWS console:
 2. Select the VPC.
 3. Click **Actions** > **Create Flow Log**.
 4. On the **Create Flow Log** page, select a **Role** to use Flow logs.
-    1. If you haven't set up IAM permissions, click **Set Up Permissions**. \
+    1. If you haven't set up IAM permissions, click **Set Up Permissions**.
     2. From the new tab, **VPC Flow Logs is requesting permissions to use resources in your account**:
     3. From the IAM Role, select **Create a new IAM Role.**
     4. Add a Role Name that describes your logs, for example, VPC-Flow-Logs.

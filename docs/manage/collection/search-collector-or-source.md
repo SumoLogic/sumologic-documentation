@@ -1,6 +1,7 @@
 ---
 id: search-for-a-collector-or-source
 title: Search for a Collector or Source
+description: Search for a Collector or Source on the Manage Collection page.
 ---
 
 

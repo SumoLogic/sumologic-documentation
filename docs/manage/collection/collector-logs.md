@@ -2,7 +2,7 @@
 id: collector-logs
 title: Collector Logs
 sidebar_label: Collector Logs
-description: tk
+description: Installed Collectors store log events locally.
 ---
 
 Installed Collectors store log events in its installation directory under the '**/logs**' directory. These logs are useful when troubleshooting collection issues.

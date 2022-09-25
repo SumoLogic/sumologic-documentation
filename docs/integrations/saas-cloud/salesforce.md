@@ -83,7 +83,7 @@ Before you begin setting up log collection, review the required prerequisites an
   ```
   * If your Salesforce instance does not support Transport Layer Security (TLS) v1.0, you will be required to run JRE 8 instead of JRE 7. Specifically, if you see an error message like this when the script queries data:
   ```bash
-  TLS 1.0 has been disabled in this organization. \
+  TLS 1.0 has been disabled in this organization.
   Please use TLS 1.1 or higher when connecting to Salesforce using https.
   ```
 * You may do the configuration steps on a  system with a web browser for authentication via OAuth2, and then move the configuration folder to your production system. Or if your production system has a web browser, all steps may be done on that system.

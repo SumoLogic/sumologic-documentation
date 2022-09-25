@@ -1786,7 +1786,7 @@ This topic defines the attributes in CSE Schema v3. 
 
 |                           |                                                                          |
 |---------------------------|--------------------------------------------------------------------------|
-| **Description**           | The \_messageID of the original source log message (from SumoLogic CIP). |
+| **Description**           | The _messageID of the original source log message (from SumoLogic CIP). |
 | **Type**                  | string                                                                   |
 | **Can be set by mapping** | False                                                                    |
 | **Enrichment field**      | False                                                                    |

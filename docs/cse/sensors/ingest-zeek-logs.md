@@ -75,7 +75,7 @@ So, how to determine whether a Zeek log is a `conn`, `http`, `ftp`, or some othe
 
 ### Use Corelight
 
-With this method, you use Corelight’s [json-streaming-logs](https://github.com/corelight/json-streaming-logs), a Bro script package that creates JSON formatted logs, and adds an extension field, named \_path that identifies the Zeek log type to each Zeek log. Then, you map that field to **Event ID** in a Sumo Logic ingest mapping.
+With this method, you use Corelight’s [json-streaming-logs](https://github.com/corelight/json-streaming-logs), a Bro script package that creates JSON formatted logs, and adds an extension field, named _path that identifies the Zeek log type to each Zeek log. Then, you map that field to **Event ID** in a Sumo Logic ingest mapping.
 
 After installing the `json-streaming-logs` package, follow these instructions to set up the Sumo Logic mapping.
 
@@ -89,7 +89,7 @@ After installing the `json-streaming-logs` package, follow these instructions to
 
    1. **Source Category**. Enter the Source Category value you assigned to the Source you configured above in [Configure a Sumo Logic Source](#configure-a-sumo-logic-source).
    1. **Format**. Choose Bro/Zeek JSON.
-   1. **Event ID**. Enter *\_path*.
+   1. **Event ID**. Enter *_path*.
    1. **Enabled**. Use the slider to enable the mapping if you’re ready to receive Zeek logs.
    1. Click **Create**.    
 

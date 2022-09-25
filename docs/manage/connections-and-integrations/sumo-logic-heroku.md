@@ -1,6 +1,7 @@
 ---
 id: sumo-logic-add-on-for-heroku
 title: Sumo Logic Add-on for Heroku
+sidebar_label: Heroku
 ---
 
 

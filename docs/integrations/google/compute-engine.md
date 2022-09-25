@@ -54,7 +54,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 1. In Sumo Logic select** Manage Data > Collection > Collection**.
 2. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. Click **Add Source** next to the Hosted** **Collector and click **Google Cloud Platform**.
-4. Enter a **Name** to display for the Source. A **Description** is optional. \
+4. Enter a **Name** to display for the Source. A **Description** is optional.
 
 5
 
@@ -65,7 +65,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
     *
 7
  If a green circle with a checkmark is shown, the field exists and is already enabled in the Fields table schema. Proceed to the next step.
-8. **Advanced Options for Logs**. \
+8. **Advanced Options for Logs**.
 
 8
 
@@ -165,7 +165,7 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
     1. Set the **Sink Name**. For example, "gce-vm-instance".
     2. Select "Cloud Pub/Sub" as the **Sink Service**.
     3. Set **Sink Destination** to the newly created Pub/Sub topic. For example, "pub-sub-logs".
-    4. Click **Create Sink**. \
+    4. Click **Create Sink**.
  \
 
 14

@@ -67,7 +67,7 @@ In this step, you configure a Sumo Logic Ingest Mapping in CSE for the source ca
 1. On the **Create Sumo Logic Mapping** popup:
     1. **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector in [Step 1](#step-1-configure-collection). 
     1. **Format**. Enter *Bro/Zeek JSON.*  
-    1. **Event ID**. *{\_path}.*  
+    1. **Event ID**. *{_path}.*  
         ![corelight-edit-mapping.png](/img/cse/corelight-edit-mapping.png)
 1. Click **Create** to save the mapping.
 

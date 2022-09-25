@@ -247,7 +247,7 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
 ### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/host_process_metrics/host_process_metrics.json) describing all the monitors.
-    1. The JSON contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all hosts, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific hosts or environments, update the JSON file by replacing the text **$$hostmetrics_data_source** with <your sourceCategory>. \
+    1. The JSON contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all hosts, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific hosts or environments, update the JSON file by replacing the text **$$hostmetrics_data_source** with <your sourceCategory>.
  \
 SourceCategory examples:
         1. For alerts applicable only to a specific cluster of hosts, your custom filter could be:  **<code>'_sourceCategory=yourclustername/metrics'</code>.</strong>
@@ -363,7 +363,7 @@ To install the app, do the following:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. \
+2. Select the version of the service you're using and click **Add to Library**.
 
 7
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).

@@ -70,7 +70,7 @@ For information on available metrics, see [GCP Metrics](https://cloud.google.com
 1. **Name**. Enter a name to display for the new source.
 <img src={useBaseUrl('img/send-data/gcp-metrics-basic.png')} alt="gcp-metrics-basic.png" />
 1. **Description.** Optional description.
-2. **Regions**. Optional limit to selected Google Cloud regions. \
+2. **Regions**. Optional limit to selected Google Cloud regions.
 :::note
 Some metrics do not include or support a region.
 :::

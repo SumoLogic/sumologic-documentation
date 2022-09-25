@@ -237,15 +237,15 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 
-### Using \_format for troubleshooting
+### Using _format for troubleshooting
 
-You can use \_format to see how the timestamp is parsed from the log file. Assign \_format an alias to return it in your search results, for example: 
+You can use _format to see how the timestamp is parsed from the log file. Assign _format an alias to return it in your search results, for example: 
 
 ```
 | _format as timestampFormat
 ```
 
-The fields returned in the search results of \_format are:
+The fields returned in the search results of _format are:
 
 ```
 t:<parse type>,o:<offset>,l:<length>,p:<date_format>

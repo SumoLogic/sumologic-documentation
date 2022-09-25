@@ -11,7 +11,7 @@ For Scheduled View query requirements, see [Scheduled Views Best Practices and E
 
 1. In Sumo Logic, go to **Manage Data** > **Logs** > **Scheduled Views**.<br/> ![scheduled-view-page.png](/img/scheduled-views/scheduled-view-page.png)
 2. Click **+ Add Scheduled View**.<br/> ![add view.png](/img/scheduled-views/add-view.png)
-3. **Scheduled View name**. Enter a name for the view. You'll use this name in queries to search the view, so use a name that's descriptive and easy to remember. Names can contain alphanumeric characters; underscores (`_`) are the only special characters allowed. View names can only have (A-Z, a-z, 0-9), $, and \_ after the first letter.
+3. **Scheduled View name**. Enter a name for the view. You'll use this name in queries to search the view, so use a name that's descriptive and easy to remember. Names can contain alphanumeric characters; underscores (`_`) are the only special characters allowed. View names can only have (A-Z, a-z, 0-9), $, and _ after the first letter.
 4. **Query.** Enter the full query that encompasses the data you'd like indexed in the view. Parse operators and most search operators are supported in views.
 5. **Search Mode**. Set to **Auto Parse Mode** for [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md) of JSON data. Manual Mode is the default search behavior.
 6. **Start Date.** Click the date that you'd like to use as the start time of the index. All data from that point forward will be indexed in the scheduled view. The oldest selectable date represents the end of the retention period of your Sumo Logic account.

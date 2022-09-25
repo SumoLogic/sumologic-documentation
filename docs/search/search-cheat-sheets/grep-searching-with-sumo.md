@@ -21,7 +21,7 @@ Returns all log lines containing the term "string" (case insensitive) in a file 
 * grep Command Line: `grep -i "string" ./log_file`
 * Sumo Equivalent: `_sourceName=*/log_file AND "string"`
 
-Returns all log lines containing the word "string" (case insensitive)  in a file that starts with "log\_" in its name.
+Returns all log lines containing the word "string" (case insensitive)  in a file that starts with "log_" in its name.
 * grep Command Line: `grep -i "string" ./log_*`
 * Sumo Equivalent: `_sourceName=*/log_* AND "string"`
 
