@@ -1,7 +1,7 @@
 ---
 id: manage
 title: Manage Data Forwarding
-description: View, edit, delete, activate, and inactivate data forwarding destinations.
+description: View, edit, delete, activate, and deactivate data forwarding destinations.
 ---
 
 

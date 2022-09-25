@@ -222,7 +222,7 @@ The script requires Ruby on the host machine.
 
 1. In the Sumo web app, select **Manage Data > Collection > Collection**.
 2. Navigate to the collector you installed on the Puppet Master host, and select **Add > Add Source**.
-3. Select **Script**. New Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector.
+3. Select **Script**. New Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 4. **Name**. (Required).
 5. **Description**. (Optional).
 6. **Source Host**. Enter the hostname or IP address of the source host. The hostname can be a maximum of 128 characters.
@@ -318,7 +318,7 @@ echo "Conversion Completed. End Time: $(date)" >> "$log_file_name"
         1. **Detect messages spanning multiple lines**. This option is checked by default.
         2. **Infer Boundaries**. This option is checked by default.
         3. **Boundary Regex**. If multiple processing is enabled, and **Infer Boundaries** is disabled, enter a regular expression for message boundaries.
-    5. **Processing Rules**. Configure processing rules, as desired. For more information, see [Processing Rules](/docs/manage/collection/processing-rules).
+    5. **Processing Rules**. Configure processing rules, as desired. For more information, see [Processing Rules](/docs/send-data/collection/processing-rules).
 
 Puppet logs and reports should start flowing into Sumo Logic.
 

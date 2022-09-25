@@ -362,6 +362,39 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Using the Collection Page',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'send-data/collection/index'},
+          items: [
+            'send-data/collection/search-for-a-collector-or-source',
+            'send-data/collection/start-stop-collector-using-scripts',
+            'send-data/collection/edit-collector',
+            'send-data/collection/restart-collectors',
+            'send-data/collection/edit-source',
+            'send-data/collection/pause-and-resume-source',
+            'send-data/collection/delete-collector-or-source',
+            'send-data/collection/set-collector-cpu-usage-target',
+            'send-data/collection/upgrade-collectors',
+            'send-data/collection/collector-logs',
+            {
+              type: 'category',
+              label: 'Processing Rules',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'send-data/collection/processing-rules/index'},
+              items: [
+                'send-data/collection/processing-rules/create-processing-rule',
+                'send-data/collection/processing-rules/data-forwarding-rules',
+                'send-data/collection/processing-rules/hash-rules',
+                'send-data/collection/processing-rules/include-and-exclude-rules',
+                'send-data/collection/processing-rules/metrics-include-and-exclude-rules',
+              ]
+            },
+          ]
+        },
+        {
+          type: 'category',
           label: 'Source Reference Information',
           collapsible: true,
           collapsed: true,
@@ -398,37 +431,61 @@ module.exports = {
 // *** MANAGE CONTENT: Admin level options, collection, connections, etc
   manage: [
     'manage/manage',
+    'manage/fields',
+    'manage/health-events',
     {
       type: 'category',
-      label: 'Collection',
+      label: 'Field Extractions',
       collapsible: true,
       collapsed: true,
-      link: {type: 'doc', id: 'manage/collection/index'},
+      link: {type: 'doc', id: 'manage/field-extractions/index'},
       items: [
-        'manage/collection/search-for-a-collector-or-source',
-        'manage/collection/start-stop-collector-using-scripts',
-        'manage/collection/edit-collector',
-        'manage/collection/restart-collectors',
-        'manage/collection/edit-source',
-        'manage/collection/pause-and-resume-source',
-        'manage/collection/delete-collector-or-source',
-        'manage/collection/set-collector-cpu-usage-target',
-        'manage/collection/upgrade-collectors',
-        'manage/collection/collector-logs',
+        'manage/field-extractions/field-naming-convention',
+        'manage/field-extractions/create-field-extraction-rule',
+        'manage/field-extractions/edit-field-extraction-rules',
         {
           type: 'category',
-          label: 'Processing Rules',
+          label: 'Field Extractions',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'manage/collection/processing-rules/index'},
+          link: {type: 'doc', id: 'manage/field-extractions/fer-templates/index'},
           items: [
-            'manage/collection/processing-rules/create-processing-rule',
-            'manage/collection/processing-rules/data-forwarding-rules',
-            'manage/collection/processing-rules/hash-rules',
-            'manage/collection/processing-rules/include-and-exclude-rules',
-            'manage/collection/processing-rules/metrics-include-and-exclude-rules',
+            'manage/field-extractions/fer-templates/akamai-cloud-monitor',
+            'manage/field-extractions/fer-templates/apache-access-logs',
+            'manage/field-extractions/fer-templates/apache-tomcat-access-logs',
+            'manage/field-extractions/fer-templates/apache-tomcat-access-log-fer',
+            'manage/field-extractions/fer-templates/aws-cloudtrail-logs',
+            'manage/field-extractions/fer-templates/aws-elastic-load-balancing-logs',
+            'manage/field-extractions/fer-templates/aws-s3-usage-logs',
+            'manage/field-extractions/fer-templates/cisco-app',
+            'manage/field-extractions/fer-templates/cisco-fwsm-fer',
+            'manage/field-extractions/fer-templates/microsoft-iis-logs',
+            'manage/field-extractions/fer-templates/nginx-logs',
+            'manage/field-extractions/fer-templates/palo-alto-networks',
+            'manage/field-extractions/fer-templates/varnish-logs',
           ]
         },
+        'manage/field-extractions/parse-elb-logs',
+        'manage/field-extractions/safend-field-extraction',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Partitions and Data Tiers',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/partitions-and-data-tiers/index'},
+      items: [
+        'manage/partitions-and-data-tiers/create-edit-partition',
+        'manage/partitions-and-data-tiers/view-partition-details',
+        'manage/partitions-and-data-tiers/run-search-against-partition',
+        'manage/partitions-and-data-tiers/edit-data-forwarding-destinations-partition',
+        'manage/partitions-and-data-tiers/manage-indexes-variable-retention',
+        'manage/partitions-and-data-tiers/decommission-partition',
+        'manage/partitions-and-data-tiers/data-tiers',
+        'manage/partitions-and-data-tiers/data-tiers-faqs',
+        'manage/partitions-and-data-tiers/searching-data-tiers',
+        'manage/partitions-and-data-tiers/infrequent-tier-search',
       ]
     },
     {
@@ -483,6 +540,67 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Users and Roles',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/users-and-roles/index'},
+      items: [
+        {
+          type: 'category',
+          label: 'Manage Roles',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/users-and-roles/roles/index'},
+          items: [
+            'manage/users-and-roles/roles/role-based-access-control',
+            'manage/users-and-roles/roles/create-manage-roles',
+            'manage/users-and-roles/roles/role-capabilities',
+            'manage/users-and-roles/roles/construct-search-filter-for-role',
+            'manage/users-and-roles/roles/add-remove-users-role',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Manage Users',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/users-and-roles/users/index'},
+          items: [
+            'manage/users-and-roles/users/create-edit-users',
+            'manage/users-and-roles/users/change-users-email-address',
+            'manage/users-and-roles/users/account-locked',
+            'manage/users-and-roles/users/reset-user-password',
+            'manage/users-and-roles/users/unlock-user-account',
+            'manage/users-and-roles/users/deactivate-activate-user',
+            'manage/users-and-roles/users/delete-user',
+            'manage/users-and-roles/users/offboard-user',
+            'manage/users-and-roles/users/multi-account-access',
+            'manage/users-and-roles/users/secure-third-party-service-access',
+          ]
+        },
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Manage Subscription',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/manage-subscription/index'},
+      items: [
+        'manage/manage-subscription/cloud-flex-credits-accounts',
+        'manage/manage-subscription/cloud-flex-accounts',
+        'manage/manage-subscription/upgrade-cloud-flex-credits-account',
+        'manage/manage-subscription/upgrade-cloud-flex-account',
+        'manage/manage-subscription/manage-billing-information',
+        'manage/manage-subscription/create-manage-orgs',
+        'manage/manage-subscription/create-manage-orgs-service-providers',
+        'manage/manage-subscription/manage-org-settings',
+        'manage/manage-subscription/beta-opt-in',
+        'manage/manage-subscription/close-cancel-sumo-account',
+      ]
+    },
+    {
+      type: 'category',
       label: 'Content Sharing',
       collapsible: true,
       collapsed: true,
@@ -503,43 +621,6 @@ module.exports = {
         'manage/data-forwarding/installed-collectors',
         'manage/data-forwarding/amazon-s3-bucket',
         'manage/data-forwarding/manage',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Field Extractions',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/field-extractions/index'},
-      items: [
-        'manage/field-extractions/field-naming-convention',
-        'manage/field-extractions/create-a-field-extraction-rule',
-        'manage/field-extractions/edit-field-extraction-rules',
-        'manage/field-extractions/example-template',
-        {
-          type: 'category',
-          label: 'Field Extractions',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'manage/field-extractions/fer-templates/index'},
-          items: [
-            'manage/field-extractions/fer-templates/akamai-cloud-monitor',
-            'manage/field-extractions/fer-templates/apache-access-logs',
-            'manage/field-extractions/fer-templates/apache-tomcat-access-logs',
-            'manage/field-extractions/fer-templates/aws-cloudtrail-logs',
-            'manage/field-extractions/fer-templates/aws-elastic-load-balancing-logs',
-            'manage/field-extractions/fer-templates/aws-s3-usage-logs',
-            'manage/field-extractions/fer-templates/cisco-app',
-            'manage/field-extractions/fer-templates/microsoft-iis-logs',
-            'manage/field-extractions/fer-templates/nginx-logs',
-            'manage/field-extractions/fer-templates/palo-alto-networks',
-            'manage/field-extractions/fer-templates/varnish-logs',
-          ]
-        },
-        'manage/field-extractions/parse-elb-logs',
-        'manage/field-extractions/apache-tomcat-access-log-fer',
-        'manage/field-extractions/cisco-fwsm-fer',
-        'manage/field-extractions/safend-field-extraction',
       ]
     },
     {
@@ -574,45 +655,6 @@ module.exports = {
           ]
         },
         'manage/ingestion-and-volume/monitor-ingestion-receive-alerts',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Manage Subscription',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/manage-subscription/index'},
-      items: [
-        'manage/manage-subscription/cloud-flex-credits-accounts',
-        'manage/manage-subscription/cloud-flex-accounts',
-        'manage/manage-subscription/upgrade-cloud-flex-credits-account',
-        'manage/manage-subscription/upgrade-cloud-flex-account',
-        'manage/manage-subscription/manage-billing-information',
-        'manage/manage-subscription/create-manage-orgs',
-        'manage/manage-subscription/create-manage-orgs-service-providers',
-        'manage/manage-subscription/manage-org-settings',
-        'manage/manage-subscription/beta-opt-in',
-        'manage/manage-subscription/close-cancel-sumo-account',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Partitions and Data Tiers',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/partitions-and-data-tiers/index'},
-      items: [
-        'manage/partitions-and-data-tiers/add-partition',
-        'manage/partitions-and-data-tiers/edit-partition',
-        'manage/partitions-and-data-tiers/run-search-against-partition',
-        'manage/partitions-and-data-tiers/view-partition-details',
-        'manage/partitions-and-data-tiers/edit-data-forwarding-destinations-partition',
-        'manage/partitions-and-data-tiers/manage-indexes-variable-retention',
-        'manage/partitions-and-data-tiers/decommission-partition',
-        'manage/partitions-and-data-tiers/data-tiers',
-        'manage/partitions-and-data-tiers/data-tiers-faqs',
-        'manage/partitions-and-data-tiers/searching-data-tiers',
-        'manage/partitions-and-data-tiers/infrequent-tier-search',
       ]
     },
     {
@@ -674,51 +716,6 @@ module.exports = {
         'manage/security/set-max-web-session-timeout',
       ]
     },
-    {
-      type: 'category',
-      label: 'Users and Roles',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/users-and-roles/index'},
-      items: [
-        {
-          type: 'category',
-          label: 'Manage Roles',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'manage/users-and-roles/roles/index'},
-          items: [
-            'manage/users-and-roles/roles/role-based-access-control',
-            'manage/users-and-roles/roles/create-manage-roles',
-            'manage/users-and-roles/roles/role-capabilities',
-            'manage/users-and-roles/roles/construct-search-filter-for-role',
-            'manage/users-and-roles/roles/add-remove-users-role',
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Manage Users',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'manage/users-and-roles/users/index'},
-          items: [
-            'manage/users-and-roles/users/create-edit-users',
-            'manage/users-and-roles/users/change-users-email-address',
-            'manage/users-and-roles/users/account-locked',
-            'manage/users-and-roles/users/reset-user-password',
-            'manage/users-and-roles/users/unlock-user-account',
-            'manage/users-and-roles/users/deactivate-activate-user',
-            'manage/users-and-roles/users/delete-user',
-            'manage/users-and-roles/users/offboard-user',
-            'manage/users-and-roles/users/multi-account-access',
-            'manage/users-and-roles/users/secure-third-party-service-access',
-          ]
-        },
-
-      ]
-    },
-    'manage/health-events',
-    'manage/fields',
     'manage/archive',
   ],
 // *** DASHBOARDS and VISUALS:

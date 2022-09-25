@@ -25,8 +25,8 @@ To be able to create a connection, the Manage Connection [role capability](../u
 
 Sumo Logic also provides integrations for:
 
-* [Heroku Add-on](sumo-logic-heroku.md)
-* [JFrog Artifactory](jfrog-artifactory-integration.md)
+* [Heroku Add-on](heroku.md)
+* [JFrog Artifactory](jfrog-artifactory.md)
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

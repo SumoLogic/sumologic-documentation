@@ -13,7 +13,7 @@ info:
     - Access ID and Access Key
     - Base64 encoded Access ID and Access Key
 
-    See [Access Keys](/docs/Manage/Security/Access-Keys) to generate an Access Key. Make sure to copy the key you create, because it is displayed only once.
+    See [Access Keys](/docs/manage/Security/Access-Keys) to generate an Access Key. Make sure to copy the key you create, because it is displayed only once.
     When you have an Access ID and Access Key you can execute requests such as the following:
       ```bash
       curl -u "<accessId>:<accessKey>" -X GET https://api.<deployment>.sumologic.com/api/v1/users
@@ -178,7 +178,7 @@ security:
 tags:
 - name: accountManagement
   description: |
-    [Account Management API](docs/api/account-management.md): Manage the custom subdomain for the URL used to access your Sumo Logic account. For more information see [Manage Organization](https://help.sumologic.com/Manage/01Account_Usage/05Manage_Organization).
+    [Account Management API](docs/api/account-management.md): Manage the custom subdomain for the URL used to access your Sumo Logic account. For more information see [Manage Organization](https://help.sumologic.com/manage/01Account_Usage/05Manage_Organization).
   x-displayName: Account
 - name: appManagement
   description: |
@@ -194,7 +194,7 @@ tags:
   x-displayName: Connections
 - name: contentManagement
   description: |
-    [Content management API](docs/api/content-management.md): You can export, import, delete and copy content in your organization’s Library. For more information see [Library](https://help.sumologic.com/?cid=5173). You can perform the request as a Content Administrator by using the `isAdminMode` parameter. For more information see [Admin Mode](https://help.sumologic.com/Manage/Content_Sharing/Admin_Mode).
+    [Content management API](docs/api/content-management.md): You can export, import, delete and copy content in your organization’s Library. For more information see [Library](https://help.sumologic.com/?cid=5173). You can perform the request as a Content Administrator by using the `isAdminMode` parameter. For more information see [Admin Mode](https://help.sumologic.com/manage/Content_Sharing/Admin_Mode).
     <br/> <br/>
     ### Example
     The following example uses API endpoints in the US1 deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. For details determining your account's deployment see [API endpoints](https://help.sumologic.com/?cid=3011).
@@ -296,7 +296,7 @@ tags:
   x-displayName: Content
 - name: contentPermissions
   description: |
-    [Content permissions API](docs/api/content-permissions.md): You can share your folders, searches, and dashboards with specific users or roles. For more information see [Share Content](https://help.sumologic.com/?cid=8675309). You can perform the request as a Content Administrator by using the `isAdminMode` parameter. For more information see [Admin Mode](https://help.sumologic.com/Manage/Content_Sharing/Admin_Mode).
+    [Content permissions API](docs/api/content-permissions.md): You can share your folders, searches, and dashboards with specific users or roles. For more information see [Share Content](https://help.sumologic.com/?cid=8675309). You can perform the request as a Content Administrator by using the `isAdminMode` parameter. For more information see [Admin Mode](https://help.sumologic.com/manage/Content_Sharing/Admin_Mode).
   x-displayName: Permissions
 - name: dashboardManagement
   description: |
@@ -316,7 +316,7 @@ tags:
   x-displayName: Field Management
 - name: folderManagement
   description: |
-    [Folder management API](docs/api/folders.md): You can add folders and subfolders to the Library in order to organize your content for easy access or to share content. For more information see [Add Folders to the Library](https://help.sumologic.com/?cid=5020). You can perform the request as a Content Administrator by using the `isAdminMode` parameter. For more information see [Admin Mode](https://help.sumologic.com/Manage/Content_Sharing/Admin_Mode).
+    [Folder management API](docs/api/folders.md): You can add folders and subfolders to the Library in order to organize your content for easy access or to share content. For more information see [Add Folders to the Library](https://help.sumologic.com/?cid=5020). You can perform the request as a Content Administrator by using the `isAdminMode` parameter. For more information see [Admin Mode](https://help.sumologic.com/manage/Content_Sharing/Admin_Mode).
   x-displayName: Folders
 - name: ingestBudgetManagementV1
   description: |
@@ -332,7 +332,7 @@ tags:
   x-displayName: Partitions
 - name: logsDataForwardingManagement
   description: |
-    Logs Data Forwarding management API: allows you to forward log data from a Partition or Scheduled View to an S3 bucket. For more information see [Forwarding Data to S3](https://help.sumologic.com/Manage/Data-Forwarding/Configure-Data-Forwarding-from-Sumo-Logic-to-S3).
+    Logs Data Forwarding management API: allows you to forward log data from a Partition or Scheduled View to an S3 bucket. For more information see [Forwarding Data to S3](https://help.sumologic.com/manage/Data-Forwarding/Configure-Data-Forwarding-from-Sumo-Logic-to-S3).
   x-displayName: Logs Data Forwarding
 - name: roleManagement
   description: |
@@ -3577,7 +3577,7 @@ paths:
       - folderManagement
       summary: Schedule Admin Recommended folder job
       description: |-
-        Schedule an asynchronous job to get the top-level Admin Recommended content items. You can read more about Admin Recommended folder [here](https://help.sumologic.com/Manage/Content_Sharing/Admin_Mode#move-important-content-to-admin-recommended).
+        Schedule an asynchronous job to get the top-level Admin Recommended content items. You can read more about Admin Recommended folder [here](https://help.sumologic.com/manage/Content_Sharing/Admin_Mode#move-important-content-to-admin-recommended).
 
         _You get back a identifier of asynchronous job in response to this endpoint. See [Asynchronous-Request](#section/Getting-Started/Asynchronous-Request) section for more details on how to work with asynchronous request._
       operationId: getAdminRecommendedFolderAsync
@@ -5403,7 +5403,7 @@ paths:
       summary: Get Audit policy.
       description: "Get the Audit policy. This policy specifies whether audit records\
         \ for your account are enabled. You can access details about reported account\
-        \ events in the Sumo Logic Audit Index. [Learn More](https://help.sumologic.com/Manage/Security/Audit-Index)"
+        \ events in the Sumo Logic Audit Index. [Learn More](https://help.sumologic.com/manage/Security/Audit-Index)"
       operationId: getAuditPolicy
       responses:
         "200":
@@ -5424,7 +5424,7 @@ paths:
       summary: Set Audit policy.
       description: "Set the Audit policy. This policy specifies whether audit records\
         \ for your account are enabled. You can access details about reported account\
-        \ events in the Sumo Logic Audit Index. [Learn More](https://help.sumologic.com/Manage/Security/Audit-Index)"
+        \ events in the Sumo Logic Audit Index. [Learn More](https://help.sumologic.com/manage/Security/Audit-Index)"
       operationId: setAuditPolicy
       requestBody:
         content:
@@ -5453,7 +5453,7 @@ paths:
       description: "Get the Search Audit policy. This policy specifies whether search\
         \ records for your account are enabled. You can access details about your\
         \ account's search capacity, queries run by users from the Sumo Search Audit\
-        \ Index. [Learn More](https://help.sumologic.com/Manage/Security/Search_Audit_Index)"
+        \ Index. [Learn More](https://help.sumologic.com/manage/Security/Search_Audit_Index)"
       operationId: getSearchAuditPolicy
       responses:
         "200":
@@ -5475,7 +5475,7 @@ paths:
       description: "Set the Search Audit policy. This policy specifies whether search\
         \ records for your account are enabled. You can access details about your\
         \ account's search capacity, queries run by users from the Sumo Search Audit\
-        \ Index. [Learn More](https://help.sumologic.com/Manage/Security/Search_Audit_Index)"
+        \ Index. [Learn More](https://help.sumologic.com/manage/Security/Search_Audit_Index)"
       operationId: setSearchAuditPolicy
       requestBody:
         content:
@@ -5558,7 +5558,7 @@ paths:
         \ the default data access level for all newly created dashboards to the viewer’\
         s role access filter. Otherwise, newly created dashboards will default to\
         \ the sharer’s role access filter and might display data that viewers’ roles\
-        \ don’t allow them to view. [Learn More](https://help.sumologic.com/Manage/Security/Data_Access_Level_for_Shared_Dashboards)"
+        \ don’t allow them to view. [Learn More](https://help.sumologic.com/manage/Security/Data_Access_Level_for_Shared_Dashboards)"
       operationId: getDataAccessLevelPolicy
       responses:
         "200":
@@ -5581,7 +5581,7 @@ paths:
         \ the default data access level for all newly created dashboards to the viewer’\
         s role access filter. Otherwise, newly created dashboards will default to\
         \ the sharer’s role access filter and might display data that viewers’ roles\
-        \ don’t allow them to view. [Learn More](https://help.sumologic.com/Manage/Security/Data_Access_Level_for_Shared_Dashboards)"
+        \ don’t allow them to view. [Learn More](https://help.sumologic.com/manage/Security/Data_Access_Level_for_Shared_Dashboards)"
       operationId: setDataAccessLevelPolicy
       requestBody:
         content:
@@ -5611,7 +5611,7 @@ paths:
         \ number of concurrent sessions a user may have is limited to the value entered.\
         \ If a user exceeds the allowed number of sessions, the user's oldest session\
         \ will be logged out to accommodate the new one. Disabling this policy means\
-        \ a user may have an unlimited number of concurrent sessions. [Learn More](https://help.sumologic.com/Manage/Security/Set_a_Limit_for_User_Concurrent_Sessions)"
+        \ a user may have an unlimited number of concurrent sessions. [Learn More](https://help.sumologic.com/manage/Security/Set_a_Limit_for_User_Concurrent_Sessions)"
       operationId: getUserConcurrentSessionsLimitPolicy
       responses:
         "200":
@@ -5634,7 +5634,7 @@ paths:
         \ number of concurrent sessions a user may have is limited to the value entered.\
         \ If a user exceeds the allowed number of sessions, the user's oldest session\
         \ will be logged out to accommodate the new one. Disabling this policy means\
-        \ a user may have an unlimited number of concurrent sessions. [Learn More](https://help.sumologic.com/Manage/Security/Set_a_Limit_for_User_Concurrent_Sessions)"
+        \ a user may have an unlimited number of concurrent sessions. [Learn More](https://help.sumologic.com/manage/Security/Set_a_Limit_for_User_Concurrent_Sessions)"
       operationId: setUserConcurrentSessionsLimitPolicy
       requestBody:
         content:
@@ -5664,7 +5664,7 @@ paths:
         \ sets the maximum web session timeout users are able to configure within\
         \ their user preferences. Users preferences will be updated to match this\
         \ value only if their current preference is set to a higher value. [Learn\
-        \ More](https://help.sumologic.com/Manage/Security/Set_a_Maximum_Web_Session_Timeout)"
+        \ More](https://help.sumologic.com/manage/Security/Set_a_Maximum_Web_Session_Timeout)"
       operationId: getMaxUserSessionTimeoutPolicy
       responses:
         "200":
@@ -5687,7 +5687,7 @@ paths:
         \ sets the maximum web session timeout users are able to configure within\
         \ their user preferences. Users preferences will be updated to match this\
         \ value only if their current preference is set to a higher value. [Learn\
-        \ More](https://help.sumologic.com/Manage/Security/Set_a_Maximum_Web_Session_Timeout)"
+        \ More](https://help.sumologic.com/manage/Security/Set_a_Maximum_Web_Session_Timeout)"
       operationId: setMaxUserSessionTimeoutPolicy
       requestBody:
         content:
@@ -16199,7 +16199,7 @@ components:
         capabilities:
           type: array
           description: |-
-            List of [capabilities](https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles/Role-Capabilities) associated with this role. Valid values are
+            List of [capabilities](https://help.sumologic.com/manage/Users-and-Roles/Manage-Roles/Role-Capabilities) associated with this role. Valid values are
             ### Data Management
               - viewCollectors
               - manageCollectors
@@ -16312,7 +16312,7 @@ components:
         capabilities:
           type: array
           description: |-
-            List of [capabilities](https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles/Role-Capabilities) associated with this role. Valid values are
+            List of [capabilities](https://help.sumologic.com/manage/Users-and-Roles/Manage-Roles/Role-Capabilities) associated with this role. Valid values are
             ### Data Management
               - viewCollectors
               - manageCollectors
@@ -17176,7 +17176,7 @@ components:
         learnMoreLink:
           type: string
           description: Link to learn more about the Product group
-          example: https://help.sumologic.com/Manage/01Manage_Subscription/08Create_and_Manage_Orgs
+          example: https://help.sumologic.com/manage/01Manage_Subscription/08Create_and_Manage_Orgs
       description: Details of product group and its quantity.
     ProductVariable:
       required:

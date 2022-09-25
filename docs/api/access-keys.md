@@ -7,7 +7,7 @@ description: Use HTTP endpoints to manage access keys.
 
 ---
 
-The [Access Keys](https://help.sumologic.com/Manage/Security/Access-Keys) Management API allows you to securely register new Collectors or access Sumo Logic APIs.
+The [Access Keys](https://help.sumologic.com/manage/Security/Access-Keys) Management API allows you to securely register new Collectors or access Sumo Logic APIs.
 
 Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 

@@ -270,7 +270,7 @@ After completing the setup steps, schedule the search to run.  
         | where collector = "some_name" or collector = "some_other_name"
         ```
 
-   * Turn off a collector using [Start or Stop a Collector using Scripts](../collection/start-stop-collector-using-scripts.md) and verify that you received the alert.
+   * Turn off a collector using [Start or Stop a Collector using Scripts](docs/send-data/collection/start-stop-collector-using-scripts.md) and verify that you received the alert.
 
    * Reduce the time range for collectors to send data to 15 minutes:
 

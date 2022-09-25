@@ -232,7 +232,7 @@ Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**fun
 
 ### Field Extraction Rule(s)
 
-Create a Field Extraction Rule for AWS Lambda. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
+Create a Field Extraction Rule for AWS Lambda. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 
 ### Cloud Trail FER

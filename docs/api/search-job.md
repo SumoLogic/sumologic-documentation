@@ -116,7 +116,7 @@ If you need more results you'll need to break up your search into several search
 
 * A limit of 200 active concurrent search jobs applies to your organization.
 
-When searching the [Frequent Tier](https://help.sumologic.com/Manage/Partitions_and_Data_Tiers/Data_Tiers) a rate limit of 20 concurrent search jobs applies to your organization.
+When searching the [Frequent Tier](https://help.sumologic.com/manage/Partitions_and_Data_Tiers/Data_Tiers) a rate limit of 20 concurrent search jobs applies to your organization.
 
 Once you reach the limit of 200 active searches, attempting an additional search will result in a status code of _429 Too Many Requests_ telling you that you are over the allowed search job limit.
 

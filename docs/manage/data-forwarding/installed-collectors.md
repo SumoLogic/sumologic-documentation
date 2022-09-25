@@ -17,7 +17,7 @@ Follow the steps below to set up a Collector to forward raw log data to an exter
 You can set up Installed Collector data forwarding when you first configure Sources or at a later time. If you apply rules at a later time, keep in mind that they are not applied retroactively.
 
 :::note
-Data forwarding processing rules are processed after all other [processing rules](/docs/manage/collection/processing-rules).
+Data forwarding processing rules are processed after all other [processing rules](/docs/send-data/collection/processing-rules).
 :::
 
 ## Configure data forwarding destination
@@ -76,7 +76,7 @@ application**
 1. Enter a name to define the rule.
 1. In the Filter field, enter the regular expression that defines the messages you want to forward. The regular expression must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax). For example, the regular expression `.*ERROR.*` matches all messages that contain ERROR.
 
-    For more information about creating processing rules, see [Create a Processing Rule](/docs/manage/collection/processing-rules/create-processing-rule.md).
+    For more information about creating processing rules, see [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
 
 1. Select **Forward messages that match** as the rule type. This option is visible only if you have defined at least one data forwarding destination, as described in the previous section. 
 1. Select the Destination from the drop-down menu. If a **Syslog Destination Type** is selected, an option to select **Transparent Forwarding** is provided. Syslog forwarding by default prepends a timestamp and hostname to messages to ensure they comply with RFC 3164. If your syslog messages already comply, you can enable **Transparent Forwarding** to disable the default prepending behavior.    

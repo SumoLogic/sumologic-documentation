@@ -19,7 +19,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage connections
    </td>
-   <td>Manage the <a href="https://help.sumologic.com/Manage/Connections-and-Integrations">connections</a> that allow you to send alerts to other tools.
+   <td>Manage the <a href="https://help.sumologic.com/manage/Connections-and-Integrations">connections</a> that allow you to send alerts to other tools.
    </td>
   </tr>
   <tr>
@@ -31,13 +31,13 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage Ingest Budgets
    </td>
-   <td>Manage <a href="https://help.sumologic.com/Manage/Ingestion-and-Volume/Ingest_Budgets">ingest budgets</a>. Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them.
+   <td>Manage <a href="https://help.sumologic.com/manage/Ingestion-and-Volume/Ingest_Budgets">ingest budgets</a>. Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them.
    </td>
   </tr>
   <tr>
    <td>Manage data volume feed
    </td>
-   <td><a href="https://help.sumologic.com/Manage/Ingestion-and-Volume/Data_Volume_Index">Enable and manage the data volume index</a> for your account to avoid using <a href="https://help.sumologic.com/Manage/Account/01-Account-Types#Account_Capacity_Limitations">On-Demand Capacity</a>, and to determine when you need to upgrade your account.
+   <td><a href="https://help.sumologic.com/manage/Ingestion-and-Volume/Data_Volume_Index">Enable and manage the data volume index</a> for your account to avoid using <a href="https://help.sumologic.com/manage/Account/01-Account-Types#Account_Capacity_Limitations">On-Demand Capacity</a>, and to determine when you need to upgrade your account.
    </td>
   </tr>
   <tr>
@@ -62,57 +62,57 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>View field extraction rules
    </td>
-   <td>View <a href="https://help.sumologic.com/Manage/Field-Extractions">field extraction rules</a>, which speed the search process by automatically parsing fields as log messages are ingested.
+   <td>View <a href="https://help.sumologic.com/manage/Field-Extractions">field extraction rules</a>, which speed the search process by automatically parsing fields as log messages are ingested.
    </td>
   </tr>
   <tr>
    <td>Manage field extraction rules
    </td>
-   <td><a href="https://help.sumologic.com/Manage/Field-Extractions">Manage field extractions</a>, which speed the search process by automatically parsing fields as log messages are ingested.
+   <td><a href="https://help.sumologic.com/manage/Field-Extractions">Manage field extractions</a>, which speed the search process by automatically parsing fields as log messages are ingested.
 <p>Note that if you grant a role the Manage field extraction rules capability, users with that role will also have the Manage Fields, View Fields, and View field extraction rules capabilities.</p>
    </td>
   </tr>
   <tr>
    <td>View Partitions
    </td>
-   <td>View <a href="https://help.sumologic.com/Manage/Partitions_and_Data_Tiers">Partitions</a>.
+   <td>View <a href="https://help.sumologic.com/manage/Partitions_and_Data_Tiers">Partitions</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Partitions
    </td>
-   <td>View, create, edit, and delete <a href="https://help.sumologic.com/Manage/Partitions_and_Data_Tiers">Partitions</a>.
+   <td>View, create, edit, and delete <a href="https://help.sumologic.com/manage/Partitions_and_Data_Tiers">Partitions</a>.
 <p>Note that if you grant a role the Manage Partitions capability, users with that role will also have View Partitions and Manage S3 data forwarding capabilities.</p>
    </td>
   </tr>
   <tr>
    <td>View Scheduled Views
    </td>
-   <td>View <a href="https://help.sumologic.com/Manage/Scheduled-Views">Scheduled Views</a>.
+   <td>View <a href="https://help.sumologic.com/manage/Scheduled-Views">Scheduled Views</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Scheduled Views
    </td>
-   <td>View, create, edit, and delete <a href="https://help.sumologic.com/Manage/Scheduled-Views">Scheduled Views</a>. Note that if you grant a role the Manage Schedule View capability, users with that role will also have View Scheduled View capabilities.
+   <td>View, create, edit, and delete <a href="https://help.sumologic.com/manage/Scheduled-Views">Scheduled Views</a>. Note that if you grant a role the Manage Schedule View capability, users with that role will also have View Scheduled View capabilities.
    </td>
   </tr>
   <tr>
    <td>Manage S3 data forwarding
    </td>
-   <td><a href="https://help.sumologic.com/Manage/Data-Forwarding/Configure-Data-Forwarding-from-Sumo-Logic-to-S3">Manage S3 data forwarding</a> from Sumo Logic to an S3 bucket.
+   <td><a href="https://help.sumologic.com/manage/Data-Forwarding/Configure-Data-Forwarding-from-Sumo-Logic-to-S3">Manage S3 data forwarding</a> from Sumo Logic to an S3 bucket.
    </td>
   </tr>
   <tr>
    <td>Manage Content
    </td>
-   <td>Manage the content for your organization. This provides access to <a href="https://help.sumologic.com/Manage/Content_Sharing/Admin_Mode">Admin Mode</a> in the Library.
+   <td>Manage the content for your organization. This provides access to <a href="https://help.sumologic.com/manage/Content_Sharing/Admin_Mode">Admin Mode</a> in the Library.
    </td>
   </tr>
   <tr>
    <td>Manage Tokens
    </td>
-   <td>Manage <a href="https://help.sumologic.com/Manage/Security/Installation_Tokens">Installation Tokens</a>.
+   <td>Manage <a href="https://help.sumologic.com/manage/Security/Installation_Tokens">Installation Tokens</a>.
    </td>
   </tr>
   <tr>
@@ -186,7 +186,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Allowlist IP addresses
    </td>
-   <td><a href="https://help.sumologic.com/Manage/Security/Create-an-Allowlist-for-IP-or-CIDR-Addresses">Explicitly grant access</a> to specific IP addresses or address ranges.
+   <td><a href="https://help.sumologic.com/manage/Security/Create-an-Allowlist-for-IP-or-CIDR-Addresses">Explicitly grant access</a> to specific IP addresses or address ranges.
    </td>
   </tr>
   <tr>
@@ -198,25 +198,25 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage access keys
    </td>
-   <td><a href="https://help.sumologic.com/Manage/Security/Access-Keys">Set up, activate, deactivate, or delete access keys</a> for your organization.
+   <td><a href="https://help.sumologic.com/manage/Security/Access-Keys">Set up, activate, deactivate, or delete access keys</a> for your organization.
    </td>
   </tr>
   <tr>
    <td>Manage support account access
    </td>
-   <td>Enable <a href="https://help.sumologic.com/Manage/Security/Enable-a-Support-Account">management of the Sumo Logic support account</a> for your organization.
+   <td>Enable <a href="https://help.sumologic.com/manage/Security/Enable-a-Support-Account">management of the Sumo Logic support account</a> for your organization.
    </td>
   </tr>
   <tr>
    <td>Manage audit data feed.
    </td>
-   <td><a href="https://help.sumologic.com/Manage/Security/Audit-Index">Enable and manage the Audit Index</a>, which provides information on the internal events that occur in your account associated with account management, user activity, and scheduled searches.
+   <td><a href="https://help.sumologic.com/manage/Security/Audit-Index">Enable and manage the Audit Index</a>, which provides information on the internal events that occur in your account associated with account management, user activity, and scheduled searches.
    </td>
   </tr>
   <tr>
    <td>Manage SAML
    </td>
-   <td><a href="https://help.sumologic.com/Manage/Security/SAML">Provision and manage SAML</a> for single sign-on to your Sumo Logic accounts.
+   <td><a href="https://help.sumologic.com/manage/Security/SAML">Provision and manage SAML</a> for single sign-on to your Sumo Logic accounts.
    </td>
   </tr>
   <tr>
@@ -228,7 +228,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage organization settings
    </td>
-   <td>Users with this capability can configure a <a href="https://help.sumologic.com/Manage/Security/Set_a_Limit_for_User_Concurrent_Sessions">concurrent user sessions limit</a> and enable the <a href="https://help.sumologic.com/Manage/Security/Data_Access_Level_for_Shared_Dashboards">Data Access Level for Shared Dashboards</a> security policy.
+   <td>Users with this capability can configure a <a href="https://help.sumologic.com/manage/Security/Set_a_Limit_for_User_Concurrent_Sessions">concurrent user sessions limit</a> and enable the <a href="https://help.sumologic.com/manage/Security/Data_Access_Level_for_Shared_Dashboards">Data Access Level for Shared Dashboards</a> security policy.
    </td>
   </tr>
   <tr>
@@ -277,7 +277,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage users and roles
    </td>
-   <td>Access the web app pages to manage <a href="https://help.sumologic.com/Manage/Users-and-Roles/Manage-Users">users</a> and <a href="https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles">roles</a>.
+   <td>Access the web app pages to manage <a href="https://help.sumologic.com/manage/Users-and-Roles/Manage-Users">users</a> and <a href="https://help.sumologic.com/manage/Users-and-Roles/Manage-Roles">roles</a>.
    </td>
   </tr>
 </table>
@@ -338,7 +338,7 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
   <tr>
    <td>View Organizations
    </td>
-   <td>View the <a href="https://help.sumologic.com/Manage/01Manage_Subscription/08Create_and_Manage_Orgs">Organizations</a> UI.
+   <td>View the <a href="https://help.sumologic.com/manage/01Manage_Subscription/08Create_and_Manage_Orgs">Organizations</a> UI.
    </td>
   </tr>
   <tr>
