@@ -254,3 +254,54 @@ Use this dashboard to:
 * Identify any harmful file types added by users.
 
 <img src={useBaseUrl('img/integrations/app-development/Github-User-Activity.png')} alt="GitHub-Overview" />
+
+### GHAS - Advanced Security Overview
+
+The **GHAS - Advanced Security Overview** dashboard provides an overview of GHAS metrics across Dependabot, secret scanning, and code scanning alerts.
+
+Use this dashboard to:
+
+* Monitor open alerts 
+* Monitor alerts by severity 
+* Review recently closed alerts
+ 
+<img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Advanced-Security-Overview.png" />
+
+### GHAS - Secret Scanning Alerts 
+
+**Use this dashboard to:**
+
+* Monitor MTTR
+* Quantify secrets found and fixed
+* Check secrets by type and repository
+* Compare secrets and found to secrets in fixed ratios
+
+<img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Secret-Scanning-Alerts.png"/>
+
+###GHAS - Code Scanning Alerts 
+
+The **GHAS - Code Scanning Alerts** dashboard provides a granular overview of the code scanning alerts.
+
+Use this dashboard to display: 
+ 
+* Mean Time to Resolution (average aggregate resolution time) 
+* Alerts created, fixed, and reopened 
+* Alerts found/fixed ratio 
+* Commit/alert ratio 
+* Alerts by tool, severity, or repo 
+
+<h3 dir="ltr"><img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Code-Scanning-Alerts.png" /></h3>
+
+### GHAS - Dependabot Alerts 
+
+The **GHAS - Code Scanning Alerts** dashboard provides a granular overview of the Dependabot alerts 
+
+**Use this dashboard to display:**
+
+* Mean Time to Resolution (average aggregate resolution time)
+* Alerts created, fixed, and dismissed 
+* Alerts found/fixed ratio 
+* Vulnerabilities by repo 
+* New alerts by repo 
+ 
+<img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Dependabot-Alerts.png" /> 
