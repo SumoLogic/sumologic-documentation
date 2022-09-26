@@ -1,6 +1,6 @@
 ---
 slug: /manage/collection
-title: Sumo Logic Collection Page
+title: Using the Sumo Logic Collection Page
 description: Learn how to manage Collectors, Sources, and processing rules.
 ---
 
@@ -15,14 +15,14 @@ Use the **Collection** page to manage all of your Collectors and Sources. To ac
 ## Before You Begin
 
 :::sumo Required Capabilities
-You'll need the Manage or View Collectors [role capability](../users-and-roles/roles/role-capabilities.md) to manage or view Collection.
+You'll need the Manage or View Collectors [role capability](docs/manage/users-and-roles/roles/role-capabilities.md) to manage or view Collection.
 :::
 
 
 ## Collection Page Features
 
 * [Search for a Collector or Source](search-collector-or-source.md)
-* View the [health of Collectors and Sources](../health-events.md)
+* View the [health of Collectors and Sources](docs/manage/health-events.md)
 * [Upgrade Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions.md) from the [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework))
 * [Upgrade Collectors](upgrade-collectors.md)
 * Add an [Installed Collector](/docs/send-data/installed-collectors/sources) or a [Hosted Collector](/docs/send-data/hosted-collectors)
@@ -57,7 +57,7 @@ You'll need the Manage or View Collectors [role capability](../users-and-roles/r
 
     ![Collector version in tooltip.png](/img/collector/collector-version-in-tooltip.png)
 
-* **Health**. Shows color-coded healthy, error, and warning states for Collectors and Sources so you can quickly determine the [health of your Collectors and Sources](../health-events.md).
+* **Health**. Shows color-coded healthy, error, and warning states for Collectors and Sources so you can quickly determine the [health of your Collectors and Sources](docs/manage/health-events.md).
 
   If an Installed Collector appears offline try [restarting the service](pause-resume-source.md) and [testing connectivity](docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors.md).
 * **Type**. Displays whether the Collector is an Installed or Hosted Collector.

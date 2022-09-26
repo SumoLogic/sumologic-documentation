@@ -7,7 +7,7 @@ description: Use HTTP endpoints to manage service allowlist settings.
 
 ---
 
-The [Service Allowlist](https://help.sumologic.com/Manage/Security/Create-an-Allowlist-for-IP-or-CIDR-Addresses) Management API allows you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
+The [Service Allowlist](https://help.sumologic.com/manage/Security/Create-an-Allowlist-for-IP-or-CIDR-Addresses) Management API allows you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
 
 
 

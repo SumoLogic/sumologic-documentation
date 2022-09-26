@@ -301,7 +301,7 @@ Proceed to the next step.
 
 13.  **Scan Interval**. Use the default of 1 minute, or change this value to indicate how frequently Sumo Logic should poll the GCP API. To learn more about polling interval considerations, see GCP Scan Interval below.
 
-14.  **Processing Rules**. Configure any desired filters, such as allowlist and denylist, as described in [Metrics Include and Exclude Rules](docs/manage/collection/processing-rules/metrics-include-and-exclude-rules.md).
+14.  **Processing Rules**. Configure any desired filters, such as allowlist and denylist, as described in [Metrics Include and Exclude Rules](docs/send-data/collection/processing-rules/metrics-include-and-exclude-rules.md).
 
 15. Click **Save**.
 

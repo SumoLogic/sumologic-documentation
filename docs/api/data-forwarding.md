@@ -6,7 +6,7 @@ description: Use HTTP endpoints to manage Data Forwarding to S3.
 tags: [settings]
 ---
 
-The Data Forwarding Management API allows you to forward log data from a Partition or Scheduled View to an S3 bucket. For more information see [Forwarding Data to S3](https://help.sumologic.com/Manage/Data-Forwarding/Configure-Data-Forwarding-from-Sumo-Logic-to-S3).
+The Data Forwarding Management API allows you to forward log data from a Partition or Scheduled View to an S3 bucket. For more information see [Forwarding Data to S3](https://help.sumologic.com/manage/Data-Forwarding/Configure-Data-Forwarding-from-Sumo-Logic-to-S3).
 
 Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 

@@ -1,6 +1,7 @@
 ---
 id: cloud-flex-credits-accounts
 title: Cloud Flex Credits Accounts
+description: View information on Sumo Logic Cloud Flex Credits account and intuitively monitor usage and manage account costs.
 ---
 
 
@@ -12,14 +13,14 @@ This page provides information on the Cloud Flex Credits account types from whic
 
 You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise Security, or Enterprise Suite Cloud Flex Credits accounts.
 
-* **Free** accounts give you access to most Sumo Logic features, with a credit allocation of 20 credits a day. Credits can be used for log, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow three users. Free account holders can [upgrade](upgrade-your-cloud-flex-account.md) to Sumo Logic paid service agreements from within the Sumo Logic UI. 
+* **Free** accounts give you access to most Sumo Logic features, with a credit allocation of 20 credits a day. Credits can be used for log, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow three users. Free account holders can [upgrade](upgrade-cloud-flex-account.md) to Sumo Logic paid service agreements from within the Sumo Logic UI. 
 * **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-and-volume/log-ingestion.md) will be applied to your log ingest, For information about Trial account features, see the details for [Cloud Flex accounts](#cloud-flex-credits---account-types).  
 
     :::note
     Trials are limited to 30 days. If you require an extended trial period, contact [sales@sumologic.com](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
     :::
 
-* **Essentials**  accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-your-cloud-flex-account.md) from a Essential account to either Enterprise Operations, Enterprise Security, or Enterprise Suite accounts  at any time.
+* **Essentials**  accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-cloud-flex-account.md) from a Essential account to either Enterprise Operations, Enterprise Security, or Enterprise Suite accounts  at any time.
 
 * **Enterprise** **Operations** accounts are optimized for best practice operational monitoring at any ingest volume.
 

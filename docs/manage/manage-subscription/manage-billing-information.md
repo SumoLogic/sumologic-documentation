@@ -1,6 +1,7 @@
 ---
 id: manage-billing-information
 title: Manage Billing Information
+description: Manage billing for professional accounts.
 ---
 
 

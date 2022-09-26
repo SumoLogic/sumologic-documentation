@@ -224,7 +224,7 @@ Follow the instructions for the operating system of the host where you will inst
         * **Detect messages spanning multiple lines**. This option is checked by default.
         * **Infer Boundaries**. This option is checked by default.
         * **Boundary Regex**. If multiple processing is enabled, and **Infer Boundaries** is disabled, enter a regular expression for message boundaries.
-6. Configure processing rules. For more information, see [Processing Rules](/docs/manage/collection/processing-rules).
+6. Configure processing rules. For more information, see [Processing Rules](/docs/send-data/collection/processing-rules).
 
 
 ### Step 4: Add a Docker stats source

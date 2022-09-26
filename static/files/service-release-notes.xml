@@ -90,7 +90,7 @@
 <title>August 17, 2022</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-17-2022</link>
 <description>
-<![CDATA[ Update - We’ve doubled the number of <a href="/Manage/Fields" title="Fields">Fields</a> you can create. The per account Fields limit is now 400. The limit applies to Fields that you configure for sources or collectors and those you create using <a href="/Manage/Field-Extractions" title="Field Extractions">Field Extraction Rules</a>. ]]>
+<![CDATA[ Update - We’ve doubled the number of <a href="/manage/Fields" title="Fields">Fields</a> you can create. The per account Fields limit is now 400. The limit applies to Fields that you configure for sources or collectors and those you create using <a href="/manage/Field-Extractions" title="Field Extractions">Field Extraction Rules</a>. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-17-2022a</guid>
 <pubDate>Wed, 17 Aug 2022 15:57:29 +0000</pubDate>
@@ -99,7 +99,7 @@
 <title>August 8, 2022</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-8-2022</link>
 <description>
-<![CDATA[ The new UI for creating and managing <a href="/Manage/Scheduled-Views" title="Scheduled Views">Scheduled Views</a> that we described <a href="/Release-Notes/Service-Release-Notes#August_4.2C_2022" title="Service Release Notes">last week</a> is now released. ]]>
+<![CDATA[ The new UI for creating and managing <a href="/manage/Scheduled-Views" title="Scheduled Views">Scheduled Views</a> that we described <a href="/Release-Notes/Service-Release-Notes#August_4.2C_2022" title="Service Release Notes">last week</a> is now released. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-8-2022a</guid>
 <pubDate>Mon, 8 Aug 2022 15:12:17 +0000</pubDate>
@@ -118,7 +118,7 @@
 <title>August 4, 2022</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-4-2022</link>
 <description>
-<![CDATA[ Update - We’re preparing to release a new UI for creating and managing <a href="/Manage/Scheduled-Views" title="Scheduled Views">Scheduled Views</a>. The rollout will commence the week of August 8, 2022. The new interface is clean and compact—now you'll be able to configure a new Scheduled View in a right-hand pane that appears next to the list of existing Scheduled Views. ]]>
+<![CDATA[ Update - We’re preparing to release a new UI for creating and managing <a href="/manage/Scheduled-Views" title="Scheduled Views">Scheduled Views</a>. The rollout will commence the week of August 8, 2022. The new interface is clean and compact—now you'll be able to configure a new Scheduled View in a right-hand pane that appears next to the list of existing Scheduled Views. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-4-2022a</guid>
 <pubDate>Thu, 4 Aug 2022 15:23:02 +0000</pubDate>
@@ -136,7 +136,7 @@
 <title>July 28 2022</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-28-2022</link>
 <description>
-<![CDATA[ New - The <a href="/Manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities" title="Role Capabilities">role capability</a> we told you about earlier this month—Download Search Results—is now released. This capability, which grants the permission to download log search results, is enabled for all roles. Note that if you manage role capabilities using the Sumo Logic API or Terraform, you need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results. ]]>
+<![CDATA[ New - The <a href="/manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities" title="Role Capabilities">role capability</a> we told you about earlier this month—Download Search Results—is now released. This capability, which grants the permission to download log search results, is enabled for all roles. Note that if you manage role capabilities using the Sumo Logic API or Terraform, you need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-28-2022a</guid>
 <pubDate>Thu, 28 Jul 2022 16:57:47 +0000</pubDate>
@@ -164,7 +164,7 @@
 <title>July 18 2022</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-18-2022</link>
 <description>
-<![CDATA[ Update - The week of July 25, 2022, we’ll be releasing a new <a href="/Manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities" title="Role Capabilities">role capability</a>—Download Search Results—that grants the permission to download log search results. This capability will be enabled for all roles. If you manage role capabilities using the Sumo Logic API or Terraform, when the new capability is released, you’ll need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results. ]]>
+<![CDATA[ Update - The week of July 25, 2022, we’ll be releasing a new <a href="/manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities" title="Role Capabilities">role capability</a>—Download Search Results—that grants the permission to download log search results. This capability will be enabled for all roles. If you manage role capabilities using the Sumo Logic API or Terraform, when the new capability is released, you’ll need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-18-2022a</guid>
 <pubDate>Mon, 18 Jul 2022 20:36:23 +0000</pubDate>
@@ -192,7 +192,7 @@
 <title>July 13 2022</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-13-2022</link>
 <description>
-<![CDATA[ Update - We have renamed our default partition from “Default Continuous Partition” to “sumologic_default”. Now you can directly query the data stored in the default partition, where all data is ingested unless explicitly routed into another partition. Any APIs that reference the default partition by its previous name, “Default Continuous Partition”, should be updated to refer to “sumologic_default” instead. For more information, see <a href="/Manage/Partitions_and_Data_Tiers/05-Run-a-Search-Against-a-Partition#Search_the_default_partition" title="Run a Search Against a Partition">Search the Default Partition</a>. ]]>
+<![CDATA[ Update - We have renamed our default partition from “Default Continuous Partition” to “sumologic_default”. Now you can directly query the data stored in the default partition, where all data is ingested unless explicitly routed into another partition. Any APIs that reference the default partition by its previous name, “Default Continuous Partition”, should be updated to refer to “sumologic_default” instead. For more information, see <a href="/manage/Partitions_and_Data_Tiers/05-Run-a-Search-Against-a-Partition#Search_the_default_partition" title="Run a Search Against a Partition">Search the Default Partition</a>. ]]>
 </description>
 <guid>hhttps://help.sumologic.com/Release-Notes/Service-Release-Notes#july-13-2022a</guid>
 <pubDate>Wed, 13 Jul 2022 14:55:16 +0000</pubDate>
@@ -318,7 +318,7 @@
 <title>June 7, 2022</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#manage</link>
 <description>
-<![CDATA[ New - Want to upgrade or change your <a href="/Manage/01Manage_Subscription/00Cloud_Flex_Credits_Accounts#Cloud_Flex_Credits_-_Account_Types" title="Cloud Flex Credits Accounts">Cloud Flex Credits Essentials</a> plan? Good news: now you can do it yourself. If you’re a Sumo Logic admin, you use the Manage Plan page to change your plan period from monthly to annual, or from annual to monthly. You can also increase or decrease your account ingest levels and retention settings to meet your evolving requirements. For more information, see <a href="/Manage/01Manage_Subscription/03Upgrade_a_Cloud_Flex_Credits_Account" title="Upgrade a Cloud Flex Credits Account">Update an CloudFlex Credits Account</a>. ]]>
+<![CDATA[ New - Want to upgrade or change your <a href="/manage/01Manage_Subscription/00Cloud_Flex_Credits_Accounts#Cloud_Flex_Credits_-_Account_Types" title="Cloud Flex Credits Accounts">Cloud Flex Credits Essentials</a> plan? Good news: now you can do it yourself. If you’re a Sumo Logic admin, you use the Manage Plan page to change your plan period from monthly to annual, or from annual to monthly. You can also increase or decrease your account ingest levels and retention settings to meet your evolving requirements. For more information, see <a href="/manage/01Manage_Subscription/03Upgrade_a_Cloud_Flex_Credits_Account" title="Upgrade a Cloud Flex Credits Account">Update an CloudFlex Credits Account</a>. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-7-2022</guid>
 <pubDate>Tue, 07 Jun 2022 20:24:25 +0000</pubDate>
@@ -570,7 +570,7 @@
 <title>February 11, 2022</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#manage</link>
 <description>
-<![CDATA[ Update - We’ve made an improvement to the <a href="/Manage/01Manage_Subscription/08Create_and_Manage_Orgs" title="Create and Manage Orgs">Sumo Logic Organizations</a> (Sumo Orgs) feature, which allows you to create, provision, and manage multiple "child" orgs from a "parent" org. Now, when you provision a child org, you can allocate credits for <a href="/Traces" title="Traces">trace</a> ingestion, as well as log and metric ingestion. ]]>
+<![CDATA[ Update - We’ve made an improvement to the <a href="/manage/01Manage_Subscription/08Create_and_Manage_Orgs" title="Create and Manage Orgs">Sumo Logic Organizations</a> (Sumo Orgs) feature, which allows you to create, provision, and manage multiple "child" orgs from a "parent" org. Now, when you provision a child org, you can allocate credits for <a href="/Traces" title="Traces">trace</a> ingestion, as well as log and metric ingestion. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-11-2022</guid>
 <pubDate>Fri, 11 Feb 2022 17:14:44 +0000</pubDate>
@@ -867,7 +867,7 @@
 <title>August 27, 2021</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#manage</link>
 <description>
-<![CDATA[ New - We’re making <a href="/Manage/01Manage_Subscription/00Cloud_Flex_Credits_Accounts" title="Cloud Flex Credits Accounts">Cloud Flex Credits Subscriptions</a> available to self-service trial and free accounts with new monthly and annual subscriptions. Customers who upgrade to a self-service paid subscription from a Trial, POV Trial, or Sumo Free subscription will now upgrade directly to Essentials (credit-based), and have the option of either an annual or monthly subscription. For more information, see <a href="/Manage/01Manage_Subscription/03Upgrade_a_Cloud_Flex_Credits_Account" title="Upgrade a Cloud Flex Credits Account">Upgrade a Cloud Flex Credits Account</a>. ]]>
+<![CDATA[ New - We’re making <a href="/manage/01Manage_Subscription/00Cloud_Flex_Credits_Accounts" title="Cloud Flex Credits Accounts">Cloud Flex Credits Subscriptions</a> available to self-service trial and free accounts with new monthly and annual subscriptions. Customers who upgrade to a self-service paid subscription from a Trial, POV Trial, or Sumo Free subscription will now upgrade directly to Essentials (credit-based), and have the option of either an annual or monthly subscription. For more information, see <a href="/manage/01Manage_Subscription/03Upgrade_a_Cloud_Flex_Credits_Account" title="Upgrade a Cloud Flex Credits Account">Upgrade a Cloud Flex Credits Account</a>. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-27-2021</guid>
 <pubDate>Fri, 27 Aug 2021 22:26:50 +0000</pubDate>
@@ -919,7 +919,7 @@
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#manage</link>
 <description>
 <![CDATA[ Update - We are delighted to announce the availability of enhanced search functionality for searching across all Data Tiers: Continuous, Frequent, and Infrequent. Now, you can use the _dataTier search modifier to search all Data Tiers (_dataTier=all) in a single query. Or, you can search for data i ]]>
-<![CDATA[ n multiple indexes in just the tiers you’re interested in. With this improvement, you can manage costs by retaining your rarely queried data in the Infrequent tier, and know it’s just a query away. For more information, see <a href="/Manage/Partitions_and_Data_Tiers/Searching_Data_Tiers" title="Searching Data Tiers">Searching Data Tiers</a>. ]]>
+<![CDATA[ n multiple indexes in just the tiers you’re interested in. With this improvement, you can manage costs by retaining your rarely queried data in the Infrequent tier, and know it’s just a query away. For more information, see <a href="/manage/Partitions_and_Data_Tiers/Searching_Data_Tiers" title="Searching Data Tiers">Searching Data Tiers</a>. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-16-2021</guid>
 <pubDate>Mon, 16 Aug 2021 15:54:17 +0000</pubDate>
@@ -928,7 +928,7 @@
 <title>August 12, 2021</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#security</link>
 <description>
-<![CDATA[ Update - We made a small but useful change to our <a href="/Manage/Security/SAML/01-Set-Up-SAML-for-Single-Sign-On" title="Set Up SAML for Single Sign-On">SAML support</a>. Now, if you have multiple Sumo Logic SAML integrations and use SP-Initiated logins, the EntityID Sumo Logic sends with authent ]]>
+<![CDATA[ Update - We made a small but useful change to our <a href="/manage/Security/SAML/01-Set-Up-SAML-for-Single-Sign-On" title="Set Up SAML for Single Sign-On">SAML support</a>. Now, if you have multiple Sumo Logic SAML integrations and use SP-Initiated logins, the EntityID Sumo Logic sends with authent ]]>
 <![CDATA[ ication requests is unique for each of your integrations. The benefit: this means Sumo Logic SAML supports IdPs that require a unique EntityID for each integration. The EntityID is displayed in the SAML configuration details pane. <br /> The unique Entity ID is provided in SAML configurations created after August 11, 2021. For existing SAML configurations, the Entity ID remains unchanged but is now displayed along with other configuration details. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-12-2021aaa</guid>
@@ -1222,7 +1222,7 @@
 <title>May 26, 2021</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#metrics</link>
 <description>
-<![CDATA[ New - What’s good for the logs is good for the metrics. That’s why we’re extending the processing rules feature to support metrics as well as logs. Now, you can configure include or exclude rules for your metric sources for increased control over the metrics you ingest to Sumo Logic. For more information, see <a href="/Manage/Collection/Processing-Rules/Metrics_Include_and_Exclude_Rules" title="Metrics Include and Exclude Rules">Metrics Include and Exclude Rules</a>. ]]>
+<![CDATA[ New - What’s good for the logs is good for the metrics. That’s why we’re extending the processing rules feature to support metrics as well as logs. Now, you can configure include or exclude rules for your metric sources for increased control over the metrics you ingest to Sumo Logic. For more information, see <a href="/docs/send-data/collection/processing-rules/metrics-include-and-exclude-rules" title="Metrics Include and Exclude Rules">Metrics Include and Exclude Rules</a>. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-26-2021</guid>
 <pubDate>Wed, 26 May 2021 15:59:36 +0000</pubDate>
@@ -1281,7 +1281,7 @@
 <title>May 4, 2021</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#manage</link>
 <description>
-<![CDATA[ New - We're making it easier to create and manage multiple Sumo Logic accounts. You can use the new <a href="/Manage/01Manage_Subscription/02Create_and_Manage_Orgs" title="Create and Manage Orgs">Sumo Logic Organizations</a> (Sumo Orgs) feature to create, provision, and manage multiple "child" orgs ]]>
+<![CDATA[ New - We're making it easier to create and manage multiple Sumo Logic accounts. You can use the new <a href="/manage/01Manage_Subscription/02Create_and_Manage_Orgs" title="Create and Manage Orgs">Sumo Logic Organizations</a> (Sumo Orgs) feature to create, provision, and manage multiple "child" orgs ]]>
 <![CDATA[ from a "parent" org. An authorized user can use the UI or API to estimate required credits for child orgs, based on expected log and metrics ingestion levels. It's easy to allocate credits, and to monitor child orgs' utilization. Sumo Orgs is great for Sumo Logic Service Providers as well as Enterprise users. In particular, Sumo Orgs eases the process of provisioning and managing POV Trial orgs in multiple Sumo Logic deployments. Sumo Orgs is available in Enterprise subscriptions on the Credits model. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-4-2021c</guid>
@@ -1378,7 +1378,7 @@
 <title>April 13, 2021</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#security</link>
 <description>
-<![CDATA[ Update - Searching the Infrequent data tier just got easier. You can now use wildcards in queries against the Infrequent data tier. For example: <br /> _dataTier = Infrequent (_index=app_*)<br /> For more information, see <a href="/Manage/Partitions_and_Data_Tiers/Searching_Data_Tiers" title="Searc ]]>
+<![CDATA[ Update - Searching the Infrequent data tier just got easier. You can now use wildcards in queries against the Infrequent data tier. For example: <br /> _dataTier = Infrequent (_index=app_*)<br /> For more information, see <a href="/manage/Partitions_and_Data_Tiers/Searching_Data_Tiers" title="Searc ]]>
 <![CDATA[ hing Data Tiers">Searching Data Tiers</a>. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-13-2021a</guid>
@@ -1388,8 +1388,8 @@
 <title>April 13, 2021</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#search</link>
 <description>
-<![CDATA[ Update - We’ve updated the UI for deleting a Sumo Logic user’s account. The UI now provides an explicit option for deleting a user’s content in addition to the user account. For more information, see <a href="/Manage/Users-and-Roles/Manage-Users/11-Delete-a-User" title="Delete a User">Delete ]]>
-<![CDATA[ a User</a>.<br /> Update - We've enhanced role search filters: now you can grant access to Scheduled Views and Partitions in a role search filter. For more information, see <a href="/Manage/Users-and-Roles/Manage-Roles/07-Construct-a-Search-Filter-for-a-Role" title="Construct a Search Filter for a Role">Construct a Role Search Filter. ]]>
+<![CDATA[ Update - We’ve updated the UI for deleting a Sumo Logic user’s account. The UI now provides an explicit option for deleting a user’s content in addition to the user account. For more information, see <a href="/manage/Users-and-Roles/Manage-Users/11-Delete-a-User" title="Delete a User">Delete ]]>
+<![CDATA[ a User</a>.<br /> Update - We've enhanced role search filters: now you can grant access to Scheduled Views and Partitions in a role search filter. For more information, see <a href="/manage/Users-and-Roles/Manage-Roles/07-Construct-a-Search-Filter-for-a-Role" title="Construct a Search Filter for a Role">Construct a Role Search Filter. ]]>
 </description>
 <guid>hhttps://help.sumologic.com/Release-Notes/Service-Release-Notes#april-13-2021</guid>
 <pubDate>Tue, 13 Apr 2021 22:39:28 +0000</pubDate>
@@ -1544,7 +1544,7 @@
 <title>February 25, 2021</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
 <description>
-<![CDATA[ Update - We are excited to announce out-of-the-box alerts for Kubernetes. We have also updated the dashboards and views in the Kubernetes App <a href="https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Install_the_Kubernetes_App_and_view_the_Dashboards" title="Install the Kubernetes Alerts, App and view the Dashboards">Kubenetes App</a> to accelerate entity-based troubleshooting of Kubernetes environments. New - We are excited to announce a new Microsoft Teams <a href="https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_Teams_App" title="Microsoft Teams Apps">Microsoft Teams</a> app that provides out-of-the-box dashboards to monitor users, teams, channels and permission changes. New (On the 23) - Microsoft Teams webhook connection <a href="https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Webhook_Connection_for_Microsoft_Teams" title="Webhook Connection for Microsoft Teams">Microsoft Teams webhook connection</a> is now available to send notifications from alerts to Microsoft Teams. ]]>
+<![CDATA[ Update - We are excited to announce out-of-the-box alerts for Kubernetes. We have also updated the dashboards and views in the Kubernetes App <a href="https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Install_the_Kubernetes_App_and_view_the_Dashboards" title="Install the Kubernetes Alerts, App and view the Dashboards">Kubenetes App</a> to accelerate entity-based troubleshooting of Kubernetes environments. New - We are excited to announce a new Microsoft Teams <a href="https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_Teams_App" title="Microsoft Teams Apps">Microsoft Teams</a> app that provides out-of-the-box dashboards to monitor users, teams, channels and permission changes. New (On the 23) - Microsoft Teams webhook connection <a href="https://help.sumologic.com/manage/Connections-and-Integrations/Webhook-Connections/Webhook_Connection_for_Microsoft_Teams" title="Webhook Connection for Microsoft Teams">Microsoft Teams webhook connection</a> is now available to send notifications from alerts to Microsoft Teams. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</guid>
 <pubDate>Thu, 25 Feb 2021 05:04:30 +0000</pubDate>
@@ -1589,7 +1589,7 @@
 <title>February 10, 2021</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#manage-1</link>
 <description>
-<![CDATA[ Update - We made the process of transferring a deleted user’s content to another user more comprehensive. Now, when you select a new owner for the deleted user’s Library content, scheduled views will be transferred to the new owner, as well as the user’s folders, searches, scheduled searches, and dashboards. For more information, see <a href="/Manage/Users-and-Roles/Manage-Users/11-Delete-a-User" title="Delete a User">Delete a User</a>. ]]>
+<![CDATA[ Update - We made the process of transferring a deleted user’s content to another user more comprehensive. Now, when you select a new owner for the deleted user’s Library content, scheduled views will be transferred to the new owner, as well as the user’s folders, searches, scheduled searches, and dashboards. For more information, see <a href="/manage/Users-and-Roles/Manage-Users/11-Delete-a-User" title="Delete a User">Delete a User</a>. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-10-2021</guid>
 <pubDate>Fri, 5 Feb 2021 21:23:26 +0000</pubDate>
@@ -1607,7 +1607,7 @@
 <title>February 3, 2021</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#manage</link>
 <description>
-<![CDATA[ Update - There are two changes to the Partitions page in the Sumo Logic UI. What we previously called the General Index is now the Default Continuous Partition. This is where any data you ingest that isn’t assigned to a partition goes. You’ll also notice that the Partitions page now lists Sumo Logic internal indexes, like the Audit Event Index and the Data Volume Index. This gives you the flexibility to <a href="/Manage/Partitions_and_Data_Tiers/04_Edit_a_Partition#Edit_a_partition" title="Edit a Partition">manage the retention period</a> for each index independently. By default, each internal index has the same retention period as the Default Continuous Partition. ]]>
+<![CDATA[ Update - There are two changes to the Partitions page in the Sumo Logic UI. What we previously called the General Index is now the Default Continuous Partition. This is where any data you ingest that isn’t assigned to a partition goes. You’ll also notice that the Partitions page now lists Sumo Logic internal indexes, like the Audit Event Index and the Data Volume Index. This gives you the flexibility to <a href="/manage/Partitions_and_Data_Tiers/04_Edit_a_Partition#Edit_a_partition" title="Edit a Partition">manage the retention period</a> for each index independently. By default, each internal index has the same retention period as the Default Continuous Partition. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-3-2021</guid>
 <pubDate>Wed, 3 Feb 2021 17:09:32 +0000</pubDate>
@@ -1672,7 +1672,7 @@
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Manage</link>
 <description>
 <![CDATA[ Update - We’ve brought you greater control over your data: now you can update an existing partition’s routing expression, which determines what data goes into the partition. (You have to be a Sumo Logic admin or have the Manage Partitions role capability.) <br />Changing the scope of a partitio ]]>
-<![CDATA[ n is useful if you simply want to route more or less data to an existing partition. Better yet, it allows you to re-route some or all of the data in an existing partition to a different Data Tier than the one it currently resides in. If you decide that some of the data in a partition belongs in a different tier than the one currently configured, you can edit the scope of that partition to exclude that data, and create a new partition for it that targets the desired tier.<br />For more information, see <a href="/Manage/Partitions_and_Data_Tiers/04_Edit_a_Partition" title="Edit a Partition">Edit a Partition</a> ]]>
+<![CDATA[ n is useful if you simply want to route more or less data to an existing partition. Better yet, it allows you to re-route some or all of the data in an existing partition to a different Data Tier than the one it currently resides in. If you decide that some of the data in a partition belongs in a different tier than the one currently configured, you can edit the scope of that partition to exclude that data, and create a new partition for it that targets the desired tier.<br />For more information, see <a href="/manage/Partitions_and_Data_Tiers/04_Edit_a_Partition" title="Edit a Partition">Edit a Partition</a> ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#December_22.2C_2020</guid>
 <pubDate>Tue, 22 Dec 2020 02:10:00 +0000</pubDate>
@@ -1719,7 +1719,7 @@
 <title>November 13, 2020</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Search</link>
 <description>
-<![CDATA[ Update - Listen up, <a href="/Manage/Partitions_and_Data_Tiers/Data_Tiers" title="Data Tiers">Data Tier</a> users! We’ve introduced a search modifier that simplifies searching Data Tiers in Sumo Logic. FYI, a search modifier is a new thing: it’s a system-defined field that tells our search system how to process a search. The _dataTier search modifier restricts a log search to a particular Data Tier. For more information, see <a href="/Manage/Partitions_and_Data_Tiers/Searching_Data_Tiers" title="Searching Data Tiers">Searching Data Tiers</a>. ]]>
+<![CDATA[ Update - Listen up, <a href="/manage/Partitions_and_Data_Tiers/Data_Tiers" title="Data Tiers">Data Tier</a> users! We’ve introduced a search modifier that simplifies searching Data Tiers in Sumo Logic. FYI, a search modifier is a new thing: it’s a system-defined field that tells our search system how to process a search. The _dataTier search modifier restricts a log search to a particular Data Tier. For more information, see <a href="/manage/Partitions_and_Data_Tiers/Searching_Data_Tiers" title="Searching Data Tiers">Searching Data Tiers</a>. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#search-data-tier</guid>
 <pubDate>Fri, 13 Nov 2020 18:45:46 +0000</pubDate>
@@ -1728,7 +1728,7 @@
 <title>November 13, 2020</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Security</link>
 <description>
-<![CDATA[ New - If you have multiple Sumo Logic accounts, we’ve got good news for you: we’ve introduced <a href="/Manage/01Account_Usage/05Manage_Organization#Change_account_subdomain" title="Manage Organization">custom Sumo Logic subdomains</a>. By default, the subdomain in the URL for accessing Sumo Lo ]]>
+<![CDATA[ New - If you have multiple Sumo Logic accounts, we’ve got good news for you: we’ve introduced <a href="/manage/01Account_Usage/05Manage_Organization#Change_account_subdomain" title="Manage Organization">custom Sumo Logic subdomains</a>. By default, the subdomain in the URL for accessing Sumo Lo ]]>
 <![CDATA[ gic is “service”, like this:<br /> service.sumologic.com<br /> Multiple orgs with identical domain names can result in authentication headaches. Now, your account owner can replace the "service" subdomain for each of your orgs with a distinct subdomain. For example:<br /> west1.sumologic.com<br /> Then, the links that Sumo Logic generates, for example when you share queries or dashboards, will contain your custom subdomain. These subdomain-enabled links will direct the user to the correct account for authentication. <br /> When subdomains are enabled for an org, you’ll see your SAML SP-initiated login options on the Sumo Logic login page. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#subdomains</guid>
@@ -1774,8 +1774,8 @@
 <title>October 30, 2020</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Security</link>
 <description>
-<![CDATA[ New - We’re pleased to announce a new <a href="https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities"><u>role capability</u></a> that allows a Sumo Logic admin to limit the ability of users to create Access Keys. Currently, all Sumo Logic users can create Access Keys ]]>
-<![CDATA[ on the Preferences page. (<a href="https://help.sumologic.com/Manage/Security/Access-Keys"><u>Access Key</u></a> allow a user to register collectors and to use Sumo Logic APIs.) With the new Create Access Keys capability, you can limit the ability to create Access Keys to only those roles that require it. Note that, with this update, all roles in your Sumo account have the Create Access Keys capability. To restrict access, your Sumo Logic administrator can remove the capability from roles that do not require it. </p> New - We’ve released a new security policy you can use to set a maximum timeout for Sumo Logic UI web sessions. Sumo Logic users can set their web session timeout on the Preferences page, up to a maximum of 7 days. If you are a Sumo Logic admin with the Manage Organizational Settings role capability, you can now specify the maximum web session timeout period that users in your org can select. For more information, see <a href="https://help.sumologic.com/Manage/Security/Set_a_Maximum_Web_Session_Timeout"><u>Set a Maximum Web Session Timeout</u></a>. ]]>
+<![CDATA[ New - We’re pleased to announce a new <a href="https://help.sumologic.com/manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities"><u>role capability</u></a> that allows a Sumo Logic admin to limit the ability of users to create Access Keys. Currently, all Sumo Logic users can create Access Keys ]]>
+<![CDATA[ on the Preferences page. (<a href="https://help.sumologic.com/manage/Security/Access-Keys"><u>Access Key</u></a> allow a user to register collectors and to use Sumo Logic APIs.) With the new Create Access Keys capability, you can limit the ability to create Access Keys to only those roles that require it. Note that, with this update, all roles in your Sumo account have the Create Access Keys capability. To restrict access, your Sumo Logic administrator can remove the capability from roles that do not require it. </p> New - We’ve released a new security policy you can use to set a maximum timeout for Sumo Logic UI web sessions. Sumo Logic users can set their web session timeout on the Preferences page, up to a maximum of 7 days. If you are a Sumo Logic admin with the Manage Organizational Settings role capability, you can now specify the maximum web session timeout period that users in your org can select. For more information, see <a href="https://help.sumologic.com/manage/Security/Set_a_Maximum_Web_Session_Timeout"><u>Set a Maximum Web Session Timeout</u></a>. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_30.2C_2020</guid>
 <pubDate>Fri, 30 Oct 2020 23:00:47 +0000</pubDate>
@@ -1867,7 +1867,7 @@
 <title>September 30, 2020</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Security</link>
 <description>
-<![CDATA[ Update - We’re pleased to inform you the availability of additional <a href="https://help.sumologic.com/Manage/Security/Set-the-Password-Policy">password policy</a> options as well as the updates to the password forms. ]]>
+<![CDATA[ Update - We’re pleased to inform you the availability of additional <a href="https://help.sumologic.com/manage/Security/Set-the-Password-Policy">password policy</a> options as well as the updates to the password forms. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#September_30.2C_2020</guid>
 <pubDate>Wed, 30 Sep 2020 03:32:34 +0000</pubDate>
@@ -1885,7 +1885,7 @@
 <title>September 10, 2020</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Manage</link>
 <description>
-<![CDATA[ New - Participating in Sumo Logic beta programs just got easier. Now, your Account Owner can <a href="https://help.sumologic.com/Manage/01Account_Usage/Beta_Participation_Opt-In">opt-in</a> to our beta terms and conditions from the Account page in the Sumo UI. You can do the paperwork once, and get access to beta features faster. ]]>
+<![CDATA[ New - Participating in Sumo Logic beta programs just got easier. Now, your Account Owner can <a href="https://help.sumologic.com/manage/01Account_Usage/Beta_Participation_Opt-In">opt-in</a> to our beta terms and conditions from the Account page in the Sumo UI. You can do the paperwork once, and get access to beta features faster. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#September_10.2C_2020</guid>
 <pubDate>Thu, 10 Sep 2020 22:42:34 +0000</pubDate>

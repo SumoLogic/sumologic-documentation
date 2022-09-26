@@ -159,7 +159,7 @@ Follow this checklist whenever you make any changes to the collector:
   * Collector service CPU usage patterns
   * Collector service Memory usage patterns
   * Disk I/O and space utilization
-* [Validate Collector service operation](../ingestion-and-volume/monitor-ingestion-receive-alerts.md):
+* [Validate Collector service operation](docs/manage/ingestion-and-volume/monitor-ingestion-receive-alerts.md):
   * Upgrade was successful and the Collector is online with the new version.
   * The Collector continues to run over a period of time without errors or failures.
   * Existing Sources continue to read and send data.

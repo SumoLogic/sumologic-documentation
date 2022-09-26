@@ -134,7 +134,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 
 ### Field Extraction Rules
 
-Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
+Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule).
 
 Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 

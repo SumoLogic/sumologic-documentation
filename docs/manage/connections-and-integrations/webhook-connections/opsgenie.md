@@ -2,6 +2,7 @@
 id: opsgenie
 title: Webhook Connection for Opsgenie
 sidebar_label: Opsgenie
+description: Send alerts to Opsgenie from scheduled searches.
 ---
 
 [Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 

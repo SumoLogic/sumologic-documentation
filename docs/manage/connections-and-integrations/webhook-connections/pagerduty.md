@@ -2,6 +2,7 @@
 id: pagerduty
 title: Webhook Connection for PagerDuty
 sidebar_label: PagerDuty
+description: Webhook Connections allow you to send alerts from Sumo Logic to PagerDuty.
 ---
 
 PagerDuty webhook connections allow you to send alert results as a PagerDuty notification. You can learn more about PagerDuty webhooks in

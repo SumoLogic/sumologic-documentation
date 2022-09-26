@@ -1,6 +1,7 @@
 ---
 id: health-events
 title: Health Events
+description: Monitor the health of your Collectors and Sources.
 ---
 
 ## Availability

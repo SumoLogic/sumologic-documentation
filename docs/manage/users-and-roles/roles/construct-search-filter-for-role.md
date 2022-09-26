@@ -1,6 +1,7 @@
 ---
 id: construct-search-filter-for-role
 title: Construct a Search Filter for a Role
+description: Construct a role search filter to control what log data users with that role can access.
 ---
 
 
@@ -217,7 +218,7 @@ When a user with that role filter runs a query, Sumo runs it like this:
 
 When a user is assigned to multiple Sumo roles, Sumo combines the role filters from each of the roles using a logical OR to come up with the combined role filter.
 
-When multiple roles filters are applied to a query, the least restrictive filter takes precedence. That this rule doesn’t apply if any of the role filters applied to a query is simply blank, which effectively grants access to all data, and would be the least restrictive filter. If the combined search filters applied to a query includes filters that are blank, the blank search filter is ignored and the next least restrictive filter takes precedence. So, if you actually want to grant a role access to all data, set the search filter to an asterisk (`*`). A search filter that is configured in that fashion will take precedence when combined with more restrictive search filters. 
+When multiple roles filters are applied to a query, the least restrictive filter takes precedence. That this rule doesn’t apply if any of the role filters applied to a query is simply blank, which effectively grants access to all data, and would be the least restrictive filter. If the combined search filters applied to a query includes filters that are blank, the blank search filter is ignored and the next least restrictive filter takes precedence. So, if you actually want to grant a role access to all data, set the search filter to an asterisk (`*`). A search filter that is configured in that fashion will take precedence when combined with more restrictive search filters.
 
 #### Example 1
 

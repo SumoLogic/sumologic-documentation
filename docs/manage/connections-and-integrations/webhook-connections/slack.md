@@ -2,6 +2,7 @@
 id: slack
 title: Webhook Connection for Slack
 sidebar_label: Slack
+description: Webhook Connections allow you to send alerts as a post to a Slack channel.
 ---
 
 You can send an alert from Sumo Logic as an HTTP POST request to a Slack channel. Learn more about Slack requirements for Webhooks in their [API Help](https://api.slack.com/incoming-webhooks).

@@ -1,6 +1,7 @@
 ---
 slug: /manage/content-sharing
 title: Content Sharing in Sumo Logic
+description: Content Sharing allows you to selectively share and collaborate on apps, dashboards, and searches with specific users or roles.
 ---
 
 import DocCardList from '@theme/DocCardList';
