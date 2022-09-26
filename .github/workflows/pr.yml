@@ -1,57 +1,48 @@
 name: Pull Request Checks
 
 on:
-  pull_request:
-    branches:
-      - main
+    pull_request:
+      branches:
+        - main
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-20.04
-    environment:
-      name: ${{ inputs.environment }}
-      url: ${{ inputs.hostname }}${{ inputs.base_url }}
-    env:
-      CI: true
-      NODE_ENV: production
-      AWS_PAGER: ""
-      HOSTNAME: ${{ inputs.hostname }}
-      BASE_URL: ${{ inputs.base_url }}
-      AWS_DEFAULT_REGION: us-east-1
-      AWS_EC2_METADATA_DISABLED: "true"
-    steps:
-      - uses: actions/checkout@v2.4.0
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '17.x'
-          cache: 'yarn'
-      - name: Install awscli
-        uses: unfor19/install-aws-cli-action@v1
-      - name: Install jq
-        run: sudo apt-get install jq
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-      - name: Build the Docusaurus site
-        env:
-          NODE_OPTIONS: "--max-old-space-size=8192"
-        run: yarn build
-  spellcheck:
-    runs-on: ubuntu-latest
-    steps:
+    build-and-deploy:
+      runs-on: ubuntu-20.04
+      environment:
+        name: ${{ inputs.environment }}
+        url: ${{ inputs.hostname }}${{ inputs.base_url }}
+      env:
+          CI: true
+          NODE_ENV: production
+          AWS_PAGER: ""
+          HOSTNAME: ${{ inputs.hostname }}
+          BASE_URL: ${{ inputs.base_url }}
+          AWS_DEFAULT_REGION: us-east-1
+          AWS_EC2_METADATA_DISABLED: "true"
+      steps:
+        - uses: actions/checkout@v2.4.0
+        - name: Set up Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: '17.x'
+            cache: 'yarn'
+        - name: Install awscli
+          uses: unfor19/install-aws-cli-action@v1
+        - name: Install jq
+          run: sudo apt-get install jq
+        - name: Install dependencies
+          run: yarn install --frozen-lockfile
+        - name: Build the Docusaurus site
+          env:
+            NODE_OPTIONS: "--max-old-space-size=8192"
+          run: yarn build
+    spellcheck:
+      runs-on: ubuntu-latest
+      steps:
       - uses: actions/checkout@v2
       - uses: codespell-project/actions-codespell@master
-      name: Check spelling
-      with:
-        skip: "*.svg,*.js,*.map,*.css,*.scss"
-        ignore_words_list: "aks,atleast,cros,fiel,ist,ot,pullrequest,ser,shttp"
-        path: docs
-  # Cypress.io end-to-end browser tests
-  cypress-run:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly, and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
+        name: Check spelling
+        with:
+          skip: "*.svg,*.js,*.map,*.css,*.scss"
+          ignore_words_list: "aks,atleast,cros,fiel,ist,ot,pullrequest,ser,shttp"
+          path: docs
