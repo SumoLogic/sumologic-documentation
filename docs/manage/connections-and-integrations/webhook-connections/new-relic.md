@@ -2,6 +2,7 @@
 id: new-relic
 title: Webhook Connection for New Relic
 sidebar_label: New Relic
+description: Send data from alerts to your New Relic account.
 ---
 
 New Relic webhook connections allow you to send alert results to New Relic as a custom event (Insight). You can learn more about the New Relic Insights custom events in their [API Help](https://docs.newrelic.com/docs/insights/explore-data/custom-events/insert-custom-events-insights-api).

@@ -216,7 +216,7 @@ For guidance creating your source category naming convention, see [Best Practice
 To configure a source, do the following:
 
 1. Configure a [Script Source](/docs/send-data/installed-collectors/sources/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
-To enable Script Sources you must set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector.
+To enable Script Sources you must set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 2. Configure the source fields:
     1. **Name**. (Required) BoxCollector. (Description is optional.)
     2. **Source Category**. (Required) box

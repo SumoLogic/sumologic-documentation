@@ -1,6 +1,7 @@
 ---
 id: archive
-title: Archive
+title: Archiving Log Data 
+description: Send data to an Archive that you can ingest from later.
 ---
 
 Archive allows you to forward log data from Installed Collectors to AWS S3 buckets to collect at a later time. If you have logs that you don't need to search immediately you can archive them for later use. You can ingest from your Archive on-demand with five-minute granularity.

@@ -2,6 +2,7 @@
 id: set-up-webhook-connections
 title: Set Up Webhook Connections
 sidebar_label: Setup
+description: Webhook connections allow you to send Sumo Logic alerts to third-party applications.
 ---
 
 A Webhook is an HTTP callback: an HTTP POST that occurs when something happens. Webhook connections allow you to send Sumo Logic alerts to

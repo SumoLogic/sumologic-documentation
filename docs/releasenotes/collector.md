@@ -9,8 +9,8 @@ Collector Release Notes for the current year are listed here. If you need to see
 
 You can upgrade [Installed Collectors](/docs/send-data/installed-collectors) in the following ways:
 
-* [Web Application](/docs/manage/collection/upgrade-collectors.md)
-* [Command Line](/docs/manage/collection/upgrade-collectors.md)
+* [Web Application](/docs/send-data/collection/upgrade-collectors.md)
+* [Command Line](/docs/send-data/collection/upgrade-collectors.md)
 * [Collector Management API](/docs/api/collectors#Upgrade-or-Downgrade-Collectors-Using-the-API)
 
 :::note
@@ -68,3 +68,4 @@ Bundled JRE version upgraded to 8.322.06.2.
 * Bug fix: Log4j vulnerability in RPM and Debian packages.
 * Bug fix: Windows Active Directory Source has more default attributes.
 * Bug fix: Security fix for Script Source.
+ 

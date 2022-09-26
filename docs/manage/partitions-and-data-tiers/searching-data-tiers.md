@@ -1,6 +1,7 @@
 ---
 id: searching-data-tiers
 title: Searching Data Tiers
+description: Learn how to search specific Data Tiers.
 ---
 
 This page has information about how to search different Data Tiers, and when you should use `_dataTier`, a *search modifier* that restricts your search to a single tier. 
@@ -45,7 +46,7 @@ The `_dataTier` search modifier is not supported in:
 * Logs-to-Metrics rules
 * In scheduled searches, setting `_dataTier` to All, Frequent, or Infrequent is not supported.
 
-In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field](../fields.md) or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
+In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field](docs/manage/fields.md) or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
 
 ## Best practices
 

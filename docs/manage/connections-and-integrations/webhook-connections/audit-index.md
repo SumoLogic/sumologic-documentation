@@ -1,7 +1,8 @@
 ---
-id: use-the-audit-index-with-webhook-connections
+id: audit-index
 title: Use the Audit Index with Webhook Connections
 sidebar_label: Using the Audit Index
+description: If the Sumo Logic Audit Index is enabled you can keep an eye on scheduled searches that send results via Webhook.
 ---
 
 The [Audit Index](../../security/audit-index.md) provides event logs for scheduled search activity, including results sent via a webhook connection. The following steps show you how to query the Audit Index for webhook activity from scheduled searches. You can review the raw event log messages to customize a more valuable query as needed.

@@ -2,10 +2,9 @@
 id: admin-mode
 title: Admin Mode for Content Administrators
 sidebar_label: Admin Mode
+description: Admin mode allows you to control the content for your organization and to put important items in the Admin Recommended folder.
 ---
 
-
-## Admin Mode for Content Administrators
 
 As a Content Administrator, you can assume a super user role within Sumo. When you need to manage the content for your organization, you can choose the Content Administrator role which will turn off your personal content in the Library and allow you to see the entire Sumo file tree.  In this mode you can migrate content from one location to another, as well as highlight important content in the Admin Recommended folder. 
 

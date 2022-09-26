@@ -1,6 +1,7 @@
 ---
 id: scheduled-views-best-practices
 title: Scheduled Views Best Practices and Examples
+description: A Scheduled View is a query that runs on a schedule. This topic has some tips for setting up Scheduled View queries.
 ---
 
 A Scheduled View reduces aggregate data down to the bare minimum, so they contain only the results that you need to generate your data. Queries that run against Scheduled Views return search results much faster because the data is pre-aggregated before the query is run. Scheduled Views process queries once per minute.

@@ -2,6 +2,7 @@
 id: microsoft-azure-functions
 title: Webhook Connection for Microsoft Azure Functions
 sidebar_label: Microsoft Azure Functions
+description: You can trigger an Azure Function directly from a Sumo Logic alert by configuring a webhook connection.
 ---
 
 You can trigger an Azure Function directly from a Sumo Logic alert by configuring a webhook connection. Once you set up the webhook connection you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor](/docs/alerts/monitors).

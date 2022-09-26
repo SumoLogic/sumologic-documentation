@@ -2,6 +2,7 @@
 id: schedule-searches-for-webhook-connections
 title: Schedule Searches for Webhook Connections
 sidebar_label: Schedule Searches
+description: Create a Scheduled Search to send alerts to a third-party tool via Webhook Connections.
 ---
 
 Scheduled searches are saved searches that run automatically at specified intervals. When a scheduled search is configured to send an alert, it can be sent to another tool using a Webhook Connection.

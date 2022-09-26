@@ -1,6 +1,7 @@
 ---
 slug: /manage/connections-and-integrations/webhook-connections
 title: Webhook Connections
+description: Webhook connections send alerts to third-party applications.
 ---
 
 Webhook connections send alerts to third-party applications.

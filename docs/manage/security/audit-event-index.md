@@ -65,7 +65,7 @@ _index=sumologic_audit_``events _sourceCategory=accessKeys
 | [Content Sharing](/docs/manage/content-sharing) | `content` |
 | [Data Forwarding](/docs/manage/data-forwarding) | `dataForwarding` |
 | [Field Extractions](/docs/manage/field-extractions) | `fieldExtractionRules` |
-| [Fields](../fields.md) | `fieldManagement` |
+| [Fields](docs/manage/fields.md) | `fieldManagement` |
 | [Ingest Budgets](/docs/manage/ingestion-and-volume/ingest-budgets) | `ingestBudgets` |
 | [Installation Tokens](installation-tokens.md) | `token` |
 | [Logs-to-Metrics Rules](../../metrics/logs-to-metrics.md) | `metricExtractionRule` |
@@ -140,4 +140,4 @@ Each audit event log has common keys that categorize it to a product area and pr
 
 ## Index retention period
 
-By default, the retention period of the Audit Event index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Edit a Partition](../partitions-and-data-tiers/edit-partition.md).
+By default, the retention period of the Audit Event index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Edit a Partition](../partitions-and-data-tiers/create-edit-partition.md).

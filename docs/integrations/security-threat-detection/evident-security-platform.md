@@ -212,7 +212,7 @@ This page demonstrates how to configure log collection for the Evident.io ESP Ap
 3. In the **Advanced** section, configure:
     3. **Enable Timestamp Parsing. **Activate the check box Extract timestamp information from log files.
     4. **Time Zone.** Select Ignore time zone from log file, and select (UTC) Etc/UTC
-4. **Processing Rules.** Create the following [Mask Rule](/docs/manage/collection/processing-rules/Mask-Rules): \
+4. **Processing Rules.** Create the following [Mask Rule](/docs/send-data/collection/processing-rules/Mask-Rules): \
 
     5. **Name.** Enable proper timestamp parsing
     6. **Filter. **Enter `\"(?:created_at|updated_at|ended_at)\":\"\d+-\d+-\d+(T)\d+:\d+:\d+.\d+Z\"`

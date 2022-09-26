@@ -2,6 +2,7 @@
 id: jira-service-desk
 title: Webhook Connection for Jira Service Desk
 sidebar_label: Jira Service Desk
+description: Create Jira issues in Jira Service Desk from alerts.
 ---
 
 You can send JSON payloads from Sumo Logic alerts as an HTTP POST request to create Jira issues in Jira Service Desk. Learn more about the REST API in their [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/).

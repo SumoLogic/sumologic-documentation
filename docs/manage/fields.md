@@ -2,6 +2,7 @@
 id: fields
 title: Sumo Logic Fields
 sidebar_label: Fields
+description: Learn how to define and manage the assignment of metadata to your logs.
 ---
 
 

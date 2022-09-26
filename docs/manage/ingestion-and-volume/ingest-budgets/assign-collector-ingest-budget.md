@@ -1,6 +1,7 @@
 ---
 id: assign-collector-ingest-budget
 title: Assign Collector to Ingest Budget
+description: Learn how to assign a Collector to an ingest budget.
 ---
 
 
@@ -36,7 +37,7 @@ Select the ingest budget you want to assign to the Collector and click **Save**.
 
 ### Limited role capability
 
-If you do not have the **Manage Ingest Budgets** [role capability](../../users-and-roles/roles/role-capabilities.md) but have the **Manage Collectors** capability on its own you can assign a Collector to an Ingest Budget by manually adding the field **`_budget`** with the **Field Value** from the desired Ingest Budget into the [Fields](../../fields.md) property. For example, if you have a budget with a Field Value of **Dev_20GB**, you would add: 
+If you do not have the **Manage Ingest Budgets** [role capability](../../users-and-roles/roles/role-capabilities.md) but have the **Manage Collectors** capability on its own you can assign a Collector to an Ingest Budget by manually adding the field **`_budget`** with the **Field Value** from the desired Ingest Budget into the [Fields](docs/manage/fields.md) property. For example, if you have a budget with a Field Value of **Dev_20GB**, you would add: 
 
 ![Manual budget field.png](/img/ingestion-and-volume/Manual-budget-field.png)
 

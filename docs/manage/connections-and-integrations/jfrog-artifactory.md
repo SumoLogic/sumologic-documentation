@@ -1,7 +1,8 @@
 ---
-id: jfrog-artifactory-sumo-logic-integration
+id: jfrog-artifactory
 title: JFrog Artifactory Online Sumo Logic Integration
 sidebar_label: JFrog Artifactory
+description: The JFrog Artifactory Sumo Logic integration provides the ability to access preconfigured Sumo Logic Dashboards directly from Artifactory that will allow you to analyze data from your Artifactory logs.
 ---
 
 :::important

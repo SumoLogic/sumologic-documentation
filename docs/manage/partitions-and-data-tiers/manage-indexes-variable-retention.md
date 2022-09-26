@@ -1,6 +1,7 @@
 ---
 id: manage-indexes-variable-retention
 title: Manage Indexes with Variable Retention
+description: With Multi-retention, you can create Index Partitions and Scheduled Views to store your data as needed, and set different retention periods for Partitions and Scheduled Views.
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 id: offboard-user
 title: Offboard a User
+description: Steps to take when removing a user from your organization's Sumo Logic account.
 ---
 
 

@@ -1,6 +1,7 @@
 ---
-id: upgrade-your-cloud-flex-account
+id: upgrade-cloud-flex-account
 title: Upgrade Your Cloud Flex Account
+description: Learn how to upgrade your Sumo Logic account.
 ---
 
 
