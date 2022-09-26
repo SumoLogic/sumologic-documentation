@@ -32,4 +32,4 @@ Refer to the [OpenTelemetry collector attributes processor documentation](https:
 
 You can insert dynamically-created custom tags in your code by calling the appropriate functions of OpenTelemetry auto-instrumentation.
 
-See how to pass [custom tags](../get-started-transaction-tracing/opentelemetry-instrumentation/java/custom-tags-configuration.md) for Java auto-instrumentation.
+See how to pass [custom tags](../get-started-transaction-tracing/opentelemetry-instrumentation/java/custom-tags-configuration.md) for Java auto-instrumentation. 
