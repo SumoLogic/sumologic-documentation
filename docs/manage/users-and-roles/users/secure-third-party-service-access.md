@@ -1,9 +1,9 @@
 ---
 id: secure-third-party-service-access
 title: Verification for Secure Third-Party Service Access
+description: Within Sumo Logic, several links in the Help menu connect to third-party services, such as Documentation, Support, Feature Request, and Community and you need to verify your account before using them.
 ---
 
-#
 
 Within Sumo Logic, several links in the **Help** menu connect to third-party services, such as **Documentation**, **Support**, **Feature Request**, and **Community**.
 

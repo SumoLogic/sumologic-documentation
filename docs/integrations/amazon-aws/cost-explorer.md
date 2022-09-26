@@ -56,11 +56,11 @@ When you create an AWS Cost Explorer collector Source, you add it to an existing
 
 ### Field-in-Field Schema
 
-Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the **account** and **linkedaccount** field. If not present, create it. Learn how to create and manage fields [here](/docs/Manage/Fields#manage-fields).
+Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the **account** and **linkedaccount** field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
 
 ### Field Extraction Rules
-Create a Field Extraction Rule (FER) for AWS Cost Explorer Logs. Learn how to create a Field Extraction Rule [here](/docs/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
+Create a Field Extraction Rule (FER) for AWS Cost Explorer Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/Field-Extractions/create-field-extraction-rule).
 
 * **Rule Name: **AWSCostExplorerFER
 * **Applied at: **Ingest Time
@@ -84,8 +84,8 @@ json "LinkedAccount"
 1. On the **Manage Data > Collection > Collection** page, click **Add Source** next to a **Hosted **Collector.
 2. Select **AWS Cost Explorer**. <br/> ![aws-cost-explorer-icon.png](/img/send-data/aws-cost-explorer-icon.png)
 3. Enter a **Name** for the Source in the Sumo Logic console. The **Description** is optional.<br/>  ![awsCostExplorer-input.png](/img/integrations/amazon-aws/cost-explorer-v2-1-1.png)
-4. For **Source Category** (Optional), enter any string to tag the output collected from the Source. Category [metadata](/docs/Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) is stored in a searchable field called `_sourceCategory`.
-5. For [Fields](/docs/Manage/Fields), click the **+Add** link to add custom log metadata. Define the fields you want to associate, each field needs a name (key) and value.
+4. For **Source Category** (Optional), enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
+5. For [Fields](/docs/manage/fields), click the **+Add** link to add custom log metadata. Define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema or is disabled it is ignored, known as dropped.<br/><br/>It is preferable to add an **account** field (for the dashboards) and assign it a friendly name to identify the corresponding AWS account.<br/> ![accountField.png](/img/send-data/accountField.png)
 6. For the **AWS Access Key** and **AWS Secret Key**, provide the IAM User access key and secret key you want to use to authenticate collection requests.
@@ -118,7 +118,7 @@ Make sure your IAM user has the following IAM policy attached with it.
 9. For **Granularity**, provide 2 supported granularities for each of the MetricTypes (or cost types):
     * Daily Costs (Polled every 12h)
     * Monthly Costs (Polled every day)
-10. Add **[Processing Rules](/docs/Manage/Collection/Processing-Rules)**.
+10. Add **[Processing Rules](/docs/send-data/collection/Processing-Rules)**.
 11. Click **Submit** when complete.
 
 It can take up to 48 hours for AWS to generate your billing data. For accuracy, Sumo Logic does not present any billing analysis for the previous 48-60 hours.
@@ -126,7 +126,7 @@ It can take up to 48 hours for AWS to generate your billing data. For accuracy, 
 
 ### States
 
-The AWS Cost Explorer Source reports errors, its health, and initialization status. Other than indicating that the source is healthy, you are also informed, in real-time, if the source is running into trouble communicating with AWS API, or if there's an error that requires user action indicated by [Sumo Logic Health Events](/docs/Manage/Health-Events).
+The AWS Cost Explorer Source reports errors, its health, and initialization status. Other than indicating that the source is healthy, you are also informed, in real-time, if the source is running into trouble communicating with AWS API, or if there's an error that requires user action indicated by [Sumo Logic Health Events](/docs/manage/Health-Events).
 
 An AWS Cost Explorer Source goes through the following states when created:
 
@@ -146,12 +146,12 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 When you delete the source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
 
-On the Collection page, the [Health](/docs/Manage/Health-Events#Collection-page) and Status for Sources is displayed. Use [Health Events](/docs/Manage/Health-Events) to investigate issues with collection.
+On the Collection page, the [Health](/docs/manage/Health-Events#Collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection.
 
 
 ### Error types
 
-When Sumo Logic detects an issue it is tracked by [Health Events](/docs/Manage/Health-Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/Health-Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 <table><small>
   <tr>

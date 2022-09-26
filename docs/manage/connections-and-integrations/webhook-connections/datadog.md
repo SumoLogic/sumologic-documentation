@@ -2,6 +2,7 @@
 id: datadog
 title: Webhook Connection for Datadog
 sidebar_label: Datadog
+description: Datadog webhook connections allow you to alert and connect to your Datadog services from Sumo Logic alert results.
 ---
 
 Once you set up a webhook connection you can send a Sumo Logic alert to your Datadog account. For information on how to build your webhook

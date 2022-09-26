@@ -1,9 +1,10 @@
 ---
 id: aws-s3-usage-logs
 title: AWS S3 Usage Logs
+description: Parse the common fields in your AWS S3 Usage Logs using the FER template.
 ---
 
-#
+
 
 **Log Type**: AWS S3 Usage
 

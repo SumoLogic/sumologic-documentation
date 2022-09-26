@@ -1,6 +1,7 @@
 ---
 id: view-partition-details
 title: View Details About a Partition
+description: Learn how to view details about a Sumo Logic partition.
 ---
 
 To view details about a Partition:

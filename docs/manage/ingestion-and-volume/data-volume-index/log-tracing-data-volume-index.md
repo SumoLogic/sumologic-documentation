@@ -1,6 +1,7 @@
 ---
 id: log-tracing-data-volume-index
 title: Log and Tracing Data Volume Index
+description: The Data Volume Index is populated with a set of log messages that contain information on how much data (by bytes and messages count) your account is ingesting.
 ---
 
 
@@ -21,7 +22,7 @@ The data volume index is populated with a set of log messages every five minutes
 | SourceHost         | sourcehost_volume              |
 | View               | view_volume                    |
 
-You can query the data volume index just like any other message using the Sumo Logic search page. To see the data created within the data volume index, when you search, specify the **\_index** metadata field with a value of **sumologic_volume**. For more information, see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
+You can query the data volume index just like any other message using the Sumo Logic search page. To see the data created within the data volume index, when you search, specify the `_index` metadata field with a value of `sumologic_volume`. For more information, see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
 
 ## Sumo Logic App for Data Volume
 
@@ -29,7 +30,7 @@ Sumo Logic provides an application that utilizes the data volume index to see y
 
 ## Known Issue
 
-There is a known issue when searching against \_sourceCategory values where scheduled views show up blank. This causes results to be returned with numbers as the \_sourceCategory values.
+There is a known issue when searching against _sourceCategory values where scheduled views show up blank. This causes results to be returned with numbers as the _sourceCategory values.
 
 For example, you would see:
 
@@ -38,11 +39,11 @@ For example, you would see:
 "count":353325
 ```
 
-In this case, the \_sourceCategory returns `2862`, which is the actual size of the default index from the scheduled view.
+In this case, the _sourceCategory returns `2862`, which is the actual size of the default index from the scheduled view.
 
 ## Query the Data Volume Index
 
-1. In the Search page, enter the query **\_index=sumologic_volume**.
+1. In the Search page, enter the query **`_index=sumologic_volume`**.
 
     :::important
     Make sure to enter the query exactly as shown to search against this specific source.
@@ -51,7 +52,7 @@ In this case, the \_sourceCategory returns `2862`, which is the actual size o
 1. Choose the time range for the data that you'd like to review.
 1. Click **Start** to run the search. Results return in the **Messages** tab.
 
-To further limit the search results to the data volume index data for a specific volume category, you can supply the index source category using the **\_sourceCategory** metadata and one of the index source categories from the previous table. For example:
+To further limit the search results to the data volume index data for a specific volume category, you can supply the index source category using the `_sourceCategory` metadata and one of the index source categories from the previous table. For example:
 
 ```sql
 _index=sumologic_volume AND _sourceCategory=collector_and_tier_volume
@@ -245,7 +246,7 @@ _index=sumologic_volume _sourceCategory="collector_tracing_volume"
 
 #### Query for tracing ingestion outliers
 
-This query runs against the tracing volume index and uses the [*outlier*](../../../search/search-query-language/search-operators/outlier.md) operator to find timeslices in which your tracing ingestion in billed bytes or span count was greater than the running average by a statistically significant amount.
+This query runs against the tracing volume index and uses the [*outlier*](../../../search/search-query-language/operators#outlier) operator to find timeslices in which your tracing ingestion in billed bytes or span count was greater than the running average by a statistically significant amount.
 
 ```sql
 _index=sumologic_volume _sourcecategory=sourcecategory_tracing_volume
@@ -259,7 +260,7 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 #### Query for tracing ingestion prediction 
 
-This query runs against the tracing volume index and uses the [*predict*](../../../search/search-query-language/search-operators/predict.md) operator to predict future values.
+This query runs against the tracing volume index and uses the [*predict*](../../../search/search-query-language/operators#predict) operator to predict future values.
 
 ```
 _index=sumologic_volume _sourcecategory=sourcecategory_tracing_volume
@@ -274,4 +275,4 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 ### Index retention period
 
-By default, the retention period of the Data Volume index is the same as the retention period of your Default Partition. You can change the retention period by editing the partition that contains the index, `sumologic_volume`. For more information, see [Edit a Partition](../../partitions-and-data-tiers/edit-partition.md).
+By default, the retention period of the Data Volume index is the same as the retention period of your Default Partition. You can change the retention period by editing the partition that contains the index, `sumologic_volume`. For more information, see [Edit a Partition](../../partitions-and-data-tiers/create-edit-partition.md).

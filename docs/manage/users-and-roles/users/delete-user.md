@@ -1,9 +1,9 @@
 ---
 id: delete-user
 title: Delete a User
+description: Deleting a user permanently removes the user and certain content types.
 ---
 
-#
 
 Deleting a user permanently removes the user. When you delete a user, you can select a Sumo Logic user account to which to transfer the deleted user’s content, including folders, searches, scheduled searches, scheduled views, monitors, and dashboards. If you don't want to transfer the content to another user, you can choose to delete it along with the user account.
 

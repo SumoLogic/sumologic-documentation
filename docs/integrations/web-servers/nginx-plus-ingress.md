@@ -66,7 +66,7 @@ In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You ca
 
 ### Field Extraction Rules
 
-Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
+Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule).
 
 Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx Plus error log file format for error logs.
 
@@ -281,7 +281,7 @@ Use this dashboard to:
 The **Nginx Plus Ingress - Visitor Access Types** dashboard provides insights into visitor platform types, browsers, and operating systems, as well as the most popular mobile devices, PC and Mac versions used.
 
 Use this dashboard to:
-* Understand which platform and browsers are used to gain access to your infrastructure. \
+* Understand which platform and browsers are used to gain access to your infrastructure.
 These insights can be useful for planning in which browsers, platforms, and operating systems (OS) should be supported by different software services.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Visitor-Access-Types.png')} alt="Nginx Plus Ingress" />
@@ -385,7 +385,7 @@ Use this dashboard to:
 
 ## Nginx Plus Ingress Alerts
 
-Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Nginx server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Nginx server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 **Sumo Logic provides the following out-of-the-box alerts**:
 

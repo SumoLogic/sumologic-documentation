@@ -16,7 +16,7 @@ The Merge operator reduces a stream of events to a single event using a specifie
 
 * `merge`  
 
-    Merge [\_raw](/docs/search/get-started-with-search/search-basics/built-in-metadata) values and separate them with newlines. Adds a Time field containing the earliest timestamp.
+    Merge [_raw](/docs/search/get-started-with-search/search-basics/built-in-metadata) values and separate them with newlines. Adds a Time field containing the earliest timestamp.
 
 * `merge <field> `   
 
@@ -32,7 +32,7 @@ The Merge operator reduces a stream of events to a single event using a specifie
 
 ## Limitation
 
-* The [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field \_messageTime can only use strategies takeFirst and takeLast.
+* The [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field _messageTime can only use strategies takeFirst and takeLast.
 
 ## Examples
 

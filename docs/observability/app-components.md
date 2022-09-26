@@ -17,9 +17,9 @@ These instructions help you prepare and set up the Application Components Soluti
 The Terraform script performs the following actions:
 
 * Creates Application Components View hierarchy in Explore.
-* Sets up Sumo Logic Field Extraction Rules ([FERs](https://help.sumologic.com/Manage/Field-Extractions)) to enrich the data.
+* Sets up Sumo Logic Field Extraction Rules ([FERs](https://help.sumologic.com/manage/Field-Extractions)) to enrich the data.
 * Installs Sumo Logic Apps(Database apps and App Components app) in the Admin recommended folder.
-* Creates [Fields](https://help.sumologic.com/Manage/Fields).
+* Creates [Fields](https://help.sumologic.com/manage/fields).
 * Installs Monitors for each of the selected databases.
 
 
@@ -38,7 +38,7 @@ For this setup, complete the following steps:
    * Manage Fields
    * Manage connections
    * Manage Content
-2. Using these [instructions](https://help.sumologic.com/Manage/Security/Access-Keys#manage-your-access-keys-on-preferences-page), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. Please identify which deployment your Sumo Logic account is in using this[ link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+2. Using these [instructions](https://help.sumologic.com/manage/Security/Access-Keys#manage-your-access-keys-on-preferences-page), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. Please identify which deployment your Sumo Logic account is in using this[ link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 3. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 
@@ -83,15 +83,15 @@ $ terraform --version
   <tr>
    <td>sumologic_access_id
    </td>
-   <td><a href="https://help.sumologic.com/Manage/Security/Access-Keys">Sumo Logic Access ID</a>
-<p>Sumo Logic Access ID. See <a href="https://help.sumologic.com/Manage/Security/Access-Keys#Create_an_access_key">Create an access key</a> in the <em>Access Keys</em> topic for more information.</p>
+   <td><a href="https://help.sumologic.com/manage/Security/Access-Keys">Sumo Logic Access ID</a>
+<p>Sumo Logic Access ID. See <a href="https://help.sumologic.com/manage/Security/Access-Keys#Create_an_access_key">Create an access key</a> in the <em>Access Keys</em> topic for more information.</p>
    </td>
   </tr>
   <tr>
    <td>sumologic_access_key
    </td>
-   <td><a href="https://help.sumologic.com/Manage/Security/Access-Keys">Sumo Logic Access Key</a>
-<p>Sumo Logic Access Key used for Sumo Logic API calls. See <a href="https://help.sumologic.com/Manage/Security/Access-Keys">Sumo Logic Access Key</a> for more information.</p>
+   <td><a href="https://help.sumologic.com/manage/Security/Access-Keys">Sumo Logic Access Key</a>
+<p>Sumo Logic Access Key used for Sumo Logic API calls. See <a href="https://help.sumologic.com/manage/Security/Access-Keys">Sumo Logic Access Key</a> for more information.</p>
    </td>
   </tr>
   <tr>
@@ -128,7 +128,7 @@ If you would like the alerts to send email or connection notifications, configur
 
 #### Configuring Email and Connection Notification Configuration Examples
 
-To **configure notifications**, modify the file `postgresql_notifications.auto.tfvars` file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See this [document](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections) for creating payloads with other connection types.
+To **configure notifications**, modify the file `postgresql_notifications.auto.tfvars` file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See this [document](https://help.sumologic.com/manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections) for creating payloads with other connection types.
 
 
 #### Pagerduty Connection Example
@@ -221,7 +221,7 @@ Navigate to the directory **sumologic-solution-templates/app-component-observabi
 
 ### Configure Fields in Sumo Logic
 
-Create the following Fields in collection sources both for logs and metrics. This ensures that your logs and metrics are tagged with relevant metadata, which the app dashboards require. For information on setting up Fields, see the [Fields](https://help.sumologic.com/Manage/Fields) topic.
+Create the following Fields in collection sources both for logs and metrics. This ensures that your logs and metrics are tagged with relevant metadata, which the app dashboards require. For information on setting up Fields, see the [Fields](https://help.sumologic.com/manage/fields) topic.
 
 * `component`
 * `environment`

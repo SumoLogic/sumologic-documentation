@@ -112,10 +112,7 @@ Use the copied script in your page head inside the `<head>` `</head>` tags. 
 <TabItem value="synchronous">
 
 ```javascript
-<script
-  src="https://rum.sumologic.com/sumologic-rum-v3.js"
-  type="text/javascript"
-</script>
+<script src="https://rum.sumologic.com/sumologic-rum-v3.js" type="text/javascript"></script>
 <script>
   window.sumoLogicOpenTelemetryRum &&
     window.sumoLogicOpenTelemetryRum.initialize({

@@ -1,6 +1,7 @@
 ---
 slug: /manage/ingestion-and-volume/data-volume-index
 title: Data Volume Index
+description: Provides data that helps Admins understand data ingest volume in bytes and number of log messages processed overall.
 ---
 
 

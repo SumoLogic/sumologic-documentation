@@ -1,6 +1,7 @@
 ---
 id: run-search-against-scheduled-view
 title: Run a Search Against a Scheduled View
+description: Learn how to run a search against  indexed data in a Scheduled View.
 ---
 
 

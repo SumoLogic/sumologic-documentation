@@ -10,7 +10,7 @@ A Scheduled Search may fail and be suspended for several reasons falling into th
 
 Failures could be related to the Scheduled Search query. Check the following possible issues. 
 
-* In queries that use [lookup](../../../search/search-query-language/search-operators/lookup-classic.md) files, the lookup file could be empty. This would cause the Scheduled Search to fail because Sumo Logic downloads the lookup file prior to executing the query. 
+* In queries that use [lookup](/docs/search/search-query-language/operators#lookup-classic) files, the lookup file could be empty. This would cause the Scheduled Search to fail because Sumo Logic downloads the lookup file prior to executing the query. 
 * Other query-specific factors could be at play. To test if the failure can be reproduced, run the Scheduled Search query. 
 * To make sure your query is written correctly, see [Write Efficient Search Queries](/docs/search/get-started-with-search/build-search). 
 * You may be able to optimize your query performance using [Partitions](/docs/manage/partitions-and-data-tiers) or [Scheduled Views](/docs/manage/scheduled-views).  

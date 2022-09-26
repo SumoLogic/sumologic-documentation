@@ -157,9 +157,9 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
+        <h1 className="hero__title">{siteConfig.title} <span className="beta-static">Beta</span></h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <p>We are an open-source community of data analytics users. Contributions are welcome!</p>
+        <p>We're a developer/practitioner community building reliable and secure modern apps. Contributions welcome!</p>
         <div className={styles.buttons}>
         </div>
       </div>

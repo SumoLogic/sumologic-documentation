@@ -9,10 +9,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/app-development/GitHub.png')} alt="Thumbnail icon" width="100"/>
 
-The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level, and ingests GitHub events via a webhook. These events populate the pre-configured Dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
+The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level, and ingests GitHub events through a webhook. These events populate the pre-configured Dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
 
-The Sumo App for GitHub supports GitHub.com, not GitHub Enterprise.
+:::note
+The Sumo App for GitHub supports GitHub.com, GitHub Advanced Analytics, not GitHub Enterprise.
+:::
 
+This app includes dashbaords for GHAS, but to be able to ingest GHAS events you must have a separate GHAS license.
 
 ## Event Types
 
@@ -27,7 +30,15 @@ The Sumo Logic App for GitHub ingests GitHub events via a webhook. Sumo Logic in
 * Repository
 * Team_add
 
-For information on GitHub events, refer to [GitHub documentation](https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/about-webhooks#events). For troubleshooting, see [GitHub Troubleshooting](#Troubleshooting).
+For the GitHub Advanced Security dashboards Sumo Logic App for GitHub uses these types events, but not limited to:
+
+* Code Scanning Alerts
+* Pushes 
+* Secret Scanning Alerts
+* Security and analyses
+* Repository Vulnerability alerts.
+
+For information on GitHub events, see the [GitHub documentation](https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/about-webhooks#events). 
 
 :::tip
 If you're just getting started with GitHub Events, see the Sumo Logic DevOps blog, "[A Beginner's Guide to GitHub Events](https://www.sumologic.com/blog/a-beginners-guide-to-github-events/)."
@@ -101,8 +112,6 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 
 
 ## Collecting Logs for GitHub
-
-This procedure explains how to collect logs from GitHub.
 
 The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level and ingests GitHub events via a webhook. These events populate the preconfigured dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
 
@@ -245,3 +254,54 @@ Use this dashboard to:
 * Identify any harmful file types added by users.
 
 <img src={useBaseUrl('img/integrations/app-development/Github-User-Activity.png')} alt="GitHub-Overview" />
+
+### GHAS - Advanced Security Overview
+
+The **GHAS - Advanced Security Overview** dashboard provides an overview of GHAS metrics across Dependabot, secret scanning, and code scanning alerts.
+
+Use this dashboard to:
+
+* Monitor open alerts 
+* Monitor alerts by severity 
+* Review recently closed alerts
+ 
+<img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Advanced-Security-Overview.png" />
+
+### GHAS - Secret Scanning Alerts 
+
+**Use this dashboard to:**
+
+* Monitor MTTR
+* Quantify secrets found and fixed
+* Check secrets by type and repository
+* Compare secrets and found to secrets in fixed ratios
+
+<img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Secret-Scanning-Alerts.png"/>
+
+###GHAS - Code Scanning Alerts 
+
+The **GHAS - Code Scanning Alerts** dashboard provides a granular overview of the code scanning alerts.
+
+Use this dashboard to display: 
+ 
+* Mean Time to Resolution (average aggregate resolution time) 
+* Alerts created, fixed, and reopened 
+* Alerts found/fixed ratio 
+* Commit/alert ratio 
+* Alerts by tool, severity, or repo 
+
+<img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Code-Scanning-Alerts.png" />
+
+### GHAS - Dependabot Alerts 
+
+The **GHAS - Code Scanning Alerts** dashboard provides a granular overview of the Dependabot alerts 
+
+**Use this dashboard to display:**
+
+* Mean Time to Resolution (average aggregate resolution time)
+* Alerts created, fixed, and dismissed 
+* Alerts found/fixed ratio 
+* Vulnerabilities by repo 
+* New alerts by repo 
+ 
+<img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Dependabot-Alerts.png" /> 

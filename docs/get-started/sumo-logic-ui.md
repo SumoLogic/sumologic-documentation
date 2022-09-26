@@ -22,7 +22,7 @@ The **Left Nav Bar** provides easy access to libraries, personal collections of
 
 ### Search and switch browsing modes
 
-The top of the **Left Nav Bar** is where you can search for content and
+The top of the **left nav bar** is where you can search for content and
 users and easily switch browsing modes. 
 
 * Searching—Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
@@ -30,9 +30,9 @@ users and easily switch browsing modes. 
 
 ![TUI_Search_Details.png](/img/get-started/ui/TUI_Search_Details.png)
 
-### Hide and show the Left Nav Bar
+### Hide and show the left nav bar
 
-You can easily hide the **Left Nav Bar** to enlarge the working area. Then, just as easily show it again.
+You can easily hide the **left nav bar** to enlarge the working area. Then, just as easily show it again.
 
 * To hide the Left Nav Bar, click the **Arrow** in the top right corner.
 
@@ -44,7 +44,7 @@ You can easily hide the **Left Nav Bar** to enlarge the working area. Then, ju
 
 ### Access Apps, Admin features, and Help
 
-In the lower section of the Left Nav Bar, you can access the [App Catalog](sumo-logic-apps.md), [Manage Data and Administration](/docs/manage) features, and [get help](#get-help-docs-community-and-more). 
+In the lower section of the left nav bar, you can access the [App Catalog](sumo-logic-apps.md), [Manage Data and Administration](/docs/manage) features, and [get help](#get-help-docs-community-and-more). 
 
 ![TUI_App-Admin-Help.png](/img/get-started/ui/TUI_App-Admin-Help.png)
 
@@ -158,11 +158,11 @@ Click the **Home** icon at the far left of the Tab menu bar to return to the Ho
 
 ### View Favorites and add dashboards and searches to the list
 
-You can create a list of favorite dashboards and searches that appear in the Left Nav Bar. Your Favorites list makes it easy to access your most frequently used dashboards and searches.
+You can create a list of favorite dashboards and searches that appear in the left nav bar. Your Favorites list makes it easy to access your most frequently used dashboards and searches.
 
 To view Favorites and add to the list, do the following:
 
-1. To view a list of current Favorites, click the **Star** icon at the top of the Left Nav Bar. A list of Favorites is shown below.
+1. To view a list of current Favorites, click the **Star** icon at the top of the left nav bar. A list of Favorites is shown below.
 
     ![WTS_UI_View_list-of-Favorites.png](/img/get-started/ui/WTS_UI_View_list-of-Favorites.png)
 
@@ -186,10 +186,10 @@ The dashboard and search appear in the Favorites list in the Left Nav Bar.
 
 You can share dashboards, searches, and folders with users and roles. You can edit the sharing permissions at any time and share or revoke permissions as needed. You can share content from the following locations:
 
-* **Left Nav Bar.** Recommended when you are familiar with the content and need to quickly share with another user.
+* **left nav bar.** Recommended when you are familiar with the content and need to quickly share with another user.
 * **Library.** Recommended when you need a detailed view of the content, who created it, and when it was last modified.
 
-For walkthrough instructions, go to the [Share Content](docs/manage/content-sharing/share-content.md) page. 
+For walkthrough instructions, go to the [Share Content](/docs/manage/content-sharing) page. 
 
 ### View content that is shared with you
 
@@ -197,7 +197,7 @@ It's easy to view dashboards, searches, and folders that have been shared with y
 
 To see content that has been shared with you, do the following:
 
-1. Click the **Clock** icon at the top of the Left Nav Bar.
+1. Click the **Clock** icon at the top of the left nav bar.
 1. Toggle between **Recently Opened By Me** or **Recently Shared With Me**.
 
 ![Dash3.png](/img/get-started/ui/Dash3.png)
@@ -206,7 +206,7 @@ To see content that has been shared with you, do the following:
 
 After you start a search, you can “pin” it, and it will run in the background for up to 24 hours. If the search does not finish in that time frame, it is paused. You can restart the search at any time. Search results are available for three days.
 
-There is a limit of ten pinned searches per user. Also, queries that use the [save operator](docs/search/search-query-language/search-operators/save-lookups-classic.md) cannot be pinned.
+There is a limit of ten pinned searches per user. Also, queries that use the [save operator](docs/search/search-query-language/operators#save-lookups-classic) cannot be pinned.
 
 You must start a search for the Pin option to appear. Once a search is pinned, it cannot be unpinned, but it can be removed from the Pinned Searches tab.
 
@@ -267,7 +267,7 @@ Sumo Logic Administrators (Admins) are responsible for managing data collectio
 
 To manage data in Sumo Logic, do the following:
 
-1. Go to the **Left Nav Bar** and click **Manage Data**.
+1. Go to the **left nav bar** and click **Manage Data**.
 
     ![manage-data.png](/img/get-started/ui/manage-data.png)
 
@@ -284,7 +284,7 @@ Sumo Logic administrators (admins) manage user accounts, user roles, and securi
 
 To administer Sumo Logic accounts, users, and security, do the following:
 
-1. Go to the **Left Nav Bar** and click **Administration**.
+1. Go to the **left nav bar** and click **Administration**.
 
 ![WTS_UI_Administration_menu-options.png](/img/get-started/ui/WTS_UI_Administration_menu-options.png)
 

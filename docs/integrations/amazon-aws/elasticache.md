@@ -139,7 +139,7 @@ Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the “**cach
 
 ### Field Extraction Rule(s)
 
-Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
+Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 ```sql
 Rule Name: AwsObservabilityElastiCacheCloudTrailLogsFER

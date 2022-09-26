@@ -22,7 +22,7 @@ To configure a Workday Source:
 
   ![img](/img/send-data/workday-source.jpg)
 
-1. For **Source Category** (Optional), enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called \_sourceCategory.
+1. For **Source Category** (Optional), enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called _sourceCategory.
 
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set automatically by the integration (Do not include below fields as custom log metadata Fields):
 

@@ -2,6 +2,7 @@
 id: jira-cloud
 title: Webhook Connection for Jira Cloud
 sidebar_label: Jira Cloud
+description: Create Jira issues in Jira Cloud from alerts.
 ---
 
 You can send JSON payloads from Sumo Logic alerts as an HTTP POST request to create Jira issues in Jira Cloud. Learn more about the Jira REST API in their [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/).

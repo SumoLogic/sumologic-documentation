@@ -1,8 +1,8 @@
 ---
 id: parse-hex
+title: parseHex
 ---
 
-# parseHex
 
 The parseHex operator allows you to convert a hexadecimal string of 16 or fewer characters to a number.
 

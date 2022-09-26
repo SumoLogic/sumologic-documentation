@@ -1,6 +1,7 @@
 ---
 id: create-edit-users
 title: Create and Edit Users
+description: Create, edit, and view user accounts.
 ---
 
 

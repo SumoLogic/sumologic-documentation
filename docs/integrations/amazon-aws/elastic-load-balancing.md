@@ -52,11 +52,11 @@ _sourceCategory=elb*
 
 This procedure documents how to enable access to your Amazon Web Services (AWS) Elastic Load Balancing (ELB) logs and ingest them into Sumo Logic.
 
-Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-your-cloud-flex-account.md) at any time.
+Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-account.md) at any time.
 
 ### Prerequisites
 
-* Enable Elastic Load Balancing logging in your AWS account, using these Sumo Logic [instructions](/docs/send-data/hosted-collectors/amazon-aws/AWS-Elastic-Load-Balancing-Source). For more information, see [AWS ELB documentation](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html). Logging is not enabled in AWS ELB by default.
+* Enable Elastic Load Balancing logging in your AWS account, using these Sumo Logic [instructions](/docs/send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source). For more information, see [AWS ELB documentation](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html). Logging is not enabled in AWS ELB by default.
 * Grant access to an IAM user by following these Sumo Logic [instructions](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
 * Confirm that logs are being delivered to the Amazon S3 bucket.
 
@@ -78,7 +78,7 @@ Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hoste
 
 ### Configure a Source
 
-Configure an [AWS Elastic Load Balancing Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-Elastic-Load-Balancing-Source), which includes specifying the following:
+Configure an [AWS Elastic Load Balancing Source](/docs/send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source), which includes specifying the following:
 
 * Source fields:
     * **Bucket Name**. (Required) ELB, for example.
@@ -125,7 +125,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### What if data isn't displaying in all Panels?
 
-Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS Elastic Load Balancing logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Scan-Interval-Sources)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
+Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS Elastic Load Balancing logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-scan-interval-sources)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
 
 Additionally, you can change the time range of a Panel. Even though these Panels have been preconfigured, they can be edited just like any other Panel. You'll find instructions in Changing the time range of a Panel.
 

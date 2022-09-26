@@ -7,11 +7,11 @@ description: Use HTTP endpoints to manage service allowlist settings.
 
 ---
 
-The [Service Allowlist](https://help.sumologic.com/Manage/Security/Create-an-Allowlist-for-IP-or-CIDR-Addresses) Management API allows you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
+The [Service Allowlist](https://help.sumologic.com/manage/Security/Create-an-Allowlist-for-IP-or-CIDR-Addresses) Management API allows you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
 
 
 
-Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
+Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 
 Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
 

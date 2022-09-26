@@ -182,9 +182,9 @@ The following table lists the API response fields for installed and hosted Colle
    </td>
    <td>
    </td>
-   <td>JSON map of key-value <a href="https://help.sumologic.com/Manage/Fields">fields</a> (metadata) to apply to the Collector.
+   <td>JSON map of key-value <a href="https://help.sumologic.com/manage/fields">fields</a> (metadata) to apply to the Collector.
 
-<p>To assign an <a href="https://help.sumologic.com/Manage/Ingestion-and-Volume/Ingest_Budgets">Ingest Budget</a> to the Collector use the field <code>_budget</code> with the Field Value of the Ingest Budget to assign. For example, if you have a budget with a Field Value of <code>Dev_20GB</code>, you would add:</p>
+<p>To assign an <a href="https://help.sumologic.com/manage/Ingestion-and-Volume/Ingest_Budgets">Ingest Budget</a> to the Collector use the field <code>_budget</code> with the Field Value of the Ingest Budget to assign. For example, if you have a budget with a Field Value of <code>Dev_20GB</code>, you would add:</p>
 
 <code>fields=_budget=Dev_20GB</code>
    </td>
@@ -291,7 +291,7 @@ Currently only Local and Remote File Sources are supported.
 
 The value must be expressed as a whole number percentage. The collector will adjust resources to attempt to limit the CPU usage to at most 20%.
 
-For more information, see <a href="https://help.sumologic.com/Manage/Collection/06Set-the-Collector-CPU-Usage-Target">Set the Collector CPU Usage Target</a>.
+For more information, see <a href="https://help.sumologic.com/send-data/collection/06Set-the-Collector-CPU-Usage-Target">Set the Collector CPU Usage Target</a>.
    </td>
    <td>Modifiable
    </td>
@@ -1851,7 +1851,7 @@ Response: There will be no response body, only a 200 OK response code.
 
 ## Upgrade or Downgrade Collectors Using the API
 
-View and manage the software versions of your Installed Collectors through HTTP endpoints. Use these HTTP endpoints to upgrade or downgrade Collectors. We recommend you follow our [best practices](https://help.sumologic.com/Manage/Collection/Collector-Upgrade-Best-Practices) when you upgrade your Collectors.
+View and manage the software versions of your Installed Collectors through HTTP endpoints. Use these HTTP endpoints to upgrade or downgrade Collectors. We recommend you follow our [best practices](https://help.sumologic.com/send-data/collection/Collector-Upgrade-Best-Practices) when you upgrade your Collectors.
 
 The upgrade may automatically be done in increments. In this case, you may experience longer upgrade times.
 

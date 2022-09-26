@@ -1,9 +1,9 @@
 ---
 id: aws-cloudtrail-logs
 title: AWS CloudTrail Logs
+description: Parse the common fields in your AWS CloudTrail Logs using the FER template.
 ---
 
-#
 
 **Log Type**: AWS CloudTrail
 

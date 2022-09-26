@@ -414,7 +414,7 @@ Ingested old or historical data, especially when mixed with recent or real-time 
 
 This article describes the assumptions that Sumo makes about customer data, tips to help you make sure your data is handled correctly, and guidance on when to contact [Sumo Logic Support](https://support.sumologic.com) regarding historical data uploads.
 
-See [using \_format for troubleshooting](docs/send-data/reference-information/time-reference.md) timestamps.
+See [using _format for troubleshooting](docs/send-data/reference-information/time-reference.md) timestamps.
 
 #### Assumption: Data is less than 365 days old
 

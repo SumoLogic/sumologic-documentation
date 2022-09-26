@@ -1,8 +1,8 @@
 ---
 id: parse-date
+title: parseDate
 ---
 
-# parseDate
 
 The parseDate operator extracts a date or time from a string and provides a timestamp in milliseconds. To convert an epoch timestamp in a human-readable format, use the `formatDate` operator.
 
@@ -20,11 +20,11 @@ The parseDate operator extracts a date or time from a string and provides a time
 ## Examples
 
 1. Given the date `2019-11-18T19:00:00.000-08:00` you'd specify the `dateFormat` as `yyyy-MM-dd'T'HH:mm:ss.SSSXXX`. For example,  
-      
+
     ```sql
     | parseDate(date, "yyyy-MM-dd'T'HH:mm:ss.SSSXXX") as milliseconds
     ```  
-      
+
      
 1. Given a log message such as:
 
@@ -44,7 +44,7 @@ The parseDate operator extracts a date or time from a string and provides a time
 The following query returns TimeGenerated as a timestamp in milliseconds, in this example 1500534030000.
 
 ```sql
-| parse "TimeGenerated = \"*.000000-000" as dd 
+| parse "TimeGenerated = \"*.000000-000" as dd
 | parseDate(dd, "yyyyMMddHHmmss") as milliseconds
 ```
 

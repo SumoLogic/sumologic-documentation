@@ -84,7 +84,7 @@ Within the folder, you will find subfolders for each site configured with IIS. T
 For information on how to configure HTTP Error Logs, and for explanations on the various HTTP Error Log fields and their significance see this [link](https://support.microsoft.com/en-us/help/820729/error-logging-in-http-apis).
 * **Performance Logs** These logs are output of Perfmon queries which will be configured at Installed Collector, "**Windows Performance**" Source.
 1. **Make sure logging is turned on in IIS Server.**
-* **Enable logging on your IIS Server**. Perform the following task, if logging on your IIS Server is not already enabled. \
+* **Enable logging on your IIS Server**. Perform the following task, if logging on your IIS Server is not already enabled.
 To enable logging on your IIS Server, do the following:
 1. Open IIS Manager.
 2. Select the site or server in the **Connections** pane, then double-click **Logging**.
@@ -171,7 +171,7 @@ To configure a local file source for HTTP Error Logs, do the following:
     7. **Fields. **Set the following fields**: \
 `component = webserver \
 webserver_system = iis \
-webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one. \
+webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one.
 `environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod) \
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-http-logs.png')} alt="IIS-access-logs" width="500"/>
@@ -183,7 +183,7 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
     11. Timestamp Format: Select the option to Automatically detect the format.
     12. Encoding. UTF-8 is the default, but you can choose another encoding format from the menu if your IIS logs are encoded differently.
     13. Enable Multiline Processing. Uncheck the box to Detect messages spanning multiple lines. Since IIS Error logs are single line log files, disabling this option will ensure that your messages are collected correctly.
-4. Click Save. \
+4. Click Save.
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your IIS HTTP Error log files to the Sumo Logic service.
 * Configure Source for IIS Performance (Perfmon) Logs
 
@@ -462,7 +462,7 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 5. Click **Add.**<br/><img src={useBaseUrl('img/integrations/web-servers/IIS-add.png')} alt="Add Monitor" />
 6. Click Import and then copy-paste the above JSON to import monitors.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the IIS folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the IIS folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
 
 
 ### Method B: Using a Terraform script
@@ -559,7 +559,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Using IIS Alerts
 
-Sumo Logic provides out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the IIS server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
+Sumo Logic provides out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the IIS server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
 
 <table>
   <tr>

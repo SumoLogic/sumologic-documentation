@@ -1,7 +1,7 @@
 ---
 id: amazon-sns
 title: Amazon SNS
-sidebar_label: The Sumo Logic App for Amazon SNS collects CloudTrail logs and CloudWatch metrics that provides insight into the operations and utilization of your SNS service. 
+description: The Sumo Logic App for Amazon SNS collects CloudTrail logs and CloudWatch metrics that provides insight into the operations and utilization of your SNS service. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

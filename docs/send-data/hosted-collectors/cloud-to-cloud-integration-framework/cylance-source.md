@@ -12,7 +12,7 @@ Collection from two APIs is supported:
 * The Cylance Threat API. To collect from this API the Source queries two endpoints and merges the results into a single message. The first API endpoint queried is `/threats/v2` to enumerate a threat based on sha256 hash. Then any involved devices `/threats/v2/<sha256/devices` are merged into the relevant message. One threat event for each affected device is reported.
 * The Cylance Inventory (device) API. Collection from this API is optional. The Source will query the `/devices/v2` endpoint and ingest all the devices managed by Cylance.
 
-If you want to explicitly allow the static IP addresses used for this Source on your firewall see our [table of static IP addresses by deployment](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/index.md#Static-IP-addresses).
+If you want to explicitly allow the static IP addresses used for this Source on your firewall see our [table of static IP addresses by deployment](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework#Static-IP-addresses).
 
 ## Before You Begin
 
@@ -54,7 +54,7 @@ To configure a Cylance Source:
 1. Select **Cylance**.
 1. Enter a **Name **for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md) is stored in a searchable field called `_sourceCategory`.
-2. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse/index.md). When configured with the **Forward to SIEM** option the following metadata fields are set:
+2. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse). When configured with the **Forward to SIEM** option the following metadata fields are set:
 
 | Field Name   | Value   |
 |:-------------|:---------|

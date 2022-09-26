@@ -285,10 +285,13 @@ html[data-theme='light'] {
     font-size: 1.6rem !important;
   }
   h3 {
-    font-size: 1.4rem !important;
+    font-size: 1.3rem !important;
   }
   h4 {
-    font-size: 1.2rem !important;
+    font-size: 1.15rem !important;
+  }
+  h5 {
+    font-size: 1rem !important;
   }
 }
 
@@ -512,7 +515,7 @@ html[data-theme='dark'] .navbar-item-github:before {
   background-color: #06bcee;
   color: white;
   padding: 6px 12px;
-  font-weight: 300;
+  font-weight: 600;
   font-size: 14px;
   text-decoration: none;
   margin-right: 10px;
@@ -898,7 +901,7 @@ html[data-theme='dark'] .node polygon {
 
 
 
-// Hub pages 
+// Hub pages
 
 .box-wrapper {
   display: grid;
@@ -1404,6 +1407,18 @@ html[data-theme='dark'] .featureImage {
   margin-right: 10px;
   border-radius: 10px;
   border: .5px solid #FFFFFF;
+}
+
+
+.beta-static {
+  background: #C6007E;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 20px;
+  text-decoration: none;
+  margin-right: 10px;
+  border-radius: 10px;
 }
 
 .essentials {
