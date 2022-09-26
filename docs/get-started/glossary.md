@@ -539,10 +539,6 @@ The user.properties file is used to pass Collector parameters for some installat
 
 ## W
 
-**[Web Application](https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Use-the-Search-Page)**
-
-The Sumo Logic product is officially called the Sumo Logic Web Application. The Sumo Logic Web Application allows you to view and analyze your log data in the cloud, and provides access from anywhere since it is fully browser based.
-
 **[Webhook](https://help.sumologic.com/manage/Connections-and-Integrations/Webhook-Connections)**
 
 A WebHook is an HTTP callback: an HTTP POST that occurs when something happens. WebHook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming WebHooks. You can configure a custom WebHook, or use preconfigured WebHooks for a number of apps, including Slack, HipChat, Datadog, and so on.

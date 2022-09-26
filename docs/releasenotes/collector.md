@@ -9,7 +9,7 @@ Collector Release Notes for the current year are listed here. If you need to see
 
 You can upgrade [Installed Collectors](/docs/send-data/installed-collectors) in the following ways:
 
-* [Web Application](/docs/send-data/collection/upgrade-collectors.md)
+* [In Sumo Logic](/docs/send-data/collection/upgrade-collectors.md)
 * [Command Line](/docs/send-data/collection/upgrade-collectors.md)
 * [Collector Management API](/docs/api/collectors#Upgrade-or-Downgrade-Collectors-Using-the-API)
 
