@@ -13,7 +13,7 @@ Changes to metadata are applied to messages going forward from this point in tim
 
 ## Edit an Installed Collector
 
-1. In the Sumo Logic Web Application select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**.
 1. Click the Installed Collector name, or click **Edit** on the right of the table row.
 1. Make your changes. Note that updated metadata is only be applied to newly ingested data; previously uploaded data retains its original metadata.
 
@@ -37,7 +37,7 @@ Changes to metadata are applied to messages going forward from this point in tim
 
 ## Edit a Hosted Collector
 
-1. In the Sumo Logic Web Application select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**.
 
 1. Click the Hosted Collector name, or click **Edit** to the right of the Collector name.
 

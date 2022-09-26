@@ -10,7 +10,7 @@ This topic describes JSON Source parameters for installed Collectors. See the
 
  * [Use JSON to configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.
  * [JSON Source parameters for Hosted Collectors](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources).
- * [View or download Collector or Source JSON configuration](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) from the Web Application.
+ * [View or download Collector or Source JSON configuration](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) from Sumo Logic.
 
 For more information about configuring sources in JSON files, and how to configure Sumo to read the JSON files, see [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
 
