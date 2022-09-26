@@ -82,9 +82,9 @@ Preference settings are only changed for your personal account; they don't affec
     If you change the date format option, it will affect your saved searches in the Library. Any saved searches that use absolute dates for their time range must be modified to use the new date format. Scheduled searches will continue to run properly. You would need to modify the date format only if you rescheduled the search.
     :::
 
-- **Web session timeout.** Choose an option to set the length of time before your Sumo Logic session times out. Options include 5 minutes to 7 days. For information on web session timeouts and Multi-account Access, see [Multi-account Access.].
+- **Web session timeout.** Choose an option to set the length of time before your Sumo Logic session times out. Options include 5 minutes to 7 days. For information on web session timeouts and Multi-account Access, see [Multi-account Access].
 - **Receive email notifications whenever content is shared with you**.
-- **Enable keyboard shortcuts.** Web Application and [keyboard shortcuts] are enabled by default. Press ? to see the list of shortcuts. To disable keyboard shortcuts, for example, if they conflict with an international keyboard, deselect the check box.
+- **Enable keyboard shortcuts.** [Keyboard shortcuts](docs/get-started/keyboard-shortcuts.md) are enabled by default. Press ? to see the list of shortcuts. To disable keyboard shortcuts, for example, if they conflict with an international keyboard, deselect the check box.
 
   :::note
   Keyboard shortcuts are disabled when typing in the [search text box].

@@ -5,7 +5,7 @@ description: When you upgrade a Collector, the upgrade file is automatically dow
 ---
 
 
-## Upgrade Collectors using the Web Application
+## Upgrade Collectors in Sumo Logic
 
 Deploying an upgrade to one or more collectors can be done through Sumo Logic. When you initiate a collector upgrade, the installed collector downloads the upgrade package directly from the Sumo
 Logic service. We recommend you follow our [best practices](#collector-upgrade-best-practices) when you upgrade your Collectors.
@@ -36,7 +36,7 @@ The upgrade may automatically be done in increments. In this case, you may exper
 
 To install an upgrade on one or more collectors:
 
-1. In the Sumo Logic Web Application select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**.
 1. Click the **Upgrade Collectors** link.
 1. Determine if you'd like to install the upgrade on individual collectors or on all collectors simultaneously. Then, choose one of the following:
 
