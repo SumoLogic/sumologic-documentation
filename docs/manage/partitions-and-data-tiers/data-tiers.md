@@ -1,6 +1,7 @@
 ---
 id: data-tiers
 title: Data Tiers
+description: Data Tiers provide the ability to allocate data to different storage tiers based on frequency of access - Continuous, Frequent, and Infrequent.
 ---
 
 
@@ -78,7 +79,7 @@ In contrast, debug or other verbose log sources that are only used to troublesho
 
 ## Assigning data to a Data Tier
 
-You assign data to a Data Tier at the partition level. When you create a partition, you define a routing expression and select the target tier for the data that matches the routing expression. For instructions, see [Add a Partition](add-partition.md).
+You assign data to a Data Tier at the partition level. When you create a partition, you define a routing expression and select the target tier for the data that matches the routing expression. For instructions, see [Add a Partition](docs/manage/partitions-and-data-tiers/create-edit-partition.md).
 
 ## Searching Data Tiers 
 

@@ -20,7 +20,7 @@ grouping_function by <fieldname>
 The **`withtime`**, **`most_recent`**, and **`least_recent`** operators are not considered standalone operators; they are designed to only be used as an alternative to the [first and last operators](/docs/search/search-query-language/group-aggregate-operators#first-last) in Live Dashboards or any continuous query where first and last are not supported.
 :::
 
-By default, the ordering is not defined inside of groups created using a group-by expression. To order your results, use the [**sort**](/docs/search/search-query-language/search-operators/sort) operator.
+By default, the ordering is not defined inside of groups created using a group-by expression. To order your results, use the [**sort**](/docs/search/search-query-language/operators#sort) operator.
 
 ### Syntax
 
@@ -97,7 +97,7 @@ _sourceCategory=apache 
 All Sumo Logic system-generated fields begin with an underscore (`_`). Group-by functions always create a Sumo Logic field named with a combination of an underscore (`_`) and the function name. Using the function **`count`** inserts a field into the pipeline called `_count`. The function **`count_distinct`** inserts a field into the pipeline called `_count_distinct`.
 
 
-## `avg`
+## avg
 
 The averaging function (avg) calculates the average value of the numerical field being evaluated within the time range analyzed.
 
@@ -109,7 +109,7 @@ avg(<numerical_field>) [as <field>] [by <field>]
 
 #### Rules
 
-* Creates field named **\_avg**
+* Creates field named `_avg`
 
 #### Examples
 
@@ -140,13 +140,13 @@ When multiple aggregates are used you need to create an alias using the as opera
 ```
 
 
-## `count`, `count_distinct`, `count_frequent`
+## count, count_distinct, count_frequent
 
 Aggregating (group-by) functions are used in conjunction with the group operator and a field name.
 
 Only the word **by** is required to represent the group operator. The count function is also an operator in its own right, and therefore can be used with or without the word **by**.
 
-#### `count`
+#### count
 
 Counts the total number of logs that match the keyword search within the time range analyzed.
 
@@ -188,9 +188,9 @@ The same example above with an alias field name, `countOfPort`, and an addition
 | sort by countOfPort
 ```
 
-When you want to count more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as-operator) to rename the `_count` fields.
+When you want to count more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/operators#as-operator) to rename the `_count` fields.
 
-#### `count_distinct`
+#### count_distinct
 
 Counts only distinct occurrences of the value of a field being counted within the time range analyzed.
 
@@ -204,7 +204,7 @@ count_distinct(<field>) [as <field>] [by <field>, ...]
 
 #### Rules
 
-* Creates field named **`_count_distinct`**
+* Creates field named `_count_distinct`
 
 #### Examples
 
@@ -218,7 +218,7 @@ _sourceCategory=*apache*
 | count_distinct(src_ip)
 ```
 
-By default, ordering is not defined inside of groups created using a group-by expression. To order your results, use the [**sort**](/docs/search/search-query-language/search-operators/sort) operator.
+By default, ordering is not defined inside of groups created using a group-by expression. To order your results, use the [**sort**](/docs/search/search-query-language/operators#sort) operator.
 
 If the number of distinct items returned is less than 100, the **count_distinct** function provides an exact number. If the number of distinct items returned is larger than 100, **count_distinct** instead uses an approximate algorithm, and displays a message that explains: `count_distinct saw more than 100 values, results may be approximate`
 
@@ -232,14 +232,14 @@ So for example, if the true count of distinct items is 1,000, the result returne
 
 The error parameter value is important to making the **count_distinct** function return results quickly and in a scalable way.
 
-Also, note that when you want to count the distinct occurrences of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as-operator) to rename the \_count_distinct fields. See this example:
+Also, note that when you want to count the distinct occurrences of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/operators#as-operator) to rename the _count_distinct fields. See this example:
 
 ```sql
 _sourceCategory=PaloAltoNetworks
 | count_distinct(threatid) as cntthreatid, count_distinct(repeatcnt) as cntrepeatcnt
 ```
 
-#### `count_frequent`
+#### count_frequent
 
 The count_frequent function can be used in cases where you want to identify the most common values for aggregations with over 10,000 distinct groups. This query returns the highest-count 10,000 results in sorted order. The resulting count field is called `_approxcount` because it is only an *estimate* of the true count; the estimate may be incorrect, but can only be over (it will never be under).
 
@@ -267,7 +267,7 @@ count_frequent <field>[, <field2>, field3, ...]
 ```
 
 
-## `first`, `last`
+## first, last
 
 The **first** and **last** operators return the first or last result relative to the sort order. By default, searches return results in descending chronological order (most recent descending to oldest).
 
@@ -279,14 +279,14 @@ For example, the following image shows a few results in the default sort order. 
 * The **last** result is indicated with the **#** value of 1. This **last** result has the oldest **Time**.
 
 :::tip
-Using the [sort](/docs/search/search-query-language/search-operators/sort) operator allows you to change the default sort order.
+Using the [sort](/docs/search/search-query-language/operators#sort) operator allows you to change the default sort order.
 :::
 
 #### Limitations
 
 First and last are not supported in Live Dashboards or any continuous query. Instead, use the **withtime** operator, see [most_recent and least_recent](/docs/search/search-query-language/group-aggregate-operators#most_recent-least_recent).
 
-#### `first`
+#### first
 
 The default sort order for returned messages is reverse chronological—most recent descending to oldest. So **first** finds the most recent value of the field being evaluated within the time range. However, if you have specified a sort order other than descending chronological, then **first** finds the message that precedes all others based on the sort order defined in your query.
 
@@ -300,7 +300,7 @@ first(<field>) [as <field>] [by <field>]
 
 #### Rules
 
-* The default field created is named **\_first**
+* The default field created is named **`_first`**
 
 #### Example
 
@@ -309,14 +309,14 @@ first(<field>) [as <field>] [by <field>]
 ```
 
 Note that when you find the first occurrence of more than one field, you must create an alias using the [as
-operator](/docs/search/search-query-language/search-operators/as-operator) to rename the \_first fields. See this example:
+operator](/docs/search/search-query-language/operators#as-operator) to rename the _first fields. See this example:
 
 ```sql
 _sourceCategory=Apache/Access
 | first(url) as first_url, first(status_code) as first_statuscode
 ```
 
-#### `last`
+#### last
 
 Finds the last value of the field being evaluated within the time range and according to the specified sort order. Remember that the default order for returned messages is reverse chronological—most recent descending to oldest. Therefore, **last** is the oldest result in the returned list. If you have specified an order other than reverse chronological, then **last** finds the ending message that follows all others based on your sort order.
 
@@ -354,14 +354,14 @@ disk*
 
 This query finds all messages that contain the term **disk\*** and parses out all that have a **diskutilization=** value. It then extracts the value of diskutilization into field **disk**. It then determines if that value is greater than 80% and will find the last occurrence of that value per host effectively producing a list of hosts that have disk utilization that is over 80%.
 
-Note that when you find the last occurrence of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as-operator) to rename the `_last` fields. See this example:
+Note that when you find the last occurrence of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/operators#as-operator) to rename the `_last` fields. See this example:
 
 ```sql
 _sourceCategory=Apache/Access
 | last(url) as last_url, last(status_code) as last_statuscode
 ```
 
-## `median`
+## median
 
 In order to calculate the median value for a particular field, you can utilize the [percentile (pct) operator](#percentile-pct) with a percentile argument of 50.
 
@@ -373,7 +373,7 @@ pct(<field> [, 50]) [as <field>] [by <field>]
 
 #### Rules
 
-* Creates a field with the naming convention: **\_\<field\>_pct_50**
+* Creates a field with the naming convention: `_<field>_pct_50`
 
 #### Examples
 
@@ -396,11 +396,11 @@ Which would return results similar to:
 ![Median.png](/img/search/searchquerylanguage/group-aggregate-operators/median.png)
 
 
-## `min`, `max`
+## min, max
 
 Use the min and max functions to find the smallest or largest value in a set of values.
 
-#### `max`
+#### max
 
 Extracts the maximum value of the numerical field being evaluated within the time range.
 
@@ -412,7 +412,7 @@ max(<numerical_field>) [as <field>] [by <field>]
 
 #### Rules
 
-* Creates field named **\_max**
+* Creates field named **`_max`**
 
 #### Example
 
@@ -424,7 +424,7 @@ max(<numerical_field>) [as <field>] [by <field>]
 ... | max(request_received) as max_request_received, max(request_sent) as max_request_sent
 ```
 
-When you calculate the maximum value of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as-operator) to rename the max fields.
+When you calculate the maximum value of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/operators#as-operator) to rename the max fields.
 
 See this example:
 
@@ -434,7 +434,7 @@ _sourceCategory="OS/Windows"
 | max(HandleCount) as maxHandleCount, max(ThreadCount) as maxThreadCount
 ```
 
-#### `min`
+#### min
 
 Extracts the minimum value of the numerical field being evaluated within the time range.
 
@@ -458,7 +458,7 @@ min(numerical_field) [as <field>] [by <field>]
 ​... | min(request_received) as min_request_received, max(request_sent) as max_request_sent
 ```
 
-When you calculate the minimum value of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as-operator) to rename the min fields.
+When you calculate the minimum value of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/operators#as-operator) to rename the min fields.
 
 See this example:
 
@@ -469,7 +469,7 @@ _sourceCategory="OS/Windows"
 ```
 
 
-## `most_recent`, `least_recent`
+## most_recent, least_recent
 
 The **most_recent** and **least_recent** operators, used with the **withtime** operator, are aggregate operators that allow you to select the most recent or least recent value within a group.
 
@@ -514,7 +514,7 @@ produces results like:
 ![Mostrecent.png](/img/search/searchquerylanguage/group-aggregate-operators/mostrecent.png)
 
 
-## `pct sampling`
+## pct sampling
 
 The percent sampling function, pct_sampling, finds the percentile of a given field. Multiple pct_sampling functions can be included in one query.
 
@@ -536,7 +536,7 @@ To find the percentile, the function uses a sample of 1,000 messages. This may c
 
 #### Rules
 
-* Creates a field with the naming convention: **\_\<field\>\_pct_\<percentile\>**.
+* Creates a field with the naming convention: `_<field>_pct_<percentile>`.
 * Separate multiple percent arguments in one query with commas.
 
 #### Examples
@@ -568,7 +568,7 @@ Running this query creates fields named `_q1_delay_pct_10, _q1_delay_pct_20, 
 
 
 
-## `percentile (pct)`
+## percentile (pct)
 
 The pct operator finds the specified percentiles of a given field. 
 
@@ -594,7 +594,7 @@ The input to the operator is a percentile. For example:
 
 #### Rules
 
-* Default alias field is named: **\_\<fieldname\>\_pct_\<percentile\>**
+* Default alias field is named: `_<fieldname>_pct_<percentile>`
 * Separate multiple percentile arguments in one query with commas.
 * Multiple pct functions can be included in the same group-by aggregation.
 * The pct operator supports decimal percentiles.
@@ -611,7 +611,7 @@ Running this query creates the fields `_filesize_pct_75` and `_filesize_pct_95`,
 To find the 99.9th percentile in a query, use, for example, `pct(millis, 99.9)`.
 
 
-## `stddev`
+## stddev
 
 Finds the standard deviation value for a distribution of numerical
 values within the time range analyzed and associated with a group
@@ -640,7 +640,7 @@ _source=CollectD
 
 ![avg results](/img/search/searchquerylanguage/group-aggregate-operators/stddev.png)
 
-When you calculate the standard deviation of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as-operator) to rename the stddev fields. See this example:
+When you calculate the standard deviation of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/operators#as-operator) to rename the stddev fields. See this example:
 
 ```sql
 _sourceCategory="OS/Windows"
@@ -649,7 +649,7 @@ _sourceCategory="OS/Windows"
 ```
 
 
-## `sum`
+## sum
 
 Sum adds the values of the numerical field being evaluated within the time range analyzed.
 
@@ -661,7 +661,7 @@ sum(<numerical_field>) [as <field>] [by <field>]
 
 #### Rules
 
-* Creates field named **\_sum**
+* Creates field named **`_sum`**
 
 #### Example
 
@@ -686,7 +686,7 @@ have a **filesize=value**. It will then extract the value of filesize
 and will add all those values per host where those log messages are
 generated.
 
-When you calculate the sum of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as-operator) to rename the sum fields. See this example:
+When you calculate the sum of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/operators#as-operator) to rename the sum fields. See this example:
 
 ```sql
 _sourceCategory="OS/Windows"
@@ -701,7 +701,7 @@ max(amount) as amount_max, count(datetime) as datetime_count, sum(_size) as mess
 ```
 
 
-## `values`
+## values
 
 The **values** operator provides all the distinct values of a field. This allows you to quickly identify and understand all the values a field has in your data. Additionally, you have the option to group by other fields of interest.
 

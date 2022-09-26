@@ -45,7 +45,7 @@ To parse a field from message text:
 
     ![extract value](/img/search/get-started-search/search-page/extract-value.png)  
       
-1. Type a name for the **Field**. This name appears at the top of the parsed column. (Field names can contain alphanumeric characters and underscores (\_). The name must start and end with an alphabet character.) Then click **Submit**.
+1. Type a name for the **Field**. This name appears at the top of the parsed column. (Field names can contain alphanumeric characters and underscores (_). The name must start and end with an alphabet character.) Then click **Submit**.
 
     :::note
     If you don't enter a field name, you'll see an error in the **Search** tab.

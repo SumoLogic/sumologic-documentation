@@ -39,7 +39,7 @@ To configure log collection, do the following:
 
 ### Field Extraction Rule
 
-This Field Extraction Rule (FER) is provided as an example to help you reduce your overall parsing time. Note that not all parse operators are supported in FERs. For more information, see [Creating a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
+This Field Extraction Rule (FER) is provided as an example to help you reduce your overall parsing time. Note that not all parse operators are supported in FERs. For more information, see [Creating a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule).
 
 
 There is a 200 field name limit for Field Extraction Rules (FER) and once a field is persisted using a FER, it can’t be removed. You can assign different targets to the name, but do not create overlapping messages and source categories.

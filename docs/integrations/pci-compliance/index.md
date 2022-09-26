@@ -19,5 +19,5 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 
 :::note
-If you're looking for a PCI compliance app for AWS or Microsoft, see [Amazon and AWS](/docs/integrations/amazon-aws/index.md) or [Microsoft and Azure](/docs/integrations/microsoft-azure/index.md).
+If you're looking for a PCI compliance app for AWS or Microsoft, see [Amazon and AWS](/docs/integrations/amazon-aws) or [Microsoft and Azure](/docs/integrations/microsoft-azure).
 :::

@@ -1,8 +1,8 @@
 ---
 id: monitor-ingestion-receive-alerts
 title: Monitor Log Ingestion and Receive Alerts
+description: Add scheduled searches that monitor ingestion and send alerts. The following alerts apply to log ingestion only.
 ---
-
 
 
 Sumo Logic provides ingest alerts that you can schedule to get timely information about ingestion usage or throttling. With the excepting of the [Throttling alert](monitor-ingestion-receive-alerts.md) described below these alerts apply to logs only, not metrics. 
@@ -28,7 +28,7 @@ You must update all of the indicated fields for the search to save successfully
 1. Enable the Data Volume Index. See [Enable and Manage the Data Volume Index]v for instructions.
 
 1. Substitute the correct values of `X` for the following parameters in the search query (see entries in yellow in the query below). For the billing start and end values, use the day of the month. For example, in the screenshot, the value for `billing_start` is 17 so the updated line from the search becomes `17 as billing_start`.
-
+===X===
     ```
     X as billing_start
     X as billing_end
@@ -270,7 +270,7 @@ After completing the setup steps, schedule the search to run.  
         | where collector = "some_name" or collector = "some_other_name"
         ```
 
-   * Turn off a collector using [Start or Stop a Collector using Scripts](../collection/start-stop-collector-using-scripts.md) and verify that you received the alert.
+   * Turn off a collector using [Start or Stop a Collector using Scripts](docs/send-data/collection/start-stop-collector-using-scripts.md) and verify that you received the alert.
 
    * Reduce the time range for collectors to send data to 15 minutes:
 

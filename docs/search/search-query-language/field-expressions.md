@@ -13,7 +13,7 @@ The Sumo Query Language can be used to create fields based on calculated express
 | 34 % 10 as remainder
 ```
 
-Expressions are created by literal values, field names, or search query language operators acting as functions, such as [concat()](search-operators/concat.md) or pow(). Fields created in this way appear in results as virtual columns with the same value on each row, and they can be used in where and other clauses.
+Expressions are created by literal values, field names, or search query language operators acting as functions, such as [concat()](/docs/search/search-query-language/operators#concat) or pow(). Fields created in this way appear in results as virtual columns with the same value on each row, and they can be used in where and other clauses.
 
 Expressions can be used to create fields that are Numeric, Boolean, or String values.
 
@@ -144,6 +144,6 @@ Characters quoted with double quotes (not single quotes) are string literals. Us
 | concat("Hello, ", "world") as welcome
 ```
 
-Use string functions, such as [concat()](search-operators/concat.md), to combine strings. There are no string operators like "+" or ".". The [format()](search-operators/format.md) operator can create string fields in a specified format. Use [substring()](search-operators/substring.md) to extract portions of a string.
+Use string functions, such as [concat()](/docs/search/search-query-language/operators#concat), to combine strings. There are no string operators like "+" or ".". The [format()](/docs/search/search-query-language/operators#format) operator can create string fields in a specified format. Use [substring()](/docs/search/search-query-language/operators#substring) to extract portions of a string.
 
  

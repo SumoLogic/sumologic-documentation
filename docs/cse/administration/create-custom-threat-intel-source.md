@@ -11,7 +11,7 @@ manually, as opposed to using an automatic feed. 
 
 You can set up and populate custom threat intel sources interactively
 from the CSE UI, by uploading a .csv file, or using CSE APIs. You can
-populate the sources with IP addresses, hostnames, URLs, and file
+populate the sources with IP addresses, hostnames, URLs, email addresses, and file
 hashes.
 
 ### How CSE uses indicators
@@ -56,6 +56,7 @@ Your new source should now appear on the **Threat Intelligence** page.
     1. **Value**. Enter an IP address, hostname, URL, or file hash.
         Your entry must be one of:
         * A valid IPV4 or IPv6 address  
+        * A valid email address 
         * A valid, complete URL
         * A hostname (without protocol or path)
         * A hexadecimal string of 32, 40, 64, or 128 characters 
@@ -78,7 +79,12 @@ save time by creating a .csv file and uploading it to CSE.
 The .csv file can contain up to three columns, which are described
 below. 
 
-[TABLE]
+| Column     | Description  |   
+| :-- | :-- |
+| value  | Required. Must be one of the following: <br/>- A valid IPV4 or IPv6 address<br/>- A valid, complete URL <br/>- A valid email address<br/>- A hostname (without protocol or path)<br/>- A hexadecimal string of 32, 40, 64, or 128 characters |
+| description | Optional.  |  
+| expires| Optional. The data and time when you want the indicator to be removed, in any ISO date format. For example: |
+
 
 **Example .csv file**
 

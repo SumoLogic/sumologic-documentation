@@ -283,7 +283,7 @@ Create a line chart to visualize the results.
 
 ### Compare categorical data parsed from logs
 
-Use compare to analyze the change in delays on different \_sourceHosts
+Use compare to analyze the change in delays on different _sourceHosts
 using parsed data from logs.
 
 ```sql

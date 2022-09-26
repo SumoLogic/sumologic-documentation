@@ -2,7 +2,7 @@
 id: about
 title: About the Sumo Logic Observability Solution
 sidebar_label: About Observability
-description: The Sumo Logic Observability Solution focuses on finding the unconsidered issue, the unknown risks to your system.
+description: The Sumo Logic Observability Solution focuses on finding the unconsidered issues and the unknown risks to your system.
 ---
 
 Observability is the ability of the internal states of a system to be determined by its external outputs.

@@ -104,7 +104,7 @@ import Iframe from 'react-iframe';
     If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
     :::
 
-1. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called \_sourceCategory.)
+1. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.)
 1.  **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.

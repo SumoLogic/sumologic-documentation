@@ -2,7 +2,7 @@
 id: markdown-cheat-sheet
 title: Markdown Cheat Sheet
 sidebar_label: Markdown Cheat Sheet
-description: Learn about markdown features Docusaurus supports.
+description: Learn the markdown features that are supported by the Sumo Docs platform, built on Docusaurus.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -682,7 +682,34 @@ Info for the second tab would go here! Content can include markdown, code blocks
   </TabItem>
 </Tabs>
 
-## Expander
+
+## Beta Releases
+
+For beta docs,
+1. Underneath the frontmatter, add the [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) (to prevent search crawlers from picking it up) and the Sumo Beta badge.
+  ```
+  ---
+  id: cylance-source
+  title: Cylance Source (Beta)
+  description: The Cylance Source provides a secure endpoint to receive event data from the Cylance Threat API.
+  ---
+
+  <head>
+    <meta name="robots" content="noindex" />
+  </head>
+
+  <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+
+  First paragraph goes here...
+  ```
+1. Do _not_ add the doc to sidebars.ts.
+
+When the feature is moved from Beta to GA:
+1. Remove the Robots meta tag and Beta label.
+1. Add the doc to sidebars.ts.
+
+
+## Expand/Collapse Content
 
 Use an expander to collapse long content that can be searched but not displayed when loading a page. We recommend only using expanders for additional content and long code samples. Content required for instructions and steps should not be placed in an expander.
 
@@ -729,8 +756,6 @@ Place long lists or lots of content in this section. The reader can expand/colla
 </details>
 
 
-
-
 ## Reusing Content
 
 You can create a section of content for reuse by creating a markdown file and saving it in `/docs/reuse`. If the file includes headings, they do not add to the right side page nav. You may want reuse to be just a section of content without headings.
@@ -745,7 +770,7 @@ To add the file to another document, use this code with the reuse file name:
 
 To add a generated list of contents in a section, add this code to the file:
 
-```markdown
+```
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

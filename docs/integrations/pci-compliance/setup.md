@@ -171,7 +171,7 @@ PCI Requirement 7 Cardholder Data Access Monitoring Dashboard helps you verify t
 
 #### PCI Requirement 8 Dashboard
 
-The PCI Requirement 8 User Activity Dashboard helps you comply with each user having his or her own unique ID. Panels look at account creation/enablement, account deletion/disablement, and password changes. Additionally, you can view a chart that displays a summary of the overall number of user account creations/deletions over a week.
+The PCI Requirement 8 User Activity Dashboard helps you comply with each user having their own unique ID. Panels look at account creation/enablement, account deletion/disablement, and password changes. Additionally, you can view a chart that displays a summary of the overall number of user account creations/deletions over a week.
 
 ![PCI_Requirement8_Dashboard.png](/img/pci-standards/PCI_Requirement8_Dashboard.png)
 

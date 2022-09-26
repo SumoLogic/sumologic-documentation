@@ -60,7 +60,7 @@ Explore provides two Service and Application dashboard views accessible through 
 
 ### Real User Monitoring
 
-[Real User Monitoring](docs/apm/rum/index.md): Explore allows you to visualize Real User Monitoring (RUM) metrics gathered from tracing instrumentation in the browser. This provides visibility into an actual end-user experience by geographical locations, browser, and operating system types. This also helps you to understand how your customers experience the performance of your web application.<br/><img src={useBaseUrl('img/dashboards-new/explore/stack-linking.png')} alt="Explore" />
+[Real User Monitoring](/docs/apm/rum): Explore allows you to visualize Real User Monitoring (RUM) metrics gathered from tracing instrumentation in the browser. This provides visibility into an actual end-user experience by geographical locations, browser, and operating system types. This also helps you to understand how your customers experience the performance of your web application.<br/><img src={useBaseUrl('img/dashboards-new/explore/stack-linking.png')} alt="Explore" />
 
 ## Filtering Explore
 
@@ -137,10 +137,9 @@ Filters:
 * `<filterValue>` is the value of a key you want to filter.
 * `<filter>` (optional) is the metadata key you want to apply as a filter to explore. You do not have to provide a filter, you may only provide a `filterValue`.
 * `<negation>` set as `0` to apply your filters or `1` to treat the filters as an exclusion. Think of using `1` as using a `not` or `!` bang, so the filter will return results that don't have those values. This is an example:
-```
+```xml
 https://<endpoint>/ui/#//explore/@1628023955694,1628024855694@topology=0000000000000041@cluster=kubernetes@filters@1:cl-tracing-training:_collector,0:kubernetes:_origin
 ```
-
 Dashboard:
 * `<dashboardId>` is the unique identifier of the Dashboard (New).
 

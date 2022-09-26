@@ -11,13 +11,13 @@ Developer Release Notes from 2018 to present are listed here.
 
 ### April 25, 2022 - APIs
 
-New - The [Data Forwarding Management API](/docs/api/Data-Forwarding) allows you to forward log data from a Partition or Scheduled View to an S3 bucket.
+New - The [Data Forwarding Management API](/docs/api/data-forwarding) allows you to forward log data from a Partition or Scheduled View to an S3 bucket.
 
 
 ---
 ### January 18, 2022  - APIs
 
-New - The [Tracing API](/docs/api/Tracing) allows you to browse and execute queries for [traces](/docs/api/Tracing) and [span analytics](/docs/api/Tracing#Span-Analytics-API), and request a [service map](/docs/api/Tracing#Service-Map-API) of your application environment.
+New - The [Tracing API](/docs/api/tracing) allows you to browse and execute queries for [traces](/docs/api/tracing) and [span analytics](/docs/api/tracing#Span-Analytics-API), and request a [service map](/docs/api/tracing#Service-Map-API) of your application environment.
 
 ---
 ### November 16, 2021 - APIs
@@ -32,31 +32,31 @@ New - The [Policies Management API](/docs/api/Policies) allows you to control th
 ---
 ### February 23, 2021 - APIs
 
-New - The [Field Extraction Rule (FER) Management API](/docs/api/Field-Extraction-Rules) allows you to manage FERs from HTTP endpoints.
+New - The [Field Extraction Rule (FER) Management API](/docs/api/field-extraction-rules) allows you to manage FERs from HTTP endpoints.
 
 ---
 ### February 16, 2021 - APIs
 
-New - The [Partition Management API](/docs/api/Partitions) allows you to [manage Partitions](https://help.sumologic.com/Manage/Partitions_and_Data_Tiers) from HTTP endpoints.
+New - The [Partition Management API](/docs/api/partitions) allows you to [manage Partitions](https://help.sumologic.com/manage/Partitions_and_Data_Tiers) from HTTP endpoints.
 
 ---
 ### February 15, 2021 - APIs
 
-New - The [Dynamic Parsing Management API](/docs/api/Dynamic-Parsing) allows you to configure Run Time [Field Extraction Rules](https://help.sumologic.com/Manage/Field-Extractions) from HTTP endpoints.
+New - The [Dynamic Parsing Management API](/docs/api/dynamic-parsing) allows you to configure Run Time [Field Extraction Rules](https://help.sumologic.com/manage/Field-Extractions) from HTTP endpoints.
 
 
 ---
 ### December 21, 2020 - APIs
 
-New - The [Account Management API](/docs/api/Account-Management) allows you to manage the [custom subdomain](https://help.sumologic.com/Manage/Manage-Subscription/12Manage_Organizational_Settings#Set_up_a_custom_subdomain) for the URL used to access your Sumo Logic account.
+New - The [Account Management API](/docs/api/account-management) allows you to manage the [custom subdomain](https://help.sumologic.com/manage/Manage-Subscription/12Manage_Organizational_Settings#Set_up_a_custom_subdomain) for the URL used to access your Sumo Logic account.
 
-New - [Ingest Budget Management API V2](/docs/api/Ingest-Budget-V2) allows you to manage metadata-based [ingest budgets](https://help.sumologic.com/Manage/Ingestion-and-Volume/Ingest_Budgets) (with a scope) from HTTP endpoints.
+New - [Ingest Budget Management API V2](/docs/api/Ingest-Budget-V2) allows you to manage metadata-based [ingest budgets](https://help.sumologic.com/manage/Ingestion-and-Volume/Ingest_Budgets) (with a scope) from HTTP endpoints.
 
 
 ---
 ### November 3, 2020  - APIs
 
-New - The [Password Policy Management API](/docs/api/Password-Policy) is available to manage the [password policy](https://help.sumologic.com/Manage/Security/Set-the-Password-Policy) for your Sumo Logic users.
+New - The [Password Policy Management API](/docs/api/Password-Policy) is available to manage the [password policy](https://help.sumologic.com/manage/Security/Set-the-Password-Policy) for your Sumo Logic users.
 
 ---
 ### October 28, 2020 - APIs
@@ -79,19 +79,19 @@ New - The [Dashboard (New) Management API](/docs/api/dashboard-new#Management-AP
 ---
 ### July 22, 2020 - Collection, APIs
 
-New - [Installation Tokens](/docs/Manage/Security/Installation-Tokens) provide Installed Collectors a great alternative to Access Keys. They do not expire and can only be used to register Installed Collectors. You can embed your Installation Tokens in installation scripts confident they can't be used to make [API](/docs/API) requests if compromised.<br/><img src={useBaseUrl('img/release-notes/Installation-Tokens.png')} alt="Installation-Tokens" />
+New - [Installation Tokens](/docs/manage/Security/Installation-Tokens) provide Installed Collectors a great alternative to Access Keys. They do not expire and can only be used to register Installed Collectors. You can embed your Installation Tokens in installation scripts confident they can't be used to make [API](/docs/api) requests if compromised.<br/><img src={useBaseUrl('img/release-notes/Installation-Tokens.png')} alt="Installation-Tokens" />
 
-New - The Tokens Management API is available to manage [Installation Tokens](https://help.sumologic.com/Manage/Security/Installation_Tokens) from HTTP endpoints.
+New - The Tokens Management API is available to manage [Installation Tokens](https://help.sumologic.com/manage/Security/Installation_Tokens) from HTTP endpoints.
 
 ---
 ### July 2, 2020 - APIs
 
-New - The [Field Management API](/docs/api/Fields) is available to manage your account's [Fields](https://help.sumologic.com/Manage/Fields) from HTTP endpoints.
+New - The [Field Management API](/docs/api/Fields) is available to manage your account's [Fields](https://help.sumologic.com/manage/fields) from HTTP endpoints.
 
 ---
 ### June 30, 2020 - APIs
 
-The [Access Keys](/docs/api/Access-Keys), [SAML](/docs/api/SAML-Configuration), and [Service Whitelist](/docs/api/Service-Allowlist) APIs are complete and fully supported.
+The [Access Keys](/docs/api/access-keys), [SAML](/docs/api/SAML-Configuration), and [Service Whitelist](/docs/api/service-allowlist) APIs are complete and fully supported.
 
 
 ---
@@ -124,17 +124,17 @@ Update - Steps for generating clients now use [OpenAPI Generator](https://openap
 
 ---
 ### August 7, 2019 - APIs
-New - [Content](/docs/api/Content-Management), [Folder](/docs/api/Folders), and [Permissions](/docs/api/Content-Permissions) Management APIs allow you to manage content in your organization’s [Library](https://help.sumologic.com/01Start-Here/Library) from HTTP endpoints.
+New - [Content](/docs/api/content-management), [Folder](/docs/api/folders), and [Permissions](/docs/api/content-permissions) Management APIs allow you to manage content in your organization’s [Library](https://help.sumologic.com/01Start-Here/Library) from HTTP endpoints.
 
 
 ---
 ### June 26, 2019 - APIs
-Update - The [Collector Management API](/docs/api/Collectors) can return Collectors by name and manage offline Collectors with the `aliveBeforeDays` parameter.
+Update - The [Collector Management API](/docs/api/collectors) can return Collectors by name and manage offline Collectors with the `aliveBeforeDays` parameter.
 
 
 ---
 ### June 17, 2019 - APIs
-New - The [Ingest Budget Management API](/docs/api/Ingest-Budget-v1) allows you to manage [ingest budgets](https://help.sumologic.com/Manage/Ingestion-and-Volume/Ingest_Budgets) from HTTP endpoints.
+New - The [Ingest Budget Management API](/docs/api/ingest-budget-v1) allows you to manage [ingest budgets](https://help.sumologic.com/manage/Ingestion-and-Volume/Ingest_Budgets) from HTTP endpoints.
 
 **Deprecation Notice**
 
@@ -149,11 +149,11 @@ Update - Added hostname as a Collector environment variable in our [Docker image
 
 ---
 ### March 22, 2019 - APIs
-Update - The security services of our [API](/docs/API) framework has been upgraded. API requests with multiple forward slashes (`//`) will receive a "500 Internal Server Error" response.
+Update - The security services of our [API](/docs/api) framework has been upgraded. API requests with multiple forward slashes (`//`) will receive a "500 Internal Server Error" response.
 
 ---
 ### February 13, 2019 - APIs
-New - [User and Role APIs](/docs/API) allow administrators to programmatically create and manage users and roles, making it easy to integrate Sumo into existing onboarding/offboarding business workflows.
+New - [User and Role APIs](/docs/api) allow administrators to programmatically create and manage users and roles, making it easy to integrate Sumo into existing onboarding/offboarding business workflows.
 
 
 ---

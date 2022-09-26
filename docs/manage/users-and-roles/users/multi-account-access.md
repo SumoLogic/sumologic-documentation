@@ -1,9 +1,9 @@
 ---
 id: multi-account-access
 title: Multi-Account Access
+description: Multi-account Access allows you to log into multiple Sumo Logic accounts using one username (email address) and password.
 ---
 
-#
 
 :::note
 Sumo Logic now supports custom subdomains and recommends that as the best approach to providing access to multiple accounts: you can configure a custom subdomain for each of your Sumo Logic accounts. For more information, see [Set up a custom subdomain](docs/manage/manage-subscription/manage-org-settings.md).

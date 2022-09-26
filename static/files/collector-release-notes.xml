@@ -1,0 +1,289 @@
+<rss version="2.0">
+<channel>
+<title>Sumo Logic Collector Release Notes</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes</link>
+<description>You’ll find a list of new Collector features and relevant bug fixes for each release. In order to begin using the features listed here, you'll need to upgrade Collector software.</description>
+<item>
+<title>July 20, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#july-20-2022-19-403-1</link>
+<description>
+<![CDATA[ Feature: Collector support for Linux ARM/Aarch64 based instances Security update: Ant updated to 1.9.16. Fixes CVE-2021-36373 and CVE-2021-36374 Security update: Mina-statemachine updated to 2.1.4. Fixes CVE-2021-41973 Security update: Netty updated to 4.1.77.Final. Fixes CVE-2021-37136, CVE-2021-37137, CVE-2021-21409, CVE-2021-21295, CVE-2021-21290, CVE-2021-43797 and CVE-2021-21290 Bug Fix: Collector not properly escaping double quotes present in Active Directory objects Bug Fix: Retry with skipping events introduced for windows event collection for certain scenarios where bad events were resulting in retry timeouts ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#july-20-2022-19-403-1</guid>
+<pubDate>Wed, 20 Jul 2022 14:24:11 +0000</pubDate>
+</item>
+<item>
+<title>July 7, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#july-7-2022-19-392-13</link>
+<description>
+<![CDATA[ Bug Fix : Upgrade Manager fixes were made to avoid a manual restart after a Collector upgrade. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#july-7-2022-19-392-13</guid>
+<pubDate>Thu, 07 Jul 2022 23:36:11 +0000</pubDate>
+</item>
+<item>
+<title>May 11, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#may-11-2022-19-392-6</link>
+<description>
+<![CDATA[ Security:Upgraded the Collector JRE to 8.332.08.1 to address several CVEs. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#may-11-2022-19-392-6</guid>
+<pubDate>Wed, 11 May 2022 16:24:24 +0000</pubDate>
+</item>
+<item>
+<title>April 18, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#april-18-2022-19-392-4</link>
+<description>
+<![CDATA[ Bug Fix: Source configuration requests were not sent to the correct deployment.<br />Bug Fix: Duplicate Windows events ingested after upgrading to version 19.386-16 and the Windows API returned an incorrect order of events.<br />Bug Fix: The Docker Log Source does not retain the indentation of log messages.<br />Bug Fix: Nullpointerexception resulted in duplication of events.<br />Bug Fix: Writeable zero byte file is included in sumocollector Debian and RPM installers.<br />Bug Fix: Log4j vulnerability found during Collector installation via RPM method and Docker image.<br />Bug Fix: Local File Source multiline boundary regex idle timeout issue.<br />Bug Fix: Better handling of Active Directory Inventory in Installed Collector. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#april-18-2022-19-392-4</guid>
+<pubDate>Mon, 18 Apr 2022 17:49:24 +0000</pubDate>
+</item>
+<item>
+<title>March 3, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#March_3.2C_2022_(19.386-16)</link>
+<description>
+<![CDATA[ Bundled JRE version upgraded to 8.322.06.2.<br />Bug fix: Memory leak in Windows Events, record number logic for standard event channels.<br />Bug fix: Local Windows Event Log Source ingested in legacy format during upgrade when JSON format selected.<br />Bug fix: Collector upgrade failure resulting in collector service stopping.<br />Bug fix: Log4j vulnerability in RPM and Debian packages.<br />Bug fix: Windows Active Directory Source has more default attributes.<br />Bug fix: Security fix for Script Source. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-NotesMarch_3.2C_2022_(19.386-16)</guid>
+<pubDate>Thu, 03 Mar 2022 16:20:25 +0000</pubDate>
+</item>
+<item>
+<title>December 29, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#december-29-2021-19-375-4</link>
+<description>
+<![CDATA[ Bundled JRE version upgraded to 8.312.07.1.<br />Log4j upgraded to 2.17.1.<br />Bug fix: Windows events were duplicated due to an issue with bookmarking logic.<br />Beta release: Added support for an upcoming feature that allows you to restart your Installed Collector from the collection management page in the Sumo Logic web interface. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#december-29-2021-19-375-4</guid>
+<pubDate>Wed, 29 Dec 2021 23:56:41 +0000</pubDate>
+</item>
+<item>
+<title>December 19, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#december-19-2021-19-361-18</link>
+<description>
+<![CDATA[ Log4j upgraded to 2.17.0 to fix the zero-day exploit affecting the popular Apache Log4j utility (CVE-2021-45105). ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#december-19-2021-19-361-18</guid>
+<pubDate>Sun, 19 Dec 2021 18:26:15 +0000</pubDate>
+</item>
+<item>
+<title>December 16, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#december-16-2021-19-361-16</link>
+<description>
+<![CDATA[ Log4j upgraded to 2.16.0 to fix the zero-day exploit affecting the popular Apache Log4j utility (CVE-2021-45046). ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#december-16-2021-19-361-16</guid>
+<pubDate>Thu, 16 Dec 2021 18:26:19 +0000</pubDate>
+</item>
+<item>
+<title>December 11, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#december-11-2021-19-361-12</link>
+<description>
+<![CDATA[ Update - Log4j upgraded to 2.15.0 to fix the zero-day exploit affecting the popular Apache Log4j utility (CVE-2021-44228). ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#december-11-2021-19-361-12</guid>
+<pubDate>Sat, 11 Dec 2021 17:35:14 +0000</pubDate>
+</item>
+<item>
+<title>November 1, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#november-1-2021-19-361-8</link>
+<description>
+<![CDATA[ The installer is now a trusted vendor of the macOS.<br />The Remote Windows Performance Monitor Log Source is removed and no longer supported. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#november-1-2021-19-361-8</guid>
+<pubDate>Mon, 01 Nov 2021 13:45:53 +0000</pubDate>
+</item>
+<item>
+<title>September 15, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#september-15-2021-19-361-4</link>
+<description>
+<![CDATA[ Bug Fix: Windows Event Log Sources using Allowlist or Denylist filters could filter more data than expected. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#september-15-2021-19-361-4</guid>
+<pubDate>Wed, 15 Sep 2021 19:20:25 +0000</pubDate>
+</item>
+<item>
+<title>August 30, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#august-30-2021-19-361-3</link>
+<description>
+<![CDATA[ Bundled JRE upgraded to 8.302.08.1.1.<br />Remote Windows Event Log Sources now support autodiscovery of domain controllers and event collection.<br />AWS S3 Archive Sources now support ingestion from your Archive with five-minute granularity.<br />Bug Fix: Registration warnings are logged as WARN types.<br />Bug Fix: No error message was thrown when creating a Source with an empty logName.<br />Bug Fix: Fixed deadlock that caused remote configuration failure.<br />Bug Fix: High thread usage.<br />Bug Fix: Single backslashes were making Active Directory JSON objects invalid in some scenarios.<br />Bug Fix: Failure to uninstall on macOS. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#august-30-2021-19-361-3</guid>
+<pubDate>Mon, 30 Aug 2021 13:58:31 +0000</pubDate>
+</item>
+<item>
+<title>June 22, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#june-22-2021-19-351-4</link>
+<description>
+<![CDATA[ You can collect inventory data from Active Directory Database with a Windows Active Directory Source.<br />Windows Event Log Sources now have filters to allow or deny specific Windows Event IDs.<br />Bundled JRE version upgraded to 8.292.10.2.<br />Switched Docker Java dependency from forked version to open source version 3.2.1.<br />Security upgrades:<br />Google Guava upgraded to 30.1.1.<br />Log4j upgraded to 2.13.3.<br />Netty upgraded to 4.1.46.<br />Bug Fix: Installation could fail on Windows systems when the autorun registry was set.<br />Bug Fix: Collector registration failed with the correct hostname when deployed using an AMI in an autoscaling group.<br />Bug Fix: Quota reports are now sent after data is successfully collected. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#june-22-2021-19-351-4</guid>
+<pubDate>Tue, 22 Jun 2021 15:00:00 +0000</pubDate>
+</item>
+<item>
+<title>May 18, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#May_18.2C_2021_(19.338-5)</link>
+<description>
+<![CDATA[ Bundled JRE version upgraded to 8.282.08.1.<br />Bundled Jackson version upgraded to 2.11.2.<br />Beta release: Windows Event Sources can now collect forwarded events from a Windows Event Collector.<br />Bug Fix: Fixed Docker metrics ingestion with host network mode.<br />Bug Fix: Fixed Docker Sources malformed chunk errors for docker-java dependency where Jersey version was upgraded from 2.23 to 2.30.<br />Bug Fix: Fixed a permission issue encountered in redacted version 19.338-3 when using the runAs parameter during installation or an upgrade.<br />Bug Fix: Fixed a Windows Events Log Source data duplication issue encountered in redacted version 19.338-4 when upgrading/downgrading the collector version. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#May_18.2C_2021_(19.338-5)</guid>
+<pubDate>Tue, 18 May 2021 12:13:00 +0000</pubDate>
+</item>
+<item>
+<title>April 6, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#April_6.2C_2021_(19.338-4)</link>
+<description>
+<![CDATA[ Bundled JRE version upgraded to 8.282.08.1.<br />Bundled Jackson version upgraded to 2.11.2.<br />Beta release: Windows Event Sources can now collect forwarded events from a Windows Event Collector.<br />Bug Fix: Fixed Docker metrics ingestion with host network mode.<br />Bug Fix: Fixed Docker Sources malformed chunk errors for docker-java dependency where Jersey version was upgraded from 2.23 to 2.30.<br />Bug Fix: Fixed a permission issue encountered in redacted version 19.338-3 when using the runAs parameter during installation or an upgrade. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#April_6.2C_2021_(19.338-4)</guid>
+<pubDate>Tue, 06 Apr 2021 17:00:00 +0000</pubDate>
+</item>
+<item>
+<title>March 24, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#march-24-2020-19-338-3</link>
+<description>
+<![CDATA[ Bundled JRE version upgraded to 8.282.08.1.<br /> Bundled Jackson version upgraded to 2.11.2.<br /> Beta release: Windows Event Sources can now collect forwarded events from a Windows Event Collector.<br /> Bug Fix: Fix Docker metrics ingestion with host network mode. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#march-24-2020-19-338-3</guid>
+<pubDate>Wed, 24 Mar 2021 17:00:00 +0000</pubDate>
+</item>
+<item>
+<title>November 24, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#November_24.2C_2020_(19.319-4)</link>
+<description>
+<![CDATA[ Bundled JRE version upgraded to 8.275.01.1.<br /> Bug Fix: Health Events for Windows Event Log Sources were not updating properly.<br /> Bug Fix: Unnecessary character escaping in SNI command line arguments.<br /> Bug Fix: Windows Event Log collection in JSON format was incorrectly parsing boolean fields as null.<br /> Bug Fix: The vSkipRegistration parameter was not supported with the command line installer when using Installation Tokens.<br /> Bug Fix: Collector uninstallation issue on MacOS.<br /> Bug Fix: Fixed vulnerabilities in Docker image from sumocollector docker hub. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#November_24.2C_2020_(19.319-4)</guid>
+<pubDate>Tue, 24 Nov 2020 12:00:00 +0000</pubDate>
+</item>
+<item>
+<title>October 13, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#October_13.2C_2020_(19.319-2)</link>
+<description>
+<![CDATA[ Easily parse your Windows Event Logs with our new capability to ingest them in JSON format. You now have the option to choose between the existing and new JSON format. The new format is more structured and compact than the existing format. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#October_13.2C_2020_(19.319-2)</guid>
+<pubDate>Tue, 13 Oct 2020 12:00:00 +0000</pubDate>
+</item>
+<item>
+<title>August 25, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#August_25.2C_2020_(19.308-12)</link>
+<description>
+<![CDATA[ Bundled JRE version upgraded to 8.265.01.1. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#August_25.2C_2020_(19.308-12)</guid>
+<pubDate>Tue, 25 Aug 2020 12:00:00 +0000</pubDate>
+</item>
+<item>
+<title>July 28, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#July_28.2C_2020_(19.308-2)</link>
+<description>
+<![CDATA[ Archive has the option to specify an S3 prefix when forwarding data to an AWS Archive Destination with the processing rule "Archive messages that match". This allows you to segment and organize data in your Archive.<br />Installed Collectors now send health events to a Health Events framework. Health events for Installed Collectors cover key collection issues that can occur across various Sources such as Windows events, Docker, or Local and Remote File Sources<br />AccountID is new to the list of AWS instance metadata that the Installed Collector extracts from instance identity documents (IMDSv2) in AWS.<br />Docker bug fixes: Collection issues when there was a pause in the generation of data and for short-lived containers.<br />Bug fix: The Collector could stop ingesting if it’s unable to connect to servers and too many logs are backed-up on disk. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#July_28.2C_2020_(19.308-2)</guid>
+<pubDate>Tue, 28 Jul 2020 12:00:00 +0000</pubDate>
+</item>
+<item>
+<title>May 11, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#May_11.2C_2020_(19.288-10)</link>
+<description>
+<![CDATA[ Bundled JRE version upgraded to 8.252.09.1.<br />Installed Collectors now use IMDSv2 to collect AWS instance metadata.<br />Bug Fix: Docker Stats Sources for metrics were misconfigured when edited. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#May_11.2C_2020_(19.288-10)</guid>
+<pubDate>Mon, 11 May 2020 12:00:00 +0000</pubDate>
+</item>
+<item>
+<title>February 13, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#February_13.2C_2020_(19.288-3)</link>
+<description>
+<![CDATA[ Syslog forwarding supports the option to forward syslog messages without prepending the Collector hostname and timestamp on messages.<br />Installed Collectors on AWS EC2 instances automatically get the availabilityZone from AWS instance identity documents.<br />Host Metrics Sources collect total CPU usage.<br />Bundled JRE version upgraded to 8.242.08.1.<br />Beta release: For our new Archive feature, we’ve added a new Processing Rule type named Archive messages that match that allows you to archive log data at the source level on Installed Collectors. To participate contact your Sumo account executive or sign up for an enterprise trial account. Existing Beta customers should upgrade to this version for our latest security library updates.<br />Beta release: Collectors now send health event data to Sumo Logic such as file path issues, missing heartbeats, throttling events, and when Ingest Budget capacities are reached. Check out our Service Release Note that provides further details. To participate contact your Sumo Logic account executive or sign up for an enterprise trial account.<br />Bug Fix: Docker Log Sources could duplicate logs on container restart. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#February_13.2C_2020_(19.288-3)</guid>
+<pubDate>Thu, 13 Feb 2020 12:00:00 +0000</pubDate>
+</item>
+<item>
+<title>November 5, 2019</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#November_5.2C_2019_(19.253-26)</link>
+<description>
+<![CDATA[ Bundled JRE version upgraded to 8.232.09.1<br />Bug Fix: Docker Logs and Stats Sources were not running properly on FIPS enabled Collectors.<br />Bug Fix: Remote File Sources caused a connection leak due to the Collector not closing SFTP connections after hitting the retry limit.<br />Bug Fix: Wrapper configuration properties could not be set with the Command Line Installer.<br />Bug Fix: Addresses a potential security vulnerability where the Run As user information was preserved in the collector.properties file after installation on Windows systems. This fix applies to all prior Collector versions on Windows. You will need to remove the credentials from the collector.properties file manually on existing affected Collectors.<br />Bug Fix: A warning message was not provided when the installer was run with an invalid Run As user. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#November_5.2C_2019_(19.253-26)</guid>
+<pubDate>Tue, 05 Nov 2019 12:00:00 +0000</pubDate>
+</item>
+<item>
+<title>August 13, 2019</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#August_13.2C_2019_(19.253-14)</link>
+<description>
+<![CDATA[ Bundled JRE version upgraded to 8.222.10.1 on Linux and macOS and 8.222.10.3 on Windows.<br />Bug Fix: FIPS 140-2 compliant Java Cryptography Extension (JCE) couldn’t be enabled on Mac and TAR packaging.<br />Bug Fix: The US1 deployment was incorrectly responding with 401 "Credentials no longer accepted by service" to Collectors registered in other deployments.<br />Bug Fix: Uppercase JSON file extensions (.JSON) were ignored by Collectors when using JSON files to configure Sources.<br />Bug Fix: New Collectors on macOS were failing to install. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#August_13.2C_2019_(19.253-14)</guid>
+<pubDate>Tue, 13 Aug 2019 17:00:00 +0000</pubDate>
+</item>
+<item>
+<title>August 8, 2019</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#August_8.2C_2019_(19.253-13)</link>
+<description>
+<![CDATA[ Bundled JRE version upgraded to 8.222.10.1 on Linux and macOS and 8.222.10.3 on Windows.<br />Bug Fix: FIPS 140-2 compliant Java Cryptography Extension (JCE) couldn’t be enabled on Mac and TAR packaging.<br />Bug Fix: The US1 deployment was incorrectly responding with 401 "Credentials no longer accepted by service" to Collectors registered in other deployments.<br />Bug Fix: Uppercase JSON file extensions (.JSON) were ignored by Collectors when using JSON files to configure Sources. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#August_8.2C_2019_(19.253-13)</guid>
+<pubDate>Thu, 8 Aug 2019 12:00:00 +0000</pubDate>
+</item>
+<item>
+<title>June 12, 2019</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#June_12.2C_2019_(19.253-6)</link>
+<description>Bug fix: A Windows Event Source could ingest duplicate data after upgrading its Collector.</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#June_12.2C_2019_(19.253-6)</guid>
+<pubDate>Wed, 12 Jun 2019 12:00:00 +0000</pubDate>
+</item>
+<item>
+<title>May 15, 2019</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#May_15.2C_2019_(19.253-3)</link>
+<description>
+<![CDATA[ From this release forward Sumo Logic now bundles the Amazon Corretto JRE, replacing Oracle’s OpenJDK. See the full release notes for important changes.<br />Added the option to enable FIPS 140-2 compliant Java Cryptography Extension (JCE) on new Installed Collectors to encrypt your data.<br />New parameters are configurable at install time with the Command Line Installer. Eliminating the need to wait until after installation and restarting the Collector service. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#May_15.2C_2019_(19.253-3)</guid>
+<pubDate>Wed, 15 May 2019 12:00:00 +0000</pubDate>
+</item>
+<item>
+<title>March 18, 2019</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#March_18.2C_2019_(19.245-4)</link>
+<description>
+<![CDATA[ Script Sources and Script Actions now need to be enabled on new Collectors using the parameters, enableScriptSource and enableActionSource. Previously these Sources were automatically enabled and we required you to disable them if needed. The new parameters are automatically added to existing Collectors when upgraded. They are set to true on Collectors that already have these Sources and set to false if the Collector doesn’t have these Sources.<br />Bug fix: Blacklist path expressions on Windows are now case insensitive to match Window’s behavior. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#March_18.2C_2019_(19.245-4)</guid>
+<pubDate>Mon, 18 Mar 2019 12:00:00 +0000</pubDate>
+</item>
+<item>
+<title>March 6, 2019</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#March_6.2C_2019_(19.227-24)</link>
+<description>To maintain backward compatibility we've updated the parameters for Script and Action Sources in preparation for an upcoming release.</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#March_6.2C_2019_(19.227-24)</guid>
+<pubDate>Wed, 06 Mar 2019 16:48:56 +0000</pubDate>
+</item>
+<item>
+<title>February 12, 2019</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#February_12.2C_2019_(19.227-22)</link>
+<description>
+<![CDATA[ Bundled JRE version upgraded to 8u202.<br />Bug fix: Windows Collector upgrades could fail due to a timeout when checking for privileges of the user running the Collector service. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#February_12.2C_2019_(19.227-22)</guid>
+<pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>January 14, 2019</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#January_14.2C_2019_(19.227-19)</link>
+<description>
+<![CDATA[ Streaming Metrics Sources now support the Prometheus metric format.<br />Host Metrics Sources now support the Disk_UsedPercent metric, which provides the used disk space percentage. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#January_14.2C_2019_(19.227-19)</guid>
+<pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>October 31, 2018</title>
+<link>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#October_31.2C_2018_(19.227-15)</link>
+<description>Bundled JRE version upgraded to 8u192.</description>
+<guid>https://help.sumologic.com/Release-Notes/Collector-Release-Notes#October_31.2C_2018_(19.227-15)</guid>
+<pubDate>Wed, 31 Oct 2018 00:00:00 +0000</pubDate>
+</item>
+</channel>
+</rss>

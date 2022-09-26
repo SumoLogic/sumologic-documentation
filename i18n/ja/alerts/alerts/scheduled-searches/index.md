@@ -70,13 +70,13 @@ For instructions, see [Scheduled Searches for Webhook Connections](docs/manage/c
 
 ### Save to Index
 
-When you create a Scheduled Search, you can save the results to an Index. This way, your data can be searched at a later time using **\_index=index_name** with increased search performance.
+When you create a Scheduled Search, you can save the results to an Index. This way, your data can be searched at a later time using `_index=index_name` with increased search performance.
 
 For instructions, see [Save to Index](save-to-index.md).
 
 ### Save to Lookup
 
-When you create a Scheduled Search, you can save the results to a [Lookup Table](../../search/lookup-tables/create-a-lookup-table.md). This way, you can view the results of the scheduled search from the Library by viewing the Lookup Table the search results were saved to. You can use the [lookup](../../search/search-query-language/search-operators/lookup.md) operator to enrich other log data with the information from the Lookup Table.
+When you create a Scheduled Search, you can save the results to a [Lookup Table](../../search/lookup-tables/create-lookup-table.md). This way, you can view the results of the scheduled search from the Library by viewing the Lookup Table the search results were saved to. You can use the [lookup](../../search/search-query-language/operators#lookup) operator to enrich other log data with the information from the Lookup Table.
 
 For instructions, see [Save to Lookup](save-to-lookup.md).
 

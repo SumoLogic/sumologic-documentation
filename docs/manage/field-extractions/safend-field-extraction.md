@@ -1,6 +1,7 @@
 ---
 id: safend-field-extraction
 title: Sample Safend Field Extraction
+description: Create a field extraction rule for Safend.
 ---
 
 

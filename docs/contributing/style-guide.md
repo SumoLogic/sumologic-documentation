@@ -19,7 +19,11 @@ The Sumo Logic Style Guide is a living document. If you have wondered about the 
 
 ## Grammar and Style
 
-If you need help with a convention, word to use, or format to follow, we will keep a cheatsheet of styles here. We also follow [Microsoft Manual of Style](https://docs.microsoft.com/en-us/style-guide/welcome/).
+If you need help with a convention, word to use, or format to follow, we will keep a cheatsheet of styles here. We also follow:
+
+* [Merriam-Webster Dictionary](https://www.merriam-webster.com/)
+* *[The Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html)*
+* [Microsoft Manual of Style](https://docs.microsoft.com/en-us/style-guide/welcome/)
 
 For terminology usage guidance, see [Word List](docs/contributing/word-list.md).
 
@@ -67,7 +71,7 @@ For example, the first time you use AWS Application Load Balancer (ALB), you int
 
 ### Contractions
 
-For writing in English, contractions feel like normal, everyday speech. But they can cause issues with translation, especially if someone uses Google Chrome translation or other tools and when we hire companies to translate content. We recommend not using contractions. Spell out all words. This includes don't, it's, haven't, and so on.
+Do not use negative contractions (e.g., don't, can't, shouldn't). Spell out those words. Negative contractions can be mistaken for the opposite meaning, especially if someone is reading quickly.  
 
 ### UI Element Names
 
@@ -117,6 +121,11 @@ For clarity and search engine discoverability:
 
 A Markdown file has a filename and extension of .md. We recommend keeping the filename short. It does not affect the canonical link.
 
+## Beta Releases
+
+For Beta docs, we want to publish them, but exclude them from the nav and search engine results so that you need the physical link to access them. [Learn how to write it in markdown](/docs/contributing/markdown-cheat-sheet#beta-releases).
+
+
 ## Metadata
 
 We refer to our doc site metadata (i.e., title, description, and search keywords), located in the header, as _frontmatter_. [Learn more](/docs/contributing/markdown-cheat-sheet#frontmatter).
@@ -163,6 +172,10 @@ Use code blocks to format scripts, such as the JSON example below. This is impor
     }  
 }  
 ```
+
+### Punctuation
+
+Punctuation is placed outside of quotation marks, British English style. For everything else (dates, times, spelling), we use American English style.
 
 ### Numbered lists
 

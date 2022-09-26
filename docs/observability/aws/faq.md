@@ -1,6 +1,7 @@
 ---
 id: faq
 title: AWS Observability FAQs
+sidebar_label: FAQ
 description: Frequently asked questions (FAQs) about the AWS Observability Solution to monitor and troubleshoot your AWS cloud infrastructure.
 ---
 

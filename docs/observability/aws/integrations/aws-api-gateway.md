@@ -100,7 +100,7 @@ The Sumo Logic AWS Observability API Gateway dashboards provide insights into AP
 
 We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
 
-### 1. AWS API Gateway - Overview
+### Overview
 
 **AWS API Gateway - Overview** dashboard provides insights into API Gateway performance throughout your infrastructure, including API calls, latency, client and server-side errors, API cache hits, and back-end cache misses.
 
@@ -123,7 +123,7 @@ Use this dashboard to:
 
 ![1. AWS API Gateway - Overview.png](/img/observability/api-gateway-overview.png)
 
-### 2. AWS API Gateway - Audit Events
+### Audit Events
 
 **AWS API Gateway - Audit Events** dashboard provides detailed audit
 insights into API Gateway events by various dimensions including event
@@ -138,7 +138,7 @@ Use this dashboard to:
 
 ![2. AWS API Gateway - Audit Events.png](/img/observability/api-gateway-audit-events.png)
 
-### 1. AWS API Gateway - Latency, Cache
+### Latency, Cache
 
 **AWS API Gateway - Latency, Cache** dashboard provides insights into
 API Gateway performance including API requests, latency, API cache hits,
@@ -153,7 +153,7 @@ Use this dashboard to:
 
 ![1. AWS API Gateway - Latency, Cache.png](/img/observability/api-gateway-latency-cache.png)
 
-### 2. AWS API Gateway - 4xx and 5xx Errors
+### 4xx and 5xx Errors
 
 **AWS API Gateway - 4xx and 5xx Errors** dashboard provides insights
 into API Gateway HTTP 4xx and 5xx code errors throughout your
@@ -168,7 +168,7 @@ Use this dashboard to:
 
 ![2. AWS API Gateway - 4XX and 5XX Errors.png](/img/observability/api-gateway-errors.png)
 
-### 3. AWS API Gateway - Enhanced Monitoring
+### Enhanced Monitoring
 
 **AWS API Gateway - Enhanced Monitoring** dashboard provides detailed
 insights into API Gateway performance throughout your infrastructure,

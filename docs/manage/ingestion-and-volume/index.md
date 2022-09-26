@@ -1,6 +1,7 @@
 ---
 slug: /manage/ingestion-and-volume
 title: Ingestion and Volume
+description: Learn how to manage the ingestion of data by Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -28,7 +28,7 @@ If the time zone of messages is set incorrectly, those logs won't be picked up b
 * A maximum of 120 emails are sent per day per Real Time Alert.
 * Aggregate real-time scheduled searches evaluate the first 1,000 results per search. For Example, if the scheduled search is supposed to return more than 1,000 results, reduce the scope of the search.
 * Non-Aggregate real-time scheduled searches evaluate the first 100 results per search. For Example, if the scheduled search is supposed to return more than 100 results, either convert it to aggregate scheduled search or reduce the scope of the search.
-* The [\_dataTier](docs/manage/partitions-and-data-tiers/data-tiers.md) search modifier is not supported in Real Time Alert searches.
+* The [_dataTier](docs/manage/partitions-and-data-tiers/data-tiers.md) search modifier is not supported in Real Time Alert searches.
 
 ### Notification Results
 
@@ -46,7 +46,7 @@ The results from your search will vary based on the type of alert selected. The 
 
 | Not supported for Real Time Alerts | Must be added after a "group by" phrase |
 | -- | -- |
-| <ul><li>Count_frequent</li><li>Details</li><li>First, Last - instead use the withtime option, see [most_recent and least_recent](/docs/search/search-query-language/group-aggregate-operators#most_recent-least_recent) .</li><li>LogReduce</li><li>Now()</li><li>Outlier will omit the first N (window size) data points in results because those data points are used in the training phase.</li><li>Join</li><li>Parse using</li><li>queryStartTime()</li><li>queryEndTime()</li><li>Save</li><li>Sessionize</li><li>Subquery</li><li>Threat Intel</li><li>Trace</li><li>Timeslice greater than 1 day</li><li>Transactionize</li></ul> | <ul><li>Accum</li><li></li><li>Backshift</li><li>Diff</li><li>Join</li><li>Limit</li><li>RollingStd</li><li>Smooth</li><li>Sort</li><li>Top</li><li>Total</li><li>Transaction By Flow</li><li>Compare With can be used when your query's aggregate operation is grouped by a [timeslice](../../search/search-query-language/search-operators/timeslice.md). See number 2, below, for details.</li></ul> |
+| <ul><li>Count_frequent</li><li>Details</li><li>First, Last - instead use the withtime option, see [most_recent and least_recent](/docs/search/search-query-language/group-aggregate-operators#most_recent-least_recent) .</li><li>LogReduce</li><li>Now()</li><li>Outlier will omit the first N (window size) data points in results because those data points are used in the training phase.</li><li>Join</li><li>Parse using</li><li>queryStartTime()</li><li>queryEndTime()</li><li>Save</li><li>Sessionize</li><li>Subquery</li><li>Threat Intel</li><li>Trace</li><li>Timeslice greater than 1 day</li><li>Transactionize</li></ul> | <ul><li>Accum</li><li></li><li>Backshift</li><li>Diff</li><li>Join</li><li>Limit</li><li>RollingStd</li><li>Smooth</li><li>Sort</li><li>Top</li><li>Total</li><li>Transaction By Flow</li><li>Compare With can be used when your query's aggregate operation is grouped by a [timeslice](../../search/search-query-language/operators#timeslice). See number 2, below, for details.</li></ul> |
 
 1. Real time queries using [**time compare**](../../search/time-compare.md) need to have at least three timeslices within its time range. For example, if the time range is 10 minutes, your timeslices need to be no longer than 3 minutes so that there are at least three of them.
 

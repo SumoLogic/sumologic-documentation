@@ -2,6 +2,7 @@
 id: aws-lambda
 title: Webhook Connection for AWS Lambda
 sidebar_label: AWS Lambda
+description: You can trigger an AWS Lambda function directly from a Sumo Logic alert by configuring a webhook connection.
 ---
 
 You can trigger an AWS Lambda function directly from a Scheduled Search or Monitor by configuring a webhook connection. You can use the Webhook Connection as the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md) or the Connection Type in a [Monitor](/docs/alerts/monitors).

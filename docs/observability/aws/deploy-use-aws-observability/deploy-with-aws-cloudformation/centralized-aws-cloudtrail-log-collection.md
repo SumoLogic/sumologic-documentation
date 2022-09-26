@@ -30,7 +30,7 @@ To do so, 
 
    * **Scope**: Specific Data
 
-       * **Metadata**. \_sourceCategory
+       * **Metadata**. _sourceCategory
 
    * **Value**. aws/observability/cloudtrail/logs
 

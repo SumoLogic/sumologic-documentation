@@ -14,7 +14,7 @@ The Tenable Source provides a secure endpoint to ingest audit-log events, vulner
    * The Asset Export API first [exports assets](https://developer.tenable.com/reference/exports-assets-request-export) that are used to initiate export jobs. Next, it gets the export [status](https://developer.tenable.com/reference/exports-assets-request-export) and then [downloads exported assets](https://developer.tenable.com/reference/exports-assets-download-chunk) in a chunk.
 
 :::note
-This Source is not available in the [Fed deployment](/docs/api/Troubleshooting#Deployments-and-Sumo-Logic-Endpoints).
+This Source is not available in the [Fed deployment](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints).
 :::
 
 ## States

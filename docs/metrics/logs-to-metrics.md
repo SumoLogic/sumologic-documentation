@@ -88,9 +88,9 @@ You can't use a scheduled view or an index in the scope of a Logs-to-Metrics rul
 
 If you want to create a Logs-to-Metrics rule for logs in the frequent or infrequent tier, you must create the rule with the same log search scope as the partition where the data lives, because you cannot use `_index`  in a Logs-to-Metrics rule. For example, if you have a partition, `_index=foo`, whose routing expression is `_sourceCategory=foo`, then you should use that same routing expression, `_sourceCategory=foo`, to scope the Logs-to-Metrics rule.
 
-### \_dataTier search modifier is not supported
+### _dataTier search modifier is not supported
 
-The \_dataTier search modifier is not supported in Logs-to-Metrics rules.
+The _dataTier search modifier is not supported in Logs-to-Metrics rules.
 
 ## Enable Logs-to-Metrics rule creation by non-admin users
 
