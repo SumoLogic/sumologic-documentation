@@ -68,7 +68,7 @@ To configure A Tenable Source:
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
 
    * `_siemVendor`: Tenable
-   * `_siemProduct`: Cloud
+   * `_siemProduct`: Cloud API
    * `_siemFormat`: JSON
    * `_siemEventID`: Set to the type of data ingested.
 
