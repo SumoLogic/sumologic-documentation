@@ -114,8 +114,7 @@ After you create a child org, you can’t delete it.
       :::note 
       Provisioning CSE can take up to 24 hours. See [Monitor CSE Provisioning](#monitor-cse-provisioning), below.
       :::
-8. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented. <br/>  
-   <img src={useBaseUrl('img/subscriptions/calculator.png')} alt="calculator" width="450"/> 
+8. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented. <br/> <img src={useBaseUrl('img/subscriptions/calculator.png')} alt="calculator" width="450"/> 
 9.  Click **Use This Allocation**.
 
 ## Update an org's credits allocation
