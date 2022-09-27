@@ -4,8 +4,12 @@
 
 // Documentation page id for open source: sumo-logic-open-source-projects
 
+const fs = require('fs')
+
 const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
 const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
+
+const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString())
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -116,13 +120,9 @@ module.exports = {
     'react-iframe',
     ['@docusaurus/plugin-client-redirects',
       {
-        redirects: [
-          {
-            //CID REDIRECTS: Enter a from: of the /cid=##### with the path to the file for to: for each CID!
-            to: '/docs/contributing/markdown-cheat-sheet',
-            from: '/cid=1234',
-          },
-        ]
+        redirects: Object.entries(cidRedirects).map(
+          ([key, value]) => ({ from: key, to: value })
+        )
       },
     ],
   ],
