@@ -126,8 +126,7 @@ You can update an Enterprise org’s credits allocation, but not a Trial POV org
 1. Click the row for the org you want to edit.
 1. Click **Edit** in the right hand pane.
     ![edit-org-3.png](/img/subscriptions/edit-org-3.png)
-1. Click **Modify Allocation**.<br/> 
-    <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} alt="modify" width="450"/> 
+1. Click **Modify Allocation**.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} alt="modify" width="450"/> 
 2. The Credits Calculator appears.
 3. Follow steps in [Upgrade a POV Trial org](#upgrade-a-pov-trial-org) to finish.
 
