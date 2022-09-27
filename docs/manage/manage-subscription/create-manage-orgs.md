@@ -93,8 +93,7 @@ After you create a child org, you can’t delete it.
 To change an org's credits allocation:
 1. Go to **Administration \> Organizations**.
 1. Click the row for the org you want to edit.
-1. Click **Edit** in the right hand pane. <br/>
-   <img src={useBaseUrl('img/subscriptions/edit-org-3.png')} alt="your description" width="450" />
+1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/edit-org-3.png')} alt="your description" width="450" />
 2. Click **Modify Allocation**.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} alt="allocation" width="450" />
 3. The **Credits Calculator** appears.
 4. Follow the steps in [Create a child org](#create-a-child-org) to update the credits allocation.
