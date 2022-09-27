@@ -37,3 +37,4 @@ Traces are collected with SumoLogic Kubernetes Collection or a standalone OpenTe
 :::note
 To interact with other Sumo Logic users, post feedback, or ask a question, visit the Sumo Logic Community Search & Query Forum.
 :::
+     
