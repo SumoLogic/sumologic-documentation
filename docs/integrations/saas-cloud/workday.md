@@ -154,7 +154,7 @@ This section demonstrates how to configure the Workday portal to integrate with 
 
 
 7. Click **OK**.
-8. To apply policy changes, access the **Activate Pending Security Policy Changes** task and activate the changes you made. \
+8. To apply policy changes, access the **Activate Pending Security Policy Changes** task and activate the changes you made.
  \
 
 
@@ -171,34 +171,34 @@ This section demonstrates how to configure the Workday portal to integrate with 
 2. Click **OK**.
 3. Copy the **Client Secret** and **Client ID** before you navigate away from the page and store it securely.
 
-If you lose the **Client Secret,** you can generate a new one using the **Generate New API Client Secret** task. \
+If you lose the **Client Secret,** you can generate a new one using the **Generate New API Client Secret** task.
 
 
 
 4. Click **Done**.
 5. To generate a refresh token, access the **View API Clients** task and copy the below two parameters from the top of the page:
     * **Workday REST API Endpoint. **The endpoint to use access to the resources in your Tenant.
-    * **Token Endpoint**. The endpoint used to exchange an authorization code for a token (if you configure authorization code grant). \
+    * **Token Endpoint**. The endpoint used to exchange an authorization code for a token (if you configure authorization code grant).
 
 
 6. Go to **API Clients for Integrations **tab hover on **“Sumo Logic Workday Collector API”** client and click on the three-dot action buttons.
 7. In the new pop up window, click **API Client > Manage Refresh Token for Integrations \
 
 
-8. In the **Manage Refresh Token for Integrations** window, select **“SumoLogic_ISU”** in the **Workday Account** field and click **OK**. \
+8. In the **Manage Refresh Token for Integrations** window, select **“SumoLogic_ISU”** in the **Workday Account** field and click **OK**.
 
 
-9. In the newly opened window, select **Generate New Refresh Token** checkbox and click **OK**. \
+9. In the newly opened window, select **Generate New Refresh Token** checkbox and click **OK**.
  \
 
-10. Copy the value of the **Refresh Token** column from the opened window and click **Done**. \
+10. Copy the value of the **Refresh Token** column from the opened window and click **Done**.
 
 
 #### Step 1.4: Enable your tenant to send data
 
-1. To enable your Tenant to send data, access the **Edit Tenant Setup - System** task and ensure that the **Enable User Activity Logging** checkbox is selected. \
+1. To enable your Tenant to send data, access the **Edit Tenant Setup - System** task and ensure that the **Enable User Activity Logging** checkbox is selected.
  \
-2. Access the** Edit Tenant Setup - Security** task and ensure that the** OAuth 2.0 Clients Enabled** checkbox is selected. \
+2. Access the** Edit Tenant Setup - Security** task and ensure that the** OAuth 2.0 Clients Enabled** checkbox is selected.
 
 
 #### Step 1.5: Create a Custom sign on report
@@ -207,11 +207,11 @@ If you lose the **Client Secret,** you can generate a new one using the **Genera
 
 
 1. Go to **Copy  Standard Report to Custom Report **task to create a Customs SignOn Report.
-2. Select **“Candidate Signons and Attempted Signons” **in **Standard Report** **Name** dropdown and click **OK**. \
+2. Select **“Candidate Signons and Attempted Signons” **in **Standard Report** **Name** dropdown and click **OK**.
  \
 
 
-3. In the new window, select **Optimized for Performance **checkbox, edit the report **Name** to **Custom Signons and Attempted Signons Report** and click **OK**. \
+3. In the new window, select **Optimized for Performance **checkbox, edit the report **Name** to **Custom Signons and Attempted Signons Report** and click **OK**.
  \
 
 
@@ -231,26 +231,26 @@ If you lose the **Client Secret,** you can generate a new one using the **Genera
 
 
 
-6. Remove the text in the **Column Heading Override** column, for **Field > Session ID** and **Field > System Account**. \
+6. Remove the text in the **Column Heading Override** column, for **Field > Session ID** and **Field > System Account**.
  \
 
 
  \
 After configuring all the fields you can verify all the fields using the [Excel](https://appdev-readme-resources.s3.amazonaws.com/Workday/Signons_and_Attempted_Signons_-_Copy.xlsx).
-7. Go to the **Advanced** tab and click the **Enable As Web Service **checkbox under** Web Service Options. \
+7. Go to the **Advanced** tab and click the **Enable As Web Service **checkbox under** Web Service Options.
  \
 
 
-8. Go to the **Share** tab, enable **Share with specific users and groups** option, add **SumoLogic_ISU** in the **Authorized Users** field, and click **OK**. \
+8. Go to the **Share** tab, enable **Share with specific users and groups** option, add **SumoLogic_ISU** in the **Authorized Users** field, and click **OK**.
 
 
-9. Click **Done**. You can also test it by clicking the **Run** button. \
+9. Click **Done**. You can also test it by clicking the **Run** button.
  \
 
 10. To get the Report URL, search for **Custom Signons and Attempted Signons Report** in the search bar and run the report.
-11. Click the **Actions** button and go to **Web Service > View URLs. \
+11. Click the **Actions** button and go to **Web Service > View URLs.
  \
-12. Click **OK** and copy the URL from **JSON **link. You will need this later while configuring the collection. \
+12. Click **OK** and copy the URL from **JSON **link. You will need this later while configuring the collection.
 
 
 From the URL, remove any query parameters like json, From Moment and To Moment. The report URL should looks like this `https://wd2-impl-services1.workday.com/ccx/service/customreport2/<tenant>/<accountname>/<reportname>`
@@ -285,10 +285,10 @@ In this step, you deploy the SAM application, which creates the necessary resour
 
 To deploy the Sumo Logic Workday SAM Application, do the following:
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
-2. Search for **sumologic-workday**, and select the **Show apps that create custom IAM roles or resource policies **checkbox and click the app link when it appears. \
+2. Search for **sumologic-workday**, and select the **Show apps that create custom IAM roles or resource policies **checkbox and click the app link when it appears.
 
 
-3. When the Sumo Logic app page appears, click **Deploy**. \
+3. When the Sumo Logic app page appears, click **Deploy**.
 
 
 4. In the **AWS Lambda > Functions >** **Application Settings** panel, specify the following parameters in the corresponding text fields:
@@ -300,11 +300,11 @@ To deploy the Sumo Logic Workday SAM Application, do the following:
     * **RefreshTokenEndpoint.**  Paste the Token endpoint copied from [Step 1.4](#Step_1.4:_Enable_your_tenant_to_send_data).
     * **ClientId.** Paste the API Client ID copied from [Step 1.4](#Step_1.4:_Enable_your_tenant_to_send_data).
     * **ClientSecret**.  Paste the API Client SECRET copied from [Step 1.4](#Step_1.4:_Enable_your_tenant_to_send_data).
-    * **RefreshToken.** Paste the Refresh token generated from [Step 1.4](#Step_1.4:_Enable_your_tenant_to_send_data). \
+    * **RefreshToken.** Paste the Refresh token generated from [Step 1.4](#Step_1.4:_Enable_your_tenant_to_send_data).
  \
 
 5. Click **Deploy**.
-6. After the deployment, you can verify whether all the resources are created completely. \
+6. After the deployment, you can verify whether all the resources are created completely.
 
 
 #### Configure script-based collection for Workday

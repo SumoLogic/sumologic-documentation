@@ -24,7 +24,7 @@ Begin with the least descriptive, highest-level grouping, and get more descripti
 
 For example, assume you have several different Firewall appliances: ASA and FWSM from Cisco, and 7050 from Palo Alto Networks. In addition, you also have a Cisco router, 800 series.
 
-Following the naming convention described previously, you could set the following \_sourceCategory values (instead of simply using “FWSM”, “ASA”, etc.):
+Following the naming convention described previously, you could set the following _sourceCategory values (instead of simply using “FWSM”, “ASA”, etc.):
 
 * Networking/Firewall/Cisco/FWSM  
 * Networking/Firewall/Cisco/ASA  
@@ -49,7 +49,7 @@ import Iframe from 'react-iframe';
 
 Using the naming convention described here lets you easily and effectively define the scope of your search.
 
-For example, if you use either \_sourceCategory value:
+For example, if you use either _sourceCategory value:
 
 * `_sourceCategory=Networking/Firewall/*` (all firewall data)  
 * `_sourceCategory=Networking/*/Cisco/*` (all Cisco data)
@@ -72,7 +72,7 @@ You can build high-level groupings with a variety of items. For example, you can
 
 The order in which you use these values is determined by how you search the data.
 
-For example, if most of your use cases do not need data from both prod and dev environments, you could use the following \_sourceCategory values:
+For example, if most of your use cases do not need data from both prod and dev environments, you could use the following _sourceCategory values:
 
 * Prod/Web/Apache/Access  
 * Dev/Web/Apache/Access  

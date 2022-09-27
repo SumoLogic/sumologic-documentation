@@ -6,7 +6,7 @@ description: Use HTTP endpoints to manage Scheduled Views.
 tags: [settings]
 ---
 
-The [Scheduled View](https://help.sumologic.com/Manage/Scheduled-Views) Management API allows you to manage Scheduled Views from HTTP endpoints.
+The [Scheduled View](https://help.sumologic.com/manage/Scheduled-Views) Management API allows you to manage Scheduled Views from HTTP endpoints.
 
 Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 

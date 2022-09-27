@@ -89,7 +89,7 @@ To configure a **Dropbox Source
 
 1. **App Key**, **App Secret**, and **Access Code**. Provide your Dropbox [authentication](#authentication) credentials.
 
-1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/manage/collection/processing-rules/create-processing-rule.md).
+1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
 
 1. When you are finished configuring the Source click **Submit**.
 

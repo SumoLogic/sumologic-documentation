@@ -60,7 +60,7 @@ Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the **accoun
 
 
 ### Field Extraction Rules
-Create a Field Extraction Rule (FER) for AWS Cost Explorer Logs. Learn how to create a Field Extraction Rule [here](/docs/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
+Create a Field Extraction Rule (FER) for AWS Cost Explorer Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/Field-Extractions/create-field-extraction-rule).
 
 * **Rule Name: **AWSCostExplorerFER
 * **Applied at: **Ingest Time
@@ -118,7 +118,7 @@ Make sure your IAM user has the following IAM policy attached with it.
 9. For **Granularity**, provide 2 supported granularities for each of the MetricTypes (or cost types):
     * Daily Costs (Polled every 12h)
     * Monthly Costs (Polled every day)
-10. Add **[Processing Rules](/docs/Manage/Collection/Processing-Rules)**.
+10. Add **[Processing Rules](/docs/send-data/collection/Processing-Rules)**.
 11. Click **Submit** when complete.
 
 It can take up to 48 hours for AWS to generate your billing data. For accuracy, Sumo Logic does not present any billing analysis for the previous 48-60 hours.
@@ -126,7 +126,7 @@ It can take up to 48 hours for AWS to generate your billing data. For accuracy, 
 
 ### States
 
-The AWS Cost Explorer Source reports errors, its health, and initialization status. Other than indicating that the source is healthy, you are also informed, in real-time, if the source is running into trouble communicating with AWS API, or if there's an error that requires user action indicated by [Sumo Logic Health Events](/docs/Manage/Health-Events).
+The AWS Cost Explorer Source reports errors, its health, and initialization status. Other than indicating that the source is healthy, you are also informed, in real-time, if the source is running into trouble communicating with AWS API, or if there's an error that requires user action indicated by [Sumo Logic Health Events](/docs/manage/Health-Events).
 
 An AWS Cost Explorer Source goes through the following states when created:
 
@@ -146,12 +146,12 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 When you delete the source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
 
-On the Collection page, the [Health](/docs/Manage/Health-Events#Collection-page) and Status for Sources is displayed. Use [Health Events](/docs/Manage/Health-Events) to investigate issues with collection.
+On the Collection page, the [Health](/docs/manage/Health-Events#Collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection.
 
 
 ### Error types
 
-When Sumo Logic detects an issue it is tracked by [Health Events](/docs/Manage/Health-Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/Health-Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 <table><small>
   <tr>

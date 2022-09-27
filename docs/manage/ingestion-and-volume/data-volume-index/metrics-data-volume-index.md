@@ -1,6 +1,7 @@
 ---
 id: metrics-data-volume-index
 title: Metrics Data Volume Index
+description: The Metrics Data Volume Index contains JSON formatted messages that contain parent objects for each source data point, and child objects that detail the data points for each parent.
 ---
 
 

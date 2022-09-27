@@ -2,6 +2,7 @@
 id: set-up-webhook-connections
 title: Set Up Webhook Connections
 sidebar_label: Setup
+description: Webhook connections allow you to send Sumo Logic alerts to third-party applications.
 ---
 
 A Webhook is an HTTP callback: an HTTP POST that occurs when something happens. Webhook connections allow you to send Sumo Logic alerts to
@@ -22,7 +23,7 @@ Along with a fully customizable webhook connection, you can quickly create webho
 * [New Relic](new-relic.md)
 * [Opsgenie](opsgenie.md)
 * [PagerDuty](pagerduty.md)
-* [Service Now](../servicenow/set-up-servicenow-connections.md)
+* [Service Now](../servicenow/set-up-connections.md)
 * [Slack](slack.md)
 
 Most services with a REST API should allow you to create a connection using the generic webhook.
@@ -273,7 +274,7 @@ the following is the payload configuration. Notice that `RawResultsJson` is enc
 The following valid JSON is sent in the payload of the POST request.
 
 ```
-{"channel": "ops", "text": "{\"thread\":\"conciergePartitioner-1\",\"user\_id\":\"\",\"user\_name\":\"\",\"web\_session\":\"\",\"Message\":\"2015-10-27 10:31:15,853 -0700 INFO Partitioned 0 tokens, 2 targets into 773 assignments\"}
+{"channel": "ops", "text": "{\"thread\":\"conciergePartitioner-1\",\"user_id\":\"\",\"user_name\":\"\",\"web_session\":\"\",\"Message\":\"2015-10-27 10:31:15,853 -0700 INFO Partitioned 0 tokens, 2 targets into 773 assignments\"}
 ```
 
 ## Testing a connection

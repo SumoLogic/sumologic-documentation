@@ -82,7 +82,7 @@ To configure an expectation in Observable Networks**
 
 1. From your Observable Networks portal, click **Settings (gear icon) > Integrations > Sumo Logic > Logs**.
 2. Enter the name for the expected log, such as **Auth Log**.
-3. Enter the **Log Query Prefix**, which is the search prefix given to Sumo Logic to filter for this log. For example, **_source=auth.log**.
+3. Enter the **Log Query Prefix**, which is the search prefix given to Sumo Logic to filter for this log. For example, `_source=auth.log`.
 4. Select the roles that are expected to have this log. For example, **Terminal Server**.
 
 Only roles present on your network are available.

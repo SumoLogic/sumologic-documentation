@@ -1,6 +1,7 @@
 ---
 id: beta-opt-in
 title: Beta Participation Opt-In
+description: Opt-in to Sumo Logic beta terms and conditions.
 ---
 
 In order to participate in [Sumo Logic pre-release programs ("Betas")](docs/beta), you must accept Sumo Logic's beta terms and conditions. This section has instructions on how the Account Owner of your Sumo Logic account can review and accept the Sumo Logic beta participation terms in the Sumo Logic UI. Once you accept the beta participation terms, you can’t undo the action. 

@@ -321,8 +321,8 @@ To this:
 ```
 
 ```
-Error: Azure fails to install dependencies on a node. \
-System.AggregateException : One or more errors occurred. \
+Error: Azure fails to install dependencies on a node.
+System.AggregateException : One or more errors occurred.
 ---> Error: Cannot find module 'azure-storage' \
 ```
 
@@ -331,12 +331,12 @@ Solution: Run `npm install` from the console.
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_BlobTaskConsumer.png')} alt="Azure ARM FAQs" />
 
 
-* Error: Subscription for Microsoft.EventGrid is not registered. \
+* Error: Subscription for Microsoft.EventGrid is not registered.
 
 Solution: To register the provider do the following: \
-1. Go To subscriptions. \
-2. Select the subscription name where ARM template is deployed. \
-3. Select the Resource providers under settings on the left. \
-4. Search for Microsoft.EventGrid and register it. \
+1. Go to subscriptions.
+2. Select the subscription name where ARM template is deployed.
+3. Select the Resource providers under settings on the left.
+4. Search for Microsoft.EventGrid and register it.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_Subscriptions.png')} alt="Azure ARM FAQs" />

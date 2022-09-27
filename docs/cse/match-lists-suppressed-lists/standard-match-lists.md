@@ -84,7 +84,7 @@ The following CSE rules refer to this Match List:
 * AWS_Route_53_Traffic_Policy_Creation.json
 * AWS_WAF_Rule_Group_Updated.json
 * AWS_WAF_Rule_Updated.json
-* Anomalous_AWS_User_Executed_a\_Command_on_ECS_Container.json
+* Anomalous_AWS_User_Executed_a_Command_on_ECS_Container.json
 
 ## AWS_admin_users
 
@@ -106,7 +106,7 @@ The following CSE rules refer to this Match List:
 * AWS_Route_53_Traffic_Policy_Creation.json
 * AWS_WAF_Rule_Group_Updated.json
 * AWS_WAF_Rule_Updated.json
-* Anomalous_AWS_User_Executed_a\_Command_on_ECS_Container.json
+* Anomalous_AWS_User_Executed_a_Command_on_ECS_Container.json
 
 ## business_asns
 

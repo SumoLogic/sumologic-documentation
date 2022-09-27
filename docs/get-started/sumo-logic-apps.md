@@ -209,10 +209,10 @@ To install the app:
     ![LogAnalysis.png](/img/get-started/library/LogAnalysis.png)
 
     :::note
-    If you do not select the correct \_sourceCategory, data will not be loaded into the app. If you don't know which \_sourceCategory to select, ask the administrator who configured the Source.
+    If you do not select the correct _sourceCategory, data will not be loaded into the app. If you don't know which _sourceCategory to select, ask the administrator who configured the Source.
     :::
 
-    **Select from \_sourceCategory values.** Choose an existing \_sourceCategory present in your account used for your Sumo Logic data.
+    **Select from _sourceCategory values.** Choose an existing _sourceCategory present in your account used for your Sumo Logic data.
 
 1. Click on **Advanced**, choose either the Personal folder or a subfolder in the Personal folder. (Click the blue + to create a new subfolder).
 1. Click **Add to Library**. A dialog will confirm the app is installed successfully.

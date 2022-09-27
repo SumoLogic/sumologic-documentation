@@ -1,6 +1,8 @@
 ---
 slug: /manage/ingestion-and-volume/ingest-budgets
 title: Ingest Budgets
+description: Control the capacity of daily log ingestion volume sent to Sumo Logic from Collectors.
+
 ---
 
 ## Availability
@@ -24,7 +26,7 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 * [Traces](/docs/apm/traces) are not calculated and are not supported.
 * Ingest budgets require the **Manage Ingest Budgets** [role capability](../../users-and-roles/roles/role-capabilities.md).
 * Fields assigned with Field Extraction Rules are not supported in the **scope** of an Ingest Budget.
-* **\_budget** is a reserved keyword used by legacy ingest budgets, do not use this reserved field when creating a new V2 ingest budget.
+* **`_budget`** is a reserved keyword used by legacy ingest budgets, do not use this reserved field when creating a new V2 ingest budget.
 * Data is not automatically recovered or ingested later once the capacity tracking is reset.
 * In the **scope**, do not wrap values in quotes, unless the value explicitly has quotes. For example, if you want to assign the scope with `_collector` and the name of the Collector is `CloudTrail`, you would assign the scope as `_collector=CloudTrail` instead of `_collector="CloudTrail"`.
 
@@ -32,12 +34,12 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 
 The **scope** supports the option to assign ingest budgets to your log data by either:
 
-* A Field that is enabled in the [Fields table](../../fields.md). Fields are created in many ways, see [Fields](../../fields.md) for details.
-* One of the following built-in metadata fields: \_collector, \_source, \_sourceCategory, \_sourceHost, or \_sourceName.
+* A Field that is enabled in the [Fields table](docs/manage/fields.md). Fields are created in many ways, see [Fields](docs/manage/fields.md) for details.
+* One of the following built-in metadata fields: `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, or `_sourceName`.
 
-The value supports a single wildcard, such as **\_sourceCategory=prod\*payment**.
+The value supports a single wildcard, such as `_sourceCategory=prod*payment`.
 
-For example, a **scope** expression like **\_sourceCategory=/dev/catalog/\*** implies that all incoming logs ingested into Sumo Logic with a matching \_sourceCategory will fall under the scope of the given budget.
+For example, a **scope** expression like `_sourceCategory=/dev/catalog/*` implies that all incoming logs ingested into Sumo Logic with a matching _sourceCategory will fall under the scope of the given budget.
 
 See more [budget assignment examples](#budget-assignment) below and review the [rules](#rules) above.
 
@@ -49,7 +51,7 @@ There are two versions of ingest budgets:
 
     ![v1 budget tag.png](/img/ingestion-and-volume/v1-budget-tag.png)
 
-* V2 ingest budgets provide you the ability to assign budgets to your log data by either [Fields](../../fields.md) or the following [built in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields, `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, and `_sourceName`.
+* V2 ingest budgets provide you the ability to assign budgets to your log data by either [Fields](docs/manage/fields.md) or the following [built in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields, `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, and `_sourceName`.
 
 :::important
 You can edit an existing **V1** budget by providing a **scope** to change it to a **V2** budget that is metadata based. V2 budgets are manageable with the Ingest Budget Management API **V2**.
@@ -161,7 +163,7 @@ You can manually reset a budget at any time to set its capacity utilization tra
 
 #### Control ingest by team or service
 
-You can assign Collectors and Sources with [fields](../../fields.md based on teams and services. For example, a field could be `team=<name of the team>` or `service=<name of the service>`. With these fields assigned, you can create a budget with the scope `team=<name of the team>` to achieve team based budgets. You can leverage Source fields for finer control over the scope of the budget. You can map a model of your deployment or organization to metadata fields and then create ingest budgets with a scope referencing them.
+You can assign Collectors and Sources with [fields](docs/manage/fields.md based on teams and services. For example, a field could be `team=<name of the team>` or `service=<name of the service>`. With these fields assigned, you can create a budget with the scope `team=<name of the team>` to achieve team based budgets. You can leverage Source fields for finer control over the scope of the budget. You can map a model of your deployment or organization to metadata fields and then create ingest budgets with a scope referencing them.
 
 #### Match against multiple budgets
 
@@ -169,13 +171,13 @@ Log messages can match against multiple budgets if two or more budgets have ove
 
 * Budget #1
 
-    * Scope = "\_sourceCategory=/service/payment/\*"  
+    * Scope = "_sourceCategory=/service/payment/\*"  
     * Action = "stop collecting"  
     * Capacity= 10 GB
 
 * Budget #2
 
-    * Scope = "\_sourceCategory=/service/payment/component/oracle"  
+    * Scope = "_sourceCategory=/service/payment/component/oracle"  
     * Action = "stop collecting"  
     * Capacity= 2 GB
 
@@ -271,7 +273,7 @@ _index=sumologic_audit _sourceName=VOLUME_QUOTA _sourceCategory=account_manageme
 
 ### Health events
 
-Health events allow you to keep track of the health of your Collectors, Sources, and Ingest Budgets. You can use them to find and investigate common errors and warnings that are known to cause collection issues. See [Health events](../../health-events.md) for details.
+Health events allow you to keep track of the health of your Collectors, Sources, and Ingest Budgets. You can use them to find and investigate common errors and warnings that are known to cause collection issues. See [Health events](docs/manage/health-events.md) for details.
 
 Ingest budgets that have exceeded their capacity are placed in an **Error** health state. The following are two common queries used to investigate the health of ingest budgets.
 

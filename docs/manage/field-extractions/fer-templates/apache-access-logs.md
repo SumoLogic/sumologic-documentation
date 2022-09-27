@@ -1,6 +1,7 @@
 ---
 id: apache-access-logs
 title: Apache Access Logs
+description: Parse the common fields in your Apache Access Logs using the FER template.
 ---
 
 
@@ -16,7 +17,7 @@ title: Apache Access Logs
 
 **Parsing Rule**:
 
-```sql
+```
 parse regex "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | parse regex "(?<method>[A-Z]+)\s(?<url>\S+)\sHTTP/[\d\.]+\"\s(?<status_code>\d+)\s(?<size>[\d-]+)\s\"(?<referrer>.*?)\"\s\"(?<user_agent>.+?)\".*"
 ```

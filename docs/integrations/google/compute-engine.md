@@ -54,7 +54,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 1. In Sumo Logic select** Manage Data > Collection > Collection**.
 2. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. Click **Add Source** next to the Hosted** **Collector and click **Google Cloud Platform**.
-4. Enter a **Name** to display for the Source. A **Description** is optional. \
+4. Enter a **Name** to display for the Source. A **Description** is optional.
 
 5
 
@@ -65,14 +65,14 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
     *
 7
  If a green circle with a checkmark is shown, the field exists and is already enabled in the Fields table schema. Proceed to the next step.
-8. **Advanced Options for Logs**. \
+8. **Advanced Options for Logs**.
 
 8
 
     * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
     * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
     * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
-9. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/manage/collection/processing-rules/create-processing-rule.md).
+9. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
 10. When you are finished configuring the Source click **Save**.
 
 
@@ -165,7 +165,7 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
     1. Set the **Sink Name**. For example, "gce-vm-instance".
     2. Select "Cloud Pub/Sub" as the **Sink Service**.
     3. Set **Sink Destination** to the newly created Pub/Sub topic. For example, "pub-sub-logs".
-    4. Click **Create Sink**. \
+    4. Click **Create Sink**.
  \
 
 14

@@ -80,7 +80,7 @@ helm upgrade --install collection sumologic/sumologic \
 
 #### Enabling tracing for existing installations
 
-Tracing is disabled by default. If you previously installed sumologic-kubernetes-collection 2.0 or higher without enabling tracing, it can be enabled with **sumologic.traces.enabled=true**.
+Tracing is disabled by default. If you previously installed sumologic-kubernetes-collection 2.0 or higher without enabling tracing, it can be enabled with **`sumologic.traces.enabled=true`**.
 
 
 #### Using command line
@@ -192,7 +192,7 @@ After enabling, several metrics starting with `otelcol_` will become available, 
     ```bash
     helm upgrade collection sumologic/sumologic \
       --namespace sumologic \
-      ... \
+      ...
       --set otelcol.config.exporters.logging.logLevel=debug \
       --set otelcol.config.service.pipelines.traces.exporters="{otlphttp,logging}"
 

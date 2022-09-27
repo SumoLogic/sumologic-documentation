@@ -2,6 +2,7 @@
 id: hipchat
 title: Webhook Connection for HipChat
 sidebar_label: HipChat
+description: Send data from alerts to HipChat rooms.
 ---
 
 HipChat webhook connections allow you to send Sumo Logic alert results to HipChat rooms. For information on how to build your webhook payload refer to HipChat Webhooks in the [HipChat API documentation](https://developer.atlassian.com/server/hipchat/integrating-with-hipchat/).

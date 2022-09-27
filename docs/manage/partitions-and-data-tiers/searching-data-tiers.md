@@ -1,11 +1,12 @@
 ---
 id: searching-data-tiers
 title: Searching Data Tiers
+description: Learn how to search specific Data Tiers.
 ---
 
 This page has information about how to search different Data Tiers, and when you should use `_dataTier`, a *search modifier* that restricts your search to a single tier. 
 
-## About the \_dataTier search modifier
+## About the _dataTier search modifier
 
 In Sumo Logic, a search modifier is a tag that gives the Sumo Logic backend information about how to process a query. The `_dataTier` modifier tells Sumo Logic which Data Tier a query should run against: Continuous, Frequent, or Infrequent.
 
@@ -34,7 +35,7 @@ Even though you don't have to use `_dataTier` when you are querying selected par
 | `_sourceCategory=apache error` | Searches the Continuous tier for messages whose source category is "apache" and that contain the string “error”. |
 | `(_dataTier=Continuous OR _dataTier = Infrequent) _index=<FreqPart2>`<br/>This is an example of a query that will fail. | This query will fail because it limits the search to the the Continuous and Infrequent tiers, but specifies a partition that is in the Frequent tier. |
 
-## \_dataTier limitations
+## _dataTier limitations
 
 The `_dataTier` search modifier is not supported in:
 
@@ -45,7 +46,7 @@ The `_dataTier` search modifier is not supported in:
 * Logs-to-Metrics rules
 * In scheduled searches, setting `_dataTier` to All, Frequent, or Infrequent is not supported.
 
-In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field](../fields.md) or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
+In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field](docs/manage/fields.md) or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
 
 ## Best practices
 
@@ -88,7 +89,7 @@ Given these partitions:
 | `*` | `_index=dashboard*` | Results will include data from all three of the partitions  | Because the role search filter grants access to all partitions, regardless of tier, results are returned for each of the partitions. |
 | `_index=dashboard*` | `*` | Results will only include data from the `dashboardContinuous` partition. | Although the filter gives the user access to `dashboardCont`, `dashboardFreq` and `dashboardInfreq`. The search query "\*" means only continuous views, so of the three views the user has access to, the one in the Continuous tier will be the one selected. |
 
-### \_dataTier and scheduled views and audit indexes 
+### _dataTier and scheduled views and audit indexes 
 
 When you query scheduled views, the Sumo Logic Audit Index, or the Sumo Logic Audit Event Index, it isn’t necessary to specify a tier with `_dataTier`. Search these indexes using `_index`.  By default, Sumo will run such queries against the Continuous tier. 
 

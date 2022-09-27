@@ -1,7 +1,7 @@
 ---
 id: view-download-source-json-configuration
 title: View or Download Source JSON Configuration
-description: View and copy the Source JSON configuration for a Collector or Source from the Web Application.
+description: View and copy the Source JSON configuration for a Collector or Source from from Sumo Logic.
 ---
 
 

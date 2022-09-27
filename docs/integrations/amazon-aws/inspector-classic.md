@@ -132,7 +132,7 @@ Details are provided in the following sections.
 2. Select assessment templates on the left side.
 3. A new window opens, select **each **assessment template you want to monitor.
 4. Expand each row and find the section called **SNS topics**.
-5. Click the **Edit** icon and select the SNS topic you created in the previous section. \
+5. Click the **Edit** icon and select the SNS topic you created in the previous section.
 6. Click **Save**.
 
 
