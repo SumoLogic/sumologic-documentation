@@ -28,7 +28,7 @@ Data Collection API.
 | Category | [Source Category](/docs/send-data/best-practices) to use when a Source does not specify a category. |
 | Description | Description for the Collector. |
 | Time Zone | Time zone to use when it is not extracted from the timestamp. |
-| CPU Target Percentage | You can choose to set a [CPU target](docs/manage/collection/set-collector-cpu-usage-target.md) to limit the amount of CPU processing a Collector uses. |
+| CPU Target Percentage | You can choose to set a [CPU target](docs/send-data/collection/set-collector-cpu-usage-target.md) to limit the amount of CPU processing a Collector uses. |
 | Ephemeral | When true, the collector will be deleted after 12 hours of inactivity. For more information, see [Setting a Collector as Ephemeral](set-collector-as-ephemeral.md). |
 | Clobber | When selected, if there is any existing Collector with the same name, that Collector will be deleted (clobbered). See Forcing a Collector's Name with Clobber for more information. |
 | FIPS-compliant JCE | When selected, FIPS 140-2 compliant Java Cryptography Extension (JCE) will be enabled.<br/>This option is only supported in specific deployments, ask your Sumo account representative for details. |

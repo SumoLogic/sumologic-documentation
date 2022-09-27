@@ -64,7 +64,7 @@ Overridden metadata field values are not returned with [Search Autocomplete](/do
 ## Command Line Examples
 
 :::note
-Data is ingested according to the configured [processing rules](/docs/manage/collection/processing-rules). Messages blocked by filters will not be ingested.
+Data is ingested according to the configured [processing rules](/docs/send-data/collection/processing-rules). Messages blocked by filters will not be ingested.
 :::
 
 ### cURL

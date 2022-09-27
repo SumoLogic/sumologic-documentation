@@ -1,9 +1,10 @@
 ---
 id: nginx-logs
 title: Nginx Logs
+description: Parse the common fields in your Nginx Logs using the FER template.
 ---
 
-#
+
 
 **Log Type**:  Nginx Access Logs
 

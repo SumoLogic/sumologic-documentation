@@ -44,7 +44,7 @@ To collect logs for ZPA, do the following in Sumo Logic:
 1. Configure a [Hosted Collector](/docs/send-data/Hosted-Collectors).
 2. Perform the steps in[ Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
     * **Name**. (Required) A name is required. Description is optional.
-    * **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources. \
+    * **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources.
 For details see[ Best Practices](/docs/send-data/best-practices).
 3. In the Advanced section, specify the following configurations:
     * **Enable Timestamp Parsing**. True
@@ -110,9 +110,9 @@ Once you have deployed the App Connector, configure log receivers to send logs t
         4. **Browser Access**: HTTP log information related to Browser Access. To learn more, see[ Browser Access Log Fields](https://help.zscaler.com/zpa/http-log-fields) and[ About Browser Access](https://help.zscaler.com/zpa/about-BrowserAccess).
         5. **Audit Logs**: Session information for all admins accessing the ZPA Admin Portal. To learn more, see[ About Audit Log Fields](https://help.zscaler.com/zpa/about-audit-log-fields) and[ About Audit Logs](https://help.zscaler.com/zpa/about-audit-logs).
     2. In the **Log Template** field, select **JSON.**
-    3. The default **Log Stream Content **that is displayed will change based on the **Log Type** and **Log Template** you selected in previous steps. \
+    3. The default **Log Stream Content **that is displayed will change based on the **Log Type** and **Log Template** you selected in previous steps.
  \
-You can also edit the log stream content within the text field in order to capture specific fields and create a **Custom **log template. To learn more, see[ Understanding the Log Stream Content Format](https://help.zscaler.com/zpa/understanding-log-stream-content-format). \
+You can also edit the log stream content within the text field in order to capture specific fields and create a **Custom **log template. To learn more, see[ Understanding the Log Stream Content Format](https://help.zscaler.com/zpa/understanding-log-stream-content-format).
  \
 Edit the the log stream content, paste the following text in the beginning of the template:
     ```

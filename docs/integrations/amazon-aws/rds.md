@@ -112,7 +112,7 @@ Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for t
 
 ### Field Extraction Rule(s)
 
-Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
+Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 ```sql
 Rule Name: AwsObservabilityRdsCloudTrailLogsFER

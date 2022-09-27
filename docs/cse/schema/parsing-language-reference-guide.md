@@ -80,7 +80,7 @@ named capture group like this:
 
 We use the Mustache template system to define string templates. String templates are used to format one or more values into a single new field value.
 
-For more information on Mustache, see [https://en.wikipedia.org/wiki/Mustache\_(template_system)](https://en.wikipedia.org/wiki/Mustache_(template_system)).
+For more information on Mustache, see [https://en.wikipedia.org/wiki/Mustache_(template_system)](https://en.wikipedia.org/wiki/Mustache_(template_system)).
 
 ### Whitespace removal
 
@@ -172,11 +172,11 @@ Every parser must provide *mapping hints* that provide information CSE can use t
 
 ### Internal temporary variables supported in parsers
 
-#### \_$log_entry
+#### _$log_entry
 
 At the start of parser execution, `_$log_entry` contains the value of the entire message being parsed. Within a transform stanza, `_$log_entry` represents the value being processed by a transform. When you are applying a transform to a field, you can use `_$log_entry` to refer to the value of the current parsed field.
 
-#### \_$log_entry_field
+#### _$log_entry_field
 
 The field that the parser is transforming. The value of `_$log_entry_field` is updated each time a transform is applied to a field because temporary fields aren’t stripped from field dictionaries until after all parsing is complete, causing the `_$log_entry_field` to be overwritten by that transform’s
 `_$log_entry_field`.
@@ -230,12 +230,12 @@ There are three types of stanzas:
 
     References to transform names in attributes are case sensitive. The case in the reference must match the case used in the transform name.
 
-    Transform names are limited to alphanumeric characters, the dash (-) and the underscore (\_).
+    Transform names are limited to alphanumeric characters, the dash (-) and the underscore (_).
 
 ### Specifying attributes
 
 * All attribute names must be uppercase.
-* Attribute names are limited to alphanumeric characters, the dash (-) and the underscore (\_). 
+* Attribute names are limited to alphanumeric characters, the dash (-) and the underscore (_). 
 * All attributes that take assignments must use an equal sign (’=’) between name and assignment. For example, `FORMAT = REGEx`
 
 ### Attribute overriding
@@ -436,7 +436,7 @@ None
 
 **Notes**
 
-To allow for messages that don’t contain the specified field, set the value of END_TIME_HANDLING to "DURATION", and set DEFAULT_END_TIME to a value in milliseconds. \_endtime  will be populated with a timestamp that is result of adding the duration you defined to \_starttime.
+To allow for messages that don’t contain the specified field, set the value of END_TIME_HANDLING to "DURATION", and set DEFAULT_END_TIME to a value in milliseconds. _endtime  will be populated with a timestamp that is result of adding the duration you defined to _starttime.
 
 ### END_TIME_HANDLING
 

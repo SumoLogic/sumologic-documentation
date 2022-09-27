@@ -1,6 +1,7 @@
 ---
 id: collection-status-page
 title: Collection Status Page
+description: Provides a visual snapshot of the message history for your deployment, and a message volume histogram for each Collector.
 ---
 
 

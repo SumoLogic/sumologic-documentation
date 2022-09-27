@@ -2,6 +2,7 @@
 id: microsoft-teams
 title: Webhook Connection for Microsoft Teams
 sidebar_label: Microsoft Teams
+description: Send notifications from alerts to Microsoft Teams.
 ---
 
 [Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 

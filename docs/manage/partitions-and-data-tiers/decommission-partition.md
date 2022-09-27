@@ -1,9 +1,9 @@
 ---
 id: decommission-partition
 title: Decommission a Partition
+description: Decommissioning a Partition keeps it from being started, although the data in the Partition remains in your account.
 ---
 
-#
 
 Once they are created, partitions cannot be deleted, and partition names cannot be reused. This is due to the fact that a partition may include log messages that are not stored anywhere else, and if the partition were to be deleted, the log messages would be lost.
 

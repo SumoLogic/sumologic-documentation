@@ -1,6 +1,7 @@
 ---
 slug: /manage/users-and-roles/roles
 title: Manage Roles
+description: Roles determine the functions that users are able to perform in Sumo Logic and the data they can view.
 ---
 
 

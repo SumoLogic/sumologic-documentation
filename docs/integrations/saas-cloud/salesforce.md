@@ -83,7 +83,7 @@ Before you begin setting up log collection, review the required prerequisites an
   ```
   * If your Salesforce instance does not support Transport Layer Security (TLS) v1.0, you will be required to run JRE 8 instead of JRE 7. Specifically, if you see an error message like this when the script queries data:
   ```bash
-  TLS 1.0 has been disabled in this organization. \
+  TLS 1.0 has been disabled in this organization.
   Please use TLS 1.1 or higher when connecting to Salesforce using https.
   ```
 * You may do the configuration steps on a  system with a web browser for authentication via OAuth2, and then move the configuration folder to your production system. Or if your production system has a web browser, all steps may be done on that system.
@@ -348,7 +348,7 @@ If the browser does not connect to the salesforce instance and you are using Chr
 
 In Sumo Logic, configure a Script Source using the instructions in [Script Source](/docs/send-data/installed-collectors/sources/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
 
-To allow Script Sources you need to set the Collector parameter **`enableScriptSource=true` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector.
+To allow Script Sources you need to set the Collector parameter **`enableScriptSource=true` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 
 For the Sumo Logic App for Salesforce, use the following configuration settings:
 

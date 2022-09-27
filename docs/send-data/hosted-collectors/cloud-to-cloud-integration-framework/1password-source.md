@@ -37,7 +37,7 @@ To generate a 1Password API token follow these steps:
 
 #### States
 
-A 1Password Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](https://help.sumologic.com/Manage/Health_Events).
+A 1Password Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](https://help.sumologic.com/manage/Health_Events).
 
 A 1Password Source goes through the following states when created:
 
@@ -52,7 +52,7 @@ If the Source has any issues during any one of these states it is placed in an *
 When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
 
 
-On the Collection page, the [Health](https://help.sumologic.com/Manage/Health_Events#Collection_page) and Status for Sources is displayed. Use [Health Events](https://help.sumologic.com/Manage/Health_Events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
+On the Collection page, the [Health](https://help.sumologic.com/manage/Health_Events#Collection_page) and Status for Sources is displayed. Use [Health Events](https://help.sumologic.com/manage/Health_Events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
 
 
 Hover your mouse over the status icon to view a tooltip with details on the detected issue.
@@ -142,7 +142,7 @@ Field Name
 
 #### Error types
 
-When Sumo Logic detects an issue it is tracked by [Health Events](https://help.sumologic.com/Manage/Health_Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+When Sumo Logic detects an issue it is tracked by [Health Events](https://help.sumologic.com/manage/Health_Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 <table>
   <tr>

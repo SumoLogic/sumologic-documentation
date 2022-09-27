@@ -1,11 +1,10 @@
 ---
 id: admin-mode
-title: Admin Mode
+title: Admin Mode for Content Administrators
+sidebar_label: Admin Mode
+description: Admin mode allows you to control the content for your organization and to put important items in the Admin Recommended folder.
 ---
 
-#
-
-## Admin Mode for Content Administrators
 
 As a Content Administrator, you can assume a super user role within Sumo. When you need to manage the content for your organization, you can choose the Content Administrator role which will turn off your personal content in the Library and allow you to see the entire Sumo file tree.  In this mode you can migrate content from one location to another, as well as highlight important content in the Admin Recommended folder. 
 
@@ -52,7 +51,7 @@ To add a dashboard or search to Admin Recommended:
 
     A note loads on the Left-nav that says **Viewing as Content Administrator**. This is to help you remember why you your Personal folder doesn't appear.
 
-1. Make sure you've [shared the search](share-content.md), dashboard, or folder with the role or users that you want to be able to access it.
+1. Make sure you've [shared the search](/docs/manage/content-sharing), dashboard, or folder with the role or users that you want to be able to access it.
 1. From the Left-nav, select the options menu for the item you want to move, and choose **Move.**
 1. From the Move dialog, choose the **Admin Recommended** folder and click **Move**.
 

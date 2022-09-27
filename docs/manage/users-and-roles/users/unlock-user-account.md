@@ -1,11 +1,12 @@
 ---
 id: unlock-user-account
 title: Unlocking User Accounts
+description: When a user is locked out of their account, an admin may manually unlock the account before the configured lockout period has expired.
 ---
 
-If a user tries to log into their account several times and fails, his or her account will be locked out for security reasons. The default configured lockout period is 30 minutes, which occurs after six failed login attempts within a 10-minute period. After the designated lockout period expires, the user's account is automatically unlocked. These default settings may be configured by an administrator using the [Password Policy Settings](../../security/set-password-policy.md). 
+If a user tries to log into their account several times and fails, their account will be locked out for security reasons. The default configured lockout period is 30 minutes, which occurs after six failed login attempts within a 10-minute period. After the designated lockout period expires, the user's account is automatically unlocked. These default settings may be configured by an administrator using the [Password Policy Settings](../../security/set-password-policy.md). 
 
-When a user is locked out of his or her account, Sumo Logic sends an email to the user notifying them of the lockout. 
+When a user is locked out of their account, Sumo Logic sends an email to the user notifying them of the lockout. 
 
 At this time, an administrator can:
 

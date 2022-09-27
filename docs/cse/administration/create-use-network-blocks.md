@@ -122,4 +122,4 @@ The screenshot below shows a Record that contains several Network Block-related 
 
 ## Using enrichment fields
 
-You can use the `*_location` and` *_isInternal` fields the same way you do other Record fields. You can use them to filter Records in rule expressions or in searches. 
+You can use the `*_location` and `*_isInternal` fields the same way you do other Record fields. You can use them to filter Records in rule expressions or in searches. 

@@ -351,7 +351,7 @@ Searches and Dashboards can be shared and unshared at any time. Additionally, o
 
     ![roles-users-list.png](/img/get-started/library/roles-users-list.png)
 
-1. The default permission level is **Edit**. Use the **Access** pull-down to select a different permission level. For information about permission levels and advanced options, see [Available Permission Levels](docs/manage/content-sharing/share-content.md#available-permission-levels).
+1. The default permission level is **Edit**. Use the **Access** pull-down to select a different permission level. For information about permission levels and advanced options, see [Available Permission Levels](/docs/manage/content-sharing#available-permission-levels).
 
     ![permission-levels.png](/img/get-started/library/permission-levels.png)
 

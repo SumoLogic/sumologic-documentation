@@ -1,6 +1,7 @@
 ---
 id: field-naming-convention
 title: Field Naming Convention
+description: Sumo Logic recommends using the following naming convention for standard fields.
 ---
 
 

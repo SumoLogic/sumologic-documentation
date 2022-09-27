@@ -1,8 +1,8 @@
 ---
 id: add-remove-users-role
 title: Add or Remove Users from a Role
+description: You can change the default assignment of roles to users.
 ---
-
 
 
 This section has instructions for added users to a role, and removing users from a role.

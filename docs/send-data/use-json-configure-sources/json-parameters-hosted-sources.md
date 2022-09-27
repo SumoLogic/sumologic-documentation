@@ -11,7 +11,7 @@ This topic describes JSON Source parameters for Hosted Collectors. See the fo
  * [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.
  * Source API Methods and Examples for information on creating Sources.
  * [JSON Source Parameters for Installed Collectors](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources).
- * [View or Download Collector or Source JSON Configuration](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) from the Web Application.
+ * [View or Download Collector or Source JSON Configuration](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) from Sumo Logic.
 
 :::note
 JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).

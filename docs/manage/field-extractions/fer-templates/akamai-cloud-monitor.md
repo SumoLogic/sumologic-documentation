@@ -1,6 +1,7 @@
 ---
 id: akamai-cloud-monitor
 title: Akamai Cloud Monitor
+description: Parse the common fields in your Akamai Cloud Monitor log using the FER template.
 ---
 
 
