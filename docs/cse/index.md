@@ -23,3 +23,4 @@ Cloud SIEM Enterprise (CSE) is a cloud-based SIEM that provides the following fu
 In this section, we will introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
+ 
