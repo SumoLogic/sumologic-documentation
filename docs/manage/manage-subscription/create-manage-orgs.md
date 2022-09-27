@@ -83,10 +83,8 @@ After you create a child org, you can’t delete it.
       :::note 
       Provisioning CSE can take up to 24 hours. See [Monitor CSE Provisioning](#monitor-cse-provisioning), below.
       :::
-1. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented.<br/> 
-   <img src={useBaseUrl('img/subscriptions/calculator1.png')} alt="calculator" width="450"/> 
-2. To see a breakdown of the required credits, click **View Breakdown**.
-    <img src={useBaseUrl('img/subscriptions/calculator2.png')} alt="calculator" width="450"/>
+1. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented.<br/> <img src={useBaseUrl('img/subscriptions/calculator1.png')} alt="calculator" width="450"/> 
+2. To see a breakdown of the required credits, click **View Breakdown**. <br/> <img src={useBaseUrl('img/subscriptions/calculator2.png')} alt="calculator" width="450"/>
 3.  The calculator now shows how many credits are associated with the ingestion volume and, as applicable, how many are due to the deployment factor—the upcharge based on the deployment where the org is located.
 4.  Click **Use This Allocation**.
    
@@ -95,10 +93,8 @@ After you create a child org, you can’t delete it.
 To change an org's credits allocation:
 1. Go to **Administration \> Organizations**.
 1. Click the row for the org you want to edit.
-1. Click **Edit** in the right hand pane. <br/>
-   <img src={useBaseUrl('img/subscriptions/edit-org-3.png')} alt="your description" width="450" />
-2. Click **Modify Allocation**.<br/>
-    <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} alt="allocation" width="450" />
+1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/edit-org-3.png')} alt="your description" width="450" />
+2. Click **Modify Allocation**.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} alt="allocation" width="450" />
 3. The **Credits Calculator** appears.
 4. Follow the steps in [Create a child org](#create-a-child-org) to update the credits allocation.
 
@@ -158,8 +154,7 @@ If a [custom subdomain](manage-org-settings.md#set-up-a-customsubdomain) has bee
 
 1. Go to **Administration** \> **Organizations**.
 1. Click the row for the org you want to access.
-1. Click **Access Organization** in the right hand pane. <br/>
-<img src={useBaseUrl('img/subscriptions/access-org.png')} alt="your description" width="450"/>
+1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="your description" width="450"/>
 
 ## Audit logging for organizations
 
