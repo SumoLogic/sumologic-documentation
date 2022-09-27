@@ -10,7 +10,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Iframe from 'react-iframe';
 
-Real User Monitoring (RUM) gives  you the ability to understand how users interact with the digital interfaces of your business and if their experience is satisfactory or not. This open-source powered and flexible capability brings you full visibility into what’s happening in your user's browser while interacting with your web applications.
+Real User Monitoring (RUM) gives you the ability to understand how users interact with the digital interfaces of your business and if their experience is satisfactory or not. This open-source powered and flexible capability brings you full visibility into what’s happening in your user's browser while interacting with your web applications. 
 
 RUM provides you visibility into end-to-end individual user transactions to quickly understand the user experience. You'll get insights into delays that occurred on the client, overall end-to-end transaction times, network timings, rendering events, and can perform high-level monitoring, alerting, as well as troubleshooting any potential slow-downs. You have full details about the specific performance of top user cohorts, their geographical locations, browsers, and operating systems. You can also fully understand the overall experience of all users and transactions of your digital business, all the time.
 
