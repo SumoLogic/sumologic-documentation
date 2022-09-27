@@ -85,8 +85,7 @@ After you create a child org, you can’t delete it.
 1. **Deployment**. Select a Sumo Logic deployment from the list. 
 1. **Plan Type**. By default, “POV Trial” is selected. Leave it selected. 
 1. Click **View Allocation**.
-1. The **Baselines** popup appears, and displays the ingest limits for a POV Trial org. You cannot change the limits. <br/>
-   <img src={useBaseUrl('img/subscriptions/pov-baselines.png')} alt="pov baselines" width="450"/> 
+1. The **Baselines** popup appears, and displays the ingest limits for a POV Trial org. You cannot change the limits. <br/> <img src={useBaseUrl('img/subscriptions/pov-baselines.png')} alt="pov baselines" width="450"/> 
 2. Click **Done**.
 3. Click **Save** to save the new org.
 
