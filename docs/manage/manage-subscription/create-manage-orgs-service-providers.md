@@ -74,10 +74,8 @@ After you create a child org, you can’t delete it.
 :::
 
 1. Go to **Administration** \> **Organizations**.
-1. Click **+ Add Organization**.
-    ![orgs-page.png](/img/subscriptions/orgs-page.png)
-1. The **Create New Organization** pane appears.
-    ![create-new-org-sp.png](/img/subscriptions/sp-create-new-org.png)
+1. Click **+ Add Organization**. <br/> ![orgs-page.png](/img/subscriptions/orgs-page.png) 
+1. The **Create New Organization** pane appears.<br/> ![create-new-org-sp.png](/img/subscriptions/sp-create-new-org.png)
 1. **Organization Name**. Enter a unique name for the org.
 1. **Account Owner Email**. Enter the name of the account owner.
 1. **Account Owner First Name**. Enter the account owner’s first name.
@@ -85,39 +83,32 @@ After you create a child org, you can’t delete it.
 1. **Deployment**. Select a Sumo Logic deployment from the list. 
 1. **Plan Type**. By default, “POV Trial” is selected. Leave it selected. 
 1. Click **View Allocation**.
-1. The **Baselines** popup appears, and displays the ingest limits for a POV Trial org. You cannot change the limits. <br/>
-   <img src={useBaseUrl('img/subscriptions/pov-baselines.png')} alt="pov baselines" width="450"/> 
+1. The **Baselines** popup appears, and displays the ingest limits for a POV Trial org. You cannot change the limits. <br/> <img src={useBaseUrl('img/subscriptions/pov-baselines.png')} alt="pov baselines" width="450"/> 
 2. Click **Done**.
 3. Click **Save** to save the new org.
 
 ## Upgrade a POV Trial org 
 
 1. Go to **Administration** \> **Organizations**.
-1. Click the row for the trial org you want to upgrade.
-    ![org-to-update.png](/img/subscriptions/org-to-update.png)
-1. The right pane appears with information about the org. Click **Edit**.
-    ![edit-option.png](/img/subscriptions/edit-option.png)
-1. In the edit pane, click **Plan Type**, and choose the Enterprise plan that appears as an option.
-    ![upgrade-plan.png](/img/subscriptions/upgrade-plan.png)
-1. A warning message is shown that says you won’t be able to downgrade the org once you upgrade it.
-    ![plan-selected.png](/img/subscriptions/plan-selected.png)
-1. Click **Allocate Credits**.
-1. The Credits Calculator appears.
-    <img src={useBaseUrl('static/img/subscriptions/calculator.png')} alt="calculator" /> (edited) 
-2. **Continuous Log Ingest**. Enter estimated daily ingestion to the Continuous tier.
-3. **Frequent Log Ingest**. Enter estimated daily ingestion to the Frequent tier.
-4. **Infrequent Log Ingest**. Enter estimated daily ingestion to the Infrequent tier.
-5. **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
-6. **Tracing**. Enter estimated daily ingestion of traces.
-7. **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM Enterprise (CSE).
+1. Click the row for the trial org you want to upgrade. <br/> ![org-to-update.png](/img/subscriptions/org-to-update.png)
+2. The right pane appears with information about the org. Click **Edit**. <br/>![edit-option.png](/img/subscriptions/edit-option.png)
+1. In the edit pane, click **Plan Type**, and choose the Enterprise plan that appears as an option.<br/> ![upgrade-plan.png](/img/subscriptions/upgrade-plan.png)
+2. A warning message is shown that says you won’t be able to downgrade the org once you upgrade it.<br/> ![plan-selected.png](/img/subscriptions/plan-selected.png)
+3. Click **Allocate Credits**.
+4. The Credits Calculator appears.<br/> <img src={useBaseUrl('static/img/subscriptions/calculator.png')} alt="calculator" />
+1. **Continuous Log Ingest**. Enter estimated daily ingestion to the Continuous tier.
+2. **Frequent Log Ingest**. Enter estimated daily ingestion to the Frequent tier.
+3. **Infrequent Log Ingest**. Enter estimated daily ingestion to the Infrequent tier.
+4.  **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
+5.  **Tracing**. Enter estimated daily ingestion of traces.
+6.  **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM Enterprise (CSE).
    1. If you enable CSE, the CSE Log Ingest field appears.
    2. Enter a value in GB.
       :::note 
       Provisioning CSE can take up to 24 hours. See [Monitor CSE Provisioning](#monitor-cse-provisioning), below.
       :::
-8. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented. <br/>  
-   <img src={useBaseUrl('img/subscriptions/calculator.png')} alt="calculator" width="450"/> 
-9.  Click **Use This Allocation**.
+7.  As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented. <br/> <img src={useBaseUrl('img/subscriptions/calculator.png')} alt="calculator" width="450"/> 
+1.  Click **Use This Allocation**.
 
 ## Update an org's credits allocation
 
@@ -126,12 +117,10 @@ You can update an Enterprise org’s credits allocation, but not a Trial POV org
 1. To change an org's credits allocation
 1. Go to **Administration** \> **Organizations**.
 1. Click the row for the org you want to edit.
-1. Click **Edit** in the right hand pane.
-    ![edit-org-3.png](/img/subscriptions/edit-org-3.png)
-1. Click **Modify Allocation**.<br/> 
-    <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} alt="modify" width="450"/> 
-2. The Credits Calculator appears.
-3. Follow steps in [Upgrade a POV Trial org](#upgrade-a-pov-trial-org) to finish.
+1. Click **Edit** in the right hand pane.<br/> ![edit-org-3.png](/img/subscriptions/edit-org-3.png)
+2. Click **Modify Allocation**.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} alt="modify" width="450"/> 
+3. The Credits Calculator appears.
+4. Follow steps in [Upgrade a POV Trial org](#upgrade-a-pov-trial-org) to finish.
 
 ## Deactivate a POV Trial org
 
@@ -139,8 +128,7 @@ To deactivate a POV Trial org
 
 1. Go to **Administration** \> **Organizations**.
 1. Click the row for the trial org you want to deactivate.
-1. Click the three-dot more options menu and choose **Deactivate**.
-    ![deactivate.png](/img/subscriptions/deactivate.png)
+1. Click the three-dot more options menu and choose **Deactivate**. <br/> ![deactivate.png](/img/subscriptions/deactivate.png)
 
 ## Monitor CSE provisioning 
 Provisioning CSE can take up to 24 hours. You can determine provisioning status on the **Administration \> Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
@@ -164,8 +152,7 @@ You can view the usage by child orgs on the **Account Overview** page. Usage for
 * **Storage**. Credits used for log storage in the Continuous and Frequent tiers. 
 * **CSE Ingest**. Credits used for logs ingested into Cloud SIEM Enterprise (CSE).
 * **Infrequent Storage**. Credits used for log storage in the Infrequent tier. 
-* **Promotional categories**. For more information, see [Monitoring Promotional Credit](cloud-flex-credits-accounts.md#monitoring-promotional-credit-usage) usage.
-  <img src={useBaseUrl('img/subscriptions/account-overview-new.png')} alt="your description" />
+* **Promotional categories**. For more information, see [Monitoring Promotional Credit](cloud-flex-credits-accounts.md#monitoring-promotional-credit-usage) usage.<br/> <img src={useBaseUrl('img/subscriptions/account-overview-new.png')} alt="your description" />
 
 ### View cross-org credits allocation and consumption
 
@@ -180,8 +167,7 @@ You can see what portion of your subscription credits have been allocated and co
 
 1. Go to **Administration** \> **Organizations**.
 1. Click an org in the list of orgs.
-1. A pane with details about the org appears on the right side of the page.
-    <img src={useBaseUrl('img/subscriptions/credits-usage.png')} alt="usage" width="450"/>  
+1. A pane with details about the org appears on the right side of the page. <br/> <img src={useBaseUrl('img/subscriptions/credits-usage.png')} alt="usage" width="450"/>  
 1. The **Credits Usage section** of the pane shows the number and percentage of the credits allocated to the org that have been consumed, along with the total credits that are allocated.
 2. Click **View Details** for more information.
 3. The **Credits Usage Details** popup displays the following information.
@@ -201,8 +187,7 @@ If a [custom subdomain](create-manage-orgs.md) has been configured for a child o
 
 1. Go to **Administration** \> **Organizations**.
 1. Click the row for the org you want to access.
-1. Click **Access Organization** in the right hand pane.
-    <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="access org" width="450"/>
+1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="access org" width="450"/>
 
 ## Audit logging for organizations
 
