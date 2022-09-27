@@ -157,8 +157,7 @@ If a [custom subdomain](manage-org-settings.md#set-up-a-customsubdomain) has bee
 
 1. Go to **Administration** \> **Organizations**.
 1. Click the row for the org you want to access.
-1. Click **Access Organization** in the right hand pane. <br/>
-<img src={useBaseUrl('img/subscriptions/access-org.png')} alt="your description" width="450"/>
+1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="your description" width="450"/>
 
 ## Audit logging for organizations
 
