@@ -159,7 +159,7 @@ You can view the usage by child orgs on the **Account Overview** page. Usage for
 You can see what portion of your subscription credits have been allocated and consumed on the **Administration** \> **Organizations** page.
 
 * The **Usage %** column indicates what percentage of overall subscription credits that was allocated to a child org has been consumed.
-* The **Credits Capacity** line at the bottom of the page shows the count and percentage of  credits, out of your total subscription credits, that have been allocated to child orgs, and the number of allocated credits that have been consumed. </br> ![orgs-page-2.png](/img/subscriptions/orgs-page-2.png)
+* The **Credits Capacity** line at the bottom of the page shows the count and percentage of  credits, out of your total subscription credits, that have been allocated to child orgs, and the number of allocated credits that have been consumed. <br/> ![orgs-page-2.png](/img/subscriptions/orgs-page-2.png)
 
 ### View child org credits allocation and usage
 
@@ -176,7 +176,7 @@ You can see what portion of your subscription credits have been allocated and co
       * **Deployment Charge**. The number of credits associated with the Deployment Charge (as applicable), if the child org is in a different deployment than the parent org.
       * **Credits Deducted**. This column if the parent org is on a subscription to which cross-geo charging applies to the org. If the parent org is on Global Credits, deployment charges don’t apply and this column won't appear. **Credits Deducted** is the sum of **Credits Used** and the **Deployment Charge**.
       * **Usage %**. The percentage of credits allocated to the org that have been used for the Product Variable.
-      * **Units**. Shows the volume of log ingest in GB or the DPM (metrics) that is equivalent to the credits used for the Product Variable. </br> ![sp-usage.png](/img/subscriptions/usage-details-2.png)
+      * **Units**. Shows the volume of log ingest in GB or the DPM (metrics) that is equivalent to the credits used for the Product Variable. <br/> ![sp-usage.png](/img/subscriptions/usage-details-2.png)
 
 ## Access a child org
 
