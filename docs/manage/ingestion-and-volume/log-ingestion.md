@@ -83,3 +83,4 @@ When a file is updated, the way it is ingested depends on the type of Collector:
 * For Installed Collectors, Sumo Logic can ingest only the new data. For example, if Sumo Logic ingests a log file with 25 lines, and then additional messages are added to the file, the next ingestion will start at line 26.
 * For Hosted Collectors with S3 Sources, an ingested file is treated as a single object and is not expected to be updated or appended with new data. If an existing file is updated in any way, it is considered to be a new object and is ingested again in full. Updating existing objects in S3 Sources can result in duplicate messages, depending on the nature of the update.
 * Treatment of Hosted Collectors with other Source types is based on customer configuration.
+ 
