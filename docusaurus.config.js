@@ -559,8 +559,8 @@ module.exports = {
                 href: 'https://github.com/SumoLogic',
               },
               {
-                label: 'Sumo Incubator Projects',
-                href: 'https://github.com/SumoLogic-Incubator',
+                label: 'Sumo Labs Projects',
+                href: 'https://github.com/SumoLogic-Labs',
               },
               {
                 label: 'Sumo Dojo Slack',
