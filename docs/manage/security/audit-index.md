@@ -27,7 +27,7 @@ All users can access the data contained within the audit index, but only adminis
 1. Next to **Sumo Logic Auditing**, select the **Enable** check box.
 
 :::important
-Auditing typically adds a nominal amount of data to your overall volume (approximately one to two percent) when pre-aggregated. Depending on your Sumo Logic account type and subscription, this data will count against your data volume quota. For more information, see [Manage Ingestion](../ingestion-and-volume/log-ingestion.md).
+Auditing typically adds a nominal amount of data to your overall volume (approximately one to two percent) when pre-aggregated. Depending on your Sumo Logic account type and subscription, this data will count against your data volume quota. For more information, see [Manage Ingestion](../ingestion-volume/log-ingestion.md).
 :::
 
 ## Query the audit index
@@ -296,4 +296,4 @@ The table below shows the value of the `class` and `action` fields for metric 
 
 ### Index retention period
 
-By default, the retention period of the Audit Index is the same as the retention period of your Default Partition. You can change the retention period by editing the partition that contains the index, `sumologic_audit`. For more information, see [Edit a Partition](../partitions-and-data-tiers/create-edit-partition.md).
+By default, the retention period of the Audit Index is the same as the retention period of your Default Partition. You can change the retention period by editing the partition that contains the index, `sumologic_audit`. For more information, see [Edit a Partition](../partitions-data-tiers/create-edit-partition.md).

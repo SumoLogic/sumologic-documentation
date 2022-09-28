@@ -5,7 +5,7 @@ title: Set the Password Policy
 
 Account admins with the Manage Password Policy capability can set the account's password policy on the **Administration** \> **Security** \> **Password Policy**.
 
-For details on password policies and Multi-account Access, see [Multi-account Access](../users-and-roles/users/multi-account-access.md). 
+For details on password policies and Multi-account Access, see [Multi-account Access](../users-roles/users/multi-account-access.md). 
 
 ## Changing the password policy
 

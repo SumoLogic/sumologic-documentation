@@ -5,11 +5,11 @@ sidebar_label: Interact with Metrics Charts
 description: Instructions on how to interact with metric charts, and how to set options on the query and legend tabs of the metric query page.
 ---
 
-This page has information about how you can interact with metric charts and use the options on the Query and Legend tab of the metric query page. 
-
 :::note
-This topic has information about Sumo Logic's Classic metrics UI. For information about the Metric Explorer UI, which replaces the Classic metrics UI, see [Metrics Explorer](../metric-queries-alerts/metrics-explorer.md).
+This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metric-queries-alerts/metrics-explorer.md).
 :::
+
+Learn how you can interact with metric charts and use the options on the Query and Legend tab of the metric query page. 
 
 ## Interacting with the chart area
 

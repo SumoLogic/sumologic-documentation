@@ -270,4 +270,4 @@ When selecting the time range of your search, keep in mind:
 
 By default, LogCompare email notifications provide details on the **Score**, **Count**, and **Signature**, as shown in the following email example. This is not configurable.
 
-![Email alert](/img/search/logcompare/logcompare-email-alert.png)
+![Email alert](/img/search/logcompare/logcompare-email-alert.png)  

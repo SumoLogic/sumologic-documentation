@@ -85,7 +85,7 @@ When you mouse over an access key on the **Preferences** page, several controls 
 
 ## Manage all users’ access keys on Access Keys page
 
-If you have the **Manage Access Keys** capability you can use the **Access Keys** page to create and edit  own access keys. You can also manage access keys that were created by other Sumo users:  you can edit, deactivate, and delete any access key.  
+If you have the **Manage Access Keys** capability you can use the **Access Keys** page to create and edit your own access keys. You can also manage access keys that were created by other Sumo users:  you can edit, deactivate, and delete any access key.  
 
 ### Generate an access key on the Access Keys page 
 

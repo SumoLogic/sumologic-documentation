@@ -6,7 +6,7 @@ description: Learn how metrics visualizations can provide a clear status of your
 ---
 
 :::note
-This topic has information about Sumo Logic's Classic metrics UI. For information about the Metric Explorer UI, which replaces the Classic metrics UI, see [Metrics Explorer](../metric-queries-alerts/metrics-explorer.md).
+This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metric-queries-alerts/metrics-explorer.md).
 :::
 
 Metrics visualizations give you a clear picture of what is happening in your environment. By adding log overlays to your metrics visualizations, you can investigate why behavior is occurring and what corrective action might be called for. Log overlays help you correlate the performance shown in your metrics visualizations with logged events that could be responsible for changes in behavior. 

@@ -1,19 +1,19 @@
 ---
 id: metrics-queries-classic
 title: Metrics - Classic
-sidebar_label: Metrics - Classic
+sidebar_label: Metrics - Classic (Legacy)
 description: See information about the Classic metrics UI.
 ---
 
 This topic explains how to construct metrics queries and provides examples. 
 
 :::tip
-This topic has information about the Classic metrics UI. For information about the Metrics Explorer, the UI that relaces Classic metrics, see [Metrics Explorer](metrics-explorer.md).
+This topic has information about the Classic metrics UI. For information about the Metrics Explorer, the UI that replaces Classic metrics, see [Metrics Explorer](metrics-explorer.md).
 :::
 
 ## Structure of metrics queries
 
-To [create a metrics visualization](../metric-charts/create-metrics-visualization.md on the Metrics page, you can specify up to six metrics queries. Enter each query in a separate query text box. Query text boxes are added as needed, up to the maximum of six.
+To [create a metrics visualization](../metric-charts/create-metrics-visualization.md) on the Metrics page, you can specify up to six metrics queries. Enter each query in a separate query text box. Query text boxes are added as needed, up to the maximum of six.
 
 * Each metrics query must include one or more selectors (filters), which can be either of the following:
     * Sequence of space-separated `tag=value` pairs: `cluster=search node=search-1`

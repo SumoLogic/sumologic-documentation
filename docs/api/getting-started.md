@@ -423,9 +423,9 @@ The [Collector Management API](/docs/api/collectors) uses optimistic locking to 
 
 ## Sumo Logic alerts from static IP addresses
 
-Sumo Logic provides notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo. For a list of our allowlist addresses, contact [Support](https://sumologic.com/).
+Sumo Logic provides notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
 
-The [Test Connection feature for webhooks](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md#Testing-a-connection) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
+The [Test Connection feature for webhooks](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md#Testing-a-connection) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
 
 
 ## Beta

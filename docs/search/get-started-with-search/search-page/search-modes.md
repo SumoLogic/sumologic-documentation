@@ -37,13 +37,13 @@ This section elaborates on the input options.
 
 * **Data Tier**
 
-    Select from the drop down which Data Tier the query should run against, either Continuous, Frequent, or Infrequent. See [searching Data Tiers](docs/manage/partitions-and-data-tiers/searching-data-tiers.md) for further details.
+    Select from the drop down which Data Tier the query should run against, either Continuous, Frequent, or Infrequent. See [searching Data Tiers](docs/manage/partitions-data-tiers/searching-data-tiers.md) for further details.
 
     ![Data Tier options.png](/img/search/get-started-search/search-page/Data-Tier-options.png) 
 
 * **Index**
 
-    Type in any [Partitions](/docs/manage/partitions-and-data-tiers) you want to run the query against. When you click in the text area a list of available options is provided. Click an option to automatically fill in the value in the text area. You can continue to add additional Partitions if desired.
+    Type in any [Partitions](/docs/manage/partitions-data-tiers) you want to run the query against. When you click in the text area a list of available options is provided. Click an option to automatically fill in the value in the text area. You can continue to add additional Partitions if desired.
 
     ![Basic mode Index options.png](/img/search/get-started-search/search-page/Basic-mode-Index-options.png)    
 
