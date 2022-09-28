@@ -15,7 +15,7 @@ Use the **Collection** page to manage all of your Collectors and Sources. To ac
 ## Before You Begin
 
 :::sumo Required Capabilities
-You'll need the Manage or View Collectors [role capability](docs/manage/users-and-roles/roles/role-capabilities.md) to manage or view Collection.
+You'll need the Manage or View Collectors [role capability](docs/manage/users-roles/roles/role-capabilities.md) to manage or view Collection.
 :::
 
 

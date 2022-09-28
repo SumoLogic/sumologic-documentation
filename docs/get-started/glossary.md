@@ -60,7 +60,7 @@ The point at which Sumo slows metric data ingestion to keep it within your allow
 
 ## C
 
-**[Capability](https://help.sumologic.com/manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities)**
+**[Capability](https://help.sumologic.com/manage/users-roles/Manage-Roles/05-Role-Capabilities)**
 
 In Sumo role-based access control (RBAC), you grant the users with a role the right to perform a particular function by assigning the corresponding capability to the role. For example, the “Manage Collectors” capability allows a user to install and manage installed and hosted Collectors and Sources.
 
@@ -121,7 +121,7 @@ Panels are placed on Dashboards and provide a graphical representation of your o
 
 A Data Type is a specific type of log used with a Sumo Logic Source or App, such as Apache, MySQL, or Windows IIS. You can also use a custom Data Type for a custom application.
 
-**[Data Volume Index](https://help.sumologic.com/manage/Ingestion-and-Volume/Data_Volume_Index)**
+**[Data Volume Index](https://help.sumologic.com/manage/ingestion-volume/Data_Volume_Index)**
 
 The Data Volume Index automatically provides data that allows you to understand your account’s data ingest volume in bytes and number of log messages processed overall. The Data Volume Index gives you better visibility into how much data you are sending to Sumo Logic, allowing you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription.
 
@@ -242,7 +242,7 @@ A ternary operator used to evaluate a condition as either true or false, with va
 
 Include rules are a type of Processing Rule that is used to send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude.
 
-**[Ingest Budget](https://help.sumologic.com/manage/Ingestion-and-Volume/Ingest_Budgets)**
+**[Ingest Budget](https://help.sumologic.com/manage/ingestion-volume/Ingest_Budgets)**
 
 Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from Collectors.
 
@@ -343,7 +343,7 @@ A Sumo feature that throttles your metric sources when you exceed your DPM burst
 
 Metrics transformation rules allow you control how long raw metrics are retained. You can also aggregate metrics at collection time and specify a separate retention period for the aggregated metrics.
 
-**[Metric volume index](https://help.sumologic.com/manage/Ingestion-and-Volume/Data_Volume_Index/Metrics_Data_Volume_Index)**
+**[Metric volume index](https://help.sumologic.com/manage/ingestion-volume/Data_Volume_Index/Metrics_Data_Volume_Index)**
 
 A Sumo index to which Sumo writes messages with information about the volume of metrics you are ingesting.
 
@@ -427,7 +427,7 @@ An operator you can use is metric queries to specify the size of the time bucket
 
 You can display search results in the order that the Collector received the messages in milliseconds.
 
-**[RBAC](https://help.sumologic.com/manage/Users-and-Roles)**
+**[RBAC](https://help.sumologic.com/manage/users-roles)**
 
 Sumo Logic supports Role-Based Access Control (RBAC) to allow Administrators to customize system access. With RBAC, Administrators create roles for groups of users who perform various job functions. Users are not assigned permissions directly, but inherit permissions through roles (or even through a single role). Role assignments can grant users permissions to access some data sets, or can restrict users from accessing types of data.
 
@@ -435,11 +435,11 @@ Sumo Logic supports Role-Based Access Control (RBAC) to allow Administrators to 
 
 Used in time range expressions, when setting the non-absolute time limits of a search. For example, -1d, -1d -12h, -12h -60m.
 
-**[Role](https://help.sumologic.com/manage/Users-and-Roles/Manage-Roles)**
+**[Role](https://help.sumologic.com/manage/users-roles/Manage-Roles)**
 
 In Sumo role-based access control (RBAC), you grant users access to data and to Sumo functions using roles. You assign role capabilities and a role search filter to a role, and assign one or more roles to a user.
 
-**[Role search filter](https://help.sumologic.com/manage/Users-and-Roles/Manage-Roles/07-Construct-a-Search-Filter-for-a-Role)**
+**[Role search filter](https://help.sumologic.com/manage/users-roles/Manage-Roles/07-Construct-a-Search-Filter-for-a-Role)**
 
 A search filter for a role defines what log data a user with that role can access. You can define a search filter using keywords, wildcards, and selected Sumo metadata fields and logical operators.
 
@@ -501,7 +501,7 @@ A support account is a special Sumo Logic user account that you can enable so th
 
 Used in Dashboards, you can add Text Panels to include titles or text descriptions. See also Markdown.
 
-**[Throttling](https://help.sumologic.com/manage/Ingestion-and-Volume/01Log_Ingestion#Throttling)**
+**[Throttling](https://help.sumologic.com/manage/ingestion-volume/01Log_Ingestion#Throttling)**
 
 Slows the rate of ingestion across all Collectors in an account to not exceed the allowable rate.
 
@@ -539,7 +539,7 @@ The user.properties file is used to pass Collector parameters for some installat
 
 ## W
 
-**[Webhook](https://help.sumologic.com/manage/Connections-and-Integrations/Webhook-Connections)**
+**[Webhook](https://help.sumologic.com/manage/connections-integrations/Webhook-Connections)**
 
 A WebHook is an HTTP callback: an HTTP POST that occurs when something happens. WebHook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming WebHooks. You can configure a custom WebHook, or use preconfigured WebHooks for a number of apps, including Slack, HipChat, Datadog, and so on.
 
