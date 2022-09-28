@@ -71,7 +71,7 @@ Collection \> Collection** page, or from the list below.
 
 1. Set up auto-registration details for the Collector:  
 
-   * [Create a New User account](https://help.sumologic.com/manage/Users-and-Roles/Manage-Users/01-Create-and-Edit-Users) with Administrator permissions or a role with permissions to "Manage Collectors."  
+   * [Create a New User account](https://help.sumologic.com/manage/users-roles/Manage-Users/01-Create-and-Edit-Users) with Administrator permissions or a role with permissions to "Manage Collectors."  
    * Create an [installation token](https://help.sumologic.com/manage/Security/Installation_Tokens).
    * Or, create an [Access Key and Access Id](https://help.sumologic.com/manage/Security/Access-Keys) for this user, which will be used to register the collector.
 

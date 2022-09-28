@@ -12,7 +12,7 @@ The best way to do this is to create a Scheduled Search using the sample query i
 
 If you do not already have the Data Volume Index enabled, you will need to enable it. If you already have the Data Volume Index enabled, continue to the next section.
 
-To enable the Data Volume Index, use the instructions in [Enable and Manage the Data Volume Index](/docs/manage/ingestion-and-volume/data-volume-index).
+To enable the Data Volume Index, use the instructions in [Enable and Manage the Data Volume Index](/docs/manage/ingestion-volume/data-volume-index).
 
 :::important
 Once the Data Volume index is enabled, let it run for at least 24 hours before you create your Scheduled Search.

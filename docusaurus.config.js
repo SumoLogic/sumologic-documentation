@@ -4,8 +4,12 @@
 
 // Documentation page id for open source: sumo-logic-open-source-projects
 
+const fs = require('fs')
+
 const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
 const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
+
+const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString())
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -116,13 +120,9 @@ module.exports = {
     'react-iframe',
     ['@docusaurus/plugin-client-redirects',
       {
-        redirects: [
-          {
-            //CID REDIRECTS: Enter a from: of the /cid=##### with the path to the file for to: for each CID!
-            to: '/docs/contributing/markdown-cheat-sheet',
-            from: '/cid=1234',
-          },
-        ]
+        redirects: Object.entries(cidRedirects).map(
+          ([key, value]) => ({ from: key, to: value })
+        )
       },
     ],
   ],
@@ -317,9 +317,9 @@ module.exports = {
                   {
                     label: 'Real User Monitoring',
                     sublabel: 'Monitor user activity',
-                    to: '/docs/apm/rum',
+                    to: '/docs/apm/real-user-monitoring',
                     icon: 'contacts',
-                    activeBaseRegex: '^/docs/apm/rum/.*',
+                    activeBaseRegex: '^/docs/apm/real-user-monitoring/.*',
                   },
                 ],
               },
@@ -415,18 +415,18 @@ module.exports = {
             label: 'API',
             position: 'left',
             // Redocusaurus
-            to: '/sumoapi',
-            //type: 'dropdown',
-            //items:[
-              //{
-                //label: 'Docs',
-                //to: '/docs/api',
-              //},
-              //{
-                //label: 'Reference',
-                //href: 'https://api.sumologic.com/docs/',
-              //},
-            //]
+            // to: '/sumoapi',
+            type: 'dropdown',
+            items:[
+              {
+                label: 'Docs',
+                to: '/docs/api',
+              },
+              {
+                label: 'Reference',
+                href: 'https://api.sumologic.com/docs/',
+              },
+            ]
           },
           {
             label: 'Release Notes',
@@ -439,14 +439,32 @@ module.exports = {
             position: 'left',
           },
           {
-            label: 'Support',
-            to: 'https://support.sumologic.com/hc/en-us',
+            label: 'Help',
             position: 'left',
+            type: 'dropdown',
+            items:[
+              {
+                label: 'Support',
+                href: 'https://support.sumologic.com/hc/en-us',
+              },
+              {
+                label: 'Training',
+                href: 'https://www.sumologic.com/learn/training',
+              },
+              {
+                label: 'Community',
+                href: 'https://support.sumologic.com/hc/en-us/community/topics',
+              },
+              {
+                label: 'Service Status',
+                href: 'https://status.sumologic.com',
+              },
+            ]
           },
           {
             //Trial button
             label: 'Start a Free Trial',
-            href: 'https://www.sumologic.com/sign-up/',
+            to: 'https://www.sumologic.com/sign-up',
             position: 'right',
             className: 'navbar-trial',
           },

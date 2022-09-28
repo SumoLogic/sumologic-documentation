@@ -6,11 +6,11 @@ description: The Ingest Budget Management API V2 allows you to manage metadata-b
 
 ---
 
-The Ingest Budget Management API **V2** allows you to manage metadata-based [ingest budgets](https://help.sumologic.com/manage/Ingestion-and-Volume/Ingest_Budgets) (with a scope) from HTTP endpoints.
+The Ingest Budget Management API **V2** allows you to manage metadata-based [ingest budgets](https://help.sumologic.com/manage/ingestion-volume/Ingest_Budgets) (with a scope) from HTTP endpoints.
 
 See [V1 API](/docs/api/ingest-budget-v1) for management of ingest budgets with a Field Value.
 
-To manage ingest budgets you must have the **Manage Ingest Budgets** [role capability](/docs/manage/users-and-roles/roles/role-capabilities). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them. For more information see [Ingest Budgets](https://help.sumologic.com/manage/Ingestion-and-Volume/Ingest_Budgets).
+To manage ingest budgets you must have the **Manage Ingest Budgets** [role capability](/docs/manage/users-roles/roles/role-capabilities). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them. For more information see [Ingest Budgets](https://help.sumologic.com/manage/ingestion-volume/Ingest_Budgets).
 
 <table>
   <tr>

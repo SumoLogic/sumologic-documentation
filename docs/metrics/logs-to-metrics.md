@@ -1,13 +1,11 @@
 ---
 id: logs-to-metrics
 title: Logs-to-Metrics
-sidebar_label: Logs-to-Metrics
+sidebar_label: Extract Metrics from Logs
 description: Set up rules to extract or create metrics from log data.
 ---
 
-
-The Logs-to-Metrics feature allows you to extract or create metrics from
-log data:
+The Logs-to-Metrics feature allows you to extract or create metrics from log data:
 
 * You can extract metrics that are embedded in logs. For example, your logs might contain numerical values for latency, bytes sent, request time, and so on. You can extract multiple metrics from a single log.  
 * You can count logs as a metric. For example, you might count the number of log messages that contain a 404 status code.  
