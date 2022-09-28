@@ -161,7 +161,7 @@ connection_notifications_critical = [
 
   Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](/sumoapi).
 
-  For overriding payload for different connection types, refer to [this document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+  For overriding payload for different connection types, refer to [this document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 
 ```sql title="Email Notifications Example"
 email_notifications_critiical = [

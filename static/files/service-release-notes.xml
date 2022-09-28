@@ -136,7 +136,7 @@
 <title>July 28 2022</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-28-2022</link>
 <description>
-<![CDATA[ New - The <a href="/manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities" title="Role Capabilities">role capability</a> we told you about earlier this month—Download Search Results—is now released. This capability, which grants the permission to download log search results, is enabled for all roles. Note that if you manage role capabilities using the Sumo Logic API or Terraform, you need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results. ]]>
+<![CDATA[ New - The <a href="/manage/users-roles/Manage-Roles/05-Role-Capabilities" title="Role Capabilities">role capability</a> we told you about earlier this month—Download Search Results—is now released. This capability, which grants the permission to download log search results, is enabled for all roles. Note that if you manage role capabilities using the Sumo Logic API or Terraform, you need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-28-2022a</guid>
 <pubDate>Thu, 28 Jul 2022 16:57:47 +0000</pubDate>
@@ -164,7 +164,7 @@
 <title>July 18 2022</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-18-2022</link>
 <description>
-<![CDATA[ Update - The week of July 25, 2022, we’ll be releasing a new <a href="/manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities" title="Role Capabilities">role capability</a>—Download Search Results—that grants the permission to download log search results. This capability will be enabled for all roles. If you manage role capabilities using the Sumo Logic API or Terraform, when the new capability is released, you’ll need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results. ]]>
+<![CDATA[ Update - The week of July 25, 2022, we’ll be releasing a new <a href="/manage/users-roles/Manage-Roles/05-Role-Capabilities" title="Role Capabilities">role capability</a>—Download Search Results—that grants the permission to download log search results. This capability will be enabled for all roles. If you manage role capabilities using the Sumo Logic API or Terraform, when the new capability is released, you’ll need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-18-2022a</guid>
 <pubDate>Mon, 18 Jul 2022 20:36:23 +0000</pubDate>
@@ -1388,8 +1388,8 @@
 <title>April 13, 2021</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#search</link>
 <description>
-<![CDATA[ Update - We’ve updated the UI for deleting a Sumo Logic user’s account. The UI now provides an explicit option for deleting a user’s content in addition to the user account. For more information, see <a href="/manage/Users-and-Roles/Manage-Users/11-Delete-a-User" title="Delete a User">Delete ]]>
-<![CDATA[ a User</a>.<br /> Update - We've enhanced role search filters: now you can grant access to Scheduled Views and Partitions in a role search filter. For more information, see <a href="/manage/Users-and-Roles/Manage-Roles/07-Construct-a-Search-Filter-for-a-Role" title="Construct a Search Filter for a Role">Construct a Role Search Filter. ]]>
+<![CDATA[ Update - We’ve updated the UI for deleting a Sumo Logic user’s account. The UI now provides an explicit option for deleting a user’s content in addition to the user account. For more information, see <a href="/manage/users-roles/Manage-Users/11-Delete-a-User" title="Delete a User">Delete ]]>
+<![CDATA[ a User</a>.<br /> Update - We've enhanced role search filters: now you can grant access to Scheduled Views and Partitions in a role search filter. For more information, see <a href="/manage/users-roles/Manage-Roles/07-Construct-a-Search-Filter-for-a-Role" title="Construct a Search Filter for a Role">Construct a Role Search Filter. ]]>
 </description>
 <guid>hhttps://help.sumologic.com/Release-Notes/Service-Release-Notes#april-13-2021</guid>
 <pubDate>Tue, 13 Apr 2021 22:39:28 +0000</pubDate>
@@ -1544,7 +1544,7 @@
 <title>February 25, 2021</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
 <description>
-<![CDATA[ Update - We are excited to announce out-of-the-box alerts for Kubernetes. We have also updated the dashboards and views in the Kubernetes App <a href="https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Install_the_Kubernetes_App_and_view_the_Dashboards" title="Install the Kubernetes Alerts, App and view the Dashboards">Kubenetes App</a> to accelerate entity-based troubleshooting of Kubernetes environments. New - We are excited to announce a new Microsoft Teams <a href="https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_Teams_App" title="Microsoft Teams Apps">Microsoft Teams</a> app that provides out-of-the-box dashboards to monitor users, teams, channels and permission changes. New (On the 23) - Microsoft Teams webhook connection <a href="https://help.sumologic.com/manage/Connections-and-Integrations/Webhook-Connections/Webhook_Connection_for_Microsoft_Teams" title="Webhook Connection for Microsoft Teams">Microsoft Teams webhook connection</a> is now available to send notifications from alerts to Microsoft Teams. ]]>
+<![CDATA[ Update - We are excited to announce out-of-the-box alerts for Kubernetes. We have also updated the dashboards and views in the Kubernetes App <a href="https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Install_the_Kubernetes_App_and_view_the_Dashboards" title="Install the Kubernetes Alerts, App and view the Dashboards">Kubenetes App</a> to accelerate entity-based troubleshooting of Kubernetes environments. New - We are excited to announce a new Microsoft Teams <a href="https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_Teams_App" title="Microsoft Teams Apps">Microsoft Teams</a> app that provides out-of-the-box dashboards to monitor users, teams, channels and permission changes. New (On the 23) - Microsoft Teams webhook connection <a href="https://help.sumologic.com/manage/connections-integrations/Webhook-Connections/Webhook_Connection_for_Microsoft_Teams" title="Webhook Connection for Microsoft Teams">Microsoft Teams webhook connection</a> is now available to send notifications from alerts to Microsoft Teams. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</guid>
 <pubDate>Thu, 25 Feb 2021 05:04:30 +0000</pubDate>
@@ -1589,7 +1589,7 @@
 <title>February 10, 2021</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#manage-1</link>
 <description>
-<![CDATA[ Update - We made the process of transferring a deleted user’s content to another user more comprehensive. Now, when you select a new owner for the deleted user’s Library content, scheduled views will be transferred to the new owner, as well as the user’s folders, searches, scheduled searches, and dashboards. For more information, see <a href="/manage/Users-and-Roles/Manage-Users/11-Delete-a-User" title="Delete a User">Delete a User</a>. ]]>
+<![CDATA[ Update - We made the process of transferring a deleted user’s content to another user more comprehensive. Now, when you select a new owner for the deleted user’s Library content, scheduled views will be transferred to the new owner, as well as the user’s folders, searches, scheduled searches, and dashboards. For more information, see <a href="/manage/users-roles/Manage-Users/11-Delete-a-User" title="Delete a User">Delete a User</a>. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-10-2021</guid>
 <pubDate>Fri, 5 Feb 2021 21:23:26 +0000</pubDate>
@@ -1774,7 +1774,7 @@
 <title>October 30, 2020</title>
 <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Security</link>
 <description>
-<![CDATA[ New - We’re pleased to announce a new <a href="https://help.sumologic.com/manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities"><u>role capability</u></a> that allows a Sumo Logic admin to limit the ability of users to create Access Keys. Currently, all Sumo Logic users can create Access Keys ]]>
+<![CDATA[ New - We’re pleased to announce a new <a href="https://help.sumologic.com/manage/users-roles/Manage-Roles/05-Role-Capabilities"><u>role capability</u></a> that allows a Sumo Logic admin to limit the ability of users to create Access Keys. Currently, all Sumo Logic users can create Access Keys ]]>
 <![CDATA[ on the Preferences page. (<a href="https://help.sumologic.com/manage/Security/Access-Keys"><u>Access Key</u></a> allow a user to register collectors and to use Sumo Logic APIs.) With the new Create Access Keys capability, you can limit the ability to create Access Keys to only those roles that require it. Note that, with this update, all roles in your Sumo account have the Create Access Keys capability. To restrict access, your Sumo Logic administrator can remove the capability from roles that do not require it. </p> New - We’ve released a new security policy you can use to set a maximum timeout for Sumo Logic UI web sessions. Sumo Logic users can set their web session timeout on the Preferences page, up to a maximum of 7 days. If you are a Sumo Logic admin with the Manage Organizational Settings role capability, you can now specify the maximum web session timeout period that users in your org can select. For more information, see <a href="https://help.sumologic.com/manage/Security/Set_a_Maximum_Web_Session_Timeout"><u>Set a Maximum Web Session Timeout</u></a>. ]]>
 </description>
 <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_30.2C_2020</guid>

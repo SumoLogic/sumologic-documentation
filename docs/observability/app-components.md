@@ -128,7 +128,7 @@ If you would like the alerts to send email or connection notifications, configur
 
 #### Configuring Email and Connection Notification Configuration Examples
 
-To **configure notifications**, modify the file `postgresql_notifications.auto.tfvars` file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See this [document](https://help.sumologic.com/manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections) for creating payloads with other connection types.
+To **configure notifications**, modify the file `postgresql_notifications.auto.tfvars` file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See this [document](https://help.sumologic.com/manage/connections-integrations/Webhook-Connections/Set_Up_Webhook_Connections) for creating payloads with other connection types.
 
 
 #### Pagerduty Connection Example

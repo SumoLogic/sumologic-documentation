@@ -155,7 +155,7 @@ New - Our `metricsfromtrace `and `rummetricsfromtrace` metrics have a new metada
 ---
 ## July 28, 2022 (Security)
 
-New - The [role capability](docs/manage/users-and-roles/roles/role-capabilities.md) we told you about [earlier](#july-18-2022-security) this month—**Download Search Results**—is now released. This capability, which grants the permission to download log search results, is enabled for all roles. Note that if you manage role capabilities using the Sumo Logic API or Terraform, you need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results.
+New - The [role capability](docs/manage/users-roles/roles/role-capabilities.md) we told you about [earlier](#july-18-2022-security) this month—**Download Search Results**—is now released. This capability, which grants the permission to download log search results, is enabled for all roles. Note that if you manage role capabilities using the Sumo Logic API or Terraform, you need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results.
 
 ---
 ## July 22, 2022 (Apps)
@@ -175,7 +175,7 @@ Update - When you query high cardinality metrics, the results can be hard to rea
 ---
 ## July 18, 2022 (Security)
 
-Update - The week of July 25, 2022, we’ll be releasing a new [role capability](docs/manage/users-and-roles/roles/role-capabilities.md)—**Download Search Results**—that grants the permission to download log search results. This capability will be enabled for all roles. If you manage role capabilities using the Sumo Logic API or Terraform, when the new capability is released, you’ll need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results.
+Update - The week of July 25, 2022, we’ll be releasing a new [role capability](docs/manage/users-roles/roles/role-capabilities.md)—**Download Search Results**—that grants the permission to download log search results. This capability will be enabled for all roles. If you manage role capabilities using the Sumo Logic API or Terraform, when the new capability is released, you’ll need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results.
 
 ---
 ## July 15, 2022 (Apps)
@@ -198,7 +198,7 @@ New - We’re pleased to announce the release of the [GCP Metrics Source](docs/s
 ---
 ## July 13, 2022 (Manage)
 
-Update - We have renamed our default partition from “Default Continuous Partition” to “sumologic_default”. Now you can directly query the data stored in the default partition, where all data is ingested unless explicitly routed into another partition. Any APIs that reference the default partition by its previous name, “Default Continuous Partition”, should be updated to refer to “sumologic_default” instead. For more information, see [Search the Default Partition](/docs/manage/partitions-and-data-tiers/run-search-against-partition#Search-the-default-partition).  
+Update - We have renamed our default partition from “Default Continuous Partition” to “sumologic_default”. Now you can directly query the data stored in the default partition, where all data is ingested unless explicitly routed into another partition. Any APIs that reference the default partition by its previous name, “Default Continuous Partition”, should be updated to refer to “sumologic_default” instead. For more information, see [Search the Default Partition](/docs/manage/partitions-data-tiers/run-search-against-partition#Search-the-default-partition).  
 
 ---
 ## July 8, 2022 (Apps)
@@ -371,7 +371,7 @@ Update - We've improved your Sumo Logic app installation process and added guida
 ---
 ## May 11, 2022 (Alerts)
 
-New - The new default payloads are now available for the following connections using [new variables](docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+New - The new default payloads are now available for the following connections using [new variables](docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 
 
 
@@ -506,7 +506,7 @@ Our [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/clo
 ---
 ## March 1, 2022 (Alerts)
 
-New - If you are using [Sumo Logic Cloud SOAR](https://www.sumologic.com/solutions/cloud-soar/), you can now integrate Monitors and Scheduled Searches with Cloud SOAR via a new [webhook connection](docs/manage/connections-and-integrations/webhook-connections/cloud-soar.md). This new capability allows you to send Alerts to Cloud SOAR to further process and operate on these incidents. The result is a rich and connected experience between your data residing in Sumo Logic and the security response capabilities within Cloud SOAR.
+New - If you are using [Sumo Logic Cloud SOAR](https://www.sumologic.com/solutions/cloud-soar/), you can now integrate Monitors and Scheduled Searches with Cloud SOAR via a new [webhook connection](docs/manage/connections-integrations/webhook-connections/cloud-soar.md). This new capability allows you to send Alerts to Cloud SOAR to further process and operate on these incidents. The result is a rich and connected experience between your data residing in Sumo Logic and the security response capabilities within Cloud SOAR.
 
 ---
 ## February 24, 2022 (Search)
@@ -522,7 +522,7 @@ New - The [Search Query Language](/docs/Search/Search-Query-Language) has a new 
 ---
 ## February 18, 2022 (Security)
 
-Update - We’ve eased the process of offboarding Sumo Logic users. Now, when you delete a user’s Sumo Logic account, you can transfer the user’s [Monitors](/docs/alerts/monitors) to another user, along with folders, searches, scheduled searches, scheduled views, monitors, and dashboards. For more information, see [Delete a User](docs/manage/users-and-roles/users/delete-user.md).
+Update - We’ve eased the process of offboarding Sumo Logic users. Now, when you delete a user’s Sumo Logic account, you can transfer the user’s [Monitors](/docs/alerts/monitors) to another user, along with folders, searches, scheduled searches, scheduled views, monitors, and dashboards. For more information, see [Delete a User](docs/manage/users-roles/users/delete-user.md).
 
 ---
 ## February 18, 2022 (Monitors)

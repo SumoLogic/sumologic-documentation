@@ -54,7 +54,7 @@ Once you have created search queries, you can visualize your data using charts, 
 
 * [Save a Search](/docs/search/get-started-with-search/search-basics/save-search): Whether you are running ad hoc searches during a forensic investigation or running standard searches for health checks, you can save any search to run later.
 * [Schedule a Search](/docs/alerts/scheduled-searches) When you save a search, you have the option to set up the saved search to run at a scheduled interval with an automated notification by email of the search results. You can edit a saved search at any time.
-* [Receive Email Alerts from Scheduled Searches](../alerts/scheduled-searches/receive-email-alerts-scheduled-searches.md): ​There are three ways to receive the results of scheduled searches in  email : scheduled email, alert email, and  Real Time  Alerts. 
+* [Receive Email Alerts from Scheduled Searches](../alerts/scheduled-searches/receive-email-alerts.md): ​There are three ways to receive the results of scheduled searches in  email : scheduled email, alert email, and  Real Time  Alerts. 
 
 ## Working with metrics
 

@@ -14,10 +14,10 @@ This table lists where, and for how long, different types of CSE data are retain
 
 | Data | Location   | Retention  | 
 | :-- | :-- | :-- |
-| Raw logs | Raw logs reside in your Default Partition in Sumo Logic | The retention period defined for your Default Partition. This period is [customer-configurable](docs/manage/partitions-and-data-tiers/manage-indexes-variable-retention.md).  | 
+| Raw logs | Raw logs reside in your Default Partition in Sumo Logic | The retention period defined for your Default Partition. This period is [customer-configurable](docs/manage/partitions-data-tiers/manage-indexes-variable-retention.md).  | 
 | CSE Records | Records (normalized logs) are stored in the partitions whose names begin with the string `sec_records`. There is one partition for each Record type. | 90 days |
 | CSE Signals     | `sec_signal` partition   | 2 years  |   
-| CSE Insights    | The `sumologic_system_events` partition contains Insights and Insight-related events that result from system actions. <br/> The sumologic_audit_events partition contains Insights and Insight-related events that result from user actions. | By default, these partitions have a retention period of 30 days.  This period is [customer-configurable](docs/manage/partitions-and-data-tiers/manage-indexes-variable-retention.md). |
+| CSE Insights    | The `sumologic_system_events` partition contains Insights and Insight-related events that result from system actions. <br/> The sumologic_audit_events partition contains Insights and Insight-related events that result from user actions. | By default, these partitions have a retention period of 30 days.  This period is [customer-configurable](docs/manage/partitions-data-tiers/manage-indexes-variable-retention.md). |
 
 
 
