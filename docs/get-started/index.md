@@ -212,4 +212,4 @@ The [Sumo Logic Training and Certification Program](https://www.sumologic.com/le
 
 Professional Services. For professional services and offerings, contact the sales team sales@sumologic.com or the account representative.
 
-[Sumo Logic Fundamentals.](https://www.sumologic.com/learn/certifications/) All users should begin with the Fundamentals certification. This is a prerequisite for all learning pathways and all additional certification levels.
+[Sumo Logic Fundamentals.](https://www.sumologic.com/learn/certifications/) All users should begin with the Fundamentals certification. This is a prerequisite for all learning pathways and all additional certification levels.    
