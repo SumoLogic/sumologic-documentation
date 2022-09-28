@@ -490,7 +490,7 @@ This topic defines the attributes in CSE Schema v3.
     </strong>
    </td>
    <td>
-    The name of the cloud infrastucture operator, typically a public cloud provider. E.g. Google Cloud Platform (GCP), Amazon Web Services (AWS), Microsoft Azure, Alibaba Cloud etc.
+    The name of the cloud infrastructure operator, typically a public cloud provider. E.g. Google Cloud Platform (GCP), Amazon Web Services (AWS), Microsoft Azure, Alibaba Cloud etc.
    </td>
   </tr>
   <tr>
@@ -537,7 +537,7 @@ This topic defines the attributes in CSE Schema v3.
     </strong>
    </td>
    <td>
-    The physical location a cloud provider operates their infrastucture from. E.g. AWS us-east-2 (Ohio), Azure Central US (Iowa), GCP asia-northeast1-a (Tokyo) etc.
+    The physical location a cloud provider operates their infrastructure from. E.g. AWS us-east-2 (Ohio), Azure Central US (Iowa), GCP asia-northeast1-a (Tokyo) etc.
    </td>
   </tr>
   <tr>
@@ -631,7 +631,7 @@ This topic defines the attributes in CSE Schema v3.
     </strong>
    </td>
    <td>
-    The cloud infrastucture isolated within a region on which a resource is located or is running.
+    The cloud infrastructure isolated within a region on which a resource is located or is running.
    </td>
   </tr>
   <tr>
@@ -866,7 +866,7 @@ This topic defines the attributes in CSE Schema v3.
     </strong>
    </td>
    <td>
-    The unique identifier provided to a discreet container which packages together the elements required to run software.
+    The unique identifier provided to a discrete container which packages together the elements required to run software.
    </td>
   </tr>
   <tr>
@@ -913,7 +913,7 @@ This topic defines the attributes in CSE Schema v3.
     </strong>
    </td>
    <td>
-    The name provided to a discreet container which packages together the elements required to run software.
+    The name provided to a discrete container which packages together the elements required to run software.
    </td>
   </tr>
   <tr>
@@ -4444,7 +4444,7 @@ In cases where the log data has a source or destination context, there are situa
     </strong>
    </td>
    <td>
-    The unique identifier provided to a discreet container which packages together the elements required to run software.
+    The unique identifier provided to a discrete container which packages together the elements required to run software.
    </td>
   </tr>
   <tr>
@@ -4491,7 +4491,7 @@ In cases where the log data has a source or destination context, there are situa
     </strong>
    </td>
    <td>
-    The name provided to a discreet container which packages together the elements required to run software.
+    The name provided to a discrete container which packages together the elements required to run software.
    </td>
   </tr>
   <tr>
@@ -10977,7 +10977,7 @@ In cases where the log data has a source or destination context, there are situa
     </strong>
    </td>
    <td>
-    The unique identifier provided to a discreet container which packages together the elements required to run software.
+    The unique identifier provided to a discrete container which packages together the elements required to run software.
    </td>
   </tr>
   <tr>
@@ -11024,7 +11024,7 @@ In cases where the log data has a source or destination context, there are situa
     </strong>
    </td>
    <td>
-    The name provided to a discreet container which packages together the elements required to run software.
+    The name provided to a discrete container which packages together the elements required to run software.
    </td>
   </tr>
   <tr>
