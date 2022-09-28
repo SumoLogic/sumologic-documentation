@@ -1,5 +1,5 @@
 ---
-slug: /metrics/introduction-metrics
+slug: /metrics/introduction
 title: Introduction to Metrics
 sidebar_label: Introduction to Metrics
 description: Metrics are an effective tool for monitoring, troubleshooting, and identifying the root causes of problems.

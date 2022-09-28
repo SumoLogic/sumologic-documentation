@@ -75,7 +75,7 @@ configuring security policies. You can:
 
 ## Metrics
 
-Sumo supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo, see [Overview of Metrics in Sumo](../metrics/introduction-metrics/overview-sumo-metrics.md). Metrics-related features for administrators include:
+Sumo supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo, see [Overview of Metrics in Sumo](../metrics/introduction/overview-sumo-metrics.md). Metrics-related features for administrators include:
 
 * [Metric Rules Editor](/docs/metrics/metric-rules-editor): An interface you can use to tag metrics with data derived from the metric identifier. Then, users can use those tags in metric queries.
 * [Logs-to-Metrics](../metrics/logs-to-metrics.md): Sumo’s Logs-to-Metrics features allow you to extract or create metrics from log data:

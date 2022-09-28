@@ -1106,18 +1106,18 @@ module.exports = {
       label: 'Introduction to Metrics',
       collapsible: true,
       collapsed: false,
-      link: {type: 'doc', id: 'metrics/introduction-metrics/index'},
+      link: {type: 'doc', id: 'metrics/introduction/index'},
       items: [
-        'metrics/introduction-metrics/overview-sumo-metrics',
-        'metrics/introduction-metrics/get-started-metrics',
-        'metrics/introduction-metrics/built-in-metadata',
-        'metrics/introduction-metrics/metric-formats',
-        'metrics/introduction-metrics/metric-quantization',
+        'metrics/introduction/overview-sumo-metrics',
+        'metrics/introduction/get-started-metrics',
+        'metrics/introduction/built-in-metadata',
+        'metrics/introduction/metric-formats',
+        'metrics/introduction/metric-quantization',
       ],
     },
     {
       type: 'category',
-      label: 'Metric Queries and Alerts',
+      label: 'Metrics Queries and Alerts',
       collapsible: true,
       collapsed: true,
       link: {type: 'doc', id: 'metrics/metric-queries-alerts/index'},
@@ -1135,7 +1135,24 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Metric Charts',
+      label: 'Managing Metrics Volume',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'metrics/manage-metric-volume/index'},
+      items: [
+        'metrics/manage-metric-volume/data-limits-for-metrics',
+        'metrics/manage-metric-volume/disabled-metrics-sources',
+        'metrics/manage-metric-volume/metric-ingestion-and-storage',
+        'metrics/manage-metric-volume/metric-throttling',
+      ],
+    },
+    'metrics/metric-rules-editor',
+    'metrics/metrics-transformation-rules',
+    'metrics/kubernetes-metrics',
+    'metrics/logs-to-metrics',
+    {
+      type: 'category',
+      label: 'Metrics Charts - Classic (Legacy)',
       collapsible: true,
       collapsed: true,
       link: {type: 'doc', id: 'metrics/metric-charts/index'},
@@ -1150,33 +1167,6 @@ module.exports = {
         'metrics/metric-charts/log-overlay-analyze-metrics-visualizations',
       ],
     },
-    {
-      type: 'category',
-      label: 'Managing Metric Volume',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'metrics/understand-manage-metric-volume/index'},
-      items: [
-        'metrics/understand-manage-metric-volume/data-limits-for-metrics',
-        'metrics/understand-manage-metric-volume/disabled-metrics-sources',
-        'metrics/understand-manage-metric-volume/metric-ingestion-and-storage',
-        'metrics/understand-manage-metric-volume/metric-throttling',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Metric Rules Editor',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'metrics/metric-rules-editor/index'},
-      items: [
-        'metrics/metric-rules-editor/about-metric-rules',
-        'metrics/metric-rules-editor/create-metric-rules',
-      ],
-    },
-    'metrics/metrics-transformation-rules',
-    'metrics/kubernetes-metrics',
-    'metrics/logs-to-metrics',
   ],
   // *** SEND DATA: collectors, sources
   // *** APM: RUM and Traces
@@ -1194,7 +1184,7 @@ module.exports = {
         type: 'category',
         label: 'Getting Started with Transaction Tracing',
         collapsible: true,
-        collapsed: false,
+        collapsed: true,
         link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/index'},
         items: [
           {
@@ -1289,7 +1279,7 @@ module.exports = {
       },
     ],
   },
-  'apm/rum/rum-index'
+  'apm/real-user-monitoring'
 ],
 // *** OBSERVABILITY: aws, kubernetes, root cause analysis
   observability: [
