@@ -317,9 +317,9 @@ module.exports = {
                   {
                     label: 'Real User Monitoring',
                     sublabel: 'Monitor user activity',
-                    to: '/docs/apm/rum',
+                    to: '/docs/apm/real-user-monitoring',
                     icon: 'contacts',
-                    activeBaseRegex: '^/docs/apm/rum/.*',
+                    activeBaseRegex: '^/docs/apm/real-user-monitoring/.*',
                   },
                 ],
               },
@@ -439,14 +439,32 @@ module.exports = {
             position: 'left',
           },
           {
-            label: 'Support',
-            to: 'https://support.sumologic.com/hc/en-us',
+            label: 'Help',
             position: 'left',
+            type: 'dropdown',
+            items:[
+              {
+                label: 'Support',
+                href: 'https://support.sumologic.com/hc/en-us',
+              },
+              {
+                label: 'Training',
+                href: 'https://www.sumologic.com/learn/training',
+              },
+              {
+                label: 'Community',
+                href: 'https://support.sumologic.com/hc/en-us/community/topics',
+              },
+              {
+                label: 'Service Status',
+                href: 'https://status.sumologic.com',
+              },
+            ]
           },
           {
             //Trial button
             label: 'Start a Free Trial',
-            href: 'https://www.sumologic.com/sign-up/',
+            to: 'https://www.sumologic.com/sign-up',
             position: 'right',
             className: 'navbar-trial',
           },

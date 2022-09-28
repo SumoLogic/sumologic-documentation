@@ -85,7 +85,7 @@ For all Sumo Logic account types (except for Sumo Logic Free) there is an overal
 
 ### Data Limits for Metrics
 
-For billing and reporting purposes, data volume for metrics is measured in Data Points per Minute (DPM). When the DPM limit is exceeded, data is cached on the host and the Source is throttled. The calculation of DPM varies according to the type of metric Source. For details, see [Data Limits for Metrics](../../metrics/understand-manage-metric-volume/data-limits-for-metrics.md). 
+For billing and reporting purposes, data volume for metrics is measured in Data Points per Minute (DPM). When the DPM limit is exceeded, data is cached on the host and the Source is throttled. The calculation of DPM varies according to the type of metric Source. For details, see [Data Limits for Metrics](../../metrics/manage-metric-volume/data-limits-for-metrics.md). 
 
 ## Important notes on Sumo Logic Free accounts
 

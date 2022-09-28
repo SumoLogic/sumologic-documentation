@@ -35,7 +35,7 @@ New - You can now access your monitor playbook as a template variable, `{{playbo
 
 New - LambdaTest allows you to analyze your testing behavior and error trends. LambdaTest is a continuous quality testing cloud platform that helps developers and testers ship code faster. The [LambdaTest](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/LambdaTest) platform provides secure, scalable, and insightful test orchestration for customers at different points in their DevOps (CI/CD) lifecycle.
 
-New - we’re happy to announce the release of the [Sumo Logic App for AWS Cost Explorer](docs/integrations/amazon-aws/cost-explorer.md), which allows you to visualize, understand, and manage your AWS costs and usage over time. 
+New - we’re happy to announce the release of the [Sumo Logic App for AWS Cost Explorer](docs/integrations/amazon-aws/cost-explorer.md), which allows you to visualize, understand, and manage your AWS costs and usage over time.
 
 With the Sumo Logic App for AWS Cost Explorer, you can use our out-of-the-box dashboards as well as filtering and grouping capabilities to dive deeper into your cost and usage data and generate custom insights. Gain a better understanding of your cost trends and see detailed information about the costs and usage associated with your top cost-accruing AWS accounts, regions, services, and operations.
 
@@ -52,13 +52,13 @@ Update - We are happy to announce the release of a new Explore Hierarchy for Dat
 * [MariaDB](docs/integrations/databases/mariadb.md)
 * [Memcached](docs/integrations/databases/memcached.md)
 * [Oracle](docs/integrations/databases/oracle/index.md)
-  
+
 If you already use one of the above apps, you will need to reinstall it to benefit from the newly added functionality.
 
 ---
 ## September 8, 2022 (Traces)
 
-New - we're happy to share extended coverage for [Real User Monitoring (RUM)](/docs/apm/rum), our solution that provides insight into your users' end-to-end browser experience interacting with your web apps. New RUM capabilities include:
+New - we're happy to share extended coverage for [Real User Monitoring (RUM)](/docs/apm/real-user-monitoring), our solution that provides insight into your users' end-to-end browser experience interacting with your web apps. New RUM capabilities include:
 
 * New dashboard panels for the following metrics:
    * XHR timing
@@ -76,22 +76,22 @@ New - we're happy to share extended coverage for [Real User Monitoring (RUM)](/d
 This new functionality requires RUM script in version 4 or higher (`https://rum.sumologic.com/sumologic-rum-v4.js`). Please ensure you are using the correct version in your pages. For automatic updates, use `https://rum.sumologic.com/sumologic-rum.js`.
 
 ---
-## August 30, 2022 (Metrics) 
+## August 30, 2022 (Metrics)
 
-We're delighted to announce the availability of these new operators: 
+We're delighted to announce the availability of these new operators:
 
 * [stddev](docs/metrics/metric-queries-alerts/operators.md#stddev)—Calculates the standard deviation of the metrics values that match the query.
-* [in](docs/metrics/metric-queries-alerts/operators.md#in)—You can use this operator in a metrics query selector as shorthand for multiple OR conditions. 
+* [in](docs/metrics/metric-queries-alerts/operators.md#in)—You can use this operator in a metrics query selector as shorthand for multiple OR conditions.
 
 ---
 ## August 25, 2022 (Collection)
 
-Update - We are pleased to announce that the following [Cloud-to-Cloud Integration Framework[docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework] sources are now available in Sumo Logic’s FedRAMP deployment: 
+Update - We are pleased to announce that the following [Cloud-to-Cloud Integration Framework[docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework] sources are now available in Sumo Logic’s FedRAMP deployment:
 
 * [Crowdstrike](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source.md)
 * [Crowdstrike FDR](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source.md)
 * [Duo](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source.md)
-* [Sentinel One Mgmt API](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source.md) 
+* [Sentinel One Mgmt API](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source.md)
 * [Proofpoint Tap](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source.md)
 
 ---

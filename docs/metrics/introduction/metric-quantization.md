@@ -83,7 +83,7 @@ Sumo quantizes metrics upon ingestion and at query time.
 
 ### Quantization at ingestion
 
-Upon ingestion, Sumo quantizes raw metric data points to one hour resolutions for all rollup types: `avg`, `min`, `max`, `sum`, and `count`. This data is stored in one hour rollup tables in Sumo. The raw data is stored in a table referred to as the baseline table. For information about retention times, see [Metric Ingestion and Storage](docs/metrics/understand-manage-metric-volume/metric-ingestion-and-storage.md).
+Upon ingestion, Sumo quantizes raw metric data points to one hour resolutions for all rollup types: `avg`, `min`, `max`, `sum`, and `count`. This data is stored in one hour rollup tables in Sumo. The raw data is stored in a table referred to as the baseline table. For information about retention times, see [Metric Ingestion and Storage](docs/metrics/manage-metric-volume/metric-ingestion-and-storage.md).
 
 ### Automatic quantization at query time
 

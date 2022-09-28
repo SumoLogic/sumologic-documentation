@@ -29,12 +29,12 @@ cluster-1.node-1.cpu-1.cpu-idle 97.29 1460061337
 
 In the metric above: 
 
-* The thing being measured is `cluster-1.node-1.cpu-1.cpu-idle`, which we could colloquially refer to as the  `cpu-idle` value for cpu-1, in node-1, in cluster-1.  
+* The thing being measured is `cluster-1.node-1.cpu-1.cpu-idle`, which we could colloquially refer to as the `cpu-idle` value for cpu-1, in node-1, in cluster-1.  
 * The value measured is 97.29.
 * The timestamp for the instant that the metric was measured is 1460061337.
 
 :::tip
-Graphite does not support meta tags. However, you can use Sumo's metric rules editor to tag metrics with key-value pairs derived from a Graphite metric’s metric_path. Then, you can use those key-value pairs in metric queries.  For more information, see [About Metric Rules](metric-formats.md)
+Graphite does not support meta tags. However, you can use Sumo's metric rules editor to tag metrics with key-value pairs derived from a Graphite metric’s metric_path. Then, you can use those key-value pairs in metric queries. For more information, see [About Metric Rules](docs/metrics/metric-rules-editor#about-metric-rules).
 :::
 
 ## Carbon 2.0
