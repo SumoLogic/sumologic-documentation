@@ -35,8 +35,8 @@ To send your data to Sumo Logic, you’ll need to learn how to configure Collect
 
 Sumo provides a tool for tracking and managing collection and data volume.
 
-* [Log Ingest Data Volume Index](docs/manage/ingestion-and-volume/data-volume-index/log-tracing-data-volume-index.md): Sumo writes messages to the index about how much log data your account is ingesting. You can query the index, and if desired, install the [Sumo Logic Data Volume app](/docs/integrations/sumo-apps/data-volume-legacy), which provides pre-configured searches and dashboards for analyzing log ingestion. 
-* [Metric Ingest Data Volume Index](docs/manage/ingestion-and-volume/data-volume-index/metrics-data-volume-index.md): The Metrics Data Volume Index is populated with a set of index messages every five minutes. The messages contain information on how much metrics (by data points) your account is ingesting. 
+* [Log Ingest Data Volume Index](docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index.md): Sumo writes messages to the index about how much log data your account is ingesting. You can query the index, and if desired, install the [Sumo Logic Data Volume app](/docs/integrations/sumo-apps/data-volume-legacy), which provides pre-configured searches and dashboards for analyzing log ingestion. 
+* [Metric Ingest Data Volume Index](docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index.md): The Metrics Data Volume Index is populated with a set of index messages every five minutes. The messages contain information on how much metrics (by data points) your account is ingesting. 
 
 ## Searching
 
@@ -54,7 +54,7 @@ After configuring Sources to collect the logs you need, you can begin using sear
 Search optimization tools speed the search process, delivering query results in less time and improving productivity for forensic analysis and log management. Search speed generally depends on the amount of data and the type of query run against the data. Search optimization tools segment the data and queue it up for quick results.
 
 * [Optimize Search Performance](../search/optimize-search-performance.md): Describes index-based and field-based methods for search optimization, the search optimization process, and how to choose the right tool for the job.
-* [Partitions](/docs/manage/partitions-and-data-tiers): Partitions speed the search process by allowing you to filter a subset of the log messages in an index.
+* [Partitions](/docs/manage/partitions-data-tiers): Partitions speed the search process by allowing you to filter a subset of the log messages in an index.
 * [Scheduled Views](/docs/manage/scheduled-views): Scheduled Views speed the search process for small and historical subsets of your data by functioning as a pre-aggregated index.
 * [Field Extraction](/docs/manage/field-extractions): Field Extraction speeds the search process by parsing fields as log messages are ingested. The parsing is done automatically, so you don’t need to run a query to parse the fields.
 * [Field Browser]/field-browser): The Field Browser allows you to zero in on just the fields of interest in a search by displaying or hiding selected fields without having to parse them. You can focus on the fields you’re interested in, avoiding the “noise” of fields you don’t want to see.
@@ -71,7 +71,7 @@ configuring security policies. You can:
 * [Sumo audit index](docs/manage/security/audit-index.md): If you enable the audit index, Sumo captures information on the internal events that occur in your account associated with account management, user activity, scheduled searches, and more.
 * [Support account access](docs/manage/security/enable-support-account.md): You can enable a Sumo Logic support account, which grants very select Sumo Logic support agents access to your organization's account, better helping those agents to resolve issues that arise. Admins can choose to keep the support account enabled full-time, or the account can be disabled when no issues are being investigated.
 * [Set Up SAML for Single Sign-On](/docs/manage/security/saml): Enterprise accounts can provision Security Assertion Markup Language (SAML) 2.0 to enable Single Sign-On (SSO) for user access to Sumo Logic. In addition to basic SAML functionality, you can choose optional on-demand user creation (using SAML 2.0 assertions), and designate custom login and/or logout portals.
-* [Role-based access control (RBAC)](/docs/manage/users-and-roles): Sumo Logic supports RBAC. Users are not assigned permissions directly, but inherit permissions through roles (or even through a single role). Role assignments grant users specific capabilities, and govern what data users can view.   
+* [Role-based access control (RBAC)](/docs/manage/users-roles): Sumo Logic supports RBAC. Users are not assigned permissions directly, but inherit permissions through roles (or even through a single role). Role assignments grant users specific capabilities, and govern what data users can view.   
 
 ## Metrics
 

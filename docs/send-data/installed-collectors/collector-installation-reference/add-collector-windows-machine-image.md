@@ -50,7 +50,7 @@ Download the appropriate collector from the **Manage Data \> Collection \> Coll
 
 1. Set up auto-registration details for the Collector:  
 
-   * [Create a New User](/docs/manage/users-and-roles/users/) account with Administrator permissions or a role with permissions to "Manage Collectors."
+   * [Create a New User](/docs/manage/users-roles/users/) account with Administrator permissions or a role with permissions to "Manage Collectors."
    * Create an [Access Key and Access Id](docs/manage/security/access-keys.md) for this user, which will be used to register the collector.
 
 1. Run the installer with the following arguments:

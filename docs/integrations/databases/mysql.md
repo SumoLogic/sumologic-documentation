@@ -572,7 +572,7 @@ connection_notifications = [
   ]
 ```
 
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](https://help.sumologic.com/manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections).
+For information about overriding the payload for different connection types, see [Set Up Webhook Connections](https://help.sumologic.com/manage/connections-integrations/Webhook-Connections/Set_Up_Webhook_Connections).
 
 ```sql title="Email notifications example"
 email_notifications = [
