@@ -479,23 +479,6 @@ module.exports = {
             position: 'right',
             to: 'https://github.com/SumoLogic/sumologic-documentation',
           },
-//            items:[
-//              {
-  //              label: 'Docs GitHub',
-    //            href: 'https://github.com/SumoLogic/sumologic-documentation',
-      //        },
-        //      {
-//                label: 'Contribution Guide',
-//                href: '/docs/contributing',
-//              },
-//            ]
-//          },
-          {
-            label: ' ',
-            className: 'header-search-link',
-            to: 'https://app.sitesearch360.com/demo/18891?auth=627bf5a32ba2ed7f1e7dbe02a13a5a5ae13c5c4d',
-            position: 'right',
-          },
         ],
       },
       footer: {
