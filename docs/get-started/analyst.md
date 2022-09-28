@@ -54,11 +54,11 @@ Once you have created search queries, you can visualize your data using charts, 
 
 * [Save a Search](/docs/search/get-started-with-search/search-basics/save-search): Whether you are running ad hoc searches during a forensic investigation or running standard searches for health checks, you can save any search to run later.
 * [Schedule a Search](/docs/alerts/scheduled-searches) When you save a search, you have the option to set up the saved search to run at a scheduled interval with an automated notification by email of the search results. You can edit a saved search at any time.
-* [Receive Email Alerts from Scheduled Searches](../alerts/scheduled-searches/receive-email-alerts-scheduled-searches.md): ​There are three ways to receive the results of scheduled searches in  email : scheduled email, alert email, and  Real Time  Alerts. 
+* [Receive Email Alerts from Scheduled Searches](../alerts/scheduled-searches/receive-email-alerts.md): ​There are three ways to receive the results of scheduled searches in  email : scheduled email, alert email, and  Real Time  Alerts. 
 
 ## Working with metrics
 
-Sumo supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo, see [Overview of Metrics in Sumo](../metrics/introduction-metrics/overview-sumo-metrics.md). Metrics-related features for analysts include:
+Sumo supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo, see [Overview of Metrics in Sumo](../metrics/introduction/overview-sumo-metrics.md). Metrics-related features for analysts include:
 
 * [Metric queries](/docs/metrics/metric-queries-alerts): You can query your metrics from a metric query tab. For information about the operators you can use in metric queries, see [Metric Operators](/docs/metrics/metric-queries-alerts/operators). 
 * [Metric charts](/docs/metrics/metric-charts): You can create line charts, area charts, and single value charts.

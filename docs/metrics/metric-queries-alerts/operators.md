@@ -3,7 +3,9 @@ id: operators
 title: Metrics Operators
 ---
 
-Below are Sumo Logic metrics-supported operators and provides examples of queries containing each type of operator.
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+This topic describes Sumo Logic metrics operators and provides usage examples.
 
 
 ## accum
@@ -831,10 +833,10 @@ metric=MemoryUsed | pct(95.0) by node
 
 ## quantize
 
-You can use the `quantize` operator to control the Sumo’s quantization behavior, which is described in detail in [Metric Quantization](../introduction-metrics/metric-quantization.md).
+You can use the `quantize` operator to control the Sumo’s quantization behavior, which is described in detail in [Metric Quantization](../introduction/metric-quantization.md).
 You can specify:
 
-* The size of the time buckets across which Sumo aggregates your metrics. If you do not specify a quantization interval, Sumo determines an optimum size for time buckets, as described in [Automatic quantization at query time](../introduction-metrics/metric-quantization.md).  
+* The size of the time buckets across which Sumo aggregates your metrics. If you do not specify a quantization interval, Sumo determines an optimum size for time buckets, as described in [Automatic quantization at query time](../introduction/metric-quantization.md).  
 * The rollup type that Sumo uses to aggregate the individual data points in a time bucket, which can be one of `avg, min, max, sum,` or `count`. If you do not specify a rollup type in the `quantize` clause of your query, for each time bucket, Sumo presents the average of the data points in that bucket.  
 
 #### quantize syntax
@@ -1009,7 +1011,29 @@ This query calculates the total of the `cpu_system` metric values across all tim
 cluster=search metric=cpu_idle | sum by node
 ```  
 
+## timeshift
 
+The `timeshift` operator shifts the time series from your metrics query by a specified period of time.
+
+#### timeshift syntax 
+
+`timeshift TIME_INTERVAL` 
+
+Where:
+
+* `TIME_INTERVAL` is a time interval in millisecond(ms), seconds (s), minutes (m), hours (h), or days (d).
+
+#### Example 
+
+Query #A returns the `cpu_idle` metric for the currently selected query time range, the last 15 minutes. 
+
+`#A _sourceCategory=prod/host _sourceHost=my-mac= metric=cpu_idle `
+
+Query #B returns the `cpu_idle` metric for the 15 minute period that ended two hours ago. 
+
+`#B _sourceCategory=prod/host _sourceHost=my-mac= metric=cpu_idle | timeshift 2h`
+
+<img src={useBaseUrl('img/metrics/timeshift.png')} alt="your description" />
 
 ## timeslice
 
