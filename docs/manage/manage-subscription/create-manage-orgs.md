@@ -26,7 +26,7 @@ Sumo Orgs allows you to logically group, provision, and centrally manage and m
 
 When you create a child org, you provision it with credits, based on the ingest volume you estimate for the org. We refer to the different flavors of ingest—Continuous Log Ingest, Frequent Log Ingest, and so on—as *product variables*. When you provision a child org you use a Credits Calculator to estimate and allocate required credits for each product variable. 
 
-We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. For example, if you estimate 1GB usage for logs and specify that as the baseline when you create the org, Sumo Logic will start [throttling](../ingestion-and-volume/log-ingestion.md#log-throttling) when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.
+We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. For example, if you estimate 1GB usage for logs and specify that as the baseline when you create the org, Sumo Logic will start [throttling](../ingestion-and-volume/log-ingestion.md) when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.
 
 Users that have the required role capabilities (described in the following section) can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI at **Administration** \> **Organizations** and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
 
@@ -80,14 +80,14 @@ After you create a child org, you can’t delete it.
 7. **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM Enterprise (CSE).
    1. If you enable CSE, the CSE Log Ingest field appears.
    1. Enter a value in GB.
-      :::note 
+      :::note
       Provisioning CSE can take up to 24 hours. See [Monitor CSE Provisioning](#monitor-cse-provisioning), below.
       :::
-1. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented.<br/> <img src={useBaseUrl('img/subscriptions/calculator1.png')} alt="calculator" width="450"/> 
+1. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented.<br/> <img src={useBaseUrl('img/subscriptions/calculator1.png')} alt="calculator" width="450"/>
 2. To see a breakdown of the required credits, click **View Breakdown**. <br/> <img src={useBaseUrl('img/subscriptions/calculator2.png')} alt="calculator" width="450"/>
 3.  The calculator now shows how many credits are associated with the ingestion volume and, as applicable, how many are due to the deployment factor—the upcharge based on the deployment where the org is located.
 4.  Click **Use This Allocation**.
-   
+
 ## Update an org's credits allocation
 
 To change an org's credits allocation:
@@ -98,7 +98,7 @@ To change an org's credits allocation:
 3. The **Credits Calculator** appears.
 4. Follow the steps in [Create a child org](#create-a-child-org) to update the credits allocation.
 
-## Monitor CSE provisioning 
+## Monitor CSE provisioning
 Provisioning CSE can take up to 24 hours. You can determine provisioning status on the **Administration \> Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
 
 <img src={useBaseUrl('img/cse/status.png')} alt="status" />
@@ -107,7 +107,7 @@ Provisioning CSE can take up to 24 hours. You can determine provisioning status 
 
 This section has information about how you can monitor credit allocations and consumption across all your orgs, and for each child org.
 
-### View child credit usage by category 
+### View child credit usage by category
 
 You can view the usage by child orgs on the **Account Overview** page. Usage for the following categories is shown:
 
@@ -117,9 +117,9 @@ You can view the usage by child orgs on the **Account Overview** page. Usage for
 * **Infrequent Scan**. Credits used to scan data for Infrequent tier searches.
 * **Tracing Ingest**. Credits used for traces ingested.
 * **Metrics Ingest**. Credits used for metrics ingested.
-* **Storage**. Credits used for log storage in the Continuous and Frequent tiers. 
+* **Storage**. Credits used for log storage in the Continuous and Frequent tiers.
 * **CSE Ingest**. Credits used for logs ingested into Cloud SIEM Enterprise (CSE).
-* **Infrequent Storage**. Credits used for log storage in the Infrequent tier. 
+* **Infrequent Storage**. Credits used for log storage in the Infrequent tier.
 * **Promotional categories**. For more information, see [Monitoring Promotional Credit usage](cloud-flex-credits-accounts.md#monitoring-promotional-credit-usage).
   <img src={useBaseUrl('img/subscriptions/account-overview-new.png')} alt="your description" />
 
