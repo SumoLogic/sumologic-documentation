@@ -11,8 +11,8 @@ Currently, only selected Cloud-to-Cloud Sources are available in the Fed deploym
 
 ## Limitations
 
-* The number of Cloud-to-Cloud Sources is limited to 20.
-* You are warned when you have 16 Sources or 80% of the limit.
+* The number of Cloud-to-Cloud Sources is limited to 20 for free accounts, and 50 for all other accounts.
+* You are warned when you reach 80% of the limit (16 Sources for free accounts, and 40 Sources for other accounts).
 * You are notified when you have reached the Source limit.
 
 ## Static IP addresses
