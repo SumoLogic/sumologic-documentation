@@ -387,8 +387,7 @@ The `ewma` operator computes an Exponentially Weighted Moving Average (EWMA) on 
 You can optionally run `ewma` with either:
 
 * An explicit `alpha` smoothing parameter to smooth time series while preserving trends. This is useful if you want to explicitly set the smoothing parameter value.
-* A `span` over a number of points. The `span` parameter is commonly understood as an N-Day Exponentially Weighted Moving Average. The *span* value is the number of data points that will be used to calculate the average. The decay (smoothing) parameter alpha  is related to span as: \
-`alpha = 2/(span + 1)`
+* A `span` over a number of points. The `span` parameter is commonly understood as an N-Day Exponentially Weighted Moving Average. The *span* value is the number of data points that will be used to calculate the average. The decay (smoothing) parameter alpha  is related to span as:  `alpha = 2/(span + 1)`
 
 The most commonly used parameter is `span`, which allows you to specify the number of data points you want to use for smoothing. The higher the value of `span`, the smoother the time series will be. You might choose to use `alpha` if you know what smoothing parameter value you want use. Keep in mind that the lower the `alpha` value is, the smoother the time series will be.
 
