@@ -663,3 +663,4 @@ To use this correctly, ensure the following:
 * To build a dashboard of compliance history over multiple compliance periods, change the `timeslice` to match the compliance period and set the dashboard time range to multiple compliance periods
 
 Dashboards built using such queries will show slightly different numbers from the pre-built dashboards due to differences in the storage backend for these two approaches. Use the pre-built dashboard if SLO precision is important.
+
