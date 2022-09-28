@@ -208,7 +208,7 @@ Fields cannot be used with [Live Tail](/docs/search/live-tail).
 Fields in your account are manageable at **Manage Data** \> **Logs** \> **Fields**.
 
 :::important
-You need the **Manage Fields** [role capability](users-and-roles/roles/role-capabilities.md) to manage fields. 
+You need the **Manage Fields** [role capability](users-roles/roles/role-capabilities.md) to manage fields. 
 :::
 
 ![manage fields page.png](/img/fields/manage-fields-page.png)
