@@ -4,6 +4,7 @@ title: Monitor Log Ingestion and Receive Alerts
 description: Add scheduled searches that monitor ingestion and send alerts. The following alerts apply to log ingestion only.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic provides ingest alerts that you can schedule to get timely information about ingestion usage or throttling. With the excepting of the [Throttling alert](monitor-ingestion-receive-alerts.md) described below these alerts apply to logs only, not metrics. 
 
@@ -25,28 +26,28 @@ You must update all of the indicated fields for the search to save successfully
 
 **Setup:**
 
-1. Enable the Data Volume Index. See [Enable and Manage the Data Volume Index]v for instructions.
+1. Enable the Data Volume Index. See [Enable and Manage the Data Volume Index] for instructions.
 
-1. Substitute the correct values of `X` for the following parameters in the search query (see entries in yellow in the query below). For the billing start and end values, use the day of the month. For example, in the screenshot, the value for `billing_start` is 17 so the updated line from the search becomes `17 as billing_start`.
-===X===
+2. Substitute the correct values of `X` for the following parameters in the search query. For the billing start and end values, use the day of the month. For example, in the screenshot below, the value for `billing_start` is 17 so the updated line from the search becomes `17 as billing_start`.
     ```
     X as billing_start
     X as billing_end
     X as daily_gb_limit
     ```
 
-    The correct values are on the Account page. Click on your name in the left nav and go to **Administration** \> **Account** \> **Account Overview**.    
+    You can find the correct values on the Account page. Click on your name in the left nav and go to **Administration** \> **Account** \> **Account Overview**. <br/><img src={useBaseUrl('img/ingestion-and-volume/account-overview.png')} alt="account overview" />
 
-1. (Optional)  Modify the following line if you want to change the percentage threshold for generating the alert.
+
+3. (Optional)  Modify the following line if you want to change the percentage threshold for generating the alert.
 
     ```sql
-    | where pct_used\> 85
+    | where pct_used > 85
     ```
 
     Example: To generate an alert at 80 % utilization, change the line to:
 
     ```sql
-    | where pct_used\> 80
+    | where pct_used > 80
     ```
 
 **Query:**
