@@ -23,7 +23,8 @@
     "wugology",
     "hillaryfraley",
     "PavanKumarrS-sumo",
-    "agaur"
+    "agaur",
+    "bhargavisumo"
   ],
   "message": "Thank you for your contribution! As with many open source projects, we require contributors to sign our Contributor License Agreement and do not have yours on file. To proceed with your PR, please [sign your name here](https://forms.gle/YgLddrckeJaCdZYA6) and we'll add you to our approved list of contributors.",
   "label": "cla-signed",
