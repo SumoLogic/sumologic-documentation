@@ -41,7 +41,7 @@ To use a CRON Expression in a Script Source:
 
     ![img](/img/send-data/script-path.png)
 
-   * Choose **Type the script to execute** if you'd like to enter the script directly in the Sumo Logic Web Application. Then type the script in the text box. For example:        
+   * Choose **Type the script to execute** if you'd like to enter the script directly in Logic. Then type the script in the text box. For example:        
 
     ![img](/img/send-data/script.png)
 

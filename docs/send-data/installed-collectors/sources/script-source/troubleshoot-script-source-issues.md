@@ -30,7 +30,7 @@ Where a script isn't executable or has failed, or doesn't exist, you'll find mes
 
 `Working dir %s does not exist`
 
-where `%s` is the working directory specified in the Sumo Logic Web Application.
+where `%s` is the working directory specified in Sumo Logic.
 
 `Error in executing script: %s`
 

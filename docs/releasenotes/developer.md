@@ -50,7 +50,7 @@ New - The [Dynamic Parsing Management API](/docs/api/dynamic-parsing) allows you
 
 New - The [Account Management API](/docs/api/account-management) allows you to manage the [custom subdomain](https://help.sumologic.com/manage/Manage-Subscription/12Manage_Organizational_Settings#Set_up_a_custom_subdomain) for the URL used to access your Sumo Logic account.
 
-New - [Ingest Budget Management API V2](/docs/api/Ingest-Budget-V2) allows you to manage metadata-based [ingest budgets](https://help.sumologic.com/manage/Ingestion-and-Volume/Ingest_Budgets) (with a scope) from HTTP endpoints.
+New - [Ingest Budget Management API V2](/docs/api/Ingest-Budget-V2) allows you to manage metadata-based [ingest budgets](https://help.sumologic.com/manage/ingestion-volume/Ingest_Budgets) (with a scope) from HTTP endpoints.
 
 
 ---
@@ -134,7 +134,7 @@ Update - The [Collector Management API](/docs/api/collectors) can return Collect
 
 ---
 ### June 17, 2019 - APIs
-New - The [Ingest Budget Management API](/docs/api/ingest-budget-v1) allows you to manage [ingest budgets](https://help.sumologic.com/manage/Ingestion-and-Volume/Ingest_Budgets) from HTTP endpoints.
+New - The [Ingest Budget Management API](/docs/api/ingest-budget-v1) allows you to manage [ingest budgets](https://help.sumologic.com/manage/ingestion-volume/Ingest_Budgets) from HTTP endpoints.
 
 **Deprecation Notice**
 

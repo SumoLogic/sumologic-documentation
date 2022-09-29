@@ -22,7 +22,7 @@ Data forwarding processing rules are processed after all other [processing rules
 
 ## Configure data forwarding destination
 
-You need the [Manage Collectors role capability](../users-and-roles/roles/role-capabilities.md) to create a data forwarding destination.
+You need the [Manage Collectors role capability](../users-roles/roles/role-capabilities.md) to create a data forwarding destination.
 
 To set up a data forwarding destination:
 
@@ -61,7 +61,7 @@ In this procedure, you define one or more processing rules that define the raw l
 
 There are several methods you can use to configure processing rules: 
 
-* Sumo Web Application - See the instructions below.
+* In Sumo Logic - See the instructions below.
 * With JSON - See [Creating Processing Rules Using a JSON File](/docs/send-data/use-json-configure-sources). 
 * Collector Management API - See [Collector Management API](/docs/api/collectors) for instructions on using the API to configure sources for Data Forwarding.
 * Local Source configuration files -  See [Local File Configuration Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management) for general information on managing sources using local file configuration.

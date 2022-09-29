@@ -89,4 +89,4 @@ Use either of the following commands to start the Collector.
     InstallCollector-NT.bat startCollectorService.bat
     ```
 
-To verify that the Collector is installed, go to **Manage \> Collection** in the Web Application and verify that you can see the Collector.
+To verify that the Collector is installed, go to Sumo Logic > **Manage \> Collection** and verify that you can see the Collector.
