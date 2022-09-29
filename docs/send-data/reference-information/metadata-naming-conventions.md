@@ -45,19 +45,19 @@ It may be difficult to foresee all the searches, reports, and use cases you will
  * **Sandbox/Jimmy/linuxtest**
  * **Debug/CustomApplication/Foo**
 
-The implied distinction between, for instance, **OS_Application_Mail** and say, **Application_Mail** would be for cases where you may simply be running the Mail Transfer Agent (MTA) that came with your flavor of Linux by default in order to send system notifications from cron jobs (**OS_Application_Mail**), versus, you are running an MTA as a service to provide email capabilities to your organization or customers (**Application_Mail**).
+The implied distinction between, for instance, `OS_Application_Mail` and say, `Application_Mail` would be for cases where you may simply be running the Mail Transfer Agent (MTA) that came with your flavor of Linux by default in order to send system notifications from cron jobs (`OS_Application_Mail`), versus, you are running an MTA as a service to provide email capabilities to your organization or customers (`Application_Mail`).
 
 This allows you to do searches such as:
 
- * **\_sourceCategory=OS\***
- * **\_sourceCategory=\*Audit**
- * **\_sourceCategory=\*Application\***
+ * `_sourceCategory=OS*`
+ * `_sourceCategory=*Audit`
+ * `_sourceCategory=*Application*`
 
 For more information, see [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). 
 
 ## Source Host
 
-Hostname metadata is stored in a Sumo Logic field called `\_sourceHost`. For the hostname, Sumo Logic retrieves and uses the host’s actual OS-level hostname. For Local Sources, you can enter a different value in this field if you choose. If you choose to overwrite the system hostname, Sumo Logic recommends that you carefully select a meaningful name that uniquely identifies the host from which data is collected. 
+Hostname metadata is stored in a Sumo Logic field called `_sourceHost`. For the hostname, Sumo Logic retrieves and uses the host’s actual OS-level hostname. For Local Sources, you can enter a different value in this field if you choose. If you choose to overwrite the system hostname, Sumo Logic recommends that you carefully select a meaningful name that uniquely identifies the host from which data is collected. 
 
 Remote collections present a special circumstance for Source Host metadata since one Remote Source can be configured to collect the same file from multiple hosts. In this case, Sumo Logic will tag each message with just one hostname (the host from which the message originated).
 
@@ -70,15 +70,15 @@ If you choose to overwrite the system names with custom metadata, the recommende
 
 You will then be able to use wildcards to refine a search by any one of the chained terms in the Source Host metadata. For example:
 
- * **\_sourceHost=\*USEast\***
- * **\_sourceHost=\*MySQL\***
- * **\_sourceHost=\*FW\***
+ * `_sourceHost=*USEast*`
+ * `_sourceHost=*MySQL*`
+ * `_sourceHost=*FW*`
 
 When it comes to Source Host metadata, it's usually best to stick to your organization's current conventions. 
 
 ## Source Name
 
-The metadata field called Source Name  (\_**sourceName**) contains the file path entered when you created your Source. If your Source points to more than one file path, then messages from each file path are tagged with the specific path from which they were collected.
+The metadata field called Source Name  (_**sourceName**) contains the file path entered when you created your Source. If your Source points to more than one file path, then messages from each file path are tagged with the specific path from which they were collected.
 
 ## Best Practices
 

@@ -456,7 +456,7 @@ connection_notifications = [
 
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections).
+For overriding payload for different connection types, refer to this [document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections).
 
 ```sql title="Email Notifications Example"
 email_notifications = [
@@ -603,8 +603,11 @@ The **MariaDB - InnoDB** Metrics dashboard shows replication events, errors, war
 
 <img src={useBaseUrl('img/integrations/databases/MariaDB-InnoDB-Metrics.png')} alt="mariadb dashboards" />
 
+### Table Performance Metrics
+  
+The **MariaDB - Table Performance dashboard**, shows performance schema for Table I/O waits and Table Lock waits.
 
-
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB/MariaDB-Table-Peformance-Metrics.png')} alt="mariadb dashboards" />
 
 ## MariaDB Alerts
 

@@ -12,7 +12,7 @@ JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.or
 
 See the following topics for additional information:
 
- * [Collector Management API](docs/api/collector.md)
+ * [Collector Management API](/docs/api/collectors)
  * [JSON Source Parameters for Hosted Collectors](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources)
  * [JSON Source Parameters for Installed Collectors](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources)
  * [View or Download Collector or Source JSON Configuration](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md)
@@ -147,7 +147,7 @@ The following parameters are used for log Sources except for Syslog. Syslog Sour
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `filters` | String | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward. Review the [Rules and Limitations](docs/manage/collection/processing-rules/include-and-exclude-rules.md) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable |
+| `filters` | String | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward. Review the [Rules and Limitations](docs/send-data/collection/processing-rules/include-and-exclude-rules.md) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable |
 
 **When collection should begin**
 
@@ -166,7 +166,7 @@ The following parameters are automatically configured by the Sumo Logic Servic
 
 ## Time zone format
 
-In a JSON source configuration, a string for the `timeZone` setting does not follow the same format as the time zone setting shown in the Sumo Logic Web Application. The JSON `timeZone` property uses the underlying TZ database time zone format instead of (GMT+11:00) style values.
+In a JSON source configuration, a string for the `timeZone` setting does not follow the same format as the time zone setting shown in Sumo Logic. The JSON `timeZone` property uses the underlying TZ database time zone format instead of (GMT+11:00) style values.
 
 Example:
 
@@ -198,9 +198,9 @@ The following is a Timestamp example in JSON with two default date formats, `yyy
 
 You can include processing (filtering) rules when using JSON to configure sources. A filter specifies rules about which messages are sent to Sumo Logic.
 
- * Exclude—Removes messages before ingestion to Sumo Logic. Think of Exclude as a "denylist" filter. For more information, see [Include and Exclude Rules](docs/manage/collection/processing-rules/include-and-exclude-rules.md).
- * Include—Sends only the data you explicitly define to Sumo Logic. Think of Include as an "allowlist" filter. For more information, see [Include and Exclude Rules](docs/manage/collection/processing-rules/include-and-exclude-rules.md).
- * Hash—Replaces a message with a unique, randomly-generated code to protect sensitive or proprietary information, such as credit card numbers or user names. By hashing this type of data you can still track it, even though it's fully hidden. For more information, see [Hash Rules](docs/manage/collection/processing-rules/hash-rules.md).
+ * Exclude—Removes messages before ingestion to Sumo Logic. Think of Exclude as a "denylist" filter. For more information, see [Include and Exclude Rules](docs/send-data/collection/processing-rules/include-and-exclude-rules.md).
+ * Include—Sends only the data you explicitly define to Sumo Logic. Think of Include as an "allowlist" filter. For more information, see [Include and Exclude Rules](docs/send-data/collection/processing-rules/include-and-exclude-rules.md).
+ * Hash—Replaces a message with a unique, randomly-generated code to protect sensitive or proprietary information, such as credit card numbers or user names. By hashing this type of data you can still track it, even though it's fully hidden. For more information, see [Hash Rules](docs/send-data/collection/processing-rules/hash-rules.md).
  * Mask—Replaces an expression with a mask string that you can customize; especially useful for protecting passwords or other data you wouldn't normally track. For more information, see [Mask Rules].
  * Forward—Sends matching log messages to a data forwarding destination. For more information, see [Example: data forwarding rule](#example-data-forwarding-rule) below.
 

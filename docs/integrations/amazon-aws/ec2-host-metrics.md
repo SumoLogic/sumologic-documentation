@@ -39,12 +39,12 @@ The Host Metrics (EC2) app relies upon an Installed Collector with a [Host Metri
 
 ### Field in Field Schema
 
-Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the `instanceid` field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the `instanceid` field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/manage/fields#manage-fields).
 
 
 ### Configure Host Metrics sources  
 
-Follow the instructions in this section to configure the Sumo Logic Installed Collector and a [Host Metrics Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Host-Metrics-Source) on each of your AWS EC2 hosts. You will assign account and Namespace metadata [fields](https://help.sumologic.com/Manage/Fields) to the sources so that incoming logs and metrics will be appropriately tagged.
+Follow the instructions in this section to configure the Sumo Logic Installed Collector and a [Host Metrics Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Host-Metrics-Source) on each of your AWS EC2 hosts. You will assign account and Namespace metadata [fields](https://help.sumologic.com/manage/fields) to the sources so that incoming logs and metrics will be appropriately tagged.
 
 This step is not necessary if you already have an Installed Collector and Host Metrics tagged with account and Namespace metadata fields.
 

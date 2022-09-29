@@ -154,7 +154,7 @@ The **Search** page opens, the search populates a new tab, and the search runs
 If you don't have data that matches the requirements of the search query, or if you select the incorrect Source Category or data filter, you will either get no results, or bad results.
 
 :::note
-Searches included with the [Sumo Logic App for Data Volume] (docs/integrations/sumo-apps/Data_Volume_App_-_Legacy.md "Data Volume App") do
+Searches included with the [Sumo Logic App for Data Volume](/docs/integrations/sumo-apps/data-volume-legacy "Data Volume App") do
 not require you to select a Source Category.
 :::
 
@@ -209,10 +209,10 @@ To install the app:
     ![LogAnalysis.png](/img/get-started/library/LogAnalysis.png)
 
     :::note
-    If you do not select the correct \_sourceCategory, data will not be loaded into the app. If you don't know which \_sourceCategory to select, ask the administrator who configured the Source.
+    If you do not select the correct _sourceCategory, data will not be loaded into the app. If you don't know which _sourceCategory to select, ask the administrator who configured the Source.
     :::
 
-    **Select from \_sourceCategory values.** Choose an existing \_sourceCategory present in your account used for your Sumo Logic data.
+    **Select from _sourceCategory values.** Choose an existing _sourceCategory present in your account used for your Sumo Logic data.
 
 1. Click on **Advanced**, choose either the Personal folder or a subfolder in the Personal folder. (Click the blue + to create a new subfolder).
 1. Click **Add to Library**. A dialog will confirm the app is installed successfully.

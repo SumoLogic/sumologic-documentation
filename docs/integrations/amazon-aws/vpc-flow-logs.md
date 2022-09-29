@@ -39,7 +39,7 @@ To enable Amazon Virtual Private Cloud (VPC) Flow Logs from the AWS console:
 2. Select the VPC.
 3. Click **Actions** > **Create Flow Log**.
 4. On the **Create Flow Log** page, select a **Role** to use Flow logs.
-    1. If you haven't set up IAM permissions, click **Set Up Permissions**. \
+    1. If you haven't set up IAM permissions, click **Set Up Permissions**.
     2. From the new tab, **VPC Flow Logs is requesting permissions to use resources in your account**:
     3. From the IAM Role, select **Create a new IAM Role.**
     4. Add a Role Name that describes your logs, for example, VPC-Flow-Logs.
@@ -210,7 +210,7 @@ You can filter the Overview dashboard by any combination of `DestinationIP`, `So
 
 
 #### Filtering the Accepts dashboard
-In the filters pane, you can can configure these parameters for the [outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) analysis performed by the "Accepts by Minute - Outlier" panel:  Consecutive, Threshold, Window, and Timeslice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/Search-Query-Language/operators#outlier) analysis performed by the "Accepts by Minute - Outlier" panel:  Consecutive, Threshold, Window, and Timeslice.
 
 You can also filter Accepts dashboard by any combination of `DestinationIP`, `SourceIP`, `dest_port`, `interfaceid`, `protocol`, and `src_port`.
 
@@ -227,7 +227,7 @@ You can also filter Accepts dashboard by any combination of `DestinationIP`, `So
 
 #### Filtering the Rejects dashboard
 
-In the filters pane, you can can configure these parameters for the [outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) analysis performed by the "Rejects by Minute - Outlier" panel: Consecutive, Threshold, Window, and Timeslice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/Search-Query-Language/operators#outlier) analysis performed by the "Rejects by Minute - Outlier" panel: Consecutive, Threshold, Window, and Timeslice.
 
 You can also filter the Rejects dashboard by any combination of `DestinationIP`, `SourceIP`, `dest_port`, `interfaceid`, `protocol`, and `src_port`.
 
@@ -243,7 +243,7 @@ You can also filter the Rejects dashboard by any combination of `DestinationIP`,
 
 #### Filtering the Traffic dashboard
 
-In the filters pane, you can can configure these parameters for the [outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) analysis performed by several panels: Consecutive, Threshold, Window, and Timelice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/Search-Query-Language/operators#outlier) analysis performed by several panels: Consecutive, Threshold, Window, and Timelice.
 
 You can also filter the Traffic dashboard by any combination of `DestinationIP`, `SourceIP`, `action`, `dest_port`, `interfaceid`, `protocol`, and `src_port`.
 
@@ -266,6 +266,6 @@ Key facts about this dashboard:
 
 #### Filtering the Security Groups dashboard
 
-In the filters pane, you can can configure these parameters for the [outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) analysis performed by several panels:  Consecutive, Threshold, Window, and Timeslice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/Search-Query-Language/operators#outlier) analysis performed by several panels:  Consecutive, Threshold, Window, and Timeslice.
 
 You can also filter the Security Groups dashboard by any combination of `DestinationIP`, `SourceIP`, `action`, `dest_port`, `interfaceid`, `protocol`, `security_grp_id`,  `src_port`, `subnet_id`, and `vpc_id`.

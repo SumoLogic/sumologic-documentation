@@ -84,8 +84,8 @@ To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a H
 
 1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
     1. **Name**. (Required) A name is required. Description is optional.
-    2. **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources. \
-Example: **prod/web/apache/access**. \
+    2. **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources.
+Example: **prod/web/apache/access**.
 For details see [Best Practices](/docs/send-data/best-practices).
 2. In the Advanced section, specify the following configurations:
     3. **Enable Timestamp Parsing**. True
@@ -100,7 +100,7 @@ Copy and paste the **token** in a secure location. You will need this when you c
 
 Before your can configure Sumo Logic to ingest logs, you must set up remote log streaming on Cylance. For instructions, refer to the following documentation:
 
-1. In Cylance, go to **Settings > Application**. \
+1. In Cylance, go to **Settings > Application**.
 
 2. In the **Integrations **section, activate the **Syslog/SIEM** check box.  
 3. Under **Event Types**, activate the checkboxes for all events.  

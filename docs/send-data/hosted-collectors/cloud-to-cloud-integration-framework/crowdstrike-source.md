@@ -14,7 +14,7 @@ The CrowdStrike API documentation is not public and can only be accessed by par
 The types of events are defined in the [Streaming API Event Dictionary](https://falcon.crowdstrike.com/support/documentation/62/streaming-api-event-dictionary).
 
 :::note
-This Source is not available in the Fed deployment. Use the legacy collection method for CrowdStrike.
+This Source is available in the Fed deployment. Use the legacy collection method for CrowdStrike.
 :::
 
 ## Prerequisite
@@ -62,7 +62,7 @@ When you create a CrowdStrike Source, you add it to a Hosted Collector. Before 
 
 To configure a CrowdStrike Source:
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 

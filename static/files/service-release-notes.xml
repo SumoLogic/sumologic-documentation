@@ -1,0 +1,1932 @@
+<rss version="2.0">
+<channel>
+<title>Sumo Logic Service Release Notes</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes</link>
+<description>This list is for the Sumo Logic Service updates. </description>
+<item>
+<title>September 23, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#collection</link>
+<description>
+<![CDATA[ Update - Good news! We've increased the number of Cloud-to-Cloud Sources that customers with paid Sumo Logic subscriptions can have, from 20 to 50. For users of free accounts, the limit remains 20 Cloud-to-Cloud Sources. For more information, see <a href="/Beta/Cloud-to-Cloud_Integration_Framework" title="Cloud-to-Cloud Integration Framework">Cloud-to-Cloud Integration Framework</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#collectiona</guid>
+<pubDate>Fri, 23 Sep 2022 14:44:42 +0000</pubDate>
+</item>
+<item>
+<title>September 22, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-22-2022</link>
+<description>
+<![CDATA[ Update - We've updated the release note published on <a href="/Release-Notes/Service-Release-Notes#August_30.2C_2022" title="Service Release Notes">August 30, 2022</a>, which incorrectly stated that the timeslice metrics operator had been released. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-22-2022a</guid>
+<pubDate>Thu, 22 Sep 2022 15:52:15 +0000</pubDate>
+</item>
+<item>
+<title>September 19, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-19-2022</link>
+<description>
+<![CDATA[ Update - We've improved out Access Key UI to make it easy to spot Access Keys that haven't been used lately. Now the Access Keys management page displays the date and time an Access Key was last used to make a request to an API endpoint. For more information, see <a href="/Release-Notes/Service-Release-Notes" title="Service Release Notes">Access Keys</a>. <br/>In a future update, Sumo Logic will, by default, automatically disable Access Keys that have not been used for 30 days. Your Sumo Logic admin will be able to configure the period of time before an unused key will be disabled. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-19-2022a</guid>
+<pubDate>Mon, 19 Sep 2022 19:41:59 +0000</pubDate>
+</item>
+<item>
+<title>September 12, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#alerts</link>
+<description>
+<![CDATA[ New - We’re happy to announce the release of three new Sumo Logic Alert features: Alert Grouping, Playbook Template Variable, and Configurable Resolution Window for Logs. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-12-2022</guid>
+<pubDate>Mon, 12 Sep 2022 10:00:00 +0000</pubDate>
+</item>
+<item>
+<title>September 9, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - <a href="https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/LambdaTest" title="https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/LambdaTest">LambdaTest</a> allows you to analyze your testing behavior and error trends. LambdaTest is a continuous quality testing cloud platform that helps developers and testers ship code faster. LambdaTest platform provides secure, scalable, and insightful test orchestration for customers at different points in their DevOps (CI/CD) lifecycle. ]]>
+<![CDATA[ New - we’re happy to announce the release of the <a href="/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Cost_Explorer" title="AWS Cost Explorer">Sumo Logic App for AWS Cost Explorer</a>, which allows you to visualize, understand, and manage your AWS costs and usage over time. With the Sumo Logic App for AWS Cost Explorer, you can use our out-of-the-box dashboards as well as filtering and grouping capabilities to dive deeper into your cost and usage data and generate custom insights. Gain a better understanding of your cost trends and see detailed information about the costs and usage associated with your top cost-accruing AWS accounts, regions, services, and operations. ]]>
+<![CDATA[ Update - We are happy to announce the release of a new Explore Hierarchy for Database Application Components, together with the support of related Database Entities in Entity Inspector. This functionality allows you to organize your data in a structured hierarchy and utilize the database dashboards available out-of-the-box from App Catalog. Currently, the following Database engines are supported by this feature: <a href="07Sumo-Logic-Apps/12Databases/Cassandra" title="Cassandra">Cassandra</a> <a href="07Sumo-Logic-Apps/12Databases/Couchbase" title="Couchbase">Couchbase</a> <a href="07Sumo-Logic-Apps/12Databases/Elasticsearch" title="Elasticsearch">Elasticsearch</a> <a href="07Sumo-Logic-Apps/12Databases/MongoDB" title="MongoDB">MongoDB</a> <a href="07Sumo-Logic-Apps/12Databases/MySQL" title="MySQL">MySQL</a> <a href="07Sumo-Logic-Apps/12Databases/PostgreSQL" title="PostgreSQL">PostgreSQL</a> <a href="07Sumo-Logic-Apps/12Databases/Redis" title="Redis">Redis</a> <a href="07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_SQL_Server" title="Microsoft SQL Server">SQL Server</a> <a href="07Sumo-Logic-Apps/12Databases/MariaDB" title="MariaDB">MariaDB</a> <a href="07Sumo-Logic-Apps/12Databases/Memcached" title="Memcached">Memcached</a> <a href="07Sumo-Logic-Apps/12Databases/Oracle" title="Oracle">Oracle</a> If you already use one of the above apps, you will need to reinstall it to benefit from the newly added functionality. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-9-2022</guid>
+<pubDate>Fri, 9 Sep 2022 21:00:43 +0000</pubDate>
+</item>
+<item>
+<title>September 8, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#traces</link>
+<description>
+<![CDATA[ New - we're happy to share extended coverage for Real User Monitoring (RUM), our solution that provides insight into your users' end-to-end browser experience interacting with your web apps. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-8-2022</guid>
+<pubDate>Thu, 8 Sep 2022 21:00:00 +0000</pubDate>
+</item>
+<item>
+<title>August 30, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-30-2022</link>
+<description>
+<![CDATA[ New - Good things come in threes, including metrics operators. We're delighted to announce the availability of these new operators: <br> &bull;<a href="/05Search/Search-Query-Language/Search-Operators/timeslice" title="timeslice">timeslice</a>—Allows you to aggregate individual data points over a specified duration using a specified rollup function, one of: avg, min, max, sum, count, or rate. <br> &bull;<a href="/Metrics/Metric-Queries-and-Alerts/07Metrics_Operators/stddev" title="stddev">stddev</a>—Calculates the standard deviation of the metrics values that match the query.<br> &bull;<a href="/Metrics/Metric-Queries-and-Alerts/07Metrics_Operators/in" title="in">in</a>—You can use this operator in a metrics query selector as shorthand for multiple OR conditions. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-30-2022a</guid>
+<pubDate>Tue, 30 Aug 2022 16:04:18 +0000</pubDate>
+</item>
+<item>
+<title>August 25, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-25-2022</link>
+<description>
+<![CDATA[ Update - We are pleased to announce that the following Cloud-to-Cloud Integration Framework sources are now available in Sumo Logic’s FedRAMP deployment:<br> &bull;<a href="/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/CrowdStrike_Source" title="CrowdStrike Source">Crowdstrike</a><br> &bull;<a href="/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Crowdstrike_FDR_Source" title="Crowdstrike FDR Source">Crowdstrike FDR</a><br> &bull;<a href="/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Duo_Source" title="Duo Source">Duo</a><br> &bull; a href="/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/SentinelOne_Mgmt_API_Source" title="SentinelOne Mgmt API Source">Sentinel One Mgmt API</a><br> &bull;<a href="/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Proofpoint_TAP_Source" title="Proofpoint TAP Source">Proofpoint Tap</a> ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-25-2022b</guid>
+<pubDate>Thu, 25 Aug 2022 20:26:47 +0000</pubDate>
+</item>
+<item>
+<title>August 18, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-17-2022</link>
+<description>
+<![CDATA[ Update - We've updated the release note about the increased Fields limit that was published on August 17 to clarify that the increased limit is available only to Enterprise Suite customers. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-17-2022b</guid>
+<pubDate>Thu, 18 Aug 2022 20:26:47 +0000</pubDate>
+</item>
+<item>
+<title>August 17, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-17-2022</link>
+<description>
+<![CDATA[ Update - We’ve doubled the number of <a href="/manage/Fields" title="Fields">Fields</a> you can create. The per account Fields limit is now 400. The limit applies to Fields that you configure for sources or collectors and those you create using <a href="/manage/Field-Extractions" title="Field Extractions">Field Extraction Rules</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-17-2022a</guid>
+<pubDate>Wed, 17 Aug 2022 15:57:29 +0000</pubDate>
+</item>
+<item>
+<title>August 8, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-8-2022</link>
+<description>
+<![CDATA[ The new UI for creating and managing <a href="/manage/Scheduled-Views" title="Scheduled Views">Scheduled Views</a> that we described <a href="/Release-Notes/Service-Release-Notes#August_4.2C_2022" title="Service Release Notes">last week</a> is now released. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-8-2022a</guid>
+<pubDate>Mon, 8 Aug 2022 15:12:17 +0000</pubDate>
+</item>
+<item>
+<title>August 5, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - We’re happy to announce the release of The Sumo Logic App for <a href="/07Sumo-Logic-Apps/01Amazon_and_AWS/Host_Metrics_(EC2)" title="Host Metrics (EC2)">Host Metrics (EC2)</a>. This App allows you to collect your EC2 instance metrics using Sumo Logic Installed Collector and display them using predefined search queries and Dashboards. The App provides Dashboards to analyze EC2 instance metrics for CPU, disk, memory, and network. ]]>
+<![CDATA[ Update - We are glad to update that the Sumo Logic App for <a href="/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas" title="MongoDB Atlas">MongoDB Atlas</a> now allows you to monitor database operations and performance KPIs and provides visibility into the security posture of your clusters. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-5-2022</guid>
+<pubDate>Fri, 5 Aug 2022 17:32:22 +0000</pubDate>
+</item>
+<item>
+<title>August 4, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-4-2022</link>
+<description>
+<![CDATA[ Update - We’re preparing to release a new UI for creating and managing <a href="/manage/Scheduled-Views" title="Scheduled Views">Scheduled Views</a>. The rollout will commence the week of August 8, 2022. The new interface is clean and compact—now you'll be able to configure a new Scheduled View in a right-hand pane that appears next to the list of existing Scheduled Views. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-4-2022a</guid>
+<pubDate>Thu, 4 Aug 2022 15:23:02 +0000</pubDate>
+</item>
+<item>
+<title>August 2, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#observability</link>
+<description>
+<![CDATA[ Update - We’re delighted tUpdate - We’re happy to announce the release of our&nbsp;<strong>AWS Observability Solution v2.5.0</strong>, which includes. Enhanced dashboards for <a href="/Observability_Solution/AWS_Observability_Solution/AWS_Observability_Apps/AWS_EC2_Metrics" title="Host Metrics (EC2)">EC2 Host OS Metrics</a>, including support for <a href="/Observability_Solution/AWS_Observability_Solution/AWS_Observability_Apps/AWS_EC2" title="AWS EC2">Amazon EC2 CloudWatch</a> Metrics: now you can monitor your EC2 instances via CloudWatch and Installed Collector simultaneously and see results side-by-side. Support for <a href="/Observability_Solution/AWS_Observability_Solution/AWS_Observability_Apps/Amazon_SNS" title="Amazon SNS">Amazon SNS</a> - we’ve added out-of-the-box dashboards with the most important information about messages, events, and errors illustrating SNS health and reliability. Enhanced dashboards for supported Amazon services - the following services were updated and revamped DynamoDB, API Gateway, RDS, EC2 Metrics, ElastiCache, and All Load Balancers. New CLI-based onboarding flow: now, you can roll out a comprehensive AWS monitoring with just a single CLI command by providing your AWS and Sumo credentials. Streamlining of Root Cause Explorer drill-downs. While you can still find your AWS anomalies in the RCE screen from the new menu and Entities panel, we have removed RCE dedicated “Events of interests” dashboards from the top-level Dashboards drop-down menu. Simplified TerraForm onboarding process by importing Field Extraction Rules (FERs). Bug fixes. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-2-2021</guid>
+<pubDate>Tue, 2 Aug 2022 00:55:24 +0000</pubDate>
+</item>
+<item>
+<title>July 28 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-28-2022</link>
+<description>
+<![CDATA[ New - The <a href="/manage/users-roles/Manage-Roles/05-Role-Capabilities" title="Role Capabilities">role capability</a> we told you about earlier this month—Download Search Results—is now released. This capability, which grants the permission to download log search results, is enabled for all roles. Note that if you manage role capabilities using the Sumo Logic API or Terraform, you need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-28-2022a</guid>
+<pubDate>Thu, 28 Jul 2022 16:57:47 +0000</pubDate>
+</item>
+<item>
+<title>July 22, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - The Sumo Logic App for&nbsp;<a href="/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_EC2" target="_blank">AWS EC2</a>&nbsp;uses EC2 instance cloudwatch metrics &amp; EC2 Cloudtrail events and displays them using predefined dashboards. The App provides dashboards with insights into KPIs related to CPU, disk, network, EBS, Health Status Check, and events from EC2 Cloudtrail. ]]>
+<![CDATA[ Update - <a href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html" target="_blank">Amazon Simple Notification Service</a>&nbsp;(SNS) is a pub/sub messaging and mobile notifications service for coordinating the delivery of messages to subscribing endpoints and clients.<br /> The Sumo Logic App for&nbsp;<a href="/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SNS" target="_blank">Amazon SNS</a>&nbsp;collects CloudTrail logs and CloudWatch metrics to provide insights into the operations and utilization of your SNS service. This includes tracking the most active topics, failures, errors, and geographical locations of SNS clients. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-22-2022</guid>
+<pubDate>Fri, 22 Jul 2022 22:54:32 +0000</pubDate>
+</item>
+<item>
+<title>July 21 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-21-2022</link>
+<description>
+<![CDATA[ Update - When you query high cardinality metrics, the results can be hard to read and interpret. The Metrics Explorer now offers aggregation tips—recommendations for adding an aggregation clause to high cardinality metrics queries. You can easily add the suggested clause to your query, or ignore the suggestion, as desired. For more information, see <a href="/Metrics/Metric-Queries-and-Alerts/Metric_Aggregation_Tips" title="Metric Aggregation Tips">Metric Aggregation Tips</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-21-2022a</guid>
+<pubDate>Thu, 21 Jul 2022 15:28:00 +0000</pubDate>
+</item>
+<item>
+<title>July 18 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-18-2022</link>
+<description>
+<![CDATA[ Update - The week of July 25, 2022, we’ll be releasing a new <a href="/manage/users-roles/Manage-Roles/05-Role-Capabilities" title="Role Capabilities">role capability</a>—Download Search Results—that grants the permission to download log search results. This capability will be enabled for all roles. If you manage role capabilities using the Sumo Logic API or Terraform, when the new capability is released, you’ll need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-18-2022a</guid>
+<pubDate>Mon, 18 Jul 2022 20:36:23 +0000</pubDate>
+</item>
+<item>
+<title>July 15, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ Update - The Sumo Logic&nbsp;<a href="/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Lambda" target="_blank">AWS Lambda</a>&nbsp;App uses the Lambda logs via CloudWatch, CloudWatch Metrics, and the CloudTrail Lambda Data Events to visualize the operational and performance trends in all the Lambda functions in your account. The preconfigured dashboards provide insights into executions, memory and duration usage by function versions or aliases, errors, billed duration, function callers, IAM users, and threat details. This app is updated from the AWS observability solution in the App Catalog. Updates include new Dashboards for Request, Error, Resource Usage, and Performance Analysis. Also, it includes a new Dashboard for analyzing Threat Intel. ]]>
+<![CDATA[ New - The Sumo Logic App for&nbsp;<a href="/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Network_Load_Balancer" target="_blank">AWS Network Load Balancer</a>&nbsp;(that is a load balancer working on 4 layer of OSI model) is using metrics to provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy and to quickly identify errors. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-15-2022</guid>
+<pubDate>Fri, 15 Jul 2022 23:11:45 +0000</pubDate>
+</item>
+<item>
+<title>July 14 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-14-2022</link>
+<description>
+<![CDATA[ New - We’re pleased to announce the release of the <a href="/03Send-Data/Hosted-Collectors/GCP_Metrics_Source" title="GCP Metrics Source">GCP Metrics Source</a>. The new source gives you visibility into Google Cloud Platform (GCP) infrastructure and managed services using an integrated Google Service account. You can collect metrics from 35 native GCP services, as well as from custom services running on GCP. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-14-2022a</guid>
+<pubDate>Thu, 14 Jul 2022 18:28:44 +0000</pubDate>
+</item>
+<item>
+<title>July 13 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-13-2022</link>
+<description>
+<![CDATA[ Update - We have renamed our default partition from “Default Continuous Partition” to “sumologic_default”. Now you can directly query the data stored in the default partition, where all data is ingested unless explicitly routed into another partition. Any APIs that reference the default partition by its previous name, “Default Continuous Partition”, should be updated to refer to “sumologic_default” instead. For more information, see <a href="/manage/Partitions_and_Data_Tiers/05-Run-a-Search-Against-a-Partition#Search_the_default_partition" title="Run a Search Against a Partition">Search the Default Partition</a>. ]]>
+</description>
+<guid>hhttps://help.sumologic.com/Release-Notes/Service-Release-Notes#july-13-2022a</guid>
+<pubDate>Wed, 13 Jul 2022 14:55:16 +0000</pubDate>
+</item>
+<item>
+<title>July 8, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ Update - The Sumo Logic App for <a href="/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Classic_Load_Balancer" title="AWS Classic Load Balancer">AWS Observability Classic Load Balancer</a> uses CW logs and metrics to give you visibility into the health of your Classic Load Balancer. Use the pre-configured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone. This app is updated from the AWS observability solution in the App Catalog. Updates include upgrading all dashboards to Dashboards(New), additional Dashboards to analyze Request and Process Bytes, and Dashboard to monitor Threat Intel. ]]>
+<![CDATA[ Update - The Sumo Logic App for <a href="/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Elasticache" title="Amazon Elasticache">Amazon ElastiCache</a> provides visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues. Use the preconfigured dashboards for at-a-glance analysis of event status trends, locations, successes, and failures, as well as system health and performance metrics. The dashboards also have additional performance insights for Redis clusters. This app is updated from the AWS observability solution in the App Catalog. Updates include upgrading all dashboards to Dashboards(New) and new Dashboards for Redis performance details and Command Latency. ]]>
+<![CDATA[ Update - The Sumo Logic App for <a href="/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Application_Load_Balancer" title="AWS Application Load Balancer">AWS Application Load Balancer</a> uses CW logs and metrics to give you visibility into the health of your Application Load Balancer and target groups. Use the preconfigured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone and target group. This app is updated from the AWS observability solution in the App Catalog. Updates include upgrading all dashboards to Dashboards(New) and new Dashboards for Response Analysis, Target Group Response Analysis, and Request and Processed Bytes. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-08-2022</guid>
+<pubDate>Fri, 08 Jul 2022 21:08:11 +0000</pubDate>
+</item>
+<item>
+<title>July 8 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-8-2022</link>
+<description>
+<![CDATA[ New - Care to comment? Now you can. In the <a href="/Metrics/Metric-Queries-and-Alerts/02Metrics_Explorer" title="Metrics Explorer">Metrics Explorer,</a>, in Advanced Mode you can add comments to a metrics query and comment out portions of the query by using comment formatting. Comments are helpful for troubleshooting during query development, and also for other users who may use or edit your queries at a later date—comments you add will be visible in saved and shared queries. For more information, see <a href="/Metrics/Metric-Queries-and-Alerts/02aComments_in_Metric_Queries" title="Comments in Metric Queries">Comments in Metric Queries</a>. <br /> Update - The <a href="/Release-Notes/Service-Release-Notes" title="Service Release Notes">eval</a> metrics operator has been enhanced to support a _granularity option that provides the length, in milliseconds, of the bucket used for quantization, for use in metric queries. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-8-2022a</guid>
+<pubDate>Fri, 08 Jul 2022 17:48:18 +0000</pubDate>
+</item>
+<item>
+<title>July 7 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-7-2022</link>
+<description>
+<![CDATA[ Update - We’ve improved our zoom in feature for metric charts. Up until now, zooming into a metric chart simply increased the size of the chart. Now, for time series charts in which the query uses automatic quantization, when you zoom in the chart presents results based on more granular data: the bucket size across which results are quantized is reduced. For more information, see <a href="/Metrics/03-Metric-Charts/06-Interacting_with_Metric_Charts#Zoom_in_on_a_time_series_chart" title="Interacting with Metric Charts">Zoom in on a time series chart</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-7-2022a</guid>
+<pubDate>Thu, 07 Jul 2022 15:24:50 +0000</pubDate>
+</item>
+<item>
+<title>July 4, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - The Sumo Logic <a href="/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_API_Gateway" title="AWS API Gateway">AWS API Gateway</a> App provides insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization, access control, throttling, monitoring, and API version management. This App was already part of the AWS observability solution and will now be available as a standalone app in the App catalog. ]]>
+<![CDATA[ Update - The Sumo App for <a href="/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_DynamoDB" title="Amazon DynamoDB">Amazon DynamoDB</a> uses logs and metrics to provide operational insights into your DynamoDB. The App includes Dashboards that allow you to monitor key metrics, view the throttle events, errors, and latency, and help you plan the capacity of your DynamoDB instances. This App updates from the AWS observability solution in the App Catalog. Updates include upgrading all dashboards to Dashboards(New) and adding a new threat intel Dashboard to the App. ]]>
+<![CDATA[ Update - The Sumo Logic <a href="/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_RDS" title="Amazon RDS">Amazon RDS</a> App dashboards provide visibility into your Amazon Relational Database Service (RDS) performance and operations. Preconfigured dashboards allow you to monitor critical metrics of your RDS cluster, including CPU, memory, storage, the network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. Audit activity dashboards help you monitor activities performed on your RDS infrastructure. This app updates from the AWS observability solution in the App Catalog. Updates include upgrading all the dashboards to Dashboards(New). New Audit activity dashboards help you monitor activities performed on your RDS infrastructure and RDS instance-specific dashboard support for - Aurora and MySQL and Performance Insights dashboards. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-04-2022</guid>
+<pubDate>Mon, 04 Jul 2022 05:39:14 +0000</pubDate>
+</item>
+<item>
+<title>June 30, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ Update - Sumo Logic and AWS are excited to announce an update to <a href="https://aws.amazon.com/quickstart/architecture/sumo-logic-for-aws-organizations/" title="https://aws.amazon.com/quickstart/architecture/sumo-logic-for-aws-organizations/">Sumo Logic Integrations for AWS Organizations</a>. Thi ]]>
+<![CDATA[ s solution allows joint customers of AWS and Sumo Logic to automate the integration of <a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/architecture.html" title="https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/architecture.html">AWS Security Reference Architecture</a>-compliant organizations with <a href="https://aws.amazon.com/marketplace/pp/prodview-o622lpl6biu6s" title="https://aws.amazon.com/marketplace/pp/prodview-o622lpl6biu6s">Sumo Logic Cloud SIEM powered by AWS</a>.<br /> Our updates support Security Reference Architecture (SRA)-compliant set up of: <br />AWS Security Hub <br />Centralized logging of AWS Network Firewall and AWS WAF<br />AWS Firewall Manager ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-30-2022a</guid>
+<pubDate>Thu, 30 Jun 2022 17:32:50 +0000</pubDate>
+</item>
+<item>
+<title>June 30, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - We are happy to announce the release of AWS Observability Installation Automation. This release enables a simplified method of deploying AWS Observability using default parameters with just one quick command requiring only Sumo Access Id and Key. This method features POSIX and PowerShell scripts to trigger the Cloud Formation template for creating a stack to enable complete visibility into your AWS account infrastructure's health and reliability. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-30-2022</guid>
+<pubDate>Thu, 30 Jun 2022 11:21:54 +0000</pubDate>
+</item>
+<item>
+<title>June 23, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#alerts</link>
+<description>
+<![CDATA[ Update - We’ve made alerts and monitors more customizable to give you control over how often you are notified. You can now: Customize the alert name to differentiate between multiple alerts created from the same monitor. Choose recovery based on “Single Data point” meeting the recovery threshold or “all data points” meeting the threshold before the alert is resolved. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-23-2022</guid>
+<pubDate>Thu, 23 Jun 2022 00:17:51 +0000</pubDate>
+</item>
+<item>
+<title>June 21, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#traces</link>
+<description>
+<![CDATA[ Update - Update - Traces can now show aggregated trace duration critical path contribution (CPC) breakdown chart summarized for all traces from the Traces query result set. Use this chart to: Quickly understand intermittent duration spikes or slowdowns Immediately spot offending service by comparing CPC contribution by service ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-21-2022</guid>
+<pubDate>Tue, 21 Jun 2022 15:31:31 +0000</pubDate>
+</item>
+<item>
+<title>June 15, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - <a href="https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_ThreatINSIGHT" target="_blank" title="https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_ThreatINSIGHT">Gigamon ThreatINSIGHT</a>&nbsp;allows you to stay a step ahead by giving your security teams more: time, data, and insight into attacker behavior. The Gigamon ThreatINSIGHT App for Sumo Logic provides dashboards and visualizes data from ThreatInsight MetaStream files, which helps in identifying potential threats enabling rapid, informed response. ]]>
+<![CDATA[ New - The&nbsp;<a href="https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_HAWK" target="_blank">Gigamon HAWK</a>&nbsp;app for Sumo Logic provides deep observability by collecting application context from the network. Its rich metadata attributes extraction offers a holistic picture of what’s happening in the network. ]]>
+<![CDATA[ New - The <a href="https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Lucidum" target="_blank">Lucidum</a>&nbsp;app for Sumo Logic eliminates blind spots across cloud, security, and IT operations. It gives information about assets, data sources, services, locations, risk factors, and ports. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-15-2022</guid>
+<pubDate>Wed, 15 Jun 2022 11:44:54 +0000</pubDate>
+</item>
+<item>
+<title>June 14, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#metrics</link>
+<description>
+<![CDATA[ Update - We’re happy to announce a new and improved <a href="/Metrics/Metric-Queries-and-Alerts/02Metrics_Explorer#What's_in_the_Time_Series_Table.3F" title="Metrics Explorer">Time Series tab</a> (previously known as the Preview Table) in the Metrics Explorer. The redesigned table is more compact and easier to read, and you can control which dimensions and data appear in the table using the checkboxes in the pane to the left of the table. When you mouse over a cell in the Time Series table, you can click a three-dot icon to display a context menu that allows you to add dimensions to the query, copy dimensions and values, copy the entire time series, and more. The context menu is supported in both basic and advanced mode. You can export query results in whole or in part to a .csv file. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-14-2022</guid>
+<pubDate>Tue, 14 Jun 2022 16:48:26 +0000</pubDate>
+</item>
+<item>
+<title>June 10, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#collection</link>
+<description>
+<![CDATA[ New -&nbsp;Our <a href="/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework" title="Cloud-to-Cloud Integration Framework">Cloud-to-Cloud Integration Framework</a> has two new Sources, ]]>
+<![CDATA[ a href="/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Netskope_WebTx_Source" title="Netskope WebTx Source">Netskope WebTx</a>: The&nbsp;Netskope WebTx API&nbsp;integration ingests Web Transaction logs from Netskope Event Steam. ]]>
+<![CDATA[ a href="/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Box_Source" title="Box Source">Box</a>: The Box API integration ingests events from the&nbsp;Get Events API.&nbsp;It securely stores the required authentication, scheduling, and state tracking information. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-10-2022</guid>
+<pubDate>Fri, 10 Jun 2022 17:12:20 +0000</pubDate>
+</item>
+<item>
+<title>June 8, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - We pleased to announce the availability of the <a href="/Cloud_SIEM_Enterprise/CSE_Ingestion/Carbon_Black_Cloud" title="Carbon Black Cloud">Carbon Black Cloud</a>. This app analyzes alert and event data from VMware's Endpoint Standard and Enterprise EDR products and provides comprehensive visibility into the security posture of your endpoints, enabling you to determine the effects of breaches in your environment. The app provides visibility into key endpoint security data with preconfigured dashboards for alerts, threats intelligence, feeds, sensors, alerts, users, hosts, processes, IOCs, devices and network status. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-8-2022</guid>
+<pubDate>Wed, 08 Jun 2022 23:18:54 +0000</pubDate>
+</item>
+<item>
+<title>June 7, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#manage</link>
+<description>
+<![CDATA[ New - Want to upgrade or change your <a href="/manage/01Manage_Subscription/00Cloud_Flex_Credits_Accounts#Cloud_Flex_Credits_-_Account_Types" title="Cloud Flex Credits Accounts">Cloud Flex Credits Essentials</a> plan? Good news: now you can do it yourself. If you’re a Sumo Logic admin, you use the Manage Plan page to change your plan period from monthly to annual, or from annual to monthly. You can also increase or decrease your account ingest levels and retention settings to meet your evolving requirements. For more information, see <a href="/manage/01Manage_Subscription/03Upgrade_a_Cloud_Flex_Credits_Account" title="Upgrade a Cloud Flex Credits Account">Update an CloudFlex Credits Account</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-7-2022</guid>
+<pubDate>Tue, 07 Jun 2022 20:24:25 +0000</pubDate>
+</item>
+<item>
+<title>June 2, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#traces</link>
+<description>
+<![CDATA[ New - We are excited to announce support for Span Links is now available in Tracing. You can navigate between spans using hyperlinks in the metadata tab as well as search for spans in the trace query and span analytics areas. Span Links are part of OpenTelemetry specification and should be added on the instrumentation side. Links can point to Spans inside a single Trace or across different traces and can represent, for example, batch operations where a span is initiated by multiple initiating spans. For more information, see View and Investigate Traces. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-2-2022</guid>
+<pubDate>Fri, 27 May 2022 16:24:19 +0000</pubDate>
+</item>
+<item>
+<title>May 27, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#metrics</link>
+<description>
+<![CDATA[ Update - We’re making some architectural changes to the Sumo Logic Metrics Engine to support on-going functionality and scalability improvements. The changes may have some impact on query language semantics for queries that use aggregation or reducer operators. <br /><br /> For aggregation queries, the changes are limited to the metadata used to label the metric dimension in the Preview Table in the Metrics Explorer, and in the chart legend. For queries with reducer functions–eval, filter, topk, bottomk–there may be a slight difference in how we quantize the metric data. The engine updates will be rolled out starting on June 13th, 2022. For information how the updates might affect existing metrics queries, and how you can update existing queries to avoid any impact, see <a href="/Metrics/Metric-Queries-and-Alerts/01Metrics_Engine_Updates" title="Metrics Engine Updates">Metrics Engine Updates</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-27-2022</guid>
+<pubDate>Fri, 27 May 2022 16:24:19 +0000</pubDate>
+</item>
+<item>
+<title>May 23, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#traces</link>
+<description>
+<![CDATA[ New - We're happy to announce that you can now instrument Lambda layers for Java in container-based Lambda functions and then see these traces in Sumo Logic. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-23-2022</guid>
+<pubDate>Mon, 23 May 2022 15:35:59 +0000</pubDate>
+</item>
+<item>
+<title>May 20, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#alerts</link>
+<description>
+<![CDATA[ Updated - We’re pleased to announce the availability of permissions for Monitors folders. This feature enables folder-level control of who can view, update, create, delete, and manage Monitors. For more information, see <a href="/Visualizations-and-Alerts/Alerts/Monitors#Grant_permissions_to_Monitors_folders" title="Monitors">Grant permissions to Monitors</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-20-2022</guid>
+<pubDate>Fri, 20 May 2022 18:41:59 +0000</pubDate>
+</item>
+<item>
+<title>May 16, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ Update - We've improved your Sumo Logic app installation process and added guidance to make it easier to find the sources you need and get started faster with all the dashboards and pre-built queries we have waiting for you. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-16-2022</guid>
+<pubDate>Tue, 17 May 2022 12:52:52 +0000</pubDate>
+</item>
+<item>
+<title>May 10, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - We are excited to announce the Sumo Logic <a href="/Release-Notes/Service-Release-Notes" title="Service Release Notes">1Password</a> App release. You can now monitor your 1Password account’s sign-in and item usage events. The dashboards help in providing insights into failed authentications, successful authentication, event breakdown by client applications, type, category, users, geolocation of events, outliers, and threat analysis of sign-in events. This app also helps you secure your 1Password vault access by providing insights into user actions and threat intel analysis on clients accessing items in shared vaults. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-10-2022</guid>
+<pubDate>Wed, 11 May 2022 19:38:52 +0000</pubDate>
+</item>
+<item>
+<title>April 27, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#security</link>
+<description>
+<![CDATA[ Update - The default web session timeout for new users has been increased from 15 minutes to 6 hours. If your currently configured session timeout is set to less than 6 hours, new users will receive the value set within the policy as the default. <br /> Update - We Increased the timeout for new user account verification from 12 hours to 72 hours to allow for weekends and to give new users more time to see and take action on the new user welcome email. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-27-2022</guid>
+<pubDate>Thu, 28 Apr 2022 21:56:52 +0000</pubDate>
+</item>
+<item>
+<title>April 26, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-26-2022</link>
+<description>
+<![CDATA[ New - Our Cloud-to-Cloud Integration Framework has a new Source. The Dropbox Source provides a secure endpoint to receive team events from the Get Events API. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-26-2022-c2c-dropbox</guid>
+<pubDate>Tue, 26 Apr 2022 20:50:40 +0000</pubDate>
+</item>
+<item>
+<title>April 26, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-26-2022</link>
+<description>
+<![CDATA[ Update - The Tenable Source now supports collecting audit logs from the Audit Log API and assets from the Asset Export API. We've also added the ability to define Processing Rules. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-26-2022-collection</guid>
+<pubDate>Tue, 26 Apr 2022 16:03:17 +0000</pubDate>
+</item>
+<item>
+<title>April 26, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-26-2022</link>
+<description>
+<![CDATA[ New - You can now add the results of Spans queries directly to Dashboards from the Spans analytics window. You'll use the same easy query builder to modify your panels later. You can still use Log Search to add span results to Dashboards by running queries in the _trace_spans index. The same limitations of Log Search still apply, your query scan volume should not exceed 200x of your tracing ingest. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-26-2022</guid>
+<pubDate>Tue, 26 Apr 2022 12:48:59 +0000</pubDate>
+</item>
+<item>
+<title>April 17, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-17-2022</link>
+<description>
+<![CDATA[ Update - We’ve released an update to the Amazon S3 app. The key improvement is a new Threat Intel dashboard that provides high-level views of threats across your S3 buckets and objects. We also added a new “S3_Bucket” filter to each of the dashboards, so you can slice and dice data by S3 bucket name. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-17-2022</guid>
+<pubDate>Sun, 17 Apr 2022 17:17:47 +0000</pubDate>
+</item>
+<item>
+<title>April 7, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#alerts</link>
+<description>
+<![CDATA[ New - System events for Alerts are now logged to the Sumo Logic Audit Event Index. You can use the alert system events to analyze your monitoring posture overall and answer questions like these, and more:<br /> How many alerts are created and resolved per day? <br /> Which monitors fire the most alerts? <br /> How long does it typically take to resolve alerts? <br /> You can search for system events for Alerts by scoping your search like this:<br /> _index=sumologic_system_events _sourceCategory=alerts ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-7-2022</guid>
+<pubDate>Thu, 07 Apr 2022 17:17:47 +0000</pubDate>
+</item>
+<item>
+<title>April 6, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-6-2022</link>
+<description>
+<![CDATA[ Update - The alert history of a Monitor is now quickly accessible on a new tab of the details pane. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-6-2022</guid>
+<pubDate>Wed, 06 Apr 2022 14:50:11 +0000</pubDate>
+</item>
+<item>
+<title>April 5, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-5-2022</link>
+<description>
+<![CDATA[ New - We're excited to announce a new milestone in innovation for Sumo Logic Observability with the Sumo Logic OpenTelemetry Distro Collector (OT Distro).<br /> The OT Distro Collector is designed to simplify and democratize the collection of logs, metrics, traces, and metadata from modern cloud applications. With this announcement, Sumo Logic further embraces open source and establishes OpenTelemetry as its future standard to collect all machine data, breaking from the legacy model of using proprietary agents to gather critical application and infrastructure telemetry. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-5-2022</guid>
+<pubDate>Tue, 05 Apr 2022 14:38:45 +0000</pubDate>
+</item>
+<item>
+<title>April 4, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-4-2022</link>
+<description>
+<![CDATA[ Update - We’ve updated two Sumo Logic apps for Palo Alto Networks to support PAN-OS 10, <a href="https://help.sumologic.com/07Sumo-Logic-Apps/16PCI_Compliance/PCI_Compliance_for_Palo_Alto_Networks_10">PCI Compliance for Palo Alto Networks 10</a> and <a href="https://help.sumologic.com/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Palo_Alto_Firewall_10_-_Cloud_Security_Monitoring_and_Analytics>Palo Alto Firewall 10 - Cloud Security Monitoring and Analytics</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-4-2022</guid>
+<pubDate>Mon, 04 Apr 2022 11:52:32 +0000</pubDate>
+</item>
+<item>
+<title>March 30, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-30-2022</link>
+<description>
+<![CDATA[ Update - The AWS Observability Solution 2.4.0 release includes a new AWS Service - Classic Elastic Load Balancer (ELB), install location selection, and sharing options with the Sumo Logic organization during installation. This update also includes updated dashboards for AWS Classic ELB Service, a new AWS ECS - Events dashboard for AWS CloudTrail, enhanced Lambda dashboard for Lambda cold start duration, and updated FERs. Update to the latest version to take advantage of these features. See the Changelog for additional details. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-30-2022</guid>
+<pubDate>Wed, 30 Mar 2022 11:52:32 +0000</pubDate>
+</item>
+<item>
+<title>March 29, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-29-2022</link>
+<description>
+<![CDATA[ New - Our Cloud-to-Cloud Integration Framework has a new Source. The SailPoint Source provides a secure endpoint to receive Events and User Inventory data from the IdentityNow V3 API. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-29-2022</guid>
+<pubDate>Tue, 29 Mar 2022 18:19:44 +0000</pubDate>
+</item>
+<item>
+<title>March 28, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - We are delighted to announce the release of the <a href="/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Route_53_Resolver_Security" title="Amazon Route 53 Resolver Security">Sumo Logic Amazon Route 53 Resolver Security app</a>. Use this app to monitor and analyze the DNS queries and Resolver Firewall logs for your Amazon Route 53 deployment. The preconfigured dashboards provide insight into a variety of DNS activities in your environment. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-28-2022</guid>
+<pubDate>Mon, 28 Mar 2022 15:59:25 +0000</pubDate>
+</item>
+<item>
+<title>March 25, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-25-2022</link>
+<description>
+<![CDATA[ Update - The Azure Event Hubs Source now supports Processing Rules and timestamps configuration options for logs. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-25-2022aa</guid>
+<pubDate>Fri, 25 Mar 2022 19:22:25 +0000</pubDate>
+</item>
+<item>
+<title>March 25, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-25-2022</link>
+<description>
+<![CDATA[ Update - The AWS Kinesis Firehose for Logs Source now has the option to collect undelivered logs from the backup directory. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-25-2022</guid>
+<pubDate>Fri, 25 Mar 2022 18:05:25 +0000</pubDate>
+</item>
+<item>
+<title>March 17, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-17-2022</link>
+<description>
+<![CDATA[ New - We are excited to announce the release of the Sumo Logic PagerDuty V3 App. The PagerDuty V3 app collects incident messages from your PagerDuty account via a webhook, and displays incident data in pre-configured Dashboards that allow you to monitor and analyze the activity of your PagerDuty account and Services. The Sumo Logic App for PagerDuty V3 uses Webhooks V3, to provide enhanced context for alert object models. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-17-2022</guid>
+<pubDate>Thu, 17 Mar 2022 10:22:15 +0000</pubDate>
+</item>
+<item>
+<title>March 15, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-15-2022</link>
+<description>
+<![CDATA[ We are proud to announce general availability of extended trace filtering capabilities. This allows you to search for traces by any existing and new metadata, including your custom ones without a need to add this to the configuration or knowing this upfront, before you start ingesting data. Just add any metadata tag to your spans and, as long as its cardinality within a trace is not too high, you will be able to filter by it right away in your Traces UI. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-15-2022</guid>
+<pubDate>Tue, 15 Mar 2022 08:55:22 +0000</pubDate>
+</item>
+<item>
+<title>March 8, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-8-2022</link>
+<description>
+<![CDATA[ Our Cloud-to-Cloud Integration Framework has the following new Sources:<br />Microsoft Azure AD Inventory Source<br />MS Graph Azure AD Reporting Source<br />MS Graph Identity Protection Source ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-8-2022</guid>
+<pubDate>Tue, 08 Mar 2022 19:57:41 +0000</pubDate>
+</item>
+<item>
+<title>March 1, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-1-2022</link>
+<description>
+<![CDATA[ New - If you are using Sumo Logic Cloud SOAR, you can now integrate Monitors and Scheduled Searches with Cloud SOAR via a new Webhook connection. This new capability allows you to send Alerts to Cloud SOAR to further process and operate on these incidents. The result is a rich and connected experience between your data residing in Sumo Logic and the security response capabilities within Cloud SOAR. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-1-2022</guid>
+<pubDate>Tue, 01 Mar 2022 18:46:24 +0000</pubDate>
+</item>
+<item>
+<title>February 24, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-24-2022</link>
+<description>
+<![CDATA[ New - The Search Query Language has a new operator, dedup allows you to:<br/>Remove duplicate events containing an identical combination of values for the fields.<br />Specify the number of duplicate events to keep for each value of a single field.<br/>Choose a combination of duplicate values among several fields. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-24-2022</guid>
+<pubDate>Thu, 24 Feb 2022 13:46:18 +0000</pubDate>
+</item>
+<item>
+<title>February 18, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-18-2022</link>
+<description>
+<![CDATA[ Update - The Monitors page has a new shortcut to quickly view triggered alerts from a Monitor. Hover your cursor over the Status column of a Monitor and click the icon to open Alert List. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-18-2022</guid>
+<pubDate>Fri, 18 Feb 2022 15:43:35 +0000</pubDate>
+</item>
+<item>
+<title>February 12, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-12-2022</link>
+<description>
+<![CDATA[ New - We are delighted to announce the release of the Sumo Logic <a href="/07Sumo-Logic-Apps/12Databases/Couchbase" title="Couchbase">Couchbase</a> App. The Couchbase app is a unified logs and metrics app that helps you monitor the availability, performance, and resource utilization of Couchbase database clusters. The preconfigured dashboards provide insight into the health of clusters, the status of the buckets, I/O of reading/writing, errors, events of Couchbaseservers that help you understand your clusters. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-12-2022</guid>
+<pubDate>Sat, 12 Feb 2022 05:28:55 +0000</pubDate>
+</item>
+<item>
+<title>February 11, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#manage</link>
+<description>
+<![CDATA[ Update - We’ve made an improvement to the <a href="/manage/01Manage_Subscription/08Create_and_Manage_Orgs" title="Create and Manage Orgs">Sumo Logic Organizations</a> (Sumo Orgs) feature, which allows you to create, provision, and manage multiple "child" orgs from a "parent" org. Now, when you provision a child org, you can allocate credits for <a href="/Traces" title="Traces">trace</a> ingestion, as well as log and metric ingestion. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-11-2022</guid>
+<pubDate>Fri, 11 Feb 2022 17:14:44 +0000</pubDate>
+</item>
+<item>
+<title>February 10, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-10-2022</link>
+<description>
+<![CDATA[ New - Number of spans per Trace has been increased by 10 times to 10000 spans per trace to better support monitoring for long running and complex transactions. Please note that new spans can increase credits consumption. ]]>
+<![CDATA[ Update - Traces logs and data includes a new duration field that holds the difference between endTimestamp and startTimestamp in nanoseconds. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-10-2022</guid>
+<pubDate>Thu, 10 Feb 2022 10:05:45 +0000</pubDate>
+</item>
+<item>
+<title>February 8, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-8-2022</link>
+<description>
+<![CDATA[ New - Announcing general availability of dashboard support for Trace Spans data index. You can now pin results of your queries on spans data directly to the Dashboard. You can add the query through the Log Search screen when running queries in _trace_spans index as long as your read volume does not ]]>
+<![CDATA[ exceed 200x of your tracing ingest (more info). Support for doing this directly from the Spans analytics window is coming soon. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-8-2022</guid>
+<pubDate>Tue, 8 Feb 2022 13:27:30 +0000</pubDate>
+</item>
+<item>
+<title>February 4, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-4-2022</link>
+<description>
+<![CDATA[ New - The Sumo Logic app for Sauce Labs integrates your Sauce Labs test data with the Sumo Logic Analytics Platform to easily aggregate, visualize, and monitor all of your test data. Connect Sauce Labs data with other data sources for a comprehensive view of your development pipeline. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-4-2022</guid>
+<pubDate>Fri, 4 Feb 2022 09:30:30 +0000</pubDate>
+</item>
+<item>
+<title>January 26, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-26-2022</link>
+<description>
+<![CDATA[ New - The SDO App now provides a Software Development Optimization - Development & Delivery Times dashboard to help you monitor development lead times and delivery lead times across the three main phases of development and delivery: Active Development, Review and Merge, and Deployment. Each section shows the phases broken down by team, service, and environment. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-26-2022</guid>
+<pubDate>Wed, 26 Jan 2022 09:30:30 +0000</pubDate>
+</item>
+<item>
+<title>January 19, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-19-2022</link>
+<description>
+<![CDATA[ New - Traces now include Span Events that describe and contextualize the work being done in a Span by tracing and displaying that data in Trace Views. These events are optional time-stamped strings made up of a timestamp, name, and (optional) key-value pair attributes. Select a marker in the timeline or a span to review the Span Event data. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-19-2022</guid>
+<pubDate>Wed, 19 Jan 2022 14:16:13 +0000</pubDate>
+</item>
+<item>
+<title>January 18, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-18-2022</link>
+<description>
+<![CDATA[ New - We are delighted to announce the release of the Sumo Logic <a href="/07Sumo-Logic-Apps/12Databases/MariaDB" title="MariaDB">MariaDB</a> app. The MariaDB app is a unified logs and metrics app that helps you monitor the availability, performance, and resource utilization of MariaDB database clusters. Preconfigured dashboards and searches provide insight into the health of your database clusters, performance metrics, resource metrics, schema metrics, replication, error logs, slow queries, Innodb operations, failed logins, and error logs. ]]>
+<![CDATA[ New - We are excited to release the Sumo Logic <a href="/07Sumo-Logic-Apps/24Web_Servers/Nginx" title="Nginx">Nginx</a> app. The Nginx app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Nginx web servers. Preconfigured dashboards and searches provide insight into connections, requests, visitor locations, visitor access types, traffic patterns, errors, web server operations, and access from known malicious sources. ]]>
+<![CDATA[ New - We are delighted to release the Sumo Logic <a href="/07Sumo-Logic-Apps/24Web_Servers/IIS_10" title="IIS 10">IIS 10</a> app. The IIS 10 app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your IIS web servers. Preconfi ]]>
+<![CDATA[ gured dashboards and searches provide insight into application pools, ASP.NET applications, requests, latency, visitor locations, visitor access types, traffic patterns, errors, web server operations, and access from known malicious sources. ]]>
+<![CDATA[ Update - We are excited to release the additional Logs and Metrics dashboards added for the Sumo Logic <a href="/07Sumo-Logic-Apps/12Databases/Oracle" title="Oracle">Oracle</a> app. The Oracle app is a unified logs and metrics app that helps you monitor the availability, performance, and resource utilization of Oracle database clusters. Preconfigured dashboards and searches provide insight into the health of your database clusters, parallel executions, resource utilization, response time, tablespaces, throughput, wait for class/events, listeners, audit logs, and security. ]]>
+<![CDATA[ Update - We are pleased to announce the availability of additional Logs and Metrics dashboards added for the Sumo Logic <a href="/07Sumo-Logic-Apps/24Web_Servers/Nginx_Ingress" title="Nginx Ingress">Nginx Ingress</a> app. The Nginx Ingress app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Nginx Ingress web servers. Preconfigured dashboards and searches provide insight into connections, requests, ingress controller metrics, visitor locations, visitor access types, traffic patterns, errors, web server operations, and access from known malicious sources. ]]>
+<![CDATA[ Update - We are delighted to release the additional Logs and Metrics dashboards added for the Sumo Logic <a href="/07Sumo-Logic-Apps/24Web_Servers/Squid_Proxy" title="Squid Proxy">Squid Proxy</a> app. The Squid Proxy app is a unified logs and metrics app that helps you monitor activity in Squid Pro ]]>
+<![CDATA[ xy. The preconfigured dashboards provide insight into served and denied requests; performance metrics; IP domain DNS statistics; traffic details; HTTP response codes; URLs experiencing redirects, client errors, and server errors; and quality of service data that helps you understand your users’ experience. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-18-2022</guid>
+<pubDate>Tue, 18 Jan 2022 19:23:13 +0000</pubDate>
+</item>
+<item>
+<title>January 4, 2022</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-4-2022</link>
+<description>
+<![CDATA[ New - You now have the ability to configure how often a dashboard is refreshed by clicking the dropdown arrow next to the refresh icon. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-4-2022</guid>
+<pubDate>Wed, 05 Jan 2022 04:11:13 +0000</pubDate>
+</item>
+<item>
+<title>December 17, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#december-17-2021</link>
+<description>
+<![CDATA[ New - Keyboard shortcuts are now available to generate comments in Search queries. Use command + / on macOS or control + / on Windows. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#december-17-2021</guid>
+<pubDate>Fri, 17 Dec 2021 13:54:54 +0000</pubDate>
+</item>
+<item>
+<title>December 9, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#december-9-2021</link>
+<description>
+<![CDATA[ New - Our Cloud-to-Cloud Integration Framework has a new Source. The Google Workspace Source collects data from the Google Workspace Users API.<br />Update - The Okta Source, in addition to System Log data, now supports collecting User Inventory data. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#december-9-2021</guid>
+<pubDate>Thu, 09 Dec 2021 21:09:27 +0000</pubDate>
+</item>
+<item>
+<title>November 30, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#november-30-2021</link>
+<description>
+<![CDATA[ New - As an integration partner with Amazon, we are pleased to announce our new <a href="/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Inspector" title="Amazon Inspector">Amazon Inspector App</a>. Amazon Inspector is an automated vulnerability management service that continually scans Amazon EC2 and container images for software vulnerabilities and network exposures. The Sumo Logic Inspector App helps reveal trends and identify anomalies from these findings. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#november-30-2021</guid>
+<pubDate>Tue, 30 Nov 2021 19:27:31 +0000</pubDate>
+</item>
+<item>
+<title>November 18, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#november-18-2021</link>
+<description>
+<![CDATA[ Update - The fillmissing operator has a few improvements:<br />Timeslice granularity is automatically defined based on the time used in the timeslice operator.<br />Values has an all option that uses all the distinct values for the field from the query results.<br />A new takeLast option can fill in values for non-key fields by taking the value from the previous timeslice. <p>New version - We are excited to announce the GA release of the updated <a href="https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Data_Volume_App">Data Volume App</a>. This release provides our customers an ability to view and track account usage for Traces, Cloud SIEM Enterprise, and Data Tiers. In addition to this customers will also be able to track usage in both native units as well as Sumo Logic credits. We have enhanced the existing "sumologic_volume" index and added new index categories for these key capabilities.</p> ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#november-18-2021</guid>
+<pubDate>Thu, 18 Nov 2021 18:03:40 +0000</pubDate>
+</item>
+<item>
+<title>November 17, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#november-17-2021</link>
+<description>
+<![CDATA[ Update - Monitor auto resolution is now supported with generic webhooks and Lambda connections. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#november-17-2021</guid>
+<pubDate>Wed, 17 Nov 2021 18:39:51 +0000</pubDate>
+</item>
+<item>
+<title>November 9, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#november-9-2021</link>
+<description>
+<![CDATA[ New - The Software Development Optimization (SDO) solution offers integrations for Gitlab and CircleCI to monitor SDLC processes. This integration provides set up, configuration, and Field Extraction Rules (FERs), no longer requiring customers to create their own integrations and FERs. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#november-9-2021</guid>
+<pubDate>Tue, 09 Nov 2021 11:35:02 +0000</pubDate>
+</item>
+<item>
+<title>November 5, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#november-5-2021</link>
+<description>
+<![CDATA[ Update - Monitors now offer an option to set an evaluation delay that offsets when the Monitor executes. This option allows you to account for any delays in ingestion, ensuring the Monitor only evaluates complete data. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#november-5-2021</guid>
+<pubDate>Fri, 05 Nov 2021 14:47:37 +0000</pubDate>
+</item>
+<item>
+<title>October 29, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#october-29-2021</link>
+<description>
+<![CDATA[ Update - Enterprise accounts can now have up to 1,000 Log Monitors. Previously they supported up to 300. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#october-29-2021</guid>
+<pubDate>Fri, 29 Oct 2021 16:33:13 +0000</pubDate>
+</item>
+<item>
+<title>October 28, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#october-28-2021</link>
+<description>
+<![CDATA[ New - Our Cloud-to-Cloud Integration Framework has a new Source. The SentinelOne Mgmt API Source collects data from the SentinelOne Management Console.<br />Update - The Mimecast Source, in addition to SIEM data, now supports collecting DLP, Audit, and Hold Message List data from the Mimecast API. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#october-28-2021</guid>
+<pubDate>Thu, 28 Oct 2021 17:34:43 +0000</pubDate>
+</item>
+<item>
+<title>October 27, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - Build custom Dashboards with new panels to view Service Maps filtered by service and application and Trace Lists filtered by a query to directly access trace views. Add panels to existing or new dashboards, setting filters and customized options. ]]>
+<![CDATA[ New - We are excited to release the Sumo Logic GitLab app. The GitLab app allows you to can gain insights into the health of builds, deployments, pull requests, commits, and more to quickly understand which teams and processes need help to increase velocity and quality. ]]>
+<![CDATA[ New - We are excited to release the Sumo Logic <a href="/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_and_Process_Metrics" title="Host and Process Metrics">Host and Process Metrics</a> app. The Sumo Logic App for Host and Process Metrics allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses Telegraf, an open-source, plugin-based collector for the collection of both host and process metrics data. ]]>
+<![CDATA[ New - We are delighted to announce the availability of additional Logs and Metrics dashboards added for the Sumo Logic app for Istio. The Sumo Logic App for <a href="/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Istio" title="Istio">Istio</a> provides visibility into the health and performance of Istio and its control plane components, including Mixer, Galley, Citadel, Pilot, and Envoy. The app dashboards also allow you to monitor how services and applications are performing in Istio Mesh, providing insights into service latency, errors, network traffic, and request workloads. ]]>
+<![CDATA[ Update - We are pleased to release the additional Logs and Metrics dashboards added for the Sumo Logic app for HAProxy. <a href="/07Sumo-Logic-Apps/24Web_Servers/HAProxy" title="HAProxy">HAProxy</a> is a unified logs and metrics app that helps you monitor the availability, performance, and health of your HAProxy cluster. Preconfigured dashboards provide insights into active servers, visitor locations, sessions, errors, response time, and throughput. ]]>
+<![CDATA[ Update - We are happy to announce the availability of additional Logs and Metrics dashboards added for the Sumo Logic Casandra app. The Apache <a href="/07Sumo-Logic-Apps/12Databases/Cassandra" title="Cassandra">Cassandra</a> is an open source NoSQL distributed database with high scalability and availability without compromising performance. ]]>
+<![CDATA[ Update - We are delighted to announce the availability of additional Logs and Metrics dashboards added for the Sumo Logic Elasticsearch app. The <a href="/07Sumo-Logic-Apps/12Databases/Elasticsearch" title="Elasticsearch">Elasticsearch</a> app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Elasticsearch clusters. Preconfigured dashboards provide insight into cluster health, resource utilization, sharding, garbage collection, and search, index, and cache performance. ]]>
+<![CDATA[ Update - We are excited to release the additional Logs and Metrics dashboards added for the Sumo Logic Memcached app. The <a href="/07Sumo-Logic-Apps/12Databases/Memcached" title="Memcached">Memcached</a> app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Memcached clusters. Preconfigured dashboards provide insight into uptime, operational metrics, cache performance, resource utilization, errors, warnings, and commands executed. ]]>
+<![CDATA[ Update - We are pleased to announce the availability of additional Logs and Metrics dashboards added for the Sumo Logic ActiveMQ app. The <a href="/07Sumo-Logic-Apps/10Containers_and_Orchestration/ActiveMQ" title="ActiveMQ">ActiveMQ</a> app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your ActiveMQ messaging clusters. Preconfigured dashboards provide insight into cluster status, nodes, producers, consumers, destinations, resource utilization, message rates, and error logs. ]]>
+<![CDATA[ Update - We are delighted to release the additional Logs and Metrics dashboards added for the Sumo Logic Akamai app. The <a href="/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Akamai_SIEM_API_Source" title="Akamai SIEM API Source">Akamai SIEM API Source</a> provides a secure endpoint to receive security events generated on the Akamai platform by leveraging the <a href="https://developer.akamai.com/api/cloud_security/siem/v1.html" rel="nofollow">V1 SIEM API</a>. It securely stores the required authentication, scheduling, and state tracking information. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#october-27-2021</guid>
+<pubDate>Wed, 27 Oct 2021 11:03:33 +0000</pubDate>
+</item>
+<item>
+<title>October 14, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#october-14-2021</link>
+<description>
+<![CDATA[ New - Operation level health metrics describe performance and availability on the level of a single SQL query or API call. They are automatically generated from tracing data real time for the most active operations, enabling you to understand application service health on one level below: what operations is this service executing towards its peers and what’s the performance of each of them individually. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#october-14-2021</guid>
+<pubDate>Thu, 14 Oct 2021 11:34:15 +0000</pubDate>
+</item>
+<item>
+<title>October 6, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#october-6-2021</link>
+<description>
+<![CDATA[ Update - The Symantec Web Security Service Source now always uses structured logs to reduce errors and improve collection performance. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#october-6-2021</guid>
+<pubDate>Wed, 06 Oct 2021 20:45:29 +0000</pubDate>
+</item>
+<item>
+<title>September 30, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-30-2021</link>
+<description>
+<![CDATA[ New - Lambda instrumentation for Java, NodeJS, and Python provides managed layers available directly from your AWS Lambda layer repository. Configure your Lambdas to attach to the layer appropriate for your language and enjoy new visibility in Sumo Logic. Lambda calls appear just as any other spans in your traces, providing immediate insights into Cloud Watch metrics related to this Lambda. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-30-2021</guid>
+<pubDate>Thu, 30 Sep 2021 10:42:04 +0000</pubDate>
+</item>
+<item>
+<title>September 28, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-28-2021</link>
+<description>
+<![CDATA[ New - Use our new Alert Response feature to investigate alerts quickly. Alert Response provides contextual insights about triggered alerts to minimize the time needed to investigate and resolve application failures. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-28-2021</guid>
+<pubDate>Tue, 28 Sep 2021 12:24:53 +0000</pubDate>
+</item>
+<item>
+<title>September 27, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-27-2021</link>
+<description>
+<![CDATA[ New - You can now easily share a snapshot of a Dashboard (New) with the new ability to export in PDF or PNG format. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-27-2021</guid>
+<pubDate>Mon, 27 Sep 2021 18:36:25 +0000</pubDate>
+</item>
+<item>
+<title>September 24, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-24-2021</link>
+<description>
+<![CDATA[ Update - The AWS Observability Solution 2.3.0 release includes the deployment of the AWS Observability Solution using a Terraform script. This update also includes options for streamlined deployment to multiple AWS accounts and regions, dashboard changes, and bug fixes. Update to the latest version to take advantage of these features. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-24-2021</guid>
+<pubDate>Fri, 24 Sep 2021 13:15:21 +0000</pubDate>
+</item>
+<item>
+<title>September 22, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-22-2021</link>
+<description>
+<![CDATA[ New - Our Cloud-to-Cloud Integration Framework has a new Source. The Cybereason Source provides a secure endpoint to receive authentication logs from the Cybereason Malops API. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-22-2021</guid>
+<pubDate>Wed, 22 Sep 2021 18:53:58 +0000</pubDate>
+</item>
+<item>
+<title>September 20, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-20-2021</link>
+<description>
+<![CDATA[ New - You can now forward aggregate data from a Scheduled View to AWS S3. Previously, aggregate data was dropped and not included in forwarded file objects. Now, aggregate fields are automatically appended when your Scheduled View conducts aggregation. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-20-2021</guid>
+<pubDate>Mon, 20 Sep 2021 13:01:38 +0000</pubDate>
+</item>
+<item>
+<title>September 15, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-15-2021</link>
+<description>
+<![CDATA[ New - Our Cloud-to-Cloud Integration Framework has a new Source. The Proofpoint On Demand Source collects data from the Proofpoint on Demand (PoD) Log Service. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-15-2021</guid>
+<pubDate>Wed, 15 Sep 2021 15:25:25 +0000</pubDate>
+</item>
+<item>
+<title>September 14, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-14-2021</link>
+<description>
+<![CDATA[ New - Search now provides Basic Mode, an easy-to-use, structured query builder to help you write and complete simple log searches quickly and easily. This mode is designed for new users that are not familiar with Sumo Logic search features and query language. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-14-2021</guid>
+<pubDate>Tue, 14 Sep 2021 13:35:47 +0000</pubDate>
+</item>
+<item>
+<title>September 9, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-9-2021</link>
+<description>
+<![CDATA[ Update - The AWS S3 Source has the ability to collect objects from AWS S3 buckets that don't have versioning enabled and you cannot provide the ListObjectVersions permission. There is now a radio button with the option to have the Source use AWS versioned APIs. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-9-2021</guid>
+<pubDate>Thu, 09 Sep 2021 18:45:48 +0000</pubDate>
+</item>
+<item>
+<title>September 7, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-7-2021</link>
+<description>
+<![CDATA[ New - Search has several improvements to give you a cleaner experience. We've moved the search options to a menu and changed the look of search settings. See how to use the search page for details on the new layout. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-7-2021</guid>
+<pubDate>Tue, 07 Sep 2021 12:28:42 +0000</pubDate>
+</item>
+<item>
+<title>September 1, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-1-2021</link>
+<description>
+<![CDATA[ New - Our monitor capabilities provide a new alerting framework to support anomaly-based alerting for both logs and metrics data sources. It’s a more flexible alert system, better equipped to identify true outliers in your ever changing environment and you can find it in Alerts > Monitors. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#september-1-2021</guid>
+<pubDate>Wed, 01 Sep 2021 19:18:30 +0000</pubDate>
+</item>
+<item>
+<title>August 27, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#manage</link>
+<description>
+<![CDATA[ New - We’re making <a href="/manage/01Manage_Subscription/00Cloud_Flex_Credits_Accounts" title="Cloud Flex Credits Accounts">Cloud Flex Credits Subscriptions</a> available to self-service trial and free accounts with new monthly and annual subscriptions. Customers who upgrade to a self-service paid subscription from a Trial, POV Trial, or Sumo Free subscription will now upgrade directly to Essentials (credit-based), and have the option of either an annual or monthly subscription. For more information, see <a href="/manage/01Manage_Subscription/03Upgrade_a_Cloud_Flex_Credits_Account" title="Upgrade a Cloud Flex Credits Account">Upgrade a Cloud Flex Credits Account</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-27-2021</guid>
+<pubDate>Fri, 27 Aug 2021 22:26:50 +0000</pubDate>
+</item>
+<item>
+<title>August 24, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-24-2021</link>
+<description>
+<![CDATA[ New - We've improved the style of our search tabs and added a lot of new functionalities.<br />You can resize and reorder columns. Added keyboard accessibility.<br />You can pin columns in the Aggregate tab.<br />The Messages tab now supports context menu options to copy the full message and expand or collapse rows.<br />The Aggregates tab now supports context menu options to copy or modify your query based on your results.<br />Page limit increased to 500.<br />Tabs load faster. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-24-2021</guid>
+<pubDate>Tue, 24 Aug 2021 17:57:12 +0000</pubDate>
+</item>
+<item>
+<title>August 23, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - <a href="https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cyral" title="https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cyral">Cyral</a> enables teams to observe, protect, and control their databases, data pipelines, and data warehouses by intercepting requests in real-time, without impact to performance or scalability. The Cyral App for Sumo Logic provides dashboards and visualizations for Cyral customers that have chosen to send their logs to the Sumo Logic platform. ]]>
+<![CDATA[ New - <a href="https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Tessian" title="https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Tessian">Tessian</a> is the world's first Human Layer Security company that&nbsp;uses data science and machine learning to automatically stop data breaches and security threats caused by human errors. The Sumo Logic App for Tessian provides visibility into human layer risk drivers and easy access to cyber security events prevented based on Tessian data feeds across all modules - Defender, Guardian, Enforcer, and Constructor. ]]>
+<![CDATA[ New - We are excited to release the Sumo Logic&nbsp;<a href="/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Amazon_GuardDuty_-_Cloud_Security_Monitoring_and_Analytics" title="https://help.sumologic.com/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Amazon_GuardDuty_-_Cloud_Security_Monitoring_and_Analytics">Amazon GuardDuty - Cloud Security Monitoring and Analytics&nbsp;app</a>. The focus of GuardDuty is on protecting AWS accounts, workloads, and data with intelligent threat detection. The corresponding Sumo Logic dashboards are designed to surface the most relevant security insights from that data to yield actionable processes to tackle specific security concerns within your AWS infrastructure. Utilizing this app allows you to stay ahead of changing attack surfaces in a repeatable way via cloud security monitoring and analytics dashboards that provide operational security awareness for AWS GuardDuty data sources. ]]>
+<![CDATA[ New - We are excited to release the Sumo Logic <a href="/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/AWS_Security_Hub_-_Cloud_Security_Monitoring_and_Analytics" title="https://help.sumologic.com/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/AWS_Security_Hub_-_Cloud_Security_Monitoring_and_Analytics">AWS Security Hub - Cloud Security Monitoring and Analytics</a>. The Sumo Logic AWS Security Hub app is designed to extract key findings from the AWS Security Hub, which is designed to centrally view and manage security alerts and automate security checks. The additional level of analysis within these dashboards surfaces the most relevant findings and takes a focused approach to improve overall security posture. Finding types and severity levels act as leading indicators for security engineers to go into security incidents with the most relevant technical details to address active threats. ]]>
+<![CDATA[ New - We are excited to release the Sumo Logic <a href="/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/AWS_WAF_-_Cloud_Security_Monitoring_and_Analytics" title="https://help.sumologic.com/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/AWS_WAF_-_Cloud_Security_Monitoring_and_A ]]>
+<![CDATA[ nalytics">AWS WAF - Cloud Security Monitoring and Analytics</a>. AWS WAF (web application firewall) data is a rich source of security findings, as it allows you to monitor the HTTP and HTTPS requests that are forwarded to CloudFront&nbsp;and let you control overall access to your content. Each dashboard within this application takes a different lens on AWS WAF data, from traffic patterns to threat intelligence, allowing you to truly identify the needles in the haystack that drives critical security concerns within your AWS infrastructure. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-23-2021</guid>
+<pubDate>Mon, 23 Aug 2021 20:00:13 +0000</pubDate>
+</item>
+<item>
+<title>August 18, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-18-2021</link>
+<description>
+<![CDATA[ Update- We've improved the collection performance of our Mimecast and Netskope Sources.<br />The Mimecast Source now uses the API compression option to increase the throughput.<br />The Netskope Source now implements new API best practices. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-18-2021aa</guid>
+<pubDate>Wed, 18 Aug 2021 17:08:08 +0000</pubDate>
+</item>
+<item>
+<title>August 18, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-18-2021</link>
+<description>
+<![CDATA[ New - Get insight into your customer’s front end experience with Real User Monitoring (RUM). We are extending application Observability for you with tracing visibility to the browser. Gather full information about load, execution, and render of your JavaScript (React, Angular, etc) applications an ]]>
+<![CDATA[ d attach this information to end-to-end trace modeling full browser-to-database performance of every user transaction in real-time, with no sampling.<br />And we are automatically aggregating the above data into metrics, dashboards and providing multi-dimensional analysis by geographical locations, browser, and OS types, measuring and visualizing on dashboards many different aspects of web page load events.<br />This data is gathered directly from your end-user devices and all collected data is OpenTelemetry compatible and uses no proprietary vendor code to achieve its result when collecting required data. This gives you an unprecedented view of how your end users are interacting with your application, their experiences with it and allows you one click troubleshooting of problematic web front end areas by connecting the dots from browser to database, even on a level of a single web transaction. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-18-2021</guid>
+<pubDate>Wed, 18 Aug 2021 15:00:08 +0000</pubDate>
+</item>
+<item>
+<title>August 16, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#manage</link>
+<description>
+<![CDATA[ Update - We are delighted to announce the availability of enhanced search functionality for searching across all Data Tiers: Continuous, Frequent, and Infrequent. Now, you can use the _dataTier search modifier to search all Data Tiers (_dataTier=all) in a single query. Or, you can search for data i ]]>
+<![CDATA[ n multiple indexes in just the tiers you’re interested in. With this improvement, you can manage costs by retaining your rarely queried data in the Infrequent tier, and know it’s just a query away. For more information, see <a href="/manage/Partitions_and_Data_Tiers/Searching_Data_Tiers" title="Searching Data Tiers">Searching Data Tiers</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-16-2021</guid>
+<pubDate>Mon, 16 Aug 2021 15:54:17 +0000</pubDate>
+</item>
+<item>
+<title>August 12, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#security</link>
+<description>
+<![CDATA[ Update - We made a small but useful change to our <a href="/manage/Security/SAML/01-Set-Up-SAML-for-Single-Sign-On" title="Set Up SAML for Single Sign-On">SAML support</a>. Now, if you have multiple Sumo Logic SAML integrations and use SP-Initiated logins, the EntityID Sumo Logic sends with authent ]]>
+<![CDATA[ ication requests is unique for each of your integrations. The benefit: this means Sumo Logic SAML supports IdPs that require a unique EntityID for each integration. The EntityID is displayed in the SAML configuration details pane. <br /> The unique Entity ID is provided in SAML configurations created after August 11, 2021. For existing SAML configurations, the Entity ID remains unchanged but is now displayed along with other configuration details. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-12-2021aaa</guid>
+<pubDate>Thu, 12 Aug 2021 17:25:09 +0000</pubDate>
+</item>
+<item>
+<title>August 12, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-12-2021</link>
+<description>
+<![CDATA[ New - We are excited to introduce a new Span Analytics experience to help you explore your trace data at the raw span level so you can understand the performance and behavior of your infrastructure. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-12-2021aa</guid>
+<pubDate>Thu, 12 Aug 2021 13:53:15 +0000</pubDate>
+</item>
+<item>
+<title>August 12, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-12-2021</link>
+<description>
+<![CDATA[ New - Our Cloud-to-Cloud Integration Framework has a new Source. The Carbon Black Inventory Source provides a secure endpoint to receive data from the CB Devices API. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-12-2021</guid>
+<pubDate>Thu, 12 Aug 2021 13:04:12 +0000</pubDate>
+</item>
+<item>
+<title>August 11, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#metrics</link>
+<description>
+<![CDATA[ Update - We’ve added a run button to the <a href="/Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer" title="Metrics Explorer">Metrics Explorer</a>, to the right of the query builder area. Previously, metric queries ran automatically. Now, metric queries are run only when you click the run but ]]>
+<![CDATA[ ton, or when you press Enter on your keyboard. (Depending on how you've set your Preferences, you might use Alt+Enter rather than Enter to run queries.) ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-11-2021</guid>
+<pubDate>Wed, 11 Aug 2021 20:09:13 +0000</pubDate>
+</item>
+<item>
+<title>August 10, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-10-2021</link>
+<description>
+<![CDATA[ New - We have a new ServiceNow connection that supports creating either Events or ITSM Incidents and has the option to authenticate with an Authorization Header. You can still use the legacy connection to create Events if needed. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-10-2021</guid>
+<pubDate>Tue, 10 Aug 2021 17:06:22 +0000</pubDate>
+</item>
+<item>
+<title>August 9, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - We are excited to release the Sumo Logic <a href="/07Sumo-Logic-Apps/12Databases/Memcached" title="https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Memcached">Memcached</a>&nbsp;app. The Memcached app provides dashboards that help you analyze log and metric events generated by the Memcached&nbsp;system. This app allows you to monitor and observe the health of the system. ]]>
+<![CDATA[ Update - We have updated the Sumo Logic <a href="/07Sumo-Logic-Apps/08App_Development/Varnish" title="https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Varnish">Varnish</a> app. The Varnish app provides dashboards that help you analyze log and metric events generated by Varnish servers. This app allows you to identify traffic sources, monitor and improve application and website workflows, and understand how customers use your product. ]]>
+<![CDATA[ Coming soon - We're happy to announce that on August 23, 2021, Sumo Logic will roll out a new Service Status Page with an enhanced look and feel. You can preview that page <a href="https://help.sumologic.com/http%3A%2F%2Fnew-status.sumologic.com">here</a> but there is no action to take at this time ]]>
+<![CDATA[ . In about two weeks we will switch status.sumologic.com to the new page. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-9-2021</guid>
+<pubDate>Mon, 09 Aug 2021 13:20:13 +0000</pubDate>
+</item>
+<item>
+<title>August 6, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-6-2021</link>
+<description>
+<![CDATA[ New - The Search Query Language has a new operator, isReservedIP checks if an IPv4 address is reserved as defined by RFC 5735 and returns a boolean. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-6-2021</guid>
+<pubDate>Fri, 06 Aug 2021 15:54:33 +0000</pubDate>
+</item>
+<item>
+<title>August 1, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - We are pleased to announce the release of the <a href="/07Sumo-Logic-Apps/24Web_Servers/Elasticsearch" title="https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Elasticsearch">Elasticsearch</a> app. The Elasticsearch app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Elasticsearch clusters. Preconfigured dashboards provide insight into cluster health, resource utilization, sharding, search, and index performance. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#august-1-2021</guid>
+<pubDate>Sun, 01 Aug 2021 20:21:45 +0000</pubDate>
+</item>
+<item>
+<title>July 21, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ Update - We've updated the <a href="/07Sumo-Logic-Apps/24Web_Servers/Apache_Tomcat" title="https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Apache_Tomcat">Apache Tomcat</a>&nbsp;app. The Apache Tomcat app is a unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of your Apache Tomcat servers. Preconfigured dashboards provide insight into visitor locations, traffic patterns, errors, resource utilization, garbage collection, web server operations and access from known malicious sources. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-21-2021</guid>
+<pubDate>Wed, 21 Jul 2021 15:31:45 +0000</pubDate>
+</item>
+<item>
+<title>July 3, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - We are excited to announce the release of <a href="/07Sumo-Logic-Apps/10Containers_and_Orchestration/ActiveMQ" title="ActiveMQ">ActiveMQ</a> app. The ActiveMQ app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your ActiveMQ messaging clusters. Preconfigured dashboards provide insight into cluster status, nodes, producers, consumers, destinations, resource utilization, message rates and error logs. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-3-2021</guid>
+<pubDate>Sat, 03 Jul 2021 07:32:45 +0000</pubDate>
+</item>
+<item>
+<title>July 1, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-1-2021</link>
+<description>
+<![CDATA[ New - Our Cloud-to-Cloud Integration Framework has a new Source. The Palo Alto Cortex XDR Source provides a secure endpoint to receive alerts from the Get Alerts Incident Management API. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-1-2021aa</guid>
+<pubDate>Fri, 02 Jul 2021 00:02:44 +0000</pubDate>
+</item>
+<item>
+<title>July 1, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#alerts</link>
+<description>
+<![CDATA[ Update - We’ve added a new Scheduled Search alert type. Now, Cloud SIEM Enterprise (CSE) users can use Scheduled Searches to generate CSE Signals. That means you can use the results of any Sumo Logic query to automatically create Signals in CSE without replicating logic in CSE. This extends the r ]]>
+<![CDATA[ eal time alerting and notification capabilities of CSE with the analytics capability of Sumo Logic’s core query engine.<br /> For more information, see <a href="/Visualizations-and-Alerts/Alerts/Scheduled-Searches/Generate_CSE_Signals_With_a_Scheduled_Search" title="Generate CSE Signals With a Scheduled Search">Generate CSE Signals With a Scheduled Search</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#july-1-2021</guid>
+<pubDate>Thu, 01 Jul 2021 18:15:14 +0000</pubDate>
+</item>
+<item>
+<title>June 30, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-30-2021</link>
+<description>
+<![CDATA[ New - The Search Query Language has two new operators.<br />isNaN returns true if a string value is not a number, false otherwise.<br /> isInfinity returns true if a string value is a positive or negative infinity, false otherwise. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-30-2021</guid>
+<pubDate>Wed, 30 Jun 2021 12:25:14 +0000</pubDate>
+</item>
+<item>
+<title>June 29, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - We are happy to announce the release of <a href="/07Sumo-Logic-Apps/10Containers_and_Orchestration/RabbitMQ" title="RabbitMQ">RabbitMQ</a>&nbsp;app. The Sumo Logic App for RabbitMQ app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your RabbitMQ messaging clusters. Preconfigured dashboards provide insight into cluster status, exchanges, queues, nodes and error logs. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-29-2021</guid>
+<pubDate>Tue, 29 Jun 2021 03:49:12 +0000</pubDate>
+</item>
+<item>
+<title>June 28, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-28-2021</link>
+<description>
+<![CDATA[ Update - We've updated the interface to create a text panel. In addition to improvements on how you configure visual settings, we've added a preview of how your panel will look allowing you to see your text panel in real time before you add it to your Dashboard (New). ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-28-2021bb</guid>
+<pubDate>Mon, 28 Jun 2021 19:15:13 +0000</pubDate>
+</item>
+<item>
+<title>June 28, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-28-2021</link>
+<description>
+<![CDATA[ Update - Sources in the Cloud-to-Cloud Integration Framework need updates over time to maintain data collection. Updates can vary in severity and may not require any input from you. See Cloud-to-Cloud Source Versions for details on how to upgrade and how versions are structured. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-28-2021aa</guid>
+<pubDate>Mon, 28 Jun 2021 16:58:34 +0000</pubDate>
+</item>
+<item>
+<title>June 28, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-28-2021</link>
+<description>
+<![CDATA[ Update - You can set custom filters to quickly investigate traces you're interested in. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-28-2021</guid>
+<pubDate>Mon, 28 Jun 2021 14:45:18 +0000</pubDate>
+</item>
+<item>
+<title>June 23, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - We are excited to announce the release of <a href="/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Zscaler_Internet_Access" title="Zscaler Internet Access">Zscaler Internet Access (ZIA)</a> app. The Sumo Logic App for ZIA&nbsp;collects logs via Cloud Nanolog Streaming Service (NSS) to populate pre-configured searches and Dashboards in order to visualize and provide insight into threats, DNS, web traffic behaviors, security, user browsing activities, and risk. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-23-2021</guid>
+<pubDate>Wed, 23 Jun 2021 18:10:02 +0000</pubDate>
+</item>
+<item>
+<title>June 22, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-22-2021</link>
+<description>
+<![CDATA[ New - Our Cloud-to-Cloud Integration Framework has a new Source. The Akamai SIEM Source provides a secure endpoint to ingest security events from the Akamai platform. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-22-2021</guid>
+<pubDate>Tue, 22 Jun 2021 16:57:49 +0000</pubDate>
+</item>
+<item>
+<title>June 20, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - We are proud to release the Sumo Logic <a href="/07Sumo-Logic-Apps/24Web_Servers/Nginx_Plus_Ingress" title="Nginx Plus Ingress">Nginx Plus Ingress</a> app. The app is a unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of your N ]]>
+<![CDATA[ ginx Plus Ingress web servers. Preconfigured dashboards and searches provide insight into server status, location zones, server zones, upstreams, resolvers, visitor locations, visitor access types, traffic patterns, errors, web server operations and access from known malicious sources. ]]>
+<![CDATA[ New - We are also excited to announce the release of the&nbsp;<a href="/Global_Intelligence/Global_Intelligence_for_Apache_Tomcat_App" title="Global Intelligence for Apache Tomcat App">Global Intelligence for Apache Tomcat</a> App. The&nbsp;App is a companion to the&nbsp;Apache Tomcat application a ]]>
+<![CDATA[ nd helps DevOps and infrastructure engineers compare server and user activity patterns associated with their&nbsp;Apache Tomcat servers against other Sumo Logic customer’s servers. Such comparisons can help diagnose potential load, throughput or error issues in&nbsp;Apache Tomcat clusters and avoid operational incidents arising from sub-optimal configurations of Tomcat servers. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-20-2021</guid>
+<pubDate>Sun, 20 Jun 2021 17:57:12 +0000</pubDate>
+</item>
+<item>
+<title>June 18, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-18-2021</link>
+<description>
+<![CDATA[ Update - The Netskope Source provides the option to collect specific event types. Alert events are always collected. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-18-2021aa</guid>
+<pubDate>Fri, 18 Jun 2021 15:21:03 +0000</pubDate>
+</item>
+<item>
+<title>June 18, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-18-2021</link>
+<description>
+<![CDATA[ Update - The ASN Lookup operator now supports IPv6 addresses. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-18-2021</guid>
+<pubDate>Fri, 18 Jun 2021 12:41:03 +0000</pubDate>
+</item>
+<item>
+<title>June 14, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - We are proud to release the Sumo Logic <a href="/07Sumo-Logic-Apps/12Databases/Cassandra" title="Cassandra">Cassandra</a> app. The Apache Cassandra is an open source NoSQL distributed database with high scalability and availability without compromising performance. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-14-2021</guid>
+<pubDate>Mon, 14 Jun 2021 15:40:02 +0000</pubDate>
+</item>
+<item>
+<title>June 11, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - We are excited to announce the launch of the Security Monitoring &amp; Analytics Apps. These apps are a new way to get an understanding of your day to day security operations. For this release we are providing new dashboards for five data sources: <a href="/07Sumo-Logic-Apps/Cloud_Security_Mo ]]>
+<![CDATA[ nitoring_and_Analytics/Windows_-_Cloud_Security_Monitoring_and_Analytics" title="https://help.sumologic.com/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Windows_-_Cloud_Security_Monitoring_and_Analytics">Windows</a>, <a href="/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Linux_-_Cloud_Security_Monitoring_and_Analytics" title="https://help.sumologic.com/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Linux_-_Cloud_Security_Monitoring_and_Analytics">Linux</a>, <a href="/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Amazon_CloudTrail_-_Cloud_Security_Monitoring_and_Analytics" title="https://help.sumologic.com/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Amazon_CloudTrail_-_Cloud_Security_Monitoring_and_Analytics">AWS Cloud Trail</a>, <a href="/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Amazon_VPC_Flow_-_Cloud_Security_Monitoring_and_Analytics" title="https://help.sumologic.com/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Amazon_VPC_Flow_-_Cloud_Security_Monitoring_and_Analytics">AWS VPC Flows</a>, and <a href="/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Palo_Alto_Firewall_-_Cloud_Security_Monitoring_and_Analytics" title="https://help.sumologic.com/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Palo_Alto_Firewall_-_Cloud_Security_Monitoring_and_Analytics">Palo Alto Networks Firewalls</a>. All dashboards are using our latest features to provide practical security insights for all security practitioners. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-11-2021</guid>
+<pubDate>Fri, 11 Jun 2021 18:05:12 +0000</pubDate>
+</item>
+<item>
+<title>June 10, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#collection</link>
+<description>
+<![CDATA[ New - Our <a href="/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework" title="Cloud-to-Cloud Integration Framework">Cloud-to-Cloud Integration Framework</a> has a new Source: that's two this week! The <a href="/03Send-Data/Sources/02Sources-for-Hosted-Collecto ]]>
+<![CDATA[ rs/Cloud-to-Cloud_Integration_Framework/Symantec_Web_Security_Service_Source" title="Symantec Web Security Service Source">Symantec Web Security Service (WSS)</a> source provides a secure endpoint to ingest Symantec Web Security Services Access Logs. Symantec Web Security Service delivers a broad set of advanced cloud-delivered network security capabilities. With this new integration, Security customers can take advantage of the rich set of security information available from the WSS Access Logs. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-10-2021</guid>
+<pubDate>Thu, 10 Jun 2021 19:10:25 +0000</pubDate>
+</item>
+<item>
+<title>June 8, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#collection</link>
+<description>
+<![CDATA[ New - Our <a href="/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework" title="Cloud-to-Cloud Integration Framework">Cloud-to-Cloud Integration Framework</a> has a new Source. The <a href="/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Inte ]]>
+<![CDATA[ gration_Framework/CSE_AWS_EC2_Inventory_Source" title="CSE AWS EC2 Inventory Source"> provides a secure endpoint to ingest AWS EC2 inventory. Cloud SIEM Enterprise (CSE) users can forward this data to Cloud SIEM Enterprise to provide more context to Entities. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-8-2021</guid>
+<pubDate>Tue, 08 Jun 2021 17:12:20 +0000</pubDate>
+</item>
+<item>
+<title>June 7, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - We are excited&nbsp;to announce the launch of the <a href="/07Sumo-Logic-Apps/24Web_Servers/Nginx_Plus" title="https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Nginx_Plus">Nginx Plus</a> web server&nbsp;App.&nbsp;The&nbsp;app is an unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of your Nginx Plus web servers. Preconfigured dashboards and searches provide insight into server status, location zones, server zones, upstreams, resolvers, visitor locations, visitor access types, traffic patterns, errors, web server operations and access from known malicious sources. ]]>
+<![CDATA[ Update - There is a new release for the <a href="/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_SQL_Server" title="https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_SQL_Server">Microsoft SQL Server</a> app. The is&nbsp;an unified logs and metrics app that provides ins ]]>
+<![CDATA[ ight into your SQL server performance metrics and errors. The App consists of predefined Dashboards, providing visibility into your environment for real-time or historical analysis on backup, latency, performance counter, restore, mirroring, database monitoring, general health and operations of your system. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-7-2021</guid>
+<pubDate>Mon, 07 Jun 2021 17:10:12 +0000</pubDate>
+</item>
+<item>
+<title>June 3, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-3-2021</link>
+<description>
+<![CDATA[ New - The Search Query Language has a new operator, values, that allows you to quickly determine all the values a field has. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-3-2021</guid>
+<pubDate>Thu, 03 Jun 2021 20:30:04 +0000</pubDate>
+</item>
+<item>
+<title>June 2, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-2-2021</link>
+<description>
+<![CDATA[ Collection: New - Our Cloud-to-Cloud Integration Framework has a new Source, the CrowdStrike Falcon Data Replicator (FDR) Source provides a secure endpoint to ingest Falcon Data Replicator events using the S3 ingestion capability by consumed SQS notifications of new S3 objects.<br />Update - You can use a Windows Event Source to collect forwarded events from a Windows Event Collector.<br />Apps: Update - There is a new release for the MongoDB app.The app now provides insight into your MongoDB environment, allowing you to track overall system health, queries, logins and connections, errors and warnings, replication, and sharding. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-2-2021</guid>
+<pubDate>Wed, 02 Jun 2021 19:37:30 +0000</pubDate>
+</item>
+<item>
+<title>June 1, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-1-2021</link>
+<description>
+<![CDATA[ New - We've added several new operators to our Search Query Language:<br />The threatip operator correlates CrowdStrike's threat intelligence data based on IP addresses from your log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. This operator uses the same lookup as the Threat Intel Quick Analysis App but is simplified for only IP threat lookups.<br />The geoip operator provides geographical location data to create Map Charts. This operator provides the same data as a Geo Lookup operation with a simpler syntax.<br />The merge operator has a new strategy, takeDistinct, that allows you to identify only distinct values of a field. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#june-1-2021</guid>
+<pubDate>Tue, 01 Jun 2021 17:28:45 +0000</pubDate>
+</item>
+<item>
+<title>May 27, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ New - We are excited to announce the launch of the <a href="/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Zscaler_Private_Access" title="Zscaler Private Access">Zscaler Private Access</a> App, which assists in&nbsp;collecting logs from Zscaler using the Log Streaming Service (LSS) to populate pre-configured searches and Dashboards. The dashboards also provide easy-to-access visual insights into user behaviors, security, connector status, and risk. ]]>
+<![CDATA[ Update - There is a new release for the <a href="/07Sumo-Logic-Apps/24Web_Servers/Apache" title="Apache">Apache</a> app. The&nbsp;app now helps you monitor the availability, performance, health and resource utilization of Apache web server farms. The pre-configured dashboards and searches provide insight into visitor locations, visitor access types, traffic patterns, errors, web server operations, resource utilization and access from known malicious sources. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-10-2021a</guid>
+<pubDate>Thu, 27 May 2021 04:21:19 +0000</pubDate>
+</item>
+<item>
+<title>May 26, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#metrics</link>
+<description>
+<![CDATA[ New - What’s good for the logs is good for the metrics. That’s why we’re extending the processing rules feature to support metrics as well as logs. Now, you can configure include or exclude rules for your metric sources for increased control over the metrics you ingest to Sumo Logic. For more information, see <a href="/docs/send-data/collection/processing-rules/metrics-include-and-exclude-rules" title="Metrics Include and Exclude Rules">Metrics Include and Exclude Rules</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-26-2021</guid>
+<pubDate>Wed, 26 May 2021 15:59:36 +0000</pubDate>
+</item>
+<item>
+<title>May 24, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-24-2021</link>
+<description>
+<![CDATA[ New - The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the Microsoft Graph Security API endpoint. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-24-2021</guid>
+<pubDate>Mon, 24 May 2021 10:27:54 +0000</pubDate>
+</item>
+<item>
+<title>May 20, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-20-2021</link>
+<description>
+<![CDATA[ New - We are proud to release the support of the Search Query Language for Traces. This allows you to not only find and diagnose transaction traces that match any custom criteria, but also make advanced analysis on the top of trace span data using the Search Query Language, the same way as for log data, in the same familiar interface.<br /> This capability allows you to access raw tracing data on a span level, treat it as structured or unstructured data for analysis, and filter, transform, or aggregate any part of the tracing span message (a single atomic request/response representation) to deliver meaningful results to drive smarter decisions. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-20-2021</guid>
+<pubDate>Thu, 20 May 2021 13:27:54 +0000</pubDate>
+</item>
+<item>
+<title>May 17, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-17-2021</link>
+<description>
+<![CDATA[ New - The Sumo Logic App for <a title="HAProxy" href="https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/HAProxy" rel="internal">HAProxy</a> is a unified logs and metrics app that helps you monitor the availability, performance, and health of your HAProxy cluster. Preconfigured dashboards provide insights into active servers, visitor locations, sessions, errors, response time, and throughput. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-17-2021</guid>
+<pubDate>Mon, 17 May 2021 20:53:36 +0000</pubDate>
+</item>
+<item>
+<title>May 10, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ Update - The Sumo Logic App for Payment Card Industry (PCI) Compliance for Windows Legacy is updated to offer dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges. The <a href="/07Sumo-Logic-Apps/04Microsoft-and-Azure/PCI_Compliance_for_Windows" title="PCI Compliance for Windows Legacy App">PCI Compliance for Windows Legacy</a> covers PCI requirements 02, 06, 08 and 10. ]]>
+<![CDATA[ New - The Sumo Logic App for Payment Card Industry (PCI) Compliance for Windows JSON application is released. This app offers dashboards to monitor system, account and user activity to ensure that login activity and privileged users are within the expected ranges. The <a href="/07Sumo-Logic-Apps/04Microsoft-and-Azure/PCI_Compliance_for_Windows_JSON_App" title="PCI Compliance for Windows JSON App">PCI Compliance for Windows JSON</a> covers PCI requirements 02, 06, 08 and 10. ]]>
+<![CDATA[ New - The <a href="/07Sumo-Logic-Apps/Partner_Ecosystem_Apps" title="https://help.sumologic.com/07Sumo-Logic-Apps/Partner_Ecosystem_Apps">CatchPoint</a> app for Sumo Logic provides a central location for the Catchpoint tests in your account. View at-a-glance information surrounding your recent Errors. The Node Map provides a geographical overview of your test runs, while the Tests widget lets you search for and quickly access your synthetic data. ]]>
+<![CDATA[ New - The <a href="/07Sumo-Logic-Apps/Partner_Ecosystem_Apps" title="https://help.sumologic.com/07Sumo-Logic-Apps/Partner_Ecosystem_Apps">Cybereason</a> app for Sumo Logic enables Security Operations teams to leverage the Cybereason Malop™ to detect and end attacks faster. ]]>
+<![CDATA[ New - <a href="/07Sumo-Logic-Apps/Partner_Ecosystem_Apps" title="https://help.sumologic.com/07Sumo-Logic-Apps/Partner_Ecosystem_Apps">Nucleon</a> is a distributed, high-performance invisible and non-invasive platform that is tailored to secure environments from different common threats such as professional hacking groups, APTs and others. The Nucleon app for Sumo Logic helps in identifying overall number of threats, their sources by country and their targeted segments(critical_infrastructure, energy, fintech, governments, health_care, municipality, general, telecom). ]]>
+<![CDATA[ New - We are very excited to release a new app for <a href="/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday" title="Workday">Workday and C2C source</a>. The Workday app is built for IT and security teams to get insights into Workday related authentication activity, user activity, and administrator activity. These dashboards are tailored to highlight critical events for general security monitoring and compliance reporting. Collection of data is done via a cloud-native-collector that provides a secure endpoint to receive user and sign-on data via the Workday APIs. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-10-2021</guid>
+<pubDate>Mon, 10 May 2021 10:05:19 +0000</pubDate>
+</item>
+<item>
+<title>May 7, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-7-2021</link>
+<description>
+<![CDATA[ New - The Global Intelligence for Apache App is a companion to the Apache App and helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache servers against other Sumo Logic customer’s servers. Such comparisons can help diagnose potential load, throughput, or error issues in Apache clusters and avoid operational incidents arising from sub-optimal configurations of Apache clusters. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-7-2021</guid>
+<pubDate>Fri, 07 May 2021 20:21:36 +0000</pubDate>
+</item>
+<item>
+<title>May 4, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#manage</link>
+<description>
+<![CDATA[ New - We're making it easier to create and manage multiple Sumo Logic accounts. You can use the new <a href="/manage/01Manage_Subscription/02Create_and_Manage_Orgs" title="Create and Manage Orgs">Sumo Logic Organizations</a> (Sumo Orgs) feature to create, provision, and manage multiple "child" orgs ]]>
+<![CDATA[ from a "parent" org. An authorized user can use the UI or API to estimate required credits for child orgs, based on expected log and metrics ingestion levels. It's easy to allocate credits, and to monitor child orgs' utilization. Sumo Orgs is great for Sumo Logic Service Providers as well as Enterprise users. In particular, Sumo Orgs eases the process of provisioning and managing POV Trial orgs in multiple Sumo Logic deployments. Sumo Orgs is available in Enterprise subscriptions on the Credits model. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-4-2021c</guid>
+<pubDate>Tue, 04 May 2021 17:55:40 +0000</pubDate>
+</item>
+<item>
+<title>May 4, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ Update - We’re happy to announce the release of our AWS Observability Solution 2.2.0 which includes: New performance and cost-savings. We’ve added support for collecting AWS CloudWatch metrics and AWS CloudWatch logs through new <a href="/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Kinesis_-_Stre ]]>
+<![CDATA[ ams" title="Amazon Kinesis - Streams">Amazon Kinesis </a>logs and metrics sources for Sumo Logic. These new sources enable you to collect logs and metrics data from AWS in the most performant and cost-effective manner. AWS benchmarks in-context with AWS Observability. <a href="/07Sumo-Logic-Apps/01Amazon_and_AWS/Global_Intelligence_for_AWS_CloudTrail_DevOps">Global Intelligence for AWS CloudTrail DevOps</a> helps you accelerate root cause analysis for incidents by providing error rate and configuration insights benchmarked from Sumo Logic’s AWS customers for nine AWS services: EC2, Lambda, Auto Scaling, S3, ELB, RDS, DynamoDB, ElastiCache and Redshift. In this release, the benchmark dashboards are integrated with AWS Observability solution at the account-region level. <a href="/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/13Update_AWS_Observability_Stack">Update</a> to the latest version to take advantage of these new features. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-4-2021a</guid>
+<pubDate>Tue, 04 May 2021 03:08:40 +0000</pubDate>
+</item>
+<item>
+<title>May 3, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#metrics</link>
+<description>
+<![CDATA[ Deprecation - We have completed the deprecation of old-style Metric Monitors. Old Metric Monitors have been migrated to the new <a href="/Visualizations-and-Alerts/Alerts/Monitors" title="Monitors">Monitors</a> framework and removed. For information about the deprecation process, see <a href="/Metrics/Metrics_Monitors_Deprecation_FAQs" title="Metrics Monitors Deprecation FAQs">Metrics Monitors Deprecation FAQs</a> ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#may-3-2021</guid>
+<pubDate>Mon, 03 May 2021 23:06:11 +0000</pubDate>
+</item>
+<item>
+<title>April 30, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ Update - We’ve released a new version of the <a href="/07Sumo-Logic-Apps/12Databases/Redis" title="https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Redis">Redis</a> app that includes pre-packaged <a href="/07Sumo-Logic-Apps/12Databases/Redis/Redis_Alerts">alerts</a>. New features include ]]>
+<![CDATA[ updated dashboards that allow you to visualize, search and alert by Redis clusters and hosts. Alerts are based on Sumo Logic monitors, leverage metrics and logs, and include preset thresholds for connections, replication, memory fragmentation, communication failures, resource utilization and other critical conditions. ]]>
+<![CDATA[ Update - We’ve released a new version of the <a href="/07Sumo-Logic-Apps/12Databases/PostgreSQL">PostgreSQL</a> app that includes pre-packaged alerts. New features include support for collecting PostgreSQL metrics data using Telegraf, and for monitoring PostgreSQL in Kubernetes environments. Out-of-the-box dashboards provide insight into the health of your PostgreSQL clusters, deadlocks, replication status, query performance, slow queries, incoming connections, failed authentications and error logs. Alerts are based on Sumo Logic monitors, leverage metrics and logs, and include preset thresholds for connections, slow queries, commit rates, deadlocks, replication, locks, compression and other critical conditions. ]]>
+<![CDATA[ New - The Sumo Logic App for <a href="/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kafka">Kafka</a> is a unified logs and metrics app that helps you monitor the availability, performance and resource utilization of Kafka messaging/streaming clusters. Preconfigured dashboards provide insights i ]]>
+<![CDATA[ nto cluster status, throughput, broker operations, topics, replication, zookeepers, node resource utilization and error logs. We also have pre-packaged alerts to help you monitor your Kafka cluster. Alerts are based on Sumo Logic monitors, leverage metrics and logs, and include preset thresholds for high resource utilization, disk usage, errors, failed connections, under replicated and offline partitions, unavailable replicas, consumer replica lag and other critical conditions. ]]>
+<![CDATA[ Update - We’ve released pre-packaged alerts to help you monitor your <a href="/07Sumo-Logic-Apps/24Web_Servers/Nginx_ULM/Install_the_Nginx_ULM_App_and_View_the_Dashboards">Nginx ULM</a> and <a href="/07Sumo-Logic-Apps/24Web_Servers/Nginx_Ingress_ULM/Install_the_Nginx_Ingress_App_and_View_the_Dashboards">Nginx Ingress ULM</a> clusters. These alerts are built based on Sumo Logic monitors, leverage metrics and logs and include preset thresholds for dropped connections, critical event log messages, access from known malicious sources and 4xx and 5xx errors. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-30-2021a</guid>
+<pubDate>Sat, 01 May 2021 02:47:19 +0000</pubDate>
+</item>
+<item>
+<title>April 29, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ Update - We’ve released a new version of the <a href="/07Sumo-Logic-Apps/12Databases/MySQL" title="MySQL">MySQL app</a> that includes pre-packaged alerts. New features include support for collecting MySQL metrics data using Telegraf, and for monitoring MySQL in Kubernetes environments. Out-of-the-box dashboards and searches provide insight into the health of your MySQL clusters, replication status, error logs, query performance, slow queries, Innodb operations, and failed logins. Alerts are based on Sumo Logic monitors, leverage metrics and logs, and include preset thresholds for connections, query run times, slow queries, resource utilization, errors, and other critical conditions. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-29-2021a</guid>
+<pubDate>Thu, 29 Apr 2021 19:02:19 +0000</pubDate>
+</item>
+<item>
+<title>April 29, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-29-2021</link>
+<description>
+<![CDATA[ Update - The syntax of a URL to run a log search has changed. We've added parameters for the query, start time, and end time. The previous syntax is still supported, however, we recommend you start using the new syntax. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-29-2021</guid>
+<pubDate>Thu, 29 Apr 2021 14:29:09 +0000</pubDate>
+</item>
+<item>
+<title>April 21, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-21-2021</link>
+<description>
+<![CDATA[ Update - We've made it easier to change what items are displayed in charts. You can now click on an item in the Legend to quickly only show it in your chart. If you want to toggle just one legend item, just hold the shift key and then click the item. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-21-2021</guid>
+<pubDate>Wed, 21 Apr 2021 18:35:18 +0000</pubDate>
+</item>
+<item>
+<title>April 16, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-16-2021</link>
+<description>
+<![CDATA[ New - The Infrastructure tab now shows any triggered Monitors with a Critical, Warning, or Missing Data status for the given entity. You can click on them to view the Monitor on the Monitors page. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-16-2021</guid>
+<pubDate>Fri, 16 Apr 2021 12:06:02 +0000</pubDate>
+</item>
+<item>
+<title>April 15, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-15-2021</link>
+<description>
+<![CDATA[ New - Log Search and Metrics Explorer now provide an option to add a Monitor based on your existing query.<br />Update - You now have the ability to specify a location when creating a new Monitor. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-15-2021</guid>
+<pubDate>Thu, 15 Apr 2021 18:03:33 +0000</pubDate>
+</item>
+<item>
+<title>April,14 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#metrics</link>
+<description>
+<![CDATA[ Planned deprecation - Planned deprecation - The muted monitors that were automatically migrated during Round 2 have been deleted. Deprecation of old-style monitors will occur on May 3. Any of your monitors that were not automatically migrated should be manually migrated by that date. For more information, see <a href="/Metrics/Metrics_Monitors_Deprecation_FAQs" title="Metrics Monitors Deprecation FAQs">Metrics Monitors Deprecation FAQs</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-14-2021</guid>
+<pubDate>Wed, 14 Apr 2021 22:12:38 +0000</pubDate>
+</item>
+<item>
+<title>April 13, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#security</link>
+<description>
+<![CDATA[ Update - Searching the Infrequent data tier just got easier. You can now use wildcards in queries against the Infrequent data tier. For example: <br /> _dataTier = Infrequent (_index=app_*)<br /> For more information, see <a href="/manage/Partitions_and_Data_Tiers/Searching_Data_Tiers" title="Searc ]]>
+<![CDATA[ hing Data Tiers">Searching Data Tiers</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-13-2021a</guid>
+<pubDate>Tue, 13 Apr 2021 22:39:28 +0000</pubDate>
+</item>
+<item>
+<title>April 13, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#search</link>
+<description>
+<![CDATA[ Update - We’ve updated the UI for deleting a Sumo Logic user’s account. The UI now provides an explicit option for deleting a user’s content in addition to the user account. For more information, see <a href="/manage/users-roles/Manage-Users/11-Delete-a-User" title="Delete a User">Delete ]]>
+<![CDATA[ a User</a>.<br /> Update - We've enhanced role search filters: now you can grant access to Scheduled Views and Partitions in a role search filter. For more information, see <a href="/manage/users-roles/Manage-Roles/07-Construct-a-Search-Filter-for-a-Role" title="Construct a Search Filter for a Role">Construct a Role Search Filter. ]]>
+</description>
+<guid>hhttps://help.sumologic.com/Release-Notes/Service-Release-Notes#april-13-2021</guid>
+<pubDate>Tue, 13 Apr 2021 22:39:28 +0000</pubDate>
+</item>
+<item>
+<title>April 8, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-8-2021</link>
+<description>
+<![CDATA[ Update - The alert variable ResultsJson.fieldName now supports the ability to return a specific result by providing an array index value in bracket notation. For example, {{ResultsJson.fieldName}}[0] will only return the first result. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-8-2021</guid>
+<pubDate>Thu, 08 Apr 2021 18:35:00 +0000</pubDate>
+</item>
+<item>
+<title>April 7, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-7-2021</link>
+<description>
+<![CDATA[ Update - The LogReduce operator now provides an optimize option that provides up to 10x speedup over classic LogReduce on datasets with hundreds of thousands of logs. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-7-2021</guid>
+<pubDate>Wed, 07 Apr 2021 23:59:42 +0000</pubDate>
+</item>
+<item>
+<title>April 6, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-6-2021</link>
+<description>
+<![CDATA[ Update - Dashboard (New) now supports Dynamic Parsing and Receipt Time. You can set the options under the general settings of a panel built to display log data. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-6-2021</guid>
+<pubDate>Tue, 06 Apr 2021 22:23:50 +0000</pubDate>
+</item>
+<item>
+<title>April 1, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-1-2021</link>
+<description>
+<![CDATA[ Update - The alert variable Results.fieldName is now supported in email notifications. This allows you to include the value of a specific field from your results. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#april-1-2021</guid>
+<pubDate>Thu, 01 Apr 2021 15:31:28 +0000</pubDate>
+</item>
+<item>
+<title>March 31, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#metrics</link>
+<description>
+<![CDATA[ Update - We’ve implemented some limitations on the number of metrics metadata tags that Sumo Logic will accept, and the length of metadata keys and values. Limiting the volume and length of metrics metadata ensures that noisy sources of metrics don’t inundate your account with excessive metadata. For more information, see <a href="/Metrics/Understand_and_Manage_Metric_Volume/Data_Limits_for_Metrics#Metrics_metadata_limits" title="Data Limits for Metrics">Metrics Metadata Limits</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-31-2021</guid>
+<pubDate>Wed, 31 Mar 2021 14:53:32 +0000</pubDate>
+</item>
+<item>
+<title>March 30, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#metrics</link>
+<description>
+<![CDATA[ Planned deprecation - Planned deprecation - Round 2 of automatic migration is complete. We’ll start deleting the old monitors on April 13. For information, see see <a href="/Metrics/Metrics_Monitors_Deprecation_FAQs" title="Metrics Monitors Deprecation FAQs">Metrics Monitors Deprecation FAQs</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-30-2021</guid>
+<pubDate>Tue, 30 Mar 2021 19:38:29 +0000</pubDate>
+</item>
+<item>
+<title>March 25, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-25-2021</link>
+<description>
+<![CDATA[ Update - Explore now offers the ability to filter your view so you can focus on specific entities and sections of your system. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-25-2021</guid>
+<pubDate>Thu, 25 Mar 2021 11:41:25 +0000</pubDate>
+</item>
+<item>
+<title>March 24, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-24-2021</link>
+<description>
+<![CDATA[ New - We're excited to announce our Service Map and Dashboards. A Service Map is a high-level out-of-the-box overview of your environment created from distributed tracing data. Service Maps provide you a real-time view of:<br />Your microservices and connections between them, to give you insight in ]]>
+<![CDATA[ to their dependencies and relations.<br /> Health and load of each microservice reflected in size and color, so you can immediately ascertain potential problems and bottlenecks in your application infrastructure. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-24-2021</guid>
+<pubDate>Wed, 24 Mar 2021 16:26:26 +0000</pubDate>
+</item>
+<item>
+<title>March 22, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#metrics</link>
+<description>
+<![CDATA[ Planned deprecation - Planned deprecation - Round 1 of automatic migration is complete and the old monitors have been deleted. Round 2 of automatic migration will start on March 29. For more information, see <a href="/Metrics/Metrics_Monitors_Deprecation_FAQs" title="Metrics Monitors Deprecation FAQs">Metrics Monitors Deprecation FAQs</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-22-2021</guid>
+<pubDate>Mon, 22 Mar 2021 18:31:15 +0000</pubDate>
+</item>
+<item>
+<title>March 16, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-16-2021</link>
+<description>
+<![CDATA[ Update - Scheduled View queries now provide syntax highlighting and support multiple lines and comments. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-16-2021aa</guid>
+<pubDate>Tue, 16 Mar 2021 19:38:08 +0000</pubDate>
+</item>
+<item>
+<title>March 16, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-16-2021</link>
+<description>
+<![CDATA[ Update - We have resolved a discrepancy in the notification payload of Real Time Scheduled Searches.<br />Previously, the payload for subsequent real time alerts in a given time range would incrementally report the results and omit the records that were already present in the previous alert.<br />For example, if the Scheduled Search initially returned 10 records, the first alert notification would contain 10 records in the payload. If the next run contained the same 10 records plus 1 additional, the notification payload would only contain the single new record.<br />Going forward, we will ensure that the records sent in the notification payload will always contain all the records returned in the Scheduled Search. Following the above example, the next run of the Real Time Scheduled Search would return 11 records. This change ensures that the payload will always match the results of the search in Sumo Logic. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-16-2021</guid>
+<pubDate>Tue, 16 Mar 2021 12:00:08 +0000</pubDate>
+</item>
+<item>
+<title>March 12, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-12-2021</link>
+<description>
+<![CDATA[ New - Our Cloud-to-Cloud Integration Framework has the following new Sources:<br />Azure Event Hubs Source<br /> Carbon Black Cloud Source<br /> Duo Source<br /> Salesforce Source ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-12-2021</guid>
+<pubDate>Fri, 12 Mar 2021 19:37:08 +0000</pubDate>
+</item>
+<item>
+<title>March 11, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#metrics</link>
+<description>
+<![CDATA[ Planned deprecation - Planned deprecation - Round 1 of automatic migration is complete. Most monitors were successfully migrated and are now muted—we’ll start deleting them on March 18. If you have monitors that were not successfully migrated, we’ll let you know which monitors weren’t migrated and why. For information about how to manually migrate those monitors, see <a href="/Metrics/Metrics_Monitors_Deprecation_FAQs" title="Metrics Monitors Deprecation FAQs">Metrics Monitors Deprecation FAQs</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-11-2021</guid>
+<pubDate>Thu, 11 Mar 2021 19:23:29 +0000</pubDate>
+</item>
+<item>
+<title>March 4, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#observability</link>
+<description>
+<![CDATA[ Update - We’re delighted to announce several enhancements to <a href="/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/12Root_Cause_Explorer" title="Root Cause Explorer">Root Cause Explorer</a>. Root Cause Explorer now supports two additional AWS namespaces, ]]>
+<![CDATA[ as well as Events of Interest detection on Kubernetes and Trace metrics. Cause-impact analysis is now informed by Sumo Logic Tracing’s Service Map, AWS X-ray, Kubernetes entities, and AWS inventory relationships. You’ll also notice new filters and search builders at the top of the page to correlate Events of Interests at the service, orchestrator, AWS infrastructure, and host levels to speed up the identification of root causes. You can use the Infrastructure tab for an Event of Interest to pivot to dashboards, logs, metrics and, trace searches to take the next steps in root cause analysis. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-4-2021</guid>
+<pubDate>Thu, 4 Mar 2021 16:24:47 +0000</pubDate>
+</item>
+<item>
+<title>March 1, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#metrics</link>
+<description>
+<![CDATA[ Planned deprecation - We're starting the next step in the process of Metrics Monitors today: we're beginnning the first of two rounds of migrating old-style monitors to new Monitors. The next milestone is March 15, when we'll remove the old monitors that were successfully migrated in the first round. For more information, see Metrics Monitors Deprecation FAQs. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#march-1-2021</guid>
+<pubDate>Mon, 1 Mar 2021 20:10:47 +0000</pubDate>
+</item>
+<item>
+<title>February 26, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-26-2021</link>
+<description>
+<![CDATA[ Update - Dashboard (New) is all about visual control! We’re happy to announce that you can now add units to your charts to make them even easier to consume. With the updated chart units on dashboard panels, you can select a base unit and the chart will auto-adjust the unit as the numbers scale, making the data immediately understandable. See how to modify chart axes for details. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-26-2021</guid>
+<pubDate>Fri, 26 Feb 2021 15:43:37 +0000</pubDate>
+</item>
+<item>
+<title>February 25, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</link>
+<description>
+<![CDATA[ Update - We are excited to announce out-of-the-box alerts for Kubernetes. We have also updated the dashboards and views in the Kubernetes App <a href="https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Install_the_Kubernetes_App_and_view_the_Dashboards" title="Install the Kubernetes Alerts, App and view the Dashboards">Kubenetes App</a> to accelerate entity-based troubleshooting of Kubernetes environments. New - We are excited to announce a new Microsoft Teams <a href="https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_Teams_App" title="Microsoft Teams Apps">Microsoft Teams</a> app that provides out-of-the-box dashboards to monitor users, teams, channels and permission changes. New (On the 23) - Microsoft Teams webhook connection <a href="https://help.sumologic.com/manage/connections-integrations/Webhook-Connections/Webhook_Connection_for_Microsoft_Teams" title="Webhook Connection for Microsoft Teams">Microsoft Teams webhook connection</a> is now available to send notifications from alerts to Microsoft Teams. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#apps</guid>
+<pubDate>Thu, 25 Feb 2021 05:04:30 +0000</pubDate>
+</item>
+<item>
+<title>February 23, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#sumo-logic-jenkins-plugin</link>
+<description>
+<![CDATA[ Update - We are happy to announce a new version <a href="plugins.jenkins.io/sumologic-publisher/" title="Sumologic Publisher">v2.2.1</a> of the Sumo Logic Jenkins plugin. The plugin has been updated with a new Jenkins pipeline step SumoSDOEvent which can be used to send instrumented events to Sumo Logic. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#sumo-logic-jenkins-plugin</guid>
+<pubDate>Tue, 23 Feb 2021 11:03:30 +0000</pubDate>
+</item>
+<item>
+<title>February 22, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#metrics</link>
+<description>
+<![CDATA[ Update - Planned deprecation - For more information, see <a href="/Metrics/Metrics_Monitors_Deprecation_FAQs" title="Metrics Monitors Deprecation FAQs">Metrics Monitors Deprecation FAQs</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#metrics</guid>
+<pubDate>Mon, 22 Feb 2021 20:10:47 +0000</pubDate>
+</item>
+<item>
+<title>February 15, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#metrics</link>
+<description>
+<![CDATA[ Update - Planned deprecation - We’re planning to deprecate the Metrics Monitors feature in favor of the <a href="/Visualizations-and-Alerts/Alerts/Monitors" title="Monitors">Monitors</a> feature we released late last year, which unifies the alert experience across logs and metrics. Important to note: Sumo Logic will automatically migrate most of your existing metrics monitors. The deprecation process will occur in stages, starting next week and culminating in early May. Affected customers will receive an in-product communication describing the deprecation process and schedule and what to expect. For more information, see <a href="/Metrics/Metrics_Monitors_Deprecation_FAQs" title="Metrics Monitors Deprecation FAQs">Metrics Monitors Deprecation FAQs</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-15-2021</guid>
+<pubDate>Mon, 15 Feb 2021 19:11:47 +0000</pubDate>
+</item>
+<item>
+<title>February 12, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-12-2021</link>
+<description>
+<![CDATA[ Update - We’re releasing a change to audit logging for <a href="/Visualizations-and-Alerts/Alerts/Monitors" title="Monitors">monitors</a> on Monday, February 15. We’ve improved the audit logging we do when you import, copy, or delete a monitor. We now log an audit event for every object created or deleted by an import, copy, or delete operation. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-12-2021</guid>
+<pubDate>Fri, 12 Feb 2021 23:21:47 +0000</pubDate>
+</item>
+<item>
+<title>February 10, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#manage-1</link>
+<description>
+<![CDATA[ Update - We made the process of transferring a deleted user’s content to another user more comprehensive. Now, when you select a new owner for the deleted user’s Library content, scheduled views will be transferred to the new owner, as well as the user’s folders, searches, scheduled searches, and dashboards. For more information, see <a href="/manage/users-roles/Manage-Users/11-Delete-a-User" title="Delete a User">Delete a User</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-10-2021</guid>
+<pubDate>Fri, 5 Feb 2021 21:23:26 +0000</pubDate>
+</item>
+<item>
+<title>February 5, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#aws-observability</link>
+<description>
+<![CDATA[ Update - We are excited to announce support for <a href="/Observability_Solution/AWS_Observability_Solution/AWS_Observability_Apps/Amazon_ECS_Dashboards" title="Amazon ECS Dashboards">ECS</a>, <a href="/Observability_Solution/AWS_Observability_Solution/AWS_Observability_Apps/Amazon_ElastiCache_Dashboards" title="Amazon ElastiCache Dashboards">ElastiCache</a>, and <a href="/Observability_Solution/AWS_Observability_Solution/AWS_Observability_Apps/AWS_Network_Load_Balancer_Dashboards" title="AWS Network Load Balancer Dashboards">Network Load Balancers</a> as well as <a href="/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/Configure_Alerts" title="Configure Alerts">out-of-the-box alerts</a> for all supported services. As part of this release we have <a href="/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/AWS_Observability_-_Change_Log" title="Change Log">documented changes</a> included in each version of our CloudFormation installation template, which will help you understand when to upgrade. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-5-2021</guid>
+<pubDate>Fri, 5 Feb 2021 16:05:32 +0000</pubDate>
+</item>
+<item>
+<title>February 3, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#manage</link>
+<description>
+<![CDATA[ Update - There are two changes to the Partitions page in the Sumo Logic UI. What we previously called the General Index is now the Default Continuous Partition. This is where any data you ingest that isn’t assigned to a partition goes. You’ll also notice that the Partitions page now lists Sumo Logic internal indexes, like the Audit Event Index and the Data Volume Index. This gives you the flexibility to <a href="/manage/Partitions_and_Data_Tiers/04_Edit_a_Partition#Edit_a_partition" title="Edit a Partition">manage the retention period</a> for each index independently. By default, each internal index has the same retention period as the Default Continuous Partition. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#february-3-2021</guid>
+<pubDate>Wed, 3 Feb 2021 17:09:32 +0000</pubDate>
+</item>
+<item>
+<title>January 22, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#metrics</link>
+<description>
+<![CDATA[ Update - We’ve made a small change to the <a href="/Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer" title="Metrics Explorer">Metrics Explorer</a> that makes a big difference: Advanced Mode now supports auto-complete. Now, just as in Basic Mode, you can construct metric queries in Advanced Mode by selecting metadata fields, dimensions, metrics, and operators from pull-down lists. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-22-2021a</guid>
+<pubDate>Fri, 22 Jan 2021 21:31:37 +0000</pubDate>
+</item>
+<item>
+<title>January 22, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-22-2021</link>
+<description>
+<![CDATA[ Update - We've updated the troubleshooting links in the Infrastructure tab to be easier to understand. The original buttons have been replaced with a dropdown menu with labels next to the buttons.<br />Update - The Infrastructure tab now provides a time option to select if the displayed related Entities and Environments are related to the current time or the moment of time around the data point you clicked on. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-22-2021</guid>
+<pubDate>Fri, 22 Jan 2021 18:31:00 +0000</pubDate>
+</item>
+<item>
+<title>January 20, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-20-2021</link>
+<description>
+<![CDATA[ Update - Update - When we released Monitors (our new alerting framework), we introduced new template variables to be used within Notifications for full customizability of what information is provided in the notification. We are pleased to announce that we are extending support of these template var ]]>
+<![CDATA[ iables to <a href=https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Scheduled-Searches>Scheduled Searches</a> and <a href=https://help.sumologic.com/Metrics/Metric-Queries-and-Alerts/Metrics_Monitors_and_Alerts>Metrics Monitors</a> pages. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-20--2021</guid>
+<pubDate>Thu, 21 Jan 2021 15:38:00 +0000</pubDate>
+</item>
+<item>
+<title>January 15, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-15-2021</link>
+<description>
+<![CDATA[ Update - Dashboard (New) now offers a dark theme. Dark Theme makes dashboards pop by putting light colored visualizations and text on top of a darker background. This enables you to build gorgeous dashboards with eye-catching contrast. Update - Categorical column and bar charts from Metrics queries now have a Group By setting that lets you group data by other dimensions from your results. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-15-2021</guid>
+<pubDate>Fri, 15 Jan 2021 22:00:00 +0000</pubDate>
+</item>
+<item>
+<title>January 11, 2021</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-11-2021</link>
+<description>
+<![CDATA[ Update - The payload editor for webhook connections provides syntax highlighting, indentation, and validation. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#january-11-2021</guid>
+<pubDate>Mon, 11 Jan 2021 22:26:00 +0000</pubDate>
+</item>
+<item>
+<title>December 28, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#December_28.2C_2020</link>
+<description>
+<![CDATA[ New - Search can parse JSON logs automatically with Dynamic Parsing. Now you don't have to write parse expressions or update queries if your log schema changes. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#December_28.2C_2020</guid>
+<pubDate>Mon, 28 Dec 2020 09:00:00 +0000</pubDate>
+</item>
+<item>
+<title>December 22, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Manage</link>
+<description>
+<![CDATA[ Update - We’ve brought you greater control over your data: now you can update an existing partition’s routing expression, which determines what data goes into the partition. (You have to be a Sumo Logic admin or have the Manage Partitions role capability.) <br />Changing the scope of a partitio ]]>
+<![CDATA[ n is useful if you simply want to route more or less data to an existing partition. Better yet, it allows you to re-route some or all of the data in an existing partition to a different Data Tier than the one it currently resides in. If you decide that some of the data in a partition belongs in a different tier than the one currently configured, you can edit the scope of that partition to exclude that data, and create a new partition for it that targets the desired tier.<br />For more information, see <a href="/manage/Partitions_and_Data_Tiers/04_Edit_a_Partition" title="Edit a Partition">Edit a Partition</a> ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#December_22.2C_2020</guid>
+<pubDate>Tue, 22 Dec 2020 02:10:00 +0000</pubDate>
+</item>
+<item>
+<title>December 21, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Apps</link>
+<description>
+<![CDATA[ Update -The <a href="/07Sumo-Logic-Apps/22Security_and_Threat_Detection/CrowdStrike_Falcon_Endpoint_Protection" title="https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/CrowdStrike_Falcon_Endpoint_Protection">CrowdStrike Falcon Endpoint Protection</a> App has been updated ]]>
+<![CDATA[ to include a new dashboard to provide visibility into Falcon incidents. All dashboards have been updated to use the new dashboard platform. This app uses the <a href="/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/CrowdStrike_Source" title="https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/CrowdStrike_Source">new Crowdstrike source</a> to collect log data from the CrowdStrike Falcon Endpoint Protection platform. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#December_21.2C_2020</guid>
+<pubDate>Mon, 21 Dec 2020 02:10:00 +0000</pubDate>
+</item>
+<item>
+<title>December 08, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Apps</link>
+<description>
+<![CDATA[ Update - <a href="/07Sumo-Logic-Apps/22Security_and_Threat_Detection/F5_-_BIG-IP_LTM" title="https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/F5_-_BIG-IP_LTM">F5 - BIG-IP LTM</a> App now uses <a href="https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/" title="https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/">Telemetry Streaming</a> to collect log data from F5 - BIG-IP LTM.> </description> <guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#December_8.2C_2020</guid> <pubDate>Tue, 08 Dec 2020 12:11:00 +0000</pubDate> </item> <item> <title>December 4, 2020</title> <link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#December_4.2C_2020</link> <description> <![CDATA[ New - Our Cloud-to-Cloud Integration Framework has the following new Sources, Cisco AMP, CrowdStrike, Mimecast, Proofpoint TAP, Sophos, and Tenable New - Select a duration for your Support Account Access. This determines how long the account is enabled. You can choose from 1 day to one year to indefinitely depending on your needs and comfort level with our access. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#December_4.2C_2020</guid>
+<pubDate>Fri, 04 Dec 2020 01:00:00 +0000</pubDate>
+</item>
+<item>
+<title>November 19, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#November_19.2C_2020</link>
+<description>
+<![CDATA[ Update - Ingest budgets now have a Scope, replacing Field Value, which defines the log data to apply to a budget. This new budget assignment scheme allows you to have granular control over your ingest budgets while keeping the configuration overhead to a minimum. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#November_19.2C_2020</guid>
+<pubDate>Thu, 19 Nov 2020 01:00:00 +0000</pubDate>
+</item>
+<item>
+<title>November 16, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#November_16.2C_2020</link>
+<description>
+<![CDATA[ New - The AWS Firewall Network app provides visibility into traffic flows, through alerts generated by AWS Network Firewall. <br />You can now easily link dashboards together to quickly view related data. Each panel can have links to other dashboards. Links have options to include metadata and time ]]>
+<![CDATA[ range. When viewing the summary tab on a panel with linked dashboards you'll have the option to select from linked dashboards. Note the release of this feature is in progress. All deployments are scheduled to have it by the end of the week. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#November_16.2C_2020</guid>
+<pubDate>Mon, 16 Nov 2020 01:00:00 +0000</pubDate>
+</item>
+<item>
+<title>November 13, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Search</link>
+<description>
+<![CDATA[ Update - Listen up, <a href="/manage/Partitions_and_Data_Tiers/Data_Tiers" title="Data Tiers">Data Tier</a> users! We’ve introduced a search modifier that simplifies searching Data Tiers in Sumo Logic. FYI, a search modifier is a new thing: it’s a system-defined field that tells our search system how to process a search. The _dataTier search modifier restricts a log search to a particular Data Tier. For more information, see <a href="/manage/Partitions_and_Data_Tiers/Searching_Data_Tiers" title="Searching Data Tiers">Searching Data Tiers</a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#search-data-tier</guid>
+<pubDate>Fri, 13 Nov 2020 18:45:46 +0000</pubDate>
+</item>
+<item>
+<title>November 13, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Security</link>
+<description>
+<![CDATA[ New - If you have multiple Sumo Logic accounts, we’ve got good news for you: we’ve introduced <a href="/manage/01Account_Usage/05Manage_Organization#Change_account_subdomain" title="Manage Organization">custom Sumo Logic subdomains</a>. By default, the subdomain in the URL for accessing Sumo Lo ]]>
+<![CDATA[ gic is “service”, like this:<br /> service.sumologic.com<br /> Multiple orgs with identical domain names can result in authentication headaches. Now, your account owner can replace the "service" subdomain for each of your orgs with a distinct subdomain. For example:<br /> west1.sumologic.com<br /> Then, the links that Sumo Logic generates, for example when you share queries or dashboards, will contain your custom subdomain. These subdomain-enabled links will direct the user to the correct account for authentication. <br /> When subdomains are enabled for an org, you’ll see your SAML SP-initiated login options on the Sumo Logic login page. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#subdomains</guid>
+<pubDate>Fri, 13 Nov 2020 18:45:46 +0000</pubDate>
+</item>
+<item>
+<title>November 13, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Apps</link>
+<description>
+<![CDATA[ New - The <a href="/03Send-Data/Collect-from-Other-Data-Sources/Collect_AWS_Lambda_Logs_using_an_Extension" title="https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_AWS_Lambda_Logs_using_an_Extension">Sumo Logic AWS Lambda extension</a> enables you to get instant visibility into the health and performance of your mission-critical applications using AWS Lambda. With this extension and Sumo Logic's continuous intelligence platform, you can now ensure that all your Lambda functions are running as expected by analyzing function, platform, and extension logs to quickly identify and remediate errors and exceptions.</link> ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#November_13.2C_2020</guid>
+<pubDate>Fri, 13 Nov 2020 12:55:00 +0000</pubDate>
+</item>
+<item>
+<title>November 05, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#November_05.2C_2020</link>
+<description>
+<![CDATA[ New - We're thrilled to announce our new Cloud-to-Cloud Integration Framework.<br />The Cloud-to-Cloud Integration framework is an extensible system for running fully hosted, pull, and pub-sub based sources. Traditionally, Sumo Logic collection has been push-based, where we expose an endpoint to which data sources or collector agents push data to us. However, many SaaS applications and Cloud Providers expose event data that describe user, system/application activity which is critical for operations monitoring, security, and compliance use cases. The Cloud-to-Cloud Integration Framework is the system by which we provide integrations to these sources and SaaS applications.<br />This release comes with two new Sources, Okta and Netskope. Our existing apps are updated to work with these two new Sources. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#November_05.2C_2020B</guid>
+<pubDate>Thu, 05 Nov 2020 05:00:00 +0000</pubDate>
+</item>
+<item>
+<title>November 05, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Apps</link>
+<description>
+<![CDATA[ Update - We're happy to announce that the updated version of Sumo Logic App for Azure WebApp is compatible with the new Azure Monitor based Collection. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#November_05.2C_2020</guid>
+<pubDate>Thu, 05 Nov 2020 04:23:00 +0000</pubDate>
+</item>
+<item>
+<title>November 2, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Search_2</link>
+<description>
+<![CDATA[ Update - We added a note today that the Lookup Tables feature is not yet available in Montreal. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#UpdatetoLookups2020</guid>
+<pubDate>Mon, 02 Nov 2020 21:07:54 +0000</pubDate>
+</item>
+<item>
+<title>October 30, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Security</link>
+<description>
+<![CDATA[ New - We’re pleased to announce a new <a href="https://help.sumologic.com/manage/users-roles/Manage-Roles/05-Role-Capabilities"><u>role capability</u></a> that allows a Sumo Logic admin to limit the ability of users to create Access Keys. Currently, all Sumo Logic users can create Access Keys ]]>
+<![CDATA[ on the Preferences page. (<a href="https://help.sumologic.com/manage/Security/Access-Keys"><u>Access Key</u></a> allow a user to register collectors and to use Sumo Logic APIs.) With the new Create Access Keys capability, you can limit the ability to create Access Keys to only those roles that require it. Note that, with this update, all roles in your Sumo account have the Create Access Keys capability. To restrict access, your Sumo Logic administrator can remove the capability from roles that do not require it. </p> New - We’ve released a new security policy you can use to set a maximum timeout for Sumo Logic UI web sessions. Sumo Logic users can set their web session timeout on the Preferences page, up to a maximum of 7 days. If you are a Sumo Logic admin with the Manage Organizational Settings role capability, you can now specify the maximum web session timeout period that users in your org can select. For more information, see <a href="https://help.sumologic.com/manage/Security/Set_a_Maximum_Web_Session_Timeout"><u>Set a Maximum Web Session Timeout</u></a>. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_30.2C_2020</guid>
+<pubDate>Fri, 30 Oct 2020 23:00:47 +0000</pubDate>
+</item>
+<item>
+<title>October 28, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_28.2C_2020</link>
+<description>
+<![CDATA[ Update - Update - Just wanted to let you know that we've made an underlying change to our XML Parsing library for parsing XML-formatted logs. The following minor behavioral chances will change how results are returned from parsing XML log: 1. Empty nodes will be returned as self closing tags 2. Extra spaces in XML tags will be trimmed. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_28.2C_2020</guid>
+<pubDate>Thu, 29 Oct 2020 02:39:00 +0000</pubDate>
+</item>
+<item>
+<title>October 23, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_23.2C_2020</link>
+<description>
+<![CDATA[ Update - We have rolled out audit logging support for Monitors. Create, read, update, and delete operations of Monitors are logged in the Audit Event Index.<br />New - We’re happy to announce the Windows JSON App based on the JSON event log format and provides insight into the operations of the Windows system operation and events so that you can better manage and maintain your environment. The Windows JSON App is based on the JSON Windows event log format and consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, User Activity, and Applications.<br />New - Active Directory JSON assists you in monitoring the Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format. The app includes predefined searches and dashboards that provide user activity into your environment for real-time analysis of overall usage. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_23.2C_2020</guid>
+<pubDate>Fri, 23 Oct 2020 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>October 21, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_21.2C_2020</link>
+<description>
+<![CDATA[ Update - Webhook payload variables need to be in mustache format. You do this by wrapping each variable in double curly brackets, like {{variable}}. In February 2018 we introduced this format. We did not deprecate the previous format using a dollar sign, like $variable. Going forward, we will only support mustache format.<br />The US1 and US2 deployments are scheduled to have this update next week. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_21.2C_2020B</guid>
+<pubDate>Wed, 21 Oct 2020 14:36:00 +0000</pubDate>
+</item>
+<item>
+<title>October 21, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_21.2C_2020</link>
+<description>
+<![CDATA[ New -We made some nice changes to our approach to disabling metric sources that generate too many unique time series. Instead of completely disabling a noisy metric source, we take a more fine-grained approach by dropping the offending dimension or dimensions. Also, we’ve implemented a global limit for unique time series, across all your metric sources. Finally, we’ve increased the limit of unique time series a Logs-to-Metrics rule can produce. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_21.2C_2020</guid>
+<pubDate>Wed, 21 Oct 2020 14:36:00 +0000</pubDate>
+</item>
+<item>
+<title>October 20, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_20.2C_2020</link>
+<description>
+<![CDATA[ New - We’re happy to announce the release of new and improved Lookup Tables. We’ve improved performance, increased the allowable table size, and made Lookup Tables easier to create and manage. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_20.2C_2020</guid>
+<pubDate>Wed, 21 Oct 2020 03:03:00 +0000</pubDate>
+</item>
+<item>
+<title>October 19, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_19.2C_2020</link>
+<description>
+<![CDATA[ New - Jira and Opsgenie webhook connections are now available. Now you can create Jira issues and send alerts to Opsgenie that act as a dispatcher and determines the right people to notify. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_19.2C_2020</guid>
+<pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
+</item>
+<item>
+<title>October 08, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Apps</link>
+<description>
+<![CDATA[ New - We’re pleased to announce the JMX App that allows you to analyze and gain insights about Java applications in Kubernetes and Non-Kubernetes environment. The dashboards provide a quick glance at various deployment metrics like memory, CPU, GC performance, and thread behavior, so you can trou ]]>
+<![CDATA[ bleshoot unexpected behavior in your Java environment and the applications running in it. New - The Nginx ULM App helps you monitor webserver activity in Nginx for both Kubernetes and Non-Kubernetes environment. The preconfigured dashboards provide information about site visitors, including the loc ]]>
+<![CDATA[ ation of visitors, devices/operating systems, and browsers used; and information about server activity, including bots observed and error information. New - The Nginx Ingress ULM App helps you monitor webserver activity in Nginx Ingress Controller for both Kubernetes and Non-Kubernetes environment. The dashboards provide information about site visitors, including the location of visitors, devices/operating systems, and browsers used; and information about server activity, including bots observed and error information. New - The Redis App monitors the state of the database cluster in Kubernetes and Non-Kubernetes environment. The dashboards provide information about cluster status, resource usage, commands running, and cache hit rate. You can easily determine the health of the cluster by just a glance at the dashboards. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_8.2C_2020</guid>
+<pubDate>Thu, 08 Oct 2020 08:27:00 +0000</pubDate>
+</item>
+<item>
+<title>October 08, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Security</link>
+<description>
+<![CDATA[ New - We’re excited to announce the Software Development Optimization solution that helps you to increase release velocity, improve reliability, and comprehensively monitor your software development pipelines with industry-leading metrics and actionable insights generated automatically from development tools such as Jira, GitHub, Jenkins, PagerDuty, Bitbucket, Opsgenie, and more. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_6.2C_2020</guid>
+<pubDate>Thu, 08 Oct 2020 09:12:34 +0000</pubDate>
+</item>
+<item>
+<title>October 05, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Security</link>
+<description>
+<![CDATA[ New - We’re excited to announce the general availability of our Observability Solution will be rolling out in the next 48 hours! This feature-rich solution expands to new environments like Kubernetes, and includes tools like Transaction Tracing that work together to ensure you are able to efficiently monitor, troubleshoot, and diagnose issues. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#October_5.2C_2020</guid>
+<pubDate>Tue, 06 Oct 2020 04:00:34 +0000</pubDate>
+</item>
+<item>
+<title>September 30, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Security</link>
+<description>
+<![CDATA[ Update - We’re pleased to inform you the availability of additional <a href="https://help.sumologic.com/manage/Security/Set-the-Password-Policy">password policy</a> options as well as the updates to the password forms. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#September_30.2C_2020</guid>
+<pubDate>Wed, 30 Sep 2020 03:32:34 +0000</pubDate>
+</item>
+<item>
+<title>September 14, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Apps</link>
+<description>
+<![CDATA[ New - We’re pleased to inform you that a new collection process to export metrics from <a href=https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_from_VMware_vRealize/Collect_metrics_from_VMware_vRealize_Operations_Manager>vRops</a> is now available. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#September_14.2C_2020</guid>
+<pubDate>Mon, 14 Sep 2020 19:15:34 +0000</pubDate>
+</item>
+<item>
+<title>September 10, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Manage</link>
+<description>
+<![CDATA[ New - Participating in Sumo Logic beta programs just got easier. Now, your Account Owner can <a href="https://help.sumologic.com/manage/01Account_Usage/Beta_Participation_Opt-In">opt-in</a> to our beta terms and conditions from the Account page in the Sumo UI. You can do the paperwork once, and get access to beta features faster. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#September_10.2C_2020</guid>
+<pubDate>Thu, 10 Sep 2020 22:42:34 +0000</pubDate>
+</item>
+<item>
+<title>September 03, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#Apps</link>
+<description>
+<![CDATA[ Update - <a href="https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Auto-Subscribe_AWS_Log_Groups_to_a_Lambda_Function">Auto-Subscribe AWS Log Groups to a Lambda Function integration</a> is updated with configurable delay and support for filtering log groups using tags.</link> ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#September_3.2C_2020</guid>
+<pubDate>Thu, 03 Sep 2020 14:00:00 +0000</pubDate>
+</item>
+<item>
+<title>September 01, 2020</title>
+<link> https://help.sumologic.com/Release-Notes/Service-Release-Notes#Solutions</link>
+<description>
+<![CDATA[ New - The <a href="https://help.sumologic.com/Solutions/AWS_Observability_Solution">AWS Observability Solution</a> simplifies the monitoring and troubleshooting of your AWS cloud infrastructure. Switching across multiple AWS accounts, regions and services to understand service health? Get intuitive ]]>
+<![CDATA[ views and search capabilities across your AWS hierarchies with our AWS Observability Solution. Get real-time insight in minutes with over 40 out-of-the-box dashboards.​​​​​​New - <a href="https://help.sumologic.com/Solutions/AWS_Observability_Solution/Root_Cause_Explorer">Root Cause Exp ]]>
+<![CDATA[ lorer</a> is an AWS Observability add-on that helps your on-call staff, DevOps, and infrastructure engineers accelerate troubleshooting and root cause isolation for incidents in their apps and micro services running on AWS. Root Cause Explorer helps you correlate unusual spikes also known as Events of Interest (EOIs) in AWS CloudWatch metrics, using the context associated with the incident.&nbsp; New - We are excited to announce the release of the <a href="https://help.sumologic.com/Metrics/Metric-Queries-and-Alerts/03Metrics_Operators/filter">Metrics filter operator</a>. You can use the filter operator to limit the results returned by a metric query. There are several ways you can restrict results whether by aggregation function, or on how many times the value of individual data points meet a value condition over a particular duration.</p> Update - We’ve updated the <a href="https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Host-Metrics-Source"><u>Host Metrics Source</u></a> to improve your metrics query experience. We’ve added a new dimension to the network interface metrics that the source collects: description. So, now you can query network interface metrics by the network interface description. Update - Global Intelligence for AWS CloudTrail is now <a href="https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/">Global_Intelligence_for_AWS_CloudTrailGlobal Intelligence for AWS CloudTrail SecOps</a>. You can detect potentially malicious configuration changes in your AWS account by comparing AWS CloudTrail events in your account against a cohort of AWS customers. CloudTrail events are curated from AWS penetration tests and operational best practices. We’ve reduced false positives by filtering out AWS CloudTrail events from legitimate cloud services including AWS itself and CloudHealth by VMware. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#September_1.2C_2020</guid>
+<pubDate>Tue, 01 Sep 2020 14:46:51 +0000</pubDate>
+</item>
+<item>
+<title>August 21, 2020</title>
+<link> https://help.sumologic.com/Release-Notes/Service-Release-Notes#Apps</link>
+<description>
+<![CDATA[ New - We're pleased to announce the <a href="/07Sumo-Logic-Apps/08App_Development/Artifactory/02-Collect_Logs_for_Artifactory_7" title="https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Artifactory/02-Collect_Logs_for_Artifactory_7">Artifactory 7 Logs</a> support in the Artifactory App. You can <a href="/05Search/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library" title="https://help.sumologic.com/05Search/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library">Install the App</a> by selecting the desired version from dropdown.​​​​​​ ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#August_21.2C_2020 </guid>
+<pubDate>Fri, 21 Aug 2020 12:00:00 +0000</pubDate>
+</item>
+<item>
+<title>August 14, 2020</title>
+<link>https://help.sumologic.com/Release-Notes/Service-Release-Notes#August_14.2C_2020</link>
+<description>
+<![CDATA[ New - We're pleased to announce the etcd3 support in the Kubernetes Control Plane App which provides immediate visibility into etcd3 health, cache statistics, resource usage, and etcd3 logs for quick analysis. On account of metrics renaming in 1.16, the <a href="/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes_Control_Plane" title="https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes_Control_Plane">Kubernetes Control Plane</a>App is now available in the below two versions:​​​​​​<br/>Kubernetes 1.16 or later. <br/>Kubernetes 1.15 or earlier. ]]>
+</description>
+<guid>https://help.sumologic.com/Release-Notes/Service-Release-Notes#August_14.2C_2020</guid>
+<pubDate>Fri, 14 Aug 2020 16:30:00 +0000</pubDate>
+</item>
+</channel>
+</rss>

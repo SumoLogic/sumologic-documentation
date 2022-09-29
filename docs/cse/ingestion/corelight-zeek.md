@@ -38,7 +38,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 
 ### Configure a Syslog Source
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 1. Navigate to the Installed Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 
@@ -67,7 +67,7 @@ In this step, you configure a Sumo Logic Ingest Mapping in CSE for the source ca
 1. On the **Create Sumo Logic Mapping** popup:
     1. **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector in [Step 1](#step-1-configure-collection). 
     1. **Format**. Enter *Bro/Zeek JSON.*  
-    1. **Event ID**. *{\_path}.*  
+    1. **Event ID**. *{_path}.*  
         ![corelight-edit-mapping.png](/img/cse/corelight-edit-mapping.png)
 1. Click **Create** to save the mapping.
 

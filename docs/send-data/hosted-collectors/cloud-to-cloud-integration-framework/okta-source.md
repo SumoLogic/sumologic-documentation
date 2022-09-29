@@ -10,7 +10,7 @@ keywords:
 The Okta Source provides a secure endpoint to receive event data from the Okta [System Log API](https://developer.okta.com/docs/reference/api/system-log/) and [Users API](https://developer.okta.com/docs/reference/api/users/).
 It securely stores the required authentication, scheduling, and state tracking information.
 
-This Source is not available in the [Fed deployment] (/APIs/Troubleshooting-APIs/Deployments-and-Sumo-Logic-Endpoints). Use the [legacy collection method for Okta] (docs/integrations/saml/Okta/Collect_logs_for_Okta).
+This Source is not available in the [Fed deployment](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints). Use the [legacy collection method for Okta](/docs/integrations/saml/Okta#Collecting-logs-for-Okta).
 
 ## Okta API rate limits
 
@@ -51,7 +51,7 @@ When you create an Okta Source, you add it to a Hosted Collector. Before creatin
 
 To configure an Okta Source:
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Okta**.
 

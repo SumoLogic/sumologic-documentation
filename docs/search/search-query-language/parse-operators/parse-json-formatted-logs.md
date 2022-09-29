@@ -1,8 +1,9 @@
 ---
 id: parse-json-formatted-logs
+title: Parse JSON Formatted Logs
 ---
 
-# Parse JSON Formatted Logs
+
 
 The JSON operator allows you to extract values from JSON logs with most [JSONPath](http://goessner.net/articles/JsonPath/) expressions. See the [supported JSONPath syntax elements](#supported-jsonpath-syntax-elements) below.
 
@@ -40,7 +41,7 @@ that can create the parse expression for a specific JSON key for you.
 The following examples use this sample log message:
 
 ```
-2014-03-11 15:00:42,611 -0700 INFO [hostId=prod-search-6] 
+2014-03-11 15:00:42,611 -0700 INFO [hostId=prod-search-6]
 [explainJsonPlan.stream] {"module":"stream","logMessage":"exiting search","sessionId":"90D97000","customerId": "00B12CD0"
 ...
 {
@@ -48,7 +49,7 @@ The following examples use this sample log message:
     "2014-03-11T23:00:00:000-07:00\/2014-03-12T05:00:00.000-07:00",
     "2014-03-12T05:00:00.000-07:00\/2014-03-12T11:00:00.000-07:00"],
     "meta":{
-    "type": 
+    "type":
     "timestamps",
     "version": "1"
 }
@@ -91,8 +92,8 @@ When using the [auto option](#json-auto-option) the keys are not case sensitive.
 The JSON operator allows you to extract a single, top-level field. For example, to extract `accountId`:
 
 ```sql
-_index=audit_events 
-| json "accountId" 
+_index=audit_events
+| json "accountId"
 | fields accountId
 ```
 
@@ -105,8 +106,8 @@ produces results like:
 You can also extract multiple fields in a single operation. For example, to extract `accountId` and `eventName`:
 
 ```sql
-_index=audit_events 
-| json "accountId", "eventName" 
+_index=audit_events
+| json "accountId", "eventName"
 | fields accountId, eventName
 ```
 
@@ -179,7 +180,7 @@ You can use wildcard (\*) to access the array elements in a JSON. For example, y
 
 ![json wildcard example.png](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/json-wildcard-example.png)
 
-`_sourceCategory=O365* 
+`_sourceCategory=O365*
 | json "Actor[*].Type" as Actortype`
 
 The result of the query would look like this:
@@ -189,10 +190,10 @@ The result of the query would look like this:
 Next, if required, you can use the array elements to perform additional operations. For example, you can find the max of Type for a CreationTime and Id using this query:
 
 ```sql
-_sourceCategory=O365* 
-| json field=_raw "CreationTime", "Id" 
-| json "Actor[*].Type" as Actortype 
-| extract field=ActorType"(\<Typ\>\d+)" multi 
+_sourceCategory=O365*
+| json field=_raw "CreationTime", "Id"
+| json "Actor[*].Type" as Actortype
+| extract field=ActorType"(\<Typ\>\d+)" multi
 | max(type) by CreationTime, Id
 ```
 
@@ -240,7 +241,7 @@ Example:
 
 **\* \| json auto keys**
 
-References specific keys in json. The keys are not case sensitive with the **auto** option. The keys can be renamed (aliased) using **as**. 
+References specific keys in json. The keys are not case sensitive with the **auto** option. The keys can be renamed (aliased) using **as**.
 
 Example:
 
@@ -328,13 +329,13 @@ With the **extractarrays** option, **json auto** yields these field-value pa
 1. The keys are not case sensitive with the **auto** option.
 1. Spaces in field names are automatically reformatted to underscores.
 1. **json auto** works by searching for json blobs beginning at the end of the message. Most logs begin with a preamble, such as a timestamp, then the json blob. In cases where content appears at the end of the message *after* the json blob, the extraction could fail.  
-      
+
     Having the json blob at the end of the message is recommended. Having it in the middle of the message could cause extraction failure.
 
 1. Fields extracted using json auto need not be referenced explicitly in order to be used later in the query. For example, the user does not need to do this:
 
     ```sql
-    * | json auto keys "username" 
+    * | json auto keys "username"
     | count by username
     ```
 
@@ -361,14 +362,14 @@ With the **extractarrays** option, **json auto** yields these field-value pa
     For example, this will not work:
 
     ```sql
-    * | json auto 
+    * | json auto
     | count by users[2].address.street
     ```
 
     But this will:
 
     ```sql
-    * | json auto 
+    * | json auto
     | count by %users[2].address.street
     ```
 
@@ -398,15 +399,15 @@ This is only a warning message to inform you that at least one log returned in t
 Use the [nodrop](parse-nodrop-option.md) option to prevent this optimization. For example, the following query is looking for the key `event` and it has specified not to drop messages that don't have this key:
 
 ```sql
-_sourceCategory="nginx" 
-| json "event" nodrop 
+_sourceCategory="nginx"
+| json "event" nodrop
 ```
 
 You can remove the warning about the key not being found by specifying the key(s) you need in the scope of the query, like this:
 
 ```sql
-_sourceCategory="nginx" "event" 
-| json "event" 
+_sourceCategory="nginx" "event"
+| json "event"
 ```
 
 Since `event` is specified in the scope of the query, the json operator will only get logs that have `event` in them.

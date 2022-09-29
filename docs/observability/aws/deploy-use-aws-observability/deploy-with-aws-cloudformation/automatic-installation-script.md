@@ -7,7 +7,7 @@ description: Sumo Logic provides POSIX and powershell scripts to trigger the Clo
 
 Sumo Logic provides [POSIX](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOPosix.sh) and [powershell](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOWin.ps1) scripts to trigger the Cloud Formation template for creating a stack to deploy AWS Observability Solution.
 
-This is a simplified method of deploying AWS Observability using default parameters with just one quick command. Use it for a quick start or when you are happy with the defaults (see [table below](#Appendix-I)). For more advanced use cases, when any of the default needs to be adjusted, please fall back to  [Terraform](docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform.md) or [CloudFormation](docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/index.md) installation steps.
+This is a simplified method of deploying AWS Observability using default parameters with just one quick command. Use it for a quick start or when you are happy with the defaults (see [table below](#Appendix-I)). For more advanced use cases, when any of the default needs to be adjusted, please fall back to  [Terraform](docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform.md) or [CloudFormation](docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) installation steps.
 
 
 ## Prerequisite
@@ -22,8 +22,8 @@ AWS CLI should be pre-installed on the system where the script is supposed to be
 
 The script takes two inputs:
 
-1. **SUMO ACCESS ID** - Provide the Sumo Access Id from your respective Sumo Logic Account where you want to install AWS Observability Solution. See [Create an access key](/docs/Manage/Security/Access-Keys#Create-an-access-key) in the _Access Keys_ topic for more information.
-2. **SUMO ACCESS KEY** - Provide the Sumo Access Key from your respective Sumo Logic Account where you want to install AWS Observability Solution. See [Create an access key](/docs/Manage/Security/Access-Keys#Create-an-access-key) in the _Access Keys_ topic for more information.
+1. **SUMO ACCESS ID** - Provide the Sumo Access Id from your respective Sumo Logic Account where you want to install AWS Observability Solution. See [Create an access key](/docs/manage/Security/Access-Keys#Create-an-access-key) in the _Access Keys_ topic for more information.
+2. **SUMO ACCESS KEY** - Provide the Sumo Access Key from your respective Sumo Logic Account where you want to install AWS Observability Solution. See [Create an access key](/docs/manage/Security/Access-Keys#Create-an-access-key) in the _Access Keys_ topic for more information.
 
 **AWS_PROFILE** can be set as an environment variable from the command line before executing the script. If it is not set, the “default” aws profile will be used.
 

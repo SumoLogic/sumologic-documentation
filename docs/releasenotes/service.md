@@ -7,10 +7,43 @@ description: Looking for more information about new features in the Sumo Logic S
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Service Release Notes for the current year are listed here. If you need to see previous Service Release Notes, check the [Archive](docs/releasenotes/archive/index.md).
+Service Release Notes for the current year are listed here. If you need to see previous Service Release Notes, check the [Archive](docs/releasenotes/archive).
 
 ---
-### September 12, 2022 (Alerts)
+## September 27, 2022 (Metrics)
+
+New - We're happy to announce two new metrics operators:
+
+* [ewma](docs/metrics/metric-queries-alerts/operators.md#ewma)—Computes an exponentially weighted moving average on a stream of metrics. This allows you to smooth out short-term fluctuations (outliers) and display long-term trends.
+* [where](docs/metrics/metric-queries-alerts/operators.md#where)—Allows you to filter data points by value. 
+
+---
+## September 27, 2022 (Observability)
+
+Update - We are announcing a minor update of the AWS Observability 2.5.1. This contains changes required due to the end of support for Node.js 12.x in the AWS Lambda as announced [here](https://aws.amazon.com/blogs/developer/announcing-the-end-of-support-for-node-js-12-x-in-the-aws-sdk-for-javascript-v3/) by AWS. As part of this update, the Node.js runtime environment for AWS Observability Lambda functions has been updated to 16.x. For more information on updating the AWS Observability to the latest version, see [Update AWS Observability Stack](docs/observability/aws/deploy-use-aws-observability/update-aws-observability-stack.md).
+
+---
+## September 22, 2022 (Collection)
+
+Update - Good news! We've increased the number of Cloud-to-Cloud Sources that customers with paid Sumo Logic subscriptions can have, from 20 to 50. For users of free accounts, the limit remains 20 Cloud-to-Cloud Sources. For more information, see [Cloud-to-Cloud Integration Framework](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/index.md).
+
+## September 22, 2022 (Metrics)
+Update - We've updated the release note published on [August 30, 2022](#august-30-2022-metrics), which incorrectly stated that the timeslice metrics operator had been released.
+
+---
+## September 19, 2022 (Security)
+
+Update - We've improved out Access Key UI to make it easy to spot Access Keys that haven't been used lately. Now the Access Keys management page displays the date and time an Access Key was last used to make a request to an API endpoint. For more information, see [Access Keys](docs/manage/security/access-keys.md) .
+
+In a future update, Sumo Logic will, by default, automatically disable Access Keys that have not been used for 30 days. Your Sumo Logic admin will be able to configure the period of time before an unused key will be disabled.  
+
+---
+## September 15, 2022 (Apps)
+
+Update - GitHub Advanced Security dashboards are now available for the Sumo Logic App for GitHub. These new dashbaords include Code Scanning Alerts, Pushes, Secret Scanning Alerts, Security and analyses and Repository Vulnerability alerts.
+
+---
+## September 12, 2022 (Alerts)
 
 New - We’re happy to announce the release of Alert Grouping, which allows you to generate more than one alert from a given monitor by specifying a group condition on one or more fields. For example, rather than creating multiple monitors for each `service`, you could create one single monitor that notifies you when some metric (i.e., CPU utilization, error count) goes above the threshold for a given `service`. [Learn more](docs/alerts/monitors/alert-grouping.md).
 
@@ -18,11 +51,35 @@ New - Configurable Resolution Window for Logs allows more quickly resolve alerts
 
 New - You can now access your monitor playbook as a template variable, `{{playbook}}`. You can reference this template variable to customize your notification payloads similar to any other template variable. [Learn more](docs/alerts/alert-variables.md).
 
+---
+## September 9, 2022 (Apps)
+
+New - LambdaTest allows you to analyze your testing behavior and error trends. LambdaTest is a continuous quality testing cloud platform that helps developers and testers ship code faster. The [LambdaTest](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/LambdaTest) platform provides secure, scalable, and insightful test orchestration for customers at different points in their DevOps (CI/CD) lifecycle.
+
+New - we’re happy to announce the release of the [Sumo Logic App for AWS Cost Explorer](docs/integrations/amazon-aws/cost-explorer.md), which allows you to visualize, understand, and manage your AWS costs and usage over time.
+
+With the Sumo Logic App for AWS Cost Explorer, you can use our out-of-the-box dashboards as well as filtering and grouping capabilities to dive deeper into your cost and usage data and generate custom insights. Gain a better understanding of your cost trends and see detailed information about the costs and usage associated with your top cost-accruing AWS accounts, regions, services, and operations.
+
+Update - We are happy to announce the release of a new Explore Hierarchy for Database [Application Components](docs/observability/app-components.md), together with the support of related Database Entities in Entity Inspector. This functionality allows you to organize your data in a structured hierarchy and utilize the database dashboards available out-of-the-box from App Catalog. Currently, the following Database engines are supported by this feature:
+
+* [Cassandra](docs/integrations/databases/cassandra.md)
+* [Couchbase](docs/integrations/databases/couchbase.md)
+* [Elasticsearch](docs/integrations/databases/elasticsearch.md)
+* [MongoDB](docs/integrations/databases/mongodb.md)
+* [MySQL](docs/integrations/databases/mysql.md)
+* [PostgreSQL](docs/integrations/databases/postgresql.md)
+* [Redis](docs/integrations/databases/redis.md)
+* [SQL Server](docs/integrations/microsoft-azure/sql-server.md)
+* [MariaDB](docs/integrations/databases/mariadb.md)
+* [Memcached](docs/integrations/databases/memcached.md)
+* [Oracle](docs/integrations/databases/oracle/index.md)
+
+If you already use one of the above apps, you will need to reinstall it to benefit from the newly added functionality.
 
 ---
 ## September 8, 2022 (Traces)
 
-New - we're happy to share extended coverage for [Real User Monitoring (RUM)](/docs/apm/rum), our solution that provides insight into your users' end-to-end browser experience interacting with your web apps. New RUM capabilities include:
+New - we're happy to share extended coverage for [Real User Monitoring (RUM)](/docs/apm/real-user-monitoring), our solution that provides insight into your users' end-to-end browser experience interacting with your web apps. New RUM capabilities include:
 
 * New dashboard panels for the following metrics:
    * XHR timing
@@ -39,7 +96,24 @@ New - we're happy to share extended coverage for [Real User Monitoring (RUM)](/d
 
 This new functionality requires RUM script in version 4 or higher (`https://rum.sumologic.com/sumologic-rum-v4.js`). Please ensure you are using the correct version in your pages. For automatic updates, use `https://rum.sumologic.com/sumologic-rum.js`.
 
+---
+## August 30, 2022 (Metrics)
 
+We're delighted to announce the availability of these new operators:
+
+* [stddev](docs/metrics/metric-queries-alerts/operators.md#stddev)—Calculates the standard deviation of the metrics values that match the query.
+* [in](docs/metrics/metric-queries-alerts/operators.md#in)—You can use this operator in a metrics query selector as shorthand for multiple OR conditions.
+
+---
+## August 25, 2022 (Collection)
+
+Update - We are pleased to announce that the following [Cloud-to-Cloud Integration Framework[docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework] sources are now available in Sumo Logic’s FedRAMP deployment:
+
+* [Crowdstrike](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source.md)
+* [Crowdstrike FDR](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source.md)
+* [Duo](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source.md)
+* [Sentinel One Mgmt API](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source.md)
+* [Proofpoint Tap](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source.md)
 
 ---
 ## August 17, 2022 (Search)
@@ -54,9 +128,9 @@ The new UI for creating and managing [Scheduled Views](/docs/manage/Scheduled-Vi
 ---
 ## August 5, 2022 (Apps)
 
-New - We’re happy to announce the release of The Sumo Logic App for [Host Metrics (EC2)](docs/integrations/amazon-aws/ec2-cloudwatch-metrics.md)). This App allows you to collect your EC2 instance metrics using Sumo Logic Installed Collector and display them using predefined search queries and Dashboards. The App provides Dashboards to analyze EC2 instance metrics for CPU, disk, memory, and network.
+New - We’re happy to announce the release of The Sumo Logic App for [Host Metrics (EC2)](docs/integrations/amazon-aws/ec2-cloudwatch-metrics.md). This App allows you to collect your EC2 instance metrics using Sumo Logic Installed Collector and display them using predefined search queries and Dashboards. The App provides Dashboards to analyze EC2 instance metrics for CPU, disk, memory, and network.
 
-Update - We are glad to update that the Sumo Logic App for [MongoDB Atlas](docs/integrations/databases/mongodb-atlas) now allows you to monitor database operations and performance KPIs and provides visibility into the security posture of your clusters.
+Update - We are glad to update that the Sumo Logic App for [MongoDB Atlas](/docs/integrations/databases/mongodb-atlas) now allows you to monitor database operations and performance KPIs and provides visibility into the security posture of your clusters.
 
 ---
 ## August 4, 2022 (Search)
@@ -102,7 +176,7 @@ New - Our `metricsfromtrace `and `rummetricsfromtrace` metrics have a new metada
 ---
 ## July 28, 2022 (Security)
 
-New - The [role capability](docs/manage/users-and-roles/roles/role-capabilities.md) we told you about [earlier](#july-18-2022-security) this month—**Download Search Results**—is now released. This capability, which grants the permission to download log search results, is enabled for all roles. Note that if you manage role capabilities using the Sumo Logic API or Terraform, you need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results.
+New - The [role capability](docs/manage/users-roles/roles/role-capabilities.md) we told you about [earlier](#july-18-2022-security) this month—**Download Search Results**—is now released. This capability, which grants the permission to download log search results, is enabled for all roles. Note that if you manage role capabilities using the Sumo Logic API or Terraform, you need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results.
 
 ---
 ## July 22, 2022 (Apps)
@@ -111,7 +185,7 @@ New - The Sumo Logic App for [AWS EC2](docs/integrations/amazon-aws/ec2-cloudwat
 
 Update - [Amazon Simple Notification Service](http://docs.aws.amazon.com/sns/latest/dg/welcome.html) (SNS) is a pub/sub messaging and mobile notifications service for coordinating the delivery of messages to subscribing endpoints and clients.
 
-The Sumo Logic App for [Amazon SNS](docs/integrations/amazon-aws) collects CloudTrail logs and CloudWatch metrics to provide insights into the operations and utilization of your SNS service. This includes tracking the most active topics, failures, errors, and geographical locations of SNS clients.
+The Sumo Logic App for [Amazon SNS](/docs/integrations/amazon-aws) collects CloudTrail logs and CloudWatch metrics to provide insights into the operations and utilization of your SNS service. This includes tracking the most active topics, failures, errors, and geographical locations of SNS clients.
 
 ---
 ## July 21, 2022 (Metrics)
@@ -122,7 +196,7 @@ Update - When you query high cardinality metrics, the results can be hard to rea
 ---
 ## July 18, 2022 (Security)
 
-Update - The week of July 25, 2022, we’ll be releasing a new [role capability](docs/manage/users-and-roles/roles/role-capabilities.md)—**Download Search Results**—that grants the permission to download log search results. This capability will be enabled for all roles. If you manage role capabilities using the Sumo Logic API or Terraform, when the new capability is released, you’ll need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results.
+Update - The week of July 25, 2022, we’ll be releasing a new [role capability](docs/manage/users-roles/roles/role-capabilities.md)—**Download Search Results**—that grants the permission to download log search results. This capability will be enabled for all roles. If you manage role capabilities using the Sumo Logic API or Terraform, when the new capability is released, you’ll need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results.
 
 ---
 ## July 15, 2022 (Apps)
@@ -145,7 +219,7 @@ New - We’re pleased to announce the release of the [GCP Metrics Source](docs/s
 ---
 ## July 13, 2022 (Manage)
 
-Update - We have renamed our default partition from “Default Continuous Partition” to “sumologic_default”. Now you can directly query the data stored in the default partition, where all data is ingested unless explicitly routed into another partition. Any APIs that reference the default partition by its previous name, “Default Continuous Partition”, should be updated to refer to “sumologic_default” instead. For more information, see [Search the Default Partition](/docs/manage/partitions-and-data-tiers/run-search-against-partition#Search-the-default-partition).  
+Update - We have renamed our default partition from “Default Continuous Partition” to “sumologic_default”. Now you can directly query the data stored in the default partition, where all data is ingested unless explicitly routed into another partition. Any APIs that reference the default partition by its previous name, “Default Continuous Partition”, should be updated to refer to “sumologic_default” instead. For more information, see [Search the Default Partition](/docs/manage/partitions-data-tiers/run-search-against-partition#Search-the-default-partition).  
 
 ---
 ## July 8, 2022 (Apps)
@@ -201,7 +275,7 @@ Update - The Sumo Logic Amazon RDS App dashboards provide visibility into your A
 ---
 ## 2022-07-04 (Alerts)
 
-Update -  We’re continuing to make [alerts and monitors](/docs/Alerts/Monitors) more customizable to give you control over how often you are notified. You can now:
+Update -  We’re continuing to make [alerts and monitors](/docs/alerts/monitors) more customizable to give you control over how often you are notified. You can now:
 
 * **Visually indicate Alerting Query**: For Metrics monitors with multiple query rows, we now visually indicate the alerting query row with a notification bell icon.
 * **Improved JSON Validations for Connection Payloads**: We're enforcing stricter JSON validation during creation and updating of Connections to prevent errors that could cause notification failures in the future. There are two major validations that we have started enforcing:
@@ -224,12 +298,12 @@ Our updates support Security Reference Architecture (SRA)-compliant set up of:
 * Centralized logging of AWS Network Firewall and AWS WAF
 * AWS Firewall Manager
 
-New - We are happy to announce the release of [AWS Observability Installation Automation](docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/index.md). This release enables a simplified method of deploying AWS Observability using default parameters with just one quick command requiring only Sumo Access Id and Key. This method features POSIX and PowerShell scripts to trigger the Cloud Formation template for creating a stack to enable complete visibility into your AWS account infrastructure's health and reliability.
+New - We are happy to announce the release of [AWS Observability Installation Automation](docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation). This release enables a simplified method of deploying AWS Observability using default parameters with just one quick command requiring only Sumo Access Id and Key. This method features POSIX and PowerShell scripts to trigger the Cloud Formation template for creating a stack to enable complete visibility into your AWS account infrastructure's health and reliability.
 
 ---
 ## June 23, 2022 (Alerts)
 
-Update -  We’ve made [alerts and monitors](/docs/Alerts/Monitors) more customizable to give you control over how often you are notified. You can now:
+Update -  We’ve made [alerts and monitors](/docs/alerts/monitors) more customizable to give you control over how often you are notified. You can now:
 
 
 
@@ -267,7 +341,7 @@ Update - We’re happy to announce a new and improved [Time Series tab](/docs/me
 ---
 ## June 10, 2022 (Collection)
 
-New - Our [Cloud-to-Cloud Integration Framework](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/index.md) has two new Sources, [Netskope WebTx](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Netskope-WebTx): The Netskope WebTx API integration ingests Web Transaction logs from Netskope Event Steam and [Box](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework): The Box API integration ingests events from the Get Events API. It securely stores the required authentication, scheduling, and state tracking information.
+New - Our [Cloud-to-Cloud Integration Framework](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework) has two new Sources, [Netskope WebTx](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Netskope-WebTx): The Netskope WebTx API integration ingests Web Transaction logs from Netskope Event Steam and [Box](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework): The Box API integration ingests events from the Get Events API. It securely stores the required authentication, scheduling, and state tracking information.
 
 ---
 ## June 9, 2022 (Traces)
@@ -306,7 +380,7 @@ New - We're happy to announce that you can now instrument Lambda layers for Java
 ---
 ## May 20, 2022 (Alerts)
 
-Updated - We’re pleased to announce the availability of permissions for Monitors folders. This feature enables folder-level control of who can view, update, create, delete, and manage Monitors. For more information, see [Grant permissions to Monitors](/docs/Alerts/Monitors#Grant_permissions_to_Monitors_folders) folders.
+Updated - We’re pleased to announce the availability of permissions for Monitors folders. This feature enables folder-level control of who can view, update, create, delete, and manage Monitors. For more information, see [Grant permissions to Monitors](/docs/alerts/monitors#Grant_permissions_to_Monitors_folders) folders.
 
 This feature is not enabled by default. Contact Sumo Logic Support to have it enabled.
 
@@ -318,7 +392,7 @@ Update - We've improved your Sumo Logic app installation process and added guida
 ---
 ## May 11, 2022 (Alerts)
 
-New - The new default payloads are now available for the following connections using [new variables](docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+New - The new default payloads are now available for the following connections using [new variables](docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 
 
 
@@ -387,7 +461,7 @@ _index=sumologic_system_events _sourceCategory=alerts
 ---
 ## April 6, 2022 (Monitors)
 
-Update - The [alert history](/docs/Alerts/Monitors#Monitor_History) of a Monitor is now quickly accessible on a new tab of the details pane.
+Update - The [alert history](/docs/alerts/monitors#Monitor_History) of a Monitor is now quickly accessible on a new tab of the details pane.
 
 
 ---
@@ -453,12 +527,12 @@ Our [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/clo
 ---
 ## March 1, 2022 (Alerts)
 
-New - If you are using [Sumo Logic Cloud SOAR](https://www.sumologic.com/solutions/cloud-soar/), you can now integrate Monitors and Scheduled Searches with Cloud SOAR via a new [webhook connection](docs/manage/connections-and-integrations/webhook-connections/cloud-soar.md). This new capability allows you to send Alerts to Cloud SOAR to further process and operate on these incidents. The result is a rich and connected experience between your data residing in Sumo Logic and the security response capabilities within Cloud SOAR.
+New - If you are using [Sumo Logic Cloud SOAR](https://www.sumologic.com/solutions/cloud-soar/), you can now integrate Monitors and Scheduled Searches with Cloud SOAR via a new [webhook connection](docs/manage/connections-integrations/webhook-connections/cloud-soar.md). This new capability allows you to send Alerts to Cloud SOAR to further process and operate on these incidents. The result is a rich and connected experience between your data residing in Sumo Logic and the security response capabilities within Cloud SOAR.
 
 ---
 ## February 24, 2022 (Search)
 
-New - The [Search Query Language](/docs/Search/Search-Query-Language) has a new operator, [dedup](/docs/Search/Search-Query-Language/Search-Operators/dedup) allows you to:
+New - The [Search Query Language](/docs/Search/Search-Query-Language) has a new operator, [dedup](/docs/Search/Search-Query-Language/operators#dedup) allows you to:
 
 
 
@@ -469,12 +543,12 @@ New - The [Search Query Language](/docs/Search/Search-Query-Language) has a new 
 ---
 ## February 18, 2022 (Security)
 
-Update - We’ve eased the process of offboarding Sumo Logic users. Now, when you delete a user’s Sumo Logic account, you can transfer the user’s [Monitors](/docs/Alerts/Monitors) to another user, along with folders, searches, scheduled searches, scheduled views, monitors, and dashboards. For more information, see [Delete a User](docs/manage/users-and-roles/users/delete-user.md).
+Update - We’ve eased the process of offboarding Sumo Logic users. Now, when you delete a user’s Sumo Logic account, you can transfer the user’s [Monitors](/docs/alerts/monitors) to another user, along with folders, searches, scheduled searches, scheduled views, monitors, and dashboards. For more information, see [Delete a User](docs/manage/users-roles/users/delete-user.md).
 
 ---
 ## February 18, 2022 (Monitors)
 
-Update - The [Monitors page](/docs/Alerts/Monitors#Monitors_page) has a new shortcut to quickly view triggered alerts from a Monitor. Hover your cursor over the Status column of a Monitor and click the icon to open [Alert List](/docs/Alerts/Monitors/Alert-Response#Alert-List).
+Update - The [Monitors page](/docs/alerts/monitors#Monitors_page) has a new shortcut to quickly view triggered alerts from a Monitor. Hover your cursor over the Status column of a Monitor and click the icon to open [Alert List](/docs/alerts/monitors/Alert-Response#Alert-List).
 
 
 ---

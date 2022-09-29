@@ -4,7 +4,7 @@ id: add-dashboard-link
 
 # Add a Dashboard Link
 
-You can use the [tourl](../../search/search-query-language/search-operators/tourl.md) operator to link values in a dashboard to any other dashboard where you have View permissions. You can also pass dynamic values to these dashboards and searches based on a table entry.
+You can use the [tourl](../../search/search-query-language/operators#tourl) operator to link values in a dashboard to any other dashboard where you have View permissions. You can also pass dynamic values to these dashboards and searches based on a table entry.
 
 These in-query links provide convenient drill down capabilities for problem solving. For example, if you track user activity on your website in a dashboard, you can have a panel that provides summary statistics for each user, such as number of logins, as well as links to details that open searches or other dashboards with specific search and dashboard usage statistics.
 
@@ -26,7 +26,7 @@ Right-click the link to view the tab-options menu:
 If you don't see the menu it's not a supported link.
 
 * The URL must be from the same host.
-* The menu isn't available in full-screen mode. 
+* The menu isn't available in full-screen mode.
 
 ## Linking a Dashboard to another Dashboard
 
@@ -52,7 +52,7 @@ we want to put on the other dashboard:
     | avg(score) as avg_score by orgId
     ```
 
-1. Add a line to the end of your query using the [toURL](../../search/search-query-language/search-operators/tourl.md) operator. The following assigns the Dashboard URL to the name **Account Dashboard** and adds it to the field **org**. 
+1. Add a line to the end of your query using the [toURL](../../search/search-query-language/operators#tourl) operator. The following assigns the Dashboard URL to the name **Account Dashboard** and adds it to the field **org**.
 
     ```sql
     _sourceCategory=mycategory keyword
@@ -64,20 +64,20 @@ we want to put on the other dashboard:
 ## Customize filters from a query
 
 A Dashboard that is configured with filters can be provided with custom filter values through its URL.  
-  
-[Dashboard filters](../edit-dashboards/use-filters-dashboards.md) are in the format: **filters=\<filtername\>\*eq\*\<value\>**. For example, if you have a filter on the field **\_source** and that filter has a value of **CrowdStrike** your filter would be appended as:  
-  
+
+[Dashboard filters](../edit-dashboards/use-filters-dashboards.md) are in the format: `filters=<filtername>*eq*<value>`. For example, if you have a filter on the field `_source` and that filter has a value of **CrowdStrike** your filter would be appended as:  
+
 ```sql
 &filters=_source*eq*CrowdStrike
 ```  
-  
+
 The full dashboard URL and this filter would look like:  
-  
+
 ```
 https://service.sumologic.com/ui/dashboard.html?k=abcdefghi&f=&t=r&filters=_source*eq*CrowdStrike
 ```
 
-To apply a filter value through a query, use the [concat](../../search/search-query-language/search-operators/concat.md) operator to concatenate the custom value to the location in the URL where the filter value is located. Using the same query example from the previous section, we'll use the value of the **orgId** field as a filter value in the Dashboard URL.
+To apply a filter value through a query, use the [concat](/docs/search/search-query-language/operators#concat) operator to concatenate the custom value to the location in the URL where the filter value is located. Using the same query example from the previous section, we'll use the value of the **orgId** field as a filter value in the Dashboard URL.
 
 ```sql
 _sourceCategory=mycategory keyword
@@ -93,10 +93,10 @@ When the query runs the value from the field **orgId** will be concatenated (a
 
 Probably more common than linking a Dashboard to a Dashboard is linking a Dashboard to a search. You can use the linked Dashboard as a list of possible searches to help you investigate further by providing dynamic values as links.
 
-1. Build your search and include the dynamic value for your link, using both the [concat](../../search/search-query-language/search-operators/concat.md) and [urlencode](../../search/search-query-language/search-operators/urlencode.md) operators.
+1. Build your search and include the dynamic value for your link, using both the [concat](/docs/search/search-query-language/operators#concat) and [urlencode](/docs/search/search-query-language/operators#urlencode) operators.
 
     For example, to build a query that gives login activity for a user:
-    
+
     ```sql
     urlencode(concat(“_sourceCategory=login_events and ” , user)) as search_query
     ```
@@ -110,12 +110,12 @@ Probably more common than linking a Dashboard to a Dashboard is linking a Dash
     ```sql
     | format ("https://{YourURL}/ui/#/search/@%d,%d@%s",querystarttime(),queryendtime(),search_query) as search_query_link
     ```    
-    
+
     :::note
     This example uses the same time range as the main query, but you can do any other time range if needed. Also, you must replace `{YourURL} `with your URL.
     :::
 
-1. Create a hyperlink with the appropriate description using the [toURL](../../search/search-query-language/search-operators/tourl.md) operator.  For example:
+1. Create a hyperlink with the appropriate description using the [toURL](../../search/search-query-language/operators#tourl) operator.  For example:
 
     ```sql
     | tourl(search_query_link , "Click Here") as search_query_link
@@ -147,10 +147,9 @@ Clicking on the threatDetails link gives us the raw guard duty event associated 
 All this information can help your users investigate security incidents quickly and effectively.  To create this link, add the following snippet to your to the existing GuardDuty panel query.  Include the section at the end of your query:
 
 ```sql
-| urlencode(concat("_sourceCategory={SumoGuardDutysourceCategoryName} 
+| urlencode(concat("_sourceCategory={SumoGuardDutysourceCategoryName}
 | json field=_raw \"id\", \"type\",\"severity\" ,\"title\",\"description\", \"accountId\", \"resource.resourceType\", \"region\" | toint(severity) as sev | parse field=type \"*:*/*\" as threatPurpose, targetResource, threatName | where threatName = \"", threatName ,"\" and threatPurpose=\"",threatPurpose ,"\"")) as query
 |format("https://{yourSumoDashboardURL}/ui/index.html#section/search/@%d,%d@%s",queryStarttime(),queryendtime(),query) as url
 | tourl(url, threatName) as threatName
 | fields -query,url
 ```
-

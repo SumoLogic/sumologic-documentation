@@ -56,7 +56,7 @@ To configure collection, add an HTTP Source, get credentials for VMware Carbon B
 
 **To add an HTTP source for VMware Carbon Black EDR do the following:
 
-1. Add [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for VMware Carbon Black EDR. \
+1. Add [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for VMware Carbon Black EDR.
 
 
 
@@ -157,7 +157,7 @@ In Sumo, open a Live Tail tab and run a search to verify Sumo is receiving findi
 _sourceCategory="cb_edr_events" or _sourceCategory="cb_endpoint_standard_events"
 ```
 
-For more information, see [Live Tail](/docs/search/index.md/Live-Tail).
+For more information, see [Live Tail](/docs/search/Live-Tail).
 
 
 ### Sample Log Messages

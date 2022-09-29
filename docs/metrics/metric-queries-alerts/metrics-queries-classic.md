@@ -1,19 +1,19 @@
 ---
 id: metrics-queries-classic
 title: Metrics - Classic
-sidebar_label: Metrics - Classic
+sidebar_label: Metrics - Classic (Legacy)
 description: See information about the Classic metrics UI.
 ---
 
 This topic explains how to construct metrics queries and provides examples. 
 
 :::tip
-This topic has information about the Classic metrics UI. For information about the Metrics Explorer, the UI that relaces Classic metrics, see [Metrics Explorer](metrics-explorer.md).
+This topic has information about the Classic metrics UI. For information about the Metrics Explorer, the UI that replaces Classic metrics, see [Metrics Explorer](metrics-explorer.md).
 :::
 
 ## Structure of metrics queries
 
-To [create a metrics visualization](../metric-charts/create-metrics-visualization.md on the Metrics page, you can specify up to six metrics queries. Enter each query in a separate query text box. Query text boxes are added as needed, up to the maximum of six.
+To [create a metrics visualization](../metric-charts/create-metrics-visualization.md) on the Metrics page, you can specify up to six metrics queries. Enter each query in a separate query text box. Query text boxes are added as needed, up to the maximum of six.
 
 * Each metrics query must include one or more selectors (filters), which can be either of the following:
     * Sequence of space-separated `tag=value` pairs: `cluster=search node=search-1`
@@ -123,13 +123,13 @@ To narrow down your query specify a particular source host:
 1. Instead of an average we'll look at all source hosts from a particular group, in this case cqsplitter. ` metric=CPU_User _sourceHost=cqsplitter-*`  
 1. Specify the CPU use by user for node you want to track in the cluster.  
 ` metric=CPU_Sys _sourceHost=cqsplitter-*`  
-1. Now we'll use `along _sourceHost` to evaluate the summation expression for each \_sourceHost individually. ` #A + #B along _sourceHost`
+1. Now we'll use `along _sourceHost` to evaluate the summation expression for each _sourceHost individually. ` #A + #B along _sourceHost`
 
 ### Finding outages and creating a baseline
 
 Now that we have the basic idea, let’s do something more complex. Let’s say that you’re curious about the level of CPU usage by your applications in your system and you want to create a baseline average. 
    
-We’ll start with a metric, CPU user and the same \_sourceHost category, but we’ll create an average of the two and then a percentage.
+We’ll start with a metric, CPU user and the same _sourceHost category, but we’ll create an average of the two and then a percentage.
 
 1. Choose your metric for CPU usage by application and the source hosts you want to track: `metric=CPU_user _sourceHost=*`
 1. Take an average of that of that metric. `metric=CPU_user _sourceHost=* | avg`

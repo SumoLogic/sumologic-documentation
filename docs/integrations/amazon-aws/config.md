@@ -149,7 +149,7 @@ This section is optional, but recommended for better search performance.
 
 Due to the infrequent nature of AWS Config changes, Sumo Logic recommends creating a partition for logs. A partition will provide better search performance, especially if there is high data volume in your account.
 
-To create a partition, follow the instructions to [Create a Partition](/docs/manage/partitions-and-data-tiers/add-partition.md). Name the index **aws_config**. For the Routing Expression, enter a query that isolates messages from AWS Config, such as `_sourceCategory=aws_config`.
+To create a partition, follow the instructions to [Create a Partition](/docs/manage/partitions-data-tiers/create-edit-partition.md). Name the index **aws_config**. For the Routing Expression, enter a query that isolates messages from AWS Config, such as `_sourceCategory=aws_config`.
 
 ## Installing the AWS Config App
 
@@ -176,7 +176,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing AWS Config Dashboards
 
-This section describes the dashboards provided by the AWS Config app. For general information about dashboards, see [About Dashboards](/docs/dashboards/about-dashboards.md).
+This section describes the dashboards provided by the AWS Config app. For general information about dashboards, see [About Dashboards](/docs/dashboards/about).
 
 The AWS Config app is an older application, implemented when Sumo dashboards could not be toggled back and forth between Live and Interactive mode. For this reason, the app provides two versions of the AWS Config Overview dashboard, one that runs in Live mode, and one that runs in Interactive mode.
 

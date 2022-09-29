@@ -1,21 +1,17 @@
 ---
 id: word-list
 title: Word List
-hide_table_of_contents: true
+description: An alphabetized list of commonly used terms at Sumo Logic, including components and features of Sumo Logic, and other usage issues, such as punctuation and capitalization.
 ---
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
 
 :::caution
 
 &#128679; Under construction &#128679;
 :::
 
-This word list provides an alphabetized list of commonly used terms at Sumo Logic, including components and features of the Sumo Logic Web Application, and other usage issues, such as punctuation and capitalization. This is not a glossary. Here is the [Glossary](/docs/Get-Started/Glossary).
+This word list provides an alphabetized list of commonly used terms at Sumo Logic, including components and features of Sumo Logic, and other usage issues, such as punctuation and capitalization. This is not a glossary. Here is the [Glossary](/docs/get-started/glossary).
 
-See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design-system/style) provided by our UX team.
+<!--See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design-system/style) provided by our UX team.-->
 
 
 ## A
@@ -26,8 +22,6 @@ See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design
 
 **Ampersand (&).** Don't use for "and". Spell out.
 
-**Andre**. Casual user of Sumo who doesn't want to be bothered learning the query language. Wants to troubleshoot then get out of Sumo as fast as possible.
-
 **Anomaly Detection.** Always capitalize.
 
 **Apps.** When referring to a Sumo Logic App, capitalize. Otherwise, capitalization is not necessary. No need to spell out application.
@@ -35,16 +29,12 @@ See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design
 **Autocomplete.** One word, not two. The Sumo Logic feature is called Search Autocomplete.
 
 
-## B
-
-**Bento.** The Sumo UI redesign. Bento is never mentioned to customers. Always say "the new UI".
-
 
 ## C
 
 **Check box.** Check box is two words. Don't use checkbox.
 
-**Classic UI.** Use this term to distinguish the old UI to customers.
+**Classic UI.** Use this term to distinguish the old UI.
 
 **Click.** You click a UI element. Do not use "click on".
 
@@ -63,8 +53,6 @@ See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design
 
 **Data.** Data is plural. Use "data are", not "data is".
 
-**Data Panel.** Formerly Monitors. Capitalize Panel.  
-
 **Dimension**. Used interchangeably with tags.
 
 **Drill down.** Drill down, as in a menu, or other filtering feature is two words, not one.
@@ -72,7 +60,7 @@ See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design
 
 ## E
 
-**E.g., i.e., and etc.,** These abbreviations are parenthetical, which means they take a comma after. In general, don't use e.g., and i.e. Spell out "for example" instead.
+**E.g., i.e., and etc.,** These abbreviations are parenthetical, which means they take a comma after.
 
 **Email.** Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.  
 
@@ -81,31 +69,24 @@ See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design
 **Exclamation points ! .**  Use exclamation points only in warnings and greetings. Let your text convey the enthusiasm or importance of the statement. Don't make the reader wait until the exclamation point to find out the text is significant.
 
 
-## F
-
-**Facet.**
-
-**Field count.**
-
-
 ## G
 
 **GB and Gbit.** GB is the acronym for gigabytes. Gbit or Gb is the acronym for gigabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10GB or 15Gbit.)
 
 **Geolocation. **Geolocation is one word. It is not capitalized unless used at the beginning of a sentence.
 
-**Geo lookup.** The geo lookup operator is two words.
+**Geo lookup operator.** geo lookup is two words.
 
 
 ## H
 
-**Hash rules. **Hash rules replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it's fully hidden.
+**Hash rules.** Hash rules replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it's fully hidden.
 
 **Hibachi.** Project for content sharing and collaboration. Includes a new app catalog and app installation flow and a new library design.
 
-**Home Page. **Persistent tab in Bento, which services the Jiro and Hibachi projects by helping Andre get started and discover content more easily.
+**Home Page.** Persistent tab, which services the Jiro and Hibachi projects by helping users get started and discover content more easily.
 
-**Hosted Collectors. **Hosted Collectors don't require installation or activation, nor do they have physical requirements, since they're hosted in HTTP Source, an endpoint for receiving a file (or a batch of files) uploaded via a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Sources as you'd like to a single Hosted Collector.
+**Hosted Collectors.** Hosted Collectors don't require installation or activation, nor do they have physical requirements, since they're hosted in HTTP Source, an endpoint for receiving a file (or a batch of files) uploaded via a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Sources as you'd like to a single Hosted Collector.
 
 
 ## I
@@ -116,18 +97,9 @@ See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design
 
 **Installed Collector. **Installed Collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
 
-
 ## J
 
 **JavaScript.** Always use camelCase.
-
-**Jiro.** Overall UX initiative to help the Andre persona feel more at home with Sumo. Helping Andre help Andre. Includes parameterized search and home page.
-
-
-## K
-
-**Kathy. **Manager persona for Sumo. Doesn't use Sumo all that often, so less famous than Melinda and Andre.
-
 
 ## L
 
@@ -138,17 +110,13 @@ See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design
 
 ## M
 
-**Markdown. **Used in Text Panels, capitalize Markdown.
+**Markdown.** Used in Text Panels. Capitalize Markdown.
 
 **MB and Mbit. **MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
-
-**Melinda**. Expert/advanced user of Sumo who helps set up her team of Andres and creates content for them.
 
 **Menu.** When referring to a menu in the UI, use the word menu alone. Don't use drop-down menu, list, or selector.
 
 **Messages tab.** When referring to the Messages tab (where non-aggregate search results are displayed) the term Messages is capitalized.
-
-**Monitor.** (Obsolete.) Dashboard Monitors are now referred to as Panels. See Panel.
 
 **Multiline.** Should be one word, not two, or hyphenated.
 
@@ -167,9 +135,7 @@ See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design
 
 **Page.** When referring to a page in the UI, such as the Search page, use page. Don't use pane or tab. A tab appears inside a page. (Example: The Messages tab appears on the Search page.)
 
-**Panel.** Formerly called Monitors. Capitalize Panel.
-
-**Please.** Avoid using please. You're making recommendations on how to use software and services, it's not an inconvenience to the user.
+**Please.** Avoid using please. You're making recommendations on how to use software and services; it's not an inconvenience to the user.
 
 **Plugin.** Plugin is one word, not two, and no hyphen.
 
@@ -194,7 +160,7 @@ See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design
 
 **Search.** Search is not capitalized, unless you are referring to the Search page.
 
-**Search Autocomplete. **One word, not two. The Sumo Logic feature is called Search Autocomplete.
+**Search Autocomplete.** One word, not two. The Sumo Logic feature is called Search Autocomplete.
 
 **Setup vs Set up.** Setup as one word is a _noun_ or an _adjective_. Set up as two words is a _verb_. For example, "You can set up your Collector using the setup procedure."
 
@@ -219,7 +185,7 @@ Hosted Collectors can use:
 
 ## T
 
-**Tabs.** When referring to tabs in the Sumo Logic Web Application, be sure to capitalize each tab's name, but not tab. (Examples: Welcome tab, Search tab, Status tab, Collectors, Users, Account).
+**Tabs.** When referring to tabs in Sumo Logic, be sure to capitalize each tab's name, but not tab. (Examples: Welcome tab, Search tab, Status tab, Collectors, Users, Account).
 
 **Text box.** Use text box, not field. A field is a special part of a query.
 
@@ -240,17 +206,12 @@ Hosted Collectors can use:
 **Time zone.** Time zone is two words, not one.
 
 
-## V
-
-**Very.** Avoid the word "very" because it doesn't add any additional information to the user.
-
-
 ## W
 
 **Web Application.** Avoid using where possible. "Sumo" or "our product" should be sufficient. If you need to refer to our web application to distinguish from API, do so. Don't capitalize.
 
 **Website.** Website or websites is one word.
 
-**Where operator.** A conditional operator that can precede or follow another operator. Example combinations include "where x matches y", "where x in (a, b, c)", "where x not in (a, b, c)" and "where a > 1 and b / 4 &lt; sqrt(x)".
+**Where operator.** A conditional operator that can precede or follow another operator. Example combinations include `where x matches y`, `where x in (a, b, c)`, `where x not in (a, b, c)` and `where a > 1 and b / 4 < sqrt(x)`.
 
 **Wildcard.** Wildcard is one word.

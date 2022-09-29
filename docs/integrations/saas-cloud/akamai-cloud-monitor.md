@@ -167,7 +167,7 @@ Save the URL endpoint that is generated for your HTTP Source. You will use it to
 
 ### Field Extraction Rules
 
-Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
+Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule).
 
 1. In Sumo Logic, go to **Manage Data > Logs > Field Extractions** and click **Add**.
 2. Configure the following fields:

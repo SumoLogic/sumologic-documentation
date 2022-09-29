@@ -47,7 +47,7 @@ Metrics transformation rules are useful when:
     * **Do Not Store**. This option does not not appear until and unless you specify one or more aggregation dimensions in the **Aggregate on** section below. (This is to ensure that your raw metrics are not deleted if they haven’t been aggregated.)
     * **400 days**
     * **15 days**
-1. **Aggregate On**. (Optional) If you would like to aggregate the raw metrics by one or more dimensions, click **+Add** and enter the dimension name. Upon ingestion, Sumo will [quantize](introduction-metrics/metric-quantization.md) the aggregated metrics to one minute and one hour resolutions for all rollup types: avg, min, max, sum, and count.  You can aggregate raw metrics on a maximum of 10 dimensions
+1. **Aggregate On**. (Optional) If you would like to aggregate the raw metrics by one or more dimensions, click **+Add** and enter the dimension name. Upon ingestion, Sumo will [quantize](introduction/metric-quantization.md) the aggregated metrics to one minute and one hour resolutions for all rollup types: avg, min, max, sum, and count.  You can aggregate raw metrics on a maximum of 10 dimensions
 1. **Aggregate Retention**. (Required if you entered an aggregation dimension). The retention period for the aggregated metrics. Available options are:
     * **400 Days**
     * **15 Days**
@@ -82,8 +82,7 @@ Metrics transformation rules are useful when:
 
 ### Delete a metrics transformation rule
 
-1. Navigate to **Manage Data \> Metrics \> Metrics Transformation
-    Rules**. 
+1. Navigate to **Manage Data \> Metrics \> Metrics Transformation Rules**. 
 1. Click the rule you want to delete.
 1. Click **Delete** in the right hand pane. 
 
@@ -109,9 +108,9 @@ You can use a transformation rule to aggregate high cardinality data from ephem
 
 Here’s what the rule does:
 
-1. The rule is applied to metrics that match the selector metric=container\_\*.  (Metrics whose name begin with “container\_”.)  For this example, assume that these are the matching metrics:  
+1. The rule is applied to metrics that match the selector metric=container_\*.  (Metrics whose name begin with “container_”.)  For this example, assume that these are the matching metrics:  
 
-    ```
+    ```sql
     metric=container_memory_usage_bytes service=foo container=1234 pod=abcd
     metric=container_memory_usage_bytes service=foo container=4321 pod=dcba
     metric=container_fs_bytes service=foo container=1234 pod=abcd
@@ -124,8 +123,8 @@ Here’s what the rule does:
 
     Only the dimensions upon which the raw metrics were aggregated are preserved in the aggregated metrics. The `container` and `pod` dimensions are not included in the aggregated metrics.
 
-1. The aggregated metrics will have the value of the metric dimension modified to have a suffix of “\_agg”, like this:  
+1. The aggregated metrics will have the value of the metric dimension modified to have a suffix of “_agg”, like this:  
 
-    ```
+    ```sql
     metric=container_memory_usage_bytes_agg service=foo metric=container_fs_bytes_agg service=foo
     ```

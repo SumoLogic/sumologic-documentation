@@ -3,7 +3,9 @@ id: operators
 title: Metrics Operators
 ---
 
-Below are Sumo Logic metrics-supported operators and provides examples of queries containing each type of operator.
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+This topic describes Sumo Logic metrics operators and provides usage examples.
 
 
 ## accum
@@ -308,8 +310,6 @@ This query returns a time series that reflects the difference in the `elasticsea
 metric=elasticsearch_jvm_mem_heap_used_in_bytes | delta increasing
 ```
 
-
-
 ## eval
 
 Evaluates a time series based on a user-specified arithmetic or mathematical function.
@@ -378,35 +378,30 @@ metrics query | sum | eval 1000 * _value/_granularity
 
 ## ewma
 
-Currently the `ewma` operator is supported only in the Metrics Explorer’s advanced mode, not basic mode.
+:::note
+Currently the `ewma` operator is supported only in the Metrics Explorer’s [advanced mode](./metrics-explorer.md#about-advancedmode-ui), not basic mode.
+:::
 
 The `ewma` operator computes an Exponentially Weighted Moving Average (EWMA) on the data points returned by the query for the selected time range. This allows you to smooth out short-term fluctuations (outliers) and display long-term trends.
-
-EWMA is a quantitative measure used to model or describe a time series, and is broadly used for technical analysis and volatility modeling. You can use the `ewma` operator to smooth out short-term fluctuations (outliers) and display long-term trends in your metric data.
-
-The moving average gives lower weights to older observations, and the weights reduce exponentially as the data points get older.
-
-When you run the `ewma `operator, the `alpha` parameter sets the importance of the current observation in the calculation of the moving average. The higher the value of `alpha`, the more closely the EWMA tracks the original time series.
 
 You can optionally run `ewma` with either:
 
 * An explicit `alpha` smoothing parameter to smooth time series while preserving trends. This is useful if you want to explicitly set the smoothing parameter value.
-* An explicit `span` over a number of points. `span` value is the number of data points that will be used to calculate the average. Internally, we translate span to an alpha smoothing equivalent using this formula: \
-`alpha = 2/(span + 1)`
+* A `span` over a number of points. The `span` parameter is commonly understood as an N-Day Exponentially Weighted Moving Average. The *span* value is the number of data points that will be used to calculate the average. The decay (smoothing) parameter alpha  is related to span as:  `alpha = 2/(span + 1)`
 
 The most commonly used parameter is `span`, which allows you to specify the number of data points you want to use for smoothing. The higher the value of `span`, the smoother the time series will be. You might choose to use `alpha` if you know what smoothing parameter value you want use. Keep in mind that the lower the `alpha` value is, the smoother the time series will be.
 
 If you run `ewma` without specifying either `alpha` or `span`, it runs by default with `alpha=0.5` (or`span=3`).
 
 
-### ewma syntax
+#### ewma syntax
 
 ```
 metric query | ewma [alpha=<#> |span=<#>]
 ```
 
 
-#### Syntax using alpha parameter
+##### Syntax using alpha parameter
 
 ```
 query selector | ewma alpha=<#>
@@ -426,12 +421,11 @@ metrics=xyz | ewma alpha=0.1
 
 
 
-#### Syntax using span parameter  
+##### Syntax using span parameter  
 
 ```
 query selector | ewma span=<#>
 ```
-
 
 Where:
 
@@ -443,9 +437,6 @@ Where:
 ```
 metrics=xyz | ewma span=10
 ```
-
-
-
 
 ## fillmissing
 
@@ -671,15 +662,11 @@ Where:
 `value1`, `value2`, `value3`, and so on are values of dimension that you want to limit your query to.
 
 #### Example
-This example will match time series in which the value of the dimX field is one of the strings in the array enclosed in parentheses.
+This example will match time series in which the value of the `dimX` field is one of the strings in the array enclosed in parentheses.
 
 ```sql
 metric=CPU_Total dimX=(123, 345, 567)
 ```
-
-
-
-
 
 ## max
 
@@ -846,10 +833,10 @@ metric=MemoryUsed | pct(95.0) by node
 
 ## quantize
 
-You can use the `quantize` operator to control the Sumo’s quantization behavior, which is described in detail in [Metric Quantization](../introduction-metrics/metric-quantization.md).
+You can use the `quantize` operator to control the Sumo’s quantization behavior, which is described in detail in [Metric Quantization](../introduction/metric-quantization.md).
 You can specify:
 
-* The size of the time buckets across which Sumo aggregates your metrics. If you do not specify a quantization interval, Sumo determines an optimum size for time buckets, as described in [Automatic quantization at query time](../introduction-metrics/metric-quantization.md).  
+* The size of the time buckets across which Sumo aggregates your metrics. If you do not specify a quantization interval, Sumo determines an optimum size for time buckets, as described in [Automatic quantization at query time](../introduction/metric-quantization.md).  
 * The rollup type that Sumo uses to aggregate the individual data points in a time bucket, which can be one of `avg, min, max, sum,` or `count`. If you do not specify a rollup type in the `quantize` clause of your query, for each time bucket, Sumo presents the average of the data points in that bucket.  
 
 #### quantize syntax
@@ -1024,7 +1011,29 @@ This query calculates the total of the `cpu_system` metric values across all tim
 cluster=search metric=cpu_idle | sum by node
 ```  
 
+## timeshift
 
+The `timeshift` operator shifts the time series from your metrics query by a specified period of time.
+
+#### timeshift syntax 
+
+`timeshift TIME_INTERVAL` 
+
+Where:
+
+* `TIME_INTERVAL` is a time interval in millisecond(ms), seconds (s), minutes (m), hours (h), or days (d).
+
+#### Example 
+
+Query #A returns the `cpu_idle` metric for the currently selected query time range, the last 15 minutes. 
+
+`#A _sourceCategory=prod/host _sourceHost=my-mac= metric=cpu_idle `
+
+Query #B returns the `cpu_idle` metric for the 15 minute period that ended two hours ago. 
+
+`#B _sourceCategory=prod/host _sourceHost=my-mac= metric=cpu_idle | timeshift 2h`
+
+<img src={useBaseUrl('img/metrics/timeshift.png')} alt="your description" />
 
 ## timeslice
 
@@ -1091,15 +1100,15 @@ This query applies a math expression—(max / avg \* 2)—to each time series th
 metric=cpu_system |topk (10, max /avg * 2)
 ```
 
-
 ## where
 
 You can use the `where` operator to filter data points by value.
 
-`where` is somewhat analogous to the [filter](https://help.sumologic.com/Metrics/Metric-Queries-and-Alerts/07Metrics_Operators/filter) metrics operator. However, `filter` only supports filtering entire time series; in contrast, `where` allows you to filter by data point value.
+`where` is somewhat analogous to the [filter](#filter) metrics operator. However, `filter` only supports filtering entire time series; in contrast, `where` allows you to filter by data point value.
 
-The `where` operator is currently supported in the Metric Explorer's [advanced mode](https://help.sumologic.com/Metrics/Metric-Queries-and-Alerts/02Metrics_Explorer#About_Advanced_Mode_UI), not in basic mode.
-
+:::note
+The `where` operator is currently supported in the Metric Explorer's [advanced mode](./metrics-explorer.md#about-advancedmode-ui), not in basic mode.
+:::
 
 #### Syntax
 

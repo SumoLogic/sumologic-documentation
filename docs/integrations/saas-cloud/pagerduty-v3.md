@@ -87,7 +87,7 @@ To create a PagerDuty V3 Webhook, do the following:
     3. For **Scope**, select the desired service or team.
     4. Enter a **Description**.
     5. For **Event Subscription**, select which events you want to send a webhook.
-5. Click **Add Webhook**. \
+5. Click **Add Webhook**.
 
 
 For more information, see [https://support.pagerduty.com/docs/webhooks](https://support.pagerduty.com/docs/webhooks).

@@ -114,7 +114,7 @@ To modify the colors of the chart by value range, do the following:
    * A value that is 60 or greater, and less than or equal to 80, is yellow.
    * A value that less than 60 or less is green.
 
-1. To modify a color value range, click **Edit**, specify a new range (as described in the previous step\_, select a color, and then click **Apply**.
+1. To modify a color value range, click **Edit**, specify a new range (as described in the previous step_, select a color, and then click **Apply**.
 
     ![SVC_Color-Value-Range_set.png](/img/dashboards/SVC_Color-Value-Range_set.png)
 

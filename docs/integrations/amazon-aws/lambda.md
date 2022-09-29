@@ -222,7 +222,7 @@ Once Provisioned Concurrency is enabled and you start collecting CloudWatch metr
 </table>
 
 
-These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metrics/metric-queries-alerts/index.md), as shown in the following example:
+These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metrics/metric-queries-alerts), as shown in the following example:
 
 
 ### Field in Field Schema
@@ -232,7 +232,7 @@ Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**fun
 
 ### Field Extraction Rule(s)
 
-Create a Field Extraction Rule for AWS Lambda. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
+Create a Field Extraction Rule for AWS Lambda. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 
 ### Cloud Trail FER

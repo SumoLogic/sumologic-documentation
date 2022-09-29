@@ -181,7 +181,7 @@ This section explains the steps to collect Nginx logs from a Kubernetes environm
    6. Verify logs in Sumo Logic.
 3. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
    1. Go to **Manage Data > Logs > Field Extraction Rules**.
-   2. Click the + Add button on the top right of the table. \
+   2. Click the + Add button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear.
    4. Enter the following options:
      * **Rule Name**. Enter the name as **App Observability - Webserver**.
@@ -405,7 +405,7 @@ connection_notifications = [
 
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections).
+For overriding payload for different connection types, refer to this [document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections).
 
 ```bash title="Email Notifications Example"
 email_notifications = [

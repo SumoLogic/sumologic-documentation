@@ -25,7 +25,7 @@ Get to know Sumo Logic through our video on "Introduction to Sumo Logic".
 
 ## Sumo Logic Benefits
 
-Sumo Logic is beneficial to the businesses building, running, and securing modern applications. Get to know about benefits through our video "Benefits of Using Sumo Logic".
+Sumo Logic helps businesses building, running, and securing modern applications. Get to know about benefits through our video "Benefits of Using Sumo Logic".
 
 <Iframe url="https://www.youtube.com/embed/D4WO5DlqD6o"
         width="854px"
@@ -42,7 +42,7 @@ Sumo Logic is a highly flexible and scalable solution. It provides solutions tha
 
 ## Sumo Logic Components
 
-A Collector is a small application that gathers log data from your servers and sends it to the Sumo Logic Cloud. Using the Sumo Logic Web Application, you can interact with and analyze your data in the cloud in real time.<br/>![Collectors M.png](/img/get-started/CollectorsM.png)
+A Collector is a small application that gathers log data from your servers and sends it to the Sumo Logic Cloud. Using Sumo Logic, you can interact with and analyze your data in the cloud in real time.<br/>![Collectors M.png](/img/get-started/CollectorsM.png)
 
 ### Sumo Logic Collectors and Sources
 
@@ -58,9 +58,9 @@ Sumo Logic [Hosted Collectors](/docs/send-data/hosted-collectors) are hosted 
 
 The Sumo Logic Cloud is a secure, scalable repository for all of your operations, security, compliance, development, and other log data. The Sumo Logic Cloud stores, indexes, parses, and analyzes data, and provides unlimited horsepower with elastic scalability.
 
-### Sumo Logic Web Application
+### Sumo Logic UI
 
-The Sumo Logic Web Application allows you to view and analyze your log data in the cloud. With a powerful and intuitive search capability, you can use the web application to expedite functions like forensic analysis, troubleshooting, and system health checks. The Sumo Logic Web Application provides access from anywhere since it is fully browser based. It also provides all required administration tools for managing your installation. This includes tools for administration, checking system status, managing your deployment, and direct access to download  and activate Collectors.
+Sumo Logic allows you to view and analyze your log data in the cloud. With a powerful and intuitive search capability, you can use the web application to expedite functions like forensic analysis, troubleshooting, and system health checks. Sumo Logic provides access from anywhere since it is fully browser based. It also provides all required administration tools for managing your installation. This includes tools for administration, checking system status, managing your deployment, and direct access to download  and activate Collectors.
 
 ## Data Collection Strategy
 
@@ -79,9 +79,9 @@ Get to know the Collection process through our video "Data Collection Strategy".
 
 ## Basics and Account Configuration
 
-* [Retention](https://help.sumologic.com/Manage/Partitions_and_Data_Tiers/11_Manage_Indexes_with_Variable_Retention). Determine the average data retention for your account (total storage / daily ingest) and change the General Index retention period if necessary. The General Index settings can be found on the **Manage Data > Settings > Partitions** menu, which is explained in further detail on the Optimization Setup sheet of this document.
-* [Data Volume Index](https://help.sumologic.com/Manage/Ingestion-and-Volume/Data_Volume_Index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo tool.
-* [Audit Index](https://help.sumologic.com/Manage/Security/Audit-Index). Enable the audit index. This feature allows you to track user behavior, content changes, and scheduled search execution results.
+* [Retention](https://help.sumologic.com/manage/Partitions_and_Data_Tiers/11_Manage_Indexes_with_Variable_Retention). Determine the average data retention for your account (total storage / daily ingest) and change the General Index retention period if necessary. The General Index settings can be found on the **Manage Data > Settings > Partitions** menu, which is explained in further detail on the Optimization Setup sheet of this document.
+* [Data Volume Index](https://help.sumologic.com/manage/ingestion-volume/Data_Volume_Index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo tool.
+* [Audit Index](https://help.sumologic.com/manage/Security/Audit-Index). Enable the audit index. This feature allows you to track user behavior, content changes, and scheduled search execution results.
 * [Data Volume App](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Data_Volume_App_-_Legacy). Install the Data Volume app in Sumo App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
 * [Audit App](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Audit_App/Install-the-Audit-App-and-View-the-Dashboards). Install the Audit app and explore its content. You can use this to monitor user activity, content changes, as well as scheduled search changes and executions.
 
@@ -169,9 +169,9 @@ Before adding Partitions, consider the following:
 
 [Basics.](https://help.sumologic.com/05Search/Optimize-Search-Performance/Optimizing_Search_with_Partitions) The **Partitions** page can be found under the **Manage Data** > **Settings** menu. Partitions are tools that can be used to route data into smaller subsets of the overall data ingest. These datasets can be isolated for either query performance reasons or for log retention purposes.
 
-[Routing Expression.](https://help.sumologic.com/Manage/Partitions_and_Data_Tiers/01-About-Partitions) Each partition's contents are determined by the routing expression, which will be scoped using metadata and/or keywords.
+[Routing Expression.](/docs/manage/partitions-data-tiers) Each partition's contents are determined by the routing expression, which will be scoped using metadata and/or keywords.
 
-[Variable Retention.](https://help.sumologic.com/Manage/Partitions_and_Data_Tiers/11_Manage_Indexes_with_Variable_Retention) Each Partition has its own retention period. This allows for some logs to be retained for longer, while others are discarded more quickly.
+[Variable Retention.](https://help.sumologic.com/manage/Partitions_and_Data_Tiers/11_Manage_Indexes_with_Variable_Retention) Each Partition has its own retention period. This allows for some logs to be retained for longer, while others are discarded more quickly.
 
 
 ## Field Extraction Rule Setup
@@ -184,9 +184,9 @@ Before adding Field Extraction Rule (FER), consider the following:
 * **FER Scoping.** FERs are composed of a scoping statement and the parsing logic; scoping usually involves SourceCategory and possibly keywords.
 * **Limitations.** FERs can not extract every key/value pair but should be prioritized to the most commonly logged and searched key/value pairs.
 
-[FER Basics](https://help.sumologic.com/Manage/Field-Extractions). Field Extraction Rules are used to pre-parse key/value pairs from log messages as they're collected. They're best utilized on logs that have consistent formatting.
+[FER Basics](https://help.sumologic.com/manage/Field-Extractions). Field Extraction Rules are used to pre-parse key/value pairs from log messages as they're collected. They're best utilized on logs that have consistent formatting.
 
-[Create a FER.](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule) If applicable, identify a set of logs to be pre-parsed by a FER. Create the FER on the **Field Extraction Rules** page of the **Manage Data > Settings** menu. The rule will require a **Rule Name**, **Scope**, and the **Parse** **Expression** to be implemented.
+[Create a FER.](https://help.sumologic.com/manage/Field-Extractions/create-field-extraction-rule) If applicable, identify a set of logs to be pre-parsed by a FER. Create the FER on the **Field Extraction Rules** page of the **Manage Data > Settings** menu. The rule will require a **Rule Name**, **Scope**, and the **Parse** **Expression** to be implemented.
 
 Get to know more about How to create a FER through our video "Creating a Field Extraction Rule".
 

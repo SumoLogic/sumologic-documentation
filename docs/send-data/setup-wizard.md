@@ -7,7 +7,7 @@ description: Use the Setup Wizard to quickly get started sending data to Sumo Lo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Setup Wizard allows you to get data in your Sumo Logic account quickly. It guides you step-by-step based on the type of data you want to send. Once data collection is running, the Setup Wizard installs a Sumo Logic App with pre-configured Dashboards that allow you to analyze your data. The Setup Wizard provides detailed instructions to help you with each step of the configuration.
+The Setup Wizard lets you get data in your Sumo Logic account quickly. It guides you step-by-step based on the type of data you want to send. After data collection is running, the Setup Wizard installs a Sumo Logic App with pre-configured Dashboards that allow you to analyze your data. The Setup Wizard provides detailed instructions to help you with each step of the configuration.
 
 Before you begin, [sign up](https://help.sumologic.com/01Start-Here/04Getting-Started/01-How-to-Sign-Up-for-Sumo-Logic) for a Sumo Logic account and activate it.
 
@@ -23,7 +23,7 @@ Keyboard shortcuts are not available when the Setup Wizard is open.
 
 A great way to try out Sumo Logic for the first time is to upload a local log file. To do this, click **Upload Log Files**. You can upload up to 20 files and 100MB total per upload.
 
-Uploading a local file allows you to try Sumo Logic without configuring a Collector to ingest live, streaming data. To continuously monitor a file in your environment, [configure a Collector and Source](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment) within the Sumo Logic Web Application.
+Uploading a local file allows you to try Sumo Logic without configuring a Collector to ingest live, streaming data. To continuously monitor a file in your environment, [configure a Collector and Source](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment) within Sumo Logic.
 
 The following file types are **not** supported:
 

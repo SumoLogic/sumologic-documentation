@@ -29,7 +29,7 @@ Perform these steps on each host from which you want to collect metrics:
    1. **Description**. (Optional) Enter a description for the source.
    1. **Protocol**. By default, TCP is selected. If your apps or infrastructure use UDP, use the pull-down to select UDP.
    1. **ContentType**. By default, Graphite is selected. If your apps or infrastructure emit metrics using the Carbon 2.0 format, use the pull-down to select Carbon2 or Prometheus. 
-   1. **Source Category**. Enter a source category. Once you start ingesting metrics, you can use the \_sourceCategory metadata field with this value to search for metrics.  Example source categories: 
+   1. **Source Category**. Enter a source category. Once you start ingesting metrics, you can use the _sourceCategory metadata field with this value to search for metrics.  Example source categories: 
 
       * prod/web/metrics
       * dev/web/metrics

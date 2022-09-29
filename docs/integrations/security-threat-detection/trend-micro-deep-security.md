@@ -44,7 +44,7 @@ For complete details on configuring your Deep Security system for use with Sumo 
 
 To forward Deep Security system events to Sumo Logic, do the following:
 
-1. In Deep Security, go to **Administration > System Settings > SIEM**. \
+1. In Deep Security, go to **Administration > System Settings > SIEM**.
 
 2. Configure **SIEM**:
     1. **Forward System Events to a remote computer (via Syslog). **Activate this check box.
@@ -59,7 +59,7 @@ To forward Deep Security system events to Sumo Logic, do the following:
 
 Now you must add the Syslog Source to your Policy configuration. Set the integration details at the Top (root/base) policy as follows:
 
-1. Go to **Settings > SIEM**. \
+1. Go to **Settings > SIEM**.
 
 
 2. For **Anti-Malware Event Forwarding**, select **Forward Events To:** and **Relay via the Manager**.
@@ -127,7 +127,7 @@ Note the spaces with `Deep Security Manager`.
 1. In the Deep Security Manager console, select **Policies > Common Objects.**
 2. Expand the **Other** node in the left pane.
 3. Select **Syslog Configurations**.
-4. Select the **New **button to create a new configuration. \
+4. Select the **New **button to create a new configuration.
 
 
     1. **Log Source Identifier**. Enter a three word label, for example “Deep Security Manager” or “My Log Source”, followed by value that was shown in the  **Token** field on the **Cloud Syslog Source Token** page (when you configured the Cloud Syslog Source above), surrounded by square brackets like this: `Deep Security Manager [token from Cloud Syslog source]`>

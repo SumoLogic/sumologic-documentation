@@ -10,7 +10,7 @@ This topic describes JSON Source parameters for installed Collectors. See the
 
  * [Use JSON to configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.
  * [JSON Source parameters for Hosted Collectors](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources).
- * [View or download Collector or Source JSON configuration](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) from the Web Application.
+ * [View or download Collector or Source JSON configuration](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) from Sumo Logic.
 
 For more information about configuring sources in JSON files, and how to configure Sumo to read the JSON files, see [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
 
@@ -131,7 +131,7 @@ Remote file source JSON example:
 
 ### Local Windows event log source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), except hostName, the following parameters are for local Windows event log source. The Source Host (\_sourceHost) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources), except hostName, the following parameters are for local Windows event log source. The Source Host (_sourceHost) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
@@ -163,7 +163,7 @@ Local Windows event log source JSON example:
 
 ### Remote Windows event log source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), except hostName, the following parameters are for remote Windows event log source. The Source Host (\_sourceHost) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources), except hostName, the following parameters are for remote Windows event log source. The Source Host (_sourceHost) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|

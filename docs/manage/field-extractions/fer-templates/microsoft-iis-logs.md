@@ -1,6 +1,7 @@
 ---
 id: microsoft-iis-logs
 title: Microsoft IIS Logs
+description: Parse the common fields in your Microsoft IIS Logs using the FER template.
 ---
 
 **Log Type**: Microsoft IIS

@@ -2,12 +2,12 @@
 id: alert-response
 title: Alert Response
 sidebar_label: Alert Response
-description: Quickly investigate and resolve issues you've been alerted about.
+description: Quickly investigate and resolve issues you've been alerted about with the context provided by Sumo Logic.
 ---
 
 Alert Response provides contextual insights about triggered alerts to minimize the time needed to investigate and resolve application failures.
 
-On-calls engineers are tasked with firefighting production issues and recovering quickly. They have to investigate issues and try to identify the root cause and fix it, which requires deep knowledge about the production systems, troubleshooting tools, and tons of experience as on-calls. 
+On-call engineers are tasked with firefighting production issues and recovering quickly. They have to investigate issues and try to identify the root cause and fix it, which requires deep knowledge about the production systems, troubleshooting tools, and tons of experience as on-calls. 
 
 By assembling relevant context from prior alerts and by analyzing patterns in logs and metrics underlying alerts, Alert Response enables on-call engineers to cut down the time spent piecing together insights during an incident from various sources and accelerate recovery.
 
@@ -17,7 +17,7 @@ Email alerts automatically get a button labeled **View Alert** that opens the
 
 ![view alert from email.png](/img/monitors/view-alert-from-email.png)
 
-If you use [Webhook connections](/docs/manage/connections-and-integrations/webhook-connections) offered by Sumo Logic for receiving notifications you need to provide the `alertResponseUrl` [variable](../alert-variables.md) in your notification payload of a
+If you use [Webhook connections](/docs/manage/connections-integrations/webhook-connections) offered by Sumo Logic for receiving notifications you need to provide the `alertResponseUrl` [variable](../alert-variables.md) in your notification payload of a
 Monitorto receive a link that opens Alert Response. When your Monitor is triggered it will generate a URL and provide it in the notification payload where you can use it to open Alert Response. The following is an example Slack payload with the
 variable:
 
@@ -59,7 +59,7 @@ To open the Alert List, click the bell icon in the top menu.
 
 * Click a column header to sort the list.
 * Click a row to select it and use the **Resolve** button to resolve.
-* Double click a row to open the alert in the Alert page to investigate.
+* Double-click a row to open the alert in the Alert page to investigate.
 
 ## Alert Page
 

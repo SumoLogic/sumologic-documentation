@@ -373,7 +373,7 @@ After determining the location of conf file, modify the **redis.conf** configura
 
 This section has instructions for installing the Sumo App and Alerts for Redis ULM, as well as descriptions and examples for each of the dashboards. These instructions assume you have already set up collection as described in the **Collecting Logs and Metrics for Redis App** section.
 
-Sumo Logic has provided out-of-the-box alerting capabilities available via [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Redis database cluster is available and performing as expected. These monitors fire alerts (notifications) on top of preset thresholds on metrics data using industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerting capabilities available via [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Redis database cluster is available and performing as expected. These monitors fire alerts (notifications) on top of preset thresholds on metrics data using industry best practices and recommendations.
 
 For details on the individual monitors, please see [Alerts](#Redis-Alerts).
 
@@ -422,7 +422,7 @@ By default, the monitors are configured in a monitor folder called “Redis”, 
 
 If you would like the alerts to send email or connection notifications, configure these in the file **redis_notifications.auto.tfvars**. For configuration examples, refer to the next section.
 
-5. Email and Connection Notification Configuration Examples. To configure notifications, modify the file redis_notifications.auto.tfvars file and fill in the connection_notifications See the examples for PagerDuty and email notifications below. See [this document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md) for creating payloads with other connection types.
+5. Email and Connection Notification Configuration Examples. To configure notifications, modify the file redis_notifications.auto.tfvars file and fill in the connection_notifications See the examples for PagerDuty and email notifications below. See [this document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md) for creating payloads with other connection types.
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [
     {
@@ -442,7 +442,7 @@ connection_notifications = [
 
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved via calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to [this document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+For overriding payload for different connection types, refer to [this document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 
 ```bash title="Email Notifications Example"
 email_notifications = [
@@ -554,7 +554,7 @@ Use this dashboard to:
 
 ## Redis Alerts
 
-Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Redis database cluster is available and performing as expected.
+Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Redis database cluster is available and performing as expected.
 
 
 <table>

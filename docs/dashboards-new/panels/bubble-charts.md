@@ -1,10 +1,11 @@
 ---
 id: bubble-charts
+title: Bubble Charts
+description: Bubble charts show you the size of data points in relation to two other dimensions.
 ---
 
-# Bubble Charts
 
-Bubble charts are available in the [Dashboard (New)](../about-dashboard-new.md) platform.
+Bubble charts are available in the [Dashboard (New)](../about.md) platform.
 
 Bubble charts display three dimensions of data. A bubble chart is a two dimensional scatter chart where each data point is represented by its size, the third dimension. This allows you to visualize the counts associated with each point. Bubble charts require at least one aggregate dimension and two other numeric dimensions.
 
@@ -17,9 +18,9 @@ You can modify the fields used for each axis as needed.
 For example, in the following query `logins` is the Z dimension and will be displayed as the value of each bubble. The fields `latitude` and `longitude` can be used as dimensions.
 
 ```sql
-_sourceCategory=service "message=User logged in" remote_ip 
-| parse "[remote_ip=*]" as remote_ip 
-| lookup latitude, longitude, city, state from geo://location on ip = remote_ip 
+_sourceCategory=service "message=User logged in" remote_ip
+| parse "[remote_ip=*]" as remote_ip
+| lookup latitude, longitude, city, state from geo://location on ip = remote_ip
 | count as logins by city, latitude, longitude
 ```
 
@@ -47,5 +48,5 @@ To add a panel with a bubble chart:
 
     ![Add to Dashboard button.png](/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png)
 
-  
+
  

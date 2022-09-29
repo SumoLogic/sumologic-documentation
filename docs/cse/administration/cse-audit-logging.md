@@ -87,7 +87,7 @@ The table below shows the `_sourceCategory` that is assigned to event logs by CS
 | [Yara Rule](/docs/cse/rules/import-yara-rules) | `cseYara` |
 | [Yara Source](/docs/cse/rules/import-yara-rules) | `cseYara` |
 
-## \_sourceName and \_sourceHost assignment
+## _sourceName and _sourceHost assignment
 
 The `_sourceName` and `_sourceHost` fields are assigned to audit event
 logs as follows.
@@ -133,6 +133,6 @@ Here is an example `InsightCreated` event log.<br/><img src={useBaseUrl('img/cse
 
 ## Index retention period 
 
-By default, the retention period of the Audit Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Edit a Partition](/docs/manage/partitions-and-data-tiers/edit-partition.md).  
+By default, the retention period of the Audit Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Edit a Partition](/docs/manage/partitions-data-tiers/create-edit-partition.md).  
    
  

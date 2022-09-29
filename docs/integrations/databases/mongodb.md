@@ -358,7 +358,7 @@ At this point, MongoDB logs should start flowing into Sumo Logic.
 
 The next few sections have instructions for installing Sumo Logic Monitors for MongoDB, the app, and descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in the [Collect Logs and Metrics for MongoDB](#Collect-Logs-for-MongoDB) App page.
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively determine if a MongoDB cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [MongoDB Alerts](#MongoDB-Alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a MongoDB cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [MongoDB Alerts](#MongoDB-Alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability.
 
@@ -374,7 +374,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 4. Click **Add**.
 5. Click **Import**.
 6. On the **Import Content popup**, enter `MongoDB` in the Name field, paste in the JSON into the the popup, and click **Import**.  
-7. The monitors are created in a "MongoDB" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors/index.md) topic for information about enabling monitors and configuring notifications or connections.
+7. The monitors are created in a "MongoDB" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 
 ### Method B: Using a Terraform script
@@ -415,7 +415,7 @@ connection_notifications = [
   ]
 ```
 
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 
 ```bash title="Email notifications example"
 email_notifications = [
@@ -547,7 +547,7 @@ Use this dashboard to:
 ## MongoDB Alerts
 
 
-Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 | Name                                         | Description                                                                                                                                               | Trigger Type | Alert Conditions | Recover Conditions |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|------------------|--------------------|

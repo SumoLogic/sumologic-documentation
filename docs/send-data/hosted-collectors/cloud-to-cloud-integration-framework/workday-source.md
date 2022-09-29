@@ -7,7 +7,7 @@ sidebar_label: Workday
 When you create a Workday Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 :::note
-The steps below assume that you have already configured in [Step 1 of this page] (docs/integrations/saas-cloud/Workday/Collect_Logs_for_the_Workday_App#step-1-configure-the-workday-portal). You will copy and paste configurations from those steps in this source.
+The steps below assume that you have already configured in [Step 1 of this page](/docs/integrations/saas-cloud/workday#step-1-configure-the-workday-portal). You will copy and paste configurations from those steps in this source.
 :::
 
 To configure a Workday Source:
@@ -22,7 +22,7 @@ To configure a Workday Source:
 
   ![img](/img/send-data/workday-source.jpg)
 
-1. For **Source Category** (Optional), enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called \_sourceCategory.
+1. For **Source Category** (Optional), enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called _sourceCategory.
 
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set automatically by the integration (Do not include below fields as custom log metadata Fields):
 

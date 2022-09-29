@@ -40,7 +40,7 @@ Sumo Logic APIs follow Representational State Transfer (REST) patterns and are o
   <tr>
    <td>Search Job
    </td>
-   <td><a href="https://api.de.sumologic.com/docs/">/docs/API/Search-Job-API</a>
+   <td><a href="https://api.de.sumologic.com/docs/">/docs/api/Search-Job-API</a>
    </td>
   </tr>
 </table>
@@ -250,7 +250,7 @@ You can also determine which deployment pod your account is using by creating an
 
 ### Securing access to Sumo Logic infrastructure via DNS name or IP address
 
-See the [static IP addresses for Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/index.md#Static-IP-addresses) Sources.
+See the [static IP addresses for Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework#Static-IP-addresses) Sources.
 
 For collection to work, your firewall must allow outbound traffic to Sumo Logic. Refer to [Test Connectivity for Sumo Logic Collectors](/docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors.md) for instructions on allowing outbound traffic over port 443.
 
@@ -372,7 +372,7 @@ Generic status codes that apply to all our APIs. See the [HTTP status code regis
     <tr>
       <td> 301 </td>
       <td> moved </td>
-      <td> The requested resource SHOULD be accessed through returned URI in Location Header. See [troubleshooting](/docs/API/Troubleshooting) for details.</td>
+      <td> The requested resource SHOULD be accessed through returned URI in Location Header. See [troubleshooting](/docs/api/troubleshooting) for details.</td>
     </tr>
     <tr>
       <td> 401 </td>
@@ -382,7 +382,7 @@ Generic status codes that apply to all our APIs. See the [HTTP status code regis
     <tr>
       <td> 403 </td>
       <td> forbidden </td>
-      <td> This operation is not allowed for your account type or the user doesn't have the role capability to perform this action. See [troubleshooting](/docs/API/Troubleshooting) for details.</td>
+      <td> This operation is not allowed for your account type or the user doesn't have the role capability to perform this action. See [troubleshooting](/docs/api/troubleshooting) for details.</td>
     </tr>
     <tr>
       <td> 404 </td>
@@ -418,14 +418,14 @@ Generic status codes that apply to all our APIs. See the [HTTP status code regis
 
 ## Versioning and Conflict Detection  
 
-The [Collector Management API](docs/api/collector.md) uses optimistic locking to deal with versioning and conflict detection. Any response that returns a single entity will have an ETag header which identifies the version of that entity. Subsequent updates (`PUT` requests) to that entity must provide the value of the `ETag` header in an If-Match header; if the header is missing or no longer corresponds to the latest version of the entity, the request will fail (with `403 Forbidden` or `412 Precondition Failed`, respectively). Clients must be prepared to handle such failures if they anticipate concurrent updates to the entities. Additionally, the value of the `ETag` header may be provided in an `If-None-Match` header in future `GET` requests for caching purposes.
+The [Collector Management API](/docs/api/collectors) uses optimistic locking to deal with versioning and conflict detection. Any response that returns a single entity will have an ETag header which identifies the version of that entity. Subsequent updates (`PUT` requests) to that entity must provide the value of the `ETag` header in an If-Match header; if the header is missing or no longer corresponds to the latest version of the entity, the request will fail (with `403 Forbidden` or `412 Precondition Failed`, respectively). Clients must be prepared to handle such failures if they anticipate concurrent updates to the entities. Additionally, the value of the `ETag` header may be provided in an `If-None-Match` header in future `GET` requests for caching purposes.
 
 
 ## Sumo Logic alerts from static IP addresses
 
-Sumo Logic provides notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo. For a list of our allowlist addresses, contact [Support](https://sumologic.com/).
+Sumo Logic provides notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
 
-The [Test Connection feature for webhooks](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md#Testing-a-connection) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
+The [Test Connection feature for webhooks](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md#Testing-a-connection) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
 
 
 ## Beta

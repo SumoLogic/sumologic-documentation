@@ -13,7 +13,7 @@ Our in-product **Help** menu provides links to quickly access Sumo Logic Suppo
 
 ## Documentation Support
 
-To access Sumo Logic online Help, click **Help \> Documentation**. The Sumo Logic online Help (this document) opens in a new browser window, and is available to review while you use the Web Application. Online Help covers all features of the Web Application, and should be your first resource when you have any questions about the product.
+To access Sumo Logic online Help, click **Help \> Documentation**. The Sumo Logic online Help (this document) opens in a new browser window. Online Help covers all features of our product, and should be your first resource when you have any questions about the product.
 
 The help is context-sensitive. If you are on a page in the Web UI, the help system will open to the appropriate topic when you select **Documentation** under the **Help** menu.
 
@@ -87,7 +87,7 @@ If there has been an outage on your [deployment](/docs/api/getting-started#sumo-
 
 1. At the top of the **Help** menu.
 1. Next to **Help \> Service Status**.
-1. Next to the title of a [Dashboard](../dashboards/about-dashboards.md).
+1. Next to the title of a [Dashboard](../dashboards/about.md).
 
 For more information, click **Help \> Service Status**. This will take you to a web page for your pod with details on any outages, incidents, or planned maintenance.
 

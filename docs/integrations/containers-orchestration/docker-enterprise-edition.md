@@ -52,7 +52,7 @@ The Docker EE App uses the following log types.
   </tr>
   <tr>
    <td><a href="https://docs.docker.com/ee/ucp/">Universal Control Plane (UCP)</a></td>
-   <td><code>E0509 02:44:15.887502  1 goroutinemap.go:150] Operation for "provision-default/orcl-pv-claim[4e38340b-6866-11e9-95b6-0242ac11000a]" failed. No retries permitted until 2019-05-09 02:46:17.887477418 +0000 UTC m=+453713.589406681 (durationBeforeRetry 2m2s). Error: "AzureDisk -  failed to get Azure Cloud Provider. GetCloudProvider returned &lt;nil> instead"</code>
+   <td><code>E0509 02:44:15.887502  1 goroutinemap.go:150] Operation for "provision-default/orcl-pv-claim[4e38340b-6866-11e9-95b6-0242ac11000a]" failed. No retries permitted until 2019-05-09 02:46:17.887477418 +0000 UTC m=+453713.589406681 (durationBeforeRetry 2m2s). Error: "AzureDisk -  failed to get Azure Cloud Provider. GetCloudProvider returned nil instead"</code>
    </td>
   </tr></small>
 </table>

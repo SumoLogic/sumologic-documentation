@@ -260,7 +260,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 ### Field Extraction Rules
 
-Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, on creating them, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
+Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, on creating them, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule).
 
 Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 
@@ -288,7 +288,7 @@ For **FER for Error Logs**, use the following Parse Expression:
 
 ## Installing Nginx Plus Monitors
 
-To install these alerts, you need to have the [Manage Monitors](/docs/manage/users-and-roles/roles/role-capabilities) role capability.
+To install these alerts, you need to have the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability.
 
 Alerts can be installed by either importing them via a JSON or via a Terraform script.
 
@@ -307,7 +307,7 @@ The monitors are disabled by default. Once you have installed the alerts via thi
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic [access key](/docs/manage/security/access-keys#create-an-access-keyon-preferences-page) and access ID for a user that has the [Manage Monitors](/docs/manage/users-and-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic [deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. Generate a Sumo Logic [access key](/docs/manage/security/access-keys#create-an-access-keyon-preferences-page) and access ID for a user that has the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic [deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later
 3. Download the Sumo Logic Terraform package for Nginx Plus alerts. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/nginx-plus). You can either download it via the “git clone” command or as a zip file.
 4. Alert Configuration: After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus/**. Edit the **nginxplus.auto.tfvars** file as per below instructions:
@@ -343,7 +343,7 @@ connection_notifications = [
 
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved via calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+For overriding payload for different connection types, refer to this [document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 
 ```bash title="Email Notifications Example"
 email_notifications = [
@@ -365,7 +365,7 @@ email_notifications = [
    3. Run **terraform apply**.
 7. Post Installation steps: If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Step 4](/docs/alerts/monitors#add-a-monitor).
 
-Note: There are limits to how many alerts can be enabled - please see the [Alerts FAQ](docs/alerts/index.md).
+Note: There are limits to how many alerts can be enabled - please see the [Alerts FAQ](docs/alerts).
 
 
 ## Installing the Ngnix Plus App
@@ -391,7 +391,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Nginx Plus Alerts
 
-Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Nginx Plus server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
+Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Nginx Plus server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
 
 <table>
   <tr>
@@ -538,7 +538,7 @@ Use this dashboard to:
 The **Nginx Plus - Visitor Access Types** dashboard provides insights into visitor platform types, browsers, and operating systems, as well as the most popular mobile devices, PC and Mac versions used.
 
 Use this dashboard to:
-* Understand which platform and browsers are used to gain access to your infrastructure. \
+* Understand which platform and browsers are used to gain access to your infrastructure.
 These insights can be useful for planning in which browsers, platforms, and operating systems (OS) should be supported by different software services.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Visitor-Access-Types.png')} alt="tk" />

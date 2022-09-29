@@ -19,7 +19,7 @@ Host metrics are gathered by the open-source [SIGAR library](https://github.com/
 
 ### Time Intervals
 
-The time interval determines how frequently the source is scanned for metrics data. The Web Application supports pre-specified time intervals (10 seconds, 15 seconds, 30 seconds, 1 minute, and 5 minutes).
+The time interval determines how frequently the source is scanned for metrics data. Sumo Logic supports pre-specified time intervals (10 seconds, 15 seconds, 30 seconds, 1 minute, and 5 minutes).
 
 You can also specify a time interval in JSON by using the interval parameter, as follows: "interval" : 60000
 

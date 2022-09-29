@@ -1,6 +1,7 @@
 ---
 id: locate-deviations-time-series
 title: Locate Deviations in a Time Series
+description: Learn how to create charts that locate deviations in a time series and the graph outliers.
 ---
 
 An **outlier** is a data point that is outside the range of expected values. This page shows you how to locate deviations beyond thresholds in a time series. 
@@ -11,7 +12,7 @@ Currently, the feature is only available for logs queries. For information on ou
 
 ## Graphing log queries to find outliers
 
-You can graph log queries to determine where there are deviations from normal behavior in a time series. Locating outliers can help you understand the behavior trends of a time series. For more  in-depth information, see [outlier operator](../search/search-query-language/search-operators/outlier.md).
+You can graph log queries to determine where there are deviations from normal behavior in a time series. Locating outliers can help you understand the behavior trends of a time series. For more  in-depth information, see [outlier operator](../search/search-query-language/operators#outlier).
 
 To graph a log query and determine outliers, do the following:
 
@@ -52,7 +53,7 @@ To customize the visual appearance of the graph, do the following:
 
     ![Outlier_Graph_Display_icon.png](/img/dashboards-new/locate-deviations/Outlier_Graph_Display_icon.png)
 
-1. Make **Format** selections in the right panel as described in [Customizing a chart](create_a_dashboard_new.md).
+1. Make **Format** selections in the right panel as described in [Customizing a chart](create-a-dashboard-new.md).
 
 ![Chart_Type_Settings.png](/img/dashboards-new/locate-deviations/Chart_Type_Settings.png)
 

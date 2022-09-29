@@ -16,7 +16,7 @@ The process consists of configuring a source or collector to forward messages to
 The diagram below is a high level illustration of several alternative processing flows from a data source to a Sumo Logic collector or source, and on to CSE. 
 
 :::note
-You can only send log data that resides in the [Continuous data tier](docs/manage/partitions-and-data-tiers/data-tiers.md) to CSE.
+You can only send log data that resides in the [Continuous data tier](docs/manage/partitions-data-tiers/data-tiers.md) to CSE.
 :::
 
 ![cip-to-cse.png](/img/cse/cip-to-cse.png)
@@ -35,7 +35,7 @@ We recommend the following ingestion processes, starting with the most preferred
      
 1. **Use a Sumo Logic Source and parser**. If there isn’t a C2C connector for your data source, your next best option is to use a Sumo Logic Source (running on an Installed Collector or a Hosted Collector, depending on the data source)—and a Sumo Logic parser, if we have one for the data source.   
 
-    To check if there’s a parser for your data source, go to the **Manage Data \> Logs \> Parsers** page in the Sumo Logic UI. If there is a parser for your data source, but you find it doesn’t completely need your needs–for instance if the parser doesn’t support the particular log format you use–consider customizing the parser with a [local configuration](../schema/parser-editor.md). If
+    To check if there’s a parser for your data source, go to the **Manage Data \> Logs \> Parsers** page in the Sumo Logic UI. If there is a parser for your data source, but you find it doesn’t completely meet your needs–for instance if the parser doesn’t support the particular log format you use–consider customizing the parser with a [local configuration](../schema/parser-editor.md). If
     that’s not practical, you can submit a request for a new parser by filing a ticket at at https://support.sumologic.com.  
 
     When you forward logs to CSE for parser processing, there are two bits of important configuration:  

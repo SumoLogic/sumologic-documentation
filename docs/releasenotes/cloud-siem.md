@@ -6,7 +6,40 @@ description: Here you'll find information about new and enhanced features, updat
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-### September 12, 2022 -  Application Update
+### September 19, 2022 - Content Release 
+
+#### Rules
+* [Deleted] CHAIN-S00009 Proofpoint TAP Click Permitted Followed by Successful Request
+
+#### Log Mappers
+* [New] Wiz Catch All
+* [Updated] Orca Security Parser - Catch All
+
+#### Schema
+* [New] cloud_provider
+* [New] cloud_region
+* [New] cloud_service
+* [New] cloud_zone
+* [New] device_container_id
+* [New] device_container_name
+* [New] device_container_runtime
+* [New] device_image
+* [New] device_type
+* [New] dstDevice_container_id
+* [New] dstDevice_container_name
+* [New] dstDevice_container_runtime
+* [New] dstDevice_image
+* [New] dstDevice_type
+* [New] resourceType
+* [New] srcDevice_container_id
+* [New] srcDevice_container_name
+* [New] srcDevice_container_runtime
+* [New] srcDevice_image
+* [New] srcDevice_type
+* [Updated] dstDevice_uniqueId
+
+---
+### September 12, 2022 - Application Update
 
 #### Insight Enrichment Server for Fed deployment
 
@@ -1095,8 +1128,8 @@ We will be consolidating Authentication Brute Force Attempt **MATCH-S00258** on 
 
 #### Minor Changes and Enhancements
 
-* [New] API endpoints are now available to add or remove a given Signal to/from a given Insight, <code>PUT "/insights/<em>&lt;insightId></em>/signals"</code> and <code>DELETE "/insights/<em>&lt;insightId></em>/signals"</code> respectively. (For both endpoints, the request body is a list containing signal ID(s) to add or remove from the insight as the request body, the response is the updated Insight.)
-* [Update] The way CSE displays group membership in Active Directory inventory objects is changing. Previously, it was displayed in LDAP form (i.e. <code>cn=groupname,dc=something,dc=domain,dc=com</code>); now it will just show the group name.
+* [New] API endpoints are now available to add or remove a given Signal to/from a given Insight, `PUT "/insights/<insightId>/signals"` and `DELETE "/insights/<insightId>/signals"` respectively. (For both endpoints, the request body is a list containing signal ID(s) to add or remove from the insight as the request body, the response is the updated Insight.)
+* [Update] The way CSE displays group membership in Active Directory inventory objects is changing. Previously, it was displayed in LDAP form (i.e., `cn=groupname,dc=something,dc=domain,dc=com`); now it will just show the group name.
 
 #### Resolved Issues
 

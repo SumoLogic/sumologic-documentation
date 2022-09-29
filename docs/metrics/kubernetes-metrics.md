@@ -57,7 +57,9 @@ Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-
 
 Run this command to start a proxy to the Kubernetes API server: 
 
-`kubectl proxy `
+```bash
+kubectl proxy
+```
 
 To view metrics, open your browser to: 
 
@@ -73,7 +75,7 @@ You can collect kube-controller-manager metrics in a Kubernetes deployment you 
 
 ### kube-controller-manager metrics to collect
 
-`cloudprovider\_\*\_api_request_duration_seconds\*`
+`cloudprovider_\*_api_request_duration_seconds\*`
 
 ### View kube-controller-manager metrics 
 
@@ -81,7 +83,9 @@ Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-
 
 Run this command to start a proxy to the Kubernetes API server: 
 
-`kubectl proxy `
+```bash
+kubectl proxy
+```
 
 To view metrics, open your browser to: 
 

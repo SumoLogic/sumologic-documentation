@@ -219,7 +219,7 @@ annotations:
 3. Verify logs in Sumo Logic.
 1. **Add an FER to normalize the fields in Kubernetes environments** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
 1. Go to **Manage Data > Logs > Field Extraction Rules.**
-2. Click the** + **Add button on the top right of the table**. \
+2. Click the** + **Add button on the top right of the table**.
 The **Add Field Extraction Rule** form will appear.
 
 

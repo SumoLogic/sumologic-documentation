@@ -28,7 +28,7 @@ In this step, you create an HTTP Source on a Hosted Collector on the Sumo Logic 
 
 To configure an HTTP Source:
 
-1. In the Sumo Logic web app, go to **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, go to **Manage Data \> Collection \> Collection**. 
 1. On the **Collection** page, find the Host Collector where you want to locate the HTTP Source, and click **Add Source**.
 1. On the **Select Source…** page, click **HTTP Logs & Metrics**. 
 1. The source configuration page appears.

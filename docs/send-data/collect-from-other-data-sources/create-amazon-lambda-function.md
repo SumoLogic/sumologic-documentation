@@ -47,6 +47,6 @@ Sumo provides a Lambda function for use with Amazon Web Services (AWS). It coll
     ![lambda6.png](/img/send-data/lambda6.png)
 
     * `ENCODING` (Optional)—Encoding to use when decoding CloudWatch log events. Default is utf-1.
-    * `SOURCE_CATEGORY_OVERRIDE` (Optional)—Override \_sourceCategory value configured for the HTTP source.
-    * `SOURCE_HOST_OVERRIDE` (Optional)—Override \_sourceHost value configured for the HTTP source.
-    * `SOURCE_NAME_OVERRIDE` (Optional)—Override \_sourceName value configured for the HTTP source.
+    * `SOURCE_CATEGORY_OVERRIDE` (Optional)—Override _sourceCategory value configured for the HTTP source.
+    * `SOURCE_HOST_OVERRIDE` (Optional)—Override _sourceHost value configured for the HTTP source.
+    * `SOURCE_NAME_OVERRIDE` (Optional)—Override _sourceName value configured for the HTTP source.
