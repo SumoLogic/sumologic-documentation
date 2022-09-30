@@ -247,7 +247,7 @@ The following CSE rules refer to this Match List:
 * Too Many Kerberos Encryption Downgrade SPNs (IP)
 * Too Many Kerberos Encryption Downgrade SPNs (User)
 
-## ds_replication_authorized users
+## ds_replication_authorized_users
 
 **Target column:** Username
 
