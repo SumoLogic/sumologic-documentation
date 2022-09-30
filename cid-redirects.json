@@ -17,7 +17,7 @@
     "/cid/9008": "/docs/manage/connections-integrations/webhook-connections/new-relic",
     "/cid/9006": "/docs/cse/ingestion/aws-network-firewall",
     "/cid/9004": "/docs/integrations/microsoft-azure/active-directory-json",
-    "/cid/9003": "docs/integrations/microsoft-azure/windows-json",
+    "/cid/9003": "/docs/integrations/microsoft-azure/windows-json",
     "/cid/9002": "/docs/integrations/web-servers/nginx-ingress",
     "/cid/9000": "/docs/integrations/app-development/jmx"
 }
