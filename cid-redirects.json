@@ -22,5 +22,7 @@
     "/cid/9000": "/docs/integrations/app-development/jmx",
     "/cid/900": "/docs/beta",
     "/cid/8992": "/docs/search/search-query-language/math-expressions",
-    "/cid/8989": "/docs/integrations/saml/onelogin"
+    "/cid/8989": "/docs/integrations/saml/onelogin",
+    "/cid/87345": "/docs/integrations/google/cloud-firewall",
+    "/cid/8675310": "/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source"
 }
