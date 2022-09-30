@@ -25,7 +25,7 @@ Update - We've updated the release note published on August 30, 2022, which inco
 New - We're happy to announce two new metrics operators:
 
 * [ewma](docs/metrics/metric-queries-alerts/operators.md#ewma)—Computes an exponentially weighted moving average on a stream of metrics. This allows you to smooth out short-term fluctuations (outliers) and display long-term trends.
-* [where](docs/metrics/metric-queries-alerts/operators.md#where)—Allows you to filter data points by value. 
+* [where](docs/metrics/metric-queries-alerts/operators.md#where)—Allows you to filter data points by value.
 
 ---
 ## September 27, 2022 (Observability)
@@ -542,7 +542,7 @@ New - If you are using [Sumo Logic Cloud SOAR](https://www.sumologic.com/solutio
 ---
 ## February 24, 2022 (Search)
 
-New - The [Search Query Language](/docs/Search/Search-Query-Language) has a new operator, [dedup](/docs/Search/Search-Query-Language/operators#dedup) allows you to:
+New - The [Search Query Language](/docs/search/search-query-language) has a new operator, [dedup](/docs/search/search-query-language/operators#dedup) allows you to:
 
 
 

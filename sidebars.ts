@@ -26,8 +26,7 @@ module.exports = {
         'get-started/system-requirements',
         'get-started/sign-up',
         'get-started/account-setup',
-        'get-started/analyst',
-        'get-started/admin',
+        'get-started/onboarding-checklists',
         'get-started/library',
         'get-started/sumo-logic-apps',
         'get-started/sumo-logic-ui',
@@ -796,7 +795,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Chart Panels Types',
+          label: 'Chart Panel Types',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'dashboards/chart-panel-types/index'},
@@ -1108,7 +1107,6 @@ module.exports = {
       collapsed: false,
       link: {type: 'doc', id: 'metrics/introduction/index'},
       items: [
-        'metrics/introduction/overview-sumo-metrics',
         'metrics/introduction/get-started-metrics',
         'metrics/introduction/built-in-metadata',
         'metrics/introduction/metric-formats',
@@ -1713,19 +1711,6 @@ module.exports = {
         'integrations/web-servers/varnish',
         ],
       },
-      {
-        type: 'category',
-        label: 'Pivotal Cloud Foundry',
-        collapsible: true,
-        collapsed: true,
-        link: {type: 'doc', id: 'integrations/pivotal-cloud-foundry/index'},
-        items: [
-          'integrations/pivotal-cloud-foundry/diego-brain',
-          'integrations/pivotal-cloud-foundry/diego-cell',
-          'integrations/pivotal-cloud-foundry/gorouter',
-          'integrations/pivotal-cloud-foundry/uaa',
-         ],
-       },
       {
       type: 'category',
       label: 'PCI Compliance',
