@@ -59,9 +59,9 @@
     "message": "Sumo Logic GitHub",
     "description": "The label of footer link with label=Sumo Logic GitHub linking to https://github.com/SumoLogic"
   },
-  "link.item.label.GitHub Incubator Projects": {
-    "message": "GitHub Incubator Projects",
-    "description": "The label of footer link with label=GitHub Incubator Projects linking to https://github.com/SumoLogic-Incubator"
+  "link.item.label.GitHub Labs Projects": {
+    "message": "GitHub Labs Projects",
+    "description": "The label of footer link with label=GitHub Labs Projects linking to https://github.com/SumoLogic-Labs"
   },
   "link.item.label.Sumo Dojo Slack": {
     "message": "Sumo Dojo Slack",

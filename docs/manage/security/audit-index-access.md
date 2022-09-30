@@ -8,10 +8,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
 
-Sumo Logic has added new [role capabilities](/docs/manage/users-and-roles/roles/role-capabilities) that allow you to grant access to the following audit indexes:
+Sumo Logic has added new [role capabilities](/docs/manage/users-roles/roles/role-capabilities) that allow you to grant access to the following audit indexes:
 
 * [Search Audit Index](https://help.sumologic.com/manage/Security/Search_Audit_Index). Contains logs on search usage and activities for your account, and is stored in the `sumologic_search_usage_per_query` partition.
-* [Data Volume Index](https://help.sumologic.com/manage/Ingestion-and-Volume/Data_Volume_Index). Contains logs that provide visibility in ingest volume, and is stored in the  `sumologic_volume_index` partition.
+* [Data Volume Index](https://help.sumologic.com/manage/ingestion-volume/Data_Volume_Index). Contains logs that provide visibility in ingest volume, and is stored in the  `sumologic_volume_index` partition.
 * [Audit Event Index](https://help.sumologic.com/manage/Security/Audit_Event_Index). Contains JSON logs on account activities, both actions initiated by users and actions  initiated by Sumo Logic. User event logs ares stored in the `sumologic_audit_events` partition. Sumo Logic event logs are stored in the `sumologic_system_events` partition.
 * [Audit Index](https://help.sumologic.com/manage/Security/Audit-Index). Contains account activity logs from Sumo Logic's older logging framework, and is stored in the `sumologic_audit` partition.
 

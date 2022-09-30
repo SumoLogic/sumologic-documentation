@@ -47,6 +47,9 @@ If you're using Cassandra in a Kubernetes environment, create the fields:
 * `pod_labels_environment`
 * `pod_labels_db_system`
 * `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
+
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -57,6 +60,8 @@ If you're using Cassandra in a non-Kubernetes environment, create the fields:
 * `db_system`
 * `db_cluster`
 * `pod`
+* `db_cluster_address`
+* `db_cluster_port`
 
 </TabItem>
 </Tabs>
@@ -116,14 +121,20 @@ annotations:
     mbean = "java.lang:name=*,type=GarbageCollector"
     tag_keys = ["name"]
     field_prefix = "$1_"
+[[inputs.jolokia2_agent.metric]]
+  name=”OperatingSystem”
+  mbean=”java.lang:type=OperatingSystem”
+  paths = [“FreePhysicalMemorySize", "AvailableProcessors", "SystemCpuLoad", "TotalPhysicalMemorySize", "TotalSwapSpaceSize", "SystemLoadAverage"]
 [[inputs.jolokia2_agent]]
   urls = ["http://localhost:8778/jolokia"]
   name_prefix = "cassandra_"
 [inputs.jolokia2_agent.tags]
-  environment="prod"
+  environment="ENV_TO_BE_CHANGED"
   component="database"
   db_system="cassandra"
   db_cluster="cassandra_on_premise"
+  db_cluster_address = “ENV_TO_BE_CHANGED”
+  db_cluster_port = “ENV_TO_BE_CHANGED”
   dc = "IDC1"
   [[inputs.jolokia2_agent.metric]]
     name  = "TableMetrics"
@@ -156,13 +167,16 @@ annotations:
     tag_keys = ["name"]
     field_prefix = "$1_"
 ```
-Enter in values for the following parameters:
+Enter in values for the following parameters (marked ENV_TO_BE_CHANGED above):
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Cassandra Input plugin. Please refer to [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Cassandra input plugin for Telegraf. As Telegraf will be run as a sidecar, the host should always be localhost.
    * In the input plugins section (`[[inputs.jolokia2_agent]]`):
       * `urls` - The URL to the Cassandra server. This can be a comma-separated list to connect to multiple Cassandra servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Cassandra input plugin for Telegraf.
    * In the tags section (`[[inputs.jolokia2_agent]]`):
       * `environment` - This is the deployment environment where the Cassandra cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `db_cluster` - Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used
+
 
 Here’s an explanation for additional values set by this configuration that we request you  do not modify, as they will cause the Sumo Logic apps to not function correctly.
 
@@ -173,6 +187,17 @@ Here’s an explanation for additional values set by this configuration that we 
     * In the tags section (`[inputs.jolokia2_agent.tags]`):
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * `db_system: “cassandra”` - This value identifies the database system.
+
+Note: db_cluster_address and db_cluster_port should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example if your application uses “cassandra-prod.sumologic.com:3306” as the connection string, the field values should be set as follows:
+db_cluster_address=cassandra-prod.sumologic.com
+db_cluster_port=3306
+
+If your application connects directly to a given Cassandra node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration:
+host=cassandra-prod.sumologic.com
+
+Pivoting to Tracing data from Entity Inspector is possible only for “Cassandra address” Entities.
 
   For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
@@ -191,6 +216,9 @@ This section explains the steps to collect Cassandra logs from a Kubernetes envi
      component: "database"
      db_system: "cassandra"
      db_cluster: "<Your_Cassandra_Cluster_Name>"--Enter Default if you do not have one.
+     db_cluster_address: <your cluster’s hostname or ip address or service endpoint>
+     db_cluster_port: <database port>
+
      ```
      Please enter values for the following parameters:
      * `environment` - This is the deployment environment where the Cassandra cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
@@ -199,8 +227,21 @@ This section explains the steps to collect Cassandra logs from a Kubernetes envi
     Here’s an explanation for additional values set by this configuration that we request you **do not modify** as this will cause the Sumo Logic apps to not function correctly.
     * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
     * `db_system: “Cassandra”` - This value identifies the database system.
+    * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+    * `db_cluster_port` - Enter the database port. If not provided, a default port will be used
 
-    For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+Note: db_cluster_address and db_cluster_port should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example if your application uses “cassandra-prod.sumologic.com:3306” as the connection string, the field values should be set as follows:
+db_cluster_address=cassandra-prod.sumologic.com
+db_cluster_port=3306
+
+If your application connects directly to a given Cassandra node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration:
+host=cassandra-prod.sumologic.com
+
+Pivoting to Tracing data from Entity Inspector is possible only for “Cassandra address” Entities.
+    
+  For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 2. (Optional) Collecting Cassandra Logs from a Log File on Kubernetes.
    1. Determine the location of the Cassandra log file on Kubernetes. This can be determined from the Cassandra logback.xml for your Cassandra cluster along with the mounts on the Cassandra pods.
@@ -222,7 +263,7 @@ This section explains the steps to collect Cassandra logs from a Kubernetes envi
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    6. Verify logs in Sumo Logic.
 
-3. Add an FER to normalize the fields in Kubernetes environments. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
+3. Add an FER to normalize the fields in Kubernetes environments. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. This step is not needed if one is using application components solution terraform script. To do so:
    1. Go to **Manage Data > Logs > Field Extraction Rules**.
    2. Click the + Add button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear:
@@ -237,9 +278,9 @@ This section explains the steps to collect Cassandra logs from a Kubernetes envi
    * **Parse Expression**. Enter the following parse expression:
    ```sql
    if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-    | pod_labels_component as component
+   | pod_labels_component as component
    | pod_labels_db_system as db_system
-   | pod_labels_db_cluster as db_cluster
+   | if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as  as db_cluster
    ```
 5. Click **Save** to create the rule.
 
@@ -310,6 +351,8 @@ paths=["FreePhysicalMemorySize","AvailableProcessors","SystemCpuLoad","TotalPhys
   component="database"
   db_system="cassandra"
   db_cluster="<Your_Cassandra_Cluster_Name>"
+  db_cluster_address = “ENV_TO_BE_CHANGED”
+  db_cluster_port = “ENV_TO_BE_CHANGED"
   dc = "IDC1"
   [[inputs.jolokia2_agent.metric]]
     name  = "TableMetrics"
@@ -355,6 +398,26 @@ Please enter values for the following parameters:
 * In the tags section, which is `[inputs.Cassandra.tags]`:
     * `environment` - This is the deployment environment where the Cassandra cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
     * `db_cluster` - Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
+    * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+    * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+  
+Here’s an explanation for additional values set by this configuration that we request you do not modify, as they will cause the Sumo Logic apps to not function correctly.
+* In the tags section ([inputs.jolokia2_agent.tags]):
+    * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
+    * `db_system: “cassandra”` - This value identifies the database system.
+
+Note: db_cluster_address and db_cluster_port should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example if your application uses “cassandra-prod.sumologic.com:3306” as the connection string, the field values should be set as follows:
+db_cluster_address=cassandra-prod.sumologic.com
+db_cluster_port=3306
+
+If your application connects directly to a given Cassandra node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration:
+host=cassandra-prod.sumologic.com
+
+Pivoting to Tracing data from Entity Inspector is possible only for “Cassandra address” Entities.
+
+
 * In the output plugins section, which is `[[outputs.sumologic]]`:
     * `url` - This is the HTTP source URL created in step 3. Please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 * Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
@@ -527,7 +590,7 @@ connection_notifications = [
   ]
 ```
 
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 ```bash title="Email notifications example"
 email_notifications = [
     {

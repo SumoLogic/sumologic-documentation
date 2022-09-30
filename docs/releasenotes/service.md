@@ -9,6 +9,37 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Service Release Notes for the current year are listed here. If you need to see previous Service Release Notes, check the [Archive](docs/releasenotes/archive).
 
+
+---
+## September 22, 2022 (Security)
+
+Collection
+Update - Good news! We've increased the number of Cloud-to-Cloud Sources that customers with paid Sumo Logic subscriptions can have, from 20 to 50. For users of free accounts, the limit remains 20 Cloud-to-Cloud Sources. For more information, see [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
+
+Metrics
+Update - We've updated the release note published on August 30, 2022, which incorrectly stated that the timeslice metrics operator had been released.
+
+---
+## September 27, 2022 (Metrics)
+
+New - We're happy to announce two new metrics operators:
+
+* [ewma](docs/metrics/metric-queries-alerts/operators.md#ewma)—Computes an exponentially weighted moving average on a stream of metrics. This allows you to smooth out short-term fluctuations (outliers) and display long-term trends.
+* [where](docs/metrics/metric-queries-alerts/operators.md#where)—Allows you to filter data points by value. 
+
+---
+## September 27, 2022 (Observability)
+
+Update - We are announcing a minor update of the AWS Observability 2.5.1. This contains changes required due to the end of support for Node.js 12.x in the AWS Lambda as announced [here](https://aws.amazon.com/blogs/developer/announcing-the-end-of-support-for-node-js-12-x-in-the-aws-sdk-for-javascript-v3/) by AWS. As part of this update, the Node.js runtime environment for AWS Observability Lambda functions has been updated to 16.x. For more information on updating the AWS Observability to the latest version, see [Update AWS Observability Stack](docs/observability/aws/deploy-use-aws-observability/update-aws-observability-stack.md).
+
+---
+## September 22, 2022 (Collection)
+
+Update - Good news! We've increased the number of Cloud-to-Cloud Sources that customers with paid Sumo Logic subscriptions can have, from 20 to 50. For users of free accounts, the limit remains 20 Cloud-to-Cloud Sources. For more information, see [Cloud-to-Cloud Integration Framework](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/index.md).
+
+## September 22, 2022 (Metrics)
+Update - We've updated the release note published on [August 30, 2022](#august-30-2022-metrics), which incorrectly stated that the timeslice metrics operator had been released.
+
 ---
 ## September 19, 2022 (Security)
 
@@ -35,7 +66,7 @@ New - You can now access your monitor playbook as a template variable, `{{playbo
 
 New - LambdaTest allows you to analyze your testing behavior and error trends. LambdaTest is a continuous quality testing cloud platform that helps developers and testers ship code faster. The [LambdaTest](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/LambdaTest) platform provides secure, scalable, and insightful test orchestration for customers at different points in their DevOps (CI/CD) lifecycle.
 
-New - we’re happy to announce the release of the [Sumo Logic App for AWS Cost Explorer](docs/integrations/amazon-aws/cost-explorer.md), which allows you to visualize, understand, and manage your AWS costs and usage over time. 
+New - we’re happy to announce the release of the [Sumo Logic App for AWS Cost Explorer](docs/integrations/amazon-aws/cost-explorer.md), which allows you to visualize, understand, and manage your AWS costs and usage over time.
 
 With the Sumo Logic App for AWS Cost Explorer, you can use our out-of-the-box dashboards as well as filtering and grouping capabilities to dive deeper into your cost and usage data and generate custom insights. Gain a better understanding of your cost trends and see detailed information about the costs and usage associated with your top cost-accruing AWS accounts, regions, services, and operations.
 
@@ -52,13 +83,13 @@ Update - We are happy to announce the release of a new Explore Hierarchy for Dat
 * [MariaDB](docs/integrations/databases/mariadb.md)
 * [Memcached](docs/integrations/databases/memcached.md)
 * [Oracle](docs/integrations/databases/oracle/index.md)
-  
+
 If you already use one of the above apps, you will need to reinstall it to benefit from the newly added functionality.
 
 ---
 ## September 8, 2022 (Traces)
 
-New - we're happy to share extended coverage for [Real User Monitoring (RUM)](/docs/apm/rum), our solution that provides insight into your users' end-to-end browser experience interacting with your web apps. New RUM capabilities include:
+New - we're happy to share extended coverage for [Real User Monitoring (RUM)](/docs/apm/real-user-monitoring), our solution that provides insight into your users' end-to-end browser experience interacting with your web apps. New RUM capabilities include:
 
 * New dashboard panels for the following metrics:
    * XHR timing
@@ -76,22 +107,22 @@ New - we're happy to share extended coverage for [Real User Monitoring (RUM)](/d
 This new functionality requires RUM script in version 4 or higher (`https://rum.sumologic.com/sumologic-rum-v4.js`). Please ensure you are using the correct version in your pages. For automatic updates, use `https://rum.sumologic.com/sumologic-rum.js`.
 
 ---
-## August 30, 2022 (Metrics) 
+## August 30, 2022 (Metrics)
 
-We're delighted to announce the availability of these new operators: 
+We're delighted to announce the availability of these new operators:
 
 * [stddev](docs/metrics/metric-queries-alerts/operators.md#stddev)—Calculates the standard deviation of the metrics values that match the query.
-* [in](docs/metrics/metric-queries-alerts/operators.md#in)—You can use this operator in a metrics query selector as shorthand for multiple OR conditions. 
+* [in](docs/metrics/metric-queries-alerts/operators.md#in)—You can use this operator in a metrics query selector as shorthand for multiple OR conditions.
 
 ---
 ## August 25, 2022 (Collection)
 
-Update - We are pleased to announce that the following [Cloud-to-Cloud Integration Framework[docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework] sources are now available in Sumo Logic’s FedRAMP deployment: 
+Update - We are pleased to announce that the following [Cloud-to-Cloud Integration Framework[docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework] sources are now available in Sumo Logic’s FedRAMP deployment:
 
 * [Crowdstrike](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source.md)
 * [Crowdstrike FDR](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source.md)
 * [Duo](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source.md)
-* [Sentinel One Mgmt API](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source.md) 
+* [Sentinel One Mgmt API](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source.md)
 * [Proofpoint Tap](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source.md)
 
 ---
@@ -155,7 +186,7 @@ New - Our `metricsfromtrace `and `rummetricsfromtrace` metrics have a new metada
 ---
 ## July 28, 2022 (Security)
 
-New - The [role capability](docs/manage/users-and-roles/roles/role-capabilities.md) we told you about [earlier](#july-18-2022-security) this month—**Download Search Results**—is now released. This capability, which grants the permission to download log search results, is enabled for all roles. Note that if you manage role capabilities using the Sumo Logic API or Terraform, you need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results.
+New - The [role capability](docs/manage/users-roles/roles/role-capabilities.md) we told you about [earlier](#july-18-2022-security) this month—**Download Search Results**—is now released. This capability, which grants the permission to download log search results, is enabled for all roles. Note that if you manage role capabilities using the Sumo Logic API or Terraform, you need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results.
 
 ---
 ## July 22, 2022 (Apps)
@@ -175,7 +206,7 @@ Update - When you query high cardinality metrics, the results can be hard to rea
 ---
 ## July 18, 2022 (Security)
 
-Update - The week of July 25, 2022, we’ll be releasing a new [role capability](docs/manage/users-and-roles/roles/role-capabilities.md)—**Download Search Results**—that grants the permission to download log search results. This capability will be enabled for all roles. If you manage role capabilities using the Sumo Logic API or Terraform, when the new capability is released, you’ll need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results.
+Update - The week of July 25, 2022, we’ll be releasing a new [role capability](docs/manage/users-roles/roles/role-capabilities.md)—**Download Search Results**—that grants the permission to download log search results. This capability will be enabled for all roles. If you manage role capabilities using the Sumo Logic API or Terraform, when the new capability is released, you’ll need to add the “downloadSearchResults” capability to the capabilities list for each role that should be able to download search results.
 
 ---
 ## July 15, 2022 (Apps)
@@ -198,7 +229,7 @@ New - We’re pleased to announce the release of the [GCP Metrics Source](docs/s
 ---
 ## July 13, 2022 (Manage)
 
-Update - We have renamed our default partition from “Default Continuous Partition” to “sumologic_default”. Now you can directly query the data stored in the default partition, where all data is ingested unless explicitly routed into another partition. Any APIs that reference the default partition by its previous name, “Default Continuous Partition”, should be updated to refer to “sumologic_default” instead. For more information, see [Search the Default Partition](/docs/manage/partitions-and-data-tiers/run-search-against-partition#Search-the-default-partition).  
+Update - We have renamed our default partition from “Default Continuous Partition” to “sumologic_default”. Now you can directly query the data stored in the default partition, where all data is ingested unless explicitly routed into another partition. Any APIs that reference the default partition by its previous name, “Default Continuous Partition”, should be updated to refer to “sumologic_default” instead. For more information, see [Search the Default Partition](/docs/manage/partitions-data-tiers/run-search-against-partition#Search-the-default-partition).  
 
 ---
 ## July 8, 2022 (Apps)
@@ -371,7 +402,7 @@ Update - We've improved your Sumo Logic app installation process and added guida
 ---
 ## May 11, 2022 (Alerts)
 
-New - The new default payloads are now available for the following connections using [new variables](docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+New - The new default payloads are now available for the following connections using [new variables](docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 
 
 
@@ -506,7 +537,7 @@ Our [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/clo
 ---
 ## March 1, 2022 (Alerts)
 
-New - If you are using [Sumo Logic Cloud SOAR](https://www.sumologic.com/solutions/cloud-soar/), you can now integrate Monitors and Scheduled Searches with Cloud SOAR via a new [webhook connection](docs/manage/connections-and-integrations/webhook-connections/cloud-soar.md). This new capability allows you to send Alerts to Cloud SOAR to further process and operate on these incidents. The result is a rich and connected experience between your data residing in Sumo Logic and the security response capabilities within Cloud SOAR.
+New - If you are using [Sumo Logic Cloud SOAR](https://www.sumologic.com/solutions/cloud-soar/), you can now integrate Monitors and Scheduled Searches with Cloud SOAR via a new [webhook connection](docs/manage/connections-integrations/webhook-connections/cloud-soar.md). This new capability allows you to send Alerts to Cloud SOAR to further process and operate on these incidents. The result is a rich and connected experience between your data residing in Sumo Logic and the security response capabilities within Cloud SOAR.
 
 ---
 ## February 24, 2022 (Search)
@@ -522,7 +553,7 @@ New - The [Search Query Language](/docs/Search/Search-Query-Language) has a new 
 ---
 ## February 18, 2022 (Security)
 
-Update - We’ve eased the process of offboarding Sumo Logic users. Now, when you delete a user’s Sumo Logic account, you can transfer the user’s [Monitors](/docs/alerts/monitors) to another user, along with folders, searches, scheduled searches, scheduled views, monitors, and dashboards. For more information, see [Delete a User](docs/manage/users-and-roles/users/delete-user.md).
+Update - We’ve eased the process of offboarding Sumo Logic users. Now, when you delete a user’s Sumo Logic account, you can transfer the user’s [Monitors](/docs/alerts/monitors) to another user, along with folders, searches, scheduled searches, scheduled views, monitors, and dashboards. For more information, see [Delete a User](docs/manage/users-roles/users/delete-user.md).
 
 ---
 ## February 18, 2022 (Monitors)

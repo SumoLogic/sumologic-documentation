@@ -17,23 +17,9 @@ const features = [
     description: (<Translate
       id="landing.feature.get-started.desc"
       description="Get started description">
-        Get started with your Sumo Logic data analytics journey.
+        Get started with Sumo Logic and start sending data.
       </Translate>),
     link: 'docs/get-started',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.send-data.title',
-      message: 'Send Data to Sumo',
-      description: 'Title for get started',
-    }),
-    imageUrl: 'img/icons/send-data.png',
-    description: (<Translate
-      id="landing.feature.send-data.desc"
-      description="Get started description">
-        Choose a collector and source to start sending data to Sumo Logic.
-      </Translate>),
-    link: 'docs/send-data',
   },
   {
     title: translate({
@@ -48,6 +34,20 @@ const features = [
         Search, query and analyze your log data sent to Sumo Logic.
       </Translate>),
     link: 'docs/search',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.cse.title',
+      message: 'Cloud SIEM',
+      description: 'Title for CSE',
+    }),
+    imageUrl: 'img/icons/security/cloud-siem.png',
+    description: (<Translate
+      id="landing.feature.cse.desc"
+      description="CSE description">
+        Gain insights and investigate key security issues.
+      </Translate>),
+    link: 'docs/cse',
   },
   {
     title: translate({

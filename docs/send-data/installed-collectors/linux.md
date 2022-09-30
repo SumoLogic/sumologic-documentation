@@ -31,7 +31,7 @@ Choose one of these methods to install the Collector:
 
 You can build a Collector into a [Linux machine image](collector-installation-reference/add-collector-linux-machine-image.md) such as an Amazon AMI or VMware image.
 
-After installing Collectors, you can configure Sources by using the Web Application or by providing the [Source settings in a JSON file](/docs/send-data/use-json-configure-sources). If you're using a UTF-8 encoded JSON file, you must provide the file before starting the collector. The JSON file needs to be UTF-8 encoded.
+After installing Collectors, you can configure Sources from Sumo Logic or by providing the [Source settings in a JSON file](/docs/send-data/use-json-configure-sources). If you're using a UTF-8 encoded JSON file, you must provide the file before starting the collector. The JSON file needs to be UTF-8 encoded.
 
 ### Install using the UI installer 
 
@@ -106,7 +106,7 @@ You can use the RPM or Debian package to install a Collector on a Linux
    #Replace XXX-XX with the version number of the package you downloaded.
    ```
 :::note
-Replace _XXX-XX_ in the command above with the version number of the package you downloaded. 
+Replace _XXX-XX_ in the command above with the version number of the package you downloaded.
 :::
 
    The RPM and Debian packages install the collector in the `/opt/SumoCollector` directory. By default, the Collector is installed as a system service, but not yet started.

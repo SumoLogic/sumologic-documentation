@@ -53,8 +53,6 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 **Data.** Data is plural. Use "data are", not "data is".
 
-**Data Panel.** Formerly Monitors. Capitalize Panel.  
-
 **Dimension**. Used interchangeably with tags.
 
 **Drill down.** Drill down, as in a menu, or other filtering feature is two words, not one.
@@ -112,7 +110,7 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 ## M
 
-**Markdown. **Used in Text Panels. Capitalize Markdown.
+**Markdown.** Used in Text Panels. Capitalize Markdown.
 
 **MB and Mbit. **MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
 
@@ -136,8 +134,6 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 ## P
 
 **Page.** When referring to a page in the UI, such as the Search page, use page. Don't use pane or tab. A tab appears inside a page. (Example: The Messages tab appears on the Search page.)
-
-**Panel.** Formerly called Monitors. Capitalize Panel.
 
 **Please.** Avoid using please. You're making recommendations on how to use software and services; it's not an inconvenience to the user.
 
