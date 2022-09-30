@@ -19,15 +19,5 @@
     "/cid/9004": "/docs/integrations/microsoft-azure/active-directory-json",
     "/cid/9003": "docs/integrations/microsoft-azure/windows-json",
     "/cid/9002": "/docs/integrations/web-servers/nginx-ingress",
-    "/cid/9000": "/docs/integrations/app-development/jmx",
-    "/cid/900": "/docs/beta",
-    "/cid/8992": "/docs/search/search-query-language/math-expressions",
-    "/cid/8989": "/docs/integrations/saml/onelogin",
-    "/cid/87345": "/docs/integrations/google/cloud-firewall",
-    "/cid/8675310": "/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source",
-    "/cid/8675309": "/docs/manage/content-sharing",
-    "/cid/8595": "/docs/manage/security/set-password-policy",
-    "/cid/85858": "/docs/observability/kubernetes/quickstart",
-    "/cid/8394": "/docs/search/search-query-language/operators",
-    "/cid/80901": "/docs/integrations/containers-orchestration/docker-ulm"
+    "/cid/9000": "/docs/integrations/app-development/jmx"
 }
