@@ -34,9 +34,8 @@
     "/cid/80550": "/docs/integrations/app-development/jira",
     "/cid/80450": "/docs/integrations/app-development/puppet",
     "/cid/80411": "/docs/observability/aws/integrations/aws-lambda",
+    "/cid/80412": "/docs/observability/aws/integrations/aws-lambda",
     "/cid/80410": "/docs/integrations/amazon-aws/waf",
-    "/cid/78220": "/docs/integrations/pivotal-cloud-foundry",
-    "/cid/78012": "/docs/integrations/pivotal-cloud-foundry/uaa",
     "/cid/759": "/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces",
-    "/cid/758": "/docs/apm/traces/get-started-transaction-tracing/http-traces-source",
+    "/cid/758": "/docs/apm/traces/get-started-transaction-tracing/http-traces-source"
 }
