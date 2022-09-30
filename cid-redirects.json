@@ -60,5 +60,6 @@
     "/cid/6966": "/docs/integrations/databases/redis",
     "/cid/6690": "/docs/manage/security/access-keys",
     "/cid/6115": "/docs/integrations/security-threat-detection/duo-security",
-    "/cid/6114": "/docs/integrations/amazon-aws/dynamodb"
+    "/cid/6114": "/docs/integrations/amazon-aws/dynamodb",
+    "/src/theme/NotFound.js": "/"
 }

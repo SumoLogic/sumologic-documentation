@@ -409,4 +409,4 @@ Sumo Logic makes the following API calls for GCP metrics:
 
 ## Create Queries and Alerts
 
-With the source collecting metrics from GCP, see [Metric Queries and Alerts](/docs/Metrics/metric-queries-alerts/) for more information on queries and alerts.
+With the source collecting metrics from GCP, see [Metric Queries and Alerts](/docs/metrics/metric-queries-alerts/) for more information on queries and alerts.

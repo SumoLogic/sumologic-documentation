@@ -126,7 +126,7 @@ It can take up to 48 hours for AWS to generate your billing data. For accuracy, 
 
 ### States
 
-The AWS Cost Explorer Source reports errors, its health, and initialization status. Other than indicating that the source is healthy, you are also informed, in real-time, if the source is running into trouble communicating with AWS API, or if there's an error that requires user action indicated by [Sumo Logic Health Events](/docs/manage/Health-Events).
+The AWS Cost Explorer Source reports errors, its health, and initialization status. Other than indicating that the source is healthy, you are also informed, in real-time, if the source is running into trouble communicating with AWS API, or if there's an error that requires user action indicated by [Sumo Logic Health Events](/docs/manage/health-events).
 
 An AWS Cost Explorer Source goes through the following states when created:
 
@@ -146,12 +146,12 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 When you delete the source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
 
-On the Collection page, the [Health](/docs/manage/Health-Events#Collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection.
+On the Collection page, the [Health](/docs/manage/health-events#Collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection.
 
 
 ### Error types
 
-When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/Health-Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/health-events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 <table><small>
   <tr>

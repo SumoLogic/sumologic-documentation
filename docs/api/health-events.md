@@ -5,7 +5,7 @@ sidebar_label: Health Events
 description: Use HTTP endpoints to view your account's health events.
 ---
 
-The [Health Events](/docs/manage/Health-Events) Management API allows you to view the health of your Collectors and Sources from HTTP endpoints.
+The [Health Events](/docs/manage/health-events) Management API allows you to view the health of your Collectors and Sources from HTTP endpoints.
 
 Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 
