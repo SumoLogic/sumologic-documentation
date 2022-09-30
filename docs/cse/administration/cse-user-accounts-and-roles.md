@@ -7,7 +7,7 @@ description: Learn how to create users and roles for CSE.
 
 This topic has information about creating and managing user accounts and roles for CSE. CSE uses role-based access control (RBAC). An administrator controls access to capabilities by assigning capabilities or permissions to roles, and then assigning users to roles.  
 
-Roles and capabilities are managed on the Sumo Logic platform. For instructions see the following topics:
+Roles and capabilities are managed on the Sumo Logic platform. For instructions, see the following topics:
 
 * [Create and Manage Roles](docs/manage/users-roles/roles/create-manage-roles.md). You can assign multiple roles to a user. So, you might consider creating CSE-specific roles for different CSE user types, separate from roles you may define for Sumo Logic platform functionality. The CSE-related capabilities you can assign to roles are listed in the Cloud SIEM Enterprise section of the **Role Capabilities** page. 
   :::note
