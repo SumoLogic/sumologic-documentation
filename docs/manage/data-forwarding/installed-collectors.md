@@ -22,7 +22,7 @@ Data forwarding processing rules are processed after all other [processing rules
 
 ## Configure data forwarding destination
 
-You need the [Manage Collectors role capability](../users-and-roles/roles/role-capabilities.md) to create a data forwarding destination.
+You need the [Manage Collectors role capability](../users-roles/roles/role-capabilities.md) to create a data forwarding destination.
 
 To set up a data forwarding destination:
 

@@ -60,7 +60,7 @@ The point at which Sumo slows metric data ingestion to keep it within your allow
 
 ## C
 
-**[Capability](https://help.sumologic.com/manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities)**
+**[Capability](https://help.sumologic.com/manage/users-roles/Manage-Roles/05-Role-Capabilities)**
 
 In Sumo role-based access control (RBAC), you grant the users with a role the right to perform a particular function by assigning the corresponding capability to the role. For example, the “Manage Collectors” capability allows a user to install and manage installed and hosted Collectors and Sources.
 
@@ -121,7 +121,7 @@ Panels are placed on Dashboards and provide a graphical representation of your o
 
 A Data Type is a specific type of log used with a Sumo Logic Source or App, such as Apache, MySQL, or Windows IIS. You can also use a custom Data Type for a custom application.
 
-**[Data Volume Index](https://help.sumologic.com/manage/Ingestion-and-Volume/Data_Volume_Index)**
+**[Data Volume Index](https://help.sumologic.com/manage/ingestion-volume/Data_Volume_Index)**
 
 The Data Volume Index automatically provides data that allows you to understand your account’s data ingest volume in bytes and number of log messages processed overall. The Data Volume Index gives you better visibility into how much data you are sending to Sumo Logic, allowing you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription.
 
@@ -183,17 +183,9 @@ Field Extraction can be set up as rules that parse out fields as log messages ar
 
 A fingerprint consists of the first 2048 bytes of a file and is used by Installed Collectors to track what data has been collected.
 
-<<<<<<< HEAD
 **[Flow Graph](docs/integrations/amazon-aws/guardduty-benchmark.md)**
 
 A graph or map that dynamically displays a directional flow from a source to a target. Such as the flow of cyber threats from the geographic locations of sources to their targets, dynamically illustrated in the Threat Sources and Targets by Geography panel of the [Amazon GuardDuty Global Baseline](docs/integrations/amazon-aws/guardduty-benchmark.md) dashboard.
-=======
-**[Flow Graph](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_GuardDuty_Benchmark)**
-
-A graph or map that dynamically displays a directional flow from a source to a target. Such as the flow of cyber threats from the geographic locations of sources to their targets, dynamically illustrated in the Threat Sources and Targets by Geography panel of the [Amazon GuardDuty Global Baseline](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_GuardDuty_Benchmark/View_the_Amazon_GuardDuty_Benchmark_App_Dashboards) dashboard.
->>>>>>> main
-
-
 
 
 ## G
@@ -219,11 +211,7 @@ Group-by functions include count, count_distinct, sum, avg, stddev, max, min, la
 
 Hash rules replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it's fully hidden.
 
-<<<<<<< HEAD
-**[Host Metrics](https://help.sumologic.comdocs/integrations/14Hosts_and_Operating_Systems/Host_Metrics)**
-=======
-**[Host Metrics](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics)**
->>>>>>> main
+**[Host Metrics](https://help.sumologic.com/docs/integrations/14Hosts_and_Operating_Systems/Host_Metrics)**
 
 The Sumo Logic app for Host Metrics allows you to collect local host metrics and display them using predefined search queries and dashboards. The app provides dashboards to display analysis of local host metrics for the CPU, disk, memory, network, and TCP.
 
@@ -242,7 +230,7 @@ A ternary operator used to evaluate a condition as either true or false, with va
 
 Include rules are a type of Processing Rule that is used to send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude.
 
-**[Ingest Budget](https://help.sumologic.com/manage/Ingestion-and-Volume/Ingest_Budgets)**
+**[Ingest Budget](https://help.sumologic.com/manage/ingestion-volume/Ingest_Budgets)**
 
 Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from Collectors.
 
@@ -261,13 +249,9 @@ In Carbon 2.0-formatted metrics, intrinsic tags are the one or more space-separa
 
 ## K
 
-<<<<<<< HEAD
 **[Kubernetes Views](https://help.sumologic.com/docs/observability/Kubernetes_Solution/02Monitoring_Using_Kubernetes)**
-=======
-**[Kubernetes Views](https://help.sumologic.com/observability/Kubernetes_Solution/02Monitoring_Using_Kubernetes)**
->>>>>>> main
 
-Allow you to intuitively filter on four hierarchical components of your Kubernetes system to focus your search on nodes, deployments, services, or namespaces. Kubernetes Views make it easier to traverse your Kubernetes hierarchy to monitor specific components, identify problems, discover root problems, and take progressive action.
+Allows you to intuitively filter on four hierarchical components of your Kubernetes system to focus your search on nodes, deployments, services, or namespaces. Kubernetes Views make it easier to traverse your Kubernetes hierarchy to monitor specific components, identify problems, discover root problems, and take progressive action.
 
 
 
@@ -343,15 +327,11 @@ A Sumo feature that throttles your metric sources when you exceed your DPM burst
 
 Metrics transformation rules allow you control how long raw metrics are retained. You can also aggregate metrics at collection time and specify a separate retention period for the aggregated metrics.
 
-**[Metric volume index](https://help.sumologic.com/manage/Ingestion-and-Volume/Data_Volume_Index/Metrics_Data_Volume_Index)**
+**[Metric volume index](https://help.sumologic.com/manage/ingestion-volume/Data_Volume_Index/Metrics_Data_Volume_Index)**
 
 A Sumo index to which Sumo writes messages with information about the volume of metrics you are ingesting.
 
-<<<<<<< HEAD
-**[Microservices](https://help.sumologic.comdocs/integrations/08App_Development)**
-=======
-**[Microservices](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development)**
->>>>>>> main
+**[Microservices](https://help.sumologic.com/docs/integrations/08App_Development)**
 
 The microservices architecture enables you to structure applications as collections of loosely coupled services that are fine-grained, with protocols that are lightweight. Building applications using different smaller services improves modularity and provides for the continuous delivery and deployment of large, complex applications.
 
@@ -399,13 +379,7 @@ A Sumo feature you can use to filter or forward log data ingested by Sumo from a
 
 **Prometheus**
 
-<<<<<<< HEAD
-A metric format in which a time series is uniquely identified by its metric name and a set of labels in key-value pairs format. Sumo’s [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) and [Streaming Metric source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Streaming-Metrics-Source) support Prometheus metrics. Sumo’s [Kubernetes solution](https://help.sumologic.com/docs/observability/Kubernetes_Solution) also collects Prometheus metrics.
-=======
 A metric format in which a time series is uniquely identified by its metric name and a set of labels in key-value pairs format. Sumo’s [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) and [Streaming Metric source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Streaming-Metrics-Source) support Prometheus metrics. Sumo’s [Kubernetes solution](https://help.sumologic.com/observability/Kubernetes_Solution) also collects Prometheus metrics.
->>>>>>> main
-
-
 
 
 ## Q
@@ -427,7 +401,7 @@ An operator you can use is metric queries to specify the size of the time bucket
 
 You can display search results in the order that the Collector received the messages in milliseconds.
 
-**[RBAC](https://help.sumologic.com/manage/Users-and-Roles)**
+**[RBAC](https://help.sumologic.com/manage/users-roles)**
 
 Sumo Logic supports Role-Based Access Control (RBAC) to allow Administrators to customize system access. With RBAC, Administrators create roles for groups of users who perform various job functions. Users are not assigned permissions directly, but inherit permissions through roles (or even through a single role). Role assignments can grant users permissions to access some data sets, or can restrict users from accessing types of data.
 
@@ -435,11 +409,11 @@ Sumo Logic supports Role-Based Access Control (RBAC) to allow Administrators to 
 
 Used in time range expressions, when setting the non-absolute time limits of a search. For example, -1d, -1d -12h, -12h -60m.
 
-**[Role](https://help.sumologic.com/manage/Users-and-Roles/Manage-Roles)**
+**[Role](https://help.sumologic.com/manage/users-roles/Manage-Roles)**
 
 In Sumo role-based access control (RBAC), you grant users access to data and to Sumo functions using roles. You assign role capabilities and a role search filter to a role, and assign one or more roles to a user.
 
-**[Role search filter](https://help.sumologic.com/manage/Users-and-Roles/Manage-Roles/07-Construct-a-Search-Filter-for-a-Role)**
+**[Role search filter](https://help.sumologic.com/manage/users-roles/Manage-Roles/07-Construct-a-Search-Filter-for-a-Role)**
 
 A search filter for a role defines what log data a user with that role can access. You can define a search filter using keywords, wildcards, and selected Sumo metadata fields and logical operators.
 
@@ -501,7 +475,7 @@ A support account is a special Sumo Logic user account that you can enable so th
 
 Used in Dashboards, you can add Text Panels to include titles or text descriptions. See also Markdown.
 
-**[Throttling](https://help.sumologic.com/manage/Ingestion-and-Volume/01Log_Ingestion#Throttling)**
+**[Throttling](https://help.sumologic.com/manage/ingestion-volume/01Log_Ingestion#Throttling)**
 
 Slows the rate of ingestion across all Collectors in an account to not exceed the allowable rate.
 
@@ -539,7 +513,7 @@ The user.properties file is used to pass Collector parameters for some installat
 
 ## W
 
-**[Webhook](https://help.sumologic.com/manage/Connections-and-Integrations/Webhook-Connections)**
+**[Webhook](https://help.sumologic.com/manage/connections-integrations/Webhook-Connections)**
 
 A WebHook is an HTTP callback: an HTTP POST that occurs when something happens. WebHook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming WebHooks. You can configure a custom WebHook, or use preconfigured WebHooks for a number of apps, including Slack, HipChat, Datadog, and so on.
 

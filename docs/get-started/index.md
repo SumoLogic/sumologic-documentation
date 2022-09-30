@@ -80,7 +80,7 @@ Get to know the Collection process through our video "Data Collection Strategy".
 ## Basics and Account Configuration
 
 * [Retention](https://help.sumologic.com/manage/Partitions_and_Data_Tiers/11_Manage_Indexes_with_Variable_Retention). Determine the average data retention for your account (total storage / daily ingest) and change the General Index retention period if necessary. The General Index settings can be found on the **Manage Data > Settings > Partitions** menu, which is explained in further detail on the Optimization Setup sheet of this document.
-* [Data Volume Index](https://help.sumologic.com/manage/Ingestion-and-Volume/Data_Volume_Index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo tool.
+* [Data Volume Index](https://help.sumologic.com/manage/ingestion-volume/Data_Volume_Index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo tool.
 * [Audit Index](https://help.sumologic.com/manage/Security/Audit-Index). Enable the audit index. This feature allows you to track user behavior, content changes, and scheduled search execution results.
 * [Data Volume App](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Data_Volume_App_-_Legacy). Install the Data Volume app in Sumo App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
 * [Audit App](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Audit_App/Install-the-Audit-App-and-View-the-Dashboards). Install the Audit app and explore its content. You can use this to monitor user activity, content changes, as well as scheduled search changes and executions.
@@ -169,7 +169,7 @@ Before adding Partitions, consider the following:
 
 [Basics.](https://help.sumologic.com/05Search/Optimize-Search-Performance/Optimizing_Search_with_Partitions) The **Partitions** page can be found under the **Manage Data** > **Settings** menu. Partitions are tools that can be used to route data into smaller subsets of the overall data ingest. These datasets can be isolated for either query performance reasons or for log retention purposes.
 
-[Routing Expression.](/docs/manage/partitions-and-data-tiers) Each partition's contents are determined by the routing expression, which will be scoped using metadata and/or keywords.
+[Routing Expression.](/docs/manage/partitions-data-tiers) Each partition's contents are determined by the routing expression, which will be scoped using metadata and/or keywords.
 
 [Variable Retention.](https://help.sumologic.com/manage/Partitions_and_Data_Tiers/11_Manage_Indexes_with_Variable_Retention) Each Partition has its own retention period. This allows for some logs to be retained for longer, while others are discarded more quickly.
 

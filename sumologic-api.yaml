@@ -16199,7 +16199,7 @@ components:
         capabilities:
           type: array
           description: |-
-            List of [capabilities](https://help.sumologic.com/manage/Users-and-Roles/Manage-Roles/Role-Capabilities) associated with this role. Valid values are
+            List of [capabilities](https://help.sumologic.com/manage/users-roles/Manage-Roles/Role-Capabilities) associated with this role. Valid values are
             ### Data Management
               - viewCollectors
               - manageCollectors
@@ -16312,7 +16312,7 @@ components:
         capabilities:
           type: array
           description: |-
-            List of [capabilities](https://help.sumologic.com/manage/Users-and-Roles/Manage-Roles/Role-Capabilities) associated with this role. Valid values are
+            List of [capabilities](https://help.sumologic.com/manage/users-roles/Manage-Roles/Role-Capabilities) associated with this role. Valid values are
             ### Data Management
               - viewCollectors
               - manageCollectors
