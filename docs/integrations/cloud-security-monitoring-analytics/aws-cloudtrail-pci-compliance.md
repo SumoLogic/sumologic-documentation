@@ -78,7 +78,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
 | parse "\"userName\":\"*\"" as user
 | parse "\"eventName\":\"*\"" as event
-| parse regex field=event "^(?&lt;event_type>[A-Z][a-z]+?)[A-Z]"
+| parse regex field=event "^(?<event_type>[A-Z][a-z]+?)[A-Z]"
 | where (event matches "*Security*" OR event matches "*Network*") and event_type in ("Create","Delete")
 | count by event
 | sort _count
@@ -159,7 +159,7 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 
 ### AWS CloudTrail - Security Analytics - Privileged Activity
 
-**Description: **Provides analytics on events that require elevated privilages.
+**Description: **Provides analytics on events that require elevated privileges.
 
 **Use Case:** Provides top events, trending and outliers on configuration changes, security group events, and security policy changes.
 

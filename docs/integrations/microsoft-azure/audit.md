@@ -48,8 +48,8 @@ Here’s how the solution fits together:
 
 In this step, you configure an HTTP source to which the Azure function will send Azure Activity logs.
 
-1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 
 ### Configure Azure resources using ARM template
@@ -67,8 +67,8 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
     * Choose Location.
     * In the **Sumo Endpoint URL** field, enter the URL of the HTTP Source you configured in [Step 1](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Step_1._Configure_an_HTTP_source).
     * Agree to the terms and conditions.
-    * Click **Purchase**. \
-8. Verify the deployment was successful by looking at **Notifications** at the top right corner of Azure Portal. \
+    * Click **Purchase**.
+8. Verify the deployment was successful by looking at **Notifications** at the top right corner of Azure Portal.
 9. **(Optional)** In the same window, you can click **Go to resource group** to verify all resources have been created successfully. You will see something like this: \
 10. Go to **Storage accounts** and search for “sumofailmsg”. Click on `sumofailmsg_<random-string>`.
 11. Under **Blob Service**, click **Containers**, then click **+ Container**, enter the Name** azureaudit-failover**, and select **Private** for the **Public Access Level**. Click **OK**.
@@ -103,7 +103,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

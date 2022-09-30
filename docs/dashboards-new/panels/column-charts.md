@@ -1,8 +1,10 @@
 ---
 id: column-charts
+title: Column Charts
+description: Column charts are useful for visually comparing the number of events that have occurred.
 ---
 
-# Column Charts
+
 
 Column charts are useful for visually comparing the number of events that have occurred, such as the type of error that occurs the most in your system. To create a Column chart, use a search query that provides at least a few data points in the **Aggregates** tab.
 
@@ -37,18 +39,18 @@ To add a panel with a column chart:
 
 ## Create a stacked column chart
 
-To create a stacked column chart, use a query that uses a multiple series that counts by at least two things, for example, this query from the Sumo Logic App for Apache creates a stacked column chart for visits by country over time:
+To create a stacked column chart, use a query that uses a multiple series that counts by at least two things, followed by a `transpose`. For example, this query from the Sumo Logic App for Apache creates a stacked column chart for visits by country over time
 
 ```sql
-_sourceCategory=Apache/Access 
-| parse regex "(\<client_i\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" 
-| lookup latitude, longitude, country_code, country_name, region, city, postal_code from geo://location on ip = client_ip 
-| where !isNull(country_name) AND country_name !="" 
-| timeslice 5m 
-| count by _timeslice, country_name 
+_sourceCategory=Apache/Access
+| parse regex "(\<client_i\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+| lookup latitude, longitude, country_code, country_name, region, city, postal_code from geo://location on ip = client_ip
+| where !isNull(country_name) AND country_name !=""
+| timeslice 5m
+| count by _timeslice, country_name
 | transpose row _timeslice column country_name as *
 ```
 
 When your query is added to the panel builder press **Enter** to run it. In the Display options pane select a **Stacked** Display type.  
-  
+
 ![stacked column chart and setting.png](/img/dashboards-new/panels/column-charts/stacked-column-chart-and-setting.png)

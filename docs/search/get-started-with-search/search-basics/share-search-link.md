@@ -1,7 +1,7 @@
 ---
 id: share-link-to-search
 title: Share a Link to a Search
-description: Share a link to search query results.
+description: Share a link to search query results. Copy and paste the a link to share a search via email or IM.
 ---
 
 
@@ -47,4 +47,4 @@ To share a link to a search:
 
     ![share saved search.png](/img/search/get-started-search/search-basics/share-saved-search.png)
 
-    * For information on publishing a search, see [Publishing a Search from the Library](../../../get-started/library/search-the-library.md).
+    * For information on publishing a search, see [Publishing a Search from the Library](/docs/get-started/library#search-the-library).

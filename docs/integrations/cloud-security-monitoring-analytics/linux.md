@@ -49,7 +49,7 @@ Run the installer on your server with root or Administrator privileges. If you a
 6. The Installer displays the summary of the default settings. If you want to change any of these, click Advanced UI Installer Settings and follow the instructions. Click **Next**.
 7. Choose an authentication method.
    * Access Key: If you have a Sumo Logic access ID and key, click **Next**, enter the access ID and key, and click **Next**.
-   * Installation Token: The Setup Wizard has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the **Token String** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
+   * Installation Token: The [Setup Wizard](/docs/send-data/setup-wizard) has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the **Token String** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
    * Setup Wizard Token: If the Setup Wizard has provided you with a token for the UI Installer, click **Next**, enter the token, and click **Next**. The Setup Wizard Token is a one-time use token, available for one hour after it is generated, then it expires. This token authenticates the user. It is designed to be used for only one Collector. The token cannot be used with the API, and it cannot be disabled.
 8. Click **Finish** to complete the setup.
 9. In Sumo Logic select** Manage Data > Collection > Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the collector, check the Error Codes list to help troubleshoot.
@@ -199,7 +199,7 @@ Use the following command to start the collector service.
 
 You can build a Collector into a Linux machine image such as an Amazon AMI or VMware image.
 
-After installing Collectors, you can configure Sources by using the Web Application or by providing the Source settings in a JSON file. If you're using a UTF-8 encoded JSON file, you must provide the file before starting the collector. The JSON file needs to be UTF-8 encoded.
+After installing Collectors, you can configure Sources from Sumo Logic or by providing the Source settings in a JSON file. If you're using a UTF-8 encoded JSON file, you must provide the file before starting the collector. The JSON file needs to be UTF-8 encoded.
 
 
 ### Uninstalling the Collector
@@ -263,7 +263,7 @@ sudo systemctl daemon-reload
 </details>
 
 
-2. **Remove the collector from the Sumo Logic Web Application**:
+2. **Remove the collector from Sumo Logic**:
    1. In Sumo Logic select **Manage Data > Collection > Collection**.
    2. Find the collector you want to remove, and click **Delete**.
    3. When the Confirm dialog displays, click **OK**.

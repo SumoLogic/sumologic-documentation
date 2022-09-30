@@ -1,8 +1,10 @@
 ---
 id: modify-chart
+title: Modify a Chart
+description: Learn how to customize a chart's type and visual display characteristics.
 ---
 
-# Modify a Chart
+
 
 You can customize a chart on a dashboard panel in a variety of ways. You can even change the chart type to analyze the data in another format. This section shows you how to customize a chart or change the chart type entirely. 
 
@@ -259,7 +261,7 @@ use the following JSON:
 ]
 ```
 
-### Marker visability
+### Marker visibility
 
 To enhance markers in a time series:
 

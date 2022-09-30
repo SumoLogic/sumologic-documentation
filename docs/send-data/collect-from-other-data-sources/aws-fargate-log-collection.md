@@ -1,6 +1,7 @@
 ---
 id: aws-fargate-log-collection
 title: Collect AWS ECS Fargate Container Logs
+description: This page describes how to collect application container logs from AWS ECS Fargate and EC2 using AWS Firelens.
 ---
 
 
@@ -39,8 +40,8 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 
 To add a hosted collection and HTTP source, do the following:
 
-1. In Sumo Logic, configure a [Hosted Collector](../configure-hosted-collector.md).
-1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 ## Step 2: Create an AWS task definition and service
 
@@ -194,8 +195,8 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 
 To add a hosted collection and HTTP source, do the following:
 
-1. In Sumo Logic, configure a [Hosted Collector](../configure-hosted-collector.md).
-1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 ### Step 2: Create the task definition
 

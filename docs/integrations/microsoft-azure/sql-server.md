@@ -228,9 +228,9 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 </TabItem>
 <TabItem value="non-k8s">
 
-In Non-Kubernetes environments, Sumo Logic uses the Telegraf operator for SQL Server metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about) for collecting SQL Server logs. The diagram below illustrates the components of the SQL Server collection in a non-Kubernetes environment. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/sql-nonk8s.png')} alt="sql-nonk8s.png" /> 
+In Non-Kubernetes environments, Sumo Logic uses the Telegraf operator for SQL Server metric collection and the [Installed Collector](/docs/send-data/installed-collectors) for collecting SQL Server logs. The diagram below illustrates the components of the SQL Server collection in a non-Kubernetes environment. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/sql-nonk8s.png')} alt="sql-nonk8s.png" /> 
 
-Telegraf uses the [SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain SQL Server metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from SQL Server are collected by a [Local File source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+Telegraf uses the [SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain SQL Server metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from SQL Server are collected by a [Local File source](/docs/send-data/installed-collectors/sources/local-file-source).
 
 
 The process to set up collection for SQL Server data is done through the following steps:
@@ -265,7 +265,7 @@ This section provides instructions for configuring log collection for SQL Server
       * File Path (Required). Enter the path to your `ERRORLOG` and be sure to account for log rotations by using a wildcard: `C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\Log\ERRORLOG*`
       * Collection should begin. Set this for how far back historically you want to start collecting.
       * Source Host (Optional). Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-      * Source Category (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/design-deployment/best-practices-source-categories). A recommended Source Category may be `Prod/DB/MSSQL/ERRORLOG.`
+      * Source Category (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/best-practices). A recommended Source Category may be `Prod/DB/MSSQL/ERRORLOG.`
      * Fields. Set the following fields:
        * `component = database`
        * `db_system = SQLserver`
@@ -287,14 +287,14 @@ At this point, the installed collector will start scanning the `ERRORLOG` and se
 
 Set up a Sumo Logic HTTP Source
 
-1. **Configure a Hosted Collector for Metrics. \
-To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) documentation.
+1. **Configure a Hosted Collector for Metrics.
+To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) documentation.
 2. Configure an HTTP Logs & Metrics source:
    * On the created Hosted Collector on the Collection Management screen, select **Add Source**.
    * Select **HTTP Logs & Metrics.**
       * **Name.** (Required). Enter a name for the source.
       * **Description.** (Optional).
-      * **Source Category** (Recommended)**.** Be sure to follow the [Best Practices for Source Categories](/docs/send-data/design-deployment/best-practices-source-categories). A recommended Source Category may be Prod/DB/MSSQL/Metrics.
+      * **Source Category** (Recommended)**.** Be sure to follow the [Best Practices for Source Categories](/docs/send-data/best-practices). A recommended Source Category may be Prod/DB/MSSQL/Metrics.
 3. Click **Save**.
 4. Take note of the URL provided once you click **Save**. You can retrieve it again by selecting **Show URL** next to the source on the Collection Management screen.
 
@@ -379,7 +379,7 @@ This section provides instructions for installing the Microsoft SQL Server App, 
 
 ### Pre-Packaged Alerts
 
-Sumo Logic has provided out of the box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your SQL Server clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your SQL Server clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
 For details on the individual alerts, see [Alerts](#microsoft-sql-server-alerts).
 
@@ -405,7 +405,7 @@ Custom filter examples:
 1. Click Import and then copy paste the above JSON to import monitors.
 
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MySQL folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MySQL folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
 
 
 ### Method B: Using a Terraform script
@@ -520,7 +520,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 12
-Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library.](/docs/get-started/library/install-apps)
+Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 
 
 
@@ -642,7 +642,7 @@ The **SQL Server - Backup Restore Mirroring** provides information about :
 
 ## Microsoft SQL Server Alerts
 
-Sumo Logic provideds out of the box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic provideds out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 
 <table>

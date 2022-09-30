@@ -158,17 +158,17 @@ Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch.
 
 To configure a CloudTrail Source, perform these steps:
 
-1. [Grant Sumo Logic access](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md) to an Amazon S3 bucket.
+1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md) to an Amazon S3 bucket.
 2. [Configure DataEvents with CloudTrail](https://docs.aws.amazon.com/lambda/latest/dg/logging-using-cloudtrail.html) in your AWS account.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. Add an [AWS CloudTrail Source](/docs/send-data/sources/hosted-collectors/amazon-web-services/aws-cloudtrail-source.md) to Sumo Logic.
+4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic.
 5. While configuring the cloud trail log source, following Field can be added in the source:
     * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
 
 
 ### Collect Amazon CloudWatch Metrics
 
-To collect Amazon CloudWatch Metrics, see [Amazon CloudWatch Source For Metrics.](/docs/send-data/sources/hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
+To collect Amazon CloudWatch Metrics, see [Amazon CloudWatch Source For Metrics.](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
 AWS Namespace tag to filter in source for Lambda will be - **AWS/Lambda**
 
@@ -222,17 +222,17 @@ Once Provisioned Concurrency is enabled and you start collecting CloudWatch metr
 </table>
 
 
-These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metrics/metric-queries-alerts/index.md), as shown in the following example:
+These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metrics/metric-queries-alerts), as shown in the following example:
 
 
 ### Field in Field Schema
 
-Login to Sumo Logic,  go to Manage Data > Logs > Fields. Search for the “**functionname**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
+Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**functionname**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
 ### Field Extraction Rule(s)
 
-Create Field Extraction Rule for AWS Lambda. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
+Create a Field Extraction Rule for AWS Lambda. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 
 ### Cloud Trail FER

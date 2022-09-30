@@ -15,13 +15,13 @@ A, , , ...
 A, B, , ...  
 , B, C, ...
 
-In search results, the transactionize operator adds transaction fields. The fields are named starting with the specified alias prefix, or "\_group" if no alias is specified. Transactionize adds the following fields:
+In search results, the transactionize operator adds transaction fields. The fields are named starting with the specified alias prefix, or "_group" if no alias is specified. Transactionize adds the following fields:
 
-* **\_group.** An integral value unique to each group.
-* **\_group_duration**. The duration of the transaction in milliseconds.
-* **\_group_size.** The number of log messages in the transaction.
-* **\_group_orphaned.** You can set when a field is not a member of the transaction, but you want to keep it for comparison or analysis by setting the`keepOrphans`` `parameter (described below in [Parameters](#parameters) below) to true.
-* **\_group_signature.** DEPRECATED. Use the [merge operator](merge-operator.md) in the subquery instead.
+* `_group.` An integral value unique to each group.
+* `_group_duration`. The duration of the transaction in milliseconds.
+* `_group_size.` The number of log messages in the transaction.
+* `_group_orphaned.` You can set when a field is not a member of the transaction, but you want to keep it for comparison or analysis by setting the`keepOrphans`` `parameter (described below in [Parameters](#parameters) below) to true.
+* `_group_signature.` DEPRECATED. Use the [merge operator](merge-operator.md) in the subquery instead.
 
 ## Syntax
 
@@ -56,7 +56,7 @@ Syntax section. For example, 
     `The transactionize operator has reached its memory limit; transactions could be emitted prematurely.`  
 
     To address this situation, try one or more of these options:
-    * Reduce the [time range](../../get-started-with-search/build-search/set-time-range.md) of your search to reduce the scope.
+    * Reduce the [time range](docs/search/get-started-with-search/build-search/set-time-range.md) of your search to reduce the scope.
     * Reduce the scope of your search by using parameters (such as `maxlogs`, `maxspan`, or `endswith`) that are listed above in the [Parameters](#parameters) section.
     * Run a second transactionize operator immediately after your first one. This will take the potentially ungrouped messages of your first transactionize search and group them correctly.  
          

@@ -4,16 +4,16 @@ title: Supported Tools and Schema
 description: Learn which Tools and Schema are supported by Software Development Optimization Solution.
 ---
 
-The Software Development Optimization Solution supports the following tools for each phase of the DevOps lifecycle. You can choose to configure each tool manually or in an automated manner through Terraform.
+The Software Development Optimization (SDO) Solution comes bundled with Terraform support for the following tools in each phase of the DevOps lifecycle. While tools not listed in the table below lack Terraform support for automated installation, virtually any DevOps tool can be configured to work with SDO through manual configuration by transforming the structure of data ingested by these tools — using Sumo Logic Field Extraction Rules (FERs) — to adhere to the schema defined below.
 
-| DevOps Phases             | Supported Tools                                           |
+| DevOps Phases             | Supported with Terraform                                          |
 |---------------------------|-----------------------------------------------------------|
 | Planning Phase            | Jira Cloud, Jira Server                                   |
 | Dev/Code                  | Github, Bitbucket, GitLab                                 |
 | Build/Test/Deploy/Release | Jenkins, Bitbucket Pipelines, CircleCI  Pipelines, GitLab |
 | Monitor/Operate           | PagerDuty, Opsgenie                                       |
 
-## Organization of the Software Development Optimization dashboards
+## Software Development Optimization dashboards
 
 The apps and dashboards that are part of this solution are organized into:
 
@@ -51,7 +51,7 @@ Set the value of this field to “N/A” if not available. | Optional |
 | message | This field is used to indicate any message Set the value of this field to “N/A” if not available.| Optional |
 | title | This field can be used to indicate a deploy job name, description of pipeline/stage. Set the value of this field to “N/A” if not available.	Optional |
 | user | This field indicates the user associated with a deploy event. Set the value of this field to “N/A” if not available. | Optional |
-| service | Thei field indicates the service that got deployed. Set the value of this field to “N/A” if not available. | Optional |
+| service | This field indicates the service that got deployed. Set the value of this field to “N/A” if not available. | Optional |
 | team | This field indicates the team for which a deploy event occurred. Set the value of this field to “N/A” if not available. | Optional |
 
 **Build Event.** These events describe the chain of events when a  source code repository is compiled into executable artifacts, after which a series of automated unit and regressions tests are run.  
@@ -161,7 +161,7 @@ The table below shows how Issue events are represented in the schema.
 
 ## Examples
 
-The mapping of events from tool sets to this event schema is achieved via Sumo Logic [FERs](../manage/field-extractions/create-field-extraction-rule.md). For Example, For [PagerDuty V2 Incidents](https://developer.pagerduty.com/docs/webhooks/v2-overview/), we map the incident payload to the alert event schema using the following **Parse Expression.**
+The mapping of events from tool sets to this event schema is achieved via Sumo Logic [FERs](docs/manage/field-extractions/create-field-extraction-rule.md). For Example, For [PagerDuty V2 Incidents](https://developer.pagerduty.com/docs/webhooks/v2-overview/), we map the incident payload to the alert event schema using the following **Parse Expression.**
 
 ```sql
 parse regex "(?<event>\{\"event\":\"incident\..+?\}(?=,\{\"event\":\"incident\..+|\]\}$))"
@@ -179,7 +179,7 @@ The field extraction rule created is shown in the diagram below: 
 ![pagerduty-v2-alerts.png](/img/sdo/pagerduty-v2-alerts.png)
 
 
-Examples of mapping field extraction rules to the other out of the box tools can be found in [this JSON file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
+Examples of mapping field extraction rules to the other out-of-the-box tools can be found in [this JSON file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
 
 ## Enriching the schema with additional fields
 

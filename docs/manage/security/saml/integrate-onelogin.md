@@ -32,7 +32,7 @@ Read the "Limitations section" on [Set Up SAML for Single Sign-On](set-up-saml.
      
 1. On the **Add Sumo Logic** page:
 
-    * ***Display Name**. This is the display name that will appear on your OneLogin portal page. Edit as desired. 
+    * **Display Name**. This is the display name that will appear on your OneLogin portal page. Edit as desired. 
     * **Visible in portal**. Toggle this option off if you do not want Sumo Logic to appear on your OneLogin portal page.
     * **Icons**. (Optional) If desired, you can upload different icons to display on your OneLogin portal page.
     * **Description**. (Optional) Provide a short description for this application.
@@ -45,7 +45,7 @@ Read the "Limitations section" on [Set Up SAML for Single Sign-On](set-up-saml.
     * **First Name**. Select “First Name”.
     * **Last Name**.  Select “Last Name”. 
     * **NameID**. Select "Email" or something equivalent to the users email to use as the Sumo Logic credential.
-    * **Role**. If you will be sending multiple Okta roles then change this to "**Semicolon Delimited Input (multi-value output)**"           
+    * **Role**. If you will be sending multiple OneLogin roles then change this to "**Semicolon Delimited Input (multi-value output)**"           
 
     ![role inst.png](/img/security/role-inst.png)  
           
@@ -84,7 +84,7 @@ This section has instructions for configuring SAML in Sumo Logic.
 1. **Issuer**. Paste in the **Issuer URL** you copied from the OneLogin **SSO** page, as described above.
 1. **X.509 Certificate**. Paste in the certificate you downloaded from the OneLogin **SSO** page, as described above. 
 1. **Attribute mapping**. Select "Use SAML subject".
-1. **SP-initiated Login**. (Optional) This configuration enables a Sumo user to initiate login from the Sumo Logic web app. To configure this option, see [Configure SP-initiated login](#configure-sp-initiated-login).
+1. **SP-initiated Login**. (Optional) This configuration enables a Sumo user to initiate login from Sumo Logic. To configure this option, see [Configure SP-initiated login](#configure-sp-initiated-login).
 1. **Roles Attribute**. (Optional). To configure this option, see [Configure on-demand role provisioning](#configure-on-demand-role-provisioning).
 1. **On Demand Provisioning**. (Optional). See [Configure on demand provisioning](#configure-on-demand-account-provisioning) below.
 v**Logout Page**. When a Sumo user logs out of Sumo Logic or if the user’s session times out, they will be redirected to the page you specify. If you want users to be redirected to your OneLogin portal page, enter `https``://your-domain.onelogin.com/portal/` where `your-domain` is your company's OneLogin domain.
@@ -112,10 +112,10 @@ features.
 ### Configure SP-initiated login
 
 :::tip
-SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](../../manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
+SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](docs/manage/manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
 :::
 
-This configuration enables a Sumo user to initiate login from the Sumo Logic web app. Sumo redirects the user to OneLogin with a SAML AuthnRequest with the  information that OneLogin needs to authenticate the user. OneLogin replies to Sumo with a SAML Assertion (SAMLResponse). 
+This configuration enables a Sumo user to initiate login from Sumo Logic. Sumo redirects the user to OneLogin with a SAML AuthnRequest with the  information that OneLogin needs to authenticate the user. OneLogin replies to Sumo with a SAML Assertion (SAMLResponse). 
 
 1. **Authn Request URL**. Enter the **SAML 2.0 Endpoint URL** that you copied from the OneLogin **SSO** page, as described above. 
 1. **Disable Requested Authentication Context**. (Optional). Leave unchecked.

@@ -205,14 +205,14 @@ This page demonstrates how to configure log collection for the Evident.io ESP Ap
 
 ### Step 1. Add a Sumo Logic Collector and Source
 
-1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
     1. **Name. **Enter Evident.io SNS Integration.  
     2. **Source Category. **Enter security_evident.
 3. In the **Advanced** section, configure:
     3. **Enable Timestamp Parsing. **Activate the check box Extract timestamp information from log files.
     4. **Time Zone.** Select Ignore time zone from log file, and select (UTC) Etc/UTC
-4. **Processing Rules.** Create the following [Mask Rule](/docs/manage/collection/processing-rules/Mask-Rules): \
+4. **Processing Rules.** Create the following [Mask Rule](/docs/send-data/collection/processing-rules/Mask-Rules): \
 
     5. **Name.** Enable proper timestamp parsing
     6. **Filter. **Enter `\"(?:created_at|updated_at|ended_at)\":\"\d+-\d+-\d+(T)\d+:\d+:\d+.\d+Z\"`
@@ -243,7 +243,7 @@ If this is a new SNS topic, first subscribe an email address to it to make sure 
 4. Under **Protocol**, select **HTTPS**, and paste the Sumo Logic HTTP Source URL you created in the first step into the **Endpoint** field.
 5. Click **Create Subscription**.
 6. In a few minutes, a confirmation message is sent to Sumo Logic.
-7. In Sumo Logic, find the confirmation message from your HTTP Source by searching for `SubscribeURL`. \
+7. In Sumo Logic, find the confirmation message from your HTTP Source by searching for `SubscribeURL`.
 For example, use the query: `_sourceCategory=security_evident SubscribeURL`
 8. Then, in the **Messages** tab, find the JSON field `SubscribeURL`, and copy the URL to your clipboard, as shown.
 
@@ -275,7 +275,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

@@ -243,7 +243,7 @@ This section shows you how to acquire MongoDB Atlas portal authentication inform
 This section demonstrates how to add a hosted Sumo Logic collector and HTTP Logs and Metrics source, to collect logs for MongoDB Atlas. When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this later to configure the configuration file.
 1. Do one of the following:
    * If you already have a Sumo Logic Hosted Collector, identify the one you want to use; or
-   * Create a new Hosted Collector as described in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+   * Create a new Hosted Collector as described in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Add two HTTP sources, one for logs and another for metrics.
 3. Go to the source you created for ingesting logs, navigate to **Timestamp Format > Advanced Options**, and click **Specify a format**.
 4. Enter the following information in the respective fields for the **log source**:
@@ -259,8 +259,8 @@ This section demonstrates how to add a hosted Sumo Logic collector and HTTP Logs
 ### Step 3: Configure Collection for MongoDB Atlas
 
 In this section, we explore various mechanisms to collect database logs, events, metrics and alerts from MongoDB Atlas and send them to Sumo Logic, where they are shown in dashboards as part of the MongoDB Atlas App. You can configure Sumo Logic’s MongoDB Atlas collector in Amazon Web Services (AWS) using the AWS Lambda service, or by running a script on a Linux machine as a cron job. Choose the method that is best suited for you:
-* [AWS Lambda-based collection](#Deploy_the_Sumo_Logic_MongoDB_Atlas_SAM_Application) via a Serverless Application Model (SAM) application
-* [Script-based collection](#Configure_script_based_collection_for_MongoDB_Atlas) from a Linux machine
+* [AWS Lambda-based collection](#Deploy_the_Sumo_Logic_mongodb-atlas_SAM_Application) via a Serverless Application Model (SAM) application
+* [Script-based collection](#Configure_script_based_collection_for_mongodb-atlas) from a Linux machine
 
 A single instance of the collector is responsible for collecting logs from a single project. Refer to [Configure Collection for Multiple Projects](#Configure_collection_for_multiple_projects) if you have multiple projects.
 
@@ -301,7 +301,7 @@ This section shows you how to configure collection for multiple projects, assumi
 * Change the `DBNAME` so that state (keys) maintained (bookkeeping) in the database (key value store) are not in conflict.
 
 To configure collection for multiple projects, do the following:
-1. [Deploy the MongoDB Atlas SAM application](#Deploy_the_Sumo_Logic_MongoDB_Atlas_SAM_Application) with the configuration for a new project.
+1. [Deploy the MongoDB Atlas SAM application](#Deploy_the_Sumo_Logic_mongodb-atlas_SAM_Application) with the configuration for a new project.
 2. After the deployment is complete, change the database name by adding environment variable (`DBNAME`) in [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/env_variables.html), as shown in the following example.
 3. From the Lambda console, go to the **mongodbatlas.yaml** file and comment out `EVENTS_ORG`, as shown in the following example. This prevents the collection of org events, because they are already being collected by the first collector.
 
@@ -445,7 +445,7 @@ You configure Webhooks for real-time alerts. This section explains how to config
 
 ### Advanced Configuration
 
-This section is common for both [AWS Lambda-based collection](#Deploy_the_Sumo_Logic_MongoDB_Atlas_SAM_Application) and [script-based collection](#Configure_script_based_collection_for_MongoDB_Atlas).
+This section is common for both [AWS Lambda-based collection](#Deploy_the_Sumo_Logic_mongodb-atlas_SAM_Application) and [script-based collection](#Configure_script_based_collection_for_mongodb-atlas).
 
 <details><summary>This table lists MongoDB Atlas variables that you can optionally define in the configuration file (<strong>click to expand</strong>).</summary>
 
@@ -685,7 +685,7 @@ To install the app, do the following:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 

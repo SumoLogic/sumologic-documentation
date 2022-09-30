@@ -25,8 +25,8 @@ To change the password policy:
       * Lower case letters (a-z)
       * Numbers (0-9)
       * Special characters (#, $, %, &, etc)
-    * **Users locked out after.** With these options, you can determine when users are locked out of their Sumo Logic accounts using the three menus: number of failed attempts, amount of time during which the incorrect password is entered, and the amount of time a user will be locked out of his or her account after entering the set number of incorrect passwords. 
+    * **Users locked out after.** With these options, you can determine when users are locked out of their Sumo Logic accounts using the three menus: number of failed attempts, amount of time during which the incorrect password is entered, and the amount of time a user will be locked out of their account after entering the set number of incorrect passwords. 
 
-    For example, we choose **4 Failed Attempts** from the first menu, **Within 5 Minutes** from the second menu, and **For 60 Minutes** from the third menu. This means that if a user enters four incorrect passwords in the space of five minutes, that user will be unable to log back into his or her account for 60 minutes. 
+    For example, we choose **4 Failed Attempts** from the first menu, **Within 5 Minutes** from the second menu, and **For 60 Minutes** from the third menu. This means that if a user enters four incorrect passwords in the space of five minutes, that user will be unable to log back into their account for 60 minutes. 
 
 1. Click **Save**.

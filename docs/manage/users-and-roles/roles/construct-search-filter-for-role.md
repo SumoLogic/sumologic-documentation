@@ -1,6 +1,7 @@
 ---
 id: construct-search-filter-for-role
 title: Construct a Search Filter for a Role
+description: Construct a role search filter to control what log data users with that role can access.
 ---
 
 
@@ -52,7 +53,7 @@ The explanations of the behavior of each example filter assume that no other rol
 * Role filters cannot include vertical pipes (\|).
 * Role filters apply to log searches, not metric searches.
 * If one or more of your FERs override the out-of-the-box metadata tags you use in your search filters for a role,  LiveTail can still provide access to data outside of the scope intended in your search filter. You should either avoid overriding out-of-the-box metadata tags in your FERs or avoid overridden tags in your search filters.
-* The [\_dataTier](../../partitions-and-data-tiers/searching-data-tiers.md) search modifier is not supported in role filters.
+* The [_dataTier](../../partitions-and-data-tiers/searching-data-tiers.md) search modifier is not supported in role filters.
 * For limitations related to the use of Scheduled Views or Partitions in a search filter, see [Using Partitions and Scheduled Views in a search filter](construct-search-filter-for-role.md), below.
 
 #### Using metadata in a search filter
@@ -215,9 +216,9 @@ When a user with that role filter runs a query, Sumo runs it like this:
 
 ### Multiple role filters and filter precedence
 
-When a user is assigned to multiple Sumo roles, Sumo combines the role filters from each of the roles using OR to come up with the combined role filter. 
+When a user is assigned to multiple Sumo roles, Sumo combines the role filters from each of the roles using a logical OR to come up with the combined role filter.
 
-When multiple roles filters are applied to a query, the least restrictive filter takes precedence, provided none of the role filters are empty, in which case the more restrictive role filter takes precedence. To avoid confusion and guarantee unrestricted access to a role, you can use ( \* ) in the search filter while defining the role.
+When multiple roles filters are applied to a query, the least restrictive filter takes precedence. That this rule doesn’t apply if any of the role filters applied to a query is simply blank, which effectively grants access to all data, and would be the least restrictive filter. If the combined search filters applied to a query includes filters that are blank, the blank search filter is ignored and the next least restrictive filter takes precedence. So, if you actually want to grant a role access to all data, set the search filter to an asterisk (`*`). A search filter that is configured in that fashion will take precedence when combined with more restrictive search filters.
 
 #### Example 1
 

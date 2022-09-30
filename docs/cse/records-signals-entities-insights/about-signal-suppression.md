@@ -5,14 +5,12 @@ sidebar_label: Signal Suppression
 description: Learn about the ways that CSE Signals can be suppressed, and so excluded from the Insight generation process.
 ---
 
-
-
 In CSE, a *suppressed Signal* is a Signal that CSE’s Insight algorithm will exclude from the Insight generation process. In other words, a suppressed Signal does not contribute to or become a part of an Insight. Some suppression of Signals is automatic. CSE also has features that allow you to suppress Signals for a specific
 [Entity](view-manage-entities.md), indicator, or [Network Block](../administration/create-use-network-blocks.md).
 
 This topic describes the various ways that Signals can get suppressed.
 
-## Suppress by entity
+## Suppress by Entity
 
 You can suppress an Entity on its **Details** page in the CSE UI using the suppression slider. 
 
@@ -22,7 +20,7 @@ You can suppress multiple Entities at once on the **Entities** page in the CSE U
 
 ![entity-page.png](/img/cse/entity-page.png)
 
-When you checkmark one or more Entities, the **Update Suppression** button appears. When you click it you’re prompted to set the suppression state for the select Entities. You can also create a .csv file with your suppression changes, and use the **Import Metadata** button to upload it to CSE. For details, see the [View and Manage Entities](view-manage-entities.md) topic. You can see what Entities are currently suppressed on the **Suppressed Entities** page, available from the content menu. 
+When you checkmark one or more Entities, the **Update Suppression** button appears. When you click it you’re prompted to set the suppression state for the select Entities. You can also create a .csv file with your suppression changes, and use the **Import Metadata** button to upload it to CSE. For details, see the [View and Manage Entities](view-manage-entities.md) topic. You can see what Entities are currently suppressed on the **Entities** page,by filtering the list by **Suppressed**.
 
 ![suppressed-entities-page.png](/img/cse/suppressed-entities-page.png)
 

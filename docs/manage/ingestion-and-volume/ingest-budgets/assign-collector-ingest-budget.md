@@ -1,6 +1,7 @@
 ---
 id: assign-collector-ingest-budget
 title: Assign Collector to Ingest Budget
+description: Learn how to assign a Collector to an ingest budget.
 ---
 
 
@@ -36,19 +37,19 @@ Select the ingest budget you want to assign to the Collector and click **Save**.
 
 ### Limited role capability
 
-If you do not have the **Manage Ingest Budgets** [role capability](../../users-and-roles/roles/role-capabilities.md) but have the **Manage Collectors** capability on its own you can assign a Collector to an Ingest Budget by manually adding the field **\_budget** with the **Field Value** from the desired Ingest Budget into the [Fields](../../fields.md) property. For example, if you have a budget with a Field Value of **Dev_20GB**, you would add: 
+If you do not have the **Manage Ingest Budgets** [role capability](../../users-and-roles/roles/role-capabilities.md) but have the **Manage Collectors** capability on its own you can assign a Collector to an Ingest Budget by manually adding the field **`_budget`** with the **Field Value** from the desired Ingest Budget into the [Fields](docs/manage/fields.md) property. For example, if you have a budget with a Field Value of **Dev_20GB**, you would add: 
 
 ![Manual budget field.png](/img/ingestion-and-volume/Manual-budget-field.png)
 
 ## Collector Management API
 
-Use the [Collector Management API] (../../../APIs/Collector-Management-API.md "Collector Management API") to assign an existing Collector to an existing ingest budget.
+Use the [Collector Management API](/docs/api/collectors) to assign an existing Collector to an existing ingest budget.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
 | fields | JSON Object | No |   |  JSON map of key-value fields (metadata) to apply to the Collector. To assign an ingest budget use the field _budget with its Field Value.<br/><br/>For example, if you have a budget with a Field Value of Dev_20GB, you would add:<br/>`fields=_budget=Dev_20GB`  | Modifiable |
 
-The following steps can be referenced in the [Collector Management API document for a PUT request] (../../../APIs/Collector-Management-API/Collector-API-Methods-and-Examples.md "Collector API Methods and Examples"). If you are not sure what URL endpoint to use see [Sumo Logic Endpoints] (../../../APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security.md "Sumo Logic Endpoints and Firewall Security").
+The following steps can be referenced in the [Collector Management API document for a PUT request](docs/api/collectors#Collector-API-Methods-and-Examples "Collector API Methods and Examples"). If you are not sure what URL endpoint to use see [Sumo Logic Endpoints](docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
 
 First make a GET request to get the Collector's JSON configuration:
 
@@ -156,7 +157,7 @@ The response has the updated JSON and the Collector is now assigned to the inge
 
 ## user.properties
 
-When registering a new Collector you can specify the parameter `fields` in [user.properties](../../../send-data/installed-collectors/collector-installation-reference/user-properties.md) to assign the Collector to an existing ingest budget.
+When registering a new Collector you can specify the parameter `fields` in [user.properties](docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) to assign the Collector to an existing ingest budget.
 
 | Parameter | Description | Can be changed after installation? |
 |--|--|--|
@@ -164,7 +165,7 @@ When registering a new Collector you can specify the parameter `fields` in 
 
 ## Command line installation
 
-When using the [command line (shell script) installer](../../../send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you can assign the Collector to an existing ingest budget with the `-Vfields` parameter. For details and example commands on Collector installation, see [Install a Collector on Linux](../../../send-data/installed-collectors/linux.md), [Install a Collector on MacOS](../../../send-data/installed-collectors/macos.md), and [Install a Collector on Windows](../../../send-data/installed-collectors/windows.md).
+When using the [command line (shell script) installer](docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you can assign the Collector to an existing ingest budget with the `-Vfields` parameter. For details and example commands on Collector installation, see [Install a Collector on Linux](docs/send-data/installed-collectors/linux.md), [Install a Collector on MacOS](docs/send-data/installed-collectors/macos.md), and [Install a Collector on Windows](docs/send-data/installed-collectors/windows.md).
 
 | Parameter | Description |
 |--|--|

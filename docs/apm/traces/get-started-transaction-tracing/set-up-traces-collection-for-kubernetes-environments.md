@@ -33,7 +33,7 @@ Tracing data from your services is sent through multiple local OpenTelemetry Col
 
 Refer to [install/upgrade instructions](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/v2.14.1/deploy/README.md#deployment-guide-for-2140-version) for the current version. To enable tracing, `sumologic.traces.enabled=true` flag must be included.
 
-If you plan to [auto-instrument your Java, Python and JS applications in K8s environments](https://help.sumologic.com/Beta/Kubernetes_Tracing_Auto_Instrumentation) (Beta), use the Helm command in that article.
+If you plan to [auto-instrument your Java, Python and JS applications in K8s environments](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes.md) (Beta), use the Helm command in that article.
 
 
 #### Using command line
@@ -80,7 +80,7 @@ helm upgrade --install collection sumologic/sumologic \
 
 #### Enabling tracing for existing installations
 
-Tracing is disabled by default. If you previously installed sumologic-kubernetes-collection 2.0 or higher without enabling tracing, it can be enabled with **sumologic.traces.enabled=true**.
+Tracing is disabled by default. If you previously installed sumologic-kubernetes-collection 2.0 or higher without enabling tracing, it can be enabled with **`sumologic.traces.enabled=true`**.
 
 
 #### Using command line
@@ -123,7 +123,7 @@ Using OTLP HTTP is recommended:
 
 * OTLP HTTP: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:4318`
 
-Alternatively, if requried, you can use other supported formats as well:
+Alternatively, if required, you can use other supported formats as well:
 
 * Jaeger GRPC: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:14250`
 * Jaeger Thrift HTTP: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:14268`
@@ -192,7 +192,7 @@ After enabling, several metrics starting with `otelcol_` will become available, 
     ```bash
     helm upgrade collection sumologic/sumologic \
       --namespace sumologic \
-      ... \
+      ...
       --set otelcol.config.exporters.logging.logLevel=debug \
       --set otelcol.config.service.pipelines.traces.exporters="{otlphttp,logging}"
 

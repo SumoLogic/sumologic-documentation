@@ -40,17 +40,17 @@ Use the Auth0 Management Portal to configure the extension. For more information
 
 ### Configure a Collector
 
-Use the in-product setup wizard in the Sumo Logic UI to configure a **Custom App**.
+Use the in-product [setup wizard](/docs/send-data/setup-wizard) in the Sumo Logic UI to configure a **Custom App**.
 
 
 ### Configure a Source
 
-Source type is [HTTP](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+Source type is [HTTP](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 * **Name**: Required
 * **Category**:
 * **Timestamp Parsing Settings**:
-  * **Enable Timestamp Parsin**g: True
+  * **Enable Timestamp Parsing**: True
   * **Timezone**: Logs are sent in UTC by default and can be automatically detected
   * **Timestamp Format**: Select **Specify a format** and use the following, \
 Format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z' \
@@ -98,7 +98,7 @@ Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_
       }
    },
    "user_id": "auth0|123ASD987",
-   "user_name": "noone@sumologic.com",
+   "user_name": "no-one@sumologic.com",
    "strategy": "auth0",
    "strategy_type": "database",
    "_id": "321654987654321654987654321",
@@ -146,7 +146,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

@@ -21,7 +21,7 @@ description: Create a Scheduled Search Email Alert.
      * **Fewer than or equal to.** Choose if you want to be notified only if the search results include fewer than or equal to that number of messages or groups you set in the text box.
 
 1. **Alert Type**. Select **Email**.
-1. **Send email on failure to search owner.** Selecting this option will send an email notification to the search owner if the Scheduled Search fails to run. To troubleshoot a failed Scheduled Search, see [Why Would a Scheduled Search Fail](faqs/failed-scheduled-search.md) and [What Happens When a Scheduled Search Is Suspended](faqs/suspended-scheduled-search.md).
+1. **Send email on failure to search owner.** Selecting this option will send an email notification to the search owner if the Scheduled Search fails to run. To troubleshoot a failed Scheduled Search, see [Why Would a Scheduled Search Fail](faq.md#why-would-a-scheduled-search-fail) and [What Happens When a Scheduled Search Is Suspended](faqs/suspended-scheduled-search.md).
 1. **Recipients**. Enter the recipients of your scheduled search email. Separate multiple email addresses with commas.
 1. **Email Subject.** Provide a subject for the email. You can use alert variables to customize the subject of your email.
 1. **Include in email.** Select the features you want to include in your email results:
@@ -31,12 +31,12 @@ description: Create a Scheduled Search Email Alert.
     * **Histogram.**
     * **Results as a CSV attachment.** The maximum CSV file size allowed is 5 MB or 1,000 results. 
 
-1. Click **Save** to add the search to the **Library**.** The columns in an alert email are alphabetically ordered. To set the column order in the email alert, you can use the [fields](../../search/search-query-language/search-operators/fields-operator.md) operator in your query.
+1. Click **Save** to add the search to the **Library**.** The columns in an alert email are alphabetically ordered. To set the column order in the email alert, you can use the [fields](/docs/search/search-query-language/operators#fields) operator in your query.
 
 ### Rules
 
 * A maximum of 120 emails are sent per day per scheduled search.
-* The columns in an alert email are alphabetically ordered. To set the column order in the email alert, you can use the [fields](../../search/search-query-language/search-operators/fields-operator.md) operator in your query.
+* The columns in an alert email are alphabetically ordered. To set the column order in the email alert, you can use the [fields](/docs/search/search-query-language/operators#fields) operator in your query.
 * An email address will be denylisted for six hours after receiving a bounce notification. When an email address is denylisted no emails are sent to the address.
 * The metadata field `_messageTime` needs to remain in UNIX format.
 

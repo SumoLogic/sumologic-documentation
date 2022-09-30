@@ -1,8 +1,9 @@
 ---
 id: table-charts
+title: Table Charts
+description: Table charts are the default chart type in the Aggregates tab.
 ---
 
-# Table Charts
 
 Table charts are the default chart type in the **Aggregates** tab. They are useful for listing the type and number of events that have occurred, such as the type of error that occurs the most in your system. To create a table chart, use a search query that provides at least a few data points in the **Aggregates** tab.
 
@@ -58,9 +59,9 @@ If your query looks for URLs, when you create a table chart panel, the URLs disp
 For example, if you used this query to search for hits to the Sumo Logic Help system:
 
 ```sql
-_sourceCategory=aws/cloudtrail  
-| keyvalue "LoginTo"  
-| count loginto 
+_sourceCategory=aws/cloudtrail 
+| keyvalue "LoginTo" 
+| count loginto
 | sort - _count
 ```
 

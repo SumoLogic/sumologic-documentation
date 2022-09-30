@@ -145,19 +145,19 @@ Configure an [Installed Collector (Windows)](/docs/send-data/installed-collector
 
 ### Step 2: Configure a Source
 
-To collect logs from IIS 7, use an Installed Collector and a Local File Source. You may also configure a [Remote File Source](/docs/send-data/Sources/installed-collectors/Remote-File-Source), but the configuration is more complex. Sumo Logic recommends using a Local File Source if possible.
+To collect logs from IIS 7, use an Installed Collector and a Local File Source. You may also configure a [Remote File Source](/docs/send-data/installed-collectors/sources/Remote-File-Source), but the configuration is more complex. Sumo Logic recommends using a Local File Source if possible.
 
-1. Configure a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+1. Configure a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 2. Configure the Local File Source Fields as follows:
     1. **Name**: Required (for example, "IIS")
     2. **Description**. (Optional)
     3. **File Path **(Required).`C:\inetpub\Logs\LogFiles\W3SVC1\*.log`
     4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to being collecting logs with a last modified date within the last seven days.
     5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different host name.
-    6. **Source Category** (Required). For example, "IIS_prod". (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+    6. **Source Category** (Required). For example, "IIS_prod". (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
 3. Configure the **Advanced** section:
     7. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
-    8. **Enable Timetamp Parsing**: Select **Extract timestamp information from log file entries**.
+    8. **Enable Timestamp Parsing**: Select **Extract timestamp information from log file entries**.
     9. **Time Zone**: Select the option to **Use time zone from log file. If none is present use:** and set the timezone to **UTC**.
     10. **Timestamp Format**: Select the option to **Automatically detect the format**.
     11. **Encoding**. UTF-8 is the default, but you can choose another encoding format from the menu if your IIS logs are encoded differently.
@@ -173,9 +173,9 @@ After a few minutes, your new Source should be propagated down to the Collector 
 * **Scope**: Use the source category set above, such as "IIS_prod"
 * **Parse Expression:**
 ```
-parse regex "^[^#].*?(?&lt;s_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?&lt;cs_method>\S+?)
-(?&lt;cs_uri_stem>\S+?) (?&lt;cs_uri_query>\S+?) (?&lt;s_port>\d+?) (?&lt;cs_username>\S+?)
-(?&lt;c_ip>.+?) (?&lt;cs_User_Agent>\S+?) (?&lt;cs_Referer>\S+?) (?&lt;sc_status>\d+?)
+parse regex "^[^#].*?(?<s_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<cs_method>\S+?)
+(?<cs_uri_stem>\S+?) (?<cs_uri_query>\S+?) (?<s_port>\d+?) (?<cs_username>\S+?)
+(?<c_ip>.+?) (?<cs_User_Agent>\S+?) (?<cs_Referer>\S+?) (?<sc_status>\d+?)
 (?<sc_substatus>\d+?) (?<sc_win32_status>\d+?) (?<time_taken>\d+?)$"
 ```
 
@@ -194,7 +194,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 12
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 
 
 

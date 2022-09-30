@@ -253,8 +253,8 @@ This section provides instructions for configuring metrics collection for the Su
 
 #### Configure Metrics Collection
 
-1. Configure a Hosted Collector: To create a new Sumo Logic hosted collector, perform the steps in the[ Create a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
-2. Configure an HTTP Logs and Metrics Source: Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Make a note of the **HTTP Source URL**.
+1. Configure a Hosted Collector: To create a new Sumo Logic hosted collector, perform the steps in the[Create a Hosted Collector](/docs/send-data/hosted-collectors#create-a-hosted-collector) section of the Sumo Logic documentation.
+2. Configure an HTTP Logs and Metrics Source: Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the **HTTP Source URL**.
 3. Install Telegraf using [these steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
 4. Configure and start Telegraf: As part of collecting metrics data from Telegraf, we will use the [HAProxy input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/haproxy) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/sumologic) to send data to Sumo Logic.  
 
@@ -303,7 +303,7 @@ This section provides instructions for configuring log collection for HAProxy ru
 
 By default, HAProxy logs are forwarded to Syslog. Configuration in the file **/etc/haproxy/haproxy.cfg** can be modified to send logs to files.
 
-Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/Sources/hosted-collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors) which will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors) which will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 
 Based on your infrastructure and networking setup choose one of these methods to collect HAProxy logs and follow the instructions below to set up log collection:
@@ -404,13 +404,13 @@ local2.=notice     /var/log/haproxy-notice.log
 
     **To add a Syslog Source source for HAProxy do the following**
 
-1. Add a [Syslog source](/docs/send-data/Sources/installed-collectors/Syslog-Source) in the installed collector configured in the previous step.
+1. Add a [Syslog source](/docs/send-data/installed-collectors/sources/Syslog-Source) in the installed collector configured in the previous step.
 2. Configure the Syslog Source fields as follows:
     * **Name.** (Required)
     * **Description.** (Optional)
     * **Protocol.** UDP
     * **Port.** 514 (as entered while configuring logging in Step b.)
-    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Haproxy/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Haproxy/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
     * **Fields.** Set the following fields:
         * `component = proxy`
         * `proxy_system = haproxy`
@@ -425,13 +425,13 @@ local2.=notice     /var/log/haproxy-notice.log
 
     **To add a Local File Source source for HAProxy do the following**
 
-1. Add a[ Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+1. Add a[ Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 2. Configure the Local File Source fields as follows:
     * **Name.** (Required)
     * **Description.** (Optional)
     * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/haproxy*.log. If you're using a customized path, check the haproxy.conf file for this information.
     * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name.
-    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Haproxy/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Haproxy/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
     * **Fields.** Set the following fields:
         * `component = proxy`
         * `proxy_system = haproxy`
@@ -459,12 +459,12 @@ component="proxy" proxy_cluster="<Your-HAProxy-Server>" proxy_system="haproxy"
 
 ## Installing the HAProxy Monitors
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively determine if a HAProxy cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [HAProxy Alerts](#haproxy-alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a HAProxy cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [HAProxy Alerts](#haproxy-alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability. You can install by importing a JSON file or using a Terraform script.
 
 :::note
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/index.md#rules) for details.
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#rules) for details.
 :::
 
 
@@ -481,7 +481,7 @@ However, if you would like to restrict these alerts to specific clusters or envi
 2. Click **Add**.
 3. Click Import.
 4. On the** Import Content popup**, enter **HAProxy **in the Name field, paste in the JSON into the the popup, and click **Import**.
-5. The monitors are created in a "HAProxy" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors/index.md) topic for information about enabling monitors and configuring notifications or connections.
+5. The monitors are created in a "HAProxy" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 
 ### Method 2: Use a Terraform script
@@ -557,7 +557,7 @@ To install the app, do the following:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

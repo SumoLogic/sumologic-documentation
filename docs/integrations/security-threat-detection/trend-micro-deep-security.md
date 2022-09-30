@@ -32,7 +32,7 @@ This section provides instructions for configuring on-prem log collection for th
 To collect logs for Deep Security, do the following:
 
 1. Configure a [Installed Collector](/docs/send-data/Installed-Collectors).
-2. Configure a [Syslog Source](/docs/send-data/Sources/installed-collectors/Syslog-Source).
+2. Configure a [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source).
 
 When you configure the Syslog Sources, for Protocol, select UDP.
 
@@ -44,7 +44,7 @@ For complete details on configuring your Deep Security system for use with Sumo 
 
 To forward Deep Security system events to Sumo Logic, do the following:
 
-1. In Deep Security, go to **Administration > System Settings > SIEM**. \
+1. In Deep Security, go to **Administration > System Settings > SIEM**.
 
 2. Configure **SIEM**:
     1. **Forward System Events to a remote computer (via Syslog). **Activate this check box.
@@ -59,7 +59,7 @@ To forward Deep Security system events to Sumo Logic, do the following:
 
 Now you must add the Syslog Source to your Policy configuration. Set the integration details at the Top (root/base) policy as follows:
 
-1. Go to **Settings > SIEM**. \
+1. Go to **Settings > SIEM**.
 
 
 2. For **Anti-Malware Event Forwarding**, select **Forward Events To:** and **Relay via the Manager**.
@@ -102,7 +102,7 @@ This section has instructions for collecting logs for the Trend Micro Deep Secur
 #### Step 1: Create a Cloud Syslog source on a hosted collector
 
 1. Select an existing [hosted collector](/docs/send-data/Hosted-Collectors), or create a new one.
-2. Add a [Cloud Syslog source](/docs/send-data/Sources/hosted-collectors/Cloud-Syslog-Source) to the hosted collector.
+2. Add a [Cloud Syslog source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source) to the hosted collector.
 
     1. Give the source a name
     2. Enter a Source Category.
@@ -127,7 +127,7 @@ Note the spaces with `Deep Security Manager`.
 1. In the Deep Security Manager console, select **Policies > Common Objects.**
 2. Expand the **Other** node in the left pane.
 3. Select **Syslog Configurations**.
-4. Select the **New **button to create a new configuration. \
+4. Select the **New **button to create a new configuration.
 
 
     1. **Log Source Identifier**. Enter a three word label, for example “Deep Security Manager” or “My Log Source”, followed by value that was shown in the  **Token** field on the **Cloud Syslog Source Token** page (when you configured the Cloud Syslog Source above), surrounded by square brackets like this: `Deep Security Manager [token from Cloud Syslog source]`>
@@ -176,7 +176,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 
 
 3. To install the app, complete the following fields.

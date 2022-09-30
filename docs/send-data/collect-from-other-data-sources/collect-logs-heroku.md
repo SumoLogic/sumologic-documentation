@@ -1,6 +1,7 @@
 ---
 id: collect-logs-heroku
 title: Collect Logs from Heroku
+description: Learn how to upload data from your Heroku app directly to the Sumo Logic Cloud by pointing a Heroku log drain to the URL for an HTTP Source.
 ---
 
 
@@ -11,7 +12,7 @@ First perform the following prerequisites:
 
  * Create an app in Heroku that generates logs.
  * Install the [Heroku Command Line Interface (CLI)](https://devcenter.heroku.com/articles/heroku-command-line), formerly called the Heroku Toolbelt.
- * Configure a Sumo Logic [Hosted Collector](../configure-hosted-collector.md) with an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+ * Configure a Sumo Logic [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) with an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 ## Upload app data from Heroku
 
@@ -35,9 +36,9 @@ Log data will now be forwarded by Heroku as it is generated, per the behavior of
 
 This step is optional but recommended, as it makes it easier for you to query your Heroku application logs in Sumo. 
 
-When Sumo ingests Heroku application logs, it attaches the \_sourceName metadata field to the data. The \_sourceName Sumo assigns varies by application—its value is the unique identifier for the Logplex drain assigned to the application. 
+When Sumo ingests Heroku application logs, it attaches the _sourceName metadata field to the data. The _sourceName Sumo assigns varies by application—its value is the unique identifier for the Logplex drain assigned to the application. 
 
-For ease of understanding the log data, you can use a field extraction rule (FER) to rename \_sourceName from the drain UUID to the application name. For general information about FERs see Create a Field Extraction Rule.
+For ease of understanding the log data, you can use a field extraction rule (FER) to rename _sourceName from the drain UUID to the application name. For general information about FERs see Create a Field Extraction Rule.
 
 You can determine the drain identifier by running the heroku drains command for your app. The identifier will look something like: 
 
@@ -49,19 +50,19 @@ Then, define an FER in Sumo.
 
 1. Go to **Manage Data \> Logs \> Field Extraction Rules**.
 1. **Rule Name**. Enter a name for the FER.
-1. **Scope**. Specify the \_sourceCategory defined for the source to which you will be forwarding Heroku application logs. For example, if the \_sourceCategory is "heroku", enter:
+1. **Scope**. Specify the _sourceCategory defined for the source to which you will be forwarding Heroku application logs. For example, if the _sourceCategory is "heroku", enter:
 
     ```sql
     _sourceCategory=heroku
     ```
 
-1. **Parse Expression**. For each Heroku application reporting data to Sumo, enter a statement that renames the  \_sourceName from the drain ID to the application name. For example:
+1. **Parse Expression**. For each Heroku application reporting data to Sumo, enter a statement that renames the  _sourceName from the drain ID to the application name. For example:
 
     ```
     if (_sourceName="Drain_ID", "Application_Name", _sourceName) as _sourceName
     ```
 
-    The FER below changes the value of \_sourceName for two applications. The first line changes \_sourceName  from `d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a` to `CustApp`. The second line changes \_sourceName from `d.00870f28-53f9-4680-b2ab-2287ec9d8637` to `VendorApp`:
+    The FER below changes the value of _sourceName for two applications. The first line changes _sourceName  from `d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a` to `CustApp`. The second line changes _sourceName from `d.00870f28-53f9-4680-b2ab-2287ec9d8637` to `VendorApp`:
 
     ```sql
     if (_sourceName="d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a", "CustApp", _sourceName) as _sourceName

@@ -1,6 +1,7 @@
 ---
 id: chart-search-results
 title: Chart Search Results
+description: In the Aggregates tab, in addition to the standard table view, you can view search results as a chart, such as a bar or column chart.
 ---
 
 
@@ -35,4 +36,4 @@ _sourceCategory=concierge completed execution
 | sort by duration
 ```
 
-For details on casting your data to a string or numeric data type see [Casting Data to a Number or String](../../search-query-language/search-operators/Manually-Casting-String-Data-to-a-Number.md) for details.
+For details on casting your data to a string or numeric data type see [Casting Data to a Number or String](/docs/search/search-query-language/operators#manually-cast-data-to-string-or-number) for details.

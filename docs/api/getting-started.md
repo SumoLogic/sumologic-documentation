@@ -40,7 +40,7 @@ Sumo Logic APIs follow Representational State Transfer (REST) patterns and are o
   <tr>
    <td>Search Job
    </td>
-   <td><a href="https://api.de.sumologic.com/docs/">/docs/API/Search-Job-API</a>
+   <td><a href="https://api.de.sumologic.com/docs/">/docs/api/Search-Job-API</a>
    </td>
   </tr>
 </table>
@@ -245,12 +245,12 @@ The following image has an example URL from the US2 pod.
 
 The specific collection endpoint will vary per account. The general format is: `endpoint[N].collection.[deploymentID].sumologic.com`.
 
-You can also determine which deployment pod your account is using by creating an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source/index.md) and looking at the provided URL.
+You can also determine which deployment pod your account is using by creating an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) and looking at the provided URL.
 
 
 ### Securing access to Sumo Logic infrastructure via DNS name or IP address
 
-See the [static IP addresses for Cloud-to-Cloud Integration](/docs/send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/index.md#Static-IP-addresses) Sources.
+See the [static IP addresses for Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework#Static-IP-addresses) Sources.
 
 For collection to work, your firewall must allow outbound traffic to Sumo Logic. Refer to [Test Connectivity for Sumo Logic Collectors](/docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors.md) for instructions on allowing outbound traffic over port 443.
 
@@ -361,9 +361,64 @@ You can run the following query against the downloaded file in Sumo Logic to det
 After configuring the firewall, Collector, and Sources, confirm that the Collector and Sources are working by verifying that you can receive a given type of message (such as syslog messages) at the specified location.
 
 
+## Status Codes
+Generic status codes that apply to all our APIs. See the [HTTP status code registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) for reference.
+  <table>
+    <tr>
+      <td> <strong>HTTP Status Code</strong> </td>
+      <td> <strong>Error Code</strong> </td>
+      <td> <strong>Description</strong> </td>
+    </tr>
+    <tr>
+      <td> 301 </td>
+      <td> moved </td>
+      <td> The requested resource SHOULD be accessed through returned URI in Location Header. See [troubleshooting](/docs/api/troubleshooting) for details.</td>
+    </tr>
+    <tr>
+      <td> 401 </td>
+      <td> unauthorized </td>
+      <td> Credential could not be verified.</td>
+    </tr>
+    <tr>
+      <td> 403 </td>
+      <td> forbidden </td>
+      <td> This operation is not allowed for your account type or the user doesn't have the role capability to perform this action. See [troubleshooting](/docs/api/troubleshooting) for details.</td>
+    </tr>
+    <tr>
+      <td> 404 </td>
+      <td> notfound </td>
+      <td> Requested resource could not be found. </td>
+    </tr>
+    <tr>
+      <td> 405 </td>
+      <td> method.unsupported </td>
+      <td> Unsupported method for URL. </td>
+    </tr>
+    <tr>
+      <td> 415 </td>
+      <td> contenttype.invalid </td>
+      <td> Invalid content type. </td>
+    </tr>
+    <tr>
+      <td> 429 </td>
+      <td> rate.limit.exceeded </td>
+      <td> The API request rate is higher than 4 request per second or in-flight API requests are higher than 10 request per second. </td>
+    </tr>
+    <tr>
+      <td> 500 </td>
+      <td> internal.error </td>
+      <td> Internal server error. </td>
+    </tr>
+    <tr>
+      <td> 503 </td>
+      <td> service.unavailable </td>
+      <td> Service is currently unavailable. </td>
+    </tr>
+  </table>
+
 ## Versioning and Conflict Detection  
 
-The Collector Management API uses optimistic locking to deal with versioning and conflict detection. Any response that returns a single entity will have an ETag header which identifies the version of that entity. Subsequent updates (`PUT` requests) to that entity must provide the value of the `ETag` header in an If-Match header; if the header is missing or no longer corresponds to the latest version of the entity, the request will fail (with `403 Forbidden` or `412 Precondition Failed`, respectively). Clients must be prepared to handle such failures if they anticipate concurrent updates to the entities. Additionally, the value of the `ETag` header may be provided in an `If-None-Match` header in future `GET` requests for caching purposes.
+The [Collector Management API](/docs/api/collectors) uses optimistic locking to deal with versioning and conflict detection. Any response that returns a single entity will have an ETag header which identifies the version of that entity. Subsequent updates (`PUT` requests) to that entity must provide the value of the `ETag` header in an If-Match header; if the header is missing or no longer corresponds to the latest version of the entity, the request will fail (with `403 Forbidden` or `412 Precondition Failed`, respectively). Clients must be prepared to handle such failures if they anticipate concurrent updates to the entities. Additionally, the value of the `ETag` header may be provided in an `If-None-Match` header in future `GET` requests for caching purposes.
 
 
 ## Sumo Logic alerts from static IP addresses

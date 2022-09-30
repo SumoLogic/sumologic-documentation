@@ -219,7 +219,7 @@ annotations:
 3. Verify logs in Sumo Logic.
 1. **Add an FER to normalize the fields in Kubernetes environments** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
 1. Go to **Manage Data > Logs > Field Extraction Rules.**
-2. Click the** + **Add button on the top right of the table**. \
+2. Click the** + **Add button on the top right of the table**.
 The **Add Field Extraction Rule** form will appear.
 
 
@@ -249,7 +249,7 @@ The **Add Field Extraction Rule** form will appear.
 
 ### For Non-Kubernetes environments
 
-Sumo Logic uses the Telegraf operator for Oracle metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about) for collecting Oracle logs. The diagram below illustrates the components of the Oracle collection in a non-Kubernetes environment. Telegraf uses the[ exec input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain Oracle metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Oracle are collected by a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).<br/><img src={useBaseUrl('img/integrations/databases/oracle1.png')} alt="oracle" />
+Sumo Logic uses the Telegraf operator for Oracle metric collection and the [Installed Collector](/docs/send-data/installed-collectors) for collecting Oracle logs. The diagram below illustrates the components of the Oracle collection in a non-Kubernetes environment. Telegraf uses the[ exec input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain Oracle metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Oracle are collected by a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).<br/><img src={useBaseUrl('img/integrations/databases/oracle1.png')} alt="oracle" />
 
 The process to set up collection for Oracle data is done through the following steps:
 
@@ -337,7 +337,7 @@ By default, Oracle logs are stored in
 
 In this step, you will configure three Local File sources on an installed collector, one for each of the following Oracle logs: Alert, Listener, and Audit.
 
-  Follow the instructions in [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+  Follow the instructions in [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
   When you configure the sources, plan your source categories to ease the querying process.  A hierarchical approach allows you to make use of wildcards. For example:
 
@@ -393,7 +393,7 @@ The instructions for setting up the Oracle performance metrics script vary by op
 **Step 1. Configure a Hosted Collector for Metrics.**
 
 
-    To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) documentation.
+    To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) documentation.
 
 **Step 2. Configure an HTTP Logs & Metrics source:**
 
@@ -401,7 +401,7 @@ The instructions for setting up the Oracle performance metrics script vary by op
 2. Select** HTTP Logs & Metrics_._**
     1. **Name **(Required). Enter a name for the source**.**
     2. **Description **(Optional).
-    3. **Source Category (**Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/design-deployment/best-practices-source-categories). A recommended Source Category may be Prod/DB/Oracle/Metrics.
+    3. **Source Category (**Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/best-practices). A recommended Source Category may be Prod/DB/Oracle/Metrics.
 3. Select** Save.**
 4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL **next to the source on the Collection Management screen.
 

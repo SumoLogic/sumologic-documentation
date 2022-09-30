@@ -1,6 +1,7 @@
 ---
 id: amazon-msk-prometheus-metrics-collection
 title: Amazon MSK Prometheus metrics collection
+description: The Amazon Managed Streaming for Apache Kafka (Amazon MSK) open monitoring feature exposes Kafka metrics that Sumo Logic can collect. This page provides instructions for configuring metrics collection for Amazon MSK.
 ---
 
 
@@ -16,8 +17,8 @@ In this step, you set up a Sumo Logic hosted collector and then configure an HTT
 
 To configure a collector and source, do the following:
 
-1. Set up a [Hosted Collector](../hosted-collectors.md).
-1. Configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+1. Set up a [Hosted Collector](/docs/send-data/hosted-collectors/).
+1. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 ## Step 2: Create a client machine
 

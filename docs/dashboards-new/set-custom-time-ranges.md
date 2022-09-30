@@ -1,6 +1,7 @@
 ---
 id: set-custom-time-ranges
 title: Set Customized Time Ranges
+description: Learn how to set custom time ranges for individual panels and the dashboard as a whole.
 ---
 
 A new dashboard has a preset default time range for its panels and the dashboard as a whole. You can choose to customize the time range for individual panels, as well as setting a new time range for the dashboard. It's important that you review the time range override guidelines to ensure you achieve your expected results.
@@ -74,7 +75,7 @@ With the cursor still in the time range field, press **Delete** then press **Re
 
 You can specify a time interval for a dashboard as a whole, and the changes are applied to all the panels on the dashboard that don't have customized time range settings.
 
-Panels with customized time range settings can't be overriden by a dashboard-level time range. Panels with customized time ranges maintain their customized setting .
+Panels with customized time range settings can't be overridden by a dashboard-level time range. Panels with customized time ranges maintain their customized setting .
 
 To specify a dashboard-level time range setting, do the following:
 

@@ -14,10 +14,10 @@ The AWS Application Load Balancer functions at the application layer, receives r
 The Sumo Logic App for AWS Application Load Balancing uses logs and metrics to give you visibility into the health of your Application Load Balancer and target groups. Use the pre-configured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone and target group.
 
 
-## Log and Metrics Types
+## Log Types
 
 This App uses:
-* The metrics that are included in the AWS/Application ELB namespace. For more details, see [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/elb-metricscollected.html#load-balancer-metrics-alb).
+* The metrics are included in the AWS/Application ELB namespace. For more details, see [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/elb-metricscollected.html#load-balancer-metrics-alb).
 * The [Application Load Balancer Access](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) Log introduces two new fields in addition to the fields contained in the Classic ELB Access log:
     * `Type`. This is the type of request or connection (HTTP, HTTPS, H2, ws, wss)
     * `target_group_arn`. This is the Amazon Resource Name (ARN) of the target group
@@ -33,18 +33,15 @@ target_group_arn, trace_id
 
 The log format is described in [AWS Application Load Balancer Access Log Collection](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html). For details on AWS Application Load Balancing metrics, see [here](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-cloudwatch-metrics.html).
 
+## Metrics Type
+
+For details on the metrics of AWS Application Load Balancing, see [here](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-cloudwatch-metrics.html).
 
 ### Sample Log Message
 
 ```json
-https 2017-11-20T22:05:36 long-bill-lb 77.222.19.149:41148 10.168.203.134:23662 0.000201 0.401924 0.772005 500 200 262 455 \
-"GET https://elmagek.no-ip.org:443/json/v1/collector/histogram/100105037?startTimestamp=1405571270000&endTimestamp=1405574870000&bucketCount=60&_=1405574870206 HTTP/1.1" \
-"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.0.4) Gecko/2008102920 Firefox/3.0.4" \
-DH-RSA-AES256-GCM-SHA384 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:104030218370:targetgroup/Prod-frontend/92e3199b1rc814fe9 \
-"Root=1-58337364-23a8c76965a2ef7629b185e134"
+https 2017-11-20T22:05:36 long-bill-lb 77.222.19.149:41148 10.168.203.134:23662 0.000201 0.401924 0.772005 500 200 262 455 "GET https://elmagek.no-ip.org:443/json/v1/collector/histogram/100105037?startTimestamp=1405571270000&endTimestamp=1405574870000&bucketCount=60&_=1405574870206 HTTP/1.1" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.0.4) Gecko/2008102920 Firefox/3.0.4" DH-RSA-AES256-GCM-SHA384 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:104030218370:targetgroup/Prod-frontend/92e3199b1rc814fe9 "Root=1-58337364-23a8c76965a2ef7629b185e134"
 ```
-
-
 
 ### Sample Queries
 
@@ -65,10 +62,7 @@ account={{account}} region={{region}} namespace={{namespace}}
 
 
 ```bash title="Metric-based"
-account={{account}} region={{region}} Namespace={{namespace}} \
-loadbalancer={{loadbalancer}} AvailabilityZone=* TargetGroup=* \
-metric=HTTPCode_Target_5XX_Count Statistic=Sum | parse field= TargetGroup */* \
-as Unused, TargetGroup | sum by account, region, namespace, loadbalancer, TargetGroup, AvailabilityZone
+account={{account}} region={{region}} Namespace={{namespace}} loadbalancer={{loadbalancer}} AvailabilityZone=* TargetGroup=* metric=HTTPCode_Target_5XX_Count Statistic=Sum | parse field= TargetGroup */* as Unused, TargetGroup | sum by account, region, namespace, loadbalancer, TargetGroup, AvailabilityZone
 ```
 
 ## Collecting Logs and Metrics for the AWS Application Load Balancer
@@ -85,18 +79,18 @@ Namespace for **AWS Application Load Balancer** Service is **AWS/ApplicationELB*
 #### Before you begin
 
 Before you can begin to use the AWS Elastic Load Balancing (ELB) Application App, complete the following steps:
-1. [Grant Sumo Logic access](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md) to an Amazon S3 bucket.
+1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md) to an Amazon S3 bucket.
 2. [Enable Application Load Balancer logging](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) in AWS.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 
 #### Configure a Collector
 
-Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
+Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 
 #### Configure an ELB Source
 
-When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 
 #### Rules
@@ -129,10 +123,10 @@ These configuration instructions apply to log collection from all AWS Source typ
 4. Enter a name for the new Source. A description is optional.
 5. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 :::note
-Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/collection-aws-govcloud) for details.
+Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](/docs/send-data/hosted-collectors/amazon-aws/collection-aws-govcloud) for details.
 :::
 6. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example:
-7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one** wildcard (`*`) in this string. Recursive path expressions use a single wildcard and do NOT use a leading forward slash. [See About Amazon Path Expressions](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions) for details.
+7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one** wildcard (`*`) in this string. Recursive path expressions use a single wildcard and do NOT use a leading forward slash. [See About Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions) for details.
 8. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
     * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
     * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example -1w. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m). If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
@@ -144,20 +138,20 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
     * Add an **accountId** field and assign it the value of the respective AWS account id which is being used.
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
-11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md).
+11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
     * For **Role-based access**, enter the Role ARN that was provided by AWS after creating the role.
     * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 12. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
 
-Sumo Logic highly recommends using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date [Alerts](/docs/alerts/index.md).
+Sumo Logic highly recommends using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date [Alerts](/docs/alerts).
     * **Scan Interval.** Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time.
 
-If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/AWS-S3-Scan-Interval-Sources).
+If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-scan-interval-sources).
     * **SNS Subscription Endpoint (Highly Recommended**). New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file.
         3. To set up the subscription you need to get an endpoint URL from Sumo to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click on **Create URL** and use the provided endpoint URL when creating your subscription in step C.
 
 
-The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/configure-our-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
+The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-our-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
 
 
 
@@ -192,11 +186,11 @@ Make sure that the topic and the bucket are in the same region.
 1. Set any of the following under **Advanced**:
     * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
         * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-        * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/sources/reference-information-sources/time-reference) for more information.
-    * **Enable Multiline Processing. **See [Collecting Multiline Logs](/docs/send-data/sources/reference-information-sources/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
+        * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
+    * **Enable Multiline Processing. **See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
         * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
         * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
-2. [Create any Processing Rules](/docs/manage/collection/processing-rules/create-processing-rule.md) you'd like for the AWS Source.
+2. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule.md) you'd like for the AWS Source.
 3. When you are finished configuring the Source click **Save**.
 
 
@@ -243,7 +237,7 @@ Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the “**load
 
 ### Field Extraction Rule(s)
 
-Create Field Extraction Rule for AWS Application Load Balancer Access Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
+Create Field Extraction Rule for AWS Application Load Balancer Access Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 ```sql
 Rule Name: AwsObservabilityAlbAccessLogsFER

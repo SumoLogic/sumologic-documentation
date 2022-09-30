@@ -42,9 +42,12 @@ Customers that are using CSE APIs prior to the update should be ready for this c
 
 If you use the [Insight Enrichment Server](../integrations/insight-enrichment-server.md), be sure to update the server’s configuration settings  with the correct URL for connecting to the CSE APIs, and your access ID and key. For information about Insight Enrichment Server configuration settings,see [General settings](../integrations/insight-enrichment-server.md) in the *Insight Enrichment Server* topic. 
 
+## Insight email actions 
+Insight email actions are sent from service@sumologic.com rather than from noreply@jask.com.
+
 ## Deprecated CSE pages
 
 The following CSE UI pages will be removed by this update:
 
 * The **Accounts**, **Invitations**, **Roles,** and **Teams** pages; these are now managed centrally in the Sumo Logic platform UI. For more information, see Users and Roles.
-* The **Sensors** page; sensors are now managed by the platform UI. For current download links, see [Sensor Download Locations](../cse-sensors/sensor-download-locations.md).
+* The **Sensors** page; sensors are now managed by the platform UI. For current download links, see [Sensor Download Locations](../sensors/sensor-download-locations.md).

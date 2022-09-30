@@ -1,12 +1,13 @@
 ---
 id: parse-variable-patterns-using-regex
+title: Parse Variable Patterns Using Regex
 ---
 
-# Parse Variable Patterns Using Regex
+
 
 The Parse Regex operator (also called the extract operator) enables users comfortable with regular expression syntax to extract more complex data from log lines. Parse regex can be used, for example, to extract nested fields.
 
-User added fields, such as extracted or parsed fields, can be named using alphanumeric characters as well as underscores ("\_"). They must start and end with an alphanumeric character.
+User added fields, such as extracted or parsed fields, can be named using alphanumeric characters as well as underscores ("_"). They must start and end with an alphanumeric character.
 
 For more information on Regular Expressions, see the [Perl documentation](http://perldoc.perl.org/perlre.html#Regular-Expressions). Or try the regex tester at [regex101.com](https://regex101.com/).
 
@@ -34,7 +35,7 @@ You can use the alternate term "extract":
 
 * `multi` 
 
-    The `multi` option allows you to parse multiple values *within* a single log message. 
+    The `multi` option allows you to parse multiple values *within* a single log message.
 
 ## Rules
 
@@ -56,7 +57,7 @@ You can use the alternate term "extract":
 
 
 You can convert your normal regular expressions into named capturing groups with the following steps:  
-      
+
 Wrap everything in parenthesis, and append “`?`” followed by a capturing group name enclosed within “\\>`”. Let's see an example below, the highlighted portions is what has been added.
 
 |  Normal Regex | Regex with named capturing group |
@@ -88,7 +89,7 @@ If your regex contains a capturing group (part of the regex is enclosed within p
 Extracting IP addresses from logs is straight-forward using a parse regex similar to:
 
 ```sql
-... | parse regex "(\<ip_addres\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" 
+... | parse regex "(\<ip_addres\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | ...
 ```
 
@@ -97,8 +98,8 @@ Parsing multiple fields in a single query.
 Parse regex supports parsing out multiple fields in one query. For example, say we want to parse username and host information from logs. Use a query similar to:
 
 ```sql
-... | parse regex "user=(\<use\>.*?):"  
-| parse regex "host=(\<msg_hos\>.*?):"  
+... | parse regex "user=(\<use\>.*?):" 
+| parse regex "host=(\<msg_hos\>.*?):" 
 | ...
 ```
 
@@ -118,19 +119,19 @@ To specify a list of alternative strings in a regular expression, use the group 
 you can write the following query to extract the "protocol":
 
 ```sql
-| parse regex "list 101 (accepted|denied) (\<protoco\>.*?) "
+| parse regex "list 101 (accepted|denied) (\<protocol\>.*?) "
 ```
 
 So, you'd actually write:
 
 ```sql
-| parse regex "list 101 (?:accepted|denied) (\<protoco\>.*?) "
+| parse regex "list 101 (?:accepted|denied) (\<protocol\>.*?) "
 ```
 
 But if you mean to also capture whether it is an "accepted" or a "denied" into an alias, then you'd include:
 
 ```sql
-| parse regex "list 101 (\<statu\>accepted|denied) (\<protoco\>.*?) "
+| parse regex "list 101 (\<statu\>accepted|denied) (\<protocol\>.*?) "
 ```
 
 ### Parse multi
@@ -140,7 +141,7 @@ In addition to parsing a field value, the **multi** option (also called parse 
 For example, in the Amazon VPC flow logs you can identify the messages with the same source and destination IP addresses using parse regex multi.
 
 ```sql
-_sourceCategory=aws/vpc 
+_sourceCategory=aws/vpc
 | parse regex "(?<ip_address>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" multi
 | count by ip_address, _raw
 | where _count >1
@@ -174,4 +175,4 @@ Use the following parse regex expression to match the "error" in the logs. The *
 | Error         | Line2: The following exception was reported: Error in log |
 | error         | Line1: The following exception was reported: error in log |
 
-You can also use the [toLowerCase and toUpperCase](../search-operators/toLowerCase-and-toUpperCase.md) operators. 
+You can also use the [toLowerCase and toUpperCase](../operators#toLowerCase-and-toUpperCase) operators. 

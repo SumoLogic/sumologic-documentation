@@ -1,6 +1,7 @@
 ---
 slug: /send-data/collect-from-other-data-sources/amazon-cloudwatch-logs
 title: Amazon CloudWatch Logs
+description: Learn how to collect Amazon CloudWatch Logs.
 ---
 
 
@@ -23,8 +24,8 @@ AWS Lambda functions are our preferred method for sending Amazon CloudWatch Logs
 
 ## Add a Hosted Collector and HTTP Source
 
-1. In Sumo Logic, configure a [Hosted Collector](../../configure-hosted-collector.md).
-1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 :::important
 When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this to configure the Lambda Function.  
@@ -178,7 +179,7 @@ In the CloudFormation template, define the number of messages in the Dead Letter
    * **EmailID** (Optional) Used for alerts.
    * **IncludeLogGroupInfo.**  Set to true to include loggroup/logstream values in logs. The default value is     False. For AWS Lambda Logs **IncludeLogGroupInfo** must be set to **True**; for VPC Flow Logs it's optional. 
    * **LogFormat.** For VPC logs, choose either VPC-JSON (JSON format) or VPC-RAW (raw messages). The default value is Others. 
-   * **LogStreamPrefix** (Optional) Enter comma separated list of logStream name prefixes to filter by logStream. Please note this is seperate from a logGroup. This is used to only send certain logStreams within a cloudwatch logGroup(s).  LogGroup(s) still need to be subscribed to the created Lambda function     (`SumoCWLogsLambda-<Auto-Genereted-Suffix>`), regardless of what is input for this value.
+   * **LogStreamPrefix** (Optional) Enter comma separated list of logStream name prefixes to filter by logStream. Please note this is separate from a logGroup. This is used to only send certain logStreams within a cloudwatch logGroup(s).  LogGroup(s) still need to be subscribed to the created Lambda function     (`SumoCWLogsLambda-<Auto-Genereted-Suffix>`), regardless of what is input for this value.
 
     :::note
     LogStreamPrefix field does not accept special characters (`[|\\{}()[\]^$+*?.-]`). For example, you can use the comma-separated list like test-name, test-logs as the LogStream name prefixes.
@@ -189,7 +190,7 @@ In the CloudFormation template, define the number of messages in the Dead Letter
 
     ![Specify_Stack_Details.png](/img/send-data/Specify_Stack_Details.png)
 
-1. Click **Next**. The **Configure Stack Options** screen will appear. You can optinally add AWS tags to tag the resources created by this Cloudformation stack. Click **Next** to get to the final **Review** window.
+1. Click **Next**. The **Configure Stack Options** screen will appear. You can optionally add AWS tags to tag the resources created by this Cloudformation stack. Click **Next** to get to the final **Review** window.
 1. In the **Review** window, click the checkbox acknowledging that you understand the the template creates IAM resources, and click **Create**.
 
 After few minutes you will see CREATE_COMPLETE in the Status column.
@@ -224,14 +225,18 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 
 1. Log in to the [AWS Management Console](https://s3.console.aws.amazon.com/).
 1. Under **Management Tools**, select CloudWatch, then click **Logs** in the left- hand navigation menu.
-1. Select the radio button next to the CloudWatch Log Group that you want to stream to Sumo Logic, click **Actions**, then click **Stream to AWS Lambda**.
+1. Select the radio button next to the CloudWatch Log Group that you want to stream to Sumo Logic, click **Actions**, then click **Stream to AWS Lambda**.<br/>![stream-to-aws-lambda.png](/img/send-data/stream-to-aws-lambda.png)
+1. Select the Lambda function that begins with "SumoCWLogsLambda", then click **Next**.<br/> ![lambda-function.png](/img/send-data/lambda-function.png)
+1. On the Create Lambda subscription filter page, select a Log format, and enter a Subscription filter pattern and Subscription filter name.
+1. Select the log data to test, then click Test pattern. If test results look fine, then click **Start Streaming**.<br/> ![test-pattern.png](/img/send-data/test-pattern.png)
+
 
     ![stream-to-aws-lambda.png](/img/send-data/stream-to-aws-lambda.png)
 1. Select the Lambda function that begins with "SumoCWLogsLambda", then click **Next**.
 
     ![lambda-function.png](/img/send-data/lambda-function.png)
-1. Select the appropriate log format, then click **Next.**
-1. Confirm the details on the next screen, then click **Start Streaming**.
+1. On the **Create Lambda subscription filter** page, select a **Log format**, and enter a **Subscription filter pattern** and **Subscription filter name**.
+1. Select the log data to test, then click **Test pattern**. If test results look fine, click **Start Streaming**.
 
 ### Auto-subscribe other log groups to SumoCWLogsLambda function
 

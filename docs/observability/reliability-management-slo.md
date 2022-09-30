@@ -191,12 +191,11 @@ To create a new SLO:
     * **Throughput**. Select to track the throughput of services and processing.
     * **Availability**. Select to monitor the uptime of services.
     * **Other**. Select to monitor any other metric or log for SLIs.<br/><img src={useBaseUrl('img/observability/slo-create-type.png')} alt="Reliability Management SLO SLI" />
-
 4. Select the Evaluation Type which determines how the events are measured:
     * **Window-based**. Select the time frame window for the events. Window sizes should be between 1m to 60m.<br/><img src={useBaseUrl('img/observability/slo-create-window-base.png')} alt="Reliability Management SLO SLI" />
     * **Request-based.**<br/><img src={useBaseUrl('img/observability/slo-create-request-base.png')} alt="Reliability Management SLO SLI" />
 
-Select the **Query Type **to select and build your queries for the SLI data. You have a choice of Metrics or Logs with a ratio-based (partial against the total) or threshold-based (events amount against a set threshold amount) calculation. Review [Query recommendations](#Query_recommendations) before building.
+Select the **Query Type **to select and build your queries for the SLI data. You have a choice of Metrics or Logs with a ratio-based (partial against the total) or threshold-based (events amount against a set threshold amount) calculation. Review [Query recommendations](#Query-recommendations) before building.
 
 Follow the instructions below based on the query type:
 
@@ -208,17 +207,16 @@ Follow the instructions below based on the query type:
    </td>
   </tr>
   <tr>
-   <td>
-    For <strong>Ratio-based</strong> definition, define queries for the successful or unsuccessful events to calculate against total events:
+   <td>For <strong>Ratio-based</strong> definition, define queries for the successful or unsuccessful events to calculate against total events:
 <ol>
-<li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
+<li>Specify Total Events query.</li>
 <li>Build a query using metrics and filters. See <a href="/docs/metrics/introduction-metrics/overview-sumo-metrics">Overview of Metrics in Sumo</a>.</li>
 <li>Select the values to use from <strong>Number of data points </strong>or <strong>Metric value</strong>.</li>
 <li>Configure the Total Events, including a query and values, to use <strong>Number of data points</strong> or <strong>Metric value</strong>. You can copy and paste the previous query, removing filters to get the total.</li>
 </ol>
    </td>
    <td>
-    For <strong>Threshold-based</strong> definitions, which calculates against success criteria:
+    For <strong>Threshold-based</strong> definitions, which calculate against success criteria:
 <ol>
 <li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
 <li>Build a query using metrics and filters. See <a href="/docs/metrics/introduction-metrics/overview-sumo-metrics">Overview of Metrics in Sumo</a> for more information.</li>
@@ -240,7 +238,7 @@ Follow the instructions below based on the query type:
   </tr>
   <tr>
    <td>For <strong>Ratio-based</strong> definitions, which calculate successful or unsuccessful events against total events:
-<ol><li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
+<ol><li>Specify Total Events query.</li>
 <li>Search logs selecting and entering a log query. See <a href="/docs/search/get-started-with-search/search-basics/about-search-basics">About Search Basics</a> for more information.</li>
 <li>For <strong>Use values from</strong>, select the numeric value available for that query to pull data from.</li>
 <li>Then configure the <strong>Total Events</strong>, including a query and values. You can copy and paste the previous query, perhaps with filters removed to get the total.</li>
@@ -271,7 +269,7 @@ Follow the instructions below based on the query type:
 
 ### Importing SLOs (optional)
 
-To transfer data immediately and create an SLO using an import, you should first export JSON content to use that formatting. The Sumo Logic JSON format may change without notice. See [Export and Import Content in the Library](/docs/get-started/library/index.md) for complete details.
+To transfer data immediately and create an SLO using an import, you should first export JSON content to use that formatting. The Sumo Logic JSON format may change without notice. See [Export and Import Content in the Library](/docs/get-started/library#import-content) for complete details.
 
 To import an SLO:
 
@@ -307,7 +305,7 @@ When you click **Save and Create Monitor**, a New Monitor dialog loads:
 1. For the **Monitor Type**, select **SLO**. When creating from the **Monitors** tab, select an SLO from the drop-down menu. A preview of the SLO loads on the page. <br/><img src={useBaseUrl('img/observability/ani-new-monitor1.gif')} alt="Reliability Management SLO SLI" />
 2. Select and configure a Condition Type:
    * For the **SLI Condition Type**, you can select to alert when the SLI is below an entered percentage, as it nears your SLI target. For example, you could set this to 99.1% to raise a critical alert when it is getting close to a target of 99%. <br/><img src={useBaseUrl('img/observability/slo-monitor-sli.png')} alt="Reliability Management SLO SLI" width="200"/>
-   * For the **Burn Rate Condition Type**, create an alert indicating Critical and Warning conditions based on burn rate or the rate at which error budget is depleted. Enter a percentage depleted within an amount of minutes, hours, or days. \
+   * For the **Burn Rate Condition Type**, create an alert indicating Critical and Warning conditions based on burn rate or the rate at which error budget is depleted. Enter a percentage depleted within an amount of minutes, hours, or days.
 For example, a critical alert for 10% depletion within 3 hours indicates the error budget is depleting quickly.<br/><img src={useBaseUrl('img/observability/slo-monitor-burn.png')} alt="Reliability Management SLO SLI" width="350"/>
 3. Under **Notifications**, select your preferred **Connection Type** for sending messages via email, Slack, webhook, or other methods. Select **Alert** and/or **Recovery** to notify for **Critical** and **Warning** triggers. You can add as many notifications as needed. A message is sent with a link to the SLO dashboard to investigate.<br/><img src={useBaseUrl('img/observability/slo-monitor-notifications.png')} alt="Reliability Management SLO SLI" />
 

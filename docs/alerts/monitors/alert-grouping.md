@@ -1,6 +1,6 @@
 ---
 id: alert-grouping
-title: Alert Grouping (Beta)
+title: Alert Grouping
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,9 +13,6 @@ You could group by `_collector` field, for example, and one alert would be gener
 
 <img src={useBaseUrl('img/monitors/alert_grouping.png')} alt="alert-grouping" />
 
-## Before You Begin
-
-This feature is in Beta. To participate, contact your Sumo account executive.
 
 ## Setup
 

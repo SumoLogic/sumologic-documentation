@@ -1,9 +1,8 @@
 ---
 id: add-collector-linux-machine-image
 title: Add a Collector to a Linux Machine Image
+description: You can build a Sumo Logic Collector into a Linux machine image such as an Amazon AMI or VMware image.
 ---
-
-
 
 You can build a Sumo Logic Collector into a Linux machine image such as an Amazon AMI or VMware image.
 
@@ -28,7 +27,7 @@ Collection \> Collection** page, or from the list below.
 
 1. To configure custom sources, create a source JSON file that lists all the sources you want the collector to scan and submit to the Sumo Logic service. These source configurations are only applied during the initial registration of the collector, any updates to the sources.json file will *not* be applied during a simple restart of the collector.
 
-    The following sample JSON file includes local file source and syslog source configuration samples. For a full list of available source types and parameters, which can be used within the sources.json file, please review the [JSON help documentation](/docs/send-data/sources/use-json-configure-sources).
+    The following sample JSON file includes local file source and syslog source configuration samples. For a full list of available source types and parameters, which can be used within the sources.json file, please review the [JSON help documentation](/docs/send-data/use-json-configure-sources).
 
     :::important
     JSON files need to be UTF-8 encoded.
@@ -72,14 +71,16 @@ Collection \> Collection** page, or from the list below.
 
 1. Set up auto-registration details for the Collector:  
 
-   * Create a New User account with Administrator permissions or a role with permissions to "Manage Collectors."  
-   * Create an Access Key and Access Id for this user, which will be used to register the collector.
+   * [Create a New User account](https://help.sumologic.com/manage/Users-and-Roles/Manage-Users/01-Create-and-Edit-Users) with Administrator permissions or a role with permissions to "Manage Collectors."  
+   * Create an [installation token](https://help.sumologic.com/manage/Security/Installation_Tokens).
+   * Or, create an [Access Key and Access Id](https://help.sumologic.com/manage/Security/Access-Keys) for this user, which will be used to register the collector.
 
 1. As root, run the installer with the following arguments:
 
    * `-``q` starts the installer in quiet mode (no UI)  
    * `-VskipRegistration=true` to skip collector registration during installation  
    * `-Vephemeral=true` to set the Collector as ephemeral (will be removed after 12 hours offline)  
+   * `-Vsumo.token_and_url=<installationToken>` to use an installation token, or: 
    * `-Vsumo.accessid\<access_i\>` to specify access id generated above  
    * `-Vsumo.accesskey\<access_ke\>` to specify access key generated above  
    * `-Vsources\<filepat\>` to specify the path to your source JSON file created above  
@@ -102,7 +103,7 @@ Collection \> Collection** page, or from the list below.
     To ensure collectors created using this image will use the correct hostname, you can modify the user.properties file, located at **/opt/SumoCollector/confg/user.properties** or **/usr/local/SumoCollector/user.properties. **Remove the line that specifies "**hostName = \<hostname\>**" and save the file.
 
 :::note
-Do not start the collector before building the image If you're using `-VskipRegistration=true`. Starting the collector prematurely will register the collector with Sumo Logic, causing ingestion issues when using baked AMI. If you did start the Collector and it registered you can remove the Collector's registration by navigating to the Collector's installation directory under `/config/creds/` and deleting all of its contents.
+Do not start the collector before building the image If you're using `-VskipRegistration=true`. Starting the collector prematurely will register the collector with Sumo Logic, causing ingestion issues when using baked AMI. If you did start the Collector and it registered you can remove the Collector's registration by navigating to the Collector's installation directory under `/config/creds/` and deleting all of its contents, and then add the Accesskey parameter in `user.properties` file to bake the AMI.
 :::
 
 ## Build your image

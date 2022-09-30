@@ -1,18 +1,18 @@
 ---
 id: keyboard-shortcuts
+title: Sumo Logic Keyboard Shortcuts
+sidebar_label: Keyboard Shortcuts
 ---
 
-# Keyboard Shortcuts
-
-Keyboard shortcuts are enabled by default. To display the list of shortcuts from the UI, press **?** or choose **Help \> Shortcuts** from the left nav.
+Sumo Logic keyboard shortcuts are enabled by default. To display the list of shortcuts from the UI, press **?** or choose **Help \> Shortcuts** from the left nav.
 
 For security, shortcuts for some pages are visible only for users with an Admin account.
 
-To disable keyboard shortcuts, for example, if they conflict with an international keyboard, click your name in the left nav, select **[Preferences](manage-account.md#my-preferences)**, and deselect **Enable keyboard shortcuts**.
+To disable keyboard shortcuts, for example, if they conflict with an international keyboard, click your name in the left nav, select **[Preferences](account-setup.md#my-preferences)**, and deselect **Enable keyboard shortcuts**.
 
 ## Limitations
 
-- Keyboard shortcuts are not available when the Setup Wizard is open.
+- Keyboard shortcuts are not available when the [Setup Wizard](/docs/send-data/setup-wizard) is open.
 - Keyboard shortcuts are disabled when typing in the [search text box]). 
 
 ## Keyboard Shortcuts on macOS

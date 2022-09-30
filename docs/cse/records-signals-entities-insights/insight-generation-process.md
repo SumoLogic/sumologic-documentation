@@ -12,7 +12,7 @@ The concept of an *entity* is central to the process CSE uses to correlate Signa
 
 ## Entities in messages are mapped to entity-type schema attributes
 
-During the next step of the [Record processing flow](../cse-schema/record-processing-pipeline.md)—log mapping—message fields are mapped to CSE schema attributes. During this process, each entity field from a message is mapped to one of the following CSE schema entity attributes:
+During the next step of the [Record processing flow](../schema/record-processing-pipeline.md)—log mapping—message fields are mapped to CSE schema attributes. During this process, each entity field from a message is mapped to one of the following CSE schema entity attributes:
 
 * `device_hostname`
 * `device_hostname_raw`
@@ -35,7 +35,7 @@ During the next step of the [Record processing flow](../cse-schema/record-proces
 * `user_username`
 * `user_username_raw`
 
-Which particular attribute an entity gets mapped to depends on the [field mappings](../cse-schema/create-structured-log-mapping.md) in the log mapper for the message source. Given the example message above, “thedude” might be mapped to `user_username` and "185.35.135.245"
+Which particular attribute an entity gets mapped to depends on the [field mappings](../schema/create-structured-log-mapping.md) in the log mapper for the message source. Given the example message above, “thedude” might be mapped to `user_username` and "185.35.135.245"
 to `srcDevice_ip`. 
 
 ## Rules have one or more On Entity attributes
@@ -121,14 +121,14 @@ By default the threshold Entity Activity Score for Insight generation is 12.The 
 
 | Insight Severity value | Activity Score |
 |------------------------|----------------|
-| Low                    | 13-14          |
-| Medium                 | 15-16          |
-| High                   | 17 or higher   |
+| Low                    | 13          |
+| Medium                 | 14 or 15          |
+| High                   | 16 or higher   |
 
 If your Entity Activity Score threshold value is set to a value other than 12, you can work out the mapping yourself. If `t` is your configured threshold:
 
 ```
-Low = (t + 1) to (t + 2)
-Medium = (t + 3) to (t + 4)
-High = (t + 5) or higher
+Low = (t + 1) 
+Medium = (t + 2) to (t + 3)
+High = (t + 4) or higher
 ```

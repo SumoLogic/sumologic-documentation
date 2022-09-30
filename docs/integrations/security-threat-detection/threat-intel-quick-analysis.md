@@ -28,7 +28,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 
@@ -65,7 +65,7 @@ _sourceCategory=cylance "IP Address"
 
 Use Field Extraction Rules (FER) to parse fields from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. Use these parsed fields along with Threat Intel Lookup operator.
 
-1. Create the FER For example, for Cylance Security Events, create and use the following [FER:](/docs/manage/field-extractions/create-field-extraction-rule.md)
+1. Create the FER For example, for Cylance Security Events, create and use the following [FER:](/docs/manage/field-extractions/create-field-extraction-rule)
 ```sql
 parse "Event Type: *, Event Name: *, Device Name: *, IP Address: (*, *), File Name: *, Path: *, Drive Type: *, SHA256: *, MD5: *, Status: *, Cylance Score: *, Found Date: *, File Type: *, Is Running: *, Auto Run: *, Detected By: *" as event_type,event_name,device_name,src_ip,dest_ip,file_name,path,drive_type,sha,md5,status,score,found,file_type,isRunning,autoRun,detected
 ```
@@ -139,7 +139,7 @@ No, we do not allow an export of the threat Intel feeds as that is confidential 
 
 #### Is threat lookup real-time using Continuous Queries (CQs)?
 
-Yes. You can scan for malicious Indicators of Compromise (IOCs) in real time using our [lookup](/docs/search/index.md/Search-Query-Language/Search-Operators/lookup-classic) operator.
+Yes. You can scan for malicious Indicators of Compromise (IOCs) in real time using our [lookup](/docs/search/Search-Query-Language/operators#lookup-classic) operator.
 
 
 #### Can I historically search my logs for threats?
@@ -154,7 +154,7 @@ No. No results in your Dashboards can mean that nothing has been identified by C
 
 #### I searched a threat feed for a hash IOC that I know exists, but it wasn't found. Why?
 
-It could be a case-sensitivity issue. In Sumo, the equal sign (`=`) and the not equal to sign (`!=`) conditions are case-sensitive; when you use them with Sumo operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](/docs/search/search-query-language/search-operators/toLowerCase-and-toUpperCase.md).
+It could be a case-sensitivity issue. In Sumo, the equal sign (`=`) and the not equal to sign (`!=`) conditions are case-sensitive; when you use them with Sumo operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](/docs/search/search-query-language/operators#toLowerCase-and-toUpperCase).
 
 
 #### What are different Indicators of Compromise (IOC) types available?
@@ -438,7 +438,7 @@ Yes, you can run scheduled searches that can be set up with a run frequency of R
 
 #### Can I bring my own threat feed into Sumo Logic?
 
-This isn't currently available as an App. You could create your own [lookup](/docs/search/index.md/Search-Query-Language/Search-Operators/lookup-classic) using a shared file.
+This isn't currently available as an App. You could create your own [lookup](/docs/search/Search-Query-Language/operators#lookup-classic) using a shared file.
 
 
 #### What do I do if I find a bad IP (malicious level = high)?

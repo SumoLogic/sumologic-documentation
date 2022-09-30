@@ -36,14 +36,14 @@ This section provides instructions for adding a hosted collector, HTTP, and S3 s
 
 **[VMware Carbon Black Endpoint Detection and Response](https://www.carbonblack.com/products/edr/)** (EDR) events can be sent to Sumo Logic via its [event forwarder mechanism](https://developer.carbonblack.com/reference/enterprise-response/event-forwarder/). The cb-event-forwarder can be installed on any 64-bit Linux machine running CentOS 6.x. It can be installed on the same machine as the Carbon Black server, or any other machine. Data can be sent in either JSON or LEEF format, both of which are supported by Sumo Logic.
 
-**[VMware Carbon Black Cloud Endpoint Standard](https://www.carbonblack.com/products/endpoint-standard/)** events can be collected via VMware Carbon Black [Event Forwarder S3](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/) mechanism and a [Sumo Logic S3 source](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/AWS-S3-Source).
+**[VMware Carbon Black Cloud Endpoint Standard](https://www.carbonblack.com/products/endpoint-standard/)** events can be collected via VMware Carbon Black [Event Forwarder S3](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/) mechanism and a [Sumo Logic S3 source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source).
 
 For more in-depth information, see [Endpoint Standard](https://developer.carbonblack.com/reference/cb-defense/) and[ EDR](https://developer.carbonblack.com/reference/enterprise-response/) documentation.
 
 
 ### Step 1: Add a Hosted Collector
 
-**To add a hosted collector**, perform the steps as defined on the page[ Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+**To add a hosted collector**, perform the steps as defined on the page[ Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 
 ### Step 2: Configure Collection for VMware Carbon Black EDR
@@ -56,7 +56,7 @@ To configure collection, add an HTTP Source, get credentials for VMware Carbon B
 
 **To add an HTTP source for VMware Carbon Black EDR do the following:
 
-1. Add [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) for VMware Carbon Black EDR. \
+1. Add [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for VMware Carbon Black EDR.
 
 
 
@@ -142,7 +142,7 @@ To add an S3 source for VMware Carbon Black Cloud Endpoint Standard, do the foll
 ### Configure VMware Carbon Black Cloud Endpoint Standard to send alerts and events to S3
 
 
-**VMware Carbon Black Cloud Endpoint Standard** events will be pushed to S3 via VMware Carbon Black [Event Forwarder S3](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/) and will be collected via [Sumo logic S3](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/AWS-S3-Source) source.
+**VMware Carbon Black Cloud Endpoint Standard** events will be pushed to S3 via VMware Carbon Black [Event Forwarder S3](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/) and will be collected via [Sumo logic S3](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source) source.
 
 To configure the Event Forwarder, follow the steps mentioned [here](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/eventforwarder-api/). Please carefully evaluate this information to assure that your configuration reflects the data set you would like to send to Sumo Logic.
 
@@ -157,7 +157,7 @@ In Sumo, open a Live Tail tab and run a search to verify Sumo is receiving findi
 _sourceCategory="cb_edr_events" or _sourceCategory="cb_endpoint_standard_events"
 ```
 
-For more information, see [Live Tail](/docs/search/index.md/Live-Tail).
+For more information, see [Live Tail](/docs/search/Live-Tail).
 
 
 ### Sample Log Messages
@@ -341,7 +341,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

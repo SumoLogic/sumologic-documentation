@@ -55,7 +55,7 @@ To request installation of the PCI app in the classic UI:
 Unlike Dashboards and scheduled searches, reports can be modified, allowing flexibility, including:
 
 * **Identify long term trends.** Change the time range of a report to get additional information that extends beyond the reach of Dashboards.
-* **Modify to get a closer look.** Need additional insight into events on a singe host? Or perhaps trying to find more details of a user's activity? Reports can return very granular information by making just a few edits to the query. You can choose to save an edited report as a saved search on its own.
+* **Modify to get a closer look.** Need additional insight into events on a single host? Or perhaps trying to find more details of a user's activity? Reports can return very granular information by making just a few edits to the query. You can choose to save an edited report as a saved search on its own.
 * **Concentrate efforts.** If one area of your deployment is trickier to keep in compliance, run a report more target report at a more frequent interval.
 
 ### Included PCI Reports
@@ -171,7 +171,7 @@ PCI Requirement 7 Cardholder Data Access Monitoring Dashboard helps you verify t
 
 #### PCI Requirement 8 Dashboard
 
-The PCI Requirement 8 User Activity Dashboard helps you comply with each user having his or her own unique ID. Panels look at account creation/enablement, account deletion/disablement, and password changes. Additionally, you can view a chart that displays a summary of the overall number of user account creations/deletions over a week.
+The PCI Requirement 8 User Activity Dashboard helps you comply with each user having their own unique ID. Panels look at account creation/enablement, account deletion/disablement, and password changes. Additionally, you can view a chart that displays a summary of the overall number of user account creations/deletions over a week.
 
 ![PCI_Requirement8_Dashboard.png](/img/pci-standards/PCI_Requirement8_Dashboard.png)
 

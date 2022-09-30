@@ -49,7 +49,7 @@ In this step you configure a hosted collector with a Cloud Syslog source that wi
 To configure a hosted collector with a Cloud Syslog source, do the following:
 
 1. Log in to Sumo Logic and [create a Hosted Collector](#Create-a-Hosted-Collector).
-2. Create a [Cloud Syslog Source](/docs/send-data/Sources/hosted-collectors/Cloud-Syslog-Source) on the hosted collector, specifying the following:
+2. Create a [Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source) on the hosted collector, specifying the following:
     1. Enter a Source Name.
     2. Provide a Source Category: **NW/PAN/V9**
 3. Click **Save**.
@@ -120,7 +120,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

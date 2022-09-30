@@ -1,6 +1,7 @@
 ---
 id: binary-package-install-a-collector
 title: Use the binary package to install a Collector on Windows or macOS
+description: Use the binary package to install a Collector on MacOS or Windows only if you need to use a particular version of JRE.
 ---
 
 
@@ -15,7 +16,7 @@ Before you begin:
 * Install the version of JRE you want to use. The binary installation process does not include JRE installation. Download the JRE here: \<https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.htm\> 
 * Download the binary file from either of these locations:  
 
-  * Sumo Logic web application: **Manage Collection \> Collection \> Collection \> Add Collector \> Installed Collector \> Install a Binary Package**
+  * **Manage Collection \> Collection \> Collection \> Add Collector \> Installed Collector \> Install a Binary Package**
   * Static download link: https://collectors.sumologic.com/rest/download/tar
 
 ## Prepare the binary file
@@ -41,9 +42,9 @@ Before you begin:
 
 ## (Optional) Configure sources
 
-The Collector Management API allows you to pass all Source settings in a JSON file, including Source name, metadata tags, and pointer to the files you want to collect. For instructions, see [Using JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources).
+The Collector Management API allows you to pass all Source settings in a JSON file, including Source name, metadata tags, and pointer to the files you want to collect. For instructions, see [Using JSON to configure Sources](/docs/send-data/use-json-configure-sources).
 
-Optionally, you can configure Source using the Sumo Logic Web Application after the Collector has been installed.
+Optionally, you can configure Source using Sumo Logic after the Collector has been installed.
 
 ## (Optional) Enable FIPS
 
@@ -88,4 +89,4 @@ Use either of the following commands to start the Collector.
     InstallCollector-NT.bat startCollectorService.bat
     ```
 
-To verify that the Collector is installed, go to **Manage \> Collection** in the Web Application and verify that you can see the Collector.
+To verify that the Collector is installed, go to Sumo Logic > **Manage \> Collection** and verify that you can see the Collector.

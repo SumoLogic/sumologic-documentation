@@ -53,7 +53,7 @@ Building a query made up of key-value pairs is easier, because Sumo prompts you 
 
 A metric rule is made up of two parts: a *metric match expression* that defines the scope of the rule, and one or more variables that define the tags that will be applied to metrics that match the match expression.
 
-You use the metric rules editor to build a metric rule. On the **Metric Rules** page (**Manage Data \> Metrics�\> Metric Rules),** metric rules are listed like this:
+You use the metric rules editor to build a metric rule. On the **Metric Rules** page (**Manage Data \> Metrics\> Metric Rules),** metric rules are listed like this:
 
 ![named-rule.png](/img/metrics/named-rule.png)
 
@@ -150,7 +150,7 @@ You could define the Tag Sequence like this:
 
 to extract the third component of the metric match expression.
 
-### What if you want to match the expression against \_rawName field?
+### What if you want to match the expression against _rawName field?
 
 You can. Use the `$_field_sequence` format, specifying the `_rawName` field. For example, given this Tag Sequence:
 

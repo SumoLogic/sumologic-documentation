@@ -1,9 +1,9 @@
 ---
 id: bar-charts
+title: Bar Charts
 description: Bar charts are useful for visually comparing the number of events that have occurred.
 ---
 
-# Bar Charts
 
 Bar charts are useful for visually comparing the number of events that have occurred, such as the type of error that occurs the most in your system. To create a Bar chart, use a search query that provides at least a few data points in the **Aggregates** tab.
 
@@ -33,5 +33,5 @@ To add a panel with a bar chart:
 
 1. [Modify the chart](./modify-chart.md) as desired.
 1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.
-    
+
     ![Add to Dashboard button.png](/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png)

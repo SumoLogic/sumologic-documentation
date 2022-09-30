@@ -9,6 +9,8 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { FooterLinkItem, useThemeConfig } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import IconExternalLink from '@theme/Icon/ExternalLink';
+import isInternalUrl from '@docusaurus/isInternalUrl';
 import ThemedImage, { Props as ThemedImageProps } from '@theme/ThemedImage';
 import Social from '@site/src/components/Social';
 
@@ -16,11 +18,14 @@ function FooterLink({
   to,
   href,
   label,
+  sublabel,
+  icon,
   prependBaseUrlToHref,
   ...props
 }: FooterLinkItem) {
   const toUrl = useBaseUrl(to);
   const normalizedHref = useBaseUrl(href, { forcePrependBaseUrl: true });
+  const isExternalLink = label && href && !isInternalUrl(href);
 
   return (
     <Link
@@ -34,7 +39,27 @@ function FooterLink({
           })}
       {...props}
     >
-      {label}
+    <div className='link'>
+    {icon && <div className='link__icon'><span className="material-icons-outlined">{icon}</span></div>}
+      <div className='link__body'>
+        <div className='link__label'>
+          {isExternalLink ? (
+            <span>
+              {label}
+              <IconExternalLink
+                {...(isExternalLink && {
+                  width: 12,
+                  height: 12,
+                })}
+              />
+            </span>
+          ) : (
+            label
+          )}
+        </div>
+        {sublabel && <div className='link__sublabel'>{sublabel}</div>}
+      </div>
+    </div>
     </Link>
   );
 }
@@ -126,11 +151,11 @@ function Footer(): JSX.Element | null {
             ))}
           </div>
         )}
-        
+
         </div>
         {(copyright) && (
           <div className='footer__bottom'>
-            
+
             {copyright ? (
               <div
                 className='footer__copyright' // Developer provided the HTML, so assume it is safe.

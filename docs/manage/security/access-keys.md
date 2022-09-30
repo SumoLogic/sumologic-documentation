@@ -3,12 +3,11 @@ id: access-keys
 title: Access Keys
 ---
 
-#
 
 In Sumo Logic, you must use an access key to:
 
 * **Register new Collectors.** When you install a Collector, in addition to having a role that grants you the **Manage Collectors** capability, you must supply an access key. You can use a different access key for each Collector, or use the same access key for multiple Collectors. The only time a Collector uses the access key is at installation, so if a key is deleted after a Collector has been set up, the Collector isn't affected.
-* **Use Sumo Logic APIs.** You must supply an access key to use the Sumo Logic APIs. See [API Authentication] (../../APIs/General-API-Information/API-Authentication.md "API Authentication") for details.
+* **Use Sumo Logic APIs.** You must supply an access key to use the Sumo Logic APIs. See [API Authentication](/docs/api/getting-started#authentication) for details.
 
 You can create and manage your own access keys on the **Preferences** page in the Sumo web app. If your role grants you the **Manage Access Keys** capability, you can manage access keys created by other Sumo users on the **Administration** \> **Security** \> **Access Keys** page.
 
@@ -46,7 +45,7 @@ If you have the **Create Access Keys** role capability, you can use the **Prefer
 
 To create your own access keys:
 
-1. In the Sumo Logic web app, click your name in the left-nav and open the **Preferences** page.
+1. In Sumo Logic, click your name in the left-nav and open the **Preferences** page.
 1. In the **My Access Keys** section, click **+ Add Access Key**.
 
     ![access-key-preferences-page-2.png](/img/security/access-key-preferences-page-2.png)
@@ -86,7 +85,7 @@ When you mouse over an access key on the **Preferences** page, several controls 
 
 ## Manage all users’ access keys on Access Keys page
 
-If you have the **Manage Access Keys** capability you can use the **Access Keys** page to create and edit  own access keys. You can also manage access keys that were created by other Sumo users:  you can edit, deactivate, and delete any access key.  
+If you have the **Manage Access Keys** capability you can use the **Access Keys** page to create and edit your own access keys. You can also manage access keys that were created by other Sumo users:  you can edit, deactivate, and delete any access key.  
 
 ### Generate an access key on the Access Keys page 
 

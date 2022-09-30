@@ -1,9 +1,10 @@
 ---
 id: best-practices-search
 title: Best Practices for Searches
+description: Use these easy to follow rules to get the most out of your Sumo Logic searches.
 ---
 
-
+Use these easy-to-follow rules to get the most out of your Sumo Logic searches.
 
 ## Be specific with search scope
 
@@ -18,7 +19,7 @@ test your search against a shorter time range first, then extend the time range 
 
 ## Use fields extracted by FERs and avoid the where operator
 
-Whenever possible, use keyword searches and fields already extracted using [Field Extraction Rules](/docs/manage/field-extractions) (FERs) to filter data instead of using the [where](../../search-query-language/search-operators/where.md) operator. If it is not possible to only use a keyword or pre-extracted field, use both a keyword search AND the where clause.
+Whenever possible, use keyword searches and fields already extracted using [Field Extraction Rules](/docs/manage/field-extractions) (FERs) to filter data instead of using the [where](../../search-query-language/operators#where) operator. If it is not possible to only use a keyword or pre-extracted field, use both a keyword search AND the where clause.
 
 **Best approach:** Field Extraction Rule field AND keyword
 
@@ -95,7 +96,7 @@ If your search contains filtering criteria that could change each time the sear
 
 ## Aggregate before a lookup
 
-Whenever possible, you should aggregate data prior to doing a [lookup](../../search-query-language/search-operators/lookup-classic.md). In some cases, this will significantly reduce the amount of data the lookup is referencing.
+Whenever possible, you should aggregate data prior to doing a [lookup](docs/search/search-query-language/operators#lookup-classic). In some cases, this will significantly reduce the amount of data the lookup is referencing.
 
 **Best approach:**
 
@@ -129,4 +130,4 @@ _sourceCategory=Apache/Access and GET | parse "\"GET * HTTP/1.1\"\" * * \"\"*\"\
 ## Pin searches with long time ranges
 
 A query with a longer time range can run past the default time window for Sumo Logic. To protect against an interruption in a query with a
-significant time range, [pin it](../../../get-started/library/search-the-library.md#pinned-searches). A pinned search can run in the background for up to 24 hours.
+significant time range, [pin it](/docs/get-started/library#pinned-searches). A pinned search can run in the background for up to 24 hours.

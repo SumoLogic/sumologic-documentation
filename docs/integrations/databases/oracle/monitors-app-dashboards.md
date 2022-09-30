@@ -14,7 +14,7 @@ This section provides instructions for installing the Oracle Monitors, App, as w
 
 ### Pre-Packaged Alerts
 
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your Oracle clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your Oracle clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
 For details on the individual alerts, see [this page](/docs/integrations/databases/oracle/alerts.md).
 
@@ -42,7 +42,7 @@ Custom filter examples:
 
 6. Click Import and then copy-paste the above JSON to import monitors.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Oracle folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Oracle folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
 
 
 ### Method B: Using a Terraform script
@@ -50,9 +50,9 @@ The monitors are disabled by default. Once you have installed the alerts using t
 1. **Generate a Sumo Logic access key and ID.**
 Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later. **
-3. **Download the Sumo Logic Terraform package for Oracle alerts. \
+3. **Download the Sumo Logic Terraform package for Oracle alerts.
 **The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Oracle). You can either download it through the “git clone” command or as a zip file.
-4. **Alert Configuration . \
+4. **Alert Configuration .
 **After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/Oracle/**
 
 Edit the **Oracle.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
@@ -146,7 +146,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
+Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

@@ -1,4 +1,4 @@
-name: Pull Request checks
+name: Pull Request Checks
 
 on:
     pull_request:
@@ -36,3 +36,13 @@ jobs:
           env:
             NODE_OPTIONS: "--max-old-space-size=8192"
           run: yarn build
+    spellcheck:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v2
+      - uses: codespell-project/actions-codespell@master
+        name: Check spelling
+        with:
+          skip: "*.svg,*.js,*.map,*.css,*.scss"
+          ignore_words_list: "aks,atleast,cros,fiel,ist,ot,pullrequest,ser,shttp"
+          path: docs

@@ -118,12 +118,12 @@ In this step, you configure a pipeline for shipping metrics from Azure Monitor t
 In Step 1, you create an HTTP source. When you configure the, plan your source category to ease the querying process.  A hierarchical approach allows you to make use of wildcards. For example: \
 `Azure/DB/SQL/Metrics`
 2. Push metrics from Azure Monitor to Event Hub.
-   * From the left pane, select **ALL Services. \
+   * From the left pane, select **ALL Services.
    * Search for and select "Monitor".
-   * In the **Monitor** pane, select **Diagnostic Settings **under **Settings**. \
-   * Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings. \
-   * Once diagnostics are enabled, click **Add a diagnostic setting**. \
-   * The **Diagnostic Settings** page appears. \
+   * In the **Monitor** pane, select **Diagnostic Settings **under **Settings**.
+   * Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings.
+   * Once diagnostics are enabled, click **Add a diagnostic setting**.
+   * The **Diagnostic Settings** page appears.
    * In the left pane
       * Enter a name for the diagnostic setting.
       * Click the  **Stream to an event hub **checkbox.
@@ -155,7 +155,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 6. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 7. Click **Add to Library**.
 
-Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](/docs/get-started/library/index.md) for information on working with the library.
+Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](/docs/get-started/library) for information on working with the library.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 

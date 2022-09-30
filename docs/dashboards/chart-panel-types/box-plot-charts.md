@@ -10,11 +10,11 @@ A Box Plot Chart graphically depicts groups of data using quartiles, which are t
 
 To create Box Plot Chart panels, your query must include:
 
-* **Smallest value** (sample minimum) using the [min](../../search/search-query-language/group-aggregate-operators/min-and-max.md) or \_min field name.
-* **Lowest quartile** (25%) using the \_pct_25 field name. You can use both **lower** or **ends** with in this part of the query.
-* **Median quartile** (50%) using the \_pct_50 field name. You can use both **lower** or **ends** with in this part of the query.
-* **Upper quartile** (75%) using the \_pct_75 field name.
-* **Largest value** (sample maximum) using the [max](../../search/search-query-language/group-aggregate-operators/min-and-max.md) or \_max field name.
+* **Smallest value** (sample minimum) using the [min](/docs/search/search-query-language/group-aggregate-operators#min-max) or `_min` field name.
+* **Lowest quartile** (25%) using the `_pct_25` field name. You can use both **lower** or **ends** with in this part of the query.
+* **Median quartile** (50%) using the `_pct_50` field name. You can use both **lower** or **ends** with in this part of the query.
+* **Upper quartile** (75%) using the `_pct_75` field name.
+* **Largest value** (sample maximum) using the [max](/docs/search/search-query-language/group-aggregate-operators#min-max) or `_max` field name.
 
 For example, this query can be rendered as a Box Plot Chart:
 
@@ -53,7 +53,7 @@ error
 | min(a) as mina, min (b) as minb, pct(b,25), pct(c,50), pct(d,75), max(e)
 ```
 
-The [Sumo Logic App for Amazon VPC Flow Logs] (../../../07Sumo-Logic-Apps/amazon-aws/Amazon_VPC_Flow_Logs.md "Amazon VPC Flow Logs App") uses a query that creates a Box Plot Chart. It is:
+The [Sumo Logic App for Amazon VPC Flow Logs](/docs/integrations/amazon-aws/VPC-Flow-Logs) uses a query that creates a Box Plot Chart. It is:
 
 ```sql
 _sourceCategory=vpc  

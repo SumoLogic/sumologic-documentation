@@ -1,6 +1,7 @@
 ---
 id: set-run-as-user-for-collector
 title: Set the Run As User for a Collector
+description: If you are using the command line installer to install a Collector, you can specify the user under whose account the Collector will run.
 ---
 
 

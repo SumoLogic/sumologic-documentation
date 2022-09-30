@@ -44,7 +44,7 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
    * `OTEL_TRACES_SAMPLER = always_on` - enables traces sampling.
    * `OTEL_SERVICE_NAME = YOUR_SERVICE_NAME` - ensure you define it as a string value that represents the function name and its business logic such as "Check SQS Lambda". This will appear as the tracing service name in Sumo Logic.
 
-   * `Tracing **application **and **cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable.
+   * Tracing **application** and **cloud.account.id** are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable.
 
          * `application=YOUR_APPLICATION_NAME` - the string value, if the function is a part of complex system/application then set it for all other functions/applications.
 
@@ -170,8 +170,3 @@ changes in the Dockerfile and image rebuild. You'll need the following:
     ![lambda-nodejs4.png](/img/traces/lambda-nodejs4.png)
 
 1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](../../working-with-tracing-data/view-and-investigate-traces.md).
-
-### Context propagation
-
-In case of external request to the Lambda function, it is important to propagate the context. Enabling [AWS X-Ray context propagation](https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader) on the client side will help to visualize the complex flow of the trace. For applications instrumented by OpenTelemetry SDK it is enough to install AWS X-Ray propagator dependency specific for an instrumentation and configure [`OTEL_PROPAGATORS` environment variable](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/sdk-environment-variables.md#general-sdk-configuration)
-(for example: `export OTEL_PROPAGATORS=tracecontext,baggage,xray`).

@@ -20,7 +20,7 @@ _sourceCategory=OS/Linux* ("su:" or "sudo:" or "sshd:" or "sshd[" or "pam:") (("
 | where dest_user!="" | "Login/Success" as classification | "Low" as Severity | "Linux" as Device_Vendor | "OS" as Device_Type
 ```
 
-When naming your index, use a name that's descriptive and easy to remember. Names can be comprised of alphanumeric characters; underscores( \_ ) are the only special characters allowed.
+When naming your index, use a name that's descriptive and easy to remember. Names can be comprised of alphanumeric characters; underscores( _ ) are the only special characters allowed.
 
 ## Should I create a Scheduled View or use Save to Index?
 
@@ -28,20 +28,20 @@ In most cases, if you can use a [Scheduled View](/docs/manage/scheduled-views)�
 
 ## Limitations
 
-* When you use Save to Index, metadata fields from the Collector (for example, \_collector) will be dropped. 
-* Role filters may not work. If the filter depends on any field that doesn't exist in the Index (or has been altered like \_collector), then it won't work.
+* When you use Save to Index, metadata fields from the Collector (for example, _collector) will be dropped. 
+* Role filters may not work. If the filter depends on any field that doesn't exist in the Index (or has been altered like _collector), then it won't work.
 * No more than 512 results can be saved each time the Scheduled Search completes.
 
 ## Save the results of a scheduled search as an Index
 
-1. [Save a search](../../search/get-started-with-search/search-basics/save-search.md). 
+1. [Save a search](/docs/search/get-started-with-search/search-basics/save-search). 
 1. Click **Schedule this search**.
 
     ![SaveToIndex.png](/img/alerts/SaveToIndex.png)
 
 1. For all configuration options, see [Schedule a Search](schedule-search.md). 
 1. **Alert Type**. Select **Save to Index**.
-1. **Index Name**. Enter a name that you'll use to search the data in a query. Use a name that's descriptive and easy to remember. Names can be comprised of alphanumeric characters; underscores( \_ ) are the only special characters allowed.
+1. **Index Name**. Enter a name that you'll use to search the data in a query. Use a name that's descriptive and easy to remember. Names can be comprised of alphanumeric characters; underscores( _ ) are the only special characters allowed.
 1. Click **Save**.
 
 Once you have saved your Scheduled Search as an Index, you can cancel or edit the Scheduled Search, but you cannot delete an Index. 

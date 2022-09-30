@@ -1,6 +1,7 @@
 ---
 id: logreduce-values
 title: LogReduce Values
+description: Group by the values of specific keys in JSON logs.
 ---
 
 
@@ -79,15 +80,15 @@ To see all the logs by cluster identifiers for further processing, you'd use
 
 ## Limitations
 
-* Not supported with [Real Time alerts](../../alerts/scheduled-searches/faqs/real-time-alert-with-greater-than-results.md).
-* [Time Compare](../time-compare.md) and the [compare operator](../search-query-language/search-operators/Compare.md) are not supported against LogReduce Values results.
+* Not supported with [Real Time alerts](/docs/alerts/scheduled-searches/faq#real-time-alert-with-greater-than-1000-results).
+* [Time Compare](../time-compare.md) and the [compare operator](docs/search/search-query-language/operators#compare) are not supported against LogReduce Values results.
 * If you reach the memory limit you can try to shorten the time range or the number of specified fields. When the memory limit is reached you will get partial results on a subset of your data.
 * Response fields `_cluster_id`, `_signature`, and `_count` are not supported with [Dashboard filters](../../dashboards/edit-dashboards/use-filters-dashboards.md).
 
 ### _count link 
 
 * Searches opened by clicking the link provided in the `_count` response field:
-    * are run against [message time](../get-started-with-search/search-basics/built-in-metadata.md).
+    * are run against [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata).
     * can return different results due to variations in your data.
 * When provided in a Scheduled Search alert, the link from the `_count` response field is invalid and will not work.
 

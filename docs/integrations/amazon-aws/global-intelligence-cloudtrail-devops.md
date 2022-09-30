@@ -162,7 +162,7 @@ Before you begin, you must configure AWS CloudTrail logging to an S3 bucket.
 1. [Configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_started_top_level.html) in your AWS account.
 2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
 3. Confirm that logs are being delivered to the S3 bucket.
-4. [Grant Access to an AWS S3 Bucket](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md).
+4. [Grant Access to an AWS S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
 
 
 ### Configuring Log Collection for AWS Global Intelligence CloudTrail DevOps
@@ -177,7 +177,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

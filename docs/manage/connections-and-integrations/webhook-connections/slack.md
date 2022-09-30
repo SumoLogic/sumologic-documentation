@@ -2,6 +2,7 @@
 id: slack
 title: Webhook Connection for Slack
 sidebar_label: Slack
+description: Webhook Connections allow you to send alerts as a post to a Slack channel.
 ---
 
 You can send an alert from Sumo Logic as an HTTP POST request to a Slack channel. Learn more about Slack requirements for Webhooks in their [API Help](https://api.slack.com/incoming-webhooks).
@@ -19,8 +20,7 @@ You need the **Manage connections** [role capability](../../users-and-roles/ro
 1. Click **Slack**.
 1. In the **Create Connection** dialog, enter the **Name** of the Connection.
 1. (Optional**)** Enter a **Description** for the Connection.
-1. Enter the **URL** for the endpoint. See[Slack API Help](https://api.slack.com/incoming-webhooks) for more information.
-1. (Optional) Enter an **Authorization Header**, which may include an authorization token.
+1. Enter the **URL** for the endpoint. See [Slack API Help](https://api.slack.com/incoming-webhooks) for more information.
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
 1. Under **Payload**, enter a JSON object in the format required by Slack. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
 1. Click **Save**.

@@ -1,6 +1,7 @@
 ---
 id: archive
-title: Archive
+title: Archiving Log Data 
+description: Send data to an Archive that you can ingest from later.
 ---
 
 Archive allows you to forward log data from Installed Collectors to AWS S3 buckets to collect at a later time. If you have logs that you don't need to search immediately you can archive them for later use. You can ingest from your Archive on-demand with five-minute granularity.
@@ -35,7 +36,7 @@ You need the **Manage S3 data forwarding** role capability to create an AWS Ar
     :::
 
    * **Description**. You can provide a meaningful description of the connection.
-   * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. This was completed in step 1, [Grant Sumo Logic access to an AWS Product](../send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md).
+   * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. This was completed in step 1, [Grant Sumo Logic access to an AWS Product](docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
 
       * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
       * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
@@ -105,7 +106,7 @@ Example format of an Archived log message:
 
 ## Batching
 
-By default, the Collector will complete writing logs to an archive file once the uncompressed size of the file reaches 1 MB in size. You can configure the buffer size with the following [collector.properties](../send-data/installed-collectors/collector-installation-reference/collector-properties.md) parameter.
+By default, the Collector will complete writing logs to an archive file once the uncompressed size of the file reaches 1 MB in size. You can configure the buffer size with the following [collector.properties](docs/send-data/installed-collectors/collector-installation-reference/collector-properties.md) parameter.
 
 ### collector.properties buffer parameter
 
@@ -155,7 +156,7 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
     * can **NOT** have the S3 bucket name.
 1. For **Source Category**, enter any string to tag to the
     data collected from this Source. Category metadata is stored in a
-    searchable field called \_sourceCategory.
+    searchable field called _sourceCategory.
 1. **Fields**. Click the **+Add Field** link to add custom metadata Fields. Define the fields you want to associate, each field needs a name (key) and value.
 
     :::note
@@ -233,8 +234,8 @@ The metadata field `_archiveJob` is automatically created in your account and
 
 | Field          | Description                                                         |
 |----------------|---------------------------------------------------------------------|
-| \_archiveJob   | The name of the ingestion job assigned to ingest your Archive data. |
-| \_archiveJobId | The unique identifier of the ingestion job.                         |
+| _archiveJob   | The name of the ingestion job assigned to ingest your Archive data. |
+| _archiveJobId | The unique identifier of the ingestion job.                         |
 
 ## Audit ingestion job requests
 

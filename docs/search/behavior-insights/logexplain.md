@@ -1,6 +1,7 @@
 ---
 id: logexplain
 title: LogExplain
+description: Group by the keys of JSON or keyvalue logs.
 ---
 
 
@@ -52,15 +53,15 @@ With the provided results you can:
 ### Limitations
 
 * Field values must be categorical.
-* [Built-in metadata fields](../get-started-with-search/search-basics/built-in-metadata.md) are not supported.
+* [Built-in metadata fields](/docs/search/get-started-with-search/search-basics/built-in-metadata) are not supported.
 * Not supported with [Real Time alerts](../../alerts/scheduled-searches/create-real-time-alert.md).
-* [Time Compare](../time-compare.md) and the [compare operator](../search-query-language/search-operators/Compare.md) are not supported against LogExplain results.
+* [Time Compare](../time-compare.md) and the [compare operator](docs/search/search-query-language/operators#compare) are not supported against LogExplain results.
 * Response fields `_explanation`, `_relevance`, `_test_coverage`,  and  `_control_coverage` are not supported with [Dashboard filters](../../dashboards/edit-dashboards/use-filters-dashboards.md).
 * If you reach the memory limit you can try to shorten the time range or the number of specified fields. When the memory limit is reached you will get partial results on a subset of your data.
 
 ### Response links
 
-* Drill down searches opened by clicking the link provided from the `_test_coverage ` and `_control_coverage` fields are run against [message time](../get-started-with-search/search-basics/built-in-metadata.md).
+* Drill down searches opened by clicking the link provided from the `_test_coverage ` and `_control_coverage` fields are run against [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata).
 * When provided in a Scheduled Search alert, the links from the `_test_coverage ` and `_control_coverage` fields are invalid and will not work.
 
 ## Examples

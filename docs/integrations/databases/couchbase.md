@@ -198,7 +198,7 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
 </TabItem>
 <TabItem value="non-k8s">
 
-For non-Kubernetes environments, we use the Telegraf operator for Couchbase metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about) for collecting Couchbase logs. The diagram below illustrates the components of the Couchbase collection in a non-Kubernetes environment. Telegraf uses the [Couchbase input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) to obtain Couchbase metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Couchbase are collected by a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).<img src={useBaseUrl('img/integrations/databases/couchbase2.png')} alt="couchbase2" />
+For non-Kubernetes environments, we use the Telegraf operator for Couchbase metric collection and the [Installed Collector](/docs/send-data/installed-collectors) for collecting Couchbase logs. The diagram below illustrates the components of the Couchbase collection in a non-Kubernetes environment. Telegraf uses the [Couchbase input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) to obtain Couchbase metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Couchbase are collected by a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).<img src={useBaseUrl('img/integrations/databases/couchbase2.png')} alt="couchbase2" />
 
 The process to set up collection for Couchbase data is done through the following steps.
 
@@ -210,14 +210,14 @@ The Sumo Logic Couchbase app supports the audit log, query log, error log, acces
 2. **Configure an Installed Collector**. If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
 3. **Configure a Collector**. Use one of the following Sumo Logic Collector options:
    1. To collect logs directly from the Couchbase machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
-   2. If you're using a service like Fluentd, or you would like to upload your logs manually, configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
+   2. If you're using a service like Fluentd, or you would like to upload your logs manually, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 4. **Configure a local file source**. Choose one of the options:
 
 <details><summary>4A. <strong>For an Installed Collector</strong> (click to expand)</summary>
 
 To collect logs directly from your Couchbase machine, use an Installed Collector and Multi Local File Source. Repeat the below steps for each log source: audit log, query log, error log, access log.
 
-1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 2. Configure the Local File Source fields as follows:
   * **Name**. (Required)
   * **Description**. (Optional)
@@ -227,7 +227,7 @@ To collect logs directly from your Couchbase machine, use an Installed Collector
     * For Access Log: /opt/couchbase/var/lib/couchbase/logs/http_access.log
     * For Query Log: /opt/couchbase/var/lib/couchbase/logs/query.log
   * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-  * **Source Category**. Enter any string to tag the output collected from this Source, such as Couchbase/AccessLog for access log. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+  * **Source Category**. Enter any string to tag the output collected from this Source, such as Couchbase/AccessLog for access log. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
   * **Fields.** Set the following fields
      ```sql
      component = database
@@ -251,12 +251,12 @@ To collect logs directly from your Couchbase machine, use an Installed Collector
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
-1. Add an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+1. Add an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 2. Configure the HTTP Source fields as follows:
 * **Name**. (Required)
 * **Description**. (Optional)
 * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-* **Source Category**. Enter any string to tag the output collected from this Source, such as Couchbase/AccessLog for access log. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+* **Source Category**. Enter any string to tag the output collected from this Source, such as Couchbase/AccessLog for access log. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
 3. Configure the **Advanced **section:
 * **Enable Timestamp Parsing**. Select **Extract timestamp information from log file entries**.
 * **Time Zone**. For Access logs, use the time zone from the log file. For Error logs, make sure to select the correct time zone.
@@ -273,13 +273,13 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 
 #### Configure Metrics Collection
 
-1. To set up a Sumo Logic HTTP Source, you'll need to configure a Hosted Collector for Metrics. To create a new Sumo Logic hosted collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+1. To set up a Sumo Logic HTTP Source, you'll need to configure a Hosted Collector for Metrics. To create a new Sumo Logic hosted collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. **Configure an HTTP Logs and Metrics source**:
     1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
     2. Select **HTTP Logs & Metrics.**
         1. **Name.** (Required). Enter a name for the source.
         2. **Description.** (Optional).
-        3. **Source Category** (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/design-deployment/best-practices-source-categories). A recommended Source Category may be Prod/DBServer/Couchbase/Metrics.
+        3. **Source Category** (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/best-practices). A recommended Source Category may be Prod/DBServer/Couchbase/Metrics.
     3. Select **Save**.
     4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 3. **Install Telegraf, if you haven’t already**, using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
@@ -329,7 +329,7 @@ The next sections provides instructions for installing the Couchbase App, as wel
 
 #### Pre-Packaged Alerts
 
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your Couchbase clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your Couchbase clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
 For details on the individual alerts, see this [page](#Couchbase_Alerts).
 * To install these alerts, you need to have the Manage Monitors role capability.
@@ -348,7 +348,7 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 3. Go to Manage Data > Alerts > Monitors.
 4. Click **Add**:
 5. Click Import and then copy-paste the above JSON to import monitors.
-6.The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Couchbase folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Step 4](#Step-4) of this [document](/docs/alerts/monitors#add-a-monitor).
+6.The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Couchbase folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Step 4](#Step-4) of this [document](/docs/alerts/monitors#add-a-monitor).
 
 
 ### Method B: Using a Terraform script method
@@ -425,7 +425,7 @@ This section demonstrates how to install the Couchbase App.
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.**
@@ -551,7 +551,7 @@ Use this dashboard to:
 
 ## Couchbase Alerts
 
-Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Couchbase database cluster is available and performing as expected.
+Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Couchbase database cluster is available and performing as expected.
 
 <table>
   <tr>

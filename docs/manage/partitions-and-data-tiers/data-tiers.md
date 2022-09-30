@@ -1,6 +1,7 @@
 ---
 id: data-tiers
 title: Data Tiers
+description: Data Tiers provide the ability to allocate data to different storage tiers based on frequency of access - Continuous, Frequent, and Infrequent.
 ---
 
 
@@ -19,7 +20,7 @@ Other use cases require much less frequent data analysis. Here, we’re talking 
 Sumo Logic’s *Data Tiers* provide a comprehensive solution for all types of data that an organization has, low touch, high touch and everything in between, at an economical price. Data Tiers provide tier-based pricing based on your planned usage of the data you ingest. 
 
 :::note
-Data Tiers must be enabled on your [Cloud Flex](../manage-subscription/cloud-flex-accounts.md) or [Cloud Flex Credits](../manage-subscription/cloud-flex-credits-accounts.md) plan to be able to access this functionality. Infrequent Tier, described below, is only available on Cloud Flex Credits. For more information, contact your Sumo Logic Account Representative.
+Data Tiers must be enabled on your [Cloud Flex](docs/manage/manage-subscription/cloud-flex-accounts.md) or [Cloud Flex Credits](docs/manage/manage-subscription/cloud-flex-credits-accounts.md) plan to be able to access this functionality. Infrequent Tier, described below, is only available on Cloud Flex Credits. For more information, contact your Sumo Logic Account Representative.
 :::
 
 ## Types of Data Tiers 
@@ -78,7 +79,7 @@ In contrast, debug or other verbose log sources that are only used to troublesho
 
 ## Assigning data to a Data Tier
 
-You assign data to a Data Tier at the partition level. When you create a partition, you define a routing expression and select the target tier for the data that matches the routing expression. For instructions, see [Add a Partition](add-partition.md).
+You assign data to a Data Tier at the partition level. When you create a partition, you define a routing expression and select the target tier for the data that matches the routing expression. For instructions, see [Add a Partition](docs/manage/partitions-and-data-tiers/create-edit-partition.md).
 
 ## Searching Data Tiers 
 

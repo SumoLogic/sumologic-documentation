@@ -1,10 +1,11 @@
 ---
 id: windows
 title: Install a Collector on Windows
+description: Install or uninstall a Collector on a Windows system.
 ---
 
 
-Follow the steps in this topic to install or uninstall a collector on Windows. See [Installed Collectors](/docs/send-data/sources/installed-collectors) for information on other OSs.
+Follow the steps in this topic to install or uninstall a collector on Windows. See [Installed Collectors](/docs/send-data/installed-collectors/sources) for information on other OSs.
 
 ## System Requirements
 
@@ -35,9 +36,9 @@ Install the Collector using either of the following methods: 
 
 You can build a Collector into a [Windows machine image](collector-installation-reference/add-collector-windows-machine-image.md) such as an Amazon AMI or VMware image.
 
-After installing Collectors, you can configure Sources by using the Web Application or by providing the [Source settings in a JSON file](/docs/send-data/sources/use-json-configure-sources). If you're using a UTF-8 encoded JSON file, you must provide the file before starting the Collector. The JSON file needs to be UTF-8 encoded.
+After installing Collectors, you can configure Sources directly in Sumo Logic or by providing the [Source settings in a JSON file](/docs/send-data/use-json-configure-sources). If you're using a UTF-8 encoded JSON file, you must provide the file before starting the Collector. The JSON file needs to be UTF-8 encoded.
 
-If necessary, you can use the binary package to install a Collector on MacOS. See this [Collector FAQ](/docs/send-data/collector-faqs) topic for details.
+If necessary, you can use the binary package to install a Collector on MacOS. See this [Collector FAQ](/docs/send-data/collector-faq) topic for details.
 
 ### Install using the UI installer
 
@@ -75,13 +76,13 @@ SumoCollector.exe -console -q "-Vsumo.accessid=<accessId>" "-Vsumo.accesskey=<ac
 
 **Examples**
 
-Using an [Installation Token](../../manage/security/installation-tokens.md):
+Using an [Installation Token](docs/manage/security/installation-tokens.md):
 
 ```bash
 SumoCollector.exe -console -q "-Vsumo.token_and_url=<installationToken>" "-Vsources=<filepath>"
 ```
 
-Using [access ID and access key](../../manage/security/access-keys.md):
+Using [access ID and access key](docs/manage/security/access-keys.md):
 
 ```bash
 SumoCollector.exe -console -q "-Vsumo.accessid=<accessId>" "-Vsumo.accesskey=<accessKey>" "-Vsources=<filepath>"
@@ -104,7 +105,7 @@ Uninstalling a Sumo Logic installed Collector requires the following steps:
 * [Uninstall using the installer](#uninstall-using-the-installer)
 * [Uninstall from the command line](#uninstall-from-the-command-line)
 
-1. [Remove the Collector from the Sumo Logic Web Application](#remove-the-collector-from-the-web-application)
+1. [Remove the Collector from Sumo Logic](#remove-the-collector-from-the-web-application)
 
 ### Uninstall using the installer
 
@@ -127,7 +128,7 @@ Uninstalling a Sumo Logic installed Collector requires the following steps:
 
 1. When you see the `Finishing installation...` message you can close the command prompt window. The uninstallation is complete.
 
-### Remove the Collector from the Web Application
+### Remove the Collector from Sumo Logic
 
 1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
 1. Find the Collector you want to remove, and click **Delete**.

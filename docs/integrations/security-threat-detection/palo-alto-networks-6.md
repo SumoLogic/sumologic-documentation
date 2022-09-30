@@ -47,7 +47,7 @@ This section provides instructions on how to collect logs for the Palo Alto Netw
 
 ### Configure a Collector
 
-Configure an [Installed Collector](/docs/send-data/installed-collectors/about) or a Hosted source for Syslog-ng or Rsyslog.
+Configure an [Installed Collector](/docs/send-data/installed-collectors) or a Hosted source for Syslog-ng or Rsyslog.
 
 
 ### Configure a Source
@@ -58,7 +58,7 @@ For Syslog, configure the Source fields:
 2. **Description.** Optional.
 3. **Protocol**. UDP or TCP
 4. **Port**. Port number.
-5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
+5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).
 6. Click **Save**.
 
 For a Hosted source, use advanced settings as necessary, but save the endpoint URL associated in order to configure Palo Alto Networks.
@@ -90,7 +90,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

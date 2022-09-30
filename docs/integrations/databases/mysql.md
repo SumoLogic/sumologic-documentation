@@ -325,10 +325,10 @@ Sumo Logic Kubernetes collection will automatically start collecting logs from t
 
 </details>
 
-2. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments are automatically prefixed with pod_labels. To normalize these for our app to work, we'll create a [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md), Database Application Components, assuming it does not already exist:
+2. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments are automatically prefixed with pod_labels. To normalize these for our app to work, we'll create a [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule), Database Application Components, assuming it does not already exist:
    1. Go to **Manage Data > Logs > Field Extraction Rules**.
    2. Click the **+ Add**.
-   3. The **Add Field Extraction** pane appears. \
+   3. The **Add Field Extraction** pane appears.
    4. **Rule Name.** Enter "App Observability - Database".
    5. **Applied At**. Choose "Ingest Time".
    6. **Scope**. Select "Specific Data".
@@ -361,8 +361,8 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
 
 #### Configure Metrics collection
 
-1. **Configure a Hosted Collector**. For instructions, see [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. **Configure an HTTP Logs and Metrics Source.** For instructions, see [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Make a note of the HTTP Source URL.
+1. **Configure a Hosted Collector**. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. **Configure an HTTP Logs and Metrics Source.** For instructions, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the HTTP Source URL.
 3. **Install Telegraf**. For instructions see [Install Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we use the [MySQL input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 5. Create or modify the `telegraf.conf` file, and copy the following into the relevant sections.
@@ -450,12 +450,12 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
     sudo mysql.server restart
     ```
 2. **Configure an [Installed Collector](/docs/send-data/Installed-Collectors)**.
-3. **Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) for MySQL error logs**.
+3. **Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) for MySQL error logs**.
    1. Add a Local File Source in the installed collector configured in the previous step. Configure the Local File Source fields as follows:
       * **Name.** (Required)
       * **Description**. (Optional)
       * **File Path** (Required). Enter the path to your error.log. The files are typically located in `/var/log/mysql/error.log`. If you're using a customized path, check the `my.cnf` file for this information.
-      * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host nameSource Category. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+      * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host nameSource Category. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
       * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields.md).
       * `component = database`
       * `db_system = mysql`
@@ -477,18 +477,18 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
 
 At this point, MySQL error logs should start flowing into Sumo Logic.
 
-4. **Configuring a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) for slow query log**.
+4. **Configuring a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) for slow query log**.
    1. Add a Local File Source in the installed collector configured in the previous step. Configure the Local File Source fields as follows:
       * **Name.** (Required)
       * **Description**. (Optional)
       * **File Path** (Required). Enter the path to your `mysql-slow.log`. The file is typically located in `/var/log/mysql/mysql-slow.log`. If you're using a customized path, check `my.cnf` file for this information.
       * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-      * **Source Category**. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+      * **Source Category**. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
       * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields.md).
         * `component = database`
         * `db_system = mysql`
         * `db_cluster = <your_mysql_cluster_name>`
-        * `environment = <Environment_Name>`, such as dev, qa, or prod. \
+        * `environment = <Environment_Name>`, such as dev, qa, or prod.
        The values of `db_cluster` and `environment` should match those configured in the [Setting values in telegraf.conf](#Setting_values_in_telegraf.conf) above.
    2. In the **Advanced Options for Logs** section:
       * **Enable Timestamp Parsing**. Select "Extract timestamp information from log file entries".
@@ -533,7 +533,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 ### Method B: Using a Terraform script
 
-1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](https://help.sumologic.com/Manage/Security/Access-Keys#Create_an_access_key_on_Preferences_page).
+1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](https://help.sumologic.com/manage/Security/Access-Keys#Create_an_access_key_on_Preferences_page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 3. Download the Sumo Logic Terraform package for MySQL monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/mysql). You can either download it using the `git clone` command or as a zip file.
 4. Alert Configuration: After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/mysql/` directory.
@@ -572,7 +572,7 @@ connection_notifications = [
   ]
 ```
 
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections).
+For information about overriding the payload for different connection types, see [Set Up Webhook Connections](https://help.sumologic.com/manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections).
 
 ```sql title="Email notifications example"
 email_notifications = [
@@ -601,7 +601,7 @@ Now that you have set up collection for MySQL, install the Sumo Logic App for My
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps.md)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom filter. For example:

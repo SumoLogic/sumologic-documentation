@@ -1,9 +1,9 @@
 ---
 id: palo-alto-networks
 title: Palo Alto Networks
+description: Parse the common fields in your Palo Alto Network Logs using the FER template.
 ---
 
-#
 
 **Log Type**: Palo Alto Networks
 

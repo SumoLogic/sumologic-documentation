@@ -2,53 +2,72 @@
 id: explore-view
 title: Navigating Sumo Logic Dashboards with Explore
 sidebar_label: Explore View
+description: Explore gives you an easy way to view and navigate the hierarchy of your environment.
 ---
 
+import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Explore is a navigation tool that provides an intuitive visual hierarchy of your environment. Use Explore to facilitate successful monitoring, managing, and troubleshooting.
 
-## Supported Integrations
-
-Explore can be used with:
-
-### AWS Observability
-
-[AWS Observability Solution](/docs/observability/aws-observability-solution/index.md): Explore provides an intuitive dashboard framework that mirrors industry-standard AWS hierarchies. You can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. From the Explore tab, you can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. See [View AWS Observability Solution Dashboards](/docs/observability/aws-observability-solution/deploy-use-aws-observability/view-aws-observability-solution-dashboards.md) for details.
-
-### Kubernetes Observability
-
-[Kubernetes Solution](/docs/observability/kubernetes-solution/index.md): Explore provides a visual hierarchy of the clusters in your environment that allows you to view and switch between clusters with a single click. Explore, used in conjunction with the Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes.md), allows you to intuitively monitor and troubleshoot issues as they arise. From the Explore tab, you can intuitively filter on four hierarchical views of your Kubernetes system: Node, Deployment, Service, and Namespace. Details are available in [Monitoring Using the Sumo Logic Kubernetes Solution](/docs/observability/kubernetes-solution/monitoring.md).
-
-### Real User Monitoring
-
-[Real User Monitoring](docs/apm/rum/index.md): Explore allows you to visualize Real User Monitoring (RUM) metrics gathered from tracing instrumentation in the browser. This provides visibility into an actual end-user experience by geographical locations, browser, and operating system types. This also helps you to understand how your customers experience the performance of your web application.
-
-### Stack linking
-
-[Dashboard (New): Stack linking](/docs/dashboards-new/link-dashboard-explore.md): Connects Dashboard (New) to Explore so you can view dashboards when exploring infrastructure components.
-
-### Application Service Views
-
-[Application Service Views](/docs/apm/traces/working-with-tracing-data/service-map.md#Application_Service_Dashboards): Explore provides two Service and Application dashboard views accessible through the Explore By menu. This allows you to review tracing data by application (all or grouped) and services by top level and breaking down their health by application. This helps you review the most active operations performed on specified applications and services.
-
 ## Navigating Explore
-
-### Opening Explore
 
 To open Explore, do the following:
 
 1. Log in to Sumo Logic and click **+ New** on the top menu bar.
 2. From the drop-down menu, choose **Explore**.<br/><img src={useBaseUrl('img/dashboards-new/explore/Explore-open.png')} alt="Explore" />
-3. Select from the Explore navigation panel that appears on the left.<br/><img src={useBaseUrl('img/dashboards-new/explore/Explore-options.png')} alt="Explore" />
+3. In the **Explore By** navigation panel, select your desired category (e.g., AWS Observability), then drill down further until you find your desired component which you'd like to explore. Metrics will be displayed/visualized as dashboards. See [Application Components View](#Application-Components-View) for an example walkthrough.
 
 
-### Filtering Explore
+## Explore Dashboard Categories
+
+Explore can be accessed using Dashboard (New) in conjunction with the below apps and solutions.
+
+### Stack Linking
+
+Stack linking connects **Dashboard (New)** to Explore so you can view dashboards when exploring infrastructure components. [Learn more](/docs/dashboards-new/link-dashboards.md). <br/><img src={useBaseUrl('img/dashboards-new/explore/stack-linking.png')} alt="Explore" />
+
+### AWS Observability
+
+Explore provides an intuitive dashboard framework that mirrors industry-standard AWS hierarchies. You can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. From the Explore tab, you can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. [Learn more](/docs/observability/aws/deploy-use-aws-observability/view-dashboards.md).<br/><img src={useBaseUrl('img/dashboards-new/explore/aws-view.png')} alt="Explore" />
+
+### Kubernetes Observability
+
+Explore provides a visual hierarchy of the clusters in your environment that allows you to view and switch between clusters with a single click. Explore, used in conjunction with the Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes.md), allows you to intuitively monitor and troubleshoot issues as they arise. From the Explore tab, you can intuitively filter on four hierarchical views of your Kubernetes system: Node, Deployment, Service, and Namespace. [Learn more](/docs/observability/kubernetes/monitoring.md).<br/><img src={useBaseUrl('img/dashboards-new/explore/k8s-view.png')} alt="Explore" />
+
+### Application Components View
+
+Explore provides a set of dashboards for various components of your application that allow you to review the state of individual parts of your system. You can track errors, performance, and usage of application components, grouped by their type and logical clusters.
+
+:::note
+This feature is currently supported only for Database apps. To learn more, go to the [Database docs](/docs/integrations/databases), find your desired database, and then click on that database's "Install the Monitors, App, and View the Dashboards" section.
+:::
+
+1. Select the **Application Components View** category.
+1. Select an environment (e.g., `dev` or `prod`).
+   * **Application Components - Environments Overview** will appear on the right. This dashboard provides insights into the CRUD activities and monitor errors of each of the components in that environment.
+1. Select from the list of that environment's components (e.g., `database`).
+   * The **Application Components - Database System Overview** dashboard will appear in the right nav. It provides an at-a-glance view of the different database engines present in the database component and insights on errors occurring across different engines.
+1. Then choose a specific database (e.g., `mongoDB`).
+1. Drill down into hierarchy to find specific component entities to view dashboards at more granular levels (e.g., `mongoDB_on_premise1` cluster component).
+1. Toggle between various dashboards to get your desired info.<br/><img src={useBaseUrl('img/dashboards-new/db-drilldown.png')} alt="Explore" />
+
+
+### Application Service Views
+
+Explore provides two Service and Application dashboard views accessible through the **Explore By** menu. This allows you to review tracing data by application (all or grouped) and services by top level and breaking down their health by application. This helps you review the most active operations performed on specified applications and services. See [Service Map Traces](/docs/apm/traces/working-with-tracing-data/service-map.md#Application_Service_Dashboards) and [Sumo Apps](/docs/integrations) for more info. <br/><img src={useBaseUrl('img/dashboards-new/explore/apm-service-view.png')} alt="Explore" />
+
+
+### Real User Monitoring
+
+[Real User Monitoring](/docs/apm/rum): Explore allows you to visualize Real User Monitoring (RUM) metrics gathered from tracing instrumentation in the browser. This provides visibility into an actual end-user experience by geographical locations, browser, and operating system types. This also helps you to understand how your customers experience the performance of your web application.<br/><img src={useBaseUrl('img/dashboards-new/explore/stack-linking.png')} alt="Explore" />
+
+## Filtering Explore
 
 Explore provides the ability to filter your view so you can focus on specific entities and sections of your system.
 
 
-#### Create filters
+### Create filters
 
 1. To filter Explore click the filter icon in the left-hand navigation menu. You can click the icon to toggle the visibility of the menu.<br/><img src={useBaseUrl('img/dashboards-new/explore/brand-themefilter.png')} alt="Explore" />
 
@@ -66,9 +85,7 @@ The Dashboard and Explore menu will refresh with your filters applied.
 You can apply the filter as an exclusion or negation so the filter acts as a `not` or bang `!`. This way the filter will return results that don't have those values. Simply click the prohibition or _no_ sign to set. The filter will get a red border when set to exclude. You may manually add an exclamation or bang `!` to the input area before selecting your filter. For example, `!_key=value`.
 :::
 
-
-
-#### Saving filters
+### Saving filters
 
 You can save filters so they are applied every time you explore the same Dashboards. To save, click the three-vertical dots icon and then click **Save**.<br/><img src={useBaseUrl('img/dashboards-new/explore/brand_theme_save_filters.png')} alt="Explore" />
 
@@ -76,7 +93,7 @@ A pop up window is shown where you need to provide the filter a name. This name 
 
 We have named the filter "primary" in the above image. Once done click **Save**. When opening Explore you'll now see the **primary** filter as an option in the **Filter** menu.<br/><img src={useBaseUrl('img/dashboards-new/explore/select-saved-filters.png')} alt="Explore" />
 
-#### Updating, Deleting, Saving Filters as Default
+### Updating, Deleting, Saving Filters as Default
 
 Saved filters can be applied as a default filter, edited, or deleted.
 * A default filter is applied every time you open Explore.
@@ -86,21 +103,22 @@ Saved filters can be applied as a default filter, edited, or deleted.
 <img src={useBaseUrl('img/dashboards-new/explore/setdefault.png')} alt="Explore" />
 
 
-#### Remove Default Filter
+### Remove Default Filter
 
 The default filter is displayed in the **Filter** drop down menu with a **Default** label. Select the **Remove default** text link to clear your set default filter.<br/><img src={useBaseUrl('img/dashboards-new/explore/removedefaultfilter.png')} alt="Explore" />
 
-### Linking to Entities in Explore
 
-#### Obtaining Links
+## Linking to Entities in Explore
 
-Use the link button to the right of the Dashboard title in Explore to copy the link to your specific entity view in the dashboard. This is related to [Stack Linking](/docs/dashboards-new/link-dashboard-explore.md).<br/><img src={useBaseUrl('img/dashboards-new/explore/link-explore-dashboard.png')} alt="Explore" />
+### Obtaining Links
 
-#### Manually Creating Links
+Use the link button to the right of the Dashboard title in Explore to copy the link to your specific entity view in the dashboard. This is related to [Stack Linking](/docs/dashboards-new/link-dashboards.md).<br/><img src={useBaseUrl('img/dashboards-new/explore/link-explore-dashboard.png')} alt="Explore" />
+
+### Manually Creating Links
 
 You can create a URL to a specific entity in Explore.
 
-#### Syntax
+### Syntax
 
 ```xml
 https://<endpoint>/ui/#/explore/[@<start>,<end>]@<entityKey>=<entityValue>[@<entityKey2>=<entityValue2> ...][@filters@<negation>:<filterValue>[:<filter>],<negation2>:<filterValue2>[:<filter2>] ...]@selectedDashboardId@<dashboardId>
@@ -119,10 +137,9 @@ Filters:
 * `<filterValue>` is the value of a key you want to filter.
 * `<filter>` (optional) is the metadata key you want to apply as a filter to explore. You do not have to provide a filter, you may only provide a `filterValue`.
 * `<negation>` set as `0` to apply your filters or `1` to treat the filters as an exclusion. Think of using `1` as using a `not` or `!` bang, so the filter will return results that don't have those values. This is an example:
-```
+```xml
 https://<endpoint>/ui/#//explore/@1628023955694,1628024855694@topology=0000000000000041@cluster=kubernetes@filters@1:cl-tracing-training:_collector,0:kubernetes:_origin
 ```
-
 Dashboard:
 * `<dashboardId>` is the unique identifier of the Dashboard (New).
 
@@ -146,14 +163,23 @@ https://service.us2.sumologic.com/ui/#/explore/@1601092800000,1601389990282@clus
 
 Explore navigation capabilities allow you to quickly locate the object that needs debugging in a physical stack. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CEBN4lRp4SU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<Iframe url="https://www.youtube.com/embed/CEBN4lRp4SU?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
 
 ### Step 1: Analyzing the cluster
 
 We suspect there's a problem with a Kubernetes cluster but aren't sure where, so we start by analyzing the Cluster Overview dashboard. Everything that is running on the cluster is shown on this dashboard. The Terminated and Waiting by Namespace panel allows us to easily comprehend the failure states the namespaces are in. Here we can easily see if there are configuration issues or overall administration issues that need to be addressed.<br/><img src={useBaseUrl('img/dashboards-new/explore/Explore_TS_Cluster_Overview.png')} alt="Explore" />
 
 ### Step 2: Exploring a namespace
-
 
 To further pinpoint the problem with our cluster, we investigated the namespace by selecting kube-system in the navigation panel and switching to the Namespace Overview dashboard. This dashboard provides information on pods running in the deployment, failed pods, errors, CPU and memory usage, file system usage, terminated and waiting pods and containers. In this example, we're focusing on the CPU and memory usage panels of the dashboard in our attempt to find out where our application is running into problems.<br/><img src={useBaseUrl('img/dashboards-new/explore/Explore_TS_Namespace_Overview.png')} alt="Explore" />
 

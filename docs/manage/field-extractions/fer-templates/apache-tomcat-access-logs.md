@@ -1,9 +1,10 @@
 ---
 id: apache-tomcat-access-logs
 title: Apache Tomcat Access Logs
+description: Parse the common fields in your Apache Tomcat Access Logs using the FER template.
 ---
 
-#
+
 
 **Log Type**: Apache Tomcat Access
 

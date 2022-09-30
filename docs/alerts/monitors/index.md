@@ -21,9 +21,9 @@ See details on how [Scheduled Searches are different](difference-scheduled-searc
 
 ## Rules
 
-* You need the **Manage** or **View Monitors** [role capability](../../manage/users-and-roles/roles/role-capabilities.md)) to manage or view Monitors respectively. These capabilities work in concert with [folder permissions](#grant-permissions-to-monitors-folders) to enable fine-grained permissions.
+* You need the **Manage** or **View Monitors** [role capability](docs/manage/users-and-roles/roles/role-capabilities.md)) to manage or view Monitors respectively. These capabilities work in concert with [folder permissions](#grant-permissions-to-monitors-folders) to enable fine-grained permissions.
 * The frequency a Monitor executes depends upon a variety of factors such as the underlying query, the operators used, and the detection window. It can vary from a couple of seconds to a few minutes. If for example, the detection window of your alert is one day it will be evaluated every couple of minutes, whereas if the detection window of the monitor is 15 minutes then it will be evaluated every couple of seconds.
-* Log Monitors use the [role search filter](../../manage/users-and-roles/roles/construct-search-filter-for-role.md) of their creator.
+* Log Monitors use the [role search filter](docs/manage/users-and-roles/roles/construct-search-filter-for-role.md) of their creator.
 * Log Monitors delay execution by two minutes. This means it won't evaluate data from the current time, but evaluate data from two minutes ago.  This ensures that any delays in ingestion are factored in and won't generate false positive or false negative alerts.
 * Metric Monitors delay execution by one minute.
 * Depending on your account type, you can have up to a certain number of Log and Metric Monitors.
@@ -35,14 +35,14 @@ See details on how [Scheduled Searches are different](difference-scheduled-searc
 ## Limitations
 
 * [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
-* Monitors only support the [Continuous data tier](../../manage/partitions-and-data-tiers/data-tiers.md).
+* Monitors only support the [Continuous data tier](docs/manage/partitions-and-data-tiers/data-tiers.md).
 * An aggregate Metric Monitor can evaluate up to 15,000 time series. A non-aggregate Metric Monitor can evaluate up to 3,000 time series.
 * [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.
 * [Search templates](../../search/get-started-with-search/build-search/search-templates.md) are not supported.
 * A Log Monitor can have one query up to 4,000 characters long. Metric Monitors can specify up to six queries.
 * Email notifications can have up to 100 recipients.
 * [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md) (auto-parse mode) is not supported.
-* The timeshift [metrics operator](/docs/metrics/metric-queries-alerts/metrics-operators) is not supported in a Metric Monitor.
+* The timeshift [metrics operator](/docs/metrics/metric-queries-alerts/operators) is not supported in a Metric Monitor.
 * [Hidden Metrics queries](../../metrics/metric-queries-alerts/metrics-explorer.md) do not persist across edit sessions.
 * The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.
 
@@ -97,7 +97,7 @@ At the top of the page, you can:
 
 * **Search Monitors**. Use the search field to filter Monitors by name and status. For example, you can view all Monitors that are currently triggered in the system by clicking the **Status: All Triggered**.
 
-    ![seach monitors input.png](/img/monitors/seach-monitors-input.png)
+    ![search monitors input.png](/img/monitors/search-monitors-input.png)
 
 * Click **Add** to:   
 
@@ -147,7 +147,7 @@ Under the **More Actions** menu you can:
 * **Copy Path**. Copy the path of the Monitor to your computer clipboard.
 * **Duplicate**. Make another Monitor based on the same settings.
 * **Move**. Move the Monitor to a different path.
-* **Export**. Provides JSON of the Monitor, allowing you to transfer content within Sumo Logic by copying this JSON, then pasting it into the import dialog in the [Library](/docs/get-started/library/sumo-logic-library) location you choose. This JSON format may change without notice. 
+* **Export**. Provides JSON of the Monitor, allowing you to transfer content within Sumo Logic by copying this JSON, then pasting it into the import dialog in the [Library](/docs/get-started/library) location you choose. This JSON format may change without notice. 
 * **Delete**.
 
 ![monitor more actions](/img/monitors/monitor-actions.png)
@@ -203,7 +203,7 @@ Trigger alerts on:
 You can set the trigger based on the following:
 
 * **returned row count** (default): the number of rows returned from the log search.
-* A numeric field returned from the search. You can pick any numeric field from your query, and alert on the value of that field. The field is **\_count** in the above screenshot. To convert a string to a number use the [num operator](../../search/search-query-language/search-operators/num.md). For example, if you have a field named **duration** you would use the num operator as follows to convert it to a number value.
+* A numeric field returned from the search. You can pick any numeric field from your query, and alert on the value of that field. The field is `_count` in the above screenshot. To convert a string to a number use the [num operator](/docs/search/search-query-language/operators#num). For example, if you have a field named **duration** you would use the num operator as follows to convert it to a number value.
 
 `| num(duration)`
 
@@ -228,11 +228,11 @@ Use the **Edit Recovery Settings** option to set the recovery to the opposite o
 
 ![logs trigger recovery toggle.png](/img/monitors/edit-recovery-settings1.png)  
 
-For example, when the alert is set to `> 10` the recovery would be set to `<= 10` when inferred.
+For example, when the alert is set to `> 10` the recovery would be set to `<= 10` when inferred. Sumo Logic automatically resolves the incident when the resolution condition is satisfied. `Recover automatically when result is <threshold type> <threshold> for the selected time period`.
 
-Sumo Logic automatically resolves the incident when the resolution condition is satisfied.
+#### Configurable Resolution Window
 
-`Recover automatically when result is <threshold type> <threshold> for the selected time period`
+When configuring monitor trigger conditions, you can set a resolution window to quickly resolve alerts when the underlying issues are fixed. This controls how long a monitor will wait prior to resolving the alert, when the underlying issues was corrected. For example, if your monitor is evaluating the last 60 minutes, you can specify a resolution window of 15 minutes. Once 15 minutes has elapsed with your monitor resolution window continuously satisfied, the alert will resolve. <br/>![config-resolution-window-2](/img/monitors/config-resolution-window-2.png)  
 
 | Parameter | Description |
 |--|--|
@@ -240,7 +240,7 @@ Sumo Logic automatically resolves the incident when the resolution condition is 
 | Threshold | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
 | Occurrence Type	| The time condition you want for recovering the alert. Select either at any time within or at all times. Choose at all times if you want all the data points for the given metric to meet threshold conditions in a given time range, before recovering an alert. Alternatively, choose at any time within if you want to recover an alert when only a single data point meets the threshold condition for the given time range. |
 
-For Metrics Monitor, you can choose to recover based on a single data point below the threshold, or all data points below the threshold.
+For Metrics monitors, you can choose to recover based on a single data point below the threshold, or all data points below the threshold.
 
 ![monitors.png](/img/monitors/metricsmonitor.png)
 
@@ -281,7 +281,7 @@ Recover
 
 </details>
 
-<details><summary><strong>Expand:</strong> Logs Trigger Types</summary>
+<details><summary><strong>Expand:</strong> Metrics Trigger Types</summary>
 
 ### Metrics Trigger Types
 
@@ -360,11 +360,11 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
 
 6. (Optional) **Additional Settings** 
-   * **Alert Name**: Alert Name allows you to customize the name that appears on the Alert Page. By default, the Alert name is the monitor name, but you may want to create a custom name based on your use case. You can include any of the available alert variables, except `{{AlertName}}`, `{{AlertResponseURL}}`, and `{{ResultsJson}}`, in the name such as the type of monitor or trigger condition. You can check the alert variables list for details.
+   * **Alert Name**: Alert Name allows you to customize the name that appears on the Alert Page. By default, the Alert name is the monitor name, but you may want to create a custom name based on your use case. You can include any of the available alert variables, except `{{AlertName}}`, `Playbook`, `{{AlertResponseURL}}`, and `{{ResultsJson}}`, in the name such as the type of monitor or trigger condition. You can check the alert variables list for details.
       * Example: `{{Resultsjson.Env}}` - High CPU. This alert will produce an Alert with the name like PROD - High CPU. Here we are assuming that there is a field name Env in underlying data that has a value of "PROD".
    * **Evaluation Delay**: Collection delays may occur due to your environment and it takes a couple of minutes for data to be processed into Sumo Logic. Since Monitors run on data from the most current time period, it's possible for Monitors to evaluate against incomplete data. As a result, Monitors can generate false positives or negatives that can cause confusion. Set an evaluation delay in seconds to delay the evaluation of a Monitor, so it doesn't look at the most current time (where data can be incomplete) and instead looks at an older period of time, where you have more complete data.<br/> ![additional settings evaluation delay.png](/img/monitors/additional-settings-evaluation-delay.png)
 
-   If your data is coming from the [Amazon CloudWatch Source for Metrics](../../send-data/sources/hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics.md) we recommend a setting of 900 seconds.
+   If your data is coming from the [Amazon CloudWatch Source for Metrics](docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) we recommend a setting of 900 seconds.
 
 7. (Optional) Set **Notifications**: When a trigger condition is met you can send notifications to other people and services. To add notifications click on the **Add Notification** button. You can add more than one notification channel for a Monitor.<br/>  ![monitor notifications input.png](/img/monitors/monitor-notifications-input.png)
 

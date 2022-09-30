@@ -2,6 +2,7 @@
 id: apache-errors-parser
 title: Suggested Searches for the Apache Errors Parser
 sidebar_label: Apache Errors Parser
+description: The following searches were built for use with the Apache Access Parser. Copy and paste these searches into the search query field and save them for later use.
 ---
 
 The following searches were built for use with the Apache Errors Parser. Copy and paste these searches into the search query field and save them for use later.
@@ -10,7 +11,7 @@ You can also set up [threshold alerts](../../../alerts/scheduled-searches/recei
 
 To obtain the best results possible, be sure to make the following modifications to the example queries:
 
-* Use a specific keyword expression or metadata search to limit the initial results to Apache logs. (Replace \_the metadata search expression `"sourceName=*error_log* AND _sourceCategory=*apache*"` in the examples.)
+* Use a specific keyword expression or metadata search to limit the initial results to Apache logs. (Replace _the metadata search expression `"sourceName=*error_log* AND _sourceCategory=*apache*"` in the examples.)
 * Change the time range and the timeslice values to tailor the results to your needs.
 
 ## Identify Critical Operations Errors

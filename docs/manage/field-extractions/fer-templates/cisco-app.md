@@ -1,9 +1,9 @@
 ---
 id: cisco-app
 title: Cisco Logs Extraction Template
+description: Parse the common fields in your Cisco ASA Logs using the FER template.
 ---
 
-#
 
 **Log Type**: Cisco ASA
 

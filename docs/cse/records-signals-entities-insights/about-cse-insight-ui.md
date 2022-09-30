@@ -31,17 +31,16 @@ Here’s one row from the List view. The numbered definitions below correspond t
 1. **Dwell time**. The period of time between when the first and last Records in the Insight were observed.  
 1. **Age**. The elapsed time since the Insight was created in minutes, hours, and so on.
 1. **Insight name**. The Insight name, made up of the Insight ID, and the MITRE stage or stages associated with the Signals in the Insight. 
-1. **MITRE stage**. 
-1. **Global Confidence**. If sufficient data is available, a [Global Confidence score](global-intelligence-security-insights.md) for the Insight is shown. 
-1. **Assignee**. The analyst assigned to the Incident.
-1. **Severity**. The severity of the Insight. The value is a function of the configured Entity Activity Score threshold for Insight generation. For more information, see [Insight Severity](insight-generation-process.md).
-1. **Entity**. The Entity associated with the Insight.
-1. **Signal data**. This area has three bits of information:
-
+2. **Global Confidence**. If sufficient data is available, a [Global Confidence score](global-intelligence-security-insights.md) for the Insight is shown. 
+3. **Assignee**. The analyst assigned to the Incident.
+4. **Severity**. The severity of the Insight. The value is a function of the configured Entity Activity Score threshold for Insight generation. For more information, see [Insight Severity](insight-generation-process.md).
+5. **Entity**. The Entity associated with the Insight.
+6. **Signal data**. This area has three bits of information:
    * The count of Signals that caused the Insight to be created.
    * The total count of Signals on the Insight Entity during the detection window.
    * How long it's been since the last Signal fired associated with the Insight fired.
-
+7. The visualization plots the Insight's Signals over time (x-axis) by severity (y-axis). 
+   
 ### Board view
 
 This screenshot shows the Insights page with the Signals organized as a Board. Each of the columns corresponds to an Insight Status value. (One of the Status values shown is a [custom Insight Status](../administration/manage-custom-insight-statuses.md)).
@@ -102,18 +101,80 @@ At the top of the **Insight \> Details** page, you’ll see a Signal timeline th
 ![top-bit.png](/img/cse/top-bit.png)
 
 1. **Signals**.The Signals link allows you to switch back to the Signals view from the Enrichments view, described below. 
-1. **Enrichments**. Click this list to view the output of any [Insight Enrichment Server](../integrations/insight-enrichment-server.md) scripts that have enriched the Insight.
-1. **Signal timeline**. The timeline shows how spread apart each Signal in the Insight is. You can use the timeline to visualize how long these events are spread over and how frequently the Signals fire. 
-1. **Timeline controls**. The arrows on the far left and right sides allow you to toggle between each Signal to show the details on each. You can also click a specific Signal on the timeline to jump to those details. 
-1. **Legend**. Key to the symbols used to represent the Signals:
+2. **Enrichments**. Click this tab to view any any enrichments that have been added to the Insight, includin the output of  [Insight Enrichment Server](../integrations/insight-enrichment-server.md).
+3. **Signal timeline**. The timeline shows how spread apart each Signal in the Insight is. You can use the timeline to visualize how long these events are spread over and how frequently the Signals fire. 
+4. **Timeline controls**. The arrows on the far left and right sides allow you to toggle between each Signal to show the details on each. You can also click a specific Signal on the timeline to jump to those details. 
+5. **Legend**. Key to the symbols used to represent the Signals:
+   * Anomalies—Signals that were triggered by User and Entity Behavior Analytics (UEBA) rules.
+   * Threat intelligence—Signals that were fired by Threat Intel rules. 
+   * File Analysis—Signals that were triggered by [Yara file analysis rules](/docs/cse/rules/import-yara-rules).
+   * Rules—Signals that were triggered by other rules.
+6. **Show Related Signals**. Click this link to show Related Signals in addition to Attached Signals. 
+7. **Sort options**. You can sort the Signals list by Content Type, Event Time, Created Time, Name, or Severity. Note that you can further sort by ascending or descending value.
+8. **Add Signals**. Click this option if you want to add a Signal to the Insight. You’ll be prompted with a list of Signals that have the same Entity as the current Insight (if there are any), and are not already attached to another Insight. A Signal that you add to an Insight manually is considered an Attached Signal.
 
-   * Rules—Signals that were triggered by Match or Chain rules.
-   * Anomalies—Signals that were triggered by Threshold or Aggregation rules.
-   * Threat intelligence—Signals that were fired by Threat Intel rules. (These are Match rules that leverage threat intel matches.)
-   * File Analysis—Signals that were triggered by [Yara file analysis rules](../cse-rules/import-yara-rules.md).
-1. **Show Related Signals**. Click this link to show Related Signals in addition to Attached Signals. 
-1. **Sort options**. You can sort the Signals list by Content Type, Event Time, Created Time, Name, or Severity. Note that you can further sort by ascending or descending value.
-1. **Add Signals**. Click this option if you want to add a Signal to the Insight. You’ll be prompted with a list of Signals that have the same Entity as the current Insight (if there are any), and are not already attached to another Insight. A Signal that you add to an Insight manually is considered an Attached Signal.
+### Entities tab 
+
+The** Entities **tab displays a list of one or more _Related Entities_, which help a security analyst more quickly investigate the Insight and to better understand the scope of a security issue that the Insight reveals. 
+
+Related Entities extend the information available to the analyst beyond the data captured in an Insight. An Insight focuses on a primary Entity: the username, hostname, IP address, or MAC address that’s found in each of the Insight’s Signals. Related Entities expand the analyst’s view to include other Entities listed in the Records that belong to Signals in an Insight as well as Entities that aren’t in those Records but have a relationship to Entities that are.
+
+The screenshot below shows the **Entities** tab for an Insight.
+
+![related-entities.png](/img/cse/related-entities.png)
+
+#### About the Entities tab 
+
+The **Entities** tab for an Insight lists all Entities involved in an Insight, and other Entities that CSE has determined are related to them. 
+
+Note that in the list of Entities, some are not indented, and others are indented below another Entity. The first unindented Entity listed is the primary Entity for the Insight–the Entity which is common to all of the Signals in the Insight. The other unindented Entities in the list are Entities contained in one or more Records that belong to Signals in the Insight. 
+
+The indented Entities in the list are referred to as related Entities. How does that work? For each Entity in the Insight—including the primary Entity and other Entities in the Insights’s Signals—CSE searches for Entities that, although not found within the Insight’s Signals, seem to be related to an Entity in the Insight. This search is run across a time range that corresponds to the span of time during which there was activity on the Insight. For example, if the first Record in an Insight was created at 8 am on Wednesday and the last Record at 10pm on Friday, CSE searches for related Entities during that time range. A related Entity that CSE finds is shown below the Entity to which it’s related with a dotted line, and labeled **May also be.**  
+
+
+:::note
+If an Entity is in the Record and is _also_ a related Entity (is labeled **May also be**) it could be either indented or not indented, based on the number of Signals that mention the Entity (the higher the number, the more likely it is to be unindented.
+::: 
+
+How does CSE look for related Entities? Within the time range of the Insight, described above, CSE searches for related Entities in the following normalized Record fields:
+
+* Hostname: *_hostname
+* MAC address: *_mac
+* User: *_username
+* IP address: *_ip
+
+:::note
+[Custom Entities](docs/cse/records-signals-entities-insights/create-custom-entity-type.md) that match will also be included in the results.
+::: 
+
+#### What’s in an Entity card 
+
+The card for an Entity displays any [tags](docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules.md) that have been assigned the Entity, along with the following information: 
+
+* The number of times that Entity was referenced in the Signals in the Insight.
+* The number of Insights, created during the Insight generation [detection window](docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold.md), in which the current Entity is the primary Entity. 
+:::note
+The detection window is 14 days by default, but can be configured to be a different duration.
+::: 
+* The number of Signals that fired during the Insight generation detection window, in which the current Entity is the primary Entity, and the sum of the severities for those Signals. 
+:::note
+The cumulative severity value is color coded: cyan for less than 12, orange for 12-23, and red for 24 and above, assuming your Insight generation threshold is 12. If the Insight threshold is set to a value other than the default of 12, the color coding will be adjusted to match
+::: 
+
+#### Entity details in the right pane 
+
+When you select an Entity in the center pane, the right pane displays details about that Entity. The information displayed depends on what type of Entity is selected (username, hostname, IP address, MAC address, or custom) and can include:
+
+* A link to the Entity’s details page.
+* [Entity Criticality](docs/cse/records-signals-entities-insights/entity-criticality.md), if it is set to something other than the default.
+* Metadata such as geographic location, Inventory information, the [Network Blocks](docs/cse/administration/create-use-network-blocks.md) it falls within, as applicable, and so on.
+* A Signal graph that shows when the Signals were created on the horizontal axis (which is at most 14 days—the detection window), the severity of each Signal on the vertical axis, and the Signal type based on the icon/color of each point. 
+* Lists of the recent Signals and Insights the Entity has been associated with, and links to each object’s details page. 
+
+#### Accessing related Entities using the API 
+
+You can access related Entity information using the CSE API. For more information, see [CSE APIs](docs/cse/administration/cse-apis.md).
+
 
 ### Signal list area 
 

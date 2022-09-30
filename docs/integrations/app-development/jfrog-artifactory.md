@@ -11,10 +11,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Artifactory provides insight into your JFrog Artifactory binary repository. The App provides preconfigured Dashboards that include an Overview of your system, Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity.
 
-The Sumo Logic App for Artifactory only supports Artifactory On-Premise. It does not work with Artifactory Online. The [JFrog Artifactory Sumo Logic integration](/docs/manage/connections-and-integrations/jfrog-artifactory-integration.md) supports both Artifactory On-Premise and Artifactory Online.
+The Sumo Logic App for Artifactory only supports Artifactory On-Premise. It does not work with Artifactory Online. The [JFrog Artifactory Sumo Logic integration](/docs/manage/connections-and-integrations/jfrog-artifactory.md) supports both Artifactory On-Premise and Artifactory Online.
 
 :::note
-* If you _do not_ have a Sumo Logic account, the [JFrog Artifactory Sumo Logic integration](/docs/manage/connections-and-integrations/jfrog-artifactory-integration.md) is the most convenient way to start using Sumo Logic directly from Artifactory.
+* If you _do not_ have a Sumo Logic account, the [JFrog Artifactory Sumo Logic integration](/docs/manage/connections-and-integrations/jfrog-artifactory.md) is the most convenient way to start using Sumo Logic directly from Artifactory.
 * If you _do_ have a Sumo Logic account, you can still use use the integration, but this will create a secondary Sumo Logic account. If you choose to use your current account, you can do so by installing the Sumo Logic App for Artifactory and access your Artifactory data from Sumo Logic, instead of from your Artifactory instance.  
 :::
 
@@ -161,7 +161,7 @@ The following suffixes are required. For example, you could use `_sourceCategory
 `_sourceCategory` names are case sensitive. When you run a search using `_sourceCategory`, make sure you use the same case as you did when configuring the source.
 :::
 
-For complete instructions, see [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+For complete instructions, see [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
 1. Configure a Local File source.
 2. Configure the Source fields:
@@ -341,7 +341,7 @@ The following suffixes are required. For example, you could use `_sourceCategory
 Remember that `_sourceCategory` names are case sensitive. When you run a search using `_sourceCategory`, make sure you use the same case as you did when configuring the source.
 :::
 
-For complete instructions, see [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
+For complete instructions, see [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
 1. Configure a Local File source.
 2. Configure the Source fields:
@@ -365,7 +365,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source**. Select either of these options for the data source. 

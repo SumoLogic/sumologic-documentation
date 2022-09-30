@@ -1,6 +1,7 @@
 ---
 id: metrics-data-volume-index
 title: Metrics Data Volume Index
+description: The Metrics Data Volume Index contains JSON formatted messages that contain parent objects for each source data point, and child objects that detail the data points for each parent.
 ---
 
 
@@ -89,7 +90,7 @@ _index=sumologic_volume  _sourceCategory="collector_metrics_volume"
 
 ### Query for metric ingestion outliers 
 
-This query runs against the metrics volume index and uses the [outlier](../../../search/search-query-language/search-operators/Manually-Casting-String-Data-to-a-Number.md) operator to find timeslices in which your metric ingestion in DPM was greater than the running average by a statistically significant amount. 
+This query runs against the metrics volume index and uses the [outlier](/docs/search/search-query-language/operators#manually-cast-data-to-string-or-number) operator to find timeslices in which your metric ingestion in DPM was greater than the running average by a statistically significant amount. 
 
 ```sql
 _index=sumologic_volume _sourcecategory=sourcecategory_metrics_volume
@@ -103,7 +104,7 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 ### Query for metric ingestion prediction 
 
-This query runs against the metrics volume index and uses the [predict](../../../search/search-query-language/search-operators/predict.md) operator to predict future values.
+This query runs against the metrics volume index and uses the [predict](../../../search/search-query-language/operators#predict) operator to predict future values.
 
 ```sql
 _index=sumologic_volume _sourcecategory=sourcecategory_metrics_volume datapoints

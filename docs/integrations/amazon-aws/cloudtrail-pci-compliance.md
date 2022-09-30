@@ -18,10 +18,10 @@ The Sumo Logic App for Payment Card Industry (PCI) Compliance for AWS CloudTrail
 This section provides instructions for collecting logs for the the PCI Compliance for AWS CloudTrail App.
 
 To configure an AWS CloudTrail Source, do the following:
-1. [Grant Sumo Logic access](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md) to an Amazon S3 bucket.
+1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md) to an Amazon S3 bucket.
 2. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html) in your AWS account.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. Add an [AWS CloudTrail Source](/docs/send-data/sources/hosted-collectors/amazon-web-services/aws-cloudtrail-source.md) to Sumo Logic.
+4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic.
 5. Install the Sumo Logic App for [PCI Compliance for AWS CloudTrail](#Install_the_Sumo_Logic_App).
 
 
@@ -35,7 +35,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

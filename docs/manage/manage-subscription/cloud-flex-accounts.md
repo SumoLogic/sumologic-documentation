@@ -1,9 +1,9 @@
 ---
 id: cloud-flex-accounts
 title: Cloud Flex Accounts
+description: View information on your Sumo Logic Cloud Flex account and intuitively monitor usage and manage account costs.
 ---
 
-#
 
 Sumo Logic provides flexible account types within its Cloud Flex packaging for any size organization. This page provides information on the Cloud Flex account types from which you can choose, then explains how you can intuitively monitor and manage your account.
 
@@ -12,7 +12,7 @@ Sumo Logic provides flexible account types within its Cloud Flex packaging for 
 * **Free** accounts give you access to core Sumo Logic features, with a daily 500 MB data volume limit. Free accounts allow three users, with 4 GB of retention. For information about Free account features, see the "Free Accounts" column in the following table and the Important notes section on [Sumo Logic Free accounts](#important-notes-on-sumo-logic-free-accounts).
 
     :::tip
-    Free account holders can [upgrade](upgrade-your-cloud-flex-account.md) to Professional from within Sumo Logic.
+    Free account holders can [upgrade](upgrade-cloud-flex-account.md) to Professional from within Sumo Logic.
     :::
 
 * **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. For information about Trial account features, see the "Trial Accounts" column in the table below and [Important notes on Sumo Logic Trial accounts](#important-notes-on-sumo-logic-free-accounts).  
@@ -21,7 +21,7 @@ Sumo Logic provides flexible account types within its Cloud Flex packaging for 
     Trials are limited to 30 days. If you require an extended trial period, contact [sales@sumologic.com](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
     :::
 
-* **Professional** accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-your-cloud-flex-account.md) from a Professional to an Enterprise account at any time.
+* **Professional** accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-cloud-flex-account.md) from a Professional to an Enterprise account at any time.
 * **Enterprise** accounts, the premier Sumo Logic log management solution, are built to fit your organization's needs for data volume, data retention, and user management requirements. Enterprise accounts include [Ingest Budgets](/docs/manage/ingestion-and-volume/ingest-budgets) and [SAML-based SSO](../security/saml/set-up-saml.md). 
 
     :::note
@@ -34,7 +34,7 @@ The following table provides a summary list of key features by Sumo Logic Cloud 
 |-- | -- | -- | -- | -- |
 | Audit Index |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Audit Event Index |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) |
-| [Collector Management API](https://github.com/SumoLogic/sumo-api-doc/wiki/collector-management-api) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| [Collector Management API](https://github.com/SumoLogic/sumo-api-doc/wiki/collectors) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Dashboards - Live Mode  | 7 days | 30 days | 30 days | 30 days |
 | [Data Forwarding](/docs/manage/data-forwarding) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | [Data Volume Index](/docs/manage/ingestion-and-volume/data-volume-index) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
@@ -95,9 +95,9 @@ Using a Free account is a great way to get to know Sumo Logic. While you're try
 * If you begin to reach the 500 MB daily limit, Sumo Logic sends an email to let you know. You can take action to [reduce the amount of data](../partitions-and-data-tiers/manage-indexes-variable-retention.md) you're uploading in order to stay below the limit.
 * If the 500 MB limit is surpassed, you'll receive an email letting you know that data in the Sumo Logic Cloud can no longer be searched (but additional data is still collected). However, if the data limit is fully exceeded, data collection stops (in addition to search being disabled). Disabled features will be available after your usage falls below 4 GB when averaged over seven days (this could take one day, or up to seven days, depending on the amount of data you've uploaded and where you've uploaded it).
 * In extreme situations, Free accounts may be disabled if the data volume continues to exceed the limits.
-* Free accounts are limited to 20 continuous queries, including [Dashboard Panels](../../dashboards/about-dashboards.md).
-* Because Free accounts run on seven-day intervals, [Dashboard Panel](../../dashboards/about-dashboards.md) queries may not use a time range longer than seven days.
-* For Sumo Logic Apps, Free accounts are limited to install the [Log Analysis QuickStart app](../../get-started/library/log-analysis-quickstart-app.md).
+* Free accounts are limited to 20 continuous queries, including [Dashboard Panels](/docs/dashboards/about).
+* Because Free accounts run on seven-day intervals, [Dashboard Panel](/docs/dashboards/about) queries may not use a time range longer than seven days.
+* For Sumo Logic Apps, Free accounts are limited to install the [Log Analysis QuickStart app](/docs/get-started/sumo-logic-apps#log-analysis-quickstart-app).
 * The limitations of a Free account can't be changed, but you can upgrade to a Professional account at any time.
 * For information on throttling and account caps, see [Manage Ingestion](../ingestion-and-volume/log-ingestion.md).
 

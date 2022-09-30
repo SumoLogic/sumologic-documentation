@@ -22,7 +22,7 @@ For information on collecting unified logs and metrics for AWS Elastic Load Bala
 
 To collect AWS Elastic Load Balancing Metrics, perform the following tasks:
 1. [Configure a Hosted Collector](#Collect-Metrics-for-the-AWS-Elastic-Load-Balancing-App)
-2. [Add a CloudWatch Source for Metrics](/docs/send-data/sources/hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
+2. [Add a CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
 
 ## Installing the AWS ELB Metrics App
@@ -34,7 +34,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

@@ -1,9 +1,10 @@
 ---
 id: collect-logs-azure-monitor
 title: Collect Logs from Azure Monitor
+description: Instructions for configuring a pipeline for shipping logs available from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP source on an hosted collector in Sumo Logic.
 ---
 
-To collect logs from the Azure Monitor, if you are not using the Sumo Logic FedRamp deployment,  use the new [Cloud to Cloud Integration for Azure](../../sources/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md) to create the source and use the same source category while installing the app. 
+To collect logs from the Azure Monitor, if you are not using the Sumo Logic FedRamp deployment,  use the new [Cloud to Cloud Integration for Azure](../../hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md) to create the source and use the same source category while installing the app. 
 
 :::note
 The sections below are either for FedRamp Sumo Logic deployments or if you have been advised by the Sumo Logic support team to not use the Cloud to Cloud Integration based on your Azure environments. 
@@ -42,8 +43,8 @@ This section has instructions for setting up the ingestion pipeline, from Azure 
 
 In this step, you configure an HTTP Source to receive logs from the Azure function.
 
-1. Select a hosted collector where you want to configure the HTTP Source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](../../configure-hosted-collector.md).
-1. Configure an HTTP Source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). 
+1. Select a hosted collector where you want to configure the HTTP Source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+1. Configure an HTTP Source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics). 
 
 ### Step 2. Configure Azure resources using ARM template
 

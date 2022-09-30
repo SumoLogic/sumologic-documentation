@@ -17,7 +17,7 @@ The following information walks through [winston](https://www.npmjs.com/package/
 
 1. Package dependency installation:  
 
-   ```
+   ```bash
    npm install --save @opentelemetry/instrumentation-winston
    ```
 
@@ -25,13 +25,13 @@ The following information walks through [winston](https://www.npmjs.com/package/
 
    * Import dependency:
 
-      ```
+      ```js
       const { WinstonInstrumentation } = require('@opentelemetry/instrumentation-winston');
       ```
 
    * Register WinstonInstrumentation  
 
-      ```
+      ```js
       registerInstrumentations({
       instrumentations: [
          new WinstonInstrumentation(),
@@ -46,7 +46,7 @@ The following information walks through [bunyan](https://www.npmjs.com/package/b
 
 1. Package dependency installation:  
 
-   ```
+   ```bash
    npm install --save @opentelemetry/instrumentation-bunyan
    ```
 
@@ -54,13 +54,13 @@ The following information walks through [bunyan](https://www.npmjs.com/package/b
 
    * Import dependency  
 
-      ```
+      ```js
       const { BunyanInstrumentation } = require('@opentelemetry/instrumentation-bunyan');
       ```
 
    * Register BunyanInstrumentation  
 
-      ```
+      ```js
       registerInstrumentations({
       instrumentations: [
          new BunyanInstrumentation(),
@@ -75,7 +75,7 @@ The following information walks through [pino](https://www.npmjs.com/package/pin
 
 1. Package dependency installation :
 
-   ```
+   ```bash
    npm install --save @opentelemetry/instrumentation-pino
    ```
 
@@ -83,13 +83,13 @@ The following information walks through [pino](https://www.npmjs.com/package/pin
 
    * Import dependency  
 
-      ```
+      ```js
       const { PinoInstrumentation } = require('@opentelemetry/instrumentation-pino');
       ```
 
    * Register PinoInstrumentation  
 
-      ```
+      ```sql
       registerInstrumentations({
       instrumentations: [
          new PinoInstrumentation(),
@@ -104,7 +104,7 @@ In the case of custom loggers, the most important thing is to know how to obtain
 
 1. Package dependency installation  
 
-   ```
+   ```bash
    npm install --save @opentelemetry/api
    ```
 
@@ -112,19 +112,19 @@ In the case of custom loggers, the most important thing is to know how to obtain
 
 * Import dependency  
 
-   ```
+   ```js
    const api = require('@opentelemetry/api');
    ````
 
 * Get a current span  
 
-   ```
+   ```js
    let current_span = api.trace.getSpan(api.context.active());
    ```
 
 * Obtain trace_id, span_id and trace flag  
 
-   ```
+   ```js
    let trace_id = current_span.spanContext().traceId;
    let span_id = current_span.spanContext().spanId;
    let trace_flags = current_span.spanContext().traceFlags;
@@ -132,12 +132,12 @@ In the case of custom loggers, the most important thing is to know how to obtain
 
 * Example usage  
 
-   ```
+   ```js
    console.log(`Example log trace_id:”${trace_id}” span_id:”${span_id}” trace_flags:”${trace_flags}”`);
    ```  
 
    Example output:  
 
-   ```
+   ```js
    Example log trace_id:"b2fa3d72711c1adad9ec88348c46f449" span_id:"85733005b2678b28" trace_flags:"1"
    ```

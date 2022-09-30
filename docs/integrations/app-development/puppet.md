@@ -180,7 +180,7 @@ Puppet Master only runs on Linux.
 
 In this step, you add a local file source to the installed collector you created in [Step 2](#Step_2:_Install_collector_on_Puppet_Master). The local file source will receive Puppet Server logs.  
 
-Follow the steps on [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source), with these additional instructions:
+Follow the steps on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), with these additional instructions:
 
 * For **File Path**, Enter the puppet server log file path. The default Puppet Server log file is: `/var/log/puppetlabs/puppetserver/puppetserver.log`. If your Puppet Server logs are located elsewhere, enter the correct path.  
 * For **Source Category**, enter a value like: `prod/web/puppet/server`.
@@ -191,7 +191,7 @@ Follow the steps on [Local File Source](/docs/send-data/Sources/installed-collec
 
 In this step, you add another local file source to the installed collector you created in [Step 2](#step-2-install-collector-on-puppet-master). The local file source will receive Puppet Server Access logs.
 
-Follow the steps on [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source), with these additional instructions:
+Follow the steps on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), with these additional instructions:
 
 * For **File Path**, Enter the puppet server log file path. The default Puppet Server Access log file is: `/var/log/puppetlabs/puppetserver/puppetserver-access.log`. If your Puppet Server Access logs are located elsewhere, enter the correct path.  
 * For **Source Category**, enter a value like: `prod/web/puppet/access`
@@ -210,11 +210,11 @@ This section has instructions for setting up a Script source that runs a shell s
 The following requirements apply to the script source:
 
 * The user running the collector process must have read and write access to the Puppet Reports directory.
-* The collector executes the script as the user running the collector process. The script outputs data to your machine's stdout or stderror output streams to be collected. For more information see [Script Source](/docs/send-data/Sources/installed-collectors/Script-Source).
+* The collector executes the script as the user running the collector process. The script outputs data to your machine's stdout or stderror output streams to be collected. For more information see [Script Source](/docs/send-data/installed-collectors/sources/Script-Source).
 * The machine where you run the script must have Ruby installed.
 * The script generates a log in the configured working directory that you can review in case of issues.
 
-For more information see [Script Source](/docs/send-data/Sources/installed-collectors/Script-Source).
+For more information see [Script Source](/docs/send-data/installed-collectors/sources/Script-Source).
 
 #### To set up a script source
 
@@ -222,7 +222,7 @@ The script requires Ruby on the host machine.
 
 1. In the Sumo web app, select **Manage Data > Collection > Collection**.
 2. Navigate to the collector you installed on the Puppet Master host, and select **Add > Add Source**.
-3. Select **Script**. New Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector.
+3. Select **Script**. New Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 4. **Name**. (Required).
 5. **Description**. (Optional).
 6. **Source Host**. Enter the hostname or IP address of the source host. The hostname can be a maximum of 128 characters.
@@ -318,7 +318,7 @@ echo "Conversion Completed. End Time: $(date)" >> "$log_file_name"
         1. **Detect messages spanning multiple lines**. This option is checked by default.
         2. **Infer Boundaries**. This option is checked by default.
         3. **Boundary Regex**. If multiple processing is enabled, and **Infer Boundaries** is disabled, enter a regular expression for message boundaries.
-    5. **Processing Rules**. Configure processing rules, as desired. For more information, see [Processing Rules](/docs/manage/collection/processing-rules).
+    5. **Processing Rules**. Configure processing rules, as desired. For more information, see [Processing Rules](/docs/send-data/collection/processing-rules).
 
 Puppet logs and reports should start flowing into Sumo Logic.
 

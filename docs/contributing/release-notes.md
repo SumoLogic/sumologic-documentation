@@ -3,6 +3,14 @@ id: release-notes
 title: Release Notes
 ---
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+:::caution
+
+&#128679; Under construction &#128679;
+:::
 
 We keep release notes concise with links to documentation and images for features and updates affecting the user interface.
 

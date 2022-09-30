@@ -1,9 +1,10 @@
 ---
 id: manage-org-settings
 title: Manage Organizational Settings
+description: An account owner can update org names, define customized subdomain names, delete orgs, and change the account owner.
 ---
 
-#
+
 
 ## Availability
 
@@ -78,7 +79,7 @@ Before changing your account subdomain, consider the following:  
 * You are responsible for the subdomain name, including ensuring that use of the  subdomain doesn’t violate the intellectual property rights of another party. Sumo Logic recommends that you use your corporate domain name, or a variation of it, as your Sumo Logic account subdomain.
 * Sumo Logic reserves the right to deactivate, change, or require you to change your account subdomain. 
 * Shared URLs that contain a custom subdomain may no longer work after you change the subdomain. You’ll need to either manually edit the subdomain portion of out-of-date URLs or re-share the content after changing a subdomain name.  
-* When you set up a subdomain for the first time, the pre-existing URLS for accessing Sumo Logic will continue to work. 
+* When you set up a subdomain for the first time, the pre-existing URLS for accessing Sumo Logic will continue to work; however, users will be asked to authenticate via the default service domain. We suggest updating any saved/stored links with the new subdomain to prevent this issue. 
 * Once you update your subdomain to a new value, the previous subdomain will become immediately free for use by another account.
 * After you update your subdomain, Sumo Logic users must re-authenticate using the new subdomain. Sumo Logic suggests you notify your users prior to changing your account subdomain. 
 * Subdomain must be unique across ALL accounts and deployments. You cannot use a subdomain name that is already in use, even if the accounts reside in different deployment regions. If you try to change an account subdomain to a value that is already in use, you’ll be prompted to supply a different name.

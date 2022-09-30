@@ -141,7 +141,7 @@ Make sure the collector is installed on a machine that belongs to the domain man
 
 ## Step 2: Configure event log sources
 
-If you have installed collectors on each domain controller, as recommended, configure a [Local Windows Event Log Source](/docs/send-data/Sources/installed-collectors/Local-Windows-Event-Log-Source) on each one. Otherwise, configure a [Remote Windows Event Log Source](/docs/send-data/Sources/installed-collectors/Remote-Windows-Event-Log-Source) to collect events from each Active Directory server. For these Windows Event sources, set the source category to **OS/Windows** and **Event Format** as **Collect using legacy format**.
+If you have installed collectors on each domain controller, as recommended, configure a [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Event-Log-Source) on each one. Otherwise, configure a [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/Remote-Windows-Event-Log-Source) to collect events from each Active Directory server. For these Windows Event sources, set the source category to **OS/Windows** and **Event Format** as **Collect using legacy format**.
 
 
 
@@ -158,10 +158,10 @@ To configure a script source, do the following:
 
 1. In Sumo Logic, select** Manage Data > Collection > Collection**.
 2. Find the name of the installed collector to which you'd like to add a Source. Click **Add...** then choose** Add Source **from the pop-up menu.
-3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector.
+3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 4. **Name**. Enter **DomainCollector** or **ADObjects**, depending on which script you are configuring. Description is optional.
-5. **Source Host** (optional). Enter the hostname or the IP address of the machine. The hostname is stored in a searchable field called **_sourceHost. **The hostname can be a maximum of 128 characters.
-6. **Source Category**. Enter a Source Category following the [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories) that allows you to include both the logs from these scripts and the logs from your Windows Event logs from the Domain Controller(s). For example, `DC/Windows/adObjects`, `DC/Windows/domainCollector`, and `DC/Windows/Event`. This will allow you to specify a query like `sourceCategory=DC/Windows/*` to bring in all AD-related logs.
+5. **Source Host** (optional). Enter the hostname or the IP address of the machine. The hostname is stored in a searchable field called `_sourceHost`. The hostname can be a maximum of 128 characters.
+6. **Source Category**. Enter a Source Category following the [Best Practices](/docs/send-data/best-practices) that allows you to include both the logs from these scripts and the logs from your Windows Event logs from the Domain Controller(s). For example, `DC/Windows/adObjects`, `DC/Windows/domainCollector`, and `DC/Windows/Event`. This will allow you to specify a query like `sourceCategory=DC/Windows/*` to bring in all AD-related logs.
 7. **Frequency.** Select a short time for testing (for example, every 5 minutes), then change it to a longer interval once you confirm it’s working.
 
 
@@ -181,7 +181,7 @@ The **Frequency** option should be set according to your environment. We use a s
 5. Click the icon next to **Processing Rules** to expand the dialog.
 6. Click **Add Rule**.
 7. **Name**. Enter a name for the processing rule (for example, domainCollector).
-8. **Filter**. Enter the following filters to exclude command outputs from being logged. \
+8. **Filter**. Enter the following filters to exclude command outputs from being logged.
 `.*domainCollector\.ps1.* \
 .*adObjectCollector\.ps1.* \
 .*adQueryDS\.ps1.*`
@@ -205,7 +205,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 3. Click **Add to Library**.
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](/docs/get-started/library/index.md) for information on working with the library in the new UI.
+Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](/docs/get-started/library) for information on working with the library in the new UI.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 

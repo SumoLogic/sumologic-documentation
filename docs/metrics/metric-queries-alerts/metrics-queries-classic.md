@@ -18,7 +18,7 @@ To [create a metrics visualization](../metric-charts/create-metrics-visualizati
 * Each metrics query must include one or more selectors (filters), which can be either of the following:
     * Sequence of space-separated `tag=value` pairs: `cluster=search node=search-1`
     * Unqualified strings (value with no key):  `statistic`
-* Each query can optionally include one or more [operators](/docs/metrics/metric-queries-alerts/metrics-operators) (avg, count, min, max, sum, and so on): `dep=prod metric=cpu_system | avg`
+* Each query can optionally include one or more [operators](/docs/metrics/metric-queries-alerts/operators) (avg, count, min, max, sum, and so on): `dep=prod metric=cpu_system | avg`
 * Grouping of results by operator is supported, as in this example, which groups average results by node: `dep=prod metric=cpu_system | avg by node`
 * Logical operators are supported, as in this example which uses NOT, OR, and AND: `not node=forge-12 and cluster=forge and (CPU_Idle or Idle_CPU) | avg`
 
@@ -123,13 +123,13 @@ To narrow down your query specify a particular source host:
 1. Instead of an average we'll look at all source hosts from a particular group, in this case cqsplitter. ` metric=CPU_User _sourceHost=cqsplitter-*`  
 1. Specify the CPU use by user for node you want to track in the cluster.  
 ` metric=CPU_Sys _sourceHost=cqsplitter-*`  
-1. Now we'll use `along _sourceHost` to evaluate the summation expression for each \_sourceHost individually. ` #A + #B along _sourceHost`
+1. Now we'll use `along _sourceHost` to evaluate the summation expression for each _sourceHost individually. ` #A + #B along _sourceHost`
 
 ### Finding outages and creating a baseline
 
 Now that we have the basic idea, let’s do something more complex. Let’s say that you’re curious about the level of CPU usage by your applications in your system and you want to create a baseline average. 
    
-We’ll start with a metric, CPU user and the same \_sourceHost category, but we’ll create an average of the two and then a percentage.
+We’ll start with a metric, CPU user and the same _sourceHost category, but we’ll create an average of the two and then a percentage.
 
 1. Choose your metric for CPU usage by application and the source hosts you want to track: `metric=CPU_user _sourceHost=*`
 1. Take an average of that of that metric. `metric=CPU_user _sourceHost=* | avg`
@@ -184,7 +184,7 @@ Where:
 If the query that results in the message contains an aggregation operator, the results presented are likely to be erroneous because the aggregation will be based on only 1000 time series.
 :::
 
-One solution is to add additional selectors to your query to reduce the number of time series returned, for example by adding additional tag=value pairs to the query. You can also filter the time series returned using the [topk](metrics-operators/topk.md), [bottomk](metrics-operators/bottomk.md), and [filter operators](metrics-operators/filter.md).
+One solution is to add additional selectors to your query to reduce the number of time series returned, for example by adding additional `tag=value` pairs to the query. You can also filter the time series returned using the [topk](/docs/metrics/metric-queries-alerts/operators#topk), [bottomk](/docs/metrics/metric-queries-alerts/operators#bottomk), and [filter](/docs/metrics/metric-queries-alerts/operators#filter) operators. 
 
 ### Long-running metric query
 For a single metrics query request, Sumo limits the output time series at 1000 for visualization. Output time series can either exceed the limit for a single row or multiple rows combined.

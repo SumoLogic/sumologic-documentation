@@ -6,9 +6,9 @@ description: Use HTTP endpoints to configure Field Extraction Rules.
 tags: [settings]
 ---
 
-The Field Extraction Rules (FER) Management API allows you to configure FERs from HTTP endpoints. Field extractions allow you to parse [fields](https://help.sumologic.com/Manage/Fields) from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. With FERs in place, you can use the pre-parsed fields for ad-hoc searches, scheduled searches, real-time alerts, and dashboards. In addition, FERs help standardize field names and searches, simplify the search syntax and scope definition, and improve search performance. For more information see [Field Extractions](https://help.sumologic.com/Manage/Field-Extractions).
+The Field Extraction Rules (FER) Management API allows you to configure FERs from HTTP endpoints. Field extractions allow you to parse [fields](https://help.sumologic.com/manage/fields) from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. With FERs in place, you can use the pre-parsed fields for ad-hoc searches, scheduled searches, real-time alerts, and dashboards. In addition, FERs help standardize field names and searches, simplify the search syntax and scope definition, and improve search performance. For more information see [Field Extractions](https://help.sumologic.com/manage/Field-Extractions).
 
-Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
+Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 
 Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
 

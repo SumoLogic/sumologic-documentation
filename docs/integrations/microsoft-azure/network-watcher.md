@@ -109,8 +109,8 @@ If you have a storage account that you want to use for this purpose, make a note
 This section demonstrates how to configure an HTTP source to receive logs from the Azure function.
 
 To configure an HTTP source for Azure, do the following:
-1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Make a note of the URL for the source, you will need it in the next step. I
+1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the URL for the source, you will need it in the next step. I
 3. In **Advanced Options for Logs**, under **Timestamp Format**, click Specify a format and enter the following:
 * Specify Format as epoch
 * Specify Timestamp locator as `\"time\": (.*),`
@@ -174,7 +174,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
@@ -211,7 +211,7 @@ This Dashboard provides general information of the NSG flow logs, including Pane
 
 **Flow Traffic by Protocol. **Displays trend of traffic by protocol (TCP/UDP).
 
-**Denied Traffic per Hour - Outlier. **Using Sumo Logic machine learning [Outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) operator, shows any unexpected sequence in denied traffic.
+**Denied Traffic per Hour - Outlier. **Using Sumo Logic machine learning [Outlier](/docs/search/Search-Query-Language/operators#outlier) operator, shows any unexpected sequence in denied traffic.
 
 **Denied Traffic Comparison (Today Vs Yesterday) - Outlier. **Compares denied traffic of last 24 hours with previous 24 hours and shows any unexpected difference between two time periods.
 
@@ -234,4 +234,4 @@ This Dashboard drills down on denied traffic flow logs, shows geographic hotspot
 
 **Top 10 Denied Destination IP, Port. **Displays a table of destination IP addresses and ports with denied traffic flow.
 
-**Denied Traffic per Hour -  Outlier. **Using Sumo Logic machine learning [Outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) operator, shows any unexpected sequence in denied traffic.
+**Denied Traffic per Hour -  Outlier. **Using Sumo Logic machine learning [Outlier](/docs/search/Search-Query-Language/operators#outlier) operator, shows any unexpected sequence in denied traffic.

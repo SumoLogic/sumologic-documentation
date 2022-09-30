@@ -1,6 +1,7 @@
 ---
 id: collect-with-lambda-function
 title: Collect Amazon CloudWatch Logs using a Lambda Function
+description: Learn how to collect Amazon CloudWatch Logs with a Lambda function.
 ---
 
 
@@ -12,8 +13,8 @@ We strongly recommend the alternative collection process described on [Amazon C
 
 ## Add a Hosted Collector and HTTP Source
 
-1. In Sumo Logic, configure a [Hosted Collector](../../configure-hosted-collector.md).
-1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
+1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 :::note
 When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this to configure the Lambda Function.  
@@ -53,9 +54,9 @@ To add an Amazon Lambda function:
 
     ![lambda6.png](/img/send-data/lambda6.png)
     * ENCODING (Optional)—Encoding to use when decoding CloudWatch log events. Default is utf-1.
-    * SOURCE_CATEGORY_OVERRIDE (Optional)—Override \_sourceCategory value configured for the HTTP source.  
-    * SOURCE_HOST_OVERRIDE (Optional)—Override \_sourceHost value configured for the HTTP source.
-    * SOURCE_NAME_OVERRIDE (Optional)—Override \_sourceName value configured for the HTTP source.
+    * SOURCE_CATEGORY_OVERRIDE (Optional)—Override _sourceCategory value configured for the HTTP source.  
+    * SOURCE_HOST_OVERRIDE (Optional)—Override _sourceHost value configured for the HTTP source.
+    * SOURCE_NAME_OVERRIDE (Optional)—Override _sourceName value configured for the HTTP source.
 1. Click **Create Function.**
 
 ## Create a CloudWatch Log Group

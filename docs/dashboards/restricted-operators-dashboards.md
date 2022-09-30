@@ -22,9 +22,9 @@ The following operators can't be used with dashboards:
 
 The following operators can't be used in Live mode:
 
-* Compare With can be used when your query's aggregate operation is grouped by a [timeslice](../search/search-query-language/search-operators/timeslice.md)
+* Compare With can be used when your query's aggregate operation is grouped by a [timeslice](../search/search-query-language/operators#timeslice)
 * Details
-* First, Last - instead use the **withtime** option, see [most_recent and least_recent](../search/search-query-language/group-aggregate-operators/most-recent-and-least-recent.md).
+* First, Last - instead use the **withtime** option, see [most_recent and least_recent](/docs/search/search-query-language/group-aggregate-operators#most_recent-least_recent).
 * Join
 * LogReduce
 * LogCompare
@@ -43,7 +43,7 @@ The following operators can't be used in Live mode:
 
 The following search modifier cannot be used in Live mode.
 
-* \_dataTier
+* _dataTier
 
 ### Include only after the first group-by phrase
 
@@ -63,6 +63,6 @@ The following operators can be used in Dashboard Panels, but in the search they 
 
 ### Notes
 
-You can use the [count_frequent](../search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent.md) operator in dashboard queries, but the number of results returned is limited to the top 100 most frequent results. All results are available when the search is run on the **Search** page, but only the top 100 are displayed in the Panel.
+You can use the [count_frequent](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent) operator in dashboard queries, but the number of results returned is limited to the top 100 most frequent results. All results are available when the search is run on the **Search** page, but only the top 100 are displayed in the Panel.
 
 Sumo Logic provides support for optimization to improve the efficiency of searches in Interactive dashboards. See [Optimize Panels in Interactive Dashboards](get-started/dashboard-optimization.md).

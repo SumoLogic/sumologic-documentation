@@ -1,20 +1,21 @@
 ---
 id: amazon-s3-bucket
 title: Forwarding Data from Sumo Logic to S3
+description: After granting access to an Amazon S3 bucket, you can use Sumo Logic to set up Data Forwarding.
 ---
 
 :::note
 Data forwarding is not currently supported for data assigned to the Infrequent Tier. 
 :::
 
-You can forward log data from a [Partition](../partitions-and-data-tiers/about-partitions.md) or [Scheduled View](/docs/manage/scheduled-views) to an S3 bucket. Only new data is forwarded from a Partition once it is set to forward data. 
+You can forward log data from a [Partition](/docs/manage/partitions-and-data-tiers) or [Scheduled View](/docs/manage/scheduled-views) to an S3 bucket. Only new data is forwarded from a Partition once it is set to forward data. 
 
 After data forwarding is configured, you should start to see file objects posted within your configured bucket. If your Scheduled View conducts aggregation, which is a best practice, your aggregate fields are automatically appended to the forwarded objects.
 
 ## Prerequisites
 
 * An administrator role on the Partition where you want to set up forwarding.
-* Follow the instructions on [Grant Access to an AWS Product](../../send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md) to grant Sumo permission to send data to the destination S3 bucket.
+* Follow the instructions on [Grant Access to an AWS Product](docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md) to grant Sumo permission to send data to the destination S3 bucket.
 * A Partition or Scheduled View to push to AWS S3.
 
 ## Forwarding interval 
@@ -91,7 +92,7 @@ Where:
     :::
 
    * **Description**. You can provide a meaningful description of the connection.
-   * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](../../send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md).
+   * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
 
      * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.         
 

@@ -8,7 +8,7 @@ description: The Tracing APIs give you the ability to browse and execute queries
 
 The Tracing APIs give you the ability to browse and execute queries for traces and span analytics, and request a service map of your application environment.
 
-Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
+Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 
 Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
 
@@ -41,7 +41,7 @@ Sumo Logic has several deployment types, which vary by geographic location and t
 
 ## Service Map API
 
-The Service Map API allows you to fetch a graph representation of the Service Map, which is a high-level view of your application environment, automatically derived from tracing data. For more information see [Service Map](https://help.sumologic.com/Traces/02Working_with_Tracing_data/01Service_Map#service-map).
+The Service Map API allows you to fetch a graph representation of the Service Map, which is a high-level view of your application environment, automatically derived from tracing data. For more information see [Service Map](https://help.sumologic.com/Traces/Working-with-Tracing-data/01Service_Map#service-map).
 
 
 ### Endpoints for API access  
@@ -215,7 +215,7 @@ Select the documentation link for your deployment:
 
 ## Span Analytics API
 
-The Span Analytics API allows you to browse spans collected in the system. You can execute queries to find individual spans matching provided search criteria as well as run aggregated span queries and retrieve their results. For more information see [Spans](https://help.sumologic.com/Traces/02Working_with_Tracing_data/04Spans).
+The Span Analytics API allows you to browse spans collected in the system. You can execute queries to find individual spans matching provided search criteria as well as run aggregated span queries and retrieve their results. For more information see [Spans](docs/apm/traces/working-with-tracing-data/spans.md).
 
 
 ### Endpoints for API access  
@@ -396,7 +396,7 @@ Select the documentation link for your deployment:
 
 ## Traces API
 
-The Traces API allows you to browse traces collected in the system. You can execute queries to find traces matching provided search criteria as well as gather detailed information about individual traces and spans. For more information see [View and investigate traces](https://help.sumologic.com/Traces/02Working_with_Tracing_data/03View_and_investigate_traces).
+The Traces API allows you to browse traces collected in the system. You can execute queries to find traces matching provided search criteria as well as gather detailed information about individual traces and spans. For more information see [View and investigate traces](https://help.sumologic.com/Traces/Working-with-Tracing-data/View-and-investigate-traces).
 
 
 ### Endpoints for API access  
@@ -506,10 +506,10 @@ The APIs return operation failures with a description and error code, including 
 #### Rate limit throttling  
 
 * A rate limit of four API requests per second (240 requests per minute) applies to all API calls from a user.
-* A rate limit of 10 concurrent requests to any API endpoint applies to an access key. \
+* A rate limit of 10 concurrent requests to any API endpoint applies to an access key.
  \
 If a rate is exceeded, a rate limit exceeded 429 status code is returned.
-* A limit of 10 active concurrent trace search requests applies to your organization. Bear in mind that a single API request can consist of multiple queries and each query is treated as a separate trace search. \
+* A limit of 10 active concurrent trace search requests applies to your organization. Bear in mind that a single API request can consist of multiple queries and each query is treated as a separate trace search.
  \
 Once you reach the limit of 10 concurrent active searches, attempting an additional search will result in a status code of _429 Too Many Requests_ telling you that you are over the allowed concurrent search requests limit.
 

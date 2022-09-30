@@ -77,16 +77,16 @@ The Sumo Logic App for Cylance allows you to analyze Cylance security events by 
 
 ### Step 1: Configure a Collector
 
-To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 
 ### Step 2: Configure a Source
 
-1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/Sources/hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
+1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
     1. **Name**. (Required) A name is required. Description is optional.
-    2. **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources. \
-Example: **prod/web/apache/access**. \
-For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
+    2. **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources.
+Example: **prod/web/apache/access**.
+For details see [Best Practices](/docs/send-data/best-practices).
 2. In the Advanced section, specify the following configurations:
     3. **Enable Timestamp Parsing**. True
     4. **Time Zone**. Logs are in UTC by default
@@ -100,7 +100,7 @@ Copy and paste the **token** in a secure location. You will need this when you c
 
 Before your can configure Sumo Logic to ingest logs, you must set up remote log streaming on Cylance. For instructions, refer to the following documentation:
 
-1. In Cylance, go to **Settings > Application**. \
+1. In Cylance, go to **Settings > Application**.
 
 2. In the **Integrations **section, activate the **Syslog/SIEM** check box.  
 3. Under **Event Types**, activate the checkboxes for all events.  
@@ -112,7 +112,7 @@ Before your can configure Sumo Logic to ingest logs, you must set up remote log 
 8. Enter your **Port**.
 9. For **Severity,** select **Alert (1)**.
 10. For **Facility,** select **Internal (5)**.
-11. For **Custom Token,** enter the token from the Sumo Logic [Cloud Syslog Source](/docs/send-data/Sources/hosted-collectors/Cloud-Syslog-Source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
+11. For **Custom Token,** enter the token from the Sumo Logic [Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
 12. Click **Save**.
 
 
@@ -213,7 +213,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 20
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

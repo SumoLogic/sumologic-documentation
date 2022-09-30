@@ -2,6 +2,7 @@
 id: filter-template-variables
 title: Filtering Dashboards (New) with Template Variables
 sidebar_label: Filtering with Template Variables
+description: Learn how to use template variables to dynamically filter dashboard data.
 ---
 
 Template variables are a feature of Dashboard (New) that allow you to analyze specific data on demand. They give you the ability to filter the data displayed on your dashboard so you can quickly troubleshoot a problem. Queries can be changed on the fly by choosing values for variables from drop-down lists without having to manually edit queries.
@@ -48,7 +49,7 @@ To add a Custom List variable to a dashboard, do the following:
 
     ![create dashboard filter.png](/img/dashboards-new/filter-template-variables/create-dashboard-filter.png)
 
-1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (\_), are not allowed in value names.
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.
 
 ![Create Template Variable dialog.png](/img/dashboards-new/filter-template-variables/Create-Template-Variable-dialog.png)
 
@@ -74,7 +75,7 @@ To add a Metrics Metadata Search variable to a dashboard, do the following:
 
     ![create dashboard filter.png](/img/dashboards-new/filter-template-variables/create-dashboard-filter.png)
 
-1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (\_), are not allowed in value names.
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.
 
     ![dashboard new metrics metadata search variable.png](/img/dashboards-new/filter-template-variables/dashboard-new-metrics-metadata-search-variable.png)
 
@@ -100,7 +101,7 @@ To add a Logs Search variable to a dashboard, do the following:
 
     ![create dashboard filter.png](/img/dashboards-new/filter-template-variables/create-dashboard-filter.png)
 
-1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (\_), are not allowed in value names.
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.
 
     ![Variable for logs search.png](/img/dashboards-new/filter-template-variables/Variable-for-logs-search.png)
 
@@ -166,7 +167,7 @@ To use a variable in a logs query, do the following:
 
 Wrap string literal variables in quotes `"{\<variable_nam\>}}"`. If your values are text you need to wrap the variable in quotes.
 
-When including** **the option to select all values (\*), use the [matches](../search/search-query-language/search-operators/matches.md) operator. Otherwise `*` will not do an "all" filter, it will filter against the literal asterisk "\*" string.
+When including** **the option to select all values (\*), use the [matches](../search/search-query-language/operators#matches) operator. Otherwise `*` will not do an "all" filter, it will filter against the literal asterisk "\*" string.
 
 For example,
 
