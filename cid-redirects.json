@@ -20,5 +20,7 @@
     "/cid/9003": "/docs/integrations/microsoft-azure/windows-json",
     "/cid/9002": "/docs/integrations/web-servers/nginx-ingress",
     "/cid/9000": "/docs/integrations/app-development/jmx",
-     "/cid/900": "/docs/beta"
+    "/cid/900": "/docs/beta",
+    "/cid/8992": "/docs/search/search-query-language/math-expressions",
+    "/cid/8989": "/docs/integrations/saml/onelogin"
 }
