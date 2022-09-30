@@ -8,7 +8,7 @@ description: Learn about the metadata attached to metrics.
 Sumo Logic automatically adds several metadata fields to metrics at ingestion time. Sumo Logic uses metrics metadata in a number of ways. For instance, you can use metadata to scope your metrics queries.  
 
 :::tip
-For a list of Sumo Logic metrics sources, see [Metrics Sources](/docs/metrics/introduction/overview-sumo-metrics).  
+For a list of Sumo Logic metrics sources, see [Metrics Sources](/docs/metrics/introduction).  
 :::
 
 
