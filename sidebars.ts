@@ -1815,7 +1815,6 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'cse/administration/index'},
           items: [
-            'cse/administration/cloud-siem-enterprise-feature-update',
             'cse/administration/create-use-network-blocks',
             'cse/administration/create-a-custom-tag-schema',
             'cse/administration/create-custom-threat-intel-source',
@@ -1922,11 +1921,6 @@ module.exports = {
           link: {type: 'doc', id: 'cse/sensors/index'},
           items: [
             'cse/sensors/sensor-download-locations',
-            'cse/sensors/windows-sensor-overview',
-            'cse/sensors/windows-sensor-installation',
-            'cse/sensors/windows-sensor-configuration-settings',
-            'cse/sensors/windows-sensor-health-status-messages',
-            'cse/sensors/windows-sensor-troubleshooting',
             'cse/sensors/network-sensor-deployment-guide',
             'cse/sensors/network-sensor-troubleshooting',
             'cse/sensors/cloud-sensor-guide',
@@ -1942,8 +1936,6 @@ module.exports = {
           link: {type: 'doc', id: 'cse/integrations/index'},
           items: [
             'cse/integrations/configuring-threatq-source-in-cse',
-            'cse/integrations/forward-cse-data-to-sumo',
-            'cse/integrations/forward-cse-signals-to-sumo',
             'cse/integrations/insight-enrichment-server',
             'cse/integrations/enable-virustotal-enrichment',
             'cse/integrations/integrate-cse-with-taxii-feed',
