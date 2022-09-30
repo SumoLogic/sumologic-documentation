@@ -3,7 +3,9 @@ id: operators
 title: Metrics Operators
 ---
 
-Below are Sumo Logic metrics-supported operators and provides examples of queries containing each type of operator.
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+This topic describes Sumo Logic metrics operators and provides usage examples.
 
 
 ## accum
@@ -385,8 +387,7 @@ The `ewma` operator computes an Exponentially Weighted Moving Average (EWMA) on 
 You can optionally run `ewma` with either:
 
 * An explicit `alpha` smoothing parameter to smooth time series while preserving trends. This is useful if you want to explicitly set the smoothing parameter value.
-* A `span` over a number of points. The `span` parameter is commonly understood as an N-Day Exponentially Weighted Moving Average. The *span* value is the number of data points that will be used to calculate the average. The decay (smoothing) parameter alpha  is related to span as: \
-`alpha = 2/(span + 1)`
+* A `span` over a number of points. The `span` parameter is commonly understood as an N-Day Exponentially Weighted Moving Average. The *span* value is the number of data points that will be used to calculate the average. The decay (smoothing) parameter alpha  is related to span as:  `alpha = 2/(span + 1)`
 
 The most commonly used parameter is `span`, which allows you to specify the number of data points you want to use for smoothing. The higher the value of `span`, the smoother the time series will be. You might choose to use `alpha` if you know what smoothing parameter value you want use. Keep in mind that the lower the `alpha` value is, the smoother the time series will be.
 
@@ -1010,7 +1011,29 @@ This query calculates the total of the `cpu_system` metric values across all tim
 cluster=search metric=cpu_idle | sum by node
 ```  
 
+## timeshift
 
+The `timeshift` operator shifts the time series from your metrics query by a specified period of time.
+
+#### timeshift syntax 
+
+`timeshift TIME_INTERVAL` 
+
+Where:
+
+* `TIME_INTERVAL` is a time interval in millisecond(ms), seconds (s), minutes (m), hours (h), or days (d).
+
+#### Example 
+
+Query #A returns the `cpu_idle` metric for the currently selected query time range, the last 15 minutes. 
+
+`#A _sourceCategory=prod/host _sourceHost=my-mac= metric=cpu_idle `
+
+Query #B returns the `cpu_idle` metric for the 15 minute period that ended two hours ago. 
+
+`#B _sourceCategory=prod/host _sourceHost=my-mac= metric=cpu_idle | timeshift 2h`
+
+<img src={useBaseUrl('img/metrics/timeshift.png')} alt="your description" />
 
 ## timeslice
 

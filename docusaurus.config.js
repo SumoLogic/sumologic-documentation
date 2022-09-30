@@ -4,8 +4,12 @@
 
 // Documentation page id for open source: sumo-logic-open-source-projects
 
+const fs = require('fs')
+
 const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
 const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
+
+const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString())
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -116,13 +120,9 @@ module.exports = {
     'react-iframe',
     ['@docusaurus/plugin-client-redirects',
       {
-        redirects: [
-          {
-            //CID REDIRECTS: Enter a from: of the /cid=##### with the path to the file for to: for each CID!
-            to: '/docs/contributing/markdown-cheat-sheet',
-            from: '/cid=1234',
-          },
-        ]
+        redirects: Object.entries(cidRedirects).map(
+          ([key, value]) => ({ from: key, to: value })
+        )
       },
     ],
   ],
@@ -479,23 +479,6 @@ module.exports = {
             position: 'right',
             to: 'https://github.com/SumoLogic/sumologic-documentation',
           },
-//            items:[
-//              {
-  //              label: 'Docs GitHub',
-    //            href: 'https://github.com/SumoLogic/sumologic-documentation',
-      //        },
-        //      {
-//                label: 'Contribution Guide',
-//                href: '/docs/contributing',
-//              },
-//            ]
-//          },
-          {
-            label: ' ',
-            className: 'header-search-link',
-            to: 'https://app.sitesearch360.com/demo/18891?auth=627bf5a32ba2ed7f1e7dbe02a13a5a5ae13c5c4d',
-            position: 'right',
-          },
         ],
       },
       footer: {
@@ -559,8 +542,8 @@ module.exports = {
                 href: 'https://github.com/SumoLogic',
               },
               {
-                label: 'Sumo Incubator Projects',
-                href: 'https://github.com/SumoLogic-Incubator',
+                label: 'Sumo Labs Projects',
+                href: 'https://github.com/SumoLogic-Labs',
               },
               {
                 label: 'Sumo Dojo Slack',

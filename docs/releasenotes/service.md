@@ -9,6 +9,37 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Service Release Notes for the current year are listed here. If you need to see previous Service Release Notes, check the [Archive](docs/releasenotes/archive).
 
+
+---
+## September 22, 2022 (Security)
+
+Collection
+Update - Good news! We've increased the number of Cloud-to-Cloud Sources that customers with paid Sumo Logic subscriptions can have, from 20 to 50. For users of free accounts, the limit remains 20 Cloud-to-Cloud Sources. For more information, see [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
+
+Metrics
+Update - We've updated the release note published on August 30, 2022, which incorrectly stated that the timeslice metrics operator had been released.
+
+---
+## September 27, 2022 (Metrics)
+
+New - We're happy to announce two new metrics operators:
+
+* [ewma](docs/metrics/metric-queries-alerts/operators.md#ewma)—Computes an exponentially weighted moving average on a stream of metrics. This allows you to smooth out short-term fluctuations (outliers) and display long-term trends.
+* [where](docs/metrics/metric-queries-alerts/operators.md#where)—Allows you to filter data points by value. 
+
+---
+## September 27, 2022 (Observability)
+
+Update - We are announcing a minor update of the AWS Observability 2.5.1. This contains changes required due to the end of support for Node.js 12.x in the AWS Lambda as announced [here](https://aws.amazon.com/blogs/developer/announcing-the-end-of-support-for-node-js-12-x-in-the-aws-sdk-for-javascript-v3/) by AWS. As part of this update, the Node.js runtime environment for AWS Observability Lambda functions has been updated to 16.x. For more information on updating the AWS Observability to the latest version, see [Update AWS Observability Stack](docs/observability/aws/deploy-use-aws-observability/update-aws-observability-stack.md).
+
+---
+## September 22, 2022 (Collection)
+
+Update - Good news! We've increased the number of Cloud-to-Cloud Sources that customers with paid Sumo Logic subscriptions can have, from 20 to 50. For users of free accounts, the limit remains 20 Cloud-to-Cloud Sources. For more information, see [Cloud-to-Cloud Integration Framework](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/index.md).
+
+## September 22, 2022 (Metrics)
+Update - We've updated the release note published on [August 30, 2022](#august-30-2022-metrics), which incorrectly stated that the timeslice metrics operator had been released.
+
 ---
 ## September 19, 2022 (Security)
 
