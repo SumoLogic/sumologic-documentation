@@ -100,19 +100,19 @@ module.exports = {
         },
       }),
     ],
-    [
-      'redocusaurus',
-      {
-        specs: [
-          {
-            id: 'sumoapi',
-            //specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
-            spec: 'sumologic-api.yaml',
-            route: '/sumoapi/',
-          },
-        ],
-      },
-    ],
+  //  [
+  //    'redocusaurus',
+  //    {
+  //      specs: [
+  //        {
+  //          id: 'sumoapi',
+  //          //specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
+  //          spec: 'sumologic-api.yaml',
+  //          route: '/sumoapi/',
+  //        },
+  //      ],
+  //    },
+  //  ],
   ],
   plugins: [
     'docusaurus-plugin-sass',
