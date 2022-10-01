@@ -2085,10 +2085,10 @@ module.exports = {
       collapsed: false,
       link: {type: 'doc', id: 'releasenotes/index'},
       items: [
+        'releasenotes/service',
         'releasenotes/cloud-siem',
         'releasenotes/collector',
         'releasenotes/developer',
-        'releasenotes/service',
         {
           type: 'category',
           label: 'Archive',
