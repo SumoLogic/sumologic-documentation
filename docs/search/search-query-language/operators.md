@@ -1,6 +1,6 @@
 ---
 id: operators
-title: Search Operators
+title: Sumo Logic Search Operators
 description: Process data in meaningful ways and provide logic to queries with search operators. This page lists the available search operators in Sumo's search query language.
 ---
 
@@ -15,7 +15,7 @@ Use the right-nav menu to search operators, then click on a description to expan
 ---
 ## accum
 
-<details><summary><small>Calculates the cumulative sum of a field. It can be used to find a count by a specific time interval and can be used to find a total running count across all intervals.</small></summary>
+<details><summary><small>The <code>accum</code> operator calculates the cumulative sum of a field. It can be used to find a count by a specific time interval and can be used to find a total running count across all intervals.</small></summary>
 
 **Syntax**
 
@@ -70,7 +70,7 @@ produces results of a running total for each user's requests, similar to:
 ---
 ## as operator
 
-<details><summary><small>Typically used in conjunction with other operators, but it can also be used alone to rename fields or to create new constant fields.</small></summary>
+<details><summary><small>The <code>as</code> operator is typically used in conjunction with other operators, but it can also be used alone to rename fields or to create new constant fields.</small></summary>
 
 **Syntax**
 
@@ -204,7 +204,7 @@ _sourceCategory=stream "remote_ip="
 ---
 ## backshift
 
-<details><summary><small>Helps you compare values as they change over time. It simply shifts the data points it is given and returns them in your results in a new field.</small></summary>
+<details><summary><small>The <code>backshift</code> operator helps you compare values as they change over time. It simply shifts the data points it is given and returns them in your results in a new field.</small></summary>
 
 The backshift operator can be used with [rollingstd](#rollingstd), [smooth](#smooth), or any other operators whose results could be affected by spikes of data (where a spike could possibly throw off future results).
 
@@ -253,7 +253,7 @@ Then you can visualize the results as an area chart.
 ---
 ## base64Decode
 
-<details><summary><small>Takes a base64 string and converts it to an ASCII string. Input must be a valid base64 string. Invalid input is returned unaltered.</small></summary>
+<details><summary><small>The <code>base64Decode</code> operator takes a base64 string and converts it to an ASCII string. Input must be a valid base64 string. Invalid input is returned unaltered.</small></summary>
 
 **Syntax**
 
@@ -296,7 +296,7 @@ The following example returns `V` with a value of `This is a test string`:
 ---
 ## base64Encode
 
-<details><summary><small>Takes an ASCII string and converts it to a base64 string.</small></summary>
+<details><summary><small>The <code>base64Encode</code> operator takes an ASCII string and converts it to a base64 string.</small></summary>
 
 **Syntax**
 
@@ -321,7 +321,7 @@ Returns `base64` with a value of `aGVsbG8gd29ybGQ=`.
 ---
 ## bin
 
-<details><summary><small>Assigns output results to user defined bins. A bin is configured to hold a range of values that can be used for sorting results in a histogram and further aggregation. It is a quick and effective way to visualize the distribution of data.</small></summary>
+<details><summary><small>The <code>bin</code> operator assigns output results to user defined bins. A bin is configured to hold a range of values that can be used for sorting results in a histogram and further aggregation. It is a quick and effective way to visualize the distribution of data.</small></summary>
 
 **Syntax**
 
@@ -563,9 +563,9 @@ Where:
 </details>
 
 ---
-## Compare
+## compare
 
-<details><summary><small>The compare operator can be used with the <strong>Time Compare</strong> button in the Sumo interface, which automatically generates the appropriate syntax and adds it to your aggregate query. See <a href="/docs/search/time-compare">Time Compare</a> for details. The following information can also be found documented in Time Compare.</small></summary>
+<details><summary><small>The <code>compare</code> operator can be used with the <strong>Time Compare</strong> button in the Sumo interface, which automatically generates the appropriate syntax and adds it to your aggregate query. See <a href="/docs/search/time-compare">Time Compare</a> for details. The following information can also be found documented in Time Compare.</small></summary>
 
 You can use compare to:
 
@@ -808,7 +808,7 @@ _sourceCategory=analytics
 ---
 ## concat
 
-<details><summary><small>The Concat operator allows you to concatenate or join multiple strings, numbers, and fields into a single user-defined field. It concatenates strings end-to-end and joins them into a new string that you define. For example, to concatenate the words "foot" and "ball" would give you "football". You can also use punctuation and spaces in quotes to concatenate strings in a readable way.</small></summary>
+<details><summary><small>The <code>concat</code> operator allows you to concatenate or join multiple strings, numbers, and fields into a single user-defined field. It concatenates strings end-to-end and joins them into a new string that you define. For example, to concatenate the words "foot" and "ball" would give you "football". You can also use punctuation and spaces in quotes to concatenate strings in a readable way.</small></summary>
 
 In another example, a log message has a table with the elements of a mailing address, but separated into different fields such as `Street_Number`, `City`, `State`, and `Zip_Code`. You can use the concatenate operate to assemble the fields into a new field called `Mailing_Address` for a customer.
 
@@ -902,7 +902,7 @@ For information on formatting strings, see [Format](#format) operator.
 ---
 ## contains
 
-<details><summary><small>The contains operator compares string values of two <a href="/docs/search/search-query-language/parse-operators">parsed</a> fields and returns a boolean result based on whether the second field's value exists in the first.</small></summary>
+<details><summary><small>The <code>contains</code> operator compares string values of two <a href="/docs/search/search-query-language/parse-operators">parsed</a> fields and returns a boolean result based on whether the second field's value exists in the first.</small></summary>
 
 
 **Syntax**
@@ -950,7 +950,7 @@ Parsing the log so the fields are `city` with the value "San Francisco" and `a
 ---
 ## decToHex
 
-<details><summary><small>Converts a long value of 16 or fewer digits to a hexadecimal string using Two's Complement for negative values.</small></summary>
+<details><summary><small>The <code>decToHex</code> operator converts a long value of 16 or fewer digits to a hexadecimal string using Two's Complement for negative values.</small></summary>
 
 :::note
 Hexadecimal string is always returned in upper-case.
@@ -989,7 +989,7 @@ The following returns `d` with a value of `46`:
 ---
 ## dedup
 
-<details><summary><small>Removes duplicate results. You have the option to remove consecutively and by specific fields. This allows you to filter your results to identify the most recent or last few events based on an identical combination of results.</small></summary>
+<details><summary><small>The <code>dedup</code> operator removes duplicate results. You have the option to remove consecutively and by specific fields. This allows you to filter your results to identify the most recent or last few events based on an identical combination of results.</small></summary>
 
 For example, to find the most recent value of services you'd use the following operation: `| dedup 1 by service`.
 
@@ -1094,7 +1094,7 @@ Returns the following results:
 ---
 ## diff
 
-<details><summary><small>Calculates the rate of change in a field between consecutive rows. To produce results, diff requires that a specified field contain numeric data; any non-numerical values are removed from the search results.</small></summary>
+<details><summary><small>The <code>diff</code> operator calculates the rate of change in a field between consecutive rows. To produce results, diff requires that a specified field contain numeric data; any non-numerical values are removed from the search results.</small></summary>
 
 Diff does not sort data but instead operates on rows in the order that they appear in the input stream, subtracting the number in a field from the number in the same field in the previous line.
 
@@ -1154,7 +1154,7 @@ appears when you attempt to add it.
 ---
 ## fields
 
-<details><summary><small>Allows you to specify which fields to display and their order in the results of a query. Use a fields operator to reduce the "clutter" of a search output that contains fields that aren't completely relevant to your query.</small></summary>
+<details><summary><small>The <code>fields</code> operator allows you to specify which fields to display and their order in the results of a query. Use a fields operator to reduce the "clutter" of a search output that contains fields that aren't completely relevant to your query.</small></summary>
 
 There are two fields operator modes:
 
@@ -1279,7 +1279,7 @@ Sumo displays the **status_code** field first, and the **method** field second.
 ---
 ## fillmissing
 
-<details><summary><small>When you run a standard <a href="/docs/search/search-query-language/group-aggregate-operators">group-by</a> query, Sumo Logic only returns non-empty groups in the results. For example, if your query is grouping by timeslice, then only the timeslices that have data are returned.</small></summary>
+<details><summary><small>The <code>fillmissing</code> operator allows you to specify groups that should be represented in data output. When you run a standard <a href="/docs/search/search-query-language/group-aggregate-operators">group-by</a> query, Sumo Logic only returns non-empty groups in the results. For example, if your query is grouping by timeslice, then only the timeslices that have data are returned.</small></summary>
 
 This can be a problem because:
 
@@ -1544,7 +1544,7 @@ This query provides the following results:
 ---
 ## filter operator
 
-<details><summary><small>Use the filter operator to filter the output of a search based on the filtering criteria of a child query. The filter operator keeps only the records that match the filter criteria, allowing you to restrict search results to the most relevant information.</small></summary>
+<details><summary><small>Use the <code>filter</code> operator to filter the output of a search based on the filtering criteria of a child query. The filter operator keeps only the records that match the filter criteria, allowing you to restrict search results to the most relevant information.</small></summary>
 
 **Syntax**
 
@@ -1602,7 +1602,7 @@ _sourceCategory=HttpServers
 ---
 ## format
 
-<details><summary><small>Allows you to format and combine data from parsed fields. Numbers, strings, and dates can be formatted into a user-defined string. This allows data in logs, such as dates or currency amounts, to be formatted as human readable, when otherwise it would be hard to decipher.</small></summary>
+<details><summary><small>The <code>format</code> operator allows you to format and combine data from parsed fields. Numbers, strings, and dates can be formatted into a user-defined string. This allows data in logs, such as dates or currency amounts, to be formatted as human readable, when otherwise it would be hard to decipher.</small></summary>
 
 The [Concat](#concat) operator is a simpler version of the Format operator, and may be used instead for simpler use cases.
 
@@ -1702,7 +1702,7 @@ For more options, see [toLowerCase and toUpperCase](#toLowerCase-and-toUpperCas
 ---
 ## formatDate
 
-<details><summary><small>Allows you to format dates in log files as a string in the format you require, such as US date formatting, European formatting, and timestamps. </small></summary>
+<details><summary><small>The <code>formatDate</code> operator allows you to format dates in log files as a string in the format you require, such as US date formatting, European formatting, and timestamps. </small></summary>
 
 **Syntax**
 
@@ -2119,7 +2119,7 @@ returns results similar to:
 ---
 ## hash
 
-<details><summary><small>The hash operator uses a cryptographic hash algorithm to obscure data into a random string value. The operator supports MD5, SHA1, SHA2, and MurmurHash3 algorithms. The default is MD5 if no algorithm is specified.</small></summary>
+<details><summary><small>The <code>hash</code> operator uses a cryptographic hash algorithm to obscure data into a random string value. The operator supports MD5, SHA1, SHA2, and MurmurHash3 algorithms. The default is MD5 if no algorithm is specified.</small></summary>
 
 This is helpful when working with sensitive data such as email addresses, usernames, credit cards, and social security numbers. Each unique value will have a unique hash code allowing you to maintain anonymity.
 
@@ -2184,7 +2184,7 @@ Create a unique identifier for each log message by concatenating the built-in me
 ---
 ## haversine
 
-<details><summary><small>Returns the distance between latitude and longitude values of two coordinates in kilometers. Coordinates need to be positive or negative values based on being north/south or east/west, instead of using the terms N/S, E/W.</small></summary>
+<details><summary><small>The <code>haversine</code> operator returns the distance between latitude and longitude values of two coordinates in kilometers. Coordinates need to be positive or negative values based on being north/south or east/west, instead of using the terms N/S, E/W.</small></summary>
 
 **Syntax**
 
@@ -2213,7 +2213,7 @@ To convert kilometers (KM) to miles you can divide the KM value by 1.609344.
 ---
 ## hexToAscii
 
-<details><summary><small>Converts a hexadecimal string to an ASCII string.</small></summary>
+<details><summary><small>The <code>hexToAscii</code> operator converts a hexadecimal string to an ASCII string.</small></summary>
 
 **Syntax**
 
@@ -2238,7 +2238,7 @@ The following returns `V` with a value of `hello world`:
 ---
 ## hexToDec
 
-<details><summary><small>Converts a hexadecimal string of 16 or fewer
+<details><summary><small>The <code>hexToDec</code> operator converts a hexadecimal string of 16 or fewer
 characters to a long data type using Two's Complement for negative values.</small></summary>
 
 **Syntax**
@@ -2272,7 +2272,7 @@ The following returns `V` with a value of `4919`
 ---
 ## if operator and ?
 
-<details><summary><small>There are two forms of ternary expression you can use in Sumo Logic queries: one is constructed using the <code>IF</code> operator, and the other uses the question mark (<code>?</code>) operator. The syntax varies slightly, but the results are equivalent. You can use the syntax you are most comfortable with.</small></summary>
+<details><summary><small>There are two forms of ternary expression you can use in Sumo Logic queries: one is constructed using the <code>if</code> operator, and the other uses the question mark (<code>?</code>) operator. The syntax varies slightly, but the results are equivalent. You can use the syntax you are most comfortable with.</small></summary>
 
 These expressions are used to evaluate a condition as either true or false, with values assigned for each outcome. It is a shorthand way to express an if-else condition. On the basis of the test, the entire expression returns `value_if_true` if the condition is `true`, else `value_if_false` if the condition is `false`. The two sub-expressions (`value_if_true` and `value_if_false`) must have the same type.
 
@@ -2342,7 +2342,7 @@ For information on handling null values, see [isNull](#isNull) operator.
 ---
 ## in operator
 
-<details><summary><small>The In operator returns a Boolean value: true if the specified property is in the specified object, or false if it is not.</small></summary>
+<details><summary><small>The <code>in</code> operator returns a Boolean value: true if the specified property is in the specified object, or false if it is not.</small></summary>
 
 **Syntax**
 
@@ -2375,7 +2375,7 @@ would return results similar to:
 ---
 ## ipv4ToNumber
 
-<details><summary><small>Allows you to convert an Internet Protocol version 4 (IPv4) IP address from the octet dot-decimal format to a decimal format. This decimal format makes it easier to compare one IP address to another, rather than relying on IP masking.</small></summary>
+<details><summary><small>The <code>ipv4ToNumber</code> operator allows you to convert an Internet Protocol version 4 (IPv4) IP address from the octet dot-decimal format to a decimal format. This decimal format makes it easier to compare one IP address to another, rather than relying on IP masking.</small></summary>
 
 :::tip
 The [CIDR operator](#CIDR) allows you to leverage CIDR (Classless Inter-Domain Routing) notation to narrow the analysis of IPv4 networks to specific subnets.
@@ -2518,7 +2518,7 @@ To check for null values from a lookup operation, use a query like:
 ---
 ## isNumeric
 
-<details><summary><small>Checks whether a string is a valid Java number. Valid numbers include hexadecimals marked with the 0x or 0X qualifier, octal numbers, scientific notation and numbers marked with a type qualifier, like <code>123L</code>. </small></summary>
+<details><summary><small>The <code>isNumeric</code> operator checks whether a string is a valid Java number. Valid numbers include hexadecimals marked with the 0x or 0X qualifier, octal numbers, scientific notation and numbers marked with a type qualifier, like <code>123L</code>. </small></summary>
 
 **Syntax**
 
@@ -2555,7 +2555,7 @@ The following returns `true`:
 ---
 ## isPrivateIP
 
-<details><summary><small>Checks if an IPv4 address is private and returns a boolean.</small></summary>
+<details><summary><small>The <code>isPrivateIP</code> operator checks if an IPv4 address is private and returns a boolean.</small></summary>
 
 **Syntax**
 
@@ -2604,7 +2604,7 @@ The following returns `false`:
 ---
 ## isPublicIP
 
-<details><summary><small>Checks if an IPv4 address is public and returns a boolean.</small></summary>
+<details><summary><small>The <code>isPublicIP</code> operator checks if an IPv4 address is public and returns a boolean.</small></summary>
 
 **Syntax**
 
@@ -2641,7 +2641,7 @@ The following returns `false`:
 ---
 ## isReservedIP
 
-<details><summary><small>Checks if an IPv4 address is reserved as defined by <a href="https://tools.ietf.org/html/rfc5735">RFC 5735</a> and returns a boolean.</small></summary>
+<details><summary><small>The <code>isReservedIP</code> operator checks if an IPv4 address is reserved as defined by <a href="https://tools.ietf.org/html/rfc5735">RFC 5735</a> and returns a boolean.</small></summary>
 
 **Syntax**
 
@@ -2687,7 +2687,7 @@ The following returns `true`:
 ---
 ## isValidIP, isValidIPv4, isValidIPv6
 
-<details><summary><small>The **isValidIP** operator checks if the value is a valid IP address. The **isValidIPv4** and **isValidIPv6** operators check if the value is a valid IPv4 or IPv6 address respectively. </small></summary>
+<details><summary><small>The <code>isValidIP</code> operator checks if the value is a valid IP address. The <code>isValidIPv4</code> and <code>isValidIPv6</code> operators check if the value is a valid IPv4 or IPv6 address respectively. </small></summary>
 
 **Syntax**
 
@@ -2754,7 +2754,7 @@ The following returns `false`:
 ---
 ## join
 
-<details><summary><small>The **join** operator combines records of two or more data streams. Results are admitted on-the-fly to allow real time tables to be built. Values common to each table are then delivered as search results. The join operator in Sumo Logic works much like an <a href="https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join">inner SQL join</a>.</small></summary>
+<details><summary><small>The <code>join</code> operator combines records of two or more data streams. Results are admitted on-the-fly to allow real time tables to be built. Values common to each table are then delivered as search results. The join operator in Sumo Logic works much like an <a href="https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join">inner SQL join</a>.</small></summary>
 
 **Syntax**
 
@@ -2960,9 +2960,9 @@ on t1.a = t2.c
 ---
 ## length
 
-<details><summary><small>The Length operator returns the number of characters in a string. You can use it in where clauses or to create new fields.</small></summary>
+<details><summary><small>The <code>length</code> operator returns the number of characters in a string. You can use it in where clauses or to create new fields.</small></summary>
 
-For example, you'd use the Length operator in free text fields where content is arbitrary to find cases where the field has a substantial amount of text using **length() \> minimum** in a query. Or in a case where a long length would be abnormal, you can find these strings quickly using **length() \> 10000** in a query.
+For example, you'd use the Length operator in free text fields where content is arbitrary to find cases where the field has a substantial amount of text using **length() > minimum** in a query. Or in a case where a long length would be abnormal, you can find these strings quickly using **length() > 10000** in a query.
 
 **Syntax**
 
@@ -3004,7 +3004,7 @@ _sourceCategory=apache error
 ---
 ## limit
 
-<details><summary><small>The limit operator reduces the number of raw messages or aggregate results returned. If you simply query for a particular term, for example "error" without using an aggregation operator such as group by, limit will reduce the number of raw messages returned. If you first use group-by or other aggregation operator, the limit operator will reduce the number of grouped results instead.</small></summary>
+<details><summary><small>The <code>limit</code> operator reduces the number of raw messages or aggregate results returned. If you simply query for a particular term, for example "error" without using an aggregation operator such as group by, limit will reduce the number of raw messages returned. If you first use group-by or other aggregation operator, the limit operator will reduce the number of grouped results instead.</small></summary>
 
 The limit operator is useful for creating lists of events for a Dashboard, which allows you to see at a glance, for example, the "Top 10" service operations, system operations, errors, or other system or user activities.
 
@@ -3074,7 +3074,7 @@ See [Sort](#sort) operator for more information.
 ---
 ## lookup (Classic)
 
-<details><summary><small>The lookup operator maps data in your log messages to meaningful information saved in Sumo or on an HTTPS server. For example, you'd use a lookup operator to map "userID" to a real user's name. Or, you'd use a lookup operator to find deny-listed IP addresses.</small></summary>
+<details><summary><small>The <code>lookup</code> (classic) operator maps data in your log messages to meaningful information saved in Sumo or on an HTTPS server. For example, you'd use a lookup operator to map "userID" to a real user's name. Or, you'd use a lookup operator to find deny-listed IP addresses.</small></summary>
 
 In either case, you will point the operator to one of the following:
 
@@ -3410,7 +3410,7 @@ and if a match is found, we return the value of two fields from the matching r
 ---
 ## lookupContains
 
-<details><summary><small>Use this to determine whether a key exists in a lookup table. It will return a boolean value.</small></summary>
+<details><summary><small>Use the lookupContains operator to determine whether a key exists in a lookup table. It will return a boolean value.</small></summary>
 
 **Syntax**
 
@@ -3478,7 +3478,7 @@ Where:
 ---
 ## Luhn
 
-<details><summary><small>Uses Luhn’s algorithm to check message logs for strings of numbers that may be credit card numbers and then validates them. It takes a string as an input, strips out all characters that are not numerals, and checks if the resulting string is a valid credit card number, returning true or false accordingly.</small></summary>
+<details><summary><small>The luhn operator uses Luhn’s algorithm to check message logs for strings of numbers that may be credit card numbers and then validates them. It takes a string as an input, strips out all characters that are not numerals, and checks if the resulting string is a valid credit card number, returning true or false accordingly.</small></summary>
 
 **Syntax**
 
@@ -3561,7 +3561,7 @@ When casting a field, remember to separate the casting statement with a pipe, li
 ---
 ## matches
 
-<details><summary><small>Can be used to match a string to a wildcard pattern or an RE2 compliant regex. The operator returns a boolean value; the operator can be used with <code>where</code> or <code>if</code> operators.</small></summary>
+<details><summary><small>The matches operator can be used to match a string to a wildcard pattern or an RE2 compliant regex. The operator returns a boolean value; the operator can be used with <code>where</code> or <code>if</code> operators.</small></summary>
 
 Matches can be used in Dashboard Panels, and are very commonly used in conjunction with other operators to build robust queries.
 
@@ -3685,8 +3685,7 @@ The matches operator can match against your parsed fields by using the [concat]
 ---
 ## now
 
-<details><summary><small>Returns the current epoch time in milliseconds. It can be used with the <code>formatDate</code> operator to get the formatted current
-time.</small></summary>
+<details><summary><small>The <code>now</code> returns the current epoch time in milliseconds. It can be used with the <code>formatDate</code> operator to get the formatted current time.</small></summary>
 
 It is important to note that the Now operator outputs the exact time (down to the millisecond) each and every time it is executed. This means that if you use now with every message in a search, it will return slightly different results in every message, as messages are not all processed by your search at once.
 
@@ -3761,7 +3760,7 @@ This query produces results like this:
 ---
 ## outlier
 
-<details><summary><small>Given a series of time-stamped numerical values, using the Outlier operator in a query can identify values in a sequence that seem unexpected, and would identify an alert or violation, for example, for a scheduled search.</small></summary>
+<details><summary><small>Given a series of time-stamped numerical values, using the <code>outlier</code> operator in a query can identify values in a sequence that seem unexpected, and would identify an alert or violation, for example, for a scheduled search.</small></summary>
 
 To do this, the Outlier operator tracks the moving average and standard deviation of a numerical field. An outlier is identified based on a specified *threshold* of standard deviations around the expected value. If a data point is outside the threshold, it is considered to be an outlier.
 
@@ -4005,8 +4004,7 @@ This approach effectively displays the severity of the outlier, because the spik
 ## predict
 
 <details><summary><small>Uses a series of time-stamped numerical values to predict future values. The <code>predict</code> operator can be useful in the following cases:
-<ul><li>As an early warning system, alerting you when a threshold is about to be reached.</li>
-<li>For resource and capacity planning, helpful for determining seasonal impacts, like a Cyber Monday rush on an ecommerce site.</li>
+<ul><li>As an early warning system, alerting you when a threshold is about to be reached.</li><li> For resource and capacity planning, helpful for determining seasonal impacts, like a Cyber Monday rush on an ecommerce site.</li>
 <li>Improved risk calculation.</li></ul></small></summary>
 
 For example, you'd use `predict` to take your current disk space capacity numbers, and predict when your system might run out of disk space. In these cases, the sooner an operations manager is informed that a key threshold is about to be reached the more effectively he or she can plan to avoid service degradation.
@@ -4137,7 +4135,7 @@ Note that, if desired, you can display the `_count_linear` series, to see the va
 ---
 ## queryEndTime()
 
-<details><summary><small>Returns the end time of the search <a href="/docs/search/get-started-with-search/build-search/set-time-range">time range</a> in milliseconds. You can use it in combination with <a href="#queryStartTime">queryStartTime()</a> to establish times and ranges for your non-continuous queries.</small></summary>
+<details><summary><small>The <code>queryEndTime()</code> operator returns the end time of the search <a href="/docs/search/get-started-with-search/build-search/set-time-range">time range</a> in milliseconds. You can use it in combination with <a href="#queryStartTime">queryStartTime()</a> to establish times and ranges for your non-continuous queries.</small></summary>
 
 :::note
 For dashboards in live mode or real time scheduled searches queryTimeRange() is a more suitable option. In most cases the results would still be the same as using queryStartTime() and queryEndTime(), but the latter can be off from the real range by a few milliseconds.
@@ -4176,7 +4174,7 @@ error
 ---
 ## queryStartTime()
 
-<details><summary><small>Returns the start time of the search <a href="/docs/search/get-started-with-search/build-search/set-time-range">time range</a> in milliseconds. You can use it in combination with <a href="#queryEndTime">queryEndTime()</a> to establish times and ranges for your non-continuous queries.</small></summary>
+<details><summary><small>The <code>queryStartTime()</code> operator returns the start time of the search <a href="/docs/search/get-started-with-search/build-search/set-time-range">time range</a> in milliseconds. You can use it in combination with <a href="#queryEndTime">queryEndTime()</a> to establish times and ranges for your non-continuous queries.</small></summary>
 
 :::note
 For dashboards in live mode or real time scheduled searches, queryTimeRange() is a more suitable option. In most cases the results would still be the same as using queryStartTime() and queryEndTime(), but the latter can be off from the real range by a few milliseconds.
@@ -4215,7 +4213,7 @@ error
 ---
 ## queryTimeRange()
 
-<details><summary><small>The queryTimeRange() operator returns the time duration for the query being executed in milliseconds. You can use it to establish time ranges for your continuous queries (CQs). This is a preferred operator for queries that are run in live dashboards or real time scheduled searches since it is more accurate than <a href="#queryStartTime">queryStartTime()</a> and <a href="#queryEndTime">queryEndTime()</a> operators in these cases.</small></summary>
+<details><summary><small>The <code>queryTimeRange()</code> operator returns the time duration for the query being executed in milliseconds. You can use it to establish time ranges for your continuous queries (CQs). This is a preferred operator for queries that are run in live dashboards or real time scheduled searches since it is more accurate than <a href="#queryStartTime">queryStartTime()</a> and <a href="#queryEndTime">queryEndTime()</a> operators in these cases.</small></summary>
 
 
 **Syntax**
@@ -4242,7 +4240,7 @@ error
 ---
 ## replace
 
-<details><summary><small>Allows you to replace all instances of a specified string with another string. You can specify the string to replace with a matching regex or literal text. You might use it to find all instances of a name and change it to a new name or to replace punctuation in a field with different punctuation. This operator is useful anytime you need to rename something.</small></summary>
+<details><summary><small>The <code>replace</code> operator allows you to replace all instances of a specified string with another string. You can specify the string to replace with a matching regex or literal text. You might use it to find all instances of a name and change it to a new name or to replace punctuation in a field with different punctuation. This operator is useful anytime you need to rename something.</small></summary>
 
 
 **Syntax**
@@ -4409,7 +4407,7 @@ _sourceName=Application
 ---
 ## rollingstd
 
-<details><summary><small>The rollingstd operator finds the rolling standard deviation of a field, allowing you to identify changes over time.</small></summary>
+<details><summary><small>The <code>rollingstd</code> operator finds the rolling standard deviation of a field, allowing you to identify changes over time.</small></summary>
 
 For example, you'd use rollingstd in a query to identify spikes in activity for a Collector, or for a URL in your site. You can use a rollingstd to find compute the average number from the past, to identify changes (larger or smaller) over time.
 
@@ -4494,7 +4492,7 @@ Rollingstd is also used with the [Backshift](#backshift) operator.
 ---
 ## save (Lookups Classic)
 
-<details><summary><small>This is the classic version of the `save` operator that works with the classic Lookup Tables feature. For information about the new, more scalable Lookup Tables feature and the new `save` operator that works with it, see <a href="/docs/search/lookup-tables">Lookup Tables</a> and [save](#save). The new `save` operator allows you to merge new and changed rows, whereas, this classic `save` operator can only append to existing rows.</small></summary>
+<details><summary><small>The <code>save</code> (classic) operator works with the classic Lookup Tables feature. For information about the new, more scalable Lookup Tables feature and the new `save` operator that works with it, see <a href="/docs/search/lookup-tables">Lookup Tables</a> and [save](#save). The new `save` operator allows you to merge new and changed rows, whereas, this classic `save` operator can only append to existing rows.</small></summary>
 
 Using the **save** operator allows you to save the results of a query into the Sumo Logic file system. Later, you can use the lookup operator to access the saved data. The save operator saves data in a simple format to a location you choose.
 
@@ -4593,7 +4591,7 @@ _source=config | parse "_user=[*]" as name
 ---
 ## save
 
-<details><summary><small>Allows you to save the results of a query to a lookup table you have already created, as described in <a href="/docs/search/lookup-tables/create-lookup-table">Create a Lookup Table</a>. You can use the <a href="#lookup">lookup</a> and <a href="#cat">cat</a> operator to access the saved data.</small></summary>
+<details><summary><small>The <code>save</code> operator allows you to save the results of a query to a lookup table you have already created, as described in <a href="/docs/search/lookup-tables/create-lookup-table">Create a Lookup Table</a>. You can use the <a href="#lookup">lookup</a> and <a href="#cat">cat</a> operator to access the saved data.</small></summary>
 
 You can use the `append` option with `save` to merge new and changed rows into a lookup table. If you use `save` without `append`, any existing rows in the lookup table will be overwritten by your search results. 
 
@@ -4681,7 +4679,7 @@ _source=config | parse "_user=[*]" as name
 ---
 ## sessionize
 
-<details><summary><small>Allows you to use an extracted value from one log message (generated from one system) to find correlating values in log messages from other systems. After you run sessionize, these related events are displayed on the same page. The thread of logs woven together is called a <i>session</i>.</small></summary>
+<details><summary><small>The <code>sessionize</code> operator allows you to use an extracted value from one log message (generated from one system) to find correlating values in log messages from other systems. After you run sessionize, these related events are displayed on the same page. The thread of logs woven together is called a <i>session</i>.</small></summary>
 
 Depending on your use case, you'd also use the [join](#join) operator, which may be more appropriate and easier to use.
 
@@ -4740,7 +4738,7 @@ Here's an example of the results from this query:
 ---
 ## smooth
 
-<details><summary><small>Calculates the rolling (or moving) average of a field, measuring the average of a value to "smooth" random variation. Smooth operator reveals trends in the data set you include in a query.</small></summary>
+<details><summary><small>The <code>smooth</code> operator calculates the rolling (or moving) average of a field, measuring the average of a value to "smooth" random variation. Smooth operator reveals trends in the data set you include in a query.</small></summary>
 
 Within a query that contains a smooth operator you will choose a window (described as window_length in the syntax below); the average of the values within the window creates a data point.
 
@@ -4840,7 +4838,7 @@ produces results like:
 ---
 ## sort
 
-<details><summary><small>Orders aggregated search results. The default sort order is descending. Then you can use the <code>top</code> or <code>limit</code> operators to reduce the number of sorted results returned.</small></summary>
+<details><summary><small>The <code>sort</code> operator orders aggregated search results. The default sort order is descending. Then you can use the <code>top</code> or <code>limit</code> operators to reduce the number of sorted results returned.</small></summary>
 
 Order is also synonymous with sort. You can use them interchangeably in your queries.
 
@@ -4909,7 +4907,7 @@ For more information, see [Top](#top) operator or [Limit](#limit) operator.
 ---
 ## substring
 
-<details><summary><small>Allows you to specify an offset that will output only part of a string, referred to as a substring. You can use this operator to output just a part of a string instead of the whole string, for example, if you wanted to output an employee’s initials instead of their whole name.</small></summary>
+<details><summary><small>The <code>substring</code> operator allows you to specify an offset that will output only part of a string, referred to as a substring. You can use this operator to output just a part of a string instead of the whole string, for example, if you wanted to output an employee’s initials instead of their whole name.</small></summary>
 
 **Syntax**
 
@@ -4991,7 +4989,7 @@ This query will not work because numerically the endOffset is before the startOf
 ---
 ## threatip
 
-<details><summary><small>Correlates <a href="https://www.crowdstrike.com/sumologic">CrowdStrike's</a> threat intelligence data based on IP addresses from your log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks.</small></summary>
+<details><summary><small>The <code>threatip</code> operator correlates <a href="https://www.crowdstrike.com/sumologic">CrowdStrike's</a> threat intelligence data based on IP addresses from your log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks.</small></summary>
 
 The `threatip` operator uses the same lookup as the [Threat Intel Quick Analysis App](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#viewing-threat-intel-quick-analysis-dashboards) but is simplified for only IP threat lookups. For further details on how this lookup works and what to do with the results see [Threat Intel FAQs](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#Threat-Intel-FAQ).
 
@@ -5049,7 +5047,7 @@ on table1.streamId = table2.streamId
 ---
 ## timeslice
 
-<details><summary><small>Segregates data by time period, so you can create bucketed results based on a fixed interval (for example, five-minute buckets). Timeslice also supports creating a fixed-target number of buckets, for example, 150 buckets over the last 60 minutes.</small></summary>
+<details><summary><small>The timeslice operator aggregates data by time period, so you can create bucketed results based on a fixed interval (for example, five-minute buckets). Timeslice also supports creating a fixed-target number of buckets, for example, 150 buckets over the last 60 minutes.</small></summary>
 
 There are two primary use cases for this operator:
 
@@ -5400,7 +5398,7 @@ We can specify more than one argument to group by. In the query above, we are lo
 ---
 ## total
 
-<details><summary><small>Inserts the sum of a set of fields into every row of the set. Unlike the sum operator, which produces an aggregate value, the total operator inserts the total value as a new column, enabling expressions that compare an individual value to the total.</small></summary>
+<details><summary><small>The <code>total</code> operator inserts the sum of a set of fields into every row of the set. Unlike the sum operator, which produces an aggregate value, the total operator inserts the total value as a new column, enabling expressions that compare an individual value to the total.</small></summary>
 
 **Syntax**
 
@@ -5483,7 +5481,7 @@ produces results similar to:
 ---
 ## tourl
 
-<details><summary><small>Provides you the ability to assign a short name that describes the URL. It is similar to creating a href for the URL with a short name. URLs are generally long and they don't tell you what information is displayed when the URL is opened. A common benefit of using this operator is to provide a description of a URL to display in dashboards.</small></summary>
+<details><summary><small>The <code>tourl</code> operator provides you the ability to assign a short name that describes the URL. It is similar to creating a href for the URL with a short name. URLs are generally long and they don't tell you what information is displayed when the URL is opened. A common benefit of using this operator is to provide a description of a URL to display in dashboards.</small></summary>
 
 
 **Syntax**
@@ -5567,7 +5565,7 @@ When you add the result to a dashboard, you’ll see the short name. When you cl
 ---
 ## trace
 
-<details><summary><small>A trace operator acts as a highly sophisticated filter to connect the dots across different log messages. You can use any identifying value with a trace operator (such as a user ID, IP address, session ID, etc.) to retrieve a comprehensive set of activity associated to that original ID.</small></summary>
+<details><summary><small>The <code>trace</code> operator acts as a highly sophisticated filter to connect the dots across different log messages. You can use any identifying value with a trace operator, such as a user ID, IP address, or session ID, to retrieve a comprehensive set of activity associated to that original ID.</small></summary>
 
 Trace operators require the following:
 
@@ -5765,7 +5763,7 @@ _sourceCategory=Apache/Access
 ---
 ## trim
 
-<details><summary><small>Eliminates leading and trailing spaces from a string field.</small></summary>
+<details><summary><small>The <code>trim</code> operator eliminates leading and trailing spaces from a string field.</small></summary>
 
 **Syntax**
 
@@ -5792,7 +5790,7 @@ This would return a field named greeting with a new value of "Hello World".
 ---
 ## urldecode
 
-<details><summary><small>Decodes a URL you include in a query, returning the decoded (unescaped) URL string.</small></summary>
+<details><summary><small>The <code>urldecode</code> operator decodes a URL you include in a query, returning the decoded (unescaped) URL string.</small></summary>
 
 For example, a URL that looks like this:
 
@@ -5833,7 +5831,7 @@ returns results of each URL, both in the encoded and decoded state, allowing you
 ---
 ## urlencode
 
-<details><summary><small>The urlencode operator encodes the URL into an ASCII character set. This is the standard format in which URLs can be sent over the internet.</small></summary>
+<details><summary><small>The <code>urlencode</code> operator encodes the URL into an ASCII character set. This is the standard format in which URLs can be sent over the internet.</small></summary>
 
 For example, if your URL looks like this:
 
@@ -5876,7 +5874,7 @@ The query returns the field `url` encoded:
 ---
 ## where
 
-<details><summary><small>Use this to filter results based on a boolean expression.</small></summary>
+<details><summary><small>The <code>where</code> operator allows you to filter results based on a boolean expression.</small></summary>
 
 For example, using **where** with the boolean operator [isValidIP](#isvalidip-isvalidipv4-isvalidipv6):
 
