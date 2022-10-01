@@ -7,16 +7,25 @@ description: Looking for more information about new features in the Sumo Logic S
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Service Release Notes for the current year are listed here. If you need to see previous Service Release Notes, check the [Archive](docs/releasenotes/archive).
+Service Release Notes for the current year are listed here. If you need to see previous Service Release Notes, check the [Archive](/docs/releasenotes/archive).
+
+---
+## September 30, 2022 (Traces)
+
+Ability to configure monitors with Search Query Language based on Trace Spans index has been officially enabled for all customers. [Learn more](/docs/apm/traces/working-with-tracing-data/search-query-language-support-for-traces).
+
+Additionally, we now also support:
+* [Scheduled Searches](/docs/alerts/scheduled-searches) for Traces
+* [Scheduled Views](/docs/manage/scheduled-views) for Traces
 
 
 ---
 ## September 22, 2022 (Security)
 
-Collection
+#### Collection
 Update - Good news! We've increased the number of Cloud-to-Cloud Sources that customers with paid Sumo Logic subscriptions can have, from 20 to 50. For users of free accounts, the limit remains 20 Cloud-to-Cloud Sources. For more information, see [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
-Metrics
+#### Metrics
 Update - We've updated the release note published on August 30, 2022, which incorrectly stated that the timeslice metrics operator had been released.
 
 ---

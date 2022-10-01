@@ -16,6 +16,9 @@ Tracing data retention in `_trace_spans` index is the same as default log index
     * Logreduce without a field, value, or key suffices
 * `_index` and `_view` are not supported other than when specified as `_trace_spans`.
 * Adding to Dashboard is supported as long as your total dashboard-originated `_trace_spans `read volume does not exceed 200x of your tracing ingest. Contact your Sumo Logic representative for paid subscription service options for volume requirements exceeding 200x of your tracing ingest.
+* Field extraction rules are not supported as the index has well defined schema
+* Data forwarding is not supported
+
 
 ## Search span data
 
@@ -40,15 +43,16 @@ Syntax: `_any<value>`
 
 The `_any` option is not supported outside of the scope of a query. This is supported for the Security and Tracing tiers.
 
-### Parse
+### Parse Your Spans
 
 You can parse your spans in the same way you parse log data. This includes any value from the **tags** field by using the field option with the JSON operator, for example, `| json field=tags`. See how to Parse JSON Formatted Logs for details.
 
-### View
+### View Your Search Results
 
-When viewing your search results you can add any parsed fields to display by selecting them from the Field Browser on the left, or by using the fields operator in your query. The following image shows a query using the `fields` operator to display `operation`, `service`, `spanid`, `statuscode`, and `traceid`. The Field Browser can also set the fields to display.
+When viewing your search results you can add any parsed fields to display by selecting them from the Field Browser on the left, or by using the fields operator in your query. The following image shows a query using the `fields` operator to display `operation`, `service`, `spanid`, `statuscode`, and `traceid`. The Field Browser can also set the fields to display.<br/> ![spans search with fields highlighted.png](/img/traces/spans-search-with-fields-highlighted.png)
 
-![spans search with fields highlighted.png](/img/traces/spans-search-with-fields-highlighted.png)
+### Monitors and Scheduled Searches
+You can also set Monitors and Scheduled Searches for Traces.
 
 ## Span structure
 
@@ -57,7 +61,6 @@ Each span is written in JSON format. Span attributes are parsed to individual fi
 The following two lists contain the fields returned in your search results after running a query:
 
 Displayed by default:
-
 * Time
 * Message (empty and reserved for future use)
 
