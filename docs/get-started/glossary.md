@@ -24,7 +24,7 @@ If your Sumo role grants you the **Manage Content** capability, you can switch t
 
 An area at the top of the Sumo Library in the Left-Nav that lists highlighted content. A Sumo user with the Manage Content capability can add content to the admin recommended list.
 
-**[Aggregate](https://help.sumologic.com/05Search/Search-Query-Language/aaGroup)**
+**[Aggregate](https://help.sumologic.com/05Search/search-query-language/aaGroup)**
 
 A group of data returned by a search, displayed in a simple table in the Aggregates tab of the Search page.
 
@@ -192,13 +192,13 @@ A graph or map that dynamically displays a directional flow from a source to a t
 
 **[Geo lookup](/docs/search/search-query-language/operators#geo-lookup-map)**
 
-Sumo Logic can match a [parsed](https://help.sumologic.com/05Search/Search-Query-Language/01-Parse-Operators) IPv4 or IPv6 address to its geographical location on a map. To create the map the **lookup** operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated.
+Sumo Logic can match a [parsed](/docs/search/search-query-language/parse-operators) IPv4 or IPv6 address to its geographical location on a map. To create the map the **lookup** operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated.
 
 **[Graphite](https://help.sumologic.com/Metrics/Introduction-to-Metrics/Metric-Formats#Graphite_example)**
 
 A  plaintext metric format where the thing you’re measuring is identified by a dot-separated string, referred to as a metric path. Sumo’s [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) and [Streaming Metric Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Streaming-Metrics-Source) support Graphite metrics.
 
-**[Group](https://help.sumologic.com/05Search/Search-Query-Language/aaGroup)**
+**[Group](https://help.sumologic.com/05Search/search-query-language/aaGroup)**
 
 Group-by functions include count, count_distinct, sum, avg, stddev, max, min, last, and first. You can use "group" or "by" instead of "group by", so "count (*) group by user" is equivalent to "count by user". All group-by functions create a corresponding field preceded by an underscore, for example, _count.
 
@@ -361,7 +361,7 @@ Outliers are log data or metric values in a sequence that seem unexpected, and m
 
 Formerly Monitors. Real-time Panels provide a graphical representation of your organization's data. Data Panels are created by running search queries. From the resulting data in the Search page's Aggregates tab, you can display that data using different types of charts. Once Panels are created, they are saved to a Dashboard.
 
-**[Parse operator](https://help.sumologic.com/05Search/Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor)**
+**[Parse operator](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor)**
 
 The parse operator (also called the parse anchor) parses strings according to specified start and stop anchors, and then labels them as fields for use in subsequent functions in the query such as sorting, grouping, or other functions. Parse options include "parse anchor" or "parse regex" for using regular expressions to form more complex parse queries. It is acceptable to use "parse" for "parse anchor", or "extract" for "parse regex".
 
@@ -491,11 +491,11 @@ A set of timestamped values of a specific measurement.
 
 Timeslice segregates search results by a time period, or by a number of buckets over a search's time range.
 
-**[Transaction operator](https://help.sumologic.com/05Search/Search-Query-Language/Transaction-Analytics/Transaction-Operator)**
+**[Transaction operator](https://help.sumologic.com/05Search/search-query-language/Transaction-Analytics/Transaction-Operator)**
 
 Groups logs in a sequence by referencing a unique identifier in your logs and parsing out meaningful states of the transaction. Results can be returned by the transactions themselves, states, or flow (latency). A flow chart is available when returned by flow.
 
-**[Transactionize operator](https://help.sumologic.com/05Search/Search-Query-Language/Transaction-Analytics/Transactionize-operator)**
+**[Transactionize operator](https://help.sumologic.com/05Search/search-query-language/Transaction-Analytics/Transactionize-operator)**
 
 Groups logs that match on any fields you specify. Unlike other **group by** operators, where the logs in a group must match on all defined fields, transactionize just needs one field to match in order to assign logs to the same group.
 
