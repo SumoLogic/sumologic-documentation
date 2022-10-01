@@ -1,4 +1,22 @@
 {
+    "/cid/5310": "/docs/manage/scheduled-views/run-search-against-scheduled-view",
+    "/cid/5284": "/docs/integrations/pci-compliance/setup",
+    "/cid/5283": "/docs/integrations/pci-compliance/setup",
+    "/cid/5282": "/docs/integrations/pci-compliance/setup",
+    "/cid/5281": "/docs/integrations/pci-compliance/setup",
+    "/cid/5280": "/docs/integrations/pci-compliance/setup",
+    "/cid/5279": "/docs/integrations/pci-compliance/setup",
+    "/cid/5278": "/docs/integrations/pci-compliance/setup",
+    "/cid/5277": "/docs/integrations/pci-compliance/setup",
+    "/cid/5276": "/docs/integrations/pci-compliance/setup",
+    "/cid/5275": "/docs/integrations/pci-compliance/setup",
+    "/cid/5274": "/docs/integrations/pci-compliance/setup",
+    "/cid/5273": "/docs/integrations/pci-compliance/setup",
+    "/cid/5272": "/docs/integrations/pci-compliance/setup",
+    "/cid/5271": "/docs/integrations/pci-compliance/setup",
+    "/cid/5270": "/docs/integrations/pci-compliance/setup",
+    "/cid/5268": "/docs/search/search-query-language/parse-operators",
+    "/cid/5266": "/docs/search/search-query-language/parse-operators/parse-variable-patterns-using-regex",
     "/cid/9205": "/docs/search/behavior-insights/logexplain",
     "/cid/5324": "/docs/search/get-started-with-search/search-page/search-highlighting",
     "/cid/5322": "/docs/alerts/scheduled-searches/schedule-search",
@@ -60,5 +78,6 @@
     "/cid/6966": "/docs/integrations/databases/redis",
     "/cid/6690": "/docs/manage/security/access-keys",
     "/cid/6115": "/docs/integrations/security-threat-detection/duo-security",
-    "/cid/6114": "/docs/integrations/amazon-aws/dynamodb"
+    "/cid/6114": "/docs/integrations/amazon-aws/dynamodb",
+    "/src/theme/NotFound.js": "/"
 }

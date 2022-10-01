@@ -551,7 +551,7 @@ New - If you are using [Sumo Logic Cloud SOAR](https://www.sumologic.com/solutio
 ---
 ## February 24, 2022 (Search)
 
-New - The [Search Query Language](/docs/Search/Search-Query-Language) has a new operator, [dedup](/docs/Search/Search-Query-Language/operators#dedup) allows you to:
+New - The [Search Query Language](/docs/search/search-query-language) has a new operator, [dedup](/docs/search/search-query-language/operators#dedup) allows you to:
 
 
 
