@@ -120,13 +120,6 @@ module.exports = {
     'react-iframe',
     ['@docusaurus/plugin-client-redirects',
       {
-        fromExtensions: ['js'], // /myPage.html -> /myPage
-        redirects: [
-          {
-            from: '/src/theme/NotFound.js',
-            to: '/',
-          },
-        ],
         redirects: Object.entries(cidRedirects).map(
           ([key, value]) => ({ from: key, to: value })
         )
