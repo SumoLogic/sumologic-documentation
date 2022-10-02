@@ -1,6 +1,6 @@
 ---
 id: field-expressions
-title: Field Expressions
+title: Sumo Logic Field Expressions
 description: Overview of the expressions that create user-defined numeric, boolean, or string fields.
 ---
 

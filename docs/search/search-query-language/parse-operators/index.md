@@ -1,6 +1,6 @@
 ---
 slug: /search/search-query-language/parse-operators
-title: Parse Operators
+title: Sumo Logic Parse Operators
 description: Sumo Logic provides a number of ways to parse fields in your log messages.
 ---
 
