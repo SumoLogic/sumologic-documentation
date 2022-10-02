@@ -1,4 +1,12 @@
 {
+    "/cid/5254": "/docs/dashboards/chart-panel-types/numerical-single-value-charts",
+    "/cid/5255": "/docs/integrations/security-threat-detection/palo-alto-networks-6",
+    "/cid/5256": "/docs/integrations/security-threat-detection/palo-alto-networks-6",
+    "/cid/5262": "/",
+    "/cid/52621": "/docs/integrations/amazon-aws/redshift-ulm",
+    "/cid/5263": "/",
+    "/cid/5624": "/",
+    "/cid/5265": "/docs/manage/field-extractions/fer-templates/microsoft-iis-logs",
     "/cid/5310": "/docs/manage/scheduled-views/run-search-against-scheduled-view",
     "/cid/5284": "/docs/integrations/pci-compliance/setup",
     "/cid/5283": "/docs/integrations/pci-compliance/setup",
