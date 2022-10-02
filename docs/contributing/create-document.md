@@ -64,7 +64,6 @@ The `sidebars.ts` file (in repo root) controls the side navigation for the entir
       items: [
         'contributing/create-document',
         'contributing/markdown-cheat-sheet',
-        'contributing/release-notes',
         'contributing/build-deploy',
         'contributing/translations',
         {

@@ -26,8 +26,7 @@ module.exports = {
         'get-started/system-requirements',
         'get-started/sign-up',
         'get-started/account-setup',
-        'get-started/analyst',
-        'get-started/admin',
+        'get-started/onboarding-checklists',
         'get-started/library',
         'get-started/sumo-logic-apps',
         'get-started/sumo-logic-ui',
@@ -796,7 +795,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Chart Panels Types',
+          label: 'Chart Panel Types',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'dashboards/chart-panel-types/index'},
@@ -1108,7 +1107,6 @@ module.exports = {
       collapsed: false,
       link: {type: 'doc', id: 'metrics/introduction/index'},
       items: [
-        'metrics/introduction/overview-sumo-metrics',
         'metrics/introduction/get-started-metrics',
         'metrics/introduction/built-in-metadata',
         'metrics/introduction/metric-formats',
@@ -1714,19 +1712,6 @@ module.exports = {
         ],
       },
       {
-        type: 'category',
-        label: 'Pivotal Cloud Foundry',
-        collapsible: true,
-        collapsed: true,
-        link: {type: 'doc', id: 'integrations/pivotal-cloud-foundry/index'},
-        items: [
-          'integrations/pivotal-cloud-foundry/diego-brain',
-          'integrations/pivotal-cloud-foundry/diego-cell',
-          'integrations/pivotal-cloud-foundry/gorouter',
-          'integrations/pivotal-cloud-foundry/uaa',
-         ],
-       },
-      {
       type: 'category',
       label: 'PCI Compliance',
       collapsible: true,
@@ -1830,7 +1815,6 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'cse/administration/index'},
           items: [
-            'cse/administration/cloud-siem-enterprise-feature-update',
             'cse/administration/create-use-network-blocks',
             'cse/administration/create-a-custom-tag-schema',
             'cse/administration/create-custom-threat-intel-source',
@@ -1901,6 +1885,7 @@ module.exports = {
             'cse/rules/write-match-rule',
             'cse/rules/write-chain-rule',
             'cse/rules/write-aggregation-rule',
+            'cse/rules/write-threshold-rule',
             'cse/rules/cse-rules-syntax',
             'cse/rules/cse-built-in-rules',
             'cse/rules/import-yara-rules',
@@ -1937,11 +1922,6 @@ module.exports = {
           link: {type: 'doc', id: 'cse/sensors/index'},
           items: [
             'cse/sensors/sensor-download-locations',
-            'cse/sensors/windows-sensor-overview',
-            'cse/sensors/windows-sensor-installation',
-            'cse/sensors/windows-sensor-configuration-settings',
-            'cse/sensors/windows-sensor-health-status-messages',
-            'cse/sensors/windows-sensor-troubleshooting',
             'cse/sensors/network-sensor-deployment-guide',
             'cse/sensors/network-sensor-troubleshooting',
             'cse/sensors/cloud-sensor-guide',
@@ -1957,8 +1937,6 @@ module.exports = {
           link: {type: 'doc', id: 'cse/integrations/index'},
           items: [
             'cse/integrations/configuring-threatq-source-in-cse',
-            'cse/integrations/forward-cse-data-to-sumo',
-            'cse/integrations/forward-cse-signals-to-sumo',
             'cse/integrations/insight-enrichment-server',
             'cse/integrations/enable-virustotal-enrichment',
             'cse/integrations/integrate-cse-with-taxii-feed',
@@ -2107,10 +2085,10 @@ module.exports = {
       collapsed: false,
       link: {type: 'doc', id: 'releasenotes/index'},
       items: [
+        'releasenotes/service',
         'releasenotes/cloud-siem',
         'releasenotes/collector',
         'releasenotes/developer',
-        'releasenotes/service',
         {
           type: 'category',
           label: 'Archive',

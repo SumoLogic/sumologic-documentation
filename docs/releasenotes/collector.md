@@ -14,7 +14,7 @@ You can upgrade [Installed Collectors](/docs/send-data/installed-collectors) in 
 * [Collector Management API](/docs/api/collectors#Upgrade-or-Downgrade-Collectors-Using-the-API)
 
 :::note
-Our [static URLs](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url.md) are available to download the most recent Collector version.
+Our [static URLs](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url) are available to download the most recent Collector version.
 :::
 
 ---
@@ -68,4 +68,3 @@ Bundled JRE version upgraded to 8.322.06.2.
 * Bug fix: Log4j vulnerability in RPM and Debian packages.
 * Bug fix: Windows Active Directory Source has more default attributes.
 * Bug fix: Security fix for Script Source.
- 

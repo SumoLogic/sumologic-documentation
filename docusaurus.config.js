@@ -100,19 +100,19 @@ module.exports = {
         },
       }),
     ],
-    [
-      'redocusaurus',
-      {
-        specs: [
-          {
-            id: 'sumoapi',
-            //specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
-            spec: 'sumologic-api.yaml',
-            route: '/sumoapi/',
-          },
-        ],
-      },
-    ],
+  //  [
+  //    'redocusaurus',
+  //    {
+  //      specs: [
+  //        {
+  //          id: 'sumoapi',
+  //          //specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
+  //          spec: 'sumologic-api.yaml',
+  //          route: '/sumoapi/',
+  //        },
+  //      ],
+  //    },
+  //  ],
   ],
   plugins: [
     'docusaurus-plugin-sass',
@@ -120,13 +120,19 @@ module.exports = {
     'react-iframe',
     ['@docusaurus/plugin-client-redirects',
       {
+        fromExtensions: ['js'], // /myPage.html -> /myPage
+        redirects: [
+          {
+            from: '/src/theme/NotFound.js',
+            to: '/',
+          },
+        ],
         redirects: Object.entries(cidRedirects).map(
           ([key, value]) => ({ from: key, to: value })
         )
       },
     ],
   ],
-
     /* // Optional: See this site to configure - live editor https://github.com/jlvandenhout/docusaurus-plugin-docs-editor
        // Requires adding OAUTH app https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app
     [
@@ -478,23 +484,6 @@ module.exports = {
             'aria-label': 'GitHub repository',
             position: 'right',
             to: 'https://github.com/SumoLogic/sumologic-documentation',
-          },
-//            items:[
-//              {
-  //              label: 'Docs GitHub',
-    //            href: 'https://github.com/SumoLogic/sumologic-documentation',
-      //        },
-        //      {
-//                label: 'Contribution Guide',
-//                href: '/docs/contributing',
-//              },
-//            ]
-//          },
-          {
-            label: ' ',
-            className: 'header-search-link',
-            to: 'https://app.sitesearch360.com/demo/18891?auth=627bf5a32ba2ed7f1e7dbe02a13a5a5ae13c5c4d',
-            position: 'right',
           },
         ],
       },
