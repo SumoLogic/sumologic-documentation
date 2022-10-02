@@ -2077,56 +2077,62 @@ module.exports = {
       ],
     },
   ],
-  releasenotes: [
+  releasenotesarchive: [
     {
       type: 'category',
-      label: 'Release Notes',
+      label: 'Release Notes Archive',
       collapsible: true,
       collapsed: false,
-      link: {type: 'doc', id: 'releasenotes/index'},
+      link: {type: 'doc', id: 'releasenotesarchive/index'},
       items: [
-        'releasenotes/service',
-        'releasenotes/cloud-siem',
-        'releasenotes/collector',
-        'releasenotes/developer',
         {
           type: 'category',
-          label: 'Archive',
+          label: 'Collector Archive',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'releasenotes/archive/index'},
           items: [
-            {
-              type: 'category',
-              label: 'Collector Archive',
-              collapsible: true,
-              collapsed: true,
-              items: [
-                'releasenotes/archive/collector/year2021',
-                'releasenotes/archive/collector/year2020',
-                'releasenotes/archive/collector/year2019',
-                'releasenotes/archive/collector/year2018',
-                'releasenotes/archive/collector/year2017',
-                'releasenotes/archive/collector/year2016',
-                'releasenotes/archive/collector/year2015',
-
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Service Archive',
-              collapsible: true,
-              collapsed: true,
-              items: [
-                'releasenotes/archive/service/year2021',
-                'releasenotes/archive/service/year2020',
-                'releasenotes/archive/service/year2019',
-                'releasenotes/archive/service/year2018',
-                'releasenotes/archive/service/year2017',
-              ],
-            },
-          ]
-        }
+            'releasenotesarchive/collector/year2022',
+            'releasenotesarchive/collector/year2021',
+            'releasenotesarchive/collector/year2020',
+            'releasenotesarchive/collector/year2019',
+            'releasenotesarchive/collector/year2018',
+            'releasenotesarchive/collector/year2017',
+            'releasenotesarchive/collector/year2016',
+            'releasenotesarchive/collector/year2015',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Service Archive',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'releasenotesarchive/service/year2022',
+            'releasenotesarchive/service/year2021',
+            'releasenotesarchive/service/year2020',
+            'releasenotesarchive/service/year2019',
+            'releasenotesarchive/service/year2018',
+            'releasenotesarchive/service/year2017',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Cloud SIEM Archive',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'releasenotesarchive/cloud-siem/year2022',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Developer Archive',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'releasenotesarchive/developer/year2022',
+          ],
+        },
       ],
     },
   ],
