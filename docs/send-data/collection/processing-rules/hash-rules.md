@@ -9,11 +9,13 @@ description: With a hash rule, an expression you choose will be replaced by a ha
 A hash rule is a processing rule that allows you to replace an expression with a hash code generated for that value. Hashed data is completely hidden (obfuscated) before being sent to Sumo Logic. This can be very useful in situations where some type of data must not leave your premises, such as credit cards and social security numbers. Each unique value will have a unique hash code.
 
 For example, to hash member IDs, you could use the following filter expression:
-@@ -18,17 +16,18 @@ Log line:
+
+```@@ -18,17 +16,18 @@ Log line:
 2012-05-16 09:43:39,607 -0700 DEBUG [hostId=prod-cass-raw-8] [module=RAW] [logger=scala.raw.InboundRawProtocolHandler] [memberid=dan@demo.com] [remote_ip=98.248.40.103] [web_session=19zefhqy...] [session=80F1BD83AEBDF4FB] [customer=0000000000000005] [call=InboundRawProtocol.getMessages]
 ```
 
 Resulting hashed log line for hash 256:
+
 ```
 2012-05-16 09:43:39,607 -0700 DEBUG [hostId=prod-cass-raw-8] [module=RAW] [logger=scala.raw.InboundRawProtocolHandler] [memberid=38357ee995993f047cce95db89b536b8] [remote_ip=98.248.40.103] [web_session=19zefhqy...] [session=80F1BD83AEBDF4FB] [customer=0000000000000005] [call=InboundRawProtocol.getMessages]
 2012-05-16 09:43:39,607 -0700 DEBUG [hostId=prod-cass-raw-8]
