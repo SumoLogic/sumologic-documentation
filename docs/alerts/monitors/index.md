@@ -71,7 +71,7 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 ## Tools
 
 * [Monitor resource in Terraform](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) 
-* [Monitor management API](/sumoapi)
+* [Monitor management API](/docs/api/monitors)
 
 ## Monitors page
 

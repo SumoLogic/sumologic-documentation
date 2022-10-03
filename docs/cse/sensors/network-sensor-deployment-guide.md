@@ -227,40 +227,7 @@ Link settings
 
 ## Install the Network Sensor
 
-If the URL you use to access CSE ends in `jask.ai`, follow the instructions in this section to download the Network Sensor installer from the CSE UI.
-
-If the URL you use to access CSE ends in `sumologic.com`, download the installer using the download link for your deployment shown on [Sensor Download Locations](sensor-download-locations.md). Start the installer using the command provided on that page, and then respond to the prompts as described below.
-
-:::note
-If you are installing the Network Sensor on CentOS 8, see [Prerequisites for CentOS 8](#prerequisites-for-centos-8).
-:::
-
-The sensor software is installed in the `/opt` directory.
-
-1. In the CSE web UI, click the gear menu and select **Sensors** under **Incoming Data**.   \[gear-menu.png\]
-
-    ![gear-menu.png](/img/cse/gear-menu.png)
-1. On the **Sensors** page, click **Add**.
-1. The **Add Sensor** popup appears.
-
-    ![network-sensor.png](/img/cse/network-sensor.png)
-1. Copy the installation command from the page, and run it in a terminal window.
-1. The installer prompts you to enter the URL for the HTTP Source on Sumo Logic to which the sensor will send data. If you do not enter a value, this tells the installer that you want to send the data collected by the sensor to the legacy CSE server.  
-1. The installer prompts you to enter the capture interface to monitor, for example eth0, eth2, and so on.
-
-    :::note
-    If you want to monitor more than one capture interface, you must manually update the cluster configuration file, `node.cfg`. See [Sample node.cfg file (cluster configuration file)](#sample-nodecfg-file-cluster-configuration-file).The installer prompts you to enter the number of workers to use. 
-    :::
-
-1. The installer asks if the sensor requires a proxy to reach the internet. If you respond "no", the installation completes. If you respond "yes", the installer prompts you to enter:
-
-   1. The proxy hostname and port.
-   1. Whether or not the proxy requires authentication. If you respond yes, the installer prompts you to enter:
-
-      1. The proxy username.
-      1. The proxy password.
-      1. Is the proxy using https (yes/no).
-      1. The installer completes.
+Download the installer using the download link for your deployment shown on [Sensor Download Locations](sensor-download-locations.md). Start the installer using the command provided on that page, and then respond to the prompts as described below.
 
 ## Uninstall the Network Sensor
 

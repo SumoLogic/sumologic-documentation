@@ -14,8 +14,15 @@ You can upgrade [Installed Collectors](/docs/send-data/installed-collectors) in 
 * [Collector Management API](/docs/api/collectors#Upgrade-or-Downgrade-Collectors-Using-the-API)
 
 :::note
-Our [static URLs](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url.md) are available to download the most recent Collector version.
+Our [static URLs](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url) are available to download the most recent Collector version.
 :::
+
+### September 26, 2022 (19.409-3) 
+
+* Security fix: Upgrade Collector JRE to Corretto 8.342.07.4
+* Security fix:  CVE-2022-31159 - com.amazonaws:aws-java-sdk-s3
+* Security fix: CVE-2022-33980 - org.apache.commons:commons-configuration2 
+* Bug fix: Stop Collector service if sumojni dll fails to load.
 
 ---
 ### July 20, 2022 (19.403-1)
@@ -68,4 +75,3 @@ Bundled JRE version upgraded to 8.322.06.2.
 * Bug fix: Log4j vulnerability in RPM and Debian packages.
 * Bug fix: Windows Active Directory Source has more default attributes.
 * Bug fix: Security fix for Script Source.
- 

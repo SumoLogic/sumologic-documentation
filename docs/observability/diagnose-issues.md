@@ -1,5 +1,5 @@
 ---
-id: diagnose
+id: diagnose-issues
 title: Diagnose with the Observability Solution
 sidebar_label: Diagnosing Issues
 description: Diagnose service issues with the Sumo Logic Observability Solution.

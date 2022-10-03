@@ -6,7 +6,25 @@ description: Here you'll find information about new and enhanced features, updat
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-### September 19, 2022 - Content Release 
+### September 29, 2022 - Content Release
+
+#### Rules
+* [Deleted] MATCH-S00070 Checkpoint Firewall
+
+#### Log Mappers
+
+* [New] Cyber Ark EPM AggregateEvent
+* [New] Cyber Ark EPM AuditAdmin
+* [New] Cyber Ark EPM GetComputer
+* [New] Cyber Ark EPM Policy
+* [New] Cyber Ark EPM RawDetails
+* [New] Cyber Ark EPM RawEvents
+
+#### Parsers
+* [New] /Parsers/System/Cyber-Ark/CyberArk EPM JSON
+* [Updated] /Parsers/System/Auth0/Auth0
+
+### September 19, 2022 - Content Release
 
 #### Rules
 * [Deleted] CHAIN-S00009 Proofpoint TAP Click Permitted Followed by Successful Request
