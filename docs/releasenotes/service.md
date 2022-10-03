@@ -10,6 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Service Release Notes for the current year are listed here. If you need to see previous Service Release Notes, check the [Archive](/docs/releasenotes/archive).
 
 ---
+## October 3, 2022 (Search)
+
+Hash rules now support [256 for OpenTelemetry collectors] (docs/send-data/collection/processing-rules/hash-rules). 
+
+---
 ## September 30, 2022 (Traces)
 
 Ability to configure monitors with Search Query Language based on Trace Spans index has been officially enabled for all customers. [Learn more](/docs/apm/traces/working-with-tracing-data/search-query-language-support-for-traces).
