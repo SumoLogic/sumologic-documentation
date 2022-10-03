@@ -1,8 +1,8 @@
 ---
 id: about
+title: About Dashboards
 ---
 
-# About Dashboards
 
 **Dashboards** are a powerful forensic tool to create searches and view search results based on data available through a search.
 

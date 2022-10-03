@@ -4,8 +4,6 @@ title: Manage Data Forwarding
 description: View, edit, delete, activate, and deactivate data forwarding destinations.
 ---
 
-
-
 :::note
 Data forwarding is not currently supported for data assigned to the Infrequent Tier. 
 :::
