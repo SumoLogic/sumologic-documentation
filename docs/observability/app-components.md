@@ -1,13 +1,17 @@
 ---
 id: app-components
 title: Application Components Solution
-sidebar_label: Diagnosing Issues
-description: Diagnose service issues with the Sumo Logic Observability Solution.
+sidebar_label: Application Components Solution
 ---
 
+<!-- N.M. to finish-->
 
+The Application Components Solution allows a better structure and grouping of various application components. This provides the ability to easily monitor and troubleshoot potential issues with applications.
 
-<!-- finish formatting -->
+Pre-configured dashboards available for application components solve many common use cases:
+* Identifying which part of the infrastructure is experiencing problems.
+* Reviewing the overall health of specific components to quickly narrow down the scope of troubleshooting.
+* Minimizing the troubleshooting time by providing all relevant information in the right context.
 
 
 ## Deploy and Configure the Application Components Solution
