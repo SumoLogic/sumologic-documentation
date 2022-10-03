@@ -30,7 +30,7 @@ For more information, see [Keyword Search Expression](../get-started-with-searc
 
 | Use Case | Sumo Logic Query Example |
 | -- | -- |
-| Extract "from" and "to" fields using a simple wild card. For example, if a raw event contains "From: Jane To: John", then from=Jane and to=John. | `* | parse "From: * To: *" as from, to` |
+| Extract "from" and "to" fields using a simple wild card. For example, if a raw event contains "From: Jane To: John", then from=Jane and to=John.  `* | parse "From: * To: *" as from, to` |
 | Extract IP address using a regex pattern.	 | `* | parse regex "(?<c_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" ` |
 | Identify pages visited, extracted as the "cs_uri_stem" field.	 | `_source=IIS | parse "GET * " as cs_uri_stem ` |
 | Identify messages with status code “200” and extract the sc_substatus, sc_win32_status, and sc_bytes fields.  | `_source=IIS | parse " 200 * * * " as sc_substatus, sc_win32_status, sc_bytes` |
@@ -38,16 +38,25 @@ For more information, see [Keyword Search Expression](../get-started-with-searc
 The following examples assume you used the parsing from above:
 
 | Use Case | Sumo Logic Query Example |
-| -- | -- |
-| Calculate the total number of bytes transferred to each client IP address. | `| count, sum(sc_bytes) by c_ip` |
-Calculate the average size of successful HTTP responses.| `|avg(sc_bytes)` |
-If the "sc_substatus" field is missing don't exclude those messages (nodrop)…otherwise non-matches would be filtered out.| `| parse " 200 * " as sc_substatusnodrop` |
-| Calculate the number of times a page has been visited.| `| count by cs_uri_stem` |
-| Calculate the total number of pages by client IP addresses.| `| count by c_ip` |
-| Calculate the total number of pages by client IP address, sort them highest to lowest.| `| count by c_ip | sort by _countdesc` |
-| Identify the top 10 pages.| `| count by cs_uri_stem | top 10 cs_uri_stem by _count` |
-| Identify the top 10 client IP addresses by bandwidth usage.| `| sum(sc_bytes) as total_bytes by c_ip | top 10 c_ip by total_bytes` |
-| Identify the top 100 client IP addresses by number of hits.| `| count by c_ip | top 100 c_ip by _count` |
+
+Calculate the total number of bytes transferred to each client IP address.   
+ `| count, sum(sc_bytes) by c_ip`  
+Calculate the average size of successful HTTP responses.  
+ `|avg(sc_bytes)`  
+If the "sc_substatus" field is missing don't exclude those messages (nodrop)…otherwise non-matches would be filtered out.
+`| parse " 200 * " as sc_substatusnodrop` 
+Calculate the number of times a page has been visited.  
+`| count by cs_uri_stem`  
+Calculate the total number of pages by client IP addresses. 
+ `| count by c_ip`  
+Calculate the total number of pages by client IP address, sort them highest to lowest. 
+`| count by c_ip | sort by _countdesc`  
+Identify the top 10 pages.  
+`| count by cs_uri_stem | top 10 cs_uri_stem by _count`  
+Identify the top 10 client IP addresses by bandwidth usage.
+`| sum(sc_bytes) as total_bytes by c_ip | top 10 c_ip by total_bytes`  
+Identify the top 100 client IP addresses by number of hits.  
+`| count by c_ip | top 100 c_ip by _count`  
 
 :::sumo More Info
 For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent), and [Top](../search-query-language/operators#top).
