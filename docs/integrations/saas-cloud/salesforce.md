@@ -263,7 +263,7 @@ In the file `conf/sumologic.properties`, the following properties are supported.
 
 #### Step 5: Configure the JRE path (DEPRECATED)
 
-To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/docs/releasenotes/collector). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under **`config/wrapper.conf`, and look for the variable `wrapper.java.command`.
+To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/release-notes-collector). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under **`config/wrapper.conf`, and look for the variable `wrapper.java.command`.
 
 * **On Windows, update SumoJanus_SF.bat**. Navigate to the folder where you installed SumoJanus, and open SumoJanus_SF.bat  in a text editor. Line 3 of the script sets `JAVAPATH` to `C:\Program Files\Sumo Logic Collector\jre\bin` as shown below:
 ```bash

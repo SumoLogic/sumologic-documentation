@@ -149,7 +149,7 @@ This section shows you how to set up authentication.
 * Verify the current JRE folder the collector is using by going to the **collector** folder under **config/wrapper.conf**, and looking for the **wrapper.java.command** variable.
 
 :::note
-To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/docs/releasenotes/collector). Since the JRE folder can change with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the `JAVAPATH` to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under `config/wrapper.conf`, and look for the variable `wrapper.java.command`.
+To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/release-notes-collector). Since the JRE folder can change with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the `JAVAPATH` to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under `config/wrapper.conf`, and look for the variable `wrapper.java.command`.
 :::
 
 To authenticate Box, do the following:
