@@ -12,7 +12,7 @@ Service Release Notes for the current year are listed here. If you need to see p
 ---
 ## October 3, 2022 (Search)
 
-Hash rules now support [256 for OpenTelemetry collectors](docs/send-data/collection/processing-rules/hash-rules). 
+Hash rules now support [256 for OpenTelemetry collectors](/docs/send-data/collection/processing-rules/hash-rules). 
 
 ---
 ## September 30, 2022 (Traces)
