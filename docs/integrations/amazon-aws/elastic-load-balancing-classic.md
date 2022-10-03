@@ -123,7 +123,7 @@ If the Source is not subscribed to an SNS topic and set to **Automatic** the sca
 
 #### Set up SNS in AWS (Highly Recommended)
 
-The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-our-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
+The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
 
 1. Go to **Services >** **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step.
 Make sure that the topic and the bucket are in the same region.
