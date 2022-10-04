@@ -9,7 +9,7 @@
     "/cid/1020": "/docs/send-data/installed-collectors/sources/syslog-source",
     "/cid/1019": "/docs/search/search-query-language/operators",
     "/cid/10180": "/docs/integrations/security-threat-detection/carbon-black-cloud",
-    "/cid/1018": " /docs/search/search-query-language/parse-operators/parse-delimited-logs-using-split",
+    "/cid/1018": "/docs/search/search-query-language/parse-operators/parse-delimited-logs-using-split",
     "/cid/10173": "/docs/integrations/amazon-aws/route-53-resolver-security",
     "/cid/10172": "/docs/integrations/cloud-security-monitoring-analytics/palo-alto-firewall-10",
     "/cid/10171": "/docs/integrations/pci-compliance/palo-alto-networks-10",
