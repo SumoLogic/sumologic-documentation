@@ -1,4 +1,13 @@
 {
+    "/cid/1981": "/docs/observability/slack", 
+    "/cid/1980": "/docs/observability/kubernetes",
+    "/cid/1979": "/docs/integrations/amazon-aws/eks-control-plane",
+    "/cid/1978": "/docs/integrations/databases/mongodb-atlas",
+    "/cid/1977": "/docs/cse/ingestion/cisco-meraki",
+    "/cid/1976": "/docs/integrations/google/kubernetes-engine",
+    "/cid/1975": "/docs/observability/kubernetes/apps",
+    "/cid/1974": "/docs/integrations/security-threat-detection/twistlock",
+    "/cid/1973": "/docs/integrations/amazon-aws/guardduty-benchmark",
     "/cid/715": "/docs/apm/real-user-monitoring",
     "/cid/1505": "/docs/search/search-query-language/transaction-analytics/merge-operator",
     "/cid/15006": "/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source",
