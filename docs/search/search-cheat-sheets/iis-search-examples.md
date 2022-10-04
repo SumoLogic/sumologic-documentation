@@ -30,7 +30,7 @@ For more information, see [Keyword Search Expression](../get-started-with-searc
 
 | Use Case | Sumo Logic Query Example |
 | -- | -- |
-| Extract "from" and "to" fields using a simple wild card. For example, if a raw event contains "From: Jane To: John", then from=Jane and to=John. | `* | parse "From: * To: *" as from, to` |
+| Extract "from" and "to" fields using a simple wild card. For example, if a raw event contains "From: Jane To: John", then from=Jane and to=John.  `* | parse "From: * To: *" as from, to` |
 | Extract IP address using a regex pattern.	 | `* | parse regex "(?<c_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" ` |
 | Identify pages visited, extracted as the "cs_uri_stem" field.	 | `_source=IIS | parse "GET * " as cs_uri_stem ` |
 | Identify messages with status code “200” and extract the sc_substatus, sc_win32_status, and sc_bytes fields.  | `_source=IIS | parse " 200 * * * " as sc_substatus, sc_win32_status, sc_bytes` |
@@ -39,15 +39,15 @@ The following examples assume you used the parsing from above:
 
 | Use Case | Sumo Logic Query Example |
 | -- | -- |
-| Calculate the total number of bytes transferred to each client IP address. | `| count, sum(sc_bytes) by c_ip` |
-Calculate the average size of successful HTTP responses.| `|avg(sc_bytes)` |
-If the "sc_substatus" field is missing don't exclude those messages (nodrop)…otherwise non-matches would be filtered out.| `| parse " 200 * " as sc_substatusnodrop` |
-| Calculate the number of times a page has been visited.| `| count by cs_uri_stem` |
-| Calculate the total number of pages by client IP addresses.| `| count by c_ip` |
-| Calculate the total number of pages by client IP address, sort them highest to lowest.| `| count by c_ip | sort by _countdesc` |
-| Identify the top 10 pages.| `| count by cs_uri_stem | top 10 cs_uri_stem by _count` |
-| Identify the top 10 client IP addresses by bandwidth usage.| `| sum(sc_bytes) as total_bytes by c_ip | top 10 c_ip by total_bytes` |
-| Identify the top 100 client IP addresses by number of hits.| `| count by c_ip | top 100 c_ip by _count` |
+| Calculate the total number of bytes transferred to each client IP address. | &#124; count, sum(sc_bytes) by c_ip |  
+|Calculate the average size of successful HTTP responses. | &#124; avg(sc_bytes) |
+| If the "sc_substatus" field is missing don't exclude those messages (nodrop)…otherwise non-matches would be filtered out.| &#124; parse " 200 \* " as sc_substatusnodrop |
+|Calculate the number of times a page has been visited. | &#124; count by cs_uri_stem |  
+| Calculate the total number of pages by client IP addresses. | &#124; count by c_ip |
+| Calculate the total number of pages by client IP address, sort them highest to lowest. | &#124; count by c_ip &#124; sort by _countdesc | 
+| Identify the top 10 pages. |   &#124; count by cs_uri_stem &#124; top 10 cs_uri_stem by _count | 
+| Identify the top 10 client IP addresses by bandwidth usage.|  &#124; sum(sc_bytes) as total_bytes by c_ip  &#124; top 10 c_ip by total_bytes |  
+| Identify the top 100 client IP addresses by number of hits.| &#124; count by c_ip &#124; top 100 c_ip by _count |  
 
 :::sumo More Info
 For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent), and [Top](../search-query-language/operators#top).
@@ -57,8 +57,8 @@ For more information, see [Parsing](/docs/search/search-query-language/parse-op
 
 | Use Case | Sumo Logic Query Example |
 | -- | -- |
-| For the host / domain "abcd.com", count by sc_status with a timeslice of 15m | `source=IIS  | parse "abcd.com * " as sc_status | timeslice 15m | count by _timeslice, sc_status` |
-| Pivot the results so that time is on the X axis and sc_status is on the Y axis (values can be displayed in legend) | `| transpose row _timeslice column sc_status` |
+| For the host / domain "abcd.com", count by sc_status with a timeslice of 15m | source=IIS  &#124; parse "abcd.com \* " as sc_status &#124; timeslice 15m &#124; count by _timeslice, sc_status |
+| Pivot the results so that time is on the X axis and sc_status is on the Y axis (values can be displayed in legend) | &#124; transpose row _timeslice column sc_status |
 
 :::info
 For more information, see [Timeslice](docs/search/search-query-language/operators#timeslice) and [Transpose](../search-query-language/operators#transpose).
