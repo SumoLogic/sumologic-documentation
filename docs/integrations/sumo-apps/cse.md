@@ -147,32 +147,31 @@ This dashboard provides an overview of CSE Records by source, destination, volum
 
 This dashboard presents metrics about Signals that have been fired, including breakdowns by rule, host, and IP address.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Signal-Analysis.png')} alt="CSE dashboard" />
-
+<img src={useBaseUrl('img/integrations/sumo-apps/signal-analysis.png')} alt="CSE dashboard" />
 
 ### Signal Analysis Rules
 
 This dashboard provides trend analysis of triggered rules, rules by match expression and top rules triggered.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Signal-Analysis-Rules.png')} alt="CSE dashboard" />
+<img src={useBaseUrl('img/integrations/sumo-apps/signal-analysis-rules.png')} alt="CSE dashboard" />
 
 
 ### Signal Monitoring
 
 This dashboard provides times-based metrics for CSE Signals, and Signal disappearance metrics.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Signal-Monitoring.png')} alt="CSE dashboard" />
+<img src={useBaseUrl('img/integrations/sumo-apps/signal-monitoring.png')} alt="CSE dashboard" />
 
 
 ### Signals Overview
 
 This dashboard provides an overview of Signal activity, including Signal count over time, and a table of summary information for generated Signals.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Signals-Overview.png')} alt="CSE dashboard" />
-
+<img src={useBaseUrl('img/integrations/sumo-apps/signals-overview.png')} alt="CSE dashboard" />
+static/img/integrations/sumo-apps/signals-by-product.png
 
 ### Signals by Product
 
 This dashboard shows breakdowns of Signal by product and vendor.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Signals-by-Product.png')} alt="CSE dashboard" />
+<img src={useBaseUrl('img/integrations/sumo-apps/signals-by-product.png')} alt="CSE dashboard" />
