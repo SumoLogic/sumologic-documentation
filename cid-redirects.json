@@ -9,7 +9,6 @@
 "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Windows_JSON": "/docs/integrations/microsoft-azure/windows-json",
 "/07Sumo-Logic-Apps/24Web_Servers/Nginx_Ingress": "/docs/integrations/web-servers/nginx-ingress",
 "/07Sumo-Logic-Apps/08App_Development/JMX": "/docs/integrations/app-development/jmx",
-"/Beta": "/docs/beta",
 "/05Search/Search-Query-Language/Math-Expressions/isNaN_and_isInfinity": "/docs/search/search-query-language/math-expressions",
 "/07Sumo-Logic-Apps/20SAML/OneLogin": "/docs/integrations/saml/onelogin",
 "/07Sumo-Logic-Apps/06Google/Google_Cloud_Firewall": "/docs/integrations/google/cloud-firewall",
