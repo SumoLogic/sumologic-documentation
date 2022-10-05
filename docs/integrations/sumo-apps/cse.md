@@ -111,7 +111,7 @@ This dashboard displays metrics about Records created by CSE of the type Authent
 
 ### Record Analysis Email Records
 
-This dashboard displays metrics about Records created by CSE of the type Email. Typically, this Record type is used for log sources that report successful or unsuccessful authentication events.
+This dashboard displays metrics about Records created by CSE of the type Email. Typically, this Record type is used for log sources containing email information such as email protection applications and services.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Record-Analysis-Email-Records.png')} alt="CSE dashboard" />
 
