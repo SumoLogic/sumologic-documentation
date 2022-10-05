@@ -1,5 +1,5 @@
 {
-    "/Traces/02Working_with_Tracing_data/05Search_Query_Language_support_for_Traces": "/docs/apm/traces/working-with-tracing-data/search-query-language-support-for-traces",
+     "/Traces/02Working_with_Tracing_data/05Search_Query_Language_support_for_Traces": "/docs/apm/traces/working-with-tracing-data/search-query-language-support-for-traces",
     "/Traces/02Working_with_Tracing_data/04Spans": "/docs/apm/traces/working-with-tracing-data/spans",
     "/Traces/Real_User_Monitoring": "/docs/search/get-started-with-search/search-page/field-browser",
     "/Traces/01Getting_Started_with_Transaction_Tracing": "/docs/apm/traces/get-started-transaction-tracing",
@@ -20,9 +20,9 @@
     "/Visualizations-and-Alerts/Dashboards/Edit-Dashboards-and-Panels/Disable-a-Dashboard": "/docs/dashboards/edit-dashboards",
     "/Release_Archive/Quick-Start-Tutorial(deprecated)/01_Sumo_Logic_Quick_Start_Tutorial": "",
     "/07Sumo-Logic-Apps/12Databases/Redis": "/docs/integrations/databases/redis",
-    "/07Sumo-Logic-Apps/07Pivotal_Cloud_Foundry/Pivotal_Cloud_Foundry_Diego_Brain": "/docs/integrations/pivotal-cloud-foundry",
     "/Manage/Security/Access-Keys": "/docs/manage/security/access-keys",
     "/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Duo_Security": "/docs/integrations/security-threat-detection/duo-security",
+    "/Beta": "/docs/beta",
     "/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_DynamoDB": "/docs/integrations/amazon-aws/dynamodb",
     "/07Sumo-Logic-Apps/20SAML/Okta": "/docs/integrations/saml/okta",
     "/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/02_Threat-Intel-Optimization": "/docs/integrations/amazon-aws/threat-intel",
