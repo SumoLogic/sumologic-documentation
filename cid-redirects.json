@@ -1,4 +1,13 @@
 {
+    "/cid/210629": "/docs/integrations/containers-orchestration/activemq",
+    "/cid/210622": "/docs/integrations/containers-orchestration/rabbitmq",
+    "/cid/210621": "/docs/integrations/security-threat-detection/zscaler-internet-access",
+    "/cid/210616": "/docs/global-intelligence/apache-tomcat-app",
+    "/cid/210608": "/docs/integrations/databases/cassandra",
+    "/cid/210604": "/docs/integrations/cloud-security-monitoring-analytics/windows",
+    "/cid/210525": "/docs/integrations/web-servers/nginx-plus",
+    "/cid/210524": "/docs/integrations/security-threat-detection/zscaler-private-access",
+    "/cid/210511": "/docs/integrations/web-servers/haproxy",
     "/cid/210501": "/docs/integrations/microsoft-azure/windows-json-pci-compliance",
     "/cid/210430": "/docs/integrations/microsoft-azure/windows-json-pci-compliance",
     "/cid/210413": "/",
