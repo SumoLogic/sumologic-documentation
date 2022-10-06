@@ -1,5 +1,12 @@
 {       
     "/05Search/LogReduce/Understand-the-LogReduce-Relevance-Column": "/docs/search/logreduce/understand-the-logreduce-relevance-column",
+    "/Visualizations-and-Alerts/Dashboards/Chart-Panel-Types/String-Single-Value-Charts": "/docs/dashboards/chart-panel-types/string-single-value-charts",
+    "/Visualizations-and-Alerts/Dashboards/Edit-Dashboards-and-Panels/Show-Grid-Lines": "/docs/dashboards/edit-dashboards/manage-charts",
+    "/05Search/Get-Started-with-Search/Search-Basics/Share-a-Link-to-a-Search": "/docs/search/get-started-with-search/search-basics/share-link-to-search",
+    "/07Sumo-Logic-Apps/26Apps_for_Sumo/PCI_Compliance_through_Professional_Services/How-is-the-Sumo-Logic-PCI-App-set-up": "/",
+    "/Manage/Connections-and-Integrations/ServiceNow/Set-Up-ServiceNow-Connections": "/docs/manage/connections-integrations/servicenow/set-up-connections",
+    "/Visualizations-and-Alerts/Alerts/Scheduled-Searches/Create_a_Real_Time_Alert": "/docs/alerts/scheduled-searches/create-real-time-alert",
+    "/03Send-Data/Hosted-Collectors": "/docs/send-data/hosted-collectors",
     "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/Troubleshooting-HTTP-Sources": "/docs/send-data/hosted-collectors/http-source/troubleshooting",
     "/05Search/Get-Started-with-Search/How-to-Build-a-Search/What-Data-Do-I-Have": "/docs/search/get-started-with-search/build-search",
     "/05Search/Search-Cheat-Sheets": "/docs/search/search-cheat-sheets",
