@@ -383,7 +383,7 @@ The Export and Import functions are provided in order for you to transfer data i
 
 :::caution limitations
 * Recent Searches, Favorites, Scheduled Views, Partitions, Field Extraction Rules (FERs), and lookups are not supported.
-* For content that is shared, only the content is imported, not the Shared state. You can [share](https://help.sumologic.com/Visualizations-and-Alerts/Dashboards/Share_Dashboards) it again as necessary.
+* For content that is shared, only the content is imported, not the Shared state. You can [share](/docs/dashboards) it again as necessary.
 * All content names must be unique within a folder in the Library.
 * Only error free JSON will import successfully.
 * Import is limited to 1000 objects at a time.
@@ -421,5 +421,5 @@ When selected this filter shows a list of users in your network. Once a creator 
 #### Shared With
 When selected this filter shows a list of users in your network. Once a user is selected only content that was shared with this user will show up in your search.
 
-#### Type 
+#### Type
 When selected this filter shows a list of different types of content within the library. Once a type is selected only that type of content will show up in your search.

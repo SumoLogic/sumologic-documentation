@@ -84,7 +84,7 @@ Data will be dropped during throttling. In that case, the sending HTTP client mu
 
 The following pages will help you troubleshoot a throttling incident:
 
-* [Manage Ingestion](/docs/manage/ingestion-volume/log-ingestion) (/docs/manage/ingestion-volume/01Log_Ingestion), see this page for information about:
+* [Manage Ingestion](/docs/manage/ingestion-volume/log-ingestion), see this page for information about:
 
   * How your account ingestion rate is calculated and throttled.
   * How to figure out how which Collectors are contributing to excess ingestion.

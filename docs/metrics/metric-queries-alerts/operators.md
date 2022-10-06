@@ -332,7 +332,7 @@ metrics query | eval expr([REDUCER BOOLEAN EXPRESSION | _value] [_granularity])
     * `pct(n)`. Returns the nth percentile of the values in the time series.
     * `latest`. Returns the last data point in the time series.
     * `stddev`. Returns standard deviation of the points in the time series.
-* `_granularity`. Returns the length of the [quantization](https://help.sumologic.com/Metrics/Introduction-to-Metrics/Metric_Quantization) bucket in milliseconds. You can use this placeholder in your query.
+* `_granularity`. Returns the length of the [quantization](/docs/metrics/introduction/Metric-Quantization) bucket in milliseconds. You can use this placeholder in your query.
 
 
 #### Examples
@@ -1119,7 +1119,7 @@ selectors | where _value [VALUE BOOLEAN EXPRESSION | REDUCER BOOLEAN EXPRESSION]
 * `_value` is the placeholder for each data point in the time series.
 * `_granularity` is the placeholder value for the length of the quantization bucket in milliseconds.
 * `[VALUE BOOLEAN EXPRESSION]` is a value expression that operates on individual data points of a time series. For example, `> 3`.
-* `[REDUCER BOOLEAN EXPRESSION]` is an expression that takes all the values of a given time series, uses a function to reduce them to a single value, and evaluates that value. The supported functions are listed in the [eval](https://help.sumologic.com/Metrics/Metric-Queries-and-Alerts/07Metrics_Operators/eval) topic.
+* `[REDUCER BOOLEAN EXPRESSION]` is an expression that takes all the values of a given time series, uses a function to reduce them to a single value, and evaluates that value. The supported functions are listed in the [eval](/docs/metrics/metric-queries-alerts/operators#eval) topic.
 
 
 #### Examples

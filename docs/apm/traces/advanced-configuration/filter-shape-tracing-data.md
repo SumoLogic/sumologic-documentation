@@ -19,8 +19,8 @@ For best results, perform filtering on a central instance of Aggregating OpenTel
 ## Prerequisites
 An installed and running OpenTelemetry Collector version v0.38.1-sumo or higher. For details, see either:
 
-* [Tracing collection for Kubernetes environments](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_Kubernetes_environments) (with sumologic-kubernetes-collection v2.2.1 or higher)
-* [Tracing collection for other environments](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_other_environments)
+* [Tracing collection for Kubernetes environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments) (with sumologic-kubernetes-collection v2.2.1 or higher)
+* [Tracing collection for other environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments)
 
 
 ### Configuring filters and traffic shaping rules

@@ -22,21 +22,9 @@ Once you have set up trace collection see how to [analyze your traces in Sumo Lo
 
 ## Set up Collection
 
-* [Set up traces collection for AWS environments](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_AWS_environments)
-* [Set up traces collection for Kubernetes environments](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_Kubernetes_environments)
-* [Set up traces collection for other environments](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_other_environments)
-* [What if I don't want to send all the tracing data to Sumo Logic?](https://help.sumologic.com/Traces/03Advanced_Configuration/Filter-Shape-Trace-Data)
-* [Working with spans attributes](https://help.sumologic.com/Traces/03Advanced_Configuration/Working_with_Span_attributes)
-
-
-* [Instrument your application with OpenTelemetry](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry)
-   * [.NET OpenTelemetry auto-instrumentation](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry/.NET_OpenTelemetry_auto-instrumentation)
-   * [Go OpenTelemetry auto-instrumentation](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry/Go_OpenTelemetry_auto-instrumentation)
-   * [JavaScript OpenTelemetry auto-instrumentation](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry/JavaScript_OpenTelemetry_auto-instrumentation)
-   * [Java OpenTelemetry auto-instrumentation](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry/Java_OpenTelemetry_auto-instrumentation)
-   * [Python OpenTelemetry auto-instrumentation](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry/Python_OpenTelemetry_auto-instrumentation)
-   * [Ruby OpenTelemetry auto-instrumentation](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry/Ruby_OpenTelemetry_auto-instrumentation)
-   * [Ruby on Rails OpenTelemetry auto-instrumentation](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry/Ruby_on_Rails_OpenTelemetry_auto-instrumentation)
-   * AWS Lambda for [Java](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry/AWS_Lambda_-_Java_function_instrumentation_with_Sumo_Logic_tracing), [NodeJS](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry/AWS_Lambda_-_NodeJS_function_instrumentation_with_Sumo_Logic_tracing), [Python](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry/AWS_Lambda_-_Python_function_instrumentation_with_Sumo_Logic_tracing)
-   * [Istio OpenTelemetry auto-instrumentation](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry/Istio_OpenTelemetry_auto-instrumentation)
-   * [Java, Python and JavaScript applications in Kubernetes environments [BETA](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes)
+* [Set up traces collection for AWS environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-aws-environments)
+* [Set up traces collection for Kubernetes environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments)
+* [Set up traces collection for other environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments)
+* [What if I don't want to send all the tracing data to Sumo Logic?](/docs/apm/traces/Advanced-Configuration/Filter-Shape-Tracing-Data)
+* [Working with spans attributes](/docs/apm/traces/Advanced-Configuration/Working-with-Span-attributes)
+* [Instrument your application with OpenTelemetry](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation)

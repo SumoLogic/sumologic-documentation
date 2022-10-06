@@ -328,7 +328,7 @@ To monitor collectors for out-of-memory issues, ingest theÂ collector logs, andÂ
 _sourceCategory=*LocalCollectorLogs* "java.lang.OutOfMemoryError: Java heap space"
 | timeslice 15m
 | count by _timeslice, _collector
-| "https://help.sumologic.com/Send_Data/Collector_FAQs/Increase_memory_in_a_Collector" as sumoHelp
+| "/docs/Send-Data/collector-faq#Increase-memory-in-a-Collector" as sumoHelp
 | concat ("collector: ", _collector, " identified with insufficient max heap memory. Increase java heap space allocation for it. Refer: ", sumoHelp) as msg
 | sort by _timeslice, _collector | fields -sumoHelp
 ```
