@@ -5,8 +5,6 @@ title: Alert Grouping
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
-
 Alert Grouping gives you flexibility to customize how your alerts and notifications are generated from monitors, allowing you to specify a grouping condition based on a specific field(s). Each unique value of the field(s) will be evaluated against the alerting and resolution conditions, and if it meets the threshold, an alert will be fired and resolved respectively.
 
 You could group by `_collector` field, for example, and one alert would be generated per `_collector`. You can also have a monitor generate and resolve more than one alert based on specific conditions. For this example below, let's say you're monitoring the ErrorRate for all of your services and want to get an alert for each service that breaches a specific error threshold. Rather than creating multiple monitors for each service, you can create one single monitor that does this.
