@@ -633,7 +633,6 @@
     "/Manage/Scheduled-Views/Run-a-Search-Against-a-Scheduled-View": "/docs/manage/scheduled-views/run-search-against-scheduled-view",
     "/Manage/Partitions_and_Data_Tiers/05-Run-a-Search-Against-a-Partition": "/docs/manage/partitions-data-tiers/run-search-against-partition",
     "/05Search/Search-Query-Language/Search-Operators/rollingstd": "/docs/search/search-query-language/operators",
-    "/Manage/Users-and-Roles/Manage-Users/05-Reset-a-User's-Password": "/docs/manage/users-roles/users/reset-user-password",
     "/07Sumo-Logic-Apps/04Microsoft-and-Azure/PCI_Compliance_for_Windows": "/docs/integrations/microsoft-azure/windows-legacy-pci-compliance",
     "/07Sumo-Logic-Apps/26Apps_for_Sumo/PCI_Compliance_through_Professional_Services/PCI-Standards-based-Dashboards/13-PCI-Requirement-Compliance-Status-Dashboard": "/docs/integrations/pci-compliance/setup#pci-requirement-compliance-status-dashboard",
     "/07Sumo-Logic-Apps/26Apps_for_Sumo/PCI_Compliance_through_Professional_Services/PCI-Standards-based-Dashboards/10-PCI-Requirement-9-Dashboard": "/docs/integrations/pci-compliance/setup#pci-requirement-9-dashboard",
