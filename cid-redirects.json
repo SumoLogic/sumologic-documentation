@@ -842,7 +842,6 @@
     "/APIs/General-API-Information/API-Authentication": "/docs/api/getting-started",
     "/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security": "/docs/api/getting-started",
     "/07Sumo-Logic-Apps/01Amazon_and_AWS/Threat_Intel_for_AWS": "/docs/integrations/amazon-aws/threat-intel",
-    "/N/A": "/docs/send-data/hosted-collectors/cloud-syslog-source",
     "/01Start-Here/05Customize-Your-Sumo-Logic-Experience/Change-Your-Password": "/docs/get-started/account-setup",
     "/05Search/Search-Query-Language/aaGroup/sum": "/docs/search/search-query-language/group-aggregate-operators",
     "/05Search/Search-Query-Language/aaGroup/min-and-max": "/docs/search/search-query-language/group-aggregate-operators",
