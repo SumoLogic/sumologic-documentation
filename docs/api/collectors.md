@@ -22,7 +22,7 @@ See the following topics for additional information:
 
 * [API Authentication](/docs/api/getting-started#Authentication) for information on API authentication options.
 * [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for a list of API endpoints to use to connect your API client to the Sumo Logic API.
-* [Use JSON to Configure Sources](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources) for a description of Source parameters.
+* [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for a description of Source parameters.
 * [View or Download Collector or Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for instructions on viewing or downloading the current JSON configuration file for a collector or source from the web application.
 * [Troubleshooting APIs](/docs/api/troubleshooting.md)
 
@@ -182,9 +182,9 @@ The following table lists the API response fields for installed and hosted Colle
    </td>
    <td>
    </td>
-   <td>JSON map of key-value <a href="https://help.sumologic.com/manage/fields">fields</a> (metadata) to apply to the Collector.
+   <td>JSON map of key-value <a href="/docs/manage/fields">fields</a> (metadata) to apply to the Collector.
 
-<p>To assign an <a href="https://help.sumologic.com/manage/ingestion-volume/Ingest_Budgets">Ingest Budget</a> to the Collector use the field <code>_budget</code> with the Field Value of the Ingest Budget to assign. For example, if you have a budget with a Field Value of <code>Dev_20GB</code>, you would add:</p>
+<p>To assign an <a href="/docs/manage/ingestion-volume/Ingest-Budgets">Ingest Budget</a> to the Collector use the field <code>_budget</code> with the Field Value of the Ingest Budget to assign. For example, if you have a budget with a Field Value of <code>Dev_20GB</code>, you would add:</p>
 
 <code>fields=_budget=Dev_20GB</code>
    </td>
@@ -291,7 +291,7 @@ Currently only Local and Remote File Sources are supported.
 
 The value must be expressed as a whole number percentage. The collector will adjust resources to attempt to limit the CPU usage to at most 20%.
 
-For more information, see <a href="https://help.sumologic.com/send-data/collection/06Set-the-Collector-CPU-Usage-Target">Set the Collector CPU Usage Target</a>.
+For more information, see <a href="/docs/send-data/collection/set-collector-cpu-usage-target">Set the Collector CPU Usage Target</a>.
    </td>
    <td>Modifiable
    </td>
@@ -1152,7 +1152,7 @@ If a rate is exceeded, a rate limit exceeded 429 status code is returned.
 
 ### Response fields
 
-See [Use JSON to Configure Sources](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources) for a description of Source parameters.
+See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for a description of Source parameters.
 
 
 ## GET methods
@@ -1432,7 +1432,7 @@ Response:
 46
 
 
-Creates a new Source for a Collector. See [Use JSON to Configure Sources](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources) for required fields for the request JSON file.
+Creates a new Source for a Collector. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for required fields for the request JSON file.
 
 **Method: `POST Path: /collectors/[collectorId]/sources`**
 
@@ -1539,7 +1539,7 @@ Response:
 ```
 
 
-Note that the filter value shown above is an example for excluding a keyword. Filter values are specified to do batch edits to Processing Rules for Sources. For details on the different types of filters available, see [Creating Processing Rules Using a JSON File](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources#Creating_Processing_Rules_Using_a_JSON_File).
+Note that the filter value shown above is an example for excluding a keyword. Filter values are specified to do batch edits to Processing Rules for Sources. For details on the different types of filters available, see [Creating Processing Rules Using a JSON File](/docs/send-data/use-json-configure-sources#Creating_Processing_Rules_Using_a_JSON_File).
 
 
 ## PUT methods
@@ -1681,7 +1681,7 @@ Request JSON (updated_host_metrics.json)
 ```
 
 
-Note that the filter value shown above is an example for excluding a keyword. Filter values are specified to do batch edits to Processing Rules for Sources. For details on the different types of filters available, see [Creating Processing Rules Using a JSON File](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources#Creating_Processing_Rules_Using_a_JSON_File).
+Note that the filter value shown above is an example for excluding a keyword. Filter values are specified to do batch edits to Processing Rules for Sources. For details on the different types of filters available, see [Creating Processing Rules Using a JSON File](/docs/send-data/use-json-configure-sources#Creating_Processing_Rules_Using_a_JSON_File).
 
 Response:
 
@@ -1725,7 +1725,7 @@ Response:
 
 Deletes the specified Source from the specified Collector.
 
-Requests to delete Sources from the [Cloud-to-Cloud Integration Framework](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework) are asynchronous. When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector. Use a GET request to track the Source's state.
+Requests to delete Sources from the [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework) are asynchronous. When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector. Use a GET request to track the Source's state.
 
 Method: `DELETE Path: /collectors/[collectorId]/sources/[sourceId]`
 
@@ -1851,7 +1851,7 @@ Response: There will be no response body, only a 200 OK response code.
 
 ## Upgrade or Downgrade Collectors Using the API
 
-View and manage the software versions of your Installed Collectors through HTTP endpoints. Use these HTTP endpoints to upgrade or downgrade Collectors. We recommend you follow our [best practices](https://help.sumologic.com/send-data/collection/Collector-Upgrade-Best-Practices) when you upgrade your Collectors.
+View and manage the software versions of your Installed Collectors through HTTP endpoints. Use these HTTP endpoints to upgrade or downgrade Collectors. We recommend you follow our [best practices](/docs/send-data/collection/upgrade-collectors#collector-upgrade-best-practices) when you upgrade your Collectors.
 
 The upgrade may automatically be done in increments. In this case, you may experience longer upgrade times.
 

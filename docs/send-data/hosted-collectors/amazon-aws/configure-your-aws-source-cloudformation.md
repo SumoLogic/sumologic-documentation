@@ -1,5 +1,5 @@
 ---
-id: configure-our-aws-source-cloudformation
+id: configure-your-aws-source-cloudformation
 title: Configuring your AWS Source with CloudFormation
 sidebar_label: AWS CloudFormation Configuration
 description: Use CloudFormation to set up AWS products.

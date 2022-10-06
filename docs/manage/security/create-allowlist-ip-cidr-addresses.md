@@ -3,8 +3,6 @@ id: create-allowlist-ip-cidr-addresses
 title: Create an Allowlist for IP or CIDR Addresses
 ---
 
-#
-
 Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
 
 Once the feature is enabled, the IP address or [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) of each user in an account must be added to the allowlist in order to log in to Sumo Logic UI or make any requests via the Sumo Logic APIs. The allowlist does not cover the Collector IP (Server IP) to connect to Sumo Logic.

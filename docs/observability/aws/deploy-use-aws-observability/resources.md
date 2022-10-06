@@ -6,9 +6,9 @@ description: Learn more about AWS Observability resources created and modified a
 ---
 
 
-The CloudFormation template (CFN) creates a number of resources at deployment, in AWS, and in Sumo Logic. You will use the template when setting up the solution. See [Before You Deploy](https://help.sumologic.com/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/03_Before_You_Deploy) for prerequisites and instructions to configure.
+The CloudFormation template (CFN) creates a number of resources at deployment, in AWS, and in Sumo Logic. You will use the template when setting up the solution. See [Before You Deploy](/docs/observability/aws/deploy-use-aws-observability/Before-You-Deploy) for prerequisites and instructions to configure.
 
-* For more information on the solution and features, see [About AWS Observability](https://help.sumologic.com/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/01_About_AWS_Observability).
+* For more information on the solution and features, see [About AWS Observability](/docs/observability/aws/about).
 
 
 ## Resources created in AWS
@@ -198,7 +198,7 @@ If you are using an existing bucket to collect AWS ELB logs, the Amazon S3 bucke
 
 ### Terraform
 
-[Terraform](https://help.sumologic.com/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/05_Deploy_AWS_Observability/Deploy_with_Terraform) execution creates the following resources in Sumo Logic.
+[Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform) execution creates the following resources in Sumo Logic.
 
 
 <table>
@@ -262,7 +262,7 @@ If you are using an existing bucket to collect AWS ELB logs, the Amazon S3 bucke
 
 ### AWS CloudFormation
 
-The [AWS CloudFormation](https://help.sumologic.com/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/05_Deploy_AWS_Observability/Deploy_with_AWS_CloudFormation) template execution creates the following resources in Sumo Logic.
+The [AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) template execution creates the following resources in Sumo Logic.
 
 
 <table>

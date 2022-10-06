@@ -130,7 +130,7 @@ To write a query and create a scheduled search, do the following:
 
 The "`finding_time`" field  can be either the `_messageTime` or `_timeslice` field in Sumo Logic.
 
-1. Create a scheduled search, as described in [this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Scheduled-Searches/Schedule_a_Search), and configure the following settings:
+1. Create a scheduled search, as described in [this document](/docs/alerts/scheduled-searches/schedule-search), and configure the following settings:
 * Alert condition is set to “Greater than >” and Number of Results is set to 0.
 * Alert Type is set to “Webhook”.
 * Connection is set to the name configured in step 2 (of the link document instructions).

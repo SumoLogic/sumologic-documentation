@@ -29,6 +29,9 @@ module.exports = {
     {
       src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
       async: true,
+      stylesheets: [
+        'src/css/sitesearch360.scss',
+      ],
     },
   ],
   i18n: {
@@ -256,7 +259,7 @@ module.exports = {
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
     announcementBar: {
       id: 'announcementBar',
-      content: `⭐️ Welcome to the new Sumo Logic Doc Site! ⭐️`,
+      content: `📣 Welcome to the new Sumo Logic Docs Site! To view our legacy docs, <a target="_blank" rel="noopener noreferrer" href="https://helpstaging.sumologic.com">click here</a>.`,
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',

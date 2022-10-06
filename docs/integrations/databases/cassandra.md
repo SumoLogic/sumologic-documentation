@@ -98,7 +98,7 @@ Follow the steps listed below to collect Cassandra metrics from a Kubernetes env
 
 1. Set up your [Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf).
 2. On your Cassandra Pods, add the following annotations:
-```sql
+```
 annotations:
   telegraf.influxdata.com/class: sumologic-prometheus
   prometheus.io/scrape: "true"
@@ -240,7 +240,7 @@ If your application connects directly to a given Cassandra node, rather than the
 host=cassandra-prod.sumologic.com
 
 Pivoting to Tracing data from Entity Inspector is possible only for “Cassandra address” Entities.
-    
+
   For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 2. (Optional) Collecting Cassandra Logs from a Log File on Kubernetes.
@@ -314,9 +314,9 @@ We use the Telegraf operator for Cassandra metric collection and Sumo Logic Inst
 
 This section provides instructions for configuring metrics collection for the Sumo Logic App for Cassandra.
 
-1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) section of the Sumo Logic documentation.
-2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source)Make a note of the **HTTP Source URL**.
-3. **Install Telegraf**. Use the[ following steps](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf) to install Telegraf.
+1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/Hosted-Collectors/Configure-Hosted-Collector) section of the Sumo Logic documentation.
+2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/hosted-collectors/HTTP-Source)Make a note of the **HTTP Source URL**.
+3. **Install Telegraf**. Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to install Telegraf.
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [jolokia2 input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
   Create or modify telegraf.conf and copy and paste the text below:  
@@ -400,7 +400,7 @@ Please enter values for the following parameters:
     * `db_cluster` - Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
     * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
     * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
-  
+
 Here’s an explanation for additional values set by this configuration that we request you do not modify, as they will cause the Sumo Logic apps to not function correctly.
 * In the tags section ([inputs.jolokia2_agent.tags]):
     * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
@@ -419,7 +419,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “Cassandra
 
 
 * In the output plugins section, which is `[[outputs.sumologic]]`:
-    * `url` - This is the HTTP source URL created in step 3. Please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
+    * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 * Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
     * `data_format - “prometheus”` In the output plugins section, which is [[outputs.sumologic]]. Metrics are sent in the Prometheus format to Sumo Logic
     * `db_system: “cassandra”` - In the input plugins section:  This value identifies the database system.
@@ -435,7 +435,7 @@ This section provides instructions for configuring log collection for Cassandra 
 
 By default, Cassandra logs are stored in a log file.
 
-Sumo Logic supports collecting logs from a local log file by using a [local file source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source) via [Installed collectors](https://help.sumologic.com/03Send-Data/Installed-Collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements).
+Sumo Logic supports collecting logs from a local log file by using a [local file source](/docs/send-data/installed-collectors/sources/Local-File-Source) via [Installed collectors](/docs/send-data/Installed-Collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/System-Requirements#Installed-Collector-Requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect Cassandra logs and follow the instructions below to set up log collection:
 
@@ -463,10 +463,10 @@ Based on your infrastructure and networking setup choose one of these methods to
     * Configure the `logback-test.xml` or `logback.xml` file installed with Cassandra.
     * Use the [JConsole](https://docs.datastax.com/en/cassandra-oss/3.0/cassandra/operations/opsMonitoring.html#opsMonitoringJconsole) tool to configure logging through JMX.
 
-  Logs from the Cassandra log file can be collected via a Sumo Logic [Installed collector](https://help.sumologic.com/03Send-Data/Installed-Collectors) and a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source) as explained in the next section.
-3. **Configure a Collector** To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](https://help.sumologic.com/03Send-Data/Installed-Collectors)
+  Logs from the Cassandra log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/Local-File-Source) as explained in the next section.
+3. **Configure a Collector** To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 4. **Configure a Local File Source**. To collect logs directly from your Cassandra machine, use an Installed Collector and a Local File Source.
-   1. Add a[ Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+   1. Add a[ Local File Source](/docs/send-data/installed-collectors/sources/Local-File-Source).
    2. Configure the Local File Source fields as follows:
       * **Name.** (Required)
       * **Description.** (Optional)
@@ -506,7 +506,7 @@ We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](http
       * `environment` - This is the deployment environment where the Cassandra cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `db_cluster` - Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
    * In the exporter plugins section :
-      * Enter details like `source_category` and `source_host`. Please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
+      * Enter details like `source_category` and `source_host`. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
    * Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
      * `data_format - “prometheus”` In the output plugins section, which is `[[outputs.sumologic]]`  Metrics are sent in the Prometheus format to Sumo Logic
      * `db_system: “cassandra”` - In the input plugins section:  This value identifies the database system.

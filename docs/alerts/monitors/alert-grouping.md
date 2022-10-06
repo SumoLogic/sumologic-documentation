@@ -5,8 +5,6 @@ title: Alert Grouping
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
-
 Alert Grouping gives you flexibility to customize how your alerts and notifications are generated from monitors, allowing you to specify a grouping condition based on a specific field(s). Each unique value of the field(s) will be evaluated against the alerting and resolution conditions, and if it meets the threshold, an alert will be fired and resolved respectively.
 
 You could group by `_collector` field, for example, and one alert would be generated per `_collector`. You can also have a monitor generate and resolve more than one alert based on specific conditions. For this example below, let's say you're monitoring the ErrorRate for all of your services and want to get an alert for each service that breaches a specific error threshold. Rather than creating multiple monitors for each service, you can create one single monitor that does this.
@@ -136,7 +134,7 @@ You can select up to a maximum of 10 fields. This applies to both Logs and Metri
 
 #### My field is not appearing under "One alert per [group]" fields dropdown. Why is that?
 
-This scenario, which is only applicable for Logs Monitors (not for Metrics), can happen if you have [dynamically parsed fields](https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing) in your query. The auto-complete system uses a 15-minute time range to parse out all the dynamically parsed fields. If those fields are not present in the last 15-minute query, they will not show up in the dropdown. To resolve this, you could manually type in the name of the field, and it should work fine at runtime.<br/><img src={useBaseUrl('img/monitors/alertsdropdown.png')} alt="alert-grouping" width="350" />
+This scenario, which is only applicable for Logs Monitors (not for Metrics), can happen if you have [dynamically parsed fields](/docs/search/Get-Started-with-Search/build-search/Dynamic-Parsing) in your query. The auto-complete system uses a 15-minute time range to parse out all the dynamically parsed fields. If those fields are not present in the last 15-minute query, they will not show up in the dropdown. To resolve this, you could manually type in the name of the field, and it should work fine at runtime.<br/><img src={useBaseUrl('img/monitors/alertsdropdown.png')} alt="alert-grouping" width="350" />
 
 #### How does "One alert per [group]" impact Alert Audit Logs?  
 

@@ -533,7 +533,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 ### Method B: Using a Terraform script
 
-1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](https://help.sumologic.com/manage/Security/Access-Keys#Create_an_access_key_on_Preferences_page).
+1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](/docs/manage/Security/Access-Keys#Create_an_access_key_on_Preferences_page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 3. Download the Sumo Logic Terraform package for MySQL monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/mysql). You can either download it using the `git clone` command or as a zip file.
 4. Alert Configuration: After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/mysql/` directory.
@@ -572,7 +572,7 @@ connection_notifications = [
   ]
 ```
 
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](https://help.sumologic.com/manage/connections-integrations/Webhook-Connections/Set_Up_Webhook_Connections).
+For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-integrations/Webhook-Connections/Set-Up-Webhook-Connections).
 
 ```sql title="Email notifications example"
 email_notifications = [

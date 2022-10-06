@@ -22,7 +22,7 @@ Tracing data retention in `_trace_spans` index is the same as default log index
 
 ## Search span data
 
-Searching span data is the same as running a log search. You just need to specify the `_index` metadata field with the value `_trace_spans` in the [keyword search expression](/How-to-Build-a-Search/Keyword-Search-Expression (also called the scope) of your query.
+Searching span data is the same as running a log search. You just need to specify the `_index` metadata field with the value `_trace_spans` in the [keyword search expression](/build-search/Keyword-Search-Expression (also called the scope) of your query.
 
 To search your tracing data do the following:
 

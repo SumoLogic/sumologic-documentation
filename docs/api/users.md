@@ -6,7 +6,7 @@ description: The User Management API allows you to manage user accounts from HTT
 
 ---
 
-The User Management API allows you to [manage user accounts](https://help.sumologic.com/manage/users-roles/Manage-Users) from HTTP endpoints. To manage users, you must have the administrator role or your role must have been assigned the manage users and roles capability. For more information see [Manage Users](https://help.sumologic.com/?cid=1006).
+The User Management API allows you to [manage user accounts](/docs/manage/users-roles/users) from HTTP endpoints. To manage users, you must have the administrator role or your role must have been assigned the manage users and roles capability. For more information see [Manage Users](https://help.sumologic.com/?cid=1006).
 
 
 Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
