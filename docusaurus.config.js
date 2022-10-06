@@ -29,6 +29,9 @@ module.exports = {
     {
       src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
       async: true,
+      stylesheets: [
+        'src/css/sitesearch360.scss',
+      ],
     },
   ],
   i18n: {

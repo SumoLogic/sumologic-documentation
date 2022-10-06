@@ -9,7 +9,7 @@ description: An alphabetized list of commonly used terms at Sumo Logic, includin
 &#128679; Under construction &#128679;
 :::
 
-This word list provides an alphabetized list of commonly used terms at Sumo Logic, including components and features of Sumo Logic, and other usage issues, such as punctuation and capitalization. This is not a glossary. Here is the [Glossary](/docs/get-started/glossary).
+This word list provides an alphabetized list of commonly used terms at Sumo Logic, including components and features of Sumo Logic, and other usage issues, such as punctuation and capitalization. This is not a glossary. Here is the [Glossary](/docs/contributing/glossary).
 
 <!--See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design-system/style) provided by our UX team.-->
 

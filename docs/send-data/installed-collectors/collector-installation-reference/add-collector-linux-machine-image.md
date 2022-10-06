@@ -71,16 +71,16 @@ Collection \> Collection** page, or from the list below.
 
 1. Set up auto-registration details for the Collector:  
 
-   * [Create a New User account](https://help.sumologic.com/manage/users-roles/Manage-Users/01-Create-and-Edit-Users) with Administrator permissions or a role with permissions to "Manage Collectors."  
-   * Create an [installation token](https://help.sumologic.com/manage/Security/Installation_Tokens).
-   * Or, create an [Access Key and Access Id](https://help.sumologic.com/manage/Security/Access-Keys) for this user, which will be used to register the collector.
+   * [Create a New User account](/docs/manage/users-roles/users/create-edit-users) with Administrator permissions or a role with permissions to "Manage Collectors."  
+   * Create an [installation token](/docs/manage/Security/installation-tokens).
+   * Or, create an [Access Key and Access Id](/docs/manage/Security/Access-Keys) for this user, which will be used to register the collector.
 
 1. As root, run the installer with the following arguments:
 
    * `-``q` starts the installer in quiet mode (no UI)  
    * `-VskipRegistration=true` to skip collector registration during installation  
    * `-Vephemeral=true` to set the Collector as ephemeral (will be removed after 12 hours offline)  
-   * `-Vsumo.token_and_url=<installationToken>` to use an installation token, or: 
+   * `-Vsumo.token_and_url=<installationToken>` to use an installation token, or:
    * `-Vsumo.accessid\<access_i\>` to specify access id generated above  
    * `-Vsumo.accesskey\<access_ke\>` to specify access key generated above  
    * `-Vsources\<filepat\>` to specify the path to your source JSON file created above  

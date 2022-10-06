@@ -19,25 +19,25 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage connections
    </td>
-   <td>Manage the <a href="https://help.sumologic.com/manage/connections-integrations">connections</a> that allow you to send alerts to other tools.
+   <td>Manage the <a href="/docs/manage/connections-integrations">connections</a> that allow you to send alerts to other tools.
    </td>
   </tr>
   <tr>
    <td>Manage Collectors
    </td>
-   <td>Install and manage <a href="https://help.sumologic.com/03Send-Data/Installed-Collectors">installed</a> and <a href="https://help.sumologic.com/03Send-Data/Hosted-Collectors">hosted</a> Collectors and <a href="https://help.sumologic.com/03Send-Data/Sources">Sources</a>. Manage permission automatically includes view permission.
+   <td><a href="/docs/send-data">Install and manage</a> and Installed/Hosted Collectors and Sources. Manage permission automatically includes view permission.
    </td>
   </tr>
   <tr>
    <td>Manage Ingest Budgets
    </td>
-   <td>Manage <a href="https://help.sumologic.com/manage/ingestion-volume/Ingest_Budgets">ingest budgets</a>. Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them.
+   <td>Manage <a href="/docs/manage/ingestion-volume/Ingest-Budgets">ingest budgets</a>. Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them.
    </td>
   </tr>
   <tr>
    <td>Manage data volume feed
    </td>
-   <td><a href="https://help.sumologic.com/manage/ingestion-volume/Data_Volume_Index">Enable and manage the data volume index</a> for your account to avoid using <a href="https://help.sumologic.com/manage/Account/01-Account-Types#Account_Capacity_Limitations">On-Demand Capacity</a>, and to determine when you need to upgrade your account.
+   <td><a href="/docs/manage/ingestion-volume/Data-Volume-Index">Enable and manage the data volume index</a> for your account to avoid using <a href="/docs/manage/manage-subscription/cloud-flex-accounts#Account-Capacity-Limitations">On-Demand Capacity</a>, and to determine when you need to upgrade your account.
    </td>
   </tr>
   <tr>
@@ -49,70 +49,70 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>View fields
    </td>
-   <td>View <a href="https://help.sumologic.com/manage/fields">fields</a>, which are custom metadata fields you can assign to logs.
+   <td>View <a href="/docs/manage/fields">fields</a>, which are custom metadata fields you can assign to logs.
    </td>
   </tr>
   <tr>
    <td>Manage fields
    </td>
-   <td>Manage <a href="https://help.sumologic.com/manage/fields">fields</a>, which are custom metadata fields you can assign to logs.
+   <td>Manage <a href="/docs/manage/fields">fields</a>, which are custom metadata fields you can assign to logs.
 <p>Note that if you grant a role the Manage Fields capability, users with that role will also have the View Fields and View field extraction rules capabilities.</p>
    </td>
   </tr>
   <tr>
    <td>View field extraction rules
    </td>
-   <td>View <a href="https://help.sumologic.com/manage/Field-Extractions">field extraction rules</a>, which speed the search process by automatically parsing fields as log messages are ingested.
+   <td>View <a href="/docs/manage/Field-Extractions">field extraction rules</a>, which speed the search process by automatically parsing fields as log messages are ingested.
    </td>
   </tr>
   <tr>
    <td>Manage field extraction rules
    </td>
-   <td><a href="https://help.sumologic.com/manage/Field-Extractions">Manage field extractions</a>, which speed the search process by automatically parsing fields as log messages are ingested.
+   <td><a href="/docs/manage/Field-Extractions">Manage field extractions</a>, which speed the search process by automatically parsing fields as log messages are ingested.
 <p>Note that if you grant a role the Manage field extraction rules capability, users with that role will also have the Manage Fields, View Fields, and View field extraction rules capabilities.</p>
    </td>
   </tr>
   <tr>
    <td>View Partitions
    </td>
-   <td>View <a href="https://help.sumologic.com/manage/Partitions_and_Data_Tiers">Partitions</a>.
+   <td>View <a href="/docs/manage/Partitions-Data-Tiers">Partitions</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Partitions
    </td>
-   <td>View, create, edit, and delete <a href="https://help.sumologic.com/manage/Partitions_and_Data_Tiers">Partitions</a>.
+   <td>View, create, edit, and delete <a href="/docs/manage/Partitions-Data-Tiers">Partitions</a>.
 <p>Note that if you grant a role the Manage Partitions capability, users with that role will also have View Partitions and Manage S3 data forwarding capabilities.</p>
    </td>
   </tr>
   <tr>
    <td>View Scheduled Views
    </td>
-   <td>View <a href="https://help.sumologic.com/manage/Scheduled-Views">Scheduled Views</a>.
+   <td>View <a href="/docs/manage/Scheduled-Views">Scheduled Views</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Scheduled Views
    </td>
-   <td>View, create, edit, and delete <a href="https://help.sumologic.com/manage/Scheduled-Views">Scheduled Views</a>. Note that if you grant a role the Manage Schedule View capability, users with that role will also have View Scheduled View capabilities.
+   <td>View, create, edit, and delete <a href="/docs/manage/Scheduled-Views">Scheduled Views</a>. Note that if you grant a role the Manage Schedule View capability, users with that role will also have View Scheduled View capabilities.
    </td>
   </tr>
   <tr>
    <td>Manage S3 data forwarding
    </td>
-   <td><a href="https://help.sumologic.com/manage/Data-Forwarding/Configure-Data-Forwarding-from-Sumo-Logic-to-S3">Manage S3 data forwarding</a> from Sumo Logic to an S3 bucket.
+   <td><a href="/docs/manage/Data-Forwarding/amazon-s3-bucket">Manage S3 data forwarding</a> from Sumo Logic to an S3 bucket.
    </td>
   </tr>
   <tr>
    <td>Manage Content
    </td>
-   <td>Manage the content for your organization. This provides access to <a href="https://help.sumologic.com/manage/Content_Sharing/Admin_Mode">Admin Mode</a> in the Library.
+   <td>Manage the content for your organization. This provides access to <a href="/docs/manage/Content-Sharing/Admin-Mode">Admin Mode</a> in the Library.
    </td>
   </tr>
   <tr>
    <td>Manage Tokens
    </td>
-   <td>Manage <a href="https://help.sumologic.com/manage/Security/Installation_Tokens">Installation Tokens</a>.
+   <td>Manage <a href="/docs/manage/Security/installation-tokens">Installation Tokens</a>.
    </td>
   </tr>
   <tr>
@@ -124,13 +124,13 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>View Parsers
    </td>
-   <td>View <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/CSE_Schema/Parser_Editor">Parsers</a>.
+   <td>View <a href="/docs/cse/schema/Parser-Editor">Parsers</a>.
    </td>
   </tr>
   <tr>
    <td>Download Search Results
    </td>
-   <td><a href="https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Export-Search-Results">Export</a> log query results to a .csv file.
+   <td><a href="/docs/search/Get-Started-with-Search/Search-Basics/Export-Search-Results">Export</a> log query results to a .csv file.
    </td>
   </tr>
 </table>
@@ -149,19 +149,19 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage Logs-to-Metrics
    </td>
-   <td>Create, edit, or delete <a href="https://help.sumologic.com/Metrics/Logs-to-Metrics">Logs-to-Metrics</a> rules.
+   <td>Create, edit, or delete <a href="/docs/metrics/Logs-to-Metrics">Logs-to-Metrics</a> rules.
    </td>
   </tr>
   <tr>
    <td>Manage Metrics Transformation Rules
    </td>
-   <td>Create, edit, or delete <a href="https://help.sumologic.com/Metrics/Metrics_Transformation_Rules">Metrics Transformation rules</a>.
+   <td>Create, edit, or delete <a href="/docs/metrics/Metrics-Transformation-Rules">Metrics Transformation rules</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Metric Rules
    </td>
-   <td>Create, edit, or delete <a href="https://help.sumologic.com/Metrics/Metric_Rules_Editor">Metric Rules</a>.
+   <td>Create, edit, or delete <a href="/docs/metrics/Metric-Rules-Editor">Metric Rules</a>.
    </td>
   </tr>
 </table>
@@ -186,55 +186,55 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Allowlist IP addresses
    </td>
-   <td><a href="https://help.sumologic.com/manage/Security/Create-an-Allowlist-for-IP-or-CIDR-Addresses">Explicitly grant access</a> to specific IP addresses or address ranges.
+   <td><a href="/docs/manage/Security/create-allowlist-ip-cidr-addresses">Explicitly grant access</a> to specific IP addresses or address ranges.
    </td>
   </tr>
   <tr>
    <td>Create access keys
    </td>
-   <td>Allows users to create their own access keys on the <a href="https://help.sumologic.com/01Start-Here/05Customize-Your-Sumo-Logic-Experience/Preferences-Page">Preferences page</a>.
+   <td>Allows users to create their own access keys on the <a href="/docs/get-started/sumo-logic-ui">Preferences page</a>.
    </td>
   </tr>
   <tr>
    <td>Manage access keys
    </td>
-   <td><a href="https://help.sumologic.com/manage/Security/Access-Keys">Set up, activate, deactivate, or delete access keys</a> for your organization.
+   <td><a href="/docs/manage/Security/Access-Keys">Set up, activate, deactivate, or delete access keys</a> for your organization.
    </td>
   </tr>
   <tr>
    <td>Manage support account access
    </td>
-   <td>Enable <a href="https://help.sumologic.com/manage/Security/Enable-a-Support-Account">management of the Sumo Logic support account</a> for your organization.
+   <td>Enable <a href="/docs/manage/Security/Enable-Support-Account">management of the Sumo Logic support account</a> for your organization.
    </td>
   </tr>
   <tr>
    <td>Manage audit data feed.
    </td>
-   <td><a href="https://help.sumologic.com/manage/Security/Audit-Index">Enable and manage the Audit Index</a>, which provides information on the internal events that occur in your account associated with account management, user activity, and scheduled searches.
+   <td><a href="/docs/manage/Security/Audit-Index">Enable and manage the Audit Index</a>, which provides information on the internal events that occur in your account associated with account management, user activity, and scheduled searches.
    </td>
   </tr>
   <tr>
    <td>Manage SAML
    </td>
-   <td><a href="https://help.sumologic.com/manage/Security/SAML">Provision and manage SAML</a> for single sign-on to your Sumo Logic accounts.
+   <td><a href="/docs/manage/Security/SAML">Provision and manage SAML</a> for single sign-on to your Sumo Logic accounts.
    </td>
   </tr>
   <tr>
    <td>Manage Share dashboards outside of the organization
    </td>
-   <td><a href="https://help.sumologic.com/Visualizations-and-Alerts/Dashboards/Share_Dashboards/Share_a_Dashboard_Inside_Your_Org">Share a dashboard</a> with users who don't have access to Sumo Logic.
+   <td><a href="/docs/dashboards/share-dashboard-inside-org">Share a dashboard</a> with users who don't have access to Sumo Logic.
    </td>
   </tr>
   <tr>
    <td>Manage organization settings
    </td>
-   <td>Users with this capability can configure a <a href="https://help.sumologic.com/manage/Security/Set_a_Limit_for_User_Concurrent_Sessions">concurrent user sessions limit</a> and enable the <a href="https://help.sumologic.com/manage/Security/Data_Access_Level_for_Shared_Dashboards">Data Access Level for Shared Dashboards</a> security policy.
+   <td>Users with this capability can configure a <a href="/docs/manage/Security/set-limit-user-concurrent-sessions">concurrent user sessions limit</a> and enable the <a href="/docs/manage/Security/data-access-level-shared-dashboards">Data Access Level for Shared Dashboards</a> security policy.
    </td>
   </tr>
   <tr>
    <td>Change Data Access Level
    </td>
-   <td>Users with this capability can change the <a href="https://help.sumologic.com/Visualizations-and-Alerts/Dashboards/Get-Started-with-Dashboards-and-Panels/Set_the_Data_Access_Level_for_a_Dashboard">data access level</a> of dashboards or scheduled searches to which they have edit or manage permission.
+   <td>Users with this capability can change the <a href="/docs/dashboards/get-started/set-data-access-level-dashboard">data access level</a> of dashboards or scheduled searches to which they have edit or manage permission.
    </td>
   </tr>
 </table>
@@ -253,13 +253,13 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Share dashboards with the allowlist
    </td>
-   <td><a href="https://help.sumologic.com/Visualizations-and-Alerts/Dashboards/Share_Dashboards/Share_a_Dashboard_Inside_Your_Org#Share_Dashboards_outside_your_organization">Share dashboards</a> in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your <a href="https://help.sumologic.com/Visualizations-and-Alerts/Dashboards/Share_Dashboards/Share_a_Dashboard_Inside_Your_Org#Enable_the_service_whitelist">service allowlist</a>.
+   <td><a href="/docs/dashboards/share-dashboard-inside-org#Share_Dashboards_outside_your_organization">Share dashboards</a> in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your <a href="/docs/dashboards/share-dashboard-inside-org#Enable_the_service_whitelist">service allowlist</a>.
    </td>
   </tr>
   <tr>
    <td>Share dashboards with the world
    </td>
-   <td><a href="https://help.sumologic.com/Visualizations-and-Alerts/Dashboards/Share_Dashboards/Share_a_Dashboard_Inside_Your_Org#Share_Dashboards_outside_your_organization">Share dashboards</a> in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.
+   <td><a href="/docs/dashboards/share-dashboard-inside-org#Share_Dashboards_outside_your_organization">Share dashboards</a> in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.
    </td>
   </tr>
 </table>
@@ -277,7 +277,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage users and roles
    </td>
-   <td>Access the web app pages to manage <a href="https://help.sumologic.com/manage/users-roles/Manage-Users">users</a> and <a href="https://help.sumologic.com/manage/users-roles/Manage-Roles">roles</a>.
+   <td>Access the web app pages to manage <a href="/docs/manage/users-roles/users">users</a> and <a href="/docs/manage/users-roles/roles/role-capabilities">roles</a>.
    </td>
   </tr>
 </table>
@@ -299,27 +299,27 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
   <tr>
    <td>View Monitors
    </td>
-   <td>View <a href="https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors">Monitors</a>.
-<p>If <a href="https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions </a>are enabled for your org, users with this capability can view folders on the <a href="https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors">Monitors</a> page to which they've been granted View access, and the Monitors contained in those folders.</p>
+   <td>View <a href="/docs/alerts/Monitors">Monitors</a>.
+<p>If <a href="/docs/alerts/Monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions </a>are enabled for your org, users with this capability can view folders on the <a href="/docs/alerts/Monitors">Monitors</a> page to which they've been granted View access, and the Monitors contained in those folders.</p>
    </td>
   </tr>
   <tr>
    <td>Manage Monitors
    </td>
-   <td>A user with this capability can create new folders and <a href="https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors">Monitors</a>, and grant other roles permissions to the folders they create.
-<p>If <a href="https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions</a> are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.</p>
+   <td>A user with this capability can create new folders and <a href="/docs/alerts/Monitors">Monitors</a>, and grant other roles permissions to the folders they create.
+<p>If <a href="/docs/alerts/Monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions</a> are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.</p>
    </td>
   </tr>
   <tr>
    <td>View Alerts
    </td>
-   <td>View <a href="https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors/Alert_Response#Alert_List">Alerts</a> on the Alerts page.
+   <td>View <a href="/docs/alerts/Monitors/Alert-Response#Alert_List">Alerts</a> on the Alerts page.
    </td>
   </tr>
   <tr>
    <td>Admin Monitors
    </td>
-   <td>If <a href="https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions</a> are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the <a href="https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors">Monitors</a> page. This is similar to the Content Administrator capability of the Content Library.
+   <td>If <a href="/docs/alerts/Monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions</a> are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the <a href="/docs/alerts/Monitors">Monitors</a> page. This is similar to the Content Administrator capability of the Content Library.
    </td>
   </tr>
 </table>
@@ -338,7 +338,7 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
   <tr>
    <td>View Organizations
    </td>
-   <td>View the <a href="https://help.sumologic.com/manage/01Manage_Subscription/08Create_and_Manage_Orgs">Organizations</a> UI.
+   <td>View the <a href="/docs/manage/Manage-Subscription/create-manage-orgs">Organizations</a> UI.
    </td>
   </tr>
   <tr>
@@ -396,31 +396,31 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>Comment on Insights
    </td>
-   <td>Add comments to <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/About_the_CSE_Insight_UI">Insights</a>.
+   <td>Add comments to <a href="/docs/cse/records-signals-entities-insights/about-cse-insight-ui">Insights</a>.
    </td>
   </tr>
   <tr>
    <td>Create Insights
    </td>
-   <td>Create <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/About_the_CSE_Insight_UI">Insights</a>.
+   <td>Create <a href="/docs/cse/records-signals-entities-insights/about-cse-insight-ui">Insights</a>.
    </td>
   </tr>
   <tr>
    <td>Delete Insights
    </td>
-   <td>Delete <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/About_the_CSE_Insight_UI">Insights</a>.
+   <td>Delete <a href="/docs/cse/records-signals-entities-insights/about-cse-insight-ui">Insights</a>.
    </td>
   </tr>
   <tr>
    <td>Invoke Insights Actions
    </td>
-   <td>Choose and run an <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Administration/Create_CSE_Actions">Action</a> from the Actions menu for an Insight.
+   <td>Choose and run an <a href="/docs/cse/Administration/Create-CSE-Actions">Action</a> from the Actions menu for an Insight.
    </td>
   </tr>
   <tr>
    <td>Manage Insight Assignee
    </td>
-   <td>Change the user that is assigned to an <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/About_the_CSE_Insight_UI">Insights</a>.
+   <td>Change the user that is assigned to an <a href="/docs/cse/records-signals-entities-insights/about-cse-insight-ui">Insights</a>.
    </td>
   </tr>
   <tr>
@@ -432,25 +432,25 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>Manage Insight Status
    </td>
-   <td>Change the status of an <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/About_the_CSE_Insight_UI">Insights</a>.
+   <td>Change the status of an <a href="/docs/cse/records-signals-entities-insights/about-cse-insight-ui">Insights</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Insight Tags
    </td>
-   <td>Add and delete tags assigned to <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/About_the_CSE_Insight_UI">Insights</a>.
+   <td>Add and delete tags assigned to <a href="/docs/cse/records-signals-entities-insights/about-cse-insight-ui">Insights</a>.
    </td>
   </tr>
   <tr>
    <td>View Rules
    </td>
-   <td>View <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/CSE_Rules/01_About_CSE_Rules">CSE rules</a>.
+   <td>View <a href="/docs/cse/rules/about-cse-rules">CSE rules</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Rules
    </td>
-   <td>Create, edit, and delete <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/CSE_Rules/01_About_CSE_Rules">CSE rules</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/rules/about-cse-rules">CSE rules</a>.
    </td>
   </tr>
   <tr>
@@ -468,103 +468,103 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>View Match Lists
    </td>
-   <td>View <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Match_Lists_and_Suppressed_Lists/Create_a_Match_List">Match Lists</a>.
+   <td>View <a href="/docs/cse/match-lists-suppressed-lists/create-match-list">Match Lists</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Match Lists
    </td>
-   <td>Create, edit, and delete <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Match_Lists_and_Suppressed_Lists/Create_a_Match_List">Match Lists</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/match-lists-suppressed-lists/create-match-list">Match Lists</a>.
    </td>
   </tr>
   <tr>
    <td>View File Analysis
    </td>
-   <td>View <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/CSE_Rules/Import_YARA_Rules">file analysis</a> (YARA) rules.
+   <td>View <a href="/docs/cse/rules/Import-YARA-Rules">file analysis</a> (YARA) rules.
    </td>
   </tr>
   <tr>
    <td>Manage File Analysis
    </td>
-   <td>Create, edit, and delete <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/CSE_Rules/Import_YARA_Rules">file analysis</a> (YARA) rules.
+   <td>Create, edit, and delete <a href="/docs/cse/rules/Import-YARA-Rules">file analysis</a> (YARA) rules.
    </td>
   </tr>
   <tr>
    <td>View Custom Insights
    </td>
-   <td>View <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/Configure_a_Custom_Insight">custom Insight</a> configurations.
+   <td>View <a href="/docs/cse/records-signals-entities-insights/Configure-Custom-Insight">custom Insight</a> configurations.
    </td>
   </tr>
   <tr>
    <td>Manage Custom Insights
    </td>
-   <td>Create, edit, and delete <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/Configure_a_Custom_Insight">custom Insight</a> configurations.
+   <td>Create, edit, and delete <a href="/docs/cse/records-signals-entities-insights/Configure-Custom-Insight">custom Insight</a> configurations.
    </td>
   </tr>
   <tr>
    <td>View Network Blocks
    </td>
-   <td>View <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Administration/Create_and_Use_Network_Blocks">network blocks</a>.
+   <td>View <a href="/docs/cse/Administration/Create-Use-Network-Blocks">network blocks</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Network Blocks
    </td>
-   <td>Create, edit, and delete <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Administration/Create_and_Use_Network_Blocks">network blocks</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/Administration/Create-Use-Network-Blocks">network blocks</a>.
    </td>
   </tr>
   <tr>
    <td>View Suppressed Entities
    </td>
-   <td>View <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/About_Signal_Suppression">Suppressed</a> Entities.
+   <td>View <a href="/docs/cse/records-signals-entities-insights/About-Signal-Suppression">Suppressed</a> Entities.
    </td>
   </tr>
   <tr>
    <td>Manage Suppressed Entities
    </td>
-   <td><a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/About_Signal_Suppression">Suppress</a> and unsuppress Entities.
+   <td><a href="/docs/cse/records-signals-entities-insights/About-Signal-Suppression">Suppress</a> and unsuppress Entities.
    </td>
   </tr>
   <tr>
    <td>View Mappings
    </td>
-   <td>View <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/CSE_Schema/Create_a_Structured_Log_Mapping">log mappings</a> and <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/CSE_Ingestion/ztConfigure_a_Sumo_Logic_Ingest_Mapping">ingest mappings.</a>
+   <td>View <a href="/docs/cse/schema/Create-Structured-Log-Mapping">log mappings</a> and <a href="/docs/cse/Ingestion/sumo-logic-ingest-mapping">ingest mappings.</a>
    </td>
   </tr>
   <tr>
    <td>Manage Mappings
    </td>
-   <td>Create, edit, and delete <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/CSE_Schema/Create_a_Structured_Log_Mapping">log mappings</a> and <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/CSE_Ingestion/ztConfigure_a_Sumo_Logic_Ingest_Mapping">ingest mappings</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/schema/Create-Structured-Log-Mapping">log mappings</a> and <a href="/docs/cse/Ingestion/sumo-logic-ingest-mapping">ingest mappings</a>.
    </td>
   </tr>
   <tr>
    <td>View Workflow
    </td>
-   <td>View Insight <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/05Set_Insight_Generation_Window_and_Threshold">detection settings</a>, custom Insight <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Administration/Manage_Custom_Insight_Statuses">statuses</a> and <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Administration/Manage_Custom_Insight_Resolutions">resolutions</a>, and <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Administration/Create_a_Custom_Tag_Schema">tag schemas</a>.
+   <td>View Insight <a href="/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold">detection settings</a>, custom Insight <a href="/docs/cse/Administration/Manage-Custom-Insight-Statuses">statuses</a> and <a href="/docs/cse/Administration/Manage-Custom-Insight-Resolutions">resolutions</a>, and <a href="/docs/cse/Administration/Create-a-Custom-Tag-Schema">tag schemas</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Workflow
    </td>
-   <td>Create, edit, and delete Insight <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/05Set_Insight_Generation_Window_and_Threshold">detection settings</a>, custom Insight <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Administration/Manage_Custom_Insight_Statuses">statuses</a> and <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Administration/Manage_Custom_Insight_Resolutions">resolutions</a>, and <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Administration/Create_a_Custom_Tag_Schema">tag schemas</a>.
+   <td>Create, edit, and delete Insight <a href="/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold">detection settings</a>, custom Insight <a href="/docs/cse/Administration/Manage-Custom-Insight-Statuses">statuses</a> and <a href="/docs/cse/Administration/Manage-Custom-Insight-Resolutions">resolutions</a>, and <a href="/docs/cse/Administration/Create-a-Custom-Tag-Schema">tag schemas</a>.
    </td>
   </tr>
   <tr>
    <td>View Context Actions
    </td>
-   <td>View <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Administration/Create_CSE_Context_Actions">Context Actions</a>.
+   <td>View <a href="/docs/cse/Administration/Create-CSE-Context-Actions">Context Actions</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Context Actions
    </td>
-   <td>Create, edit, and delete <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Administration/Create_CSE_Context_Actions">Context Actions</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/Administration/Create-CSE-Context-Actions">Context Actions</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Actions
    </td>
-   <td>View, create, edit, and delete <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Administration/Create_CSE_Actions">Actions</a>.
+   <td>View, create, edit, and delete <a href="/docs/cse/Administration/Create-CSE-Actions">Actions</a>.
    </td>
   </tr>
   <tr>
@@ -582,37 +582,37 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>View Custom Entity Types
    </td>
-   <td>View <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/11Create_a_Custom_Entity_Type">custom Entity types</a>.
+   <td>View <a href="/docs/cse/records-signals-entities-insights/create-custom-entity-type">custom Entity types</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Custom Entity Types
    </td>
-   <td>Create, edit, and delete <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/11Create_a_Custom_Entity_Type">custom Entity types</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/records-signals-entities-insights/create-custom-entity-type">custom Entity types</a>.
    </td>
   </tr>
   <tr>
    <td>View Entity Normalization
    </td>
-   <td>View the configurations on CSE’s <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/CSE_Schema/Username_and_Hostname_Normalization">Domain Normalization</a> page.
+   <td>View the configurations on CSE’s <a href="/docs/cse/schema/Username-and-Hostname-Normalization">Domain Normalization</a> page.
    </td>
   </tr>
   <tr>
    <td>Manage Entity Normalization
    </td>
-   <td>Update the configurations on CSE’s <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/CSE_Schema/Username_and_Hostname_Normalization">Domain Normalization</a> page.
+   <td>Update the configurations on CSE’s <a href="/docs/cse/schema/Username-and-Hostname-Normalization">Domain Normalization</a> page.
    </td>
   </tr>
   <tr>
    <td>View Entity Criticality
    </td>
-   <td>View <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/07Entity_Criticality">Entity Criticalities</a>.
+   <td>View <a href="/docs/cse/records-signals-entities-insights/entity-criticality">Entity Criticalities</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Entity Criticality
    </td>
-   <td>Create, edit, and delete <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/07Entity_Criticality">Entity Criticalities</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/records-signals-entities-insights/entity-criticality">Entity Criticalities</a>.
    </td>
   </tr>
   <tr>
@@ -636,13 +636,13 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>View Entity Groups
    </td>
-   <td>View <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/Create_an_Entity_Group">Entity Groups</a>.
+   <td>View <a href="/docs/cse/records-signals-entities-insights/Create-an-Entity-Group">Entity Groups</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Entity Groups
    </td>
-   <td>Create, edit, and delete <a href="https://help.sumologic.com/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/Create_an_Entity_Group">Entity Groups</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/records-signals-entities-insights/Create-an-Entity-Group">Entity Groups</a>.
    </td>
   </tr>
 </table>

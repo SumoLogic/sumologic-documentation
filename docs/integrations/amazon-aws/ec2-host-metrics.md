@@ -16,13 +16,13 @@ The Sumo Logic App for Host Metrics (EC2) allows you to collect your EC2 instanc
 
 ## Metrics Types  
 
-Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Host-Metrics-Source#Collected_Metrics).
+Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/Host-Metrics-Source#Collected_Metrics).
 
-* [CPU Metrics](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics/01Collect-Host-Metrics-for-the-Host-Metrics-App#CPU_Metrics-2349)
-* [Memory Metrics](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics/01Collect-Host-Metrics-for-the-Host-Metrics-App#Memory_Metrics-2349)
-* [TCP Metrics](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics/01Collect-Host-Metrics-for-the-Host-Metrics-App#TCP_Metrics-2349)
-* [Networking Metrics](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics/01Collect-Host-Metrics-for-the-Host-Metrics-App#TCP_Metrics-2349)
-* [Disk Metrics](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics/01Collect-Host-Metrics-for-the-Host-Metrics-App#Disk_Metrics-2349)
+* [CPU Metrics](/docs/integrations/Hosts-Operating-Systems/Host-Metrics#CPU_Metrics-2349)
+* [Memory Metrics](/docs/integrations/Hosts-Operating-Systems/Host-Metrics#Memory_Metrics-2349)
+* [TCP Metrics](/docs/integrations/Hosts-Operating-Systems/Host-Metrics#TCP_Metrics-2349)
+* [Networking Metrics](/docs/integrations/Hosts-Operating-Systems/Host-Metrics#TCP_Metrics-2349)
+* [Disk Metrics](/docs/integrations/Hosts-Operating-Systems/Host-Metrics#Disk_Metrics-2349)
 
 
 ### Sample Query  
@@ -34,24 +34,24 @@ _sourcecategory=Labs/AWS/Host/Metrics metric=CPU_Total account=* region=* namesp
 
 ## Collecting Metrics for the Host Metrics (EC2) App
 
-The Host Metrics (EC2) app relies upon an Installed Collector with a [Host Metrics Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Host-Metrics-Source) on each of your AWS EC2 hosts. This page describes the data sources for the Host Metrics (EC2) app and has instructions for setting up metric collection.
+The Host Metrics (EC2) app relies upon an Installed Collector with a [Host Metrics Source](/docs/send-data/installed-collectors/sources/Host-Metrics-Source) on each of your AWS EC2 hosts. This page describes the data sources for the Host Metrics (EC2) app and has instructions for setting up metric collection.
 
 
 ### Field in Field Schema
 
-Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the `instanceid` field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/manage/fields#manage-fields).
+Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the `instanceid` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
 
 ### Configure Host Metrics sources  
 
-Follow the instructions in this section to configure the Sumo Logic Installed Collector and a [Host Metrics Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Host-Metrics-Source) on each of your AWS EC2 hosts. You will assign account and Namespace metadata [fields](https://help.sumologic.com/manage/fields) to the sources so that incoming logs and metrics will be appropriately tagged.
+Follow the instructions in this section to configure the Sumo Logic Installed Collector and a [Host Metrics Source](/docs/send-data/installed-collectors/sources/Host-Metrics-Source) on each of your AWS EC2 hosts. You will assign account and Namespace metadata [fields](/docs/manage/fields) to the sources so that incoming logs and metrics will be appropriately tagged.
 
 This step is not necessary if you already have an Installed Collector and Host Metrics tagged with account and Namespace metadata fields.
 
 Perform these steps for each EC2 host.
 
-1. Set up an Installed Collector. For instructions, see [Installed Collectors](https://help.sumologic.com/03Send-Data/Installed-Collectors/01About-Installed-Collectors).
-2. Add a Host Metrics Source to the Installed Collector. For instructions, see [Manually Configure a Host Metrics Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Host-Metrics-Source#Manually_Configure_a_Host_Metrics_Source). In the **Fields** portion of the configuration::
+1. Set up an Installed Collector. For instructions, see [Installed Collectors](/docs/send-data/Installed-Collectors).
+2. Add a Host Metrics Source to the Installed Collector. For instructions, see [Manually Configure a Host Metrics Source](/docs/send-data/installed-collectors/sources/Host-Metrics-Source#Manually-Configure-a-Host-Metrics-Source). In the **Fields** portion of the configuration::
    * Add a field named account, and set it to your AWS account alias.
    * Add a field named Namespace and set it to AWS/EC2.
 3. Set the **Scan Interval** (the frequency at which the Source is scanned) to 1 minute.
@@ -107,12 +107,12 @@ You can also build your EC2 AMI machine image with these fields and settings. Fo
 
 ### AWS Metadata
 
-Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics. Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AWS Metadata Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-Metadata-(Tag)-Source).
+Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics. Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source).
 
 
 # Install the Host Metrics (EC2) App
 
-Now that you have set up the collection for Host Metrics (EC2) metrics, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Classic_Load_Balancer/Install-the-AWS-Classic-Load-Balancer-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up the collection for Host Metrics (EC2) metrics, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

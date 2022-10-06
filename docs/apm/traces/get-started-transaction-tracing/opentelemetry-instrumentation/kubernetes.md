@@ -16,7 +16,7 @@ To enable the OpenTelemetry-Operator for the  [Sumo Logic Kubernetes Collection]
  ```bash
  $ helm dependency update
  ```
-2. Installation/upgrade enabling operator and setting namespaces to watch. You can find more details about installing an OT collector in Kubernetes environments [here](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_Kubernetes_environments). Make sure that `--wait` flag is set at the end.
+2. Installation/upgrade enabling operator and setting namespaces to watch. You can find more details about installing an OT collector in Kubernetes environments [here](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments). Make sure that `--wait` flag is set at the end.
  ```bash
  $ helm upgrade --install collection sumologic/sumologic \
  --namespace sumologic \
