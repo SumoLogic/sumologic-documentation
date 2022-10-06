@@ -4492,7 +4492,7 @@ Rollingstd is also used with the [Backshift](#backshift) operator.
 ---
 ## save (Lookups Classic)
 
-<details><summary><small>The <code>save</code> (classic) operator works with the classic Lookup Tables feature. For information about the new, more scalable Lookup Tables feature and the new `save` operator that works with it, see <a href="/docs/search/lookup-tables">Lookup Tables</a> and [save](#save). The new `save` operator allows you to merge new and changed rows, whereas, this classic `save` operator can only append to existing rows.</small></summary>
+<details><summary><small>The <code>save</code> (classic) operator works with the classic Lookup Tables feature. For information about the new, more scalable Lookup Tables feature and the new <code>save</code> operator that works with it, see <a href="/docs/search/lookup-tables">Lookup Tables</a> and <a href="#save">save</a>. The new <code>save</code> operator allows you to merge new and changed rows, whereas, this classic <code>save</code> operator can only append to existing rows.</small></summary>
 
 Using the **save** operator allows you to save the results of a query into the Sumo Logic file system. Later, you can use the lookup operator to access the saved data. The save operator saves data in a simple format to a location you choose.
 
@@ -4500,7 +4500,9 @@ You will need to remember the path where you point the save operator to put the 
 
 **Syntax**
 
-* `save [append]\<myFolder/mySubFolder/myFileNam\>`
+```sql
+save [append]\<myFolder/mySubFolder/myFileNam\>
+```
 
 **Rules**
 
