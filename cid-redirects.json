@@ -455,7 +455,6 @@
     "/Manage/Security/Enable-a-Support-Account": "/docs/manage/security/enable-support-account",
     "/01Start-Here/03About-Sumo-Logic/Contact-Us": "/docs/get-started/help",
     "/05Search/Search-Query-Language/Search-Operators/if-operator-and": "/docs/search/search-query-language/operators",
-    "/03Send-Data/Sources/01Sources-for-Installed-Collectors/Windows_Active_Directory_Inventory_Source": "/",
     "/05Search/Search-Query-Language/Search-Operators/Manually-Casting-String-Data-to-a-Number": "/docs/search/search-query-language/operators",
     "/05Search/Get-Started-with-Search": "/docs/search/get-started-with-search",
     "/Visualizations-and-Alerts": "/docs/alerts",
