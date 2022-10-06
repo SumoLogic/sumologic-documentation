@@ -1072,7 +1072,6 @@ module.exports = {
             'search/search-query-language/parse-operators/parse-hex',
           ],
         },
-        'search/search-query-language/operators',
         'search/search-query-language/group-aggregate-operators',
         'search/search-query-language/field-expressions',
         'search/search-query-language/math-expressions',
