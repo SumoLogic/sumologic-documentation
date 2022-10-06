@@ -1,4 +1,5 @@
 {       
+    "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/Troubleshooting-HTTP-Sources": "/docs/send-data/hosted-collectors/http-source/troubleshooting",
     "/05Search/Get-Started-with-Search/How-to-Build-a-Search/What-Data-Do-I-Have": "/docs/search/get-started-with-search/build-search",
     "/05Search/Search-Cheat-Sheets": "/docs/search/search-cheat-sheets",
     "/Beta/Metrics-Rules": "/docs/metrics/metric-rules-editor",
