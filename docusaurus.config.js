@@ -179,7 +179,7 @@ module.exports = {
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
     announcementBar: {
       id: 'announcementBar',
-      content: `⭐️ Welcome to the new Sumo Logic Doc Site! If you want the old site go to https://helpstaging.sumologic.com ⭐️`,
+      content: `📣 Welcome to the new Sumo Logic Docs Site! To view our legacy docs, <a target="_blank" rel="noopener noreferrer" href="https://helpstaging.sumologic.com">click here</a>.`,
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
