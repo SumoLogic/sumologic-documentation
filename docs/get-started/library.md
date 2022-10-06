@@ -410,3 +410,16 @@ If you modify your JSON manually after export, we recommend that you use [JSONLi
 3. In the **Content Import **dialog, enter **Name.** The item name must be unique with a folder. **Check your JSON before importing to make sure that there is no organization-specific content.** All content names in an organization must be unique. If the name is not unique, you will get an error that prevents you from importing the content.
 4. Paste the JSON you copied from the** JSON** dialog to the clipboard, or from the JSON file you downloaded.
 5. Click **Import**. The Import button is only available if you have pasted in a valid JSON.
+
+## Library Filters
+
+You can search through the content in your library with these three main filters. The filters can also be used in tandem, allowing you to filter through filtered content.
+
+#### Created By
+When selected this filter shows a list of users in your network. Once a creator is selected only content created by this user will show up in your search.
+
+#### Shared With
+When selected this filter shows a list of users in your network. Once a user is selected only content that was shared with this user will show up in your search.
+
+#### Type 
+When selected this filter shows a list of different types of content within the library. Once a type is selected only that type of content will show up in your search.

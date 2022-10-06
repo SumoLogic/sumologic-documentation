@@ -20,7 +20,7 @@ You can define custom *sub-resolutions* for any of the built-in resolutions. Thi
 
 ## Create a custom sub-resolution
 
-1. Click the gear icon at the top of the CSE UI and choose **Resolutions** under **Insights**.
+1. Click the gear icon at the top of the CSE UI and choose **Resolutions** under **Workflow**.
 1. On the **Insight Resolutions** page, click **Create**.  
     ![resolutions-link.png](/img/cse/resolutions-link.png)
 1. The **Create Insight Resolution** page appears.

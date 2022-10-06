@@ -44,6 +44,7 @@ CSE supports TAXII v1.1 and v1.2. 
 1. **URL**. Enter the URL for the feed provider’s TAXII discovery service endpoint.
 1. **Poll Interval**. Enter the frequency at which you want to poll the feed for updates.
 1. **Default Indicator TTL**. If desired, specify a default TTL that will take effect for Indicators that don’t have a defined expiration.
+1. **Max Lookback days**. You can use this option to tell CSE how many days of data to fetch the first time you populate your list of indicators. By default, the first time you populate the list, CSE will look for all data from the feed for all time. Note that on subsequent updates, CSE will only consider data added to the feed since the last time it was polled.
 1. **Collections**. You can optionally enter a comma-separated list of the specific collections of indicators that you want to retrieve. (The collections available depend on your threat intel provider.) If you leave this field blank, all indicators will be queried.)
 1. **Subscription ID**. As required, an subscription ID to send to the TAXII provider in the poll request.
 12. **Username**. Enter the username for accessing the TAXII server.
