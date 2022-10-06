@@ -1,8 +1,4 @@
 {
-    "/05Search/Anomaly-Detection/Anomalies-Page/Drill-Down-into-Events": "/docs/dashboards-new/drill-down-to-discover-root-causes",
-    "/03Send-Data/Installed-Collectors/01About-Installed-Collectors": "/docs/send-data/installed-collectors",
-    "/Manage/Scheduled-Views/Scheduled-Views-Best-Practices-and-Examples": "/docs/manage/scheduled-views/scheduled-views-best-practices",
-    "/05Search/Search-Query-Language/Search-Operators/hash": "/docs/search/search-query-language/operators/#hash",
     "/01Start-Here/Library/Delete-Content-from-the-Library": "/docs/get-started/library",
     "/Manage/Users-and-Roles/Manage-Roles/03-Create-and-Manage-Roles": "/manage/users-roles/roles/create-manage-roles",
     "/07Sumo-Logic-Apps/26Apps_for_Sumo/Enterprise_Search_Audit_App": "/docs/integrations/sumo-apps/enterprise-search-audit",
