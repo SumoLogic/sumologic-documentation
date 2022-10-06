@@ -16,7 +16,7 @@ You will need the [AWS CLI](https://aws.amazon.com/cli/) command installed and c
 Get your [Sumo Logic Access ID and Access Key](/docs/manage/security/access-keys) and run the following command:
 
 ```
-curl https://raw.githubcontent.com/sumologic/sumologic-solution-templates/aws-observability/install.sh | bash -- <SUMO_ACCESS_ID> <SUMO_ACCESS_KEY>
+curl https://raw.githubusercontent.com/sumologic/sumologic-solution-templates/aws-observability/install.sh | bash -- <SUMO_ACCESS_ID> <SUMO_ACCESS_KEY>
 ```
 
 ![AWS Observability Installation](/img/observability/aws-observability-installation.png)
