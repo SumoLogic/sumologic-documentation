@@ -504,6 +504,7 @@
   "/Beta/Cloud-to-Cloud_Integration_Framework": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework",
   "/Beta/Cloud-to-Cloud_Integration_Framework/Cylance_Source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cylance-source",
   "/Beta/Metrics-Rules": "/docs/metrics/metric-rules-editor",
+  "/Metrics/Metric-Queries-and-Alerts/07Metrics_Operators/filter": "/docs/metrics/metric-queries-alerts/operators",
   "/cid/1": "/docs/search/get-started-with-search/build-search/search-syntax-overview",
   "/cid/100": "/docs/manage/security/installation-tokens",
   "/cid/1000": "/docs/send-data/installed-collectors/sources/local-file-source",
