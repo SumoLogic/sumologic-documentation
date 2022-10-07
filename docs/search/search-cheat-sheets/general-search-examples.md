@@ -217,7 +217,7 @@ if(status_code matches "50*","500s","Other")))) as status_code_group
 ```
 
 :::sumo More Info
-For more information, see [Timeslice](/docs/search/search-query-language/operators#timeslice) and [Transpose](/docs/searches/search-query-language/operators#transpose).
+For more information, see [Timeslice](/docs/search/search-query-language/operators#timeslice) and [Transpose](/docs/search/search-query-language/operators#transpose).
 :::
 
 ## Conditional Operators
