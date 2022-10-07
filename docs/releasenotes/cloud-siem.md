@@ -6,6 +6,7 @@ description: Here you'll find information about new and enhanced features, updat
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+---
 ### October 6, 2022 - Application Update
 
 #### Minor Changes and Enhancements
