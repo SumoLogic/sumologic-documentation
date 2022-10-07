@@ -1823,6 +1823,7 @@ module.exports = {
             'cse/administration/cse-data-retention',
             'cse/administration/cse-audit-logging',
             'cse/administration/cse-user-accounts-and-roles',
+            'cse/administration/custom-inventory-sources',
             'cse/administration/manage-custom-insight-resolutions',
             'cse/administration/manage-custom-insight-statuses',
             'cse/administration/using-sensor-zones',
