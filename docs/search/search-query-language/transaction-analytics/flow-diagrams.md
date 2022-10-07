@@ -1,8 +1,8 @@
 ---
 id: flow-diagrams
+title: Flow Diagrams
 ---
 
-# Flow Diagrams
 
 Sankey diagrams, a specific type of flow diagram, uses the width of an arrow or stripe to show the proportion of a quantity. In Sumo Logic, Flow Diagrams can show the flow within a distributed system, for example, or can be used to see how customers flow through your website via states, which are triggered by log events. These states can show you how long customers take to complete purchases, or even where users are dropping off your site or app.
 
@@ -20,7 +20,7 @@ Sankey diagrams are named after Irish Captain Matthew Sankey, an engineer who us
 
 1. Run a search using a transaction operator. Make sure to include `fromstate` arguments to order the data properly.
 1. In the Aggregates tab of the **Search** page, click the **Flow Diagram** icon.  
-      
+
     ![FlowDiagram.png](/img/reuse/query-search/FlowDiagram.png)
 
 1. Save the search as a Flow Diagram to run again later.
@@ -34,7 +34,7 @@ To drill down in a Flow Diagram:
 
 1. After running a transaction operator query, hover over a line in the
     Flow Diagram.  
-      
+
     ![diagram](/img/reuse/query-search/Flow_Diagram_drilldown.png)
 
 1. Click the line.
