@@ -29,9 +29,6 @@ module.exports = {
     {
       src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
       async: true,
-      stylesheets: [
-        'src/css/sitesearch360.scss',
-      ],
     },
   ],
   i18n: {
@@ -99,7 +96,10 @@ module.exports = {
           trackingID: 'UA-16579649-3',
         },
         theme: {
-          customCss: require.resolve('./src/css/sumo.scss'),
+          customCss: [
+            require.resolve('./src/css/sumo.scss'),
+            require.resolve('./src/css/sitesearch360.scss'),
+          ],
         },
       }),
     ],
