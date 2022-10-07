@@ -21,7 +21,7 @@ Expressions can be used to create fields that are Numeric, Boolean, or String va
 
 Numbers can be calculated using combinations of addition, subtraction, multiplication, division, modulo, and unary negation. Operators like "+" or "/" can be applied to numeric literals, numeric fields, operators that act as numeric functions (such as abs() or pow()), or nested numeric expressions. For more information about numeric functions, see [Math Expressions](/docs/search/search-query-language/math-expressions).
 
-### Numeric Literals
+## Numeric Literals
 
 In our Query Language, a number, or numeric literal, is a set of digits containing no spaces, with an optional decimal point. Commas are not allowed, and leading and trailing zeros are ignored.  We also allow scientific notation using "e+" or "e-" to divide the number from the exponent. Here are some examples of simple numeric literals:
 
@@ -35,11 +35,11 @@ It is worth noting that a leading "-" is a unary negation and is treated formal
 
 Numeric literals may optionally end with a suffix. There are two available types: size and time.
 
-#### Size suffix 
+## Size suffix 
 
 This is a shorthand way to express scalar numeric values multiplied by common factors. Some examples of size suffixes:
 
-```
+```sql
 | 2k as twoThousand
 | 1B as oneBillion
 | 1.5M as onePointFiveMillion
@@ -57,11 +57,11 @@ The list of supported suffixes, and the factor by which they multiply the numeri
 | T          | 1000000000000    | Ti         | 1099511627776    |
 | P          | 1000000000000000 | Pi         | 1125899906842624 |
 
-#### Time suffix
+## Time suffix
 
 This is used to represent units of time. **The base unit of time returned is the millisecond.** For example, 1.5s would be returned as 1,500. One and a half seconds converted to the base unit of milliseconds. Some examples of time suffixes:
 
-```
+```sql
 | 1w as oneWeek
 | 1m as oneMinute
 | 1.5s as oneAndAHalfSeconds
@@ -82,14 +82,13 @@ The following time suffixes are supported:
 | d          | Day         |
 | w          | Week        |
 
-### Arithmetic Operators
+## Arithmetic Operators
 
 Numeric expressions are evaluated using the usual precedence rules:
 parentheses, multiplication, and division, then addition and
-subtraction. Equal precedence is evaluated left to right. Here are some
-examples:
+subtraction. Equal precedence is evaluated left to right. Here are some examples:
 
-```
+```sql
 | 537 + 435 as value
 | 52 * 6 - 2  as noparen // 310, not 208
 | 52 * (6 - 2) as paren  // 208, not 310
@@ -99,7 +98,7 @@ examples:
 
 An expression can involve a series of operations. 
 
-```
+```sql
 | 537 + 435 + 39 + 18.5 as value
 | 22 - (34 % 10) * pow(2, 3) as value
 ```
@@ -114,7 +113,7 @@ Use the pow operator to calculate an exponent. The operator "^" is not recognize
 
 Boolean expressions, those that evaluate to true or false, can be assigned to fields as well. The words “true” and “false” act as if they were reserved. Use the "!" to mean boolean “not.” Examples:
 
-```
+```sql
 | true as yes
 | false as locked
 | !false as a      // sets a to true
@@ -124,7 +123,7 @@ Boolean expressions, those that evaluate to true or false, can be assigned to fi
 
 Comparison operators include equals ("=" or "=="), \>", "\<", "\>=", "\<=", "\<\\>" (or "!=") and produce Boolean values. Examples:
 
-```
+```sql
 | x = 2 as duo            // same as x == 2 as duo
 | y >= 49 as older
 | field <> 0 as nonzero
@@ -137,7 +136,7 @@ Remember that x = y is a Boolean expression, not an assignment. The expression 
 
 Characters quoted with double quotes (not single quotes) are string literals. Use a backslash to escape double quotes in the string. Examples:
 
-```
+```sql
 | "Don’t forget" as reminder
 | "They said, \"No later than 10\"" as response
 | "Hello, \"Sue,\" if that is your name" as greeting
@@ -145,5 +144,3 @@ Characters quoted with double quotes (not single quotes) are string literals. Us
 ```
 
 Use string functions, such as [concat()](/docs/search/search-query-language/operators#concat), to combine strings. There are no string operators like "+" or ".". The [format()](/docs/search/search-query-language/operators#format) operator can create string fields in a specified format. Use [substring()](/docs/search/search-query-language/operators#substring) to extract portions of a string.
-
- 
