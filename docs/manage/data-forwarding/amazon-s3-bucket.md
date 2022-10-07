@@ -159,4 +159,4 @@ An error or alert condition can occur with an S3 data forwarding destination fo
 
     ![data forwarding icon message.png](/img/data-forwarding/data-forwarding-icon-message.png)
 
-* In this example, Sumo Logic has disabled data forwarding due to errors in connecting to the S3 bucket. This occurs if the Amazon account or credentials change so that Sumo Logic is no longer able to authenticate to the bucket.  
+* In this example, Sumo Logic has disabled data forwarding due to errors in connecting to the S3 bucket. This occurs if the Amazon account or credentials change so that Sumo Logic is no longer able to authenticate to the bucket. 
