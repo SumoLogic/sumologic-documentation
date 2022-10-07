@@ -542,13 +542,13 @@ The supported functions are:
 
 Return the time series in which the average value of the CPU_User metric is greater than 95:
 
-`metric=CPU_User | filter avg\> 95`
+`metric=CPU_User | filter avg > 95`
 
 **Example 2**
 
 Return the time series in which the latest value of the CPU_User metric is greater than 50:
 
-`metric=CPU_User | filter latest\> 50`
+`metric=CPU_User | filter latest > 50`
 
 #### Syntax 2
 
@@ -560,7 +560,7 @@ SELECTOR | filter _value [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | a
 
 Where:
 
-* `[VALUE BOOLEAN EXPRESSION]` is a value expression that operates on individual data points of a time series. For example, \> 3`
+* `[VALUE BOOLEAN EXPRESSION]` is a value expression that operates on individual data points of a time series. For example, `> 3`
 * Use `all` to specify that all data points within the duration must meet the value condition, or `atleast n`, where `n` is a count, to specify how many data points must meet the value condition.
 * Use `first`, `any`, or `last` to specify what part of the time range that duration applies to: the start of the time range, any part of the time range, or the end of the time range.
 * Use `duration` to specify the length of time to consider in the query in minutes (m), hours (h), or days (d). For example, `5m`, `6h`, or `1d`.
@@ -576,7 +576,7 @@ There must be a least one data point in the last 5 minutes of the time range for
 :::
 
 ```sql
-filter _value\> 3 all last 5m
+filter _value > 3 all last 5m
 ```
 
 **Example 2**
@@ -584,7 +584,7 @@ filter _value\> 3 all last 5m
 Return only the time series that have at least 1 data point greater than 3 for the last 5 minutes of the query time range. 
 
 ```sql
-filter _value\> 3 atleast 1 last 5m
+filter _value > 3 atleast 1 last 5m
 ```
 
 **Example 3**
@@ -592,7 +592,7 @@ filter _value\> 3 atleast 1 last 5m
 Return only the time series that have only values greater than 3 for any consecutive 5 minutes of the time range.
 
 ```sql
-filter _value\> 3 all any 5m
+filter _value > 3 all any 5m
 ```
 
 **Example 4**
@@ -604,7 +604,7 @@ There must be a least one data point in the first 5 minutes of the time range fo
 :::
 
 ```sql
-filter _value\> 3 all first 5m
+filter _value > 3 all first 5m
 ```  
  
 
@@ -739,7 +739,7 @@ At this time, using the `outlier` operator in a metric monitor is not supported.
 
 #### outlier syntax
 
-`metric query | outlier [window\<\>, threshold\<\>, direction=[ +- | + | - ]]`
+`metric query | outlier [window=<#>, threshold=<#>, direction=[ +- | + | - ]]`
 
 Where:
 
@@ -1094,10 +1094,10 @@ metric=cpu_system | topk (10, max)
 
 Top 10 time series based on a calculated value.
 
-This query applies a math expression—(max / avg \* 2)—to each time series that matches the query selector. The time series are ranked by the calculated value, and the top 10 time series are returned.
+This query applies a math expression — `(max / avg * 2)` — to each time series that matches the query selector. The time series are ranked by the calculated value, and the top 10 time series are returned.
 
 ```sql
-metric=cpu_system |topk (10, max /avg * 2)
+metric=cpu_system |topk (10, max / avg * 2)
 ```
 
 ## where

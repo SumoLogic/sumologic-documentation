@@ -8,7 +8,7 @@ description: A Sumo Logic CloudWatch Source allows you to gather metrics data fr
 A Sumo Logic CloudWatch Source allows you to gather metrics data from an Amazon resource. 
 
 :::tip
-Sumo Logic recommends you use the newer AWS Kinesis Firehose for Metrics Source to collect CloudWatch metrics. For more information, see [Which to use: Kinesis Firehose source or CloudWatch source?](aws-kinesis-firehose-metrics-source.md).
+Sumo Logic recommends you use the newer AWS Kinesis Firehose for Metrics Source to collect CloudWatch metrics. For more information, see [Which to use: Kinesis Firehose source or CloudWatch source?](aws-kinesis-firehose-metrics-source.md)
 :::
 
 ## Supported AWS metrics
