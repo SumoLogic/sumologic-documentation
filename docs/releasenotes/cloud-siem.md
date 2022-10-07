@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ### October 6, 2022 - Content Release
 
 #### Log Mappers
-* [New] Azure Appplication Service Console Logs
+* [New] Azure Application Service Console Logs
 * [New] Google G Suite Alert Center - Sensitive Admin Action
 * [Updated] Azure Event Hub - Windows Defender Logs - DeviceAlertEvents
 
