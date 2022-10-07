@@ -33,7 +33,7 @@
     "pkazmir-sumo",
     "ptobia"
   ],
-  "message": "Thank you for your contribution! As with many open source projects, we require contributors to sign our Contributor License Agreement and do not have yours on file. To proceed with your PR, please [sign your name here](https://forms.gle/YgLddrckeJaCdZYA6) and we'll add you to our approved list of contributors.",
+  "message": "Thank you for your contribution! As with many open source projects, we require contributors to sign our Contributor License Agreement and do not have yours on file. To proceed with your PR, please <a target="_blank" href="https://forms.gle/YgLddrckeJaCdZYA6">sign your name here</a> and we'll add you to our approved list of contributors.",
   "label": "cla-signed",
   "recheckComment": "The GitHub CLA Bot is rechecking to see that you have signed our CLA."
 }
