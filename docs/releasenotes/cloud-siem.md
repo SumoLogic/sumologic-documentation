@@ -6,6 +6,7 @@ description: Here you'll find information about new and enhanced features, updat
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+
 ---
 ### October 6, 2022 - Application Update
 
@@ -29,6 +30,23 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 * Keyword searches did not properly support values (such as hostnames) with embedded dashes
 * Changes to prototype state were not visible in the rule history
 * In some cases, the system was parsing domain names/TLDs incorrectly
+
+---
+### October 6, 2022 - Content Release
+
+#### Log Mappers
+* [New] Azure Application Service Console Logs
+* [New] Google G Suite Alert Center - Sensitive Admin Action
+* [Updated] Azure Event Hub - Windows Defender Logs - DeviceAlertEvents
+
+#### Parsers
+* [Updated] /Parsers/System/Google/G Suite Alert Center
+
+#### Legacy Parsers
+[Updated] CISCO_MERAKI_SECURITY_FILTERING_FILE_SCANNED
+[Updated] CISCO_MERAKI_URLS
+[Updated] Twistlock_Logs
+
 
 ---
 ### September 29, 2022 - Content Release
