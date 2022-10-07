@@ -19,7 +19,7 @@ Subqueries are a really powerful way to filter for specific criteria, such as be
 
 ## Syntax
 
-You can use subqueries in the [search expression](get-started-with-search/build-search/keyword-search-expressions.md) of your query (before the first pipe, \|) and with [where](search-query-language/operators#where) and [if](search-query-language/operators#if-operator-and) operators.
+You can use subqueries in the [search expression](get-started-with-search/build-search/keyword-search-expressions.md) of your query (before the first pipe, \|) and with [where](search-query-language/search-operators#where) and [if](search-query-language/search-operators#if-operator-and) operators.
 
 :::important
 This syntax uses square brackets `[ ]` to wrap a subquery. Normally these indicate an optional argument, however these highlighted brackets are required for subqueries.
@@ -45,7 +45,7 @@ Parent query
 Rest of parent query
 ```
 
-You can use the not `!` option using the [where operator](search-query-language/operators#where) syntax, like `| where !\<subquer\>]`.
+You can use the not `!` option using the [where operator](search-query-language/search-operators#where) syntax, like `| where !\<subquer\>]`.
 
 **If operator syntax:**
 
@@ -58,7 +58,7 @@ Parent query
 Rest of parent query
 ```
 
-You can use the not `!` option using the [if operator](search-query-language/operators#if-operator-and) syntax, like `| if !(<subquery>],1,0) as <field>`.
+You can use the not `!` option using the [if operator](search-query-language/search-operators#if-operator-and) syntax, like `| if !(<subquery>],1,0) as <field>`.
 
 :::note
 The `parent query` can be any query that returns results. Always test it before you add the child query.
@@ -397,7 +397,7 @@ _sourceCategory=weblogs
 
 ### Reference data from child query using save and lookup
 
-When you want to correlate data from different sources or conduct further aggregation on data from a child query without passing it with compose, since it would act upon the scope of the query limiting results, you can use the [save](docs/search/search-query-language/operators#save-lookups-classic) and [lookup](docs/search/search-query-language/operators#lookup-classic) operators to get the data you need in the parent query.
+When you want to correlate data from different sources or conduct further aggregation on data from a child query without passing it with compose, since it would act upon the scope of the query limiting results, you can use the [save](docs/search/search-query-language/search-operators#save-lookups-classic) and [lookup](docs/search/search-query-language/search-operators#lookup-classic) operators to get the data you need in the parent query.
 
 Updates to the newer version of [Lookup Tables](docs/search/lookup-tables) are performed asynchronously. For this reason, saving to such lookup tables from a subquery isn't allowed. If you were to save data to a lookup table from a subquery and then query the same table from the parent query, it's possible that the data written to the table by the subquery might not be available, resulting in incorrect results.
 

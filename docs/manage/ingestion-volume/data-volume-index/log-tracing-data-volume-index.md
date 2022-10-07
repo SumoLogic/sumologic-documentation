@@ -246,7 +246,7 @@ _index=sumologic_volume _sourceCategory="collector_tracing_volume"
 
 #### Query for tracing ingestion outliers
 
-This query runs against the tracing volume index and uses the [*outlier*](../../../search/search-query-language/operators#outlier) operator to find timeslices in which your tracing ingestion in billed bytes or span count was greater than the running average by a statistically significant amount.
+This query runs against the tracing volume index and uses the [*outlier*](../../../search/search-query-language/search-operators#outlier) operator to find timeslices in which your tracing ingestion in billed bytes or span count was greater than the running average by a statistically significant amount.
 
 ```sql
 _index=sumologic_volume _sourcecategory=sourcecategory_tracing_volume
@@ -260,7 +260,7 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 #### Query for tracing ingestion prediction 
 
-This query runs against the tracing volume index and uses the [*predict*](../../../search/search-query-language/operators#predict) operator to predict future values.
+This query runs against the tracing volume index and uses the [*predict*](../../../search/search-query-language/search-operators#predict) operator to predict future values.
 
 ```
 _index=sumologic_volume _sourcecategory=sourcecategory_tracing_volume

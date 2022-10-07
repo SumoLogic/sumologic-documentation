@@ -6,7 +6,7 @@ sidebar_label: FAQ
 
 ## Group Messages Using a Defined Field
 
-You can group messages together with a user-defined field using the [Sessionize](/docs/search/search-query-language/operators#sessionize) operator (similar to transaction in Splunk). By defining multiple parse expressions that match different kinds of log lines, you can weave together the extracted fields into one session.
+You can group messages together with a user-defined field using the [Sessionize](/docs/search/search-query-language/search-operators#sessionize) operator (similar to transaction in Splunk). By defining multiple parse expressions that match different kinds of log lines, you can weave together the extracted fields into one session.
 
 Here's an example:
 

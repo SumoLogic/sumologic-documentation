@@ -85,7 +85,7 @@ A Scheduled Search may fail and be suspended for several reasons, with the failu
 
 Failures could be related to the Scheduled Search query. Check the following possible issues. 
 
-* In queries that use [lookup](/docs/search/search-query-language/operators#lookup-classic) files, the lookup file could be empty. This would cause the Scheduled Search to fail because Sumo Logic downloads the lookup file prior to executing the query. 
+* In queries that use [lookup](/docs/search/search-query-language/search-operators#lookup-classic) files, the lookup file could be empty. This would cause the Scheduled Search to fail because Sumo Logic downloads the lookup file prior to executing the query. 
 * Other query-specific factors could be at play. To test if the failure can be reproduced, run the Scheduled Search query. 
 * To make sure your query is written correctly, see [Write Efficient Search Queries](/docs/search/get-started-with-search/build-search). 
 * You may be able to optimize your query performance using [Partitions](/docs/manage/partitions-data-tiers) or [Scheduled Views](/docs/manage/scheduled-views).  
@@ -150,7 +150,7 @@ Here are also a few additional things to consider when conducting your performan
 
 Scheduled Search alert condition thresholds are based on the number of rows returned in your search results. It does not consider any values that may be present within a column of those rows. If your query does not perform any aggregations the Scheduled Search threshold will apply to the number of raw messages returned with a query, as seen under the Messages tab of the search. If a query contains an aggregate operation, for example, count, sum, min, max, etc... the Scheduled Search threshold will be applied to the number of aggregate rows returned by the query, as seen within the Aggregate tab of the results.   
 
-When performing an aggregation as part of a query, and wanting to alert when a specific aggregate value meets a threshold, the threshold for that field value will need to be included as part of the query itself. This can typically be done by providing a [where](docs/search/search-query-language/operators#where) condition after the aggregation within the query. For example:
+When performing an aggregation as part of a query, and wanting to alert when a specific aggregate value meets a threshold, the threshold for that field value will need to be included as part of the query itself. This can typically be done by providing a [where](docs/search/search-query-language/search-operators#where) condition after the aggregation within the query. For example:
 
 ```sql
 _sourceCategory=aws/prod
