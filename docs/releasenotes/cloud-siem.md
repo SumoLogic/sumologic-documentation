@@ -6,6 +6,22 @@ description: Here you'll find information about new and enhanced features, updat
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+### October 6, 2022 - Content Release
+
+#### Log Mappers
+* [New] Azure Appplication Service Console Logs
+* [New] Google G Suite Alert Center - Sensitive Admin Action
+* [Updated] Azure Event Hub - Windows Defender Logs - DeviceAlertEvents
+
+#### Parsers
+* [Updated] /Parsers/System/Google/G Suite Alert Center
+
+#### Legacy Parsers
+[Updated] CISCO_MERAKI_SECURITY_FILTERING_FILE_SCANNED
+[Updated] CISCO_MERAKI_URLS
+[Updated] Twistlock_Logs
+
+---
 ### September 29, 2022 - Content Release
 
 #### Rules
