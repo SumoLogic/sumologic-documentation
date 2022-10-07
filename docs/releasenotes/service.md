@@ -10,9 +10,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Service Release Notes for the current year are listed here. If you need to see previous Service Release Notes, check the [Archive](/docs/releasenotes/archive).
 
 ---
+## October 7, 2022 (Manage)
+
+Update - We’ve released an improved, re-organized UI for Data Forwarding. There are now separate pages for managing different types of data forwarding destinations:  
+
+* Destinations that receive data forwarded from Sumo Logic partitions or scheduled views are still managed on the **Manage Data \> Logs \> Data Forwarding** page.
+* Destinations that receive data from Installed Collectors are managed on a new page: **Manage Data \> Collection \> Data Archiving** page.
+
+For more information see [Forward Data from Sumo Logic to S3](docs/manage/data-forwarding/amazon-s3-bucket.md) and [Forward Data from an Installed Collector](/docs/manage/data-forwarding/installed-collectors.md).
+
+
+---
 ## October 3, 2022 (Search)
 
-Hash rules now support [256 for OpenTelemetry collectors](/docs/send-data/collection/processing-rules/hash-rules). 
+Hash rules now support [256 for OpenTelemetry collectors](/docs/send-data/collection/processing-rules/hash-rules).
 
 ---
 ## September 30, 2022 (Traces)
