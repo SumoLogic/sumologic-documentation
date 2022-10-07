@@ -26,6 +26,11 @@ jobs:
           with:
             node-version: '17.x'
             cache: 'yarn'
+        - name: Docusaurus Webpack cache
+          uses: actions/cache@v3
+          with:
+            path: node_modules/.cache
+            key: ${{ runner.os }}-webpack-cache
         - name: Install awscli
           uses: unfor19/install-aws-cli-action@v1
         - name: Install jq
