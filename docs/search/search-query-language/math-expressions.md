@@ -44,10 +44,9 @@ The following example uses the `pow()` function:
 
 To reference Java's Math class functions, see Oracle's [Math](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html) documentation.
 
-## Operators
 
 ---
-### abs
+## abs
 
 The absolute function calculates the absolute value of x.
 
@@ -68,7 +67,7 @@ abs(-1.5) as v // v = 1.5
 ```
 
 ---
-### acos
+## acos
 
 Returns the inverse cosine of the argument.
 
@@ -85,7 +84,7 @@ acos(1) as v // v = 0
 ```
 
 ---
-### asin
+## asin
 
 Returns the inverse sine of the argument.
 
@@ -102,7 +101,7 @@ asin(1) as v // v = 1.5707963267948966
 ```
 
 ---
-### atan
+## atan
 
 Returns the inverse tangent of the argument.
 
@@ -119,7 +118,7 @@ atan(1) as v // v = 0.78540
 ```
 
 ---
-### atan2
+## atan2
 
 Returns the four-quadrant inverse tangent of the two arguments b and c.
 
@@ -137,7 +136,7 @@ atan2(0, -1) as v // v = pi
 
 
 ---
-### cbrt
+## cbrt
 
 The cube root function returns the cube root value of x.
 
@@ -155,7 +154,7 @@ cbrt(8) as v // v = 2
 
 
 ---
-### ceil
+## ceil
 
 The **ceil** operator rounds up a field value to the nearest integer value.
 
@@ -178,7 +177,7 @@ ceil(-1.5) as v // v = -1
 
 
 ---
-### cos
+## cos
 
 Cosine of argument in radians.
 
@@ -196,7 +195,7 @@ cos(1) as v // v = 0.5403023058681398
 
 
 ---
-### cosh
+## cosh
 
 Hyperbolic cosine of argument in radians.
 
@@ -213,7 +212,7 @@ cosh(1) as v // v = 1.54308
 ```
 
 ---
-### exp
+## exp
 
 The exponent function returns Euler's number e raised to the power of x.
 
@@ -231,7 +230,7 @@ exp(1) as v // v = 2.7182818284590455
 
 
 ---
-### expm1
+## expm1
 
 The **expm1** function returns value of x in exp(x)-1, compensating for the roundoff in exp(x).
 
@@ -250,7 +249,7 @@ expm1(0.1) as v // v = 0.10517091807564763
 
 
 ---
-### floor
+## floor
 
 The floor function rounds down to the largest previous integer value. Returns the largest integer not greater than x.
 
@@ -271,7 +270,7 @@ floor(-1.5) as v // v = -2
 ```
 
 ---
-### hypot
+## hypot
 
 Returns the square root of the sum of an array of squares.
 
@@ -289,7 +288,7 @@ hypot(3, 4) as c // c = 5
 
 
 ---
-### isNaN and isInfinity
+## isNaN and isInfinity
 
 The **isNaN** and **isInfinity** operators check a numeric string and return a boolean value.
 
@@ -335,7 +334,7 @@ Returns results where `total_token` values are a number.
  
 
 ---
-### log
+## log
 
 The logarithm function returns the natural logarithm of x.
 
@@ -353,7 +352,7 @@ log(2) as v // v = 0.6931471805599453
 
 
 ---
-### log1p
+## log1p
 
 The log1p function computes log(1+x) accurately for small values of x.
 
@@ -371,7 +370,7 @@ log1p(0.1) as v // v = 0.09531017980432487
 
 
 ---
-### log10
+## log10
 
 The log10 function returns the base 10 logarithm of x.
 
@@ -389,7 +388,7 @@ log10(2) as v // v = 0.3010299956639812
 
 
 ---
-### round
+## round
 
 The **round** function returns the closest integer to x.
 
@@ -421,7 +420,7 @@ _index=sumologic_volume
 
 
 ---
-### sin
+## sin
 
 Sine of argument in radians.
 
@@ -440,7 +439,7 @@ sin(1) as v // v = 0.8414709848078965
 
 
 ---
-### sinh
+## sinh
 
 Hyperbolic sine of argument in radians.
 
@@ -458,7 +457,7 @@ sinh(1) as v // v = 1.17520
 
 
 ---
-### sqrt
+## sqrt
 
 The square root function returns the square root value of x.
 
@@ -476,7 +475,7 @@ sqrt(4) as v // v = 2
 
 
 ---
-### tan
+## tan
 
 Tangent of argument in radians.
 
@@ -494,7 +493,7 @@ tan(1) as v // v = 1.5574077246549023
 
 
 ---
-### tanh
+## tanh
 
 Hyperbolic tangent of argument in radians.
 
@@ -512,7 +511,7 @@ tanh(1) as v // v = 0.76159
 
 
 ---
-### toDegrees
+## toDegrees
 
 Converts angles from radians to degrees.
 
@@ -530,7 +529,7 @@ toDegrees(asin(1)) as v // v = 90
 
 
 ---
-### toRadians
+## toRadians
 
 Converts angles from degrees to radians.
 
