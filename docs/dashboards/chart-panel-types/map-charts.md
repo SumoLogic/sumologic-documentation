@@ -12,7 +12,7 @@ The number of data points on a dashboard panel are limited to 1,000, and therefo
 
 To map your data you can: 
 
-* use the [geoip](/docs/search/search-query-language/search-operators#geoip) or [Geo Lookup](/docs/search/search-query-language/search-operators#geo-lookup-map) operators to provide these values from extracted IPv4 and IPv6 addresses.
+* use the [geoip](/docs/search/search-query-language/operators#geoip) or [Geo Lookup](/docs/search/search-query-language/operators#geo-lookup-map) operators to provide these values from extracted IPv4 and IPv6 addresses.
 * manually provide valid aggregated **latitude** and **longitude** values. Ensure the field names are 'latitude' and 'longitude' so that map chart can recognize them. Format the values with positive or negative values based on being north/south or east/west, instead of using the terms N/S, E/W, such as, `30.42` and `-87.21`.
 
 Here's an example of the values you can parse out your log file using
@@ -59,7 +59,7 @@ which would produce results such as:
 
 ## Create a Map Chart
 
-1. Run a [Geo Lookup](../../search/search-query-language/search-operators#geo-lookup-map) query.
+1. Run a [Geo Lookup](../../search/search-query-language/operators#geo-lookup-map) query.
 1. In the **Aggregates** tab, choose the **Map Chart** icon to display the search results.
 
     ![Charts - map](/img/dashboards/charts_map.png)
@@ -72,4 +72,4 @@ The number of data points on a dashboard panel are limited to 1,000. Therefore, 
 
 ![map chart in aggregates tab.png](/img/dashboards/map-chart-aggregates-tab.png)
 
-For more information on geolocation operators, see the [Geo Lookup](../../search/search-query-language/search-operators#geo-lookup-map) operator.
+For more information on geolocation operators, see the [Geo Lookup](../../search/search-query-language/operators#geo-lookup-map) operator.

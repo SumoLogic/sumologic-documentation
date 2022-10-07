@@ -90,7 +90,7 @@ _index=sumologic_volume  _sourceCategory="collector_metrics_volume"
 
 ### Query for metric ingestion outliers 
 
-This query runs against the metrics volume index and uses the [outlier](/docs/search/search-query-language/search-operators#manually-cast-data-to-string-or-number) operator to find timeslices in which your metric ingestion in DPM was greater than the running average by a statistically significant amount. 
+This query runs against the metrics volume index and uses the [outlier](/docs/search/search-query-language/operators#manually-cast-data-to-string-or-number) operator to find timeslices in which your metric ingestion in DPM was greater than the running average by a statistically significant amount. 
 
 ```sql
 _index=sumologic_volume _sourcecategory=sourcecategory_metrics_volume
@@ -104,7 +104,7 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 ### Query for metric ingestion prediction 
 
-This query runs against the metrics volume index and uses the [predict](../../../search/search-query-language/search-operators#predict) operator to predict future values.
+This query runs against the metrics volume index and uses the [predict](../../../search/search-query-language/operators#predict) operator to predict future values.
 
 ```sql
 _index=sumologic_volume _sourcecategory=sourcecategory_metrics_volume datapoints

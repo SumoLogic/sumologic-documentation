@@ -19,7 +19,7 @@ test your search against a shorter time range first, then extend the time range 
 
 ## Use fields extracted by FERs and avoid the where operator
 
-Whenever possible, use keyword searches and fields already extracted using [Field Extraction Rules](/docs/manage/field-extractions) (FERs) to filter data instead of using the [where](../../search-query-language/search-operators#where) operator. If it is not possible to only use a keyword or pre-extracted field, use both a keyword search AND the where clause.
+Whenever possible, use keyword searches and fields already extracted using [Field Extraction Rules](/docs/manage/field-extractions) (FERs) to filter data instead of using the [where](../../search-query-language/operators#where) operator. If it is not possible to only use a keyword or pre-extracted field, use both a keyword search AND the where clause.
 
 **Best approach:** Field Extraction Rule field AND keyword
 
@@ -96,7 +96,7 @@ If your search contains filtering criteria that could change each time the sear
 
 ## Aggregate before a lookup
 
-Whenever possible, you should aggregate data prior to doing a [lookup](docs/search/search-query-language/search-operators#lookup-classic). In some cases, this will significantly reduce the amount of data the lookup is referencing.
+Whenever possible, you should aggregate data prior to doing a [lookup](docs/search/search-query-language/operators#lookup-classic). In some cases, this will significantly reduce the amount of data the lookup is referencing.
 
 **Best approach:**
 

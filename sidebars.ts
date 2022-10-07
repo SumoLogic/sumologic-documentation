@@ -1051,7 +1051,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'search/search-query-language/index'},
       items: [
-        'search/search-query-language/search-operators',
+        'search/search-query-language/operators',
         {
           type: 'category',
           label: 'Parse Operators',

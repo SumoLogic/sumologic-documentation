@@ -253,7 +253,7 @@ The **Pinned Search** feature allows you to start a search, then “pin” it, s
 
 Once pinned, a search will run in the background for up to 24 hours. If it has not finished by then, it will be paused. There is no notification when your search is paused, but you can just restart the search to continue the query. Search results are available for three days.
 
-There is a limit of ten pinned searches per user. Also, queries that use the [save operator](../search/search-query-language/search-operators#save) cannot be pinned.
+There is a limit of ten pinned searches per user. Also, queries that use the [save operator](../search/search-query-language/operators#save) cannot be pinned.
 
 A search must be started in order for the pin button to show up in the Search tab. Once a search is pinned, you can easily unpin it, or remove it from the Pinned Searches tab. In the Pinned Searches folder, you can view the **Name**, **Status**, **Elapsed Time**, and monitor the **Progress** of each search.
 

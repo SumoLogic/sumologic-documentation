@@ -449,7 +449,7 @@ _view=sumologic_signals_anomalies
 
 #### Return all EOIs by time slice
 
-This query analyzes the volume of EOIs to detect sudden changes in the volume using the [outlier](../search/search-query-language/search-operators#outlier) operator. Such sudden changes may represent outages. 
+This query analyzes the volume of EOIs to detect sudden changes in the volume using the [outlier](../search/search-query-language/operators#outlier) operator. Such sudden changes may represent outages. 
 
 ```sql
 _view=sumologic_signals_anomalies

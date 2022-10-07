@@ -139,7 +139,7 @@ No, we do not allow an export of the threat Intel feeds as that is confidential 
 
 #### Is threat lookup real-time using Continuous Queries (CQs)?
 
-Yes. You can scan for malicious Indicators of Compromise (IOCs) in real time using our [lookup](/docs/search/search-query-language/search-operators#lookup-classic) operator.
+Yes. You can scan for malicious Indicators of Compromise (IOCs) in real time using our [lookup](/docs/search/search-query-language/operators#lookup-classic) operator.
 
 
 #### Can I historically search my logs for threats?
@@ -154,7 +154,7 @@ No. No results in your Dashboards can mean that nothing has been identified by C
 
 #### I searched a threat feed for a hash IOC that I know exists, but it wasn't found. Why?
 
-It could be a case-sensitivity issue. In Sumo, the equal sign (`=`) and the not equal to sign (`!=`) conditions are case-sensitive; when you use them with Sumo operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](/docs/search/search-query-language/search-operators#toLowerCase-and-toUpperCase).
+It could be a case-sensitivity issue. In Sumo, the equal sign (`=`) and the not equal to sign (`!=`) conditions are case-sensitive; when you use them with Sumo operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](/docs/search/search-query-language/operators#toLowerCase-and-toUpperCase).
 
 
 #### What are different Indicators of Compromise (IOC) types available?
@@ -438,7 +438,7 @@ Yes, you can run scheduled searches that can be set up with a run frequency of R
 
 #### Can I bring my own threat feed into Sumo Logic?
 
-This isn't currently available as an App. You could create your own [lookup](/docs/search/search-query-language/search-operators#lookup-classic) using a shared file.
+This isn't currently available as an App. You could create your own [lookup](/docs/search/search-query-language/operators#lookup-classic) using a shared file.
 
 
 #### What do I do if I find a bad IP (malicious level = high)?
