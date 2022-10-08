@@ -27,7 +27,7 @@ module.exports = {
   ],
   scripts: [
     {
-      src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
+      src: 'https://js.sitesearch360.com/plugin/bundle/8375.js',
       async: true,
     },
   ],
