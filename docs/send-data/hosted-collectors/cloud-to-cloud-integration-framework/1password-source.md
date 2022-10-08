@@ -16,18 +16,17 @@ The 1Password Source ingests:
 * [Item Usage](https://support.1password.com/events-api-reference/#item-usage)
 
 
-#### Rules
+## Rules
 
 * JSON is the only supported log format
 * Data is collected in five minute intervals.
 
 
-#### Authentication
+## Authentication
 
 You need a 1Password API token and your customer specific 1Password domain, for example `events.1password.com.`
 
 To generate a 1Password API token follow these steps:
-
 
 1. [Sign in](https://start.1password.com/signin) to your 1Password account and click [Integrations](https://my.1password.com/integrations/active) in the sidebar.
 2. Choose the Events Reporting integration where you want to issue a token and click **Add a token**.
@@ -35,7 +34,7 @@ To generate a 1Password API token follow these steps:
 4. Click **Save** in 1Password and choose which vault to save your token to. Then click **View Integration Details**.
 
 
-#### States
+## States
 
 A 1Password Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/Health-Events).
 
@@ -58,10 +57,7 @@ On the Collection page, the [Health](/docs/manage/Health-Events#Collection_page)
 Hover your mouse over the status icon to view a tooltip with details on the detected issue.
 
 
-#### Create a 1Password Source
-
-
-
+## Create a 1Password Source
 
 When you create a 1Password Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
 
@@ -76,59 +72,14 @@ To configure a 1Password Source:
 
 When configured with the **Forward to SIEM** option the following metadata fields are set:
 
+| Field Name | API | Value |
+|---|---|---|
+| `_siemVendor` | Sign-in, Item | 1Password |
+| `_siemProduct` | Sign-in, Item | 1Password |
+| `_siemFormat` | Sign-in, Item | JSON |
+| `_siemEventID` | Sign-in | signin-{{category}} |
+| `_siemEventID` | Item | item_usage-{{action}} |
 
-
-<table>
-  <tr>
-   <td>
-Field Name
-   </td>
-   <td>API
-   </td>
-   <td>Value
-   </td>
-  </tr>
-  <tr>
-   <td>_siemVendor
-   </td>
-   <td>Sign-in, Item
-   </td>
-   <td>1Password
-   </td>
-  </tr>
-  <tr>
-   <td>_siemProduct
-   </td>
-   <td>Sign-in, Item
-   </td>
-   <td>1Password
-   </td>
-  </tr>
-  <tr>
-   <td>_siemFormat
-   </td>
-   <td>Sign-in, Item
-   </td>
-   <td>JSON
-   </td>
-  </tr>
-  <tr>
-   <td>_siemEventID
-   </td>
-   <td>Sign-in
-   </td>
-   <td><code>signin-&#123;&#123;category&#125;&#125;</code>
-   </td>
-  </tr>
-  <tr>
-   <td>_siemEventID
-   </td>
-   <td>Item
-   </td>
-   <td><code>item_usage-&#123;&#123;action&#125;&#125;</code>
-   </td>
-  </tr>
-</table>
 
 1. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
    * Define the fields you want to associate, each field needs a name (key) and value.
@@ -140,7 +91,7 @@ Field Name
 5. When you are finished configuring the Source click **Submit**.
 
 
-#### Error types
+## Error types
 
 When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/Health-Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
@@ -198,7 +149,7 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/H
 </table>
 
 
-#### JSON configuration
+## JSON configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collectors). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
@@ -253,7 +204,10 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
   </tr>
 </table>
 
+### Config parameters
+
 The following table shows the **config** parameters for a 1Password Source.
+
 
 <table>
   <tr>
@@ -370,7 +324,7 @@ The following table shows the **config** parameters for a 1Password Source.
   </tr>
 </table>
 
-
+### Example
 
 1Password Source JSON example:
 

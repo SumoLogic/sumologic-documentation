@@ -1,6 +1,6 @@
 ---
 id: pct-percentile
-title: pct (percentile) Operator
+title: pct (percentile) Grouping Operator
 sidebar_label: pct
 ---
 

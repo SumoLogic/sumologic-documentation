@@ -127,7 +127,6 @@ module.exports = {
             },
           ],
         },
-        'send-data/sumo-distribution-opentelemetry',
         {
           type: 'category',
           label: 'Hosted Collectors & Sources',
@@ -213,7 +212,15 @@ module.exports = {
                 'send-data/hosted-collectors/google-source/google-cloud-platform-source',
               ],
             },
-            'send-data/hosted-collectors/ms-office-audit-source',
+            {
+              type: 'category',
+              label: 'Microsoft Sources',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'send-data/hosted-collectors/ms-office-audit-source',
+              ],
+            },
             {
               type: 'category',
               label: 'Cloud Syslog Sources',
@@ -244,6 +251,7 @@ module.exports = {
             },
           ],
         },
+        'send-data/sumo-distribution-opentelemetry',
         {
           type: 'category',
           label: 'Use JSON to Configure Sources',

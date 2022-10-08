@@ -1,6 +1,6 @@
 ---
 id: min-max
-title: min, max Operators
+title: min, max Grouping Operators
 sidebar_label: min, max
 ---
 

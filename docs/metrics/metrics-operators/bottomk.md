@@ -1,13 +1,13 @@
 ---
 id: bottomk
-title: bottomk Metrics Operator
+title: bottomk Operator
 sidebar_label: bottomk
 ---
 
 
 The `bottomk` operator applies a specified aggregation function to the time series that match the query selector, and returns the n time series that have the lowest evaluated value over the query time range.  
 
-## bottomk syntax
+## Syntax
 
 ```sql
 bottomk (N, SCALAR_EXPRESSION) [by FIELD [, FIELD, ...]]
@@ -29,7 +29,7 @@ Where: 
 | pct(n) | Return the n time series for which the calculated percentile of the metric values across the time range was lowest, and return the bottom n. |
 | latest | Rank matching time series by when the most recent data point was received, and return the bottom n time series.  |
 
-## bottomk examples
+## Examples
 
 ### Bottom time series by avg value
 

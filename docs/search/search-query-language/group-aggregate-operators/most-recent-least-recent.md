@@ -1,6 +1,6 @@
 ---
 id: most-recent-least-recent
-title: most_recent, least_recent Operators
+title: most_recent, least_recent Grouping Operators
 sidebar_label: most_recent, least_recent
 ---
 
