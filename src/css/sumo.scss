@@ -512,7 +512,7 @@ html[data-theme='dark'] .navbar-item-github:before {
 }
 
 .navbar-trial {
-  background-color: #06bcee;
+  background-color: #2aa1e6;
   color: white;
   padding: 6px 12px;
   font-weight: 600;
@@ -522,7 +522,7 @@ html[data-theme='dark'] .navbar-item-github:before {
   border: 1px solid #3578e5;
   cursor: pointer;
   margin-right: 10px;
-  border-radius: 6px;
+  border-radius: 3px;
 }
 
 .navbar-trial:hover {
@@ -531,7 +531,7 @@ html[data-theme='dark'] .navbar-item-github:before {
 }
 
 .navbar-trial-mobile {
-  background-color: #06bcee;
+  background-color: #2aa1e6;
   color: white;
   padding: 8px 25px;
   font-weight: 600;
@@ -561,31 +561,53 @@ html[data-theme='dark'] .navbar-item-github:before {
 }
 
 .backtohome-404 {
-  background-color: #F1F1F1;
+  background-color: #2aa1e6;
   color: white;
-  padding: 8px 25px;
-  font-size: 16px;
+  padding: 6px 12px;
   font-weight: 600;
+  font-size: 12px;
   text-decoration: none;
   margin-right: 10px;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #3578e5;
   cursor: pointer;
   margin-right: 10px;
+  border-radius: 3px;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: white;
+  }
 }
 
 .backtohome-404:hover {
-  border: 1px solid #3578e5;
+  background-color: #2aa1e6;
   color: white;
+  padding: 6px 12px;
   font-weight: 600;
-  font-size: 16px;
-  background-color: #E5F4FA;
+  font-size: 12px;
+  text-decoration: none;
+  margin-right: 10px;
+  border: 1px solid #FFF;
+  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 3px;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: white;
+  }
 }
 
+
 .backtohome-404-mobile {
-  background-color: #F1F1F1;
+  background-color: #2aa1e6;
   color: white;
   padding: 8px 25px;
-  font-weight: 600;
+  font-weight: 300;
   text-decoration: none;
   border: 1px solid #3578e5;
   cursor: pointer;
@@ -600,7 +622,7 @@ html[data-theme='dark'] .navbar-item-github:before {
 }
 
 @media screen and (max-width: 479px) {
-  .navbar-trial {
+  .backtohome-404 {
     display: none;
   }
 }

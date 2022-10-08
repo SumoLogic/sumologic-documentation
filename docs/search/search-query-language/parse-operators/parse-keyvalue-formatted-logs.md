@@ -113,7 +113,7 @@ one delimiter to use when extracting.
 
 ## Additional options
 
-* **Aliases (renaming)** using [**as**](/docs/search/search-query-language/operators#as-operator) are supported. For example:
+* **Aliases (renaming)** using [**as**](/docs/search/search-query-language/search-operators/as) are supported. For example:
 
     ```sql
     * | keyvalue auto keys "<key1>", "<key2>" as <field1>, <field2>

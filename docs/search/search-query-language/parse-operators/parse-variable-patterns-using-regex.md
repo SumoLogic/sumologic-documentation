@@ -49,7 +49,7 @@ You can use the alternate term "extract":
 
 * Multiple parse expressions can be written with shorthand using comma-separated terms.
 
-* Can be used with the [parse anchor](parse-predictable-patterns-using-an-anchor.md) operator.
+* Can be used with the [parse anchor](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor) operator.
 
 * Nesting named capture groups is not supported.
 
@@ -175,4 +175,4 @@ Use the following parse regex expression to match the "error" in the logs. The *
 | Error         | Line2: The following exception was reported: Error in log |
 | error         | Line1: The following exception was reported: error in log |
 
-You can also use the [toLowerCase and toUpperCase](../operators#toLowerCase-and-toUpperCase) operators. 
+You can also use the [toLowerCase and toUpperCase](/docs/search/search-query-language/search-operators/tolowercase-touppercase) operators. 

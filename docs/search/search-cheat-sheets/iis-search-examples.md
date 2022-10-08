@@ -44,13 +44,13 @@ The following examples assume you used the parsing from above:
 | If the "sc_substatus" field is missing don't exclude those messages (nodrop)…otherwise non-matches would be filtered out.| &#124; parse " 200 \* " as sc_substatusnodrop |
 |Calculate the number of times a page has been visited. | &#124; count by cs_uri_stem |  
 | Calculate the total number of pages by client IP addresses. | &#124; count by c_ip |
-| Calculate the total number of pages by client IP address, sort them highest to lowest. | &#124; count by c_ip &#124; sort by _countdesc | 
-| Identify the top 10 pages. |   &#124; count by cs_uri_stem &#124; top 10 cs_uri_stem by _count | 
+| Calculate the total number of pages by client IP address, sort them highest to lowest. | &#124; count by c_ip &#124; sort by _countdesc |
+| Identify the top 10 pages. |   &#124; count by cs_uri_stem &#124; top 10 cs_uri_stem by _count |
 | Identify the top 10 client IP addresses by bandwidth usage.|  &#124; sum(sc_bytes) as total_bytes by c_ip  &#124; top 10 c_ip by total_bytes |  
 | Identify the top 100 client IP addresses by number of hits.| &#124; count by c_ip &#124; top 100 c_ip by _count |  
 
 :::sumo More Info
-For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent), and [Top](../search-query-language/operators#top).
+For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent), and [Top](../search-query-language/search-operators/top).
 :::
 
 ## Timeslice and Transpose
@@ -61,7 +61,7 @@ For more information, see [Parsing](/docs/search/search-query-language/parse-op
 | Pivot the results so that time is on the X axis and sc_status is on the Y axis (values can be displayed in legend) | &#124; transpose row _timeslice column sc_status |
 
 :::info
-For more information, see [Timeslice](docs/search/search-query-language/operators#timeslice) and [Transpose](../search-query-language/operators#transpose).
+For more information, see [Timeslice](docs/search/search-query-language/search-operators/timeslice) and [Transpose](../search-query-language/search-operators/transpose).
 :::
 
 ## Conditional Operators
@@ -75,7 +75,7 @@ For more information, see [Timeslice](docs/search/search-query-language/operato
 | Find version numbers that match numeric values 2, 3 or 1. Use the num operator to change the string into a number. | `* | parse "Version=*." as number  | num(number) | where number in (2,3,6)` |
 
 :::sumo More Info
-For more information, see [Where](../search-query-language/operators#where) and [If](../search-query-language/operators#if-operator-and). 
+For more information, see [Where](../search-query-language/search-operators/where) and [If](/docs/search/search-query-language/search-operators/if). 
 :::
 
 For any query, you can increase specificity by adding metadata fields to the keyword expression. Metadata fields include `_sourceCategory`,

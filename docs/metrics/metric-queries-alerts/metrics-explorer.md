@@ -9,7 +9,7 @@ description: Learn how to use the Metrics Explorer to query your metrics.
 This page describes the Metrics Explorer UI and how to use it.
 
 :::tip
-If you prefer to use the Classic metrics UI, see [Switch to the Classic metrics UI](metrics-explorer.md).
+If you prefer to use the Classic metrics UI, see [Switch to the Classic metrics UI](/docs/metrics/metric-queries-alerts/metrics-explorer).
 :::
 
 ## About the UI
@@ -17,8 +17,8 @@ If you prefer to use the Classic metrics UI, see [Switch to the Classic metrics
 The Metrics Explorer appears when you open a new metrics tab. The page
 has two modes:
 
-* **Basic**. Basic Mode provides a query builder UI: you can construct metric queries by selecting metadata fields, dimensions, metrics, and operators from pull-down lists. This makes it easier to create your search scope and to apply operators to the metrics that are returned. You’ll still want to understand the functionality of [metric operators](/docs/metrics/metric-queries-alerts/operators), but the Metrics Explorer helps you by prompting you with a list of available operators, and after you choose an operator, the options or qualifiers that the operator supports. For more information about the Basic UI, see [About Basic Mode UI](metrics-explorer.md).
-* **Advanced**. In Advanced Mode, you can enter free-form metric queries. You can enter your entire query manually, but Advanced Mode will also prompt you with pull-down lists of metadata fields, dimensions, metrics, and operators. For more information, see [About the Advanced Mode UI](metrics-explorer.md).
+* **Basic**. Basic Mode provides a query builder UI: you can construct metric queries by selecting metadata fields, dimensions, metrics, and operators from pull-down lists. This makes it easier to create your search scope and to apply operators to the metrics that are returned. You’ll still want to understand the functionality of [metric operators](/docs/metrics/metrics-operators), but the Metrics Explorer helps you by prompting you with a list of available operators, and after you choose an operator, the options or qualifiers that the operator supports. For more information about the Basic UI, see [About Basic Mode UI](/docs/metrics/metric-queries-alerts/metrics-explorer).
+* **Advanced**. In Advanced Mode, you can enter free-form metric queries. You can enter your entire query manually, but Advanced Mode will also prompt you with pull-down lists of metadata fields, dimensions, metrics, and operators. For more information, see [About the Advanced Mode UI](/docs/metrics/metric-queries-alerts/metrics-explorer).
 
 If your query supports basic mode, you can freely move between basic and advanced mode to build and run your query.
 
@@ -151,7 +151,7 @@ You’ll be prompted with the options to:
 
     ![query-visualization.png](/img/metrics/query-visualization.png)
 
-1. If you want to apply an operator, click **Add Operator** to the right of the **Filters** field. A list of metric operators appears. Note that when you hover over an operator, a tool tip displays the [Advanced Mode](metrics-explorer.md) syntax and a description of the operator.
+1. If you want to apply an operator, click **Add Operator** to the right of the **Filters** field. A list of metric operators appears. Note that when you hover over an operator, a tool tip displays the [Advanced Mode](/docs/metrics/metric-queries-alerts/metrics-explorer) syntax and a description of the operator.
 
     ![delta-hover.png](/img/metrics/delta-hover.png)
 
@@ -172,7 +172,7 @@ To add an additional query:
     ![add-query.png](/img/metrics/add-query.png)
 
 1. A new row, labeled #B, is added to the query builder area.
-1. Follow the steps in [Create a metric query](metrics-explorer.md) to build another query, and click the run icon to run the query.
+1. Follow the steps in [Create a metric query](/docs/metrics/metric-queries-alerts/metrics-explorer) to build another query, and click the run icon to run the query.
 1. Your visualization is updated to chart the additional query.
 
     ![two-queries.png](/img/metrics/two-queries.png)
