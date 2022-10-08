@@ -6,9 +6,6 @@ sidebar_label: dedup
 
 
 
-
-## dedup
-
 The dedup operator removes duplicate results. You have the option to remove consecutively and by specific fields. This allows you to filter your results to identify the most recent or last few events based on an identical combination of results.
 
 For example, to find the most recent value of services you'd use the following operation: `| dedup 1 by service`.
@@ -21,7 +18,7 @@ The operator is supported in the following features:
 * [Dashboards](/docs/dashboards), including live mode
 * [Scheduled Searches](docs/alerts/scheduled-searches/schedule-search.md)
 
-**Syntax**
+## Syntax
 
 ```sql
 dedup [consecutive] [<int>] [by <field>[, <field2>, ...]]

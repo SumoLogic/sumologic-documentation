@@ -5,13 +5,13 @@ sidebar_label: matches
 ---
 
 
-## matches
+
 
 The matches operator can be used to match a string to a wildcard pattern or an RE2 compliant regex. The operator returns a boolean value; the operator can be used with where or if operators.
 
 Matches can be used in Dashboard Panels, and are very commonly used in conjunction with other operators to build robust queries.
 
-**Syntax**
+## Syntax
 
 :::important
 The string expression is case-sensitive and can be provided as a field.
@@ -50,7 +50,7 @@ where !(<string expression> matches <pattern>)
 
 #### Matching with regex to filter results
 
-See a [case insensitive parse regex example](./parse-operators/parse-variable-patterns-using-regex.md).
+See a [case insensitive parse regex example](../parse-operators/parse-variable-patterns-using-regex.md).
 
 This example is using a regex to match certain IPv4 addresses in a parsed field named `ip`. The regex we are using is:
 
@@ -90,7 +90,7 @@ _sourceCategory=Apache/Access
 | transpose row os column browser as *
 ```
 
-Produces aggregate results similar to the following, when you configure it to create a [stacked column chart](../../dashboards-new/panels/column-charts.md):
+Produces aggregate results similar to the following, when you configure it to create a [stacked column chart](/docs/dashboards-new/panels/column-charts):
 
 ![Matches](/img/search/searchquerylanguage/search-operators/matches.png)
 
@@ -112,7 +112,7 @@ _sourceCategory=OS/Windows (error or warning)
 | sort _timeslice asc
 ```
 
-Produces results similar to the following, when you configure it to be visualized as a [linechart](../../dashboards-new/panels/line-charts.md):
+Produces results similar to the following, when you configure it to be visualized as a [linechart](/docs/dashboards-new/panels/line-charts):
 
 ![Matches Event](/img/search/searchquerylanguage/search-operators/Matches_Ex.png)
 

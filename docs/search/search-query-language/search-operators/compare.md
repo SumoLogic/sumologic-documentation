@@ -7,8 +7,6 @@ sidebar_label: compare
 
 
 
-## compare
-
 The compare operator can be used with the <strong>Time Compare</strong> button in the Sumo interface, which automatically generates the appropriate syntax and adds it to your aggregate query. See <a href="/docs/search/time-compare">Time Compare</a> for details. The following information can also be found documented in Time Compare.
 
 You can use compare to:
@@ -28,9 +26,9 @@ By default, results are displayed in the **Aggregates** tab on the search page
 
 For example, if you were doing a comparison with yesterday, when you use the compare operator after the count operator, the aggregation table results will display the column names **count_target** and **count_1d**.
 
-**Syntax**
+## Syntax
 
-#### Single Comparison
+### Single Comparison
 
 Compare the present results with a single time period in the past. To make the comparison, specify the time interval you want to go back, in the form of number and time granularity:
 
@@ -54,7 +52,7 @@ In another example, this query returns data from the present along with results
 ... | compare timeshift 1w
 ```
 
-#### Multiple Comparison
+### Multiple Comparison
 
 Compare the present results with multiple time periods in the past. The first parameter specifies the time interval between the present query and the most recent comparison point. The second parameter specifies how many comparison points to create.
 
@@ -78,7 +76,7 @@ The following query returns result from the present with results from the same 
 ... | compare timeshift 1w 3
 ```
 
-#### Aggregate Comparison
+### Aggregate Comparison
 
 Aggregate the results from multiple past time periods using an aggregation operator (avg, min, or max).
 
@@ -101,7 +99,7 @@ Other examples:
 * Maximum of the same day for last three weeks: `... | compare timeshift 1w 3 max`
 * Minimum of the last four six-hour intervals: `... | compare timeshift 6h 4 min`
 
-#### Advanced
+### Advanced
 
 You can also do multiple different comparisons queries under the same compare operator by using multiple timeshift phrases separated by commas.
 ```
@@ -131,7 +129,7 @@ For example:
 * The compare operator must follow a group by aggregate operator, such as: `count`, `min`, `max`, or `sum`.
 * If you want to use timeslice with compare, don't alias timeslice.
 
-#### Limitations
+### Limitations
 
 * Compare can't generate more than **seven** additional queries. An additional query is generated whenever a comparison in time is initiated. Note that multiple comparisons and aggregate comparisons will generate multiple queries. For example, the following queries are not allowed:
 
@@ -161,7 +159,7 @@ For example:
 
 **Examples**
 
-#### Compare time series data with past data
+### Compare time series data with past data
 
 Use compare to analyze the change in log counts between two days.
 
@@ -214,7 +212,7 @@ Create a line chart to visualize the results.
 
 ![TenMinAvgLineChart.png](/img/search/timecompare/TenMinAvgLineChart.png)
 
-#### Compare categorical data parsed from logs
+### Compare categorical data parsed from logs
 
 Use compare to analyze the change in delays on different _sourceHosts
 using parsed data from logs.
@@ -234,7 +232,7 @@ These results would create a line chart such as the following.
 
 ![DelayLineChart.png](/img/search/timecompare/DelayLineChart.png)
 
-#### Compare after a Transpose operation
+### Compare after a Transpose operation
 
 You can use the compare operator after a transpose operation, such as the following:
 

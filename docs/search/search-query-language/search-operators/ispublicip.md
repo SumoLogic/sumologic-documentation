@@ -7,11 +7,9 @@ sidebar_label: isPublicIP
 
 
 
-## isPublicIP
-
 The isPublicIP operator checks if an IPv4 address is public and returns a boolean.
 
-**Syntax**
+## Syntax
 
 ```sql
 isPublicIP("<IPv4_string>") as <field>

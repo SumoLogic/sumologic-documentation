@@ -6,10 +6,7 @@ sidebar_label: fields
 
 
 
-
-## fields
-
-The fields operator allows you to specify which fields to display and their order in the results of a query. Use a fields operator to reduce the "clutter" of a search output that contains fields that aren't completely relevant to your query.
+The `fields` operator allows you to specify which fields to display and their order in the results of a query. Use a fields operator to reduce the "clutter" of a search output that contains fields that aren't completely relevant to your query.
 
 There are two fields operator modes:
 

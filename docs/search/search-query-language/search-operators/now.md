@@ -6,13 +6,11 @@ sidebar_label: now
 
 
 
-## now
-
 The now returns the current epoch time in milliseconds. It can be used with the formatDate operator to get the formatted current time.
 
 It is important to note that the Now operator outputs the exact time (down to the millisecond) each and every time it is executed. This means that if you use now with every message in a search, it will return slightly different results in every message, as messages are not all processed by your search at once.
 
-**Syntax**
+## Syntax
 
 ```sql
 now()

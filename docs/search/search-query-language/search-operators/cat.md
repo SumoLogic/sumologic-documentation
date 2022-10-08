@@ -6,12 +6,9 @@ sidebar_label: cat
 
 
 
-
-## cat
-
 You can use the cat operator to view the contents of a lookup table. Not supported in live dashboards or scheduled searches.
 
-**Syntax**
+## Syntax
 
 ```sql
 cat path://”<path-to-table>”

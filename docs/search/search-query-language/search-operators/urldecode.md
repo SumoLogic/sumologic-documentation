@@ -5,10 +5,6 @@ sidebar_label: urldecode
 ---
 
 
-
-
-## urldecode
-
 The urldecode operator decodes a URL you include in a query, returning the decoded (unescaped) URL string.
 
 For example, a URL that looks like this:
@@ -23,7 +19,7 @@ can be decoded to:
 http://yourmainserver-city55555.org/functions/main.php?gk=Gk45MgHJhEYx8bPYvGfiWS7o3KLdfg90&
 ```
 
-**Syntax**
+## Syntax
 
 ```sql
 urldecode(<url_field>) [as <field>]

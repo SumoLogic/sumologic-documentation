@@ -12,7 +12,7 @@ The `ipv4ToNumber` operator allows you to convert an Internet Protocol version 4
 The [CIDR operator](#CIDR) allows you to leverage CIDR (Classless Inter-Domain Routing) notation to narrow the analysis of IPv4 networks to specific subnets.
 :::
 
-**Syntax**
+## Syntax
 
 ```sql
 ipv4ToNumber(<ip_addr>) [as <field>]

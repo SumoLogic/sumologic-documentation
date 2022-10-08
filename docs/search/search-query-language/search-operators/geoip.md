@@ -6,14 +6,11 @@ sidebar_label: geoip
 
 
 
-
-## geoip
-
 Sumo Logic can match a <a href="/docs/search/search-query-language/parse-operators">parsed</a> IPv4 or IPv6 address to its geographical location on a <a href="/docs/dashboards-new/panels/map-charts">map chart</a>. To create the map, the geoip operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. 
 
 Any IP addresses that don't have a location, such as internal addresses, will return null values.
 
-**Syntax**
+## Syntax
 
 ```sql
 geoip <ip_address_field> [<optional_field1>, <optional_field2>...]
@@ -43,7 +40,7 @@ all the optional fields or choose a subset:
 
 Details of these data fields can be found in [Neustar's documentation](https://ipintelligence.neustar.biz/portal/#documentation) under the GeoPoint Data Glossary topic.
 
-**Syntax** to Map
+## Syntax to Map
 
 To map the IP addresses properly you must [count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent) by the `latitude` and `longitude` fields. You must have the `_count` field in your results. If you want to use a different field's value [rename](#as-operator) it to `_count` so the map uses the field.
 

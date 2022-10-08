@@ -7,8 +7,6 @@ sidebar_label: save
 
 
 
-## save
-
 The save operator allows you to save the results of a query to a lookup table you have already created, as described in <a href="/docs/search/lookup-tables/create-lookup-table">Create a Lookup Table</a>. You can use the <a href="#lookup">lookup</a> and <a href="#cat">cat</a> operator to access the saved data.
 
 You can use the `append` option with `save` to merge new and changed rows into a lookup table. If you use `save` without `append`, any existing rows in the lookup table will be overwritten by your search results. 
@@ -17,7 +15,7 @@ If your lookup table is configured with a time-to-live (TTL), creating or updati
 
 Either raw or aggregated results can be saved with the `save` operator.
 
-**Syntax** 
+## Syntax 
 
 ```sql
 save [append] path://”<path-to-table>”

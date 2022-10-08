@@ -114,6 +114,6 @@ info
 | parse regex "(\<sampl\>INFO)"
 ```
 
-To convert a string to all lowercase or all uppercase letters, you can use the [toUpperCase and toLowerCase](../../search-query-language/operators#toLowerCase-and-toUpperCase) operators.
+To convert a string to all lowercase or all uppercase letters, you can use the [toUpperCase and toLowerCase](../../search-query-language/search-operators/toLowerCase-toUpperCase) operators.
 
  

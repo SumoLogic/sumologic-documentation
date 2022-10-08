@@ -13,7 +13,7 @@ There are two primary use cases for this operator:
 
 Let’s say you log each time a user successfully logs into your service, and you want to track how many logins per hour, on a daily basis. You can use the timeslice operator to group the data into one-hour segments, and view the data over a 24 hour period.
 
-**Syntax** 
+## Syntax 
 
 ```sql
 timeslice <#><time_period> [as <field>] | <aggregating_operator> by <field>

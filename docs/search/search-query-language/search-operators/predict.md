@@ -5,10 +5,6 @@ sidebar_label: predict
 ---
 
 
-
-
-## predict
-
 Uses a series of time-stamped numerical values to predict future values. The predict operator can be useful in the following cases:
 <ul><li>As an early warning system, alerting you when a threshold is about to be reached.</li><li> For resource and capacity planning, helpful for determining seasonal impacts, like a Cyber Monday rush on an ecommerce site.</li>
 <li>Improved risk calculation.</li></ul>
@@ -24,7 +20,7 @@ The `predict` operator supports two predictive models:
 If a missing data point is encountered in the generated time series, Sumo uses a zero value and issues a warning to alert you. If you'd like to use customized values, you can do so with the [fillmissing](#fillmissing) operator.   
 :::
 
-**Syntax**
+## Syntax
 
 The syntax for **`predict`** varies depending on whether you use the linear regression model or the auto-regressive model. In either case, the following requirements apply:
 
@@ -32,7 +28,7 @@ The syntax for **`predict`** varies depending on whether you use the linear regr
 * The query must contain the `timeslice` operator.
 * Both the aggregate operator and the `timeslice` operator must precede the `predict` operator.
 
-**Syntax** for the linear regression model
+## Syntax for the linear regression model
 
 For the linear regression model:
 
@@ -47,7 +43,7 @@ output:  
 * `_count_predicted` Value predicted by the simple linear model.
 * `_count_error` Value predicted by the simple linear model, minus the actual number.
 
-**Syntax** for the auto-regressive model
+## Syntax for the auto-regressive model
 
 ```sql
 ... | timeslice 1m | count by _timeslice | predict _count by 1m model=ar, ar.window=n, forecast=n

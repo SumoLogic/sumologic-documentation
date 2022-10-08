@@ -9,7 +9,7 @@ You can use the `where` operator to filter data points by value.
 `where` is somewhat analogous to the [filter](#filter) metrics operator. However, `filter` only supports filtering entire time series; in contrast, `where` allows you to filter by data point value.
 
 :::note
-The `where` operator is currently supported in the Metric Explorer's [advanced mode](./metrics-explorer.md#about-advancedmode-ui), not in basic mode.
+The `where` operator is currently supported in the Metric Explorer's [advanced mode](/docs/metrics/metric-queries-alerts/metrics-explorer), not in basic mode.
 :::
 
 ## Syntax
@@ -21,7 +21,7 @@ selectors | where _value [VALUE BOOLEAN EXPRESSION | REDUCER BOOLEAN EXPRESSION]
 * `_value` is the placeholder for each data point in the time series.
 * `_granularity` is the placeholder value for the length of the quantization bucket in milliseconds.
 * `[VALUE BOOLEAN EXPRESSION]` is a value expression that operates on individual data points of a time series. For example, `> 3`.
-* `[REDUCER BOOLEAN EXPRESSION]` is an expression that takes all the values of a given time series, uses a function to reduce them to a single value, and evaluates that value. The supported functions are listed in the [eval](/docs/metrics/metric-queries-alerts/operators#eval) topic.
+* `[REDUCER BOOLEAN EXPRESSION]` is an expression that takes all the values of a given time series, uses a function to reduce them to a single value, and evaluates that value. The supported functions are listed in the [eval](/docs/metrics/metrics-operators#eval) topic.
 
 
 ## Examples

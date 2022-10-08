@@ -25,7 +25,7 @@ Where: 
 If the query that results in the message contains an aggregation operator, the results presented are likely to be erroneous because the aggregation will be based on only 1000 time series.  
 :::
 
-One solution is to add additional selectors to your query to reduce the number of time series returned, for example by adding additional `tag=value` pairs to the query. You can also filter the time series returned using the [topk](/docs/metrics/metric-queries-alerts/operators#topk), [bottomk](/docs/metrics/metric-queries-alerts/operators#bottomk), and [filter](/docs/metrics/metric-queries-alerts/operators#filter) operators. 
+One solution is to add additional selectors to your query to reduce the number of time series returned, for example by adding additional `tag=value` pairs to the query. You can also filter the time series returned using the [topk](/docs/metrics/metrics-operators#topk), [bottomk](/docs/metrics/metrics-operators#bottomk), and [filter](/docs/metrics/metrics-operators#filter) operators. 
 
 ## Long-running metric query
 

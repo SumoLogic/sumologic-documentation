@@ -6,11 +6,9 @@ sidebar_label: trim
 
 
 
-## trim
-
 The trim operator eliminates leading and trailing spaces from a string field.
 
-**Syntax**
+## Syntax
 
 ```sql
 trim(<field>) as <field>

@@ -5,16 +5,13 @@ sidebar_label: save (Classic)
 ---
 
 
-
-## save (Lookups Classic)
-
 The save (classic) operator works with the classic Lookup Tables feature. For information about the new, more scalable Lookup Tables feature and the new save operator that works with it, see <a href="/docs/search/lookup-tables">Lookup Tables</a> and <a href="#save">save</a>. The new save operator allows you to merge new and changed rows, whereas, this classic save operator can only append to existing rows.
 
 Using the **save** operator allows you to save the results of a query into the Sumo Logic file system. Later, you can use the lookup operator to access the saved data. The save operator saves data in a simple format to a location you choose.
 
 You will need to remember the path where you point the save operator to put the file. You may want to save searches that contain save operators so you can refer to it later. There is no way to locate the saved file if you forget the path.
 
-**Syntax**
+## Syntax
 
 ```sql
 save [append]\<myFolder/mySubFolder/myFileNam\>

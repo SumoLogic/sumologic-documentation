@@ -6,8 +6,6 @@ sidebar_label: transpose
 
 
 
-## transpose
-
 Similar to a Pivot Table in Excel, the transpose operator allows you to take a list and turn it into a table in the Aggregates tab, as shown by the examples below. You can define what data makes the rows and columns.
 
 **Without transpose, the following query renders factual but not a useful table below:**
@@ -43,7 +41,7 @@ For example, the screenshots below represent the same data from the same time ra
 
 ![With transpose](/img/search/searchquerylanguage/search-operators/transpose/WithTranpose.png)
 
-**Syntax**
+## Syntax
 
 ```sql
 transpose row [<row fields>] column [<column fields>] as [<output fields>]

@@ -6,9 +6,6 @@ sidebar_label: sessionize
 
 
 
-
-## sessionize
-
 The sessionize operator allows you to use an extracted value from one log message (generated from one system) to find correlating values in log messages from other systems. After you run sessionize, these related events are displayed on the same page. The thread of logs woven together is called a <i>session</i>.
 
 Depending on your use case, you'd also use the [join](#join) operator, which may be more appropriate and easier to use.
@@ -23,7 +20,7 @@ Each system generated log messages, so we know that at some point a failure occu
 Queries using sessionize can't be added to a Dashboard.
 :::
 
-**Syntax**
+## Syntax
 
 ```sql
 sessionize ("<anchor pattern1>") as (<alias list1>), ("<anchor pattern2>") as (<alias list2>)
@@ -33,7 +30,7 @@ Where *anchor pattern* is like a parse anchor expression, except that it can inc
 
 **Rules**
 
-* The sessionize operator is followed by more than one [anchor](./parse-operators/parse-predictable-patterns-using-an-anchor.md) expression.
+* The sessionize operator is followed by more than one [anchor](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor) expression.
 * Each anchor expression can be used to extract one or more variables from a matching log.
 * You can use the extracted variable to join with a second log message containing that variable using a $variableName notation.
 

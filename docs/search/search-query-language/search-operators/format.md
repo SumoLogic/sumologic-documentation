@@ -7,13 +7,11 @@ sidebar_label: format
 
 
 
-## format
-
 The format operator allows you to format and combine data from parsed fields. Numbers, strings, and dates can be formatted into a user-defined string. This allows data in logs, such as dates or currency amounts, to be formatted as human readable, when otherwise it would be hard to decipher.
 
 The [Concat](#concat) operator is a simpler version of the Format operator, and may be used instead for simpler use cases.
 
-**Syntax**
+## Syntax
 
 ```sql
 format(<formatSpecifier>, <field1>[, <field2>, <field3>, ...]) as <field>

@@ -193,7 +193,7 @@ A graph or map that dynamically displays a directional flow from a source to a t
 
 ## G
 
-**[Geo lookup](/docs/search/search-query-language/operators#geo-lookup-map)**
+**[Geo lookup](/docs/search/search-query-language/search-operators/geo-lookup-map)**
 
 Sumo Logic can match a [parsed](/docs/search/search-query-language/parse-operators) IPv4 or IPv6 address to its geographical location on a map. To create the map the **lookup** operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated.
 
@@ -225,7 +225,7 @@ Hosted Collectors don't require installation or registration, nor do Hosted Coll
 
 ## I
 
-**[If operator](docs/search/search-query-language/operators#if-operator-and)**
+**[If operator](/docs/search/search-query-language/search-operators/if)**
 
 A ternary operator used to evaluate a condition as either true or false, with values assigned for each outcome. It is a shorthand way to express an if-else condition.
 
@@ -353,7 +353,7 @@ In Sumo Logic, org, or organization, refers to your company’s Sumo Logic accou
 
 **Outlier**
 
-Outliers are log data or metric values in a sequence that seem unexpected, and might indicate an operational or performance issue. In Sumo Logic, you can use the [outlier operator](/docs/search/search-query-language/operators#outlier) to identify outliers in log data. In addition, Sumo has a [metric outlier](/docs/metrics/metric-charts/Metrics-Outliers) feature that identifies metric data points that are outside the range of expected values.
+Outliers are log data or metric values in a sequence that seem unexpected, and might indicate an operational or performance issue. In Sumo Logic, you can use the [outlier operator](/docs/search/search-query-language/search-operators/outlier) to identify outliers in log data. In addition, Sumo has a [metric outlier](/docs/metrics/metric-charts/Metrics-Outliers) feature that identifies metric data points that are outside the range of expected values.
 
 
 
@@ -391,7 +391,7 @@ A metric format in which a time series is uniquely identified by its metric name
 
 The process by which Sumo aggregates raw metric data points over a particular time bucket. Similar to “timeslice” in logs, Sumo will automatically bucket your datapoints into quantization intervals based on the timerange of your search. For example, 5 second quantization intervals for a 15-minute search and 15 seconds for a 60-minute search.
 
-**[quantize operator](/docs/metrics/Metric-Queries-Alerts/operators#quantize)**
+**[quantize operator](/docs/metrics/metrics-operators#quantize)**
 
 An operator you can use is metric queries to specify the size of the time buckets over which Sumo will aggregate metrics, and the aggregation method Sumo will use to quantize the data.
 
@@ -490,7 +490,7 @@ Time Compare uses the compare operator to compare current aggregated search resu
 
 A set of timestamped values of a specific measurement.
 
-**[Timeslice operator](/docs/search/search-query-language/operators#timeslice)**
+**[Timeslice operator](/docs/search/search-query-language/search-operators/timeslice)**
 
 Timeslice segregates search results by a time period, or by a number of buckets over a search's time range.
 
@@ -520,7 +520,7 @@ The user.properties file is used to pass Collector parameters for some installat
 
 A WebHook is an HTTP callback: an HTTP POST that occurs when something happens. WebHook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming WebHooks. You can configure a custom WebHook, or use preconfigured WebHooks for a number of apps, including Slack, HipChat, Datadog, and so on.
 
-**[Where operator](/docs/search/search-query-language/operators#where)**
+**[Where operator](/docs/search/search-query-language/search-operators/where)**
 
 A conditional operator that can precede or follow another operator. Example combinations include "where x matches y", "where x in (a, b, c)", "where x not in (a, b, c)" and "where a > 1 and b / 4 &lt; sqrt(x)".
 

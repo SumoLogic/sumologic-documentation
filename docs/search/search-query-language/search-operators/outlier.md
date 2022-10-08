@@ -6,13 +6,12 @@ sidebar_label: outlier
 
 
 
-## outlier
 
 Given a series of time-stamped numerical values, using the outlier operator in a query can identify values in a sequence that seem unexpected, and would identify an alert or violation, for example, for a scheduled search.
 
 To do this, the Outlier operator tracks the moving average and standard deviation of a numerical field. An outlier is identified based on a specified *threshold* of standard deviations around the expected value. If a data point is outside the threshold, it is considered to be an outlier.
 
-**Syntax**
+## Syntax
 
 ```sql
 ...
@@ -217,7 +216,7 @@ error (_sourceCategory=Apache* or _sourceCategory=IIS*)
 | transpose row _timeslice column _sourceCategory
 ```
 
-When you select a [line chart](../../dashboards-new/panels/line-charts.md), this example will display something like the following:
+When you select a [line chart](/docs/dashboards-new/panels/line-charts), this example will display something like the following:
 
 ![Outlier Distribution](/img/search/searchquerylanguage/search-operators/OutlierDistri.png)
 
@@ -238,7 +237,7 @@ _sourceCategory=Apache*
 | transpose row _timeslice column status_code
 ```
 
-When you select a [line chart](../../dashboards-new/panels/line-charts.md), this example will display something like the following:
+When you select a [line chart](/docs/dashboards-new/panels/line-charts), this example will display something like the following:
 
 ![Outlier Ranking](/img/search/searchquerylanguage/search-operators/OutlierRanking.png)
 

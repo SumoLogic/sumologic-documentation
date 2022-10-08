@@ -7,16 +7,13 @@ sidebar_label: decToHex
 
 
 
-
-## decToHex
-
 The decToHex operator converts a long value of 16 or fewer digits to a hexadecimal string using Two's Complement for negative values.
 
 :::note
 Hexadecimal string is always returned in upper-case.
 :::
 
-**Syntax**
+## Syntax
 
 ```sql
 decToHex(<long_field>) as <field>

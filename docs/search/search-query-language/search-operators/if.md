@@ -5,15 +5,11 @@ sidebar_label: if, ?
 ---
 
 
-
-
-## if operator and ?
-
 There are two forms of ternary expression you can use in Sumo Logic queries: one is constructed using the if operator, and the other uses the question mark (?) operator. The syntax varies slightly, but the results are equivalent. You can use the syntax you are most comfortable with.
 
 These expressions are used to evaluate a condition as either true or false, with values assigned for each outcome. It is a shorthand way to express an if-else condition. On the basis of the test, the entire expression returns `value_if_true` if the condition is `true`, else `value_if_false` if the condition is `false`. The two sub-expressions (`value_if_true` and `value_if_false`) must have the same type.
 
-**Syntax**
+## Syntax
 
 ```sql
 if(<condition>, <value_if_true>, <value_if_false>) as <field>

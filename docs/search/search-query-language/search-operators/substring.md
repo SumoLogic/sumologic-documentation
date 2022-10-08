@@ -5,12 +5,9 @@ sidebar_label: substring
 ---
 
 
-
-## substring
-
 The substring operator allows you to specify an offset that will output only part of a string, referred to as a substring. You can use this operator to output just a part of a string instead of the whole string, for example, if you wanted to output an employee’s initials instead of their whole name.
 
-**Syntax**
+## Syntax
 
 ```sql
 substring(<sourceString>, <startOffset>, <endOffset>) as <outputField>

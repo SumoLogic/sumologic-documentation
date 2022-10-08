@@ -6,8 +6,6 @@ sidebar_label: tolowercase, touppercase
 
 
 
-## toLowerCase and toUpperCase
-
 The toLowerCase operator takes a string and converts it to all lower case letters. The toUpperCase operator takes a string and converts it to all uppercase letters.
 
 These operators can be useful for normalizing source logs with inconsistent capitalization, such as Windows Event logs, or changing file names and paths for files systems that require all lower case letters. They are especially useful for queries that include conditionals and grouping, in order to reduce the number of groups in the search results.
@@ -16,7 +14,7 @@ These operators can be useful for normalizing source logs with inconsistent capi
 **toLowerCase** and **toUpperCase** are useful when you use the following equating conditions with Sumo operators: the equal to sign (=) and the not equal to sign (!=) sign. These conditions are case-sensitive in Sumo Logic. For more information, see [Using toLowerCase or toUpperCase with an equating condition].
 :::
 
-**Syntax**
+## Syntax
 
 ```sql
 toLowerCase(<string>) [as <field>]

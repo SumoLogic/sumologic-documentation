@@ -4,17 +4,14 @@ title: trace Operator
 sidebar_label: trace
 ---
 
-
-## trace
-
 The trace operator acts as a highly sophisticated filter to connect the dots across different log messages. You can use any identifying value with a trace operator, such as a user ID, IP address, or session ID, to retrieve a comprehensive set of activity associated to that original ID.
 
 Trace operators require the following:
 
-* [Regular expression](./parse-operators/parse-variable-patterns-using-regex.md) to find related messages.
+* [Regular expression](../parse-operators/parse-variable-patterns-using-regex.md) to find related messages.
 * Starting value (for example, an ID).
 
-**Syntax**
+## Syntax
 
 ```sql
 trace "<regex>" "<starting_value>"

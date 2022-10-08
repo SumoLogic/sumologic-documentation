@@ -7,11 +7,9 @@ sidebar_label: lookupContains
 
 
 
-## lookupContains
-
 Use the lookupContains operator to determine whether a key exists in a lookup table. It will return a boolean value.
 
-**Syntax**
+## Syntax
 
 The syntax for `lookupContains` in varies depending on whether you use the operator within a `where` expression, or before it.
 

@@ -4,11 +4,7 @@ title: rollingstd Operator
 sidebar_label: rollingstd
 ---
 
-
-
-## rollingstd
-
-The rollingstd operator finds the rolling standard deviation of a field, allowing you to identify changes over time.
+The `rollingstd` operator finds the rolling standard deviation of a field, allowing you to identify changes over time.
 
 For example, you'd use rollingstd in a query to identify spikes in activity for a Collector, or for a URL in your site. You can use a rollingstd to find compute the average number from the past, to identify changes (larger or smaller) over time.
 
@@ -16,7 +12,7 @@ Two or more data points are needed to get accurate results from a rollingstd ope
 
 If you specify a window length of 5, but only 4 data points are available, the rollingstd operator takes the average of whatever is available.
 
-**Syntax**
+## Syntax
 
 ```sql
 rollingstd <field> [, window_length] [as <field>]

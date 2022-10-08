@@ -6,11 +6,9 @@ sidebar_label: total
 
 
 
-## total
-
 The total operator inserts the sum of a set of fields into every row of the set. Unlike the sum operator, which produces an aggregate value, the total operator inserts the total value as a new column, enabling expressions that compare an individual value to the total.
 
-**Syntax**
+## Syntax
 
 Create a new field (named **`_total`** by default) containing the sum of the specified field:
 

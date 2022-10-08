@@ -7,11 +7,9 @@ sidebar_label: join
 
 
 
-## join
+The `join `operator combines records of two or more data streams. Results are admitted on-the-fly to allow real time tables to be built. Values common to each table are then delivered as search results. The join operator in Sumo Logic works much like an <a href="https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join">inner SQL join</a>.
 
-The join operator combines records of two or more data streams. Results are admitted on-the-fly to allow real time tables to be built. Values common to each table are then delivered as search results. The join operator in Sumo Logic works much like an <a href="https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join">inner SQL join</a>.
-
-**Syntax**
+## Syntax
 
 ```sql
 ... | join
@@ -51,7 +49,7 @@ on t1.a = t2.c
 * The join expression can not specify a [keyword search expression](docs/search/get-started-with-search/build-search/keyword-search-expressions.md) (scope), if provided it is ignored.
 * Data must be present in the time range you choose for the query.
 * Join can be used in Dashboard Panels, but in the query they must be included after the first `group-by` phrase.
-* [Subqueries](../subqueries.md) are supported, and can include aggregate operators.
+* [Subqueries](/docs/search/subqueries) are supported, and can include aggregate operators.
 
 #### Limitations
 

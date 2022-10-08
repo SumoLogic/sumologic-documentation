@@ -22,7 +22,7 @@ The following operators can't be used with dashboards:
 
 The following operators can't be used in Live mode:
 
-* Compare With can be used when your query's aggregate operation is grouped by a [timeslice](../search/search-query-language/operators#timeslice)
+* Compare With can be used when your query's aggregate operation is grouped by a [timeslice](../search/search-query-language/search-operators/timeslice)
 * Details
 * First, Last - instead use the **withtime** option, see [most_recent and least_recent](/docs/search/search-query-language/group-aggregate-operators#most_recent-least_recent).
 * Join

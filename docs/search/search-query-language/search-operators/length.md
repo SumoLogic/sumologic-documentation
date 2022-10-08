@@ -6,14 +6,11 @@ sidebar_label: length
 
 
 
-
-## length
-
 The length operator returns the number of characters in a string. You can use it in where clauses or to create new fields.
 
 For example, you'd use the Length operator in free text fields where content is arbitrary to find cases where the field has a substantial amount of text using **length() > minimum** in a query. Or in a case where a long length would be abnormal, you can find these strings quickly using **length() > 10000** in a query.
 
-**Syntax**
+## Syntax
 
 ```sql
 length(<field>) [as <field>]

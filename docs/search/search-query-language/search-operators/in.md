@@ -19,7 +19,7 @@ If the value of `<field>` matches any of value arguments (`<value_1>, <value_2>,
 
 **Examples**
 
-##### Find 5xx or 4xx errors, otherwise OK message
+#### Find 5xx or 4xx errors, otherwise OK message
 
 The following query:
 

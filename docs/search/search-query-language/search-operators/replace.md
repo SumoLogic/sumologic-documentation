@@ -6,12 +6,10 @@ sidebar_label: replace
 
 
 
-## replace
-
 The replace operator allows you to replace all instances of a specified string with another string. You can specify the string to replace with a matching regex or literal text. You might use it to find all instances of a name and change it to a new name or to replace punctuation in a field with different punctuation. This operator is useful anytime you need to rename something.
 
 
-**Syntax**
+## Syntax
 
 ```sql
 replace(<sourceString>, <searchString>, <replaceString>) as <field>

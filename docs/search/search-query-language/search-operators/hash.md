@@ -6,13 +6,11 @@ sidebar_label: hash
 
 
 
-## hash
-
 The hash operator uses a cryptographic hash algorithm to obscure data into a random string value. The operator supports MD5, SHA1, SHA2, and MurmurHash3 algorithms. The default is MD5 if no algorithm is specified.
 
 This is helpful when working with sensitive data such as email addresses, usernames, credit cards, and social security numbers. Each unique value will have a unique hash code allowing you to maintain anonymity.
 
-**Syntax** 
+## Syntax 
 
 As a Search operator, hash processes the provided field against the specified algorithm to change the current values into random unique values.
 

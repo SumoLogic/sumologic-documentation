@@ -6,8 +6,6 @@ sidebar_label: where
 
 
 
-## where
-
 The where operator allows you to filter results based on a boolean expression.
 
 For example, using **where** with the boolean operator [isValidIP](#isvalidip-isvalidipv4-isvalidipv6):
@@ -37,7 +35,7 @@ Instead, separate the **where** operator from the preceding **parse** operat
 
 `...| parse "seconds=*;" as time  | where time\> 5`
 
-**Syntax**
+## Syntax
 
 ```sql
 ... | where <boolean expression> | ...

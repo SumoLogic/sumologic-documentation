@@ -6,15 +6,9 @@ sidebar_label: isPrivateIP
 
 
 
-
-
-
-
-## isPrivateIP
-
 The isPrivateIP operator checks if an IPv4 address is private and returns a boolean.
 
-**Syntax**
+## Syntax
 
 ```sql
 isPrivateIP("<IPv4_string>") as <field>

@@ -6,11 +6,9 @@ sidebar_label: hexToAscii
 
 
 
-## hexToAscii
-
 The hexToAscii operator converts a hexadecimal string to an ASCII string.
 
-**Syntax**
+## Syntax
 
 ```sql
 hexToAscii(<hexadecimal_field>) as <field>

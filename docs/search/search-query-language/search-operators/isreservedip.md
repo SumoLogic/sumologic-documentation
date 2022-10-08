@@ -5,12 +5,9 @@ sidebar_label: isReservedIP
 ---
 
 
-
-## isReservedIP
-
 The isReservedIP operator checks if an IPv4 address is reserved as defined by <a href="https://tools.ietf.org/html/rfc5735">RFC 5735</a> and returns a boolean.
 
-**Syntax**
+## Syntax
 
 * `isReservedIP(\<IPv4_strin\>") as\<fiel\>`
 * `isReservedIP\<IPv4_string_fiel\>) [as\<fiel\>]`

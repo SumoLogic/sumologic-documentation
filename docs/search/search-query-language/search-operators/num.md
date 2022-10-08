@@ -6,12 +6,10 @@ sidebar_label: num
 
 
 
-## num
-
 The num operator converts a field to a floating point number. Using num in a query is useful for sorting results by number instead of alphabetically, which is the default.
 
 
-**Syntax**
+## Syntax
 
 ```sql
 num(<field>) [as <field>]

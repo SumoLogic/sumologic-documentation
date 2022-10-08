@@ -5,10 +5,6 @@ sidebar_label: smooth
 ---
 
 
-
-
-## smooth
-
 The smooth operator calculates the rolling (or moving) average of a field, measuring the average of a value to "smooth" random variation. Smooth operator reveals trends in the data set you include in a query.
 
 Within a query that contains a smooth operator you will choose a window (described as window_length in the syntax below); the average of the values within the window creates a data point.
@@ -17,7 +13,7 @@ If you specify a window length of 5, but only 4 data points are available, the s
 
 Adding a group by function to a smooth operator query produces a running average within each group (with data from each group calculated separately).
 
-**Syntax**
+## Syntax
 
 ```sql
 smooth <field> [, <window length>] [as <field>]

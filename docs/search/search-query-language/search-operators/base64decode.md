@@ -5,11 +5,10 @@ sidebar_label: base64decode
 ---
 
 
-## base64Decode
 
 The base64Decode operator takes a base64 string and converts it to an ASCII string. Input must be a valid base64 string. Invalid input is returned unaltered.
 
-**Syntax**
+## Syntax
 
 ```sql
 base64Decode("<string>"[, "<encoding>"]) as <field>
@@ -19,7 +18,7 @@ base64Decode("<string>"[, "<encoding>"]) as <field>
 base64Decode(<string_field>[, "<encoding>"]) as <field>
 ```
 
-#### Supported encodings
+### Supported encodings
 
 * US-ASCII
 * UTF-8 (default)

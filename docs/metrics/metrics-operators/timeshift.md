@@ -4,6 +4,7 @@ title: timeshift Operator
 sidebar_label: timeshift
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `timeshift` operator shifts the time series from your metrics query by a specified period of time.
 

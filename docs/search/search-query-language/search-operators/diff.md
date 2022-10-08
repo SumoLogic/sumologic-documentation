@@ -6,8 +6,6 @@ sidebar_label: diff
 
 
 
-## diff
-
 The diff operator calculates the rate of change in a field between consecutive rows. To produce results, diff requires that a specified field contain numeric data; any non-numerical values are removed from the search results.
 
 Diff does not sort data but instead operates on rows in the order that they appear in the input stream, subtracting the number in a field from the number in the same field in the previous line.
@@ -16,7 +14,7 @@ The first line of results will never display diff results.
 
 Adding a group by function to a diff operator query calculates the difference between consecutive values in each group. (Data from each group are calculated separately.) Grouping does not affect the order in which rows appear in the output stream.
 
-**Syntax**
+## Syntax
 
 * `diff\<fiel\> [as\<fiel\>] [by\<field\>,\<field\>, ...]`
 

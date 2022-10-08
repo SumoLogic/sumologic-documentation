@@ -4,9 +4,6 @@ title: urlencode Operator
 sidebar_label: urlencode
 ---
 
-
-## urlencode
-
 The urlencode operator encodes the URL into an ASCII character set. This is the standard format in which URLs can be sent over the internet.
 
 For example, if your URL looks like this:
@@ -21,7 +18,7 @@ It will be encoded to:
 http%3A%2F%2Fyourmainserver-city55555.org%2Ffunctions%2Fmain.php%3Fgk%3DGk45MgHJhEYx8bPYvGfiWS7o3KLdfg90%26
 ```
 
-**Syntax**
+## Syntax
 
 ```sql
 urlencode(<url_field>) [as <field>]

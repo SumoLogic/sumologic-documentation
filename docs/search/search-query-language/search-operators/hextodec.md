@@ -5,12 +5,10 @@ sidebar_label: hexToDec
 ---
 
 
-## hexToDec
 
-The hexToDec operator converts a hexadecimal string of 16 or fewer
-characters to a long data type using Two's Complement for negative values.
+The hexToDec operator converts a hexadecimal string of 16 or fewer characters to a long data type using Two's Complement for negative values.
 
-**Syntax**
+## Syntax
 
 ```sql
 hexToDec("<hexadecimal string>") as <field>

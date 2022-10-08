@@ -6,13 +6,10 @@ sidebar_label: contains
 
 
 
-
-## contains
-
 The contains operator compares string values of two <a href="/docs/search/search-query-language/parse-operators">parsed</a> fields and returns a boolean result based on whether the second field's value exists in the first.
 
 
-**Syntax**
+## Syntax
 
 ```sql
 contains(<field1>, <field2>) as <field>

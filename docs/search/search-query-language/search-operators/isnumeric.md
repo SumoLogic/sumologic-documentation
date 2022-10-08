@@ -7,11 +7,10 @@ sidebar_label: isnumeric
 
 
 
-## isNumeric
 
 The isNumeric operator checks whether a string is a valid Java number. Valid numbers include hexadecimals marked with the 0x or 0X qualifier, octal numbers, scientific notation and numbers marked with a type qualifier, like 123L.
 
-**Syntax**
+## Syntax
 
 * `isNumeric(\<strin\>") as\<fiel\>`
 * `isNumeric\<string_fiel\>) [as\<fiel\>]`

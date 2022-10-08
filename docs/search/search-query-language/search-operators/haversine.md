@@ -6,11 +6,10 @@ sidebar_label: haversine
 
 
 
-## haversine
 
 The haversine operator returns the distance between latitude and longitude values of two coordinates in kilometers. Coordinates need to be positive or negative values based on being north/south or east/west, instead of using the terms N/S, E/W.
 
-**Syntax**
+## Syntax
 
 ```sql
 haversine(<latitude1>, <longitude1>, <latitude2>, <longitude2>) as <field>

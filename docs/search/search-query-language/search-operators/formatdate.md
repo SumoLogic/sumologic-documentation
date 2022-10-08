@@ -5,13 +5,9 @@ sidebar_label: formatDate
 ---
 
 
-
-
-## formatDate
-
 The formatDate operator allows you to format dates in log files as a string in the format you require, such as US date formatting, European formatting, and timestamps. 
 
-**Syntax**
+## Syntax
 
 ```sql
 formatDate(<date> [, <format> [, <timeZone>]]) as <field>

@@ -6,11 +6,9 @@ sidebar_label: accum
 
 
 
-## accum
-
 The accum operator calculates the cumulative sum of a field. It can be used to find a count by a specific time interval and can be used to find a total running count across all intervals.
 
-**Syntax**
+## Syntax
 
 ```sql
 accum <field> [as <field>] [by <field1>, <field2>, ...]

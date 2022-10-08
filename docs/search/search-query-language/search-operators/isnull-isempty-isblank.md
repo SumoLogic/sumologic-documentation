@@ -7,8 +7,6 @@ sidebar_label: isNull, isEmpty, isBlank
 
 
 
-## isNull, isEmpty, isBlank
-
 <ul>
 <li>The isNull operator checks a string and returns a boolean value: true if the string is null, or false if the string is not null.</li>
 <li>The isEmpty operator checks if a string contains no characters and is only whitespace.</li><li> The isBlank operator checks if a string contains no characters, is only whitespace, and is null.</li>

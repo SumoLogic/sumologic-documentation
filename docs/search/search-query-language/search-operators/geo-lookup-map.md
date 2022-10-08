@@ -5,10 +5,6 @@ sidebar_label: Geo Lookup (Map)
 ---
 
 
-
-
-## Geo Lookup (Map)
-
 Sumo Logic can match a <a href="/docs/search/search-query-language/parse-operators">parsed</a> IPv4 or IPv6 address to its geographical location on a map. To create the map the lookup operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. 
 
 Any IP addresses that don't have a location, such as internal addresses, will return null values.
@@ -40,7 +36,7 @@ be you can include all the optional fields or choose a subset:
 
 Details of these data fields can be found in [Neustar's documentation](https://ipintelligence.neustar.biz/portal/#documentation) under the GeoPoint Data Glossary topic.
 
-**Syntax**
+## Syntax
 
 The Geo Lookup operator uses <a href="#lookup-classic">lookup</a> with a specific path, `geo://location`, to produce a map. 
 

@@ -4,7 +4,7 @@ title: cidr Operator
 sidebar_label: cidr
 ---
 
-## CIDR
+
 
 Sumo Logic's three CIDR operators work with CIDR (Classless Inter-Domain Routing, sometimes pronounced "cider") notation to narrow the analysis of IPv4 networks to specific subnets. CIDR notations specify the routing prefix of IP addresses. Using the CIDR operators, you can determine the amount of traffic between network segments, review events from hosts within a specified network segment, or even use a not operator to find addresses that didn't originate from a particular network segment. CIDR operators can be used to compare the network segment of two IPv4 addresses, or just identify the network segment involved in particular messages.
 
@@ -22,7 +22,7 @@ For general information about Classless Inter-Domain Routing, see this [online 
 
 Extracts the network prefix from an IPv4 address. 
 
-**Syntax**
+### Syntax
 
 ```sql
 getCIDRPrefix("<ip_addr>", "<prefix_length>") as <field>
@@ -57,7 +57,7 @@ getCIDRPrefix("10.10.1.35", "29") as net
 
 Compares two IPv4 addresses and returns true if the network prefixes match.
 
-**Syntax**
+### Syntax
 
 ```sql
 compareCIDRPrefix("<ip_addr1>", "<ip_addr2>", "<prefix_length>") as <field>
@@ -125,7 +125,7 @@ To review events not from a specific network segment:
 
 A utility function that returns a subnet mask for boolean operations with IPv4 addresses.
 
-**Syntax**
+### Syntax
 
 ```sql
 maskFromCIDR("<prefix_length>") as <field>

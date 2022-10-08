@@ -4,11 +4,10 @@ title: filter Operator
 sidebar_label: filter
 ---
 
-## filter
 
 Use the filter operator to filter the output of a search based on the filtering criteria of a child query. The filter operator keeps only the records that match the filter criteria, allowing you to restrict search results to the most relevant information.
 
-**Syntax**
+## Syntax
 
 ```sql
 "filter" <fieldname>+ in (<child_query>)

@@ -4,11 +4,10 @@ title: as Operator
 sidebar_label: as
 ---
 
-## as operator
 
 The as operator is typically used in conjunction with other operators, but it can also be used alone to rename fields or to create new constant fields.
 
-**Syntax**
+## Syntax
 
 ```sql
 <ExistingFieldName> as <field>
@@ -19,12 +18,12 @@ The as operator is typically used in conjunction with other operators, but it ca
 ```
 
 :::note
-Fields with characters not in the `a-zA-Z0-9_` character set or that begin with a number need to be escaped, see [reference a field with special characters](../get-started-with-search/search-basics/reference-field-special-characters.md) for details.
+Fields with characters not in the `a-zA-Z0-9_` character set or that begin with a number need to be escaped, see [reference a field with special characters](/docs/search/get-started-with-search/search-basics/reference-field-special-characters) for details.
 :::
 
 **Examples**
 
-#### Rename a Field
+### Rename a Field
 
 When you rename a field, the original field still exists, but the new field is added.
 
@@ -46,7 +45,7 @@ Would provide results like:
 
 ![rename](/img/reuse/query-search/as_rename.png)
 
-#### Create a New Constant Field
+### Create a New Constant Field
 
 In this example, you will seed an existing field (**src_ip**) with a new constant (**127.10.10.1**):
 
@@ -71,7 +70,7 @@ Which provides the following results:
 
 ![new constant](/img/reuse/query-search/as_new_constant2.png)
 
-#### Use As in Conjunction with Other Operators
+### Use As in Conjunction with Other Operators
 
 The `as` operator is useful for testing, for example, when you want to create a few log lines and seed them with specific values, like the following query:
 

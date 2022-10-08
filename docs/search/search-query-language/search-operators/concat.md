@@ -7,9 +7,6 @@ sidebar_label: concat
 
 
 
-
-## concat
-
 The concat operator allows you to concatenate or join multiple strings, numbers, and fields into a single user-defined field. It concatenates strings end-to-end and joins them into a new string that you define. For example, to concatenate the words "foot" and "ball" would give you "football". You can also use punctuation and spaces in quotes to concatenate strings in a readable way.
 
 In another example, a log message has a table with the elements of a mailing address, but separated into different fields such as `Street_Number`, `City`, `State`, and `Zip_Code`. You can use the concatenate operate to assemble the fields into a new field called `Mailing_Address` for a customer.
@@ -17,7 +14,7 @@ In another example, a log message has a table with the elements of a mailing add
 In another example, if you had a log message of an incident with four fields, such as `Signature_Name`, `Vendor_Signature`,
 `Incident Detail_URL`, and `Analyst_Assessment` that you wanted to combine into a single field (a single string) called `Event_Detail`, the concatenate operator would also allow you to do this.
 
-**Syntax**
+## Syntax
 
 ```sql
 concat(<field1>, <field2>[, <field3>, ...]) as <field>

@@ -7,7 +7,7 @@ sidebar_label: fillmissing
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The fillmissing operator allows you to specify groups that should be represented in data output. When you run a standard <a href="/docs/search/search-query-language/group-aggregate-operators">group-by</a> query, Sumo Logic only returns non-empty groups in the results. For example, if your query is grouping by timeslice, then only the timeslices that have data are returned.
+The `fillmissing` operator allows you to specify groups that should be represented in data output. When you run a standard <a href="/docs/search/search-query-language/group-aggregate-operators">group-by</a> query, Sumo Logic only returns non-empty groups in the results. For example, if your query is grouping by timeslice, then only the timeslices that have data are returned.
 
 This can be a problem because:
 
@@ -70,7 +70,7 @@ When `fillmissing` appends a record to the output, the key fields of the record 
 The fillmissing operator allows generators to enumerate up to 10,000 combinations of values; the same limit as group-by operators. If the limit is exceeded, extra values are omitted. The operator will issue a warning when this happens.
 :::
 
-**Syntax**
+## Syntax
 
 This section describes the syntax for the `fillmissing` operator.
 

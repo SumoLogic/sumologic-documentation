@@ -7,12 +7,10 @@ sidebar_label: tourl
 
 
 
-## tourl
-
 The tourl operator provides you the ability to assign a short name that describes the URL. It is similar to creating a href for the URL with a short name. URLs are generally long and they don't tell you what information is displayed when the URL is opened. A common benefit of using this operator is to provide a description of a URL to display in dashboards.
 
 
-**Syntax**
+## Syntax
 
 ```sql
 tourl(<url_column_name>, <url_short_name_column>) as <field>

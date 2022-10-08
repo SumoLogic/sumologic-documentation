@@ -7,15 +7,13 @@ sidebar_label: top
 
 
 
-## top
-
 Use the top operator with the <a href="#sort">sort</a> operator, to reduce the number of sorted results returned.
 
 :::tip
 We recommend you instead use the [topk](#topk) operator so you can take advantage of its additional functionality.
 :::
 
-**Syntax**
+## Syntax
 
 ```sql
 top <#> <field> [by <group_by_operator>]

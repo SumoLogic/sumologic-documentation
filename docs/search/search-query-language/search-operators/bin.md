@@ -5,11 +5,10 @@ sidebar_label: bin
 ---
 
 
-## bin
 
 The bin operator assigns output results to user defined bins. A bin is configured to hold a range of values that can be used for sorting results in a histogram and further aggregation. It is a quick and effective way to visualize the distribution of data.
 
-**Syntax**
+## Syntax
 
 ```sql
 bin <numeric field> width=<#>[, min=<#>][, max=<#>]
@@ -22,7 +21,7 @@ Where:
 * `<min>` is the lower boundary of the results as a floating point number. All data points with values less than the **min** are assigned to the first bin. **Optional**.
 * `<max>` is the upper boundary of the results as a floating point number. All data points with values more than the **max** are assigned to the last bin. **Optional**.
 
-#### Output Fields
+### Output Fields
 
 * `_bin_label` is the default alias field, which has a standard interval representation.
 * `_bin_lower` is the lower boundary of the bin interval.
@@ -34,7 +33,7 @@ You can sort by the lower or upper boundary of the bin interval.
 
 **Examples**
 
-#### Distribution of error counts
+### Distribution of error counts
 
 A query counting error messages and using the bin operator to see the
 distribution of error counts based on bins with a width of 100:
@@ -50,7 +49,7 @@ _sourceCategory=stream error
 
 ![bin operator charted.png](/img/search/searchquerylanguage/search-operators/bin-operator-charted.png)
 
-#### Latency distribution
+### Latency distribution
 
 A query parsing the latency of a function call and using the bin
 operator to see latency distribution over time:
