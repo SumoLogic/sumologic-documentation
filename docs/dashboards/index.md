@@ -1,6 +1,6 @@
 ---
 slug: /dashboards
-title: Dashboards
+title: Dashboards (Classic)
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

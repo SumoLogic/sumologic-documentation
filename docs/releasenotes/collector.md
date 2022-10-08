@@ -1,7 +1,6 @@
 ---
 id: collector
 title: Collector Release Notes
-sidebar_label: Collector
 description: You'll find a list of new Collector features and relevant bug fixes for each release. In order to begin using the features listed here, you'll need to upgrade Collector software.
 ---
 

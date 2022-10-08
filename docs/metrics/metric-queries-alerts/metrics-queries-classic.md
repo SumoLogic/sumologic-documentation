@@ -8,7 +8,7 @@ description: See information about the Classic metrics UI.
 This topic explains how to construct metrics queries and provides examples. 
 
 :::tip
-This topic has information about the Classic metrics UI. For information about the Metrics Explorer, the UI that replaces Classic metrics, see [Metrics Explorer](metrics-explorer.md).
+This topic has information about the Classic metrics UI. For information about the Metrics Explorer, the UI that replaces Classic metrics, see [Metrics Explorer](/docs/metrics/metric-queries-alerts/metrics-explorer).
 :::
 
 ## Structure of metrics queries
@@ -18,7 +18,7 @@ To [create a metrics visualization](../metric-charts/create-metrics-visualizati
 * Each metrics query must include one or more selectors (filters), which can be either of the following:
     * Sequence of space-separated `tag=value` pairs: `cluster=search node=search-1`
     * Unqualified strings (value with no key):  `statistic`
-* Each query can optionally include one or more [operators](/docs/metrics/metric-queries-alerts/operators) (avg, count, min, max, sum, and so on): `dep=prod metric=cpu_system | avg`
+* Each query can optionally include one or more [operators](/docs/metrics/metrics-operators) (avg, count, min, max, sum, and so on): `dep=prod metric=cpu_system | avg`
 * Grouping of results by operator is supported, as in this example, which groups average results by node: `dep=prod metric=cpu_system | avg by node`
 * Logical operators are supported, as in this example which uses NOT, OR, and AND: `not node=forge-12 and cluster=forge and (CPU_Idle or Idle_CPU) | avg`
 
@@ -184,7 +184,7 @@ Where:
 If the query that results in the message contains an aggregation operator, the results presented are likely to be erroneous because the aggregation will be based on only 1000 time series.
 :::
 
-One solution is to add additional selectors to your query to reduce the number of time series returned, for example by adding additional `tag=value` pairs to the query. You can also filter the time series returned using the [topk](/docs/metrics/metric-queries-alerts/operators#topk), [bottomk](/docs/metrics/metric-queries-alerts/operators#bottomk), and [filter](/docs/metrics/metric-queries-alerts/operators#filter) operators. 
+One solution is to add additional selectors to your query to reduce the number of time series returned, for example by adding additional `tag=value` pairs to the query. You can also filter the time series returned using the [topk](/docs/metrics/metrics-operators#topk), [bottomk](/docs/metrics/metrics-operators#bottomk), and [filter](/docs/metrics/metrics-operators#filter) operators. 
 
 ### Long-running metric query
 For a single metrics query request, Sumo limits the output time series at 1000 for visualization. Output time series can either exceed the limit for a single row or multiple rows combined.

@@ -52,7 +52,7 @@ For details see[ Best Practices](/docs/send-data/best-practices).
     * **Timestamp Format**. Auto Detect
 4. In the Processing Rules for Logs section, add a Processing Rule:
     * **Name:** `Remove Syslog String`
-    * **Filter**: `(<\d+\>1 - - - - - - {)`
+    * **Filter**: `(\<\d+\>1 - - - - - - \{)`
     * **Type**: `Mask messages that match`
     * **Mask String**: `{`
 

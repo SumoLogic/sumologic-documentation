@@ -36,7 +36,7 @@ With the provided results you can:
 
 Results can be returned in two ways:
 
-* If the operator is last in the query (no operations follow it) it provides aggregate results by performing a [count by](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent) operation.
+* If the operator is last in the query (no operations follow it) it provides aggregate results by performing a [count by](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent) operation.
 * If you want to use operators after LogReduce you need to specify the `noaggregate` option so your results are returned non-aggregated.
 
 ## Limitations
@@ -44,7 +44,7 @@ Results can be returned in two ways:
 * When not specifying a field with the `field=` option don't parse any fields. If you parse any fields they are excluded from the schema in your results. 
 * A maximum of 100 keys are automatically parsed.
 * Keys in arrays are not supported.
-* The [Time Compare](../time-compare.md) button will not work on LogReduce Keys results, you need to manually input the [compare operator](docs/search/search-query-language/operators#compare) instead.
+* The [Time Compare](../time-compare.md) button will not work on LogReduce Keys results, you need to manually input the [compare operator](docs/search/search-query-language/search-operators/compare) instead.
 * Response fields `_signature_id`, `_schema`, and `_count` are not supported with [Dashboard filters](../../dashboards/edit-dashboards/use-filters-dashboards.md).
 
 ## _count link
