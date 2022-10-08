@@ -1,7 +1,6 @@
 ---
 id: service
 title: Service Release Notes
-sidebar_label: Service
 description: Looking for more information about new features in the Sumo Logic Service? We'll post here about what's new and exciting with each release.
 ---
 
