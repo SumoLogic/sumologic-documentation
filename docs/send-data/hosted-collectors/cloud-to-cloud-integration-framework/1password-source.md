@@ -144,55 +144,57 @@ Field Name
 
 When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/Health-Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
+
+
 <table>
-  <tr>
-   <td>Type
-   </td>
-   <td>Reason
-   </td>
-   <td>Retries
-   </td>
-   <td>Retry Behavior
-   </td>
-   <td>Health Event Name
-   </td>
-  </tr>
-  <tr>
-   <td>ThirdPartyConfig
-   </td>
-   <td>Normally due to an invalid configuration. You'll need to review your Source configuration and make an update.
-   </td>
-   <td>No retries are attempted until the Source is updated.
-   </td>
-   <td>Not applicable
-   </td>
-   <td>ThirdPartyConfigError
-   </td>
-  </tr>
-  <tr>
-   <td>ThirdPartyGeneric
-   </td>
-   <td>Normally due to an error communicating with the third party service APIs.
-   </td>
-   <td>Yes
-   </td>
-   <td>The Source will retry for up to 90 minutes, after which it quits.
-   </td>
-   <td>ThirdPartyGenericError
-   </td>
-  </tr>
-  <tr>
-   <td>FirstPartyGeneric
-   </td>
-   <td>Normally due to an error communicating with the internal Sumo Logic APIs.
-   </td>
-   <td>Yes
-   </td>
-   <td>The Source will retry for up to 90 minutes, after which it quits.
-   </td>
-   <td>FirstPartyGenericError
-   </td>
-  </tr>
+  <tr>
+   <td>Type
+   </td>
+   <td>Reason
+   </td>
+   <td>Retries
+   </td>
+   <td>Retry Behavior
+   </td>
+   <td>Health Event Name
+   </td>
+  </tr>
+  <tr>
+   <td>ThirdPartyConfig
+   </td>
+   <td>Normally due to an invalid configuration. You'll need to review your Source configuration and make an update.
+   </td>
+   <td>No retries are attempted until the Source is updated.
+   </td>
+   <td>Not applicable
+   </td>
+   <td>ThirdPartyConfigError
+   </td>
+  </tr>
+  <tr>
+   <td>ThirdPartyGeneric
+   </td>
+   <td>Normally due to an error communicating with the third party service APIs.
+   </td>
+   <td>Yes
+   </td>
+   <td>The Source will retry for up to 90 minutes, after which it quits.
+   </td>
+   <td>ThirdPartyGenericError
+   </td>
+  </tr>
+  <tr>
+   <td>FirstPartyGeneric
+   </td>
+   <td>Normally due to an error communicating with the internal Sumo Logic APIs.
+   </td>
+   <td>Yes
+   </td>
+   <td>The Source will retry for up to 90 minutes, after which it quits.
+   </td>
+   <td>FirstPartyGenericError
+   </td>
+  </tr>
 </table>
 
 
@@ -201,175 +203,174 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/H
 Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collectors). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 <table>
-  <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>Access</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>config
-   </td>
-   <td>JSON Object
-   </td>
-   <td>Yes
-   </td>
-   <td>Contains the<a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Duo-Source#configParameters"> configuration parameters</a> for the Source.
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>schemaRef
-   </td>
-   <td>JSON Object
-   </td>
-   <td>Yes
-   </td>
-   <td>Use <code>&#123;"type":"1Password"&#125;</code> for a 1Password Source.
-   </td>
-   <td>not modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>sourceType
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>Use <code>Universal</code> for a 1Password Source.
-   </td>
-   <td>not modifiable
-   </td>
-  </tr>
+  <tr>
+   <td><strong>Parameter</strong>
+   </td>
+   <td><strong>Type</strong>
+   </td>
+   <td><strong>Required?</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+   <td><strong>Access</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>config
+   </td>
+   <td>JSON Object
+   </td>
+   <td>Yes
+   </td>
+   <td>Contains the [configuration parameters](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source) for the Source.
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>schemaRef
+   </td>
+   <td>JSON Object
+   </td>
+   <td>Yes
+   </td>
+   <td>Use <code>&#123;"type":"1Password"&#125;</code> for a 1Password Source.
+   </td>
+   <td>not modifiable
+   </td>
+  </tr>
+  <tr>
+   <td>sourceType
+   </td>
+   <td>String
+   </td>
+   <td>Yes
+   </td>
+   <td>Use <code>Universal</code> for a 1Password Source.
+   </td>
+   <td>not modifiable
+   </td>
+  </tr>
 </table>
 
 The following table shows the **config** parameters for a 1Password Source.
 
 <table>
-  <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>Access</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>name
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>
-   </td>
-   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata</a> field <code>_source</code>.
-   </td>
-   <td>modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>description
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>null
-   </td>
-   <td>Type a description of the Source.
-   </td>
-   <td>modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>category
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>null
-   </td>
-   <td>Type a category of the source. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata</a> field <code>_sourceCategory</code>. See <a href="/docs/send-data/best-practices#good-and-bad-source-categories">best practices</a> for details.
-   </td>
-   <td>modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>fields
-   </td>
-   <td>JSON Object
-   </td>
-   <td>No
-   </td>
-   <td>
-   </td>
-   <td>JSON map of key-value fields (metadata) to apply to the Collector or Source.
-<p>Use the boolean field <code>_siemForward</code> to enable forwarding to SIEM.</p>
-   </td>
-   <td>modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>base_url
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>
-   </td>
-   <td>Provide your 1Password customer-specific domain, such as, <code>events.1password.com</code>.
-   </td>
-   <td>modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>api_token
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>
-   </td>
-   <td>Provide the 1Password API token you want to use to authenticate collection requests.
-   </td>
-   <td>modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>supported_apis
-   </td>
-   <td>Array of strings
-   </td>
-   <td>Yes
-   </td>
-   <td>
-   </td>
-   <td>Define one or more of the available APIs to collect: <code>itemUsage</code>, and <code>sign-in</code>.
-<p>For example, for both you'd use:</p>
-<p><code>["itemUsage","sign-in"]</code></p>
-   </td>
-   <td>modifiable
-   </td>
-  </tr>
+  <tr>
+   <td><strong>Parameter</strong>
+   </td>
+   <td><strong>Type</strong>
+   </td>
+   <td><strong>Required</strong>
+   </td>
+   <td><strong>Default</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+   <td><strong>Access</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>name
+   </td>
+   <td>String
+   </td>
+   <td>Yes
+   </td>
+   <td>
+   </td>
+   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata field</a> <code>_source</code>.
+   </td>
+   <td>modifiable
+   </td>
+  </tr>
+  <tr>
+   <td>description
+   </td>
+   <td>String
+   </td>
+   <td>No
+   </td>
+   <td>null
+   </td>
+   <td>Type a description of the Source.
+   </td>
+   <td>modifiable
+   </td>
+  </tr>
+  <tr>
+   <td>category
+   </td>
+   <td>String
+   </td>
+   <td>No
+   </td>
+   <td>null
+   </td>
+   <td>Type a category of the source. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata field</a> field <code>_sourceCategory</code>. See <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">best practices</a> for details.
+   </td>
+   <td>modifiable
+   </td>
+  </tr>
+  <tr>
+   <td>fields
+   </td>
+   <td>JSON Object
+   </td>
+   <td>No
+   </td>
+   <td>
+   </td>
+   <td>JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field <code>_siemForward</code> to enable forwarding to SIEM.
+   </td>
+   <td>modifiable
+   </td>
+  </tr>
+  <tr>
+   <td>base_url
+   </td>
+   <td>String
+   </td>
+   <td>Yes
+   </td>
+   <td>
+   </td>
+   <td>Provide your 1Password customer-specific domain, such as, <code>events.1password.com</code>.
+   </td>
+   <td>modifiable
+   </td>
+  </tr>
+  <tr>
+   <td>api_token
+   </td>
+   <td>String
+   </td>
+   <td>Yes
+   </td>
+   <td>
+   </td>
+   <td>Provide the 1Password API token you want to use to authenticate collection requests.
+   </td>
+   <td>modifiable
+   </td>
+  </tr>
+  <tr>
+   <td>supported_apis
+   </td>
+   <td>Array of strings
+   </td>
+   <td>Yes
+   </td>
+   <td>
+   </td>
+   <td>Define one or more of the available APIs to collect: <code>itemUsage</code>, and <code>sign-in</code>. <br/> For example, for both you'd use: <code>["itemUsage","sign-in"]</code>
+   </td>
+   <td>modifiable
+   </td>
+  </tr>
 </table>
+
+
 
 1Password Source JSON example:
 
