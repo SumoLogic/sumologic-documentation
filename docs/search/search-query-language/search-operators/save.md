@@ -1,6 +1,6 @@
 ---
 id: save
-title: save Operator
+title: save Search Operator
 sidebar_label: save
 ---
 

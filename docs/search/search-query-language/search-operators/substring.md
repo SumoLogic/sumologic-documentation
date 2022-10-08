@@ -1,6 +1,6 @@
 ---
 id: substring
-title: substring Operator
+title: substring Search Operator
 sidebar_label: substring
 ---
 

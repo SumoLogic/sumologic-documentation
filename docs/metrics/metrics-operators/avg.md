@@ -1,6 +1,6 @@
 ---
 id: avg
-title: avg Operator
+title: avg Metrics Operator
 sidebar_label: avg
 ---
 

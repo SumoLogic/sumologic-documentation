@@ -1,6 +1,6 @@
 ---
 id: sum
-title: sum Operator
+title: sum Metrics Operator
 sidebar_label: sum
 ---
 

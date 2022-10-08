@@ -1,6 +1,6 @@
 ---
 id: threatip
-title: threatip Operator
+title: threatip Search Operator
 sidebar_label: threatip
 ---
 

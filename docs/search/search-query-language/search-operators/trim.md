@@ -1,6 +1,6 @@
 ---
 id: trim
-title: trim Operator
+title: trim Search Operator
 sidebar_label: trim
 ---
 

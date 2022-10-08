@@ -1,6 +1,6 @@
 ---
 id: rollingstd
-title: rollingstd Operator
+title: rollingstd Search Operator
 sidebar_label: rollingstd
 ---
 

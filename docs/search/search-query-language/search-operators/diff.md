@@ -1,6 +1,6 @@
 ---
 id: diff
-title: diff Operator
+title: diff Search Operator
 sidebar_label: diff
 ---
 

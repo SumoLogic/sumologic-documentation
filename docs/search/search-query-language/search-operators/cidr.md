@@ -1,6 +1,6 @@
 ---
 id: cidr
-title: cidr Operator
+title: cidr Search Operator
 sidebar_label: cidr
 ---
 

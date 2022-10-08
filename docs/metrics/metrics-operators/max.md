@@ -1,6 +1,6 @@
 ---
 id: max
-title: max Operator
+title: max Metrics Operator
 sidebar_label: max
 ---
 

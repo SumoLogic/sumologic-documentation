@@ -1,6 +1,6 @@
 ---
 id: fillmissing
-title: fillmissing Operator
+title: fillmissing Metrics Operator
 sidebar_label: fillmissing
 ---
 

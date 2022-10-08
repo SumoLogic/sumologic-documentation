@@ -1,6 +1,6 @@
 ---
 id: filter
-title: filter Operator
+title: filter Metrics Operator
 sidebar_label: filter
 ---
 

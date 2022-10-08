@@ -1,6 +1,6 @@
 ---
 id: lookup
-title: lookup Operator
+title: lookup Search Operator
 sidebar_label: lookup
 ---
 

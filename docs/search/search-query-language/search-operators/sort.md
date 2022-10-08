@@ -1,6 +1,6 @@
 ---
 id: sort
-title: sort Operator
+title: sort Search Operator
 sidebar_label: sort
 ---
 

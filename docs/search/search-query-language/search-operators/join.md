@@ -1,6 +1,6 @@
 ---
 id: join
-title: join Operator
+title: join Search Operator
 sidebar_label: join
 ---
 

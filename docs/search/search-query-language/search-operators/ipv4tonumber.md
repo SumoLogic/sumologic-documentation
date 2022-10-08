@@ -1,6 +1,6 @@
 ---
 id: ipv4tonumber
-title: ipv4ToNumber Operator
+title: ipv4ToNumber Search Operator
 sidebar_label: ipv4ToNumber
 ---
 

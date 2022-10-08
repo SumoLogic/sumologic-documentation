@@ -1,6 +1,6 @@
 ---
 id: ewma
-title: ewma Operator
+title: ewma Metrics Operator
 sidebar_label: ewma
 ---
 

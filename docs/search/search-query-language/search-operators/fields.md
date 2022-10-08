@@ -1,6 +1,6 @@
 ---
 id: fields
-title: fields Operator
+title: fields Search Operator
 sidebar_label: fields
 ---
 

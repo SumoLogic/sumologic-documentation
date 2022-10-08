@@ -1,6 +1,6 @@
 ---
 id: in
-title: in Operator
+title: in Search Operator
 sidebar_label: in
 ---
 

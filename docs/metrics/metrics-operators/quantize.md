@@ -1,6 +1,6 @@
 ---
 id: quantize
-title: quantize Operator
+title: quantize Metrics Operator
 sidebar_label: quantize
 ---
 

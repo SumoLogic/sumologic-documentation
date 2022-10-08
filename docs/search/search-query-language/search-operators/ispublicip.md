@@ -1,6 +1,6 @@
 ---
 id: ispublicip
-title: isPublicIP Operator
+title: isPublicIP Search Operator
 sidebar_label: isPublicIP
 ---
 

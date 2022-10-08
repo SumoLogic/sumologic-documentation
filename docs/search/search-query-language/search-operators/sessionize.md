@@ -1,6 +1,6 @@
 ---
 id: sessionize
-title: sessionize Operator
+title: sessionize Search Operator
 sidebar_label: sessionize
 ---
 

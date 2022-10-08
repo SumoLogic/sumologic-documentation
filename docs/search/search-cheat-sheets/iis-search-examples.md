@@ -50,7 +50,7 @@ The following examples assume you used the parsing from above:
 | Identify the top 100 client IP addresses by number of hits.| &#124; count by c_ip &#124; top 100 c_ip by _count |  
 
 :::sumo More Info
-For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent), and [Top](../search-query-language/search-operators/top).
+For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent), and [Top](../search-query-language/search-operators/top).
 :::
 
 ## Timeslice and Transpose

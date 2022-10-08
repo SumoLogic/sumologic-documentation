@@ -1,6 +1,6 @@
 ---
 id: isvalidip
-title: isValidIP, isValidIPv4, isValidIPv6 Operators
+title: isValidIP, isValidIPv4, isValidIPv6 Search Operators
 sidebar_label: isValidIP, isValidIPv4, isValidIPv6
 ---
 

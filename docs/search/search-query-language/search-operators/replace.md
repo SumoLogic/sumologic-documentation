@@ -1,6 +1,6 @@
 ---
 id: replace
-title: replace Operator
+title: replace Search Operator
 sidebar_label: replace
 ---
 

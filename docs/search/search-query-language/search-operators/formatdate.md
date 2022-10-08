@@ -1,6 +1,6 @@
 ---
 id: formatdate
-title: formatDate Operator
+title: formatDate Search Operator
 sidebar_label: formatDate
 ---
 

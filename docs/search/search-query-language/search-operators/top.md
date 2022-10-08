@@ -1,6 +1,6 @@
 ---
 id: top
-title: top Operator
+title: top Search Operator
 sidebar_label: top
 ---
 

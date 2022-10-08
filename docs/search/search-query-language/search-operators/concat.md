@@ -1,6 +1,6 @@
 ---
 id: concat
-title: concat Operator
+title: concat Search Operator
 sidebar_label: concat
 ---
 

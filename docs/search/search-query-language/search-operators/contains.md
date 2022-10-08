@@ -1,6 +1,6 @@
 ---
 id: contains
-title: contains Operator
+title: contains Search Operator
 sidebar_label: contains
 ---
 

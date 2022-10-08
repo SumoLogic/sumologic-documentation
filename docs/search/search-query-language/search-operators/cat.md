@@ -1,6 +1,6 @@
 ---
 id: cat
-title: cat Operator
+title: cat Search Operator
 sidebar_label: cat
 ---
 

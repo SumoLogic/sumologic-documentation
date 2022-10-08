@@ -1,6 +1,6 @@
 ---
 id: pct
-title: pct Operator
+title: pct Metrics Operator
 sidebar_label: pct
 ---
 

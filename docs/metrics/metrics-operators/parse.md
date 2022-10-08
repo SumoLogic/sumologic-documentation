@@ -1,6 +1,6 @@
 ---
 id: parse
-title: parse Operator
+title: parse Metrics Operator
 sidebar_label: parse
 ---
 
