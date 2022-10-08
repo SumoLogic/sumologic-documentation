@@ -95,29 +95,118 @@ When configured with the **Forward to SIEM** option the following metadata field
 
 When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/Health-Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
-| Type | Reason | Retries | Retry Behavior | Health Event Name |
-|---|---|---|---|---|
-| ThirdPartyConfig | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError |
-| ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
+
+
+<table>
+  <tr>
+   <td>Type
+   </td>
+   <td>Reason
+   </td>
+   <td>Retries
+   </td>
+   <td>Retry Behavior
+   </td>
+   <td>Health Event Name
+   </td>
+  </tr>
+  <tr>
+   <td>ThirdPartyConfig
+   </td>
+   <td>Normally due to an invalid configuration. You'll need to review your Source configuration and make an update.
+   </td>
+   <td>No retries are attempted until the Source is updated.
+   </td>
+   <td>Not applicable
+   </td>
+   <td>ThirdPartyConfigError
+   </td>
+  </tr>
+  <tr>
+   <td>ThirdPartyGeneric
+   </td>
+   <td>Normally due to an error communicating with the third party service APIs.
+   </td>
+   <td>Yes
+   </td>
+   <td>The Source will retry for up to 90 minutes, after which it quits.
+   </td>
+   <td>ThirdPartyGenericError
+   </td>
+  </tr>
+  <tr>
+   <td>FirstPartyGeneric
+   </td>
+   <td>Normally due to an error communicating with the internal Sumo Logic APIs.
+   </td>
+   <td>Yes
+   </td>
+   <td>The Source will retry for up to 90 minutes, after which it quits.
+   </td>
+   <td>FirstPartyGenericError
+   </td>
+  </tr>
+</table>
 
 
 ## JSON configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collectors). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
-
-| Parameter | Type | Required? | Description | Access |
-|---|---|---|---|---|
-| config | JSON Object | Yes | Contains the <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Duo-Source#configParameters"> configuration parameters</a> for the Source. |  |
-| schemaRef | JSON Object | Yes | Use {"type":"1Password"} for a 1Password Source. | not modifiable |
-| sourceType | String | Yes | Use Universal for a 1Password Source. | not modifiable |
-
+<table>
+  <tr>
+   <td><strong>Parameter</strong>
+   </td>
+   <td><strong>Type</strong>
+   </td>
+   <td><strong>Required?</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+   <td><strong>Access</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>config
+   </td>
+   <td>JSON Object
+   </td>
+   <td>Yes
+   </td>
+   <td>Contains the [configuration parameters](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source) for the Source.
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>schemaRef
+   </td>
+   <td>JSON Object
+   </td>
+   <td>Yes
+   </td>
+   <td>Use <code>&#123;"type":"1Password"&#125;</code> for a 1Password Source.
+   </td>
+   <td>not modifiable
+   </td>
+  </tr>
+  <tr>
+   <td>sourceType
+   </td>
+   <td>String
+   </td>
+   <td>Yes
+   </td>
+   <td>Use <code>Universal</code> for a 1Password Source.
+   </td>
+   <td>not modifiable
+   </td>
+  </tr>
+</table>
 
 ### Config parameters
 
 The following table shows the **config** parameters for a 1Password Source.
-
 
 
 <table>
@@ -144,7 +233,7 @@ The following table shows the **config** parameters for a 1Password Source.
    </td>
    <td>
    </td>
-   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="https://helpstaging.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata</a> field <code>_source</code>.
+   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata field</a> <code>_source</code>.
    </td>
    <td>modifiable
    </td>
@@ -172,7 +261,7 @@ The following table shows the **config** parameters for a 1Password Source.
    </td>
    <td>null
    </td>
-   <td>Type a category of the source. This value is assigned to the <a href="https://helpstaging.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata</a> field <code>_sourceCategory</code>. See <a href="https://helpstaging.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category">best practices</a> for details.
+   <td>Type a category of the source. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata field</a> field <code>_sourceCategory</code>. See <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">best practices</a> for details.
    </td>
    <td>modifiable
    </td>
@@ -186,7 +275,7 @@ The following table shows the **config** parameters for a 1Password Source.
    </td>
    <td>
    </td>
-   <td>JSON map of key-value fields (metadata) to apply to the Collector or Source.Use the boolean field <code>_siemForward</code> to enable forwarding to SIEM.
+   <td>JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field <code>_siemForward</code> to enable forwarding to SIEM.
    </td>
    <td>modifiable
    </td>
@@ -228,7 +317,7 @@ The following table shows the **config** parameters for a 1Password Source.
    </td>
    <td>
    </td>
-   <td>Define one or more of the available APIs to collect: <code>itemUsage</code>, and <code>sign-in</code>. For example, for both you'd use: <code>["itemUsage","sign-in"]</code>
+   <td>Define one or more of the available APIs to collect: <code>itemUsage</code>, and <code>sign-in</code>. <br/> For example, for both you'd use: <code>["itemUsage","sign-in"]</code>
    </td>
    <td>modifiable
    </td>
