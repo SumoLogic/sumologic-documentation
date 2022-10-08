@@ -541,7 +541,7 @@
   "/Traces/03Advanced_Configuration/Filter-Shape-Trace-Data": "/docs/apm/traces/advanced-configuration/filter-shape-tracing-data",
   "/Traces/03Advanced_Configuration/Working_with_Span_attributes": "/docs/apm/traces/advanced-configuration/working-with-span-attributes",
   "/Traces/Real_User_Monitoring": "/docs/apm/real-user-monitoring",
-  "/cid/0011": "docs/manage/field-extractions/create-field-extraction-rule",
+  "/cid/0011": "/docs/manage/field-extractions/create-field-extraction-rule",
   "/cid/1": "/docs/search/get-started-with-search/build-search/search-syntax-overview",
   "/cid/100": "/docs/manage/security/installation-tokens",
   "/cid/1000": "/docs/send-data/installed-collectors/sources/local-file-source",
