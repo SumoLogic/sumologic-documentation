@@ -1,6 +1,7 @@
 ---
 id: log10
-title: log10
+title: log10 Function
+sidebar_label: log10
 ---
 
 

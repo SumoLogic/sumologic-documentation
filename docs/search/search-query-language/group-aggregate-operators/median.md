@@ -5,7 +5,7 @@ sidebar_label: median
 ---
 
 
-In order to calculate the median value for a particular field, you can utilize the [percentile (pct) operator](#percentile-pct) with a percentile argument of 50.
+In order to calculate the median value for a particular field, you can utilize the [percentile (pct) operator](#pct-percentile) with a percentile argument of 50.
 
 ## Syntax
 

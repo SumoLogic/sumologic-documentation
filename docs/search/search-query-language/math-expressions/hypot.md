@@ -1,6 +1,7 @@
 ---
 id: hypot
-title: hypot
+title: hypot Function
+sidebar_label: hypot
 ---
 
 

@@ -6,7 +6,7 @@ sidebar_label: avg
 
 
 
-The averaging function (avg) calculates the average value of the numerical field being evaluated within the time range analyzed.
+The averaging function (`avg`) calculates the average value of the numerical field being evaluated within the time range analyzed.
 
 ## Syntax
 
@@ -30,7 +30,7 @@ _sourceCategory=app
 | avg(time) as avg_time
 ```
 
-An example snippet from a log would like this:  `time taken: 21 ms,` where the value parsed from `time taken` would be 21, which in this case is in milliseconds.
+An example snippet from a log would like this: `time taken: 21 ms,` where the value parsed from `time taken` would be 21, which in this case is in milliseconds.
 
 The average operator would calculate against all parsed values and return the average, which would be returned in the **Aggregates** tab as a number, such as 50.
 

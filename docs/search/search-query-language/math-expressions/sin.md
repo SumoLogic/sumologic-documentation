@@ -1,6 +1,7 @@
 ---
 id: sin
-title: sin
+title: sin Function
+sidebar_label: sin
 ---
 
 

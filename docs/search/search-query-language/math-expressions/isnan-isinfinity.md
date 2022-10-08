@@ -1,6 +1,7 @@
 ---
 id: isnan-isinfinity
-title: isNaN and isInfinity
+title: isNaN and isInfinity Function
+sidebar_label: isNaN, isInfinity
 ---
 
 

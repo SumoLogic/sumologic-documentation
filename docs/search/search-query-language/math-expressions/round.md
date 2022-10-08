@@ -1,6 +1,7 @@
 ---
 id: round
-title: round
+title: round Function
+sidebar_label: round
 ---
 
 

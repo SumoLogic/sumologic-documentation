@@ -5,14 +5,14 @@ sidebar_label: first, last
 ---
 
 
-The **first** and **last** operators return the first or last result relative to the sort order. By default, searches return results in descending chronological order (most recent descending to oldest).
+The **`first`** and **`last`** operators return the first or last result relative to the sort order. By default, searches return results in descending chronological order (most recent descending to oldest).
 
-For example, the following image shows a few results in the default sort order. The **#** column starts at one, and the **Time** values start with the most recent.
+For example, the following image shows a few results in the default sort order. The `#` column starts at one, and the `Time` values start with the most recent.
 
 ![new_to_old_default_result_order.png](/img/search/searchquerylanguage/group-aggregate-operators/new_to_old_default_result_order.png)
 
-* The **first** result is indicated with the **#** value of 1. This **first** result has the most recent **Time**.
-* The **last** result is indicated with the **#** value of 1. This **last** result has the oldest **Time**.
+* The `first` result is indicated with the `#` value of 1. This `first` result has the most recent `Time`.
+* The `last` result is indicated with the `#` value of 1. This `last` result has the oldest `Time`.
 
 :::tip
 Using the [sort](/docs/search/search-query-language/search-operators/sort) operator allows you to change the default sort order.
@@ -20,13 +20,13 @@ Using the [sort](/docs/search/search-query-language/search-operators/sort) opera
 
 #### Limitations
 
-First and last are not supported in Live Dashboards or any continuous query. Instead, use the **withtime** operator, see [most_recent and least_recent](/docs/search/search-query-language/group-aggregate-operators#most_recent-least_recent).
+First and last are not supported in Live Dashboards or any continuous query. Instead, use the `withtime` operator, see [most_recent and least_recent](/docs/search/search-query-language/group-aggregate-operators#most_recent-least_recent).
 
 ## first
 
-The default sort order for returned messages is reverse chronological—most recent descending to oldest. So **first** finds the most recent value of the field being evaluated within the time range. However, if you have specified a sort order other than descending chronological, then **first** finds the message that precedes all others based on the sort order defined in your query.
+The default sort order for returned messages is reverse chronological—most recent descending to oldest. So `first` finds the most recent value of the field being evaluated within the time range. However, if you have specified a sort order other than descending chronological, then `first` finds the message that precedes all others based on the sort order defined in your query.
 
-If there is no sort order specified for returned results (for example, when using **limit 20**), then **first** simply returns the first result encountered without respect to date or list order.
+If there is no sort order specified for returned results (for example, when using `limit 20`), then `first` simply returns the first result encountered without respect to date or list order.
 
 ### Syntax
 
@@ -54,7 +54,7 @@ _sourceCategory=Apache/Access
 
 ## last
 
-Finds the last value of the field being evaluated within the time range and according to the specified sort order. Remember that the default order for returned messages is reverse chronological—most recent descending to oldest. Therefore, **last** is the oldest result in the returned list. If you have specified an order other than reverse chronological, then **last** finds the ending message that follows all others based on your sort order.
+Finds the last value of the field being evaluated within the time range and according to the specified sort order. Remember that the default order for returned messages is reverse chronological—most recent descending to oldest. Therefore, `last` is the oldest result in the returned list. If you have specified an order other than reverse chronological, then `last` finds the ending message that follows all others based on your sort order.
 
 ### Syntax
 
@@ -88,7 +88,7 @@ disk*
 | sort by _last
 ```
 
-This query finds all messages that contain the term **disk\*** and parses out all that have a **diskutilization=** value. It then extracts the value of diskutilization into field **disk**. It then determines if that value is greater than 80% and will find the last occurrence of that value per host effectively producing a list of hosts that have disk utilization that is over 80%.
+This query finds all messages that contain the term `disk\*` and parses out all that have a `diskutilization=` value. It then extracts the value of diskutilization into field `disk`. It then determines if that value is greater than 80% and will find the last occurrence of that value per host effectively producing a list of hosts that have disk utilization that is over 80%.
 
 Note that when you find the last occurrence of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the `_last` fields. See this example:
 

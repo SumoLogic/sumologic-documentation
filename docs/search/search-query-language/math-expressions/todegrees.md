@@ -1,6 +1,7 @@
 ---
 id: todegrees
-title: toDegrees
+title: toDegrees Function
+sidebar_label: toDegrees
 ---
 
 

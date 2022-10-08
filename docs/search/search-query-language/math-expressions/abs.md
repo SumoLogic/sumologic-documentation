@@ -1,6 +1,7 @@
 ---
 id: abs
-title: abs
+title: abs Function
+sidebar_label: abs
 ---
 
 

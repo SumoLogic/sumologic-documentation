@@ -1,6 +1,7 @@
 ---
 id: log1p
-title: log1p
+title: log1p Function
+sidebar_label: log1p
 ---
 
 

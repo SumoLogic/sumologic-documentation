@@ -1,6 +1,7 @@
 ---
 id: toradians
-title: toRadians
+title: toRadians Function
+sidebar_label: toRadians
 ---
 
 Converts angles from degrees to radians.

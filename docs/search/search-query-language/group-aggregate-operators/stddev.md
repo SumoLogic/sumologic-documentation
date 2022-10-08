@@ -4,8 +4,6 @@ title: stddev Operator
 sidebar_label: stddev
 ---
 
-
-
 Finds the standard deviation value for a distribution of numerical
 values within the time range analyzed and associated with a group
 designated by the "group by" field.

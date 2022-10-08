@@ -1,6 +1,6 @@
 ---
 id: sinh
-title: sinh
+title: sinh Function
 ---
 
 

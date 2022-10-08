@@ -1,6 +1,7 @@
 ---
 id: floor
-title: floor
+title: floor Function
+sidebar_label: floor
 ---
 
 

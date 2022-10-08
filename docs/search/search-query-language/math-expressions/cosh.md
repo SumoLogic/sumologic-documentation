@@ -1,6 +1,7 @@
 ---
 id: cosh
-title: cosh
+title: cosh Function
+sidebar_label: cosh
 ---
 
 

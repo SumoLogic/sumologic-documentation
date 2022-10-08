@@ -1,9 +1,8 @@
 ---
 id: ceil
-title: ceil
+title: ceil Function
+sidebar_label: ceil
 ---
-
-
 
 The **ceil** operator rounds up a field value to the nearest integer value.
 

@@ -1,6 +1,6 @@
 ---
 id: tan
-title: tan
+title: tan Function
 ---
 
 

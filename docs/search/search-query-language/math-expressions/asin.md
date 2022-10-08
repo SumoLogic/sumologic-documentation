@@ -1,6 +1,7 @@
 ---
 id: asin
-title: asin
+title: asin Function
+sidebar_label: asin
 ---
 
 Returns the inverse sine of the argument.

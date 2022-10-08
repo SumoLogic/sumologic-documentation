@@ -1,6 +1,6 @@
 ---
 id: sqrt
-title: sqrt
+title: sqrt Function
 ---
 
 

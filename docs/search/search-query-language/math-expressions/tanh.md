@@ -1,6 +1,7 @@
 ---
 id: tanh
-title: tanh
+title: tanh Function
+sidebar_label: tanh
 ---
 
 

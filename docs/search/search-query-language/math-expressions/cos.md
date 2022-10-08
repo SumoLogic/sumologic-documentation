@@ -1,6 +1,7 @@
 ---
 id: cos
-title: cos
+title: cos Function
+sidebar_label: cos
 ---
 
 

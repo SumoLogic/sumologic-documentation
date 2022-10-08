@@ -1,6 +1,7 @@
 ---
 id: exp
-title: exp
+title: exp Function
+sidebar_label: exp
 ---
 
 

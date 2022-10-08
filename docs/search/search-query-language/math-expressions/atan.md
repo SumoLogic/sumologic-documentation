@@ -1,6 +1,7 @@
 ---
 id: atan
-title: atan
+title: atan Function
+sidebar_label: atan
 ---
 
 

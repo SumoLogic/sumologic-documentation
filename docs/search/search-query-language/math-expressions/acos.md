@@ -1,6 +1,7 @@
 ---
 id: acos
-title: acos
+title: acos Function
+sidebar_label: acos
 ---
 
 
