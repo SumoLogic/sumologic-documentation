@@ -1,6 +1,6 @@
 ---
 id: urlencode
-title: urlencode Operator
+title: urlencode Search Operator
 sidebar_label: urlencode
 ---
 

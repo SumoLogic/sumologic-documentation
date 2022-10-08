@@ -1,6 +1,6 @@
 ---
 id: total
-title: total Operator
+title: total Search Operator
 sidebar_label: total
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: along
-title: along Operator
+title: along Metrics Operator
 sidebar_label: along
 ---
 

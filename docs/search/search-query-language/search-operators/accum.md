@@ -1,10 +1,8 @@
 ---
 id: accum
-title: accum Operator
+title: accum Search Operator
 sidebar_label: accum
 ---
-
-
 
 The accum operator calculates the cumulative sum of a field. It can be used to find a count by a specific time interval and can be used to find a total running count across all intervals.
 

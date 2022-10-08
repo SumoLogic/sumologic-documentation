@@ -1,6 +1,6 @@
 ---
 id: tourl
-title: tourl Operator
+title: tourl Search Operator
 sidebar_label: tourl
 ---
 

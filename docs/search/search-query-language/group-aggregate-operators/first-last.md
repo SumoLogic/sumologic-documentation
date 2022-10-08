@@ -20,7 +20,7 @@ Using the [sort](/docs/search/search-query-language/search-operators/sort) opera
 
 #### Limitations
 
-First and last are not supported in Live Dashboards or any continuous query. Instead, use the `withtime` operator, see [most_recent and least_recent](/docs/search/search-query-language/group-aggregate-operators#most_recent-least_recent).
+First and last are not supported in Live Dashboards or any continuous query. Instead, use the `withtime` operator, see [most_recent and least_recent](/docs/search/search-query-language/group-aggregate-operators/most-recent-least-recent).
 
 ## first
 

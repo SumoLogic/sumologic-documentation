@@ -1,6 +1,6 @@
 ---
 id: isnumeric
-title: isnumeric Operator
+title: isnumeric Search Operator
 sidebar_label: isnumeric
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: save-classic
-title: save (Classic) Operator
+title: save (Classic) Search Operator
 sidebar_label: save (Classic)
 ---
 

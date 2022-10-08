@@ -1,6 +1,6 @@
 ---
 id: count
-title: count Operator
+title: count Metrics Operator
 sidebar_label: count
 ---
 

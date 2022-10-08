@@ -1,6 +1,6 @@
 ---
 id: queryendtime
-title: queryEndTime Operator
+title: queryEndTime Search Operator
 sidebar_label: queryEndTime()
 ---
 

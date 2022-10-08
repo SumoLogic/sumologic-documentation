@@ -1,6 +1,6 @@
 ---
 id: asn-lookup
-title: ASN Lookup Operator
+title: ASN Lookup Search Operator
 sidebar_label: ASN lookup
 ---
 

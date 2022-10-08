@@ -1,6 +1,6 @@
 ---
 id: hash
-title: hash Operator
+title: hash Search Operator
 sidebar_label: hash
 ---
 

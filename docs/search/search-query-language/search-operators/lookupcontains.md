@@ -1,6 +1,6 @@
 ---
 id: lookupcontains
-title: lookupContains Operator
+title: lookupContains Search Operator
 sidebar_label: lookupContains
 ---
 

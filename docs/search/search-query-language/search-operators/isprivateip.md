@@ -1,6 +1,6 @@
 ---
 id: isprivateip
-title: isPrivateIP Operator
+title: isPrivateIP Search Operator
 sidebar_label: isPrivateIP
 ---
 

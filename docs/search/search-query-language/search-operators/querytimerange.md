@@ -1,6 +1,6 @@
 ---
 id: querytimerange
-title: queryTimeRange Operator
+title: queryTimeRange Search Operator
 sidebar_label: queryTimeRange()
 ---
 

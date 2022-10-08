@@ -1,6 +1,6 @@
 ---
 id: accum
-title: accum Operator
+title: accum Metrics Operator
 sidebar_label: accum
 ---
 

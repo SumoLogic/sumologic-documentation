@@ -1,6 +1,6 @@
 ---
 id: limit
-title: limit Operator
+title: limit Search Operator
 sidebar_label: limit
 ---
 

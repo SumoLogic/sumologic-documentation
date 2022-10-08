@@ -1,6 +1,6 @@
 ---
 id: length
-title: length Operator
+title: length Search Operator
 sidebar_label: length
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: where
-title: where Operator
+title: where Metrics Operator
 sidebar_label: where
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: outlier
-title: outlier Operator
+title: outlier Metrics Operator
 sidebar_label: outlier
 ---
 

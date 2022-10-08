@@ -1,6 +1,6 @@
 ---
 id: isnull-isempty-isblank
-title: isNull, isEmpty, isBlank Operators
+title: isNull, isEmpty, isBlank Search Operators
 sidebar_label: isNull, isEmpty, isBlank
 ---
 

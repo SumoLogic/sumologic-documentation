@@ -1,29 +1,24 @@
 ---
 id: where
-title: where Operator
+title: where Search Operator
 sidebar_label: where
 ---
-
-
 
 The where operator allows you to filter results based on a boolean expression.
 
 For example, using **where** with the boolean operator [isValidIP](#isvalidip-isvalidipv4-isvalidipv6):
 
 * Filters as true and returns results:
-
     ```sql
     | where isValidIP("192.168.0.10")
     ```
 
 * Filters as false and will not return results:
-
     ```sql
     | where !isValidIP("192.168.0.10")
     ```
 
-
-The **where** operator must appear as a separate operator distinct from other operators, delimited by the pipe symbol ("\|"). In other words, the following construct will not work and will generate a syntax error:
+The **where** operator must appear as a separate operator distinct from other operators, delimited by the pipe symbol ("|"). In other words, the following construct will not work and will generate a syntax error:
 
 This query will NOT work:
 

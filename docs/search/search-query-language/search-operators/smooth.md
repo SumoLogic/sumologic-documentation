@@ -1,6 +1,6 @@
 ---
 id: smooth
-title: smooth Operator
+title: smooth Search Operator
 sidebar_label: smooth
 ---
 

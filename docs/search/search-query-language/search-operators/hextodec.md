@@ -1,6 +1,6 @@
 ---
 id: hextodec
-title: hexToDec Operator
+title: hexToDec Search Operator
 sidebar_label: hexToDec
 ---
 

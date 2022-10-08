@@ -1,6 +1,6 @@
 ---
 id: topk
-title: topk Operator
+title: topk Metrics Operator
 sidebar_label: topk
 ---
 

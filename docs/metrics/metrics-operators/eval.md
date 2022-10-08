@@ -1,6 +1,6 @@
 ---
 id: eval
-title: eval Operator
+title: eval Metrics Operator
 sidebar_label: eval
 ---
 

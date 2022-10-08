@@ -1,6 +1,6 @@
 ---
 id: matches
-title: matches Operator
+title: matches Search Operator
 sidebar_label: matches
 ---
 

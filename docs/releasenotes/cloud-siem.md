@@ -1,7 +1,6 @@
 ---
 id: cloud-siem
-title: Cloud SIEM Enterprise Release Notes
-sidebar_label: Cloud SIEM Enterprise
+title: Cloud SIEM Release Notes
 description: Here you'll find information about new and enhanced features, updated content (like rules, log mappers and parsers), bug fixes and other important announcements for Cloud SIEM Enterprise.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';

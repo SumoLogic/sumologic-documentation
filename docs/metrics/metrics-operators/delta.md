@@ -1,6 +1,6 @@
 ---
 id: delta
-title: delta Operator
+title: delta Metrics Operator
 sidebar_label: delta
 ---
 

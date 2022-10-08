@@ -1,6 +1,6 @@
 ---
 id: timeshift
-title: timeshift Operator
+title: timeshift Metrics Operator
 sidebar_label: timeshift
 ---
 

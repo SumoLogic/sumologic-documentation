@@ -1,6 +1,6 @@
 ---
 id: topk
-title: topk Operator
+title: topk Search Operator
 sidebar_label: topk
 ---
 

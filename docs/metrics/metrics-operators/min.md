@@ -1,6 +1,6 @@
 ---
 id: min
-title: min Operator
+title: min Metrics Operator
 sidebar_label: min
 ---
 

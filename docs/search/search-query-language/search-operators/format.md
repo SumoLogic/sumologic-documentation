@@ -1,6 +1,6 @@
 ---
 id: format
-title: format Operator
+title: format Search Operator
 sidebar_label: format
 ---
 

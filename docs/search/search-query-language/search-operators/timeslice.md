@@ -1,6 +1,6 @@
 ---
 id: timeslice
-title: timeslice Operator
+title: timeslice Search Operator
 sidebar_label: timeslice
 ---
 

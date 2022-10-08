@@ -1,6 +1,6 @@
 ---
 id: rate
-title: rate Operator
+title: rate Metrics Operator
 sidebar_label: rate
 ---
 

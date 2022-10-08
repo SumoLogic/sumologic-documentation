@@ -1,6 +1,6 @@
 ---
 id: haversine
-title: haversine Operator
+title: haversine Search Operator
 sidebar_label: haversine
 ---
 
