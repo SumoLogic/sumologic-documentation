@@ -2243,6 +2243,59 @@ module.exports = {
       ],
     },
   ],
+  releasenotes: [
+    {
+      type: 'category',
+      label: 'Release Notes',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'releasenotes/index'},
+      items: [
+        'releasenotes/service',
+        'releasenotes/cloud-siem',
+        'releasenotes/collector',
+        'releasenotes/developer',
+        {
+          type: 'category',
+          label: 'Archive',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'releasenotes/archive/index'},
+          items: [
+            {
+              type: 'category',
+              label: 'Collector Archive',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'releasenotes/archive/collector/year2021',
+                'releasenotes/archive/collector/year2020',
+                'releasenotes/archive/collector/year2019',
+                'releasenotes/archive/collector/year2018',
+                'releasenotes/archive/collector/year2017',
+                'releasenotes/archive/collector/year2016',
+                'releasenotes/archive/collector/year2015',
+
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Service Archive',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'releasenotes/archive/service/year2021',
+                'releasenotes/archive/service/year2020',
+                'releasenotes/archive/service/year2019',
+                'releasenotes/archive/service/year2018',
+                'releasenotes/archive/service/year2017',
+              ],
+            },
+          ]
+        }
+      ],
+    },
+  ],
   releasenotesarchive: [
     {
       type: 'category',
