@@ -1,0 +1,39 @@
+.button-dark, .button-light {
+  padding: 8px;
+  border-radius: 4px;
+  outline: 0;
+  cursor: pointer;
+  transition: ease background-color 250ms;
+}
+
+.button-dark{
+  background: var(--ds-blue-700);
+  color: var(--ds-white);
+  border-style: none;
+}
+.button-dark:hover {
+  background: var(--ds-gray-700);
+}
+html[data-theme='dark'] .button-dark{
+  background: var(--ds-blue-200);
+  color: var(--ds-gray-900);
+}
+html[data-theme='dark'] .button-dark:hover{
+  background: var(--ds-blue-700);
+  color: var(--ds-white);
+}
+
+.button-light {
+  background: transparent;
+  border-color: var(--ds-blue-700);
+  border-style: solid;
+}
+.button-light:hover {
+  border-color: var(--ds-red-600);
+}
+html[data-theme='dark'] .button-light {
+  border-color: var(--ds-white);
+}
+html[data-theme='dark'] .button-light:hover {
+  border-color: var(--ds-blue-400);
+}

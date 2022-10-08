@@ -9,6 +9,7 @@
 // Fonts!
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import 'button.css';
 
 @font-face {
   font-family: 'Material Icons';
@@ -1538,4 +1539,14 @@ html[data-theme='dark'] .featureImage {
 .DocSearch .DocSearch-Hit[aria-selected='true'] mark {
   color: var(--docsearch-highlight-color) !important;
   text-decoration: none;
+}
+
+.landpage-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.landpage-buttons-container a {
+  margin: 16px 16px 16px 0;
 }

@@ -5,82 +5,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Translate, {translate} from '@docusaurus/Translate';
-export default Home;
-
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title} <span className="beta-static">Beta</span></h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <p>We're a developer/practitioner community building reliable and secure modern apps. Contributions welcome!</p>
-        <div className={styles.buttons}>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-function Home() {
-  const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
-  return (
-    <Layout
-     title="Home"
-     description="Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.">
-     <HomepageHeader />
-      <main>
-      {features && features.length > 0 && (
-        <section className="spacer">
-          <div className="container">
-          <div className="land-flex">
-              {features.map((props, idx) => (
-                <Feature key={idx} {...props} />
-              ))}
-          </div></div>
-        </section>
-      )}
-      <div className='container-landpage'>
-        <div className='container'>
-          <h1>Making the world’s apps reliable and secure</h1>
-          <h3>Cloud-native platform for Observability and Security</h3>
-        </div>
-      </div>
-        <div className='container-landpage'>
-          <div className='column-left'>
-            <h1>Making the world’s apps reliable and secure</h1>
-          </div>
-        </div>
-        <div className='container-landpage'>
-          <div className='column-left'>
-            <h1 className='hero__title'>{siteConfig.title}</h1>
-            <p>Words are awesome.</p>
-            <p>I love Sumo</p>
-            <div className={styles.buttons}>
-            </div>
-            <span className='hero__popular-searches'>
-              Get started.
-              <a
-                className='hero__popular-searches'
-                href='https://docs.saucelabs.com/dev/cli/saucectl/#installing-saucectl/' >
-                xx
-              </a>
-            </span>
-            <span className='container'>
-               xxxx
-            </span>
-          </div>
-          <div className='column-right'>
-            <img className='landpage-hero' src='img/hero-graphic.png' />
-          </div>
-        </div>
-      </main>
-    </Layout>
-  );
-}
-
-
 
 const features = [
   {
@@ -225,5 +149,43 @@ function Feature({imageUrl, title, description, link}) {
       <div className="land-desc"><p>{description}</p></div>
       </div>
     </div>
+  );
+}
+
+function HomepageHeader() {
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <div className="container">
+        <h1 className="hero__title">{siteConfig.title} <span className="beta-static">Beta</span></h1>
+        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p>We're a developer/practitioner community building reliable and secure modern apps. Contributions welcome!</p>
+        <div className={styles.buttons}>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+export default function Home(): JSX.Element {
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    <Layout
+      title="Home"
+      description="Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.">
+      <HomepageHeader />
+      <main>
+        {features && features.length > 0 && (
+          <section className="spacer">
+            <div className="container">
+            <div className="land-flex">
+                {features.map((props, idx) => (
+                  <Feature key={idx} {...props} />
+                ))}
+            </div></div>
+          </section>
+        )}
+      </main>
+    </Layout>
   );
 }
