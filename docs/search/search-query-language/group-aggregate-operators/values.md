@@ -1,6 +1,6 @@
 ---
 id: values
-title: values Operator
+title: values Grouping Operator
 sidebar_label: values
 ---
 
