@@ -1,6 +1,6 @@
 ---
 id: dectohex
-title: decToHex Operator
+title: decToHex Search Operator
 sidebar_label: decToHex
 ---
 

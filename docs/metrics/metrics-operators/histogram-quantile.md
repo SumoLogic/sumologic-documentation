@@ -1,6 +1,6 @@
 ---
 id: histogram-quantile
-title: histogram quantile Operator
+title: histogram_quantile Metrics Operator
 sidebar_label: histogram_quantile
 ---
 

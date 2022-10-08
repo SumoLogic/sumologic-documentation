@@ -1,6 +1,6 @@
 ---
 id: num
-title: num Operator
+title: num Search Operator
 sidebar_label: num
 ---
 

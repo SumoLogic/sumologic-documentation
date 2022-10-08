@@ -1,6 +1,6 @@
 ---
 id: isreservedip
-title: isReservedIP Operator
+title: isReservedIP Search Operator
 sidebar_label: isReservedIP
 ---
 

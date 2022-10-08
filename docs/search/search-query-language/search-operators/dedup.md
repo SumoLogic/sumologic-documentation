@@ -1,6 +1,6 @@
 ---
 id: dedup
-title: dedup Operator
+title: dedup Search Operator
 sidebar_label: dedup
 ---
 

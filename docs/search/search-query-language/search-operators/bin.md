@@ -1,6 +1,6 @@
 ---
 id: bin
-title: bin Operator
+title: bin Search Operator
 sidebar_label: bin
 ---
 

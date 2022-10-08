@@ -1,6 +1,6 @@
 ---
 id: tolowercase-touppercase
-title: tolowercase, touppercase Operators
+title: tolowercase, touppercase Search Operators
 sidebar_label: tolowercase, touppercase
 ---
 

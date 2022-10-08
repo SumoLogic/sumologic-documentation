@@ -1,6 +1,6 @@
 ---
 id: trace
-title: trace Operator
+title: trace Search Operator
 sidebar_label: trace
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: querystarttime
-title: queryStartTime Operator
+title: queryStartTime Search Operator
 sidebar_label: queryStartTime()
 ---
 

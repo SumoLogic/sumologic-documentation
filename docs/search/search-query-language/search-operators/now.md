@@ -1,6 +1,6 @@
 ---
 id: now
-title: now Operator
+title: now Search Operator
 sidebar_label: now
 ---
 

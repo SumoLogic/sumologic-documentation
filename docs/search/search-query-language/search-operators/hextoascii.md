@@ -1,6 +1,6 @@
 ---
 id: hextoascii
-title: hexToAscii Operator
+title: hexToAscii Search Operator
 sidebar_label: hexToAscii
 ---
 

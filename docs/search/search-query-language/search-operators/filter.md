@@ -1,6 +1,6 @@
 ---
 id: filter
-title: filter Operator
+title: filter Search Operator
 sidebar_label: filter
 ---
 

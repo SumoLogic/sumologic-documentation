@@ -1,6 +1,6 @@
 ---
 id: compare
-title: compare Operator
+title: compare Search Operator
 sidebar_label: compare
 ---
 

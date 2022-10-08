@@ -1,6 +1,6 @@
 ---
 id: rollup-selector
-title: rollup selector Operator
+title: rollup selector Metrics Operator
 sidebar_label: rollup selector
 ---
 

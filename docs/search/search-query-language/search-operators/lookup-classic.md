@@ -1,6 +1,6 @@
 ---
 id: lookup-classic
-title: lookup (Classic) Operator
+title: lookup (Classic) Search Operator
 sidebar_label: lookup (Classic)
 ---
 

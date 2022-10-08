@@ -1,6 +1,6 @@
 ---
 id: predict
-title: predict Operator
+title: predict Search Operator
 sidebar_label: predict
 ---
 

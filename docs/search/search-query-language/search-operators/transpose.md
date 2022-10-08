@@ -1,6 +1,6 @@
 ---
 id: transpose
-title: transpose Operator
+title: transpose Search Operator
 sidebar_label: transpose
 ---
 

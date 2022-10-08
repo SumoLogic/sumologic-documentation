@@ -1,6 +1,6 @@
 ---
 id: backshift
-title: backshift Operator
+title: backshift Search Operator
 sidebar_label: backshift
 ---
 

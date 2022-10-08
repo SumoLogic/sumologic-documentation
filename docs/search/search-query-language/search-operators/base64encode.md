@@ -1,6 +1,6 @@
 ---
 id: base64encode
-title: base64encode Operator
+title: base64encode Search Operator
 sidebar_label: base64encode
 ---
 
