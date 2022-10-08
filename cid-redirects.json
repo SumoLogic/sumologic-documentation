@@ -1,5 +1,6 @@
 {
   "/01Start-Here": "/docs/get-started",
+  "/01Start-Here/03About-Sumo-Logic/What-Types-of-Logs-Can-I-Collect": "/docs/get-started/faq",
   "/01Start-Here/03About-Sumo-Logic/Contact-Us": "/docs/get-started/help",
   "/01Start-Here/03About-Sumo-Logic/Forgot-Password": "/docs/get-started/account-setup",
   "/01Start-Here/03About-Sumo-Logic/Help_Documentation_Styles": "/docs/contributing/style-guide",
@@ -412,7 +413,9 @@
   "/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3": "/docs/integrations/saas-cloud/pagerduty-v3",
   "/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce": "/docs/integrations/saas-cloud/salesforce",
   "/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack": "/docs/integrations/saas-cloud/slack",
-  "/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday": "/docs/integrations/saas-cloud/workday",
+  "/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack/Collect_logs_for_the_Slack_App": "/docs/integrations/saas-cloud/slack",
+  "/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday": "/docs/integrations/saas-cloud/workday"
+  "/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App": "/docs/integrations/saas-cloud/workday",
   "/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Zoom": "/docs/integrations/saas-cloud/zoom",
   "/07Sumo-Logic-Apps/1Password": "/docs/integrations/1password",
   "/07Sumo-Logic-Apps/20SAML/Auth0": "/docs/integrations/saml/auth0",
@@ -1135,6 +1138,7 @@
   "/Cloud_SIEM_Enterprise/CSE_Rules/05_Write_a_Threshold_Rule": "/docs/cse/rules/write-threshold-rule",
   "/Cloud_SIEM_Enterprise/CSE_Rules/07_Write_a_Chain_Rule": "/docs/cse/rules/write-chain-rule",
   "/Cloud_SIEM_Enterprise/CSE_Rules/09_Write_an_Aggregation_Rule": "/docs/cse/rules/write-aggregation-rule",
+  "/Cloud_SIEM_Enterprise/CSE_Schema/": "/docs/cse/schema",
   "/Cloud_SIEM_Enterprise/CSE_Schema/01_Schema_Attributes": "/docs/cse/schema/schema-attributes",
   "/Cloud_SIEM_Enterprise/CSE_Schema/03Attributes_You_Can_Map_to_Records": "/docs/cse/schema/attributes-map-to-records",
   "/Cloud_SIEM_Enterprise/CSE_Schema/07Parsing_Language_Reference_Guide": "/docs/cse/schema/parsing-language-reference-guide",
