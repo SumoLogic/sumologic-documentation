@@ -1,6 +1,6 @@
 ---
 id: median
-title: median Operator
+title: median Grouping Operator
 sidebar_label: median
 ---
 

@@ -103,10 +103,6 @@ parse "user=\"*\" action=\"*\" sessionId=\"*\"" as user, action, sessionid
 
 The following operators can be used as part of the **Parse Expression** in an Ingest Time Field Extraction Rule.
 
-:::important
-The **multi** and **auto** options are not supported in FERs.
-:::
-
 * parse regex
 * parse anchor
 * parse nodrop
@@ -115,6 +111,10 @@ The **multi** and **auto** options are not supported in FERs.
 * json
 * keyvalue
 * num
+
+:::note
+The **multi** and **auto** options are not supported in FERs.
+:::
 
 
 ## Limitations

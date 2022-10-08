@@ -10,11 +10,11 @@ values.
 
 `accum` is useful for metrics where the cumulative value over time is of interest, for instance the number of failed or successful transactions.
 
-## accum Syntax
+## Syntax
 
 `accum`
 
-## accum example
+## Example
 
 This query calculates the running total for the `success.count` metric: `success.count | accum`.
 
