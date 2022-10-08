@@ -1,6 +1,7 @@
 ---
 slug: /search/search-query-language/search-operators
-title: Sumo Logic Search Operators
+title: Search Operators
+sidebar_label: Search Operators
 description: Process data in meaningful ways and provide logic to queries with search operators. This section lists the available search operators in Sumo's search query language.
 ---
 
