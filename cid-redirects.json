@@ -1037,7 +1037,7 @@
   "/cid/4026": "/docs/search/search-query-language/search-operators/fillmissing",
   "/cid/4027": "/docs/search/search-query-language/search-operators/transpose",
   "/cid/4028": "/docs/search/search-query-language/parse-operators/parse-keyvalue-formatted-logs",
-  "/cid/4029": "/docs/search/search-query-language/search-operators",
+  "/cid/4029": "/docs/search/search-query-language/search-operators/trace",
   "/cid/4031": "/docs/send-data/hosted-collectors/amazon-aws/amazon-s3-audit-source",
   "/cid/4032": "/docs/send-data/hosted-collectors/amazon-aws/aws-s3-scan-interval-sources",
   "/cid/4033": "/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product",
