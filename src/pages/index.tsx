@@ -53,11 +53,10 @@ function Home() {
      <div className="container-landpage">
       <div className="container">
        <h1 align="center">Explore our product guides</h1>
+       <p align="center">Ensure app reliability with modern cloud-native monitoring and observability. Secure and protect your apps from modern threats.</p>
        <p align="center">
        <Tabs>
-        <TabItem value="observe" label="Observe" default>
-        <p>Ensure application reliability with modern cloud-native monitoring and observability.</p>
-
+        <TabItem value="observe" label="Data Types" default>
         {features1 && features1.length > 0 && (
           <section className="spacer">
             <div className="container">
@@ -71,37 +70,6 @@ function Home() {
 
         </TabItem>
         <TabItem value="observability" label="Infrastructure Monitoring">
-        <p>Ensure application reliability with modern cloud-native monitoring and observability.</p>
-
-        {features3 && features3.length > 0 && (
-          <section className="spacer">
-            <div className="container">
-            <div className="land-flex">
-                {features3.map((props, idx) => (
-                  <Feature key={idx} {...props} />
-                ))}
-            </div></div>
-          </section>
-        )}
-
-        </TabItem>
-        <TabItem value="security" label="Security">
-        <p>Secure and protect your apps from modern threats.</p>
-
-        {features4 && features4.length > 0 && (
-          <section className="spacer">
-            <div className="container">
-            <div className="land-flex">
-                {features4.map((props, idx) => (
-                  <Feature key={idx} {...props} />
-                ))}
-            </div></div>
-          </section>
-        )}
-
-        </TabItem>
-        <TabItem value="other" label="Other Solutions">
-
         {features2 && features2.length > 0 && (
           <section className="spacer">
             <div className="container">
@@ -113,12 +81,60 @@ function Home() {
           </section>
         )}
 
+        </TabItem>
+        <TabItem value="multicloud" label="Multi-cloud">
+        {features3 && features3.length > 0 && (
+          <section className="spacer">
+            <div className="container">
+            <div className="land-flex">
+                {features3.map((props, idx) => (
+                  <Feature key={idx} {...props} />
+                ))}
+            </div></div>
+          </section>
+        )}
+        </TabItem>
+        <TabItem value="security" label="Security">
+        {features4 && features4.length > 0 && (
+          <section className="spacer">
+            <div className="container">
+            <div className="land-flex">
+                {features4.map((props, idx) => (
+                  <Feature key={idx} {...props} />
+                ))}
+            </div></div>
+          </section>
+        )}
          </TabItem>
-         </Tabs>
-         </p>
+        <TabItem value="tools" label="Tools">
+         {features5 && features5.length > 0 && (
+           <section className="spacer">
+             <div className="container">
+             <div className="land-flex">
+                 {features5.map((props, idx) => (
+                   <Feature key={idx} {...props} />
+                 ))}
+             </div></div>
+           </section>
+         )}
+          </TabItem>
+          <TabItem value="other" label="Other Solutions">
+          {features6 && features6.length > 0 && (
+            <section className="spacer">
+              <div className="container">
+              <div className="land-flex">
+                  {features6.map((props, idx) => (
+                    <Feature key={idx} {...props} />
+                  ))}
+              </div></div>
+            </section>
+          )}
+          </TabItem>
+          </Tabs>
+          </p>
          </div>
-      </div>
-      </main>
+       </div>
+     </main>
     </Layout>
   );
 }
@@ -156,36 +172,96 @@ const features1 = [
   },
   {
     title: translate({
-      id: 'landing.feature.apm.title',
-      message: 'APM/Traces',
-      description: 'Title for APM',
+      id: 'landing.feature.traces.title',
+      message: 'Traces',
+      description: 'Title for Traces',
     }),
     imageUrl: 'img/icons/apm.png',
     description: (<Translate
-      id="landing.feature.apm.desc"
-      description="APM description">
-        Monitor and analyze metrics for visibility into infrastructure health and app performance.
+      id="landing.feature.traces.desc"
+      description="Traces description">
+        Review app trace activity and spans.
       </Translate>),
-    link: 'docs/apm',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.gi.title',
-      message: 'Global Intelligence',
-      description: 'Title for Global Intelligence',
-    }),
-    imageUrl: 'img/icons/cloud/global-intelligence.png',
-    description: (<Translate
-      id="landing.feature.gi.desc"
-      description="Global Intelligence description">
-        Install and configure third-party app integrations and services.
-      </Translate>),
-    link: 'docs/global-intelligence',
+    link: 'docs/apm/traces',
   },
 ];
 
 
 const features2 = [
+  {
+    title: translate({
+      id: 'landing.feature.observability.title',
+      message: 'Observability',
+      description: 'Title for Observability',
+    }),
+    imageUrl: 'img/icons/observe.png',
+    description: (<Translate
+      id="landing.feature.observability.desc"
+      description="Observability description">
+        Deploy and configure solutions to monitor apps and analyze root causes.
+      </Translate>),
+    link: 'docs/observability',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.aws.title',
+      message: 'AWS Observability',
+      description: 'Title for AWS Observability',
+    }),
+    imageUrl: 'img/icons/observe.png',
+    description: (<Translate
+      id="landing.feature.aws.desc"
+      description="AWS Observability description">
+        Troubleshoot apps and services.
+      </Translate>),
+    link: 'docs/observability/aws',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.k8s.title',
+      message: 'Kubernetes Observability',
+      description: 'Title for Kubernetes Observability',
+    }),
+    imageUrl: 'img/icons/observe.png',
+    description: (<Translate
+      id="landing.feature.k8s.desc"
+      description="AWS Observability description">
+        Troubleshoot apps and services.
+      </Translate>),
+    link: 'docs/observability/kubernetes',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.rce.title',
+      message: 'Root Cause Explorer',
+      description: 'Title for Root Cause Explorer',
+    }),
+    imageUrl: 'img/icons/observe.png',
+    description: (<Translate
+      id="landing.feature.rce.desc"
+      description="Root Cause Explorer description">
+        Troubleshoot apps and services.
+      </Translate>),
+    link: 'docs/observability/root-cause-explorer',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.sensu.title',
+      message: 'Sensu',
+      description: 'Title for Sensu',
+    }),
+    imageUrl: 'img/icons/observe.png',
+    description: (<Translate
+      id="landing.feature.sensu.desc"
+      description="Root Cause Explorer description">
+        Troubleshoot apps and services.
+      </Translate>),
+    link: 'https://docs.sensu.io/sensu-go/latest',
+  },
+];
+
+
+const features3 = [
   {
     title: translate({
       id: 'landing.feature.integrations.title',
@@ -200,96 +276,21 @@ const features2 = [
       </Translate>),
     link: 'docs/integrations',
   },
-
   {
     title: translate({
-      id: 'landing.feature.observability.title',
-      message: 'Observability',
-      description: 'Title for Observability',
+      id: 'landing.feature.apm.title',
+      message: 'App performance monitoring',
+      description: 'Title for APM',
     }),
-    imageUrl: 'img/icons/observe.png',
+    imageUrl: 'img/icons/apm.png',
     description: (<Translate
-      id="landing.feature.observability.desc"
-      description="Observability description">
-        Deploy and configure solutions to monitor apps and analyze root causes.
+      id="landing.feature.apm.desc"
+      description="APM description">
+        Monitor and analyze infrastructure health and app performance metrics.
       </Translate>),
-    link: 'docs/observability',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.manage.title',
-      message: 'Manage Sumo',
-      description: 'Title for manage',
-    }),
-    imageUrl: 'img/icons/manage.png',
-    description: (<Translate
-        id="landing.feature.manage.desc"
-        description="Manage description">
-          Manage advanced and admin features for Sumo Logic.
-        </Translate>),
-    link: 'docs/manage',
+    link: 'docs/apm',
   },
 ];
-
-const features3 = [
-  {
-    title: translate({
-      id: 'landing.feature.observability.title',
-      message: 'Observability',
-      description: 'Title for Observability',
-    }),
-    imageUrl: 'img/icons/observe.png',
-    description: (<Translate
-      id="landing.feature.observability.desc"
-      description="Observability description">
-        Deploy and configure solutions to monitor apps and analyze root causes.
-      </Translate>),
-    link: 'docs/observability',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.sdo.title',
-      message: 'Software Dev Optimization',
-      description: 'Title for SDO',
-    }),
-    imageUrl: 'img/icons/sdo.png',
-    description: (<Translate
-      id="landing.feature.sdo.desc"
-      description="SDO description">
-        Monitor your CI/CD pipelines, accelerate release velocity, and improve reliability.
-      </Translate>),
-    link: 'docs/sdo',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.dashboards.title',
-      message: 'Dashboards and Visuals',
-      description: 'Title for dashboards',
-    }),
-    imageUrl: 'img/icons/dashboards.png',
-    description: (<Translate
-        id="landing.feature.dashboards.desc"
-        description="Dashboards description">
-          Create visualizations, monitors, and alerts for your apps.
-        </Translate>),
-    link: 'docs/dashboards-new',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.cse.title',
-      message: 'Cloud SIEM',
-      description: 'Title for CSE',
-    }),
-    imageUrl: 'img/icons/security/cloud-siem.png',
-    description: (<Translate
-      id="landing.feature.cse.desc"
-      description="CSE description">
-        Gain insights and investigate key security issues.
-      </Translate>),
-    link: 'docs/cse',
-  },
-];
-
 
 const features4 = [
   {
@@ -322,6 +323,97 @@ const features4 = [
   },
 ];
 
+
+const features5 = [
+  {
+    title: translate({
+      id: 'landing.feature.alerts.title',
+      message: 'Alerts',
+      description: 'Title for alerts',
+    }),
+    imageUrl: 'img/icons/alerts.png',
+    description: (<Translate
+      id="landing.feature.alerts.desc"
+      description="alerts description">
+        Visualize your data and set alerts to monitor activity.
+      </Translate>),
+    link: 'docs/alerts',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.dashboards.title',
+      message: 'Dashboards and Visuals',
+      description: 'Title for dashboards',
+    }),
+    imageUrl: 'img/icons/dashboards.png',
+    description: (<Translate
+        id="landing.feature.dashboards.desc"
+        description="Dashboards description">
+          Create visualizations, monitors, and alerts for your apps.
+        </Translate>),
+    link: 'docs/dashboards-new',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.manage.title',
+      message: 'Manage Sumo',
+      description: 'Title for manage',
+    }),
+    imageUrl: 'img/icons/manage.png',
+    description: (<Translate
+        id="landing.feature.manage.desc"
+        description="Manage description">
+          Manage admin settings and advanced features for Sumo Logic.
+        </Translate>),
+    link: 'docs/manage',
+  },
+];
+
+
+const features6 = [
+  {
+    title: translate({
+      id: 'landing.feature.sdo.title',
+      message: 'Software Dev Optimization',
+      description: 'Title for SDO',
+    }),
+    imageUrl: 'img/icons/sdo.png',
+    description: (<Translate
+      id="landing.feature.sdo.desc"
+      description="SDO description">
+        Monitor your CI/CD pipelines, accelerate release velocity, and improve reliability.
+      </Translate>),
+    link: 'docs/sdo',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.rum.title',
+      message: 'Real User Monitoring',
+      description: 'Title for rum',
+    }),
+    imageUrl: 'img/icons/manage.png',
+    description: (<Translate
+        id="landing.feature.rum.desc"
+        description="rum description">
+          Monitor user experience activity.
+        </Translate>),
+    link: 'docs/apm/real-user-monitoring',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.gi.title',
+      message: 'Global Intelligence',
+      description: 'Title for Global Intelligence',
+    }),
+    imageUrl: 'img/icons/cloud/global-intelligence.png',
+    description: (<Translate
+      id="landing.feature.gi.desc"
+      description="Global Intelligence description">
+        Install and configure third-party app integrations and services.
+      </Translate>),
+    link: 'docs/global-intelligence',
+  },
+];
 
 
 
