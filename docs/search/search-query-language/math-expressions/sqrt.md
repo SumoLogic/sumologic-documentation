@@ -1,6 +1,7 @@
 ---
 id: sqrt
 title: sqrt Function
+sidebar_label: sqrt
 ---
 
 

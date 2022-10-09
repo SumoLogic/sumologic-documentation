@@ -1,6 +1,6 @@
 ---
 id: stddev
-title: stddev Operator
+title: stddev Grouping Operator
 sidebar_label: stddev
 ---
 

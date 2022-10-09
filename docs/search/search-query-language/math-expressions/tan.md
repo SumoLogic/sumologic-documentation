@@ -1,6 +1,7 @@
 ---
 id: tan
 title: tan Function
+sidebar_label: tan
 ---
 
 

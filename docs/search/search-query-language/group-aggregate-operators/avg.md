@@ -1,10 +1,8 @@
 ---
 id: avg
-title: avg Operator
+title: avg Grouping Operator
 sidebar_label: avg
 ---
-
-
 
 The averaging function (`avg`) calculates the average value of the numerical field being evaluated within the time range analyzed.
 

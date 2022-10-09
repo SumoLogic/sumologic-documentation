@@ -1,6 +1,6 @@
 ---
 id: first-last
-title: first, last Operators
+title: first, last Grouping Operators
 sidebar_label: first, last
 ---
 

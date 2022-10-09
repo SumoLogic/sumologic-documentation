@@ -1,6 +1,6 @@
 ---
 id: pct-sampling
-title: pct_sampling Operator
+title: pct_sampling Grouping Operator
 sidebar_label: pct_sampling
 ---
 
