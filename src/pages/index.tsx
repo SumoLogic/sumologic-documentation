@@ -53,7 +53,7 @@ function Home() {
      <div className="container-landpage">
       <div className="container">
        <h1 align="center">Explore our product guides</h1>
-       <p align="center">Ensure app reliability with modern cloud-native monitoring and observability. Secure and protect your apps from modern threats.</p>
+       <p align="center">Ensure app reliability and security with modern cloud-native monitoring and observability.</p>
        <p align="center">
        <Tabs>
         <TabItem value="observe" label="Data Types" default>
@@ -67,7 +67,6 @@ function Home() {
             </div></div>
           </section>
         )}
-
         </TabItem>
         <TabItem value="observability" label="Infrastructure Monitoring">
         {features2 && features2.length > 0 && (
@@ -80,9 +79,8 @@ function Home() {
             </div></div>
           </section>
         )}
-
         </TabItem>
-        <TabItem value="multicloud" label="Multi-cloud">
+        <TabItem value="multicloud" label="Multi-Cloud">
         {features3 && features3.length > 0 && (
           <section className="spacer">
             <div className="container">
@@ -94,7 +92,7 @@ function Home() {
           </section>
         )}
         </TabItem>
-        <TabItem value="security" label="Security">
+        <TabItem value="security" label="Security and Incidents">
         {features4 && features4.length > 0 && (
           <section className="spacer">
             <div className="container">
@@ -104,7 +102,7 @@ function Home() {
                 ))}
             </div></div>
           </section>
-        )}
+         )}
          </TabItem>
         <TabItem value="tools" label="Tools">
          {features5 && features5.length > 0 && (
@@ -116,7 +114,7 @@ function Home() {
                  ))}
              </div></div>
            </section>
-         )}
+          )}
           </TabItem>
           <TabItem value="other" label="Other Solutions">
           {features6 && features6.length > 0 && (
@@ -180,7 +178,7 @@ const features1 = [
     description: (<Translate
       id="landing.feature.traces.desc"
       description="Traces description">
-        Review app trace activity and spans.
+        Observe apps and microservices at the level of individual requests to pinpoint issues.
       </Translate>),
     link: 'docs/apm/traces',
   },
@@ -208,11 +206,11 @@ const features2 = [
       message: 'AWS Observability',
       description: 'Title for AWS Observability',
     }),
-    imageUrl: 'img/icons/observe.png',
+    imageUrl: 'img/icons/operations/app-stack.png',
     description: (<Translate
       id="landing.feature.aws.desc"
       description="AWS Observability description">
-        Troubleshoot apps and services.
+        Monitor and troubleshoot AWS cloud infrastructure.
       </Translate>),
     link: 'docs/observability/aws',
   },
@@ -222,11 +220,11 @@ const features2 = [
       message: 'Kubernetes Observability',
       description: 'Title for Kubernetes Observability',
     }),
-    imageUrl: 'img/icons/observe.png',
+    imageUrl: 'img/icons/operations/kubernetes.png',
     description: (<Translate
       id="landing.feature.k8s.desc"
       description="AWS Observability description">
-        Troubleshoot apps and services.
+        Deploy and monitor Kubernetes.
       </Translate>),
     link: 'docs/observability/kubernetes',
   },
@@ -240,7 +238,7 @@ const features2 = [
     description: (<Translate
       id="landing.feature.rce.desc"
       description="Root Cause Explorer description">
-        Troubleshoot apps and services.
+        Accelerate app troubleshooting and root cause isolation.
       </Translate>),
     link: 'docs/observability/root-cause-explorer',
   },
@@ -254,7 +252,7 @@ const features2 = [
     description: (<Translate
       id="landing.feature.sensu.desc"
       description="Root Cause Explorer description">
-        Troubleshoot apps and services.
+        Visibility into apps, containers, traditional servers, and more.
       </Translate>),
     link: 'https://docs.sensu.io/sensu-go/latest',
   },
@@ -272,7 +270,7 @@ const features3 = [
     description: (<Translate
       id="landing.feature.integrations.desc"
       description="Apps description">
-        Install and configure third-party app integrations and services.
+        Gain visibility into your data sources using our third-party app integrations and services.
       </Translate>),
     link: 'docs/integrations',
   },
@@ -303,7 +301,7 @@ const features4 = [
     description: (<Translate
       id="landing.feature.cse.desc"
       description="CSE description">
-        Gain insights and investigate key security issues.
+        Security event management and insight into key issues.
       </Translate>),
     link: 'docs/cse',
   },
@@ -313,11 +311,11 @@ const features4 = [
       message: 'SOAR',
       description: 'Title for SOAR',
     }),
-    imageUrl: 'img/icons/security/cloud-siem.png',
+    imageUrl: 'img/icons/security/soc.png',
     description: (<Translate
       id="landing.feature.soar.desc"
       description="SOAR description">
-        Gain insights and investigate key security issues.
+        Modernize and automate your SOC for faster response times.
       </Translate>),
     link: 'https://www.sumologic.com/solutions/cloud-soar',
   },
@@ -363,7 +361,7 @@ const features5 = [
     description: (<Translate
         id="landing.feature.manage.desc"
         description="Manage description">
-          Manage admin settings and advanced features for Sumo Logic.
+          Manage Sumo admin settings and advanced features.
         </Translate>),
     link: 'docs/manage',
   },
@@ -381,7 +379,7 @@ const features6 = [
     description: (<Translate
       id="landing.feature.sdo.desc"
       description="SDO description">
-        Monitor your CI/CD pipelines, accelerate release velocity, and improve reliability.
+        Monitor your CI/CD pipelines and accelerate release velocity.
       </Translate>),
     link: 'docs/sdo',
   },
@@ -391,11 +389,11 @@ const features6 = [
       message: 'Real User Monitoring',
       description: 'Title for rum',
     }),
-    imageUrl: 'img/icons/manage.png',
+    imageUrl: 'img/icons/business/customer-retention.png',
     description: (<Translate
         id="landing.feature.rum.desc"
         description="rum description">
-          Monitor user experience activity.
+          Gain visibility into how users interact with your web apps.
         </Translate>),
     link: 'docs/apm/real-user-monitoring',
   },
@@ -409,7 +407,7 @@ const features6 = [
     description: (<Translate
       id="landing.feature.gi.desc"
       description="Global Intelligence description">
-        Install and configure third-party app integrations and services.
+        Leverage machine learning to uncover global key performance and risk indicators.
       </Translate>),
     link: 'docs/global-intelligence',
   },
