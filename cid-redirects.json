@@ -260,7 +260,6 @@
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Aurora_MySQL_ULM": "/docs/integrations/amazon-aws/aurora-mysql-ulm",
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Aurora_MySQL_ULM/Collect_logs_and_metrics_for_the_Amazon_Aurora_MySQL_ULM_App": "/docs/integrations/amazon-aws/aurora-mysql-ulm",
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Aurora_MySQL_ULM/Install_the_Aurora_MySQL_ULM_App_and_view_the_Dashboards": "/docs/integrations/amazon-aws/aurora-mysql-ulm",
-  "/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Aurora_PostgreSQL_ULM": "/docs/integrations/amazon-aws/aurora-postgresql-ulm",
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Aurora_PostgreSQL_ULM/Collect_logs_and_metrics_for_the_Amazon_Aurora_PostgreSQL_ULM_App?": "/docs/integrations/amazon-aws/aurora-postgresql-ulm",
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Aurora_PostgreSQL_ULM/Install_the_Aurora_PostgreSQL_ULM_App_and_view_the_Dashboards": "/docs/integrations/amazon-aws/aurora-postgresql-ulm",
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_CloudFront": "/docs/integrations/amazon-aws/cloudfront",
