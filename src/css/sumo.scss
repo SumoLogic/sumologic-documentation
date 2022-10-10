@@ -638,9 +638,11 @@ html[data-theme='dark'] .navbar-item-github:before {
 .getstarted {
   background-color: #2aa1e6;
   color: white;
-  padding: 18px 24px;
+  padding: 16px 20px;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 16px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   text-decoration: none;
   border: 1px solid #3578e5;
   cursor: pointer;
@@ -657,9 +659,11 @@ html[data-theme='dark'] .navbar-item-github:before {
 .getstarted:hover {
   background-color: #2aa1e6;
   color: white;
-  padding: 18px 24px;
+  padding: 16px 20px;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 16px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   text-decoration: none;
   border: 1.2px solid #FFF;
   cursor: pointer;
