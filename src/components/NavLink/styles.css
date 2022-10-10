@@ -2,6 +2,10 @@
   color: var(--ifm-navbar-link-hover-color);
 }
 
+.link__label {
+    font-size: 0.9rem !important;
+}
+
 .link {
   display: inline-flex;
   align-items: center;

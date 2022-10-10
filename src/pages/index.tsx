@@ -36,13 +36,18 @@ function Home() {
       <div className='container-landpage'>
         <div className='column-left'>
           <h1>Get started with Sumo</h1>
-          <p>Set up your account and start collecting, importing, and processing your data.</p>
+          <p>Get started quickly with Sumo Logic search, visualization and analytics capabilities. Follow these steps to get started:</p>
           <div className={styles.buttons}>
           </div>
           <p>
           <button className="getstarted"
-              description="Get started">
-              <a href="/docs/get-started">Get started →</a>
+              description="Set up account">
+              <a href="/docs/get-started">Set up your account →</a>
+          </button>
+          &nbsp;&nbsp;
+          <button className="getstarted"
+              description="Send data">
+              <a href="/docs/send-data">Install data collector →</a>
           </button>
           </p>
         </div>
