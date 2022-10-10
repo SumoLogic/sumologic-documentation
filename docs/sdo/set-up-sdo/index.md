@@ -5,11 +5,10 @@ description: This page provides instruction for setting up the Software Developm
 ---
 
 
-You have three options for set up and configuration:
+You have two options for setup and configuration:
 
 * Use a [Terraform Script](sdo-setup-with-terraform-script.md).
 * [Manually configure](sdo-manual-configuration.md) collection and install apps for tool integration, create field extraction rules (FERs) for each supported tool, and install the SDO app.
-* Install SDO app from the [Atlassian Marketplace](sdo-setup-from-atlassian-marketplace.md).
 
 ## Prerequisites
 
