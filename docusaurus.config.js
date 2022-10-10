@@ -14,7 +14,7 @@ const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString()
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Sumo Logic Docs',
-//tagline: '',
+  tagline: '',
   url: process.env.HOSTNAME || "http://localhost:3000",
   baseUrl: process.env.BASE_URL || "/",
   onBrokenLinks: 'throw',
@@ -234,26 +234,37 @@ module.exports = {
               {
                 label: 'Send Data',
                 to: '/docs/send-data',
+                activeBaseRegex: '^/docs/send-data/.*',
               },
               {
                 label: 'Search Logs',
                 to: '/docs/search',
+                activeBaseRegex: '^/docs/search/.*',
               },
               {
                 label: 'Metrics',
                 to: '/docs/metrics',
+                activeBaseRegex: '^/docs/metrics/.*',
               },
               {
                 label: 'Apps/Integrations',
                 to: '/docs/integrations',
+                activeBaseRegex: '^/docs/integrations/.*',
+              },
+              {
+                label: 'Manage Account',
+                to: '/docs/manage',
+                activeBaseRegex: '^/docs/manage/.*',
               },
               {
                 label: 'Observability',
                 to: '/docs/observability',
+                activeBaseRegex: '^/docs/observability/about',
               },
               {
-                label: 'APM/Traces',
+                label: 'Traces',
                 to: '/docs/apm/traces',
+                activeBaseRegex: '^/docs/apm/.*',
               },
               {
                 label: 'Alerts',
@@ -262,24 +273,24 @@ module.exports = {
               {
                 label: 'Cloud SIEM',
                 to: '/docs/cse',
+                activeBaseRegex: '^/docs/(cse)/.*',
               },
               {
                 label: 'Cloud SOAR',
                 href: 'https://www.sumologic.com/solutions/cloud-soar',
-              },
-              {
-                label: 'Manage Account',
-                to: '/docs/manage',
+                activeBaseRegex: '^/docs/security/.*',
               },
               {
                 label: 'CI/CD',
                 to: '/docs/sdo',
+                activeBaseRegex: '^/docs/(sdo)/.*',
               },
             ]
           },
           {
             label: 'API',
             position: 'left',
+            to: '/',
             // Redocusaurus
             // to: '/sumoapi',
             type: 'dropdown',
@@ -307,6 +318,7 @@ module.exports = {
           {
             label: 'Help',
             position: 'left',
+            to: '/',
             type: 'dropdown',
             items:[
               {

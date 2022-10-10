@@ -1,6 +1,6 @@
 ---
 id: apm
-title: Sumo Logic App Performance Monitoring
+title: Application Performance Monitoring
 sidebar_label: App Performance Monitoring
 description: Monitor user and app behavior with Sumo Logic trace analytics and real user monitoring.
 ---
