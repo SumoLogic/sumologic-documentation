@@ -512,26 +512,27 @@ html[data-theme='dark'] .navbar-item-github:before {
 }
 
 .navbar-trial {
-  background-color: #20b9cc;
+  background-color: #2aa1e6;
   color: white;
-  padding: 6px 12px;
+  padding: 4px 12px;
   font-weight: 300;
   font-size: 14px;
   text-decoration: none;
   margin-right: 10px;
-  border: 1px solid #20b9cc;
+  border: 1px solid #2aa1e6;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 5px;
   border-radius: 3px;
 }
 
 .navbar-trial:hover {
+  background-color: #2aa1e6;
   border: 1px solid #fff;
   color: white;
 }
 
 .navbar-trial-mobile {
-  background-color: #20b9cc;
+  background-color: #2aa1e6;
   color: white;
   padding: 8px 25px;
   font-weight: 300;
@@ -639,12 +640,12 @@ html[data-theme='dark'] .navbar-item-github:before {
   background-color: #0046BE;
   color: white;
   padding: 14px 14px;
-  font-weight: 600;
+  font-weight: 300;
   font-size: 15px;
   margin-right: 10px;
   margin-bottom: 10px;
   text-decoration: none;
-  border: 1px solid #3578e5;
+  border: 1px solid #0046BE;
   cursor: pointer;
   border-radius: 3px;
   a {
@@ -665,7 +666,7 @@ html[data-theme='dark'] .navbar-item-github:before {
   margin-right: 10px;
   margin-bottom: 10px;
   text-decoration: none;
-  border: 1.2px solid #FFF;
+  border: 1px solid #FFF;
   cursor: pointer;
   border-radius: 3px;
   a {
@@ -1491,25 +1492,26 @@ html[data-theme='dark'] .featureImage {
 
 
 .beta {
-  background: #C6007E;
+  background: solid var(--ifm-toc-border-color);;
   color: white;
   font-weight: 600;
   font-size: 16px;
-  padding: 8px 20px;
+  padding: 6px 18px;
   text-decoration: none;
-  margin-right: 10px;
-  border-radius: 10px;
+  margin-left: 10px;
+  border-radius: 8px;
+  border: .5px solid #FFFFFF;
 }
 
 .beta:hover {
-  background: #C6007E;
+  background: solid var(--ifm-toc-border-color);
   color: white;
   font-weight: 600;
   font-size: 16px;
-  padding: 8px 20px;
+  padding: 6px 18px;
   text-decoration: none;
-  margin-right: 10px;
-  border-radius: 10px;
+  margin-left: 10px;
+  border-radius: 8px;
   border: .5px solid #FFFFFF;
 }
 
