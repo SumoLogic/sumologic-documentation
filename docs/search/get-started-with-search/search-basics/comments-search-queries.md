@@ -35,7 +35,7 @@ The following is a multi-line comment.
 
 ## Pro Tip: Sumo Logic App Queries as Examples
 
-Sumo Logic Apps are a great resource of example search queries. You can review and even [run searches from Sumo Logic Apps](/docs/get-started/sumo-logic-apps#run-searches-from-sumo-logic-apps) without installing them. To view available Sumo Logic Apps, click the **Library** icon.
+Sumo Logic Apps are a great resource of example search queries. You can review and even [run searches from Sumo Logic Apps](/docs/get-started/apps-integrations#run-searches-from-sumo-logic-apps) without installing them. To view available Sumo Logic Apps, click the **Library** icon.
 
 ![library icon.png](/img/reuse/library-icon.png)
 
