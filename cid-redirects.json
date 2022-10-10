@@ -1259,7 +1259,7 @@
   "/cid/5349": "/docs/alerts/scheduled-searches/create-real-time-alert",
   "/cid/5350": "/docs/manage/connections-integrations/servicenow/set-up-connections",
   "/cid/5351": "/docs/integrations/sumo-apps/security-analytics",
-  "/cid/5352": "/docs/integrations/pci-compliance",
+  "/cid/5352": "/docs/integrations/pci-compliance/setup",
   "/cid/5353": "/docs/search/get-started-with-search/search-basics/share-search-link",
   "/cid/5356": "/docs/dashboards/edit-dashboards/manage-charts",
   "/cid/5368": "/docs/dashboards/chart-panel-types/string-single-value-charts",
@@ -1269,7 +1269,7 @@
   "/cid/5379": "/docs/integrations/amazon-aws/elastic-load-balancing",
   "/cid/5380": "/docs/cse/ingestion/aws-cloudtrail",
   "/cid/5381": "/docs/integrations/containers-orchestration/vmware-legacy",
-  "/cid/5382": "/docs/integrations/pci-compliance"
+  "/cid/5382": "/docs/integrations/pci-compliance/setup",
   "/cid/5383": "/docs/integrations",
   "/cid/5385": "/",
   "/cid/5386": "/docs/search/get-started-with-search/search-basics/built-in-metadata",
