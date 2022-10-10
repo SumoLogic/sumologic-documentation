@@ -1267,6 +1267,8 @@
   "/cid/5214": "/docs/search/search-query-language/search-operators/limit",
   "/cid/5215": "/docs/integrations/hosts-operating-systems/linux",
   "/cid/5216": "/docs/integrations/hosts-operating-systems/linux",
+  "/cid/5223": "/docs/search/search-query-language/search-operators/lookup-classic",
+  "/cid/5224": "/docs/search/search-query-language/search-operators/luhn",
   "/cid/5227": "/docs/get-started",
   "/cid/5228": "/docs/dashboards/edit-dashboards/manage-dashboards",
   "/cid/5229": "/docs/manage/ingestion-volume",
