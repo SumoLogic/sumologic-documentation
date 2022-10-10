@@ -639,15 +639,15 @@ html[data-theme='dark'] .navbar-item-github:before {
 .getstarted {
   background-color: #0046BE;
   color: white;
-  padding: 14px 14px;
+  padding: 8px 14px;
   font-weight: 300;
   font-size: 15px;
-  margin-right: 10px;
-  margin-bottom: 10px;
+//  filter: drop-shadow(-1px 2px 2px #64696C);
   text-decoration: none;
-  border: 1px solid #0046BE;
+  border: .5px solid #64696C;
+  border-radius: 5px;
+  transition: .3s;
   cursor: pointer;
-  border-radius: 3px;
   a {
     color: white;
     text-decoration: none;
@@ -656,19 +656,20 @@ html[data-theme='dark'] .navbar-item-github:before {
     color: white;
   }
 }
+
 
 .getstarted:hover {
   background-color: #0046BE;
   color: white;
-  padding: 14px 14px;
+  padding: 8px 14px;
   font-weight: 300;
   font-size: 15px;
-  margin-right: 10px;
-  margin-bottom: 10px;
+
   text-decoration: none;
-  border: 1px solid #FFF;
+  border: 1.5px solid #64696C;
   cursor: pointer;
   border-radius: 3px;
+  transition: .3s;
   a {
     color: white;
     text-decoration: none;
@@ -678,10 +679,12 @@ html[data-theme='dark'] .navbar-item-github:before {
   }
 }
 
+
+
 .getstarted-mobile {
   background-color: #0046BE;
   color: white;
-  padding: 8px 25px;
+  padding: 8px 14px;
   font-weight: 300;
   text-decoration: none;
   border: 1px solid #3578e5;

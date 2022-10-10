@@ -28,17 +28,13 @@ Sumo Logic Documentation is an Open Source project available as a [GitHub reposi
 
 There are many ways that you can contribute to Sumo Docs, beyond writing code. Here is a high-level overview of how you can get involved.
 
-### Submit Issue or Feature Request
+### Submit an Issue
 
-If you find a bug in documentation or site tools, or want to request more information, you can help us by [submitting a GitHub Issue](https://github.com/SumoLogic/sumologic-documentation/issues/new/choose) to our GitHub Repository. Enter as much information as you can, including content corrections, steps to reproduce, command or code updates, or questions for clarifications. To share your knowledge, submit a Pull Request with a fix.
+If you find a bug in documentation or site tools, or want to request more information, you can help us by [**Submitting a GitHub Issue**](https://github.com/SumoLogic/sumologic-documentation/issues/new/choose) to our GitHub Repository. Enter as much information as you can, including content corrections, steps to reproduce, command or code updates, or questions for clarifications. To share your knowledge, submit a Pull Request with a fix.
 
-Before submitting, you can check the existing issues on GitHub to see if someone has already reported the issue and join the discussion via comments.
+Before submitting your issue, you can check our [existing GitHub issues](https://github.com/SumoLogic/sumologic-documentation/issues) on to see if someone has already reported it and join the discussion via comments.
 
-You can also:
-* [Submit a Sumo Docs feature request](https://github.com/SumoLogic/sumologic-documentation/issues/new?assignees=&labels=type%3Afeature&template=feature_request.md&title=)
-* [Submit a Sumo Logic feature request](/docs/get-started/help/#feature-requests)
-
-### Edit Page
+### Edit a Page
 
 While reviewing content on the site, you can click the **Edit this page** link, located at the bottom of each doc page. This will open your selected doc in our GitHub repo website.
 
@@ -136,6 +132,11 @@ As Pull Requests (PRs) are merged to the main branch by the Sumo Logic Docs Team
 
 When all content is tested and ready for live, a Sumo Logic Docs Team member can tag a release to build and deploy to Production. This site is live to the world to search, use, and read to learn Sumo Logic.
 
+## Submit a Feature Request
+
+You can also:
+* [Submit a Sumo Docs feature request](https://github.com/SumoLogic/sumologic-documentation/issues/new?assignees=&labels=type%3Afeature&template=feature_request.md&title=)
+* [Submit a Sumo Logic feature request](/docs/get-started/help/#feature-requests)
 
 ## Recommended Authoring Tools
 
