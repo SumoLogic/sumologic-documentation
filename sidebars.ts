@@ -426,7 +426,6 @@ module.exports = {
           link: {type: 'doc', id: 'quickstart/index'},
           items: [
             'observability/aws/quickstart',
-            'sdo/quickstart',
             'observability/kubernetes/quickstart',
             'apm/traces/quickstart',
             'manage/ingestion-volume/ingest-budgets/quickstart',
@@ -1567,7 +1566,6 @@ module.exports = {
       items: [
         'sdo/about-sdo',
         'sdo/supported-tools-schema',
-        'sdo/quickstart',
         {
           type: 'category',
           label: 'Setting Up SDO',
@@ -1576,7 +1574,6 @@ module.exports = {
           link: {type: 'doc', id: 'sdo/set-up-sdo/index'},
           items: [
             'sdo/set-up-sdo/sdo-manual-configuration',
-            'sdo/set-up-sdo/sdo-setup-from-atlassian-marketplace',
             'sdo/set-up-sdo/sdo-setup-with-terraform-script',
           ],
         },
