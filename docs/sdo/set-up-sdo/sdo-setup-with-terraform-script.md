@@ -260,8 +260,7 @@ $ terraform apply
 
 ## Complete Post-Setup Configurations
 
-After completing configuration, instrument your DevOps pipeline to specially identify and send build and deploy events in your pipeline to Sumo Logic. These events are correlated with other events in the DevOps
-lifecycle. Complete the configuration for the build and deploy tool you use.
+After completing configuration, instrument your DevOps pipeline to specially identify and send build and deploy events in your pipeline to Sumo Logic. These events are correlated with other events in the DevOps lifecycle. Complete the configuration for the build and deploy tool you use.
 
 ### Bitbucket for build and deploy
 
@@ -306,7 +305,7 @@ If you're using **tools other than Jenkins and Bitbucket pipelines** for Build a
 
 1. **Build**: Configure your tool to construct and send events using the build event schema in the section Build Event. 
 
-    * **Deploy**: Configure your tool to construct events using the deploy event schema in the section Deploy Events.
+1.  * **Deploy**: Configure your tool to construct events using the deploy event schema in the section Deploy Events.
 
 ## Uninstalling the Solution
 
@@ -337,7 +336,7 @@ Configure these parameters in **sumologic.auto.tfvars**.
 | install_github | Install [Sumo Logic Application and WebHooks for Github](/docs/integrations/app-development/GitHub). Options: app, collection, fer, all, and none.  If you do not wish to install the GitHub collection or application, rename the file github.tf to github.tf_backup. | all |
 | install_gitlab | Install [Sumo Logic Application and WebHooks for GitLab](/docs/integrations/app-development/GitLab). Options: app, collection, fer, all, and none.  If you do not wish to install the Gitlab collection or application, rename the file gitlab.tf to gitlab.tf_backup. | all |
 | install_pagerduty | Install [Sumo Logic Application and WebHooks for Pagerduty](/docs/integrations/saas-cloud/PagerDuty-V2). Options: app, collection, fer, all, and none. | all |
-| install_pagerduty_version | Let's you install either v2 or v3 alertFER/app version. | v3  |
+| install_pagerduty_version | Lets you install either v2 or v3 alertFER/app version. | v3  |
 | install_jenkins | Install [Sumo Logic Application for Jenkins](/docs/integrations/app-development/Jenkins). Options: app, collection, fer, all, and none. The Terraform script does not configure the Jenkins Sumo Logic plugin, choosing `collection` will create http source in Sumo Logic for Jenkins and will configure the Jenkins FERs. | all |
 | install_sdo |  Install [Sumo Logic Application for Software Development Optimization](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-observability-terraform). Options: app or none. | app |
 | install_circleci | Install Sumo Logic Application for CircleCI. Options: app, collection, all, and none. | all |
@@ -480,8 +479,7 @@ Configure these parameters in **webhooks.auto.tfvars**.
 
 ### PagerDuty
 
-Configure these parameters in **pagerdutyv2.auto.tfvars**
-or **pagerdutyv3.auto.tfvars**.
+Configure these parameters in **pagerdutyv2.auto.tfvars** or **pagerdutyv3.auto.tfvars**.
 
 For v2:
 
