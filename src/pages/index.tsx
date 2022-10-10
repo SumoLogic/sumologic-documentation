@@ -31,42 +31,35 @@ function Home() {
      description="Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.">
      <HomepageHeader />
       <main>
-
-      <div className='container-landpage'>
-        <div className='column-left'>
-          <h2>Get started with Sumo</h2>
-          <p>Get started quickly with Sumo Logic search, visualization and analytics capabilities.</p>
+      <div className='container'>
+        <section className="spacer">
+          <h2 align="center">Get started with Sumo</h2>
+          <p align="center">Get started quickly with Sumo Logic search, visualization and analytics capabilities.</p>
           <div className={styles.buttons}>
           </div>
-          <p>
+          <p align="center">
           <button className="getstarted"
               description="Set up account">
-              <a href="/docs/get-started">→ Set up your account</a>
+              <a href="/docs/get-started">→ Set up account</a>
           </button>
-          </p>
-          <p>
           <button className="getstarted"
               description="Send data">
               <a href="/docs/send-data">→ Install data collector</a>
           </button>
-          </p>
-          <p>
             <button className="getstarted"
               description="Data insights icon">
-              <a href="/docs/get-started/sumo-logic-ui">→ Explore data insights</a>
+              <a href="/docs/get-started/sumo-logic-ui">→ Explore your insights</a>
             </button>
           </p>
-        </div>
-        <div className='column-right'>
-          <img className='landpage-hero' src='img/hero-graphic.png' />
-        </div>
+        </section>
       </div>
      <div className="container">
-      <div className="container">
+      <section className="spacer">
+        <div className="land-flex">
        <h1 align="center">Explore our product guides</h1>
        <p align="center">Ensure app reliability and security with modern cloud-native monitoring and observability.</p>
        <p align="center">
-       <Tabs align="center">
+       <Tabs>
         <TabItem value="observe" label="Data Types" default>
         {features1 && features1.length > 0 && (
           <section className="spacer">
@@ -141,7 +134,8 @@ function Home() {
           </TabItem>
           </Tabs>
           </p>
-         </div>
+          </div>
+         </section>
        </div>
      </main>
     </Layout>

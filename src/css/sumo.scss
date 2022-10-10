@@ -644,9 +644,9 @@ html[data-theme='dark'] .navbar-item-github:before {
   font-size: 15px;
 //  filter: drop-shadow(-1px 2px 2px #64696C);
   text-decoration: none;
-  border: .5px solid #64696C;
-  border-radius: 5px;
-  transition: .3s;
+  border: .25px solid #000;
+  border-radius: 4px;
+  margin-right: 5px;
   cursor: pointer;
   a {
     color: white;
@@ -659,17 +659,14 @@ html[data-theme='dark'] .navbar-item-github:before {
 
 
 .getstarted:hover {
-  background-color: #0046BE;
-  color: white;
+  background-color: #1a55ba;
+  color: black;
   padding: 8px 14px;
   font-weight: 300;
   font-size: 15px;
-
   text-decoration: none;
-  border: 1.5px solid #64696C;
+  border: .25px solid #FFF;
   cursor: pointer;
-  border-radius: 3px;
-  transition: .3s;
   a {
     color: white;
     text-decoration: none;
@@ -689,6 +686,7 @@ html[data-theme='dark'] .navbar-item-github:before {
   text-decoration: none;
   border: 1px solid #3578e5;
   cursor: pointer;
+  margin-right: 5px;
   margin-right: 10px;
 }
 
