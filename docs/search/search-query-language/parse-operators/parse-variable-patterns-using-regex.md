@@ -26,16 +26,14 @@ You can use the alternate term "extract":
 ## Options
 
 * `field=<field_name>` 
-
     The `field=fieldname` option allows you to specify a field to parse other than the default message. For details, see [Parse field](parse-field-option.md). 
-
 * `nodrop ` 
-
     The `nodrop` option forces results to also include messages that don't match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md)
-
 * `multi` 
-
     The `multi` option allows you to parse multiple values *within* a single log message.
+:::note
+`parse multi` is not supported in Field Extraction Rules (FERs).
+:::
 
 ## Rules
 
@@ -135,6 +133,10 @@ But if you mean to also capture whether it is an "accepted" or a "denied" into a
 ```
 
 ### Parse multi
+
+:::note
+`parse multi` is not supported in Field Extraction Rules.
+:::
 
 In addition to parsing a field value, the **multi** option (also called parse multi) allows you to parse multiple values *within* a single log message. This means that the **multi** keyword instructs the parse regex operator to not just look for the first value in a log message, but for all of the values, even in messages with a varying number of values. As a part of this process, the **multi** keyword creates copies of each message so that each individual value in a field can be counted.
 
