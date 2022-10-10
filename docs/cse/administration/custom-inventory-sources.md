@@ -53,35 +53,28 @@ In this step you create a WebHook that points to the HTTP source.
 5. On the **Create New Webhook** page:
     1. **Name**. Enter a name for the Webhook.
     2. **URL**. Enter the URL of the HTTP Source you created above.
-    3. **Payload**. Enter a JSON object <br/>!<img src={useBaseUrl('img/cse/create-webhook.png')} alt="create-webhook.png" "/>
+    3. **Payload**. Enter a JSON object <br/><img src={useBaseUrl('img/cse/create-webhook.png')} alt="create-webhook.png" width="500"/>
 
 ## Step 3: Create search query
 
-In this step, you create a log query that extracts inventory-related fields from your inventory source	. Refer to [CSE inventory schema](#heading=h.1zpi6gfzfm2) for the inventory attributes that are supported for host and user objects.
+In this step, you create a log query that extracts inventory-related fields from your inventory source. Refer to [CSE inventory schema](#heading=h.1zpi6gfzfm2) for the inventory attributes that are supported for host and user objects.
 
 
 ## Step 4: Create a Scheduled Search
 
 In this step, you schedule the search you created above to send results to the Webhook you created.
 
-
-
 1. In your log search tab, click **Save As**.
 2. On the Save Item popup,
     1. **Name**. Enter a name for your search,
     2. **Time range**. Select a time range.
-    3. **Click Schedule This Search**.  \
-
-<img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" width="<insert-pixel-number>"/>
+    3. **Click Schedule This Search**. <br/><img src={useBaseUrl('img/cse/save-item-inv.png')} alt="save-item-inv.png" width="450"/>
     4. The popup refreshes.
     5. **Run Frequency**.
     6. **Time range for scheduled search**.
     7. **Timezone for scheduled search**.
     8. **Alert Type**. Select Webhook,  and pick the one you created that goes to the HTTP Endpoint. Check Send a separate alert for each search result.
-    9. **Location to save to**. Choose a folder location for the search. \
- \
-
-<img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" width="<insert-pixel-number>"/>
+    9. **Location to save to**. Choose a folder location for the search. <br/><img src={useBaseUrl('img/cse/save-item-4.png')} alt="save-item-4.png" width="450"/>
 
 ## CSE inventory schema
 
@@ -259,23 +252,23 @@ The table below lists attributes most typically used in user inventory records. 
 
  The search below extracts inventory fields from JAMF logs.
 
-_`sourceCategory="security/jamf" and _collector="Jamf" \
-| json field _raw "event.computer.osVersion as os_version \
-| json field _raw "event.computer.deviceName as hostname \
-| json field _raw "event.computer.deviceName as hostname \
-| json field _raw "event.computer.ipAddress as ip \
-| json field _raw "event.computer.macAddress as mac \
-| json field _raw "event.computer.username as username \
-| json field _raw "event.computer.emailAddress as email \
-| json field _raw "event.computer.position as role \
-| where !(isEmpty(username)) \
-| count by os_version, hostname, ip, mac, username,email, role`
+<code>_sourceCategory="security/jamf" and _collector="Jamf"  <br/>
+| json field _raw "event.computer.osVersion as os_version <br/>
+| json field _raw "event.computer.deviceName as hostname  <br/>
+| json field _raw "event.computer.deviceName as hostname  <br/>
+| json field _raw "event.computer.ipAddress as ip  <br/>
+| json field _raw "event.computer.macAddress as mac  <br/>
+| json field _raw "event.computer.username as username  <br/>
+| json field _raw "event.computer.emailAddress as email  <br/>
+| json field _raw "event.computer.position as role  <br/>
+| where !(isEmpty(username))  <br/>
+| count by os_version, hostname, ip, mac, username,email, role</code>
 
 **Notes**
 
 
 
-* `_collector` and <code>_sourceCategory<strong> </strong></code>and specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) fields to scope your search. \
+* `_collector` and <code>_sourceCategory<strong> </strong></code>and specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) fields to scope your search.
 
 
 

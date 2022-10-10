@@ -33,6 +33,12 @@ Additionally, we now also support:
 * [Scheduled Searches](/docs/alerts/scheduled-searches) for Traces
 * [Scheduled Views](/docs/manage/scheduled-views) for Traces
 
+---
+## September 30, 2022 (Alerts)
+
+Update - We are happy to announce the release of new functionality for Entity Inspector. With the latest update, Entity Inspector will now be able to suggest related Entities from different domains based on your tracing data. This functionality will allow quickly switching context between application and infrastructure domain, making it easier to respond to alerts and investigate issues that require correlating data from both applications and infrastructure. This functionality is available by default to all customers.
+
+<img src={useBaseUrl('img/release-notes/service/alert-rel-note2.png')} alt="alert-rel" width="450"/>
 
 ---
 ## September 22, 2022 (Security)
