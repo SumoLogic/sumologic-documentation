@@ -11,17 +11,17 @@ This topic explains how you can extract inventory data from logs in Sumo Logic a
 
 CSE uses _inventory data_—information about hosts and users in your environment—to provide context to Signals. Inventory data can also be used in Entity Groups to set attributes on Entities (users, hosts, and so on); those attributes can be later used in detection rule definitions, to adjust the severity of Signals (using criticality), and for further context in Signals.
 
-Sumo Logic provides a number of [Sources](https://help.sumologic.com/03Send-Data/Sources) you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. For more information, see [Inventory Sources and Data](https://help.sumologic.com/Cloud_SIEM_Enterprise/Administration/Inventory_Sources_and_Data).
+Sumo Logic provides a number of Sources you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. For more information, see [Inventory Sources and Data](docs/cse/administration/inventory-sources-and-data.md).
 
 
 ## How it works
 
-In the steps below, you’ll configure a Sumo Logic [scheduled search](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Scheduled-Searches) that returns inventory data that’s been ingested by your inventory source. You configure a Webhook connection as the alert type for the scheduled search. The webhook’s payload is inventory data, and its destination is an HTTP Source that you’ve set up to receive the data.
+In the steps below, you’ll configure a Sumo Logic [scheduled search](docs/alerts/scheduled-searches/index.md) that returns inventory data that’s been ingested by your inventory source. You configure a Webhook connection as the alert type for the scheduled search. The webhook’s payload is inventory data, and its destination is an HTTP Source that you’ve set up to receive the data.
 
 
 ## Before you start
 
-Identify your source of inventory data and review the [CSE inventory schema](#heading=h.1zpi6gfzfm2) below. The schema identifies the attributes supported for the two different CSE inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#heading=h.2l1fwvp3q4we) below.
+Identify your source of inventory data and review the [CSE inventory schema](#cse-inventory-schema) below. The schema identifies the attributes supported for the two different CSE inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#step-2-create-a-webhook-connection) below.
 
 
 ## Step 1: Set up an HTTP Source
@@ -29,7 +29,7 @@ Identify your source of inventory data and review the [CSE inventory schema](#he
 In this step, you configure an HTTP Source that will receive the inventory data from the Webhook you’ll set up later in this procedure. You can add the source to an existing Hosted Collector or configure a new collector.
 
 1. Go to **Manage Data > Collection > Collection** in the Sumo Logic UI.
-2. Navigate to an existing Hosted Collector, or if you prefer to set up a new one, follow the instructions in [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+2. Navigate to an existing Hosted Collector, or if you prefer to set up a new one, follow the instructions in [Configure a Hosted Collector](docs/send-data/hosted-collectors/configure-hosted-collector.md).
 3. In the row for the Hosted Collector, click **Add Source**. <br/><img src={useBaseUrl('img/cse/add-source-link.png')} alt="add-source-link.png" />
 4. Click **HTTP Logs & Metrics.**  <br/><img src={useBaseUrl('img/cse/select-source.png')} alt="select-source.png" />
 5. The source configuration page appears. <br/><img src={useBaseUrl('img/cse/http-source.png')} alt="http-source.png" />
@@ -268,7 +268,7 @@ The table below lists attributes most typically used in user inventory records. 
 
 
 
-* `_collector` and <code>_sourceCategory<strong> </strong></code>and specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) fields to scope your search.
+* `_collector` and `_sourceCategory` and specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](docs/search/get-started-with-search/search-basics/built-in-metadata.md) fields to scope your search.
 
 
 
@@ -287,10 +287,11 @@ The table below lists attributes most typically used in user inventory records. 
 "customInventory": true,
 "type": "user"
 }
-
+```
 
 ### Webhook payload for Computer Entity
 
+```
 {
 "computername": "{{Results.hostname}}",
 "hostname": "{{Results.hostname}}",
@@ -310,8 +311,6 @@ The table below lists attributes most typically used in user inventory records. 
 **Notes**
 
 
-
-* In the `sumoFields` element, the `siemdatatype` field is set to the value _inventory_. You must include this in your webhook payload.
 * The `source` key is an arbitrary string that identifies the source of the inventory data.
 * The `customInventory` key identifies the payload as custom inventory data. You must include this in your webhook payload.
-* The `type` key specifies what type of inventory data the webhook sends. Set the value to _user_ or _computer. _You must include this in your webhook payload.
+* The `type` key specifies what type of inventory data the webhook sends. Set the value to _user_ or _computer_. You must include this in your webhook payload.
