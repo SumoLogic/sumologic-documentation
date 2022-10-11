@@ -252,17 +252,19 @@ The table below lists attributes most typically used in user inventory records. 
 
  The search below extracts inventory fields from JAMF logs.
 
-<code>_sourceCategory="security/jamf" and _collector="Jamf"  <br/>
-| json field _raw "event.computer.osVersion as os_version <br/>
-| json field _raw "event.computer.deviceName as hostname  <br/>
-| json field _raw "event.computer.deviceName as hostname  <br/>
-| json field _raw "event.computer.ipAddress as ip  <br/>
-| json field _raw "event.computer.macAddress as mac  <br/>
-| json field _raw "event.computer.username as username  <br/>
-| json field _raw "event.computer.emailAddress as email  <br/>
-| json field _raw "event.computer.position as role  <br/>
-| where !(isEmpty(username))  <br/>
-| count by os_version, hostname, ip, mac, username,email, role</code>
+```
+_sourceCategory="security/jamf" and _collector="Jamf"
+| json field _raw "event.computer.osVersion as os_version
+| json field _raw "event.computer.deviceName as hostname
+| json field _raw "event.computer.deviceName as hostname
+| json field _raw "event.computer.ipAddress as ip
+| json field _raw "event.computer.macAddress as mac
+| json field _raw "event.computer.username as username
+| json field _raw "event.computer.emailAddress as email
+| json field _raw "event.computer.position as role
+| where !(isEmpty(username))
+| count by os_version, hostname, ip, mac, username,email, role
+```
 
 **Notes**
 
