@@ -157,7 +157,7 @@ _sourceCategory=apache 
 ```
 
 :::sumo More Info
-For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators#count-count_distinct-count_frequent), and [Top](../search-query-language/operators#top).
+For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent), and [Top](../search-query-language/search-operators/top).
 :::
 
 ## Timeslice and Transpose
@@ -217,7 +217,7 @@ if(status_code matches "50*","500s","Other")))) as status_code_group
 ```
 
 :::sumo More Info
-For more information, see [Timeslice](docs/search/search-query-language/operators#timeslice) and [Transpose](../search-query-language/operators#transpose).
+For more information, see [Timeslice](/docs/search/search-query-language/search-operators/timeslice) and [Transpose](/docs/search/search-query-language/search-operators/transpose).
 :::
 
 ## Conditional Operators
@@ -232,7 +232,7 @@ _sourceCategory=apache*
 
 For the Source Category "apache", count hits by browser:
 
-```sql
+```
 _sourceCategory=Apache/Access
 | extract "\"[A-Z]+ \S+ HTTP/[\d\.]+\" \S+ \S+ \S+ \"(?<agent>[^\"]+?)\""
 | if (agent matches "*MSIE*",1,0) as ie
@@ -264,7 +264,7 @@ Find version numbers that match numeric values 2, 3 or 1. Use the num operator t
 ```
 
 :::sumo More Info
-For more information, see [Where](../search-query-language/operators#where) and [If](../search-query-language/operators#if-operator-and).
+For more information, see [Where](../search-query-language/search-operators/where) and [If](/docs/search/search-query-language/search-operators/if).
 :::
 
 ## LogReduce Operator

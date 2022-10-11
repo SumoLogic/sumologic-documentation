@@ -38,7 +38,7 @@ To complete the following tasks, Security Hub must be enabled on your AWS accoun
 
 ### AWS Security Hub forwarder overview
 
-AWS Security Hub forwarder creates a Lambda function along with an [Identity Access and Management (IAM)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) authentication secured API Gateway endpoint. A Sumo Logic scheduled search then sends the results to the endpoint using [Webhook for Lambda](/docs/manage/connections-and-integrations/webhook-connections/aws-lambda.md) The triggered Lambda function parses the search results, transforming them into [Amazon Finding Format](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html) (AFF). Each of the rows of the AFF data is sent as a finding to AWS Security Hub.
+AWS Security Hub forwarder creates a Lambda function along with an [Identity Access and Management (IAM)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) authentication secured API Gateway endpoint. A Sumo Logic scheduled search then sends the results to the endpoint using [Webhook for Lambda](/docs/manage/connections-integrations/webhook-connections/aws-lambda.md) The triggered Lambda function parses the search results, transforming them into [Amazon Finding Format](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html) (AFF). Each of the rows of the AFF data is sent as a finding to AWS Security Hub.
 
 The configuration is defined using [SAM specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html) and published in [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/).
 
@@ -73,7 +73,7 @@ This section demonstrates how to create a Webhook connection to trigger an AWS L
 
 To create a Webhook connection, do the following:
 
-1. Follow the instructions for [creating a Webhook connection](/docs/manage/connections-and-integrations/webhook-connections/aws-lambda.md), and use the value from [step 4](#API-Gateway-endpoint) as the URL.
+1. Follow the instructions for [creating a Webhook connection](/docs/manage/connections-integrations/webhook-connections/aws-lambda.md), and use the value from [step 4](#API-Gateway-endpoint) as the URL.
 AWS Security Hub Connector (SAM application) secures the endpoint with the AWS_IAM authorization type.
 2. Verify that it has the following payload:
 ```json
@@ -130,7 +130,7 @@ To write a query and create a scheduled search, do the following:
 
 The "`finding_time`" field  can be either the `_messageTime` or `_timeslice` field in Sumo Logic.
 
-1. Create a scheduled search, as described in [this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Scheduled-Searches/Schedule_a_Search), and configure the following settings:
+1. Create a scheduled search, as described in [this document](/docs/alerts/scheduled-searches/schedule-search), and configure the following settings:
 * Alert condition is set to “Greater than >” and Number of Results is set to 0.
 * Alert Type is set to “Webhook”.
 * Connection is set to the name configured in step 2 (of the link document instructions).
@@ -324,7 +324,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

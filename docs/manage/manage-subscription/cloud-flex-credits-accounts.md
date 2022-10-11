@@ -14,7 +14,7 @@ This page provides information on the Cloud Flex Credits account types from whic
 You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise Security, or Enterprise Suite Cloud Flex Credits accounts.
 
 * **Free** accounts give you access to most Sumo Logic features, with a credit allocation of 20 credits a day. Credits can be used for log, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow three users. Free account holders can [upgrade](upgrade-cloud-flex-account.md) to Sumo Logic paid service agreements from within the Sumo Logic UI. 
-* **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-and-volume/log-ingestion.md) will be applied to your log ingest, For information about Trial account features, see the details for [Cloud Flex accounts](#cloud-flex-credits---account-types).  
+* **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest, For information about Trial account features, see the details for [Cloud Flex accounts](#cloud-flex-credits---account-types).  
 
     :::note
     Trials are limited to 30 days. If you require an extended trial period, contact [sales@sumologic.com](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
@@ -31,7 +31,7 @@ You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise S
 :::important
 [Ingest Budgets]v are only available for Enterprise Operations, Enterprise Security, and Enterprise Suite accounts. Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from collectors.
 
-It's important to keep track of your daily data usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see the [Manage Ingestion](../ingestion-and-volume/log-ingestion.md) help page.
+It's important to keep track of your daily data usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see the [Manage Ingestion](../ingestion-volume/log-ingestion.md) help page.
 :::
 
 The following table provides a summary list of key features by Sumo Logic Cloud Flex Credits package accounts. For Free and Trial account details, see the details for [Cloud Flex accounts](cloud-flex-accounts.md).
@@ -76,7 +76,7 @@ The **Account Overview** tab of the  **Account** page for Cloud Flex Credits d
 You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
 :::
 
-[Data Tiers](/docs/manage/partitions-and-data-tiers) are available as part of the Enterprise Suite Package Account, and provide economic flexibility by aligning your analytics to the value of your data. By using the Continuous, Frequent, and Infrequent tiers, you can segment your data by use case and analytics needs, thus optimizing your analytics investments.
+[Data Tiers](/docs/manage/partitions-data-tiers) are available as part of the Enterprise Suite Package Account, and provide economic flexibility by aligning your analytics to the value of your data. By using the Continuous, Frequent, and Infrequent tiers, you can segment your data by use case and analytics needs, thus optimizing your analytics investments.
 
 :::note
 For more information on Data Tiers, contact your Sumo Logic Account Representative.

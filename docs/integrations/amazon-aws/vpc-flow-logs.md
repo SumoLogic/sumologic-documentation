@@ -154,7 +154,7 @@ This section has instructions for collecting Amazon VPC Flow Logs using an AWS S
 1. [Grant Access to an AWS S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
 2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
 3. When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-4. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic. When you configure the S3 source:
+4. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source#AWS-Sources) for the S3 Source to Sumo Logic. When you configure the S3 source:
     1. In the **Advanced Options for Logs** section, uncheck the **Detect messages spanning multiple lines** option.
     2. In the **Processing Rules for Logs** section, add an **Exclude messages that match** processing rule to ignore the following file header lines: `version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`.
 
@@ -170,7 +170,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -210,7 +210,7 @@ You can filter the Overview dashboard by any combination of `DestinationIP`, `So
 
 
 #### Filtering the Accepts dashboard
-In the filters pane, you can can configure these parameters for the [outlier](/docs/search/Search-Query-Language/operators#outlier) analysis performed by the "Accepts by Minute - Outlier" panel:  Consecutive, Threshold, Window, and Timeslice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/search-query-language/search-operators/outlier) analysis performed by the "Accepts by Minute - Outlier" panel:  Consecutive, Threshold, Window, and Timeslice.
 
 You can also filter Accepts dashboard by any combination of `DestinationIP`, `SourceIP`, `dest_port`, `interfaceid`, `protocol`, and `src_port`.
 
@@ -227,7 +227,7 @@ You can also filter Accepts dashboard by any combination of `DestinationIP`, `So
 
 #### Filtering the Rejects dashboard
 
-In the filters pane, you can can configure these parameters for the [outlier](/docs/search/Search-Query-Language/operators#outlier) analysis performed by the "Rejects by Minute - Outlier" panel: Consecutive, Threshold, Window, and Timeslice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/search-query-language/search-operators/outlier) analysis performed by the "Rejects by Minute - Outlier" panel: Consecutive, Threshold, Window, and Timeslice.
 
 You can also filter the Rejects dashboard by any combination of `DestinationIP`, `SourceIP`, `dest_port`, `interfaceid`, `protocol`, and `src_port`.
 
@@ -243,7 +243,7 @@ You can also filter the Rejects dashboard by any combination of `DestinationIP`,
 
 #### Filtering the Traffic dashboard
 
-In the filters pane, you can can configure these parameters for the [outlier](/docs/search/Search-Query-Language/operators#outlier) analysis performed by several panels: Consecutive, Threshold, Window, and Timelice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/search-query-language/search-operators/outlier) analysis performed by several panels: Consecutive, Threshold, Window, and Timelice.
 
 You can also filter the Traffic dashboard by any combination of `DestinationIP`, `SourceIP`, `action`, `dest_port`, `interfaceid`, `protocol`, and `src_port`.
 
@@ -266,6 +266,6 @@ Key facts about this dashboard:
 
 #### Filtering the Security Groups dashboard
 
-In the filters pane, you can can configure these parameters for the [outlier](/docs/search/Search-Query-Language/operators#outlier) analysis performed by several panels:  Consecutive, Threshold, Window, and Timeslice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/search-query-language/search-operators/outlier) analysis performed by several panels:  Consecutive, Threshold, Window, and Timeslice.
 
 You can also filter the Security Groups dashboard by any combination of `DestinationIP`, `SourceIP`, `action`, `dest_port`, `interfaceid`, `protocol`, `security_grp_id`,  `src_port`, `subnet_id`, and `vpc_id`.

@@ -473,7 +473,7 @@ connection_notifications = [
 
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+For overriding payload for different connection types, refer to this [document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 
 
 ```sql title="Email Notifications Example"
@@ -520,7 +520,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 12
-Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
+Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 
 
 

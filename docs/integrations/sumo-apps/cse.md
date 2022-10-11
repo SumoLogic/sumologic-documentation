@@ -47,7 +47,7 @@ Logs written to either of the partitions above are assigned the source category 
 ## Install the App
 
 1. From the App Catalog, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install Apps from the Library](/docs/get-started/apps-integrations).
 3. To install the app, complete the following fields.
    * **App Name**. You can retain the existing name, or enter a name of your choice for the app.
    * **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
@@ -111,7 +111,7 @@ This dashboard displays metrics about Records created by CSE of the type Authent
 
 ### Record Analysis Email Records
 
-This dashboard displays metrics about Records created by CSE of the type Email. Typically, this Record type is used for log sources that report successful or unsuccessful authentication events.
+This dashboard displays metrics about Records created by CSE of the type Email. Typically, this Record type is used for log sources containing email information such as email protection applications and services.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Record-Analysis-Email-Records.png')} alt="CSE dashboard" />
 
@@ -147,32 +147,31 @@ This dashboard provides an overview of CSE Records by source, destination, volum
 
 This dashboard presents metrics about Signals that have been fired, including breakdowns by rule, host, and IP address.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Signal-Analysis.png')} alt="CSE dashboard" />
-
+<img src={useBaseUrl('img/integrations/sumo-apps/signal-analysis.png')} alt="CSE dashboard" />
 
 ### Signal Analysis Rules
 
 This dashboard provides trend analysis of triggered rules, rules by match expression and top rules triggered.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Signal-Analysis-Rules.png')} alt="CSE dashboard" />
+<img src={useBaseUrl('img/integrations/sumo-apps/signal-analysis-rules.png')} alt="CSE dashboard" />
 
 
 ### Signal Monitoring
 
 This dashboard provides times-based metrics for CSE Signals, and Signal disappearance metrics.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Signal-Monitoring.png')} alt="CSE dashboard" />
+<img src={useBaseUrl('img/integrations/sumo-apps/signal-monitoring.png')} alt="CSE dashboard" />
 
 
 ### Signals Overview
 
 This dashboard provides an overview of Signal activity, including Signal count over time, and a table of summary information for generated Signals.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Signals-Overview.png')} alt="CSE dashboard" />
-
+<img src={useBaseUrl('img/integrations/sumo-apps/signals-overview.png')} alt="CSE dashboard" />
+static/img/integrations/sumo-apps/signals-by-product.png
 
 ### Signals by Product
 
 This dashboard shows breakdowns of Signal by product and vendor.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Signals-by-Product.png')} alt="CSE dashboard" />
+<img src={useBaseUrl('img/integrations/sumo-apps/signals-by-product.png')} alt="CSE dashboard" />

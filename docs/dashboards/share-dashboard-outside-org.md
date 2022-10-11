@@ -35,7 +35,7 @@ You must have specific role capabilities to share a dashboard with external user
 * **Share Dashboards with the Allowlist.** Share dashboards with users on the allowlist.
 * The **Share Dashboards with the World.** Share dashboards with external user users. 
 
-If you do not already have a role that grants you the required capability, an Admin user can assign you one, as described on [Assign Roles to Users](docs/manage/users-and-roles/roles/add-remove-users-role.md) , or create a new one as necessary, as described on [Create a New Role](docs/manage/users-and-roles/roles/create-manage-roles.md). 
+If you do not already have a role that grants you the required capability, an Admin user can assign you one, as described on [Assign Roles to Users](docs/manage/users-roles/roles/add-remove-users-role.md) , or create a new one as necessary, as described on [Create a New Role](docs/manage/users-roles/roles/create-manage-roles.md). 
 
 ## Add external users to service allowlist
 

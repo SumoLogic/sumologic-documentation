@@ -409,7 +409,7 @@ By default, the monitors are configured in a monitor folder called “PostgreSQL
 If you would like the alerts to send email or connection notifications, configure these in the file **postgresql_notifications.auto.tfvars**. For configuration examples, refer to the next section.
 
 
-5. Email and Connection Notification Configuration Examples. To **configure notifications**, modify the file postgresql_notifications.auto.tfvars file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md) for creating payloads with other connection types.
+5. Email and Connection Notification Configuration Examples. To **configure notifications**, modify the file postgresql_notifications.auto.tfvars file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md) for creating payloads with other connection types.
 
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [
@@ -457,7 +457,7 @@ Now that you have set up log and metric collection for PostgreSQL, you can insta
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom PostgreSQL cluster filter. Examples:

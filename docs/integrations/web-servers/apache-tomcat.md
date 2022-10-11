@@ -736,7 +736,7 @@ Edit the ApacheTomcat_notifications.auto.tfvars file to populate the connection_
 
 In the variable definition below, replace `<CONNECTION_ID>` with the connection ID of the Webhook connection. You can obtain the Webhook connection ID by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 
 ```bash title="Pagerduty connection example"
 connection_notifications = [
@@ -786,7 +786,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
+Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 
 3. To install the app, complete the following fields.
 1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

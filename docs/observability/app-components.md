@@ -1,13 +1,17 @@
 ---
 id: app-components
 title: Application Components Solution
-sidebar_label: Diagnosing Issues
-description: Diagnose service issues with the Sumo Logic Observability Solution.
+sidebar_label: Application Components Solution
 ---
 
+<!-- N.M. to finish-->
 
+The Application Components Solution allows a better structure and grouping of various application components. This provides the ability to easily monitor and troubleshoot potential issues with applications.
 
-<!-- finish formatting -->
+Pre-configured dashboards available for application components solve many common use cases:
+* Identifying which part of the infrastructure is experiencing problems.
+* Reviewing the overall health of specific components to quickly narrow down the scope of troubleshooting.
+* Minimizing the troubleshooting time by providing all relevant information in the right context.
 
 
 ## Deploy and Configure the Application Components Solution
@@ -17,9 +21,9 @@ These instructions help you prepare and set up the Application Components Soluti
 The Terraform script performs the following actions:
 
 * Creates Application Components View hierarchy in Explore.
-* Sets up Sumo Logic Field Extraction Rules ([FERs](https://help.sumologic.com/manage/Field-Extractions)) to enrich the data.
+* Sets up Sumo Logic Field Extraction Rules ([FERs](/docs/manage/Field-Extractions)) to enrich the data.
 * Installs Sumo Logic Apps(Database apps and App Components app) in the Admin recommended folder.
-* Creates [Fields](https://help.sumologic.com/manage/fields).
+* Creates [Fields](/docs/manage/fields).
 * Installs Monitors for each of the selected databases.
 
 
@@ -38,7 +42,7 @@ For this setup, complete the following steps:
    * Manage Fields
    * Manage connections
    * Manage Content
-2. Using these [instructions](https://help.sumologic.com/manage/Security/Access-Keys#manage-your-access-keys-on-preferences-page), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. Please identify which deployment your Sumo Logic account is in using this[ link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+2. Using these [instructions](/docs/manage/Security/Access-Keys#manage-your-access-keys-on-preferences-page), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. Please identify which deployment your Sumo Logic account is in using this[ link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 3. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 
@@ -76,29 +80,29 @@ $ terraform --version
   <tr>
    <td>sumologic_environment
    </td>
-   <td><a href="https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security">Sumo Logic Deployment</a>
-<p>Enter au, ca, de, eu, jp, us2, in, fed or us1. See <a href="https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security">Sumo Logic Endpoints and Firewall Security</a> for more information on Sumo Logic deployments.</p>
+   <td><a href="/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security">Sumo Logic Deployment</a>
+<p>Enter au, ca, de, eu, jp, us2, in, fed or us1. See <a href="/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security">Sumo Logic Endpoints and Firewall Security</a> for more information on Sumo Logic deployments.</p>
    </td>
   </tr>
   <tr>
    <td>sumologic_access_id
    </td>
-   <td><a href="https://help.sumologic.com/manage/Security/Access-Keys">Sumo Logic Access ID</a>
-<p>Sumo Logic Access ID. See <a href="https://help.sumologic.com/manage/Security/Access-Keys#Create_an_access_key">Create an access key</a> in the <em>Access Keys</em> topic for more information.</p>
+   <td><a href="/docs/manage/Security/Access-Keys">Sumo Logic Access ID</a>
+<p>Sumo Logic Access ID. See <a href="/docs/manage/Security/Access-Keys#Create_an_access_key">Create an access key</a> in the <em>Access Keys</em> topic for more information.</p>
    </td>
   </tr>
   <tr>
    <td>sumologic_access_key
    </td>
-   <td><a href="https://help.sumologic.com/manage/Security/Access-Keys">Sumo Logic Access Key</a>
-<p>Sumo Logic Access Key used for Sumo Logic API calls. See <a href="https://help.sumologic.com/manage/Security/Access-Keys">Sumo Logic Access Key</a> for more information.</p>
+   <td><a href="/docs/manage/Security/Access-Keys">Sumo Logic Access Key</a>
+<p>Sumo Logic Access Key used for Sumo Logic API calls. See <a href="/docs/manage/Security/Access-Keys">Sumo Logic Access Key</a> for more information.</p>
    </td>
   </tr>
   <tr>
    <td>sumologic_organization_id
    </td>
-   <td><a href="https://help.sumologic.com/01Start-Here/05Customize-Your-Sumo-Logic-Experience/Preferences-Page">Sumo Logic Organization ID</a>
-<p>You can find your org on the <strong>Preferences</strong> page in the Sumo Logic UI. For more information, see the <a href="https://help.sumologic.com/01Start-Here/05Customize-Your-Sumo-Logic-Experience/Preferences-Page">Preferences Page </a>topic. Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.</p>
+   <td><a href="/docs/get-started/sumo-logic-ui">Sumo Logic Organization ID</a>
+<p>You can find your org on the <strong>Preferences</strong> page in the Sumo Logic UI. For more information, see the <a href="/docs/get-started/sumo-logic-ui">Preferences Page </a>topic. Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.</p>
    </td>
   </tr>
 </table>
@@ -128,7 +132,7 @@ If you would like the alerts to send email or connection notifications, configur
 
 #### Configuring Email and Connection Notification Configuration Examples
 
-To **configure notifications**, modify the file `postgresql_notifications.auto.tfvars` file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See this [document](https://help.sumologic.com/manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections) for creating payloads with other connection types.
+To **configure notifications**, modify the file `postgresql_notifications.auto.tfvars` file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/manage/connections-integrations/Webhook-Connections/Set-Up-Webhook-Connections) for creating payloads with other connection types.
 
 
 #### Pagerduty Connection Example
@@ -182,46 +186,28 @@ Navigate to the directory **sumologic-solution-templates/app-component-observabi
 
 ## Post Installation
 
-#### Configure Metric and Logs collection of respective databases
+### Configure Metrics and Logs Collection
+
+Configure Metric and Logs collection for your database. Supported for:
 
 * Cassandra
-    * [Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Cassandra/Collect_Logs_and_Metrics_for_Cassandra/Collect_Cassandra_Logs_and_Metrics_for_Kubernetes_environments)
-    * [Non-Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Cassandra/Collect_Logs_and_Metrics_for_Cassandra/Collect_Cassandra_Logs_and_Metrics_for_Non-Kubernetes_environments)
 * Couchbase
-    * [Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Couchbase/Collect_Logs_and_Metrics_for_the_Couchbase_App/Collect_Couchbase_Logs_and_Metrics_for_Kubernetes_environments)
-    * [Non-Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Couchbase/Collect_Logs_and_Metrics_for_the_Couchbase_App/Collect_Couchbase_Logs_and_Metrics_for_Non-Kubernetes_environments)
 * Elasticsearch
-    * [Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Elasticsearch/Collect_Logs_and_Metrics_for_the_Elasticsearch_app/Collect_Elasticsearch_Logs_and_Metrics_for_Kubernetes_environments)
-    * [Non-Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Elasticsearch/Collect_Logs_and_Metrics_for_the_Elasticsearch_app/Collect_Elasticsearch_Logs_and_Metrics_for_Non-Kubernetes_environments)
 * MongoDB
-    * [Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB/Collect-Logs-for-MongoDB/Collect_MongoDB_Logs_and_Metrics_for_Kubernetes_environments)
-    * [Non-Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB/Collect-Logs-for-MongoDB/Collect_MongoDB_Logs_and_Metrics_for_Non-Kubernetes_environments)
 * MySQL
-    * [Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MySQL/Collect_Logs_and_Metrics_for_MySQL/Collect_MySQL_Logs_and_Metrics_(Kubernetes))
-    * [Non-Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MySQL/Collect_Logs_and_Metrics_for_MySQL/Collect_MySQL_Logs_and_Metrics_(Non-Kubernetes))
 * PostgreSQL
-    * [Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/PostgreSQL/Collect_logs_and_metrics_from_PostgreSQL/Collect_PostgreSQL_Logs_and_Metrics_for_Kubernetes_environments.)
-    * [Non-Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/PostgreSQL/Collect_logs_and_metrics_from_PostgreSQL/Collect_PostgreSQL_Logs_and_Metrics_for_Non-Kubernetes_environments)
 * Redis
-    * [Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Redis/Collect_Logs_and_Metrics_for_Redis/Collect_Redis_Logs_and_Metrics_for_Kubernetes_environments)
-    * [Non-Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Redis/Collect_Logs_and_Metrics_for_Redis/Collect_Redis_Logs_and_Metrics_for_Non-Kubernetes_environments)
 * SQL Server
-    * [Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_SQL_Server/01Collect-Logs-for-the-Microsoft-SQL-Server-App/Collect_Microsoft_SQL_Server_Logs_and_Metrics_for_Kubernetes_environments)
-    * [Non-Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_SQL_Server/01Collect-Logs-for-the-Microsoft-SQL-Server-App/Collect_Microsoft_SQL_Server_Logs_and_Metrics_for_Non-Kubernetes_environments)
 * MariaDB
-    * [Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MariaDB/Collect_Logs_and_Metrics_for_the_MariaDB_App/Collect_MariaDB_Logs_and_Metrics_for_Kubernetes_environments)
-    * [Non-Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MariaDB/Collect_Logs_and_Metrics_for_the_MariaDB_App/Collect_MariaDB_Logs_and_Metrics_for_Non-Kubernetes_environments)
 * Memcached
-    * [Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Memcached/Collect_Logs_and_Metrics_for_Memcached/Collect_Memcached_Logs_and_Metrics_for_Kubernetes_environments)
-    * [Non-Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Memcached/Collect_Logs_and_Metrics_for_Memcached/Collect_Memcached_Logs_and_Metrics_for_Non-Kubernetes_environments.)
 * Oracle
-    * [Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Oracle/00Collect_Logs_for_Oracle/Collect_Oracle_Logs_and_Metrics_for_Kubernetes_environments)
-    * [Non-Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Oracle/00Collect_Logs_for_Oracle/Collect_Oracle_Logs_and_Metrics_for_Non-Kubernetes_environments)
+
+See [Databases](/docs/integrations/databases) for more info.
 
 
 ### Configure Fields in Sumo Logic
 
-Create the following Fields in collection sources both for logs and metrics. This ensures that your logs and metrics are tagged with relevant metadata, which the app dashboards require. For information on setting up Fields, see the [Fields](https://help.sumologic.com/manage/fields) topic.
+Create the following Fields in collection sources both for logs and metrics. This ensures that your logs and metrics are tagged with relevant metadata, which the app dashboards require. For information on setting up Fields, see the [Fields](/docs/manage/fields) topic.
 
 * `component`
 * `environment`
@@ -232,7 +218,7 @@ Create the following Fields in collection sources both for logs and metrics. Thi
 
 Configuring or updating email notifications
 
-If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of [this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of [this document](/docs/alerts/Monitors#Add_a_monitor).
 
 
 ## Uninstalling the Solution

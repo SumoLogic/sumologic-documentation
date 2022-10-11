@@ -303,7 +303,7 @@ If you would like the alerts to send email or connection notifications, configur
 
 #### Email and Connection Notification Configuration Examples
 
-To** configure notifications, m**odify the file `host_process_metrics_notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md) for creating payloads with other connection types.
+To** configure notifications, m**odify the file `host_process_metrics_notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md) for creating payloads with other connection types.
 
 
 ```sql title="Pagerduty Connection Example:"
@@ -366,7 +366,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 7
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

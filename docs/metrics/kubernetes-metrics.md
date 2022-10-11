@@ -57,7 +57,9 @@ Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-
 
 Run this command to start a proxy to the Kubernetes API server: 
 
-`kubectl proxy `
+```bash
+kubectl proxy
+```
 
 To view metrics, open your browser to: 
 
@@ -81,7 +83,9 @@ Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-
 
 Run this command to start a proxy to the Kubernetes API server: 
 
-`kubectl proxy `
+```bash
+kubectl proxy
+```
 
 To view metrics, open your browser to: 
 

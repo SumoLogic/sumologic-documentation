@@ -30,7 +30,7 @@ The script takes two inputs:
 
 ## Cloud Formation Parameters
 
-The script above will take only two inputs - Sumo access Id and Sumo Access Key. And internally it will trigger a cloud formation template. This cloud formation template requires some additional parameters. But all of these parameters will take the default value. When using this script one cannot override these values.  Refer table in **Appendix I** for all the parameters and the respective default values which will be used as part of this installation. Learn details about each parameter in detail [here](https://help.sumologic.com/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/05_Deploy_AWS_Observability/Deploy_with_AWS_CloudFormation).
+The script above will take only two inputs - Sumo access Id and Sumo Access Key. And internally it will trigger a cloud formation template. This cloud formation template requires some additional parameters. But all of these parameters will take the default value. When using this script one cannot override these values.  Refer table in **Appendix I** for all the parameters and the respective default values which will be used as part of this installation. Learn details about each parameter in detail [here](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation).
 
 
 ### Powershell Script Command Execution

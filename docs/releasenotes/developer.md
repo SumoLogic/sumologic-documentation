@@ -1,7 +1,6 @@
 ---
 id: developer
 title: Developer Release Notes
-sidebar_label: Developer
 description: We'll post new features and changes to our APIs, Collector management, and Live Tail CLI here.
 ---
 
@@ -37,37 +36,37 @@ New - The [Field Extraction Rule (FER) Management API](/docs/api/field-extractio
 ---
 ### February 16, 2021 - APIs
 
-New - The [Partition Management API](/docs/api/partitions) allows you to [manage Partitions](https://help.sumologic.com/manage/Partitions_and_Data_Tiers) from HTTP endpoints.
+New - The [Partition Management API](/docs/api/partitions) allows you to [manage Partitions](/docs/manage/Partitions-Data-Tiers) from HTTP endpoints.
 
 ---
 ### February 15, 2021 - APIs
 
-New - The [Dynamic Parsing Management API](/docs/api/dynamic-parsing) allows you to configure Run Time [Field Extraction Rules](https://help.sumologic.com/manage/Field-Extractions) from HTTP endpoints.
+New - The [Dynamic Parsing Management API](/docs/api/dynamic-parsing) allows you to configure Run Time [Field Extraction Rules](/docs/manage/Field-Extractions) from HTTP endpoints.
 
 
 ---
 ### December 21, 2020 - APIs
 
-New - The [Account Management API](/docs/api/account-management) allows you to manage the [custom subdomain](https://help.sumologic.com/manage/Manage-Subscription/12Manage_Organizational_Settings#Set_up_a_custom_subdomain) for the URL used to access your Sumo Logic account.
+New - The [Account Management API](/docs/api/account-management) allows you to manage the [custom subdomain](/docs/manage/Manage-Subscription/Manage-Org-Settings#Set_up_a_custom_subdomain) for the URL used to access your Sumo Logic account.
 
-New - [Ingest Budget Management API V2](/docs/api/Ingest-Budget-V2) allows you to manage metadata-based [ingest budgets](https://help.sumologic.com/manage/Ingestion-and-Volume/Ingest_Budgets) (with a scope) from HTTP endpoints.
+New - [Ingest Budget Management API V2](/docs/api/Ingest-Budget-V2) allows you to manage metadata-based [ingest budgets](/docs/manage/ingestion-volume/Ingest-Budgets) (with a scope) from HTTP endpoints.
 
 
 ---
 ### November 3, 2020  - APIs
 
-New - The [Password Policy Management API](/docs/api/Password-Policy) is available to manage the [password policy](https://help.sumologic.com/manage/Security/Set-the-Password-Policy) for your Sumo Logic users.
+New - The [Password Policy Management API](/docs/api/Password-Policy) is available to manage the [password policy](/docs/manage/Security/set-password-policy) for your Sumo Logic users.
 
 ---
 ### October 28, 2020 - APIs
 
-New - The [Monitor Management API](/docs/api/Monitors) is available to manage [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) from HTTP endpoints.
+New - The [Monitor Management API](/docs/api/Monitors) is available to manage [Monitors](/docs/alerts/Monitors) from HTTP endpoints.
 
 
 ---
 ### October 21, 2020 - APIs
 
-New - The [Lookup Table Management API](/docs/api/Lookup-Tables) is available to manage [Lookup Tables](https://help.sumologic.com/05Search/Lookup_Tables) from HTTP endpoints.
+New - The [Lookup Table Management API](/docs/api/Lookup-Tables) is available to manage [Lookup Tables](/docs/search/Lookup-Tables) from HTTP endpoints.
 
 
 ---
@@ -81,12 +80,12 @@ New - The [Dashboard (New) Management API](/docs/api/dashboard-new#Management-AP
 
 New - [Installation Tokens](/docs/manage/Security/Installation-Tokens) provide Installed Collectors a great alternative to Access Keys. They do not expire and can only be used to register Installed Collectors. You can embed your Installation Tokens in installation scripts confident they can't be used to make [API](/docs/api) requests if compromised.<br/><img src={useBaseUrl('img/release-notes/Installation-Tokens.png')} alt="Installation-Tokens" />
 
-New - The Tokens Management API is available to manage [Installation Tokens](https://help.sumologic.com/manage/Security/Installation_Tokens) from HTTP endpoints.
+New - The Tokens Management API is available to manage [Installation Tokens](/docs/manage/Security/installation-tokens) from HTTP endpoints.
 
 ---
 ### July 2, 2020 - APIs
 
-New - The [Field Management API](/docs/api/Fields) is available to manage your account's [Fields](https://help.sumologic.com/manage/fields) from HTTP endpoints.
+New - The [Field Management API](/docs/api/Fields) is available to manage your account's [Fields](/docs/manage/fields) from HTTP endpoints.
 
 ---
 ### June 30, 2020 - APIs
@@ -124,7 +123,7 @@ Update - Steps for generating clients now use [OpenAPI Generator](https://openap
 
 ---
 ### August 7, 2019 - APIs
-New - [Content](/docs/api/content-management), [Folder](/docs/api/folders), and [Permissions](/docs/api/content-permissions) Management APIs allow you to manage content in your organization’s [Library](https://help.sumologic.com/01Start-Here/Library) from HTTP endpoints.
+New - [Content](/docs/api/content-management), [Folder](/docs/api/folders), and [Permissions](/docs/api/content-permissions) Management APIs allow you to manage content in your organization’s [Library](/docs/get-started/Library) from HTTP endpoints.
 
 
 ---
@@ -134,7 +133,7 @@ Update - The [Collector Management API](/docs/api/collectors) can return Collect
 
 ---
 ### June 17, 2019 - APIs
-New - The [Ingest Budget Management API](/docs/api/ingest-budget-v1) allows you to manage [ingest budgets](https://help.sumologic.com/manage/Ingestion-and-Volume/Ingest_Budgets) from HTTP endpoints.
+New - The [Ingest Budget Management API](/docs/api/ingest-budget-v1) allows you to manage [ingest budgets](/docs/manage/ingestion-volume/Ingest-Budgets) from HTTP endpoints.
 
 **Deprecation Notice**
 
@@ -178,7 +177,7 @@ And the following APIs are coming soon:
 
 ---
 ### September 11, 2018 - APIs
-New -  [Receipt time](https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Build-a-Search/Use-Receipt-Time) is now available for scheduled searches, share links for searches, pinned searches, and Search Job API queries. To support receipt time, the Search Job API has a new parameter,[byReceiptTime](/docs/api/search-job#Query-parameters).
+New -  [Receipt time](/docs/search/Get-Started-with-Search/build-search/Use-Receipt-Time) is now available for scheduled searches, share links for searches, pinned searches, and Search Job API queries. To support receipt time, the Search Job API has a new parameter,[byReceiptTime](/docs/api/search-job#Query-parameters).
 
 
 ---

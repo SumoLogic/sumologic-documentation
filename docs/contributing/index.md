@@ -1,6 +1,7 @@
 ---
 slug: /contributing
-title: Contributing to Sumo
+title: Contribute to Sumo Docs
+tags: [docs, open source, contribute, github]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,9 +13,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 &#128679; Under construction &#128679;
 :::
 
-Thank you for your interest in contributing to Sumo Logic documentation! We welcome all contributions, from minor typo fixes to new topics and tutorials. Your expertise and sharing helps fellow users learn and expand their knowledge of Sumo Logic. Sumo Logic Documentation is an Open Source project available as a [GitHub repository](https://github.com/SumoLogic/sumologic-documentation). This section will grow as we answer questions and provide support for submissions and new content.
+We're a developer/practitioner community building reliable and secure modern apps. We welcome all contributions, from minor typo fixes to new docs/topics. Your expertise and sharing can help fellow users learn and expand their knowledge of Sumo Logic.
 
-The docs in this section provide information on creating files, writing in markdown, using our templates, submitting pull requests, and more.
+Sumo Logic Documentation is an Open Source project available as a [GitHub repository](https://github.com/SumoLogic/sumologic-documentation). This section will grow as we answer questions and provide support for submissions and new content. Here you'll information on creating files, writing in markdown, using our templates, submitting pull requests, and more.
 
 
 ## Before You Begin
@@ -27,36 +28,26 @@ The docs in this section provide information on creating files, writing in markd
 
 There are many ways that you can contribute to Sumo Docs, beyond writing code. Here is a high-level overview of how you can get involved.
 
-* For minor changes like a typos or small bugs, you could use the [Edit Page button](#edit-page-directly) or [submit an issue](#submit-issue-or-bug).
-* For major contributions like extensive text/sample code edits or brand new docs, you could [submit an issue](#submit-issue-or-bug) or [clone our repo files](#clone-our-repository) to your local machine, make changes in a branch, and submit a pull request for review. Feel free to reach out to us, the Docs Team, to discuss. We are happy to work with you on the project and talk through rewriting content, changing flow, adding a new topic or section, and deprecating content.
+### Submit an Issue
 
-### Submit Issue
+If you find a bug in documentation or site tools, or want to request more information, you can help us by [**Submitting a GitHub Issue**](https://github.com/SumoLogic/sumologic-documentation/issues/new/choose) to our GitHub Repository. Enter as much information as you can, including content corrections, steps to reproduce, command or code updates, or questions for clarifications. To share your knowledge, submit a Pull Request with a fix.
 
-If you find a bug in documentation or site tools, or want to request more information, you can help us by [submitting an issue](https://github.com/SumoLogic/sumologic-documentation/issues/new/choose) to our GitHub Repository. You can enter an issue through GitHub or from any page on the documentation site. To share your knowledge, submit a Pull Request with a fix.
+Before submitting your issue, you can check our [existing GitHub issues](https://github.com/SumoLogic/sumologic-documentation/issues) on to see if someone has already reported it and join the discussion via comments.
 
-Enter as much information as you can, including content corrections, steps to reproduce, command or code updates, or questions for clarifications.
-
-<!--To easily submit an issue for a specific page, click Report an issue (coming soon) on the documentation web page and include your feedback.-->
-
-When submitting an issue, you also can check the [existing one](https://github.com/SumoLogic/sumologic-documentation/issues) to see if someone has already reported it.
-
-### Submit Feature Request
-
-You can request a new feature by [submitting a feature request](https://github.com/SumoLogic/sumologic-documentation/issues/new?assignees=&labels=type%3Afeature&template=feature_request.md&title=) to our GitHub Repository.
-
-### Edit Page directly
+### Edit a Page
 
 While reviewing content on the site, you can click the **Edit this page** link, located at the bottom of each doc page. This will open your selected doc in our GitHub repo website.
 
-1. On a doc where you find an error, scroll to the bottom of the doc and click the **Edit this page**.<br/><img src={useBaseUrl('img/contributing/editpage.png')} alt="editpage" width="175"/>
-1. The markdown file opens in GitHub.
+1. If you come across a bug, scroll to the bottom of that doc and click the **Edit this page** link. This will open the markdown file in GitHub.
 1. Make your edits to the file. You can also view the doc's History here as well.
 1. Scroll to the bottom and select **Create a new branch...**. Enter a name for the branch and click **Propose Change**. This will fork and submit changes to us for review.
 
 
 ### Clone Sumo Docs Repository
 
-Another option is to clone the GitHub repository and edit locally. This is common for developers, working with GitHub tools, Git commands, and code editors like VSCode or Atom.
+For larger contributions like extensive edits or a new doc, you could clone our repo to your local machine, make changes in a branch, and submit a pull request for review.
+
+Feel free to reach out to us, the Docs Team, to discuss. We are happy to work with you on the project and talk through rewriting content, changing flow, adding a new topic or section, and deprecating content. option is to clone the GitHub repository and edit locally. This is common for developers, working with GitHub tools, Git commands, and code editors like VSCode or Atom.
 
 
 #### Fork and clone
@@ -141,6 +132,11 @@ As Pull Requests (PRs) are merged to the main branch by the Sumo Logic Docs Team
 
 When all content is tested and ready for live, a Sumo Logic Docs Team member can tag a release to build and deploy to Production. This site is live to the world to search, use, and read to learn Sumo Logic.
 
+## Submit a Feature Request
+
+You can also:
+* [Submit a Sumo Docs feature request](https://github.com/SumoLogic/sumologic-documentation/issues/new?assignees=&labels=type%3Afeature&template=feature_request.md&title=)
+* [Submit a Sumo Logic feature request](/docs/get-started/help/#feature-requests)
 
 ## Recommended Authoring Tools
 

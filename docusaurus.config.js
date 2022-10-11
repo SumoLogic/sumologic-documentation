@@ -4,12 +4,16 @@
 
 // Documentation page id for open source: sumo-logic-open-source-projects
 
+const fs = require('fs')
+
 const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
 const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 
+const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString())
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Sumo Logic Docs',
+  title: 'Welcome to Sumo Docs!',
   tagline: '',
   url: process.env.HOSTNAME || "http://localhost:3000",
   baseUrl: process.env.BASE_URL || "/",
@@ -92,23 +96,26 @@ module.exports = {
           trackingID: 'UA-16579649-3',
         },
         theme: {
-          customCss: require.resolve('./src/css/sumo.scss'),
+          customCss: [
+            require.resolve('./src/css/sumo.scss'),
+            require.resolve('./src/css/sitesearch360.scss'),
+          ],
         },
       }),
     ],
-    [
-      'redocusaurus',
-      {
-        specs: [
-          {
-            id: 'sumoapi',
-            //specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
-            spec: 'sumologic-api.yaml',
-            route: '/sumoapi/',
-          },
-        ],
-      },
-    ],
+  //  [
+  //    'redocusaurus',
+  //    {
+  //      specs: [
+  //        {
+  //          id: 'sumoapi',
+  //          //specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
+  //          spec: 'sumologic-api.yaml',
+  //          route: '/sumoapi/',
+  //        },
+  //      ],
+  //    },
+  //  ],
   ],
   plugins: [
     'docusaurus-plugin-sass',
@@ -116,17 +123,12 @@ module.exports = {
     'react-iframe',
     ['@docusaurus/plugin-client-redirects',
       {
-        redirects: [
-          {
-            //CID REDIRECTS: Enter a from: of the /cid=##### with the path to the file for to: for each CID!
-            to: '/docs/contributing/markdown-cheat-sheet',
-            from: '/cid=1234',
-          },
-        ]
+        redirects: Object.entries(cidRedirects).map(
+          ([key, value]) => ({ from: key, to: value })
+        )
       },
     ],
   ],
-
     /* // Optional: See this site to configure - live editor https://github.com/jlvandenhout/docusaurus-plugin-docs-editor
        // Requires adding OAUTH app https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app
     [
@@ -173,7 +175,7 @@ module.exports = {
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
     announcementBar: {
       id: 'announcementBar',
-      content: `⭐️ Welcome to the new Sumo Logic Doc Site! ⭐️`,
+      content: `📣 Welcome to the new Sumo Logic Docs Site! To view our legacy docs, <a target="_blank" rel="noopener noreferrer" href="https://helpstaging.sumologic.com">click here</a>.`,
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
@@ -215,218 +217,93 @@ module.exports = {
         },
         items: [
           {
+            //Trial button
+            label: 'Start a Free Trial',
+            to: 'https://www.sumologic.com/sign-up',
+            position: 'right',
+            className: 'navbar-trial',
+          },
+          {
             label: 'Guides',
-            to: '#',
-            // Map of content into the Guides mega-drop-down, Number associated to the doc links in this section
-            // activeregex controls the top nav content, icon uses Google Material name code https://fonts.google.com/icons?query=material
-            layout: [
-              '0 1 3 4',
-              '0 1 3 4',
-              '0 1 3 4',
-              '0 1 3 4',
-              '0 2 3 5',
-              '0 2 3 5',
-              '0 2 3 5',
-              '0 2 3 5',
-              '0 2 3 5',
-              '0 2 3 5',
-            ],
-            items_: [
+            position: 'left',
+            to: '/',
+            // Redocusaurus
+            // to: '/sumoapi',
+            type: 'dropdown',
+            items:[
               {
-                // 0
-                label: 'Getting Started',
-                items: [
-                  {
-                    className: 'horizontal-rule',
-                    label: 'Get Started',
-                    sublabel: 'Accounts, concepts, & more',
-                    to: '/docs/get-started',
-                    icon: 'fact_check',
-                    activeBaseRegex: '^/docs/get-started/.*',
-                  },
-                  {
-                    label: 'Send Data',
-                    sublabel: 'Set up collectors, data sources',
-                    to: '/docs/send-data',
-                    icon: 'open_in_new',
-                    activeBaseRegex: '^/docs/send-data/.*',
-                  },
-                  {
-                    label: 'Apps and Integrations',
-                    sublabel: 'Insights from data sources',
-                    to: 'docs/integrations',
-                    icon: 'apps',
-                    activeBaseRegex: '^/docs/integrations/.*',
-                  },
-                  {
-                    label: 'Manage Sumo',
-                    sublabel: 'Set up and manage Sumo',
-                    to: '/docs/manage',
-                    icon: 'start',
-                    activeBaseRegex: '^/docs/manage/.*',
-                  },
-                  {
-                    label: 'Quickstart Tutorials',
-                    sublabel: 'Fast-track Sumo setup',
-                    to: '/docs/quickstart',
-                    icon: 'backup_table',
-                    activeBaseRegex: '^/docs/quickstart/.*',
-                  },
-                ],
+                label: 'Send Data',
+                to: '/docs/send-data',
+                activeBaseRegex: '^/docs/send-data/.*',
               },
               {
-                // 1
-                label: 'Search, Metrics, Logs',
-                items: [
-                  {
-                    className: 'horizontal-rule',
-                    label: 'Search and Logs',
-                    sublabel: 'Find data with queries',
-                    to: '/docs/search',
-                    icon: 'view_day',
-                    activeBaseRegex: '^/docs/search/.*',
-                  },
-                  {
-                    label: 'Alerts and Dashboards',
-                    sublabel: 'Visualize data and set alerts',
-                    to: '/docs/alerts',
-                    icon: 'dashboard',
-                    activeBaseRegex: '^/docs/(dashboards|dashboards-new|alerts)',
-                  },
-                  {
-                    label: 'Metrics',
-                    sublabel: 'Assess & track performance',
-                    to: '/docs/metrics',
-                    icon: 'timeline',
-                    activeBaseRegex: '^/docs/metrics/.*',
-                  },
-                ],
+                label: 'Search Logs',
+                to: '/docs/search',
+                activeBaseRegex: '^/docs/search/.*',
               },
               {
-                // 2
-                label: 'App Performance',
-                items: [
-                  {
-                    className: 'horizontal-rule',
-                    label: 'Traces',
-                    sublabel: 'Review traces and spans',
-                    to: '/docs/apm/traces',
-                    icon: 'view_timeline',
-                    activeBaseRegex: '^/docs/apm/traces/.*',
-                  },
-                  {
-                    label: 'Real User Monitoring',
-                    sublabel: 'Monitor user activity',
-                    to: '/docs/apm/rum',
-                    icon: 'contacts',
-                    activeBaseRegex: '^/docs/apm/rum/.*',
-                  },
-                ],
+                label: 'Metrics',
+                to: '/docs/metrics',
+                activeBaseRegex: '^/docs/metrics/.*',
               },
               {
-                // 3
+                label: 'Apps/Integrations',
+                to: '/docs/integrations',
+                activeBaseRegex: '^/docs/integrations/.*',
+              },
+              {
+                label: 'Manage Account',
+                to: '/docs/manage',
+                activeBaseRegex: '^/docs/manage/.*',
+              },
+              {
                 label: 'Observability',
-                items: [
-                  {
-                    className: 'horizontal-rule',
-                    label: 'About Observability',
-                    sublabel: 'Learn about Observability',
-                    to: '/docs/observability',
-                    icon: 'data_exploration',
-                    activeBaseRegex: '^/docs/observability/about',
-                  },
-                  {
-                    label: 'Kubernetes Observability',
-                    sublabel: 'Deploy and monitor K8s',
-                    to: '/docs/observability/kubernetes',
-                    icon: 'settings_suggest',
-                    activeBaseRegex: '^/docs/observability/kubernetes/.*',
-                  },
-                  {
-                    label: 'AWS Observability',
-                    sublabel: 'Monitor AWS data',
-                    to: '/docs/observability/aws',
-                    icon: 'polyline',
-                    activeBaseRegex: '^/docs/observability/aws/.*',
-                  },
-                  {
-                    label: 'Root Cause Explorer',
-                    sublabel: 'Troubleshoot apps & services',
-                    to: '/docs/observability/root-cause-explorer',
-                    icon: 'widgets',
-                    activeBaseRegex: '^/docs/observability/root-cause-explorer',
-                  },
-                  // Links to Sensu docs currently
-                  {
-                    label: 'Sensu',
-                    sublabel: 'Investigate issues',
-                    to: 'https://docs.sensu.io/sensu-go/latest/',
-                    icon: 'model_training',
-                    activeBaseRegex: '^/docs/(incidents)/.*',
-                  },
-                ],
+                to: '/docs/observability',
+                activeBaseRegex: '^/docs/observability/about',
               },
               {
-                // 4 - What would this link to?
-                label: 'Security and Incidents',
-                items: [
-                  {
-                    className: 'horizontal-rule',
-                    label: 'Cloud SIEM Enterprise',
-                    sublabel: 'Security event management',
-                    to: '/docs/cse',
-                    icon: 'security',
-                    activeBaseRegex: '^/docs/(cse)/.*',
-                  },
-                  // When SOAR is added, you can update to: to the docs
-                  {
-                    label: 'Sumo Logic SOAR',
-                    sublabel: 'Automate incident response',
-                    to: 'https://www.sumologic.com/solutions/cloud-soar/',
-                    icon: 'grid_4x4',
-                    activeBaseRegex: '^/docs/security/.*',
-                  },
-                ],
+                label: 'Traces',
+                to: '/docs/apm/traces',
+                activeBaseRegex: '^/docs/apm/.*',
               },
               {
-                // 4
-                label: 'Other Solutions',
-                items: [
-                  {
-                    className: 'horizontal-rule',
-                    label: 'Global Intelligence',
-                    sublabel: 'Review security issues',
-                    to: '/docs/global-intelligence',
-                    icon: 'format_list_bulleted',
-                    activeBaseRegex: '^/docs/(global-intelligence)/.*',
-                  },
-                  {
-                    label: 'Software Dev Optimization',
-                    sublabel: 'DevOps pipeline integration',
-                    to: '/docs/sdo',
-                    icon: 'code',
-                    activeBaseRegex: '^/docs/(sdo)/.*',
-                  },
-                ],
+                label: 'Alerts',
+                to: '/docs/alerts',
               },
-            ],
+              {
+                label: 'Cloud SIEM',
+                to: '/docs/cse',
+                activeBaseRegex: '^/docs/(cse)/.*',
+              },
+              {
+                label: 'Cloud SOAR',
+                href: 'https://www.sumologic.com/solutions/cloud-soar',
+                activeBaseRegex: '^/docs/security/.*',
+              },
+              {
+                label: 'CI/CD',
+                to: '/docs/sdo',
+                activeBaseRegex: '^/docs/(sdo)/.*',
+              },
+            ]
           },
           {
             label: 'API',
             position: 'left',
+            to: '/',
             // Redocusaurus
-            to: '/sumoapi',
-            //type: 'dropdown',
-            //items:[
-              //{
-                //label: 'Docs',
-                //to: '/docs/api',
-              //},
-              //{
-                //label: 'Reference',
-                //href: 'https://api.sumologic.com/docs/',
-              //},
-            //]
+            // to: '/sumoapi',
+            type: 'dropdown',
+            items:[
+              {
+                label: 'Docs',
+                to: '/docs/api',
+              },
+              {
+                label: 'Reference',
+                href: 'https://api.sumologic.com/docs/',
+              },
+            ]
           },
           {
             label: 'Release Notes',
@@ -434,21 +311,33 @@ module.exports = {
             position: 'left',
           },
           {
-            label: 'Contribute',
+            label: 'Contribute to Docs',
             to: '/docs/contributing',
             position: 'left',
           },
           {
-            label: 'Support',
-            to: 'https://support.sumologic.com/hc/en-us',
+            label: 'Help',
             position: 'left',
-          },
-          {
-            //Trial button
-            label: 'Start a Free Trial',
-            href: 'https://www.sumologic.com/sign-up/',
-            position: 'right',
-            className: 'navbar-trial',
+            to: '/',
+            type: 'dropdown',
+            items:[
+              {
+                label: 'Support',
+                href: 'https://support.sumologic.com/hc/en-us',
+              },
+              {
+                label: 'Training',
+                href: 'https://www.sumologic.com/learn/training',
+              },
+              {
+                label: 'Community',
+                href: 'https://support.sumologic.com/hc/en-us/community/topics',
+              },
+              {
+                label: 'Service Status',
+                href: 'https://status.sumologic.com',
+              },
+            ]
           },
       //  {
       //    i18n -- add this back when we are ready for translations
@@ -460,23 +349,6 @@ module.exports = {
             'aria-label': 'GitHub repository',
             position: 'right',
             to: 'https://github.com/SumoLogic/sumologic-documentation',
-          },
-//            items:[
-//              {
-  //              label: 'Docs GitHub',
-    //            href: 'https://github.com/SumoLogic/sumologic-documentation',
-      //        },
-        //      {
-//                label: 'Contribution Guide',
-//                href: '/docs/contributing',
-//              },
-//            ]
-//          },
-          {
-            label: ' ',
-            className: 'header-search-link',
-            to: 'https://app.sitesearch360.com/demo/18891?auth=627bf5a32ba2ed7f1e7dbe02a13a5a5ae13c5c4d',
-            position: 'right',
           },
         ],
       },
@@ -541,8 +413,8 @@ module.exports = {
                 href: 'https://github.com/SumoLogic',
               },
               {
-                label: 'Sumo Incubator Projects',
-                href: 'https://github.com/SumoLogic-Incubator',
+                label: 'Sumo Labs Projects',
+                href: 'https://github.com/SumoLogic-Labs',
               },
               {
                 label: 'Sumo Dojo Slack',

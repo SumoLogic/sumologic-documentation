@@ -1,7 +1,6 @@
 ---
 id: collector
 title: Collector Release Notes
-sidebar_label: Collector
 description: You'll find a list of new Collector features and relevant bug fixes for each release. In order to begin using the features listed here, you'll need to upgrade Collector software.
 ---
 
@@ -14,13 +13,20 @@ You can upgrade [Installed Collectors](/docs/send-data/installed-collectors) in 
 * [Collector Management API](/docs/api/collectors#Upgrade-or-Downgrade-Collectors-Using-the-API)
 
 :::note
-Our [static URLs](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url.md) are available to download the most recent Collector version.
+Our [static URLs](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url) are available to download the most recent Collector version.
 :::
+
+### September 26, 2022 (19.409-3)
+
+* Security fix: Upgrade Collector JRE to Corretto 8.342.07.4
+* Security fix:  CVE-2022-31159 - com.amazonaws:aws-java-sdk-s3
+* Security fix: CVE-2022-33980 - org.apache.commons:commons-configuration2
+* Bug fix: Stop Collector service if sumojni dll fails to load.
 
 ---
 ### July 20, 2022 (19.403-1)
 
-* Feature: Collector support for Linux ARM/Aarch64 based instances
+* Feature: Collector support for Linux ARM/Aarch64 based instances, such as AWS Graviton.
 * Security update: Ant updated to 1.9.16. Fixes CVE-2021-36373 and CVE-2021-36374
 * Security update: Mina-statemachine updated to 2.1.4. Fixes CVE-2021-41973
 * Security update: Netty updated to 4.1.77.Final. Fixes CVE-2021-37136, CVE-2021-37137, CVE-2021-21409, CVE-2021-21295, CVE-2021-21290, CVE-2021-43797 and CVE-2021-21290
@@ -68,4 +74,3 @@ Bundled JRE version upgraded to 8.322.06.2.
 * Bug fix: Log4j vulnerability in RPM and Debian packages.
 * Bug fix: Windows Active Directory Source has more default attributes.
 * Bug fix: Security fix for Script Source.
- 

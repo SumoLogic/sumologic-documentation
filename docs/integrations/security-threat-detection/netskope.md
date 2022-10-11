@@ -23,7 +23,7 @@ For more information on Netskope, refer to the Netskope [documentation](https://
 
 ## Collect Logs for Netskope
 
-To collect logs from the Netskope platform, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Netskope](/docs/send-data/hosted-collectors/Cloud-to-Cloud-Integration-Framework/Netskope-Source) to create the source and use the same source category while installing the app.
+To collect logs from the Netskope platform, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Netskope-Source) to create the source and use the same source category while installing the app.
 
 The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you're using the Sumo Logic FedRamp deployment, use the sections below to configure the collection for this app.
 
@@ -322,7 +322,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

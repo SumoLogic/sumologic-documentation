@@ -66,12 +66,12 @@ _index=sumologic_audit_``events _sourceCategory=accessKeys
 | [Data Forwarding](/docs/manage/data-forwarding) | `dataForwarding` |
 | [Field Extractions](/docs/manage/field-extractions) | `fieldExtractionRules` |
 | [Fields](docs/manage/fields.md) | `fieldManagement` |
-| [Ingest Budgets](/docs/manage/ingestion-and-volume/ingest-budgets) | `ingestBudgets` |
+| [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) | `ingestBudgets` |
 | [Installation Tokens](installation-tokens.md) | `token` |
 | [Logs-to-Metrics Rules](../../metrics/logs-to-metrics.md) | `metricExtractionRule` |
 | [Monitors](/docs/alerts/monitors) | `monitorLibrary` |
 | [Password Policy](set-password-policy.md) | `passwordPolicy` |
-| [Roles](../users-and-roles/roles/create-manage-roles.md) | `roles` |
+| [Roles](../users-roles/roles/create-manage-roles.md) | `roles` |
 | [SAML](/docs/manage/security/saml) | `saml` |
 | [Scheduled Views](/docs/manage/scheduled-views) | `scheduledView` |
 | Security Policies: [Share Dashboards Outside of the Organization](../../dashboards/share-dashboard-outside-org.md), [Data Access Level for Shared Dashboards](data-access-level-shared-dashboards.md), [Per User Concurrent Sessions Limit](set-limit-user-concurrent-sessions.md), and [User Session Timeout](set-max-web-session-timeout.md) | `orgSettings` |
@@ -79,7 +79,7 @@ _index=sumologic_audit_``events _sourceCategory=accessKeys
 | [Service Allowlist](create-allowlist-ip-cidr-addresses.md) | `serviceAllowlist` |
 | [Support Account](enable-support-account.md) | `supportAccount` |
 | [Transformation Rules](../../metrics/metrics-transformation-rules.md) | `transformationRules` |
-| [Users](/docs/manage/users-and-roles) | `users` |
+| [Users](/docs/manage/users-roles) | `users` |
 | User Sessions | `userSessions` |
 | [2-Step Verification](about-2-step-verification.md) | `multiFactorAuthentication` |
 
@@ -140,4 +140,4 @@ Each audit event log has common keys that categorize it to a product area and pr
 
 ## Index retention period
 
-By default, the retention period of the Audit Event index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Edit a Partition](../partitions-and-data-tiers/create-edit-partition.md).
+By default, the retention period of the Audit Event index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Edit a Partition](../partitions-data-tiers/create-edit-partition.md).

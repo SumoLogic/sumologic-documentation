@@ -69,7 +69,7 @@ This section explains the log collection process, and then walks you through the
 
 There are two methods for integrating Opsgenie with Sumo Logic:
 * When an action happens at Opsgenie alerts, the webhook data is forwarded to the Sumo Logic and the data appears in the Opsgenie App. This integration method are described in this section.
-* Sumo Logic sends webhook alerts to Opsgenie which acts as a dispatcher for these alerts and determines the right people to notify based on on-call schedules, and notifies them via email, text messages (SMS), phone calls, and iPhone & Android push notifications, and escalates alerts until the alert is acknowledged or closed. This data is not utilized by the Opsgenie App, but you can configure this integration by following the instructions provided in [this Set Up Webhook Connections document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md). Opsgenie Alerts are defined at the Team level, so you need to create an Opsgenie - Sumo Logic Webhook integrations for each team.
+* Sumo Logic sends webhook alerts to Opsgenie which acts as a dispatcher for these alerts and determines the right people to notify based on on-call schedules, and notifies them via email, text messages (SMS), phone calls, and iPhone & Android push notifications, and escalates alerts until the alert is acknowledged or closed. This data is not utilized by the Opsgenie App, but you can configure this integration by following the instructions provided in [this Set Up Webhook Connections document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md). Opsgenie Alerts are defined at the Team level, so you need to create an Opsgenie - Sumo Logic Webhook integrations for each team.
 
 To configure log collection for the Opsgenie App, do the following:
 
@@ -93,7 +93,7 @@ To install the app, do the following:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
