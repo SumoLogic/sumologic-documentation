@@ -669,6 +669,7 @@
   "/Traces/03Advanced_Configuration/Correlate_Logs": "/docs/apm/traces/advanced-configuration/correlate-logs",
   "/Traces/03Advanced_Configuration/Filter-Shape-Trace-Data": "/docs/apm/traces/advanced-configuration/filter-shape-tracing-data",
   "/Traces/03Advanced_Configuration/Working_with_Span_attributes": "/docs/apm/traces/advanced-configuration/working-with-span-attributes",
+  "/Traces/HTTP_Traces_Source": "/docs/apm/traces/get-started-transaction-tracing/http-traces-source",
   "/Traces/Real_User_Monitoring": "/docs/apm/real-user-monitoring",
   "/cid/0011": "/docs/manage/field-extractions/create-field-extraction-rule",
   "/cid/0071": "/docs/metrics/introduction/get-started-metrics",
