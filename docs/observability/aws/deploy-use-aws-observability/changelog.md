@@ -14,7 +14,7 @@ To install or upgrade to the required version of the CloudFormation template, u
 
 AWS Observability Solution (S3 Link for cloudformation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.5.1/sumologic_observability.master.template.yaml`
 
-AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates)
+AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
 
 Enhancements / Updates:
 
