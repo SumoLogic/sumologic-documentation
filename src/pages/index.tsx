@@ -57,6 +57,7 @@ function Home() {
       <section className="spacer">
         <div className="land-flex">
        <h1 align="center">Explore our product guides</h1>
+       <br/>
        <p align="center">Ensure app reliability and security with modern cloud-native monitoring and observability.</p>
        <p align="center">
        <Tabs>
