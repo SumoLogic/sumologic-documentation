@@ -505,7 +505,7 @@ html[data-theme='dark'] .navbar-item-github:before {
   border-radius: 1px;
 }
 
-//NAV BAR
+//NAV BAR free trial button
 
 .navbar {
   border-bottom: 1px solid var(--ifm-toc-border-color);
@@ -514,18 +514,19 @@ html[data-theme='dark'] .navbar-item-github:before {
 .navbar-trial {
   background-color: #2aa1e6;
   color: white;
-  padding: 6px 12px;
-  font-weight: 600;
+  padding: 4px 12px;
+  font-weight: 300;
   font-size: 14px;
   text-decoration: none;
   margin-right: 10px;
-  border: 1px solid #3578e5;
+  border: 1px solid #2aa1e6;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 5px;
   border-radius: 3px;
 }
 
 .navbar-trial:hover {
+  background-color: #2aa1e6;
   border: 1px solid #fff;
   color: white;
 }
@@ -534,7 +535,7 @@ html[data-theme='dark'] .navbar-item-github:before {
   background-color: #2aa1e6;
   color: white;
   padding: 8px 25px;
-  font-weight: 600;
+  font-weight: 300;
   text-decoration: none;
   border: 1px solid #3578e5;
   cursor: pointer;
@@ -554,7 +555,7 @@ html[data-theme='dark'] .navbar-item-github:before {
 }
 
 
-//BACK TO HOMEPAGE
+//BACK TO HOMEPAGE buttons on 404 page
 
 .backtohome-404 {
   border-bottom: 1px solid var(--ifm-toc-border-color);
@@ -563,9 +564,9 @@ html[data-theme='dark'] .navbar-item-github:before {
 .backtohome-404 {
   background-color: #2aa1e6;
   color: white;
-  padding: 6px 12px;
-  font-weight: 600;
-  font-size: 12px;
+  padding: 10px 12px;
+  font-weight: 300;
+  font-size: 13px;
   text-decoration: none;
   margin-right: 10px;
   border: 1px solid #3578e5;
@@ -584,9 +585,9 @@ html[data-theme='dark'] .navbar-item-github:before {
 .backtohome-404:hover {
   background-color: #2aa1e6;
   color: white;
-  padding: 6px 12px;
-  font-weight: 600;
-  font-size: 12px;
+  padding: 10px 12px;
+  font-weight: 300;
+  font-size: 13px;
   text-decoration: none;
   margin-right: 10px;
   border: 1px solid #FFF;
@@ -602,11 +603,10 @@ html[data-theme='dark'] .navbar-item-github:before {
   }
 }
 
-
 .backtohome-404-mobile {
   background-color: #2aa1e6;
   color: white;
-  padding: 8px 25px;
+  padding: 10px 25px;
   font-weight: 300;
   text-decoration: none;
   border: 1px solid #3578e5;
@@ -626,6 +626,90 @@ html[data-theme='dark'] .navbar-item-github:before {
     display: none;
   }
 }
+
+
+
+
+//Get Started button - homepage
+
+.getstarted {
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+.getstarted {
+  background-color: #0046BE;
+  color: white;
+  padding: 8px 14px;
+  font-weight: 300;
+  font-size: 15px;
+//  filter: drop-shadow(-1px 2px 2px #64696C);
+  text-decoration: none;
+  border: .25px solid #000;
+  border-radius: 4px;
+  margin-right: 5px;
+  cursor: pointer;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: white;
+  }
+}
+
+
+.getstarted:hover {
+  background-color: #1a55ba;
+  color: black;
+  padding: 8px 14px;
+  font-weight: 300;
+  font-size: 15px;
+  text-decoration: none;
+  border: .25px solid #FFF;
+  cursor: pointer;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: white;
+  }
+}
+
+
+
+.getstarted-mobile {
+  background-color: #0046BE;
+  color: white;
+  padding: 8px 14px;
+  font-weight: 300;
+  text-decoration: none;
+  border: 1px solid #3578e5;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-right: 10px;
+}
+
+
+@media screen and (max-width: 996px) {
+  .getstarted {
+    margin-right: 50px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .getstarted {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -1288,7 +1372,7 @@ html[data-theme='dark'] .card:hover {
 
 .land-desc {
   max-height: 100px;
-  font-size: .85rem;
+  font-size: .95rem;
 }
 
 .land-image {
@@ -1409,25 +1493,26 @@ html[data-theme='dark'] .featureImage {
 
 
 .beta {
-  background: #C6007E;
+  background: solid var(--ifm-toc-border-color);;
   color: white;
   font-weight: 600;
   font-size: 16px;
-  padding: 8px 20px;
+  padding: 6px 18px;
   text-decoration: none;
-  margin-right: 10px;
-  border-radius: 10px;
+  margin-left: 10px;
+  border-radius: 8px;
+  border: .5px solid #FFFFFF;
 }
 
 .beta:hover {
-  background: #C6007E;
+  background: solid var(--ifm-toc-border-color);
   color: white;
   font-weight: 600;
   font-size: 16px;
-  padding: 8px 20px;
+  padding: 6px 18px;
   text-decoration: none;
-  margin-right: 10px;
-  border-radius: 10px;
+  margin-left: 10px;
+  border-radius: 8px;
   border: .5px solid #FFFFFF;
 }
 
@@ -1518,46 +1603,4 @@ html[data-theme='dark'] .featureImage {
   text-decoration: none;
   margin-right: 10px;
   border-radius: 20px;
-}
-
-
-
-//search
-.DocSearch .DocSearch-Hit[aria-selected='true'] a {
-  background-color: var(--ifm-hover-overlay);
-}
-
-.DocSearch-Button-Keys,
-.DocSearch-Button-Placeholder {
-  display: none !important;
-}
-
-.DocSearch.DocSearch-Button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 0;
-  padding-right: 0;
-  width: 28px;
-  height: 28px;
-}
-
-.DocSearch .DocSearch-Form {
-  border-radius: 0;
-  border-bottom: 1px solid var(--docsearch-muted-color);
-}
-
-.DocSearch .DocSearch-Footer {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-top: 1px solid var(--docsearch-muted-color);
-}
-
-.DocSearch .DocSearch-Search-Icon {
-  color: var(--ifm-color-emphasis-600);
-}
-
-.DocSearch .DocSearch-Hit[aria-selected='true'] mark {
-  color: var(--docsearch-highlight-color) !important;
-  text-decoration: none;
 }

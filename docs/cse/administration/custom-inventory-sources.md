@@ -11,17 +11,17 @@ This topic explains how you can extract inventory data from logs in Sumo Logic a
 
 CSE uses _inventory data_—information about hosts and users in your environment—to provide context to Signals. Inventory data can also be used in Entity Groups to set attributes on Entities (users, hosts, and so on); those attributes can be later used in detection rule definitions, to adjust the severity of Signals (using criticality), and for further context in Signals.
 
-Sumo Logic provides a number of [Sources](https://help.sumologic.com/03Send-Data/Sources) you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. For more information, see [Inventory Sources and Data](https://help.sumologic.com/Cloud_SIEM_Enterprise/Administration/Inventory_Sources_and_Data).
+Sumo Logic provides a number of Sources you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. For more information, see [Inventory Sources and Data](docs/cse/administration/inventory-sources-and-data.md).
 
 
 ## How it works
 
-In the steps below, you’ll configure a Sumo Logic [scheduled search](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Scheduled-Searches) that returns inventory data that’s been ingested by your inventory source. You configure a Webhook connection as the alert type for the scheduled search. The webhook’s payload is inventory data, and its destination is an HTTP Source that you’ve set up to receive the data.
+In the steps below, you’ll configure a Sumo Logic [scheduled search](docs/alerts/scheduled-searches/index.md) that returns inventory data that’s been ingested by your inventory source. You configure a Webhook connection as the alert type for the scheduled search. The webhook’s payload is inventory data, and its destination is an HTTP Source that you’ve set up to receive the data.
 
 
 ## Before you start
 
-Identify your source of inventory data and review the [CSE inventory schema](#heading=h.1zpi6gfzfm2) below. The schema identifies the attributes supported for the two different CSE inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#heading=h.2l1fwvp3q4we) below.
+Identify your source of inventory data and review the [CSE inventory schema](#cse-inventory-schema) below. The schema identifies the attributes supported for the two different CSE inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#step-2-create-a-webhook-connection) below.
 
 
 ## Step 1: Set up an HTTP Source
@@ -29,7 +29,7 @@ Identify your source of inventory data and review the [CSE inventory schema](#he
 In this step, you configure an HTTP Source that will receive the inventory data from the Webhook you’ll set up later in this procedure. You can add the source to an existing Hosted Collector or configure a new collector.
 
 1. Go to **Manage Data > Collection > Collection** in the Sumo Logic UI.
-2. Navigate to an existing Hosted Collector, or if you prefer to set up a new one, follow the instructions in [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+2. Navigate to an existing Hosted Collector, or if you prefer to set up a new one, follow the instructions in [Configure a Hosted Collector](docs/send-data/hosted-collectors/configure-hosted-collector.md).
 3. In the row for the Hosted Collector, click **Add Source**. <br/><img src={useBaseUrl('img/cse/add-source-link.png')} alt="add-source-link.png" />
 4. Click **HTTP Logs & Metrics.**  <br/><img src={useBaseUrl('img/cse/select-source.png')} alt="select-source.png" />
 5. The source configuration page appears. <br/><img src={useBaseUrl('img/cse/http-source.png')} alt="http-source.png" />
@@ -53,35 +53,28 @@ In this step you create a WebHook that points to the HTTP source.
 5. On the **Create New Webhook** page:
     1. **Name**. Enter a name for the Webhook.
     2. **URL**. Enter the URL of the HTTP Source you created above.
-    3. **Payload**. Enter a JSON object <br/>!<img src={useBaseUrl('img/cse/create-webhook.png')} alt="create-webhook.png" "/>
+    3. **Payload**. Enter a JSON object <br/><img src={useBaseUrl('img/cse/create-webhook.png')} alt="create-webhook.png" width="500"/>
 
 ## Step 3: Create search query
 
-In this step, you create a log query that extracts inventory-related fields from your inventory source	. Refer to [CSE inventory schema](#heading=h.1zpi6gfzfm2) for the inventory attributes that are supported for host and user objects.
+In this step, you create a log query that extracts inventory-related fields from your inventory source. Refer to [CSE inventory schema](#heading=h.1zpi6gfzfm2) for the inventory attributes that are supported for host and user objects.
 
 
 ## Step 4: Create a Scheduled Search
 
 In this step, you schedule the search you created above to send results to the Webhook you created.
 
-
-
 1. In your log search tab, click **Save As**.
 2. On the Save Item popup,
     1. **Name**. Enter a name for your search,
     2. **Time range**. Select a time range.
-    3. **Click Schedule This Search**.  \
-
-<img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" width="<insert-pixel-number>"/>
+    3. **Click Schedule This Search**. <br/><img src={useBaseUrl('img/cse/save-item-inv.png')} alt="save-item-inv.png" width="450"/>
     4. The popup refreshes.
     5. **Run Frequency**.
     6. **Time range for scheduled search**.
     7. **Timezone for scheduled search**.
     8. **Alert Type**. Select Webhook,  and pick the one you created that goes to the HTTP Endpoint. Check Send a separate alert for each search result.
-    9. **Location to save to**. Choose a folder location for the search. \
- \
-
-<img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" width="<insert-pixel-number>"/>
+    9. **Location to save to**. Choose a folder location for the search. <br/><img src={useBaseUrl('img/cse/save-item-4.png')} alt="save-item-4.png" width="450"/>
 
 ## CSE inventory schema
 
@@ -259,30 +252,32 @@ The table below lists attributes most typically used in user inventory records. 
 
  The search below extracts inventory fields from JAMF logs.
 
-_`sourceCategory="security/jamf" and _collector="Jamf" \
-| json field _raw "event.computer.osVersion as os_version \
-| json field _raw "event.computer.deviceName as hostname \
-| json field _raw "event.computer.deviceName as hostname \
-| json field _raw "event.computer.ipAddress as ip \
-| json field _raw "event.computer.macAddress as mac \
-| json field _raw "event.computer.username as username \
-| json field _raw "event.computer.emailAddress as email \
-| json field _raw "event.computer.position as role \
-| where !(isEmpty(username)) \
-| count by os_version, hostname, ip, mac, username,email, role`
+```json
+_sourceCategory="security/jamf" and _collector="Jamf"
+| json field _raw "event.computer.osVersion as os_version
+| json field _raw "event.computer.deviceName as hostname
+| json field _raw "event.computer.deviceName as hostname
+| json field _raw "event.computer.ipAddress as ip
+| json field _raw "event.computer.macAddress as mac
+| json field _raw "event.computer.username as username
+| json field _raw "event.computer.emailAddress as email
+| json field _raw "event.computer.position as role
+| where !(isEmpty(username))
+| count by os_version, hostname, ip, mac, username,email, role
+```
 
 **Notes**
 
 
 
-* `_collector` and <code>_sourceCategory<strong> </strong></code>and specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) fields to scope your search. \
+* `_collector` and `_sourceCategory` and specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](docs/search/get-started-with-search/search-basics/built-in-metadata.md) fields to scope your search.
 
 
 
 ### Webhook payload for User Entity
 
 
-```
+```json
 {
 "userId": "{{Results.email}}",
 "username": "{{Results.username}}",
@@ -294,10 +289,11 @@ _`sourceCategory="security/jamf" and _collector="Jamf" \
 "customInventory": true,
 "type": "user"
 }
-
+```
 
 ### Webhook payload for Computer Entity
 
+```json
 {
 "computername": "{{Results.hostname}}",
 "hostname": "{{Results.hostname}}",
@@ -317,8 +313,6 @@ _`sourceCategory="security/jamf" and _collector="Jamf" \
 **Notes**
 
 
-
-* In the `sumoFields` element, the `siemdatatype` field is set to the value _inventory_. You must include this in your webhook payload.
 * The `source` key is an arbitrary string that identifies the source of the inventory data.
 * The `customInventory` key identifies the payload as custom inventory data. You must include this in your webhook payload.
-* The `type` key specifies what type of inventory data the webhook sends. Set the value to _user_ or _computer. _You must include this in your webhook payload.
+* The `type` key specifies what type of inventory data the webhook sends. Set the value to _user_ or _computer_. You must include this in your webhook payload.

@@ -65,5 +65,5 @@ m2: (0, 6) (1, 6) (2, 6)
 This query returns the rate of change per second for the metric.
 
 ```
-metrics query | sum | eval 1000 * _value/_granularity
+metrics query | sum | eval 1000 * _value/ _granularity
 ```
