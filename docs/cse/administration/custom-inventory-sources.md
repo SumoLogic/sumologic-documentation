@@ -291,7 +291,7 @@ The table below lists attributes most typically used in user inventory records. 
 
 ### Webhook payload for Computer Entity
 
-```
+```json
 {
 "computername": "{{Results.hostname}}",
 "hostname": "{{Results.hostname}}",
