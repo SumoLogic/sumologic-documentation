@@ -1706,6 +1706,7 @@
   "/Release_Archive/Quick-Start-Tutorial(deprecated)/01_Sumo_Logic_Quick_Start_Tutorial": "/",
   "/Release-Notes": "/docs/releasenotes",
   "/Release-Notes/Collector-Release-Notes": "/docs/releasenotes/collector",
+  "/Solutions/AWS_Observability_Solution": "/docs/observability",
   "/Traces/01Getting_Started_with_Transaction_Tracing": "/docs/apm/traces/get-started-transaction-tracing",
   "/Traces/02Working_with_Tracing_data/02Tracing_Dashboards": "/docs/apm/traces/working-with-tracing-data/tracing-dashboards",
   "/Traces/02Working_with_Tracing_data/03View_and_investigate_traces": "/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces",
