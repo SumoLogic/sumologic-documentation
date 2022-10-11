@@ -316,7 +316,7 @@ const features4 = [
       message: 'SOAR',
       description: 'Title for SOAR',
     }),
-    imageUrl: 'img/icons/security/soc.png',
+    imageUrl: 'img/icons/security/SOC.png',
     description: (<Translate
       id="landing.feature.soar.desc"
       description="SOAR description">
