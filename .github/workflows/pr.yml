@@ -8,17 +8,9 @@ on:
 jobs:
     build-and-deploy:
       runs-on: ubuntu-20.04
-      environment:
-        name: ${{ inputs.environment }}
-        url: ${{ inputs.hostname }}${{ inputs.base_url }}
       env:
           CI: true
           NODE_ENV: production
-          AWS_PAGER: ""
-          HOSTNAME: ${{ inputs.hostname }}
-          BASE_URL: ${{ inputs.base_url }}
-          AWS_DEFAULT_REGION: us-east-1
-          AWS_EC2_METADATA_DISABLED: "true"
       steps:
         - uses: actions/checkout@v2.4.0
         - name: Set up Node.js
@@ -26,10 +18,11 @@ jobs:
           with:
             node-version: '17.x'
             cache: 'yarn'
-        - name: Install awscli
-          uses: unfor19/install-aws-cli-action@v1
-        - name: Install jq
-          run: sudo apt-get install jq
+        - name: Docusaurus Webpack cache
+          uses: actions/cache@v3
+          with:
+            path: node_modules/.cache
+            key: ${{ runner.os }}-webpack-cache
         - name: Install dependencies
           run: yarn install --frozen-lockfile
         - name: Build the Docusaurus site

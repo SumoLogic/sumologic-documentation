@@ -42,7 +42,7 @@ See details on how [Scheduled Searches are different](difference-scheduled-searc
 * A Log Monitor can have one query up to 4,000 characters long. Metric Monitors can specify up to six queries.
 * Email notifications can have up to 100 recipients.
 * [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md) (auto-parse mode) is not supported.
-* The timeshift [metrics operator](/docs/metrics/metric-queries-alerts/operators) is not supported in a Metric Monitor.
+* The timeshift [metrics operator](/docs/metrics/metrics-operators) is not supported in a Metric Monitor.
 * [Hidden Metrics queries](../../metrics/metric-queries-alerts/metrics-explorer.md) do not persist across edit sessions.
 * The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.
 
@@ -203,7 +203,7 @@ Trigger alerts on:
 You can set the trigger based on the following:
 
 * **returned row count** (default): the number of rows returned from the log search.
-* A numeric field returned from the search. You can pick any numeric field from your query, and alert on the value of that field. The field is `_count` in the above screenshot. To convert a string to a number use the [num operator](/docs/search/search-query-language/operators#num). For example, if you have a field named **duration** you would use the num operator as follows to convert it to a number value.
+* A numeric field returned from the search. You can pick any numeric field from your query, and alert on the value of that field. The field is `_count` in the above screenshot. To convert a string to a number use the [num operator](/docs/search/search-query-language/search-operators/num). For example, if you have a field named **duration** you would use the num operator as follows to convert it to a number value.
 
 `| num(duration)`
 

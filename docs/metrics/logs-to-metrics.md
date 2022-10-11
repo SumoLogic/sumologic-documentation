@@ -16,7 +16,7 @@ Once you have extracted or created metrics from your log data, you can use them 
 
 ## Logs-to-Metrics best practices and limitations
 
-This section describes best practices and limitations that apply to Logs-to-Metrics rules.
+This section describes best practices and limitations that apply to Logs-to-Metrics rules. 
 
 ### No aggregations or timeslicing
 

@@ -124,7 +124,7 @@ To install the Sumo Logic App for Amazon Inspector:
 3. To install the app, complete the following fields.
     * **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a [custom data filter](/docs/get-started/sumo-logic-apps#custom-data-filters). 
+        * Choose **Enter a Custom Data Filter**, and enter a [custom data filter](/docs/get-started/apps-integrations#custom-data-filters). 
     * **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 
@@ -155,5 +155,5 @@ The top panel of the dashboard presents:
 The other panels on the dashboard, for Critical, High, Medium, and Low Severity findings, have similar content. The only difference is they each are filtered by the listed severity level.
 
 * Severity Findings. The count of findings at this severity during the last 24 hours by default, or during the currently selected time range.  
-* Severity [Outliers](/docs/search/search-query-language/operators#outlier). Shows the trending volume of findings at this severity level during the last 24 hours by default, or during the currently selected time range. The gray shaded area corresponds to 3 standard deviations of the past 10 mean values. Pink triangles show values that exceed that threshold and are likely points of investigation considering the large change in volume of findings.
+* Severity [Outliers](/docs/search/search-query-language/search-operators/outlier). Shows the trending volume of findings at this severity level during the last 24 hours by default, or during the currently selected time range. The gray shaded area corresponds to 3 standard deviations of the past 10 mean values. Pink triangles show values that exceed that threshold and are likely points of investigation considering the large change in volume of findings.
 * Last 20 Severity Findings. A table detailing the 20 most recent findings at this severity level.
