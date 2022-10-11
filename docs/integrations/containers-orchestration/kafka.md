@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/kafka.png')} alt="icon" width="75"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/kafka.png')} alt="icon" width="150"/>
 
 This guide provides an overview of Kafka related features and technologies. In addition, it contains recommendations on best practices, tutorials for getting started, and troubleshooting information for common situations.
 
