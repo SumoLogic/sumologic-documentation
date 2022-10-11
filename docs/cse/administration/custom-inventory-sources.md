@@ -252,7 +252,7 @@ The table below lists attributes most typically used in user inventory records. 
 
  The search below extracts inventory fields from JAMF logs.
 
-```
+```json
 _sourceCategory="security/jamf" and _collector="Jamf"
 | json field _raw "event.computer.osVersion as os_version
 | json field _raw "event.computer.deviceName as hostname
@@ -277,7 +277,7 @@ _sourceCategory="security/jamf" and _collector="Jamf"
 ### Webhook payload for User Entity
 
 
-```
+```json
 {
 "userId": "{{Results.email}}",
 "username": "{{Results.username}}",
