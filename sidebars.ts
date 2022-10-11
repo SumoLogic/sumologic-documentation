@@ -1555,6 +1555,7 @@ module.exports = {
         'observability/troubleshoot',
         'observability/reliability-management-slo',
         'observability/root-cause-explorer',
+        'observability/work-from-home-vpn',
       ],
     },
     {
