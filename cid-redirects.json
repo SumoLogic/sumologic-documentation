@@ -1683,6 +1683,8 @@
   "/Metrics/Metrics_Transformation_Rules": "/docs/metrics/metrics-transformation-rules",
   "/Metrics/Understand_and_Manage_Metric_Volume/Disabled_Metrics_Sources": "/docs/metrics/manage-metric-volume/disabled-metrics-sources",
   "/Metrics/Understand_and_Manage_Metric_Volume/Metric_Throttling": "/docs/metrics/manage-metric-volume/metric-throttling",
+  "/Metrics/Metric-Queries-and-Alerts/07Metrics_Operators/accum": "/docs/metrics/metrics-operators/accum",
+  "/Metrics/Metric-Queries-and-Alerts/07Metrics_Operators/along": "/docs/metrics/metrics-operators/along",
   "/N/A": "/docs/send-data/hosted-collectors/cloud-syslog-source",
   "/Observability_Solution/AWS_Observability_Solution": "/docs/observability/aws",
   "/Observability_Solution/Application_Component_Solution/View_Application_Components_Dashboards_and_Alerts": "/docs/observability/app-components",
