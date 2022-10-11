@@ -17,11 +17,9 @@ AWS Observability Solution (S3 Link for cloudformation template): `https://sumol
 AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
 
 Enhancements / Updates:
-
 * Updated runtime of nodeJS 12.x lambdas to nodeJS 16.x.
 
 Bug Fixes:
-
 * Fixed FER (AwsObservabilityGenericCloudWatchLogsFER) that was mapping ECS namespace aws/ecs to ecs/containerInsights.
 
 
