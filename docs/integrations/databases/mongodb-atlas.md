@@ -229,7 +229,7 @@ By default, the collection starts from the current date and time, but this setti
 
 ### Step 1: Acquire Authentication Info from MongoDB Atlas Portal
 
-This section shows you how to acquire MongoDB Atlas portal authentication information. If you're using IP allowlisting in an AWS Lambda based deployment, you will have to allowlist all of the IPs in the AWS region. AWS provides a [URL](https://ip-ranges.amazonaws.com/ip-ranges.json) to fetch IPs that returns a JSON file. You can use the [Atlas APIs](https://docs.atlas.mongodb.com/reference/api/whitelist/) to automate this process.
+This section shows you how to acquire MongoDB Atlas portal authentication information. If you're using IP allowlisting in an AWS Lambda based deployment, you will have to allowlist all of the IPs in the AWS region. AWS provides a [URL](https://ip-ranges.amazonaws.com/ip-ranges.json) to fetch IPs that returns a JSON file. You can use the [Atlas APIs](https://www.mongodb.com/docs/atlas/api/) to automate this process.
 1. Generate programmatic API Keys with project owner permissions using the instructions in the Atlas [documentation](https://docs.atlas.mongodb.com/configure-api-access/#create-an-api-key-for-a-project). Then, copy the public key and private key. These serve the same function as a username and API Key respectively.
 2. Specify the API key **Organization Member** permissions, under **Organization > Access Manager > API Keys**, as shown in the following example.
 3. Go to **Project Settings** > **Access Manager** > **API Keys** and then click on **Invite To Project** to add the API key created above for this project as shown in the following example.

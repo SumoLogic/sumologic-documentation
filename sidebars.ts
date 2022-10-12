@@ -184,6 +184,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source',
@@ -1554,6 +1555,7 @@ module.exports = {
         'observability/troubleshoot',
         'observability/reliability-management-slo',
         'observability/root-cause-explorer',
+        'observability/work-from-home-vpn',
       ],
     },
     {
