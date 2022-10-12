@@ -639,14 +639,15 @@ html[data-theme='dark'] .navbar-item-github:before {
 .getstarted {
   background-color: #0046BE;
   color: white;
-  padding: 8px 14px;
+  padding: 12px 14px;
   font-weight: 300;
   font-size: 15px;
 //  filter: drop-shadow(-1px 2px 2px #64696C);
   text-decoration: none;
-  border: .25px solid #000;
+  border: .5px solid #000;
   border-radius: 4px;
   margin-right: 5px;
+  margin-bottom: 10px;
   cursor: pointer;
   a {
     color: white;
@@ -661,11 +662,11 @@ html[data-theme='dark'] .navbar-item-github:before {
 .getstarted:hover {
   background-color: #1a55ba;
   color: black;
-  padding: 8px 14px;
+  padding: 12px 14px;
   font-weight: 300;
   font-size: 15px;
   text-decoration: none;
-  border: .25px solid #FFF;
+  border: .5px solid #8C9296;
   cursor: pointer;
   a {
     color: white;
@@ -676,8 +677,6 @@ html[data-theme='dark'] .navbar-item-github:before {
   }
 }
 
-
-
 .getstarted-mobile {
   background-color: #0046BE;
   color: white;
@@ -687,7 +686,7 @@ html[data-theme='dark'] .navbar-item-github:before {
   border: 1px solid #3578e5;
   cursor: pointer;
   margin-right: 5px;
-  margin-right: 10px;
+  margin-bottom: 5px;
 }
 
 
@@ -1493,26 +1492,25 @@ html[data-theme='dark'] .featureImage {
 
 
 .beta {
-  background: solid var(--ifm-toc-border-color);;
+  background: #C6007E;
   color: white;
   font-weight: 600;
   font-size: 16px;
-  padding: 6px 18px;
+  padding: 8px 20px;
   text-decoration: none;
-  margin-left: 10px;
-  border-radius: 8px;
-  border: .5px solid #FFFFFF;
+  margin-right: 10px;
+  border-radius: 10px;
 }
 
 .beta:hover {
-  background: solid var(--ifm-toc-border-color);
+  background: #C6007E;
   color: white;
   font-weight: 600;
   font-size: 16px;
-  padding: 6px 18px;
+  padding: 8px 20px;
   text-decoration: none;
-  margin-left: 10px;
-  border-radius: 8px;
+  margin-right: 10px;
+  border-radius: 10px;
   border: .5px solid #FFFFFF;
 }
 
