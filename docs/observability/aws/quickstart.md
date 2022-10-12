@@ -29,7 +29,7 @@ values={[
 
 <TabItem value="Windows">
 
-Copy the file available here. Save it as “DeployAWSOWin.ps1”. Run the command:
+Copy the file available [here](https://github.com/SumoLogic/sumologic-solution-templates/blob/ad7b301522b2afb6abfb9cd388761f3ecf74d1db/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOWin.ps1). Save it as “DeployAWSOWin.ps1”. Run the command:
 
 ```
 .\DeployAWSOWin.ps1 <SUMO_ACCESS_ID> <SUMO_ACCESS_KEY>
@@ -39,7 +39,7 @@ Copy the file available here. Save it as “DeployAWSOWin.ps1”. Run the comman
 </TabItem>
 <TabItem value="Linux / Mac">
 
-Copy the file available here. Save it as “DeployAWSOPosix.sh”. Run the command:
+Copy the file available [here](https://github.com/SumoLogic/sumologic-solution-templates/blob/ad7b301522b2afb6abfb9cd388761f3ecf74d1db/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOPosix.sh). Save it as “DeployAWSOPosix.sh”. Run the command:
 ```
 sh DeployTemplate.sh <SUMO_ACCESS_ID> <SUMO_ACCESS_KEY>
 ```
