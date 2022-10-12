@@ -1,5 +1,4 @@
 Algolia-Crawler-Verif: 93DC02B14B7F416E
 
 User-agent: *
-Disallow:
-Sitemap: https://help.sumologic.com/sitemap.xml
+Disallow: /sitemap.xml
