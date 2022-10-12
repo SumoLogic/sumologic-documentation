@@ -392,6 +392,7 @@ module.exports = {
           {
             label: 'Release Notes',
             position: 'left',
+            to: '#',
             type: 'dropdown',
             items:[
               {
