@@ -50,9 +50,56 @@ In this step, you configure a Syslog Source to collect Palo Alto Firewall log me
     1. If you have not configured the Installed Collector to parse all sources in the collector with the same parser, click the **+Add Field** link, and add a field whose name is `_parser` with the value */Parsers/System/Palo Alto/PAN Firewall CSV*. 
 1. Click **Save**.
 
-## Step 2: Configure Palo Alto Firewall
+## Step 2: Define destination for the logs
+
+In this step you create a server profile where you can define the log destination. This will be the host name, port and protocol (TLS) of the Sumo Logic Cloud Syslog source.
+
+To create a server profile specifying the log destination, do the following:
+
+1. Login to the Palo Alto Networks Web interface as an administrative user.
+2. Select Device tab > Server Profiles > Syslog.
+3. Click Add at the bottom of the screen and provide endpoint details and a profile name, such as Sumo_Logs_Profile01.
+4. In the Syslog Server Profile window, select the Servers tab and click Add.
+5. In the Servers window, specify the following information:
+    a. Name. Sumo_CloudSyslog_EndPoint01
+    b. Syslog Server. Internal IP of Collector
+    c. Transport. UDP
+    d. Port. Port from Collector Setup
+    e. Format. BSD
+    f. Facility. LOG_USER
+6. In the Syslog Server Profile window, select the Custom Log Format tab, and use the following custom formats for the following log types:
+ 
+Config
+,$receive_time,$serial,$type,$subtype,,$time_generated,$host,$vsys,$cmd,$admin,$client,$result,$path,$before-change-detail,$after-change-detail,$seqno,$actionflags,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name
+
+System
+,$receive_time,$serial,$type,$subtype,,$time_generated,$vsys,$eventid,$object,,,$module,$severity,$opaque,$seqno,$actionflags,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name 
+
+Threat
+,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$misc,$threatid,$category,$severity,$direction,$seqno,$actionflags,$srcloc,$dstloc,,$contenttype,$pcap_id,$filedigest,$cloud,$url_idx,$user_agent,$filetype,$xff,$referer,$sender,$subject,$recipient,$reportid,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,,$src_uuid,$dst_uuid,$http_method,$tunnel_id/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$thr_category,$contentver,,$assoc_id,$ppid,$http_headers,$url_category_list,$rule_uuid,$http2_connection 
+
+Traffic
+,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,$sec,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection 
+
+HIPMatch
+,$receive_time,$serial,$type,$subtype,,$time_generated,$srcuser,$vsys,$machinename,$os,$src,$matchname,$repeatcnt,$matchtype,,,$seqno,$actionflags,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$vsys_id,$srcipv6,$hostid
+
+USERID
+,$receive_time,$serial,$type,$subtype,,$time_generated,$vsys,$ip,$user,$datasourcename,$eventid,$repeatcnt,$timeout,$beginport,$endport,$datasource,$datasourcetype,$seqno,$actionflags,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$vsys_id,$factortype,$factorcompletiontime,$factorno,,,$ugflags,$userbysource
+
+GlobalProtect
+,$receive_time,$serial,$type,$subtype,,$time_generated,$vsys,$eventid,$stage,$auth_method,$tunnel_type,$srcuser,$srcregion,$machinename,$public_ip,$public_ipv6,$private_ip,$private_ipv6,$hostid,$serialnumber,$client_ver,$client_os,$client_os_ver,$repeatcnt,$reason,$error,$opaque,$status,$location,$login_duration,$connect_method,$error_code,$portal,,$seqno,$actionflags
+
+
+7. Click OK.
+8. Commit the changes.
+
+
+## Step 3: Configure Palo Alto Firewall
 
 In this step you configure Palo Alto Firewall to send log messages to the Sumo Logic platform. Follow Palo Alto documentation to [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/configure-log-forwarding). 
+
+
 
 ## Step 3: Verify ingestion
 
