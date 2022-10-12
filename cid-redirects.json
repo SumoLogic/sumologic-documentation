@@ -449,7 +449,6 @@
   "/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker/01-Collect-Logs-and-Metrics-from-Docker": "/docs/integrations/containers-orchestration/docker-community-edition",
   "/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker/Docker-App-Dashboards": "/docs/integrations/containers-orchestration/docker-community-edition",
   "/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kafka": "/docs/integrations/containers-orchestration/kafka",
-  "/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App": "/docs/integrations/containers-orchestration/kafka",
   "/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Install_the_Kubernetes_App%2C_Alerts%2C_and_view_the_Dashboards": "/docs/integrations/containers-orchestration/kafka",
   "/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kafka/Collect_Logs_and_Metrics_for_Kafka": "/docs/integrations/containers-orchestration/kafka",
   "/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kafka/Install_the_Kafka_App%2C_Alerts%2C_and_view_the_Dashboards": "/docs/integrations/containers-orchestration/kafka",
