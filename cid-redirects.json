@@ -637,7 +637,7 @@
   "/Beta/Cloud-to-Cloud_Integration_Framework/Cylance_Source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cylance-source",
   "/Beta/Metrics-Rules": "/docs/metrics/metric-rules-editor",
   "/Manage/Account/Delete_the_Organization_for_a_Free_or_Trial_Account": "/docs/get-started/sign-up",
-  "/Manage/Users-and-Roles/Manage-Roles/Role-Capabilities": "/docs/manage/users-roles",
+  "/Manage/Users-and-Roles/Manage-Roles/Role-Capabilities": "/docs/manage/users-roles/roles/create-manage-roles",
   "/Metrics/Metric-Queries-and-Alerts/07Metrics_Operators/filter": "/docs/metrics/metrics-operators",
   "/Traces/01Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_AWS_environments": "/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-aws-environments",
   "/Traces/01Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_Kubernetes_environments": "/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments",
