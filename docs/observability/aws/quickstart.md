@@ -39,7 +39,6 @@ Copy the file available here. Save it as “DeployAWSOWin.ps1”. Run the comman
 </TabItem>
 <TabItem value="Linux / Mac">
 
-For :
 Copy the file available here. Save it as “DeployAWSOPosix.sh”. Run the command:
 ```
 sh DeployTemplate.sh <SUMO_ACCESS_ID> <SUMO_ACCESS_KEY>
