@@ -31,6 +31,7 @@ module.exports = {
       async: true,
     },
   ],
+  staticDirectories: ['static'],
   i18n: {
     // https://docusaurus.io/docs/i18n/tutorial
     defaultLocale: 'en',
