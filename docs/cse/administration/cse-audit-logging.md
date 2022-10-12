@@ -66,7 +66,7 @@ The table below shows the `_sourceCategory` that is assigned to event logs by CS
 | [Custom Insight](cse-audit-logging.md) | `cseCustomInsight` |
 | [Custom Match List Column](../match-lists-suppressed-lists/custom-match-list-columns.md) | `cseCustomMatchListColumn` |
 | [Custom Tag Schema](create-a-custom-tag-schema.md) | `cseCustomTagSchema` |
-| [Customer Sourced Entity Lookup Table](docs/cse/records-signals-entities-insights/save-inventory-data-lookup-table.md) | `cseCustomerSourcedEntityLookupTable` |
+| [Customer Sourced Entity Lookup Table](docs/cse/administration/save-inventory-data-lookup-table.md) | `cseCustomerSourcedEntityLookupTable` |
 | [Entity](../records-signals-entities-insights/view-manage-entities.md)  | `cseEntity` |
 | [Entity Criticality Config](../records-signals-entities-insights/entity-criticality.md) | `cseEntityCriticalityConfig` |
 | [Entity Domain Configuration](../schema/username-and-hostname-normalization.md)  | `cseEntityNormalization` |
