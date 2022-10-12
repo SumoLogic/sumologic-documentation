@@ -52,7 +52,7 @@ two additional properties `%property{trace_id}` and `%property{span_id}`
 <appender name="textFileAppender" type="log4net.Appender.FileAppender">
             <file value="log-log4net-textFile.log" />
             <layout type="log4net.Layout.PatternLayout">
-                <conversionPattern value="%date [%thread] %level %logger  %property{trace_id} %property{span_id} - %message%newline" />
+                <conversionPattern value="%date [%thread] %level %logger trace_id=%property{trace_id} span_id=%property{span_id} - %message%newline" />
             </layout>
         </appender>
 ```
