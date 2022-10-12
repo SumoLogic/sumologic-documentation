@@ -64,10 +64,6 @@ In an AWS account, you can choose resources hosted in multiple locations worldwi
 
 
 ### Sumo Logic Apps for AWS Observability
-8
-
-9
-
 
 The AWS Observability Solution provides an intuitive dashboard framework that mirrors industry-standard AWS hierarchies using a suite of Sumo Logic apps that provide insights into AWS operational and security services across an entire AWS infrastructure.
 
