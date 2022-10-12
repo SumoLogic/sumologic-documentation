@@ -1,18 +1,28 @@
 ---
 id: service
 title: Service Release Notes
-sidebar_label: Service
 description: Looking for more information about new features in the Sumo Logic Service? We'll post here about what's new and exciting with each release.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Service Release Notes for the current year are listed here. If you need to see previous Service Release Notes, check the [Archive](/docs/releasenotes/archive).
+Service Release Notes (metrics, apps, traces, observability, search, and more) for the current year are listed here. To view previous Service Release Notes, check the [Archive](/docs/releasenotes/archive).
+
+---
+## October 7, 2022 (Manage)
+
+Update - We’ve released an improved, re-organized UI for Data Forwarding. There are now separate pages for managing different types of data forwarding destinations:  
+
+* Destinations that receive data forwarded from Sumo Logic partitions or scheduled views are still managed on the **Manage Data \> Logs \> Data Forwarding** page.
+* Destinations that receive data from Installed Collectors are managed on a new page: **Manage Data \> Collection \> Data Archiving** page.
+
+For more information see [Forward Data from Sumo Logic to S3](docs/manage/data-forwarding/amazon-s3-bucket.md) and [Forward Data from an Installed Collector](/docs/manage/data-forwarding/installed-collectors.md).
+
 
 ---
 ## October 3, 2022 (Search)
 
-Hash rules now support [256 for OpenTelemetry collectors](/docs/send-data/collection/processing-rules/hash-rules). 
+Hash rules now support [256 for OpenTelemetry collectors](/docs/send-data/collection/processing-rules/hash-rules).
 
 ---
 ## September 30, 2022 (Traces)
@@ -23,6 +33,12 @@ Additionally, we now also support:
 * [Scheduled Searches](/docs/alerts/scheduled-searches) for Traces
 * [Scheduled Views](/docs/manage/scheduled-views) for Traces
 
+---
+## September 30, 2022 (Alerts)
+
+Update - We are happy to announce the release of new functionality for Entity Inspector. With the latest update, Entity Inspector will now be able to suggest related Entities from different domains based on your tracing data. This functionality will allow quickly switching context between application and infrastructure domain, making it easier to respond to alerts and investigate issues that require correlating data from both applications and infrastructure. This functionality is available by default to all customers.
+
+<img src={useBaseUrl('img/release-notes/service/alert-rel-note2.png')} alt="alert-rel" width="450"/>
 
 ---
 ## September 22, 2022 (Security)
@@ -38,8 +54,8 @@ Update - We've updated the release note published on August 30, 2022, which inco
 
 New - We're happy to announce two new metrics operators:
 
-* [ewma](docs/metrics/metric-queries-alerts/operators.md#ewma)—Computes an exponentially weighted moving average on a stream of metrics. This allows you to smooth out short-term fluctuations (outliers) and display long-term trends.
-* [where](docs/metrics/metric-queries-alerts/operators.md#where)—Allows you to filter data points by value.
+* [ewma](/docs/metrics/metrics-operators/ewma)—Computes an exponentially weighted moving average on a stream of metrics. This allows you to smooth out short-term fluctuations (outliers) and display long-term trends.
+* [where](/docs/metrics/metrics-operators/where)—Allows you to filter data points by value.
 
 ---
 ## September 27, 2022 (Observability)
@@ -125,8 +141,8 @@ This new functionality requires RUM script in version 4 or higher (`https://rum.
 
 We're delighted to announce the availability of these new operators:
 
-* [stddev](docs/metrics/metric-queries-alerts/operators.md#stddev)—Calculates the standard deviation of the metrics values that match the query.
-* [in](docs/metrics/metric-queries-alerts/operators.md#in)—You can use this operator in a metrics query selector as shorthand for multiple OR conditions.
+* [stddev](/docs/metrics/metrics-operators/stddev)—Calculates the standard deviation of the metrics values that match the query.
+* [in](/docs/metrics/metrics-operators/in)—You can use this operator in a metrics query selector as shorthand for multiple OR conditions.
 
 ---
 ## August 25, 2022 (Collection)
@@ -259,7 +275,7 @@ Update - The Sumo Logic App for [AWS Application Load Balancer](/docs/integratio
 
 New - Care to comment? Now you can. In the [Metrics Explorer,](/docs/metrics/metric-queries-alerts/metrics-explorer) in Advanced Mode you can add comments to a metrics query and comment out portions of the query by using comment formatting. Comments are helpful for troubleshooting during query development, and also for other users who may use or edit your queries at a later date—comments you add will be visible in saved and shared queries. For more information, see [Comments in Metric Queries](/docs/metrics/metric-queries-alerts/metrics-explorer).
 
-Update - The [eval](/docs/metrics/metric-queries-alerts/operators#eval) metrics operator has been enhanced to support a `_granularity` option that provides the length, in milliseconds, of the bucket used for quantization, for use in metric queries.
+Update - The [eval](/docs/metrics/metrics-operators#eval) metrics operator has been enhanced to support a `_granularity` option that provides the length, in milliseconds, of the bucket used for quantization, for use in metric queries.
 
 ---
 ## July 7, 2022 (Metrics)
@@ -556,7 +572,7 @@ New - If you are using [Sumo Logic Cloud SOAR](https://www.sumologic.com/solutio
 ---
 ## February 24, 2022 (Search)
 
-New - The [Search Query Language](/docs/search/search-query-language) has a new operator, [dedup](/docs/search/search-query-language/operators#dedup) allows you to:
+New - The [Search Query Language](/docs/search/search-query-language) has a new operator, [dedup](/docs/search/search-query-language/search-operators/dedup) allows you to:
 
 
 

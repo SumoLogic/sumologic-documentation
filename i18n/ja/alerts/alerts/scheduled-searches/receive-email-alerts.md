@@ -30,7 +30,7 @@ Scheduled searches are run according to the time zone of an individual's compute
 You can use variables to customize the subject of your email. You can also select the features you want to include in your email. For details, see [Create an Email Alert.](create-email-alert.md) 
 
 :::note
-The columns in an alert email are alphabetically ordered. To set the column order in the email alert, you can use the [fields](/docs/search/search-query-language/operators#fields) operator in your query. 
+The columns in an alert email are alphabetically ordered. To set the column order in the email alert, you can use the [fields](/docs/search/search-query-language/search-operators/fields) operator in your query. 
 :::
 
 ## Scheduled Search Email Alert Template

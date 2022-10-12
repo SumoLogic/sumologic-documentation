@@ -44,7 +44,7 @@ You can easily hide the **left nav bar** to enlarge the working area. Then, jus
 
 ### Access Apps, Admin features, and Help
 
-In the lower section of the left nav bar, you can access the [App Catalog](sumo-logic-apps.md), [Manage Data and Administration](/docs/manage) features, and [get help](#get-help-docs-community-and-more). 
+In the lower section of the left nav bar, you can access the [App Catalog](apps-integrations.md), [Manage Data and Administration](/docs/manage) features, and [get help](#get-help-docs-community-and-more). 
 
 ![TUI_App-Admin-Help.png](/img/get-started/ui/TUI_App-Admin-Help.png)
 
@@ -206,7 +206,7 @@ To see content that has been shared with you, do the following:
 
 After you start a search, you can “pin” it, and it will run in the background for up to 24 hours. If the search does not finish in that time frame, it is paused. You can restart the search at any time. Search results are available for three days.
 
-There is a limit of ten pinned searches per user. Also, queries that use the [save operator](docs/search/search-query-language/operators#save-lookups-classic) cannot be pinned.
+There is a limit of ten pinned searches per user. Also, queries that use the [save operator](docs/search/search-query-language/search-operators/save-classic) cannot be pinned.
 
 You must start a search for the Pin option to appear. Once a search is pinned, it cannot be unpinned, but it can be removed from the Pinned Searches tab.
 

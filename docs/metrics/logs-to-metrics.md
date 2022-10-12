@@ -1,8 +1,8 @@
 ---
 id: logs-to-metrics
 title: Logs-to-Metrics
-sidebar_label: Extract Metrics from Logs
 description: Set up rules to extract or create metrics from log data.
+tags: [logs to metrics, logs-to-metrics]
 ---
 
 The Logs-to-Metrics feature allows you to extract or create metrics from log data:

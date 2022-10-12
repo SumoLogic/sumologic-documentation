@@ -103,10 +103,6 @@ parse "user=\"*\" action=\"*\" sessionId=\"*\"" as user, action, sessionid
 
 The following operators can be used as part of the **Parse Expression** in an Ingest Time Field Extraction Rule.
 
-:::important
-The **multi** and **auto** options are not supported in FERs.
-:::
-
 * parse regex
 * parse anchor
 * parse nodrop
@@ -116,10 +112,16 @@ The **multi** and **auto** options are not supported in FERs.
 * keyvalue
 * num
 
+:::note
+The **multi** and **auto** options are not supported in FERs.
+:::
+
 
 ## Limitations
 
-Ingest Time FERs have the following limitations.
+The `parse multi` operator is not supported in FERs.
+
+Ingest Time FERs have the following limitations:
 
 * There is a limit of 50 Ingest Time rules and 200 fields. [Fields](docs/manage/fields.md) created as log metadata and from Ingest Time rules share the same quota of 200 fields. You can manage your fields on the [Fields](docs/manage/fields.md) page.
 * Ingest Time rule expressions are limited to a maximum of 16k (16,384) characters.

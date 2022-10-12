@@ -58,4 +58,4 @@ The boolean single value chart would look like the following.
 
 ## Sparkline
 
-The **Sparkline** option is available for metrics and logs queries. A log query requires your query to have a [timeslice](../../search/search-query-language/operators#timeslice-joinresults) operation and you will need to [sort](../../search/search-query-language/operators#sort) the timeslice as part of the query for the sparkling to render correctly.
+The **Sparkline** option is available for metrics and logs queries. A log query requires your query to have a [timeslice](../../search/search-query-language/search-operators/timeslice) operation and you will need to [sort](../../search/search-query-language/search-operators/sort) the timeslice as part of the query for the sparkling to render correctly.
