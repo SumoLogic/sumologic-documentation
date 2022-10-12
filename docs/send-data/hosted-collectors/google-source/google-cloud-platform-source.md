@@ -45,7 +45,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
 1. **Advanced Options for Logs**.
 
-  ![GCP advanced options Jan 12 22.png](/img/send-data/GCP-advanced-options.png)
+  ![GCP advanced options Jan 12 22.png](/img/send-data/GCP-advanced-options.png|width=70)
 
    * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
    * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be     determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
