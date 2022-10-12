@@ -1488,6 +1488,7 @@ module.exports = {
                   link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/index'},
                   items: [
                     'observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/deploy-multiple-accounts-regions',
+                    'observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/automatic-installation-script',
                     'observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/centralized-aws-cloudtrail-log-collection',
                   ],
                 },
