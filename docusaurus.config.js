@@ -98,9 +98,9 @@ module.exports = {
         },
         blog: {
           blogTitle: 'Sumo Logic Service Release Notes',
-          blogDescription: 'Sumo Logic Service Release Notes',
           blogSidebarTitle: '2022',
           blogSidebarCount: 'ALL',
+          blogDescription: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
           postsPerPage: 'ALL',
           path: 'blog-service',
           routeBasePath: 'release-notes-service',
@@ -111,7 +111,7 @@ module.exports = {
             type: 'rss', // https://help.sumologic.com/release-notes-service/rss.xml
             title: 'Sumo Logic Release Notes',
             description: 'Here you will find a chronological list of the newest Sumo Logic service features and bug fixes',
-            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+            copyright: `Copyright ©${new Date().getFullYear()} Sumo Logic`,
           },
         },
         theme: {
@@ -147,9 +147,9 @@ module.exports = {
          path: './blog-cse',
          archiveBasePath: 'archive',
          blogTitle: 'Sumo Logic Cloud SIEM Release Notes',
-         blogDescription: 'Sumo Logic Cloud SIEM Release Notes',
          blogSidebarTitle: '2022',
          blogSidebarCount: 'ALL',
+         blogDescription: 'New and enhanced Cloud SIEM features, updated content (like rules, log mappers and parsers), bug fixes, and other important announcements.',
          postsPerPage: 'ALL',
          showReadingTime: true, // When set to false, the "x min read" won't be shown
          readingTime: ({content, frontMatter, defaultReadingTime}) =>
@@ -157,7 +157,7 @@ module.exports = {
          feedOptions: {
            type: 'rss', // https://help.sumologic.com/release-notes-cse/rss.xml
            title: 'Sumo Logic Cloud SIEM Release Notes',
-           description: 'Here you will find a chronological list of the newest Sumo Logic Cloud SIEM features and bug fixes',
+           description: 'New and enhanced Cloud SIEM features, updated content (like rules, log mappers and parsers), bug fixes, and other important announcements.',
            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
          },
       },
@@ -169,7 +169,7 @@ module.exports = {
           path: './blog-developer',
           archiveBasePath: 'archive',
           blogTitle: 'Sumo Logic Developer Release Notes',
-          blogDescription: 'Sumo Logic Developer Release Notes',
+          blogDescription: 'New features and changes to our APIs and Live Tail CLI.',
           blogSidebarTitle: '2022',
           blogSidebarCount: 'ALL',
           postsPerPage: 'ALL',
@@ -179,7 +179,7 @@ module.exports = {
           feedOptions: {
             type: 'rss', // https://help.sumologic.com/release-notes-developer/rss.xml
             title: 'Sumo Logic Developer Release Notes',
-            description: 'Here you will find a chronological list of the newest Sumo Logic developer features and bug fixes',
+            description: 'Here you will find a chronological list of the newest Sumo Logic developer features and bug fixes.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
           },
        },
@@ -191,9 +191,9 @@ module.exports = {
           path: './blog-collector',
           archiveBasePath: 'archive',
           blogTitle: 'Sumo Logic Collector Release Notes',
-          blogDescription: 'Sumo Logic Collector Release Notes',
           blogSidebarTitle: '2022',
           blogSidebarCount: 'ALL',
+          blogDescription: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
           postsPerPage: 'ALL',
           showReadingTime: true, // When set to false, the "x min read" won't be shown
           readingTime: ({content, frontMatter, defaultReadingTime}) =>
