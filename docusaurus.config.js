@@ -109,7 +109,7 @@ module.exports = {
             defaultReadingTime({content, options: {wordsPerMinute: 200}}),
           feedOptions: {
             type: 'rss', // https://help.sumologic.com/release-notes-service/rss.xml
-            title: 'Sumo Logic Release Notes',
+            title: 'Sumo Logic Service Release Notes',
             description: 'Here you will find a chronological list of the newest Sumo Logic service features and bug fixes',
             copyright: `Copyright ©${new Date().getFullYear()} Sumo Logic`,
           },
