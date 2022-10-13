@@ -1893,6 +1893,5 @@
   "/Visualizations-and-Alerts/Dashboards/Get-Started-with-Dashboards-and-Panels/Move-a-Panel-in-a-Dashboard": "/docs/dashboards-new/panels",
   "/Visualizations-and-Alerts/Dashboards/Share_Dashboards/Share_a_Dashboard_Inside_Your_Org": "/docs/dashboards/share-dashboard-inside-org",
   "/Visualizations-and-Alerts/Explore": "/docs/observability/kubernetes/troubleshoot-with-explore",
-  "/siemreleasenotes": "/release-notes-cse",
-  "/developerreleasenotes": "/release-notes-developer"
+  "/@api/deki/files/12800/cloudsiemrss.xml": "/release-notes-cse"
 }
