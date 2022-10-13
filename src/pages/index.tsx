@@ -18,6 +18,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
         </div>
       </div>
+      <meta name="google-site-verification" content="NnyORtv9AD24uCpytHXpAGxDxZ5OcIR5MwV5gJR4LKA" />
     </header>
   );
 }
