@@ -1602,6 +1602,7 @@ module.exports = {
         'integrations/amazon-aws/eks-control-plane',
         'integrations/amazon-aws/elasticache',
         'integrations/amazon-aws/elastic-container-service',
+        'integrations/amazon-aws/elastic-container-service-container-insights-cloudwatch',
         'integrations/amazon-aws/guardduty',
         'integrations/amazon-aws/guardduty-benchmark',
         'integrations/amazon-aws/global-intelligence-guardduty',
