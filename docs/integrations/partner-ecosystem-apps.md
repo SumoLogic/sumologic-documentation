@@ -22,7 +22,7 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [Cyral](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cyral)
 * [Gigamon ThreatINSIGHT](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_ThreatINSIGHT)
 * [Gigamon HAWK](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_HAWK)
-* [LambdaTest] (https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/LambdaTest)
+* [LambdaTest](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/LambdaTest)
 * [Lucidum](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Lucidum)
 * [Mimecast](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Tessian)
 * [Nucleon](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Nucleon)

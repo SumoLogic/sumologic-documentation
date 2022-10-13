@@ -18,6 +18,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
         </div>
       </div>
+      <meta name="google-site-verification" content="NnyORtv9AD24uCpytHXpAGxDxZ5OcIR5MwV5gJR4LKA" />
     </header>
   );
 }
@@ -57,6 +58,7 @@ function Home() {
       <section className="spacer">
         <div className="land-flex">
        <h1 align="center">Explore our product guides</h1>
+       <br/>
        <p align="center">Ensure app reliability and security with modern cloud-native monitoring and observability.</p>
        <p align="center">
        <Tabs>
@@ -316,7 +318,7 @@ const features4 = [
       message: 'SOAR',
       description: 'Title for SOAR',
     }),
-    imageUrl: 'img/icons/security/soc.png',
+    imageUrl: 'img/icons/security/SOC.png',
     description: (<Translate
       id="landing.feature.soar.desc"
       description="SOAR description">
