@@ -1488,6 +1488,7 @@ module.exports = {
                   link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/index'},
                   items: [
                     'observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/deploy-multiple-accounts-regions',
+                    'observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/automatic-installation-script',
                     'observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/centralized-aws-cloudtrail-log-collection',
                   ],
                 },
@@ -1998,6 +1999,7 @@ module.exports = {
             'cse/administration/cse-audit-logging',
             'cse/administration/cse-user-accounts-and-roles',
             'cse/administration/custom-inventory-sources',
+            'cse/administration/save-inventory-data-lookup-table',
             'cse/administration/manage-custom-insight-resolutions',
             'cse/administration/manage-custom-insight-statuses',
             'cse/administration/using-sensor-zones',
@@ -2153,7 +2155,6 @@ module.exports = {
             'cse/records-signals-entities-insights/configure-entity-lookup-table',
             'cse/records-signals-entities-insights/configure-custom-insight',
             'cse/records-signals-entities-insights/cse-heads-up-display',
-            'cse/records-signals-entities-insights/save-inventory-data-lookup-table',
           ],
         },
       ],
@@ -2301,6 +2302,65 @@ module.exports = {
             },
           ]
         }
+      ],
+    },
+  ],
+  releasenotesarchive: [
+    {
+      type: 'category',
+      label: 'Release Notes Archive',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'releasenotesarchive/index'},
+      items: [
+        {
+          type: 'category',
+          label: 'Collector Archive',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'releasenotesarchive/collector/year2022',
+            'releasenotesarchive/collector/year2021',
+            'releasenotesarchive/collector/year2020',
+            'releasenotesarchive/collector/year2019',
+            'releasenotesarchive/collector/year2018',
+            'releasenotesarchive/collector/year2017',
+            'releasenotesarchive/collector/year2016',
+            'releasenotesarchive/collector/year2015',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Service Archive',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'releasenotesarchive/service/year2022',
+            'releasenotesarchive/service/year2021',
+            'releasenotesarchive/service/year2020',
+            'releasenotesarchive/service/year2019',
+            'releasenotesarchive/service/year2018',
+            'releasenotesarchive/service/year2017',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Cloud SIEM Archive',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'releasenotesarchive/cloud-siem/year2022',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Developer Archive',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'releasenotesarchive/developer/year2022',
+          ],
+        },
       ],
     },
   ],

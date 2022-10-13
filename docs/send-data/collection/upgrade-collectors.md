@@ -119,7 +119,7 @@ There is a community supported script available on GitHub that uses the Collecto
 
 ### Stay Current
 
-While we make every effort to keep backwards compatibility for collectors, many new collector versions contain important bug fixes along with new functionality, so we recommend keeping up-to-date with collector versions you’re using in your production environments.  You can read the [Release Notes](docs/releasenotes/collector.md) for each Collector version here, so you know exactly what changes are made.
+While we make every effort to keep backwards compatibility for collectors, many new collector versions contain important bug fixes along with new functionality, so we recommend keeping up-to-date with collector versions you’re using in your production environments. You can read the [Release Notes](/release-notes-collector) for each Collector version here, so you know exactly what changes are made.
 
 ### Use the Sumo Logic User Interface to Upgrade
 
