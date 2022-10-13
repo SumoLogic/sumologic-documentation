@@ -1,7 +1,7 @@
 ---
 slug: /search/search-query-language
-title: Sumo Logic Search Query Language
-description: Sumo Logic’s extensive query options help you gain valuable insight into your log messages.
+title: Search Query Language
+description: The extensive Sumo Logic query options help you gain valuable insight into your log messages.
 ---
 
 For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quick Start Tutorial](/docs/quickstart).
