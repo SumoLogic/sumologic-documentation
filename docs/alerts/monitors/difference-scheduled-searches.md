@@ -30,4 +30,4 @@ Apart from the differences in the use cases, there are a couple of feature diffe
 | Access Control | Object Level Access Control | Object Level Access Control (Per request - limited availability) |
 | Audit Logs for CRUD and System Events (like Notifications Sent, Failures etc.) | Yes | Yes |
 | Control Over Schedule of alert/When alert is evaluated | Yes | No |
-| One Notification per Log Line | Yes | Yes<br/>*Supported via Alert grouping, see https://help.sumologic.com/docs/alerts/monitors/alert-grouping/ |
+| One Notification per Log Line | Yes | Yes<br/>*[Supported via Alert grouping](https://help.sumologic.com/docs/alerts/monitors/alert-grouping) |
