@@ -14,7 +14,7 @@ authors:
 ---
 
 
-#### Announcement: Standard Match Lists Migration to Entity Tags
+## Announcement: Standard Match Lists Migration to Entity Tags
 
 Currently, CSE defines a set of standard Match Lists as a way to allow users to specify lists of Entities and other indicators that should affect whether or not Rules create Signals. However, starting next week, the Rules included with CSE will begin transitioning to leverage Entity tags for this purpose instead. Tags on Entities are more flexible and can also provide context to analysts during the investigation phase.
 
