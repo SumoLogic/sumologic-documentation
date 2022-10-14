@@ -259,6 +259,7 @@
   "/05Search/Search-Query-Language/Transaction-Analytics/Transactionize-operator": "/docs/search/search-query-language/transaction-analytics/transactionize-operator",
   "/05Search/Subqueries": "/docs/search/subqueries",
   "/05Search/Time-Compare": "/docs/search/time-compare",
+  "/07Sumo-Logic-Apps": "/docs/integrations/sumo-apps",
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Aurora_MySQL_ULM": "/docs/integrations/amazon-aws/aurora-mysql-ulm",
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Aurora_MySQL_ULM/Collect_logs_and_metrics_for_the_Amazon_Aurora_MySQL_ULM_App": "/docs/integrations/amazon-aws/aurora-mysql-ulm",
   "/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Aurora_MySQL_ULM/Install_the_Aurora_MySQL_ULM_App_and_view_the_Dashboards": "/docs/integrations/amazon-aws/aurora-mysql-ulm",
