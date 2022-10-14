@@ -78,7 +78,7 @@ Additional information about the standard tag schema, match lists, Entity groups
 
 * [New] Users can now filter object lists based on tag schema. The list results will include all objects that have a tag that are part of that schema. (For example, if you search for `_networkType` (from the note above) the list results will include any object that has a tag of `_networkType:guest`, `_networkType:nat`, and/or `_networkType:vpn`.)
 
-#### Resolved Issues
+### Resolved Issues
 
 * Entity relationships were not taking sensor zones into account properly.
 * Entity details pages were only briefly displaying the proper Criticality.
