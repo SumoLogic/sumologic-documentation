@@ -106,7 +106,7 @@ The GCP service generates logs which are exported and published to a Google Pub/
 
 ### Configuring collection for GCP uses the following process:
 
-1. Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**.
+1. Configure a Google Cloud Platform source on a hosted collector. You'll obtain the **HTTP URL for the source**.
 2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
 3. Create an export of GCP logs from Google Stackdriver Logging. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
 
@@ -116,7 +116,7 @@ See the following sections for configuration instructions.
 Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination including Stackdriver. It is not required to push the GCP logs into Stackdriver for the Sumo Logic Apps to work. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Stackdriver logging and still can be [exported](https://cloud.google.com/logging/docs/export/) to Sumo logic.
 :::
 
-### Configure a Google Cloud Platform Source
+### Configure a Google Cloud Platform source on a hosted collector
 
 The Google Cloud Platform (GCP) Source receives log data from Google Pub/Sub.
 
@@ -193,7 +193,7 @@ In this step, you export logs to the Pub/Sub topic you created in the previous s
 1. Go to **Logging** and click **Logs Router**.<br/><img src={useBaseUrl('img/integrations/google/GCP_logging_1.png')} alt="Google integrations" />
 2. Click **Create Sink**.<br/><img src={useBaseUrl('img/integrations/google/sink.png')} alt="Google integrations" />
 3. As part of **Create logs routing sink**, add the following information.
-   1. Enter a Sink Name. For example, "gce-audit-log".
+   1. Enter a Sink Name. For example, "gcp-audit-sumo".
    2. Select "Cloud Pub/Sub" as the **Sink Service**.
    3. Set **Sink Destination** to the Pub/Sub topic you created in the "Create Topic and Subscription with Pub/Sub in Google Cloud". For example, "pub-audit-logs".
    4. In **Choose logs to include in sink** section, use `logName` Filter as follows:
