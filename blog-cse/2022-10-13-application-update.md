@@ -13,7 +13,6 @@ authors:
     url: https://github.com/pkazmir-sumo
 ---
 
-### October 13, 2022 - Application Update
 
 #### Announcement: Standard Match Lists Migration to Entity Tags
 
