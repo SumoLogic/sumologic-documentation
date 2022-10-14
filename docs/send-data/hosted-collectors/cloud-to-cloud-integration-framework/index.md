@@ -33,7 +33,7 @@ The following table provides the static IP addresses used for Cloud-to-Cloud Int
 For the Federal environments, a different set of Static IPs is available for each C2C deployment.
 
 | Deployment | Static IP addresses                                                                |
-|------------|------------------------------------------------------------------------------------|
+|:------------|:------------------------------------------------------------------------------------|
 | Fed C2C 1A | 50.19.6.130                                                                        |
 | Fed C2C 1B | 171.129.156.86                                                                     |
 | Fed C2C 1C | 52.202.74.197                                                                      |
