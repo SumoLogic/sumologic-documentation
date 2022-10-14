@@ -18,18 +18,15 @@ The **Signatures** tab is shown when using [LogReduce](/docs/search/logreduce
 
 The table columns can be modified by the following:
 
-* **Move:** Hold click and drag a column from the header row to a different location in the table.
-* Hold click and drag the vertical line in between the columns to adjust the width.
+* **Move a Column.** Hold click and drag a column from the header row to a different location in the table.
+* **Change column width.** Hold click and drag the vertical line in between the columns to adjust the width. <br/>![resize column.png](/img/search/get-started-search/search-page/resize-column.png)
+* **Change column height.** Double click the vertical line to the right of a column name to automatically resize the width to fit the content.
+* **Pin columns**: You can pin columns in the table, either in the **Messages** tab or the **Aggregates** tab. When a column is pinned you can scroll to the right and still view it. To pin a column, hover over the column header, and click the pin icon that appears.
 
-    ![resize column.png](/img/search/get-started-search/search-page/resize-column.png)
+After you’ve pinned a column, the pin icon has a slash through it. You can click the icon to unpin the column.
 
-* Double click the vertical line to the right of a column name to automatically resize the width to fit the content.
 
-The **Aggregates** tab allows you to pin columns in the table. When a column is pinned you can scroll to the right and still view it.
 
-* **Pin**: Hold click and drag a column from the header row to the far left of the table. You'll see a small pin icon when in the correct area to unclick.
-
-    ![pin aggregated column.gif](/img/search/get-started-search/search-page/pin-aggregated-column.gif)
 
 ## Expand and collapse
 
