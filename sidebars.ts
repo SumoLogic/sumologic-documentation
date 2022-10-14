@@ -1588,7 +1588,7 @@ module.exports = {
   ],
 // *** Sumo Logic Apps
   integrations: [
-    'integrations/integrations',
+    'integrations/index',
     {
       type: 'category',
       label: 'Amazon and AWS',
