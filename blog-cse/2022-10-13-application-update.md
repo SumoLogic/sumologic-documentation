@@ -74,7 +74,7 @@ this statement will return "true" if that Entity is listed in a Record's `srcDev
 
 Additional information about the standard tag schema, match lists, Entity groups, and using these features with Rules is available in the [Cloud SIEM Documentation](https://help.sumologic.com/docs/cse).
 
-#### Minor Changes and Enhancements
+### Minor Changes and Enhancements
 
 * [New] Users can now filter object lists based on tag schema. The list results will include all objects that have a tag that are part of that schema. (For example, if you search for `_networkType` (from the note above) the list results will include any object that has a tag of `_networkType:guest`, `_networkType:nat`, and/or `_networkType:vpn`.)
 
