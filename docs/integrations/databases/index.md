@@ -1,6 +1,6 @@
 ---
-id: index
-title: Sumo Logic Apps for database servers
+slug: /integrations/databases
+title: Sumo Logic Apps for Database Servers
 sidebar_label: Database Servers
 description: Docs for Sumo apps for database servers.
 ---
