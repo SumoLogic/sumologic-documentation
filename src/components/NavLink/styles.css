@@ -6,6 +6,14 @@
     font-size: 0.9rem !important;
 }
 
+[data-theme='dark'] .link__label:hover {
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+[data-theme='light'] .link__label:hover {
+  color: var(--ifm-navbar-link-hover-color);
+}
+
 .link {
   display: inline-flex;
   align-items: center;

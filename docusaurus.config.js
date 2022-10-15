@@ -311,7 +311,7 @@ module.exports = {
           {
             label: 'Guides',
             position: 'left',
-            to: '/',
+            to: '#',
             // Redocusaurus
             // to: '/sumoapi',
             type: 'dropdown',
@@ -375,7 +375,7 @@ module.exports = {
           {
             label: 'API',
             position: 'left',
-            to: '/',
+            to: '#',
             // Redocusaurus
             // to: '/sumoapi',
             type: 'dropdown',
@@ -422,7 +422,7 @@ module.exports = {
           {
             label: 'Help',
             position: 'left',
-            to: '/',
+            to: '#',
             type: 'dropdown',
             items:[
               {
