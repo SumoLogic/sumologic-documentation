@@ -45,6 +45,8 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
 1. **Advanced Options for Logs**.
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
   <img src={useBaseUrl('img/send-data/GCP-advanced-options.png')} alt="GCP advanced options" width="70"/>
 
    * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
