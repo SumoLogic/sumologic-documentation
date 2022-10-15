@@ -168,7 +168,7 @@ You can see what portion of your subscription credits have been allocated and co
 1. A pane with details about the org appears on the right side of the page. <br/> <img src={useBaseUrl('img/subscriptions/credits-usage.png')} alt="usage" width="450"/>  
 1. The **Credits Usage section** of the pane shows the number and percentage of the credits allocated to the org that have been consumed, along with the total credits that are allocated.
 2. Click **View Details** for more information.
-3. The **Credits Usage Details** popup displays the following information.
+3. The **Credits Usage Details** popup displays the following information. This information is for the current contract subscription period.
     * **Allocated Credits**. The total number of credits allocated to the org.
     * **Credits Used**. The number and percentage of allocated credits that have been used.
     * For each Product Variable, the following information is shown.

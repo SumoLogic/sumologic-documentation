@@ -1,5 +1,5 @@
 ---
-id: index
+slug: /integrations/web-servers
 title: Web Servers
 ---
 

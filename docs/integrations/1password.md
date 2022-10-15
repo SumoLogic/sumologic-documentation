@@ -128,24 +128,24 @@ Panels will start to fill automatically. It's important to note that each panel 
 ### Overview
 1Password - Overview provides an overview of 1Password Events including events breakdown by type, category, geographic location, one-day time comparison of events, and failed sign-in activity.
 
-<img src={useBaseUrl('img/integrations/1Password/1Password-Overview.png')} alt="Nginx-Plus-Overview" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Overview.png')} alt="1Password-Overview" />
 
 ### Successful Sign-ins
 1Password - Successful Sign-ins dashboard provides geographic location of successful sign-in events, one-day time comparison of events, breakdown of events by Category, Type, Users, Country, State, and City.
 
-<img src={useBaseUrl('img/integrations/1Password/1Password-Successful-Sign-ins.png')} alt="Nginx-Plus-Overview" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Successful-Sign-ins.png')} alt="1Password-Successful-Sign-ins" />
 
 ### Failed Sign-ins
 1Password - Failed Sign-ins dashboard provides geographic location of failed events, one-day time comparison of events, breakdown of events by Category, Type, Users, Country, State, and City.
 
-<img src={useBaseUrl('img/integrations/1Password/1Password-Failed-Sign-ins.png')} alt="Nginx-Plus-Overview" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Failed-Sign-ins.png')} alt="1Password-Failed-Sign-ins" />
 
 ### Threat Intel
 1Password - Threat Intel dashboard provides high-level views of threats throughout your 1Password Service. Dashboard panels display visual graphs and detailed information on Threats by the client, target user, source app, platform, threats by actors, and threats by malicious confidence.
 
-<img src={useBaseUrl('img/integrations/1Password/1Password-Threat-Intel.png')} alt="Nginx-Plus-Overview" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Threat-Intel.png')} alt="1Password-Threat-Intel" />
 
 ### Item Usage
 1Password - Item Usage dashboard shows information about items in shared vaults that have been modified, accessed, or used. This dashboard provides you geo-locations of clients who accessed items in the shared vault, it also provides threat intel analysis of client IPs to secure your vault access.
 
-<img src={useBaseUrl('img/integrations/1Password/1Password-Item-Usage.png')} alt="Nginx-Plus-Overview" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Item-Usage.png')} alt="1Password-Item-Usage" />
