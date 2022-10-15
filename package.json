@@ -41,7 +41,7 @@
     "glob-parent": "^5.1.2",
     "infima": "0.2.0-alpha.42",
     "mdx-mermaid": "^1.2.3",
-    "mermaid": "^9.1.1",
+    "mermaid": "^9.1.2",
     "minimist": "^1.2.6",
     "nanoid": "^3.1.31",
     "node-fetch": "^2.6.7",
