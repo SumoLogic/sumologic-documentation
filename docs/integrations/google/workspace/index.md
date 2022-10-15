@@ -1,5 +1,5 @@
 ---
-slug: integrations/google/workspace
+slug: /integrations/google/workspace
 title: Google Workspace
 sidebar_label: Google Workspace
 description: The Google Workspace App allows you to monitor and analyze activities across all Google Workspace applications from a single location.

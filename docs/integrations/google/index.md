@@ -1,5 +1,5 @@
 ---
-id: index
+slug: /integrations/google
 title: Sumo Logic Apps for Google
 sidebar_label: Google
 description: Docs for Sumo apps for Google.

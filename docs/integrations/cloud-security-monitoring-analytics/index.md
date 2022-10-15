@@ -1,5 +1,5 @@
 ---
-id: index
+slug: /integrations/cloud-security-monitoring-analytics
 title: Cloud Security Monitoring and Analytics
 description: A guide to Sumo Logic data source apps, including Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls.
 ---

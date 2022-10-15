@@ -1,5 +1,5 @@
 ---
-id: index
+slug: /integrations/security-threat-detection
 title: Security and Threat Detection
 description: Learn about Sumo apps for Security and Threat Detection.
 ---
