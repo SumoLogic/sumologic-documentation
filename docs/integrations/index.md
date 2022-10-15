@@ -1,5 +1,5 @@
 ---
-id: integrations
+slug: /integrations
 title: Apps and Integrations
 sidebar_label: Apps and Integrations
 description: Documentation for Sumo Logic apps and integrations.
