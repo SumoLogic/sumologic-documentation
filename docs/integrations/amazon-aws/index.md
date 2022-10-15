@@ -1,5 +1,5 @@
 ---
-id: index
+slug: /integrations/amazon-aws
 title: Amazon and AWS
 sidebar_label: Amazon and AWS
 description: Amazon and AWS

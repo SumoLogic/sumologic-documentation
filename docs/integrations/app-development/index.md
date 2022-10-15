@@ -1,5 +1,5 @@
 ---
-id: index
+slug: /integrations/app-development
 title: App Development
 sidebar_label: App Development
 description: Docs for Sumo apps for platforms and tools that support software development processes.
