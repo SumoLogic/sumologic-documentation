@@ -1,10 +1,10 @@
 ---
 id: collector
-title: Collector Release Notes
+title: Collector Release Notes 2022
 description: You'll find a list of new Collector features and relevant bug fixes for each release. In order to begin using the features listed here, you'll need to upgrade Collector software.
 ---
 
-Collector Release Notes for the current year are listed here. If you need to see previous Collector Release Notes, check the [archive](/docs/releasenotes/archive).
+Collector Release Notes from Jan 1, 2022 - Sept 26, 2022 are listed here. To view current Release Notes, [click here](/release-notes-collector). To view Release Notes from previous years, see the [archive](/docs/releasenotesarchive).
 
 You can upgrade [Installed Collectors](/docs/send-data/installed-collectors) in the following ways:
 
@@ -16,6 +16,8 @@ You can upgrade [Installed Collectors](/docs/send-data/installed-collectors) in 
 Our [static URLs](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url) are available to download the most recent Collector version.
 :::
 
+
+---
 ### September 26, 2022 (19.409-3)
 
 * Security fix: Upgrade Collector JRE to Corretto 8.342.07.4
