@@ -1,10 +1,12 @@
 ---
 id: cloud-siem
-title: Cloud SIEM Release Notes
+title: Cloud SIEM Release Notes 2022
 description: Here you'll find information about new and enhanced features, updated content (like rules, log mappers and parsers), bug fixes and other important announcements for Cloud SIEM Enterprise.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+Cloud SIEM Release Notes for Jan 1, 2022 to Oct 6, 2022 are listed here. To view current Release Notes, [click here](/release-notes-cse). To view Release Notes from previous years, check the [archive](/docs/releasenotesarchive).
 
 ---
 ### October 6, 2022 - Application Update

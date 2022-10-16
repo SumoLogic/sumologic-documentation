@@ -1,12 +1,12 @@
 ---
 id: service
-title: Service Release Notes
+title: Service Release Notes 2022
 description: Looking for more information about new features in the Sumo Logic Service? We'll post here about what's new and exciting with each release.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Service Release Notes (metrics, apps, traces, observability, search, and more) for the current year are listed here. To view previous Service Release Notes, check the [Archive](/docs/releasenotes/archive).
+Service Release Notes (metrics, apps, traces, observability, search, and more) for Jan 1, 2022 - Oct 7, 2022 are listed here. To view current Release Notes, [click here](/release-notes-service). To view Release Notes from previous years, check the [archive](/docs/releasenotesarchive).
 
 ---
 ## October 7, 2022 (Manage)
