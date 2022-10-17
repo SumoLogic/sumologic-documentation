@@ -2290,15 +2290,6 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Cloud SIEM Archive',
-          collapsible: true,
-          collapsed: true,
-          items: [
-            'releasenotesarchive/cloud-siem/year2022',
-          ],
-        },
-        {
-          type: 'category',
           label: 'Developer Archive',
           collapsible: true,
           collapsed: true,
