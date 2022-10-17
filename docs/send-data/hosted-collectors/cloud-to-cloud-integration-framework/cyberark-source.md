@@ -50,6 +50,6 @@ When you create a CyberArk EPM Source, you add it to a Hosted Collector. Before 
 
 ## API Limitations
 
-### Session Timeout ###
+### Session Timeout
 
 The session timeout for all APIs is part of the session token and is defined by the Timeout for inactive session Server Configuration parameter.
