@@ -54,7 +54,7 @@ You must update all of the indicated fields for the search to save successfully
 
 ```sql
 _index=sumologic_volume and sizeInBytes and _sourceCategory="sourcename_volume"
-| parse regex "\"(?<sourcename>[^\"]*)\"\:{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
+| parse regex "\"(?<sourcename>[^\"]*)\"\:\{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
 | timeslice 1d
 | bytes/1024/1024/1024 as gbytes
 | sum(gbytes) as gbytes by _timeslice
@@ -124,7 +124,7 @@ You must update the indicated field for the search to be successfully saved.
 ```sql
 _index=sumologic_volume sizeInBytes
 | where _sourceCategory="collector_volume"
-| parse regex "\"(?<collector>[^\"]+)\"\:{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
+| parse regex "\"(?<collector>[^\"]+)\"\:\{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
 | bytes/1024/1024/1024 as gbytes
 | timeslice 1d
 | sum(gbytes) as gbytes by _timeslice
