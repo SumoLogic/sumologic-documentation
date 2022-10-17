@@ -315,7 +315,7 @@ const features4 = [
   {
     title: translate({
       id: 'landing.feature.soar.title',
-      message: 'SOAR',
+      message: 'Cloud SOAR',
       description: 'Title for SOAR',
     }),
     imageUrl: 'img/icons/security/SOC.png',
