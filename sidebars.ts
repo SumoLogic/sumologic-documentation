@@ -2252,20 +2252,6 @@ module.exports = {
       ],
     },
   ],
-  releasenotes: [
-    {
-      type: 'category',
-      label: 'Release Notes',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'releasenotes/index'},
-      items: [
-        'releasenotes/service',
-        'releasenotes/cloud-siem',
-        'releasenotes/collector',
-      ],
-    },
-  ],
   releasenotesarchive: [
     {
       type: 'category',
@@ -2280,6 +2266,7 @@ module.exports = {
           collapsible: true,
           collapsed: true,
           items: [
+            'releasenotesarchive/collector/year2022',
             'releasenotesarchive/collector/year2021',
             'releasenotesarchive/collector/year2020',
             'releasenotesarchive/collector/year2019',
@@ -2295,6 +2282,7 @@ module.exports = {
           collapsible: true,
           collapsed: true,
           items: [
+            'releasenotesarchive/service/year2022',
             'releasenotesarchive/service/year2021',
             'releasenotesarchive/service/year2020',
             'releasenotesarchive/service/year2019',
