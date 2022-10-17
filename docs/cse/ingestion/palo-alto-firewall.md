@@ -103,7 +103,7 @@ To create a server profile specifying the log destination, do the following:
 
 ## Step 3: Configure Palo Alto Firewall
 
-In this step you configure Palo Alto Firewall to send log messages to the Sumo Logic platform. Follow Palo Alto documentation to [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/10-1/pan-os-admin/monitoring/configure-log-forwarding). 
+In this step, you configure Palo Alto Firewall to send log messages to the Sumo Logic platform. Follow Palo Alto documentation to [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/10-1/pan-os-admin/monitoring/configure-log-forwarding). 
 
 ## Step 4: Verify ingestion
 
