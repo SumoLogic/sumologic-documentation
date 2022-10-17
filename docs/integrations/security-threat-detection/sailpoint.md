@@ -118,7 +118,7 @@ _sourceCategory=Labs/sailpoint
 Follow the instructions for setting up [Cloud to Cloud Integration for SailPoint App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) to create the source and use the same source category while installing the app.
 
 
-## Installing the App[​](https://help.sumologic.com/docs/integrations/databases/couchbase#installing-the-couchbase-app) {#installing-the-app​}
+## Installing the App
 
 This section demonstrates how to install the SailPoint App.
 
