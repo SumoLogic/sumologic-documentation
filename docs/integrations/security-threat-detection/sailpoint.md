@@ -113,7 +113,7 @@ _sourceCategory=Labs/sailpoint
 | sort by _count
 ```
 
-## Set up collection {#set-up-collection}
+## Set up collection 
 
 Follow the instructions for setting up [Cloud to Cloud Integration for SailPoint App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) to create the source and use the same source category while installing the app.
 
