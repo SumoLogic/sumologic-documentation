@@ -129,7 +129,8 @@ pipe-delimited operation on a separate line.
 ```sql
 _sourceCategory=Apache/Access and GET
 | parse "\"GET * HTTP/1.1\"\" * * \"\"*\"\"" as url,status_code,size,referrer
-| count by status_code,referrer | sort _count
+| count by status_code,referrer
+| sort _count
 ```
 
 **Less preferred approach:**
@@ -137,8 +138,7 @@ _sourceCategory=Apache/Access and GET
 ```sql
 _sourceCategory=Apache/Access and GET
 | parse "\"GET * HTTP/1.1\"\" * * \"\"*\"\"" as url,status_code,size,referrer
-| count by status_code,referrer
-| sort _count
+| count by status_code,referrer | sort _count
 ```
 
 ## Pin searches with long time ranges
