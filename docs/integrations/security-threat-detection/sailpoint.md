@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-SailPoint is an identity management solution that helps organizations manage employee permissions, digital identities, information security, data access, and compliance.  The Sumo Logic App for SailPoint helps you monitor the user events, actions, operations, failed logins, successful logins, and user activities to your applications through SailPoint. The App consists of dashboards that give you visibility into the source deletion, user events, and geo locations of authentication events.
+SailPoint is an identity management solution that helps organizations manage employee permissions, digital identities, information security, data access, and compliance. The Sumo Logic App for SailPoint helps you monitor the user events, actions, operations, failed logins, successful logins, and user activities to your applications through SailPoint. The App consists of dashboards that give you visibility into the source deletion, user events, and geo locations of authentication events.
 
 ## Log types
 
