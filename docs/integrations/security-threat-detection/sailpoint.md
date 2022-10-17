@@ -21,7 +21,7 @@ The SailPoint Source ingests:
 * Users Inventory data from the [Public Identities API Endpoint](https://developer.sailpoint.com/apis/v3/#operation/getPublicIdentities).
 
 
-#### Sample Log Messages
+### Sample Log Messages
 
 ```
 {
