@@ -2266,7 +2266,6 @@ module.exports = {
           collapsible: true,
           collapsed: true,
           items: [
-            'releasenotesarchive/collector/year2022',
             'releasenotesarchive/collector/year2021',
             'releasenotesarchive/collector/year2020',
             'releasenotesarchive/collector/year2019',
@@ -2305,7 +2304,6 @@ module.exports = {
           collapsible: true,
           collapsed: true,
           items: [
-            'releasenotesarchive/developer/year2022',
             'releasenotesarchive/developer/year2021',
             'releasenotesarchive/developer/year2020',
             'releasenotesarchive/developer/year2019',
