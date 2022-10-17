@@ -106,7 +106,7 @@ _sourceCategory=Labs/sailpoint ipAddress
 SailPoint Event Type
 
 
-```
+```sql
 _sourceCategory=Labs/sailpoint
 | json field=_raw "created", "type", "technicalName", "status","operation","actor.name", "action", "name", "target.name", "attributes.sourceName" as created, event_type, technical_name_in_search, event_status, operation, user_name, action, event_desc, target_name, source_name | json "org" as org
 | count by event_type
