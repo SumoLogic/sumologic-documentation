@@ -10,7 +10,7 @@ description: This integration accesses CyberArk EPMs API to retrieve administrat
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-CyberArk Endpoint Privilege Manager (EPM) enforces least privilege and allows organizations to block and contain attacks at the endpoint, reducing the risk of information being stolen or encrypted and held for ransom. A combination of privilege security, application control and credential theft prevention reduces the risk of malware infection.
+CyberArk Endpoint Privilege Manager (EPM) enforces least privilege and allows organizations to block and contain attacks at the endpoint, reducing the risk of information being stolen or encrypted and held for ransom. A combination of privilege security, application control, and credential theft prevention reduces the risk of malware infection.
 
 This integration accesses the CyberArk EPM API to retrieve administrative audit events from every Set in the environment. API documents can be found
 [here](https://docs.cyberark.com/Product-Doc/OnlineHelp/EPM/Latest/en/Content/LandingPages/LPDeveloper.htm).
