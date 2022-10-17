@@ -90,7 +90,7 @@ _version:"v7"
 Authentication Event
 
 
-```
+```sql
 _sourceCategory=Labs/sailpoint ipAddress
 | json field=_raw "created", "type", "technicalName", "status","operation","actor.name", "action", "name", "target.name", "attributes.sourceName" as created, event_type, technical_name_in_search, event_status, operation, user_name, action, event_desc, target_name, source_name
 | json "org" as org
