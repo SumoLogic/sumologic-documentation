@@ -85,7 +85,7 @@ _version:"v7"
 
 
 
-#### Sample Queries
+### Sample Queries
 
 Authentication Event
 
