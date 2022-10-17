@@ -1853,6 +1853,7 @@
   "/Release-Notes/Collector-Release-Notes": "/release-notes-collector",
   "/Release-Notes/Service-Release-Notes": "/release-notes-service",
   "/Release-Notes/Developer-Release-Notes": "/release-notes-developer",
+  "/Search/Search_Cheat_Sheets/Search-Operators-Cheat-Sheet": "/docs/search/search-cheat-sheets",
   "/Solutions/AWS_Observability_Solution": "/docs/observability",
   "/Traces/01Getting_Started_with_Transaction_Tracing": "/docs/apm/traces/get-started-transaction-tracing",
   "/Traces/02Working_with_Tracing_data/02Tracing_Dashboards": "/docs/apm/traces/working-with-tracing-data/tracing-dashboards",
