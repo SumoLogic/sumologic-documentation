@@ -190,7 +190,7 @@ In this section, you set up collection for traces
 1.  Create a HTTP Traces source by referring to the [docs](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/HTTP_Traces_Source).
 2.  Install  Open Telemetry Collector by referring to the [docs](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_AWS_environments). 
 
-### Sample Log Message#sample-log-message) 
+### Sample Log Message 
 
 
 ```
