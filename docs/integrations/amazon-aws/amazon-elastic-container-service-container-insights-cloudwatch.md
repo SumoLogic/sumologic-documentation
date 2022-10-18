@@ -19,7 +19,7 @@ We have two app versions which have separate collection steps 
 
 ## Collect Logs, Metrics(Container Insights+Cloudwatch) and Traces for ECS
 
-This page has instructions for collecting logs and metrics for the Amazon ECS App. It uses following data
+This page has instructions for collecting logs and metrics for the Amazon ECS App. It uses the following data:
 
 1.  Cloudwatch Metrics
 2.  Container Insights Metrics
