@@ -586,7 +586,7 @@ The **Amazon ECS - Tasks Definition Family Overview** dashboard provides a hig
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Tasks-Definition-Family-Overview.png)
 
-#### Amazon ECS - Tasks Overview
+### Amazon ECS - Tasks Overview
 
 The **Amazon ECS - Tasks Overview** dashboard provides a high-level view of the health of the task along with details on the utilized resources and where they are running.
 
