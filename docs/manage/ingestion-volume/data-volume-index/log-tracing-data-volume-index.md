@@ -4,23 +4,22 @@ title: Log and Tracing Data Volume Index
 description: The Data Volume Index is populated with a set of log messages that contain information on how much data (by bytes and messages count) your account is ingesting.
 ---
 
-
 The data volume index is populated with a set of log messages every five minutes. The messages contain information on how much data (by bytes and messages count) your account is ingesting. Your data volume is calculated based on when your logs were received, in Sumo this timestamp is stored with the `_receiptTime` [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field. Each log message includes information based on one of the following index source categories.
 
 | Index Log Type | Index Source Category |
 |--------------------|--------------------------------|
-| Collector          | collector_and_tier_volume      |
-| Source             | source_and_tier_volume         |
-| SourceName         | sourcename_and_tier_volume     |
-| SourceCategory     | sourcecategory_and_tier_volume |
-| SourceHost         | sourcehost_and_tier_volume     |
-| View               | view_and_tier_volume           |
-| Collector          | collector_volume               |
-| Source             | source_volume                  |
-| SourceName         | sourcename_volume              |
-| SourceCategory     | sourcecategory_volume          |
-| SourceHost         | sourcehost_volume              |
-| View               | view_volume                    |
+| Collector          | `collector_and_tier_volume`      |
+| Source             | `source_and_tier_volume`         |
+| SourceName         | `sourcename_and_tier_volume`     |
+| SourceCategory     | `sourcecategory_and_tier_volume` |
+| SourceHost         | `sourcehost_and_tier_volume`     |
+| View               | `view_and_tier_volume`           |
+| Collector          | `collector_volume`               |
+| Source             | `source_volume`                  |
+| SourceName         | `sourcename_volume`              |
+| SourceCategory     | `sourcecategory_volume`          |
+| SourceHost         | `sourcehost_volume`              |
+| View               | `view_volume`                    |
 
 You can query the data volume index just like any other message using the Sumo Logic search page. To see the data created within the data volume index, when you search, specify the `_index` metadata field with a value of `sumologic_volume`. For more information, see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
 
@@ -30,7 +29,7 @@ Sumo Logic provides an application that utilizes the data volume index to see y
 
 ## Known Issue
 
-There is a known issue when searching against _sourceCategory values where scheduled views show up blank. This causes results to be returned with numbers as the _sourceCategory values.
+There is a known issue when searching against `_sourceCategory` values where scheduled views show up blank. This causes results to be returned with numbers as the _sourceCategory values.
 
 For example, you would see:
 
@@ -43,7 +42,7 @@ In this case, the _sourceCategory returns `2862`, which is the actual size of
 
 ## Query the Data Volume Index
 
-1. In the Search page, enter the query **`_index=sumologic_volume`**.
+1. In the Search page, enter the query `_index=sumologic_volume`.
 
     :::important
     Make sure to enter the query exactly as shown to search against this specific source.
@@ -275,4 +274,4 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 ### Index retention period
 
-By default, the retention period of the Data Volume index is the same as the retention period of your Default Partition. You can change the retention period by editing the partition that contains the index, `sumologic_volume`. For more information, see [Edit a Partition](/docs/partitions-data-tiers/create-edit-partition).
+By default, the retention period of the Data Volume index is the same as the retention period of your Default Partition. You can change the retention period by editing the partition that contains the index, `sumologic_volume`. For more information, see [Edit a Partition](/docs/manage/partitions-data-tiers/create-edit-partition).

@@ -6,7 +6,7 @@ description: The metrics outlier feature allows you to identify metrics data poi
 ---
 
 :::note
-This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](/docs/metric-queries-alerts/metrics-explorer).
+This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](/docs/metrics/metric-queries-alerts/metrics-explorer).
 :::
 
 The metrics outlier feature allows you to identify metrics data points that are outside the range of expected values. You can use outliers to pinpoint unusual behavior in your metrics visualizations and track the behavior over time.  Flexible controls are available for you to decide how unexpected a value must be to be labeled an outlier and the number and type of outliers to display.

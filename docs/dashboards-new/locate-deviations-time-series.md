@@ -53,7 +53,7 @@ To customize the visual appearance of the graph, do the following:
 
     ![Outlier_Graph_Display_icon.png](/img/dashboards-new/locate-deviations/Outlier_Graph_Display_icon.png)
 
-1. Make **Format** selections in the right panel as described in [Customizing a chart](create-a-dashboard-new.md).
+1. Make **Format** selections in the right panel as described in [Customizing a chart](create-dashboard-new.md).
 
 ![Chart_Type_Settings.png](/img/dashboards-new/locate-deviations/Chart_Type_Settings.png)
 

@@ -326,7 +326,7 @@ Removing an instance of a Saved Search from the list in the Pinned Searches tab 
 
 Once you’ve saved content, you can choose to share it, which makes it available to other users. Your shared content is automatically added to the Library in the **Org \> \[Your Name\] **folder.
 
-To share a search and its results, see [Share a Link to a Search](/docs/search/get-started-with-search/search-basics/share-search-link). 
+To share a search and its results, see [Share a Link to a Search](/docs/search/get-started-with-search/search-basics/share-link-to-search). 
 
 Once shared, other users in your organization can:
 

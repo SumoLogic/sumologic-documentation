@@ -64,7 +64,7 @@ we want to put on the other dashboard:
 
 A Dashboard that is configured with filters can be provided with custom filter values through its URL.  
 
-[Dashboard filters](/docs/edit-dashboards/use-filters-dashboards) are in the format: `filters=<filtername>*eq*<value>`. For example, if you have a filter on the field `_source` and that filter has a value of **CrowdStrike** your filter would be appended as:  
+[Dashboard filters](/docs/dashboards/edit-dashboards/use-filters-dashboards) are in the format: `filters=<filtername>*eq*<value>`. For example, if you have a filter on the field `_source` and that filter has a value of **CrowdStrike** your filter would be appended as:  
 
 ```sql
 &filters=_source*eq*CrowdStrike
@@ -145,7 +145,7 @@ Clicking on the threatDetails link gives us the raw guard duty event associated 
 
 All this information can help your users investigate security incidents quickly and effectively.  To create this link, add the following snippet to your to the existing GuardDuty panel query.  Include the section at the end of your query:
 
-```sql
+```
 | urlencode(concat("_sourceCategory={SumoGuardDutysourceCategoryName}
 | json field=_raw \"id\", \"type\",\"severity\" ,\"title\",\"description\", \"accountId\", \"resource.resourceType\", \"region\" | toint(severity) as sev | parse field=type \"*:*/*\" as threatPurpose, targetResource, threatName | where threatName = \"", threatName ,"\" and threatPurpose=\"",threatPurpose ,"\"")) as query
 |format("https://{yourSumoDashboardURL}/ui/index.html#section/search/@%d,%d@%s",queryStarttime(),queryendtime(),query) as url

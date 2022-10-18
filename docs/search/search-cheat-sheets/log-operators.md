@@ -58,7 +58,7 @@ Instead use separate steps:
 | [pct](/docs/search/search-query-language/group-aggregate-operators/pct-percentile) | The percentile function (pct) finds the percentile of a given field. Multiple pct functions can be included in one query. | `_<fieldname>_pct_<percentile> `|  | &#124; parse "value=*" as value &#124; pct(value, 95) as value_95pct |
 | [stddev](docs/search/search-query-language/group-aggregate-operators/stddev) | The standard deviation function (stddev) finds the standard deviation value for a distribution of numerical values within the time range analyzed and associated with a group designated by the "group by" field. | `_stddev` | | ... &#124; stddev(request_received) group by hour &#124; sort by _stddev |
 | [sum](/docs/search/search-query-language/group-aggregate-operators/sum) | Sum adds the values of the numerical field being evaluated within the time range analyzed. | `_sum` |  | ... &#124; sum(bytes_received) group by hostname |
-| [values](../search-query-language/group-aggregate-operators/values) | The values operator provides all the distinct values of a field. | The first 100 distinct values are returned for a field. | | &#124; values(ip_address) by region |
+| [values](/docs/search/search-query-language/group-aggregate-operators/values) | The values operator provides all the distinct values of a field. | The first 100 distinct values are returned for a field. | | &#124; values(ip_address) by region |
 
 ## Search Operators
 
