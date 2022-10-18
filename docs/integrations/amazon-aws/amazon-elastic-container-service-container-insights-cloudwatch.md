@@ -456,7 +456,7 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 | count by resource_type, _timeslice
 | transpose row _timeslice column resource_type
 
-### Install the Sumo Logic App 
+## Install the Sumo Logic App 
 
 Now that you have set up a [collection](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Elastic_Container_Service_(ECS)/Collect_Logs%2C_Metrics(Container_Insights_Cloudwatch) and_Traces_for_ECS "Collect Logs, Metrics(Container Insights+Cloudwatch) and Traces for ECS") for Amazon ECS, install the Sumo Logic App for Amazon ECS to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Elastic_Container_Service_(ECS)/Amazon-ECS-App-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
