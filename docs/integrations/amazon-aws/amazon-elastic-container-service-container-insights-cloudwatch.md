@@ -530,7 +530,7 @@ The **Amazon ECS - Container Logs** dashboard provides detailed information on
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Container-Logs.png)
 
-#### Amazon ECS - Container Overview
+### Amazon ECS - Container Overview
 
 The **Amazon ECS - Container Overview** dashboard provides a high-level view of the health of the container along with details on the utilized resources.
 
