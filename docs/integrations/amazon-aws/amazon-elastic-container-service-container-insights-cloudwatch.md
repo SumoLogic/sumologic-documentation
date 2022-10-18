@@ -575,7 +575,7 @@ The **Amazon ECS - Service Performance Monitoring** dashboard provides detaile
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Service-Performance-Monitoring.png)
 
-#### Amazon ECS - Tasks Definition Family Overview
+### Amazon ECS - Tasks Definition Family Overview
 
 The **Amazon ECS - Tasks Definition Family Overview** dashboard provides a high-level view of the health of the tasks belonging to a particular task definition family and details on the utilized resources.
 
