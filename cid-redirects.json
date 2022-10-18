@@ -1779,6 +1779,7 @@
   "/Metrics/Metric-Queries-and-Alerts/07Metrics_Operators/where":  "/docs/metrics/metrics-operators/where",
   "/N/A": "/docs/send-data/hosted-collectors/cloud-syslog-source",
   "/Observability_Solution/AWS_Observability_Solution": "/docs/observability/aws",
+  "/Observability_Solution/Application_Component_Solution/Deploy_and_Configure_Application_Components_Solution": "/docs/observability/app-components",
   "/Observability_Solution/Application_Component_Solution/View_Application_Components_Dashboards_and_Alerts": "/docs/observability/app-components",
   "/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/05_Deploy_AWS_Observability": "/docs/observability/aws/deploy-use-aws-observability",
   "/Observability_Solution/AWS_Observability_Solution/AWS_Observability_Apps/AWS_API_Gateway": "/docs/observability/aws/integrations/aws-api-gateway",
