@@ -630,7 +630,7 @@ The **Amazon ECS - Fargate LaunchType** dashboard provides a high-level view o
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Fargate-LaunchType.png)
 
-#### Amazon ECS - Audit Events 
+### Amazon ECS - Audit Events 
 
 The **Amazon ECS - Audit Events** dashboard gives information on the type of request made to ECS, the IP making the request, who made it and when, and more.
 
