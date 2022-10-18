@@ -178,7 +178,7 @@ This hourly alert is generated when both of the following occur:
 
 ```sql
 _index=sumologic_volume sizeInBytes _sourceCategory="sourcecategory_volume"
-| parse regex "\"(?<sourcecategory>[^\"]+)\"\:{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
+| parse regex "\"(?<sourcecategory>[^\"]+)\"\:\{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
 | timeslice 1h
 | bytes/1024/1024/1024 as gbytes
 | sum(gbytes) as gbytes by sourcecategory, _timeslice
@@ -234,7 +234,7 @@ attributes `alive` and `LastSeenAlive`.
 
 ```sql
 _index=sumologic_volume sizeInBytes _sourceCategory="collector_volume"
-| parse regex "\"(?<collector>[^\"]+)\"\:{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
+| parse regex "\"(?<collector>[^\"]+)\"\:\{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
 | first(_messagetime) as MostRecent, sum(bytes) as TotalVolumeBytes by collector
 | formatDate(fromMillis(MostRecent),"yyyy/MM/dd HH:mm:ss") as MostRecentTime
 | toMillis(now()) as currentTime
