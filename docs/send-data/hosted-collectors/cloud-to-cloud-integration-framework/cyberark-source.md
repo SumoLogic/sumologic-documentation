@@ -4,9 +4,6 @@ title: CyberArk EPM
 sidebar_label: CyberArk EPM
 description: This integration accesses CyberArk EPMs API to retrieve administrative audit events from every Set in the environment.
 ---
-<head>
-  <meta name="robots" content="noindex" />
-</head>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
