@@ -1,10 +1,9 @@
 ---
 id: add-dashboard-link
+title: Add a Dashboard Link
 ---
 
-# Add a Dashboard Link
-
-You can use the [tourl](../../search/search-query-language/search-operators/tourl) operator to link values in a dashboard to any other dashboard where you have View permissions. You can also pass dynamic values to these dashboards and searches based on a table entry.
+You can use the [tourl](/docs/search/search-query-language/search-operators/tourl) operator to link values in a dashboard to any other dashboard where you have View permissions. You can also pass dynamic values to these dashboards and searches based on a table entry.
 
 These in-query links provide convenient drill down capabilities for problem solving. For example, if you track user activity on your website in a dashboard, you can have a panel that provides summary statistics for each user, such as number of logins, as well as links to details that open searches or other dashboards with specific search and dashboard usage statistics.
 
@@ -52,7 +51,7 @@ we want to put on the other dashboard:
     | avg(score) as avg_score by orgId
     ```
 
-1. Add a line to the end of your query using the [toURL](../../search/search-query-language/search-operators/tourl) operator. The following assigns the Dashboard URL to the name **Account Dashboard** and adds it to the field **org**.
+1. Add a line to the end of your query using the [toURL](/docs/search/search-query-language/search-operators/tourl) operator. The following assigns the Dashboard URL to the name **Account Dashboard** and adds it to the field **org**.
 
     ```sql
     _sourceCategory=mycategory keyword
@@ -65,7 +64,7 @@ we want to put on the other dashboard:
 
 A Dashboard that is configured with filters can be provided with custom filter values through its URL.  
 
-[Dashboard filters](../edit-dashboards/use-filters-dashboards.md) are in the format: `filters=<filtername>*eq*<value>`. For example, if you have a filter on the field `_source` and that filter has a value of **CrowdStrike** your filter would be appended as:  
+[Dashboard filters](/docs/edit-dashboards/use-filters-dashboards) are in the format: `filters=<filtername>*eq*<value>`. For example, if you have a filter on the field `_source` and that filter has a value of **CrowdStrike** your filter would be appended as:  
 
 ```sql
 &filters=_source*eq*CrowdStrike
@@ -115,7 +114,7 @@ Probably more common than linking a Dashboard to a Dashboard is linking a Dash
     This example uses the same time range as the main query, but you can do any other time range if needed. Also, you must replace `{YourURL} `with your URL.
     :::
 
-1. Create a hyperlink with the appropriate description using the [toURL](../../search/search-query-language/search-operators/tourl) operator.  For example:
+1. Create a hyperlink with the appropriate description using the [toURL](/docs/search/search-query-language/search-operators/tourl) operator.  For example:
 
     ```sql
     | tourl(search_query_link , "Click Here") as search_query_link

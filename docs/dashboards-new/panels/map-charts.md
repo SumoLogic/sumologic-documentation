@@ -55,7 +55,7 @@ To add a panel with a map chart:
 
     ![map panel option.png](/img/dashboards-new/panels/map-charts/map-panel-option.png)
 
-1. Provide a [Geo Lookup](../../search/search-query-language/search-operators/geo-lookup-map) query and press **Enter** for it to run.
+1. Provide a [Geo Lookup](/docs/search/search-query-language/search-operators/geo-lookup-map) query and press **Enter** for it to run.
 
     ![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 

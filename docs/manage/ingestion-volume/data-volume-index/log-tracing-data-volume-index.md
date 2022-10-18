@@ -236,7 +236,7 @@ This query produces results like these:
 
 This query returns the tracing volume for a specific Collector. The Collector name can be supplied within a JSON operation to get the data for that Collector.
 
-```sql
+```
 _index=sumologic_volume _sourceCategory="collector_tracing_volume"
 | parse regex "\"(?<collector>[^\"]+)\"\:\{\"billedBytes\"\:(?<billedBytes>\d+)\,\"spansCount\"\:(?<spansCount>\d+)\}" multi
 | where collector ="<<collector_json>>"
@@ -246,9 +246,9 @@ _index=sumologic_volume _sourceCategory="collector_tracing_volume"
 
 #### Query for tracing ingestion outliers
 
-This query runs against the tracing volume index and uses the [*outlier*](../../../search/search-query-language/search-operators/outlier) operator to find timeslices in which your tracing ingestion in billed bytes or span count was greater than the running average by a statistically significant amount.
+This query runs against the tracing volume index and uses the [*outlier*](/docs/search/search-query-language/search-operators/outlier) operator to find timeslices in which your tracing ingestion in billed bytes or span count was greater than the running average by a statistically significant amount.
 
-```sql
+```
 _index=sumologic_volume _sourcecategory=sourcecategory_tracing_volume
 | parse regex "\"(?<collector>[^\"]+)\"\:\{\"billedBytes\"\:(?<billedBytes>\d+)\,\"spansCount\"\:(?<spansCount>\d+)\}" multi
 | timeslice 6h
@@ -260,7 +260,7 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 #### Query for tracing ingestion prediction 
 
-This query runs against the tracing volume index and uses the [*predict*](../../../search/search-query-language/search-operators/predict) operator to predict future values.
+This query runs against the tracing volume index and uses the [*predict*](/docs/search/search-query-language/search-operators/predict) operator to predict future values.
 
 ```
 _index=sumologic_volume _sourcecategory=sourcecategory_tracing_volume
@@ -275,4 +275,4 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 ### Index retention period
 
-By default, the retention period of the Data Volume index is the same as the retention period of your Default Partition. You can change the retention period by editing the partition that contains the index, `sumologic_volume`. For more information, see [Edit a Partition](../../partitions-data-tiers/create-edit-partition.md).
+By default, the retention period of the Data Volume index is the same as the retention period of your Default Partition. You can change the retention period by editing the partition that contains the index, `sumologic_volume`. For more information, see [Edit a Partition](/docs/partitions-data-tiers/create-edit-partition).

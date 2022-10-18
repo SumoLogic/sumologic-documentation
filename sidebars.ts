@@ -790,7 +790,7 @@ module.exports = {
           label: 'Panels',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'dashboards-new/panels'},
+          link: {type: 'doc', id: 'dashboards-new/panels/index'},
           items: [
             'dashboards-new/panels/modify-chart',
             'dashboards-new/panels/area-charts',
