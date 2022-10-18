@@ -619,7 +619,7 @@ The **Amazon ECS - Task Definition Family Resource Reservation** dashboard pro
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Task-Definition-Family-Resource-Reservation.png)
 
-#### Amazon ECS - Fargate LaunchType
+### Amazon ECS - Fargate LaunchType
 
 The **Amazon ECS - Fargate LaunchType** dashboard provides a high-level view of the cluster's health along with details on the utilized resources for Fargate launch types.
 
