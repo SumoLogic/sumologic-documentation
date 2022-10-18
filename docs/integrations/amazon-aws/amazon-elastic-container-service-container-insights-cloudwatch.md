@@ -563,7 +563,7 @@ The **Amazon ECS - Service Overview** dashboard provides a high-level view of 
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Service-Overview.png)
 
-#### Amazon ECS - Service Performance Monitoring
+### Amazon ECS - Service Performance Monitoring
 
 The **Amazon ECS - Service Performance Monitoring** dashboard provides detailed information on the performance of your services which you can use to fine-tune your cluster.
 
