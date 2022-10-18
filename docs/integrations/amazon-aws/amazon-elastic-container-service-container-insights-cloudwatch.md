@@ -478,7 +478,7 @@ Once an app is installed, it will appear in your **Personal** folder or anothe
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-### Dashboards 
+## Dashboards 
 
 
 #### Amazon ECS - Cluster Overview 
