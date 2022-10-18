@@ -177,6 +177,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cylance-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source',
@@ -1259,6 +1260,7 @@ module.exports = {
       link: {type: 'doc', id: 'metrics/metric-queries-alerts/index'},
       items: [
         'metrics/metric-queries-alerts/metrics-explorer',
+        'metrics/metric-queries-alerts/map-charts',
         'metrics/metric-queries-alerts/metric-query-autocomplete',
         'metrics/metric-queries-alerts/query-comments',
         'metrics/metric-queries-alerts/aggregation-tips',
