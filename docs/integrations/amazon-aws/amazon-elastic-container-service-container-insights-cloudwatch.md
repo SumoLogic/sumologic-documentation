@@ -494,7 +494,7 @@ The **Amazon ECS - Cluster Overview** dashboard provides a high-level view of 
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Overview.png)
 
-#### Amazon ECS - Cluster Performance Monitoring
+### Amazon ECS - Cluster Performance Monitoring
 
 
 
