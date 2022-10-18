@@ -88,6 +88,6 @@ Additional information about the standard tag schema, match lists, Entity groups
 
 In the Cloud SIEM Enterprise release notes, you'll find information about new and enhanced features, updated content (like rules, log mappers and parsers), bug fixes, and other important announcements.
 
-To view release notes from previous years, check the [archive](/docs/releasenotesarchive).
+To view release notes from previous years, check the [archive](/release-notes-cse/archive).
 
 <span className="getstarted"><a href="https://help.sumologic.com/release-notes-cse/rss.xml">RSS Feed</a></span>
