@@ -2281,21 +2281,11 @@ module.exports = {
           collapsible: true,
           collapsed: true,
           items: [
-            'releasenotesarchive/service/year2022',
             'releasenotesarchive/service/year2021',
             'releasenotesarchive/service/year2020',
             'releasenotesarchive/service/year2019',
             'releasenotesarchive/service/year2018',
             'releasenotesarchive/service/year2017',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Cloud SIEM Archive',
-          collapsible: true,
-          collapsed: true,
-          items: [
-            'releasenotesarchive/cloud-siem/year2022',
           ],
         },
         {
