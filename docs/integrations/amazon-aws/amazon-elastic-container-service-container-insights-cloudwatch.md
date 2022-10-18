@@ -552,7 +552,7 @@ The **Amazon ECS - EC2 ****LaunchType** dashboard provides a high-level view 
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-EC2-LaunchType.png)
 
-#### Amazon ECS - Service Overview
+### Amazon ECS - Service Overview
 
 The **Amazon ECS - Service Overview** dashboard provides a high-level view of the health of the services along with details on the utilized resources.
 
