@@ -507,7 +507,7 @@ The **Amazon ECS - Cluster Performance Monitoring** dashboard provides detaile
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Performance-Monitoring.png)
 
-#### Amazon ECS - Cluster Resource Reservation
+### Amazon ECS - Cluster Resource Reservation
 
 
 
