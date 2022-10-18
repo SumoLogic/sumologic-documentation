@@ -541,7 +541,7 @@ The **Amazon ECS - Container Overview** dashboard provides a high-level view o
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Container-Overview.png)
 
-#### Amazon ECS - EC2 LaunchType
+### Amazon ECS - EC2 LaunchType
 
 The **Amazon ECS - EC2 ****LaunchType** dashboard provides a high-level view of the health of the cluster along with details on the utilized resources for EC2 launch types.
 
