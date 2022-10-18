@@ -519,7 +519,7 @@ The **Amazon ECS - Cluster Resource Reservation **dashboard provides informati
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Resource-Reservation.png)
 
-#### Amazon ECS - Container Logs
+### Amazon ECS - Container Logs
 
 The **Amazon ECS - Container Logs** dashboard provides detailed information on what is happening (errors or recent events) in a container. 
 
