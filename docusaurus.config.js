@@ -16,6 +16,7 @@ module.exports = {
   title: 'Welcome to Sumo Docs!',
   tagline: '',
   url: process.env.HOSTNAME || "http://localhost:3000",
+  trailingSlash: true,
   baseUrl: process.env.BASE_URL || "/",
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

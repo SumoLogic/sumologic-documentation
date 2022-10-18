@@ -779,7 +779,7 @@ module.exports = {
       link: {type: 'doc', id: 'dashboards-new/index'},
       items: [
         'dashboards-new/about',
-        'dashboards-new/create-a-dashboard-new',
+        'dashboards-new/create-dashboard-new',
         'dashboards-new/faq',
         'dashboards-new/drill-down-to-discover-root-causes',
         'dashboards-new/export-dashboard-new',
@@ -791,7 +791,7 @@ module.exports = {
           label: 'Panels',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'dashboards-new/panels'},
+          link: {type: 'doc', id: 'dashboards-new/panels/index'},
           items: [
             'dashboards-new/panels/modify-chart',
             'dashboards-new/panels/area-charts',
@@ -928,7 +928,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'search/get-started-with-search/search-page/index'},
           items: [
-            'search/get-started-with-search/search-page/add-saved-search-favorites',
+            'search/get-started-with-search/search-page/add-saved-search-to-favorites',
             'search/get-started-with-search/search-page/change-time-range-in-histogram',
             {
               type: 'category',

@@ -33,7 +33,7 @@ To add a panel with a single value chart:
 
     ![Metrics selection for query builder.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
-    To create a metrics query utilize the [Metrics Query Builder](../../metrics/metric-queries-alerts/metrics-explorer.md).   
+    To create a metrics query utilize the [Metrics Query Builder](/docs/metrics/metric-queries-alerts/metrics-explorer.md).   
 
     ![new single value chart metrics.png](/img/dashboards-new/panels/single-value-charts/new-single-value-chart-metrics.png)
 
@@ -58,4 +58,4 @@ The boolean single value chart would look like the following.
 
 ## Sparkline
 
-The **Sparkline** option is available for metrics and logs queries. A log query requires your query to have a [timeslice](../../search/search-query-language/search-operators/timeslice) operation and you will need to [sort](../../search/search-query-language/search-operators/sort) the timeslice as part of the query for the sparkling to render correctly.
+The **Sparkline** option is available for metrics and logs queries. A log query requires your query to have a [timeslice](/docs/search/search-query-language/search-operators/timeslice) operation and you will need to [sort](/docs/search/search-query-language/search-operators/sort) the timeslice as part of the query for the sparkling to render correctly.
