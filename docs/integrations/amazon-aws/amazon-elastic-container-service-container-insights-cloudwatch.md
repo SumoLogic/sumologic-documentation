@@ -67,7 +67,7 @@ Applied at: Ingest Time
 Scope (Specific Data):
 _sourceCategory=aws/observability/cloudtrail/logs
 
-###### **Parse Expression**: 
+Parse Expression: 
 
 Enter a parse expression to create an "account" field that maps to the alias you set for each sub-account. For example, if you used the "dev" alias for an AWS account with ID "528560886094" and the "prod" alias for an AWS account with ID "567680881046", your parse expression would look like this:
 
