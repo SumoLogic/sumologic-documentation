@@ -124,7 +124,7 @@ This procedure explains how to collect logs from Akamai Cloud Monitor and ingest
 
 ### Enable Akamai Cloud Monitor
 
-Akamai Cloud Monitor is the service that generates transactional information for your Akamai CDN. To enable Cloud Monitor in your Akamai environment, use the instructions at: [https://www.akamai.com/us/en/solutions/intelligent-platform/cloud-monitor.jsp](https://www.akamai.com/us/en/solutions/intelligent-platform/cloud-monitor.jsp)
+Akamai Cloud Monitor is the service that generates transactional information for your Akamai CDN. To enable Cloud Monitor in your Akamai environment, use the instructions at: [https://techdocs.akamai.com/property-mgr/docs/cloud-monitor-instrumentation](https://techdocs.akamai.com/property-mgr/docs/cloud-monitor-instrumentation)
 
 
 ### Configure a Collector

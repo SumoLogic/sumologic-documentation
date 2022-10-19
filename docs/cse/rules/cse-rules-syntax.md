@@ -258,7 +258,7 @@ Returns the four-quadrant inverse tangent of the two arguments supplied.
 
 Returns “true” if a specified array contains a particular value. 
 
-CSE rules use `array_contains` statements to look for a value in a Record field. This is useful if you want to check a Record’s `listMatches field` for [Match Lists](about-cse-rules.md) or threat intel list matches. You can also check the contents of the `fieldsTags` field to see if matches a keyword tag or schema key tag value.
+CSE rules use `array_contains` statements to look for a value in a Record field. This is useful if you want to check a Record’s `listMatches field` for [Match Lists](about-cse-rules.md) or threat intel list matches. You can also check the contents of the `fieldTags` field to see if matches a keyword tag or schema key tag value.
 
 **Syntax for matching to lists**
 
@@ -278,7 +278,7 @@ When you reference a threat intel  list using array_contains, you must substitut
 
 The syntax for checking to see if the the `fieldsTag` field contains a particular keyword tag is:
 
-`array_contains(fieldsTags["field"], "keyword-tag")`
+`array_contains(fieldTags["user_username"], "keyword-tag")`
 
 where:
 
@@ -287,9 +287,9 @@ where:
 
 **Syntax for matching to a schema key tag**
 
-The syntax for checking to see if the the `fieldsTag` field contains a particular schema key tag is:
+The syntax for checking to see if the the `fieldTag` field contains a particular schema key tag is:
 
-`array_contains(fieldsTags["field"], "schema-key:schema-value")`
+`array_contains(fieldTags["user_username"], "schema-key:schema-value")`
 
 where:
 

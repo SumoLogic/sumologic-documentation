@@ -7,10 +7,6 @@ description: Install the Sumo Logic app for SailPoint.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 SailPoint is an identity management solution that helps organizations manage employee permissions, digital identities, information security, data access, and compliance. The Sumo Logic App for SailPoint helps you monitor the user events, actions, operations, failed logins, successful logins, and user activities to your applications through SailPoint. The App consists of dashboards that give you visibility into the source deletion, user events, and geo locations of authentication events.
 
 ## Log types
@@ -113,7 +109,7 @@ _sourceCategory=Labs/sailpoint
 | sort by _count
 ```
 
-## Set up collection 
+## Set up collection
 
 Follow the instructions for setting up [Cloud to Cloud Integration for SailPoint App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) to create the source and use the same source category while installing the app.
 
