@@ -8,7 +8,7 @@ Use these easy-to-follow rules to get the most out of your Sumo Logic searches.
 
 ## Be specific with search scope
 
-At a minimum, all searches should use one or more [metadata](../search-basics/built-in-metadata.md "Search Metadata") tags in the scope, for example:  `_sourceCategory`, `_source`, `_sourceName`, `_sourceHost`, or `_collector`.
+At a minimum, all searches should use one or more [metadata](../search-basics/built-in-metadata.md) tags in the scope, for example:  `_sourceCategory`, `_source`, `_sourceName`, `_sourceHost`, or `_collector`.
 
 If possible, also use one or more keywords to limit the scope.
 
@@ -19,7 +19,7 @@ test your search against a shorter time range first, then extend the time range 
 
 ## Use fields extracted by FERs and avoid the where operator
 
-Whenever possible, use keyword searches and fields already extracted using [Field Extraction Rules](/docs/manage/field-extractions) (FERs) to filter data instead of using the [where](../../search-query-language/search-operators/where) operator. If it is not possible to only use a keyword or pre-extracted field, use both a keyword search AND the where clause.
+Whenever possible, use keyword searches and fields already extracted using [Field Extraction Rules](/docs/manage/field-extractions) (FERs) to filter data instead of using the [where](/docs/search/search-query-language/search-operators/where) operator. If it is not possible to only use a keyword or pre-extracted field, use both a keyword search AND the where clause.
 
 **Best approach:** Field Extraction Rule field AND keyword
 
@@ -68,7 +68,7 @@ _sourceCategory=Prod/User/Eventlog
 
 ## Use parse anchor instead of parse regex for structured messages
 
-According to [Use fields extracts by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator), it is best to use pre-extracted fields. If you need to parse a field that is not pre-extracted, use [parse anchor](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor). If you are dealing with unstructured messages that are more complex, leverage [parse regex](../../search-query-language/parse-operators/parse-variable-patterns-using-regex.md) and place it in a Field Extraction Rule.
+According to [Use fields extracts by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator), it is best to use pre-extracted fields. If you need to parse a field that is not pre-extracted, use [parse anchor](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor). If you are dealing with unstructured messages that are more complex, leverage [parse regex](/docs/search/search-query-language/parse-operators/parse-variable-patterns-using-regex) and place it in a Field Extraction Rule.
 
 ## When using parse regex avoid expensive tokens
 

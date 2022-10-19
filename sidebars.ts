@@ -177,6 +177,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cylance-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source',
@@ -778,7 +779,7 @@ module.exports = {
       link: {type: 'doc', id: 'dashboards-new/index'},
       items: [
         'dashboards-new/about',
-        'dashboards-new/create-a-dashboard-new',
+        'dashboards-new/create-dashboard-new',
         'dashboards-new/faq',
         'dashboards-new/drill-down-to-discover-root-causes',
         'dashboards-new/export-dashboard-new',
@@ -790,7 +791,7 @@ module.exports = {
           label: 'Panels',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'dashboards-new/panels'},
+          link: {type: 'doc', id: 'dashboards-new/panels/index'},
           items: [
             'dashboards-new/panels/modify-chart',
             'dashboards-new/panels/area-charts',
@@ -927,7 +928,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'search/get-started-with-search/search-page/index'},
           items: [
-            'search/get-started-with-search/search-page/add-saved-search-favorites',
+            'search/get-started-with-search/search-page/add-saved-search-to-favorites',
             'search/get-started-with-search/search-page/change-time-range-in-histogram',
             {
               type: 'category',
@@ -1259,6 +1260,7 @@ module.exports = {
       link: {type: 'doc', id: 'metrics/metric-queries-alerts/index'},
       items: [
         'metrics/metric-queries-alerts/metrics-explorer',
+        'metrics/metric-queries-alerts/map-charts',
         'metrics/metric-queries-alerts/metric-query-autocomplete',
         'metrics/metric-queries-alerts/query-comments',
         'metrics/metric-queries-alerts/aggregation-tips',

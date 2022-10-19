@@ -4,9 +4,6 @@ title: CyberArk EPM
 sidebar_label: CyberArk EPM
 description: This integration accesses CyberArk EPMs API to retrieve administrative audit events from every Set in the environment.
 ---
-<head>
-  <meta name="robots" content="noindex" />
-</head>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -25,7 +22,7 @@ The CyberArk EPM Source consumes Sets and admin audit events.
 ## Create a CyberArk EPM Source​
 When you create a CyberArk EPM Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](docs/send-data/hosted-collectors/configure-hosted-collector.md).
 
-**To configure a CyberArk Source**
+**To configure a CyberArk EPM Source**
 
 1. In Sumo Logic, select **Manage Data \> Collection \> Collection**.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
@@ -43,7 +40,10 @@ When you create a CyberArk EPM Source, you add it to a Hosted Collector. Before 
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 1. **EPM Username**. Enter your EPM username.
 1. **EPM User Password**. Enter your EPM password.
-1. **CyberArk EPM Dispatch Server**. Enter your CyberArk EPM Dispatch Server URL.
+1. **CyberArk EPM Dispatch Server**. Enter your CyberArk EPM Dispatch Server URL. For example, `https://login.cyberark.com`.
+  :::note
+  This is not your instance URL.
+  :::
 1. **Application ID**. Used to identify what's accessing the API. For example, *sumologic*.
 1. **Rate Limit C2C**. The EPM Dispatch Server limits requests to 3 request per 5 minutes. The Sumo Logic connector will adhere to that limit when this box is checked. If the box is unchecked, the connector won't limit the number of requests, but unless you ask CyberArk Support to change the Dispatch Server rate limit, requests will be rate-limited on the EPM side.
 1. **Polling Interval**. This field is pre-filled with 600.

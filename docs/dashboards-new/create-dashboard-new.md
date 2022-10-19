@@ -1,5 +1,5 @@
 ---
-id: create-a-dashboard-new
+id: create-dashboard-new
 title: Create a Dashboard (New)
 description: Learn how to create your own custom Dashboard (New) with a panel and query, then customize a chart and add the chart to the dashboard.
 ---
@@ -50,7 +50,7 @@ Now that you have created a new Dashboard (New), you can populate it with pane
 
 To add a panel to a new Dashboard (New), do the following:
 
-1. Select a panel type by clicking the icon. See [choosing a panel type](./panels.md) for details.
+1. Select a panel type by clicking the icon. See [choosing a panel type](/docs/dashboards-new/panels) for details.
 
     ![panel types.png](/img/dashboards-new/create-dashboard-new/panel-types.png)
 

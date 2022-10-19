@@ -59,7 +59,7 @@ which would produce results such as:
 
 ## Create a Map Chart
 
-1. Run a [Geo Lookup](../../search/search-query-language/search-operators/geo-lookup-map) query.
+1. Run a [Geo Lookup](/docs/search/search-query-language/search-operators/geo-lookup-map) query.
 1. In the **Aggregates** tab, choose the **Map Chart** icon to display the search results.
 
     ![Charts - map](/img/dashboards/charts_map.png)
@@ -72,4 +72,4 @@ The number of data points on a dashboard panel are limited to 1,000. Therefore, 
 
 ![map chart in aggregates tab.png](/img/dashboards/map-chart-aggregates-tab.png)
 
-For more information on geolocation operators, see the [Geo Lookup](../../search/search-query-language/search-operators/geo-lookup-map) operator.
+For more information on geolocation operators, see the [Geo Lookup](/docs/search/search-query-language/search-operators/geo-lookup-map) operator.

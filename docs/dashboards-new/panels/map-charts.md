@@ -55,7 +55,7 @@ To add a panel with a map chart:
 
     ![map panel option.png](/img/dashboards-new/panels/map-charts/map-panel-option.png)
 
-1. Provide a [Geo Lookup](../../search/search-query-language/search-operators/geo-lookup-map) query and press **Enter** for it to run.
+1. Provide a [Geo Lookup](/docs/search/search-query-language/search-operators/geo-lookup-map) query and press **Enter** for it to run.
 
     ![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
@@ -65,7 +65,7 @@ To add a panel with a map chart:
 
     ![new heat map.png](/img/dashboards-new/panels/map-charts/new-heat-map.png)
 
-1. [Modify the chart](./modify-chart.md) as desired.
+1. [Modify the chart](/docs/dashboards-new/panels/modify-chart) as desired.
 
 1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.  
 
