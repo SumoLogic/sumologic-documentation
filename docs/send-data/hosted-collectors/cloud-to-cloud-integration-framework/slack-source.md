@@ -32,7 +32,7 @@ The source collects the following API endpoints and routes.
 | Audit API | auditlogs:read   | [audit-logs](https://api.slack.com/admins/audit-logs-call)                   | N/A       | N/A       | N/A       | Collected  |
 
 ## Metadata Fields
-The **SIEM forward** option, which causes collected information to be forwarded to Cloud SIEM Enterprise, is not currently supported. It will be added later once Cloud SIEM has supporting content. This may also be complicated due to the C2C transforming some data for Sumo Logic app compatibility.
+The **SIEM forward** option, which causes collected information to be forwarded to Cloud SIEM Enterprise, is not currently supported.
 
 ## Setup and Configuration Overview
 The Slack source can collect data from Slack's [Web API](https://api.slack.com/web) and
