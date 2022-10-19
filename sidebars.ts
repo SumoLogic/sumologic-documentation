@@ -1868,6 +1868,7 @@ module.exports = {
         'integrations/security-threat-detection/palo-alto-networks-6',
         'integrations/security-threat-detection/palo-alto-networks-8',
         'integrations/security-threat-detection/palo-alto-networks-9',
+        'integrations/security-threat-detection/sailpoint',        
         'integrations/security-threat-detection/threat-intel-quick-analysis',
         'integrations/security-threat-detection/trend-micro-deep-security',
         'integrations/security-threat-detection/twistlock',
