@@ -1464,10 +1464,27 @@ html[data-theme='dark'] .featureImage {
   }
 }
 
+
 // Blog Styles
-.blogPostTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-BlogPostItem-styles-module {
-  font-size: 1.75rem !important;
+
+.title_node_modules-\@docusaurus-theme-classic-lib-theme-BlogPostItem-Header-Title-styles-module {
+  font-size: 1.6rem !important;
 }
+
+.sidebarItemLink_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module {
+  font-size: .75rem !important;
+}
+
+.sidebarItemTitle_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module {
+  font-size: 1.2rem !important;
+}
+
+//Blog Author
+.avatar__name {
+  font-size: .9rem !important;
+  padding: 0px;
+}
+
 
 .margin-bottom--blog {
   margin-bottom: 2rem;
@@ -1477,6 +1494,8 @@ html[data-theme='dark'] .featureImage {
   margin-bottom: 0.5rem;
   color: var(--subtle);
 }
+
+
 
 
 // Sumo badges

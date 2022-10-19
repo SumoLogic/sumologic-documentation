@@ -1,5 +1,5 @@
 ---
-id: panels
+slug: /dashboards-new/panels
 title: Dashboard (New) Panels
 sidebar_label: Panels
 description: Learn about the different panel types available in Dashboard (New) and the types of data best suited for each.
@@ -13,8 +13,8 @@ Panels are the building blocks used to create a dashboard. Each panel displays
 
 Related topics:
 
-* [Modify a Chart](panels/modify-chart.md)
-* [Markdown Syntax](panels/markdown-syntax.md)
+* [Modify a Chart](modify-chart.md)
+* [Markdown Syntax](markdown-syntax.md)
 
 <Tabs
   className="unique-tabs"
@@ -44,16 +44,16 @@ These are best used for looking at statistics taken over time. Things like CPU,�
 Time series panels accept aggregate fields with epoch values (milliseconds since 1970).
 
 :::note
-Log queries can use the [timeslice operator](../search/search-query-language/search-operators/timeslice) to provide a time series.
+Log queries can use the [timeslice operator](/docs/search/search-query-language/search-operators/timeslice) to provide a time series.
 :::
 
 Available chart types:
 
-* [Area](panels/area-charts.md)
-* [Bar](panels/bar-charts.md)
-* [Column](panels/column-charts.md)
-* [Line](panels/line-charts.md)
-* [Table](panels/table-charts.md)
+* [Area](area-charts.md)
+* [Bar](bar-charts.md)
+* [Column](column-charts.md)
+* [Line](line-charts.md)
+* [Table](table-charts.md)
 
 ### What is the difference between a categorical and time series panel?
 The **categorical** panel type contains charts that graph data across categories. This includes:
@@ -89,13 +89,13 @@ These are best used to understand the distribution of data by categories. For e
 
 Available chart types:
 
-* [Area](panels/area-charts.md)
-* [Bar](panels/bar-charts.md)
-* [Bubble](panels/bubble-charts.md)
-* [Column](panels/column-charts.md)
-* [Pie](panels/pie-charts.md)
-* [Scatter](panels/scatter-charts.md)
-* [Table](panels/table-charts.md)
+* [Area](area-charts.md)
+* [Bar](bar-charts.md)
+* [Bubble](bubble-charts.md)
+* [Column](column-charts.md)
+* [Pie](pie-charts.md)
+* [Scatter](scatter-charts.md)
+* [Table](table-charts.md)
 
 The following image shows an example of Scatter and Bubble charts.  
 
@@ -109,7 +109,7 @@ The following image shows an example of Scatter and Bubble charts.
 
 Single Value Panels are great at providing high level overviews. They look great on executive dashboards and can provide at-a-glance information to help decide where to inspect and troubleshoot further.
 
-Only [single value charts](panels/single-value-charts.md) are supported.
+Only [single value charts](single-value-charts.md) are supported.
 
 ![single value charts.png](/img/dashboards-new/panels/single-value-charts.png)
 </TabItem>
@@ -119,13 +119,13 @@ Only [single value charts](panels/single-value-charts.md) are supported.
 
 ![map panel.png](/img/dashboards-new/panels/map-panel.png)
 
-Maps identify where requests are coming from. These are ideal for [geolocation](../search/search-query-language/search-operators/geo-lookup-map) data.
+Maps identify where requests are coming from. These are ideal for [geolocation](/docs/search/search-query-language/search-operators/geo-lookup-map) data.
 
 :::note
 You may not see map panels render if hardware acceleration is disabled on your browser.
 :::
 
-Only [map charts](panels/map-charts.md) are supported.
+Only [map charts](map-charts.md) are supported.
 
 ![new map charts.png](/img/dashboards-new/panels/new-map-charts.png)
 </TabItem>
@@ -137,7 +137,7 @@ Only [map charts](panels/map-charts.md) are supported.
 
 Text can clarify what you are showing on dashboards or act as a note to your viewer. Text  panels provide the flexibility to display descriptive text in or above other panels.
 
-Titles are displayed in the same size and font. Text is styled using Markdown syntax, meaning that you can control the size and weight of the text. Not all Markdown syntax options are supported; see [Markdown Syntax](panels/markdown-syntax.md).
+Titles are displayed in the same size and font. Text is styled using Markdown syntax, meaning that you can control the size and weight of the text. Not all Markdown syntax options are supported; see [Markdown Syntax](markdown-syntax.md).
 
 There is no limit to the number of Text Panels you can add to Dashboards. These types of Panels don't count against the quota in Sumo Logic Free accounts.
 
@@ -152,7 +152,7 @@ To add a Text Panel:
 
     ![Display options.png](/img/dashboards-new/panels/Display-options.png)
 
-    1. Input your **Text** or **Markdown** syntax in the **Text Editor** pane. See [Markdown Syntax](panels/markdown-syntax.md) for details on what is supported.
+    1. Input your **Text** or **Markdown** syntax in the **Text Editor** pane. See [Markdown Syntax](markdown-syntax.md) for details on what is supported.
     1. The **Visual Settings** options allow you to adjust the font, colors, and alignment of your data.
     1. A title is optional, you can toggle its visibility in the **Panel Details** covered in the next section.
 
@@ -173,7 +173,7 @@ To add a Text Panel:
 
 Text panels can provide links to URLs or other Dashboards with markdown syntax. To create a link to a URL, surround your linked text with square brackets `[]`, then add your URL in parenthesis `()`, as shown.
 
-To add a link to a Panel in order to drill down to another Dashboard, see [Add Dashboard Link](../dashboards/get-started/add-dashboard-link.md).
+To add a link to a Panel in order to drill down to another Dashboard, see [Add Dashboard Link](/docs/dashboards/get-started/add-dashboard-link).
 
 ### Syntax
 
@@ -189,11 +189,11 @@ In the panel, the link is displayed. 
 
 ![icon-service-map.png](/img/dashboards-new/panels/icon-service-map.png)
 
-The [Service Map](../apm/traces/working-with-tracing-data/service-map.md) is a high-level view of your application environment, giving you a greater view and understanding of your application architecture and dependencies between monitored microservices.
+The [Service Map](/docs/apm/traces/working-with-tracing-data/service-map) is a high-level view of your application environment, giving you a greater view and understanding of your application architecture and dependencies between monitored microservices.
 
 The panel gives you a fully functioning map to zoom in and out and move through services. The size and color of application entities shows status and activity. Click on a service to open the Entity Inspector to drill down to traces, metrics, and the service dashboard.
 
-You can filter the map according to application and service. See the [Dashboard (New)](about.md) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
+You can filter the map according to application and service. See the [Dashboard (New)](/docs/dashboards-new/about) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
 
 ![panel-service.png](/img/dashboards-new/panels/panel-service.png)
 
@@ -230,9 +230,9 @@ To add a Service Map panel:
 
 ![icon-trace-list.png](/img/dashboards-new/panels/icon-trace-list.png)
 
-Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real-time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans](../apm/traces/working-with-tracing-data/spans.md), and a breakdown of services. The panel panel displays the [Traces page] table to give at-a-glance tracking for traces through your Dashboard. To view transaction and service details, click a trace from the panel to open the [Trace View](../apm/traces/working-with-tracing-data/view-and-investigate-traces.md). 
+Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real-time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans](/docs/apm/traces/working-with-tracing-data/spans), and a breakdown of services. The panel panel displays the [Traces page] table to give at-a-glance tracking for traces through your Dashboard. To view transaction and service details, click a trace from the panel to open the [Trace View](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces). 
 
-See the [Dashboard (New)](./about.md) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers and more.
+See the [Dashboard (New)](/docs/dashboards-new/about) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers and more.
 
 :::note
 You are limited to 3 Trace List panels in a dashboard.
@@ -250,9 +250,9 @@ To add a Trace List panel:
 
     ![create-tracelist.png](/img/dashboards-new/panels/create-tracelist.png)
 
-1. Configure a [Trace query](../apm/traces/working-with-tracing-data/view-and-investigate-traces.md) to search for desired set of traces. 
+1. Configure a [Trace query](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces) to search for desired set of traces. 
 
-1. Select a time range or [create a custom range](set-custom-time-ranges.md) for the panel. You can set this when creating or at any time when viewing the Dashboard panel.  
+1. Select a time range or [create a custom range](/docs/dashboards-new/set-custom-time-ranges) for the panel. You can set this when creating or at any time when viewing the Dashboard panel.  
 
     ![timerange.png](/img/dashboards-new/panels/timerange.png)
 
