@@ -229,7 +229,7 @@ By default, the collection starts from the current date and time, but this setti
 
 ### Step 1: Acquire Authentication Info from MongoDB Atlas Portal
 
-This section shows you how to acquire MongoDB Atlas portal authentication information. If you're using IP allowlisting in an AWS Lambda based deployment, you will have to allowlist all of the IPs in the AWS region. AWS provides a [URL](https://ip-ranges.amazonaws.com/ip-ranges.json) to fetch IPs that returns a JSON file. You can use the [Atlas APIs](https://www.mongodb.com/docs/atlas/api/) to automate this process.
+This section shows you how to acquire MongoDB Atlas portal authentication information. Generate programmatic API Keys with project owner permissions using the instructions in the Atlas [documentation](https://docs.atlas.mongodb.com/configure-api-access/#create-an-api-key-for-a-project). Then, copy the public key and private key. These serve the same function as a username and API Key, respectively.
 1. Generate programmatic API Keys with project owner permissions using the instructions in the Atlas [documentation](https://docs.atlas.mongodb.com/configure-api-access/#create-an-api-key-for-a-project). Then, copy the public key and private key. These serve the same function as a username and API Key respectively.
 2. Specify the API key **Organization Member** permissions, under **Organization > Access Manager > API Keys**, as shown in the following example.
 3. Go to **Project Settings** > **Access Manager** > **API Keys** and then click on **Invite To Project** to add the API key created above for this project as shown in the following example.
@@ -286,7 +286,7 @@ In this section, you deploy the SAM application, which creates the necessary res
  { "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Action": [ "ec2:DescribeNetworkInterfaces", "ec2:CreateNetworkInterface", "ec2:DeleteNetworkInterface", "ec2:DescribeInstances", "ec2:AttachNetworkInterface" ], "Resource": "*" } ] }
  ```
   Click on Review policy, and provide an appropriate name. Then click on Create policy. Some users might already have these permissions enabled.
-9. We then follow these steps to create elastic IP/IPs for the lambda function and add a VPC to our function. We note down the elastic IPs.
+9. We then [follow these steps](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/generate-a-static-outbound-ip-address-using-a-lambda-function-amazon-vpc-and-a-serverless-architecture.html) to create elastic IP/IPs for the lambda function and add a VPC to our function. We note down the elastic IPs.
 10. We go to the mongo console, click on Organization Access>Access Manager > API Keys, and click on ‘...’ of the API Key as mentioned in step 2. Then click on Edit Permissions.
 11. Click Next > Add Access List Entry. Enter the elastic IPs noted above and, then click Save to save the elastic IPs, and click on Done to apply the settings.
 
