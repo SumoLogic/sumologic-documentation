@@ -7,9 +7,6 @@ keywords:
   - service release notes
   - cloud siem
   - cse
-authors:
-  - name: Sumo Logic Docs Team
-    url: https://github.com/SumoLogic/sumologic-documentation
 ---
 
 

@@ -83,11 +83,3 @@ Additional information about the standard tag schema, match lists, Entity groups
 * Entity relationships were not taking sensor zones into account properly.
 * Entity details pages were only briefly displaying the proper Criticality.
 * The Entities Count links on the Entity Criticality list pages were pointing at the wrong URLs.
-
----
-
-In the Cloud SIEM Enterprise release notes, you'll find information about new and enhanced features, updated content (like rules, log mappers and parsers), bug fixes, and other important announcements.
-
-To view release notes from previous years, check the [archive](/release-notes-cse/archive).
-
-<span className="getstarted"><a href="https://help.sumologic.com/release-notes-cse/rss.xml">RSS Feed</a></span>
