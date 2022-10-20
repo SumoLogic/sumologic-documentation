@@ -23,6 +23,9 @@ In the steps below, you’ll configure a Sumo Logic [scheduled search](docs/aler
 
 Identify your source of inventory data and review the [CSE inventory schema](#cse-inventory-schema) below. The schema identifies the attributes supported for the two different CSE inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#step-2-create-a-webhook-connection) below.
 
+## Limitations
+
+This approach uses Scheduled Searches which are limited to 100 unique rows of data each time they trigger. This means that if you have more than 100 inventory items, only the first 100 will be sent using this method. 
 
 ## Step 1: Set up an HTTP Source
 
