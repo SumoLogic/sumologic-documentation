@@ -108,12 +108,12 @@ module.exports = {
           showReadingTime: true, // When set to false, the "x min read" won't be shown
           readingTime: ({content, frontMatter, defaultReadingTime}) =>
             defaultReadingTime({content, options: {wordsPerMinute: 200}}),
-          feedOptions: {
-            type: 'rss', // https://help.sumologic.com/release-notes-service/rss.xml
-            title: 'Sumo Logic Service Release Notes',
-            description: 'Here you will find a chronological list of the newest Sumo Logic service features and bug fixes',
-            copyright: `Copyright ©${new Date().getFullYear()} Sumo Logic`,
-          },
+          //feedOptions: {
+            //type: 'rss', // https://help.sumologic.com/release-notes-service/rss.xml
+            //title: 'Sumo Logic Service Release Notes',
+            //description: 'Here you will find a chronological list of the newest Sumo Logic service features and bug fixes',
+            //copyright: `Copyright ©${new Date().getFullYear()} Sumo Logic`,
+        //  },
         },
         theme: {
           customCss: [
@@ -155,12 +155,12 @@ module.exports = {
          showReadingTime: true, // When set to false, the "x min read" won't be shown
          readingTime: ({content, frontMatter, defaultReadingTime}) =>
            defaultReadingTime({content, options: {wordsPerMinute: 200}}),
-         feedOptions: {
-           type: 'rss', // https://help.sumologic.com/release-notes-cse/rss.xml
-           title: 'Sumo Logic Cloud SIEM Release Notes',
-           description: 'New and enhanced Cloud SIEM features, updated content (like rules, log mappers and parsers), bug fixes, and other important announcements.',
-           copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
-         },
+         //feedOptions: {
+           //type: 'rss', // https://help.sumologic.com/release-notes-cse/rss.xml
+           //title: 'Sumo Logic Cloud SIEM Release Notes',
+           //description: 'New and enhanced Cloud SIEM features, updated content (like rules, log mappers and parsers), bug fixes, and other important announcements.',
+           //copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+        // },
       },
     ],
     ['@docusaurus/plugin-content-blog',
@@ -177,12 +177,12 @@ module.exports = {
           showReadingTime: true, // When set to false, the "x min read" won't be shown
           readingTime: ({content, frontMatter, defaultReadingTime}) =>
             defaultReadingTime({content, options: {wordsPerMinute: 200}}),
-          feedOptions: {
-            type: 'rss', // https://help.sumologic.com/release-notes-developer/rss.xml
-            title: 'Sumo Logic Developer Release Notes',
-            description: 'Here you will find a chronological list of the newest Sumo Logic developer features and bug fixes.',
-            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
-          },
+        //  feedOptions: {
+          //  type: 'rss', // https://help.sumologic.com/release-notes-developer/rss.xml
+        //    title: 'Sumo Logic Developer Release Notes',
+        //    description: 'Here you will find a chronological list of the newest Sumo Logic developer features and bug fixes.',
+        //    copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+        //  },
        },
     ],
     ['@docusaurus/plugin-content-blog',
@@ -199,12 +199,12 @@ module.exports = {
           showReadingTime: true, // When set to false, the "x min read" won't be shown
           readingTime: ({content, frontMatter, defaultReadingTime}) =>
             defaultReadingTime({content, options: {wordsPerMinute: 200}}),
-          feedOptions: {
-            type: 'rss', // https://help.sumologic.com/release-notes-collector/rss.xml
-            title: 'Sumo Logic Collector Release Notes',
-            description: 'Here you will find a chronological list of the newest Sumo Logic collector features and bug fixes',
-            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
-          },
+      //  feedOptions: {
+        //    type: 'rss', // https://help.sumologic.com/release-notes-collector/rss.xml
+          //  title: 'Sumo Logic Collector Release Notes',
+            //description: 'Here you will find a chronological list of the newest Sumo Logic collector features and bug fixes',
+            //copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+          //},
         },
      ],
     ['@docusaurus/plugin-client-redirects',
