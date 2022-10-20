@@ -1,5 +1,5 @@
 ---
-title: October 20, 2022 - Application Update
+title: October 20, 2022 Application Update
 hide_table_of_contents: false
 keywords:
   - sumo logic
