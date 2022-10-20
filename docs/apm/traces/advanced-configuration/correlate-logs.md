@@ -11,3 +11,4 @@ Learn how to link your traces and logs together for a broad and deep understand
 * [JavaScript - TraceId and SpanId injection into logs configuration](../get-started-transaction-tracing/opentelemetry-instrumentation/javascript/traceid-spanid-injection-into-logs.md)
 * [Go TraceId and SpanId injection into logs configuration](../get-started-transaction-tracing/opentelemetry-instrumentation/go/traceid-and-spanid-injection-into-logs.md)
 * [.NET TraceId and SpanId injection into logs configuration](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net/traceid-spanid-injection-into-logs.md)
+ 
