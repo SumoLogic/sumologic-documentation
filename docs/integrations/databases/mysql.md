@@ -650,17 +650,14 @@ Now that you have set up collection for MySQL, install the Sumo Logic App for My
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom filter. For example:
-        * For all MySQL clusters: `db_system=mysql db_cluster=*`
-        * For a specific cluster: `db_system=mysql db_cluster=mysql.dev.01`
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+1. From the App Catalog, search for and select the app.
+1. Select the service version you're using and click Add to Library. Version selection applies only to a few apps currently. For more information, see the Install the Apps from the Library.
+1. To install the app, complete the following fields.
+   * App Name. You can retain the existing name or enter the app's name of your choice. 
+   * Advanced. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
+1. Click Add to Library.
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+Once an app is installed, it will appear in your Personal folder or another folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 

@@ -497,21 +497,20 @@ email_notifications = [
 
 ## Installing the MongoDB App
 
-Now that you have set up collection for MongoDB, install the Sumo Logic App for MongoDB to use the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data. Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+Now that you have set up collection for MongoDB, install the Sumo Logic App for MongoDB to use the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+Locate and install the app you need from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click Preview Dashboards.
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+1. From the App Catalog, search for and select the app.
+1. Select the service version you're using and click Add to Library. Version selection applies only to a few apps currently. For more information, see the Install the Apps from the Library.
+1. To install the app, complete the following fields.
+   * App Name. You can retain the existing name or enter the app's name of your choice. 
+   * Advanced. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
+1. Click Add to Library.
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+Once an app is installed, it will appear in your Personal folder or another folder that you specified. From here, you can share it with your organization.
+
+Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
 ## Viewing MongoDB Dashboards
@@ -564,29 +563,27 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/databases/MongoDB-Logins-and-Connections.png')} alt="MongoDB dashboards" />
 
 
-### Queries
+### Query Logs
 
-MongoDB queries include the following definitions:
 
-* **MongoDB queries** include the following database commands: find, insert, remove, delete or update.
-* **Slow queries** are defined as queries that take more than 100 milliseconds.
-* **keysExamined** are the number of index keys that MongoDB scanned in order to carry out the operation.
+The MongoDB - Queries dashboard shows read and write query trends.
 
-From MongoDB - If keysExamined is much higher than returned, the database is scanning many index keys to find the result documents. Consider creating or adjusting indexes to improve query performance.
+Use this dashboard to:
+* Monitor abnormal spikes in Query volume
+* Identify the read versus write ratio of your application queries.
+ing or adjusting indexes to improve query performance.
 
 <img src={useBaseUrl('img/integrations/databases/MongoDB-Queries.png')} alt="MongoDB dashboards" />
 
 
 
-### Replication
+### Replication Logs
 
-The **MongoDB - Replication** dashboard shows replication events, errors, warnings, and nodes.
+The MongoDB - Replication dashboard shows replica deletes/updates/inserts trend and replica state.
 
 Use this dashboard to:
-* Identify Replication errors and warnings.
-* Gain insights into Arbiter, Primary and Secondary node health.
-
-This Dashboard will only show data if you have Replication setup for MongoDB.
+* Monitor replication state and replication events like inserts/updates/commands per second.
+* Track Replication Oplog window to identify replication delay
 
 <img src={useBaseUrl('img/integrations/databases/MongoDB-Replication.png')} alt="MongoDB dashboards" />
 

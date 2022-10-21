@@ -610,6 +610,15 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/databases/PostgreSQL-Slow-Queries.png')} alt="PostgreSQL dashboards" />
 
 
+### Relation Metrics
+The PostgreSQL - Relation Metrics dashboard allows you to view and analyze the metrics for monitoring the relations in a schema.
+
+Use this dashboard to:
+* Monitor PostgreSQL relation metrics (disk blocks, buffer hits, hot updates etc) trends over time.
+* Monitor sequential scans and index scans and determine if executed queries are accessing them for a relation.
+* Track index utilization of existing indexes in a relation
+
+
 ## PostgreSQL Metrics
 
 Here are the metrics available for PostgreSQL.
