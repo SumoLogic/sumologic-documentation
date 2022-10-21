@@ -7,7 +7,7 @@ description: This Sumo Logic App for Istio  provides visibility into the health 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/istio.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/istio.png')} alt="Thumbnail icon" width="50"/>
 
 [Istio](https://istio.io/) reduces the complexity of managing Kubernetes deployments by providing a uniform platform for securing, connecting, and monitoring microservices.
 
@@ -260,7 +260,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing Istio Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
 :::
 
 ### Overview

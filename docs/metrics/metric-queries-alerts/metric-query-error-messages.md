@@ -9,29 +9,39 @@ This page describes error messages that are presented for long-running metric q
 
 ## Too many time series
 
-For a single metrics query row, Sumo limits input time series at 1000 for non-aggregate queries and 15000 for aggregate queries (queries that have an aggregate operator like avg and max). The input time series is the time series before aggregation that match the selector.
+Sumo Logic imposes limits on the input data for a query and the data output by the query, as described below.
 
-When a metric query returns more than 1000 time series, Sumo limits the number of time series in the visualization and any aggregate calculations, and presents a message like this:
+### Input data limit
 
-`Too many time-series matched '(query-selectors)'. Displaying n of m+ matching series. Add more filters to select fewer time series or apply an aggregation function`
+*Input data* is the data that matches the selector, prior to aggregation. Sumo Logic evaluates the volume of input data in terms of the number of time series.
 
-Where: 
+For a single metrics query row, Sumo Logic limits the number of input time series to 1000 for non-aggregate queries, and 37000 for aggregate queries (queries that have an aggregate operator like avg and max).
 
-* `query-selectors` are the selectors you used in your query.
-* `n` is the number of time series displayed in the visualization.
-* `m` is the number of time series that matched your query.
+When a single row of a query scans more than 37000 time series, Sumo will stop scanning more data, and aggregate the results based on the scanned inputs. A message like this appears when the input limit is reached
+
+`This query is scanning too much data, the first (number of input time series scanned) time series were included.`
 
 :::important
-If the query that results in the message contains an aggregation operator, the results presented are likely to be erroneous because the aggregation will be based on only 1000 time series.  
+If the query that results in the message contains an aggregation operator, the results presented are likely to be erroneous because the aggregation will be based on partial input.  
 :::
 
-One solution is to add additional selectors to your query to reduce the number of time series returned, for example by adding additional `tag=value` pairs to the query. You can also filter the time series returned using the [topk](/docs/metrics/metrics-operators#topk), [bottomk](/docs/metrics/metrics-operators#bottomk), and [filter](/docs/metrics/metrics-operators#filter) operators. 
+### Output data limit
+
+When a single row of query returns more than 1000 time series after the input data limit is applied, Sumo also limits the number of time series in the visualization and any aggregate calculations, and presents a message like this:
+
+`There were too many timeseries in the output, showing first 1000`
+
+There will also be a tip like this:
+
+`Tip: Group your data by _sourceHost using avg to produce more readable result. Add operator to query.`
+
+One solution is to add additional selectors to your query to reduce the number of time series returned, for example by adding additional `tag=value` pairs to the query. You can also filter the time series returned using the [topk](/docs/metrics/metrics-operators/topk), [bottomk](/docs/metrics/metrics-operators/bottomk), and [filter](/docs/metrics/metrics-operators/filter) operators. 
 
 ## Long-running metric query
 
 For a single metrics query request, Sumo limits the output time series at 1000 for visualization. Output time series can either exceed the limit for a single row or multiple rows combined.
 
-When a metric query runs for 30 seconds, it will time out, and Sumo will present a message like this:
+When a metric query runs for 60 seconds, it will time out, and Sumo will present a message like this:
 
 `The metrics query timed out. Please consider making the query more selective.`
 

@@ -1,14 +1,20 @@
-# Welcome to Sumo Logic Documentation
+<h1>Sumo Logic Documentation</h1>
 
-Share your knowledge with the community by contributing to Sumo Logic Documentation!
+<p>
+  <a href="https://github.com/SumoLogic/sumologic-documentation/blob/main/.github/workflows/production.yml"><img src="https://github.com/SumoLogic/sumologic-documentation/actions/workflows/production.yml/badge.svg" alt="GitHub Actions status"></a>
+  <a href="https://help.sumologic.com/docs/contributing"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=ff0000"></a>
+  <a href="https://twitter.com/SumoLogic"><img src="https://img.shields.io/twitter/follow/sumologic.svg?style=social" alt="Twitter Follow" /></a>
+  <a href="https://help.sumologic.com/release-notes-service"><img src="https://img.shields.io/badge/RSS-FFA500?style=for-the-badge&logo=rss&logoColor=white" alt="RSS Follow" width="50"/></a>
+</p>
 
-You can contribute by creating an issue or pull request (PR) on our GitHub repository. We welcome all types of contributions; from minor typo fixes to new topics.
+Share your knowledge with the Sumo Logic community by contributing to our docs! You can contribute by creating an issue or pull request (PR) on our GitHub repository. We welcome all types of contributions; from minor typo fixes to new topics.
 
 Documentation staff members review issues and pull requests on a regular basis. We do our best to address all issues as soon as possible, but working through the backlog takes time. We appreciate your patience.
 
 ## Contributing Content
 
-For details on contributions, see [Contributor Guidelines](/docs/contributing) and the [GitHub Wiki](https://github.com/SumoLogic/sumologic-documentation/wiki).
+For details on contributions, see [Contributor Guidelines](/docs/contributing).
 
 We recommend forking the repo, creating all content changes in branches, and submitting pull requests. We will work with you to get this content reviewed, tested, and merged for publishing.
 

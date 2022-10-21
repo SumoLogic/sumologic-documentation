@@ -27,7 +27,7 @@ Apart from the differences in the use cases, there are a couple of feature diffe
 | Terraform Support | No<br/>*The Content API resource allows you to manage Schedule Searches, see [https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content) | Yes |
 | All Log Operators supported | Yes*<br/>(Some operators are not supported for Real time alerts) | Yes |
 | Outlier based alerts | Yes | Yes |
-| Access Control | Object Level Access Control | Folder Level Access Control (Per request - limited availability - for monitors only.) |
+| Access Control | Object Level Access Control | Object Level Access Control (Per request - limited availability) |
 | Audit Logs for CRUD and System Events (like Notifications Sent, Failures etc.) | Yes | Yes |
 | Control Over Schedule of alert/When alert is evaluated | Yes | No |
-| One Notification per Log Line | Yes | No |
+| One Notification per Log Line | Yes | Yes<br/>*[Supported via Alert grouping](https://help.sumologic.com/docs/alerts/monitors/alert-grouping) |

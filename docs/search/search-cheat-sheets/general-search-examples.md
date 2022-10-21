@@ -157,7 +157,7 @@ _sourceCategory=apache 
 ```
 
 :::sumo More Info
-For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent), and [Top](../search-query-language/search-operators/top).
+For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent), and [Top](/docs/search/search-query-language/search-operators/top).
 :::
 
 ## Timeslice and Transpose
@@ -264,7 +264,7 @@ Find version numbers that match numeric values 2, 3 or 1. Use the num operator t
 ```
 
 :::sumo More Info
-For more information, see [Where](../search-query-language/search-operators/where) and [If](/docs/search/search-query-language/search-operators/if).
+For more information, see [Where](/docs/search/search-query-language/search-operators/where) and [If](/docs/search/search-query-language/search-operators/if).
 :::
 
 ## LogReduce Operator
