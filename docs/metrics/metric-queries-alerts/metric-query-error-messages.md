@@ -15,21 +15,21 @@ Sumo Logic imposes limits on the input data for a query and the data output by t
 
 *Input data* is the data that matches the selector, prior to aggregation. Sumo Logic evaluates the volume of input data in terms of the number of time series.
 
-For a single metrics query row, Sumo Logic limits the number of input time series to 3000 for non-aggregate queries, and 37000 for aggregate queries (queries that have an aggregate operator like avg and max).
+For a single metrics query row, Sumo Logic limits the number of input time series to 1000 for non-aggregate queries, and 37000 for aggregate queries (queries that have an aggregate operator like avg and max).
 
 When a single row of a query scans more than 37000 time series, Sumo will stop scanning more data, and aggregate the results based on the scanned inputs. A message like this appears when the input limit is reached
 
 `This query is scanning too much data, the first (number of input time series scanned) time series were included.`
 
 :::important
-If the query that results in the message contains an aggregation operator, the results presented are likely to be erroneous because the aggregation will be based on only 1000 time series.  
+If the query that results in the message contains an aggregation operator, the results presented are likely to be erroneous because the aggregation will be based on partial input.  
 :::
 
 ### Output data limit
 
-When a single row of query returns more than 3000 time series after the input data limit is applied, Sumo also limits the number of time series in the visualization and any aggregate calculations, and presents a message like this:
+When a single row of query returns more than 1000 time series after the input data limit is applied, Sumo also limits the number of time series in the visualization and any aggregate calculations, and presents a message like this:
 
-`There were too many timeseries in the output, showing first 3000`
+`There were too many timeseries in the output, showing first 1000`
 
 There will also be a tip like this:
 
@@ -41,7 +41,7 @@ One solution is to add additional selectors to your query to reduce the number 
 
 For a single metrics query request, Sumo limits the output time series at 1000 for visualization. Output time series can either exceed the limit for a single row or multiple rows combined.
 
-When a metric query runs for 30 seconds, it will time out, and Sumo will present a message like this:
+When a metric query runs for 60 seconds, it will time out, and Sumo will present a message like this:
 
 `The metrics query timed out. Please consider making the query more selective.`
 
