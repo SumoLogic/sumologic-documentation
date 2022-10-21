@@ -138,18 +138,31 @@ Please ensure that you are monitoring your Kubernetes clusters with the Telegraf
       telegraf.influxdata.com/inputs: |+
       servers = ["tcp://:<username-CHANGEME>:<password-CHANGEME>@localhost:6379"]
     [inputs.redis.tags]
-      environment="prod"
+      environment: "ENV_TO_BE_CHANGED"
       component="database"
       db_system="redis"
-      db_cluster="redis_prod_cluster01-CHANGEME"
+      db_cluster: "ENV_TO_BE_CHANGED"
+      db_cluster_address = "ENV_TO_BE_CHANGED"
+      db_cluster_port = "ENV_TO_BE_CHANGED"
   ```
-2. Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
+2. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` in the snippet above):
    * `telegraf.influxdata.com/inputs` - As telegraf will be run as a sidecar the host should always be localhost.
      * In the input plugins section i.e.:
         * `servers` - The URL to the Redis server. This can be a comma-separated list to connect to multiple Redis servers.
-     * In the tags section  `[inputs.redis.tags]`
-        * `environment` - This is the deployment environment where the Redis cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+     * In the tags section, `[inputs.redis.tags]`:
+        * `environment` - This is the deployment environment where the Redis cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `db_cluster` - Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+        * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example, if your application uses “redis-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=redis-prod.sumologic.com db_cluster_port=3306`
+
+If your application connects directly to a given redis node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: host=redis-prod.sumologic.com
+
+Pivoting to Tracing data from Entity Inspector is possible only for “Redis address” Entities.
+:::
    * **Do not modify the following values**, as they will cause the Sumo Logic apps to not function correctly.
       * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
       * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
@@ -175,14 +188,27 @@ This section explains the steps to collect Redis logs from a Kubernetes environm
 1. **Collect Redis logs written to standard output**. If your Redis helm chart/pod is writing the logs to standard output, then follow the steps listed below.
    1. Apply the following labels to your Redis pods:
    ```sql
-   environment: "prod"
+   environment: "ENV_TO_BE_CHANGED"
    component: "database"
-   db_system: "redis"
-   db_cluster: "redis_prod_cluster01"
+   db_system: "redis"    
+   db_cluster: "ENV_TO_BE_CHANGED"
+   db_cluster_address = "ENV_TO_BE_CHANGED"
+   db_cluster_port = "ENV_TO_BE_CHANGED"
    ```
-   2. Enter in values for the following parameters:
+   2. Enter in values for the following parameters (marked ENV_TO_BE_CHANGED above):
      * `environment` - This is the deployment environment where the Redis cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
      * `db_cluster` - Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
+     * db_cluster_address - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+     * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for the net.peer.name and net.peer.port metadata fields).
+
+For example, if your application uses “redis-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=redis-prod.sumologic.com db_cluster_port=3306`
+
+If your application connects directly to a given Redis node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=redis-prod.sumologic.com`
+
+Pivoting to Tracing data from Entity Inspector is possible only for “Redis address” Entities
+:::
      * **Do not modify these values** as they will cause the Sumo Logic apps to not function correctly.
        * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
        * `db_system: “redis”` - This value identifies the database system.
@@ -206,7 +232,7 @@ This section explains the steps to collect Redis logs from a Kubernetes environm
     kubectl describe pod <redis_pod_name>
     ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
-3. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule. To do so:
+3. **Add an FER to normalize the fields in Kubernetes environments**. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule. To do so:
    * Go to **Manage Data > Logs > Field Extraction Rules**.
    * Click the + Add button on the top right of the table.
    * The **Add Field Extraction Rule** form will appear:
@@ -222,7 +248,7 @@ This section explains the steps to collect Redis logs from a Kubernetes environm
         | if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
            | pod_labels_component as component
            | pod_labels_db_system as db_system
-           | pod_labels_db_cluster as db_cluster
+           | if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
         ```    
    * Click **Save*** to create the rule.
 
@@ -246,20 +272,33 @@ This section provides instructions for configuring metrics collection for the Su
       namepass = ["redis"]
       fieldpass = ["blocked_clients", "clients", "cluster_enabled", "cmdstat_calls", "connected_slaves", "evicted_keys", "expired_keys", "instantaneous_ops_per_sec", "keyspace_hitrate", "keyspace_hits", "keyspace_misses", "master_repl_offset", "maxmemory", "mem_fragmentation_bytes", "mem_fragmentation_ratio", "rdb_changes_since_last_save", "rejected_connections", "slave_repl_offset", "total_commands_processed", "total_net_input_bytes", "total_net_output_bytes", "tracking_total_keys", "uptime", "used_cpu_sys", "used_cpu_user", "used_memory", "used_memory_overhead", "used_memory_rss", "used_memory_startup"]
       [inputs.redis.tags]
-        environment="prod"
-        component="database"
-        db_system="redis"
-        db_cluster="redis_prod_cluster01"
+      environment: "ENV_TO_BE_CHANGED"
+      component="database"
+      db_system="redis"
+      db_cluster: "ENV_TO_BE_CHANGED"
+      db_cluster_address = "ENV_TO_BE_CHANGED"
+      db_cluster_port = "ENV_TO_BE_CHANGED"
     [[outputs.sumologic]]
       url = "<URL Created in Step 3>"
       data_format = "prometheus"
     ```
-   2. Enter values for the following parameters:
+   2. Enter values for the following parameters (marked ENV_TO_BE_CHANGED above):
      * For the input plugins section:
         * `servers` - The URL to the Redis server. This can be a comma-separated list to connect to multiple Redis servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on additional parameters for configuring the Redis input plugin for Telegraf.
      * For tags section (`[inputs.redis.tags]`):
         * `environment` - This is the deployment environment where the Redis cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `db_cluster` - Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+        * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example, if your application uses “`redis-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=redis-prod.sumologic.com db_cluster_port=3306`
+
+If your application connects directly to a given Redis node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=redis-prod.sumologic.com`
+
+Pivoting to Tracing data from Entity Inspector is possible only for “Redis address” Entities.
+:::
      * For output plugins section:
         * `url` - This is the HTTP source URL created in step 3. See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
      * **Do not modify these values**, as they will cause the Sumo Logic apps to not function correctly.
@@ -352,6 +391,15 @@ After determining the location of conf file, modify the **redis.conf** configura
       * `db_system = redis`
       * `db_cluster = <Your_Redis_Cluster_Name>`
       * `environment = <Environment_Name>`, such as Dev, QA or Prod.
+      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+      :::note
+      `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+      For example, if your application uses `“redis-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=redis-prod.sumologic.com db_cluster_port=3306`.
+      If your application connects directly to a given Redis node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=redis-prod.sumologic.com`
+
+      Pivoting to Tracing data from Entity Inspector is possible only for “Redis address” Entities.
+      :::
    4. Configure the **Advanced** section:
       * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
       * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your Redis Server’s time zone.
