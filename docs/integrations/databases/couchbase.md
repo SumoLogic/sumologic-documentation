@@ -98,28 +98,40 @@ To collect Couchbase metrics from a Kubernetes environment, we use the Telegraf 
 2. On your Couchbase Pods, add the following annotations:
 ```sql
 annotations:
-    telegraf.influxdata.com/class: sumologic-prometheus
-    prometheus.io/scrape: "true"
-    prometheus.io/port: "9273"
-    telegraf.influxdata.com/inputs: |+
+   telegraf.influxdata.com/class: sumologic-prometheus
+   prometheus.io/scrape: "true"
+   prometheus.io/port: "9273"
+   telegraf.influxdata.com/inputs: |+
 [[inputs.couchbase]]
   servers = ["http://<USER_TO_BE_CHANGED>:<PASS_TO_BE_CHANGED>@A@localhost:8091"]
   bucket_stats_included = ["*"]
 [inputs.couchbase.tags]
-  db_cluster="CLUSTER_NAME_TO_BE_CHANGED"--If you haven’t defined a cluster in Couchbase, enter `default`
+  db_cluster="ENV_TO_BE_CHANGED"--If you haven’t defined a cluster in Couchbase, enter `default`
   component="database"
   environment="ENV_TO_BE_CHANGED"
   db_system="couchbase"
+  db_cluster_address = "ENV_TO_BE_CHANGED"
+  db_cluster_port = "ENV_TO_BE_CHANGED"
 ```
-
-3. Enter in values for the following parameters (marked `TO_BE_CHANGED` above):
+3. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` above):
   * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Couchbase Input plugin. Refer to [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) for more information on configuring the Couchbase input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
   * In the Input plugins section (`[[inputs.couchbase]]`):
      * `servers`: This is the endpoint of the management portal of couchbase server. For detail, see this [doc](https://docs.couchbase.com/server/current/manage/manage-ui/manage-ui.html) .
   * In the tags section (`[inputs.couchbase.tags]`):
      * `environment` - This is the deployment environment where the Couchbase cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
      * `db_cluster` - Enter a name to identify this Couchbase cluster. This cluster name will be shown in the Sumo Logic dashboards.  
-  * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+     * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+     * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+
+     :::note
+     `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+     For example if your application uses “couchbase-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=couchbase-prod.sumologic.com db_cluster_port=3306`
+
+     If your application connects directly to a given Couchbase node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=couchbase-prod.sumologic.com`
+
+     Pivoting to Tracing data from Entity Inspector is possible only for “Couchbase address” Entities.
+     :::
+  * **Do not modify the following values** as it will cause the Sumo Logic apps to not function correctly.
     * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
     * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
     * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
@@ -143,17 +155,29 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
     component="database"
     db_system="couchbase"
     db_cluster="<cluster_CHANGEME>"
+    db_cluster_address: <your cluster’s hostname or ip address or service endpoint>
+    db_cluster_port: <database port>
     ```
    2. Enter in values for the following parameters (marked `CHANGE_ME` above):
     * `environment` - This is the deployment environment where the Couchbase cluster identified by the value of **servers** resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
     * `db_cluster` - Enter a name to identify this Couchbase cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Couchbase, then enter `default` for `db_cluster`.
-    * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+    * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+    * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+    :::note
+    `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+    For example if your application uses `“couchbase-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=couchbase-prod.sumologic.com db_cluster_port=3306`.
+
+    If your application connects directly to a given Couchbase node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=couchbase-prod.sumologic.com`.
+
+    Pivoting to Tracing data from Entity Inspector is possible only for “Couchbase address” Entities.
+    :::
+    * **Do not modify the following values** as it will cause the Sumo Logic apps to not function correctly.
      * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
      * `db_system: “couchbase”` - This value identifies the database system.
      See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
    3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
    4. Verify logs in Sumo Logic.
-2. **Collecting Couchbase Logs from a Log File on Kubernetes(optional)**.
+2. **Collecting Couchbase Logs from a Log File on Kubernetes (optional)**.
    1. Determine the location of the Couchbase log file on Kubernetes. This can be determined from the config file /opt/couchbase/etc/couchbase/static_config squid.conf for your Couchbase cluster along with the mounts on the Couchbase pods.
    2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
    3. Add the following annotation in addition to the existing annotations.
@@ -172,7 +196,7 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
     ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    6. Verify logs in Sumo Logic.
-3. **Add a FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
+3. **Add a FER to normalize the fields in Kubernetes environments**. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
    1. Go to Manage Data > Logs > Field Extraction Rules.
    2. Click the + Add button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear:
@@ -191,6 +215,7 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
       | pod_labels_component as component
       | pod_labels_db_system as db_system
       | pod_labels_db_cluster as db_cluster
+      | if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
       ```
    5. Click **Save** to create the rule.
 
@@ -207,11 +232,10 @@ The process to set up collection for Couchbase data is done through the followin
 The Sumo Logic Couchbase app supports the audit log, query log, error log, access log. For details, [refer to Couchbase logging documentation](https://docs.couchbase.com/server/current/manage/manage-logging/manage-logging.html#changing-log-file-locations).
 
 1. **Configure logging in Couchbase**. By default, the Couchbase will write the log to the log directory that was configured during installation. For example, on Linux, the log directory would be `/opt/couchbase/var/lib/couchbase/logs`. By default, the Audit log is disabled, you must enable the audit log following these [instructions](https://docs.couchbase.com/server/current/manage/manage-security/manage-auditing.html). Query log, error log, the access log will be enabled by default.
-2. **Configure an Installed Collector**. If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
-3. **Configure a Collector**. Use one of the following Sumo Logic Collector options:
+2. **Configure a Collector**. Use one of the following Sumo Logic Collector options:
    1. To collect logs directly from the Couchbase machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
    2. If you're using a service like Fluentd, or you would like to upload your logs manually, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-4. **Configure a local file source**. Choose one of the options:
+3. **Configure a local file source**. Choose one of the options:
 
 <details><summary>4A. <strong>For an Installed Collector</strong> (click to expand)</summary>
 
@@ -235,6 +259,14 @@ To collect logs directly from your Couchbase machine, use an Installed Collector
      db_cluster = <Your_Couchbase_Cluster_Name>
      ```
     Enter **Default** if you do not have one. `<environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod).
+  * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+  * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+  :::note
+  `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for the `net.peer.name` and `net.peer.port` metadata fields).
+  For example, if your application uses `“couchbase-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=couchbase-prod.sumologic.com db_cluster_port=3306`
+  If your application connects directly to a given Couchbase node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=couchbase-prod.sumologic.com`
+   Pivoting to Tracing data from Entity Inspector is possible only for “Couchbase address” Entities.
+   :::
 3. Configure the **Advanced **section:
     * **Enable Timestamp Parsing**. Select Extract timestamp information from log fileentries.
     * **Time Zone**. Automatically detect.
@@ -257,6 +289,13 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 * **Description**. (Optional)
 * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
 * **Source Category**. Enter any string to tag the output collected from this Source, such as Couchbase/AccessLog for access log. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
+* Fields. Set the following fields:
+   * `component = database`
+   * `db_system = couchbase`
+   * `db_cluster = <Your_Couchbase_Cluster_Name>`
+   * `environment = <Environment_Name>`, such as Dev, QA or Prod.
+   * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+   * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 3. Configure the **Advanced **section:
 * **Enable Timestamp Parsing**. Select **Extract timestamp information from log file entries**.
 * **Time Zone**. For Access logs, use the time zone from the log file. For Error logs, make sure to select the correct time zone.
@@ -293,6 +332,8 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
    component="database"
    environment="<env_TO_BE_CHANGED>"
    db_system="couchbase"
+   db_cluster_address = "ENV_TO_BE_CHANGED"
+   db_cluster_port = "ENV_TO_BE_CHANGED"
 [[outputs.sumologic]]
   url = "<URL_from_HTTP_Logs_and_Metrics_Source>"
   data_format = "prometheus"
@@ -300,10 +341,22 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 
   Enter values for fields annotated with `<_TO_BE_CHANGED>` to the appropriate values. Do not include the brackets (`< >`) in your final configuration.
   * Input plugins section, which is `[[inputs.couchbase]]`:
-     * servers: This is the endpoint of the management portal of couchbase server. For details, see this [doc](https://docs.couchbase.com/server/current/manage/manage-ui/manage-ui.html) .
+     * `servers`: This is the endpoint of the management portal of couchbase server. For details, see this [doc](https://docs.couchbase.com/server/current/manage/manage-ui/manage-ui.html) .
   * In the tags section (`[inputs.couchbasesnmp.tags]`):
-     * `environment` - This is the deployment environment where the Couchbase server identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
+     * `environment` - This is the deployment environment where the Couchbase server identified by the value of **`servers`** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
   * `db_cluster` - Enter a name to identify this Couchbase cluster. This cluster name will be shown in our dashboards. If you haven’t defined a cluster in Couchbase, then enter ‘default’ for this.
+  * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+  * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+
+  :::note
+  `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+  For example if your application uses `“couchbase-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=couchbase-prod.sumologic.com db_cluster_port=3306`.
+
+  If your application connects directly to a given Couchbase node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=couchbase-prod.sumologic.com`
+
+  Pivoting to Tracing data from Entity Inspector is possible only for “Couchbase address” Entities.
+  :::
   * In the output plugins section (`[[outputs.sumologic]]`):
     * `url` - This is the HTTP source URL created previously. See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
