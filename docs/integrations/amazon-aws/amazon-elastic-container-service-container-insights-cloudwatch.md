@@ -13,9 +13,9 @@ Amazon Elastic Container Service (Amazon ECS) is a container management service 
 
 We have two app versions which have separate collection steps 
 
-1.  [Collect Logs and Metrics for ECS](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Elastic_Container_Service_(ECS)/01-Collect-Logs-and-Metrics-for-the-Amazon-ECS-App) - This version collects [ECS CloudWatch Metrics](http://docs.aws.amazon.com/AmazonECS...ch-metrics.htm) and [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)
+1.  [Collect Logs and Metrics for ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#available_cloudwatch_metrics) - This version collects [ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#available_cloudwatch_metrics) and [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)
 
-2.  [Collect Logs, Metrics(Container Insights+Cloudwatch) and Traces for ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail) - This version collects[ ](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)[ECS CloudWatch Metrics](http://docs.aws.amazon.com/AmazonECS...ch-metrics.htm), [Container Insights Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-metrics-ECS.html), [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail), Application Logs and Traces. Metrics collected by Container Insights are charged as custom metrics. For more information about CloudWatch pricing, see[ Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/).This solution enables you to monitor both ec2 and fargate based ecs deployments.
+2.  [Collect Logs, Metrics(Container Insights+Cloudwatch) and Traces for ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail) - This version collects[ ](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)[ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#available_cloudwatch_metrics), [Container Insights Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-metrics-ECS.html), [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail), Application Logs and Traces. Metrics collected by Container Insights are charged as custom metrics. For more information about CloudWatch pricing, see[ Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/).This solution enables you to monitor both ec2 and fargate based ecs deployments.
 
 ## Collect Logs, Metrics(Container Insights+Cloudwatch) and Traces for ECS
 
@@ -47,36 +47,36 @@ Parse Expression:
 | fields region, namespace, accountid
 
 Create Field Extraction Rule for Container Insights Performance Events Logs of Task and Containers
-
-Rule Name: AwsObservabilityECSPerformanceEventsFER
+`Rule Name: AwsObservabilityECSPerformanceEventsFER
 Applied at: Ingest Time
 Scope (Specific Data):
-account=* (Task OR Container)
+account=* (Task OR Container)`
 Parse Expression:
-| json  "AccountID","Region", "Type" as accountid, region, Type nodrop
+```| json  "AccountID","Region", "Type" as accountid, region, Type nodrop
 | where Type="Task" or Type="Container"
 | "aws/ecs" as namespace
 | fields region, namespace, accountid
+```
 
 ### Centralized AWS CloudTrail Log Collection 
 
 In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
 
-Rule Name: AWS Accounts
+`Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data):
-_sourceCategory=aws/observability/cloudtrail/logs
+_sourceCategory=aws/observability/cloudtrail/logs`
 
 ###### **Parse Expression**: 
 
 Enter a parse expression to create an "account" field that maps to the alias you set for each sub-account. For example, if you used the "dev" alias for an AWS account with ID "528560886094" and the "prod" alias for an AWS account with ID "567680881046", your parse expression would look like this:
 
-| json "recipientAccountId"
+`| json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
 | "" as account
 | if (recipientAccountId = "528560886094",  "dev", account) as account
 | if (recipientAccountId = "567680881046",  "prod", account) as account
-| fields account
+| fields account`
 
 ### Collect Metrics for Amazon ECS 
 
