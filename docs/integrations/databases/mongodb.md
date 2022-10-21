@@ -121,7 +121,7 @@ If you're using MongoDB in a non-Kubernetes environment, create the fields:
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).The diagram below illustrates how data is collected from MongoDB in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.<br/><img src={useBaseUrl('img/integrations/databases/mongodb-k8s.png')} alt="mongodb_on_k8s" />
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).The diagram below illustrates how data is collected from MongoDB in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.<br/><img src={useBaseUrl('img/integrations/databases/mongodb-k8s.png')} alt="mongodb_on_k8s" />
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from MongoDB. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the MongoDB input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -146,18 +146,31 @@ annotations:
   gather_perdb_stats = true
   gather_col_stats = true
   [inputs.mongodb.tags]
-    environment="kubernetes"
-    component="database"
-    db_system="mongodb"
-    db_cluster="mongodb_on_k8s"
+	environment="ENV_TO_BE_CHANGED"
+	component="database"
+	db_system="mongodb"
+	db_cluster="ENV_TO_BE_CHANGED"
+	db_cluster_address = "ENV_TO_BE_CHANGED"
+	db_cluster_port = "ENV_TO_BE_CHANGED"
 ```
-3. Please enter values for the following parameters (marked `CHANGEME` above):
+3. Please enter values for the following parameters (marked `ENV_TO_BE_CHANGED` above):
    * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf MongoDB Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the MongoDB input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
      * In the input plugins section (`[inputs.MongoDB]`):
         * `servers` - The URL to the MongoDB server. This can be a comma-separated list to connect to multiple MongoDB servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) for more information on additional parameters for configuring the MongoDB input plugin for Telegraf.
      * In the tags section (`[inputs.MongoDB.tags])`:
         * `environment` - This is the deployment environment where the MongoDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `db_cluster` - Enter a name to identify this MongoDB cluster. This cluster name will be shown in the Sumo Logic dashboards.
+				* `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+				* `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example, if your application uses “mongodb-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=mongodb-prod.sumologic.com db_cluster_port=3306`
+
+If your application connects directly to a given mongodb node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mongodb-prod.sumologic.com`
+
+Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB address” Entities.
+:::
    * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
      * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
      * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
@@ -187,7 +200,18 @@ This section explains the steps to collect MongoDB logs from a Kubernetes enviro
    2. Enter in values for the following parameters:
      * `environment`. This is the deployment environment where the MongoDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
      * `db_cluster`. Enter a name to identify this MongoDB cluster. This cluster name will be shown in the Sumo Logic dashboards.
-     * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+		 * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+		 * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example if your application uses `“mongodb-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=mongodb-prod.sumologic.com db_cluster_port=3306`
+
+If your application connects directly to a given mongodb node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mongodb-prod.sumologic.com`.
+
+Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB address” Entities.
+:::
+     * **Do not modify the following values** as they will cause the Sumo Logic apps to not function correctly.
        * `component: “database”`. This value is used by Sumo Logic apps to identify application components.
        * `db_system: “mongodb”`. This value identifies the database system.
      * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
@@ -209,7 +233,7 @@ This section explains the steps to collect MongoDB logs from a Kubernetes enviro
      kubectl describe pod <MongoDB_pod_name>
      ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
-3. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Database Application Components. To do so:
+3. **Add an FER to normalize the fields in Kubernetes environments**. This step is not needed if one is using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Database Application Components. To do so:
    1. Go to **Manage Data > Logs > Field Extraction Rules**.
    2. Click the + Add button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear:
@@ -246,24 +270,37 @@ This section provides instructions for configuring metrics collection for the Su
    1. Configure and start Telegraf. As part of collecting metrics data from Telegraf, we will use the [MongoDB input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic. Create or modify telegraf.conf and copy and paste the text below:
     ```sql
     [[inputs.mongodb]]
-      servers = ["mongodb://<username-CHANGEME>:<password-CHANGEME>@127.0.0.1:27017"]
-      gather_perdb_stats = true
-      gather_col_stats = true
-   [inputs.mongodb.tags]
-      environment="prod"
-      component="database"
-      db_system="mongodb"
-      db_cluster="mongodb_on_premise"
-   [[outputs.sumologic]]
-      url = "<CHANGEME>" -- HTTP Source URL you created in previous step
-      data_format = "prometheus"
+		servers = ["mongodb://<username-CHANGEME>:<password-CHANGEME>@127.0.0.1:27017"]
+		gather_perdb_stats = true
+		gather_col_stats = true
+		[inputs.mongodb.tags]
+		environment="ENV_TO_BE_CHANGED"
+		component="database"
+		db_system="mongodb"
+		db_cluster="ENV_TO_BE_CHANGED"
+		db_cluster_address = "ENV_TO_BE_CHANGED"
+		db_cluster_port = "ENV_TO_BE_CHANGED"
+		[[outputs.sumologic]]
+		url = "<CHANGEME>" -- HTTP Source URL you created in previous step
+		data_format = "prometheus"
     ```
-   2. Enter values for the following parameters:
+   2. Enter values for the following parameters (marked ENV_TO_BE_CHANGED above):
      * In the input plugins section, `[inputs.mongodb]`:
        * `servers` - The URL to the MongoDB server. This can be a comma-separated list to connect to multiple MongoDB servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) for more information on additional parameters for configuring the MongoDB input plugin for Telegraf.
      * In the tags section, `[inputs.mongodb.tags]`
        * `environment` - This is the deployment environment where the MongoDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
        * `db_cluster` - Enter a name to identify this MongoDB cluster. This cluster name will be shown in the Sumo Logic dashboards.
+			 * db_cluster_address - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+			 * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+
+For example, if your application uses `“mongodb-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=mongodb-prod.sumologic.com db_cluster_port=3306`
+
+If your application connects directly to a given MongoDB node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mongodb-prod.sumologic.com`
+
+Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB address” Entities.
+:::
      * In the output plugins section, `[outputs.sumologic]`:
        * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
      * Here’s an explanation for additional values set by this Telegraf configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
@@ -319,6 +356,17 @@ Based on your infrastructure and networking setup choose one of these methods to
            * `db_system = mongodb`
            * `db_cluster = <Your_MongoDB_Cluster_Name>`
            * `environment = <Environment_Name>`, such as Dev, QA or Prod
+					 * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+					 * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example, if your application uses “mongodb-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=mongodb-prod.sumologic.com db_cluster_port=3306`
+
+If your application connects directly to a given MongoDB node, rather than the whole cluster, use the application connection string to override the value of the `“host”` field in the Telegraf configuration: `host=mongodb-prod.sumologic.com`
+
+Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB address” Entities
+:::
       3. Configure the **Advanced** section:
          * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
          * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your MongoDB Server’s time zone.
@@ -340,6 +388,17 @@ Based on your infrastructure and networking setup choose one of these methods to
            * `db_system = MongoDB`
            * `db_cluster = <Your_MongoDB_Cluster_Name>`
            * `environment = <Environment_Name>`, such as Dev, QA or Prod
+					 * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+					 * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+
+For example, if your application uses “mongodb-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=mongodb-prod.sumologic.com db_cluster_port=3306`
+
+If your application connects directly to a given MongoDB node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mongodb-prod.sumologic.com`
+
+Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB address” Entities.
+:::
       3. Configure the **Advanced** section:
          * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
          * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your MongoDB Server’s time zone.
