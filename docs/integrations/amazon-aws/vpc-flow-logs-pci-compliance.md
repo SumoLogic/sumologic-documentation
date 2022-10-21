@@ -24,7 +24,7 @@ You can use either of the following methods to collect Amazon VPC Flow Logs:
 * [Collect Amazon VPC Flow Logs using a CloudFormation template](#Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation)
 
 ## Field Extraction Rule(s) for VPC Flow logs  
-Create Field Extraction Rule for VPC Flow Logs [learn more](here).
+Create Field Extraction Rule for VPC Flow Logs.
 
 ```sql
 Rule Name: VPCFlowLogFER
@@ -46,14 +46,11 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-
+1. From the **App Catalog**, search for and select the app**.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
+    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    * **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
