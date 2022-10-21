@@ -19,7 +19,7 @@ We have two app versions which have separate collection steps 
 
 ## Collect Logs, Metrics(Container Insights+Cloudwatch) and Traces for ECS
 
-This page has instructions for collecting logs and metrics for the Amazon ECS App. It uses following data
+This page has instructions for collecting logs and metrics for the Amazon ECS App. It uses the following data:
 
 1.  Cloudwatch Metrics
 2.  Container Insights Metrics
@@ -67,7 +67,7 @@ Applied at: Ingest Time
 Scope (Specific Data):
 _sourceCategory=aws/observability/cloudtrail/logs`
 
-###### **Parse Expression**: 
+Parse Expression: 
 
 Enter a parse expression to create an "account" field that maps to the alias you set for each sub-account. For example, if you used the "dev" alias for an AWS account with ID "528560886094" and the "prod" alias for an AWS account with ID "567680881046", your parse expression would look like this:
 
@@ -190,7 +190,7 @@ In this section, you set up collection for traces
 1.  Create a HTTP Traces source by referring to the [docs](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/HTTP_Traces_Source).
 2.  Install  Open Telemetry Collector by referring to the [docs](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_AWS_environments). 
 
-### Sample Log Message#sample-log-message) 
+### Sample Log Message 
 
 
 ```
@@ -456,7 +456,7 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 | count by resource_type, _timeslice
 | transpose row _timeslice column resource_type
 
-### Install the Sumo Logic App 
+## Install the Sumo Logic App 
 
 Now that you have set up a [collection](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Elastic_Container_Service_(ECS)/Collect_Logs%2C_Metrics(Container_Insights_Cloudwatch) and_Traces_for_ECS "Collect Logs, Metrics(Container Insights+Cloudwatch) and Traces for ECS") for Amazon ECS, install the Sumo Logic App for Amazon ECS to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Elastic_Container_Service_(ECS)/Amazon-ECS-App-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
@@ -478,10 +478,10 @@ Once an app is installed, it will appear in your **Personal** folder or anothe
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-### Dashboards 
+## Dashboards 
 
 
-#### Amazon ECS - Cluster Overview 
+### Amazon ECS - Cluster Overview 
 
 
 
@@ -494,7 +494,7 @@ The **Amazon ECS - Cluster Overview** dashboard provides a high-level view of 
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Overview.png)
 
-#### Amazon ECS - Cluster Performance Monitoring
+### Amazon ECS - Cluster Performance Monitoring
 
 
 
@@ -507,7 +507,7 @@ The **Amazon ECS - Cluster Performance Monitoring** dashboard provides detaile
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Performance-Monitoring.png)
 
-#### Amazon ECS - Cluster Resource Reservation
+### Amazon ECS - Cluster Resource Reservation
 
 
 
@@ -519,7 +519,7 @@ The **Amazon ECS - Cluster Resource Reservation **dashboard provides informati
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Cluster-Resource-Reservation.png)
 
-#### Amazon ECS - Container Logs
+### Amazon ECS - Container Logs
 
 The **Amazon ECS - Container Logs** dashboard provides detailed information on what is happening (errors or recent events) in a container. 
 
@@ -530,7 +530,7 @@ The **Amazon ECS - Container Logs** dashboard provides detailed information on
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Container-Logs.png)
 
-#### Amazon ECS - Container Overview
+### Amazon ECS - Container Overview
 
 The **Amazon ECS - Container Overview** dashboard provides a high-level view of the health of the container along with details on the utilized resources.
 
@@ -541,7 +541,7 @@ The **Amazon ECS - Container Overview** dashboard provides a high-level view o
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Container-Overview.png)
 
-#### Amazon ECS - EC2 LaunchType
+### Amazon ECS - EC2 LaunchType
 
 The **Amazon ECS - EC2 ****LaunchType** dashboard provides a high-level view of the health of the cluster along with details on the utilized resources for EC2 launch types.
 
@@ -552,7 +552,7 @@ The **Amazon ECS - EC2 ****LaunchType** dashboard provides a high-level view 
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-EC2-LaunchType.png)
 
-#### Amazon ECS - Service Overview
+### Amazon ECS - Service Overview
 
 The **Amazon ECS - Service Overview** dashboard provides a high-level view of the health of the services along with details on the utilized resources.
 
@@ -563,7 +563,7 @@ The **Amazon ECS - Service Overview** dashboard provides a high-level view of 
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Service-Overview.png)
 
-#### Amazon ECS - Service Performance Monitoring
+### Amazon ECS - Service Performance Monitoring
 
 The **Amazon ECS - Service Performance Monitoring** dashboard provides detailed information on the performance of your services which you can use to fine-tune your cluster.
 
@@ -575,7 +575,7 @@ The **Amazon ECS - Service Performance Monitoring** dashboard provides detaile
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Service-Performance-Monitoring.png)
 
-#### Amazon ECS - Tasks Definition Family Overview
+### Amazon ECS - Tasks Definition Family Overview
 
 The **Amazon ECS - Tasks Definition Family Overview** dashboard provides a high-level view of the health of the tasks belonging to a particular task definition family and details on the utilized resources.
 
@@ -586,7 +586,7 @@ The **Amazon ECS - Tasks Definition Family Overview** dashboard provides a hig
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Tasks-Definition-Family-Overview.png)
 
-#### Amazon ECS - Tasks Overview
+### Amazon ECS - Tasks Overview
 
 The **Amazon ECS - Tasks Overview** dashboard provides a high-level view of the health of the task along with details on the utilized resources and where they are running.
 
@@ -609,7 +609,7 @@ The **Amazon ECS - Tasks Definition Family Performance Monitoring** dashboard 
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Tasks-Definition-Family-Performance-Monitoring.png)
 
-#### Amazon ECS - Task Definition Family Resource Reservation
+### Amazon ECS - Task Definition Family Resource Reservation
 
 The **Amazon ECS - Task Definition Family Resource Reservation** dashboard provides information on resource reservation which can be used to set the right resource limits at the task definition level.
 
@@ -619,7 +619,7 @@ The **Amazon ECS - Task Definition Family Resource Reservation** dashboard pro
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Task-Definition-Family-Resource-Reservation.png)
 
-#### Amazon ECS - Fargate LaunchType
+### Amazon ECS - Fargate LaunchType
 
 The **Amazon ECS - Fargate LaunchType** dashboard provides a high-level view of the cluster's health along with details on the utilized resources for Fargate launch types.
 
@@ -630,7 +630,7 @@ The **Amazon ECS - Fargate LaunchType** dashboard provides a high-level view o
 
 ![undefined](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-Container-Insights/Amazon-ECS-Fargate-LaunchType.png)
 
-#### Amazon ECS - Audit Events 
+### Amazon ECS - Audit Events 
 
 The **Amazon ECS - Audit Events** dashboard gives information on the type of request made to ECS, the IP making the request, who made it and when, and more.
 
