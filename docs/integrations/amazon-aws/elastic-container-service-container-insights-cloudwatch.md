@@ -11,31 +11,28 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon Elastic Container Service (Amazon ECS) is a container management service that allows you to manage Docker containers on a cluster of Amazon EC2 instances. The Sumo Logic App for Amazon ECS provides preconfigured searches and Dashboards that allow you to monitor various metrics (CPU and Memory Utilization, CPU and Memory Reservation) across ECS clusters and services. The App also monitors API calls made by or on behalf of Amazon ECS in your AWS account.
 
-We have two app versions which have separate collection steps 
+We offer two different ECS versions, which have separate data collection steps:
+* [Collect Logs and Metrics for ECS](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Elastic_Container_Service_(ECS)/01-Collect-Logs-and-Metrics-for-the-Amazon-ECS-App) - This version collects [ECS CloudWatch Metrics](http://docs.aws.amazon.com/AmazonECS...ch-metrics.htm) and [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)
+* [Collect Logs, Metrics (Container Insights+Cloudwatch) and Traces for ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail) - This version collects[ ](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)[ECS CloudWatch Metrics](http://docs.aws.amazon.com/AmazonECS...ch-metrics.htm), [Container Insights Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-metrics-ECS.html), [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail), Application Logs and Traces. Metrics collected by Container Insights are charged as custom metrics. For more information about CloudWatch pricing, see[ Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/). This solution enables you to monitor both ec2 and fargate based ecs deployments.
 
-1.  [Collect Logs and Metrics for ECS](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Elastic_Container_Service_(ECS)/01-Collect-Logs-and-Metrics-for-the-Amazon-ECS-App) - This version collects [ECS CloudWatch Metrics](http://docs.aws.amazon.com/AmazonECS...ch-metrics.htm) and [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)
+## Collect Logs, Metrics (Container Insights+Cloudwatch) and Traces for ECS
 
-2.  [Collect Logs, Metrics(Container Insights+Cloudwatch) and Traces for ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail) - This version collects[ ](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)[ECS CloudWatch Metrics](http://docs.aws.amazon.com/AmazonECS...ch-metrics.htm), [Container Insights Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-metrics-ECS.html), [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail), Application Logs and Traces. Metrics collected by Container Insights are charged as custom metrics. For more information about CloudWatch pricing, see[ Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/).This solution enables you to monitor both ec2 and fargate based ecs deployments.
-
-## Collect Logs, Metrics(Container Insights+Cloudwatch) and Traces for ECS
-
-This page has instructions for collecting logs and metrics for the Amazon ECS App. It uses following data
-
-1.  Cloudwatch Metrics
-2.  Container Insights Metrics
-3.  AWS CloudTrail Events
-4.  Container Insights Performance log Events
-5.  ECS Application Logs
-6.  Traces
+This page has instructions for collecting logs and metrics for the Amazon ECS App. It uses following data:
+* Cloudwatch Metrics
+* Container Insights Metrics
+* AWS CloudTrail Events
+* Container Insights Performance log Events
+* ECS Application Logs
+* Traces
 
 ### Creating Fields in Field Schema 
 
-Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the following fields: "**account**", "**namespace**", "**region**" field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the following fields: "**`account`**", "**`namespace`**", "**`region`**" field. If not present, create it. Learn how to create and manage fields [here](/Manage/Fields#manage-fields).
 
-### Creating Field Extraction Rule(s)#creating-field-extraction-rule-s) 
+### Creating Field Extraction Rule(s)
 
-Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
-
+Create Field Extraction Rule for CloudTrail Logs [learn more](/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
+```sql
 Rule Name: AwsObservabilityECSCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -45,9 +42,9 @@ Parse Expression:
 | where eventSource = "ecs.amazonaws.com"
 | "aws/ecs" as namespace
 | fields region, namespace, accountid
-
+```
 Create Field Extraction Rule for Container Insights Performance Events Logs of Task and Containers
-
+```sql
 Rule Name: AwsObservabilityECSPerformanceEventsFER
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -57,27 +54,28 @@ Parse Expression:
 | where Type="Task" or Type="Container"
 | "aws/ecs" as namespace
 | fields region, namespace, accountid
-
+```
 ### Centralized AWS CloudTrail Log Collection 
 
-In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
-
+In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create or update the following Field Extraction Rule to map proper AWS account(s) friendly name/alias:
+```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data):
 _sourceCategory=aws/observability/cloudtrail/logs
+```
 
-###### **Parse Expression**: 
+**Parse Expression**
 
 Enter a parse expression to create an "account" field that maps to the alias you set for each sub-account. For example, if you used the "dev" alias for an AWS account with ID "528560886094" and the "prod" alias for an AWS account with ID "567680881046", your parse expression would look like this:
-
+```sql
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
 | "" as account
 | if (recipientAccountId = "528560886094",  "dev", account) as account
 | if (recipientAccountId = "567680881046",  "prod", account) as account
 | fields account
-
+```
 ### Collect Metrics for Amazon ECS 
 
 In this step, you set up an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics "Amazon CloudWatch Source for Metrics").
@@ -99,9 +97,7 @@ In this step, you set up an [Amazon CloudWatch Source for Metrics](https://help
     -   **Key access**. Enter the Access Key ID and Secret Access Key. For more information, see [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html") in AWS help.
 
 12. **Scan Interval.** Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
-13. **Metadata: **Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the "account field".\
-    ![clipboard_eca8922c46ad4fe510a93edf00f1a5d39.png](https://help.sumologic.com/@api/deki/files/13126/clipboard_eca8922c46ad4fe510a93edf00f1a5d39.png?revision=1&size=bestfit&width=706&height=91)
-
+13. **Metadata: **Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the "account field". <br/> ![clipboard_eca8922c46ad4fe510a93edf00f1a5d39.png](https://help.sumologic.com/@api/deki/files/13126/clipboard_eca8922c46ad4fe510a93edf00f1a5d39.png?revision=1&size=bestfit&width=706&height=91)
 14. Click **Save**.
 
 ### Collect Container Insights Metrics for Amazon ECS 
@@ -160,24 +156,19 @@ Container Insights collects data as performance log events using [embedded me
 2.  Copy the KinesisLogsRoleARN and KinesisLogsDeliveryStreamARN from the outputs tab of Cloudformation\
     ![](https://lh3.googleusercontent.com/KtuF8NiCKyQQGoGwgIuITAScCScKB1yP2oCats3bEBYzPVttXglQ6IMPhycmXmbLan39rDcUbeZsreM1EW3H5j9LyebwTGRaMQwvm1GPqg1Dj533F1uyJR_OBoypOxyK5S5T_M8vz_h04LXhqM4FqOlFB-jbRzI-IG1sk7UmeACGHKR1ININ3wSJ-g)
 
-3.  Go to your Cloudwatch -> Log Groups and click on your cloudwatch log group /aws/ecs/containerinsights/<cluster>/performance\
+3.  Go to your Cloudwatch -> Log Groups and click on your cloudwatch log group `/aws/ecs/containerinsights/<cluster>/performance`
     ![](https://lh4.googleusercontent.com/hVccEttjDOWoyXsBT6oNpV-USb6ZdoYzmqYVlzG-RZ_tJzPM3xVY9EQvUlVlCZrzsrPvqeJhlWJgwOoN5My6VepcPihk6yBJ7YkwHK___oqu5nfFMw-e2QcfDlm-QWk7dJjaZ1GHwmIcij51KDxvBn7UVruxUj0OogLN4E3Vx4xys4PJpj47kGShCA)
 
 4.  Click on Create and in opened window fill in the below parameters
 
     1.  Get the delivery stream name from the arn copied in step 2 and fill in the KinesisLogsDeliverStream  field.
-
     2.  Get the role name from the arn copied in step 2 and fill in the role.
-
     3.  Specify the filter pattern `**{ $.Type = "Container" || $.Type = "Task" }**`
-
     4.  Specify the filter name
-
     5.  Test the pattern and click Start streaming\
         ![](https://lh3.googleusercontent.com/sGGDaTqe2KgIAPCV_TwpFLIxq39qyRH9KgAlvUd7AWqVY8otcxu521_pzVwy4Bl7CfO42xOJH12WuzrIfTjLBP-c0SoLs0xMyusHvmuVZgCY2dBkMTuijMEq2iSzwbmxibNixF3J4PzrAcswO07nOmk7AtazjWBpTlrtgOdsWbWMLRT79srSHpqSAA)
 
 ### Collect Application Logs for Amazon ECS
-
 
 
 Setup the Container logs collection using the steps in following [docs](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/AWS_Fargate_log_collection). You can use awsfirelens driver and avoid sending logs to cloudwatch log groups.  Put account, region and namespace fields also while configuring the source.
@@ -195,261 +186,271 @@ In this section, you set up collection for traces
 1.  Create a HTTP Traces source by referring to the [docs](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/HTTP_Traces_Source).
 2.  Install  Open Telemetry Collector by referring to the [docs](https://help.sumologic.com/Traces/01Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_AWS_environments). 
 
-### Sample Log Message#sample-log-message) 
+### Sample Log Message
 
 
-
+```json
 {
-   "eventVersion":"1.04",
-   "userIdentity":{
-      "type":"AssumedRole",
-      "principalId":"ADFDDDFF7FDF7GFFF2DF0:i-76vfa923",
-      "arn":"arn:aws:sts::435456556566:assumed-role/ecsInstanceRole/i-76vfa923",
-      "accountId":"435456556566",
-      "accessKeyId":"AOFGPJFIJFFOIJFIOJHF",
-      "sessionContext":{
-         "attributes":{
-            "mfaAuthenticated":"false",
-            "creationDate":"2017-10-02T20:08:54.107Z"
-         },
-         "sessionIssuer":{
-            "type":"Role",
-            "principalId":"ADFDDDFF7FDF7GFFF2DF0",
-            "arn":"arn:aws:iam::435456556566:role/ecsInstanceRole",
-            "accountId":"435456556566",
-            "userName":"kevin"
-         }
+  "eventVersion":"1.04",
+  "userIdentity":{
+    "type":"AssumedRole",
+    "principalId":"ADFDDDFF7FDF7GFFF2DF0:i-76vfa923",
+    "arn":"arn:aws:sts::435456556566:assumed-role/ecsInstanceRole/i-76vfa923",
+    "accountId":"435456556566",
+    "accessKeyId":"AOFGPJFIJFFOIJFIOJHF",
+    "sessionContext":{
+      "attributes":{
+        "mfaAuthenticated":"false",
+        "creationDate":"2017-10-02T20:08:54.107Z"
+      },
+      "sessionIssuer":{
+        "type":"Role",
+        "principalId":"ADFDDDFF7FDF7GFFF2DF0",
+        "arn":"arn:aws:iam::435456556566:role/ecsInstanceRole",
+        "accountId":"435456556566",
+        "userName":"kevin"
       }
-   },
-   "eventTime":"2017-10-02T20:08:54.107Z",
-   "eventSource":"ecs.amazonaws.com",
-   "eventName":"RegisterTaskDefinition",
-   "awsRegion":"us-west-1",
-   "sourceIPAddress":"73.168.34.72",
-   "userAgent":"Amazon ECS Agent - v1.12.2 (ecda8a6) (+http://aws.amazon.com/ecs/)",
-   "requestParameters":{
+    }
+  },
+  "eventTime":"2017-10-02T20:08:54.107Z",
+  "eventSource":"ecs.amazonaws.com",
+  "eventName":"RegisterTaskDefinition",
+  "awsRegion":"us-west-1",
+  "sourceIPAddress":"73.168.34.72",
+  "userAgent":"Amazon ECS Agent - v1.12.2 (ecda8a6) (+http://aws.amazon.com/ecs/)",
+  "requestParameters":{
+    "attributes":[
+      {
+        "name":"com.amazonaws.ecs.capability.privileged-container"
+      },
+      {
+        "name":"com.amazonaws.ecs.capability.docker-remote-api.1.17"
+      },
+      {
+        "name":"com.amazonaws.ecs.capability.docker-remote-api.1.18"
+      },
+      {
+        "name":"com.amazonaws.ecs.capability.docker-remote-api.1.19"
+      },
+      {
+        "name":"com.amazonaws.ecs.capability.docker-remote-api.1.20"
+      },
+      {
+        "name":"com.amazonaws.ecs.capability.docker-remote-api.1.21"
+      },
+      {
+        "name":"com.amazonaws.ecs.capability.docker-remote-api.1.22"
+      },
+      {
+        "name":"com.amazonaws.ecs.capability.logging-driver.json-file"
+      },
+      {
+        "name":"com.amazonaws.ecs.capability.logging-driver.syslog"
+      },
+      {
+        "name":"com.amazonaws.ecs.capability.logging-driver.awslogs"
+      },
+      {
+        "name":"com.amazonaws.ecs.capability.ecr-auth"
+      },
+      {
+        "name":"com.amazonaws.ecs.capability.task-iam-role"
+      },
+      {
+        "name":"com.amazonaws.ecs.capability.task-iam-role-network-host"
+      }
+    ],
+    "totalResources":[
+      {
+        "type":"INTEGER",
+        "doubleValue":0.0,
+        "integerValue":1024,
+        "longValue":0,
+        "name":"CPU"
+      },
+      {
+        "type":"INTEGER",
+        "doubleValue":0.0,
+        "integerValue":995,
+        "longValue":0,
+        "name":"MEMORY"
+      },
+      {
+        "type":"STRINGSET",
+        "stringSetValue":[
+          "22",
+          "2375",
+          "2376",
+          "51678",
+          "51679"
+        ],
+        "doubleValue":0.0,
+        "integerValue":0,
+        "longValue":0,
+        "name":"PORTS"
+      },
+      {
+        "type":"STRINGSET",
+        "stringSetValue":[
+
+        ],
+        "doubleValue":0.0,
+        "integerValue":0,
+        "longValue":0,
+        "name":"PORTS_UDP"
+      }
+    ],
+    "instanceIdentityDocumentSignature":"pqWe1trtreertermhC6vz\nZ0e/ZyOVVKXOb0fiiouyuyturtyreuFaoghqQ0wWurXzcHb6CrtreyteV6hPM=",
+    "cluster":"graphite",
+    "instanceIdentityDocument":"{\n  \"privateIp\" : \"10.0.1.83\",\n  \"devpayProductCodes\" : null,\n  \"availabilityZone\" : \"us-west-1c\",\n  \"accountId\" : \"435456556566\",\n  \"version\" : \"2010-08-31\",\n  \"instanceId\" : \"i-76vfa923\",\n  \"billingProducts\" : null,\n  \"instanceType\" : \"t2.micro\",\n  \"imageId\" : \"ami-444d0224\",\n  \"pendingTime\" : \"2016-11-15T21:07:08Z\",\n  \"architecture\" : \"x86_64\",\n  \"kernelId\" : null,\n  \"ramdiskId\" : null,\n  \"region\" : \"us-west-1\"\n}"
+  },
+  "responseElements":{
+    "containerInstance":{
+      "versionInfo":{
+
+      },
+      "runningTasksCount":0,
+      "ec2InstanceId":"i-13dcar4566",
+      "remainingResources":[
+        {
+          "type":"INTEGER",
+          "doubleValue":0.0,
+          "integerValue":1024,
+          "longValue":0,
+          "name":"CPU"
+        },
+        {
+          "type":"INTEGER",
+          "doubleValue":0.0,
+          "integerValue":995,
+          "longValue":0,
+          "name":"MEMORY"
+        },
+        {
+          "type":"STRINGSET",
+          "stringSetValue":[
+            "22",
+            "2376",
+            "2375",
+            "51678",
+            "51679"
+          ],
+          "doubleValue":0.0,
+          "integerValue":0,
+          "longValue":0,
+          "name":"PORTS"
+        },
+        {
+          "type":"STRINGSET",
+          "stringSetValue":[
+
+          ],
+          "doubleValue":0.0,
+          "integerValue":0,
+          "longValue":0,
+          "name":"PORTS_UDP"
+        }
+      ],
+      "agentConnected":true,
+      "pendingTasksCount":0,
+      "registeredResources":[
+        {
+          "type":"INTEGER",
+          "doubleValue":0.0,
+          "integerValue":1024,
+          "longValue":0,
+          "name":"CPU"
+        },
+        {
+          "type":"INTEGER",
+          "doubleValue":0.0,
+          "integerValue":995,
+          "longValue":0,
+          "name":"MEMORY"
+        },
+        {
+          "type":"STRINGSET",
+          "stringSetValue":[
+            "22",
+            "2376",
+            "2375",
+            "51678",
+            "51679"
+          ],
+          "doubleValue":0.0,
+          "integerValue":0,
+          "longValue":0,
+          "name":"PORTS"
+        },
+        {
+          "type":"STRINGSET",
+          "stringSetValue":[
+
+          ],
+          "doubleValue":0.0,
+          "integerValue":0,
+          "longValue":0,
+          "name":"PORTS_UDP"
+        }
+      ],
+      "containerInstanceArn":"arn:aws:ecs:us-west-1:435456556566:container-instance/3f28c319-u9n2-1476-3d2n-b7c254fv411",
       "attributes":[
-         {
-            "name":"com.amazonaws.ecs.capability.privileged-container"
-         },
-         {
-            "name":"com.amazonaws.ecs.capability.docker-remote-api.1.17"
-         },
-         {
-            "name":"com.amazonaws.ecs.capability.docker-remote-api.1.18"
-         },
-         {
-            "name":"com.amazonaws.ecs.capability.docker-remote-api.1.19"
-         },
-         {
-            "name":"com.amazonaws.ecs.capability.docker-remote-api.1.20"
-         },
-         {
-            "name":"com.amazonaws.ecs.capability.docker-remote-api.1.21"
-         },
-         {
-            "name":"com.amazonaws.ecs.capability.docker-remote-api.1.22"
-         },
-         {
-            "name":"com.amazonaws.ecs.capability.logging-driver.json-file"
-         },
-         {
-            "name":"com.amazonaws.ecs.capability.logging-driver.syslog"
-         },
-         {
-            "name":"com.amazonaws.ecs.capability.logging-driver.awslogs"
-         },
-         {
-            "name":"com.amazonaws.ecs.capability.ecr-auth"
-         },
-         {
-            "name":"com.amazonaws.ecs.capability.task-iam-role"
-         },
-         {
-            "name":"com.amazonaws.ecs.capability.task-iam-role-network-host"
-         }
+        {
+          "name":"com.amazonaws.ecs.capability.privileged-container"
+        },
+        {
+          "name":"com.amazonaws.ecs.capability.docker-remote-api.1.17"
+        },
+        {
+          "name":"com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+          "name":"com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+          "name":"com.amazonaws.ecs.capability.docker-remote-api.1.20"
+        },
+        {
+          "name":"com.amazonaws.ecs.capability.docker-remote-api.1.21"
+        },
+        {
+          "name":"com.amazonaws.ecs.capability.docker-remote-api.1.22"
+        },
+        {
+          "name":"com.amazonaws.ecs.capability.logging-driver.json-file"
+        },
+        {
+          "name":"com.amazonaws.ecs.capability.logging-driver.syslog"
+        },
+        {
+          "name":"com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+          "name":"com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+          "name":"com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+          "name":"com.amazonaws.ecs.capability.task-iam-role-network-host"
+        }
       ],
-      "totalResources":[
-         {
-            "type":"INTEGER",
-            "doubleValue":0.0,
-            "integerValue":1024,
-            "longValue":0,
-            "name":"CPU"
-         },
-         {
-            "type":"INTEGER",
-            "doubleValue":0.0,
-            "integerValue":995,
-            "longValue":0,
-            "name":"MEMORY"
-         },
-         {
-            "type":"STRINGSET",
-            "stringSetValue":[
-               "22",
-               "2375",
-               "2376",
-               "51678",
-               "51679"
-            ],
-            "doubleValue":0.0,
-            "integerValue":0,
-            "longValue":0,
-            "name":"PORTS"
-         },
-         {
-            "type":"STRINGSET",
-            "stringSetValue":[ ],
-            "doubleValue":0.0,
-            "integerValue":0,
-            "longValue":0,
-            "name":"PORTS_UDP"
-         }
-      ],
-      "instanceIdentityDocumentSignature":"pqWe1trtreertermhC6vz\nZ0e/ZyOVVKXOb0fiiouyuyturtyreuFaoghqQ0wWurXzcHb6CrtreyteV6hPM=",
-      "cluster":"graphite",
-      "instanceIdentityDocument":"{\n  \"privateIp\" : \"10.0.1.83\",\n  \"devpayProductCodes\" : null,\n  \"availabilityZone\" : \"us-west-1c\",\n  \"accountId\" : \"435456556566\",\n  \"version\" : \"2010-08-31\",\n  \"instanceId\" : \"i-76vfa923\",\n  \"billingProducts\" : null,\n  \"instanceType\" : \"t2.micro\",\n  \"imageId\" : \"ami-444d0224\",\n  \"pendingTime\" : \"2016-11-15T21:07:08Z\",\n  \"architecture\" : \"x86_64\",\n  \"kernelId\" : null,\n  \"ramdiskId\" : null,\n  \"region\" : \"us-west-1\"\n}"
-   },
-   "responseElements":{
-      "containerInstance":{
-         "versionInfo":{ },
-         "runningTasksCount":0,
-         "ec2InstanceId":"i-13dcar4566",
-         "remainingResources":[
-            {
-               "type":"INTEGER",
-               "doubleValue":0.0,
-               "integerValue":1024,
-               "longValue":0,
-               "name":"CPU"
-            },
-            {
-               "type":"INTEGER",
-               "doubleValue":0.0,
-               "integerValue":995,
-               "longValue":0,
-               "name":"MEMORY"
-            },
-            {
-               "type":"STRINGSET",
-               "stringSetValue":[
-                  "22",
-                  "2376",
-                  "2375",
-                  "51678",
-                  "51679"
-               ],
-               "doubleValue":0.0,
-               "integerValue":0,
-               "longValue":0,
-               "name":"PORTS"
-            },
-            {
-               "type":"STRINGSET",
-               "stringSetValue":[ ],
-               "doubleValue":0.0,
-               "integerValue":0,
-               "longValue":0,
-               "name":"PORTS_UDP"
-            }
-         ],
-         "agentConnected":true,
-         "pendingTasksCount":0,
-         "registeredResources":[
-            {
-               "type":"INTEGER",
-               "doubleValue":0.0,
-               "integerValue":1024,
-               "longValue":0,
-               "name":"CPU"
-            },
-            {
-               "type":"INTEGER",
-               "doubleValue":0.0,
-               "integerValue":995,
-               "longValue":0,
-               "name":"MEMORY"
-            },
-            {
-               "type":"STRINGSET",
-               "stringSetValue":[
-                  "22",
-                  "2376",
-                  "2375",
-                  "51678",
-                  "51679"
-               ],
-               "doubleValue":0.0,
-               "integerValue":0,
-               "longValue":0,
-               "name":"PORTS"
-            },
-            {
-               "type":"STRINGSET",
-               "stringSetValue":[ ],
-               "doubleValue":0.0,
-               "integerValue":0,
-               "longValue":0,
-               "name":"PORTS_UDP"
-            }
-         ],
-         "containerInstanceArn":"arn:aws:ecs:us-west-1:435456556566:container-instance/3f28c319-u9n2-1476-3d2n-b7c254fv411",
-         "attributes":[
-            {
-               "name":"com.amazonaws.ecs.capability.privileged-container"
-            },
-            {
-               "name":"com.amazonaws.ecs.capability.docker-remote-api.1.17"
-            },
-            {
-               "name":"com.amazonaws.ecs.capability.docker-remote-api.1.18"
-            },
-            {
-               "name":"com.amazonaws.ecs.capability.docker-remote-api.1.19"
-            },
-            {
-               "name":"com.amazonaws.ecs.capability.docker-remote-api.1.20"
-            },
-            {
-               "name":"com.amazonaws.ecs.capability.docker-remote-api.1.21"
-            },
-            {
-               "name":"com.amazonaws.ecs.capability.docker-remote-api.1.22"
-            },
-            {
-               "name":"com.amazonaws.ecs.capability.logging-driver.json-file"
-            },
-            {
-               "name":"com.amazonaws.ecs.capability.logging-driver.syslog"
-            },
-            {
-               "name":"com.amazonaws.ecs.capability.logging-driver.awslogs"
-            },
-            {
-               "name":"com.amazonaws.ecs.capability.ecr-auth"
-            },
-            {
-               "name":"com.amazonaws.ecs.capability.task-iam-role"
-            },
-            {
-               "name":"com.amazonaws.ecs.capability.task-iam-role-network-host"
-            }
-         ],
-         "status":"ACTIVE",
-         "version":1
-      }
-   },
-   "requestID":"ae86b372-ab77-11e6-824c-c7c4220f0423",
-   "eventID":"ff9fc985-1fbe-4717-965b-607dda32f620",
-   "eventType":"AwsApiCall",
-   "recipientAccountId":"435456556566"
+      "status":"ACTIVE",
+      "version":1
+    }
+  },
+  "requestID":"ae86b372-ab77-11e6-824c-c7c4220f0423",
+  "eventID":"ff9fc985-1fbe-4717-965b-607dda32f620",
+  "eventType":"AwsApiCall",
+  "recipientAccountId":"435456556566"
 }
+```
 
 ## Query Sample 
 
 **Deleted Resources Over Time**
 
+```sql
 _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInstance or DeregisterTaskDefinition or StopTask) and !(InternalFailure)
 | json "eventName" as event_name
 | parse "\"userName\":\"*\"" as user
@@ -459,24 +460,22 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 | parse regex field=event_name "^(?:Delete|Deregister|Stop)(?<resource_type>[A-Z][A-Za-z]+)"
 | count by resource_type, _timeslice
 | transpose row _timeslice column resource_type
+```
 
 ### Install the Sumo Logic App 
 
-Now that you have set up a [collection](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Elastic_Container_Service_(ECS)/Collect_Logs%2C_Metrics(Container_Insights_Cloudwatch)_and_Traces_for_ECS "Collect Logs, Metrics(Container Insights+Cloudwatch) and Traces for ECS") for Amazon ECS, install the Sumo Logic App for Amazon ECS to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Elastic_Container_Service_(ECS)/Amazon-ECS-App-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a [collection](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Elastic_Container_Service_(ECS)/Collect_Logs%2C_Metrics(Container_Insights_Cloudwatch) and_Traces_for_ECS "Collect Logs, Metrics(Container Insights+Cloudwatch) and Traces for ECS") for Amazon ECS, install the Sumo Logic App for Amazon ECS to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Elastic_Container_Service_(ECS)/Amazon-ECS-App-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 **To install the app:**
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1.  From the **App Catalog**, search for and select the app**.** 
-2.  Select the **With Container Insights and Traces** version and click **Add to Library**.
-
-![Note](https://help.sumologic.com/@api/deki/files/116/Note.png)Version selection applies only to a few apps currently. For more information, see the [Install the Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
-
-1.  To install the app, complete the following fields.
-    1.  **App Name.** You can retain the existing name or enter the app's name of your choice. 
-    2.  **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2.  Click **Add to Library**.
+2.  Select the **With Container Insights and Traces** version and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the [Install the Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
+3.  To install the app, complete the following fields.
+    * **App Name.** You can retain the existing name or enter the app's name of your choice. 
+    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4.  Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder or another folder that you specified. From here, you can share it with your organization. 
 

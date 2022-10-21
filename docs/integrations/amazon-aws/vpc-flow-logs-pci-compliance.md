@@ -23,6 +23,20 @@ You can use either of the following methods to collect Amazon VPC Flow Logs:
 * [Collect Amazon VPC Flow Logs using AWS S3 source](#Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source)
 * [Collect Amazon VPC Flow Logs using a CloudFormation template](#Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation)
 
+## Field Extraction Rule(s) for VPC Flow logs  
+Create Field Extraction Rule for VPC Flow Logs [learn more](here).
+
+```sql
+Rule Name: VPCFlowLogFER
+Applied at: Ingest Time
+Scope (Specific Data):
+_sourceCategory=<Source category for respective VPC flow log source>
+Parse Expression:
+json "logStream", "logGroup", "message", "direction" as logStream, logGroup, msg, direction nodrop
+| if (_raw matches "{*", msg, _raw) as msg
+| parse field=msg "* * * * * * * * * * * * * *" as version,accountID,interfaceID,src_ip,dest_ip,src_port,dest_port,Protocol,Packets,bytes,StartSample,EndSample,Action,status nodrop
+```
+
 
 ## Installing the PCI Compliance for Amazon VPC Flow Logs App
 
