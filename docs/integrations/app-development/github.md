@@ -15,7 +15,7 @@ The Sumo Logic App for GitHub connects to your GitHub repository at the Organiza
 The Sumo App for GitHub supports GitHub.com, GitHub Advanced Analytics, not GitHub Enterprise.
 :::
 
-This app includes dashbaords for GHAS, but to be able to ingest GHAS events you must have a separate GHAS license.
+This app includes dashboards for GHAS, but to be able to ingest GHAS events you must have a separate GHAS license.
 
 ## Event Types
 
@@ -35,7 +35,7 @@ For the GitHub Advanced Security dashboards Sumo Logic App for GitHub uses these
 * Code Scanning Alerts
 * Pushes 
 * Secret Scanning Alerts
-* Security and analyses
+* Security and analysis
 * Repository Vulnerability alerts.
 
 For information on GitHub events, see the [GitHub documentation](https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/about-webhooks#events). 
@@ -265,7 +265,7 @@ Use this dashboard to:
 * Monitor alerts by severity 
 * Review recently closed alerts
  
-<img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Advanced-Security-Overview.png" />
+<img "src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Advanced-Security-Overview.png" alt="undefined" title="Advanced Security Overview" />
 
 ### GHAS - Secret Scanning Alerts 
 
