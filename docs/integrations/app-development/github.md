@@ -265,7 +265,7 @@ Use this dashboard to:
 * Monitor alerts by severity 
 * Review recently closed alerts
  
-<img "src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Advanced-Security-Overview.png" alt="undefined" title="Advanced Security Overview" />
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Advanced-Security-Overview.png" alt="undefined" title="Advanced Security Overview" />
 
 ### GHAS - Secret Scanning Alerts 
 
