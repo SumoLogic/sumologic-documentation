@@ -278,7 +278,7 @@ Use this dashboard to:
 
 <img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Secret-Scanning-Alerts.png"/>
 
-###GHAS - Code Scanning Alerts 
+### GHAS - Code Scanning Alerts 
 
 The **GHAS - Code Scanning Alerts** dashboard provides a granular overview of the code scanning alerts.
 
