@@ -6,7 +6,7 @@ description: Frequently asked questions about Sumo Logic Monitors.
 
 ## Can I convert my existing Scheduled Search to a Monitor?
 
-Yes, however, it's a manual process. You have to create a new Monitor with the appropriate query and alerting condition based on your existing Scheduled Search. See the [differences between Monitors and Scheduled Searches](difference-scheduled-searches.md) before you consider converting.
+Yes, however, it's a manual process. You have to create a new Monitor with the appropriate query and alerting condition based on your existing Scheduled Search. See the [differences between Monitors and Scheduled Searches](/docs/alerts/difference-scheduled-searches) before you consider converting.
 
 ## I am getting an error message about cardinality when creating metrics monitor; what does it mean?
 
