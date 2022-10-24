@@ -16,7 +16,7 @@ Sumo Logic Monitors allow you to set robust and configurable alerting policies t
 Monitors track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications.
 
 :::note
-Learn how [Monitors differ from Scheduled Searches](/docs/alerts/difference-scheduled-searches).
+Learn how [Monitors differ from Scheduled Searches](/docs/alerts/difference-from-scheduled-searches).
 :::
 
 ## Rules
