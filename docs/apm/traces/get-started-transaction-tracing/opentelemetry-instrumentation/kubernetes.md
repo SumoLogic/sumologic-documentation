@@ -6,17 +6,19 @@ sidebar_label: Kubernetes (Beta)
 
 <p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
 
-Setting up Tracing instrumentation for Java, Python and NodeJS applications deployed in Kubernetes just got easier. In a few simple steps, with the [OpenTelemetry-Operator](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-operator) your application is automatically instrumented and your traces are sent to Sumo.
+Setting up Tracing instrumentation for Java, Python, NodeJS and .Net applications deployed in Kubernetes just got easier. In a few simple steps, with the [OpenTelemetry-Operator](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-operator) your application is automatically instrumented and your traces are sent to Sumo.
 
 ## Installation
 
-To enable the OpenTelemetry-Operator for the  [Sumo Logic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection#sumologic-kubernetes-collection), you have to set additional flags during the installation process. The operator will instrument containers belonging to namespaces provided in the `opentelemetry-operator.manager.env.WATCH_NAMESPACE` flag only. The value of the flag is backslash comma separated namespaces list, for example: `opentelemetry-operator.manager.env.WATCH_NAMESPACE="ns1\,ns2\,ns3"`.
+To enable the OpenTelemetry-Operator for the [Sumo Logic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection#sumologic-kubernetes-collection), you have to set `opentelemetry-operator.enabled=true`.  
+OpenTelemetry Operator needs to know how to instrument containers. For this purpose `Instrumentation` resource has to be created in the namespace where you want to use auto-instrumentation. 
+Setting `opentelemetry-operator.createDefaultInstrumentation=true` and `opentelemetry-operator.instrumentationNamespaces="ns1\,ns2"` will help with that. The value of the flag `opentelemetry-operator.instrumentationNamespaces` is backslash comma separated namespaces list, for example: `opentelemetry-operator.instrumentationNamespaces="ns1\,ns2\,ns3"`.
 
 1. Update dependencies:
  ```bash
  $ helm dependency update
  ```
-2. Installation/upgrade enabling operator and setting namespaces to watch. You can find more details about installing an OT collector in Kubernetes environments [here](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments). Make sure that `--wait` flag is set at the end.
+2. Installation/upgrade enabling operator and setting namespaces to watch. You can find more details about installing an OT collector in Kubernetes environments [here](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments).
  ```bash
  $ helm upgrade --install collection sumologic/sumologic \
  --namespace sumologic \
@@ -26,8 +28,8 @@ To enable the OpenTelemetry-Operator for the  [Sumo Logic Kubernetes Collection]
  --set sumologic.clusterName="<MY_CLUSTER_NAME>" \
  --set sumologic.traces.enabled=true \
  --set opentelemetry-operator.enabled=true \
- --set opentelemetry-operator.manager.env.WATCH_NAMESPACE="ns1\,ns2" \
- --wait
+ --set opentelemetry-operator.createDefaultInstrumentation=true \
+ --set opentelemetry-operator.instrumentationNamespaces="ns1\,ns2"
  ```
 
 During the installation process, **OpenTelemetry Instrumentation** custom resources with all settings are deployed in the provided namespaces.
@@ -165,5 +167,17 @@ Environment variables:
  ```
 
 * Other parameters:
-    * **OTEL_PROPAGATORS.** If not set then additional supported by OpenTelemetry context propagators are enabled (b3 - common for service meshes, xray - used by AWS services). Default value: `tracecontext,baggage,b3,xray`.
+    * **OTEL_PROPAGATORS.** If not set then additional supported by OpenTelemetry context propagators are enabled (b3 - common for service meshes, xray - used by AWS services). Default value: `tracecontext,baggage,b3,xray` (except .Net instrumentation which currently supports only `tracecontext,baggage`.
     * **OTEL_TRACES_SAMPLER.** Default value: `always_on`. For details, see other sampling possibilities [here](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/sdk.md#Sampling).
+
+
+## Custom OpenTelemetry Operator Instrumentation resource
+
+You might want to create a custom `Instrumentation` resource. Please see the `Instrumentation` object [schema](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.61.0/apis/v1alpha1/instrumentation_types.go) and [example usage](https://github.com/open-telemetry/opentelemetry-operator/tree/v0.61.0#opentelemetry-auto-instrumentation-injection).
+In case of defining endpoint to export telemetry data from instrumented application follow the schema `RELEASE_NAME-CHART_NAME-otelagent.RELEASE_NAMESPACE` e.g. `collection-sumologic-otelagent.sumologic`.
+
+Make sure supported auto-instrumentation images are used:
+* `dotnet` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.3.1-beta.1
+* `java` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:1.16.0
+* `nodejs` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.27.0
+* `python` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.28b1
