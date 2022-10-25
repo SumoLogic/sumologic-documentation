@@ -115,7 +115,7 @@ You can import list items by uploading a .csv file. This is convenient when you 
 
 Create a .csv file. You can import up to three fields for an item.
 
-* **value** (Required). The value of the list item. The item you supply should be of the same type as the **Target Column** defined for the Match List. For example, if the **Target Column** is `IP Address`, supply an IP address.
+* **value** (Required). The value of the list item. The item you supply should be of the same type as the **Target Column** defined for the Match List. For example, if the **Target Column** is `IP Address`, supply an IP address. The maximum length for the value field is 2000 characters.
 * **description** (Optional). A description of the list item.
 * **expires** (Optional). Expiration date and time for the list item, in ISO 8601 format, for example: 2020-08-17 01:18:00 
 
