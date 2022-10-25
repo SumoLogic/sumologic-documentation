@@ -679,6 +679,7 @@
   "/Manage/Search-Optimization-Tools/Manage-Scheduled-Views": "/docs/manage/scheduled-views",
   "/Manage/Search-Optimization-Tools/Manage-Field-Extractions": "/docs/manage/field-extractions",
   "/Metrics/Metric-Queries-and-Alerts/07Metrics_Operators/filter": "/docs/metrics/metrics-operators",
+  "/Solutions/Kubernetes_Solution/13Filter_with_template_variables": "/docs/dashboards-new/filter-template-variables",
   "/Traces/01Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_AWS_environments": "/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-aws-environments",
   "/Traces/01Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_Kubernetes_environments": "/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments",
   "/Traces/01Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_other_environments": "/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments",
