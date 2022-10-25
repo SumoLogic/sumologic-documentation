@@ -128,8 +128,8 @@ If you configure on-demand account provisioning, Sumo Logic automatically create
 In Sumo Logic, open your OneLogin integration application for editing.
 
 1. Click the **On Demand Provisioning** checkbox.
-1. **First Name**. Enter: firstname 
-1. **Last Name**. Enter: lastname
+1. **First Name**. Enter: `firstname` 
+1. **Last Name**. Enter: `lastname`
 1. **On Demand Provisioning Roles**. Specify the Sumo RBAC roles you want to assign when user accounts are provisioned. The roles must already exist in Sumo Logic.
 1. Click **Save** to save the SAML configuration.
 
@@ -139,5 +139,5 @@ If you configure on-demand role provisioning, Sumo Logic assigns roles to a user
 
 1. In Sumo Logic, open your OneLogin integration application for editing.
 1. Click the **Roles Attribute** checkbox. The **Roles Attribute** field appears.
-1. **Roles Attribute**. Enter: `Role`
+1. **Roles Attribute**. Enter: `role`
 1. Click **Save**. 
