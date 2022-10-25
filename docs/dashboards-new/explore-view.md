@@ -40,7 +40,7 @@ Explore provides a visual hierarchy of the clusters in your environment that all
 Explore provides a set of dashboards for various components of your application that allow you to review the state of individual parts of your system. You can track errors, performance, and usage of application components, grouped by their type and logical clusters.
 
 :::note
-This feature is currently supported only for Database apps. To learn more, go to the [Database docs](/docs/integrations/databases), find your desired database, and then click on that database's "Install the Monitors, App, and View the Dashboards" section.
+This feature is currently supported only for Database apps. To learn more, go to the [Database docs](/docs/integrations/databases) and [Application Component Solution](/docs/observability/application-components).
 :::
 
 1. Select the **Application Components View** category.

@@ -1,0 +1,376 @@
+---
+id: application-components
+title: Application Components Solution
+sidebar_label: Application Components Solution
+---
+
+The Application Components Solution allows a better structure and grouping of various application components. This provides the ability to easily monitor and troubleshoot potential issues with applications.
+
+Pre-configured dashboards available for application components solve many common use cases:
+* Identifying which part of the infrastructure is experiencing problems.
+* Reviewing the overall health of specific components to quickly narrow down the scope of troubleshooting.
+* Minimizing the troubleshooting time by providing all relevant information in the right context.
+
+:::caution Limitations
+
+Currently supported only for the following apps:
+
+* [Cassandra](/docs/integrations/databases/cassandra)
+* [Elasticsearch](/docs/integrations/databases/elasticsearch)
+* [MongoDB](/docs/integrations/databases/mongodb)
+* [MySQL](/docs/integrations/databases/mysql)
+* [PostgreSQL](/docs/integrations/databases/postgresql)
+* [Redis](/docs/integrations/databases/redis)
+* [SQL Server](/docs/integrations/microsoft-azure/sql-server)
+* [MariaDB](/docs/integrations/databases/mariadb)
+* [Memcached](/docs/integrations/databases/memcached)
+* [Oracle](/docs/integrations/databases/oracle)
+:::
+
+## Deploy and Configure the Application Components Solution
+
+These instructions help you configure and deploy the Application Components Solution using a Terraform script.
+
+The Terraform script performs the following actions:
+* Creates Application Components View hierarchy in Explore.
+* Sets up Sumo Logic Field Extraction Rules ([FERs](/docs/manage/Field-Extractions)) to enrich the data.
+* Installs Sumo Logic Apps(Database apps and App Components app) in the Admin recommended folder.
+* Creates [Fields](/docs/manage/fields).
+* Installs Monitors for each of the selected databases.
+
+
+## Install using the Automation Script
+
+### Prerequisites
+
+For this setup, complete the following steps:
+
+1. Make sure you have access to the Sumo logic console. The user account associated with a Sumo Logic role needs the following permissions:
+   * Manage field extraction rules
+   * View Fields
+   * View field extraction rules
+   * Manage Collectors
+   * View Collectors
+   * Manage Fields
+   * Manage connections
+   * Manage Content
+2. Using these [instructions](/docs/manage/Security/Access-Keys#manage-your-access-keys-on-preferences-page), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. To identify which deployment your Sumo Logic account is using, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+3. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+
+### Set up the Terraform environment
+
+1. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later. To check the installed Terraform version, run the following command:
+ ```bash
+ terraform --version
+ ```
+2. Install the latest version of [curl](https://curl.haxx.se/download.html).
+3. Install the latest version of the [jq command-line JSON parser](https://github.com/stedolan/jq/wiki/Installation). This is required for running the fields.sh batch file.
+
+### Configure the Terraform script
+
+1. Clone the following Sumo Logic repository:
+ ```bash
+ git clone https://github.com/SumoLogic/sumologic-solution-templates
+ ```
+1. Initialize the Terraform working directory by navigating to the directory [sumologic-solution-templates/app-components-observability-terraform](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) and then running:
+  ```bash
+  terraform init
+  ```
+  This will install the required Terraform providers, including [Null](https://www.terraform.io/docs/providers/sumologic/index.html), [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [Time Provider](https://registry.terraform.io/providers/hashicorp/time/latest/docs), [Random Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs).
+1. By default, all other parameters are set up to automatically collect logs, metrics, install apps and monitors. If you need to override parameters, you can configure or override additional parameters in the [ main.auto.tfvars file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.tf).
+
+### Configure Required Parameters
+
+**Parameter**: `sumologic_environment`<br/>
+**Required**: Yes <br/>
+**Description**: This is your Sumo Logic Deployment. Enter au, ca, de, eu, jp, us2, in, fed or us1. See <a href="/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security">Sumo Logic Endpoints</a> for more information.
+
+---
+**Parameter**: `sumologic_access_id`<br/>
+**Required**: Yes <br/>
+**Description**: Your Sumo Logic Access ID. See <a href="/docs/manage/Security/Access-Keys#Create_an_access_key">Create an access key</a> for more information.
+
+---
+**Parameter**: `sumologic_access_key`<br/>
+**Required**: Yes <br/>
+**Description**: Your Sumo Logic Access Key, which is used for Sumo Logic API calls. See <a href="/docs/manage/Security/Access-Keys">Sumo Logic Access Key</a> for more information.
+
+---  
+**Parameter**: `sumologic_organization_id`<br/>
+**Required**: Yes <br/>
+**Description**: Your Sumo Logic Organization ID. You can find your org on the Preferences page in the Sumo Logic UI. Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. For more information, see <a href="/docs/get-started/sumo-logic-ui">Preferences Page</a>.
+
+
+
+### Configure app and component parameters
+
+**Parameter**: `apps_folder_installation_location` <br/>
+**Required**: No <br/>
+**Description**: Specify the location where the sumo logic apps/dashboards will be installed. Allowed values are "Admin Recommended Folder" and "Personal Folder".
+
+---
+**Parameter**: `share_apps_folder_with_org` <br/>
+**Required**: No <br/>
+**Description**: Indicates if Apps folder should be shared (view access) with the entire organization. Set true to enable or false to disable.
+
+---
+**Parameter**: `components_on_kubernetes_deployment` <br/>
+**Required**: No <br/>
+**Description**: Provide comma separated list of application components deployed on kubernetes environment for which sumologic resources needs to be created. Allowed values are "Memcached, Cassandra,elasticsearch,SQL server, MongoDB, MySQL, PostgreSQL, Redis, MariaDB, Couchbase, Oracle".
+
+---
+**Parameter**: `components_on_non_kubernetes_deployment` <br/>
+**Required**: No <br/>
+**Description**: Provide comma separated list of application components deployed on non-kubernetes environment for which sumologic resources needs to be created. Allowed values are "Memcached, Cassandra, Elasticsearch, SQLserver, MongoDB, MySQL, PostgreSQL, Redis, MariaDB, Couchbase, Oracle".
+
+### Configure Monitor parameters
+
+**Parameters**: `memcached_data_source`, `redis_data_source`, `sqlserver_data_source`, `mysql_data_source`, `postgresql_data_source`, `cassandra_data_source`, `couchbase_data_source`, `elasticsearch_data_source`, `mariadb_data_source`, `mongodb_data_source`, `oracle_data_source` <br/>
+**Required**: No <br/>
+**Description**: Provide cluster filters for each of the component’s monitors. For example, if you want to set up monitors only for cassandra clusters starting with `db_cluster` prefix search in your prod environment, you can set `cassandra_data_source=db_system=cassandra` and `db_cluster=prod* and environment=prod`. This assumes you have set the respective tags (`environment`, `db_cluster` and `db_system`) while configuring collection.
+
+---
+**Parameter**: `monitors_disabled` <br/>
+**Required**: No <br/>
+**Description**: Set it to `false` to enable the monitors. By default, they are disabled.
+
+---
+**Parameters**: `email_notifications_critical`, `email_notifications_warning`, `email_notifications_missingdata` <br/>
+**Required**: No <br/>
+**Description**: To send notification from the monitors as email set these parameters for critical, warning and missing data monitors respectively. Update the recipients in the below example.
+```json
+email_notifications_critical = [
+   {
+     connection_type       = "Email",
+     recipients            = ["abc@example.com"],
+     subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
+     time_zone             = "PST",
+     message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
+     run_for_trigger_types = ["Critical", "ResolvedCritical"]
+   }
+ ]
+```
+
+---
+**Parameters**: `connection_notifications_critical`, `connection_notifications_warning`, `connection_notifications_missingdata` <br/>
+**Required**: No <br/>
+**Description**: To configure notification via pagerduty or webhook set these parameters for critical, warning and missing data monitors respectively. See this <a href="https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections">document</a> for creating payloads with other connection types.
+```json
+connection_notifications_critical = [
+    {
+      connection_type       = "PagerDuty",
+      connection_id         = "<CONNECTION_ID>",
+      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
+      run_for_trigger_types = ["Critical", "ResolvedCritical"]
+    },
+    {
+      connection_type       = "Webhook",
+      connection_id         = "<CONNECTION_ID>",
+      payload_override      = "",
+      run_for_trigger_types = ["Critical", "ResolvedCritical"]
+    }
+  ]
+```
+
+Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the <a href="https://api.sumologic.com/docs/#operation/listConnections">Monitors API.</a>
+
+
+### Import existing Fields and FERs
+
+As part of configuring the Application Components solution, we need to create fields in Sumo Logic org. To import any fields that are already present in Sumo Logic into our Terraform state, run a script. To do so, navigate to the [sumologic-solution-templates/aws-observability-terraform](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-components/) folder and do the following:
+
+* Set the following environment variables using the commands below:
+```bash
+export SUMOLOGIC_ENV="YOUR_SUMOLOGIC_DEPLOYMENT"
+export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
+export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
+```
+Provide your Sumo Logic deployment for the SUMOLOGIC_ENV variable. For example: au, ca, de, eu, jp, us2, in, fed or us1. For more information on Sumo Logic deployments, see [Sumo Logic Endpoints and Firewall Security](https://helpstaging.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+* Run fields.sh using this command:
+```
+sh fields.sh
+```
+
+Going forward, do not modify these fields outside of Terraform.
+
+
+### Deploy the Application Component Solution
+
+Deploy the Application Components Solution using the Sumo Logic Terraform Script.
+
+Navigate to the directory [sumologic-solution-templates/application-components/](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-components/) and execute the following commands:
+
+1. Run `terraform validate`. This will validate the configuration files in the directory.
+2. Run `terraform plan` to view the sumo resources like monitors,apps,fers,fields and hierarchy which will be created/modified by Terraform.
+3. Run `terraform apply`.
+
+At the end of the console output, you should see two links, one for Apps Folder and the other for Monitors Folder. You can click on them to go to the sumo logic portal and view the dashboards and monitors. In case you missed noting down the links after deployment, you can run the `terraform show` command to see those output values again.
+
+
+### Configuring Alert Parameters
+
+After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/postgresql/`.
+
+The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable `postgresql_data_source`. Custom filter examples:
+* A specific cluster `db_cluster=postgresql.prod.01`
+* All clusters in an environment `environment=prod`
+* For alerts applicable only to a specific cluster, your custom filter would be: `db_cluster=postgresql-.prod.01`
+* For alerts applicable to all clusters that start with postgresql-prod, your custom filter would be: `db_cluster=postgresql-prod*`
+* For alerts applicable to a specific cluster within a production environment, your custom filter would be: `db_cluster=postgresql-1 and environment=prod*` (this assumes you have set the optional environment tag while configuring collection)
+
+All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter `monitors_disabled` to false in this file.
+
+By default, the monitors are configured in a monitor folder called “PostgreSQL”, if you would like to change the name of the folder, update the monitor folder name in this file.
+
+If you'd like the alerts to send email or connection notifications, configure these in the `postgresql_notifications.auto.tfvars` file. For configuration examples, refer to the next section.
+
+
+### Email and Connection Notification Configuration Examples
+
+To configure notifications, modify the `postgresql_notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See [this document](/docs/manage/connections-integrations/Webhook-Connections/Set-Up-Webhook-Connections) for creating payloads with other connection types.
+
+
+#### Pagerduty Connection Example
+
+```
+connection_notifications = [
+    {
+      connection_type       = "PagerDuty",
+      connection_id         = "<CONNECTION_ID>",
+      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
+      run_for_trigger_types = ["Critical", "ResolvedCritical"]
+    },
+    {
+      connection_type       = "Webhook",
+      connection_id         = "<CONNECTION_ID>",
+      payload_override      = "",
+      run_for_trigger_types = ["Critical", "ResolvedCritical"]
+    }
+  ]
+```
+
+Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
+
+
+#### Email Notifications Example:
+
+```
+email_notifications = [
+    {
+      connection_type       = "Email",
+      recipients            = ["abc@example.com"],
+      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
+      time_zone             = "PST",
+      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
+      run_for_trigger_types = ["Critical", "ResolvedCritical"]
+    }
+  ]
+```
+
+### Deploy using the Sumo Logic Terraform Script
+
+Navigate to the directory **sumologic-solution-templates/app-component-observability-terraform** and execute the following commands:
+
+1. Run **terraform init.** This will initialize Terraform and will download the required components.
+2. Run **terraform plan **to view the sumo resources like monitors,apps,FERs,fields and hierarchy which will be created/modified by Terraform.
+3. Run **terraform apply**.
+
+
+## Post Installation
+
+### Configure Metrics and Logs Collection
+
+Refer to the documentation for the app you're using. App Components Solution currently supports:
+* [Cassandra](/docs/integrations/databases/cassandra)
+* [Elasticsearch](/docs/integrations/databases/elasticsearch)
+* [MongoDB](/docs/integrations/databases/mongodb)
+* [MySQL](/docs/integrations/databases/mysql)
+* [PostgreSQL](/docs/integrations/databases/postgresql)
+* [Redis](/docs/integrations/databases/redis)
+* [SQL Server](/docs/integrations/microsoft-azure/sql-server)
+* [MariaDB](/docs/integrations/databases/mariadb)
+* [Memcached](/docs/integrations/databases/memcached)
+* [Oracle](/docs/integrations/databases/oracle)
+
+
+### Configure Fields in Sumo Logic
+
+Create the following Fields in collection sources both for logs and metrics. This ensures that your logs and metrics are tagged with relevant metadata, which the app dashboards require. For information on setting up Fields, see the [Fields](/docs/manage/fields) topic.
+
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `db_cluster_address`
+* `db_cluster_port`
+
+### Configuring or updating email notifications
+
+If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of [this document](/docs/alerts/Monitors#Add_a_monitor).
+
+
+## Uninstalling the Solution
+
+To uninstall the AWS Observability solution deployed using Terraform, navigate to the directory **sumologic-solution-templates/app-component-observability-terraform** and execute the command:
+```bash
+terraform destroy
+```
+
+This will destroy all resources and configuration previously set up.
+
+
+## View Application Components Dashboards and Alerts
+
+This page shows you how to intuitively use Explore and navigate Application Components hierarchy to view the pre configured dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
+
+
+### Navigate Application Components View
+
+Explore is an out-of-the-box Sumo Logic navigation tool that provides an intuitive visual representation of your environment.
+
+**To open Explore and Application Components View, do the following:**
+
+1. Log in to Sumo Logic and click **+ New** on the top menu bar.
+2. From the drop-down menu, choose **Explore**.
+
+The Explore navigation panel appears on the left.
+
+1. Click the **Explore By** arrow and select **Application Components View** from the drop-down menu.
+
+An expandable list of your AWS environment hierarchy appears in the Explore panel.
+
+1. With the Application Components view selected in Explore, select an environment to view a list of its components.
+
+**Application Components - Environments Overview** appears on the right. This dashboard provides insights into the CRUD activities and monitor errors of each of the components in that environment.
+
+1. Similarly from the expanded environment select a component.
+
+The **Application Components - Database System Overview** dashboard appears in the window on the right. The dashboard provides an at-a-glance view of the different database engines present in the database component and insights on errors occurring across different engines.
+
+3. And then keep on going down the hierarchy to specific entities for each of the components to view dashboards at more granular levels. For example, in the below screenshot, we selected **db_cluster(mariadb_on_premise) > schema(db_test) > table (addproduct)** to go to the **MariaDB - Table Performance Metrics** dashboard.
+
+
+
+## Frequently Asked Questions
+
+#### How do I configure it for new databases when they are running terraform and apply a second time?
+Assuming your last terraform application run was successful and you have the tfstate file locally. You can add new components in `components_on_non_kubernetes_deployment` or `components_on_kubernetes_deployment` parameters and rerun `terraform apply`.
+
+#### How do I update the Solution if a new version gets released?
+1. Back up your Application Component Solution - Apps folder and Application Component Solution - Monitor folder by exporting the content.
+2. Pull the master branch of [the repository](https://github.com/SumoLogic/sumologic-solution-templates/) and run `terraform apply`. It will update all the apps, FERs, hierarchies, fields, and monitors.
+3. The above step will deploy new dashboards and new monitors, so after migrating your custom content to these new dashboards, you can delete old FERs and dashboards.
+
+#### How do I view changes introduced in the new version?
+See the [CHANGLELOG.md file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-components/CHANGELOG.md) for bug fixes or enhancements in the latest solution version.
+
+#### How do I view all resources created by the solution?  
+See the [RESOURCES.md file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-components/RESOURCES.md) to view all resources and modules present in the solution.
+
+#### If I already have data flowing into Sumo Logic, how do I migrate to this solution?
+Existing customers have to perform the below steps:
+1. Add `db_cluster_address` and `db_cluster` port in their telegraf configuration as mentioned in the respective component’s collection doc. This is for tagging metrics.
+2. Add `db_cluster_address` and `db_cluster_port` in the sumologic source for logs as mentioned in the respective component’s collection doc.
+3. Import the existing fields using fields.sh script in Step 4 and follow Step 1, 2, 3, and 5 to deploy the solution.
+4. The above step will deploy new dashboards and new monitors, so after migrating your custom content to these new dashboards, you can delete old FERs and dashboards.
