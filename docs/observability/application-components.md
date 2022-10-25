@@ -234,22 +234,26 @@ Create the following Fields in collection sources both for logs and metrics. Thi
 
 ### Configuring or updating email notifications
 
-If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of [this document](/docs/alerts/Monitors#Add_a_monitor).
+If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services by [adding a monitor](/docs/alerts/monitors/add-monitor).
+
+There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
 ## Uninstalling the Solution
 
-To uninstall the AWS Observability solution deployed using Terraform, navigate to the directory **sumologic-solution-templates/app-component-observability-terraform** and execute the command:
-```bash
+To uninstall the Application Components solution deployed using Terraform, navigate to the directory https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-components and execute the command:
+```
 terraform destroy
 ```
 
 This will destroy all resources and configuration previously set up.
 
+Sometimes if the fields are used in other resources like FERs, other collection sources then those fields will not be deleted.
+
 
 ## View Application Components Dashboards and Alerts
 
-This page shows you how to intuitively use Explore and navigate Application Components hierarchy to view the pre configured dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
+This section shows how to use Explore and navigate Application Components hierarchy to view the pre configured dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
 
 
 ### Navigate Application Components View
@@ -259,24 +263,13 @@ Explore is an out-of-the-box Sumo Logic navigation tool that provides an intuiti
 **To open Explore and Application Components View, do the following:**
 
 1. Log in to Sumo Logic and click **+ New** on the top menu bar.
-2. From the drop-down menu, choose **Explore**.
-
-The Explore navigation panel appears on the left.
-
-1. Click the **Explore By** arrow and select **Application Components View** from the drop-down menu.
-
-An expandable list of your AWS environment hierarchy appears in the Explore panel.
-
+1. From the drop-down menu, choose **Explore**. The Explore navigation panel appears on the left.
+1. Click the **Explore By** arrow and select **Application Components View** from the drop-down menu. An expandable list of your AWS environment hierarchy appears in the Explore panel.
 1. With the Application Components view selected in Explore, select an environment to view a list of its components.
-
 **Application Components - Environments Overview** appears on the right. This dashboard provides insights into the CRUD activities and monitor errors of each of the components in that environment.
-
 1. Similarly from the expanded environment select a component.
-
 The **Application Components - Database System Overview** dashboard appears in the window on the right. The dashboard provides an at-a-glance view of the different database engines present in the database component and insights on errors occurring across different engines.
-
-3. And then keep on going down the hierarchy to specific entities for each of the components to view dashboards at more granular levels. For example, in the below screenshot, we selected **db_cluster(mariadb_on_premise) > schema(db_test) > table (addproduct)** to go to the **MariaDB - Table Performance Metrics** dashboard.
-
+1. And then keep on going down the hierarchy to specific entities for each of the components to view dashboards at more granular levels.
 
 
 ## Frequently Asked Questions
