@@ -114,19 +114,31 @@ annotations:
   gather_perf_events_statements = true
   interval_slow = "30m"
 [inputs.mysql.tags]
-  environment="TO_BE_CHANGED"
-  component="database"
-  db_system="mariadb"
-  db_cluster="TO_BE_CHANGED"--Enter `default` if you haven’t defined a cluster in MariaDB
+   environment="ENV_TO_BE_CHANGED"
+   component="database"
+   db_system="mariadb"
+   db_cluster="ENV_TO_BE_CHANGED"
+   db_cluster_address = "ENV_TO_BE_CHANGED"
+   db_cluster_port = "ENV_TO_BE_CHANGED" --Enter `default` if you haven’t defined a cluster in MariaDB
 ```
-
-3. Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
+3. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` in the snippet above):
   * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf exec Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the MySQL input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
   * In the input plugins section, that is:
       * `servers` - The URL of your MariaDB server. For information about additional input plugin configuration options, see the [Readme ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql)for the MySQL input plugin.
   * In the tags section (`[inputs.mysql.tags]`):
       * `environment` - This is the deployment environment where the MariaDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `db_cluster` - Enter a name to identify this MariaDB cluster. This cluster name will be shown in the Sumo Logic dashboards.  
+      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+      :::note
+`db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example, if your application uses “mariadb-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=mariadb-prod.sumologic.com db_cluster_port=3306`.
+
+If your application connects directly to a given sqlserver node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mariadb-prod.sumologic.com`
+
+Pivoting to Tracing data from Entity Inspector is possible only for “MariaDB address” Entities.
+:::
    * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
      * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
      * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
@@ -136,7 +148,6 @@ annotations:
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * `db_system: “mariadb”` - This value identifies the database system.
      * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
-
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic.
 
@@ -149,15 +160,17 @@ This section explains the steps to collect MariaDB logs from a Kubernetes enviro
 1. **(Recommended Method) Add labels on your MariaDB pods to capture logs from standard output**. Make sure that the logs from MariaDB are sent to stdout. Follow the instructions below to capture MariaDB logs from stdout on Kubernetes.
    1. Apply following labels to the MariaDB pod:
     ```sql
-    environment: "prod_CHANGEME"
+    environment: "prod_ENV_TO_BE_CHANGED"
     component: "database"
     db_system: "mariadb"
-    db_cluster "Cluster_CHANGEME"
+    db_cluster "Cluster_ENV_TO_BE_CHANGED"
+    db_cluster_address = "ENV_TO_BE_CHANGED"
+    db_cluster_port = "ENV_TO_BE_CHANGED"
     ```
-   2. Enter in values for the following parameters (marked in **CHANGE_ME** above):
-     * `environment`. This is the deployment environment where the MariaDB cluster identified by the value of **servers** resides. For example: dev, prod, or QA. While this value is optional, we highly recommend setting it.
-     * `db_cluster`. Enter a name to identify this MariaDB cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in MariaDB, then enter ‘**default**’ for db_cluster.
-     * Here’s an explanation for additional values set by this configuration, but **do not modify them** as changes will cause the Sumo Logic apps to not function correctly.
+   2. Enter in values for the following parameters (marked in "`ENV_TO_BE_CHANGED`" above):
+     * `environment`. This is the deployment environment where the MariaDB cluster identified by the value of **`servers`** resides. For example: dev, prod, or QA. While this value is optional, we highly recommend setting it.
+     * `db_cluster`. Enter a name to identify this MariaDB cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in MariaDB, then enter `default` for db_cluster.
+     * **Do not modify the following values** as it will cause the Sumo Logic apps to not function correctly.
        * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
        * `db_system: “mariadb”` - This value identifies the database system.
      * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
@@ -182,7 +195,7 @@ This section explains the steps to collect MariaDB logs from a Kubernetes enviro
     ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    6. Verify logs in Sumo Logic.
-3. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components:
+3. **Add an FER to normalize the fields in Kubernetes environments**. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components:
    1. **Go to Manage Data > Logs > Field Extraction Rules.**
    2. **Click the + Add button on the top right of the table.**
    3. **The **Add Field Extraction Rule** form will appear:**
@@ -200,7 +213,7 @@ This section explains the steps to collect MariaDB logs from a Kubernetes enviro
       if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
        | pod_labels_component as component
        | pod_labels_db_system as db_system
-       | pod_labels_db_cluster as db_cluster
+       | if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
       ```
    5. Click **Save** to create the rule.
 
@@ -210,7 +223,7 @@ This section explains the steps to collect MariaDB logs from a Kubernetes enviro
 
 For non-Kubernetes environments, Sumo Logic uses the Telegraf operator for MariaDB metric collection and the [Installed Collector](/docs/send-data/installed-collectors) for collecting MariaDB logs. The diagram below illustrates the components of the MariaDB collection in a non-Kubernetes environment.<br/><img src={useBaseUrl('img/integrations/databases/mariadbnonk8s.png')} alt="mariadb" />
 
-Telegraf uses the[ MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain MariaDB metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from MariaDB are collected by a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
+Telegraf uses the [MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain MariaDB metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from MariaDB are collected by a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
 The process to set up collection for MariaDB data is done through the following steps:
 
@@ -281,7 +294,18 @@ This section demonstrates how to configure a Local File Source for MariaDB Error
      * `component = database`
      * `db_system = mariadb`
      * `db_cluster = <Your_MariaDB_Cluster_Name>`. Enter **Default** if you do not have one.
-     * `environment = <Your_Environment_Name`> (for example, Dev, QA, or Prod)
+     * `environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod)
+     * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+     * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+     :::note
+     `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+     For example if your application uses “mariadb-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=mariadb-prod.sumologic.com db_cluster_port=3306`.
+
+     If your application connects directly to a given sqlserver node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mariadb-prod.sumologic.com`.
+
+     Pivoting to Tracing data from Entity Inspector is possible only for “MariaDB address” Entities.
+     :::
 4. In the **Advanced** section, select the following options:
    1. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
    2. **Enable Timestamp Parsing**: Select **Extract timestamp information from log file entries**.
@@ -360,23 +384,36 @@ After a few minutes, your new Source should be propagated down to the Collector 
      gather_perf_events_statements = true
      interval_slow = "30m"
    [inputs.mysql.tags]
-       environment="dev_TO_BE_CHANGED"
-       component="database"
-       db_system="mariadb"
-       db_cluster="mariadb_on_premise_TO_BE_CHANGED"
+     environment="dev_ENV_TO_BE_CHANGED"
+     component="database"
+     db_system="mariadb"
+     db_cluster="mariadb_on_premise_ENV_TO_BE_CHANGED"
+     db_cluster_address = "ENV_TO_BE_CHANGED"
+     db_cluster_port = "ENV_TO_BE_CHANGED"
    [[outputs.sumologic]]
      url = "<URL_from_HTTP_Logs_and_Metrics_Source>"
      data_format = "prometheus"
    ```
-   4. Enter values for fields marked `TO_BE_CHANGED` above to the appropriate values. Do not include the brackets (`< >`) in your own configuration.
+   4. Enter values for fields marked `ENV_TO_BE_CHANGED` above to the appropriate values. Do not include the brackets (`< >`) in your own configuration.
    * Input plugins section, which is `[[inputs.mysql]]`:
       * `servers`. The the URL of your MariaDB server. For information about additional input plugin configuration options, see the [Readme ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql)for the MySQL input plugin.
    * In the tags section, `[inputs.mysql.tags]`:
       * `environment`. This is the deployment environment where the MariaDB cluster identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
       * `db_cluster`. Enter a name to identify this MariaDB cluster. This cluster name will be shown in our dashboards.
+      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+      :::note
+      `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+
+      For example, if your application uses `“mariadb-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=mariadb-prod.sumologic.com db_cluster_port=3306`
+
+      If your application connects directly to a given sqlserver node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mariadb-prod.sumologic.com`
+
+      Pivoting to Tracing data from Entity Inspector is possible only for “MariaDB address” Entities.
+      :::
    * In the output plugins section, `[[outputs.sumologic]]`:
       * `URL` - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
-   * Below is an explanation for additional values set by this Telegraf configuration. If you haven’t defined a cluster in MariaDB, then enter ‘**default**’ for db_cluster. There are additional values set by the Telegraf configuration.  We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
+   * Below is an explanation for additional values set by this Telegraf configuration. If you haven’t defined a cluster in MariaDB, then enter `default` for db_cluster. There are additional values set by the Telegraf configuration.  We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
       * `data_format=“prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
       * `component=“database”` - In the input `[[inputs.mysql]]` plugins section. This value is used by Sumo Logic apps to identify application components.
       * `db_system=“mariadb”` - In the input plugins sections. This value identifies the database system.
@@ -474,7 +511,7 @@ email_notifications = [
 6. **Install the Alerts**. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**MariaDB** and run `terraform init`. This will initialize Terraform and will download the required components.
     1. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
     2. Run `terraform apply`.
-6. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+7. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
 
 ## Installing the MariaDB App
@@ -604,8 +641,12 @@ The **MariaDB - InnoDB** Metrics dashboard shows replication events, errors, war
 <img src={useBaseUrl('img/integrations/databases/MariaDB-InnoDB-Metrics.png')} alt="mariadb dashboards" />
 
 ### Table Performance Metrics
-  
-The **MariaDB - Table Performance dashboard**, shows performance schema for Table I/O waits and Table Lock waits.
+
+The **MariaDB - Table Performance dashboard** provides insights into performance like table i/o wait and table lock waits.
+
+Use this dashboard to:
+* Identify root cause of slow queries performed on database table.
+* Compare read and write lock waits time with timeshift operator to compare baseline and current trend.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB/MariaDB-Table-Peformance-Metrics.png')} alt="mariadb dashboards" />
 

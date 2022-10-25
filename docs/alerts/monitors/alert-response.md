@@ -23,20 +23,23 @@ variable:
 
 ```json
 {
-     "attachments": [
-         {
-             "pretext": "Sumo Logic Alert",
-             "fields": [
-                 {
-                     "title": "Alert Page",
-                     "value": "{{alertResponseUrl}}"
-                 }
-             ],
-             "mrkdwn_in": ["text", "pretext"],
-             "color": "#29A1E6"
-         }
-     ]
- }
+	"attachments":[
+		{
+			"pretext":"Sumo Logic Alert",
+			"fields":[
+				{
+					"title":"Alert Page",
+					"value":"{{alertResponseUrl}}"
+				}
+			],
+			"mrkdwn_in":[
+				"text",
+				"pretext"
+			],
+			"color":"#29A1E6"
+		}
+	]
+}
 ```
 
 ## Limitations
@@ -49,14 +52,9 @@ variable:
 
 Alert List shows all the Alerts from triggered Monitors within the past seven days. By default, the list is sorted by status (active on top), and then chronologically by creation time.
 
-To open the Alert List, click the bell icon in the top menu.
+To open the Alert List, click the bell icon in the top menu. <br/>![alert list page with bell and border.png](/img/monitors/alert-list-page-bell-border.png)
 
-![alert list page with bell and border.png](/img/monitors/alert-list-page-bell-border.png)
-
-* Use the search bar to filter by name, severity, or status.
-
-    ![search alert list.png](/img/monitors/search-alert-list.png)
-
+* Use the search bar to filter by name, severity, or status.<br/>![search alert list.png](/img/monitors/search-alert-list.png)
 * Click a column header to sort the list.
 * Click a row to select it and use the **Resolve** button to resolve.
 * Double-click a row to open the alert in the Alert page to investigate.
