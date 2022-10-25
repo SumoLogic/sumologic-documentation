@@ -12,7 +12,7 @@ Setting up Tracing instrumentation for Java, Python, NodeJS and .Net application
 
 To enable the OpenTelemetry-Operator for the [Sumo Logic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection#sumologic-kubernetes-collection), you have to set `opentelemetry-operator.enabled=true`.  
 OpenTelemetry Operator needs to know how to instrument containers. For this purpose `Instrumentation` resource has to be created in the namespace where you want to use auto-instrumentation. 
-Setting `opentelemetry-operator.createDefaultInstrumentation=true` and `opentelemetry-operator.instrumentationNamespaces="ns1\,ns2"` will help with that. The value of the flag `opentelemetry-operator.instrumentationNamespaces` is backslash comma separated namespaces list, for example: `opentelemetry-operator.instrumentationNamespaces="ns1\,ns2\,ns3"`.
+Setting `opentelemetry-operator.createDefaultInstrumentation` to `true` and `opentelemetry-operator.instrumentationNamespaces` will help with that. The value of the flag `opentelemetry-operator.instrumentationNamespaces` is backslash comma separated namespaces list, for example: `opentelemetry-operator.instrumentationNamespaces="ns1\,ns2\,ns3"`.
 
 1. Update dependencies:
  ```bash
@@ -174,7 +174,7 @@ Environment variables:
 ## Custom OpenTelemetry Operator Instrumentation resource
 
 You might want to create a custom `Instrumentation` resource. Please see the `Instrumentation` object [schema](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.61.0/apis/v1alpha1/instrumentation_types.go) and [example usage](https://github.com/open-telemetry/opentelemetry-operator/tree/v0.61.0#opentelemetry-auto-instrumentation-injection).
-In case of defining endpoint to export telemetry data from instrumented application follow the schema `RELEASE_NAME-CHART_NAME-otelagent.RELEASE_NAMESPACE` e.g. `collection-sumologic-otelagent.sumologic`.
+In case of defining endpoint to export telemetry data from instrumented application follow the pattern `RELEASE_NAME-CHART_NAME-otelagent.RELEASE_NAMESPACE` e.g. `collection-sumologic-otelagent.sumologic`.
 
 Make sure supported auto-instrumentation images are used:
 * `dotnet` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.3.1-beta.1
