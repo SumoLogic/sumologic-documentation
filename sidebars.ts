@@ -1553,7 +1553,7 @@ module.exports = {
             'observability/kubernetes/alerts',
           ],
         },
-        'observability/app-components',
+        'observability/application-components',
         'observability/diagnose-issues',
         'observability/troubleshoot',
         'observability/reliability-management-slo',
