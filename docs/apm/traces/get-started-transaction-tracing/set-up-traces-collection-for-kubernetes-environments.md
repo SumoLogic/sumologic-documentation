@@ -132,7 +132,7 @@ Alternatively, if required, you can use other supported formats as well:
 * OTLP gRPC: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:4317`
 * OTLP HTTP/**deprecated:** `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:55681`
 
-For example, when the default chart name (`collection`) and namespace (`sumologic`) is used, the endpoints are following:
+For example, when the default release name (`collection`) and namespace (`sumologic`) is used, the endpoints are following:
 
 * OTLP HTTP: `collection-sumologic-otelagent.sumologic:4318`
 * Jaeger GRPC: `collection-sumologic-otelagent.sumologic:14250`
