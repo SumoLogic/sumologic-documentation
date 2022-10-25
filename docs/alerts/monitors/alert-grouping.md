@@ -5,7 +5,7 @@ title: Alert Grouping
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Alert Grouping gives you flexibility to customize how your alerts and notifications are generated from monitors, allowing you to specify a grouping condition based on a specific field(s). Each unique value of the field(s) will be evaluated against the alerting and resolution conditions, and if it meets the threshold, an alert will be fired and resolved respectively.
+Alert Grouping gives you the flexibility to customize how your alerts and notifications are generated from monitors, allowing you to specify a grouping condition based on a specific field(s). Each unique value of the field(s) will be evaluated against the alerting and resolution conditions, and if it meets the threshold, an alert will be fired and resolved respectively.
 
 You could group by `_collector` field, for example, and one alert would be generated per `_collector`. You can also have a monitor generate and resolve more than one alert based on specific conditions. For this example below, let's say you're monitoring the ErrorRate for all of your services and want to get an alert for each service that breaches a specific error threshold. Rather than creating multiple monitors for each service, you can create one single monitor that does this.
 
@@ -116,7 +116,7 @@ A user wants to get an alert if all hosts from a given service has stopped sendi
 This alert can be useful if you suspect that one of your collectors has stopped sending data. Once you set this up, you'll get an alert about collector if it's stopped sending data. This alert will work without any issues, even if you add new collectors to your Sumo Logic account.
 
 * **Query**:  
-   ```txt
+   ```
    _index=sumologic_volume AND _sourceCategory=collector_volume
    | parse regex "\"(?<collector>[^\"]+)\"\:\{\"sizeInBytes\"\:(?<bytes>\d+)\,\"count\"\:(?<events>\d+)\}" multi nodrop
    | sum(bytes) as total_bytes by collector
