@@ -42,8 +42,12 @@ To enable injecting tracing auto-instrumentation, it is required to add an OpenT
 List of annotations per instrumented language:
 
 * **Java** auto-instrumentation - `instrumentation.opentelemetry.io/inject-java: "true"`
-* **NodeJS** auto-instrumentation - `instrumentation.opentelemetry.io/inject-nodejs: "true"`
 * **Python** auto-instrumentation - `instrumentation.opentelemetry.io/inject-python: "true"`
+* **NodeJS** auto-instrumentation - `instrumentation.opentelemetry.io/inject-nodejs: "true"`
+* **.Net** auto-instrumentation - `instrumentation.opentelemetry.io/inject-dotnet: "true"`
+
+**NOTE:**  
+.Net auto-instrumentation is in **BETA** stage.
 
 In case of a Pod with multiple containers inside it is required to specify additional annotation `instrumentation.opentelemetry.io/container-names` which takes as value a comma separated list of the containers names.
 
