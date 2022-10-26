@@ -1040,7 +1040,7 @@
   "/cid/210729": "/docs/integrations/databases/elasticsearch",
   "/cid/210804": "/docs/integrations/databases/memcached",
   "/cid/210817": "/docs/integrations/cloud-security-monitoring-analytics/amazon-guardduty",
-  "/cid/210818": "/docs/integrations/hosts-operating-systems/host-process-metrics",
+  "/cid/210818": "/docs/integrations/amazon-aws/security-hub",
   "/cid/210819": "/docs/integrations/cloud-security-monitoring-analytics/aws-waf",
   "/cid/210823": "/docs/integrations/security-threat-detection/akamai-security-events",
   "/cid/211022": "/docs/integrations/hosts-operating-systems/host-process-metrics",
