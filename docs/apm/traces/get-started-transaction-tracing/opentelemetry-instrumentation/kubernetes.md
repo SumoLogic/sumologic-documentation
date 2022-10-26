@@ -6,7 +6,7 @@ sidebar_label: Kubernetes (Beta)
 
 <p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
 
-Setting up Tracing instrumentation for Java, Python, NodeJS and .Net applications deployed in Kubernetes just got easier. In a few simple steps, with the [OpenTelemetry-Operator](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-operator) your application is automatically instrumented and your traces are sent to Sumo.
+Setting up Tracing instrumentation for Java, Python, NodeJS, and .NET applications deployed in Kubernetes just got easier. In a few simple steps, with the [OpenTelemetry-Operator](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-operator) your application is automatically instrumented and your traces are sent to Sumo.
 
 ## Installation
 
