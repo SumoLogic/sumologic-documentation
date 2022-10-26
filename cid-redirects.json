@@ -1,5 +1,6 @@
 {
   "/01Start-Here": "/docs/get-started",
+  "/01Start-Here/04Getting-Started/01-How-to-Sign-Up-for-Sumo-Logic": "/docs/get-started/sign-up",
   "/01Start-Here/03About-Sumo-Logic/What-Types-of-Logs-Can-I-Collect": "/docs/get-started/faq",
   "/01Start-Here/03About-Sumo-Logic/Contact-Us": "/docs/get-started/help",
   "/01Start-Here/03About-Sumo-Logic/Sumo-Logic-Support-Terms-and-Conditions": "/docs/get-started/support-terms",
@@ -1040,7 +1041,7 @@
   "/cid/210729": "/docs/integrations/databases/elasticsearch",
   "/cid/210804": "/docs/integrations/databases/memcached",
   "/cid/210817": "/docs/integrations/cloud-security-monitoring-analytics/amazon-guardduty",
-  "/cid/210818": "/docs/integrations/hosts-operating-systems/host-process-metrics",
+  "/cid/210818": "/docs/integrations/amazon-aws/security-hub",
   "/cid/210819": "/docs/integrations/cloud-security-monitoring-analytics/aws-waf",
   "/cid/210823": "/docs/integrations/security-threat-detection/akamai-security-events",
   "/cid/211022": "/docs/integrations/hosts-operating-systems/host-process-metrics",
