@@ -51,10 +51,8 @@ Run the installer on your server with root or Administrator privileges. If you a
 1. Browse to select a location for the Collector or accept the default and click **Next** to install the Collector files on your machine.
 1. The Installer displays the summary of the default settings. If you want to change any of these, click [Advanced UI Installer Settings](collector-installation-reference/advanced-ui-installer-settings.md) and follow the instructions. Click **Next**.
 1. Choose an authentication method.
-
    * Access Key: If you have a Sumo Logic access ID and key, click **Next** enter the access ID and key, and click **Next**.
    * Installation Token: The Setup Wizard has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the **Token String** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
-
 1. Click **Finish** to complete the setup.
 1. In Sumo Logic select **Manage Data \> Collection \> Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the Collector, check the [Error Codes](collector-installation-reference/collector-installation-error-messages.md) list to help troubleshoot.
 
@@ -67,9 +65,13 @@ The `-console` parameter is required to display output messages from the install
 
 :::note PowerShell users
 When using quiet mode installation on Windows with Microsoft PowerShell, parameters following `-console -q` must be escaped with quotes, for example:
-
 ```bash
 SumoCollector.exe -console -q "-Vsumo.accessid=<accessId>" "-Vsumo.accesskey=<accessKey>" "-Vsources=<filepath>"
+```
+
+Or, if you're using -varfile:
+```
+Start-Process C:\<path to collector executable>\SumoCollector.exe -Wait -ArgumentList "-q","-console","-varfile `"C:\<path to varfile>\sumo_credentials.txt`""
 ```
 
 :::
