@@ -11,7 +11,7 @@ Setting up Tracing instrumentation for Java, Python, NodeJS, and .NET applicatio
 ## Installation
 
 To enable the OpenTelemetry-Operator for the [Sumo Logic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection#sumologic-kubernetes-collection), you have to set `opentelemetry-operator.enabled=true`.  
-OpenTelemetry Operator needs to know how to instrument containers. For this purpose `Instrumentation` resource has to be created in the namespace where you want to use auto-instrumentation. 
+OpenTelemetry Operator needs to know how to instrument containers. For this purpose, the `Instrumentation` resource must be created in the namespace where you want to use auto-instrumentation. 
 Setting `opentelemetry-operator.createDefaultInstrumentation` to `true` and `opentelemetry-operator.instrumentationNamespaces` will help with that. The value of the flag `opentelemetry-operator.instrumentationNamespaces` is backslash comma separated namespaces list, for example: `opentelemetry-operator.instrumentationNamespaces="ns1\,ns2\,ns3"`.
 
 1. Update dependencies:
