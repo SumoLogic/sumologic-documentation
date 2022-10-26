@@ -279,19 +279,19 @@ module.exports = {
       defaultMode: 'dark',
     },
     algolia: {
-     // The application ID provided by Algolia
-      appId: 'YKDUX9XT89',
+      // The application ID provided by Algolia
+       appId: 'YKDUX9XT89',
       // Public API key: it is safe to commit it
-      apiKey: '72699d7d65c635f1fb1505dec1bedc51',
-      indexName: 'crawler_ Sumo Docs',
+       apiKey: '72699d7d65c635f1fb1505dec1bedc51',
+       indexName: 'sumo-docs-crawler',
       // Optional: see doc section below
-      contextualSearch: false,
+       contextualSearch: true,
       // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
       //externalUrlRegex: 'external\\.com|domain\\.com',
       // Optional: Algolia search parameters
       //searchParameters: {},
       // Optional: path for search page that enabled by default (`false` to disable it)
-      //searchPagePath: 'search',
+       searchPagePath: 'search',
       //... other Algolia params
     },
     prism: {
