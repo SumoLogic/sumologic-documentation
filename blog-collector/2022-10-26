@@ -1,0 +1,11 @@
+---
+title: Version 19.415-4
+hide_table_of_contents: false
+image: /img/sumo-square.png
+---
+
+The release is currently in progress. 
+
+* Security update: apache commons version updated to 1.10, fixes CVE-2022-42889
+* Security update: ant version updated to 1.10.11 fixes CVE-2021-36373, CVE-2021-36374 
+ 
