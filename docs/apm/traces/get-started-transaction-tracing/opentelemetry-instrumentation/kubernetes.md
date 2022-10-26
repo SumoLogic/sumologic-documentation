@@ -177,7 +177,7 @@ Environment variables:
 
 ## Custom OpenTelemetry Operator Instrumentation resource
 
-You might want to create a custom `Instrumentation` resource. Please see the `Instrumentation` object [schema](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.61.0/apis/v1alpha1/instrumentation_types.go) and [example usage](https://github.com/open-telemetry/opentelemetry-operator/tree/v0.61.0#opentelemetry-auto-instrumentation-injection).
+You might want to create a custom `Instrumentation` resource. For more info, see the [`Instrumentation` object schema](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.61.0/apis/v1alpha1/instrumentation_types.go) and [example usage](https://github.com/open-telemetry/opentelemetry-operator/tree/v0.61.0#opentelemetry-auto-instrumentation-injection).
 In the case of defining an endpoint to export telemetry data from instrumented application, follow the pattern `RELEASE_NAME-CHART_NAME-otelagent.RELEASE_NAMESPACE` (e.g., `collection-sumologic-otelagent.sumologic`).
 
 Make sure supported auto-instrumentation images are used:
