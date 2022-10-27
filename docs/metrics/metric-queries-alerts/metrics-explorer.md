@@ -5,6 +5,7 @@ sidebar_label: Metrics Explorer
 description: Learn how to use the Metrics Explorer to query your metrics.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page describes the Metrics Explorer UI and how to use it.
 
@@ -160,6 +161,26 @@ You’ll be prompted with the options to:
     ![results.png](/img/metrics/results-with-operator.png)
 
 1. Apply additional operators to the query, as desired. 
+
+## Set Warning and Critical Thresholds
+
+In the Chart view for a Time Series panel, you can use the **Thresholds** tab, in the Display Settings panel to define warning and critical thresholds for time series charts.
+
+1. After you enter your query, in the **Chart** view, click the **Thresholds** icon in the right-side pane of icons. <br/> <img src={useBaseUrl('img/metrics/thresholds-icon.png')} alt="thresholds-icon.png" width="<insert-pixel-number>"/>
+2. Click the toggle in the **Thresholds** pane. <br/><img src={useBaseUrl('img/metrics/thresholds-toggle.png')} alt="thresholds-icon.png" width="425"/>
+3. The **Thresholds** area updates to display default settings. <br/> <img src={useBaseUrl('img/metrics/thresholds-default.png')} alt="thresholds-default.png" width="375"/>
+4. Configure the appropriate comparator and threshold values, based on your data and requirements. You can choose from the following comparators.
+    * **greater than**. Any value greater than the value you specify will violate the threshold.
+    * **greater than or equal to**. Any value greater than or equal to the value you specify will violate the threshold.
+    * **less than**. Any value less than the value you specify will violate this threshold.
+    * **less than or equal**. Any value less than or equal to the value you specify will violate the threshold.
+    * **includes.** Any value between the two values you specify will violate the threshold.
+    * **excludes**. Every value NOT between the two values you specify will violate the threshold.
+5. Threshold bands appear on the chart. The red band shows the Critical threshold, the yellow band is Warning. <br/>
+  The chart type in the screenshot below is a line chart. For other chart types, the threshold visualization may vary. For example in bar and column charts, the bars and columns are shaded yellow, red, and green  in accordance with the thresholds defined.<br/>
+  The critical threshold has higher priority than the warning threshold. If the thresholds you define overlap, only the Critical shading (red) is applied to the overlapping area. fill-green.png
+6. If you toggle the **Fill remaining area as green** option, the portion of the chart with no thresholds is shaded in green. <br/><img src={useBaseUrl('img/metrics/fill-green.png')} alt="fill-green.png"/>
+7. If you toggle the **Highlight Violations** option, the horizontal threshold shading is removed. Instead you’ll see vertical red and yellow highlighting in the timelices where those thresholds were violated. <br/> <img src={useBaseUrl('img/metrics/highlight-mode.png')} alt="highlig-mode.png"/>
 
 ## Add another metric query
 
