@@ -67,7 +67,7 @@ Use the table below to reference the required scope permissions you need to add 
 | Web API   | Pro                  | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
 | Web API   | Business+            | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
 | Web API   | Enterprise Grid Plan | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
-| Audit API | Enterprise Grid Plan | admin, team:read, users:read, users:read.email, channels:read, channels:history, auditlogs:read |
+| Audit API | Enterprise Grid Plan |  auditlogs:read |
 
 ### Install the Slack App on a Workspace for Web API Logs
 Only follow these steps if you are installing a Slack App on a specific workspace to monitor Web API logs. Please ensure
@@ -93,12 +93,7 @@ section. A Slack Enterprise Grid account is required.
 8. Click **Allow**.
 9. Ignore the error message and copy the **Code in the URL** field, as shown in the following example. <br/><img src={useBaseUrl('img/send-data/slack-copy-url-code.png')} alt="Copy URL code" width="<insert-pixel-number>"/>
 10. Get the client ID and client secret from the Basic information of your Slack app. Replace the `<CODE>`, `<CLIENT_ID>`
-and `<CLIENT_SECRET>` variables in the following URL.
-
-```
-https://slack.com/api/oauth.access?code=<CODE>&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>
-```
-
+and `<CLIENT_SECRET>` variables in the following URL. <br/> `https://slack.com/api/oauth.v2.access?code=<CODE>&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>`
 11. Open a new browser tab and paste the URL from the previous step into the URL field, then press Enter.
 12. From the response, save the token value from the field `access_token` as it will be used for the Sumo source.
 
