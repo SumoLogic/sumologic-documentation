@@ -6,7 +6,7 @@ description: How to tailor line charts and area charts for metric queries.
 ---
 
 :::note
-This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metric-queries-alerts/metrics-explorer.md).
+This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metrics-queries/metrics-explorer.md).
 :::
 
 This section has instructions for configuring the look and feel of line and area charts. 

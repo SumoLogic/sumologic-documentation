@@ -5,7 +5,7 @@ sidebar_label: Metric Query Autocomplete
 description: The Metrics Explorer provides an autocomplete drop-down dialog that offers suggestions to make query writing easier.
 ---
 
-The [Metrics Explorer](/docs/metrics/metric-queries-alerts/metrics-explorer) provides an autocomplete drop-down dialog that offers suggestions to make query writing easier. Autocomplete is supported in both Basic and Advanced mode.
+The [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer) provides an autocomplete drop-down dialog that offers suggestions to make query writing easier. Autocomplete is supported in both Basic and Advanced mode.
 
 ## Basic Mode autocomplete
 
