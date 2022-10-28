@@ -33,7 +33,7 @@ Learn how [Monitors differ from Scheduled Searches](/docs/alerts/difference-from
 
 ## Notifications
 
-Notifications are optional and available as an **alert** and **recovery** for each trigger condition you specify, **critical**, **warning**, and **missing**.
+Notifications are optional and available as an **alert** and **recovery** for each trigger condition you specify, **Critical**, **Warning**, and **Missing Data**.
 
 ## Limitations
 
@@ -51,12 +51,10 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 * [Hidden Metrics queries](../../metrics/metrics-queries/metrics-explorer.md) do not persist across edit sessions.
 * The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.
 
-### Alert
+### Alerts
 
-* Monitors keep track of the notifications it sends and won't send additional notifications after sending the first one if the incident persists. It will only send additional notifications if there is a major change in the state of the monitor, such as new triggers from Warning to Critical or a different time series is detected.
-* When more than one trigger condition is met, notifications are sent based on the trigger conditions:
-  * When both Critical and Warning conditions are met two separate notifications are generated, one for the Critical condition and one for the Warning condition. Auto resolution, if set up, will work according to the resolution condition for each case. 
-  * When the Missing Data condition is met after initially firing a critical/warning incident the system will resolve the Critical or Warning incident that was created with the appropriate resolution reason. The system will also create a new Missing Data incident and notify you appropriately using your configured notification channel.
+* Monitor evaluation for each trigger type (Critical, Warning or Missing Data) happens independently. Each trigger type's lifecycle is managed separately and doesn't have any impact on other trigger types. So it is possible for a monitor to be in Critical and Warning state at the same time. Monitor goes back to normal when it is not in either of Critical, Warning and Missing Data states.
+* When both Critical and Warning conditions are met, two separate alerts and notifications are generated - one for the Critical condition and one for the Warning condition. Auto resolution, if set up, will work according to the resolution condition for each case. 
 * Metric Monitors have the option to group notifications. When configured, the Monitor will not trigger new notifications until the first one is resolved. The Monitor will only update if the notification type supports Auto Resolution. Grouped notifications will resolve when all the time series return to normal.
 * Log Monitors always group notifications.
 
