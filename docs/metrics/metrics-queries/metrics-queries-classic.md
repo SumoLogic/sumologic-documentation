@@ -8,7 +8,7 @@ description: See information about the Classic metrics UI.
 This topic explains how to construct metrics queries and provides examples. 
 
 :::tip
-This topic has information about the Classic metrics UI. For information about the Metrics Explorer, the UI that replaces Classic metrics, see [Metrics Explorer](/docs/metrics/metric-queries-alerts/metrics-explorer).
+This topic has information about the Classic metrics UI. For information about the Metrics Explorer, the UI that replaces Classic metrics, see [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer).
 :::
 
 ## Structure of metrics queries

@@ -9,7 +9,7 @@ You can use the `where` operator to filter data points by value.
 `where` is somewhat analogous to the [filter](#filter) metrics operator. However, `filter` only supports filtering entire time series; in contrast, `where` allows you to filter by data point value.
 
 :::note
-The `where` operator is currently supported in the Metric Explorer's [advanced mode](/docs/metrics/metric-queries-alerts/metrics-explorer), not in basic mode.
+The `where` operator is currently supported in the Metric Explorer's [advanced mode](/docs/metrics/metrics-queries/metrics-explorer), not in basic mode.
 :::
 
 ## Syntax

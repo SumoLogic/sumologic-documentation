@@ -6,7 +6,7 @@ description: To save a metrics visualization, you must add the visualization as 
 ---
 
 :::note
-This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metric-queries-alerts/metrics-explorer.md).
+This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metrics-queries/metrics-explorer.md).
 :::
 
 You can add a metrics visualization as a panel in a dashboard.
