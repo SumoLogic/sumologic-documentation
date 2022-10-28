@@ -35,7 +35,7 @@ metric=size | count by src_ip
 
 ### Count of 4xx errors by method
 
-This example shows a query in the [Metrics Explorer](/docs/metrics/metric-queries-alerts/metrics-explorer) in basic mode. In advanced mode, the query would look like:
+This example shows a query in the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer) in basic mode. In advanced mode, the query would look like:
 
 ```sql
 metric=4XXError | count by method
