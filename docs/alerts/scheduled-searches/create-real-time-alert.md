@@ -9,10 +9,10 @@ Real-Time Alerts are scheduled searches that run nearly continuously. That means
 
 When an alert condition is satisfied Sumo Logic triggers the selected alert type. Sumo Logic examines ingested data in a rolling window using the Time Range you define. Any time a new result is found, another email is sent.
 
-:::note
+## When to Use
+
 Only use real-time schedules when you know your data is ingested within a few minutes of its creation. The [receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time) should be within a few minutes of your log's [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata). See
 how to [troubleshoot timestamp discrepancies](docs/send-data/collector-faq#troubleshooting-time-discrepancies).
-:::
 
 Real-Time Alerts are not duplicated, which means that if a specific raw log message has triggered an alert once already, that same log message will not trigger an alert a second time.
 
@@ -24,7 +24,7 @@ If the time zone of messages is set incorrectly, those logs won't be picked up b
 
 ## Configure a Real-Time Alert
 
-To set up a Real-Time alert:
+To set up a Real-Time Alert:
 
 1. [Save a search](/docs/search/get-started-with-search/search-basics/save-search). 
 1. Click **Schedule this search**.<br/> ![RealTimeAlert.png](/img/alerts/RealTimeAlert.png)
@@ -32,14 +32,15 @@ To set up a Real-Time alert:
 1. For all other configuration options, see [Schedule a Search](schedule-search.md). 
 1. Click **Save**. 
 
-## General limitations
+## Limitations
 
 * The time range of a Real-Time Alert must be between 5 and 15 minutes. 
 * Searching by receipt time is not supported.
+* If your search query result is a subset of your previous run's result, a Real-Time Alert will not trigger. It will trigger only when there are new results compared to the previous run.
 * A maximum of 120 emails are sent per day per Real-Time Alert.
 * Aggregate real-time scheduled searches evaluate the first 1,000 results per search. For Example, if the scheduled search is supposed to return more than 1,000 results, reduce the scope of the search.
 * Non-Aggregate real-time scheduled searches evaluate the first 100 results per search. For Example, if the scheduled search is supposed to return more than 100 results, either convert it to aggregate scheduled search or reduce the scope of the search.
-* The [_dataTier](/docs/manage/partitions-data-tiers/data-tiers) search modifier is not supported in Real-Time Alert searches.
+* The [`_dataTier`](/docs/manage/partitions-data-tiers/data-tiers) search modifier is not supported in Real-Time Alert searches.
 
 ### Notification Results
 
