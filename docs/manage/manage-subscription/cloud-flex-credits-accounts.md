@@ -212,7 +212,7 @@ To drill into usage data, do the following:
 
 ### Monitoring Promotional Credit usage
 
-You can filter for a focused credit component to assess your Promotional Credit usage, in the same way you [drill into usage data](cloud-flex-accounts.md) for paid credits.
+You can filter for a focused credit component to assess your Promotional Credit usage, in the same way you [drill into usage data](/docs/manage/manage-subscription/cloud-flex-credits-accounts/#monitoring-promotional-credit-usage) for paid credits.
 
 To monitor your Promotional Credit usage, do the following:
 
