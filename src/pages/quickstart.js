@@ -10,7 +10,7 @@ class QuickStart extends Component {
         </div>
         <div className='column-right'>
           <h2>Browse by product</h2>
-          <p>We provide the tools you need to get started quickly with Sauce Labs
+          <p>We provide the tools you need to get started quickly with Sumo Logic
             using your favorite framework.
           </p>
         </div>
