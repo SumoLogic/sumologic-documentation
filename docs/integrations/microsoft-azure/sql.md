@@ -124,7 +124,7 @@ In Step 1, you create an HTTP source. When you configure the, plan your source c
    * Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings.
    * Once diagnostics are enabled, click **Add a diagnostic setting**.
    * The **Diagnostic Settings** page appears.
-   * In the left pane
+   * In the left pane:
       * Enter a name for the diagnostic setting.
       * Click the  **Stream to an event hub **checkbox.
       * Select **Configure event hub.** The right pane appears.

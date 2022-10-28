@@ -40,7 +40,9 @@ If you're using SQL Server in a non-Kubernetes environment, create the fields:
 * `environment`
 * `db_system`
 * `db_cluster`
-* `pod`
+* `db_cluster_address`
+* `db_cluster_port`
+
 
 
 </TabItem>
@@ -51,6 +53,9 @@ If you're using SQL Server in a Kubernetes environment, create the fields:
 * `pod_labels_environment`
 * `pod_labels_db_system`
 * `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
+  
 
 
 </TabItem>
@@ -69,7 +74,7 @@ Sumo Logic supports collection of logs and metrics data from SQL Server in both 
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection ([learn more](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture)). The diagram below illustrates how data is collected from SQL Server in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/sqlk8s.png')} alt="sqlk8s.png" />
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with the Kubernetes collection ([learn more](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture)). The diagram below illustrates how data is collected from SQL Server in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/sqlk8s.png')} alt="sqlk8s.png" />
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from SQL Server. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -93,18 +98,18 @@ It’s assumed that you are using the latest helm chart version. If not, upgrade
 
 This section explains the steps to collect SQL Server metrics from a Kubernetes environment.
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. [Learn more](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 1. **[Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)**
 2. **Add annotations on your SQL Server pods**. Before you add annotations, you need to create a login on every SQL Server pod  you want to monitor, with following script:
   ```sql
   USE master;
   GO
-  CREATE LOGIN [Username_CHANGE_ME] WITH PASSWORD=N'Password_CHANGE_ME';
+  CREATE LOGIN [Username_ENV_TO_BE_CHANGED] WITH PASSWORD=N'Password_CHANGE_ME';
   GO
-  GRANT VIEW SERVER STATE TO [Username_CHANGE_ME];
+  GRANT VIEW SERVER STATE TO [Username_ENV_TO_BE_CHANGED];
   GO
-  GRANT VIEW ANY DEFINITION TO [Username_CHANGE_ME];
+  GRANT VIEW ANY DEFINITION TO [Username_ENV_TO_BE_CHANGED];
   GO
   ```
   On your SQL Server Pods, add the following annotations:
@@ -115,37 +120,49 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
       prometheus.io/port: "9273"
       telegraf.influxdata.com/inputs: |+
   [[inputs.sql server]]
-      servers = ["Server=<IP_CHANGE_ME>;Port=<Port_CHANGE_ME| default 1433>;User Id=<Username_CHANGE_ME>;Password=<Password_CHANGE_ME>;app name=telegraf;log=1;",]
+      servers = ["Server=<IP_ENV_TO_BE_CHANGED>;Port=<Port_ENV_TO_BE_CHANGED| default 1433>;User Id=<Username_ENV_TO_BE_CHANGED>;Password=<Password_ENV_TO_BE_CHANGED>;app name=telegraf;log=1;",]
      database_type = "SQLServer"
      exclude_query =  [ 'SQLServerSchedulers' , 'SQLServerRequests']
        [inputs.sqlserver.tags]
-      environment="prod"
+      environment="ENV_TO_BE_CHANGED"
       component="database"
-      db_cluster="sqlserver_on_k8s"
       db_system = "sqlserver"
+      db_cluster: "ENV_TO_BE_CHANGED"
+      db_cluster_address = "ENV_TO_BE_CHANGED"
+      db_cluster_port = "ENV_TO_BE_CHANGED"
   ```
-  Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
+  Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` in the snippet above):
   * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf SQL Server Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SQL Server input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
-  * In the input plugins section, that is `[[inputs.sqlserver]]`:
+  * In the input plugins section, which is `[[inputs.sqlserver]]`:
       * `servers` - The URL to the SQLserver server. This can be a comma-separated list to connect to multiple SQLserver servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) for more information on additional parameters for configuring the SQLserver input plugin for Telegraf.
-  * In the tags section that is `[inputs.sqlserver.tags]`
+  * In the tags section, which is `[inputs.sqlserver.tags]`
       * `environment` - This is the deployment environment where the SQLserver cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `db_cluster` - Enter a name to identify this SQLserver cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 
-    Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
+      :::note
+      `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
 
+      For example, if your app uses `“sqlserver-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=sqlserver-prod.sumologic.com db_cluster_port=3306`.
+
+      If your application connects directly to a given SQL server node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=sqlserver-prod.sumologic.com`.
+
+      Pivoting to Tracing data from Entity Inspector is possible only for “SQLServer address” Entities.
+      :::
+
+**Do not modify the following values,** as they will cause the Sumo Logic apps to not function correctly.
 * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
 * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
 * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
-* `telegraf.influxdata.com/inputs`
-    * **In the tags section, which is `[inputs.sqlserver.tags]`
-        * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
-        * `db_system: “sqlserver”` - This value identifies the database system.
+* `telegraf.influxdata.com/inputs` - In the tags section, which is `[inputs.sqlserver.tags]`:
+   * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
+   * `db_system: “sqlserver”` - This value identifies the database system.
 
     For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
-1. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
-2. Verify metrics in Sumo Logic.
+3. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
+4. Verify metrics in Sumo Logic.
 
 
 #### Step 2: Configure Logs Collection
@@ -169,6 +186,18 @@ This section explains the steps to collect SQL Server logs from a Kubernetes env
 
    * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
    * `db_system: “SQLserver”` - This value identifies the database system.
+   * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+   * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+
+   :::note
+   `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+   For example, if your application uses `“sqlserver-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=sqlserver-prod.sumologic.com db_cluster_port=3306`
+
+   If your application connects directly to a given SQL server node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=sqlserver-prod.sumologic.com`
+
+   Pivoting to Tracing data from Entity Inspector is possible only for “SQLServer address” Entities.
+   :::
 
    For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
@@ -197,14 +226,13 @@ kubectl describe pod <SQLserver_pod_name>
 ```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. Verify logs in Sumo Logic.
-1. Add a FER to normalize the fields in Kubernetes environments \
-Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
+1. Add a FER to normalize the fields in Kubernetes environments. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
 1. Go to Manage Data > Logs > Field Extraction Rules.
 2. Click the + Add button on the top right of the table.
 3. The **Add Field Extraction Rule** form will appear:
 
 
-1. Enter the following options:
+4. Enter the following options:
 * **Rule Name**. Enter the name as **App Observability - Proxy**.
 * **Applied At.** Choose **Ingest Time**
 * **Scope**. Select **Specific Data**
@@ -219,16 +247,15 @@ pod_labels_db_cluster=*
 if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 | pod_labels_component as component
 | pod_labels_db_system as db_system
-| pod_labels_db_cluster as db_cluster
+| if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
 ```
 
-1. Click **Save** to create the rule.
-
+5. Click **Save** to create the rule.
 
 </TabItem>
 <TabItem value="non-k8s">
 
-In Non-Kubernetes environments, Sumo Logic uses the Telegraf operator for SQL Server metric collection and the [Installed Collector](/docs/send-data/installed-collectors) for collecting SQL Server logs. The diagram below illustrates the components of the SQL Server collection in a non-Kubernetes environment. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/sql-nonk8s.png')} alt="sql-nonk8s.png" /> 
+In Non-Kubernetes environments, Sumo Logic uses the Telegraf operator for SQL Server metric collection and the [Installed Collector](/docs/send-data/installed-collectors) for collecting SQL Server logs. The diagram below illustrates the components of the SQL Server collection in a non-Kubernetes environment. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/sql-nonk8s.png')} alt="sql-nonk8s.png" />
 
 Telegraf uses the [SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain SQL Server metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from SQL Server are collected by a [Local File source](/docs/send-data/installed-collectors/sources/local-file-source).
 
@@ -248,7 +275,6 @@ The process to set up collection for SQL Server data is done through the followi
 
 
 #### Configure Logs Collection
-
 
 This section provides instructions for configuring log collection for SQL Server running on a non-Kubernetes environment for the Sumo Logic App for SQL Server.
 
@@ -271,6 +297,18 @@ This section provides instructions for configuring log collection for SQL Server
        * `db_system = SQLserver`
        * `db_cluster = <Your_SQLserver_Cluster_Name>`.Enter Default if you do not have one`.`
        * `environment = <Your_Environment_Name> `(for example, `Dev`, `QA`, or `Prod`)
+       * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+       * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+
+       :::note
+       `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+
+       For example, if your application uses `“sqlserver-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=sqlserver-prod.sumologic.com db_cluster_port=3306`
+
+       If your application connects directly to a given SQL server node, rather than the whole cluster, use the application connection string to override the value of the `“host”` field in the Telegraf configuration: `host=sqlserver-prod.sumologic.com`
+
+       Pivoting to Tracing data from Entity Inspector is possible only for “SQLServer address” Entities.
+       :::
 4. In the **Advanced** section, select the following options:
    * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
    * **Time Zone.** Choose the option, **Ignore time zone from the log file and instead use**, and then select your SQL Server Server’s time zone.
@@ -306,65 +344,71 @@ To create a new Sumo Logic hosted collector, perform the steps in the [Configure
 
   Before you configure Telegraf, you will need to create a[ login on every SQL Server](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver#additional-setup) instance you want to monitor with the following script. This script will create a user in SQL Server which will be used as input to the Telegraf configuration.
 
-
 ```
 USE master;
 GO
-CREATE LOGIN [<Username_TO_BE_CHANGED>] WITH PASSWORD=N'<Password_TO_BE_CHANGED>';
+CREATE LOGIN [<Username_ENV_TO_BE_CHANGED>] WITH PASSWORD=N'<Password_ENV_TO_BE_CHANGED>';
 GO
-GRANT VIEW SERVER STATE TO [<Username_TO_BE_CHANGED>];
+GRANT VIEW SERVER STATE TO [<Username_ENV_TO_BE_CHANGED>];
 GO
-GRANT VIEW ANY DEFINITION TO [<Username_TO_BE_CHANGED>];
+GRANT VIEW ANY DEFINITION TO [<Username_ENV_TO_BE_CHANGED>];
 GO
 ```
 
-
 Create or modify `telegraf.conf` and copy and paste the text below:  
-
 
 ```sql
 [[inputs.sqlserver]]
-  servers = [ "Server=<IP_TO_BE_CHANGED>;Port=<Port_TO_BE_CHANGED>;User Id=<Username_TO_BE_CHANGED>;Password=<Password_TO_BE_CHANGED>;app name=telegraf;log=1;",]
+  servers = [ "Server=<IP_ENV_TO_BE_CHANGED>;Port=<Port_ENV_TO_BE_CHANGED>;User Id=<Username_ENV_TO_BE_CHANGED>;Password=<Password_ENV_TO_BE_CHANGED>;app name=telegraf;log=1;",]
   database_type = "SQLServer"
   exclude_query = [ 'SQLServerSchedulers' , 'SQLServerRequests' ]
   tagexclude = ['physical_filename','volume_mount_point']
     [inputs.sqlserver.tags]
        environment="prod"
        component="database"
-       db_cluster="<sqlserver_TO_BE_CHANGED>"
+       db_cluster: "ENV_TO_BE_CHANGED"
+       db_cluster_address = "ENV_TO_BE_CHANGED"
+       db_cluster_port = "ENV_TO_BE_CHANGED"
        db_system = "sqlserver"
-
 [[outputs.sumologic]]
   url = "<URL_from_HTTP_Logs_and_Metrics_Source>"
   data_format = "prometheus"
 ```
 
-
-Enter values for fields annotated with `<VALUE_TO_BE_CHANGED>` to the appropriate values. Do not include the brackets (`< >`) in your final configuration
-
-
+Enter values for fields annotated with `<ENV_TO_BE_CHANGED>` to the appropriate values. Do not include the brackets (`< >`) in your final configuration:
 * Input plugins section, which is `[[inputs.sqlserver]]`:
     * `servers` - The URL to the SQL server. For more information on additional parameters to configure the SQL Server input plugin for Telegraf see[ this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver).
 * In the tags section, which is `[inputs.sqlserver.tags]`:
     * `environment` - This is the deployment environment where the SQL Server cluster identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
     * `db_cluster` - Enter a name to identify this SQLserver cluster. This cluster name will be shown in our dashboards.
+    * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+    * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+
+    :::note
+    `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+
+    For example, if your application uses `“sqlserver-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=sqlserver-prod.sumologic.com db_cluster_port=3306`
+
+    If your application connects directly to a given SQL server node, rather than the whole cluster, use the application connection string to override the value of the `“host”` field in the Telegraf configuration: `host=sqlserver-prod.sumologic.com`
+
+    Pivoting to Tracing data from Entity Inspector is possible only for “SQLServer address” Entities.
+    :::
+
 * In the output plugins section, which is `[[outputs.sumologic]]`:
     * **URL** - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
     Here’s an explanation for additional values set by this Telegraf configuration.
 
-
-If you haven’t defined a cluster in SQL Server, then enter ‘**default**’ for `db_cluster`.
+If you haven’t defined a cluster in SQL Server, then enter `default` for `db_cluster`.
 
 There are additional values set by the Telegraf configuration.  We recommend not to modify  these values as they might cause the Sumo Logic app to not function correctly.
-
 * `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
 * `component = “database”` - In the input `[[inputs.SQLserver]]` plugins section. This value is used by Sumo Logic apps to identify application components.
 * `db_system = “sqlserver”` - In the input plugins sections. This value identifies the database system.
 
-    See[ this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
+    See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
 
-After you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from this[ doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
+After you've finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from [this doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
 At this point, Telegraf should start collecting the SQL Server metrics and forward them to the Sumo Logic HTTP Source.
 
@@ -397,20 +441,16 @@ Custom filter examples:
 
 1. For alerts applicable only to a specific cluster, your custom filter would be:  ‘`db_cluster=sqlserver-prod.01`‘
 2. For alerts applicable to all clusters that start with Kafka-prod, your custom filter would be: `db_cluster=sql-prod*`
-3. **For alerts applicable to a specific cluster within a production environment, your custom filter would be: `db_cluster=sql-1 `AND `environment=prod `(This assumes you have set the optional environment tag while configuring collection)
-1. Go to Manage Data > Alerts > Monitors.
-2. Click **Add**:
-
-
-1. Click Import and then copy paste the above JSON to import monitors.
+3. For alerts applicable to a specific cluster within a production environment, your custom filter would be: `db_cluster=sql-1 `AND `environment=prod `(This assumes you have set the optional environment tag while configuring collection)
+4. Go to Manage Data > Alerts > Monitors.
+5. Click **Add**:
+6. Click Import, then copy paste the above JSON to import monitors.
 
 
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MySQL folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
 
 
 ### Method B: Using a Terraform script
-7
-
 
 **Step 1: Generate a Sumo Logic access key and ID**
 
@@ -475,7 +515,6 @@ Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The 
 
 For overriding payload for different connection types, refer to this [document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 
-
 ```sql title="Email Notifications Example"
 email_notifications = [
     {
@@ -500,8 +539,6 @@ email_notifications = [
 
 If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
-
-10
 There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
@@ -513,32 +550,14 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
+2. Select the service version you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+3. To install the app, complete the following fields:
+   * App Name. You can retain the existing name or enter the app's name of your choice. 
+   * **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4. Click **Add to Library**.
 
-
-12
-Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-
-
-
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.**
-        * Choose **Enter a Custom Data Filter**, and enter a custom SQL Server cluster filter. Examples:
-            1. For all SQL Server clusters \
-`db_cluster=*`
-            2. For a specific cluster: \
-`db_cluster=sqlserver.dev.01`
-            3. Clusters within a specific environment: \
-`db_cluster=sqlserver.dev.01 and environment=prod \
-`(This assumes you have set the optional environment tag while configuring collection)
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+Once an app is installed, it will appear in your **Personal** folder, or the folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
@@ -580,8 +599,6 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Latency.png')} alt="Microsoft_SQL_Server dashboards" />
 
 ### Latency
-22
-
 
 The **SQL Server - Latency** dashboard provides read and write latency trend by SQL Server.
 
@@ -592,8 +609,6 @@ Use this dashboard to:
 
 
 ### Operations
-24
-
 
 The **SQL Server - Operations** displays recent server configuration changes, number & type of configuration updates, error and warnings, high severity error, and warning trends.
 
@@ -605,7 +620,6 @@ Use this dashboard to:
 
 
 ### Performance Counters
-26
 
 
 The **SQL Server - Performance Counters** dashboard shows performance counters related to database activities, SQL statistics, and buffer cache.
@@ -629,7 +643,7 @@ Use this dashboard to:
 
 ### Backup Restore Mirroring
 
-The **SQL Server - Backup Restore Mirroring** provides information about :
+The **SQL Server - Backup Restore Mirroring** provides information about:
 
 * Transaction log backup events
 * Database backup events

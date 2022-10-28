@@ -12,7 +12,7 @@ If you're looking for our Root Cause Explorer observability tool, [click here](/
 
 ## Limitations
 
-* Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, and Host domains are supported.
+* Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, Application Components, and Host domains are supported.
 * A few Panel types don't support the features documented on this page. You will not have the option to click on a data point to view the Summary and Entities tabs on the following Panel types:
 
     * [Single Value Panel](/docs/dashboards-new/panels#single-value-panel)
@@ -62,9 +62,7 @@ A metrics data Summary tab includes links to any [Linked Dashboards](/docs/das
 
 ### Entities tab
 
-The **Entities** tab provides troubleshooting links for related Entities and Environments, as well as any [Monitors](/docs/alerts/monitors) with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
-
-Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, and Host domains are supported.
+The **Entities** tab provides troubleshooting links for related Entities and Environments, as well as any [Monitors](/docs/alerts/monitors) with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity. The entities are grouped by their domain and by entity type (if there are more than one entity of a given type).
 
 The **Infrastructure** tab was renamed to **Entities**.
 
