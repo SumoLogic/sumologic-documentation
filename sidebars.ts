@@ -179,7 +179,6 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cylance-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
@@ -2247,8 +2246,6 @@ module.exports = {
       link: {type: 'doc', id: 'beta/index'},
       items: [
         'manage/manage-subscription/beta-opt-in',
-        'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cylance-source',
-        'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes',
         'manage/partitions-data-tiers/infrequent-tier-search',
         'manage/security/audit-index-access',
         'api/beta',
