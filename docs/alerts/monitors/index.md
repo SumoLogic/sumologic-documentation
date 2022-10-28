@@ -33,7 +33,7 @@ Learn how [Monitors differ from Scheduled Searches](/docs/alerts/difference-from
 
 ## Notifications
 
-Notifications are optional and available as an **alert** and **recovery** for each trigger condition you specify, **Critical**, **Warning**, and **Missing**.
+Notifications are optional and available as an **alert** and **recovery** for each trigger condition you specify, **Critical**, **Warning**, and **Missing Data**.
 
 ## Limitations
 
@@ -53,8 +53,8 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 
 ### Alerts
 
-* Monitor evaluation for each trigger type (Critical, Warning or Missing data) happens independently. Each trigger type's lifecycle is managed separately and doesn't have any impact on other trigger types. So it is possible for a monitor to be in Critical and Warning state at the same time. Monitor goes back to normal when it is not in either of Critical, Warning and Missing data states.
-* When both Critical and Warning conditions are met, two separate notifications are generated, one for the Critical condition and one for the Warning condition. Auto resolution, if set up, will work according to the resolution condition for each case. 
+* Monitor evaluation for each trigger type (Critical, Warning or Missing Data) happens independently. Each trigger type's lifecycle is managed separately and doesn't have any impact on other trigger types. So it is possible for a monitor to be in Critical and Warning state at the same time. Monitor goes back to normal when it is not in either of Critical, Warning and Missing Data states.
+* When both Critical and Warning conditions are met, two separate alerts and notifications are generated - one for the Critical condition and one for the Warning condition. Auto resolution, if set up, will work according to the resolution condition for each case. 
 * Metric Monitors have the option to group notifications. When configured, the Monitor will not trigger new notifications until the first one is resolved. The Monitor will only update if the notification type supports Auto Resolution. Grouped notifications will resolve when all the time series return to normal.
 * Log Monitors always group notifications.
 
