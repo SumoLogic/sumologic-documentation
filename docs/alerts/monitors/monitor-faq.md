@@ -1,15 +1,14 @@
 ---
 id: monitor-faq
-title: Monitor FAQ
-sidebar_label: Monitor FAQ
-description: We've listed the frequently asked questions and answers of Monitors.
+title: Monitors FAQ
+description: Frequently asked questions about Sumo Logic Monitors.
 ---
 
 ## Can I convert my existing Scheduled Search to a Monitor?
 
-Yes, however, it's a manual process. You have to create a new Monitor with the appropriate query and alerting condition based on your existing Scheduled Search. See the [differences between Monitors and Scheduled Searches](difference-scheduled-searches.md) before you consider converting.
+Yes, however, it's a manual process. You have to create a new Monitor with the appropriate query and alerting condition based on your existing Scheduled Search. See the [differences between Monitors and Scheduled Searches](/docs/alerts/difference-from-scheduled-searches) before you consider converting.
 
-## I am getting an error message about cardinality when creating metrics monitor, what does it mean?
+## I am getting an error message about cardinality when creating metrics monitor; what does it mean?
 
 Metrics monitors can evaluate up to 15K time series. If your Monitor query returns more than 15K time-series you'll get this error. If you are facing this, we recommend breaking up the monitor into several smaller ones with more restrictive queries. See [OpenTSDB documentation](http://opentsdb.net/docs/build/html/user_guide/definitions.html) for details on cardinality
 
@@ -60,31 +59,22 @@ Yes, you can use [Alert Variables](../alert-variables.md) to reference various m
 Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
 
 :::note
-The [**Test Connection** feature for webhooks](docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md)does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
+The [Test Connection feature for webhooks](docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md) does not use the same static IP addresses that send notifications. It uses different temporary IP addresses.
 :::
 
 ## One of our monitors suddenly stopped sending notifications, even though I see it on the Monitors page?
 
-One of the reasons could be that the user who created the monitor was deleted. You can check the **Created By** value on the Monitors page. If it has \<User Unknown\> you will need to re-create the monitor.  
+One of the reasons could be that the user who created the monitor was deleted. You can check the **Created By** value on the Monitors page. If it has `<User Unknown>`, you will need to re-create the monitor.  <br/>![user unknown monitors.png](/img/monitors/user-unknown-monitors.png)
 
-![user unknown monitors.png](/img/monitors/user-unknown-monitors.png)
+You can quickly **Duplicate** the monitor by hovering over it on the Monitors page and clicking the three-dot icon,  <br/>![more actions menu for monitors.png](/img/monitors/more-actions-menu-for-monitors.png)  
 
-You can quickly **Duplicate** the monitor by hovering over it on the Monitors page and clicking the three-dot icon,  
-
-![more actions menu for monitors.png](/img/monitors/more-actions-menu-for-monitors.png)  
-
-then selecting **Duplicate**. If your monitor still doesn't work then it might be a different problem and we recommend that you contact [customer support](https://support.sumologic.com/). 
+then selecting **Duplicate**. If your monitor still doesn't work, then it might be a different problem and we recommend that you contact [customer support](https://support.sumologic.com/). 
 
 ## Can I disable a Monitor during scheduled maintenance or upgrade window?
 
 The Monitors page allows you to disable a Monitor so you're not alerted during specific times like scheduled maintenance or upgrade windows. Follow the below steps to disable a monitor. 
 
-1. Find and select the Monitor in the Monitors table. A three-dot icon appears on the right of the row.
-
-    ![menu-option.png](/img/monitors/menu-option.png)
-
+1. Find and select the Monitor in the Monitors table. A three-dot icon appears on the right of the row.<br/> ![menu-option.png](/img/monitors/menu-option.png)
 1. Click the three-dot icon to view the menu options. You can select to Enable or Disable the monitor.
 
 Currently, you can only manually disable or enable a Monitor. You can't disable and enable based on a schedule.
-
- 
