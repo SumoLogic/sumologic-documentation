@@ -64,7 +64,7 @@ How you can search and use your ingested data varies by the Data Tier it resides
 | Live Tail | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
 | Dashboards | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![x](/img/reuse/x.png) |
 | Monitors | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![x](/img/reuse/x.png) |
-| Scheduled Searches | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) | [Beta](/docs/manage/partitions-data-tiers/infrequent-tier-search) |
+| Scheduled Searches | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |[x](/img/reuse/x.png) |
 | Scheduled Views | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![check](/img/reuse/x.png) |
 | API Queries |  ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png)
 
