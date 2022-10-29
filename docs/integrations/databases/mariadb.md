@@ -41,6 +41,9 @@ If you're using MariaDB in a Kubernetes environment, create the fields:
 * `pod_labels_environment`
 * `pod_labels_db_system`
 * `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
+
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -50,7 +53,8 @@ If you're using MariaDB in a non-Kubernetes environment, create the fields:
 * `environment`
 * `db_system`
 * `db_cluster`
-* `pod`
+* `db_cluster_address`
+* `db_cluster_port`
 
 </TabItem>
 </Tabs>
