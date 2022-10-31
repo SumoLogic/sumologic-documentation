@@ -131,16 +131,13 @@ Namespace for **Amazon SQS** Service is **AWS/SQS**
 Login to Sumo Logic,  go to Manage Data > Logs > Fields. Search for the “queuename” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
 
 ## Field Extraction Rule(s)
-
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
 
-**Rule Name**: AwsObservabilitySQSCloudTrailLogsFER
+* **Rule Name**: AwsObservabilitySQSCloudTrailLogsFER
+* **Applied at**: Ingest Time
+* **Scope (Specific Data)**: account=* eventname eventsource "sqs.amazonaws.com"
 
-**Applied at**: Ingest Time
-
-**Scope (Specific Data)**: account=* eventname eventsource "sqs.amazonaws.com"
-
-```Parse Expression
+```sql title="Parse Expression"
 json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountId", "requestParameters", "responseElements", "sourceIPAddress" as userIdentity, event_source, event_name, region, recipient_account_id, requestParameters, responseElements, src_ip  nodrop
 | json field=userIdentity "accountId", "type", "arn", "userName" as accountid, type, arn, username nodrop
 | json field=requestParameters "queueUrl" as queueUrlReq nodrop
@@ -155,16 +152,12 @@ json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountI
 ```
 
 ## Centralized AWS CloudTrail Log Collection
-
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following **Field Extraction Rule** to map a proper AWS account(s) friendly name/alias. Create it if not already present/update it as required.
+* **Rule Name**: AWS Accounts
+* **Applied at**: Ingest Time
+* **Scope (Specific Data)**: _sourceCategory=aws/observability/cloudtrail/logs
 
-**Rule Name**: AWS Accounts
-
-**Applied at**: Ingest Time
-
-**Scope (Specific Data)**: _sourceCategory=aws/observability/cloudtrail/logs
-
-```Parse Expressions
+```sql title="Parse Expression"
 Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
 
 | json "recipientAccountId"
