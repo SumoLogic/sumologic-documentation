@@ -35,12 +35,12 @@ To add a panel with a table chart:
 
     **Metrics query:**
 
-    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts](/docs/metrics/metric-queries-alerts) to ensure successful results. By default, the query builder is set
+    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries](/docs/metrics/metrics-queries) to ensure successful results. By default, the query builder is set
     to **Logs**.
 
     ![Metrics selection for query builder.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
-    To create a metrics query utilize the [Metrics Query Builder](/docs/metrics/metric-queries-alerts).
+    To create a metrics query utilize the [Metrics Query Builder](/docs/metrics/metrics-queries).
 
 1. Once the query runs you will need to flip the chart type to **Table**.
 

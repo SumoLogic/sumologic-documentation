@@ -1,9 +1,11 @@
 ---
 id: edit-settings
-title: Edit Monitor Actions and Settings
+title: Edit Monitor Settings and More Actions
+sidebar_label: Edit Monitor Settings
 description: Monitors continuously query your logs or metrics and send notifications when specific events occur, such as critical, warning, and missing data.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Monitors page (**Manage Data** > **Monitoring** > **Monitors**) allows you to view, create, manage, and organize your Monitors. <br/>![monitors page](/img/monitors/monitors-page.png)
 
@@ -19,8 +21,8 @@ The page displays the following information:
 To quickly open the [Alert List](alert-response.md) to view all of the triggered alerts from a Monitor, hover your cursor over its Status and click the icon.<br/> ![monitor shortcut.png](/img/monitors/monitors-shortcut.png)
 
 At the top of the page, you can:
-* **Search Monitors**. Use the search field to filter Monitors by name and status. For example, you can view all Monitors that are currently triggered in the system by clicking the **Status: All Triggered**. <br/>![search monitors input.png](/img/monitors/search-monitors-input.png)
-* Click **Add** to: <br/>![Add monitors page.png](/img/monitors/Add-monitors-page.png)
+* **Search Monitors**. Use the search field to filter Monitors by name and status. For example, you can view all Monitors that are currently triggered in the system by clicking the **Status: All Triggered**. <br/><img src={useBaseUrl('img/monitors/search-monitors-input.png')} alt="search monitors input" width="175"/>
+* Click **Add** to: <br/><img src={useBaseUrl('img/monitors/Add-monitors-page.png')} alt="Add monitors page" width="115"/>
   * create folders for organizing your Monitors.
   * create a [new Monitor](#add-a-monitor).
   * import Monitors from the exported JSON you copied from the **More Actions** menu in the [Details pane](#details-pane) of the original monitor.
@@ -31,17 +33,13 @@ The Import function is provided for you to transfer data immediately. The Sumo L
 
 ## Quick menu
 
-The quick menu allows you to make changes to the Monitor without opening the Details pane. Find and hover your mouse over a Monitor in the Monitors table. A three-dot icon appears on the right of the row. Click the three-dot icon to view a menu with all of the options available in the [Details pane](#details-pane).
-
-![quick menu](/img/monitors/quick-menu-monitors.png)
+The quick menu allows you to make changes to the Monitor without opening the Details pane. Find and hover your mouse over a Monitor in the Monitors table. A three-dot icon appears on the right of the row. Click the three-dot icon to view a menu with all of the options available in the [Details pane](#details-pane).<br/>![quick menu](/img/monitors/quick-menu-monitors.png)
 
 ## Details pane
 
-The details pane provides additional information about a selected Monitor, like its query, trigger conditions, and notification preferences. For the monitors listed, select a row to view its details. A details pane appears to the right of the table.
+The details pane provides additional information about a selected Monitor, like its query, trigger conditions, and notification preferences. For the monitors listed, select a row to view its details. A details pane appears to the right of the table.<br/><img src={useBaseUrl('img/monitors/monitor-details.png')} alt="monitor-details.png" width="300"/>
 
-![monitor details](/img/monitors/monitor-details.png)
-
-In the details pane you can see the following details for a Monitor:
+In the details pane, you can see the following details for a Monitor:
 
 * **Name** of the Monitor.
 * The **status** of the Monitor, either Normal, Critical, Warning, or Missing Data. A Monitor can be in multiple states at the same time.
@@ -55,20 +53,22 @@ In the details pane you can see the following details for a Monitor:
 
 ## Edit, Disable, More Actions
 
-* **Edit** button. Use this to make changes to the selected Monitor.
-* **Disable** button. Puts the Monitor in a disabled state so it will not fire any notifications.
-* Under the **More Actions** menu, you can:
+* **Edit** button: Use this to make changes to the selected Monitor.
+* **Disable** button: Puts the Monitor in a disabled state so it will not fire any notifications.
+* **More Actions** menu:
   * **Disable** and **Enable**. A Monitor that is in a disabled state will not fire any notifications.
   * **Copy Path**. Copy the path of the Monitor to your computer clipboard.
   * **Duplicate**. Make another Monitor based on the same settings.
   * **Move**. Move the Monitor to a different path.
   * **Export**. Provides JSON of the Monitor, allowing you to transfer content within Sumo Logic by copying this JSON, then pasting it into the import dialog in the [Library](/docs/get-started/library) location you choose. This JSON format may change without notice. 
-  * **Delete**.<br/>![monitor more actions](/img/monitors/monitor-actions.png)
+  * **Edit Permissions**.
+  * **Delete**.
+  * **Copy Link**.<br/><img src={useBaseUrl('img/monitors/monitor-actions.png')} alt="monitor more actions" width="400"/>
 
+## Monitors History
 
-## Monitor History
+The history of alerts is available in the Monitor History tab of the details pane. This allows you to quickly see the history of all triggered alerts of the selected Monitor.<br/><img src={useBaseUrl('img/monitors/monitor-history.png')} alt="monitor-history.png" width="300"/>
 
-The history of alerts is available in the Monitor History tab of the details pane. This allows you to quickly see the history of all triggered alerts of the selected Monitor.<br/>![monitor-history.png](/img/monitors/monitor-history.png)
 
 ## Monitors folder permissions
 
