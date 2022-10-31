@@ -109,7 +109,7 @@ For more information, see [Metric Operators](/docs/metrics/metrics-operators).
 
 ## Creating a query
 
-For instructions on how to create a metric query, see [Metrics Explorer](../metric-queries-alerts/metrics-explorer.md). 
+For instructions on how to create a metric query, see [Metrics Explorer](../metrics-queries/metrics-explorer.md). 
 
 ### Metric monitors
 

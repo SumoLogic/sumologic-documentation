@@ -15,6 +15,10 @@ This section provides instructions for configuring log and metric collection for
 
 Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
 
+:::note
+This step is not needed if you are using the application components solution terraform script.
+:::
+
 <Tabs
   groupId="k8s-nonk8s"
   defaultValue="k8s"
@@ -31,17 +35,22 @@ If you're using Oracle in a Kubernetes environment, create the fields:
 * `pod_labels_environment`
 * `pod_labels_db_system`
 * `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
+  
 
 </TabItem>
 <TabItem value="non-k8s">
 
-If you're using Oracle in a  non-Kubernetes environment, create the fields:
+If you're using Oracle in a non-Kubernetes environment, create the fields:
 
 * `component`
 * `environment`
 * `db_system`
 * `db_cluster`
-* `pod`
+* `db_cluster_address`
+* `db_cluster_port`
+`
 
 </TabItem>
 </Tabs>
@@ -51,7 +60,7 @@ If you're using Oracle in a  non-Kubernetes environment, create the fields:
 
 Sumo Logic supports the collection of logs and metrics data from Oracle in both Kubernetes and non-Kubernetes environments.
 
-Please click on the appropriate links below based on the environment where your Oracle clusters are hosted.
+Click on the appropriate links based on the environment where your Oracle clusters are hosted.
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -133,33 +142,44 @@ annotations:
           timeout = "5s"
           data_format = "influx"
           [inputs.exec.tags]
-            environment="dev_TO_BE_CHANGEME"
-            component="database"
-            db_system="oracle"
-            db_cluster="oracle_on_premise_TO_BE_CHANGEME"
+          environment="dev_ENV_TO_BE_CHANGED"
+           component="database"
+           db_system="oracle"
+           db_cluster="oracle_on_premise_ENV_TO_BE_CHANGED"
+           db_cluster_address = "ENV_TO_BE_CHANGED"
+           db_cluster_port = "ENV_TO_BE_CHANGED"
 ```
 
 
-If you haven’t defined a cluster in Oracle, then enter ‘**default**’ for `db_cluster`.
+If you haven’t defined a cluster in Oracle, then enter `default` for `db_cluster`.
 
-Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
+Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` in the snippet above):
 
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf exec Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Oracle input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section i.e. :
-        * **commands **- The [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) plugin executes all the commands in parallel on every interval and parses metrics from their output in any one of the accepted [Input Data Formats](https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md).
-    * In the tags section   [inputs.exec.tags]
+        * **commands** - The [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) plugin executes all the commands in parallel on every interval and parses metrics from their output in any one of the accepted [Input Data Formats](https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md).
+    * In the tags section `[inputs.exec.tags]`:
         * `environment` - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `db_cluster` - Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards.  
+        * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+        * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+        :::note
+        `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
-    Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
+        For example if your application uses `“oracle-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=oracle-prod.sumologic.com db_cluster_port=3306`
 
+        If your application connects directly to a given oracle node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=oracle-prod.sumologic.com`
+
+        Pivoting to Tracing data from Entity Inspector is possible only for “Oracle address” Entities.
+        :::
+    **Do not modify the following values** as they will cause the Sumo Logic apps to not function correctly.
 * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
 * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
 * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
 * `telegraf.influxdata.com/inputs`
     * In the tags section   [inputs.exec.tags]
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
-        * **db_system**: “oracle” - This value identifies the database system.
+        * `db_system: “oracle”` - This value identifies the database system.
 
     For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
@@ -177,47 +197,60 @@ This section explains the steps to collect Oracle logs from a Kubernetes environ
 
 1. Apply following labels to the Oracle pod       
 ```bash
-environment: "prod_CHANGEME"
-component: "database"
-db_system: "oracle"
-db_cluster "Cluster_CHANGEME"
+labels:
+    environment: "prod_ENV_TO_BE_CHANGED"
+    component: "database"
+    db_system: "oracle"
+    db_cluster "Cluster_ENV_TO_BE_CHANGED"
+    db_cluster_address = "ENV_TO_BE_CHANGED"
+    db_cluster_port = "ENV_TO_BE_CHANGED"
 ```
 
-
-Enter in values for the following parameters (marked in **bold and CHANGE_ME** above):
+Enter in values for the following parameters (marked in **ENV_TO_BE_CHANGED** above):
 
 * `environment` - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
 * `db_cluster` - Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Oracle, then enter ‘**default**’ for `db_cluster`.
+* `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+* `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
-    Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
+For example, if your application uses `“oracle-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=oracle-prod.sumologic.com db_cluster_port=3306`
 
+If your application connects directly to a given oracle node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=oracle-prod.sumologic.com`
+
+Pivoting to Tracing data from Entity Inspector is possible only for “Oracle address” Entities.
+:::
+    **Do not modify** the following values as they will cause the Sumo Logic apps to not function correctly.
 * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
-* **db_system**: “oracle” - This value identifies the database system.
+* `db_system: “oracle”` - This value identifies the database system.
 
     For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
 2. Verify logs in Sumo Logic.
-1. **(Optional) Collecting Oracle Logs from a Log File \
-**Follow the steps below to capture Oracle logs from a log file on Kubernetes.
+1. **(Optional) Collecting Oracle Logs from a Log File** Follow the steps below to capture Oracle logs from a log file on Kubernetes.
 1. Determine the location of the Oracle log file on Kubernetes. This can be determined from the Oracle.conf for your Oracle cluster along with the mounts on the Oracle pods.
 2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
 3. Add the following annotation in addition to the existing annotations.
-```
+```sql
 annotations:
   tailing-sidecar: sidecarconfig;<mount>:<path_of_Oracle_log_file>/<SQLserver_log_file_name>
 ```
 
 Example:
-```
+```sql
 annotations:
   tailing-sidecar: sidecarconfig;data:/var/opt/oracle/errorlog
 ```
 
-1. Make sure that the Oracle pods are running and annotations are applied by using the command: `kubectl describe pod <Oracle_pod_name>`
+1. Make sure that the Oracle pods are running and annotations are applied by using the command:
+```bash
+kubectl describe pod <Oracle_pod_name>
+```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. Verify logs in Sumo Logic.
-1. **Add an FER to normalize the fields in Kubernetes environments** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
+1. **Add an FER to normalize the fields in Kubernetes environments**. This step is not needed if one is using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
 1. Go to **Manage Data > Logs > Field Extraction Rules.**
 2. Click the** + **Add button on the top right of the table**.
 The **Add Field Extraction Rule** form will appear.
@@ -229,17 +262,17 @@ The **Add Field Extraction Rule** form will appear.
 3. **Scope**. Select **Specific Data.**
 4. **Scope**: Enter the following keyword search expression.
 
-        ```
+        ```sql
         pod_labels_environment=* pod_labels_component=database pod_labels_db_cluster=* pod_labels_db_system=*
         ```
 
 * **Parse Expression**. Enter the following parse expression.
 
-            ```
+            ```sql
             if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
             | pod_labels_component as component
             | pod_labels_db_system as db_system
-            | pod_labels_db_cluster as db_cluster
+            | if(!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
             ```
 
 1. Click **Save** to create the rule.
@@ -278,7 +311,7 @@ Preview steps for Oracle log collection:
 
 **Step 1. Enable Oracle Logging**                                                                 
 
-If logging is not currently enabled for the following logs, enable it
+If logging is not currently enabled for the following logs, enable it.
 
 * **Alert log**
 * **Listener log**
@@ -339,8 +372,7 @@ In this step, you will configure three Local File sources on an installed collec
 
   Follow the instructions in [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
-  When you configure the sources, plan your source categories to ease the querying process.  A hierarchical approach allows you to make use of wildcards. For example:
-
+  When you configure the sources, plan your source categories to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example:
 
 <table>
   <tr>
@@ -371,11 +403,22 @@ In this step, you will configure three Local File sources on an installed collec
 
 Add Following **Fields** on each Local File Source:
 
-* **Fields. **Set the following fields**:**
+* **Fields.** Set the following fields:
     * `component = database`.
     * `db_system = oracle`.
     * `db_cluster = <Your_Oracle_Cluster_Name>`. Enter **Default** if you do not have one.
     * `environment = <Your_Environment_Name> `(for example, Dev, QA, or Prod).
+    * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+    * `db_cluster_port` - Enter the database port. If not provided, a default port will be used
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example, if your application uses `“oracle-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=oracle-prod.sumologic.com db_cluster_port=3306`
+
+If your application connects directly to a given oracle node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=oracle-prod.sumologic.com`.
+
+Pivoting to Tracing data from Entity Inspector is possible only for “Oracle address” Entities.
+:::
 
 **Step 4. Set Up Oracle Performance Metrics Script.**
 
@@ -387,21 +430,19 @@ The instructions for setting up the Oracle performance metrics script vary by op
 
 #### Configure Metrics Collection
 
-
 #### Set up a Sumo Logic HTTP Source
 
 **Step 1. Configure a Hosted Collector for Metrics.**
-
 
     To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) documentation.
 
 **Step 2. Configure an HTTP Logs & Metrics source:**
 
 1. On the created Hosted Collector on the Collection Management screen, select Add Source.
-2. Select** HTTP Logs & Metrics_._**
-    1. **Name **(Required). Enter a name for the source**.**
-    2. **Description **(Optional).
-    3. **Source Category (**Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/best-practices). A recommended Source Category may be Prod/DB/Oracle/Metrics.
+2. Select **HTTP Logs & Metrics.**
+    1. **Name** (Required). Enter a name for the source.
+    2. **Description**(Optional).
+    3. **Source Category** (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/best-practices). A recommended Source Category may be Prod/DB/Oracle/Metrics.
 3. Select** Save.**
 4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL **next to the source on the Collection Management screen.
 
@@ -433,24 +474,36 @@ As part of collecting metrics data from Telegraf, we will use the [exec input pl
   timeout = "5s"
   data_format = "influx"
   [inputs.exec.tags]
-    environment="DEV_TO_BE_CHANGEME"
-    component="database"
-    db_system="oracle"
-    db_cluster="PROD_TO_BE_CHANGEME"
+  environment="DEV_ENV_TO_BE_CHANGED"
+  component="database"
+  db_system="oracle"
+  db_cluster="PROD_ENV_TO_BE_CHANGED"
+  db_cluster_address = "ENV_TO_BE_CHANGED"
+  db_cluster_port = "ENV_TO_BE_CHANGED"
 
 [[outputs.sumologic]]
   url = "<URL_from_HTTP_Logs_and_Metrics_Source>"
   data_format = "prometheus"
 ```
 
-
-Enter values for fields annotated with `<VALUE_TO_BE_CHANGED>` to the appropriate values. Do not include the brackets (`<>`) in your final configuration
+Enter values for fields annotated with `<ENV_TO_BE_CHANGED>` to the appropriate values. Do not include the brackets (`< >`) in your final configuration
 
 * Input plugins section, which is `[[inputs.exec]]`:
     * **commands**- The [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) plugin executes all the commands in parallel on every interval and parses metrics from their output in any one of the accepted [Input Data Formats](https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md).
 * In the tags section, which is `[inputs.exec.tags]`:
     * `environment` - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
     * `db_cluster` - Enter a name to identify this Oracle cluster. This cluster name will be shown in our dashboards.
+    * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+    * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+    :::note
+    `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+    For example, if your application uses `“oracle-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=oracle-prod.sumologic.com db_cluster_port=3306`
+
+    If your application connects directly to a given oracle node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=oracle-prod.sumologic.com`
+
+    Pivoting to Tracing data from Entity Inspector is possible only for “Oracle address” Entities.
+    :::
 * In the output plugins section, which is `[[outputs.sumologic]]`:
     * **URL** - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
