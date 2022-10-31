@@ -689,9 +689,9 @@ For beta docs,
 1. Underneath the frontmatter, add the [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) (to prevent search crawlers from picking it up) and the Sumo Beta badge.
   ```
   ---
-  id: cylance-source
-  title: Cylance Source (Beta)
-  description: The Cylance Source provides a secure endpoint to receive event data from the Cylance Threat API.
+  id: xyz-source
+  title: XYZ Source (Beta)
+  description: The XYZ Source provides a secure endpoint to receive event data.
   ---
 
   <head>
