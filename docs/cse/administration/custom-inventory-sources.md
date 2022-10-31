@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic explains how you can extract inventory data from logs in Sumo Logic and send it to CSE. If you want to leverage inventory data from a system or service that isn’t supported by a Sumo Logic Source inventory source, you can follow the instructions in this topic. This procedure assumes that you already ingest log data that contains inventory data.
 
-CSE uses _inventory data_—information about hosts and users in your environment—to provide context to Signals. Inventory data can also be used in Entity Groups to set attributes on Entities (users, hosts, and so on); those attributes can be later used in detection rule definitions, to adjust the severity of Signals (using criticality), and for further context in Signals.
+CSE uses _inventory data_ - information about hosts and users in your environment—to provide context to Signals. Inventory data can also be used in Entity Groups to set attributes on Entities (users, hosts, and so on); those attributes can be later used in detection rule definitions, to adjust the severity of Signals (using criticality), and for further context in Signals.
 
 Sumo Logic provides a number of Sources you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. For more information, see [Inventory Sources and Data](docs/cse/administration/inventory-sources-and-data.md).
 
@@ -22,6 +22,11 @@ In the steps below, you’ll configure a Sumo Logic [scheduled search](docs/aler
 ## Before you start
 
 Identify your source of inventory data and review the [CSE inventory schema](#cse-inventory-schema) below. The schema identifies the attributes supported for the two different CSE inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#step-2-create-a-webhook-connection) below.
+
+
+## Limitations
+
+This approach uses Scheduled Searches, which are limited to 100 unique rows of data each time they trigger. This means that if you have more than 100 inventory items, only the first 100 will be sent using this method.
 
 
 ## Step 1: Set up an HTTP Source
