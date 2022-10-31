@@ -431,12 +431,12 @@ module.exports = {
             type: 'dropdown',
             items:[
               {
-                label: 'Support',
-                href: 'https://support.sumologic.com/hc/en-us',
-              },
-              {
                 label: 'Training',
                 href: 'https://www.sumologic.com/learn/training',
+              },
+              {
+                label: 'Support',
+                href: 'https://support.sumologic.com/hc/en-us',
               },
               {
                 label: 'Community',
@@ -445,6 +445,10 @@ module.exports = {
               {
                 label: 'Service Status',
                 href: 'https://status.sumologic.com',
+              },
+              {
+                label: 'Feature Requests',
+                href: 'http://ideas.sumologic.com',
               },
             ]
           },
@@ -464,21 +468,21 @@ module.exports = {
       footer: {
         style: 'dark',
         links: [
-          {
+                    {
             title: 'LEARN',
             items: [
               {
-                label: 'Training & Certifications',
-                to: 'https://www.sumologic.com/learn/training/',
+                label: 'Get Certified for Free',
+                href: 'https://www.sumologic.com/learn/training/',
               },
               {
-                label: 'DevOps Glossary',
-                to: 'https://www.sumologic.com/glossary/',
+                label: 'Events & Webinars',
+                href: 'https://www.sumologic.com/events/',
               },
               {
                 label: 'Request Demo',
-                to: 'https://www.sumologic.com/request-demo/',
-              }
+                href: 'https://www.sumologic.com/request-demo/',
+              },
             ],
           },
           {
@@ -493,29 +497,17 @@ module.exports = {
                 href: 'https://support.sumologic.com/hc/en-us/community/topics',
               },
               {
-                label: 'Events & Webinars',
-                href: 'https://www.sumologic.com/events/',
+                label: 'Sumo Dojo Slack',
+                href: 'https://sumodojo.slack.com/',
               },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/SumoLogic',
-              },
-              {
-                label: 'YouTube',
-                href: 'https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw',
-              }
             ],
           },
           {
             title: 'Open Source',
             items: [
               {
-                label: 'Sumo Docs GitHub',
+                label: 'Docs GitHub',
                 href: 'https://github.com/SumoLogic/sumologic-documentation',
-              },
-              {
-                label: 'How to Contribute',
-                to: '/docs/contributing',
               },
               {
                 label: 'Sumo Logic GitHub',
@@ -524,31 +516,6 @@ module.exports = {
               {
                 label: 'Sumo Labs Projects',
                 href: 'https://github.com/SumoLogic-Labs',
-              },
-              {
-                label: 'Sumo Dojo Slack',
-                href: 'https://sumodojo.slack.com/',
-              },
-            ],
-          },
-          {
-            title: 'Legal',
-            items: [
-              {
-                label: 'Privacy Statement',
-                href: 'https://www.sumologic.com/privacy-statement/',
-              },
-              {
-                label: 'Terms of Use',
-                to: 'https://www.sumologic.com/terms-conditions/',
-              },
-              {
-                label: 'Contact Us',
-                href: 'https://www.sumologic.com/contact-us/',
-              },
-              {
-                label: 'Legal',
-                href: 'https://www.sumologic.com/legal/',
               },
             ],
           },

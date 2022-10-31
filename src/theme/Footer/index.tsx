@@ -151,11 +151,12 @@ function Footer(): JSX.Element | null {
             ))}
           </div>
         )}
-
         </div>
+        <p align="center"><img class="svg" src="/img/sumo-logo.svg" alt="Sumo Logic logo" width="250"></img></p>
+        <p align="center"><a href="https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw"><img class="png" src="/img/youtube.png" alt="Sumo Logic YouTube" width="28"></img></a>&nbsp;&nbsp;<a href="https://twitter.com/SumoLogic"><img class="png" src="/img/twitter.png" alt="Sumo Logic Twitter" width="25"></img></a></p>
+        <p align="center"><a href="https://www.sumologic.com/privacy-statement"><small>Privacy Statement</small></a> | <a href="https://www.sumologic.com/legal"><small>Legal</small></a> | <a href="https://www.sumologic.com/terms-conditions"><small>Terms of Use</small></a></p>
         {(copyright) && (
           <div className='footer__bottom'>
-
             {copyright ? (
               <div
                 className='footer__copyright' // Developer provided the HTML, so assume it is safe.
