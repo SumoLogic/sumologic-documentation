@@ -30,7 +30,7 @@ This section provides instructions for configuring log collection for Google Wor
 
 ### About Source Configuration  
 
-Configure one [Google Workspace Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source.md) for each Google App from which you want to collect events:
+Configure one [Google Workspace Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source) for each Google App from which you want to collect events:
 
 * Google Admin
 * Google Calendar
