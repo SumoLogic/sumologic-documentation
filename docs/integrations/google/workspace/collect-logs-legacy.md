@@ -24,7 +24,7 @@ All the alerts are in JSON format. Most of the alerts have few common fields lik
 
 ### Collection overview
 
-Sumo Logic provides a serverless solution which pulls logs from Google Workspace with API calls. You can configure the list alerts to be collected, but by default all alerts are collected. The alerts  are then forwarded to Sumo Logic’s HTTP endpoint in JSON format. By default the collection starts from the current date and time, but this setting is also configurable as detailed in the [Advanced configuration](#Configure_Collection_for_Google_Workspace_Alert_Center#Advanced_configuration) section.
+Sumo Logic provides a serverless solution which pulls logs from Google Workspace with API calls. You can configure the list alerts to be collected, but by default all alerts are collected. The alerts  are then forwarded to Sumo Logic’s HTTP endpoint in JSON format. By default the collection starts from the current date and time, but this setting is also configurable as detailed in the [Advanced configuration](#Advanced-configuration) section.
 
 <img src={useBaseUrl('img/integrations/google/GSuite_AlertCenter_Collection_Overview3.png')} alt="GSuite_AlertCenter_Collection_Overview3" />
 
