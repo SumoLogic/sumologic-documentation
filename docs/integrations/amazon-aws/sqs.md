@@ -140,7 +140,9 @@ Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field 
 
 **Scope (Specific Data)**: account=* eventname eventsource "sqs.amazonaws.com"
 
-```Parse Expression
+**Parse Expression**:
+
+```
 json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountId", "requestParameters", "responseElements", "sourceIPAddress" as userIdentity, event_source, event_name, region, recipient_account_id, requestParameters, responseElements, src_ip  nodrop
 | json field=userIdentity "accountId", "type", "arn", "userName" as accountid, type, arn, username nodrop
 | json field=requestParameters "queueUrl" as queueUrlReq nodrop
@@ -164,9 +166,11 @@ In case you have a centralized collection of CloudTrail logs and are ingesting t
 
 **Scope (Specific Data)**: _sourceCategory=aws/observability/cloudtrail/logs
 
-```Parse Expressions
+**Parse Expression**:
+
 Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
 
+```
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
 | "" as account
