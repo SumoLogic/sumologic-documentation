@@ -48,7 +48,7 @@ The App uses SQS logs and metrics for:
          "userAgent":"AWS Internal",
          "requestParameters":{
            "attributes":{
-        "Policy":"{\"Version\":\"2008-10-17\",\"Id\":\"__default_policy_ID\",\"Statement\":[{\"Sid\":\"__owner_statement\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::956882708938:root\"},\"Action\":\"SQS:*\",\"Resource\":\"arn:aws:sqs:us-east-1:956882708938:JayanatTest4\"},{\"Sid\":\"topic-subscription-arn:aws:sns:us-east-1:956882708938:SNSAppSomya01\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"SQS:SendMessage\",\"Resource\":\"arn:aws:sqs:us-east-1:956882708938:JayanatTest4\",\"Condition\":{\"ArnLike\":{\"aws:SourceArn\":\"arn:aws:sns:us-east-1:956882708938:SNSAppSomya01\"}}}]}"
+        "Policy":"{\"Version\":\"2008-10-17\",\"Id\":\"__default_policy_ID\",\"Statement\":  [{\"Sid\":\"__owner_statement\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::956882708938:root\"},\"Action\":\"SQS:*\",\"Resource\":\"arn:aws:sqs:us-east-1:956882708938:JayanatTest4\"},{\"Sid\":\"topic-subscription-arn:aws:sns:us-east-1:956882708938:SNSAppSomya01\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"SQS:SendMessage\",\"Resource\":\"arn:aws:sqs:us-east-1:956882708938:JayanatTest4\",\"Condition\":{\"ArnLike\":{\"aws:SourceArn\":\"arn:aws:sns:us-east-1:956882708938:SNSAppSomya01\"}}}]}"
       },
       "queueUrl":"https://sqs.us-east-1.amazonaws.com/123456789033/pull_private_submodule_jobs.fifo"
          },
@@ -87,7 +87,7 @@ account=* region=* namespace=aws/sqs eventname eventsource "sqs.amazonaws.com"
 
 ## Collecting Logs and Metrics for the Amazon SQS App
 
-### Collect Metrics for **AmazonSQS**
+### Collect Metrics for AmazonSQS
 
 Sumo Logic supports collecting metrics using two source types:
 
@@ -95,9 +95,10 @@ Sumo Logic supports collecting metrics using two source types:
    Or
 2. Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics).
 
-Note: Namespace for **Amazon SQS** Service is **AWS/SQS**
+Note: Namespace for Amazon SQS Service is AWS/SQS
 
-**Metadata**: Add an account field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account” field.
+**Metadata**: Add an account field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the **Sumo Logic Explorer View**. Metrics can be queried via the “account” field.
+![Metadata](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/Metadata+account.png)
 
 ### Collect Amazon SQS Events using CloudTrail
 
@@ -106,9 +107,10 @@ Note: Namespace for **Amazon SQS** Service is **AWS/SQS**
     * **Description**. Enter an optional description.
     * **S3 Region**. Select the Amazon Region for your SQS S3 bucket.
     * **Bucket Name**. Enter the exact name of your SQS S3 bucket.
-    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions). The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a   leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions). The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category**. Enter aws/observability/CloudTrail/logs.
-    * **Fields**. Add an account field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
+    * **Fields**. Add an account field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the **Sumo Logic Explorer View**. Logs can be queried via the “account field”.
+    ![ Account Fields](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/Metadata+account.png)
     * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
     * **Log File Interval > Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
     * **Enable Timestamp Parsing**. Select the check box.
@@ -119,7 +121,7 @@ Note: Namespace for **Amazon SQS** Service is **AWS/SQS**
 
 ## Field in Field Schema
 
-Login to Sumo Logic,  go to Manage Data > Logs > Fields. Search for the “queuename” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “queuename” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
 
 ## Field Extraction Rule(s)
 
@@ -173,7 +175,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. To install the app, click **Add Integration** and complete the following fields.
     1. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app.
-    2. **Select Folder Location for your App**. Select the location in the library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+    2. **Select Folder Location for your App**. Select the location in the library (the default is the Personal folder in the library), or click **New   Folder** to add a new folder.
     3. Click on **Next** and then exit to exit from the app catalog or back to edit name or location.
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -185,7 +187,7 @@ Amazon Simple Queue Service (Amazon SQS) is a fully managed message queuing serv
 
 The Sumo Logic App for Amazon SQS provides operational insights into your Amazon SQS utilization. The App’s preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
 
-**Note**: We highly recommend you view these dashboards in the [Explore View](https://help.sumologic.com/Beta/AWS_Observability_Solution/07_View_AWS_Observability_Solution_Dashboards) of  the AWS Observability solution.
+**Note**: We highly recommend you view these dashboards in the [Explore View](https://help.sumologic.com/Beta/AWS_Observability_Solution/07_View_AWS_Observability_Solution_Dashboards) of the AWS Observability solution.
 
 ###Amazon SQS Overview
 
