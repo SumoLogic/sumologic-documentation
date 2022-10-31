@@ -15,6 +15,10 @@ This section provides instructions for configuring log and metric collection for
 
 Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
 
+:::note
+This step is not needed if you are using the application components solution terraform script.
+:::
+
 <Tabs
   groupId="k8s-nonk8s"
   defaultValue="k8s"
@@ -31,17 +35,22 @@ If you're using Oracle in a Kubernetes environment, create the fields:
 * `pod_labels_environment`
 * `pod_labels_db_system`
 * `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
+  
 
 </TabItem>
 <TabItem value="non-k8s">
 
-If you're using Oracle in a  non-Kubernetes environment, create the fields:
+If you're using Oracle in a non-Kubernetes environment, create the fields:
 
 * `component`
 * `environment`
 * `db_system`
 * `db_cluster`
-* `pod`
+* `db_cluster_address`
+* `db_cluster_port`
+`
 
 </TabItem>
 </Tabs>
@@ -51,7 +60,7 @@ If you're using Oracle in a  non-Kubernetes environment, create the fields:
 
 Sumo Logic supports the collection of logs and metrics data from Oracle in both Kubernetes and non-Kubernetes environments.
 
-Please click on the appropriate links below based on the environment where your Oracle clusters are hosted.
+Click on the appropriate links based on the environment where your Oracle clusters are hosted.
 
 <Tabs
   groupId="k8s-nonk8s"

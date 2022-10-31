@@ -28,7 +28,7 @@ where:
 * `drop last` causes the last time bucket to be dropped, if the end of that bucket is after the end of the query time range.
 
 :::note
-In the Metrics Explorer, you must [switch to Advanced Mode](/docs/metrics/metric-queries-alerts/metrics-explorer) to enter the `drop last` option.
+In the Metrics Explorer, you must [switch to Advanced Mode](/docs/metrics/metrics-queries/metrics-explorer) to enter the `drop last` option.
 :::
 
 ## quantize examples 

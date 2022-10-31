@@ -28,7 +28,7 @@ There are two ways to implement local configuration file management:
 When installing the Collector, specify the `syncSources` parameter. See the topics in [Installed Collectors](/docs/send-data/installed-collectors/sources) for information on specifying parameters during installation.
 
 | Parameter | Type | Description |
-|--|--|--||
+|--|--|--|
 | syncSources   | String   | Sets the JSON file describing sources to configure on registration, which will be continuously monitored and synchronized with the Collector's configuration. |
 
 For example, for command-line installation, supplying the Access ID and
