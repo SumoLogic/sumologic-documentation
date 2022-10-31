@@ -132,7 +132,7 @@ To configure Google Workspace Alert Center collection in your GCP environment, d
   sh sumo_gsuite_alerts_collector_deploy.sh
   ```
 5. In the command prompt, enter `N` for the following question: `Allow unauthenticated invocations of new function`.
-6. Copy the **Client ID** displayed at the end of the script output. You will use the Client Name field when you [configure Google Workspace Alert Center to allow client API access](#Configure_Google_Cloud_Platform_Collection_for_Google_Workspace_Alert_Center#configure-google-workspace-alert-center-to-allow-client-api-acce) in the following task.
+6. Copy the **Client ID** displayed at the end of the script output. You will use the Client Name field when you [configure Google Workspace Alert Center to allow client API access](#configure-google-workspace-alert-center-to-allow-client-api-acce) in the following task.
 7. Go to the Cloud Datastore page of the project, with the Project ID you configured in the previous steps of this procedure, and create a database instance with the **Cloud Firestore in Datastore Mode** option. For more information, refer to the [Google Cloud Datastore documentation](https://cloud.google.com/datastore/docs/quickstart).<br/><img src={useBaseUrl('img/integrations/google/GSuite_AlertCenter_DatastoreMode.png')} alt="google workspace" />
 
 :::note
