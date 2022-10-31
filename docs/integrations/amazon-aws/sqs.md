@@ -13,7 +13,7 @@ Amazon Simple Queue Service (Amazon SQS) is a fully managed message queuing serv
 
 ## Log and Metrics Types
 The App uses SQS logs and metrics for:
-* SQS CloudWatch Metrics. For details,[see here](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-monitoring-using-cloudwatch.html).
+* SQS CloudWatch Metrics. For details, [see here](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-monitoring-using-cloudwatch.html).
 * SQS operations using AWS CloudTrail. For details, [see here](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-logging-using-cloudtrail.html).
 
 
@@ -67,10 +67,13 @@ The App uses SQS logs and metrics for:
 ### Sample Query
 
 **Messages Received (Metric based)**:
+
 metric=NumberOfMessagesReceived Statistic=Sum account=* region=* namespace=* queuename=* | sum by account, region, namespace, queuename
 
-```sql title="Top 10 users (CloudTrail Log based)"
+**Top 10 users (CloudTrail Log based)**:
+
 account=* region=* namespace=aws/sqs eventname eventsource "sqs.amazonaws.com"
+```
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountId", "requestParameters", "responseElements", "sourceIPAddress","errorCode", "errorMessage" as userIdentity, event_source, event_name, region, recipient_account_id, requestParameters, responseElements, src_ip, error_code, error_message nodrop
 | json field=userIdentity "accountId", "type", "arn", "userName" as accountid, type, arn, username nodrop
 | json field=requestParameters "queueUrl" as queueUrlReq nodrop
@@ -91,11 +94,13 @@ account=* region=* namespace=aws/sqs eventname eventsource "sqs.amazonaws.com"
 
 Sumo Logic supports collecting metrics using two source types:
 
-1. Configure an [AWS Kinesis Firehose for Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Metrics_Source) Recommended)
-   Or
+1. Configure an [AWS Kinesis Firehose for Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Metrics_Source). (This is the recommended source type). Or
+
 2. Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics).
 
-Note: Namespace for **Amazon SQS** Service is **AWS/SQS**
+:::note
+Namespace for **Amazon SQS** Service is **AWS/SQS**
+:::
 
 **Metadata**: Add an account field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account” field.
 
@@ -106,7 +111,11 @@ Note: Namespace for **Amazon SQS** Service is **AWS/SQS**
     * **Description**. Enter an optional description.
     * **S3 Region**. Select the Amazon Region for your SQS S3 bucket.
     * **Bucket Name**. Enter the exact name of your SQS S3 bucket.
-    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions). The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions).
+
+    :::note
+    The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+    :::
     * **Source Category**. Enter aws/observability/CloudTrail/logs.
     * **Fields**. Add an account field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
     * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
@@ -126,7 +135,9 @@ Login to Sumo Logic,  go to Manage Data > Logs > Fields. Search for the “queue
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
 
 **Rule Name**: AwsObservabilitySQSCloudTrailLogsFER
+
 **Applied at**: Ingest Time
+
 **Scope (Specific Data)**: account=* eventname eventsource "sqs.amazonaws.com"
 
 ```Parse Expression
@@ -148,8 +159,10 @@ json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountI
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following **Field Extraction Rule** to map a proper AWS account(s) friendly name/alias. Create it if not already present/update it as required.
 
 **Rule Name**: AWS Accounts
+
 **Applied at**: Ingest Time
-**Scope (Specific Data**:_sourceCategory=aws/observability/cloudtrail/logs
+
+**Scope (Specific Data)**: _sourceCategory=aws/observability/cloudtrail/logs
 
 ```Parse Expressions
 Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
@@ -170,11 +183,16 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. To install the app, click **Add Integration** and complete the following fields.
-    1. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app.
-    2. **Select Folder Location for your App**. Select the location in the library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    3. Click on **Next** and then exit to exit from the app catalog or back to edit name or location.
+1. From the **App Catalog**, search for and select the app.
+2. To install the app, click **Add Integration** and complete the following fields:
+
+   1. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app.
+
+   2. **Select Folder Location for your App**. Select the location in the library (the default is the Personal folder in the library), or
+
+   3. Click **New Folder** to add a new folder.
+
+3.Click on **Next** and then exit to exit from the app catalog or back to edit name or location.
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
@@ -185,9 +203,11 @@ Amazon Simple Queue Service (Amazon SQS) is a fully managed message queuing serv
 
 The Sumo Logic App for Amazon SQS provides operational insights into your Amazon SQS utilization. The App’s preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
 
-**Note**: We highly recommend you view these dashboards in the [Explore View](https://help.sumologic.com/Beta/AWS_Observability_Solution/07_View_AWS_Observability_Solution_Dashboards) of  the AWS Observability solution.
+:::note
+We highly recommend you view these dashboards in the [Explore View](https://help.sumologic.com/Beta/AWS_Observability_Solution/07_View_AWS_Observability_Solution_Dashboards) of  the AWS Observability solution.
+:::
 
-###Amazon SQS Overview
+### 1.Amazon SQS Overview
 
 The **Amazon SQS - Overview** dashboard provides insights into SQS metrics and CloudTrail audit logs including the age, delayed, visible, sent and deleted messages, size of the messages and information about events.
 
@@ -197,20 +217,21 @@ Use this dashboard to:
 * Monitor number of messages received, sent, deleted and other metrics.
 * Monitor message states, queue health, and message lag.
 
-![Amazon SQS Overview](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-Overview.png)
+![1.Amazon SQS Overview](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-Overview.png)
 
-1. **Amazon AQS - Queue Stats**
-The Amazon SQS - Queue Stats dashboard provides details of SQS queue metrics including the delayed, invisible, deleted, lag, size, received and sent messages. This dashboard contains line chart panels showing trends for all the SQS metrics and a few use cases of them.
+### 1.Amazon AQS - Queue Stats
+
+The **Amazon SQS - Queue Stats** dashboard provides details of SQS queue metrics including the delayed, invisible, deleted, lag, size, received and sent messages. This dashboard contains line chart panels showing trends for all the SQS metrics and a few use cases of them.
 
 Use this dashboard to:
 * Monitor trend of messages received, sent, deleted and other metrics.
 * Monitor message states, queue health and message lag.
 
-![Amazon SQS- Queue Stats](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-QueueStats.png)
+![1.Amazon SQS- Queue Stats](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-QueueStats.png)
 
-2. **Amazon SQS - Audit Events**
+### 2.Amazon SQS - Audit Events
 
-The Amazon SQS - Audit Events dashboard provides the details of SQS from CloudTrail audit logs including the top users, event locations, event status associated with queues. The dashboard has panels regarding successful and failure event locations, error code information generated by SQS and other valuable information.
+The **Amazon SQS - Audit Events** dashboard provides the details of SQS from CloudTrail audit logs including the top users, event locations, event status associated with queues. The dashboard has panels regarding successful and failure event locations, error code information generated by SQS and other valuable information.
 
 Use this dashboard to:
 * Monitor events by status, type, queues, location and users.
@@ -220,12 +241,12 @@ Use this dashboard to:
 
 ![Amazon SQS Audit Events](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-AuditEvents.png)
 
-3. **Amazon SQS - Threat Intel**
-The Amazon SQS - Threat Intel dashboard provides insights into incoming requests to your AWS SQS services from malicious sources determined via Sumo Logic’s Threat Intel feature. Panels show detailed information on malicious IPs and the malicious confidence of each threat.
+### 3.Amazon SQS - Threat Intel
+The **Amazon SQS - Threat Intel** dashboard provides insights into incoming requests to your AWS SQS services from malicious sources determined via Sumo Logic’s Threat Intel feature. Panels show detailed information on malicious IPs and the malicious confidence of each threat.
 
 Use this dashboard to:
 * Monitor details of threat locations and count.
 * Get details of threats by malicious confidence and malicious IPs.
 * Get details of all threats by IPs.
 
-![Amazon SQS - Threat Intel](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-ThreatIntel.png).
+![Amazon SQS - Threat Intel](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-ThreatIntel.png)
