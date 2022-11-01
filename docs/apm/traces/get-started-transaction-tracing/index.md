@@ -17,7 +17,7 @@ Sumo Logic transaction tracing provides cloud-native transactional intelligence 
 
 Sumo Logic tracing supports the OpenTelemetry standard as well as other legacy open standards and libraries for tracing (e.g., OpenTracing, OpenCensus, Jaeger, Zipkin) and leverages open source componentry from the Cloud Native Computing Foundation (CNCF) to collect distributed tracing data.
 
-Once you have set up trace collection see how to [analyze your traces in Sumo Logic](docs/apm/traces/working-with-tracing-data/view-and-investigate-traces.md).
+Once you've set up traces collection, [learn how to analyze your traces in Sumo Logic](docs/apm/traces/working-with-tracing-data/view-and-investigate-traces.md).
 
 
 ## Set up Collection
@@ -28,3 +28,29 @@ Once you have set up trace collection see how to [analyze your traces in Sumo Lo
 * [What if I don't want to send all the tracing data to Sumo Logic?](/docs/apm/traces/Advanced-Configuration/Filter-Shape-Tracing-Data)
 * [Working with spans attributes](/docs/apm/traces/Advanced-Configuration/Working-with-Span-attributes)
 * [Instrument your application with OpenTelemetry](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation)
+
+
+## Instrument Your Application with OpenTelemetry
+
+* OpenTelemetry auto-instrumentation
+   * [.NET](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net/index.md)
+   * [Go](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/go/index.md)
+   * [JavaScript](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/javascript/index.md)
+   * [Java](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java/index.md)
+   * [Python](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python.md)
+   * [Ruby](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby.md)
+   * [Ruby on Rails](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby-on-rails.md)
+   * [Istio](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/istio.md)
+   * AWS Lambda
+     * [Java](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda-java.md)
+     * [NodeJS](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda-nodejs.md)
+     * [Python](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda-python.md)
+   * Kubernetes environments
+     * [Java](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes/)
+     * [Python](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes/)
+     * [JavaScript](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes/)
+
+
+## Advanced Configuration
+
+* 
