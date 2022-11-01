@@ -34,7 +34,7 @@
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
     "codespell": "^1.1.7",
-    "docusaurus-plugin-sass": "^0.2.2",
+    "docusaurus-plugin-sass": "^0.2.1",
     "docusaurus2-dotenv": "^1.4.0",
     "file-loader": "^6.2.0",
     "follow-redirects": "^1.14.8",
