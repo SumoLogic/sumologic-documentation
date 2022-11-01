@@ -103,6 +103,7 @@ Namespace for **Amazon SQS** Service is **AWS/SQS**
 :::
 
 **Metadata**: Add an account field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account” field.
+
 ![Metadata](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/Metadata+account.png)
 
 ### Collect Amazon SQS Events using CloudTrail
@@ -120,6 +121,7 @@ Namespace for **Amazon SQS** Service is **AWS/SQS**
     * **Source Category**. Enter aws/observability/CloudTrail/logs.
     * **Fields**. Add an account field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
     ![Account Fields](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/Fields.png)
+
     * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
     * **Log File Interval > Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
     * **Enable Timestamp Parsing**. Select the check box.
@@ -199,7 +201,6 @@ The Sumo Logic App for Amazon SQS provides operational insights into your Amazon
 We highly recommend you view these dashboards in the [Explore View](https://help.sumologic.com/Beta/AWS_Observability_Solution/07_View_AWS_Observability_Solution_Dashboards) of  the AWS Observability solution.
 :::
 
-
 ### Overview
 The **1.Amazon SQS - Overview** dashboard provides insights into SQS metrics and CloudTrail audit logs including the age, delayed, visible, sent and deleted messages, size of the messages and information about events.
 
@@ -239,3 +240,4 @@ Use this dashboard to:
 * Get details of threats by malicious confidence and malicious IPs.
 * Get details of all threats by IPs.
 ![Amazon SQS - Threat Intel](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-ThreatIntel.png)
+
