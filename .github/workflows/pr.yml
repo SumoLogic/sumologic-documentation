@@ -23,8 +23,8 @@ jobs:
           with:
             path: node_modules/.cache
             key: ${{ runner.os }}-webpack-cache
-        - name: Install dependencies
-          run: yarn install --frozen-lockfile
+    #   - name: Install dependencies
+    #     run: yarn install --frozen-lockfile
         - name: Build the Docusaurus site
           env:
             NODE_OPTIONS: "--max-old-space-size=8192"
