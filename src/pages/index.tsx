@@ -14,11 +14,10 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h2 className="hero__title">{siteConfig.title} <span className="beta">Beta</span></h2>
+        <h2 className="hero__title">{siteConfig.title}</h2>
         <div className={styles.buttons}>
         </div>
       </div>
-      <meta name="google-site-verification" content="NnyORtv9AD24uCpytHXpAGxDxZ5OcIR5MwV5gJR4LKA" />
     </header>
   );
 }
@@ -32,13 +31,12 @@ function Home() {
      description="Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.">
      <HomepageHeader />
       <main>
-      <div className='container'>
-        <section className="spacer">
-          <h2 align="center">Get started with Sumo</h2>
-          <p align="center">Get started quickly with Sumo Logic search, visualization and analytics capabilities.</p>
-          <div className={styles.buttons}>
-          </div>
-          <p align="center">
+      <div className='hero--secondary'>
+      <div className='container-landpage2'>
+        <div className='column-left'>
+          <h2>Get started with Sumo</h2>
+          <p>Get started quickly with Sumo Logic search, visualization and analytics capabilities.</p>
+          <p>
           <button className="getstarted"
               description="Set up account">
               <a href="/docs/get-started">→ Set up account</a>
@@ -52,7 +50,11 @@ function Home() {
               <a href="/docs/get-started/sumo-logic-ui">→ Explore your insights</a>
             </button>
           </p>
-        </section>
+        </div>
+        <div className='column-right'>
+        <p><img src='/img/homepage-graphic.png' alt="homepage graphic" /></p>
+        </div>
+      </div>
       </div>
      <div className="container">
       <section className="spacer">

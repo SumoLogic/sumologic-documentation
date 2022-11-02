@@ -13,7 +13,7 @@ const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString()
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Welcome to Sumo Docs!',
+  title: 'Sumo Docs',
   tagline: '',
   url: process.env.HOSTNAME || "http://localhost:3000",
   trailingSlash: true,

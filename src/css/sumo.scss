@@ -1155,6 +1155,12 @@ html[data-theme='dark'] .card:hover {
   gap: 5%;
 }
 
+.container-landpage2 {
+  padding: 1rem;
+  display: flex;
+  gap: 1%;
+}
+
 .column-left p,
 .column-right p {
   text-align: left;
@@ -1162,11 +1168,12 @@ html[data-theme='dark'] .card:hover {
 
 .column-left {
   width: 48.5%;
+  margin-top: 4rem;
 }
 
 .column-right {
   width: 48.5%;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 
@@ -1331,15 +1338,38 @@ html[data-theme='dark'] .card:hover {
 
 .hero--primary {
   background-image:
-    linear-gradient(rgba(0,0,0,0.1),
-    rgba(0,0,0,0.00)),
-    url("../../static/img/landing/landing-hero.jpg") !important;
-    max-height: 200px;
+    linear-gradient(to right, rgba(0,64,180,255),
+    rgba(0,99,227,255)80%);
+  //url("../../static/img/landing/landing-hero.jpg") !important;
+    max-height: 100px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center;
   background-color: transparent !important;
   --ifm-hero-text-color: rgb(255, 255, 255) !important;
+}
+
+.hero--secondary {
+  color: white;
+  background-image:
+    linear-gradient(to right, rgba(14,24,40,255),
+    rgba(16,36,65,255)90%);
+}
+
+.column-left p,
+.column-right p {
+  vertical-align: middle !important;
+}
+
+.column-left {
+  width: 50%;
+  padding: 30px;
+}
+
+.column-right {
+  width: 50%;
+  vertical-align: middle !important;
+
 }
 
 .spacer {
