@@ -9,6 +9,6 @@ hide_table_of_contents: false
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-We are pleased to announce the availability of the [Sumo Logic App for SailPoint](https://help.sumologic.com/docs/integrations/security-threat-detection/sailpoint/). This new cloud-to-cloud connector uses Cyberark APIs to retrieve administrative audit events from every Set in your CyberArk environment.
+We are pleased to announce the availability of the [Sumo Logic App for SailPoint](https://help.sumologic.com/docs/integrations/security-threat-detection/sailpoint/). The Sumo Logic App for SailPoint helps you monitor the user events, actions, operations, failed logins, successful logins, and user activities to your applications through SailPoint. 
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Overview.png')} alt="<your image description>" width="<insert-pixel-number>"/>
