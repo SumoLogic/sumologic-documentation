@@ -1701,6 +1701,7 @@ module.exports = {
             items: [
               'integrations/google/workspace/collect-logs',
               'integrations/google/workspace/install-app-dashboards',
+              'integrations/google/workspace/collect-logs-legacy',
              ],
            },
          ],
