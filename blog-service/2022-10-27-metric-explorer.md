@@ -1,5 +1,5 @@
 ---
-title: New Slack Source
+title: Metrics Explorer Enhancement
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - sumo logic
