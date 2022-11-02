@@ -88,6 +88,6 @@ your content:
 | Manage<br/>(Recommended for individual users only) | Designated users are considered co-managers of the content and can modify the content as well grant the right to other users to View, Edit, Manage, or Move the content. | **Cannot Grant Access.** Prevents the user from sharing view access.<br/><br/>**Grant View Access.** User can grant view access to others.<br/><br/>**Grant Edit and View Access.** User can grant View and Edit access to users.<br/><br/>**Grant Manage, Edit, and View Access.** User can grant Manage, Edit, and View access to users. |
 
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
