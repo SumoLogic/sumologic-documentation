@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/send-data.png')} alt="icon" width="50"/>
 
-Learn how to send data to Sumo Logic. In this section, we will introduce the following concepts:
+Learn how to send data to Sumo Logic. In this section, we'll introduce the following concepts:
 
 <div className="box boxwidetop card">
   <div className="container">
