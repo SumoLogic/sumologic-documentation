@@ -9,13 +9,13 @@ description: The Sumo Logic App for AWS EC2 allows you to display and gain insig
 
 ## Metrics Types 
 
-Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](https://helpstaging.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Host-Metrics-Source#Collected_Metrics).
+Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in Host Metrics for Installed Collectors.
 
-* [CPU Metrics](https://helpstaging.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics/01Collect-Host-Metrics-for-the-Host-Metrics-App#CPU_Metrics-2349) 
-* [Memory Metrics](https://helpstaging.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics/01Collect-Host-Metrics-for-the-Host-Metrics-App#Memory_Metrics-2349)
-* [TCP Metrics](https://helpstaging.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics/01Collect-Host-Metrics-for-the-Host-Metrics-App#TCP_Metrics-2349)
-* [Networking Metrics](https://helpstaging.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics/01Collect-Host-Metrics-for-the-Host-Metrics-App#TCP_Metrics-2349)
-* [Disk Metrics](https://helpstaging.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics/01Collect-Host-Metrics-for-the-Host-Metrics-App#Disk_Metrics-2349)
+* CPU Metrics
+* Memory Metrics
+* TCP Metrics
+* Networking Metrics
+* Disk Metrics
 
 ### Time Intervals
 
@@ -27,7 +27,7 @@ The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or lon
 
 ### AWS Metadata
 
-Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AWS Metadata Source for Metrics](https://helpstaging.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-Metadata-(Tag)-Source).
+Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see AWS Metadata Source for Metrics.
 
 ### Sample Query 
 
