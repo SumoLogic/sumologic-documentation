@@ -66,4 +66,4 @@ import Iframe from 'react-iframe';
 
 ## Next Step: Configure a Source
 
-Once you have configured your Hosted Collector, the next step is to configure Sources. See all of the available [Sources supported on Hosted Collectors](configure-hosted-collector.md).
+Once you have configured your Hosted Collector, the next step is to configure Sources. See all of the available [Sources supported on Hosted Collectors](/docs/send-data/hosted-collectors/configure-hosted-collector).
