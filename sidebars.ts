@@ -377,8 +377,8 @@ module.exports = {
           items: [
             'send-data/collection/search-for-a-collector-or-source',
             'send-data/collection/start-stop-collector-using-scripts',
-            'send-data/collection/edit-collector',
             'send-data/collection/restart-collectors',
+            'send-data/collection/edit-collector',
             'send-data/collection/edit-source',
             'send-data/collection/pause-and-resume-source',
             'send-data/collection/delete-collector-or-source',

@@ -4,15 +4,7 @@ title: JSON Parameters for Installed Sources
 description: This topic describes JSON Source parameters for installed Collectors.
 ---
 
-
-
-This topic describes JSON Source parameters for installed Collectors. See the following topics for additional information:
-
- * [Use JSON to configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.
- * [JSON Source parameters for Hosted Collectors](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources).
- * [View or download Collector or Source JSON configuration](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) from Sumo Logic.
-
-For more information about configuring sources in JSON files, and how to configure Sumo to read the JSON files, see [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
+This topic describes JSON Source parameters for installed Collectors. For more information about configuring sources in JSON files, and how to configure Sumo to read the JSON files, see [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
 
 :::important
 JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
@@ -22,30 +14,23 @@ JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.o
 
 Each Source can have its own unique fields in addition to the generic fields listed in [Use JSON to configure sources](/docs/send-data/use-json-configure-sources). The `sourceType` field determines the type of Source (and the associated parameters). The next table lists the valid field types. The sections that follow list the unique parameters for each and associated JSON examples.
 
-### Log sources for installed collectors
+
+## Log source parameters for installed collectors
 
 |Field Type | Type Value |
 |--|--|
-| [Local File Source](#local-file-source) | LocalFile |
-| [Remote File Source](#remote-file-source) | RemoteFileV2 |
-| [Local Windows Event Log Source](#local-windows-event-log-source) | LocalWindowsEventLog |
-| [Remote Windows Event Log Source](#remote-windows-event-log-source") | RemoteWindowsEventLog |
+| [Local File Source](#local-filesource) | LocalFile |
+| [Remote File Source](#remote-filesource) | RemoteFileV2 |
+| [Local Windows Event Log Source](#local-windows-event-logsource) | LocalWindowsEventLog |
+| [Remote Windows Event Log Source](#remote-windows-event-log-source) | RemoteWindowsEventLog |
 | [Local Windows Performance Source](#local-windows-performance-source) | LocalWindowsPerfMon |
 | [Remote Windows Performance Source](#remote-windows-performance-source) | RemoteWindowsPerfMon  |
 | [Windows Active Directory Inventory Source](#windows-active-directory-source) | ActiveDirectory |
-| [Syslog Source](#syslog-source) | Syslog |
+| [Syslog Source](#syslogsource) | Syslog |
 | [Script Source](#script-source) | Script |
 | [Docker Log Source](#docker-logsource) | DockerLog |
-| [Docker Stats Source](#docker-stats-source) | DockerStats |
+| [Docker Stats Source](#docker-statssource) | DockerStats |
 
-### Metric sources for installed collectors
-
-|  Field Type |    Type Value |
-|--|--|
-| [Host metrics Source](#host-metrics-source) | SystemStats |
-| [Streaming Metrics Source](#streaming-metrics-source) | StreamingMetrics |
-
-## Log source parameters for installed collectors
 
 ### Local file source
 
@@ -551,6 +536,11 @@ Example source JSON to collect metrics:
 
 ## Metric source parameters for installed collectors
 
+|  Field Type |  Type Value |
+|--|--|
+| [Host metrics Source](#host-metrics-source) | SystemStats |
+| [Streaming Metrics Source](#streaming-metrics-source) | StreamingMetrics |
+
 ### Host metrics source 
 
 The following parameters are for a host metrics source. 
@@ -588,9 +578,6 @@ The following parameters are for a streaming metrics source.
 The streaming metrics source can receive Prometheus data as long as that data is pushed to it. This source cannot scrape Prometheus exporters. For that, we suggesting using Telegraf.
 :::
 
-| Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
-
 Graphite contentType JSON example: 
 
 ```json
@@ -607,3 +594,10 @@ Graphite contentType JSON example: 
    ]
 }
 ```
+
+## Additional Information
+
+See the following topics for additional information:
+* [Use JSON to configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.
+* [JSON Source parameters for Hosted Collectors](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources).
+* [View or download Collector or Source JSON configuration](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) from Sumo Logic.
