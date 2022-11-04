@@ -82,7 +82,7 @@ cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  agent=biggie <value> <t
 ```
 
 The following is an example of `intrinsic_tags` with an agent
-`meta-tags`, a value, and a timestamp:
+`meta_tags`, a value, and a timestamp:
 
 ```
 cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  agent=biggie 97.29 1460061337
