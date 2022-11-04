@@ -277,8 +277,6 @@ module.exports = {
     },
     colorMode: {
       defaultMode: 'light',
-      disableSwitch: false,
-      respectPrefersColorScheme: false,
     },
     //algolia: {
      // The application ID provided by Algolia
