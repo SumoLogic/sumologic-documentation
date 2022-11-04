@@ -49,7 +49,7 @@ We recommend the following ingestion processes, starting with the most preferred
         A field can also be assigned at the collector level, in which case sources on the collector inherit the field setting, unless the same field is defined with a different value at the source level.
         :::
 
-    1. Configure the source with the path to the appropriate parser, by assigning a field named `_parser`, whose value is the path to parser, for example:  
+    2. Configure the source with the path to the appropriate parser, by assigning a field named `_parser`, whose value is the path to parser, for example:  
 
         `_parser=/Parsers/System/AWS/AWS Network Firewall`  
 
