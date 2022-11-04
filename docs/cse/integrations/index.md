@@ -8,7 +8,7 @@ description: Learn about the integration of CSE with the Sumo Logic platform, ho
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/> 
 

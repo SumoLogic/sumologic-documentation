@@ -68,7 +68,7 @@ At installation time, you can configure the Insight Enrichment Server to run un
 
 **Install the Insight Enrichment Server** 
 
-Download the binary from [here](https://https://script-collection.s3.amazonaws.com/caravel/windows-enrichment-server-installer.exe). The checksum for the binary is [here](https://script-collection.s3.amazona...l/checksum.txt).
+Download the binary from [here](https://script-collection.s3.amazonaws.com/caravel/windows-enrichment-server-installer.exe). The checksum for the binary is [here](https://script-collection.s3.amazonaws.com/caravel/checksum.txt).
 
 Run the installer and follow the instructions. 
 

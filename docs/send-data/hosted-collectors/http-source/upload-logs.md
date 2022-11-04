@@ -22,7 +22,7 @@ Data needs to be in UTF-8 encoding.
 To upload log data with a POST request, include the complete data payload as the request body. Any query parameters will be ignored.
 
 :::important
-We recommend that the POST data payload have a size, before compression, of 100KB to 1MB. See [data payload considerations](upload-logs.md)  for details.
+We recommend that the POST data payload have a size, before compression, of 100KB to 1MB. See [data payload considerations](/docs/send-data/hosted-collectors/http-source/logs-metrics/#data-payload-considerations)  for details.
 :::
 
 * Data payload:

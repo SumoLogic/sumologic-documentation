@@ -16,6 +16,6 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 ## Monitoring Apps and Microservices with Sumo Logic Traces
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

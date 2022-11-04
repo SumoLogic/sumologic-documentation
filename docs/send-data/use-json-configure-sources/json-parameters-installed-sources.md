@@ -35,7 +35,7 @@ Each Source can have its own unique fields in addition to the generic fields lis
 | [Windows Active Directory Inventory Source](#windows-active-directory-source) | ActiveDirectory |
 | [Syslog Source](#syslog-source) | Syslog |
 | [Script Source](#script-source) | Script |
-| [Docker Log Source](#docker-log-source) | DockerLog |
+| [Docker Log Source](#docker-logsource) | DockerLog |
 | [Docker Stats Source](#docker-stats-source) | DockerStats |
 
 ### Metric sources for installed collectors

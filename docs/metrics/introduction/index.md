@@ -140,6 +140,6 @@ An account’s metrics ingestion volume in data points is tracked in Sumo’s me
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
