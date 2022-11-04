@@ -523,12 +523,26 @@ html[data-theme='dark'] .navbar-item-github:before {
   cursor: pointer;
   margin-right: 5px;
   border-radius: 3px;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: white;
+  }
 }
 
 .navbar-trial:hover {
   background-color: #2aa1e6;
   border: 1px solid #fff;
   color: white;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: white;
+  }
 }
 
 .navbar-trial-mobile {
@@ -555,99 +569,22 @@ html[data-theme='dark'] .navbar-item-github:before {
 }
 
 
-//BACK TO HOMEPAGE buttons on 404 page
+//Get Started button - homepage, 404 not found
 
-.backtohome-404 {
-  border-bottom: 1px solid var(--ifm-toc-border-color);
-}
 
-.backtohome-404 {
+.homepage {
   background-color: #2aa1e6;
-  color: white;
-  padding: 10px 12px;
-  font-weight: 300;
-  font-size: 13px;
-  text-decoration: none;
-  margin-right: 10px;
-  border: 1px solid #3578e5;
-  cursor: pointer;
-  margin-right: 10px;
-  border-radius: 3px;
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  a:hover {
-    color: white;
-  }
-}
-
-.backtohome-404:hover {
-  background-color: #2aa1e6;
-  color: white;
-  padding: 10px 12px;
-  font-weight: 300;
-  font-size: 13px;
-  text-decoration: none;
-  margin-right: 10px;
-  border: 1px solid #FFF;
-  cursor: pointer;
-  margin-right: 10px;
-  border-radius: 3px;
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  a:hover {
-    color: white;
-  }
-}
-
-.backtohome-404-mobile {
-  background-color: #2aa1e6;
-  color: white;
-  padding: 10px 25px;
-  font-weight: 300;
-  text-decoration: none;
-  border: 1px solid #3578e5;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-
-@media screen and (max-width: 996px) {
-  .backtohome-404 {
-    margin-right: 50px;
-  }
-}
-
-@media screen and (max-width: 479px) {
-  .backtohome-404 {
-    display: none;
-  }
-}
-
-
-
-
-//Get Started button - homepage
-
-.getstarted {
-  border-bottom: 1px solid var(--ifm-toc-border-color);
-}
-
-.getstarted {
-  background-color: #0046BE;
   color: white;
   padding: 12px 14px;
   font-weight: 300;
   font-size: 15px;
 //  filter: drop-shadow(-1px 2px 2px #64696C);
   text-decoration: none;
-  border: .5px solid #000;
+  border: .5px solid #2aa1e6;
   border-radius: 4px;
   margin-right: 5px;
   margin-bottom: 10px;
+  transition: all 0.5s;
   cursor: pointer;
   a {
     color: white;
@@ -659,14 +596,15 @@ html[data-theme='dark'] .navbar-item-github:before {
 }
 
 
-.getstarted:hover {
-  background-color: #1a55ba;
+.homepage:hover {
+  background-color: #0046BE;
   color: black;
   padding: 12px 14px;
   font-weight: 300;
   font-size: 15px;
   text-decoration: none;
-  border: .5px solid #8C9296;
+  transition: all 0.5s;
+  border: .5px solid #FFFFFF;
   cursor: pointer;
   a {
     color: white;
@@ -677,8 +615,8 @@ html[data-theme='dark'] .navbar-item-github:before {
   }
 }
 
-.getstarted-mobile {
-  background-color: #0046BE;
+.homepage-mobile {
+  background-color: #2aa1e6;
   color: white;
   padding: 8px 14px;
   font-weight: 300;
@@ -691,13 +629,13 @@ html[data-theme='dark'] .navbar-item-github:before {
 
 
 @media screen and (max-width: 996px) {
-  .getstarted {
+  .homepage {
     margin-right: 50px;
   }
 }
 
 @media screen and (max-width: 479px) {
-  .getstarted {
+  .homepage {
     display: none;
   }
 }
@@ -1167,13 +1105,21 @@ html[data-theme='dark'] .card:hover {
 }
 
 .column-left {
-  width: 48.5%;
-  margin-top: 4rem;
+  width: 50%;
+  margin-top: 1rem;
 }
 
 .column-right {
-  width: 48.5%;
-  margin-top: 1rem;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image:
+    url("../../static/img/hero-secondary-graphic.png") !important;
+
+  width: 50%;
+  padding: 10rem;
+  display: flex;
 }
 
 
@@ -1351,9 +1297,13 @@ html[data-theme='dark'] .card:hover {
 
 .hero--secondary {
   color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
   background-image:
-    linear-gradient(to right, rgba(14,24,40,255),
-    rgba(16,36,65,255)90%);
+    url("../../static/img/hero-secondary-background.png") !important;
+    max-height: 500px;
+
 }
 
 .column-left p,

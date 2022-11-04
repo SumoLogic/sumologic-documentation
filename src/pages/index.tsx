@@ -37,22 +37,22 @@ function Home() {
           <h2>Get started with Sumo</h2>
           <p>Get started quickly with Sumo Logic search, visualization and analytics capabilities.</p>
           <p>
-          <button className="getstarted"
+          <button className="homepage"
               description="Set up account">
               <a href="/docs/get-started">→ Set up account</a>
           </button>
-          <button className="getstarted"
+          <button className="homepage"
               description="Send data">
               <a href="/docs/send-data">→ Install data collector</a>
           </button>
-            <button className="getstarted"
+            <button className="homepage"
               description="Data insights icon">
               <a href="/docs/get-started/sumo-logic-ui">→ Explore your insights</a>
             </button>
           </p>
         </div>
         <div className='column-right'>
-        <p><img src='/img/homepage-graphic.png' alt="homepage graphic" /></p>
+
         </div>
       </div>
       </div>
