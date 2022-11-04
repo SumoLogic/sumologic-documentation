@@ -1,14 +1,11 @@
 ---
 id: upgrade-collectors
-title: Upgrade Collectors
+title: Upgrade Collectors in Sumo Logic
+sidebar_label: Upgrade a Collector
 description: When you upgrade a Collector, the upgrade file is automatically downloaded and executed from Sumo Logic. You can also download the latest Collector version and upgrade your installed Collector using operating system commands.
 ---
 
-
-## Upgrade Collectors in Sumo Logic
-
-Deploying an upgrade to one or more collectors can be done through Sumo Logic. When you initiate a collector upgrade, the installed collector downloads the upgrade package directly from the Sumo
-Logic service. We recommend you follow our [best practices](#collector-upgrade-best-practices) when you upgrade your Collectors.
+Deploying an upgrade to one or more collectors can be done through Sumo Logic. When you initiate a collector upgrade, the installed collector downloads the upgrade package directly from the Sumo Logic service. We recommend you follow our [best practices](#collector-upgrade-best-practices) when you upgrade your Collectors.
 
 You can also downgrade a collector to a previous version, as described in this topic.
 
@@ -39,15 +36,13 @@ To install an upgrade on one or more collectors:
 1. In Sumo Logic, select **Manage Data \> Collection \> Collection**.
 1. Click the **Upgrade Collectors** link.
 1. Determine if you'd like to install the upgrade on individual collectors or on all collectors simultaneously. Then, choose one of the following:
-
     * Click **Update** next to the name of a collector to install the upgrade just on that specific collector. This option can be used if a policy prevents you from upgrading every collector at the same time of day, or if you can't deploy the upgrade all at once. Any collectors you choose not to upgrade will remain available in the upgrade dialog box so you can install the upgrade at a later time.
     * If you can safely upgrade all collectors, click **Update All.**
-
     :::note
     We strongly advise you to validate collector upgrades on non-production hosts before upgrading production collectors.
     :::
 
-    ![Upgrade collectors](/img/collector/upgrade-collectors-1.png)
+![Upgrade collectors](/img/collector/upgrade-collectors-1.png)
 
 The upgrade process begins immediately after you click **Update** or **Update All**; the file is automatically downloaded and installed. You'll be notified when the upgrade has completed successfully.
 
@@ -58,7 +53,6 @@ Collectors that are offline or that have already been upgraded aren't eligible 
 You can choose to downgrade a Collector or Collectors to an earlier version for testing or other purpose. 
 
 To downgrade one or more collectors to an earlier build:
-
 1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
 1. Click the **Edit** link on the right of an installed collector.
 1. Click the **Change Version** beside the current version.
@@ -90,7 +84,6 @@ If an upgrade repeatedly fails, contact [Sumo Logic Customer Support](https://s
 Before upgrading an Installed Collector review [Collector Upgrade Best Practices](#collector-upgrade-best-practices).
 
 The steps to upgrade an Installed Collector using the command line are similar to the steps used for installing the Collector with the command line. See [Installed Collectors](/docs/send-data/installed-collectors) for details.
-
 
 Download the collector in either of the following ways:
 
