@@ -57,6 +57,6 @@ You define the data that will reside in a partition by defining a routing expres
 
 ## Guides
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

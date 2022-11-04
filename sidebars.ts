@@ -1353,7 +1353,7 @@ module.exports = {
         'apm/traces/quickstart',
         {
         type: 'category',
-        label: 'Getting Started with Transaction Tracing',
+        label: 'Getting Started with Traces',
         collapsible: true,
         collapsed: true,
         link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/index'},
@@ -1365,9 +1365,17 @@ module.exports = {
             collapsed: true,
             link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/index'},
             items: [
-              'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda-java',
-              'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda-nodejs',
-              'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda-python',
+              {
+                type: 'category',
+                label: 'AWS Lambda',
+                collapsible: true,
+                collapsed: true,
+                items: [
+                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/java',
+                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/nodejs',
+                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/python',
+                ],
+              },
               {
                 type: 'category',
                 label: 'Go',
@@ -1416,10 +1424,10 @@ module.exports = {
               'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby',
             ],
           },
-          'apm/traces/get-started-transaction-tracing/http-traces-source',
           'apm/traces/get-started-transaction-tracing/set-up-traces-collection-aws-environments',
           'apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments',
           'apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments',
+          'apm/traces/get-started-transaction-tracing/http-traces-source',
         ],
       },
       {
@@ -1701,6 +1709,7 @@ module.exports = {
             items: [
               'integrations/google/workspace/collect-logs',
               'integrations/google/workspace/install-app-dashboards',
+              'integrations/google/workspace/collect-logs-legacy',
              ],
            },
          ],

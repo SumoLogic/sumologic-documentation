@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic Observability solution provides tools that work together to ensure you are able to efficiently monitor, troubleshoot, and diagnose issues across a variety of environments. 
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 
 <div className="box-wrapper" markdown="1">
