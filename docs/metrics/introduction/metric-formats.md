@@ -44,7 +44,7 @@ Carbon 2.0 metrics conform to the [Metrics 2.0](http://metrics20.org/) specifica
 Carbon 2.0 metrics look like this:
 
 ```
-intrinsic_tags meta_tags value timestamp
+intrinsic_tags  meta_tags value timestamp
 ```
 
 :::tip
@@ -85,14 +85,14 @@ The following is an example of `intrinsic_tags` with an agent
 `meta-tags`, a value, and a timestamp:
 
 ```
-cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle agent=biggie 97.29 1460061337
+cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  agent=biggie 97.29 1460061337
 ```
 
 And an example of empty set of meta tags and two spaces between the
 intrinsic tags and value with timestamp :
 
 ```
-cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle 97.29 146006133
+cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  97.29 146006133
 ```
 
 This [blog post](https://www.sumologic.com/blog/intrinsic-vs-meta-tags/) provides additional examples and discussion.
