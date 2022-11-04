@@ -27,7 +27,7 @@ The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or lon
 
 ### AWS Metadata
 
-Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see AWS Metadata Source for Metrics.
+Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics. Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see AWS Metadata Source for Metrics.
 
 ### Sample Query 
 
@@ -131,7 +131,7 @@ Use this dashboard to:
 
 ### 6. AWS EC2 Metrics - TCP
 
-The **AWS EC2 Metrics - TCP** dashboard  provides insights into TCP
+The **AWS EC2 Metrics - TCP** dashboard provides insights into TCP
 traffic performance per EC2 instance throughout your infrastructure,
 including metrics for inbound and outbound connections, listen and
 established connections, and close wait and time wait connections.
