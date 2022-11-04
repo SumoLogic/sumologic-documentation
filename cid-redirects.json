@@ -648,6 +648,7 @@
   "/APIs/Metrics_Query_API": "/docs/api/metrics-query",
   "/APIs/Ingest_Budget_Management_API_V2": "/docs/api/ingest-budget-v2",
   "/APIs/General-API-Information/API-Authentication": "/docs/api/getting-started",
+  "/APIs/General_API_Information/Sumo_Logic_Endpoints_and_Firewall_Security": "/docs/api/getting-started",
   "/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security": "/docs/api/getting-started",
   "/APIs/General-API-Information/Sumo-Logic-Endpoints-and-Firewall-Security": "/docs/api/getting-started",
   "/APIs/Partition_Management_API": "/docs/api/partitions",
