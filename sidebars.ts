@@ -380,7 +380,7 @@ module.exports = {
             'send-data/collection/restart-collectors',
             'send-data/collection/edit-collector',
             'send-data/collection/edit-source',
-            'send-data/collection/pause-and-resume-source',
+            'send-data/collection/pause-resume-source',
             'send-data/collection/delete-collector-or-source',
             'send-data/collection/set-collector-cpu-usage-target',
             'send-data/collection/upgrade-collectors',
