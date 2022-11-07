@@ -12,9 +12,7 @@ Pre-configured dashboards available for application components solve many common
 * Minimizing the troubleshooting time by providing all relevant information in the right context.
 
 :::caution Limitations
-
 Currently supported only for the following apps:
-
 * [Cassandra](/docs/integrations/databases/cassandra)
 * [Elasticsearch](/docs/integrations/databases/elasticsearch)
 * [MongoDB](/docs/integrations/databases/mongodb)
@@ -27,9 +25,9 @@ Currently supported only for the following apps:
 * [Oracle](/docs/integrations/databases/oracle)
 :::
 
-## Install using the Automation Script
+## Installation
 
-These instructions help you configure and deploy the Application Components Solution using a Terraform script.
+To use the Application Components Solution, you'll need to install a Terraform automation script.
 
 The Terraform script performs the following actions:
 * Creates Application Components View hierarchy in Explore.
@@ -255,13 +253,11 @@ Sometimes if the fields are used in other resources like FERs, other collection 
 
 This section shows how to use Explore and navigate Application Components hierarchy to view the pre configured dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
 
-
 ### Navigate Application Components View
 
 Explore is an out-of-the-box Sumo Logic navigation tool that provides an intuitive visual representation of your environment.
 
-**To open Explore and Application Components View, do the following:**
-
+To open Explore and Application Components View:
 1. Log in to Sumo Logic and click **+ New** on the top menu bar.
 1. From the drop-down menu, choose **Explore**. The Explore navigation panel appears on the left.
 1. Click the **Explore By** arrow and select **Application Components View** from the drop-down menu. An expandable list of your AWS environment hierarchy appears in the Explore panel.
@@ -271,13 +267,53 @@ Explore is an out-of-the-box Sumo Logic navigation tool that provides an intuiti
 The **Application Components - Database System Overview** dashboard appears in the window on the right. The dashboard provides an at-a-glance view of the different database engines present in the database component and insights on errors occurring across different engines.
 1. And then keep on going down the hierarchy to specific entities for each of the components to view dashboards at more granular levels.
 
+### Dashboard Examples
+
+#### 01. Application Service Overview
+
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/01.+Application+Service+Overview.png" alt="APM Dashboard"/>
+
+#### 01. Environment Overview
+
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/01.+Environment+Overview.png" alt="APM Dashboard"/>
+
+#### 01. Operation Overview
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/01.+Operation+Overview.png" alt="APM Dashboard"/>
+
+#### 02. Service Health Across Applications within Environment
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/02.+Service+Health+Across+Applications+within+Environment.png" alt="APM Dashboard"/>
+
+#### 02. Service Health Across Applications
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/02.+Service+Health+Across+Applications.png" alt="APM Dashboard"/>
+
+#### 03. Application Service Health Across Operations within Environment
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/03.+Application+Service+Health+Across+Operations+within+Environment.png" alt="APM Dashboard"/>
+
+#### 03. Application Service Health Across Operations
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/03.+Application+Service+Health+Across+Operations.png" alt="APM Dashboard"/>
+
+#### 04. Application Health Across Services
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/04.+Application+Health+Across+Services.png" alt="APM Dashboard"/>
+
+#### 04. Service Health Across Applications and Operations within Environments
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/04.+Service+Health+Across+Applications+and+Operations+within+Environment.png" alt="APM Dashboard"/>
+
+#### 04. Service Health Across Applications and Operations
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/04.+Service+Health+Across+Applications+and+Operations.png" alt="APM Dashboard"/>
+
+#### 05. Application Service Health Across Environments
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/05.+Application+Service+Health+Across+Environments.png" alt="APM Dashboard"/>
+
+#### 06. Service Health Across Environments
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/06.+Service+Health+Across+Environments.png" alt="APM Dashboard"/>
+
 
 ## Frequently Asked Questions
 
-#### How do I configure it for new databases when they are running terraform and apply a second time?
+#### How do I configure the solution for new databases when they're running terraform and apply a second time?
 Assuming your last terraform application run was successful and you have the tfstate file locally. You can add new components in `components_on_non_kubernetes_deployment` or `components_on_kubernetes_deployment` parameters and rerun `terraform apply`.
 
-#### How do I update the Solution if a new version gets released?
+#### How do I update the solution if a new version gets released?
 1. Back up your Application Component Solution - Apps folder and Application Component Solution - Monitor folder by exporting the content.
 2. Pull the master branch of [the repository](https://github.com/SumoLogic/sumologic-solution-templates/) and run `terraform apply`. It will update all the apps, FERs, hierarchies, fields, and monitors.
 3. The above step will deploy new dashboards and new monitors, so after migrating your custom content to these new dashboards, you can delete old FERs and dashboards.
@@ -292,5 +328,5 @@ See the [RESOURCES.md file](https://github.com/SumoLogic/sumologic-solution-temp
 Existing customers have to perform the below steps:
 1. Add `db_cluster_address` and `db_cluster` port in their telegraf configuration as mentioned in the respective component’s collection doc. This is for tagging metrics.
 2. Add `db_cluster_address` and `db_cluster_port` in the sumologic source for logs as mentioned in the respective component’s collection doc.
-3. Import the existing fields using fields.sh script in Step 4 and follow Step 1, 2, 3, and 5 to deploy the solution.
+3. Import the existing fields using fields.sh script in Step 4 and follow Step 1, 2, 3, and 5 under [Installation](#installation) to deploy the solution.
 4. The above step will deploy new dashboards and new monitors, so after migrating your custom content to these new dashboards, you can delete old FERs and dashboards.
