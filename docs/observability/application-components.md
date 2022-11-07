@@ -271,41 +271,41 @@ The **Application Components - Database System Overview** dashboard appears in t
 
 #### 01. Application Service Overview
 
-<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/01.+Application+Service+Overview.png" alt="APM Dashboard"/>
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/01.-Application-Service-Overview.png" alt="APM Dashboard"/>
 
 #### 01. Environment Overview
 
-<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/01.+Environment+Overview.png" alt="APM Dashboard"/>
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/01.-Environment-Overview.png" alt="APM Dashboard"/>
 
 #### 01. Operation Overview
-<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/01.+Operation+Overview.png" alt="APM Dashboard"/>
-
-#### 02. Service Health Across Applications within Environment
-<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/02.+Service+Health+Across+Applications+within+Environment.png" alt="APM Dashboard"/>
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/01.-Operation-Overview.png" alt="APM Dashboard"/>
 
 #### 02. Service Health Across Applications
-<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/02.+Service+Health+Across+Applications.png" alt="APM Dashboard"/>
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/02.-Service-Health-Across-Applications.png" alt="APM Dashboard"/>
 
-#### 03. Application Service Health Across Operations within Environment
-<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/03.+Application+Service+Health+Across+Operations+within+Environment.png" alt="APM Dashboard"/>
+#### 02. Service Health Across Applications within Environment
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/02.-Service-Health-Across-Applications-within-Environment.png" alt="APM Dashboard"/>
 
 #### 03. Application Service Health Across Operations
-<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/03.+Application+Service+Health+Across+Operations.png" alt="APM Dashboard"/>
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/03.-Application-Service-Health-Across-Operations.png" alt="APM Dashboard"/>
+
+#### 03. Application Service Health Across Operations within Environment
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/03.-Application-Service-Health-Across-Operations-within-Environment.png" alt="APM Dashboard"/>
 
 #### 04. Application Health Across Services
-<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/04.+Application+Health+Across+Services.png" alt="APM Dashboard"/>
-
-#### 04. Service Health Across Applications and Operations within Environments
-<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/04.+Service+Health+Across+Applications+and+Operations+within+Environment.png" alt="APM Dashboard"/>
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Application-Health-Across-Services.png" alt="APM Dashboard"/>
 
 #### 04. Service Health Across Applications and Operations
-<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/04.+Service+Health+Across+Applications+and+Operations.png" alt="APM Dashboard"/>
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Service-Health-Across-Applications-and-Operations.png" alt="APM Dashboard"/>
+
+#### 04. Service Health Across Applications and Operations within Environments
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Service-Health-Across-Applications-and-Operations-within-Environment.png" alt="APM Dashboard"/>
 
 #### 05. Application Service Health Across Environments
-<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/05.+Application+Service+Health+Across+Environments.png" alt="APM Dashboard"/>
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/05.-Application-Service-Health-Across-Environments.png" alt="APM Dashboard"/>
 
 #### 06. Service Health Across Environments
-<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/NewDashboards/06.+Service+Health+Across+Environments.png" alt="APM Dashboard"/>
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/06.-Service-Health-Across-Environments.png" alt="APM Dashboard"/>
 
 
 ## Frequently Asked Questions
