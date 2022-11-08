@@ -69,11 +69,11 @@ The App uses SQS logs and metrics for:
 
 **Messages Received (Metric based)**:
 
-metric=NumberOfMessagesReceived Statistic=Sum account=* region=* namespace=* queuename=* | sum by account, region, namespace, queuename
+`metric=NumberOfMessagesReceived Statistic=Sum account=* region=* namespace=* queuename=* | sum by account, region, namespace, queuename`
 
 **Top 10 users (CloudTrail Log based)**:
 
-```
+```sql
 account=* region=* namespace=aws/sqs eventname eventsource "sqs.amazonaws.com"
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountId", "requestParameters", "responseElements", "sourceIPAddress","errorCode", "errorMessage" as userIdentity, event_source, event_name, region, recipient_account_id, requestParameters, responseElements, src_ip, error_code, error_message nodrop
 | json field=userIdentity "accountId", "type", "arn", "userName" as accountid, type, arn, username nodrop
@@ -153,6 +153,7 @@ Use this dashboard to:
 * Monitor successful, failure event locations and trends.
 * Monitor event details by users.
 * Monitor successful and error event details.
+
 ![2.Amazon SQS Audit Events](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-AuditEvents.png)
 
 ### Threat Intel
@@ -162,4 +163,5 @@ Use this dashboard to:
 * Monitor details of threat locations and count.
 * Get details of threats by malicious confidence and malicious IPs.
 * Get details of all threats by IPs.
+
 ![3.Amazon SQS - Threat Intel](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-ThreatIntel.png)
