@@ -42,7 +42,7 @@ This section has instructions for configuring a First Seen rule.
 The settings in the **If triggered** section determine what Records the rule will be applied to and baseline-related options.
 
 1. **Advanced**. Click **Advanced** to display baseline settings.
-   1. **Data Retention**. The number of days after which the data points in the baseline will expire (be dropped from the baseline.) The default is 90 days. You can decrease this period, but not increase it.
+   1. **Data Retention**. The number of days after which the data points in the baseline will expire (be dropped from the baseline). The default is 90 days. You can decrease this period, but not increase it.
    1. **Baseline Period**. The minimum amount of time for which data points should be collected before firing a Signal. The default is 30 days.
    :::note
    The **Baseline Period** must be shorter than the **Data Retention** period.
