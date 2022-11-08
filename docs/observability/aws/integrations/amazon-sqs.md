@@ -153,6 +153,7 @@ Use this dashboard to:
 * Monitor successful, failure event locations and trends.
 * Monitor event details by users.
 * Monitor successful and error event details.
+
 ![2.Amazon SQS Audit Events](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-AuditEvents.png)
 
 ### Threat Intel
