@@ -168,7 +168,7 @@ To define a split mapping:
 1. Select **split** from the **Create a new … mapping field?** pull-down.
 1. **Input Field**. Enter the name of an input field. This is the field from incoming messages whose value you want to split.
 1. **Delimiter.** Enter the character that delimits the segments of the field.
-1. **Index**. Enter the integer value that corresponds, order-wise, to the segment of the field that you want to write to the output field you’ll specify in the next step. An index value of “0” indicates the first segment, “1” indicates the second segment, and so on.
+1. **Index**. Enter the integer value that corresponds, order-wise, to the segment of the field that you want to write to the output field you’ll specify in the next step. An index value of “0” indicates the first segment, “1” indicates the second segment, and so on. Use a negative index value to index from the end, eg. "-1" for the last segment, "-2" for the second to last segment.
 1. **Output Field**. Select an output field. This is the Record attribute whose value you wish to populate.
 1. Click **Add Field** to save the field mapping.
 
