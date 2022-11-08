@@ -24,7 +24,7 @@ To run a search by Receipt Time:
 ## Resolving timestamp/receipt time issues
 
 If you notice an issue between timestamps and receipt time values, you can double-check the Source’s settings. You can manually specify the
-parsing format for the Source, and test the format to make sure it is valid. See [troubleshooting large message time and receipt time discrepancies](https://help.sumologic.com/docs/send-data/collector-faq/#troubleshooting-time-discrepancies).
+parsing format for the Source, and test the format to make sure it is valid. See [troubleshooting large message time and receipt time discrepancies](/docs/send-data/collector-faq/#troubleshooting-time-discrepancies).
 
 Alternately, if you’re noticing that timestamps are not parsing properly, check the timestamp conventions of your logs. Learn more in [Timestamps, Time Zones, Time Ranges, and Date Formats](docs/send-data/reference-information/time-reference.md).
 
