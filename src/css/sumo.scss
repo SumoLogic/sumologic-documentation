@@ -1299,10 +1299,11 @@ html[data-theme='dark'] .card:hover {
   color: white;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom center;
+  background-position: top;
+  display: flex;
   background-image:
     url("../../static/img/hero-secondary-background.png") !important;
-    max-height: 500px;
+
 
 }
 
