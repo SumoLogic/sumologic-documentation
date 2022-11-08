@@ -21,25 +21,25 @@ For information about the installer prompts, see [Network Sensor Deployment Gui
 
 | Sensor                  | URL                                                              |
 |-------------------------|------------------------------------------------------------------|
-| Network Sensor Ubuntu18 | https://collectors.au.sumologic.com/rest/sec/download/ubuntu1  |
-| Network Sensor Ubuntu20 | https://collectors.au.sumologic.com/rest/sec/download/ubuntu2  |
-| Network Sensor CentOS7  | https://collectors.au.sumologic.com/rest/sec/download/centos   |
-| Network Sensor CentOS8  | https://collectors.au.sumologic.com/rest/sec/download/centos   |
+| Network Sensor Ubuntu18 | https://collectors.au.sumologic.com/rest/sec/download/ubuntu18 |
+| Network Sensor Ubuntu20 | https://collectors.au.sumologic.com/rest/sec/download/ubuntu20 |
+| Network Sensor CentOS7  | https://collectors.au.sumologic.com/rest/sec/download/centos7 |
+| Network Sensor CentOS8  | https://collectors.au.sumologic.com/rest/sec/download/centos8 |
 
 ## Sensor download URLs for the CA region
 
 | Sensor                  | URL                                                              |
 |-------------------------|------------------------------------------------------------------|
-| Network Sensor Ubuntu18 | https://collectors.ca.sumologic.com/rest/sec/download/ubuntu1  |
-| Network Sensor Ubuntu20 | https://collectors.ca.sumologic.com/rest/sec/download/ubuntu2  |
-| Network Sensor CentOS7  | https://collectors.ca.sumologic.com/rest/sec/download/centos   |
-| Network Sensor CentOS8  | https://collectors.ca.sumologic.com/rest/sec/download/centos   |
+| Network Sensor Ubuntu18 | https://collectors.ca.sumologic.com/rest/sec/download/ubuntu18 |
+| Network Sensor Ubuntu20 | https://collectors.ca.sumologic.com/rest/sec/download/ubuntu20 |
+| Network Sensor CentOS7  | https://collectors.ca.sumologic.com/rest/sec/download/centos7 |
+| Network Sensor CentOS8  | https://collectors.ca.sumologic.com/rest/sec/download/centos8 |
 
 ## Sensor download URLs for the US2 region
 
 | Sensor                  | URL                                                               |
 |-------------------------|-------------------------------------------------------------------|
-| Network Sensor Ubuntu18 | https://collectors.us2.sumologic.com/rest/sec/download/ubuntu1  |
-| Network Sensor Ubuntu20 | https://collectors.us2.sumologic.com/rest/sec/download/ubuntu2  |
-| Network Sensor CentOS7  | https://collectors.us2.sumologic.com/rest/sec/download/centos   |
-| Network Sensor CentOS8  | https://collectors.us2.sumologic.com/rest/sec/download/centos   |
+| Network Sensor Ubuntu18 | https://collectors.us2.sumologic.com/rest/sec/download/ubuntu18 |
+| Network Sensor Ubuntu20 | https://collectors.us2.sumologic.com/rest/sec/download/ubuntu20 |
+| Network Sensor CentOS7  | https://collectors.us2.sumologic.com/rest/sec/download/centos7 |
+| Network Sensor CentOS8  | https://collectors.us2.sumologic.com/rest/sec/download/centos8 |
