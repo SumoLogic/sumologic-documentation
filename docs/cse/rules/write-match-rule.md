@@ -33,7 +33,7 @@ This rule fires a Signal each time a UserPoolClient, which has permission to cal
 1. On the **Create a Rule** page, click **Create** in the **Match** card. <br/>![select-rule-type.png](/img/cse/select-rule-type.png)
 1. In the rules editor:
    1. **Name**. Enter a name for the rule.
-   1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it. <br/>![match.png](/img/cse/match.png)
+   1. **Enabled**. By default, the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it. <br/>![match.png](/img/cse/match.png)
 
 ## Configure "Then Create a Signal" settings
 
