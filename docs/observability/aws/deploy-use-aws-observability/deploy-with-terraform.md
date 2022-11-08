@@ -1463,7 +1463,7 @@ Parameters will take default values as defined under the default column.
 
 This installs the following:
 
-* Apps: AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, AWS NLB, AWS SNS, and AWS SQS.
+* Apps: AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, AWS NLB, AWS SNS and AWS SQS.
   * Default location: “AWS Observability Apps” Personal folder in Sumo Logic
 * Alerts for the AWS Observability Solution
   * Default location: “AWS Observability Monitors” folder of the Monitors folder
