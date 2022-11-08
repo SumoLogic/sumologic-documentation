@@ -162,4 +162,5 @@ Use this dashboard to:
 * Monitor details of threat locations and count.
 * Get details of threats by malicious confidence and malicious IPs.
 * Get details of all threats by IPs.
+
 ![3.Amazon SQS - Threat Intel](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-ThreatIntel.png)
