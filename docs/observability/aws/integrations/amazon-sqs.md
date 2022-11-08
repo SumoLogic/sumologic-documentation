@@ -69,7 +69,7 @@ The App uses SQS logs and metrics for:
 
 **Messages Received (Metric based)**:
 
-metric=NumberOfMessagesReceived Statistic=Sum account=* region=* namespace=* queuename=* | sum by account, region, namespace, queuename
+`metric=NumberOfMessagesReceived Statistic=Sum account=* region=* namespace=* queuename=* | sum by account, region, namespace, queuename`
 
 **Top 10 users (CloudTrail Log based)**:
 
