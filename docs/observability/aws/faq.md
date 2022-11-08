@@ -22,7 +22,7 @@ Our AWS Observability solution enables you to view your entire AWS environment i
 
 * **AWS Observability Solution** - Sumo Logic’s AWS Observability solution pulls in data across key AWS services and accounts to give a unified view of AWS environments. Easily navigate from overview dashboards into account, region, availability zone, or service specific views. Intuitive navigation ensures teams can quickly resolve issues, minimize downtime, and improve system availability. See [About AWS Observability](docs/observability/aws/about.md).
 
-See [AWS Observability Apps](/docs/observability/aws/integrations) for detailed information on all supported apps including Application, Classic, and Network Load Balancer, DynamoDB, EC2, RDS, API Gateway, ECS, ElastiCache, Lambda, SNS and SQS.
+See [AWS Observability Apps](/docs/observability/aws/integrations) for detailed information on all supported apps including Application, Classic, and Network Load Balancer, DynamoDB, EC2, RDS, API Gateway, ECS, ElastiCache, Lambda, SNS, and SQS.
 
 ### What AWS services are supported?
 
