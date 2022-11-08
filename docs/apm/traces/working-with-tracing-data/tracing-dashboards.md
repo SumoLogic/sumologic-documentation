@@ -11,11 +11,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Service and Application dashboards are available as two Explore hierarchies. You can access them in the **Explore By** drop down menu.
 
-The **APM: Application View** groups services into higher-level applications based on the `application=[app-name]` custom tag that you may add to your tracing data if you want to leverage it fully. Without the tag, all services will belong to a "default" application. The third level shows the top 50 most active operations executed on the service. See [Working with Span attributes](../advanced-configuration/working-with-span-attributes.md) to learn how to how to customize your span attributes.
+The **APM: Application View** groups services into higher-level applications based on the `application=[app-name]` custom tag that you may add to your tracing data if you want to leverage it fully. Without the tag, all services will belong to a "default" application. The third level shows environment automatically picked from OT deployment.environment tag. Without the tag, all data will belong to a "default" environment.
+The fourth and last shows the top 50 most active operations executed on the service. See [Working with Span attributes](../advanced-configuration/working-with-span-attributes.md) to learn how to how to customize your span attributes.
 
-The **APM: Service View** takes a contrary approach, displaying services by top level and breaking down their health by application. This view can be useful for shared services that support more than one application. The third level shows the top 50 most active operations performed on the selected service and application.
+The **APM: Service View** takes a contrary approach, displaying services by top level and breaking down their health by application. This view can be useful for shared services that support more than one application. The fourth level shows the top 50 most active operations performed on the selected service and application.
 
-The **APM: Environment View** displays environments at the top level and breaks down application health by environment (i.e., prod or dev). This view can be especially useful for understanding the top-down hierarchy of applications and services in a particular environment. The third level shows the top 50 most active operations executed on the environment, application, and service. <br/><img src={useBaseUrl('img/traces/Service-Dashboards-from-traces.png')} alt="Service Dashboards from traces" width="350"/>
+The **APM: Environment View** displays environments at the top level and breaks down application health by environment (i.e., prod or dev). This view can be especially useful for understanding the top-down hierarchy of applications and services in a particular environment. The fourth level shows the top 50 most active operations executed on the environment, application, and service. <br/><img src={useBaseUrl('img/traces/Service-Dashboards-from-traces.png')} alt="Service Dashboards from traces" width="350"/>
 
 Services need to be active in the last 15 minutes to appear on the list. Recent inactivity will result in a grayed-out list entry.
 
@@ -27,7 +28,7 @@ Each dashboard is a fully customizable set of panels based on automatically gene
 * **Requests**: (real-time counter) the number of entry spans reported by the service
 * **Errors**: (real-time counter) the number of entry spans for the service that finished with an error
 
-By clicking on any data point on the chart, you can view the side panel's **Infrastructure** tab and drill down to related metrics or traces for the selected service.
+By clicking on any data point on the chart, you can view the side panel's **Entities** tab and drill down to related metrics or traces for the selected service.
 
 :::note
 Drilling to traces by application and to logs by both service and application are coming soon and are not working yet.
@@ -35,7 +36,7 @@ Drilling to traces by application and to logs by both service and application ar
 
 ![Explore coffee app to drill down on infrastructure tab.png](/img/traces/coffee-app-infrastructure-tab.png)
 
-## Installing the Tracing App
+## Installing the Tracing App (Optional)
 
 The **Tracing - Application Services Health** app is automatically installed for all users of your organization once Sumo Logic detects OT-compatible tracing data coming from your instrumented services. The content is placed in **Sumo Logic Tracing - default dashboards** inside the **Admin Recommended** folder and is automatically available for all users in the organization.
 
@@ -70,7 +71,7 @@ To add a **Service Map** panel to your Dashboard:
 1. Select from the drop-down menus to filter the Service Map by the following:<br/>  ![filter-servicemap.png](/img/traces/filter-servicemap.png)
    * **Application** if your tracing data has the `application=[app-name]` tag
    * **Service** 
-   * To pass the variables from dashboard filters, set `application={{application}}` and/or `service={{service}}`
+   * To pass the variables from dashboard filters, set `application={{application}}`, `service={{service}}`, and/or `deployment.environment`
 1. Do not set the time. Service Map always shows last 72h of data.
 1. The **Chart Type** is set to Graph.
 1. Click the **General** tab to edit the Panel Details. Enter a name for the panel, set a **Title Font Size**, and add a short **Description**.<br/>  ![tracelist-details.png](/img/traces/tracelist-details.png)
