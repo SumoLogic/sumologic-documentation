@@ -116,7 +116,7 @@ Click on the appropriate link below based on the environment where your Kafka cl
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The following diagram illustrates how data is collected from Kafka in Kubernetes environments. In the following architecture, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The following diagram illustrates how data is collected from Kafka in Kubernetes environments. In the following architecture, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/kafka-k8s.png')} alt="non k8s-diagram" />
 
@@ -128,7 +128,7 @@ Follow these steps to collect metrics from a Kubernetes environment:
 
 1. **Setup Kubernetes Collection with the Telegraf operator**. Ensure that you are monitoring your Kubernetes clusters with the Telegraf operator **enabled**. If you are not, then follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to do so.
 2. **Add annotations on your Kafka pods**.
-   1. Open[ this yaml file](https://sumologic-app-data.s3.amazonaws.com/Kafka/KAfka_PodAnnotations.yaml) and add the annotations mentioned there.
+   1. Open [this yaml file](https://sumologic-app-data.s3.amazonaws.com/Kafka/KAfka_PodAnnotations.yaml) and add the annotations mentioned there.
    2. Enter in values for the parameters marked with `CHANGE_ME` in the yaml file:
      * `telegraf.influxdata.com/inputs` - As telegraf will be run as a sidecar the `urls` should always be localhost.
      * In the input plugins section:
@@ -147,7 +147,7 @@ Here’s an explanation for additional values set by this configuration that we 
         * `component: “messaging”` - This value is used by Sumo Logic apps to identify application components.
         * `messaging_system: “kafka”` - This value identifies the database system.
 
-For more information on all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+For more information on all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 For more information on configuring the Joloka input plugin for Telegraf see[ this doc] (https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2).
 
@@ -208,8 +208,8 @@ This section explains the steps to collect Kafka logs from a Kubernetes environm
       * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
       * `component: “messaging”` - This value is used by Sumo Logic apps to identify application components.
       * `messaging_system: “kafka”` - This value identifies the messaging system.
-      * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
-   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, see [this page](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+      * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) for more parameters that can be configured in the Telegraf agent globally.
+   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, see [this page](/docs/integrations/containers-orchestration/kubernetes/#collecting-metrics-and-logs-for-the-kubernetes-app).
 2. **Collect Kafka logs written to log files (Optional)**. If your Kafka helm chart/pod is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to standard out. To do this:
    1. Determine the location of the Kafka log file on Kubernetes. This can be determined from helm chart configurations.
    2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
@@ -286,18 +286,18 @@ This section provides instructions for configuring metrics collection for the Su
 
 #### Configure Collection of Kafka Metrics
 
-1. Configure a Hosted Collector. To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](https://helpstaging.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) section of the Sumo Logic documentation.
-2. Configure an HTTP Logs and Metrics Source. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](https://helpstaging.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source). Make a note of the **HTTP Source URL**.
-3. Install Telegraf. Follow the steps in [this document](https://helpstaging.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf) to install Telegraf on each Kafka Broker node.
+1. Configure a Hosted Collector. To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
+2. Configure an HTTP Logs and Metrics Source. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/hosted-collectors/http-source). Make a note of the **HTTP Source URL**.
+3. Install Telegraf. Follow the steps in [this document](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to install Telegraf on each Kafka Broker node.
 4. Configure and start telegraf. Create or modify the telegraf.conf file in /etc/telegraf/telegraf.d and copy and paste the text [from this file](https://sumologic-app-data.s3.amazonaws.com/Kafka/config_telegraf.conf).  
-1. Please enter values for the following parameters (marked with `CHANGE_ME`) in the downloaded file:
+5. Please enter values for the following parameters (marked with `CHANGE_ME`) in the downloaded file:
 * In the input plugins section, which is `[[inputs.jolokia2_agent]]`:
     * `urls` - In the `[[inputs.jolokia2_agent]]` section. The URL to the Kafka server. This can be a comma-separated list to connect to multiple Kafka servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Jolokia input plugin for Telegraf.
     * In the tags sections (total 3) which is section[inputs.jolokia2_agent.tags], and [inputs.disk.tags]
         * `environment` - This is the deployment environment where the Kafka cluster identified by the value of `urls` parameter resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `messaging_cluster` - Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * In the output plugins section:
-    * `url` - This is the HTTP source URL created in step 3. Please see [this doc](https://helpstaging.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
+    * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
 **Do not modify these values** as they will cause the Sumo Logic apps to not function correctly:
 * `data_format` - “prometheus” In the output plugins section. In other words, this indicates that metrics should be sent in the Prometheus format to Sumo Logic.
@@ -308,7 +308,7 @@ This section provides instructions for configuring metrics collection for the Su
 Here is an example [telegraf.conf](https://sumologic-app-data.s3.amazonaws.com/Kafka/telegraf.conf+) file.
 
 For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) for more properties that can be configured in the Telegraf agent globally.
-5. Restart Telegraf. Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from their [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
+6. Restart Telegraf. Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from their [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
 At this point, Kafka metrics should start flowing into Sumo Logic.
 
@@ -316,16 +316,16 @@ At this point, Kafka metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for Kafka running on a non-Kubernetes environment for the Sumo Logic App for Kafka. By default, Kafka logs are stored in a log file. Perform the steps outlined below for each Kafka Broker node.
 1. Configure logging in Kafka. By default Kafka logs (server.log and controller.log) are stored in the directory: `/opt/Kafka/kafka_<VERSION>/logs`. Make a note of the above logs directory.
-2. Configure an Installed Collector. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](https://helpstaging.sumologic.com/03Send-Data/Installed-Collectors)
+2. Configure an Installed Collector. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 3. Configuring a Source. To add a Local File Source source for Kafka do the following:
-   1. Add a [Local File Source](https://helpstaging.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source) in the installed collector configured in the previous step.
+   1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:
      * **Name.** (Required)
      * **Description.** (Optional)
      * **File Path (Required).** Enter the path to your server.log and controller.log. The files are typically located in `/opt/Kafka/kafka_<VERSION>/logs/*.log`.
      * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-     * **Source Category.** Enter any string to tag the output collected from this Source, such as **Kafka/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](https://helpstaging.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
-     * **Fields.**Set the following fields. For more information on fields please see [this document](https://helpstaging.sumologic.com/Manage/Fields):
+     * **Source Category.** Enter any string to tag the output collected from this Source, such as **Kafka/Logs**. The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](//docs/send-data/best-practices/#good-and-bad-source-categories).
+     * **Fields.**Set the following fields. For more information on fields please see [this document](/docs/Manage/Fields):
        ```    
        component = messaging
        messaging_system = kafka
@@ -374,10 +374,9 @@ Create or modify config.yaml. Refer sample config [here](https://ot-distro.s3.am
 * `messaging_system`: “kafka” - In the input plugins sections.In other words, this value identifies the messaging system.
 * `component`: “messaging” - In the input plugins sections. In other words, this value identifies application components.
 
-For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) for more properties that can be configured in the Telegraf agent globally.
-
+For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) for more properties that can be configured in the Telegraf agent globally.
 * Run the Sumo Logic OT Distro using the below command
-  ```
+  ```bash
   otelcol-sumo --config config.yaml
   ```
 
@@ -414,9 +413,9 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ### Method B: Using a Terraform script
 
-1. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this[ link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in using [this link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-3. Download the Sumo Logic Terraform package for Kafka alerts. The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Kafka). You can either download it through the “git clone” command or as a zip file.
+3. Download the Sumo Logic Terraform package for Kafka alerts. The alerts package is available in the Sumo Logic [github repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Kafka). You can either download it through the “git clone” command or as a zip file.
 4. Alert Configuration. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Kafka`.
    1. Edit the `monitor.auto.tfvars` file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
     ```bash
