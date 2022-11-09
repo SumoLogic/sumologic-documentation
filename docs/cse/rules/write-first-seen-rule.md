@@ -23,7 +23,7 @@ First Seen rules allow you to generate a Signal when behavior by an entity (user
 
 * First time a user logged in from a new geographic location (geolocation)
 * Newly created or added admin accounts
-* An EDR alert seen for the first time on a device or in an org
+* High severity EDR alert seen for the first time
 * MFA acceptance from first seen device
 
 A First Seen rule is different from other CSE rule types in that you don’t define the criteria for firing a Signal. Instead, the rule expression in a First Seen rule is simply a filter condition that defines what incoming Records the rule will apply to. For each First Seen rule, CSE automatically creates a baseline of normal behavior evidenced by Records that match the Rule Expression. After the baseline period is completed, when an incoming Record includes activity not seen during the baseline period, the rule creates a Signal.
@@ -31,7 +31,7 @@ A First Seen rule is different from other CSE rule types in that you don’t def
 For example, for the “First time a user logged in from a new geographic location” use case, CSE will build a baseline of all the geolocations from where a logon event is seen for the entity (user). Once the baselining period is complete, CSE will create a Signal for every new geolocation detected and incrementally add to the baseline.
 
 ## Example rule
-The screenshot below shows a First Seen rule in the CSE rules editor. For an explanation of the configuration options, see [Configure a First Seen](#configure-a-first-seen-rule) rule, below.
+The screenshot below shows a First Seen rule in the CSE rules editor. For an explanation of the configuration options, see [Configure a First Seen Rule](#configure-a-first-seen-rule), below.
 <img src={useBaseUrl('img/cse/first-seen-rule.png')} alt="first-seen-rule.png"/>
 
 
