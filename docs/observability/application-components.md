@@ -12,9 +12,7 @@ Pre-configured dashboards available for application components solve many common
 * Minimizing the troubleshooting time by providing all relevant information in the right context.
 
 :::caution Limitations
-
-Currently supported only for the following apps:
-
+This solution is currently supported for the following apps only:
 * [Cassandra](/docs/integrations/databases/cassandra)
 * [Elasticsearch](/docs/integrations/databases/elasticsearch)
 * [MongoDB](/docs/integrations/databases/mongodb)
@@ -27,9 +25,9 @@ Currently supported only for the following apps:
 * [Oracle](/docs/integrations/databases/oracle)
 :::
 
-## Install using the Automation Script
+## Installation
 
-These instructions help you configure and deploy the Application Components Solution using a Terraform script.
+To use the Application Components Solution, you'll need to install a Terraform automation script.
 
 The Terraform script performs the following actions:
 * Creates Application Components View hierarchy in Explore.
@@ -182,7 +180,7 @@ As part of configuring the Application Components solution, we need to create fi
  export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
  export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
  ```
- Provide your Sumo Logic deployment for the `SUMOLOGIC_ENV` variable. For example: au, ca, de, eu, jp, us2, in, fed or us1. For more information on Sumo Logic deployments, see [Sumo Logic Endpoints and Firewall Security](https://helpstaging.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+ Provide your Sumo Logic deployment for the `SUMOLOGIC_ENV` variable. For example: au, ca, de, eu, jp, us2, in, fed or us1. For more information on Sumo Logic deployments, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 * Run fields.sh using this command:
  ```
  sh fields.sh
@@ -260,8 +258,7 @@ This section shows how to use Explore and navigate Application Components hierar
 
 Explore is an out-of-the-box Sumo Logic navigation tool that provides an intuitive visual representation of your environment.
 
-**To open Explore and Application Components View, do the following:**
-
+To open Explore and Application Components View:
 1. Log in to Sumo Logic and click **+ New** on the top menu bar.
 1. From the drop-down menu, choose **Explore**. The Explore navigation panel appears on the left.
 1. Click the **Explore By** arrow and select **Application Components View** from the drop-down menu. An expandable list of your AWS environment hierarchy appears in the Explore panel.
@@ -274,10 +271,10 @@ The **Application Components - Database System Overview** dashboard appears in t
 
 ## Frequently Asked Questions
 
-#### How do I configure it for new databases when they are running terraform and apply a second time?
+#### How do I configure the solution for new databases that are already running terraform?
 Assuming your last terraform application run was successful and you have the tfstate file locally. You can add new components in `components_on_non_kubernetes_deployment` or `components_on_kubernetes_deployment` parameters and rerun `terraform apply`.
 
-#### How do I update the Solution if a new version gets released?
+#### How do I update the solution if a new version gets released?
 1. Back up your Application Component Solution - Apps folder and Application Component Solution - Monitor folder by exporting the content.
 2. Pull the master branch of [the repository](https://github.com/SumoLogic/sumologic-solution-templates/) and run `terraform apply`. It will update all the apps, FERs, hierarchies, fields, and monitors.
 3. The above step will deploy new dashboards and new monitors, so after migrating your custom content to these new dashboards, you can delete old FERs and dashboards.
@@ -292,5 +289,5 @@ See the [RESOURCES.md file](https://github.com/SumoLogic/sumologic-solution-temp
 Existing customers have to perform the below steps:
 1. Add `db_cluster_address` and `db_cluster` port in their telegraf configuration as mentioned in the respective component’s collection doc. This is for tagging metrics.
 2. Add `db_cluster_address` and `db_cluster_port` in the sumologic source for logs as mentioned in the respective component’s collection doc.
-3. Import the existing fields using fields.sh script in Step 4 and follow Step 1, 2, 3, and 5 to deploy the solution.
+3. Import the existing fields using fields.sh script in Step 4 and follow Step 1, 2, 3, and 5 under [Installation](#installation) to deploy the solution.
 4. The above step will deploy new dashboards and new monitors, so after migrating your custom content to these new dashboards, you can delete old FERs and dashboards.

@@ -1,7 +1,6 @@
 ---
 id: http-traces-source
-title: HTTP Traces Source
-sidebar_label: HTTP Traces Source
+title: Configure an HTTP Traces Source
 description: An HTTP Traces Source is an endpoint for receiving traces.
 ---
 
@@ -20,20 +19,11 @@ To configure an HTTP Traces Source:
 
 1. In the Sumo Logic web interface, select **Manage Data \> Collection \> Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Select **HTTP Traces**. 
-
-    ![http traces.png](/img/traces/http-traces.png)
-
-1. Enter a **Name** for the Source. A description is optional.
-
-    ![traces source no fields.png](/img/traces/traces-source-no-fields.png)
-
+1. Select **HTTP Traces**. <br/>  ![http traces.png](/img/traces/http-traces.png)
+1. Enter a **Name** for the Source. A description is optional. <br/>    ![traces source no fields.png](/img/traces/traces-source-no-fields.png)
 1. (Optional) For **Source Host** and **Source Category**, enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields that allow you to organize your data.
-
 1. When you are finished configuring the Source click **Save**.
 
 ## View the endpoint URL
 
-If you need to access the Source's URL again, click **Show URL**.
-
-![show url traces.png](/img/traces/show-url-traces.png)
+If you need to access the Source's URL again, click **Show URL**.  <br/>   ![show url traces.png](/img/traces/show-url-traces.png)
