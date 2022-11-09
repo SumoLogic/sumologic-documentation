@@ -18,11 +18,11 @@ The Sumo Logic App for Host Metrics (EC2) allows you to collect your EC2 instanc
 
 Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/Host-Metrics-Source#Collected_Metrics).
 
-* [CPU Metrics](/docs/integrations/Hosts-Operating-Systems/Host-Metrics#CPU_Metrics-2349)
-* [Memory Metrics](/docs/integrations/Hosts-Operating-Systems/Host-Metrics#Memory_Metrics-2349)
-* [TCP Metrics](/docs/integrations/Hosts-Operating-Systems/Host-Metrics#TCP_Metrics-2349)
-* [Networking Metrics](/docs/integrations/Hosts-Operating-Systems/Host-Metrics#TCP_Metrics-2349)
-* [Disk Metrics](/docs/integrations/Hosts-Operating-Systems/Host-Metrics#Disk_Metrics-2349)
+* [CPU Metrics](/docs/integrations/hosts-operating-systems/host-metrics#CPU-Metrics)
+* [Memory Metrics](/docs/integrations/hosts-operating-systems/host-metrics#Memory-Metrics)
+* [TCP Metrics](/docs/integrations/hosts-operating-systems/host-metrics#TCP-Metrics)
+* [Networking Metrics](/docs/integrations/hosts-operating-systems/host-metrics#networking-metrics)
+* [Disk Metrics](/docs/integrations/hosts-operating-systems/host-metrics#disk-metrics)
 
 
 ### Sample Query  
