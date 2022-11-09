@@ -1533,6 +1533,7 @@ module.exports = {
                 'observability/aws/integrations/aws-classic-load-balancer',
                 'observability/aws/integrations/aws-dynamodb',
                 'observability/aws/integrations/aws-ec2-metrics',
+                'observability/aws/integrations/aws-ec2-cloudwatch-metrics',
                 'observability/aws/integrations/aws-lambda',
                 'observability/aws/integrations/aws-network-load-balancer',
                 'observability/aws/integrations/aws-rds-metrics',
