@@ -180,7 +180,7 @@ As part of configuring the Application Components solution, we need to create fi
  export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
  export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
  ```
- Provide your Sumo Logic deployment for the `SUMOLOGIC_ENV` variable. For example: au, ca, de, eu, jp, us2, in, fed or us1. For more information on Sumo Logic deployments, see [Sumo Logic Endpoints and Firewall Security](https://helpstaging.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+ Provide your Sumo Logic deployment for the `SUMOLOGIC_ENV` variable. For example: au, ca, de, eu, jp, us2, in, fed or us1. For more information on Sumo Logic deployments, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 * Run fields.sh using this command:
  ```
  sh fields.sh
