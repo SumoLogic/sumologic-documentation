@@ -571,40 +571,42 @@ html[data-theme='dark'] .navbar-item-github:before {
 
 //Get Started button - homepage, 404 not found
 
+.homepage {
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
 
 .homepage {
-  background-color: #2aa1e6;
-  color: white;
-  padding: 12px 14px;
+  background-color: transparent;
+  color: black;
+  padding: 12px 12px;
   font-weight: 300;
   font-size: 15px;
 //  filter: drop-shadow(-1px 2px 2px #64696C);
   text-decoration: none;
-  border: .5px solid #2aa1e6;
-  border-radius: 4px;
+  border: .5px solid #FFF;
+  border-radius: 10px;
   margin-right: 5px;
   margin-bottom: 10px;
-  transition: all 0.5s;
+  transition: 0.5s;
   cursor: pointer;
   a {
-    color: white;
+    color: #F1F1F1;
     text-decoration: none;
   }
   a:hover {
-    color: white;
+    color: #0046BE;
   }
 }
 
-
 .homepage:hover {
   background-color: #0046BE;
-  color: black;
-  padding: 12px 14px;
+  color: #F1F1F1;
+  padding: 12px 12px;
   font-weight: 300;
   font-size: 15px;
+  transition: 0.5s;
   text-decoration: none;
-  transition: all 0.5s;
-  border: .5px solid #FFFFFF;
+  border: .5px solid #0046BE;
   cursor: pointer;
   a {
     color: white;
@@ -616,7 +618,7 @@ html[data-theme='dark'] .navbar-item-github:before {
 }
 
 .homepage-mobile {
-  background-color: #2aa1e6;
+  background-color: transparent;
   color: white;
   padding: 8px 14px;
   font-weight: 300;
@@ -639,18 +641,6 @@ html[data-theme='dark'] .navbar-item-github:before {
     display: none;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1096,30 +1086,27 @@ html[data-theme='dark'] .card:hover {
 .container-landpage2 {
   padding: 1rem;
   display: flex;
-  gap: 1%;
+  gap: 5%;
 }
 
 .column-left p,
 .column-right p {
-  text-align: left;
+  font-size: 16px;
 }
 
 .column-left {
-  width: 50%;
-  margin-top: 1rem;
+  margin-left: 1rem;
 }
 
 .column-right {
   color: white;
+  padding-left: 20rem;
+  display: flex;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: right;
   background-image:
     url("../../static/img/hero-secondary-graphic.png") !important;
-
-  width: 50%;
-  padding: 10rem;
-  display: flex;
 }
 
 
