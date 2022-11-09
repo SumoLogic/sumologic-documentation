@@ -30,9 +30,9 @@ This section provides instructions for configuring log collection for Google Wor
 
 ### About Source Configuration  
 
-Currently, the source name for Google Workspace is still **G Suite Apps Audit Source**, which will be changed/updated shortly.
+Currently, the source name for Google Workspace is still **Google Workspace Apps Audit Source**, which will be changed/updated shortly.
 
-Configure one [G Suite Apps Audit Source](/docs/send-data/hosted-collectors/google-source/g-suite-apps-audit-source) for each Google App from which you want to collect events:
+Configure one [Google Workspace Apps Audit Source](/docs/send-data/hosted-collectors/google-source/g-suite-apps-audit-source) for each Google App from which you want to collect events:
 
 * Google Admin
 * Google Calendar
