@@ -37,7 +37,7 @@ function Home() {
           <h2>Get started with Sumo</h2>
           <p>Get up and running quickly with Sumo Logic search, visualization and analytics capabilities.</p>
           <p><button className="homepage" description="Set up account">
-            <a href="/docs/get-started">1. Set up account</a>
+            <a href="/docs/get-started">1. Set up account CSS add arrow on hover</a>
           </button><br/>
           <button className="homepage" description="Send data">
             <a href="/docs/send-data">2. Install data collector</a>
