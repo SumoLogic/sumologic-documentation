@@ -39,13 +39,13 @@ If you use [Webhook connections](/docs/manage/connections-integrations/webhook-c
 
 ## Alert List
 
-Alert List shows all the Alerts from triggered Monitors within the past seven days. By default, the list is sorted by status (active on top), and then chronologically by creation time.
+Alert List shows all the Alerts from triggered Monitors within the past seven days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time.
 
 To open the Alert List, click the bell icon in the top menu. <br/>![alert list page with bell and border.png](/img/monitors/alert-list-page-bell-border.png)
 * Use the search bar to filter by name, severity, or status.<br/>![search alert list.png](/img/monitors/search-alert-list.png)
-* Click a column header to sort the list.
-* Click a row to select it and use the **Resolve** button to resolve.
-* Double-click a row to open the alert in the Alert page to investigate.
+* To sort the list by category (e.g., Severity, Name, ID), click on a column header.
+* To resolve an alert, click a row to select it and use the **Resolve** button.
+* To open an alert in the Alerts page to further investigate, double-click on a row.
 
 ## Alert Page
 
