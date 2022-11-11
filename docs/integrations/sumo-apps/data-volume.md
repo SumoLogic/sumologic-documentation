@@ -146,6 +146,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Metrics.png')} alt="Data volume dashboards" />
 
+
 ### Log Spikes
 
 The **Data Volume - Log Spikes**  Dashboard helps you quickly identify significant increases in data ingested. Review details of your data ingested for logs.

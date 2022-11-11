@@ -1,0 +1,273 @@
+/* ------------------------------
+ * -- Main Global Styling -------
+ * ------------------------------ */
+
+.\_pendo-guide\_ {
+  /* -- Overarching settings for all guides -- */
+}
+
+.\_pendo-guide-container\_ {
+  /* -- Guide border, shadow, background, etc. -- */
+  z-index:  100 !important;
+}
+
+.\_pendo-guide-container\_ .\_pendo-guide-content\_ {
+  /* -- Content area -- use for font attributes, padding, etc. */
+  
+}
+
+#\_pendo\_g\_uZCIOc2yAGz6xvg1BCTFjmeo49k {
+  z-index: 100 !important
+}
+
+
+/* ------------------------------
+ * -- Lightbox Specific Styling -
+ * ------------------------------ */
+
+.\_pendo-guide-lb\_ {
+  /* -- Overarching settings for Lightbox -- */
+}
+
+.\_pendo-guide-lb\_ .\_pendo-guide-container\_ {
+  /* -- Guide border, shadow, background, etc. -- */
+}
+
+.\_pendo-guide-lb\_ .\_pendo-guide-container\_ .\_pendo-guide-content\_ {
+  /* -- Content area -- use for font attributes, padding, etc. */
+}
+
+.\_pendo-backdrop\_ {
+  /* The backdrop displayed behind lightboxes */
+}
+
+
+/* ------------------------------
+ * -- Tooltip Specific Styling --
+ * ------------------------------ */
+
+.\_pendo-guide-tt\_ {
+  /* Overarching settings for tooltip */
+}
+
+.\_pendo-guide-tt\_ .\_pendo-guide-container\_ {
+  /* -- Guide border, shadow, background, etc. -- */
+}
+
+.\_pendo-guide-tt\_ .\_pendo-guide-container\_ .\_pendo-guide-content\_ {
+  /* -- Content area -- use for font attributes, padding, etc. */
+}
+
+/* -- Pointer on the edge of the tooltip -- */
+.\_pendo-guide-arrow\_ {
+}
+
+.\_pendo-guide-arrow-top\_ {
+}
+
+.\_pendo-guide-arrow-left\_ {
+}
+
+.\_pendo-guide-arrow-right\_ {
+}
+
+.\_pendo-guide-arrow-bottom\_ {
+}
+
+.\_pendo-guide-arrow-border-top\_ {
+}
+
+.\_pendo-guide-arrow-border-left\_ {
+}
+
+.\_pendo-guide-arrow-border-right\_ {
+}
+
+.\_pendo-guide-arrow-border-bottom\_ {
+}
+
+
+/* ------------------------------
+ * -- Mobile Lightbox Styling ---
+ * ------------------------------ */
+
+.\_pendo-guide-mobile-lb\_ {
+  /* Overarching settings for Mobile Lightbox */
+}
+
+.\_pendo-guide-mobile-lb\_ .\_pendo-guide-container\_ {
+  /* -- Guide border, shadow, background, etc. -- */
+}
+
+.\_pendo-guide-mobile-lb\_ .\_pendo-guide-container\_ .\_pendo-guide-content\_ {
+  /* -- Content area -- use for font attributes, padding, etc. */
+}
+
+/* ------------------------------
+ * -- Mobile Tooltip Styling ---
+ * ------------------------------ */
+ .\_pendo-guide-mobile-tt\_ {
+  /* Overarching settings for mobile tooltip */
+}
+
+.\_pendo-guide-mobile-tt\_ .\_pendo-guide-container\_ {
+  /* -- Guide border, shadow, background, etc. -- */
+}
+
+.\_pendo-guide-mobile-tt\_ .\_pendo-guide-container\_ .\_pendo-guide-content\_ {
+  /* -- Content area -- use for font attributes, padding, etc. */
+}
+
+
+/* ------------------------------
+ * -- Launcher Styling ----------
+ * ------------------------------ */
+
+.\_pendo-launcher\_ {
+  /* Overarching settings for Launcher */
+}
+
+.\_pendo-launcher\_ .\_pendo-guide-container\_ {
+  /* -- Launcher border, shadow, background, etc. -- */
+  /* -- (uses tooltip styles by default) -- */
+}
+
+.\_pendo-launcher\_ .\_pendo-launcher-content\_ {
+  /* -- Content area -- use for font attributes, padding, etc. */
+}
+
+.\_pendo-launcher\_ .\_pendo-launcher-header\_ {
+  /* -- Launcher header area -- */
+}
+
+.\_pendo-launcher\_ .\_pendo-launcher-header\_ img {
+  /* -- Launcher header area image styles -- */
+}
+
+.\_pendo-launcher\_ .\_pendo-launcher-header\_ .\_pendo-launcher-title\_ {
+  /* -- Launcher header area text styles -- */
+}
+
+.\_pendo-launcher\_ .\_pendo-launcher-header\_ .\_pendo-launcher-search-box\_ {
+  /* -- Launcher search area (if enabled) -- */
+}
+
+.\_pendo-launcher\_ .\_pendo-launcher-header\_ .\_pendo-launcher-search-box\_ input[type='text'] {
+  /* -- Launcher search area text box -- */
+}
+
+.\_pendo-launcher\_ .\_pendo-launcher-guide-listing\_ {
+  /* -- Launcher guide listing area -- */
+}
+
+.\_pendo-launcher\_ .\_pendo-launcher-guide-listing\_ .\_pendo-launcher-item\_ {
+  /* -- An individual item in the launcher guide listing -- */
+}
+
+.\_pendo-launcher\_ .\_pendo-launcher-footer\_ {
+  /* -- Launcher footer area -- */
+}
+
+.\_pendo-launcher-badge\_ {
+  /* -- Styles for the launcher badge -- */
+}
+
+/* -- Styles for launcher badge orientations -- */
+.\_pendo-launcher-badge-bottom-right\_ {
+}
+
+.\_pendo-launcher-badge-bottom-left\_ {
+}
+
+.\_pendo-launcher-badge-top-right\_ {
+}
+
+.\_pendo-launcher-badge-top-left\_ {
+}
+
+/* -- Styles for launcher orientations -- */
+.\_pendo-launcher-bottom-right\_ {
+}
+
+.\_pendo-launcher-bottom-left\_ {
+}
+
+.\_pendo-launcher-top-right\_ {
+}
+
+.\_pendo-launcher-top-left\_ {
+}
+
+/* ------------------------------
+ * -- Poll Styling --------------
+ * ------------------------------ */
+ 
+.\_pendo-guide-container\_ .\_pendo-poll\_ {
+ /* -- Poll container -- */
+}
+
+.\_pendo-guide-container\_ .\_pendo-poll-question\_ {
+ /* -- Question and answer container (everything but the submit button) -- */
+}
+
+.\_pendo-guide-container\_ .\_pendo-poll-question-prompt\_ {
+ /* -- Question text -- */
+}
+
+.\_pendo-guide-container\_ .\_pendo-poll-question\_ label {
+ /* -- Number Scale Poll positioning and styles for radio button text and inputs -- */
+}
+
+.\_pendo-guide-container\_ .\_pendo-poll-question\_ select {
+ /* -- Dropdown styling -- */
+}
+
+.\_pendo-guide-container\_ .\_pendo-poll-question\_ .\_pendo-poll-npsrating-choices\_ {
+ /* -- NPS Poll ratings container -- */
+}
+
+.\_pendo-guide-container\_ .\_pendo-poll-question\_ .\_pendo-poll-npsrating-choices\_ label {
+ /* -- NPS Poll individual rating - the number scale items -- */
+}
+
+.\_pendo-guide-container\_ .\_pendo-poll-question\_ .\_pendo-poll-npsrating-choices\_ label span {
+  /* -- NPS Poll individual rating - accompanying text for number scale items -- */
+}
+
+.\_pendo-guide-container\_ .\_pendo-poll-npsreason\_ {
+ /* -- NPS Poll optional user-provided explanation container -- */
+}
+
+.\_pendo-guide-container\_ .\_pendo-poll-npsreason\_ .\_pendo-poll-question-prompt\_ {
+ /* -- NPS Poll optional user-provided explanation text -- */
+}
+
+.\_pendo-guide-container\_ .\_pendo-poll-question\_ button {
+  /* -- Yes/No Poll buttons styles -- */
+}
+
+.\_pendo-guide-container\_ .\_pendo-poll-submit\_ {
+ /* -- Submit button styles -- */
+}
+
+.\_pendo-guide-container\_ .\_pendo-poll-message\_ {
+ /* -- "Success message" styles -- */
+}
+
+
+/* ------------------------------
+ * -- Additional Global Styling -
+ * ------------------------------ */
+
+.\_pendo-close-guide\_ {
+  /* -- The dismiss guide button displayed in the corner of every guide -- */
+}
+
+.\_pendo-badge\_ {
+  /* -- Styles for badges -- */
+}
+
+
+/* ------------------------------
+ * -- Your Custom Classes/IDs ---
+ * ------------------------------ */
