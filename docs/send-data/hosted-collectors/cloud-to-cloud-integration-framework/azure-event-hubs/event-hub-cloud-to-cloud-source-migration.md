@@ -1,7 +1,7 @@
 ---
 id: event-hub-cloud-to-cloud-source-migration
 title: Event-Hub-Cloud-to-Cloud-Source-Migration
-sidebar_label: Event Hub Cloud-to-Cloud
+sidebar_label: Event Hub Cloud-to-Cloud Source Migration
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
