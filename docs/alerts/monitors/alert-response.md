@@ -5,6 +5,8 @@ sidebar_label: Alert Response
 description: Quickly investigate and resolve issues you've been alerted about with the context provided by Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Alert Response provides contextual insights about triggered alerts to minimize the time needed to investigate and resolve application failures.
 
 On-call engineers are tasked with firefighting production issues and recovering quickly. They have to investigate issues and try to identify the root cause and fix it, which requires deep knowledge about the production systems, troubleshooting tools, and tons of experience as on-calls. 
@@ -41,11 +43,17 @@ If you use [Webhook connections](/docs/manage/connections-integrations/webhook-c
 
 Alert List shows all the Alerts from triggered Monitors within the past seven days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time.
 
-To open the Alert List, click the bell icon in the top menu. <br/>![alert list page with bell and border.png](/img/monitors/alert-list-page-bell-border.png)
-* Use the search bar to filter by name, severity, or status.<br/>![search alert list.png](/img/monitors/search-alert-list.png)
-* To sort the list by category (e.g., Severity, Name, ID), click on a column header.
-* To resolve an alert, click a row to select it and use the **Resolve** button.
-* To open an alert in the Alerts page to further investigate, double-click on a row.
+To open the Alert List, click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="300"/>
+
+To filter or sort by category (e.g., **Name**, **Severity**, **Status**), you can you the search bar or click on a column header.<br/>![search alert list.png](/img/monitors/search-alert-list.png)
+
+### Resolve Alerts
+
+To resolve an alert, click a row to select it and click **Resolve**.
+
+### View Granular Details
+
+To further investigate an alert in depth, click on a row. This will take you to the [Alert Page](#alert-page), where you can view granular details about an individual alert.
 
 ## Alert Page
 
@@ -139,7 +147,7 @@ Click on the EOI to open the Summary View and Entity Inspector.<br/> ![entit
 
 #### Dimensional Explanations
 
-This card analyzes log data and surfaces dimensions or key-value pairs that drove it to an alerting state. For example, the card below has identified that \~80% of the alert logs have the field **log.Error** with the value `could not retrieve cart: rpc error: code` and is therefore a recommended item to investigate. <br/>![dimensional explanation.png](/img/monitors/dimensional-explanation.png)
+This card analyzes log data and surfaces dimensions or key-value pairs that drove it to an alerting state. For example, the card below has identified that ~80% of the alert logs have the field **log.Error** with the value `could not retrieve cart: rpc error: code` and is therefore a recommended item to investigate. <br/>![dimensional explanation.png](/img/monitors/dimensional-explanation.png)
 
 * **A** - the name of the card (Dimensional Explanations) and a short description of what it does.
 * **B** - a link to open the log query that populated the card, in the log search page.
@@ -162,6 +170,23 @@ For example, the card below shows that “ServiceUnavailable” error is happeni
 * **E** - expand / collapse details panel.
 * **F** - opens a Log Search filtered to the Log messages that match the dimensional details of the telemetry value
 
+## Subscribe to Alerts
+
+To subscribe to an alert, go to your Alert List, hover your mouse over a row, click the three-dot kebab menu, and select **Subscribe**.
+
+To subscribe to a monitor, go to your Alert List, click on a row item, then click **Subscribe to Monitor**.
+
+Here's how you'd enable both of the above options: <br/><img src={useBaseUrl('img/alerts/subscribe-alerts.gif')} alt="subscribe to an alert gif" width="400"/>
+
+### Notification Preferences
+
+1. From the left nav, click on your username > **Notifications** > **Preferences**.
+2. Click on any of the following checkboxes to enable your desired preferences:
+   * **Display Alert Badge**: the bell icon is displayed in the top nav
+	 * **Notify about only subscribed monitors**: the bell icon will only push notifications for monitors you're subscribed to
+	 * **Enable "Active alerts only" as default filter**: your Alert List, by default, will only display alerts with an Active status (excludes Resolved ones)<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="alert-preferences" />
+	 * **Enable "My subscriptions" as default filter**: your Alert List, by default, will only display alerts you're subscribed to<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" />
+3. Click **Save** when you're done.
 
 ## Limitations
 
