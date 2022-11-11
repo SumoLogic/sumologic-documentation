@@ -1743,6 +1743,7 @@
   "/Manage/Partitions_and_Data_Tiers/Data_Tiers": "/docs/manage/partitions-data-tiers/data-tiers",
   "/Manage/Partitions_and_Data_Tiers/Data_Tiers_FAQs": "/docs/manage/partitions-data-tiers/data-tiers-faqs",
   "/Manage/Partitions_and_Data_Tiers/Searching_Data_Tiers": "/docs/manage/partitions-data-tiers/searching-data-tiers",
+  "/Manage/Partitions/Manage_Indexes_with_Variable_Retention": "/docs/manage/partitions-data-tiers/manage-indexes-variable-retention",
   "/Manage/Collection/Processing_Rules": "/docs/send-data/collection/processing-rules",
   "/Manage/Scheduled-Views": "/docs/manage/scheduled-views",
   "/Manage/Scheduled-Views/Add-a-Scheduled-View": "/docs/manage/scheduled-views/add-scheduled-view",
