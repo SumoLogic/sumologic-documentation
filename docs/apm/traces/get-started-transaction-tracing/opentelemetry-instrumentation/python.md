@@ -40,7 +40,7 @@ The next step is related to the installation of the instrumented packages used i
 $ opentelemetry-bootstrap --action=install
 ```
 
-It is possible to install instrumented packages manually but it will require from the user to find libraries used in the code and install their [instrumented counterparts](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/v0.32b0/instrumentation") (such as Flask [opentelemetry-instrumentation-flask](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/v0.32b0/instrumentation/opentelemetry-instrumentation-flask)).
+It is possible to install instrumented packages manually but it will require from the user to find libraries used in the code and install their [instrumented counterparts](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/v0.32b0/instrumentation) (such as Flask [opentelemetry-instrumentation-flask](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/v0.32b0/instrumentation/opentelemetry-instrumentation-flask)).
 
 ## Instrumentation configuration
 
