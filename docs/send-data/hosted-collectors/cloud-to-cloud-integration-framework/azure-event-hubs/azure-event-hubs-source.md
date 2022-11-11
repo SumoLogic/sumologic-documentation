@@ -64,7 +64,7 @@ Third party apps or services can be configured to send event data to Event Hubs 
 
     Copy the Primary/Secondary key associated with this policy.
 
-1. When ![configuring the Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs/azure-event-hubs-source/) in Sumo Logic our input fields would be:
+1. When configuring the Azure Event Hubs Source in Sumo Logic our input fields would be:
 
 | Field | Value  |
 |----------------------------|----------------------|
