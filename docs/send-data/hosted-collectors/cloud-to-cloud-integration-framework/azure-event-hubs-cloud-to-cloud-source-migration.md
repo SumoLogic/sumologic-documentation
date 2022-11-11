@@ -1,7 +1,7 @@
 ---
-id: event-hub-cloud-to-cloud-source-migration
-title: Event-Hub-Cloud-to-Cloud-Source-Migration
-sidebar_label: Event Hub Cloud-to-Cloud Source Migration
+id: azure-event-hubs-cloud-to-cloud-source-migration
+title: Azure Event Hubs Cloud-to-Cloud Source Migration
+sidebar_label: Azure Event Hubs Cloud-to-Cloud Source Migration
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,24 +12,20 @@ Cloud-to-Cloud Sources have below advantages:
 1. Less overhead of maintenance and upgrades, since cloud-to-cloud sources are upgraded automatically for bug fixes.
 2. Lesser cost since the old collection method is used to create multiple resources such as storage accounts, application insights, and azure functions in the customer’s account while cloud-to-cloud sources are hosted in sumo logic infra. On the other hand, a cloud-to-cloud event hub source requires you to create only an event hub in your Azure account.
 
-# Migrating to Event Hub Cloud-to-Cloud Source
+## Migrating to Event Hub Cloud-to-Cloud Source
 
-## Step 1- Choose a migration strategy
+### Step 1- Choose a migration strategy
 
  Choose a migration strategy that is more convenient for you. Migration can be done in two ways:
 
-### 1. **via Existing event hub namespaces**
-
-If you want to continue using the existing **Event hubs namespaces** that are created by the ARM template, jump to the section.
+1. **via Existing event hub namespaces**. If you want to continue using the existing **Event hubs namespaces** that are created by the ARM template, jump to the section.
 The advantage of using the existing strategy is that you don’t have to recreate diagnostic settings in Azure Monitor for exporting the logs to the event hub.
 
 ::: note
 You have to manually delete resources (starting with the prefix Sumo) and cannot delete the whole resource group.
 :::
 
-### 2. **via Creating new event hub namespaces**
-
-If you want to create a new event hub namespace, see step 1 to step 3 in the [Prerequisites](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs/azure-event-hubs-source/#prerequisites) section. The advantage of using this strategy is you can simply delete the resource group where the ARM template was earlier deployed. This assumes you haven’t created any additional resources in the same resource group.
+2. **via Creating new event hub namespaces**. If you want to create a new event hub namespace, see step 1 to step 3 in the [Prerequisites](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration/#prerequisites) section. The advantage of using this strategy is you can simply delete the resource group where the ARM template was earlier deployed. This assumes you haven’t created any additional resources in the same resource group.
 
 ::: note
 You have to first find out what all log types are exported to your event hub and recreate the diagnostic settings for the Azure services. Thus, we recommend creating new diagnostic settings for newer namespaces so that we can delete the older ones after verifying the new collection works without any latency.
