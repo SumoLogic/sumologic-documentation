@@ -6,9 +6,9 @@ sidebar_label: Event Hub Cloud-to-Cloud Source Migration
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Currently, Cloud to Cloud Event hub source supports only logs so only [ARM-based Azure Monitor Logs Collection](https://help.sumologic.com/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/) (functions prefixed with SUMOAzureLogs) can be migrated. This source is available in all deployments including **fedramp**.
+Currently, **Cloud-to-Cloud Event hub source** supports only logs so only [ARM-based Azure Monitor Logs Collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/) (functions prefixed with SUMOAzureLogs) can be migrated. This source is available in all deployments including **fedramp**.
 
-Cloud To Cloud Sources have below advantages
+Cloud-to-Cloud Sources have below advantages:
 1. Less overhead of maintenance and upgrades, since cloud-to-cloud sources are upgraded automatically for bug fixes.
 2. Lesser cost since the old collection method is used to create multiple resources such as storage accounts, application insights, and azure functions in the customer’s account while cloud-to-cloud sources are hosted in sumo logic infra. On the other hand, a cloud-to-cloud event hub source requires you to create only an event hub in your Azure account.
 
@@ -29,7 +29,7 @@ You have to manually delete resources (starting with the prefix Sumo) and cannot
 
 ### 2. **via Creating new event hub namespaces**
 
-If you want to create a new event hub namespace, see steps 1 to steps 3 in the [Prerequisites](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework-azure-event-hubs-source//#prerequisites) section. The advantage of using this strategy is you can simply delete the resource group where the ARM template was earlier deployed. This assumes you haven’t created any additional resources in the same resource group.
+If you want to create a new event hub namespace, see step 1 to step 3 in the [Prerequisites](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs/azure-event-hubs-source/#prerequisites) section. The advantage of using this strategy is you can simply delete the resource group where the ARM template was earlier deployed. This assumes you haven’t created any additional resources in the same resource group.
 
 ::: note
 You have to first find out what all log types are exported to your event hub and recreate the diagnostic settings for the Azure services. Thus, we recommend creating new diagnostic settings for newer namespaces so that we can delete the older ones after verifying the new collection works without any latency.
@@ -59,7 +59,7 @@ After completing the above steps, you will have **Azure Event Hubs Namespace**, 
 
 ## Step 3. Creating event hub cloud-to-cloud sources
 
-For each of the event hubs present in your namespace, you need to create a c2c source, see ![Creating Azure Event Hub Source](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#create-an-azure-event-hubssource) section.
+For each of the event hubs present in your namespace, you need to create a cloud-to-cloud source, see ![Creating Azure Event Hub Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs/azure-event-hubs-source/#create-an-azure-event-hubssource) section.
 
 ::: note
 We recommend giving the same source category so that your custom dashboards or apps require no changes. You can verify whether the data comes from your source using `1_source metadata`.
