@@ -27,7 +27,8 @@ Metrics transformation rules are useful when:
 * You can create a maximum of 50 metrics transformation rules per Sumo account.
 * It can take up to five minutes for a new or updated of a metrics transformation rule to take effect.
 * You cannot alert on a metric created by a transformation rule.
-* You cannot use a metric created by a transformation rule in the selector for a different transformation rule.  
+* You cannot use a metric created by a transformation rule in the selector for a different transformation rule.
+* A `metric` key must be present among aggregated metric's dimensions. You have to either include it in dimensions the rule aggregates on, or add it explicitly to the transformations.
 
 ### Create a Metrics Transformation Rule
 
@@ -67,6 +68,7 @@ Metrics transformation rules are useful when:
         `container_memory_usage_byte_agg_by_svc`
 
         :::note
+        * If a `metric` is not present among dimensions a rule aggregates on, you **must** explicitly add it to the transformations.
         * If you use mustache templates to form the name of a dimension you are adding or replacing, you can use a maximum of 10 templates.
         * A metrics transform rule is limited to 10 transformations.
         * The name you assign to a transformed dimension, and the values returned for transformed dimensions are each limited to 4096 characters. If the dimension key or value is longer than 4096 characters, Sumo will truncate the key or value, retaining only the first 4096 characters.
