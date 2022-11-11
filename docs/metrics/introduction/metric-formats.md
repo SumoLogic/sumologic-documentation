@@ -39,7 +39,7 @@ Graphite does not support meta tags. However, you can use Sumo's metric rules ed
 
 ### Inferred metric name
 
-Due to its nature, Grahpite format doesn't have a notion of named tags. Since Sumo Logic requires each metric to have a valid metric name, in case of Graphite it has to be inferred in some way. Therefore, for every graphite metric sent to our backend, Sumo Logic will add additional `metric` tag with value equal to the last segment of a dot-separated `metric_path`.
+The Graphite format doesn't have a notion of named tags. Since Sumo Logic requires each metric to have a valid metric name, for Graphite metrics, the metric name must be inferred. To accomplish that, for every Graphite metric sent to our backend, Sumo Logic adds an additional `metric` tag, whose value is equal to the last segment of a dot-separated `metric_path`.
 
 For example, for below graphite metric sent to Sumo Logic:
 ```
