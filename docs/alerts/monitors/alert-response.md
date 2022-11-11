@@ -188,6 +188,7 @@ Here's how you'd enable both of the above options: <br/><img src={useBaseUrl('im
 	 * **Enable "My subscriptions" as default filter**: your Alert List, by default, will only display alerts you're subscribed to<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" />
 3. Click **Save** when you're done.
 
+
 ## Limitations
 
 * The [Alert List](#alert-list) page shows up to 1,000 alerts.
