@@ -6,40 +6,35 @@ description: This document provides instructions for creating a monitor.
 
 This document shows you how to create a monitor.
 
-
-## Add a Monitor
-
 1. Go to the Monitors page by clicking **Manage Data** > **Monitoring** > **Monitors**.
 1. Click on the **Add** button > **New Monitor** to add a new Monitor. The creation dialog box will appear.
    * You can configure Sumo Logic Monitors using [Terraform modules](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor).
 1. Select a **Monitor Type**, either Logs or Metrics. <br/>  ![trigger conditions for monitor.png](/img/monitors/trigger-conditions-monitor.png)
 1. Select a **Detection Method**, either Static or Outlier. <br/> ![outlier detection method.png](/img/monitors/outlier-detection-method.png)
-   * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.  
-   * An **outlier** is an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency.  
+   * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.
+   * An **Outlier** is an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency.  
 1. Provide a **Query**. Provide a Query. Logs Monitors can have one query up to 4,000 characters long. For Metrics Monitors, you can specify up to six queries. When providing multiple metrics queries, use the letter labels to reference a query row. The Monitor will automatically detect the query that triggers your alert, and will mark that row with a notification bell icon. See [joined metrics queries](../../metrics/metrics-queries/metrics-explorer.md) for details.<br/> ![metrics-monitor-query-row](/img/monitors/metrics-monitor-query-row.png)
 1. **Outlier** detection methods require you to select the **Direction** you want to track. If you chose **Static**, you won't see this option.<br/>  ![outlier detection input on Monitor.png](/img/monitors/outlier-detection-input.png)
     * **Up.** Only get alerted if there is an abnormal *increase* in the tracked key indicator. 
     * **Down.** Only get alerted if there is an abnormal *decrease* in the tracked key indicator.
     * **Both.** Get alerted if there is *any* abnormality in the data whether an increase or a decrease.
-5. Specify the **Trigger Type**. A Monitor can have one critical, warning, and missing data trigger condition, each with one or more notification destinations. Triggers have different options depending on the query and alert type. Click the **Expand** button next to the query type you're using for configuration details.
+1. Specify the **Trigger Type**. A Monitor can have one critical, warning, and missing data trigger condition, each with one or more notification destinations. Triggers have different options depending on the query and alert type. Click the **Expand** button next to the query type you're using for configuration details.
 
-<details><summary><strong>Expand:</strong> Logs Trigger Types</summary>
+<details><summary><strong>Logs Trigger Types</strong> (expand to view)</summary>
 
-### Logs Trigger Types
+#### Logs Trigger Types
 
 ![Logs monitors.png](/img/monitors/logs-monitors.png)
 
-Trigger alerts on:
-
-![trigger alerts on field.png](/img/monitors/trigger-alerts-field.png)
+Trigger alerts on:<br/>![trigger alerts on field.png](/img/monitors/trigger-alerts-field.png)
 
 You can set the trigger based on the following:
-
 * **returned row count** (default): the number of rows returned from the log search.
 * A numeric field returned from the search. You can pick any numeric field from your query, and alert on the value of that field. The field is `_count` in the above screenshot. To convert a string to a number use the [num operator](/docs/search/search-query-language/search-operators/num). For example, if you have a field named **duration** you would use the num operator as follows to convert it to a number value.
 
-`| num(duration)`
-
+```sh
+| num(duration)
+```
 
 #### Static detection method
 
@@ -57,9 +52,7 @@ You can set the trigger based on the following:
 
 **Recover**
 
-Use the **Edit Recovery Settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available.  
-
-![logs trigger recovery toggle.png](/img/monitors/edit-recovery-settings1.png)  
+Use the **Edit Recovery Settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available.  <br/>![logs trigger recovery toggle.png](/img/monitors/edit-recovery-settings1.png)  
 
 For example, when the alert is set to `> 10` the recovery would be set to `<= 10` when inferred. Sumo Logic automatically resolves the incident when the resolution condition is satisfied. `Recover automatically when result is <threshold type> <threshold> for the selected time period`.
 
@@ -68,7 +61,7 @@ For example, when the alert is set to `> 10` the recovery would be set to `<=
 When configuring monitor trigger conditions, you can set a resolution window to quickly resolve alerts when the underlying issues are fixed. This controls how long a monitor will wait prior to resolving the alert, when the underlying issues was corrected. For example, if your monitor is evaluating the last 60 minutes, you can specify a resolution window of 15 minutes. Once 15 minutes has elapsed with your monitor resolution window continuously satisfied, the alert will resolve. <br/>![config-resolution-window-2](/img/monitors/config-resolution-window-2.png)  
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | Threshold type | How you want the value compared. Select either **greater than**, **greater than or equal**, **less than or equal**, or **less than**. |
 | Threshold | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
 | Occurrence Type	| The time condition you want for recovering the alert. Select either at any time within or at all times. Choose at all times if you want all the data points for the given metric to meet threshold conditions in a given time range, before recovering an alert. Alternatively, choose at any time within if you want to recover an alert when only a single data point meets the threshold condition for the given time range. |
@@ -114,9 +107,9 @@ Recover
 
 </details>
 
-<details><summary><strong>Expand:</strong> Metrics Trigger Types</summary>
+<details><summary><strong>Metrics Trigger Types</strong> (expand to view)</summary>
 
-### Metrics Trigger Types
+#### Metrics Trigger Types
 
 ![metrics query.png](/img/monitors/metrics-query.png)
 
