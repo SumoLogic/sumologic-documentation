@@ -2,7 +2,7 @@
 # Each line is a file pattern followed by one or more owners.
 
 # Default owners for everything in the repo.
-* @kimsauce @stacykor @MariePMcGarry @JainM6 @SumoLogic/open-source-collection-team
+* @kimsauce @stacykor @MariePMcGarry @JainM6 @nmohantyctr @SumoLogic/open-source-collection-team
 
 # Owners of all files in the `/docs` directory and its subdirectories.
-/docs/   @kimsauce @stacykor @MariePMcGarry @JainM6
+/docs/   @kimsauce @stacykor @MariePMcGarry @JainM6 @SumoLogic/open-source-collection-team
