@@ -5,6 +5,10 @@ sidebar_label: Azure Event Hubs
 ---
 
 :::note
+We recommend for the customers using our new Cloud-to-Cloud source collection must refer to [Migration from Azure function-based collection to Event Hub Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-migration).
+:::
+
+:::note
 Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection source has a supported throughput limit of 1MB/S (86GB/day) for a named Event Hub egress rate. We recommend using the [Azure Functions model](/docs/integrations/microsoft-azure/arm-integration-faq/#event-hub-faqs) if you require higher throughput.
 :::
 
