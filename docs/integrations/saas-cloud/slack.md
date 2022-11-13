@@ -286,7 +286,7 @@ _sourceCategory=Labs/slack
 
 ## Collect logs for the Slack App
 
-This legacy solution to pull logs from Slack to Sumo Logic has been replaced with a dedicated [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
+This legacy solution to pull logs from Slack to Sumo Logic has been replaced with a dedicated [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework). We recommend customers use the below [Slack Cloud-to-Cloud source](#create-slack-app-with-permissions) instead of the legacy Python collection method.
 
 
 ### Setup and Configuration Overview
