@@ -43,7 +43,7 @@ Some inventory sources provide user inventory information, some provide computer
 | [Sailpoint Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source.md) | Cloud-to-Cloud] | User |
 | [SentinelOne Mgmt API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source.md) | Cloud-to-Cloud | Computer |
 | [Tenable Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source.md) | Cloud-to-Cloud | Computer |  
-|[Windows Active Directory Inventory Source](docs/send-data/installed-collectors/sources/windows-active-directory-source.md) | Part of Installed Collector | Computer and User |  
+|[Windows Active Directory Inventory Source](docs/send-data/installed-collectors/sources/windows-active-directory-inventory-source.md) | Part of Installed Collector | Computer and User |  
 
 ## Best practices for collecting inventory data
 
