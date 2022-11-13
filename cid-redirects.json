@@ -167,7 +167,7 @@
   "/03Send-Data/Sources/01Sources-for-Installed-Collectors/Streaming-Metrics-Source": "/docs/send-data/installed-collectors/sources/streaming-metrics-source",
   "/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source": "/docs/send-data/installed-collectors/sources/syslog-source",
   "/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06Parameters-for-the-Command-Line-Installer": "/docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer",
-  "/03Send-Data/Sources/01Sources-for-Installed-Collectors/Windows_Active_Directory_Inventory_Source": "/docs/send-data/installed-collectors/sources/windows-active-directory-source",
+  "/03Send-Data/Sources/01Sources-for-Installed-Collectors/Windows_Active_Directory_Inventory_Source": "/docs/send-data/installed-collectors/sources/windows-active-directory-inventory-source",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors": "/docs/send-data/hosted-collectors",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudFront-Source": "/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudfront-source",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics": "/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics",
