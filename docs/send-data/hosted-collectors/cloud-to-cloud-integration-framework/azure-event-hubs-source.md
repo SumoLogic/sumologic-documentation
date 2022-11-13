@@ -5,7 +5,7 @@ sidebar_label: Azure Event Hubs
 ---
 
 :::note
-If you're using our new Cloud-to-Cloud source collection, please see [Migration from Azure function-based collection to Event Hub Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-migration).
+If you're using our new Cloud-to-Cloud source collection, please see [Migration from Azure function-based collection to Event Hub Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration).
 :::
 
 The Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs. It securely stores the required authentication, scheduling, and state tracking information.
