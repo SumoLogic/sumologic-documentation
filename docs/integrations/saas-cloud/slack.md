@@ -284,204 +284,74 @@ _sourceCategory=Labs/slack
 | limit 20
 ```
 
-
 ## Collect logs for the Slack App
 
-This section explains how to collect logs from Slack and ingest them into Sumo Logic for use with the Slack App predefined dashboards and searches.
+This legacy solution to pull logs from Slack to Sumo Logic has been replaced with a dedicated [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
 
-### Collection overview
+### Setup and Configuration Overview
 
-Sumo Logic enables you to collect logs from Slack via the Slack API. You can then configure various log types to collect. The logs are then forwarded to a Sumo Logic [HTTP Source](#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source). By default the collection starts from the current date and time, but this can be configurable. Please see the [Advanced Configuration](#Advanced-Configuration) section for more details. Configuring log collection for the Slack App includes the following tasks:
+The Slack source can collect data from Slack's [Web API](https://api.slack.com/web) and [Audit API](https://api.slack.com/admins/audit-logs). The Web API is used to collect standard channel, user, and message information from a specific workspace. The Audit API is used to collect security audit events across the entire account
+including all workspaces, but it requires a Slack Enterprise Grid license. Each  API collects different information; collect from both if you have a Slack Enterprise Grid license.
 
-* Create a Slack API token for log collection
-* Add a Hosted Collector and HTTP Source
-* Configure collection for Slack
+We recommend creating a Slack App for each Slack Workspace you want to monitor. This requires a Sumo Logic Slack C2C per Slack Workspace. If you have a Slack Enterprise Grid account, you can create an additional Slack app, install it on the Enterprise Grid instead of a Workspace and create another Sumo Logic C2C to monitor your Enterprise Grid audit logs from the Audit API.
 
+**Process overview**
 
-### Create a Slack API token for log collection
+1. Create the Slack App with the correct permissions.
+2. Install the Slack app on a specific workspace to monitor Web API logs or install the app on the Enterprise Grid to monitor Audit API logs.
+3. Install the Sumo Logic Slack C2C using your credentials from the installed Slack App.
 
-This section demonstrates how to generate a Slack API token for all types of Slack plans, and is organized based on the type of Slack plan and log type. Identify your Slack plan and generate the Slack API token, as described in the following steps.
+##### Create Slack App with Permissions
 
+1. Navigate to the [Slack Apps](https://api.slack.com/apps) page.
+2. Click **Create New App**. <br/><img src={useBaseUrl('img/send-data/slack-create-app-button.png')} alt="Create a new Slack app button]" width="<insert-pixel-number>"/>
+3. Select **From scratch** if asked how you would like to configure your Slack app. <br/><img src={useBaseUrl('img/send-data/slack-create-app-from-scratch.png')} alt="From Scratch App]" width="450"/>
+4. Provide a **App Name** for your Slack App and select the Workspace you want to monitor and install the Slack App in.
+The Sumo Logic collector will monitor logs from your workspace you select here. If you want to install the app on the
+Enterprise Grid instead of a workspace to monitor the Audit API logs, select a workspace for now, and you will see
+instructions later for migrating it. <br/><img src={useBaseUrl('img/send-data/slack-create-app-name.png')} alt="App Name and Workspace Assignment]" width="450"/>
+5. Click **Create App**.
+6. You are now presented with the basic information about your Slack app. Click  **Permissions** in the **Add features and functionality** section. <br/><img src={useBaseUrl('img/send-data/slack-basic-info-permissions.png')} alt="App Name and Workspace Assignment]" width="450"/>
+7. Scroll down to the **Scopes** section add multiple **User Token Scopes** depending on your Slack account type. <br/><img src={useBaseUrl('img/send-data/slack-scope-add.png')} alt="App Name and Workspace Assignment]" width="450"/>
 
-### General Guidelines
+Use the table below to reference the required scope permissions you need to add depending on the Slack API you want to collect along with your Slack account type:
 
-<table>
-  <tr>
-   <td>Guideline
-   </td>
-   <td>Enterprise plan
-   </td>
-   <td>Other plans
-   </td>
-  </tr>
-  <tr>
-   <td>Token Generation Permission
-   </td>
-   <td>Owner
-   </td>
-   <td>Admin
-   </td>
-  </tr>
-  <tr>
-   <td>Number of tokens
-   </td>
-   <td>One for Audit Logs
-<p>One per workspace in Enterprise organization for access, user and channel logs</p>
-   </td>
-   <td>One for all logs as per plans
-   </td>
-  </tr>
-  <tr>
-   <td>Collection Installation
-   </td>
-   <td>One per token generation
-   </td>
-   <td>One per token generation
-   </td>
-  </tr>
-</table>
+| Slack API | Slack Account Type   | Required Scopes                                                                                 |
+|:----------|----------------------|-------------------------------------------------------------------------------------------------|
+| Web API   | Free Plan            | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
+| Web API   | Pro                  | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
+| Web API   | Business+            | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
+| Web API   | Enterprise Grid Plan | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
+| Audit API | Enterprise Grid Plan |  auditlogs:read |
 
+##### Install the Slack App on a Workspace for Web API Logs
+Only follow these steps if you are installing a Slack App on a specific workspace to monitor Web API logs. Please ensure
+you have followed the prior steps for creating the Slack app with the appropriate permissions before continuing to this
+section.
 
+1. On the app settings page, click **Install App** and the **Install to Workspace** button. <br/><img src={useBaseUrl('img/send-data/slack-install-app-to-workspace.png')} alt="slack-install-app-to-workspace.png" width="650"/>
+2. Allow your new Slack App to monitor your workspace. <br/><img src={useBaseUrl('img/send-data/slack-app-allow.png')} alt="Allow App to Monitor Workspace" width="450"/>
+3. Save the generated access token. This will be used by the Sumo Logic  configuration for access. <br/><img src={useBaseUrl('img/send-data/slack-copy-user-token.png')} alt="Copy Token" width="500"/>
 
-### Token for Users, channels, and access logs
+##### Install the Slack App on the Enterprise Grid for Audit API Logs
+Only follow these steps if you are installing a Slack App on the Enterprise to monitor Audit API logs. Make sure you have followed the prior steps for creating the Slack app with the appropriate permissions before continuing to this
+section. A Slack Enterprise Grid account is required.
 
-You must have admin privileges to perform this task. The token generated in the following steps can be used by all Slack plans to collect the mentioned [log types](#Log-types).
-
-**To generate a Slack API token for users, channels and access logs, do the following:
-
-1. Go to the [Apps](https://api.slack.com/apps) page.
-2. Click **Create New App.**
-
-
-1.  Enter the **App Name** and select the **Development Slack Workspace** for which you need to generate a token and collect logs.
-
-1. Click **Create App**.
-2. In the **Basic Information** section for the app created above, click **Permissions**.
-
-
-1. In the **Scopes** section, add the following permissions in **User Token Scopes** to collect logs, and then click **Save**. Logs will be collected based on these permissions:
-
-<table>
-  <tr>
-   <td>
-<strong>Permission</strong>
-   </td>
-   <td><strong>Log Collected</strong>
-   </td>
-   <td><strong>Slack Plan</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>admin
-   </td>
-   <td>Access Logs
-   </td>
-   <td>All
-   </td>
-  </tr>
-  <tr>
-   <td>channels:history
-   </td>
-   <td>Public Message Logs
-   </td>
-   <td>All
-   </td>
-  </tr>
-  <tr>
-   <td>channels:read
-   </td>
-   <td>Public Channel Logs
-   </td>
-   <td>All
-   </td>
-  </tr>
-  <tr>
-   <td>Users:read
-<p>users:read.email</p></td>
-   <td>Users Logs
-   </td>
-   <td>All
-   </td>
-  </tr>
-  <tr>
-   <td>team:read
-   </td>
-   <td>Team name in all logs.
-   </td>
-   <td>All
-   </td>
-  </tr>
-</table>
-
-
-1. Go to **Install App** and click **Install App to Workspace**.
-
-The app prompts you for permission to install based on your selected permission.
-
-1. Click **Allow **to install the app to workspace.
-
-
-1. Copy the generated token. You will need to use this token when configuring the Slack collector.
-
-
-1. Verify that the generated token is valid with the following commands. If the token is valid, the output will have "ok":true in the response. Replace the `<API_TOKEN>` variable with the generated token you copied in the previous step.
-
-
-```bash
-curl -X GET -H "Authorization: Bearer <API_TOKEN>" -H "Accept: application/json" "https://slack.com/api/team.info?pretty=1"
-curl -X GET -H "Authorization: Bearer <API_TOKEN>" -H "Accept: application/json" "https://slack.com/api/users.list?limit=5&pretty=1"
-curl -X GET -H "Authorization: Bearer <API_TOKEN>" -H "Accept: application/json" "https://slack.com/api/conversations.list?limit=2&pretty=1"
-```
-
-
-#### Generate a token for Audit logs
-
-This generated token can only be used by the Enterprise Slack plan to collect audit logs.
-
-
-You must have owner privileges to perform this task.
-
-**To generate a Slack API token for audit logs, do the following:
-
-1. For the Sumo Slack app you created in [Users, channels, and access logs](#Users.2C_channels.2C_and_access_logs), Go To **OAuth and Permission.**
-2. Go to **Redirect URLs **and add a Redirect URL as [https://localhost](http://localhost/),** **then click **Save URLs**.
-
-
-1. Go To **Manage Distribution** > **Share Your App with Other Workspaces**
-2. Open the ​**Remove Hard Coded Information** ​section on the same page and check the **I’ve reviewed and removed any hard-coded information ​checkbox**.
-
-1. Click the **Activate Public Distribution**.
-2. Copy the **Shareable URL** and append **auditlogs:read** at the end. Such as in the following example:
-
-
-```bash
-https://slack.com/oauth/authorize?client_id=12345686.853580033397&scope=admin,channels:history,channels:read,team:read,users:read,users:read.email,auditlogs:read
-```
-
-
-1. Open a new tab in your browser, paste the modified URL and press **Enter**.
-2. Select the drop-down menu in the upper right corner and choose the correct organization.
-
-
-1. Click **Allow**.
-2. Ignore the error message and copy the **Code** in the URL field, as shown in the following example.
-
-
-1. Get the client ID and client secret from the Basic information of your Slack app. Replace the variables in brackets (`< >`) in the following URL:
-```bash
-https://slack.com/api/oauth.access?code=<CODE>&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>
-```
-
-
-If **v2**  appears in the URL used for the **share URL** in [step 6,](#Step-6---Shareable-URL) (i.e., https://slack.com/oauth/v2/authorize), use this URL:
-```bash
-https://slack.com/api/oauth.v2.access?code=<CODE>&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>
-```
-
-
-1. Open a new browser tab and paste the URL from the previous step into the URL field, then press **Enter**.
-2. From the response, copy the token value from the field **access_token.**
+1. On the app settings page, click **OAuth & Permissions**. <br/><img src={useBaseUrl('img/send-data/slack-oath-perm-link.png')} alt="Oauth Permissions" width="250"/>
+2. Scroll down to **Redirect URLs**. Add a new redirect URL as `https://localhost` and click **Save URLs**. <br/><img src={useBaseUrl('img/send-data/slack-redirect-url.png')} alt="Redirect URL" width="500"/>
+3. Go to **Manage Distribution > Share Your App with Other Workspaces**
+4. Open the **Remove Hard Coded Information** section on the same page and check the
+**I’ve reviewed and removed any hard-coded information** checkbox. Click the **Activate Public Distribution** button. <br/><img src={useBaseUrl('img/send-data/slack-activate-public-distro.png')} alt="Activate Public Distribution" width="550"/>
+5. Copy the shareable link and ensure the permissions are correct from the prior table.
+6. Open a new tab in your browser, paste the URL and press Enter.
+7. Select the drop-down menu in the upper right corner and choose the correct organization. <br/><img src={useBaseUrl('img/send-data/slack-select-org-menu.png')} alt="Select Org Menu" width="<insert-pixel-number>"/>
+8. Click **Allow**.
+9. Ignore the error message and copy the **Code in the URL** field, as shown in the following example. <br/><img src={useBaseUrl('img/send-data/slack-copy-url-code.png')} alt="Copy URL code" width="<insert-pixel-number>"/>
+10. Get the client ID and client secret from the Basic information of your Slack app. Replace the `<CODE>`, `<CLIENT_ID>`
+and `<CLIENT_SECRET>` variables in the following URL. <br/> `https://slack.com/api/oauth.v2.access?code=<CODE>&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>`
+11. Open a new browser tab and paste the URL from the previous step into the URL field, then press Enter.
+12. From the response, save the token value from the field `access_token` as it will be used for the Sumo source.
 
 ```json
 {
@@ -495,304 +365,13 @@ https://slack.com/api/oauth.v2.access?code=<CODE>&client_id=<CLIENT_ID>&client_s
 }
 ```
 
-1. Verify that the generated token is valid with the following commands. If the token is valid, the output will have "ok":true in the response. Replace the `<API_TOKEN>` variable with the generated token you copied in the previous step.
-```bash
-curl -X GET -H "Authorization: Bearer <API_TOKEN>" -H "Accept: application/json" "https://slack.com/api/team.info?pretty=1"
-curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer <ACCESS_TOKEN>" https://api.slack.com/audit/v1/logs?limit=5&pretty=1
-```
-
-
-#### Add a Hosted Collector and HTTP Source
-
-This section demonstrates how to add a hosted Sumo Logic collector and HTTP Logs source, to collect logs for Slack.
-
-When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this to configure in the configuration file.
-
-Identify an existing Sumo Logic Hosted Collector you want to use, or create a new Hosted Collector as described in the following task
-
-**To add a hosted collector and HTTP source, do the following:
-1. Create a new Sumo Logic Hosted Collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Create a new HTTP Log Source in the hosted collector created above by following [these instructions.](/docs/send-data/hosted-collectors/http-source/logs-metrics)
-
-
-#### Configure collection for Slack
-
-This section covers the various ways in which to collect logs from Slack and send them to Sumo Logic. The logs are then shown in dashboards as part of the Slack App. You can configure a Sumo Logic collector for Slack in Amazon Web Services (AWS) using AWS Lambda service, or use a script on a Linux machine with a CRON job. Choose the method that is best suited for your environment:
-* AWS Lambda based collection via a Serverless Application Model (SAM) application
-* Script based collection
-
-
-#### Sumo Logic Slack SAM application
-
-In this collection method, you deploy the SAM application, which creates the necessary resources in your AWS account.
-
-To deploy the Sumo Logic Slack SAM application, do the following:
-1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
-2. Search for **sumologic-slack** and make sure the checkbox next to the text **Show apps that create custom IAM roles or resource policies** is selected, then click the app link when it appears.
-
-
-1. When the page for the Sumo app appears, click **Deploy**.
-
-
-1. In the **AWS Lambda > Functions >** **Application Settings** panel, enter the following parameters in the corresponding text fields:
-* **HTTPLogsEndpoint.** Copy and paste the URL for the HTTP log source from [Step 2](#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source).
-* **Token.** Copy and paste the Authorization token from [Step 1](#Step_1:_Create_a_Sumo_Logic_app_in_Slack).
-* **BackfillDays.** Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today
-* **Database Name.** DynamoDB Table Name. Use the table name to identify the Slack Workspace for which you are collecting logs. Do not use the same DataBase Name across multiple installations.
-* **EnableInfrequentChannels.** Default is false.
-    * Select true > Enable dividing channels into frequent and infrequent based on the last message time.                     
-    * Select false > Send all public channels messages.
-* **CreateSecret.** Default is No.
-    * Select yes > Encrypt the Provided Environment variables HTTP_LOGS_ENDPOINT, TOKEN using KMS and Secret Manager.
-    * Select No > No encryption.
-* **AwsKmsKeyARN.** Provide an existing KMS Key ARN to encrypt the Environment variables HTTP_LOGS_ENDPOINT, TOKEN. If kept empty, a new KMS Key ID will be created if **CreateSecret** is **Yes**.
-
-1. Click **Deploy.**
-
-
-#### Configuring collection for multiple Slack Workspaces
-
-This section shows you how to configure collection for multiple projects assuming you are already collecting Slack data for one project.
-
-To configure collection for multiple projects, do the following:
-
-1. [Deploy the SAM application](#Sumo_Logic_Slack_SAM_application) with the configuration for a new slack workspace.
-2. Modify the **DatabaseName** and **Token** parameter during the SAM configuration to identify the slack workspace.
-
-
-#### Sumo Logic Slack Script-based collection
-
-This section provides instructions for deploying script-based collection for the Sumo Logic Slack App.
-
-The _sumologic-slack_ script is compatible with python 3.7 and has been tested on Ubuntu 18.04 LTS.
-
-
-#### Prerequisites
-
-* You must have successfully added a [Hosted Collector and HTTP source](#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source) and copied configuration parameter (token) from Slack, as described in [Step 1](#Step_1:_Create_a_Sumo_Logic_app_in_Slack) and [Step 2](#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source).
-* You must be logged in to the user account with which you will install the collector. If you are not, use this command to switch to that account:  
-```
-sudo su <user_name>
-```
-
-
-#### Configure the script on a Linux machine
-
-This task shows you how to install the script on a Linux machine.
-
-For python 3, use pip3 install **sumologic-slack** (step 3). For operating systems where the default is not python3, use **/usr/bin/python3 -m sumoslack.main** (step 6).
-
-To deploy the script, do the following:
-1. If **pip** is not already installed, follow the instructions in the [pip documentation](https://pip.pypa.io/en/stable/installing/) to download and install **pip**.
-2. Log in to a Linux machine (compatible with Python 3.7.)
-3. **For Python 3**, run the following command:
-```
-pip3 install sumologic-slack
-```
-4. Create a configuration file **slackcollector.yaml** in the home directory as shown in the following example and specify the parameters where indicated.
-```yml
-Slack:
- TOKEN: <Paste the Token collected from Slack App from step 1.>
- ENABLE_INFREQUENT_CHANNELS: < Default is 'false'.
-                               'true' -> Enable dividing channels into frequent and infrequent based on the last message time.
-                               'false' -> Send all public channels messages.>
- INFREQUENT_CHANNELS_THRESHOLD_IN_HOURS: < Default is 72.
-                                           Threshold in hours to make channels as infrequent based on last message time.
-                                           For eg,12 hours means if the message is not received for 12 hours, channel will be marked as infrequent.>
- INFREQUENT_CHANNELS_MESSAGES_FETCH_TIME_IN_HOURS: < Default is 12.
-                                                     Time in hours to fetch messages for InFrequent channels.
-                                                     For eg, 12 hours means send infrequent channels messages every 12 hours.>
-Collection:
- BACKFILL_DAYS: <Enter the Number of days before the event collection will start.>
- DBNAME: <Enter the Database Name.>
-SumoLogic:
- HTTP_LOGS_ENDPOINT: <Paste the URL for the HTTP Logs source from step 2.>
-```
-
-
-
-1. Create a cron job  to run the collector every 5 minutes, (use the `crontab -e` option). Do one of the following:
-**For Python 3**, add the following line to your crontab:
-```bash
-*/5 * * * *  /usr/bin/python3 -m sumoslack.main > /dev/null 2>&1
-```
-
-
-#### Configuring collection for multiple projects
-
-This section shows you how to configure collection for multiple projects assuming you are already collecting Slack data for one project.
-
-To configure collection for multiple projects, do the following:
-
-1. After configuring the script on a Linux machine, go to your configuration file.
-2. Change the DB_NAME in the **slackcollector.yaml** file, as indicated in the following example:
-
-```yml
-Slack:
-  TOKEN: <Paste the Token collected from Slack App from step 1.>
-  ENABLE_INFREQUENT_CHANNELS: >-
-    < Default is 'false'. 'true' -> Enable dividing channels into frequent and
-    infrequent based on the last message time. 'false' -> Send all public
-    channels messages.>
-  INFREQUENT_CHANNELS_THRESHOLD_IN_HOURS: >-
-    < Default is 72. Threshold in hours to make channels as infrequent based on
-    last message time. For eg, 12 hours means if the message is not received for
-    12 hours, channel will be marked as infrequent.>
-  INFREQUENT_CHANNELS_MESSAGES_FETCH_TIME_IN_HOURS: >-
-    < Default is 12. Time in hours to fetch messages for InFrequent channels.
-    For eg, 12 hours means send infrequent channels messages every 12 hours.>
-Collection:
-  BACKFILL_DAYS: <Enter the Number of days before the event collection will start.>
-  DBNAME: <New Database Name.>
-SumoLogic:
-  HTTP_LOGS_ENDPOINT: <Paste the URL for the HTTP Logs source from step 2.>
-
-```
-
-
-
-#### Advanced Configuration
-
-This section is common for both [AWS Lambda based collection](#Sumo-Logic-Slack-SAM-application) and [script based collection](#Sumo-Logic-Slack-Script-based-collection).
-
-The following table provides a list of variables for Slack that you can optionally define in the configuration file.
-
-
-<table>
-  <tr>
-   <td>Variable
-   </td>
-   <td>Usage
-   </td>
-  </tr>
-  <tr>
-   <td>LOG_TYPES in Slack Section
-<p>Remove logs based on the type of token used.</p>
-   </td>
-   <td><strong>LOG_TYPES</strong>:
-<p>-USER_LOGS</p>
-<p>ACCESS_LOGS</p>
-<p>CHANNELS_LOGS</p>
-<p>CHANNELS_MESSAGES_LOGS</p>
-<p>AUDIT_LOGS</p>
-<p>The following audit logs can be excluded. Use the exact action name from <a href="https://api.slack.com/docs/audit-logs-api#audit_logs_actions">Slack</a>.</p>
-<p>ExcludeAuditLogs:</p>
-<p>Exclude_action_name1</p>
-<p>Exclude_action_name2</p>
-   </td>
-  </tr>
-  <tr>
-   <td>ACCESS_LOGS_PAGE_COUNTER in Slack Section
-   </td>
-   <td>Number of Access Logs pages that can be fetched. Max pages that can be fetched is 100. Default is to fetch 2 Access Logs pages.
-   </td>
-  </tr>
-  <tr>
-   <td>BACKFILL_DAYS in Collection Section
-   </td>
-   <td>Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today.
-   </td>
-  </tr>
-  <tr>
-   <td>LOG_FORMAT in Logging Section
-   </td>
-   <td>Log format used by the python logging module to write logs in a file.
-   </td>
-  </tr>
-  <tr>
-   <td>ENABLE_LOGFILE in Logging Section
-   </td>
-   <td>Set to TRUE to write all logs and errors to a log file.
-   </td>
-  </tr>
-  <tr>
-   <td>ENABLE_CONSOLE_LOG in Logging Section
-   </td>
-   <td>Enables printing logs in a console.
-   </td>
-  </tr>
-  <tr>
-   <td>LOG_FILEPATH in Logging Section
-   </td>
-   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE.
-   </td>
-  </tr>
-  <tr>
-   <td>NUM_WORKERS in Collection Section
-   </td>
-   <td>Number of threads to spawn for API calls.
-   </td>
-  </tr>
-  <tr>
-   <td>MAX_RETRY in Collection Section
-   </td>
-   <td>Number of retries to attempt in case of request failure.
-   </td>
-  </tr>
-  <tr>
-   <td>BACKOFF_FACTOR in Collection Section
-   </td>
-   <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries.
-   </td>
-  </tr>
-  <tr>
-   <td>TIMEOUT in Collection Section
-   </td>
-   <td>Request time out used by the requests library.
-   </td>
-  </tr>
-  <tr>
-   <td>HTTP_LOGS_ENDPOINT in SumoLogic section
-   </td>
-   <td>HTTP source endpoint URL created in Sumo Logic for ingesting Logs.
-   </td>
-  </tr>
-</table>
-
-
-
-#### Troubleshooting
-
-This section shows you how to run the function manually and then verify that log messages are being sent from Slack.
-
-**To run the function manually, do the following:
-
-1. For **Python 3**, use this command:
-```
-python3 -m sumoslack.main
-```
-2. Check the automatically generated logs in  **/tmp/sumoapiclient.log** to verify whether the function is getting triggered or not.
-3. If you get an **OAuth Error: team_not_authorized** error when you try to add scopes to your slack app, remove **auditlogs:read** scope from the app.
-
-
-
-## Installing the Slack App
-
-This section provides instructions on how to install the Slack App, as well as examples of each of the dashboards. The App's pre-configured searches and [dashboards](#viewing-dashboards) provide easy-to-access visual insights into your data.
-
-This section shows you how to install the Sumo Logic App for Slack.
-
-To install the app, do the following:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+##### Install and Configure the Sumo Logic Slack C2C
+
+1. Add a new source on a Sumo Hosted Collector
+2. Search for and select Slack for the source
+3. Provide a name for the source
+4. Select the Slack collection API you want to collect logs from (Web or Audit)
+5. Paste your Slack App access token from the previous steps
 
 
 ## Viewing Slack Dashboards
@@ -809,12 +388,11 @@ You can use filters to drill down and examine the data on a granular level.
 The **Slack - Overview** dashboard provides an at-a-glance view of the number of workspaces, members, bots, admins, public channels, and public messages. Panels also show geographic access locations, and key statistics around public messages  and files.
 
 Use this dashboard to:
-* Monitor the admins, bots, and members across workspaces.
+* Monitor the admins, bots, and members across workspaces
 * Identify the trends around public messages and files shared
 * Monitor locations from which workspaces are being accessed
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Slack_Overview.png')} alt="Slack dashboards" />
-
 
 
 ### Members
@@ -823,7 +401,7 @@ The **Slack - Members** dashboard shows trends for total members, active members
 
 Use this dashboard to:
 * Monitor member activity across workspaces.
-* Identify inactive members that have not accessed the workspace.
+* Identify inactive members that have not accessed the workspace
 * Identify members that do not have two factor authentication enabled
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Slack_Members.png')} alt="Slack dashboards" />
@@ -834,7 +412,7 @@ Use this dashboard to:
 The **Slack - Bots** dashboard displays information on bots, which are software applications that run automated tasks over the Internet. Panels show trends by workspace for all bots, active bots, and messages, as well as detailed information on bots, and a detailed bot summary.
 
 Use this dashboard to:
-* Monitor bots and bot activities across multiple workspaces.
+* Monitor bots and bot activities across multiple workspaces
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Slack_Bots.png')} alt="Slack dashboards" />
 
