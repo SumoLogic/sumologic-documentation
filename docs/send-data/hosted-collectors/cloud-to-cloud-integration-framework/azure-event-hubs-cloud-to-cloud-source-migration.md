@@ -1,5 +1,5 @@
 ---
-id: cloud-to-cloud-source-migration
+id: azure-event-hubs-cloud-to-cloud-source-migration
 title: Migrating to Azure Event Hubs Cloud-to-Cloud Source
 sidebar_label: Azure Event Hubs C2C Source Migration
 ---
