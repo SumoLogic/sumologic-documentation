@@ -12,7 +12,7 @@ Pre-configured dashboards available for application components solve many common
 * Minimizing the troubleshooting time by providing all relevant information in the right context.
 
 :::caution Limitations
-This solution is currently supported for the following apps only:
+Currently supported for the following apps only:
 * [Cassandra](/docs/integrations/databases/cassandra)
 * [Elasticsearch](/docs/integrations/databases/elasticsearch)
 * [MongoDB](/docs/integrations/databases/mongodb)
@@ -263,10 +263,58 @@ To open Explore and Application Components View:
 1. From the drop-down menu, choose **Explore**. The Explore navigation panel appears on the left.
 1. Click the **Explore By** arrow and select **Application Components View** from the drop-down menu. An expandable list of your AWS environment hierarchy appears in the Explore panel.
 1. With the Application Components view selected in Explore, select an environment to view a list of its components.
-**Application Components - Environments Overview** appears on the right. This dashboard provides insights into the CRUD activities and monitor errors of each of the components in that environment.
+1. **APM: Environments Overview** appears on the right. This dashboard provides insights into the CRUD activities and monitor errors of each of the components in that environment.
 1. Similarly from the expanded environment select a component.
-The **Application Components - Database System Overview** dashboard appears in the window on the right. The dashboard provides an at-a-glance view of the different database engines present in the database component and insights on errors occurring across different engines.
+1. The **APM: Database System Overview** dashboard appears in the window on the right. The dashboard provides an at-a-glance view of the different database engines present in the database component and insights on errors occurring across different engines.
 1. And then keep on going down the hierarchy to specific entities for each of the components to view dashboards at more granular levels.
+
+
+### Dashboard Examples
+
+#### 01. Application Service Overview
+
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/01.-Application-Service-Overview.png" alt="APM Dashboard"/>
+
+#### 01. Environment Overview
+
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/01.-Environment-Overview.png" alt="APM Dashboard"/>
+
+#### 01. Operation Overview
+
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/01.-Operation-Overview.png" alt="APM Dashboard"/>
+
+#### 02. Service Health Across Applications
+
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/02.-Service-Health-Across-Applications.png" alt="APM Dashboard"/>
+
+#### 02. Service Health Across Applications within Environment
+
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/02.-Service-Health-Across-Applications-within-Environment.png" alt="APM Dashboard"/>
+
+#### 03. Application Service Health Across Operations
+
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/03.-Application-Service-Health-Across-Operations.png" alt="APM Dashboard"/>
+
+#### 03. Application Service Health Across Operations within Environment
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/03.-Application-Service-Health-Across-Operations-within-Environment.png" alt="APM Dashboard"/>
+
+#### 04. Application Health Across Services
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Application-Health-Across-Services.png" alt="APM Dashboard"/>
+
+#### 04. Service Health Across Applications and Operations
+
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Service-Health-Across-Applications-and-Operations.png" alt="APM Dashboard"/>
+
+#### 04. Service Health Across Applications and Operations within Environments
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Service-Health-Across-Applications-and-Operations-within-Environment.png" alt="APM Dashboard"/>
+
+#### 05. Application Service Health Across Environments
+
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/05.-Application-Service-Health-Across-Environments.png" alt="APM Dashboard"/>
+
+#### 06. Service Health Across Environments
+
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/06.-Service-Health-Across-Environments.png" alt="APM Dashboard"/>
 
 
 ## Frequently Asked Questions
