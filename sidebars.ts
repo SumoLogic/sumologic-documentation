@@ -2183,12 +2183,11 @@ module.exports = {
       link: {type: 'doc', id: 'contributing/index'},
       items: [
         'contributing/create-document',
-        'contributing/markdown-cheat-sheet',
         'contributing/style-guide',
     //  'contributing/word-list',
         'contributing/code-of-conduct',
     //  'contributing/glossary',
-        'contributing/translations',
+    //  'contributing/translations',
         {
           type: 'category',
           label: 'Templates',
