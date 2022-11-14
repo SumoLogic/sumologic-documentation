@@ -36,14 +36,11 @@ Before submitting an issue, you can browse our [existing GitHub issues](https://
 1. Scroll to the bottom and select **Create a new branch for this commit and start a pull request**. In the field underneath, enter a name for your branch and click **Propose Change**. This will fork and submit changes to us for review.
 
 
-### Clone the Sumo Docs Repository
+### Fork and Clone the Sumo Docs Repository
 
 For larger contributions like extensive edits or a creating new doc, we recommend forking our repo, making changes in a new branch, and submitting a PR for review.
 
 Feel free to reach out to us, the Docs Team, to discuss. We're happy to work with you on the project and talk through rewriting content, changing flow, adding a new topic or section, and deprecating content.
-
-
-#### Fork and clone
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the [Sumo Docs repository](https://github.com/SumoLogic/sumologic-documentation). Remember to [sync your fork](https://help.github.com/articles/syncing-a-fork/) and update branches as needed.
 1. Review our README documentation guidelines.
