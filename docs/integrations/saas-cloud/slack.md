@@ -294,7 +294,7 @@ This legacy solution to pull logs from Slack to Sumo Logic has been replaced wit
 The Slack source can collect data from Slack's [Web API](https://api.slack.com/web) and [Audit API](https://api.slack.com/admins/audit-logs). The Web API is used to collect standard channel, user, and message information from a specific workspace. The Audit API is used to collect security audit events across the entire account
 including all workspaces, but it requires a Slack Enterprise Grid license. Each  API collects different information; collect from both if you have a Slack Enterprise Grid license.
 
-We recommend creating a Slack App for each Slack Workspace you want to monitor. This requires a Sumo Logic Slack C2C per Slack Workspace. If you have a Slack Enterprise Grid account, you can create an additional Slack app, install it on the Enterprise Grid instead of a Workspace and create another Sumo Logic C2C to monitor your Enterprise Grid audit logs from the Audit API.
+We recommend creating a Slack App for each Slack Workspace you want to monitor. This requires a Sumo Logic Slack C2C per Slack Workspace. If you have a Slack Enterprise Grid account, you can create an additional Slack app, install it on the **Enterprise Grid** instead of a **Workspace** and create another Sumo Logic C2C to monitor your Enterprise Grid audit logs from the Audit API.
 
 **Process overview**
 
@@ -302,7 +302,7 @@ We recommend creating a Slack App for each Slack Workspace you want to monitor. 
 2. Install the Slack app on a specific workspace to monitor Web API logs or install the app on the Enterprise Grid to monitor Audit API logs.
 3. Install the Sumo Logic Slack C2C using your credentials from the installed Slack App.
 
-##### Create Slack App with Permissions
+#### Create Slack App with Permissions
 
 1. Navigate to the [Slack Apps](https://api.slack.com/apps) page.
 2. Click **Create New App**. <br/><img src={useBaseUrl('img/send-data/slack-create-app-button.png')} alt="Create a new Slack app button]" width="<insert-pixel-number>"/>
@@ -325,7 +325,7 @@ Use the table below to reference the required scope permissions you need to add 
 | Web API   | Enterprise Grid Plan | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
 | Audit API | Enterprise Grid Plan |  auditlogs:read |
 
-##### Install the Slack App on a Workspace for Web API Logs
+#### Install the Slack App on a Workspace for Web API Logs
 Only follow these steps if you are installing a Slack App on a specific workspace to monitor Web API logs. Please ensure
 you have followed the prior steps for creating the Slack app with the appropriate permissions before continuing to this
 section.
@@ -334,7 +334,7 @@ section.
 2. Allow your new Slack App to monitor your workspace. <br/><img src={useBaseUrl('img/send-data/slack-app-allow.png')} alt="Allow App to Monitor Workspace" width="450"/>
 3. Save the generated access token. This will be used by the Sumo Logic  configuration for access. <br/><img src={useBaseUrl('img/send-data/slack-copy-user-token.png')} alt="Copy Token" width="500"/>
 
-##### Install the Slack App on the Enterprise Grid for Audit API Logs
+#### Install the Slack App on the Enterprise Grid for Audit API Logs
 Only follow these steps if you are installing a Slack App on the Enterprise to monitor Audit API logs. Make sure you have followed the prior steps for creating the Slack app with the appropriate permissions before continuing to this
 section. A Slack Enterprise Grid account is required.
 
@@ -365,7 +365,7 @@ and `<CLIENT_SECRET>` variables in the following URL. <br/> `https://slack.com/a
 }
 ```
 
-##### Install and Configure the Sumo Logic Slack C2C
+#### Install and Configure the Sumo Logic Slack Cloud-to-Cloud
 
 1. Add a new source on a Sumo Hosted Collector
 2. Search for and select Slack for the source
