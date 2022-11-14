@@ -887,7 +887,6 @@ The [`sidebars.ts` file](https://github.com/SumoLogic/sumologic-documentation/bl
       link: {type: 'doc', id: 'contributing/index'},
       items: [
         'contributing/create-document',
-        'contributing/markdown-cheat-sheet',
         'contributing/build-deploy',
         'contributing/translations',
         {

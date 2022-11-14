@@ -15,7 +15,7 @@ In the /docs folder, create a markdown file in the format `<your-file>.md`.
 
 ## Step 2: Add title and metadata
 
-See [Markdown Features > Front Matter](/docs/contributing/markdown-cheat-sheet#frontmatter) to learn how.
+See our [Style Guide > Frontmatter section](/docs/contributing/style-guide#frontmatter) to learn how.
 
 ## Step 3: Write and edit your doc
 
@@ -23,7 +23,7 @@ See [Markdown Features > Front Matter](/docs/contributing/markdown-cheat-sheet#f
 Help us keep Sumo Logic open and inclusive by reviewing our [Code of Conduct](/docs/contributing/code-of-conduct).
 :::
 
-See our [Markdown Cheat Sheet](markdown-cheat-sheet.md) to learn how to write and style content, add code snippets, import multimedia, and more. Doc body text content is written in GitHub-flavored markdown, with some customizations.
+See our [Style Guide](/docs/contributing/style-guide) to learn how to write and style content, add code snippets, import multimedia, and more. Doc body text content is written in GitHub-flavored markdown, with some customizations.
 
 
 ## Step 4: Add doc to the navigation menu

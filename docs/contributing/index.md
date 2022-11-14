@@ -45,7 +45,7 @@ Feel free to reach out to us, the Docs Team, to discuss. We're happy to work wit
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the [Sumo Docs repository](https://github.com/SumoLogic/sumologic-documentation). Remember to [sync your fork](https://help.github.com/articles/syncing-a-fork/) and update branches as needed.
 1. Review our README documentation guidelines.
 1. Create a new branch from your cloned repo/fork using a name that best describes the work or references a GitHub issue number. For example: `<your initials>-apps-gitlab`.
-1. Edit or create markdown (.md) files in your branch. See [Create a Document](create-document.md) and [Markdown Features](markdown-cheat-sheet.md) for more info.
+1. Edit or create markdown (.md) files in your branch. See [Create a Document](create-document.md) and our [Style Guide](/docs/contributing/style-guide) for more info.
 1. Commit your changes to the branch with a meaningful message.<br/>![pull request](/img/contributing/commit.png). Use descriptive commit messages (and issue or ticket numbers, if applicable) detailing the content updates you are entering for content. One-line messages are fine for small changes, but bigger changes should look like this:
   ```bash
   $ git commit -m "A brief summary of the commit
