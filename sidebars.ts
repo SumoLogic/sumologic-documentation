@@ -813,7 +813,7 @@ module.exports = {
         },
         'dashboards-new/locate-deviations-time-series',
         'dashboards-new/set-custom-time-ranges',
-        'dashboards-new/share-a-dashboard-new',
+        'dashboards-new/share-dashboard-new',
       ],
     },
     {
