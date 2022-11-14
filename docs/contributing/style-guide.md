@@ -222,6 +222,62 @@ We mask sensitive information, like user names, email addresses, IP addresses, a
 Create callouts using the shape tool in SnagIt. Callouts should be red, 100% opacity, no drop shadow effect, 2 pts wide.
 
 
+## Release Notes
+
+We keep release notes concise with links to documentation and images for features and updates affecting the user interface. You can find the full list of supported frontmatter fields [here](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
+
+### Release Notes text only
+
+To add release notes without images:
+
+1. In the Blog folder, create a new markdown file with the following name format: `YYYY-MM-DD-product.md`.
+1. Add the following frontmatter:
+
+    ```markdown
+    ---
+    title: Product or Feature Name
+    tags: [apps, tracing]
+    hide_table_of_contents: true
+    image: https://help.sumologic.com/img/sumo-square.png
+    keywords:
+      - sumo logic
+      - service release notes
+      - open source
+    authors:
+      - url: https://help.sumologic.com/release-notes-service/rss.xml
+        image_url: /img/release-notes/rss-orange.png
+    ---
+    ```
+
+    * `title`: Name of the release notes including Product or Feature
+    * `tags`: Add a comma-separated list of existing tags, including:
+    * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
+1. Document the release notes. Add links, bullets, and images as needed.
+
+#### Long Release Notes
+
+For lengthy release notes, we recommend introducing the notes and adding a truncate line (`<!--truncate-->`), followed by the full set of release notes.
+
+### Release Notes with images
+
+To add release notes with images:
+
+1. In the Blog folder, create a new folder with the following name format: `YYYY-MM-DD-product`.
+1. In the new folder, create a markdown file named `index.md`. Add your release notes with frontmatter:
+
+    ```markdown
+    ---
+    title: Product or Feature Name
+    tags: [apps, tracing]
+    hide_table_of_contents: true
+    ---
+    ```
+
+    * `title`: Name of the release notes including Product or Feature
+    * `tags`: Add a comma-separated list of existing tags, including:
+    * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
+1. Save images to this folder and add them to the markdown file: `![alt text](image-name.png)`.
+
 
 ### Additional Resources
 

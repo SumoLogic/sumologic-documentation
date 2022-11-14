@@ -140,6 +140,8 @@ In Docusaurus, you can add images, custom files, and embed videos.
 
 ### Images
 
+Images must be added to the `static/img` folders. The `img` folder structure currently mirrors the doc sections. To stay organized, always replace existing images, rather than adding new images appended with dates or version numbers.
+
 We recommend using .png format for all images.
 
 1. Save your image(s) in the `/static/img` folder.
@@ -227,14 +229,13 @@ You need to explicitly add `?rel=0` to the end of the URL. This ensures that onl
 
 ### Downloadable Files
 
-If you have static files for users to download, save them to the `/static/files` folder. Supported file formats include .json, .js, .doc, and more. You link to the file using the file path of `/files` and file name:
+You can also add files such as custom code, json, yaml, and xml in the `static/files` folder. Supported file formats include .json, .js, .doc, and more. You link to the file using the file path of `/files` and file name:
 
 ```md
 ![Download this Terraform](/files/terraform/script.tf)
 ```
 
-If a file is available from another public Sumo Logic repo, please link to that file instead as a URL link.
-
+If your file is available from another public Sumo Logic repo, please link to that file instead as a URL link. See [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets) for more information.
 
 ## Tables
 

@@ -2188,7 +2188,7 @@ module.exports = {
     //  'contributing/word-list',
         'contributing/code-of-conduct',
     //  'contributing/glossary',
-        'contributing/translations',
+    //  'contributing/translations',
         {
           type: 'category',
           label: 'Templates',
