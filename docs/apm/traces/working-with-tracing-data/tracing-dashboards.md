@@ -13,7 +13,7 @@ The **Application Service View** groups services into higher-level application
 
 The **Service Application View** takes a contrary approach, displaying services by top level and breaking down their health by application. This view is especially useful for shared services that support more than one application. The third level shows the top 50 most active operations performed on the selected service and application.
 
-![Service Dashboards from traces.png](/img/traces/service-dashboards-from-traces.png)
+![Service Dashboards from traces.png](/img/traces/Service-Dashboards-from-traces.png)
 
 Services need to be active in the last 15 minutes to appear on the list. Recent inactivity will result in a grayed-out list entry.
 
