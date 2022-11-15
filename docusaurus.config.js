@@ -211,39 +211,6 @@ module.exports = {
       },
     ],
   ],
-    /* // Optional: See this site to configure - live editor https://github.com/jlvandenhout/docusaurus-plugin-docs-editor
-       // Requires adding OAUTH app https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app
-    [
-      '@jlvandenhout/docusaurus-plugin-docs-editor',
-      {
-        // REQUIRED - The base route to the editor
-        route: 'edit',
-        docs: {
-          // The username that owns the docs, defaults to siteConfig.organizationName
-          owner: '',
-          // The repository that contains the docs, defaults to siteConfig.projectName
-          repo: '',
-          // The path to the docs section in your repository
-          path: 'docs',
-        },
-        static: {
-          // The path to the static content section in your repository
-          path: 'static',
-        },
-
-
-        // GitHub OAuth Application settings
-        github: {
-          // REQUIRED - The Client ID you got from the GitHub OAuth App setup
-          clientId: '',
-          // REQUIRED - The plugin will append the authorization code to this URL
-          tokenUrl: '',
-          // The request method to use (GET or POST), defaults to GET
-          method: '',
-        },
-      }
-    ] */
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -255,10 +222,6 @@ module.exports = {
       },
     // SEO Global Metadata
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
-    //announcementBar: {
-      //id: 'announcementBar',
-      //content: `📣 Welcome to the new Sumo Logic Docs Site! To view our legacy docs, <a target="_blank" rel="noopener noreferrer" href="https://helpstaging.sumologic.com">click here</a>.`,
-    //},
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -293,7 +256,7 @@ module.exports = {
     },
       navbar: {
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Sumo Logic',
           srcDark: 'img/sumo-logo.svg',
           src: 'img/sumo-logo-dark.svg',
         },
@@ -309,8 +272,6 @@ module.exports = {
             label: 'Guides',
             position: 'left',
             to: '#',
-            // Redocusaurus
-            // to: '/sumoapi',
             type: 'dropdown',
             items:[
               {
@@ -373,8 +334,6 @@ module.exports = {
             label: 'API',
             position: 'left',
             to: '#',
-            // Redocusaurus
-            // to: '/sumoapi',
             type: 'dropdown',
             items:[
               {
@@ -444,11 +403,6 @@ module.exports = {
               },
             ]
           },
-      //  {
-      //    i18n -- add this back when we are ready for translations
-      //    type: 'localeDropdown',
-      //    position: 'right',
-      //  },
           {
             className: 'header-github-link',
             'aria-label': 'GitHub repository',
@@ -460,8 +414,7 @@ module.exports = {
       footer: {
         style: 'dark',
         links: [
-                    {
-            title: 'LEARN',
+          {
             items: [
               {
                 label: 'Get Certified for Free',
@@ -476,9 +429,9 @@ module.exports = {
                 href: 'https://www.sumologic.com/request-demo/',
               },
             ],
+            title: 'Learn',
           },
           {
-            title: 'Sumo Community',
             items: [
               {
                 label: 'About Us',
@@ -493,9 +446,9 @@ module.exports = {
                 href: 'https://sumodojo.slack.com/',
               },
             ],
+            title: 'Sumo Community',
           },
           {
-            title: 'Open Source',
             items: [
               {
                 label: 'Docs GitHub',
@@ -510,9 +463,10 @@ module.exports = {
                 href: 'https://github.com/SumoLogic-Labs',
               },
             ],
+            title: 'Open Source',
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()}, Sumo Logic Inc. | Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()}, Sumo Logic Inc.`,
       },
     }),
 };
