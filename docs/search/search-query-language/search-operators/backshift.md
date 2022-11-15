@@ -8,7 +8,7 @@ sidebar_label: backshift
 
 The backshift operator helps you compare values as they change over time. It simply shifts the data points it is given and returns them in your results in a new field.
 
-The backshift operator can be used with [rollingstd](#rollingstd), [smooth](#smooth), or any other operators whose results could be affected by spikes of data (where a spike could possibly throw off future results).
+The backshift operator can be used with [rollingstd](/docs/search/search-query-language/search-operators/rollingstd), [smooth](/docs/search/search-query-language/search-operators/smooth), or any other operators whose results could be affected by spikes of data (where a spike could possibly throw off future results).
 
 It is important to note that `backshift` does not automatically add timeslices, nor does it do any sorting. You can manually add other operators in the query to add timeslices, for example, and any kind of sorting you'd like to include. To add time-series analysis, add `_timeslice | ... | sort + _timeslice` *before* the `backshift` operator in the query.
 
