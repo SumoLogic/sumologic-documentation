@@ -51,11 +51,10 @@ To filter or sort by category (e.g., **Name**, **Severity**, **Status**), you c
 
 To resolve an alert, click a row to select it and click **Resolve**.
 
-### View Granular Details
-
-To further investigate an alert in depth, click on a row. This will take you to the [Alert Page](#alert-page), where you can view granular details about an individual alert.
 
 ## Alert Page
+
+The Alert Page is where you can view granular details about an individual alert. To get to an Alert page, click on any row from your Alert list.
 
 An Alert provides curated information to on-calls in order for them to troubleshoot issues more quickly. It provides two different types of information to help get to the root cause of the issue quickly.
 * **Alert Details**: Overview of the alert that was triggered to help you understand the issue and its potential impact. 
@@ -170,14 +169,16 @@ For example, the card below shows that “ServiceUnavailable” error is happeni
 * **E** - expand / collapse details panel.
 * **F** - opens a Log Search filtered to the Log messages that match the dimensional details of the telemetry value
 
-## Subscribe to Alerts and Monitors
+## Subscribe to Alert Monitors
 
-There are several places where you can subscribe to an alert:
+:::note Terminology
+A _Monitor_ creates an _Alert_. You can subscribe to an _Alert_'s _Monitor_.
+:::
+
+There are several places where you can subscribe:
 * From your Alert list, hover your mouse over a row, click the three-dot kebab menu, and select **Subscribe**.
-* From the Alert page, [tk]
-* From the Monitors list page, [tk]
-
-To subscribe to a monitor, go to your Alert list, click on a row item, then click **Subscribe to Monitor**.
+* From your Alert list, click on a row item, then in the side panel (Alert page), click **Subscribe to Monitor**.
+* ?
 
 
 ### Notification Preferences
