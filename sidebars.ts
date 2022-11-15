@@ -182,6 +182,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source',
