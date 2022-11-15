@@ -4,13 +4,15 @@ title: Kubernetes Tracing OpenTelemetry auto-instrumentation
 sidebar_label: Kubernetes
 ---
 
-Setting up Tracing instrumentation for Java, Python, NodeJS, and .NET applications deployed in Kubernetes just got easier. In a few simple steps, with the [OpenTelemetry-Operator](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-operator) your application is automatically instrumented and your traces are sent to Sumo.
+Setting up Tracing instrumentation for Java, Python, NodeJS, and .NET applications deployed in Kubernetes just got easier. In a few simple steps, with the [OpenTelemetry-Operator](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-operator), your application is automatically instrumented and your traces are sent to Sumo.
 
 ## Installation
 
-To enable the OpenTelemetry-Operator for the [Sumo Logic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection#sumologic-kubernetes-collection), you have to set `opentelemetry-operator.enabled=true`.  
-OpenTelemetry Operator needs to know how to instrument containers. For this purpose, the `Instrumentation` resource must be created in the namespace where you want to use auto-instrumentation. 
-Setting `opentelemetry-operator.createDefaultInstrumentation` to `true` and `opentelemetry-operator.instrumentationNamespaces` will help with that. The value of the flag `opentelemetry-operator.instrumentationNamespaces` is backslash comma separated namespaces list, for example: `opentelemetry-operator.instrumentationNamespaces="ns1\,ns2\,ns3"`.
+To enable the OpenTelemetry-Operator for the [Sumo Logic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection#sumologic-kubernetes-collection), you have to set `opentelemetry-operator.enabled=true`.
+
+The OpenTelemetry Operator needs to know how to instrument containers. For this purpose, the `Instrumentation` resource must be created in the namespace where you want to use auto-instrumentation. Setting `opentelemetry-operator.createDefaultInstrumentation` to `true` and `opentelemetry-operator.instrumentationNamespaces` will help with that.
+
+The value of the flag `opentelemetry-operator.instrumentationNamespaces` is backslash comma-separated namespaces list, for example: `opentelemetry-operator.instrumentationNamespaces="ns1\,ns2\,ns3"`.
 
 1. Update dependencies:
  ```bash
@@ -44,10 +46,11 @@ List of annotations per instrumented language:
 * **NodeJS** auto-instrumentation - `instrumentation.opentelemetry.io/inject-nodejs: "true"`
 * **.Net** auto-instrumentation - `instrumentation.opentelemetry.io/inject-dotnet: "true"`
 
-**NOTE:**  
-.Net auto-instrumentation is in **BETA** stage.
+:::note
+.Net auto-instrumentation is in **Beta** stage.
+:::
 
-In case of a Pod with multiple containers inside it is required to specify additional annotation `instrumentation.opentelemetry.io/container-names` which takes as value a comma separated list of the containers names.
+In case of a Pod with multiple containers inside, it is required to specify additional annotation `instrumentation.opentelemetry.io/container-names` which takes as value a comma separated list of the containers names.
 
 For a Pod with multiple containers if annotation for multiple containers is not set, then instrumentation will be provided to the first container on the list.
 
@@ -55,7 +58,7 @@ For a Pod with multiple containers if annotation for multiple containers is not 
 
 ### Java auto-instrumentation for Namespace
 
-```java
+```yml
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -68,7 +71,7 @@ metadata:
 
 ### Python auto-instrumentation for Deployment
 
-```java
+```yml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
