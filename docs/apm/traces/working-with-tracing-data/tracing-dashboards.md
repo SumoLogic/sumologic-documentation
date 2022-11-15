@@ -1,14 +1,14 @@
 ---
 id: tracing-dashboards
-title: Application and Service Tracing Dashboards
+title: Application Service APM/Tracing Dashboards
 description: Create Tracing dashboards, install apps, and more.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Service and Application dashboards are available as two Explore hierarchies. You can access them in the **Explore By** drop down menu.
+Out-of-the-box dashboards are available as three Explore hierarchies. You can access them in the **Explore By** drop down menu.
 
-The **APM: Application View** groups services into higher-level applications based on the `application=[app-name]` custom tag that you may add to your tracing data if you want to leverage it fully. Without the tag, all services will belong to a "default" application. The fourth and last shows the top 50 most active operations executed on the service. See [Working with Span attributes](../advanced-configuration/working-with-span-attributes.md) to learn how to customize your span attributes.
+The **APM: Application View** groups services into higher-level applications based on the `application=[app-name]` custom tag that you may add to your tracing data if you want to leverage it fully. Without the tag, all services will belong to a "default" application. The fourth and last level of the hierarchy shows the top 50 most active operations executed on the service. See [Working with Span attributes](../advanced-configuration/working-with-span-attributes.md) to learn how to customize your span attributes and set up application name.
 
 The **APM: Service View** takes a contrary approach, displaying services by top level and breaking down their health by application. This view can be useful for shared services that support more than one application. The fourth level shows the top 50 most active operations performed on the selected service and application.
 
@@ -51,7 +51,7 @@ Once an app is installed, it will appear in your **Personal** folder or the fol
 
 ## Dashboard Panels
 
-Add **Service Map** and **Trace List** panels to explore your application environment and review all traces from your Dashboard. Duplicate or add multiple panels with different filtering or queries to refine views and support your organization.
+There are two tracing-specific dashboard panels available out of the box: **Service Map** and **Trace List** panels, which explore your application environment and review all traces from your Dashboard. Duplicate or add multiple panels with different filtering or queries to refine views and support your organization.
 
 See the [Dashboard (New) guide](/docs/dashboards-new) for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
 
