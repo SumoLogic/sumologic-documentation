@@ -169,6 +169,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source',
@@ -813,7 +814,7 @@ module.exports = {
         },
         'dashboards-new/locate-deviations-time-series',
         'dashboards-new/set-custom-time-ranges',
-        'dashboards-new/share-a-dashboard-new',
+        'dashboards-new/share-dashboard-new',
       ],
     },
     {
@@ -2183,12 +2184,11 @@ module.exports = {
       link: {type: 'doc', id: 'contributing/index'},
       items: [
         'contributing/create-document',
-        'contributing/markdown-cheat-sheet',
         'contributing/style-guide',
     //  'contributing/word-list',
         'contributing/code-of-conduct',
     //  'contributing/glossary',
-        'contributing/translations',
+    //  'contributing/translations',
         {
           type: 'category',
           label: 'Templates',
