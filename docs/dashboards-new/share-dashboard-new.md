@@ -1,5 +1,5 @@
 ---
-id: share-a-dashboard-new
+id: share-dashboard-new
 title: Share a Dashboard (New)
 description: Learn how to save a custom dashboard and then share it with others.
 ---
