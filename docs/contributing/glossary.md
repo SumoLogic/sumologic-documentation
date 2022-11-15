@@ -6,7 +6,7 @@ description: This glossary provides an alphabetized list of technical term defin
 
 :::tip
 
-See our [DevOps Glossary](https://www.sumologic.com/glossary).
+We also maintain a [DevOps Glossary](https://www.sumologic.com/glossary).
 :::
 
 <!--
