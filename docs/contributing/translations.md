@@ -5,10 +5,9 @@ sidebar_label: Translating Docs
 description: Learn about our doc translation process.
 ---
 
-:::caution
-
-&#128679; Under construction &#128679;
-:::
+<head>
+  <meta name="robots" content="noindex" />
+</head>
 
 All content in /docs folder is the English language documentation, the source of truth for all content. For full information on translations and commands, see [Docusaurus i18n](https://docusaurus.io/docs/i18n/introduction).
 
@@ -47,19 +46,16 @@ You can copy and paste the file with a file explorer. We also recommend adding a
 
   cp docs/intro.md i18n/fr/docusaurus-plugin-content-docs/current/intro.md
   ```
-
   Translate `i18n/fr/docusaurus-plugin-content-docs/current/intro.md` in French.
-
+  
 2. Build your localized site. Build your site for a specific locale:
   ```bash
   npm run build -- --locale fr
   ```
-
   Or build your site to include all the locales at once:
   ```bash
   npm run build
   ```
-
   :::caution
   In development, you can only use one locale at a same time.
   :::

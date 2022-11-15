@@ -16,7 +16,7 @@ Adding a group by function to a diff operator query calculates the difference 
 
 ## Syntax
 
-* `diff\<fiel\> [as\<fiel\>] [by\<field\>,\<field\>, ...]`
+* `diff <field> [as <field>] [by <field1>, <field2>, ...]`
 
 **Rules**
 
