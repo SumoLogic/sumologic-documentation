@@ -50,9 +50,7 @@ List of annotations per instrumented language:
 .Net auto-instrumentation is in **Beta** stage.
 :::
 
-In case of a Pod with multiple containers inside, it is required to specify additional annotation `instrumentation.opentelemetry.io/container-names` which takes as value a comma separated list of the containers names.
-
-For a Pod with multiple containers if annotation for multiple containers is not set, then instrumentation will be provided to the first container on the list.
+In the case of a Pod with multiple containers inside, you must specify additional annotation (`instrumentation.opentelemetry.io/container-names`), which will take a comma-separated list of the container names as its value. If annotation for multiple containers is not set, the instrumentation will be provided to the first container on the list.
 
 ## Examples
 
@@ -152,7 +150,7 @@ spec:
 To have meaningful or intuitive data to search, you need to make some changes to the default configuration. You can make these customizations through additional environment variables in container definitions.
 
 Environment variables:
-* `OTEL_SERVICE_NAME` - in case this parameter is not set, default service name assumes the name of Deployment, Statefulset or other PodSpec object name. In such case ensure their names represent some business logic, such as `FinanceServiceCall`. This will appear as a tracing service name in Sumo Logic. If you would like to manually set service name, add  `OTEL_SERVICE_NAME` in env variables section of container configuration. For example:  
+* `OTEL_SERVICE_NAME` - if this parameter is not set, the default service name assumes the name of Deployment, Statefulset, or other PodSpec object name. This ensures their names represent some business logic, such as `FinanceServiceCall`. This will appear as a tracing service name in Sumo Logic. If you'd like to manually set a service name, add `OTEL_SERVICE_NAME` in env variables section of container configuration. For example:  
  ```yaml
  spec:
   containers:
@@ -161,7 +159,7 @@ Environment variables:
       - name: OTEL_SERVICE_NAME
         value: FinanceServiceCall
  ```
-* `OTEL_RESOURCE_ATTRIBUTES` - in case this parameter is not set, default application name assumes the name of Namespace. This will appear as a tracing application name in Sumo Logic. If you would like to manually set the application name, add  `OTEL_RESOURCE_ATTRIBUTES` `application=name` in the environment variables section of container configuration. You can add additional attributes here as comma separated key=value pairs (i.e., `application=my-app,key=value`):
+* `OTEL_RESOURCE_ATTRIBUTES` - if this parameter is not set, the default application name assumes the name of Namespace. This will appear as a tracing application name in Sumo Logic. If you'd like to manually set the application name, add  `OTEL_RESOURCE_ATTRIBUTES` `application=name` in the environment variables section of container configuration. You can add additional attributes here as comma separated key=value pairs (i.e., `application=my-app,key=value`):
  ```yaml
  spec:
   containers:
@@ -172,7 +170,7 @@ Environment variables:
  ```
 
 * Other parameters:
-    * **OTEL_PROPAGATORS.** If not set then additional supported by OpenTelemetry context propagators are enabled (b3 - common for service meshes, xray - used by AWS services). Default value: `tracecontext,baggage,b3,xray` (except .Net instrumentation which currently supports only `tracecontext,baggage`.
+    * **OTEL_PROPAGATORS.** If not set then additional supported by OpenTelemetry context propagators are enabled (b3 - common for service meshes, xray - used by AWS services). Default value is `tracecontext,baggage,b3,xray`, except .Net instrumentation, which currently supports only `tracecontext,baggage`.
     * **OTEL_TRACES_SAMPLER.** Default value: `always_on`. For details, see other sampling possibilities [here](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/sdk.md#Sampling).
 
 
