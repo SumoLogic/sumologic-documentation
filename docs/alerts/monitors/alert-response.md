@@ -39,13 +39,13 @@ If you use [Webhook connections](/docs/manage/connections-integrations/webhook-c
 }
 ```
 
-## Alert List
+## Alert list
 
-Alert List shows all the Alerts from triggered Monitors within the past seven days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time.
+Alert list shows all the Alerts from triggered Monitors within the past seven days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time.
 
-To open the Alert List, click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="300"/>
+To open the Alert list, click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="300"/>
 
-To filter or sort by category (e.g., **Name**, **Severity**, **Status**), you can you the search bar or click on a column header.<br/>![search alert list.png](/img/monitors/search-alert-list.png)
+To filter or sort by category (e.g., **Name**, **Severity**, **Status**), you can use the search bar or click on a column header.<br/>![search alert list.png](/img/monitors/search-alert-list.png)
 
 ### Resolve Alerts
 
@@ -170,13 +170,15 @@ For example, the card below shows that “ServiceUnavailable” error is happeni
 * **E** - expand / collapse details panel.
 * **F** - opens a Log Search filtered to the Log messages that match the dimensional details of the telemetry value
 
-## Subscribe to Alerts
+## Subscribe to Alerts and Monitors
 
-To subscribe to an alert, go to your Alert List, hover your mouse over a row, click the three-dot kebab menu, and select **Subscribe**.
+There are several places where you can subscribe to an alert:
+* From your Alert list, hover your mouse over a row, click the three-dot kebab menu, and select **Subscribe**.
+* From the Alert page, [tk]
+* From the Monitors list page, [tk]
 
-To subscribe to a monitor, go to your Alert List, click on a row item, then click **Subscribe to Monitor**.
+To subscribe to a monitor, go to your Alert list, click on a row item, then click **Subscribe to Monitor**.
 
-Here's how you'd enable both of the above options: <br/><img src={useBaseUrl('img/alerts/subscribe-alerts.gif')} alt="subscribe to an alert gif" width="400"/>
 
 ### Notification Preferences
 
@@ -184,12 +186,12 @@ Here's how you'd enable both of the above options: <br/><img src={useBaseUrl('im
 2. Click on any of the following checkboxes to enable your desired preferences:
    * **Display Alert Badge**: the bell icon is displayed in the top nav
 	 * **Notify about only subscribed monitors**: the bell icon will only push notifications for monitors you're subscribed to
-	 * **Enable "Active alerts only" as default filter**: your Alert List, by default, will only display alerts with an Active status (excludes Resolved ones)<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="alert-preferences" />
-	 * **Enable "My subscriptions" as default filter**: your Alert List, by default, will only display alerts you're subscribed to<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" />
+	 * **Enable "Active alerts only" as default filter**: your Alert list, by default, will only display alerts with an Active status (excludes Resolved ones)<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="alert-preferences" />
+	 * **Enable "My subscriptions" as default filter**: your Alert list, by default, will only display alerts you're subscribed to<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" />
 3. Click **Save** when you're done.
 
 ## Limitations
 
-* The [Alert List](#alert-list) page shows up to 1,000 alerts.
+* The [Alert list](#alert-list) page shows up to 1,000 alerts.
 * On the [Alert page](#alert-page), the Alert visualization, labeled M, is only shown for an alert that is less than 30 days old. 
 * On the [Alert page](#alert-page), Related Alerts and Monitor History show the top 250 alerts. 
