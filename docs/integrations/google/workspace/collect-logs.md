@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/google/workspace.jpeg')} alt="thumbnail icon" width="150"/>
 
-This procedure explains how to collect logs from Google Workspace and ingest them into Sumo Logic. You can configure two types of log collection: Google Workspace Alert Center and Google Workspace Source.
+This procedure explains how to collect logs from Google Workspace and ingest them into Sumo Logic. You can configure two types of log collection: Google Workspace Alert Center and Google Workspace Audit Source.
 
 ## Log Types
 
@@ -18,11 +18,11 @@ This procedure explains how to collect logs from Google Workspace and ingest the
 **Google Workspace Alert Center** alerts are in JSON format. Most of the alerts have a few common fields. The differences are in the data section of the JSON where the alert type specific details are recorded. For more information, see this Google Workspace [Alert document](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types).
 
 
-## Configure Collection for Google Workspace Source
+## Configure Collection for Google Workspace Apps Audit Source
 
-This section provides instructions for configuring log collection for Google Workspace Source.
+This section provides instructions for configuring log collection for Google Workspace with Audit Source.
 
-[Google Workspace](#configure-collection-for-google-workspace-source): Monitors and analyzes the activity across all the Google Workspace Apps in one place. You can configure collection for each Google App for which you want to analyze events:
+[Google Workspace](#configure-collection-for-google-workspace-audit-source): Monitors and analyzes the activity across all the Google Workspace Apps in one place. You can configure collection for each Google App for which you want to analyze events:
     * Google Admin
     * Google Drive
     * Google Login
@@ -30,7 +30,9 @@ This section provides instructions for configuring log collection for Google Wor
 
 ### About Source Configuration  
 
-Configure one [Google Workspace Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source) for each Google App from which you want to collect events:
+Currently, the source name for Google Workspace is still **Google Workspace Apps Audit Source**, which will be changed/updated shortly.
+
+Configure one [Google Workspace Apps Audit Source](/docs/send-data/hosted-collectors/google-source/g-suite-apps-audit-source) for each Google App from which you want to collect events:
 
 * Google Admin
 * Google Calendar
@@ -42,7 +44,7 @@ Google Workspace Drive Audit events are only logged for files owned by users wit
 
 When you configure your Source Categories, you can configure and use them in two different ways.
 
-**One Single Source Category for all Sources.** For users who are setting up the Google Workspace Source for the first time, we suggest that you use the same single Source Category for each Google Workspace Source. For example, **google_apps**.
+**One Single Source Category for all Sources.** For users who are setting up the Google Workspace Apps Audit Source for the first time, we suggest that you use the same single Source Category for each Google Apps Audit Source. For example, **google_apps**.
 
 **Different Source Categories for each Source.** You may configure a different Source Category for each Source, but we recommend that you use a naming convention for the Source Categories that allows you to apply a wildcard. For example, naming your Source Categories as follows would allow you to refer to all of them with the query **google_app***.
 * google_app_admin
@@ -51,7 +53,7 @@ When you configure your Source Categories, you can configure and use them in two
 * google_app_login
 * Google_app_token
 
-A Google Workspace Source uses the [Google Users API](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users/list) to ingest logs. Activity from the following Google apps are supported in Sumo's Google Workspace App:
+A Google Workspace Apps Audit Source uses the [Google Apps Reports API](https://developers.google.com/admin-sdk/reports/v1/get-start/getting-started) to ingest all audit logs via watchpoints. Activity from the following Google apps are supported in Sumo's Google Workspace App:
 * Admin
 * Calendar
 * Drive
@@ -65,28 +67,28 @@ Only one Source should be configured per app. In other words, you might set up o
 
 This Source uses OAuth to integrate with the Google Apps Reports API. Therefore, your Google Apps credentials are never stored by Sumo Logic, and we have no visibility into the details of your Google Apps account.  Sumo Logic only stores OAuth tokens that are generated after authentication and authorization.
 
-When creating or modifying a Google Source, you will be required to authenticate with Google using the credentials of a user that has access rights to the account, and to the Reports API. See Google's [Reports API: Prerequisites](https://developers.google.com/admin-sdk/reports/v1/guides/prerequisites) documentation for more details. During Google's OAuth consent flow, you will also be asked to grant the Sumo Logic app permission to use the Reports API.
+When creating or modifying a Google Workspace Apps Audit Source, you will be required to authenticate with Google using the credentials of a user that has access rights to the account, and to the Reports API. See Google's [Reports API: Prerequisites](https://developers.google.com/admin-sdk/reports/v1/guides/prerequisites) documentation for more details. During Google's OAuth consent flow, you will also be asked to grant the Sumo Logic app permission to use the Reports API.
 
 :::note
-Authentication must be with a new Google Workspace Source. We do not support re-authenticating existing sources.
+Authentication must be with a new Google Workspace Apps Audit Source. We do not support re-authenticating existing sources.
 :::
 
 ### Configure a Collector
 
-Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for the Google Workspace Sources you'll set up below.
+Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for the Googleworkspace sources you will set up below.
 
 
-### Configure Google Workspace Apps Sources  
+### Configure Google Workspace Apps Audit Sources  
 
 When you have set up a Hosted Collector and have your credentials ready, you're all set to configure the Sources. Perform the steps below for each Google Workspace App you want to monitor.  Before you configure the Sources, choose one of the source category strategies described in [About Source Configuration](#About_Source_Configuration), above.
 
-:::note
-We recommend that you use the same Source Category for each Google Workspace Source. For example, **google_apps**.
+::note
+We recommend that you use the same single Source Category for each Google Workspace Apps Audit Source. For example, **google_apps**.
 :::
 
-To configure a Google Workspace Source, do the following:
+To configure a Google Workspace Apps Audit Source, do the following:
 
-1. Configure a **Google Workspace Source**.
+1. Configure a **G Suite Apps Audit** Source.
 2. Configure the Source fields:
     1. **Name**. (Required) A name is required.
     2. **Description**. Optional.
@@ -198,3 +200,8 @@ _sourceCategory=google*
 | count by email
 | sort by _count desc, email asc
 ```
+
+## Collect Logs for Google Workspace AlertCenter
+
+To collect logs for Google Workspace AlertCenter, follow the instructions in [Google Workspace AlertCenter](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter.md).
+
