@@ -11,6 +11,6 @@ Learn how to build and run searches, review logs, and more.
 
 ## Guide contents
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

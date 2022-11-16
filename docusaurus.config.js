@@ -105,14 +105,12 @@ module.exports = {
           blogSidebarCount: 'ALL',
           blogDescription: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
           postsPerPage: 'ALL',
-          showReadingTime: true, // When set to false, the "x min read" won't be shown
-          readingTime: ({content, frontMatter, defaultReadingTime}) =>
-            defaultReadingTime({content, options: {wordsPerMinute: 200}}),
+          showReadingTime: false,
           feedOptions: {
             type: 'rss',
             // https://help.sumologic.com/release-notes-service/rss.xml
             title: 'Sumo Logic Service Release Notes',
-            description: 'Here you will find a chronological list of the newest Sumo Logic service features and bug fixes',
+            description: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
             copyright: `Copyright ©${new Date().getFullYear()} Sumo Logic`,
           },
         },
@@ -152,15 +150,13 @@ module.exports = {
          blogSidebarTitle: 'All posts',
          blogSidebarCount: 'ALL',
          postsPerPage: 'ALL',
-         blogDescription: 'New and enhanced Cloud SIEM features, updated content (like rules, log mappers and parsers), bug fixes, and other important announcements.',
-         showReadingTime: true, // When set to false, the "x min read" won't be shown
-         readingTime: ({content, frontMatter, defaultReadingTime}) =>
-           defaultReadingTime({content, options: {wordsPerMinute: 200}}),
+         blogDescription: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
+         showReadingTime: false,
          feedOptions: {
            type: 'rss',
            // https://help.sumologic.com/release-notes-cse/rss.xml
            title: 'Sumo Logic Cloud SIEM Release Notes',
-           description: 'New and enhanced Cloud SIEM features, updated content (like rules, log mappers and parsers), bug fixes, and other important announcements.',
+           description: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
          },
       },
@@ -172,18 +168,16 @@ module.exports = {
           path: './blog-developer',
           archiveBasePath: 'archive',
           blogTitle: 'Sumo Logic Developer Release Notes',
-          blogDescription: 'New features and changes to our APIs and Live Tail CLI.',
+          blogDescription: 'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
           postsPerPage: 'ALL',
-          showReadingTime: true, // When set to false, the "x min read" won't be shown
-          readingTime: ({content, frontMatter, defaultReadingTime}) =>
-            defaultReadingTime({content, options: {wordsPerMinute: 200}}),
+          showReadingTime: false,
           feedOptions: {
             type: 'rss',
             // https://help.sumologic.com/release-notes-developer/rss.xml
             title: 'Sumo Logic Developer Release Notes',
-            description: 'Here you will find a chronological list of the newest Sumo Logic developer features and bug fixes.',
+            description: 'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
          },
        },
@@ -199,14 +193,12 @@ module.exports = {
           blogSidebarCount: 'ALL',
           postsPerPage: 'ALL',
           blogDescription: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
-          showReadingTime: true, // When set to false, the "x min read" won't be shown
-          readingTime: ({content, frontMatter, defaultReadingTime}) =>
-            defaultReadingTime({content, options: {wordsPerMinute: 200}}),
+          showReadingTime: false,
           feedOptions: {
             type: 'rss',
             // https://help.sumologic.com/release-notes-collector/rss.xml
             title: 'Sumo Logic Collector Release Notes',
-            description: 'Here you will find a chronological list of the newest Sumo Logic collector features and bug fixes',
+            description: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
           },
         },
@@ -263,10 +255,10 @@ module.exports = {
       },
     // SEO Global Metadata
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
-    announcementBar: {
-      id: 'announcementBar',
-      content: `📣 Welcome to the new Sumo Logic Docs Site! To view our legacy docs, <a target="_blank" rel="noopener noreferrer" href="https://helpstaging.sumologic.com">click here</a>.`,
-    },
+    //announcementBar: {
+      //id: 'announcementBar',
+      //content: `📣 Welcome to the new Sumo Logic Docs Site! To view our legacy docs, <a target="_blank" rel="noopener noreferrer" href="https://helpstaging.sumologic.com">click here</a>.`,
+    //},
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -276,7 +268,7 @@ module.exports = {
       },
     },
     colorMode: {
-      defaultMode: 'dark',
+      defaultMode: 'light',
     },
     //algolia: {
      // The application ID provided by Algolia
@@ -431,12 +423,12 @@ module.exports = {
             type: 'dropdown',
             items:[
               {
-                label: 'Support',
-                href: 'https://support.sumologic.com/hc/en-us',
-              },
-              {
                 label: 'Training',
                 href: 'https://www.sumologic.com/learn/training',
+              },
+              {
+                label: 'Support',
+                href: 'https://support.sumologic.com/hc/en-us',
               },
               {
                 label: 'Community',
@@ -445,6 +437,10 @@ module.exports = {
               {
                 label: 'Service Status',
                 href: 'https://status.sumologic.com',
+              },
+              {
+                label: 'Feature Requests',
+                href: 'http://ideas.sumologic.com',
               },
             ]
           },
@@ -464,21 +460,21 @@ module.exports = {
       footer: {
         style: 'dark',
         links: [
-          {
+                    {
             title: 'LEARN',
             items: [
               {
-                label: 'Training & Certifications',
-                to: 'https://www.sumologic.com/learn/training/',
+                label: 'Get Certified for Free',
+                href: 'https://www.sumologic.com/learn/training/',
               },
               {
-                label: 'DevOps Glossary',
-                to: 'https://www.sumologic.com/glossary/',
+                label: 'Events & Webinars',
+                href: 'https://www.sumologic.com/events/',
               },
               {
                 label: 'Request Demo',
-                to: 'https://www.sumologic.com/request-demo/',
-              }
+                href: 'https://www.sumologic.com/request-demo/',
+              },
             ],
           },
           {
@@ -493,29 +489,17 @@ module.exports = {
                 href: 'https://support.sumologic.com/hc/en-us/community/topics',
               },
               {
-                label: 'Events & Webinars',
-                href: 'https://www.sumologic.com/events/',
+                label: 'Sumo Dojo Slack',
+                href: 'https://sumodojo.slack.com/',
               },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/SumoLogic',
-              },
-              {
-                label: 'YouTube',
-                href: 'https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw',
-              }
             ],
           },
           {
             title: 'Open Source',
             items: [
               {
-                label: 'Sumo Docs GitHub',
+                label: 'Docs GitHub',
                 href: 'https://github.com/SumoLogic/sumologic-documentation',
-              },
-              {
-                label: 'How to Contribute',
-                to: '/docs/contributing',
               },
               {
                 label: 'Sumo Logic GitHub',
@@ -524,31 +508,6 @@ module.exports = {
               {
                 label: 'Sumo Labs Projects',
                 href: 'https://github.com/SumoLogic-Labs',
-              },
-              {
-                label: 'Sumo Dojo Slack',
-                href: 'https://sumodojo.slack.com/',
-              },
-            ],
-          },
-          {
-            title: 'Legal',
-            items: [
-              {
-                label: 'Privacy Statement',
-                href: 'https://www.sumologic.com/privacy-statement/',
-              },
-              {
-                label: 'Terms of Use',
-                to: 'https://www.sumologic.com/terms-conditions/',
-              },
-              {
-                label: 'Contact Us',
-                href: 'https://www.sumologic.com/contact-us/',
-              },
-              {
-                label: 'Legal',
-                href: 'https://www.sumologic.com/legal/',
               },
             ],
           },

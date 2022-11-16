@@ -29,7 +29,7 @@ It's supported on *Linux*, *MacOS*, and *Kubernetes* environments and can use an
 * Syslog
 * Telegraf Input Plugins
 
-For full details on limitations, what's supported, and what's different see our [comparison documentation](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/Comparison.md).
+For full details on limitations, what's supported, and what's different see our [comparison documentation](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/comparison.md).
 
 ### Installed Collectors (Installed Agent)
 

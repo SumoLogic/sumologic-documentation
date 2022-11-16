@@ -4,6 +4,10 @@ title: Glossary
 description: This glossary provides an alphabetized list of technical term definitions used in Sumo Logic.
 ---
 
+:::tip
+
+We also maintain a [DevOps Glossary](https://www.sumologic.com/glossary).
+:::
 
 <!--
 

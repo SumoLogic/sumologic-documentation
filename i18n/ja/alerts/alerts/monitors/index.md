@@ -37,7 +37,7 @@ See details on how [Scheduled Searches are different](/docs/alerts/difference-fr
 * Email notifications can have up to 100 recipients.
 * [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md) (auto-parse mode) is not supported.
 * The timeshift [metrics operator](/docs/metrics/metrics-operators) is not supported in a Metric Monitor.
-* [Hidden Metrics queries](../../metrics/metric-queries-alerts/metrics-explorer.md) do not persist across edit sessions.
+* [Hidden Metrics queries](../../metrics/metrics-queries/metrics-explorer.md) do not persist across edit sessions.
 * The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.
 
 ## Notifications
@@ -163,7 +163,7 @@ You can configure Sumo Logic Monitors using [Terraform modules](https://github.c
     * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.  
     * An **outlier** is an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency.  
 
-1. Provide a **Query**. A Log Monitor can have one query up to 4,000 characters long. Metric Monitors can specify up to six queries. When providing multiple metrics queries use the letter labels to reference a query row, see [joined metrics queries](../../metrics/metric-queries-alerts/metrics-explorer.md) for details. The Monitor will automatically deduce the query row to use for the trigger. 
+1. Provide a **Query**. A Log Monitor can have one query up to 4,000 characters long. Metric Monitors can specify up to six queries. When providing multiple metrics queries use the letter labels to reference a query row, see [joined metrics queries](../../metrics/metrics-queries/metrics-explorer.md) for details. The Monitor will automatically deduce the query row to use for the trigger. 
 
 1. **Outlier** detection methods require you to select the **Direction** you want to track. If you chose **Static**, you won't see this option.
 
