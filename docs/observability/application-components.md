@@ -11,20 +11,6 @@ Pre-configured dashboards available for application components solve many common
 * Reviewing the overall health of specific components to quickly narrow down the scope of troubleshooting.
 * Minimizing the troubleshooting time by providing all relevant information in the right context.
 
-:::caution Limitations
-Currently supported for the following apps only:
-* [Cassandra](/docs/integrations/databases/cassandra)
-* [Elasticsearch](/docs/integrations/databases/elasticsearch)
-* [MongoDB](/docs/integrations/databases/mongodb)
-* [MySQL](/docs/integrations/databases/mysql)
-* [PostgreSQL](/docs/integrations/databases/postgresql)
-* [Redis](/docs/integrations/databases/redis)
-* [SQL Server](/docs/integrations/microsoft-azure/sql-server)
-* [MariaDB](/docs/integrations/databases/mariadb)
-* [Memcached](/docs/integrations/databases/memcached)
-* [Oracle](/docs/integrations/databases/oracle)
-:::
-
 ## Installation
 
 To use the Application Components Solution, you'll need to install a Terraform automation script.
@@ -35,6 +21,12 @@ The Terraform script performs the following actions:
 * Installs Sumo Logic Apps(Database apps and App Components app) in the Admin recommended folder.
 * Creates [Fields](/docs/manage/fields).
 * Installs Monitors for each of the selected databases.
+
+### Limitations
+
+Currently supported for the following apps only:
+[Cassandra](/docs/integrations/databases/cassandra), [Elasticsearch](/docs/integrations/databases/elasticsearch), [MongoDB](/docs/integrations/databases/mongodb), [MySQL](/docs/integrations/databases/mysql), [PostgreSQL](/docs/integrations/databases/postgresql), [Redis](/docs/integrations/databases/redis), [SQL Server](/docs/integrations/microsoft-azure/sql-server), [MariaDB](/docs/integrations/databases/mariadb), [Memcached](/docs/integrations/databases/memcached), [Oracle](/docs/integrations/databases/oracle).
+
 
 ## Ensure Account Access
 
@@ -206,18 +198,7 @@ At the end of the console output, you should see two links, one for Apps Folder 
 
 ### Configure Metrics and Logs Collection
 
-Refer to the documentation for the app you're using. App Components Solution currently supports:
-* [Cassandra](/docs/integrations/databases/cassandra)
-* [Elasticsearch](/docs/integrations/databases/elasticsearch)
-* [MongoDB](/docs/integrations/databases/mongodb)
-* [MySQL](/docs/integrations/databases/mysql)
-* [PostgreSQL](/docs/integrations/databases/postgresql)
-* [Redis](/docs/integrations/databases/redis)
-* [SQL Server](/docs/integrations/microsoft-azure/sql-server)
-* [MariaDB](/docs/integrations/databases/mariadb)
-* [Memcached](/docs/integrations/databases/memcached)
-* [Oracle](/docs/integrations/databases/oracle)
-
+Refer to the documentation for the app you're using. See [Limitations](#limitations) for a list.
 
 ### Configure Fields in Sumo Logic
 
@@ -240,7 +221,7 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 ## Uninstalling the Solution
 
 To uninstall the Application Components solution deployed using Terraform, navigate to the directory https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-components and execute the command:
-```
+```bash
 terraform destroy
 ```
 
