@@ -190,7 +190,7 @@ A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to a
 
 ### Notification Preferences
 
-1. From the left nav, click on your username > **Notifications** > **Preferences**.
+1. From the left nav, click on your username > **Preferences**.
 2. Click on any of the following checkboxes to enable your desired preferences:
    * **Display Alert Badge**: the bell icon is displayed in the top nav
 	 * **Notify about only subscribed monitors**: the bell icon will only push notifications for monitors you're subscribed to
