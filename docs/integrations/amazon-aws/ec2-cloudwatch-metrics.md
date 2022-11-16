@@ -146,7 +146,7 @@ To configure a CloudTrail Source, perform these steps:
 Login to Sumo Logic,  go to **Manage Data** > **Logs** > **Fields**. Search for the “**instanceid**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
-### CloudTrail Fiels Extraction Rule
+### CloudTrail Field Extraction Rule
 
 ```sql
 Rule Name: AwsObservabilityEC2CloudTrailLogsFER
