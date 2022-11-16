@@ -16,7 +16,7 @@ Choose a migration strategy that is more convenient for you. Migration can be do
 
 ### Strategy A. Existing event hub namespaces
 
-If you want to continue using the existing **Event hubs namespaces** that are created by the ARM template, jump to the [Configuring Parameters](#step-2-configure parameters-for-your-event-hub-cloud-to-cloud-sources) section in step 2.
+If you want to continue using the existing **Event hubs namespaces** that are created by the ARM template, jump to the [Configuring Parameters](#step-2-configure-parameters-for-your-event-hub-cloud-to-cloud-sources) section in step 2.
 The advantage of using the existing strategy is that you don’t have to recreate diagnostic settings in Azure Monitor for exporting the logs to the event hub.
 
 :::note
