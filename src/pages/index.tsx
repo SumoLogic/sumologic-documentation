@@ -32,12 +32,12 @@ function Home() {
      <HomepageHeader />
       <main>
       <div className='hero--secondary'>
-      <div className='container-landpage2'>
+      <div className='container-landpage'>
         <div className='column-left'>
-          <h2>Get started with Sumo</h2>
-          <p>Get up and running quickly with Sumo Logic search, visualization and analytics capabilities.</p>
+          <h2>New to Sumo?</h2>
+          <p>Get started quickly with search, visualization and analytics capabilities.</p>
           <p><button className="homepage" description="Set up account">
-            <a href="/docs/get-started">1. Set up account CSS add arrow on hover</a>
+            <a href="/docs/get-started">1. Set up account</a>
           </button><br/>
           <button className="homepage" description="Send data">
             <a href="/docs/send-data">2. Install data collector</a>
@@ -47,6 +47,7 @@ function Home() {
             </button></p>
         </div>
         <div className='column-right'>
+        <img src="img/hero-secondary-graphic.png" />
         </div>
       </div>
       </div>

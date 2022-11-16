@@ -580,11 +580,11 @@ html[data-theme='dark'] .navbar-item-github:before {
   color: black;
   padding: 12px 12px;
   font-weight: 300;
-  font-size: 15px;
+  font-size: 14px;
 //  filter: drop-shadow(-1px 2px 2px #64696C);
   text-decoration: none;
   border: .5px solid #FFF;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-right: 5px;
   margin-bottom: 10px;
   transition: 0.5s;
@@ -603,7 +603,7 @@ html[data-theme='dark'] .navbar-item-github:before {
   color: #F1F1F1;
   padding: 12px 12px;
   font-weight: 300;
-  font-size: 15px;
+  font-size: 14px;
   transition: 0.5s;
   text-decoration: none;
   border: .5px solid #0046BE;
@@ -1083,30 +1083,9 @@ html[data-theme='dark'] .card:hover {
   gap: 5%;
 }
 
-.container-landpage2 {
-  padding: 1rem;
-  display: flex;
-  gap: 5%;
-}
-
 .column-left p,
 .column-right p {
   font-size: 16px;
-}
-
-.column-left {
-  margin-left: 1rem;
-}
-
-.column-right {
-  color: white;
-  padding-left: 20rem;
-  display: flex;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right;
-  background-image:
-    url("../../static/img/hero-secondary-graphic.png") !important;
 }
 
 
@@ -1283,32 +1262,27 @@ html[data-theme='dark'] .card:hover {
 }
 
 .hero--secondary {
+  background-image:
+    url("../../static/img/hero-secondary-background.png") !important;
   color: white;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
   display: flex;
-  background-image:
-    url("../../static/img/hero-secondary-background.png") !important;
-
-
+  max-height: 400px;
 }
 
-.column-left p,
-.column-right p {
-  vertical-align: middle !important;
-}
+
 
 .column-left {
-  width: 50%;
-  padding: 30px;
+  width: 60%;
+  padding-top: 1rem;
 }
 
 .column-right {
-  width: 50%;
-  vertical-align: middle !important;
-
+  width: 48%;
 }
+
 
 .spacer {
   padding: 2rem 0;
