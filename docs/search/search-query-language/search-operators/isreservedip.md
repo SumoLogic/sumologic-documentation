@@ -9,8 +9,12 @@ The isReservedIP operator checks if an IPv4 address is reserved as defined by <a
 
 ## Syntax
 
-* `isReservedIP(\<IPv4_strin\>") as\<fiel\>`
-* `isReservedIP\<IPv4_string_fiel\>) [as\<fiel\>]`
+```sql
+isReservedIP("<IPv4_string>") as <field>
+```
+```sql
+isReservedIP(<IPv4_string_field>) [as <field>]
+```
 
 **Rules**
 
