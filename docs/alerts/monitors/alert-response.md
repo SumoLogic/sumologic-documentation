@@ -175,9 +175,17 @@ For example, the card below shows that “ServiceUnavailable” error is happeni
 A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to an _Alert_'s _Monitor_.
 :::
 
-* From your **Monitors** list, hover your mouse over a row, click the three-dot kebab menu, and select **Subscribe**; or
-* From your **Alert** list, hover your mouse over a row, click the three-dot kebab menu, and select **Subscribe**; or
-* From your **Alert** list, click on a row item, then in the side panel (Alert page), click **Subscribe to Monitor**
+
+#### From your Alerts list
+* Right-click on a row item > click **Subscribe**
+* Hover your mouse over a row, click the three-dot kebab menu > select **Subscribe**
+* Single-click on a row item > in the side panel (Alert page), click the three-dot kebab menu > **Subscribe to Monitor**
+
+
+#### From your Monitors list
+* Right-click on a row item > click **Subscribe**
+* Hover your mouse over a row > click the three-dot kebab menu > select **Subscribe**
+* Single-click on a row item > in the side panel (Monitor Details), click **More Actions** > **Subscribe**
 
 
 ### Notification Preferences
