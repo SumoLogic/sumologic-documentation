@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy-to-staging:
-    uses: SumoLogic/sumologic-documentation/.github/workflows/build_and_deploy.yml@main
+    uses: SumoLogic/sumologic-documentation/.github/workflows/build-and-deploy.yml@main
     with:
       hostname: https://help.sumologic.com
       environment: production
