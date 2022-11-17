@@ -1,5 +1,5 @@
 ---
-id: pause-and-resume-source
+id: pause-resume-source
 title: Pause and Resume a Source
 description: You can pause a cloud polling Source at any time to stop the Source from sending data from the Source to Sumo Logic.
 ---

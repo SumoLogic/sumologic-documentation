@@ -2,7 +2,7 @@
 id: aws-lambda
 title: AWS Lambda
 sidebar_label: AWS Lambda
-description: The Sumo Logic AWS Observability Lambda integration utilizes Lambda Logs and Metrics from CloudWatch, as well as CloudTrail Lambda Data Events. 
+description: The Sumo Logic AWS Observability Lambda integration utilizes Lambda Logs and Metrics from CloudWatch, as well as CloudTrail Lambda Data Events.
 ---
 
 [AWS Lambda](https://aws.amazon.com/lambda/) allows you to run code without the burden of provisioning or managing servers. The AWS Lambda ULM App is a unified logs and metrics (ULM) app for monitoring operation and performance trends in the Lambda functions in your account.
@@ -84,7 +84,7 @@ _sourceCategory=Labs/AWS/Lambda
 | json "message"
 | json "logStream", "logGroup"
 // | _sourceName as logStream | _sourceHost as logGroup
-| parse regex field=message "REPORT\s+RequestId:\s+(\<RequestI\>[^\s]+)\s+Duration:\s+(\<Duratio\>[^\s]+)\s+ms\s+Billed Duration:\s+(\<BilledDuratio\>[^\s]+)\s+ms\s+Memory\s+Size:\s+(\<MemorySiz\>[^\s]+)\s+MB\s+Max\s+Memory\s+Used:\s+(\<MaxMemoryUse\>[^\s]+)\s+MB"
+| parse regex field=message "REPORT\s+RequestId:\s+(?[^\s]+)\s+Duration:\s+(?[^\s]+)\s+ms\s+Billed Duration:\s+(?[^\s]+)\s+ms\s+Memory\s+Size:\s+(?[^\s]+)\s+MB\s+Max\s+Memory\s+Used:\s+(?[^\s]+)\s+MB"
 | parse field=loggroup "/aws/lambda/*" as functionname
 | where account matches "*" and region matches "*" and namespace matches "aws/lambda" and functionname matches "*"
 | sum(Duration) as DurationSum, avg(Duration) as DurationAvg, count as frequency by functionname

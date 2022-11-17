@@ -523,12 +523,26 @@ html[data-theme='dark'] .navbar-item-github:before {
   cursor: pointer;
   margin-right: 5px;
   border-radius: 3px;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: white;
+  }
 }
 
 .navbar-trial:hover {
   background-color: #2aa1e6;
   border: 1px solid #fff;
   color: white;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: white;
+  }
 }
 
 .navbar-trial-mobile {
@@ -555,118 +569,44 @@ html[data-theme='dark'] .navbar-item-github:before {
 }
 
 
-//BACK TO HOMEPAGE buttons on 404 page
+//Get Started button - homepage, 404 not found
 
-.backtohome-404 {
-  border-bottom: 1px solid var(--ifm-toc-border-color);
+.homepage {
+  border-bottom: 1px solid #F1F1F1;
 }
 
-.backtohome-404 {
-  background-color: #2aa1e6;
+.homepage {
+  background-color: transparent;
   color: white;
-  padding: 10px 12px;
-  font-weight: 300;
-  font-size: 13px;
-  text-decoration: none;
-  margin-right: 10px;
-  border: 1px solid #3578e5;
-  cursor: pointer;
-  margin-right: 10px;
-  border-radius: 3px;
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  a:hover {
-    color: white;
-  }
-}
-
-.backtohome-404:hover {
-  background-color: #2aa1e6;
-  color: white;
-  padding: 10px 12px;
-  font-weight: 300;
-  font-size: 13px;
-  text-decoration: none;
-  margin-right: 10px;
-  border: 1px solid #FFF;
-  cursor: pointer;
-  margin-right: 10px;
-  border-radius: 3px;
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  a:hover {
-    color: white;
-  }
-}
-
-.backtohome-404-mobile {
-  background-color: #2aa1e6;
-  color: white;
-  padding: 10px 25px;
-  font-weight: 300;
-  text-decoration: none;
-  border: 1px solid #3578e5;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-
-@media screen and (max-width: 996px) {
-  .backtohome-404 {
-    margin-right: 50px;
-  }
-}
-
-@media screen and (max-width: 479px) {
-  .backtohome-404 {
-    display: none;
-  }
-}
-
-
-
-
-//Get Started button - homepage
-
-.getstarted {
-  border-bottom: 1px solid var(--ifm-toc-border-color);
-}
-
-.getstarted {
-  background-color: #0046BE;
-  color: white;
-  padding: 12px 14px;
+  padding: 12px 12px;
   font-weight: 300;
   font-size: 15px;
 //  filter: drop-shadow(-1px 2px 2px #64696C);
   text-decoration: none;
-  border: .5px solid #000;
-  border-radius: 4px;
+  border: .5px solid #F1F1F1;
+  border-radius: 5px;
   margin-right: 5px;
   margin-bottom: 10px;
+  transition: 0.5s;
   cursor: pointer;
   a {
-    color: white;
+    color: #F1F1F1;
     text-decoration: none;
   }
   a:hover {
-    color: white;
+    color: #0046BE;
   }
 }
 
-
-.getstarted:hover {
-  background-color: #1a55ba;
-  color: black;
-  padding: 12px 14px;
+.homepage:hover {
+  background-color: #094cbf;
+  color: #F1F1F1;
+  padding: 12px 12px;
   font-weight: 300;
   font-size: 15px;
+  transition: 0.5s;
   text-decoration: none;
-  border: .5px solid #8C9296;
+  border: .5px solid #000;
   cursor: pointer;
   a {
     color: white;
@@ -677,10 +617,10 @@ html[data-theme='dark'] .navbar-item-github:before {
   }
 }
 
-.getstarted-mobile {
-  background-color: #0046BE;
+.homepage-mobile {
+  background-color: transparent;
   color: white;
-  padding: 8px 14px;
+  padding: 8px 10px;
   font-weight: 300;
   text-decoration: none;
   border: 1px solid #3578e5;
@@ -691,28 +631,16 @@ html[data-theme='dark'] .navbar-item-github:before {
 
 
 @media screen and (max-width: 996px) {
-  .getstarted {
+  .homepage {
     margin-right: 50px;
   }
 }
 
 @media screen and (max-width: 479px) {
-  .getstarted {
+  .homepage {
     display: none;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1150,24 +1078,25 @@ html[data-theme='dark'] .card:hover {
 
 .container-landpage, .container-reverse {
   padding: 1rem;
-  margin: 5%;
+  margin: 3%;
   display: flex;
-  gap: 5%;
 }
 
 .column-left p,
 .column-right p {
-  text-align: left;
+  font-size: 15px;
 }
 
 .column-left {
-  width: 48.5%;
+  width: 100%;
+  padding-top: 1rem;
 }
 
 .column-right {
-  width: 48.5%;
-  margin-bottom: 1rem;
+  width: 80%;
 }
+
+
 
 
 // *******  MEGA AND MORE *********
@@ -1331,15 +1260,36 @@ html[data-theme='dark'] .card:hover {
 
 .hero--primary {
   background-image:
-    linear-gradient(rgba(0,0,0,0.1),
-    rgba(0,0,0,0.00)),
-    url("../../static/img/landing/landing-hero.jpg") !important;
-    max-height: 200px;
+    linear-gradient(to right, rgb(0,0,153),
+    rgb(0,70,190) 30%);
+  //url("../../static/img/landing/landing-hero.jpg") !important;
+    max-height: 100px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center;
   background-color: transparent !important;
   --ifm-hero-text-color: rgb(255, 255, 255) !important;
+}
+
+.hero--secondary {
+  background-image:
+    url("../../static/img/hero-secondary-background.png") !important;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  display: flex;
+  max-height: 450px;
+}
+
+.hero--secondary2 {
+  background-image:
+    url("../../static/img/hero-secondary-graphic.png") !important;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  max-height: 450px;
 }
 
 .spacer {

@@ -88,7 +88,7 @@ If you've applied a tag to an Entity, you can use the tag in a [rule expression]
 
 
 ```
-array_contains(fieldsTags["srcDevice_ip"], "DB Server")
+array_contains(fieldTags["srcDevice_ip"], "DB Server")
 ```
 
 ## API support

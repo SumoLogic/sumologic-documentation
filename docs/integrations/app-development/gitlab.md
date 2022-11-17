@@ -23,7 +23,7 @@ The Sumo Logic App for GitLab ingests GitLab events using a webhook. Sumo Logic 
 * Issue
 * Push
 
-For information on GitLab events, refer to [GitLab documentation](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html). For troubleshooting, see the [GitLab Troubleshooting](#Troubleshooting) section.
+For information on GitLab events, refer to [GitLab documentation](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html). For troubleshooting, see the [GitLab Troubleshooting](#troubleshooting) section.
 
 
 ### Sample Logs

@@ -1,7 +1,6 @@
 ---
 id: set-up-traces-collection-for-kubernetes-environments
-title: Set up traces collection for Kubernetes environments
-sidebar_label: Set up traces collection for Kubernetes environments
+title: Set up Traces Collection for Kubernetes Environments
 ---
 
 After installing or upgrading your Sumo Logic Kubernetes Collection, you will be able to send your traces directly to its endpoint using OpenTelemetry (as well as older formats like Jaeger or Zipkin).
@@ -13,6 +12,23 @@ Traces will be enhanced with Kubernetes metadata, similarly to the logs and metr
 
 * Kubernetes 1.19+
 * Helm 3.5+
+
+:::sumo availability
+
+<table>
+<tr>
+<td>Account Type</td>
+<td>Account Level</td>
+</tr>
+<tr>
+<td rowspan="2">Credits</td>
+<td>Enterprise Operations and Enterprise Suite</td>
+</tr>
+<tr>
+<td>Essentials get up to 5 GB a day </td>
+</tr>
+</table>
+:::
 
 
 ## Installation process for Sumo Logic Tracing on Kubernetes
@@ -132,7 +148,7 @@ Alternatively, if required, you can use other supported formats as well:
 * OTLP gRPC: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:4317`
 * OTLP HTTP/**deprecated:** `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:55681`
 
-For example, when the default chart name (`collection`) and namespace (`sumologic`) is used, the endpoints are following:
+For example, when the default release name (`collection`) and namespace (`sumologic`) is used, the endpoints are following:
 
 * OTLP HTTP: `collection-sumologic-otelagent.sumologic:4318`
 * Jaeger GRPC: `collection-sumologic-otelagent.sumologic:14250`

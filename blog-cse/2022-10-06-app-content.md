@@ -1,5 +1,5 @@
 ---
-title: October 6, 2022 Application Update
+title: October 6, 2022 - Application Update
 hide_table_of_contents: false
 image: /img/sumo-square.png
 keywords:

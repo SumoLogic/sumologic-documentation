@@ -12,7 +12,7 @@ This guide provides an end-to-end solution for deploying, managing, monitoring,
 
 ## Guides
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper" markdown="1">
 <div className="box box1 card">

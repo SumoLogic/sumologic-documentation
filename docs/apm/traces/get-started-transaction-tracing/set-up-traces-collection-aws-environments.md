@@ -1,7 +1,6 @@
 ---
 id: set-up-traces-collection-aws-environments
-title: Set up traces collection for AWS environments
-sidebar_label: Set up traces collection for AWS environments
+title: Set up Traces Collection for AWS Environments
 description: To collect traces in non-Kubernetes AWS environments like EC2 or ECS (including Fargate), you can install an OpenTelemetry Collector from the AWS Distro for OpenTelemetry.
 ---
 
@@ -11,6 +10,23 @@ To collect traces in non-Kubernetes AWS environments like EC2 or ECS (including
 
 * An [endpoint URL](http-traces-source.md) from an existing or new [HTTP Traces Source](http-traces-source.md).
 * An installed and configured [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) tool.
+
+:::sumo availability
+
+<table>
+<tr>
+<td>Account Type</td>
+<td>Account Level</td>
+</tr>
+<tr>
+<td rowspan="2">Credits</td>
+<td>Enterprise Operations and Enterprise Suite</td>
+</tr>
+<tr>
+<td>Essentials get up to 5 GB a day </td>
+</tr>
+</table>
+:::
 
 ## Telemetry data collection
 
