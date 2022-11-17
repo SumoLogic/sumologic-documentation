@@ -5,171 +5,187 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import { FooterLinkItem, useThemeConfig } from '@docusaurus/theme-common';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import IconExternalLink from '@theme/Icon/ExternalLink';
-import isInternalUrl from '@docusaurus/isInternalUrl';
-import ThemedImage, { Props as ThemedImageProps } from '@theme/ThemedImage';
-import Social from '@site/src/components/Social';
+import DocLink from '@docusaurus/Link';
+import { useThemeConfig } from '@docusaurus/theme-common';
+import { Stack } from '@mui/system';
+import {
+  Box,
+  Divider,
+  Grid,
+  Link,
+  List,
+  ListItem,
+  ListItemText,
+  ListSubheader,
+  Toolbar,
+  Tooltip,
+  Typography,
+} from '@mui/material';
 
-function FooterLink({
-  to,
-  href,
-  label,
-  sublabel,
-  icon,
-  prependBaseUrlToHref,
-  ...props
-}: FooterLinkItem) {
-  const toUrl = useBaseUrl(to);
-  const normalizedHref = useBaseUrl(href, { forcePrependBaseUrl: true });
-  const isExternalLink = label && href && !isInternalUrl(href);
-
-  return (
-    <Link
-      className='footer__link-item'
-      {...(href
-        ? {
-            href: prependBaseUrlToHref ? normalizedHref : href,
-          }
-        : {
-            to: toUrl,
-          })}
-      {...props}
-    >
-    <div className='link'>
-    {icon && <div className='link__icon'><span className="material-icons-outlined">{icon}</span></div>}
-      <div className='link__body'>
-        <div className='link__label'>
-          {isExternalLink ? (
-            <span>
-              {label}
-              <IconExternalLink
-                {...(isExternalLink && {
-                  width: 12,
-                  height: 12,
-                })}
-              />
-            </span>
-          ) : (
-            label
-          )}
-        </div>
-        {sublabel && <div className='link__sublabel'>{sublabel}</div>}
-      </div>
-    </div>
-    </Link>
-  );
-}
-
-function FooterLogo({
-  sources,
-  alt,
-  width,
-  height,
-}: Pick<ThemedImageProps, 'sources' | 'alt' | 'width' | 'height'>) {
-  return (
-    <ThemedImage
-      className='footer__logo'
-      alt={alt}
-      sources={sources}
-      width={width}
-      height={height}
-    />
-  );
-}
-
-function Footer(): JSX.Element | null {
+export const Footer = () => {
   const { footer } = useThemeConfig();
-  const { copyright, links = [], logo = {} } = footer || {};
-  const sources = {
-    light: useBaseUrl(logo.src),
-    dark: useBaseUrl(logo.srcDark || logo.src),
-  };
+  const { copyright, links = [] } = footer ?? {};
 
   if (!footer) {
     return null;
   }
 
   return (
-    <footer
-      className={clsx('footer', 'padding--none', {
-        'footer--dark': footer.style === 'dark',
-      })}
-    >
-        <div className="footer-container">
-          <div className="footer-flex">
-        {links && links.length > 0 && (
-          <div className='row footer__links padding-vert--xl'>
-            <div className='footer-box'>
-            {(logo) && (
-              <div>
-                {logo && (logo.src || logo.srcDark) && (
-                  <div >
-                    {logo.href ? (
-                      <Link href={logo.href}>
-                        <FooterLogo alt={logo.alt} sources={sources} />
-                      </Link>
-                    ) : (
-                      <FooterLogo alt={logo.alt} sources={sources} />
-                    )}
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-            {links.map((linkItem, i) => (
-              <div key={i} className='footer-box'>
-                {linkItem.title != null ? (
-                  <h4 className='footer__title'>{linkItem.title}</h4>
-                ) : null}
-                {linkItem.items != null &&
-                Array.isArray(linkItem.items) &&
-                linkItem.items.length > 0 ? (
-                  <ul className='footer__items'>
-                    {linkItem.items.map((item, key) =>
-                      item.html ? (
-                        <li
-                          key={key}
-                          className='footer__item' // Developer provided the HTML, so assume it is safe.
-                          // eslint-disable-next-line react/no-danger
-                          dangerouslySetInnerHTML={{
-                            __html: item.html,
-                          }}
-                        />
-                      ) : (
-                        <li key={item.href || item.to} className='footer__item'>
-                          <FooterLink {...item} />
-                        </li>
-                      ),
-                    )}
-                  </ul>
-                ) : null}
-              </div>
+    <>
+      <Grid
+        bgcolor='#1A273F'
+        component='footer'
+        container
+        justifyContent='center'
+        mt={10}
+        px={1}
+        gap={6}
+      >
+        {!!links.length && links.map((category) => (
+          <Grid
+            item
+            component={List}
+            key={category.title}
+            py={4}
+            md='auto'
+            xs={12}
+          >
+            <ListSubheader
+              sx={{
+                bgcolor: 'transparent',
+                color: '#6c7993',
+                fontFamily: 'Lab Grotesque',
+                fontWeight: 'bold',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1rem',
+              }}
+            >
+              {category.title}
+            </ListSubheader>
+            {category.items.map(({ href, label }) => (
+              <Link
+                component={DocLink}
+                href={href}
+                key={href}
+                underline='none'
+              >
+                <ListItem>
+                  <ListItemText
+                    primaryTypographyProps={{
+                      color: 'common.white',
+                      fontFamily: 'Lab Grotesque',
+                      fontSize: 14,
+                    }}
+                  >
+                    {label}
+                  </ListItemText>
+                </ListItem>
+              </Link>
             ))}
-          </div>
-        )}
-        </div>
-        <p align="center"><img class="svg" src="/img/sumo-logo.svg" alt="Sumo Logic logo" width="250"></img></p>
-        <p align="center"><a href="https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw"><img class="png" src="/img/youtube-logo.png" alt="Sumo Logic YouTube" width="28"></img></a>&nbsp;&nbsp;<a href="https://twitter.com/SumoLogic"><img class="png" src="/img/twitter-logo.png" alt="Sumo Logic Twitter" width="25"></img></a></p>
-        <p align="center"><a href="https://www.sumologic.com/privacy-statement"><small>Privacy Statement</small></a> | <a href="https://www.sumologic.com/legal"><small>Legal</small></a> | <a href="https://www.sumologic.com/terms-conditions"><small>Terms of Use</small></a></p>
-        {(copyright) && (
-          <div className='footer__bottom'>
-            {copyright ? (
-              <div
-                className='footer__copyright' // Developer provided the HTML, so assume it is safe.
-                // eslint-disable-next-line react/no-danger
-                dangerouslySetInnerHTML={{
-                  __html: copyright,
-                }}
-              />
-            ) : null}
-          </div>
-        )}
-      </div>
-    </footer>
+          </Grid>
+        ))}
+      </Grid>
+      <Stack
+        alignItems='center'
+        bgcolor='#1A273F'
+        borderTop='1px solid'
+        borderColor='rgba(255,255,255,0.12)'
+        component={Toolbar}
+        direction='row'
+        justifyContent='space-between'
+      >
+        <Stack
+          alignItems='center'
+          direction='row'
+          spacing={2}
+        >
+          {[
+            {
+              alt: 'Sumo Logic YouTube',
+              href: 'https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw',
+              src: '/img/youtube-logo.png',
+              width: 28,
+            },
+            {
+              alt: 'Sumo Logic Twitter',
+              href: 'https://twitter.com/SumoLogic',
+              src: '/img/twitter-logo.png',
+              width: 25,
+            },
+          ].map(({ alt, href, ...other }) => (
+            <Tooltip title={alt}>
+              <Link rel='noreferrer noopener'>
+                <Box
+                  alignItems='center'
+                  alt={alt}
+                  component='img'
+                  display='flex'
+                  {...other}
+                />
+              </Link>
+            </Tooltip>
+          ))}
+        </Stack>
+        <Stack
+          alignItems='center'
+          direction='row'
+          spacing={2}
+        >
+          {[
+            {
+              label: 'Legal',
+              href: 'https://www.sumologic.com/legal/',
+            },
+            {
+              label: 'Privacy Statement',
+              href: 'https://www.sumologic.com/privacy-statement/',
+            },
+            {
+              label: 'Terms of Use',
+              href: 'https://www.sumologic.com/terms-conditions/',
+            }].map(({ href, label }) => (
+              <>
+                <Link
+                  color='#6c7993'
+                  fontFamily='Lab Grotesque'
+                  fontSize={14}
+                  href={href}
+                >
+                  {label}
+                </Link>
+                <Divider
+                  flexItem
+                  orientation='vertical'
+                  sx={{
+                    bgcolor: '#6c7993',
+                    '&:last-of-type': {
+                      display: {
+                        md: 'block',
+                        sm: 'none',
+                        xs: 'none',
+                      }
+                    },
+                  }}
+                />
+              </>
+            ))}
+          {copyright && (
+            <Typography
+              color='#6c7993'
+              display={{
+                md: 'block',
+                sm: 'none',
+                xs: 'none'
+              }}
+              fontFamily='Lab Grotesque'
+              fontSize={14}
+            >
+              {copyright}
+            </Typography>
+          )}
+        </Stack>
+      </Stack>
+    </>
   );
 }
 
