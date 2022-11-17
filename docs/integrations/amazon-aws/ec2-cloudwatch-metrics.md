@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) Cloud. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage.
 
-The Sumo Logic App for AWS EC2 (CloudWatch Metrics) allows you to collect your EC2 instance metrics and display them using predefined dashboards. The App provides dashboards to display analysis of EC2 instance metrics for CPU, disk, network, EBS, and Health Status Check. Also, it provides detailed insights into all cloudtrail audit events associated with EC2 instances and specifically helps identify changes, errors, and user activities.
+The Sumo Logic App for AWS EC2 allows you to collect your EC2 instance metrics and display them using predefined dashboards. The App provides dashboards to display analysis of EC2 instance metrics for CPU, disk, network, EBS, Health Status Check, and EC2 Cloudtrail Events. Also, it provides detailed insights into all cloudtrail audit events associated with EC2 instances and specifically helps identify changes, errors, and user activities.
 
 ## Collecting CloudWatch Metrics and CloudTrail logs for AWS EC2
 
@@ -104,6 +104,7 @@ account={{account}} region={{region}} namespace={{namespace}} eventname eventsou
 | count as count by error_code | sort by count, error_code asc | limit 10
 ```
 
+
 ### AWS EC2 CloudWatch Metrics
 
 AWS EC2 automatically monitors functions on your behalf, reporting [AWS EC2 metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html) through Amazon CloudWatch. These metrics are collected by our Hosted Collector by configuring the Amazon CloudWatch source.
@@ -120,10 +121,11 @@ The Sumo Logic App for AWS EC2 (CloudWatch Metrics) allows you to collect your E
 
 To collect Amazon CloudWatch Metrics, see [Amazon CloudWatch Source For Metrics.](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
-AWS Namespace tag to filter in source for Lambda will be - **AWS/EC2**.
+AWS Namespace tag to filter in source for EC2 will be - **AWS/EC2**.
 
 * **Metadata:** Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/Metadata+account.png')} alt="Metadata" />
 
 ### Collect CloudTrail EC2 Data Events
 
@@ -136,13 +138,15 @@ To configure a CloudTrail Source, perform these steps:
 5. While configuring the cloud trail log source, following Field can be added in the source:
     1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
 
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/Fields.png')} alt="Fields" />
+
 
 ### Field in Field Schema
 
-Login to Sumo Logic,  go to Manage Data > Logs > Fields. Search for the “**instanceid**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
+Login to Sumo Logic,  go to **Manage Data** > **Logs** > **Fields**. Search for the “**instanceid**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
-### CloudTrail FER
+### CloudTrail Field Extraction Rule
 
 ```sql
 Rule Name: AwsObservabilityEC2CloudTrailLogsFER
@@ -170,7 +174,6 @@ Scope (Specific Data): account=* eventname eventsource "ec2.amazonaws.com"
 | tolowercase(instanceid) as instanceid
 | fields region, namespace, accountid, instanceid
 ```
-
 
 
 ### Centralized AWS CloudTrail Log Collection
@@ -217,7 +220,6 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-
 ## Viewing AWS EC2 Dashboards
 
 ### Overview (CloudWatch Metrics)
@@ -232,7 +234,7 @@ Use this dashboard to:
 * Identify count of Status checks
 * Observe all relevant metrics for CPU, Internal Disk Store, Network utilization per instance type
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Summary-CloudWatch-Metrics.png')} alt="AWS EC2" />
+![EC2-CW-Overview](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/1.1.-AWS-EC2-Overview-CloudWatch-Metrics.png)
 
 
 ### Summary (CloudWatch Metrics)
@@ -246,12 +248,12 @@ Use this dashboard to:
 * Observe Instance Disk Store (Disk Read/Write - Bytes & ops) for EC2 instance.
 * Monitor Network usage metrics (Network in/out - Byes & packets) for EC2 instance
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Events.png')} alt="AWS EC2" />
+![EC2-CW-Summary](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/1.1.-AWS-EC2-Summary-CloudWatch-Metrics.png)
 
 
 ### Events  
 
-The **AWS EC2 - Events** dashboard provides detailed insights into all cloudtrail audit events associated with EC2 instances and specifically helps identify changes, errors, and user activities.
+The **AWS EC2 - Events (CloudTrail)** dashboard provides detailed insights into all cloudtrail audit events associated with EC2 instances and specifically helps identify changes, errors, and user activities.
 
 Use this dashboard to:
 * Monitor the geo location for successful and failed events
@@ -260,7 +262,8 @@ Use this dashboard to:
 * Monitor top IAM Users, Assumed Role Users and User agents
 * Monitor distribution of Successful and failed events with the list of latest events.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS EC2" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Events-CloudTrail.png')} alt="AWS EC2" />
+
 
 ### CPU (CloudWatch Metrics)
 
@@ -271,7 +274,7 @@ Use this dashboard to:
 * Observe CPU Credits metrics (Usage and balance) over time.
 * Identify CPU Surplus Credits (Charged and Balance) over time.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-CPU-CloudWatch-Metrics.png')} alt="AWS EC2" />
+![EC2-CW-CPU](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/2.1.-AWS-EC2-CPU-CloudWatch-Metrics.png)
 
 ### EBS (CloudWatch Metrics)
 
@@ -282,7 +285,7 @@ Use this dashboard to:
 * Monitor EBS read and write ops over time
 * EBS IO balance and Byte Balance % metric over time for Ec2 instances.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-EBS-CloudWatch-Metrics.png')} alt="AWS EC2" />
+![EC2-CW-EBS](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/3.1.-AWS-EC2-EBS-CloudWatch-Metrics.png)
 
 
 ### Disk (CloudWatch Metrics)
@@ -294,7 +297,7 @@ Use this dashboard to:
 * Monitor instance store - Disk metrics like Disk read/write Bytes and Byte rate
 * Monitor instance store - Disk netrucs like Disk read/write Operations and Operation rate.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Disk-CloudWatch-Metric.png')} alt="AWS EC2" />
+![EC2-CW-Disc](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/4.1.-AWS-EC2-Disk-CloudWatch-Metrics.png)
 
 
 ### Network (CloudWatch Metrics)
@@ -306,7 +309,7 @@ Use this dashboard to:
 * Monitor imported network metrics like - Byte rate for input and out put and Bytes going in and out of Ec2 instances
 * Observe network metrics for Ec2 for packet in/out and  rate of the packets.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Network-CloudWatch-Metrics.png.png')} alt="AWS EC2" />
+![EC2-CW-Network](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/5.1.-AWS-EC2-Network-CloudWatch-Metrics.png)
 
 ### Status Check (CloudWatch Metrics)
 
@@ -317,4 +320,4 @@ Use this dashboard to:
 * Monitor if the instance has passed the status check at last minute
 * Monitor if an instance has passed the system status check at last minute
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Status-Check-CloudWatch-Metrics.png')} alt="AWS EC2" />
+![EC2-CW-Status](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/6.1.-AWS-EC2-Status-Check-CloudWatch-Metrics.png)
