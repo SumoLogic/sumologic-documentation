@@ -56,7 +56,10 @@ Sumo Logic provides the following out-of-the-box alerts:
 | AWS SNS - Failed Notifications | This alert fires where there are many failed notifications (>2) within an interval of 5 minutes. | >2 | <=2 |
 | AWS SNS -  Access from Highly Malicious Sources | This alert fires when an Application AWS - SNS is accessed from highly malicious IP addresses within last 5 minutes | >0 | <=0 |
 | AWS SNS - Failed Events | This alert fires when an SNS app has high number of  failed events (>5) within last 5 minutes | >5 | <=5 |
-
+| AWS SQS -  Access from Highly Malicious Sources | This alert fires when an Application AWS - SQS is accessed from highly malicious IP addresses within last 5 minutes | >0 | <=0 |
+| AWS SQS -  Message processing not fast enough | This alert fires when we detect message processing is not fast enough. That is, the average approximate age of the oldest non-deleted message in the queue is more than 5 seconds for an interval of 5 minutes | >5 | <=5 |
+| AWS SQS -  Messages not processed | This alert fires when we detect messages that have been received by a consumer, but have not been processed (deleted/failed). That is, the average number of messages that are in flight are >=20 for an interval of 5 minutes| >=20 | <20 |
+| AWS SQS - Queue has stopped receiving messages | This alert fires when we detect that the queue has stopped receiving messages. That is, the average number of messages received in the queue <1 for an interval of 30 minutes | <1 | >=1 |
 
 
 :::note

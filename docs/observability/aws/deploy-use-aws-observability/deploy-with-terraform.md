@@ -1463,7 +1463,7 @@ Parameters will take default values as defined under the default column.
 
 This installs the following:
 
-* Apps: AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, AWS NLB, and AWS SNS.
+* Apps: AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, AWS NLB, AWS SNS, and AWS SQS.
   * Default location: “AWS Observability Apps” Personal folder in Sumo Logic
 * Alerts for the AWS Observability Solution
   * Default location: “AWS Observability Monitors” folder of the Monitors folder
@@ -1546,6 +1546,7 @@ The following table provides a list of all source parameters and their default v
 | `alb_monitors_disabled` | Indicates if the ALB Apps monitors should be enabled or disabled. | `true` |
 | `apigateway_monitors_disabled` | Indicates if the API Gateway Apps monitors should be enabled or disabled. | `true` |
 | `sns_monitors_disabled` | Indicates if the SNS Apps monitors should be enabled | `true` |
+| `sqs_monitors_disabled` | Indicates if the SQS Apps monitors should be enabled | `true` |
 | `dynamodb_monitors_disabled` | Indicates if the DynamoDB Apps monitors should be enabled or disabled. | `true` |
 | `ec2metrics_monitors_disabled` | Indicates if the EC2 Metrics Apps monitors should be enabled or disabled.
 `true` |

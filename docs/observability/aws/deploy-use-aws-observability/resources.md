@@ -55,6 +55,8 @@ Amazon ElastiCache
 <br/>
 Amazon SNS
 <br/>
+Amazon SQS
+<br/>
 AWS EC2
    </td>
   </tr>
@@ -87,7 +89,10 @@ AWS Network Load Balancer
 <br/>
 Amazon SNS
 <br/>
-AWS EC2
+Amazon SQS
+<br/>
+Amazon EC2
+<br/>
    </td>
   </tr>
   <tr>
@@ -114,6 +119,8 @@ Amazon ElastiCache
 AWS Network Load Balancer
 <br/>
 Amazon SNS
+<br/>
+Amazon SQS
 <br/>
 AWS EC2
    </td>
@@ -316,6 +323,8 @@ AwsObservabilityLambdaCloudWatchLogsFER
 AwsObservabilityRdsCloudTrailLogsFER
 <br/>
 AwsObservabilitySNSCloudTrailLogsFER
+<br/>
+AwsObservabilitySQSCloudTrailLogsFER
    </td>
   </tr>
   <tr>
@@ -452,6 +461,8 @@ region
 tablename
 <br/>
 topicname
+<br/>
+queuename
    </td>
   </tr>
 </table>
