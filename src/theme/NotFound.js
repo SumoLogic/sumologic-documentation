@@ -38,15 +38,15 @@ export default function NotFound(): JSX.Element {
                 </Translate>
               </p>
               <p align="center">
-              <button className="backtohome-404"
+              <button className="homepage"
                   description="Back to Sumo Docs homepage">
                   <a href="/">Back to home</a>
               </button>
-              <button className="backtohome-404"
+              <button className="homepage"
                   description="Open GitHub Issue">
                   <a href="https://github.com/SumoLogic/sumologic-documentation/issues/new/choose">Report Bug</a>
               </button>
-              <button className="backtohome-404"
+              <button className="homepage"
                   description="Contact Us">
                   <a href="https://sumodojo.slack.com">Get in touch</a>
               </button>

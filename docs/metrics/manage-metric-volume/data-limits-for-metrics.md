@@ -96,7 +96,7 @@ The value of a metadata item, whether it is a dimension, metatag, or metadata re
 
 #### Audit logging 
 
-When one of the limits described above is exceeded, Sumo Logic creates a `MetricsMetadataLimitsExceeded` Health Event for the associated Metric Source and writes an error message to the Audit Event Index.
+When one of the limits described above is exceeded, Sumo Logic creates a `MetricsMetadataLimitsExceeded` Health Event for the associated Metric Source and writes an error or warning message to the Audit Event Index.
 
 Here is an example of a Health Event for a Metrics Source that sent offending metrics:
 

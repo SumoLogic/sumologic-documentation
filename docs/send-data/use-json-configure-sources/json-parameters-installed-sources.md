@@ -25,7 +25,7 @@ Each Source can have its own unique fields in addition to the generic fields lis
 | [Remote Windows Event Log Source](#remote-windows-event-log-source) | RemoteWindowsEventLog |
 | [Local Windows Performance Source](#local-windows-performance-source) | LocalWindowsPerfMon |
 | [Remote Windows Performance Source](#remote-windows-performance-source) | RemoteWindowsPerfMon  |
-| [Windows Active Directory Inventory Source](#windows-active-directory-source) | ActiveDirectory |
+| [Windows Active Directory Inventory Source](#windows-active-directory-inventory-source) | ActiveDirectory |
 | [Syslog Source](#syslogsource) | Syslog |
 | [Script Source](#script-source) | Script |
 | [Docker Log Source](#docker-logsource) | DockerLog |
