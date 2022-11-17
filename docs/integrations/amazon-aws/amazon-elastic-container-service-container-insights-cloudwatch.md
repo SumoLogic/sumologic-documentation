@@ -193,7 +193,7 @@ In this section, you set up collection for traces
 ### Sample Log Message 
 
 
-```
+```json
 {
    "eventVersion":"1.04",
    "userIdentity":{
