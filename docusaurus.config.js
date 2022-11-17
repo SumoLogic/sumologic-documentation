@@ -13,7 +13,7 @@ const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString()
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Welcome to Sumo Docs!',
+  title: 'Sumo Logic Docs',
   tagline: '',
   url: process.env.HOSTNAME || "http://localhost:3000",
   trailingSlash: true,
@@ -33,15 +33,6 @@ module.exports = {
     },
   ],
   staticDirectories: ['static'],
-  i18n: {
-    // https://docusaurus.io/docs/i18n/tutorial
-    defaultLocale: 'en',
-    locales: ['en', 'ja'],
-    localeConfigs: {
-      en: { label: 'English' },
-      ja: { label: '日本語' },
-    },
-  },
   webpack: {
     jsLoader: (isServer) => ({
       loader: require.resolve('swc-loader'),
@@ -233,22 +224,6 @@ module.exports = {
     colorMode: {
       defaultMode: 'light',
     },
-    //algolia: {
-     // The application ID provided by Algolia
-      //appId: 'YKDUX9XT89',
-      // Public API key: it is safe to commit it
-      //apiKey: '72699d7d65c635f1fb1505dec1bedc51',
-      //indexName: 'sumo-docs-staging',
-      // Optional: see doc section below
-      //contextualSearch: true,
-      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      //externalUrlRegex: 'external\\.com|domain\\.com',
-      // Optional: Algolia search parameters
-      //searchParameters: {},
-      // Optional: path for search page that enabled by default (`false` to disable it)
-      //searchPagePath: 'search',
-      //... other Algolia params
-    //},
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
@@ -256,13 +231,12 @@ module.exports = {
     },
       navbar: {
         logo: {
-          alt: 'Sumo Logic',
+          alt: 'Sumo Logic logo',
           srcDark: 'img/sumo-logo.svg',
           src: 'img/sumo-logo-dark.svg',
         },
         items: [
           {
-            //Trial button
             label: 'Start a Free Trial',
             to: 'https://www.sumologic.com/sign-up',
             position: 'right',
@@ -466,7 +440,7 @@ module.exports = {
             title: 'Open Source',
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()}, Sumo Logic Inc.`,
+        copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,
       },
     }),
 };
