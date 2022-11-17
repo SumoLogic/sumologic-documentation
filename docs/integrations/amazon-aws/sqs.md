@@ -72,7 +72,7 @@ metric=NumberOfMessagesReceived Statistic=Sum account=* region=* namespace=* que
 
 **Top 10 users (CloudTrail Log based)**:
 
-```
+```sql
 account=* region=* namespace=aws/sqs eventname eventsource "sqs.amazonaws.com"
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountId", "requestParameters", "responseElements", "sourceIPAddress","errorCode", "errorMessage" as userIdentity, event_source, event_name, region, recipient_account_id, requestParameters, responseElements, src_ip, error_code, error_message nodrop
 | json field=userIdentity "accountId", "type", "arn", "userName" as accountid, type, arn, username nodrop
