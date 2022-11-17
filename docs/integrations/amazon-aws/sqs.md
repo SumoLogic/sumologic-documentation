@@ -132,7 +132,7 @@ Namespace for **Amazon SQS** Service is **AWS/SQS**
 
 ## Field in Field Schema
 
-Login to Sumo Logic,  go to Manage Data > Logs > Fields. Search for the “queuename” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+Log in to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the “queuename” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
 
 ## Field Extraction Rule(s)
 
