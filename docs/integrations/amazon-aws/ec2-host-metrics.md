@@ -39,21 +39,26 @@ The Host Metrics (EC2) app relies upon an Installed Collector with a [Host Metri
 
 ### Field in Field Schema
 
-Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the `instanceid` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
+Log in to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the `instanceid` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Fields_schema.png')} alt="Fields-Schema" />
 
 
 ### Configure Host Metrics sources  
 
-Follow the instructions in this section to configure the Sumo Logic Installed Collector and a [Host Metrics Source](/docs/send-data/installed-collectors/sources/Host-Metrics-Source) on each of your AWS EC2 hosts. You will assign account and Namespace metadata [fields](/docs/manage/fields) to the sources so that incoming logs and metrics will be appropriately tagged.
+Follow the instructions in this section to configure the Sumo Logic Installed Collector and a [Host Metrics Source](/docs/send-data/installed-collectors/sources/Host-Metrics-Source) on each of your **AWS EC2** hosts. You will assign **account** and **namespace** metadata [fields](/docs/manage/fields) to the sources so that incoming logs and metrics will be appropriately tagged.
 
 This step is not necessary if you already have an Installed Collector and Host Metrics tagged with account and Namespace metadata fields.
 
-Perform these steps for each EC2 host.
+Perform these steps for each EC2 host:
 
 1. Set up an Installed Collector. For instructions, see [Installed Collectors](/docs/send-data/Installed-Collectors).
 2. Add a Host Metrics Source to the Installed Collector. For instructions, see [Manually Configure a Host Metrics Source](/docs/send-data/installed-collectors/sources/Host-Metrics-Source#Manually-Configure-a-Host-Metrics-Source). In the **Fields** portion of the configuration::
-   * Add a field named account, and set it to your AWS account alias.
-   * Add a field named Namespace and set it to AWS/EC2.
+   * Add a field named **account**, and set it to your AWS account alias.
+   * Add a field named **namespace** and set it to **aws/ec2**.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/configure-metadata.png')} alt="configure-metadata" />
+
 3. Set the **Scan Interval** (the frequency at which the Source is scanned) to 1 minute.
 
 A default Scan Interval of 1 minute is recommended. You can set it to a higher or lower interval as needed. Faster intervals may result in increased consumption cost.
@@ -163,7 +168,6 @@ Use this dashboard to:
 * Determine how CPU cycles are being spent across  CPU user time, system time, and  IO wait time.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Metrics-CPU-Host-Metrics.png')} alt="EC2 host metrics dashboard" />
-
 
 
 ### AWS EC2 - Memory (Host OS Metrics)
