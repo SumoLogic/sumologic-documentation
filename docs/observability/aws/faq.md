@@ -26,7 +26,7 @@ See [AWS Observability Apps](/docs/observability/aws/integrations) for detailed
 
 ### What AWS services are supported?
 
-Sumo Logic AWS Observability supports the following AWS services: EC2, ECS, RDS, ElastiCache, API Gateway, Lambda, DynamoDB, Application ELB, Classic ELB, Amazon SNS, Amazon SQS and Network ELB.
+Sumo Logic AWS Observability supports the following AWS services: EC2, ECS, RDS, ElastiCache, API Gateway, Lambda, DynamoDB, Application ELB, Classic ELB, Amazon SNS, Amazon SQS, and Network ELB.
 
 Sumo Logic Root Cause Explorer analyzes and correlates metrics from all supported AWS Observability services and EBS, Autoscaling, X-ray, SNS, and SQS.
 
