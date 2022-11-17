@@ -91,13 +91,24 @@ export const Footer = () => {
         borderTop='1px solid'
         borderColor='rgba(255,255,255,0.12)'
         component={Toolbar}
-        direction='row'
+        direction={{
+          md: 'row',
+          xs: 'column',
+        }}
         justifyContent='space-between'
+        py={{
+          md: 0,
+          xs: 4,
+        }}
       >
         <Stack
           alignItems='center'
           direction='row'
           spacing={2}
+          pb={{
+            md: 0,
+            xs: 2,
+          }}
         >
           {[
             {
@@ -128,8 +139,14 @@ export const Footer = () => {
         </Stack>
         <Stack
           alignItems='center'
-          direction='row'
-          spacing={2}
+          direction={{
+            md: 'row',
+            xs: 'column',
+          }}
+          spacing={{
+            md: 2,
+            xs: 0.5,
+          }}
         >
           {[
             {
@@ -172,13 +189,12 @@ export const Footer = () => {
           {copyright && (
             <Typography
               color='#6c7993'
-              display={{
-                md: 'block',
-                sm: 'none',
-                xs: 'none'
-              }}
               fontFamily='Lab Grotesque'
               fontSize={14}
+              pt={{
+                md: 0,
+                xs: 1,
+              }}
             >
               {copyright}
             </Typography>

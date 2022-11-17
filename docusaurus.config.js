@@ -113,19 +113,6 @@ module.exports = {
         },
       }),
     ],
-  //  [
-  //    'redocusaurus',
-  //    {
-  //      specs: [
-  //        {
-  //          id: 'sumoapi',
-  //          //specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
-  //          spec: 'sumologic-api.yaml',
-  //          route: '/sumoapi/',
-  //        },
-  //      ],
-  //    },
-  //  ],
   ],
   plugins: [
     'docusaurus-plugin-sass',
@@ -234,6 +221,9 @@ module.exports = {
           alt: 'Sumo Logic logo',
           srcDark: 'img/sumo-logo.svg',
           src: 'img/sumo-logo-dark.svg',
+          style: {
+            height: 24,
+          }
         },
         items: [
           {
