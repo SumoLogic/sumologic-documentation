@@ -87,7 +87,7 @@
     "prettier": "^2.4.1",
     "typescript": "^4.5.4"
   },
-    "browserslist": {
+  "browserslist": {
     "production": [
       ">0.5%",
       "not dead",
