@@ -102,7 +102,7 @@ Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field 
 * **Scope (Specific Data)**: account=* eventname eventsource "sqs.amazonaws.com"
 * **Parse Expression**:
 
-```
+```sql
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountId", "requestParameters", "responseElements", "sourceIPAddress" as userIdentity, event_source, event_name, region, recipient_account_id, requestParameters, responseElements, src_ip  nodrop
 | json field=userIdentity "accountId", "type", "arn", "userName" as accountid, type, arn, username nodrop
 | json field=requestParameters "queueUrl" as queueUrlReq nodrop
