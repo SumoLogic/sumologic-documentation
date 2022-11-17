@@ -1078,14 +1078,24 @@ html[data-theme='dark'] .card:hover {
 
 .container-landpage, .container-reverse {
   padding: 1rem;
-  margin: 5%;
+  margin: 3%;
   display: flex;
-  gap: 5%;
 }
 
 .column-left p,
 .column-right p {
   font-size: 16px;
+}
+
+.column-left {
+  width: 100%;
+  padding-top: 1rem;
+
+}
+
+.column-right {
+  width: 80%;
+  vertical-align: top;
 }
 
 
@@ -1269,20 +1279,8 @@ html[data-theme='dark'] .card:hover {
   background-size: cover;
   background-position: top;
   display: flex;
-  max-height: 400px;
+  max-height: 450px;
 }
-
-
-
-.column-left {
-  width: 60%;
-  padding-top: 1rem;
-}
-
-.column-right {
-  width: 48%;
-}
-
 
 .spacer {
   padding: 2rem 0;

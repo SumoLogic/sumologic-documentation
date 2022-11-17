@@ -34,6 +34,7 @@ function Home() {
       <div className='hero--secondary'>
       <div className='container-landpage'>
         <div className='column-left'>
+        <div className='container'>
           <h2>New to Sumo?</h2>
           <p>Get started quickly with search, visualization and analytics capabilities.</p>
           <p><button className="homepage" description="Set up account">
@@ -45,10 +46,13 @@ function Home() {
           <button className="homepage" description="Data insights icon">
             <a href="/docs/get-started/sumo-logic-ui">3. Explore your insights</a>
             </button></p>
+            </div>
         </div>
         <div className='column-right'>
+        <div className='container'>
         <img src="img/hero-secondary-graphic.png" />
         </div>
+      </div>
       </div>
       </div>
      <div className="container">
