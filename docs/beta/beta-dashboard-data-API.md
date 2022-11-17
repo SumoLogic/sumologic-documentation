@@ -12,7 +12,7 @@ description: The Dashboard Data API allows you to access available dashboards, r
 
 The Dashboard Data API allows you to access available dashboards, retrieve a specific dashboard, or retrieve the data for all monitors (i.e., panels) on a dashboard. In order to retrieve data from a dashboard via the API, the dashboard must be in [live mode](https://helpstaging.sumologic.com/Visualizations-and-Alerts/Dashboards/01-About-Dashboards#Live_mode "About Dashboards").
 
-:::Important
+:::important
 The Dashboard Data API is currently in beta mode. For questions or support, please contact beta-dashboard-api-group@sumologic.com.
 :::
 
