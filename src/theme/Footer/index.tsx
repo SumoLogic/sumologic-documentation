@@ -57,6 +57,7 @@ export const Footer = () => {
                 fontFamily: 'Lab Grotesque',
                 fontWeight: 'bold',
                 textTransform: 'uppercase',
+                letterSpacing: '0.1rem',
               }}
             >
               {category.title}
@@ -72,6 +73,7 @@ export const Footer = () => {
                   <ListItemText
                     primaryTypographyProps={{
                       color: 'common.white',
+                      fontFamily: 'Lab Grotesque',
                       fontSize: 14,
                     }}
                   >

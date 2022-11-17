@@ -572,18 +572,18 @@ html[data-theme='dark'] .navbar-item-github:before {
 //Get Started button - homepage, 404 not found
 
 .homepage {
-  border-bottom: 1px solid var(--ifm-toc-border-color);
+  border-bottom: 1px solid #F1F1F1;
 }
 
 .homepage {
   background-color: transparent;
-  color: black;
+  color: white;
   padding: 12px 12px;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 15px;
 //  filter: drop-shadow(-1px 2px 2px #64696C);
   text-decoration: none;
-  border: .5px solid #FFF;
+  border: .5px solid #F1F1F1;
   border-radius: 5px;
   margin-right: 5px;
   margin-bottom: 10px;
@@ -599,14 +599,14 @@ html[data-theme='dark'] .navbar-item-github:before {
 }
 
 .homepage:hover {
-  background-color: #0046BE;
+  background-color: #094cbf;
   color: #F1F1F1;
   padding: 12px 12px;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 15px;
   transition: 0.5s;
   text-decoration: none;
-  border: .5px solid #0046BE;
+  border: .5px solid #000;
   cursor: pointer;
   a {
     color: white;
@@ -620,7 +620,7 @@ html[data-theme='dark'] .navbar-item-github:before {
 .homepage-mobile {
   background-color: transparent;
   color: white;
-  padding: 8px 14px;
+  padding: 8px 10px;
   font-weight: 300;
   text-decoration: none;
   border: 1px solid #3578e5;
@@ -1084,19 +1084,19 @@ html[data-theme='dark'] .card:hover {
 
 .column-left p,
 .column-right p {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .column-left {
   width: 100%;
   padding-top: 1rem;
-
 }
 
 .column-right {
   width: 80%;
-  vertical-align: top;
 }
+
+
 
 
 // *******  MEGA AND MORE *********
@@ -1261,7 +1261,7 @@ html[data-theme='dark'] .card:hover {
 .hero--primary {
   background-image:
     linear-gradient(to right, rgb(0,0,153),
-    rgb(0,70,190) 80%);
+    rgb(0,70,190) 30%);
   //url("../../static/img/landing/landing-hero.jpg") !important;
     max-height: 100px;
   background-repeat: no-repeat;
@@ -1279,6 +1279,16 @@ html[data-theme='dark'] .card:hover {
   background-size: cover;
   background-position: top;
   display: flex;
+  max-height: 450px;
+}
+
+.hero--secondary2 {
+  background-image:
+    url("../../static/img/hero-secondary-graphic.png") !important;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   max-height: 450px;
 }
 
