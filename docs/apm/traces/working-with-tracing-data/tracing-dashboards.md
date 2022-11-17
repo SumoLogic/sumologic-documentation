@@ -24,7 +24,7 @@ Each dashboard is a fully customizable set of panels based on automatically gene
 
 By clicking on any data point on the chart, you can view the side panel's **Entities** tab and drill down to related metrics or traces for the selected service.
 
-![Explore coffee app to drill down on infrastructure tab.png](/img/traces/coffee-app-infrastructure-tab.png)
+![Explore coffee app to drill down on infrastructure tab.png](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Application-Health-Across-Services.png)
 
 :::note
 Tracing metrics retention has [default metrics retention](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces/#time-range).
