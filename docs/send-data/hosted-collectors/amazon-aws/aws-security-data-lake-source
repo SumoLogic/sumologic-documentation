@@ -106,4 +106,4 @@ Remember to copy and secure the subscription URL. If you closed the window and c
 
 1. Navigate to the Subscribers page and click **My Subscribers**.
 2. Edit the subscriber created in the [Setup Subscriber](#step-2-setup-subscriber-in-aws-security-data-lake-console)section in step 2.
-3. Add the subscription URL copied from the AWS Security Data Lake source setup in [Create AWS Security Data Lake Source](#step-3-create-aws-security-data -lake-source-using-sumo-logic-environment) section.
+3. Add the subscription URL copied from the AWS Security Data Lake source setup in [Create AWS Security Data Lake Source](#step-3-create-aws-security-data-lake-source-using-sumo-logic-environment) section.
