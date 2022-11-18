@@ -16,7 +16,7 @@ The Dashboard Data API allows you to access available dashboards, retrieve a spe
 The Dashboard Data API is currently in beta mode. For questions or support, please contact beta-dashboard-api-group@sumologic.com.
 :::
 
-####Authentication
+## Authentication
 ------------------------------------------------------------------------------------------
 
 Any request made to the Sumo Logic API needs to include an HTTP Basic Authentication header (see RFC 2617) generated from a user's email and password. All modern browsers (as well as command line tools like curl and wget) support basic authentication. This is secure, since all communication with the Sumo Logic service happens over TLS (SSL/HTTPS). For more information, see [API Authentication](https://help.sumologic.com/docs/api/getting-started/#authentication "API Authentication").
