@@ -32,7 +32,7 @@ Granting Sumo logic access to the AWS AWS Security Data Lake source console woul
 
 ### Step 2. Setup Subscriber in AWS Security Data Lake Console
 
-1. Create a subscriber on Security Data Lake Console. To create a subscriber, follow the instructions below:
+Create a subscriber on Security Data Lake Console. To create a subscriber, follow the instructions below:
   1. Navigate to the Security Data Lake console.
   2. From the left navigation, click **Subscriber**.
   3. On the Subscribers page, under the **Add subscribers** tab click **Create custom subscriber**. <br/><img src={useBaseUrl('img/send-data/setup-subscriber.png')} alt="setup-subscriber" />
