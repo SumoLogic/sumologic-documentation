@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '@theme/Layout';
-import { Box, Button, Container, Divider, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
+import { Box, Button, Container, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
 import { TabContext, TabPanel } from '@mui/lab';
 import bgImage from '../../static/img/hero-secondary-background.png';
 import heroImage from '../../static/img/hero-secondary-graphic.png';
@@ -47,9 +47,9 @@ export const Home = () => {
         sx={{
           bgcolor: 'white',
           backgroundImage: `url(${bgImage})`,
-          backgroundPosition: 'bottom center',
+          backgroundPosition: 'top',
           backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
+          backgroundSize: '100% 200%',
         }}
         height={{
           md: 'auto',
@@ -63,7 +63,7 @@ export const Home = () => {
             alignItems='center'
             container
             direction={{
-              md: 'row-reverse',
+              md: 'row',
               xs: 'column-reverse',
             }}
             justifyContent={{
