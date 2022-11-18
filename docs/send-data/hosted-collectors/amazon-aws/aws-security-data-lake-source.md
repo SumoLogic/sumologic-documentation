@@ -39,11 +39,13 @@ Create a subscriber on Security Data Lake Console. To create a subscriber, follo
 4. Optional: Provide the **Subscriber name** and **Description**.
 5. In the **Select Logs and events sources** section, you can select which resources you want to enable. There are two options given to you:
      * **All Logs and event sources**. All the logs and event sources will be selected if you select this option.
-     * **Specify log and event sources**. Only specific sources will be selected if you go with this option. For example, you select **Specific log and event sources**. In the next step, you will be able to view user activity, API usage in AWS services, IP traffic details, and route S3.
+     * **Specify log and event sources**. Only specific sources will be selected if you go with this option. 
+     For example, you select **Specific log and event sources**. In the next step, you will be able to view user activity, API usage in AWS services, IP traffic details, and route S3.
 6. In **Log and event sources**, you see three options again:
      * **CloudTrail**: View user activity and API usage in AWS services.
      * **VPC flow logs**: View details about IP traffic to and from network interfaces in your VPC.
-     * **Route S3**: For example, you select Cloudtrail to get all the user activity and API usage in AWS services.<br/> ![cloudtrail.png](/img/send-data/cloudtrail.png)
+     * **Route S3**: 
+     For example, you select Cloudtrail to get all the user activity and API usage in AWS services.<br/> ![cloudtrail.png](/img/send-data/cloudtrail.png)
 7. Access data.
      * **S3** or **Lakeformation** is the storage option you can choose for how your subscribers will access the data.
 
@@ -76,7 +78,7 @@ In this case, an option to automatically add or enable the nonexistent fields to
 Remember to copy and secure the subscription URL. If you closed the window and could not copy the URL, don't worry. Click on the **Edit** button under the list of sources and copy the URL.
 :::
 
-11. Optional: You can create any **Processing Rules** that you want for the AWS Source. Refer to the [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule).
+11. Optional: You can create any **Processing Rules** that you want for the AWS Source. Refer to [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
 
 ### Step 4: Update AWS Security Data Lake Subscriber
 
