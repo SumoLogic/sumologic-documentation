@@ -37,24 +37,16 @@ Granting Sumo Logic access to the AWS Security Data Lake source console would re
 
     ![setup-subscriber.png](/img/send-data/setup-subscriber.png)
 
-  4. Optional: Provide the **Subscriber name** and **Description**.
-  5. In the **Select Logs and events sources** section, you can select which resources you want to enable. There are two options given to you:
-     * **All Logs and event sources**. All the logs and event sources will be selected if you select this option.
-     * **Specify log and event sources**. Only specific sources will be selected if you go with this option.
-
-     For example, you select **Specific log and event sources**. In the next step, you will be able to view user activity, API usage in AWS services, IP traffic details, and route S3.
-
-  6. In **Log and event sources**, you see three options again:
-     * **CloudTrail**: View user activity and API usage in AWS services.
-     * **VPC flow logs**: View details about IP traffic to and from network interfaces in your VPC.
-     * **Route S3**
-
-     For example, you select Cloudtrail to get all the user activity and API usage in AWS services.
-
-     ![cloudtrail.png](/img/send-data/cloudtrail.png)
-
-  7. Access data.
-     * **S3** or **Lakeformation** is the storage option you can choose for how your subscribers will access the data.
+4. Optional: Provide the **Subscriber name** and **Description**.
+5. In the **Select Logs and events sources** section, you can select which resources you want to enable. There are two options given to you:
+   * **All Logs and event sources**. All the logs and event sources will be selected if you select this option.
+   * **Specify log and event sources**. Only specific sources will be selected if you go with this option. For example, you select **Specific log and event sources**. In the next step, you will be able to view user activity, API usage in AWS services, IP traffic details, and route S3.
+6. In **Log and event sources**, you see three options again:
+   * **CloudTrail**: View user activity and API usage in AWS services.
+   * **VPC flow logs**: View details about IP traffic to and from network interfaces in your VPC.
+   * **Route S3**: For example, you select Cloudtrail to get all the user activity and API usage in AWS services. <br/> ![cloudtrail.png](/img/send-data/cloudtrail.png)
+7. Access data.
+   * **S3** or **Lakeformation**are the storage options you can choose for how your subscribers will access the data.
 
      :::note
      Subscription URL will be added to the subscriber in the later step and is kept blank deliberately.
