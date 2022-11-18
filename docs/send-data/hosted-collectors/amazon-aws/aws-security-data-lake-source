@@ -30,13 +30,11 @@ Granting Sumo Logic access to the AWS Security Data Lake source console would re
 
 ### Step 2. Setup Subscriber in AWS Security Data Lake Console
 
-1. Create a subscriber on Security Data Lake Console. To create a subscriber, follow the instructions below:
-  1. Navigate to the Security Data Lake console.
-  2. From the left navigation, click **Subscriber**.
-  3. On the Subscribers page, under the **Add subscribers** tab click **Create custom subscriber**.
+Create a subscriber on Security Data Lake Console. To create a subscriber, follow the instructions below:
 
-    ![setup-subscriber.png](/img/send-data/setup-subscriber.png)
-
+1. Navigate to the Security Data Lake console.
+2. From the left navigation, click **Subscriber**.
+3. On the Subscribers page, under the **Add subscribers** tab, click **Create custom subscriber**.<br/>  ![setup-subscriber.png](/img/send-data/setup-subscriber.png)
 4. Optional: Provide the **Subscriber name** and **Description**.
 5. In the **Select Logs and events sources** section, you can select which resources you want to enable. There are two options given to you:
    * **All Logs and event sources**. All the logs and event sources will be selected if you select this option.
