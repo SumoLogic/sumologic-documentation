@@ -14,7 +14,7 @@ For non-aggregate queries, the Field Browser is useful for narrowing results on
 
 The Field Browser displays the number of values for each field returned in a search. It works in real time, so you can fine tune the fields you want to view or hide. After setting the fields to display, save your preferences so that the correct fields are always displayed in your searches. The preferences are saved just for your user account and don’t change the way data is displayed in other user accounts.
 
-In addition to the fields found in your logs, the Field Browser shows **Time** (for message time), **Receipt Time** (for the receipt time), and **Message** (for raw log messages). No [drill-down searches](search-field-browser.md) can be run on these fields because they don't contain number or string data that can be searched on.
+In addition to the fields found in your logs, the Field Browser shows **Time** (for message time), **Receipt Time** (for the receipt time), and **Message** (for raw log messages). No [drill-down searches](search-from-field-browser.md) can be run on these fields because they don't contain number or string data that can be searched on.
 
 ![FB_Field-Browser_Display-Fields.png](/img/search/get-started-search/search-page/FB-Field-Browser-Display-Fields.png)
 
@@ -50,7 +50,7 @@ Nested fields, such as those seen in JSON and KV, are grouped together based o
 
 The Field Browser is limited for aggregate queries in the following ways:
 
-* [Drill-down searches](search-field-browser.md) are not available for aggregate queries.
+* [Drill-down searches](search-from-field-browser.md) are not available for aggregate queries.
 * Field counts (item G above) are not displayed for aggregate queries. 
 * Field counts—If messages returned are less than or equal to 2500 messages, then an exact calculation is shown. If more than 2500 messages are returned, an approximation is shown.
 
@@ -59,6 +59,6 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 ## Guide contents
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

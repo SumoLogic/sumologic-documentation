@@ -1,6 +1,6 @@
 ---
 id: sdo-manual-configuration
-title: Sumo Logic SDO Manual Configuration
+title: Software Development Optimization Manual Configuration
 sidebar_label: Manual Configuration
 description: Learn how to set up the Software Development Optimization (SDO) Solution. You will manually configure collection and install apps for tool integration, create field extraction rules (FERs) for each supported tool, and install the SDO app.
 ---

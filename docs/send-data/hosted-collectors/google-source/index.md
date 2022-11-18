@@ -8,6 +8,6 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 Sumo Logic offers hosted Sources to collect from these Google products.
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

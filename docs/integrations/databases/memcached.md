@@ -123,19 +123,32 @@ Follow the steps listed below to collect Memcached metrics from a Kubernetes env
     telegraf.influxdata.com/inputs: |+
   servers = ["localhost:11211"]
   [inputs.memcached.tags]
-    environment="dev_CHANGE_ME"
-    component="database"
-    db_system="memcached"
-    db_cluster="memcached_on_k8s_CHANGE_ME"
+  environment="dev_ENV_TO_BE_CHANGED"
+  component="database"
+  db_system="memcached"
+  db_cluster="memcached_on_k8s_ENV_TO_BE_CHANGED"
+  db_cluster_address = "ENV_TO_BE_CHANGED"
+  db_cluster_port = "ENV_TO_BE_CHANGED"
 ```
 
-3. Enter in values for the following parameters (marked `CHANGE_ME` above):
+3. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` above):
    * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Memcached Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Memcached input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
    * In the input plugins section (`[[inputs.memcached]]`):
       * `servers` - An array of addresses to gather stats about. Specify an IP on the hostname. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached) for more information on additional parameters for configuring the Memcached input plugin for Telegraf.
    * In the tags section (`[inputs.memcached.tags]`):
       * `environment` - This is the deployment environment where the Memcached cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `db_cluster` - Enter a name to identify this Memcached cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example, if your application uses “memcached-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=memcached-prod.sumologic.com db_cluster_port=3306`.
+
+If your application connects directly to a given Memcached node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=memcached-prod.sumologic.com`
+
+Pivoting to Tracing data from Entity Inspector is possible only for “Memcached address” Entities.
+:::
    * Here’s an explanation for additional values set by this configuration that we request you  do not modify as they will cause the Sumo Logic apps to not function correctly.
      * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
      * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
@@ -155,15 +168,28 @@ This section explains the steps to collect Memcached logs from a Kubernetes envi
 
 1. **Add labels on your Memcached pods to capture logs from standard output (recommended method)**.
    1. Apply the following labels to the Memcached pods:
-    ```bash
-    environment: "prod_CHANGE_ME"
+    ```sql
+    environment: "prod_ENV_TO_BE_CHANGED"
     component: "database"
     db_system: "memcached"
-    db_cluster: "memcached_on_k8s_CHANGE_ME"
+    db_cluster: "memcached_on_k8s_ENV_TO_BE_CHANGED"
+    db_cluster_address = "ENV_TO_BE_CHANGED"
+    db_cluster_port = "ENV_TO_BE_CHANGED"
     ```
    2. Enter in values for the following parameters:
     * `environment` - This is the deployment environment where the Memcached cluster identified by  the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
     * `db_cluster` - Enter a name to identify this Memcached cluster. This cluster name will be shown in the Sumo Logic dashboards.
+    * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+    * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+    :::note
+    `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+    For example, if your application uses “memcached-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=memcached-prod.sumologic.com db_cluster_port=3306`.
+
+    If your application connects directly to a given Memcached node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=memcached-prod.sumologic.com`.
+
+    Pivoting to Tracing data from Entity Inspector is possible only for “Memcached address” Entities.
+    :::
     * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
       * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
       * `db_system: “memcached”` - This value identifies the database system.
@@ -187,7 +213,7 @@ This section explains the steps to collect Memcached logs from a Kubernetes envi
     kubectl describe pod <Memcached_pod_name>
     ```
    4. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
-3. **Add a FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
+3. **Add a FER to normalize the fields in Kubernetes environments**. This step is not needed if one is using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
    1. Go to **Manage Data > Logs > Field Extraction Rules**.
    2. Click the + Add button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear:
@@ -205,10 +231,9 @@ This section explains the steps to collect Memcached logs from a Kubernetes envi
      if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
      | pod_labels_component as component
      | pod_labels_db_system as db_system
-     | pod_labels_db_cluster as db_cluster
+     | if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
      ```
    5. Click **Save** to create the rule.
-
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -229,20 +254,32 @@ This section provides instructions for configuring logs and metrics collection f
 ```sql
  servers = ["localhost:11211"]
   [inputs.memcached.tags]
-    environment="dev_CHANGE_ME"
-    component="database"
-    db_system="memcached"
-    db_cluster="memcached_on_premise_CHANGE_ME"
-
-  url = "<URL Created in Step 3_CHANGEME>"
+  environment="dev_ENV_TO_BE_CHANGED"
+  component="database"
+  db_system="memcached"
+  db_cluster="memcached_on_premise_ENV_TO_BE_CHANGED"
+  db_cluster_address = "ENV_TO_BE_CHANGED"
+  db_cluster_port = "ENV_TO_BE_CHANGED"
+  url = "<URL Created in Step 3_ENV_TO_BE_CHANGED>"
   data_format = "prometheus"
 ```
-5. Please enter values for the following parameters (marked in `CHANGE_ME` above):
+5. Please enter values for the following parameters (marked in `ENV_TO_BE_CHANGED` above):
   * In the input plugins section (`[[inputs.memcached]]`):
      * `servers` - An array of addresses to gather stats about. Specify an IP on hostname. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached) for more information on additional parameters for configuring the Memcached input plugin for Telegraf.
      * In the tags section (`[inputs.memcached.tags]`):
         * `environment` - This is the deployment environment where the Memcached cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `db_cluster` - Enter a name to identify this Memcached cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `db_cluster_address` - Enter the cluster hostname or IP address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+        * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+        :::note
+        `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+        For example, if your application uses `“memcached-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=memcached-prod.sumologic.com db_cluster_port=3306`
+
+        If your application connects directly to a given memcached node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=memcached-prod.sumologic.com`
+
+        Pivoting to Tracing data from Entity Inspector is possible only for “Memcached address” Entities.
+        :::
   * In the output plugins section (`[[outputs.sumologic]]`):
      * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
    * Here’s an explanation for additional values set by this Telegraf configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
@@ -288,6 +325,17 @@ By default, Memcached logs are stored in a log file. Local log files can be coll
             * `db_system = memcached`
             * `db_cluster = <Your_Memcached_Cluster_Name>`
             * `environment = <Environment_Name>`, such as Dev, QA or Prod.
+            * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+            * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+            :::note
+            `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+
+            For example, if your application uses `“memcached-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=memcached-prod.sumologic.com db_cluster_port=3306`.
+
+            If your application connects directly to a given Memcached node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=memcached-prod.sumologic.com`
+
+            Pivoting to Tracing data from Entity Inspector is possible only for “Memcached address” Entities.
+            :::
     3. Configure the **Advanced** section:
         * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
         * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your Memcached Server’s time zone.
@@ -399,56 +447,51 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name or enter a name of your choice for the app. 
-    2. **Data Source.**
-        * Choose **Enter a Custom Data Filter**, and enter a custom filter for Memcached cluster. Examples:
-            1. For all Memcached clusters `db_cluster=*`
-            2. For specific clusters: `db_cluster=memcached.dev.01` 
-            3. Clusters within a specific environment: `db_cluster=memcached-1` and `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+   * **App Name.** You can retain the existing name or enter a name of your choice. 
+   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder or another folder that you specified. From here, you can share it with your organization.
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but you'll see complete graphs and maps in a bit of time.
+Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but you'll see full graphs and maps in a bit of time.
 
 
 
 ## Viewing Memcached Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
 :::
 
 ### Overview
 
-The Memcached - Overview dashboard provides an at-a-glance view of the Memcached server status, error logs along with database metrics.
+The **Memcached - Overview** dashboard provides an at-a-glance view of the Memcached server status, error logs, and database metrics.
 
 <img src={useBaseUrl('img/integrations/databases/Memcached-Overview.png')} alt="Memcached dashboards" />
 
 
 ### Operations
 
-The Memcached - Operations Dashboard provides detailed analysis on connections, thread requested, network bytes, hash expansion size, table size.
+The **Memcached - Operations** Dashboard provides detailed analysis on connections, thread requested, network bytes, hash expansion size, table size.
 
 <img src={useBaseUrl('img/integrations/databases/Memcached-Operations.png')} alt="Memcached dashboards" />
 
 
 ### Command Stats
 
-The Memcached - Command Stats dashboard provides detailed insights into the number of commands being performed.
+The **Memcached - Command Stats** dashboard provides detailed insights into the number of commands being performed.
 
 <img src={useBaseUrl('img/integrations/databases/Memcached-Command-Stats.png')} alt="Memcached dashboards" />
 
 ### Cache Information
 
-The Memcached - Cache Information dashboard provides insight into cache states, cache hit, and miss rate over time.
+The **Memcached - Cache Information** dashboard provides insight into cache states, cache hit, and miss rate over time.
 
 <img src={useBaseUrl('img/integrations/databases/Memcached-Cache-Information.png')} alt="Memcached dashboards" />
 
 ### Logs
 
-This dashboard helps you quickly analyze your Memcached error logs, commands executed, and objects stored.
+The **Memcached - Logs** dashboard helps you quickly analyze your Memcached error logs, commands executed, and objects stored.
 
 <img src={useBaseUrl('img/integrations/databases/Memcached-Logs.png')} alt="Memcached dashboards" />
 

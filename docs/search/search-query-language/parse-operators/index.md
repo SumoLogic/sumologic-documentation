@@ -1,6 +1,6 @@
 ---
 slug: /search/search-query-language/parse-operators
-title: Sumo Logic Parse Operators
+title: Parse Operators
 description: Sumo Logic provides a number of ways to parse fields in your log messages.
 ---
 
@@ -13,6 +13,6 @@ For best practices use Parse operators to build [Field Extraction Rules](/docs/
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

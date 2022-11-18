@@ -30,7 +30,7 @@ When you've already run a search query with non-aggregate results, you can use t
 
 ### Rules
 
-* The logreduce operator can't be used with [group-by operators](../search-query-language/group-aggregate-operators) such as "count by field".
+* The logreduce operator can't be used with [group-by operators](/docs/search/search-query-language/group-aggregate-operators) such as "count by field".
 
 ### Syntax
 

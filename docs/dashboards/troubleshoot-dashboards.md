@@ -46,7 +46,7 @@ Interactive mode is different because it queries the log messages after processi
 
 The easiest way to check if a timestamp parsing problem or delayed ingest could be causing this problem is to compare the parsed time "Time" field to the time the service received the message. On the panel showing no data, click the Panel or click the **Show in Search** button to open the query in the Search tab.
 
-When you open the query on the **Search** page, Sumo Logic provides an option just under the time range selector called [Use Receipt Time](../search/get-started-with-search/build-search/use-receipt-time.md). Run the query with this option checked. 
+When you open the query on the **Search** page, Sumo Logic provides an option just under the time range selector called [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time). Run the query with this option checked. 
 
 ![Query_User-Receipt-Time.png](/img/dashboards/Query_User-Receipt-Time.png)
 
@@ -77,7 +77,7 @@ To work around this problem of opening the dashboards, in the web browser that y
 
 When you create a Dashboard and publish it or install an App, you are the owner of the Dashboard, so you have the ability to edit or adjust it at any time. But If you're using a Dashboard that is published by someone else in your organization, you won't see the **Edit** toggle on the **Dashboard** page, and you won't have the ability to edit it directly.
 
-To workaround this issue, you can always make a copy of the Dashboard from the **Library**. Then you can edit the copy as you like, because you own the copy. For instructions, see [Copy Content in the Library](../get-started/library).
+To workaround this issue, you can always make a copy of the Dashboard from the **Library**. Then you can edit the copy as you like, because you own the copy. For instructions, see [Copy Content in the Library](/docs/get-started/library).
 
 ## Why can't I view a search from a Dashboard?
 
@@ -86,4 +86,4 @@ There are several reasons why you may not be able to open a search from a Dashbo
 * If you don't own a Dashboard, you may not be able to open a search query from a Dashboard by using **Show in Search.**
 * Or it may be that the original [Dashboard Link](get-started/add-dashboard-link.md) has been changed to drill down to another Dashboard, instead of showing the query in the **Search** page. How would you know? This can be confusing when you just want to view the query and the messages it returns in the **Search** page.
 
-To workaround these issues, you can always make a copy of the Dashboard from the **Library**. Then you can edit the copy as you like, because you own the copy. For instructions, see [Copy Contents in the Library](../get-started/library). 
+To workaround these issues, you can always make a copy of the Dashboard from the **Library**. Then you can edit the copy as you like, because you own the copy. For instructions, see [Copy Contents in the Library](/docs/get-started/library). 

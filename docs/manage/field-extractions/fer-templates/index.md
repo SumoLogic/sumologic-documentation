@@ -14,6 +14,6 @@ FER Templates are provided for common applications such as Apache Access, Akama
 
 The template will overwrite any existing parse expression.
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

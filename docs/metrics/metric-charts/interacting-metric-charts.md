@@ -6,7 +6,7 @@ description: Instructions on how to interact with metric charts, and how to set 
 ---
 
 :::note
-This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metric-queries-alerts/metrics-explorer.md).
+This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metrics-queries/metrics-explorer.md).
 :::
 
 Learn how you can interact with metric charts and use the options on the Query and Legend tab of the metric query page. 
@@ -74,7 +74,7 @@ The metrics outlier feature allows you to identify metrics data points that are 
 
 ### Share a metric chart
 
-After you run a metric query you can obtain a URL for the chart and send it to other users so that they can view the chart. The sharing control is labeled 4 in the screenshot in [Interacting with the chart area](#interacting-with-the-chart-area) above. For instructions on sharing a metric chart, see [Share a Metric Chart](../metric-queries-alerts/share-metric-query.md).
+After you run a metric query you can obtain a URL for the chart and send it to other users so that they can view the chart. The sharing control is labeled 4 in the screenshot in [Interacting with the chart area](#interacting-with-the-chart-area) above. For instructions on sharing a metric chart, see [Share a Metric Chart](../metrics-queries/share-metric-query.md).
 
 ### Refresh the display
 

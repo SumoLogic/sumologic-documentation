@@ -30,6 +30,17 @@ The following table provides the static IP addresses used for Cloud-to-Cloud Int
 | US1        | 54.209.19.175, 23.22.90.93, 23.22.11.54, 34.228.131.3, 34.237.107.105, 3.88.82.220 |
 | US2        | 54.149.79.97, 54.218.43.134, 44.239.32.230, 35.161.2.93                            |
 
+For the Federal environments, a different set of Static IPs is available for each C2C deployment.
+
+| Deployment | Static IP addresses                                                                |
+|:------------|:------------------------------------------------------------------------------------|
+| Fed C2C 1A | 50.19.6.130                                                                        |
+| Fed C2C 1B | 171.129.156.86                                                                     |
+| Fed C2C 1C | 52.202.74.197                                                                      |
+| Fed C2C 1D | 100.25.65.170                                                                      |
+| Fed C2C 1E | 3.226.78.211                                                                       |
+| Fed C2C 1F | 23.22.209.147                                                                      |
+
 ## Integrations
 
 The topics below are the available integrations. In Sumo Logic these are called Sources. Check out the Sources we have available in beta. You are invited to request new Sources for the Cloud-to-Cloud Integration Framework from our [Ideas Portal](https://ideas.sumologic.com/ideas).
@@ -43,6 +54,6 @@ Sources in the Cloud-to-Cloud Integration Framework need updates over time to m
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

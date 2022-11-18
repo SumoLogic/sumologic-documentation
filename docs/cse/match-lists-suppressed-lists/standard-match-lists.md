@@ -1,14 +1,91 @@
 ---
 id: standard-match-lists
-title: Standard Match Lists
-description: See a list of the standard Match Lists in CSE, and what rules rely upon each.
+title: Entity Tags and Standard Match Lists
+description: Learn about Entity Tags and standard Match Lists in CSE.
 ---
 
 
+This topic has information about how you can identify specific Entities or indicators that should be treated differently during CSE rule processing. For example, you might want to prevent a rule from firing for Records that contain one of a certain set of IP addresses. Conversely, you might want to only fire a Signal if a user Entity belongs to a certain group, such as domain admins. There are currently two methods of achieving this sort of allowlist/denylist behavior:
 
-This topic describes the standard Match Lists that CSE's built-in rules rely upon. For information about Match Lists, what they are for, how they are used, and how to create them, see [Create a Match List](create-match-list.md).
+* Schema key tags for Entities. This is the recommended approach. You simply apply predefined [schema key tags](docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules.md) to new Entities once they come into CSE. See [Schema tag keys for Entities](#schema-tag-keys-for-entities) for information about which tag:value pairs to use for different Entities.  
+:::tip
+The most efficient way to assign tags to Entities is to configure [Entity Groups](docs/cse/records-signals-entities-insights/create-an-entity-group.md), and allow CSE to automatically apply tags based on group membership.
+:::
+* Standard match lists. This is the original approach for excluding Entities from rule processing. It involves adding Entities to standard match lists, as described in [Create a Match List](docs/cse/match-lists-suppressed-lists/create-match-list.md). Currently, standard match lists are still supported, but we recommend you use schema tag keys going forward. Standard match lists are described in [Standard match lists](#standard-match-lists) below.
 
-## admin_ips
+
+## Schema tag keys for Entities
+
+The keys and values described below are controlled by Sumo Logic. If you want to request additional tags or tag values, contact your Sumo Logic Customer Success Manager. You can also tag Entities with custom tags–if you do that, you’ll need to update your custom rules or add rule tuning expression to out-of-the-box rules to reference your custom tags.
+
+### _deviceGroup
+
+Assign the _deviceGroup tag to hosts involved with administrative or privileged activities. Select the appropriate tag value, based on the guidance in the table below.
+
+
+|Tag values | When to use |
+| :-- | :-- |
+|admin |Devices that are known to be involved with specific administrative or privileged activity on the network. Can be used for tracking devices that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.|
+|awsAdmin|Devices that are known to be involved with specific administrative or privileged activity in AWS. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.|
+|business|Devices supporting business processes. Can be used for things like SSH servers for SFTP file exchanges (similarly, FTP servers).|
+|gcpAdmin|Devices that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.|
+|googleWorkspaceAdmin|Devices that are known to be involved with specific administrative or privileged activity in Google Workspace. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.|
+|salesforceAdmin|Devices that are known to be involved with specific administrative or privileged activity in Salesforce. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.|
+|sandbox|Malware sandboxes or security devices interacting with malicious infrastructure.
+scanTarget|Destination networks that are authorized/standard targets of vulnerability scans in customer environments.|
+
+### _deviceService
+
+Assign the _deviceService tag to services running in your environment. Select the appropriate tag value, based on the guidance in the table below.
+
+|Tag values|When to use|
+| :-- | :-- |
+|dns|DNS caching resolvers/authoritative content servers. Can be used for source, destination, or other services.  |
+|ftp | FTP servers. |
+|smtp |SMTP sending/receiving hosts.|
+|sql |Database servers. |
+|ssh |SSH servers.|
+|telnet |Telnet servers.|
+
+### _deviceType
+Assign the _deviceType tag to devices running in your environment. Select the appropriate tag value, based on the guidance in the table below.
+
+|Tag values|When to use|
+| :-- | :-- |
+|authServer|Network authentication servers, including Active Directory, LDAP, Kerberos, RADIUS/TACACS, and NIS servers. May be used in analytics designed to detect [DCSync](https://attack.mitre.org/techniques/T1003/006/) attacks. |
+|lanScanner |Devices excepted from analytics identifying Local Area Network (LAN)  scanning activity. Used in specific cases to exclude hosts from flagging particular types of rule content, primarily around scanning of commonly targeted LAN service ports, etc. Not an across-the-board allowlist. This tag value is not intended for vulnerability scanners, which should be tagged with _deviceType=vulnerabilityScanner.<br/><br/>Examples of devices that are suited for this tag value include telephony servers that push content to deployed softphones over SMB/CIFS and data security audit software that connect to SMB shares.|
+|nms |Network Management Systems (NMS) that identify, configure, monitor, update,  and troubleshoot network devices – both wired and wireless – in an enterprise network. Can be used as an exception tag value to block content relying on the evaluation of data per-host from applying to hosts that are translated or aggregations of other hosts.|
+|paloAltoSinkhole |IP addresses for the sinkhole IP or IPs configured for [Palo Alto DNS sinkhole](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000ClGECA0).<br/><br/>Use this tag value for the  default IPv4 sinkhole address from PANW (72.5.65.111) any other sinkhole IP you have configured.|
+|proxyServer |Forward proxy servers, including HTTP and SOCKS proxies. |
+|vpnServer |Vulnerability scanner and network mapping hosts.|
+|vulnerabilityScanner |Vulnerability scanner and network mapping hosts. Devices engaged in actively scanning for Vulnerabilities on the network. These devices can be hosted internal or externally.|
+|webServer |HTTP servers. |<br/><br/>
+
+### _networkType
+Assign the _networkType tag to network-related Entities. Select the appropriate tag value, based on the guidance in the table below.
+
+|Tag values |When to use |
+| :-- | :-- |
+|guest |Guest WLAN and other guests/BYOD network addresses.|
+|nat |Source NAT addresses. Can be used as an exception tag to block content relying on the evaluation of data per-host from applying to hosts that are translated or aggregations of other hosts. Note that this can also be achieved using _deviceType=proxyServer as an example of a specific case.|
+|vpn |VPN/remote access user address pools and DHCP scopes.|
+
+### _userGroup
+Assign the _userGroup tag to users accounts  known to be involved with specific administrative or privileged activities. Select the appropriate tag value, based on the guidance in the table below.
+
+|Tag values |When to use |
+| :-- | :-- |
+| awsAdmin |Users that are known to be involved with specific administrative or privileged activity in AWS. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity. |
+|dsReplication |Authorized account names to initiate Directory Service Replication requests to Active Directory. <br/><br/>Use this tag value for account names confirmed in event_data['SubjectUserName'] for regularly occurring 4662 baseline events. This may be used in analytics designed to detect [DCSync](https://attack.mitre.org/techniques/T1003/006/) attacks.|
+|gcpAdmin |Users that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity. |
+|googleWorkspaceAdmin |Users that are known to be involved with specific administrative or privileged activity in Google Workspace. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity. |
+|kerberosDowngrade |Known account names that utilize downgraded encryption types with multiple SPNs. Use this tag value for Kerberos principal names (for example, jdoe@EXAMPLE.COM) matched in endpoint usernames that are known to trigger content around legacy downgraded encryption types. This is directly related to the detection of [Kerberoasting](https://attack.mitre.org/techniques/T1208/) attacks.|
+|salesforceAdmin |Users that are known to be involved with specific administrative or privileged activity in Salesforce. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.|
+
+
+## Standard match lists
+
+### admin_ips
 
 **Target column:** Source IP Address
 
@@ -29,7 +106,7 @@ The following CSE rules refer to this Match List:
 * AWS CloudTrail sensitive activity in KMS (IP)
 * AWS CloudTrail sensitive activity in KMS (Username)
 
-## auth_servers
+### auth_servers
 
 **Target column:** IP Address
 
@@ -43,7 +120,7 @@ The following CSE rules refer to this Match List:
 
 none
 
-## auth_servers_dst
+### auth_servers_dst
 
 **Target column:** Destination IP Address
 
@@ -53,7 +130,7 @@ The following CSE rules refer to this Match List:
 
 none
 
-## auth_servers_src
+### auth_servers_src
 
 **Target column:** Source IP Address
 
@@ -63,7 +140,7 @@ The following CSE rules refer to this Match List:
 
 none
 
-## AWS_admin_ips
+### AWS_admin_ips
 
 **Target column:** Source IP Address
 
@@ -86,7 +163,7 @@ The following CSE rules refer to this Match List:
 * AWS_WAF_Rule_Updated.json
 * Anomalous_AWS_User_Executed_a_Command_on_ECS_Container.json
 
-## AWS_admin_users
+### AWS_admin_users
 
 **Target column:** Username
 
@@ -108,7 +185,7 @@ The following CSE rules refer to this Match List:
 * AWS_WAF_Rule_Updated.json
 * Anomalous_AWS_User_Executed_a_Command_on_ECS_Container.json
 
-## business_asns
+### business_asns
 
 **Target column:** ASN
 
@@ -121,7 +198,7 @@ The following CSE rules refer to this Match List:
 * HTTP Request to Domain in Non Standard TLD
 * Threat
 
-## business_domains
+### business_domains
 
 **Target column:** Domain
 
@@ -150,7 +227,7 @@ The following CSE rules refer to this Match List:
 * Script CLI UserAgent string
 * SSH Interesting Hostname Login   Threat
 
-## business_hostnames
+### business_hostnames
 
 **Target column:** Hostname
 
@@ -179,7 +256,7 @@ The following CSE rules refer to this Match List:
 * Threat
 * VBS file downloaded
 
-## business_ips
+### business_ips
 
 **Target column:** IP Address
 
@@ -205,7 +282,7 @@ The following CSE rules refer to this Match List:
 * SSH Password Brute Force
 * Script CLI UserAgent string
 
-## dns_servers
+### dns_servers
 
 **Target column:** IP Address
 
@@ -216,7 +293,7 @@ The following CSE rules refer to this Match List:
 * Too many empty refused dns queries
 * DNS over TLS (DoT) Activity
 
-## dns_servers_dst
+### dns_servers_dst
 
 **Target column:** Destination IP Address
 
@@ -226,7 +303,7 @@ The following CSE rules refer to this Match List:
 
 none
 
-## dns_servers_src
+### dns_servers_src
 
 **Target column:** Source IP Address
 
@@ -236,7 +313,7 @@ The following CSE rules refer to this Match List:
 
 none
 
-## downgrade_krb5_etype_authorized_users
+### downgrade_krb5_etype_authorized_users
 
 **Target column:** Username
 
@@ -247,7 +324,7 @@ The following CSE rules refer to this Match List:
 * Too Many Kerberos Encryption Downgrade SPNs (IP)
 * Too Many Kerberos Encryption Downgrade SPNs (User)
 
-## ds_replication_authorized_users
+### ds_replication_authorized_users
 
 **Target column:** Username
 
@@ -259,7 +336,7 @@ The following CSE rules refer to this Match List:
 
 none
 
-## ftp_servers
+### ftp_servers
 
 **Target column:** IP Address
 
@@ -269,19 +346,19 @@ The following CSE rules refer to this Match List:
 
 none
 
-## GCP_admin_ips
+### GCP_admin_ips
 
 **Target column:** Source IP Address
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
-## GCP_admin_users
+### GCP_admin_users
 
 **Target column:** Username
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
-## Google_Workspace_admin_ips
+### Google_Workspace_admin_ips
 
 **Target column:** Source IP Address
 
@@ -291,7 +368,7 @@ The following CSE rule refers to this Match List:
 
 G Suite - Admin Activity
 
-## Google_Workspace_admin_users
+### Google_Workspace_admin_users
 
 **Target column:** Username
 
@@ -301,7 +378,7 @@ The following CSE rule refers to this Match List:
 
 G Suite - Admin Activity
 
-## guest_networks
+### guest_networks
 
 **Target column:** IP Address
 
@@ -338,7 +415,7 @@ The following CSE rules refer to this Match List:
 * SQL Select From
 * SSH Interesting Hostname Login
 
-## http_servers
+### http_servers
 
 **Target column:** IP Address
 
@@ -348,7 +425,7 @@ The following CSE rules refer to this Match List:
 
 none
 
-## lan_scanner_exception_ips
+### lan_scanner_exception_ips
 
 **Target column:** IP Address
 
@@ -370,7 +447,7 @@ The following CSE rules refer to this Match List:
 * SSH Authentication Failures
 * SSL Certificate Expired
 
-## nat_ips
+### nat_ips
 
 **Target column:** IP Address
 
@@ -380,7 +457,7 @@ The following CSE rules refer to this Match List:
 
 * DNS DGA Lookup Behavior NXDOMAIN Responses
 
-## nms_ips
+### nms_ips
 
 **Target column:** IP Address
 
@@ -397,7 +474,7 @@ The following CSE rules refer to this Match List:
 * IP Address Scan Internal
 * Port Scan Internal
 
-## palo_alto_sinkhole_ips
+### palo_alto_sinkhole_ips
 
 **Target column:** IP Address
 
@@ -409,7 +486,7 @@ The following CSE rules refer to this Match List:
 
 None
 
-## proxy_servers
+### proxy_servers
 
 **Target column:** IP Address
 
@@ -426,7 +503,7 @@ The following CSE rules refer to this Match List:
 * Port Scan Internal
 * Possible DNS Data Exfiltration
 
-## proxy_servers_dst
+### proxy_servers_dst
 
 **Target column:** Destination IP Address
 
@@ -436,7 +513,7 @@ The following CSE rules refer to this Match List:
 
 * Executable Downloaded Content Type Mismatch
 
-## proxy_servers_src
+### proxy_servers_src
 
 **Target column:** Source IP Address
 
@@ -446,19 +523,19 @@ The following CSE rules refer to this Match List:
 
 none
 
-## salesforce_admin_ips
+### salesforce_admin_ips
 
 **Target column:** Source IP Address
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in Salesforce. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
-## salesforce_admin_users
+### salesforce_admin_users
 
 **Target column:** Username
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in Salesforce. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
-## sandbox_ips
+### sandbox_ips
 
 **Target column:** IP Address
 
@@ -468,7 +545,7 @@ The following CSE rules refer to this Match List:
 
 * Threat
 
-## scanner_targets
+### scanner_targets
 
 **Target column:** IP Address
 
@@ -478,7 +555,7 @@ The following CSE rules refer to this Match List:
 
 none
 
-## smtp_servers
+### smtp_servers
 
 **Target column:** IP Address
 
@@ -488,7 +565,7 @@ The following CSE rules refer to this Match List:
 
 none
 
-## sql_servers
+### sql_servers
 
 **Target column:** IP Address
 
@@ -498,7 +575,7 @@ The following CSE rules refer to this Match List:
 
 none
 
-## ssh_servers
+### ssh_servers
 
 **Target column:** IP Address
 
@@ -508,7 +585,7 @@ The following CSE rules refer to this Match List:
 
 none
 
-## telnet_servers
+### telnet_servers
 
 **Target column:**     IP Address
 
@@ -518,7 +595,7 @@ The following CSE rules refer to this Match List:
 
 none
 
-## threat
+### threat
 
 **Target column:** IP Address
 
@@ -528,7 +605,7 @@ The following CSE rules refer to this Match List:
 
 * Threat
 
-## verified_uri_paths
+### verified_uri_paths
 
 **Target column:** HttpUrlPath (Custom)
 
@@ -542,7 +619,7 @@ The following CSE rules refer to this Match List:
 
 * HTTP Request to Domain in Non Standard TLD
 
-## vpn_networks
+### vpn_networks
 
 **Target column:** IP Address
 
@@ -552,7 +629,7 @@ The following CSE rules refer to this Match List:
 
 none
 
-## vpn_servers
+### vpn_servers
 
 **Target column:** IP Address
 
@@ -562,7 +639,7 @@ The following CSE rules refer to this Match List:
 
 * Successful VPN Login From 2+ Countries Within 1 Hour.
 
-## vuln_scanners
+### vuln_scanners
 
 **Target column:** IP Address
 
