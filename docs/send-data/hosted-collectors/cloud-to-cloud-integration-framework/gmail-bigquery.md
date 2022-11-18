@@ -58,8 +58,8 @@ The integration requires the following information to connect to Gmail BigQuery:
 * dataLocation
 
 :::important
-* User can find projectId, privateKey, <clientEmail> and <tokenURL> from the Google Cloud Console
-* BigQuery DataSetId  = <datasetId>
-* BigQuery DataSet Location  = <dataLocation>
+* User can find projectId, privateKey, clientEmail and tokenURL from the Google Cloud Console
+* BigQuery DataSetId  = datasetId
+* BigQuery DataSet Location  = dataLocation
 * Default value of startTime is "24 Hours ago", user can change it later
 :::
