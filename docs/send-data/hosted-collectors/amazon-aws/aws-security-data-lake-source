@@ -24,7 +24,7 @@ This makes AWS log setup relatively simple. Furthermore, the data available from
 
 ### Step 1. Grant Sumo logic access to AWS Security Data Lake Console
 
-Granting Sumo logic access to the AWS AWS Security Data Lake source console would require access to **Sumo Account ID** and **External ID**. Find the details below:
+Granting Sumo logic access to the AWS Security Data Lake source console would require access to **Sumo Account ID** and **External ID**. Find the details below:
 
 1. **Account ID**. Remember to copy and secure your Sumo Logic ID: 926226587429], it will be needed in the further steps.
 
