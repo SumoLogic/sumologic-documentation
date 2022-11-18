@@ -584,7 +584,7 @@
   "/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)": "/docs/integrations/microsoft-azure/iis-10-legacy",
   "/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS": "/docs/integrations/microsoft-azure/iis-7",
   "/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS/03IIS-App-Dashboards": "/docs/integrations/microsoft-azure/iis-7",
-  "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_Office_365": "/docs/cse/ingestion/microsoft-audit-office",
+  "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_Office_365": "/docs/integrations/microsoft-azure/office-365",
   "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_SQL_Server": "/docs/integrations/microsoft-azure/sql-server",
   "/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_Teams_App": "/docs/integrations/microsoft-azure/teams",
   "/07Sumo-Logic-Apps/04Microsoft-and-Azure/PCI_Compliance_for_Windows_JSON": "/docs/integrations/microsoft-azure/windows-json-pci-compliance",
