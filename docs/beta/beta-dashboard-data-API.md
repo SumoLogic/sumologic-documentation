@@ -10,7 +10,7 @@ description: The Dashboard Data API allows you to access available dashboards, r
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-The Dashboard Data API allows you to access available dashboards, retrieve a specific dashboard, or retrieve the data for all monitors (i.e., panels) on a dashboard. In order to retrieve data from a dashboard via the API, the dashboard must be in [live mode](https://helpstaging.sumologic.com/Visualizations-and-Alerts/Dashboards/01-About-Dashboards#Live_mode "About Dashboards").
+The Dashboard Data API allows you to access available dashboards, retrieve a specific dashboard, or retrieve the data for all monitors (i.e., panels) on a dashboard. In order to retrieve data from a dashboard via the API, the dashboard must be in [live mode](https://help.sumologic.com/docs/dashboards/about/ "About Dashboards").
 
 :::important
 The Dashboard Data API is currently in beta mode. For questions or support, please contact beta-dashboard-api-group@sumologic.com.
@@ -19,9 +19,9 @@ The Dashboard Data API is currently in beta mode. For questions or support, plea
 ####Authentication
 ------------------------------------------------------------------------------------------
 
-Any request made to the Sumo Logic API needs to include an HTTP Basic Authentication header (see RFC 2617) generated from a user's email and password. All modern browsers (as well as command line tools like curl and wget) support basic authentication. This is secure, since all communication with the Sumo Logic service happens over TLS (SSL/HTTPS). For more information, see [API Authentication](https://helpstaging.sumologic.com/APIs/General-API-Information/API-Authentication "API Authentication").
+Any request made to the Sumo Logic API needs to include an HTTP Basic Authentication header (see RFC 2617) generated from a user's email and password. All modern browsers (as well as command line tools like curl and wget) support basic authentication. This is secure, since all communication with the Sumo Logic service happens over TLS (SSL/HTTPS). For more information, see [API Authentication](https://help.sumologic.com/docs/api/getting-started/#authentication "API Authentication").
 
-Listing Available Dashboards[](https://helpstaging.sumologic.com/Beta/Dashboard-Data-API#listing-available-dashboards)
+Listing Available Dashboards
 ----------------------------------------------------------------------------------------------------------------------
 
 This section describes how to list all available dashboards and their definitions. 
@@ -31,7 +31,7 @@ This section describes how to list all available dashboards and their definition
 **Endpoint**: <https://api.sumologic.com/api/v1/dashboards>
 
 :::Note
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security "Sumo Logic Endpoints and Firewall Security").
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
 :::
 
 ### Headers
@@ -109,7 +109,7 @@ The result is a JSON object with one key: **dashboards**. The value for the key
 }
 ```
 
-Getting a Dashboard[](https://help.sumologic.com/Beta/Dashboard-Data-API#getting-a-dashboard)
+Getting a Dashboard
 ----------------------------------------------------------------------------------------------------
 
 This section describes how to get a dashboard, its definition, and the definition of all monitors.
@@ -119,7 +119,7 @@ This section describes how to get a dashboard, its definition, and the definitio
 **Endpoint**: [https://api.sumologic.com/api/v1/das...s/DASHBOARD_ID](https://api.sumologic.com/api/v1/dashboards/DASHBOARD_ID "https://api.sumologic.com/api/v1/dashboards/DASHBOARD_ID")
 
 :::Note
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](https://helpstaging.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security "Sumo Logic Endpoints and Firewall Security").
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
 :::
 
 ### Headers
@@ -242,7 +242,9 @@ This section describes how to get the data for all monitors contained on a dashb
 
 **Endpoint**: [https://api.sumologic.com/api/v1/das...HBOARD_ID/data](https://api.sumologic.com/api/v1/dashboards/DASHBOARD_ID/data "https://api.sumologic.com/api/v1/dashboards/DASHBOARD_ID/data")
 
-![Note](https://helpstaging.sumologic.com/@api/deki/files/116/Note.png)Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](https://helpstaging.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security "Sumo Logic Endpoints and Firewall Security").
+::: Note 
+ Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
+ :::
 
 ### Headers[]
 
@@ -256,7 +258,7 @@ This section describes how to get the data for all monitors contained on a dashb
 | --- | --- | --- | --- |
 | dashboardId | String | Yes | The ID of the dashboard for which to return the data of all contained monitors |
 
-### Result[](https://helpstaging.sumologic.com/Beta/Dashboard-Data-API#result-2)
+### Result
 
 A JSON document containing the data for all monitors contained on the dashboard.
 
