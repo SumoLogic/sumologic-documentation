@@ -1,5 +1,5 @@
 ---
-id: beta-dashboard-data-API
+id: dashboard-data-API
 title: Beta Dashboard data API (Beta)
 description: The Dashboard Data API allows you to access available dashboards, retrieve a specific dashboard, or retrieve the data for all monitors.
 ---
