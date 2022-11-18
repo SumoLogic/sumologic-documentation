@@ -69,7 +69,7 @@ Granting Sumo logic access to the AWS AWS Security Data Lake source console woul
      :::
 
 
-## Step 3. Create an AWS Security Data Lake Source using Sumo Logic Environment
+## Step 3. Create AWS Security Data Lake Source using Sumo Logic Environment
 
 When you create an AWS Security Data Lake source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use from the existing ones or create a new Hosted Collector, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 
@@ -105,5 +105,5 @@ Remember to copy and secure the subscription URL. If you closed the window and c
 ### Step 4: Update AWS Security Data Lake Subscriber
 
 1. Navigate to the Subscribers page and click **My Subscribers**.
-2. Edit the subscriber created in the [setup-subscriber](step-2-setup-subscriber-in-aws-security-data-lake-console)section in step 2.
-3. Add the subscription URL copied from the AWS Security Data Lake source setup in [create-an-aws-security-data-lake-source](step-3-create-an-aws-security-data -lake-source-using-sumo-logic-environment) section.
+2. Edit the subscriber created in the [Setup Subscriber](#step-2-setup-subscriber-in-aws-security-data-lake-console)section in step 2.
+3. Add the subscription URL copied from the AWS Security Data Lake source setup in [Create AWS Security Data Lake Source](#step-3-create-aws-security-data -lake-source-using-sumo-logic-environment) section.
