@@ -75,11 +75,13 @@ To create an AWS Security Data Lake source, follow the instructions below:
 6. In the **Source Category**, enter any string to tag the output collected from this distinct source. Category metadata is stored in a searchable field called `_sourceCategory`.
 7. In **Fields**. Click the **+Add Field** link to add custom log metadata fields.
 8. Enter the required fields that you want to associate, each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark shows up when a field exists and is enabled in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point shows up when the field doesn't exist or is disabled in the **Fields table schema**.
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark shows up when a field exists and is enabled in the Fields       table schema.
+   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point shows up when the field doesn't       exist or is disabled in the **Fields table schema**.
+   
    :::important
-   In this case, an option to automatically add or enable the nonexistent fields to the **Fields table schema** is provided. If a field is sent to Sumo logic that does not exist in the **Fields table schema** or is disabled, it will be ignored and known as dropped field.
+   In this case, an option to automatically add or enable the nonexistent fields to the **Fields table schema** is provided. If a field is sent to Sumo        logic that does not exist in the **Fields table schema** or is disabled, it will be ignored and known as dropped field.
    :::
+   
 9. In **Role ARN**: Copy and paste the AWS Role ARN from the Data Lake console.
 10. Click **Save**. A pop-up will appear with the subscription URL.
 
