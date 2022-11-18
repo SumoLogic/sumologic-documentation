@@ -233,7 +233,7 @@ The result is a JSON object with one key: **dashboard**. The value contains the
 }
 ```
 
-####Getting Dashboard Data
+###Getting Dashboard Data
 ----------------------------------------------------------------------------------------------------------
 
 This section describes how to get the data for all monitors contained on a dashboard.
