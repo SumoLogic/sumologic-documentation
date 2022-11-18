@@ -39,12 +39,11 @@ Create a subscriber on Security Data Lake Console. To create a subscriber, follo
 4. Optional: Provide the **Subscriber name** and **Description**.
 5. In the **Select Logs and events sources** section, you can select which resources you want to enable. There are two options given to you:
      * **All Logs and event sources**. All the logs and event sources will be selected if you select this option.
-     * **Specify log and event sources**. Only specific sources will be selected if you go with this option. 
-     For example, you select **Specific log and event sources**. In the next step, you will be able to view user activity, API usage in AWS services, IP traffic details, and route S3.
+     * **Specify log and event sources**. Only specific sources will be selected if you go with this option. For example, you select **Specific log and event sources**. In the next step, you will be able to view user activity, API usage in AWS services, IP traffic details, and route S3.
 6. In **Log and event sources**, you see three options again:
      * **CloudTrail**: View user activity and API usage in AWS services.
      * **VPC flow logs**: View details about IP traffic to and from network interfaces in your VPC.
-     * **Route S3**: 
+     * **Route S3**:
      For example, you select Cloudtrail to get all the user activity and API usage in AWS services.<br/> ![cloudtrail.png](/img/send-data/cloudtrail.png)
 7. Access data.
      * **S3** or **Lakeformation** is the storage option you can choose for how your subscribers will access the data.
@@ -67,21 +66,20 @@ To create an AWS Security Data Lake source, follow the instructions below:
 6. In the **Source Category**, enter any string to tag the output collected from this distinct source. (Category metadata is stored in a searchable field called **_sourceCategory**).
 7. In **Fields**. Click the **+Add Field** link to add custom log metadata fields.
 8. Enter the required fields that you want to associate, each field needs a name (key) and value.
-  * ![green check circle.png](/img/reuse/green-check-circle.png)  A green circle with a checkmark shows up when a field exists and is enabled in the Fields table schema.
-  * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point shows up when the field doesn't exist or is disabled in the **Fields table schema**.
-:::important
-In this case, an option to automatically add or enable the nonexistent fields to the **Fields table schema** is provided. If a field is sent to Sumo logic that does not exist in the **Fields table schema** or is disabled, it will be ignored and known as dropped field.
-:::
+   * ![green check circle.png](/img/reuse/green-check-circle.png)  A green circle with a checkmark shows up when a field exists and is enabled in the Fields table schema.
+   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point shows up when the field doesn't exist or is disabled in the **Fields table schema**.
+   :::important
+   In this case, an option to automatically add or enable the nonexistent fields to the **Fields table schema** is provided. If a field is sent to Sumo logic that does not exist in the **Fields table schema** or is disabled, it will be ignored and known as dropped field.
+   :::
 9. In **Role ARN**: Copy and paste the AWS Role ARN from the Data Lake console.
 10. Click **Save**. A pop-up will appear with the subscription URL.
-:::note
-Remember to copy and secure the subscription URL. If you closed the window and could not copy the URL, don't worry. Click on the **Edit** button under the list of sources and copy the URL.
-:::
-
+  :::note
+  Remember to copy and secure the subscription URL. If you closed the window and could not copy the URL, don't worry. Click on the **Edit** button under the list of sources and copy the URL.
+  :::
 11. Optional: You can create any **Processing Rules** that you want for the AWS Source. Refer to [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
 
 ### Step 4: Update AWS Security Data Lake Subscriber
 
 1. Navigate to the Subscribers page and click **My Subscribers**.
 2. Edit the subscriber created in the [Setup Subscriber](#step-2-setup-subscriber-in-aws-security-data-lake-console) section in step 2.
-3. Add the subscription URL copied from the AWS Security Data Lake source setup in [Create AWS Security Data Lake Source](#step-3-create-aws-security-data -lake-source-using-sumo-logic-environment) section.
+3. Add the subscription URL copied from the AWS Security Data Lake source setup in [Create AWS Security Data Lake Source](#step-3-create-aws-security-data-lake-source-using-sumo-logic-environment) section.
