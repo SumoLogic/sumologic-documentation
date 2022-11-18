@@ -23,7 +23,7 @@ Set`meshConfig.enableTracing=true` and `meshConfig.defaultConfig.tracing.openCen
 
     ```
     --set meshConfig.enableTracing=true
-    --set meshConfig.defaultConfig.tracing.openCensusAgent.address=RELEASE_NAME-CHART_NAME-otelcol.NAMESPACE:55678
+    --set meshConfig.defaultConfig.tracing.openCensusAgent.address=RELEASE_NAME-CHART_NAME-otelagent.NAMESPACE:55678
     ```
 
 * For [standalone collectors](../set-up-traces-collection-for-other-environments.md):  
@@ -46,7 +46,7 @@ receiving collector:
 
     ```
     --set meshConfig.enableTracing=true
-    --set meshConfig.defaultConfig.tracing.zipkin.address=RELEASE_NAME-CHART_NAME-otelcol.NAMESPACE:9411
+    --set meshConfig.defaultConfig.tracing.zipkin.address=RELEASE_NAME-CHART_NAME-otelagent.NAMESPACE:9411
     ```
 
 * For [*standalone collectors*](../set-up-traces-collection-for-other-environments.md):  
