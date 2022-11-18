@@ -24,7 +24,7 @@ This makes AWS log setup relatively easy. Furthermore, the data available from v
 Granting Sumo logic access to the AWS Security Data Lake source console would require access to **Sumo Account ID** and **External ID**. Find the details below:
 
 1. **Account ID**. Remember to copy and secure your Sumo Logic ID: ************. It will be needed in the further steps.
-2. **External ID**. The External ID is formed from your Sumo Logic region identifier. The format of your Sumo Logic account identifier is: `<SumoDeployment>: <SumoAccountId>` where:
+2. **External ID**. The External ID is formed from your Sumo Logic region identifier. The format of your Sumo Logic account identifier is: `SumoDeployment`: `SumoAccountId` where:
    * **SumoDeployment** is your Sumo Logic deployment that has to be entered in lowercase such as au, ca, de, eu, fed, in, jp, us1, or us2. To find your deployment, see Sumo Logic Endpoints by Deployment and Firewall Security.
    * **SumoAccountId** is the Organization ID shown on your Account Overview in the Sumo Logic UI. You can access it by going to **Administration** > **Account**  > **Account Overview**.
 
