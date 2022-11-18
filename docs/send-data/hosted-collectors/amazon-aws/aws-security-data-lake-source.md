@@ -21,7 +21,7 @@ This makes AWS log setup relatively easy. Furthermore, the data available from v
 
 ### Step 1. Grant Sumo logic access to AWS Security Data Lake Console
 
-Granting Sumo logic access to the AWS AWS Security Data Lake source console would require access to **Sumo Account ID** and **External ID**. Find the details below:
+Granting Sumo logic access to the AWS Security Data Lake source console would require access to **Sumo Account ID** and **External ID**. Find the details below:
 
 1. **Account ID**. Remember to copy and secure your Sumo Logic ID: ************. It will be needed in the further steps.
 2. **External ID**. The External ID is formed from your Sumo Logic region identifier. The format of your Sumo Logic account identifier is: `<SumoDeployment>: <SumoAccountId>` where:
@@ -38,17 +38,28 @@ Create a subscriber on Security Data Lake Console. To create a subscriber, follo
 4. Optional: Provide the **Subscriber name** and **Description**.
 5. In the **Select Logs and events sources** section, you can select which resources you want to enable. There are two options given to you:
      * **All Logs and event sources**. All the logs and event sources will be selected if you select this option.
-     * **Specify log and event sources**. Only specific sources will be selected if you go with this option. For example, you select **Specific log and event sources**. In the next step, you will be able to view user activity, API usage in AWS services, IP traffic details, and Route S3.
+     * **Specify log and event sources**. Only specific sources will be selected if you go with this option.
+     
+   :::
+   For example, you select **Specific log and event sources**. In the next step, you will be able to view user activity, API usage in AWS services, IP        traffic details, and Route S3.
+   :::
+     
 6. In **Log and event sources**, you see three options again:
      * **CloudTrail**: View user activity and API usage in AWS services.
      * **VPC flow logs**: View details about IP traffic to and from network interfaces in your VPC.
-     * **Route S3**: For example, you can select Cloudtrail to get all the user activity and API usage in AWS services.<br/> ![cloudtrail.png](/img/send-data/cloudtrail.png)
+     * **Route S3**
+     
+   :::
+   For example, you can select Cloudtrail to get all the user activity and API usage in AWS services.
+   :::
+  <br/> ![cloudtrail.png](/img/send-data/cloudtrail.png)
+  
 7. Access data.
      * **S3** or **Lakeformation** is the storage option you can choose for how your subscribers will access the data.
 
-:::note
-Subscription URL will be added to the subscriber in the later step and is kept blank deliberately.
-:::
+  :::note
+  Subscription URL will be added to the subscriber in the later step and is kept blank deliberately.
+  :::
 
 
 ### Step 3. Create AWS Security Data Lake Source using Sumo Logic Environment
@@ -71,9 +82,11 @@ To create an AWS Security Data Lake source, follow the instructions below:
    :::
 9. In **Role ARN**: Copy and paste the AWS Role ARN from the Data Lake console.
 10. Click **Save**. A pop-up will appear with the subscription URL.
+
 :::note
 Remember to copy and secure the subscription URL. If you closed the window and could not copy the URL, don't worry. Click on the **Edit** button under the list of sources and copy the URL.
 :::
+
 11. Optional: You can create any **Processing Rules** that you want for the AWS Source. Refer to the [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule).
 
 ### Step 4: Update AWS Security Data Lake Subscriber
