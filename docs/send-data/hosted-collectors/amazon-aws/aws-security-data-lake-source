@@ -1,7 +1,7 @@
 ---
 id: aws-security-data-lake-source
 title: AWS Security Data Lake Source (Beta)
-description: This document explains how to configure the AWS Security Data Lake source setup using the Sumo logic environment.
+description: This document explains how to configure the AWS Security Data Lake source setup using the Sumo Logic environment.
 ---
 
 <head>
@@ -17,14 +17,14 @@ This makes AWS log setup relatively simple. Furthermore, the data available from
 
 ## Configure AWS Security Data Lake Setup
 
-![Step 1. Grant Sumo logic access to AWS Security Data Lake Console](#step-1-grant-sumo-logic-access-to-aws-security-data-lake-console)
+![Step 1. Grant Sumo Logic access to AWS Security Data Lake Console](#step-1-grant-sumo-logic-access-to-aws-security-data-lake-console)
 ![Step 2. Setup Subscriber in AWS Security Data Lake Console](#step-2-setup-subscriber-in-aws-security-data-lake-console)
 ![Step 3. Create an AWS Security Data Lake Source using Sumo Logic Environment](#step-3-create-an-aws-security-data-lake-source-using-sumo-logic-environment)
 ![Step 4. Update Subscriber](#step-4-update-aws-security-data-lake-subscriber)
 
-### Step 1. Grant Sumo logic access to AWS Security Data Lake Console
+### Step 1. Grant Sumo Logic access to AWS Security Data Lake Console
 
-Granting Sumo logic access to the AWS Security Data Lake source console would require access to **Sumo Account ID** and **External ID**. Find the details below:
+Granting Sumo Logic access to the AWS Security Data Lake source console would require access to **Sumo Account ID** and **External ID**. Find the details below:
 
 1. **Account ID**. Remember to copy and secure your Sumo Logic ID: 926226587429], it will be needed in the further steps.
 
