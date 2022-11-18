@@ -26,7 +26,7 @@ export const Home = () => {
         fontWeight={700}
         pt={3}
         px={2}
-        pb={1.5}
+        pb={1}
         sx={{
           backgroundImage: 'linear-gradient(to right, rgb(0,0,153), rgb(0,70,190) 30%)',
         }}
@@ -132,6 +132,7 @@ export const Home = () => {
                         xs: '100%',
                       },
                       '&:hover': {
+                        bgcolor: '#0045BE',
                         color: 'common.white',
                       },
                     }}
