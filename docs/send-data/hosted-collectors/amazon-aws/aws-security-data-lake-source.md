@@ -33,26 +33,18 @@ Granting Sumo logic access to the AWS AWS Security Data Lake source console woul
 ### Step 2. Setup Subscriber in AWS Security Data Lake Console
 
 Create a subscriber on Security Data Lake Console. To create a subscriber, follow the instructions below:
-  1. Navigate to the Security Data Lake console.
-  2. From the left navigation, click **Subscriber**.
-  3. On the Subscribers page, under the **Add subscribers** tab click **Create custom subscriber**. <br/><img src={useBaseUrl('img/send-data/setup-subscriber.png')} alt="setup-subscriber" />
-  4. Optional: Provide the **Subscriber name** and **Description**.
-  5. In the **Select Logs and events sources** section, you can select which resources you want to enable. There are two options given to you:
+1. Navigate to the Security Data Lake console.
+2. From the left navigation, click **Subscriber**.
+3. On the Subscribers page, under the **Add subscribers** tab click **Create custom subscriber**. <br/><img src={useBaseUrl('img/send-data/setup-subscriber.png')} alt="setup-subscriber" />
+4. Optional: Provide the **Subscriber name** and **Description**.
+5. In the **Select Logs and events sources** section, you can select which resources you want to enable. There are two options given to you:
      * **All Logs and event sources**. All the logs and event sources will be selected if you select this option.
-     * **Specify log and event sources**. Only specific sources will be selected if you go with this option.
-
-     For example, you select **Specific log and event sources**. In the next step, you will be able to view user activity, API usage in AWS services, IP traffic details, and route S3.
-
-  6. In **Log and event sources**, you see three options again:
+     * **Specify log and event sources**. Only specific sources will be selected if you go with this option. For example, you select **Specific log and event sources**. In the next step, you will be able to view user activity, API usage in AWS services, IP traffic details, and route S3.
+6. In **Log and event sources**, you see three options again:
      * **CloudTrail**: View user activity and API usage in AWS services.
      * **VPC flow logs**: View details about IP traffic to and from network interfaces in your VPC.
-     * **Route S3**
-
-     For example, you select Cloudtrail to get all the user activity and API usage in AWS services.
-
-     ![cloudtrail.png](/img/send-data/cloudtrail.png)
-
-  7. Access data.
+     * **Route S3**: For example, you select Cloudtrail to get all the user activity and API usage in AWS services.<br/> ![cloudtrail.png](/img/send-data/cloudtrail.png)
+7. Access data.
      * **S3** or **Lakeformation** is the storage option you can choose for how your subscribers will access the data.
 
 :::note
