@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from 'react';
+import React, { Fragment } from 'react';
 import DocLink from '@docusaurus/Link';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import {
@@ -145,7 +145,7 @@ export const Footer = () => {
               }
             },
           ].map(({ alt, href, ...other }) => (
-            <Tooltip title={alt}>
+            <Tooltip key={href} title={alt}>
               <Link rel='noreferrer noopener'>
                 <Box
                   component={FontAwesomeIcon}
@@ -179,7 +179,7 @@ export const Footer = () => {
               label: 'Terms of Use',
               href: 'https://www.sumologic.com/terms-conditions/',
             }].map(({ href, label }) => (
-              <>
+              <Fragment key={href}>
                 <Link
                   color='#6c7993'
                   fontFamily='Lab Grotesque'
@@ -202,7 +202,7 @@ export const Footer = () => {
                     },
                   }}
                 />
-              </>
+              </Fragment>
             ))}
           {copyright && (
             <Typography

@@ -120,6 +120,7 @@ export const Home = () => {
                   },
                 ].map(({ children, ...rest }) => (
                   <Button
+                    key={rest.href}
                     sx={{
                       bgcolor: 'transparent',
                       border: '1px solid',
@@ -219,7 +220,6 @@ export const Home = () => {
                 },
               }}
               value={tab}
-              variant='scrollable'
             >
               {[
                 {
@@ -260,14 +260,20 @@ export const Home = () => {
                 container
                 direction='row'
                 justifyContent='center'
+                key={index}
                 py={6}
                 spacing={4}
                 value={String(index)}
               >
                 {feature.map((config) => (
-                  <Grid item lg={4} md={6} xs={12}>
+                  <Grid
+                    item
+                    key={config.link}
+                    lg={4}
+                    md={6}
+                    xs={12}
+                  >
                     <Feature
-                      key={config.link}
                       length={feature.length}
                       {...config}
                     />
