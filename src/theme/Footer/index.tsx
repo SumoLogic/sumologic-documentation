@@ -7,6 +7,13 @@
 import React from 'react';
 import DocLink from '@docusaurus/Link';
 import { useThemeConfig } from '@docusaurus/theme-common';
+import {
+  FontAwesomeIcon,
+} from '@fortawesome/react-fontawesome';
+import {
+  faTwitter,
+  faYoutube,
+} from '@fortawesome/free-brands-svg-icons';
 import { Stack } from '@mui/system';
 import {
   Box,
@@ -113,24 +120,35 @@ export const Footer = () => {
           {[
             {
               alt: 'Sumo Logic YouTube',
+              color: 'common.white',
               href: 'https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw',
-              src: '/img/youtube-logo.png',
-              width: 28,
+              icon: faYoutube,
+              size: 'lg',
+              sx: {
+                cursor: 'pointer',
+                '&:hover': {
+                  color: '#0045BE',
+                },
+              }
             },
             {
               alt: 'Sumo Logic Twitter',
+              color: 'common.white',
               href: 'https://twitter.com/SumoLogic',
-              src: '/img/twitter-logo.png',
-              width: 25,
+              icon: faTwitter,
+              size: 'lg',
+              sx: {
+                cursor: 'pointer',
+                '&:hover': {
+                  color: '#0045BE',
+                },
+              }
             },
           ].map(({ alt, href, ...other }) => (
             <Tooltip title={alt}>
               <Link rel='noreferrer noopener'>
                 <Box
-                  alignItems='center'
-                  alt={alt}
-                  component='img'
-                  display='flex'
+                  component={FontAwesomeIcon}
                   {...other}
                 />
               </Link>

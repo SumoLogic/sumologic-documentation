@@ -148,14 +148,9 @@ export const Home = () => {
               item
               src={heroImage}
               sx={{
-                pl: {
-                  lg: 12,
-                  md: 0,
-                  xs: 0,
-                },
                 width: {
-                  lg: 550,
-                  md: 400,
+                  lg: 450,
+                  md: 300,
                   xs: '85%',
                 },
               }}

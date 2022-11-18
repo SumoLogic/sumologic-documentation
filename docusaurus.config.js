@@ -22,7 +22,6 @@ module.exports = {
   trailingSlash: true,
   url: process.env.HOSTNAME || "http://localhost:3000",
 
-  
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   plugins: [
@@ -55,10 +54,10 @@ module.exports = {
       '@docusaurus/plugin-content-blog',
       {
         archiveBasePath: 'archive',
-        blogTitle: 'Sumo Logic Developer Release Notes',
         blogDescription: 'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
-        blogSidebarTitle: 'All posts',
         blogSidebarCount: 'ALL',
+        blogSidebarTitle: 'All posts',
+        blogTitle: 'Sumo Logic Developer Release Notes',
         feedOptions: {
           copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
           description: 'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
@@ -78,15 +77,15 @@ module.exports = {
       {
         archiveBasePath: 'archive',
         blogDescription: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
-        blogSidebarTitle: 'All posts',
         blogSidebarCount: 'ALL',
+        blogSidebarTitle: 'All posts',
         blogTitle: 'Sumo Logic Collector Release Notes',
         feedOptions: {
-          type: 'rss',
+          copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+          description: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
           // https://help.sumologic.com/release-notes-collector/rss.xml
           title: 'Sumo Logic Collector Release Notes',
-          description: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
-          copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+          type: 'rss',
         },
         id: 'blog-collector',
         path: './blog-collector',
@@ -110,19 +109,6 @@ module.exports = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.ts'),
-          editUrl: 'https://github.com/SumoLogic/sumologic-documentation/edit/main/',
-          //sidebarCollapsible: true,
-          //sidebarCollapsed: false,
-          remarkPlugins: [
-            //https://www.npmjs.com/package/remark-code-import
-            require('remark-code-import'),
-            //https://www.npmjs.com/package/remark-import-partial
-            // snippet support {@import ./my-name.md} relative filepath to md file
-            require('remark-import-partial'),
-          ],
-          showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
           admonitions: {
             tag: ':::',
             keywords: [
@@ -138,19 +124,28 @@ module.exports = {
               'caution',
             ],
           },
+          editUrl: 'https://github.com/SumoLogic/sumologic-documentation/edit/main/',
+          remarkPlugins: [
+            //https://www.npmjs.com/package/remark-code-import
+            require('remark-code-import'),
+            //https://www.npmjs.com/package/remark-import-partial
+            // snippet support {@import ./my-name.md} relative filepath to md file
+            require('remark-import-partial'),
+          ],
+          sidebarPath: require.resolve('./sidebars.ts'),
+          //sidebarCollapsed: false,
+          //sidebarCollapsible: true,
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         googleAnalytics: {
           trackingID: 'UA-16579649-3',
         },
         blog: {
-          blogTitle: 'Sumo Logic Service Release Notes',
-          path: 'blog-service',
-          routeBasePath: 'release-notes-service',
-          blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
           blogDescription: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
-          postsPerPage: 'ALL',
-          showReadingTime: false,
+          blogSidebarCount: 'ALL',
+          blogSidebarTitle: 'All posts',
+          blogTitle: 'Sumo Logic Service Release Notes',
           feedOptions: {
             type: 'rss',
             // https://help.sumologic.com/release-notes-service/rss.xml
@@ -158,6 +153,10 @@ module.exports = {
             description: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
             copyright: `Copyright ©${new Date().getFullYear()} Sumo Logic`,
           },
+          path: 'blog-service',
+          postsPerPage: 'ALL',
+          routeBasePath: 'release-notes-service',
+          showReadingTime: false,
         },
         theme: {
           customCss: [
@@ -179,6 +178,22 @@ module.exports = {
   ],
   staticDirectories: ['static'],
   themeConfig: /** @type {import('@docusaurus/preset-classic').ThemeConfig} */ {
+    algolia: {
+      //  The application ID provided by Algolia
+      appId: 'YKDUX9XT89',
+      // Public API key: it is safe to commit it
+      apiKey: '72699d7d65c635f1fb1505dec1bedc51',
+      indexName: 'sumo-docs-staging',
+      // Optional: see doc section below
+      contextualSearch: true,
+      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+      externalUrlRegex: 'external\\.com|domain\\.com',
+      // Optional: Algolia search parameters
+      searchParameters: {},
+      // Optional: path for search page that enabled by default (`false` to disable it)
+      searchPagePath: 'search',
+      // ... other Algolia params
+    },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
