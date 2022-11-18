@@ -17,10 +17,10 @@ This makes AWS log setup relatively simple. Furthermore, the data available from
 
 ## Configure AWS Security Data Lake Setup
 
-Step 1. Grant Sumo logic access to AWS Security Data Lake Console
-Step 2. Setup Subscriber in AWS Security Data Lake Console
-Step 3. Create an AWS Security Data Lake Source
-Step 4. Update Subscriber
+![Step 1. Grant Sumo logic access to AWS Security Data Lake Console](#step-1-grant-sumo-logic-access-to-aws-security-data-lake-console)
+![Step 2. Setup Subscriber in AWS Security Data Lake Console](#step-2-setup-subscriber-in-aws-security-data-lake-console)
+![Step 3. Create an AWS Security Data Lake Source using Sumo Logic Environment](#step-3-create-an-aws-security-data-lake-source-using-sumo-logic-environment)
+![Step 4. Update Subscriber](#step-4-update-aws-security-data-lake-subscriber)
 
 ### Step 1. Grant Sumo logic access to AWS Security Data Lake Console
 
