@@ -97,7 +97,7 @@ Log in to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for 
 
 ## Field Extraction Rule(s)
 
-Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
+Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 * **Rule Name**: AwsObservabilitySQSCloudTrailLogsFER
 * **Applied at**: Ingest Time
