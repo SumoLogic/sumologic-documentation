@@ -89,10 +89,10 @@ To create an AWS Security Data Lake source, follow the instructions below:
 Remember to copy and secure the subscription URL. If you closed the window and could not copy the URL, don't worry. Click on the **Edit** button under the list of sources and copy the URL.
 :::
 
-11. Optional: You can create any **Processing Rules** that you want for the AWS Source. Refer to the [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule).
+11. Optional: You can create any **Processing Rules** that you want for the AWS Source. Refer to the [Create any Processing Rules](/docs/send-     data/collection/processing-rules/create-processing-rule).
 
 ### Step 4: Update AWS Security Data Lake Subscriber
 
 1. Navigate to the Subscribers page and click **My Subscribers**.
 2. Edit the subscriber created in the [Setup Subscriber](#step-2-setup-subscriber-in-aws-security-data-lake-console) section in step 2.
-3. Add the subscription URL copied from the AWS Security Data Lake source setup in the [Create AWS Security Data Lake Source](#step-3-create-aws-security-data-lake-source-using-sumo-logic-environment) section.
+3. Add the subscription URL copied from the AWS Security Data Lake source setup in the [Create AWS Security Data Lake Source](#step-3-create-aws-security-    data-lake-source-using-sumo-logic-environment) section.
