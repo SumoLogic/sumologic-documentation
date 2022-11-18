@@ -1932,6 +1932,7 @@
   "/Manage/Ingestion-and-Volume/01Log_Ingestion": "/docs/manage/ingestion-volume",
   "/Manage/Ingestion-and-Volume/Collection_Status_Page": "/docs/manage/ingestion-volume/collection-status-page",
   "/Manage/Ingestion-and-Volume/Data_Volume_Index": "/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index",
+  "/Manage/Ingestion-and-Volume/Data_Volume_Index/Log_Data_Volume_Index": "/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/",
   "/Manage/Ingestion-and-Volume/Ingest_Budgets": "/docs/manage/ingestion-volume/ingest-budgets",
   "/Manage/Ingestion-and-Volume/Data_Volume_Index/Log_and_Tracing_Data_Volume_Index": "/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index",
   "/Manage/Ingestion-and-Volume/Data_Volume_Index/Metrics_Data_Volume_Index": "/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index",
