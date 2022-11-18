@@ -54,9 +54,9 @@ A JSON document containing the definition of each dashboard and, if the monitor
 
 Following is a sample session using curl.
 
+```
 curl --trace-ascii - --user EMAIL:PASSWORD -H 'Accept: application/json' "https://api.sumologic.com/api/v1/dashboards?monitors=false"
 
-```json
 0000: GET /api/v1/dashboards?monitors=false HTTP/1.1
 0030: Authorization: Basic ZGFkZHlAZGVtby5jb206QkYxMm5qa2Q=
 0067: User-Agent: curl/7.30.0
@@ -142,9 +142,9 @@ A JSON document containing the definition of the dashboard as well as the defini
 
 Following is a sample session using curl.
 
+```
 curl --trace-ascii - --user EMAIL:PASSWORD -H 'Accept: application/json' "https://api.sumologic.com/api/v1/dashboards/348995"
 
-```json
 == Info: Adding handle: conn: 0x7fac91003a00
 == Info: Adding handle: send: 0
 == Info: Adding handle: recv: 0
@@ -266,9 +266,9 @@ A JSON document containing the data for all monitors contained on the dashboard.
 
 Following is a sample session using curl.
 
+```
 curl --trace-ascii - --user EMAIL:PASSWORD -H 'Accept: application/json' "https://api.sumologic.com/api/v1/dashboards/1200439/data"
 
-```json
 == Info: Adding handle: conn: 0x7f9da2003a00
 == Info: Adding handle: send: 0
 == Info: Adding handle: recv: 0
