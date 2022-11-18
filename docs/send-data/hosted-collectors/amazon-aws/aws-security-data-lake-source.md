@@ -67,16 +67,11 @@ To create an AWS Security Data Lake source, follow the instructions below:
 8. Enter the required fields that you want to associate, each field needs a name (key) and value.
   * ![green check circle.png](/img/reuse/green-check-circle.png)  A green circle with a checkmark shows up when a field exists and is enabled in the Fields table schema.
   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point shows up when the field doesn't exist or is disabled in the **Fields table schema**.
-
-
 :::important
 In this case, an option to automatically add or enable the nonexistent fields to the **Fields table schema** is provided. If a field is sent to Sumo logic that does not exist in the **Fields table schema** or is disabled, it will be ignored and known as dropped field.
 :::
-
 9. In **Role ARN**: Copy and paste the AWS Role ARN from the Data Lake console.
 10. Click **Save**. A pop-up will appear with the subscription URL.
-
-
 :::note
 Remember to copy and secure the subscription URL. If you closed the window and could not copy the URL, don't worry. Click on the **Edit** button under the list of sources and copy the URL.
 :::
