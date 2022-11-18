@@ -49,17 +49,17 @@ Metadata fields will be set, if the integration is configured with the SIEM forw
 ## Setup and Configuration
 
 The integration requires the following information to connect to Gmail BigQuery:
-* name
-* projectId
-* datasetId
-* privateKey
-* clientEmail
-* tokenURL
-* dataLocation
+* `(<name>)`
+* `(<projectId>)`
+* `(<datasetId>)`
+* `(<privateKey>)`
+* `(<clientEmail>)`
+* `(<tokenURI>)`
+* `(<dataLocation>)`
 
 :::important
-* User can find projectId, privateKey, clientEmail and tokenURL from the Google Cloud Console
-* BigQuery DataSetId  = datasetId
-* BigQuery DataSet Location  = dataLocation
+* User can find projectId, privateKey, clientEmail and tokenURI from the Google Cloud Console
+* BigQuery DataSetId  = `(<datasetId>)`
+* BigQuery DataSet Location  = `(<dataLocation>)`
 * Default value of startTime is "24 Hours ago", user can change it later
 :::
