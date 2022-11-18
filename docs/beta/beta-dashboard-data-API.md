@@ -56,7 +56,7 @@ Following is a sample session using curl.
 
 curl --trace-ascii - --user EMAIL:PASSWORD -H 'Accept: application/json' "https://api.sumologic.com/api/v1/dashboards?monitors=false"
 
-```
+```json
 0000: GET /api/v1/dashboards?monitors=false HTTP/1.1
 0030: Authorization: Basic ZGFkZHlAZGVtby5jb206QkYxMm5qa2Q=
 0067: User-Agent: curl/7.30.0
@@ -98,7 +98,7 @@ curl --trace-ascii - --user EMAIL:PASSWORD -H 'Accept: application/json' "https:
 
 The result is a JSON object with one key: **dashboards**. The value for the key is an array of dashboard definitions. In this example, the dashboard definition for the first entry in the array is:
 
-```
+```json
 {
    "properties":"{\\"showColumnTitles\\":false}",
    "id":348995,
@@ -144,7 +144,7 @@ Following is a sample session using curl.
 
 curl --trace-ascii - --user EMAIL:PASSWORD -H 'Accept: application/json' "https://api.sumologic.com/api/v1/dashboards/348995"
 
-```
+```json
 == Info: Adding handle: conn: 0x7fac91003a00
 == Info: Adding handle: send: 0
 == Info: Adding handle: recv: 0
@@ -201,7 +201,7 @@ curl --trace-ascii - --user EMAIL:PASSWORD -H 'Accept: application/json' "https:
 
 The result is a JSON object with one key: **dashboard**. The value contains the definition of the dashboard as well as a JSON array in which each entry represents one of the monitors contained on the dashboard.
 
-```
+```json
 {
    "dashboard":{
       "properties":"{\\"showColumnTitles\\":false}",
@@ -268,7 +268,7 @@ Following is a sample session using curl.
 
 curl --trace-ascii - --user EMAIL:PASSWORD -H 'Accept: application/json' "https://api.sumologic.com/api/v1/dashboards/1200439/data"
 
-```
+```json
 == Info: Adding handle: conn: 0x7f9da2003a00
 == Info: Adding handle: send: 0
 == Info: Adding handle: recv: 0
@@ -324,7 +324,7 @@ curl --trace-ascii - --user EMAIL:PASSWORD -H 'Accept: application/json' "https:
 
 The result is a JSON object containing a key, **dashboardMonitorDatas**, the value of which is an array with one entry for each monitor contained on the dashboard. Each monitor entry contains the details of the current data for the monitor.
 
-```
+```json
 {
    "id":1200439,
    "dashboardMonitorDatas":[
