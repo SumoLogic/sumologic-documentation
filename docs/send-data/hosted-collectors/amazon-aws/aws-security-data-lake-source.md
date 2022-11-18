@@ -78,7 +78,7 @@ In this case, an option to automatically add or enable the nonexistent fields to
 Remember to copy and secure the subscription URL. If you closed the window and could not copy the URL, don't worry. Click on the **Edit** button under the list of sources and copy the URL.
 :::
 
-11. Optional: You can create any **Processing Rules** that you want for the AWS Source. Refer to the [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule.md).
+11. Optional: You can create any **Processing Rules** that you want for the AWS Source. Refer to [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
 
 ### Step 4: Update AWS Security Data Lake Subscriber
 
