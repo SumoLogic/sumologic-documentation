@@ -188,7 +188,7 @@ curl --trace-ascii - --user EMAIL:PASSWORD -H 'Accept: application/json' "https:
 0000: 31de
 0006: {"dashboard":{"properties":"{\\"showColumnTitles\\":false}","id":3
 0046: 48995,"description":null,"title":"0 SYSTEM - Search All","dashbo
-0086: ardMonitors":[{"properties":"{\\"version\\":2,\\"settings\\":{\\"tabl
+0086: ardMonitors":[{"properties":"{\\"version\\":2,\\"settings\\":{\\"table
 ...
 {"dashboard":{"properties":"{\\"showColumnTitles\\":false}","id":348995,"description":null,"title":"0 SYSTEM - Search All","dashboardMonitors":[{"properties":"{\\"version\\":2,\"settings\\":{\\"table\\":{\\"small\\":
 ...
@@ -308,7 +308,7 @@ curl --trace-ascii - --user EMAIL:PASSWORD -H 'Accept: application/json' "https:
 0000:
 <= Recv data, 7460 bytes (0x1d24)
 0000: {"id":1200439,"dashboardMonitorDatas":[{"fields":[{"keyField":tr
-0040: ue,"name":"latitude","fieldType":"double"},{"keyField":true,"nam
+0040: true,"name":"latitude","fieldType":"double"},{"keyField":true,"name
 0080: e":"longitude","fieldType":"double"},{"keyField":true,"name":"co
 ...
 {"id":1200439,"dashboardMonitorDatas":[{"fields":[{"keyField":true,"name":"latitude","fieldType":"double"},{"keyField":true,"name":"longitude","fieldType":"double"},{"keyField":true,"name":"country_name","fieldType":"string"},
