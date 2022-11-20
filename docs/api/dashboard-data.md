@@ -1,7 +1,7 @@
 ---
-id: dashboard-data-API
-title: Dashboard Data API (Beta)
-description: The Dashboard Data API allows you to access available dashboards, retrieve a specific dashboard, or retrieve the data for all monitors.
+id: dashboard-data
+title: Dashboard Data APIs (Beta)
+description: Sumo Logic Dashboard Data APIs allow you to access available dashboards, retrieve a specific dashboard, or retrieve the data for all monitors.
 ---
 
 <head>
@@ -10,40 +10,37 @@ description: The Dashboard Data API allows you to access available dashboards, r
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-The Dashboard Data API allows you to access available dashboards, retrieve a specific dashboard, or retrieve the data for all monitors (i.e., panels) on a dashboard. In order to retrieve data from a dashboard via the API, the dashboard must be in [live mode](https://help.sumologic.com/docs/dashboards/about/ "About Dashboards").
-
 :::important
-The Dashboard Data API is currently in beta mode. For questions or support, please contact beta-dashboard-api-group@sumologic.com.
+The Dashboard Data API is currently in Beta. For questions or support, please contact [beta-dashboard-api-group@sumologic.com](mailto:beta-dashboard-api-group@sumologic.com).
 :::
 
+The Dashboard Data API allows you to access available dashboards, retrieve a specific dashboard, or retrieve the data for all monitors (i.e., panels) on a dashboard. In order to retrieve data from a dashboard via the API, the dashboard must be in [live mode](/docs/dashboards-new/about).
+
 ## Authentication
-------------------------------------------------------------------------------------------
 
-Any request made to the Sumo Logic API needs to include an HTTP Basic Authentication header (see RFC 2617) generated from a user's email and password. All modern browsers (as well as command line tools like curl and wget) support basic authentication. This is secure, since all communication with the Sumo Logic service happens over TLS (SSL/HTTPS). For more information, see [API Authentication](https://help.sumologic.com/docs/api/getting-started/#authentication "API Authentication").
+Any request made to the Sumo Logic API needs to include an HTTP Basic Authentication header (see RFC 2617) generated from a user's email and password. All modern browsers (as well as command line tools like curl and wget) support basic authentication. This is secure, since all communication with the Sumo Logic service happens over TLS (SSL/HTTPS). For more information, see [API Authentication](/docs/api/getting-started/#authentication).
 
-Listing Available Dashboards
-----------------------------------------------------------------------------------------------------------------------
+## Listing Available Dashboards
 
 This section describes how to list all available dashboards and their definitions. 
 
-**Method**: GET
+**Method**: `GET` <br/>
+**Endpoint**: `https://api.sumologic.com/api/v1/dashboards`
 
-**Endpoint**: <https://api.sumologic.com/api/v1/dashboards>
-
-:::Note
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
+:::note
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ### Headers
 
 | Header | Value |
-| --- | --- |
+| :--- | :--- |
 | Accept | application/json |
 
 ### Query Parameters
 
 | Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- |
 | monitors | String | No | True if the result should contain the definition of all monitors for each dashboard, false otherwise. False is the default (recommended). |
 
 ### Result
@@ -54,7 +51,7 @@ A JSON document containing the definition of each dashboard and, if the monitor
 
 Following is a sample session using curl.
 
-```
+```curl
 curl --trace-ascii - --user EMAIL:PASSWORD -H 'Accept: application/json' "https://api.sumologic.com/api/v1/dashboards?monitors=false"
 
 0000: GET /api/v1/dashboards?monitors=false HTTP/1.1
@@ -109,29 +106,27 @@ The result is a JSON object with one key: **dashboards**. The value for the key
 }
 ```
 
-Getting a Dashboard
-----------------------------------------------------------------------------------------------------
+## Getting a Dashboard
 
 This section describes how to get a dashboard, its definition, and the definition of all monitors.
 
-**Method**: GET
-
-**Endpoint**: [https://api.sumologic.com/api/v1/das...s/DASHBOARD_ID](https://api.sumologic.com/api/v1/dashboards/DASHBOARD_ID "https://api.sumologic.com/api/v1/dashboards/DASHBOARD_ID")
+**Method**: `GET`<br/>
+**Endpoint**: `https://api.sumologic.com/api/v1/dashboards/DASHBOARD_ID`
 
 :::note
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ### Headers
 
 | Header | Value |
-| --- | --- |
+| :--- | :--- |
 | Accept | application/json |
 
 ### Query Parameters
 
 | Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- |
 | dashboardId | String | Yes | The ID of the dashboard for which to return the definition |
 
 ### Result
@@ -199,7 +194,7 @@ curl --trace-ascii - --user EMAIL:PASSWORD -H 'Accept: application/json' "https:
 ...
 ```
 
-The result is a JSON object with one key: **dashboard**. The value contains the definition of the dashboard as well as a JSON array in which each entry represents one of the monitors contained on the dashboard.
+The result is a JSON object with one key: **`dashboard`**. The value contains the definition of the dashboard as well as a JSON array in which each entry represents one of the monitors contained on the dashboard.
 
 ```json
 {
@@ -233,29 +228,27 @@ The result is a JSON object with one key: **dashboard**. The value contains the
 }
 ```
 
-###Getting Dashboard Data
-----------------------------------------------------------------------------------------------------------
+## Getting Dashboard Data
 
 This section describes how to get the data for all monitors contained on a dashboard.
 
-**Method**: GET
+**Method**: GET<br/>
+**Endpoint**: `https://api.sumologic.com/api/v1/dashboards/DASHBOARD_ID/data`
 
-**Endpoint**: [https://api.sumologic.com/api/v1/das...HBOARD_ID/data](https://api.sumologic.com/api/v1/dashboards/DASHBOARD_ID/data "https://api.sumologic.com/api/v1/dashboards/DASHBOARD_ID/data")
+:::note
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
+:::
 
-::: Note 
- Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
- :::
-
-### Headers[]
+### Headers
 
 | Header | Value |
-| --- | --- |
+| :--- | :--- |
 | Accept | application/json |
 
-### Query Parameters[
+### Query Parameters
 
 | Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- |
 | dashboardId | String | Yes | The ID of the dashboard for which to return the data of all contained monitors |
 
 ### Result
@@ -322,7 +315,7 @@ curl --trace-ascii - --user EMAIL:PASSWORD -H 'Accept: application/json' "https:
 ...
 ```
 
-The result is a JSON object containing a key, **dashboardMonitorDatas**, the value of which is an array with one entry for each monitor contained on the dashboard. Each monitor entry contains the details of the current data for the monitor.
+The result is a JSON object containing a key, **`dashboardMonitorDatas`**, the value of which is an array with one entry for each monitor contained on the dashboard. Each monitor entry contains the details of the current data for the monitor.
 
 ```json
 {
