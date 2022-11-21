@@ -87,7 +87,7 @@ The Box API integration ingests events from the [Get Events API](https://develop
 
 You'll need a Box App Key, App Secret, and Access Code to provide to Sumo Logic.
 
-The following steps must be followed to get the credentials:
+Complete the following steps to get the credentials:
 1. Login into the [Box Account](https://app.box.com/login).
 2. Create and register a new app from the [App Console](https://app.box.com/developers/console). To register the App with Box follow [these](https://developer.box.com/guides/authentication/jwt/jwt-setup/#app-creation-steps) steps. Select **Server Authentication (with JWT) **as the authentication method. Note that use of a key pair requires  2-step verification to be enabled on Box.
 3. Generate `public private key pair` as described in the following steps [Key Pair](https://developer.box.com/guides/authentication/jwt/jwt-setup/#public-and-private-key-pair) and download the JSON file.
@@ -100,11 +100,11 @@ The following steps must be followed to get the credentials:
 A Box Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/Health-Events).
 
 A Box Source goes through the following states when created:
-1. **Pending**: Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
-2. **Started**: A collection task is created on the Hosted Collector.
-3. **Initialized**: The task configuration is complete in Sumo Logic.
-4. **Authenticated**: The Source successfully authenticated with Box.
-5. **Collecting**: The Source is actively collecting data from Box.
+1. **Pending**. Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
+2. **Started**. A collection task is created on the Hosted Collector.
+3. **Initialized**. The task configuration is complete in Sumo Logic.
+4. **Authenticated**. The Source successfully authenticated with Box.
+5. **Collecting**. The Source is actively collecting data from Box.
 
 If the Source has any issues during any one of these states it is placed in an **Error** state.
 
@@ -122,7 +122,7 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 When you create a Box Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
 
 To configure a Box Source:
-1. In Sumo Logic, navigate to** Manage Data > Collection** and open the **Collection** tab.
+1. In Sumo Logic, navigate to **Manage Data** > **Collection** and open the **Collection** tab.
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select **Box**.<br/><img src={useBaseUrl('img/send-data/box-source2.png')} alt="Box" />
 4. Enter a **Name** for the Source. The **description** is optional. <br/><img src={useBaseUrl('img/send-data/box-source1.png')} alt="Box" />
