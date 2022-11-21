@@ -131,9 +131,7 @@ Recover
 
 **Recover**
 
-Use the **Edit Recovery Settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available.   
-
-![metrics trigger recovery toggle.png](/img/monitors/metrics-trigger-recovery-toggle.png)  
+Use the **Edit Recovery Settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available. <br/>![metrics trigger recovery toggle.png](/img/monitors/metrics-trigger-recovery-toggle.png)  
 
 For example, when the alert is set to `> 10` the recovery would be set to `<= 10` when inferred.
 
