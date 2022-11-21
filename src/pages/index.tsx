@@ -53,7 +53,7 @@ function Home() {
       <div className="container">
          <div className="land-flex">
          <h1 align="center">Explore our product guides</h1>
-         <p align="center">Ensure app reliability and security with modern cloud-native monitoring and observability.</p> 
+         <p align="center">Ensure app reliability and security with modern cloud-native monitoring and observability.</p>
       </div></div></div>
      <div className="container-landpage">
      <div className="container">
