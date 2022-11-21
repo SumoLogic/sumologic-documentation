@@ -14,3 +14,4 @@ Update - We are pleased to announce that the following [Cloud-to-Cloud Integrati
 * [Duo](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source)
 * [Sentinel One Mgmt API](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source)
 * [Proofpoint Tap](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source)
+* [Netskope](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Netskope-Source)
