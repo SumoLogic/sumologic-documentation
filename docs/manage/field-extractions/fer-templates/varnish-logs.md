@@ -1,9 +1,9 @@
 ---
 id: varnish-logs
 title: Varnish Logs Extraction Template
+description: Parse the common fields in your Varnish Logs using the FER template.
 ---
 
-#
 
 **Log Type**: Varnish
 
@@ -28,7 +28,7 @@ parse regex "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 |--|--|--|
 | src_ip | The IP address of the client (remote host) which made the request to the server | 101.92.120.16 |
 | method | The method used by the client | GET |
-| url | The resource requested by the client | /\_includes/wp/blog/wp-content/plugins/us/31063765-bpfull.phpi?&w=50&id=6&random=1331063765 |
+| url | The resource requested by the client | /_includes/wp/blog/wp-content/plugins/us/31063765-bpfull.phpi?&w=50&id=6&random=1331063765 |
 | status_code | The status code that the server sends back to the client | 304 |
 | size | The size of the object returned to the client | 5201 |
 | referrer | The site that the client reports having been referred from | [http://search.yahoo.com/mobile/s?rew...0logs&pintl=en](http://search.yahoo.com/mobile/s?rewrite=72&.tsrc=log&first=1&p=AWS-logs&pintl=en) |

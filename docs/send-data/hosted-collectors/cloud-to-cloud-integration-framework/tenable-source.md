@@ -14,7 +14,7 @@ The Tenable Source provides a secure endpoint to ingest audit-log events, vulner
    * The Asset Export API first [exports assets](https://developer.tenable.com/reference/exports-assets-request-export) that are used to initiate export jobs. Next, it gets the export [status](https://developer.tenable.com/reference/exports-assets-request-export) and then [downloads exported assets](https://developer.tenable.com/reference/exports-assets-download-chunk) in a chunk.
 
 :::note
-This Source is not available in the [Fed deployment] (/APIs/Troubleshooting-APIs/Deployments-and-Sumo-Logic-Endpoints).
+This Source is not available in the [Fed deployment](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints).
 :::
 
 ## States
@@ -51,7 +51,7 @@ When you create a Tenable Source, you add it to a Hosted Collector. Before crea
 
 To configure A Tenable Source:
 
-1. In the Sumo Logic web app, navigate to** Manage Data \> Collection** and open the **Collection** tab.
+1. In Sumo Logic, navigate to** Manage Data \> Collection** and open the **Collection** tab.
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 
@@ -68,7 +68,7 @@ To configure A Tenable Source:
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
 
    * `_siemVendor`: Tenable
-   * `_siemProduct`: Cloud
+   * `_siemProduct`: Cloud API
    * `_siemFormat`: JSON
    * `_siemEventID`: Set to the type of data ingested.
 

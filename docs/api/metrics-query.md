@@ -5,9 +5,9 @@ sidebar_label: Metrics Query
 description: The Metrics Query API allows you to execute queries on various metrics and retrieve multiple time-series (data-points) over time from HTTP endpoints.
 ---
 
-The Metrics Query API allows you to execute queries on various metrics and retrieve multiple time-series (data-points) over time from HTTP endpoints. For more information see [Metrics - Classic](https://help.sumologic.com/Metrics/Metric-Queries-Alerts/11Metrics-Queries).
+The Metrics Query API allows you to execute queries on various metrics and retrieve multiple time-series (data-points) over time from HTTP endpoints. For more information see [Metrics - Classic](/docs/metrics/metrics-queries/Metrics-Queries-classic).
 
-Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
+Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 
 Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
 

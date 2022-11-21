@@ -42,20 +42,20 @@ If this is the first time you are creating an HTTPS collector, review how to cre
    * And click **Save**.
 4. Click OK to add a source to your collector.
 5. Select **HTTP** as the source type.
-6. Enter the information as below for **Halo Security Events**. \
-   * **Name.** CP_Halo_Workload_Security_Events_Collector. \
-   * **Description.** Halo Security Events Collector. \
-   * **Source Host. **CP_Halo. \
+6. Enter the information as below for **Halo Security Events**.
+   * **Name.** CP_Halo_Workload_Security_Events_Collector.
+   * **Description.** Halo Security Events Collector.
+   * **Source Host. **CP_Halo.
    * **Source Category.** halo/workload/security/events
 7. Click **Save.** Be sure to note the endpoint URL provided for this collection. You will need it later.
 8. Create a second source.
 9. Click **Hosted Collector.**
 10. Select **HTTP** as the source type.
-11. Enter the information as below for **Halo Metric Events**. \
-   * **Name.** CP_Halo_Metrics_Collector. \
-   * **Description.** Halo key metrics collector. \
-   * **Source Host. **CP_Halo. \
-   * **Source Category.** halo/metrics. \
+11. Enter the information as below for **Halo Metric Events**.
+   * **Name.** CP_Halo_Metrics_Collector.
+   * **Description.** Halo key metrics collector.
+   * **Source Host. **CP_Halo.
+   * **Source Category.** halo/metrics.
 12. When you are done, you should have two collections **CP_Halo_Metrics_Collector** and  **CP_Halo_Workload_Security_Events_Collector** set up under a single collector **Halo_Lambda_Ingestor**.
 
 
@@ -97,11 +97,11 @@ Sample policy: Be sure to use the proper permission level.
 
 1. Configure Lambda.
 
-2. Click **Blank Function**. \
+2. Click **Blank Function**.
 
 3. Click **Next.**
 4. Fill in **Configure Function** with: \
-**Name.** halo_events_to_sumologic. \
+**Name.** halo_events_to_sumologic.
 **Runtime.** Python 2.7.
 
 
@@ -111,16 +111,16 @@ Sample policy: Be sure to use the proper permission level.
 6. Fill in the information to match the screenshot below.  Enter **halo_events_to_sumologic.lambda_handler** for **Handler**.  Then select “Create a custom role” for **Role**.
 
 
-7. Fill in the information to match the screenshot below.  Select “Choose a new IAM Role” for IAM Role and **lambda_basic_execution** for **Role Name**. \
+7. Fill in the information to match the screenshot below.  Select “Choose a new IAM Role” for IAM Role and **lambda_basic_execution** for **Role Name**.
 
-8. Change the **Timeout** to **4 minutes** under **Advanced Settings**. \
+8. Change the **Timeout** to **4 minutes** under **Advanced Settings**.
 9. Verify all the information is entered correctly. Then click **Create Function** to proceed.
 
 The screenshot does not have values for the Environment Variables.  But you should have entered it with your information.
 10. Now we need to create an IAM role. Select **IAM**.
 11. Select **lamda_basic_execution** role that was created in the previous step.
 12. Select **AmazonSQSFullAccess** and **AWSLambdaBasicExecutionRole** for the policies. If you don’t have these policies, refer to the AWS manual and next few steps to create them.
-13. Here is the sample policy for the **AmazonSQSFullAccess**.  Make sure you change the permission to meet your security requirements. \
+13. Here is the sample policy for the **AmazonSQSFullAccess**.  Make sure you change the permission to meet your security requirements.
 Sample policy: Use a proper permission level. Below is a sample.
 ```
 {
@@ -157,14 +157,14 @@ Sample policy: Use a proper permission level. Below is a sample.
 
 
 17. If you check the SQS dashboard, you will see the new queue, **last_time_scan**, has been created for you automatically.
-18. Let's create a trigger for our Lambda code.  I want this code to run every 5 minutes. Select Triggers from the tab.  Then click **Add trigger**. \
+18. Let's create a trigger for our Lambda code.  I want this code to run every 5 minutes. Select Triggers from the tab.  Then click **Add trigger**.
 
 19. Then click on the blank square to bring out the pulldown menu.  Select **CloudWatch Events - Schedule**.
 
-20. Fill in the information and make sure you set the** Schedule expression **as **rate(5 minutes)**. \
+20. Fill in the information and make sure you set the** Schedule expression **as **rate(5 minutes)**.
 
 
-21. A successfully configured trigger will have a success message and appear similar to the trigger below. \
+21. A successfully configured trigger will have a success message and appear similar to the trigger below.
 
 22.  You are done for the first Lambda code!  You can follow the same steps to configure **Lambda for Halo_metrics_to_SumoLogic**.
 
@@ -180,7 +180,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

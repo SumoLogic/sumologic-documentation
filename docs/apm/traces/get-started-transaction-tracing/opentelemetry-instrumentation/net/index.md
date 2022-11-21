@@ -11,19 +11,23 @@ Automatic instrumentation of the .NET applications is a very easy task. The simp
 
 There are a few simple steps to instrument the application and obtain telemetry data.
 
-### Step 1: Packages installation
+### Step 1. Packages installation
 
 The installation of the packages listed below is required to apply the instrumentation and export telemetry data.
 
-`$ dotnet add package OpenTelemetry -v 1.2.0-rc2 $ dotnet add package OpenTelemetry.Exporter.OpenTelemetryProtocol -v 1.2.0-rc2 $ dotnet add package OpenTelemetry.Instrumentation.AspNetCore -v 1.0.0-rc9 $ dotnet add package OpenTelemetry.Extensions.Hosting -v 1.0.0-rc9`
+```bash
+$ dotnet add package OpenTelemetry -v 1.2.0-rc2 $ dotnet add package OpenTelemetry.Exporter.OpenTelemetryProtocol -v 1.2.0-rc2
+$ dotnet add package OpenTelemetry.Instrumentation.AspNetCore -v 1.0.0-rc9
+$ dotnet add package OpenTelemetry.Extensions.Hosting -v 1.0.0-rc9
+```
 
-### Step 2: Instrumentation with OpenTelemetryProtocol exporter
+### Step 2. Instrumentation with OpenTelemetryProtocol exporter
 
 In this step, all the magic related to code instrumentation will happen. To enable instrumentation in the application it is enough to add the code below into your Startup class in the ConfigureServices method.
 
 In the code line `.AddAspNetCoreInstrumentation()` add the [OpenTelemetry instrumentation](https://github.com/open-telemetry/opentelemetry-dotnet/tree/1.0.0-rc7/src/OpenTelemetry.Instrumentation.AspNetCore#aspnet-core-instrumentation-for-opentelemetry-net) to the .NET Core application. Line `.SetResourceBuilder()` reads `OTEL_RESOURCE_ATTRIBUTES` environment variable. This gives possibility to configure service name, application and other attributes. The last line `.AddOtlpExporter()` is responsible for the configuration of the [OpenTelemetryProtocol Exporter](https://github.com/open-telemetry/opentelemetry-dotnet/tree/core-1.2.0-rc2/src/OpenTelemetry.Exporter.OpenTelemetryProtocol#otlp-exporter-for-opentelemetry-net).
 
-```
+```cs
 public void ConfigureServices(IServiceCollection services)
 {
 
@@ -52,24 +56,24 @@ The final step is to configure the exporter endpoint, service and application na
 
 Instrumentation of the .NET application requires a little more effort but is still simple.
 
-### Step 1: Packages installation
+### Step 1. Packages installation
 
 The installation of the packages listed below is required to apply the instrumentation and export telemetry data.
 
-```
+```bash
 $ dotnet add package OpenTelemetry -v 1.2.0-rc2
 $ dotnet add package OpenTelemetry.Exporter.OpenTelemetryProtocol -v 1.2.0-rc2
 $ dotnet add package OpenTelemetry.Instrumentation.AspNet -v 1.0.0-rc9
 $ dotnet add package OpenTelemetry.Extensions.Hosting -v 1.0.0-rc9
 ```
 
-### Step 2: Web.config file changes
+### Step 2. Web.config file changes
 
 After packages installation some entries should appear in the Web.config file.  
 
 In `<system.web>` section additional HTTP Module should be added:
 
-```
+```xml
 <system.web>
    <httpModules>
        <add name="TelemetryHttpModule"
@@ -82,7 +86,7 @@ In `<system.web>` section additional HTTP Module should be added:
 
 In `<system.webServer>` section additional HTTP Module should be added:  
 
-```
+```xml
 <system.webServer>
    <modules>
        <add name="TelemetryHttpModule"
@@ -144,8 +148,8 @@ In the case of the other libraries like GrpcNetClient, HttpClient, StackExchange
 
 Requires installation of the package:
 
-```
-dotnet add package OpenTelemetry.Instrumentation.GrpcNetClient -v 1.0.0-rc9
+```bash
+$ dotnet add package OpenTelemetry.Instrumentation.GrpcNetClient -v 1.0.0-rc9
 ```
 
 and a small code change, in addition to the GrpcClient instrumentation `.AddGrpcClientInstrumentation()`. More details can be found [here](https://github.com/open-telemetry/opentelemetry-dotnet/tree/1.0.0-rc7/src/OpenTelemetry.Instrumentation.GrpcNetClient#grpcnetclient-instrumentation-for-opentelemetry).
@@ -199,7 +203,7 @@ and a small code change, in addition to the HttpClient instrumentation
 
 Requires installation of the package:
 
-```
+```bash
 $ dotnet add package OpenTelemetry.Instrumentation.StackExchangeRedis -v 1.0.0-rc9
 ```
 
@@ -226,7 +230,7 @@ and a small code change, in addition to the Redis instrumentation `.AddRedisInst
 
 Requires installation of the package:
 
-```
+```bash
 $ dotnet add package OpenTelemetry.Instrumentation.SqlClient -v 1.0.0-rc9
 ```
 

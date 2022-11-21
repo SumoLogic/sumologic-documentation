@@ -60,8 +60,8 @@ _sourceCategory=Labs/AWS/CloudTrail/APIGateway "apigateway.amazonaws.com" Namesp
 
 ## Collect Metrics for AWS API Gateway  
 
-1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
-2. Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics).
+1. Configure a [Hosted Collector](/docs/send-data/Hosted-Collectors/Configure-Hosted-Collector).
+2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/Amazon-CloudWatch-Source-Metrics).
    * **Name**. Enter a name to display for the new Source.
    * **Description**. Enter an optional description.
    * **Regions**. Select your Amazon Regions for DynamoDB.
@@ -74,12 +74,12 @@ _sourceCategory=Labs/AWS/CloudTrail/APIGateway "apigateway.amazonaws.com" Namesp
 
 ## Collect AWS API Gateway Events using CloudTrail
 
-1. To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source).
+1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-CloudTrail-Source).
    * **Name**. Enter a name to display for the new Source.
    * **Description**. Enter an optional description.
    * **S3 Region**. Select the Amazon Region for your DynamoDB S3 bucket.
    * **Bucket Name**. Enter the exact name of your DynamoDB S3 bucket.
-   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
    * **Source Category**. Enter `dynamodb_event`.
    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
    * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
@@ -100,7 +100,7 @@ The Sumo Logic AWS Observability API Gateway dashboards provide insights into AP
 
 We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
 
-### 1. AWS API Gateway - Overview
+### Overview
 
 **AWS API Gateway - Overview** dashboard provides insights into API Gateway performance throughout your infrastructure, including API calls, latency, client and server-side errors, API cache hits, and back-end cache misses.
 
@@ -123,7 +123,7 @@ Use this dashboard to:
 
 ![1. AWS API Gateway - Overview.png](/img/observability/api-gateway-overview.png)
 
-### 2. AWS API Gateway - Audit Events
+### Audit Events
 
 **AWS API Gateway - Audit Events** dashboard provides detailed audit
 insights into API Gateway events by various dimensions including event
@@ -138,7 +138,7 @@ Use this dashboard to:
 
 ![2. AWS API Gateway - Audit Events.png](/img/observability/api-gateway-audit-events.png)
 
-### 1. AWS API Gateway - Latency, Cache
+### Latency, Cache
 
 **AWS API Gateway - Latency, Cache** dashboard provides insights into
 API Gateway performance including API requests, latency, API cache hits,
@@ -153,7 +153,7 @@ Use this dashboard to:
 
 ![1. AWS API Gateway - Latency, Cache.png](/img/observability/api-gateway-latency-cache.png)
 
-### 2. AWS API Gateway - 4xx and 5xx Errors
+### 4xx and 5xx Errors
 
 **AWS API Gateway - 4xx and 5xx Errors** dashboard provides insights
 into API Gateway HTTP 4xx and 5xx code errors throughout your
@@ -168,7 +168,7 @@ Use this dashboard to:
 
 ![2. AWS API Gateway - 4XX and 5XX Errors.png](/img/observability/api-gateway-errors.png)
 
-### 3. AWS API Gateway - Enhanced Monitoring
+### Enhanced Monitoring
 
 **AWS API Gateway - Enhanced Monitoring** dashboard provides detailed
 insights into API Gateway performance throughout your infrastructure,

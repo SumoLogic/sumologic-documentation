@@ -1,8 +1,9 @@
 ---
 id: parse-csv-formatted-logs
+title: Parse CSV Formatted Logs
 ---
 
-# Parse CSV Formatted Logs
+
 
 The **CSV** operator allows you to parse CSV (Comma Separated Values) formatted log entries. It uses a comma as the default delimiter.
 
@@ -61,4 +62,4 @@ This produces results like:
 
 ![csv operator](/img/reuse/query-search/csv_operator_example_695x65.png)
 
-For more information on parsing CSV files, see [Lookup](docs/search/search-query-language/search-operators/lookup-classic.md) operator and [Save](docs/search/search-query-language/search-operators/save-lookups-classic.md) operator.
+For more information on parsing CSV files, see [Lookup](docs/search/search-query-language/search-operators/lookup-classic) operator and [Save](docs/search/search-query-language/search-operators/save-classic) operator.

@@ -131,11 +131,20 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
     component: "database"
     db_system: "elasticsearch"
     db_cluster: "elasticsearch_on_k8s_CHANGE_ME"
+    db_cluster_address = `ENV_TO_BE_CHANGED`
+    db_cluster_port = `ENV_TO_BE_CHANGED`
     ```
-   2. Enter in values for the following parameters (marked `CHANGE_ME` above):
+   2. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` above):
     * `environment` - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
     * `db_cluster` - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
-    * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+    * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+    * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+
+    :::note
+    `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+    For example, if your application uses “elasticsearch-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=elasticsearch-prod.sumologic.com db_cluster_port=3306`. If your application connects directly to a given elasticsearch node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=elasticsearch-prod.sumologic.com`. Pivoting to Tracing data from Entity Inspector is possible only for “Elasticsearch address” Entities.
+    :::
+    * **Do not modify the following values** as they will cause the Sumo Logic apps to not function correctly.
       * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
       * `db_system: “elasticsearch”`- This value identifies the database system.
     * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
@@ -160,7 +169,7 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
     ```
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    6. Verify logs in Sumo Logic.
-3. **Add a FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Database Application Components. To do so:
+3. **Add a FER to normalize the fields in Kubernetes environments**. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Database Application Components. To do so:
    1. Go to **Manage Data > Logs > Field Extraction Rules**.
    2. Click the + Add button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear:
@@ -169,15 +178,15 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
      * **Applied At.** Choose **Ingest Time**
      * **Scope**. Select **Specific Data**
      * **Scope**: Enter the following keyword search expression:  
-    ```sql
-    pod_labels_environment=* pod_labels_component=database pod_labels_db_system=* pod_labels_db_cluster=*
-    ```
+     ```sql
+     pod_labels_environment=* pod_labels_component=database pod_labels_db_system=* pod_labels_db_cluster=*
+     ```
      * **Parse Expression**.Enter the following parse expression:
    ```sql
    if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
        | pod_labels_component as component
        | pod_labels_db_system as db_system
-       | pod_labels_db_cluster as db_cluster
+       | if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
    ```
    5. Click **Save** to create the rule.
 
@@ -204,19 +213,32 @@ This section explains the steps to collect Elasticsearch metrics from a Kubernet
   indices_include = ["_all"]
   indices_level = "cluster"
   [inputs.elasticsearch.tags]
-    environment="dev_CHANGE_ME>"
-    component="database"
-    db_system="elasticsearch"
-    db_cluster="elasticsearch_on_k8s_CHANGE_ME>"
+     environment: "ENV_TO_BE_CHANGED"
+     component: "database"
+     db_system: "elasticsearch"
+     db_cluster: "ENV_TO_BE_CHANGED"
+     db_cluster_address = `ENV_TO_BE_CHANGED`
+     db_cluster_port = `ENV_TO_BE_CHANGED`
 ```
-
-3. Enter in values for the following parameters (marked CHANGEME above):
-   * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Elasticsearch Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Elasticsearch input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+3. Enter in values for the following parameters (marked ENV_TO_BE_CHANGED above):
+   * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Elasticsearch Input plugin. Please refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Elasticsearch input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
    * In the input plugins section, that is `[[inputs.elasticsearch]]`:
       * `servers` - The URL to the Elasticsearch server. This can be a comma-separated list to connect to multiple Elasticsearch servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Elasticsearch input plugin for Telegraf.
    * In the tags section, which is `[inputs.elasticsearch]`
      * `environment` - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
      * `db_cluster` - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
+     * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+     * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+
+     :::note
+     `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+     For example, if your application uses “elasticsearch-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=elasticsearch-prod.sumologic.com db_cluster_port=3306`
+
+     If your application connects directly to a given elasticsearch node, rather than the whole cluster, use the application connection string to override the value of the `“host”` field in the Telegraf configuration: `host=elasticsearch-prod.sumologic.com`
+
+     Pivoting to Tracing data from Entity Inspector is possible only for “Elasticsearch address” Entities.
+     :::
    * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
      * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
      * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
@@ -255,21 +277,33 @@ This section provides instructions for configuring logs and metrics collection f
   indices_level = "cluster"
   node_stats = ["indices", "os", "process", "jvm", "thread_pool", "fs", "transport", "http"]
 [inputs.elasticsearch.tags]
-    environment="dev_CHANGE_ME"
-    component="database"
-    db_system="elasticsearch"
-    db_cluster="elasticsearch_on_premise_CHANGE_ME"
+   environment="ENV_TO_BE_CHANGED"
+   component="database"
+   db_system="elasticsearch"
+   db_cluster="ENV_TO_BE_CHANGED"
+   db_cluster_address = `ENV_TO_BE_CHANGED`
+   db_cluster_port = `ENV_TO_BE_CHANGED`
 [[outputs.sumologic]]
   url = "<URL Created in Step 3_CHANGEME>"
   data_format = "prometheus"
 ```
-
-5. Please enter values for the following parameters (marked `CHANGE_ME` above):
+5. Please enter values for the following parameters (marked `ENV_TO_BE_CHANGED` above):
   * In the input plugins section, that is `[[inputs.elasticsearch]]`:
      * `servers` - The URL to the elasticsearch server. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/elasticsearch) for more information on additional parameters for configuring the Elasticsearch input plugin for Telegraf.
      * In the tags section (`[inputs.Elasticsearch.tags]`):
         * `environment` - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
         * `db_cluster` - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+        * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+        :::note
+        `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+
+        For example if your application uses “elasticsearch-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=elasticsearch-prod.sumologic.com db_cluster_port=3306`.
+
+        If your application connects directly to a given elasticsearch node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=elasticsearch-prod.sumologic.com`.
+
+        Pivoting to Tracing data from Entity Inspector is possible only for “Elasticsearch address” Entities.
+        :::
      * In the output plugins section (`[[outputs.sumologic]]`):
        * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
    * Here’s an explanation for additional values set by this Telegraf configuration. If you haven’t defined a cluster in Elasticsearch, then enter `default` for `db_cluster`. There are additional values set by the Telegraf configuration, which we recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
@@ -304,7 +338,18 @@ This section provides instructions for configuring log collection for Sumo Logic
       * `component = database`
       * `db_system = elasticsearch`
       * `db_cluster = <Your_Elasticsearch_Cluster_Name>`
-      * `environment = <Environment_Name>, such as Dev, QA or Prod.`
+      * `environment = <Environment_Name>`, such as Dev, QA or Prod.
+      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used
+      :::note
+      `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+
+      For example if your application uses “elasticsearch-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=elasticsearch-prod.sumologic.com db_cluster_port=3306`
+
+      If your application connects directly to a given elasticsearch node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=elasticsearch-prod.sumologic.com`
+
+      Pivoting to Tracing data from Entity Inspector is possible only for “Elasticsearch address” Entities.
+      :::
 4. Configure the **Advanced** section:
    * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
    * **Time Zone.** Choose the option, **Ignore time zone from the log file and instead use**, and then select your Elasticsearch Server’s time zone.
@@ -379,7 +424,7 @@ connection_notifications = [
   ]
 ```
 
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 
 ```bash title="Email notifications example"
 email_notifications = [
@@ -404,7 +449,7 @@ email_notifications = [
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
@@ -420,7 +465,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing Elasticsearch Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
 :::
 
 
@@ -517,7 +562,7 @@ The ElasticSearch - Queries dashboard shows Elasticsearch provides analytics on 
 
 ## Elasticsearch Alerts
 
-Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Elasticsearch database cluster is available and performing as expected.
+Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Elasticsearch database cluster is available and performing as expected.
 
 
 <table>

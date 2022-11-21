@@ -1,8 +1,8 @@
 ---
 id: apm
-title: Sumo Logic Application Performance Monitoring
-sidebar_label: Application Performance Monitoring
-description: Monitor user and application behavior with Sumo Logic trace analytics and real user monitoring.
+title: Application Performance Monitoring
+sidebar_label: App Performance Monitoring
+description: Monitor user and app behavior with Sumo Logic trace analytics and real user monitoring.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -22,8 +22,8 @@ Monitor user activity, span analytics, service maps, and transaction traces betw
 <div className="box box2 card">
   <div className="container">
   <img src={useBaseUrl('img/icons/business/customer-retention.png')} alt="Thumbnail icon" width="55"/>
-  <h3><a href="/docs/integrations/microsoft-azure/">Real User Monitoring (RUM)</a></h3>
-  <p>Understand how users interact with the digital interfaces of your business and if their experience is satisfactory or not. This is open-source powered, flexible, and has fully integrated Real User Monitoring capabilities for browsers.</p>
+  <h3><a href="/docs/apm/real-user-monitoring">Real User Monitoring</a></h3>
+  <p>Understand how users interact with the digital interfaces of your business.</p>
   </div>
 </div>
 </div>

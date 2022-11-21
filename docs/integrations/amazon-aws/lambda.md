@@ -17,7 +17,7 @@ The Sumo Logic AWS Lambda App uses the Lambda logs via CloudWatch, CloudWatch Me
 
 This section describes the data sources for the AWS Lambda app and how these the app leverages these data sources to provide insight into AWS Lambda.
 
-The AWS Lambda ULM app uses the following logs and metrics:
+The AWS Lambda app uses the following logs and metrics:
 * [AWS CloudWatch Logs](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-logs.html)
 * [CloudTrail Lambda Data Events](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events)
 * [AWS Lambda metrics](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-metrics.html)
@@ -222,7 +222,7 @@ Once Provisioned Concurrency is enabled and you start collecting CloudWatch metr
 </table>
 
 
-These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metrics/metric-queries-alerts/index.md), as shown in the following example:
+These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metrics/metrics-queries), as shown in the following example:
 
 
 ### Field in Field Schema
@@ -232,7 +232,7 @@ Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**fun
 
 ### Field Extraction Rule(s)
 
-Create a Field Extraction Rule for AWS Lambda. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
+Create a Field Extraction Rule for AWS Lambda. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 
 ### Cloud Trail FER

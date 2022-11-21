@@ -1,9 +1,8 @@
 ---
 id: changing-alerts
 title: Changing Other Alerts
+description: You can modify or cancel alerts that are no longer valuable to your organization if you have Edit permission.
 ---
-
-#
 
 The ability to modify or turn off alerts created by another user is now possible with Content Sharing. Sometimes the need or frequency of a log alert changes while the creator is unavailable and with Content Sharing you can give that ability to another Role or user within your Organization.
 
@@ -53,9 +52,3 @@ If you have Edit permissions on the shared search, you can stop recipients from 
 1. In the **Edit Search** dialog, click **Edit this search's schedule**.
 1. From the **Run Frequency** menu, choose **Never** to cancel the scheduled search.
 1. Click **Update** to save your changes.
-
- 
-
- 
-
- 

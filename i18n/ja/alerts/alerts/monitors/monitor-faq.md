@@ -7,7 +7,7 @@ description: We've listed the frequently asked questions and answers of Monitors
 
 ## Can I convert my existing Scheduled Search to a Monitor?
 
-Yes, however, it's a manual process. You have to create a new Monitor with the appropriate query and alerting condition based on your existing Scheduled Search. See the [differences between Monitors and Scheduled Searches](difference-scheduled-searches.md) before you consider converting.
+Yes, however, it's a manual process. You have to create a new Monitor with the appropriate query and alerting condition based on your existing Scheduled Search. See the [differences between Monitors and Scheduled Searches](/docs/alerts/difference-from-scheduled-searches) before you consider converting.
 
 ## I am getting an error message about cardinality when creating metrics monitor, what does it mean?
 
@@ -60,7 +60,7 @@ Yes, you can use [Alert Variables](../alert-variables.md) to reference various m
 Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
 
 :::note
-The [**Test Connection** feature for webhooks](docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md)does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
+The [**Test Connection** feature for webhooks](docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md)does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
 :::
 
 ## One of our monitors suddenly stopped sending notifications, even though I see it on the Monitors page?

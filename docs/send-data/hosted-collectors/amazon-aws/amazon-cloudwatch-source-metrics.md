@@ -8,7 +8,7 @@ description: A Sumo Logic CloudWatch Source allows you to gather metrics data fr
 A Sumo Logic CloudWatch Source allows you to gather metrics data from an Amazon resource. 
 
 :::tip
-Sumo Logic recommends you use the newer AWS Kinesis Firehose for Metrics Source to collect CloudWatch metrics. For more information, see [Which to use: Kinesis Firehose source or CloudWatch source?](aws-kinesis-firehose-metrics-source.md).
+Sumo Logic recommends you use the newer AWS Kinesis Firehose for Metrics Source to collect CloudWatch metrics. For more information, see [Which to use: Kinesis Firehose source or CloudWatch source?](aws-kinesis-firehose-metrics-source.md)
 :::
 
 ## Supported AWS metrics
@@ -121,7 +121,7 @@ AWS tag filtering is supported for the following AWS namespaces.
    :::
 
 1. **Custom Namespaces.** Enter a comma-separated list of any custom namespaces from which you want to collect custom metrics. For more information about custom metrics, see http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html.
-1. **Source Category.** Enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called **\_sourceCategory**.)
+1. **Source Category.** Enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called `_sourceCategory`.)
 1. For **AWS** **Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in step 1, [Grant Sumo Logic access to an AWS Product](grant-access-aws-product.md).
 
    * For **Role-based access** enterthe Role ARN that was provided by AWS after creating the role.

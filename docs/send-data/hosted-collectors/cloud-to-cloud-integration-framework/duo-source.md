@@ -6,6 +6,10 @@ sidebar_label: Duo
 
 The Duo Source provides a secure endpoint to receive authentication logs from the Duo [Authentication Logs API](https://duo.com/docs/adminapi#logs). It securely stores the required authentication, scheduling, and state tracking information.
 
+:::note
+This Source is available in the Fed deployment.
+::: 
+
 ## Authentication
 
 You need to [create an **Admin API** app](https://duo.com/docs/adminapi#first-steps) and copy the **integration key**, **secret key**, and **domain** to provide to Sumo Logic when creating your Duo Source. Grant the **Admin API** permission to **read** **information**, **log**, and **resource**.
@@ -45,7 +49,7 @@ When you create a Duo Source, you add it to a Hosted Collector. Before creating
 
 To configure a Duo Source:
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Duo**.
 

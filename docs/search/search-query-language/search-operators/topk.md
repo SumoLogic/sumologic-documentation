@@ -1,10 +1,12 @@
 ---
 id: topk
+title: topk Search Operator
+sidebar_label: topk
 ---
 
-# topk
 
-The **topk** operator allows you to select the top values from fields and group them by fields. The topk operator can replace the top operator and adds the ability to choose the top of top.
+
+Allows you to select the top values from fields and group them by fields. The topk operator can replace the top operator and adds the ability to choose the top of top.
 
 :::tip
 If you're using top, we recommend switching to topk for all your queries so that you can take advantage of the additional functionality of topk.
@@ -18,13 +20,13 @@ topk(<#>, <top_field>[, <top_field_2>, ...]) [by <group_by_fields>]
 
 `#` is an integer equal to or greater than 1.
 
-### Response Field
+#### Response Field
 
 * `_rank` - the order number of the result.
 
-## Examples
+**Example**
 
-### Top 5 source hosts generating errors
+#### Top 5 source hosts generating errors
 
 Look at the top five source hosts generating the most errors and the number of errors for given timeslices:
 
@@ -37,9 +39,9 @@ error
 
 ![basic error ranking results.png](/img/search/searchquerylanguage/search-operators/topk/basic-error-ranking-results.png)
 
-### Top 2 results
+#### Top 2 results
 
-Look at the top 2 results for a given category: 
+Look at the top 2 results for a given category:
 
 ```sql
 error
@@ -64,10 +66,3 @@ error
 We can specify more than one argument to group by. In the query above, we are looking for the top 2 results for each source host, source Category pairs.
 
 ![basic top with group by.png](/img/search/searchquerylanguage/search-operators/topk/basic-top-with-group-by.png)  
-  
-  
-  
-  
-  
-  
- 

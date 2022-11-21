@@ -1,5 +1,5 @@
 ---
-id: index
+slug: /integrations/saas-cloud
 title: SaaS and Cloud Apps
 description: Docs for Sumo apps for SaaS and Cloud applications.
 ---

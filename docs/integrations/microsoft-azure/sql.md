@@ -118,13 +118,13 @@ In this step, you configure a pipeline for shipping metrics from Azure Monitor t
 In Step 1, you create an HTTP source. When you configure the, plan your source category to ease the querying process.  A hierarchical approach allows you to make use of wildcards. For example: \
 `Azure/DB/SQL/Metrics`
 2. Push metrics from Azure Monitor to Event Hub.
-   * From the left pane, select **ALL Services. \
+   * From the left pane, select **ALL Services.
    * Search for and select "Monitor".
-   * In the **Monitor** pane, select **Diagnostic Settings **under **Settings**. \
-   * Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings. \
-   * Once diagnostics are enabled, click **Add a diagnostic setting**. \
-   * The **Diagnostic Settings** page appears. \
-   * In the left pane
+   * In the **Monitor** pane, select **Diagnostic Settings **under **Settings**.
+   * Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings.
+   * Once diagnostics are enabled, click **Add a diagnostic setting**.
+   * The **Diagnostic Settings** page appears.
+   * In the left pane:
       * Enter a name for the diagnostic setting.
       * Click the  **Stream to an event hub **checkbox.
       * Select **Configure event hub.** The right pane appears.

@@ -1,9 +1,8 @@
 ---
 id: health-events
 title: Health Events
+description: Monitor the health of your Collectors and Sources.
 ---
-
-
 
 ## Availability
 
@@ -129,9 +128,9 @@ Creating a query that defines built-in metadata field values in the scope can he
 
 | **Metadata Field** | **Assignment Description** |
 |--|--|
-| \_sourceCategory | Value of the [common parameter](#common-parameters), `subsystem`. |
-| \_sourceName | Value of the [common parameter](#common-parameters), `eventName`. |
-| \_sourceHost | The remote IP address of the host that made the request. If not available the value will be `no_sourceHost`. |
+| _sourceCategory | Value of the [common parameter](#common-parameters), `subsystem`. |
+| _sourceName | Value of the [common parameter](#common-parameters), `eventName`. |
+| _sourceHost | The remote IP address of the host that made the request. If not available the value will be `no_sourceHost`. |
 
 ### Collection page
 

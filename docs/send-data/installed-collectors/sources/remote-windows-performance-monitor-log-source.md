@@ -28,7 +28,7 @@ To configure a remote Windows Performance Monitor Log Source:
 1. Choose **Remote** for the **Type of Windows Performance Source**. 
 1. Set the following:
 
-   * **Name.** Type the name to display for this Source in the Sumo Logic Web Application.
+   * **Name.** Type the name to display for this Source from within Sumo Logic.
    * **Description** is optional.
    * **Windows host(s).** Enter one or more hostnames for the Windows machines from which you want to collect Windows Performance Monitor data. If you'd like to collect from more than one remote host, separate the hostnames with a comma. (If you enter more than one hostname, each host must have the same domain user. See [Preconfiguring a Machine to Collect Remote Windows Performance Monitoring Logs](preconfigure-machine-collect-remote-windows-performance-monitoring-logs.md) for more information.) The hostname can be a maximum of 128 characters.
    * **Frequency.** Depending on your Windows system and its needs, select a frequency to run the selected queries. If your Windows system is relatively stable, a frequency of 15m should be appropriate. (Selecting a frequency of 1m could flood your system with logs and create an undesirable outcome.)

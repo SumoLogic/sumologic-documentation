@@ -1,5 +1,5 @@
 ---
-id: integrate-with-okta
+id: integrate-sumo-logic-with-okta
 title: Integrate Sumo Logic with Okta
 ---
 

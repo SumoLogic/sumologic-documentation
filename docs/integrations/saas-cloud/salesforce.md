@@ -83,7 +83,7 @@ Before you begin setting up log collection, review the required prerequisites an
   ```
   * If your Salesforce instance does not support Transport Layer Security (TLS) v1.0, you will be required to run JRE 8 instead of JRE 7. Specifically, if you see an error message like this when the script queries data:
   ```bash
-  TLS 1.0 has been disabled in this organization. \
+  TLS 1.0 has been disabled in this organization.
   Please use TLS 1.1 or higher when connecting to Salesforce using https.
   ```
 * You may do the configuration steps on a  system with a web browser for authentication via OAuth2, and then move the configuration folder to your production system. Or if your production system has a web browser, all steps may be done on that system.
@@ -98,7 +98,7 @@ This section provides instructions for setting up event collection from Salesfor
 In this section, we will configure a collection of EventLogFiles and audit logs from Salesforce and send them to Sumo Logic via one of the methods listed below.
 
 * For non-FedRamp Sumo Logic deployments:
-    * [Create a Salesforce Cloud To Cloud Collector Source](/docs/send-data/hosted-collectors/Cloud-to-Cloud-Integration-Framework/Salesforce-Source)
+    * [Create a Salesforce Cloud To Cloud Collector Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Salesforce-Source)
 * If you're using the Sumo Logic FedRamp deployment:
     * [Configure a new SumoJanus installation for Salesforce](#configure-a-new-sumojanus-installation-for-salesforce-deprecated)
     * [Upgrade an existing SumoJanus installation for Salesforce](#upgrade-an-existing-sumojanus-installation-for-salesforce-deprecated)
@@ -263,7 +263,7 @@ In the file `conf/sumologic.properties`, the following properties are supported.
 
 #### Step 5: Configure the JRE path (DEPRECATED)
 
-To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/docs/releasenotes/collector). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under **`config/wrapper.conf`, and look for the variable `wrapper.java.command`.
+To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/release-notes-collector). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under **`config/wrapper.conf`, and look for the variable `wrapper.java.command`.
 
 * **On Windows, update SumoJanus_SF.bat**. Navigate to the folder where you installed SumoJanus, and open SumoJanus_SF.bat  in a text editor. Line 3 of the script sets `JAVAPATH` to `C:\Program Files\Sumo Logic Collector\jre\bin` as shown below:
 ```bash
@@ -348,7 +348,7 @@ If the browser does not connect to the salesforce instance and you are using Chr
 
 In Sumo Logic, configure a Script Source using the instructions in [Script Source](/docs/send-data/installed-collectors/sources/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
 
-To allow Script Sources you need to set the Collector parameter **`enableScriptSource=true` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector.
+To allow Script Sources you need to set the Collector parameter **`enableScriptSource=true` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 
 For the Sumo Logic App for Salesforce, use the following configuration settings:
 
@@ -396,7 +396,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

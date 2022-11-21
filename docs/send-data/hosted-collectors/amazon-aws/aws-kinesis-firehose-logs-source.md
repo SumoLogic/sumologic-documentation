@@ -15,13 +15,17 @@ The following diagram shows the flow of data with an AWS Kinesis Firehose for Lo
 
 ![architecture](/img/send-data/kinesis-architecture.png)
 
+::: note
+For failed logs messages, AWS will send them into the backup S3 bucket. Sumo Logic will ingest those failed logs through S3, and not the firehose.
+:::
+
 ## Create an AWS Kinesis Firehose for Logs Source
 
 When you create an AWS Kinesis Firehose for Logs Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To create an AWS Kinesis Firehose for Logs Source:
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted** **Collector.
 1. Select **AWS Kinesis Firehose for Logs Source**.   
 
@@ -45,7 +49,7 @@ To create an AWS Kinesis Firehose for Logs Source:
     Do not use the same bucket and prefix for different Kinesis Sources. We cannot differentiate logs from multiple Kinesis Data Firehoses.
     :::
 
-1. (Optional) For **Source Host **and** Source Category**, enter any string to tag the output collected from the Source. (Category metadata is stored in a searchable field called \_sourceCategory.)    
+1. (Optional) For **Source Host **and** Source Category**, enter any string to tag the output collected from the Source. (Category metadata is stored in a searchable field called _sourceCategory.)    
 
 1. **SIEM Processing**. Check the checkbox to forward your data to Cloud SIEM Enterprise.    
 
@@ -79,9 +83,9 @@ You can use the AWS console or our CloudFormation Template.
 
 ### AWS console
 
-1. Follow AWS's steps to [Publish flow logs to CloudWatch Logs](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-cwl.html).
+1. Follow these steps from AWS to [Publish flow logs to CloudWatch Logs](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-cwl.html).
 
-1. Follow AWS's steps to set up a [CloudWatch Logs subscription](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/SubscriptionFilters.html#FirehoseExample) to send any incoming log events that match defined filters to your Amazon Kinesis Data Firehose delivery stream.
+1. Follow these steps from AWS to set up a [CloudWatch Logs subscription](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/SubscriptionFilters.html#FirehoseExample) to send any incoming log events that match defined filters to your Amazon Kinesis Data Firehose delivery stream.
 
 1. Use the [**Create Delivery Stream** wizard](https://docs.aws.amazon.com/firehose/latest/dev/create-destination.html#create-destination-http) to configure Firehose to deliver logs to Sumo Logic. You will provide the wizard with the Source URL you copied after creating the AWS Kinesis Firehose for Logs Source.
 

@@ -70,7 +70,7 @@ For information on available metrics, see [GCP Metrics](https://cloud.google.com
 1. **Name**. Enter a name to display for the new source.
 <img src={useBaseUrl('img/send-data/gcp-metrics-basic.png')} alt="gcp-metrics-basic.png" />
 1. **Description.** Optional description.
-2. **Regions**. Optional limit to selected Google Cloud regions. \
+2. **Regions**. Optional limit to selected Google Cloud regions.
 :::note
 Some metrics do not include or support a region.
 :::
@@ -290,7 +290,7 @@ Some metrics do not include or support a region.
 :::note
 Do not use quotes when entering a custom service.
 :::
-10.  **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field called _sourceCategory. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices#good-and-bad-source-categories). Avoid using spaces so you do not have to quote them in [keyword search expressions](https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Build-a-Search/Keyword-Search-Expressions). This can be a maximum of 1,024 characters.
+10.  **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field called _sourceCategory. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices#good-and-bad-source-categories). Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/Get-Started-with-Search/build-search/Keyword-Search-Expressions). This can be a maximum of 1,024 characters.
 11.  **Fields**. Click the **+Add **link to add custom log metadata [Fields](docs/manage/fields.md), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
  * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
  * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
@@ -301,7 +301,7 @@ Proceed to the next step.
 
 13.  **Scan Interval**. Use the default of 1 minute, or change this value to indicate how frequently Sumo Logic should poll the GCP API. To learn more about polling interval considerations, see GCP Scan Interval below.
 
-14.  **Processing Rules**. Configure any desired filters, such as allowlist and denylist, as described in [Metrics Include and Exclude Rules](docs/manage/collection/processing-rules/metrics-include-and-exclude-rules.md).
+14.  **Processing Rules**. Configure any desired filters, such as allowlist and denylist, as described in [Metrics Include and Exclude Rules](docs/send-data/collection/processing-rules/metrics-include-and-exclude-rules.md).
 
 15. Click **Save**.
 
@@ -409,4 +409,4 @@ Sumo Logic makes the following API calls for GCP metrics:
 
 ## Create Queries and Alerts
 
-With the source collecting metrics from GCP, see [Metric Queries and Alerts](/docs/Metrics/metric-queries-alerts/) for more information on queries and alerts.
+With the source collecting metrics from GCP, see [Metric Queries and Alerts](/docs/metrics/metrics-queries/) for more information on queries and alerts.

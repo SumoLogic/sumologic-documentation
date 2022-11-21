@@ -112,7 +112,7 @@ Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for t
 
 ### Field Extraction Rule(s)
 
-Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
+Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 ```sql
 Rule Name: AwsObservabilityRdsCloudTrailLogsFER
@@ -159,7 +159,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 ### Metric Rules
 
-Create the following two Metric Rules for the aws/rds namespace if not already created. Learn how to create a Metric Rule [here](/docs/metrics/metric-rules-editor/create-metric-rules.md).
+Create the following two Metric Rules for the aws/rds namespace if not already created. Learn how to create a Metric Rule [here](/docs/metrics/metric-rules-editor#create-a-metric-rule).
 
 ```sql title="Rule 1"
 Rule name: AwsObservabilityRDSClusterMetricsEntityRule

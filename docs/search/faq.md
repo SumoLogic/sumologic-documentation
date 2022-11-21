@@ -4,55 +4,9 @@ title: Search FAQ
 sidebar_label: FAQ
 ---
 
-
-## Export the Results of a Saved File
-
-This was an advanced task designed to fulfill a missing feature in Sumo.
-
-With the [catoperator](docs/search/search-query-language/search-operators/cat.md) you can simply retrieve your results and use the [export](docs/search/get-started-with-search/search-basics/export-search-results.md) feature.
-
-### Deprecated
-
-Sumo Logic provides the ability to save a file using the [save](docs/search/search-query-language/search-operators/save-lookups-classic.md) operator, but it does not allow you to export the results of that saved file. To do so, you'd have to re-run the original query and export the results.
-
-But if you know you will need to export your saved files results routinely, you can create another column in the results that are saved to the file that acts as a primary key for each result. This key then allows you to conduct a [lookup](docs/search/search-query-language/search-operators/lookup-classic.md)
-operation matching the key.
-
-To create keys in your saved file:
-
-1. In your query that is saving the file with the save operator, you need to add numbers to act as the primary key. You can start at `1` and increment by `1` for each result, as shown. Add a group by if needed, such as a [`timeslice`](docs/search/search-query-language/search-operators/timeslice.md):
-
-    ```sql
-    | 1 as number
-    | accum number as number // by _timeslice
-    ```
-
-1. Now that your saved file has numbers as unique keys on each result you can do a lookup so that the matching is done on the keys, like this:
-
-    ```sql
-    | 1 as number
-    | accum number as key
-    | lookup * from shared/file.csv on key=number
-    ```
-
-    The query with the lookup operator needs to create at least the same number of keys as the results in your saved file, so that the keys match all. Since each result is assigned a key, you just need to make sure enough results are returned. If you have more keys from your lookup query, it is not a problem, because we don't match on them anyway. This will return all of your saved file's results, ready for export.
-
-1. If you are appending to your saved file, you can get the file's last key to define the starting key for the append query using the following query:
-
-    ```sql
-    | 1 as number
-    | accum number as key
-    | lookup _accum from shared/file/forsupport on key=_accum
-    | max(_accum)
-    | _max + 1 as key
-    ```
-
-    The `_accum` field is the same as the `number` field in the first example. But you can't use this query with your save query that is appending because we use the max operator.
-
-
 ## Group Messages Using a Defined Field
 
-You can group messages together with a user-defined field using the [Sessionize](docs/search/search-query-language/search-operators/sessionize.md) operator (similar to transaction in Splunk). By defining multiple parse expressions that match different kinds of log lines, you can weave together the extracted fields into one session.
+You can group messages together with a user-defined field using the [Sessionize](/docs/search/search-query-language/search-operators/sessionize) operator (similar to transaction in Splunk). By defining multiple parse expressions that match different kinds of log lines, you can weave together the extracted fields into one session.
 
 Here's an example:
 
@@ -73,7 +27,7 @@ All the fields extracted are also available as additional fields in the UI and c
 
 Sometimes a keyword search returns no results, even though the keyword used exists in messages. To understand why this happens, it is helpful to understand how Sumo Logic indexes the contents of uploaded log messages.
 
-When a log message is received by Sumo Logic, the service indexes themetadata information delivered with the messages, such as Collector, Source, sourceHost, `_sourceCategory`, and so on. Then Sumo Logic uses an algorithm to parse the raw messages to break that content into individual keyword terms, or groups of characters, which are also added to the index. These individual terms are defined by detecting boundaries around the characters found within the message, including white space, dashes, commas, question marks, exclamation points, brackets, and more.
+When a log message is received by Sumo Logic, the service indexes the metadata information delivered with the messages, such as Collector, Source, sourceHost, `_sourceCategory`, and so on. Then Sumo Logic uses an algorithm to parse the raw messages to break that content into individual keyword terms, or groups of characters, which are also added to the index. These individual terms are defined by detecting boundaries around the characters found within the message, including white space, dashes, commas, question marks, exclamation points, brackets, and more.
 
 So given this sample message:
 

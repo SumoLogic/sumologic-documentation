@@ -50,16 +50,9 @@ $ sudo vim /etc/syslog-ng/syslog-ng.conf
 Define a template with the correct format for Sumo. Messages must be in this format to be accepted, and the ordering of the $ fields must be as shown.
 
 ```bash
-destination d_sumo_tls {
-    tcp("syslog.collection.YOUR_DEPLOYMENT.sumologic.com"
-        port("6514")
-        template(t_sumo_syslog)
-        tls(
-            ca-dir("/etc/syslog-ng/ca.d")
-            peer_verify("required-trusted")
-        )
-    );
-};
+template t_sumo_syslog {
+    template("<$PRI>1 $ISODATE $HOST $PROGRAM $PID $MSGID [E5kTyaEcth45/DU81M236oU4vM8j1ZaqTpWgjXB6lod7cFTeq09zzMn5ErmM0O/3@41123] $MSG\n"); template_escape(no);
+ };
 ```
 
 Replace the sample token, `E5kTyaEcth45/DU81M236oU4vM8j1ZaqTpWgjXB6lod7cFTeq09zzMn5ErmM0O/3@41123,`  with your token.

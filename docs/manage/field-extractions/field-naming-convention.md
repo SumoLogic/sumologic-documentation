@@ -1,6 +1,7 @@
 ---
 id: field-naming-convention
 title: Field Naming Convention
+description: Sumo Logic recommends using the following naming convention for standard fields.
 ---
 
 
@@ -12,7 +13,7 @@ For example, if you create your own FER for Source IP, and at some point you wan
 | count by src_ip
 ```
 
-Another benefit of using the standard field naming convention is that [Sumo Logic Apps](/docs/get-started/sumo-logic-apps) are created using this naming convention. So if you use it too, your queries will match those of the Sumo Logic Apps’ pre-configured searches and Dashboards.
+Another benefit of using the standard field naming convention is that [Sumo Logic Apps](/docs/get-started/apps-integrations) are created using this naming convention. So if you use it too, your queries will match those of the Sumo Logic Apps’ pre-configured searches and Dashboards.
 
 If you cannot use all the naming conventions for standard fields, we recommend that you at least use the field name conventions for the following:
 

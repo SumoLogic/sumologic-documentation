@@ -1,10 +1,14 @@
 ---
 id: tourl
+title: tourl Search Operator
+sidebar_label: tourl
 ---
 
-# tourl
 
-The **tourl** operator provides you the ability to assign a short name that describes the URL. It is similar to creating a href for the URL with a short name. URLs are generally long and they don't tell you what information is displayed when the URL is opened. A common benefit of using this operator is to provide a description of a URL to display in dashboards.
+
+
+The tourl operator provides you the ability to assign a short name that describes the URL. It is similar to creating a href for the URL with a short name. URLs are generally long and they don't tell you what information is displayed when the URL is opened. A common benefit of using this operator is to provide a description of a URL to display in dashboards.
+
 
 ## Syntax
 
@@ -23,14 +27,14 @@ Where:
 * `url_short_name_prefix` (optional) is the prefix, if any, to the short name. Requires suffix.
 * `url_short_name_suffix` (optional) is the suffix, if any, to the short name. Requires prefix.
 
-## Rules
+**Rules**
 
 * If you choose to specify one optional parameter, you must specify both the optional parameters - prefix and suffix. You should provide an empty string ("") if you don't have a value for one.
 * Only fully-formed URLs (for example, `https://google.com`) are supported as values for `url_column_name`.
 * For the link to be clickable your query needs to aggregate by the returned field.
 * You can only specify a single URL. `tourl` does not support merging multiple outputs into a single field.
 
-## Tabs
+#### Tabs
 
 When your URL points to another Sumo Logic feature from your account, such as a Dashboard (New), Search, Traces, or Collection page, you will have the option to open the link in another Sumo Logic tab or browser tab.
 
@@ -43,9 +47,9 @@ If you don't see the menu it is not a supported link.
 * The URL must be from the same host.
 * The menu isn't available in full-screen mode. 
 
-## Examples
+**Example**
 
-### Providing a static name as short name
+#### Providing a static name as short name
 
 If you’re sharing the Akamai Denials by Host search query in a dashboard with others, you can use the tourl operator to add a href to the URL in the dashboard. You’ll run this query to generate the short name:
 
@@ -58,7 +62,7 @@ When you add this to a dashboard, you’ll see the short name. When you click th
 
 ![AkamaiSearchQuery.png](/img/search/searchquerylanguage/search-operators/tourl-AkamaiSearchQuery.png)
 
-### Using a column for short name, and a prefix
+#### Using a column for short name, and a prefix
 
 In the dashboard of failed scheduled searches, you can use the tourl operator to display the time when the scheduled searches failed and linking it to the search URL, instead of displaying the URL of the scheduled searches.
 

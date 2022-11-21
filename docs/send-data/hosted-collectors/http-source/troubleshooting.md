@@ -44,7 +44,7 @@ You can run this query in Sumo to confirm the issue:
 If there is are output buffer overflow errors, the query will return
 output like this:
 
-| #      |   \_collector |   \_source |  \_count |
+| #      |   _collector |   _source |  _count |
 |-------|------------------|--------------|-------------|
 | 1     | Alpha Production | source-alpha | 21          |
 | 2     | Beta Production  | source-beta  | 69          |
@@ -84,7 +84,7 @@ Data will be dropped during throttling. In that case, the sending HTTP client mu
 
 The following pages will help you troubleshoot a throttling incident:
 
-* [Manage Ingestion](/docs/manage/ingestion-and-volume/log-ingestion) (/docs/manage/Ingestion-and-Volume/01Log_Ingestion), see this page for information about:
+* [Manage Ingestion](/docs/manage/ingestion-volume/log-ingestion), see this page for information about:
 
   * How your account ingestion rate is calculated and throttled.
   * How to figure out how which Collectors are contributing to excess ingestion.

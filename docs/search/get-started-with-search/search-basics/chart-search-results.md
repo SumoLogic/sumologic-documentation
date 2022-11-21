@@ -36,4 +36,4 @@ _sourceCategory=concierge completed execution
 | sort by duration
 ```
 
-For details on casting your data to a string or numeric data type see [Casting Data to a Number or String](../../search-query-language/search-operators/Manually-Casting-String-Data-to-a-Number.md) for details.
+For details on casting your data to a string or numeric data type see [Casting Data to a Number or String](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) for details.

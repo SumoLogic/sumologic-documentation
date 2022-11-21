@@ -1,6 +1,6 @@
 ---
-id: index
-title: Sumo Logic Apps for database servers
+slug: /integrations/databases
+title: Sumo Logic Apps for Database Servers
 sidebar_label: Database Servers
 description: Docs for Sumo apps for database servers.
 ---
@@ -89,5 +89,5 @@ This guide has documentation for Sumo apps for database servers.
 <br/>
 
 :::note
-If you're looking for an app for AWS, Microsoft, or Google, see [Amazon and AWS](/docs/integrations/amazon-aws/index.md), [Microsoft and Azure](/docs/integrations/microsoft-azure/index.md), or [Google](/docs/integrations/google/index.md).
+If you're looking for an app for AWS, Microsoft, or Google, see [Amazon and AWS](/docs/integrations/amazon-aws), [Microsoft and Azure](/docs/integrations/microsoft-azure), or [Google](/docs/integrations/google).
 :::

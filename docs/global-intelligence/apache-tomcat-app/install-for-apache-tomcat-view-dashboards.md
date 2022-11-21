@@ -31,7 +31,7 @@ Distance, between 0 and 1, is a statistical measure of how similar a given entit
 
 For each Apache Tomcat server, hourly signals for the past 7 days are used to construct the benchmark distribution for a given signal such as requests per second. A given server’s hourly readings for each day are compared with the benchmark signals to determine the daily distance from the benchmark. If a server is consistently different from the benchmark, such a server is behaving differently from the population for a given signal. Changes, such as a sudden increase in distance between days are more significant than the absolute value of distance on any given day.   
 
-## GI Tomcat - 01 Load Signals and Contributing Factors
+## Load Signals and Contributing Factors
 
 The **GI Apache Tomcat - 01 Load Signals and Contributing Factors** dashboard compares the golden signal of load (requests per second) for a company’s Apache Tomcat servers to other servers. These signals are impacted by connections per second, requests per connection and share of HTTP POST/DELETE requests. These causal signals are also compared to the population of Apache Tomcat servers. Use this dashboard to analyze unusual load spikes and the reasons for them. 
 
@@ -41,7 +41,7 @@ Use this dashboard to:
 
 ![screen](/img/global-intelligence/GI-Tomcat-01-Load-Signals-and-Contributing-Factors.png)
 
-## GI Tomcat - 02 Throughput Signals and Contributing Factors
+## Throughput Signals and Contributing Factors
 
 The **GI Apache Tomcat - 02 Throughput Signals and Contributing Factors** dashboard compares the golden signal of throughput (GB per second) for a company’s Apache Tomcat servers to other servers. These signals are impacted by requests per second, GB per request and error rate. These causal signals are also compared to the population of Apache Tomcat servers. Use this dashboard to assess unusual throughput drops and the reasons for them such as increased errors or load spikes. 
 
@@ -51,7 +51,7 @@ Use this dashboard to:
 
 ![screen](/img/global-intelligence/GI-Tomcat-02-Throughput-Signals-and-Contributing-Factors.png)
 
-## GI Tomcat - 03 Errors and Contributing Factors
+## Errors and Contributing Factors
 
 The **GI Apache Tomcat - 03 Errors and Contributing Factors** dashboard compares the golden signal of error rate for a company’s Apache Tomcat servers to other servers. These signals are impacted by requests per second, connections per second and GB per request. These causal signals are also compared to the population of Apache Tomcat servers. Use this dashboard to assess unusual increases in error rate and the reasons for them such as increased load.
 
@@ -61,7 +61,7 @@ Use this dashboard to:
 
 ![screen](/img/global-intelligence/GI-Tomcat-03-Errors-and-Contributing-Factors.png)
 
-## GI Tomcat - 04 Latency Signals and Contributing Factors
+## Latency Signals and Contributing Factors
 
 The **GI Apache Tomcat - 04 Latency Signals and Contributing Factors** dashboard compares the golden signal of latency for a company’s Apache Tomcat servers to other servers. These signals are impacted by requests per second and HTTP POST/DELETE share of requests. These causal signals are also compared to the population of Apache Tomcat servers. Use this dashboard to assess unusual latency increases and the reasons for them such as increased load. 
 

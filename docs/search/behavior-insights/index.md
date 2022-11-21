@@ -4,7 +4,7 @@ title: Behavior Insights
 description: Gain behavioral insight of your environment using LogReduce operators.
 ---
 
-Behavior Insights encompasses three new log search operators to accelerate insights, troubleshooting, and action plans using structured logs. About 23% of the daily log ingest volume pertains to JSON data and accounts for a growing share of total log volume. This growth is driven by modern applications and underlying cloud (AWS, GCP, Azure) and orchestrator logs. Behavior Insights helps answer the following questions for SecOps, DevOps, and business users:
+Behavior Insights encompasses three log search operators to accelerate insights, troubleshooting, and action plans using structured logs. About 23% of the daily log ingest volume pertains to JSON data and accounts for a growing share of total log volume. This growth is driven by modern applications and underlying cloud (AWS, GCP, Azure) and orchestrator logs. Behavior Insights helps answer the following questions for SecOps, DevOps, and business users:
 
 * What activity patterns are evident from structured logs? What patterns are trending?
 * Which groups of users, apps, services, or resources are responsible for activity in logs?
@@ -22,6 +22,6 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 ## Guide contents
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

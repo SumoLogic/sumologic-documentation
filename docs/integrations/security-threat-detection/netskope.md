@@ -23,7 +23,7 @@ For more information on Netskope, refer to the Netskope [documentation](https://
 
 ## Collect Logs for Netskope
 
-To collect logs from the Netskope platform, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Netskope](/docs/send-data/hosted-collectors/Cloud-to-Cloud-Integration-Framework/Netskope-Source) to create the source and use the same source category while installing the app.
+To collect logs from the Netskope platform, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Netskope-Source) to create the source and use the same source category while installing the app.
 
 The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you're using the Sumo Logic FedRamp deployment, use the sections below to configure the collection for this app.
 
@@ -98,7 +98,7 @@ pip install sumologic-netskope-collector
 2. Edit the netskope.yaml file in the following way:
     1. Replace `<SUMO HTTP SOURCE ENDPOINT>` with the Sumo Logic HTTPS Source endpoint you created in [Step 1](#Step_1:_Add_a_Hosted_Collector_and_HTTP_Source).
     2. Replace `<Netskope API Token>` with the Netskope API token you created in [Step 2](#Step_2:_Getting_a_token_from_the_Netskope_Portal).
-    3. Replace `<Netskope Domain>` with your Netskope domain name. \
+    3. Replace `<Netskope Domain>` with your Netskope domain name.
 
 Example of an edited netskope.yaml file:
 
@@ -322,7 +322,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

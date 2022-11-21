@@ -56,7 +56,7 @@ To configure collection, add an HTTP Source, get credentials for VMware Carbon B
 
 **To add an HTTP source for VMware Carbon Black EDR do the following:
 
-1. Add [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for VMware Carbon Black EDR. \
+1. Add [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for VMware Carbon Black EDR.
 
 
 
@@ -157,7 +157,7 @@ In Sumo, open a Live Tail tab and run a search to verify Sumo is receiving findi
 _sourceCategory="cb_edr_events" or _sourceCategory="cb_endpoint_standard_events"
 ```
 
-For more information, see [Live Tail](/docs/search/index.md/Live-Tail).
+For more information, see [Live Tail](/docs/search/Live-Tail).
 
 
 ### Sample Log Messages
@@ -341,7 +341,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

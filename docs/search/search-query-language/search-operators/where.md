@@ -1,25 +1,24 @@
 ---
 id: where
+title: where Search Operator
+sidebar_label: where
 ---
 
-# where
+The where operator allows you to filter results based on a boolean expression.
 
-Use the **where** operator to filter results based on a boolean expression. For example, using **where** with the boolean operator [isValidIP](isValidIP.md):
+For example, using **where** with the boolean operator [isValidIP](#isvalidip-isvalidipv4-isvalidipv6):
 
 * Filters as true and returns results:
-
     ```sql
     | where isValidIP("192.168.0.10")
     ```
 
 * Filters as false and will not return results:
-
     ```sql
     | where !isValidIP("192.168.0.10")
     ```
 
-
-The **where** operator must appear as a separate operator distinct from other operators, delimited by the pipe symbol ("\|"). In other words, the following construct will not work and will generate a syntax error:
+The **where** operator must appear as a separate operator distinct from other operators, delimited by the pipe symbol ("|"). In other words, the following construct will not work and will generate a syntax error:
 
 This query will NOT work:
 
@@ -37,25 +36,25 @@ Instead, separate the **where** operator from the preceding **parse** operat
 ... | where <boolean expression> | ...
 ```
 
-## Rules
+**Rules**
 
 * The pipe delimiter is required to separate the **where** operator as a distinct query operator.
 * The **where** operator *can't* be used inline as a query clause, like ".`.. | extract a where b==something |...`"
 * Multiple **where** operators are processed in the order they are specified, with each subsequent **where **operator further filtering results.
-* [Keyword expressions](../../get-started-with-search/build-search/keyword-search-expressions.md) can be used in the boolean expression, such as OR and AND.
+* [Keyword expressions](docs/search/get-started-with-search/build-search/keyword-search-expressions.md) can be used in the boolean expression, such as OR and AND.
 * If defining a [built-in metadata field](/docs/search/get-started-with-search/search-basics/built-in-metadata) value in the boolean expression you need to quote the value. If it is not wrapped in quotes the value is interpreted as a field name.
-* If you're using [**in**](in-operator.md) or **not in** to match integers, [cast "x" to a number first](Manually-Casting-String-Data-to-a-Number.md).
-* The [matches](matches.md "matches") operator can be used in the boolean expression. You can use an [RE2 compliant](https://github.com/google/re2/wiki/Syntax) regular expression or use asterisks `*` as wildcards.
-* Any operator that returns a boolean value can be used in the boolean expression. Such as [compareCIDRPrefix](CIDR.md "CIDR"), [contains](contains.md), [in](in-operator.md), [isBlank, isEmpty, isNull](isNull.md "isNull, isEmpty, isBlank"),  [isNumeric](isNumeric.md), [isPrivateIP](isPrivateIP.md), [isPublicIP](isPublicIP.md), [isValidIP](isValidIP.md), and [math expressions](/docs/search/search-query-language/math-expressions).
+* If you're using [**in**](#in-operator) or **not in** to match integers, [cast "x" to a number first](#casting-data-to-a-number-or-string).
+* The [matches](#matches) operator can be used in the boolean expression. You can use an [RE2 compliant](https://github.com/google/re2/wiki/Syntax) regular expression or use asterisks `*` as wildcards.
+* Any operator that returns a boolean value can be used in the boolean expression. Such as [compareCIDRPrefix](#CIDR), [contains](#contains), [in](#in-operator), [isBlank, isEmpty, isNull](#isnull-isempty-isblank), [isNumeric](#isNumeric), [isPrivateIP](#isPrivateIP), [isPublicIP](#isPublicIP), [isValidIP](#isvalidip-isvalidipv4-isvalidipv6), and [math expressions](/docs/search/search-query-language/math-expressions).
 
 :::note
-Use [comparison operators](../field-expressions.md) to produce boolean values.
+Use [comparison operators](docs/search/search-query-language/field-expressions.md) to produce boolean values.
 :::
 
-## Examples
+**Example**
 
 ```sql
-... | where a<b 
+... | where a<b
 ```
 
 ```sql
@@ -115,7 +114,7 @@ Use [comparison operators](../field-expressions.md) to produce boolean values.
 ```
 
 ```sql
-... | num(x) | where x in (4, 3, 5) 
+... | num(x) | where x in (4, 3, 5)
 ```
 
 ```sql
@@ -130,7 +129,7 @@ Use [comparison operators](../field-expressions.md) to produce boolean values.
 ... | where x matches "Android" or x matches "iPhone" or x matches "iPad"
 ```
 
-### Using the "not" option
+#### Using the "not" option
 
 If you need a query using the **where** operator, where xxx DOES NOT match yyy, use "!" followed by the **matches** operator enclosed in parenthesis.
 
@@ -146,6 +145,6 @@ or:
 ...| where !(status matches "200")
 ```
 
-### Use where to check for null values
+#### Use where to check for null values
 
-For details, see [isNull](isNull.md) operator.
+For details, see [isNull](#isNull) operator.

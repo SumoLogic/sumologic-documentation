@@ -18,30 +18,19 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
 ## Configure a Syslog Source
 
 1. In the Sumo web app select **Manage Data \> Collection \> Collection**.
-
-1. Find the Installed Collector to which you'd like to add the Syslog Source. Click **Add** and** **then choose** Add Source** from the pop-up menu.
-
-
-1. Select **Syslog** for the Source type.
-1. Set the following:   
-
-    ![syslog source.png](/img/send-data/syslog-source.png)
-
-   * **Name.** Enter the name you'd like to display for the new Source. **Description** is optional. The Source's name is stored as the metadata field **\_sourceName**.
-   * **Protocol.** Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more information, see [Choosing TCP or UDP](syslog-source.md).
-   * **Port.** Enter the port number for the Source to listen to. If the collector runs as root (default), use 51. Otherwise, consider 1514 or 5140. Make sure the devices are sending to the same port.
-   * **Source Category.** Enter a string to tag the collected messages with the searchable metadata field **\_sourceCategory**. For example, enter **firewall** to tag all collected messages in a field called **\_sourceCategory**. Type **\_sourceCategory=firewall** in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories).
-   * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-
+1. Find the Installed Collector to which you'd like to add the Syslog Source. Click **Add** and then choose **Add Source** from the pop-up menu.
+1. Select **Syslog** for the Source type. <br/>![syslog source.png](/img/send-data/syslog-source.png)
+1. **Name.** Enter the name you'd like to display for the new Source. **Description** is optional. The Source's name is stored as the metadata field `_sourceCategory`.
+1. **Protocol.** Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more information, see [Choosing TCP or UDP](syslog-source.md).
+1. **Port.** Enter the port number for the Source to listen to. If the collector runs as root (default), use 51. Otherwise, consider 1514 or 5140. Make sure the devices are sending to the same port.
+1. **Source Category.** Enter a string to tag the collected messages with the searchable metadata field `_sourceCategory`. For example, enter **firewall** to tag all collected messages in a field called `_sourceCategory`. Enter *`_sourceCategory=firewall`* in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories).
+1. **Fields.** Click the **+Add Field** link to define the fields you want to associate; each field needs a name (key) and value. <br/>
      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-
 1. Set any of the following under **Advanced**:
-
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
    * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format.** By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
-
 1. Create any processing rules you'd like for the new Source.
 1. When you are finished configuring the Source click **Save**.
 
@@ -55,9 +44,7 @@ You configure a syslog agent by editing its configuration file. For the built-i
 
 Each line in the configuration file contains two items:  the *selector*, which specifies the messages to be sent and the *action* which specifies what to do with matching messages. For example:
 
-```
-facility.  action
-```
+<code>facility.level&nbsp; &nbsp; &nbsp; &nbsp;action</code><br/><br/>
 
 :::tip
 In the syslog configuration file, `facility.level` and `action` must be separated by a tab, not spaces.
@@ -122,7 +109,7 @@ To specify the network interface:
 1. Navigate to `collector/config/collector.properties`. Open the file in a text editor.
 1. Add `syslog.hostname=your_host_name` where `your_host_name` identifies the network interface you'd like to use.
 1. Save and close the file.
-1. [Restart](docs/manage/collection/start-stop-collector-using-scripts.md) the Collector.
+1. [Restart](docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 
 ## TLS Syslog Data
 
@@ -167,32 +154,25 @@ To force the JVM to default to IPv4, you can add an optional Java parameter to t
 
 1. Open `/Sumo Logic Collector/config/wrapper.conf ~` line 69, under # Java Additional Parameters.
 1. Add the following line:
-
     ```
     wrapper.java.additional.3=-Djava.net.preferIPv4Stack=true
     ```
-
 1. Restart the Collector, use: `./collector restart`.
 
 Alternatively, you can turn off IPv6 completely using these steps:
 
 1. Use the following command to access the file:
-
     ```bash
     sudo gedit /etc/sysctl.conf
     ```
-
 1. Add the following lines to the end of the file:
-
     ```
     # IPv6 disabled
     net.ipv6.conf.all.disable_ipv6 = 1
     net.ipv6.conf.default.disable_ipv6 = 1
     net.ipv6.conf.lo.disable_ipv6 = 1
     ```
-
 1. Run this command to reload sysctl settings. It will apply the changes immediately: 
-
     ```
     sysctl -p.
     ```
@@ -211,22 +191,24 @@ These steps can help identify the problem:
 
     This example tests messages over TCP on Windows.
     ```
-    ncat.exe -v\<ip_addres\> 1514
+    ncat.exe -v <ip_address> 1514
     ```
 
     This example tests messages over UDP on Windows.
-    ```ncat.exe -vu\<ip_addres\> 1514
+
+    ```
+    ncat.exe -vu <ip_address> 1514
     ```
 
     This example tests messages over TCP on Linux.
     ```
-    nc -v\<ip_addres\> 1514
+    nc -v <ip_address> 1514
     ```
 
     This example tests messages over UDP on Linux.
 
     ```
-    nc -vu\<ip_addres\> 1514
+    nc -vu <ip_address> 1514
     ```
 
     Once the client is started with one of the above commands you can enter a message in the command line and press enter/return to send the message. For example,

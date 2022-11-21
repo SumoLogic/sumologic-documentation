@@ -1,21 +1,22 @@
 ---
 id: scheduled-views-best-practices
 title: Scheduled Views Best Practices and Examples
+description: A Scheduled View is a query that runs on a schedule. This topic has some tips for setting up Scheduled View queries.
 ---
 
 A Scheduled View reduces aggregate data down to the bare minimum, so they contain only the results that you need to generate your data. Queries that run against Scheduled Views return search results much faster because the data is pre-aggregated before the query is run. Scheduled Views process queries once per minute.
 
 These items are required in Scheduled View queries:
 
-* **Always use an [aggregate](/docs/search/search-query-language/group-aggregate-operators) operator.** This will allow you to avoid duplicating data.
-* **Always run an aggregation by a [timeslice](../../search/search-query-language/search-operators/timeslice.md) operator.** If you don't, [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) will be used.
+* **Always use an [aggregate](/docs/search/search-query-language/group-aggregate-operators) operator**. This will allow you to avoid duplicating data.
+* **Always run an aggregation by a [timeslice](/docs/search/search-query-language/search-operators/timeslice) operator.** If you don't, [Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) will be used.
 
 Also, keep the following things in mind when you're creating Scheduled View queries:
 
 * **Avoid using queries that are likely to change.** A key benefit of using Scheduled Views is that they can index historical data, allowing you to identify long-term trends. If a query changes, you may lose some of the historical perspective.
-* **Keep the query flexible.** Using a flexible query, like **\_sourceCategory=\*Apache\*** so that metadata changes don't break the query.
+* **Keep the query flexible.** Using a flexible query, like `_sourceCategory=*Apache*` so that metadata changes don't break the query.
 * **Consider using fields with more general values (fields with less specificity).** For example, you'd want to use "country" and "city" fields instead of "latitude" and "longitude".
-* **Use Partitions.** [Partitions](/docs/manage/partitions-and-data-tiers) allow you to reduce your query time even more. 
+* **Use Partitions.** [Partitions](/docs/manage/partitions-data-tiers) allow you to reduce your query time even more. 
 * **Access historical data. **Your Scheduled View can go as far back as your retention period.
 * **Use more groups. **Plan for flexibility by including more groups. However, test your Scheduled View definition to understand how much additional data that extra groups will create.
 
@@ -188,7 +189,7 @@ _view=myScheduledView2
 ```
 
 :::note
-Notice the parse statement will drop any log entries that do not contain the 192.\* internal IP string from the \_sourceCategory. This will create a smaller subset of data that may be more appropriate for a Scheduled View. If you were searching through all of the IIS logs on a regular basis, a partition may be a better solution to improve query performance.
+Notice the parse statement will drop any log entries that do not contain the 192.\* internal IP string from the _sourceCategory. This will create a smaller subset of data that may be more appropriate for a Scheduled View. If you were searching through all of the IIS logs on a regular basis, a partition may be a better solution to improve query performance.
 :::
 
 ### Lightweight vs Robust Scheduled View

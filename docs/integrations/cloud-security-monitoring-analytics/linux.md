@@ -199,7 +199,7 @@ Use the following command to start the collector service.
 
 You can build a Collector into a Linux machine image such as an Amazon AMI or VMware image.
 
-After installing Collectors, you can configure Sources by using the Web Application or by providing the Source settings in a JSON file. If you're using a UTF-8 encoded JSON file, you must provide the file before starting the collector. The JSON file needs to be UTF-8 encoded.
+After installing Collectors, you can configure Sources from Sumo Logic or by providing the Source settings in a JSON file. If you're using a UTF-8 encoded JSON file, you must provide the file before starting the collector. The JSON file needs to be UTF-8 encoded.
 
 
 ### Uninstalling the Collector
@@ -263,7 +263,7 @@ sudo systemctl daemon-reload
 </details>
 
 
-2. **Remove the collector from the Sumo Logic Web Application**:
+2. **Remove the collector from Sumo Logic**:
    1. In Sumo Logic select **Manage Data > Collection > Collection**.
    2. Find the collector you want to remove, and click **Delete**.
    3. When the Confirm dialog displays, click **OK**.

@@ -1,7 +1,6 @@
 ---
 id: set-up-traces-collection-for-other-environments
-title: Set up traces collection for other environments
-sidebar_label: Set up traces collection for other environments
+title: Set up Traces Collection for Other Environments
 description: Sumo Logic leverages OpenTelemetry standards for trace collection.
 ---
 
@@ -20,6 +19,25 @@ Due to the fact that vital metadata (information about the host and its OS) is a
 
 ![OpenTelemetry Deployment](/img/traces/OpenTelemetry-Deployment.png)
 
+## Prerequisites
+
+:::sumo availability
+
+<table>
+<tr>
+<td>Account Type</td>
+<td>Account Level</td>
+</tr>
+<tr>
+<td rowspan="2">Credits</td>
+<td>Enterprise Operations and Enterprise Suite</td>
+</tr>
+<tr>
+<td>Essentials get up to 5 GB a day </td>
+</tr>
+</table>
+:::
+
 ## Installation steps for OpenTelemetry Collector Gateway
 
 :::tip
@@ -30,7 +48,7 @@ Due to the fact that vital metadata (information about the host and its OS) is a
 
 Installation steps require you to add a Source to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see Configure a Hosted Collector.
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**.
 
 1. In the Collectors page, click **Add Source** next to a Hosted Collector.
 

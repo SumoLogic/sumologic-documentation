@@ -1,5 +1,5 @@
 ---
-id: index
+slug: /integrations/pci-compliance
 title: PCI Compliance
 sidebar_label: PCI Compliance
 description: Docs for Sumo apps for PCI Compliance.
@@ -19,5 +19,5 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 
 :::note
-If you're looking for a PCI compliance app for AWS or Microsoft, see [Amazon and AWS](/docs/integrations/amazon-aws/index.md) or [Microsoft and Azure](/docs/integrations/microsoft-azure/index.md).
+If you're looking for a PCI compliance app for AWS or Microsoft, see [Amazon and AWS](/docs/integrations/amazon-aws) or [Microsoft and Azure](/docs/integrations/microsoft-azure).
 :::

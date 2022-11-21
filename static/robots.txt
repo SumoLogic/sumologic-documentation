@@ -1,0 +1,5 @@
+# Algolia-Crawler-Verif: 1C2E59F7F1BEC195
+
+User-agent: *
+Allow: /
+Sitemap: https://help.sumologic.com/sitemap.xml

@@ -1,13 +1,16 @@
 ---
 id: top
+title: top Search Operator
+sidebar_label: top
 ---
 
-# top
 
-Use the **top** operator with the [sort](sort.md) operator, to reduce the number of sorted results returned.
+
+
+Use the top operator with the <a href="#sort">sort</a> operator, to reduce the number of sorted results returned.
 
 :::tip
-We recommend you instead use the [topk](topk.md) operator so you can take advantage of its additional functionality.
+We recommend you instead use the [topk](#topk) operator so you can take advantage of its additional functionality.
 :::
 
 ## Syntax
@@ -16,9 +19,9 @@ We recommend you instead use the [topk](topk.md) operator so you can take adva
 top <#> <field> [by <group_by_operator>]
 ```
 
-## Examples
+**Examples**
 
-### List the Top 5 source categories with errors
+#### List the Top 5 source categories with errors
 
 Use the following query to list the top 5 source categories with errors,
 and get their count.
@@ -38,7 +41,7 @@ count explicit:
 error | top 5 _sourcecategory by count
 ```
 
-### List the Top 10 source categories by message time
+#### List the Top 10 source categories by message time
 
 This query lists the top 10 source categories by message time, without
 an explicit count.

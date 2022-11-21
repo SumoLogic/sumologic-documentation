@@ -10,7 +10,7 @@ Search templates can help you simplify searches for your users by giving them a 
 
 Behind the scenes, selecting the parts of your query to use in the template is also pretty easy.  You can select which parts of your search should be available and click **Create Parameter**.
 
-Search templates work with [lookup (classic)](docs/search/search-query-language/search-operators/lookup-classic.md). They are not supported with our newer [lookup tables](/docs/search/lookup-tables).
+Search templates work with [lookup (classic)](docs/search/search-query-language/search-operators/lookup-classic). They are not supported with our newer [lookup tables](/docs/search/lookup-tables).
 
 ## Create a general Search Template
 
@@ -42,13 +42,13 @@ Select a format:
 
 1. Optional. Select the available values.
     1. For text entries, enter each value on a separate line. Do not use commas to separate values as they will be marked invalid. If the string needs a comma, use quotes in the text entry, such as “abc,xyz”.
-    1. For Label-Value pairs, copy paste the label-value pairs as comma-delimited lines. If you're using a Lookup make sure that you are using a valid [lookup (classic)](docs/search/search-query-language/search-operators/lookup-classic.md) file because the system will reject any lookup file path that it can't validate.  
+    1. For Label-Value pairs, copy paste the label-value pairs as comma-delimited lines. If you're using a Lookup make sure that you are using a valid [lookup (classic)](docs/search/search-query-language/search-operators/lookup-classic) file because the system will reject any lookup file path that it can't validate.  
 
         ![label-value-pairs.png](/img/search/get-started-search/build-search/search-templates/label-value-pairs.png)
 
         1. Select the appropriate values for the field, such as user ID. 
         1. Select values for the corresponding label, such as name. Both **Text** entries and **Label-value** pairs allow amaximum of 10,000 entries. A lookup file can have a maximum of 40,000 entries.
-    1. For a lookup file, you must enter a valid [lookup (classic)](docs/search/search-query-language/search-operators/lookup-classic.md) file that you have [saved](docs/search/search-query-language/search-operators/save-lookups-classic.md). 
+    1. For a lookup file, you must enter a valid [lookup (classic)](docs/search/search-query-language/search-operators/lookup-classic) file that you have [saved](docs/search/search-query-language/search-operators/save-classic). 
         1. Under **Select a format**, select **Lookup**.
         1. Enter in a valid lookup file or select a shared lookup file
             from the dropdown. 
@@ -91,7 +91,7 @@ _sourceCategory=service "Successful login from UI"
 Next, specify the `user_name` parameter as a lookup that already has the association between our user names and our user IDs, in this case
 `/shared/angad/user_info_lookup`:
 
-1. Enter in a valid [lookup (classic)](docs/search/search-query-language/search-operators/lookup-classic.md) file that you have [saved](docs/search/search-query-language/search-operators/save-lookups-classic.md) with the save operator.  
+1. Enter in a valid [lookup (classic)](docs/search/search-query-language/search-operators/lookup-classic) file that you have [saved](docs/search/search-query-language/search-operators/save-classic) with the save operator.  
 
     ![lookup.png](/img/search/get-started-search/build-search/search-templates/lookup.png)
 

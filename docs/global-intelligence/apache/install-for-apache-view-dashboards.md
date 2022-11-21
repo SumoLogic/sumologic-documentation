@@ -9,7 +9,7 @@ This section has instructions for installing the Global Intelligence for Apache 
 
 ## Dashboard Filters  
 
-Each dashboard has a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard. See how to [filter with template variables](../../dashboards-new/filter-with-template-variables.md)
+Each dashboard has a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard. See how to [filter with template variables](../../dashboards-new/filter-template-variables.md)
 for details.
 
 :::note
@@ -33,7 +33,7 @@ issues.
 
 For each Apache server, hourly signals for the past 7 days are used to construct the benchmark distribution for a given signal such as requests per second. A given server’s hourly readings for each day are compared with the benchmark signals to determine the daily distance from the benchmark. If a server is consistently different from the benchmark, such a server is behaving differently from the population for a given signal. Changes, such as a sudden increase in distance between days, are more significant than the absolute value of distance on any given day.
 
-## GI Apache - 01. Load Signals and Contributing Factors
+## Load Signals and Contributing Factors
 
 The **GI Apache - 01. Load Signals and Contributing Factors** dashboard compares the golden signal of load (requests per second) for a company’s Apache servers to other servers. These signals are impacted by connections per second, requests per connection, the share of bot connections, and share of HTTP POST/DELETE requests. These causal signals are also compared to the population of Apache servers.
 
@@ -43,7 +43,7 @@ Use this dashboard to:
 
 ![GI-Apache-01-Load-Signals-and-Contributing-Factors.png](/img/global-intelligence/GI-Apache-01-Load-Signals-and-Contributing-Factors.png)
 
-## GI Apache - 02. Throughput Signals and Contributing Factors
+## Throughput Signals and Contributing Factors
 
 The **GI Apache - 01. Throughput Signals and Contributing Factors** dashboard compares the golden signal of throughput (GB per second)  for a company’s Apache servers to other servers.  
 
@@ -55,7 +55,7 @@ Use this dashboard to:
 
 ![GI-Apache-02-Throughput-Signals-and-Contributing-Factors.png](/img/global-intelligence/GI-Apache-02-Throughput-Signals-and-Contributing-Factors.png)
 
-## GI Apache - 03. Errors and Contributing Factors
+## Errors and Contributing Factors
 
 The **GI Apache - 03. Errors and Contributing Factors** dashboard compares the golden signal of error rate for a company’s Apache servers to other servers. These signals are impacted by requests per second, connections per second and GB per request. These causal signals are also compared to the population of Apache servers.
 
@@ -65,7 +65,7 @@ Use this dashboard to:
 
 ![GI-Apache-03-Errors-and-Contributing-Factors.png](/img/global-intelligence/GI-Apache-03-Errors-and-Contributing-Factors.png)
 
-## GI Apache - 04. Latency Signals and Contributing Factors
+## Latency Signals and Contributing Factors
 
 The **GI Apache - 04. Latency Signals and Contributing Factors** dashboard compares the golden signal of latency for a company’s Apache servers to other servers. Apache [latency](https://www.sumologic.com/insight/apache-response-time/) is affected by request rate, [configuration factors](https://www.liquidweb.com/kb/apache-optimization/), and slow URLs. 
 
@@ -75,7 +75,7 @@ Use this dashboard to:
 
 ![GI-Apache-04-Latency-Signals-and-Contributing-Factors.png](/img/global-intelligence/GI-Apache-04-Latency-Signals-and-Contributing-Factors.png)
 
-## GI Apache - 05. Visitor Benchmarks
+## Visitor Benchmarks
 
 The **GI Apache - 05. Visitor** dashboard compares client platforms, bots, and media types served by your company’s Apache servers compared to all Apache servers across the Sumo Logic server population.  
 

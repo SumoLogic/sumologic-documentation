@@ -2,6 +2,7 @@
 id: fields
 title: Sumo Logic Fields
 sidebar_label: Fields
+description: Learn how to define and manage the assignment of metadata to your logs.
 ---
 
 
@@ -85,7 +86,7 @@ With this association, you can search for `cluster=k8s.dev` to return your logs
 
 ### Using Collector API
 
-Use the `fields` parameter with the [Collector API] (../APIs/Collector-Management-API.md "Collector Management API") to define fields on a Collector or Source.
+Use the `fields` parameter with the [Collector API](/docs/api/collectors) to define fields on a Collector or Source.
 
 | Parameter | Type | Required? | Description | Access |
 |--|--|--|--|--|
@@ -195,8 +196,8 @@ Tags are returned in your search results and can be referenced in queries. For i
 Fields can be used in the following ways:
 
 * Log [Search page](/docs/search). Use the key-value pair as a keyword search expression (before the first pipe, \| ).
-* [Role Based Access Control](/docs/manage/users-and-roles/roles) (RBAC). Fields can be used in role search filters to control access to data.
-* [Partitions](/docs/manage/partitions-and-data-tiers), [Scheduled Views](/docs/manage/scheduled-views), and [Field Extraction Rules](/docs/manage/field-extractions). Fields can be used in the scope of Partitions, Scheduled Views, and Field Extraction Rules.
+* [Role Based Access Control](/docs/manage/users-roles/roles) (RBAC). Fields can be used in role search filters to control access to data.
+* [Partitions](/docs/manage/partitions-data-tiers), [Scheduled Views](/docs/manage/scheduled-views), and [Field Extraction Rules](/docs/manage/field-extractions). Fields can be used in the scope of Partitions, Scheduled Views, and Field Extraction Rules.
 
 :::note
 Fields cannot be used with [Live Tail](/docs/search/live-tail).
@@ -207,7 +208,7 @@ Fields cannot be used with [Live Tail](/docs/search/live-tail).
 Fields in your account are manageable at **Manage Data** \> **Logs** \> **Fields**.
 
 :::important
-You need the **Manage Fields** [role capability](users-and-roles/roles/role-capabilities.md) to manage fields. 
+You need the **Manage Fields** [role capability](users-roles/roles/role-capabilities.md) to manage fields. 
 :::
 
 ![manage fields page.png](/img/fields/manage-fields-page.png)

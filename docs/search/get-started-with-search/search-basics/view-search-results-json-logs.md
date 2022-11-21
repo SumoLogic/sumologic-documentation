@@ -4,22 +4,25 @@ title: View Search Results for JSON Logs
 description: If your search results contain JSON logs, you can expand or collapse the view on the Messages tab to show or hide the JSON format and structure.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 If your search returns fields that are valid JSON objects, you can expand or collapse the view on the **Messages** tab to show or hide the JSON substructure, or present the messages as formatted JSON code.
 
 ## Expand or collapse JSON messages
 
-By default, the collapsed version of JSON messages is shown. You can see the top level JSON attributes, and only the attributes below the top that are objects rather than simple values are hidden.
+By default, the collapsed version of JSON messages is shown. You can see the top level JSON attributes, and only the attributes below the top that are objects rather than simple values. <br/><img src={useBaseUrl('img/search/get-started-search/search-basics/view-search-results-json-logs/expand-collapse.png')} alt="expand-collapse.png"/>
 
-![Expand JSON](/img/search/get-started-search/search-basics/view-search-results-json-logs/expand-json.png)
+Click **Expand/Collapse** on the upper right side of the **Messages** table to see expand options:
+* **Expand all Rows.** Rows that show truncated messages are expanded to show complete messages.
+* ** Expand all Rows and JSON.** Rows that show truncated messages are expanded to show complete messages, and nested JSON messages are expanded, as shown below. <br/><img src={useBaseUrl('img/search/get-started-search/search-basics/view-search-results-json-logs/expanded-json-message.png')} alt="expanded-json-message"/>
 
-Click **Expand JSON** on the upper right side of the Messages table to open the structure. You can see the full contents and structure of the log messages.
+After you’ve expanded either all rows, or all rows and JSON objects, the **Expand/Collapse JSON** has options for resetting your view.
 
-![Collapse JSON](/img/search/get-started-search/search-basics/view-search-results-json-logs/collapse-json.png)
+You can also expand and collapse the JSON objects in a particular message using options on a context menu. Depending on whether JSON is currently expanded or collapsed, you’ll see either a **Collapse Nested JSON** or an **Expand Nested JSON** option.
 
-Click **Collapse JSON** to see the initial collapsed view.
+<img src={useBaseUrl('img/search/get-started-search/search-basics/view-search-results-json-logs/context-menu.png')} alt="context menu"/>
 
+## Copy message content
 Right-click an individual message to see the following option:
 
 * **Copy selected text**.

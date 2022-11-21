@@ -64,7 +64,7 @@ When you create a Dropbox Source, you add it to a Hosted Collector. Before crea
 
 To configure a **Dropbox Source
 
-1. In the Sumo Logic web app, navigate to** Manage Data \> Collection** and open the **Collection** tab. 
+1. In Sumo Logic, navigate to** Manage Data \> Collection** and open the **Collection** tab. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Dropbox**.
 
@@ -89,7 +89,7 @@ To configure a **Dropbox Source
 
 1. **App Key**, **App Secret**, and **Access Code**. Provide your Dropbox [authentication](#authentication) credentials.
 
-1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/manage/collection/processing-rules/create-processing-rule.md).
+1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
 
 1. When you are finished configuring the Source click **Submit**.
 

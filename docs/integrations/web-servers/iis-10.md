@@ -84,7 +84,7 @@ Within the folder, you will find subfolders for each site configured with IIS. T
 For information on how to configure HTTP Error Logs, and for explanations on the various HTTP Error Log fields and their significance see this [link](https://support.microsoft.com/en-us/help/820729/error-logging-in-http-apis).
 * **Performance Logs** These logs are output of Perfmon queries which will be configured at Installed Collector, "**Windows Performance**" Source.
 1. **Make sure logging is turned on in IIS Server.**
-* **Enable logging on your IIS Server**. Perform the following task, if logging on your IIS Server is not already enabled. \
+* **Enable logging on your IIS Server**. Perform the following task, if logging on your IIS Server is not already enabled.
 To enable logging on your IIS Server, do the following:
 1. Open IIS Manager.
 2. Select the site or server in the **Connections** pane, then double-click **Logging**.
@@ -171,7 +171,7 @@ To configure a local file source for HTTP Error Logs, do the following:
     7. **Fields. **Set the following fields**: \
 `component = webserver \
 webserver_system = iis \
-webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one. \
+webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one.
 `environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod) \
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-http-logs.png')} alt="IIS-access-logs" width="500"/>
@@ -183,7 +183,7 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
     11. Timestamp Format: Select the option to Automatically detect the format.
     12. Encoding. UTF-8 is the default, but you can choose another encoding format from the menu if your IIS logs are encoded differently.
     13. Enable Multiline Processing. Uncheck the box to Detect messages spanning multiple lines. Since IIS Error logs are single line log files, disabling this option will ensure that your messages are collected correctly.
-4. Click Save. \
+4. Click Save.
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your IIS HTTP Error log files to the Sumo Logic service.
 * Configure Source for IIS Performance (Perfmon) Logs
 
@@ -462,7 +462,7 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 5. Click **Add.**<br/><img src={useBaseUrl('img/integrations/web-servers/IIS-add.png')} alt="Add Monitor" />
 6. Click Import and then copy-paste the above JSON to import monitors.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the IIS folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the IIS folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
 
 
 ### Method B: Using a Terraform script
@@ -510,7 +510,7 @@ connection_notifications = [
 
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+For overriding payload for different connection types, refer to this [document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 
 ```bash title="Email Notifications Example"
 email_notifications = [
@@ -543,7 +543,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom IIS Server farm filter. Examples:
@@ -559,7 +559,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Using IIS Alerts
 
-Sumo Logic provides out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the IIS server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
+Sumo Logic provides out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the IIS server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
 
 <table>
   <tr>
@@ -664,7 +664,7 @@ Sumo Logic provides out-of-the-box alerts available through [Sumo Logic monitors
 ## View IIS Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
 :::
 
 ### Overview

@@ -1,5 +1,6 @@
 ---
 id: collect-logs-sentinelone
+sidebar_label: SentinelOne
 title: Collect Logs for SentinelOne
 description: This page provides instructions for ingesting SentinelOne logs into Sumo Logic.
 ---
@@ -28,7 +29,7 @@ To get a token and certificate from Sumo Logic, do the following:
 1. Go to the location where the cert file is located and open a terminal window.
 
 1. Run the following two commands:
-  * `wget -O digicert_ca.der https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt`
+  * `wget -O digicert_ca.der https://cacerts.digicert.com/DigiCertHighAssuranceEVRootCA.crt.`
   * `openssl x509 -inform der -in digicert_ca.der -out digicert_ca.crt`
 
 ## Step 2. Configure syslog messages
@@ -61,7 +62,7 @@ To configure syslog messages, do the following:
 
 1. Click **Test**, and then click **Save**.
 
-1. In the Sumo Logic Web Application, verify that the logs are being ingested by running a search against the Cloud Syslog source you configured in [Step 1](#step-1-get-a-token-and-certificate-from-sumo-logic). If you don't see any data coming in after 2-3 minutes, check the following:
+1. In Sumo Logic, verify that the logs are being ingested by running a search against the Cloud Syslog source you configured in [Step 1](#step-1-get-a-token-and-certificate-from-sumo-logic). If you don't see any data coming in after 2-3 minutes, check the following:
 
    * that the Sumo Logic Collector has read access to the logs
    * that your time zone is configured correctly.

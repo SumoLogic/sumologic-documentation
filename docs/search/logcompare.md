@@ -1,22 +1,11 @@
 ---
 id: logcompare
-sidebar_title: LogCompare
-hide_table_of_contents: true
+title: LogCompare
+description: LogCompare allows you to easily compare log data from different time periods to detect major changes or anomalies.
 ---
 
-LogCompare allows you to easily compare log data from different time periods to detect major changes or anomalies. LogCompare runs a delta analysis that helps you troubleshoot and discover root causes. For example,  you could determine what was different right before a failure compared to the previous day or previous week. Or, you could easily check if a new release introduced a new issue by reviewing the difference in log streams across time.
+LogCompare allows you to easily compare log data from different time periods to detect major changes or anomalies. LogCompare runs a delta analysis that helps you troubleshoot and discover root causes. For example, you could determine what was different right before a failure compared to the previous day or previous week. Or, you could easily check if a new release introduced a new issue by reviewing the difference in log streams across time.
 
-<Tabs
-  className="unique-tabs"
-  values={[
-    {label: 'How LogCompare works', value: 'works'},
-    {label: 'Use LogCompare', value: 'use'},
-    {label: 'Understand results', value: 'results'},
-    {label: 'Time Shift vs. Range', value: 'time'},
-    {label: 'Alerts', value: 'alert'},
-  ]}>
-
-<TabItem value="works">
 
 ## How LogCompare works
 
@@ -34,25 +23,16 @@ If the baseline query does not finish within two hours, it will timeout.
 
 **Compare vs. LogCompare**
 
-The [compare](./time-compare) and logcompare operators are very similar in syntax and functionality, but they handle different types of data:
+The [compare](/docs/search/time-compare) and logcompare operators are very similar in syntax and functionality, but they handle different types of data:
 
-*   **compare** is used for aggregated numeric data, such as analyzing results from a [group by](./search-query-language/group-aggregate-operators) query or a query with aggregation operators like count, sum, and avg.
+*   **compare** is used for aggregated numeric data, such as analyzing results from a [group by](/docs/search/search-query-language/group-aggregate-operators) query or a query with aggregation operators like count, sum, and avg.
 *   **logcompare** is used for log signature counts based on your raw log data.
 
-</TabItem>
-<TabItem value="use">
 
 ## Use LogCompare
 
 LogCompare is an operator available in log searches. You can manually add it to a query or use the built-in button provided on the **Messages** tab after running a non-aggregate query.
 
-<Tabs
-  values={[
-    {label: 'Button', value: 'button'},
-    {label: 'Syntax', value: 'syntax'},
-  ]}>
-
-<TabItem value="button">
 
 ### LogCompare button
 
@@ -68,7 +48,7 @@ A new tab labeled **Signatures** is provided with the compared results.
 
 ![Signatures tab](/img/search/logcompare/signatures-tab.png)
 
-#### <span>Custom option</span>
+#### Custom option
 
 Click the dropdown arrow next to the **LogCompare** button and select **Custom**.
 
@@ -101,8 +81,7 @@ Click **Run** to add the logcompare operator, timeshift, and baseline to your 
 
 Results appear in the **Signatures** tab.
 
-</TabItem>
-<TabItem value="syntax">
+
 
 ### LogCompare operator
 
@@ -153,7 +132,7 @@ The following are examples that use fields generated from LogCompare.
 
 **Show only signatures that are missing in the baseline query:**
 
-Use the where operator against the **_isNew** field to return only new clusters:
+Use the where operator against the **`_isNew`** field to return only new clusters:
 
 ```
 error | logcompare timeshift -1d   
@@ -176,10 +155,6 @@ error | logcompare timeshift -1d
 | where _deltapercentage>90 and !_isnew and _count>50
 ```
 
-</TabItem>
-</Tabs>
-</TabItem>
-<TabItem value="results">
 
 ## Understand LogCompare results
 
@@ -187,15 +162,6 @@ After running a query with LogCompare your results are displayed in the **Signa
 
 ![Signatures tab columns](/img/search/logcompare/signatures-tab-columns.png)
 
-<Tabs
-  values={[
-    {label: 'Count', value: 'count'},
-    {label: 'Score', value: 'score'},
-    {label: 'Actions', value: 'actions'},
-    {label: 'Signature', value: 'signature'},
-  ]}>
-
-<TabItem value="count">
 
 ### Count
 
@@ -243,8 +209,6 @@ Details option syntax:
 
 `... | logreduce | details <signatureId>`
 
-</TabItem>
-<TabItem value="score">
 
 ### Score
 
@@ -254,8 +218,6 @@ The value is calculated using a symmetric version of [Kullback-Leibler divergen
 
 ![signature score](/img/search/logcompare/signature-score.png)
 
-</TabItem>
-<TabItem value="actions">
 
 ### Actions
 
@@ -270,17 +232,10 @@ The following table explains the icons in the **Actions** column.
 | ![split](/img/search/logcompare/split.png) | Split a signature into multiple signatures to see more granular results. You'll notice that fewer wildcard asterisks will appear. Instead, specific values are included in the signatures. After splitting, the newly split signatures are highlighted. |
 | ![edit](/img/search/logcompare/edit.png) | Edit the signature. After editing, the signature is highlighted. |
 
-</TabItem>
-<TabItem value="signature">
-
 ### Signature 
 
 Logs are clustered into patterns, called signatures. The structure of logs is analyzed for patterns and assigned a unique identifier. You can search for logs that have a specific signature by clicking the number value in the **Count** column. See the [**Details** option](#details-option) for details.
 
-</TabItem>
-</Tabs>
-</TabItem>
-<TabItem value="time">
 
 ## Time Shift versus Time Range example
 
@@ -291,16 +246,15 @@ The following table shows how the Time Range and Time Shift affect the Target a
 | -1d | -30d | May 9-10 | April 9-10 |
 | -30d | -1d | April 10 - May 10 | April 9 - May 9 |
 
-</TabItem>
-<TabItem value="alert">
+
 
 ## LogCompare alerts
 
-With LogCompare, you can create a [Monitor](/docs/alerts/monitors) or [Scheduled Search](../alerts/scheduled-searches/schedule-search.md) to send notifications when certain conditions are met. For example, you can be alerted when new signatures are found.
+With LogCompare, you can create a [Monitor](/docs/alerts/monitors) or [Scheduled Search](/docs/alerts/scheduled-searches/schedule-search) to send notifications when certain conditions are met. For example, you can be alerted when new signatures are found.
 
 To do this, use a search query such as:
 
-```
+```sql
 error | logcompare timeshift -24h | where (_isNew)
 ```
 
@@ -316,10 +270,4 @@ When selecting the time range of your search, keep in mind:
 
 By default, LogCompare email notifications provide details on the **Score**, **Count**, and **Signature**, as shown in the following email example. This is not configurable.
 
-![Email alert](/img/search/logcompare/logcompare-email-alert.png)
-
-</TabItem>
-</Tabs>
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+![Email alert](/img/search/logcompare/logcompare-email-alert.png)  

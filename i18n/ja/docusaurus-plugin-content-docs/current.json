@@ -475,10 +475,6 @@
     "message": "Apache Tomcat",
     "description": "The label for category Apache Tomcat in sidebar integrations"
   },
-  "sidebar.integrations.category.Pivotal Cloud Foundry": {
-    "message": "Pivotal Cloud Foundry",
-    "description": "The label for category Pivotal Cloud Foundry in sidebar integrations"
-  },
   "sidebar.integrations.category.PCI Compliance": {
     "message": "PCI Compliance",
     "description": "The label for category PCI Compliance in sidebar integrations"

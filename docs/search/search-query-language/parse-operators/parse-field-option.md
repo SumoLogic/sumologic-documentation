@@ -1,12 +1,13 @@
 ---
 id: parse-field-option
+title: Parse field option
 ---
 
-# Parse field option
+
 
 Sumo Logic allows you to parse on previously extracted fields, or initial parsing on a metadata field value (`_collector`, `_source`, etc..) using the additional parse syntax of `field<field_name>`.
 
-This additional syntax is available with the standard [Parse Anchor](parse-predictable-patterns-using-an-anchor.md) as well as the [Parse Regex](parse-variable-patterns-using-regex.md) operations.
+This additional syntax is available with the standard [Parse Anchor](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor) as well as the [Parse Regex](parse-variable-patterns-using-regex.md) operations.
 
 ## Syntax
 
@@ -38,7 +39,7 @@ parse "User=*:" as user_email
 Now that we have this field, we want to additionally parse out just the name and domain from the email address.  We can do this by adding the additional syntax of `field<field_name>` to a follow-up parse operation:
 
 ```sql
-parse "User=*:" as user_email 
+parse "User=*:" as user_email
 | parse field=user_email "*@*" as user_name, domain
 ```
 
@@ -51,4 +52,3 @@ The `field<field_name>` syntax is not just limited to fields that have been spe
 ```sql
 parse field=_collector "HostName_*" as host_ip
 ```
-

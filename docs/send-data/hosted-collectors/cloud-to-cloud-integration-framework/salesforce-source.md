@@ -4,13 +4,11 @@ title: Salesforce Source
 sidebar_label: Salesforce
 ---
 
-
-
 The Salesforce Source provides a secure endpoint to receive event data from the Salesforce through its [Rest API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm). The source securely stores the required authentication, scheduling, and state tracking information.
 
 ## Prerequisites: Generate the Salesforce API token
 
-The  Consumer Key and Consumer Secret API tokens from Salesforce are required to configure this source. 
+The Consumer Key and Consumer Secret API tokens from Salesforce are required to configure this source. 
 
 1. The Salesforce Event Monitoring add-on is required to obtain all of the data presented in the app dashboards.  The add-on enables access to all event types in the Salesforce EventLogFile, the LoginEvent object, Transaction Security, and the Event Monitoring Analytics App. For more information, see [Get Started with Event Monitoring](https://trailhead.salesforce.com/en/modules/event_monitoring/units/event_monitoring_intro) and [Enable Event Monitoring](https://help.salesforce.com/articleView?id=Enabling-Event-Monitoring&language=en_US&type=1).
 1. Create a dedicated user and profile for the integration as referred to in [Salesforce documentation](https://help.salesforce.com/articleView?id=000331470&type=1&mode=1).
@@ -49,7 +47,7 @@ When you create a Salesforce Source, you add it to a Hosted Collector. Before 
 
 To configure a Salesforce Source:
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 1. On the Collectors page, click **Add Source** next to a HostedCollector.
 1. Select **Salesforce**.
 
@@ -125,8 +123,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
 | config            | JSON Object  | Yes | Contains the configuration parameters for the Source. |   |
-| schemaRef         | JSON Object  | Yes | Use `{"type":"Salesforce"}` for a SailPoint Source. | not modifiable |
-| sourceType        | String       | Yes | Use `Universal` for a SailPoint Source. | not modifiable |
+| schemaRef         | JSON Object  | Yes | Use `{"type":"Salesforce"}` for a Salesforce. | not modifiable |
+| sourceType        | String       | Yes | Use `Universal` for a Salesforce Source. | not modifiable |
 
 The following table shows the **config** parameters for a Salesforce
 Source.

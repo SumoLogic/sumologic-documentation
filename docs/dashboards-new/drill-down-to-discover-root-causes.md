@@ -1,22 +1,23 @@
 ---
 id: drill-down-to-discover-root-causes
 title: Drill Down to Discover Root Causes
+description: Learn how to drill into related content to discover the root cause of a spike of interest on a dashboard.
 ---
 
 When you see a spike of interest on a dashboard that requires further investigation, you can easily drill into the related content to discover the root cause. This page shows you how you can easily discover related dashboards and corresponding logs searches that pertain to an issue in your environment.
 
 :::note
-If you're looking for our Root Cause Explorer observability tool, [click here](docs/observability/root-cause-explorer.md).
+If you're looking for our Root Cause Explorer observability tool, [click here](/docs/observability/root-cause-explorer).
 :::
 
 ## Limitations
 
-* Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, and Host domains are supported.
+* Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, Application Components, and Host domains are supported.
 * A few Panel types don't support the features documented on this page. You will not have the option to click on a data point to view the Summary and Entities tabs on the following Panel types:
 
-    * [Single Value Panel](./panels.md#single-value-panel)
-    * [Map Panel](./panels.md#map-panel)
-    * [Text Panel](./panels.md#text-panel)
+    * [Single Value Panel](/docs/dashboards-new/panels#single-value-panel)
+    * [Map Panel](/docs/dashboards-new/panels#map-panel)
+    * [Text Panel](/docs/dashboards-new/panels#text-panel)
 
 ## Drilling into related content
 
@@ -45,14 +46,14 @@ The Summary tab provides details and helpful links based on the selected data p
 
 <TabItem value="logs">
 
-The Summary tab for log data provides links to other associated logs based on metadata and any [Linked Dashboards](./panels/modify-chart.md).
+The Summary tab for log data provides links to other associated logs based on metadata and any [Linked Dashboards](/docs/dashboards-new/panels/modify-chart).
 
 ![logs detail pane.png](/img/dashboards-new/drill-root-causes/logs-detail-pane.png)
 
 </TabItem>
 <TabItem value="metrics">
 
-A metrics data Summary tab includes links to any [Linked Dashboards](./panels/modify-chart.md).
+A metrics data Summary tab includes links to any [Linked Dashboards](/docs/dashboards-new/panels/modify-chart).
 
 ![metrics summary tab.png](/img/dashboards-new/drill-root-causes/metrics-summary-tab.png)
 
@@ -61,31 +62,22 @@ A metrics data Summary tab includes links to any [Linked Dashboards](./panels/
 
 ### Entities tab
 
-The **Entities** tab provides troubleshooting links for related Entities and Environments, as well as any [Monitors](/docs/alerts/monitors) with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
-
-Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, and Host domains are supported.
+The **Entities** tab provides troubleshooting links for related Entities and Environments, as well as any [Monitors](/docs/alerts/monitors) with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity. The entities are grouped by their domain and by entity type (if there are more than one entity of a given type).
 
 The **Infrastructure** tab was renamed to **Entities**.
 
 ![entities tab.png](/img/dashboards-new/drill-root-causes/entities-tab.png)
 
-<Tabs
-  className="unique-tabs"
-  defaultValue="troubleshoot"
-  values={[
-    {label: 'Troubleshoot links', value: 'troubleshoot'},
-    {label: 'Time selector', value: 'time'},
-    {label: 'Triggered monitors', value: 'triggered'},
-  ]}>
 
-<TabItem value="troubleshoot">
+#### Troubleshoot links
 
 To investigate, click the **Open In** button and select an icon to launch another feature against the entity or environment. An icon is not available if it is not a valid launch.
 
 ![infrastructure tab with RCE link.png](/img/dashboards-new/drill-root-causes/infrastructure-tab-with-RCE-link.png)
 
-</TabItem>
-<TabItem value="time">
+
+
+#### Time selector
 
 Use the time selector to set if data is related to the "now" moment of time or the moment of time around the data point you clicked on.
 
@@ -95,12 +87,13 @@ If the **Datapoint** is the same as **Now** the selector will not allow you
 
 ![time selector options.png](/img/dashboards-new/drill-root-causes/time-selector-options.png)
 
-</TabItem>
-<TabItem value="triggered">
+
+
+#### Triggered monitors
 
 [Monitors](/docs/alerts/monitors) track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications. The **Entities** tab shows any Monitors with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
 
-Alerts are only visible when the [Time Selector](drill-down-to-discover-root-causes.md#time-selector)
+Alerts are only visible when the [Time Selector](#time-selector)
 is set to **Now.**
 
 Next to the Entity, you will see any of the following icons indicating the type of Monitor alert that has triggered.
@@ -110,9 +103,3 @@ Next to the Entity, you will see any of the following icons indicating the type 
 Click the **Triggered monitors** row to view the related Monitors. You can click on them to view the Monitor on the [Monitors](/docs/alerts/monitors) page.
 
 ![triggered monitors.png](/img/dashboards-new/drill-root-causes/triggered-monitors.png)
-
-</TabItem>
-</Tabs>
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';

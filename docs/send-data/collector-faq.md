@@ -328,7 +328,7 @@ To monitor collectors for out-of-memory issues, ingest the collector logs, and�
 _sourceCategory=*LocalCollectorLogs* "java.lang.OutOfMemoryError: Java heap space"
 | timeslice 15m
 | count by _timeslice, _collector
-| "https://help.sumologic.com/Send_Data/Collector_FAQs/Increase_memory_in_a_Collector" as sumoHelp
+| "/docs/Send-Data/collector-faq#Increase-memory-in-a-Collector" as sumoHelp
 | concat ("collector: ", _collector, " identified with insufficient max heap memory. Increase java heap space allocation for it. Refer: ", sumoHelp) as msg
 | sort by _timeslice, _collector | fields -sumoHelp
 ```
@@ -414,7 +414,7 @@ Ingested old or historical data, especially when mixed with recent or real-time 
 
 This article describes the assumptions that Sumo makes about customer data, tips to help you make sure your data is handled correctly, and guidance on when to contact [Sumo Logic Support](https://support.sumologic.com) regarding historical data uploads.
 
-See [using \_format for troubleshooting](docs/send-data/reference-information/time-reference.md) timestamps.
+See [using _format for troubleshooting](docs/send-data/reference-information/time-reference.md) timestamps.
 
 #### Assumption: Data is less than 365 days old
 
@@ -543,7 +543,7 @@ For both searches above, it’s a good idea to use a relative time range that lo
 
 After installing a Collector and configuring a Source, your data should appear in Sumo Logic in a matter of minutes. How can you confirm that your data is being collected? Try any of the following options. 
 
-#### Check the Status page of the Sumo Logic Web Application
+#### Check the Status page of Sumo Logic
 
 In Sumo Logic select **Manage Data \> Collection \> Status** to view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
 

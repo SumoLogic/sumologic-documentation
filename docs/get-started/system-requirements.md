@@ -2,6 +2,7 @@
 id: system-requirements
 title: Sumo Logic System Requirements
 sidebar_label: System Requirements
+description: Supported Browsers and other requirements for running Sumo Logic.
 ---
 
 
@@ -54,7 +55,7 @@ For information about increasing Collector memory and monitoring Collector logs
 
 Sumo Logic automatically redirects Installed Collectors to the correct collection endpoint when registering to your account. If you have or need specific network security policies you'll need to allow outbound traffic to Sumo Logic endpoints for collection to work.
 
-Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See our table of [Sumo Logic Endpoints and Firewall Security] (../../../APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security.md) for details.
+Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See our table of [Sumo Logic Endpoints and Firewall Security](docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security) for details.
 
 Also, see how to [Test Connectivity of Sumo Logic Collectors](docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors.md).
 

@@ -2,14 +2,14 @@ name: deploy-to-production
 
 on:
   push:
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+    branches:
+      - main
 
 jobs:
   deploy-to-staging:
     uses: SumoLogic/sumologic-documentation/.github/workflows/build_and_deploy.yml@main
     with:
-      hostname: https://d3f0cnhsmnxacx.cloudfront.net
+      hostname: https://help.sumologic.com
       environment: production
     secrets:
       S3_BUCKET_NAME: ${{ secrets.PRODUCTION_S3_BUCKET_NAME }}

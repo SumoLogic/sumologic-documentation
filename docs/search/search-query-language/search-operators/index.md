@@ -1,7 +1,8 @@
 ---
-slug: /search-operators
+slug: /search/search-query-language/search-operators
 title: Search Operators
-description: Process data in meaningful ways and provide logic to queries with search operators. This page lists the available search operators in Sumo's search query language.
+sidebar_label: Search Operators
+description: Process data in meaningful ways and provide logic to queries with search operators. This section lists the available search operators in Sumo's search query language.
 ---
 
 Process data in meaningful ways and provide logic to queries with search operators. This page lists the available search operators in Sumo's search query language.
@@ -9,8 +10,6 @@ Process data in meaningful ways and provide logic to queries with search operato
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-## Guide contents
-
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

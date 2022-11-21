@@ -1,10 +1,12 @@
 ---
 id: bin
+title: bin Search Operator
+sidebar_label: bin
 ---
 
-# bin
 
-The **bin** operator assigns output results to user defined bins. A bin is configured to hold a range of values that can be used for sorting results in a histogram and further aggregation. It is a quick and effective way to visualize the distribution of data.
+
+The bin operator assigns output results to user defined bins. A bin is configured to hold a range of values that can be used for sorting results in a histogram and further aggregation. It is a quick and effective way to visualize the distribution of data.
 
 ## Syntax
 
@@ -29,7 +31,7 @@ Where:
 You can sort by the lower or upper boundary of the bin interval.
 :::
 
-## Examples
+**Examples**
 
 ### Distribution of error counts
 

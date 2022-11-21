@@ -436,7 +436,7 @@ _view = sumologic_signals_anomalies
 
 #### Explain recent EOIs based using available context 
 
-This query uses the [logexplain](../search/behavior-insights/logexplain.md) operator to explain which metric and eventType most explain the anomaly patterns in the last 45 minutes compared to the immediately prior time period. Expand the context by adding additional fields to the `on` condition.
+This query uses the [logexplain](/docs/search/behavior-insights/logexplain) operator to explain which metric and eventType most explain the anomaly patterns in the last 45 minutes compared to the immediately prior time period. Expand the context by adding additional fields to the `on` condition.
 
 ```sql
 _view=sumologic_signals_anomalies
@@ -449,7 +449,7 @@ _view=sumologic_signals_anomalies
 
 #### Return all EOIs by time slice
 
-This query analyzes the volume of EOIs to detect sudden changes in the volume using the [outlier](../search/search-query-language/search-operators/outlier.md) operator. Such sudden changes may represent outages. 
+This query analyzes the volume of EOIs to detect sudden changes in the volume using the [outlier](/docs/search/search-query-language/search-operators/outlier) operator. Such sudden changes may represent outages. 
 
 ```sql
 _view=sumologic_signals_anomalies
@@ -476,7 +476,7 @@ _view=sumologic_signals_anomalies
 
 #### Explain what changed within a time window
 
-This query uses the [logexplain](../search/behavior-insights/logexplain.md) operator to explain which metric and cluster of a particular team most explain the anomaly patterns in the second half of the time window as compared to the first half.
+This query uses the [logexplain](/docs/search/behavior-insights/logexplain) operator to explain which metric and cluster of a particular team most explain the anomaly patterns in the second half of the time window as compared to the first half.
 
 ```sql
 _view=sumologic_signals_anomalies

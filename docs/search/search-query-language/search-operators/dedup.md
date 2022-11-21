@@ -1,20 +1,22 @@
 ---
 id: dedup
+title: dedup Search Operator
+sidebar_label: dedup
 ---
 
-# dedup
+
 
 The dedup operator removes duplicate results. You have the option to remove consecutively and by specific fields. This allows you to filter your results to identify the most recent or last few events based on an identical combination of results.
 
 For example, to find the most recent value of services you'd use the following operation: `| dedup 1 by service`.
 
-## Supported features 
+#### Supported features
 The operator is supported in the following features:
 
 * [Log Search](/docs/search)
-* [Dashboards (New)](../../../dashboards-new/about-dashboard-new.md)
+* [Dashboards (New)](docs/dashboards-new/about.md)
 * [Dashboards](/docs/dashboards), including live mode
-* [Scheduled Searches](../../../alerts/scheduled-searches/schedule-search.md)
+* [Scheduled Searches](docs/alerts/scheduled-searches/schedule-search.md)
 
 ## Syntax
 
@@ -28,18 +30,18 @@ dedup [consecutive] [<int>] [by <field>[, <field2>, ...]]
 | int | Specifies the number of most recent events to return. | For search results that have the same source value, keep the first three that occur and remove all subsequent search results.<br/>`... | dedup 3 by source` |
 | field | A comma-separated list of field names to remove duplicate values from. If no fields are specified, the query is run against _raw, the full raw log message.<br/>For example, `| dedup` is the same as `| dedup` by _raw. | Remove duplicate search results based on _sourceCategory.<br/>`... | dedup by _sourceCategory` |
 
-## Rules
+**Rules**
 
 * Non-aggregate and aggregate queries are supported.
 
     * non-aggregate queries process up to 100k results.
     * aggregate queries process all results.
 
-* Use the [sort operator](sort.md) before dedup to control the order of removed results.
+* Use the [sort operator](#sort) before dedup to control the order of removed results.
 * Running dedup against the full raw log message is inefficient and is not recommended.
 * The histogram only shows results the dedup operator returned.
 
-## Examples
+**Examples**
 
 The following examples use this sample data.
 
@@ -58,7 +60,7 @@ The following examples use this sample data.
 | 05/09/2021 11:23:00 | Delhi | India | Asia | 11 |
 | 05/09/2021 11:22:00 | Kolkata | India | Asia | 4.5 |
 
-### Remove duplicate search results by country 
+#### Remove duplicate search results by country
 
 ```sql
 | dedup by country
@@ -68,7 +70,7 @@ Returns the most recent record for each country:
 
 ![deup by country](/img/search/searchquerylanguage/search-operators/dedup-by-country.png)
 
-### Keep the first 3 duplicate results 
+#### Keep the first 3 duplicate results
 
 For search results that have the same country value, keep the first three that occur and remove all subsequent search results.
 
@@ -80,7 +82,7 @@ Returns the following results:
 
 ![deup by 3](/img/search/searchquerylanguage/search-operators/dedup-last-3.png)
 
-### Keep results with same combination of values in multiple fields 
+#### Keep results with same combination of values in multiple fields
 
 For search results that have the same country AND continent values, keep the first two search results that occur and remove all subsequent results.
 
@@ -92,7 +94,7 @@ Returns the following results:
 
 ![deup by 3](/img/search/searchquerylanguage/search-operators/dedup-by-two-fields.png)
 
-### Remove only consecutive duplicate events 
+#### Remove only consecutive duplicate events
 
 Remove only consecutive duplicate events. Keep non-consecutive duplicate events. In this example, duplicates must have the same combination of values as the country and continent fields for them to be removed. Non-consecutive events with the same combination of source and host fields will be retained.
 

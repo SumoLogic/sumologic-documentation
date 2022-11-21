@@ -1,8 +1,9 @@
 ---
 id: table-charts
+title: Table Charts
+description: Table charts are the default chart type in the Aggregates tab.
 ---
 
-# Table Charts
 
 Table charts are the default chart type in the **Aggregates** tab. They are useful for listing the type and number of events that have occurred, such as the type of error that occurs the most in your system. To create a table chart, use a search query that provides at least a few data points in the **Aggregates** tab.
 
@@ -34,12 +35,12 @@ To add a panel with a table chart:
 
     **Metrics query:**
 
-    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts](/docs/metrics/metric-queries-alerts) to ensure successful results. By default, the query builder is set
+    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries](/docs/metrics/metrics-queries) to ensure successful results. By default, the query builder is set
     to **Logs**.
 
     ![Metrics selection for query builder.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
-    To create a metrics query utilize the [Metrics Query Builder](/docs/metrics/metric-queries-alerts).
+    To create a metrics query utilize the [Metrics Query Builder](/docs/metrics/metrics-queries).
 
 1. Once the query runs you will need to flip the chart type to **Table**.
 
@@ -58,9 +59,9 @@ If your query looks for URLs, when you create a table chart panel, the URLs disp
 For example, if you used this query to search for hits to the Sumo Logic Help system:
 
 ```sql
-_sourceCategory=aws/cloudtrail  
-| keyvalue "LoginTo"  
-| count loginto 
+_sourceCategory=aws/cloudtrail 
+| keyvalue "LoginTo" 
+| count loginto
 | sort - _count
 ```
 

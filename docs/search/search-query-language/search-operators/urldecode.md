@@ -1,10 +1,11 @@
 ---
 id: urldecode
+title: urldecode Search Operator
+sidebar_label: urldecode
 ---
 
-# urldecode
 
-The URL Decode (**urldecode**) operator decodes a URL you include in a query, returning the decoded (unescaped) URL string.
+The urldecode operator decodes a URL you include in a query, returning the decoded (unescaped) URL string.
 
 For example, a URL that looks like this:
 
@@ -28,7 +29,7 @@ urldecode(<url_field>) [as <field>]
 urldecode("<url string>") as <field>
 ```
 
-## Example
+**Example**
 
 Let's say you'd like to decode URLs connecting to your firewall. Running a query like:
 

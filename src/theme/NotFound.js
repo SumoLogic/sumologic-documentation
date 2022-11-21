@@ -20,10 +20,10 @@ export default function NotFound(): JSX.Element {
         })}
       />
       <Layout>
-        <main className="container margin-vert--xl">
+        <main className="container margin-vert--l">
           <div className="row">
             <div className="col col--6 col--offset-3">
-              <h1 align="center" className="hero__title">
+              <h1 align="center" >
                 <Translate
                   id="theme.NotFound.title"
                   description="The title of the 404 page">
@@ -38,22 +38,22 @@ export default function NotFound(): JSX.Element {
                 </Translate>
               </p>
               <p align="center">
-              <img class="svg" src="/img/sumo-404.svg" alt="Sumo Logic 404 image" width="250">
-              </img>
-              </p>
-              <p align="center">
-              <button className="backtohome-404"
+              <button className="homepage"
                   description="Back to Sumo Docs homepage">
                   <a href="/">Back to home</a>
               </button>
-              <button className="backtohome-404"
+              <button className="homepage"
                   description="Open GitHub Issue">
-                  <a href="https://github.com/SumoLogic/sumologic-documentation/issues/new/choose">Let us know</a>
+                  <a href="https://github.com/SumoLogic/sumologic-documentation/issues/new/choose">Report Bug</a>
+              </button>
+              <button className="homepage"
+                  description="Contact Us">
+                  <a href="https://sumodojo.slack.com">Get in touch</a>
               </button>
               </p>
               <p align="center">
-              <a href="https://app.sitesearch360.com/demo/18891?auth=627bf5a32ba2ed7f1e7dbe02a13a5a5ae13c5c4d"> <img class="svg" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Blue_magnifying_glass_icon.svg" width="50"></img></a>
-
+              <img class="svg" src="/img/sumo-404.svg" alt="Sumo Logic 404 image" width="250">
+              </img>
               </p>
             </div>
           </div>

@@ -11,8 +11,8 @@ For example, if you operated a retail website, you'd use the transaction operato
 
 The transaction operator requires:
 
-* **One or more transaction IDs to group related log messages together.** You could use session IDs, IPs, username, email, or any other unique IDs that are relevant to your query. You will define transaction IDs in a query. The transaction IDs are extracted using operators such as [parse](../parse-operators/parse-predictable-patterns-using-an-anchor.md) and [parse regex](../parse-operators/parse-variable-patterns-using-regex.md).
-* **Mapping from a log message to a state.** Specify the mapping from a log message to a state through the syntax of the [matches](../search-operators/matches.md) operator, or through fields that are already parsed.
+* **One or more transaction IDs to group related log messages together.** You could use session IDs, IPs, username, email, or any other unique IDs that are relevant to your query. You will define transaction IDs in a query. The transaction IDs are extracted using operators such as [parse](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor) and [parse regex](/docs/search/search-query-language/parse-operators/parse-variable-patterns-using-regex).
+* **Mapping from a log message to a state.** Specify the mapping from a log message to a state through the syntax of the [matches](/docs/search/search-query-language/search-operators/matches) operator, or through fields that are already parsed.
 
 Check out the following overview video. It reviews a search provided in the G Suite App for building a document flow diagram.
 

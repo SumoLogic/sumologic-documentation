@@ -5,15 +5,16 @@ sidebar_label: Search Job
 description: The Search Job API provides access to resources and log data from third-party scripts and applications.
 ---
 
-The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication. 
+The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication.
 
 :::note
 Search Job APIs are not yet built with OpenAPI specifications and therefore not documented with the rest of the APIs. Instead, refer to the instructions below for details.
 :::
 
-Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
+Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 
 Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+
 ## Before You Begin
 
 The Search Job API is available to Enterprise accounts.
@@ -115,7 +116,7 @@ If you need more results you'll need to break up your search into several search
 
 * A limit of 200 active concurrent search jobs applies to your organization.
 
-When searching the [Frequent Tier](https://help.sumologic.com/Manage/Partitions_and_Data_Tiers/Data_Tiers) a rate limit of 20 concurrent search jobs applies to your organization.
+When searching the [Frequent Tier](/docs/manage/Partitions-Data-Tiers/Data-Tiers) a rate limit of 20 concurrent search jobs applies to your organization.
 
 Once you reach the limit of 200 active searches, attempting an additional search will result in a status code of _429 Too Many Requests_ telling you that you are over the allowed search job limit.
 
@@ -133,7 +134,7 @@ The following figure shows the process flow for search jobs.
 1. **Request.** You request a search job, giving the query and time range.
 2. **Response.** Sumo responds with a job ID. If there’s a problem with the request, an error code is provided (see the list of error codes following the figure).
 3. **Request. **Use the job ID to request search status. This needs to be done at least every 20-30 seconds so the search session is not canceled due to inactivity.
-4. **Response.** Sumo responds with job status. An error code (404) is returned if the request could not be completed. \
+4. **Response.** Sumo responds with job status. An error code (404) is returned if the request could not be completed.
 The status includes the current state of the search job (gathering results, done executing, etc.). It also includes the message and record counts based on how many results have already been found while executing the search. For non-aggregation queries, only the number of messages is reported. For aggregation queries, the number of records produced is also reported. The search job status provides access to an implicitly generated histogram of the distribution of found messages over the time range specified for the search job. During and after execution, the API can be used to request available messages and records in a paging fashion.
 5. **Request.** You request results. It’s not necessary for the search to be complete for the user to request results; the process works asynchronously. You can repeat the request as often as needed to keep seeing updated results, keeping in mind the rate limits. The Search Job API can return up to 10 million records per search query.
 6. **Response.** Sumo delivers JSON-formatted search results as requested. The API can deliver partial results that the user can start paging through, even as new results continue to come in. If there’s a problem with the results, an error code is provided (see the list of error codes following the figure).
@@ -254,7 +255,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>invalid.timestamp.to
    </td>
-   <td>The 'to' field contains an invalid time. 
+   <td>The 'to' field contains an invalid time.
    </td>
   </tr>
   <tr>
@@ -262,7 +263,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>invalid.timestamp.from
    </td>
-   <td>The 'from' field contains an invalid time. 
+   <td>The 'from' field contains an invalid time.
    </td>
   </tr>
   <tr>
@@ -286,7 +287,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>empty.timezone
    </td>
-   <td>The 'timezone' cannot be blank. 
+   <td>The 'timezone' cannot be blank.
    </td>
   </tr>
   <tr>
@@ -294,7 +295,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>no.query
    </td>
-   <td>No 'query' parameter was provided. 
+   <td>No 'query' parameter was provided.
    </td>
   </tr>
   <tr>
@@ -302,7 +303,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>unknown.time.type
    </td>
-   <td>Time type is not correct .
+   <td>Time type is not correct.
    </td>
   </tr>
   <tr>
@@ -364,7 +365,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>"offset.missing"
    </td>
-   <td>"Offset is missing." 
+   <td>"Offset is missing."
    </td>
   </tr>
   <tr>
@@ -372,7 +373,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>"offset.negative"
    </td>
-   <td>"Offset cannot be negative." 
+   <td>"Offset cannot be negative."
    </td>
   </tr>
   <tr>
@@ -380,7 +381,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>"limit.missing"
    </td>
-   <td>"Limit is missing." 
+   <td>"Limit is missing."
    </td>
   </tr>
   <tr>
@@ -388,7 +389,7 @@ The status includes the current state of the search job (gathering results, done
    </td>
    <td>"limit.zero"
    </td>
-   <td>"Limit cannot be 0." 
+   <td>"Limit cannot be 0."
    </td>
   </tr>
   <tr>
@@ -504,7 +505,7 @@ Sumo Logic endpoints like `api.sumologic.com` are different in deployments outsi
    </td>
    <td>Yes
    </td>
-   <td>The time zone if from/to is not in milliseconds.  See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes.
+   <td>The time zone if from/to is not in milliseconds.  See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes. <br/><br/>
 <p><strong>Note</strong> Alternatively, you can use the parameter timezone instead of timeZone.</p>
    </td>
   </tr>
@@ -515,7 +516,7 @@ Sumo Logic endpoints like `api.sumologic.com` are different in deployments outsi
    </td>
    <td>No
    </td>
-   <td>Define as <code>true</code> to run the search using<a href="https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Build-a-Search/Use-Receipt-Time"> receipt time</a>. By default, searches do not run by receipt time.
+   <td>Define as <code>true</code> to run the search using<a href="/docs/search/Get-Started-with-Search/build-search/Use-Receipt-Time"> receipt time</a>. By default, searches do not run by receipt time.
    </td>
   </tr>
   <tr>
@@ -525,7 +526,7 @@ Sumo Logic endpoints like `api.sumologic.com` are different in deployments outsi
    </td>
    <td>No
    </td>
-   <td>This enables <a href="https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing">dynamic parsing</a>, when specified as <code>intelligent</code>, Sumo automatically runs field extraction on your JSON log messages when you run a search. By default, searches run in <code>performance</code> mode.
+   <td>This enables <a href="/docs/search/Get-Started-with-Search/build-search/Dynamic-Parsing">dynamic parsing</a>. Values are: <br/><br/><code>AutoParse</code> - Sumo Logic will perform field extraction on JSON log messages when you run a search.<br/><br/><code>Manual</code> - (Default value) Sumo Logic will not autoparse JSON logs at search time. <br/><br/><strong>Note</strong> Previously, the supported values for this parameter were <code>performance</code>, <code>intelligent</code>, and <code>verbose</code>. These values still function, but are deprecated. Sumo Logic recommends the use of the new supported values: <code>AutoParse</code> and <code>Manual</code>.
    </td>
   </tr>
 </table>
@@ -796,7 +797,7 @@ Fields are not returned in the specified order and are all lowercase.
 
 ### Paging through the messages found by a search job
 
-The search job status informs the user about the number of found messages. The messages can be requested using a paging API call (step 6 in the process flow). Messages are always ordered by the latest **_messageTime **value.
+The search job status informs the user about the number of found messages. The messages can be requested using a paging API call (step 6 in the process flow). Messages are always ordered by the latest `_messageTime` value.
 
 **Method:** `GET`
 
@@ -996,13 +997,13 @@ The result contains two lists, **fields** and **messages**.
 * **fields** contains a list of all the fields defined for each of the messages returned. For each field, the field name and field type are returned.
 * **messages** contains a list of maps, one map per message. Each **map** maps from the fields described in the fields list to the actual value for the message.
 
-For example, the field **_raw** contains the raw collected log message.
+For example, the field `_raw` contains the raw collected log message.
 
-**_messagetime** is the number of milliseconds since the epoch of the timestamp extracted from the message itself.
+`_messageTime` is the number of milliseconds since the epoch of the timestamp extracted from the message itself.
 
-**_receipttime** is the number of milliseconds since the epoch of the timestamp of arrival of the message in the Sumo Logic system.
+`_receipttime` is the number of milliseconds since the epoch of the timestamp of arrival of the message in the Sumo Logic system.
 
-The metadata fields **_sourcehost**, **_sourcename**, and **_sourcecategory**, which are also featured in Sumo Logic, are available here.
+The metadata fields `_sourcehost`, `_sourcename`, and `_sourceCategory`, which are also featured in Sumo Logic, are available here.
 
 
 ### Paging through the records found by a Search Job

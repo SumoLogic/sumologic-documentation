@@ -1,10 +1,13 @@
 ---
 id: outlier
+title: outlier Search Operator
+sidebar_label: outlier
 ---
 
-# outlier
 
-Given a series of time-stamped numerical values, using the Outlier operator in a query can identify values in a sequence that seem unexpected, and would identify an alert or violation, for example, for a scheduled search.
+
+
+Given a series of time-stamped numerical values, using the outlier operator in a query can identify values in a sequence that seem unexpected, and would identify an alert or violation, for example, for a scheduled search.
 
 To do this, the Outlier operator tracks the moving average and standard deviation of a numerical field. An outlier is identified based on a specified *threshold* of standard deviations around the expected value. If a data point is outside the threshold, it is considered to be an outlier.
 
@@ -60,19 +63,19 @@ For example, this query would set the following parameters:
 * **consecutive=2** : Trigger a violation by returning `<field>_violation=1` in the search results only if 2 or more consecutive indicator data points occur.
 * **direction=+-** : Uses positive or negative deviations.
 
-## Rules
+**Rules**
 
 * The outlier operator must appear after a group by aggregator, such as count, min, max, or sum.
 * The original target field must be numeric.
-* A [timeslice](timeslice.md) is required.
+* A [timeslice](#timeslice) is required.
 
-## Limitations
+#### Limitations
 
 * Because the most recent time bucket in a query may have incomplete data, it is ignored by outlier. Consequently, if an alert is set to trigger on `<field>_violation` changing to 1, this alert will trigger one timeslice later.
 
-## Examples
+**Examples**
 
-### IIS logs
+#### IIS logs
 
 Run the following query to find outlier values in IIS logs over the last
 6 hours.
@@ -90,7 +93,7 @@ _sourceCategory=IIS/Access
 
 The outlier values are represented by the pink triangles in the resulting chart.
 
-### Apache logs - Server Errors Over Time
+#### Apache logs - Server Errors Over Time
 
 Run the following query to find outlier values in Apache logs over the
 last 3 hours.
@@ -109,7 +112,7 @@ _sourceCategory=Apache/Access
 The outlier values are represented by the pink triangles in the
 resulting chart.
 
-### Use an additional “group by” clause to find outliers for multiple values of `_sourceHost`.
+#### Use an additional “group by” clause to find outliers for multiple values of `_sourceHost`.
 
 You can also run a query like this:
 
@@ -126,9 +129,9 @@ This way, you can run outlier analysis separately for each value of `_sourceHos
 
 This example will only produce an aggregation table, not a chart, but the indicator and violation fields will correctly reflect each `_sourceHost` processing.
 
-### Alert on an outlier
+#### Alert on an outlier
 
-This query counts the number of errors over time and sends an alert when an outlier is detected. When an outlier is detected, the value of `<field_name>_violation` will be set to 1. In the example below, the `<field_name>` is `_count`. By creating a [Real Time Alert](../../../alerts/scheduled-searches/create-real-time-alert.md) and sending a notification if greater than 0 results are found, you can alert on an outlier.
+This query counts the number of errors over time and sends an alert when an outlier is detected. When an outlier is detected, the value of `<field_name>_violation` will be set to 1. In the example below, the `<field_name>` is `_count`. By creating a [Real Time Alert](docs/alerts/scheduled-searches/create-real-time-alert.md) and sending a notification if greater than 0 results are found, you can alert on an outlier.
 
 ```sql
 "error"
@@ -140,7 +143,7 @@ This query counts the number of errors over time and sends an alert when an ou
 | where delta_violation = 1
 ```
 
-## Multidimensional Outlier Detection
+#### Multidimensional Outlier Detection
 
 The Outlier operator supports multidimensional or multi-time series detection. Multidimensional outlier detection is useful when you want to monitor the behavior of each user, server, application feature, or other single “entity”, rather than some aggregation across all entities.  
 
@@ -152,7 +155,7 @@ Other examples include:
 * Monitoring the performance of every workstation simultaneously, without the need to build an outlier report for each one.
 * Monitoring failed image uploads for every user of an application (not total failed uploads across all users).
 
-If you have used the outlier operator, it is easy to create a multidimensional outlier operation. Just add **by \<dimension\>** to the end of the query.
+If you have used the outlier operator, it is easy to create a multidimensional outlier operation. Just add **`by <dimension>`** to the end of the query.
 
 For example, the following example query will determine many time series, one per each `_sourceHost`:
 
@@ -165,14 +168,14 @@ _sourceCategory=Apache/Access
 
 You can display the raw results of a multidimensional time series in a table chart, but currently other chart options are not available.
 
-In the following table chart, a value of 1 in the **\_count_violation** column indicates that the data point corresponding to that timeslice is
+In the following table chart, a value of 1 in the `_count_violation` column indicates that the data point corresponding to that timeslice is
 an outlier.
 
 ![Multidimensional](/img/search/searchquerylanguage/search-operators/Multidimensional.png)
 
-### Alerts Based on Multidimensional Outlier Results
+#### Alerts Based on Multidimensional Outlier Results
 
-To create an alert based on the multi-series outlier table above, extract **\_count_violation**.
+To create an alert based on the multi-series outlier table above, extract `_count_violation`.
 
 This way, you will not need to build an alert for each series of data (each `_sourceHost` in the previous example), and you can automatically monitor a dynamic series for deviating behavior.
 
@@ -190,19 +193,19 @@ _sourceCategory=O365*
 | transpose row _timeslice column user_id
 ```
 
-Once you have run the query, you can click **Save As** to create a [Scheduled Search](../../../alerts/scheduled-searches/schedule-search.md) and configure it to send an [alert](/docs/alerts) when any user account experiences an unusual amount of failures, or other event you want to monitor each series of data for.
+Once you have run the query, you can click **Save As** to create a [Scheduled Search](docs/alerts/scheduled-searches/schedule-search.md) and configure it to send an [alert](/docs/alerts) when any user account experiences an unusual amount of failures, or other event you want to monitor each series of data for.
 
 To visualize your results, on the Search page, you can create a column chart, then change the stacking property to normal to display alerts by unique **user_id** (the multidimensional aspect).
 
 ![Alert](/img/search/searchquerylanguage/search-operators/Outlier-Alert.png)
 
-### Chart Multidimensional Outlier Results
+#### Chart Multidimensional Outlier Results
 
 This section provides two examples of how to display multidimensional outlier results in charts.
 
-#### Example 1: Outlier Distribution Across Time
+**Example** 1: Outlier Distribution Across Time
 
-In this example, we’ll extract **\_count_violation** from the multi-series outlier table and display that. This allows you to display the distribution of outliers among various time-series.
+In this example, we’ll extract `_count_violation` from the multi-series outlier table and display that. This allows you to display the distribution of outliers among various time-series.
 
 ```sql
 error (_sourceCategory=Apache* or _sourceCategory=IIS*)
@@ -213,13 +216,13 @@ error (_sourceCategory=Apache* or _sourceCategory=IIS*)
 | transpose row _timeslice column _sourceCategory
 ```
 
-When you select a [line chart](../../../dashboards-new/panels/line-charts.md), this example will display something like the following:
+When you select a [line chart](/docs/dashboards-new/panels/line-charts), this example will display something like the following:
 
 ![Outlier Distribution](/img/search/searchquerylanguage/search-operators/OutlierDistri.png)
 
-#### Example 2: Outlier Ranking
+**Example** 2: Outlier Ranking
 
-This example query uses the **\_count_error** (distance from the expected value for that timeslice) and the value of the standard deviation for the baseline, then determines how many standard deviation a data point is from its expected value.
+This example query uses the **`_count_error`** (distance from the expected value for that timeslice) and the value of the standard deviation for the baseline, then determines how many standard deviation a data point is from its expected value.
 
 This way, you can display outliers visually in terms of deviation from the expected value.
 
@@ -234,7 +237,7 @@ _sourceCategory=Apache*
 | transpose row _timeslice column status_code
 ```
 
-When you select a [line chart](../../../dashboards-new/panels/line-charts.md), this example will display something like the following:
+When you select a [line chart](/docs/dashboards-new/panels/line-charts), this example will display something like the following:
 
 ![Outlier Ranking](/img/search/searchquerylanguage/search-operators/OutlierRanking.png)
 

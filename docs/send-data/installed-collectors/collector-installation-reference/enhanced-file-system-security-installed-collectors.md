@@ -15,8 +15,8 @@ The enhanced security mode protects the Collector installation folder at the fil
 When you [install a Collector](/docs/send-data/installed-collectors) using the UI installer, quiet mode, or RPM/Debian package, the default behavior is as follows:
 
 * The **sumologic_collector** group is created during installation, if it does not already exist.
-* Only members of the **sumologic\_collector** group can access the Collector folder. All members of this group have full permissions to the folder.  
-* The following users are automatically added to the **sumologic\_collector** group.  
+* Only members of the **sumologic_collector** group can access the Collector folder. All members of this group have full permissions to the folder.  
+* The following users are automatically added to the **sumologic_collector** group.  
 
   * Admin users (including root)
   * The user who launched the UI installer  

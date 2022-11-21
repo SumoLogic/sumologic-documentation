@@ -7,7 +7,6 @@ keywords:
     - cloud-SIEM-enterprise
 ---
 
-
 The SentinelOne Mgmt API Source collects data from the SentinelOne Management Console. It securely stores the required authentication, scheduling, and state tracking information.
 
 Data from the following object types are collected from [SentinelOne APIs](https://usea1-partners.sentinelone.net/api-doc/overview):
@@ -18,9 +17,9 @@ Data from the following object types are collected from [SentinelOne APIs](https
 
 Once the Source is created it will start collecting historical data and maintain a polling interval of five minutes.
 
-::note
+:::note
 This Source is available in the Fed deployment.
-:::
+::: 
 
 ## States
 
@@ -74,7 +73,7 @@ When you create a SentinelOne Mgmt API Source, you add it to a Hosted Collector
 
 To configure a SentinelOne Mgmt API Source:**
 
-1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 

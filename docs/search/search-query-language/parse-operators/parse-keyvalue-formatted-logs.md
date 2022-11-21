@@ -1,8 +1,8 @@
 ---
 id: parse-keyvalue-formatted-logs
+title: Parse Keyvalue Formatted Logs
 ---
 
-# Parse Keyvalue Formatted Logs
 
 Typically, log files contain information that follow a key-value pair structure. The keyvalue operator allows you to get values from a log message by specifying the key paired with each value.
 
@@ -63,7 +63,7 @@ The **keyvalue** operator also supports regular expressions that contain a **
 
 In the above case, for each key specified, the operator first finds the key itself in the message (first occurrence), and then finds the closest match of the regular expression to the location in the message where the key was found.
 
-The number of fields specified with the "as" clause must match the number of key-value pairs specified. You can omit the clause if you'd like the operator to automatically create the field names for the extracted values. To do this, **keyvalue** replaces every character (other than a..z, A..Z, 0..9, or \_) with an underscore (\_).
+The number of fields specified with the "as" clause must match the number of key-value pairs specified. You can omit the clause if you'd like the operator to automatically create the field names for the extracted values. To do this, **keyvalue** replaces every character (other than a..z, A..Z, 0..9, or _) with an underscore (_).
 
 ## Abbreviated syntax
 
@@ -113,7 +113,7 @@ one delimiter to use when extracting.
 
 ## Additional options
 
-* **Aliases (renaming)** using [**as**](/docs/search/search-query-language/search-operators/as-operator) are supported. For example:
+* **Aliases (renaming)** using [**as**](/docs/search/search-query-language/search-operators/as) are supported. For example:
 
     ```sql
     * | keyvalue auto keys "<key1>", "<key2>" as <field1>, <field2>

@@ -1,10 +1,12 @@
 ---
 id: transpose
+title: transpose Search Operator
+sidebar_label: transpose
 ---
 
-# transpose
 
-Similar to a Pivot Table in Excel, the **transpose** operator allows you to take a list and turn it into a table in the Aggregates tab, as shown by the examples below.  You can define what data makes the rows and columns.
+
+Similar to a Pivot Table in Excel, the transpose operator allows you to take a list and turn it into a table in the Aggregates tab, as shown by the examples below. You can define what data makes the rows and columns.
 
 **Without transpose, the following query renders factual but not a useful table below:**
 
@@ -58,15 +60,15 @@ Results can be influenced in three ways:
 
 As a reminder, if a field name contains a special character (such as -) the character must be quoted in **%""**, as in %"test-zz-1". Because column names computed from data tend to include special characters, this is especially important to keep in mind when using a transpose operator.
 
-## Rules
+**Rules**
 
-* Transpose is not supported with the [Join](join.md) operator.
+* Transpose is not supported with the [Join](#join) operator.
 * Transpose supports a maximum of 300 dynamic fields (columns to be created).
 * Fields are returned alphabetically.
 
-## Examples
+**Example**
 
-### Viewing errors by module
+#### Viewing errors by module
 
 Let's say that errors are logged by module; we'd like to view errors by each module's name. Running a query similar to:
 
@@ -82,7 +84,7 @@ will produce results with each module represented with a distinct color, similar
 
 Try changing the Stacking setting (under Change Properties) to **Normal** to see how graphs are affected by this option. For more information, see [Chart Search Results](/docs/search/get-started-with-search/search-basics/chart-search-results).
 
-### View successful logins by user
+#### View successful logins by user
 
 Because you can use the transpose operator without prior knowledge of the fields it will generate, you can view logins by users and organization. Running a query similar to:
 
@@ -98,7 +100,7 @@ will produce a stacked graph similar to:
 
 ![Successful Logins](/img/search/searchquerylanguage/search-operators/transpose/SuccessfulLogins.png)
 
-### View web server status codes
+#### View web server status codes
 
 Let's return to the query with the Apache web server status codes, but status_code is a pre-parsed field.
 
@@ -117,11 +119,11 @@ Then you can select the **Column** chart button, and under **Change Propertie
 
 ![Status Codes Stacked Graph](/img/search/searchquerylanguage/search-operators/transpose/Status-Code-stacked-graph.png)
 
-For information on handling null fields, see [isNull](isNull.md) operator.
+For information on handling null fields, see [isNull](#isNull) operator.
 
-### Order transposed results
+#### Order transposed results
 
-Continuing from the previous example, you can influence the results by specifying the variable names, see [Syntax](./transpose.md "transpose") for details. You need to know the variable names returned from the transpose operation if you want to order them. In this example, if you know you will get 200, 400, and 500 status codes returned in your results you'd order them by specifying the variable names in the order you want, like this:
+Continuing from the previous example, you can influence the results by specifying the variable names, see [Syntax](#transpose) for details. You need to know the variable names returned from the transpose operation if you want to order them. In this example, if you know you will get 200, 400, and 500 status codes returned in your results you'd order them by specifying the variable names in the order you want, like this:
 
 ```sql {4}
 _sourceCategory=Apache/Access

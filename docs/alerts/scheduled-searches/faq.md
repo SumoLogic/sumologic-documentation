@@ -13,7 +13,7 @@ searches and provide troubleshooting tips. 
 Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
 
 :::note
-The [Test Connection feature for webhooks](docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
+The [Test Connection feature for webhooks](docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
 :::
 
 
@@ -28,7 +28,7 @@ The best way to do this is to create a Scheduled Search using the sample query i
 
 If you do not already have the Data Volume Index enabled, you will need to enable it. If you already have the Data Volume Index enabled, continue to the next section.
 
-To enable the Data Volume Index, use the instructions in [Enable and Manage the Data Volume Index](/docs/manage/ingestion-and-volume/data-volume-index).
+To enable the Data Volume Index, use the instructions in [Enable and Manage the Data Volume Index](/docs/manage/ingestion-volume/data-volume-index).
 
 :::important
 Once the Data Volume index is enabled, let it run for at least 24 hours before you create your Scheduled Search.
@@ -85,10 +85,10 @@ A Scheduled Search may fail and be suspended for several reasons, with the failu
 
 Failures could be related to the Scheduled Search query. Check the following possible issues. 
 
-* In queries that use [lookup](../../search/search-query-language/search-operators/lookup-classic.md) files, the lookup file could be empty. This would cause the Scheduled Search to fail because Sumo Logic downloads the lookup file prior to executing the query. 
+* In queries that use [lookup](/docs/search/search-query-language/search-operators/lookup-classic) files, the lookup file could be empty. This would cause the Scheduled Search to fail because Sumo Logic downloads the lookup file prior to executing the query. 
 * Other query-specific factors could be at play. To test if the failure can be reproduced, run the Scheduled Search query. 
 * To make sure your query is written correctly, see [Write Efficient Search Queries](/docs/search/get-started-with-search/build-search). 
-* You may be able to optimize your query performance using [Partitions](/docs/manage/partitions-and-data-tiers) or [Scheduled Views](/docs/manage/scheduled-views).  
+* You may be able to optimize your query performance using [Partitions](/docs/manage/partitions-data-tiers) or [Scheduled Views](/docs/manage/scheduled-views).  
 * Taking too long to complete. See [How to Prevent Your Scheduled Search from Timing Out](#how-to-prevent-your-scheduled-search-from-timing-out). 
 
 ### Sumo Logic Backend Issues
@@ -150,7 +150,7 @@ Here are also a few additional things to consider when conducting your performan
 
 Scheduled Search alert condition thresholds are based on the number of rows returned in your search results. It does not consider any values that may be present within a column of those rows. If your query does not perform any aggregations the Scheduled Search threshold will apply to the number of raw messages returned with a query, as seen under the Messages tab of the search. If a query contains an aggregate operation, for example, count, sum, min, max, etc... the Scheduled Search threshold will be applied to the number of aggregate rows returned by the query, as seen within the Aggregate tab of the results.   
 
-When performing an aggregation as part of a query, and wanting to alert when a specific aggregate value meets a threshold, the threshold for that field value will need to be included as part of the query itself. This can typically be done by providing a [where](docs/search/search-query-language/search-operators/where.md) condition after the aggregation within the query. For example:
+When performing an aggregation as part of a query, and wanting to alert when a specific aggregate value meets a threshold, the threshold for that field value will need to be included as part of the query itself. This can typically be done by providing a [where](docs/search/search-query-language/search-operators/where) condition after the aggregation within the query. For example:
 
 ```sql
 _sourceCategory=aws/prod
@@ -184,7 +184,7 @@ Regards,
 The Sumo Logic Team
 ```
 
-Sumo Logic implements an email quota allowing 100 emails to be sent per day per scheduled search. The purpose of this limit is set to prevent service.sumologic.com from spamming an inbox. This is documented in [Scheduled Searches](docs/alerts/scheduled-searches/receive-email-alerts-scheduled-searches.md). 
+Sumo Logic implements an email quota allowing 100 emails to be sent per day per scheduled search. The purpose of this limit is set to prevent service.sumologic.com from spamming an inbox. This is documented in [Scheduled Searches](docs/alerts/scheduled-searches/receive-email-alerts.md). 
 
 The above quota assumes that no more than 5 Alert emails will be triggered per hour or an alert every 12 minutes on average. Sumo Logic expects that Alerts are used as an exception and it is unlikely to find email Alerts being sent at a rate higher than 5 emails per hour.
 

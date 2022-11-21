@@ -1,10 +1,12 @@
 ---
 id: trim
+title: trim Search Operator
+sidebar_label: trim
 ---
 
-# trim
 
-The **trim** operator eliminates leading and trailing spaces from a string field.
+
+The trim operator eliminates leading and trailing spaces from a string field.
 
 ## Syntax
 
@@ -16,7 +18,7 @@ trim(<field>) as <field>
 trim(" <string expression> ") as <field>
 ```
 
-## Example
+**Example**
 
 Take the string value " Hello World  ". To remove the leading and trailing spaces you'd do the following:
 

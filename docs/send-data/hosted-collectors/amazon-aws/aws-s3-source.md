@@ -26,7 +26,7 @@ Files are transferred in their compressed form and decompressed when ingested. 
 
 ## Configure an Amazon S3 Source
 
-1. [Grant Sumo Logic access](grant-access-aws-product.md to an Amazon S3 bucket.
+1. [Grant Sumo Logic access](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product/) to an Amazon S3 bucket.
 1. [Enable logging in AWS](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html) using the Amazon Console.
 1. Confirm that logs are being delivered to the Amazon S3 bucket.
 1. Add an AWS S3 Source to collect objects from your Amazon S3 bucket. See below for details.
@@ -104,7 +104,7 @@ import Iframe from 'react-iframe';
     If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
     :::
 
-1. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called \_sourceCategory.)
+1. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.)
 1.  **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
@@ -135,7 +135,7 @@ import Iframe from 'react-iframe';
 
 ### Set up SNS in AWS (Highly Recommended)
 
-The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](configure-our-aws-source-cloudformation.md).
+The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](configure-your-aws-source-cloudformation.md).
 
 1. Go to **Services \>** **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step.
  Make sure that the topic and the bucket are in the same region.

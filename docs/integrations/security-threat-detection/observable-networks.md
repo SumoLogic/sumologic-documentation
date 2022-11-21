@@ -82,7 +82,7 @@ To configure an expectation in Observable Networks**
 
 1. From your Observable Networks portal, click **Settings (gear icon) > Integrations > Sumo Logic > Logs**.
 2. Enter the name for the expected log, such as **Auth Log**.
-3. Enter the **Log Query Prefix**, which is the search prefix given to Sumo Logic to filter for this log. For example, **_source=auth.log**.
+3. Enter the **Log Query Prefix**, which is the search prefix given to Sumo Logic to filter for this log. For example, `_source=auth.log`.
 4. Select the roles that are expected to have this log. For example, **Terminal Server**.
 
 Only roles present on your network are available.
@@ -186,7 +186,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

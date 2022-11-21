@@ -1,8 +1,10 @@
 ---
 id: line-charts
+title: Line Charts
+description: Line charts are useful for displaying how data changes over time.
 ---
 
-# Line Charts
+
 
 Line charts are useful for displaying how data changes over time, where the Y axis of a line chart displays the count of an item, and the X axis is a timeline.
 

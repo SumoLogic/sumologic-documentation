@@ -1,10 +1,11 @@
 ---
 id: scatter-charts
+title: Scatter Charts
+description: Scatter charts show correlations between two fields against specific data.
 ---
 
-# Scatter Charts
 
-Scatter charts are available in the [Dashboard (New)](../about-dashboard-new.md) platform.
+Scatter charts are available in the [Dashboard (New)](../about.md) platform.
 
 Scatter charts display two independent numeric fields allowing you to see any correlation between them. You can visually determine how your fields relate to and affect one another.
 
@@ -19,8 +20,8 @@ For example, in the following query `logins` is the aggregate field and will b
 
 ```sql
 _sourceCategory=service "message=User logged in" remote_ip
-| parse "[remote_ip=*]" as remote_ip 
-| lookup latitude, longitude from geo://location on ip = remote_ip 
+| parse "[remote_ip=*]" as remote_ip
+| lookup latitude, longitude from geo://location on ip = remote_ip
 | count as logins by latitude, longitude
 ```
 

@@ -9,7 +9,7 @@ The Metrics Query API lets you execute Metrics queries from third-party scripts 
 
 This API follows Representational State Transfer (REST) patterns and is optimized for ease of use and consistency.
 
-Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
+Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 
 Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
 
@@ -17,7 +17,7 @@ Sumo Logic has several deployment types, which vary by geographic location and t
 
 You will need:
 
-* An Enterprise account. For more information, see [Cloud Flex](https://help.sumologic.com/Manage/Manage-Subscription/01Cloud_Flex_Accounts) or [Cloud Flex Credits](https://help.sumologic.com/Manage/Manage-Subscription/00Cloud_Flex_Credits_Accounts), depending on the Sumo Logic packaging you have.
+* An Enterprise account. For more information, see [Cloud Flex](/docs/manage/manage-subscription/cloud-flex-accounts) or [Cloud Flex Credits](/docs/manage/manage-subscription/cloud-flex-credits-accounts), depending on the Sumo Logic packaging you have.
 * An access key/access ID for authentication. Username/password are not supported.
 
 
@@ -391,7 +391,7 @@ The result will be a JSON document containing results (or an error) for each que
    </td>
    <td>int
    </td>
-   <td>Original user-supplied desired granularity of temporal <a href="https://help.sumologic.com/Metrics/03-Metric-Charts/06-Interacting_with_Metric_Charts#Adjust_the_quantization_interval">quantization</a> (if supplied).
+   <td>Original user-supplied desired granularity of temporal <a href="/docs/metrics/metric-charts/Interacting-Metric-Charts#Adjust_the_quantization_interval">quantization</a> (if supplied).
    </td>
   </tr>
   <tr>

@@ -1,10 +1,12 @@
 ---
 id: diff
+title: diff Search Operator
+sidebar_label: diff
 ---
 
-# diff
 
-The **diff** operator calculates the rate of change in a field between consecutive rows. To produce results, diff requires that a specified field contain numeric data; any non-numerical values are removed from the search results.
+
+The diff operator calculates the rate of change in a field between consecutive rows. To produce results, diff requires that a specified field contain numeric data; any non-numerical values are removed from the search results.
 
 Diff does not sort data but instead operates on rows in the order that they appear in the input stream, subtracting the number in a field from the number in the same field in the previous line.
 
@@ -14,11 +16,11 @@ Adding a group by function to a diff operator query calculates the difference 
 
 ## Syntax
 
-* `diff\<fiel\> [as\<fiel\>] [by\<field\>,\<field\>, ...]`
+* `diff <field> [as <field>] [by <field1>, <field2>, ...]`
 
-## Rules
+**Rules**
 
-* An alias for diff is optional. When an alias is not provided, \_diff
+* An alias for diff is optional. When an alias is not provided, _diff
     is the default alias.
 * Specified fields must contain numeric values.
 * If a row contains non-numeric values, that row will be
@@ -29,7 +31,7 @@ Adding a group by function to a diff operator query calculates the difference 
 * To add a query that includes a diff operator to a Dashboard, you
     must add a group by function before the diff operator.
 
-## Examples
+**Examples**
 
 **Using diff to calculate the difference of a quantity between time
 points.** 

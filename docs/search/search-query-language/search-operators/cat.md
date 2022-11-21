@@ -1,17 +1,17 @@
 ---
 id: cat
+title: cat Search Operator
+sidebar_label: cat
 ---
 
-# cat
 
-You can use the `cat` operator to view the contents of a lookup table. 
 
-The `cat` operator is not supported in live dashboards or scheduled searches.
+You can use the cat operator to view the contents of a lookup table. Not supported in live dashboards or scheduled searches.
 
 ## Syntax
 
 ```sql
-cat path://”<path-to-table>” 
+cat path://”<path-to-table>”
 ```
 
 Where:
@@ -29,6 +29,3 @@ To determine the path to a lookup table, highlight the row for the table in the 
 If your lookup table is very large, it may take a few minutes to display.
 
 You can export query results in the **Messages** tab of the search results. Click the gear icon and select an export option.
-
-  
-    

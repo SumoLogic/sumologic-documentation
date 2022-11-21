@@ -105,9 +105,9 @@ Before proceeding, verify that the Active Directory module is available. The Act
 
 In order to collect files, download the following scripts:
 
-* [adQueryDS.ps1](https://help.sumologic.com/@api/deki/files/2512/adQueryDS.ps1?revision=1)  - Core functions that are leveraged by the other scripts
-* [adObjectCollector.ps1](https://help.sumologic.com/@api/deki/files/1979/adObjectCollector.ps1?revision=1)  - Active Directory object collector
-* [domainCollector.ps1](https://help.sumologic.com/@api/deki/files/1981/domainCollector.ps1?revision=1) - Active Directory domain collector
+* [adQueryDS.ps1](/files/adQueryDS.ps1)  - Core functions that are leveraged by the other scripts
+* [adObjectCollector.ps1](/files/adObjectCollector.ps1)  - Active Directory object collector
+* [domainCollector.ps1](/files/domainCollector.ps1) - Active Directory domain collector
 
 These scripts should be deployed on a machine that is part of the domain where the log files exist. After deploying the scripts, you'll need to configure a script source on Sumo Logic for **domainCollector.ps1** and another script source for **adObjectCollector.ps1**.
 
@@ -158,9 +158,9 @@ To configure a script source, do the following:
 
 1. In Sumo Logic, select** Manage Data > Collection > Collection**.
 2. Find the name of the installed collector to which you'd like to add a Source. Click **Add...** then choose** Add Source **from the pop-up menu.
-3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector.
+3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 4. **Name**. Enter **DomainCollector** or **ADObjects**, depending on which script you are configuring. Description is optional.
-5. **Source Host** (optional). Enter the hostname or the IP address of the machine. The hostname is stored in a searchable field called **_sourceHost. **The hostname can be a maximum of 128 characters.
+5. **Source Host** (optional). Enter the hostname or the IP address of the machine. The hostname is stored in a searchable field called `_sourceHost`. The hostname can be a maximum of 128 characters.
 6. **Source Category**. Enter a Source Category following the [Best Practices](/docs/send-data/best-practices) that allows you to include both the logs from these scripts and the logs from your Windows Event logs from the Domain Controller(s). For example, `DC/Windows/adObjects`, `DC/Windows/domainCollector`, and `DC/Windows/Event`. This will allow you to specify a query like `sourceCategory=DC/Windows/*` to bring in all AD-related logs.
 7. **Frequency.** Select a short time for testing (for example, every 5 minutes), then change it to a longer interval once you confirm it’s working.
 
@@ -181,7 +181,7 @@ The **Frequency** option should be set according to your environment. We use a s
 5. Click the icon next to **Processing Rules** to expand the dialog.
 6. Click **Add Rule**.
 7. **Name**. Enter a name for the processing rule (for example, domainCollector).
-8. **Filter**. Enter the following filters to exclude command outputs from being logged. \
+8. **Filter**. Enter the following filters to exclude command outputs from being logged.
 `.*domainCollector\.ps1.* \
 .*adObjectCollector\.ps1.* \
 .*adQueryDS\.ps1.*`

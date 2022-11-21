@@ -1,8 +1,10 @@
 ---
 id: limit
+title: limit Search Operator
+sidebar_label: limit
 ---
 
-# limit
+
 
 The limit operator reduces the number of raw messages or aggregate results returned. If you simply query for a particular term, for example "error" without using an aggregation operator such as group by, limit will reduce the number of raw messages returned. If you first use group-by or other aggregation operator, the limit operator will reduce the number of grouped results instead.
 
@@ -16,18 +18,18 @@ Sumo Logic Apps often use the limit operator in queries to display system data 
 limit #
 ```
 
-## Rules
+**Rules**
 
 * The limit operator supports requests for up to 10,000 results. You can't use "limit 10001" or more.
 
-## Examples
+**Examples**
 
 **Top 10 errors.**
 
 In this example, we simply query for the term "error" without using an aggregation operator, and limit will reduce the number of raw messages returned to 10.
 
 ```sql
-error * 
+error *
 | limit 10
 ```
 
@@ -67,4 +69,4 @@ which can be displayed in a bar chart like this:
 
 ![Limit](/img/search/searchquerylanguage/search-operators/Limit.png)
 
-See [Sort](sort.md) operator for more information.
+See [Sort](#sort) operator for more information.

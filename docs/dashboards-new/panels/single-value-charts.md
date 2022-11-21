@@ -1,8 +1,8 @@
 ---
 id: single-value-charts
+title: Single Value Charts
+description: Displays the first record of your search results.
 ---
-
-# Single Value Charts
 
 You can use single value charts to display results for a search or metric query as a single value, for at-a-glance analysis. This page shows you how to create and tailor single value charts for searches. For information on single value charts for metrics, see [Create and Tailor Single Value Metrics Charts](/docs/metrics/metric-charts).
 
@@ -28,18 +28,18 @@ To add a panel with a single value chart:
 
     **Metrics query:**
 
-    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts](/docs/metrics/metric-queries-alerts) to ensure successful results. By default, the query builder is set
+    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries](/docs/metrics/metrics-queries) to ensure successful results. By default, the query builder is set
     to **Logs**.
 
     ![Metrics selection for query builder.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
-    To create a metrics query utilize the [Metrics Query Builder](../../metrics/metric-queries-alerts/metrics-explorer.md).   
-      
+    To create a metrics query utilize the [Metrics Query Builder](/docs/metrics/metrics-queries/metrics-explorer.md).   
+
     ![new single value chart metrics.png](/img/dashboards-new/panels/single-value-charts/new-single-value-chart-metrics.png)
 
 1. [Modify the chart](./modify-chart.md) as desired.
 
-1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard. 
+1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.
 
     ![Add to Dashboard button.png](/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png)
 
@@ -58,4 +58,4 @@ The boolean single value chart would look like the following.
 
 ## Sparkline
 
-The **Sparkline** option is available for metrics and logs queries. A log query requires your query to have a [timeslice](../../search/search-query-language/search-operators/timeslice-joinresults.md) operation and you will need to [sort](../../search/search-query-language/search-operators/sort.md) the timeslice as part of the query for the sparkling to render correctly.
+The **Sparkline** option is available for metrics and logs queries. A log query requires your query to have a [timeslice](/docs/search/search-query-language/search-operators/timeslice) operation and you will need to [sort](/docs/search/search-query-language/search-operators/sort) the timeslice as part of the query for the sparkling to render correctly.

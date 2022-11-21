@@ -87,7 +87,7 @@ To create a PagerDuty V3 Webhook, do the following:
     3. For **Scope**, select the desired service or team.
     4. Enter a **Description**.
     5. For **Event Subscription**, select which events you want to send a webhook.
-5. Click **Add Webhook**. \
+5. Click **Add Webhook**.
 
 
 For more information, see [https://support.pagerduty.com/docs/webhooks](https://support.pagerduty.com/docs/webhooks).
@@ -109,7 +109,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 3.png "image_tooltip")
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 
 
 3. To install the app, complete the following fields.
@@ -127,7 +127,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing PagerDuty V3 Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
 :::
 
 ### Overview
