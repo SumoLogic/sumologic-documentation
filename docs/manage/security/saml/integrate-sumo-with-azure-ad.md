@@ -1,5 +1,5 @@
 ---
-id: integrate-azure-ad
+id: integrate-sumo-with-azure-ad
 title: Integrate Sumo with Azure AD
 ---
 
