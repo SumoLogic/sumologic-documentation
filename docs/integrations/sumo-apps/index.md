@@ -1,5 +1,5 @@
 ---
-id: index
+slug: /integrations/sumo-apps
 title: Apps for Sumo Logic
 description: Docs for apps that help you monitor your Sumo Logic org.
 ---

@@ -14,7 +14,7 @@ Sumo Logic’s serverless solution integrates with Azure Monitor, enabling users
 
 * [*Supported metrics with Azure Monitor*](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-supported-metrics)
 
-* [*Supported services, schemas, and categories for Azure Diagnostic Logs*](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-diagnostic-logs-schema)
+* [*Supported categories for Azure Monitor resource logs*](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/resource-logs-categories)
 
 ## Solution overview
 

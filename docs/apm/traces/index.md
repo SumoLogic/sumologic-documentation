@@ -1,6 +1,6 @@
 ---
 slug: /apm/traces
-title: Monitoring Apps and Microservices with Sumo Logic Traces
+title: Traces
 sidebar_label: Traces
 description: See how your application is behaving with trace analytics.
 ---
@@ -14,6 +14,8 @@ Sumo Logic Application Monitoring and Observability provides transactional int
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-In this section, we will introduce the following concepts:
+## Monitoring Apps and Microservices with Sumo Logic Traces
+
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

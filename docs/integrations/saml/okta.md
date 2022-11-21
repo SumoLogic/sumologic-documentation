@@ -285,7 +285,7 @@ end_time = 1436377600000
 
 ### Step 5: Configure an Installed Collector
 
-To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/docs/releasenotes/collector). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under `config/wrapper.conf`, and look for the variable `wrapper.java.command`.
+To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/release-notes-collector). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under `config/wrapper.conf`, and look for the variable `wrapper.java.command`.
 
 Configure an [Installed Collector](/docs/send-data/Installed-Collectors) on a Linux or Windows machine. By default the Collector will come with a Java Runtime Environment. To ensure that SumoJanus can locate Java, you may need to update the .bat or .bash file, as described below.
 
@@ -355,7 +355,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

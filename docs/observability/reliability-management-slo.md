@@ -145,7 +145,7 @@ The heart of an SLO is the queries used for the SLI query types, including metri
 
 **General Information**
 
-For general information on querying metrics and logs, see [Overview of Metrics in Sumo](/docs/metrics/introduction-metrics/overview-sumo-metrics) and [About Search Basics](/docs/search/get-started-with-search/search-basics/about-search-basics).
+For general information on querying metrics and logs, see [Overview of Metrics in Sumo](/docs/metrics/introduction) and [About Search Basics](/docs/search/get-started-with-search/search-basics/about-search-basics).
 
 A preview runs the query in real-time to help test and refine results, with a time range to see broader results as needed.
 
@@ -210,7 +210,7 @@ Follow the instructions below based on the query type:
    <td>For <strong>Ratio-based</strong> definition, define queries for the successful or unsuccessful events to calculate against total events:
 <ol>
 <li>Specify Total Events query.</li>
-<li>Build a query using metrics and filters. See <a href="/docs/metrics/introduction-metrics/overview-sumo-metrics">Overview of Metrics in Sumo</a>.</li>
+<li>Build a query using metrics and filters. See <a href="/docs/metrics/introduction">Overview of Metrics in Sumo</a>.</li>
 <li>Select the values to use from <strong>Number of data points </strong>or <strong>Metric value</strong>.</li>
 <li>Configure the Total Events, including a query and values, to use <strong>Number of data points</strong> or <strong>Metric value</strong>. You can copy and paste the previous query, removing filters to get the total.</li>
 </ol>
@@ -219,7 +219,7 @@ Follow the instructions below based on the query type:
     For <strong>Threshold-based</strong> definitions, which calculate against success criteria:
 <ol>
 <li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
-<li>Build a query using metrics and filters. See <a href="/docs/metrics/introduction-metrics/overview-sumo-metrics">Overview of Metrics in Sumo</a> for more information.</li>
+<li>Build a query using metrics and filters. See <a href="/docs/metrics/introduction">Overview of Metrics in Sumo</a> for more information.</li>
 <li>For <strong>Use values from</strong>, it always uses the Metric value.</li>
 <li>For <strong>Success Criteria</strong> for <strong>Avg</strong>, <strong>Min</strong>, <strong>Max</strong>, or <strong>Sum</strong> of the selected signal type (such as latency) which must be <strong>greater than</strong>, <strong>greater than or equal to</strong>, <strong>less than</strong>, or <strong>less than equal to</strong> an amount you enter (positive or negative number).</li>
 </ol>

@@ -103,7 +103,7 @@ connection_notifications = [
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
 
-    For overriding payload for different connection types, refer to this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+    For overriding payload for different connection types, refer to this [document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 
 
 ```bash title="Email Notifications Example"
@@ -139,30 +139,16 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 
 This section demonstrates how to install the Oracle App.
 
-To install the app:
-
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
+1. From the App Catalog, search for and select the app.
+1. Select the service version you're using and click Add to Library. Version selection applies only to a few apps currently. For more information, see the Install the Apps from the Library.
+1. To install the app, complete the following fields.
+   * App Name. You can retain the existing name or enter the app's name of your choice. 
+   * Advanced. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
+1. Click Add to Library.
 
-Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
-
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.**
-        * Choose **Enter a Custom Data Filter**, and enter a custom Oracle cluster filter. Examples:
-            1. For all Oracle clusters \
-`db_cluster=*`.
-            2. For a specific cluster \
-`db_cluster=oracle.dev.01`.
-            3. Clusters within a specific environment, \
-`db_cluster=oracle.dev.01` and `environment=prod \
-`(This assumes you have set the optional environment tag while configuring collection).
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+Once an app is installed, it will appear in your **Personal** folder, or other folder that you specify. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
@@ -171,7 +157,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 :::tip Filter with template variables  
 
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
 
 :::
 

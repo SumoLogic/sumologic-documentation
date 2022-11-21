@@ -41,7 +41,7 @@ Sumo Logic has several deployment types, which vary by geographic location and t
 
 ## Service Map API
 
-The Service Map API allows you to fetch a graph representation of the Service Map, which is a high-level view of your application environment, automatically derived from tracing data. For more information see [Service Map](https://help.sumologic.com/Traces/Working-with-Tracing-data/01Service_Map#service-map).
+The Service Map API allows you to fetch a graph representation of the Service Map, which is a high-level view of your application environment, automatically derived from tracing data. For more information see [Service Map](/docs/apm/traces/Working-with-Tracing-data/Service-Map).
 
 
 ### Endpoints for API access  
@@ -396,7 +396,7 @@ Select the documentation link for your deployment:
 
 ## Traces API
 
-The Traces API allows you to browse traces collected in the system. You can execute queries to find traces matching provided search criteria as well as gather detailed information about individual traces and spans. For more information see [View and investigate traces](https://help.sumologic.com/Traces/Working-with-Tracing-data/View-and-investigate-traces).
+The Traces API allows you to browse traces collected in the system. You can execute queries to find traces matching provided search criteria as well as gather detailed information about individual traces and spans. For more information see [View and investigate traces](/docs/apm/traces/Working-with-Tracing-data/View-and-investigate-traces).
 
 
 ### Endpoints for API access  

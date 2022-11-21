@@ -12,7 +12,7 @@ Fields are extracted from the time you create your FER moving forward. Theref
 For best practices on naming your fields, see [Field Naming Convention](field-naming-convention.md). 
 
 :::important
-You need the **Manage field extraction rules** [role capability](../users-and-roles/roles/role-capabilities.md) to create a field extraction rule. 
+You need the **Manage field extraction rules** [role capability](../users-roles/roles/role-capabilities.md) to create a field extraction rule. 
 :::
 
 ![FER page.png](/img/field-extraction-rules/fer-page.png)
@@ -78,6 +78,6 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 ## Guide contents
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

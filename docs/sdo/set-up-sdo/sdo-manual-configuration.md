@@ -1,18 +1,18 @@
 ---
 id: sdo-manual-configuration
-title: Sumo Logic SDO Manual Configuration
+title: Software Development Optimization Manual Configuration
 sidebar_label: Manual Configuration
 description: Learn how to set up the Software Development Optimization (SDO) Solution. You will manually configure collection and install apps for tool integration, create field extraction rules (FERs) for each supported tool, and install the SDO app.
 ---
 
-These instructions help you prepare and set up the Software Development Optimization (SDO) Solution. You will manually configure collection and install apps for tool integration, create field extraction rules (FERs) for each supported tool, and install the SDO app.
+These instructions help you prepare and set up the Software Development Optimization (SDO) Solution manually, without using Terraform. You will manually configure collection and install apps for tool integration, create field extraction rules (FERs) for each supported tool, and install the SDO app.
 
 ## Before you begin
 Before setting up the SDO solution, you need to complete the following tasks:
 
-* Create or collect API Keys and credentials for Jira, Github, GitLab, Jenkins, Bitbucket, CircleCI, and Opsgenie with Webhook creation capabilities.
-* Get access to Jenkins with Manage Plugins permissions.
-* Make sure you have access to the Sumo logic console. The user account associated with a Sumo Logic role needs the following permissions:
+* Ensure that you have permissions to configure software and platforms used in your DevOps toolchain that will emit data to Sumo using webhooks (for example, Jira, Github, GitLab, Bitbucket, CircleCI, PagerDuty, Opsgenie, and so on).
+* If you use Jenkins, ensure that you have access to Jenkins with Manage Plugins permissions.
+* Make sure you have access to the Sumo logic web app. The user account associated with a Sumo Logic role needs the following permissions:
 
   * Manage field extraction rules
   * View Fields

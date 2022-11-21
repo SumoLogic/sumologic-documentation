@@ -6,7 +6,7 @@ description: Field Extraction Rules (FER) tell Sumo Logic which fields to parse 
 
 You can create a field extraction rule of your own from scratch by following the instructions below. We also provide [data-source-specific templates](docs/manage/field-extractions/fer-templates/index.md) for AWS, Apache, and more.
 
-You need the **Manage field extraction rules** [role capability](../users-and-roles/roles/role-capabilities.md) to create a field extraction rule.
+You need the **Manage field extraction rules** [role capability](../users-roles/roles/role-capabilities.md) to create a field extraction rule.
 
 :::note
 Fields specified in field extraction rules are automatically added and enabled in your [Fields](docs/manage/fields.md) table schema.
@@ -32,7 +32,7 @@ To create a Field Extraction Rule:
         * Time - During a search when using **Auto Parse Mode** from [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md).
    * **Scope**. Select either **All Data** or **Specific Data**. When specifying data the options for the scope differ depending on when the rule is applied.
      * For an **Ingest Time** rule, type a [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that points to the subset of logs you'd like to parse. Think of the Scope as the first portion of an ad hoc search, before the first pipe (`|`). You'll use the Scope to run a search against the rule. Custom metadata fields are not supported here, they have not been indexed to your data yet at this point in collection.
-     * For a **Run Time** rule, define the scope of your JSON data. You can define your JSON data source as a [Partition](/docs/manage/partitions-and-data-tiers) Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) that describes your JSON data. Think of the Scope as the first portion of an ad hoc search, before the first pipe (`|`). You'll use the Scope to run a search against the rule. You cannot use keywords like “info” or “error” in your scope.
+     * For a **Run Time** rule, define the scope of your JSON data. You can define your JSON data source as a [Partition](/docs/manage/partitions-data-tiers) Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) that describes your JSON data. Think of the Scope as the first portion of an ad hoc search, before the first pipe (`|`). You'll use the Scope to run a search against the rule. You cannot use keywords like “info” or “error” in your scope.
 
     :::note
     Always set up JSON auto extraction (Run Time field extraction) on a specific Partition name (recommended) or a particular Source. Failing to do so might cause the auto parsing logic to run on data sources where it is not applicable and will add additional overhead that might deteriorate the performance of your queries.
@@ -103,10 +103,6 @@ parse "user=\"*\" action=\"*\" sessionId=\"*\"" as user, action, sessionid
 
 The following operators can be used as part of the **Parse Expression** in an Ingest Time Field Extraction Rule.
 
-:::important
-The **multi** and **auto** options are not supported in FERs.
-:::
-
 * parse regex
 * parse anchor
 * parse nodrop
@@ -116,10 +112,16 @@ The **multi** and **auto** options are not supported in FERs.
 * keyvalue
 * num
 
+:::note
+The **multi** and **auto** options are not supported in FERs.
+:::
+
 
 ## Limitations
 
-Ingest Time FERs have the following limitations.
+The `parse multi` operator is not supported in FERs.
+
+Ingest Time FERs have the following limitations:
 
 * There is a limit of 50 Ingest Time rules and 200 fields. [Fields](docs/manage/fields.md) created as log metadata and from Ingest Time rules share the same quota of 200 fields. You can manage your fields on the [Fields](docs/manage/fields.md) page.
 * Ingest Time rule expressions are limited to a maximum of 16k (16,384) characters.

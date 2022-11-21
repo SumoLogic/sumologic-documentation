@@ -26,16 +26,14 @@ You can use the alternate term "extract":
 ## Options
 
 * `field=<field_name>` 
-
     The `field=fieldname` option allows you to specify a field to parse other than the default message. For details, see [Parse field](parse-field-option.md). 
-
 * `nodrop ` 
-
     The `nodrop` option forces results to also include messages that don't match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md)
-
 * `multi` 
-
     The `multi` option allows you to parse multiple values *within* a single log message.
+:::note
+`parse multi` is not supported in Field Extraction Rules (FERs).
+:::
 
 ## Rules
 
@@ -49,7 +47,7 @@ You can use the alternate term "extract":
 
 * Multiple parse expressions can be written with shorthand using comma-separated terms.
 
-* Can be used with the [parse anchor](parse-predictable-patterns-using-an-anchor.md) operator.
+* Can be used with the [parse anchor](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor) operator.
 
 * Nesting named capture groups is not supported.
 
@@ -136,6 +134,10 @@ But if you mean to also capture whether it is an "accepted" or a "denied" into a
 
 ### Parse multi
 
+:::note
+`parse multi` is not supported in Field Extraction Rules.
+:::
+
 In addition to parsing a field value, the **multi** option (also called parse multi) allows you to parse multiple values *within* a single log message. This means that the **multi** keyword instructs the parse regex operator to not just look for the first value in a log message, but for all of the values, even in messages with a varying number of values. As a part of this process, the **multi** keyword creates copies of each message so that each individual value in a field can be counted.
 
 For example, in the Amazon VPC flow logs you can identify the messages with the same source and destination IP addresses using parse regex multi.
@@ -175,4 +177,4 @@ Use the following parse regex expression to match the "error" in the logs. The *
 | Error         | Line2: The following exception was reported: Error in log |
 | error         | Line1: The following exception was reported: error in log |
 
-You can also use the [toLowerCase and toUpperCase](../operators#toLowerCase-and-toUpperCase) operators. 
+You can also use the [toLowerCase and toUpperCase](/docs/search/search-query-language/search-operators/tolowercase-touppercase) operators. 

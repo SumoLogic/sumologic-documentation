@@ -19,6 +19,19 @@ The VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. You 
 
 Each method has advantages. Using an AWS S3 source is more reliable, while using a CloudWatch Logs source with the CloudFormation template allows you to optimize your logs. With the CloudWatch Logs source  and CloudFormation template, you can customize logs by adding more information and filtering out unwanted data. The Security Groups dashboard utilizes customized logs that are generated from the Lambda function and created with the CloudFormation template from logs sent to CloudWatch Logs.
 
+## Field Extraction Rule for VPC Flow logs
+Here is an example [Field Extraction Rule](docs/manage/field-extractions/create-field-extraction-rule.md) for VPC Flow logs.
+```
+Rule Name: VPCFlowLogFER
+Applied at: Ingest Time
+Scope (Specific Data):
+_sourceCategory=<Source category for respective VPC flow log source>
+Parse Expression:
+json "logStream", "logGroup", "message", "direction" as logStream, logGroup, msg, direction nodrop
+| if (_raw matches "{*", msg, _raw) as msg
+| parse field=msg "* * * * * * * * * * * * * *" as version,accountID,interfaceID,src_ip,dest_ip,src_port,dest_port,Protocol,Packets,bytes,StartSample,EndSample,Action,status nodrop
+```
+
 ## Collect Amazon VPC Flow Logs from CloudWatch using CloudFormation
 
 This section has instructions for collecting VPC Flow Logs using a CloudFormation template. Alternatively, you can [Collect Amazon VPC Flow Logs using AWS S3 Source](#Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source).
@@ -145,7 +158,7 @@ This section has instructions for collecting Amazon VPC Flow Logs using an AWS S
 1. [Grant Access to an AWS S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
 2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
 3. When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors#Create-a-Hosted-Collector).
-4. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic. When you configure the S3 source:
+4. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source#AWS-Sources) for the S3 Source to Sumo Logic. When you configure the S3 source:
     1. In the **Advanced Options for Logs** section, uncheck the **Detect messages spanning multiple lines** option.
     2. In the **Processing Rules for Logs** section, add an **Exclude messages that match** processing rule to ignore the following file header lines: `version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`.
 
@@ -159,7 +172,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 

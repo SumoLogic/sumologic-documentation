@@ -45,9 +45,9 @@ The following expression divides `error_count` by `user_count`.
 
 `error_count / user_count`
 
-## \<
+## <
 
-The less than (\<) character returns “true” if the expression is less than the other expression.
+The less than (<) character returns “true” if the expression is less than the other expression.
 
 **Syntax**
 
@@ -63,9 +63,9 @@ The less than (\<) character returns “true” if the expression is less than t
 
 `null < null  // false`
 
-## \<=
+## <=
 
-The is less than or equal to (\<=) character returns true if the expression is less than or equal to the other expression.
+The is less than or equal to (<=) character returns true if the expression is less than or equal to the other expression.
 
 **Syntax**
 
@@ -112,13 +112,13 @@ The double equal sign (==) function returns “true” if the two expressions ar
 
 `expr1 == expr2`
 
-## \\>
+## >
 
-The greater than \>) function returns “true” if one expression is greater than the other expression.
+The greater than (>) function returns “true” if one expression is greater than the other expression.
 
 **Syntax**
 
-`expr1\> expr2 `
+`expr1 > expr2 `
 
 **Examples**
 
@@ -131,13 +131,13 @@ The greater than \>) function returns “true” if one expression is greater th
 `null > null   // false`  
  
 
-## \>=
+## >=
 
-The greater than or equal to \>=) function returns “true” if one expression is greater than or equal to another expression.
+The greater than or equal to (>=) function returns “true” if one expression is greater than or equal to another expression.
 
 **Syntax**
 
-`expr1\>= expr2 `
+`expr1 >= expr2 `
 
 **Examples**
 
@@ -222,7 +222,7 @@ Returns the inverse sine of the supplied argument.
 
 **Syntax**
 
-`asin\<\>)`
+`asin(<x>)`
 
 **Example**
 
@@ -258,7 +258,7 @@ Returns the four-quadrant inverse tangent of the two arguments supplied.
 
 Returns “true” if a specified array contains a particular value. 
 
-CSE rules use `array_contains` statements to look for a value in a Record field. This is useful if you want to check a Record’s `listMatches field` for [Match Lists](about-cse-rules.md) or threat intel list matches. You can also check the contents of the `fieldsTags` field to see if matches a keyword tag or schema key tag value.
+CSE rules use `array_contains` statements to look for a value in a Record field. This is useful if you want to check a Record’s `listMatches field` for [Match Lists](about-cse-rules.md) or threat intel list matches. You can also check the contents of the `fieldTags` field to see if matches a keyword tag or schema key tag value.
 
 **Syntax for matching to lists**
 
@@ -276,9 +276,9 @@ When you reference a threat intel  list using array_contains, you must substitut
 
 **Syntax for matching to a keyword tag**
 
-The syntax for checking to see if the the `fieldsTag` field contains a particular keyword tag is: 
+The syntax for checking to see if the the `fieldsTag` field contains a particular keyword tag is:
 
-`array_contains(fieldsTags["field"], "keyword-tag")`
+`array_contains(fieldTags["user_username"], "keyword-tag")`
 
 where:
 
@@ -287,9 +287,9 @@ where:
 
 **Syntax for matching to a schema key tag**
 
-The syntax for checking to see if the the `fieldsTag` field contains a particular schema key tag is: 
+The syntax for checking to see if the the `fieldTag` field contains a particular schema key tag is:
 
-`array_contains(fieldsTags["field"], "schema-key:schema-value")`
+`array_contains(fieldTags["user_username"], "schema-key:schema-value")`
 
 where:
 
@@ -685,11 +685,11 @@ to `size` in the CSE rules syntax.
 
 **Syntax**
 
-`jsonArraySize(field)\> value`
+`jsonArraySize(field) > value`
 
 **Example**
 
-`| where jsonArraySize(field)\> 5`
+`| where jsonArraySize(field) > 5`
 
 ## json
 
@@ -849,7 +849,7 @@ Uses Luhn’s algorithm to check message logs for strings of numbers that may be
 
 **Syntax**
 
-`luhn(\<strin\>")`
+`luhn(<string>")`
 
 **Example**
 
@@ -976,7 +976,7 @@ Returns the number of elements in the input array.
 
 **Example**
 
-`size(listMatches)\> 5`
+`size(listMatches) > 5`
 
 ## sqrt
 

@@ -1,7 +1,6 @@
 ---
 id: set-up-traces-collection-for-other-environments
-title: Set up traces collection for other environments
-sidebar_label: Set up traces collection for other environments
+title: Set up Traces Collection for Other Environments
 description: Sumo Logic leverages OpenTelemetry standards for trace collection.
 ---
 
@@ -19,6 +18,25 @@ Depending on the architecture of the environment, OpenTelemetry Collector can be
 Due to the fact that vital metadata (information about the host and its OS) is available only for collectors inside individual node/host, we recommend that instances of OpenTelemetry Collector should be run at least on each of the nodes/hosts as **agents**. Doing so allows you to collect metadata tags locally and also in case of high volume environments, to buffer the messages, reducing the number of requests for each individual collector instance.
 
 ![OpenTelemetry Deployment](/img/traces/OpenTelemetry-Deployment.png)
+
+## Prerequisites
+
+:::sumo availability
+
+<table>
+<tr>
+<td>Account Type</td>
+<td>Account Level</td>
+</tr>
+<tr>
+<td rowspan="2">Credits</td>
+<td>Enterprise Operations and Enterprise Suite</td>
+</tr>
+<tr>
+<td>Essentials get up to 5 GB a day </td>
+</tr>
+</table>
+:::
 
 ## Installation steps for OpenTelemetry Collector Gateway
 

@@ -47,6 +47,9 @@ If you're using Cassandra in a Kubernetes environment, create the fields:
 * `pod_labels_environment`
 * `pod_labels_db_system`
 * `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
+
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -57,6 +60,8 @@ If you're using Cassandra in a non-Kubernetes environment, create the fields:
 * `db_system`
 * `db_cluster`
 * `pod`
+* `db_cluster_address`
+* `db_cluster_port`
 
 </TabItem>
 </Tabs>
@@ -76,7 +81,7 @@ If you're using Cassandra in a non-Kubernetes environment, create the fields:
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).
 
-The diagram below illustrates how data is collected from Cassandra in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.<br/><img src={useBaseUrl('img/integrations/databases/cassandra2.png')} alt="cassandra" />
+The diagram below illustrates how data is collected from Cassandra in a Kubernetes environment. In the architecture shown below, make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.<br/><img src={useBaseUrl('img/integrations/databases/cassandra2.png')} alt="cassandra" />
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Cassandra. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Jolokia2 input plugin to obtain metrics. For simplicity, the diagram doesn’t show the input plugins.
 
@@ -93,76 +98,84 @@ Follow the steps listed below to collect Cassandra metrics from a Kubernetes env
 
 1. Set up your [Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf).
 2. On your Cassandra Pods, add the following annotations:
-```sql
-annotations:
-  telegraf.influxdata.com/class: sumologic-prometheus
-  prometheus.io/scrape: "true"
-  prometheus.io/port: "9273"
-  telegraf.influxdata.com/inputs: |+
-[[inputs.jolokia2_agent]]
-  urls = ["http://localhost:8778/jolokia"]
-  name_prefix = "cassandra_java_"
-[inputs.jolokia2_agent.tags]
-  environment="prod"
-  component="database"
-  db_system="cassandra"
-  db_cluster="cassandra_on_premise"
-  dc = "IDC1"
-  [[inputs.jolokia2_agent.metric]]
-    name  = "Memory"
-    mbean = "java.lang:type=Memory"
-  [[inputs.jolokia2_agent.metric]]
-    name  = "GarbageCollector"
-    mbean = "java.lang:name=*,type=GarbageCollector"
-    tag_keys = ["name"]
-    field_prefix = "$1_"
-[[inputs.jolokia2_agent]]
-  urls = ["http://localhost:8778/jolokia"]
-  name_prefix = "cassandra_"
-[inputs.jolokia2_agent.tags]
-  environment="prod"
-  component="database"
-  db_system="cassandra"
-  db_cluster="cassandra_on_premise"
-  dc = "IDC1"
-  [[inputs.jolokia2_agent.metric]]
-    name  = "TableMetrics"
-    mbean = "org.apache.cassandra.metrics:name=*,scope=*,keyspace=*,type=Table"
-    tag_keys = ["name", "scope","keyspace"]
-    field_prefix = "$1_"
-  [[inputs.jolokia2_agent.metric]]
-    name = "DroppedMessageMetrics"
-    mbean = "org.apache.cassandra.metrics:name=*,scope=*,type=DroppedMessage"
-    tag_keys = ["name", "scope"]
-    field_prefix = "$1_"
-  [[inputs.jolokia2_agent.metric]]
-    name = "ClientMetrics"
-    mbean = "org.apache.cassandra.metrics:type=Client,name=*"
-    tag_keys = ["name"]
-    field_prefix = "$1_"
-  [[inputs.jolokia2_agent.metric]]
-    name = "ThreadPoolMetrics"
-    mbean = "org.apache.cassandra.metrics:type=ThreadPools,path=*,scope=*,name=*"
-    tag_keys = ["name", "scope", "path"]
-    field_prefix = "$1_"
-  [[inputs.jolokia2_agent.metric]]
-    name = "CacheMetrics"
-    mbean = "org.apache.cassandra.metrics:type=Cache,scope=*,name=*"
-    tag_keys = ["name", "scope"]
-    field_prefix = "$1_"
-  [[inputs.jolokia2_agent.metric]]
-    name = "CommitLogMetrics"
-    mbean = "org.apache.cassandra.metrics:type=CommitLog,name=*"
-    tag_keys = ["name"]
-    field_prefix = "$1_"
 ```
-Enter in values for the following parameters:
+annotations:
+ telegraf.influxdata.com/class: sumologic-prometheus
+ prometheus.io/scrape: "true"
+ prometheus.io/port: "9273"
+ telegraf.influxdata.com/inputs: |+
+[[inputs.jolokia2_agent]]
+ urls = ["http://localhost:8778/jolokia"]
+ name_prefix = "cassandra_java_"
+[inputs.jolokia2_agent.tags]
+ environment="prod"
+ component="database"
+ db_system="cassandra"
+ db_cluster="cassandra_on_premise"
+ dc = "IDC1"
+ [[inputs.jolokia2_agent.metric]]
+   name  = "Memory"
+   mbean = "java.lang:type=Memory"
+ [[inputs.jolokia2_agent.metric]]
+   name  = "GarbageCollector"
+   mbean = "java.lang:name=*,type=GarbageCollector"
+   tag_keys = ["name"]
+   field_prefix = "$1_"
+[[inputs.jolokia2_agent.metric]]
+  name=”OperatingSystem”
+  mbean=”java.lang:type=OperatingSystem”
+  paths = [“FreePhysicalMemorySize", "AvailableProcessors", "SystemCpuLoad", "TotalPhysicalMemorySize", "TotalSwapSpaceSize", "SystemLoadAverage"]
+[[inputs.jolokia2_agent]]
+ urls = ["http://localhost:8778/jolokia"]
+ name_prefix = "cassandra_"
+[inputs.jolokia2_agent.tags]
+ environment="ENV_TO_BE_CHANGED"
+ component="database"
+ db_system="cassandra"
+ db_cluster="cassandra_on_premise"
+ db_cluster_address = “ENV_TO_BE_CHANGED”
+ db_cluster_port = “ENV_TO_BE_CHANGED”
+ dc = "IDC1"
+ [[inputs.jolokia2_agent.metric]]
+   name  = "TableMetrics"
+   mbean = "org.apache.cassandra.metrics:name=*,scope=*,keyspace=*,type=Table"
+   tag_keys = ["name", "scope","keyspace"]
+   field_prefix = "$1_"
+ [[inputs.jolokia2_agent.metric]]
+   name = "DroppedMessageMetrics"
+   mbean = "org.apache.cassandra.metrics:name=*,scope=*,type=DroppedMessage"
+   tag_keys = ["name", "scope"]
+   field_prefix = "$1_"
+ [[inputs.jolokia2_agent.metric]]
+   name = "ClientMetrics"
+   mbean = "org.apache.cassandra.metrics:type=Client,name=*"
+   tag_keys = ["name"]
+   field_prefix = "$1_"
+ [[inputs.jolokia2_agent.metric]]
+   name = "ThreadPoolMetrics"
+   mbean = "org.apache.cassandra.metrics:type=ThreadPools,path=*,scope=*,name=*"
+   tag_keys = ["name", "scope", "path"]
+   field_prefix = "$1_"
+ [[inputs.jolokia2_agent.metric]]
+   name = "CacheMetrics"
+   mbean = "org.apache.cassandra.metrics:type=Cache,scope=*,name=*"
+   tag_keys = ["name", "scope"]
+   field_prefix = "$1_"
+ [[inputs.jolokia2_agent.metric]]
+   name = "CommitLogMetrics"
+   mbean = "org.apache.cassandra.metrics:type=CommitLog,name=*"
+   tag_keys = ["name"] field_prefix = "$1_"
+```
+Enter in values for the following parameters (marked ENV_TO_BE_CHANGED above):
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Cassandra Input plugin. Please refer to [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Cassandra input plugin for Telegraf. As Telegraf will be run as a sidecar, the host should always be localhost.
    * In the input plugins section (`[[inputs.jolokia2_agent]]`):
       * `urls` - The URL to the Cassandra server. This can be a comma-separated list to connect to multiple Cassandra servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Cassandra input plugin for Telegraf.
    * In the tags section (`[[inputs.jolokia2_agent]]`):
       * `environment` - This is the deployment environment where the Cassandra cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `db_cluster` - Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used
+
 
 Here’s an explanation for additional values set by this configuration that we request you  do not modify, as they will cause the Sumo Logic apps to not function correctly.
 
@@ -174,8 +187,19 @@ Here’s an explanation for additional values set by this configuration that we 
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * `db_system: “cassandra”` - This value identifies the database system.
 
-  For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
+For example if your application uses `“cassandra-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=cassandra-prod.sumologic.com
+db_cluster_port=3306`.
+
+If your application connects directly to a given Cassandra node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration:
+`host=cassandra-prod.sumologic.com`.
+
+Pivoting to Tracing data from Entity Inspector is possible only for “Cassandra address” Entities.
+:::
+
+  See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 3. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 4. Verify metrics in Sumo Logic.
 
@@ -187,31 +211,47 @@ This section explains the steps to collect Cassandra logs from a Kubernetes envi
 1. Add labels on your Cassandra pods to capture logs from standard output on Kubernetes.
    1. Apply following labels to the Cassandra pods:
      ```sql
-     environment: "prod"
+     environment: "<Ex prod, stag>"
      component: "database"
      db_system: "cassandra"
      db_cluster: "<Your_Cassandra_Cluster_Name>"--Enter Default if you do not have one.
+     db_cluster_address: <your cluster’s hostname or ip address or service endpoint>
+     db_cluster_port: <database port>
      ```
      Please enter values for the following parameters:
      * `environment` - This is the deployment environment where the Cassandra cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
      * `db_cluster`- Enter a name to identify the Cassandra cluster. The cluster name will be shown in the Sumo Logic dashboards.
 
-    Here’s an explanation for additional values set by this configuration that we request you **do not modify** as this will cause the Sumo Logic apps to not function correctly.
+    **Do not modify the following values** as it will cause the Sumo Logic apps to not function correctly.
     * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
     * `db_system: “Cassandra”` - This value identifies the database system.
+    * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+    * `db_cluster_port` - Enter the database port. If not provided, a default port will be used
 
-    For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+:::note
+db_cluster_address and db_cluster_port should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+
+For example if your application uses `“cassandra-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows:
+`db_cluster_address=cassandra-prod.sumologic.com
+db_cluster_port=3306`
+
+If your application connects directly to a given Cassandra node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration:
+`host=cassandra-prod.sumologic.com`
+
+Pivoting to Tracing data from Entity Inspector is possible only for “Cassandra address” Entities.
+:::
+  For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 2. (Optional) Collecting Cassandra Logs from a Log File on Kubernetes.
    1. Determine the location of the Cassandra log file on Kubernetes. This can be determined from the Cassandra logback.xml for your Cassandra cluster along with the mounts on the Cassandra pods.
    2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
    3. Add the following annotation in addition to the existing annotations.
-   ```
+   ```sql
    annotations:
      tailing-sidecar: sidecarconfig;<mount>:<path_of_Cassandra_log_file>/  <Cassandra_log_file_name>
    ```
   Example:
-   ```
+   ```sql
    annotations:
      tailing-sidecar: sidecarconfig;data:/opt/bitnami/cassandra/logs/cassandra.log
    ```
@@ -222,7 +262,7 @@ This section explains the steps to collect Cassandra logs from a Kubernetes envi
    5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
    6. Verify logs in Sumo Logic.
 
-3. Add an FER to normalize the fields in Kubernetes environments. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
+3. Add an FER to normalize the fields in Kubernetes environments. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. This step is not needed if one is using application components solution terraform script. To do so:
    1. Go to **Manage Data > Logs > Field Extraction Rules**.
    2. Click the + Add button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear:
@@ -237,9 +277,9 @@ This section explains the steps to collect Cassandra logs from a Kubernetes envi
    * **Parse Expression**. Enter the following parse expression:
    ```sql
    if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-    | pod_labels_component as component
+   | pod_labels_component as component
    | pod_labels_db_system as db_system
-   | pod_labels_db_cluster as db_cluster
+   | if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
    ```
 5. Click **Save** to create the rule.
 
@@ -273,9 +313,9 @@ We use the Telegraf operator for Cassandra metric collection and Sumo Logic Inst
 
 This section provides instructions for configuring metrics collection for the Sumo Logic App for Cassandra.
 
-1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) section of the Sumo Logic documentation.
-2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source)Make a note of the **HTTP Source URL**.
-3. **Install Telegraf**. Use the[ following steps](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf) to install Telegraf.
+1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/Hosted-Collectors/Configure-Hosted-Collector) section of the Sumo Logic documentation.
+2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/hosted-collectors/HTTP-Source)Make a note of the **HTTP Source URL**.
+3. **Install Telegraf**. Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to install Telegraf.
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [jolokia2 input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
   Create or modify telegraf.conf and copy and paste the text below:  
@@ -300,8 +340,8 @@ This section provides instructions for configuring metrics collection for the Su
     field_prefix = "$1_"
 [[inputs.jolokia2_agent.metric]]
   name="OperatingSystem"
-mbean="java.lang:type=OperatingSystem"
-paths=["FreePhysicalMemorySize","AvailableProcessors","SystemCpuLoad","TotalPhysicalMemorySize","TotalSwapSpaceSize","SystemLoadAverage"]
+  mbean="java.lang:type=OperatingSystem"
+  paths=["FreePhysicalMemorySize","AvailableProcessors","SystemCpuLoad","TotalPhysicalMemorySize","TotalSwapSpaceSize","SystemLoadAverage"]
 [[inputs.jolokia2_agent]]
   urls = ["http://localhost:8778/jolokia"]
   name_prefix = "cassandra_"
@@ -310,6 +350,8 @@ paths=["FreePhysicalMemorySize","AvailableProcessors","SystemCpuLoad","TotalPhys
   component="database"
   db_system="cassandra"
   db_cluster="<Your_Cassandra_Cluster_Name>"
+  db_cluster_address = "ENV_TO_BE_CHANGED"
+  db_cluster_port = "ENV_TO_BE_CHANGED"
   dc = "IDC1"
   [[inputs.jolokia2_agent.metric]]
     name  = "TableMetrics"
@@ -349,16 +391,36 @@ paths=["FreePhysicalMemorySize","AvailableProcessors","SystemCpuLoad","TotalPhys
 ```
 
 Please enter values for the following parameters:
-
 * In the input plugins section, which is `[[inputs. jolokia2_agent]]`:
     * `urls` - The URL to the jolokia server. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Cassandra input plugin for Telegraf.
 * In the tags section, which is `[inputs.Cassandra.tags]`:
     * `environment` - This is the deployment environment where the Cassandra cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
     * `db_cluster` - Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
+    * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+    * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+
+Here’s an explanation for additional values set by this configuration that we request you do not modify, as they will cause the Sumo Logic apps to not function correctly.
+* In the tags section (`[inputs.jolokia2_agent.tags]`):
+    * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
+    * `db_system: “cassandra”` - This value identifies the database system.
+
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example if your application uses “cassandra-prod.sumologic.com:3306” as the connection string, the field values should be set as follows:
+`db_cluster_address=cassandra-prod.sumologic.com
+db_cluster_port=3306`
+
+If your application connects directly to a given Cassandra node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration:
+`host=cassandra-prod.sumologic.com`
+
+Pivoting to Tracing data from Entity Inspector is possible only for “Cassandra address” Entities.
+:::
+
 * In the output plugins section, which is `[[outputs.sumologic]]`:
-    * `url` - This is the HTTP source URL created in step 3. Please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
-* Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
-    * `data_format - “prometheus”` In the output plugins section, which is [[outputs.sumologic]]. Metrics are sent in the Prometheus format to Sumo Logic
+    * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
+* **Do not modify the following values** as it will cause the Sumo Logic apps to not function correctly.
+    * `data_format - “prometheus”` In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic
     * `db_system: “cassandra”` - In the input plugins section:  This value identifies the database system.
     * `component: “database”` - In the input plugins section: This value identifies application components.
 * For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more properties that can be configured in the Telegraf agent globally.
@@ -368,11 +430,9 @@ Once you have finalized your telegraf.conf file, you can start or reload the tel
 
 #### Configure Logs Collection
 
-This section provides instructions for configuring log collection for Cassandra running on a non-kubernetes environment for the Sumo Logic App for Cassandra.
+This section provides instructions for configuring log collection for Cassandra running on a non-Kubernetes environment.
 
-By default, Cassandra logs are stored in a log file.
-
-Sumo Logic supports collecting logs from a local log file by using a [local file source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source) via [Installed collectors](https://help.sumologic.com/03Send-Data/Installed-Collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements).
+By default, Cassandra logs are stored in a log file. Sumo Logic supports collecting logs from a local log file by using a [local file source](/docs/send-data/installed-collectors/sources/Local-File-Source) via [Installed collectors](/docs/send-data/Installed-Collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/System-Requirements#Installed-Collector-Requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect Cassandra logs and follow the instructions below to set up log collection:
 
@@ -385,25 +445,24 @@ Based on your infrastructure and networking setup choose one of these methods to
    * ERROR
    * OFF
 
-  To add debug logging to a class permanently using the logback framework, use nodetool setlogginglevel to check you have the right class before you set it in the logback.xml file in install_location/conf. Modify to include the following line or similar at the end of the file:
-   ```
+  To permanently add debug logging to a class permanently using the logback framework, use nodetool setlogginglevel to check you have the right class before you set it in the logback.xml file in install_location/conf. Modify to include the following line or similar at the end of the file:
+   ```sql
    <logger name="org.apache.cassandra.gms.FailureDetector" level="DEBUG"/>
    ```
-
   Restart the node to invoke the change.
-2. **Configure Cassandra to log to a Local file**. Cassandra provides logging functionality using Simple Logging Facade for Java (SLF4J) with a [logback](http://logback.qos.ch/) backend. Cassandra has three main logs, the `system.log`, `debug.log`, and `gc.log` which hold general logging messages, debugging logging messages, and java garbage collection logs respectively.
+2. **Configure Cassandra to log to a Local file**. Cassandra provides logging functionality using Simple Logging Facade for Java (SLF4J) with a [logback](http://logback.qos.ch/) backend. Cassandra has three main logs, the `system.log`, `debug.log`, and `gc.log` which hold general logging messages, debugging logging messages, and java garbage collection logs, respectively.
 
-  These logs by default live in `${CASSANDRA_HOME}/logs`, but most Linux distributions relocate logs to `/var/log/cassandra`. Operators can tune this location as well as what levels are logged using the provided logback.xml file.
+  These logs, by default, live in `${CASSANDRA_HOME}/logs`, but most Linux distributions relocate logs to `/var/log/cassandra`. Operators can tune this location as well as what levels are logged using the provided logback.xml file.
 
   You can configure logging [programmatically](http://logback.qos.ch/manual/configuration.html) or manually. Manual ways to configure logging are:
     * Run the [nodetool setlogginglevel](https://docs.datastax.com/en/cassandra-oss/3.0/cassandra/tools/toolsSetLogLev.html) command.
     * Configure the `logback-test.xml` or `logback.xml` file installed with Cassandra.
     * Use the [JConsole](https://docs.datastax.com/en/cassandra-oss/3.0/cassandra/operations/opsMonitoring.html#opsMonitoringJconsole) tool to configure logging through JMX.
 
-  Logs from the Cassandra log file can be collected via a Sumo Logic [Installed collector](https://help.sumologic.com/03Send-Data/Installed-Collectors) and a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source) as explained in the next section.
-3. **Configure a Collector** To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](https://help.sumologic.com/03Send-Data/Installed-Collectors)
+  Logs from the Cassandra log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/Local-File-Source) as explained in the next section.
+3. **Configure a Collector** To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 4. **Configure a Local File Source**. To collect logs directly from your Cassandra machine, use an Installed Collector and a Local File Source.
-   1. Add a[ Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+   1. Add a[ Local File Source](/docs/send-data/installed-collectors/sources/Local-File-Source).
    2. Configure the Local File Source fields as follows:
       * **Name.** (Required)
       * **Description.** (Optional)
@@ -415,6 +474,8 @@ Based on your infrastructure and networking setup choose one of these methods to
        * `db_system = cassandra`
        * `db_cluster = <Your_Cassandra_Cluster_Name>`
        * `environment = <Environment_Name>`, such as Dev, QA or Prod.
+       * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+       * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
    3. Configure the **Advanced** section:
      * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
      * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your Cassandra Server’s time zone.
@@ -434,17 +495,17 @@ We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](http
 
 #### Configure Metrics and Logs Collection  
 
-1. Install sumologic-otel-collector by following the instructions mentioned [here](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/Installation.md).
+1. Install sumologic-otel-collector by following the instructions mentioned [here](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/installation.md).
 2. Configure and start sumologic-otel-collector. As part of collecting metrics data from Cassandra, we will use the [jolokia2 input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for Telegraf to get data from otel and then send data to Sumo Logic. Create or modify config.yaml. Sample config is [here](https://ot-distro.s3.amazonaws.com/config_cassandra.yaml). Please enter values for the following parameters.
    * Enter Sumo Logic collection details in the section; extensions > sumologic by referring to [these](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/extension/sumologicextension) instructions. Configure details like collector name, category, install token, endpoint etc.
    * In the input plugins section, that is `[[inputs.jolokia2_agent]]`:
-     * **urls** - The URL to the jolokia server. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Cassandra input plugin for Telegraf.
+     * **`urls`** - The URL to the jolokia server. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Cassandra input plugin for Telegraf.
    * In the tags section, which is `[inputs.Cassandra.tags]` and filelog section
       * `environment` - This is the deployment environment where the Cassandra cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `db_cluster` - Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
    * In the exporter plugins section :
-      * Enter details like `source_category` and `source_host`. Please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
-   * Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
+      * Enter details like `source_category` and `source_host`. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
+   * **Do not modify the following values** as it will cause the Sumo Logic apps to not function correctly.
      * `data_format - “prometheus”` In the output plugins section, which is `[[outputs.sumologic]]`  Metrics are sent in the Prometheus format to Sumo Logic
      * `db_system: “cassandra”` - In the input plugins section:  This value identifies the database system.
      * `component: “database”` - In the input plugins section: This value identifies application components.
@@ -527,7 +588,7 @@ connection_notifications = [
   ]
 ```
 
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 ```bash title="Email notifications example"
 email_notifications = [
     {
@@ -553,7 +614,7 @@ This section demonstrates how to install the Cassandra App.
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source**. Choose **Enter a Custom Data Filter**, and enter a custom SQL Server cluster filter. Examples:
@@ -626,7 +687,7 @@ Use this dashboard to:
 The **Cassandra - Resource Usage** dashboard provides details of resource utilization across Cassandra clusters.
 
 Use this dashboard to:
-* Identify resource utilization. This can help you to determine resources over or under allocation.
+* Identify resource utilization. This can help you to determine whether are resources over- or under-allocated.
 
 <img src={useBaseUrl('img/integrations/databases/Cassandra-Resource-Usage.png')} alt="Cassandra dashboards" />
 

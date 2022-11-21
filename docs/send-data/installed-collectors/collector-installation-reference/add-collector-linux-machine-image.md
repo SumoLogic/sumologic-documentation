@@ -71,16 +71,16 @@ Collection \> Collection** page, or from the list below.
 
 1. Set up auto-registration details for the Collector:  
 
-   * [Create a New User account](https://help.sumologic.com/manage/Users-and-Roles/Manage-Users/01-Create-and-Edit-Users) with Administrator permissions or a role with permissions to "Manage Collectors."  
-   * Create an [installation token](https://help.sumologic.com/manage/Security/Installation_Tokens).
-   * Or, create an [Access Key and Access Id](https://help.sumologic.com/manage/Security/Access-Keys) for this user, which will be used to register the collector.
+   * [Create a New User account](/docs/manage/users-roles/users/create-edit-users) with Administrator permissions or a role with permissions to "Manage Collectors."  
+   * Create an [installation token](/docs/manage/Security/installation-tokens).
+   * Or, create an [Access Key and Access Id](/docs/manage/Security/Access-Keys) for this user, which will be used to register the collector.
 
 1. As root, run the installer with the following arguments:
 
    * `-``q` starts the installer in quiet mode (no UI)  
    * `-VskipRegistration=true` to skip collector registration during installation  
    * `-Vephemeral=true` to set the Collector as ephemeral (will be removed after 12 hours offline)  
-   * `-Vsumo.token_and_url=<installationToken>` to use an installation token, or: 
+   * `-Vsumo.token_and_url=<installationToken>` to use an installation token, or:
    * `-Vsumo.accessid\<access_i\>` to specify access id generated above  
    * `-Vsumo.accesskey\<access_ke\>` to specify access key generated above  
    * `-Vsources\<filepat\>` to specify the path to your source JSON file created above  
@@ -100,7 +100,7 @@ Collection \> Collection** page, or from the list below.
 
 1. (Optional) Remove "name" property from generated user.properties file. By default, the collector installation will use the hostname of the machine the installer runs on, but when creating an image, this will cause all collectors created using this image to have the same name prefix, followed by a unique epoch timestamp.
 
-    To ensure collectors created using this image will use the correct hostname, you can modify the user.properties file, located at **/opt/SumoCollector/confg/user.properties** or **/usr/local/SumoCollector/user.properties. **Remove the line that specifies "**hostName = \<hostname\>**" and save the file.
+    To ensure collectors created using this image will use the correct hostname, you can modify the user.properties file, located at **/opt/SumoCollector/config/user.properties** or **/usr/local/SumoCollector/user.properties. **Remove the line that specifies "**hostName = \<hostname\>**" and save the file.
 
 :::note
 Do not start the collector before building the image If you're using `-VskipRegistration=true`. Starting the collector prematurely will register the collector with Sumo Logic, causing ingestion issues when using baked AMI. If you did start the Collector and it registered you can remove the Collector's registration by navigating to the Collector's installation directory under `/config/creds/` and deleting all of its contents, and then add the Accesskey parameter in `user.properties` file to bake the AMI.

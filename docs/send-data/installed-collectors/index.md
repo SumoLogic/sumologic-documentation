@@ -10,7 +10,7 @@ A Sumo Source is an object configured for a specific Collector that sends data
 
 For details on supported operating systems and hardware restrictions see Installed Collector requirements.
 
-See [how to choose a collector](/docs/send-data/choose-collector-source) for details on when to use a single or multiple Installed Collectors.
+See [how to choose a collector](/docs/send-data/choose-collector-source) for guidance on when to use a single or multiple Installed Collectors.
 
 :::note
 The maximum number of Collectors allowed per organization is 10,000.
@@ -120,8 +120,7 @@ When you configure Sources that read from log files, you specify a path expressi
 
 You can create Sources using the Sumo web app at any time after Collector installation. For source-specific instructions, see the topics below [Sources for Installed Collectors](/docs/send-data/installed-collectors/sources).
 
-Alternatively, you can define Sources for an Installed Collector in a UTF-8 encoded JSON file, in which case you must provide the file when starting the Collector for the first time. For more information, see [Use JSON to Configure
-Sources](/docs/send-data/use-json-configure-sources). Note that if you provide the Sources configuration in a JSON file, you can no longer manage the Sources through the Sumo web app or the Collector Management API.
+Alternatively, you can define Sources for an Installed Collector in a UTF-8 encoded JSON file, in which case you must provide the file when starting the Collector for the first time. For more information, see [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). Note that if you provide the Sources configuration in a JSON file, you can no longer manage the Sources through the Sumo web app or the Collector Management API.
 
 ## Installed Collectors and Sources in action
 
@@ -151,15 +150,11 @@ An issue that could arise is seeing duplicated log messages for a log file tha
 
 Another possible issue is seeing the Collector not ingesting from a file where the first 2kb of the files match another file previously Collected due to fingerprint matching. In this case, the Collector believes it has already read from the file and could wait at the last known line collected before we see collection begin again at that point.
 
-To resolve these issues you can adjust the fingerprint size to match your needs. 
-
-1. Stop the current Collector service/process
-1. Locate the following Collector configuration
-    file, **/\<sumo_install_dir\>/config/collector.properties**
-1. Add the following parameter to change the default fingerprint size
-    for all Sources on the Collector. The number represents bytes.  
-    `collector.wildcard.fpSize=2048`
-1. Restart the Collector process/service
+To resolve these issues, you can adjust the fingerprint size to match your needs. 
+1. Stop the current Collector service/process.
+1. Locate the following Collector configuration file, **`/<sumo_install_dir>/config/collector.properties`**.
+1. Add the following parameter to change the default fingerprint size  for all Sources on the Collector. The number represents bytes: **`collector.wildcard.fpSize=2048`**.
+1. Restart the Collector process/service.
 
 ### Throttling, caching, and flushing
 

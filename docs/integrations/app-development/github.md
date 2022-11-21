@@ -15,7 +15,7 @@ The Sumo Logic App for GitHub connects to your GitHub repository at the Organiza
 The Sumo App for GitHub supports GitHub.com, GitHub Advanced Analytics, not GitHub Enterprise.
 :::
 
-This app includes dashbaords for GHAS, but to be able to ingest GHAS events you must have a separate GHAS license.
+This app includes dashboards for GHAS, but to be able to ingest GHAS events you must have a separate GHAS license.
 
 ## Event Types
 
@@ -35,7 +35,7 @@ For the GitHub Advanced Security dashboards Sumo Logic App for GitHub uses these
 * Code Scanning Alerts
 * Pushes 
 * Secret Scanning Alerts
-* Security and analyses
+* Security and analysis
 * Repository Vulnerability alerts.
 
 For information on GitHub events, see the [GitHub documentation](https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/about-webhooks#events). 
@@ -166,7 +166,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
@@ -265,7 +265,7 @@ Use this dashboard to:
 * Monitor alerts by severity 
 * Review recently closed alerts
  
-<img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Advanced-Security-Overview.png" />
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Advanced-Security-Overview.png" alt="undefined" title="Advanced Security Overview" />
 
 ### GHAS - Secret Scanning Alerts 
 
@@ -278,7 +278,7 @@ Use this dashboard to:
 
 <img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Secret-Scanning-Alerts.png"/>
 
-###GHAS - Code Scanning Alerts 
+### GHAS - Code Scanning Alerts 
 
 The **GHAS - Code Scanning Alerts** dashboard provides a granular overview of the code scanning alerts.
 

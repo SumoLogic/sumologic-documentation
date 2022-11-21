@@ -106,7 +106,7 @@ The GCP service generates logs which are exported and published to a Google Pub/
 
 ### Configuring collection for GCP uses the following process:
 
-1. Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**.
+1. Configure a Google Cloud Platform source on a hosted collector. You'll obtain the **HTTP URL for the source**.
 2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
 3. Create an export of GCP logs from Google Stackdriver Logging. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
 
@@ -116,7 +116,7 @@ See the following sections for configuration instructions.
 Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination including Stackdriver. It is not required to push the GCP logs into Stackdriver for the Sumo Logic Apps to work. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Stackdriver logging and still can be [exported](https://cloud.google.com/logging/docs/export/) to Sumo logic.
 :::
 
-### Configure a Google Cloud Platform Source
+### Configure a Google Cloud Platform source on a hosted collector
 
 The Google Cloud Platform (GCP) Source receives log data from Google Pub/Sub.
 
@@ -172,6 +172,20 @@ We recommend the following:
 * Ask GCP to increase the allowable capacity for the topic.
 
 
+
+## Create Topic and Subscription with Pub/Sub in Google Cloud
+
+1. From Google Cloud console’s main navigation, choose Pub/Sub.
+2. Click Create Topic.<br/><img src={useBaseUrl('img/integrations/google/create-topic.png')} alt="Google integrations" />
+3. Set the topic name. For example, “pub-audit-logs”, click **Create Topic**.<br/><img src={useBaseUrl('img/integrations/google/create-topic1.png')} alt="Google integrations" />
+4. From the Topics dashboard, click on the Pub/Sub menu and select the newly created topic.<br/><img src={useBaseUrl('img/integrations/google/create-topic2.png')} alt="Google integrations" />
+5. Select Create Subscription. <br/><img src={useBaseUrl('img/integrations/google/create-topic3.png')} alt="Google integrations" />
+6. Set the subscription name.
+7. Set **Push** as the delivery type.
+8. Enter the Source URL created in the previous step in the Endpoint URL field.
+9. Click Create.
+
+
 ### Create export of Cloud Audit logs from Google Logging
 
 In this step, you export logs to the Pub/Sub topic you created in the previous step.
@@ -179,9 +193,9 @@ In this step, you export logs to the Pub/Sub topic you created in the previous s
 1. Go to **Logging** and click **Logs Router**.<br/><img src={useBaseUrl('img/integrations/google/GCP_logging_1.png')} alt="Google integrations" />
 2. Click **Create Sink**.<br/><img src={useBaseUrl('img/integrations/google/sink.png')} alt="Google integrations" />
 3. As part of **Create logs routing sink**, add the following information.
-   1. Enter a Sink Name. For example, "gce-vm-instance".
+   1. Enter a Sink Name. For example, "gcp-audit-sumo".
    2. Select "Cloud Pub/Sub" as the **Sink Service**.
-   3. Set **Sink Destination** to the Pub/Sub topic you created in the Google Cloud Platform Source procedure. For example, "pub-sub-logs".
+   3. Set **Sink Destination** to the Pub/Sub topic you created in the "Create Topic and Subscription with Pub/Sub in Google Cloud". For example, "pub-audit-logs".
    4. In **Choose logs to include in sink** section, use `logName` Filter as follows:
    ```bash
    logName="projects/<Project_Id>/logs/cloudaudit.googleapis.com%2Factivity"
@@ -190,18 +204,6 @@ In this step, you export logs to the Pub/Sub topic you created in the previous s
    5. Click **Create Sync**.
 
 
-
-## Create Topic and Subscription with Pub/Sub in Google Cloud
-
-1. From Google Cloud console’s main navigation, choose Pub/Sub.
-2. Click Create Topic.<br/><img src={useBaseUrl('img/integrations/google/create-topic.png')} alt="Google integrations" />
-3. Set the topic name. For example, “gcp-all-sumo”, click **Create Topic**.<br/><img src={useBaseUrl('img/integrations/google/create-topic1.png')} alt="Google integrations" />
-4. From the Topics dashboard, click on the Pub/Sub menu and select the newly created topic.<br/><img src={useBaseUrl('img/integrations/google/create-topic2.png')} alt="Google integrations" />
-5. Select Create Subscription. <br/><img src={useBaseUrl('img/integrations/google/create-topic3.png')} alt="Google integrations" />
-6. Set the subscription name.
-7. Set **Push** as the delivery type.
-8. Enter the Source URL created in the previous step in the Endpoint URL field.
-9. Click Create.
 
 
 
@@ -216,7 +218,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

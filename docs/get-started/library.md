@@ -163,7 +163,7 @@ In the future, any Apps that you install in this published folder will be automa
 
 Keep track of content you use regularly with Favorites, or content that you want to keep handy. Just click the star icon for your saved search, dashboard, installed app, or folder, and it will be saved to the **Favorites** tab in the left nav for easy access.
 
-You can also [favorite saved searches](../search/get-started-with-search/search-page/add-saved-search-to-favorites.md) from the **Search** page, and favorite Dashboards from the **Dashboards** page.
+You can also [favorite saved searches](/docs/search/get-started-with-search/search-page/add-saved-search-to-favorites) from the **Search** page, and favorite Dashboards from the **Dashboards** page.
 
 There is a limit of 20 favorite items per user.
 
@@ -253,7 +253,7 @@ The **Pinned Search** feature allows you to start a search, then “pin” it, s
 
 Once pinned, a search will run in the background for up to 24 hours. If it has not finished by then, it will be paused. There is no notification when your search is paused, but you can just restart the search to continue the query. Search results are available for three days.
 
-There is a limit of ten pinned searches per user. Also, queries that use the [save operator](../search/search-query-language/operators#save) cannot be pinned.
+There is a limit of ten pinned searches per user. Also, queries that use the [save operator](/docs/search/search-query-language/search-operators/save) cannot be pinned.
 
 A search must be started in order for the pin button to show up in the Search tab. Once a search is pinned, you can easily unpin it, or remove it from the Pinned Searches tab. In the Pinned Searches folder, you can view the **Name**, **Status**, **Elapsed Time**, and monitor the **Progress** of each search.
 
@@ -326,7 +326,7 @@ Removing an instance of a Saved Search from the list in the Pinned Searches tab 
 
 Once you’ve saved content, you can choose to share it, which makes it available to other users. Your shared content is automatically added to the Library in the **Org \> \[Your Name\] **folder.
 
-To share a search and its results, see [Share a Link to a Search](../search/get-started-with-search/search-basics/share-search-link.md). 
+To share a search and its results, see [Share a Link to a Search](/docs/search/get-started-with-search/search-basics/share-link-to-search). 
 
 Once shared, other users in your organization can:
 
@@ -383,7 +383,7 @@ The Export and Import functions are provided in order for you to transfer data i
 
 :::caution limitations
 * Recent Searches, Favorites, Scheduled Views, Partitions, Field Extraction Rules (FERs), and lookups are not supported.
-* For content that is shared, only the content is imported, not the Shared state. You can [share](https://help.sumologic.com/Visualizations-and-Alerts/Dashboards/Share_Dashboards) it again as necessary.
+* For content that is shared, only the content is imported, not the Shared state. You can [share](/docs/dashboards) it again as necessary.
 * All content names must be unique within a folder in the Library.
 * Only error free JSON will import successfully.
 * Import is limited to 1000 objects at a time.
@@ -410,3 +410,16 @@ If you modify your JSON manually after export, we recommend that you use [JSONLi
 3. In the **Content Import **dialog, enter **Name.** The item name must be unique with a folder. **Check your JSON before importing to make sure that there is no organization-specific content.** All content names in an organization must be unique. If the name is not unique, you will get an error that prevents you from importing the content.
 4. Paste the JSON you copied from the** JSON** dialog to the clipboard, or from the JSON file you downloaded.
 5. Click **Import**. The Import button is only available if you have pasted in a valid JSON.
+
+## Library Filters
+
+You can search through the content in your library with these three main filters. The filters can also be used in tandem, allowing you to filter through filtered content.
+
+#### Created By
+When selected this filter shows a list of users in your network. Once a creator is selected only content created by this user will show up in your search.
+
+#### Shared With
+When selected this filter shows a list of users in your network. Once a user is selected only content that was shared with this user will show up in your search.
+
+#### Type
+When selected this filter shows a list of different types of content within the library. Once a type is selected only that type of content will show up in your search.

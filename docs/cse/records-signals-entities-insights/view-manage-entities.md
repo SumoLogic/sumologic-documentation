@@ -153,9 +153,10 @@ Note that:
 
 | Column | Description |
 |--|--|
-| `id` | **This field is required for Format 1.**<br/>To form the id field value, concatenate the Entity type identifier and the value of the entity, separated by a dash character (-) where the Entity type identifier is one of the following:<br/>`_ip`<br/>`_hostname`<br/>`_username`<br/>`_mac`<br/>`<CustomEntityTypeId>`<br/>The id for an IP address would look like:<br/>`_ip-1.2.3.4` |
+| `id` | **This field is required for Format 1.**<br/>To form the id field value, concatenate the Entity type identifier and the value of the entity, separated by a dash character (-) where the Entity type identifier is one of the following:<br/>`_ip`<br/>`_hostname`<br/>`_username`<br/>`_mac`<br/>`<CustomEntityTypeId>`<br/><br/>The id for an IP address would look like:<br/><br/>`_ip-1.2.3.4` <br/><br/>You can optionally specify an Entity’s sensor zone as a part of the `id` column, in this format:<br/><br/> `_<entity_type>-<sensor_zone>-<entity_value>`  <br/><br/>For example: <br/><br/> `_ip-zone1-172.18.20.3`|
 | `type` | **This field is required for Format 2.**<br/>Identifies the type of Entity, one of:<br/>`_ip`<br/>`_hostname`<br/>`_username`<br/>`_mac`<br/>`<CustomEntityTypeId>` |
 | `value` | **This field is required for Format 2.**<br/>The value of the Entity, for example, for an IP address:<br/>`1.2.3.4` |
+| `sensor_zone` | Identifies the sensor zone for the Entity. <br/><br/>Don’t include this column if you are specifying Entity sensor zones in the `id` column, as described above. |
 | `suppressed` | When *true*, CSE suppresses the Entity. |
 | `criticality` | Assigns a Criticality to the Entity. (An Entity’s Criticality is a setting that adjusts the severity of Signals that fire on the Entity, based on a risk factor or other consideration.) You can only specify a Criticality that has already been configured in CSE. Allowable values:<br/>`default`<br/>`<CustomCriticality>` |
 | `tags` | The tags to assign to the target. This column can’t be present if the file contains a tags_to_add or tags_to_remove column.<br/>Specify a schema key tag as `key:value`.<br/>To assign multiple tags, enclose them in double quotes. For example:<br/>`"<tag>,<tag>,<tag>"` or `"<key>:<value>,<key>:<value>"` |
@@ -167,19 +168,19 @@ Note that:
 **Format 1 example**
 
 ```
- d,suppressed,criticality,tags,tags_to_add,tags_to_remove
-_ip-10.0.0.5,false,default,,Office-Based,
-_ip-10.0.0.6,true,default,,Office-Based,Remote
-_ip-10.0.0.7,false,Executive,Office-Based,,
+id,suppressed,criticality,tags,tags_to_add,tags_to_remove
+_ip-zone1-10.0.0.5,false,default,,Office-Based,
+_ip-zone1-10.0.0.6,true,default,,Office-Based,Remote
+_ip-zone1-10.0.0.7,false,Executive,Office-Based,,
 ```
 
 **Format 2 example**
 
 ```
-type,value,suppressed,criticality,tags,tags_to_add,tags_to_remove
-_ip,10.0.0.5,false,Executive PC,Frequent-Travel,,
-_ip,10.0.0.6,true,default,,Office-Based,Remote
-_ip,10.0.0.7,false,Executive,Office-Based,
+type,value,sensor_zone,suppressed,criticality,tags,tags_to_add,tags_to_remove
+_ip,10.0.0.5,zone1,false,Executive PC,Frequent-Travel,,
+_ip,10.0.0.6,zone1,true,default,,Office-Based,Remote
+_ip,10.0.0.7,zone1,false,Executive,Office-Based,
 ```
 
 #### Upload CSV file

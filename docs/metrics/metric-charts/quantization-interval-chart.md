@@ -6,10 +6,10 @@ description: Why you might want to change the quantization interval when running
 ---
 
 :::note
-This topic has information about Sumo Logic's Classic metrics UI. For information about the Metric Explorer UI, which replaces the Classic metrics UI, see [Metrics Explorer](../metric-queries-alerts/metrics-explorer.md).
+This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metrics-queries/metrics-explorer.md).
 :::
 
-In metric visualizations, rather than charting individual data points, Sumo presents the aggregated value of the data points received during an interval. We call this process [*quantization*](../introduction-metrics/metric-quantization.md).
+In metric visualizations, rather than charting individual data points, Sumo presents the aggregated value of the data points received during an interval. We call this process [*quantization*](../introduction/metric-quantization.md).
 
 Sumo automatically determines an optimal quantization interval, based on the age of the data you are querying and the number of data points. The quantization interval is shown at the top of the metric query tab. The quantization interval aligns your time series data to common intervals on the time axis (for example every one minute) to optimize the visualization and performance.  
 

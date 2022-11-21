@@ -102,14 +102,14 @@ _sourceCategory=1pw action
 
 ## Collecting Logs for 1Password
 
-Follow the instructions for setting up [Cloud to Cloud Integration for 1Password App](/docs/send-data/hosted-collectors/Cloud-to-Cloud-Integration-Framework/1Password-Source) to create the source and use the same source category while installing the app.
+Follow the instructions for setting up [Cloud to Cloud Integration for 1Password App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1Password-Source) to create the source and use the same source category while installing the app.
 
 ## Installing the 1Password App
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 
@@ -128,24 +128,24 @@ Panels will start to fill automatically. It's important to note that each panel 
 ### Overview
 1Password - Overview provides an overview of 1Password Events including events breakdown by type, category, geographic location, one-day time comparison of events, and failed sign-in activity.
 
-<img src={useBaseUrl('img/integrations/1Password/1Password-Overview.png')} alt="Nginx-Plus-Overview" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Overview.png')} alt="1Password-Overview" />
 
 ### Successful Sign-ins
 1Password - Successful Sign-ins dashboard provides geographic location of successful sign-in events, one-day time comparison of events, breakdown of events by Category, Type, Users, Country, State, and City.
 
-<img src={useBaseUrl('img/integrations/1Password/1Password-Successful-Sign-ins.png')} alt="Nginx-Plus-Overview" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Successful-Sign-ins.png')} alt="1Password-Successful-Sign-ins" />
 
 ### Failed Sign-ins
 1Password - Failed Sign-ins dashboard provides geographic location of failed events, one-day time comparison of events, breakdown of events by Category, Type, Users, Country, State, and City.
 
-<img src={useBaseUrl('img/integrations/1Password/1Password-Failed-Sign-ins.png')} alt="Nginx-Plus-Overview" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Failed-Sign-ins.png')} alt="1Password-Failed-Sign-ins" />
 
 ### Threat Intel
 1Password - Threat Intel dashboard provides high-level views of threats throughout your 1Password Service. Dashboard panels display visual graphs and detailed information on Threats by the client, target user, source app, platform, threats by actors, and threats by malicious confidence.
 
-<img src={useBaseUrl('img/integrations/1Password/1Password-Threat-Intel.png')} alt="Nginx-Plus-Overview" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Threat-Intel.png')} alt="1Password-Threat-Intel" />
 
 ### Item Usage
 1Password - Item Usage dashboard shows information about items in shared vaults that have been modified, accessed, or used. This dashboard provides you geo-locations of clients who accessed items in the shared vault, it also provides threat intel analysis of client IPs to secure your vault access.
 
-<img src={useBaseUrl('img/integrations/1Password/1Password-Item-Usage.png')} alt="Nginx-Plus-Overview" />
+<img src={useBaseUrl('img/integrations/1password/1Password-Item-Usage.png')} alt="1Password-Item-Usage" />

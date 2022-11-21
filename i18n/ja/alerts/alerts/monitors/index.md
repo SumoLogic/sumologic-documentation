@@ -10,14 +10,14 @@ Sumo Logic Monitors allow you to set robust and configurable alerting policies t
 Monitors track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications.
 
 :::note
-See details on how [Scheduled Searches are different](difference-scheduled-searches.md).
+See details on how [Scheduled Searches are different](/docs/alerts/difference-from-scheduled-searches).
 :::
 
 ## Rules
 
-* You need the **Manage** or **View Monitors** [role capability](docs/manage/users-and-roles/roles/role-capabilities.md)) to manage or view Monitors respectively.
+* You need the **Manage** or **View Monitors** [role capability](docs/manage/users-roles/roles/role-capabilities.md)) to manage or view Monitors respectively.
 * The frequency a Monitor executes depends upon a variety of factors such as the underlying query, the operators used, and the detection window. It can vary from a couple of seconds to a few minutes. If for example, the detection window of your alert is one day it will be evaluated every couple of minutes, whereas if the detection window of the monitor is 15 minutes then it will be evaluated every couple of seconds.
-* Log Monitors use the [role search filter](docs/manage/users-and-roles/roles/construct-search-filter-for-role.md) of their creator.
+* Log Monitors use the [role search filter](docs/manage/users-roles/roles/construct-search-filter-for-role.md) of their creator.
 * Log Monitors delay execution by two minutes. This means it won't evaluate data from the current time, but evaluate data from two minutes ago.  This ensures that any delays in ingestion are factored in and won't generate false positive or false negative alerts.
 * Metric Monitors delay execution by one minute.
 * Depending on your account type, you can have up to a certain number of Log and Metric Monitors.
@@ -29,15 +29,15 @@ See details on how [Scheduled Searches are different](difference-scheduled-searc
 ## Limitations
 
 * [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
-* Monitors only support the [Continuous data tier](docs/manage/partitions-and-data-tiers/data-tiers.md).
+* Monitors only support the [Continuous data tier](docs/manage/partitions-data-tiers/data-tiers.md).
 * An aggregate Metric Monitor can evaluate up to 15,000 time series. A non-aggregate Metric Monitor can evaluate up to 3,000 time series.
 * [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.
 * [Search templates](../../search/get-started-with-search/build-search/search-templates.md) are not supported.
 * A Log Monitor can have one query up to 4,000 characters long. Metric Monitors can specify up to six queries.
 * Email notifications can have up to 100 recipients.
 * [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md) (auto-parse mode) is not supported.
-* The timeshift [metrics operator](/docs/metrics/metric-queries-alerts/operators) (../../Metrics/Metric-Queries-Alerts/07Metrics_Operators.md "Metrics Operators") is not supported in a Metric Monitor.
-* [Hidden Metrics queries](../../metrics/metric-queries-alerts/metrics-explorer.md) do not persist across edit sessions.
+* The timeshift [metrics operator](/docs/metrics/metrics-operators) is not supported in a Metric Monitor.
+* [Hidden Metrics queries](../../metrics/metrics-queries/metrics-explorer.md) do not persist across edit sessions.
 * The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.
 
 ## Notifications
@@ -163,7 +163,7 @@ You can configure Sumo Logic Monitors using [Terraform modules](https://github.c
     * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.  
     * An **outlier** is an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency.  
 
-1. Provide a **Query**. A Log Monitor can have one query up to 4,000 characters long. Metric Monitors can specify up to six queries. When providing multiple metrics queries use the letter labels to reference a query row, see [joined metrics queries](../../metrics/metric-queries-alerts/metrics-explorer.md) for details. The Monitor will automatically deduce the query row to use for the trigger. 
+1. Provide a **Query**. A Log Monitor can have one query up to 4,000 characters long. Metric Monitors can specify up to six queries. When providing multiple metrics queries use the letter labels to reference a query row, see [joined metrics queries](../../metrics/metrics-queries/metrics-explorer.md) for details. The Monitor will automatically deduce the query row to use for the trigger. 
 
 1. **Outlier** detection methods require you to select the **Direction** you want to track. If you chose **Static**, you won't see this option.
 
@@ -197,7 +197,7 @@ Trigger alerts on:
 You can set the trigger based on the following:
 
 * **returned row count** (default): the number of rows returned from the log search.
-* A numeric field returned from the search. You can pick any numeric field from your query, and alert on the value of that field. The field is `_count` in the above screenshot. To convert a string to a number use the [num operator](/docs/search/search-query-language/operators#num). For example, if you have a field named **duration** you would use the num operator as follows to convert it to a number value.
+* A numeric field returned from the search. You can pick any numeric field from your query, and alert on the value of that field. The field is `_count` in the above screenshot. To convert a string to a number use the [num operator](/docs/search/search-query-language/search-operators/num). For example, if you have a field named **duration** you would use the num operator as follows to convert it to a number value.
 
   `    | num(duration)`
 
@@ -377,7 +377,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
     Metric Monitors have an option to send notifications either as a group or separately. **Group Notifications** define whether you want single notifications per time series that match the Monitor query or you want group notifications where you receive a single notification for the entire Monitor. Log Monitors always group notifications.
 
-   1. The **Connection Type** specifies the notification channel where you want to get notified, such as an email or webhook. See [Connections](/docs/manage/connections-and-integrations) for details.  Monitor notifications support variables to reference its configuration settings or your raw data. See [alert variables](../alert-variables.md) for a table of the available variables.
+   1. The **Connection Type** specifies the notification channel where you want to get notified, such as an email or webhook. See [Connections](/docs/manage/connections-integrations) for details.  Monitor notifications support variables to reference its configuration settings or your raw data. See [alert variables](../alert-variables.md) for a table of the available variables.
 
       * **Email**: Provide 1-100 recipient email addresses. You can customize the email subject and body.
       * **Webhook**: By default, the payload defined on the Connection is used. You can customize your payload for each notification if needed.

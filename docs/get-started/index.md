@@ -79,11 +79,11 @@ Get to know the Collection process through our video "Data Collection Strategy".
 
 ## Basics and Account Configuration
 
-* [Retention](https://help.sumologic.com/manage/Partitions_and_Data_Tiers/11_Manage_Indexes_with_Variable_Retention). Determine the average data retention for your account (total storage / daily ingest) and change the General Index retention period if necessary. The General Index settings can be found on the **Manage Data > Settings > Partitions** menu, which is explained in further detail on the Optimization Setup sheet of this document.
-* [Data Volume Index](https://help.sumologic.com/manage/Ingestion-and-Volume/Data_Volume_Index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo tool.
-* [Audit Index](https://help.sumologic.com/manage/Security/Audit-Index). Enable the audit index. This feature allows you to track user behavior, content changes, and scheduled search execution results.
-* [Data Volume App](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Data_Volume_App_-_Legacy). Install the Data Volume app in Sumo App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
-* [Audit App](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Audit_App/Install-the-Audit-App-and-View-the-Dashboards). Install the Audit app and explore its content. You can use this to monitor user activity, content changes, as well as scheduled search changes and executions.
+* [Retention](docs/manage/partitions-data-tiers/manage-indexes-variable-retention.md). Determine the average data retention for your account (total storage / daily ingest) and change the General Index retention period if necessary. The General Index settings can be found on the **Manage Data > Settings > Partitions** menu, which is explained in further detail on the Optimization Setup sheet of this document.
+* [Data Volume Index](/docs/manage/ingestion-volume/Data-Volume-Index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo tool.
+* [Audit Index](/docs/manage/Security/Audit-Index). Enable the audit index. This feature allows you to track user behavior, content changes, and scheduled search execution results.
+* [Data Volume App](/docs/integrations/sumo-apps/Data-Volume-Legacy). Install the Data Volume app in Sumo App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
+* [Audit App](/docs/integrations/sumo-apps/Audit). Install the Audit app and explore its content. You can use this to monitor user activity, content changes, as well as scheduled search changes and executions.
 
 
 ## Collection Setup
@@ -119,16 +119,16 @@ Get to know about Installed Collector through our video "Install a Collector".
         allowfullscreen
         />
 
-[Basics](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Local-and-Centralized-Data-Collection). Review the installed collector and its basic concepts. This is a software agent that can be installed on a machine (physical or virtual) to collect logs. The installed collector can be used to collect logs and metrics from the host machine, or from those within the same network as the host machine.
+[Basics](/docs/send-data/best-practices#local-and-centralized-data-collection). Review the installed collector and its basic concepts. This is a software agent that can be installed on a machine (physical or virtual) to collect logs. The installed collector can be used to collect logs and metrics from the host machine, or from those within the same network as the host machine.
 
-[Local Collection](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Local-and-Centralized-Data-Collection#Local_Data_Collection). Review local collection and its pros and cons. Local collector installation is the concept of installing a collector agent onto each and every target machine (a 1:1 relationship between collectors and hosts). This concept is usually accomplished using some level of automation tooling (Chef, Puppet, Terraform, Ansible, Shell Scripting, etc.). The collectors will use the compute and memory resources from their host machines and will require outbound internet access in order to send the logs to Sumo Logic.
+[Local Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Review local collection and its pros and cons. Local collector installation is the concept of installing a collector agent onto each and every target machine (a 1:1 relationship between collectors and hosts). This concept is usually accomplished using some level of automation tooling (Chef, Puppet, Terraform, Ansible, Shell Scripting, etc.). The collectors will use the compute and memory resources from their host machines and will require outbound internet access in order to send the logs to Sumo Logic.
 
-[Centralized Collection](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Local-and-Centralized-Data-Collection#Centralized_Data_Collection). Review centralized collection and its pros and cons. Centralized collector installation involves dedicated collection machines that run the collector agent and collect logs from many different target machines at once (a 1:many relationship between collectors and hosts). This concept prevents resource usage on the target machines and removes the need for outbound internet access on the target machines.
+[Centralized Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Review centralized collection and its pros and cons. Centralized collector installation involves dedicated collection machines that run the collector agent and collect logs from many different target machines at once (a 1:many relationship between collectors and hosts). This concept prevents resource usage on the target machines and removes the need for outbound internet access on the target machines.
 
 
 ### Hosted Collectors
 
-[Basics](https://help.sumologic.com/03Send-Data/Hosted-Collectors). Review the hosted collector and its basic concepts. The hosted collector is not a literal collector agent (i.e. not an installed software agent), but rather a collection of endpoints and integration that collects logs from various cloud data sources.
+[Basics](/docs/send-data/Hosted-Collectors). Review the hosted collector and its basic concepts. The hosted collector is not a literal collector agent (i.e. not an installed software agent), but rather a collection of endpoints and integration that collects logs from various cloud data sources.
 
 Get to know about Hosted Collector through our video "Install a Hosted Collector".
 
@@ -167,11 +167,11 @@ Before adding Partitions, consider the following:
 * **Query Rewriting.** The query service will automatically detect routing expressions for partitions in the backend. No scoping changes are required for existing content to use partitions.
 * **Overlap Consequences.** Data should NEVER fall into multiple partitions. This will cause the data to be duplicated across the service and will increase the cost of ingesting the data.
 
-[Basics.](https://help.sumologic.com/05Search/Optimize-Search-Performance/Optimizing_Search_with_Partitions) The **Partitions** page can be found under the **Manage Data** > **Settings** menu. Partitions are tools that can be used to route data into smaller subsets of the overall data ingest. These datasets can be isolated for either query performance reasons or for log retention purposes.
+[Basics.](/docs/search/optimize-search-partitions) The **Partitions** page can be found under the **Manage Data** > **Settings** menu. Partitions are tools that can be used to route data into smaller subsets of the overall data ingest. These datasets can be isolated for either query performance reasons or for log retention purposes.
 
-[Routing Expression.](/docs/manage/partitions-and-data-tiers) Each partition's contents are determined by the routing expression, which will be scoped using metadata and/or keywords.
+[Routing Expression.](/docs/manage/partitions-data-tiers) Each partition's contents are determined by the routing expression, which will be scoped using metadata and/or keywords.
 
-[Variable Retention.](https://help.sumologic.com/manage/Partitions_and_Data_Tiers/11_Manage_Indexes_with_Variable_Retention) Each Partition has its own retention period. This allows for some logs to be retained for longer, while others are discarded more quickly.
+[Variable Retention.](docs/manage/partitions-data-tiers/manage-indexes-variable-retention.md) Each Partition has its own retention period. This allows for some logs to be retained for longer, while others are discarded more quickly.
 
 
 ## Field Extraction Rule Setup
@@ -184,9 +184,9 @@ Before adding Field Extraction Rule (FER), consider the following:
 * **FER Scoping.** FERs are composed of a scoping statement and the parsing logic; scoping usually involves SourceCategory and possibly keywords.
 * **Limitations.** FERs can not extract every key/value pair but should be prioritized to the most commonly logged and searched key/value pairs.
 
-[FER Basics](https://help.sumologic.com/manage/Field-Extractions). Field Extraction Rules are used to pre-parse key/value pairs from log messages as they're collected. They're best utilized on logs that have consistent formatting.
+[FER Basics](/docs/manage/Field-Extractions). Field Extraction Rules are used to pre-parse key/value pairs from log messages as they're collected. They're best utilized on logs that have consistent formatting.
 
-[Create a FER.](https://help.sumologic.com/manage/Field-Extractions/create-field-extraction-rule) If applicable, identify a set of logs to be pre-parsed by a FER. Create the FER on the **Field Extraction Rules** page of the **Manage Data > Settings** menu. The rule will require a **Rule Name**, **Scope**, and the **Parse** **Expression** to be implemented.
+[Create a FER.](/docs/manage/Field-Extractions/create-field-extraction-rule) If applicable, identify a set of logs to be pre-parsed by a FER. Create the FER on the **Field Extraction Rules** page of the **Manage Data > Settings** menu. The rule will require a **Rule Name**, **Scope**, and the **Parse** **Expression** to be implemented.
 
 Get to know more about How to create a FER through our video "Creating a Field Extraction Rule".
 

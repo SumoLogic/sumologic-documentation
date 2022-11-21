@@ -88,9 +88,9 @@ You can use a wildcard to represent one full term: `jsmith@*.com`
 
 But not a partial term: `jsmith@some*re.com`
 
-The wildcard (\*) will only represent one individual full term between supplied values, so if additional terms exist between the defined values, the search will return no results.
+The wildcard (`*`) will only represent one individual full term between supplied values, so if additional terms exist between the defined values, the search will return no results.
 
-For example, the keyword `com*services` will not find the message, because there are periods attempting to be represented by the wildcard. If you change it to have the periods, `com.*.services`*, *the query will return our message, as the `*` only indicates the individual term of `test`.
+For example, the keyword `com*services` will not find the message, because there are periods attempting to be represented by the wildcard. If you change it to have the periods, `com.*.services*`, the query will return our message, as the `*` only indicates the individual term of `test`.
 
 To search for multiple keyword values in a message, the best practice is to break the keywords into multiple terms. To do this, simply add a space between the terms. When you do this, Sumo Logic will imply an "AND" condition to the keyword search. For example, searching `com services` will search for `com AND services`.
 
@@ -98,7 +98,7 @@ To search for multiple keyword values in a message, the best practice is to brea
 
 By default, keyword expressions are case-insensitive. Technically there isn't a way to define case sensitivity in the keyword search  expression, you will have to define this with an operator. 
 
-After the keyword search expression, to search for case sensitive keywords, you can use the [parse regex operator](../../search-query-language/parse-operators/parse-variable-patterns-using-regex.md). You should still specify the keyword in the scope of the query, before the first pipe "\|", to keep the search efficient. 
+After the keyword search expression, to search for case sensitive keywords, you can use the [parse regex operator](../../search-query-language/parse-operators/parse-variable-patterns-using-regex.md). You should still specify the keyword in the scope of the query, before the first pipe `|`, to keep the search efficient. 
 
 For example, if you want to search for the keyword "**info**" in lowercase, you'd use this query:
 
@@ -114,6 +114,6 @@ info
 | parse regex "(\<sampl\>INFO)"
 ```
 
-To convert a string to all lowercase or all uppercase letters, you can use the [toUpperCase and toLowerCase](../../search-query-language/operators#toLowerCase-and-toUpperCase) operators.
+To convert a string to all lowercase or all uppercase letters, you can use the [toUpperCase and toLowerCase](/docs/search/search-query-language/search-operators/toLowerCase-toUpperCase) operators.
 
  

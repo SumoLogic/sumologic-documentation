@@ -9,17 +9,18 @@ description: The Sumo Logic App for AWS EC2 allows you to display and gain insig
 
 ## Metrics Types 
 
-Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in Host Metrics for Installed Collectors.
+Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-Source#Collected-Metrics).
 
-* CPU Metrics 
-* Memory Metrics
-* TCP Metrics
-* Networking Metrics
-* Disk Metrics
+* [CPU Metrics](/docs/integrations/hosts-operating-systems/host-metrics#CPU-Metrics)
+* [Memory Metrics](/docs/integrations/hosts-operating-systems/host-metrics#Memory-Metrics)
+* [TCP Metrics](/docs/integrations/hosts-operating-systems/host-metrics#TCP-Metrics)
+* [Networking Metrics](/docs/integrations/hosts-operating-systems/host-metrics#networking-metrics)
+* [Disk Metrics](/docs/integrations/hosts-operating-systems/host-metrics#disk-metrics)
+
 
 ### Time Intervals
 
-The time interval determines how frequently the source is scanned for metrics data. The Web Application supports pre-specified time intervals (10 seconds, 15 seconds, 30 seconds, 1 minute, and 5 minutes).
+The time interval determines how frequently the source is scanned for metrics data. Sumo Logic supports pre-specified time intervals (10 seconds, 15 seconds, 30 seconds, 1 minute, and 5 minutes).
 
 You can also specify a time interval in JSON by using the interval parameter, as follows: "interval" : 60000
 
@@ -27,7 +28,7 @@ The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or lon
 
 ### AWS Metadata
 
-Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see AWS Metadata Source for Metrics.
+Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source).
 
 ### Sample Query 
 

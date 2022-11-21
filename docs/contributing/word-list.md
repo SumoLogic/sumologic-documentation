@@ -9,7 +9,7 @@ description: An alphabetized list of commonly used terms at Sumo Logic, includin
 &#128679; Under construction &#128679;
 :::
 
-This word list provides an alphabetized list of commonly used terms at Sumo Logic, including components and features of Sumo Logic, and other usage issues, such as punctuation and capitalization. This is not a glossary. Here is the [Glossary](/docs/get-started/glossary).
+This word list provides an alphabetized list of commonly used terms at Sumo Logic, including components and features of Sumo Logic, and other usage issues, such as punctuation and capitalization. This is not a glossary. Here is the [Glossary](/docs/contributing/glossary).
 
 <!--See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design-system/style) provided by our UX team.-->
 
@@ -52,8 +52,6 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 **Dashboard Theme.** Choose between light or dark themes for Dashboards. Only capitalize Theme when you're referring to the UI element in the Dashboard Properties menu.
 
 **Data.** Data is plural. Use "data are", not "data is".
-
-**Data Panel.** Formerly Monitors. Capitalize Panel.  
 
 **Dimension**. Used interchangeably with tags.
 
@@ -112,7 +110,7 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 ## M
 
-**Markdown. **Used in Text Panels. Capitalize Markdown.
+**Markdown.** Used in Text Panels. Capitalize Markdown.
 
 **MB and Mbit. **MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
 
@@ -136,8 +134,6 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 ## P
 
 **Page.** When referring to a page in the UI, such as the Search page, use page. Don't use pane or tab. A tab appears inside a page. (Example: The Messages tab appears on the Search page.)
-
-**Panel.** Formerly called Monitors. Capitalize Panel.
 
 **Please.** Avoid using please. You're making recommendations on how to use software and services; it's not an inconvenience to the user.
 

@@ -31,8 +31,8 @@ You have a couple options to create and activate an account:
 * [Free Trial Account](#free-trial-accounts) through the Sumo Logic site
 * [AWS Marketplace](#aws-marketplace) through AWS and completes through Sumo Logic
 
-:::sumo title="Terms and Conditions"
-For Sumo Logic terms and conditions, see https://www.sumologic.com/support-terms/.
+:::sumo 
+For Sumo Logic terms and conditions, see https://www.sumologic.com/support-terms.
 :::
 
 ## Free Trial Accounts

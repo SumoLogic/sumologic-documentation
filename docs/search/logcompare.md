@@ -23,9 +23,9 @@ If the baseline query does not finish within two hours, it will timeout.
 
 **Compare vs. LogCompare**
 
-The [compare](./time-compare) and logcompare operators are very similar in syntax and functionality, but they handle different types of data:
+The [compare](/docs/search/time-compare) and logcompare operators are very similar in syntax and functionality, but they handle different types of data:
 
-*   **compare** is used for aggregated numeric data, such as analyzing results from a [group by](./search-query-language/group-aggregate-operators) query or a query with aggregation operators like count, sum, and avg.
+*   **compare** is used for aggregated numeric data, such as analyzing results from a [group by](/docs/search/search-query-language/group-aggregate-operators) query or a query with aggregation operators like count, sum, and avg.
 *   **logcompare** is used for log signature counts based on your raw log data.
 
 
@@ -250,11 +250,11 @@ The following table shows how the Time Range and Time Shift affect the Target a
 
 ## LogCompare alerts
 
-With LogCompare, you can create a [Monitor](/docs/alerts/monitors) or [Scheduled Search](../alerts/scheduled-searches/schedule-search.md) to send notifications when certain conditions are met. For example, you can be alerted when new signatures are found.
+With LogCompare, you can create a [Monitor](/docs/alerts/monitors) or [Scheduled Search](/docs/alerts/scheduled-searches/schedule-search) to send notifications when certain conditions are met. For example, you can be alerted when new signatures are found.
 
 To do this, use a search query such as:
 
-```
+```sql
 error | logcompare timeshift -24h | where (_isNew)
 ```
 
@@ -270,4 +270,4 @@ When selecting the time range of your search, keep in mind:
 
 By default, LogCompare email notifications provide details on the **Score**, **Count**, and **Signature**, as shown in the following email example. This is not configurable.
 
-![Email alert](/img/search/logcompare/logcompare-email-alert.png)
+![Email alert](/img/search/logcompare/logcompare-email-alert.png)  

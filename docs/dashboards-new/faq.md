@@ -13,9 +13,9 @@ There is **not** an automatic conversion method from classic dashboards to the
 
 In the new dashboard framework, we have created a variables feature that follows the standard set by other dashboard providers. Variables take the place of filters from classic dashboards and can be used in a similar fashion to reduce the scope of data displayed on your dashboards. 
 
-The new dashboard variables will function much like a [parameterized search](../search/get-started-with-search/build-search/search-templates.md) that allows you to define where you want to put your variables and flexibly reuse them throughout the queries.
+The new dashboard variables will function much like a [parameterized search](/docs/search/get-started-with-search/build-search/search-templates) that allows you to define where you want to put your variables and flexibly reuse them throughout the queries.
 
-See details on [how to filter with template variables](filter-with-template-variables.md).
+See details on [how to filter with template variables](filter-template-variables.md).
 
 The biggest differences between variables and filters are:
 
@@ -43,7 +43,7 @@ categories. This includes:
 * Bubble Charts
 * Scatter Charts
 
-The **time series** panel type is designed to graph data over time. Time series panels accept aggregate fields with epoch values (milliseconds since 1970). You can use the [timeslice](../search/search-query-language/operators#timeslice-joinresults) operator to provide a time series.
+The **time series** panel type is designed to graph data over time. Time series panels accept aggregate fields with epoch values (milliseconds since 1970). You can use the [timeslice](/docs/search/search-query-language/search-operators/timeslice) operator to provide a time series.
 
 The types of charts you will find in the time series panel include:
 
@@ -63,4 +63,4 @@ To switch between a metrics query row and a logs query row, you just have to sel
 
 ![Logs and metrics query options.png](/img/dashboards-new/dashboard-new-faqs/Logs-and-metrics-query-options.png)
 
-If you are in a time series panel, you can only graph items over time. This means that every logs query must be [timesliced](../search/search-query-language/operators#timeslice-joinresults) if you are going to graph it in a time series chart. If you want to count across categories, pick a category chart.
+If you are in a time series panel, you can only graph items over time. This means that every logs query must be [timesliced](/docs/search/search-query-language/search-operators/timeslice) if you are going to graph it in a time series chart. If you want to count across categories, pick a category chart.

@@ -104,7 +104,7 @@ Click a link for information on the individual app dashboards:
 * [Amazon ElastiCache Dashboards](../integrations/amazon-elasticache.md)
 * [Amazon ECS Dashboards](../integrations/amazon-ecs.md)
 * [AWS Network ELB Dashboards](../integrations/aws-network-load-balancer.md)
-* [Global Intelligence for AWS CloudTrail DevOps](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Global_Intelligence_for_AWS_CloudTrail_DevOps)
+* [Global Intelligence for AWS CloudTrail DevOps](/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops)
 * [AWS Classic Load Balancer Dashboards](../integrations/aws-classic-load-balancer.md)
 * [Amazon RDS Dashboards](docs/observability/aws/integrations/aws-rds-metrics.md)
 * [Amazon SNS Dashboards](docs/observability/aws/integrations/amazon-sns.md)

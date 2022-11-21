@@ -128,8 +128,18 @@ Follow the steps below to collect metrics from a Kubernetes environment:
       * `address` - Specify the db user, db name and password used for connecting to the database. Example `host=localhost user=postgres dbname=postgres password=mypassword sslmode=disable`
    * In the tags section, which is `[inputs.postgresql_extensible.tags]`
       * `environment` - This is the deployment environment where the postgresql cluster resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `db_cluster` - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards. For example:  analytics-dbcluster, webapp-dbcluster
+      * `db_cluster` - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards. For example: analytics-dbcluster, webapp-dbcluster.
+      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
+For example, if your application uses `“postgresql-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=postgresql-prod.sumologic.com db_cluster_port=3306`.
+
+If your application connects directly to a given postgresql node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: host=postgresql-prod.sumologic.com
+
+Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQL address” Entities.
+:::
    * **Do not modify** the following values, as they will cause the Sumo Logic apps to not function correctly.
      * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
      * `prometheus.io/scrape: "true"` - This ensures our Prometheus plugin will scrape the metrics.
@@ -180,6 +190,17 @@ This section explains the steps to collect PostgreSQL logs from a Kubernetes env
    1. Enter in values for the following parameters (marked `CHANGEME` above):
       * `environment` - This is the deployment environment where the PostgreSQL cluster identified by the value of `servers` resides. While this value is optional we highly recommend setting it.
       * `db_cluster` - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example if your application uses `“postgresql-prod.sumologic.com:3306`” as the connection string, the field values should be set as follows: `db_cluster_address=postgresql-prod.sumologic.com db_cluster_port=3306`
+
+If your application connects directly to a given postgresql node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=postgresql-prod.sumologic.com`.
+
+Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQL address” Entities.
+:::
    2. **Do not modify these values**, as it will cause the Sumo Logic apps to not function correctly.
       * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
       * `db_system: “postgresql”` - This value identifies the database system.
@@ -205,7 +226,7 @@ This section explains the steps to collect PostgreSQL logs from a Kubernetes env
 
   Since pods are frequently killed and spawned it’s recommended to use operators like this [postgresql operator](https://github.com/CrunchyData/postgres-operator) so that when new pods are created the annotations and labels are automatically applied using the ConfigMap or CRD based configurations.
 
-5. Add an FER to normalize the fields in Kubernetes environments. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Database Application Components. To do so:
+5. Add an FER to normalize the fields in Kubernetes environments. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Database Application Components. To do so:
    1. Go to **Manage Data** > **Logs** > **Field Extraction Rules**.
    2. Click the **+ Add** button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear:
@@ -223,7 +244,7 @@ This section explains the steps to collect PostgreSQL logs from a Kubernetes env
       | if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
       | pod_labels_component as component
       | pod_labels_db_system as db_system
-      | pod_labels_db_cluster as db_cluster
+      | if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
       ```
    5. Click **Save** to create the rule.
    6. Verify logs are flowing into Sumo Logic by running the following logs query
@@ -250,7 +271,18 @@ This section provides instructions for configuring metrics collection for the Su
        * `address` - Specify the db user, db name, and password used for connecting to the database. This is the user you created for monitoring the PosgreSQL database in [Step 1](#step-1-configure-metrics-collection). For example: `host=localhost dbname=postgres user=postgres password=mypassword sslmode=disable`.
        * In the tags section, `[inputs.postgresql_extensible.tags]`:
          * `environment` - This is the deployment environment where the Postgresql cluster resides. For example dev, prod or qa. While this value is optional we highly recommend setting it.
-         * `db_cluster` - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards. For example  analytics-dbcluster, webapp-dbcluster
+         * `db_cluster` - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards. For example: analytics-dbcluster, webapp-dbcluster.
+         * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+         * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example, if your application uses “postgresql-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=postgresql-prod.sumologic.com db_cluster_port=3306`
+
+If your application connects directly to a given PostgreSQL node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=postgresql-prod.sumologic.com`
+
+Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQL address” Entities.
+:::
      * In the output plugins section, `[[outputs.sumologic]]`:
        * `url` - This is the HTTP source URL created in Step 2 (Configure a HTTP Logs and Metrics Source). Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
      * **Do not modify these values**, as they will cause the Sumo Logic apps to not function correctly.
@@ -302,14 +334,22 @@ Perform the steps outlined below for each PostgreSQL database server.
      * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
      * **Source Category.** Enter any string to tag the output collected from this Source, such as **PostgreSQL/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
    * **Fields.** Set the following fields:
-    ```sql
-    component = database
-    db_system = postgresql
-    db_cluster = <Your_Postgresql_Cluster_Name>
-      --For example analytics-dbcluster, webapp-dbcluster
-    environment = <Environment_Name>
-      --For example dev, prod or qa
-    ```    
+      * `component` = database
+      * `db_system` = postgresql
+      * `db_cluster` = <Your_Postgresql_Cluster_Name> (For example analytics-dbcluster, webapp-dbcluster)
+      * `environment` = <Environment_Name> (For example dev, prod or qa)
+      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example, if your application uses “postgresql-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=postgresql-prod.sumologic.com db_cluster_port=3306`
+
+If your application connects directly to a given PostgreSQL node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=postgresql-prod.sumologic.com`
+
+Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQL address” Entities.
+:::
+
    3. Ensure that the `db_cluster` and `environment` values are the same as they were configured in the [Configure and start telegraf section](#configure-and-start-telegraf).
    4. Configure the **Advanced** section:
     * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
@@ -409,7 +449,7 @@ By default, the monitors are configured in a monitor folder called “PostgreSQL
 If you would like the alerts to send email or connection notifications, configure these in the file **postgresql_notifications.auto.tfvars**. For configuration examples, refer to the next section.
 
 
-5. Email and Connection Notification Configuration Examples. To **configure notifications**, modify the file postgresql_notifications.auto.tfvars file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md) for creating payloads with other connection types.
+5. Email and Connection Notification Configuration Examples. To **configure notifications**, modify the file postgresql_notifications.auto.tfvars file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md) for creating payloads with other connection types.
 
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [
@@ -457,7 +497,7 @@ Now that you have set up log and metric collection for PostgreSQL, you can insta
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom PostgreSQL cluster filter. Examples:
@@ -475,7 +515,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing PostgreSQL Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
 :::
 
 
@@ -568,6 +608,15 @@ Use this dashboard to:
 * Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters
 
 <img src={useBaseUrl('img/integrations/databases/PostgreSQL-Slow-Queries.png')} alt="PostgreSQL dashboards" />
+
+
+### Relation Metrics
+The PostgreSQL - Relation Metrics dashboard allows you to view and analyze the metrics for monitoring the relations in a schema.
+
+Use this dashboard to:
+* Monitor PostgreSQL relation metrics (disk blocks, buffer hits, hot updates etc) trends over time.
+* Monitor sequential scans and index scans and determine if executed queries are accessing them for a relation.
+* Track index utilization of existing indexes in a relation
 
 
 ## PostgreSQL Metrics

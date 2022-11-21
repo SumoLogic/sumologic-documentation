@@ -273,7 +273,7 @@ Make a note of the HTTP address for the source. You will need it when you config
 In this section, we will configure a collection of login and audit logs  from Workday and send them to Sumo Logic via one of the methods listed below.
 
 * For non-FedRamp Sumo Logic deployments
-    * [Create a Workday Cloud To Cloud Collector Source](/docs/send-data/hosted-collectors/Cloud-to-Cloud-Integration-Framework/Workday-Source).
+    * [Create a Workday Cloud To Cloud Collector Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Workday-Source).
 * If you're using the Sumo Logic FedRamp deployment, you can either use a Sumo Logic Workday collection script to be run in an Amazon Web Services (AWS) environment using the AWS Lambda service, or run Sumo Logic Python scripts to run periodically on a Linux machine via a cron job.
     * [AWS Lambda based collection](#Deploy_the_Sumo_Logic_Workday_SAM_Application) via a Serverless Application Model (SAM) application.
     * [Script-based collection](#Configure_script-based_collection_for_Workday) from a Linux machine.
@@ -583,7 +583,7 @@ Panels will start to fill automatically once you have configured the collection.
 ## Viewing Slack Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
 :::
 
 ### Overview

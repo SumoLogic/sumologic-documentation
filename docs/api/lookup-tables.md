@@ -7,7 +7,7 @@ description: Use HTTP endpoints to manage Lookup Tables.
 
 ---
 
-The Lookup Management API allows you to manage [Lookup Tables](https://help.sumologic.com/05Search/Lookup_Tables) from HTTP endpoints.
+The Lookup Management API allows you to manage [Lookup Tables](/docs/search/Lookup-Tables) from HTTP endpoints.
 
 Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 

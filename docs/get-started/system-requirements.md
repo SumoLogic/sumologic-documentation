@@ -2,6 +2,7 @@
 id: system-requirements
 title: Sumo Logic System Requirements
 sidebar_label: System Requirements
+description: Supported Browsers and other requirements for running Sumo Logic.
 ---
 
 

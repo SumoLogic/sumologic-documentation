@@ -42,7 +42,7 @@ not be applicable.
 
     * **Applied At**. Select **Run Time**.
 
-    * **Scope**. Select **Specific Data** and define the scope of your JSON data. You can define your JSON data source as a [Partition](/docs/manage/partitions-and-data-tiers) Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](../search-basics/built-in-metadata.md) that describes your JSON data. Think of the Scope as the first portion of an ad hoc search, before the first pipe ( \| ). You will use the Scope to run a search against the rule. You can't use keywords like “info” or “error” in your scope.
+    * **Scope**. Select **Specific Data** and define the scope of your JSON data. You can define your JSON data source as a [Partition](/docs/manage/partitions-data-tiers) Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](../search-basics/built-in-metadata.md) that describes your JSON data. Think of the Scope as the first portion of an ad hoc search, before the first pipe ( \| ). You will use the Scope to run a search against the rule. You can't use keywords like “info” or “error” in your scope.
 
         Always set up JSON auto extraction (Run Time field extraction) on a specific Partition name (recommended) or a particular Source. Failing to do so might cause the auto parsing logic to run on data sources where it is not applicable and will add additional overhead that might deteriorate the performance of your queries.
 
@@ -93,11 +93,11 @@ Field Browser:
 
 Search results table:
 
-* You can copy field names from JSON structures. After selecting (click and highlight) a JSON key in your results, right click and select **Copy field name**. See [modifying a search from the messages tab](../search-page/modify-search-from-messages-tab.md) for details on the other provided options.  
+* You can copy field names from JSON structures. After selecting (click and highlight) a JSON key in your results, right click and select **Copy field name**. See [modifying a search from the messages tab](/docs/search/get-started-with-search/search-page/modify-search-from-messages-tab) for details on the other provided options.  
 
     ![JSON right click copy options.png](/img/search/get-started-search/build-search/dynamic-parsing/JSON-right-click-copy-options.png)  
 
-    Copying a field name using this option will automatically format [field names that have special characters](../search-basics/reference-field-special-characters.md). For example, the field name shown in the screenshot is **total time-series**, it would be automatically formatted to **%"total time-series"** to work properly in a search query.  
+    Copying a field name using this option will automatically format [field names that have special characters](/docs/search/get-started-with-search/search-basics/reference-field-special-characters). For example, the field name shown in the screenshot is **total time-series**, it would be automatically formatted to **%"total time-series"** to work properly in a search query.  
      
 * A copy button is available to the right of each column (field) name allowing you to easily copy a field name.  
 

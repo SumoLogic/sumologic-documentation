@@ -45,8 +45,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '17.x'
+          node-version: '18.x'
           cache: 'yarn'
+      - name: Docusaurus Webpack cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules/.cache
+          key: ${{ runner.os }}-webpack-cache
       - name: Install awscli
         uses: unfor19/install-aws-cli-action@v1
       - name: Install jq
@@ -57,7 +62,7 @@ jobs:
         env:
           NODE_OPTIONS: "--max-old-space-size=8192"
         run: yarn build
-      - name: Deploy the Docusaurus site to staging
+      - name: Deploy the Docusaurus site
         env:
           S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
           CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}

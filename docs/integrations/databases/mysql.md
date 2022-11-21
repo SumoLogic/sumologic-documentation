@@ -162,6 +162,8 @@ If you're using MySQL in a Kubernetes environment, create the fields:
 * `pod_labels_environment`
 * `pod_labels_db_system`
 * `pod_labels_db_cluster`
+* `pod_labels_db_cluster_address`
+* `pod_labels_db_cluster_port`
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -172,7 +174,8 @@ If you're using MySQL in a non-Kubernetes environment, create the fields:
 * `environment`
 * `db_system`
 * `db_cluster`
-* `pod`
+* `db_cluster_address`
+* `db_cluster_port`
 
 </TabItem>
 </Tabs>
@@ -224,10 +227,12 @@ primary:
         gather_file_events_stats = true
         gather_perf_events_statements = true
         [inputs.mysql.tags]
-         environment = "prod"
-          component = "database"
-          db_system = "mysql"
-         db_cluster = "your_mysql_cluster_name"
+        environment: "ENV_TO_BE_CHANGED"
+        component = "database"
+        db_system = "mysql"
+        db_cluster: "ENV_TO_BE_CHANGED"
+        db_cluster_address = "ENV_TO_BE_CHANGED"
+        db_cluster_port = "ENV_TO_BE_CHANGED"
     tailing-sidecar: sidecarconfig;slowlog:data:/bitnami/mysql/data/mysql-release-0-slow.log
 ```
 
@@ -248,6 +253,17 @@ primary:
     * In `[inputs.mysql.tags]`:
         * `environment`. This is the deployment environment where the MySQL cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `db_cluster`. Enter a name to uniquely identify this MySQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+        * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example, if your application uses “mysql-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=mysql-prod.sumologic.com db_cluster_port=3306`
+
+If your application connects directly to a given MySQL node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mysql-prod.sumologic.com`
+
+Pivoting to Tracing data from Entity Inspector is possible only for “MySQL address” Entities.
+:::
     * **DO NOT MODIFY** these configuration options; changing them will prevent the MySQL app from functioning correctly.
       * `telegraf.influxdata.com/class: sumologic-prometheus` instructs the Telegraf operator what output to use.
       * `prometheus.io/scrape: "true"` ensures Prometheus will scrape the metrics.
@@ -325,7 +341,7 @@ Sumo Logic Kubernetes collection will automatically start collecting logs from t
 
 </details>
 
-2. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments are automatically prefixed with pod_labels. To normalize these for our app to work, we'll create a [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule), Database Application Components, assuming it does not already exist:
+2. **Add an FER to normalize the fields in Kubernetes environments**. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments are automatically prefixed with pod_labels. To normalize these for our app to work, we'll create a [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule), Database Application Components, assuming it does not already exist:
    1. Go to **Manage Data > Logs > Field Extraction Rules**.
    2. Click the **+ Add**.
    3. The **Add Field Extraction** pane appears.
@@ -341,7 +357,7 @@ Sumo Logic Kubernetes collection will automatically start collecting logs from t
      | if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
      | pod_labels_component as component
      | pod_labels_db_system as db_system
-     | pod_labels_db_cluster as db_cluster
+     | if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
      ```
    7. Click **Save** to create the rule.
    8. To verify that logs are flowing into Sumo Logic, run this query:
@@ -379,13 +395,15 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
   gather_file_events_stats = true
   gather_perf_events_statements = true
   [inputs.mysql.tags]
-    environment = "prod"
-    component = "database"
-    db_system = "mysql"
-    db_cluster = "your_mysql_cluster_name"
+   environment: "ENV_TO_BE_CHANGED"
+   component = "database"
+   db_system = "mysql"
+   db_cluster: "ENV_TO_BE_CHANGED"
+   db_cluster_address = "ENV_TO_BE_CHANGED"
+   db_cluster_port = "ENV_TO_BE_CHANGED"
 [[outputs.sumologic]]
-    url = "CHANGEME"--HTTP Source URL created in Step 2
-    data_format = "prometheus"
+   url = "CHANGEME"--HTTP Source URL created in Step 2  
+   data_format = "prometheus"
 
 [agent]
   interval = "60s"
@@ -412,10 +430,21 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
    * In the `[inputs.mysql.tags]` section:
       * `environment` - Specify the deployment environment where the MySQL cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `db_cluster` - Enter a name to uniquely identify the MySQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+:::note
+`db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+For example, if your application uses `“mysql-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=mysql-prod.sumologic.com db_cluster_port=3306`.
+
+If your application connects directly to a given MySQL node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mysql-prod.sumologic.com`
+
+Pivoting to Tracing data from Entity Inspector is possible only for “MySQL address” Entities.
+:::
    * In the `[[outputs.sumologic]]` section, set `url` to the HTTP source URL created in Step 2 (Configure an HTTP Logs and Metrics Source). For information about additional output plugin configuration options, see [Configure Telegraf Output Plugin for Sumo Logic](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md).
    * In the `[agent]` section, set `interval` and `flush_interval` to `“60s”` to collect metrics every 60 seconds.
 
-**Do not modify** these configuration options; changing them will prevent the MySQL app from functioning correctly.
+**Do not modify** these configuration options. Changing them will prevent the MySQL app from functioning correctly.
 * `data_format = "prometheus"`, in the output plugins section, causes metrics to be sent in the Prometheus format to Sumo Logic.
 * `component = "database"`, in the input plugins section, is used by the Sumo Logic app to identify application components.
 * `db_system = "mysql"`, in the input plugins section, identifies the database system.
@@ -428,7 +457,6 @@ For information about properties that can be configured globally in the Telegraf
 This section provides instructions for configuring collection of logs for MySQL running on a non-Kubernetes environment. MySQL logs are stored in log files. Slow query logs must be explicitly enabled to be able to be written to a log file.
 
 Sumo Logic supports collecting logs via a local log file. Local log files can be collected by Sumo Logic [Installed Collectors](/docs/send-data/Installed-Collectors), which requires you to allow outbound traffic to Sumo Logic [endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work.
-
 
 1. **Configure MySQL to log to a local file(s)**. MySQL logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector. To configure the MySQL log file(s), locate your local `my.cnf` configuration file in the database directory.
    1. Open `my.cnf` in a text editor.
@@ -461,7 +489,18 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
       * `db_system = mysql`
       * `db_cluster = <your_mysql_cluster_name>`
       * `environment = <Environment_Name>`, such as dev, qa, or prod.
+      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
       The values of `db_cluster` and `environment` should match those configured in the [Setting values in telegraf.conf](#Setting_values_in_telegraf.conf) above.
+      :::note
+      `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+
+      For example, if your application uses `“mysql-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=mysql-prod.sumologic.com db_cluster_port=3306`.
+
+      If your application connects directly to a given MySQL node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mysql-prod.sumologic.com`
+
+      Pivoting to Tracing data from Entity Inspector is possible only for “MySQL address” Entities.
+      :::
    2. In the **Advanced Options for Logs** section:
       * **Enable Timestamp Parsing**. Select "Extract timestamp information from log file entries".
       * **Time Zone**. Select "Use time zone form log file, if none is detected use Use Collector Default”.
@@ -489,7 +528,18 @@ At this point, MySQL error logs should start flowing into Sumo Logic.
         * `db_system = mysql`
         * `db_cluster = <your_mysql_cluster_name>`
         * `environment = <Environment_Name>`, such as dev, qa, or prod.
+        * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+        * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
        The values of `db_cluster` and `environment` should match those configured in the [Setting values in telegraf.conf](#Setting_values_in_telegraf.conf) above.
+       :::note
+       `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+
+       For example if your application uses `“mysql-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=mysql-prod.sumologic.com db_cluster_port=3306`
+
+       If your application connects directly to a given mysql node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mysql-prod.sumologic.com`.
+
+       Pivoting to Tracing data from Entity Inspector is possible only for “MySQL address” Entities.
+       :::
    2. In the **Advanced Options for Logs** section:
       * **Enable Timestamp Parsing**. Select "Extract timestamp information from log file entries".
       * **Time Zone**. Select "Use time zone form log file, if none is detected use Use Collector Default".
@@ -533,7 +583,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 ### Method B: Using a Terraform script
 
-1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](https://help.sumologic.com/manage/Security/Access-Keys#Create_an_access_key_on_Preferences_page).
+1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](/docs/manage/Security/Access-Keys#Create_an_access_key_on_Preferences_page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 3. Download the Sumo Logic Terraform package for MySQL monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/mysql). You can either download it using the `git clone` command or as a zip file.
 4. Alert Configuration: After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/mysql/` directory.
@@ -572,7 +622,7 @@ connection_notifications = [
   ]
 ```
 
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](https://help.sumologic.com/manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections).
+For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-integrations/Webhook-Connections/Set-Up-Webhook-Connections).
 
 ```sql title="Email notifications example"
 email_notifications = [
@@ -600,17 +650,14 @@ Now that you have set up collection for MySQL, install the Sumo Logic App for My
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/sumo-logic-apps#install-apps-from-the-library)
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom filter. For example:
-        * For all MySQL clusters: `db_system=mysql db_cluster=*`
-        * For a specific cluster: `db_system=mysql db_cluster=mysql.dev.01`
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+1. From the App Catalog, search for and select the app.
+1. Select the service version you're using and click Add to Library. Version selection applies only to a few apps currently. For more information, see the Install the Apps from the Library.
+1. To install the app, complete the following fields.
+   * App Name. You can retain the existing name or enter the app's name of your choice. 
+   * Advanced. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
+1. Click Add to Library.
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+Once an app is installed, it will appear in your Personal folder or another folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
@@ -619,7 +666,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing MySQL Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
 :::
 
 ### Overview  

@@ -395,7 +395,7 @@ connection_notifications = [
 
 In the variable definition below, replace `<CONNECTION_ID>` with the connection ID of the Webhook connection. You can obtain the Webhook connection ID by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 
 ```bash title="Email notifications example"
 email_notifications = [
@@ -422,7 +422,7 @@ email_notifications = [
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.vVersion selection applies only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**.vVersion selection applies only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name or enter a name of your choice for the app. 
    * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Varnish cluster filter. Examples:
@@ -439,7 +439,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing Varnish Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
 :::
 
 ### Overview

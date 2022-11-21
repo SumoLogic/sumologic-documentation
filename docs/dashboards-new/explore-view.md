@@ -40,7 +40,7 @@ Explore provides a visual hierarchy of the clusters in your environment that all
 Explore provides a set of dashboards for various components of your application that allow you to review the state of individual parts of your system. You can track errors, performance, and usage of application components, grouped by their type and logical clusters.
 
 :::note
-This feature is currently supported only for Database apps. To learn more, go to the [Database docs](/docs/integrations/databases), find your desired database, and then click on that database's "Install the Monitors, App, and View the Dashboards" section.
+This feature is currently supported only for Database apps. To learn more, go to the [Database docs](/docs/integrations/databases) and [Application Component Solution](/docs/observability/application-components).
 :::
 
 1. Select the **Application Components View** category.
@@ -60,7 +60,7 @@ Explore provides two Service and Application dashboard views accessible through 
 
 ### Real User Monitoring
 
-[Real User Monitoring](/docs/apm/rum): Explore allows you to visualize Real User Monitoring (RUM) metrics gathered from tracing instrumentation in the browser. This provides visibility into an actual end-user experience by geographical locations, browser, and operating system types. This also helps you to understand how your customers experience the performance of your web application.<br/><img src={useBaseUrl('img/dashboards-new/explore/stack-linking.png')} alt="Explore" />
+[Real User Monitoring](/docs/apm/real-user-monitoring): Explore allows you to visualize Real User Monitoring (RUM) metrics gathered from tracing instrumentation in the browser. This provides visibility into an actual end-user experience by geographical locations, browser, and operating system types. This also helps you to understand how your customers experience the performance of your web application.<br/><img src={useBaseUrl('img/dashboards-new/explore/stack-linking.png')} alt="Explore" />
 
 ## Filtering Explore
 
@@ -125,7 +125,7 @@ https://<endpoint>/ui/#/explore/[@<start>,<end>]@<entityKey>=<entityValue>[@<ent
 ```
 
 Required:
-* `<endpoint>` is your Sumo Logic service endpoint. See [Sumo Logic Endpoints and Firewall Security](/sumoapi) for the endpoint URLs.
+* `<endpoint>` is your Sumo Logic service endpoint. See [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the endpoint URLs.
 * `<entityKey>` is the type of entity you want to explore, such as cluster, deployment, service, node, account, region, namespace, or pod.
 * `<entityValue>` is the value of the entity to explore.
 
@@ -148,7 +148,7 @@ Dashboard:
 
 Let’s create a URL to open Explore on the `primary-eks `cluster, `kube-system` namespace, and `metrics-server` service.
 
-The custom URL that launches this log query in the Sumo Logic Search page would be similar to the following. The exact URL would depend on your Sumo Logic account endpoint, as listed in [Sumo Logic Endpoints and Firewall Security](/sumoapi).
+The custom URL that launches this log query in the Sumo Logic Search page would be similar to the following. The exact URL would depend on your Sumo Logic account endpoint, as listed in [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 ```bash
 https://service.us2.sumologic.com/ui/#/explore/@cluster=primary-eks@namespace=kube-system@service=metrics-server
 ```

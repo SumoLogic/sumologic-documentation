@@ -1,5 +1,5 @@
 ---
-id: index
+slug: /integrations/containers-orchestration
 title: Containers and Orchestration Integrations
 sidebar_label: Containers and Orchestration
 description: Docs for Sumo apps for container management and orchestration tools.
@@ -14,6 +14,6 @@ This guide has documentation Sumo apps for container management and orchestratio
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

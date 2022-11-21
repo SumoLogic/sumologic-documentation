@@ -13,7 +13,7 @@ The Palo Alto Firewall app helps you analyze traffic and gain a better understan
 
 ## Sample Logs
 
-The Palo Alto Networks 10 app uses [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html) and [Threat](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields.html) logs.
+The Palo Alto Networks 10 app uses [Traffic](https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields) and [Threat](https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields) logs.
 
 ```json title="Traffic log"
 Oct 09 10:19:15 SumPunFw07.sumotest.com 1,2019/10/09 10:19:15,001234567890002,TRAFFIC,drop,2304,2019/10/09 10:19:15,209.118.103.150,160.177.222.249,0.0.0.0,0.0.0.0,InternalServer,,,not-applicable,vsys1,inside,z1-FW-Transit,ethernet1/2,,All traffic,2019/10/09 10:19:15,0,1,63712,443,0,0,0x0,udp,deny,60,60,0,1,2019/10/09 10:19:15,0,any,0,0123456789,0x0,Netherlands,10.0.0.0-10.255.255.255,0,1,0,policy-deny,0,0,0,0,,SumPunFw07,from-policy,,,0,,0,,N/A,0,0,0,0,1202585d-b4d5-5b4c-aaa2-d80d77ba456e,0
@@ -79,20 +79,13 @@ To create a server profile specifying  the log destination, do the following:
    * **Format**. IETF
    * **Facility.** LOG_USER
 6. In the **Syslog Server Profile** window, select the **Custom Log Format** tab, and use the following custom formats for the following log types:
-   * [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html)
+   * [Traffic](https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields)
     ```bash
-    ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$misc,$threatid,$category,$severity,$direction,\
-    $seqno,$actionflags,$srcloc,$dstloc,,$contenttype,$pcap_id,$filedigest,$cloud,$url_idx,$user_agent,$filetype,$xff,$referer,$sender,$subject,$recipient,$reportid,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,\
-    $vsys_name,$device_name,,$src_uuid,$dst_uuid,$http_method,$tunnel_id/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$thr_category,$contentver,,$assoc_id,$ppid,$http_headers,$url_category_list,$rule_uuid,$http2_connection,$dynusergroup_name,$xff_ip,$src_category,$src_profile,$src_model,$src_vendor,$src_osfamily,$src_osversion,$src_host,$src_mac,$dst_category,$dst_profile,$dst_model,\
-    $dst_vendor,$dst_osfamily,$dst_osversion,$dst_host,$dst_mac,$container_id,$pod_namespace,$pod_name,$src_edl,$dst_edl,$hostid,$serialnumber,$domain_edl,$src_dag,$dst_dag,$partial_hash,$high_res_timestamp,$reason,\
-    $justification,$nssai_sst #<Token from Step 1>
+    ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,$elapsed,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection,$link_change_count,$policy_id,$link_switches,$sdwan_cluster,$sdwan_device_type,$sdwan_cluster_type,$sdwan_site,$dynusergroup_name,$xff_ip,$src_category,$src_profile,$src_model,$src_vendor,$src_osfamily,$src_osversion,$src_host,$src_mac,$dst_category,$dst_profile,$dst_model,$dst_vendor,$dst_osfamily,$dst_osversion,$dst_host,$dst_mac,$container_id,$pod_namespace,$pod_name,$src_edl,$dst_edl,$hostid,$serialnumber,$src_dag,$dst_dag,$session_owner,$high_res_timestamp,$nsdsai_sst,$nsdsai_sd <Token from Step 1>
     ```
-   * [Threat](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields.html)
+   * [Threat](https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields)
     ```bash
-    ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,\
-    $elapsed,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection,$link_change_count,$policy_id,\
-    $link_switches,$sdwan_cluster,$sdwan_device_type,$sdwan_cluster_type,$sdwan_site,$dynusergroup_name,$xff_ip,$src_category,$src_profile,$src_model,$src_vendor,$src_osfamily,$src_osversion,$src_host,$src_mac,$dst_category,$dst_profile,$dst_model,$dst_vendor,$dst_osfamily,$dst_osversion,$dst_host,$dst_mac,$container_id,$pod_namespace,$pod_name,$src_edl,$dst_edl,$hostid,$serialnumber,$src_dag,$dst_dag,$session_owner,\
-    $high_res_timestamp,$nsdsai_sst,$nsdsai_sd #<Token from Step 1>
+    ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,,$threatid,$category,$severity,$direction,$seqno,$actionflags,$srcloc,$dstloc,,$contenttype,$pcap_id,$filedigest,$cloud,$url_idx,$user_agent,$filetype,$xff,$referer,$sender,$subject,$recipient,$reportid,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,,$src_uuid,$dst_uuid,$http_method,$tunnel_id/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$thr_category,$contentver,,,,$http_headers,$url_category_list,$rule_uuid,$http2_connection,$dynusergroup_name,$xff_ip,$src_category,$src_profile,$src_model,$src_vendor,$src_osfamily,$src_osversion,$src_host,$src_mac,$dst_category,$dst_profile,$dst_model,$dst_vendor,$dst_osfamily,$dst_osversion,$dst_host,$dst_mac,$container_id,$pod_namespace,$pod_name,$src_edl,$dst_edl,$hostid,$serialnumber,,$src_dag,$dst_dag,$partial_hash,$high_res_timestamp,$reason,$justification, <Token from Step 1>
     ```
 7. Click OK.
 8. Commit the changes.
@@ -126,7 +119,7 @@ This app supports PAN-OS v10.
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/sumo-logic-apps#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 

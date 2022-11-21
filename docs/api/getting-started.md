@@ -1,7 +1,7 @@
 ---
 id: getting-started
-title: Getting Started with Sumo Logic APIs
-sidebar_label: Getting Started
+title: Sumo Logic API Authentication, Endpoints, and Security
+sidebar_label: Authentication and Endpoints
 description: This guide contains information about API authentication and the Sumo Logic endpoints to use for your API client.
 ---
 
@@ -90,14 +90,6 @@ This would yield a Base64 encoded string `QWxhZGRpbjpPcGVuU2VzYW1l` that is used
 ```
 "Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l"
 ```
-
-
-## Rate limiting
-
-* A rate limit of four API requests per second (240 requests per minute) applies to all API calls from a user.
-* A rate limit of 10 concurrent requests to any API endpoint applies to an access key.
-
-If a rate is exceeded, a `rate limit exceeded 429` status code is returned.
 
 
 ## Sumo Logic Endpoints by Deployment and Firewall Security
@@ -416,6 +408,14 @@ Generic status codes that apply to all our APIs. See the [HTTP status code regis
     </tr>
   </table>
 
+
+## Rate limiting
+
+* A rate limit of four API requests per second (240 requests per minute) applies to all API calls from a user.
+* A rate limit of 10 concurrent requests to any API endpoint applies to an access key.
+
+If a rate is exceeded, a `rate limit exceeded 429` status code is returned.
+
 ## Versioning and Conflict Detection  
 
 The [Collector Management API](/docs/api/collectors) uses optimistic locking to deal with versioning and conflict detection. Any response that returns a single entity will have an ETag header which identifies the version of that entity. Subsequent updates (`PUT` requests) to that entity must provide the value of the `ETag` header in an If-Match header; if the header is missing or no longer corresponds to the latest version of the entity, the request will fail (with `403 Forbidden` or `412 Precondition Failed`, respectively). Clients must be prepared to handle such failures if they anticipate concurrent updates to the entities. Additionally, the value of the `ETag` header may be provided in an `If-None-Match` header in future `GET` requests for caching purposes.
@@ -423,11 +423,11 @@ The [Collector Management API](/docs/api/collectors) uses optimistic locking to 
 
 ## Sumo Logic alerts from static IP addresses
 
-Sumo Logic provides notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo. For a list of our allowlist addresses, contact [Support](https://sumologic.com/).
+Sumo Logic provides notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
 
-The [Test Connection feature for webhooks](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md#Testing-a-connection) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
+The [Test Connection feature for webhooks](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md#Testing-a-connection) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
 
 
-## Beta
+## Beta APIs
 
 Check out our [APIs in beta](/docs/api/beta).

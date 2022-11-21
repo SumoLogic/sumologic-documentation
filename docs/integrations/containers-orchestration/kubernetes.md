@@ -159,9 +159,9 @@ connection_notifications_critical = [
   ]
 ```
 
-  Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](/sumoapi).
+  Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](/docs/api/monitors).
 
-  For overriding payload for different connection types, refer to [this document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+  For overriding payload for different connection types, refer to [this document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
 
 ```sql title="Email Notifications Example"
 email_notifications_critiical = [
@@ -190,7 +190,7 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 ## Viewing Kubernetes Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
 :::
 
 ### Cluster Explorer

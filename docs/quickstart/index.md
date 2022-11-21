@@ -21,12 +21,6 @@ These quick start guides help you connect, integrate, configure, and start using
   <p>Get up and running with the Sumo Logic Kubernetes solution in minutes.</p>
   </div>
 </div>
-<div className="box box3 card">
-    <div className="container">
-      <h3><a href="/docs/sdo/quickstart">GitHub Data</a></h3>
-      <p>Create a Sumo Logic account and get your GitHub data visualized in Sumo Logic.</p>
-      </div>
-    </div>
 <div className="box box4 card">
     <div className="container">
       <h3><a href="/docs/apm/traces#quickstart">Traces</a></h3>
