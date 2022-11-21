@@ -1,16 +1,16 @@
 ---
-id: gmail-bigquery
-title: Gmail BigQuery
-sidebar_label: Gmail BigQuery
-description: Gmail BigQuery Integration
+id: gmail-tracelogs
+title: Gmail TraceLogs
+sidebar_label: Gmail TraceLogs
+description: Gmail TraceLogs Integration
 ---
 
-The Gmail BigQuery integration pulls the Gmail log from the BigQuery using BigQuery Library APIs and ingests them into the Sumo Logic to store, analyze, and alert.
+The Gmail TraceLogs integration pulls the Gmail log from the BigQuery using BigQuery Library APIs and ingests them into the Sumo Logic to store, analyze, and alert.
 
 
 ## Data sources
 
-The Gmail BigQuery integration will query a single data source (BigQuery). The GmailBigQuery Source ingests the following:
+The Gmail TraceLogs integration will query a single data source (BigQuery). The Gmail TraceLogs Source ingests the following:
 
 * [Set up Gmail logs in BigQuery](https://support.google.com/a/answer/7233312?hl=en&fl=1)
 * [Schema for Gmail logs in BigQuery](https://support.google.com/a/answer/7230050?hl=en)
@@ -41,7 +41,7 @@ Metadata fields will be set, if the integration is configured with the SIEM forw
 
 ## Setup and Configuration
 
-The integration requires the following information to connect to Gmail BigQuery:
+The integration requires the following information to connect to the Gmail TraceLogs:
 * `name`
 * `projectId`
 * `datasetId`
