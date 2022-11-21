@@ -42,16 +42,19 @@ We recommend the following ingestion processes, starting with the most preferred
      
     1. Configure the source to forward logs. To configure an HTTP source to send log messages to CSE, click the **SIEM Processing** checkbox. You can configure other source types to send data to CSE by assigning a field named `_siemforward`, set to *true*, to the source. For example:  
 
-        `_siemforward=true`
-
+        ```
+        _siemforward=true
+        ```
 
         :::note
         A field can also be assigned at the collector level, in which case sources on the collector inherit the field setting, unless the same field is defined with a different value at the source level.
         :::
 
-    1. Configure the source with the path to the appropriate parser, by assigning a field named `_parser`, whose value is the path to parser, for example:  
+    2. Configure the source with the path to the appropriate parser, by assigning a field named `_parser`, whose value is the path to parser, for example:  
 
-        `_parser=/Parsers/System/AWS/AWS Network Firewall`  
+        ```
+        _parser=/Parsers/System/AWS/AWS Network Firewall
+        ```  
 
         :::note 
         You can get the path to a parser on the **Manage Data \> Logs \> Parsers** page in Sumo Logic. Click the three-dot more options menu in the row for a parser, and select **Copy Path**.

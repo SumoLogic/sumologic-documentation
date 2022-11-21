@@ -87,10 +87,10 @@ From there select (or search for) the following permissions. An Administrator m
 
 | API | Account Type| Permissions |
 |---------|---------------------------------------------------|------------------------------------|
-| User    | Application or Delegated (work or school account) | User.Read.All, Directory.ReadAll   |
-| User    | Delegated (personal Microsoft account)            | Not supported.                     |
-| Devices | Application or Delegated (work or school account) | Device.Read.All, Directory.ReadAll |
-| Devices | Delegated (personal Microsoft account)            | Not supported.                     |
+| User    | Application (work or school account) | User.Read.All, Directory.ReadAll   |
+| Devices | Application (work or school account) | Device.Read.All, Directory.ReadAll |
+
+Personal Microsoft accounts are not supported.
 
 ![azure ad step 8.png](/img/send-data/azure-ad-step-8.png)
 

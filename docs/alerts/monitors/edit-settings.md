@@ -1,6 +1,6 @@
 ---
 id: edit-settings
-title: Edit Monitor Settings and More Actions
+title: Edit Monitor Settings and View Activity
 sidebar_label: Edit Monitor Settings
 description: Monitors continuously query your logs or metrics and send notifications when specific events occur, such as critical, warning, and missing data.
 ---
