@@ -736,6 +736,7 @@
   "/07Sumo-Logic-Apps/08App_Development/Puppet": "/docs/integrations/app-development/puppet",
   "/07Sumo-Logic-Apps/08App_Development/Puppet/Collect_Logs_for_Puppet": "/docs/integrations/app-development/puppet",
   "/07Sumo-Logic-Apps/08App_Development/Puppet/Install_the_Puppet_App_and_View_the_Dashboards": "/docs/integrations/app-development/puppet",
+  "/07Sumo-Logic-Apps/08App_Development/Varnish": "/docs/integrations/web-servers/varnish",
   "/07Sumo-Logic-Apps/10Containers_and_Orchestration/ActiveMQ": "/docs/integrations/containers-orchestration/activemq",
   "/07Sumo-Logic-Apps/10Containers_and_Orchestration/ActiveMQ/ActiveMQ_Alerts": "/docs/integrations/containers-orchestration/activemq",
   "/07Sumo-Logic-Apps/10Containers_and_Orchestration/ActiveMQ/Collect_Logs_and_Metrics_for_ActiveMQ": "/docs/integrations/containers-orchestration/activemq",
