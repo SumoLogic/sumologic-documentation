@@ -89,14 +89,14 @@ To set permissions for a Monitors folder:
 This option is present only if you have been granted **Manage** permission for the folder.
 3. On the edit popup, note that the user who created the folder, and roles with the **Admin Monitors** capability, automatically have all permissions to the folder.  
 4. You can make the following edits:
-    * You can use the checkboxes to change the permissions currently assigned to a role that was explicitly added to the folder. (You can’t change the permissions to the **Administrator **and **Monitors Admin** role.)
+    * You can use the checkboxes to change the permissions currently assigned to a role that was explicitly added to the folder. (You can’t change the permissions to the **Administrator** and **Monitors Admin** role.)
     * You can click **Add Role** to add a role to the folder. You’ll be prompted with the "Your Entire Organization" option, and a list of roles. Select "Your Entire Organization" or one or more more roles, and checkmark the permissions you want to grant. If you grant access to a specific role in addition to "Your Entire Organization" users of that role will be granted the least restrictive access defined by the two permission sets.
     * You can remove a role that was explicitly added to the folder. To do so, mouse over the role in the edit popup, and click the **X** that appears.
 
 The permissions you set for a folder are inherited by that folder’s subfolders. When a user views permissions for such subfolders, the inherited permissions will be greyed out. It isn’t possible to deselect inherited permissions, but it is possible to add additional permissions. Inherited permissions can only be removed by removing them from the higher level folder where they were assigned.
 
 
-## Additional Tools
+## Additional Information
 
 * [Monitor resource in Terraform](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) 
 * [Monitor Management API](/docs/api/monitors)
