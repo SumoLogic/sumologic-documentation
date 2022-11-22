@@ -1,5 +1,5 @@
 ---
-id: netskope-webtx
+id: netskope-webtx-source
 title: Netskope WebTx Source
 sidebar_label: Netskope WebTx
 ---
