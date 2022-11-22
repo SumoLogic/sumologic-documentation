@@ -286,7 +286,7 @@ You can also filter the Security Groups dashboard by any combination of `Destina
 
 ###Outliers
 
-**Amazon VPC Flow Logs - Outliers** dashboard provides panels which show any outliers around Bytes, Packets and Accepted/Rejected traffic. In addition to this there is a seperate section “Security Group” which has panels for outliers with respect to inbound and outbound traffic. This dashboard is populated only if you chose VPC-JSON option for LogFormat when you deployed the CloudFormation template.
+**Amazon VPC Flow Logs - Outliers** dashboard provides panels which show any outliers around Bytes, Packets and Accepted/Rejected traffic. In addition to this there is a separate section “Security Group” which has panels for outliers with respect to inbound and outbound traffic. This dashboard is populated only if you chose VPC-JSON option for LogFormat when you deployed the CloudFormation template.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-VPC-Flow-Logs/Amazon-VPC-Flow-Logs-Outliers.png')} alt="amazon-vpc-flow-logs-outliers" />
 
