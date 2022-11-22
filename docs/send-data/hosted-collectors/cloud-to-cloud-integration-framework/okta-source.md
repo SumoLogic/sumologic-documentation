@@ -10,7 +10,9 @@ keywords:
 The Okta Source provides a secure endpoint to receive event data from the Okta [System Log API](https://developer.okta.com/docs/reference/api/system-log/) and [Users API](https://developer.okta.com/docs/reference/api/users/).
 It securely stores the required authentication, scheduling, and state tracking information.
 
-This Source is not available in the [Fed deployment](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints). Use the [legacy collection method for Okta](/docs/integrations/saml/Okta#Collecting-logs-for-Okta).
+:::note
+This Source is available in the Fed deployment.
+:::
 
 ## Okta API rate limits
 

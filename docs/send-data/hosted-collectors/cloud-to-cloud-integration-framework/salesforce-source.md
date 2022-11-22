@@ -6,6 +6,10 @@ sidebar_label: Salesforce
 
 The Salesforce Source provides a secure endpoint to receive event data from the Salesforce through its [Rest API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm). The source securely stores the required authentication, scheduling, and state tracking information.
 
+:::note
+This Source is available in the Fed deployment.
+:::
+
 ## Prerequisites: Generate the Salesforce API token
 
 The Consumer Key and Consumer Secret API tokens from Salesforce are required to configure this source. 
