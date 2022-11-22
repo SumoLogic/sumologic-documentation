@@ -11,7 +11,7 @@ The Okta Source provides a secure endpoint to receive event data from the Okta�
 It securely stores the required authentication, scheduling, and state tracking information.
 
 :::note
-This Source is available in the Fed deployment.
+This Source is available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## Okta API rate limits
