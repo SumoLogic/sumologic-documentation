@@ -290,6 +290,6 @@ You can also filter the Security Groups dashboard by any combination of `Destina
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-VPC-Flow-Logs/Amazon-VPC-Flow-Logs-Outliers.png')} alt="amazon-vpc-flow-logs-outliers" />
 
-####Filtering the Outlier dashboard
+#### Filtering the Outlier dashboard
 
 In the filters panel, you can configure these parameters for the outlier analysis performed by several panels: Consecutive, Threshold, Window, and Timeslice.
