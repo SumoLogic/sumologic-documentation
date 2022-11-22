@@ -284,7 +284,7 @@ In the filters pane, you can can configure these parameters for the [outlier](/d
 
 You can also filter the Security Groups dashboard by any combination of `DestinationIP`, `SourceIP`, `action`, `dest_port`, `interfaceid`, `protocol`, `security_grp_id`,  `src_port`, `subnet_id`, and `vpc_id`.
 
-###Outliers
+### Outliers
 
 **Amazon VPC Flow Logs - Outliers** dashboard provides panels which show any outliers around Bytes, Packets and Accepted/Rejected traffic. In addition to this there is a separate section “Security Group” which has panels for outliers with respect to inbound and outbound traffic. This dashboard is populated only if you chose VPC-JSON option for LogFormat when you deployed the CloudFormation template.
 
