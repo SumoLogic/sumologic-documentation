@@ -191,6 +191,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source',
