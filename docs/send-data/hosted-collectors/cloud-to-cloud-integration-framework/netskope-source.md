@@ -18,7 +18,7 @@ The following event types are available to collect:
  * page
 
 :::note
-This Source is not available in the Fed deployment. Use the legacy collection method for Netskope. 
+This Source is available in the Fed deployment.
 :::
 
 ## States
