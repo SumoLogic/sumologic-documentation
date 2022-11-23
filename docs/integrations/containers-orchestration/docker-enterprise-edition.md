@@ -115,19 +115,19 @@ To configure log and metric collection for the Docker ULM App, do the following:
 
 Follow the instructions in this section to create Sumo Logic fields and collector, then deploy Fluentd and FluentBit on Manager Node.
 
-You don’t need to deploy Prometheus. Plus, docker EE collection has been tested with Helm Version 2.12. For a non-Helm version go [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#non-helm-installation).
+You don’t need to deploy Prometheus. Plus, docker EE collection has been tested with Helm Version 2.12. For a non-Helm version go [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#non-helm-installation).
 
-1. [Before you start](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#before-you-start)
-2. [Create Sumo Fields and a collector](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#create-sumo-fields-a-collector)
-    * [Automatic Source Creation and Setup YAML](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#automatic-source-creation-and-setup-yaml)
-    * [Manual Source Creation and Setup](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#manual-source-creation-and-setup)
-        * [Create the namespace and secret](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#create-the-namespace-and-secret)
-        * [Create a Hosted Collector and an HTTP Source](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#create-a-hosted-collector-and-an-http-source)
-3. [Deploy Fluentd](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#deploy-fluentd)
-    * [Use default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#use-default-configuration)
-    * [Customize configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#customize-configuration)
-    * [Verify the pods are running](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#verify-the-pods-are-running)
-4. [Deploy FluentBit](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#deploy-fluentbit)
+1. [Before you start](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#before-you-start)
+2. [Create Sumo Fields and a collector](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#create-sumo-fields-a-collector)
+    * [Automatic Source Creation and Setup YAML](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#automatic-source-creation-and-setup-yaml)
+    * [Manual Source Creation and Setup](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#manual-source-creation-and-setup)
+        * [Create the namespace and secret](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#create-the-namespace-and-secret)
+        * [Create a Hosted Collector and an HTTP Source](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#create-a-hosted-collector-and-an-http-source)
+3. [Deploy Fluentd](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#deploy-fluentd)
+    * [Use default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#use-default-configuration)
+    * [Customize configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#customize-configuration)
+    * [Verify the pods are running](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#verify-the-pods-are-running)
+4. [Deploy FluentBit](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#deploy-fluentbit)
 
 
 #### Troubleshooting
