@@ -342,7 +342,7 @@ The following table shows the **config** parameters for a Box Source.
    </td>
    <td>null
    </td>
-   <td>Type a category for the source. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata</a> field <code>_sourceCategory</code>. See <a href="/docs/send-data/best-practices#good-and-bad-source-categories">best practices</a> for details.
+   <td>Type the category of the source. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata</a> field <code>_sourceCategory</code>. See <a href="/docs/send-data/best-practices#good-and-bad-source-categories">best practices</a> for details.
    </td>
    <td>modifiable
    </td>
