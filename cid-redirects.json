@@ -2546,6 +2546,7 @@
   "/Send_Data/Sources/01Sources_for_Installed_Collectors/Script_Action": "/docs/send-data/installed-collectors/sources/script-action",
   "/Search/Search_Cheat_Sheets/Search-Operators-Cheat-Sheet": "/docs/search/search-cheat-sheets",
   "/Solutions/AWS_Observability_Solution": "/docs/observability",
+  "/Send_Data/Sources/03Use_JSON_to_Configure_Sources/JSON_Parameters_for_Hosted_Sources": "/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources";
   "/Traces/01Getting_Started_with_Transaction_Tracing": "/docs/apm/traces/get-started-transaction-tracing",
   "/Traces/02Working_with_Tracing_data/02Tracing_Dashboards": "/docs/apm/traces/working-with-tracing-data/tracing-dashboards",
   "/Traces/02Working_with_Tracing_data/03View_and_investigate_traces": "/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces",
