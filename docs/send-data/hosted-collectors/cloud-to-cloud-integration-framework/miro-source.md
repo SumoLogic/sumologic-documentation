@@ -31,6 +31,7 @@ In this configuration, you will set up a Miro source account with your Enterpris
 
 Complete the following steps to get the credentials and enable the required scope:
 1. Log into the [Miro](https://miro.com/login/) with an Enterprise account.
+
 2. Create a [Developer team](https://miro.com/app/settings/user-profile/apps) in your Miro Enterprise account.
 
  <img src={useBaseUrl('img/send-data/create-team.png')} alt="create-team.png" />
