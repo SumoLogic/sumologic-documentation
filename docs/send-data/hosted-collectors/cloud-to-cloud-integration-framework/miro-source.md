@@ -23,7 +23,7 @@ If the Source is configured with the **SIEM forward** option, the metadata field
 
 ## Prerequisite
 
-To get audit logs, you must have Miro Enterprise account.
+To collect audit logs, you must have a Miro Enterprise account.
 
 ## Setup and Configuration
 
