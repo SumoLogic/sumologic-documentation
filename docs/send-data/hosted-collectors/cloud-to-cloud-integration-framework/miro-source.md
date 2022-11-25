@@ -15,7 +15,7 @@ The Miro API integration consumes data of the Audit Logs and sends it to Sumo Lo
 
 ## Metadata
 
-If the integration is configured with the **SIEM forward** option, the parser field will be set. See the table below:
+If the Source is configured with the **SIEM forward** option, the metadata field `_siemparser` will be set.
 
 | Field Name | Value |
 | --- | --- |
@@ -27,10 +27,10 @@ To get audit logs, you must have Miro Enterprise account.
 
 ## Setup and Configuration
 
-In this configuration, you will set up a Miro source account with your enterprise account and configure it to be authorized and authenticated to use audit logs from Miro API.
+In this configuration, you will set up a Miro source account with your Enterprise account and configure it to be authorized and authenticated to use audit logs from Miro API.
 
 Complete the following steps to get the credentials and enable the required scope:
-1. Log into the [Miro](https://miro.com/login/) with an enterprise account.
+1. Log into the [Miro](https://miro.com/login/) with an Enterprise account.
 2. Create a [Developer team](https://miro.com/app/settings/user-profile/apps) in your Miro Enterprise account.
 
  <img src={useBaseUrl('img/send-data/create-team.png')} alt="create-team.png" />
