@@ -13,9 +13,9 @@ The Miro Source API integration ingests audit logs obtained from the [Audit log 
 
 The Miro API integration consumes data of the Audit Logs and sends it to Sumo Logic. The polling interval time for integration is 5 minutes.
 
-## Metadata Fields
+## Metadata
 
-If the integration is configured with the **SIEM forward** option, the parser field will be set. See the **Data Source** table below:
+If the integration is configured with the **SIEM forward** option, the parser field will be set. See the table below:
 
 | Field Name | Value |
 | --- | --- |
@@ -35,7 +35,7 @@ Complete the following steps to get the credentials and enable the required scop
 
  <img src={useBaseUrl('img/send-data/create-team.png')} alt="create-team.png" />
 
-3. Click **+Create new app** from [Your apps](https://miro.com/app/settings/user-profile/apps)page.
+3. Click **+Create new app** from [Your apps](https://miro.com/app/settings/user-profile/apps) page.
 
  <img src={useBaseUrl('img/send-data/your-apps1.png')} alt="your-apps1.png" width="550" />
 
