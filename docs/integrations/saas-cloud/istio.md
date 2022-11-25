@@ -102,7 +102,7 @@ helm upgrade --install <my-release-name> sumologic/sumologic -f sumologic-istio.
 
 ### If your Kubernetes collection has not been set up
 
-If you do not have Kubernetes set up, go [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy).
+If you do not have Kubernetes set up, go [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy).
 
 Log Collection:
 1. Enable [Access Logging](https://istio.io/latest/docs/tasks/observability/logs/access-log/#enable-envoy-s-access-logging) to write logs to stdout.
@@ -110,7 +110,7 @@ Log Collection:
   The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic.
 
 Metric Collection:
-1. Deploy using [Helm](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#installation-with-helm)
+1. Deploy using [Helm](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#installation-with-helm)
 2. Add **additionalScrapeConfigs** and **remoteWrite** rules to values.yaml
    * Add this **[additionalScrapeConfigs](https://sumologic-app-data.s3.amazonaws.com/Istio/sumologic-istio.yaml)** section to **prometheusSpec** field of `values.yaml`. These configs will scrape Istio endpoints for metrics. These configs will scrape Istio endpoints for metrics. You can read more about above scrape configs [here](https://istio.io/latest/docs/ops/integrations/prometheus/#option-2-customized-scraping-configurations).
 
@@ -158,7 +158,7 @@ Metric Collection:
 
 #### Validation Steps
 
-1. Do port forward via your terminal (`my-release` is my release I used while setting up [Sumo Logic helm chart](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Installation_with_Helm.md#installation-steps)):
+1. Do port forward via your terminal (`my-release` is my release I used while setting up [Sumo Logic helm chart](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation-with-helm.md#installation-steps)):
 ```bash
 kubectl port-forward prometheus-my-release-kube-prometheus-prometheus-0 9090
 ```
