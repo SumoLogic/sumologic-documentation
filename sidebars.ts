@@ -147,6 +147,7 @@ module.exports = {
                 'send-data/hosted-collectors/amazon-aws/amazon-path-expressions',
                 'send-data/hosted-collectors/amazon-aws/amazon-s3-audit-source',
                 'send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source',
+                'send-data/hosted-collectors/amazon-aws/aws-cost-explorer-source',
                 'send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source',
                 'send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source',
                 'send-data/hosted-collectors/amazon-aws/aws-s3-scan-interval-sources',
