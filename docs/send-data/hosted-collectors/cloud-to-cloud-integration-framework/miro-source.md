@@ -23,7 +23,7 @@ If the Source is configured with the **SIEM forward** option, the metadata field
 
 ## Prerequisite
 
-To get audit logs, you must have Miro Enterprise account.
+To collect audit logs, you must have a Miro Enterprise account.
 
 ## Setup and Configuration
 
@@ -31,6 +31,7 @@ In this configuration, you will set up a Miro source account with your Enterpris
 
 Complete the following steps to get the credentials and enable the required scope:
 1. Log into the [Miro](https://miro.com/login/) with an Enterprise account.
+
 2. Create a [Developer team](https://miro.com/app/settings/user-profile/apps) in your Miro Enterprise account.
 
  <img src={useBaseUrl('img/send-data/create-team.png')} alt="create-team.png" />
@@ -47,7 +48,7 @@ Complete the following steps to get the credentials and enable the required scop
 
  <img src={useBaseUrl('img/send-data/enable-scope.png')} alt="enable-scope.png" width="500" />
 
-6. To authorise the app, click **Install app to get OAuth token** and select your team from the drop down.
+6. To authorize the app, click **Install app to get OAuth token** and select your team from the drop down.
 
  <img src={useBaseUrl('img/send-data/install-app.png')} alt="install-app.png" width="450" />
 
