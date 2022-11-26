@@ -124,7 +124,7 @@ _index=sumologic_volume sizeInBytes
 
 After completing the setup steps above, schedule the search to run, as follows.  
 
-1. Schedule the query you created in the previous step. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
+1. Schedule the query you created in the previous step (**Query**). For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the run frequency to **Daily**.
 1. Set time range value to **Last 24 Hours**.<br/> ![time range daily plan limt.png](/img/ingestion-volume/daily-last-24.png)
 1. Make sure Alert Condition is set to **Send Notification **if the **Alert Condition** is met: **Number of results** greater than **0.**
