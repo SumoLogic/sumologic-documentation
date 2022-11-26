@@ -749,7 +749,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'alerts/monitors/index'},
           items: [
-            'alerts/monitors/add-monitor',
+            'alerts/monitors/create-monitor',
             'alerts/monitors/edit-settings',
             'alerts/monitors/monitor-faq',
             'alerts/monitors/alert-response',
