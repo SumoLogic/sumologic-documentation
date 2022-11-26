@@ -124,7 +124,7 @@ _index=sumologic_volume sizeInBytes
 
 After completing the setup steps above, schedule the search to run, as follows.  
 
-1. Schedule the query you just created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
+1. Schedule the query you created in the previous step. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the run frequency to **Daily**.
 1. Set time range value to **Last 24 Hours**.<br/> ![time range daily plan limt.png](/img/ingestion-volume/daily-last-24.png)
 1. Make sure Alert Condition is set to **Send Notification **if the **Alert Condition** is met: **Number of results** greater than **0.**
@@ -225,7 +225,7 @@ If you don't want the results of the query across Sources or source categories t
 
 After completing the setup steps, you'll need to create a monitor. 
 
-1. Create a monitor corresponding to the query you've created above ([learn more](/docs/alerts/monitors/add-monitor)).
+1. Create a monitor corresponding to the query you've created above ([learn more](/docs/alerts/monitors/create-monitor)).
 1. Set the **Run frequency** to **Hourly**.
 1. Set a time range. The default is **Last 24 hours**. If you need to allow for more time because some collectors do not typically ingest data that often, specify a longer time range. For example, seven days.<br/>  ![Alert](/img/ingestion-volume/AlertDataLoss.png)
 1. Make sure Alert Condition is set to **Send Notification **if the **Alert Condition** is met: **Number of results** greater than **0**.

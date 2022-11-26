@@ -27,7 +27,7 @@ This document shows you how to create a monitor.
 1. Select a **Monitor Type** (Logs, Metrics, or SLO). <br/><img src={useBaseUrl('img/monitors/trigger-conditions-monitor.png')} alt="icon" width="300"/>
 1. Select a **Detection Method** (Static or Outlier). <br/><img src={useBaseUrl('img/monitors/outlier-detection-method.png')} alt="icon" width="200"/>
    * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.
-   * An **Outlier** is an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency.  
+   * **Outlier** lets you detect an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency.  
 
 ## Step 3: Provide a Query
 
@@ -70,7 +70,7 @@ You can set the trigger based on the following:
 `Alert when returned row count is <threshold type> <threshold> within <time range>`
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | Threshold type | How you want the value compared. Select either **greater than**, **greater than or equal**, **less than or equal**, or **less than**. |
 | Threshold | The value against which the trigger will be evaluated. You can specify any valid numeric value up to **1,000**. |
 | Time range | The duration of time to evaluate. Select either **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, **1 hour**, **6 hours**, **12 hours**, or **24 hours**. |
@@ -105,7 +105,7 @@ For Metrics monitors, you can choose to recover based on a single data point bel
 `Alert when result is greater than or equal to <threshold> standard deviations from baseline for <consecutive> consecutive out of <window> data points`
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | Threshold | The number of standard deviations for calculating violations. The default is 3.0. |
 | Consecutive | The required number of consecutive indicator data points (outliers) to trigger a violation. |
 | Window | The number of data points used to calculate the baseline for outlier detection. |
@@ -121,7 +121,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 `Alert when missing data within <time range>`
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | Time range | The time span of data to evaluate. Select either 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 6 hours, 12 hours, or 24 hours. |
 
 Recover
@@ -148,7 +148,7 @@ Recover
 `Alert when result is <threshold type> <threshold> <occurrence type> <time range>`
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | Threshold type | How you want the value compared. Select either **greater than**, **greater than or equal**, **less than or equal**, or **less than**. |
 | Threshold | The value against which the trigger will be evaluated. You can specify any valid numeric value. |
 | Occurrence type | The time condition you want for the trigger. Select either **at any time within** or **continuously for**. <br/><br/>Choose continuously for if you want all the data points for the given metric to meet threshold conditions in a given time range, before triggering an alert. Alternatively, choose **at any time within** if you want to generate an alert when only a single data point meets the threshold condition for the given time range. |
@@ -167,7 +167,7 @@ Sumo Logic automatically resolves the incident when the resolution condition is 
 `Recover automatically when result is <threshold type> <threshold> for the selected time period`
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | Threshold type | How you want the value compared. Select either greater than, greater than or equal, less than or equal, or less than. |
 | Threshold | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
 
@@ -180,7 +180,7 @@ Sumo Logic automatically resolves the incident when the resolution condition is 
 `Alert when result is greater than or equal to <threshold> standard deviations from baseline for <time range>`
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | Threshold  | The number of standard deviations for calculating violations. The default is 3.0. |
 | Time range | The duration of time to evaluate. Select either **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, **1 hour**, or **24 hours**. |
 
@@ -196,7 +196,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 `Alert when missing data <occurrence type> for <time range>`
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | Occurrence type  | The time condition you want for the trigger. Choose either **for all** or **for any**.<br/><br/>If you choose all you will get notified when all of the metrics meeting the query condition are not sending data in the given time range.<br/><br/>Alternatively, you can choose any if you want to get notified when one of the metrics does not receive any data in the given time range. *This option requires at least one initial data point and expires after 24 hours once triggered.* |
 | Time range | The duration of time to evaluate. Select either **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, or **1 hour**. |
 
