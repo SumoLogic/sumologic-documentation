@@ -24,11 +24,11 @@ An Okta Source tracks errors, reports its health, and start-up progress. You�
 
 An Okta Source goes through the following states when created:
 
-1. **Pending**: Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
-1. **Started**: A collection task is created on the Hosted Collector.
-1. **Initialized**: The task configuration is complete in Sumo Logic.
-1. **Authenticated**: The Source successfully authenticated with Okta.
-1. **Collecting**: The Source is actively collecting data from Okta.
+1. **Pending**. Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
+1. **Started**. A collection task is created on the Hosted Collector.
+1. **Initialized**. The task configuration is complete in Sumo Logic.
+1. **Authenticated**. The Source successfully authenticated with Okta.
+1. **Collecting**. The Source is actively collecting data from Okta.
 
 If the Source has any issues during any one of these states it is placed in an **Error** state.
 
