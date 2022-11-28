@@ -240,7 +240,7 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 
 ### Auto-subscribe other log groups to SumoCWLogsLambda function
 
-If you want to collect logs from multiple Log Groups, you can use Sumo’s LogGroup Lambda Connector to subscribe additional Log Groups to the Lambda function. To do so, follow the instructions in [Auto-Subscribe AWS Log Groups to a Lambda Function](../autosubscribe-arn-destination.md).  When you edit the connector parameters, set DestinationArnValue parameter to the `SumoCWLogsLambda` function ARN.
+If you want to collect logs from multiple Log Groups, you can use Sumo’s LogGroup Lambda Connector to subscribe additional Log Groups to the Lambda function. To do so, follow the instructions in [Auto-Subscribe AWS Log Groups to a Lambda Function](../autosubscribe-arn-destination.md). When you edit the connector parameters, set the `DestinationArnValue` parameter to the `SumoCWLogsLambda` function ARN.
 
 ## Alternate collection methods 
 
