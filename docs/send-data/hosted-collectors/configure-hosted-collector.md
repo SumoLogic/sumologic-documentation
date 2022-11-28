@@ -73,7 +73,7 @@ Once you've configured your Hosted Collector, the next step is to configure a So
     <div className="box box6 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/web-servers/web-servers.png')} alt="Thumbnail icon" width="50"/>
-      <h4><a href="//Users/kpohas/sumologic-documentation/docs/send-data/hosted-collectors/http-source">HTTP Sources</a></h4>
+      <h4><a href="/docs/send-data/hosted-collectors/http-source">HTTP Sources</a></h4>
       <p>Receive logs, metrics, traces, and OTLP data uploaded to a unique URL generated for the Source.</p>
       </div>
     </div>
