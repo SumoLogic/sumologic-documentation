@@ -1,7 +1,7 @@
 ---
-id: gmail-tracelogs
-title: Gmail TraceLogs
-sidebar_label: Gmail TraceLogs
+id: gmail-tracelogs-source
+title: Gmail TraceLogs Source
+sidebar_label: Gmail TraceLogs Source
 description: Gmail TraceLogs Integration
 ---
 
