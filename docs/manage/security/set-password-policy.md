@@ -14,7 +14,7 @@ Admins with Manage Password Policy capability can make changes at any time for u
 To change the password policy:
 
 1. Go to **Administration** \> **Security** \> **Password Policy**.
-1. Change any of the following:
+2. Change any of the following:
 
     ![Set_Passwod_Policy.png](/img/security/Set_Passwod_Policy.png)
 
@@ -26,7 +26,8 @@ To change the password policy:
       * Numbers (0-9)
       * Special characters (#, $, %, &, etc)
     * **Users locked out after.** With these options, you can determine when users are locked out of their Sumo Logic accounts using the three menus: number of failed attempts, amount of time during which the incorrect password is entered, and the amount of time a user will be locked out of their account after entering the set number of incorrect passwords. 
+      * For example, we choose **7 Failed Attempts** from the first menu, **Within 10 Minutes** from the second menu, and **For 60 Minutes** from the third menu. This means that if a user enters four incorrect passwords in the space of five minutes, that user will be unable to log back into their account for 60 minutes. 
+    * **2-Step Verification for My Org.** Select if 2-Step Verification (MFA) is optional or required. If set to **required** users will be required to configure MFA. If set to **optional** users can enable/disable MFA via their user preferences.
+    * **Remember Browser.** Provides users an option to select to remember the MFA on the browser for 30 days. If set to **disabled**, users will be required to enter their MFA code upon every login. 
 
-    For example, we choose **4 Failed Attempts** from the first menu, **Within 5 Minutes** from the second menu, and **For 60 Minutes** from the third menu. This means that if a user enters four incorrect passwords in the space of five minutes, that user will be unable to log back into their account for 60 minutes. 
-
-1. Click **Save**.
+3. Click **Save**.

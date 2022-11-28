@@ -12,7 +12,7 @@ This guide provides an end-to-end solution for deploying, managing, monitoring,
 
 ## Guides
 
-In this section, we will introduce the following concepts:
+In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper" markdown="1">
 <div className="box box1 card">
@@ -62,7 +62,7 @@ Once you've set up collection, installed Kubernetes apps, and familiarized yours
 
 Once you have completed the above steps, you'll have installed the collection as well as the core Kubernetes Dashboards and alerts. To get started, open a new **Explore** tab in Sumo Logic and view your Kubernetes App Dashboards.
 
-If you don't see data in Sumo Logic, review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Troubleshoot_Collection.md).
+If you don't see data in Sumo Logic, review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/troubleshoot-collection.md).
 
 #### Kubernetes Partner Apps
 

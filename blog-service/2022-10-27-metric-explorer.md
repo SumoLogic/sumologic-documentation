@@ -1,11 +1,14 @@
 ---
-title: New Slack Source
-image: https://www.sumologic.com/img/logo.svg
+title: Metrics Explorer Enhancement
+image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - sumo logic
   - service release notes
   - open source
 hide_table_of_contents: false
+authors:
+  - url: https://help.sumologic.com/release-notes-service/rss.xml
+    image_url: /img/release-notes/rss-orange.png
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -23,11 +23,11 @@ A Microsoft Azure AD Inventory Source tracks errors, reports its health, and 
 A Microsoft Azure AD Inventory Source goes through the following states
 when created:
 
-1. **Pending**: Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
-1. **Started**: A collection task is created on the Hosted Collector.
-1. **Initialized**: The task configuration is complete in Sumo Logic.
-1. **Authenticated**: The Source successfully authenticated with Azure.
-1. **Collecting**: The Source is actively collecting data from Azure.
+1. **Pending**. Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
+1. **Started**. A collection task is created on the Hosted Collector.
+1. **Initialized**. The task configuration is complete in Sumo Logic.
+1. **Authenticated**. The Source successfully authenticated with Azure.
+1. **Collecting**. The Source is actively collecting data from Azure.
 
 If the Source has any issues during any one of these states it is placed
 in an **Error** state.
@@ -87,10 +87,10 @@ From there select (or search for) the following permissions. An Administrator m
 
 | API | Account Type| Permissions |
 |---------|---------------------------------------------------|------------------------------------|
-| User    | Application or Delegated (work or school account) | User.Read.All, Directory.ReadAll   |
-| User    | Delegated (personal Microsoft account)            | Not supported.                     |
-| Devices | Application or Delegated (work or school account) | Device.Read.All, Directory.ReadAll |
-| Devices | Delegated (personal Microsoft account)            | Not supported.                     |
+| User    | Application (work or school account) | User.Read.All, Directory.ReadAll   |
+| Devices | Application (work or school account) | Device.Read.All, Directory.ReadAll |
+
+Personal Microsoft accounts are not supported.
 
 ![azure ad step 8.png](/img/send-data/azure-ad-step-8.png)
 

@@ -6,6 +6,10 @@ sidebar_label: Salesforce
 
 The Salesforce Source provides a secure endpoint to receive event data from the Salesforce through its [Rest API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm). The source securely stores the required authentication, scheduling, and state tracking information.
 
+:::note
+This Source is available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Prerequisites: Generate the Salesforce API token
 
 The Consumer Key and Consumer Secret API tokens from Salesforce are required to configure this source. 
@@ -88,11 +92,11 @@ The Salesforce Source reports errors, its health, and initialization status. Oth
 
 A Salesforce Source goes through the following states when created:
 
-1. **Pending**: Once the Source is submitted, details are stored and the source is placed in a **Pending** state.
-1. **Started**: A collection task is created on the hosted collector.
-1. **Initialized**: Task configuration is complete in Sumo Logic.
-1. **Authenticated**: The Source has successfully authenticated with Salesforce
-1. **Collecting**: The Source is actively collecting data from Salesforce.
+1. **Pending**. Once the Source is submitted, details are stored and the source is placed in a **Pending** state.
+1. **Started**. A collection task is created on the hosted collector.
+1. **Initialized**. Task configuration is complete in Sumo Logic.
+1. **Authenticated**. The Source has successfully authenticated with Salesforce
+1. **Collecting**. The Source is actively collecting data from Salesforce.
 
 If the Source has any issues during any one of these states it is placed in an **Error** state.
 

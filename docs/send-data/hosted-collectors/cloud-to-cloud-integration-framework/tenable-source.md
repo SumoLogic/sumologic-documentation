@@ -14,7 +14,7 @@ The Tenable Source provides a secure endpoint to ingest audit-log events, vulner
    * The Asset Export API first [exports assets](https://developer.tenable.com/reference/exports-assets-request-export) that are used to initiate export jobs. Next, it gets the export [status](https://developer.tenable.com/reference/exports-assets-request-export) and then [downloads exported assets](https://developer.tenable.com/reference/exports-assets-download-chunk) in a chunk.
 
 :::note
-This Source is not available in the [Fed deployment](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints).
+This Source is available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## States
@@ -23,11 +23,11 @@ A Tenable Source tracks errors, reports its health, and start-up progress. You
 
 A Tenable Source goes through the following states when created:
 
-1. **Pending**: Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
-1. **Started**: A collection task is created on the Hosted Collector.
-1. **Initialized**: The task configuration is complete in Sumo Logic.
-1. **Authenticated**: The Source successfully authenticated with Tenable.
-1. **Collecting**: The Source is actively collecting data from Tenable.
+1. **Pending**. Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
+1. **Started**. A collection task is created on the Hosted Collector.
+1. **Initialized**. The task configuration is complete in Sumo Logic.
+1. **Authenticated**. The Source successfully authenticated with Tenable.
+1. **Collecting**. The Source is actively collecting data from Tenable.
 
 If the Source has any issues during any one of these states it is placed in an **Error** state.
 
