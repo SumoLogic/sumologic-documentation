@@ -172,7 +172,7 @@ For example, the card below shows that “ServiceUnavailable” error is happeni
 ## Subscribe to Alert Monitors
 
 :::note Terminology
-A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to an _Alert_'s _Monitor_.
+A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to an _Alert's Monitor_.
 :::
 
 
@@ -189,6 +189,8 @@ A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to a
 
 
 ### Notification Preferences
+
+Alert notification preferences give you granular control over specific monitor activity you want to follow. <img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="alert-list-page-bell-border" width="400"/>
 
 1. From the left nav, click on your username > **Preferences**.
 2. Click on any of the following checkboxes to enable your desired preferences:

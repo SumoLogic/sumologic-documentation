@@ -284,7 +284,7 @@ module.exports = {
                 activeBaseRegex: '^/docs/apm/.*',
               },
               {
-                label: 'Alerts',
+                label: 'Alerts/Monitors',
                 to: '/docs/alerts',
               },
               {
