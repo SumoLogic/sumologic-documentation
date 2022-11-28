@@ -146,7 +146,7 @@ The details pane provides the following tabs:
 #### Summary
 The details of the span are provided.
 
-To drill down further into your data, the **Logs** section has links to run searches against related log data. Top links for span/trace IDs work if you have span and trace IDs injected into logs. Lower section links are available and work automatically if [SumoLogic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy) is installed.  
+To drill down further into your data, the **Logs** section has links to run searches against related log data. Top links for span/trace IDs work if you have span and trace IDs injected into logs. Lower section links are available and work automatically if [SumoLogic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy) is installed.  
 
 ![Logs links.png](/img/traces/Logs-links.png)
 
