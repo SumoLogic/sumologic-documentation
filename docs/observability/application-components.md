@@ -232,7 +232,7 @@ Create the following Fields in collection sources both for logs and metrics. Thi
 
 ### Configuring or updating email notifications
 
-If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services by [adding a monitor](/docs/alerts/monitors/add-monitor).
+If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services by [adding a monitor](/docs/alerts/monitors/create-monitor).
 
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
