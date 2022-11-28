@@ -132,7 +132,7 @@ Use this dashboard to:
 
 ### 6. AWS EC2 Metrics - TCP
 
-The **AWS EC2 Metrics - TCP** dashboard  provides insights into TCP
+The **AWS EC2 Metrics - TCP** dashboard provides insights into TCP
 traffic performance per EC2 instance throughout your infrastructure,
 including metrics for inbound and outbound connections, listen and
 established connections, and close wait and time wait connections.
