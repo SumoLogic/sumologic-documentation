@@ -5,7 +5,6 @@ sidebar_label: Cybereason
 description: The Cybereason Source provides a secure endpoint to receive authentication logs from the Cybereason Malops API.
 ---
 
-# Cybereason Source
 The Cybereason Source provides a secure endpoint to receive authentication logs from the Cybereason [Malops API](https://nest.cybereason.com/documentation/api-documentation/all-versions/retrieve-all-malops-all-types#getmalopsmalware). It securely stores the required authentication, scheduling, and state
 tracking information.
 
