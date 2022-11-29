@@ -1,5 +1,5 @@
 ---
-id: add-monitor
+id: create-monitor
 title: Create a Monitor
 description: Learn how to create a Sumo Logic monitor.
 ---

@@ -22,11 +22,11 @@ The AWS Cost Explorer Source reports errors, its health, and initialization stat
 
 An AWS Cost Explorer Source goes through the following states when created:
 
-1. **Pending**: Once the Source is submitted, details are stored and the source is placed in a **Pending** state.
-2. **Started**: A collection task is created on the hosted collector.
-3. **Initialized**: Task configuration is complete in Sumo Logic.
-4. **Authenticated**: The Source has successfully authenticated with AWS
-5. **Collecting**: The Source is actively collecting data from AWS accounts.
+1. **Pending**. Once the Source is submitted, details are stored and the source is placed in a **Pending** state.
+2. **Started**. A collection task is created on the hosted collector.
+3. **Initialized**. Task configuration is complete in Sumo Logic.
+4. **Authenticated**. The Source has successfully authenticated with AWS
+5. **Collecting**. The Source is actively collecting data from AWS accounts.
 
 If the Source has any issues during any one of these states, it is placed in an **Error** state.<br/>![Health and Status columns.png](/img/send-data/health-status.png)
 

@@ -1,7 +1,7 @@
 ---
 id: miro-source
 title: Miro Source
-sidebar_label: Miro Source
+sidebar_label: Miro
 description: Configure Miro Source Cloud-to-Cloud connector
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -48,7 +48,7 @@ Complete the following steps to get the credentials and enable the required scop
 
  <img src={useBaseUrl('img/send-data/enable-scope.png')} alt="enable-scope.png" width="500" />
 
-6. To authorise the app, click **Install app to get OAuth token** and select your team from the drop down.
+6. To authorize the app, click **Install app to get OAuth token** and select your team from the drop down.
 
  <img src={useBaseUrl('img/send-data/install-app.png')} alt="install-app.png" width="450" />
 
