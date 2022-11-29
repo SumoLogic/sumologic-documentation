@@ -2186,18 +2186,9 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'cloud-soar/index'},
       items: [
-        'cloud-soar/threat-focus',
-        'cloud-soar/tool-orchestration',
-        {
-          type: 'category',
-          label: 'Multi-Tenancy',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'cloud-soar/multi-tenancy/index'},
-          items: [
-            'cloud-soar/multi-tenancy/placeholder1',
-          ]
-        }
+        'cloud-soar/user-manual',
+        'cloud-soar/placeholder1',
+        'cloud-soar/placeholder2',
       ],
     },
   ],
