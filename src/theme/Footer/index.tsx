@@ -6,7 +6,9 @@
  */
 import React, { Fragment } from 'react';
 import DocLink from '@docusaurus/Link';
+import isInternalUrl from '@docusaurus/isInternalUrl';
 import { useThemeConfig } from '@docusaurus/theme-common';
+import IconExternalLink from '@theme/Icon/ExternalLink';
 import {
   FontAwesomeIcon,
 } from '@fortawesome/react-fontawesome';
@@ -22,6 +24,7 @@ import {
   Link,
   List,
   ListItem,
+  ListItemIcon,
   ListItemText,
   ListSubheader,
   Toolbar,
@@ -79,13 +82,26 @@ export const Footer = () => {
                 <ListItem>
                   <ListItemText
                     primaryTypographyProps={{
-                      color: 'common.white',
+                      color: '#e3e3e3',
                       fontFamily: 'Lab Grotesque',
                       fontSize: 14,
                     }}
                   >
                     {label}
                   </ListItemText>
+                  {!isInternalUrl(href) && (
+                    <ListItemIcon
+                      sx={{
+                        minWidth: 'auto',
+                        ml: 1,
+                        '& svg': {
+                          color: 'common.white',
+                        }
+                      }}
+                    >
+                      <IconExternalLink />
+                    </ListItemIcon>
+                  )}
                 </ListItem>
               </Link>
             ))}

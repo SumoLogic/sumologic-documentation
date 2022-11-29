@@ -63,7 +63,7 @@ export const Home = () => {
             alignItems='center'
             container
             direction={{
-              md: 'row',
+              md: 'row-reverse',
               xs: 'column-reverse',
             }}
             justifyContent={{
