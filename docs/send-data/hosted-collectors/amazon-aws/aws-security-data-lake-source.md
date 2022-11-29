@@ -54,7 +54,7 @@ Create a subscriber in Amazon Security Data Lake Console. To create a subscriber
 
 When you create an Amazon Security Data Lake source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use from the existing ones or create a new Hosted Collector, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-**To create an Amazon Security Data Lake source**
+**To create an Amazon Security Data Lake source:**
 
 1. In the Sumo Logic environment, go to **Manage Data** > **Collection** > **Collection**.
 2. On the **Collectors page, click **Add Source** next to a Hosted Collector.
