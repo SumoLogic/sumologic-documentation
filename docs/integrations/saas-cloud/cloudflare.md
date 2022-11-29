@@ -50,7 +50,6 @@ client_request_uri, origin_response_status, edge_response_status, origin_ip, cli
 | count
 ```
 
-
 ## Collecting Logs for Cloudflare
 
 This section shows you how to set up a Hosted Collector and specify a Sumo Logic Source.
