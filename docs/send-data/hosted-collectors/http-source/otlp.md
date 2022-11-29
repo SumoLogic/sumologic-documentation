@@ -11,7 +11,7 @@ description: Use an HTTP OTLP Source to collect OTLP formatted Logs, Metrics, an
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 :::note
-This feature is in Beta. To participate contact your Sumo account executive.
+This feature is in Beta. To participate, contact your Sumo account executive.
 :::
 
 
