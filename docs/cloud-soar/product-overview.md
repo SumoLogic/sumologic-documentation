@@ -148,7 +148,7 @@ Cloud SOAR is also able to correlate existing incidents in order to check if spe
 
 The **Settings** section contains many of the administrative functions for
 the Cloud SOAR platform. The **General** settings section consists of many
-different settings, such as proxy settings, date and time customization. A full list of these setting can be found in [Appendix A](#appendix-a).
+different settings, such as proxy settings, date and time customization. A full list of these setting can be found in the [Cloud SOAR Appendix](/docs/cloud-soar/appendix). 
 
 ![Settings Menu](/img/cloud-soar/image17.png)
 
