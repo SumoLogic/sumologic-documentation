@@ -119,18 +119,18 @@ To configure a Microsoft Azure AD Inventory Source:
 * `_siemProduct`: Azure AD
 * `_siemDataType`: Inventory
 
-1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
+7. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
-1. Provide the **Directory (tenant) ID** and **Application (client) ID** you got after you registered (created) the Azure Application in step 5 of the setup section.
+8. Provide the **Directory (tenant) ID** and **Application (client) ID** you got after you registered (created) the Azure Application in step 5 of the setup section.
 
-1. **Application Client Secret Value**. Provide the Application Client Secret Value you created in step 7 of the setup section.
+9. **Application Client Secret Value**. Provide the Application Client Secret Value you created in step 7 of the setup section.
 
-1. **Supported APIs to collect**. Select one or more of the available APIs: **Devices** and **Users**.
+10. **Supported APIs to collect**. Select one or more of the available APIs: **Devices** and **Users**.
 
-1. When you are finished configuring the Source click **Submit**.
+11. When you are finished configuring the Source click **Submit**.
 
 ### Error types
 
