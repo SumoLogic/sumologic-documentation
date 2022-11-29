@@ -79,7 +79,7 @@ export const Footer = () => {
                 key={href}
                 underline='none'
               >
-                <ListItem>
+                <ListItem sx={{ py: 0 }}>
                   <ListItemText
                     primaryTypographyProps={{
                       color: '#e3e3e3',

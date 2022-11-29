@@ -67,15 +67,18 @@ export const Home = () => {
               xs: 'column-reverse',
             }}
             justifyContent={{
-              md: 'space-between',
+              md: 'center',
               xs: 'flex-end',
             }}
             height='100%'
-            pl={{
-              md: 6,
-            }}
           >
-            <Grid item md={6}>
+            <Grid
+              item
+              md={6}
+              pl={{
+                md: 8,
+              }}
+            >
               <Stack
                 alignItems={{
                   md: 'flex-start',
@@ -146,17 +149,22 @@ export const Home = () => {
               </Stack>
             </Grid>
             <Grid
-              component='img'
               item
-              src={heroImage}
-              sx={{
-                width: {
+              md={6}
+              mr={{
+                md: -14,
+              }}
+            >
+              <Box
+                component='img'
+                src={heroImage}
+                width={{
                   lg: 450,
                   md: 300,
                   xs: '85%',
-                },
-              }}
-            />
+                }}
+              />
+            </Grid>
           </Grid>
         </Container>
       </Stack>
