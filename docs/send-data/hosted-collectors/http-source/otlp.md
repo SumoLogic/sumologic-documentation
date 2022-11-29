@@ -1,9 +1,19 @@
 ---
 id: otlp
-title: OTLP/HTTP Source
-sidebar_label: Configure for OpenTelemetry
+title: OTLP/HTTP Source (Beta)
 description: Use an HTTP OTLP Source to collect OTLP formatted Logs, Metrics, and Traces data.
 ---
+
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+
+:::note
+This feature is in Beta. To participate contact your Sumo account executive.
+:::
+
 
 An OTLP/HTTP Source is an endpoint for receiving OTLP formatted Logs, Metrics, and Traces. This is an alternative option to installing an OpenTelemetry Collector for sending OTLP data to Sumo Logic. 
 
