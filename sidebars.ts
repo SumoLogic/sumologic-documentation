@@ -254,7 +254,6 @@ module.exports = {
                 'send-data/hosted-collectors/http-source/generate-new-url',
                 'send-data/hosted-collectors/http-source/troubleshooting',
                 'send-data/hosted-collectors/http-source/traces',
-                'send-data/hosted-collectors/http-source/otlp',
               ],
             },
           ],
