@@ -47,9 +47,15 @@ export const Home = () => {
         sx={{
           bgcolor: 'white',
           backgroundImage: `url(${bgImage})`,
-          backgroundPosition: 'top',
+          backgroundPosition: {
+            md: 'top',
+            xs: 'left center',
+          },
           backgroundRepeat: 'no-repeat',
-          backgroundSize: '100% 200%',
+          backgroundSize: {
+            md: '100% 200%',
+            xs: '100% 100%',
+          },
         }}
         height={{
           md: 'auto',
@@ -63,7 +69,7 @@ export const Home = () => {
             alignItems='center'
             container
             direction={{
-              md: 'row-reverse',
+              md: 'row',
               xs: 'column-reverse',
             }}
             justifyContent={{
@@ -75,9 +81,6 @@ export const Home = () => {
             <Grid
               item
               md={6}
-              pl={{
-                md: 8,
-              }}
             >
               <Stack
                 alignItems={{
@@ -151,8 +154,8 @@ export const Home = () => {
             <Grid
               item
               md={6}
-              mr={{
-                md: -14,
+              pl={{
+                md: 13,
               }}
             >
               <Box
