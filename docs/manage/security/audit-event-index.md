@@ -41,7 +41,7 @@ Searching the Audit Event Index is the same as running a normal search against y
 
 For example, to search for user action events:
 
-1. In the Search page, enter the following: `_index=sumologic_audit_``events`  
+1. In the Search page, enter the following: `_index=sumologic_audit_events`  
 
     :::important
     Make sure to enter the query exactly as shown. Changing any part of the query renders it ineffective.
@@ -55,7 +55,7 @@ For example, to search for user action events:
 This index has detailed JSON logs for the following features. To search audit events for a specific feature use the metadata field `_sourceCategory` with its corresponding value. For example, to search events for access keys you would use the query:
 
 ```sql
-_index=sumologic_audit_``events _sourceCategory=accessKeys
+_index=sumologic_audit_events _sourceCategory=accessKeys
 ```
 
 | Product Feature | _sourceCategory Value  |
