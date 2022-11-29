@@ -1,7 +1,7 @@
 ---
 id: miro-source
 title: Miro Source
-sidebar_label: Miro Source
+sidebar_label: Miro 
 description: Configure Miro Source Cloud-to-Cloud connector
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
