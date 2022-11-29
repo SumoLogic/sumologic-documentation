@@ -17,6 +17,7 @@ Response Platform to facilitate and expedite timely management of
 Incident Response with a rich library of customizable playbooks for
 different threats and use cases of incident response scenarios
 expediting and automating response time to incident response events.
+
 This solution additionally provides capabilities to support incident
 responders during the process of assessment, Investigation, data
 collection and correlation to help inference additional information and
@@ -79,12 +80,9 @@ All multi-tenant installations offer:
 
 - Separate schema or databases for each individual tenant;
 - Logical or physical segregation of tenants;
-- A **Superuser** role that provides visibility on all tenants and
-    provides for execution of administrative duties, analytics,
-    dashboards and reporting;
+- A **Superuser** role that provides visibility on all tenants and provides for execution of administrative duties, analytics, dashboards, and reporting;
 - Individual administrators otherwise segregated to each tenant;
-- Isolation of external actions, e.g., enrichment of indicators of
-    compromise, containment actions prescribed to a host.
+- Isolation of external actions, e.g., enrichment of indicators of compromise, containment actions prescribed to a host.
 
 ![alt-text goes here](/img/cloud-soar/image5.png)
 
@@ -113,12 +111,9 @@ additional add-on or client to deploy. The top menu is broken up into
 two sections:
 
 - **Main Menu**
-   - All operational sections of Cloud SOAR, including Incidents, Triage
-        (if enabled), Operations and incoming Data Sources, can be found
-        under the Main Menu page links.
+   - All operational sections of Cloud SOAR, including Incidents, Triage (if enabled), Operations and incoming Data Sources, can be found under the Main Menu page links.
 - **Global Functions Menu**
-   - All Cloud SOAR configuration and administration options can be found
-        under the Global Functions menu
+   - All Cloud SOAR configuration and administration options can be found under the Global Functions menu
 
 ![alt-text goes here](/img/cloud-soar/image7.png)
 
@@ -136,7 +131,7 @@ Global Search allows users with the appropriate permissions to perform
 exhaustive searches throughout the application modules and all recorded
 information. All searchable Cloud SOAR sections are listed and individually
 selectable. To search, enter the search criteria in the search bar, then
-select the sections you wish to search and click 'Search".
+select the sections you wish to search and click **Search**.
 
 ![alt-text goes here](/img/cloud-soar/image9.png)
 
@@ -206,8 +201,7 @@ user input is required to authorize predefined actions.
 **Incident Templates** allow users to define a certain number of incident
 attributes that will automatically be set each time an incident is
 generated based on the template. This may include type, classification,
-incident assignment, playbooks or any other
-incident attribute.
+incident assignment, playbooks or any other incident attribute.
 
 #### Integrations
 
@@ -219,8 +213,7 @@ written in Python, Perl, PowerShell or Bash.
 
 #### Rules
 
-The Events Automation tab enables users to establish any daemonized integration rules to
-define what occurs when data is received from each of these sources.
+The Events Automation tab enables users to establish any daemonized integration rules to define what occurs when data is received from each of these sources.
 These rules allow specific data to be parsed from the incoming data
 sources and the acted upon automatically or through manual actions.
 
@@ -230,9 +223,9 @@ ARK or Automated Responder Knowledge is the Machine Learning component of Cloud 
 CBR solves new problems by adapting previously successful solutions to similar problems, in Cloud SOAR this can be leveraged by analyzing solved incidents to hint steps and procedures to operators in new similar threats.
 
 ARK assists operators during investigations in 2 main areas: Automatically suggesting/prompting next actions/tasks in Playbooks (until version 5) and Correlation/ Deduplication of similar threats into 1 unique incident.
-In order to enable ARK, first go under Configurations -> Settings -> ARK and make sure you have it set to ON.
+In order to enable ARK, first go under Configurations > Settings > ARK and make sure you have it set to ON.
 
-From this page it’s possible to configure also other ARK Settings such as the Neighbor incidents considered for each recommendation and an age relevance threshold. Those two parameters will allow you to tune the incidents that the Machine Learning algorithm will consider.
+From this page, it’s possible to configure also other ARK Settings such as the Neighbor incidents considered for each recommendation and an age relevance threshold. Those two parameters will allow you to tune the incidents that the Machine Learning algorithm will consider.
 
 ![alt-text goes here](/img/cloud-soar/image16b.png)
 
@@ -274,8 +267,7 @@ Cloud SOAR is also able to correlate existing incidents in order to check if spe
 
 The **Settings** section contains many of the administrative functions for
 the Cloud SOAR platform. The **General** settings section consists of many
-different settings, such as proxy settings, date and time customization. A full list of these setting can be found in
-[Appendix A](#**Appendix**A**–), at the end of this document.
+different settings, such as proxy settings, date and time customization. A full list of these setting can be found in [Appendix A](#appendix-a).
 
 ![alt-text goes here](/img/cloud-soar/image17.png)
 
@@ -307,8 +299,7 @@ show all authorized user session activity.
 
 Cloud SOAR allows administrators to configure notifications to Cloud SOAR users
 as well as other external users. These notifications can be sent via
-Cloud SOAR's internal messaging platform, as well as email and SMS. **Watcher
-Groups** can also be created, which allows Cloud SOAR to send notifications
+Cloud SOAR's internal messaging platform, as well as email and SMS. **Watcher Groups** can also be created, which allows Cloud SOAR to send notifications
 to those who are not necessarily assigned to an incident when certain
 conditions are met, such as notifying managers when a high severity
 incident is created.
@@ -413,11 +404,7 @@ platform.
 
 **My Profile**
 
-The **My Profile** button will take the user
-to the User Management section of the platform. From the User Management
-section administrators can add and remove users, lock a user's account,
-force a user account to change their password or set its expiration
-period.
+The **My Profile** button will take the user to the User Management section of the platform. From the User Management section administrators can add and remove users, lock a user's account, force a user account to change their password or set its expiration period.
 
 ### Main Menu
 
@@ -548,7 +535,7 @@ managed at the bottom of the General settings page.
 
 **Queue Settings**
 
-Click the "+" button in the upper right-hand corner of the queue
+Click the **+** button in the upper right-hand corner of the queue
 settings to add a new queue. There are no restrictions on the number, or
 the scheme used to create queues. Common schemes are to create one
 general queue, a queue for each analyst tier, or a queue by job
@@ -584,37 +571,26 @@ from within an Incident
 Profiles
 
 By default, Cloud SOAR comes pre-loaded with Administrator and Read Only
-profiles. To create a new profile, click the "+" symbol
+profiles. To create a new profile, click the **+** symbol
 in the top left corner of the screen.
 
 A new configuration box containing all available permissions within the
 Cloud SOAR platform are displayed. These permissions are as follows:
 
-- **Incident** refer to the **Main Menu** modules highlighted previously.
-    Configuring these permissions will determine what access a user
-    has to different areas of the Incident section
-
-- **Settings** refer to the "Settings" module located in the Global Functions menu.
-    Configuring these permissions will determine what
-    modules under Settings the user can view/modify
-
+- **Incident** refer to the **Main Menu** modules highlighted previously. Configuring these permissions will determine what access a user has to different areas of the Incident section
+- **Settings** refer to the **Settings** module located in the Global Functions menu. Configuring these permissions will determine what modules under Settings the user can view/modify
 - **Search and Reporting** refer to the Home section located in the Main Menu.
-
-- **Automation** refers to the Automation Section in the settings menu.
-    Configuring these permissions will determine for example what integrations
-    can be viewed or modified
-
+- **Automation** refers to the Automation Section in the settings menu. Configuring these permissions will determine for example what integrations can be viewed or modified
 - **Entities** refers to the Entities section located in the Global Functions menu.
     Configuring these permissions will determine what the user can view/modify
-    within the entitie module.
+    within the entities module.
 
 Groups
 
 Once general and incident profiles have been created, administrators can
-add these profiles to their appropriate **Groups.** Navigate to **User
-Management** and select **Groups.**
+add these profiles to their appropriate **Groups**. Navigate to **User Management** and select **Groups**.
 
-Click the "+" again to add a new group. When the configuration screen is
+Click the **+** again to add a new group. When the configuration screen is
 displayed, name the new group and assign its
 profile; click **Save** to continue. Group privileges override user
 privileges. If a user belongs to more than one group, the privileges of
@@ -622,7 +598,7 @@ all groups are merged.
 
 Users
 
-Under the **User Management** drop down choose **Users** and click "+" to
+Under the **User Management** drop down choose **Users** and click **+** to
 begin adding the user's details.
 
 ![alt-text goes here](/img/cloud-soar/image35.png)
@@ -637,17 +613,17 @@ list to apply their permissions.
 
 Users who wish to utilize their current Active Directory structure to
 manage their Cloud SOAR user base can utilize LDAP authentication by
-selecting "**Use LDAP/AD for Authentication".**
+selecting **Use LDAP/AD for Authentication**.
 
 LDAP/Active Directory Settings
 
 Users who wish to utilize LDAP/AD authentication can configure this
-feature under the LDAP/AD dropdown*.* This feature links a client's
+feature under the LDAP/AD dropdown. This feature links a client's
 AD/AD infrastructure to the Cloud SOAR platform, ensuring all authentication
 policies are replicated when signing on in Cloud SOAR.
 
-To enable the LDAP/AD integration, check "Enable LDAP/AD Server
-Integration" at the top of the LDAP/AD screen.
+To enable the LDAP/AD integration, check **Enable LDAP/AD Server
+Integration** at the top of the LDAP/AD screen.
 
 Insert the Host and Port Information for the LDAP/AD Server. NOTE: Port
 389 is typically used for a standard communication port and 636 for a
@@ -683,9 +659,7 @@ Parker, would correspond to the CN for the user in your LDAP/AD tree.
 ### Notifications
 
 The Notifications selection enables users to configure outbound email
-(SMTP) settings, and set up text messaging
-for incident notifications. Notifications can be configured by clicking
-on Notifications from the Settings menu.
+(SMTP) settings, and set up text messaging for incident notifications. Notifications can be configured by clicking on Notifications from the Settings menu.
 
 Email Server Configuration
 
@@ -705,7 +679,7 @@ Incident Report
 The **Report Template** section allows users to create templates for
 custom reporting. The Report Template screen contains a
 list of all current report templates. To add a new report template,
-click on the + icon above the report template list.
+click on the **+** icon above the report template list.
 
 The Details tab of the new report template window allows the user to
 specify a unique name for the template as well as a template category
@@ -716,7 +690,7 @@ and drop sections of the incident into the report template. All incident
 sections are listed in the left-hand pane. Dragging incident sections to
 the right-hand pane will add the section to the report template.
 Sections will be printed in the report in the order they appear in the
-right-hand pane. Once satisfied with the selection, click **Save.**
+right-hand pane. Once satisfied with the selection, click **Save**.
 
 ![alt-text goes here](/img/cloud-soar/image45.png)
 
@@ -738,8 +712,7 @@ line.
 To begin defining Cloud SOAR's custom fields, select an Cloud SOAR section from
 the list on the left-side of the screen to view all available fields. To
 edit an existing field, select the
-![alt-text goes here](/img/cloud-soar/image47.png) next to the field to be updated, or to
-add a new field select **+ADD** at the bottom right-side of the screen. A
+![alt-text goes here](/img/cloud-soar/image47.png) next to the field to be updated, or to add a new field select **+ADD** at the bottom right-side of the screen. A
 new configuration box will be displayed.
 
 The only attribute of an existing field which cannot be modified once
@@ -855,7 +828,7 @@ Triage display preferences can be customized from Triage customization
 section. Triage events can be color coded based on status to easily
 distinguish them from each other when viewing the list of Triage events.
 
-The name of the module can also be modified from "Triage" to a name of
+The name of the module can also be modified from **Triage** to a name of
 your choosing. The new name will be displayed in all areas of Cloud SOAR,
 including the menu and logs.
 
@@ -873,18 +846,18 @@ the Custom Fields page.
 
 Up to 100 custom fields and be created for the Triage module, allowing
 customization for any use case. To add additional fields, navigate to
-**"Settings" -> "Customization" -> "Custom Fields"** and select Triage
+**Settings > Customization > Custom Fields** and select Triage
 Events (or the name of the module if you have renamed it from the
-default of "Triage"). To add a new field, click "Add" from the upper
+default of **Triage**). To add a new field, click **Add** from the upper
 right-hand corner and configure the field as desired. Note that to be
 able to filter events in the Triage module based on the values of a
-field, "Use as filter" must be checked in the Visualization tab when
+field, **Use as filter** must be checked in the Visualization tab when
 adding or modifying a field.
 
 As fields are created, they will be assigned a number starting at 1,
 which will be used to identify the field when adding events via the API.
-The first field added will be identified as "opt**1", the second as
-"opt**2", and so on. Regardless of the ordering of the fields on the
+The first field added will be identified as **opt**1**, the second as
+**opt**2**, and so on. Regardless of the ordering of the fields on the
 screen, these numbers will remain the same. If a field is deleted, the
 number will not be reused. For example, if you have defined opt**1
 through opt**8 and delete the field opt**8, the next field added will
@@ -895,7 +868,7 @@ they will be used when the API is invoked.
 
 The Triage module is accessible from the Incidents section by clicking
 on Triage (or the name of the module if you have renamed it from the
-default of "Triage"). All events which have not been converted to an
+default of **Triage**). All events which have not been converted to an
 Incident will be displayed in a sortable table on the Triage main
 screen. Events may be sorted by any column values by clicking on the
 appropriate column.
@@ -914,7 +887,7 @@ in the Actions column for the event. If additional information is
 available, it will be displayed in this Event Details screen.
 
 To begin triaging an event, click on the person icon in the Actions
-column for the event to "grab" the event. Once an event is grabbed by an
+column for the event to **grab** the event. Once an event is grabbed by an
 analyst, any Playbooks defined for that incident type will be
 automatically executed and the results will be displayed in the Results
 section of the Event Details screen. Because all Playbooks for the
@@ -929,9 +902,9 @@ trashcan icon in the Actions column for the event.
 
 ![alt-text goes here](/img/cloud-soar/image60.png)
 
-To convert the event to an incident, click "Convert to Incident" in the
+To convert the event to an incident, click **Convert to Incident** in the
 far right-hand corner of the Event in question. Select the appropriate
-incident template, owner and label, then click "Save". The event,
+incident template, owner and label, then click **Save**. The event,
 including all enrichment information gathered from any Playbooks, will be
 automatically converted to an incident.
 
@@ -942,7 +915,7 @@ automatically converted to an incident.
 Cloud SOAR's orchestration and automation capabilities are achieved through
 its unidirectional and bidirectional integrations with the industry's
 leading network and security vendors. Navigate to the Global Functions
-menu **-> Integrations** to configure the Integrations.
+menu **> Integrations** to configure the Integrations.
 
 ![alt-text goes here](/img/cloud-soar/image62.png)
 
@@ -964,7 +937,7 @@ Notification** actions. Each selection will list its associated actions
 and if there are required fields which need to be configured for Cloud SOAR
 to utilize its functionality within its Playbooks.
 
-To add a new integration resource, click the "+ Resources" button in the
+To add a new integration resource, click the **+ Resources** button in the
 upper left-hand corner of the integrations screen. To edit an existing
 integration resource, hover over the resource and click the pencil icon
 to the far right of the resource name in the resource list.
@@ -988,7 +961,7 @@ Additionally, some integration types also allow users to use a
 pre-configured general proxy or define a specific one for its
 integration with Cloud SOAR. To configure a proxy for an integration, open
 the integration and click the Proxy dropdown. Select "Use different
-proxy" and add the corresponding proxy information.
+proxy** and add the corresponding proxy information.
 
 Once the information has been added, click save to commit the
 integration. Open the integration up again and click the Test button to
@@ -1065,11 +1038,11 @@ If the checkbox on above window is disabled, the checkbox ('Use CyberArk fields'
 
 ![alt-text goes here](/img/cloud-soar/CyberArk3.png)
 
-If the checkbox ("Use CyberArk fields") is enabled, two new mandatory fields will appear:
+If the checkbox (**Use CyberArk fields**) is enabled, two new mandatory fields will appear:
 
-**Account Name** -> userName in CyberArk
+**Account Name** > userName in CyberArk
 
-**Platform ID** -> platformId in CyberArk
+**Platform ID** > platformId in CyberArk
 
 Near to the fields there will be the relative toggle that will enable the related field for use on CyberArk
 
@@ -1094,7 +1067,7 @@ In the fields enabled for CyberArk, in addition to the account properties, you c
 If the checkbox for CyberArk is enabled for a resource field, the data type allowed for that field will be string only, even if the same field was configured to accept lists, checkboxes, numbers, etc.
 :::
 
-**The only property that will be retained is the mandatory nature of the field.**
+**The only property that will be retained is the mandatory nature of the field**.
 
 Values entered in the field not enabled for CyberArk, if previously entered and saved, will be retained if the field becomes enabled for CyberArk.
 The same is not true otherwise.
@@ -1114,7 +1087,7 @@ If you are using CyberArk you will need to add the following certificates given 
 ```
 to the **/opt/automation-bridge/** directory.
 
-**The names must be exactly the same.**
+**The names must be exactly the same**.
 
 ### Automation
 
@@ -1145,11 +1118,11 @@ To configure a new Playbook, navigate to:
 
 ![alt-text goes here](/img/cloud-soar/image71.png)
 
-**Global Function Menu** -> **Automation**
--> **Playbook**
+**Global Function Menu** > **Automation**
+**Playbook**
 
 A list of any previously created Playbooks will be displayed on the
-left-side of the page. Click "+" to add a new playbook.
+left-side of the page. Click **+** to add a new playbook.
 
 A new configuration box will be displayed. Name your new playbook and
 select the **Incident Type** to associated with it (To create a new
@@ -1170,7 +1143,7 @@ playbook's automation sequence. They can be dragged and dropped anywhere
 on the screen to allow for multiple integrations and conditional
 statements to be executed.
 
-To begin to add the first node within the new playbook, click the "+" on
+To begin to add the first node within the new playbook, click the **+** on
 the **Start** node.
 
 ![alt-text goes here](/img/cloud-soar/image73.png)
@@ -1179,18 +1152,18 @@ the **Start** node.
 
 The playbook configuration page is displayed. It gives users the ability
 to choose from the following options:
-* **Action** -- Automatically take specific actions such as enriching
+* **Action**: Automatically take specific actions such as enriching
  data or taking containment steps when an Incident Template is matched
 
- **Task** -- Assign a task to an Cloud SOAR user
+ **Task**: Assign a task to an Cloud SOAR user
 
- **Condition** -- Use conditional statements to define what actions
+ **Condition**: Use conditional statements to define what actions
  should be taken in response to previous input/output feeds
 
- **User Choice** -- Pause automatic processing to allow for manual
+ **User Choice**: Pause automatic processing to allow for manual
  intervention
 
- **Playbook** -- Call other R3 Playbooks in response to conditional
+ **Playbook**: Call other R3 Playbooks in response to conditional
  statements and/or user choice actions
 
 **Action**
@@ -1211,7 +1184,7 @@ configurations screen asking for more clarifying information on how we
 would like this action to be performed.
 
 Title the enrichment action something that can easily be identified by
-the action that is being taken, such as "**Domain Reputation Check**".
+the action that is being taken, such as **Domain Reputation Check**.
 Next, we want to choose the action, expand the **Action** drop down list
 and review the available options.
 
@@ -1239,7 +1212,7 @@ click ****Create**** to continue.
 The newly added node will now be visible in playbook configuration
 screen. To add an additional node hover over the newly created
 enrichment task. A menu bar will be displayed at the bottom of the node,
-click "+" to add a new node, the pencil icon to edit the existing node,
+click **+** to add a new node, the pencil icon to edit the existing node,
 or the trash can to delete the existing node.
 
 ![alt-text goes here](/img/cloud-soar/image78.png)
@@ -1253,21 +1226,18 @@ will be displayed. Title the new task and add any description if
 desired. The next drop-down lists are **Authorizer** and **Owner** fields.
 The **Authorizer** field is the user who is assigning the task, and the
 **Owner** field is the user who will be assigned the task to complete.
-When the task has been developed, click **Create.**
+When the task has been developed, click **Create**.
 
 ![alt-text goes here](/img/cloud-soar/image79.png)
 
 **Task Node**
 
-For playbook entitys which support user
-defined text input, such as email notifications, help desk ticket
-creation and task creation, variable placeholders may be added to the
-user defined text which will be replaced with incident variables at run
+For playbook entities which support user-defined text input, such as email notifications, help desk ticket creation and task creation, variable placeholders may be added to the user defined text which will be replaced with incident variables at run
 time. These variable placeholders may be added by clicking on the
 ![alt-text goes here](/img/cloud-soar/image80.png) icon. To add a variable placeholder,
 begin typing in the newly inserted placeholder box and Cloud SOAR will
 display a list of available options which match. For example, typing
-"incident." will display a list of all the valid incident fields which
+**incident**. will display a list of all the valid incident fields which
 may be added as variable placeholders.
 
 **Condition**
@@ -1275,7 +1245,7 @@ may be added as variable placeholders.
 From the node's menu, choose **Condition**. A new configuration screen
 will be displayed which will enable a user to define a conditional
 statement to be met before the next node type can be executed. Under
-**Condition 1,** click on **"Select a value"** to define the first
+**Condition 1,** click on **Select a value** to define the first
 condition.
 
 ![alt-text goes here](/img/cloud-soar/image81.png)![alt-text goes here](/img/cloud-soar/image82.png)
@@ -1307,7 +1277,7 @@ choose from:
 
 From our earlier example we are going to choose to evaluate the output
 from our Domain Reputation check of the observed domain. Click **Output**
-from "**Get value from previous action"**.
+from **Get value from previous action**.
 
 A list of available results or outputs from the previously selected
 integration will be displayed in JSON format. Select which output type
@@ -1318,7 +1288,7 @@ condition.
 
 **Node Placeholder Function**
 
-The selected output type will be displayed under **Condition 1.** Select
+The selected output type will be displayed under **Condition 1**. Select
 which condition you would like for the output results to meet from the
 inequality operators below and click **Select a value** to define the
 condition.
@@ -1329,7 +1299,7 @@ condition.
 
 The condition we want to meet for this example is "Advance this Incident
 forward if the observed domain returns at least 1 result or **row** from
-VirusTotal". We insert "0" into the custom value field and click "+" to
+VirusTotal". We insert **0** into the custom value field and click **+** to
 add it to the condition.
 
 ![alt-text goes here](/img/cloud-soar/image85.png)
@@ -1349,7 +1319,7 @@ Once the condition is defined, click **Create** to add it to the playbook.
 When new conditions are created, we will need to define what happens
 when their results meet one of our criteria. A new node is added to the
 condition below. This node breaks the condition down into successes and
-failures and can be modified by hovering over it and clicking "+".
+failures and can be modified by hovering over it and clicking **+**.
 
 ![alt-text goes here](/img/cloud-soar/image87.png)
 
@@ -1389,7 +1359,7 @@ enrichment, containment and custom Playbook actions undertaken on
 incident artifacts, e.g., IP addresses, URLs, domains, etc., are
 catalogued in the incident's **Entities** module.
 
-Just in case that a playbook fail, it can be re-executed inside the incident again or on the failing node through the Kill ![alt-text goes here](/img/cloud-soar/image33c.png) & Run ![alt-text goes here](/img/cloud-soar/image33d.png) process available in the playbook screen of the incident. However, a failed node will not stop the playbook from being executed. Only tasks and User Choices will lock the playbook in a "Running" state until the user take action.
+Just in case that a playbook fail, it can be re-executed inside the incident again or on the failing node through the Kill ![alt-text goes here](/img/cloud-soar/image33c.png) & Run ![alt-text goes here](/img/cloud-soar/image33d.png) process available in the playbook screen of the incident. However, a failed node will not stop the playbook from being executed. Only tasks and User Choices will lock the playbook in a **Running** state until the user take action.
 
 ![alt-text goes here](/img/cloud-soar/image33e.png)
 
@@ -1410,7 +1380,7 @@ integrations or other data sources, it is the Incident Templates which
 will define how the initial incident will be created.
 
 To create a new template, navigate to the Global Function menu and
-select **Automation -> Incident Templates**
+select **Automation > Incident Templates**
 
 ![alt-text goes here](/img/cloud-soar/image91.png)
 
@@ -1418,7 +1388,7 @@ select **Automation -> Incident Templates**
 
 Under the Incident Templates page, you will find all previously created
 templates on the left-side of the screen. To add a new Incident
-Template, click "+" to proceed.
+Template, click **+** to proceed.
 
 ![alt-text goes here](/img/cloud-soar/image92.png)
 
@@ -1452,18 +1422,18 @@ click **Next** to continue.
 **Incident Template Editor**
 
 The remaining tabs in the Incident Template dialogue are as follows:
-- **Incident details** --
+- **Incident details**:
     To set up details for a specific incident type.
-- **Description** --
+- **Description**:
     Free text area to describe details of the template.
-- **Playbook** --
+- **Playbook**:
     Playbook which should be automatically assigned to
     an incident. For each playbook, user can choose to have
     the Playbook automatically execute immediately upon incident
     creation or assigned and wait for manual execution.
-- **Investigators** --
+- **Investigators**:
     Investigators who should be automatically assigned to the incident.
-- **Notes** --
+- **Notes**:
     Notes which should be created for the incident.
 
 #### Creating Incidents from Automation Rules
@@ -1505,17 +1475,17 @@ Listed below are each CEF prefix field. Understanding what each of these
 fields do, and what to expect in these fields will help us to create
 strong agile rulesets for deployment.
 
-- **Version** -- Displayed as an integer and identifies the version of
+- **Version**: Displayed as an integer and identifies the version of
     CEF format
     - Important when understanding the following field representations
         as these features may change depending on version
-- **Device Vendor, Device Product, and Device Version** -- Unique
+- **Device Vendor, Device Product, and Device Version**: Unique
     strings which will identify the make, model, and version of the
     device sending the log
-- **Signature ID** -- Unique identifier per event type.
-- **Name** -- Human-readable identifier which describes the event (ex:
+- **Signature ID**: Unique identifier per event type.
+- **Name**: Human-readable identifier which describes the event (ex:
     Port Scan, Malware)
-- **Severity** -- Reflects the severity of the event
+- **Severity**: Reflects the severity of the event
     - Ranges between 0-10 with 10 being most important
 - **Extension** - Collection of key-value pairs
 
@@ -1527,7 +1497,7 @@ successfully stopped|10|src=10.0.0.1 dst=2.2.2.2 spt=1234
 #### Creating a Rule
 
 Select **Automation Rules** page follows the same format as
-all customizable Cloud SOAR features, click "+" to create a new automation
+all customizable Cloud SOAR features, click **+** to create a new automation
 ruleset
 
 ![alt-text goes here](/img/cloud-soar/image95.png)
@@ -1572,7 +1542,7 @@ A **Playbook** is a predefined set of actions or tasks to respond to a
 certain event or incident type. The creation and utilization of
 playbooks can allow an organization's teams to respond to an incident
 in a consistent, focused, and repeatable fashion.
->
+
 Once assigned to an incident, these predefined actions and tasks can
 be converted to actual tasks within Cloud SOAR for assignment to users and
 oversight by management.
@@ -1694,7 +1664,7 @@ are mandatory. The ones which are required will have an asterisk (*)
 marked next to it which indicates the field has a dependency within the
 Cloud SOAR platform. These required fields can have their dependencies and
 requirements adjusted in the **Custom Fields** section found under the
-Global Functions menu **Customizations -> Custom Fields**.
+Global Functions menu **Customizations > Custom Fields**.
 
 ![alt-text goes here](/img/cloud-soar/image126.png)
 
@@ -1723,7 +1693,7 @@ When creating an incident manually, the investigator may already have
 artifacts that they would like to add to the incident. The Incident
 Artifact section allows for the manual entry of new artifacts. To add a
 new artifact click **Add Artifact** and choose what target field to append
-the data and add its value*.* Once completed, click **Next**.
+the data and add its value. Once completed, click **Next**.
 
 ![alt-text goes here](/img/cloud-soar/image129.png)
 
@@ -1742,7 +1712,7 @@ The final step in manual incident creation is to add an investigator or
 a group of investigators to the incident. Select an investigator or
 group from the left side of the screen by double-clicking on their name
 and the investigator will be added ot the investogtors pane. Once
-finished click **Create.**
+finished click **Create**.
 
 ## Working with Cloud SOAR
 
@@ -1772,10 +1742,10 @@ displayed.
 
 The widgets section on the left-side of the screen
 displays how the dashboard is structured. To begin adding widgets to the
-dashboard, click "+" on the desired section.
+dashboard, click **+** on the desired section.
 
 A new popup will be displayed with a list of all widget choices for the
-selected section. To add a new widget, click "+".
+selected section. To add a new widget, click **+**.
 
 Once a widget is added to a section, they will be displayed on the
 right-side of the screen. To configure, click the cogwheel next to the
@@ -1878,13 +1848,11 @@ the selection in the order to be viewed.
 
 **Incident List Column Configuration**
 
-Once the columns are added and organized, click **Appy** to continue.
+Once the columns are added and organized, click **Apply** to continue.
 
 **Filtering Incidents**
 
-**From the Incident section users can search, build, and issue queries
-against existing incidents by simply typing in the search bar at the top
-of the screen.**
+From the Incident section users can search, build, and issue queries against existing incidents by simply typing in the search bar at the top of the screen.
 
 ![alt-text goes here](/img/cloud-soar/image142.png)
 
@@ -1961,11 +1929,11 @@ delete the incident.
 To customize the details displayed in the Incident VIP Section, click the
 cogwheel at the top-right of the section. A new screen will be presented
 which will allow for adding and deleting of incident detail fields. To
-add a new field, users will click on the "+" sign next to the field to
+add a new field, users will click on the **+** sign next to the field to
 be added. Once all the desired fields are added, they can easily be
 rearranged in the desired order by dragging and dropping into place. To
-remove a field, simply click the "x" next to the field to be removed.
-Once all the details have been added and are in place, click **Apply.**
+remove a field, simply click the **x** next to the field to be removed.
+Once all the details have been added and are in place, click **Apply**.
 
 ### Incident Properties
 
@@ -1991,7 +1959,7 @@ The Incident Overview section contains all the pertinent information
 for a specific incident such as the severity, SLA counter, and
 category of alert. This information can be customized in the Custom
 Fields section of the platform. For more information, please see
-[**Custom Fields.**](#**Custom**Fields**1)
+[**Custom Fields**.](#Custom-Fields-1)
 
 ### Operations
 
@@ -2006,11 +1974,8 @@ specific incident and is broken out into the following sections:
 War Room
 
 All the information related to the incident ongoing are visible in one place in
-the War Room section. Users can quickly view and check all the steps of the analisys, done
-either manually or by the automation, any entities related to the incident,
-results of actions performed and notes added during the incident's investigation.
-Informations can be filtered out for the different categories, and by pressing the
-"+" button the user can add new notes.
+the War Room section. Users can quickly view and check all the steps of the analysis, done either manually or by the automation, any entities related to the incident, results of actions performed and notes added during the incident's investigation. Information can be filtered out for the different categories, and by pressing the
+**+** button the user can add new notes.
 
 ![alt-text goes here](/img/cloud-soar/war_room.png)
 
@@ -2031,7 +1996,7 @@ expand the existing playbook. If during an incident's investigation it
 is determined that the type of incident has changed (i.e. phishing
 incident turns into a ransomware incident) another type of playbook may
 be needed to correctly remediate an incident. Users can add additional
-Playbooks to the incident by clicking the "+" sign at the top of the
+Playbooks to the incident by clicking the **+** sign at the top of the
 playbook screen.
 
 ![alt-text goes here](/img/cloud-soar/image151.png)
@@ -2054,7 +2019,7 @@ expand the playbook and will display the execution results.
 **Playbook Results**
 
 The results of the playbook can also be viewed as a list by clicking the
-**List** button next the "+" at the top of the page. The execution path of
+**List** button next the **+** at the top of the page. The execution path of
 the playbook will be shown, along with the status of the execution of
 each action. The execution history of the playbook will be displayed in a
 tab on the right-hand side of the screen, which can be minimized.
@@ -2106,14 +2071,14 @@ or manually from the incident's Tasks section.
 
 Adding a Task
 
-To add a new Task, click the "+" button at the top-left of the Task list
+To add a new Task, click the **+** button at the top-left of the Task list
 screen. Fill in all required fields and add any additional information
 necessary under the **Description section** if desired.
 
-The user listed in the "Assigned to" field will be the user responsible
+The user listed in the **Assigned to** field will be the user responsible
 for completing the task.
 
-The field titled "Effort" should be the number of hours estimated to
+The field titled **Effort** should be the number of hours estimated to
 complete the Task. As the Task is updated by the Assignee, this field
 should be changed to reflect the actual number of hours that were
 required to complete the Task. This number will be used to provide Task
@@ -2161,7 +2126,7 @@ need.
 
 Adding a Note
 
-To manually add a note, click the "+" symbol to the left of the search
+To manually add a note, click the **+** symbol to the left of the search
 bar and a new configuration screen will appear. Enter the note into the
 free form text box and click create when finished.
 
@@ -2201,19 +2166,17 @@ certain actions on the observable.
 
 **Observables Menu Bar**
 
-- **Lock** -- Lock the observable to prevent any actions from being
+- **Lock**: Lock the observable to prevent any actions from being
     taken on it. This may be useful if you want to ensure that no
     enrichment actions are taken on attacker-controlled infrastructure
     or that an observable is not accidentally blocked.
-
-- **Delete** -- Delete the observable.
-
-- **Mark as Favorite** -- Mark the observable as a favorite and move it to
+- **Delete**: Delete the observable.
+- **Mark as Favorite**: Mark the observable as a favorite and move it to
     the top of the observables list.
 
 Adding a New Entity
 
-To add a new entity, click the "+" sign at the top of the screen and a
+To add a new entity, click the **+** sign at the top of the screen and a
 new configuration box will be displayed. Select an entity type from the
 drop-down menu and an additional configuration box will be displayed.
 This configuration box allows the user to input information about the
@@ -2272,18 +2235,11 @@ house attachments related to an incident's investigation. The source of
 this data can vary but will often be the output of monitoring tools and
 supporting documents. For each record, users can define:
 
-- **Reference** -- an identifier for what the record refers to;
-
-- **Date** -- a timestamp for when the record was uploaded;
-
-- **Application** -- information about the system or application used
-    to generate the record;
-
-- **Short description** -- a free-form textual description of the
-    record; and,
-
-- **Parent folder** -- employed if arranging various records in a tree
-    structure for logical classification.
+- **Reference**: an identifier for what the record refers to;
+- **Date**: a timestamp for when the record was uploaded;
+- **Application**: information about the system or application used to generate the record;
+- **Short description**: a free-form textual description of the record; and,
+- **Parent folder**: employed if arranging various records in a tree structure for logical classification.
 
 As with our other documentation tools, attachments can also be added as
 a timeline event and associated with a knowledge base article.
@@ -2322,7 +2278,7 @@ finished, click **Export Final Report** at the bottom of the screen.
 ### Custom Reports
 
 Custom report templates can be defined by navigating to
-**Configurations** -> **Customizations** -> **Report Template**. The
+**Configurations** > **Customizations** > **Report Template**. The
 left pane of the Report Template screen contains a list of all current
 report templates. To add a new report template, click on the **+** icon
 above the report template list.
@@ -2371,12 +2327,12 @@ alerts.
 
 ### Display Settings
 
-Triage display preferences can be customized from "Settings" ->
-"Customizations" -> "Triage". Triage events can be color coded based on
+Triage display preferences can be customized from **Settings** >
+**Customizations** > **Triage**. Triage events can be color coded based on
 status to easily distinguish them from each other when viewing the list
 of Triage events.
 
-The name of the module can also be modified from "Triage" to a name of
+The name of the module can also be modified from **Triage** to a name of
 your choosing. The new name will be displayed in all areas of Cloud SOAR,
 including the menu and logs.
 
@@ -2394,18 +2350,18 @@ the Custom Fields page.
 
 Up to 100 custom fields and be created for the Triage module, allowing
 customization for any use case. To add additional fields, navigate to
-**"Settings" -> "Customizations" -> "Custom Fields"** and select
+**Settings > Customizations > Custom Fields** and select
 Triage Events (or the name of the module if you have renamed it from the
-default of "Triage"). To add a new field, click "Add" from the upper
+default of **Triage**). To add a new field, click **Add** from the upper
 right-hand corner and configure the field as desired. Note that to be
 able to filter events in the Triage module based on the values of a
-field, "Use as filter" must be checked in the Visualization tab when
+field, **Use as filter** must be checked in the Visualization tab when
 adding or modifying a field.
 
 As fields are created, they will be assigned a number starting at 1,
 which will be used to identify the field when adding events via the API.
-The first field added will be identified as "opt**1", the second as
-"opt**2", and so on. Regardless of the ordering of the fields on the
+The first field added will be identified as **opt**1**, the second as
+**opt**2**, and so on. Regardless of the ordering of the fields on the
 screen, these numbers will remain the same. If a field is deleted, the
 number will not be reused. For example, if you have defined opt**1
 through opt**8 and delete the field opt**8, the next field added will
@@ -2416,7 +2372,7 @@ they will be used when the API is invoked.
 
 The Triage module is accessible from the Incidents section by clicking
 on Triage (or the name of the module if you have renamed it from the
-default of "Triage"). All events which have not been converted to an
+default of **Triage**). All events which have not been converted to an
 Incident will be displayed in a sortable table on the Triage main
 screen. Events may be sorted by any column values by clicking on the
 appropriate column.
@@ -2437,7 +2393,7 @@ in the Actions column for the event. If additional information is
 available, it will be displayed in this Event Details screen.
 
 To begin triaging an event, click on the person icon in the Actions
-column for the event to "grab" the event. Once an event is grabbed by an
+column for the event to **grab** the event. Once an event is grabbed by an
 analyst, any Playbooks defined for that incident type will be
 automatically executed and the results will be displayed in the Results
 section of the Event Details screen. Because all Playbooks for the
@@ -2454,9 +2410,9 @@ trashcan icon in the Actions column for the event.
 
 **Triage Event Actions, Assigned**
 
-To convert the event to an incident, click "Convert to Incident" in the
+To convert the event to an incident, click **Convert to Incident** in the
 far right-hand corner of the Event in question. Select the appropriate
-incident template, owner and label, then click "Save". The event,
+incident template, owner and label, then click **Save**. The event,
 including all enrichment information gathered from any Playbooks, will be
 automatically converted to an incident.
 
@@ -2464,7 +2420,7 @@ automatically converted to an incident.
 
 **Converting to an Incident**
 
-## Appendix A -- General Settings
+## Appendix A
 
 The following options can be configured under general settings:
 
