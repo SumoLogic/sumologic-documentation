@@ -5,6 +5,7 @@ sidebar_label: Okta
 keywords:
     - okta
     - cloud-SIEM-enterprise
+description: The Okta Source provides a secure endpoint to receive event data from the Okta System Log API.
 ---
 
 The Okta Source provides a secure endpoint to receive event data from the Okta [System Log API](https://developer.okta.com/docs/reference/api/system-log/) and [Users API](https://developer.okta.com/docs/reference/api/users/).

@@ -50,7 +50,7 @@ In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t a
 
 ## Best practices
 
-* To query a single tier, use `_dataTier\<TierNam\>` in the scope of your query.
+* To query a single tier, use `_dataTier=<TierName>` (i.e. `_dataTier=Infrequent`) in the scope of your query.
 * To query all tiers, use `_dataTier=All`
 * When you run a query that will return data from the Infrequent tier, the best practice is to review the scan estimate after writing the query and before before running it. See the following section for more information.
 
