@@ -5,7 +5,6 @@ sidebar_label: MS Graph Azure AD Reporting
 description: The Microsoft Graph Azure AD Reporting Source collects Directory Audit, Sign-in, and Provisioning data from the Microsoft Graph API Security endpoint.
 ---
 
-# MS Graph Azure AD Reporting Source
 The Microsoft Graph Azure AD Reporting Source collects [Directory Audit](https://docs.microsoft.com/en-us/graph/api/directoryaudit-list?view=graph-rest-1.0), [Sign-in](https://docs.microsoft.com/en-us/graph/api/signin-list?view=graph-rest-1.0), and [Provisioning](https://docs.microsoft.com/en-us/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0) data from the [Microsoft Graph API Azure AD activity reports](https://docs.microsoft.com/en-us/graph/api/resources/azure-ad-auditlog-overview?view=graph-rest-1.0). It securely stores the required authentication, scheduling, and state tracking information.
 
 Data is polled every five minutes and can take a couple of minutes to be searchable in Sumo Logic.
