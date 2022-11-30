@@ -105,9 +105,11 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
-| config            | JSON Object  | Yes               | Contains the [configuration parameters](/docs/send-data/hosted-collectors/cloud-to-cloud_integration_framework/sophos-central-source#configParameters) for the Source. |                |
+| config            | JSON Object  | Yes               | Contains the [configuration parameters](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source#config-parameters) for the Source. |                |
 | schemaRef         | JSON Object  | Yes               | Use `{"type":"Sophos Central"}` for a Sophos Source.                                                        | not modifiable |
 | sourceType        | String       | Yes               | Use `Universal` for a Sophos Source.                                                                        | not modifiable |
+
+#### Config Parameters
 
 The following table shows the **config** parameters for a Sophos
 Central Source.
