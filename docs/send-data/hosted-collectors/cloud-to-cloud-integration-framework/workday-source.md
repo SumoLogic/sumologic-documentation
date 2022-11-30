@@ -24,7 +24,7 @@ To configure a Workday Source:
 
 1. For **Source Category** (Optional), enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called _sourceCategory.
 
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set automatically by the integration (Do not include below fields as custom log metadata Fields):
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option, the following metadata fields are set automatically by the integration (Do not include below fields as custom log metadata Fields):
 
    * `_siemVendor`: Workday
    * `_siemProduct`: Workday
@@ -56,7 +56,7 @@ To configure a Workday Source:
 
 15. **Polling Interval** (Optional)**:** Enter how often you want the Source to collect data from Workday. This is set to 10 minutes by default.
 
-16. When you are finished configuring the source click **Submit**.
+16. When you are finished configuring the Source, click **Submit**.
 
 ### Polling Interval and Workday API rate limits
 
@@ -78,7 +78,7 @@ A Workday Source goes through the following states when created:
 
 1. **Collecting**. The Source is actively collecting data from Workday.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
 ![Health and Status columns.png](/img/send-data/workday-error-state.jpg)
 
@@ -87,7 +87,7 @@ the detected issue.
 
 ![error status.png](/img/send-data/health-error-generic.png)
 
-When you delete the source it is placed in a **Stopping** state and when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state and when it has successfully stopped it is deleted from your Hosted Collector.
 
 On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection.
 
