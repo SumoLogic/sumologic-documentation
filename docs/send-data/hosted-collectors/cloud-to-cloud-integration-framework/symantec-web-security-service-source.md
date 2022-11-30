@@ -18,7 +18,7 @@ You need to configure a WSS agent on the machine you want to collect data from.
 
 ## States
 
-A Symantec Web Security Service Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing Health Events.
+A Symantec Web Security Service Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events).
 
 A Symantec Web Security Service Source goes through the following states when created:
 
@@ -32,7 +32,7 @@ If the Source has any issues during any one of these states, it is placed in an�
 
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection.
+On the Collection page, the [Health](/docs/manage/health-events#collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection.
 
 ![C2C error icon on collection page.png](/img/send-data/C2C-error-icon-on-collection-page.png)
 
@@ -82,8 +82,8 @@ To configure a Symantec Web Security Service Source:
 
    ![Symantec WSS version 1.2.3.png](/img/send-data/Symantec-WSS.png)
 
-1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
+1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse). When configured with the **Forward to SIEM** option the following metadata fields are set:
 
    * `_siemVendor`: Symantec
    * `_siemProduct`: Web Security Service
@@ -101,7 +101,7 @@ To configure a Symantec Web Security Service Source:
 
 ### Error types
 
-When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/health-events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
 |--|--|--|--|--|
@@ -111,20 +111,22 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collectors). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
-| config | JSON Object  | Yes | Contains the configuration parameters for the Source. |   |
+| config | JSON Object  | Yes | Contains the [configuration parameters](#config-parameters) for the Source. |   |
 | schemaRef | JSON Object  | Yes | Use `{"type":"Symantec Web Security Service"}` for a Symantec Web Security Service Source. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for a Symantec Web Security Service Source. | not modifiable |
+
+#### Config Parameters
 
 The following table shows the **config** parameters for a Symantec Web
 Security Service Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
