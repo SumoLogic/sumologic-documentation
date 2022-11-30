@@ -14,7 +14,7 @@ The CrowdStrike API documentation is not public and can only be accessed by par
 The types of events are defined in the [Streaming API Event Dictionary](https://falcon.crowdstrike.com/support/documentation/62/streaming-api-event-dictionary).
 
 :::note
-This Source is available in the Fed deployment. Use the legacy collection method for CrowdStrike.
+This Source is available in the Fed deployment.
 :::
 
 ## Prerequisite

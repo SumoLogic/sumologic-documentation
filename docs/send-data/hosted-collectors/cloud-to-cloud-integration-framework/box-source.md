@@ -16,9 +16,8 @@ The Box API integration ingests events from the [Get Events API](https://develop
 
 ## Authentication
 
-You'll need a Box App Key, App Secret, and Access Code to provide to Sumo Logic.
+**To obtain credentials for accessing Box**
 
-The following steps must be followed to get the credentials:
 1. Login into the [Box Account](https://app.box.com/login).
 2. Create and register a new app from the [App Console](https://app.box.com/developers/console). To register the App with Box follow [these](https://developer.box.com/guides/authentication/jwt/jwt-setup/#app-creation-steps) steps. Select **Server Authentication (with JWT) **as the authentication method. Note that use of a key pair requires  2-step verification to be enabled on Box.
 3. Generate `public private key pair` as described in the following steps [Key Pair](https://developer.box.com/guides/authentication/jwt/jwt-setup/#public-and-private-key-pair) and download the JSON file.
@@ -301,7 +300,7 @@ The following table shows the **config** parameters for a Box Source.
    </td>
    <td>
    </td>
-   <td>Its the authentication credentials to access Box platform.
+   <td>Authentication credentials to access Box platform.
    </td>
    <td>modifiable
    </td>
