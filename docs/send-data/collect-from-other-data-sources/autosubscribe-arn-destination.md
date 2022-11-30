@@ -54,7 +54,8 @@ This section describes the parameters you can configure for the Lambda function.
 * **LogGroupPattern**—A Javascript regex to filter Log Groups. Log Groups that match the regular expression will be subscribed to the connector. Matching is case-insensitive. The placeholder regex Test matches testlogroup, logtestgroup, and LogGroupTest. Replace Test with a  Javascript regular expression that filters your Log Groups as desired.
 
   :::note
-  Don't use forward slashes (/) to encapsulate the regex. While normally they are needed for raw code, it's not necessary here.
+  * Don't use forward slashes (`/`) to encapsulate the regex. While normally they are needed for raw code, it's not necessary here.
+  * For auto-subscribing all log groups, please use regex `.*`. 
   :::
 
 * **UseExistingLogs**—Controls whether this function will be used to create subscription filters for existing log groups. Select "True" if you want to use the function for subscribing to existing log groups.
