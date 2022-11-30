@@ -8,7 +8,7 @@ tags: [metrics, heat map]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-A heat map visualizes the count of data points returned by a metrics query within specified value ranges over time intervals of a specified duration. A heat map is most useful for queries that return non-aggregate results.
+A heat map visualizes the count of data points returned by a metrics query within specified value ranges over time intervals of a specified duration. This feature is most useful for queries that return non-aggregate results.
 
 In a heat map, data points are aggregated by value on the y-axis, and over time on the x-axis. Sumo Logic automatically calculates values for these settings, based on query results. You can explicitly configure the desired value and time ranges, by clicking the fields in the **Bucket Settings** section of the **Chart View UI** and entering new values.
 
