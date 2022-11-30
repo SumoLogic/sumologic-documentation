@@ -115,7 +115,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
-| config | JSON Object  | Yes | Contains the [configuration parameters](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source#config-parameters) for the Source. |   |
+| config | JSON Object  | Yes | Contains the [configuration parameters](#config-parameters) for the Source. |   |
 | schemaRef | JSON Object  | Yes | Use `{"type":"Symantec Web Security Service"}` for a Symantec Web Security Service Source. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for a Symantec Web Security Service Source. | not modifiable |
 
