@@ -5,7 +5,6 @@ sidebar_label: MS Graph Identity Protection
 description: The Microsoft Graph Identity Protection Source collects Risk Detection and Risky User from the Microsoft Graph Identity Protection API.
 ---
 
-# Microsoft Graph Identity Protection Source App
 The [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Identity Protection Source collects [Risk Detection](https://docs.microsoft.com/en-us/graph/api/riskdetection-list?view=graph-rest-1.0) and [Risky User](https://docs.microsoft.com/en-us/graph/api/riskyuser-list?view=graph-rest-1.0) data from the Microsoft Graph [Identity Protection API](https://docs.microsoft.com/en-us/graph/api/resources/identityprotectionroot?view=graph-rest-1.0). It
 securely stores the required authentication, scheduling, and state tracking information.
 
