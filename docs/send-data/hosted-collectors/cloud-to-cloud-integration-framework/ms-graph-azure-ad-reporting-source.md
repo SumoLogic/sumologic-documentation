@@ -2,9 +2,10 @@
 id: ms-graph-azure-ad-reporting-source
 title: MS Graph Azure AD Reporting Source
 sidebar_label: MS Graph Azure AD Reporting
+description: The Microsoft Graph Azure AD Reporting Source collects Directory Audit, Sign-in, and Provisioning data from the Microsoft Graph API Security endpoint.
 ---
 
-
+# MS Graph Azure AD Reporting Source
 The Microsoft Graph Azure AD Reporting Source collects [Directory Audit](https://docs.microsoft.com/en-us/graph/api/directoryaudit-list?view=graph-rest-1.0), [Sign-in](https://docs.microsoft.com/en-us/graph/api/signin-list?view=graph-rest-1.0), and [Provisioning](https://docs.microsoft.com/en-us/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0) data from the [Microsoft Graph API Azure AD activity reports](https://docs.microsoft.com/en-us/graph/api/resources/azure-ad-auditlog-overview?view=graph-rest-1.0). It securely stores the required authentication, scheduling, and state tracking information.
 
 Data is polled every five minutes and can take a couple of minutes to be searchable in Sumo Logic.
@@ -45,7 +46,7 @@ The user creating the service application does not need to be an administrator.�
 
 Use the following steps to create a service application:
 
-1. Log in to the [Azure Active Directory Portal](https://aad.portal.azure.com/)
+1. Log in to the [Azure Active Directory Portal](https://aad.portal.azure.com/).
 1. Then select **Azure Active Directory** in the left menu.
 
     ![Azure AD step 2.png](/img/send-data/Azure-AD-step-2.png)
@@ -150,7 +151,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 The following table shows the **config** parameters for a Microsoft
 Graph Azure AD Source.
 
-| Parameter | Type | Required? | Default | Description | Access ||--|--|--|--|--|--|
+| Parameter | Type | Required? | Default | Description | Access |
+|--|--|--|--|--|--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
