@@ -23,15 +23,15 @@ A Proofpoint On Demand Source tracks errors, reports its health, and start-u
 A Proofpoint On Demand Source goes through the following states when
 created:
 
-1. **Pending**. Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
 1. **Started**. A collection task is created on the Hosted Collector.
 1. **Initialized**. The task configuration is complete in Sumo Logic.
 1. **Authenticated**. The Source successfully authenticated with Proofpoint.
 1. **Collecting**. The Source is actively collecting data from Proofpoint.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
-When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
 On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection.
 
@@ -70,7 +70,6 @@ To configure a Proofpoint On Demand Source:
 
   ![proofpoint on demand input window.png](/img/send-data/proofpoint-on-demand-input-window.png)
 
-
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 
 6. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
@@ -91,7 +90,7 @@ To configure a Proofpoint On Demand Source:
   * **message**: `guid`, `connection`, `envelope`, `msg`,     `msgParts`, `filter`, `pps`.
   * **maillog**: `data`, `id`, `pps`, `sm`, `ts`.
 
-10. When you are finished configuring the Source click **Submit**.
+10. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
