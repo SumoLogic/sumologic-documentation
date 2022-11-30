@@ -184,7 +184,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
     * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
     * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
 14. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule.md) you'd like for the AWS Source.
-15. When you are finished configuring the Source click **Save**.
+15. When you are finished configuring the Source, click **Save**.
 
 
 ### Step 4: Configure and collect Amazon SNS notifications for Amazon SES

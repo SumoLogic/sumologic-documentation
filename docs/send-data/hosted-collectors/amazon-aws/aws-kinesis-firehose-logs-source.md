@@ -72,7 +72,7 @@ To create an AWS Kinesis Firehose for Logs Source:
    * **Enable One Message Per Request.** Select this option if you'll be sending a single message with each HTTP request. For more information, see [Multiline options in HTTP sources](/docs/send-data/hosted-collectors/http-source/logs-metrics). 
 
 1. **Processing Rules for Logs.** Configure desired filters—such as include, exclude, hash, or mask—as described in Create a Processing Rule. Processing rules are applied to log data, but not to metric data. Note that while the Sumo service will receive your data, data ingestion will be performed in accordance with the regular expressions you specify in processing rules.    
-1. When you are finished configuring the Source click **Save**.    
+1. When you are finished configuring the Source, click **Save**.    
 1. Copy the provided URL for the Source. You'll provide this to AWS in the next section.
 
     ![img](/img/send-data/http-source-address.png)

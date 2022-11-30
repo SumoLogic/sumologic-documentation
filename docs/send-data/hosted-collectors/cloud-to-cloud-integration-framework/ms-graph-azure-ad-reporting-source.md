@@ -17,15 +17,15 @@ A Microsoft Graph Azure AD Reporting Source tracks errors, reports its health
 
 A Microsoft Graph Azure AD Reporting Source goes through the following states when created:
 
-1. **Pending**. Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
 1. **Started**. A collection task is created on the Hosted Collector.
 1. **Initialized**. The task configuration is complete in Sumo Logic.
 1. **Authenticated**. The Source successfully authenticated with Microsoft.
 1. **Collecting**. The Source is actively collecting data from Microsoft.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
-When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
 On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
 
@@ -125,7 +125,7 @@ To configure a Microsoft Graph Azure AD Reporting Source:
 
 1. **Supported APIs to collect**. Select one or more of the available APIs: **Directory Audit**, **Sign-in**, and **Provisioning**.
 
-1. When you are finished configuring the Source click **Submit**.
+1. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
