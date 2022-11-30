@@ -16,7 +16,7 @@ The Box API integration ingests events from the [Get Events API](https://develop
 
 ## Authentication
 
-**To obtain credentials for accessing Box**
+**To obtain credentials for accessing Box:**
 
 1. Login into the [Box Account](https://app.box.com/login).
 2. Create and register a new app from the [App Console](https://app.box.com/developers/console). To register the App with Box follow [these](https://developer.box.com/guides/authentication/jwt/jwt-setup/#app-creation-steps) steps. Select **Server Authentication (with JWT) **as the authentication method. Note that use of a key pair requires  2-step verification to be enabled on Box.
