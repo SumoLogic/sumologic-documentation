@@ -55,7 +55,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
 
-1. When you are finished configuring the Source click **Save**.
+1. When you are finished configuring the Source, click **Save**.
 
 ## Configure a Pub/Sub Topic for GCP
 
