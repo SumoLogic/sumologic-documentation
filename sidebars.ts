@@ -1835,6 +1835,7 @@ module.exports = {
         'integrations/saas-cloud/box',
         'integrations/saas-cloud/cloudflare',
         'integrations/saas-cloud/fastly',
+        'integrations/saas-cloud/gmail-tracelogs',
         'integrations/saas-cloud/istio',
         'integrations/saas-cloud/opsgenie',
         'integrations/saas-cloud/pagerduty-v2',
