@@ -16,6 +16,7 @@ This topic lists the schema attributes that you can map to Records. Note that yo
 | baseImage | string   | The base image of a process (ie notepad.exe) |
 | bytesIn | long     | Amount of the data received in bytes. |
 | bytesOut | long     | Amount of the data sent in bytes. |
+| cause | string | Describes the reason for an outcome in a record in a common way. |
 | changeTarget | string   | The user account that was affected by a change. |
 | changeType | string   | Category of change the user made. |
 | commandLine | string   | The command run by the user using a shell. |
