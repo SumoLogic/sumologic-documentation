@@ -153,8 +153,8 @@ Version selection is applicable only to a few apps currently. For details, see t
 3. To install the app, enter the following fields.
    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
    2. **Data Source**. Select either of these options for the data source:
-     * Choose **Source Category** and then choose a source category from the list.
-     * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example: `_sourceCategory=MyCategory`. 
+      * Choose **Source Category** and then choose a source category from the list.
+      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example: `_sourceCategory=MyCategory`. 
 4. **Advanced**. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
 5. Click **Add to Library**.
 
