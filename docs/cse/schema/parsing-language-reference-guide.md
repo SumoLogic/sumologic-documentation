@@ -591,7 +591,7 @@ Provides information that tells CSE which log mapper should process the parsed m
   * `MAPPER:vendor = AWS`
   * `MAPPER:product = Inspector`
 
-  Templating is more typically used to define `event_id` , as event identifiers often vary based on the log type. For example:
+  Templating is more typically used to define `event_id`, as event identifiers often vary based on the log type. For example:
     * `MAPPER:event_id = {{eventType}}-{{eventName}}`
 
 :::note
