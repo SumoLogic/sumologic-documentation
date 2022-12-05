@@ -38,6 +38,7 @@ You can run queries using any of the following built-in metadata fields:
 | `_sourceHost` | The host name of the Source. For local Sources the name of the Source is set when you [configure the Source](/docs/send-data/choose-collector-source). For remote Collectors, this field uses the remote host's name. The `_sourceHost` metadata field is populated using a reverse DNS lookup. If the name can't be resolved, `_sourceHost` is displayed as `localhost`. This can be a maximum of 128 characters. |
 | `_sourceName` | The name of the log file, determined by the path you entered when you [configured the Source](/docs/send-data/choose-collector-source). |
 | `_format` | The pattern used for parsing the timestamp. See [here](docs/send-data/reference-information/time-reference.md) for more details. |
+| `_view` | The name of the index, view, or partition. |
 
 ## Searching metadata
 

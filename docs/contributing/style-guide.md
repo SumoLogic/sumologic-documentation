@@ -693,7 +693,7 @@ You need to explicitly add `?rel=0` to the end of the URL. This ensures that onl
 You can also add files such as custom code, json, yaml, and xml in the `static/files` folder. Supported file formats include .json, .js, .doc, and more. You link to the file using the file path of `/files` and file name:
 
 ```md
-![Download this Terraform](/files/terraform/script.tf)
+[Download this Terraform](/files/terraform/script.tf)
 ```
 
 If your file is available from another public Sumo Logic repo, please link to that file instead as a URL link. See [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets) for more information.

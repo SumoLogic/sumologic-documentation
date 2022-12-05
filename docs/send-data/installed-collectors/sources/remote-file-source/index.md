@@ -62,7 +62,7 @@ To configure a Remote File Source:
      * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
 
 1. Create any processing rules you'd like for the new Source.
-1. When you are finished configuring the Source click **Save**.
+1. When you are finished configuring the Source, click **Save**.
 
 ## Configuring sourceCategory and sourceHost using variables
 

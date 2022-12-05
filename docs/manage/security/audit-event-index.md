@@ -34,7 +34,7 @@ Select the documentation link for your deployment:
 
 ## Search the Audit Event Index
 
-Searching the Audit Event Index is the same as running a normal search against your ingested data. You specify the` _index` metadata field with one of these values: 
+Searching the Audit Event Index is the same as running a normal search against your ingested data. You specify the `_index` metadata field with one of these values: 
 
 * `sumologic_audit_events`. This index contains user action events, which are events that were triggered by a user action, either from the UI or an API.
 * `sumologic_system_events`. This index contains system action events, which are events that were triggered by Sumo Logic, for example throttling events, rules triggered, and so on.  
@@ -42,20 +42,24 @@ Searching the Audit Event Index is the same as running a normal search against y
 For example, to search for user action events:
 
 1. In the Search page, enter the following: `_index=sumologic_audit_events`  
-
-    :::important
-    Make sure to enter the query exactly as shown. Changing any part of the query renders it ineffective.
-    :::
-
+  :::important
+  Make sure to enter the query exactly as shown. Changing any part of the query renders it ineffective.
+  :::
 1. Choose the time range for the incidents that you'd like to review.
 1. Click **Start** to run the search.
 
 ## Audited events
 
-This index has detailed JSON logs for the following features. To search audit events for a specific feature use the metadata field `_sourceCategory` with its corresponding value. For example, to search events for access keys you would use the query:
+This Audit Event Index has detailed JSON logs for the following features. To search for audit events for a specific feature use the metadata field `_sourceCategory` with its corresponding value. For example, to search user action events for access keys you would use the query:
 
 ```sql
 _index=sumologic_audit_events _sourceCategory=accessKeys
+```
+
+To search for system action events for data forwarding, you would use the query:
+
+```sql
+_index=sumologic_system_events _sourceCategory=dataForwarding
 ```
 
 | Product Feature | _sourceCategory Value  |

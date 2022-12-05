@@ -2,8 +2,8 @@
 id: ms-graph-identity-protection-source
 title: MS Graph Identity Protection Source
 sidebar_label: MS Graph Identity Protection
+description: The Microsoft Graph Identity Protection Source collects Risk Detection and Risky User from the Microsoft Graph Identity Protection API.
 ---
-
 
 The [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Identity Protection Source collects [Risk Detection](https://docs.microsoft.com/en-us/graph/api/riskdetection-list?view=graph-rest-1.0) and [Risky User](https://docs.microsoft.com/en-us/graph/api/riskyuser-list?view=graph-rest-1.0) data from the Microsoft Graph [Identity Protection API](https://docs.microsoft.com/en-us/graph/api/resources/identityprotectionroot?view=graph-rest-1.0). It
 securely stores the required authentication, scheduling, and state tracking information.
@@ -16,15 +16,15 @@ A Microsoft Graph Identity Protection Source tracks errors, reports its healt
 
 A Microsoft Graph Identity Protection Source goes through the following states when created:
 
-1. **Pending**. Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
 1. **Started**. A collection task is created on the Hosted Collector.
 1. **Initialized**. The task configuration is complete in Sumo Logic.
 1. **Authenticated**. The Source successfully authenticated with Microsoft.
 1. **Collecting**. The Source is actively collecting data from Microsoft.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
-When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
 On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
 
@@ -119,7 +119,7 @@ To configure a Microsoft Graph Identity Protection Source:
 
 1. **Supported APIs to collect**. Select one or more of the available APIs, **riskDetections** and **riskyUsers**.
 
-1. When you are finished configuring the Source click **Submit**.
+1. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 

@@ -1267,6 +1267,7 @@ module.exports = {
       items: [
         'metrics/metrics-queries/metrics-explorer',
         'metrics/metrics-queries/map-charts',
+        'metrics/metrics-queries/heat-map',
         'metrics/metrics-queries/metric-query-autocomplete',
         'metrics/metrics-queries/query-comments',
         'metrics/metrics-queries/aggregation-tips',
@@ -1834,6 +1835,7 @@ module.exports = {
         'integrations/saas-cloud/box',
         'integrations/saas-cloud/cloudflare',
         'integrations/saas-cloud/fastly',
+        'integrations/saas-cloud/gmail-tracelogs',
         'integrations/saas-cloud/istio',
         'integrations/saas-cloud/opsgenie',
         'integrations/saas-cloud/pagerduty-v2',

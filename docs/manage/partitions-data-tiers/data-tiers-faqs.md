@@ -127,4 +127,4 @@ See the [Searching Data Tiers](searching-data-tiers.md) topic.
 
 ## Will I be able to use Scheduled Searches on the lower data tiers?
 
-You can use Scheduled Searches on the Infrequent tier.  
+Currently, you can't use Scheduled Searches on the Infrequent tier.  

@@ -7,6 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This guide describes Sumo Logic metrics operators and provides usage examples.
 
+[Download a Metrics Cheatsheet](/files/Metric-Cheat-Sheet.pdf) 
+
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 

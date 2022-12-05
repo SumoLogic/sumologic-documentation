@@ -23,16 +23,16 @@ A Microsoft Azure AD Inventory Source tracks errors, reports its health, and 
 A Microsoft Azure AD Inventory Source goes through the following states
 when created:
 
-1. **Pending**. Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
 1. **Started**. A collection task is created on the Hosted Collector.
 1. **Initialized**. The task configuration is complete in Sumo Logic.
 1. **Authenticated**. The Source successfully authenticated with Azure.
 1. **Collecting**. The Source is actively collecting data from Azure.
 
-If the Source has any issues during any one of these states it is placed
+If the Source has any issues during any one of these states, it is placed
 in an **Error** state.
 
-When you delete the Source it is placed in a **Stopping** state, when it
+When you delete the Source, it is placed in a **Stopping** state, when it
 has successfully stopped it is deleted from your Hosted Collector.
 
 On the Collection page, the Health and Status for Sources is displayed.
@@ -130,7 +130,7 @@ To configure a Microsoft Azure AD Inventory Source:
 
 10. **Supported APIs to collect**. Select one or more of the available APIs: **Devices** and **Users**.
 
-11. When you are finished configuring the Source click **Submit**.
+11. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
