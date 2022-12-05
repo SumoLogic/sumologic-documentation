@@ -140,6 +140,7 @@ export const Home = () => {
                       },
                       '&:hover': {
                         bgcolor: '#0045BE',
+                        borderColor: '#0045BE',
                         color: 'common.white',
                       },
                     }}
