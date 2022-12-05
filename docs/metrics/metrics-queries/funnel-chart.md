@@ -2,7 +2,7 @@
 id: funnel-chart
 title: Create a Funnel Chart
 sidebar_label: Funnel Chart
-description: A funnel chart visualizes the status of a process with sequential steps
+description: A funnel chart visualizes the status of a process with sequential steps.
 tags: [metrics, heat map]
 ---
 
