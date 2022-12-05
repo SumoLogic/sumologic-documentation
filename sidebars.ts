@@ -1268,6 +1268,7 @@ module.exports = {
         'metrics/metrics-queries/metrics-explorer',
         'metrics/metrics-queries/map-charts',
         'metrics/metrics-queries/heat-map',
+        'metrics/metrics-queries/funnel-chart',
         'metrics/metrics-queries/metric-query-autocomplete',
         'metrics/metrics-queries/query-comments',
         'metrics/metrics-queries/aggregation-tips',
