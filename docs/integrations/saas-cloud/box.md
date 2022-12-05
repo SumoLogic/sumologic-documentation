@@ -102,17 +102,17 @@ Complete the following steps to get the credentials:
 A Box Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/Health-Events).
 
 A Box Source goes through the following states when created:
-1. **Pending**. Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
 2. **Started**. A collection task is created on the Hosted Collector.
 3. **Initialized**. The task configuration is complete in Sumo Logic.
 4. **Authenticated**. The Source successfully authenticated with Box.
 5. **Collecting**. The Source is actively collecting data from Box.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
-When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the Collection page, the [Health](/docs/manage/Health-Events#Collection_page) and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection.<br/><img src={useBaseUrl('img/send-data/box-source3.png')} alt="Box" />
+On the Collection page, the [Health](/docs/manage/health-events#collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection.<br/><img src={useBaseUrl('img/send-data/box-source3.png')} alt="Box" />
 
 You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/><img src={useBaseUrl('img/send-data/hover-c2c-error.png')} alt="Box" />
 
@@ -131,7 +131,7 @@ To configure a Box Source:
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) is stored in a searchable field called `_sourceCategory`.
 6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse).
 
-When configured with the **Forward to SIEM** option the following metadata fields are set:
+When configured with the **Forward to SIEM** option, the following metadata fields are set:
 
 <table>
   <tr>
@@ -174,7 +174,7 @@ Field Name
         * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 2. Upload the JSON file.
 3. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/Processing-Rules/Create-Processing-Rule).
-4. When you are finished configuring the Source click **Submit**.
+4. When you are finished configuring the Source, click **Submit**.
 
 
 ## Error types
@@ -422,7 +422,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 

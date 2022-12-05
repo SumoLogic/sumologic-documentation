@@ -29,7 +29,7 @@ To configure an HTTP Traces Source:
     ![source](/img/send-data/traces-source-no-fields.png)
 
 1. (Optional) For **Source Host** and **Source Category**, enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields that allow you to organize your data.
-1. When you are finished configuring the Source click Save.
+1. When you are finished configuring the Source, click Save.
 
 ## View the endpoint URL
 If you need to access the Source's URL again, click **Show URL**.

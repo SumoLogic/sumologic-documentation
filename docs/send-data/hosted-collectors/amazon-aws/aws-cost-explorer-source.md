@@ -32,7 +32,7 @@ If the Source has any issues during any one of these states, it is placed in an 
 
 Hover your mouse over the status icon to view a tooltip with details on the detected issue.<br/>![error status.png](/img/send-data/hover-status.png)
 
-When you delete the source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
 On the Collection page, the [Health](/docs/manage/health-events#Collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection.
 

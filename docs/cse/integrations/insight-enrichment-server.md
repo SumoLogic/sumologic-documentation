@@ -28,9 +28,9 @@ The enrichment shown below returned the IP address associated with the hostname 
 
 ## Create configuration file
 
-Before installing the server, create a configuration file named `config.ini`—options should be configured in this file before you install the server. See the [Example configuration](#example-configuration-file) file later in this topic. Refer to the [Configuration](#configuration) section for information about configuration options. 
+Before installing the server, create a configuration file named `config.ini`—options should be configured in this file before you install the server. See the [Example configuration](#example-configuration-file) file later in this topic. Refer to the [Configuration](#configuration) section for information about configuration options.
 
-## Install Insight Enrichment Server 
+## Install Insight Enrichment Server
 
 Follow the instructons for the deployment in which you're installing the Insight Enrichment Server.
 
@@ -66,11 +66,11 @@ The Insight Enrichment Server is packaged with an interactive installer. You’l
 
 At installation time, you can configure the Insight Enrichment Server to run under a different user (service) account. To do so, you provide the username and password of the preferred service account. That account must have the "Log in as Service" privilege. The installer will verify that the account has the appropriate permissions. 
 
-**Install the Insight Enrichment Server** 
+**Install the Insight Enrichment Server**
 
 Download the binary from [here](https://script-collection.s3.amazonaws.com/caravel/windows-enrichment-server-installer.exe). The checksum for the binary is [here](https://script-collection.s3.amazonaws.com/caravel/checksum.txt).
 
-Run the installer and follow the instructions. 
+Run the installer and follow the instructions.
 
 </TabItem>
 <TabItem value="fed">
@@ -81,13 +81,13 @@ Follow these instructions to install the Insight Enrichment Server on the fed de
 
 The FedRamp version of the Insight Enrichment Server requires Windows Server 2019 or later with JRE 11 or later.
 
-The Insight Enrichment Server might run on earlier Windows versions, such as Windows 2016 or Windows 10, but it has not been tested in those environments. 
+The Insight Enrichment Server might run on earlier Windows versions, such as Windows 2016 or Windows 10, but it has not been tested in those environments.
 
-### Installation process 
+### Installation process
 
 The Insight Enrichment Server is packaged with an interactive installer. You’ll be prompted to supply the following configuration options when you run the installer.
 
-* **Installation Directory**. By default, the Insight Enrichment Server will be installed in `C:\Windows\SumoLogic\EnrichmentServer`. Sumo Logic recommends that you accept this default. 
+* **Installation Directory**. By default, the Insight Enrichment Server will be installed in `C:\Windows\SumoLogic\EnrichmentServer`. Sumo Logic recommends that you accept this default.
 * **Configuration File**. The installer prompts you to provide the location of a configuration file with an .ini extension. The file must be a valid configuration file with the required configuration options. The configuration file will be copied to `C:\Windows\SumoLogic\EnrichmentServer` on your local machine.
 
 ### Step 1: Set up Java and environment variables
@@ -96,8 +96,8 @@ You can skip this step if you already have Java 11 or later installed.
 
 1. Download any Java 11 or later, for Windows, from [here](https://jdk.java.net/archive/).
 2. Extract the zip file to `C:\Program Files\Java`.
-3. Right-click the **Start** button and select **Search** to open the Windows search box. 
-4. Enter “advanced system settings” in the search box, and click **View advanced system settings**. 
+3. Right-click the **Start** button and select **Search** to open the Windows search box.
+4. Enter “advanced system settings” in the search box, and click **View advanced system settings**.
    <img src={useBaseUrl('img/cse/search-1.png')} alt="search" />
 5. Select the **Advanced** tab and click **Environment Variables**.
    <img src={useBaseUrl('img/cse/system-properties.png')} alt="search" />
@@ -106,18 +106,18 @@ You can skip this step if you already have Java 11 or later installed.
 7. In the **New System Variable** popup:
     1. **Variable name**. Enter <br/>
     _JAVA_PATH_.
-    2. **Variable value**. Enter the path to your JDK folder, for example<br/> 
-    _C:\Program Files\Java\jdk-X.X.X_. 
-    3. Click** OK**. 
+    2. **Variable value**. Enter the path to your JDK folder, for example<br/>
+    _C:\Program Files\Java\jdk-X.X.X_.
+    3. Click** OK**.
     <img src={useBaseUrl('img/cse/new-system-variable.png')} alt="search" />
-8. In the **System variables** area, select **Path**, and click **Edit**. 
+8. In the **System variables** area, select **Path**, and click **Edit**.
    <img src={useBaseUrl('img/cse/edit-path.png')} alt="search" />
-9.  On the **Edit environment variable** popup, click **New**. 
+9.  On the **Edit environment variable** popup, click **New**.
     <img src={useBaseUrl('img/cse/new.png')} alt="search" />
 10. Add the following path and click **OK**. <br/>
     _%JAVA_HOME%\bin_
     <img src={useBaseUrl('img/cse/java-path.png')} alt="search" />
-11. To verify that Java was successfully installed successfully, open a command prompt and run: 
+11. To verify that Java was successfully installed successfully, open a command prompt and run:
 `java --version`
 
 ### Step 2: Install the Insight Enrichment Server
@@ -126,7 +126,7 @@ Download the installer for Insight Enrichment Server for FedRamp from [here](htt
 
 The checksum for the binary is available [here](https://script-collection.s3.amazonaws.com/caravel/checksum.txt)
 
-Run the installer and follow the instructions. 
+Run the installer and follow the instructions.
 
 </TabItem>
 </Tabs>
@@ -146,7 +146,7 @@ The following parameters control general server behaviors, as opposed to enrichm
 | `poll_interval` | no | How often the Insight Enrichment Server should check for new Insights. You can specify the interval in seconds (s), minutes (m), or hours (h).<br/><br/>Default: 10s |
 | post_workers | no | The number of parallel workers (threads) posting enrichment results. Default: 6 |
 | enrichment_workers | no | The number of parallel workers (threads) running enrichment tasks. <br/><br/>Default: 12 |
-| proxy_url | no | An HTTP proxy URL to use when communicating with the Sumo Logic backend. For example, http://my.proxy.myorg.com:3128 or http://username:password@my.proxy.myorg.com:3128. <br/><br/>Default: No proxy used |
+| proxy_url | no | An HTTP proxy URL to use when communicating with the Sumo Logic backend. For example,  `my.proxy.myorg.com:3128` or  `username:password@my.proxy.myorg.com:31281. <br/><br/>Default: No proxy used |
 
 ### Enrichment settings
 

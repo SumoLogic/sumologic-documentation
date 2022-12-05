@@ -19,15 +19,15 @@ A Microsoft Graph Security API Source tracks errors, reports its health, and s
 A Microsoft Graph Security API Source goes through the following states
 when created:
 
-1. **Pending**. Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
 1. **Started**. A collection task is created on the Hosted Collector.
 1. **Initialized**. The task configuration is complete in Sumo Logic.
 1. **Authenticated**. The Source successfully authenticated with Microsoft.
 1. **Collecting**. The Source is actively collecting data from Microsoft.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
-When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
 On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
 
@@ -121,7 +121,7 @@ To configure a Microsoft Graph Security API Source:
 4. The **Polling Interval** is set to 300 seconds by default, you can adjust it based on your needs.
 5. **Use Dynamic Vendor and Product SIEM Metadata**. Check the checkbox to dynamically set the vendor and product metadata information  (`_siemVendor` and `_siemProduct`) so that CSE retains the original product information. This is helpful when multiple data sources from multiple vendors and products are proxied through the Microsoft Security Graph API and you want the original vendor and product metadata information reflected in CSE.
 
-6. When you are finished configuring the Source click **Submit**.
+6. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
