@@ -2180,6 +2180,22 @@ module.exports = {
       ],
     },
   ],
+  cloudsoar: [
+    {
+      type: 'category',
+      label: 'Cloud SOAR',
+      collapsible: false,
+      collapsed: true,
+      link: {type: 'doc', id: 'cloud-soar/index'},
+      items: [
+        'cloud-soar/architecture',
+        'cloud-soar/product-overview',
+        'cloud-soar/configuration',
+        'cloud-soar/working-with-soar',
+        'cloud-soar/appendix',
+      ],
+    },
+  ],
   //Contribution guide for documentation
   contributing: [
     {
