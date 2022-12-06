@@ -514,9 +514,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/connections-integrations/webhook-connections/index'},
           items: [
-            'manage/connections-integrations/webhook-connections/schedule-searches-for-webhook-connections',
             'manage/connections-integrations/webhook-connections/set-up-webhook-connections',
-            'manage/connections-integrations/webhook-connections/audit-index',
             'manage/connections-integrations/webhook-connections/aws-lambda',
             'manage/connections-integrations/webhook-connections/cloud-soar',
             'manage/connections-integrations/webhook-connections/datadog',
@@ -531,6 +529,8 @@ module.exports = {
             'manage/connections-integrations/webhook-connections/opsgenie',
             'manage/connections-integrations/webhook-connections/pagerduty',
             'manage/connections-integrations/webhook-connections/slack',
+            'manage/connections-integrations/webhook-connections/schedule-searches-webhook-connections',
+            'manage/connections-integrations/webhook-connections/audit-index',
           ]
         },
         {

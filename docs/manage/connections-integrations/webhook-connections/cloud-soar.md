@@ -16,10 +16,7 @@ You need the **Manage connections** [role capability](../../users-roles/roles/
 This section demonstrates how to create a webhook connection from Sumo Logic to Cloud SOAR.
 
 1. In Sumo Logic, go to **Manage Data \> Monitoring \> Connections**.
-1. Click **+ Add** and choose **Cloud SOAR** as the connection type.
-
-    ![SOAR webhook icon.png](/img/connection-and-integration/SOAR-webhook-icon.png)
-
+1. Click **+ Add** and choose **Cloud SOAR** as the connection type.<br/> ![SOAR webhook icon.png](/img/connection-and-integration/SOAR-webhook-icon.png)
 1. Enter a **Name** and give an optional **Description** to the connection.
 1. The **URL** and **Authorization Header** are automatically defined by Sumo Logic. You should not edit these.
 1. The **Templates** dropdown shows a list of all incident templates, by name, configured in your Cloud SOAR environment.
