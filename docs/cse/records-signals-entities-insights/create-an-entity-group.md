@@ -48,6 +48,14 @@ Follow these instructions to create an Entity Group based on Entity name or whet
     * **MAC Address**
     * **Username**
     * **Hostname**
+    * **Process**
+    * **Command**
+    * **Hash**
+    * **Domain**
+    * **User Agent**
+    * **Email**
+    * **URL**
+    * **File**
 8. **Match Condition**. Select one of the following match types:
     * **Prefix**. After you select this option, a **Prefix** field appears. Enter a string that matches the leading characters of the names of the Entities you want to include in the group.
     * **Suffix**. After you select this option, a **Suffix **field appears. Enter a string that matches the the trailing characters of the names of the Entities you want to include in the group.
