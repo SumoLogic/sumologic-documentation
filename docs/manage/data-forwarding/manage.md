@@ -24,3 +24,7 @@ If you’d like to start or stop forwarding data, you can activate or deactivat
 1. Hover over the destination and click the **Edit** icon.
 1. Select or deselect the **Active** checkbox.
 1. Click **Save**.
+
+## Audit logging for data forwarding
+
+Sumo Logic logs audit events for both system and user data forwarding events. For more information, see [Audit Event Index](docs/manage/security/audit-event-index.md).

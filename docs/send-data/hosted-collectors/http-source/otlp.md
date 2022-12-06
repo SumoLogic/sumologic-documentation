@@ -1,9 +1,19 @@
 ---
 id: otlp
-title: OTLP/HTTP Source
-sidebar_label: Configure for OpenTelemetry
+title: OTLP/HTTP Source (Beta)
 description: Use an HTTP OTLP Source to collect OTLP formatted Logs, Metrics, and Traces data.
 ---
+
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+
+:::note
+This feature is in Beta. To participate, contact your Sumo account executive.
+:::
+
 
 An OTLP/HTTP Source is an endpoint for receiving OTLP formatted Logs, Metrics, and Traces. This is an alternative option to installing an OpenTelemetry Collector for sending OTLP data to Sumo Logic. 
 
@@ -27,7 +37,7 @@ To configure an OTLP/HTTP Source:
       * **Detect Automatically.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
       * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
 1. [Create any Processing Rules](docs/send-data/collection/processing-rules/create-processing-rule.md) you'd like for the OTLP/HTTP Source. <br/>  ![OTLP processing rules.png](/img/send-data/OTLP-processing-rules.png)
-1. When you are finished configuring the Source click **Save**.
+1. When you are finished configuring the Source, click **Save**.
 
 ### View the endpoint URL
 

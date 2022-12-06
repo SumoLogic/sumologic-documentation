@@ -7,8 +7,8 @@ sidebar_label: Duo
 The Duo Source provides a secure endpoint to receive authentication logs from the Duo [Authentication Logs API](https://duo.com/docs/adminapi#logs). It securely stores the required authentication, scheduling, and state tracking information.
 
 :::note
-This Source is available in the Fed deployment.
-::: 
+This Source is available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
 
 ## Authentication
 
@@ -23,16 +23,16 @@ healthy and collecting by utilizing Health Events.
 
 A Duo Source goes through the following states when created:
 
-1. **Pending**: Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
-1. **Started**: A collection task is created on the Hosted Collector.
-1. **Initialized**: The task configuration is complete in Sumo Logic.
-1. **Authenticated**: The Source successfully authenticated with Duo.
-1. **Collecting**: The Source is actively collecting data from Duo.
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
+1. **Started**. A collection task is created on the Hosted Collector.
+1. **Initialized**. The task configuration is complete in Sumo Logic.
+1. **Authenticated**. The Source successfully authenticated with Duo.
+1. **Collecting**. The Source is actively collecting data from Duo.
 
-If the Source has any issues during any one of these states it is placed
+If the Source has any issues during any one of these states, it is placed
 in an **Error** state.
 
-When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
 On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
 
@@ -72,6 +72,12 @@ To configure a Duo Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
+
+:::note
+If you are using the Duo Federal edition service when connecting APIs, it's recommended to use `duofederal.com` instead of the default `duosecurity.com` domain. Our Duo C2C lets you allow to configure the API domain as it contains the specific customer ID information. For example, you can use `api-xxxx-duosecurity.com` or `api-xxxx-duofederal.com` if the Duo Federal edition service has been opted in. For more information, refer to the [Duo Federal Edition Guide](https://duo.com/docs/duo-federal-guide#duo-service-connectivity).
+:::
+
+
 1. **Duo Domain**. Provide your **API hostname**, such as `api-********.duosecurity.com`.
 
    ![Duo admin API reference.png](/img/send-data/Duo-admin-API-reference.png)
@@ -82,7 +88,7 @@ To configure a Duo Source:
 
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs. This sets how often the Source checks for new data.
 
-1. When you are finished configuring the Source click **Submit**.
+1. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 

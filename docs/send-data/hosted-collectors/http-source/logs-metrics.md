@@ -52,7 +52,7 @@ To configure an HTTP Logs and Metrics Source:
     **One Message Per Request.** Select this option if you'll be sending a single message with each HTTP request. For more information, see [Multiline options in HTTP sources](#multiline-options-in-http-sources). 
 
 1. **Processing Rules.** Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in Create a Processing Rule. Processing rules are applied to log data, but not to metric data.
-1. When you are finished configuring the Source click **Save**.
+1. When you are finished configuring the Source, click **Save**.
 1. When the URL associated with the source is displayed, copy the URL so you can use it to upload data.
 
     ![img](/img/send-data/http-source-address.png)

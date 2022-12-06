@@ -2,8 +2,8 @@
 id: ms-graph-azure-ad-reporting-source
 title: MS Graph Azure AD Reporting Source
 sidebar_label: MS Graph Azure AD Reporting
+description: The Microsoft Graph Azure AD Reporting Source collects Directory Audit, Sign-in, and Provisioning data from the Microsoft Graph API Security endpoint.
 ---
-
 
 The Microsoft Graph Azure AD Reporting Source collects [Directory Audit](https://docs.microsoft.com/en-us/graph/api/directoryaudit-list?view=graph-rest-1.0), [Sign-in](https://docs.microsoft.com/en-us/graph/api/signin-list?view=graph-rest-1.0), and [Provisioning](https://docs.microsoft.com/en-us/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0) data from the [Microsoft Graph API Azure AD activity reports](https://docs.microsoft.com/en-us/graph/api/resources/azure-ad-auditlog-overview?view=graph-rest-1.0). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -17,15 +17,15 @@ A Microsoft Graph Azure AD Reporting Source tracks errors, reports its health
 
 A Microsoft Graph Azure AD Reporting Source goes through the following states when created:
 
-1. **Pending**: Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
-1. **Started**: A collection task is created on the Hosted Collector.
-1. **Initialized**: The task configuration is complete in Sumo Logic.
-1. **Authenticated**: The Source successfully authenticated with Microsoft.
-1. **Collecting**: The Source is actively collecting data from Microsoft.
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
+1. **Started**. A collection task is created on the Hosted Collector.
+1. **Initialized**. The task configuration is complete in Sumo Logic.
+1. **Authenticated**. The Source successfully authenticated with Microsoft.
+1. **Collecting**. The Source is actively collecting data from Microsoft.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
-When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
 On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
 
@@ -45,7 +45,7 @@ The user creating the service application does not need to be an administrator.�
 
 Use the following steps to create a service application:
 
-1. Log in to the [Azure Active Directory Portal](https://aad.portal.azure.com/)
+1. Log in to the [Azure Active Directory Portal](https://aad.portal.azure.com/).
 1. Then select **Azure Active Directory** in the left menu.
 
     ![Azure AD step 2.png](/img/send-data/Azure-AD-step-2.png)
@@ -125,7 +125,7 @@ To configure a Microsoft Graph Azure AD Reporting Source:
 
 1. **Supported APIs to collect**. Select one or more of the available APIs: **Directory Audit**, **Sign-in**, and **Provisioning**.
 
-1. When you are finished configuring the Source click **Submit**.
+1. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
@@ -150,7 +150,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 The following table shows the **config** parameters for a Microsoft
 Graph Azure AD Source.
 
-| Parameter | Type | Required? | Default | Description | Access ||--|--|--|--|--|--|
+| Parameter | Type | Required? | Default | Description | Access |
+|--|--|--|--|--|--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |

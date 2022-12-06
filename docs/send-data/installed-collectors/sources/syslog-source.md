@@ -32,7 +32,7 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
    * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format.** By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
 1. Create any processing rules you'd like for the new Source.
-1. When you are finished configuring the Source click **Save**.
+1. When you are finished configuring the Source, click **Save**.
 
 You can return to this dialog and edit the settings for the Source at any time.
 
