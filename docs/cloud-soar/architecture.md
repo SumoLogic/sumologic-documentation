@@ -51,6 +51,7 @@ which recommends relevant Playbooks and paths of action to expedite the process,
 better response time.
 
 ![alt-text goes here](/img/cloud-soar/image3.png)
+_Cloud SOAR Architecture Overview_
 
 
 ## Multi-Tenancy
@@ -67,7 +68,7 @@ All multi-tenant installations offer:
 - Isolation of external actions, e.g., enrichment of indicators of compromise, containment actions prescribed to a host.
 
 ![**Multi-Tenancy with Physical Segregation**](/img/cloud-soar/image5.png)
-
+_Multi-Tenancy with Physical Segregation_
 ## Automated Responder Knowledge (DF-ARK)
 
 Cloud SOAR's Automated Responder Knowledge (DF-ARK) module utilizes machine

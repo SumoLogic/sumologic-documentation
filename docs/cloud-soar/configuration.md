@@ -38,7 +38,7 @@ used to enforce the policy of recording the final disposition of an
 incident before it is closed.
 
 ![**Incident Settings**](/img/cloud-soar/image31.png)
-
+_Incident Settings_
 
 
 Incident Process Phases
@@ -48,7 +48,7 @@ incident progresses. These phases and their properties can be configured
 by administrators in the General settings page.
 
 ![**Incident Phases**](/img/cloud-soar/image32.png)
-
+_Incident Phases_
 
 
 In addition to the phase name, administrators can determine whether the
@@ -64,7 +64,7 @@ incidents to until they are ready to be assigned to users. Queues can be
 managed at the bottom of the General settings page.
 
 ![**Queue Settings**](/img/cloud-soar/image33.png)
-
+_Queue Settings_
 
 
 Click the **+** button in the upper right-hand corner of the queue
@@ -78,13 +78,13 @@ Instant Messaging
 Instant Messaging integration can be enabled from here.
 
 ![**Instant Messaging Integration**](/img/cloud-soar/image33b.png)
-
+_Instant Messaging Integration_
 
 
 The same integration has to be updated under the user profile configuration
 
 ![**Instant Messaging Integration**](/img/cloud-soar/image33b1.png)
-
+_Instant Messaging Integration_
 
 
 ### User Management
@@ -133,9 +133,8 @@ Users
 Under the **User Management** drop down choose **Users** and click **+** to
 begin adding the user's details.
 
-![alt-text goes here](/img/cloud-soar/image35.png)
-
-**General User Settings**
+![alt-text goes here](/img/cloud-soar/image35.png)                      
+_General User Settings_
 
 The General tab contains the usual user
 account attributes such as name, email, address, username, etc.
@@ -166,8 +165,7 @@ bits of data; SAMAccountName for a username or the individuals email
 address.
 
 ![alt-text goes here](/img/cloud-soar/image36.png)
-
-**LDAP Settings References**
+_LDAP Settings References_
 
 Authentication may or may not be required depending on user permissions
 on the AD/LDAP server. If your LDAP/AD server permissions require it,
@@ -201,8 +199,7 @@ these options are set, Administrators can configure which types of
 events should trigger notifications to which users and by what means.
 
 ![alt-text goes here](/img/cloud-soar/image42.png)
-
-**Email Configuration Settings**
+_Email Configuration Settings_
 
 ### Customization
 
@@ -225,14 +222,12 @@ Sections will be printed in the report in the order they appear in the
 right-hand pane. Once satisfied with the selection, click **Save**.
 
 ![alt-text goes here](/img/cloud-soar/image45.png)
-
-**Report Template Sections**
+_Report Template Sections_
 
 Custom Fields
 
 ![alt-text goes here](/img/cloud-soar/image46.png)
-
-**Fields Configuration Settings**
+_Fields Configuration Settings_
 
 The Custom Fields section allows for users
 to customize all fields within the Cloud SOAR platform to better suit their
@@ -319,8 +314,7 @@ information on the status of an organizations Notification SLA. Two of
 the custom fields require user input:
 
 ![alt-text goes here](/img/cloud-soar/image50.png)
-
-**SLA User Input**
+_SLA User Input_
 
 **Notification SLA Requirement** will be used to store the SLA time
 interval, such as 5 minutes.
@@ -332,8 +326,7 @@ The remaining three custom fields require no user input and are
 calculation fields only:
 
 ![alt-text goes here](/img/cloud-soar/image51.png)
-
-**SLA Calculated Fields**
+_SLA Calculated Fields_
 
 **Notification Due By** will calculate and display the date & time the
 notification must be conducted by adding the Notification SLA
@@ -350,9 +343,8 @@ Customer Notified Time.
 These Custom Field settings will appear in the Cloud SOAR Incident screen as
 follows:
 
-![alt-text goes here](/img/cloud-soar/image52.png)
-
-**SLA View**
+![alt-text goes here](/img/cloud-soar/image52.png)              
+_SLA View_
 
 **Triage**
 
@@ -365,8 +357,7 @@ your choosing. The new name will be displayed in all areas of Cloud SOAR,
 including the menu and logs.
 
 ![alt-text goes here](/img/cloud-soar/image57.png)
-
-**Triage Settings**
+_Triage Settings_
 
 **Triage Field Settings**
 
@@ -406,8 +397,7 @@ screen. Events may be sorted by any column values by clicking on the
 appropriate column.
 
 ![alt-text goes here](/img/cloud-soar/image58.png)
-
-**Events**
+_Events_
 
 The list of events can be filtered by any of the fields listed in the
 filter section at the top of the Triage main screen.
@@ -450,16 +440,14 @@ leading network and security vendors. Navigate to the Global Functions
 menu **> Integrations** to configure the Integrations.
 
 ![alt-text goes here](/img/cloud-soar/image62.png)
-
-**Integrations Menu**
+_Integrations Menu_
 
 A list of available integrations within the organization can be found to
 the left-side of the screen. To begin to configure, click on a product
 to continue.
 
 ![alt-text goes here](/img/cloud-soar/image63.png)
-
-**Single Integration Settings**
+_Single Integration Settings_
 
 A product overview screen will be
 displayed with what actions a product can perform and a link to
@@ -474,9 +462,8 @@ upper left-hand corner of the integrations screen. To edit an existing
 integration resource, hover over the resource and click the pencil icon
 to the far right of the resource name in the resource list.
 
-![alt-text goes here](/img/cloud-soar/image64.png)
-
-**Resource Settings**
+![alt-text goes here](/img/cloud-soar/image64.png)              
+_Resource Settings_
 
 Each Integration's configuration screen
 may be different, but in most cases, administrators will need
@@ -546,7 +533,7 @@ well.
 
 ![alt-text goes here](/img/cloud-soar/image66.png)
 
-**Action File Portability**
+_Action File Portability_
 
 Please see the Integration Framework manual for more details on
 utilizing the integration framework within Cloud SOAR.
@@ -666,8 +653,7 @@ it from the list and click the **Edit** button at the bottom of the
 screen.
 
 ![alt-text goes here](/img/cloud-soar/image72.png)
-
-**Playbook List**
+_Playbook List_
 
 Opening the playbook will present a black screen with a **Start** node, and
 an **End** node. These nodes dictate the beginning and the end of the
@@ -679,8 +665,7 @@ To begin to add the first node within the new playbook, click the **+** on
 the **Start** node.
 
 ![alt-text goes here](/img/cloud-soar/image73.png)
-
-**New Playbook**
+_New Playbook_
 
 The playbook configuration page is displayed. It gives users the ability
 to choose from the following options:
@@ -707,8 +692,7 @@ directly interact with Cloud SOAR's integrations to either gather data or
 initiate actions automatically.
 
 ![alt-text goes here](/img/cloud-soar/image74.png)![alt-text goes here](/img/cloud-soar/image75.png)
-
-**Node Adding**
+_Node Adding_
 
 As an example, lets choose Enrichment from the action type screen. As
 with any action type we choose, a new section will be added to our
@@ -721,12 +705,10 @@ Next, we want to choose the action, expand the **Action** drop down list
 and review the available options.
 
 ![alt-text goes here](/img/cloud-soar/image76.png)
-
-**Node Creation**
+_Node Creation_
 
 ![alt-text goes here](/img/cloud-soar/image77.png)
-
-**Node Resource Adding**
+_Node Resource Adding_
 
 Expand the **Resource** drop-down list to
 view all active Integration feeds. The feeds found in each action type
@@ -748,8 +730,7 @@ click **+** to add a new node, the pencil icon to edit the existing node,
 or the trash can to delete the existing node.
 
 ![alt-text goes here](/img/cloud-soar/image78.png)
-
-**Node Menu**
+_Node Menu_
 
 **Task**
 
@@ -760,9 +741,8 @@ The **Authorizer** field is the user who is assigning the task, and the
 **Owner** field is the user who will be assigned the task to complete.
 When the task has been developed, click **Create**.
 
-![alt-text goes here](/img/cloud-soar/image79.png)
-
-**Task Node**
+![alt-text goes here](/img/cloud-soar/image79.png)              
+_Task Node_
 
 For playbook entities which support user-defined text input, such as email notifications, help desk ticket creation and task creation, variable placeholders may be added to the user defined text which will be replaced with incident variables at run
 time. These variable placeholders may be added by clicking on the
@@ -781,8 +761,7 @@ statement to be met before the next node type can be executed. Under
 condition.
 
 ![alt-text goes here](/img/cloud-soar/image81.png)![alt-text goes here](/img/cloud-soar/image82.png)
-
-**Condition Node**
+_Condition Node_
 
 When developing the first condition, users have multiple options to
 choose from:
@@ -817,8 +796,7 @@ integration will be displayed in JSON format. Select which output type
 condition.
 
 ![alt-text goes here](/img/cloud-soar/image83.png)
-
-**Node Placeholder Function**
+_Node Placeholder Function_
 
 The selected output type will be displayed under **Condition 1**. Select
 which condition you would like for the output results to meet from the
@@ -826,8 +804,7 @@ inequality operators below and click **Select a value** to define the
 condition.
 
 ![alt-text goes here](/img/cloud-soar/image84.png)
-
-**Condition Node Settings**
+_Condition Node Settings_
 
 The condition we want to meet for this example is "Advance this Incident
 forward if the observed domain returns at least 1 result or **row** from
@@ -835,16 +812,14 @@ VirusTotal". We insert **0** into the custom value field and click **+** to
 add it to the condition.
 
 ![alt-text goes here](/img/cloud-soar/image85.png)
-
-**Manual Value Adding**
+_Manual Value Adding_
 
 Now that **Condition 1** is defined*,* users can choose to filter their
 results further by selecting an AND/OR operator to define another
 condition.
 
 ![alt-text goes here](/img/cloud-soar/image86.png)
-
-**Condition Settings**
+_Condition Settings_
 
 Once the condition is defined, click **Create** to add it to the playbook.
 
@@ -854,16 +829,14 @@ condition below. This node breaks the condition down into successes and
 failures and can be modified by hovering over it and clicking **+**.
 
 ![alt-text goes here](/img/cloud-soar/image87.png)
-
-**Use of Condition**
+_Use of Condition_
 
 This new node represents a decision tree in which both results, success
 or failure, will have to be defined. Follow the steps above to finalize
 the condition
 
 ![alt-text goes here](/img/cloud-soar/image88.png)
-
-**Nodes List**
+_Nodes List_
 
 User Choice
 
@@ -875,12 +848,10 @@ such as blocking an IP at the firewall or Quarantining an end-user
 workstation from the network.
 
 ![alt-text goes here](/img/cloud-soar/image89.png)
-
-**User Choice**
+_User Choice_
 
 ![alt-text goes here](/img/cloud-soar/image90.png)
-
-**Placeholders**
+_Placeholders_
 
 Define the question to be answered and the authorizer of the user choice
 selection and click ****Create**** to finalize.
@@ -894,12 +865,10 @@ catalogued in the incident's **Entities** module.
 Just in case that a playbook fail, it can be re-executed inside the incident again or on the failing node through the Kill ![alt-text goes here](/img/cloud-soar/image33c.png) & Run ![alt-text goes here](/img/cloud-soar/image33d.png) process available in the playbook screen of the incident. However, a failed node will not stop the playbook from being executed. Only tasks and User Choices will lock the playbook in a **Running** state until the user take action.
 
 ![alt-text goes here](/img/cloud-soar/image33e.png)
-
-**Playbook Running State**
+_Playbook Running State_
 
 ![alt-text goes here](/img/cloud-soar/image33e1.png)
-
-**Playbook Completed With Errors Status**
+_Playbook Completed With Errors Status_
 
 ### Incident Templates
 
@@ -915,16 +884,14 @@ To create a new template, navigate to the Global Function menu and
 select **Automation > Incident Templates**
 
 ![alt-text goes here](/img/cloud-soar/image91.png)
-
-**Incident Template**
+_Incident Template_
 
 Under the Incident Templates page, you will find all previously created
 templates on the left-side of the screen. To add a new Incident
 Template, click **+** to proceed.
 
 ![alt-text goes here](/img/cloud-soar/image92.png)
-
-**New Incident Template**
+_New Incident Template_
 
 A new configuration box is displayed. As seen in our previous
 configurations, you will need to name your template. Make sure it is
@@ -950,8 +917,7 @@ requirements). As mentioned earlier, all fields are customizable via the
 click **Next** to continue.
 
 ![alt-text goes here](/img/cloud-soar/image93.png)
-
-**Incident Template Editor**
+_Incident Template Editor_
 
 The remaining tabs in the Incident Template dialogue are as follows:
 - **Incident details**:
@@ -978,9 +944,8 @@ features need to be configured.
 The configuration page can be found in the **Global Functions** menu under
 **Rules**
 
-![alt-text goes here](/img/cloud-soar/image94.png)
-
-**Cloud Soar Configuration Menu**
+![alt-text goes here](/img/cloud-soar/image94.png)          
+_Cloud Soar Configuration Menu_
 
 #### Automation Rules
 
@@ -1033,8 +998,7 @@ all customizable Cloud SOAR features, click **+** to create a new automation
 ruleset
 
 ![alt-text goes here](/img/cloud-soar/image95.png)
-
-**Rule Creation**
+_Rule Creation_
 
 Select a name for the rule, then select the daemon to use with this new rule and the resource and fill all the remain parameters.
 
@@ -1065,8 +1029,7 @@ take the following actions:
 To add a new mapping setting, click on plus button near Mapping if enable for that action.
 
 ![alt-text goes here](/img/cloud-soar/image103.png)
-
-**Parsing Rules**
+_Parsing Rules_
 
 Playbook
 
@@ -1137,7 +1100,9 @@ written in Python, Perl, PowerShell or Bash.
 All audit and licensing information can be found under the Audit and
 Information tab.
 
-![Audit and Information Menu and License Information](/img/cloud-soar/image120.png)
+![Audit and Information Menu and License Information](/img/cloud-soar/image120.png)             
+_Audit and Information Menu_                    
+License information
 
 All license information can be found in this section.
 
@@ -1154,7 +1119,7 @@ settings and the ability to export audit findings can be controlled from
 the **Audit** menu at the top of the screen.
 
 ![**Audit Trail**](/img/cloud-soar/image120b.png)
-
+_Audit Trail_
 
 
 Mail Notification Queue
@@ -1163,7 +1128,7 @@ The **Mail Notification Queue** shows the status of all email
 notifications sent by Cloud SOAR.
 
 ![**Mail Notification Queue**](/img/cloud-soar/image121.png)
-
+_Mail Notification Queue_           
 By navigating to the Mail Notification Queue users can view any delivery
 failures, the details of the original notification, as well as have the
 options to resend or delete the notification.
@@ -1181,7 +1146,7 @@ To manually add an Incident, click the **+ Incident** button on the top
 right-side of the screen.
 
 ![**Incident Overview Screen**](/img/cloud-soar/image125.png)
-
+_Incident Overview Screen_
 
 
 A new configuration box will be displayed which contains fields an
@@ -1193,7 +1158,7 @@ requirements adjusted in the **Custom Fields** section found under the
 Global Functions menu **Customizations > Custom Fields**.
 
 ![**New Incident Editor**](/img/cloud-soar/image126.png)
-
+_New Incident Editor_
 
 
 One of the most important fields is the **Type** field. This field will
@@ -1202,7 +1167,7 @@ process. (See **Custom Fields** to modify the variables displayed in the
 **Type** field)
 
 ![**New Incident Editor**](/img/cloud-soar/image127.png)
-
+_New Incident Editor_
 
 
 Once the details page is completed, users will want to assign
@@ -1212,7 +1177,7 @@ want the playbook to automatically execute upon incident creation by
 sliding the **Autorun** button to On.
 
 ![**New Incident Editor**](/img/cloud-soar/image128.png)
-
+_New Incident Editor_
 
 
 When creating an incident manually, the investigator may already have
@@ -1231,7 +1196,7 @@ Click the **Advanced** button at the bottom of the screen to select an
 existing incident to group together.
 
 ![**Incident Relationships**](/img/cloud-soar/image130.png)
-
+_Incident Relationships_
 The final step in manual incident creation is to add an investigator or
 a group of investigators to the incident. Select an investigator or
 group from the left side of the screen by double-clicking on their name

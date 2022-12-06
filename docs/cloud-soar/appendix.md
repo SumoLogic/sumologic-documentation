@@ -9,7 +9,6 @@ description: Cloud SOAR Appendix A.
 </head>
 
 The following options can be configured under general settings:
-
 ## General Settings
 
 - Display Notification **\**\**Number of seconds

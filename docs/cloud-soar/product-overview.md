@@ -18,10 +18,12 @@ additional add-on or client to deploy. The top menu is broken up into two sectio
    - All Cloud SOAR configuration and administration options can be found under the Global Functions menu
 
 ![Cloud Soar Home Page](/img/cloud-soar/image7.png)
+_Cloud Soar Home Page_
 
 ## Global Functions Menu
 
 ![Global Functions Menu](/img/cloud-soar/image8.png)
+Global Functions Menu
 
 ### Global Search
 
@@ -31,11 +33,13 @@ information. All searchable Cloud SOAR sections are listed and individually
 selectable. To search, enter the search criteria in the search bar, then select the sections you wish to search and click **Search**.
 
 ![Global Search Criteria](/img/cloud-soar/image9.png)
+_Global Search Criteria_
 
 The Other Filters tab permits a more targeted selection of search
 criteria. Targeted searching does not extend to the data inside Digital Support or Knowledge Base articles.
 
 ![Global Search Filters](/img/cloud-soar/image10.png)
+_Global Search Filters_
 
 ![alt-text goes here](/img/cloud-soar/image11.png) When a search result is located within an incident, the incident number will be displayed in the Incident column.
 Clicking on the incident number will open the incident in a new window.
@@ -45,6 +49,7 @@ results may also be exported to a PDF file by clicking on Export PDF at
 the bottom of the search results window.
 
 ![Global Search Results](/img/cloud-soar/image12.png)
+_Global Search Results_
 
 ### Support
 
@@ -54,6 +59,7 @@ link to our Community portal, as well as contact Sumo Logic for other
 support issues.
 
 ![Figure - Support Page](/img/cloud-soar/image13.png)
+_Figure - Support Page_
 
 
 ### Configurations
@@ -62,8 +68,8 @@ The **Configuration** drop down contains all administrative functions of
 Cloud SOAR, such as user access, integration configurations, and auditing
 information.
 
-![Configurations Menu](/img/cloud-soar/image14.png)
-
+![Configurations Menu](/img/cloud-soar/image14.png)                 
+_Configurations Menu_
 
 
 ### Automation
@@ -117,6 +123,7 @@ In order to enable ARK, first go under Configurations > Settings > ARK and make 
 From this page, it’s possible to configure also other ARK Settings such as the Neighbor incidents considered for each recommendation and an age relevance threshold. Those two parameters will allow you to tune the incidents that the Machine Learning algorithm will consider.
 
 ![ARK Settings](/img/cloud-soar/image16b.png)
+_ARK Settings_
 
 When an incident is created in Cloud SOAR, the Incident Type field will be the one defining which Playbooks you can attach to that incident.
 
@@ -127,14 +134,15 @@ ARK has a correlation and deduplication or merging mechanism you can use with th
 ARK 2.0 OIF is a custom Sumo Logic integration which allows investigators to implement a mechanism for deduplication and correlation of ingested alerts and Cloud SOAR incidents.
 
 ![ARK OIF](/img/cloud-soar/image16d.png)
-
+_ARK OIF_
 ![Test Action](/img/cloud-soar/image16e.png)
-
+_Test Action_                                  
 OIF ARK enrichment action “Get parents for incident” allows you to retrieve every incident (as proposed parents) that is similar to the analyzed one.
 
 Each optional field allows users to fine tune the weight of the fields, acceptance thresholds and of the algorithm which needs to be trained and fine-tuned in order to get correct and reliable results.
 
 ![Field Weight](/img/cloud-soar/image16f.png)
+_Field Weight_
 
 Alert deduplication or merging can be achieved by utilizing ARK OIF enrichment actions and Cloud SOAR’s unique Triage capability.
 
@@ -150,8 +158,8 @@ The **Settings** section contains many of the administrative functions for
 the Cloud SOAR platform. The **General** settings section consists of many
 different settings, such as proxy settings, date and time customization. A full list of these setting can be found in the [Cloud SOAR Appendix](/docs/cloud-soar/appendix). 
 
-![Settings Menu](/img/cloud-soar/image17.png)
-
+![Settings Menu](/img/cloud-soar/image17.png)                     
+_Settings Menu_
 ### User Management
 
 User Management allows administrators to manage Cloud SOAR users and create
@@ -171,7 +179,7 @@ platform. For administrators of the Cloud SOAR platform, this section will
 show all authorized user session activity.
 
 ![Logged Users](/img/cloud-soar/image22.png)
-
+_Logged Users_
 
 
 ### Notifications
@@ -191,7 +199,8 @@ section of this manual.
 The **Mail Notification Queue** shows the status of all email
 notifications sent by Cloud SOAR.
 
-![Mail Notification Queue](/img/cloud-soar/image21.png)
+![Mail Notification Queue](/img/cloud-soar/image21.png)                                      
+_Mail Notification Queue_
 
 By navigating to the Mail Notification Queue users can view any delivery
 failures, the details of the original notification, as well as have the
@@ -228,7 +237,7 @@ their clients. This can be done by simply uploading their image in the
 specified .PNG file format size.
 
 ![Logo Settings](/img/cloud-soar/image18b.png)
-
+_Logo Settings_
 ### Incident Label
 
 The Incident labels section allows an administrator to define labels for
@@ -249,12 +258,14 @@ alerts.
 All audit and licensing information can be found under the Audit and
 Information tab.
 
-![Audit & Information Menu and License Information](/img/cloud-soar/image20.png)
+![Audit & Information Menu and License Information](/img/cloud-soar/image20.png)    
+_Audit & Information Menu
+License Information_
 
 All license information can be found in this section.
 
 ![Audit & Info](/img/cloud-soar/image20b.png)
-
+_Audit & Info_
 ### Audit Trail
 
 Cloud SOAR audit logs and activity can be reviewed under the **Audit Trail** section of the menu. Users can filter through activity displaying only errors and warnings or build their own filters for review. Log rotation
@@ -265,7 +276,8 @@ the **Audit** menu at the top of the screen.
 
 The user icon in the upper right-hand corner allows the currently logged in user to view their profile and settings, as well as log out of the platform.
 
-![My Profile](/img/cloud-soar/image24.png)
+![My Profile](/img/cloud-soar/image24.png)                                          
+_My Profile_
 
 The **My Profile** button will take the user to the User Management section of the platform. From the User Management section administrators can add and remove users, lock a user's account, force a user account to change their password or set its expiration period.
 
@@ -275,7 +287,7 @@ The **Main Menu** consists of all operational functions of Cloud SOAR outlined
 below:
 
 ![main menu](/img/cloud-soar/image25.png)
-
+_Main Menu_
 ### Home
 
 The Home section is where all current tasks for the logged in user
@@ -284,7 +296,7 @@ closing a task as well as customize this section to display all tasks
 assigned to a specific user or group.
 
 ![User's Home Page](/img/cloud-soar/image26.png)
-
+_User's Home Page_
 
 
 ### Dashboards
@@ -297,7 +309,7 @@ provides supervisors and stakeholders a summary overview from which to
 derive strategic information.
 
 ![Figure - Dashboard](/img/cloud-soar/image27.png)
-
+_Figure - Dashboard_
 
 
 ### Incidents
@@ -312,7 +324,7 @@ Users may also add incidents manually from the Incidents section for
 incidents which were not created automatically through another process.
 
 ![Figure - Incidents Section](/img/cloud-soar/image28.png)
-
+_Figure - Incidents Section_
 
 
 ### Triage
@@ -324,7 +336,7 @@ completely customized for use cases from financial fraud to network IDS
 alerts.
 
 ![Triage Section](/img/cloud-soar/image29.png)
-
+_Triage Section_
 
 ### Entities
 

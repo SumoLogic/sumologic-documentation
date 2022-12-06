@@ -19,20 +19,17 @@ that users can add, remove, and customize to include all data relevant
 to their job functions and duties.
 
 ![alt-text goes here](/img/cloud-soar/image131.png)
-
-**Cloud Soar Dashboard**
+_Cloud Soar Dashboard_
 
 To begin customizing the dashboard select the **Customize** button on the
 top of the screen. Once selected, a new configuration box will be
 displayed.
 
 ![alt-text goes here](/img/cloud-soar/image132.png)
+_Dashboard Widget Editor_
 
-**Dashboard Widget Editor**
-
-![alt-text goes here](/img/cloud-soar/image133.png)
-
-**Dashboard Widget Configurator**
+![alt-text goes here](/img/cloud-soar/image133.png)       
+_Dashboard Widget Configurator_
 
 The widgets section on the left-side of the screen
 displays how the dashboard is structured. To begin adding widgets to the
@@ -56,8 +53,7 @@ Once the desired widgets have been added and configured, click save to
 commit.
 
 ![alt-text goes here](/img/cloud-soar/image135.png)
-
-**Cloud Soar Dashboard Carousel**
+_Cloud Soar Dashboard Carousel_
 
 Most widgets inside of the Cloud SOAR dashboard are drillable (Note: make
 sure to allow popups from the Cloud SOAR site to drill into dashboard
@@ -66,8 +62,7 @@ Incident ID or a section of a pie chart to limit the information shown
 to the areas of concern.
 
 ![alt-text goes here](/img/cloud-soar/image136.png)
-
-**Dashboard Pie Chart**
+_Dashboard Pie Chart_
 
 Dashboards may also be exported to an Excel or PDF document to include
 in reporting. To export a dashboard, select **Export** from the top of the
@@ -76,9 +71,7 @@ with the requested document which can either be saved to a user's
 machine or printed.
 
 ![alt-text goes here](/img/cloud-soar/image137.png)
-
-**Dashboard Menu**
-
+_Dashboard Menu_
 ## KPI Reports
 
 Besides exporting dashboard statistics, users can also build KPI
@@ -87,8 +80,7 @@ screen next to the Export functionality. A new configuration box will be
 displayed.
 
 ![alt-text goes here](/img/cloud-soar/image138.png)
-
-**KPI Report Editor**
+_KPI Report Editor_
 
 The **Output Set** tab allows users to select the incident kind they wish
 to run the KPI report for. The Output Set and Description fields allow
@@ -99,8 +91,7 @@ The **Filters** tab allows users to filter the data which will be included
 in the KPI report by any number of incident attributes.
 
 ![alt-text goes here](/img/cloud-soar/image139.png)
-
-**KPI Report Display Fields**
+_KPI Report Display Fields_
 
 The **Display** tab allows users to select which fields will be shown in
 the KPI report. To include a field in the KPI report, check the checkbox
@@ -127,8 +118,7 @@ can configure what incidents are displayed by creating queries against
 available incident data and saving them as incident filters.
 
 ![alt-text goes here](/img/cloud-soar/image140.png)
-
-**Incident List**
+_Incident List_
 
 Users can also manipulate what data is to be displayed from the Incident
 section by adjusting which columns are viewable. The adjust these
@@ -139,8 +129,7 @@ clicking the + sign next to the selection and then dragging and dropping
 the selection in the order to be viewed.
 
 ![alt-text goes here](/img/cloud-soar/image141.png)
-
-**Incident List Column Configuration**
+_Incident List Column Configuration_
 
 Once the columns are added and organized, click **Apply** to continue.
 
@@ -149,31 +138,27 @@ Once the columns are added and organized, click **Apply** to continue.
 From the Incident section users can search, build, and issue queries against existing incidents by simply typing in the search bar at the top of the screen.
 
 ![alt-text goes here](/img/cloud-soar/image142.png)
-
-**Incident Search Bar**
+_Incident Search Bar_
 
 Cloud SOAR also provides its users with a command cheat sheet to help build
 incident filtering queries. To access the cheat sheet, click on the
 ![alt-text goes here](/img/cloud-soar/image143.png) icon to display the query options.
 
 ![alt-text goes here](/img/cloud-soar/image144.png)
-
-**Query Operations Helper**
+_Query Operations Helper_
 
 Once a query or a search is committed, they can be saved for future use
 by clicking the star icon to the right of the search bar. These saved
 searches will be stored as tabs just below the search bar.
 
 ![alt-text goes here](/img/cloud-soar/image145.png)
-
-**Save Frequently Used Queries**
+_Save Frequently Used Queries_
 
 Bulk actions may be performed on any incidents in the Incident Overview
 list. Bulk actions include:
 
-![alt-text goes here](/img/cloud-soar/image146.png)
-
-**Bulk Actions**
+![alt-text goes here](/img/cloud-soar/image146.png)         
+_Bulk Actions_
 
 - Edit
 
@@ -202,14 +187,12 @@ Properties section in the center, and the Incident Widgets section to
 the right side of the screen.
 
 ![alt-text goes here](/img/cloud-soar/image147.png)
-
-**Incident Details Screen**
+_Incident Details Screen_
 
 ### Incident VIP section
 
-![alt-text goes here](/img/cloud-soar/image148.png)
-
-**Incident VIP Section**
+![alt-text goes here](/img/cloud-soar/image148.png)     
+_Incident VIP Section_
 
 The Incident VIP Section displays high-level
 details about a specific incident. Users can also take actions such as
@@ -236,8 +219,7 @@ makes up the incident such as executed Playbooks and incident tasks. This
 information is broken into 4 different section:
 
 ![alt-text goes here](/img/cloud-soar/image149.png)
-
-**Incident Overview**
+_Incident Overview_
 
 - **Overview**
 
@@ -281,8 +263,7 @@ adjustments to the incident's Playbooks as well as add any additional
 Playbooks that may be required during an incident's investigation.
 
 ![alt-text goes here](/img/cloud-soar/image150.png)
-
-**Incident Properties**
+_Incident Properties_
 
 The playbook option menu can be found at the bottom of the playbook
 screen. From here users can re-execute a playbook, export, edit, or
@@ -294,8 +275,7 @@ Playbooks to the incident by clicking the **+** sign at the top of the
 playbook screen.
 
 ![alt-text goes here](/img/cloud-soar/image151.png)
-
-**playbook Selection Menu**
+_Playbook Selection Menu_
 
 This will open a new screen that lists all available Playbooks. Either
 type in the playbook name to use or manually search through all
@@ -309,8 +289,7 @@ clicking the expansion button on the bottom left of the screen will
 expand the playbook and will display the execution results.
 
 ![alt-text goes here](/img/cloud-soar/image152.png)
-
-**Playbook Results**
+_Playbook Results_
 
 The results of the playbook can also be viewed as a list by clicking the
 **List** button next the **+** at the top of the page. The execution path of
@@ -319,8 +298,7 @@ each action. The execution history of the playbook will be displayed in a
 tab on the right-hand side of the screen, which can be minimized.
 
 ![alt-text goes here](/img/cloud-soar/image153.png)
-
-**Playbook History**
+_Playbook History_
 
 To view the details of any individual action, including the results,
 click on the action node. A new window displaying the action details
@@ -329,8 +307,7 @@ users can see the status of the action, its configuration, and have the
 choice to download the JSON results of the action.
 
 ![alt-text goes here](/img/cloud-soar/image154.png)
-
-**Action Results**
+_Action Results_
 
 To view the details of the result, click on the magnifying glass and the
 action's details window will be displayed. The details section displays
@@ -345,12 +322,10 @@ the complete results of verbose integrations, the JSON tab should be
 used.
 
 ![alt-text goes here](/img/cloud-soar/image155.png)
-
-**Action Details**
+_Action Details_
 
 ![alt-text goes here](/img/cloud-soar/image156.png)
-
-**Action JSON**
+_Action JSON_
 
 Tasks
 
@@ -360,8 +335,7 @@ added from Playbooks or Playbooks, as discussed in previous sections,
 or manually from the incident's Tasks section.
 
 ![alt-text goes here](/img/cloud-soar/image157.png)
-
-**Tasks within an Incident**
+_Tasks within an Incident_
 
 Adding a Task
 
@@ -380,8 +354,7 @@ Assessment information, discussed in more detail in the Documentation
 section of this manual.
 
 ![alt-text goes here](/img/cloud-soar/image158.png)
-
-**New Task Details Screen**
+_New Task Details Screen_
 
 Working with Tasks
 
@@ -392,8 +365,7 @@ by its incident, select one or multiple incidents from the task list on
 the left-side of the screen.
 
 ![alt-text goes here](/img/cloud-soar/image159.png)
-
-**Home Screen**
+_Home Screen_
 
 Selecting a task will open the incident where the task was created. This
 will allow the user to review the details of the task and access any
@@ -403,8 +375,7 @@ approve and close, or decline a task by clicking the thumbs up, thumbs
 down or check mark buttons next to the task's title.
 
 ![alt-text goes here](/img/cloud-soar/image160.png)
-
-**Tasks Section**
+_Tasks Section_
 
 Notes
 
@@ -415,8 +386,7 @@ export and search for different results depending on the operational
 need.
 
 ![alt-text goes here](/img/cloud-soar/image161.png)
-
-**Notes Section**
+_Notes Section_
 
 Adding a Note
 
@@ -425,8 +395,7 @@ bar and a new configuration screen will appear. Enter the note into the
 free form text box and click create when finished.
 
 ![alt-text goes here](/img/cloud-soar/image162.png)
-
-**Adding a Note**
+_Adding a Note_
 
 ### Entities
 
@@ -439,18 +408,16 @@ to an incident. Clicking on an entity in the entity list will display
 the results of any previous actions taken on the entity, or where in the
 incident the entity was extracted.
 
-![alt-text goes here](/img/cloud-soar/image163.png)
-
-**Entity Details**
+![alt-text goes here](/img/cloud-soar/image163.png)   
+_Entity Details_
 
 A timeline of actions taken on the entity can be displayed on the far
 right-hand corner of the screen by clicking on the stopwatch symbol.
 Hover over the date tabs to expand the timeline and see additional
 information about the actions taken on each date.
 
-![alt-text goes here](/img/cloud-soar/image164.png)
-
-**Action Timeline**
+![alt-text goes here](/img/cloud-soar/image164.png)       
+_Action Timeline_
 
 While any observable is selected, a menu bar will be available in the
 top right-hand corner of the screen which allows users to perform
@@ -477,9 +444,8 @@ This configuration box allows the user to input information about the
 entity, such as adding a file or its file hash. Once the entity is
 created, click **Create** to continue.
 
-![alt-text goes here](/img/cloud-soar/image166.png)
-
-**Adding a New entity**
+![alt-text goes here](/img/cloud-soar/image166.png)         
+Adding a New entity
 
 ### Documentation
 
@@ -507,9 +473,8 @@ be edited under the Custom Fields section). Add any additional
 information necessary and associate an existing knowledge base article
 where applicable.
 
-![alt-text goes here](/img/cloud-soar/image171.png)
-
-**Add New Event Screen**
+![alt-text goes here](/img/cloud-soar/image171.png)       
+_Add New Event Screen_
 
 Once the event is created, users will see an additional list of options
 to the right of the event, they are as follows:
@@ -538,9 +503,8 @@ supporting documents. For each record, users can define:
 As with our other documentation tools, attachments can also be added as
 a timeline event and associated with a knowledge base article.
 
-![alt-text goes here](/img/cloud-soar/image172.png)
-
-**New Attachment Screen**
+![alt-text goes here](/img/cloud-soar/image172.png)         
+_New Attachment Screen_
 
 Final Incident Reports
 
@@ -549,9 +513,8 @@ pre-configured basedoc to be used for final incident reports. Users can
 choose to use an existing basedoc or upload a new one by selecting from
 the basedoc selections at the bottom of the screen.
 
-![alt-text goes here](/img/cloud-soar/image173.png)
-
-**Final Report Screen**
+![alt-text goes here](/img/cloud-soar/image173.png)         
+_Final Report Screen_
 
 To add a new basedoc, click **Upload Basedoc** and select the template to
 use and click **Save**. Once the document has been uploaded users can
@@ -560,8 +523,7 @@ placeholders which will be filled in with the incident's details each
 time an incident report is executed.
 
 ![alt-text goes here](/img/cloud-soar/image174.png)
-
-**Basedoc Tag List**
+_Basedoc Tag List_
 
 To add tags to the incident report, double click the tag from the
 right-side of the screen and it will be added to the tagging section for
@@ -588,9 +550,8 @@ sections to the right-hand pane will add the section to the report
 template. Sections will be printed in the report in the order they
 appear in the right-hand pane.
 
-![alt-text goes here](/img/cloud-soar/image45.png)
-
-**Report Templates**
+![alt-text goes here](/img/cloud-soar/image45.png)            
+_Report Templates_
 
 Once a report template has been defined, it can be generated by
 selecting **Custom Report** from the **Export** menu. Users may add a
@@ -601,13 +562,11 @@ PDF or Word Document format.
 
 Closing incident will result in asking a note for incident closing as below
 
-![alt-text goes here](/img/cloud-soar/image57b.png)
-
-**Close Incident**
+![alt-text goes here](/img/cloud-soar/image57b.png)       
+_Close Incident_
 
 ![alt-text goes here](/img/cloud-soar/image57c.png)
-
-**Closing Note**
+_Closing Note_
 
 ## Triage
 
@@ -631,8 +590,7 @@ your choosing. The new name will be displayed in all areas of Cloud SOAR,
 including the menu and logs.
 
 ![alt-text goes here](/img/cloud-soar/image57.png)
-
-**Triage Settings**
+_Triage Settings_
 
 ### Field Settings
 
@@ -672,15 +630,13 @@ screen. Events may be sorted by any column values by clicking on the
 appropriate column.
 
 ![alt-text goes here](/img/cloud-soar/image180.png)
-
-**Triage Main Screen**
+_Triage Main Screen_
 
 The list of events can be filtered by any of the fields listed in the
 filter section at the top of the Triage main screen.
 
-![alt-text goes here](/img/cloud-soar/image181.png)
-
-**Triage Event Actions, Unassigned**
+![alt-text goes here](/img/cloud-soar/image181.png)         
+_Triage Event Actions, Unassigned_
 
 To view the details of a Triage event, click on the box and arrow icon
 in the Actions column for the event. If additional information is
@@ -700,9 +656,8 @@ the event to another user, click on the circular arrow icon in the
 Actions column for the event. To discard the event, click on the
 trashcan icon in the Actions column for the event.
 
-![alt-text goes here](/img/cloud-soar/image182.png)
-
-**Triage Event Actions, Assigned**
+![alt-text goes here](/img/cloud-soar/image182.png)           
+_Triage Event Actions, Assigned_
 
 To convert the event to an incident, click **Convert to Incident** in the
 far right-hand corner of the Event in question. Select the appropriate
@@ -710,6 +665,5 @@ incident template, owner and label, then click **Save**. The event,
 including all enrichment information gathered from any Playbooks, will be
 automatically converted to an incident.
 
-![alt-text goes here](/img/cloud-soar/image183.png)
-
-**Converting to an Incident**
+![alt-text goes here](/img/cloud-soar/image183.png)         
+_Converting to an Incident_
