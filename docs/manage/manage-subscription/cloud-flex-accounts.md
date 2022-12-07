@@ -176,8 +176,8 @@ To switch between views and time interval displays, do the following:
 
 ![CloudFlex-AccountPage.png](/img/subscriptions/pqs.png)
 
-1. To change the type of analytics you are viewing, in the **Usage (Daily Capacity)** panel click the arrow next to the view name and select the analytics type from the drop-down list. The display data changes accordingly. Repeat as needed to monitor all the areas of your account usage.
-1. To view data from a different billing period, click the arrow next the the **Billing period** and choose another period from the drop-down list.
+1. To change the type of analytics you are viewing, in the **Usage (Daily Capacity)** panel click the arrow next to the view name and select the analytics type from the dropdown list. The display data changes accordingly. Repeat as needed to monitor all the areas of your account usage.
+1. To view data from a different billing period, click the arrow next the the **Billing period** and choose another period from the dropdown list.
 
 ![CloudFlex_Usage_BillingPeriod_menu.png](/img/subscriptions/uage-billing-period.png)
 

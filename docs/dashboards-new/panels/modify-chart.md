@@ -23,7 +23,7 @@ with the chart you wish to modify.
 To edit a panel, do the following:
 
 1. On the chart panel, click the **Details** icon. 
-1. Select **Edit** from the drop-down list.
+1. Select **Edit** from the dropdown list.
 
 ![edit new panel.png](/img/dashboards-new/panels/modify-chart/edit-new-panel.png)
 
@@ -84,11 +84,11 @@ To customize the visual display of a chart, do the following:
 
     ![panel type change.png](/img/dashboards-new/panels/modify-chart/panel-type-change.png)
 
-1. To change the format of the chart click **Chart Type** and make a selection from the drop-down list.
+1. To change the format of the chart click **Chart Type** and make a selection from the dropdown list.
 
     ![MC_Display_ChartType.png](/img/dashboards-new/panels/modify-chart/MC_Display_ChartType.png)
 
-1. To change the colors of the chart display click **Color Palette** and make a selection from the drop-down list.
+1. To change the colors of the chart display click **Color Palette** and make a selection from the dropdown list.
 
     ![MC_Display_Format_ColorPalette.png](/img/dashboards-new/panels/modify-chart/MC_Display_Format_ColorPalette.png)
 
@@ -128,7 +128,7 @@ To override select dashboard displays, do the following:
 
     ![Monitor with metrics using metadata in alias.png](/img/dashboards-new/panels/modify-chart/Monitor-with-metrics-using-metadata-in-alias.png)
 
-1. Select a **Property** from the drop-down list. You can add as many properties and needed.
+1. Select a **Property** from the dropdown list. You can add as many properties and needed.
 1. Optionally, add another override by selecting **Add New Override** and completing steps 2 - 4.
 1. To save your customized settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window. 
 

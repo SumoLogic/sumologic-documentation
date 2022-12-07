@@ -26,7 +26,7 @@ The top of the **left nav bar** is where you can search for content and
 users and easily switch browsing modes. 
 
 * Searching—Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
-* Switching browsing modes—Click the **Details** icon and make a selection from the drop-down menu.
+* Switching browsing modes—Click the **Details** icon and make a selection from the dropdown menu.
 
 ![TUI_Search_Details.png](/img/get-started/ui/TUI_Search_Details.png)
 
@@ -87,7 +87,7 @@ To access additional Log Search, Metrics, and Live Tail options, do the followin
 
     ![WTS_Tab-options-details.png](/img/get-started/ui/WTS_Tab-options-details.png)
 
-1. Select the tab and choose an option from the drop-down menu.
+1. Select the tab and choose an option from the dropdown menu.
 
     ![tab options.png](/img/get-started/ui/tab-options.png)
 
@@ -134,7 +134,7 @@ To launch a search, metrics visualization, or live tail session, do the followin
 1. Go to the Sumo **Home** page.
 1. Do one of the following:
 
-   * Click **+New** in the Tabs menu and choose an option from the drop-down menu. 
+   * Click **+New** in the Tabs menu and choose an option from the dropdown menu. 
    * Click one of the following Home page icons:
 
      * [Log Search](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
@@ -166,7 +166,7 @@ To view Favorites and add to the list, do the following:
 
     ![WTS_UI_View_list-of-Favorites.png](/img/get-started/ui/WTS_UI_View_list-of-Favorites.png)
 
-1. To add a dashboard to the Favorites list, open the dashboard, select the **Details** icon at the top right of the menu bar and select **Favorite** from the drop-down list. 
+1. To add a dashboard to the Favorites list, open the dashboard, select the **Details** icon at the top right of the menu bar and select **Favorite** from the dropdown list. 
 
     ![WTS_UI_Add-dashboard-to-Favorites.png](/img/get-started/ui/WTS_UI_Add-dashboard-to-Favorites.png)
 

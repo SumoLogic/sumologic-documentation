@@ -56,7 +56,7 @@ All metadata in all spans are automatically indexed and searchable up to followi
 * spanid and parentspanid are not indexed in Traces search, but
 searchable through Spans analytics
 
-To write a query click on the **Choose filters** input line. You can select the desired filter type and value from the drop down menu or manually type them. Multiple filters are allowed in a query row, `AND` is implicit.
+To write a query click on the **Choose filters** input line. You can select the desired filter type and value from the dropdown menu or manually type them. Multiple filters are allowed in a query row, `AND` is implicit.
 
 ![filters.png](/img/traces/trace-filters.png)
 

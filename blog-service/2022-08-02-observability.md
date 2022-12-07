@@ -13,6 +13,6 @@ Update - We’re happy to announce the release of our **AWS Observability Soluti
 * Support for [Amazon SNS](https://help.sumologic.com/docs/observability/aws/integrations/) - we’ve added out-of-the-box dashboards with the most important information about messages, events, and errors illustrating SNS health and reliability.
 * Enhanced dashboards for supported Amazon services - the following services were updated and revamped DynamoDB, API Gateway, RDS, EC2 Metrics, ElastiCache, and All Load Balancers.
 * New CLI-based onboarding flow: now, you can roll out a comprehensive AWS monitoring with just a single CLI command by providing your AWS and Sumo credentials.
-* Streamlining of Root Cause Explorer drill-downs. While you can still find your AWS anomalies in the RCE screen from the new menu and Entities panel, we have removed RCE dedicated “Events of interests” dashboards from the top-level Dashboards drop-down menu.
+* Streamlining of Root Cause Explorer drill-downs. While you can still find your AWS anomalies in the RCE screen from the new menu and Entities panel, we have removed RCE dedicated “Events of interests” dashboards from the top-level Dashboards dropdown menu.
 * Simplified TerraForm onboarding process by importing Field Extraction Rules (FERs).
 * Bug fixes.

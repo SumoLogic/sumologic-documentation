@@ -69,7 +69,7 @@ You can use JSON to configure a processing rule, use the **Forward** filterTy
 1. Type a **Name** for this rule. (Names have a maximum of 32 characters.)
 1. For **Filter**, type a regular expression that defines the messages you want to filter. The rule must match the whole message. For multi-line log messages, to get the lines before and after the line containing your text, wrap the segment with **(?s).\* **such as: `(?s).*matching text(?s).*` Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax)
 1. Select **Archive messages that match** as the rule type. This option is visible only if you have defined at least one [**AWS Archive bucket** destination](#create-an-aws-archive-destination), as described in the previous section. 
-1. Select the Destination from the drop-down menu.  
+1. Select the Destination from the dropdown menu.  
 
     ![archive rule.png](/img/archive/archive-rule.png)
 
