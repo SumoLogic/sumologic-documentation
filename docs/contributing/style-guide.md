@@ -42,7 +42,7 @@ The Sumo Logic Docs team will review submissions, provide suggested edits, add n
 
 ### Templates
 
-To create a new doc quickly, use a template. You can copy and paste the file, add your content, and submit a PR. If you need formats for specific code, see the formats template.
+To create a new doc quickly, use a template. You can copy and paste the file, add your content, and submit a PR.
 
 * [Doc topic (generic) template](docs/contributing/templates/template-doc.md)
 * [Partner app template](docs/contributing/templates/template-partner-app.md)
