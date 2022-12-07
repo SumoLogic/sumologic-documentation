@@ -98,7 +98,7 @@ on T1.a = T2.c
 returns results similar to:
 
 | a | b | c |
-|-||-|
+| ------------- |:-------------:| :-----:|
 | stream-2454 | search-733434 | stream-2454 |
 | stream-7343 | search-854343 | stream-7343 |
 | stream-7343 | search-32342  | stream-7343 |
