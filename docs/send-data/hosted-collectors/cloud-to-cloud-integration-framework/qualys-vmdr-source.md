@@ -39,7 +39,7 @@ When you create a Qualys VMDR Source, you add it to a Hosted Collector. Before c
 
 To configure a Qualys VMDR Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select **Qualys VMDR**. <br/>   ![qualys vmdr icon.png](/img/send-data/qualys-icon.png)
 4. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/> ![qualys vmdr input window.png](/img/send-data/qualys-config-main.png)
