@@ -44,7 +44,7 @@ To configure a Qualys VMDR Source:
 3. Select **Qualys VMDR**. <br/>   ![qualys vmdr icon.png](/img/send-data/qualys-icon.png)
 4. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/> ![qualys vmdr input window.png](/img/send-data/qualys-config-main.png)
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-6. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
+6. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 7. **Qualys API Server URL** and **Qualys API Gateway URL**. Provide the Qualys API server URLs. Use the [Qualys Platform Identification](https://www.qualys.com/platform-identification) page and scroll down to **API URLs** to for a reference to your Qualys deployment location.
