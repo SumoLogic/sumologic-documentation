@@ -6,7 +6,7 @@ description: Create Tracing dashboards, install apps, and more.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Out-of-the-box dashboards are available as three Explore hierarchies. You can access them in the **Explore By** drop down menu.
+Out-of-the-box dashboards are available as three Explore hierarchies. You can access them in the **Explore By** dropdown menu.
 
 The **APM: Application View** groups services into higher-level applications based on the `application=[app-name]` custom tag that you may add to your tracing data if you want to leverage it fully. Without the tag, all services will belong to a "default" application. The fourth and last level of the hierarchy shows the top 50 most active operations executed on the service. See [Working with Span attributes](../advanced-configuration/working-with-span-attributes.md) to learn how to customize your span attributes and set up application name.
 
@@ -63,7 +63,7 @@ To add a Service Map panel to your Dashboard:
 1. Open or create a new Dashboard.
 1. Click **Add Panel** and select **Service Map**. Or select the **Service Map** option on a new Dashboard.<br/>  ![add-servicemap.png](/img/traces/add-servicemap.png)<br/>
     A panel configuration page opens.<br/>  ![create-servicemap.png](/img/traces/create-servicemap.png)
-1. Select from the drop-down menus to filter the Service Map by the following:<br/>  ![filter-servicemap.png](/img/traces/filter-servicemap.png)
+1. Select from the dropdown menus to filter the Service Map by the following:<br/>  ![filter-servicemap.png](/img/traces/filter-servicemap.png)
    * **Application** if your tracing data has the `application=[app-name]` tag
    * **Service** 
    * To pass the variables from dashboard filters, set `application={{application}}`, `service={{service}}`, and/or `deployment.environment`

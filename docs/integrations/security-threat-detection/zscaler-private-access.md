@@ -103,7 +103,7 @@ Once you have deployed the App Connector, configure log receivers to send logs t
 6. **Connector Groups**: Choose the App Connector groups that can forward logs to the receiver, and click **Done**. You can search for a specific group, click **Select All** to apply all groups, or click **Clear Selection** to remove all selections.
 7. Click **Next**.
 1. [Log Stream](https://help.zscaler.com/zpa/configuring-log-receiver#Step2)
-    1. In the **Log Stream** tab, select a **Log Type** from the drop-down menu:
+    1. In the **Log Stream** tab, select a **Log Type** from the dropdown menu:
         1. **User Activity**: Information on end user requests to applications. To learn more, see[ User Activity Log Fields](https://help.zscaler.com/zpa/user-activity-log-fields).
         2. **User Status**: Information related to an end user's availability and connection to ZPA. To learn more, see[ User Status Log Fields](https://help.zscaler.com/zpa/user-status-log-fields).
         3. **Connector Status**: Information related to an App Connector's availability and connection to ZPA. To learn more, see[ App Connector Status Log Fields](https://help.zscaler.com/zpa/connector-status-log-fields).

@@ -57,6 +57,8 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 **Drill down.** Drill down, as in a menu, or other filtering feature is two words, not one.
 
+**Dropdown.** Use dropdown, not *drop-down* or *drop down*.
+
 
 ## E
 
@@ -114,7 +116,7 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 **MB and Mbit. **MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
 
-**Menu.** When referring to a menu in the UI, use the word menu alone. Don't use drop-down menu, list, or selector.
+**Menu.** When referring to a menu in the UI, use the word menu alone. Don't use dropdown menu, list, or selector.
 
 **Messages tab.** When referring to the Messages tab (where non-aggregate search results are displayed) the term Messages is capitalized.
 

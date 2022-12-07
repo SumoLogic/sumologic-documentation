@@ -207,7 +207,7 @@ To add a Service Map panel:
 
     ![create-servicemap.png](/img/dashboards-new/panels/create-servicemap.png)
 
-1. Select from the drop-down menus to filter the Service Map by the following:  
+1. Select from the dropdown menus to filter the Service Map by the following:  
 
     ![filter-servicemap.png](/img/apm/traces/filter-servicemap.png)
 

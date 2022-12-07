@@ -25,7 +25,7 @@ On the **Manage Data** \> **Collection** \> **[Collection page](/docs/manage/c
 
 ![assign to a budget dropdown option.png](/img/ingestion-volume/assign-budget-dropdown-option.png)
 
-The drop-down displays your ingest budgets in the following format:
+The dropdown displays your ingest budgets in the following format:
 
 ```
 <budget name> (<field value>) (<allocated capacity>)

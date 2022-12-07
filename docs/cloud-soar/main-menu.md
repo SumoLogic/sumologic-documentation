@@ -178,7 +178,7 @@ _Observables Menu Bar_
 
 To add a new entity, click the **+** sign at the top of the screen and a
 new configuration box will be displayed. Select an entity type from the
-drop-down menu and an additional configuration box will be displayed.
+dropdown menu and an additional configuration box will be displayed.
 This configuration box allows the user to input information about the
 entity, such as adding a file or its file hash. Once the entity is
 created, click **Create** to continue.

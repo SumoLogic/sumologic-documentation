@@ -53,7 +53,7 @@ Sumo Logic Apps (short for applications) deliver out-of-the-box Dashboards, repo
 
 **[Autocomplete](/docs/search/Get-Started-with-Search/Search-Basics/Search-Autocomplete)**
 
-On the Search page of the Sumo Logic user interface, the search autocomplete drop-down dialog offers suggestions to make query writing easier. Suggestions include simple logic that offers common default queries, keywords, metadata terms, and search operators. The autocomplete dialog also includes links to Help topics for more information.
+On the Search page of the Sumo Logic user interface, the search autocomplete dropdown dialog offers suggestions to make query writing easier. Suggestions include simple logic that offers common default queries, keywords, metadata terms, and search operators. The autocomplete dialog also includes links to Help topics for more information.
 
 
 ## B

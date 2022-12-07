@@ -260,8 +260,8 @@ Explore is an out-of-the-box Sumo Logic navigation tool that provides an intuiti
 
 To open Explore and Application Components View:
 1. Log in to Sumo Logic and click **+ New** on the top menu bar.
-1. From the drop-down menu, choose **Explore**. The Explore navigation panel appears on the left.
-1. Click the **Explore By** arrow and select **Application Components View** from the drop-down menu. An expandable list of your AWS environment hierarchy appears in the Explore panel.
+1. From the dropdown menu, choose **Explore**. The Explore navigation panel appears on the left.
+1. Click the **Explore By** arrow and select **Application Components View** from the dropdown menu. An expandable list of your AWS environment hierarchy appears in the Explore panel.
 1. With the Application Components view selected in Explore, select an environment to view a list of its components.
 **Application Components - Environments Overview** appears on the right. This dashboard provides insights into the CRUD activities and monitor errors of each of the components in that environment.
 1. Similarly from the expanded environment select a component.

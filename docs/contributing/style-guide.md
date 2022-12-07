@@ -905,7 +905,7 @@ The [`sidebars.ts` file](https://github.com/SumoLogic/sumologic-documentation/bl
 
 </details>
 
-* To add a category, or drop-down list of documentation, use the following format:
+* To add a category, or dropdown list of documentation, use the following format:
 
 <details><summary>Example: add sidebar category example with additional section</summary>
 
