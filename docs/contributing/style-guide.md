@@ -39,16 +39,13 @@ Helpful blogs on tech writing:
 
 The Sumo Logic Docs team will review submissions, provide suggested edits, add new content into the navigation, and answer any questions you have.
 
-<!--
+
 ### Templates
 
-To quickly create a new doc, use a template. You can copy and paste the file, add your content, and submit a PR. If you need formats for specific code, see the formats template.
+To create a new doc quickly, use a template. You can copy and paste the file, add your content, and submit a PR. If you need formats for specific code, see the formats template.
 
-(coming soon)
-* Doc topic - Use for any documentation page
-* APIs - Use for API and code
-* Format template
--->
+* [Doc topic (generic) template](docs/contributing/templates/template-doc.md)
+* [Partner app template](docs/contributing/templates/template-partner-app.md)
 
 ## Voice and Tone
 
@@ -61,6 +58,10 @@ To quickly create a new doc, use a template. You can copy and paste the file, ad
 * When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you are recommended to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Please use a different email or contact Sumo Logic for assistance."
 * We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orange juice", not "I had [eggs, toast and orange juice](https://www.verbicidemagazine.com/wp-content/uploads/2012/01/why-i-still-use-the-oxford-comma.jpg)".
 * We have a sense of humor! Conveying that we do serious work, but we don't take ourselves too seriously, makes Sumo Logic feel likable.
+
+:::tip
+See also: [Sumo Logic UX Style Guide](/files/UX-Sumo-Style.pdf).
+:::
 
 ## Structuring Content
 
@@ -477,7 +478,7 @@ For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/d
 
 
 
-## Notes (Admonitions)
+## Admonitions
 
 We refer to callout elements like Tip, Note, Warning, and Caution as admonitions.
 
@@ -1096,7 +1097,6 @@ To add release notes without images:
 
 1. In the Blog folder, create a new markdown file with the following name format: `YYYY-MM-DD-product.md`.
 1. Add the following frontmatter:
-
     ```markdown
     ---
     title: Product or Feature Name
@@ -1112,7 +1112,6 @@ To add release notes without images:
         image_url: /img/release-notes/rss-orange.png
     ---
     ```
-
     * `title`: Name of the release notes including Product or Feature
     * `tags`: Add a comma-separated list of existing tags, including:
     * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
@@ -1128,7 +1127,6 @@ To add release notes with images:
 
 1. In the Blog folder, create a new folder with the following name format: `YYYY-MM-DD-product`.
 1. In the new folder, create a markdown file named `index.md`. Add your release notes with frontmatter:
-
     ```markdown
     ---
     title: Product or Feature Name
@@ -1136,7 +1134,6 @@ To add release notes with images:
     hide_table_of_contents: true
     ---
     ```
-
     * `title`: Name of the release notes including Product or Feature
     * `tags`: Add a comma-separated list of existing tags, including:
     * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.

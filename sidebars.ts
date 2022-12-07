@@ -755,7 +755,7 @@ module.exports = {
             'alerts/monitors/alert-response',
             'alerts/monitors/alert-grouping',
             'alerts/monitors/alert-response-faq',
-            'manage/connections-integrations/webhook-connections/index',    
+            'manage/connections-integrations/webhook-connections/index',
           ],
         },
         {
@@ -2209,9 +2209,9 @@ module.exports = {
       items: [
         'contributing/create-document',
         'contributing/style-guide',
-    //  'contributing/word-list',
         'contributing/code-of-conduct',
-    //  'contributing/glossary',
+        'contributing/glossary',
+        'contributing/word-list',
     //  'contributing/translations',
         {
           type: 'category',
