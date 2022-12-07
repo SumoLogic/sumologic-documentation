@@ -276,13 +276,13 @@ all groups are merged.
 
 #### Users
 
-Under the **User Management** drop down choose **Users** and click **+** to
+Under the **User Management** dropdown choose **Users** and click **+** to
 begin adding the user's details.
 
 ![General User Settings](/img/cloud-soar/image35.png)                      
 _General User Settings_
 
-The General tab contains the usual user account attributes such as name, email, address, username, etc. Select the user's Profile from the drop-down list to apply their permissions.
+The General tab contains the usual user account attributes such as name, email, address, username, etc. Select the user's Profile from the dropdown list to apply their permissions.
 
 If you'd like to utilize your current Active Directory structure to
 manage your Cloud SOAR user base via LDAP authentication, select **Use LDAP/AD for Authentication**.
@@ -372,7 +372,7 @@ options to resend or delete the notification.
 
 ### Customization
 
-Under the **Customization** drop down, you will find an arsenal of
+Under the **Customization** dropdown, you will find an arsenal of
 tools at their disposal. These tools will assist in the creation of
 reports, custom fields, and incident elements, just to name a few. The
 full list of features is listed below.

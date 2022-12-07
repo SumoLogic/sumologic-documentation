@@ -302,7 +302,7 @@ You have two options to create an SLO Monitor:
 
 When you click **Save and Create Monitor**, a New Monitor dialog loads:
 
-1. For the **Monitor Type**, select **SLO**. When creating from the **Monitors** tab, select an SLO from the drop-down menu. A preview of the SLO loads on the page. <br/><img src={useBaseUrl('img/observability/ani-new-monitor1.gif')} alt="Reliability Management SLO SLI" />
+1. For the **Monitor Type**, select **SLO**. When creating from the **Monitors** tab, select an SLO from the dropdown menu. A preview of the SLO loads on the page. <br/><img src={useBaseUrl('img/observability/ani-new-monitor1.gif')} alt="Reliability Management SLO SLI" />
 2. Select and configure a Condition Type:
    * For the **SLI Condition Type**, you can select to alert when the SLI is below an entered percentage, as it nears your SLI target. For example, you could set this to 99.1% to raise a critical alert when it is getting close to a target of 99%. <br/><img src={useBaseUrl('img/observability/slo-monitor-sli.png')} alt="Reliability Management SLO SLI" width="200"/>
    * For the **Burn Rate Condition Type**, create an alert indicating Critical and Warning conditions based on burn rate or the rate at which error budget is depleted. Enter a percentage depleted within an amount of minutes, hours, or days.

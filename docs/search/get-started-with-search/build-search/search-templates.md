@@ -75,7 +75,7 @@ _sourceCategory=service "Successful login from UI"
 | count by latitude, longitude, user
 ```
 
-For example, your team could use this query to locate “time-travelers”, suspicious users who log in from two different geographical areas in an impossibly short amount of time, like New York and California within a timerange of the last 15 minutes. These users don't want to modify the query or look up user ids to user names. With parameters we can make a search template that will give your users the drop-downs they need quickly.
+For example, your team could use this query to locate “time-travelers”, suspicious users who log in from two different geographical areas in an impossibly short amount of time, like New York and California within a timerange of the last 15 minutes. These users don't want to modify the query or look up user ids to user names. With parameters we can make a search template that will give your users the dropdowns they need quickly.
 
 First create parameters for `user_name` and `state` to eliminate the manual entries joeX and CA:
 

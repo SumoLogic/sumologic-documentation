@@ -104,7 +104,7 @@ would like this action to be performed.
 
 Title the enrichment action something that can easily be identified by
 the action that is being taken, such as **Domain Reputation Check**.
-Next, we want to choose the action, expand the **Action** drop down list
+Next, we want to choose the action, expand the **Action** dropdown list
 and review the available options.
 
 ![Node Creation](/img/cloud-soar/image76.png)
@@ -113,11 +113,11 @@ _Node Creation_
 ![Node Resource Adding](/img/cloud-soar/image77.png)
 _Node Resource Adding_
 
-Expand the **Resource** drop-down list to
+Expand the **Resource** dropdown list to
 view all active Integration feeds. The feeds found in each action type
 are those who can execute the specified action (i.e. blocking of an IP
 address can be done through firewalls/WAFs, etc.). Once a resource is
-assigned a new drop-down list will be displayed. Options found in this
+assigned a new dropdown list will be displayed. Options found in this
 list are comprised of **Incident Artifact** fields, which are the incident
 fields Cloud SOAR parses out when issuing new incidents.
 
@@ -139,7 +139,7 @@ _Node Menu_
 
 From the node selection menu, choose **Task**. A new configuration screen
 will be displayed. Title the new task and add any description if
-desired. The next drop-down lists are **Authorizer** and **Owner** fields.
+desired. The next dropdown lists are **Authorizer** and **Owner** fields.
 The **Authorizer** field is the user who is assigning the task, and the
 **Owner** field is the user who will be assigned the task to complete.
 When the task has been developed, click **Create**.
@@ -503,7 +503,7 @@ Select a name for the rule, then select the daemon to use with this new rule and
 
 In the detail section of the rule you can define filters to be used in the rule and the action to be performed.
 
-The **Action Type** drop down will contain the specific actions Cloud SOAR can take when the specified activity is observed. Users have the option to take the following actions:
+The **Action Type** dropdown will contain the specific actions Cloud SOAR can take when the specified activity is observed. Users have the option to take the following actions:
 
 - **Create incident from template**. Specify what incident template to use (See **Incident Templates)**, the incident owner, and incident ID format. This is the most common action.
 - **Close incident**. Allows for the automatic closure of a known false positive incident

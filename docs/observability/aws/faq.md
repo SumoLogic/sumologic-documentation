@@ -149,7 +149,7 @@ EC2 dashboards are based on Host Metrics. 
 
 Root Cause Explorer supports both EC2 and Host Metrics:
 
-* Host Metrics: The namespace appears as "Host' in the namespace drop-down.
+* Host Metrics: The namespace appears as "Host' in the namespace dropdown.
 * EC2: Through CloudWatch, it appears as "AWS/EC2".
 
 Host Metrics use a different format than CloudWatch. They can also refer

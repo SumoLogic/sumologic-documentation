@@ -201,7 +201,7 @@ steps below to update the existing hierarchy :
 Once you are done with the above steps, the AWS service will be added to the AWS Observability view hierarchy. To validate this:
 
 1. Go To Explorer in your Sumo Logic account.
-1. Select AWS Observability from the drop-down.
+1. Select AWS Observability from the dropdown.
 1. You should be able to see the new service in the hierarchy represented by namespace/entity.
 
 ![Validate_hierarchy.png](/img/observability/Validate_hierarchy.png)
