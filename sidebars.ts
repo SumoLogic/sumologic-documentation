@@ -401,6 +401,7 @@ module.exports = {
                 'send-data/collection/processing-rules/create-processing-rule',
                 'send-data/collection/processing-rules/data-forwarding-rules',
                 'send-data/collection/processing-rules/hash-rules',
+                'send-data/collection/processing-rules/mask-rules',
                 'send-data/collection/processing-rules/include-and-exclude-rules',
                 'send-data/collection/processing-rules/metrics-include-and-exclude-rules',
               ]
@@ -1123,6 +1124,7 @@ module.exports = {
             'search/search-query-language/search-operators/substring',
             'search/search-query-language/search-operators/threatip',
             'search/search-query-language/search-operators/timeslice',
+            'search/search-query-language/search-operators/timeslice-join',
             'search/search-query-language/search-operators/tolowercase-touppercase',
             'search/search-query-language/search-operators/top',
             'search/search-query-language/search-operators/topk',
