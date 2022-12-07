@@ -27,7 +27,7 @@ Learn how [Monitors differ from Scheduled Searches](/docs/alerts/difference-from
 * Log Monitors delay execution by two minutes. This means it won't evaluate data from the current time, but evaluate data from two minutes ago.  This ensures that any delays in ingestion are factored in and won't generate false positive or false negative alerts.
 * Metric Monitors delay execution by one minute.
 * Depending on your account type, you can have up to a certain number of Log and Metric Monitors.
-  * Enterprise and Trial can have up to 1,000 Log Monitors and 500 Metric Monitors.
+  * Enterprise and Trial can have up to 1,000 Log Monitors and 1,500 Metric Monitors.
   * Essentials and Professional can have up to 300 Log Monitors and 500 Metric Monitors.
   * Free can have up to 50 Log Monitors and 50 Metric Monitors.
 

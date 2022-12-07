@@ -79,7 +79,7 @@ To configure a Salesforce Source:
 1. **User Token**: Enter the user token.  
 1. **Build In Memory Lookup.** Keep this checked. This will resolve IDs to human-readable names.
 1. **Collection Should begin.** Select the time range for how far back you want this source to start collecting data from Salesforce. Options available are: Now, 24 hours ago.
-15. When you are finished configuring the Source click **Submit**.
+15. When you are finished configuring the Source, click **Submit**.
 
 ### Polling Interval and Salesforce API Rate Limits
 
@@ -92,13 +92,13 @@ The Salesforce Source reports errors, its health, and initialization status. Oth
 
 A Salesforce Source goes through the following states when created:
 
-1. **Pending**: Once the Source is submitted, details are stored and the source is placed in a **Pending** state.
-1. **Started**: A collection task is created on the hosted collector.
-1. **Initialized**: Task configuration is complete in Sumo Logic.
-1. **Authenticated**: The Source has successfully authenticated with Salesforce
-1. **Collecting**: The Source is actively collecting data from Salesforce.
+1. **Pending**. Once the Source is submitted, details are stored and the source is placed in a **Pending** state.
+1. **Started**. A collection task is created on the hosted collector.
+1. **Initialized**. Task configuration is complete in Sumo Logic.
+1. **Authenticated**. The Source has successfully authenticated with Salesforce
+1. **Collecting**. The Source is actively collecting data from Salesforce.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
 ![Error_State.png](/img/send-data/Error_State.png)
 
@@ -106,7 +106,7 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 ![Error_Status.png](/img/send-data/salesforce-error-status.png)
 
-When you delete the source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
 On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection.
 

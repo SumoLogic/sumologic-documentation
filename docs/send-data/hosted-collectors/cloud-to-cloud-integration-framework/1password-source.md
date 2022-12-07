@@ -2,32 +2,29 @@
 id: 1password-source
 title: 1Password Source
 sidebar_label: 1Password
-description: 1Password source
+description: The 1Password Source provides a secure endpoint to receive Sign-in Attempts and Item Usage from the 1Password Event API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-
 The 1Password Source provides a secure endpoint to receive Sign-in Attempts and Item Usage from the [1Password Event API](https://support.1password.com/events-api-reference/). It securely stores the required authentication, scheduling, and state tracking information.
 
 The 1Password Source ingests:
-
 * [Sign-in Attempts](https://support.1password.com/events-api-reference/#sign-in-attempts)
 * [Item Usage](https://support.1password.com/events-api-reference/#item-usage)
 
 
 ## Rules
 
-* JSON is the only supported log format
+* JSON is the only supported log format.
 * Data is collected in five minute intervals.
 
 
 ## Authentication
 
-You need a 1Password API token and your customer specific 1Password domain, for example `events.1password.com.`
+You need a 1Password API token and your customer specific 1Password domain, for example `events.1password.com`.
 
 To generate a 1Password API token follow these steps:
-
 1. [Sign in](https://start.1password.com/signin) to your 1Password account and click [Integrations](https://my.1password.com/integrations/active) in the sidebar.
 2. Choose the Events Reporting integration where you want to issue a token and click **Add a token**.
 3. Enter a name for the bearer token and choose when it will expire. Select or deselect the event types the token has access to, then click **Issue Token**.
@@ -39,22 +36,19 @@ To generate a 1Password API token follow these steps:
 A 1Password Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/Health-Events).
 
 A 1Password Source goes through the following states when created:
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
+2. **Started**. A collection task is created on the Hosted Collector.
+3. **Initialized**. The task configuration is complete in Sumo Logic.
+4. **Authenticated**. The Source successfully authenticated with 1Password.
+5. **Collecting**. The Source is actively collecting data from 1Password.
 
-1. **Pending**: Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
-2. **Started**: A collection task is created on the Hosted Collector.
-3. **Initialized**: The task configuration is complete in Sumo Logic.
-4. **Authenticated**: The Source successfully authenticated with 1Password.
-5. **Collecting**: The Source is actively collecting data from 1Password.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![1password-state](/img/send-data/1password-state.png)
 
-
-On the Collection page, the [Health](/docs/manage/Health-Events#Collection_page) and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
-
-
-Hover your mouse over the status icon to view a tooltip with details on the detected issue.
+Hover your mouse over the status icon to view a tooltip with details on the detected issue.<br/> ![1password](/img/send-data/health_error_generic.png)
 
 
 ## Create a 1Password Source
@@ -65,37 +59,30 @@ To configure a 1Password Source:
 
 1. In Sumo Logic, select** Manage Data > Collection > Collection**.
 2. On the Collectors page, click **Add Source** next to a Hosted** **Collector.
-3. Select **1Password**.
-4. Enter a **Name **for the Source. The **description** is optional.
+3. Select **1Password**.<br/> ![1password](/img/send-data/1password-source-icon.png)
+4. Enter a **Name** for the Source. The **description** is optional.<br/> ![1password-input](/img/send-data/1password-input.png)
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) is stored in a searchable field called `_sourceCategory`.
-6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse).
-
-When configured with the **Forward to SIEM** option the following metadata fields are set:
-
-| Field Name | API | Value |
-|---|---|---|
-| `_siemVendor` | Sign-in, Item | 1Password |
-| `_siemProduct` | Sign-in, Item | 1Password |
-| `_siemFormat` | Sign-in, Item | JSON |
-| `_siemEventID` | Sign-in | signin-{{category}} |
-| `_siemEventID` | Item | item_usage-{{action}} |
-
-
-1. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
+6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse). When configured with the **Forward to SIEM** option, the following metadata fields are set:
+  | Field Name | API | Value |
+  |:---|:---|:---|
+  | `_siemVendor` | Sign-in, Item | `1Password` |
+  | `_siemProduct` | Sign-in, Item | `1Password` |
+  | `_siemFormat` | Sign-in, Item | `JSON` |
+  | `_siemEventID` | Sign-in | `signin-{{category}}` |
+  | `_siemEventID` | Item | `item_usage-{{action}}` |
+7. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
    * Define the fields you want to associate, each field needs a name (key) and value.
       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
-2. **Base URL**. Provide your 1Password customer-specific domain, for example `events.1password.com`.
-3. **API Token**. Enter the token you got from creating your 1Password API token in the [Authentication section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1Password-Source#Authentication) above.
-4. **Supported APIs to collect**. Select one or more of the available APIs, **Item Usage** and **Sign-in Attempts**.
-5. When you are finished configuring the Source click **Submit**.
+8. **Base URL**. Provide your 1Password customer-specific domain, for example `events.1password.com`.
+9. **API Token**. Enter the token you got from creating your 1Password API token in the [Authentication section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1Password-Source#Authentication) above.
+10. **Supported APIs to collect**. Select one or more of the available APIs, **Item Usage** and **Sign-in Attempts**.
+11. When you are finished configuring the Source, click **Submit**.
 
 
 ## Error types
 
 When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/Health-Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
-
-
 
 <table>
   <tr>
@@ -173,7 +160,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
    </td>
    <td>Yes
    </td>
-   <td>Contains the [configuration parameters](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source) for the Source.
+   <td>Contains the [configuration parameters](#config-parameters) for the Source.
    </td>
    <td>
    </td>
@@ -207,7 +194,6 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 ### Config parameters
 
 The following table shows the **config** parameters for a 1Password Source.
-
 
 <table>
   <tr>

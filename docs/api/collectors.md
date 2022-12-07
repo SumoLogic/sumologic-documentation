@@ -1725,7 +1725,7 @@ Response:
 
 Deletes the specified Source from the specified Collector.
 
-Requests to delete Sources from the [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework) are asynchronous. When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector. Use a GET request to track the Source's state.
+Requests to delete Sources from the [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework) are asynchronous. When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector. Use a GET request to track the Source's state.
 
 Method: `DELETE Path: /collectors/[collectorId]/sources/[sourceId]`
 

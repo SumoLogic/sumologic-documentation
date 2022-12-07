@@ -182,7 +182,7 @@ The following steps use the AWS SNS Console. You may instead use AWS CloudForma
      * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
 
 1. Create any Processing Rules you'd like for the AWS Source.
-1. When you are finished configuring the Source click **Save**.
+1. When you are finished configuring the Source, click **Save**.
 
 ### SNS with one bucket and multiple Sources
 

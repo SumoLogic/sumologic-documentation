@@ -15,15 +15,15 @@ A Google Workspace Source tracks errors, reports its health, and start-up pro
 
 A Google Workspace Source goes through the following states when created:
 
-1. **Pending**: Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
-1. **Started**: A collection task is created on the Hosted Collector.
-1. **Initialized**: The task configuration is complete in Sumo Logic.
-1. **Authenticated**: The Source successfully authenticated with Google.
-1. **Collecting**: The Source is actively collecting data from Google.
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
+1. **Started**. A collection task is created on the Hosted Collector.
+1. **Initialized**. The task configuration is complete in Sumo Logic.
+1. **Authenticated**. The Source successfully authenticated with Google.
+1. **Collecting**. The Source is actively collecting data from Google.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
-When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
 On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection.
 
@@ -91,7 +91,7 @@ To configure a Google Workspace Source:
   * **Customer ID**:** The unique ID for the customer's Google Workspace account. In the case of a multi-domain account, to fetch all groups for a customer, fill this field instead of domain. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/admin-sdk/directory/v1/reference/users).
   * **Domain**: The domain name. Use this field to get fields from only one domain. To return all domains for a customer account, use the `customer` query parameter instead.
 
-1. When you are finished configuring the Source click **Submit**.
+1. When you are finished configuring the Source, click **Submit**.
 
 ## Error types
 
