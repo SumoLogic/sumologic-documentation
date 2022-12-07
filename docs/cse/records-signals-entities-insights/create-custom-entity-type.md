@@ -11,7 +11,7 @@ This topic has instructions for how to create custom Entity types in CSE.
 
 In CSE, *Entities* are fundamental to the Insight generation process. When a CSE Rule fires, it generates a Signal for each “on-Entity” attribute configured for the rule. CSE correlates Signals by Entity to create Insights. This process is described in the [Insight Generation Process](insight-generation-process.md) topic.
 
-CSE has a number built-in entity types:
+CSE has a number of built-in entity types:
 
 * IP address
 * hostname
