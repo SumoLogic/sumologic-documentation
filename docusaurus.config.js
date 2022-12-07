@@ -294,8 +294,8 @@ module.exports = {
               },
               {
                 label: 'Cloud SOAR',
-                href: 'https://www.sumologic.com/solutions/cloud-soar',
-                activeBaseRegex: '^/docs/security/.*',
+                to: '/docs/cloud-soar/',
+                activeBaseRegex: '^/docs/cloud-soar/.*',
               },
               {
                 label: 'CI/CD',

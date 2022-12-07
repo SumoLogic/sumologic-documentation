@@ -2180,6 +2180,22 @@ module.exports = {
       ],
     },
   ],
+  cloudsoar: [
+    {
+      type: 'category',
+      label: 'Cloud SOAR',
+      collapsible: false,
+      collapsed: true,
+      link: {type: 'doc', id: 'cloud-soar/index'},
+      items: [
+        'cloud-soar/architecture',
+        'cloud-soar/global-functions-menu',
+        'cloud-soar/main-menu',
+        'cloud-soar/incidents-triage',
+        'cloud-soar/automation',
+      ],
+    },
+  ],
   //Contribution guide for documentation
   contributing: [
     {

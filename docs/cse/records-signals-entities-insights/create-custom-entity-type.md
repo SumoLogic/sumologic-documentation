@@ -11,13 +11,26 @@ This topic has instructions for how to create custom Entity types in CSE.
 
 In CSE, *Entities* are fundamental to the Insight generation process. When a CSE Rule fires, it generates a Signal for each “on-Entity” attribute configured for the rule. CSE correlates Signals by Entity to create Insights. This process is described in the [Insight Generation Process](insight-generation-process.md) topic.
 
-CSE has four built-in entity types: IP address, hostname, username, or MAC address. When you create a Rule, in the Signal configuration section, the Rules Editor prompts you to select an “On-Entity” attribute from a list of all of the CSE schema attributes that hold IP addresses, hostnames, usernames, or MAC addresses. 
+CSE has a number of built-in entity types:
 
-What if you want to correlate Signals by something other than an IP address, hostname, username, or MAC address? That’s what custom Entity types are for.
+* IP address
+* hostname
+* username
+* MAC address
+* process
+* command
+* hash
+* domain
+* useragent
+* email
+* url
+* file
+
+When you create a Rule, in the Signal configuration section, the Rules Editor prompts you to select an “On-Entity” attribute from a list of all of the CSE schema attributes that hold Entities. What if you want to correlate Signals by something other than an item that is one of CSE standard Entity types? That’s what custom Entity types are for.
 
 If you’d like to be able to correlate Signals by a different type of Entity, you can create a custom Entity type. For example, you might want to correlate Signals by file hash. When you create a custom Entity type, you identify the CSE schema attributes that hold data of the custom type. Given the example of a file hash Entity type, you would select attributes that contain file hashes, like `file_hash_md5`, `file_hash_sha1`, and so on. The attributes you configure for your custom Entity type will be available in the **On-Entity** selector list in the **Then Create a Signal** section of the rule configuration UI. 
 
-Just as for Entities of built-in types—IP addresses, MAC addresses, hostnames, and usernames—when a rule fires on a custom Entity, if the Entity doesn’t already exist in CSE, it is added, and can be viewed on the Entity list page.
+Just as for Entities of built-in types listed above—IP addresses, MAC addresses, hostnames, and so on—when a rule fires on a custom Entity, if the Entity doesn’t already exist in CSE, it is added, and can be viewed on the Entity list page.
 
 To create a custom Entity type:
 
