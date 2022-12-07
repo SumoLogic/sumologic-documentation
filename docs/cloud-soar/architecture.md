@@ -1,23 +1,14 @@
 ---
 id: architecture
 title: Cloud SOAR Architecture
+sidebar_label: Architecture
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
 
-Sumo Logic Cloud SOAR provides Security Operations and Automation Incident Response Platform to facilitate and expedite timely management of
-Incident Response with a rich library of customizable playbooks for
-different threats and use cases of incident response scenarios
-expediting and automating response time to incident response events.
+Sumo Logic Cloud SOAR provides Security Operations and Automation Incident Response Platform to facilitate and expedite timely management of Incident Response with a rich library of customizable playbooks for different threats and use cases of incident response scenarios expediting and automating response time to incident response events.
 
 This solution additionally provides capabilities to support incident
-responders during the process of assessment, Investigation, data
-collection and correlation to help inference additional information and metrics analytics to see repetitive patterns when doing analysis. It
-facilitates documentation and knowledge transfer of information across
-the critical teams working on incident response and SOC operations team
-members.
+responders during the process of assessment, Investigation, data collection and correlation to help inference additional information and metrics analytics to see repetitive patterns when doing analysis. It facilitates documentation and knowledge transfer of information across the critical teams working on incident response and SOC operations team members.
 
 Cloud SOAR Automation and Orchestration features help organizations from all sectors of the industry to manage measure and orchestrate security
 operations tasks including incident qualification, triage and
@@ -37,38 +28,33 @@ containment.
 
 Cloud SOAR has been designed with Interoperability for Cybersecurity
 Industry standards regulatory frameworks to be able to receive data from
-a wide assortment of Cybersecurity industry vendors to enrich the
-available data gathered and correlated to offer better forensic
-analytics. Just to name a few of the quickly growing list of supported
-vendors (Palo Alto Networks, Cisco ThreatGrid and Umbrella, IBM Qradar, Splunk, McAfee, Encase Forensics, etc.
+a wide assortment of Cybersecurity industry vendors to enrich the available data gathered and correlated to offer better forensic analytics. Just to name a few of our quickly growing list of supported vendors: Palo Alto Networks, Cisco ThreatGrid and Umbrella, IBM Qradar, Splunk, McAfee, Encase Forensics.
 
-Cloud SOAR design and architecture follows Cybersecurity Industry standards,
-regulatory frameworks and adheres to best Industry practices to meet
-best Cybersecurity practices followed by ISO, GDPR, OASIS, NIST, and Sec Regulations, etc.
+Cloud SOAR design and architecture follows Cybersecurity Industry standards and regulatory frameworks, and adheres to best Industry practices to meet
+best Cybersecurity practices followed by ISO, GDPR, OASIS, NIST, Sec Regulations, and more.
 
-Cloud SOAR offers a patent -pending Automated Responder Knowledge (DF-ARK) module which applies machine learning to historical responses, threats
-which recommends relevant Playbooks and paths of action to expedite the process, and response to manage and mitigate similar incidents with
-better response time.
+Cloud SOAR offers a patent-pending Automated Responder Knowledge (DF-ARK) module which applies machine learning to historical responses and threats. It recommends relevant Playbooks, paths of action to expedite the process, and responses to manage and mitigate similar incidents with better response time.
 
-![alt-text goes here](/img/cloud-soar/image3.png)
+![Cloud SOAR Architecture Overview](/img/cloud-soar/image3.png)
 _Cloud SOAR Architecture Overview_
 
 
 ## Multi-Tenancy
 
 Cloud SOAR Security Operations (Cloud SOAR SO) supports a multi-tenant architecture, typically for a Managed Security Service Provider (MSSP) to support management of multiple customers in isolated environments.
-Tenants are separately managed in a segregated Cloud SOAR instance with complete isolation of all the platform's functions. Additionally, a Master Console is available to manage all the instances (create,
-destroy, monitor) and to provide aggregated reporting.
+
+Tenants are separately managed in a segregated Cloud SOAR instance with complete isolation of all the platform's functions. Additionally, a Master Console is available to manage all the instances (create, destroy, monitor) and to provide aggregated reporting.
 
 All multi-tenant installations offer:
-- Separate schema or databases for each individual tenant;
-- Logical or physical segregation of tenants;
-- A **Superuser** role that provides visibility on all tenants and provides for execution of administrative duties, analytics, dashboards, and reporting;
-- Individual administrators otherwise segregated to each tenant;
-- Isolation of external actions, e.g., enrichment of indicators of compromise, containment actions prescribed to a host.
+- Separate schema or databases for each individual tenant
+- Logical or physical segregation of tenants
+- A **Superuser** role that provides visibility on all tenants and provides for execution of administrative duties, analytics, dashboards, and reporting
+- Individual administrators otherwise segregated to each tenant
+- Isolation of external actions (e.g., enrichment of indicators of compromise, containment actions prescribed to a host)
 
-![**Multi-Tenancy with Physical Segregation**](/img/cloud-soar/image5.png)
+![Multi-Tenancy with Physical Segregation](/img/cloud-soar/image5.png)
 _Multi-Tenancy with Physical Segregation_
+
 ## Automated Responder Knowledge (DF-ARK)
 
 Cloud SOAR's Automated Responder Knowledge (DF-ARK) module utilizes machine
@@ -79,8 +65,6 @@ detection and response times.
 
 ## Automation Bridge
 
-Cloud SOAR to interact with the platforms in the Customer Environment use a module called Automation Bridge.
+Cloud SOAR interacts with the platforms in your environment using a module called Automation Bridge.
 
-Automation Bridge is a process running on a linux based VM (deployed inside the Customer environment) that, interacting with the Cloud SOAR Instance, permits to execute Playbook actions on all the systems that Cloud SOAR is orchestrating in that specific environment.
-
-To have more information on how to install and configure the Automation Bridge please refer to the dedicated documentation
+Automation Bridge is a process running on a Linux-based VM (deployed inside the Customer environment) that interacts with your Cloud SOAR Instance and allows you to execute Playbook actions on all the systems that Cloud SOAR is orchestrating in that specific environment. [Learn more](/docs/cloud-soar/incidents-triage/#configuring-the-automation-bridge-for-cyberark).
