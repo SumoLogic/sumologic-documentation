@@ -1,16 +1,13 @@
 ---
 id: set-up-webhook-connections
 title: Set Up Webhook Connections
-sidebar_label: Setup
 description: Webhook connections allow you to send Sumo Logic alerts to third-party applications.
 ---
 
-A Webhook is an HTTP callback: an HTTP POST that occurs when something happens. Webhook connections allow you to send Sumo Logic alerts to
-third-party applications that accept incoming webhooks.
+A Webhook is an HTTP callback: an HTTP POST that occurs when something happens. Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks.
 
 For example, once you set up a webhook connection in Sumo Logic and create a scheduled search, you can send an alert from that scheduled
-search as a post to a Slack channel, or integrate with third-party systems. In addition to an alert, you can include a link directly to a search and even a few search results (depending on the third party tool you're connecting to). There is no limit to the number of webhooks you
-can send from Sumo Logic, but your third party might impose restrictions. In addition, the payload of a webhook may be restricted by Sumo or the third party.
+search as a post to a Slack channel, or integrate with third-party systems. In addition to an alert, you can include a link directly to a search and even a few search results (depending on the third party tool you're connecting to). There is no limit to the number of webhooks you can send from Sumo Logic, but your third party might impose restrictions. In addition, the payload of a webhook may be restricted by Sumo or the third party.
 
 Along with a fully customizable webhook connection, you can quickly create webhooks for:
 
@@ -32,7 +29,7 @@ Most services with a REST API should allow you to create a connection using the
 If a scheduled search fails or times out, no data will be sent via webhook. In this case, you won’t see any notifications in the app you’ve configured to receive data.
 :::
 
-## Setting up webhook connections
+## Set up a webhook connection
 
 :::note
 To configure a webhook connection, you must have a Sumo role that grants you the **Manage connections** capability.
@@ -48,23 +45,19 @@ To set up a webhook connection:
 1. In the **Create Connection** dialog, enter the **Name** of the connection.
 1. (Optional) Enter a **Description** for the connection.
 1. Enter the **URL** for the endpoint. This is generated from the remote system’s API.
-
     :::important
     Only HTTPS (port 443) and HTTP (port 80) URLs are supported. 
     :::
-
 1. (Optional) If the third-party system requires an **Authorization Header**, enter it here. For more information, see [Example Authorization Header](#example-authorization-header) below.
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
 1. For **Payload**, enter a JSON object in the format required by the target webhook URL. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](#webhook-payload-variables), below. When using a generic webhook connection for notifications in a [Monitor](/docs/alerts/monitors) you can distinguish between an alert and a recovery by using the [alert variable](../../../alerts/alert-variables.md) `TriggerType`. An alert will have a value of either `Critical` , `Warning`, or `Missing ``Data`. Recovery will have either `CriticalResolved`, `WarningResolved`, or `Missing Data Resolved`. The same payload for both alerts and recovery is used.
-
     :::note
     Variables are escaped according to the JSON standard, meaning that they can be used in application JSON. 
     :::
-
 1. Click **Save**.
 1. When you're ready, create a [scheduled search](schedule-searches-webhook-connections.md) to send alerts to this connection.
 
-## Webhook payload variables
+## Configure Webhook payload variables
 
 Variables are used as parameters in the JSON payload object of your alert notifications. These variables are used to dynamically populate specific values from the alert configuration in the notification payload. It includes things like the TriggerType that gives the current monitor status in the notification. When a notification is sent variables are replaced with values from the alert. For example, if you specified `{{Name}}` in your JSON payload, it would be replaced with the actual name of the alert in the delivered payload.
 
@@ -80,7 +73,7 @@ All variables are case-insensitive.
 :::
 
 | Variable | Description | Monitors | Scheduled Searches |
-| -- | -- | -- | --|
+| :-- | :-- | :-- | :--|
 | `{{Name}}` | The name of the alert. In the delivered payload, this variable is replaced with the Name you assigned to the alert when you created it. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{Description}}` | The description of the alert. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{MonitorType}}` | The type of alert, either `Logs` or `Metrics`. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
@@ -102,7 +95,39 @@ Recovery will have either `ResolvedCritical`, `ResolvedWarning`, or `ResolvedMis
 | `{{SourceURL}}` | The URL to the configuration or status page of the monitor in Sumo Logic. | ![check](/img/reuse/check.png) | ![check](/img/reuse/x.png) |
 | `{{AlertResponseUrl}}` | When your Monitor is triggered it will generate a URL and provide it as the value of this variable where you can use it to open Alert Response. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 
-### Examples
+
+<details><summary>Legacy variables</summary>
+
+This section provides the old variables available for alert notifications from Metrics Monitors and Scheduled Searches. The following table shows where the old variables are supported.
+
+:::tip
+We recommend using the new common variables instead of these legacy variables, which will be deprecated.
+:::
+
+| Variable | Description | Metrics Monitors | Scheduled Searches |
+| :-- | :-- | :-- | :--|
+| ` {{SearchName}}` |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| `{{SearchDescription}}` | Description of the saved search or Monitor. In the delivered payload, this variable is replaced with the Name you assigned to the search or Monitor when you created it. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| `{{SearchQuery}}` | The query used to run the saved search. In the delivered payload, this variable is replaced by your saved search query or metric query. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| `{{SearchQueryUrl}}` | The URL to the search or metrics query. In the delivered payload, this is a URL that you can click to run the saved logs or metric query. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| `{{TimeRange}}` | The time range that triggered the alert. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| `{{FireTime}}` | The start time of the log search or metric query that triggered the notification. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| `{{AggregateResultsJson}}` | JSON object containing search aggregation results. A maximum of 200 aggregate results can be sent via webhook. | ![check](/img/reuse/x.png) | ![check](/img/reuse/check.png)<br/>Not available with Email notifications |
+| `{{RawResultsJson}}` | JSON object containing raw messages. A maximum of 10 raw messages can be sent via webhook. | ![check](/img/reuse/x.png) | ![check](/img/reuse/check.png)<br/>Not available with Email notifications |
+| `{{NumRawResults}}` | Number of results returned by the search. | ![check](/img/reuse/x.png) | ![check](/img/reuse/check.png) |
+| `{{Results.fieldname}}` | The value returned from the search result for the specified field. For example, this payload specification:<br/>`{{Results.client_ip}} had {{Results.errors}} errors`<br/><br/>Results in a subject line like this:<br/>`70.69.152.165 had 391 errors`<br/><br/>A maximum of 200 aggregate results or 10 raw messages for this field can be sent via webhook.<br/>A field name must match (case-insensitive) the field from your search and must be alphanumeric characters, underscores, and spaces. If you have a field name that has an unsupported character use the as operator to rename it. | ![check](/img/reuse/x.png) | ![check](/img/reuse/check.png) |
+| `{{AlertThreshold}}` | The condition that triggered the alert (for example, above 90 at least once in the last 5 minutes) | ![check](/img/reuse/check.png) | ![check](/img/reuse/x.png) |
+| `{{AlertSource}}` | The metric and sourceHost that triggered the alert, including associated tags for that metric. | ![check](/img/reuse/check.png) | ![check](/img/reuse/x.png) |
+| `{{AlertSource.fieldname}}` | The value returned from the AlertSource object for the specified field name. | ![check](/img/reuse/check.png) | ![check](/img/reuse/x.png) |
+| `{{AlertID}}` | The ID of the triggered alert. | ![check](/img/reuse/check.png) | ![check](/img/reuse/x.png) |
+| `The ID of the triggered alert.` | Current status of the time series that triggered (for example, Critical or Warning). | ![check](/img/reuse/check.png) | ![check](/img/reuse/x.png) |
+| `{{AlertCondition}}` | The condition that triggered the alert. | ![check](/img/reuse/x.png) | ![check](/img/reuse/x.png) |
+
+</details>
+
+
+
+### Example payloads
 
 #### Slack payload
 
@@ -154,68 +179,9 @@ Recovery will have either `ResolvedCritical`, `ResolvedWarning`, or `ResolvedMis
 Monitor Alert: {{TriggerTimeRange}} on {{Name}}
 ```
 
-## Legacy Variables
 
-This section provides the old variables available for alert notifications from Metrics Monitors and Scheduled Searches. The following table shows where the old variables are supported.
 
-:::tip
-We recommend you use the new common variables instead of these legacy variables. In the future, legacy variables will be deprecated.
-:::
-
-| Variable | Description | Metrics Monitors | Scheduled Searches |
-| -- | -- | -- | --|
-| ` {{SearchName}}` |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| `{{SearchDescription}}` | Description of the saved search or Monitor. In the delivered payload, this variable is replaced with the Name you assigned to the search or Monitor when you created it. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| `{{SearchQuery}}` | The query used to run the saved search. In the delivered payload, this variable is replaced by your saved search query or metric query. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| `{{SearchQueryUrl}}` | The URL to the search or metrics query. In the delivered payload, this is a URL that you can click to run the saved logs or metric query. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| `{{TimeRange}}` | The time range that triggered the alert. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| `{{FireTime}}` | The start time of the log search or metric query that triggered the notification. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| `{{AggregateResultsJson}}` | JSON object containing search aggregation results. A maximum of 200 aggregate results can be sent via webhook. | ![check](/img/reuse/x.png) | ![check](/img/reuse/check.png)<br/>Not available with Email notifications |
-| `{{RawResultsJson}}` | JSON object containing raw messages. A maximum of 10 raw messages can be sent via webhook. | ![check](/img/reuse/x.png) | ![check](/img/reuse/check.png)<br/>Not available with Email notifications |
-| `{{NumRawResults}}` | Number of results returned by the search. | ![check](/img/reuse/x.png) | ![check](/img/reuse/check.png) |
-| `{{Results.fieldname}}` | The value returned from the search result for the specified field. For example, this payload specification:<br/>`{{Results.client_ip}} had {{Results.errors}} errors`<br/><br/>Results in a subject line like this:<br/>`70.69.152.165 had 391 errors`<br/><br/>A maximum of 200 aggregate results or 10 raw messages for this field can be sent via webhook.<br/>A field name must match (case-insensitive) the field from your search and must be alphanumeric characters, underscores, and spaces. If you have a field name that has an unsupported character use the as operator to rename it. | ![check](/img/reuse/x.png) | ![check](/img/reuse/check.png) |
-| `{{AlertThreshold}}` | The condition that triggered the alert (for example, above 90 at least once in the last 5 minutes) | ![check](/img/reuse/check.png) | ![check](/img/reuse/x.png) |
-| `{{AlertSource}}` | The metric and sourceHost that triggered the alert, including associated tags for that metric. | ![check](/img/reuse/check.png) | ![check](/img/reuse/x.png) |
-| `{{AlertSource.fieldname}}` | The value returned from the AlertSource object for the specified field name. | ![check](/img/reuse/check.png) | ![check](/img/reuse/x.png) |
-| `{{AlertID}}` | The ID of the triggered alert. | ![check](/img/reuse/check.png) | ![check](/img/reuse/x.png) |
-| `The ID of the triggered alert.` | Current status of the time series that triggered (for example, Critical or Warning). | ![check](/img/reuse/check.png) | ![check](/img/reuse/x.png) |
-| `{{AlertCondition}}` | The condition that triggered the alert. | ![check](/img/reuse/x.png) | ![check](/img/reuse/x.png) |
-
-## Example Authorization Header
-
-Use HTTP Basic Authentication, this is a standard used across the world wide web, Sumo Logic doesn't require anything different or special. The
-username and password are concatenated, base64-encoded, and passed in the `Authorization` HTTP header. The Authorization field is constructed as follows:
-
-* Combine the username and password with a single colon.
-* Encode using the [RFC2045-MIME](https://www.ietf.org/rfc/rfc2045.txt) variant of Base64. You can use any encoder, including the [base64](/docs/search/search-query-language/search-operators/base64Encode) search operator to do this.
-* The authorization method and a space, such as "Basic " is then put before the encoded string.
-
-For example, if the user agent uses `Aladdin` as the username and `OpenSesame` as the password then the field could be formed with a
-simple bash command as follows:
-
-```
-echo -n "Aladdin:OpenSesame" | base64
-```
-
-:::tip
-The `-n` ensures that an extra new line is not encoded.
-:::
-
-yielding a string 'QWxhZGRpbjpPcGVuU2VzYW1l' that is used like this:
-
-```
- Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l
-```
-
-So in the **Authentication Header** field, you would enter: 
-
-```
-Basic QWxhZGRpbjpPcGVuU2VzYW1l
-```
-
-## Example payloads 
-
-### Flat JSON
+#### Flat JSON
 
 This example payload is flat JSON. 
 
@@ -227,7 +193,7 @@ This example payload is flat JSON. 
 }
 ```
 
-### Hierarchical JSON
+#### Hierarchical JSON
 
 This example payload is hierarchical JSON. 
 
@@ -242,7 +208,7 @@ This example payload is hierarchical JSON. 
 }
 ```
 
-## Example payload fields
+### Example payload fields
 
 All variables must be enclosed in quotes to be interpreted as valid JSON. 
 
@@ -277,7 +243,35 @@ The following valid JSON is sent in the payload of the POST request.
 {"channel": "ops", "text": "{\"thread\":\"conciergePartitioner-1\",\"user_id\":\"\",\"user_name\":\"\",\"web_session\":\"\",\"Message\":\"2015-10-27 10:31:15,853 -0700 INFO Partitioned 0 tokens, 2 targets into 773 assignments\"}
 ```
 
-## Testing a connection
+### Example authorization header
+
+Use HTTP Basic Authentication, this is a standard used across the world wide web, Sumo Logic doesn't require anything different or special. The username and password are concatenated, base64-encoded, and passed in the `Authorization` HTTP header. The Authorization field is constructed as follows:
+
+* Combine the username and password with a single colon.
+* Encode using the [RFC2045-MIME](https://www.ietf.org/rfc/rfc2045.txt) variant of Base64. You can use any encoder, including the [base64](/docs/search/search-query-language/search-operators/base64Encode) search operator to do this.
+* The authorization method and a space, such as "Basic " is then put before the encoded string.
+
+For example, if the user agent uses `Aladdin` as the username and `OpenSesame` as the password then the field could be formed with a
+simple bash command as follows:
+```bash
+echo -n "Aladdin:OpenSesame" | base64
+```
+
+:::tip
+The `-n` ensures that an extra new line is not encoded.
+:::
+
+yielding a string 'QWxhZGRpbjpPcGVuU2VzYW1l' that is used like this:
+```
+Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l
+```
+
+So in the **Authentication Header** field, you would enter: 
+```
+Basic QWxhZGRpbjpPcGVuU2VzYW1l
+```
+
+## Test a connection
 
 After configuring the connection, click the **Test Connection** button at the bottom left of the **Payload** area. If the connection is made, you will see a 200 OK response message.
 
@@ -287,7 +281,7 @@ This test does not use the same static IP addresses that send notifications, it 
 
 If the connection is successful, you'll see a message appearing in the third-party tool. This won't contain any information from the scheduled search, it will just have the text in the payload.
 
-## Editing or deleting connections
+## Editing and deleting connections
 
 If a connection is changed, all scheduled searches that link to the connection are changed moving forward. No changes are made to previous searches.
 
