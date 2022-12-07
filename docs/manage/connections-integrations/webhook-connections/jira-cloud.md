@@ -18,7 +18,7 @@ You can send JSON payloads from Sumo Logic alerts as an HTTP POST request to c
 To send webhook alerts to Jira Cloud you need to include a Basic Authentication Header with requests. This requires an API token, for reference on creating a token see [API tokens](https://confluence.atlassian.com/cloud/api-tokens-938839638.html) in Atlassian Cloud Support.
 
 1. Generate an API token using your [Atlassian Account](https://id.atlassian.com/manage/api-token).
-1. Using the email address of your Atlassian account and an API token, you can generate the Basic Authentication Header. In the following cURL command replace `<me@example.com>` with your email address and `<my-api-token>` with your API token and run it:
+1. Using the email address of your Atlassian account and an API token, you can generate the Basic Authentication Header. In the following cURL command, replace `<me@example.com>` with your email address and `<my-api-token>` with your API token and run it:
    ```bash
    curl -v https://mysite.atlassian.net --user <me@example.com>:<my-api-token>
    ```    
