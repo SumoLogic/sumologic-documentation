@@ -52,7 +52,7 @@ To configure a Qualys VMDR Source:
 9. The next section covers the type of data to collect and how often. <br/> ![qualys vmdr input window.png](/img/send-data/qualys-config-collection-selection.png)
 10. **Collect vulnerability data**. This option will fetch the list of hosts with the host's latest vulnerability data based on the host-based scan data available in the user’s account. We recommend leaving the polling interval at the default 1 hour.
 11. **Collect asset inventory**. This option consumes asset data from Qualys Global IT Asset Inventory API. The inventory data collected here will also be used in Cloud SIEM as inventory data. We recommend leaving the polling interval at the default 24 hours.
-9. When you are finished configuring the Source, click **Submit**.
+12. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
