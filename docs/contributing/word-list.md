@@ -4,14 +4,7 @@ title: Word List
 description: An alphabetized list of commonly used terms at Sumo Logic, including components and features of Sumo Logic, and other usage issues, such as punctuation and capitalization.
 ---
 
-:::caution
-
-&#128679; Under construction &#128679;
-:::
-
 This word list provides an alphabetized list of commonly used terms at Sumo Logic, including components and features of Sumo Logic, and other usage issues, such as punctuation and capitalization. This is not a glossary. Here is the [Glossary](/docs/contributing/glossary).
-
-<!--See the [Style Guide](https://sites.google.com/sumologic.com/ux-sumo-home/design-system/style) provided by our UX team.-->
 
 
 ## A
@@ -73,14 +66,14 @@ noun. Initial cap for “continuous” only applies when it starts a sentence.
 
 **Em dash**. We don't use this often, but if you need to use it, insert the em dash symbol (—), don't use a double hyphen (–).
 
-**Exclamation points ! **.  Use exclamation points only in warnings and greetings. Let your text convey the enthusiasm or importance of the statement. Don't make the reader wait until the exclamation point to find out the text is significant.
+**Exclamation points !**. Use exclamation points only in warnings and greetings. Let your text convey the enthusiasm or importance of the statement. Don't make the reader wait until the exclamation point to find out the text is significant.
 
 
 ## G
 
 **GB and Gbit**. GB is the acronym for gigabytes. Gbit or Gb is the acronym for gigabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10GB or 15Gbit.)
 
-**Geolocation. **Geolocation is one word. It is not capitalized unless used at the beginning of a sentence.
+**Geolocation**. Geolocation is one word. It is not capitalized unless used at the beginning of a sentence.
 
 **Geo lookup operator**. geo lookup is two words.
 
@@ -102,7 +95,7 @@ noun. Initial cap for “continuous” only applies when it starts a sentence.
 
 **Include rule**. Include rules are used to send only the data you'd like in your Sumo Logic account (a "whitelist" filter). This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude.
 
-**Installed Collector. **Installed Collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
+**Installed Collector**. Installed Collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
 
 ## J
 
