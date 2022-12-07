@@ -56,7 +56,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Content Administrator](/docs/manage/Content-Sharing/Admin-Mode)**. In the Sumo Logic Library, you can chose **View as Content Administrator** to enter Admin Mode, so you can manage content for your organization. In Admin mode you can migrate content from one location to another, and highlight important content in the **Admin Recommended** folder.
 
-**[Content sharing](/docs/manage/Content_Sharing)**. A Sumo feature that allows you to share searches, dashboards, and folders with a user, a role, or combinations of the two.
+**[Content sharing](docs/manage/content-sharing/index.md)**. A Sumo feature that allows you to share searches, dashboards, and folders with a user, a role, or combinations of the two.
 
 
 
@@ -65,7 +65,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Dashboard](/docs/Dashboards)**. Dashboards contain a collection of real time Panels that provide a graphical representation of your organization's data. Panels are created by running search queries. From the resulting data in the Search page's Aggregates tab, you can display that data using different types of charts. Once Panels are created, they are saved to a Dashboard.
 
-**[Dashboard Theme](/docs/Dashboards/Edit-Dashboards-and-Panels/Change-Dashboard-Themes)**. In Dashboards, you can toggle the background color scheme from Light to Dark.
+**[Dashboard Theme](docs/dashboards/edit-dashboards/manage-dashboard.md)**. In Dashboards, you can toggle the background color scheme from Light to Dark.
 
 **[Data access level](/docs/dashboards/get-started/set-data-access-level-dashboard)**. The data access level for a dashboard determines what data a user with whom the dashboard is shared can view in the dashboard.
 
@@ -90,7 +90,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 ## E
 
-**[Ephemeral](/docs/send-data/Installed-Collectors/collector-installation-reference/11Set-a-Collector-as-Ephemeral)**. Refers to data sources, such as containers, that are created and destroyed as appropriate, resulting in a high volume log data or metrics. In Sumo Logic, you can set a collector to be ephemeral—Sumo deletes an ephemeral collector automatically after it has been offline for 12 hours.
+**[Ephemeral](docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral.md)**. Refers to data sources, such as containers, that are created and destroyed as appropriate, resulting in a high volume log data or metrics. In Sumo Logic, you can set a collector to be ephemeral—Sumo deletes an ephemeral collector automatically after it has been offline for 12 hours.
 
 **[Endpoints](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)**. Sumo Logic has several pods that are assigned depending on the geographic location and the date an account is created. Sumo Logic redirects your browser to the correct login URL and also redirects Collectors to the correct endpoint. However, if you're using an API you'll need to manually direct requests to the correct API endpoint; API calls are not redirected to another endpoint.
 
@@ -164,7 +164,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[LogCompare](/docs/search/LogCompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
 
-**[Log overlay](/docs/metrics/metric-charts/13-Use-Log-Overlay-to-Analyze-Metrics-Visualizations)**. A Sumo feature you can use to run a log query on the metric query page and visualize the count of matching log messages on the metric chart.
+**[Log overlay](docs/metrics/metric-charts/log-overlay-analyze-metrics-visualizations.md)**. A Sumo feature you can use to run a log query on the metric query page and visualize the count of matching log messages on the metric chart.
 
 **[LogReduce](/docs/search/LogReduce)**. LogReduce uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website.
 
@@ -179,11 +179,11 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Mask rule](/docs/send-data/collection/Processing-Rules/Mask-Rules)**. Mask rules are a type of Processing Rule that replaces an expression with a mask string that you can customize—another option to protect data, such as passwords, that you wouldn't normally track.
 
-**[Messages tab](/docs/search/Get-Started-with-Search/How-to-Use-the-Search-Page/Set-Messages-Tab-Preferences)**. When you run a search query, messages display in the Message tab in the lower half of the browser window of the Search page.
+**[Messages tab](docs/search/get-started-with-search/search-page/set-messages-tab-preferences.md)**. When you run a search query, messages display in the Message tab in the lower half of the browser window of the Search page.
 
 **[Metadata](/docs/send-data/data-enrichment)**. Data about other data. If the logs and metrics you ingest have associated metadata, you can leverage it for more targeted log searches and metric queries. Metadata for metrics includes both intrinsic tags and meta tags.
 
-**[Meta tags](/docs/metrics/introduction/Metric-Formats#Carbon_2.0_example)**. In Carbon 2.0-formatted metrics, meta tags are the key-value pairs for a metric that provide additional, but not identifying information about the thing being measured. A meta tag is a piece of metadata that might be useful in querying your metrics. 
+**[Meta tags](/docs/metrics/introduction/Metric-Formats#Carbon_2.0_example)**. In Carbon 2.0-formatted metrics, meta tags are the key-value pairs for a metric that provide additional, but not identifying information about the thing being measured. A meta tag is a piece of metadata that might be useful in querying your metrics.
 
 **[Metric rules editor](/docs/metrics/Metric-Rules-Editor)**. A page in the Sumo web app for creating metric rules.
 
@@ -279,9 +279,9 @@ Formerly Monitors. Real-time Panels provide a graphical representation of your o
 
 ## T
 
-**[Text Panels](/docs/Dashboards/Get-Started-with-Dashboards-and-Panels/Add-a-Text-Panel)**. Used in Dashboards, you can add Text Panels to include titles or text descriptions. See also Markdown.
+**[Text Panels](docs/dashboards/get-started/add-text-panel.md)**. Used in Dashboards, you can add Text Panels to include titles or text descriptions. See also Markdown.
 
-**[Throttling](/docs/manage/ingestion-volume/01Log_Ingestion#Throttling)**. Slows the rate of ingestion across all Collectors in an account to not exceed the allowable rate.
+**[Throttling](docs/manage/ingestion-volume/log-ingestion.md)**. Slows the rate of ingestion across all Collectors in an account to not exceed the allowable rate.
 
 **[Time Compare](/docs/search/Time-Compare)**. Time Compare uses the compare operator to compare current aggregated search results with aggregated data from a past time period.
 
