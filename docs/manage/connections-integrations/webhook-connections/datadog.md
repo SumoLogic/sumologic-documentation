@@ -21,7 +21,7 @@ Once you set up the webhook connection, you'll have the option to use it in a�
 You'll need the **Manage connections** [role capability](../../users-roles/roles/role-capabilities.md) to create webhook connections.
 :::
 
-1. In the Sumo Logic, go to **Manage Data \> Monitoring \> Connections**.
+1. In the Sumo Logic, go to **Manage Data** > **Monitoring** > **Connections**.
 1. On the Connections page click **Add**.
 1. Click **Datadog**.
 1. In the Create Connection dialog, enter the **Name** of the Connection.
