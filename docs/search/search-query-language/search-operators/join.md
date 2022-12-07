@@ -98,7 +98,7 @@ on T1.a = T2.c
 returns results similar to:
 
 | a | b | c |
-|-||-|
+| :-- | :-- | :-- |
 | stream-2454 | search-733434 | stream-2454 |
 | stream-7343 | search-854343 | stream-7343 |
 | stream-7343 | search-32342  | stream-7343 |
@@ -145,7 +145,7 @@ on t1.s1 = t2.s2
 Produces results similar to:
 
 | s1 | time | s2 | v2 |
-|--|-|--|--|
+| :-- | :-- | :-- | :-- |
 | 12345  | 20130512 | 12345  | 50     |
 | 12345  | 20130512 | 12345  | 100    |
 | 23456  | 20130513 | 23456  | 120    |
@@ -165,7 +165,7 @@ on t1.s1 = t2.s2
 produces results similar to:
 
 | s1 | time | s2 | v2 | _diff |
-|--|-|--|--||
+| :-- | :-- | :-- | :-- | :-- |
 | 12345  | 20170512 | 12345  | 50     | null       |
 | 12345  | 20170512 | 12345  | 100    | 50         |
 | 23456  | 20170513 | 23456  | 120    | null       |

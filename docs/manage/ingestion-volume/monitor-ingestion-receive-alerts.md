@@ -6,7 +6,7 @@ description: Add scheduled searches that monitor ingestion and send alerts. The 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic provides ingest alerts that you can schedule to get timely information about ingestion usage or throttling. With the excepting of the [Throttling alert](monitor-ingestion-receive-alerts.md) described below these alerts apply to logs only, not metrics. 
+Sumo Logic provides ingest alerts that you can schedule to get timely information about ingestion usage or throttling. With the excepting of the [Throttling alert](#throttling-alert) described below these alerts apply to logs only, not metrics. 
 
 For metrics volume queries use the [Metrics Data Volume Index](data-volume-index/metrics-data-volume-index.md).
 
