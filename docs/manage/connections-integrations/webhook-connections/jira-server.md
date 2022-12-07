@@ -15,7 +15,7 @@ You can send JSON payloads from Sumo Logic alerts as an HTTP POST request to c
 
 ## Prerequisite
 
-To send webhook alerts to Jira Server you need to include a Basic Authentication Header with requests.
+To send webhook alerts to Jira Server, you need to include a Basic Authentication Header with requests.
 
 1. Get the username and password of a user that has permissions to create issues in your Jira Server.
 1. Using the username and password you can generate the Basic Authentication Header. In the following cURL command replace `<me@example.com>` with your username and `<password>` with your password and run it:

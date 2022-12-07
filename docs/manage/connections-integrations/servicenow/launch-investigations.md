@@ -14,13 +14,13 @@ After selecting the text you'd like to use to launch the ServiceNow investigatio
 1. Run a query from the **Search** page.
 1. In the results pane click **Messages**.
 1. Select the text in a message that you'd like to investigate in ServiceNow.
-1. When the Launch in Service Now menu appears, choose a Connection name. Then choose the type of event the text represents: Alert, Incident, or Change Request.
+1. When the **Launch in ServiceNow** menu appears, choose a Connection name. Then choose the type of event the text represents: Alert, Incident, or Change Request.
 
 When ServiceNow opens, you can begin your investigation.
 
 ## Start a Sumo Logic investigation from ServiceNow
 
-In ServiceNow you can click on a link to jump right to the search that triggered the Alert, Incident, or Change Request.
+In ServiceNow, you can click on a link to jump right to the search that triggered the Alert, Incident, or Change Request.
 
 To launch a Sumo Logic investigation from ServiceNow:
 
