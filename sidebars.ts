@@ -2211,9 +2211,9 @@ module.exports = {
       items: [
         'contributing/create-document',
         'contributing/style-guide',
-    //  'contributing/word-list',
         'contributing/code-of-conduct',
-    //  'contributing/glossary',
+        'contributing/glossary',
+        'contributing/word-list',
     //  'contributing/translations',
         {
           type: 'category',
