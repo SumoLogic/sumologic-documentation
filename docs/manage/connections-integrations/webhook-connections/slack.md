@@ -5,11 +5,15 @@ sidebar_label: Slack
 description: Webhook Connections allow you to send alerts as a post to a Slack channel.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Thumbnail icon" width="50"/>
+
 You can send an alert from Sumo Logic as an HTTP POST request to a Slack channel. Learn more about Slack requirements for Webhooks in their [API Help](https://api.slack.com/incoming-webhooks).
 
 [Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.
 
-Once you set up the webhook connection you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor](/docs/alerts/monitors).
+Once you set up the webhook connection, you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor](/docs/alerts/monitors).
 
 ## Configure a Webhook connection for Slack
 
@@ -115,4 +119,4 @@ Here is an example JSON payload using Slack's **attachments** parameter:
 
 ## Create an alert
 
-Once you set up the webhook connection you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor](/docs/alerts/monitors).
+Once you set up the webhook connection, you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor](/docs/alerts/monitors).

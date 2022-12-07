@@ -198,6 +198,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source',
@@ -514,9 +515,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/connections-integrations/webhook-connections/index'},
           items: [
-            'manage/connections-integrations/webhook-connections/schedule-searches-for-webhook-connections',
             'manage/connections-integrations/webhook-connections/set-up-webhook-connections',
-            'manage/connections-integrations/webhook-connections/audit-index',
             'manage/connections-integrations/webhook-connections/aws-lambda',
             'manage/connections-integrations/webhook-connections/cloud-soar',
             'manage/connections-integrations/webhook-connections/datadog',
@@ -531,6 +530,8 @@ module.exports = {
             'manage/connections-integrations/webhook-connections/opsgenie',
             'manage/connections-integrations/webhook-connections/pagerduty',
             'manage/connections-integrations/webhook-connections/slack',
+            'manage/connections-integrations/webhook-connections/schedule-searches-webhook-connections',
+            'manage/connections-integrations/webhook-connections/audit-index',
           ]
         },
         {
@@ -754,6 +755,7 @@ module.exports = {
             'alerts/monitors/alert-response',
             'alerts/monitors/alert-grouping',
             'alerts/monitors/alert-response-faq',
+            'manage/connections-integrations/webhook-connections/index',    
           ],
         },
         {
