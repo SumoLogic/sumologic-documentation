@@ -756,7 +756,7 @@ module.exports = {
             'alerts/monitors/alert-response',
             'alerts/monitors/alert-grouping',
             'alerts/monitors/alert-response-faq',
-            'manage/connections-integrations/webhook-connections/index',    
+            'manage/connections-integrations/webhook-connections/index',
           ],
         },
         {
@@ -1124,6 +1124,7 @@ module.exports = {
             'search/search-query-language/search-operators/substring',
             'search/search-query-language/search-operators/threatip',
             'search/search-query-language/search-operators/timeslice',
+            'search/search-query-language/search-operators/timeslice-join',
             'search/search-query-language/search-operators/tolowercase-touppercase',
             'search/search-query-language/search-operators/top',
             'search/search-query-language/search-operators/topk',
