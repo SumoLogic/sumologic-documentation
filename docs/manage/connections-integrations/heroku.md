@@ -5,6 +5,10 @@ sidebar_label: Heroku
 description: Sumo Logic provides an add-on for Heroku that fully integrates the power of Sumo Logic log analytics for Heroku users.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src='https://upload.wikimedia.org/wikipedia/commons/e/ec/Heroku_logo.svg' alt="Thumbnail icon" width="100"/>
+
 
 Heroku is a platform that allows developers to build applications in the cloud. Sumo Logic provides an [add-on for Heroku](https://elements.heroku.com/addons/sumologic) that fully integrates the power of Sumo Logic log analytics for Heroku users.
 

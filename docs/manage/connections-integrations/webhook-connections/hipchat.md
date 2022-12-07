@@ -5,6 +5,11 @@ sidebar_label: HipChat
 description: Send data from alerts to HipChat rooms.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src='https://upload.wikimedia.org/wikipedia/en/8/89/HipChat_Logo.svg' alt="icon" width="100"/>
+
+
 HipChat webhook connections allow you to send Sumo Logic alert results to HipChat rooms. For information on how to build your webhook payload refer to HipChat Webhooks in the [HipChat API documentation](https://developer.atlassian.com/server/hipchat/integrating-with-hipchat/).
 
 Once you set up the webhook connection, you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor](/docs/alerts/monitors).
@@ -13,7 +18,9 @@ Once you set up the webhook connection, you'll have the option to use it in a�
 [Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.
 :::
 
-You need the **Manage connections** [role capability](../../users-roles/roles/role-capabilities.md) to create webhook connections.
+:::note
+You'll need the **Manage connections** [role capability](../../users-roles/roles/role-capabilities.md) to create webhook connections.
+:::
 
 To set up a webhook connection for HipChat:
 

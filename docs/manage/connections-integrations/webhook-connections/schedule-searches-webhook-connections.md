@@ -5,7 +5,7 @@ sidebar_label: Sumo Scheduled Searches
 description: Create a Scheduled Search to send alerts to a third-party tool via Webhook Connections.
 ---
 
-Scheduled searches are saved searches that run automatically at specified intervals. When a scheduled search is configured to send an alert, it can be sent to another tool using a Webhook Connection.
+[Scheduled searches](/docs/alerts/scheduled-searches) are saved searches that run automatically at specified intervals. When a scheduled search is configured to send an alert, it can be sent to another tool using a Webhook Connection.
 
 You can create a brand new search, or you can base a search on an existing saved or scheduled search. If you'd like to use an existing search, you'll need to save the query as a new search to not override the search's current schedule.
 

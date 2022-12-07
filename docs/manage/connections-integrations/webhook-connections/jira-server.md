@@ -5,6 +5,10 @@ sidebar_label: Jira Server
 description: Create Jira issues in Jira Server from alerts.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="40"/>
+
 You can send JSON payloads from Sumo Logic alerts as an HTTP POST request to create Jira issues in Jira Server. Learn more about the Jira REST API in their [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/).
 
 [Webhook connections](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.

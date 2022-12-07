@@ -5,12 +5,16 @@ sidebar_label: Cloud SOAR
 description: Create incidents in Cloud SOAR from Monitor and Scheduled Search alerts.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="50"/>
+
 [Cloud SOAR](https://www.sumologic.com/solutions/cloud-soar/) can receive alerts from Sumo Logic Monitors and Scheduled Searches to create Incidents. First, you'll need to create a Cloud SOAR connection. Then you can use the connection as the Connection Type in a [Monitor](/docs/alerts/monitors) or the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md).
 
 You need to have [Cloud SOAR](https://www.sumologic.com/solutions/cloud-soar/) enabled on your account for this connection to be available.
 
 :::note
-You need the **Manage connections** [role capability](../../users-roles/roles/role-capabilities.md) to create webhook connections.
+You'll need the **Manage connections** [role capability](../../users-roles/roles/role-capabilities.md) to create webhook connections.
 :::
 
 This section demonstrates how to create a webhook connection from Sumo Logic to Cloud SOAR.

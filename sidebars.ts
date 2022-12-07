@@ -754,6 +754,7 @@ module.exports = {
             'alerts/monitors/alert-response',
             'alerts/monitors/alert-grouping',
             'alerts/monitors/alert-response-faq',
+            'manage/connections-integrations/webhook-connections/index',    
           ],
         },
         {

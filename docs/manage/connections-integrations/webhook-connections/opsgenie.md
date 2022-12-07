@@ -5,6 +5,11 @@ sidebar_label: Opsgenie
 description: Send alerts to Opsgenie from scheduled searches.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="Thumbnail icon" width="50"/>
+
+
 [Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
 
 ## Sumo Logic to Opsgenie Integration
