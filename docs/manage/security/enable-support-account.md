@@ -1,9 +1,8 @@
 ---
 id: enable-support-account
 title: Enable a Support Account
+description: Support accounts help you address support issues when they arise.
 ---
-
-#
 
 Administrators can decide to enable a Sumo Logic support account, which grants very select Sumo Logic support agents access to your organization's account, helping those agents to review and resolve complex issues. Admins can choose to keep the support account enabled full-time, or the account can be disabled when no issues are being investigated.
 

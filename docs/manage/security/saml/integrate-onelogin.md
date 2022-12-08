@@ -1,6 +1,7 @@
 ---
 id: integrate-onelogin
 title: Integrate Sumo Logic with OneLogin
+description: Learn how to configure OneLogin and Sumo Logic to allow Sumo Logic users to sign on to Sumo Logic using OneLogin SSO.
 ---
 
 ## Availability
