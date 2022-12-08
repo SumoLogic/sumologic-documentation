@@ -1,6 +1,7 @@
 ---
 id: aws-lambda
-title: AWS Lambda Security 🛡️
+title: AWS Lambda Security
+sidebar_label: AWS Lambda Security 🛡️
 ---
 
 <head>

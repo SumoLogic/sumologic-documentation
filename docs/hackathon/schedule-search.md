@@ -1,6 +1,7 @@
 ---
 id: schedule-search
-title: Scheduled Searches 🔎
+title: Scheduled Searches
+sidebar_label: Scheduled Searches 🔎
 ---
 
 <head>

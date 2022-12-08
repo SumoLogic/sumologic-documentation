@@ -1,6 +1,7 @@
 ---
 id: awso-drilldown
-title: AWS Observability Drilldown 🧐
+title: AWS Observability Drilldown
+sidebar_label: AWS Observability Drilldown 🧐
 ---
 
 <head>

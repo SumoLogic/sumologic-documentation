@@ -1,6 +1,7 @@
 ---
 id: cse
-title: CSE Cloud-Focused Demo ☁️
+title: CSE Cloud-Focused Demo
+sidebar_label: CSE Cloud-Focused Demo ☁️
 ---
 
 <head>

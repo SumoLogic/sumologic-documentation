@@ -1,6 +1,7 @@
 ---
 id: dashboards
-title: Dashboards 📈
+title: Dashboards
+sidebar_label: Dashboards 📈
 ---
 
 <head>
