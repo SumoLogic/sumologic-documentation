@@ -55,9 +55,7 @@ noun. Initial cap for “continuous” only applies when it starts a sentence.
 
 **Drill down**. Drill down, as in a menu, or other filtering feature is two words, not one.
 
-**Dropdown**. Use drop-down (Adjective). For e.g., Choose your favorite model from a drop-down menu.
- * Use dropdown (Noun). For e.g., Select a source category from the dropdown.
- * Do not use drop down (two-words).
+**Dropdown**. Use drop-down (Adjective). For e.g., Choose your favorite model from a drop-down menu. Use dropdown (Noun). For e.g., Select a source category from the dropdown. Do not use drop down (two-words).
 
 :::info
 If we are not clear on its usage, the term shouldn’t be used at all: Don't use 'drop-down'; use menu or list. We should keep our target audience in mind, i.e., developers or engineers. For e.g., Select a source from the list. Developers or Engineers already know they have to select the source from the dropdown only.
