@@ -127,19 +127,12 @@ To configure a Microsoft Exchange Trace Logs Source:
 
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-
 8. **Application (client) ID** Enter your client ID from your Azure Application. This should be a Globally Unique Identifier aka GUID.
-
 9. **Directory (tenant) ID** Enter your tenant ID from your Azure Application. This should be a Globally Unique Identifier aka GUID.
-
 10. **Secret** Enter your client secret generated within your Azure Application.
-
 11.  **Oauth 2.0 Authorization Code** Enter a valid authorization code. They expire within 1 hour of creation. The Microsoft Exchange Trace Logs Source will use this temporary code to automatically generate and rotate your API tokens for accessing the data.
-
 12. **Polling Interval Seconds** We recommend leaving this to its defaults. This value controls how often the Microsoft Exchange Trace Logs Source polls the the Microsoft APIs for new data.
-
 13. **Collection Time Offset** Use this value to offset the collection in the past by some amount of time. Microsoft claims data can be missing from the API within the last 24 hours. Set this to `86400` seconds aka 24 hours to help guarantee more complete results or reduce it if you are looking for more real time, but potentially incomplete data.
-
 14. When you are finished configuring the Source, click **Submit**.
 
 ## Error types
