@@ -3,6 +3,10 @@ id: schedule-search
 title: Scheduled Searches 🔎
 ---
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 import Iframe from 'react-iframe';
 
 <div>

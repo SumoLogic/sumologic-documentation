@@ -3,6 +3,10 @@ id: awso-drilldown
 title: AWS Observability Drilldown 🧐
 ---
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 import Iframe from 'react-iframe';
 
 <div>

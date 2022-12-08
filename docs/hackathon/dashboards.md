@@ -3,6 +3,10 @@ id: dashboards
 title: Dashboards 📈
 ---
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 import Iframe from 'react-iframe';
 
 <div>

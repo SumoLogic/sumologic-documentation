@@ -3,6 +3,10 @@ id: get-started
 title: Get Started with Sumo Logic 🚀
 ---
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 import Iframe from 'react-iframe';
 
 How about a "Get started with sumo overview" Storylane? Something like this:

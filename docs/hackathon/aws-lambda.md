@@ -3,6 +3,10 @@ id: aws-lambda
 title: AWS Lambda Security 🛡️
 ---
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 import Iframe from 'react-iframe';
 
 <div>
