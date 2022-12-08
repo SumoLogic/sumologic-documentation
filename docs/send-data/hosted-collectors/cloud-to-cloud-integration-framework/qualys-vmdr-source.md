@@ -4,6 +4,8 @@ title: Qualys VMDR
 sidebar_label: Qualys VMDR
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Qualys VMDR ingests vulnerability data from [Vulnerability API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf) and asset data from [Asset API](https://www.qualys.com/docs/qualys-global-ai-api-v2-user-guide.pdf).
 
 :::note
