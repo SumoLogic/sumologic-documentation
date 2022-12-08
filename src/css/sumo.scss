@@ -1592,14 +1592,14 @@ html[data-theme='dark'] .featureImage {
   padding-bottom: calc(49.38% + 27px);
   width: 100%;
   height: 100%;
-  transform: scale(1);
+//transform: scale(1);
 }
 
 .sl-demo {
   position: absolute;
   top: 0;
   left: 0;
-  width: 125%;
-  height: 125%;
+  width: 100%;
+  height: 100%;
   border: none;
 }

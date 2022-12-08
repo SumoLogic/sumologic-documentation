@@ -135,9 +135,9 @@ module.exports = {
       {
         id: 'community',
         path: 'community',
-        breadcrumbs: false,
-        routeBasePath: 'community',
+        routeBasePath: 'hackathon',
         sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        breadcrumbs: false,
         // ... other options
       },
     ],
