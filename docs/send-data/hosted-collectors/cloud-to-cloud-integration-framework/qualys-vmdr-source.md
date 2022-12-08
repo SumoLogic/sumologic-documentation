@@ -4,6 +4,8 @@ title: Qualys VMDR
 sidebar_label: Qualys VMDR
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Qualys VMDR ingests vulnerability data from [Vulnerability API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf) and asset data from [Asset API](https://www.qualys.com/docs/qualys-global-ai-api-v2-user-guide.pdf).
 
 :::note
@@ -41,15 +43,15 @@ To configure a Qualys VMDR Source:
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
-3. Select **Qualys VMDR**. <br/>   ![qualys vmdr icon.png](/img/send-data/qualys-icon.png)
-4. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/> ![qualys vmdr input window.png](/img/send-data/qualys-config-main.png)
+3. Select **Qualys VMDR**. <br/> <img src={useBaseUrl('img/send-data/qualys-icon.png')} alt="qualys-vmdr-icon.png" width="200" />
+4. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/> <img src={useBaseUrl('img/send-data/qualys-config-main.png')} alt="qualys-vmdr-input-window.png" width="500" />
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 6. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 7. **Qualys API Server URL** and **Qualys API Gateway URL**. Provide the Qualys API server URLs. Use the [Qualys Platform Identification](https://www.qualys.com/platform-identification) page and scroll down to **API URLs** to for a reference to your Qualys deployment location.
 8. **Username** and **Password**. Use your Qualys account username and password for API authentication.
-9. The next section covers the type of data to collect and how often. <br/> ![qualys vmdr input window.png](/img/send-data/qualys-config-collection-selection.png)
+9. The next section covers the type of data to collect and how often. <br/> <img src={useBaseUrl('img/send-data/qualys-config-collection-selection.png')} alt="qualys-config-collection-selection.png" width="400" />
 10. **Collect vulnerability data**. This option will fetch the list of hosts with the host's latest vulnerability data based on the host-based scan data available in the user’s account. We recommend leaving the polling interval at the default 1 hour.
 11. **Collect asset inventory**. This option consumes asset data from Qualys Global IT Asset Inventory API. The inventory data collected here will also be used in Cloud SIEM as inventory data. We recommend leaving the polling interval at the default 24 hours.
 12. When you are finished configuring the Source, click **Submit**.
