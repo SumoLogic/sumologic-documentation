@@ -1,6 +1,7 @@
 ---
 id: set-up-saml
 title: Set Up SAML for Single Sign-On
+description: Enable Single Sign-On (SSO) for user access to Sumo Logic.
 ---
 
 

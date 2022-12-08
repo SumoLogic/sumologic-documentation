@@ -5,8 +5,6 @@ hide_table_of_contents: true
 description: Use Installation Tokens to register Installed Collectors.
 ---
 
-# Installation Tokens
-
 Installation Tokens register [Installed Collectors](/docs/send-data/installed-collectors) to your Sumo Logic account. They are assigned to your account, do not expire, and can only be used to register Installed Collectors. You can deactivate, reactivate, or delete tokens at any time.
 
 Opposed to [Access Keys](access-keys.md), you can embed your Installation Tokens in installation scripts confident they can't be used to make [API](/docs/api) requests if compromised. You can also freely deactivate or delete [users](/docs/manage/users-roles/users) without worrying about updating Access Keys in installation scripts since Installation Tokens are associated with your account instead of users.
