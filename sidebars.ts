@@ -2289,4 +2289,21 @@ module.exports = {
       ],
     },
   ],
+  hackathon: [
+    {
+      type: 'category',
+      label: 'Hackathon 👩‍💻👨‍💻',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'hackathon/index'},
+      items: [
+        'hackathon/get-started',
+        'hackathon/dashboards',
+        'hackathon/cse',
+        'hackathon/awso-drilldown',
+        'hackathon/aws-lambda',
+        'hackathon/schedule-search',
+      ],
+    },
+  ],
 }
