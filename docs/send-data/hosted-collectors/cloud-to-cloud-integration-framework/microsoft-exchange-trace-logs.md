@@ -43,47 +43,47 @@ This source requires you to register an application within Azure Active Director
 An Azure application with specific permissions is required for Sumo Logic to access your Exchange Trace logs from Office 365. You need a subscription to Office 365 and a subscription to Azure that has been associated with your Office 365 subscription to set up this collection.
 
 1. Sign-in to your Azure Portal with your administrator account at https://portal.azure.com
-2. Use the left navigation pane (might be hidden under the menu icon) and select `Azure Active Directory`. <br/> ![image.png](/img/send-data/image.png)
-3. You will see a menu of options for your Azure Active Directory on the left. Click on the `App registrations` link. <br/> ![image.png](/img/send-data/image.png)
-4. Click on “New registration” <br/> ![image.png](/img/send-data/image.png)
-5. Provide the following configuration highlighted in the screenshot and click `Register`. <br/> ![image.png](/img/send-data/image.png)
-6. You are redirected to the overview page of your newly created application. Take note of the `Application (client) ID` and the `Directory (tenant) ID` as they will be required later. <br/> ![image.png](/img/send-data/image.png)
+2. Use the left navigation pane (might be hidden under the menu icon) and select `Azure Active Directory`. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-app-reg-step-2.png')} alt="ms-exchange-app-reg-step-2.png" width="450" />
+3. You will see a menu of options for your Azure Active Directory on the left. Click on the `App registrations` link. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-app-reg-step-3.png')} alt="ms-exchange-app-reg-step-3.png" width="450" />
+4. Click on “New registration” <br/> <img src={useBaseUrl('img/send-data/ms-exchange-app-reg-step-4.png')} alt="ms-exchange-app-reg-step-4.png" width="450" />
+5. Provide the following configuration highlighted in the screenshot and click `Register`. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-app-reg-step-5.png')} alt="ms-exchange-app-reg-step-5.png" width="450" />
+6. You are redirected to the overview page of your newly created application. Take note of the `Application (client) ID` and the `Directory (tenant) ID` as they will be required later. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-app-reg-step-6.png')} alt="ms-exchange-app-reg-step-6.png" width="450" />
 
 ### Create Client Secret
 
-1. Within your Azure application setup in the previous steps, click on `Certificates & secrets` from the left navigation pane and then click `New client secret`. <br/> ![image.png](/img/send-data/image.png)
-2. A right pane will slide out asking for a description and expiration for the secret. This secret is used by Sumo Logic to connect via OAuth 2.0 to establish continuous access to your Exchange Trace logs with an auto generated refresh token. <br/> ![image.png](/img/send-data/image.png)
-3. Take note of the secret value shown on this page. You will never be able to see this value from Azure after navigating away from this page. We recommend you keep it in a protected password management vault. <br/> ![image.png](/img/send-data/image.png)
+1. Within your Azure application setup in the previous steps, click on `Certificates & secrets` from the left navigation pane and then click `New client secret`. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-client-secret-step-1.png')} alt="ms-exchange-client-secret-step-1.png" width="450" />
+2. A right pane will slide out asking for a description and expiration for the secret. This secret is used by Sumo Logic to connect via OAuth 2.0 to establish continuous access to your Exchange Trace logs with an auto generated refresh token. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-client-secret-step-2.png')} alt="ms-exchange-client-secret-step-2.png" width="450" />
+3. Take note of the secret value shown on this page. You will never be able to see this value from Azure after navigating away from this page. We recommend you keep it in a protected password management vault. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-client-secret-step-3.png')} alt="ms-exchange-client-secret-step-3.png" width="450" />
 
 ### Assign Azure Roles to Your Application
 
 The Azure roles “Global Reader” and “Security Reader” are required for your Azure application to collect your Exchange trace logs. 
 
-1. Click back on the main left navigation using the menu in the upper left corner of the screen and go back to the `Azure Active Directory` page. <br/> ![image.png](/img/send-data/image.png)
-2. Click on the `Roles and Administrators` link in the left pane navigation of your Azure Active Directory page. <br/> ![image.png](/img/send-data/image.png)
-3. Search for the name `Global Reader` in the filter search bar and click on the `Global Reader` role text. Be sure to not click the checkbox next to `Global Reader` and instead click on the text name with the checkbox deselected. <br/> ![image.png](/img/send-data/image.png)
-4. Click “Add assignments” for the `Global Reader`.  <br/> ![image.png](/img/send-data/image.png)
-5. An `Add assignments` pane on the right allows you to search for your Azure application to assign the rights. Search for your application, select it and click `Add`. <br/> ![image.png](/img/send-data/image.png)
-6. You can verify the application has been assign the role and click on the `Roles and administrators | All roles` link at the top of the page to go back to a full list of roles. <br/> ![image.png](/img/send-data/image.png)
-7. Update your filter to `Security Reader` and click on the `Security Reader` text. Be sure to not click the checkbox next to `Security Reader` and instead click on the text name with the checkbox deselected. <br/> ![image.png](/img/send-data/image.png)
-8. Click on `Add assignments` for the `Security Reader`. <br/> ![image.png](/img/send-data/image.png)
-9. Like the previous step, search and add the Azure application the role. <br/> ![image.png](/img/send-data/image.png)
+1. Click back on the main left navigation using the menu in the upper left corner of the screen and go back to the `Azure Active Directory` page. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-azure-roles-step-1.png')} alt="ms-exchange-azure-roles-step-1.png" width="450" />
+2. Click on the `Roles and Administrators` link in the left pane navigation of your Azure Active Directory page. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-azure-roles-step-2.png')} alt="ms-exchange-azure-roles-step-2.png" width="450" />
+3. Search for the name `Global Reader` in the filter search bar and click on the `Global Reader` role text. Be sure to not click the checkbox next to `Global Reader` and instead click on the text name with the checkbox deselected. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-azure-roles-step-3.png')} alt="ms-exchange-azure-roles-step-3.png" width="450" />
+4. Click “Add assignments” for the `Global Reader`.  <br/> <img src={useBaseUrl('img/send-data/ms-exchange-azure-roles-step-4.png')} alt="ms-exchange-azure-roles-step-4.png" width="450" />
+5. An `Add assignments` pane on the right allows you to search for your Azure application to assign the rights. Search for your application, select it and click `Add`. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-azure-roles-step-5.png')} alt="ms-exchange-azure-roles-step-5.png" width="450" />
+6. You can verify the application has been assign the role and click on the `Roles and administrators | All roles` link at the top of the page to go back to a full list of roles. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-azure-roles-step-6.png')} alt="ms-exchange-azure-roles-step-6.png" width="450" />
+7. Update your filter to `Security Reader` and click on the `Security Reader` text. Be sure to not click the checkbox next to `Security Reader` and instead click on the text name with the checkbox deselected. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-azure-roles-step-7.png')} alt="ms-exchange-azure-roles-step-7.png" width="450" />
+8. Click on `Add assignments` for the `Security Reader`. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-azure-roles-step-8.png')} alt="ms-exchange-azure-roles-step-8.png" width="450" />
+9. Like the previous step, search and add the Azure application the role. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-azure-roles-step-9.png')} alt="ms-exchange-azure-roles-step-9.png" width="450" />
 
 ### Grant API Permissions
 
 We now need to grant specific API permissions to allow your Azure application access to the reports API.
 
-1. Click back on the main left navigation using the menu in the upper left corner of the screen and go back to the `Azure Active Directory` page. <br/> ![image.png](/img/send-data/image.png)
-2. You will see a menu of options for your Azure Active Directory on the left. Click on the `App registrations` link. <br/> ![image.png](/img/send-data/image.png)
-3. Click on your Azure Application. <br/> ![image.png](/img/send-data/image.png)
-4. Click on the `API permissions` link in the left pane of your Azure application and click `Add a permission`. <br/> ![image.png](/img/send-data/image.png)
-5. A right pane slides out. Click `APIs my organization uses`, search for the text `Office 365 Exchange Online` and click on the result. <br/> ![image.png](/img/send-data/image.png)
-6. On the next page, click `Delegated permissions`, search for the text `Reporting`, check the checkbox next to `ReportingWebService.Read` and click `Add permissions`. <br/> ![image.png](/img/send-data/image.png)
-7. Now we need to add a second permission. Click `Add a permission` again. <br/> ![image.png](/img/send-data/image.png)
-8. A right pane slides out. Click `APIs my organization uses`, search for the text `Office 365 Exchange Online` and click on the result.
-9. This time we are adding a similar permission as before. Click `Application permissions`, search for the text `Reporting`, check the checkbox next to `ReportingWebService.Read.All` and click `Add permissions`. <br/> ![image.png](/img/send-data/image.png)
-10. You should now see both permissions, but you will need to click `Grant admin consent` to finalize the API permissions and confirm it. <br/> ![image.png](/img/send-data/image.png)
-11. Verify your API permissions are correct and granted. <br/> ![image.png](/img/send-data/image.png)
+1. Click back on the main left navigation using the menu in the upper left corner of the screen and go back to the `Azure Active Directory` page. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-api-perm-step-1.png')} alt="ms-exchange-api-perm-step-1.png" width="450" />
+2. You will see a menu of options for your Azure Active Directory on the left. Click on the `App registrations` link. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-api-perm-step-2.png')} alt="ms-exchange-api-perm-step-2.png" width="450" />
+3. Click on your Azure Application. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-api-perm-step-3.png')} alt="ms-exchange-api-perm-step-3.png" width="450" />
+4. Click on the `API permissions` link in the left pane of your Azure application and click `Add a permission`. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-api-perm-step-4.png')} alt="ms-exchange-api-perm-step-4.png" width="450" />
+5. A right pane slides out. Click `APIs my organization uses`, search for the text `Office 365 Exchange Online` and click on the result. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-api-perm-step-5.png')} alt="ms-exchange-api-perm-step-5.png" width="450" />
+6. On the next page, click `Delegated permissions`, search for the text `Reporting`, check the checkbox next to `ReportingWebService.Read` and click `Add permissions`. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-api-perm-step-6.png')} alt="ms-exchange-api-perm-step-6.png" width="450" />
+7. Now we need to add a second permission. Click `Add a permission` again. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-api-perm-step-7.png')} alt="ms-exchange-api-perm-step-7.png" width="450" />
+8. A right pane slides out. Click `APIs my organization uses`, search for the text `Office 365 Exchange Online` and click on the result. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-api-perm-step-8.png')} alt="ms-exchange-api-perm-step-8.png" width="450" />
+9. This time we are adding a similar permission as before. Click `Application permissions`, search for the text `Reporting`, check the checkbox next to `ReportingWebService.Read.All` and click `Add permissions`. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-api-perm-step-9.png')} alt="ms-exchange-api-perm-step-9.png" width="450" />
+10. You should now see both permissions, but you will need to click `Grant admin consent` to finalize the API permissions and confirm it. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-api-perm-step-10-a.png')} alt="ms-exchange-api-perm-step-10-a.png" width="450" /> <br/> <img src={useBaseUrl('img/send-data/ms-exchange-api-perm-step-10-b.png')} alt="ms-exchange-api-perm-step-10-b.png" width="450" />
+11. Verify your API permissions are correct and granted. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-api-perm-step-11.png')} alt="ms-exchange-api-perm-step-11.png" width="450" />
 
 ### Oauth 2.0 Generate Authorization Code
 
@@ -115,11 +115,11 @@ To configure a Microsoft Exchange Trace Logs Source:
 
 3. Select **MS Exchange Trace Logs**.
 
-    ![image.png](/img/send-data/image.png)
+    <img src={useBaseUrl('img/send-data/ms-exchange-icon.png')} alt="ms-exchange-icon.png" width="450" />
 
 4. Enter a **Name** for the Source. The description is optional.
 
-    ![image.png](/img/send-data/image.png)
+    <img src={useBaseUrl('img/send-data/ms-exchange-schema-ui.png')} alt="ms-exchange-schema-ui.png" width="450" />
 
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 
