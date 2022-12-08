@@ -1,7 +1,7 @@
 ---
 id: log-search-audit-index
 title: Log Search Audit Index
-description: 
+description: The Search Audit Index is populated with log messages and the message contains search usage and activities for your account.
 ---
 
 The Search Audit Index is populated with log messages and the message contains search usage and activities for your account. You can query the search audit index just like any other message using the Sumo Logic search page.

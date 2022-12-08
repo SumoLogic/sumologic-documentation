@@ -1,7 +1,7 @@
 ---
 id: set-max-web-session-timeout
 title: Set a Maximum Web Session Timeout
-description:
+description: Learn how to set the maximum web session timeout that a Sumo Logic user can select on the Preference page.
 ---
 
 

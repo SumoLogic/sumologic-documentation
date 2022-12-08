@@ -1,7 +1,7 @@
 ---
 id: set-limit-user-concurrent-sessions
 title: Set a Limit for User Concurrent Sessions
-description:
+description: To prevent abandoned user sessions and increase account security by limiting the number of concurrent sessions each user can have open.
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 id: audit-event-index
 title: Audit Event Index
-description: 
+description: The Audit Event Index provides event logs in JSON on your account's activities allowing you to monitor and audit changes.
 ---
 
 ## Availability

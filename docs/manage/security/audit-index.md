@@ -1,7 +1,7 @@
 ---
 id: audit-index
 title: Audit Index
-description: 
+description: Provides information on the internal events that occur in Sumo Logic.
 ---
 
 ## Availability

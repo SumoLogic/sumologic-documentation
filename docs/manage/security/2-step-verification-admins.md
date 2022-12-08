@@ -1,7 +1,7 @@
 ---
 id: two-step-for-admins
 title: 2-Step Verification for Administrators
-description:
+description: Set up and manage 2-Step Verification across your organization.
 ---
 
 These sections describe how to administer 2-Step Verification across your organization. 

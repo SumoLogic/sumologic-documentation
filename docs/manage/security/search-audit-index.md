@@ -1,7 +1,7 @@
 ---
 id: search-audit-index
 title: Search Audit Index
-description: 
+description: Learn how to enable the Search Audit Index.
 ---
 
 ## Availability

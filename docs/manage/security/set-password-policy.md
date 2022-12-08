@@ -1,7 +1,7 @@
 ---
 id: set-password-policy
 title: Set the Password Policy
-description: 
+description: The Search Audit Index is populated with log messages and the message contains search usage and activities for your account.
 ---
 
 Account admins with the Manage Password Policy capability can set the account's password policy on the **Administration** \> **Security** \> **Password Policy**.
