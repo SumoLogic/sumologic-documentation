@@ -1,6 +1,7 @@
 ---
 slug: /manage/security/saml
 title: SAML
+description: Learn how to provision SAML for single sign-on (SSO) access to Sumo Logic.
 ---
 
 ## Availability

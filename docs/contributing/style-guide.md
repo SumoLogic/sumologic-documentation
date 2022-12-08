@@ -39,16 +39,13 @@ Helpful blogs on tech writing:
 
 The Sumo Logic Docs team will review submissions, provide suggested edits, add new content into the navigation, and answer any questions you have.
 
-<!--
+
 ### Templates
 
-To quickly create a new doc, use a template. You can copy and paste the file, add your content, and submit a PR. If you need formats for specific code, see the formats template.
+To create a new doc quickly, use a template. You can copy and paste the file, add your content, and submit a PR.
 
-(coming soon)
-* Doc topic - Use for any documentation page
-* APIs - Use for API and code
-* Format template
--->
+* [Doc topic (generic) template](docs/contributing/templates/template-doc.md)
+* [Partner app template](docs/contributing/templates/template-partner-app.md)
 
 ## Voice and Tone
 
@@ -56,11 +53,15 @@ To quickly create a new doc, use a template. You can copy and paste the file, ad
 * The reader should feel confident and informed. We should strive to engage our customers, and show them where to get additional assistance when needed.
 * Describe Sumo Logic in a professional and truthful manner. Avoid generic, unsubstantial adjectives like "very" or phrases like "we're the best". Instead, illustrate these points by letting our product speak for itself.
 * Avoid using a stiff, institutional voice. Instead, write with an instructive and conversational tone. For example, when linking to the support site, use terms like "Need help? Let us know" instead of "Please email our support personnel" to give our company a friendly face.
-* Use the [active voice](#active-voice) whenever possible. For example, use "Brutus stabbed Caesar," not "Caesar was stabbed by Brutus."
+* Use the [active voice](#active-voice) whenever possible. For example, use "Sumo Logic ingests multiple streams of data", not "Multiple streams of data are ingested by Sumo Logic".
 * Instructional content and blog posts should be written at approximately the 8th-grade reading level, particularly in introductory sections, for readability and SEO. You can test your content [here](http://www.writingtester.com/tester/grade_level.php).
 * When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you are recommended to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Please use a different email or contact Sumo Logic for assistance."
 * We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orange juice", not "I had [eggs, toast and orange juice](https://www.verbicidemagazine.com/wp-content/uploads/2012/01/why-i-still-use-the-oxford-comma.jpg)".
 * We have a sense of humor! Conveying that we do serious work, but we don't take ourselves too seriously, makes Sumo Logic feel likable.
+
+:::tip
+See also: [Sumo Logic UX Style Guide](/files/UX-Sumo-Style.pdf).
+:::
 
 ## Structuring Content
 
@@ -222,6 +223,12 @@ Use hashtags `#` to indicate the heading level and group content. Always start w
 Headings must be used in correct order. The subsection of an H2 header would be H3 - you wouldn't jump to an H4 or H5. Skipping over a header level affects search and SEO structures to search crawlers like Google. Malformed structures can reduce search and SEO for the page. Docusaurus carefully formats generated pages to ensure strong SEO.
 :::
 
+## Capitalization
+
+* Title case (initial cap) all doc titles.
+   * Example: `Global Intelligence for Apache Tomcat App`
+* Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case.
+   * Example: `Throughput signals and contributing factors`
 
 ## Punctuation
 
@@ -232,9 +239,7 @@ Punctuation is placed outside of quotation marks, British English style. For eve
 * Use _italics_ for:
   * Defining a term the first time. For example, when defining a collector the first time, you would italicize once with the definition.
   * Providing content to enter into a field.
-
 * Use **bold** for UI elements you interact with, such as a button or tab.
-
 * Never underline text
 
 <Tabs
@@ -473,7 +478,7 @@ For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/d
 
 
 
-## Notes (Admonitions)
+## Admonitions
 
 We refer to callout elements like Tip, Note, Warning, and Caution as admonitions.
 
@@ -1092,7 +1097,6 @@ To add release notes without images:
 
 1. In the Blog folder, create a new markdown file with the following name format: `YYYY-MM-DD-product.md`.
 1. Add the following frontmatter:
-
     ```markdown
     ---
     title: Product or Feature Name
@@ -1108,7 +1112,6 @@ To add release notes without images:
         image_url: /img/release-notes/rss-orange.png
     ---
     ```
-
     * `title`: Name of the release notes including Product or Feature
     * `tags`: Add a comma-separated list of existing tags, including:
     * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
@@ -1124,7 +1127,6 @@ To add release notes with images:
 
 1. In the Blog folder, create a new folder with the following name format: `YYYY-MM-DD-product`.
 1. In the new folder, create a markdown file named `index.md`. Add your release notes with frontmatter:
-
     ```markdown
     ---
     title: Product or Feature Name
@@ -1132,7 +1134,6 @@ To add release notes with images:
     hide_table_of_contents: true
     ---
     ```
-
     * `title`: Name of the release notes including Product or Feature
     * `tags`: Add a comma-separated list of existing tags, including:
     * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.

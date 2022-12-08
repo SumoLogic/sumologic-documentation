@@ -1,6 +1,7 @@
 ---
 id: view-saml-debug-information
 title: View SAML Debug Information
+description: Learn how to use Debug Mode to troubleshoot SAML issues.
 ---
 
 

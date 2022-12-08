@@ -77,5 +77,5 @@ Here is how the JSON fields map to the input form.
 1. **Delegated User Email.** Enter the admin email address for the domain.
 1. **Client Email.** Enter the value of the `client_email` key from the [Service account JSON](#service-account-json) above.
 1. **Private Key.** Enter the value of the `private-key` key from the [Service account JSON](#service-account-json) above.
-1. **Token URL.** Enter the value of the `auth_provider_x509_cert_url` key from the [Service account JSON](#service-account-json) above.
+1. **Token URL.** Enter the value of the `token_uri` key from the [Service account JSON](#service-account-json) above.
 1. **Exclude Alert Types.** (Optional)
