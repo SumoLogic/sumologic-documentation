@@ -1,6 +1,7 @@
 ---
 slug: /hackathon
 title: Welcome to the Hackathon
+
 ---
 
 <head>

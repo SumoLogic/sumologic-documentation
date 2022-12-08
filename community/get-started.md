@@ -2,6 +2,7 @@
 id: get-started
 title: Get Started with Sumo Logic
 sidebar_label: Get Started with Sumo Logic 🚀
+
 ---
 
 <head>

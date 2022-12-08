@@ -131,6 +131,16 @@ module.exports = {
     'docusaurus-plugin-sass',
     'plugin-image-zoom',
     'react-iframe',
+    ['@docusaurus/plugin-content-docs',
+      {
+        id: 'community',
+        path: 'community',
+        breadcrumbs: false,
+        routeBasePath: 'community',
+        sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        // ... other options
+      },
+    ],
     ['@docusaurus/plugin-content-blog',
       {
          id: 'blog-cse',
