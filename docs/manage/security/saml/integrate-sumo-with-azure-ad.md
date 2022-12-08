@@ -1,6 +1,7 @@
 ---
 id: integrate-sumo-with-azure-ad
 title: Integrate Sumo with Azure AD
+description: Enable Single Sign-On (SSO) to Sumo Logic with Azure Active Directory (AD).
 ---
 
 ## Availability

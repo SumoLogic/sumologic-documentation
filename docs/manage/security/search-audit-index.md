@@ -1,6 +1,7 @@
 ---
 id: search-audit-index
 title: Search Audit Index
+description: Learn how to enable the Search Audit Index.
 ---
 
 ## Availability
@@ -23,7 +24,7 @@ To enable the Search Audit Index:
 1. Go to the **Administration** \> **Security** \> **Policies** page.
 1. Under **Sumo Logic Auditing**, select the second **Enable** option.
 
-    ![Search-Audit-Index_Enabled.png](/img/security/Search_Audit_Index_Enabled.png) 
+    ![Search-Audit-Index_Enabled.png](/img/security/Search_Audit_Index_Enabled.png)
 
 :::note
 * Users with a role that grants the Manage audit data feed capability are allowed to enable the Search Audit Index.

@@ -1,9 +1,8 @@
 ---
 id: manage-permissions-with-adfs
 title: Manage Permissions with ADFS
+description: You can manage Sumo Logic user permissions using ADFS and SAML.
 ---
-
-#
 
 :::important
 Sumo Logic provides this information about configuring ADFS as a courtesy to customers. These instructions apply to ADFS, which is a Microsoft product, and is NOT supported by Sumo Logic. If you have any issues regarding these instructions, refer to the Microsoft ADFS documentation or Microsoft support services [https://msdn.microsoft.com/en-us/lib.../bb897402.aspx](https://msdn.microsoft.com/en-us/library/bb897402.aspx).
