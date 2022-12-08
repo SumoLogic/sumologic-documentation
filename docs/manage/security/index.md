@@ -1,6 +1,7 @@
 ---
 slug: /manage/security
 title: Sumo Logic Security
+description: 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -2,6 +2,7 @@
 id: audit-index-access
 title: Grant Access to Data in Audit Indexes
 sidebar_label: Audit Index Data Permissions (Beta)
+description: 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

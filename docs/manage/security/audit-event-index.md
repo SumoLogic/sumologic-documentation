@@ -1,6 +1,7 @@
 ---
 id: audit-event-index
 title: Audit Event Index
+description: 
 ---
 
 ## Availability

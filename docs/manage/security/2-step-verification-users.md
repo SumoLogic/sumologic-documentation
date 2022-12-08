@@ -1,9 +1,9 @@
 ---
 id: two-step-for-users
 title: 2-Step Verification for Users
+description:
 ---
 
-#
 
 These sections describe how to set up and use 2-Step Verification for your Sumo Logic account:
 
