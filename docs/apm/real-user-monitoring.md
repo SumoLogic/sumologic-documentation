@@ -356,7 +356,7 @@ Action names can contain asterisks (`*`) to replace automatically-detected dynam
 
 For example, `http://www.site.com/path/page.htm` does not contain actions from `http://www.site.com/path/*`.
 
-There are three dashboard types on the **Application** and **Service** level and a single one on the **Action type** and **Action** level. You can select the appropriate dashboard from drop-down menu in the header:<br/>![explore rum with red box.png](/img/rum/explore-rum-with-red-box.png)
+There are three dashboard types on the **Application** and **Service** level and a single one on the **Action type** and **Action** level. You can select the appropriate dashboard from dropdown menu in the header:<br/>![explore rum with red box.png](/img/rum/explore-rum-with-red-box.png)
 
 
 ## Viewing RUM Dashboards
@@ -399,7 +399,7 @@ The **RUM Performance Analytics Application** and **Service** dashboards show t
 Use this dashboard to:
 * Filter data for specific combinations of application, browser, operating system, and/or geolocation.
 * Understand XHR, load, timing metrics for the selected user cohort.
-* Compare your selected timings against data for a different time period by selecting the appropriate option in the compare_with drop-down.
+* Compare your selected timings against data for a different time period by selecting the appropriate option in the compare_with dropdown.
 
 You can click on any data point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point. For cross-dimensional metrics, only the average statistic type is available.
 

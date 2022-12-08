@@ -84,7 +84,7 @@ On the right side of the Rules Editor, in the **Then Create a Signal** section, 
 
 ![then-create-a-signal.png](/img/cse/then-create-a-signal.png)
 
-1. **On Entity**. Use the pull-down list to select one or more Entity fields. (Entity fields are fields that contain an IP address, hostname, or username. When the rule is triggered it will fire a Signal on each of the entity fields you select.  
+1. **On Entity**. Use the pull-down list to select one or more Entity fields, for example an IP address, MAC address, hostname, and so on. When the rule is triggered, it will fire a Signal on each of the Entity fields you select.  
 1. **with the summary**. 
 1. **with the description**. Enter a description for the Signal. The Signal description should be a good indication of what the rule looks for.
 1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). There are two ways to specify Severity.

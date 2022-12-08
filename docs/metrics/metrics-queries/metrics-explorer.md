@@ -59,7 +59,7 @@ The key components of the UI are:
 | Element | Description |
 |--|--|
 | A | In the **Metric** area, you select the metric you want to return. When you click in this area, you’re presented with a list of metrics. In our example query, we selected the `CPU_LoadAvg_15min` metric. As you enter changes to your query, a message displays indicating if you need to execute the query to see updated results. |
-| B | In the **Filters** area, you can narrow down the scope of your query, using metadata and metric dimensions. When you click in this area, you’re presented with a drop down list of the metadata fields and dimensions associated with the metric you selected. When you select a metadata field or dimension, you’re presented with a list of values for the selected field or dimension. In our example query, we selected one metadata field, `_sourceCategory=bloomfilter`. The more metadata fields and dimensions you select, the narrower your query will be. After you've selected a filter and filter value, you can click the chip for the filter setting to edit it. |
+| B | In the **Filters** area, you can narrow down the scope of your query, using metadata and metric dimensions. When you click in this area, you’re presented with a dropdown list of the metadata fields and dimensions associated with the metric you selected. When you select a metadata field or dimension, you’re presented with a list of values for the selected field or dimension. In our example query, we selected one metadata field, `_sourceCategory=bloomfilter`. The more metadata fields and dimensions you select, the narrower your query will be. After you've selected a filter and filter value, you can click the chip for the filter setting to edit it. |
 | C | In this area, you can apply one or more metric operators to metric query results. When you click **Add Operator**, you’re presented with a list of metric operators. In our example query, we selected the `topk` operator.     |
 | D | By default, the left pane below the query builder section presents Time Series Table of the time series returned by your query. You can click **Chart** to view a visualization instead. When you switch to the chart view, by default, a time series plot is presented. You can select a different visualization method, although not all visualizations make sense for every query.  |
 | E | In the **Panel Type** area, you can select a different chart type: Categorical, Single Value, Map, and Honeycomb. The **Visual Settings** options allow you to customize your chart.  |
@@ -132,12 +132,12 @@ You’ll be prompted with the options to:
 
 ## Create a metric query
 
-1. In the Sumo Logic UI, click **+ New** and choose **Metrics** from the drop-down list.
+1. In the Sumo Logic UI, click **+ New** and choose **Metrics** from the dropdown list.
 1. The Metrics Explorer opens. Click the **Metric** field. A list of metrics appears. You can scroll through the list, or begin typing to dynamically narrow the list. Click the desired metric.
 
     ![click-in-metric-area.png](/img/metrics/click-in-metrici-area.png)
 
-1. Click the **Filters** field. A list of metadata fields and metric dimensions appears. Scroll through the list, or begin typing to dynamically narrow the list. Click a field or dimension. In the screenshot below, we clicked the `_sourcecategory` metadata field. A drop down list of values for the selected item appears.
+1. Click the **Filters** field. A list of metadata fields and metric dimensions appears. Scroll through the list, or begin typing to dynamically narrow the list. Click a field or dimension. In the screenshot below, we clicked the `_sourcecategory` metadata field. A dropdown list of values for the selected item appears.
 
     ![filter-values.png](/img/metrics/filter-values.png)
 

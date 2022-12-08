@@ -269,7 +269,7 @@ module.exports = {
                 activeBaseRegex: '^/docs/integrations/.*',
               },
               {
-                label: 'Manage Account',
+                label: 'Manage Sumo',
                 to: '/docs/manage',
                 activeBaseRegex: '^/docs/manage/.*',
               },

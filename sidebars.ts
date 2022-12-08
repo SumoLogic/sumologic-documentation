@@ -198,6 +198,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source',
@@ -400,6 +401,7 @@ module.exports = {
                 'send-data/collection/processing-rules/create-processing-rule',
                 'send-data/collection/processing-rules/data-forwarding-rules',
                 'send-data/collection/processing-rules/hash-rules',
+                'send-data/collection/processing-rules/mask-rules',
                 'send-data/collection/processing-rules/include-and-exclude-rules',
                 'send-data/collection/processing-rules/metrics-include-and-exclude-rules',
               ]
@@ -514,9 +516,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/connections-integrations/webhook-connections/index'},
           items: [
-            'manage/connections-integrations/webhook-connections/schedule-searches-for-webhook-connections',
             'manage/connections-integrations/webhook-connections/set-up-webhook-connections',
-            'manage/connections-integrations/webhook-connections/audit-index',
             'manage/connections-integrations/webhook-connections/aws-lambda',
             'manage/connections-integrations/webhook-connections/cloud-soar',
             'manage/connections-integrations/webhook-connections/datadog',
@@ -531,6 +531,8 @@ module.exports = {
             'manage/connections-integrations/webhook-connections/opsgenie',
             'manage/connections-integrations/webhook-connections/pagerduty',
             'manage/connections-integrations/webhook-connections/slack',
+            'manage/connections-integrations/webhook-connections/schedule-searches-webhook-connections',
+            'manage/connections-integrations/webhook-connections/audit-index',
           ]
         },
         {
@@ -754,6 +756,7 @@ module.exports = {
             'alerts/monitors/alert-response',
             'alerts/monitors/alert-grouping',
             'alerts/monitors/alert-response-faq',
+            'manage/connections-integrations/webhook-connections/index',
           ],
         },
         {
@@ -1121,6 +1124,7 @@ module.exports = {
             'search/search-query-language/search-operators/substring',
             'search/search-query-language/search-operators/threatip',
             'search/search-query-language/search-operators/timeslice',
+            'search/search-query-language/search-operators/timeslice-join',
             'search/search-query-language/search-operators/tolowercase-touppercase',
             'search/search-query-language/search-operators/top',
             'search/search-query-language/search-operators/topk',
@@ -2207,9 +2211,9 @@ module.exports = {
       items: [
         'contributing/create-document',
         'contributing/style-guide',
-    //  'contributing/word-list',
         'contributing/code-of-conduct',
-    //  'contributing/glossary',
+        'contributing/glossary',
+        'contributing/word-list',
     //  'contributing/translations',
         {
           type: 'category',
@@ -2282,6 +2286,23 @@ module.exports = {
         'manage/partitions-data-tiers/infrequent-tier-search',
         'manage/security/audit-index-access',
         'api/beta',
+      ],
+    },
+  ],
+  hackathon: [
+    {
+      type: 'category',
+      label: 'Hackathon 👩‍💻👨‍💻',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'hackathon/index'},
+      items: [
+        'hackathon/get-started',
+        'hackathon/dashboards',
+        'hackathon/cse',
+        'hackathon/awso-drilldown',
+        'hackathon/aws-lambda',
+        'hackathon/schedule-search',
       ],
     },
   ],

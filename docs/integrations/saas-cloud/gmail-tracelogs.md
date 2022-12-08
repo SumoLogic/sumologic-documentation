@@ -7,6 +7,8 @@ description: The Sumo Logic App for Gmail TraceLogs monitors spam, malware threa
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/saas-cloud/gmail-icon.png')} alt="Thumbnail icon" width="100"/>
+
 Gmail TraceLogs is a new Sumo Logic app based on the Gmail BigQuery Cloud-to-Cloud source, which is a managed analytics data warehouse that provides scalable Gmail reports of your organization.
 
 The Sumo Logic App for Gmail TraceLogs helps monitor spam messages, malware, dropped messages and rejected messages. It allows you to view messages with objectionable content, messages detected by your **Security Sandbox**, and messages flagged by the Walled Garden Rule.

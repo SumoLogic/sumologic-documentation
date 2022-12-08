@@ -67,7 +67,7 @@ You will need at least one CloudWatch Log Group to assign to your Lambda functio
 
 1. Go to the **Triggers** tab of your Lambda function.
 1. Select **Add Trigger.**
-1. In the **Add Trigger **prompt, click the box as instructed and select **CloudWatch Logs **from the drop-down menu.
+1. In the **Add Trigger **prompt, click the box as instructed and select **CloudWatch Logs **from the dropdown menu.
 1. Select a** **CloudWatch Log Group to add to your function. You need at least one CloudWatch Log Group to see this option. For details on creating a log group, see [create a CloudWatch Log Group](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Create-Log-Group.html).
 1. Add a **Filter Name** to your trigger.
 1. (Optional) you can add a **Filter Pattern** to your trigger. For information about AWS filter patterns, see [Filter and Pattern Syntax](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html) in AWS documentation 

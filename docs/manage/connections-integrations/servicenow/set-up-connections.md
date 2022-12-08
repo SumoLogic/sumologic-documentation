@@ -2,14 +2,14 @@
 id: set-up-connections
 title: Set Up ServiceNow Connections
 sidebar_label: Set Up Connections
-description: Set up connections for ServiceNow integration. 
+description: Set up connections for ServiceNow integration.
 ---
 
 
 :::note
 There are two ServiceNow connections available in Sumo Logic.
 
-* [ServiceNow](#set-up-a-servicenow-connection) can create **Events** or ****ITSM **Incidents**.
+* [ServiceNow](#set-up-a-servicenow-connection) can create **Events** or **ITSM Incidents**.
 * [ServiceNow (Legacy)](#set-up-a-servicenow-legacy-connection) is the older connection and only creates **Events** in ServiceNow.
 
 If you are interested in creating **Security Incidents**, see [Set Up a ServiceNow Security Incident Webhook Connection](set-up-security-incident-webhook.md).
@@ -29,42 +29,33 @@ To configure a Webhook connection, you must have a [Sumo Logic role](../../users
 
 To set up a ServiceNow Webhook connection:
 
-1. Go to **Manage Data** \> **Monitoring** \> **Connections**.
+1. Go to **Manage Data** > **Monitoring** > **Connections**.
 1. On the **Connections** page click **Add**.
-1. For **Connection Type**, select **ServiceNow**.
-
-    ![serviceNow icon.png](/img/connection-and-integration/serviceNow-icon.png)
-
+1. For **Connection Type**, select **ServiceNow**.<br/>![serviceNow icon.png](/img/connection-and-integration/serviceNow-icon.png)
 1. In the **Create Connection** dialog, enter the **Name** of the connection.
 1. (Optional) Enter a **Description** for the connection.
 1. For **URL**, enter one of the following based on whether you want to create **Events** or **Incidents**: 
-
-   * To create ServiceNow ITSM **Incidents** enter the **URL** for the ServiceNow Incident endpoint. 
-
-        ```
-        https://<your-instance>.service-now.com/api/now/table/incident
-        ```
-
+   * To create ServiceNow ITSM **Incidents**, enter the **URL** for the ServiceNow Incident endpoint. 
+    ```
+    https://<your-instance>.service-now.com/api/now/table/incident
+    ```
    * To create **Events**, copy your organization's ServiceNow URL, which can be found at the top of any ServiceNow web page, then paste it in the URL text box. After pasting the URL, type **/api/now/table/em_event** to enable data to be uploaded from Sumo Logic to ServiceNow.
-
-        ```
-        https://<your-instance>.service-now.com/api/now/table/em_event
-        ```
-
+    ```
+    https://<your-instance>.service-now.com/api/now/table/em_event
+    ```
     :::note
     Only HTTPS (port 443) and HTTP (port 80) URLs are supported.
     :::
-
 1. **Authentication** can be done with a **Username and Password** or an **Authorization Header**.
-
    * Use the **Username** and **Password** used to log in to **ServiceNow**.
    * See how to set an [Authorization Header](../webhook-connections/set-up-webhook-connections.md).
-
 1. Set the **Type** to **Events** or **Incidents** based on what you want to create. This needs to align with the **URL** you provided.
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
-1. For **Payload**, enter a JSON object that defines the structure of what you want sent to ServiceNow. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](../webhook-connections/set-up-webhook-connections.md). 
-1. Click ****Save****.
-1. After configuring the connection, continue with [Testing the connection](set-up-connections.md), then [create a scheduled search](../webhook-connections/schedule-searches-webhook-connections.md) to send alerts to this connection.
+1. For **Payload**, enter a JSON object that defines the structure of what you want to send to ServiceNow. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](../webhook-connections/set-up-webhook-connections.md). 
+1. Click **Save**.
+1. To send alerts to this connection, follow these steps:
+   1. [Testing the connection](set-up-connections.md).
+   1. [Create a scheduled search](../webhook-connections/schedule-searches-webhook-connections.md).
 
 ## Test the connection
 
@@ -91,11 +82,8 @@ The first step for integrating ServiceNow with Sumo Logic is to configure one 
 
 1. In Sumo Logic, go to **Manage Data \> Monitoring \> Connections**.
 1. On the Connections page, click **Add**.
-1. For **Connection Type**, select **ServiceNow (Legacy)**.
-
-    ![serviceNow legacy icon.png](/img/connection-and-integration/serviceNow-legacy-icon.png)
-
-1. In the Create Connection dialog box enter the **Name** of the connection.
+1. For **Connection Type**, select **ServiceNow (Legacy)**.<br/>  ![serviceNow legacy icon.png](/img/connection-and-integration/serviceNow-legacy-icon.png)
+1. In the Create Connection dialog box, enter the **Name** of the connection.
 1. **Optional:** Enter a **Description** for the connection.
 1. Enter the **Username** and **Password** used to log in to **ServiceNow**.
 1. For **URL**, copy your organization's ServiceNow URL, which can be found at the top of any ServiceNow web page, then paste it in the URL text box. After pasting the URL, type **/api/now/table/em_event** to enable data to be uploaded from Sumo Logic to ServiceNow.

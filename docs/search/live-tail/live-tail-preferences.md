@@ -10,7 +10,7 @@ Live Tail preferences allow you to change the appearance of line spacing, size o
 
 **To change Live Tail Preferences:**
 
-1. Select the Live Tail **details** icon (on the far right) and choose **Preferences** from the drop-down list.  
+1. Select the Live Tail **details** icon (on the far right) and choose **Preferences** from the dropdown list.  
 
     ![LiveTail_Details_Preferences.png](/img/search/livetail/live-tail-preferences/LiveTail_Details_Preferences.png)
 

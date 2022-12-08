@@ -5,21 +5,19 @@ sidebar_label: JFrog Artifactory
 description: The JFrog Artifactory Sumo Logic integration provides the ability to access preconfigured Sumo Logic Dashboards directly from Artifactory that will allow you to analyze data from your Artifactory logs.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/app-development/jfrog-Artifactory.png')} alt="Thumbnail icon" width="100"/>
+
+JFrog Artifactory is a universal Artifact Repository Manager that integrates with CI/CD and DevOps tools to provide artifact tracking. The JFrog Artifactory Sumo Logic integration offers the ability to access reconfigured Sumo Logic Dashboards directly from Artifactory Online that will allow you to analyze data from your Artifactory logs.
+
 :::important
 If you do not currently have a Sumo Logic account, the JFrog Artifactory Sumo Logic integration is the most convenient way to start using Sumo Logic directly from Artifactory. You can also choose to use an existing Sumo Logic account to integrate with Artifactory Online.
 :::
 
-JFrog Artifactory is a universal Artifact Repository Manager that integrates with CI/CD and DevOps tools to provide artifact tracking. The JFrog Artifactory Sumo Logic integration offers the ability to access reconfigured Sumo Logic Dashboards directly from Artifactory Online that will allow you to analyze data from your Artifactory logs.
+**If you do not have an existing Sumo Logic Account**, enable the JFrog Artifactory Sumo Logic integration directly from Artifactory. When you enable the integration, a Sumo Logic Connector and Source get automatically configured, and the Sumo Logic App for Artifactory gets installed automatically. The JFrog Artifactory Sumo Logic integration provides a new Sumo Logic Free account with a daily data volume limit of 500MB per day, with 30 users and 14 days of data retention.
 
-**If you do not have an existing Sumo Logic Account:**
-
-Enable the JFrog Artifactory Sumo Logic integration directly from Artifactory. When you enable the integration, a Sumo Logic Connector and Source get automatically configured, and the Sumo Logic App for Artifactory gets installed automatically.
-
-The JFrog Artifactory Sumo Logic integration provides a new Sumo Logic Free account with a daily data volume limit of 500MB per day, with 30 users and 14 days of data retention.
-
-**If you have an existing Sumo Logic account:**
-
-You can configure Artifactory Online to send data (described below) to an existing Sumo Logic [HTTP Logs and Metrics](/docs/send-data/hosted-collectors/http-source/logs-metrics) source.
+**If you have an existing Sumo Logic account**, you can configure Artifactory Online to send data (described below) to an existing Sumo Logic [HTTP Logs and Metrics](/docs/send-data/hosted-collectors/http-source/logs-metrics) source.
 
 ## Artifactory logs
 
@@ -28,7 +26,7 @@ The integration collects data from the following Artifactory logs:
 * **artifactory.log.** The main Artifactory log file that contains data on Artifactory server activity.
 * **access.log.** The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. For each event, the originating IP address gets recorded.
 * **request.log.** Generic HTTP traffic information similar to the Apache HTTPd request log.
-* **traffic.\*.log.** A log containing information about site traffic and file sizes.
+* **traffic.*.log.** A log containing information about site traffic and file sizes.
 
 For more details about Artifactory logs, refer to [JFrog's Artifactory Log Files](https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files).
 

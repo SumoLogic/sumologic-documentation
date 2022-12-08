@@ -56,7 +56,7 @@ When you update the product variables for a monthly plan (without changing to an
 2. Click **Upgrade**. The page refreshes to display the **Customize Plan** step.
     ![current-levels.png](/img/subscriptions/current-levels.png)
 4. Choose **Subscription Type**. Click a radio button to change your subscription type from monthly to annual, or from annual to monthly, as desired.
-5. **Calculate Sumo Credits to Purchase**. Use the drop-down lists to select new values for the each product variable you want to change. As you make your changes, the plan cost and credits values are updated
+5. **Calculate Sumo Credits to Purchase**. Use the dropdown lists to select new values for the each product variable you want to change. As you make your changes, the plan cost and credits values are updated
     * **Continuous Log Ingest**. Select an estimate of your daily ingestion to the Continuous tier, in GB.
     * **Continuous Log Storage**. Select the number of days you want to retain the data ingested to the Continuous tier.
     * **Metrics**. Enter an estimate of the [metrics](/docs/metrics) to be ingested daily, in data points per minute (DPM.)
