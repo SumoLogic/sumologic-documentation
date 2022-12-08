@@ -755,7 +755,7 @@ module.exports = {
             'alerts/monitors/alert-response',
             'alerts/monitors/alert-grouping',
             'alerts/monitors/alert-response-faq',
-            'manage/connections-integrations/webhook-connections/index',    
+            'manage/connections-integrations/webhook-connections/index',
           ],
         },
         {
@@ -2284,6 +2284,23 @@ module.exports = {
         'manage/partitions-data-tiers/infrequent-tier-search',
         'manage/security/audit-index-access',
         'api/beta',
+      ],
+    },
+  ],
+  hackathon: [
+    {
+      type: 'category',
+      label: 'Hackathon 👩‍💻👨‍💻',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'hackathon/index'},
+      items: [
+        'hackathon/get-started',
+        'hackathon/dashboards',
+        'hackathon/cse',
+        'hackathon/awso-drilldown',
+        'hackathon/aws-lambda',
+        'hackathon/schedule-search',
       ],
     },
   ],
