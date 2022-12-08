@@ -16,7 +16,7 @@ RUM provides you visibility into end-to-end individual user transactions to quic
 :::sumo Micro Lesson
 See Real User Monitoring in action.
 
-<Iframe url="https://www.youtube.com/watch?v=3EMl3jyoZjA?rel=0"
+<Iframe url="https://www.youtube.com/embed/3EMl3jyoZjA?rel=0"
         width="854px"
         height="480px"
         id="myId"
