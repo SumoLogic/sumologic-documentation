@@ -115,7 +115,7 @@ To configure a Microsoft Exchange Trace Logs Source:
 
 3. Select **MS Exchange Trace Logs**.
 
-    <img src={useBaseUrl('img/send-data/ms-exchange-icon.png')} alt="ms-exchange-icon.png" width="450" />
+    <img src={useBaseUrl('img/send-data/ms-exchange-icon.png')} alt="ms-exchange-icon.png" width="200" />
 
 4. Enter a **Name** for the Source. The description is optional.
 
