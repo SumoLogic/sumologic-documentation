@@ -31,6 +31,10 @@ module.exports = {
       src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
       async: true,
     },
+    {
+      src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+      async: true,
+    }
   ],
   staticDirectories: ['static'],
   webpack: {
