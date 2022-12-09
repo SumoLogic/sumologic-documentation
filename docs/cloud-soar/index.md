@@ -12,6 +12,9 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 Navigate the evolving threat landscape with our best-in-class security orchestration, automation and response (SOAR) solution to streamline incident response workflows.
 
+<DocCardList items={useCurrentSidebarCategory().items}/>
+
+
 ## Why Cloud SOAR?
 
 Cloud SOAR is a modern security operations technology platform that empowers MSSPs, SOCs, and security teams by providing collaborative and automated real-time incident management and threat response. Make quick and insightful decisions during security response with workflow automation.
@@ -44,8 +47,3 @@ Automated workflow processes help analysts function at an optimal level and redu
 
 ### Comprehensive security portfolio
 Cloud SOAR is part of Sumo Logic’s comprehensive security portfolio including security monitoring and analytics and Cloud SIEM, to help your organization modernize security operations.
-
-
-## Guides
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
