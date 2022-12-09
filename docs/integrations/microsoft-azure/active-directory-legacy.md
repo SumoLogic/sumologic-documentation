@@ -105,9 +105,9 @@ Before proceeding, verify that the Active Directory module is available. The Act
 
 In order to collect files, download the following scripts:
 
-* [adQueryDS.ps1](/files/adQueryDS.ps1)  - Core functions that are leveraged by the other scripts
-* [adObjectCollector.ps1](/files/adObjectCollector.ps1)  - Active Directory object collector
-* [domainCollector.ps1](/files/domainCollector.ps1) - Active Directory domain collector
+* [adQueryDS.ps1](https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/adQueryDS.ps1) - Core functions that are leveraged by the other scripts
+* [adObjectCollector.ps1](https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/adObjectCollector.ps1)  - Active Directory object collector
+* [domainCollector.ps1](https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/domainCollector.ps1) - Active Directory domain collector
 
 These scripts should be deployed on a machine that is part of the domain where the log files exist. After deploying the scripts, you'll need to configure a script source on Sumo Logic for **domainCollector.ps1** and another script source for **adObjectCollector.ps1**.
 

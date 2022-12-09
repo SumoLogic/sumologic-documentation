@@ -26,9 +26,10 @@ Otherwise, create a new collector as described in [Configure a Hosted Collector]
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
 1. **Fields**. 
     1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
-    1. If all sources in this collector will be Zscaler Private Access sources, add an additional field with key `_parser` and value * /Parsers/System/Zscaler/Zscaler Private Access/Zscaler Private Access-JSON*.
-
-It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+    1. If all sources in this collector will be Zscaler Private Access sources, add an additional field with key `_parser` and value */Parsers/System/Zscaler/Zscaler Private Access/Zscaler Private Access-JSON*.
+    :::note
+    It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+    :::
 
 ### Configure an HTTP Source
 
