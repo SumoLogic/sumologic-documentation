@@ -97,7 +97,6 @@ This authorization code will expire within 1 hour. Please setup your Sumo source
 https://login.windows.net/common/oauth2/authorize?response_type=code&resource=https://outlook.office365.com&client_id={{client_id}}&redirect_uri=https://localhost
 ```
 2. If successful, you will be redirected to a blank page with `code` and `session_state` as URL parameters. Write down the `code` value as this is your Oauth 2.0 authorization code you will use to configure the Sumo Logic C2C. This code is over 700 characters in length. Be careful to not copy the `&session_state=` at the end of the code. See below for an example:
-
 ```
 https://localhost/?code={{REDACTED_AUTHORIZATION_CODE}}&session_state=50efb7a9-7678-4186-8b5b-abbb16d7b1ca#
 ```
