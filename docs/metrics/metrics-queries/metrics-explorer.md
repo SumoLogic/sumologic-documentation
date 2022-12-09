@@ -132,8 +132,6 @@ You’ll be prompted with the options to:
 
 ## View Metrics Query History
 
-![query-history.png](/img/metrics/query-history.png)
-
 Every query run by a user is saved in query history (both incorrect and correct queries). You can use the Metrics query history to find your previous metric queries. Both those run in the Metric Tab and the Dashboard panels. Queries as saved and stored in user settings, just like information on hidden columns for Preview Table and open tabs.
 
 When you select a query from the list, it is updated for a query row where you opened query history dropdown. Selected queries from list are adjusted to current query editor mode selected by the user. For example, if you are in Basic mode and the query was run before in advanced mode, the Metrics interface  will adjust to Basic mode.
