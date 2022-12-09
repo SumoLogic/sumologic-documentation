@@ -103,10 +103,8 @@ To configure a Microsoft Exchange Trace Logs Source:
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
-3. Select **MS Exchange Trace Logs**.
-    <img src={useBaseUrl('img/send-data/ms-exchange-icon.png')} alt="ms-exchange-icon.png" width="200" />
-4. Enter a **Name** for the Source. The description is optional.
-    <img src={useBaseUrl('img/send-data/ms-exchange-schema-ui.png')} alt="ms-exchange-schema-ui.png" width="400" />
+3. Select **MS Exchange Trace Logs**. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-icon.png')} alt="ms-exchange-icon.png" width="200" />
+4. Enter a **Name** for the Source. The description is optional. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-schema-ui.png')} alt="ms-exchange-schema-ui.png" width="400" />
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 6. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
