@@ -38,6 +38,15 @@ module.exports = {
     },
     {
       type: 'category',
+      label: '⚙️Infrastructure Monitoring',
+      collapsible: false,
+      collapsed: true,
+      items: [
+        'infrastructure-monitoring/install-agent',
+      ],
+    },
+    {
+      type: 'category',
       label: '📱App Observability',
       collapsible: false,
       collapsed: true,
@@ -49,11 +58,12 @@ module.exports = {
     },
     {
       type: 'category',
-      label: '⚙️Infrastructure Monitoring',
+      label: '🛡️Security',
       collapsible: false,
       collapsed: true,
       items: [
-        'infrastructure-monitoring/install-agent',
+        'security/cloud-siem',
+        'aws/aws-lambda',
       ],
     },
     {
@@ -65,16 +75,6 @@ module.exports = {
         'platform-capabilities/dashboards',
         'platform-capabilities/create-monitor',
         'platform-capabilities/schedule-search',
-      ],
-    },
-    {
-      type: 'category',
-      label: '🛡️Security',
-      collapsible: false,
-      collapsed: true,
-      items: [
-        'security/cloud-siem',
-        'aws/aws-lambda',
       ],
     },
     {
