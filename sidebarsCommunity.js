@@ -22,7 +22,7 @@ module.exports = {
       collapsible: false,
       collapsed: true,
       items: [
-        'aws/aws-lambda-security',
+        'aws/aws-lambda',
         'aws/awso-drilldown',
       ],
     },

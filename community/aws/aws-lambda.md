@@ -1,5 +1,5 @@
 ---
-id: aws-lambda-security
+id: aws-lambda
 title: AWS Lambda Security
 sidebar_label: AWS Lambda Security🛡️
 hide_table_of_contents: true
