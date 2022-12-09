@@ -135,7 +135,7 @@ To configure a Microsoft Exchange Trace Logs Source:
 
 12. **Polling Interval Seconds** We recommend leaving this to its defaults. This value controls how often the Microsoft Exchange Trace Logs Source polls the the Microsoft APIs for new data.
 
-13. **Collection Time Offset** Use this value to offset the collection in the past by some amount of time. Microsoft claims data can be missing from the API within the last 24 hours. Set this to `86400` seconds aka 24 hours to help guarantee more complete results or reduce it if you are looking for more real time, but potentially incomplete data.
+13. **Collection Time Offset**. Use this value to offset the collection in the past by some amount of time. Microsoft claims data can be missing from the API within the last 24 hours. Set this to `86400` seconds aka 24 hours to help guarantee more complete results or reduce it if you are looking for more real time, but potentially incomplete data.
 
 14. When you are finished configuring the Source, click **Submit**.
 
