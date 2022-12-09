@@ -1,6 +1,8 @@
 ---
 id: schedule-search
-title: Scheduled Searches 🔎
+title: Scheduled Searches
+sidebar_label: Scheduled Searches 🔎
+hide_table_of_contents: true 
 ---
 
 <head>
@@ -15,6 +17,3 @@ import Iframe from 'react-iframe';
 <iframe class="sl-demo" src="https://app.storylane.io/demo/yomlmovkqrnw" allow="fullscreen" ></iframe>
 </div>
 </div>
-
-
-<br/><br/><br/>

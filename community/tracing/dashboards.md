@@ -1,6 +1,8 @@
 ---
 id: dashboards
-title: Dashboards 📈
+title: Dashboards
+sidebar_label: Dashboards 📈
+hide_table_of_contents: true
 ---
 
 <head>
@@ -15,6 +17,3 @@ import Iframe from 'react-iframe';
 <iframe class="sl-demo" src="https://app.storylane.io/demo/hbrvdvnfuaw3" allow="fullscreen" ></iframe>
 </div>
 </div>
-
-
-<br/><br/><br/>

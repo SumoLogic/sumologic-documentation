@@ -1,6 +1,8 @@
 ---
 id: awso-drilldown
-title: AWS Observability Drilldown 🧐
+title: AWS Observability Drilldown
+sidebar_label: AWS Observability Drilldown 🧐
+hide_table_of_contents: true 
 ---
 
 <head>
@@ -15,6 +17,3 @@ import Iframe from 'react-iframe';
 <iframe class="sl-demo" src="https://app.storylane.io/demo/uwxk0cqxlvkp" allow="fullscreen" ></iframe>
 </div>
 </div>
-
-
-<br/><br/><br/>
