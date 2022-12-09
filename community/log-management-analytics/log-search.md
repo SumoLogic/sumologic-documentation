@@ -1,8 +1,8 @@
 ---
-id: awso-drilldown
-title: AWS Observability Drilldown
-sidebar_label: AWS Observability Drilldown 🧐
-hide_table_of_contents: true 
+id: log-search
+title: Log Search
+sidebar_label: Log Search 🪵
+hide_table_of_contents: true
 ---
 
 <head>

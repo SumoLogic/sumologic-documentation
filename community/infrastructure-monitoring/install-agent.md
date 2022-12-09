@@ -1,8 +1,7 @@
 ---
-id: awso-drilldown
-title: AWS Observability Drilldown
-sidebar_label: AWS Observability Drilldown 🧐
-hide_table_of_contents: true 
+id: install-agent
+title: Install an Agent ⚙️
+hide_table_of_contents: true
 ---
 
 <head>

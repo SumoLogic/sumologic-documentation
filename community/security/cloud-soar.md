@@ -1,7 +1,7 @@
 ---
-id: cse
-title: CSE Cloud-Focused Demo
-sidebar_label: CSE Cloud-Focused Demo ☁️
+id: cloud-soar
+title: Cloud SOAR Walkthrough
+sidebar_label: Cloud SOAR ☁️
 hide_table_of_contents: true
 ---
 

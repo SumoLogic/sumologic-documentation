@@ -22,7 +22,7 @@ module.exports = {
       collapsible: false,
       collapsed: true,
       items: [
-        'aws/aws-lambda',
+        'aws/aws-lambda-security',
         'aws/awso-drilldown',
       ],
     },
@@ -32,7 +32,7 @@ module.exports = {
       collapsible: false,
       collapsed: true,
       items: [
-        'infrastructure-monitoring/awso-drilldown',
+        'infrastructure-monitoring/install-agent',
       ],
     },
     {
@@ -41,7 +41,7 @@ module.exports = {
       collapsible: false,
       collapsed: true,
       items: [
-        'kubernetes/schedule-search',
+        'kubernetes/kubernetes-overview',
       ],
     },
     {
@@ -50,7 +50,7 @@ module.exports = {
       collapsible: false,
       collapsed: true,
       items: [
-        'log-management-analytics/awso-drilldown',
+        'log-management-analytics/log-search',
       ],
     },
     {
@@ -59,25 +59,20 @@ module.exports = {
       collapsible: false,
       collapsed: true,
       items: [
-        'platform-capabilities/awso-drilldown',
+        'platform-capabilities/dashboards',
+        'platform-capabilities/create-monitor',
+        'platform-capabilities/schedule-search',
       ],
     },
     {
       type: 'category',
-      label: 'Security🛡️',
+      label: 'Security',
       collapsible: false,
       collapsed: true,
       items: [
-        'security/cse',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Tracing',
-      collapsible: false,
-      collapsed: true,
-      items: [
-        'tracing/dashboards',
+        'security/cloud-siem',
+        'security/cloud-soar',
+        'aws/aws-lambda-security',
       ],
     },
     {
