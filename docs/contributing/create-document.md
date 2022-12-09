@@ -31,7 +31,7 @@ See our [Style Guide](/docs/contributing/style-guide) to learn how to write and 
 To add your new doc to the left-nav menu, you'll need to add its name and file path to the [`sidebars.ts` file](https://github.com/SumoLogic/sumologic-documentation/blob/main/sidebars.ts).
 
 :::note Doc Team Support
-The Sumo Logic Doc Team will help your add your documentation to the sidebar and top navigation. If you have suggestions, please include those in your Pull Request description. If you add the documentation to the sidebar, the team will review the location and names for building and placement in navigation.
+The Sumo Logic Doc Team will help your add you documentation to the sidebar and top navigation. If you have suggestions, please include those in your Pull Request description. If you add the documentation to the sidebar, the team will review the location and names for building and placement in navigation.
 :::
 
 ## Step 5: Build and deploy on local to preview changes
