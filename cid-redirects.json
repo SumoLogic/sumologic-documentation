@@ -1531,7 +1531,7 @@
   "/cid/210629": "/docs/integrations/containers-orchestration/activemq",
   "/cid/210640": "/docs/integrations/cloud-security-monitoring-analytics/palo-alto-firewall-9",
   "/cid/210641": "/docs/integrations/cloud-security-monitoring-analytics/linux",
-  "/cid/210642": "/docs/integrations/cloud-security-monitoring-analytics/aws-cloudtrail-pci-compliance",
+  "/cid/210642": "/docs/integrations/amazon-aws/cloudtrail",
   "/cid/210643": "/docs/integrations/cloud-security-monitoring-analytics/amazon-vpc-flow",
   "/cid/210701": "/docs/apm/real-user-monitoring",
   "/cid/210729": "/docs/integrations/databases/elasticsearch",
