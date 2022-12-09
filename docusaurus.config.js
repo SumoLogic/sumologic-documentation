@@ -134,7 +134,7 @@ module.exports = {
     ['@docusaurus/plugin-content-docs',
       {
         id: 'community',
-        path: 'community',
+        path: './community',
         routeBasePath: 'hackathon',
         sidebarPath: require.resolve('./sidebarsCommunity.js'),
         breadcrumbs: false,

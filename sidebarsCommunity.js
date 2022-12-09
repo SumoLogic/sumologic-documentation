@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-  commmunity: [
+  hackathon: [
     {
       type: 'category',
       label: 'Welcome to the Hackathon',
@@ -28,15 +28,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Infrastructure Monitoring',
-      collapsible: false,
-      collapsed: true,
-      items: [
-        'infrastructure-monitoring/install-agent',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Kubernetes',
       collapsible: false,
       collapsed: true,
@@ -50,7 +41,28 @@ module.exports = {
       collapsible: false,
       collapsed: true,
       items: [
-        'log-management-analytics/log-search',
+        'log-management-analytics/log-reduce',
+        'log-management-analytics/drilldown-to-search',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'App Observability',
+      collapsible: false,
+      collapsed: true,
+      items: [
+        'app-observability/end-to-end',
+        'app-observability/real-user-monitoring',
+        'app-observability/service-maps',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Infrastructure Monitoring',
+      collapsible: false,
+      collapsed: true,
+      items: [
+        'infrastructure-monitoring/install-agent',
       ],
     },
     {
@@ -71,8 +83,7 @@ module.exports = {
       collapsed: true,
       items: [
         'security/cloud-siem',
-        'security/cloud-soar',
-        'aws/aws-lambda-security',
+        'aws/aws-lambda',
       ],
     },
     {

@@ -1,7 +1,6 @@
 ---
-id: kubernetes-overview
-title: Kubernetes
-sidebar_label: Kubernetes 🛞
+id: real-user-monitoring
+title: Real User Monitoring (RUM)
 hide_table_of_contents: true
 ---
 
@@ -14,6 +13,6 @@ import Iframe from 'react-iframe';
 <div>
 <script src="https://js.storylane.io/js/v1/storylane.js"></script>
 <div class="sl-embed" >
-<iframe class="sl-demo" src="https://app.storylane.io/demo/oljpt9jha8rl" allow="fullscreen" ></iframe>
+<iframe class="sl-demo" src="https://app.storylane.io/demo/ses1ccqu6hgl" allow="fullscreen" ></iframe>
 </div>
 </div>
