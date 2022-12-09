@@ -1,6 +1,6 @@
 ---
 id: install-agent
-title: Install an Agent ⚙️
+title: Install an Agent
 hide_table_of_contents: true
 ---
 

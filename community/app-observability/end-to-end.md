@@ -1,6 +1,6 @@
 ---
 id: end-to-end
-title: End-to-End Demo
+title: End-to-End
 hide_table_of_contents: true
 ---
 

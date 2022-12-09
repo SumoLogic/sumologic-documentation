@@ -1,7 +1,7 @@
 ---
 id: cloud-siem
 title: Cloud SIEM Walkthrough
-sidebar_label: Cloud SIEM ☁️
+sidebar_label: Cloud SIEM
 hide_table_of_contents: true
 ---
 

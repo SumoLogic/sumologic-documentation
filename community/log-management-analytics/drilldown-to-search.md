@@ -1,7 +1,6 @@
 ---
 id: drilldown-to-search
 title: Drilldown to Search
-sidebar_label: Log Search 🪵
 hide_table_of_contents: true
 ---
 

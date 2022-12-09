@@ -1,7 +1,6 @@
 ---
 id: log-reduce
 title: Log Reduce
-sidebar_label: Log Search 🪵
 hide_table_of_contents: true
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: real-user-monitoring
 title: Real User Monitoring (RUM)
+sidebar_label: Real User Monitoring
 hide_table_of_contents: true
 ---
 

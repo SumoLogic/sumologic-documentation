@@ -1,7 +1,7 @@
 ---
 id: awso-drilldown
 title: AWS Observability Drilldown
-sidebar_label: AWS Observability 🕵️
+sidebar_label: AWS Observability
 hide_table_of_contents: true
 ---
 

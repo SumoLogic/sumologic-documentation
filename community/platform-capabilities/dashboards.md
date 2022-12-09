@@ -1,7 +1,6 @@
 ---
 id: dashboards
 title: Dashboards
-sidebar_label: Dashboards 📈
 hide_table_of_contents: true
 ---
 

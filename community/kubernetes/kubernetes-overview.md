@@ -1,7 +1,7 @@
 ---
 id: kubernetes-overview
 title: Kubernetes
-sidebar_label: Kubernetes 🛞
+sidebar_label: Kubernetes
 hide_table_of_contents: true
 ---
 

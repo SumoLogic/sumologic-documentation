@@ -1,7 +1,6 @@
 ---
 id: create-monitor
 title: Create a Monitor
-sidebar_label: Monitors 📈
 hide_table_of_contents: true
 ---
 

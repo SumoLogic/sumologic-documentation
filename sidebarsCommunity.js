@@ -9,16 +9,7 @@ module.exports = {
   hackathon: [
     {
       type: 'category',
-      label: 'Welcome to the Hackathon',
-      collapsible: false,
-      collapsed: true,
-      items: [
-        'get-started/setup',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Amazon Web Services',
+      label: '🌐Amazon Web Services',
       collapsible: false,
       collapsed: true,
       items: [
@@ -28,7 +19,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Kubernetes',
+      label: '🛞Kubernetes',
       collapsible: false,
       collapsed: true,
       items: [
@@ -37,7 +28,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Log Management and Analytics',
+      label: '🪵Log Management and Analytics',
       collapsible: false,
       collapsed: true,
       items: [
@@ -47,7 +38,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'App Observability',
+      label: '📱App Observability',
       collapsible: false,
       collapsed: true,
       items: [
@@ -58,7 +49,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Infrastructure Monitoring',
+      label: '⚙️Infrastructure Monitoring',
       collapsible: false,
       collapsed: true,
       items: [
@@ -67,7 +58,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Platform Capabilities',
+      label: '📈Platform Capabilities',
       collapsible: false,
       collapsed: true,
       items: [
@@ -78,7 +69,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Security',
+      label: '🛡️Security',
       collapsible: false,
       collapsed: true,
       items: [
