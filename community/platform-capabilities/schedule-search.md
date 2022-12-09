@@ -1,8 +1,7 @@
 ---
 id: schedule-search
 title: Scheduled Searches
-sidebar_label: Scheduled Searches 🔎
-hide_table_of_contents: true 
+hide_table_of_contents: true
 ---
 
 <head>

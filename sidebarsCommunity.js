@@ -6,19 +6,10 @@
  */
 
 module.exports = {
-  commmunity: [
+  hackathon: [
     {
       type: 'category',
-      label: 'Get Started',
-      collapsible: false,
-      collapsed: true,
-      items: [
-        'get-started/setup',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Amazon Web Services',
+      label: '🌐Amazon Web Services',
       collapsible: false,
       collapsed: true,
       items: [
@@ -28,29 +19,62 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Kubernetes',
+      label: '🛞Kubernetes',
       collapsible: false,
       collapsed: true,
       items: [
-        'kubernetes/schedule-search',
+        'kubernetes/kubernetes-overview',
       ],
     },
     {
       type: 'category',
-      label: 'Security🛡️',
+      label: '🪵Log Management and Analytics',
       collapsible: false,
       collapsed: true,
       items: [
-        'security/cse',
+        'log-management-analytics/log-reduce',
+        'log-management-analytics/drilldown-to-search',
       ],
     },
     {
       type: 'category',
-      label: 'Tracing',
+      label: '⚙️Infrastructure Monitoring',
       collapsible: false,
       collapsed: true,
       items: [
-        'tracing/dashboards',
+        'infrastructure-monitoring/install-agent',
+      ],
+    },
+    {
+      type: 'category',
+      label: '📱App Observability',
+      collapsible: false,
+      collapsed: true,
+      items: [
+        'app-observability/end-to-end',
+        'app-observability/real-user-monitoring',
+        'app-observability/service-maps',
+      ],
+    },
+    {
+      type: 'category',
+      label: '🛡️Security',
+      collapsible: false,
+      collapsed: true,
+      items: [
+        'security/cloud-siem',
+        'aws/aws-lambda',
+      ],
+    },
+    {
+      type: 'category',
+      label: '📈Platform Capabilities',
+      collapsible: false,
+      collapsed: true,
+      items: [
+        'platform-capabilities/dashboards',
+        'platform-capabilities/create-monitor',
+        'platform-capabilities/schedule-search',
       ],
     },
     {
