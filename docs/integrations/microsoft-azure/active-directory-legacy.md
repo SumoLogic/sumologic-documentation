@@ -104,7 +104,7 @@ Before proceeding, verify that the Active Directory module is available. The Act
 In order to collect files, download the following scripts:
 
 * <a href="https://help.sumologic.com/files/adQueryDS.ps1" target="_blank">adQueryDS.ps1</a>: Core functions that are leveraged by the other scripts
-* <a href="https://help.sumologic.com/assets/files/adObjectCollector.ps1" target="_blank">adObjectCollector</a>: Active Directory object collector
+* <a href="https://help.sumologic.com/files/adObjectCollector.ps1" target="_blank">adObjectCollector</a>: Active Directory object collector
 * <a href="https://help.sumologic.com/files/domainCollector.ps1" target="_blank">domainCollector</a>: Active Directory domain collector
 
 
