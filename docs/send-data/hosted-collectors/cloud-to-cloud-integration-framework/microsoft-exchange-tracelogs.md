@@ -129,7 +129,7 @@ To configure a Microsoft Exchange Trace Logs Source:
 
 9. **Directory (tenant) ID** Enter your tenant ID from your Azure Application. This should be a Globally Unique Identifier aka GUID.
 
-10. **Secret** Enter your client secret generated within your Azure Application.
+10. **Secret**. Enter your client secret generated within your Azure Application.
 
 11.  **Oauth 2.0 Authorization Code** Enter a valid authorization code. They expire within 1 hour of creation. The Microsoft Exchange Trace Logs Source will use this temporary code to automatically generate and rotate your API tokens for accessing the data.
 
