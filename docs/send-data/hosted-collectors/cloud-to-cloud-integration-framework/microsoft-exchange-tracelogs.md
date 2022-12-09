@@ -43,12 +43,12 @@ This source requires you to register an application within Azure Active Director
 
 An Azure application with specific permissions is required for Sumo Logic to access your Exchange Trace logs from Office 365. You need a subscription to Office 365 and a subscription to Azure that has been associated with your Office 365 subscription to set up this collection.
 
-1.Sign in to your Azure Portal with your administrator account at https://portal.azure.com
-2.Use the left navigation pane (might be hidden under the menu icon) and select **Azure Active Directory**. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-app-reg-step-2.png')} alt="ms-exchange-app-reg-step-2.png" width="400" />
-3.You will see a menu of options for your Azure Active Directory on the left. Click **App registrations**. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-app-reg-step-3.png')} alt="ms-exchange-app-reg-step-3.png" width="300" />
-4.Click **New registration** <br/> <img src={useBaseUrl('img/send-data/ms-exchange-app-reg-step-4.png')} alt="ms-exchange-app-reg-step-4.png" width="550" />
-5.Enter the required information as shown in the screenshot. Click **Register**. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-app-reg-step-5.png')} alt="ms-exchange-app-reg-step-5.png" width="600" />
-6.You are redirected to the overview page of your newly created application. Take note of the **Application (client) ID** and the **Directory (tenant) ID** as they will be required later. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-app-reg-step-6.png')} alt="ms-exchange-app-reg-step-6.png" width="500" />
+1. Sign in to your Azure Portal with your administrator account at https://portal.azure.com
+2. Use the left navigation pane (might be hidden under the menu icon) and select **Azure Active Directory**. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-app-reg-step-2.png')} alt="ms-exchange-app-reg-step-2.png" width="400" />
+3. You will see a menu of options for your Azure Active Directory on the left. Click **App registrations**. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-app-reg-step-3.png')} alt="ms-exchange-app-reg-step-3.png" width="300" />
+4. Click **New registration** <br/> <img src={useBaseUrl('img/send-data/ms-exchange-app-reg-step-4.png')} alt="ms-exchange-app-reg-step-4.png" width="550" />
+5. Enter the required information as shown in the screenshot. Click **Register**. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-app-reg-step-5.png')} alt="ms-exchange-app-reg-step-5.png" width="600" />
+6. You are redirected to the overview page of your newly created application. Take note of the **Application (client) ID** and the **Directory (tenant) ID** as they will be required later. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-app-reg-step-6.png')} alt="ms-exchange-app-reg-step-6.png" width="500" />
 
 ### Create Client Secret
 
