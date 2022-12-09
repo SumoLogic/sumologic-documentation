@@ -9,7 +9,7 @@ module.exports = {
   commmunity: [
     {
       type: 'category',
-      label: 'Get Started',
+      label: 'Welcome to the Hackathon',
       collapsible: false,
       collapsed: true,
       items: [
@@ -28,11 +28,38 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Infrastructure Monitoring',
+      collapsible: false,
+      collapsed: true,
+      items: [
+        'infrastructure-monitoring/awso-drilldown',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Kubernetes',
       collapsible: false,
       collapsed: true,
       items: [
         'kubernetes/schedule-search',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Log Management and Analytics',
+      collapsible: false,
+      collapsed: true,
+      items: [
+        'log-management-analytics/awso-drilldown',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Platform Capabilities',
+      collapsible: false,
+      collapsed: true,
+      items: [
+        'platform-capabilities/awso-drilldown',
       ],
     },
     {
