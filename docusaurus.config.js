@@ -34,7 +34,11 @@ module.exports = {
     {
       src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
       async: true,
-    }
+    },
+    {
+      src: './src/helper/google-translate.js',
+      async: true,
+    },
   ],
   staticDirectories: ['static'],
   webpack: {
@@ -255,6 +259,11 @@ module.exports = {
             to: 'https://www.sumologic.com/sign-up',
             position: 'right',
             className: 'navbar-trial',
+          },
+          {
+            type: 'html',
+            position: 'right',
+            value: '<button>Give feedback</button>',
           },
           {
             label: 'Guides',
