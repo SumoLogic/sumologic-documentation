@@ -92,7 +92,7 @@ We now need to grant specific API permissions to allow your Azure application ac
 This authorization code will expire within 1 hour. Please setup your Sumo source before it expires.
 :::
 
-1. In a browser where you are already authenticated to your Azure portal at https://portal.azure.com, navigate to the URL below, but replace `{{client_id}}` with your `Application (client) ID` from the earlier steps.
+1. In a browser where you are already authenticated to your [Azure portal](https://portal.azure.com), navigate to the URL below, but replace `{{client_id}}` with your `Application (client) ID` from the earlier steps.
 ```
 https://login.windows.net/common/oauth2/authorize?response_type=code&resource=https://outlook.office365.com&client_id={{client_id}}&redirect_uri=https://localhost
 ```
