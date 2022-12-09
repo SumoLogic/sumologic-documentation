@@ -1,15 +1,14 @@
 ---
 id: incidents-triage
-title: Incidents and Triage
+title: Cloud SOAR Incident Management and Triage
+sidebar_label: Incidents and Triage
+description: Automated real-time incident management and threat response.
 ---
 
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The **Incident** section lists all Cloud SOAR incidents. Clicking on any of
-the incident IDs in the Incident section will open the incident. You
-can configure what incidents are displayed by creating queries against
-available incident data and saving them as incident filters.
+The **Incident** section lists all Cloud SOAR incidents. Clicking on any of the incident IDs in the Incident section will open the incident. You can configure what incidents are displayed by creating queries against available incident data and saving them as incident filters.
 
 ![alt-text goes here](/img/cloud-soar/image140.png)
 _Incident List_
@@ -116,29 +115,19 @@ Once all the details have been added and are in place, click **Apply**.
 
 ## Incident Properties
 
-The Incident Details section contains all the important information that makes up the incident such as executed Playbooks and incident tasks. This information is broken into 4 different sections:
+The Incident Details section contains all the important information that makes up the incident, such as executed Playbooks and incident tasks. This information is divided into four different sections: **Overview**, **Operations**, **Entities**, and **Documentation**.
 
 ![Incident Overview](/img/cloud-soar/image149.png)
 _Incident Overview_
 
-- **Overview**
-- **Operations**
-- **Entities**
-- **Documentation**
 
-### Incident Overview
+### Overview
 
 The Incident Overview section contains all the pertinent information for a specific incident such as the severity, SLA counter, and category of alert. This information can be customized in the Custom Fields section of the platform. For more information, please see [**Custom Fields**](#Custom-Fields-1).
 
-## Operations
+### Operations
 
-The Operations section contains all the investigative information for a
-specific incident and is broken out into the following sections:
-
-- **War Room**
-- **playbook**
-- **Tasks**
-- **Notes**
+The Operations section contains all the investigative information for a specific incident and is broken out into the following sections: **War Room**, **playbook**, **Tasks**, and **Notes**.
 
 :::sumo Microlesson: Security Automation with Cloud SOAR Playbooks
 
@@ -155,15 +144,14 @@ specific incident and is broken out into the following sections:
 :::
 
 
-### War Room
+#### War Room
 
 All the information related to the incident ongoing are visible in one place in
-the War Room section. You can quickly view and check all the steps of the analysis, done either manually or by the automation, any entities related to the incident, results of actions performed and notes added during the incident's investigation. Information can be filtered out for the different categories, and by pressing the
-**+** button the user can add new notes.
+the War Room section. You can quickly view and check all the steps of the analysis, done either manually or by the automation, any entities related to the incident, results of actions performed and notes added during the incident's investigation. Information can be filtered out for the different categories, and by pressing the **+** button, you can add new notes.
 
 ![alt-text goes here](/img/cloud-soar/war_room.png)
 
-### Playbooks
+#### Playbooks
 
 Any playbook that has been applied to an incident can be found under
 the playbook section. You can quickly view and make any necessary
@@ -189,7 +177,7 @@ This will open a new screen that lists all available Playbooks. Either
 type in the playbook name to use or manually search through all
 available options and click **Add** when finished.
 
-#### Viewing Playbook Results
+##### Viewing Playbook Results
 
 The results of a Playbook, either while it is executing or after
 execution has completed, can be viewed from the playbook section. By
@@ -235,7 +223,7 @@ _Action Details_
 ![alt-text goes here](/img/cloud-soar/image156.png)
 _Action JSON_
 
-### Tasks
+#### Tasks
 
 Cloud SOAR's Tasks section allows incident managers to assign and track
 tasks which must be completed during an investigation. Tasks may be
@@ -245,7 +233,7 @@ or manually from the incident's Tasks section.
 ![alt-text goes here](/img/cloud-soar/image157.png)
 _Tasks within an Incident_
 
-#### Adding a Task
+##### Adding a Task
 
 To add a new Task, click the **+** button at the top-left of the Task list
 screen. Fill in all required fields and add any additional information
@@ -264,7 +252,7 @@ section of this manual.
 ![alt-text goes here](/img/cloud-soar/image158.png)
 _New Task Details Screen_
 
-#### Working with Tasks
+##### Working with Tasks
 
 Once a task has been created and assigned, it will appear in the **Home**
 section of the Main Menu. To view the details of a task click on the
@@ -276,7 +264,7 @@ the left-side of the screen.
 _Home Screen_
 
 Selecting a task will open the incident where the task was created. This
-will allow the user to review the details of the task and access any
+will allow you to review the details of the task and access any
 automated Playbooks and notes from the incident investigation. Once the
 incident data has been reviewed investigators can choose to approve,
 approve and close, or decline a task by clicking the thumbs up, thumbs
@@ -285,7 +273,7 @@ down or check mark buttons next to the task's title.
 ![alt-text goes here](/img/cloud-soar/image160.png)
 _Tasks Section_
 
-### Notes
+#### Notes
 
 Like the Tasks section, the Notes section contains all notes either
 automatically created during a playbook's execution or manually created
@@ -296,7 +284,7 @@ need.
 ![alt-text goes here](/img/cloud-soar/image161.png)
 _Notes Section_
 
-#### Adding a Note
+##### Adding a Note
 
 To manually add a note, click the **+** symbol to the left of the search
 bar and a new configuration screen will appear. Enter the note into the
@@ -306,9 +294,9 @@ free form text box and click create when finished.
 _Adding a Note_
 
 
-### Manually Creating a New Incident
+## Create a New Incident Manually
 
-To manually add an Incident, click the **+ Incident** button on the top
+To create an Incident manually, click the **+ Incident** button on the top
 right-side of the screen.
 
 ![Incident Overview Screen](/img/cloud-soar/image125.png)
@@ -319,18 +307,13 @@ investigator can utilize to develop their incident. Not all these fields
 are mandatory. The ones which are required will have an asterisk (`*`)
 marked next to it which indicates the field has a dependency within the
 Cloud SOAR platform. These required fields can have their dependencies and
-requirements adjusted in the **Custom Fields** section (click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Customizations** > **Custom Fields**).
-
-![New Incident Editor](/img/cloud-soar/image126.png)
+requirements adjusted in the **Custom Fields** section (click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Customizations** > **Custom Fields**).<br/> ![New Incident Editor](/img/cloud-soar/image126.png)
 _New Incident Editor_
-
 
 One of the most important fields is the **Type** field. This field will
 dictate which Playbooks will be recommended later on in the configuration
-process. (See **Custom Fields** to modify the variables displayed in the
-**Type** field)
-
-![New Incident Editor](/img/cloud-soar/image127.png)
+process. See **Custom Fields** to modify the variables displayed in the
+**Type** field.<br/> ![New Incident Editor](/img/cloud-soar/image127.png)
 _New Incident Editor_
 
 
@@ -338,9 +321,7 @@ Once the details page is completed, you will want to assign
 appropriate Playbooks to be associated with the incident. In addition to
 adding the playbook to the incident, you can also decide whether they
 want the playbook to automatically execute upon incident creation by
-sliding the **Autorun** button to **On**.
-
-![New Incident Editor](/img/cloud-soar/image128.png)
+sliding the **Autorun** button to **On**.<br/> ![New Incident Editor](/img/cloud-soar/image128.png)
 _New Incident Editor_
 
 
@@ -348,36 +329,23 @@ When creating an incident manually, the investigator may already have
 artifacts that they would like to add to the incident. The Incident
 Artifact section allows for the manual entry of new artifacts. To add a
 new artifact click **Add Artifact** and choose what target field to append
-the data and add its value. Once completed, click **Next**.
-
-![alt-text goes here](/img/cloud-soar/image129.png)
+the data and add its value. Once completed, click **Next**.<br/> ![alt-text goes here](/img/cloud-soar/image129.png)
 
 ### Incident Artifacts
 
-You have the option to create manual Parent/Child relationships between the new incident and any previous incident created in Cloud SOAR. Click the **Advanced** button at the bottom of the screen to select an existing incident to group together.
-
-![Incident Relationships](/img/cloud-soar/image130.png)
+You have the option to create manual Parent/Child relationships between the new incident and any previous incident created in Cloud SOAR. Click the **Advanced** button at the bottom of the screen to select an existing incident to group together.<br/> ![Incident Relationships](/img/cloud-soar/image130.png)
 _Incident Relationships_
 
 The final step in manual incident creation is to add an investigator or a group of investigators to the incident. Select an investigator or group from the left side of the screen by double-clicking on their name and the investigator will be added to the investigators pane. Once finished, click **Create**.
 
 ### Incident Report
 
-The **Report Template** section allows you to create templates for
-custom reporting. The Report Template screen contains a list of all current report templates. To add a new report template, click on the **+** icon above the report template list.
+The **Report Template** section allows you to create templates for custom reporting. The Report Template screen contains a list of all current report templates. To add a new report template, click on the **+** icon above the report template list.
 
-The Details tab of the new report template window allows the user to
-specify a unique name for the template as well as a template category
-and any appropriate tags.
+The Details tab of the new report template window allows you to specify a unique name for the template as well as a template category and any appropriate tags.
 
-The Sections tab of the new report template window allows you to drag
-and drop sections of the incident into the report template. All incident
-sections are listed in the left-hand pane. Dragging incident sections to
-the right-hand pane will add the section to the report template.
-Sections will be printed in the report in the order they appear in the
-right-hand pane. Once satisfied with the selection, click **Save**.
-
-![Report Template Sections](/img/cloud-soar/image45.png)
+The Sections tab of the new report template window allows you to drag and drop sections of the incident into the report template. All incident sections are listed in the left-hand pane. Dragging incident sections to the right-hand pane will add the section to the report template.
+Sections will be printed in the report in the order they appear in the right-hand pane. Once satisfied with the selection, click **Save**.<br/> ![Report Template Sections](/img/cloud-soar/image45.png)
 _Report Template Sections_
 
 ### Custom Fields
@@ -390,13 +358,9 @@ The Custom Fields section allows you to customize all fields within the Cloud SO
 To begin defining Cloud SOAR's custom fields, select a Cloud SOAR section from the list on the left-side of the screen to view all available fields. To edit an existing field, select the ![alt-text goes here](/img/cloud-soar/image47.png) next to the field to be updated, or to add a new field select **+ADD** at the bottom right-side of the screen. A new configuration box will be displayed.
 
 The only attribute of an existing field which cannot be modified once
-the field is created is the field Type, such as Text or Date. You can rename internal values but only personal values, which are denoted by having a trash can symbol next to the entry, can be deleted from the
-section's custom fields.
+the field is created is the field Type, such as Text or Date. You can rename internal values but only personal values, which are denoted by having a trash can symbol next to the entry, can be deleted from the section's custom fields.
 
-Each section of Cloud SOAR supports different numbers of custom fields. The
-Incidents section, for example, supports up to 100 custom fields. The
-number of custom fields remaining will be displayed next to the section
-name at the top of the page.
+Each section of Cloud SOAR supports different numbers of custom fields. The Incidents section, for example, supports up to 100 custom fields. The number of custom fields remaining will be displayed next to the section name at the top of the page.
 
 Custom fields added by a user can be renamed or deleted. However,
 default fields can only be renamed, they cannot be deleted. Although a
@@ -411,19 +375,11 @@ or optional depending on the type selected. For example, a text field
 allows an optional default value to be specified, while a list field
 provides many additional options.
 
-The Visualization tab allows you to disable the field, specify if the
-field is used within Incident notifications, and set conditions under
-which the field is visible. For example, a field can be made visible
-only if the incident is of a certain type.
+The Visualization tab allows you to disable the field, specify if the field is used within Incident notifications, and set conditions under which the field is visible. For example, a field can be made visible only if the incident is of a certain type.
 
-The Additional Info tab allows you to provide additional information
-or context to the field, such as how the field should be used or where
-the data can be located.
+The Additional Info tab allows you to provide additional information or context to the field, such as how the field should be used or where the data can be located.
 
-Fields may be reorder in the Custom Fields section to change the order
-in which they appear on the Cloud SOAR screen. To change the order of the
-fields, click and hold on the six dots to the far left of the field
-name, then drag the field to its desired location.
+Fields may be reorder in the Custom Fields section to change the order in which they appear on the Cloud SOAR screen. To change the order of the fields, click and hold on the six dots to the far left of the field name, then drag the field to its desired location.
 
 #### Custom Field Types
 
@@ -450,69 +406,44 @@ User Details | User details, such as a user name. Available to use in actions wh
 
 #### Using Custom Fields for SLAs
 
-Custom fields can be used to calculate any number of custom service
-level agreements (SLAs). This can be achieved using combinations of
-Date, Date & Time and Time Interval fields.
+Custom fields can be used to calculate any number of custom service level agreements (SLAs). This can be achieved using combinations of Date, Date & Time and Time Interval fields.
 
 In the following example, five custom fields have been added to provide
-information on the status of an organizations Notification SLA. Two of
-the custom fields require user input:
-
-![SLA User Input](/img/cloud-soar/image50.png)
+information on the status of an organizations Notification SLA. Two of the custom fields require user input:<br/> ![SLA User Input](/img/cloud-soar/image50.png)
 _SLA User Input_
 
-**Notification SLA Requirement** will be used to store the SLA time
-interval, such as 5 minutes.
+* **Notification SLA Requirement** will be used to store the SLA time interval, such as 5 minutes.
+* **Customer Notified** will allow you to enter the date & time the customer was notified.
 
-**Customer Notified** will allow the user to enter the date & time the customer was notified.
-
-The remaining three custom fields require no user input and are
-calculation fields only:
-
-![SLA Calculated Fields](/img/cloud-soar/image51.png)
+The remaining three custom fields require no user input and are calculation fields only:<br/> ![SLA Calculated Fields](/img/cloud-soar/image51.png)
 _SLA Calculated Fields_
 
-**Notification Due By** will calculate and display the date & time the notification must be conducted by adding the Notification SLA
-Requirement field to the Start Time.
+* **Notification Due By** will calculate and display the date & time the notification must be conducted by adding the Notification SLA Requirement field to the Start Time.
+* **Notification Time Remaining** will calculate and display time remaining before the notification must be conducted by subtracting the Current Time from the Notification Due By field.
+* **Actual Notification Time** will calculate and display actual time taken to notify the customer by subtracting the Start Time from the Customer Notified Time.
 
-**Notification Time Remaining** will calculate and display time
-remaining before the notification must be conducted by subtracting the Current Time from the Notification Due By field.
-
-**Actual Notification Time** will calculate and display actual time taken to notify the customer by subtracting the Start Time from the Customer Notified Time.
-
-These Custom Field settings will appear in the Cloud SOAR Incident screen as follows:
-
-![SLA View](/img/cloud-soar/image52.png)              
+These Custom Field settings will appear in the Cloud SOAR Incident screen as follows:<br/>![SLA View](/img/cloud-soar/image52.png)              
 _SLA View_
 
 
 
 ### Credential Manager - CyberArk Configuration
 
-You can use CyberArk Credential Manager to manage data that will be used in integration resources.
+You can use CyberArk Credential Manager to manage data that will be used in integration resources.<br/> ![alt-text goes here](/img/cloud-soar/cyberArk1.png)
 
-![alt-text goes here](/img/cloud-soar/cyberArk1.png)
-
-Using the cogwheel icon on the right in the integrations section, the main section of the CyberArk configuration opens.
-
-![alt-text goes here](/img/cloud-soar/CyberArk2.png)
+Using the cogwheel icon on the right in the integrations section, the main section of the CyberArk configuration opens.<br/> ![alt-text goes here](/img/cloud-soar/CyberArk2.png)
 
 Here you can set URL and port of the Components server, and the credentials needed to connect to CyberArk. The Enable checkbox can be enabled or disabled later.
 
-If enabled, when you go to open the detail of a integration resource you'll find a new checkbox ('Use CyberArk fields') at the top already active.
-If the checkbox on above window is disabled, the checkbox ('Use CyberArk fields') in the resource window will be disabled by default, and it will not be possible to activate it.
+If enabled, when you go to open the detail of a integration resource you'll find a new checkbox (**Use CyberArk fields**) at the top already active. If the checkbox on above window is disabled, the checkbox in the resource window will be disabled by default, and it will not be possible to activate it.<br/> ![alt-text goes here](/img/cloud-soar/CyberArk3.png)
 
-![alt-text goes here](/img/cloud-soar/CyberArk3.png)
-
-If the checkbox (**Use CyberArk fields**) is enabled, two new mandatory fields will appear:
+If the checkbox **Use CyberArk fields** is enabled, two new mandatory fields will appear:
 * **Account Name** > userName in CyberArk
 * **Platform ID** > platformId in CyberArk
 
-Near to the fields there will be the relative toggle that will enable the related field for use on CyberArk.
+Near to the fields there will be the relative toggle that will enable the related field for use on CyberArk.<br/> ![alt-text goes here](/img/cloud-soar/CyberArk5.png)
 
-![alt-text goes here](/img/cloud-soar/CyberArk5.png)
-
-In the image above you can see two custom fields of the resource with their toggles. The first field has been enabled to use CyberArk, while the second not.
+In the image above, you can see two custom fields of the resource with their toggles. The first field has been enabled to use CyberArk, while the second not.
 
 Within the CyberArk fields you need to enter the name of the Properties present in the corresponding Platform ID on CyberArk.
 
@@ -522,22 +453,19 @@ Pay attention to uppercase and lowercase letters.
 
 ![alt-text goes here](/img/cloud-soar/CyberArk4.png)
 
-Through the name of the Properties, (in the above case **MB3**), during the execution of the resource, it will be replaced with the value present on CyberArk for that resource, (in our case **84ca4444-9082-40b7-**)
+Through the name of the Properties,(in the above case **MB3**) during the execution of the resource, it will be replaced with the value present on CyberArk for that resource, in our case **84ca4444-9082-40b7-**.
 
 In the fields enabled for CyberArk, in addition to the account properties, you can also recall the value of the CyberArk Account password, to do this, write the word **Password** in the field.
 
 :::important
-If the checkbox for CyberArk is enabled for a resource field, the data type allowed for that field will be string only, even if the same field was configured to accept lists, checkboxes, numbers, etc.
+If the checkbox for CyberArk is enabled for a resource field, the data type allowed for that field will be string only, even if the same field was configured to accept lists, checkboxes, numbers, and more.
 :::
 
 **The only property that will be retained is the mandatory nature of the field**.
 
-Values entered in the field not enabled for CyberArk, if previously entered and saved, will be retained if the field becomes enabled for CyberArk.
-The same is not true otherwise.
+Values entered in the field not enabled for CyberArk, if previously entered and saved, will be retained if the field becomes enabled for CyberArk. The same is not true otherwise.
 
-If the CyberArk switch is enabled and one switch on the field line is disabled, that CyberArk field value will be saved empty
-
-![alt-text goes here](/img/cloud-soar/CyberArk6.png)
+If the CyberArk switch is enabled and one switch on the field line is disabled, that CyberArk field value will be saved empty.<br/> ![alt-text goes here](/img/cloud-soar/CyberArk6.png)
 
 
 #### Configuring the automation bridge for CyberArk
@@ -548,71 +476,50 @@ If you are using CyberArk, you will need to add the following certificates given
 **client**new.crt**
 **client**new.pem**
 ```
-to the **/opt/automation-bridge/** directory.
+to the `/opt/automation-bridge/` directory.
 
 **The names must be exactly the same**.
 
 
-## Triage section
+## Triage
 
-Cloud SOAR's Triage module ingests events via the Cloud SOAR API and can be used
-to triage events which may be unverified or have a low confidence level
-before they are converted to incidents. The Triage module can be
-completely customized for use cases from financial fraud to network IDS
-alerts.
+The Cloud SOAR Triage module ingests events via the Cloud SOAR API. You can use it
+to triage events which may be unverified or have a low confidence level before they are converted to incidents. The Triage module can be completely customized for use cases from financial fraud to network IDS alerts.
 
-### Triage Display Settings
+### Display Settings
 
-Triage display preferences can be customized from **Settings** >
-**Customizations** > **Triage**. Triage events can be color coded based on
-status to easily distinguish them from each other when viewing the list
-of Triage events.
+Triage display preferences can be customized from **Settings** > **Customizations** > **Triage**. Triage events can be color coded based on status to easily distinguish them from each other when viewing the list of Triage events.
 
-The name of the module can also be modified from **Triage** to a name of
-your choosing. The new name will be displayed in all areas of Cloud SOAR,
-including the menu and logs.
-
-![alt-text goes here](/img/cloud-soar/image57.png)
+The name of the module can also be modified from **Triage** to a name of your choosing. The new name will be displayed in all areas of Cloud SOAR, including the menu and logs.<br/> ![alt-text goes here](/img/cloud-soar/image57.png)
 _Triage Settings_
 
 ### Field Settings
 
-By default, the Triage module contains two fields, Status and Type.
-Additional values may be added to the Status field; however, the Type
-field is directly linked to the Incident Type field and cannot be
-modified directly. New types must be added from the Incidents section of
-the Custom Fields page.
+By default, the Triage module contains two fields, Status and Type. Additional values may be added to the Status field; however, the Type field is directly linked to the Incident Type field and cannot be modified directly. New types must be added from the Incidents section of the Custom Fields page.
 
-Up to 100 custom fields and be created for the Triage module, allowing
-customization for any use case. To add additional fields, navigate to
-**Settings > Customizations > Custom Fields** and select
-Triage Events (or the name of the module if you have renamed it from the
-default of **Triage**). To add a new field, click **Add** from the upper
+Up to 100 custom fields and be created for the Triage module, allowing customization for any use case. To add additional fields, navigate to **Settings > Customizations > Custom Fields** and select Triage Events (or the name of the module if you have renamed it from the default of **Triage**).
+
+To add a new field, click **Add** from the upper
 right-hand corner and configure the field as desired. Note that to be
 able to filter events in the Triage module based on the values of a
 field, **Use as filter** must be checked in the Visualization tab when
 adding or modifying a field.
 
-As fields are created, they will be assigned a number starting at 1,
+As fields are created, they will be assigned a number starting at `1`,
 which will be used to identify the field when adding events via the API.
-The first field added will be identified as **opt_1**, the second as
-**opt_2**, and so on. Regardless of the ordering of the fields on the
+The first field added will be identified as `opt_1`, the second as
+`opt_2`, and so on. Regardless of the ordering of the fields on the
 screen, these numbers will remain the same. If a field is deleted, the
-number will not be reused. For example, if you have defined opt_1
-through opt_8 and delete the field opt_8, the next field added will
-still become opt_9. It is important to remember these field numbers, as
+number will not be reused. For example, if you have defined `opt_1`
+through `opt_8` and delete the field `opt_8`, the next field added will
+still become `opt_9`. It is important to remember these field numbers, as
 they will be used when the API is invoked.
 
 ### Working with Events
 
-The Triage module is accessible from the Incidents section by clicking
-on Triage (or the name of the module if you have renamed it from the
-default of **Triage**). All events which have not been converted to an
-Incident will be displayed in a sortable table on the Triage main
-screen. Events may be sorted by any column values by clicking on the
-appropriate column.
+The Triage module is accessible from the Incidents section by clicking on Triage (or the name of the module if you have renamed it from the default of **Triage**). All events which have not been converted to an Incident will be displayed in a sortable table on the Triage main screen. Events may be sorted by any column values by clicking on the appropriate column.
 
-![alt-text goes here](/img/cloud-soar/image180.png)
+![Events](/img/cloud-soar/image58.png)
 _Triage Main Screen_
 
 The list of events can be filtered by any of the fields listed in the
@@ -650,89 +557,3 @@ automatically converted to an incident.
 
 ![alt-text goes here](/img/cloud-soar/image183.png)         
 _Converting to an Incident_
-
-### Triage Preferences
-
-Triage display preferences can be customized from Triage customization
-section. Triage events can be color coded based on status to easily
-distinguish them from each other when viewing the list of Triage events.
-
-The name of the module can also be modified from **Triage** to a name of
-your choosing. The new name will be displayed in all areas of Cloud SOAR,
-including the menu and logs.
-
-![Triage Settings](/img/cloud-soar/image57.png)
-_Triage Settings_
-
-**Triage Field Settings**
-
-By default, the Triage module contains two fields, Status and Type.
-Additional values may be added to the Status field; however, the Type
-field is directly linked to the Incident Type field and cannot be
-modified directly. New types must be added from the Incidents section of
-the Custom Fields page.
-
-Up to 100 custom fields and be created for the Triage module, allowing
-customization for any use case. To add additional fields, navigate to
-**Settings > Customization > Custom Fields** and select Triage
-Events (or the name of the module if you have renamed it from the
-default of **Triage**). To add a new field, click **Add** from the upper
-right-hand corner and configure the field as desired. Note that to be
-able to filter events in the Triage module based on the values of a
-field, **Use as filter** must be checked in the Visualization tab when
-adding or modifying a field.
-
-As fields are created, they will be assigned a number starting at 1,
-which will be used to identify the field when adding events via the API.
-The first field added will be identified as **opt_1**, the second as
-**opt_2**, and so on. Regardless of the ordering of the fields on the
-screen, these numbers will remain the same. If a field is deleted, the
-number will not be reused. For example, if you have defined opt_1
-through opt_8 and delete the field opt_8, the next field added will
-still become opt_9. It is important to remember these field numbers, as
-they will be used when the API is invoked.
-
-**Working with Events**
-
-The Triage module is accessible from the Incidents section by clicking
-on Triage (or the name of the module if you have renamed it from the
-default of **Triage**). All events which have not been converted to an
-Incident will be displayed in a sortable table on the Triage main
-screen. Events may be sorted by any column values by clicking on the
-appropriate column.
-
-![alt-text goes here](/img/cloud-soar/image58.png)
-_Events_
-
-The list of events can be filtered by any of the fields listed in the
-filter section at the top of the Triage main screen.
-
-![alt-text goes here](/img/cloud-soar/image59.png)
-
-To view the details of a Triage event, click on the box and arrow icon
-in the Actions column for the event. If additional information is
-available, it will be displayed in this Event Details screen.
-
-To begin triaging an event, click on the person icon in the Actions
-column for the event to **grab** the event. Once an event is grabbed by an
-analyst, any Playbooks defined for that incident type will be
-automatically executed and the results will be displayed in the Results
-section of the Event Details screen. Because all Playbooks for the
-specified incident type are automatically executed as soon as the
-incident is grabbed, it is recommended that separate incident types and Playbooks be created for Triage events.
-
-After triaging the event, the event may be reassigned to another user
-for further analysis, discarded or converted to an incident. To reassign
-the event to another user, click on the circular arrow icon in the
-Actions column for the event. To discard the event, click on the
-trashcan icon in the Actions column for the event.
-
-![alt-text goes here](/img/cloud-soar/image60.png)
-
-To convert the event to an incident, click **Convert to Incident** in the
-far right-hand corner of the Event in question. Select the appropriate
-incident template, owner and label, then click **Save**. The event,
-including all enrichment information gathered from any Playbooks, will be
-automatically converted to an incident.
-
-![alt-text goes here](/img/cloud-soar/image61.png)
