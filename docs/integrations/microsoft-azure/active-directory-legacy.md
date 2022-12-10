@@ -96,18 +96,17 @@ Before proceeding, verify that the Active Directory module is available. The Act
 
 1. Choose **Start > Administrative Tools**.
 2. Look for **Active Directory Module for Windows PowerShell**.
-
-
-1. If the module isn't installed, install RSAT as described on [Microsoft TechNet](https://technet.microsoft.com/en-us/library/cc730825.aspx).
+3. If the module isn't installed, install RSAT as described on [Microsoft TechNet](https://technet.microsoft.com/en-us/library/cc730825.aspx).
 
 
 ### B. Download and deploy Sumo scripts
 
 In order to collect files, download the following scripts:
 
-* [adQueryDS.ps1](/files/adQueryDS.ps1)  - Core functions that are leveraged by the other scripts
-* [adObjectCollector.ps1](/files/adObjectCollector.ps1)  - Active Directory object collector
-* [domainCollector.ps1](/files/domainCollector.ps1) - Active Directory domain collector
+* <a href="https://help.sumologic.com/files/adQueryDS.ps1" target="_blank">adQueryDS.ps1</a>: Core functions that are leveraged by the other scripts
+* <a href="https://help.sumologic.com/files/adObjectCollector.ps1" target="_blank">adObjectCollector</a>: Active Directory object collector
+* <a href="https://help.sumologic.com/files/domainCollector.ps1" target="_blank">domainCollector</a>: Active Directory domain collector
+
 
 These scripts should be deployed on a machine that is part of the domain where the log files exist. After deploying the scripts, you'll need to configure a script source on Sumo Logic for **domainCollector.ps1** and another script source for **adObjectCollector.ps1**.
 

@@ -1,6 +1,7 @@
 ---
 id: create-allowlist-ip-cidr-addresses
 title: Create an Allowlist for IP or CIDR Addresses
+description: Service Allowlist Settings let you explicitly grant access to specific IP or CIDR addresses.
 ---
 
 Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.

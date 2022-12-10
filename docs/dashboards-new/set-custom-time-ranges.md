@@ -15,7 +15,7 @@ The following guidelines apply to customized time ranges for panels and a Dashb
 
 ## Specify the time range for a panel
 
-You can set the time range for a panel by selecting a predefined interval from a drop-down list, or by specifying custom dates and times for the interval. 
+You can set the time range for a panel by selecting a predefined interval from a dropdown list, or by specifying custom dates and times for the interval. 
 
 To select a predefined time interval for a panel, do the following:
 
@@ -24,7 +24,7 @@ To select a predefined time interval for a panel, do the following:
 
     ![TimeRange_Panel_TimeDisplay.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_Panel_TimeDisplay.png)
 
-1. Select the desired time interval from the drop-down list. In our example, we selected 24 hours as the new time range.
+1. Select the desired time interval from the dropdown list. In our example, we selected 24 hours as the new time range.
 
     ![time range dropdown.png](/img/dashboards-new/set-custom-time-ranges/time-range-dropdown.png)
 
@@ -85,7 +85,7 @@ To specify a dashboard-level time range setting, do the following:
 
 1. Do one of the following:
 
-    * Select the desired time interval from the drop-down list. In our example, we selected 60 minutes as the new time range.
+    * Select the desired time interval from the dropdown list. In our example, we selected 60 minutes as the new time range.
     * Click the Custom tab in the dialog, select start and stop dates on the calendar, then specify start and stop times and click **Apply**.
 
     ![TimeRange_Set_Dashboard_TimeRange.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_Set_Dashboard_TimeRange.png)

@@ -1,6 +1,7 @@
 ---
 id: integrate-with-bitium
 title: Integrate Sumo Logic with Bitium
+description: You can integrate Bitium with Sumo Logic’s SAML 2.0 API to allow users to log in to Sumo Logic using their Single Sign-On (SSO) credentials.
 ---
 
 ## Availability

@@ -45,7 +45,7 @@ To create a Field Extraction Rule:
     :::
 
    * **Parsed template** (Optional for Ingest Time rules).
-     * Click the drop down under **Parsed template** to see the available templates.
+     * Click the dropdown under **Parsed template** to see the available templates.
      * Choose a template and click **Use Template**. The template is applied to the Parse Expression.
    * **Parse Expression**. (Applicable to Ingest Time rules)
      * Type a valid parse expression with supported parse and search operators. Because fields are associated with the Rule Name, you can parse one particular field into as many rules as you'd like. For example, to parse a single field, you could use a definition similar to this: `parse "message count = *," as msg_count ` To parse multiple fields, you could use a definition similar to this: `parse "[hostId=*] [module=*] [localUserName=*] [logger=*] [thread=*]" as hostId, module, localUserName, logger, thread`

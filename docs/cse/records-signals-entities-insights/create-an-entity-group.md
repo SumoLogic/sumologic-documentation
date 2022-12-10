@@ -48,6 +48,14 @@ Follow these instructions to create an Entity Group based on Entity name or whet
     * **MAC Address**
     * **Username**
     * **Hostname**
+    * **Process**
+    * **Command**
+    * **Hash**
+    * **Domain**
+    * **User Agent**
+    * **Email**
+    * **URL**
+    * **File**
 8. **Match Condition**. Select one of the following match types:
     * **Prefix**. After you select this option, a **Prefix** field appears. Enter a string that matches the leading characters of the names of the Entities you want to include in the group.
     * **Suffix**. After you select this option, a **Suffix **field appears. Enter a string that matches the the trailing characters of the names of the Entities you want to include in the group.
@@ -68,8 +76,7 @@ Follow these instructions to create an Entity Group that corresponds to a group 
     <img src={useBaseUrl('/img/cse/gear-menu-2.png')} alt="gear-menu.png" />
 2. On the **Entity Groups** page, click **Create**.
     <img src={useBaseUrl('/img/cse/Entity-Groups-List.png')} alt="Entity-Groups-List" />
-3. The **Create Entity Group** popup appears. (In the screenshot below, values are already entered.)
-    <img src={useBaseUrl('/img/cse/create-entity-group-inventory.png')} alt="create-entity-group-inventory.png" />
+3. The **Create Entity Group** popup appears. (In the screenshot below, values are already entered.) <br/><img src={useBaseUrl('/img/cse/create-entity-group-inventory.png')} alt="create-entity-group-inventory.png" />
 4. **Name**. Enter a name for the Entity Group
 5. **Description**. (Optional.)
 6. **Group Entities matching the following**. Select **Inventory**.

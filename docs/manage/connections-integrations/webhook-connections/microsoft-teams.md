@@ -5,6 +5,11 @@ sidebar_label: Microsoft Teams
 description: Send notifications from alerts to Microsoft Teams.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="thumbnail icon" width="50"/>
+
+
 [Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
 
 ## Prerequisite
@@ -26,24 +31,18 @@ You need the **Manage connections** [role capability](../../users-roles/roles/
 
 This section demonstrates how to create a webhook connection from Sumo Logic to Microsoft Teams.
 
-1. In Sumo Logic, go to **Manage Data \> Monitoring \> Connections**.
-1. Click **+ Add** and choose **Microsoft Teams** as the connection type.
-
-    ![Microsoft Teams webhook connection tile.png](/img/connection-and-integration/ms-teams-webhook-connection-tile.png)
-
+1. In Sumo Logic, go to **Manage Data** > **Monitoring** > **Connections**.
+1. Click **+ Add** and choose **Microsoft Teams** as the connection type.<br/> ![Microsoft Teams webhook connection tile.png](/img/connection-and-integration/ms-teams-webhook-connection-tile.png)
 1. Enter a **Name** and give an optional **Description** to the connection.
 1. Paste the **URL** from Microsoft Teams into the **URL** field.
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
 1. Customize the **Activity Title** if desired, the default is `Monitor Alert: {{TriggerType}} on {{Name}}`.
 1. (Optional) Customize the **Activity Subtitle** if desired, the default is `Created On Date: {{TriggerTime}}`.
 1. (Optional) Customize the **Card Text** if desired, the default is `{{Description}}`.
-
     :::note
     Edits to the **Activity Title**, **Activity Subtitle**, and **Card Text** values are automatically updated in the JSON payload and vice versa.
     :::
-
 1. The following JSON is the default **Payload**, you can customize it as needed. For details on variables you can use as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
-
     ```json
     {
     "@type": "MessageCard",
@@ -95,5 +94,4 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
     ]
     }
     ```
-  
 1. Click **Save**.

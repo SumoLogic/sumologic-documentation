@@ -1,6 +1,7 @@
 ---
 id: set-up-adfs-authenticate-users
 title: Set Up ADFS to Authenticate Sumo Logic Users
+description: Learn how to use ADFS to authenticate Sumo Logic users.
 ---
 
 :::important

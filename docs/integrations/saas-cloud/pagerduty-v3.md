@@ -68,9 +68,9 @@ To configure Hosted Collector and HTTP Source, do the following:
 3. Follow the instructions for configuring an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 
-2.png "image_tooltip")
+:::important
 Make sure to save the **HTTP Source Address URL**. You will be asked for this **Endpoint URL** when you configure the PagerDuty Webhook in the following procedure.
-
+:::
 
 ### Create a PagerDuty V3 Webhook
 

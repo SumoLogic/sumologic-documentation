@@ -23,7 +23,7 @@ You need a SailPoint Admin account generated `Client ID` and `Client Secret K
 
 To generate a [personal access token](https://developer.sailpoint.com/docs/authentication.html#personal-access-tokens) from the IdentityNow UI, perform the following steps after logging into your IdentityNow instance:
 
-1. Select **Preferences** from the drop-down menu under your username, then **Personal Access Tokens** on the left. You can also go straight to the page using this URL, replacing `{tenant}` with your IdentityNow tenant: `https://{tenant}.identitynow.com/ui/d/user-preferences/personal-access-tokens`
+1. Select **Preferences** from the dropdown menu under your username, then **Personal Access Tokens** on the left. You can also go straight to the page using this URL, replacing `{tenant}` with your IdentityNow tenant: `https://{tenant}.identitynow.com/ui/d/user-preferences/personal-access-tokens`
 
 1. Click **New Token** and enter a meaningful description to help differentiate the token from others.
 

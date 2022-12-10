@@ -40,7 +40,7 @@ To find content in the Library that has been shared with you:
 To share content from the Left-nav or the Library:
 
 1. Click the Details icon ![details](/img/content-sharing/details.png) for the content you want to share.
-1. Select **Share** from the drop-down menu.
+1. Select **Share** from the dropdown menu.
 
     ![Share Search](/img/content-sharing/share-search.png)
 

@@ -178,7 +178,7 @@ To switch between views and time interval displays, do the following:
 
     The analytic data type (color) reappears in the graph and the credit usage for the data type is once again included in the donut graph on the right.
 
-1. To change the aggregation of the data, click the **Group by** arrow and choose **day**, **week**, or **month** from the drop-down list. The default is Group by day.
+1. To change the aggregation of the data, click the **Group by** arrow and choose **day**, **week**, or **month** from the dropdown list. The default is Group by day.
 
     ![CFCredits_GroupBy_menu.png](/img/subscriptions/CFCredits_GroupBy_menu.png)
 
