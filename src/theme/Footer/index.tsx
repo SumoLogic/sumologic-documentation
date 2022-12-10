@@ -136,7 +136,7 @@ export const Footer = () => {
           {[
             {
               alt: 'Sumo Logic YouTube',
-              color: 'common.white',
+              color: '#e3e3e3',
               href: 'https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw',
               icon: faYoutube,
               size: 'lg',
