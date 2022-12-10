@@ -263,7 +263,7 @@ module.exports = {
           {
             type: 'html',
             position: 'right',
-            value: '<button>Give feedback</button>',
+            value: '<div id="google_translate_element"></div>',
           },
           {
             label: 'Guides',
