@@ -357,6 +357,11 @@ module.exports = {
             ]
           },
           {
+            label: 'Contribute',
+            to: '/docs/contributing',
+            position: 'left',
+          },
+          {
             type: 'html',
             position: 'right',
             value: '<div id="google_translate_element"></div>',
@@ -367,20 +372,10 @@ module.exports = {
             className: 'header-login',
           },
           {
-            position: 'right',
             className: 'header-github-link',
-            type: 'dropdown',
             'aria-label': 'GitHub repository',
-            items:[
-              {
-                label: 'Contribution Guide',
-                to: '/docs/contributing',
-              },
-              {
-                label: 'Docs GitHub',
-                href: 'https://github.com/SumoLogic/sumologic-documentation',
-              },
-            ]
+            position: 'right',
+            to: 'https://github.com/SumoLogic/sumologic-documentation',
           },
         ],
       },
@@ -407,19 +402,19 @@ module.exports = {
           {
             items: [
               {
-                label: 'Submit a Request',
+                label: 'Contact Support',
                 href: 'https://support.sumologic.com/hc/en-us',
-              },
-              {
-                label: 'Community',
-                href: 'https://support.sumologic.com/hc/en-us/community/topics',
               },
               {
                 label: 'Sumo Dojo Slack',
                 href: 'https://sumodojo.slack.com/',
               },
+              {
+                label: 'Community',
+                href: 'https://support.sumologic.com/hc/en-us/community/topics',
+              },
             ],
-            title: 'Support',
+            title: 'Help',
           },
           {
             items: [
