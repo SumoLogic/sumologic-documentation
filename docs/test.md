@@ -4,7 +4,7 @@ title: Sumo Syntax Test
 ---
 
 
-```sumo
+```scala
 _sourceCategory=Labs/Apache/Access
 | parse "HTTP/1.1\" * " as status_code
 | if(status_code=200, 1, 0) as successes
@@ -16,6 +16,15 @@ _sourceCategory=Labs/Apache/Access
 _sourceCategory=Labs/Apache/Access and status_code=404
 | logcompare timeshift -24h
 | where abs(_deltaPercentage) > 25
+```
+
+```sumo
+_sourceCategory=Azure/DB/SQL/Logs ErrorEvent "\"operationName\":\"ErrorEvent\""
+| json "LogicalServerName", "SubscriptionId", "ResourceGroup", "resourceId", "category", "operationName", "properties" nodrop
+| json field=properties "severity", "error_number", "DatabaseName", "message", "user_defined", "state"
+| where operationName="ErrorEvent"
+| count as eventCount by message
+| top 10 message by eventCount, message asc
 ```
 
 
