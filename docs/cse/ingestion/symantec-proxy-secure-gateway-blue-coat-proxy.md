@@ -21,31 +21,28 @@ In this step, you configure a Syslog Source to collect ProxySG log messages. You
 
 ### Configure an Installed Collector
 
-1. In the Sumo Logic platform, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Installed Collector**.
 1. The **Add Installed Collector** popup appears.
 1. Download the appropriate collector for your operating system.
-1. Install the collector. Instructions for your preferred operating system and method of installation are available on the Installed Collectors page.
+1. Install the collector. Instructions for your preferred operating system and method of installation are available on the [Installed Collectors](/docs/send-data/installed-collectors) page.
 1. Once the collector is installed, confirm it is available on the **Collection** page and select **Edit**.
-1. The **Edit Collector popup** appears.  
-    ![edit-collector.png](/img/cse/edit-collector.png)
+1. The **Edit Collector popup** appears.<br/>![edit-collector.png](/img/cse/edit-collector.png)
 1. **Name**. Provide a Name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
 1. **Fields**. 
     1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
     1. If you are planning that all sources you add to this collector will use the same log parser (if they are the same type of log), click the **+Add Field** link, and add a field whose name is `_parser` with the value */Parsers/System/Blue Coat/Blue Coat ProxySG CSV*. This will cause all sources on the collector to use the specified parser.
-
-        :::note
-        It’s also possible to configure individual sources to forward to CSE, as described in the following section.
-        :::
-
+    :::note
+    It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+    :::
 1. Click **Save**.
 
 ### Configure a Syslog Source
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. Navigate to the Installed Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 
