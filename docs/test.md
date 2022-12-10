@@ -3,8 +3,20 @@ id: test
 title: Sumo Syntax Test
 ---
 
+```sumo
+_sourceCategory=Labs/Apache/Access (status_code=200 or status_code=404)
+| timeslice 1m
+| if (status_code = "200", 1, 0) as successes
+| if (status_code = "404", 1, 0) as fails
+| sum(successes) as success_cnt, sum(fails) as fail_cnt by _timeslice
+| (fail_cnt/(success_cnt+fail_cnt)) * 100 as failure_rate_pct
+| sort _timeslice desc
+| outlier failure_rate_pct window=5, threshold=3, consecutive=1, direction=+
+```
 
-```scala
+
+
+```sumo
 _sourceCategory=Labs/Apache/Access
 | parse "HTTP/1.1\" * " as status_code
 | if(status_code=200, 1, 0) as successes
@@ -42,16 +54,4 @@ _sourceCategory=Labs/Apache/Access
 | lookup latitude, longitude from geo://location on ip=client_ip
 | count by latitude, longitude
 | sort _count
-```
-
-
-```sumo
-_sourceCategory=Labs/Apache/Access (status_code=200 or status_code=404)
-| timeslice 1m
-| if (status_code = "200", 1, 0) as successes
-| if (status_code = "404", 1, 0) as fails
-| sum(successes) as success_cnt, sum(fails) as fail_cnt by _timeslice
-| (fail_cnt/(success_cnt+fail_cnt)) * 100 as failure_rate_pct
-| sort _timeslice desc
-| outlier failure_rate_pct window=5, threshold=3, consecutive=1, direction=+
 ```

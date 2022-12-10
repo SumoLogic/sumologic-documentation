@@ -245,7 +245,7 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, `sumo`],
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'sumo', `scala`],
     },
       navbar: {
         logo: {
