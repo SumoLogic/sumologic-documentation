@@ -149,7 +149,7 @@ export const Footer = () => {
             },
             {
               alt: 'Sumo Logic Twitter',
-              color: 'common.white',
+              color: '#e3e3e3',
               href: 'https://twitter.com/SumoLogic',
               icon: faTwitter,
               size: 'lg',
