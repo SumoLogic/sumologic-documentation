@@ -52,8 +52,8 @@ module.exports = {
       collapsed: true,
       items: [
         'app-observability/end-to-end',
-        'app-observability/real-user-monitoring',
         'app-observability/service-maps',
+        'app-observability/real-user-monitoring',
       ],
     },
     {
@@ -73,8 +73,8 @@ module.exports = {
       collapsed: true,
       items: [
         'platform-capabilities/dashboards',
-        'platform-capabilities/create-monitor',
         'platform-capabilities/schedule-search',
+        'platform-capabilities/create-monitor',
       ],
     },
     {
