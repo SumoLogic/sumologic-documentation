@@ -250,6 +250,34 @@ html[data-theme='light'] {
 
 
 
+.header-login:hover {
+  opacity: 0.85;
+}
+
+.header-login::before {
+  content: 'Start a Free Trial';
+  border: 1px solid #2aa1e6;
+  color: #FFF;
+  border-radius: 3px;
+  padding: 2px 10px;
+  font-size: 13px;
+  display: inline-flex;
+  background: #2aa1e6;
+}
+
+.header-login::after {
+    display: none !important;
+    content: none !important;
+}
+
+[data-theme='dark'] .header-login::before {
+  background: transparent;
+  border: 1px solid #2aa1e6;
+  color: #FFF;
+  display: inline-flex;
+  background: #2aa1e6;
+}
+
 
 
 .header-search-link:hover {
@@ -514,7 +542,7 @@ html[data-theme='dark'] .navbar-item-github:before {
 .navbar-trial {
   background-color: #2aa1e6;
   color: white;
-  padding: 4px 12px;
+  padding: 2px 10px;
   font-weight: 300;
   font-size: 14px;
   text-decoration: none;

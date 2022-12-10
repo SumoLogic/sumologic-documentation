@@ -255,17 +255,6 @@ module.exports = {
         },
         items: [
           {
-            label: 'Start a Free Trial',
-            to: 'https://www.sumologic.com/sign-up',
-            position: 'right',
-            className: 'navbar-trial',
-          },
-          {
-            type: 'html',
-            position: 'right',
-            value: '<div id="google_translate_element"></div>',
-          },
-          {
             label: 'Guides',
             position: 'left',
             to: '#',
@@ -368,43 +357,30 @@ module.exports = {
             ]
           },
           {
-            label: 'Contribute to Docs',
-            to: '/docs/contributing',
-            position: 'left',
+            type: 'html',
+            position: 'right',
+            value: '<div id="google_translate_element"></div>',
           },
           {
-            label: 'Help',
-            position: 'left',
-            to: '#',
+            to: 'https://www.sumologic.com/sign-up',
+            position: 'right',
+            className: 'header-login',
+          },
+          {
+            position: 'right',
+            className: 'header-github-link',
             type: 'dropdown',
+            'aria-label': 'GitHub repository',
             items:[
               {
-                label: 'Training',
-                href: 'https://www.sumologic.com/learn/training',
+                label: 'Contribution Guide',
+                to: '/docs/contributing',
               },
               {
-                label: 'Support',
-                href: 'https://support.sumologic.com/hc/en-us',
-              },
-              {
-                label: 'Community',
-                href: 'https://support.sumologic.com/hc/en-us/community/topics',
-              },
-              {
-                label: 'Service Status',
-                href: 'https://status.sumologic.com',
-              },
-              {
-                label: 'Feature Requests',
-                href: 'http://ideas.sumologic.com',
+                label: 'Docs GitHub',
+                href: 'https://github.com/SumoLogic/sumologic-documentation',
               },
             ]
-          },
-          {
-            className: 'header-github-link',
-            'aria-label': 'GitHub repository',
-            position: 'right',
-            to: 'https://github.com/SumoLogic/sumologic-documentation',
           },
         ],
       },
@@ -414,7 +390,7 @@ module.exports = {
           {
             items: [
               {
-                label: 'Get Certified for Free',
+                label: 'Training & Certifications',
                 href: 'https://www.sumologic.com/learn/training/',
               },
               {
@@ -423,7 +399,7 @@ module.exports = {
               },
               {
                 label: 'Request Demo',
-                href: 'https://www.sumologic.com/request-demo/',
+                href: 'https://www.sumologic.com/request-demo',
               },
             ],
             title: 'Learn',
@@ -431,8 +407,8 @@ module.exports = {
           {
             items: [
               {
-                label: 'About Us',
-                href: 'https://www.sumologic.com/company/about-us/',
+                label: 'Submit a Request',
+                href: 'https://support.sumologic.com/hc/en-us',
               },
               {
                 label: 'Community',
@@ -443,7 +419,7 @@ module.exports = {
                 href: 'https://sumodojo.slack.com/',
               },
             ],
-            title: 'Sumo Community',
+            title: 'Support',
           },
           {
             items: [
