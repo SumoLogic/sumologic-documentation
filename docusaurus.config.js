@@ -31,6 +31,14 @@ module.exports = {
       src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
       async: true,
     },
+    {
+      src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+      async: true,
+    },
+    {
+      src: './src/helper/google-translate.js',
+      async: true,
+    },
   ],
   staticDirectories: ['static'],
   webpack: {
@@ -251,6 +259,11 @@ module.exports = {
             to: 'https://www.sumologic.com/sign-up',
             position: 'right',
             className: 'navbar-trial',
+          },
+          {
+            type: 'html',
+            position: 'right',
+            value: '<div id="google_translate_element"></div>',
           },
           {
             label: 'Guides',
