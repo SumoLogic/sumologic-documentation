@@ -11,13 +11,17 @@ import clsx from 'clsx';
 import type {Props} from '@theme/NavbarItem/HtmlNavbarItem';
 
 (function () {
+  if (typeof window !== "undefined") {
   window.googleTranslateElementInit = function () {
         new google.translate.TranslateElement(
             {pageLanguage: 'en'},
             'google_translate_element'
         );
   }
-})();
+}}
+)
+
+();
 
 export default function HtmlNavbarItem({
   value,
