@@ -20,7 +20,7 @@ export const Home = () => {
       {/* Header */}
       <Typography
         bgcolor='#0045BE'
-        color='common.white'
+        color='#e3e3e3'
         fontFamily='Lab Grotesque'
         fontSize={28}
         fontWeight={700}
@@ -100,7 +100,7 @@ export const Home = () => {
                   New to Sumo?
                 </Typography>
                 <Typography
-                  color='common.white'
+                  color='#e3e3e3'
                   fontFamily='Lab Grotesque'
                   pb={2}
                   textAlign='left'
@@ -129,8 +129,8 @@ export const Home = () => {
                     key={rest.href}
                     sx={{
                       bgcolor: 'transparent',
-                      border: '1px solid',
-                      borderColor: 'common.white',
+                      border: '.5px solid',
+                      borderColor: '#e3e3e3',
                       borderRadius: 2,
                       fontFamily: 'Lab Grotesque',
                       textTransform: 'none',
@@ -141,7 +141,7 @@ export const Home = () => {
                       '&:hover': {
                         bgcolor: '#0045BE',
                         borderColor: '#0045BE',
-                        color: 'common.white',
+                        color: '#e3e3e3',
                       },
                     }}
                     variant='contained'
