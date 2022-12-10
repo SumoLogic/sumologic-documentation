@@ -1,6 +1,7 @@
 ---
-id: dashboards
-title: Dashboards 📈
+id: service-maps
+title: Service Maps
+hide_table_of_contents: true
 ---
 
 <head>
@@ -12,9 +13,6 @@ import Iframe from 'react-iframe';
 <div>
 <script src="https://js.storylane.io/js/v1/storylane.js"></script>
 <div class="sl-embed" >
-<iframe class="sl-demo" src="https://app.storylane.io/demo/hbrvdvnfuaw3" allow="fullscreen" ></iframe>
+<iframe class="sl-demo" src="https://app.storylane.io/demo/udl81trasvdk" allow="fullscreen" ></iframe>
 </div>
 </div>
-
-
-<br/><br/><br/>

@@ -31,6 +31,14 @@ module.exports = {
       src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
       async: true,
     },
+    {
+      src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+      async: true,
+    },
+    {
+      src: './src/helper/google-translate.js',
+      async: true,
+    },
   ],
   staticDirectories: ['static'],
   webpack: {
@@ -131,6 +139,16 @@ module.exports = {
     'docusaurus-plugin-sass',
     'plugin-image-zoom',
     'react-iframe',
+    ['@docusaurus/plugin-content-docs',
+      {
+        id: 'community',
+        path: './community',
+        routeBasePath: 'hackathon',
+        sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        breadcrumbs: false,
+        // ... other options
+      },
+    ],
     ['@docusaurus/plugin-content-blog',
       {
          id: 'blog-cse',
@@ -237,12 +255,6 @@ module.exports = {
         },
         items: [
           {
-            label: 'Start a Free Trial',
-            to: 'https://www.sumologic.com/sign-up',
-            position: 'right',
-            className: 'navbar-trial',
-          },
-          {
             label: 'Guides',
             position: 'left',
             to: '#',
@@ -345,37 +357,19 @@ module.exports = {
             ]
           },
           {
-            label: 'Contribute to Docs',
+            label: 'Contribute',
             to: '/docs/contributing',
             position: 'left',
           },
           {
-            label: 'Help',
-            position: 'left',
-            to: '#',
-            type: 'dropdown',
-            items:[
-              {
-                label: 'Training',
-                href: 'https://www.sumologic.com/learn/training',
-              },
-              {
-                label: 'Support',
-                href: 'https://support.sumologic.com/hc/en-us',
-              },
-              {
-                label: 'Community',
-                href: 'https://support.sumologic.com/hc/en-us/community/topics',
-              },
-              {
-                label: 'Service Status',
-                href: 'https://status.sumologic.com',
-              },
-              {
-                label: 'Feature Requests',
-                href: 'http://ideas.sumologic.com',
-              },
-            ]
+            type: 'html',
+            position: 'right',
+            value: '<div id="google_translate_element"></div>',
+          },
+          {
+            to: 'https://www.sumologic.com/sign-up',
+            position: 'right',
+            className: 'header-login',
           },
           {
             className: 'header-github-link',
@@ -391,7 +385,7 @@ module.exports = {
           {
             items: [
               {
-                label: 'Get Certified for Free',
+                label: 'Training & Certifications',
                 href: 'https://www.sumologic.com/learn/training/',
               },
               {
@@ -400,7 +394,7 @@ module.exports = {
               },
               {
                 label: 'Request Demo',
-                href: 'https://www.sumologic.com/request-demo/',
+                href: 'https://www.sumologic.com/request-demo',
               },
             ],
             title: 'Learn',
@@ -408,19 +402,19 @@ module.exports = {
           {
             items: [
               {
-                label: 'About Us',
-                href: 'https://www.sumologic.com/company/about-us/',
-              },
-              {
-                label: 'Community',
-                href: 'https://support.sumologic.com/hc/en-us/community/topics',
+                label: 'Contact Support',
+                href: 'https://support.sumologic.com/hc/en-us',
               },
               {
                 label: 'Sumo Dojo Slack',
                 href: 'https://sumodojo.slack.com/',
               },
+              {
+                label: 'Community',
+                href: 'https://support.sumologic.com/hc/en-us/community/topics',
+              },
             ],
-            title: 'Sumo Community',
+            title: 'Help',
           },
           {
             items: [

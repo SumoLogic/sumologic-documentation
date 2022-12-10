@@ -3,7 +3,7 @@
 }
 
 .link__label {
-    font-size: 0.8rem !important;
+    font-size: 0.75rem !important;
 }
 
 [data-theme='dark'] .link__label:hover {

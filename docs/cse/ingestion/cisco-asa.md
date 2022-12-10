@@ -28,10 +28,9 @@ In this step, you configure a Syslog Source to collect Cisco ASA log messages. Y
 1. **Fields**. 
     * If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
     * If you are planning that all sources you add to this collector will use the same log parser (if they are the same type of log), click the **+Add Field** link, and add a field whose name is  `_parser` with the value */Parsers/System/Cisco/Cisco ASA*. This will cause all sources on the collector to use the specified parser.
-
-        :::note
-        It’s also possible to configure individual sources to forward to CSE, as described in the following section.
-        :::
+    :::note
+    It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+    :::
 
 1. Click **Save**.
 
