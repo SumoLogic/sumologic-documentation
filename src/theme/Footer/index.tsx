@@ -95,7 +95,7 @@ export const Footer = () => {
                         minWidth: 'auto',
                         ml: 1,
                         '& svg': {
-                          color: 'common.white',
+                          color: '#e3e3e3',
                         }
                       }}
                     >
