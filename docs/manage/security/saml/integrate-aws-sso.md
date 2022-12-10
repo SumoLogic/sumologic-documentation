@@ -1,6 +1,7 @@
 ---
 id: integrate-aws-sso
 title: Integrate Sumo with AWS Single Sign-On
+description: Learn how to configure  AWS Single Sign-On for Sumo Logic.
 ---
 
 

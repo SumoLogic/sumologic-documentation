@@ -8,7 +8,7 @@ When you set a time range for a dashboard (Last 15 Minutes, Previous Month, and
 
 Dashboard panels are limited to a 32-day maximum time range.
 
-On the dashboards page, select from the drop-down menu at the dashboard level or panel level.
+On the dashboards page, select from the dropdown menu at the dashboard level or panel level.
 
 At the dashboard level, the menu includes these options in addition to the time ranges:
 

@@ -69,7 +69,7 @@ You can use JSON to configure a processing rule, use the **Forward** filterTy
 1. Type a **Name** for this rule. (Names have a maximum of 32 characters.)
 1. For **Filter**, type a regular expression that defines the messages you want to filter. The rule must match the whole message. For multi-line log messages, to get the lines before and after the line containing your text, wrap the segment with **(?s).\* **such as: `(?s).*matching text(?s).*` Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax)
 1. Select **Archive messages that match** as the rule type. This option is visible only if you have defined at least one [**AWS Archive bucket** destination](#create-an-aws-archive-destination), as described in the previous section. 
-1. Select the Destination from the drop-down menu.  
+1. Select the Destination from the dropdown menu.  
 
     ![archive rule.png](/img/archive/archive-rule.png)
 
@@ -169,7 +169,7 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
     * For **Role-based access** enter** **the Role ARN that was provided by AWS after creating the role.   
     * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 1. Create any Processing Rules you'd like for the AWS Source.
-1. When you are finished configuring the Source click **Save**.
+1. When you are finished configuring the Source, click **Save**.
 
 ## Archive page
 

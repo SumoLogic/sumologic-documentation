@@ -27,14 +27,14 @@ Explore is an out-of-the-box Sumo Logic navigation tool that provides an intuiti
 To open Explore and AWS Observability View, do the following:
 
 1. Log in to Sumo Logic and click **+ New** on the top menu bar.
-1. From the drop-down menu, choose **Explore**. 
+1. From the dropdown menu, choose **Explore**. 
 
     ![Explorer.png](/img/observability/Explorer.png)
 
     The Explore navigation panel appears on the left.
 
 1. Click the **Explore By** arrow and select **AWS Observability** from
-    the drop-down menu.
+    the dropdown menu.
 
     ![OS_Explore_By_menu.png](/img/observability/OS_Explore_By_menu.png)
 
