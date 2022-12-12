@@ -19,6 +19,10 @@ Once you have created an ingest budget you can assign a Collector to it. You ca
 
 The UI installer for Installed Collectors does not support assigning ingest budgets, use another method.
 
+:::note
+Assigning an Ingest Budget to a Collector is only relavant for V1 Ingest Budgets. V2 Ingest Budgets assign budgets to your log data by **Fields** or built-in metadata fields, and do not use the reserved **`_budget`** field.
+:::
+
 ## Collection page
 
 On the **Manage Data** \> **Collection** \> **[Collection page](/docs/manage/collection)** when editing an existing Collector or creating a new Hosted Collector there is an option, **Assign to a Budget**, that allows you to assign an ingest budget to a Collector.
