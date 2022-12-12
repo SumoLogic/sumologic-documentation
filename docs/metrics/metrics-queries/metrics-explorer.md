@@ -130,6 +130,16 @@ You’ll be prompted with the options to:
 * Include data points. If you select this option, the export will include the individual data points collected during the currently selected time range.
 * Export only selected fields. You can use this option to export a subset of the data and dimensions returned by your query. In the left pane, deselect the items you don’t want to export, and then choose Export only selected fields.
 
+## View Metrics Query History
+
+Every query run by a user is saved in query history (both incorrect and correct queries). You can use the Metrics query history to find your previous metric queries. Both those run in the Metric Tab and the Dashboard panels. Queries as saved and stored in user settings, just like information on hidden columns for Preview Table and open tabs.
+
+When you select a query from the list, it is updated for a query row where you opened query history dropdown. Selected queries from list are adjusted to current query editor mode selected by the user. For example, if you are in Basic mode and the query was run before in advanced mode, the Metrics interface  will adjust to Basic mode.
+
+:::note 
+If the query editor mode can't be adjusted, it is changed to advanced mode so that it can handle query from history. It is possible to run queries which were used with parameters/template variables.
+:::
+
 ## Create a metric query
 
 1. In the Sumo Logic UI, click **+ New** and choose **Metrics** from the dropdown list.
