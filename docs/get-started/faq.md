@@ -51,11 +51,12 @@ Account Owner selected when establishing your Sumo Logic account. 
 
 * Australia. Your data is stored in the AWS ap-southeast-2 (Sydney) region.
 * Canada. Your data is stored in the AWS ca-central-1 (Central) region.
-* Europe - Ireland. Your data is stored in the AWS eu-west-1 (Ireland) region.
-* Europe - Frankfurt. Your data is stored in the AWS eu-central-1 (Frankfurt) region.
-* India - Mumbai. Your data is stored in the AWS ap-south-1 (Mumbai) region.
+* Europe. Ireland. Your data is stored in the AWS eu-west-1 (Ireland) region.
+* Europe. Frankfurt. Your data is stored in the AWS eu-central-1 (Frankfurt) region.
+* India. Mumbai. Your data is stored in the AWS ap-south-1 (Mumbai) region.
 * Japan. Your data is stored in the AWS ap-northeast-1 (Tokyo) region.
 * North America. Your data is stored in the AWS us-east-1 (Northern Virginia) or us-west-2 (Oregon) region.
+* Federal. Your data is stored in the AWS us-east-1 (Northern Virginia) or us-west-2 (Oregon) region.
 
 Your data is stored only in your region. 
 
