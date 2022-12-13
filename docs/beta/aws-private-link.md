@@ -3,7 +3,7 @@ id: aws-private-link
 title: Sumo Logic Connector for AWS Privatelink 
 ---
 
-# Connect to Sumo Logic over AWS PrivateLink
+## Connect to Sumo Logic over AWS PrivateLink
 
 This feature is in Beta. To participate contact your Sumo account executive.
 
