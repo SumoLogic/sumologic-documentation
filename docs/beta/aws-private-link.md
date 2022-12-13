@@ -30,7 +30,7 @@ Sumo Logic exposes AWS PrivateLink endpoints to different regions that depend on
 
 If the VPC is in the same AWS region as your deployment you don't need to set up VPC peering. Navigate to **Actions**, then select **Modify private DNS name**.
 
-! [Endpoint](/img/beta/endpoints.png)
+![Endpoint](/img/beta/endpoints.png)
 
 Check the box to enable private DNS names.
 
