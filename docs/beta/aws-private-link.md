@@ -34,7 +34,7 @@ If the VPC is in the same AWS region as your deployment you don't need to set up
 
 Check the box to enable private DNS names.
 
-! [DnsCheckpoint](/img/beta/dns-checkpoint.png)
+![DnsCheckpoint](/img/beta/dns-checkbox.png)
 
 ##### VPC Peering
 
