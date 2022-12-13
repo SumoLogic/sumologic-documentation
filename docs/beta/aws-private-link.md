@@ -46,6 +46,6 @@ If the VPC is not in the same AWS region as your deployment you need to [set up 
 
 1. With the created private hosted zone, add an **A** record. Select the peered VPC in region **us-west-2**, where the Sumo Logic server-side infrastructure is located. 
 
-! [QuickRecord](/img/beta/quickcreaterecord.png)
+![QuickRecord](/img/beta/quickcreaterecord.png)
 
 4. Add the other peered VPC in the other region into the Route53 hosted zone.
