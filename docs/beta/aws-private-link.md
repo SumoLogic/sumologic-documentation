@@ -5,7 +5,7 @@ title: Sumo Logic Connector for AWS Privatelink
 
 ## Connect to Sumo Logic over AWS PrivateLink
 
-This feature is in Beta. To participate contact your Sumo account executive.
+This feature is in Beta. To participate contact your Sumo Logic account executive.
 
 [AWS PrivateLink](https://aws.amazon.com/privatelink/) provides private connectivity between VPCs, AWS services, and your on-premises networks, without exposing your traffic to the public internet.
 
