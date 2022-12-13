@@ -24,7 +24,7 @@ Sumo Logic exposes AWS PrivateLink endpoints to different regions that depend on
 * The service name is provided by Sumo Logic and will accept the endpoint connection request once we know you initiated the connection.
 * Select the VPC where the Sumo Logic collector will be installed or where HTTP requests will be made for HTTP Sources. 
 
-! [CreateEndpoint](/img/beta/create-endpoint.png)
+![CreateEndpoint](/img/beta/create-endpoint.png)
 
 ##### No VPC Peering
 
