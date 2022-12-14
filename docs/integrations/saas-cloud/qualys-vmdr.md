@@ -84,7 +84,7 @@ source=Qualys
 | order by %"Total" desc
 ```
 
-## Set up collection
+## Set up Collection
 
 This section provides instructions for setting up [Cloud-to-Cloud-Integration for Qualys VMDR](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source.md) to create the source and use the same source category while installing the app.
 
@@ -102,21 +102,19 @@ To install the Qualys VMDR app, follow the steps below:
 Version selection is applicable only to a few apps currently. For details, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 :::
 
-3. To install the app, complete the following fields.
- 1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
- 2. **Data Source**. Select either of these options for the data source:
-  * Choose **Source Category** and then choose a source category from the list.
-  * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example: `_sourceCategory=MyCategory`. 
- 3. **Advanced**. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
+3. Enter the following required fields.
+   1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
+   2. **Data Source**. Select either of these options for the data source:
+     * Choose **Source Category** and then choose a source category from the list.
+     * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example: `_sourceCategory=MyCategory`. 
+   3. **Advanced**. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
-
 The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but with some patience, you will be able to view full graphs and maps.
 
 
-## Viewing Qualys VMDR Dashboards
+## Viewing Qualys VMDR Dashboard
 
-**Qualys VMDR - Overview** This dashboard gives you visibility into low, medium, high, and critical vulnerabilities by hosts in your network. Use the dashboard to slice and dice data by vulnerability severity, IPs, and hosts.
-
+**Qualys VMDR - Overview dashboard** This dashboard gives you visibility into low, medium, high, and critical vulnerabilities by hosts in your network. Use the dashboard to slice and dice data by vulnerability severity, IPs, and hosts.
 <img src={useBaseUrl('img/integrations/saas-cloud/qualys-vmdr-overview.png')} alt="Qyalys VMDR Overview" width="900"/>
