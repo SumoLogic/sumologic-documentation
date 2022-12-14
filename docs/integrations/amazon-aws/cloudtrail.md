@@ -72,7 +72,6 @@ Before you begin, you must configure AWS CloudTrail logging to an S3 bucket in y
 ## Collecting Logs for the AWS CloudTrail App
 
 This section has instructions for configuring log collection for the AWS CloudTrail app.
-
 If you have more than one environment that generates CloudTrail data (such as ops, dev, and so on) you’ll need to configure a separate S3 Source for each environment. Learn more [here](#Configuring-the-AWS-CloudTrail-App-in-multiple-environments).
 
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
@@ -207,7 +206,7 @@ For example, for a production environment, you will add the string: `_source=Clo
 
 See an overview of your AWS users, resources, network and security events. The panels present information about top 10 users, failed logins, user locations, and resource creation and deletion.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail-overview.png')} alt="AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail-overview.png')} alt="AWS CloudTrail" width="900"/>
 
 **Geo Location of All Users**. Using a geolocation search, shows the locations of the IPs used by visitors on a map of the world.
 
@@ -226,7 +225,7 @@ See an overview of your AWS users, resources, network and security events. The p
 
 See information about your AWS users, including user locations, administrative activities, and instance launch and termination by users.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail-usermonitoring.png')} alt="AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail-usermonitoring.png')} alt="AWS CloudTrail" width="900"/>
 
 **Geo Location of All Users**. Using a geolocation search, shows the locations of the IPs used by visitors on a map of the world for the last 24 hours.
 
@@ -245,7 +244,7 @@ See information about your AWS users, including user locations, administrative a
 
 See information about network and security events, authorization failures, security group and network ACL changes, and short lived critical operations.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail-network.png')} alt="AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail-network.png')} alt="AWS CloudTrail" width="900"/>
 
 **Authorization Failures from All Countries**. Uses a geolocation search to display a map of where failures occur world-wide.
 
@@ -268,7 +267,7 @@ See information about network and security events, authorization failures, secur
 
 See information about operations activity in your AWS account, including action events, requested AWS services, events by AWS region, created and deleted resources, and elastic IP address operations.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail-operations.png')} alt="AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail-operations.png')} alt="AWS CloudTrail" width="900"/>
 
 **Action Events**. Displays a list of events that correspond to a user performing a certain AWS action over the past hour.
 
@@ -287,7 +286,7 @@ See information about operations activity in your AWS account, including action 
 
 See information about CloudTrail console logins, including location of users, login events by user, logins from multiple IP address, logins from outside the US, and logins without multi-factor authentication.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail-consolelogins.png')} alt="AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail-consolelogins.png')} alt="AWS CloudTrail" width="900"/>
 
 **Geo Location of All Users**. Uses a geo lookup operation to display the locations of all users by IP address on a map of the world for the last 24 hours.
 
