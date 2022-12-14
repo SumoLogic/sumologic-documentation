@@ -108,7 +108,7 @@ Click and drag on the chart to zoom.
 Multiple query rows are not supported currently. Charts shows data for first active (visible) row only.
 
 #### Dashboard support
-You can add Trace Duration Breakdown Chart as a dashboard panel. In other to do so - when ading a new panel to new or existing dashboard, pick Traces panel type, add required trace query filters and switch chart type to "Breakdown Chart" in Visual Settings -> Chart type.
+You can add Trace Duration Breakdown Chart as a dashboard panel. In other to do so - when adding a new panel to new or existing dashboard, pick Traces panel type, add required trace query filters and switch chart type to "Breakdown Chart" in Visual Settings -> Chart type.
 
 ## Trace View
 
