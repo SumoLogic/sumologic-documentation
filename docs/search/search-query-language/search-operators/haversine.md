@@ -31,7 +31,7 @@ To convert kilometers (KM) to miles you can divide the KM value by 1.609344.
 
 You can use the following query detect landspeed violations in AWS CloudTrail with haversine:
 
-```| _sourceCategory=Labs/AWS/CloudTrail
+```_sourceCategory=Labs/AWS/CloudTrail
 | json "userIdentity.userName" as user nodrop 
 | json "sourceIPAddress" as ip nodrop
 //| filter and sort the data
