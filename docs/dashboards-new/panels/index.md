@@ -258,11 +258,11 @@ To add a Trace List panel:
 
 1. Select **Chart Type** as either:
   
-    a) **Table**: showing table with traces
+    a) **Table**. showing table with traces
   
-    b) **Breakdown chart**: showing aggregated Trace Duration Breakdown Chart
+    b) **Breakdown chart**. showing aggregated Trace Duration Breakdown Chart
   
-   If **Table** was chosen, follow next steps:
+   If you choose **Table**, complete the following steps:
 
 1. Enter the **Rows Per Page** for the panel, between 5 to 100. The default amount is 15. The panel automatically paginates traces to browse through and view all traces.
 
