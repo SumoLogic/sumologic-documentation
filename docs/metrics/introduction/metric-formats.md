@@ -34,7 +34,7 @@ In the metric above: 
 * The timestamp for the instant that the metric was measured is 1460061337.
 
 :::tip
-Graphite does not support meta tags. However, you can use Sumo's metric rules editor to tag metrics with key-value pairs derived from a Graphite metric’s metric_path. Then, you can use those key-value pairs in metric queries. For more information, see [About Metric Rules](docs/metrics/metric-rules-editor#about-metric-rules).
+You can use Sumo's metric rules editor to tag metrics with key-value pairs derived from a Graphite metric’s metric_path. Then, you can use those key-value pairs in metric queries. For more information, see [About Metric Rules](docs/metrics/metric-rules-editor#about-metric-rules).
 :::
 
 ### Inferred metric name
@@ -73,6 +73,10 @@ Where:
 * `value` is any numeric value.
 * `timestamp` is a UNIX timestamp.
 
+:::important
+Currently Sumo interprets meta tags as non-identifying dimensions. However, this is subject to a change and meta tags and intrinsic tags will both be treated as identifying dimensions. To conform to the target behavior from the beginning, place all your metric's metadata in `intrinsic_tags` section.
+:::
+
 In the Graphite-formatted metric described above, the bit that identifies the thing being measured—the `metric_path`—is:
 
 ```
@@ -85,27 +89,11 @@ In the Carbon 2.0 format, that metric_path translates to a set of intrinsic tags
 cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle
 ```
 
-Carbon 2.0 is a richer metric format than Graphite, because it supports meta tags. So, a Carbon 2.0-formatted version of our example metric could include additional key-value pairs that will make our metrics easy to query. For example, below we include a meta tag that identifies the agent that collected the metric.
+The following is an example of `intrinsic_tags` with an empty set of `meta_tags`, a value, and a timestamp:
 
 ```
-cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  agent=biggie <value> <timestamp>
+cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  97.29 1460061337
 ```
-
-The following is an example of `intrinsic_tags` with an agent
-`meta_tags`, a value, and a timestamp:
-
-```
-cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  agent=biggie 97.29 1460061337
-```
-
-And an example of empty set of meta tags and two spaces between the
-intrinsic tags and value with timestamp :
-
-```
-cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  97.29 146006133
-```
-
-This [blog post](https://www.sumologic.com/blog/intrinsic-vs-meta-tags/) provides additional examples and discussion.
 
 ### Mandatory metric name
 
