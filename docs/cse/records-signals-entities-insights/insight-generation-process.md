@@ -26,8 +26,8 @@ During the next step of the [Record processing flow](../schema/record-processing
 | MAC Address | `device_mac`, `dstDevice_mac`, `srcDevice_mac` |
 | Process | `baseImage`, `parentBaseImage` |
 | URL | `http_url` |
-| User | `fromUser_username`, `fromUser_username_raw`, `user_username`, `user_username_raw` |
 | User Agent | `http_userAgent` |
+| Username | `fromUser_username`, `fromUser_username_raw`, `user_username`, `user_username_raw` |
 
 Which particular attribute an entity gets mapped to depends on the [field mappings](../schema/create-structured-log-mapping.md) in the log mapper for the message source. Given the example message above, “thedude” might be mapped to `user_username` and "185.35.135.245"
 to `srcDevice_ip`. 
