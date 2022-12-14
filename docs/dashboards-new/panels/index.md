@@ -256,7 +256,13 @@ To add a Trace List panel:
 
     ![timerange.png](/img/dashboards-new/panels/timerange.png)
 
-1. The **Chart Type** is set to Table.
+1. Select **Chart Type** as either:
+  
+    a) **Table**: showing table with traces
+  
+    b) **Breakdown chart**: showing aggregated Trace Duration Breakdown Chart
+  
+   If **Table** was chosen, follow next steps:
 
 1. Enter the **Rows Per Page** for the panel, between 5 to 100. The default amount is 15. The panel automatically paginates traces to browse through and view all traces.
 
