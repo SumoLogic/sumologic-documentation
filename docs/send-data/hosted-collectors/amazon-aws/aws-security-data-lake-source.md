@@ -25,7 +25,7 @@ Granting Sumo logic access to the Amazon Security Data Lake source  requires acc
 
 1. **Account ID**. Remember to copy and secure your Sumo Logic ID: ************. It will be needed in the further steps.
 2. **External ID**. The External ID is formed from your Sumo Logic region identifier. The format of your Sumo Logic account identifier is: `<SumoDeployment>: <SumoAccountId>` where:
-   * **SumoDeployment** is your Sumo Logic deployment that has to be entered in lowercase such as au, ca, de, eu, fed, in, jp, us1, or us2. To find your deployment, see [Sumo Logic API Authentication, Endpoints, and Security](docs/api/getting-started.md).
+   * **SumoDeployment** is your Sumo Logic deployment that has to be entered in lowercase such as au, ca, de, eu, fed, in, jp, us1, or us2. To find your deployment, see [Sumo Logic API Authentication, Endpoints, and Security](/docs/api/getting-started.md).
    * **SumoAccountId** is the Organization ID shown on your Account Overview in the Sumo Logic UI. You can access it by going to **Administration** > **Account**  > **Account Overview**.
 
 

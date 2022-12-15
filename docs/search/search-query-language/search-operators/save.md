@@ -35,7 +35,7 @@ To determine the path to a lookup table, highlight the row for the table in the 
 
 * Your search schema must match the schema of the Lookup Table that you are writing to, including the data types of the fields you want to save to the lookup table. Make sure your search returns all of the fields defined for the lookup table and no additional fields. Additional fields will be dropped and not saved to the lookup table. If your search returns fewer fields than that defined for the lookup table, the search will fail.
 * The file size limit for lookup tables is 100 MB.
-* You can't create a lookup table with the `save` operator. You must first create a lookup table, as described in [Create a Lookup Table](docs/search/lookup-tables/create-lookup-table.md). 
+* You can't create a lookup table with the `save` operator. You must first create a lookup table, as described in [Create a Lookup Table](/docs/search/lookup-tables/create-lookup-table.md). 
 * The `save` operator is not supported with Scheduled Views.
 * Queries that use the `save` operator can't be pinned.
 

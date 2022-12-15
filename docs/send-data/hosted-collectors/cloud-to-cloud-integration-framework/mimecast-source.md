@@ -21,7 +21,7 @@ This Source is not available in the Fed deployment.
 
 ## States
 
-A Mimecast Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](docs/manage/health-events.md).
+A Mimecast Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events.md).
 
 A Mimecast Source goes through the following states when created:
 

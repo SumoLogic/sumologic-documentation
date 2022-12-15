@@ -40,7 +40,7 @@ To set up the SDO solution manually, configure collection and install apps for 
 
 ## Create New FERs
 
-You will need to manually [create new field extraction rules](docs/manage/field-extractions/create-field-extraction-rule.md) (FERs) that map events from tools of your choice to the SDO event schema by using the scope and parse expression from this [JSON file](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt)
+You will need to manually [create new field extraction rules](/docs/manage/field-extractions/create-field-extraction-rule.md) (FERs) that map events from tools of your choice to the SDO event schema by using the scope and parse expression from this [JSON file](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt)
 of field extraction rules for each tool.
 
 :::note
@@ -129,7 +129,7 @@ If you're using CircleCI for Build and Deploy, do the following:
 
 1. Add the [sumo orb](https://circleci.com/developer/orbs/orb/sumologicorb/sumologic-circleci-orb) in the configuration file of the project to send custom-data elements to Sumo. You can find a sample config.yml file [here](https://sumologic-app-data.s3.amazonaws.com/SDO/config.yml.zip).
 1. Navigate to **Manage Data** \> **Logs** page. We select the Field Extraction Rules tab.
-1. [Create two FERs](docs/manage/field-extractions/create-field-extraction-rule.md) for CircleCI build and deploy events. The parse expression and the scope of the FERs is available [here](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
+1. [Create two FERs](/docs/manage/field-extractions/create-field-extraction-rule.md) for CircleCI build and deploy events. The parse expression and the scope of the FERs is available [here](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
 
 ### Other Tools for build and deploy
 

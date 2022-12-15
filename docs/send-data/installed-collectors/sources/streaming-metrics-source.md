@@ -137,7 +137,7 @@ The streaming metrics source can receive Prometheus data as long as that data is
 | `value` | Value of the metric. |
 | `timestamp` | The time the metric was collected, in int64 format.  |
 
-The Prometheus format does not support metadata in the format itself. You can attach metadata to Prometheus metrics by specifying it the HTTP header when you upload the metrics to Sumo. For more information, see [Upload Metrics to an HTTP Source](docs/send-data/hosted-collectors/http-source/upload-metrics.md) .
+The Prometheus format does not support metadata in the format itself. You can attach metadata to Prometheus metrics by specifying it the HTTP header when you upload the metrics to Sumo. For more information, see [Upload Metrics to an HTTP Source](/docs/send-data/hosted-collectors/http-source/upload-metrics.md) .
 
 :::important
 ImportantThe streaming metrics source can receive Prometheus data as long as that data is pushed to it. This source cannot scrape Prometheus exporters. For that, we suggesting using Telegraf.
