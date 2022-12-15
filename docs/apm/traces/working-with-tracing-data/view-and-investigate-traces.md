@@ -38,9 +38,9 @@ Click on any row to open the [Trace View](#trace-view). Traces are displayed in�
 
 A trace query allows you to search for traces representing transaction flows through your system using the following filters:
 
-* **Root Service**: name of the service that started the trace
-* **Any Service**: name of a service that took part in the trace
-* **Duration**: time in milliseconds of the trace
+* **Root Service**. name of the service that started the trace
+* **Any Service**. name of a service that took part in the trace
+* **Duration**. time in milliseconds of the trace
 * **Number of spans**
 * **Number of errors**
 
@@ -53,8 +53,7 @@ All metadata in all spans are automatically indexed and searchable up to followi
 * up to 1024 unique tag names per trace  
 * tags with names longer than 64 chars are not indexed   
 * tags with values over 4096 chars are not indexed  
-* spanid and parentspanid are not indexed in Traces search, but
-searchable through Spans analytics
+* spanid and parentspanid are not indexed in Traces search, but searchable through Span analytics
 
 To write a query click on the **Choose filters** input line. You can select the desired filter type and value from the dropdown menu or manually type them. Multiple filters are allowed in a query row, `AND` is implicit.
 
