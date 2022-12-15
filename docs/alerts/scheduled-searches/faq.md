@@ -16,8 +16,6 @@ Yes, Sumo Logic provides webhook notifications through static IP addresses. You 
 The [Test Connection feature for webhooks](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
 :::
 
-
-
 ## Create an Email Alert to Notify you when Data Usage Reaches 90 Percent of your Account Limit
 
 I want to create an email alert that lets me know when I reach 90% of data usage on my account, so I’m notified before I reach my account limit. What’s the best way to do this?
@@ -43,7 +41,6 @@ This query will return values only when the configured threshold is met. To do t
 To create a Scheduled Search:
 
 1. On the **Search** page, enter the sample query provided below as a template for your Scheduled Search. Adjust the **plan_size** and **thresholds** accordingly, as mentioned the comments in the sample query.
-
     ```
     _index=sumologic_volume
     | where _sourceCategory="collector_volume"
@@ -58,24 +55,17 @@ To create a Scheduled Search:
     | sort gbytes
     | fields collector, gbytes, collector_pct_of_todaysvolume, todays_volume, plan_size, todaysvolume_against_plan
     ```
-
 1. For the search **Time Range**, select **Today**.
-1. Click **Save As**.
-
-    ![DataUsageBreached.png](/img/alerts/DataUsageBreached.png)
-
+1. Click **Save As**. <br/>![DataUsageBreached.png](/img/alerts/DataUsageBreached.png)
 1. In the **Save Search As** dialog, enter a name for this Scheduled Search, such as **90% Data Usage Limit Reached**.
 1. **Run frequency.** Select **Every 4 hours**.
 1. Click **Schedule this search**. 
-
    * **Time range for the scheduled search.** Select **Today**.
    * **Alert condition.** Select **Send notification only if the condition below is satisfied:** and enter **Number of results Greater than \> 0**.
    * **Alert Type.** Select **Email**.
    * Enter the **email address** where you would like to be alerted.
-
 1. For all configuration options, see [Schedule a Search](/docs/alerts/scheduled-searches/schedule-search.md). 
 1. Click **Save**.
-
 
 ## Why Would a Scheduled Search Fail?
 

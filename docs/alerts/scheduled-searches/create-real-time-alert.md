@@ -27,7 +27,7 @@ If the time zone of messages is set incorrectly, those logs won't be picked up b
 To set up a Real-Time Alert:
 
 1. [Save a search](/docs/search/get-started-with-search/search-basics/save-search). 
-1. Click **Schedule this search**.<br/> ![RealTimeAlert.png](/img/alerts/RealTimeAlert.png)
+1. Click **Schedule this search**.<br/> ![RealTimeAlert](/img/alerts/save-real-time.png)
 1. **Run Frequency**. Select **Real Time**.
 1. For all other configuration options, see [Schedule a Search](schedule-search.md). 
 1. Click **Save**. 
