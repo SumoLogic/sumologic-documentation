@@ -47,7 +47,7 @@ Tracing data from your services is sent through multiple local OpenTelemetry Col
 
 Refer to the [Sumo Logic Kubernetes Collection installation docs](https://github.com/SumoLogic/sumologic-kubernetes-collection#documentation) to find the current version. To enable tracing, you'll need to include the `sumologic.traces.enabled=true` flag.
 
-If you plan to [auto-instrument your Java, Python, and JS applications in your Kubernetes environments](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes.md), use the Helm command in that article.
+If you plan to [auto-instrument your Java, Python, and JS applications in your Kubernetes environments](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes), use the Helm command in that article.
 
 
 #### Using the command line

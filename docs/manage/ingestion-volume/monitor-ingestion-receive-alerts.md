@@ -189,7 +189,7 @@ This type of alert isn't suitable for ephemeral environments and can send false 
 
 #### Setup
 
-**Prerequisite**. All collectors must be sending data **before** you set this alert. This alert will trigger if *any* collectors do not send data in the specified time range. If you want to identify collectors that are not ingesting for a long time or have not ingested at all, you can use the [Collector API](docs/api/collectors#Collector-API-Methods-and-Examples "Collector API Methods and Examples")
+**Prerequisite**. All collectors must be sending data **before** you set this alert. This alert will trigger if *any* collectors do not send data in the specified time range. If you want to identify collectors that are not ingesting for a long time or have not ingested at all, you can use the [Collector API](/docs/api/collectors#Collector-API-Methods-and-Examples "Collector API Methods and Examples")
 attributes `alive` and `LastSeenAlive`.
 
 1. Enable the Data Volume Index.  See [Enable and Manage the Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
@@ -234,7 +234,7 @@ After completing the setup steps, you'll need to create a monitor. 
         ```sql
         | where collector = "some_name" or collector = "some_other_name"
         ```
-   * Turn off a collector using [Start or Stop a Collector using Scripts](docs/send-data/collection/start-stop-collector-using-scripts.md) and verify that you received the alert.
+   * Turn off a collector using [Start or Stop a Collector using Scripts](/docs/send-data/collection/start-stop-collector-using-scripts.md) and verify that you received the alert.
    * Reduce the time range for collectors to send data to 15 minutes:
         ```sql
         | where mins_since_last_logs\>= 15

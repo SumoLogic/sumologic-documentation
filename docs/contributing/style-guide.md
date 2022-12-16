@@ -23,7 +23,7 @@ If you need help with a convention, word to use, or format to follow, we will ke
 * [Microsoft Manual of Style](https://docs.microsoft.com/en-us/style-guide/welcome/)
   * [User Input | Formatting Text in Instructions](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/formatting-text-in-instructions)
 
-For terminology usage guidance, see our [Word List](docs/contributing/word-list.md).
+For terminology usage guidance, see our [Word List](/docs/contributing/word-list.md).
 
 ## Writing Resources
 
@@ -44,8 +44,8 @@ The Sumo Logic Docs team will review submissions, provide suggested edits, add n
 
 To create a new doc quickly, use a template. You can copy and paste the file, add your content, and submit a PR.
 
-* [Doc topic (generic) template](docs/contributing/templates/template-doc.md)
-* [Partner app template](docs/contributing/templates/template-partner-app.md)
+* [Doc topic (generic) template](/docs/contributing/templates/template-doc.md)
+* [Partner app template](/docs/contributing/templates/template-partner-app.md)
 
 ## Voice and Tone
 
