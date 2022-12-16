@@ -2126,7 +2126,6 @@ module.exports = {
             'cse/sensors/sensor-download-locations',
             'cse/sensors/network-sensor-deployment-guide',
             'cse/sensors/network-sensor-troubleshooting',
-            'cse/sensors/cloud-sensor-guide',
             'cse/sensors/log-sensor-troubleshooting',
             'cse/sensors/ingest-zeek-logs',
           ],
