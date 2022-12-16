@@ -120,4 +120,4 @@ To save and schedule the search:
 
 ## Step 4: Configure the Lookup Table in CSE
 
-If you’re going to use the Lookup Table to normalize Entities in CSE, follow the instructions in [Configure an Entity Lookup Table](docs/cse/records-signals-entities-insights/configure-entity-lookup-table.md).
+If you’re going to use the Lookup Table to normalize Entities in CSE, follow the instructions in [Configure an Entity Lookup Table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table.md).

@@ -57,16 +57,16 @@ The table below shows the `_sourceCategory` that is assigned to event logs by CS
 | Product Feature | _sourceCategory Value |
 | -- | -- |
 | [Action](create-cse-actions.md) | `cseAction` |
-| [Aggregation Rule](docs/cse/rules/write-aggregation-rule.md) | `cseRule` |
+| [Aggregation Rule](/docs/cse/rules/write-aggregation-rule.md) | `cseRule` |
 | Configure Assigned Insight Emails<br/>(Relates to the option, on the Actions page, that causes a user to receive an email whenever another user assigns an Insight to them. | `cseConfiguration` |
-| [Chain Rule](docs/cse/rules/write-chain-rule.md) | `cseRule` |
+| [Chain Rule](/docs/cse/rules/write-chain-rule.md) | `cseRule` |
 | Cloud SOAR Incident | `cseCloudSoar` |
 | [Context Action](create-cse-context-actions.md)  | `cseContextAction` |
 | [Custom Entity Type](../records-signals-entities-insights/create-custom-entity-type.md) | `cseCustomEntityType` |
 | [Custom Insight](cse-audit-logging.md) | `cseCustomInsight` |
 | [Custom Match List Column](../match-lists-suppressed-lists/custom-match-list-columns.md) | `cseCustomMatchListColumn` |
 | [Custom Tag Schema](create-a-custom-tag-schema.md) | `cseCustomTagSchema` |
-| [Customer Sourced Entity Lookup Table](docs/cse/administration/save-inventory-data-lookup-table.md) | `cseCustomerSourcedEntityLookupTable` |
+| [Customer Sourced Entity Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table.md) | `cseCustomerSourcedEntityLookupTable` |
 | [Entity](../records-signals-entities-insights/view-manage-entities.md)  | `cseEntity` |
 | [Entity Criticality Config](../records-signals-entities-insights/entity-criticality.md) | `cseEntityCriticalityConfig` |
 | [Entity Domain Configuration](../schema/username-and-hostname-normalization.md)  | `cseEntityNormalization` |
@@ -75,7 +75,7 @@ The table below shows the `_sourceCategory` that is assigned to event logs by CS
 | Inventory Entity Lookup Table | `cseInventoryEntityLookupTable` |
 | [Log Mapping](../schema/create-structured-log-mapping.md)  | `cseLogMapping` |
 | [Match List](../match-lists-suppressed-lists/create-match-list.md) | `cseMatchList` |
-| [Match Rule](docs/cse/rules/write-match-rule.md) | `cseRule` |
+| [Match Rule](/docs/cse/rules/write-match-rule.md) | `cseRule` |
 | [Network Block](create-use-network-blocks.md) | `cseNetworkBlock` |
 | [Streaming Export Configuration](../ingestion/sumo-logic-ingest-mapping.md)  | `cseStreamingExportConfiguration` |
 | [Sumo Mapping](../ingestion/sumo-logic-ingest-mapping.md)  | `cseSumoMapping` |

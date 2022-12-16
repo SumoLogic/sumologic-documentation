@@ -22,7 +22,7 @@ The Collector executes the script as the user running the Collector process.
 
 ## Step 1. Enable Script Actions on the Collector
 
-Collectors using version 19.245-4 and later do not allow Script Actions to run by default. To allow Script Actions you need to set the Collector parameter `enableActionSource` in [user.properties](docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) to true and restart the Collector.
+Collectors using version 19.245-4 and later do not allow Script Actions to run by default. To allow Script Actions you need to set the Collector parameter `enableActionSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) to true and restart the Collector.
 
 ## Step 2. Create script
 

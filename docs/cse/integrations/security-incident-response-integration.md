@@ -34,7 +34,7 @@ Your CSE role must allow you to use API keys and to retrieve and modify Insights
 
 In this step, you make a copy of your API credentials, which you'll need to supply when you install the SIR-CSE integration in [Step 5](#step-5-install-the-sir-cse-integration) below. 
 
-You’ll need to supply a Sumo Logic Access ID and Access Key. If necessary, you can create those on your **Preferences** page in the Sumo Logic UI. For more information, see [Create an access key on Preferences page](docs/manage/security/access-keys.md#create-an-access-keyon-preferences-page).
+You’ll need to supply a Sumo Logic Access ID and Access Key. If necessary, you can create those on your **Preferences** page in the Sumo Logic UI. For more information, see [Create an access key on Preferences page](/docs/manage/security/access-keys.md#create-an-access-keyon-preferences-page).
 
 ## Step 2: Install ServiceNow plugins
 
@@ -85,7 +85,7 @@ CI Lookup Rules are required to enable discovery of configuration items and avoi
 1. The **Sumo Logic SIR Configuration** popup appears.  
 
     ![config-page.png](/img/cse/api-credentials.png)
-1. **Host**. Enter the Sumo Logic service endpoint for your Sumo Logic deployment. To determine your endpoint, see [Sumo Logic Endpoints by Deployment and Firewall Security](docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. **Host**. Enter the Sumo Logic service endpoint for your Sumo Logic deployment. To determine your endpoint, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 1. **Access ID and Access Key**. Enter the Sumo Logic Access ID and Key you copied in [Step 1](#step-1-copy-your-api-credentials).
 1. **Default Incident State**. Enter the Incident State you want to assign to Incidents created by the integration. The value you enter must by a valid state in your ServiceNow account. To view available options in your environment, enter `sys_choice.list` in your **Environments** sidebar and filter for `table=sn_si_incident`, `inactive=false`. Alternatively, you can directly view the available options in the **State** dropdown in any Incident. This field is case-sensitive. If you supply an invalid value, it will be ignored. The  default state for your Incidents created by the integration will be set based on your business rules.  

@@ -63,13 +63,13 @@ Run the installer on your server with root or Administrator privileges. If you a
 
 **Examples** 
 
-Using an [Installation Token](docs/manage/security/installation-tokens.md):
+Using an [Installation Token](/docs/manage/security/installation-tokens.md):
 
 ```bash
 sudo ./SumoCollector.sh -q -Vsumo.token_and_url=<installationToken> -Vsources=<absolute_filepath>
 ```
 
-Using [access ID and access key](docs/manage/security/access-keys.md):
+Using [access ID and access key](/docs/manage/security/access-keys.md):
 
 ```bash
 sudo ./SumoCollector.sh -q -Vsumo.accessid=<accessId> -Vsumo.accesskey=<accessKey> -Vsources=<absolute_filepath>
@@ -113,7 +113,7 @@ Replace _XXX-XX_ in the command above with the version number of the package you
 
 1. Configure the Collector `user.properties` file in the `/opt/SumoCollector/config/` directory. The Collector uses the settings defined in `user.properties` to register and start. See [user.properties](collector-installation-reference/user-properties.md) for a full list of all the supported parameters.
 
-   To use an [access key](docs/manage/security/access-keys.md), provide the `accessid` and `accesskey` parameters. For example:
+   To use an [access key](/docs/manage/security/access-keys.md), provide the `accessid` and `accesskey` parameters. For example:
 
    ```
    name = <collectorName>

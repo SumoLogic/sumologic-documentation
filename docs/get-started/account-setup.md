@@ -70,7 +70,7 @@ Users with a role that grants the **Create Access Keys** capability can create a
 
 Preference settings are only changed for your personal account; they don't affect any other users in your organization. Any changes you make to your preferences take effect the next time you sign in, not during the current session.
 
-- **Default Timezone.** If you want the Sumo Logic user interface to use your local time zone, or a time zone different from the time zone used in the timestamp of your log messages, change the setting here. This is a personal setting, and does not change the time zone for anyone else in your organization. This option overrides the timezone set in your web browser, and affects all hours and minutes displayed in the user interface, including time ranges on the Search page, the Time column in the Messages pane, and in Dashboards. It does not affect the configurations of previously created Scheduled Searches or Real Time Alerts. For more information, see [Timestamps, Time Zones, Time Ranges, and Date Formats](docs/send-data/reference-information/time-reference.md).
+- **Default Timezone.** If you want the Sumo Logic user interface to use your local time zone, or a time zone different from the time zone used in the timestamp of your log messages, change the setting here. This is a personal setting, and does not change the time zone for anyone else in your organization. This option overrides the timezone set in your web browser, and affects all hours and minutes displayed in the user interface, including time ranges on the Search page, the Time column in the Messages pane, and in Dashboards. It does not affect the configurations of previously created Scheduled Searches or Real Time Alerts. For more information, see [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference.md).
 - **Always show the timezone offset in displayed timestamps.** This setting is on by default. To not show the timezone offset in displayed timestamps, deactivate this check box.
 - **Date Format:** Select from the following international date format options:
     * Use the browser's default date format.
@@ -84,7 +84,7 @@ Preference settings are only changed for your personal account; they don't affec
 
 - **Web session timeout.** Choose an option to set the length of time before your Sumo Logic session times out. Options include 5 minutes to 7 days. For information on web session timeouts and Multi-account Access, see [Multi-account Access].
 - **Receive email notifications whenever content is shared with you**.
-- **Enable keyboard shortcuts.** [Keyboard shortcuts](docs/get-started/keyboard-shortcuts.md) are enabled by default. Press ? to see the list of shortcuts. To disable keyboard shortcuts, for example, if they conflict with an international keyboard, deselect the check box.
+- **Enable keyboard shortcuts.** [Keyboard shortcuts](/docs/get-started/keyboard-shortcuts.md) are enabled by default. Press ? to see the list of shortcuts. To disable keyboard shortcuts, for example, if they conflict with an international keyboard, deselect the check box.
 
   :::note
   Keyboard shortcuts are disabled when typing in the [search text box].
