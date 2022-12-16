@@ -49,5 +49,5 @@ sh DeployTemplate.sh <SUMO_ACCESS_ID> <SUMO_ACCESS_KEY>
 </Tabs>
 
 :::tip Multi-account and region
-If you need to add support for multiple AWS accounts or multiple regions, refer to the Sumo Logic documentation for [CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) or [Terraform](docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform.md).
+If you need to add support for multiple AWS accounts or multiple regions, refer to the Sumo Logic documentation for [CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) or [Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform.md).
 :::

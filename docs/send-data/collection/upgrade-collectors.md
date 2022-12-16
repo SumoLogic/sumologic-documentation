@@ -88,7 +88,7 @@ The steps to upgrade an Installed Collector using the command line are similar t
 Download the collector in either of the following ways:
 
 * In Sumo Logic select **Manage Data \> Collection \> Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the collector to begin the download.
-* Open a browser and enter the static URL for your Sumo deployment. See [how to determine which endpoint to use](docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url.md) for a list of the URLs for your Linux version and deployment pod.
+* Open a browser and enter the static URL for your Sumo deployment. See [how to determine which endpoint to use](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url.md) for a list of the URLs for your Linux version and deployment pod.
 
 See the following table for commands:
 
@@ -99,7 +99,7 @@ See the following table for commands:
 | Linux Debian | Upgrade or downgrade command: `sudo dpkg -i <pathToCollectorDebianFile>` |
 | Linux 32 or 64 | Upgrade or downgrade command:  `sudo <pathToCollectorShFile> -q` |
 | Windows | Upgrade or downgrade command: `SumoCollector.exe -console -q` |
-| MacOS | Use the same steps to [Install a Collector on MacOS](docs/send-data/installed-collectors/macos.md) without the authentication credentials. |
+| MacOS | Use the same steps to [Install a Collector on MacOS](/docs/send-data/installed-collectors/macos.md) without the authentication credentials. |
 
 ## Collector Upgrade Best Practices
 
@@ -151,7 +151,7 @@ Follow this checklist whenever you make any changes to the collector:
   * Collector service CPU usage patterns
   * Collector service Memory usage patterns
   * Disk I/O and space utilization
-* [Validate Collector service operation](docs/manage/ingestion-volume/monitor-ingestion-receive-alerts.md):
+* [Validate Collector service operation](/docs/manage/ingestion-volume/monitor-ingestion-receive-alerts.md):
   * Upgrade was successful and the Collector is online with the new version.
   * The Collector continues to run over a period of time without errors or failures.
   * Existing Sources continue to read and send data.

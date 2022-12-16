@@ -123,7 +123,7 @@ The following table shows the **config** parameters for a Duo Source.
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
 | `domain` | String | Yes |  | Provide your API hostname, such as api-********.duosecurity.com.	modifiable
 | `integration_key` | String | Yes |  | Provide the Duo Integration Key you want to use to authenticate collection requests. | modifiable |
-| `secret_key`	String | Yes |  | Provide the Duo Secret Key you want to use to authenticate collection requests. | modifiable |
+| `secret_key` | String | Yes |  | Provide the Duo Secret Key you want to use to authenticate collection requests. | modifiable |
 | `polling_interval` | Integer | No | 300 | This sets how often the Source checks for new data. | modifiable |
 
 Duo Source JSON example:

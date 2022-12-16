@@ -246,14 +246,14 @@ By default, GKE clusters are natively integrated with Cloud Logging (and Monitor
 
 The GCP source receives log data from Google Pub/Sub. The GCP source will only be usable for log data formatted as data coming from Google Pub/Sub.
 
-To configure a Google Platform Source**, follow the instructions in [this document](docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).
+To configure a Google Platform Source**, follow the instructions in [this document](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).
 
 
 ### Configure a Pub/Sub topic for GCP
 
 Once you configure the Pub/Sub, you can export data from Google to the Pub/Sub.
 
-To configure a Pub/Sub topic for GCP**,  follow the instructions in [this document](docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).
+To configure a Pub/Sub topic for GCP**,  follow the instructions in [this document](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).
 
 
 ### Create an export of Google Kubernetes Engine logs from Logging
@@ -266,7 +266,7 @@ To create an export of GKE logs, do the following:
 3. As part of “**Create logs routing sink**”  add the following information:
     1. Enter a **Sink Name**. For example, "gce-vm-instance".
     2. Select "Cloud Pub/Sub" as the **Sink Service**.
-    3. Set **Sink Destination** to the Pub/Sub topic you created in the [Google Cloud Platform Source](docs/send-data/hosted-collectors/google-source/google-cloud-platform-source) procedure. For example, "pub-sub-logs".
+    3. Set **Sink Destination** to the Pub/Sub topic you created in the [Google Cloud Platform Source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source) procedure. For example, "pub-sub-logs".
     4. In “**Choose logs to include in sink**” Section : Determine the **GCP services** for which you need to get the logs. Also the logsName filter can be added in the inclusion filter for minimizing the logs send to Sumo Logic for the GKE app. This inclusion filter can be taken as:
 ```sql
 (resource.type="gke_cluster" OR resource.type="k8s_cluster" OR resource.type="k8s_node" OR resource.type="k8s_pod" )  \
