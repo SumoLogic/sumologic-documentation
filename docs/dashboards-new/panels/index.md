@@ -188,8 +188,8 @@ To add a Trace List panel:
 1. Configure a [Trace query](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces) to search for desired set of traces. 
 1. Select a time range or [create a custom range](/docs/dashboards-new/set-custom-time-ranges) for the panel. You can set this when creating or at any time when viewing the Dashboard panel.<br/> ![timerange.png](/img/dashboards-new/panels/timerange.png)
 1. Select **Chart Type** as either:
-   1. **Table**: showing table with traces.
-   1. **Breakdown chart**: showing aggregated Trace Duration Breakdown Chart.  
+   1. **Table**. showing table with traces.
+   1. **Breakdown chart**. showing aggregated Trace Duration Breakdown Chart.  
    If you choose **Table**, complete the following steps:
 1. Enter the **Rows Per Page** for the panel, between 5 to 100. The default amount is 15. The panel automatically paginates traces to browse through and view all traces.
 1. Select the Table columns of trace data to load in the panel:
