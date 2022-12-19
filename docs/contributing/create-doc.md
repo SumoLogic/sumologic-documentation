@@ -92,4 +92,6 @@ We use Yarn for all installs and builds. Never use NPM commands for installing o
 1. Click **Create Pull Request**.<br/> ![pull request](/img/contributing/pull-request.png)
 1. Sign our Contributor License Agreement (built using [cla-bot](https://colineberhardt.github.io/cla-bot/)). We allow individual contributions and contributions made on behalf of companies. If you have any questions, please [submit an issue](https://github.com/SumoLogic/sumologic-documentation/issues).
 
+## What happens next?
+
 Docs Team members will review contributions, provide feedback, and approve. When approved, the Docs Team will merge and update staging. Updates to production will be handled by the Docs Team.
