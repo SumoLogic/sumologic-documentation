@@ -14,7 +14,7 @@ This source has a maximum ingest rate of 1 TB/day as measured by the [Data Volu
 
 ## States
 
-An Akamai SIEM API Source tracks errors, reports its health, and start-up progress. You’re informed, in real time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](docs/manage/health-events.md).
+An Akamai SIEM API Source tracks errors, reports its health, and start-up progress. You’re informed, in real time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events.md).
 
 An Akamai SIEM API Source goes through the following states when created:
 
@@ -28,7 +28,7 @@ If the Source has any issues during any one of these states, it is placed in an�
 
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](docs/manage/health-events.md) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![Akamai health error.png](/img/send-data/Akamai-health-error.png)
+On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events.md) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![Akamai health error.png](/img/send-data/Akamai-health-error.png)
 
 Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings.<br/> ![hover c2c error.png](/img/send-data/hover-c2c-error.png)
 

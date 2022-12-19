@@ -19,11 +19,11 @@ This tutorial provides the steps to create and use ingest budgets. Details about
 API requests require authentication with an access id and key. In the following steps, the requests have the argument \<accessid:accesskey\> where you need to specify these. See [API authentication](/docs/api/getting-started#authentication) for details.
 
 In addition, you need to specify the correct endpoint to send your API requests. The following steps have the
-argument `<your deployment>` where you need to specify either us1, us2, eu, de, jp, or au. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
+argument `<your deployment>` where you need to specify either us1, us2, eu, de, jp, or au. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
 
 ## Ingest Budgets API Documentation
 
-Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security") if you are unsure.
+Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security") if you are unsure.
 
 Select the documentation link for your deployment:
 
@@ -166,12 +166,12 @@ Select the ingest budget you want to assign to the Collector and click **Save**.
 
 ### Use Collector API
 
-To assign a Collector to an ingest budget you need to get and update the Collector's configuration file. The following steps can be referenced in the [Collector Management API document for a PUT request](docs/api/collectors#Collector-API-Methods-and-Examples "Collector API Methods and Examples").
+To assign a Collector to an ingest budget you need to get and update the Collector's configuration file. The following steps can be referenced in the [Collector Management API document for a PUT request](/docs/api/collectors#Collector-API-Methods-and-Examples "Collector API Methods and Examples").
 
 First make a GET request to get the Collector's JSON configuration:
 
 :::note
-Customize `<accessid:accesskey>`, `<your deployment>`, and collector ID like `150905330`. Replace the value `150905330` with the `id` value of your Collector. You can use the Sumo [web interface](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) to get an `id`.
+Customize `<accessid:accesskey>`, `<your deployment>`, and collector ID like `150905330`. Replace the value `150905330` with the `id` value of your Collector. You can use the Sumo [web interface](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) to get an `id`.
 :::
 
 ```bash

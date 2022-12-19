@@ -2167,7 +2167,6 @@
   "/Cloud_SIEM_Enterprise/CSE_Sensors/01_Sensor_Download_Locations": "/docs/cse/sensors/sensor-download-locations",
   "/Cloud_SIEM_Enterprise/CSE_Sensors/11_Network_Sensor_Deployment_Guide": "/docs/cse/sensors/network-sensor-deployment-guide",
   "/Cloud_SIEM_Enterprise/CSE_Sensors/13_Network_Sensor_Troubleshooting": "/docs/cse/sensors/network-sensor-troubleshooting",
-  "/Cloud_SIEM_Enterprise/CSE_Sensors/15_Cloud_Sensor_Guide": "/docs/cse/sensors/cloud-sensor-guide",
   "/Cloud_SIEM_Enterprise/CSE_Sensors/17_Log_Sensor_Troubleshooting": "/docs/cse/sensors/log-sensor-troubleshooting",
   "/Cloud_SIEM_Enterprise/CSE_Sensors/Ingest_Zeek_Logs": "/docs/cse/sensors/ingest-zeek-logs",
   "/Cloud_SIEM_Enterprise/Integrations": "/docs/cse/integrations",

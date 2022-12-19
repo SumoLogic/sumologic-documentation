@@ -178,7 +178,7 @@ security:
 tags:
 - name: accountManagement
   description: |
-    [Account Management API](docs/api/account-management.md): Manage the custom subdomain for the URL used to access your Sumo Logic account. For more information see [Manage Organization](/docs/manage/01Account_Usage/05Manage_Organization).
+    [Account Management API](/docs/api/account-management.md): Manage the custom subdomain for the URL used to access your Sumo Logic account. For more information see [Manage Organization](/docs/manage/01Account_Usage/05Manage_Organization).
   x-displayName: Account
 - name: appManagement
   description: |
@@ -194,7 +194,7 @@ tags:
   x-displayName: Connections
 - name: contentManagement
   description: |
-    [Content management API](docs/api/content-management.md): You can export, import, delete and copy content in your organization’s Library. For more information see [Library](https://help.sumologic.com/?cid=5173). You can perform the request as a Content Administrator by using the `isAdminMode` parameter. For more information see [Admin Mode](/docs/manage/Content-Sharing/Admin-Mode).
+    [Content management API](/docs/api/content-management.md): You can export, import, delete and copy content in your organization’s Library. For more information see [Library](https://help.sumologic.com/?cid=5173). You can perform the request as a Content Administrator by using the `isAdminMode` parameter. For more information see [Admin Mode](/docs/manage/Content-Sharing/Admin-Mode).
     <br/> <br/>
     ### Example
     The following example uses API endpoints in the US1 deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. For details determining your account's deployment see [API endpoints](https://help.sumologic.com/?cid=3011).
@@ -296,39 +296,39 @@ tags:
   x-displayName: Content
 - name: contentPermissions
   description: |
-    [Content permissions API](docs/api/content-permissions.md): You can share your folders, searches, and dashboards with specific users or roles. For more information see [Share Content](https://help.sumologic.com/?cid=8675309). You can perform the request as a Content Administrator by using the `isAdminMode` parameter. For more information see [Admin Mode](/docs/manage/Content-Sharing/Admin-Mode).
+    [Content permissions API](/docs/api/content-permissions.md): You can share your folders, searches, and dashboards with specific users or roles. For more information see [Share Content](https://help.sumologic.com/?cid=8675309). You can perform the request as a Content Administrator by using the `isAdminMode` parameter. For more information see [Admin Mode](/docs/manage/Content-Sharing/Admin-Mode).
   x-displayName: Permissions
 - name: dashboardManagement
   description: |
-    [Dashboard (New) management API](docs/api/dashboard-new.md): Dashboard (New) allows you to analyze metric and log data on the same dashboard, in a seamless view. This gives you control over the visual display of metric and log data. Dashboard (New) streamlines dashboard configurations and on-the-fly analytic visualizations with its new templating features. For more information see [Dashboard (New)](https://help.sumologic.com/?cid=5500).
+    [Dashboard (New) management API](/docs/api/dashboard-new.md): Dashboard (New) allows you to analyze metric and log data on the same dashboard, in a seamless view. This gives you control over the visual display of metric and log data. Dashboard (New) streamlines dashboard configurations and on-the-fly analytic visualizations with its new templating features. For more information see [Dashboard (New)](https://help.sumologic.com/?cid=5500).
   x-displayName: Dashboard (New)
 - name: dynamicParsingRuleManagement
   description: |
-    [Dynamic Parsing management API](docs/api/dynamic-parsing.md): Allows automatic field extraction from your log messages when you run a search.  This allows you to view fields from logs without having to manually specify parsing logic. For more information, see [Dynamic Parsing](https://help.sumologic.com/?cid=20011).
+    [Dynamic Parsing management API](/docs/api/dynamic-parsing.md): Allows automatic field extraction from your log messages when you run a search.  This allows you to view fields from logs without having to manually specify parsing logic. For more information, see [Dynamic Parsing](https://help.sumologic.com/?cid=20011).
   x-displayName: Dynamic Parsing
 - name: extractionRuleManagement
   description: |
-    [Field Extraction Rule management API](docs/api/field-extraction-rules.md): Allow you to parse fields from your log messages at the time the messages are ingested eliminating the need to parse fields in your query. For more information see [Manage Field Extraction](https://help.sumologic.com/?cid=5313).
+    [Field Extraction Rule management API](/docs/api/field-extraction-rules.md): Allow you to parse fields from your log messages at the time the messages are ingested eliminating the need to parse fields in your query. For more information see [Manage Field Extraction](https://help.sumologic.com/?cid=5313).
   x-displayName: Field Extraction Rules
 - name: fieldManagementV1
   description: |
-    [Field management API](docs/api/fields.md): Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. Fields may be referred to as Log Metadata Fields. For more information see [Fields](https://help.sumologic.com/?cid=10116).
+    [Field management API](/docs/api/fields.md): Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. Fields may be referred to as Log Metadata Fields. For more information see [Fields](https://help.sumologic.com/?cid=10116).
   x-displayName: Field Management
 - name: folderManagement
   description: |
-    [Folder management API](docs/api/folders.md): You can add folders and subfolders to the Library in order to organize your content for easy access or to share content. For more information see [Add Folders to the Library](https://help.sumologic.com/?cid=5020). You can perform the request as a Content Administrator by using the `isAdminMode` parameter. For more information see [Admin Mode](/docs/manage/Content-Sharing/Admin-Mode).
+    [Folder management API](/docs/api/folders.md): You can add folders and subfolders to the Library in order to organize your content for easy access or to share content. For more information see [Add Folders to the Library](https://help.sumologic.com/?cid=5020). You can perform the request as a Content Administrator by using the `isAdminMode` parameter. For more information see [Admin Mode](/docs/manage/Content-Sharing/Admin-Mode).
   x-displayName: Folders
 - name: ingestBudgetManagementV1
   description: |
-    [Ingest Budget management API](docs/api/ingest-budget-v1.md): allow you to control the capacity of daily ingestion volume sent to Sumo Logic from Collectors. For more information see [Ingest Budgets](https://help.sumologic.com/?cid=5235).
+    [Ingest Budget management API](/docs/api/ingest-budget-v1.md): allow you to control the capacity of daily ingestion volume sent to Sumo Logic from Collectors. For more information see [Ingest Budgets](https://help.sumologic.com/?cid=5235).
   x-displayName: Ingest Budgets
 - name: ingestBudgetManagementV2
   description: |
-    [Ingest Budget management API V2](docs/api/ingest-budget-v2.md): Ingest Budgets V2 provide you the ability to create and assign budgets to your log data by Fields instead of using a Field Value. For more information see [Metadata Ingest Budgets](https://help.sumologic.com/?cid=52352).
+    [Ingest Budget management API V2](/docs/api/ingest-budget-v2.md): Ingest Budgets V2 provide you the ability to create and assign budgets to your log data by Fields instead of using a Field Value. For more information see [Metadata Ingest Budgets](https://help.sumologic.com/?cid=52352).
   x-displayName: Ingest Budgets V2
 - name: partitionManagement
   description: |
-    [Partition management API](docs/api/partitions.md): Creating a Partition allows you to improve search performance by searching over a smaller number of messages. For more information see [Manage Partitions](https://help.sumologic.com/?cid=5231).
+    [Partition management API](/docs/api/partitions.md): Creating a Partition allows you to improve search performance by searching over a smaller number of messages. For more information see [Manage Partitions](https://help.sumologic.com/?cid=5231).
   x-displayName: Partitions
 - name: logsDataForwardingManagement
   description: |
@@ -336,19 +336,19 @@ tags:
   x-displayName: Logs Data Forwarding
 - name: roleManagement
   description: |
-    [Role management API](docs/api/roles.md): Roles determine the functions that users are able to perform in Sumo Logic. To manage roles, you must have an administrator role or your role must have been assigned the manage users and roles capability. For more information see [Manage Roles](https://help.sumologic.com/?cid=5234).
+    [Role management API](/docs/api/roles.md): Roles determine the functions that users are able to perform in Sumo Logic. To manage roles, you must have an administrator role or your role must have been assigned the manage users and roles capability. For more information see [Manage Roles](https://help.sumologic.com/?cid=5234).
   x-displayName: Roles
 - name: lookupManagement
   description: |
-    [Lookup Table management API](docs/api/lookup-tables.md): A Lookup Table is a table of data hosted on Sumo Logic that you can use to enrich the log and event data received by Sumo Logic. You must create a table schema before you can populate the table. For more information see [Lookup Tables](https://help.sumologic.com/?cid=10109).
+    [Lookup Table management API](/docs/api/lookup-tables.md): A Lookup Table is a table of data hosted on Sumo Logic that you can use to enrich the log and event data received by Sumo Logic. You must create a table schema before you can populate the table. For more information see [Lookup Tables](https://help.sumologic.com/?cid=10109).
   x-displayName: Lookup Tables
 - name: scheduledViewManagement
   description: |
-    [Scheduled View management API](docs/api/scheduled-views.md): Scheduled Views speed the search process for small and historical subsets of your data by functioning as a pre-aggregated index. For more information see [Manage Scheduled Views](https://help.sumologic.com/?cid=5128).
+    [Scheduled View management API](/docs/api/scheduled-views.md): Scheduled Views speed the search process for small and historical subsets of your data by functioning as a pre-aggregated index. For more information see [Manage Scheduled Views](https://help.sumologic.com/?cid=5128).
   x-displayName: Scheduled Views
 - name: tokensLibraryManagement
   description: |
-    [Tokens management API](docs/api/tokens.md): Tokens are associated with your organization to authorize specific operations. Currently, we support collector registration tokens, which can be used to register Installed Collectors. Managing tokens requires the Manage Tokens role capability. For more information see [Installation Tokens](https://help.sumologic.com/?cid=0100).
+    [Tokens management API](/docs/api/tokens.md): Tokens are associated with your organization to authorize specific operations. Currently, we support collector registration tokens, which can be used to register Installed Collectors. Managing tokens requires the Manage Tokens role capability. For more information see [Installation Tokens](https://help.sumologic.com/?cid=0100).
   x-displayName: Tokens
 - name: transformationRuleManagement
   description: |
@@ -356,35 +356,35 @@ tags:
   x-displayName: Transformation Rules (Beta)
 - name: userManagement
   description: |
-    [User management API](docs/api/users.md): To manage users, you must have the administrator role or your role must have been assigned the manage users and roles capability. For more information see [Manage Users](https://help.sumologic.com/?cid=1006).
+    [User management API](/docs/api/users.md): To manage users, you must have the administrator role or your role must have been assigned the manage users and roles capability. For more information see [Manage Users](https://help.sumologic.com/?cid=1006).
   x-displayName: Users
 - name: metricsSearchesManagement
   description: |
-    [Metrics Search management API](docs/api/metrics.md): Save metrics searches in the content library and organize them in a folder hierarchy. Share useful queries with users in your organization. For more information see [Sharing Metric Charts](/docs/metrics/metric-charts/Share_a_Metric_Chart).
+    [Metrics Search management API](/docs/api/metrics.md): Save metrics searches in the content library and organize them in a folder hierarchy. Share useful queries with users in your organization. For more information see [Sharing Metric Charts](/docs/metrics/metric-charts/Share_a_Metric_Chart).
   x-displayName: Metrics Searches (Beta)
 - name: metricsQuery
   description: |
-    [Metrics Query API](docs/api/metrics-query.md): The Metrics Query API allows you to execute queries on various metrics and retrieve multiple time-series (data-points) over time range(s). For more information see [Metrics - Classic](https://help.sumologic.com/?cid=1079).
+    [Metrics Query API](/docs/api/metrics-query.md): The Metrics Query API allows you to execute queries on various metrics and retrieve multiple time-series (data-points) over time range(s). For more information see [Metrics - Classic](https://help.sumologic.com/?cid=1079).
   x-displayName: Metrics Query
 - name: accessKeyManagement
   description: |
-    [Access Key management API](docs/api/access-keys.md): Access Keys allow you to securely register new Collectors and access Sumo Logic APIs. For more information see [Access Keys](https://help.sumologic.com/?cid=6690).
+    [Access Key management API](/docs/api/access-keys.md): Access Keys allow you to securely register new Collectors and access Sumo Logic APIs. For more information see [Access Keys](https://help.sumologic.com/?cid=6690).
   x-displayName: Access Keys
 - name: samlConfigurationManagement
   description: |
-    [SAML configuration management API](docs/api/saml.md): Organizations with Enterprise accounts can provision Security Assertion Markup Language (SAML) 2.0 to enable Single Sign-On (SSO) for user access to Sumo Logic. For more information see [SAML Configuration](https://help.sumologic.com/?cid=4016).
+    [SAML configuration management API](/docs/api/saml.md): Organizations with Enterprise accounts can provision Security Assertion Markup Language (SAML) 2.0 to enable Single Sign-On (SSO) for user access to Sumo Logic. For more information see [SAML Configuration](https://help.sumologic.com/?cid=4016).
   x-displayName: SAML Configuration
 - name: serviceAllowlistManagement
   description: |
-    [Service Allowlist management API](docs/api/service-allowlist.md): Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access. For more information see [Service Allowlist Settings](https://help.sumologic.com/?cid=5454).
+    [Service Allowlist management API](/docs/api/service-allowlist.md): Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access. For more information see [Service Allowlist Settings](https://help.sumologic.com/?cid=5454).
   x-displayName: Service Allowlist
 - name: healthEvents
   description: |
-    [Health Events management API](docs/api/health-events.md): Health Events allow you to keep track of the health of your Collectors and Sources. You can use them to find and investigate common errors and warnings that are known to cause collection issues. For more information see [Health Events](https://help.sumologic.com/?cid=0020).
+    [Health Events management API](/docs/api/health-events.md): Health Events allow you to keep track of the health of your Collectors and Sources. You can use them to find and investigate common errors and warnings that are known to cause collection issues. For more information see [Health Events](https://help.sumologic.com/?cid=0020).
   x-displayName: Health Events
 - name: archiveManagement
   description: |-
-    [Archive Ingestion Management API](docs/api/archive-ingestion.md): Archive Ingestion allows you to ingest data from Archive destinations. You can use this API to ingest data from your Archive with an existing AWS S3 Archive Source. You need the Manage or View Collectors role capability to manage or view ingestion jobs. For more information see [Archive](https://help.sumologic.com/?cid=10011).
+    [Archive Ingestion Management API](/docs/api/archive-ingestion.md): Archive Ingestion allows you to ingest data from Archive destinations. You can use this API to ingest data from your Archive with an existing AWS S3 Archive Source. You need the Manage or View Collectors role capability to manage or view ingestion jobs. For more information see [Archive](https://help.sumologic.com/?cid=10011).
   x-displayName: Archive Ingestion Management
 - name: logSearchesEstimatedUsage
   description: |
@@ -392,15 +392,15 @@ tags:
   x-displayName: Log Search Estimated Usage
 - name: passwordPolicy
   description: |
-    [Password Policy Management API](docs/api/password-policy.md): The password policy controls how user passwords are managed. The "Manage Password Policy" role capability is required to update the password policy. For more information see [how to set a password policy](https://help.sumologic.com/?cid=8595).
+    [Password Policy Management API](/docs/api/password-policy.md): The password policy controls how user passwords are managed. The "Manage Password Policy" role capability is required to update the password policy. For more information see [how to set a password policy](https://help.sumologic.com/?cid=8595).
   x-displayName: Password Policy
 - name: policiesManagement
   description: |
-    [Policies management API](docs/api/policies.md): Policies control the security and share settings of your organization. For more information see [Security](https://help.sumologic.com/?cid=4041).
+    [Policies management API](/docs/api/policies.md): Policies control the security and share settings of your organization. For more information see [Security](https://help.sumologic.com/?cid=4041).
   x-displayName: Policies
 - name: traces
   description: |
-    [Traces API](docs/api/tracing.md): The Traces API allows you to browse traces collected in the system. You can execute queries to find traces matching provided search criteria as well as gather detailed information about individual traces and spans. For more information see [View and investigate traces](/docs/apm/traces/View_and_investigate_traces).
+    [Traces API](/docs/api/tracing.md): The Traces API allows you to browse traces collected in the system. You can execute queries to find traces matching provided search criteria as well as gather detailed information about individual traces and spans. For more information see [View and investigate traces](/docs/apm/traces/View_and_investigate_traces).
   x-displayName: Traces
 - name: spanAnalytics
   description: |
@@ -412,7 +412,7 @@ tags:
   x-displayName: Service Map
 - name: monitorsLibraryManagement
   description: |
-    [Monitor Management API](docs/api/monitors.md): Monitors continuously query your data to monitor and send notifications when specific events occur.
+    [Monitor Management API](/docs/api/monitors.md): Monitors continuously query your data to monitor and send notifications when specific events occur.
     For more information see [Monitors](https://help.sumologic.com/?cid=10020).
   x-displayName: Monitors
 - name: slosLibraryManagement

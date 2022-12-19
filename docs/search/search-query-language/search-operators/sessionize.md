@@ -32,7 +32,7 @@ Where *anchor pattern* is like a parse anchor expression, except that it can inc
 
 * The sessionize operator is followed by more than one [anchor](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor) expression.
 * Each anchor expression can be used to extract one or more variables from a matching log.
-* You can use the extracted variable to join with a second log message containing that variable using a $variableName notation.
+* You can use the extracted variable to join with a second log message containing that variable using a $variableName notation. Alternatively, logs matching an anchor expression will be inner joined on parsed fields in common with "partial sessions" which have matched the previous anchor expressions. Note that this means if you parse out a field which you expect to take on different values across logs within a single session, you must give that field a unique name in each anchor expression or the inner join will fail.
 
 After using the [Trace](#trace) operator to find related sessions, you can use the sessionize operator to refine the results.
 

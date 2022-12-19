@@ -7,7 +7,7 @@ sidebar_label: Carbon Black Inventory
 
 The Carbon Black Inventory Source provides a secure endpoint to receive data from the [CB Devices API](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/devices-api/). It securely stores the required authentication, scheduling, and state tracking information.
 
-[See how inventory data is used in Cloud SIEM Enterprise](docs/cse/records-signals-entities-insights/view-manage-entities.md).
+[See how inventory data is used in Cloud SIEM Enterprise](/docs/cse/records-signals-entities-insights/view-manage-entities.md).
 
 ## Authentication
 
@@ -15,7 +15,7 @@ To grant access to your data you'll need to provide credentials from Carbon Blac
 
 ## States
 
-A Carbon Black Inventory Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](docs/manage/health-events.md).
+A Carbon Black Inventory Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events.md).
 
 A Carbon Black Inventory Source goes through the following states when created:
 
@@ -29,7 +29,7 @@ If the Source has any issues during any one of these states, it is placed in an�
 
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](docs/manage/health-events.md) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![Carbon Black Defense error.png](/img/send-data/Carbon-Black-Defense-error.png)
+On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events.md) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![Carbon Black Defense error.png](/img/send-data/Carbon-Black-Defense-error.png)
 
 Hover your mouse over the status icon to view a tooltip with details on the detected issue. <br/>  ![health error generic.png](/img/send-data/health-error-generic.png)
 
@@ -61,7 +61,7 @@ To configure a Carbon Black Inventory Source:
 
 ### Error types
 
-When Sumo Logic detects an issue, it's tracked by [Health Events](docs/manage/health-events.md). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+When Sumo Logic detects an issue, it's tracked by [Health Events](/docs/manage/health-events.md). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
 |:--|:--|:--|:--|:--|

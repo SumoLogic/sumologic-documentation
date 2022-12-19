@@ -8,7 +8,7 @@ description: You can edit or cancel a Scheduled Search at any time.
 In the [**Library**](/docs/get-started/library), you can edit or cancel a scheduled search at any time. If you cancel a scheduled search, the search reverts to a saved search.
 
 :::important
-If the user who "owns" a Scheduled Search is deleted, the Scheduled Search will no longer run. For details, see [Delete a User](docs/manage/users-roles/users/delete-user.md). 
+If the user who "owns" a Scheduled Search is deleted, the Scheduled Search will no longer run. For details, see [Delete a User](/docs/manage/users-roles/users/delete-user.md). 
 :::
 
 ## Cancel a Scheduled Search

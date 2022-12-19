@@ -89,22 +89,22 @@ These topics provide basic information about administrator Sumo Logic accounts, 
 
 To send your data to Sumo Logic, you’ll need to learn how to configure Collectors and Sources.
 
-* [Metadata Naming Conventions](docs/send-data/reference-information/metadata-naming-conventions.md): Prior to configuring Collectors, it is a good idea to establish a naming convention for Sources, Collectors, and especially metadata tags.
+* [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md): Prior to configuring Collectors, it is a good idea to establish a naming convention for Sources, Collectors, and especially metadata tags.
 * [Compare Installed and Hosted Collectors](/docs/send-data/choose-collector-source#compare-installed-and-hosted-collectors):  Before you can send data to Sumo Logic, you'll need to decide what type of Collectors make sense for your use case: Installed Collectors or Hosted Collectors.
 * [Installed Collectors](/docs/send-data/installed-collectors): Installed Collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
 * [Hosted Collectors](/docs/send-data/hosted-collectors) Hosted Collectors don't require installation or activation, nor do Hosted Collectors have physical requirements, since they're hosted in AWS or HTTP.
 * [Sources](/docs/send-data/choose-collector-source): Sources are the environments that Sumo Logic Collectors connect to collect data from a customer's site.
 * [Sources for Installed Collectors](/docs/send-data/installed-collectors/sources):  Sources for Installed Collectors include Local and Remote File Sources, Local and Remote Windows Event Sources, Local and Remote Windows Performance Sources, Script Sources, Syslog Sources, and Script Actions.
 * [Sources for Hosted Collectors](/docs/send-data/hosted-collectors/): Sources for Hosted Collectors include HTTP Sources and AWS Source Types such as AWS CloudTrail, AWS Config, AWS ELB, Amazon CloudFront, Amazon S3 Audit, and Amazon S3.
-* [Timestamps, Time Zones, Time Ranges, and Date Formats](docs/send-data/reference-information/time-reference.md):  Sumo Logic supports several options for timestamps, time zones, time ranges, and dates.
+* [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference.md):  Sumo Logic supports several options for timestamps, time zones, time ranges, and dates.
 * [Using JSON to Configure Sources](/docs/send-data/use-json-configure-sources):  If you’d like to configure your Sources using JSON files, you can do that too.
 
 ### Managing collection and data volume
 
 Sumo provides a tool for tracking and managing collection and data volume.
 
-* [Log Ingest Data Volume Index](docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index.md): Sumo writes messages to the index about how much log data your account is ingesting. You can query the index, and if desired, install the [Sumo Logic Data Volume app](/docs/integrations/sumo-apps/data-volume-legacy), which provides pre-configured searches and dashboards for analyzing log ingestion. 
-* [Metric Ingest Data Volume Index](docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index.md): The Metrics Data Volume Index is populated with a set of index messages every five minutes. The messages contain information on how much metrics (by data points) your account is ingesting. 
+* [Log Ingest Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index.md): Sumo writes messages to the index about how much log data your account is ingesting. You can query the index, and if desired, install the [Sumo Logic Data Volume app](/docs/integrations/sumo-apps/data-volume-legacy), which provides pre-configured searches and dashboards for analyzing log ingestion. 
+* [Metric Ingest Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index.md): The Metrics Data Volume Index is populated with a set of index messages every five minutes. The messages contain information on how much metrics (by data points) your account is ingesting. 
 
 ### Searching
 
@@ -133,11 +133,11 @@ Search optimization tools speed the search process, delivering query results in 
 Sumo provides a number of tools for managing users' access to Sumo and
 configuring security policies. You can:
 
-* [Set password policies](docs/manage/security/set-password-policy.md): Set rules for password expiration, reuse, and lock out.
-* [Create an Allowlist for IP or CIDR addresses](docs/manage/security/create-allowlist-ip-cidr-addresses.md): Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
-* [Manage access keys](docs/manage/security/access-keys.md): Access keys are used in sumo to securely register new collectors and for accessing Sumo APIs.
-* [Sumo audit index](docs/manage/security/audit-index.md): If you enable the audit index, Sumo captures information on the internal events that occur in your account associated with account management, user activity, scheduled searches, and more.
-* [Support account access](docs/manage/security/enable-support-account.md): You can enable a Sumo Logic support account, which grants very select Sumo Logic support agents access to your organization's account, better helping those agents to resolve issues that arise. Admins can choose to keep the support account enabled full-time, or the account can be disabled when no issues are being investigated.
+* [Set password policies](/docs/manage/security/set-password-policy.md): Set rules for password expiration, reuse, and lock out.
+* [Create an Allowlist for IP or CIDR addresses](/docs/manage/security/create-allowlist-ip-cidr-addresses.md): Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
+* [Manage access keys](/docs/manage/security/access-keys.md): Access keys are used in sumo to securely register new collectors and for accessing Sumo APIs.
+* [Sumo audit index](/docs/manage/security/audit-index.md): If you enable the audit index, Sumo captures information on the internal events that occur in your account associated with account management, user activity, scheduled searches, and more.
+* [Support account access](/docs/manage/security/enable-support-account.md): You can enable a Sumo Logic support account, which grants very select Sumo Logic support agents access to your organization's account, better helping those agents to resolve issues that arise. Admins can choose to keep the support account enabled full-time, or the account can be disabled when no issues are being investigated.
 * [Set Up SAML for Single Sign-On](/docs/manage/security/saml): Enterprise accounts can provision Security Assertion Markup Language (SAML) 2.0 to enable Single Sign-On (SSO) for user access to Sumo Logic. In addition to basic SAML functionality, you can choose optional on-demand user creation (using SAML 2.0 assertions), and designate custom login and/or logout portals.
 * [Role-based access control (RBAC)](/docs/manage/users-roles): Sumo Logic supports RBAC. Users are not assigned permissions directly, but inherit permissions through roles (or even through a single role). Role assignments grant users specific capabilities, and govern what data users can view.   
 
@@ -154,7 +154,7 @@ Sumo supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To l
 
 For customers with Enterprise accounts, Sumo Logic provides different APIs to interact with third-party scripts and applications.
 
-* [Sumo Logic Endpoints](docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security): Sumo Logic has five deployments, or pods, that are assigned depending on the geographic location and the date a Sumo Logic account is created.
+* [Sumo Logic Endpoints](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security): Sumo Logic has five deployments, or pods, that are assigned depending on the geographic location and the date a Sumo Logic account is created.
 * [Collector Management API](/docs/api/collectors): The Collector Management API allows you to define an initial Source configuration for your Collectors using a JSON file. It also allows you to create, update, and delete Collectors and Sources from an HTTP endpoint.
 * [Search Job API](/docs/api/Search-Job): Sumo Logic exposes the Search Job API for access to resources and log data from third-party scripts and applications. The API follows Representational State Transfer (REST) patterns and is optimized for ease of use and consistency.
 
