@@ -83,7 +83,7 @@ and you can simply send it to the source URL that you created in the previous st
 ]
 ```
 In the example above we have three spans, one parent span without `parentId` and its two children spans
-which refer to it's `id` with the `parentId` field.
+which refers to its `id` with the `parentId` field.
 
 You can replace the variables `parentSpanId` and `traceId` with random hexadecimal ids 
 like `462bdf9a74ca9e2c` and `872cef9a74ca9c3a`. You can replace `timestamps` with the current epoch timestamp
