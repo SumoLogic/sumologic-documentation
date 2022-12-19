@@ -2,10 +2,14 @@
 id: metric-query-error-messages
 title: Metric Query Error Messages
 sidebar_label: Error Messages
-description: Sumo issues errors when metric queries run too long or match too many time series.
+description: Explanation of warning and error messages from Sumo Logic Metric Query, and .
 ---
 
-This page describes error messages that are presented for long-running metric queries and metric queries that return too many results.
+This page describes warning and error messages that are presented for long-running metric queries and metric queries that return too many results.
+
+# Warnings
+
+Warnings refer to issues that will not block your query from running and returning results. However, the result may be inaccurate or incomplete due to the issue warned about. 
 
 ## Too many time series
 
@@ -37,12 +41,59 @@ There will also be a tip like this:
 
 One solution is to add additional selectors to your query to reduce the number of time series returned, for example by adding additional `tag=value` pairs to the query. You can also filter the time series returned using the [topk](/docs/metrics/metrics-operators/topk), [bottomk](/docs/metrics/metrics-operators/bottomk), and [filter](/docs/metrics/metrics-operators/filter) operators. 
 
-## Long-running metric query
+## Quantization interval not supported
 
-For a single metrics query request, Sumo limits the output time series at 1000 for visualization. Output time series can either exceed the limit for a single row or multiple rows combined.
+When you use the [quantize](/docs/metrics/metrics-operators/quantize) operator to control Sumo’s quantization behavior, the following limitations apply:
+
+- Each output time series will contain no more than 300 data points. If the quantization interval is too small, the following warning message will be displayed:
+
+  `The requested quantization granularity of [Desired Interval] would produce more than 300 points per metric. Using [Corrected Interval] instead.`
+
+  and the quantization interval will be set to the nearest appropriate value that results in less than or equal to 300 data points per series.
+
+- When the specified quantization interval is less than the minimum quantization interval supported by the dataset, the following warning message will be displayed:
+
+  `The requested quantization granularity [Desired Interval] was not supported. Using [Corrected Interval] instead.`
+
+  and the quantization interval will be set to the nearest supported value.
+
+## Aggregation over nonexistent key
+
+Aggregate (group-by) functions evaluate the specified arithmetic function for each timestamp across different time series. The by clause is used to define the field to group by.
+
+If the field specified in the by clause is empty for one or more time series, the following warning message will be displayed:
+
+`Aggregate by non-existent keys. Keys: [key1, key2, ...] is missing in one or more time series.`
+
+All the series that have the group by field empty will be treated as one group in the aggregation result.
+
+
+# Errors
+
+An error means a critical issue that prevents your query from running. When an error happens, you query will not yield any result. The error could be caused by a syntax error in the query string, or by the query reaching a hard limit. You can request Sumo for a limit increase if a hard limit is reached.
+
+## Query Timeout
 
 When a metric query runs for 60 seconds, it will time out, and Sumo will present a message like this:
 
 `The metrics query timed out. Please consider making the query more selective.`
 
 The error might results from the query matching too many time series, but it could also be caused by other conditions, for instance a backend failure or problem.
+
+## Hard Limits on Metric Queries
+
+To provide the best user experience, we have hard limits that are preventing some unusual query patterns from executing. If your use case involves queries over any of these limits, please contact customer support to increase the limit. 
+
+The following hard limits apply to Metrics queries in Sumo:
+
+|Property|Limit|Error Message|
+|:---|:---|:---|
+|Query Rows|6|Too many query rows ([number of rows]). The limit is: [limit].|
+|Query String Length|1500 chars|Too long ([queryLength] characters). The limit is: [limit].|
+|Max Number of Operators|60|Too many operators: [number of operators]. The maximum number of possible operators is: [limit].|
+|Max Number of Selectors|50|Too many selectors: [number of selectors]. The maximum number of possible selectors is: [limit].|
+|Max Time Range|1000d|The given time range was invalid.|
+|Max Quantization Interval|30d|The given quantization was too big.|
+|Max Timeshift|1000d|The given timeshift was too big.|
+
+
