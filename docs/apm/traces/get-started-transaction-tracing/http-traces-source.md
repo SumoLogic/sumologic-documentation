@@ -87,4 +87,4 @@ which refer to it's `id` with the `parentId` field.
 
 You can replace the variables `parentSpanId` and `traceId` with random hexadecimal ids 
 like `462bdf9a74ca9e2c` and `872cef9a74ca9c3a`. You can replace `timestamps` with the current epoch timestamp
-in microseconds e.g. `1671096513000000`.
+in microseconds, for example `1671096513000000`.
