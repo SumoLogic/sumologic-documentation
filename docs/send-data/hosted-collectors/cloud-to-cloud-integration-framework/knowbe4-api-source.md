@@ -1,6 +1,6 @@
 ---
 id: knowbe4-api-source
-title: Knowbe4 API Source (Beta)
+title: KnowBe4 API Source (Beta)
 description: This document explains how to configure the KnowBe4 Cloud-to-Cloud source setup using the Sumo logic environment.
 ---
 
@@ -49,19 +49,19 @@ To configure a KnowBe4 API Source:
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
-3. Select **KnowBe4.**. <br/>  <img src={useBaseUrl('img/send-data/knowbe4-icon.png')} alt="knowbe4-icon.png" width="150" />
-4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.<br/> <img src={useBaseUrl('img/send-data/knowbe4-config-main.png')} alt="knowbe4-config-main.png" width="450" />
+3. Select **KnowBe4** icon.  <br/>  <img src={useBaseUrl('img/send-data/knowbe4-icon.png')} alt="knowbe4-icon.png" width="120" />
+4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional. <br/>   <img src={useBaseUrl('img/send-data/knowbe4-config-main.png')} alt="knowbe4-config-main.png" width="450" />
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 6. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-7. In **Base URL**, choose the URL where your Knowbe4 account is located from the drop-down list. The following table contains the base URLs based on the location of the your Knowbe4 account:
+7. In **Base URL**, choose the URL where your KnowBe4 account is located from the drop-down list. The following table contains the base URLs based on the location of the your KnowBe4 account:
 
 | Server Location | Server Located at | Base URLs |
 |:--|:--|:--|
 | US Server |	training.knowbe4.com |	https://api.events.knowbe4.com |
 | EU Server | eu.knowbe4.com |	https://api-eu.events.knowbe4.com |
-| CA Server	ca.knowbe4.com |	https://api-ca.events.knowbe4.com |
+| CA Server	| ca.knowbe4.com |	https://api-ca.events.knowbe4.com |
 
 8. In **API Key**, authenticate your account by entering your secret API key. You can access your API key or generate a new one from **User Event API Management Console**.
 9. When you are finished configuring the Source, click **Save**.
@@ -73,8 +73,8 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
 |:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable                                                    | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs.                                     | Yes                                                   | The Source will retry indefinitely.                               | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry indefinitely.                               | FirstPartyGenericError |
+| ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which it quits.                               | ThirdPartyGenericError |
+| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will for up to 90 minutes, after which it quits.                               | FirstPartyGenericError |
 
 ## API Limitations
 
