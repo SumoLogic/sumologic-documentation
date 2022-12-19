@@ -171,16 +171,16 @@ Note that:
 id,suppressed,criticality,tags,tags_to_add,tags_to_remove
 _ip-zone1-10.0.0.5,false,default,,Office-Based,
 _ip-zone1-10.0.0.6,true,default,,Office-Based,Remote
-_ip-zone1-10.0.0.7,false,Executive,Office-Based,,
+_ip-zone1-10.0.0.7,false,default,,Office-Based,
 ```
 
 **Format 2 example**
 
 ```
 type,value,sensor_zone,suppressed,criticality,tags,tags_to_add,tags_to_remove
-_ip,10.0.0.5,zone1,false,Executive PC,Frequent-Travel,,
+_ip,10.0.0.5,zone1,false,default,Frequent-Travel,,
 _ip,10.0.0.6,zone1,true,default,,Office-Based,Remote
-_ip,10.0.0.7,zone1,false,Executive,Office-Based,
+_ip,10.0.0.7,zone1,false,default,,Office-Based,
 ```
 
 #### Upload CSV file
