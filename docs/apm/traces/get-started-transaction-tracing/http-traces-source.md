@@ -86,5 +86,5 @@ In the example above we have three spans, one parent span without `parentId` and
 which refer to it's `id` with the `parentId` field.
 
 You can replace the variables `parentSpanId` and `traceId` with random hexadecimal ids 
-like e.g. `462bdf9a74ca9e2c` and `872cef9a74ca9c3a`. And `timestamps` with the current epoch timestamp
+like `462bdf9a74ca9e2c` and `872cef9a74ca9c3a`. You can replace `timestamps` with the current epoch timestamp
 in microseconds e.g. `1671096513000000`.
