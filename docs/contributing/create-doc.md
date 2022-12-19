@@ -5,12 +5,12 @@ sidebar_label: Create a Doc
 description: Learn how to create a doc, write content in markdown, and submit your changes to our repo.
 ---
 
-Here's a high level overview of how to create a new Sumo Logic doc.
+Here's a high-level overview of how to create a new Sumo Logic doc.
 
 {@import ../reuse/doc-prerequisites.md}
 
 
-## Step 1: Fork the Sumo Docs Repository
+## Step 1: Fork the Sumo Docs repository
 
 To create new doc, we recommend forking our repo, making changes in a new branch, and submitting a PR for review.
 
@@ -36,7 +36,7 @@ See [Frontmatter](/docs/contributing/style-guide/#metadata-frontmatter) to learn
 
 See our [Style Guide](/docs/contributing/style-guide) to learn how to write and style content, add code snippets, import multimedia, and more. Doc body text content is written in GitHub-flavored markdown, with some customizations.
 
-### Recommended Authoring Tools
+### Recommended authoring tools
 
 If you're new to GitHub and writing [Markdown](https://daringfireball.net/projects/markdown/syntax) documentation, we recommend using the following apps:
 * [Atom](https://atom.io): Create new branches, stage and commit, push and pull, resolve merge conflicts, view PRs and more - all from within your editor. The GitHub package comes bundled with Atom.
@@ -56,7 +56,7 @@ To add your new doc to the left-nav menu, you'll need to add its name and file p
 The Sumo Logic Doc Team will help you add your documentation to the sidebar and top navigation. If you have suggestions, please include those in your Pull Request description. If you add the documentation to the sidebar, the team will review the location and names for building and placement in navigation.
 :::
 
-## Step 6: Build and deploy on local to preview changes
+## Step 6: Preview your changes
 
 Next, you'll build and deploy a local instance of the Sumo Logic Docusaurus site.
 
@@ -90,7 +90,7 @@ We use Yarn for all installs and builds. Never use NPM commands for installing o
    1. From the labels list, select the `hot🔥` label, signifying it's an extremely urgent PR.
    1. For internal Sumos only: after completion of all GitHub checks, send your PR link to the `#doc-int` and `#open-source` Slack channels for review.
 1. Click **Create Pull Request**.<br/> ![pull request](/img/contributing/pull-request.png)
-1. Sign our Contributor License Agreement (built using [cla-bot](https://colineberhardt.github.io/cla-bot/)). We allow individual contributions and contributions made on behalf of companies. If you have any questions, please [submit an issue](https://github.com/SumoLogic/sumologic-documentation/issues).
+1. First-time contributors will be prompted in a comment to sign our Contributor License Agreement. We allow individual contributions and contributions made on behalf of companies.<br/> ![CLA bot](/img/contributing/clabot.png)
 
 ## What happens next?
 
