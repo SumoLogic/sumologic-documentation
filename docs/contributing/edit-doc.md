@@ -37,9 +37,10 @@ Feel free to reach out to the Docs Team to discuss. We're happy to work with you
 
 In your new branch, edit the doc markdown file. See our [Style Guide](/docs/contributing/style-guide) to learn how to style content, add code snippets, import multimedia, and more. Doc body text content is written in GitHub-flavored markdown, with some customizations.
 
-#### Recommended Authoring Tools
+:::tip Recommended authoring tools
 
-If you're new to GitHub and writing [Markdown](https://daringfireball.net/projects/markdown/syntax) documentation, we recommend using the following apps:
+<details><summary>If you're new to GitHub and/or writing Markdown, we recommend using the following apps (click to expand):</summary>
+
 * [Atom](https://atom.io): Create new branches, stage and commit, push and pull, resolve merge conflicts, view PRs and more - all from within your editor. The GitHub package comes bundled with Atom.
 * [GitHub Desktop](https://desktop.github.com/): Easy-to-use interface to update your local machine clone, create branches, push to GitHub and more.
 * [VS Code](https://code.visualstudio.com/): Development application to open the repo, edit and create files, and preview pages as you write. We recommend the following extensions:
@@ -48,6 +49,9 @@ If you're new to GitHub and writing [Markdown](https://daringfireball.net/projec
    * Markdown Preview Enhanced
    * Markdown Preview Mermaid and Mermaid Markdown Syntax Highlighting for charts and graphs
 * [iTerm2](https://iterm2.com/) - Terminal application for macOS. You can also install [Oh My Zsh](https://ohmyz.sh/) for theming.
+
+</details>
+:::
 
 ### Step 3: Preview your changes
 
