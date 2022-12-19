@@ -32,7 +32,7 @@ Sumo Logic tests the service on several browsers to ensure a consistent experie
 * Single core, 512MB RAM
 * 8GB disk space
 
-[Configure Limits for Collector Caching](docs/send-data/collector-faq#configure-limits-collector-caching) to adjust the required disk space.
+[Configure Limits for Collector Caching](/docs/send-data/collector-faq#configure-limits-collector-caching) to adjust the required disk space.
 
 ### Memory guidelines
 
@@ -55,9 +55,9 @@ For information about increasing Collector memory and monitoring Collector logs
 
 Sumo Logic automatically redirects Installed Collectors to the correct collection endpoint when registering to your account. If you have or need specific network security policies you'll need to allow outbound traffic to Sumo Logic endpoints for collection to work.
 
-Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See our table of [Sumo Logic Endpoints and Firewall Security](docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security) for details.
+Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See our table of [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security) for details.
 
-Also, see how to [Test Connectivity of Sumo Logic Collectors](docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors.md).
+Also, see how to [Test Connectivity of Sumo Logic Collectors](/docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors.md).
 
 ### Virtual Memory
 

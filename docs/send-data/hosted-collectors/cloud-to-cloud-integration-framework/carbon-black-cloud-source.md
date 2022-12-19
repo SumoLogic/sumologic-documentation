@@ -7,7 +7,7 @@ sidebar_label: Carbon Black Cloud
 The Carbon Black Cloud Source provides a secure endpoint to receive data from the Carbon Black Cloud, Enriched Event Search, and Alerts APIs. It securely stores the required authentication, scheduling, and state tracking information.
 
 :::tip
-The Event Forwarder is recommended by VMWare Carbon Black over APIs for obtaining large amounts of data from Carbon Black Cloud in real time. Sumo Logic recommends using the Event Forwarder in combination with a Sumo Logic AWS S3 Source instead of a Carbon Black Cloud Source. For details, see [how to collect logs for Carbon Black](docs/integrations/security-threat-detection/vmware-carbon-black.md).
+The Event Forwarder is recommended by VMWare Carbon Black over APIs for obtaining large amounts of data from Carbon Black Cloud in real time. Sumo Logic recommends using the Event Forwarder in combination with a Sumo Logic AWS S3 Source instead of a Carbon Black Cloud Source. For details, see [how to collect logs for Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black.md).
 :::
 
 ## Authentication
@@ -29,7 +29,7 @@ authenticate to each API:
 
 ## States
 
-A Carbon Black Cloud Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](docs/manage/health-events.md).
+A Carbon Black Cloud Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events.md).
 
 A Carbon Black Cloud Source goes through the following states when created:
 
@@ -74,7 +74,7 @@ To configure a Carbon Black Cloud Source:
 
 ## Error types
 
-When Sumo Logic detects an issue, it's tracked by [Health Events](docs/manage/health-events.md). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+When Sumo Logic detects an issue, it's tracked by [Health Events](/docs/manage/health-events.md). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
 |:--|:--|:--|:--|:--|

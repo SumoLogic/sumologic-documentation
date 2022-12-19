@@ -34,7 +34,7 @@ In the metric above: 
 * The timestamp for the instant that the metric was measured is 1460061337.
 
 :::tip
-Graphite does not support meta tags. However, you can use Sumo's metric rules editor to tag metrics with key-value pairs derived from a Graphite metric’s metric_path. Then, you can use those key-value pairs in metric queries. For more information, see [About Metric Rules](docs/metrics/metric-rules-editor#about-metric-rules).
+Graphite does not support meta tags. However, you can use Sumo's metric rules editor to tag metrics with key-value pairs derived from a Graphite metric’s metric_path. Then, you can use those key-value pairs in metric queries. For more information, see [About Metric Rules](/docs/metrics/metric-rules-editor#about-metric-rules).
 :::
 
 ### Inferred metric name
@@ -109,7 +109,7 @@ This [blog post](https://www.sumologic.com/blog/intrinsic-vs-meta-tags/) provide
 
 ### Mandatory metric name
 
-Unlike Prometheus, Carbon 2.0 format doesn't enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic require a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo and a `MetricsMetricNameMissing` Health Event for the associated Metric Source will be triggered (for more information on Halth Events, see [About Health Events](docs/manage/health-events#health-events)).
+Unlike Prometheus, Carbon 2.0 format doesn't enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic require a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo and a `MetricsMetricNameMissing` Health Event for the associated Metric Source will be triggered (for more information on Halth Events, see [About Health Events](/docs/manage/health-events#health-events)).
 
 For example, the following metric will be correctly ingested to Sumo Logic:
 ```
@@ -152,4 +152,4 @@ See the table below for descriptions of the components of a Prometheus metric 
 | `value` | Value of the metric. |
 | `timestamp` | The time the metric was collected, in int64 format.  |
 
-The Prometheus format does not support metadata in the format itself. You can attach metadata to Prometheus metrics by specifying it the HTTP header when you upload the metrics to Sumo. For more information, see [Upload Metrics to an HTTP Source](docs/send-data/hosted-collectors/http-source/upload-metrics.md).
+The Prometheus format does not support metadata in the format itself. You can attach metadata to Prometheus metrics by specifying it the HTTP header when you upload the metrics to Sumo. For more information, see [Upload Metrics to an HTTP Source](/docs/send-data/hosted-collectors/http-source/upload-metrics.md).

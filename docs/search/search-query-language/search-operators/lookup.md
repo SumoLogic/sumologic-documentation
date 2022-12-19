@@ -12,7 +12,7 @@ The lookup operator can return one or more fields from a lookup table hosted by 
 New Lookup Tables are available in all deployments except Sumo Logic's Montreal deployment, pending AWS providing a required AWS service in the Montreal region.
 :::
 
-For information about lookup tables, see [Create and Manage Lookup Tables](docs/search/lookup-tables/create-lookup-table.md).
+For information about lookup tables, see [Create and Manage Lookup Tables](/docs/search/lookup-tables/create-lookup-table.md).
 
 ## lookup requirements and limitations
 
@@ -88,7 +88,7 @@ Where:
 
     `/Library/Users/myusername@sumologic.com/Suspicious Users`
 
-    If the lookup table is in an [Admin Recommended](docs/manage/content-sharing/admin-mode.md) folder, the path looks like this:  
+    If the lookup table is in an [Admin Recommended](/docs/manage/content-sharing/admin-mode.md) folder, the path looks like this:  
 
     `/Library/Admin Recommended/Lookups/Approved Cloud Jump Stations`  
 

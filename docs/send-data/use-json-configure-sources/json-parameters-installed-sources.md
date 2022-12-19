@@ -427,7 +427,7 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
 |--|--|--|--|--|--|
 | `sourceType` | String   | Yes |   | DockerLog |   |
 | `uri` | String   | Yes |   | URI of the Docker daemon. | modifiable |
-| `specifiedContainers` | List     | |   | Comma-separated list of Docker containers. Collection will be only from running containers.  If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see [More about defining container filters](docs/send-data/installed-collectors/sources/docker-sources.md). | modifiable |
+| `specifiedContainers` | List     | |   | Comma-separated list of Docker containers. Collection will be only from running containers.  If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see [More about defining container filters](/docs/send-data/installed-collectors/sources/docker-sources.md). | modifiable |
 | `allContainers` | Boolean  | Yes |   | Flag indicating whether the Source includes all running containers (`true`) or only the containers listed in `specifiedContainers` (`false`). | modifiable |
 | `certPath` | String   | `*` |   | Enter the path to the cert files on the local machine where the Collector is running. Required if the URI uses HTTPS. | modifiable |
 | `collectEvents` | Boolean  | Yes |   | Must be set to `true` to collect the Docker logs. |   |
@@ -600,4 +600,4 @@ Graphite contentType JSON example: 
 See the following topics for additional information:
 * [Use JSON to configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.
 * [JSON Source parameters for Hosted Collectors](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources).
-* [View or download Collector or Source JSON configuration](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) from Sumo Logic.
+* [View or download Collector or Source JSON configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) from Sumo Logic.

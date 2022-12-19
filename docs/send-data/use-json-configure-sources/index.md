@@ -15,12 +15,12 @@ See the following topics for additional information:
  * [Collector Management API](/docs/api/collectors)
  * [JSON Source Parameters for Hosted Collectors](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources)
  * [JSON Source Parameters for Installed Collectors](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources)
- * [View or Download Collector or Source JSON Configuration](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md)
+ * [View or Download Collector or Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md)
 
 ## Defining a Source JSON file
 
 When registering a Collector, you can define a source JSON file using the `sources` or `syncSources` parameter in your
-[user.properties](docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) or [sumo.conf](docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) configuration file. These parameters are used the first time a collector is set up.
+[user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) or [sumo.conf](/docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) configuration file. These parameters are used the first time a collector is set up.
 
 | Parameter |  Type |  Description |
 |--|--|--|
@@ -74,7 +74,7 @@ Each source can have its own unique fields in addition to the generic fields lis
 
 | Field Type | Type Value |
 |--|--|
-| [Akamai SIEM API Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source.md) | Universal |
+| [Akamai SIEM API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source.md) | Universal |
 | [Amazon S3 Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#amazon-s3-source) | Polling |
 | [AWS S3 Archive Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-s3-archive-source) | Polling |
 | [AWS CloudFront Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudfront-source) | Polling |
@@ -83,28 +83,28 @@ Each source can have its own unique fields in addition to the generic fields lis
 | [AWS Kinesis Firehose for Logs Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-kinesis-firehose-for-logs-source) | HTTP |
 | [AWS S3 Audit Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-s3-audit-source) | Polling |
 | [AWS Metadata (Tag) Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-metadata-tag-source) | Polling |
-| [Azure Event Hubs Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md) | Universal |
-| [Carbon Black Cloud Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source.md) | Universal |
-| [Carbon Black Inventory Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source.md) | Universal |
+| [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md) | Universal |
+| [Carbon Black Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source.md) | Universal |
+| [Carbon Black Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source.md) | Universal |
 | [Cloud Syslog Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#cloud-syslog-source) | Cloudsyslog |
-| [Cisco AMP Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source.md) | Universal |
-| [Crowdstrike FDR Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source.md) | Universal |
-| [CrowdStrike Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source.md) | 	Universal |
-| [CSE AWS EC2 Inventory Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source.md) | Universal |
-| [Cybereason Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source.md) | Universal |
-| [Duo Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source.md) | Universal |
+| [Cisco AMP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source.md) | Universal |
+| [Crowdstrike FDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source.md) | Universal |
+| [CrowdStrike Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source.md) | 	Universal |
+| [CSE AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source.md) | Universal |
+| [Cybereason Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source.md) | Universal |
+| [Duo Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source.md) | Universal |
 | [Google Cloud Platform Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#google-cloud-platform-source) | HTTP |
 | [HTTP Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#http-source) | HTTP |
-| [Microsoft Graph Security API Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source.md) | Universal |
-| [Mimecast Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source.md) | Universal |
-| [Netskope Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source.md) | Universal |
-| [Okta Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) | Universal |
-| [Palo Alto Cortex XDR](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source.md) | Universal |
-| [Proofpoint On Demand Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source.md) | Universal |
-| [Proofpoint TAP Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source.md) | Universal |
-| [Salesforce Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source.md) | Universal |
-| [Sophos Central Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source.md) | Universal |
-| [Tenable Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source.md) | Universal |
+| [Microsoft Graph Security API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source.md) | Universal |
+| [Mimecast Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source.md) | Universal |
+| [Netskope Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source.md) | Universal |
+| [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) | Universal |
+| [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source.md) | Universal |
+| [Proofpoint On Demand Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source.md) | Universal |
+| [Proofpoint TAP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source.md) | Universal |
+| [Salesforce Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source.md) | Universal |
+| [Sophos Central Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source.md) | Universal |
+| [Tenable Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source.md) | Universal |
 
 ### Metrics sources for hosted collectors
 
@@ -147,7 +147,7 @@ The following parameters are used for log Sources except for Syslog. Syslog Sour
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `filters` | String | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward. Review the [Rules and Limitations](docs/send-data/collection/processing-rules/include-and-exclude-rules.md) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable |
+| `filters` | String | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward. Review the [Rules and Limitations](/docs/send-data/collection/processing-rules/include-and-exclude-rules.md) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable |
 
 **When collection should begin**
 
@@ -198,9 +198,9 @@ The following is a Timestamp example in JSON with two default date formats, `yyy
 
 You can include processing (filtering) rules when using JSON to configure sources. A filter specifies rules about which messages are sent to Sumo Logic.
 
- * Exclude—Removes messages before ingestion to Sumo Logic. Think of Exclude as a "denylist" filter. For more information, see [Include and Exclude Rules](docs/send-data/collection/processing-rules/include-and-exclude-rules.md).
- * Include—Sends only the data you explicitly define to Sumo Logic. Think of Include as an "allowlist" filter. For more information, see [Include and Exclude Rules](docs/send-data/collection/processing-rules/include-and-exclude-rules.md).
- * Hash—Replaces a message with a unique, randomly-generated code to protect sensitive or proprietary information, such as credit card numbers or user names. By hashing this type of data you can still track it, even though it's fully hidden. For more information, see [Hash Rules](docs/send-data/collection/processing-rules/hash-rules.md).
+ * Exclude—Removes messages before ingestion to Sumo Logic. Think of Exclude as a "denylist" filter. For more information, see [Include and Exclude Rules](/docs/send-data/collection/processing-rules/include-and-exclude-rules.md).
+ * Include—Sends only the data you explicitly define to Sumo Logic. Think of Include as an "allowlist" filter. For more information, see [Include and Exclude Rules](/docs/send-data/collection/processing-rules/include-and-exclude-rules.md).
+ * Hash—Replaces a message with a unique, randomly-generated code to protect sensitive or proprietary information, such as credit card numbers or user names. By hashing this type of data you can still track it, even though it's fully hidden. For more information, see [Hash Rules](/docs/send-data/collection/processing-rules/hash-rules.md).
  * Mask—Replaces an expression with a mask string that you can customize; especially useful for protecting passwords or other data you wouldn't normally track. For more information, see [Mask Rules].
  * Forward—Sends matching log messages to a data forwarding destination. For more information, see [Example: data forwarding rule](#example-data-forwarding-rule) below.
 
@@ -333,7 +333,7 @@ To determine the sinkId for a data forwarding destination, you use the Sumo web 
 
 These instruction assume you have already created a data forwarding destination.
 
-1. Follow the instructions in [Configure processing rules for data forwarding](docs/manage/data-forwarding/installed-collectors.md#configure-processing-rules-for-data-forwarding) to add a data forwarding rule to a source on an installed collector. As part of this process, you will select the data forwarding destination to which you want to forward data.
+1. Follow the instructions in [Configure processing rules for data forwarding](/docs/manage/data-forwarding/installed-collectors.md#configure-processing-rules-for-data-forwarding) to add a data forwarding rule to a source on an installed collector. As part of this process, you will select the data forwarding destination to which you want to forward data.
 1. To view the JSON configuration for the source you updated in the previous step:
 
    1. Select **Manage Data \> Collection \> Collection**. 

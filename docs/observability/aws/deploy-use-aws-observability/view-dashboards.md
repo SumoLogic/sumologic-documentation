@@ -77,13 +77,13 @@ For details, see [Drill down to discover root causes](../../../dashboards-new/dr
 
 ## Troubleshooting with the AWS Observability Root Cause Explorer Dashboards
 
-To troubleshoot production incidents using Root Cause Explorer, please follow the instructions in [the Root Cause Explorer documentation.](docs/observability/root-cause-explorer.md). 
+To troubleshoot production incidents using Root Cause Explorer, please follow the instructions in [the Root Cause Explorer documentation.](/docs/observability/root-cause-explorer.md). 
 
 ## Viewing AWS Observability Solution Dashboards
 
 All of the apps are installed in a folder named **Sumo Logic AWS Observability Apps** that is located in your personal folder and can be viewed outside of Explore.
 
-To add a new dashboard to your explore hierarchy, refer to the instructions in the [Add new Service documentation](docs/observability/aws/other-configurations-tools/add-new-aws-service.md).
+To add a new dashboard to your explore hierarchy, refer to the instructions in the [Add new Service documentation](/docs/observability/aws/other-configurations-tools/add-new-aws-service.md).
 
 To view the app dashboards outside of Explorer, do the following:
 
@@ -106,9 +106,9 @@ Click a link for information on the individual app dashboards:
 * [AWS Network ELB Dashboards](../integrations/aws-network-load-balancer.md)
 * [Global Intelligence for AWS CloudTrail DevOps](/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops)
 * [AWS Classic Load Balancer Dashboards](../integrations/aws-classic-load-balancer.md)
-* [Amazon RDS Dashboards](docs/observability/aws/integrations/aws-rds-metrics.md)
-* [Amazon SNS Dashboards](docs/observability/aws/integrations/amazon-sns.md)
+* [Amazon RDS Dashboards](/docs/observability/aws/integrations/aws-rds-metrics.md)
+* [Amazon SNS Dashboards](/docs/observability/aws/integrations/amazon-sns.md)
 
 ## More Information
 
-* [Explore View](docs/dashboards-new/explore-view.md)
+* [Explore View](/docs/dashboards-new/explore-view.md)
