@@ -82,7 +82,7 @@ and you can simply send it to the source URL that you created in the previous st
   }
 ]
 ```
-In the example above we have three spans, one parent span without `parentId` and it's two children spans
+In the example above we have three spans, one parent span without `parentId` and its two children spans
 which refer to it's `id` with the `parentId` field.
 
 You can replace the variables `parentSpanId` and `traceId` with random hexadecimal ids 
