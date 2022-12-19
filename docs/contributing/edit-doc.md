@@ -72,7 +72,6 @@ We use Yarn for all installs and builds. Never use NPM commands for installing o
 1. First-time contributors will be prompted in a comment to sign our Contributor License Agreement. We allow individual contributions and contributions made on behalf of companies.<br/> ![CLA bot](/img/contributing/clabot.png)
 
 
-
 ## What happens next?
 
 Docs Team members will review contributions, provide feedback, and approve. When approved, the Docs Team will merge and update staging. Updates to production will be handled by the Docs Team.
