@@ -2,23 +2,10 @@
 id: metric-query-error-messages
 title: Metric Query Error Messages
 sidebar_label: Error Messages
-description: Sumo issues errors when metric queries run too long or match too many time series.
+description: Explanation of warning and error messages from Sumo Logic Metric Query, and .
 ---
 
 This page describes warning and error messages that are presented for long-running metric queries and metric queries that return too many results.
-
-# Contents
-
-[Warnings](#warnings)
-- [Too many time series](#too-many-time-series)
-  - [Input data limit](#input-data-limit)
-  - [Output data limit](#output-data-limit)
-- [Quantization interval not supported](#quantization-interval-not-supported)
-- [Aggregation over nonexistent key](#aggregation-over-nonexistent-key)
-
-[Errors](#errors)
-- [Query Timeout](#query-timeout)
-- [Hard Limits on Metric Queries](#hard-limits-on-metric-queries)
 
 # Warnings
 
@@ -56,7 +43,7 @@ One solution is to add additional selectors to your query to reduce the number 
 
 ## Quantization interval not supported
 
-When you use the quantize (https://help.sumologic.com/docs/metrics/metrics-operators/quantize ) operator to control Sumo’s quantization behavior, the following limitations apply:
+When you use the [quantize](/docs/metrics/metrics-operators/quantize) operator to control Sumo’s quantization behavior, the following limitations apply:
 
 - Each output time series will contain no more than 300 data points. If the quantization interval is too small, the following warning message will be displayed:
 
