@@ -1,9 +1,8 @@
 ---
-id: knowbe4-api-source
+id: knowbe4
 title: Knowbe4 API Source (Beta)
 description: This document explains how to configure the KnowBe4 Cloud-to-Cloud source setup using the Sumo logic environment.
 ---
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <head>
@@ -63,7 +62,7 @@ To configure a KnowBe4 API Source:
 | EU Server | eu.knowbe4.com |	https://api-eu.events.knowbe4.com |
 | CA Server	ca.knowbe4.com |	https://api-ca.events.knowbe4.com |
 
-8. In **API Key**, authenticate your account by entering your secret API key. You can access your API key or generate a new one from **User Event API Management Console**.
+8. In **API Key**, authenticate your account by entering your secret API key. You can access your API key or genarate a new one from **User Event API Management Console**.
 9. When you are finished configuring the Source, click **Save**.
 
 ### Error types
