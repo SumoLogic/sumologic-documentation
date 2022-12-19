@@ -33,13 +33,13 @@ You can [submit a Sumo Docs feature request](https://github.com/SumoLogic/sumolo
 If you're looking to submit a Sumo Logic (not docs) feature request, [click here](/docs/get-started/help/#feature-requests).
 
 
-## Contact Us
-
-Need to get in touch? You can find us on [Sumo Dojo Slack](https://sumodojo.slack.com).
-
 ## Guides
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
+
+## Contact Us
+
+Need to get in touch? You can find us on [Sumo Dojo Slack](https://sumodojo.slack.com).
