@@ -1,7 +1,7 @@
 ---
 id: set-custom-time-ranges
-title: Set Dashboard and Pannel Time Ranges
-description: Learn how to set change time ranges for individual panels and the dashboard as a whole.
+title: Set Dashboard and Panel Time Ranges
+description: Learn how to set dashboard and panel time ranges.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
