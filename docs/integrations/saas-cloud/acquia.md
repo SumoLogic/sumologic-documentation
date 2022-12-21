@@ -192,7 +192,7 @@ Be sure to copy and paste your **token** in a secure location. You'll need this 
 
 **Sumo Logic SSL certificate**
 
-In the procedure below, you configure a Cloud Syslog Source, this will generate a Sumo Logic token and the endpoint hostname. Then you set up TLS by downloading a cert to your server. Download the DigiCert certificate from one  of the following locations:
+In the procedure below, you'll configure a Cloud Syslog Source. This will generate a Sumo Logic token and the endpoint hostname. Then you'll set up TLS by downloading a cert to your server. Download the DigiCert certificate from one of the following locations:
 * [https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt)
 * [https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt.pem](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt.pem)
 
