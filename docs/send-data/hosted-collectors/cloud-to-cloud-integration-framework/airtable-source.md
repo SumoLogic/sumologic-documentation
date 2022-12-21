@@ -48,7 +48,7 @@ To configure a Airtable Source:
    1. Go to Airtable app URL https://airtable.com/create/tokens.
    2. Click the **Create new token** button to create a new personal access token.
    3. Give your token a unique name. This name will be visible in record revision history.
-   4. Choose the scope **enterprise.auditLogs:read **to grant your token. This controls what API endpoints the token will be able to use.
+   4. Choose the scope **enterprise.auditLogs:read** to grant your token. This controls what API endpoints the token will be able to use.
    5. Click **add a base** to grant the token access to a base or workspace.
    6. You can grant access to any number and combination of **bases** and **workspaces**. You can also give access to all workspaces and bases associated with your account. Make sure that the token will only be able to read and write data within the bases and workspaces that have been assigned to it.
 
