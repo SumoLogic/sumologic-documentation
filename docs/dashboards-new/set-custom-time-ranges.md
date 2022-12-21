@@ -26,7 +26,7 @@ You can change the time range for a dashboard or panel by selecting a predefined
 
 ### Choose a recently used time range
 
-**To select a recently used time range**
+**To select a recently used time range:**
 
 1. Click the time range shown near the upper right corner of a dashboard or dashboard panel.
 1. Click the **Recent** tab, and select a time range.<br/><img src={useBaseUrl('img/dashboards-new/set-custom-time-ranges/recent-time-ranges.png')} alt="dash range" width="300"/>
