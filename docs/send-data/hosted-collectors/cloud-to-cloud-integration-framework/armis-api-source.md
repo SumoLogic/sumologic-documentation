@@ -74,21 +74,17 @@ To configure a Armis Source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored (i.e., dropped).
 
 1. In **Instance URL**, enter the Armis hostname. For example, https://armis-instance.armis.com.
-
  :::note
  Armis Instance URL is the Armis hostname.
  :::
-
 1. In **Secret Key**, enter your API secret key you have generated in [Setup and Configuration](#setup-and-configuration) section.
 1. In **Armis API selection**. Choose the data sources from which you want to ingest data. The integration provides the option to you to select either one or both of the data sources.
-
-* If **Alert API** is selected, the integration will fetch alerts data.
-  * Permission `Alert>Read` must be provided to fetch alerts data.
-  * Data for alert will be fetched every 5 minutes.
-
-* If **Device API** is selected, the integration will fetch device data.
-  * Permission `Device>Read` must be provided to fetch device data.
-  * Data for device will be fetched every 24 hours.
+   * If **Alert API** is selected, the integration will fetch alerts data.
+     * Permission `Alert>Read` must be provided to fetch alerts data.
+     * Data for alert will be fetched every 5 minutes.
+   * If **Device API** is selected, the integration will fetch device data.
+     * Permission `Device>Read` must be provided to fetch device data.
+     * Data for device will be fetched every 24 hours.
 
 :::note
 This step is mandatory, ensure you select one data source.
