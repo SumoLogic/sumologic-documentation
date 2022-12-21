@@ -18,7 +18,7 @@ You can change the time range for a dashboard or panel by selecting a predefined
 
 ### Set a predefined time range
 
-**To select a predefined time range**
+**To select a predefined time range:**
 
 1. Click the time range shown near the upper right corner of a dashboard or dashboard panel.<br/><img src={useBaseUrl('img/dashboards-new/set-custom-time-ranges/dashboard-setting-default.png')} alt="dash range" width="675"/>
 1. Select one of the time range options on the **Relative** tab.<br/><img src={useBaseUrl('img/dashboards-new/set-custom-time-ranges/relative-ranges.png')} alt="relative ranges" width="300"/>
