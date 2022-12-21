@@ -33,7 +33,7 @@ You can change the time range for a dashboard or panel by selecting a predefined
 
 ### Set a custom time range
 
-**To set a custom time range**
+**To set a custom time range:**
 
 1. Click the time range shown near the upper right corner of a dashboard or dashboard panel.
 1. Click the **Custom** tab. <br/><img src={useBaseUrl('img/dashboards-new/set-custom-time-ranges/custom-tab.png')} alt="custom range" width="300"/>
