@@ -48,17 +48,10 @@ The Armis API Integration consumes the following data sources and send it to Sum
 In this configuration, you will set up a Armis source account and configure it to be authorized and authenticated to use device logs and alerts from Armis API.
 To obtain a Armis auth token, follow the steps below:
 1. Log into the [Armis](https://armis.com/) application.
-1. Navigate to **Settings** > **API Management** on your Armis application.
-    <img src={useBaseUrl('img/send-data/armis-settings.png')} alt="armis-settings.png" width="900" />
-1. Create a new API secret key if you haven't created yet. Click **Create** button from API Management page.
-
-    <img src={useBaseUrl('img/send-data/create-api.png')} alt="create-api.png" width="=700" />
-
-1. Click **Show** to view the secret key.
-
-   <img src={useBaseUrl('img/send-data/show-secretkey.png')} alt="show-secretkey.png" width="700" />
-
-1. A popup window will be displayed, copy and paste the secret key to a folder location. Remember, you will need to enter this key while creating the **Armis Cloud-to-Cloud Source**.  <img src={useBaseUrl('img/send-data/show-key.png')} alt="show-key.png" width="400" />
+1. Navigate to **Settings** > **API Management** on your Armis application.<br/> <img src={useBaseUrl('img/send-data/armis-settings.png')} alt="armis-settings.png" width="900" />
+1. Create a new API secret key if you haven't created one yet by clicking the **Create** button from the API Management page.<br/> <img src={useBaseUrl('img/send-data/create-api.png')} alt="create-api.png" width="=700" />
+1. Click **Show** to view the secret key.<br/> <img src={useBaseUrl('img/send-data/show-secretkey.png')} alt="show-secretkey.png" width="700" />
+1. A popup window will be displayed. Copy and paste the secret key to a folder location. Remember, you will need to enter this key while creating the **Armis Cloud-to-Cloud Source**.  <img src={useBaseUrl('img/send-data/show-key.png')} alt="show-key.png" width="400" />
 
 ## Create an Armis Source
 
