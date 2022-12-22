@@ -144,15 +144,15 @@ How does CSE look for related Entities? Within the time range of the Insight, de
 * IP address: *_ip
 
 :::note
-[Custom Entities](docs/cse/records-signals-entities-insights/create-custom-entity-type.md) that match will also be included in the results.
+[Custom Entities](/docs/cse/records-signals-entities-insights/create-custom-entity-type.md) that match will also be included in the results.
 ::: 
 
 #### What’s in an Entity card 
 
-The card for an Entity displays any [tags](docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules.md) that have been assigned the Entity, along with the following information: 
+The card for an Entity displays any [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules.md) that have been assigned the Entity, along with the following information: 
 
 * The number of times that Entity was referenced in the Signals in the Insight.
-* The number of Insights, created during the Insight generation [detection window](docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold.md), in which the current Entity is the primary Entity. 
+* The number of Insights, created during the Insight generation [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold.md), in which the current Entity is the primary Entity. 
 :::note
 The detection window is 14 days by default, but can be configured to be a different duration.
 ::: 
@@ -166,14 +166,14 @@ The cumulative severity value is color coded: cyan for less than 12, orange for 
 When you select an Entity in the center pane, the right pane displays details about that Entity. The information displayed depends on what type of Entity is selected (username, hostname, IP address, MAC address, or custom) and can include:
 
 * A link to the Entity’s details page.
-* [Entity Criticality](docs/cse/records-signals-entities-insights/entity-criticality.md), if it is set to something other than the default.
-* Metadata such as geographic location, Inventory information, the [Network Blocks](docs/cse/administration/create-use-network-blocks.md) it falls within, as applicable, and so on.
+* [Entity Criticality](/docs/cse/records-signals-entities-insights/entity-criticality.md), if it is set to something other than the default.
+* Metadata such as geographic location, Inventory information, the [Network Blocks](/docs/cse/administration/create-use-network-blocks.md) it falls within, as applicable, and so on.
 * A Signal graph that shows when the Signals were created on the horizontal axis (which is at most 14 days—the detection window), the severity of each Signal on the vertical axis, and the Signal type based on the icon/color of each point. 
 * Lists of the recent Signals and Insights the Entity has been associated with, and links to each object’s details page. 
 
 #### Accessing related Entities using the API 
 
-You can access related Entity information using the CSE API. For more information, see [CSE APIs](docs/cse/administration/cse-apis.md).
+You can access related Entity information using the CSE API. For more information, see [CSE APIs](/docs/cse/administration/cse-apis.md).
 
 
 ### Signal list area 

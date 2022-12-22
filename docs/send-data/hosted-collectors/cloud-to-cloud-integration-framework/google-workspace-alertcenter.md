@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-This topic has information about the Google Workspace AlertCenter Cloud-to-Cloud Source, part of Sumo Logic's [Cloud-to-Cloud Integration Framework](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
+This topic has information about the Google Workspace AlertCenter Cloud-to-Cloud Source, part of Sumo Logic's [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
 ## Data Sources
 
@@ -73,7 +73,7 @@ Here is how the JSON fields map to the input form.
 1. **Description.** (Optional)
 1. **Source Category.** Enter a string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM.** Click if you want the Source to forward the logs it ingests to Cloud SIEM Enterprise.
-1. **Fields.** (Optional) Click **+Add Field** to define the fields you want to associate, each field needs a name (key) and value. For more information, see [Fields](docs/manage/fields.md).
+1. **Fields.** (Optional) Click **+Add Field** to define the fields you want to associate, each field needs a name (key) and value. For more information, see [Fields](/docs/manage/fields.md).
 1. **Delegated User Email.** Enter the admin email address for the domain.
 1. **Client Email.** Enter the value of the `client_email` key from the [Service account JSON](#service-account-json) above.
 1. **Private Key.** Enter the value of the `private-key` key from the [Service account JSON](#service-account-json) above.

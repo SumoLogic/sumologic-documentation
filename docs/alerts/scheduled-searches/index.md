@@ -26,7 +26,7 @@ You can create a scheduled search to alert you with an email when a set of condi
 A Script Action is a Source type that receives data uploads triggered by a scheduled search. The script you create defines how data is consumed; for example, you could fire SNMP traps based on the result of the search. After setting up a Script Action, create a scheduled search. Each time the search query executes, the Collector runs the script configured in the Script Action. For instructions, see [Script Action](/docs/send-data/installed-collectors/sources/script-action).
 
 :::note
-You need the [View Collectors role capability](docs/manage/users-roles/roles/role-capabilities.md) to alert with a Script Action.
+You need the [View Collectors role capability](/docs/manage/users-roles/roles/role-capabilities.md) to alert with a Script Action.
 :::
 
 ### ServiceNow Connection
@@ -37,7 +37,7 @@ The main way data is uploaded to ServiceNow is through the use of scheduled sear
 
 ### Webhook
 
-Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks. For example, once you set up a Webhook connection in Sumo Logic, and create a scheduled search, then you can send an alert from that scheduled search as a post to a Slack channel, or integrate with third-party systems. For instructions, see [Scheduled Searches for Webhook Connections](docs/manage/connections-integrations/webhook-connections/schedule-searches-webhook-connections.md).
+Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks. For example, once you set up a Webhook connection in Sumo Logic, and create a scheduled search, then you can send an alert from that scheduled search as a post to a Slack channel, or integrate with third-party systems. For instructions, see [Scheduled Searches for Webhook Connections](/docs/manage/connections-integrations/webhook-connections/schedule-searches-webhook-connections.md).
 
 ### Save to Index
 

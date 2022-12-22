@@ -79,7 +79,7 @@ Get to know the Collection process through our video "Data Collection Strategy".
 
 ## Basics and Account Configuration
 
-* [Retention](docs/manage/partitions-data-tiers/manage-indexes-variable-retention.md). Determine the average data retention for your account (total storage / daily ingest) and change the General Index retention period if necessary. The General Index settings can be found on the **Manage Data > Settings > Partitions** menu, which is explained in further detail on the Optimization Setup sheet of this document.
+* [Retention](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention.md). Determine the average data retention for your account (total storage / daily ingest) and change the General Index retention period if necessary. The General Index settings can be found on the **Manage Data > Settings > Partitions** menu, which is explained in further detail on the Optimization Setup sheet of this document.
 * [Data Volume Index](/docs/manage/ingestion-volume/Data-Volume-Index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo tool.
 * [Audit Index](/docs/manage/Security/Audit-Index). Enable the audit index. This feature allows you to track user behavior, content changes, and scheduled search execution results.
 * [Data Volume App](/docs/integrations/sumo-apps/Data-Volume-Legacy). Install the Data Volume app in Sumo App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
@@ -171,7 +171,7 @@ Before adding Partitions, consider the following:
 
 [Routing Expression.](/docs/manage/partitions-data-tiers) Each partition's contents are determined by the routing expression, which will be scoped using metadata and/or keywords.
 
-[Variable Retention.](docs/manage/partitions-data-tiers/manage-indexes-variable-retention.md) Each Partition has its own retention period. This allows for some logs to be retained for longer, while others are discarded more quickly.
+[Variable Retention.](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention.md) Each Partition has its own retention period. This allows for some logs to be retained for longer, while others are discarded more quickly.
 
 
 ## Field Extraction Rule Setup
