@@ -45,7 +45,7 @@ To configure a Airtable Source:
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.  
 7. In **Account ID**, enter an account ID that will be an unique identifier for your enterprise account.
 8. In **Personal Access Token**, enter your personal access token. You will create a personal token from your account and that will be used to  authenticate API requests. To get the token, follow the steps below:
-   1. Go to Airtable app URL https://airtable.com/create/tokens.
+   1. Go to the [Airtable app](https://airtable.com/create/tokens).
    2. Click the **Create new token** button to create a new personal access token.
    3. Give your token a unique name. This name will be visible in record revision history.
    4. Choose the scope **enterprise.auditLogs:read** to grant your token. This controls what API endpoints the token will be able to use.
