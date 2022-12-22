@@ -11,6 +11,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Windows JSON App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows JSON App is based on the JSON Windows event log format and consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, User Activity, and Applications.
 
+:::note
+You may also be interested in the [Sumo Logic App for Windows Cloud Security Monitoring and Analytics](docs/integrations/cloud-security-monitoring-analytics/windows.md).
+:::
+
 
 ## Log Types
 
