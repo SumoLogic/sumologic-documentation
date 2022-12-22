@@ -18,7 +18,8 @@ The Airtable Integration consumes audit logs from the Airtable audit log API per
 To collect audit logs, you must have a Airtable Enterprise account.
 
 ## States
-An Airtable Source let you pulls audit logs from Airtable app. When an Airtable Source goes through, the following states when created:
+
+When you create an Airtable Source, it goes through the following states:
 
 1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
 1. **Started**. A collection task is created on the Hosted Collector.
@@ -27,7 +28,9 @@ An Airtable Source let you pulls audit logs from Airtable app. When an Airtabl
 1. **Collecting**. The Source is actively collecting data from Airtable app.
 
 If the Source has any issues during any one of these states, it is placed in an **Error** state.
-When you delete the Source, it is placed in a Stopping state. When it has successfully stopped, it is deleted from your Hosted Collector. On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection.
+
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
+On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events.md) to investigate issues with collection.
 
 Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings. You can click on the status icon to open a Health Events panel with details on each detected issue.
 
@@ -51,9 +54,10 @@ To configure a Airtable Source:
    4. Choose the scope **enterprise.auditLogs:read** to grant your token. This controls what API endpoints the token will be able to use.
    5. Click **add a base** to grant the token access to a base or workspace.
    6. You can grant access to any number and combination of **bases** and **workspaces**. You can also give access to all workspaces and bases associated with your account. Make sure that the token will only be able to read and write data within the bases and workspaces that have been assigned to it.
+9. When you are finished configuring the Source, click **Save**.
 
 ## Limitations
-Integration will support authentication using `Personal access token`. `API key`- and `OAuth token`-based authentication is not supported.
+Integration will support authentication using `Personal access token`. `API key` and `OAuth token` based authentication is not supported.
 
 ## Assumptions
 * Size of single audit log will be less than 64 KB.
