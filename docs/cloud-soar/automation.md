@@ -484,4 +484,3 @@ The **Action Type** dropdown will contain the specific actions Cloud SOAR can ta
 To add a new mapping setting, click on the plus button near Mapping if enable for that action.
 
 ![alt-text goes here](/img/cloud-soar/image103.png)
-

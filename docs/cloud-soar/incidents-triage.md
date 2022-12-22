@@ -8,10 +8,12 @@ description: Automated real-time incident management and threat response.
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+
+
 The **Incident** section lists all Cloud SOAR incidents. Clicking on any of the incident IDs in the Incident section will open the incident. You can configure what incidents are displayed by creating queries against available incident data and saving them as incident filters.
 
-![alt-text goes here](/img/cloud-soar/image140.png)
 
+<img src={useBaseUrl('img/cloud-soar/image140.png')} alt="incidents"/>
 
 :::sumo Microlesson: Cloud SOAR Incidents
 
@@ -49,10 +51,7 @@ From the Incident section you can search, build, and issue queries against exist
 
 Cloud SOAR also provides its you with a command cheat sheet to help build
 incident filtering queries. To access the cheat sheet, click on the
-![alt-text goes here](/img/cloud-soar/image143.png) icon to display the query options.
-
-![alt-text goes here](/img/cloud-soar/image144.png)
-
+information icon to display the query options.
 
 Once a query or a search is committed, they can be saved for future use
 by clicking the star icon to the right of the search bar. These saved
@@ -556,4 +555,3 @@ including all enrichment information gathered from any Playbooks, will be
 automatically converted to an incident.
 
 ![alt-text goes here](/img/cloud-soar/image183.png)         
-

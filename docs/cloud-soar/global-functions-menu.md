@@ -34,9 +34,6 @@ When a search result is located within an incident, the incident number will be 
 
 ![Global Search Results](/img/cloud-soar/image12.png)
 
-
-
-
 ## Automation
 
 The **Automation** section contains all the functions related to automation and orchestration processes of the Cloud SOAR platform.
@@ -53,7 +50,7 @@ See [Automation](/docs/cloud-soar/automation) for in-depth information.
 automated and semi-automated workflows utilizing Cloud SOAR integrations,
 tasks and a variety of flow control decisions and other actions.
 
-<img src={useBaseUrl('img/cloud-soar/image15.png')} alt="Automation menu" width="150"/>
+<img src={useBaseUrl('img/cloud-soar/image15.png')} alt="Automation menu" width="250"/>
 
 Playbook workflows can be configured to execute automatically without
 human intervention, or can be executed in an interactive mode, where
@@ -66,7 +63,7 @@ attributes that will automatically be set each time an incident is
 generated based on the template. This may include type, classification,
 incident assignment, playbooks or any other incident attribute.
 
-<img src={useBaseUrl('img/cloud-soar/image15b.png')} alt="Automation menu" width="150"/>
+<img src={useBaseUrl('img/cloud-soar/image15b.png')} alt="Automation menu" width="250"/>
 
 ### Integrations
 
@@ -76,7 +73,7 @@ view the supported actions for each integration. In addition, this
 section allows administrators to manage custom scripts, which can be
 written in Python, Perl, PowerShell or Bash.
 
-<img src={useBaseUrl('img/cloud-soar/image15c.png')} alt="Automation menu" width="150"/>
+<img src={useBaseUrl('img/cloud-soar/image15c.png')} alt="Automation menu" width="250"/>
 
 ### Rules
 
@@ -84,12 +81,12 @@ The Events Automation tab enables you to establish any daemonized integration ru
 These rules allow specific data to be parsed from the incoming data
 sources and the acted upon automatically or through manual actions.
 
-<img src={useBaseUrl('img/cloud-soar/image15d.png')} alt="Automation menu" width="150"/>
+<img src={useBaseUrl('img/cloud-soar/image15d.png')} alt="Automation menu" width="250"/>
 
 ### ARK
 
 ARK or Automated Responder Knowledge is the Machine Learning component of Cloud SOAR which implements the Supervised learning in Case-Based Reasoning (CBR)algorithm.
-CBR solves new problems by adapting previously successful solutions to similar problems, in Cloud SOAR this can be leveraged by analyzing solved incidents to hint steps and procedures to operators in new similar threats.<br/> <img src={useBaseUrl('img/cloud-soar/image15e.png')} alt="Automation menu" width="150"/>
+CBR solves new problems by adapting previously successful solutions to similar problems, in Cloud SOAR this can be leveraged by analyzing solved incidents to hint steps and procedures to operators in new similar threats.<br/> <img src={useBaseUrl('img/cloud-soar/image15e.png')} alt="Automation menu" width="250"/>
 
 ARK assists operators during investigations in two main areas: Automatically suggesting/prompting next actions/tasks in Playbooks (until version 5) and Correlation/ Deduplication of similar threats into 1 unique incident.
 
@@ -158,15 +155,11 @@ French language is now enabled in Cloud SOAR. It can be enabled under user profi
 
 Instant Messaging integration can be enabled from here.
 
-![Instant Messaging Integration](/img/cloud-soar/image33b.png)
-
-
+<img src={useBaseUrl('img/cloud-soar/image33b.png')} alt="messaging integration" width="550"/>
 
 The same integration has to be updated under the user profile configuration.
 
-![Instant Messaging Integration](/img/cloud-soar/image33b1.png)
-
-
+<img src={useBaseUrl('img/cloud-soar/image33b1.png')} alt="messaging integration" width="750"/>
 
 #### Incidents
 
@@ -220,8 +213,7 @@ One or more queues may be configured which can be used to assign
 incidents to until they are ready to be assigned to users. Queues can be
 managed at the bottom of the General settings page.
 
-![Queue Settings](/img/cloud-soar/image33.png)
-
+<img src={useBaseUrl('img/cloud-soar/image33.png')} alt="Queue Settings" width="650"/>
 
 Click the **+** button in the upper right-hand corner of the queue
 settings to add a new queue. There are no restrictions on the number, or the scheme used to create queues. Common schemes are to create one general queue, a queue for each analyst tier, or a queue by job function.
@@ -420,7 +412,7 @@ alerts.
 
 ### Audit and Information
 
-All audit and licensing information can be found under the Audit and Information tab.<br/> <img src={useBaseUrl('img/cloud-soar/image120.png')} alt="Audit and Information Menu" width="200"/>
+All audit and licensing information can be found under the Audit and Information tab.<br/> <img src={useBaseUrl('img/cloud-soar/image120.png')} alt="Audit and Information Menu" width="350"/>
 
 ![Audit & Info](/img/cloud-soar/image20b.png)
 
@@ -452,4 +444,3 @@ support issues.
 To access, click the question mark icon in the top nav.
 
 ![Figure - Support Page](/img/cloud-soar/support.png)
-
