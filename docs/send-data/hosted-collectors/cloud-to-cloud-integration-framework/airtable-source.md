@@ -53,7 +53,7 @@ To configure a Airtable Source:
    6. You can grant access to any number and combination of **bases** and **workspaces**. You can also give access to all workspaces and bases associated with your account. Make sure that the token will only be able to read and write data within the bases and workspaces that have been assigned to it.
 
 ## Limitations
-Integration will support authentication using `Personal access token`. The `Api key` and `OAuth token` based authentication will not be supported.
+Integration will support authentication using `Personal access token`. `API key`- and `OAuth token`-based authentication is not supported.
 
 ## Assumptions
 * Size of single audit log will be less than 64 KB.
