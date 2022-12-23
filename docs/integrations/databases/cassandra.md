@@ -526,7 +526,7 @@ At this point, Cassandra metrics and logs should start flowing into Sumo Logic.
 ## Installing Cassandra Monitors
 
 :::note
-This step is not needed if one is using application components solution terraform script.
+This step is not needed if you are using the [Application Components Solution](/docs/observability/application-components) Terraform script.
 :::
   
 To install these monitors, you must have the **Manage Monitors** role capability. You can install monitors by importing a JSON file or using a Terraform script.
