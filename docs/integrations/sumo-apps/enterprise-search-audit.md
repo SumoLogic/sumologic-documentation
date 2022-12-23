@@ -29,7 +29,7 @@ To install the app:
 
 
 ## Enterprise Search Audit App Dashboards
-This page has information about the pre-built dashboards for Enterprise Search Audit App and a description of each of the app dashboards.
+This page has information about the pre-built dashboards for the Enterprise Search Audit App and a description of each of the app dashboards.
 
 
 ### Enterprise Search Audit - Search Overview
