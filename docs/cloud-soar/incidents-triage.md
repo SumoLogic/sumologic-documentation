@@ -8,10 +8,12 @@ description: Automated real-time incident management and threat response.
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+
+
 The **Incident** section lists all Cloud SOAR incidents. Clicking on any of the incident IDs in the Incident section will open the incident. You can configure what incidents are displayed by creating queries against available incident data and saving them as incident filters.
 
-![alt-text goes here](/img/cloud-soar/image140.png)
-_Incident List_
+
+<img src={useBaseUrl('img/cloud-soar/image140.png')} alt="incidents"/>
 
 :::sumo Microlesson: Cloud SOAR Incidents
 
@@ -38,34 +40,31 @@ clicking the + sign next to the selection and then dragging and dropping
 the selection in the order to be viewed.
 
 ![alt-text goes here](/img/cloud-soar/image141.png)
-_Incident List Column Configuration_
+
 
 Once the columns are added and organized, click **Apply** to continue.
 
 From the Incident section you can search, build, and issue queries against existing incidents by simply typing in the search bar at the top of the screen.
 
 ![alt-text goes here](/img/cloud-soar/image142.png)
-_Incident Search Bar_
+
 
 Cloud SOAR also provides its you with a command cheat sheet to help build
 incident filtering queries. To access the cheat sheet, click on the
-![alt-text goes here](/img/cloud-soar/image143.png) icon to display the query options.
-
-![alt-text goes here](/img/cloud-soar/image144.png)
-_Query Operations Helper_
+information icon to display the query options.
 
 Once a query or a search is committed, they can be saved for future use
 by clicking the star icon to the right of the search bar. These saved
 searches will be stored as tabs just below the search bar.
 
 ![alt-text goes here](/img/cloud-soar/image145.png)
-_Save Frequently Used Queries_
+
 
 Bulk actions may be performed on any incidents in the Incident Overview
 list. Bulk actions include:
 
 ![alt-text goes here](/img/cloud-soar/image146.png)         
-_Bulk Actions_
+
 
 - Edit
 - Close
@@ -88,12 +87,12 @@ Properties section in the center, and the Incident Widgets section to
 the right side of the screen.
 
 ![alt-text goes here](/img/cloud-soar/image147.png)
-_Incident Details Screen_
+
 
 ## Incident VIP section
 
 ![alt-text goes here](/img/cloud-soar/image148.png)     
-_Incident VIP Section_
+
 
 The Incident VIP Section displays high-level
 details about a specific incident. You can also take actions such as
@@ -118,7 +117,7 @@ Once all the details have been added and are in place, click **Apply**.
 The Incident Details section contains all the important information that makes up the incident, such as executed Playbooks and incident tasks. This information is divided into four different sections: **Overview**, **Operations**, **Entities**, and **Documentation**.
 
 ![Incident Overview](/img/cloud-soar/image149.png)
-_Incident Overview_
+
 
 
 ### Overview
@@ -159,7 +158,7 @@ adjustments to the incident's Playbooks as well as add any additional
 Playbooks that may be required during an incident's investigation.
 
 ![alt-text goes here](/img/cloud-soar/image150.png)
-_Incident Properties_
+
 
 The playbook option menu can be found at the bottom of the playbook
 screen. From here, you can re-execute a playbook, export, edit, or
@@ -171,7 +170,7 @@ Playbooks to the incident by clicking the **+** sign at the top of the
 playbook screen.
 
 ![alt-text goes here](/img/cloud-soar/image151.png)
-_Playbook Selection Menu_
+
 
 This will open a new screen that lists all available Playbooks. Either
 type in the playbook name to use or manually search through all
@@ -185,7 +184,7 @@ clicking the expansion button on the bottom left of the screen will
 expand the playbook and will display the execution results.
 
 ![alt-text goes here](/img/cloud-soar/image152.png)
-_Playbook Results_
+
 
 The results of the playbook can also be viewed as a list by clicking the
 **List** button next the **+** at the top of the page. The execution path of
@@ -194,7 +193,7 @@ each action. The execution history of the playbook will be displayed in a
 tab on the right-hand side of the screen, which can be minimized.
 
 ![alt-text goes here](/img/cloud-soar/image153.png)
-_Playbook History_
+
 
 To view the details of any individual action, including the results,
 click on the action node. A new window displaying the action details
@@ -203,7 +202,7 @@ you can see the status of the action, its configuration, and have the
 choice to download the JSON results of the action.
 
 ![alt-text goes here](/img/cloud-soar/image154.png)
-_Action Results_
+
 
 To view the details of the result, click on the magnifying glass and the
 action's details window will be displayed. The details section displays
@@ -218,10 +217,10 @@ the complete results of verbose integrations, the JSON tab should be
 used.
 
 ![alt-text goes here](/img/cloud-soar/image155.png)
-_Action Details_
+
 
 ![alt-text goes here](/img/cloud-soar/image156.png)
-_Action JSON_
+
 
 #### Tasks
 
@@ -231,7 +230,7 @@ added from Playbooks or Playbooks, as discussed in previous sections,
 or manually from the incident's Tasks section.
 
 ![alt-text goes here](/img/cloud-soar/image157.png)
-_Tasks within an Incident_
+
 
 ##### Adding a Task
 
@@ -250,7 +249,7 @@ Assessment information, discussed in more detail in the Documentation
 section of this manual.
 
 ![alt-text goes here](/img/cloud-soar/image158.png)
-_New Task Details Screen_
+
 
 ##### Working with Tasks
 
@@ -261,7 +260,7 @@ by its incident, select one or multiple incidents from the task list on
 the left-side of the screen.
 
 ![alt-text goes here](/img/cloud-soar/image159.png)
-_Home Screen_
+
 
 Selecting a task will open the incident where the task was created. This
 will allow you to review the details of the task and access any
@@ -271,7 +270,7 @@ approve and close, or decline a task by clicking the thumbs up, thumbs
 down or check mark buttons next to the task's title.
 
 ![alt-text goes here](/img/cloud-soar/image160.png)
-_Tasks Section_
+
 
 #### Notes
 
@@ -282,7 +281,7 @@ export and search for different results depending on the operational
 need.
 
 ![alt-text goes here](/img/cloud-soar/image161.png)
-_Notes Section_
+
 
 ##### Adding a Note
 
@@ -291,7 +290,7 @@ bar and a new configuration screen will appear. Enter the note into the
 free form text box and click create when finished.
 
 ![alt-text goes here](/img/cloud-soar/image162.png)
-_Adding a Note_
+
 
 
 ## Create a New Incident Manually
@@ -300,7 +299,7 @@ To create an Incident manually, click the **+ Incident** button on the top
 right-side of the screen.
 
 ![Incident Overview Screen](/img/cloud-soar/image125.png)
-_Incident Overview Screen_
+
 
 A new configuration box will be displayed that contains fields an
 investigator can utilize to develop their incident. Not all these fields
@@ -308,13 +307,13 @@ are mandatory. The ones which are required will have an asterisk (`*`)
 marked next to it which indicates the field has a dependency within the
 Cloud SOAR platform. These required fields can have their dependencies and
 requirements adjusted in the **Custom Fields** section (click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Customizations** > **Custom Fields**).<br/> ![New Incident Editor](/img/cloud-soar/image126.png)
-_New Incident Editor_
+
 
 One of the most important fields is the **Type** field. This field will
 dictate which Playbooks will be recommended later on in the configuration
 process. See **Custom Fields** to modify the variables displayed in the
 **Type** field.<br/> ![New Incident Editor](/img/cloud-soar/image127.png)
-_New Incident Editor_
+
 
 
 Once the details page is completed, you will want to assign
@@ -322,7 +321,7 @@ appropriate Playbooks to be associated with the incident. In addition to
 adding the playbook to the incident, you can also decide whether they
 want the playbook to automatically execute upon incident creation by
 sliding the **Autorun** button to **On**.<br/> ![New Incident Editor](/img/cloud-soar/image128.png)
-_New Incident Editor_
+
 
 
 When creating an incident manually, the investigator may already have
@@ -334,7 +333,7 @@ the data and add its value. Once completed, click **Next**.<br/> ![alt-text goes
 ### Incident Artifacts
 
 You have the option to create manual Parent/Child relationships between the new incident and any previous incident created in Cloud SOAR. Click the **Advanced** button at the bottom of the screen to select an existing incident to group together.<br/> ![Incident Relationships](/img/cloud-soar/image130.png)
-_Incident Relationships_
+
 
 The final step in manual incident creation is to add an investigator or a group of investigators to the incident. Select an investigator or group from the left side of the screen by double-clicking on their name and the investigator will be added to the investigators pane. Once finished, click **Create**.
 
@@ -346,12 +345,12 @@ The Details tab of the new report template window allows you to specify a unique
 
 The Sections tab of the new report template window allows you to drag and drop sections of the incident into the report template. All incident sections are listed in the left-hand pane. Dragging incident sections to the right-hand pane will add the section to the report template.
 Sections will be printed in the report in the order they appear in the right-hand pane. Once satisfied with the selection, click **Save**.<br/> ![Report Template Sections](/img/cloud-soar/image45.png)
-_Report Template Sections_
+
 
 ### Custom Fields
 
 ![Fields Configuration Settings](/img/cloud-soar/image46.png)
-_Fields Configuration Settings_
+
 
 The Custom Fields section allows you to customize all fields within the Cloud SOAR platform to better suit your environment. All fields are pre-populated by default and can be revised with environment-specific variables by manually creating or updating the fields or by importing a file which is formatted with entries for each line.
 
@@ -410,20 +409,20 @@ Custom fields can be used to calculate any number of custom service level agreem
 
 In the following example, five custom fields have been added to provide
 information on the status of an organizations Notification SLA. Two of the custom fields require user input:<br/> ![SLA User Input](/img/cloud-soar/image50.png)
-_SLA User Input_
+
 
 * **Notification SLA Requirement** will be used to store the SLA time interval, such as 5 minutes.
 * **Customer Notified** will allow you to enter the date & time the customer was notified.
 
 The remaining three custom fields require no user input and are calculation fields only:<br/> ![SLA Calculated Fields](/img/cloud-soar/image51.png)
-_SLA Calculated Fields_
+
 
 * **Notification Due By** will calculate and display the date & time the notification must be conducted by adding the Notification SLA Requirement field to the Start Time.
 * **Notification Time Remaining** will calculate and display time remaining before the notification must be conducted by subtracting the Current Time from the Notification Due By field.
 * **Actual Notification Time** will calculate and display actual time taken to notify the customer by subtracting the Start Time from the Customer Notified Time.
 
 These Custom Field settings will appear in the Cloud SOAR Incident screen as follows:<br/>![SLA View](/img/cloud-soar/image52.png)              
-_SLA View_
+
 
 
 
@@ -491,7 +490,7 @@ to triage events which may be unverified or have a low confidence level before t
 Triage display preferences can be customized from **Settings** > **Customizations** > **Triage**. Triage events can be color coded based on status to easily distinguish them from each other when viewing the list of Triage events.
 
 The name of the module can also be modified from **Triage** to a name of your choosing. The new name will be displayed in all areas of Cloud SOAR, including the menu and logs.<br/> ![alt-text goes here](/img/cloud-soar/image57.png)
-_Triage Settings_
+
 
 ### Field Settings
 
@@ -520,13 +519,13 @@ they will be used when the API is invoked.
 The Triage module is accessible from the Incidents section by clicking on Triage (or the name of the module if you have renamed it from the default of **Triage**). All events which have not been converted to an Incident will be displayed in a sortable table on the Triage main screen. Events may be sorted by any column values by clicking on the appropriate column.
 
 ![Events](/img/cloud-soar/image58.png)
-_Triage Main Screen_
+
 
 The list of events can be filtered by any of the fields listed in the
 filter section at the top of the Triage main screen.
 
 ![alt-text goes here](/img/cloud-soar/image181.png)         
-_Triage Event Actions, Unassigned_
+
 
 To view the details of a Triage event, click on the box and arrow icon
 in the Actions column for the event. If additional information is
@@ -547,7 +546,7 @@ Actions column for the event. To discard the event, click on the
 trashcan icon in the Actions column for the event.
 
 ![alt-text goes here](/img/cloud-soar/image182.png)           
-_Triage Event Actions, Assigned_
+
 
 To convert the event to an incident, click **Convert to Incident** in the
 far right-hand corner of the Event in question. Select the appropriate
@@ -556,4 +555,3 @@ including all enrichment information gathered from any Playbooks, will be
 automatically converted to an incident.
 
 ![alt-text goes here](/img/cloud-soar/image183.png)         
-_Converting to an Incident_

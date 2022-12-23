@@ -4,6 +4,7 @@ title: Cloud SOAR Architecture
 sidebar_label: Architecture
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic Cloud SOAR provides Security Operations and Automation Incident Response Platform to facilitate and expedite timely management of Incident Response with a rich library of customizable playbooks for different threats and use cases of incident response scenarios expediting and automating response time to incident response events.
 
@@ -35,8 +36,8 @@ best Cybersecurity practices followed by ISO, GDPR, OASIS, NIST, Sec Regulations
 
 Cloud SOAR offers a patent-pending Automated Responder Knowledge (DF-ARK) module which applies machine learning to historical responses and threats. It recommends relevant Playbooks, paths of action to expedite the process, and responses to manage and mitigate similar incidents with better response time.
 
-![Cloud SOAR Architecture Overview](/img/cloud-soar/image3.png)
-_Cloud SOAR Architecture Overview_
+<img src={useBaseUrl('img/cloud-soar/image3.png')} alt="architecture" width="800"/>
+
 
 
 ## Multi-Tenancy
@@ -53,7 +54,7 @@ All multi-tenant installations offer:
 - Isolation of external actions (e.g., enrichment of indicators of compromise, containment actions prescribed to a host)
 
 ![Multi-Tenancy with Physical Segregation](/img/cloud-soar/image5.png)
-_Multi-Tenancy with Physical Segregation_
+
 
 ## Automated Responder Knowledge (DF-ARK)
 
