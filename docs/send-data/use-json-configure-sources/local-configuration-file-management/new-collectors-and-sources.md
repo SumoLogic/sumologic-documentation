@@ -36,7 +36,7 @@ Access Key, `syncSources`, and the Collector name:
 
 `sudo ./SumoCollector.sh -q -Vsumo.accessid\<accessI\> -Vsumo.accesskey\<accessKe\> -VsyncSources\<filepat\> -Vcollector.name\<name\>`
 
-For Collector versions prior to 19.137 add the `syncSources` parameter to the [**sumo.conf**](docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) file before starting the Collector for the first time.
+For Collector versions prior to 19.137 add the `syncSources` parameter to the [**sumo.conf**](/docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) file before starting the Collector for the first time.
 
 ## Making changes to the configuration files
 

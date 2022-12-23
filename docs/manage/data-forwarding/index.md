@@ -9,13 +9,13 @@ Data Forwarding is not currently supported for data in the [Infrequent Tier](../
 
 Data Forwarding allows you to forward log data to an external server or supported storage service. There are two different types of data forwarding: 
 
-* An [Installed Collector](docs/send-data/installed-collectors) can forward raw log data to an external destination at ingest time using the following protocols:
+* An [Installed Collector](/docs/send-data/installed-collectors) can forward raw log data to an external destination at ingest time using the following protocols:
     * Syslog (TCP and UDP)
     * Generic REST API
     * Hitachi Data Systems HTTP REST API
 
     :::note
-    [Archive](../archive.md) allows you to forward log data from [Installed Collectors](docs/send-data/installed-collectors) to AWS S3 buckets to collect at a later time.
+    [Archive](../archive.md) allows you to forward log data from [Installed Collectors](/docs/send-data/installed-collectors) to AWS S3 buckets to collect at a later time.
     :::
 
 * [Partitions](/docs/manage/partitions-data-tiers) or [Scheduled Views](/docs/manage/scheduled-views) can forward log data to an AWS S3 bucket. See [Forwarding Data from Sumo Logic to S3](amazon-s3-bucket.md) for details.  

@@ -6,7 +6,7 @@ description: Learn how to search the Sumo Logic platform for CSE Records.
 ---
 
 
-This topic has information about how to search the Sumo Logic platform for Records and Signals that have been forwarded from CSE. For more information about performing log searches in Sumo Logic, see [Search Basics](docs/search/get-started-with-search/search-basics).
+This topic has information about how to search the Sumo Logic platform for Records and Signals that have been forwarded from CSE. For more information about performing log searches in Sumo Logic, see [Search Basics](/docs/search/get-started-with-search/search-basics).
 
 ## Partitions with CSE data 
 This section has information about the Sumo Logic partitions that contain CSE data.

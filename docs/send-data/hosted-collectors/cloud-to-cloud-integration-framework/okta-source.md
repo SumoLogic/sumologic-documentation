@@ -21,7 +21,7 @@ During a polling interval, an Okta Source will make a request for every 1,000 
 
 ## States
 
-An Okta Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](docs/manage/health-events.md).
+An Okta Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events.md).
 
 An Okta Source goes through the following states when created:
 

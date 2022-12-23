@@ -161,7 +161,7 @@ The table below shows how Issue events are represented in the schema.
 
 ## Examples
 
-The mapping of events from tool sets to this event schema is achieved via Sumo Logic [FERs](docs/manage/field-extractions/create-field-extraction-rule.md). For Example, For [PagerDuty V2 Incidents](https://developer.pagerduty.com/docs/webhooks/v2-overview/), we map the incident payload to the alert event schema using the following **Parse Expression.**
+The mapping of events from tool sets to this event schema is achieved via Sumo Logic [FERs](/docs/manage/field-extractions/create-field-extraction-rule.md). For Example, For [PagerDuty V2 Incidents](https://developer.pagerduty.com/docs/webhooks/v2-overview/), we map the incident payload to the alert event schema using the following **Parse Expression.**
 
 ```sql
 parse regex "(?<event>\{\"event\":\"incident\..+?\}(?=,\{\"event\":\"incident\..+|\]\}$))"

@@ -30,7 +30,7 @@ JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.o
 
 When a Collector starts it reads the `syncSources` parameter from the `user.properties` configuration file to determine the path of the JSON file or folder with the Source configurations. The `user.properties` file is located in the Collector's `config` folder.  
 
-Prior to version 19.137, the Collector used the `sumo.conf` file for Source configuration. If you are installing a legacy Collector, see [sumo.conf](docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) for information.
+Prior to version 19.137, the Collector used the `sumo.conf` file for Source configuration. If you are installing a legacy Collector, see [sumo.conf](/docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) for information.
 
 |  Parameter |  Type |  Description |
 |--|--|--|

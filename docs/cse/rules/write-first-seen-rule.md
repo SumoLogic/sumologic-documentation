@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has information about First Seen rules and how to create them in the CSE UI.
 :::tip
-If you are new to writing rules, see [About CSE Rules](docs/cse/rules/about-cse-rules.md) for information about rule expressions and other rule options.
+If you are new to writing rules, see [About CSE Rules](/docs/cse/rules/about-cse-rules.md) for information about rule expressions and other rule options.
 :::
 
 ## About First Seen rules
@@ -56,4 +56,4 @@ The settings in the **If triggered** section determine what Records the rule wil
 
 ### Then create a Signal
 
-For instructions, see [Configure “Then Create a Signal” settings](docs/cse/rules/write-match-rule.md#configure-then-create-a-signal-settings) section of the Match Rule topic.
+For instructions, see [Configure “Then Create a Signal” settings](/docs/cse/rules/write-match-rule.md#configure-then-create-a-signal-settings) section of the Match Rule topic.

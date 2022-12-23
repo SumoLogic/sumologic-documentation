@@ -78,13 +78,13 @@ Start-Process C:\<path to collector executable>\SumoCollector.exe -Wait -Argumen
 
 **Examples**
 
-Using an [Installation Token](docs/manage/security/installation-tokens.md):
+Using an [Installation Token](/docs/manage/security/installation-tokens.md):
 
 ```bash
 SumoCollector.exe -console -q "-Vsumo.token_and_url=<installationToken>" "-Vsources=<filepath>"
 ```
 
-Using [access ID and access key](docs/manage/security/access-keys.md):
+Using [access ID and access key](/docs/manage/security/access-keys.md):
 
 ```bash
 SumoCollector.exe -console -q "-Vsumo.accessid=<accessId>" "-Vsumo.accesskey=<accessKey>" "-Vsources=<filepath>"

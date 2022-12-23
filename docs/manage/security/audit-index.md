@@ -89,7 +89,7 @@ When you query the audit index, the search results will include the class and ac
 
 ```sql
 _sourceCategory=account_management
-``` 
+```
 
 The table below shows the value of the `class` and `action` fields for account management events.
 
@@ -164,7 +164,7 @@ yields the following throttling notification.
 
 AWS automatically throttles CloudWatch data if the limits that Amazon sets for the associated APIs are exceeded.  If you have a high volume of metrics data points in your account, it is likely that Amazon will throttle your CloudWatch data.
 
-If no adjustments are made on the Sumo Logic side, throttling on the Amazon side can cause metrics data to be dropped. To prevent this from occurring, Sumo Logic automatically doubles the CloudWatch scan interval if more than one throttling message is received in a single interval. However, the change in scan interval isn't reflected in the Sumo Logic UI. The original configured interval is still shown. See [Amazon CloudWatch Source for Metrics](docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) for instructions on setting the CloudWatch scan interval. 
+If no adjustments are made on the Sumo Logic side, throttling on the Amazon side can cause metrics data to be dropped. To prevent this from occurring, Sumo Logic automatically doubles the CloudWatch scan interval if more than one throttling message is received in a single interval. However, the change in scan interval isn't reflected in the Sumo Logic UI. The original configured interval is still shown. See [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) for instructions on setting the CloudWatch scan interval. 
 
 When the scan interval is increased, a message is added to the audit log. No action is required by the Sumo Logic user. 
 

@@ -30,7 +30,7 @@ To open Explore, do the following:
 1. Log in to Sumo Logic and click **+ New** on the top menu bar.
 1. From the dropdown menu, choose **Explore**. 
 
-In order to start monitoring your Kubernetes environment, you first have to setup data collection and install the core Kubernetes dashboards by following the steps in our [quickstart](docs/observability/kubernetes/quickstart.md) guide.
+In order to start monitoring your Kubernetes environment, you first have to setup data collection and install the core Kubernetes dashboards by following the steps in our [quickstart](/docs/observability/kubernetes/quickstart.md) guide.
 
 To navigate Kubernetes environment and analyze the landscape, do the following:
 
