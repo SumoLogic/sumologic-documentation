@@ -56,4 +56,8 @@ As noted above, you can set a new default time range for a dashboard and individ
 
 When you make a modified time range the default, the time range appears in grey, and the more options menu is no longer available.
 
-When you change the default time range for the dashboard, the new time range will automatically be applied to all panels on the dashboard, unless you have set a new default time range default for one or more of the dashboard panels. In that case, you’ll be offered the option to override the panel time ranges with the new dashboard default. If you don’t select that, the existing default time ranges for individual panels will be preserved.
+When you change the default time range for the dashboard, the new time range will automatically be applied to all panels on the dashboard, unless you have set a new default time range default for one or more of the dashboard panels. In that case, you’ll be offered the option to **Override custom panel time ranges** with the new dashboard default. If you don’t select that, the existing default time ranges for individual panels will be preserved.
+
+<img src={useBaseUrl('img/dashboards-new/set-custom-time-ranges/set-as-dashboard-default.png')} alt="dashboard default" width="400"/>
+
+When a default time range is set for a panel, the panel won’t inherit the dashboard’s time range setting. You can change the panel back to inheriting the dashboard's time range by selecting **Inherit dashboard's time range** for the panel, or using the **Override custom panel time ranges** option, which causes every dashboard panel to inherit the dashboard's time range selection.
