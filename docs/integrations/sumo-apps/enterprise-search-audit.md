@@ -47,8 +47,8 @@ The Enterprise Search Audit - Data Tier Usage Over Time dashboard provides detai
 
 Use this dashboard to:
 
-* To drill down on search usage by different analytics tiers.
-* To quickly identify trends and usage patterns within each analytic tier.
+* Drill down on search usage by different analytics tiers.
+* Quickly identify trends and usage patterns within each analytic tier.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Data-Tier-Usage-Over-Time.png')} alt="Enterprise Search Audit - Data Tier Usage Over Time" />
 
