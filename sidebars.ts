@@ -168,7 +168,9 @@ module.exports = {
               link: {type: 'doc', id: 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/index'},
               items: [
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source',
@@ -186,6 +188,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-tracelogs',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source',

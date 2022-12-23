@@ -18,6 +18,7 @@ If you want to permanently remove a user, [you can delete them](delete-user.md)
 * Scheduled searches are deactivated for the user.
 * Access keys are deactivated for the user.
 * Scheduled views owned by the user are deactivated.
+* Monitors continue to run without any impact.
 
 ## Deactivate a user
 

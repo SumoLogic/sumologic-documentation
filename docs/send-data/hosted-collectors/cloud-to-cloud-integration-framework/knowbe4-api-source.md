@@ -1,16 +1,11 @@
 ---
 id: knowbe4-api-source
-title: KnowBe4 API Source (Beta)
+title: KnowBe4 API Source
+sidebar_label: KnowBe4 API Integration
 description: This document explains how to configure the KnowBe4 Cloud-to-Cloud source setup using the Sumo logic environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 The KnowBe4 API integration collects user data into Sumo Logic to store, analyze and alert. It ingests events data from the [Events API](https://developer.knowbe4.com/rest/userEvents#tag/Events/operation/listEvents).
 
@@ -74,7 +69,7 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 |:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable                                                    | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which it quits.                               | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will for up to 90 minutes, after which it quits.                               | FirstPartyGenericError |
+| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which it quits.                               | FirstPartyGenericError |
 
 ## API Limitations
 

@@ -44,7 +44,7 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 * An aggregate Metric Monitor can evaluate up to 15,000 time series. A non-aggregate Metric Monitor can evaluate up to 3,000 time series.
 * [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.
 * [Search templates](../../search/get-started-with-search/build-search/search-templates.md) are not supported.
-* A Log Monitor can have one query up to 4,000 characters long. Metric Monitors can specify up to six queries.
+* A Log Monitor can have one query up to 15,000 characters long. Metric Monitors can specify up to six queries.
 * Email notifications can have up to 100 recipients.
 * [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md) (auto-parse mode) is not supported.
 * The timeshift [metrics operator](/docs/metrics/metrics-operators) is not supported in a Metric Monitor.
