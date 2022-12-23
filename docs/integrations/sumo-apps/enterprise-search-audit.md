@@ -81,7 +81,7 @@ The Enterprise Search Audit - Queries Characteristics and Opportunities to Impro
 Use this dashboard to:
 
 * Assess which optimization techniques and search best practices are most adopted by your users.
-* Identify which queries span large time ranges and may be costly in terms of performance.
+To identify queries that span large time periods and are likely to be performance-intensive.
 * Identify the searches that do not apply any optimization techniques and could benefit from optimization.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Queries-Characteristics-and-Opportunities-to-Improve.png')} alt="Enterprise Search Audit - Queries Characteristics and Opportunities to Improve" />
