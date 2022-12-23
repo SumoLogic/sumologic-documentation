@@ -72,7 +72,7 @@ Use this dashboard to:
 * Identify the most commonly referenced partitions (indexes) and scheduled views to gauge user adoption and awareness of these options.
 * Identify the most commonly referenced source categories and other metadata in search queries to understand the most commonly used/relied upon data sources within your organization.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Commonly-Referenced-Data-Sources.png')} alt="test" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Commonly-Referenced-Data-Sources.png')} alt="Enterprise Search Audit - Commonly Referenced Data Sources" />
 
 
 ### Enterprise Search Audit - Queries Characteristics and Opportunities to Improve
