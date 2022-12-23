@@ -33,7 +33,7 @@ This page has information about the pre-built dashboards for the Enterprise Sear
 
 
 ### Enterprise Search Audit - Search Overview
-The Enterprise Search Audit - Search Overview dashboard provides a high-level overview of search usage within your account. The panels also display current search usage in terms of the total number of queries, types of query, and other query characteristics run by users.
+The **Enterprise Search Audit - Search Overview** dashboard provides a high-level overview of search usage within your account. The panels also display current search usage in terms of the total number of queries, types of queries, and other query characteristics run by users.
 
 Use this dashboard to:
 * To quickly monitor searches run in your account, including by search type.
