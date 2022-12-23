@@ -50,7 +50,7 @@ Use this dashboard to:
 * To drill-down on search usage by different analytics tiers.
 * Quickly Identify trends and usage patterns within each analytic tier.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Data-Tier-Usage-Over-Time.png')} alt="test" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Data-Tier-Usage-Over-Time.png')} alt="Enterprise Search Audit - Data Tier Usage Over Time" />
 
 
 ### Enterprise Search Audit - User Insights
