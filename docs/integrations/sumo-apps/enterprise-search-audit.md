@@ -36,8 +36,8 @@ This page has information about the pre-built dashboards for the Enterprise Sear
 The **Enterprise Search Audit - Search Overview** dashboard provides a high-level overview of search usage within your account. The panels also display current search usage in terms of the total number of queries, types of queries, and other query characteristics run by users.
 
 Use this dashboard to:
-* To quickly monitor searches run in your account, including by search type.
-* To get insights into query statistics, time ranges, and query failure rate.
+* Quickly monitor searches run in your account, including by search type.
+* Get insights into query statistics, time ranges, and query failure rate.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Search-Overview.png')} alt="Enterprise Search Audit - Search Overview" />
 
