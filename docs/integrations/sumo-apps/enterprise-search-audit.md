@@ -59,7 +59,7 @@ The Enterprise Search Audit - User Insights dashboard provides a high-level view
 Use this dashboard to:
 
 * Monitor top users by search count, data scanned and retrieved across the account.
-* To view the distribution of query time range.
+* View the distribution of query time range.
 * Identify top users for each query type in every tier.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-User-Insights.png')} alt="Enterprise Search Audit - User Insights" />
