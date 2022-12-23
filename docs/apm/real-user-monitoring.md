@@ -63,7 +63,7 @@ To configure a RUM HTTP Traces source:
    * **Service Name** (required): Add a **Service Name** of a text string to show for the service name in spans, for example `bookings-web-app`. This setting is saved in the script for `name_of_your_web_service`.
 
 :::tip
-To set up service name dynamically, for example to have different service names for micro-frontend packages, leverage the getOverriddenServiceName function inside your page code to overwrite the default service name. Keep in mind the service names should be of low cardinality and well describe parts of your website above page level.
+To set up service name dynamically, for example to have different service names for micro-frontend packages, leverage the `getOverriddenServiceName` function inside your page code to overwrite the default service name. Keep in mind the service names should be of low cardinality and well describe parts of your website above page level.
 Here's an example code that leverages that function:
 ```javascript
         window.sumoLogicOpenTelemetryRum.initialize({
@@ -77,8 +77,6 @@ Here's an example code that leverages that function:
             if (pathname.startsWith('/carts/')) {
               return 'online-shop-frontend-carts'
             }
-
-            // hash === '' || hash === '#!/'
             return 'online-shop-frontend-main'
           }
         });
