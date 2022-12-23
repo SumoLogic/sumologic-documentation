@@ -525,8 +525,8 @@ At this point, Cassandra metrics and logs should start flowing into Sumo Logic.
 
 ## Installing Cassandra Monitors
 
-:::
-Note: This step is not needed if one is using application components solution terraform script.
+:::note
+This step is not needed if one is using application components solution terraform script.
 :::
   
 To install these monitors, you must have the **Manage Monitors** role capability. You can install monitors by importing a JSON file or using a Terraform script.
@@ -613,8 +613,8 @@ email_notifications = [
 
 ## Installing the Cassandra App
 
-:::
-Note: This step is not needed if one is using application components solution terraform script.
+:::note
+This step is not needed if one is using application components solution terraform script.
 :::
   
 This section demonstrates how to install the Cassandra App.
