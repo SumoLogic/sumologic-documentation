@@ -54,7 +54,7 @@ Use this dashboard to:
 
 
 ### Enterprise Search Audit - User Insights
-The Enterprise Search Audit - User Insights dashboard provides a high-level view to understand who are the key users of search in your account. The dashboard panels provide details about search usage of top users in terms of search query count, data scanned and retrieved by tiers.
+The Enterprise Search Audit - User Insights dashboard provides a high-level view of your account's key search users. The dashboard panels provide information about top users' search usage in terms of search query count, data scanned and retrieved by tiers.
 
 Use this dashboard to:
 
