@@ -614,7 +614,7 @@ email_notifications = [
 ## Installing the Cassandra App
 
 :::note
-This step is not needed if one is using application components solution terraform script.
+This step is not needed if you are using the [Application Components Solution](/docs/observability/application-components) Terraform script.
 :::
   
 This section demonstrates how to install the Cassandra App.
