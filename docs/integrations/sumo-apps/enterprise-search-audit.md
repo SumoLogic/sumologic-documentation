@@ -39,7 +39,7 @@ Use this dashboard to:
 * To quickly monitor searches run in your account, including by search type.
 * To get insights into query statistics, time ranges, and query failure rate.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Search-Overview.png')} alt="test" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Search-Overview.png')} alt="Enterprise Search Audit - Search Overview" />
 
 
 ### Enterprise Search Audit - Data Tier Usage Over Time
