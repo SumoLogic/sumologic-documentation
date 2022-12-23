@@ -32,17 +32,17 @@ To install the app:
 This page has information about the pre-built dashboards for Enterprise Search Audit App and a description of each of the app dashboards.
 
 
-### Search Overview
+### Enterprise Search Audit - Search Overview
 The Enterprise Search Audit - Search Overview dashboard provides a high-level overview of search usage within your account. The panels also display current search usage in terms of the total number of queries, types of query, and other query characteristics run by users.
 
 Use this dashboard to:
 * To quickly monitor searches run in your account, including by search type.
 * To get insights into query statistics, time ranges, and query failure rate.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/ESA-SearchOverview.png')} alt="test" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Search-Overview.png')} alt="test" />
 
 
-### Data Tier Usage Over Time
+### Enterprise Search Audit - Data Tier Usage Over Time
 The Enterprise Search Audit - Data Tier Usage Over Time dashboard provides detailed insights into search usage by analytics tier. It displays the total number of searches and the types of queries run by users.
 
 Use this dashboard to:
@@ -50,10 +50,10 @@ Use this dashboard to:
 * To drill-down on search usage by different analytics tiers.
 * Quickly Identify trends and usage patterns within each analytic tier.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/ESA-DataTierUsageOverTime.png')} alt="test" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Data-Tier-Usage-Over-Time.png')} alt="test" />
 
 
-### User Insights
+### Enterprise Search Audit - User Insights
 The Enterprise Search Audit - User Insights dashboard provides a high-level view to understand who are the key users of search in your account. The dashboard panels provide details about search usage of top users in terms of search query count, data scanned and retrieved by tiers.
 
 Use this dashboard to:
@@ -62,9 +62,9 @@ Use this dashboard to:
 * To view the distribution of query time range.
 * Identify top users for each query type in every tier.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/ESA-UserInsights.png')} alt="test" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-User-Insights.png')} alt="test" />
 
-### Commonly Referenced Data Sources
+### Enterprise Search Audit - Commonly Referenced Data Sources
 The Enterprise Search Audit - Commonly Referenced Data Sources dashboard provides insights into the key or most popular data sources and metadata referenced in users’ searches. The dashboard helps you understand what your users most commonly search for in your organization.
 
 Use this dashboard to:
@@ -72,10 +72,10 @@ Use this dashboard to:
 * Identify the most commonly referenced partitions (indexes) and scheduled views to gauge user adoption and awareness of these options.
 * Identify the most commonly referenced source categories and other metadata in search queries to understand the most commonly used/relied upon data sources within your organization.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/ESA-CommonlyReferencedDataSources.png')} alt="test" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Commonly-Referenced-Data-Sources.png')} alt="test" />
 
 
-### Queries Characteristics and Opportunities to Improve
+### Enterprise Search Audit - Queries Characteristics and Opportunities to Improve
 The Enterprise Search Audit - Queries Characteristics and Opportunities to Improve dashboard provides information about which of your queries take and don’t take advantage of important optimization techniques and metadata to improve efficiency.
 
 Use this dashboard to:
@@ -84,4 +84,4 @@ Use this dashboard to:
 * Identify which queries span large time ranges and may be costly in terms of performance.
 * To identify the searches that do not apply any optimization techniques and could benefit from optimization.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/ESA-QueriesCharacteristicsAndOpportunitiestoImprove.png')} alt="test" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Enterprise-Search-Audit/Enterprise-Search-Audit-Queries-Characteristics-and-Opportunities-to-Improve.png')} alt="test" />
