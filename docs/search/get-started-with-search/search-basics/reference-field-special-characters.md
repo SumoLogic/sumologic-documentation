@@ -25,7 +25,7 @@ You can create a field with the `as` operator.
 
 You don't need to escape field names that:
 
-* have characters matching `a-zA-Z0-9_`
+* have characters matching `a-zA-Z0-9_.`
 * don't begin with a number or `.` (dot)
 * don't have more than one `.` (dot) together
 
