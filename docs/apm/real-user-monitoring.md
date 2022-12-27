@@ -60,12 +60,8 @@ To configure a RUM HTTP Traces source:
    * **Source Host** and **Source Category** (optional): enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md) fields that allow you to organize your data. We recommend you specify a Source Category indicating the data is from a browser.<br/><img src={useBaseUrl('/img/rum/RUM-HTTP-Traces-Source.png')} alt="Real User Monitoring" width="300"/>
 1. Enter **Advanced options for Browser RUM**. A list of FAQs on the page can provide help for these options. A table with all the available configuration parameters is available in the [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) README file.<br/><img src={useBaseUrl('img/rum/RUM-HTTP-Traces-Source-Advanced.png')} alt="Real User Monitoring" width="300"/>
    * **Application Name** (recommended): Add an **Application Name** tag of a text string to show for the app name in spans, for example `bookings-app`. This groups services in the Application Service View. If left blank, services will belong to a "default" application. See [Application Service Dashboards](/docs/apm/traces/working-with-tracing-data/service-map.md) for more information. This setting is saved in the script for `name_of_your_web_application`.
-   * **Service Name** (required): Add a **Service Name** of a text string to show for the service name in spans, for example `bookings-web-app`. This setting is saved in the script for `name_of_your_web_service`.
-
-:::tip
-To set up service name dynamically, for example to have different service names for micro-frontend packages, leverage the `getOverriddenServiceName` function inside your page code to overwrite the default service name. Keep in mind the service names should be of low cardinality and well describe parts of your website above page level.
-Here's an example code that leverages that function:
-```javascript
+   * **Service Name** (required): Add a **Service Name** of a text string to show for the service name in spans, for example `bookings-web-app`. This setting is saved in the script for `name_of_your_web_service`.<br/><br/>To set up a service name dynamically (e.g., to have different service names for micro-frontend packages), leverage the `getOverriddenServiceName` function inside your page code to overwrite the default service name. Service names should be of low cardinality and should describe parts of your website above page level. Here's an example code leveraging that function:
+   ```javascript
         window.sumoLogicOpenTelemetryRum.initialize({
           collectionSourceUrl:
             'https://service.sumologic.com/receiver/v1/rum/token==',
@@ -80,9 +76,7 @@ Here's an example code that leverages that function:
             return 'online-shop-frontend-main'
           }
         });
-```
-:::
-
+   ```
    * **Probabilistic sampling rate** (optional): Add a **Probabilistic sampling rate** for heavy traffic sites in a decimal value based on percentage, for example, 10% would be entered as `0.1`.
    * **Ignore urls** (optional): Add a list of URLs not to collect trace data from. Supports regex. For example: `/^https:\/\/www.tracker.com\/.*/, /^https:\/\/api.mydomain.com\/log\/.*/`. Please make sure provided URLs are valid JavaScript flavor regexes.
    * **Custom Tags** (optional): Click **+Add** and enter a key and value for each **Custom Tags** to show in spans from instrumented browsers. For example, click **+Add** and enter a key `deployment.environment` with a value of `production`. This information is saved in the script for `name_of_your_web_service`.
