@@ -792,6 +792,7 @@ module.exports = {
       link: {type: 'doc', id: 'dashboards-new/index'},
       items: [
         'dashboards-new/about',
+        'dashboards-new/migrate-to-new-dashboards',
         'dashboards-new/create-dashboard-new',
         'dashboards-new/faq',
         'dashboards-new/drill-down-to-discover-root-causes',
@@ -1579,8 +1580,19 @@ module.exports = {
         'observability/application-components',
         'observability/diagnose-issues',
         'observability/troubleshoot',
-        'observability/reliability-management-slo',
         'observability/root-cause-explorer',
+        {
+          type: 'category',
+          label: 'Reliability Management (SLO)',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'observability/reliability-management-slo/index'},
+          items: [
+            'observability/reliability-management-slo/create-slo',
+            'observability/reliability-management-slo/dashboards',
+            'observability/reliability-management-slo/use-cases',
+          ],
+        },
         'observability/work-from-home-vpn',
       ],
     },
