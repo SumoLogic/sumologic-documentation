@@ -792,6 +792,7 @@ module.exports = {
       link: {type: 'doc', id: 'dashboards-new/index'},
       items: [
         'dashboards-new/about',
+        'dashboards-new/migrate-to-new-dashboards',
         'dashboards-new/create-dashboard-new',
         'dashboards-new/faq',
         'dashboards-new/drill-down-to-discover-root-causes',
