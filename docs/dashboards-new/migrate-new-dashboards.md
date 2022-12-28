@@ -8,10 +8,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Overview
 
-The new **Migration Dashboards** functionality allows you to switch to **New Dashboards** from the **Classic Dashboards** with the help of a single click**. Migrate to New Dashboards lets you transform any of your classic dashboards into a new dashboard format, with minimal intervention from post-migration activity. It lets you analyze metrics and log data on the same dashboard, in a streamlined user experience.It lets you analyze metrics and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to monitor and manage a Kubernetes environment effectively.
+The new **Migrate to New Dashboards** functionality allows you to switch to **New Dashboards** from the **Classic Dashboards** with the help of a single click**. Migrate to New Dashboards lets you transform any of your classic dashboards into a new dashboard format, with minimal intervention from post-migration activity. It lets you analyze metrics and log data on the same dashboard, in a streamlined user experience.It lets you analyze metrics and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to monitor and manage a Kubernetes environment effectively.
 
 This gives you control over the visual display of metric and logs data. Dashboard (New) streamlines dashboard configuration and on-the-fly analytic visualizations with its new templating features.
-
 
 :::note
 We do not guarantee 100% conversion from classic to new dashboard although we do provide an exhaustive list of incompatibilities that need to be taken care of. Customers can still keep their old dashboard after migration.
@@ -20,14 +19,12 @@ We do not guarantee 100% conversion from classic to new dashboard although we do
 ## Advantages
 
 * New dashboards are constantly developed for new feature additions.
-* New dashboard provides the unique ability to display metrics metadata and logs data on the same dashboard in an integrated seamless view
+* New dashboard provides the unique ability to display metrics metadata and logs data on the same dashboard in an integrated seamless view.
 * New dashboard streamlines dashboard configuration and on-the-fly analytic visualizations with its new templating features.
-
-  Refer to the Link to the old and new dashboard comparison.
 
 ## Changes after migration
 
-This table shows the complete list of features that are changed after the implementation of the **Migration Dashboards** feature.
+This table shows the complete list of features that are changed after the implementation of the **Migrate to New Dashboards** feature.
 
 | Features |  Supported    |   Not Supported   |
 | --------   | :-------------    |   :------------  |  
