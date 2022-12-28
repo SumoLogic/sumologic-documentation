@@ -27,8 +27,18 @@ The following table lists the available options for an SLO:
 
 ## Create an SLO
 
+### General process
+
 1. Click **Manage Data**, then **Monitoring**. Select the **SLO** tab if not loaded.
-2. Click **Add**, then **New SLO**. You can also create folders to manage your SLOs. You'll also have an option to [import content](#Importing_SLOs).
+2. Click **Add**, then **New SLO**. Optionally, you can also:
+   * Create folders to manage your SLOs.
+   * Import an SLO:
+      1. To transfer data immediately and create an SLO using an import, you should first export JSON content to use that formatting. The Sumo Logic JSON format may change without notice. See [Export and Import Content in the Library](/docs/get-started/library#import-content) for complete details.
+      2. Click **Manage Data**, then **Monitoring**. Select the SLO tab if not loaded.
+      3. Click **Add** > **Import**.
+      4. Enter a Name for the SLO.
+      5. Copy and paste the JSON in the text editor.
+      6. Click **Import**.<br/><img src={useBaseUrl('img/observability/slo-import.png')} alt="Reliability Management SLO SLI" />
 3. Select the Signal Type:
     * **Latency**. Select to calculate the speed of services, lag time.
     * **Error**. Select to monitor for errors that occur in your services.
@@ -105,23 +115,10 @@ Follow the instructions below based on the query type:
     * **Compliance Type**. **Rolling** provides a sequence of recent days for the Compliance Period, such as the last 7d or last 30d. **Calendar** calculator over a window of time for a Week.
     * **Timezone**. Select a timezone. This is important to accurately assign events on the boundary of a compliance period, such as events received at 11:59 PM in a particular time zone.<br/><img src={useBaseUrl('img/observability/slo-create-slo.png')} alt="Reliability Management SLO SLI" />
 9. Enter SLO Details, including a **Name** and **Description**. This is used in the list and for searches.<br/><img src={useBaseUrl('img/observability/slo-create-details.png')} alt="Reliability Management SLO SLI" />
-10. Click **Save**. To create a monitor, click [Save and Create Monitor](#Create_an_SLO_Monitor).
+10. Click **Save**. To create a monitor, click [Save and Create Monitor](#creating-slo-monitors).
 
 
-## Import an SLO
-
-To transfer data immediately and create an SLO using an import, you should first export JSON content to use that formatting. The Sumo Logic JSON format may change without notice. See [Export and Import Content in the Library](/docs/get-started/library#import-content) for complete details.
-
-To import an SLO:
-
-1. Click **Manage Data**, then **Monitoring**. Select the SLO tab if not loaded.
-2. Click **Add** > **Import**.
-3. Enter a Name for the SLO.
-4. Copy and paste the JSON in the text editor.
-5. Click **Import**.<br/><img src={useBaseUrl('img/observability/slo-import.png')} alt="Reliability Management SLO SLI" />
-
-
-## Create an SLO from Logs, Metrics, Monitors
+## Creating SLOs from Logs, Metrics, Monitors
 
 You can create SLOs directly from your Sumo Logic log search. This allows you to validate queries, quickly create SLOs, and re-use queries from existing dashboard panels.
 
@@ -136,16 +133,16 @@ You'll be able to create SLOs from Metrics Explorer and Monitors.
 ## Creating SLO Monitors
 
 :::note
-[Alert Responses](/docs/alerts/monitors/alert-response) are not supported for SLO-based monitors. Notifications will provide information and links to SLO dashboards.
+[Alert Responses](/docs/alerts/monitors/alert-response) are not yet supported for SLO-based monitors. Notifications will provide information and links to SLO dashboards.
 :::
 
-Create one or more monitors as needed for your SLO. We recommend creating separate monitors for SLI-based and Burn Rate-based condition types. You can access SLO monitors through the [SLO Details](#Previewing-slos) or from the Monitors list page.
+Create one or more monitors as needed for your SLO. We recommend creating separate monitors for SLI-based and Burn Rate-based condition types. You can access SLO monitors through your SLO Details or from the Monitors list page.
 
 You will receive notifications according to monitor configurations, such as email messages and Slack channel posts. Use the variable `{{SloDashboardUrl}}` in your connection payloads, which will generate an SLO dashboard link in notifications. This variable will be included automatically in email notifications.
 
 The Alert Response page is not supported for SLO-based monitors at this time. Notifications will provide access to the SLO dashboard when warning and critical triggers occur.
 
-Monitor notifications may auto-resolve. See [Auto-Resolving Notifications](#Auto-resolving_Notifications) for details according to the evaluation type (Windows or Request) and compliance type (Calendar or Rolling).
+Monitor notifications may auto-resolve. See [Auto-Resolving Notifications](/docs/observability/reliability-management-slo/create-slo/#auto-resolving-notifications) for details according to the evaluation type (Windows or Request) and compliance type (Calendar or Rolling).
 
 You can create one condition type for your SLO monitor, either an SLI trigger or Error Budget trigger. You can create one condition type for your SLO monitor, either a SLI condition or Error Budget condition. We support configuring a threshold value per critical and warning trigger for that condition type.
 
@@ -154,12 +151,10 @@ You have two options to create an SLO Monitor:
 * Go to the **Monitors** tab, select **Add** > **New Monitor**, then select the SLO option. <br/><img src={useBaseUrl('img/observability/button-new-monitor.png')} alt="Reliability Management SLO SLI" />
 
 When you click **Save and Create Monitor**, a New Monitor dialog loads:
-
 1. For the **Monitor Type**, select **SLO**. When creating from the **Monitors** tab, select an SLO from the dropdown menu. A preview of the SLO loads on the page. <br/><img src={useBaseUrl('img/observability/ani-new-monitor1.gif')} alt="Reliability Management SLO SLI" />
 2. Select and configure a Condition Type:
    * For the **SLI Condition Type**, you can select to alert when the SLI is below an entered percentage, as it nears your SLI target. For example, you could set this to 99.1% to raise a critical alert when it is getting close to a target of 99%. <br/><img src={useBaseUrl('img/observability/slo-monitor-sli.png')} alt="Reliability Management SLO SLI" width="200"/>
-   * For the **Burn Rate Condition Type**, create an alert indicating Critical and Warning conditions based on burn rate or the rate at which error budget is depleted. Enter a percentage depleted within an amount of minutes, hours, or days.
-For example, a critical alert for 10% depletion within 3 hours indicates the error budget is depleting quickly.<br/><img src={useBaseUrl('img/observability/slo-monitor-burn.png')} alt="Reliability Management SLO SLI" width="350"/>
+   * For the **Burn Rate Condition Type**, create an alert indicating Critical and Warning conditions based on burn rate or the rate at which error budget is depleted. Enter a percentage depleted within an amount of minutes, hours, or days. For example, a critical alert for 10% depletion within 3 hours indicates the error budget is depleting quickly.<br/><img src={useBaseUrl('img/observability/slo-monitor-burn.png')} alt="Reliability Management SLO SLI" width="350"/>
 3. Under **Notifications**, select your preferred **Connection Type** for sending messages via email, Slack, webhook, or other methods. Select **Alert** and/or **Recovery** to notify for **Critical** and **Warning** triggers. You can add as many notifications as needed. A message is sent with a link to the SLO dashboard to investigate.<br/><img src={useBaseUrl('img/observability/slo-monitor-notifications.png')} alt="Reliability Management SLO SLI" />
 
   For example, to set up a Slack notification, select **Slack** from the dropdown menu and edit the **Payload** as needed. The following information shows the default settings: <br/><img src={useBaseUrl('img/observability/slack-payload.png')} alt="Reliability Management SLO SLI" />
@@ -272,12 +267,12 @@ SLO Monitors in a triggered state can auto-resolve. See the following table for 
 
 #### Notification Example
 
-When a notification is sent, it includes information from the alert and a link to load the dashboard. Below is an example of a critical alert email notification. See [SLO Dashboards](#viewing-SLO-Dashboards) for information.<br/><img src={useBaseUrl('img/observability/slo-email-alert.png')} alt="Reliability Management SLO SLI" width="450"/>
+When a notification is sent, it includes information from the alert and a link to load the dashboard. Below is an example of a critical alert email notification. See [SLO Dashboards](/docs/observability/reliability-management-slo/dashboards) for information.<br/><img src={useBaseUrl('img/observability/slo-email-alert.png')} alt="Reliability Management SLO SLI" width="350"/>
 
 
 #### Resolution Email Example
 
-<img src={useBaseUrl('img/observability/resolution-email.png')} alt="Reliability Management SLO SLI" width="450"/>
+<img src={useBaseUrl('img/observability/resolution-email.png')} alt="Reliability Management SLO SLI" width="350"/>
 
 ## Installing AWS SLO Alerts via Terraform
 

@@ -118,7 +118,7 @@ To locate an SLO, use the search that returns a list of SLOs based on the name a
 
 <img src={useBaseUrl('img/observability/slo1.png')} alt="Reliability Management SLO SLI" />
 
-To open the dashboard, locate and select an SLO. The details pane gives you a preview and an option to **Open SLO Dashboard**. See [SLO Dashboards and Notifications](#viewing-SLO-Dashboards) for more information.
+To open the dashboard, locate and select an SLO. The details pane gives you a preview and an option to **Open SLO Dashboard**. See [SLO Dashboards and Notifications](/docs/observability/reliability-management-slo/dashboards) for more information.
 
 
 ### Previewing SLOs

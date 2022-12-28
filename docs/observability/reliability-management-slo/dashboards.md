@@ -1,15 +1,15 @@
 ---
 id: dashboards
 title: Viewing SLO Dashboards
-description: Learn how to create a SLO for reliability management.
+sidebar_label: SLO Dashboards
+description: Learn how to view and configure reliability management (SLO) dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-
 SLO Dashboards provide an active view into the health and status of services and systems based on your SLI and SLO configurations.<br/><img src={useBaseUrl('img/observability/slo-email-alert-click.png')} alt="Reliability Management SLO SLI" width="350"/>
 
-After [setting up your SLO monitors](#Creating_SLO_Monitors), you'll start receiving notifications, which you can configure to be sent to you by email, Slack channel, and other options. To begin reviewing your data for this alert in Sumo, you would click **View SLO Dashboard**.
+After [setting up SLO monitors](/docs/observability/reliability-management-slo/create-slo/#creating-slo-monitors), you'll start receiving notifications, which you can configure to be sent to you by email, Slack channel, and other options. To begin reviewing your data for this alert in Sumo, click **View SLO Dashboard**.
 
 The dashboard will load in Sumo Logic with that time period in view with vital information to begin investigating the service. For example, selecting the option for this error opens the following board. Here, we can review the current SLI and target, the remaining error budget, compliance settings, and review trending issues caught by the SLO.<br/><img src={useBaseUrl('img/observability/slo-dashboard-alert.png')} alt="Reliability Management SLO SLI" />
 
