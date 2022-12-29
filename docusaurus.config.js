@@ -379,7 +379,6 @@ module.exports = {
             value: '<div id="google_translate_element"></div>',
           },
           {
-            className: 'header-login',
             to: 'https://www.sumologic.com/sign-up',
             position: 'right',
           },
