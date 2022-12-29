@@ -380,8 +380,8 @@ module.exports = {
           },
           {
             className: 'header-login',
-            position: 'right',
             to: 'https://www.sumologic.com/sign-up',
+            position: 'right',
           },
           {
             className: 'header-github-link',
