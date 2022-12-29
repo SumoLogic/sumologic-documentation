@@ -5,7 +5,6 @@ sidebar_label: predict
 description: Predict future values based on a single time series.
 keywords:
     - metrics
-tags: [metrics]  
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
