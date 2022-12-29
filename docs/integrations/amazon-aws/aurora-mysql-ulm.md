@@ -268,13 +268,13 @@ This section provides instructions setting up the collection of Aurora CloudWatc
 To collect Aurora CloudWatch metrics, do the following:
 1. Configure a [Hosted Collector.](/docs/send-data/hosted-collectors/configure-hosted-collector)
 2. Configure an [Amazon CloudWatch Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics), providing the following information:
-   * **Name** - Enter a name to display for the new Source.
-   * **Description** - (Optional) Enter a description of the Source.
-   * **Regions** - Select your Amazon Regions for Amazon RDS.
-   * **Namespaces** - Select **AWS/RDS**.
-   * **Source Category** - Enter a source category, for example, AWS/RDS/Metric.
-   * **Access Key ID and Secret Access Key** - Enter your Amazon Access Key ID and Secret Access Key.
-   * **Scan Interval** - Accept the default of 5 minutes, or enter a time interval at which Sumo Logic will scan CloudWatch Sources for new data.
+   * **Name**. Enter a name to display for the new Source.
+   * **Description**. (Optional) Enter a description of the Source.
+   * **Regions**. Select your Amazon Regions for Amazon RDS.
+   * **Namespaces**. Select **AWS/RDS**.
+   * **Source Category**. Enter a source category, for example, AWS/RDS/Metric.
+   * **Access Key ID and Secret Access Key**. Enter your Amazon Access Key ID and Secret Access Key.
+   * **Scan Interval**. Accept the default of 5 minutes, or enter a time interval at which Sumo Logic will scan CloudWatch Sources for new data.
 3. Click **Save**.
 
 
