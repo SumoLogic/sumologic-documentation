@@ -56,7 +56,7 @@ To configure a RUM HTTP Traces source:
 1. Select **RUM HTTP Traces**. <br/><img src={useBaseUrl('img/rum/rum-icon.png')} alt="Real User Monitoring" width="120"/>
 1. Under **Source Type: RUM HTTP Traces**, enter the following information:
    * **Name** for the Source.
-   * **Description** for the Source (optional).
+   * **Description**. (Optional) description of the Source .
    * **Source Host** and **Source Category**. (Optional) Enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md) fields that allow you to organize your data. We recommend you specify a Source Category indicating the data is from a browser.<br/><img src={useBaseUrl('/img/rum/RUM-HTTP-Traces-Source.png')} alt="Real User Monitoring" width="300"/>
 1. Enter **Advanced options for Browser RUM**. A list of FAQs on the page can provide help for these options. A table with all the available configuration parameters is available in the [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) README file.<br/><img src={useBaseUrl('img/rum/RUM-HTTP-Traces-Source-Advanced.png')} alt="Real User Monitoring" width="300"/>
    * **Application Name**. (Recommended) Add an **Application Name** tag of a text string to show for the app name in spans (for example, `bookings-app`). This groups services in the Application Service View. If left blank, services will belong to a "default" application. See [Application Service Dashboards](/docs/apm/traces/working-with-tracing-data/service-map.md) for more information. This setting is saved in the script for `name_of_your_web_application`.
