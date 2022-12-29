@@ -25,6 +25,7 @@
     "@docusaurus/plugin-sitemap": "2.2.0",
     "@docusaurus/preset-classic": "2.2.0",
     "@docusaurus/theme-classic": "2.2.0",
+    "@docusaurus/theme-search-algolia": "^2.2.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@eslint/eslintrc": "^1.3.3",
