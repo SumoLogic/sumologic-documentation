@@ -389,6 +389,10 @@ module.exports = {
             position: 'right',
             to: 'https://github.com/SumoLogic/sumologic-documentation',
           },
+          {
+            type: 'search',
+            position: 'right'
+          },
         ],
       },
       footer: {
