@@ -531,18 +531,19 @@ email_notifications = [
 Now that you have set up logs and metric collections for Apache, you can install the Sumo Logic App for Apache to use the pre-configured Searches and [dashboards](#viewing-dashboards).
 
 To install the app, do the following:
-1. Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-2. From the **App Catalog**, search for and select the app.
-3. Select the version of the service you're using and click **Add to Library**.
-4. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source.**  Choose **Enter a Custom Data Filter**, and enter a custom filter. Examples:
+1. Locate and select the app you need from the **App Catalog**. 
+2. From the **App Catalog**, search for and select the app. If you want to see a preview of the dashboards included with the app before installing, click images in **Dashboard Preview** section.
+3. Click **Add Integration**. 
+4. In **Setup Data** step you would see **Open Setup Doc** button with link to this document. Click **Next** to proceed.
+5. In **Configure Apache** step complete the following fields.
+   * **Apache Log Source**  Choose **Enter a Custom Data Filter**, and enter a custom filter. Examples:
      * For all Apache web server farms: `webserver_system=apache webserver_farm=*`
      * For a specific web server farm: `webserver_system=apache webserver_farm=apache.dev.01`
-     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-5. Click **Add to Library**.
+   * Select location in the library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+   * **Folder Name** You can retain the existing name, or enter a name of your choice for the app. 
+5. Click **Next**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+For more information see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
