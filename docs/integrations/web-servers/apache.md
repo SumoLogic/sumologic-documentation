@@ -535,8 +535,8 @@ To install the app, do the following:
 2. From the **App Catalog**, search for and select the app. If you want to see a preview of the dashboards included with the app before installing, click images in **Dashboard Preview** section.
 3. Click **Add Integration**. 
 4. In **Setup Data** step you would see **Open Setup Doc** button with link to this document. Click **Next** to proceed.
-5. In **Configure Apache** step complete the following fields.
-   * **Apache Log Source**  Choose **Enter a Custom Data Filter**, and enter a custom filter. Examples:
+5. In the **Configure Apache** step, complete the following fields.
+   * **Apache Log Source**.  Choose **Enter a Custom Data Filter** and enter a custom filter. Examples:
      * For all Apache web server farms: `webserver_system=apache webserver_farm=*`
      * For a specific web server farm: `webserver_system=apache webserver_farm=apache.dev.01`
    * Select location in the library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
