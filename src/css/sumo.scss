@@ -116,9 +116,6 @@ html[data-theme='dark'] {
   --ifm-table-stripe-background: rgba(29, 43, 69, .50);
   --ifm-table-head-background: rgba(0, 164, 219, 0.35);
   --ifm-table-border-color: rgba(59, 91, 110, 0.35);
-  --docsearch-searchbox-background: transparent !important;
-  --docsearch-searchbox-focus-background: #ffffff20 !important;
-  --docsearch-searchbox-shadow: #ffffff20 !important;
   .button--secondary {
     --ifm-color-emphasis-200: rgba(53, 120, 229, .25);
   }
@@ -172,9 +169,6 @@ html[data-theme='light'] {
   --ifm-table-stripe-background: rgb(241, 244, 247);
   --ifm-table-head-background: rgba(0, 139, 178, 0.397);
   --ifm-table-border-color: rgba(25, 43, 54, 0.35);
-  --docsearch-searchbox-background: transparent !important;
-  --docsearch-searchbox-focus-background: #efefef !important;
-  --docsearch-searchbox-shadow: #efefef !important;
   .button--secondary {
     --ifm-button-border-color: rgba(53, 120, 229, .25);
   }
@@ -255,7 +249,7 @@ html[data-theme='light'] {
 }
 
 .header-login::before {
-  content: 'Start a Free Trial';
+  content: 'Start Free Trial';
   border: 1px solid #2aa1e6;
   color: #FFF;
   border-radius: 3px;
@@ -297,12 +291,6 @@ html[data-theme='light'] {
 .header-search-link::after {
     display: none !important;
     content: none !important;
-}
-
-
-.DocSearch.DocSearch-Button {
-  width: 32px !important;
-  height: 32px !important;
 }
 
 .markdown {

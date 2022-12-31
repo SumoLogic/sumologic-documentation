@@ -244,10 +244,7 @@ module.exports = {
       // Public API key: it is safe to commit it
       apiKey: 'fb2f4e1fb40f962900631121cb365549',
       indexName: 'crawler_sumodocs',
-      // Optional: see doc section below
       contextualSearch: false,
-      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      //externalUrlRegex: 'external\\.com|domain\\.com',
       // Optional: Algolia search parameters
       //searchParameters: {},
       // Optional: path for search page that enabled by default (`false` to disable it)
@@ -278,7 +275,7 @@ module.exports = {
                 activeBaseRegex: '^/docs/send-data/.*',
               },
               {
-                label: 'Search Logs',
+                label: 'Log Search',
                 to: '/docs/search',
                 activeBaseRegex: '^/docs/search/.*',
               },
@@ -288,7 +285,7 @@ module.exports = {
                 activeBaseRegex: '^/docs/metrics/.*',
               },
               {
-                label: 'Apps/Integrations',
+                label: 'Apps',
                 to: '/docs/integrations',
                 activeBaseRegex: '^/docs/integrations/.*',
               },
@@ -325,6 +322,14 @@ module.exports = {
                 label: 'CI/CD',
                 to: '/docs/sdo',
                 activeBaseRegex: '^/docs/(sdo)/.*',
+              },
+              {
+                label: 'Dashboards',
+                to: '/docs/dashboards-new',
+              },
+              {
+                label: 'Contribute',
+                to: '/docs/contributing',
               },
             ]
           },
@@ -369,11 +374,6 @@ module.exports = {
             ]
           },
           {
-            label: 'Contribute',
-            to: '/docs/contributing',
-            position: 'left',
-          },
-          {
             type: 'html',
             position: 'right',
             value: '<div id="google_translate_element"></div>',
@@ -382,16 +382,13 @@ module.exports = {
             to: 'https://www.sumologic.com/sign-up',
             position: 'right',
             className: 'header-login',
+            'aria-label': 'Start a free trial',
           },
           {
             className: 'header-github-link',
             'aria-label': 'GitHub repository',
             position: 'right',
             to: 'https://github.com/SumoLogic/sumologic-documentation',
-          },
-          {
-            type: 'search',
-            position: 'right'
           },
         ],
       },
