@@ -446,7 +446,7 @@ This section provides instructions for installing the Sumo Logic Monitors for Ap
 
 Sumo Logic has provided predefined set of alerts which can be imported and available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively monitor your Apache Web servers and farms. These monitors are built based on metrics and logs datasets and include pre-set thresholds based on industry best practices and recommendations.
 
-For details about individual alerts, see [section at the bottom of this page](#apache-alerts). To install these alerts, you need to have the Manage Monitors role capability. There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules).
+For details about individual alerts, see [Apache Alerts](#apache-alerts). To install these alerts, you need to have the Manage Monitors role capability. There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules).
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
