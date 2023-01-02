@@ -160,7 +160,7 @@ Observables from every incident can be found in this section, along with any enr
 
 A timeline of actions taken on the entity can be displayed on the far right-hand corner of the screen by clicking on the stopwatch symbol. Hover over the date tabs to expand the timeline and see additional information about the actions taken on each date.
 
-![alt-text goes here](/img/cloud-soar/image164.png)       
+![latest actions](/img/cloud-soar/image164.png)       
 
 
 While any observable is selected, a menu bar will be available in the
@@ -291,4 +291,3 @@ Closing incident will result in asking a note for incident closing as below:
 
 
 ![Closing Note](/img/cloud-soar/image57c.png)
-
