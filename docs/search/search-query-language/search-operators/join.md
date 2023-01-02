@@ -46,7 +46,7 @@ on t1.a = t2.c
 **Rules**
 
 * Two or more tables must be created for a query.
-* The join expression can not specify a [keyword search expression](docs/search/get-started-with-search/build-search/keyword-search-expressions.md) (scope), if provided it is ignored.
+* The join expression can not specify a [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md) (scope), if provided it is ignored.
 * Data must be present in the time range you choose for the query.
 * Join can be used in Dashboard Panels, but in the query they must be included after the first `group-by` phrase.
 * [Subqueries](/docs/search/subqueries) are supported, and can include aggregate operators.
@@ -59,7 +59,7 @@ on t1.a = t2.c
     `The number of output messages exceeds 10,000,000. Please refine your search or shorten the time range to reduce the number of output messages.`
 
 * Only conjunctive conditions (AND) are allowed. Using NOT or OR conditions is not supported.
-* [Real Time Alerts](docs/alerts/scheduled-searches/create-real-time-alert.md) don't support the join operator.
+* [Real Time Alerts](/docs/alerts/scheduled-searches/create-real-time-alert.md) don't support the join operator.
 * The join operator uses sliding windows to store candidates for joins in order to prevent unbounded memory usage when joining between two large relations. Because of this, the result of the join could be incomplete and inconsistent from run-to-run.
 * The following conditions are not currently supported in the ON clause:
 

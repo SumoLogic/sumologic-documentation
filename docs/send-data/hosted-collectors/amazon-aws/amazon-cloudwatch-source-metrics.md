@@ -18,7 +18,7 @@ A Sumo CloudWatch Source only supports CloudWatch metrics that are emitted at a 
 Sumo does support S3 Request Metrics. Since S3 does not publish the request metrics by default, you must enable them if you want to collect them. For more information, see [Monitoring Metrics with Amazon CloudWatch](http://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html) in AWS help.
 
 :::tip
-EC2 metrics have high latency and can increase the costs of your AWS account. For EC2 metrics, consider [Installing a Collector with a Host Metrics Source](docs/send-data/installed-collectors/sources/host-metrics-source.md). The advantage is near zero latency and more information at a lower overall cost.
+EC2 metrics have high latency and can increase the costs of your AWS account. For EC2 metrics, consider [Installing a Collector with a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source.md). The advantage is near zero latency and more information at a lower overall cost.
 :::
 
 ## About AWS tag filtering

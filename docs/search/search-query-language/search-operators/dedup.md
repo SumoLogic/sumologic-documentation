@@ -14,9 +14,9 @@ For example, to find the most recent value of services you'd use the following o
 The operator is supported in the following features:
 
 * [Log Search](/docs/search)
-* [Dashboards (New)](docs/dashboards-new/about.md)
+* [Dashboards (New)](/docs/dashboards-new/about.md)
 * [Dashboards](/docs/dashboards), including live mode
-* [Scheduled Searches](docs/alerts/scheduled-searches/schedule-search.md)
+* [Scheduled Searches](/docs/alerts/scheduled-searches/schedule-search.md)
 
 ## Syntax
 

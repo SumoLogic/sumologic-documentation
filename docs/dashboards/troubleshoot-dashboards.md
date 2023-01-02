@@ -31,7 +31,7 @@ Sumo Logic applies UTC as the time zone if the time zones in your messages if:
 * A time zone value is missing.
 * The source is not configured with a default time zone. 
 
-This results in "parsed time" showing as either hours in the future or hours behind the actual message time in the logs. This affects how panels interpret these messages. (Find more information on common time parsing problems see [Timestamps, Time Zones, Time Ranges, and Date Formats](docs/send-data/reference-information/time-reference.md).)
+This results in "parsed time" showing as either hours in the future or hours behind the actual message time in the logs. This affects how panels interpret these messages. (Find more information on common time parsing problems see [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference.md).)
 
 Panels are active queries that only query data as it is being received into the system prior to messages being indexed, and they only look for messages with a parsed timestamp 10 minutes forward in time or within the window of the current panel time. As messages are received the panel determines if the messages are between X hours/minutes ago to 10 minutes from now:
 

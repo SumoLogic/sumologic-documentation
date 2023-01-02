@@ -24,7 +24,7 @@ With this FER defined, any search on JSON data will automatically parse out i
 
 ## Set up Dynamic Parsing
 
-By default, your account is configured with a Run Time FER that is applied to all of your data. The default Run Time FER named **JSON Auto Parsing - All Sources** can't be edited or deleted. With this FER configured, you don't have to set up anything to use Dynamic Parsing. However, having one FER applied to all of your data may not be optimal for your needs as it would be applied for every search query (including ones that may not query any JSON logs). Further details can be found in [best practices for designing Rules](docs/manage/field-extractions/create-field-extraction-rule.md).
+By default, your account is configured with a Run Time FER that is applied to all of your data. The default Run Time FER named **JSON Auto Parsing - All Sources** can't be edited or deleted. With this FER configured, you don't have to set up anything to use Dynamic Parsing. However, having one FER applied to all of your data may not be optimal for your needs as it would be applied for every search query (including ones that may not query any JSON logs). Further details can be found in [best practices for designing Rules](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
 To optimize search performance you can manually set up Dynamic Parsing by defining your own Run Time FERs.
 
