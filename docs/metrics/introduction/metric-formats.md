@@ -74,7 +74,7 @@ Where:
 * `timestamp` is a UNIX timestamp.
 
 :::important
-Currently Sumo Logic interprets meta tags as non-identifying dimensions. This is subject to a change and meta tags and intrinsic tags will both be treated as identifying dimensions in the future. To conform to the target behavior from the beginning, place all your metric metadata in the `intrinsic_tags` section.
+Currently Sumo Logic interprets meta tags as non-identifying dimensions. This is subject to a change and meta tags and intrinsic tags will both be treated as identifying dimensions in the future. To conform to the target behavior from the beginning, we suggest to place all your metric metadata in the `intrinsic_tags` section.
 :::
 
 In the Graphite-formatted metric described above, the bit that identifies the thing being measured—the `metric_path`—is:
