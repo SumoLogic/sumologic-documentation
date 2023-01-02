@@ -460,7 +460,7 @@ If the checkbox for CyberArk is enabled for a resource field, the data type allo
 
 Values entered in the field not enabled for CyberArk, if previously entered and saved, will be retained if the field becomes enabled for CyberArk. The same is not true otherwise.
 
-If the CyberArk switch is enabled and one switch on the field line is disabled, that CyberArk field value will be saved empty.<br/> ![CyberArk fileds](/img/cloud-soar/CyberArk6.png)
+If the CyberArk switch is enabled and one switch on the field line is disabled, that CyberArk field value will be saved empty.<br/> ![CyberArk fields](/img/cloud-soar/CyberArk6.png)
 
 
 #### Configuring the automation bridge for CyberArk
