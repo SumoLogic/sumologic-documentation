@@ -118,6 +118,18 @@ Follow the instructions below based on the query type:
 10. Click **Save**. To create a monitor, click [Save and Create Monitor](#creating-slo-monitors).
 
 
+## Creating SLOs from Logs, Metrics, Monitors
+
+You can create SLOs directly from your Sumo Logic log search. This allows you to validate queries, quickly create SLOs, and re-use queries from existing dashboard panels.
+
+1. Enter a new **Log search** query (or use an existing one).<br/><img src={useBaseUrl('img/observability/log-search.png')} alt="log search" />
+1. Click the **More Actions** (kebab icon) dropdown menu.<br/><img src={useBaseUrl('img/observability/slo-more-actions-kebab.png')} alt="More Actions" />
+1. Click **Create an SLO**.<br/><img src={useBaseUrl('img/observability/slo-create.png')} alt="Create an SLO" width="200"/>
+
+:::note Coming soon
+You'll be able to create SLOs from Metrics Explorer and Monitors.
+:::
+
 ## Creating SLO Monitors
 
 :::note
