@@ -136,7 +136,7 @@ Every query run by a user is saved in query history (both incorrect and correct 
 
 When you select a query from the list, it is updated for a query row where you opened query history dropdown. Selected queries from list are adjusted to current query editor mode selected by the user. For example, if you are in Basic mode and the query was run before in advanced mode, the Metrics interface  will adjust to Basic mode.
 
-:::note 
+:::note
 If the query editor mode can't be adjusted, it is changed to advanced mode so that it can handle query from history. It is possible to run queries which were used with parameters/template variables.
 :::
 
@@ -174,7 +174,9 @@ If the query editor mode can't be adjusted, it is changed to advanced mode so th
 
 ## Set Warning and Critical Thresholds
 
-In the Chart view for a Time Series panel, you can use the **Thresholds** tab, in the Display Settings panel to define warning and critical thresholds for time series charts.
+For some chart types, you can use the **Thresholds** tab in the **Display Settings** panel to define warning and critical thresholds. The **Thresholds** tab is available in the Chart view for a Time Series panel, and for these  chart types for Categorical panels: Line, Area, Bar, Column, and Table.
+
+**To set threshold values**
 
 1. After you enter your query, in the **Chart** view, click the **Thresholds** icon in the right-side pane of icons. <br/> <img src={useBaseUrl('img/metrics/thresholds-icon.png')} alt="thresholds-icon.png" width="<insert-pixel-number>"/>
 2. Click the toggle in the **Thresholds** pane. <br/><img src={useBaseUrl('img/metrics/thresholds-toggle.png')} alt="thresholds-icon.png" width="425"/>
@@ -198,15 +200,10 @@ You can specify up to six queries in the same Metrics tab.
 
 To add an additional query:
 
-1. Click **Add Query** to the right of the query builder area.
-
-    ![add-query.png](/img/metrics/add-query.png)
-
+1. Click **Add Query** to the right of the query builder area. <br/>![add-query.png](/img/metrics/add-query.png)
 1. A new row, labeled #B, is added to the query builder area.
 1. Follow the steps in [Create a metric query](/docs/metrics/metrics-queries/metrics-explorer) to build another query, and click the run icon to run the query.
-1. Your visualization is updated to chart the additional query.
-
-    ![two-queries.png](/img/metrics/two-queries.png)
+1. Your visualization is updated to chart the additional query. <br/>![two-queries.png](/img/metrics/two-queries.png)
 
 ## Join metric queries
 
@@ -235,18 +232,12 @@ It returns the difference between the incoming rate and the outgoing rate. In th
 You can hide a query so that it is not visualized in the chart.
 
 1. Click the eye icon to the right of the query builder area in the row that contains the query you want to hide.
-1. The visualization for the query is hidden. The query label for a hidden query is faded out.
-
-    ![eye-icon.png](/img/metrics/eye-icon.png)
-
+1. The visualization for the query is hidden. The query label for a hidden query is faded out.<br/>![eye-icon.png](/img/metrics/eye-icon.png)
 1. To make the query visible, click the eye icon again.
 
 ## Add a monitor to a metric query
 
-1. Select **Add Monitor** from the more options menu.
-
-    ![add-monitor.png](/img/metrics/add-monitor.png)
-
+1. Select **Add Monitor** from the more options menu.<br/>![add-monitor.png](/img/metrics/add-monitor.png)
 1. Follow the instructions to add a Monitor.
 
 ## Convert query mode
@@ -263,10 +254,7 @@ between Basic and Advanced anytime.
 
 ## Duplicate a metric query
 
-1. Select **Duplicate Query** from the more options menu.
-
-![duplicate-query.png](/img/metrics/duplicate-query.png)
-
+1. Select **Duplicate Query** from the more options menu. <br/>![duplicate-query.png](/img/metrics/duplicate-query.png)
 1. Your query will be copied to a new row in the query builder area.
 
 ## Tailoring charts
@@ -290,14 +278,13 @@ The Metrics Explorer replaces the Classic metrics UI. If you’re not ready to s
 
 The Metrics Explorer gives you more visualization types and makes your metrics easier to  discover. Metrics Explorer provides the same visualizations available in Dashboards (New), from tables and category charts, to time series charts and honeycomb visualizations. The Metrics Explorer has richer and more comprehensive autocomplete support, providing suggestions for even very high cardinality queries. The structured query builder approach also makes the metrics experience friendlier to infrequent and inexperienced metrics users.
 
-### Can I put logs and metrics on the same panel in the updated metrics explorer?
+### Can I put logs and metrics on the same panel in the Metrics Explorer?
 
-Yes, yes you can. The experience is consistent with the Dashboards (New) experience and has the same features.
+Yes you can. The experience is consistent with the Dashboards (New) experience and has the same features.
 
 ### I loved the ability to overlay log-based events and metrics on the classic metrics page. When will you be bringing that back?
 
 Event overlay support is planned for a future release of Metrics Explorer.
-
 
 ### How does autocomplete when searching metrics work?
 
