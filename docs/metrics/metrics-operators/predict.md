@@ -11,10 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `predict` operator takes a single time series metric to predict future values. Predicting metrics such as CPU Usage or memory consumption can be useful for resource and capacity planning use cases.
 
-`predict` supports two models:
-
-* Linear regression (linear) models that use a linear model on the timestamp to extrapolate into the future.
-* Auto-regressive (ar) models that use a window of previously observed data to predict future values. Note that prediction using an AR model does not output any predictions in the first time window.
+`predict` supports linear regression (linear) models, which use a linear model on the timestamp to extrapolate into the future, and Auto-regressive (ar) models, which use a window of previously observed data to predict future values. Note that prediction using an AR model does not output any predictions in the first time window.
 
 The `predict` operator outputs two time series: the original input time series and the predicted time series that extends into the future. The predicted time series is also depicted over a portion of the historical time range so that the user can validate forecast accuracy at a glance against actual values.   
 
