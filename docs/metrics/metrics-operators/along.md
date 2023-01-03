@@ -27,7 +27,7 @@ Use the lettered query (#A, #B, #C, …)  for every request where there is only
 
 ```
 #A + #B along [FIELD (,FIELD, ...]]
-```    
+```
 
 ## along examples
 
