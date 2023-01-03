@@ -251,7 +251,7 @@ enrichment, containment and custom Playbook actions undertaken on
 incident artifacts, e.g., IP addresses, URLs, domains, etc., are
 catalogued in the incident's **Entities** module.
 
-If a playbook fails, it can be re-executed inside the incident again or on the failing node with the Kill ![Kill option](/img/cloud-soar/image33c.png) & Run ![Run option](/img/cloud-soar/image33d.png) process available in the playbook screen of the incident. However, a failed node will not stop the playbook from being executed. Only tasks and User Choices will lock the playbook in a **Running** state until the user takes action.
+If a playbook fails, it can be re-executed inside the incident again or on the failing node with the Kill ![Kill option](/img/cloud-soar/image33c.png) and Run ![Run option](/img/cloud-soar/image33d.png) processes available in the playbook screen of the incident. However, a failed node will not stop the playbook from being executed. Only tasks and User Choices will lock the playbook in a **Running** state until the user takes action.
 
 ![status running](/img/cloud-soar/image33e.png)
 
