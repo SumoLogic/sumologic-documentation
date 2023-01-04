@@ -5,7 +5,7 @@ sidebar_label: filter
 ---
 
 :::note
-The functionality provided by the `filter` operator has been incorporated into the `where` operator. We recommend the use of `where` over `filter`, because `filter` will be deprecated in the future. For more information see [where Metrics Operator](docs/metrics/metrics-operators/where.md)
+The functionality provided by the `filter` operator has been incorporated into the `where` operator. We recommend the use of `where` over `filter`, because `filter` will be deprecated in the future. For more information, see [`where` Metrics Operator](docs/metrics/metrics-operators/where.md)
 :::
 
 You can use the `filter` operator to limit the results returned by a metric query. There are several ways you can restrict results. You can apply an aggregation function, such as `avg`, to a time series. You can also filter based on how many times the value of individual data points meet a value condition over a particular duration.
