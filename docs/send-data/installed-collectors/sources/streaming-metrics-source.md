@@ -96,13 +96,25 @@ where:
 * `value` is any numeric value.
 * `timestamp` is a UNIX timestamp.
 
+:::important
+Currently Sumo Logic interprets meta tags as non-identifying dimensions. This is subject to a change and meta tags and intrinsic tags will both be treated as identifying dimensions in the future. To conform to the target behavior from the beginning, we suggest to place all your metric metadata in the `intrinsic_tags` section.
+:::
+
 For example:
 
 ```
-metric=request_rate site=mydomain mtype=rate unit=Req/s host=web12 agent=statsdaemon1 234 1234567890
+metric=request_rate site=mydomain mtype=rate unit=Req/s host=web12 agent=statsdaemon1  234 1234567890
 ```
 
-While `metric` is not a required intrinsic tag, for the best experience we recommend including it in all Carbon2-formatted metrics.
+Unlike Prometheus, Carbon 2.0 format doesn't enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic require a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo and a `MetricsMetricNameMissing` Health Event for the associated Metric Source will be triggered (for more information on Halth Events, see [About Health Events](/docs/manage/health-events#health-events)).
+
+For example, the following metric will be correctly ingested to Sumo Logic:
+```
+cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  73.12 1112470620
+```
+while the one below will be dropped:
+```
+cluster=cluster-2 node=node-2 cpu=cpu-2  73.12 1112470620
 
 ### Prometheus metric format
 
