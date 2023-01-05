@@ -72,17 +72,17 @@ Use the following steps to create a service application:
 
 1. Request the appropriate permissions for the application. Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**. From there select (or search for) the following permissions. An Administrator must approve (grant) these permissions before the integration will function.
 
-| **API**         | **Account Type**                       | **Permissions**                          |
-|-----------------|----------------------------------------|------------------------------------------|
-| Directory Audit | Delegated (work or school account)     | AuditLog.Read.All and Directory.Read.All |
-| Directory Audit | Delegated (personal Microsoft account) | Not supported.                           |
-| Directory Audit | Application                            | AuditLog.Read.All and Directory.Read.All |
-| Sign-in         | Delegated (work or school account)     | AuditLog.Read.All and Directory.Read.All |
-| Sign-in         | Delegated (personal Microsoft account) | Not supported.                           |
-| Sign-in         | Application                            | AuditLog.Read.All and Directory.Read.All |
-| Provisioning    | Delegated (work or school account)     | AuditLog.Read.All and Directory.Read.All |
-| Provisioning    | Delegated (personal Microsoft account) | Not supported.                           |
-| Provisioning    | Application                            | AuditLog.Read.All                        |
+| **API**         | **Account Type**                       | **Permissions**                                                           |
+|-----------------|----------------------------------------|---------------------------------------------------------------------------|
+| Directory Audit | Delegated (work or school account)     | AuditLog.Read.All and Directory.Read.All                                  |
+| Directory Audit | Delegated (personal Microsoft account) | Not supported.                                                            |
+| Directory Audit | Application                            | AuditLog.Read.All and Directory.Read.All                                  |
+| Sign-in         | Delegated (work or school account)     | AuditLog.Read.All and Directory.Read.All                                  |
+| Sign-in         | Delegated (personal Microsoft account) | Not supported.                                                            |
+| Sign-in         | Application                            | AuditLog.Read.All and Directory.Read.All and Policy.Read.ConditionalAccess|
+| Provisioning    | Delegated (work or school account)     | AuditLog.Read.All and Directory.Read.All                                  |
+| Provisioning    | Delegated (personal Microsoft account) | Not supported.                                                            |
+| Provisioning    | Application                            | AuditLog.Read.All                                                         |
 
 
 ![azure ad step 8.png](/img/send-data/azure-ad-step-8.png)
