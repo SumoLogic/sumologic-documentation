@@ -1,21 +1,21 @@
 ---
 id: gmail-tracelogs
-title: Sumo Logic App for Gmail TraceLogs
-sidebar_label: Gmail TraceLogs
-description: The Sumo Logic App for Gmail TraceLogs monitors spam, malware threats, dropped messages, and rejected messages.
+title: Sumo Logic App for Gmail Trace Logs
+sidebar_label: Gmail Trace Logs
+description: The Sumo Logic App for Gmail Trace Logs monitors spam, malware threats, dropped messages, and rejected messages.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/gmail-icon.png')} alt="Thumbnail icon" width="100"/>
 
-Gmail TraceLogs is a new Sumo Logic app based on the Gmail BigQuery Cloud-to-Cloud source, which is a managed analytics data warehouse that provides scalable Gmail reports of your organization.
+Gmail Trace Logs is a new Sumo Logic app based on the Gmail BigQuery Cloud-to-Cloud source, which is a managed analytics data warehouse that provides scalable Gmail reports of your organization.
 
-The Sumo Logic App for Gmail TraceLogs helps monitor spam messages, malware, dropped messages and rejected messages. It allows you to view messages with objectionable content, messages detected by your **Security Sandbox**, and messages flagged by the Walled Garden Rule.
+The Sumo Logic App for Gmail Trace Logs helps monitor spam messages, malware, dropped messages and rejected messages. It allows you to view messages with objectionable content, messages detected by your **Security Sandbox**, and messages flagged by the Walled Garden Rule.
 
 ## Log Types
 
-The Sumo Logic App for Gmail TraceLogs uses [Gmail Logs via BigQuery](https://support.google.com/a/topic/7233311?hl=en&ref_topic=2683886).
+The Sumo Logic App for Gmail Trace Logs uses [Gmail Logs via BigQuery](https://support.google.com/a/topic/7233311?hl=en&ref_topic=2683886).
 
 For details, see the [Schema for Gmail logs in BigQuery](https://support.google.com/a/answer/7230050?hl=en&ref_topic=7233311).
 
@@ -136,11 +136,11 @@ _sourceCategory=Labs/GmailTraceLogs
 | sort by _count
 ```
 
-## Collecting Logs for Gmail TraceLogs app
+## Collecting Logs for Gmail Trace Logs app
 
-This section provides instructions for setting up [Cloud-to-Cloud-Integration for Gmail TraceLogs App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source.md) to create the source and use the same source category while installing the app.
+This section provides instructions for setting up [Cloud-to-Cloud-Integration for Gmail Trace Logs App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source.md) to create the source and use the same source category while installing the app.
 
-## Installing the Gmail TraceLogs app
+## Installing the Gmail Trace Logs app
 
 Locate and install the app from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -156,7 +156,7 @@ Version selection is applicable only to a few apps currently. For details, see t
    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
    2. **Data Source**. Select either of these options for the data source:
       * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example: `_sourceCategory=MyCategory`. 
+      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example: `_sourceCategory=MyCategory`.
 4. **Advanced**. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
 5. Click **Add to Library**.
 
@@ -164,7 +164,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but with some patience, you will be able to view full graphs and maps.
 
-## Viewing Gmail TraceLogs Dashboards​
+## Viewing Gmail Trace Logs Dashboards
 
 **All dashboard have a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
@@ -174,7 +174,7 @@ You can use filters to drill down and examine the data on a granular level. Filt
 
 ### Security Overview Dashboard
 
-**Gmail TraceLogs - Security Overview**. This dashboard lets you monitor spam messages, malware threats, dropped messages, and rejected messages.
+**Gmail Trace Logs - Security Overview**. This dashboard lets you monitor spam messages, malware threats, dropped messages, and rejected messages.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/tracelogsapp-overview.png')} alt="Gmail TraceLogs Overview" width="900"/>
 

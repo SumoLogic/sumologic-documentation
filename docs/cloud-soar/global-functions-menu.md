@@ -10,7 +10,7 @@ import Iframe from 'react-iframe';
 Cloud SOAR is a pure web-based application that does not require an additional add-on or client to deploy. The Global Functions Menu consists of all Cloud SOAR configuration and administrative options you'll need, such as user access, integration configurations, and auditing information.
 
 ![Global Functions Menu](/img/cloud-soar/image8.png)
-_Global Functions Menu_
+
 
 
 ## Global Search
@@ -20,22 +20,19 @@ Global Search allows you, with the appropriate permissions, to perform exhaustiv
 All searchable Cloud SOAR sections are listed and individually selectable. To search, enter the search criteria in the search bar, then select the sections you wish to search and click **Search**.
 
 ![Global Search Criteria](/img/cloud-soar/image9.png)
-_Global Search Criteria_
+
 
 The **Other Filters** tab permits a more targeted selection of search
 criteria. Targeted searching does not extend to the data inside Digital Support or Knowledge Base articles.
 
 ![Global Search Filters](/img/cloud-soar/image10.png)
-_Global Search Filters_
+
 
 ![Global Search](/img/cloud-soar/image11.png)
 
 When a search result is located within an incident, the incident number will be displayed in the Incident column. Clicking on the incident number will open the incident in a new window. Clicking on the arrow at the end of each search result will display the details of the individual search result in the current window. Search results may also be exported to a PDF file by clicking on Export PDF at the bottom of the search results window.
 
 ![Global Search Results](/img/cloud-soar/image12.png)
-_Global Search Results_
-
-
 
 ## Automation
 
@@ -53,7 +50,7 @@ See [Automation](/docs/cloud-soar/automation) for in-depth information.
 automated and semi-automated workflows utilizing Cloud SOAR integrations,
 tasks and a variety of flow control decisions and other actions.
 
-<img src={useBaseUrl('img/cloud-soar/image15.png')} alt="Automation menu" width="150"/>
+<img src={useBaseUrl('img/cloud-soar/image15.png')} alt="Automation menu" width="250"/>
 
 Playbook workflows can be configured to execute automatically without
 human intervention, or can be executed in an interactive mode, where
@@ -66,7 +63,7 @@ attributes that will automatically be set each time an incident is
 generated based on the template. This may include type, classification,
 incident assignment, playbooks or any other incident attribute.
 
-<img src={useBaseUrl('img/cloud-soar/image15b.png')} alt="Automation menu" width="150"/>
+<img src={useBaseUrl('img/cloud-soar/image15b.png')} alt="Automation menu" width="250"/>
 
 ### Integrations
 
@@ -76,7 +73,7 @@ view the supported actions for each integration. In addition, this
 section allows administrators to manage custom scripts, which can be
 written in Python, Perl, PowerShell or Bash.
 
-<img src={useBaseUrl('img/cloud-soar/image15c.png')} alt="Automation menu" width="150"/>
+<img src={useBaseUrl('img/cloud-soar/image15c.png')} alt="Automation menu" width="250"/>
 
 ### Rules
 
@@ -84,12 +81,12 @@ The Events Automation tab enables you to establish any daemonized integration ru
 These rules allow specific data to be parsed from the incoming data
 sources and the acted upon automatically or through manual actions.
 
-<img src={useBaseUrl('img/cloud-soar/image15d.png')} alt="Automation menu" width="150"/>
+<img src={useBaseUrl('img/cloud-soar/image15d.png')} alt="Automation menu" width="250"/>
 
 ### ARK
 
 ARK or Automated Responder Knowledge is the Machine Learning component of Cloud SOAR which implements the Supervised learning in Case-Based Reasoning (CBR)algorithm.
-CBR solves new problems by adapting previously successful solutions to similar problems, in Cloud SOAR this can be leveraged by analyzing solved incidents to hint steps and procedures to operators in new similar threats.<br/> <img src={useBaseUrl('img/cloud-soar/image15e.png')} alt="Automation menu" width="150"/>
+CBR solves new problems by adapting previously successful solutions to similar problems, in Cloud SOAR this can be leveraged by analyzing solved incidents to hint steps and procedures to operators in new similar threats.<br/> <img src={useBaseUrl('img/cloud-soar/image15e.png')} alt="Automation menu" width="250"/>
 
 ARK assists operators during investigations in two main areas: Automatically suggesting/prompting next actions/tasks in Playbooks (until version 5) and Correlation/ Deduplication of similar threats into 1 unique incident.
 
@@ -98,7 +95,7 @@ To enable ARK, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png'
 From this page, it’s possible to configure also other ARK Settings such as the Neighbor incidents considered for each recommendation and an age relevance threshold. Those two parameters will allow you to tune the incidents that the Machine Learning algorithm will consider.
 
 ![ARK Settings](/img/cloud-soar/image16b.png)
-_ARK Settings_
+
 
 When an incident is created in Cloud SOAR, the Incident Type field will be the one defining which Playbooks you can attach to that incident.
 
@@ -109,16 +106,16 @@ ARK has a correlation and deduplication or merging mechanism you can use with th
 ARK 2.0 OIF is a custom Sumo Logic integration which allows investigators to implement a mechanism for deduplication and correlation of ingested alerts and Cloud SOAR incidents.
 
 ![ARK OIF](/img/cloud-soar/image16d.png)
-_ARK OIF_
+
 ![Test Action](/img/cloud-soar/image16e.png)
-_Test Action_  
+
 
 OIF ARK enrichment action “Get parents for incident” allows you to retrieve every incident (as proposed parents) that is similar to the analyzed one.
 
 Each optional field allows you to fine tune the weight of the fields, acceptance thresholds and of the algorithm which needs to be trained and fine-tuned in order to get correct and reliable results.
 
 ![Field Weight](/img/cloud-soar/image16f.png)
-_Field Weight_
+
 
 Alert deduplication or merging can be achieved by utilizing ARK OIF enrichment actions and Cloud SOAR’s unique Triage capability.
 
@@ -133,7 +130,7 @@ Cloud SOAR is also able to correlate existing incidents in order to check if spe
 The **Settings** section contains several Cloud SOAR administrative functions. To access, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Settings**.<br/> ![Automation](/img/cloud-soar/automation.png)
 
 ![Settings Menu](/img/cloud-soar/image17.png)                     
-_Settings Menu_
+
 
 The following sections detail the various setup and configuration options for the Cloud SOAR platform. Although initial configuration can be performed in any order, the following sections are ordered in the suggested order for initial configuration.
 
@@ -158,15 +155,11 @@ French language is now enabled in Cloud SOAR. It can be enabled under user profi
 
 Instant Messaging integration can be enabled from here.
 
-![Instant Messaging Integration](/img/cloud-soar/image33b.png)
-
-_Instant Messaging Integration_
+<img src={useBaseUrl('img/cloud-soar/image33b.png')} alt="messaging integration" width="550"/>
 
 The same integration has to be updated under the user profile configuration.
 
-![Instant Messaging Integration](/img/cloud-soar/image33b1.png)
-_Instant Messaging Integration_
-
+<img src={useBaseUrl('img/cloud-soar/image33b1.png')} alt="messaging integration" width="750"/>
 
 #### Incidents
 
@@ -186,7 +179,7 @@ used to enforce the policy of recording the final disposition of an
 incident before it is closed.
 
 ![Incident Settings](/img/cloud-soar/image31.png)
-_Incident Settings_
+
 
 
 ![Incident General Settings](/img/cloud-soar/image188.png)
@@ -203,7 +196,7 @@ incident progresses. These phases and their properties can be configured
 by administrators in the General settings page.
 
 ![Incident Phases](/img/cloud-soar/image32.png)
-_Incident Phases_
+
 
 In addition to the phase name, administrators can determine whether the
 phase is mandatory and the status of the incident when the new phase is
@@ -220,8 +213,7 @@ One or more queues may be configured which can be used to assign
 incidents to until they are ready to be assigned to users. Queues can be
 managed at the bottom of the General settings page.
 
-![Queue Settings](/img/cloud-soar/image33.png)
-_Queue Settings_
+<img src={useBaseUrl('img/cloud-soar/image33.png')} alt="Queue Settings" width="650"/>
 
 Click the **+** button in the upper right-hand corner of the queue
 settings to add a new queue. There are no restrictions on the number, or the scheme used to create queues. Common schemes are to create one general queue, a queue for each analyst tier, or a queue by job function.
@@ -280,7 +272,7 @@ Under the **User Management** dropdown choose **Users** and click **+** to
 begin adding the user's details.
 
 ![General User Settings](/img/cloud-soar/image35.png)                      
-_General User Settings_
+
 
 The General tab contains the usual user account attributes such as name, email, address, username, etc. Select the user's Profile from the dropdown list to apply their permissions.
 
@@ -306,7 +298,7 @@ bits of data; SAMAccountName for a username or the individuals email
 address.
 
 ![LDAP Settings References](/img/cloud-soar/image36.png)
-_LDAP Settings References_
+
 
 Authentication may or may not be required depending on user permissions
 on the AD/LDAP server. If your LDAP/AD server permissions require it,
@@ -336,7 +328,7 @@ platform. For administrators of the Cloud SOAR platform, this section will
 show all authorized user session activity.
 
 ![Logged Users](/img/cloud-soar/image22.png)
-_Logged Users_
+
 
 
 ### Notifications
@@ -355,7 +347,7 @@ these options are set, Administrators can configure which types of
 events should trigger notifications to which users and by what means.
 
 ![Email Configuration Settings](/img/cloud-soar/image42.png)
-_Email Configuration Settings_
+
 
 
 #### Mail Notification Queue
@@ -364,7 +356,7 @@ The **Mail Notification Queue** shows the status of all email
 notifications sent by Cloud SOAR.
 
 ![Mail Notification Queue](/img/cloud-soar/image21.png)                                      
-_Mail Notification Queue_
+
 
 By navigating to the Mail Notification Queue, you can view any delivery
 failures, the details of the original notification, as well as have the
@@ -401,7 +393,7 @@ their clients. This can be done by simply uploading their image in the
 specified .PNG file format size.
 
 ![Logo Settings](/img/cloud-soar/image18b.png)
-_Logo Settings_
+
 
 #### Incident Label
 
@@ -420,15 +412,15 @@ alerts.
 
 ### Audit and Information
 
-All audit and licensing information can be found under the Audit and Information tab.<br/> <img src={useBaseUrl('img/cloud-soar/image120.png')} alt="Audit and Information Menu" width="200"/>
+All audit and licensing information can be found under the Audit and Information tab.<br/> <img src={useBaseUrl('img/cloud-soar/image120.png')} alt="Audit and Information Menu" width="350"/>
 
 ![Audit & Info](/img/cloud-soar/image20b.png)
-_Audit & Info_
+
 
 Cloud SOAR audit logs and activity can be reviewed under the **Audit Trail** section of the menu. You can filter through activity displaying only errors and warnings or build their own filters for review. Log rotation settings and the ability to export audit findings can be controlled from the **Audit** menu at the top of the screen.
 
 ![Audit Trail](/img/cloud-soar/image120b.png)
-_Audit Trail_
+
 
 The **Automation Bridge Monitoring** section displays the status of the automation bridges configured.
 
@@ -452,4 +444,3 @@ support issues.
 To access, click the question mark icon in the top nav.
 
 ![Figure - Support Page](/img/cloud-soar/support.png)
-_Figure - Support Page_

@@ -4,9 +4,6 @@ title: save Search Operator
 sidebar_label: save
 ---
 
-
-
-
 The save operator allows you to save the results of a query to a lookup table you have already created, as described in <a href="/docs/search/lookup-tables/create-lookup-table">Create a Lookup Table</a>. You can use the <a href="#lookup">lookup</a> and <a href="#cat">cat</a> operator to access the saved data.
 
 You can use the `append` option with `save` to merge new and changed rows into a lookup table. If you use `save` without `append`, any existing rows in the lookup table will be overwritten by your search results. 
@@ -38,6 +35,7 @@ To determine the path to a lookup table, highlight the row for the table in the 
 * You can't create a lookup table with the `save` operator. You must first create a lookup table, as described in [Create a Lookup Table](/docs/search/lookup-tables/create-lookup-table.md). 
 * The `save` operator is not supported with Scheduled Views.
 * Queries that use the `save` operator can't be pinned.
+* Any operator that follows a `save` in a log search query will not be processed. 
 
 **Example** 
 
