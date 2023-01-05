@@ -48,6 +48,7 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 ### Netskope REST API v2 
 
+(This API is used by Sumo Logic Netskope source v2.0.0 and later).
 Netskope REST APIv2 provides an easy way to extend the Netskope platform to build to use-cases specific to your organization. Endpoints cover key areas such as Events, Alerts, Reports, Clients and more. 
 
 To obtain a Netskope REST API v2 auth token, do the following:
@@ -58,7 +59,12 @@ To obtain a Netskope REST API v2 auth token, do the following:
 /api/v2/events/dataexport/events/alert, /api/v2/events/dataexport/events/page, /api/v2/events/dataexport/events/infrastructure, /api/v2/events/dataexport/events/application, /api/v2/events/dataexport/events/network,/api/v2/events/dataexport/events/alert/audit and /api/v2/events/data/alert 
 1. Copy the token in the next dialog box and save it somewhere as it won't be visible after.
 
-### Netskope REST API v1 (Deprecated, for Sumo Logic Netskope source v1.3.1 or lower)
+### Netskope REST API v1 (Deprecated)
+
+:::caution Deprecated 
+This is used only for Sumo Logic Netskope source v1.3.1 or lower, please upgrade to v2.0.0.
+::: 
+
 Netskope RESTv1 APIs use an auth token to make authorized calls to the
 API. This section demonstrates how to obtain a token from the Netskope
 user interface (UI).
