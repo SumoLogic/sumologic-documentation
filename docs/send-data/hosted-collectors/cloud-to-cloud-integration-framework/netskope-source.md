@@ -66,7 +66,7 @@ user interface (UI).
 To obtain a Netskope auth token, do the following:
 
 1. Login to Netskope as the Tenant Admin.
-1. Go to the API portion of the Netskope, **Settings \> Tools \> Rest API v1**.
+1. Go to the API portion of the Netskope, **Settings** > **Tools** > **Rest API v1**.
 1. Copy the existing token to your clipboard, or you can generate a new token and copy that token.
 
 ## Create a Netskope Source
