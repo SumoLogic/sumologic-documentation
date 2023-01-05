@@ -5,10 +5,6 @@ sidebar_label: ewma
 ---
 
 
-:::note
-Currently, the `ewma` operator is supported only in the Metrics Explorer’s [advanced mode](/docs/metrics/metrics-queries/metrics-explorer), not basic mode.
-:::
-
 The `ewma` operator computes an Exponentially Weighted Moving Average (EWMA) on the data points returned by the query for the selected time range. This allows you to smooth out short-term fluctuations (outliers) and display long-term trends.
 
 You can optionally run `ewma` with either:
