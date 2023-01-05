@@ -39,15 +39,14 @@ data is displayed and where on the screen it should be displayed by
 clicking the + sign next to the selection and then dragging and dropping
 the selection in the order to be viewed.
 
-![alt-text goes here](/img/cloud-soar/image141.png)
+![adjust columns](/img/cloud-soar/image141.png)
 
 
 Once the columns are added and organized, click **Apply** to continue.
 
 From the Incident section you can search, build, and issue queries against existing incidents by simply typing in the search bar at the top of the screen.
 
-![alt-text goes here](/img/cloud-soar/image142.png)
-
+![search issues](/img/cloud-soar/image142.png)
 
 Cloud SOAR also provides its you with a command cheat sheet to help build
 incident filtering queries. To access the cheat sheet, click on the
@@ -57,13 +56,13 @@ Once a query or a search is committed, they can be saved for future use
 by clicking the star icon to the right of the search bar. These saved
 searches will be stored as tabs just below the search bar.
 
-![alt-text goes here](/img/cloud-soar/image145.png)
+![save query](/img/cloud-soar/image145.png)
 
 
 Bulk actions may be performed on any incidents in the Incident Overview
 list. Bulk actions include:
 
-![alt-text goes here](/img/cloud-soar/image146.png)         
+![bulk actions](/img/cloud-soar/image146.png)         
 
 
 - Edit
@@ -86,12 +85,12 @@ The Incident VIP Section, on the left side of the screen, the Incident
 Properties section in the center, and the Incident Widgets section to
 the right side of the screen.
 
-![alt-text goes here](/img/cloud-soar/image147.png)
+![Incident Details page](/img/cloud-soar/image147.png)
 
 
 ## Incident VIP section
 
-![alt-text goes here](/img/cloud-soar/image148.png)     
+![incident VIP section](/img/cloud-soar/image148.png)     
 
 
 The Incident VIP Section displays high-level
@@ -148,7 +147,7 @@ The Operations section contains all the investigative information for a specific
 All the information related to the incident ongoing are visible in one place in
 the War Room section. You can quickly view and check all the steps of the analysis, done either manually or by the automation, any entities related to the incident, results of actions performed and notes added during the incident's investigation. Information can be filtered out for the different categories, and by pressing the **+** button, you can add new notes.
 
-![alt-text goes here](/img/cloud-soar/war_room.png)
+![war room](/img/cloud-soar/war_room.png)
 
 #### Playbooks
 
@@ -157,7 +156,7 @@ the playbook section. You can quickly view and make any necessary
 adjustments to the incident's Playbooks as well as add any additional
 Playbooks that may be required during an incident's investigation.
 
-![alt-text goes here](/img/cloud-soar/image150.png)
+![playbook option menu](/img/cloud-soar/image150.png)
 
 
 The playbook option menu can be found at the bottom of the playbook
@@ -169,7 +168,7 @@ be needed to correctly remediate an incident. You can add additional
 Playbooks to the incident by clicking the **+** sign at the top of the
 playbook screen.
 
-![alt-text goes here](/img/cloud-soar/image151.png)
+![add playbook](/img/cloud-soar/image151.png)
 
 
 This will open a new screen that lists all available Playbooks. Either
@@ -183,8 +182,7 @@ execution has completed, can be viewed from the playbook section. By
 clicking the expansion button on the bottom left of the screen will
 expand the playbook and will display the execution results.
 
-![alt-text goes here](/img/cloud-soar/image152.png)
-
+![playbook results](/img/cloud-soar/image152.png)
 
 The results of the playbook can also be viewed as a list by clicking the
 **List** button next the **+** at the top of the page. The execution path of
@@ -192,8 +190,7 @@ the playbook will be shown, along with the status of the execution of
 each action. The execution history of the playbook will be displayed in a
 tab on the right-hand side of the screen, which can be minimized.
 
-![alt-text goes here](/img/cloud-soar/image153.png)
-
+![action details](/img/cloud-soar/image153.png)
 
 To view the details of any individual action, including the results,
 click on the action node. A new window displaying the action details
@@ -201,8 +198,7 @@ will be displayed on the left-hand side of the screen. From this view,
 you can see the status of the action, its configuration, and have the
 choice to download the JSON results of the action.
 
-![alt-text goes here](/img/cloud-soar/image154.png)
-
+![action details](/img/cloud-soar/image154.png)
 
 To view the details of the result, click on the magnifying glass and the
 action's details window will be displayed. The details section displays
@@ -216,10 +212,10 @@ table view is designed to show only a select set of attributes. To view
 the complete results of verbose integrations, the JSON tab should be
 used.
 
-![alt-text goes here](/img/cloud-soar/image155.png)
+![action result](/img/cloud-soar/image155.png)
 
 
-![alt-text goes here](/img/cloud-soar/image156.png)
+![action result json](/img/cloud-soar/image156.png)
 
 
 #### Tasks
@@ -229,7 +225,7 @@ tasks which must be completed during an investigation. Tasks may be
 added from Playbooks or Playbooks, as discussed in previous sections,
 or manually from the incident's Tasks section.
 
-![alt-text goes here](/img/cloud-soar/image157.png)
+![tasks](/img/cloud-soar/image157.png)
 
 
 ##### Adding a Task
@@ -248,7 +244,7 @@ required to complete the Task. This number will be used to provide Task
 Assessment information, discussed in more detail in the Documentation
 section of this manual.
 
-![alt-text goes here](/img/cloud-soar/image158.png)
+![new task](/img/cloud-soar/image158.png)
 
 
 ##### Working with Tasks
@@ -259,7 +255,7 @@ task from the **My Operations** section of the screen, or to view a task
 by its incident, select one or multiple incidents from the task list on
 the left-side of the screen.
 
-![alt-text goes here](/img/cloud-soar/image159.png)
+![view tasks](/img/cloud-soar/image159.png)
 
 
 Selecting a task will open the incident where the task was created. This
@@ -269,7 +265,7 @@ incident data has been reviewed investigators can choose to approve,
 approve and close, or decline a task by clicking the thumbs up, thumbs
 down or check mark buttons next to the task's title.
 
-![alt-text goes here](/img/cloud-soar/image160.png)
+![task selected](/img/cloud-soar/image160.png)
 
 
 #### Notes
@@ -280,7 +276,7 @@ during the incident's investigation. Both sections offer the ability to
 export and search for different results depending on the operational
 need.
 
-![alt-text goes here](/img/cloud-soar/image161.png)
+![notes](/img/cloud-soar/image161.png)
 
 
 ##### Adding a Note
@@ -289,7 +285,7 @@ To manually add a note, click the **+** symbol to the left of the search
 bar and a new configuration screen will appear. Enter the note into the
 free form text box and click create when finished.
 
-![alt-text goes here](/img/cloud-soar/image162.png)
+![add note](/img/cloud-soar/image162.png)
 
 
 
@@ -328,7 +324,7 @@ When creating an incident manually, the investigator may already have
 artifacts that they would like to add to the incident. The Incident
 Artifact section allows for the manual entry of new artifacts. To add a
 new artifact click **Add Artifact** and choose what target field to append
-the data and add its value. Once completed, click **Next**.<br/> ![alt-text goes here](/img/cloud-soar/image129.png)
+the data and add its value. Once completed, click **Next**.<br/> ![add artifact](/img/cloud-soar/image129.png)
 
 ### Incident Artifacts
 
@@ -354,7 +350,7 @@ Sections will be printed in the report in the order they appear in the right-han
 
 The Custom Fields section allows you to customize all fields within the Cloud SOAR platform to better suit your environment. All fields are pre-populated by default and can be revised with environment-specific variables by manually creating or updating the fields or by importing a file which is formatted with entries for each line.
 
-To begin defining Cloud SOAR's custom fields, select a Cloud SOAR section from the list on the left-side of the screen to view all available fields. To edit an existing field, select the ![alt-text goes here](/img/cloud-soar/image47.png) next to the field to be updated, or to add a new field select **+ADD** at the bottom right-side of the screen. A new configuration box will be displayed.
+To begin defining Cloud SOAR's custom fields, select a Cloud SOAR section from the list on the left-side of the screen to view all available fields. To edit an existing field, select the ![custom fields](/img/cloud-soar/image47.png) next to the field to be updated, or to add a new field select **+ADD** at the bottom right-side of the screen. A new configuration box will be displayed.
 
 The only attribute of an existing field which cannot be modified once
 the field is created is the field Type, such as Text or Date. You can rename internal values but only personal values, which are denoted by having a trash can symbol next to the entry, can be deleted from the section's custom fields.
@@ -428,19 +424,19 @@ These Custom Field settings will appear in the Cloud SOAR Incident screen as fol
 
 ### Credential Manager - CyberArk Configuration
 
-You can use CyberArk Credential Manager to manage data that will be used in integration resources.<br/> ![alt-text goes here](/img/cloud-soar/cyberArk1.png)
+You can use CyberArk Credential Manager to manage data that will be used in integration resources.<br/> ![integrations](/img/cloud-soar/cyberArk1.png)
 
-Using the cogwheel icon on the right in the integrations section, the main section of the CyberArk configuration opens.<br/> ![alt-text goes here](/img/cloud-soar/CyberArk2.png)
+Using the cogwheel icon on the right in the integrations section, the main section of the CyberArk configuration opens.<br/> ![CyberArk configuration](/img/cloud-soar/CyberArk2.png)
 
 Here you can set URL and port of the Components server, and the credentials needed to connect to CyberArk. The Enable checkbox can be enabled or disabled later.
 
-If enabled, when you go to open the detail of a integration resource you'll find a new checkbox (**Use CyberArk fields**) at the top already active. If the checkbox on above window is disabled, the checkbox in the resource window will be disabled by default, and it will not be possible to activate it.<br/> ![alt-text goes here](/img/cloud-soar/CyberArk3.png)
+If enabled, when you go to open the detail of a integration resource you'll find a new checkbox (**Use CyberArk fields**) at the top already active. If the checkbox on above window is disabled, the checkbox in the resource window will be disabled by default, and it will not be possible to activate it.<br/> ![enable CyberArk fields](/img/cloud-soar/CyberArk3.png)
 
 If the checkbox **Use CyberArk fields** is enabled, two new mandatory fields will appear:
 * **Account Name** > userName in CyberArk
 * **Platform ID** > platformId in CyberArk
 
-Near to the fields there will be the relative toggle that will enable the related field for use on CyberArk.<br/> ![alt-text goes here](/img/cloud-soar/CyberArk5.png)
+Near to the fields there will be the relative toggle that will enable the related field for use on CyberArk.<br/> ![CyberArk fields enabled](/img/cloud-soar/CyberArk5.png)
 
 In the image above, you can see two custom fields of the resource with their toggles. The first field has been enabled to use CyberArk, while the second not.
 
@@ -450,7 +446,7 @@ Within the CyberArk fields you need to enter the name of the Properties present 
 Pay attention to uppercase and lowercase letters.
 :::
 
-![alt-text goes here](/img/cloud-soar/CyberArk4.png)
+![property names](/img/cloud-soar/CyberArk4.png)
 
 Through the name of the Properties,(in the above case **MB3**) during the execution of the resource, it will be replaced with the value present on CyberArk for that resource, in our case **84ca4444-9082-40b7-**.
 
@@ -464,7 +460,7 @@ If the checkbox for CyberArk is enabled for a resource field, the data type allo
 
 Values entered in the field not enabled for CyberArk, if previously entered and saved, will be retained if the field becomes enabled for CyberArk. The same is not true otherwise.
 
-If the CyberArk switch is enabled and one switch on the field line is disabled, that CyberArk field value will be saved empty.<br/> ![alt-text goes here](/img/cloud-soar/CyberArk6.png)
+If the CyberArk switch is enabled and one switch on the field line is disabled, that CyberArk field value will be saved empty.<br/> ![CyberArk fields](/img/cloud-soar/CyberArk6.png)
 
 
 #### Configuring the automation bridge for CyberArk
@@ -489,7 +485,7 @@ to triage events which may be unverified or have a low confidence level before t
 
 Triage display preferences can be customized from **Settings** > **Customizations** > **Triage**. Triage events can be color coded based on status to easily distinguish them from each other when viewing the list of Triage events.
 
-The name of the module can also be modified from **Triage** to a name of your choosing. The new name will be displayed in all areas of Cloud SOAR, including the menu and logs.<br/> ![alt-text goes here](/img/cloud-soar/image57.png)
+The name of the module can also be modified from **Triage** to a name of your choosing. The new name will be displayed in all areas of Cloud SOAR, including the menu and logs.<br/> ![Triage section](/img/cloud-soar/image57.png)
 
 
 ### Field Settings
@@ -524,7 +520,7 @@ The Triage module is accessible from the Incidents section by clicking on Triage
 The list of events can be filtered by any of the fields listed in the
 filter section at the top of the Triage main screen.
 
-![alt-text goes here](/img/cloud-soar/image181.png)         
+![filter events](/img/cloud-soar/image181.png)         
 
 
 To view the details of a Triage event, click on the box and arrow icon
@@ -545,7 +541,7 @@ the event to another user, click on the circular arrow icon in the
 Actions column for the event. To discard the event, click on the
 trashcan icon in the Actions column for the event.
 
-![alt-text goes here](/img/cloud-soar/image182.png)           
+![discard event](/img/cloud-soar/image182.png)           
 
 
 To convert the event to an incident, click **Convert to Incident** in the
@@ -554,4 +550,4 @@ incident template, owner and label, then click **Save**. The event,
 including all enrichment information gathered from any Playbooks, will be
 automatically converted to an incident.
 
-![alt-text goes here](/img/cloud-soar/image183.png)         
+![convert to incident](/img/cloud-soar/image183.png)         
