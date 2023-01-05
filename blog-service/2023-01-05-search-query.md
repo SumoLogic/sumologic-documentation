@@ -12,4 +12,4 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We have added enhanced functionality to the Query Editor to help you create a better search experience and reduce errors when writing queries. This feature automatically matches open quotes and open brackets, including curly, square, and parenthesis brackets.
+We have added enhanced functionality to the Query Editor to help you create a better search experience and reduce errors when writing queries. This feature matches any open quotes, open brackets (curly, square, or parenthesis brackets), and completes the quotes automatically.
