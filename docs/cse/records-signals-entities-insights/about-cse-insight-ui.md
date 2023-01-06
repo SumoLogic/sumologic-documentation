@@ -115,7 +115,7 @@ At the top of the **Insight \> Details** page, you’ll see a Signal timeline th
 
 ### Entities tab
 
-The** Entities **tab displays a list of one or more _Related Entities_, which help a security analyst more quickly investigate the Insight and to better understand the scope of a security issue that the Insight reveals.
+The **Entities** tab displays a list of one or more _Related Entities_, which help a security analyst more quickly investigate the Insight and to better understand the scope of a security issue that the Insight reveals.
 
 Related Entities extend the information available to the analyst beyond the data captured in an Insight. An Insight focuses on a primary Entity: the username, hostname, IP address, or MAC address that’s found in each of the Insight’s Signals. Related Entities expand the analyst’s view to include other Entities listed in the Records that belong to Signals in an Insight as well as Entities that aren’t in those Records but have a relationship to Entities that are.
 
