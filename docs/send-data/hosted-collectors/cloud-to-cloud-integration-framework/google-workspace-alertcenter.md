@@ -111,10 +111,3 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
     "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sample_url.com"
   }
 ```
-Here is how the JSON fields map to the input form.
-
-  | Field from JSON | Input field |
-  | --- | --- |
-  | client_email | Client Email |
-  | private_key | Private Key |
-  | token_uri | Token URL |
