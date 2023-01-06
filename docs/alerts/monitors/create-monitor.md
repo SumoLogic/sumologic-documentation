@@ -45,7 +45,7 @@ This document shows you how to create a monitor.
 
 1. Specify the **Trigger Type**. A Monitor can have one critical, warning, and missing data trigger condition, each with one or more notification destinations. Triggers have different options depending on the query and alert type. Click the **Expand** button next to the query type you're using for configuration details.
 
-<details><summary><strong>Logs Trigger Types</strong> (click to expand)</summary>
+<details><summary><strong>Logs Trigger Types</strong> (expand to view)</summary>
 
 ### Logs Trigger Types
 
