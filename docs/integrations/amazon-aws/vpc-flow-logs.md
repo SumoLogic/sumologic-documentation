@@ -168,8 +168,9 @@ Applied at: Ingest Time
 Scope (Specific Data):
 _sourceCategory=<Source category for respective VPC flow log source>
 Parse Expression:
-| if (_raw matches "{*", msg, _raw) as msg
-| parse field=msg "* * * * * * * * * * * * * *" as version,accountID,interfaceID,src_ip,dest_ip,src_port,dest_port,Protocol,Packets,bytes,StartSample,EndSample,Action,status nodrop
+json "message" as _rawvpc nodrop
+| if (_raw matches "{*", _rawvpc,_raw) as message
+| parse field=message "* * * * * * * * * * * * * *" as version,accountID,interfaceID,src_ip,dest_ip,src_port,dest_port,Protocol,Packets,bytes,StartSample,EndSample,Action,status
 | fields interfaceid,src_ip,dest_ip,src_port,dest_port,protocol,packets,bytes,action,status
 ```
 

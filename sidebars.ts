@@ -1280,7 +1280,6 @@ module.exports = {
         'metrics/metrics-queries/metric-query-autocomplete',
         'metrics/metrics-queries/query-comments',
         'metrics/metrics-queries/aggregation-tips',
-        'metrics/metrics-queries/engine-updates',
         'metrics/metrics-queries/metric-query-error-messages',
         'metrics/metrics-queries/share-metric-query',
         'metrics/metrics-queries/metrics-queries-classic',
