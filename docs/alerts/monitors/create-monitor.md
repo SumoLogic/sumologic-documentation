@@ -238,7 +238,7 @@ The **Connection Type** specifies the notification channel where you want to g
 
 
 ## Step 6: Name and save your monitor
-1. Enter a **Name** for the Monitor and the **Location** where you want to save it. A **Description** is optional.<br/> ![monitor details during creation.png](/img/monitors/monitor-details-during-creation.png)
+1. Enter a **Name** for the Monitor and the **Location** you want it saved to. A **Description** is optional.<br/> ![monitor details during creation.png](/img/monitors/monitor-details-during-creation.png)
 1. Click the **Save** button at the top right of the panel when you're finished configuring the Monitor.
 
 
