@@ -19,7 +19,7 @@ This document shows you how to create a monitor.
 1. From a Dashboard, hover your mouse over a panel, click the kebab icon, then **Open in Log Search**.
 1. From your log search view, click the kebab icon in the upper right corner, then **Create a Monitor**.
 
-#### From a Log Search
+#### From your Log Search
 1. Click the kebab icon in the upper right corner, then **Create a Monitor**.
 
 ## Step 2: Select Monitor type and Detection Method
