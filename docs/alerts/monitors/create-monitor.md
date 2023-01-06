@@ -15,7 +15,7 @@ This document shows you how to create a monitor.
 1. Go to the Monitors page by clicking **Manage Data** > **Monitoring** > **Monitors**.
 1. Click on the **Add** button > **New Monitor** to add a new Monitor. The creation dialog box will appear.
 
-#### From a Dashboard
+#### From your Dashboard
 1. From a Dashboard, hover your mouse over a panel, click the kebab icon, then **Open in Log Search**.
 1. From your log search view, click the kebab icon in the upper right corner, then **Create a Monitor**.
 
