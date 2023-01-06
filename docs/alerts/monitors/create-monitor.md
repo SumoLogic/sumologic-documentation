@@ -56,9 +56,9 @@ Trigger alerts on:<br/>![trigger alerts on field.png](/img/monitors/trigger-aler
 You can set the trigger based on the following:
 * **returned row count** (default): the number of rows returned from the log search.
 * A numeric field returned from the search. You can pick any numeric field from your query, and alert on the value of that field. The field is `_count` in the above screenshot. To convert a string to a number use the [num operator](/docs/search/search-query-language/search-operators/num). For example, if you have a field named **duration** you would use the num operator as follows to convert it to a number value.
-  ```sh
-  | num(duration)
-  ```
+```sh
+| num(duration)
+```
 
 #### Static detection method
 
