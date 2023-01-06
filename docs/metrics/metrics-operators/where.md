@@ -6,9 +6,6 @@ sidebar_label: where
 
 You can use the `where` operator to filter out either entire time series, or individual data points within a time series.
 
-:::note
-The `where` operator is currently supported in the Metric Explorer's [advanced mode](/docs/metrics/metrics-queries/metrics-explorer), not in basic mode.
-:::
 
 ## Syntax
 
