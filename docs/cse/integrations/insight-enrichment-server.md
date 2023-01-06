@@ -133,6 +133,13 @@ Run the installer and follow the instructions.
 
 ## Configuration
 
+### Variables
+
+The Enrichment Server supports these variables:
+
+${IP}, ${MAC}, ${USERNAME}, and ${HOSTNAME}, and for custom Entities, ${ENTITY}.
+
+
 ### General settings
 
 The following parameters control general server behaviors, as opposed to enrichment-specific options.
