@@ -23,7 +23,7 @@ The `predict` operator outputs two time series: the original input time series a
 Where:
 
 * `model` specifies the type of regression you want to perform:
-  * *linear*—use the linear regression model. This is the default value, if `model` is not specified.
+  * *linear*—use the linear regression model. This is the default value if `model` is not specified.
   * *ar*—use the auto-regression model.
 * `forecast` specifies how far into the future you want to forecast.
   * You can specify `forecast` in either in data points or in seconds (s), minutes (m), or hours (h). If no unit of time is specified, the value is interpreted as data points.
