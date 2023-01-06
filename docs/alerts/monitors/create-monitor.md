@@ -247,4 +247,4 @@ The **Connection Type** specifies the notification channel where you want to g
 
 ### Using Terraform
 
-You can also configure Sumo Logic Monitors using [Terraform modules](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor).
+You can configure Sumo Logic Monitors using [Terraform modules](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor).
