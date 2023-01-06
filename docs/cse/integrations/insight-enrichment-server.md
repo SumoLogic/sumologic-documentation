@@ -137,7 +137,7 @@ Run the installer and follow the instructions.
 
 The enrichment server provides allows for these variables:
 
-${IP}, ${MAC}, ${USERNAME}, and ${HOSTNAME} and custom entities
+${IP}, ${MAC}, ${USERNAME}, and ${HOSTNAME}, and for custom Entities, ${ENTITY}.
 
 
 ### General settings
