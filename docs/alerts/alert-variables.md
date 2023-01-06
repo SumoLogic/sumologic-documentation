@@ -7,16 +7,16 @@ description: Alerts support variables allowing you to customize notifications wi
 
 Variables are used as parameters that allow you to customize the JSON payload object of your alert notifications. These variables are used to dynamically populate specific values from the alert configuration in the notification payload. It includes things like the TriggerType that gives the current monitor status in the notification. When a notification is sent, variables are replaced with values from the alert. For example, if you specified `{{Name}}` in your JSON payload, it would be replaced with the actual name of the alert in the delivered payload.
 
-## Common variables for alerts
+## Available Template Variables
 
-You can use the following built-in variables when specifying the notification payload for log and metric monitors and scheduled searches. They allow you to reference specific configurations of your monitor.
+You can use the following built-in variables when specifying the notification payload for log monitors, metric monitors, and scheduled searches. They allow you to reference specific configurations of your monitor.
 
 The table below lists the variable descriptions along with which areas of the product you can use them.
 
 Variables must be enclosed by double curly brackets (`{{ }}`). Unresolved variables are given empty quotes `""` as a value. All variables are case-insensitive.
 
 | Variable | Description | Monitors | Scheduled Searches |
-| -- | -- | -- | -- |
+| :-- | :-- | :-- | :-- |
 | `{{Name}}` | The name of the alert. In the delivered payload, this variable is replaced with the Name you assigned to the alert when you created it. | &#9989;| &#9989;|
 | `{{Description}}` | The description of the alert. | &#9989;| &#9989;|
 | `{{MonitorType}}` | The type of alert, either `Logs` or `Metrics`. | &#9989;| &#9989;|
@@ -36,8 +36,12 @@ Variables must be enclosed by double curly brackets (`{{ }}`). Unresolved variab
 | `{{TriggerTimeEnd}}` | The end time of the time range that triggered the monitor in Unix format. For example, `1626190592042`. | &#9989;| &#9989;|
 | `{{SourceURL}}` | The URL to the configuration or status page of the monitor in Sumo Logic. | &#9989;| &#10060; |
 | `{{AlertResponseUrl}}` | When your Monitor is triggered it will generate a URL and provide it as the value of this variable where you can use it to open Alert Response. | &#9989;| &#10060; |
-| `{{AlertName}}` | Name of the Alert that will be displayed on the Alert page.  | &#9989;| &#9989;|
+| `{{AlertName}}` | Name of the Alert that will be displayed on the Alert page. | &#9989;| &#9989;|
 | `{{Playbook}}` | Allows you to access the [playbook content](/docs/alerts/monitors#metrics-trigger-types) that was configured as part of the initial monitor setup. | &#9989;| &#9989;|
+
+:::caution
+When writing queries, do not define fields with built-in field names; their values will be overridden.
+:::
 
 ## Examples
 
