@@ -131,7 +131,7 @@ Recover
 
 </details>
 
-<details><summary><strong>Metrics Trigger Types</strong> (click to expand)</summary>
+<details><summary><strong>Metrics Trigger Types</strong> (expand to view)</summary>
 
 ### Metrics Trigger Types
 
