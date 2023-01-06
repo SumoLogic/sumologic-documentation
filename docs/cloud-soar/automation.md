@@ -149,7 +149,7 @@ When the task has been developed, click **Create**.
 
 For playbook entities which support user-defined text input, such as email notifications, help desk ticket creation and task creation, variable placeholders may be added to the user defined text which will be replaced with incident variables at run
 time. These variable placeholders may be added by clicking on the
-![alt-text goes here](/img/cloud-soar/image80.png) icon. To add a variable placeholder,
+![placeholder icon](/img/cloud-soar/image80.png) icon. To add a variable placeholder,
 begin typing in the newly inserted placeholder box and Cloud SOAR will
 display a list of available options which match. For example, typing
 **incident**. will display a list of all the valid incident fields which
@@ -251,12 +251,12 @@ enrichment, containment and custom Playbook actions undertaken on
 incident artifacts, e.g., IP addresses, URLs, domains, etc., are
 catalogued in the incident's **Entities** module.
 
-Just in case that a playbook fail, it can be re-executed inside the incident again or on the failing node through the Kill ![alt-text goes here](/img/cloud-soar/image33c.png) & Run ![alt-text goes here](/img/cloud-soar/image33d.png) process available in the playbook screen of the incident. However, a failed node will not stop the playbook from being executed. Only tasks and User Choices will lock the playbook in a **Running** state until the user take action.
+If a playbook fails, it can be re-executed inside the incident again or on the failing node with the Kill ![Kill option](/img/cloud-soar/image33c.png) and Run ![Run option](/img/cloud-soar/image33d.png) processes available in the playbook screen of the incident. However, a failed node will not stop the playbook from being executed. Only tasks and User Choices will lock the playbook in a **Running** state until the user takes action.
 
-![alt-text goes here](/img/cloud-soar/image33e.png)
+![status running](/img/cloud-soar/image33e.png)
 
 
-![alt-text goes here](/img/cloud-soar/image33e1.png)
+![status completed](/img/cloud-soar/image33e1.png)
 
 
 
@@ -282,7 +282,7 @@ a specific alert, incident type or event. They allow you to define a certain num
 
 To create a new template, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation > Incident Templates**.
 
-![alt-text goes here](/img/cloud-soar/image91.png)
+![add template](/img/cloud-soar/image91.png)
 
 
 From the Incident Templates page, you'll find all previously created
@@ -314,7 +314,7 @@ complete the Incident Template (see [**Custom Fields**](#custom-fields) to adjus
 **Custom Fields** section. Once all required variables have been defined,
 click **Next** to continue.
 
-![alt-text goes here](/img/cloud-soar/image93.png)
+![create incident template](/img/cloud-soar/image93.png)
 
 
 The remaining tabs in the Incident Template dialogue are as follows:
@@ -358,7 +358,7 @@ data from these sources, the **Automation Rules** features need to be configured
 
 To access, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation** > __Rules__.
 
-![alt-text goes here](/img/cloud-soar/image94.png)          
+![automation menu](/img/cloud-soar/image94.png)          
 
 
 
@@ -367,12 +367,12 @@ To access, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} a
 
 Cloud SOAR's orchestration and automation capabilities are achieved through its unidirectional and bidirectional integrations with the industry's leading network and security vendors. To configure, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation** > **Integrations**.
 
-![alt-text goes here](/img/cloud-soar/image62.png)
+![integrations](/img/cloud-soar/image62.png)
 
 
 A list of available integrations within the organization can be found to the left-side of the screen. To begin to configure, click on a product to continue.
 
-![alt-text goes here](/img/cloud-soar/image63.png)
+![configure integration](/img/cloud-soar/image63.png)
 
 
 A product overview screen will be displayed with what actions a product can perform and a link to configure the integration. These actions are categorized into five
@@ -437,7 +437,7 @@ action code, action definition files also contain information such as
 the name, required and optional fields and the format in which the
 resulting information will be displayed.
 
-![alt-text goes here](/img/cloud-soar/image65.png)
+![integration definition](/img/cloud-soar/image65.png)
 
 ### Integration File Hierarchy
 
@@ -450,7 +450,7 @@ which retrieves all network connections for a given host.
 Once the user has created this new action, it can easily be added to the existing RSA
 Netwitness integration by uploading the new integration action file. This new action can also be shared between customers and used to extend the functionality of the integration in other customer instances as well.
 
-![alt-text goes here](/img/cloud-soar/image66.png)
+![new action](/img/cloud-soar/image66.png)
 
 
 
@@ -464,7 +464,7 @@ See the Integration Framework manual for more details on utilizing the integrati
 Select **Automation Rules** page follows the same format as
 all customizable Cloud SOAR features, click **+** to create a new automation ruleset:
 
-![alt-text goes here](/img/cloud-soar/image95.png)
+![add automation rule](/img/cloud-soar/image95.png)
 
 
 Select a name for the rule, then select the daemon to use with this new rule and the resource and fill all the remain parameters.
@@ -483,4 +483,4 @@ The **Action Type** dropdown will contain the specific actions Cloud SOAR can ta
 
 To add a new mapping setting, click on the plus button near Mapping if enable for that action.
 
-![alt-text goes here](/img/cloud-soar/image103.png)
+![add action](/img/cloud-soar/image103.png)
