@@ -18,6 +18,7 @@ You can run queries using any of the following built-in metadata fields.
 | Name | Description
 | :-- | :--
 `_collector` | The name of the Collector (set when the Collector was installed) that received metrics data points.
+`_metricId` | The identifier of the metric. It is calculated based on the dimensions of the metric, and can be used to uniquely identify a specific metric.
 `_source`	| The name of the Source, determined by the name supplied when the Metrics Source was configured.
 `_sourceCategory`	| The source category assigned to the Source by the user that configured it. `_sourceCategory` | can be a maximum of 400 characters long.
 `_sourceHost`	| The host name of the Source. For Sources that run on Installed Collectors, this is the Source Host configured for the Source. For Sources that run on Hosted Collectors, _sourceHost takes its value from the remote host's name, obtained using a reverse DNS lookup. If the name cannot be resolved, _sourceHost is displayed as localhost.
