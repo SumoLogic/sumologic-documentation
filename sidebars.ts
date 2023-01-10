@@ -209,6 +209,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sysdig-monitor-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source',
               ],
