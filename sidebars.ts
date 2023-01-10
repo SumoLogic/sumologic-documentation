@@ -1793,7 +1793,6 @@ module.exports = {
         'integrations/cloud-security-monitoring-analytics/linux',
         'integrations/cloud-security-monitoring-analytics/palo-alto-firewall-9',
         'integrations/cloud-security-monitoring-analytics/palo-alto-firewall-10',
-        'integrations/cloud-security-monitoring-analytics/ueba',
         'integrations/cloud-security-monitoring-analytics/windows',
         ],
       },
