@@ -76,8 +76,8 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 
 | Data Type | API Route | Description |
 |-----------|-----------|-------------|
-|Vulnerability Detections|[/api/2.0/fo/asset/host/vm/detection/](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf)|This collects a current list of new vulnerabilities detected for each computer. Each detection is sent as a separate log to Sumo Logic. API details are on page 480 in the linked Qualys PDF.|
-|Computer Inventory|[/rest/2.0/search/am/asset](https://www.qualys.com/docs/qualys-gav-csam-api-v2-user-guide.pdf)|This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as [inventory data](https://help.sumologic.com/docs/cse/administration/inventory-sources-and-data/). API details are on page 24 in the linked Qualys PDF.|
+|Vulnerability Detections|[`/api/2.0/fo/asset/host/vm/detection/`](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf)|This collects a current list of new vulnerabilities detected for each computer. Each detection is sent as a separate log to Sumo Logic. API details are on page 480 in the linked Qualys PDF.|
+|Computer Inventory|[`/rest/2.0/search/am/asset`](https://www.qualys.com/docs/qualys-gav-csam-api-v2-user-guide.pdf)|This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as [inventory data](https://help.sumologic.com/docs/cse/administration/inventory-sources-and-data/). API details are on page 24 in the linked Qualys PDF.|
 
 ### Is anything changed with data for computer inventory?
 
