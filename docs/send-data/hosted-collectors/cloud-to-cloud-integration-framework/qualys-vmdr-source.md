@@ -69,3 +69,19 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable                                                    | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs.                                     | Yes                                                   | The Source will retry indefinitely.                               | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry indefinitely.                               | FirstPartyGenericError |
+
+## F.A.Q.
+
+### What specific API routes does this C2C collect?
+
+| Data Type | API Route | Description |
+|-----------|-----------|-------------|
+|Vulnerability Detections|[/api/2.0/fo/asset/host/vm/detection/](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf)|This collects a current list of new vulnerabilities detected for each computer. Each detection is sent as a separate log to Sumo Logic. API details are on page 480 in the linked Qualys PDF.|
+|Computer Inventory|[/rest/2.0/search/am/asset](https://www.qualys.com/docs/qualys-gav-csam-api-v2-user-guide.pdf)|This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as [inventory data](https://help.sumologic.com/docs/cse/administration/inventory-sources-and-data/). API details are on page 24 in the linked Qualys PDF.|
+
+### Is anything changed with data for computer inventory?
+
+Sometimes the asset information from the computer inventory data can exceed the [Sumo Logic maximum log size of 64KB](https://help.sumologic.com/docs/search/get-started-with-search/search-basics/search-large-messages/). Sumo Logic will automatically split log messages exceeding the size limit into smaller chunks. This C2C makes the following changes to the computer inventory asset data collected in order to keep most logs under the size limit and prevent splitting:
+
+- The `openPortListData` key only contains information about ports open since the last time computer asset was ingested instead of listing all open port history from all time.
+- The `softwareListData` is reduced down from the full details to simply a list/array of software names using the full name.
