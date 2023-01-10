@@ -2,10 +2,6 @@
 id: qualys-vmdr-source
 title: Qualys VMDR
 sidebar_label: Qualys VMDR
-keywords:
-    - qualys
-    - qualys VMDR source
-
 description: The Qualys VMDR Source tracks errors, reports its health, and start-up progress.
 ---
 
@@ -69,3 +65,42 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable                                                    | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs.                                     | Yes                                                   | The Source will retry indefinitely.                               | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry indefinitely.                               | FirstPartyGenericError |
+
+## FAQ
+
+### What specific API routes does this C2C collect?
+
+<table>
+  <tr>
+   <td><strong>Data Type</strong>
+   </td>
+   <td><strong>API Route</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Vulnerability Detections
+   </td>
+   <td><code>/api/2.0/fo/asset/host/vm/detection/</code>
+   </td>
+   <td>This collects a current list of new vulnerabilities detected for each computer. Each detection is sent as a separate log to Sumo Logic. API details are on page 480 in <a href="https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf">this Qualys PDF</a>.
+   </td>
+  </tr>
+  <tr>
+   <td>Computer Inventory
+   </td>
+   <td><code>/rest/2.0/search/am/asset/</code>
+   </td>
+   <td>This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as <a href="https://help.sumologic.com/docs/cse/administration/inventory-sources-and-data/">inventory data</a>. API details are on page 24 in the <a href="https://www.qualys.com/docs/qualys-gav-csam-api-v2-user-guide.pdf">this Qualys PDF</a>.
+   </td>
+  </tr>
+</table>
+
+
+### Is anything changed with data for computer inventory?
+
+Sometimes the asset information from the computer inventory data can exceed the [Sumo Logic maximum log size of 64KB](https://help.sumologic.com/docs/search/get-started-with-search/search-basics/search-large-messages/). Sumo Logic will automatically split log messages exceeding the size limit into smaller chunks. This C2C makes the following changes to the computer inventory asset data collected in order to keep most logs under the size limit and prevent splitting:
+
+- The `openPortListData` key only contains information about ports open since the last time computer asset was ingested instead of listing all open port history from all time.
+- The `softwareListData` is reduced down from the full details to simply a list/array of software names using the full name.
