@@ -74,10 +74,33 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 
 ### What specific API routes does this C2C collect?
 
-| Data Type | API Route | Description |
-|-----------|-----------|-------------|
-|Vulnerability Detections|`/api/2.0/fo/asset/host/vm/detection/`|This collects a current list of new vulnerabilities detected for each computer. Each detection is sent as a separate log to Sumo Logic. API details are on page 480 in [this Qualys PDF](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf).|
-|Computer Inventory|`/rest/2.0/search/am/asset`|This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as [inventory data](https://help.sumologic.com/docs/cse/administration/inventory-sources-and-data/). API details are on page 24 in the [this Qualys PDF](https://www.qualys.com/docs/qualys-gav-csam-api-v2-user-guide.pdf).|
+<table>
+  <tr>
+   <td><strong>Data Type</strong>
+   </td>
+   <td><strong>API Route</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Vulnerability Detections
+   </td>
+   <td><code>/api/2.0/fo/asset/host/vm/detection/</code>
+   </td>
+   <td>This collects a current list of new vulnerabilities detected for each computer. Each detection is sent as a separate log to Sumo Logic. API details are on page 480 in <a href="https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf">this Qualys PDF</a>.
+   </td>
+  </tr>
+  <tr>
+   <td>Computer Inventory
+   </td>
+   <td><code>/rest/2.0/search/am/asset/</code>
+   </td>
+   <td>This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as <a href="https://help.sumologic.com/docs/cse/administration/inventory-sources-and-data/">inventory data</a>. API details are on page 24 in the <a href="https://www.qualys.com/docs/qualys-gav-csam-api-v2-user-guide.pdf">this Qualys PDF</a>.
+   </td>
+  </tr>
+</table>
+
 
 ### Is anything changed with data for computer inventory?
 
