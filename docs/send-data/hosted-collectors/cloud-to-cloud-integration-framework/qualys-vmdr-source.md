@@ -2,10 +2,6 @@
 id: qualys-vmdr-source
 title: Qualys VMDR
 sidebar_label: Qualys VMDR
-keywords:
-    - qualys
-    - qualys VMDR source
-
 description: The Qualys VMDR Source tracks errors, reports its health, and start-up progress.
 ---
 
@@ -70,7 +66,7 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs.                                     | Yes                                                   | The Source will retry indefinitely.                               | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry indefinitely.                               | FirstPartyGenericError |
 
-## F.A.Q.
+## FAQ
 
 ### What specific API routes does this C2C collect?
 
