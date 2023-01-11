@@ -21,7 +21,7 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
 
 * `MAPPER:vendor`—Use this statement to identify the vendor that supplies the product. For example: `MAPPER:vendor = AWS`.   
 * `MAPPER:product`—Use this statement to identify the product whose logs will be parsed by your parser. For example: `MAPPER:product = CloudTrail`.   
-* `MAPPER:event_id`—Use this statement to specify the event ID to assign to parsed events. For some log messages this is a constant, for example, for a Windows Event:   `MAPPER:event_id = Security-4624`. In other cases, you may need to form the event ID from fields contained in log messages. In that case, you can define an event ID pattern. For example: `MAPPER:event_id = {{eventType}}-{{eventName}}`.
+* `MAPPER:event_id`—Use this statement to specify the event ID to assign to parsed events. For some log messages this is a constant, for example, for a Windows Event: `MAPPER:event_id = Security-4624`. In other cases, you may need to form the event ID from fields contained in log messages. In that case, you can define an event ID pattern. For example: `MAPPER:event_id = {{eventType}}-{{eventName}}`.
 * `FORMAT`—Use this statement to specify the format of the log messages to be parsed. For example: `FORMAT = JSON`.
 
 ## Configure and test a custom parser
