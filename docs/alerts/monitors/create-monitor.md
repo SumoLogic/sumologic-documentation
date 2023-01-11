@@ -15,11 +15,11 @@ This document shows you how to create a monitor.
 1. Go to the Monitors page by clicking **Manage Data** > **Monitoring** > **Monitors**.
 1. Click on the **Add** button > **New Monitor** to add a new Monitor. The creation dialog box will appear.
 
-#### From a Dashboard
+#### From your Dashboard
 1. From a Dashboard, hover your mouse over a panel, click the kebab icon, then **Open in Log Search**.
 1. From your log search view, click the kebab icon in the upper right corner, then **Create a Monitor**.
 
-#### From a Log Search
+#### From your Log Search
 1. Click the kebab icon in the upper right corner, then **Create a Monitor**.
 
 ## Step 2: Select Monitor type and Detection Method
@@ -45,7 +45,7 @@ This document shows you how to create a monitor.
 
 1. Specify the **Trigger Type**. A Monitor can have one critical, warning, and missing data trigger condition, each with one or more notification destinations. Triggers have different options depending on the query and alert type. Click the **Expand** button next to the query type you're using for configuration details.
 
-<details><summary><strong>Logs Trigger Types</strong> (click to expand)</summary>
+<details><summary><strong>Logs Trigger Types</strong> (expand to view)</summary>
 
 ### Logs Trigger Types
 
@@ -56,9 +56,10 @@ Trigger alerts on:<br/>![trigger alerts on field.png](/img/monitors/trigger-aler
 You can set the trigger based on the following:
 * **returned row count** (default): the number of rows returned from the log search.
 * A numeric field returned from the search. You can pick any numeric field from your query, and alert on the value of that field. The field is `_count` in the above screenshot. To convert a string to a number use the [num operator](/docs/search/search-query-language/search-operators/num). For example, if you have a field named **duration** you would use the num operator as follows to convert it to a number value.
-  ```sh
-  | num(duration)
-  ```
+
+```sh
+| num(duration)
+```
 
 #### Static detection method
 
@@ -131,7 +132,7 @@ Recover
 
 </details>
 
-<details><summary><strong>Metrics Trigger Types</strong> (click to expand)</summary>
+<details><summary><strong>Metrics Trigger Types</strong> (expand to view)</summary>
 
 ### Metrics Trigger Types
 
@@ -238,7 +239,7 @@ The **Connection Type** specifies the notification channel where you want to g
 
 
 ## Step 6: Name and save your monitor
-1. Enter a **Name** for the Monitor and the **Location** where you want to save it. A **Description** is optional.<br/> ![monitor details during creation.png](/img/monitors/monitor-details-during-creation.png)
+1. Enter a **Name** for the Monitor and the **Location** you want it saved to. A **Description** is optional.<br/> ![monitor details during creation.png](/img/monitors/monitor-details-during-creation.png)
 1. Click the **Save** button at the top right of the panel when you're finished configuring the Monitor.
 
 
@@ -247,4 +248,4 @@ The **Connection Type** specifies the notification channel where you want to g
 
 ### Using Terraform
 
-You can also configure Sumo Logic Monitors using [Terraform modules](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor).
+* You can configure Sumo Logic Monitors using [Terraform modules](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor).
