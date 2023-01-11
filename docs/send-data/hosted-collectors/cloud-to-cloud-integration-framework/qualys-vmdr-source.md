@@ -116,4 +116,4 @@ Sometimes the asset information from the computer inventory data can exceed the 
 
 ### How can I differentiate between data types collected?
 
-The Qualys VMDR C2C collects all data using JSON as the format. It will add an additional key to your data called `LogType` with the values of `vulnerabilityLogs`, `knowledgeBaseLogs` and `assetInventory`. This allows you to easily filter between them in your search queries.
+The Qualys VMDR C2C collects all data using JSON as the format. It will add an additional key to your data called `LogType` with the values of `vulnerabilityLogs`, `knowledgeBaseLogs`, and `assetInventory`. This allows you to easily filter between them in your search queries.
