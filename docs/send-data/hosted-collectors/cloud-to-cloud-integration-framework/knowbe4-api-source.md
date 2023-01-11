@@ -31,7 +31,7 @@ The **Base URL** is the URL where your **KnowBe4** account is located  To get th
   | Server location | Server located at  | Base URLs |
   | :---|:---|:---|
   | US Server |	training.knowbe4.com | `https://api.events.knowbe4.com` |
-  | EU Server |  eu.knowbe4.com | `https://api-eu.events.knowbe4.com` |
+  | EU Server | eu.knowbe4.com | `https://api-eu.events.knowbe4.com` |
   | CA Server |	ca.knowbe4.com | `https://api-ca.events.knowbe4.com` |
 
 
@@ -107,7 +107,7 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
-|:--|:--|:--|:--|:--|
+|--|--|--|--|--|
 | `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. | not modifiable |
 | `schemaRef` | JSON Object  | Yes | Use `{"type":"KnowBe4"}` for KnowBe4 Source. | not modifiable |
 | `sourceType` | String | Yes | Use `Universal` for KnowBe4 Source. | not modifiable |
@@ -116,7 +116,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ### Config Parameters
 
 | Parameter | Type | Required | Description | Access |
-|:--|:--|:--|:--|:--|
+|---|---|---|---|---|
 | `name` | String | Yes | Type the desired name of the Source and it must be unique per Collector. This value is assigned to the `metadata field _source`.  | modifiable |
 | `description` | String  | No | Type the description of the Source. | modifiable |
 | `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
