@@ -26,7 +26,7 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
 
 ## Configure and test a custom parser
 
-1. Go to **Manage Data > Logs > Parsers**.<br/>  ![add-button.png](/img/cse/add-button.png)
+1. Go to **Manage Data** > **Logs** > **Parsers**.<br/>  ![add-button.png](/img/cse/add-button.png)
 1. Navigate to the folder where you’d like to create the parser. If you want to create a new folder, click **Add** and select **New Folder**.  You don’t have to organize your parsers in folders, but it's easier to manage them if you do.
 1. Click **Add** and select **New Parser** to display the **Create Parser** page.<br/>  ![create-parser-annotated.png](/img/cse/create-parser-annotated.png)
 1. **Name**. Enter a distinctive name for the parser. Typically the parser name indicates the product or service whose messages it will parse.
@@ -136,7 +136,7 @@ Another common reason to set up a local configuration is to pre-parse the conten
 
 To create a local configuration:
 
-1. Go to **Manage Data > Logs > Parsers**.
+1. Go to **Manage Data** > **Logs** > **Parsers**.
 1. In the System folder, navigate to the parser you want to modify and choose **Edit** from the three-dot more options menu.<br/>  ![three-dot.png](/img/cse/three-dot.png)
 1. The parser editor opens. The parser code is shown in the **System Configuration** area.<br/>  ![system-parser-edit- button.png](/img/cse/system-parser-edit-button.png)
 1. Paste your custom parser code in the **Local Configuration** area.
