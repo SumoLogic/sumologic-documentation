@@ -107,7 +107,7 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. | not modifiable |
 | `schemaRef` | JSON Object  | Yes | Use `{"type":"KnowBe4"}` for KnowBe4 Source. | not modifiable |
 | `sourceType` | String | Yes | Use `Universal` for KnowBe4 Source. | not modifiable |
@@ -116,13 +116,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ### Config Parameters
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | `name` | String | Yes | Type the desired name of the Source and it must be unique per Collector. This value is assigned to the `metadata field _source`.  | modifiable |
 | `description` | String  | No | Type the description of the Source. | modifiable |
 | `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
 | `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
-| baseURL | String | Yes | Region URL of the KnowBe4 application. | modifiable |
-| apiKey | String | Yes | Secret api key to authenticate your account. | modifiable |
+| `baseURL` | String | Yes | Region URL of the KnowBe4 application. | modifiable |
+| `apiKey` | String | Yes | Secret api key to authenticate your account. | modifiable |
 
 ## Limitations
 
