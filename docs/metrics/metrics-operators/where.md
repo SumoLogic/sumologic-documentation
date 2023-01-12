@@ -81,12 +81,12 @@ metric=cpu | where avg > 3
 This query filters out time series based on how many times the values of individual data points of a time series meet a value condition over a particular duration.
 
 ```sql
-metric query | where [VALUE BOOLEAN EXPRESSION] [all | at least n] [first | any | last] [duration]
+metric query | where [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | any | last] [duration]
 ```
 
 Where:
 
-* `[all | at least n]`. Use `all` to specify that all data points within the duration must meet the value condition, or at `least n` to specify how many data points must meet the value condition.
+* `[all | atleast n]`. Use `all` to specify that all data points within the duration must meet the value condition, or at `least n` to specify how many data points must meet the value condition.
 * `[first | any | last]`. Use `first`, `any`, or `last` to specify what part of the time range that duration applies to: the start of the time range, any part of the time range, or the end of the time range.
 * `[duration]` Use duration to specify the length of time to consider in the query in minutes (m), hours (h), or days (d). For example, 5m, 6h, or 1d.
 
@@ -103,5 +103,5 @@ metric=cpu | where _value > 3 all any 5m
 This query only returns the time series that have at least three data points with values greater than 3 for any consecutive 5 minutes of the time range.
 
 ```sql
-metric=cpu | where _value > 3 at least 3 any 5m
+metric=cpu | where _value > 3 atleast 3 any 5m
 ```
