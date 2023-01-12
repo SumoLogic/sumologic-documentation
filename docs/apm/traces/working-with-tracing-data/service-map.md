@@ -63,6 +63,7 @@ The Service Map panel displays a service map for filtered applications and servi
 See the [Dashboard (New) guide](/docs/dashboards-new) for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
 :::
 
+
 ## Service List view
 
 The **Service List** view provides a compact high-level overview of your service health insights and KPIs.
