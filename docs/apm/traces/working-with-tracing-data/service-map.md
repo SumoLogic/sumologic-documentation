@@ -1,6 +1,6 @@
 ---
 id: service-map
-title: Service Map and Service List
+title: Service Map
 sidebar_label: Service Map
 description: View your application topology and investigate microservice interactions.
 ---
@@ -62,6 +62,7 @@ The Service Map panel displays a service map for filtered applications and servi
 :::tip
 See the [Dashboard (New) guide](/docs/dashboards-new) for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
 :::
+
 
 ## Service List view
 
