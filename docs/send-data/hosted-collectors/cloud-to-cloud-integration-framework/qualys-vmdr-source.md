@@ -2,16 +2,12 @@
 id: qualys-vmdr-source
 title: Qualys VMDR
 sidebar_label: Qualys VMDR
-keywords:
-    - qualys
-    - qualys VMDR source
-
 description: The Qualys VMDR Source tracks errors, reports its health, and start-up progress.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Qualys VMDR ingests vulnerability data from [Vulnerability API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf) and asset data from [Asset API](https://www.qualys.com/docs/qualys-global-ai-api-v2-user-guide.pdf).
+The Qualys VMDR ingests vulnerability data from [Vulnerability API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf), knowledgeBase data from [KnowledgeBase API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf), and asset data from [Asset API](https://www.qualys.com/docs/qualys-global-ai-api-v2-user-guide.pdf)
 
 :::note
 This Source is available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
@@ -57,8 +53,9 @@ To configure a Qualys VMDR Source:
 8. **Username** and **Password**. Use your Qualys account username and password for API authentication.
 9. The next section covers the type of data to collect and how often. <br/> <img src={useBaseUrl('img/send-data/qualys-config-collection-selection.png')} alt="qualys-config-collection-selection.png" width="450" />
 10. **Collect vulnerability data**. This option will fetch the list of hosts with the host's latest vulnerability data based on the host-based scan data available in the user’s account. We recommend leaving the polling interval at the default 1 hour.
-11. **Collect asset inventory**. This option consumes asset data from Qualys Global IT Asset Inventory API. The inventory data collected here will also be used in Cloud SIEM as inventory data. We recommend leaving the polling interval at the default 24 hours.
-12. When you are finished configuring the Source, click **Submit**.
+11. (Optional) **Collect KnowledgeBase Information**. This option is only available if you choose to collect vulnerability data. If selected, it will automatically download the vulnerability details from the Qualys KnowledgeBase for vulnerabilities detected within your environment.
+12. **Collect asset inventory**. This option consumes asset data from Qualys Global IT Asset Inventory API. The inventory data collected here will also be used in Cloud SIEM as inventory data. We recommend leaving the polling interval at the default 24 hours.
+13. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
@@ -69,3 +66,54 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable                                                    | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs.                                     | Yes                                                   | The Source will retry indefinitely.                               | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry indefinitely.                               | FirstPartyGenericError |
+
+## FAQ
+
+### What specific API routes does this C2C collect?
+
+<table>
+  <tr>
+   <td><strong>Data Type</strong>
+   </td>
+   <td><strong>API Route</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Vulnerability Detections
+   </td>
+   <td><code>/api/2.0/fo/asset/host/vm/detection/</code>
+   </td>
+   <td>This collects a current list of new vulnerabilities detected for each computer. Each detection is sent as a separate log to Sumo Logic. API details are on page 480 in <a href="https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf">this Qualys PDF</a>.
+   </td>
+  </tr>
+  <tr>
+   <td>KnowledgeBase
+   </td>
+   <td><code>/api/2.0/fo/knowledge_base/vuln/</code>
+   </td>
+   <td>This collects the current vulnerability details from the Qualys KnowledgeBase for vulnerabilities when they are detected within your environment. API details are on page 200 in <a href="https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf">this Qualys PDF</a>.
+   </td>
+  </tr>
+  <tr>
+   <td>Computer Inventory
+   </td>
+   <td><code>/rest/2.0/search/am/asset/</code>
+   </td>
+   <td>This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as <a href="https://help.sumologic.com/docs/cse/administration/inventory-sources-and-data/">inventory data</a>. API details are on page 24 in the <a href="https://www.qualys.com/docs/qualys-gav-csam-api-v2-user-guide.pdf">this Qualys PDF</a>.
+   </td>
+  </tr>
+</table>
+
+
+### Is anything changed with data for computer inventory?
+
+Sometimes the asset information from the computer inventory data can exceed the [Sumo Logic maximum log size of 64KB](https://help.sumologic.com/docs/search/get-started-with-search/search-basics/search-large-messages/). Sumo Logic will automatically split log messages exceeding the size limit into smaller chunks. This C2C makes the following changes to the computer inventory asset data collected in order to keep most logs under the size limit and prevent splitting:
+
+- The `openPortListData` key only contains information about ports open since the last time computer asset was ingested instead of listing all open port history from all time.
+- The `softwareListData` is reduced down from the full details to simply a list/array of software names using the full name.
+
+### How can I differentiate between data types collected?
+
+The Qualys VMDR C2C collects all data using JSON as the format. It will add an additional key to your data called `LogType` with the values of `vulnerabilityLogs`, `knowledgeBaseLogs`, and `assetInventory`. This allows you to easily filter between them in your search queries.

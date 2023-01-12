@@ -60,7 +60,7 @@ If the query that results in the message contains an aggregation operator, the r
 
 #### Output data limit
 
-When a single row of query returns more than 1000 time series after the input data limit is applied, Sumo also limits the number of time series in the visualization and any aggregate calculations, and presents a message like this:
+When a single row of query returns more than 1000 time series after the input data limit is applied, Sumo also limits the number of time series in the visualization and any aggregate calculations, and presents a message as follows:
 
 `There were too many timeseries in the output, showing first 1000`
 
@@ -70,9 +70,15 @@ There will also be a tip like this:
 
 One solution is to add additional selectors to your query to reduce the number of time series returned, for example by adding additional `tag=value` pairs to the query. You can also filter the time series returned using the [topk](/docs/metrics/metrics-operators/topk), [bottomk](/docs/metrics/metrics-operators/bottomk), and [filter](/docs/metrics/metrics-operators/filter) operators. 
 
+#### Join data limit
+
+When a cross-row calculation (e.g. #A+#B) produces more than 1000 time series, Sumo will limit the number of output from this cross-row calculation to 1000, and present a message as follows:
+
+`The cross-row calculation resulted in too many time-series. Limiting results to 1000 series.`
+
 ### Quantization interval not supported
 
-When you use the [quantize](/docs/metrics/metrics-operators/quantize) operator to control Sumo’s quantization behavior, the following limitations apply:
+When you use the [quantize](/docs/metrics/metrics-operators/quantize) operator to control Sumo’s quantization behavior, the following limitations will apply in sequence:
 
 - Each output time series will contain no more than 300 data points. If the quantization interval is too small, the following warning message will be displayed:
 
@@ -85,7 +91,9 @@ When you use the [quantize](/docs/metrics/metrics-operators/quantize) operator t
   `The requested quantization granularity [Desired Interval] was not supported. Using [Corrected Interval] instead.`
 
   and the quantization interval will be set to the nearest supported value.
-
+  
+If multiple conditions apply, the message from the latest warning will be displayed with the initial desired interval and the final corrected interval.
+  
 ### Aggregation over nonexistent key
 
 Aggregate (group-by) functions evaluate the specified arithmetic function for each timestamp across different time series. The by clause is used to define the field to group by.
