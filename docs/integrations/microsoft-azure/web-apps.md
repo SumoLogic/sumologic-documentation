@@ -158,7 +158,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Overview
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Web Apps dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureWebApps/WebApps-Overview.png')} alt="Overview" />
 
 **Visits by Country.** Performs a geo location operation to display the IP addresses of visitors on a map of the world for the last three hours.
 
@@ -179,7 +179,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Server Operation - Errors and Response Codes
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Web Apps dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureWebApps/AzureWebApps-ServerOperation-ErrorsAndResponseCodes.png')} alt="Server Operation - Errors and Response Codes" />
 
 **Server Errors by Site.** Shows details on server errors by site in a column chart for the last three hours.
 
@@ -194,7 +194,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Server Operation - Requests and Response Time
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Web Apps dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureWebApps/AzureWebApps-ServerOperation-RequestsAndResponseTime.png')} alt="Server Operation - Requests and Response Time" />
 
 **Requests by Hostname.** Displays the number of requests by hostname in a line chart on a timeline for the last three hours.
 
@@ -209,7 +209,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Traffic Insights - Apps and Requests
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Web Apps dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureWebApps/AzureWebApps-TrafficInsights-AppsAndRequests.png')} alt="Traffic Insights - Apps and Requests" />
 
 **Visits by Country. **Performs a geo lookup operation and displays the IP addresses of worldwide visitors on a map of the world for the last three hours.
 
@@ -224,7 +224,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Traffic Insights - Content and Client Platform
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Web Apps dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureWebApps/AzureWebApps-TrafficInsights-ContentAndClientPlatform.png')} alt="Traffic Insights - Content and Client Platform" />
 
 **Media Types Requested Over Time.** Displays media types requested over time by count in a line chart on a timeline in the last three hours.
 
