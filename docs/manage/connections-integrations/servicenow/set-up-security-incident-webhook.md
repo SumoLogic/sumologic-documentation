@@ -43,7 +43,7 @@ To set up a ServiceNow Security Incident Webhook connection:
     Only HTTPS (port 443) and HTTP (port 80) URLs are supported.
     :::
 
-1. Provide an **Authorization Header**. For more information, see the help page for Webhook connections [Example Authorization Header](../webhook-connections/set-up-webhook-connections.md).
+1. Provide an **Authorization Header**. For more information, see the help page for Webhook connections [Example Authorization Header](/docs/alerts/webhook-connections/set-up-webhook-connections).
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
 1. For **Payload**, enter a security incident JSON object. For example,
 
@@ -78,7 +78,7 @@ Once you are satisfied with the payload, copy the payload into the Sumo Logic p
 
 If needed, you can customize **Payloads** for each scheduled search. If you’d like to use the default payload, leave this as-is.
 
-See [Webhook payload variables](../webhook-connections/set-up-webhook-connections.md) for more details. 
+See [Webhook payload variables](/docs/alerts/webhook-connections/set-up-webhook-connections) for more details. 
 
 ## Example payloads for ServiceNow incidents
 
