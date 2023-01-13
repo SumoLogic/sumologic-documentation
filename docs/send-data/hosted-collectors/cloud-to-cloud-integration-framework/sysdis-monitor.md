@@ -68,7 +68,7 @@ Hover your mouse over the status icon to view a tooltip with a count of the dete
 
 ## Setup and configuration
 
-When you create a Sysdig-Monitor Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Sysdig Monitor Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
