@@ -51,15 +51,16 @@ To set up a ServiceNow Webhook connection:
    * See how to set an [Authorization Header](../webhook-connections/set-up-webhook-connections.md).
 1. Set the **Type** to **Events** or **Incidents** based on what you want to create. This needs to align with the **URL** you provided.
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
-1. For **Payload**, enter a JSON object that defines the structure of what you want to send to ServiceNow. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](../webhook-connections/set-up-webhook-connections.md). 
+1. For **Alert Payload**, which allows you to customize how the alert notification look in ServiceNow, enter a JSON object that defines the structure of what you want to send to ServiceNow. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](../webhook-connections/set-up-webhook-connections.md). 
+1. For **Recovery Payload**, which allows you to customize how the recovery notification look in ServiceNow, enter a JSON object that defines the structure of what you want to send to ServiceNow. 
 1. Click **Save**.
 1. To send alerts to this connection, follow these steps:
    1. [Testing the connection](set-up-connections.md).
-   1. [Create a scheduled search](../webhook-connections/schedule-searches-webhook-connections.md).
+   1. [Create a Monitor](~/docs/alerts/monitors/create-monitor.md).
 
 ## Test the connection
 
-After configuring the connection, click **Test Connection**. If the connection is made, you will see a 201 OK response message.
+After configuring the connection, click **Test Alert or Test Recovery**. If the connection is made, you will see a 201 OK response message.
 
 If the connection is successful, you'll see an event or incident created in ServiceNow. There won't contain any information from the scheduled search, it will just have the text in the payload.
 
