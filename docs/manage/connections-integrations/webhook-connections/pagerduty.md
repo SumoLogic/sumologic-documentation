@@ -59,7 +59,7 @@ The URL and supported payload are different based on the version of the PagerDut
     "client": "Sumo Logic",
     "client_url": "{{AlertResponseURL}}",
     "payload": {
-        "summary": "{{TriggerType}} Alert:{{Name}}",
+    	"summary": "{{TriggerType}} Alert:{{Name}}",
         "source": "Monitor :{{Name}}",
         "severity": "critical",
         "custom_details": {
@@ -79,6 +79,30 @@ The URL and supported payload are different based on the version of the PagerDut
     * In the **Payload**, where it says `SERVICE KEY`, paste in the **integration key** you previously copied from PagerDuty.
     * In the **Payload** for the `description`, specify the description you want sent to PagerDuty. The above payload has specified to use the name of the alert.
     * In the **Payload** for `severity`, the allowed values (`critical`, `warning`, `error`, and `info`) are case sensitive; PagerDuty expects them to be lowercase. Do not use the `{{TriggerType}}` variable here because that will display values that are capitalized (i.e., `Critical`) and some of the `{{TriggerType}}` values are not allowed by PagerDuty (e.g., `MissingData`).
+    * You can also update the `details` section, if you want to customize the PagerDuty alert notification. 
+
+1. The default **Recovery Payload** will not work with Event API V2. Change it to the following:
+  ```json
+	{
+	  "routing_key": "{{RoutingKey}}",
+	  "event_action": "resolve",
+	  "dedup_key": "{{DedupKey}}",
+	  "payload": {
+	  	"summary": "Monitor {{Name}} has recovered at {{TriggerTime}}",
+		"severity":"{{PayloadSeverity}}",
+		"source":"{{PayloadSource}}",
+		"custom_details": {
+			"name": "{{Name}}",
+			"time": "{{TriggerTimeRange}}",
+			"triggerCondition": "{{TriggerCondition}}",
+			"query": "{{Query}}"
+		      }	
+	     }
+	}
+
+  ```
+   * You can update the `details` section, if you want to customize the PagerDuty recovery notification. 
+   * Note: Do not update the `service_key` , `event_type`, and `incident_key` fields, otherwise recovery notifications will not be generated.
 
 1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
 1. Click **Save**.
@@ -94,9 +118,10 @@ The URL and supported payload are different based on the version of the PagerDut
 1. (Optional) Enter a **Description** for the Connection.
 1. Enter the **URL** for the endpoint: `https://events.pagerduty.com/generic/2010-04-15/create_event.json`
 1. The optional input fields **Authorization Header** and **Custom Headers** do not do anything and are ignored.
-1. In the **Payload**:
+1. In the **Alert Payload**:
    * Where it says `SERVICE KEY`, paste in the **integration key** you previously copied from PagerDuty.
-   * Where it says `description`, specify the description you want sent to PagerDuty.
+   * Where it says `description`, specify the description you want sent to PagerDuty. 
+   * You can also update the `details` section, if you want to customize the PagerDuty alert notification. 
    ```json
    {
     	"service_key": "SERVICE KEY",
@@ -116,6 +141,24 @@ The URL and supported payload are different based on the version of the PagerDut
  	      }
      }
      ```
+1. Under the **Recovery Payload**:
+   * You can update the `details` section, if you want to customize the PagerDuty recovery notification. Below is the default v1 payload
+   * Note: Do not update the `service_key` , `event_type`, and `incident_key` fields, otherwise recovery notifications will not be generated.
+   ```json
+   {
+	"service_key": "{{ServiceKey}}",
+	"event_type": "resolve",
+	"incident_key": "{{IncidentKey}}",
+	"description": "{{Name}} has recovered at {{TriggerTime}}",
+	"details": {
+		"name": "{{Name}}",
+		"time": "{{TriggerTimeRange}}",
+		"triggerCondition": "{{TriggerCondition}}",
+		"query": "{{Query}}"
+	      }
+    }
+     ```
+
 1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
 
      ![PagerDuty default payload.png](/img/connection-and-integration/PagerDuty-default-payload.png)
