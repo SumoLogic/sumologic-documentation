@@ -197,7 +197,7 @@ All Dashboards include filters that you can use in Interactive Mode for further 
 
 This Dashboard provides general information of the NSG flow logs, including Panels that drill-down into queries with NIC, tuple and traffic flow information. The Overview Dashboard gives a good starting point for detecting outlier in denied traffic and geographic hotspots for inbound traffic. In addition, this Dashboard allows users to filter data by rule name, source/destination IP and port, and other metadata fields.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Network Watcher dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureNetworkWatcher/Overview.png')} alt="Overview" />
 
 **Source Address Location of Inbound Traffic. **Displays geo-location of Inbound Traffic.
 
@@ -220,7 +220,7 @@ This Dashboard provides general information of the NSG flow logs, including Pane
 
 This Dashboard drills down on denied traffic flow logs, shows geographic hotspots of denied traffic, top denied IPs and ports, and denied traffic trends by rule name.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Network Watcher dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureNetworkWatcher/DeniedTrafficFlow.png')} alt="Denied Traffic Flow" />
 
 **Denied Traffic Flow by Source Location. **Shows geographic hotspots of denied traffic flow.
 
