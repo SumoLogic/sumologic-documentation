@@ -31,7 +31,7 @@ The **Base URL** is the URL where your Sysdig-Monitor account is located  To get
 ### API Token
 
 The **API security token** is used to authenticate with Sysdig HTTP API. To get the **Sysdig API token**, follow the steps below:
-1. Log into Sysdig Monitor application.
+1. Log in to the Sysdig Monitor application.
 2. Navigate to **Events** section from left panel and click **Settings**.<br/> <img src={useBaseUrl('img/send-data/sysdig-settings-menu.png')} alt="sysdig-settings-menu.png" width="750" />
 3. Select **User Profile**. The Sysdig Secure API token is displayed in the UI.<br/> <img src={useBaseUrl('img/send-data/sysdig-api-token.png')} alt="sysdig-api-token.png" width="800" />
 4. You can copy the generated token for use, or click the **Reset Token** button to generate a new one.
