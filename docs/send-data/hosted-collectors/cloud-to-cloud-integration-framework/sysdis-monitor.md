@@ -6,7 +6,7 @@ sidebar_label: Sysdig Monitor
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Sysdig Monitor Cloud-to-Cloud source provides the ability to collect events such as monitoring, alerting, troubleshooting from Sysdig Monitor platform and send them to Sumo logic. It ingests events from the [Sysdig Monitor API](https://app.sysdigcloud.com/api/public/docs/index.html).
+The Sysdig Monitor Cloud-to-Cloud source provides the ability to collect events such as monitoring, alerting, troubleshooting from the Sysdig Monitor platform and send them to Sumo Logic. It ingests events from the [Sysdig Monitor API](https://app.sysdigcloud.com/api/public/docs/index.html).
 
 ## Prerequisites
 
