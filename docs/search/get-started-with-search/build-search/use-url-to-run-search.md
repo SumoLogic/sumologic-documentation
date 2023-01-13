@@ -23,7 +23,7 @@ https://<endpoint>/ui/#/search/create?query=<urlEncodedQuery>&startTime=<start>&
 * `<end>` is the end of your log query time range, the value can be either:
 
     * in milliseconds since epoch.
-    * a [relative time range expression](../search-basics/time-range-expressions.md).  You can omit the \<en\>` value and the current time (`now`) is assumed.
+    * a [relative time range expression](../search-basics/time-range-expressions.md).  You can omit the `<end>` value and the current time (`now`) is assumed.
 
 ## Example
 

@@ -105,7 +105,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Required | Description | Access |
 |:--|:--|:--|:--|:--|
-| `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. | not modifiable |
+| `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. | na |
 | `schemaRef` | JSON Object  | Yes | Use `{"type":"KnowBe4"}` for KnowBe4 Source. | not modifiable |
 | `sourceType` | String | Yes | Use `Universal` for KnowBe4 Source. | not modifiable |
 
@@ -121,10 +121,29 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `baseURL` | String | Yes | Region URL of the KnowBe4 application. | modifiable |
 | `apiKey` | String | Yes | Secret api key to authenticate your account. | modifiable |
 
+
+### JSON Example
+
+```json
+{
+    "api.version": "v1",
+    "source": {
+        "config": {
+  		"name": "KnowBe4",
+ 	 	"description": "Test Source",
+  		"category": "source_category",
+  		"baseURL": "https://api.events.knowbe4.com",
+  		"apiKey": "************"
+          },
+        "schemaRef": {
+            "type": "KnowBe4"
+        },
+        "sourceType": "Universal"
+    }
+}
+```
+
+
 ## Limitations
 
 The number of licensed users on your account can make a maximum of ten requests per day using the KnowBe4 API. You may access the APIs only four times per second.
-
-:::note
-Due to the limitations of the `timestamp` filter in the KnowBe4 Event API query, the KnowBe4 API integration can only collect data up to the previous day.
-:::

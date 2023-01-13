@@ -622,7 +622,7 @@ connection_notifications = [
   ]
 ```
 
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-integrations/Webhook-Connections/Set-Up-Webhook-Connections).
+For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/alerts/webhook-connections/Set-Up-Webhook-Connections).
 
 ```sql title="Email notifications example"
 email_notifications = [

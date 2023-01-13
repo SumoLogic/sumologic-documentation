@@ -38,7 +38,7 @@ To complete the following tasks, Security Hub must be enabled on your AWS accoun
 
 ### AWS Security Hub forwarder overview
 
-AWS Security Hub forwarder creates a Lambda function along with an [Identity Access and Management (IAM)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) authentication secured API Gateway endpoint. A Sumo Logic scheduled search then sends the results to the endpoint using [Webhook for Lambda](/docs/manage/connections-integrations/webhook-connections/aws-lambda.md) The triggered Lambda function parses the search results, transforming them into [Amazon Finding Format](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html) (AFF). Each of the rows of the AFF data is sent as a finding to AWS Security Hub.
+AWS Security Hub forwarder creates a Lambda function along with an [Identity Access and Management (IAM)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) authentication secured API Gateway endpoint. A Sumo Logic scheduled search then sends the results to the endpoint using [Webhook for Lambda](/docs/alerts/webhook-connections/aws-lambda.md) The triggered Lambda function parses the search results, transforming them into [Amazon Finding Format](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html) (AFF). Each of the rows of the AFF data is sent as a finding to AWS Security Hub.
 
 The configuration is defined using [SAM specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html) and published in [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/).
 
@@ -73,7 +73,7 @@ This section demonstrates how to create a Webhook connection to trigger an AWS L
 
 To create a Webhook connection, do the following:
 
-1. Follow the instructions for [creating a Webhook connection](/docs/manage/connections-integrations/webhook-connections/aws-lambda.md), and use the value from [step 4](#API-Gateway-endpoint) as the URL.
+1. Follow the instructions for [creating a Webhook connection](/docs/alerts/webhook-connections/aws-lambda.md), and use the value from [step 4](#API-Gateway-endpoint) as the URL.
 AWS Security Hub Connector (SAM application) secures the endpoint with the AWS_IAM authorization type.
 2. Verify that it has the following payload:
 ```json

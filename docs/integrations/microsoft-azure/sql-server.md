@@ -35,19 +35,6 @@ Create the following Fields in Sumo Logic prior to configuring collection. This 
 
 <TabItem value="k8s">
 
-If you're using SQL Server in a non-Kubernetes environment, create the fields:
-* `component`
-* `environment`
-* `db_system`
-* `db_cluster`
-* `db_cluster_address`
-* `db_cluster_port`
-
-
-
-</TabItem>
-<TabItem value="non-k8s">
-
 If you're using SQL Server in a Kubernetes environment, create the fields:
 * `pod_labels_component`
 * `pod_labels_environment`
@@ -55,8 +42,17 @@ If you're using SQL Server in a Kubernetes environment, create the fields:
 * `pod_labels_db_cluster`
 * `pod_labels_db_cluster_address`
 * `pod_labels_db_cluster_port`
-  
 
+</TabItem>
+<TabItem value="non-k8s">
+
+If you're using SQL Server in a non-Kubernetes environment, create the fields:
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `db_cluster_address`
+* `db_cluster_port`
 
 </TabItem>
 </Tabs>
@@ -513,7 +509,7 @@ connection_notifications = [
 
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to this [document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
+For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
 
 ```sql title="Email Notifications Example"
 email_notifications = [
@@ -576,7 +572,8 @@ Use this dashboard to:
 * Analyze CPU, Memory and disk utilization.
 * Examine Login activities, failures, and failure reasons.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-General-Health.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQL-Server/SQL-Server-Overview.png')} alt="Overview" />
+
 
 ### General Health
 
@@ -587,7 +584,8 @@ Use this dashboard to:
 * Monitor server events trends including SQL Server wait time.
 * Get insight into app-domain and percentage disk utilization issues by SQL Server.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-I-O.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-General-Health.png')} alt="General Health" />
+
 
 ### I/O
 
@@ -596,7 +594,8 @@ The **SQL Server - I/O** dashboard provides read and write bytes throughput by S
 Use this dashboard to:
 * Analyze performance of SQL server by monitoring read and write bytes throughput of your SQL server instance.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Latency.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-I-O.png')} alt="I/O" />
+
 
 ### Latency
 
@@ -605,7 +604,7 @@ The **SQL Server - Latency** dashboard provides read and write latency trend by 
 Use this dashboard to:
 * Analyze performance of SQL server by monitoring read and write latency of your SQL server instance.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Latency.png')} alt="Latency" />
 
 
 ### Operations
@@ -616,11 +615,10 @@ Use this dashboard to:
 * Get insights into configuration changes and updates to SQL server instance.
 * Monitor any errors and warnings.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Operations.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Operations.png')} alt="Operations" />
 
 
 ### Performance Counters
-
 
 The **SQL Server - Performance Counters** dashboard shows performance counters related to database activities, SQL statistics, and buffer cache.
 
@@ -628,7 +626,8 @@ Use this dashboard to:
 * Get insights into database activities such as errors/sec, lock timeouts/sec, and wait/sec, deadlocks/sec, and write transactions/sec.
 * Monitor important SQL statistics such as login/sec, logout/sec, sql compilations/sec, processes blocked and batch requests/sec.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Performance-Counters.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Performance-Counters.png')} alt="Performance Counters" />
+
 
 ### Replication
 
@@ -638,7 +637,7 @@ Use this dashboard to:
 * Get insights into bytes sent to and received from replica instance.
 * Analyze transaction delays, and mirrored white transaction/sec.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Replication.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Replication.png')} alt="Replication" />
 
 
 ### Backup Restore Mirroring
@@ -651,7 +650,7 @@ The **SQL Server - Backup Restore Mirroring** provides information about:
 * Backup failures and reasons
 * Mirroring errors
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Backup-Restore-Mirroring.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Backup-Restore-Mirroring.png')} alt="Backup Restore Mirroring" />
 
 
 ## Microsoft SQL Server Alerts
