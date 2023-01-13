@@ -59,7 +59,7 @@ The URL and supported payload are different based on the version of the PagerDut
     "client": "Sumo Logic",
     "client_url": "{{AlertResponseURL}}",
     "payload": {
-        "summary": "{{TriggerType}} Alert:{{Name}}",
+    	"summary": "{{TriggerType}} Alert:{{Name}}",
         "source": "Monitor :{{Name}}",
         "severity": "critical",
         "custom_details": {
@@ -83,23 +83,22 @@ The URL and supported payload are different based on the version of the PagerDut
 
 1. The default **Recovery Payload** will not work with Event API V2. Change it to the following:
   ```json
-  {
-	"routing_key": "{{RoutingKey}}",
-	"event_action": "resolve",
-	"dedup_key": "{{DedupKey}}",
-	"payload": {
-		"summary": "{{Name}} has recovered at {{TriggerTime}}",
-		"severity": "{{PayloadSeverity}}",
-		"source": "{{PayloadSource}}",
+	{
+	  "routing_key": "{{RoutingKey}}",
+	  "event_action": "resolve",
+	  "dedup_key": "{{DedupKey}}",
+	  "payload": {
+	  	"summary": "Monitor {{Name}} has recovered at {{TriggerTime}}",
+		"severity":"{{PayloadSeverity}}",
+		"source":"{{PayloadSource}}",
 		"custom_details": {
 			"name": "{{Name}}",
 			"time": "{{TriggerTimeRange}}",
 			"triggerCondition": "{{TriggerCondition}}",
-			"query": "{{Query}}",
-             		“triggerTimeSeries”: {{ResultsJson}}
-			}
-		}
-   }
+			"query": "{{Query}}"
+		      }	
+	     }
+	}
 
   ```
    * You can update the `details` section, if you want to customize the PagerDuty recovery notification. 
@@ -155,7 +154,8 @@ The URL and supported payload are different based on the version of the PagerDut
 		"name": "{{Name}}",
 		"time": "{{TriggerTimeRange}}",
 		"triggerCondition": "{{TriggerCondition}}",
-		"query": "{{Query}}"}
+		"query": "{{Query}}"
+	      }
     }
      ```
 
