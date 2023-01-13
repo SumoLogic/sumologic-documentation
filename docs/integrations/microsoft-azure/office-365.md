@@ -340,7 +340,7 @@ Shows the details of users, operations, IPs, client, logon types, and external a
 
 Shows the clients by locations and over time.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Office365-Exchange-MailboxAudit-ClientLocations.png')} alt="Microsoft Office 365 dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftOffice365/Office365-Exchange-MailboxAudit-ClientLocations.png')} alt="Exchange - Mailbox Audit - Client Locations" />
 
 **Worldwide Clients**. Performs a geo lookup operation to display worldwide client IP address locations on a map of the world for the last 24 hours.
 
