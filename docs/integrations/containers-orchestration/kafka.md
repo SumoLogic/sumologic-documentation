@@ -432,7 +432,7 @@ All monitors are disabled by default on installation, if you would like to enabl
 
 By default, the monitors are configured in a monitor folder called “Kafka”, if you would like to change the name of the folder, update the monitor folder name in this file.
 
-5. To send email or connection notifications, modify the file `notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See [this document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types.
+5. To send email or connection notifications, modify the file `notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See [this document](/docs/alerts/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types.
 
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [
