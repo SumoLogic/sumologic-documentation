@@ -105,7 +105,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ### Config Parameters
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | `name` | String | Yes | Type the desired name of the Source and it must be unique per Collector. This value is assigned to the `metadata field _source`.  | modifiable |
 | `description` | String  | No | Type the description of the Source. | modifiable |
 | `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
