@@ -576,8 +576,9 @@ Use this dashboard to:
 * Analyze CPU, Memory and disk utilization.
 * Examine Login activities, failures, and failure reasons.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-General-Health.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQL-Server/SQL-Server-Overview.png')} alt="Overview" />
 
+  
 ### General Health
 
 The **SQL Server - General Health** dashboard gives you the overall health of SQL Server.  Use this dashboard to analyze server events including stopped/up servers, and corresponding down/uptime, monitor disk space percentage utilization, wait time trend, app-domain issues by SQL server.
@@ -587,8 +588,9 @@ Use this dashboard to:
 * Monitor server events trends including SQL Server wait time.
 * Get insight into app-domain and percentage disk utilization issues by SQL Server.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-I-O.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-General-Health.png')} alt="General Health" />
 
+  
 ### I/O
 
 The **SQL Server - I/O** dashboard provides read and write bytes throughput by SQL Server.
@@ -596,8 +598,9 @@ The **SQL Server - I/O** dashboard provides read and write bytes throughput by S
 Use this dashboard to:
 * Analyze performance of SQL server by monitoring read and write bytes throughput of your SQL server instance.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Latency.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-I-O.png')} alt="I/O" />
 
+  
 ### Latency
 
 The **SQL Server - Latency** dashboard provides read and write latency trend by SQL Server.
@@ -605,7 +608,7 @@ The **SQL Server - Latency** dashboard provides read and write latency trend by 
 Use this dashboard to:
 * Analyze performance of SQL server by monitoring read and write latency of your SQL server instance.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Latency.png')} alt="Latency" />
 
 
 ### Operations
@@ -616,11 +619,10 @@ Use this dashboard to:
 * Get insights into configuration changes and updates to SQL server instance.
 * Monitor any errors and warnings.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Operations.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Operations.png')} alt="Operations" />
 
 
 ### Performance Counters
-
 
 The **SQL Server - Performance Counters** dashboard shows performance counters related to database activities, SQL statistics, and buffer cache.
 
@@ -628,8 +630,9 @@ Use this dashboard to:
 * Get insights into database activities such as errors/sec, lock timeouts/sec, and wait/sec, deadlocks/sec, and write transactions/sec.
 * Monitor important SQL statistics such as login/sec, logout/sec, sql compilations/sec, processes blocked and batch requests/sec.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Performance-Counters.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Performance-Counters.png')} alt="Performance Counters" />
 
+  
 ### Replication
 
 The **SQL Server - Replication** dashboard provides insights into SQL Server replication performance. Use this dashboard to monitor bytes sent and received from replica instance, transaction delays, and mirrored white transaction/sec.
@@ -638,7 +641,7 @@ Use this dashboard to:
 * Get insights into bytes sent to and received from replica instance.
 * Analyze transaction delays, and mirrored white transaction/sec.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Replication.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Replication.png')} alt="Replication" />
 
 
 ### Backup Restore Mirroring
@@ -651,7 +654,7 @@ The **SQL Server - Backup Restore Mirroring** provides information about:
 * Backup failures and reasons
 * Mirroring errors
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Backup-Restore-Mirroring.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Backup-Restore-Mirroring.png')} alt="Backup Restore Mirroring" />
 
 
 ## Microsoft SQL Server Alerts
