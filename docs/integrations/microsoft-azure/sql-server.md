@@ -35,19 +35,6 @@ Create the following Fields in Sumo Logic prior to configuring collection. This 
 
 <TabItem value="k8s">
 
-If you're using SQL Server in a non-Kubernetes environment, create the fields:
-* `component`
-* `environment`
-* `db_system`
-* `db_cluster`
-* `db_cluster_address`
-* `db_cluster_port`
-
-
-
-</TabItem>
-<TabItem value="non-k8s">
-
 If you're using SQL Server in a Kubernetes environment, create the fields:
 * `pod_labels_component`
 * `pod_labels_environment`
@@ -55,8 +42,17 @@ If you're using SQL Server in a Kubernetes environment, create the fields:
 * `pod_labels_db_cluster`
 * `pod_labels_db_cluster_address`
 * `pod_labels_db_cluster_port`
-  
 
+</TabItem>
+<TabItem value="non-k8s">
+
+If you're using SQL Server in a non-Kubernetes environment, create the fields:
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `db_cluster_address`
+* `db_cluster_port`
 
 </TabItem>
 </Tabs>
@@ -513,7 +509,7 @@ connection_notifications = [
 
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to this [document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
+For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
 
 ```sql title="Email Notifications Example"
 email_notifications = [
@@ -578,7 +574,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQL-Server/SQL-Server-Overview.png')} alt="Overview" />
 
-  
+
 ### General Health
 
 The **SQL Server - General Health** dashboard gives you the overall health of SQL Server.  Use this dashboard to analyze server events including stopped/up servers, and corresponding down/uptime, monitor disk space percentage utilization, wait time trend, app-domain issues by SQL server.
@@ -590,7 +586,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-General-Health.png')} alt="General Health" />
 
-  
+
 ### I/O
 
 The **SQL Server - I/O** dashboard provides read and write bytes throughput by SQL Server.
@@ -600,7 +596,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-I-O.png')} alt="I/O" />
 
-  
+
 ### Latency
 
 The **SQL Server - Latency** dashboard provides read and write latency trend by SQL Server.
@@ -632,7 +628,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Performance-Counters.png')} alt="Performance Counters" />
 
-  
+
 ### Replication
 
 The **SQL Server - Replication** dashboard provides insights into SQL Server replication performance. Use this dashboard to monitor bytes sent and received from replica instance, transaction delays, and mirrored white transaction/sec.
