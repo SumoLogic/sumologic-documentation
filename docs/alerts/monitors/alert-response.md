@@ -81,7 +81,10 @@ The top of the page provides several details and buttons.
 * **F** - opens the playbook associated with this Monitor. Playbooks allow admins to codify tribal knowledge for an on-call so they know what exactly to do when they receive an alert.<br/> ![playbook example.png](/img/monitors/playbook-example.png)<br/>
     You have the option to provide a playbook when creating a Monitor, as shown in the below image. Markdown is supported.<br/>  ![Montor playbook input.png](/img/monitors/monitor-playbook-input.png)
 * **G** - opens the Monitor that generated this alert.
-* **H** - resolves the Alert. This will also resolve the Monitor that generated the alert. The Monitor will fire again when the alert condition is met.<br/> ![alert page sep 23.png](/img/monitors/alert-page.png)
+* **H** - resolves the Alert. This will also resolve the Monitor that generated the alert. The Monitor will fire again when the alert condition is met. <br/>
+:::note
+Sumo Logic also resolves the alert automatically, when the recovery condition defined on the monitor is met. This behavior is not configurable (i.e., you cannot prevent Sumo Logic from disabling a monitor). Although technically you can set a recovery condition that will never allow Sumo Logic to recover a monitor, this is not recommended because it will suppress unrelated alerts from getting fired.
+::: <br/>![alert page sep 23.png](/img/monitors/alert-page.png)
 * **K** - a panel with Related Alerts and the Monitor History. The exclamation mark indicates the alert is still active and a white checkmark in the gray circle indicates it's resolved.
   * **Related Alerts** shows other alerts in the system that were triggered around the same time as this alert. This information is helpful to know what issues are happening in the system and whether the current problem is an isolated issue or a more systemic one. There are two types of relations that a related alert can have.<br/> ![related alerts.png](/img/monitors/related-alerts.png)
     * **Time**: Shows all the alerts that were triggered 30 minutes before or after the given alert that doesn't have another association.
