@@ -56,7 +56,7 @@ To set up a ServiceNow Webhook connection:
 1. Click **Save**.
 1. To send alerts to this connection, follow these steps:
    1. [Testing the connection](set-up-connections.md).
-   1. [Create a Monitor](~/docs/alerts/monitors/create-monitor.md).
+   1. [Create a Monitor](/docs/alerts/monitors/create-monitor).
 
 ## Test the connection
 
