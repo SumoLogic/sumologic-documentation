@@ -124,18 +124,18 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
     prometheus.io/scrape: "true"
     prometheus.io/port: "9273"
     telegraf.influxdata.com/inputs: |+
-[[inputs.rabbitmq]]
-url = "http://localhost:15672"
-username = "<username_CHANGE_ME>"
-password = "<password_CHANGE_ME>"
-insecure_skip_verify = false
-queue_name_include = []
-queue_name_exclude = []
-[inputs.rabbitmq.tags]
-     environment="prod_CHANGE_ME"
-     component="messaging"
-     messaging_system="rabbitmq"
-     messaging_cluster="rabbitmq_on_k8s_CHANGE_ME"
+      [[inputs.rabbitmq]]
+        url = "http://localhost:15672"
+        username = "<username_CHANGE_ME>"
+        password = "<password_CHANGE_ME>"
+        insecure_skip_verify = false
+        queue_name_include = []
+        queue_name_exclude = []
+      [inputs.rabbitmq.tags]
+        environment="prod_CHANGE_ME"
+        component="messaging"
+        messaging_system="rabbitmq"
+        messaging_cluster="rabbitmq_on_k8s_CHANGE_ME"
 ```
 
 Please enter values for the following parameters (marked in **`CHANGE_ME`** above):

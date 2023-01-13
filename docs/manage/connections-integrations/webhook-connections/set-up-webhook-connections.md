@@ -4,6 +4,8 @@ title: Set Up Webhook Connections
 description: Webhook connections allow you to send Sumo Logic alerts to third-party applications.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 A Webhook is an HTTP callback: an HTTP POST that occurs when something happens. Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks.
 
 For example, once you set up a webhook connection in Sumo Logic and create a scheduled search, you can send an alert from that scheduled
@@ -39,7 +41,7 @@ The first step in integrating webhooks with Sumo Logic is to configure one or mo
 
 To set up a webhook connection:
 
-1. Go to **Manage Data** \> **Monitoring** \> **Connections**.
+1. Go to **Manage Data** > **Monitoring** > **Connections**.
 1. On the **Connections** page click the **+** button on the top right of the table.
 1. Click **Webhook**.
 1. In the **Create Connection** dialog, enter the **Name** of the connection.
@@ -50,11 +52,13 @@ To set up a webhook connection:
     :::
 1. (Optional) If the third-party system requires an **Authorization Header**, enter it here. For more information, see [Example Authorization Header](#example-authorization-header) below.
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
-1. For **Payload**, enter a JSON object in the format required by the target webhook URL. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](#webhook-payload-variables), below. When using a generic webhook connection for notifications in a [Monitor](/docs/alerts/monitors) you can distinguish between an alert and a recovery by using the [alert variable](../../../alerts/alert-variables.md) `TriggerType`. An alert will have a value of either `Critical` , `Warning`, or `Missing ``Data`. Recovery will have either `CriticalResolved`, `WarningResolved`, or `Missing Data Resolved`. The same payload for both alerts and recovery is used.
+1. (Optional) Under **Alert Payload**, which allows you to customize how the alert notification will look, enter a JSON object in the format required by the target endpoint. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](#webhook-payload-variables), below. <br/><img src={useBaseUrl('img/connection-and-integration/alert-payload.png')} alt="recovery payload" />
     :::note
     Variables are escaped according to the JSON standard, meaning that they can be used in application JSON. 
     :::
-1. Click **Save**.
+    You can test your customized alert payload by clicking **Test Alert Payload**, which will fire a sample webhook call to the given endpoint.
+1. (Optional) Under **Recovery Payload**, which allows you to customize how the recovery notification will look, enter a JSON object in the format required by the target webhook URL.<br/><img src={useBaseUrl('img/connection-and-integration/recovery-payload.png')} alt="recovery payload" /><br/>Example:<br/><img src={useBaseUrl('img/connection-and-integration/recovery-payload-example.png')} alt="recovery payload" /><br/>Clicking **Test Alert + Recovery Payload** will test your recovery alert payload by firing a sample webhook call to the given endpoint.
+1. Click **Save**.
 1. When you're ready, create a [scheduled search](schedule-searches-webhook-connections.md) to send alerts to this connection.
 
 ## Configure Webhook payload variables
