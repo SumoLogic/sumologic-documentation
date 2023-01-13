@@ -60,7 +60,7 @@ To set up a ServiceNow Security Incident Webhook connection:
     ![serviceNow webhook configuration.png](/img/connection-and-integration/serviceNow-webhook-configuration.png)
 
 1. Click **Save**.
-1. After configuring the connection, continue with [Testing the connection](#testing-the-connection), then [create a scheduled search](../webhook-connections/schedule-searches-webhook-connections.md) to send alerts to this connection.
+1. After configuring the connection, continue with [Testing the connection](#testing-the-connection), then [create a scheduled search](/docs/alerts/webhook-connections/schedule-searches-webhook-connections) to send alerts to this connection.
 
 ## Testing the connection
 
