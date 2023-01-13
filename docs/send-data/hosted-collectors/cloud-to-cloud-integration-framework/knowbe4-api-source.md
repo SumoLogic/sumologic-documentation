@@ -19,7 +19,7 @@ Before you begin setting up your **KnowBe4** Source, which is required to connec
 
 ### Base URL
 
-The **Base URL** is the URL where your **KnowBe4** account is located  To get the base URL, follow the steps below:
+The **Base URL** is the URL where your **KnowBe4** account is located. To get the base URL, follow the steps below:
 1. Log in to the **KnowBe4** application.
 2. At the top of the browser, you will see the **Base URL** inside the address bar.
 3. Choose the Base URL from the table below. The following table contains the base URLs based on the location of your **KnowBe4** account:
