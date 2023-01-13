@@ -15,10 +15,7 @@ To access the Knowbe4 API, you must have either the Platinum or Diamond user pla
 
 ## Prerequisites
 
-The KnowBe4 Source requires the following information to connect to KnowBe4 API:
-Before you begin setting up your **KnowBe4**** Source, the integration must be configured with the **Base URL** and **KnowBe4 API Token**.
-1. Base URL
-2. API Token
+Before you begin setting up your **KnowBe4** Source, which is required to connect to the KnowBe4 API, you'll need to configure your integration with the **Base URL** and **KnowBe4 API Token**.
 
 ### Base URL
 
