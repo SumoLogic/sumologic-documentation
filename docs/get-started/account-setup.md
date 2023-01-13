@@ -9,6 +9,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can review and update your account settings at any time through the **Preferences** page.
 
+## Forgot Password
+
+Forgot your password? You can also reset it from the login screen. <br/><img src={useBaseUrl('img/get-started/reset-password.png')} alt="reset-password" width="450"/>
+
 ## Update Your Email Address
 
 As a Sumo Logic user, you can change your own email address as necessary.
@@ -28,11 +32,6 @@ To change your password:
 1. Click **Change Password**.
 1. Enter your current password, and then enter the new password twice to verify it.<br/>  ![Change Password](/img/get-started/change-password2.png)
 1. Click **Submit** to finish resetting your password.
-
-## Forgot Password
-
-Forgot your password? You can also reset it from the login screen. <br/><img src={useBaseUrl('img/get-started/reset-password.png')} alt="reset-password" width="450"/>
-
 
 ## Preferences
 
