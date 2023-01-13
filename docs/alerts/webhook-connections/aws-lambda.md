@@ -18,7 +18,7 @@ When you have created the Invoke URL, copy and paste it into a notepad. You will
 ## Create a Webhook connection
 
 :::note
-You need the **Manage connections** [role capability](../../users-roles/roles/role-capabilities.md) to create webhook connections.
+You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
 :::
 
 Configure the webhook connection to trigger the AWS Lambda function.

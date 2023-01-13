@@ -48,10 +48,10 @@ To set up a ServiceNow Webhook connection:
     :::
 1. **Authentication** can be done with a **Username and Password** or an **Authorization Header**.
    * Use the **Username** and **Password** used to log in to **ServiceNow**.
-   * See how to set an [Authorization Header](../webhook-connections/set-up-webhook-connections.md).
+   * See how to set an [Authorization Header](/docs/alerts/webhook-connections/set-up-webhook-connections).
 1. Set the **Type** to **Events** or **Incidents** based on what you want to create. This needs to align with the **URL** you provided.
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
-1. For **Alert Payload**, which allows you to customize how the alert notification look in ServiceNow, enter a JSON object that defines the structure of what you want to send to ServiceNow. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](../webhook-connections/set-up-webhook-connections.md). 
+1. For **Alert Payload**, which allows you to customize how the alert notification look in ServiceNow, enter a JSON object that defines the structure of what you want to send to ServiceNow. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](/docs/alerts/webhook-connections/set-up-webhook-connections). 
 1. For **Recovery Payload**, which allows you to customize how the recovery notification look in ServiceNow, enter a JSON object that defines the structure of what you want to send to ServiceNow. 
 1. Click **Save**.
 1. To send alerts to this connection, follow these steps:

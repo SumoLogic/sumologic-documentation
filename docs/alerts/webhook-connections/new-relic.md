@@ -18,7 +18,7 @@ Once you set up the webhook connection, you'll have the option to use it in a�
 
 ## Set up a webhook connection for New Relic
 
-You need the **Manage connections** [role capability](../../users-roles/roles/role-capabilities.md) tocreate webhook connections.
+You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
 
 1. Go to **Manage Data \> Monitoring \> Connections**.
 1. On the Connections page click **Add**.
