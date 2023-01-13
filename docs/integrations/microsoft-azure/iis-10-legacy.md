@@ -530,13 +530,10 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 You can use filters to drill down and examine the data on a granular level.
 
-
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 
-
 ### Overview Dashboard
-
 
 The **IIS 10 - Overview Dashboard** provides a high-level view of the performance and integrity of your Microsoft Internet Information Services (IIS) infrastructure. Dashboard panels display visual graphs and detailed information on IIS versions, platforms, and log formats. Panels also show visitor geographic locations, top app requests. OS platforms, response status, response times, and client and server errors.
 
@@ -544,7 +541,7 @@ Use this dashboard to:
 * Use this dashboard to get a high-level overview of sites, requests, client location, client platforms, error and threats identified.
 * Drill Down to specific use cases by clicking on specific panels of interest.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS_10/IIS10_Overview.png')} alt="Overview Dashboard" />
 
 
 ### HTTP Error Dashboard
@@ -556,31 +553,24 @@ Use this dashboard to:
 * Identify the reason for failure. Check if the request violated the HTTP protocol, or if there was a WAS/the application pool failure.
 * Correct the error identified to ensure a consistent and satisfactory user experience.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS_10/IIS10_HTTPERR.png')} alt="HTTP Error Dashboard" />
 
 
 ### Performance Snapshot Dashboard
-50
-
 
 The **IIS 10 - Performance Snapshot Dashboard** provides detailed information on your IIS infrastructure integrity and performance. Dashboard panels show details on Web Service uptime, active connections, requests, user activity, and total bytes transferred. Panels also provide HTTP Service Request Queues details, such as arrivals, queue size, cache hit rate, and rejection rate.
 
 Use this dashboard to:
-
-
-
 * Monitor incoming request traffic, along with queue size and rejection rate to identify any bottlenecks.
 * Monitor cache hit rates to check how requests are being served. Typically static content has high cache hit rates.
 * Monitor current active connections to track sudden rises in connections. A sudden rise results in increased resource requirements. A sudden rise may also indicate security attack.
 * Monitor the load on your site by looking into the rate of all the requests and rates based on specific types of HTTP methods, to anticipate resource needs and allocate them accordingly.
 * Monitor Bytes/Files transferred, to check if there is a need to make page content more lightweight, or track the most typically transferred high data content. This can also be an indicator of a potential spike in traffic.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS_10/IIS10_Performance.png')} alt="Performance Snapshot Dashboard" />
 
 
 ### Performance Trends Dashboard
-52
-
 
 The **IIS 10 - Performance Trends Dashboard** provides details on ISS infrastructure trends for requests, active connections, bytes received and sent, files received and sent, queue size, arrival rate, and cache hit rate.
 
@@ -588,8 +578,7 @@ Use this dashboard to:
 * Monitor trends of various metrics to keep track of how requests are served over time and anticipate potential performance bottlenecks.
 * Acquire current performance snapshots of IIS servers. You can drill down to the Performance Snapshot by clicking the Requests Per Sec (All methods) panel.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
-
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS_10/IIS10_Performance_Trends.png')} alt="Performance Trends Dashboard" />
 
 
 ### Threat Analysis Dashboard
@@ -603,106 +592,75 @@ Use this dashboard to:
     * referred by bad referrer
     * your own webpage is page is tagged as malicious by CrowdStrike
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS_10/IIS10_Threat_Analysis.png')} alt="Threat Analysis Dashboard" />
 
 
 ### Server Operation - Errors Dashboard
-56
-
 
 The **IIS 10 - Server Operation - Errors Dashboard** provides visual graphs and detailed information on server operation errors in your IIS infrastructure. Dashboard panels show server errors by server, server errors over time, server error outliers, and redirections by server. Panels also show client errors by server, client error outliers, top URLS with 404 errors, and response codes over time.
 
 Use this dashboard to:
-
-
-
 * Monitor server errors (5xx), client errors (4xx) and redirections (3xx). Client errors indicate missing/error pages, user made some mistakes and needs clear direction to fix it. Server errors indicate some issues on the server end.
 * Analyze redirection codes. Redirection indicates the document requested has moved and server is redirecting to new location. An SEO expert will be interested in 302 redirection code.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
-
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS_10/IIS10_Server_Operation_Errors.png')} alt="Server Operation - Errors Dashboard" />
 
 
 ### Server Operation - Requests and Response Time Dashboard
-58
-
 
 The **IIS 10 - Server Operation - Requests and Response Time Dashboard** provides visual graphs and detailed information for the integrity of performance throughout your IIS infrastructure. Dashboard panels show response time averages, cumulative percentiles, histograms, and outliers. Panels also show details for traffic distribution, slowest pages, slowest GET and POST requests, and average redirection time.
 
 Use this dashboard to:
-
-
-
 * Monitor response time details of each request. An increase in response time is a major cause for user dissatisfaction with any website.
 * Diagnose the reason(s) for the deterioration in performance, in conjunction with the Performance dashboards.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
-
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS_10/IIS10_Server_Operation_Requests_and_Response_Time.png')} alt="Server Operation - Requests and Response Time Dashboard" />
 
 
 ### Server Operation - Requests Stats Dashboard
-60
-
 
 The **IIS 10 - Server Operation - Requests Stats Dashboard** provides visual graphs and statistics for requests made throughout your IIS infrastructure. Dashboard panels show the number of requests, request methods, request outliers, and requests by server. Panels also show details on GET, PUT, POST, and DELETE requests, as well as requests time compare and unique visitors outlier.
 
 Use this dashboard to:
-
-
-
 * Monitor the load on your site for all requests, based on specific type of HTTP request and by server. This information allows you to efficiently allocate resources.
 * Identify outliers in requests.
 * Analyze request volume trends are against last 7 days to understand business fluctuations.
 * Identify how you are acquiring unique users with unique client outliers, and compare with positive and negative outliers.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
-
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS_10/IIS10_Server_Operation_Requests_Stats.png')} alt="Server Operation - Requests Stats Dashboard" />
 
 
 ### Traffic Insights - Apps and Requests Dashboard
-62
-
 
 The **IIS 10 - Traffic Insights - Apps and Requests Dashboard** provides high-level views and details on app requests throughout your IIS network. Dashboard panels show top app requests, app requests over time, top queries, and top referrers. Panels also show top user requests, user request percentiles, top clients, client request percentiles, and client IP stats.
 
 Use this dashboard to:
-
-
-
 * Monitor applications configured on a site and the most popular applications used by clients.
 * Monitor Referrers of a site to know when to analyze marketing campaigns and advertising strategies.
 * Monitor the most active clients with details on total requests, unique pages visited, and HTTP codes.
 * Understand client activities and behavior to determine frequency of visits and number of pages visited, to plan strategies.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
-
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS_10/IIS10_Traffic_Insights_Apps_and_Requests.png')} alt="Traffic Insights - Apps and Requests Dashboard" />
 
 
 ### Traffic Insights - Content and Client Platform Dashboard
-64
-
 
 The **IIS 10 - Traffic Insights - Content and Client Platform Dashboard** provides detailed information on the platforms available on your IIS network and its media traffic. Dashboard panels show details on operating systems, platform versions, as well as the browsers used on the various operating systems. Panels also show the top media types served, media types requested over time, and the top requested pages.
 
 Use this dashboard to:
-
-
-
 * Monitor the location of data with IP addresses to personalize your site and pages personalized for any given location.
 * Monitor operating systems (OS), browsers, and bots information available in user agents to analyze marketing campaigns and customer engagement. It also helps you to prioritize where engineering, support, and documentation teams should concentrate their efforts.
 * Find out which pages and file types are the most popular for your web site clients.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
-
-
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS_10/IIS10_Traffic_Insights_Content_and_Client_Platform.png')} alt="Traffic Insights - Content and Client Platform Dashboard" />
 
 
 ### Visitor Insights Dashboard
 
 The **IIS 10 - Visitors Insights Dashboard** provides at-a-glance details on visitors to your IIS network. Dashboard panels show the geographic distribution of worldwide visitors, United States visitors, visitor locations experiencing the highest number of errors, and the top visitors experiencing errors. Panels also show trends in visitors by country over time and trends in visitors by US region over time.
 
-Use this dashboard to:*
+Use this dashboard to:
 * Monitor the client location of visitors ti your site. This helps you to determine if you are getting hits from unexpected locations that should be tracked for security.
 * Monitor which clients are experiencing HTTP Client Errors (4XX). 4xx are user errors and should clearly state what the nature of the error and how it can be avoided in the future.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS_10/IIS10_Visitor_Insights.png')} alt="Visitor Insights Dashboard" />

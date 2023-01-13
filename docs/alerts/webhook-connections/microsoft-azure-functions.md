@@ -32,7 +32,7 @@ First, create an HTTP-triggered Azure function. For more information, see [Azure
 
 ## Create a Webhook connection
 
-You need the **Manage connections** [role capability](../../users-roles/roles/role-capabilities.md) to create webhook connections.
+You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
 
 Configure the Webhook connection to trigger the Azure function:
 

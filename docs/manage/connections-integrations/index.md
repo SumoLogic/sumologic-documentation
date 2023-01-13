@@ -10,7 +10,7 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 <img src={useBaseUrl('img/icons/operations/integration.png')} alt="icon" width="50"/>
 
-To access [Webhook Connections](/docs/manage/connections-integrations/webhook-connections), [ServiceNow Connections](/docs/manage/connections-integrations/servicenow), and more integrations, go to **Manage Data > Monitoring > Connections**.
+To access [ServiceNow Connections](/docs/manage/connections-integrations/servicenow) and [webhook alert integrations](/docs/alerts/webhook-connections), go to **Manage Data** > **Monitoring** > **Connections**.
 
 <img src={useBaseUrl('img/connection-and-integration/connections.png')} alt="connections" />
 
