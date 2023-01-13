@@ -57,7 +57,7 @@ When a Sysdig Monitor Source is created, it goes through the following states:
 1. **Started**. A collection task is created on the Hosted Collector.
 1. **Initialized**. The task configuration is complete in Sumo Logic.
 1. **Authenticated**. The Source successfully authenticated with Sysdig Monitor.
-1. **Collecting**. The Source is actively collecting data from SysDIG Monitor.
+1. **Collecting**. The Source is actively collecting data from Sysdig Monitor.
 
 If the Source has any issues during any one of these states, it is placed in an **Error** state. When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events.md) to investigate issues with collection.<br/>![Azure Event Hubs error.png](/img/send-data/Azure-Event-Hubs-error.png)
