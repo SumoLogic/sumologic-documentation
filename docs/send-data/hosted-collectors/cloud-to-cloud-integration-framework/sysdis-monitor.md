@@ -14,7 +14,7 @@ Before you begin setting up your **Sysdig Monitor** Source, the integration must
 
 ### Base URL
 
-The **Base URL** is the URL where your Sysdig-Monitor account is located  To get the base URL, follow the steps below:
+The **Base URL** is the URL where your Sysdig Monitor account is located. To get the base URL, follow the steps below:
 1. Log in to the Sysdig Monitor application.
 2. At the top of the browser, you will see the Base URL inside the address bar. <br/> <img src={useBaseUrl('img/send-data/sysdig-base-url.png')} alt="sysdig-base-url.png" width="850" />
 3. The following table contains the base URLs based on the location of your **Sysdig Monitor** account:
