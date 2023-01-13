@@ -5,9 +5,9 @@ sidebar_label: AWS Lambda
 description: You can trigger an AWS Lambda function directly from a Sumo Logic alert by configuring a webhook connection.
 ---
 
-You can trigger an AWS Lambda function directly from a Scheduled Search or Monitor by configuring a webhook connection. You can use the Webhook Connection as the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md) or the Connection Type in a [Monitor](/docs/alerts/monitors).
+You can trigger an AWS Lambda function directly from a Monitor or Scheduled Search by configuring a webhook connection. You can use the Webhook Connection as the Connection Type in a [Monitor](/docs/alerts/monitors) or the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md).
 
-For example, you can create a Scheduled Search that triggers a Lambda function when too many requests are received from a suspicious IP address. The Lambda function can shut down additional requests from that IP address, while simultaneously sending a notification to the security team for review.
+For example, you can create a Monitor that triggers a Lambda function when too many requests are received from a suspicious IP address. The Lambda function can shut down additional requests from that IP address, while simultaneously sending a notification to the security team for review.
 
 ## Build an API in the API Gateway to expose a Lambda function
 
@@ -37,7 +37,7 @@ Configure the webhook connection to trigger the AWS Lambda function.
     * **Region.** Select your region.
     * **Service Name.** Enter **execute-api** as the service name.
     * (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
-    * **Payload.** Enter a JSON object in the format required. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md) . 
-
-1. Click **Test Connection**. If the connection is made, you will see a 200 OK response message.
+    * **Alert Payload,** Under Alert Payload, which allows you to customize the alert notification, enter a JSON object accepted by your Lambda function. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
+    * **Recovery Payload,** Under Recovery Payload, which allows you to customize the recovery notification, enter a JSON object accepted by your Lambda function. 
+1. Click **Test Alert or Test Recovery**. If the connection is made to your Lambda function successfully, you will see a 200 OK response message.
 1. Click **Save**.

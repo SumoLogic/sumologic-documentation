@@ -52,13 +52,13 @@ To set up a webhook connection:
     :::
 1. (Optional) If the third-party system requires an **Authorization Header**, enter it here. For more information, see [Example Authorization Header](#example-authorization-header) below.
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
-1. (Optional) Under **Alert Payload**, which allows you to customize how the alert notification will look, enter a JSON object in the format required by the target webhook URL. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](#webhook-payload-variables), below. An alert will have a value of `Critical`, `Warning`, or `Missing Data`. Recovery will have `CriticalResolved`, `WarningResolved`, or `Missing Data Resolved`. <br/><img src={useBaseUrl('img/connection-and-integration/alert-payload.png')} alt="recovery payload" />
+1. (Optional) Under **Alert Payload**, which allows you to customize how the alert notification will look, enter a JSON object in the format required by the target endpoint. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](#webhook-payload-variables), below. <br/><img src={useBaseUrl('img/connection-and-integration/alert-payload.png')} alt="recovery payload" />
     :::note
     Variables are escaped according to the JSON standard, meaning that they can be used in application JSON. 
     :::
     You can test your customized alert payload by clicking **Test Alert Payload**, which will fire a sample webhook call to the given endpoint.
-1. (Optional) Under **Recovery Payload**, you can customize your resolution notification payload JSON for an alert.<br/><img src={useBaseUrl('img/connection-and-integration/recovery-payload.png')} alt="recovery payload" /><br/>Example:<br/><img src={useBaseUrl('img/connection-and-integration/recovery-payload-example.png')} alt="recovery payload" /><br/>Clicking **Test Alert + Recovery Payload** will test your recovery alert payload by firing a sample webhook call to the given endpoint.
-1. Click **Save**.
+1. (Optional) Under **Recovery Payload**, which allows you to customize how the recovery notification will look, enter a JSON object in the format required by the target webhook URL.<br/><img src={useBaseUrl('img/connection-and-integration/recovery-payload.png')} alt="recovery payload" /><br/>Example:<br/><img src={useBaseUrl('img/connection-and-integration/recovery-payload-example.png')} alt="recovery payload" /><br/>Clicking **Test Alert + Recovery Payload** will test your recovery alert payload by firing a sample webhook call to the given endpoint.
+1. Click **Save**.
 1. When you're ready, create a [scheduled search](schedule-searches-webhook-connections.md) to send alerts to this connection.
 
 ## Configure Webhook payload variables
