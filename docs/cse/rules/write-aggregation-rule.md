@@ -5,6 +5,7 @@ sidebar_label: Aggregation Rule
 description: Learn how to write an Aggregation rule.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has information about CSE Aggregation rules and how to write them.
 
@@ -33,37 +34,30 @@ The table below summarizes the rule configuration. Each row corresponds to an el
 
 The screenshot below shows the **If Triggered** configuration for the example rule in the Rules Editor. 
 
-![agg-rule.png](/img/cse/agg-rule.png)
+<img src={useBaseUrl('img/cse/agg-rule.png')} alt="agg-rule.png" width="400"/>
 
 ## Create an Aggregation rule
 
 1. Select **Rules** from the Content menu.
-1. On the **Create a Rule** page, click **Create** in the **Aggregation** card.
-
-    ![select-rule-type.png](/img/cse/select-rule-type.png)
+1. On the **Create a Rule** page, click **Create** in the **Aggregation** card. <br/><img src={useBaseUrl('img/cse/select-rule-type.png')} alt="agg-rule.png" width="700"/>
 1. In the rules editor:
-
    1. **Name**. At the top of the Rules Editor, enter a name for the rule. Signals fired by the rule will have the same name as the rule.
    1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.   
 
 ## Configure “If Triggered” settings
 
-On the left side of the Rules Editor, in the **If Triggered** section, you configure a filter that determines the Records to which the rule will be applied, and the conditions under which you want the rule to fire a Signal. Here’s the UI before any entries have been made:
-
-![agg-rule-if-triggered.png](/img/cse/agg-rule-if-triggered.png)
-
+On the left side of the Rules Editor, in the **If Triggered** section, you configure a filter that determines the Records to which the rule will be applied, and the conditions under which you want the rule to fire a Signal. Here’s the UI before any entries have been made: <br/><img src={useBaseUrl('img/cse/agg-rule-if-triggered.png')} alt="agg-rule-if-triggered.png" width="400"/>
 1. **When Records matching the expression**. Enter one or more boolean expressions to filter the Records you want to apply the rule to. For example: `!isNull(http_response_statusCode)`
 1. **grouped by**. Specify the Record field or fields by which aggregation results will be grouped. Note that when you define the **On Entity** field for the rule (in [Configure “Then Create a Signal” settings](#write-an-aggregation-rule) below), the field you choose will automatically appear here. If you want to aggregate on other fields, you can select them from the selector list.
 1. **Within**. Select the length of time across which the rule is applied. The options range from 5 minutes to 5 days.
 1. **have aggregations**. To define an aggregation:
-
    1. **Name**. Give the aggregation a brief, meaningful name. You’ll reference the aggregation by its name in the trigger condition for the rule.
    1. **Function**. Select an aggregation function: `avg`, `count`, `count_distinct`, `first`, `last`, `max`, `min`, or `sum`.
-   1. **Expression**. Enter an expression to filter the Records to be aggregated. For example, the following expression results in the aggregation being applied to Record whose `http_response_statusCode` field is greater than 201. `http_response_statusCode > 201`
-
-        :::note
-        The expression you enter should make sense with the aggregation function you chose. Specifically, if your aggregation function is `count` or `count_distinct`, your expression should return countable results, like the example above. However, if you use another aggregation function—`avg`, `first`, `last`, `max`, `min`, or `sum`--your expression should be a field name, for example: `bytes` or `if(!isEmpty(bytes), bytes, bits)`, and the function will be applied to the value of that field.
-        :::
+   1. **Expression**. Enter an expression to filter the Records to be aggregated. For example, the following expression results in the aggregation being applied to Record whose `http_response_statusCode` field is greater than 201:<br/>
+   `http_response_statusCode > 201`
+   :::note
+    The expression you enter should make sense with the aggregation function you chose. Specifically, if your aggregation function is `count` or `count_distinct`, your expression should return countable results, like the example above. However, if you use another aggregation function—`avg`, `first`, `last`, `max`, `min`, or `sum`--your expression should be a field name, for example: `bytes` or `if(!isEmpty(bytes), bytes, bits)`, and the function will be applied to the value of that field.
+    :::
    1. To define another aggregation, click **Add Aggregation** and repeat the previous three steps.
 1. **that match the following condition**. Enter one or more boolean expressions, based on the results of the configured aggregations, which when true will cause the rule to fire a Signal. For example, given the following expression, a rule will fire a Signal when the sum of `Aggregation-1` and `Aggregation-2` is greater than 1.  `Aggregation-1 + Aggregation-2 > 1`
 
@@ -82,15 +76,34 @@ If you use the Test Rule feature on a rule that has one or more [Rule Tuning Exp
 
 On the right side of the Rules Editor, in the **Then Create a Signal** section, you configure details of the Signals that your rule will fire. Here’s the UI before any entries have been made:
 
-![then-create-a-signal.png](/img/cse/then-create-a-signal.png)
+<img src={useBaseUrl('img/cse/then-create-a-signal.png')} alt="then-create-a-signal.png" width="400"/>
 
 1. **On Entity**. Use the pull-down list to select one or more Entity fields, for example an IP address, MAC address, hostname, and so on. When the rule is triggered, it will fire a Signal on each of the Entity fields you select.  
 1. **with the summary**. 
 1. **with the description**. Enter a description for the Signal. The Signal description should be a good indication of what the rule looks for.
-1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). There are two ways to specify Severity.
-   * **with a constant severity**. Choose constant, and select a severity level.
-   * **with a dynamic severity**. Use dynamic if you want to base the severity level on a value of a field in the Record. Select a field from the list. 
-1. **with tags**. If desired, you can add metadata tags to your rule. Tags are useful for adding context to items like Rules, Insights, Signals, Entities. You can also search for and filter items by tag. For more information, see [Using Tags with Insights, Signals, Entities, and Rules](../records-signals-entities-insights/tags-insights-signals-entities-rules.md).
+1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). There are two ways to specify Severity:
+   * **Constant**. Every Signal that the rule fires will have the same severity,
+   * **Dynamic**. Severity is based on the value of a field in the Record.
+1. **Configure constant severity**. Choose **Constant**, and select a severity level. Then, proceed to Step 7. <br/><img src={useBaseUrl('img/cse/constant-severity.png')} alt="constant-severity.png" width="325"/>
+1. **Configure dynamic severity**.
+   1. Choose **Dynamic**.
+   1. The severity area updates. <br/><img src={useBaseUrl('img/cse/dyamic-severity-field.png')} alt="dyamic-severity-field.png" width="450"/>
+   1. **severity of**. Use the pulldown to select a default severity value.
+   1. **for the record field**. Use the down arrows to display a list of fields, and select one.  The dynamic severity will be based on the value of (or existence of) that field in the Record that matched the rule expression.
+   1. The **Add More Mappings** option appears. <br/><img src={useBaseUrl('img/cse/add-more-mappings.png')} alt="add more mappings" width="450"/>
+   1. **Click Add More Mappings**. (Optional) You can define additional mappings if desired. If you don’t, the severity value will be the value of the Record field you selected above.
+   1. The **if the value is** option appears.<br/><img src={useBaseUrl('img/cse/if-the-value-is.png')} alt="if-the-value-is.png" width="450"/>
+   1. Select one of the following options:
+      * **equal to**. The Record field’s value must exactly match the string or numeric value you supply. For example "equal to 4" will match "4" and “4.0” but not “4.01”.
+      * **less than**. The Record field’s value must be less than the numeric value you supply. The match is not inclusive. For example "less than 5" will match “4.9” but not “5”.
+      * **greater than**. The Record field’s value must be greater than the numeric value you supply. The match is not inclusive. For example "greater than “5" will match “5.1”, but not “5”.
+      * **between**. The Record field’s value must be between the two numeric values you supply. The match is inclusive. For example, "Between 5 and 10" will match “5”, “7”, or “10”, but not “10.1”.
+      * **not in the record**. Will match when the attribute is found in the Record. For example, if the selected field is `broirc_value`, and that field is not present in a Record, the rule will match. If `broirc_value` exists but is null or empty, the rule will not match.
+   1. You can define additional conditions, as desired. To define an additional conditions, repeat the steps above, starting with **Add More Mappings**.
+   :::note
+   The conditions you define will be processed in the order you define them. Once a match occurs, processing stops–remaining conditions are ignored.
+   :::
+1. **with tags**. If desired, you can add metadata tags to your rule. Tags are useful for adding context to items like Rules, Insights, Signals, Entities. You can also search for and filter items by tag. Tags you set here will be automatically set on any Signals created from this rule, and inherited by any insights generated from those signals.
 
 ### Save as prototype 
 If you are not sure that your rule is ready for prime time, you can save it as a prototype. A prototype rule generates Signals, but those Signals won't contribute to Insights. (Signals generated by a prototype rule do not increment the rule's **On Entity** entity's Activity Score.) Running the rule as a prototype for a while allows you to determine whether the rule is too noisy and fires too many Signals.
