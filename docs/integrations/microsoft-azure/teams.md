@@ -88,26 +88,28 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing Microsoft Teams Dashboards  
 
+### Overview
+
 The Teams - Overview dashboard provides an at-a-glance view of the state of your Teams environment in terms of user sessions, teams and channel activity, and user role changes
 
 Use this dashboard to:
-* Identify user sessions relative to their locations
-* Report the top users creating teams and channels
-* Identify the top team bots and channels connectors being used
-* Report on the top users and objects relative to role changes
+* Identify user sessions relative to their locations.
+* Report the top users creating teams and channels.
+* Identify the top team bots and channels connectors being used.
+* Report on the top users and objects relative to role changes.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Teams dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftTeams/Teams+-+Overview.png')} alt="Overview" />
 
 ### User Sessions
 
 The Teams - User Sessions dashboard provides an in depth view of the user logins and related statistics in your Teams environment
 
 Use this dashboard to:
-* Identify user sessions relative to their locations and compare login statistics over time
-* Understand the client platforms and versions that are being used
-* Report on login IP addresses correlated to potential threats via Crowdstrike
+* Identify user sessions relative to their locations and compare login statistics over time.
+* Understand the client platforms and versions that are being used.
+* Report on login IP addresses correlated to potential threats via Crowdstrike.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Teams dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftTeams/Teams+-+User+Sessions.png')} alt="User Sessions" />
 
 ### Team Statistics
 
@@ -118,7 +120,7 @@ Use this dashboard to:
 * Understand the team setting changes.
 * Keep track of the team Bots being installed.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Teams dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftTeams/Teams+-+Team+Statistics.png')} alt="Team Statistics" />
 
 
 ### Channel Statistics
@@ -126,12 +128,12 @@ Use this dashboard to:
 The Teams - Channel  Statistics dashboard offers complete visibility into the Channel activity occurring in your Teams.
 
 Use this dashboard to:
-* Gain insight into the channels being added and removed
-* Understand the channel settings being modified
-* Monitor channel tab activity
-* Monitor and report on channel connectors being added and removed
+* Gain insight into the channels being added and removed.
+* Understand the channel settings being modified.
+* Monitor channel tab activity.
+* Monitor and report on channel connectors being added and removed.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Teams dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftTeams/Teams+-+Channel+Statistics.png')} alt="Channel Statistics" />
 
 
 ### User and Role Changes
@@ -139,7 +141,7 @@ Use this dashboard to:
 The Teams - User and Role Changes dashboard provides insight on the user and role changes being applied in your environment.
 
 Use this dashboard to:
-* Report on the users making role changes and the top object types being affected
-* Understand how members are being added, removed, and changed by object name
+* Report on the users making role changes and the top object types being affected.
+* Understand how members are being added, removed, and changed by object name.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Teams dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftTeams/Teams+-+User+and+Role+Changes.png')} alt="User and Role Changes" />
