@@ -50,7 +50,7 @@ The URL and supported payload are different based on the version of the PagerDut
 1. (Optional) Enter a **Description** for the Connection.
 1. Enter the **URL** for the endpoint: `https://events.pagerduty.com/v2/enqueue`
 1. The optional input fields **Authorization Header** and **Custom Headers** do not do anything and are ignored.
-1. The default **Payload** will not work with Event API V2. Change it to the following:
+1. The default **Alert Payload** will not work with Event API V2. Change it to the following:
   ```json
   {
     "routing_key": "SERVICE KEY",
