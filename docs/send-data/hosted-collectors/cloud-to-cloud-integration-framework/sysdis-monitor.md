@@ -111,4 +111,4 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
 | `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
 | `baseURL` | String | Yes | Region URL of the Sysdig monitor application. | modifiable |
-| apiToken | String | Yes | Secret api key to authenticate your account.  | modifiable |
+| `apiToken` | String | Yes | Secret api key to authenticate your account.  | modifiable |
