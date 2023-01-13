@@ -157,7 +157,6 @@ The URL and supported payload are different based on the version of the PagerDut
 	      }
     }
      ```
-
 1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
 
      ![PagerDuty default payload.png](/img/connection-and-integration/PagerDuty-default-payload.png)
