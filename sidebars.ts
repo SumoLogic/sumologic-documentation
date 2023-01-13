@@ -2028,6 +2028,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'cse/administration/index'},
           items: [
+            'cse/administration/filter-search',
             'cse/administration/create-use-network-blocks',
             'cse/administration/create-a-custom-tag-schema',
             'cse/administration/create-custom-threat-intel-source',
