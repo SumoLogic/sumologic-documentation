@@ -143,8 +143,7 @@ The URL and supported payload are different based on the version of the PagerDut
      }
      ```
 1. Under the **Recovery Payload**:
-   * You can update the `details` section, if you want to customize the PagerDuty recovery notification. Below is the default v1 payload
-   * Note: Do not update the `service_key` , `event_type`, and `incident_key` fields, otherwise recovery notifications will not be generated.
+   * You can update the `details` section, if you want to customize the PagerDuty recovery notification. Below is the default v1 payload.
    ```json
    {
 	"service_key": "{{ServiceKey}}",
@@ -158,7 +157,10 @@ The URL and supported payload are different based on the version of the PagerDut
 		"query": "{{Query}}"
 	      }
     }
-     ```
+    ```
+  :::note
+  Do not update the `service_key`, `event_type`, and `incident_key` fields, otherwise recovery notifications will not be generated.
+  :::
 1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
 
      ![PagerDuty default payload.png](/img/connection-and-integration/PagerDuty-default-payload.png)
