@@ -37,7 +37,7 @@ The main way data is uploaded to ServiceNow is through the use of scheduled sear
 
 ### Webhook
 
-Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks. For example, once you set up a Webhook connection in Sumo Logic, and create a scheduled search, then you can send an alert from that scheduled search as a post to a Slack channel, or integrate with third-party systems. For instructions, see [Scheduled Searches for Webhook Connections](/docs/manage/connections-integrations/webhook-connections/schedule-searches-webhook-connections.md).
+Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks. For example, once you set up a Webhook connection in Sumo Logic, and create a scheduled search, then you can send an alert from that scheduled search as a post to a Slack channel, or integrate with third-party systems. For instructions, see [Scheduled Searches for Webhook Connections](/docs/alerts/webhook-connections/schedule-searches-webhook-connections).
 
 ### Save to Index
 

@@ -301,6 +301,6 @@ Formerly Monitors. Real-time Panels provide a graphical representation of your o
 
 ## W
 
-**[Webhook](/docs/manage/connections-integrations/Webhook-Connections)**. A WebHook is an HTTP callback: an HTTP POST that occurs when something happens. WebHook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming WebHooks. You can configure a custom WebHook, or use preconfigured WebHooks for a number of apps, including Slack, HipChat, Datadog, and so on.
+**[Webhook](/docs/alerts/webhook-connections)**. A WebHook is an HTTP callback: an HTTP POST that occurs when something happens. WebHook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming WebHooks. You can configure a custom WebHook, or use preconfigured WebHooks for a number of apps, including Slack, HipChat, Datadog, and so on.
 
 **[Where operator](/docs/search/search-query-language/search-operators/where)**. A conditional operator that can precede or follow another operator. Example combinations include "where x matches y", "where x in (a, b, c)", "where x not in (a, b, c)" and "where a > 1 and b / 4 &lt; sqrt(x)".

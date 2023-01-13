@@ -485,7 +485,7 @@ By default, the monitors are configured in a monitor folder called “Redis”, 
 
 If you would like the alerts to send email or connection notifications, configure these in the file **redis_notifications.auto.tfvars**. For configuration examples, refer to the next section.
 
-5. Email and Connection Notification Configuration Examples. To configure notifications, modify the file redis_notifications.auto.tfvars file and fill in the connection_notifications See the examples for PagerDuty and email notifications below. See [this document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md) for creating payloads with other connection types.
+5. Email and Connection Notification Configuration Examples. To configure notifications, modify the file redis_notifications.auto.tfvars file and fill in the connection_notifications See the examples for PagerDuty and email notifications below. See [this document](/docs/alerts/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types.
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [
     {
@@ -505,7 +505,7 @@ connection_notifications = [
 
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved via calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to [this document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
+For overriding payload for different connection types, refer to [this document](/docs/alerts/webhook-connections/set-up-webhook-connections).
 
 ```bash title="Email Notifications Example"
 email_notifications = [
