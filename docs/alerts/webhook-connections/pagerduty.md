@@ -36,7 +36,7 @@ PagerDuty has a [Sumo Logic Integration Guide](https://www.pagerduty.com/docs/g
 ## Set Up a Webhook Connection for PagerDuty
 
 :::note
-You need the **Manage connections** [role capability](../../users-roles/roles/role-capabilities.md) to create webhook connections.
+You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
 :::
 
 The URL and supported payload are different based on the version of the PagerDuty Events API you are using. Follow the steps for the relevant API version below.

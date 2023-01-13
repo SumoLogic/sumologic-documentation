@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 You need to have [Cloud SOAR](https://www.sumologic.com/solutions/cloud-soar/) enabled on your account for this connection to be available.
 
 :::note
-You'll need the **Manage connections** [role capability](../../users-roles/roles/role-capabilities.md) to create webhook connections.
+You'll need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
 :::
 
 This section demonstrates how to create a webhook connection from Sumo Logic to Cloud SOAR.

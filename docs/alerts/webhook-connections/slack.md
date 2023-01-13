@@ -17,7 +17,7 @@ Once you set up the webhook connection, you'll have the option to use it in a�
 
 ## Configure a Webhook connection for Slack
 
-You need the **Manage connections** [role capability](../../users-roles/roles/role-capabilities.md) to create webhook connections.
+You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
 
 1. Go to **Manage Data \> Monitoring \> Connections**.
 1. On the **Connections** page click **Add**.
