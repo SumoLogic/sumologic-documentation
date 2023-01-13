@@ -11,8 +11,6 @@ The Sysdig Monitor Cloud-to-Cloud source provides the ability to collect events 
 ## Prerequisites
 
 Before you begin setting up your **Sysdig Monitor** Source, the integration must be configured with the **Base URL** and **Sysdig Monitor API Token**.
-1. Base URL.
-2. API Token.
 
 ### Base URL
 
