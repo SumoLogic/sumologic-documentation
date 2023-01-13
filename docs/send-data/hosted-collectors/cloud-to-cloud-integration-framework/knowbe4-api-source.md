@@ -35,7 +35,7 @@ The **Base URL** is the URL where your **KnowBe4** account is located. To get th
 ### API Token
 
 The **API security token** is used to authenticate with KnowBe4 HTTP API. To get the **KnowBe4 API token**, follow the steps below:
-1. Log into **KnowBe4** application.
+1. Log in to the **KnowBe4** application.
 1. Navigate to **Events** section from left panel and click **Settings**.
 1. Select **User Profile**. The **KnowBe4** Secure API token is displayed in the UI.
 1. You can copy the generated token for use, or click the **Reset Token** button to generate a new one.
