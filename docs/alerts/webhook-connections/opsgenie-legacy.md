@@ -54,7 +54,7 @@ To create a webhook:
 1. Click **+ Add** and choose **Webhook** as connection type.
 1. For the name, enter **Sumo Logic Opsgenie** and give an optional description to the connection.
 1. Paste the URL (used in [step 2](#configure-a-scheduled-search)) into the **URL** field.
-1. Enter the following content in the **Payload** field:
+1. Enter the following content in the **Alert Payload** field:
 
     :::note
     Opsgenie uses the priority value in the Payload field to define the priority of alerts. For this reason, you should change the priority to match your needs.
@@ -80,8 +80,9 @@ To create a webhook:
       "SourceURL": "{{SourceURL}}"
     }
     ```
-
-1. Click **Save**.
+1. In the **Recovery Payload** section, you can customize your recovery notification.
+1. To test the connection, click **Test Alert or Test Recovery**. If successful, you'll see a `200 OK` response message.
+1. Click **Save**.
 
 ### Configure a Scheduled Search
 
