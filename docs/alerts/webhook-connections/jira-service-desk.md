@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can send JSON payloads from Sumo Logic alerts as an HTTP POST request to create Jira issues in Jira Service Desk. Learn more about the REST API in their [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/).
 
-[Webhook connections](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.
+[Webhook connections](/docs/alerts/webhook-connections/set-up-webhook-connections) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.
 
 ## Prerequisite
 
@@ -29,7 +29,7 @@ To send webhook alerts to Jira Service Desk you need to include a Basic Authenti
 In Sumo Logic, Scheduled Searches and Monitors send alerts to other tools via webhook connections. To send alerts from Sumo Logic to Jira Service Desk:
 
 1. [Create a Webhook Connection](#create-a-webhook-connection).
-1. Use the Webhook Connection as the Alert Type in a [Scheduled Search](/docs/manage/connections-integrations/webhook-connections/schedule-searches-webhook-connections.md) or the Connection Type in a [Monitor](/docs/alerts/monitors).
+1. Use the Webhook Connection as the Alert Type in a [Scheduled Search](/docs/alerts/webhook-connections/schedule-searches-webhook-connections) or the Connection Type in a [Monitor](/docs/alerts/monitors).
 
 ## Create a Webhook Connection
 
@@ -57,7 +57,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
    * **Issue Summary**
    * **Priority** (optional)
    * **Issue Description**
-1. The following JSON is an example of the default **Payload**, you can customize it as needed. For details on the variables you can use as parameters within your JSON object, see [Webhook Payload Variables](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
+1. The following JSON is an example of the default **Alert Payload**, you can customize it as needed. For details on the variables you can use as parameters within your JSON object, see [Webhook Payload Variables](/docs/alerts/webhook-connections/set-up-webhook-connections).
    ```json
    {
    "fields": {
@@ -76,10 +76,12 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
    }
    ```
    Details on how to format your payload are available in the [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/).
+1. In the **Recovery Payload** section, you can customize your recovery notification.
+1. To test the connection, click **Test Alert or Test Recovery**. If successful, you'll see a `200 OK` response message.
 1. Click **Save**.
 
 ## Create a Scheduled Search
 
 Scheduled searches are saved searches that run automatically at specified intervals. When a scheduled search is configured to send an alert, it can be sent to another tool using a webhook connection.
 
-To set up a scheduled search for a webhook connection follow the steps in the [Schedule Searches for Webhook Connections](/docs/manage/connections-integrations/webhook-connections/schedule-searches-webhook-connections.md) document.
+To set up a scheduled search for a webhook connection follow the steps in the [Schedule Searches for Webhook Connections](/docs/alerts/webhook-connections/schedule-searches-webhook-connections) document.

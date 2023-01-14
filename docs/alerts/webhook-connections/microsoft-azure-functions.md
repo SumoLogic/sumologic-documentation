@@ -32,11 +32,11 @@ First, create an HTTP-triggered Azure function. For more information, see [Azure
 
 ## Create a Webhook connection
 
-You need the **Manage connections** [role capability](../../users-roles/roles/role-capabilities.md) to create webhook connections.
+You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
 
 Configure the Webhook connection to trigger the Azure function:
 
-1. Go to **Manage Data \> Monitoring \> Connections**.
+1. Go to **Manage Data** > **Monitoring** > **Connections**.
 1. On the **Connections** page click **Add**.
 1. Select **Azure Functions**.
 1. In the **Create Connection** dialog, configure:
@@ -46,5 +46,6 @@ Configure the Webhook connection to trigger the Azure function:
     * (Optional) **Authorization Header,** enter an authorization header, which may include an authorization token.
     * (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
     * **Payload.** Enter a JSON object in the format required. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
-1. Click **Test Connection**. If the connection is made, you will see a 200 OK response message.
-1. Click **Save**.
+    * In the **Recovery Payload** section, you can customize your recovery notification.
+1. To test the connection, click **Test Alert or Test Recovery**. If successful, you'll see a `200 OK` response message.
+1. Click **Save**.

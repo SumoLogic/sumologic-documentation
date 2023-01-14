@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src='https://newrelic.com/themes/custom/erno/assets/mediakit/new_relic_logo_horizontal.png' alt="thumbnail icon" width="100"/>
 
-
 New Relic webhook connections allow you to send alert results to New Relic as a custom event (Insight). You can learn more about the New Relic Insights custom events in their [API Help](https://docs.newrelic.com/docs/insights/explore-data/custom-events/insert-custom-events-insights-api).
 
 [Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.
@@ -18,19 +17,17 @@ Once you set up the webhook connection, you'll have the option to use it in a�
 
 ## Set up a webhook connection for New Relic
 
-You need the **Manage connections** [role capability](../../users-roles/roles/role-capabilities.md) tocreate webhook connections.
+You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
 
-1. Go to **Manage Data \> Monitoring \> Connections**.
+1. Go to **Manage Data** > **Monitoring** > **Connections**.
 1. On the Connections page click **Add**.
 1. Click **New Relic**.
 1. In the Create Connection dialog, enter the name of the connection.
 1. (Optional) Enter a **Description** for the connection.
 1. Enter the **URL** for the endpoint. See [Create an API Key for New Relic Webhook](#create-an-api-key-for-new-relic-webhook).
-
-    ```
-    https://insights-collector.newrelic.com/v1/accounts/ACCOUNT_ID/events
-    ```
-
+  ```
+  https://insights-collector.newrelic.com/v1/accounts/ACCOUNT_ID/events
+  ```
 1. Under **Insert Key**, enter your API Key generated from New Relic Insights. See [Create an API Key for New Relic Webhook](#webhook-connection-for-new-relic).
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
 1. Customize your **Payload** to include any information you want to send from your scheduled search to New Relic. See [Send Events to New Relic using a Webhook](#send-events-to-new-relic-insights-using-a-webhook). For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](set-up-webhook-connections.md).

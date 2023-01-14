@@ -41,7 +41,7 @@ The following table lists data types and some of the popular sources that produc
 | Network | <ul><li>[Cisco ASA](/docs/integrations/security-threat-detection/Cisco-ASA)</li><li>[Palo Alto Networks](/docs/integrations/security-threat-detection/Palo-Alto-Networks-6)</li><li>McAfee</li><li>Symantec</li></ul> |
 | Content Delivery | <ul><li>[Akamai](/docs/integrations/saas-cloud/Akamai-Cloud-Monitor)</li><li>[Amazon CloudFront](/docs/integrations/amazon-aws/CloudFront)</li><li>[Fastly](/docs/integrations/saas-cloud/Fastly)</li><li>Limelight Networks</li></ul> |
 | IaaS / PaaS | <ul><li>Amazon</li><li>[Heroku](/docs/manage/connections-integrations/heroku.md)</li><li>Windows</li><li>[Google Audit](../cse/ingestion/google-g-suite-apps-audit.md)</li><li>[Google Cloud Platform (GCP)](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source.md)</li></ul> |
-| SaaS | <ul><li>[Box](/docs/integrations/saas-cloud/Box)</li><li>[ServiceNow](/docs/manage/connections-integrations/servicenow/set-up-connections.md)</li><li>[Salesforce](/docs/integrations/saas-cloud/salesforce)</li><li>[Microsoft Office 365](/docs/integrations/microsoft-azure/office-365)</li></ul> |
+| SaaS | <ul><li>[Box](/docs/integrations/saas-cloud/Box)</li><li>[ServiceNow](/docs/alerts/webhook-connections/servicenow/set-up-connections.md)</li><li>[Salesforce](/docs/integrations/saas-cloud/salesforce)</li><li>[Microsoft Office 365](/docs/integrations/microsoft-azure/office-365)</li></ul> |
 | Security | <ul><li>Cisco</li><li>McAfee</li><li>Symantec</li><li>Qualys</li></ul> |
 
 ### Where is My Data Stored?

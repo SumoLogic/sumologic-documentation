@@ -18,18 +18,15 @@ To add a Sumo Logic integration in Opsgenie, do the following:
 
 1. Go to [Opsgenie Integration Page](https://app.opsgenie.com/integration#/add/SumoLogic).
 1. Specify the following parameters:
-
    * Provide the Name.
    * Add the team who will be notified of Sumo Logic Alerts.
    * Copy the Integration URL, to be used in Sumo Logic while setting up the Webhook Connection.
-
    :::note
    For **Free** and **Essentials** plans, you can only add the integration from the Team Dashboard. Use the alternative instructions. To add an integration directly to a team, navigate to the Team Dashboard and open the Integrations tab. Click **Add Integration** and search for Sumo Logic and click **add**.
    :::
-
 1. Click **Save Integration**.
 
-Your Final Configurations at Opsgenie should look like this:
+Your final configurations at Opsgenie should look like this:
 
 ![Webhook_Intergration_Example2.png](/img/connection-and-integration/opsgenie-legacy.png)
 
@@ -43,23 +40,21 @@ In Sumo Logic, scheduled searches send alerts to other tools via webhook connect
 ### Create a webhook
 
 :::note
-You need the **Manage connections** [role capability](../../users-roles/roles/role-capabilities.md) to create webhook connections.
+You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
 :::
 
 This section demonstrates how to create a webhook connection from Sumo Logic to Opsgenie.
 
 To create a webhook:
 
-1. In Sumo Logic, go to **Manage Data \> Alerts \> Connections**.
+1. In Sumo Logic, go to **Manage Data > Alerts > Connections**.
 1. Click **+ Add** and choose **Webhook** as connection type.
 1. For the name, enter **Sumo Logic Opsgenie** and give an optional description to the connection.
 1. Paste the URL (used in [step 2](#configure-a-scheduled-search)) into the **URL** field.
-1. Enter the following content in the **Payload** field:
-
+1. Enter the following content in the **Alert Payload** field:
     :::note
     Opsgenie uses the priority value in the Payload field to define the priority of alerts. For this reason, you should change the priority to match your needs.
     :::
-
     ```json
     {
       "AlertName": "{{AlertName}}",
@@ -80,8 +75,9 @@ To create a webhook:
       "SourceURL": "{{SourceURL}}"
     }
     ```
-
-1. Click **Save**.
+1. In the **Recovery Payload** section, you can customize your recovery notification.
+1. To test the connection, click **Test Alert or Test Recovery**. If successful, you'll see a `200 OK` response message.
+1. Click **Save**.
 
 ### Configure a Scheduled Search
 

@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="thumbnail icon" width="50"/>
 
-
 [Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
 
 ## Prerequisite
@@ -26,7 +25,7 @@ In Sumo Logic, Scheduled Searches and Monitors send alerts to other tools via we
 ## Create a Microsoft Teams Connection
 
 :::note
-You need the **Manage connections** [role capability](../../users-roles/roles/role-capabilities.md) to create webhook connections.
+You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
 :::
 
 This section demonstrates how to create a webhook connection from Sumo Logic to Microsoft Teams.
@@ -42,7 +41,7 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
     :::note
     Edits to the **Activity Title**, **Activity Subtitle**, and **Card Text** values are automatically updated in the JSON payload and vice versa.
     :::
-1. The following JSON is the default **Payload**, you can customize it as needed. For details on variables you can use as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
+1. The following JSON is the default **Alert Payload**, which you can customize as needed. For details on variables you can use as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
     ```json
     {
     "@type": "MessageCard",
@@ -94,4 +93,6 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
     ]
     }
     ```
+1. In the **Recovery Payload** section, you can customize your recovery notification.
+1. To test the connection, click **Test Alert or Test Recovery**. If successful, you'll see a `200 OK` response message.
 1. Click **Save**.

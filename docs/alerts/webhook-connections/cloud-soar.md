@@ -14,12 +14,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 You need to have [Cloud SOAR](https://www.sumologic.com/solutions/cloud-soar/) enabled on your account for this connection to be available.
 
 :::note
-You'll need the **Manage connections** [role capability](../../users-roles/roles/role-capabilities.md) to create webhook connections.
+You'll need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
 :::
 
 This section demonstrates how to create a webhook connection from Sumo Logic to Cloud SOAR.
 
-1. In Sumo Logic, go to **Manage Data \> Monitoring \> Connections**.
+1. In Sumo Logic, go to **Manage Data** > **Monitoring** > **Connections**.
 1. Click **+ Add** and choose **Cloud SOAR** as the connection type.<br/> ![SOAR webhook icon.png](/img/connection-and-integration/SOAR-webhook-icon.png)
 1. Enter a **Name** and give an optional **Description** to the connection.
 1. The **URL** and **Authorization Header** are automatically defined by Sumo Logic. You should not edit these.
