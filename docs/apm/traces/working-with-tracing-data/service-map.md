@@ -1,15 +1,25 @@
 ---
 id: service-map
-title: Service Map
-sidebar_label: Service Map
+title: Services List and Map
 description: View your application topology and investigate microservice interactions.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Service Map is a high-level view of your application environment, automatically built from tracing data in real time as it arrives in Sumo Logic. This gives you a greater understanding of your application architecture and dependencies between monitored microservices.
+To open Services List and Map, click **+ New** > **Service Map**.<br/> <img src={useBaseUrl('img/traces/open-service-map.png')} alt="open servicemap" width="400"/>
 
-To open Service Map, click **+ New** > **Service Map**.<br/> <img src={useBaseUrl('img/traces/open-service-map.png')} alt="open servicemap" width="225"/>
+## Service List view
+
+The **Service List** view provides a compact, high-level overview of your application service health insights and KPIs.
+
+![panel-service.png](/img/traces/service-list.png)
+
+
+## Service Map view
+
+The **Service Map** view visually maps out your application environment, giving you a greater understanding of your application architecture, hierarchy, and dependencies between monitored microservices. Health and load of each microservice is reflected in size and color to help you spot potential problems and bottlenecks in your application infrastructure.
+
+The map is built automatically from distributed tracing data in real time as it arrives in Sumo Logic.
 
 The Service Map provides the following features:
 
@@ -23,13 +33,13 @@ The Service Map provides the following features:
 * Arrows: The Service Map shows activity between services and their presence from the last 72 hours, however, if the service or connection was inactive for more than one hour, it is displayed with dashed lines.
 * Size of services: The size of services on the map is based on how active they are, where large circles are more active compared to small circles that are less active.  
 
-## Settings
+### Settings
 
 Settings are user-specific and preserved in your browser's Local Storage, so each user can have their own specific settings to view Service Map health indicators. The settings menu opens by clicking the gears icon in the top-right corner of the map.   
 
 ![service map gear icon for settings.png](/img/traces/service-map-gear-icon-for-settings.png)
 
-### Anomaly Detection
+#### Anomaly Detection
 
 Automatic anomaly detection is enabled by default. A service is displayed in a red circle if at least one of the KPIs (latency, errors, requests) has an anomaly (a spike for latency and errors or dip in the case of requests) in the last 15 minutes AND the anomaly was not present 7 days ago at the same time. In the settings menu, this default option is called **Worst Case**. You can explicitly choose one of the KPIs instead.
 
@@ -41,7 +51,7 @@ Manual anomaly detection settings allow you to specify different detection setti
 
 ![service map manual detection settings.png](/img/traces/service-map-manual-detection-settings.png)
 
-## Service Map Dashboard Panels
+### Service Map Dashboard Panels
 
 You can add Service Map panels to explore your application environment directly through your Dashboard. Duplicate or add multiple panels with different filtering or queries to refine views and support your organization. 
 
@@ -62,10 +72,3 @@ The Service Map panel displays a service map for filtered applications and servi
 :::tip
 See the [Dashboard (New) guide](/docs/dashboards-new) for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
 :::
-
-
-## Service List view
-
-The **Service List** view provides a compact high-level overview of your service health insights and KPIs.
-
-![panel-service.png](/img/traces/service-list.png)
