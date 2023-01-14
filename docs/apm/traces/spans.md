@@ -1,14 +1,14 @@
 ---
 id: spans
 title: Analyze data on Span level
-sidebar_label: Analyze data on Span level
+sidebar_label: Spans
 description: Learn how to use the Spans page to explore your span data.
 ---
 
 ## Availability
 
 | Account Type | Account Level                           |
-|--------------|-----------------------------------------|
+|:--------------|:-----------------------------------------|
 | Credits    | Enterprise Operations and Enterprise Suite<br/>Essentials get up to 5 GB a day |
 
 Sumo Logic Application Monitoring and Observability provides transactional intelligence for distributed workflows, by combining telemetry from traces, logs, and metrics in the context of real-time automatically tracked application topology.

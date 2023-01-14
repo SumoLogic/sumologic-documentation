@@ -2,7 +2,7 @@
 slug: /apm/traces
 title: Traces
 sidebar_label: Traces
-description: See how your application is behaving with trace analytics.
+description: See how your application is behaving with trace analytics. Learn how to work with your Tracing data including dashboards, Service Map, Spans, and queries.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,6 +16,7 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 ## Monitoring Apps and Microservices with Sumo Logic Traces
 
-In this section, we'll introduce the following concepts:
+This guide provides information to work with your tracing data, including
+the following:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

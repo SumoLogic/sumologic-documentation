@@ -1,7 +1,6 @@
 ---
 id: service-map
-title: Service Map
-sidebar_label: Service Map
+title: Services List and Map
 description: View your application topology and investigate microservice interactions.
 ---
 

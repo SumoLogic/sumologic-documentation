@@ -1,6 +1,7 @@
 ---
 id: tracing-dashboards
 title: Application Service APM/Tracing Dashboards
+sidebar_label: Tracing/APM Dashboards
 description: Create Tracing dashboards, install apps, and more.
 ---
 
