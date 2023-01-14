@@ -238,7 +238,7 @@ Use this dashboard to:
 * Find pod and scale operations performed by controller manager.
 * Find the severity of various controller manager events and analyze fatal and erroneous controller manager operation events.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Kubernetes Service AKS Control Plane dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Azure_Kubernetes_Service(AKS)/AKS_Controller_Manager.png')} alt="AKS Controller Manager Dashboard" />
 
 
 
@@ -253,13 +253,11 @@ Use this dashboard to:
 * Review the severity of various Kube API Server events, and analyze any fatal or erroneous events of Kube API Server operations.
 * Find spikes or abnormal activity in the status codes of auto-scaler operations.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Kubernetes Service AKS Control Plane dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Azure_Kubernetes_Service(AKS)/AKS_API_Server.png')} alt="AKS API Server Dashboard" />
 
 
 
 ### AKS Scheduler Dashboard
-25
-
 
 The **AKS Scheduler** dashboard provides a high-level view of severity types and trends for the Kube scheduler, as well as a detailed list of error messages.
 
@@ -268,4 +266,4 @@ Use this dashboard to:
 * Find the severity of various Kube scheduler events.
 * Analyze fatal or erroneous events of Kube scheduler operations.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Kubernetes Service AKS Control Plane dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Azure_Kubernetes_Service(AKS)/AKS_Scheduler.png')} alt="AKS Scheduler Dashboard" />
