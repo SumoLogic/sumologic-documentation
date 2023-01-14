@@ -115,5 +115,5 @@ We recommend you use the new [common variables](alert-variables.md) instead of t
 | `{{AlertSource}}` | The metric and sourceHost that triggered the alert, including associated tags for that metric. | &#9989;| &#10060; |
 | `{{AlertSource.fieldname}}` | The value returned from the AlertSource object for the specified field name. | &#9989;| &#10060; |
 | `{{AlertID}}` | The ID of the triggered alert. | &#9989;| &#10060; |
-| `{{AlertStatus}}` | Current status of the time series that triggered (for example, Critical or Warning). | &#9989;| &#9989;|
+| `{{AlertStatus}}` | Current status of the time series that triggered (for example, Critical or Warning). | &#9989;| &#10060; |
 | `{{AlertCondition}}` | The condition that triggered the alert. | &#10060; | &#9989; |
