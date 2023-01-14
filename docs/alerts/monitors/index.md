@@ -21,7 +21,7 @@ Learn how [Monitors differ from Scheduled Searches](/docs/alerts/difference-from
 
 ## Rules
 
-* You need the **Manage** or **View Monitors** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to manage or view monitors, respectively. These capabilities work in concert with [folder permissions](/docs/alerts/monitors/edit-settings/#monitors-folder-permissions) to enable fine-grained permissions.
+* To manage and/or view monitors, you'll need the **Manage** and **View Monitors** [role capabilities](/docs/manage/users-roles/roles/role-capabilities.md). [Learn more](/docs/alerts/monitors/edit-settings/#monitors-folder-permissions) about controlling permissions at the monitor or folder level.
 * The frequency a Monitor executes depends upon a variety of factors such as the underlying query, the operators used, and the detection window. It can vary from a couple of seconds to a few minutes. If for example, the detection window of your alert is one day it will be evaluated every couple of minutes, whereas if the detection window of the monitor is 15 minutes then it will be evaluated every couple of seconds.
 * Log Monitors use the [role search filter](/docs/manage/users-roles/roles/construct-search-filter-for-role.md) of their creator.
 * Log Monitors delay execution by two minutes. This means it won't evaluate data from the current time, but evaluate data from two minutes ago.  This ensures that any delays in ingestion are factored in and won't generate false positive or false negative alerts.
@@ -44,7 +44,7 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 * An aggregate Metric Monitor can evaluate up to 15,000 time series. A non-aggregate Metric Monitor can evaluate up to 3,000 time series.
 * [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.
 * [Search templates](../../search/get-started-with-search/build-search/search-templates.md) are not supported.
-* A Log Monitor can have one query up to 4,000 characters long. Metric Monitors can specify up to six queries.
+* A Log Monitor can have one query up to 15,000 characters long. Metric Monitors can specify up to six queries.
 * Email notifications can have up to 100 recipients.
 * [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md) (auto-parse mode) is not supported.
 * The timeshift [metrics operator](/docs/metrics/metrics-operators) is not supported in a Metric Monitor.

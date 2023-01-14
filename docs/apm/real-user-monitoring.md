@@ -51,23 +51,37 @@ For full end-to-end visibility, we recommended supplementing your RUM browser au
 
 To configure a RUM HTTP Traces source:
 
-1. From Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. From Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **RUM HTTP Traces**. <br/><img src={useBaseUrl('img/rum/rum-icon.png')} alt="Real User Monitoring" width="120"/>
 1. Under **Source Type: RUM HTTP Traces**, enter the following information:
    * **Name** for the Source.
-   * **Description** for the Source (optional).
-   * **Source Host** and **Source Category** (optional): enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md) fields that allow you to organize your data. We recommend you specify a Source Category indicating the data is from a browser.<br/><img src={useBaseUrl('/img/rum/RUM-HTTP-Traces-Source.png')} alt="Real User Monitoring" width="300"/>
+   * **Description**. (Optional) description of the Source .
+   * **Source Host** and **Source Category**. (Optional) Enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md) fields that allow you to organize your data. We recommend you specify a Source Category indicating the data is from a browser.<br/><img src={useBaseUrl('/img/rum/RUM-HTTP-Traces-Source.png')} alt="Real User Monitoring" width="300"/>
 1. Enter **Advanced options for Browser RUM**. A list of FAQs on the page can provide help for these options. A table with all the available configuration parameters is available in the [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) README file.<br/><img src={useBaseUrl('img/rum/RUM-HTTP-Traces-Source-Advanced.png')} alt="Real User Monitoring" width="300"/>
-   * **Application Name** (recommended): Add an **Application Name** tag of a text string to show for the app name in spans, for example `bookings-app`. This groups services in the Application Service View. If left blank, services will belong to a "default" application. See [Application Service Dashboards](/docs/apm/traces/working-with-tracing-data/service-map.md) for more information. This setting is saved in the script for `name_of_your_web_application`.
-   * **Service Name** (required): Add a **Service Name** of a text string to show for the service name in spans, for example `bookings-web-app`. This setting is saved in the script for `name_of_your_web_service`.
+   * **Application Name**. (Recommended) Add an **Application Name** tag of a text string to show for the app name in spans (for example, `bookings-app`). This groups services in the Application Service View. If left blank, services will belong to a "default" application. See [Application Service Dashboards](/docs/apm/traces/working-with-tracing-data/service-map.md) for more information. This setting is saved in the script for `name_of_your_web_application`.
+   * **Service Name**. ( Required) Add a **Service Name** of a text string to show for the service name in spans (for example, `bookings-web-app`). This setting is saved in the script for `name_of_your_web_service`.<br/><br/>To set up a service name dynamically (e.g., to have different service names for micro-frontend packages), leverage the `getOverriddenServiceName` function inside your page code to overwrite the default service name (requires RUM script v4.2.0 or higher). Service names should be of low cardinality and should describe parts of your website above page level. Here's an example code leveraging that function:
+   ```javascript
+        window.sumoLogicOpenTelemetryRum.initialize({
+          collectionSourceUrl:
+            'https://service.sumologic.com/receiver/v1/rum/token==',
+          serviceName: 'online-shop-frontend',
+          applicationName: 'online-shop',
+          getOverriddenServiceName: (span) => {
+            const pathname = document.location.pathname;
+
+            if (pathname.startsWith('/carts/')) {
+              return 'online-shop-frontend-carts'
+            }
+            return 'online-shop-frontend-main'
+          }
+        });
+   ```
    * **Probabilistic sampling rate** (optional): Add a **Probabilistic sampling rate** for heavy traffic sites in a decimal value based on percentage, for example, 10% would be entered as `0.1`.
    * **Ignore urls** (optional): Add a list of URLs not to collect trace data from. Supports regex. For example: `/^https:\/\/www.tracker.com\/.*/, /^https:\/\/api.mydomain.com\/log\/.*/`. Please make sure provided URLs are valid JavaScript flavor regexes.
    * **Custom Tags** (optional): Click **+Add** and enter a key and value for each **Custom Tags** to show in spans from instrumented browsers. For example, click **+Add** and enter a key `deployment.environment` with a value of `production`. This information is saved in the script for `name_of_your_web_service`.
    * **Propagate Trace Header Cors Urls** (recommended): Add a list of URLs or URL patterns that pass tracing context to construct traces end-to-end. This information is saved in the script for `list_of_urls_to_receive_trace_context`. Some examples are `/^https:\/\/api.mydomain.com\/apiv3\/.*/` and `/^https:\/\/www.3rdparty.com\/.*/.`. Please make sure provided URLs are valid JavaScript flavor regexes.
-
     :::caution **Propagate Trace Header Cors Urls**
-
     Sumo Logic cannot perform configuration validation of services of other origins. You should always enable context propagation and CORS configuration changes in a test environment before setting it up in production.
 
     <details><summary>Review our recommendations <strong>(click to expand)</strong></summary>
@@ -78,7 +92,6 @@ To configure a RUM HTTP Traces source:
      ```bash
      Access-Control-Allow-Headers: traceparent, tracestate
      ```
-
     Valid cross-origin resources must include the prefix `http://` or `https://` and the domain name. The port number is not required unless it differs from the default for HTTP (port 80) or HTTPS (port 443).
 
     </details>
@@ -184,8 +197,8 @@ initialize({
 
 The above script examples omit the version number and automatically uses most up-to-date version of it (which you can find [here](https://github.com/SumoLogic/sumologic-opentelemetry-js)). If you want to manually control versioning of the script, please use:
 * `https://rum.sumologic.com/sumologic-rum-vX.js` (e.g., https://rum.sumologic.com/sumologic-rum-v4.js) for major version control (no breaking changes)
-* `https://rum.sumologic.com/sumologic-rum-vX.Y.js` (e.g., https://rum.sumologic.com/sumologic-rum-v4.0.js) for major version control (only bug fixes are automatically included)
-* `https://rum.sumologic.com/sumologic-rum-vX.Y.Z.js` (e.g., https://rum.sumologic.com/sumologic-rum-v4.0.0.js) for major version control (strict version control)
+* `https://rum.sumologic.com/sumologic-rum-vX.Y.js` (e.g., https://rum.sumologic.com/sumologic-rum-v4.0.js) for minor version control (only bug fixes are automatically included)
+* `https://rum.sumologic.com/sumologic-rum-vX.Y.Z.js` (e.g., https://rum.sumologic.com/sumologic-rum-v4.0.0.js) for patch version control (strict version control)
 
 RUM scripts can be also wrapped in the form of a browser extension/plugin for monitoring SaaS applications in environments where you can control user browser configuration (e.g., internal employees). To obtain a customized browser extension for your environment to monitor Real User Experience with Sumo Logic, contact your Account Team or Sumo Logic support.
 

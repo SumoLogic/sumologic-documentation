@@ -79,7 +79,7 @@ In this step, you deploy the events processor. This will create the AWS resource
    * `SOURCE_HOST_OVERRIDE` (Optional). Override the `_sourceHost` value  configured for the HTTP source.
    * `SOURCE_NAME_OVERRIDE` (Optional). Override the `_sourceName` value configured for the HTTP source.
 
-## Step 3: Verify ingestion
+## Step 4: Verify ingestion
 
 In this step, you verify that your logs are successfully making it into CSE. 
 

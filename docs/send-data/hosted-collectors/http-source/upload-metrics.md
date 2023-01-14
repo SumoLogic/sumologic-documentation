@@ -18,7 +18,7 @@ Metrics you upload to an HTTP source must be in seconds or milliseconds. Metrics
 
 The table below lists the types of metrics you can upload to an HTTP Source and Content-Type header you must use when uploading metrics of each type. If you omit the Content-Type header, or set a value not listed below, the HTTP payload will be ingested as log data. 
 
-You must specify the Content-Type header value exactly as shown in the table below. If a Content-Type header value contains any extra text other one of the Content-Type values below, Sumo ignores the extraneous text. (Some metric frameworks  append or prepend  extra text in Content-Type headers.)
+You must specify the Content-Type header value exactly as shown in the table below. If a Content-Type header value contains any extra text other than one of the Content-Type values below, Sumo ignores the extraneous text. (Some metric frameworks  append or prepend  extra text in Content-Type headers.)
 
 So, Sumo will treat a `Content-Type` value of: 
 

@@ -16,7 +16,7 @@ This topic describes v1.5.0 of the Insight Enrichment Server.
 
 ## What the Insight Enrichment Server does
 
-The Insight Enrichment Server performs an external query on the entity for an Insight—an IP address, a hostname, username, or a MAC address—and adds the query results as an enrichment to the Insight.
+The Insight Enrichment Server performs an external query on the [Entity](docs/cse/records-signals-entities-insights/view-manage-entities.md) for an Insight—for example an IP address, a hostname, username, or a MAC address—and adds the query results as an enrichment to the Insight.
 
 You configure enrichments in the server’s configuration file. The key settings are the entity type to run the enrichment on, and the command and command arguments to run on. 
 
@@ -133,6 +133,13 @@ Run the installer and follow the instructions.
 
 ## Configuration
 
+### Variables
+
+The Enrichment Server supports these variables:
+
+${IP}, ${MAC}, ${USERNAME}, and ${HOSTNAME}, and for custom Entities, ${ENTITY}.
+
+
 ### General settings
 
 The following parameters control general server behaviors, as opposed to enrichment-specific options.
@@ -144,9 +151,9 @@ The following parameters control general server behaviors, as opposed to enrichm
 | `api_key` | yes | Enter your Sumo Logic Access Key.|
 | `log_level` | no | Log level the server should use. The options are:<br/><br/>-`error`. Only display error messages.<br/>-`info`. Display informational messages. This is the recommended value.<br/>-`debug`. Displays debug (or trace) data. Recommended only when debugging.<br/><br/>Default: `info` |
 | `poll_interval` | no | How often the Insight Enrichment Server should check for new Insights. You can specify the interval in seconds (s), minutes (m), or hours (h).<br/><br/>Default: 10s |
-| post_workers | no | The number of parallel workers (threads) posting enrichment results. Default: 6 |
+| `post_workers` | no | The number of parallel workers (threads) posting enrichment results. Default: 6 |
 | enrichment_workers | no | The number of parallel workers (threads) running enrichment tasks. <br/><br/>Default: 12 |
-| proxy_url | no | An HTTP proxy URL to use when communicating with the Sumo Logic backend. For example,  `my.proxy.myorg.com:3128` or  `username:password@my.proxy.myorg.com:31281. <br/><br/>Default: No proxy used |
+| `proxy_url` | no | An HTTP proxy URL to use when communicating with the Sumo Logic backend. For example,  `my.proxy.myorg.com:3128` or  `username:password@my.proxy.myorg.com:31281. <br/><br/>Default: No proxy used |
 
 ### Enrichment settings
 
@@ -157,7 +164,7 @@ Each enrichment should be given its own section in the configuration file. The 
 | Setting | Required? | Description |
 |--|--|--|
 | `enrichment_type` | yes | Specifies the type of the enrichment. Currently, the only supported value is `command`. |
-| `entity_type` | yes | The type of entity to enrich. The Insight Enrichment server supports built-in entity types: IP, mac, username, and hostname. It also supports [custom entity types](../records-signals-entities-insights/create-custom-entity-type.md).  For custom entity types, the `entity_type` should match the unique Identifier assigned to the custom entity type.  |
+| `entity_type` | yes | The type of entity to enrich. The Insight Enrichment server supports built-in entity types, including IP, mac, username, and hostname. (For a complete list, see [View and Manage Entities](docs/cse/records-signals-entities-insights/view-manage-entities.md). It also supports [custom entity types](../records-signals-entities-insights/create-custom-entity-type.md).  For custom entity types, the `entity_type` should match the unique Identifier assigned to the custom entity type.  |
 | `cache_time` | no | The length of time that the results of a specific enrichment for a specific entity will be cached and returned for other enrichment requests for that enrichment and entity.  This setting can be used to prevent an enrichment from running multiple times for the same entity. You can specify `cache_time` in hours (h), minutes (m), or seconds (s). If you specify a value without a unit, the value is treated as nanoseconds. <br/><br/>Default: none |
 | `ip_range` | no | When `entity_type` is IP, you can specify a range of IP addresses that the enrichment will be limited to. Specify IP address ranges as a comma-separated list. For example:<br/><br/> 192.168.1.1-192.168.1.255, 192.168.5.1-192.168.8.120 |
 | `command_exe` | yes | The executable to run when enriching the entity. |

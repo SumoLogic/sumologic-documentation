@@ -491,7 +491,7 @@ At this point, Cassandra logs should start flowing into Sumo Logic.
 
 <details><summary>Method B: Using Open Telemetry</summary>
 
-We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](https://github.com/SumoLogic/sumologic-otel-collector) for Cassandra metric collection and the Sumo Logic Installed Collector for collecting Cassandra logs. Sumo Logic OT distro runs on the same system as Cassandra, and uses the Cassandra Jolokia input plugin for Telegraf to obtain Cassandra metrics, and the Sumo Logic exporter to send the metrics to Sumo Logic. Cassandra Logs are sent to Sumo Logic Local File Source on Installed Collector.
+We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](https://github.com/SumoLogic/sumologic-otel-collector) for Cassandra metric collection and filelog receiver for collecting Cassandra logs. Sumo Logic OT distro runs on the same system as Cassandra, and uses the Cassandra Jolokia input plugin for Telegraf to obtain Cassandra metrics, and the Sumo Logic exporter to send the metrics to Sumo Logic.
 
 #### Configure Metrics and Logs Collection  
 
@@ -525,6 +525,10 @@ At this point, Cassandra metrics and logs should start flowing into Sumo Logic.
 
 ## Installing Cassandra Monitors
 
+:::note
+This step is not needed if you are using the [Application Components Solution](/docs/observability/application-components) Terraform script.
+:::
+  
 To install these monitors, you must have the **Manage Monitors** role capability. You can install monitors by importing a JSON file or using a Terraform script.
 
 Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a Cassandra cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Cassandra Alerts](#Alerts).
@@ -588,7 +592,7 @@ connection_notifications = [
   ]
 ```
 
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
+For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/alerts/webhook-connections/set-up-webhook-connections).
 ```bash title="Email notifications example"
 email_notifications = [
     {
@@ -609,6 +613,10 @@ email_notifications = [
 
 ## Installing the Cassandra App
 
+:::note
+This step is not needed if you are using the [Application Components Solution](/docs/observability/application-components) Terraform script.
+:::
+  
 This section demonstrates how to install the Cassandra App.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
@@ -617,11 +625,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source**. Choose **Enter a Custom Data Filter**, and enter a custom SQL Server cluster filter. Examples:
-      * For all Cassandra clusters: `db_cluster=*`
-      * For a specific cluster: `db_cluster=cassandra.dev.01`
-      * Clusters within a specific environment: `db_cluster=cassandra.dev.01` and `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
-    3. **Advanced**. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
+    2. **Advanced**. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
 4. Click Add to Library.
 
 Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.

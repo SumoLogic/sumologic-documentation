@@ -54,6 +54,8 @@ You may edit the retention period of Partitions and Scheduled Views. The minimum
 
        :::note
        When you select **Reduce Retention Period after 7 days**, the retention period on your Partitions page will not change immediately. There will be a an icon indicating that a retention decrease is imminent in a number of days. When the counter expires, the data will be deleted, the warning icon will disappear, and the new retention policy will be in effect.
+       
+       The retention period change applies to all data (including data ingested before the change).
 
        If you want to change your mind at any time during that period and revert to your previous retention period, click **Click here to undo the reduction in retention period**. The retention will stay at previous retention level, and the job to reduce the retention is canceled.
        :::

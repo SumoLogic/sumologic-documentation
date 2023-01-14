@@ -33,11 +33,11 @@ You need the [View Collectors role capability](/docs/manage/users-roles/roles/ro
 
 Existing customers of both ServiceNow and Sumo Logic can now take advantage of the integration between the services. With this integration, search results from Sumo Logic are uploaded to your organization's ServiceNow account, allowing your organization to investigate issues across your deployment.
 
-The main way data is uploaded to ServiceNow is through the use of scheduled searches. After saving a search, results are available in ServiceNow. Additionally, you can launch ad-hoc ServiceNow investigations using search results in Sumo Logic. For instructions, see [ServiceNow](/docs/manage/connections-integrations/servicenow).
+The main way data is uploaded to ServiceNow is through the use of scheduled searches. After saving a search, results are available in ServiceNow. Additionally, you can launch ad-hoc ServiceNow investigations using search results in Sumo Logic. For instructions, see [ServiceNow](/docs/alerts/webhook-connections/servicenow/).
 
 ### Webhook
 
-Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks. For example, once you set up a Webhook connection in Sumo Logic, and create a scheduled search, then you can send an alert from that scheduled search as a post to a Slack channel, or integrate with third-party systems. For instructions, see [Scheduled Searches for Webhook Connections](/docs/manage/connections-integrations/webhook-connections/schedule-searches-webhook-connections.md).
+Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks. For example, once you set up a Webhook connection in Sumo Logic, and create a scheduled search, then you can send an alert from that scheduled search as a post to a Slack channel, or integrate with third-party systems. For instructions, see [Scheduled Searches for Webhook Connections](/docs/alerts/webhook-connections/schedule-searches-webhook-connections).
 
 ### Save to Index
 

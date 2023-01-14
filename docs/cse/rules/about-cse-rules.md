@@ -24,9 +24,7 @@ The [Before You Write a Custom Rule](before-writing-custom-rule.md) topic has us
 
 ## About tuning expressions
 
-Like a rule expression, a tuning expression is matched against incoming Records. The difference is, if a Record matches a Rule’s tuning expression in addition to its rule expression, the rule will not generate a Signal.
-
-As an example, consider the following rule expression, which detects that an attempt was made to clear the Windows Security Event Log.
+Like a rule expression, a tuning expression is matched against incoming Records. As an example, consider the following rule expression, which detects that an attempt was made to clear the Windows Security Event Log.
 
 ```sql
 metadata_vendor = 'Microsoft' and metadata_product = 'Windows' and metadata_deviceEventId = 'Security-1102' and fields['Provider.Name'] = 'Microsoft-Windows-Eventlog'
@@ -40,7 +38,7 @@ user_userId = !jdoe
 
 The tuning expression is AND’d with the rule expression—the rule will only generate a Signal if a Record matches both expressions. 
 
-Rule tuning expressions allow you to tailor the logic of a built-in rule without logic without replicating and modifying the rule. The benefit of using a tuning expression, over the copy and edit method, is that when CSE updates built-in rules, your tuning expressions are preserved. This division of logic means that you don’t need to create as many custom rules. If you use tuning expressions in combination with multi-entity rules you’ll further reduce the need for custom rules.   
+Rule tuning expressions allow you to tailor the logic of a built-in rule without replicating and modifying the rule. The benefit of using a tuning expression, over the copy and edit method, is that when CSE updates built-in rules, your tuning expressions are preserved. This division of logic means that you don’t need to create as many custom rules. If you use tuning expressions in combination with multi-entity rules you’ll further reduce the need for custom rules.   
 
 You create tuning expressions on the **Rule Tuning** page, which is available from the **Content** menu. When you create a tuning expression, you have the option of applying to all of your rules, or to selected rules. Or, you can apply tuning expressions when you create a rule. You can apply multiple tuning expressions to a rule. You can assign a tuning expression to selected rules, or to all of your rules. You can also create a tuning expression without immediately assigning it to any rules. For more information, see [Rule Tuning Expressions](rule-tuning-expressions.md).
 

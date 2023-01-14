@@ -1,7 +1,8 @@
 ---
 id: partner-ecosystem-apps
-title: Partner Ecosystem Apps
-description: Partner Ecosystem Apps Documentation- Third-party Sumo Logic apps for Alcide kAudit, Aqua Security, Aria Packet Intelligence App, Armory, Auth0,  Barracuda CloudGen Firewall, CircleCI, CloudFlare, Code42, StackRox, CheckPoint, Cybereason, and Nucleon.
+title: Partner Ecosystem Apps for Sumo Logic
+sidebar_label: Partner Ecosystem Apps
+description: Partner Ecosystem Apps are third-party Sumo Logic apps for partners including Auth0, Barracuda CloudGen Firewall, CircleCI, CloudFlare, Code42, Cybereason, and more.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

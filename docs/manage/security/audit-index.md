@@ -89,7 +89,7 @@ When you query the audit index, the search results will include the class and ac
 
 ```sql
 _sourceCategory=account_management
-``` 
+```
 
 The table below shows the value of the `class` and `action` fields for account management events.
 

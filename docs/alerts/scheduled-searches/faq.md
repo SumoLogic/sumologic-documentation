@@ -13,7 +13,7 @@ searches and provide troubleshooting tips. 
 Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
 
 :::note
-The [Test Connection feature for webhooks](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
+The [Test Connection feature for webhooks](/docs/alerts/webhook-connections/set-up-webhook-connections) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
 :::
 
 ## Create an Email Alert to Notify you when Data Usage Reaches 90 Percent of your Account Limit
