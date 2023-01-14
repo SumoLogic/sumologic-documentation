@@ -187,16 +187,10 @@ To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-12
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-
-
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -217,47 +211,39 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 You can use filters to drill down and examine the data on a granular level.
 
-
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
 
 ### Overview Dashboard
 
 The **IIS 7 - Overview Dashboard** provides a high-level view of user visits by country, the number of requests and the response time, top applications used to make requests, operating systems (OSes) used, and the number of server errors.
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />
 
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS/Overview.png')} alt="Overview Dashboard" />
 
 ### Server Operation - Errors
-18
-
 
 The **IIS 7 - Server Operation - Errors Dashboard** provides information on server errors by IP address, response code trends, HTTP errors by server IP address, and client errors by IP address.
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />
 
-
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS/ServerOperationErrors.png')} alt="Server Operation - Errors" />
 
 ### Server Operation - Requests and Response Time
-20
-
 
 The **IIS 7 - Server Operation - Requests and Response Time Dashboard** provides information on requests by server IP address, the top 10 slowest web pages, the number of requests and the response time per timeslice, top 10 server IP addresses response throughput time in bytes per second, and cumulative response times percentiles.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS/ServerOperationsRequestsAndResponseTime.png')} alt="Server Operation - Requests and Response Time" />
 
 ### Traffic Insights - Apps and Requests
 
 The **IIS 7 - Traffic Insights - Apps and Requests Dashboard** provides information on the requests made by each application, the top 10 applications and the number of requests received, the top 10 users making requests, cumulative user request percentiles, the top 10 clients by IP address and the number of requests made, and cumulative client request percentiles**.**
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />
-
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS/TrafficInsightsAppsAndRequests.png')} alt="Traffic Insights - Apps and Requests" />
 
 ### Traffic Insights - Content and Client Platform
 
 The IIS 7 - Traffic Insights - Content and Client Platform Dashboard provides information on the number of media file types requested, the top 10 documents requested, the operating systems and web browsers used by visitors, and the operating system platforms used by visitors.
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS/TrafficInsightsContentAndClientPlatform.png')} alt="Traffic Insights - Content and Client Platform" />
 
-#### Visitor Insights
+### Visitor Insights
 
 The **IIS 7 - Visitor Insights Dashboard** provides information on the geographic locations and number of users by client IP address, the number of visitors per country, locations and number of users by client IP address by US state, and the number of visitors per US state.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS/VisitorInsights.png')} alt="Visitor Insights" />

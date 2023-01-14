@@ -57,7 +57,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
    * **Issue Summary**
    * **Priority** (optional)
    * **Issue Description**
-1. The following JSON is an example of the default **Payload**, you can customize it as needed. For details on the variables you can use as parameters within your JSON object, see [Webhook Payload Variables](/docs/alerts/webhook-connections/set-up-webhook-connections).
+1. The following JSON is an example of the default **Alert Payload**, you can customize it as needed. For details on the variables you can use as parameters within your JSON object, see [Webhook Payload Variables](/docs/alerts/webhook-connections/set-up-webhook-connections).
    ```
    {
    "fields": {
@@ -76,6 +76,8 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
    }
    ```
   Details on how to format your payload are available in the [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/#api-group-Issues).
+1. In the **Recovery Payload** section, you can customize your recovery notification.
+1. To test the connection, click **Test Alert or Test Recovery**. If successful, you'll see a `200 OK` response message.  
 1. Click **Save**.
 
 ## Create a Scheduled Search
