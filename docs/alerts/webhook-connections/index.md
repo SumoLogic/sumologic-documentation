@@ -70,3 +70,8 @@ In this section, we'll introduce the following concepts and more:
     </div>
   </div>
 </div>
+
+
+:::tip Other Connections
+Learn about our ServiceNow, JFrog, and Heroku integrations [here](/docs/manage/connections-integrations/servicenow).
+:::

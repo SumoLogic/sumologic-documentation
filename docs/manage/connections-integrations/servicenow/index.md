@@ -4,10 +4,19 @@ title: ServiceNow
 description: With the ServiceNow integration, search results from Sumo Logic can be uploaded to your organization's ServiceNow account.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Your organization can use collected data to investigate issues across your deployment.
 
 Data is uploaded to ServiceNow via the use of scheduled searches. After saving a search, results are available in ServiceNow. Additionally, you can launch ad-hoc ServiceNow investigations using search results in Sumo Logic.
+
+To access [ServiceNow connections](/docs/manage/connections-integrations/servicenow), go to **Manage Data** > **Monitoring** > **Connections**.<br/><img src={useBaseUrl('img/connection-and-integration/connections.png')} alt="connections" />
+
+From here, you can also:
+* **Search Connections** to search. 
+* **Edit** Connections. 
+* **Delete** Connections. 
+* View the **Details** of Connections.
 
 * To create events in ServiceNow, see [Set Up ServiceNow Connections](/docs/manage/connections-integrations/servicenow/set-up-connections).
 * To create incidents in ServiceNow, see [Set Up a ServiceNow Incident Webhook Connection](/docs/manage/connections-integrations/servicenow/set-up-security-incident-webhook).
