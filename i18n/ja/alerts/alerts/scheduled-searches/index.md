@@ -60,7 +60,7 @@ Existing customers of both ServiceNow and Sumo Logic can now take advantage of t
 
 The main way data is uploaded to ServiceNow is through the use of scheduled searches. After saving a search, results are available in ServiceNow. Additionally, you can launch ad-hoc ServiceNow investigations using search results in Sumo Logic.
 
-For instructions, see [ServiceNow](/docs/manage/connections-integrations/servicenow).
+For instructions, see [ServiceNow](/docs/alerts/webhook-connections/servicenow/).
 
 ### Webhook
 

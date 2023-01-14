@@ -73,5 +73,5 @@ In this section, we'll introduce the following concepts and more:
 
 
 :::tip Other Connections
-Learn about our ServiceNow, JFrog, and Heroku integrations [here](/docs/manage/connections-integrations/servicenow).
+Learn about our ServiceNow, JFrog, and Heroku integrations [here](/docs/alerts/webhook-connections/servicenow/).
 :::

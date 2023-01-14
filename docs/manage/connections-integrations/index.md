@@ -17,5 +17,5 @@ In this section, we'll introduce the following concepts:
 <DocCardList items={useCurrentSidebarCategory().items}/>
 
 :::tip
-Looking for [webhook connections](/docs/alerts/webhook-connections)? Use these to send Sumo Logic alerts to third-party applications. 
+See also: [webhook connections](/docs/alerts/webhook-connections), which you can use to send Sumo Logic alerts to third-party applications. 
 :::
