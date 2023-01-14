@@ -91,7 +91,7 @@ Monitor Alert: {{TriggerTimeRange}} on {{Name}}
 This section provides the old variables available for alert notifications from Metrics Monitors and Scheduled Searches. The following table shows where the old variables are supported.
 
 :::tip
-We recommend you use the new [common variables](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections) instead of these legacy variables. In the future, legacy variables will be deprecated.
+We recommend you use the new [common variables](/docs/alerts/webhook-connections/set-up-webhook-connections) instead of these legacy variables. In the future, legacy variables will be deprecated.
 :::
 
 | Variable | Description | Metrics Monitors | Scheduled Searches |
