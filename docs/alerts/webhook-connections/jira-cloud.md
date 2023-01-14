@@ -19,9 +19,9 @@ To send webhook alerts to Jira Cloud you need to include a Basic Authentication 
 
 1. Generate an API token using your [Atlassian Account](https://id.atlassian.com/manage/api-token).
 1. Using the email address of your Atlassian account and an API token, you can generate the Basic Authentication Header. In the following cURL command, replace `<me@example.com>` with your email address and `<my-api-token>` with your API token and run it:
-   ```bash
-   curl -v https://mysite.atlassian.net --user <me@example.com>:<my-api-token>
-   ```    
+    ```bash
+    curl -v https://mysite.atlassian.net --user <me@example.com>:<my-api-token>
+    ```    
 1. Your response should look like the following image. You'll need the **Authorization** value when configuring the connection in Sumo Logic.<br/> ![Atlassian Basic Authentication.png](/img/connection-and-integration/Atlassian-Basic-Authentication.png)
 
 ## Configuration in Sumo Logic
@@ -37,7 +37,7 @@ In Sumo Logic, Scheduled Searches and Monitors send alerts to other tools via we
 You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
 :::
 
-1. Go to **Manage Data > Monitoring > Connections**.
+1. Go to **Manage Data** > **Monitoring** > **Connections**.
 1. On the **Connections** page click the **+** icon at the top-right of the table.
 1. Select the **Jira** option. In the **Create Jira Connection** dialog, fill out connection information.<br/>  ![Jira webhook button.png](/img/connection-and-integration/Jira-webhook-button.png)
 1. Enter a **Name** for the Connection.

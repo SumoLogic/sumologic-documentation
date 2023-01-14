@@ -36,7 +36,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 
 Configure the Webhook connection to trigger the Azure function:
 
-1. Go to **Manage Data \> Monitoring \> Connections**.
+1. Go to **Manage Data** > **Monitoring** > **Connections**.
 1. On the **Connections** page click **Add**.
 1. Select **Azure Functions**.
 1. In the **Create Connection** dialog, configure:
