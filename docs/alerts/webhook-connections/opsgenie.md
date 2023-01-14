@@ -60,8 +60,7 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
 1. (Optional) Enter an **Authorization Header**, which may include an authorization token.
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
 1. (Optional) Opsgenie uses the **Priority** value to define the priority of alerts. Edits to the **Priority** value are automatically updated in the JSON payload and vice versa.
-1. The following JSON is the default **Payload**, you can customize it as needed. For details on variables you can use as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
-
+1. The following JSON is the default **Alert Payload**, you can customize it as needed. For details on variables you can use as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
     ```json
     {
      "AlertName": "{{AlertName}}",
@@ -82,5 +81,6 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
      "SourceURL": "{{SourceURL}}"
     }
     ```
-
-1. Click **Save**.
+1. In the **Recovery Payload** section, you can customize your recovery notification.
+1. To test the connection, click **Test Alert or Test Recovery**. If successful, you'll see a `200 OK` response message.
+1. Click **Save**.
