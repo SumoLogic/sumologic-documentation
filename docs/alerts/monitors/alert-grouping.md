@@ -152,3 +152,7 @@ For example: if over a period of time the structure of log messages changes and 
 We do support high cardinality for Alert Grouping, but there is a limit. If you have more than 1000 unique values of field(s) in a given monitor execution run, then only top 1000 unique values will generate an alert.
 
 For example, let's say that you configured a monitor to generate one alert per customer when the count of Error messages (in Logs) is more than 5. Now let's assume that when the monitor ran at t0, it found that 5000 customers had an Error count more than 5. In this case, it would only generate 1000 alerts for the first 1000 customers that it found with an Error count more than 5.
+
+### What fields are not allowed for Alert Grouping?
+
+Fields with very high cardinality such as _raw, _messagetime, _receipttime, _messageid are not allowed for Alert Grouping.
