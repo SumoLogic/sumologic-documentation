@@ -43,6 +43,8 @@ See Real User Monitoring in action.
 |:--|:--|
 | Credits | Enterprise Operations and Enterprise Suite. Essentials get up to 5 GB a day. |
 
+To confirm that your Sumo Logic service package has been upgraded to include Traces and Real User Monitoring, click the **+New** button and you'll see **Traces** in the dropdown.<br/><img src={useBaseUrl('/img/traces/traces-menu-option.png')} alt="traces menu option" width="275"/>
+
 ## Configuring RUM Data Collection
 
 To collect [traces](/docs/apm/traces) from a browser, you'll first need to create a RUM HTTP Traces Source. The source will have an endpoint URL that you'll put in a script that sends trace data in [OTLP/JSON over HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp) protocol.
@@ -58,7 +60,8 @@ For full end-to-end visibility, we recommended supplementing your RUM browser au
 To configure a RUM HTTP Traces source:
 
 1. From Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
-1. On the Collection page, click **Add Source** next to a Hosted Collector. If you've not yet created a hosted collector, [follow these steps](/docs/send-data/hosted-collectors/configure-hosted-collector).
+1. If you've not yet created a Hosted Collector, [follow these steps](/docs/send-data/hosted-collectors/configure-hosted-collector) to do so.
+1. On the **Collection** page, click **Add Source** next to a Hosted Collector. <br/><img src={useBaseUrl('img/reuse/add-source.png')} alt="add source" width="475"/>
 1. Select **RUM HTTP Traces**. <br/><img src={useBaseUrl('img/rum/rum-icon.png')} alt="Real User Monitoring" width="120"/>
 1. Under **Source Type: RUM HTTP Traces**, enter the following information:
    * **Name** for the Source.
