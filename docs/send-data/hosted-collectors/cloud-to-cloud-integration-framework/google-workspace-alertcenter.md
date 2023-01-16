@@ -28,25 +28,31 @@ In this configuration, you'll set up a Google service account, and configure the
 
 ## Step 1: Create service account Credentials
 
-**To create service account credentials**
+To create Google Workspace AlertCenter service account credentials:
 
-1. Select the project or create a new one. Enable *Google Workspace Alert Center API* for the Alert API. You can search for "Google Workspace Alert Center API" in the search bar. Then select the "Enable" button. <br/><img src={useBaseUrl('img/send-data/google_workspace_alert_center_API_sdk.png')} alt="api-sdk" width="550"/>
-2. You will be redirected to the dashboard page. Select the **Credentials** tab in the left panel. <br/><img src={useBaseUrl('img/send-data/google_workspace_credentials.PNG')} alt="credentials" width="350"/>
-3. Click **Create Credentials**, and select **Service Account** to create service account credentials. Later you'll supply the account details and click **Done** to create a service account. <br/><img src={useBaseUrl('img/send-data/google_workspace_service_account.PNG')} alt="<service-account>" width="<insert-pixel-number>"/>
-4. Navigate to the **Keys** tab on the same page. To create JSON for the service account you must create a key. Click **Add key** and select **Create new key**. At the prompt select **JSON** and click **Create**. <br/><img src={useBaseUrl('img/send-data/google_workspace_service_account_key.PNG')} alt="service-account-key" width="<insert-pixel-number>"/>
-5. JSON for the service account is automatically downloaded. To see what the JSON looks like, and how the JSON fields map to the fields you'll configure, see [Service account JSON](#example-of-service-account-json) below.
-6. Add domain-wide delegation to your service account using the generated client ID in the above step 4 of the same section.
-7. Add the OAuth scope to the service account, from the admin console, and select it in the input form. The OAuth scope for alert API is `https://www.googleapis.com/auth/apps.alerts`. To add a scope, refer to the step-by-step process [here](https://developers.google.com/admin-sdk/directory/v1/guides/delegation#delegate_domain-wide_authority_to_your_service_account).
-:::note
-If you don't add the scope to the service account you won't be authorized to fetch alert details.
-:::
+1. From Google Workspace, select your project or create a new one.
+1. Enable **Google Workspace Alert Center API** for the Alert API. To locate this setting, you can search for "Google Workspace Alert Center API" in the search bar. Then select the **Enable** button. <br/><img src={useBaseUrl('img/send-data/google_workspace_alert_center_API_sdk.png')} alt="api-sdk" width="450"/>
+1. You will be redirected to the dashboard page. Select the **Credentials** tab in the left panel. <br/><img src={useBaseUrl('img/send-data/google_workspace_credentials.PNG')} alt="credentials" width="200"/>
+1. Click **Create Credentials**, and select **Service Account** to create service account credentials. Later you'll supply the account details and click **Done** to create a service account. <br/><img src={useBaseUrl('img/send-data/google_workspace_service_account.PNG')} alt="<service-account>" width="400"/>
+1. Navigate to the **Keys** tab on the same page. To create JSON for the service account, you must create a key. Click **Add key** and select **Create new key**. At the prompt, select **JSON** and click **Create**. <br/><img src={useBaseUrl('img/send-data/google_workspace_service_account_key.PNG')} alt="service-account-key" width="<insert-pixel-number>"/>
+1. JSON for the service account is automatically downloaded. To see what the JSON looks like, and how the JSON fields map to the fields you'll configure, see [Service account JSON](#example-of-service-account-json) below.
+1. Add domain-wide delegation to your service account using the generated client ID in the step 5 above.
+1. From the Google admin console, add your OAuth scope to the service account using the instructions [here](https://developers.google.com/admin-sdk/directory/v1/guides/delegation#delegate_domain-wide_authority_to_your_service_account) and select it in the input form. The OAuth scope for alert API is:
+  ```
+  https://www.googleapis.com/auth/apps.alerts
+  ```
+  :::note
+   If you don't add an OAuth scope to your Google Workspace service account, you won't be authorized to fetch alert details. Learn more about OAuth scopes:
+   * [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2)
+   * [Setting up OAuth 2.0](https://support.google.com/cloud/answer/6158849?hl=en)
+  :::
 7. For delegated user email, you need to add the email of the user whom you want to delegate for API calls.
 
 ## Step 2: Configure the Google Workspace AlertCenter Source
 
 1. In Sumo Logic, go to **Manage Data > Collection > Collection**.
 1. On the **Collectors page**, click **Add Source** next to a Hosted Collector.
-1. Select **Google Workspace AlertCenter**. <br/> <img src={useBaseUrl('img/send-data/alertcenter-icon.png')} alt="<alertcenter-icon" width="200"/>
+1. Select **Google Workspace AlertCenter**. <br/> <img src={useBaseUrl('img/send-data/alertcenter-icon.png')} alt="<alertcenter-icon" width="140"/>
 1. **Name.** Enter a name for the Source
 1. **Description.** (Optional). Enter the description of the Source.
 1. **Source Category.** Enter a string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
@@ -55,7 +61,7 @@ If you don't add the scope to the service account you won't be authorized to fet
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored (i.e., dropped).
 1. **Delegated User Email.** Enter the admin email address for the domain.
-1. **Google Workspace AlertCenter Credentials**. You can authenticate your service account credentials directly by uploading a JSON file credentials instead of breaking down the file into different sections for the UI schema. Click **Upload** and select the JSON file that you downloaded in the [Service Account Credentials section](#step-1-create-service-account-credentials). <br/> <img src={useBaseUrl('img/send-data/alertcenter-config-main.png')} alt="<alert-center-source" width="500"/>
+1. **Google Workspace AlertCenter Credentials**. You can authenticate your service account credentials directly by uploading a JSON file credentials instead of breaking down the file into different sections for the UI schema. Click **Upload** and select the JSON file that you downloaded in the [Service Account Credentials section](#step-1-create-service-account-credentials). <br/> <img src={useBaseUrl('img/send-data/alertcenter-config-main.png')} alt="<alert-center-source" width="400"/>
 1. **Exclude Alert Types**. (Optional) Enter the data alert types and scope that you don't want to send to Sumo Logic.
 :::note
 All alert types are selected by default unless you exclude some of the alert types in the config JSON schema.
@@ -68,7 +74,7 @@ All alert types are selected by default unless you exclude some of the alert typ
 When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
@@ -78,7 +84,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. |
 | `schemaRef` | JSON Object  | Yes | Use `{"type":"Google Workspace AlertCenter"}` for Google Workspace AlertCenter Source. | not modifiable |
 | `sourceType` | String | Yes | Use `Universal` for Google Workspace AlertCenter Source. | not modifiable |
@@ -86,7 +92,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ### Config Parameters
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | `name` | String | Yes | Type the desired name of the Source and it must be unique per Collector. This value is assigned to the `metadata field _source`.  | modifiable |
 | `description` | String  | No | Type the description of the Source. | modifiable |
 | `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
