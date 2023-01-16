@@ -1158,8 +1158,8 @@ module.exports = {
             'search/search-query-language/parse-operators/parse-xml-formatted-logs',
             'search/search-query-language/parse-operators/parse-field-option',
             'search/search-query-language/parse-operators/parse-nodrop-option',
-            'search/search-query-language/parse-operators/parse-date',
-            'search/search-query-language/parse-operators/parse-hex',
+            'search/search-query-language/parse-operators/parsedate',
+            'search/search-query-language/parse-operators/parsehex',
           ],
         },
         {

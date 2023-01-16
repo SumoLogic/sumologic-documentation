@@ -1,5 +1,5 @@
 ---
-id: parse-date
+id: parsedate
 title: parseDate
 ---
 
