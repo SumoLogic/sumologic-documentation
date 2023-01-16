@@ -39,11 +39,11 @@ namespace=istio-system cluster={{cluster}}
 
 ## Collecting Logs and Metrics for the Istio App
 
-This section provides instructions for collecting logs and metrics for the Sumo App for Istio. Logs and metrics are collected with the Sumo Logic Helm chart. Istio [sample metrics](/#Sample-Metrics) and [sample log messages](#Sample-Log-Messages) are also provided, along with a [query sample](#Query-Sample).
+This section provides instructions for collecting logs and metrics for the Sumo App for Istio. Logs and metrics are collected with the Sumo Logic Helm chart. Istio [sample metrics](#Sample-Metrics) and [sample log messages](#Sample-Log-Messages) are also provided, along with a [query sample](#Query-Sample).
 
 This app supports Istio versions 1.8.x and 1.9.x+.
 
-The minimum version of Sumo Logic K8s Collection required is [V2.1.6](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v2.1.6).
+The minimum version of Sumo Logic K8s Collection required is [v2.1.6](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v2.1.6).
 
 Configure log and metrics collection with the Sumo Logic Helm chart, using one of the following options:
 
