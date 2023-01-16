@@ -28,6 +28,5 @@ You'll need the **Manage connections** [role capability](/docs/manage/users-ro
 1. Enter the **URL** for the endpoint.
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
 1. Under **Alert Payload**, enter a JSON object in the format required by Datadog. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
-1. In the **Recovery Payload** section, you can customize your recovery notification.
-1. To test the connection, click **Test Alert or Test Recovery**. If successful, you'll see a `200 OK` response message.
+1. To test the connection, click **Test Alert**. If successful, you'll see a `200 OK` response message.
 1. Click **Save**.

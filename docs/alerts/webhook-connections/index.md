@@ -17,19 +17,19 @@ In this section, we'll introduce the following concepts and more:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <img src={useBaseUrl('img/connection-and-integration/aws-lambda.svg')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/connection-and-integration/aws-lambda.svg')} alt="Thumbnail icon" width="45"/>
   <h4><a href="/docs/integrations/amazon-aws/">AWS Lambda</a></h4>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <img src={useBaseUrl('img/connection-and-integration/azure-functions.png')} alt="Thumbnail icon" width="60"/>
-  <h4><a href="/docs/alerts/webhook-connections/microsoft-teams">Azure Functions</a></h4>
+  <img src={useBaseUrl('img/connection-and-integration/azure-functions.png')} alt="Thumbnail icon" width="80"/>
+  <h4><a href="/docs/alerts/webhook-connections/microsoft-azure-functions">Azure Functions</a></h4>
   </div>
 </div>
   <div className="box smallbox3 card">
     <div className="container">
-    <img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="thumbnail icon" width="50"/>
+    <img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="thumbnail icon" width="55"/>
     <h4><a href="/docs/alerts/webhook-connections/microsoft-teams">MS Teams</a></h4>
     </div>
   </div>
@@ -53,25 +53,26 @@ In this section, we'll introduce the following concepts and more:
   </div>
   <div className="box smallbox7 card">
     <div className="container">
-    <img src='https://upload.wikimedia.org/wikipedia/en/7/7e/Datadog_logo.svg' alt="icon" width="50"/>
-    <h4><a href="/docs/alerts/webhook-connections/opsgenie">Datadog</a></h4>
+    <img src='https://companieslogo.com/img/orig/NOW-6d5a01eb.png?t=1647966832' alt="icon" width="60"/>
+    <h4><a href="/docs/alerts/webhook-connections/servicenow">ServiceNow</a></h4>
     </div>
   </div>
   <div className="box smallbox8 card">
     <div className="container">
     <img src={useBaseUrl('img/connection-and-integration/hipchat-logo-vector.svg')} alt="icon" width="55"/>
-    <h4><a href="/docs/alerts/webhook-connections/opsgenie">HipChat</a></h4>
+    <h4><a href="/docs/alerts/webhook-connections/hipchat">HipChat</a></h4>
     </div>
   </div>
   <div className="box smallbox9 card">
     <div className="container">
-    <img src={useBaseUrl('img/connection-and-integration/new-relic-seeklogo.com.svg')} alt="icon" width="45"/>
-    <h4><a href="/docs/alerts/webhook-connections/opsgenie">New Relic</a></h4>
+    <img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="60"/>
+    <h4><a href="/docs/alerts/webhook-connections/jira-cloud">Jira</a></h4>
     </div>
   </div>
 </div>
 
+<br/><br/>
 
 :::tip Other Connections
-Learn about our ServiceNow, JFrog, and Heroku integrations [here](/docs/alerts/webhook-connections/servicenow/).
+Learn about our JFrog and Heroku integrations [here](/docs/alerts/webhook-connections/servicenow/).
 :::
