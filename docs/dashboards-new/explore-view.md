@@ -55,7 +55,7 @@ This feature is currently supported only for Database apps. To learn more, go to
 
 ### Application Service Views
 
-Explore provides two Service and Application dashboard views accessible through the **Explore By** menu. This allows you to review tracing data by application (all or grouped) and services by top level and breaking down their health by application. This helps you review the most active operations performed on specified applications and services. See [Service Map Traces](/docs/apm/traces/working-with-tracing-data/service-map.md#Application_Service_Dashboards) and [Sumo Apps](/docs/integrations) for more info. <br/><img src={useBaseUrl('img/dashboards-new/explore/apm-service-view.png')} alt="Explore" />
+Explore provides two Service and Application dashboard views accessible through the **Explore By** menu. This allows you to review tracing data by application (all or grouped) and services by top level and breaking down their health by application. This helps you review the most active operations performed on specified applications and services. See [Service Map Traces](/docs/apm/traces//service-map.md#Application_Service_Dashboards) and [Sumo Apps](/docs/integrations) for more info. <br/><img src={useBaseUrl('img/dashboards-new/explore/apm-service-view.png')} alt="Explore" />
 
 
 ### Real User Monitoring

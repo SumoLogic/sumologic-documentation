@@ -63,7 +63,7 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
 If for whatever reason you can't disable this, configure X-Ray context propagation by setting OTEL_PROPAGATORS=xray environment variable on your client side.
 :::
 
-1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces.md).
+1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces//view-and-investigate-traces.md).
 
 ## Sumo Logic AWS Distro Lambda layers for AWS Region - amd64 (x86_64) architecture
 
@@ -170,7 +170,7 @@ Instrumentation of container based AWS Lambda function requires some changes in 
 
     ![lambda-python.png](/img/traces/lambda-python4.png)
 
-1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces.md).
+1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces//view-and-investigate-traces.md).
 
 ### Context propagation
 

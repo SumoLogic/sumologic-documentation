@@ -14,7 +14,7 @@ Sumo Logic tracing supports the OpenTelemetry standard as well as other legacy o
 * [For Kubernetes environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments)
 * [For other environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments)
 
-Once you've set up collection, [learn how to analyze your traces in Sumo Logic](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces.md).
+Once you've set up collection, [learn how to analyze your traces in Sumo Logic](/docs/apm/traces//view-and-investigate-traces.md).
 
 
 ## Step 2: Instrument Your Application with OpenTelemetry

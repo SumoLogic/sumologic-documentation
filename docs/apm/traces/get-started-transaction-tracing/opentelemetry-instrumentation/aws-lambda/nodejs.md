@@ -56,7 +56,7 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
 
     ![lambda-nodejs3.png](/img/traces/lambda-nodejs3.png)
 
-1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces).
+1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces//view-and-investigate-traces).
 
 ### amd64 architecture
 
@@ -169,4 +169,4 @@ changes in the Dockerfile and image rebuild. You'll need the following:
 
     ![lambda-nodejs4.png](/img/traces/lambda-nodejs4.png)
 
-1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces).
+1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces//view-and-investigate-traces).
