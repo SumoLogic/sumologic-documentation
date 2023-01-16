@@ -18,7 +18,7 @@ You can collect logs with traces attached to them by [inserting spanid/traceid 
  * message
  * stack
 
-and they are displayed in the **Span logs** tab in [Details Pane](../working-with-tracing-data/view-and-investigate-traces.md) after clicking on the span.
+and they are displayed in the **Span logs** tab in [Details Pane](/docs/apm/traces/view-and-investigate-traces) after clicking on the span.
 
 ![span logs in details pane.png](/img/traces/span-logs-in-details-pane.png)
 
@@ -32,4 +32,4 @@ Refer to the [OpenTelemetry collector attributes processor documentation](https:
 
 You can insert dynamically-created custom tags in your code by calling the appropriate functions of OpenTelemetry auto-instrumentation.
 
-See how to pass [custom tags](../get-started-transaction-tracing/opentelemetry-instrumentation/java/custom-tags-configuration.md) for Java auto-instrumentation.
+See how to pass [custom tags](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java/custom-tags-configuration) for Java auto-instrumentation.

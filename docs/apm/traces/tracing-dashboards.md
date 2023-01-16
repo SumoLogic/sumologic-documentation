@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Out-of-the-box dashboards are available as three Explore hierarchies. You can access them in the **Explore By** dropdown menu.
 
-The **APM: Application View** groups services into higher-level applications based on the `application=[app-name]` custom tag that you may add to your tracing data if you want to leverage it fully. Without the tag, all services will belong to a "default" application. The fourth and last level of the hierarchy shows the top 50 most active operations executed on the service. See [Working with Span attributes](../advanced-configuration/working-with-span-attributes.md) to learn how to customize your span attributes and set up application name.
+The **APM: Application View** groups services into higher-level applications based on the `application=[app-name]` custom tag that you may add to your tracing data if you want to leverage it fully. Without the tag, all services will belong to a "default" application. The fourth and last level of the hierarchy shows the top 50 most active operations executed on the service. See [Working with Span attributes](/docs/apm/traces/advanced-configuration/working-with-span-attributes) to learn how to customize your span attributes and set up application name.
 
 The **APM: Service View** takes a contrary approach, displaying services by top level and breaking down their health by application. This view can be useful for shared services that support more than one application. The fourth level shows the top 50 most active operations performed on the selected service and application.
 
