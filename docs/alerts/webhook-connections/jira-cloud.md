@@ -76,8 +76,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
    }
    ```
   Details on how to format your payload are available in the [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/#api-group-Issues).
-1. In the **Recovery Payload** section, you can customize your recovery notification.
-1. To test the connection, click **Test Alert or Test Recovery**. If successful, you'll see a `200 OK` response message.  
+1. To test the connection, click **Test Alert**. If successful, you'll see a `200 OK` response message.  
 1. Click **Save**.
 
 ## Create a Scheduled Search
