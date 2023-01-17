@@ -28,7 +28,7 @@ Here’s one row from the List view. The numbered definitions below correspond t
 ![insight-summary.png](/img/cse/insight-summary.png)
 
 1. **Creation date and time**. When the Insight was created.
-1. **Dwell time**. The period of time between when the first and last Records in the Insight were observed.  
+1. **Dwell time**. The time between when the first event occurred (when the first Record in the Insight was generated) and when the Insight was generated. 
 1. **Age**. The elapsed time since the Insight was created in minutes, hours, and so on.
 1. **Insight name**. The Insight name, made up of the Insight ID, and the MITRE stage or stages associated with the Signals in the Insight. 
 2. **Global Confidence**. If sufficient data is available, a [Global Confidence score](global-intelligence-security-insights.md) for the Insight is shown. 
@@ -88,7 +88,7 @@ The left pane of the **Insight \> Details** page displays detailed information a
 1. **Global Confidence.** The Global Confidence score for the Insight, if available.
 1. **Signal Data.** The number of Signals in the Insight.
 1. **Event Time.** The event time for the of the last Signal in the Insight.
-1. **Dwell Time.** The period of time between when the first and last Records in an Insight were observed.
+1. **Dwell Time.** The time between when the first event occurred (when the first Record in the Insight was generated) and when the Insight was generated.
 1. **Insight Created.** When the Insight was created.
 1. **Tags and Create a Tag.** Displays any Tags that have already been assigned to the Insight, and a field for adding a tag.
 1. **Comments.** Displays any comments that have been made on the Insight, and a field for adding a comment.
@@ -96,7 +96,7 @@ The left pane of the **Insight \> Details** page displays detailed information a
 
 ### Signal visualization area
 
-At the top of the **Insight \> Details** page, you’ll see a Signal timeline that visualizes the Insight’s attached Signals, which are the Signals that caused the Insight to be created, and any Signals that have been manually added to the Insight.
+At the top of the **Insight > Details** page, you’ll see a Signal timeline that visualizes the Insight’s attached Signals, which are the Signals that caused the Insight to be created, and any Signals that have been manually added to the Insight.
 
 ![top-bit.png](/img/cse/top-bit.png)
 
