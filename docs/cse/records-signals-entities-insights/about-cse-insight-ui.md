@@ -96,7 +96,7 @@ The left pane of the **Insight \> Details** page displays detailed information a
 
 ### Signal visualization area
 
-At the top of the **Insight > Details** page, you’ll see a Signal timeline that visualizes the Insight’s attached Signals, which are the Signals that caused the Insight to be created, and any Signals that have been manually added to the Insight.
+At the top of the **Insight** > **Details** page, you’ll see a Signal timeline that visualizes the Insight’s attached Signals, which are the Signals that caused the Insight to be created, and any Signals that have been manually added to the Insight.
 
 ![top-bit.png](/img/cse/top-bit.png)
 
