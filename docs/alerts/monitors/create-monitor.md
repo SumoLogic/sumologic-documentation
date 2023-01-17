@@ -77,7 +77,9 @@ You can set the trigger based on the following:
 
 **Recover**
 
-Use the **Edit Recovery Settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available.  <br/>![logs trigger recovery toggle.png](/img/monitors/edit-recovery-settings1.png)  
+Recovery condition is set by default to the opposite of the alert condition. If you need to change these settings, first switch the **Edit Recovery Settings** toggle and then adjust values for the recovery settings accordingly.
+
+![logs trigger recovery toggle.png](/img/monitors/edit-recovery-settings1.png)  
 
 For example, when the alert is set to `> 10` the recovery would be set to `<= 10` when inferred. Sumo Logic automatically resolves the incident when the resolution condition is satisfied. `Recover automatically when result is <threshold type> <threshold> for the selected time period`.
 
@@ -156,7 +158,7 @@ Recover
 
 **Recover**
 
-Use the **Edit Recovery Settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available.   
+Recovery condition is set by default to the opposite of the alert condition. If you need to change these settings, first switch the **Edit Recovery Settings** toggle and then adjust values for the recovery settings accordingly.
 
 ![metrics trigger recovery toggle.png](/img/monitors/metrics-trigger-recovery-toggle.png)  
 

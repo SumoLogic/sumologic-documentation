@@ -1,7 +1,7 @@
 ---
 id: audit-index
 title: Using the Audit Index with Webhook Connections
-sidebar_label: Sumo Audit Index
+sidebar_label: Sumo Logic Audit Index
 description: If the Sumo Logic Audit Index is enabled, you can keep an eye on scheduled searches that send results via Webhook.
 ---
 

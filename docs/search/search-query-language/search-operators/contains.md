@@ -29,7 +29,7 @@ contains(<field1>, <field2>) as <field>
 
 **Rules**
 
-* Requires field values to be strings. You may [cast values](#casting-data-to-a-number-or-string) if needed.
+* Requires field values to be strings. You may [cast values](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) if needed.
 * The full string of field2 must exist within field1.
 * Comparison is case sensitive.
 * Returns `true` when the value from field2 was found and `false` when the value was not found in field1.

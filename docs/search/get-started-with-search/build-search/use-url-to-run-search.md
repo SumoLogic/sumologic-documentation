@@ -36,5 +36,5 @@ test query | count by _source
 The custom URL that launches this log query in the Sumo Logic Search page would be similar to the following. The exact URL would depend on your Sumo Logic account endpoint, as listed in [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security). 
 
 ```
-https://service.sumologic.com/ui/#/search/create?query=test-query-%7C-count-by-_source&startTime=-10w&endTime=-1w
+https://service.sumologic.com/ui/#/search/create?query=test%20query%20%7C%20count%20by%20_source&startTime=-10w&endTime=-1w
 ```
