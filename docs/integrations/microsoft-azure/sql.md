@@ -169,7 +169,7 @@ This section describes the dashboards in the Sumo Logic App for Azure SQL.
 
 See the count of logical servers, databases, errors; and the “top 10” active servers, resource groups, subscriptions, resources, databases, operations, and categories.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure SQL Database dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-overview.png')} alt="Overview" />
 
 **Logical Servers**. The count of logical servers over the last 24 hours.
 
@@ -205,14 +205,10 @@ See the count of logical servers, databases, errors; and the “top 10” active
 
 
 ### Blocking Stats
-13
-
 
 See information about blocking queries in Azure SQL, including lock mode usage, lock duration, and details about block events.
 
-
-14
-
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-blocking-stats.png')} alt="Blocking Stats" />
 
 **Lock Mode Used by Query**. A donut chart that shows the breakdown of lock modes for blocked queries over the last 7 days.
 
@@ -240,14 +236,10 @@ Wait Events by Database. A donut chart that shows the count of wait events by lo
 
 
 ### Errors
-15
-
 
 See information about errors in Azure SQL, including total error count, top 10 error numbers and error messages, errors by severity and database, error trend and comparison analyses, and error details.
 
-
-16
-
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-errors.png')} alt="Errors" />
 
 **Errors**. Count of errors over the last 24 hours.
 
@@ -269,16 +261,12 @@ See information about errors in Azure SQL, including total error count, top 10 e
 
 
 ### Metrics
-17
-
 
 See metrics for connections attempts; Database Transaction Unit (DTUs), CPU and storage utilization; and for deadlocks, sessions, and workers.
 
 For information about the metrics presented in the Metrics dashboards, see [All metrics](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-metrics-diag-logging#all-metrics) and **Microsoft.Sql/servers/databases** in Azure help.
 
-
-18
-
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-metrics.png')} alt="Metrics" />
 
 **Blocked by Firewall**. A line chart showing the count of connections blocked by a firewall over the last 24 hours.
 
@@ -322,16 +310,12 @@ For information about the metrics presented in the Metrics dashboards, see [All 
 
 
 ### QueryStoreRuntime Stats
-19
-
 
 See query runtime execution statistics such as CPU usage and query duration.
 
 For more information about the statistics presented on the QueryStoreRuntime Stats dashboard, see [Query Store runtime statistics](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-metrics-diag-logging#query-store-runtime-statistics) in Azure help.
 
-
-20
-
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-querystoreruntime-stats.png')} alt="QueryStoreRuntime Stats" />
 
 **Unique QueryId's**. The count of unique queryIDs over the last 24 hours.
 
@@ -369,22 +353,16 @@ For more information about the statistics presented on the QueryStoreRuntime Sta
 
 
 ### QueryStoreWait Stats
-21
-
 
 See information about how much time a database spent waiting on different wait types.
 
 For more information about the statistics presented on the QueryStoreWaitStats dashboard, see [Query Store wait statistics](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-metrics-diag-logging#query-store-wait-statistics) in Azure help.
 
-
-22
-
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-querystorewait-stats.png')} alt="QueryStoreWait Stats" />
 
 **Wait Category**. A donut chart that shows the breakdown of wait events by database over the last 24 hours.
 
 **Wait Category Breakup**. A horizontal bar chart that shows the breakdown of wait event by category for each database over the last 24 hours.
-
-
 
 **Max Query Wait Time by DatabaseName**. A line chart that shows that maximum query wait type per timeslice for each database over the last 24 hours.
 
@@ -396,12 +374,12 @@ For more information about the statistics presented on the QueryStoreWaitStats d
 
 
 ### SQLInsights
-23
-
 
 See database performance analytics obtained from Azure SQL Database Intelligent Insights, including information about issues like excessive wait times, critical exceptions, and so on.
 
 For more information about the data presented on the SQLInsights dashboard, see [Use the Intelligent Insights Azure SQL Database performance diagnostics log](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-intelligent-insights-use-diagnostics-log) in Azure help.
+
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-sqlinsights.png')} alt="SQLInsights" />
 
 **Active SQLInsights**.  Count of active SQL Insights issues as of the current time.
 
@@ -424,6 +402,7 @@ See information about timeouts in Azure SQL.
 
 For more information about the data presented on the Timeouts dashboard, see [Time-outs dataset](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-metrics-diag-logging#time-outs-dataset) in Azure help.
 
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-timeouts.png')} alt="Timeouts" />
 
 **Timeouts**. The count of timeouts over the last 7 days.  
 
