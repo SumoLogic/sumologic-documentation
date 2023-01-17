@@ -8,7 +8,7 @@ description: Learn how to troubleshoot problems with parsers.
 
 Sumo Logic parsers are a powerful tool for extracting log data to support security and observability use cases. This topic provides tips to help you identify and resolve some common issues you might encounter when using parsers.
 
-For general information on the parsing engine and syntax, see the [Parser Editor](parser-editor.md) and [Parsing Language Reference Guide](parsing-language-reference-guide.md topics.
+For general information on the parsing engine and syntax, see the [Parser Editor](parser-editor.md) and [Parsing Language Reference Guide](parsing-language-reference-guide.md) topics.
 
 1. Our [Ingestion Guides](/docs/cse/ingestion/) provide instructions for how to ingest data from a variety of data sources. Check to see if there is a guide for the data source you’re working with. The ingest guides generally describe the most straightforward, least error-prone method. Make sure that you’ve followed the instructions exactly and that the data to be ingested is supported.      
 
