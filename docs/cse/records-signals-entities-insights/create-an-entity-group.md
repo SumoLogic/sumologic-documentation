@@ -7,7 +7,7 @@ description: You can use Entity Groups to automatically group entities in terms 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-An administrator can use CSE’s _Entity Groups_ feature to define groups of Entities and to assign attributes to them at the group level. You can define the members of an Entity Group based on Entity name, an IP address range, or membership in a group in an Inventory system like Active Directory. Note that membership in an Entity Group is not configured by explicitly assigning individual Entities to the group. Instead you define an Entity Group in terms of criteria, like name or IP address, so that when Entities are created in the future, they will automatically inherit the properties of Entity Groups they match without manual edits.
+An administrator can use CSE’s _Entity Groups_ feature to define groups of Entities and to assign attributes to them at the group level. You can define the members of an Entity Group based on Entity name, an IP address range, or membership in a group in an Inventory system like Active Directory. Note that membership in an Entity Group is not configured by explicitly assigning individual Entities to the group. Instead you define an Entity Group in terms of criteria, like name or IP address, so that Entities will automatically inherit the properties of Entity Groups they match without manual edits.
 
 You can assign [criticality](entity-criticality.md), [tags](tags-insights-signals-entities-rules.md), and [suppression](about-signal-suppression.md) status to an Entity Group, and those settings will be applied to all of the Entities in the group.
 
