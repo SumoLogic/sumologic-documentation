@@ -28,7 +28,7 @@ By clicking on any data point on the chart, you can view the side panel's **Enti
 ![Explore coffee app to drill down on infrastructure tab.png](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Application-Health-Across-Services.png)
 
 :::note
-Tracing metrics retention has [default metrics retention](/docs/apm/traces//view-and-investigate-traces/#time-range).
+Tracing metrics retention has [default metrics retention](/docs/apm/traces/view-and-investigate-traces/#time-range).
 :::
 
 ## Installing the Tracing App (Optional)

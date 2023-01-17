@@ -68,7 +68,7 @@ To configure a RUM HTTP Traces source:
    * **Description**. (Optional) description of the Source .
    * **Source Host** and **Source Category**. (Optional) Enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md) fields that allow you to organize your data. We recommend you specify a Source Category indicating the data is from a browser.<br/><img src={useBaseUrl('/img/rum/RUM-HTTP-Traces-Source.png')} alt="Real User Monitoring" width="300"/>
 1. Enter **Advanced options for Browser RUM**. A list of FAQs on the page can provide help for these options. A table with all the available configuration parameters is available in the [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) README file.<br/><img src={useBaseUrl('img/rum/RUM-HTTP-Traces-Source-Advanced.png')} alt="Real User Monitoring" width="300"/>
-   * **Application Name**. (Recommended) Add an **Application Name** tag of a text string to show for the app name in spans (for example, `bookings-app`). This groups services in the Application Service View. If left blank, services will belong to a "default" application. See [Application Service Dashboards](/docs/apm/traces//service-map.md) for more information. This setting is saved in the script for `name_of_your_web_application`.
+   * **Application Name**. (Recommended) Add an **Application Name** tag of a text string to show for the app name in spans (for example, `bookings-app`). This groups services in the Application Service View. If left blank, services will belong to a "default" application. See [Application Service Dashboards](/docs/apm/traces/service-map.md) for more information. This setting is saved in the script for `name_of_your_web_application`.
    * **Service Name**. ( Required) Add a **Service Name** of a text string to show for the service name in spans (for example, `bookings-web-app`). This setting is saved in the script for `name_of_your_web_service`.<br/><br/>To set up a service name dynamically (e.g., to have different service names for micro-frontend packages), leverage the `getOverriddenServiceName` function inside your page code to overwrite the default service name (requires RUM script v4.2.0 or higher). Service names should be of low cardinality and should describe parts of your website above page level. Here's an example code leveraging that function:
    ```javascript
         window.sumoLogicOpenTelemetryRum.initialize({
@@ -217,7 +217,7 @@ You can view and copy a script anytime by clicking **Show Script** for the so
 
 ### Step 3: Search Traces from the Browser
 
-Create a [trace query](/docs/apm/traces//view-and-investigate-traces.md) that specifies traces starting with the value you gave to `<name_of_your_web_service>` as a root service name. You can also include the following filters as an operation name:
+Create a [trace query](/docs/apm/traces/view-and-investigate-traces.md) that specifies traces starting with the value you gave to `<name_of_your_web_service>` as a root service name. You can also include the following filters as an operation name:
 * `documentLoad` as an operation name to find traces that correspond to page loads.
 * `Click on *` as an operation name to detect click actions that most likely resulted in XHR calls
 * `Navigation: *` as an operation name to detect single-page app navigation changes

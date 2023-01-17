@@ -147,7 +147,7 @@ In the panel, the link is displayed. 
 
 ![icon-service-map.png](/img/dashboards-new/panels/icon-service-map.png)
 
-The [Service Map](/docs/apm/traces//service-map) is a high-level view of your application environment, giving you a greater view and understanding of your application architecture and dependencies between monitored microservices.
+The [Service Map](/docs/apm/traces/service-map) is a high-level view of your application environment, giving you a greater view and understanding of your application architecture and dependencies between monitored microservices.
 
 The panel gives you a fully functioning map to zoom in and out and move through services. The size and color of application entities shows status and activity. Click on a service to open the Entity Inspector to drill down to traces, metrics, and the service dashboard.
 
@@ -171,7 +171,7 @@ To add a Service Map panel:
 
 ![icon-trace-list.png](/img/dashboards-new/panels/icon-trace-list.png)
 
-Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real-time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans](/docs/apm/traces//spans), and a breakdown of services. The panel panel displays the [Traces page](/docs/apm/traces/) table to give at-a-glance tracking for traces through your Dashboard. To view transaction and service details ([Trace View](/docs/apm/traces//view-and-investigate-traces)), click a trace from the panel. 
+Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real-time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans](/docs/apm/traces/spans), and a breakdown of services. The panel panel displays the [Traces page](/docs/apm/traces/) table to give at-a-glance tracking for traces through your Dashboard. To view transaction and service details ([Trace View](/docs/apm/traces/view-and-investigate-traces)), click a trace from the panel. 
 
 See the [Dashboard (New)](/docs/dashboards-new/about) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers and more.
 
@@ -185,7 +185,7 @@ To add a Trace List panel:
 
 1. With the Dashboard open, click the **Add Panel** button. <br/> ![add-tracelist.png](/img/apm/traces/add-tracelist.png)  
 1. A panel configuration page opens. <br/> ![create-tracelist.png](/img/dashboards-new/panels/create-tracelist.png)
-1. Configure a [Trace query](/docs/apm/traces//view-and-investigate-traces) to search for desired set of traces. 
+1. Configure a [Trace query](/docs/apm/traces/view-and-investigate-traces) to search for desired set of traces. 
 1. Select a time range or [create a custom range](/docs/dashboards-new/set-custom-time-ranges) for the panel. You can set this when creating or at any time when viewing the Dashboard panel.<br/> ![timerange.png](/img/dashboards-new/panels/timerange.png)
 1. Select **Chart Type** as either:
    1. **Table**. showing table with traces.
