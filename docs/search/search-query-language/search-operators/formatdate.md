@@ -28,7 +28,7 @@ A date String, in US-style date format if no format is specified. The date is in
 * **timeZone** - a String, such as "America/Los_Angeles" or "Europe/London"
 
 :::important
-Convert the date parameter to Long if necessary. Passing a String can produce the error: "Multiple definitions found for function formatDate(String, String)." The solution is to cast the date parameter using the [toLong](#casting-data-to-a-number-or-string) operator.
+Convert the date parameter to Long if necessary. Passing a String can produce the error: "Multiple definitions found for function formatDate(String, String)." The solution is to cast the date parameter using the [toLong](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) operator.
 :::
 
 **Examples**
@@ -144,7 +144,7 @@ You get the following results:
 
 In the results, the **`_min`** and **`_max`** values are displayed as an epoch value. You can format these epoch values into a readable date with an experimental operator, **`toLong`**.
 
-* [toLong](#casting-data-to-a-number-or-string) casts the data into a Long data type as milliseconds.
+* [toLong](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) casts the data into a Long data type as milliseconds.
 
 Normally, to convert the epoch time into a date formatted string you'd do something like this:
 
@@ -152,7 +152,7 @@ Normally, to convert the epoch time into a date formatted string you'd do somet
 * | formatDate(_messagetime, "``MM-dd-``yyyy`` HH:mm:ss") as myDate
 ```
 
-However, in the case where you are using **Min** and **Max** to get the first and last values, you also need to convert the return value to a "Long" value type using the experimental [toLong](#casting-data-to-a-number-or-string) operator. This is because when you run the **Min** and **Max** operators, the return value gets reformatted as a "Double" value type that the formatDate operator can't read.
+However, in the case where you are using **Min** and **Max** to get the first and last values, you also need to convert the return value to a "Long" value type using the experimental [toLong](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) operator. This is because when you run the **Min** and **Max** operators, the return value gets reformatted as a "Double" value type that the formatDate operator can't read.
 
 ```sql
 * | count, min(_messagetime) as mindate | formatDate(toLong(mindate))
