@@ -1517,6 +1517,7 @@ In cases where the log data has a source or destination context, there are situa
 <h2>
  device_ip_isp
 </h2>
+<strong>Note</strong> This attribute is deprecated. Use <code>device_ip_asnOrg</code> instead.
 <table>
  <tbody>
   <tr>
@@ -2224,6 +2225,7 @@ In cases where the log data has a source or destination context, there are situa
 <h2>
  device_natIp_isp
 </h2>
+<strong>Note</strong> This attribute is deprecated. Use <code>device_natIp_asnOrg</code> instead.
 <table>
  <tbody>
   <tr>
@@ -5093,6 +5095,7 @@ In cases where the log data has a source or destination context, there are situa
 <h2>
  dstDevice_ip_isp
 </h2>
+<strong>Note</strong> This attribute is deprecated. Use <code>dstDevice_ip_asnOrg</code> instead.
 <table>
  <tbody>
   <tr>
@@ -5798,6 +5801,7 @@ In cases where the log data has a source or destination context, there are situa
 <h2>
  dstDevice_natIp_isp
 </h2>
+<strong>Note</strong> This attribute is deprecated. Use <code>device_natIp_asnOrg</code> instead.
 <table>
  <tbody>
   <tr>
@@ -11626,6 +11630,7 @@ In cases where the log data has a source or destination context, there are situa
 <h2>
  srcDevice_ip_isp
 </h2>
+<strong>Note</strong> This attribute is deprecated. Use <code>srcDevice_ip_asnOrg</code> instead.
 <table>
  <tbody>
   <tr>
@@ -12331,6 +12336,7 @@ In cases where the log data has a source or destination context, there are situa
 <h2>
  srcDevice_natIp_isp
 </h2>
+<strong>Note</strong> This attribute is deprecated. Use <code>srcDevice_natIp_asnOrg</code> instead.
 <table>
  <tbody>
   <tr>

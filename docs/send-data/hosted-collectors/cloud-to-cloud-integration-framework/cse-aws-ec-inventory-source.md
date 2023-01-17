@@ -4,42 +4,23 @@ title: CSE AWS EC2 Inventory Source
 sidebar_label: CSE AWS EC2 Inventory
 ---
 
-
 The CSE AWS EC2 Inventory Source provides a secure endpoint to receive event data from the [EC2 describe instances API](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html). It securely stores the required authentication, scheduling, and state tracking information.
 
-For information on how inventory data is used in Cloud SIEM Enterprise, see View Entities and Activity Scores.
+For information on how inventory data is used in Cloud SIEM Enterprise, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data.md).
+
+## Inventory data mapped
+
+The table below shows the AWS source fields that CSE maps to CSE schema attributes.
+
+| CSE schema attribute | AWS source field |
+| :-- | :-- |
+|`ip` |`PublicIpAddress`. If null, then `PrivateIpAddress`|
+|`hostname` |`PublicDnsName`. If null, then `PrivateDnsName`|
+|`uniqueId` | `AccountId from ARN-InstanceId` |
 
 ## Authentication
 
 The [IAM policy](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html) needs the `ec2:DescribeInstances` and `ec2:DescribeImages` permissions.
-
-#### States
-
-A CSE AWS EC2 Inventory Source tracks errors, reports its health, and
-start-up progress. You’re informed, in real-time, if the Source is
-having trouble connecting, if there's an error requiring user action, or
-if it is healthy and collecting by utilizing Health Events.
-
-A CSE AWS EC2 Inventory Source goes through the following states when
-created:
-
-1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
-1. **Started**. A collection task is created on the Hosted Collector.
-1. **Initialized**. The task configuration is complete in Sumo Logic.
-1. **Authenticated**. The Source successfully authenticated with AWS EC2 Inventory.
-1. **Collecting**. The Source is actively collecting data from AWS EC2 Inventory.
-
-If the Source has any issues during any one of these states, it is placed in an **Error** state.
-
-When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
-
-On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
-
-![Health and Status columns.png](/img/send-data/Health-and-Status-columns.png)
-
-Hover your mouse over the status icon to view a tooltip with details on the detected issue.
-
-![error status.png](/img/send-data/error-status.png)
 
 ## Create a CSE AWS EC2 Inventory Source
 
@@ -47,36 +28,21 @@ When you create a CSE AWS EC2 Inventory Source, you add it to a Hosted Collecto
 
 To configure a CSE AWS EC2 Inventory Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
-
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-
-1. Select **AWS EC2 Inventory**.
-
-    ![EC2 inventory icon.png](/img/send-data/EC2-inventory-icon.png)
-
-1. Enter a **Name** for the Source. The description is optional.
-
-    ![AWS EC2 input pane.png](/img/send-data/AWS-EC2-input-pane.png)
-
+1. Select **AWS EC2 Inventory**.<br/>![EC2 inventory icon.png](/img/send-data/EC2-inventory-icon.png)
+1. Enter a **Name** for the Source. The description is optional. <br/>![AWS EC2 input pane.png](/img/send-data/AWS-EC2-input-pane.png)
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
-
     * `_siemVendor`: Amazon
     * `_siemProduct`: AWS EC2 Inventory
     * `_siemDataType`: Inventory
-
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-
 1. **AWS Access Key** and **AWS Secret Key**. Provide the IAM User access key ID and secret key you want to use to authenticate collection requests.
-
 1. **Regions**. Provide a list of AWS regions to query EC2 instances, such as `us-east-2`.
-
 1. (Optional) The **Polling Interval** is set for 600 minutes by default, you can adjust it based on your needs.
-
 1. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
@@ -139,3 +105,30 @@ CSE AWS EC2 Inventory Source JSON example:
   }
 }
 ```
+#### States
+
+A CSE AWS EC2 Inventory Source tracks errors, reports its health, and
+start-up progress. You’re informed, in real-time, if the Source is
+having trouble connecting, if there's an error requiring user action, or
+if it is healthy and collecting by utilizing Health Events.
+
+A CSE AWS EC2 Inventory Source goes through the following states when
+created:
+
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
+1. **Started**. A collection task is created on the Hosted Collector.
+1. **Initialized**. The task configuration is complete in Sumo Logic.
+1. **Authenticated**. The Source successfully authenticated with AWS EC2 Inventory.
+1. **Collecting**. The Source is actively collecting data from AWS EC2 Inventory.
+
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
+
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
+
+On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
+
+![Health and Status columns.png](/img/send-data/Health-and-Status-columns.png)
+
+Hover your mouse over the status icon to view a tooltip with details on the detected issue.
+
+![error status.png](/img/send-data/error-status.png)
