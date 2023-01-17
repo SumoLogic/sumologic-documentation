@@ -51,26 +51,15 @@ Once an app is installed, it will appear in your **Personal** folder or the fol
 
 ## Dashboard Panels
 
-There are two tracing-specific dashboard panels available out of the box: **Service Map** and **Trace List** panels, which explore your application environment and review all traces from your Dashboard. Duplicate or add multiple panels with different filtering or queries to refine views and support your organization.
+There are three tracing-specific dashboard panels available out of the box: **Services Map**, **Services List**, and **Trace List** panels, which explore your application environment and review all traces from your Dashboard. Duplicate or add multiple panels with different filtering or queries to refine views and support your organization.
 
 See the [Dashboard (New) guide](/docs/dashboards-new) for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
 
-### Service Map panel
+### Services panels
 
-The **Service Map** panel displays a service map for filtered applications and services, with the ability to explore the environment.
+The **Services Table** and **Services Graph** panels display a services list and services map, respectively, for filtered applications and services, with the ability to explore the environment.
 
-To add a Service Map panel to your Dashboard:
-1. Open or create a new Dashboard.
-1. Click **Add Panel** and select **Service Map**. Or select the **Service Map** option on a new Dashboard.<br/>  ![add-servicemap.png](/img/traces/add-servicemap.png)<br/>
-    A panel configuration page opens.<br/>  ![create-servicemap.png](/img/traces/create-servicemap.png)
-1. Select from the dropdown menus to filter the Service Map by the following:<br/>  ![filter-servicemap.png](/img/traces/filter-servicemap.png)
-   * **Application** if your tracing data has the `application=[app-name]` tag
-   * **Service** 
-   * To pass the variables from dashboard filters, set `application={{application}}`, `service={{service}}`, and/or `deployment.environment`
-1. Do not set the time. Service Map always shows last 72h of data.
-1. The **Chart Type** is set to Graph.
-1. Click the **General** tab to edit the Panel Details. Enter a name for the panel, set a **Title Font Size**, and add a short **Description**.<br/>  ![tracelist-details.png](/img/traces/tracelist-details.png)
-1. Click **Add to Dashboard**. The panel loads in your Dashboard to review your applications and services according to filtering.<br/>  ![panel-service.png](/img/traces/panel-service.png)
+To add a Service Map panel to your Dashboard, see [Services Dashboard Panels](/docs/apm/traces/working-with-tracing-data/service-map/#services-dashboard-panels).
 
 ### Trace List panel
 
