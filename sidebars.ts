@@ -1308,6 +1308,7 @@ module.exports = {
         'metrics/metrics-operators/min',
         'metrics/metrics-operators/outlier',
         'metrics/metrics-operators/parse',
+        'metrics/metrics-operators/predict',
         'metrics/metrics-operators/pct',
         'metrics/metrics-operators/quantize',
         'metrics/metrics-operators/rate',
