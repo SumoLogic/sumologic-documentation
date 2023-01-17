@@ -1163,6 +1163,8 @@
   "/Beta": "/docs/beta",
   "/Beta/Cloud-to-Cloud_Integration_Framework": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework",
   "/Beta/Metrics-Rules": "/docs/metrics/metric-rules-editor",
+  "/Beta/SLO_Reliability_Management": "/docs/observability/reliability-management-slo",
+  "/Beta/SLO_Reliability_Management/Access_and_Create_SLOs": "/docs/observability/reliability-management-slo",
   "/Dashboards-and-Alerts/Dashboards": "/docs/dashboards-new",
   "/Dashboards-and-Alerts/Dashboards/Chart-Panel-Types": "/docs/dashboards/chart-panel-types",
   "/Dashboards-and-Alerts/Dashboards/Get-Started-with-Dashboards-and-Panels/03Share-Dashboards": "/docs/manage/security/create-allowlist-ip-cidr-addresses",
