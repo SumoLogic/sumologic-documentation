@@ -94,7 +94,7 @@ import Iframe from 'react-iframe';
 
     ![img](/img/send-data/S3_Bucket.png)
 
-1. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use more than one wildcard (\*) in this string. Recursive path expressions use a mutiple wildcard. Do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details.
+1. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use more than one wildcard (\*) in this string. Recursive path expressions use a multiple wildcard. Do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details.
 1. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
 
    * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”.
