@@ -1,5 +1,5 @@
 ---
-id: service-map
+id: services-list-map
 title: Services List and Map
 description: View your application topology and investigate microservice interactions.
 ---
@@ -12,18 +12,28 @@ To open the Services List and Map, click **+ New** > **Services**.
 
 ## Services List view
 
-The **Services List** view provides a compact, high-level overview of your application service health insights and KPIs.
+The **Services List** view provides a compact, high-level overview of your application service health insights and KPIs. You can filter and sort your KPI data using the filters and column headers.
 
-![panel-service.png](/img/traces/service-list.png)
+![services-list-display](/img/traces/services-list-filters.png)
+
+KPIs listed in the table reflect the previous 15 minutes of data. Clicking on any service will open the Entities panel allowing for further drill-down.
+
+### General Settings
+
+Configure anomaly detection in **General Settings** ([learn more](#anomaly-detection)).
+
+<img src={useBaseUrl('img/traces/services-list-settings.png')} alt="services-list-settings" />
 
 
-### Settings
+:::note
+Your Services List and Map settings are specific to you (not your team) and will be preserved in your browser's local storage.
+:::
 
-KPIs listed in the table reflect the previous 15 minutes of data. Click on any service opens the Entities panel supporting further drill-down.
+### Display Settings
 
-* Filter and sort your KPI data using the filters and column headers <br/>![services-list-display](/img/traces/services-list-filters.png)
-* Display and hide columns using **Display Settings** <br/>![services-list-display](/img/traces/services-list-display.png)
-* Configure anomalies in **Settings**<br/> <img src={useBaseUrl('img/traces/services-list-settings.png')} alt="services-list-settings" width="400"/>
+Display and hide columns using **Display Settings**.
+
+![services-list-display](/img/traces/services-list-display.png)
 
 
 ## Services Map view
@@ -40,13 +50,25 @@ The Services Map provides the following features:
 * Hover over a service to see its connections to other services and the last 15 minutes of activity in terms of latency, requests, and errors
 * Click on a service to open the Entity Inspector with the ability to drill down to traces, metrics, and the service dashboard
 * Filter by application (if your tracing data has the `application=[app-name]` tag)
-* Search for a service by name<br/> ![service map april 2021.png](/img/traces/service-map-example.png)
+* Search for a service by name<br/> ![service map april 2021.png](/img/traces/services-list-map-example.png)
+
+
+### General Settings
+
+Configure anomaly detection in **General Settings** ([learn more](#anomaly-detection)).
+
+<img src={useBaseUrl('img/traces/settings-general.png')} alt="service map gear icon for settings" width="450"/>
 
 ### Map legend
 
 ![services-map-legend](/img/traces/services-map-legend.png)
 
-* **Color** of services: Red indicates an anomaly and blue indicates normal activity. This is based on Automatic or Manual anomaly detection thresholds, which are configured in your **Settings**.
+* **Color** of services:
+  * Red represents anomalies.
+  * Blue indicates normal, expected activity.
+  :::note
+  You can configure your own thresholds for anomaly detection in your **General Settings**.
+  :::
 * **Shape** of services:
   * Circles represent connected application services
   * Cloud icons represent remote services like databases or external calls, which are automatically detected for you in client traffic even without using direct instrumentation
@@ -54,14 +76,28 @@ The Services Map provides the following features:
   * Circle and arrows with dotted lines represent services or connections that have been inactive an hour or more.
 * **Size** of services: Size is based on service activity, where large circles are more active compared to smaller circles that are less active.  
 
-### Settings
 
-Your settings are specific to you (not your team) and will be preserved in your browser's local storage. Open the **Settings** menu by clicking the gears icon in the top-right corner.   
+## Anomaly Detection
 
-<img src={useBaseUrl('img/traces/settings-general.png')} alt="service map gear icon for settings" width="450"/>
+An anomaly is a spike in latency and errors or a dip in requests. In both the **Services Map** and **Services List** views, automatic anomaly detection is enabled by default. 
+
+### Automatic
+
+With the **Worst Case** option selected (default), a service is displayed in a red circle if at least one of the KPIs (latency, errors, requests) has had an anomaly in the last 15 minutes AND the anomaly was not present 7 days ago at the same time. You can explicitly choose one of the other KPIs instead.
+
+<img src={useBaseUrl('img/traces/services-list-map-auto-detection-settings.png')} alt="auto service anomaly settings" width="400" />
+
+The standard [metric outlier operator](/docs/metrics/metric-charts/metrics-outliers) is used to detect this. You can adjust the sensitivity and **Learning window** of the outlier detection in the settings to make the logic more or less dependent on occasional spikes. 
+
+### Manual
+Manual anomaly detection allows you to specify different detection settings for each KPI. Click the toggle switch to manually enable or disable each KPI highlight as desired.
+
+<img src={useBaseUrl('img/traces/services-list-map-manual-detection-settings.png')} alt="services manual anomaly detection settings" width="400"/>
 
 
-### Services Dashboard Panels
+
+
+## Services Dashboard Panels
 
 The **Services Map** and **Services List** panels, available out of the box, enable you to explore your application environment and review all traces from your Dashboard. You can duplicate or add multiple panels with different filtering or queries to refine views and support your organization.
 
@@ -73,7 +109,7 @@ To add a Services panel to your Dashboard:
 1. Select from the dropdown menus to filter by the following:<br/>  ![filter-servicemap.png](/img/traces/filter-servicemap.png)
    * **Application** (Optional). You can use this if your tracing data has the `application=[app-name]` tag
    * **Environment**. Your production, staging, or development environment name
-   * **Services**. To pass the variables from dashboard filters, set `application={{application}}` and/or `service={{service}}`
+   * **Service(s)** (Optional). To pass the variables from dashboard filters, set `application={{application}}` and/or `service={{service}}`
 1. Go to the **General** tab to configure your panel details (name, **Title Font Size**, and **Description**). <br/> <img src={useBaseUrl('img/traces/tracelist-details.png')} alt="panel details" width="330"/>
 1. For **Table** chart type only: Go to **Display Settings** and set the column data and services you'd like to see displayed.<br/> <img src={useBaseUrl('img/traces/display-settings-setup.png')} alt="display-settings-setup" width="500"/>
 1. Click **Add to Dashboard**. The panel loads in your Dashboard to review your applications and services according to filtering.
@@ -81,16 +117,3 @@ To add a Services panel to your Dashboard:
 :::tip
 See the [Dashboard (New) guide](/docs/dashboards-new) for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
 :::
-
-
-## Anomaly Detection
-
-An anomaly is a spike in latency and errors or a dip in requests. In both **Map** view and **List** view, automatic anomaly detection is enabled by default. A service is displayed in a red circle if at least one of the KPIs (latency, errors, requests) has an anomaly in the last 15 minutes AND the anomaly was not present 7 days ago at the same time. In the **Settings** menu, this default option is called **Worst Case**. You can explicitly choose one of the KPIs instead.
-
-The standard metric outlier operator is used to detect this. You can adjust the sensitivity and **learning window** of the outlier detection in the settings menu to make the logic more or less dependent on occasional spikes. 
-
-<img src={useBaseUrl('img/traces/auto-service-map-settings.png')} alt="auto-service-map-settings" width="300"/>
-
-Manual anomaly detection settings allow you to specify different detection settings for each KPI. Click the toggle switch to activate these settings on and off. You can explicitly toggle each KPI as desired.
-
-<img src={useBaseUrl('img/traces/service-map-manual-detection-settings.png')} alt="service-map-manual-detection-settings" width="300"/>

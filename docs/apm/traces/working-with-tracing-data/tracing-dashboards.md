@@ -59,7 +59,7 @@ See the [Dashboard (New) guide](/docs/dashboards-new) for additional information
 
 The **Services Table** and **Services Graph** panels display a services list and services map, respectively, for filtered applications and services, with the ability to explore the environment.
 
-To add a Service Map panel to your Dashboard, see [Services Dashboard Panels](/docs/apm/traces/working-with-tracing-data/service-map/#services-dashboard-panels).
+To add a Service Map panel to your Dashboard, see [Services Dashboard Panels](/docs/apm/traces/working-with-tracing-data/services-list-map/#services-dashboard-panels).
 
 ### Trace List panel
 
