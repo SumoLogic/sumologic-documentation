@@ -357,7 +357,7 @@ After the configuration recorder is deleted, AWS Config will not record resource
 ## Alibaba ActionTrail Root Login
 
 
- This signal detects when a successful root account login occurred within an Alibaba account. This privileged account should seldomly be used within an Alibaba cloud environment.
+ This signal detects when a successful root account login occurred within an Alibaba account. This privileged account should be used within an Alibaba cloud environment on only a seldom basis.
 
 ## Alibaba ActionTrail Secrets Manager Activity
 
@@ -2405,7 +2405,7 @@ PXELoot (PAL) is a C# tool designed to aid in the discovery and exploitation of 
 ## Potential Pass the Hash Activity
 
 
- The behavior discovered here loosely matches the behavior of known pass the hash tools.  A Pass the Hash (PtH) attack is a way for an attacker to move laterally through a type of credential theft.  Because this behavior is known to occur in some environments during normal activity, tuning is recommended and attention paid to a possible spike in signals after enableing this rule.
+ The behavior discovered here loosely matches the behavior of known pass the hash tools.  A Pass the Hash (PtH) attack is a way for an attacker to move laterally through a type of credential theft.  Because this behavior is known to occur in some environments during normal activity, tuning is recommended and attention paid to a possible spike in signals after enabling this rule.
 
 ## Potential Reconnaissance Obfuscation
 
@@ -2625,7 +2625,7 @@ Note that this rule requires the creation and population of a match list for kno
 ## Registry Modification - Microsoft Office Test Function Registry Entry
 
 
- Observes for modifications to the Microsoft Office Test registry key. This key allows for an abitrary DLL to be executed on Office launch. This can be used by an adversary to establish persistence.
+ Observes for modifications to the Microsoft Office Test registry key. This key allows for an arbitrary DLL to be executed on Office launch. This can be used by an adversary to establish persistence.
 
 ## Registry Modification - Print Processors
 
