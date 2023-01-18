@@ -158,7 +158,7 @@ Metric Collection:
 
 #### Validation Steps
 
-1. Do port forward via your terminal (`my-release` is my release I used while setting up [Sumo Logic helm chart](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation-with-helm.md#installation-steps)):
+1. Do port forward via your terminal (`my-release` is my release I used while setting up [Sumo Logic helm chart](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md#installation-steps)):
 ```bash
 kubectl port-forward prometheus-my-release-kube-prometheus-prometheus-0 9090
 ```
