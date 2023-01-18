@@ -7,7 +7,7 @@ description: Send data from alerts to HipChat rooms.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src='https://upload.wikimedia.org/wikipedia/en/8/89/HipChat_Logo.svg' alt="icon" width="100"/>
+<img src={useBaseUrl('img/connection-and-integration/hipchat-logo-vector.svg')} alt="icon" width="55"/>
 
 HipChat webhook connections allow you to send Sumo Logic alert results to HipChat rooms. For information on how to build your webhook payload refer to HipChat Webhooks in the [HipChat API documentation](https://developer.atlassian.com/server/hipchat/integrating-with-hipchat/).
 

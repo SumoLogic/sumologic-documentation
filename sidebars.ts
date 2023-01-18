@@ -168,7 +168,6 @@ module.exports = {
               link: {type: 'doc', id: 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/index'},
               items: [
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
@@ -1158,8 +1157,8 @@ module.exports = {
             'search/search-query-language/parse-operators/parse-xml-formatted-logs',
             'search/search-query-language/parse-operators/parse-field-option',
             'search/search-query-language/parse-operators/parse-nodrop-option',
-            'search/search-query-language/parse-operators/parse-date',
-            'search/search-query-language/parse-operators/parse-hex',
+            'search/search-query-language/parse-operators/parsedate',
+            'search/search-query-language/parse-operators/parsehex',
           ],
         },
         {
@@ -1308,6 +1307,7 @@ module.exports = {
         'metrics/metrics-operators/min',
         'metrics/metrics-operators/outlier',
         'metrics/metrics-operators/parse',
+        'metrics/metrics-operators/predict',
         'metrics/metrics-operators/pct',
         'metrics/metrics-operators/quantize',
         'metrics/metrics-operators/rate',

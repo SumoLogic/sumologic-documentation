@@ -37,7 +37,7 @@ top <#> <field>​​​​​​​ by <group_by_operator>
 * Default sort order is descending.
 * Sorting is case sensitive with lower-case followed by upper-case.
 * To reverse the sort order to ascending, type a plus sign (+) before the field name you are sorting by. Alternatively, you can type **asc** after the field name.
-* To numerically sort, first [cast the field to a number](#casting-data-to-a-number-or-string). Otherwise, the sort will be ordered as a text field.
+* To numerically sort, first [cast the field to a number](/docs/search/search-query-language/search-operators/manually-cast-data-string-number). Otherwise, the sort will be ordered as a text field.
 
 **Example**
 
