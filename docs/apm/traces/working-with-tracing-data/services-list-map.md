@@ -107,7 +107,7 @@ To add a Services panel to your Dashboard:
 1. On an existing Dashboard, click **Add Panel** > **Services**, or, on a new Dashboard, click **Services**.<br/> ![add-servicemap.png](/img/traces/add-servicemap.png)  
 1. When the panel configuration page opens, go to the **Visual Settings** > **Chart Type**, dropdown and select **Table** (Services List) or **Graph** (Services Map). <br/> ![create-servicemap.png](/img/traces/create-servicemap.png)
 1. Select from the dropdown menus to filter by the following:<br/>  ![filter-servicemap.png](/img/traces/filter-servicemap.png)
-   * **Application** (Optional). You can use this if your tracing data has the `application=[app-name]` tag
+   * **Application** (Optional). You can use this if your tracing data has the tag called `application=[app-name]`
    * **Environment**. Your production, staging, or development environment name
    * **Service(s)** (Optional). To pass the variables from dashboard filters, set `application={{application}}` and/or `service={{service}}`
 1. Go to the **General** tab to configure your panel details (name, **Title Font Size**, and **Description**). <br/> <img src={useBaseUrl('img/traces/tracelist-details.png')} alt="panel details" width="330"/>
