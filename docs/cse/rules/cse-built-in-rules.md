@@ -101,7 +101,7 @@ This IOC detects indicators associated with the ADPassHunt Tool. This tool is us
 ## AWS CloudTrail - OpsWorks Describe Permissions Event
 
 
- This event sourced from AWS OpsWorks occurrs rarely.  It could indicate that an adversary is attempting to collect information for later attack.  When successful, the Describe Permissions event returns information regarding a specified stack's permissions for access.
+ This event sourced from AWS OpsWorks occurs rarely.  It could indicate that an adversary is attempting to collect information for later attack.  When successful, the Describe Permissions event returns information regarding a specified stack's permissions for access.
 
 ## AWS CloudTrail - Permissions Boundary Lifted
 
@@ -121,7 +121,7 @@ This IOC detects indicators associated with the ADPassHunt Tool. This tool is us
 ## AWS CloudTrail - Root Console Successful Login Observed
 
 
- This signal detects when a successful root account login occurred within an AWS account. This privileged account should seldomly be used within an AWS cloud environment. Amazon's best practices state you should only use the root account to create the initial local IAM users and assigned one of the accounts administrative privileges or to perform rare tasks only available to the root user. The security operations center should be aware when the AWS root account is accessed.
+ This signal detects when a successful root account login occurred within an AWS account. This privileged account should be used within an AWS cloud environment only on a seldom basis. Amazon's best practices state you should only use the root account to create the initial local IAM users and assigned one of the accounts administrative privileges or to perform rare tasks only available to the root user. The security operations center should be aware when the AWS root account is accessed.
 
 ## AWS CloudTrail - S3 Bucket Public Access Block Disabled
 
@@ -131,7 +131,7 @@ This IOC detects indicators associated with the ADPassHunt Tool. This tool is us
 ## AWS CloudTrail - SQS List Queues Event
 
 
- This event sourced from AWS SQS occurrs rarely.  It could indicate that an adversary is attempting to collect information for later attack.  When successful, the List Queues event returns all SQS queues that may be valid targets for further probing/attack.
+ This event sourced from AWS SQS occurs rarely.  It could indicate that an adversary is attempting to collect information for later attack.  When successful, the List Queues event returns all SQS queues that may be valid targets for further probing/attack.
 
 ## AWS CloudTrail - ScheduleKeyDeletion in KMS
 
@@ -146,7 +146,7 @@ This IOC detects indicators associated with the ADPassHunt Tool. This tool is us
 ## AWS CloudTrail - sensitive activity in KMS
 
 
- AWS KMS is an encryption and key management web service.  Besides encrypting and decrypting data, users and adminstrators can use this service to create keys, manage keys etc.  This signal indicates activity that enables and disables keys explicitly.  This activity has been surveyed to be a low volume event and could be considered suspicious given other activity involving the entitiy.  Additionally, monitoring for these events is required to achieve certain industry audit compliance.
+ AWS KMS is an encryption and key management web service.  Besides encrypting and decrypting data, users and administrators can use this service to create keys, manage keys etc.  This signal indicates activity that enables and disables keys explicitly.  This activity has been surveyed to be a low volume event and could be considered suspicious given other activity involving the entity.  Additionally, monitoring for these events is required to achieve certain industry audit compliance.
 
 ## AWS CloudTrail Network Access Control List Deleted
 
@@ -425,7 +425,7 @@ HKLM\Sam
 
  Observes for use of attrib.exe with the hide flag.
 
-The built in Windows utilty attrib.exe can be used by adversaries to hide files and folders from the end user, a form of defense evasion.
+The built in Windows utility attrib.exe can be used by adversaries to hide files and folders from the end user, a form of defense evasion.
 
 ## Auth0 - High Risk Event
 
@@ -604,7 +604,7 @@ Adding a user to a role, especially one with administrative privileges, outside 
 ## Azure - SQL Database Export
 
 
- A database export, especially to a public blob container, may indicate data exfiltration in progres.
+ A database export, especially to a public blob container, may indicate data exfiltration in progress.
 
 ## Azure - Secret Backup
 
@@ -1222,7 +1222,7 @@ GORAT is the modular backdoor portion of the REDFLARE framework. This rule looks
 ## External Device Installation Denied
 
 
- Detects a denied attempt to attached a removeable media device. External media can be used to exfiltrate sensitive data and is also a common source of infections. Attempts to use these devices could indicate the intent for malicious activity.
+ Detects a denied attempt to attached a removable media device. External media can be used to exfiltrate sensitive data and is also a common source of infections. Attempts to use these devices could indicate the intent for malicious activity.
 
 ## Fake Windows Processes
 
@@ -1356,7 +1356,7 @@ This signal fires when Fortinet detects a high risk application within the envir
 ## GCP Audit KMS Activity
 
 
- GCP KMS is an encryption and key management web service. Besides encrypting and decrypting data, users and adminstrators can use this service to create keys, manage keys etc. This signal indicates activity that enables and disables keys explicitly. This activity has been surveyed to be a low volume event and could be considered suspicious given other activity involving the entitiy. Additionally, monitoring for these events is required to achieve certain industry audit compliance.
+ GCP KMS is an encryption and key management web service. Besides encrypting and decrypting data, users and administrators can use this service to create keys, manage keys etc. This signal indicates activity that enables and disables keys explicitly. This activity has been surveyed to be a low volume event and could be considered suspicious given other activity involving the entity. Additionally, monitoring for these events is required to achieve certain industry audit compliance.
 
 ## GCP Audit Key Deleted or Disabled
 
@@ -2019,7 +2019,7 @@ For this rule to work, Microsoft SysInternal Sysmon must be running on the endpo
 ## MsiExec Web Install
 
 
- Detects suspicious msiexec process starts with web addreses as parameter.
+ Detects suspicious msiexec process starts with web addresses as parameter.
 
 ## Multiple File Extensions
 
@@ -2119,7 +2119,7 @@ For this rule to work, Microsoft SysInternal Sysmon must be running on the endpo
 ## NotPetya Ransomware Activity
 
 
- Detects NotPetya ransomware activity by identifying one of these occuring: the extracted passwords are passed back to the main module via named pipe, the file system journal of drive C is deleted or windows eventlogs are cleared using wevtutil.
+ Detects NotPetya ransomware activity by identifying one of these occurring: the extracted passwords are passed back to the main module via named pipe, the file system journal of drive C is deleted or windows eventlogs are cleared using wevtutil.
 
  ## O365 - Successful Authentication with PowerShell User Agent
 
@@ -2189,12 +2189,12 @@ For this rule to work, Microsoft SysInternal Sysmon must be running on the endpo
 ## Okta Admin App Access Attempt Failed
 
 
- Detects failed acccess attempts to the Okta admin app. This is where policies are set, users are managed, and apps are controlled.
+ Detects failed access attempts to the Okta admin app. This is where policies are set, users are managed, and apps are controlled.
 
 ## Okta Admin App Accessed
 
 
- Detects acccess to the Okta admin app. This is where policies are set, users are managed, and apps are controlled. The match list Okta_Admins should be populated with users authorized to access the Okta admin app.
+ Detects access to the Okta admin app. This is where policies are set, users are managed, and apps are controlled. The match list Okta_Admins should be populated with users authorized to access the Okta admin app.
 
 ## Okta Administrator Access Granted
 
@@ -2269,7 +2269,7 @@ For this rule to work, Microsoft SysInternal Sysmon must be running on the endpo
 ## Outlook Homepage Modification
 
 
- Detects modifications to the Microsoft Outlook Homepage. Outlook Homepage is a legacy feature that can be leveraged by an adversary to insert malicous code and establish persistence.
+ Detects modifications to the Microsoft Outlook Homepage. Outlook Homepage is a legacy feature that can be leveraged by an adversary to insert malicious code and establish persistence.
 
 ## Overly Permissive Chmod Command
 
@@ -2286,7 +2286,7 @@ For this rule to work, Microsoft SysInternal Sysmon must be running on the endpo
 
  Observes for creation of a PSExec named pipe not by PSExec. This may be an indication of a malicious process coopting a privileged named pipe used by PSExec.
 
-## PXELoot Utilty
+## PXELoot Utility
 
 
  From FireEye Red Team Tool Countermeasures:
@@ -2405,12 +2405,12 @@ PXELoot (PAL) is a C# tool designed to aid in the discovery and exploitation of 
 ## Potential Pass the Hash Activity
 
 
- The behavior discovered here loosly matches the behavior of known pass the hash tools.  A Pass the Hash (PtH) attack is a way for an attacker to move laterally through a type of credential theft.  Because this behavior is known to occur in some environments during normal activity, tuning is recommended and attention payed to a possible spike in signals after enableing this rule.
+ The behavior discovered here loosely matches the behavior of known pass the hash tools.  A Pass the Hash (PtH) attack is a way for an attacker to move laterally through a type of credential theft.  Because this behavior is known to occur in some environments during normal activity, tuning is recommended and attention paid to a possible spike in signals after enableing this rule.
 
 ## Potential Reconnaissance Obfuscation
 
 
- From Solorigate TTPs: Firewall rules were added via command line to reduce noise from subsequent reconnaisance using NSLOOKUP and ADFIND.
+ From Solorigate TTPs: Firewall rules were added via command line to reduce noise from subsequent reconnaissance using NSLOOKUP and ADFIND.
 
 ## Potential XMRig Execution with Traffic
 
@@ -2563,7 +2563,7 @@ It is recommended to tune this rule to hosts/users that are not ordinarily bypas
 ## QuarksPwDump Dump File Observed
 
 
- Signal identifies the observance of a filename consistant with QuarksPwDump file password dumper.
+ Signal identifies the observance of a filename consistent with QuarksPwDump file password dumper.
 
 ## RDP Brute Force - Success
 
@@ -2610,7 +2610,7 @@ Note that this rule requires the creation and population of a match list for kno
 ## Registry Modification - Active Setup
 
 
- Detects modifications to the active setup regsitry key. Active setup can be used to execute programs at user login.
+ Detects modifications to the active setup registry key. Active setup can be used to execute programs at user login.
 
 ## Registry Modification - Authentication Package
 
@@ -2625,7 +2625,7 @@ Note that this rule requires the creation and population of a match list for kno
 ## Registry Modification - Microsoft Office Test Function Registry Entry
 
 
- Observes for modifications to the Microsoft Office Test registry key. This key allows for an abritrary DLL to be executed on Office launch. This can be used by an adversary to establish persistence.
+ Observes for modifications to the Microsoft Office Test registry key. This key allows for an abitrary DLL to be executed on Office launch. This can be used by an adversary to establish persistence.
 
 ## Registry Modification - Print Processors
 
@@ -3063,7 +3063,7 @@ SharpStomp is a C# utility that can be used to timestomp the specified file's cr
 ## Spaces Before File Extension
 
 
- Observes for files being executed that contain at least 5 spaces preceeding the file extension. This may indicate an attempt to hide the true extension of a file.
+ Observes for files being executed that contain at least 5 spaces preceding the file extension. This may indicate an attempt to hide the true extension of a file.
 
 ## Spoolsv Child Process Created
 
@@ -3153,7 +3153,7 @@ This rule identifies writes of specific file types associated with activity rela
 ## Suspicious External Device Installation
 
 
- Detects removeable media attached to a device that was previously denied by policy. External media can be used to exfiltrate sensitive data and is also a common source of infections, so some organizations block their use. Attempts to use these devices could indicate the intent for malicious activity.
+ Detects removable media attached to a device that was previously denied by policy. External media can be used to exfiltrate sensitive data and is also a common source of infections, so some organizations block their use. Attempts to use these devices could indicate the intent for malicious activity.
 
 ## Suspicious HTTP User-Agent
 
@@ -3233,7 +3233,7 @@ This alert looks for evidence of the native signed Windows binary InstallUtil.ex
 ## Suspicious use of Dev-Tools-Launcher
 
 
- DevToolsLauncher.exe has a switch 'LaunchForDeploy' that takes the location of another bianry to launch.  Attackers have abused this ability to launch their own non-trusted code.
+ DevToolsLauncher.exe has a switch 'LaunchForDeploy' that takes the location of another binary to launch.  Attackers have abused this ability to launch their own non-trusted code.
 
 ## Sysmon - RawAccessRead Event
 
@@ -3242,8 +3242,7 @@ This alert looks for evidence of the native signed Windows binary InstallUtil.ex
 
  ## TAIDOOR RAT DLL Load
 
-
- Looks for process creation with command line references that are consistant with the Chinese TAIDOOR remote access trojan (RAT)
+ Looks for process creation with command line references that are consistent with the Chinese TAIDOOR remote access trojan (RAT)
 
 ## Telegram API Access
 
