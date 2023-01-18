@@ -57,7 +57,7 @@ The Services Map provides the following features:
 
 Configure anomaly detection in **General Settings** ([learn more](#anomaly-detection)).
 
-<img src={useBaseUrl('img/traces/settings-general.png')} alt="service map gear icon for settings" width="450"/>
+<img src={useBaseUrl('img/traces/settings-general.png')} alt="service map gear icon for settings" width="300"/>
 
 ### Map legend
 
@@ -95,8 +95,6 @@ Manual anomaly detection allows you to specify different detection settings for 
 <img src={useBaseUrl('img/traces/services-list-map-manual-detection-settings.png')} alt="services manual anomaly detection settings" width="400"/>
 
 
-
-
 ## Services Dashboard Panels
 
 The **Services Map** and **Services List** panels, available out of the box, enable you to explore your application environment and review all traces from your Dashboard. You can duplicate or add multiple panels with different filtering or queries to refine views and support your organization.
@@ -106,10 +104,10 @@ To add a Services panel to your Dashboard:
 1. Open an existing Dashboard or create a new Dashboard (**+New** > **Dashboard New**).
 1. On an existing Dashboard, click **Add Panel** > **Services**, or, on a new Dashboard, click **Services**.<br/> ![add-servicemap.png](/img/traces/add-servicemap.png)  
 1. When the panel configuration page opens, go to the **Visual Settings** > **Chart Type**, dropdown and select **Table** (Services List) or **Graph** (Services Map). <br/> ![create-servicemap.png](/img/traces/create-servicemap.png)
-1. Select from the dropdown menus to filter by the following:<br/>  ![filter-servicemap.png](/img/traces/filter-servicemap.png)
-   * **Application** (Optional). You can use this if your tracing data has the tag called `application=[app-name]`
+1. (Optional) Select from the dropdown menus to filter by the following:<br/>  ![filter-servicemap.png](/img/traces/filter-servicemap.png)
+   * **Application**. You can use this if your tracing data has the tag called `application=[app-name]`
    * **Environment**. Your production, staging, or development environment name
-   * **Service(s)** (Optional). To pass the variables from dashboard filters, set `application={{application}}` and/or `service={{service}}`
+   * **Service(s)**. To pass the variables from dashboard filters, set `application={{application}}` and/or `service={{service}}`
 1. Go to the **General** tab to configure your panel details (name, **Title Font Size**, and **Description**). <br/> <img src={useBaseUrl('img/traces/tracelist-details.png')} alt="panel details" width="330"/>
 1. For **Table** chart type only: Go to **Display Settings** and set the column data and services you'd like to see displayed.<br/> <img src={useBaseUrl('img/traces/display-settings-setup.png')} alt="display-settings-setup" width="500"/>
 1. Click **Add to Dashboard**. The panel loads in your Dashboard to review your applications and services according to filtering.
