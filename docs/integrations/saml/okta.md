@@ -194,7 +194,7 @@ The sections below are available for FedRamp Sumo Logic deployments to meet FedR
 ## Configuring Okta Log Collection for FedRamp Deployments
 
 :::note 
-Okta Log Collection configuration via SumoJanus is no longer applicable; instead, we offer Okta collection via hosted source for Fed deployment. Follow the instructions at [https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source/]. The steps must be completed in the order they are presented.
+Okta Log Collection configuration via SumoJanus is no longer applicable; instead, we offer Okta collection via hosted source for Fed deployment. Follow the instructions [here](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source/). The steps must be completed in the order they are presented.
 :::
 
 ## Installing the Okta App
