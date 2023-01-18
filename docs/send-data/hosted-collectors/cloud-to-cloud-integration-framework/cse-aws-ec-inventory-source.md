@@ -16,7 +16,7 @@ The table below shows the AWS source fields that CSE maps to CSE schema attribut
 | :-- | :-- |
 |`ip` |`PublicIpAddress`. If null, then `PrivateIpAddress`|
 |`hostname` |`PublicDnsName`. If null, then `PrivateDnsName`|
-|`uniqueId` | `AccountId from ARN-InstanceId` |
+|`uniqueId` | `AccountId` from `ARN-InstanceId` |
 
 ## Authentication
 
