@@ -1,5 +1,5 @@
 ---
-slug: /apm/traces/get-started-transaction-tracing/python
+slug: /apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python
 title: Python OpenTelemetry auto-instrumentation
 sidebar_label: Python
 description: Learn how to configure OpenTelemetry Python instrumentation to capture data from the python written code applications.
