@@ -353,7 +353,7 @@ module.exports = {
             'send-data/collect-from-other-data-sources/collect-logs-palo-alto-networks-cortex',
             {
               type: 'category',
-              label: 'Telegraf',
+              label: 'Collect Metrics from Telegraf',
               collapsible: true,
               collapsed: true,
               link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/collect-metrics-telegraf/index'},
