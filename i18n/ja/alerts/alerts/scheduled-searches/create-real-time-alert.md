@@ -36,7 +36,7 @@ The results from your search will vary based on the type of alert selected. The 
 
 | Alert Type | Results in Notification |
 | -- | -- |
-| [Webhook](/docs/manage/connections-integrations/webhook-connections/schedule-searches-webhook-connections.md) | If the **Send a separate alert for each search result checkbox** is selected (in step 6) only new results from subsequent searches are sent in the alert payload. Otherwise, all results are sent. |
+| [Webhook](/docs/alerts/webhook-connections/schedule-searches-webhook-connections) | If the **Send a separate alert for each search result checkbox** is selected (in step 6) only new results from subsequent searches are sent in the alert payload. Otherwise, all results are sent. |
 | [Save to Index](save-to-index.md) | All results are saved from an **aggregate** query.<br/>Only new results from subsequent searches are saved from a **non-aggregate** query. |
 | [Save to Lookup](save-to-lookup.md) | All results are saved. |
 

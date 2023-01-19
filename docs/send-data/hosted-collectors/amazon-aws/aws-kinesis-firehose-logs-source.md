@@ -15,7 +15,7 @@ The following diagram shows the flow of data with an AWS Kinesis Firehose for Lo
 
 ![architecture](/img/send-data/kinesis-architecture.png)
 
-::: note
+:::note
 For failed logs messages, AWS will send them into the backup S3 bucket. Sumo Logic will ingest those failed logs through S3, and not the firehose.
 :::
 

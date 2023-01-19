@@ -199,7 +199,7 @@ To map a single input field:
 
 **Example standard mapping: multiple input fields**
 
-This example mapping combines the values of `fielda` and `fieldb`, eparated by a period delimiter, and maps the result to the `user_username` attribute. 
+This example mapping combines the values of `fielda` and `fieldb`, separated by a period delimiter, and maps the result to the `user_username` attribute. 
 
 We defined two alternative fields, `fieldc` and `fieldd`. If `fielda`and `fieldb` are not found in a message or are null, the values of `fieldc` and `fieldd` are used instead to form the value to be mapped to the `user_username` attribute.
 
