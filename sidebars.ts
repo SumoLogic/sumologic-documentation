@@ -1433,7 +1433,16 @@ module.exports = {
                   'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net/traceid-spanid-injection-into-logs',
                 ],
               },
-              'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python',
+              {
+                type: 'category',
+                label: 'Python',
+                collapsible: true,
+                collapsed: true,
+                link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python/index'},
+                items: [
+                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python/traceid-spanid-injection-into-logs',
+                ],
+              },
               'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby-on-rails',
               'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby',
             ],
