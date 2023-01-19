@@ -12,9 +12,9 @@ jobs:
           CI: true
           NODE_ENV: production
       steps:
-        - uses: actions/checkout@v2.4.0
+        - uses: actions/checkout@v3
         - name: Set up Node.js
-          uses: actions/setup-node@v2
+          uses: actions/setup-node@v3
           with:
             node-version: '18.x'
             cache: 'yarn'
@@ -32,10 +32,10 @@ jobs:
     spellcheck:
       runs-on: ubuntu-latest
       steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: codespell-project/actions-codespell@master
         name: Check spelling
         with:
           skip: "*.svg,*.js,*.map,*.css,*.scss"
-          ignore_words_list: "aks,atleast,cros,fiel,ist,ot,pullrequest,ser,shttp,fo"
+          ignore_words_list: "aks,atleast,cros,fiel,ist,ot,pullrequest,ser,shttp,fo,seldomly"
           path: docs

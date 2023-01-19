@@ -83,7 +83,7 @@ The following diagram illustrates how data is collected from Couchbase in Kubern
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Couchbase. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment that is Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Couchbase input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) to obtain metrics. For simplicity, the diagram doesn’t show the input plugins. The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
 :::note Prerequisites
-It’s assumed that you are using the latest helm chart version if not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade). When you upgrade the helm chart, you must upgrade telegraf version to 1.21.1 by adding the statement below in the upgrade command helm chart:
+It’s assumed that you are using the latest helm chart version if not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md). When you upgrade the helm chart, you must upgrade telegraf version to 1.21.1 by adding the statement below in the upgrade command helm chart:
 ```bash
 --set telegraf-operator.image.sidecarImage=telegraf:1.21.1
 ```
