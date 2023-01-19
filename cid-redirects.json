@@ -2104,6 +2104,7 @@
   "/cid/19877": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source",
   "/cid/19878": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source",
   "/cid/19879": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source",
+  "/cid/19880": "/docs/metrics/metrics-operators/predict/",
   "/Cloud_SIEM_Enterprise": "/docs/cse",
   "/Cloud_SIEM_Enterprise/Administration/Create_a_Custom_Tag_Schema": "/docs/cse/administration/create-a-custom-tag-schema",
   "/Cloud_SIEM_Enterprise/Administration/Configure_a_Custom_Inventory_Source": "/docs/cse/administration/custom-inventory-sources",
