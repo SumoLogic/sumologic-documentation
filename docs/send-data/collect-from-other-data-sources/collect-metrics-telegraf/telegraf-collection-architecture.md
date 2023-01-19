@@ -8,7 +8,7 @@ This topic describes how to configure Telegraf plugins to fetch metrics from you
 
 Telegraf is an open source, plugin-based collector/agent that uses built-in *input plugins* to fetch metrics from the managed application, service, or third-party API where Telegraf is running, and then uses *output plugins* to send those collected metrics to another system, such as Sumo Logic. The Sumo Logic output plugin sends the metrics collected by the input plugin to an HTTP Source running on a Sumo Logic Hosted Collector.
 
-Telegraf is used broadly in monitoring pipelines because it supports collection from a large number of applications and services. Input and output plugins are application-specific; for example, there are input plugins for Redis, Nginx, JMX, and more, and output plugins for services like Kafka, Prometheus, and of course Sumo Logic. You can see lists of Telegraf’s built-in input plugins [here](https://github.com/influxdata/telegraf).
+Telegraf is a popular choice for monitoring pipelines because it supports collection from a large number of applications and services. Input and output plugins are application-specific; for example, there are input plugins for Redis, Nginx, JMX, and more, and output plugins for services like Kafka, Prometheus, and of course Sumo Logic. You can see lists of Telegraf’s built-in input plugins [here](https://github.com/influxdata/telegraf).
 
 Collection architecture varies depending on whether you’re monitoring resources in a Kubernetes or a non-Kubernetes environment. 
 
