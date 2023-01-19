@@ -84,7 +84,7 @@ You can't use a scheduled view or an index in the scope of a Logs-to-Metrics rul
 
 ### Using Logs-to-Metrics in the frequent or infrequent tier
 
-Since `_index` is not accepted in logs-to-metrics rules you can just skip it and still get results for the data assigned to frequent and infrequent tier.
+Since `_index` is not accepted in logs-to-metrics rules, you can just skip it and still get results for the data assigned to frequent and infrequent tier.
 
 If you want to create a Logs-to-Metrics rule for the scope of frequent or infrequent tier partition, you can create the rule with the same log search scope as the partition where the data lives. For example, if you have a partition, `_index=foo`, whose routing expression is `_sourceCategory=foo`, then you should use the same routing expression, `_sourceCategory=foo`, to scope the Logs-to-Metrics rule.
 
