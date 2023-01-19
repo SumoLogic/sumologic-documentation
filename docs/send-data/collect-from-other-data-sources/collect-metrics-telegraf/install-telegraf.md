@@ -158,9 +158,7 @@ If you're seeing the following error in Microsoft’s Services Control Panel App
 
 This section documents the steps for setting up Telegraf in a Kubernetes environment. Due to the dynamic nature of Kubernetes, we use the Telegraf Operator. 
 
-1. First you need to set up Sumo Logic’s Kubernetes collection.
-
-   * If you have not set up Sumo Logic’s Kubernetes collection, perform [these steps to set up Kubernetes collection](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v1.2/deploy/docs/Installation_with_Helm.md#installation-with-helm).
+1. First you need to set up Sumo Logic’s Kubernetes collection. If you haven't, go to [Installation with Helm](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md) and perform those setup steps.
 
     :::note
     When installing, make sure you enable the Telegraf Operator by adding this to the installation command: 
