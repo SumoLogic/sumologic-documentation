@@ -1451,7 +1451,7 @@ module.exports = {
         collapsed: true,
         link: {type: 'doc', id: 'apm/traces/working-with-tracing-data/index'},
         items: [
-          'apm/traces/working-with-tracing-data/service-map',
+          'apm/traces/working-with-tracing-data/services-list-map',
           'apm/traces/working-with-tracing-data/tracing-dashboards',
           'apm/traces/working-with-tracing-data/view-and-investigate-traces',
           'apm/traces/working-with-tracing-data/spans',
