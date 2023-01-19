@@ -1,9 +1,14 @@
 ---
 id: airtable-source
-title: Airtable Source
-sidebar_label: Airtable Source
-description: This document explains how to retrieve Airtable audit logs into the Sumo Logic environment.
+title: Airtable Source (Beta)
+description: The Airtable API integration ingests audit logs periodically from the Airtable app.
 ---
+
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

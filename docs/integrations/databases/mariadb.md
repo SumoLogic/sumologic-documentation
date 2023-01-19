@@ -85,7 +85,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 The first service in the pipeline is Telegraf. Telegraf collects metrics from MariaDB. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, that is Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
 :::note Prerequisites
-These instructions assume that you are using the latest Helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
+These instructions assume that you are using the latest Helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
 :::
 
 #### Configure Metrics Collection
