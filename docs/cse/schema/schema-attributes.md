@@ -4,7 +4,9 @@ title: CSE Schema Attributes
 sidebar_label: Attributes
 description: Learn about CSE schema attributes.
 ---
-
+<!--
+Content of this page comes from https://github.com/jasklabs/content-catalog/blob/master/schema/html_attributes.html
+-->
 
 This topic defines the attributes in CSE Schema v3.
 
