@@ -39,13 +39,9 @@ namespace=istio-system cluster={{cluster}}
 
 ## Collecting Logs and Metrics for the Istio App
 
-This section provides instructions for collecting logs and metrics for the Sumo App for Istio. Logs and metrics are collected with the Sumo Logic Helm chart. Istio [sample metrics](/#Sample-Metrics) and [sample log messages](#Sample-Log-Messages) are also provided, along with a [query sample](#Query-Sample).
+This section provides instructions for collecting logs and metrics for the Sumo App for Istio. Logs and metrics are collected with the Sumo Logic Helm chart. Istio [sample metrics](#Sample-Metrics) and [sample log messages](#Sample-Log-Messages) are also provided, along with a [query sample](#Query-Sample).
 
-This app supports Istio versions 1.8.x and 1.9.x+.
-
-The minimum version of Sumo Logic K8s Collection required is [V2.1.6](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v2.1.6).
-
-Configure log and metrics collection with the Sumo Logic Helm chart, using one of the following options:
+This app supports Istio versions 1.8.x and 1.9.x+. Configure log and metrics collection with the Sumo Logic Helm chart, using one of the following options:
 
 ### If your Kubernetes collection is already set up
 
@@ -158,7 +154,7 @@ Metric Collection:
 
 #### Validation Steps
 
-1. Do port forward via your terminal (`my-release` is my release I used while setting up [Sumo Logic helm chart](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation-with-helm.md#installation-steps)):
+1. Do port forward via your terminal (`my-release` is my release I used while setting up [Sumo Logic helm chart](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md#installation-steps)):
 ```bash
 kubectl port-forward prometheus-my-release-kube-prometheus-prometheus-0 9090
 ```
