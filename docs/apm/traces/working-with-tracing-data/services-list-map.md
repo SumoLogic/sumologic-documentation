@@ -82,7 +82,7 @@ An anomaly is a spike in latency and errors or a dip in requests. Here's how to
 
 ### Automatic
 
-**Automatic anomaly detection** is enabled by default, with the **Worst Case** option selected. This will renders services to be displayed as a red circle if at least one of the KPIs (latency, errors, requests) has had an anomaly in the last 15 minutes AND the anomaly was not present 7 days ago at the same time. Optionally, you can explicitly choose one of the other KPIs - **Latency**, **Error**, or **Request**.
+**Automatic anomaly detection** is enabled by default, with the **Worst Case** option selected. This will render services to be displayed as a red circle if at least one of the KPIs (latency, errors, requests) has had an anomaly in the last 15 minutes AND the anomaly was not present 7 days ago at the same time. Optionally, you can explicitly choose one of the other KPIs - **Latency**, **Error**, or **Request**.
 
 <img src={useBaseUrl('img/traces/services-list-map-auto-detection-settings.png')} alt="auto service anomaly settings" width="400" />
 
