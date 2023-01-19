@@ -4,15 +4,17 @@ title: user.properties
 description: The user.properties file is used to pass Collector parameters for some installation methods.
 ---
 
-For collector versions 19.137 and later, the `user.properties` file lets you pass configuration parameters during the installation of a new unregistered Collector. Once the collector is registered, to see if a parameter can be changed with a collector restart, check the "Can be changed after installation?**"** column of the table in [user.properties parameters](#userproperties) below. When using the shell script (command line) installer, you must pass configuration parameters via command-line arguments or a varfile, and the installer will create a `user.properties` file during installation (see [Parameters for the Command Line Installer](parameters-command-line-installer.md) for more information).
+For collector versions 19.137 and later, the `user.properties` file lets you pass configuration parameters during the installation of a new unregistered Collector. Once the collector is registered, to see if a parameter can be changed with a collector restart, check the **Can be changed after installation?** column of the table in [user.properties parameters](#userproperties) below.
+
+When using the shell script (command line) installer, you must pass configuration parameters via command-line arguments or a varfile, and the installer will create a `user.properties` file during installation. See [Parameters for the Command Line Installer](parameters-command-line-installer.md) for more information.
 
 :::note
-Starting with collector 19.170+, the installation directory is secured to users belonging to the sumologic_collector group. Modifying `user.properties` may require sudo privileges. For more information, see [Enhanced File System Security for Installed Collectors](enhanced-file-system-security-installed-collectors.md).
+Starting with collector 19.170+, the installation directory is secured to users belonging to the `sumologic_collector` group. Modifying `user.properties` may require sudo privileges. For more information, see [Enhanced File System Security for Installed Collectors](enhanced-file-system-security-installed-collectors.md).
 :::
 
 ## Creating user.properties
 
-After downloading the collector binary package (e.g. tarball), create the `user.properties` file in a specific directory.
+After downloading the collector binary package (e.g., tarball), create the `user.properties` file in a specific directory.
 
 To create `user.properties` manually:
 
@@ -29,12 +31,10 @@ Be sure to save the `user.properties` file in UTF-8 format. If you use a script 
 The default collector installation locations are:
 
 Linux:  
-
 * `/opt/SumoCollector/`  
 * `/usr/local/SumoCollector`
 
 Windows:  
-
 * `:\Program Files (x86)\Sumo Logic Collector`  
 * `:\Program Files\Sumo Logic Collector`
 
@@ -71,13 +71,13 @@ Parameters are case sensitive.
 :::
 
 | Parameter | Description | Examples |
-|--|--|--|
+|:--|:--|:--|
 | `wrapper.java.command=JRE Bin Location` | Sets the JRE binary to use when starting the collector. | Use the default system Java version:<br/>`wrapper.java.command=java`<br/>Use a specific JRE installation (Linux):<br/>`wrapper.java.command=/opt/java_1.7/bin/java`<br/>Use a specific JRE installation (Windows):<br/>`wrapper.java.command=C:\\Program Files (x86)\\Java\\jre7\\bin` |
 
 Key-value parameters (**key=value**). Add as needed.
 
 | Parameter | Description | Can be changed after installation? |
-|--|--|--|
+|:--|:--|:--|
 | `accessid=accessId` | Sets Access ID used when logging in with Access ID and Key. | No |
 | `accesskey=accessKey` | Sets Access Key used when logging in with Access ID and Key.<br/>Note that, as of Collector v19.182-17, `accesskey` is automatically removed from `user.properties` following successful installation. (This behavior can be disabled with the `skipAccessKeyRemoval` property, described below.)<br/>If you configure a collector to be ephemeral, in the event that the collector is de-registered after 12 hours offline, you will need to re-add the `accesskey` to `user.properties`. | No |
 | `category=category`<br/>Available on Collector version 19.182+. | Source category to use when a source does not specify a category. | No, use the [Collector Management API](/docs/api/collectors) to modify. |
@@ -103,19 +103,23 @@ Key-value parameters (**key=value**). Add as needed.
 | `syncSources=absolute filepath or folderpath` | Specifies either a single UTF-8 encoded JSON file, or a folder containing UTF-8 encoded JSON files, that define the Sources to configure upon Collector registration. The Source definitions will be continuously monitored and synchronized with the Collector's configuration.<br/>On Windows, the path value must be specified with double slashes, \\.<br/>The file must have a .json extension.<br/>For more information, see [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). | Yes, with Collector restart. |
 | `targetCPU=target`<br/>Available on Collector version 19.182+. | You can choose to set a CPU target to limit the amount of CPU processing a collector uses. The value must be expressed as a whole number percentage. For example:<br/>`targetCPU=20`<br/>The collector will adjust resources to attempt to limit the CPU usage to at most 20%. For more information, see [Set the Collector CPU Usage Target](/docs/send-data/collection/set-collector-cpu-usage-target.md). | No, use the [Collector Management API](/docs/api/collectors) to modify. |
 | `timeZone=timezone`<br/>Available on Collector version 19.182+. | The time zone to use when it is not extracted from the log timestamp. For example:<br/>`timeZone=America/Los_Angeles`<br/>For a list of possible values, refer to the "TZ" column in [this Wikipedia article](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). | No, use the [Collector Management API](/docs/api/collectors) to modify. |
-| `token=token` | Either an [Installation Token](/docs/manage/security/installation-tokens.md) or Setup Wizard Token.<br/>This is not the encoded Token+URL. It is the decoded token only. See how to decode the token. | No |
+| `token=token` | Either an [Installation Token](/docs/manage/security/installation-tokens.md) or Setup Wizard Token.<br/>This is not the encoded Token+URL. It is the decoded token only. [See how to decode the token](/docs/manage/security/installation-tokens/#userproperties). | No |
 | `url=collection endpoint` | Sets the [collection endpoint](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints) URL used to register the Collector. For example, if your account is in the US2 deployment:<br/>`url=https://collectors.us2.sumologic.com` | Yes, with Collector restart. |
 
 ##  (Optional) JVM or wrapper configuration parameters
 
-To set JVM or wrapper configuration parameters, collectors installed prior to version 19.137 must add the following line to `wrapper.conf`, located in the collector's `config` folder. `#include ./config/user.properties`
+To set JVM or wrapper configuration parameters, collectors installed prior to version 19.137 must add the following line to `wrapper.conf`, located in the collector's `config` folder.
+
+```
+#include ./config/user.properties
+```
 
 :::important
 Collector versions 19.253-26+ support wrapper configuration parameters with command line installations.
 :::
 
 | Parameter | Description | Can be changed after installation? |
-|--|--|--|
+|:--|:--|:--|
 | `wrapper.java.command=JRE Bin Location` | Sets the JRE binary to use when starting the collector. Examples:<br/>Use the default system Java version:<br/>`wrapper.java.command=java`<br/>Use a specific JRE installation (Linux):<br/>`wrapper.java.command=/opt/java_1.7/bin/java`<br/>Use a specific JRE installation (Windows):<br/>`wrapper.java.command=C:\\Program Files (x86)\\Java\\jre7\\bin` | Yes, with Collector restart. |
 | `wrapper.java.initmemory=size` | Sets the initial java heap size, in MB.<br/>Default: 64 | Yes, with Collector restart. |
 | `wrapper.java.maxmemory=size` | Sets the maximum java heap size, in MB.<br/>Default: 128 | Yes, with Collector restart. |

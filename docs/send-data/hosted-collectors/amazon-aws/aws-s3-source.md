@@ -42,7 +42,7 @@ When you create an AWS S3 Source, you add it to a Hosted Collector. Before crea
 
     Sumo Logic scans an S3 bucket based on the path expression supplied, or receives an SNS notification when a new file object is created. As part of this, we receive a file name (key) and the object's ID. It's compared against a list of file objects already ingested. If a matching file ID is not found the contents of the file are ingested in full.
 
-    When you overwrite a file in S3, the file object gets a new version ID and as a result, Sumo Logic sees it as a new file and ingests all of it. If with each version you post to S3 you are simply adding to the end of the file, then this will lead to duplicate messages ingested, one message for each version of the file you created in S1.   
+    When you overwrite a file in S3, the file object gets a new version ID and as a result, Sumo Logic sees it as a new file and ingests all of it. If with each version you post to S3 you are simply adding to the end of the file, then this will lead to duplicate messages ingested, one message for each version of the file you created in S3.   
 * Duplicate logs are collected when changing the AWS versioned APIs setting from Yes to No and the S3 bucket has versioning enabled.
 * Glacier objects will not be collected and are ignored.
 * If you're using SNS you need to create a separate topic and subscription for each Source.
@@ -94,7 +94,7 @@ import Iframe from 'react-iframe';
 
     ![img](/img/send-data/S3_Bucket.png)
 
-1. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one** wildcard (\*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details.
+1. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use more than one wildcard (\*) in this string. Recursive path expressions use a multiple wildcard. Do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details.
 1. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
 
    * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”.

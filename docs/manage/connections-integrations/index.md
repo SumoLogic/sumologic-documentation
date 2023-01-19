@@ -10,19 +10,12 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 <img src={useBaseUrl('img/icons/operations/integration.png')} alt="icon" width="50"/>
 
-To access [Webhook Connections](/docs/manage/connections-integrations/webhook-connections), [ServiceNow Connections](/docs/manage/connections-integrations/servicenow), and more integrations, go to **Manage Data > Monitoring > Connections**.
-
-<img src={useBaseUrl('img/connection-and-integration/connections.png')} alt="connections" />
-
-You can also:
-* **Search Connections** to search. 
-* **Edit** Connections. 
-* **Delete** Connections. 
-* View the **Details** of Connections.
-
-
 ## Guide contents
 
 In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
+
+:::tip
+See also: [webhook connections](/docs/alerts/webhook-connections), which you can use to send Sumo Logic alerts to third-party applications. 
+:::

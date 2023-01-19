@@ -53,7 +53,7 @@ The default time range is 24 hours. You can change the time range using the drop
 
 The **Insight Metrics** section, labeled **e**, displays the following metrics for the currently selected time range:
 
-* **Dwell**. The average dwell time, which is the average period of time between when the first and last Records in an Insight were observed, in seconds. 
+* **Dwell**. The average dwell time, which is the average period of time between when the first event occurred (when the first Record in the Insight was generated) and when the Insight was generated, in seconds. 
 * **Response**. The average response time, which is the average time between when an Insight was generated and when its status was set to **In Progress**, in seconds. 
 * **Remediation**. The average remediation time, which is the average time between when the Insight was created and when its status was set to **Closed**, in seconds. 
 

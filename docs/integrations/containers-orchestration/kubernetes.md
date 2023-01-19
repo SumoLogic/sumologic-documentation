@@ -161,7 +161,7 @@ connection_notifications_critical = [
 
   Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](/docs/api/monitors).
 
-  For overriding payload for different connection types, refer to [this document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
+  For overriding payload for different connection types, refer to [this document](/docs/alerts/webhook-connections/set-up-webhook-connections).
 
 ```sql title="Email Notifications Example"
 email_notifications_critiical = [
@@ -349,7 +349,7 @@ Use this dashboard to:
 ### Security Overview
 
 :::note
-This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `falco:enabled` as `"true"` in values.yaml as described [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation-with-helm.md).
+This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `falco:enabled` as `"true"` in values.yaml, as described [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).
 :::
 
 This dashboard provides high level details around anomalous container, application, host, and network activity detected by Falco.
@@ -362,7 +362,8 @@ Use this dashboard to:
 
 ### Security Rules Triggered
 
-:::note This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag "falco:enabled" as "true" in values.yaml as described https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation-with-helm.md">on this page.
+:::note
+This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `falco:enabled` as `"true"` in values.yaml, as described [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).
 :::
 
 The**Kubernetes - Security Rules Triggered**dashboard provides detailed information around anomalous activity detected by Falco. It also shows information around the OOB Falco rules triggered by anomalous activity in your Kubernetes environments.
