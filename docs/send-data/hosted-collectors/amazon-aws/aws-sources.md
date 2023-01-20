@@ -77,12 +77,12 @@ These configuration instructions apply to log collection from all AWS Source typ
 
 1. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
 
-    :::important
+:::important
     Sumo Logic highly recommends using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date Alerts.
-    :::
+:::
 
-   * **Scan Interval.** Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](aws-s3-scan-interval-sources.md).
-   * **SNS Subscription Endpoint** (**Highly Recommended**). New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file.
+   * **Scan Interval.** Sumo Logic will scan your S3 bucket for new items on a regular basis, in addition to SNS notifications. **Automatic** is recommended to avoid extra AWS charges. This sets the Scan Interval based on whether you are subscribed to an SNS topic endpoint and how frequently new files are detected over time. The scan interval is 5 minutes if the Source is not subscribed to an SNS topic and is set to **Automatic**.
+   * **SNS Subscription Endpoint** (**Highly Recommended**). Sumo Logic will start collecting new files as soon as it receives a notification. This allows for faster collection instead of having to wait for the next scan to detect the new file.
 
         To set up the subscription you need to get an endpoint URL from Sumo to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click on **Create URL** and use the provided endpoint URL when creating your subscription in step C.     
 
@@ -94,15 +94,15 @@ These configuration instructions apply to log collection from all AWS Source typ
 The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](configure-your-aws-source-cloudformation.md).
 :::
 
-1. Go to **Services \>** **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step.
+1. Go to **Services** > **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step.
 
-    :::important
-    Make sure that the topic and the bucket are in the same region.
-    :::
+:::important
+Make sure that the topic and the bucket are in the same region.
+:::
 
-1. Again go to **Services \>** **Simple Notification Service** and click **Create Subscription**. Paste the **Topic ARN** from step B above. Select **HTTPS** as the protocol and enter the **Endpoint** URL provided while creating the S3 source in Sumo Logic. Click **Create subscription** and a confirmation request will be sent to Sumo Logic. The request will be automatically confirmed by Sumo Logic.
+1. Again go to **Services** > **Simple Notification Service** and click **Create Subscription**. Paste the **Topic ARN** from step 1 above. Select **HTTPS** as the protocol and enter the **Endpoint** URL provided while creating the S3 source in Sumo Logic. Click **Create subscription** and a confirmation request will be sent to Sumo Logic. The request will be automatically confirmed by Sumo Logic.
 
-1. Select the **Topic** created in step B and navigate to **Actions \> Edit Topic Policy**. Use the following policy template, replace the `SNS-topic-ARN` and `bucket-name` placeholders in the `Resource` section of the JSON policy with your actual SNS topic ARN and S3 bucket name:
+1. Select the **Topic** created in step 1 and navigate to **Actions** > **Edit Topic Policy**. Use the following policy template, replace the `SNS-topic-ARN` and `bucket-name` placeholders in the `Resource` section of the JSON policy with your actual SNS topic ARN and S3 bucket name:
 
     ```
     {
@@ -125,7 +125,7 @@ The following steps use the AWS SNS Console. You may instead use AWS CloudForma
     }
     ```
 
-1. Go to **Services \> [S3](https://s3.console.aws.amazon.com/s3/buckets/)** and select the bucket to which you want to attach the notifications. Navigate to **Properties \> Events \> Add Notification**. Enter a **Name** for the event notification. In the **Events** section select **All object create events**. In the **Send to** section (notification destination) select **SNS Topic**. An **SNS** section becomes available, select the name of the topic you created in step B from the dropdown. Click **Save**.
+1. Go to **Services** > **[S3](https://s3.console.aws.amazon.com/s3/buckets/)** and select the bucket to which you want to attach the notifications. Navigate to **Properties** > **Events** > **Add Notification**. Enter a **Name** for the event notification. In the **Events** section, select **All object create events**. In the **Send to** section (notification destination), select **SNS Topic**. When the **SNS** section becomes available, select the name of the topic you created in step 1 from the dropdown. Click **Save**.
 
 ### Complete setup in Sumo
 
