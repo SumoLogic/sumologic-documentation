@@ -382,7 +382,6 @@ module.exports = {
             to: 'https://www.sumologic.com/sign-up',
             position: 'right',
             className: 'header-login',
-            'aria-label': 'Start a free trial',
           },
           {
             className: 'header-github-link',
