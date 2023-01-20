@@ -82,7 +82,7 @@ These configuration instructions apply to log collection from all AWS Source typ
 :::
 
    * **Scan Interval.** Sumo Logic will scan your S3 bucket for new items on a regular basis, in addition to SNS notifications. **Automatic** is recommended to avoid extra AWS charges. This sets the Scan Interval based on whether you are subscribed to an SNS topic endpoint and how frequently new files are detected over time. The scan interval is 5 minutes if the Source is not subscribed to an SNS topic and is set to **Automatic**.
-   * **SNS Subscription Endpoint** (**Highly Recommended**). New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file.
+   * **SNS Subscription Endpoint** (**Highly Recommended**). Sumo Logic will start collecting new files as soon as it receives a notification. This allows for faster collection instead of having to wait for the next scan to detect the new file.
 
         To set up the subscription you need to get an endpoint URL from Sumo to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click on **Create URL** and use the provided endpoint URL when creating your subscription in step C.     
 
