@@ -40,7 +40,7 @@ Druva supports OAuth 2.0-based authentication for incoming requests. Every use o
 
 All the requests to Druva APIs are authenticated using OAuth 2.0 access token which you receive in exchange of every authorization grant request you make. The OAuth token will expire after 30 minutes for [Data Governance Cloud](https://apis.druva.com/) and 15 minutes for [Data Governance GovCloud](https://govcloudapis.druva.com/).
 
-The Druva Source requires you to provide a **Client ID**, **Client Secret Key**, **Base URL**. To get these, follow the instructions from Druva documentation to [Set up DRUVA integration](https://developer.druva.com/reference/reference-getting-started).
+The Druva Source requires you to provide a **Client ID**, **Client Secret Key**, **Base URL**. To get these, follow the instructions from [Druva documentation](https://developer.druva.com/reference/reference-getting-started).
 
 
 ## Data Sources
