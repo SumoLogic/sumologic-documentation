@@ -125,7 +125,7 @@ Make sure that the topic and the bucket are in the same region.
     }
     ```
 
-1. Go to **Services \> [S3](https://s3.console.aws.amazon.com/s3/buckets/)** and select the bucket to which you want to attach the notifications. Navigate to **Properties \> Events \> Add Notification**. Enter a **Name** for the event notification. In the **Events** section select **All object create events**. In the **Send to** section (notification destination) select **SNS Topic**. An **SNS** section becomes available, select the name of the topic you created in step 1 from the dropdown. Click **Save**.
+1. Go to **Services** > **[S3](https://s3.console.aws.amazon.com/s3/buckets/)** and select the bucket to which you want to attach the notifications. Navigate to **Properties** > **Events** > **Add Notification**. Enter a **Name** for the event notification. In the **Events** section, select **All object create events**. In the **Send to** section (notification destination), select **SNS Topic**. When the **SNS** section becomes available, select the name of the topic you created in step 1 from the dropdown. Click **Save**.
 
 ### Complete setup in Sumo
 
