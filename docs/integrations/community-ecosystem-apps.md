@@ -37,10 +37,11 @@ A central place to list community content from the internal and external Sumo Co
 
 ### How do I add a review/rating to an app?
 
-1. Open the folder of the App you want to review
-1. Select the ratings.txt file.
-1. Select **Edit** (pen icon).
-1. Add a new line and paste in your ratings/comments using the schema below.
+1. Open the folder of the App you want to review.
+2. Open the **Comments** folder.
+3. Select the **Comments.json** file.
+4. Select **Edit** (pen icon).
+5. Add a new line below the current comments, and paste in your ratings/comments using the following schema:
   ```json
   {
     "reviewer":"[githubid/name]",
@@ -53,7 +54,7 @@ A central place to list community content from the internal and external Sumo Co
     "review":"This app is very useful for knowing x, y, and z. It would be great if the dashboards were broken out by use case instead of being one big dashboard."
   }
   ```
-1. Select **Propose New Changes**, with a message stating `“Adding a Review”`.
-1. Submit Pull Request.
+6. Select **Propose New Changes**.
+7. Submit Pull Request.
 
 Code owners will review and merge your rating to our repo.
