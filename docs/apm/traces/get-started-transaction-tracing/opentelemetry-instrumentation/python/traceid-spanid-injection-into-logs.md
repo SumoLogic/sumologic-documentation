@@ -11,7 +11,7 @@ Here's how to add traceId and spanId into logs for Python lambda. You have to ge
 
 1. Add library import:
   ```py
-  from OpenTelemetry import trace
+  from opentelemetry import trace
   ```
 2. Obtain current span context:
   ```py
