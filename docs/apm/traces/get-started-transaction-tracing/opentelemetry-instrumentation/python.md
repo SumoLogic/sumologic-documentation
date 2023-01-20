@@ -120,4 +120,6 @@ By default, OpenTelemetry uses W3C context propagation standard. If application 
    ```bash
    opentelemetry-instrument python3 manage.py runserver ---noreload
    ```
+
+## Log correlation
 * To enable trace context injection into logs, set the `OTEL_PYTHON_LOG_CORRELATION` environment variable to `true` ([learn more](https://opentelemetry-python-contrib.readthedocs.io/en/latest/instrumentation/logging/logging.html#enable-trace-context-injection))
