@@ -54,7 +54,7 @@ After successful installation of the packages it is important to properly config
    ```bash
    OTEL_EXPORTER_OTLP_ENDPOINT=http://HOSTNAME:4318
    ```
-   For Kubernetes environments, see the [available endpoints for a direct connection](../set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](../set-up-traces-collection-for-other-environments.md).
+   For Kubernetes environments, see the [available endpoints for a direct connection](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md).
 * Configures the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
    ```bash
    OTEL_SERVICE_NAME=SERVICE_NAME
