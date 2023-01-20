@@ -97,7 +97,7 @@ If you're adding additional configuration, we recommend using the [helm values f
 
 ## Next Steps
 
-Once you have completed the above steps, you'll have installed the collection, as well as the core Kubernetes Dashboards](/docs/observability/kubernetes/monitoring.md) and [alerts](/docs/observability/kubernetes/alerts.md). To get started, open a new Explore tab in Sumo Logic and view your Kubernetes App Dashboards.
+Once you have completed the above steps, you'll have installed the collection, as well as the core [Kubernetes Dashboards](/docs/observability/kubernetes/monitoring) and [alerts](/docs/observability/kubernetes/alerts). To get started, open a new Explore tab in Sumo Logic and view your Kubernetes App Dashboards.
 
 If you're not seeing data in Sumo Logic, you can review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/troubleshoot-collection.md).
 
