@@ -102,7 +102,7 @@ Make sure that the topic and the bucket are in the same region.
 
 1. Again go to **Services** > **Simple Notification Service** and click **Create Subscription**. Paste the **Topic ARN** from step 1 above. Select **HTTPS** as the protocol and enter the **Endpoint** URL provided while creating the S3 source in Sumo Logic. Click **Create subscription** and a confirmation request will be sent to Sumo Logic. The request will be automatically confirmed by Sumo Logic.
 
-1. Select the **Topic** created in step 1 and navigate to **Actions \> Edit Topic Policy**. Use the following policy template, replace the `SNS-topic-ARN` and `bucket-name` placeholders in the `Resource` section of the JSON policy with your actual SNS topic ARN and S3 bucket name:
+1. Select the **Topic** created in step 1 and navigate to **Actions** > **Edit Topic Policy**. Use the following policy template, replace the `SNS-topic-ARN` and `bucket-name` placeholders in the `Resource` section of the JSON policy with your actual SNS topic ARN and S3 bucket name:
 
     ```
     {
