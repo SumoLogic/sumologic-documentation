@@ -94,7 +94,7 @@ These configuration instructions apply to log collection from all AWS Source typ
 The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](configure-your-aws-source-cloudformation.md).
 :::
 
-1. Go to **Services \>** **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step.
+1. Go to **Services** > **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step.
 
 :::important
 Make sure that the topic and the bucket are in the same region.
