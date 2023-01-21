@@ -1432,7 +1432,7 @@ module.exports = {
           'apm/traces/get-started-transaction-tracing/http-traces-source',
         ],
       },
-      'apm/traces/service-map',
+      'apm/traces/services-list-map',
       'apm/traces/view-and-investigate-traces',
       'apm/traces/spans',
       'apm/traces/tracing-dashboards',
