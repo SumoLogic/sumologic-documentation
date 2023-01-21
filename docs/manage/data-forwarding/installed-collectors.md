@@ -139,7 +139,7 @@ You can add properties to the collector.properties file, in the Collector's /con
 After the memory and disk limits are reached, data will be dropped, so the limits should not be set too low
 
 | Property | Description |
-| -- | -- |
+| :-- | :-- |
 | `queue.rest.max.memory.mb` | Specifies the amount of memory allocated to the data forwarding queue for each REST destination.<br/><br/>Default: 8MB |
 | `queue.rest.max.disk.mb` | Specifies the amount of disk space allocated to the data forwarding queue for each REST destination.<br/><br/>Default: 500MB |
 | `queue.syslog.max.memory.mb` | Specifies the amount of memory allocated to the data forwarding queue for each Syslog destination.<br/><br/>Default: 8MB |

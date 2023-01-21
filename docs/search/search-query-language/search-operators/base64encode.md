@@ -1,9 +1,8 @@
 ---
 id: base64encode
-title: base64encode Search Operator
-sidebar_label: base64encode
+title: base64Encode Search Operator
+sidebar_label: base64Encode
 ---
-
 
 The `base64Encode` operator takes an ASCII string and converts it to a base64 string.
 

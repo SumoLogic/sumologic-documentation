@@ -37,7 +37,7 @@ When you've already run a search query with non-aggregate results, you can use t
 * `... | logreduce [field<field>] [by<byField>] [limit<limit>] [, criteria<criteria>]`
 
 | Parameter | Description |
-| -- | -- |
+| :-- | :-- |
 | `field` | The field to group by similarity. If no field is provided the raw message is used. |
 | `byField` | Field to group signatures by. Results are returned aggregated. |
 | `limit` | Limits the number of signatures returned. The total number of signatures involved in a search query can be overwhelming, making final results hard to digest and comprehend. Use this parameter to limit the number of returned signatures. |
@@ -67,7 +67,7 @@ Once a LogReduce query has run with the details operator, you can't use that que
 LogReduce Optimize is a scaled-out version of LogReduce that groups logs by existing signatures. You need to prerun LogReduce on new data sources to create its signatures. In many cases, the optimized version provides up to 10x speedup over classic LogReduce on datasets with hundreds of thousands of logs. The only caveat with the optimized version is that some LogReduce classic features are not supported. The table below compares classic LogReduce with its optimized version based on available features and performance:
 
 | Features | LogReduce | LogReduce Optimize |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | Throughput |   | \~10x logreduce |
 | Groups logs by existing signatures | Yes | Yes |
 | Creates new signatures at runtime | Yes | No |

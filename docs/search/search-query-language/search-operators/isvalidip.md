@@ -8,7 +8,7 @@ The `isValidIP` operator checks if the value is a valid IP address. The isVal
 
 ## Syntax
 
-##### isValidIP
+### isValidIP
 
 ```sql
 isValidIP("<IP_string>") as <field>
@@ -18,7 +18,7 @@ isValidIP("<IP_string>") as <field>
 isValidIP(<IP_string_field>) [as <field>]
 ```
 
-##### isValidIPv4
+### isValidIPv4
 
 ```sql
 isValidIPv4("<IP_string>") as <field>
@@ -28,7 +28,7 @@ isValidIPv4("<IP_string>") as <field>
 isValidIPv4(<IP_string_field>) [as <field>]
 ```
 
-##### isValidIPv6
+### isValidIPv6
 
 ```sql
 isValidIPv6("<IP_string>") as <field>

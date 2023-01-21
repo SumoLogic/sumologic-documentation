@@ -1,7 +1,7 @@
 ---
 id: cidr
 title: cidr Search Operator
-sidebar_label: cidr
+sidebar_label: CIDR
 ---
 
 Sumo Logic's three CIDR operators work with CIDR (Classless Inter-Domain Routing, sometimes pronounced "cider") notation to narrow the analysis of IPv4 networks to specific subnets. CIDR notations specify the routing prefix of IP addresses.

@@ -20,18 +20,20 @@ haversine(<latitude1>, <longitude1>, <latitude2>, <longitude2>) as <field>
 
 This returns a field named distanceKMs with the value '3,512.71000'.
 
-#### Return value in miles
+### Return value in miles
 
 To convert kilometers (KM) to miles you can divide the KM value by 1.609344.
 
 ```sql
 | haversine(39.04380, -77.48790, 45.73723, -119.81143)/1.609344 as distanceMiles
 ```
-## Landspeed violation example
+
+### Landspeed violation example
 
 You can use the following query detect landspeed violations in AWS CloudTrail with haversine:
 
-```_sourceCategory=Labs/AWS/CloudTrail
+```sql
+_sourceCategory=Labs/AWS/CloudTrail
 | json "userIdentity.userName" as user nodrop
 | json "sourceIPAddress" as ip nodrop
 //| filter and sort the data
@@ -69,3 +71,4 @@ You can use the following query detect landspeed violations in AWS CloudTrail wi
 | where !isNull(user)
 | where apparent_velocity_kph != "Infinity"
 | sort by apparent_velocity_kph
+```

@@ -25,7 +25,7 @@ substring(<sourceString>, <startOffset>) as <outputField>
 
 ## Example
 
-#### Output "world!" from "Hello world!"
+### Output "world!" from "Hello world!"
 
 Use the following query to output only the word "world!" and the exclamation point from "Hello world!"
 
@@ -33,7 +33,7 @@ Use the following query to output only the word "world!" and the exclamation poi
 ... | substring("Hello world!", 6)
 ```
 
-#### Output "Sumo" from "Sumo Logic"
+### Output "Sumo" from "Sumo Logic"
 
 This query would output the word "Sumo" from the company name "Sumo Logic".
 
@@ -47,7 +47,7 @@ Whereas this query would output the entire company name:
 ... | substring("Sumo Logic", 0, 100)
 ```
 
-#### Output the year from the string dateTimeString
+### Output the year from the string dateTimeString
 
 This query would output only the year from the string dateTimeString:
 
@@ -55,7 +55,7 @@ This query would output only the year from the string dateTimeString:
 ... | substring(dateTimeString, 0, 4)
 ```
 
-#### Get an employee’s initials from their first name and last name
+### Get an employee’s initials from their first name and last name
 
 Use the following query to extract an employee’s initials from substrings firstName and lastName, then transform the letters to uppercase and Concat them as "initials":
 
@@ -65,7 +65,7 @@ Use the following query to extract an employee’s initials from substrings firs
 | toUpperCase(concat(x, y)) as initials
 ```
 
-#### Invalid Examples
+### Invalid Examples
 
 These are examples of queries that will not work with the Substring Operator:
 

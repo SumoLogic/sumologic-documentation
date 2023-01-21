@@ -55,7 +55,7 @@ For information about other fields you can use in Audit Index searches, see auto
 The table below shows the `_sourceCategory` that is assigned to event logs by CSE feature.
 
 | Product Feature | _sourceCategory Value |
-| -- | -- |
+| :-- | :-- |
 | [Action](create-cse-actions.md) | `cseAction` |
 | [Aggregation Rule](/docs/cse/rules/write-aggregation-rule.md) | `cseRule` |
 | Configure Assigned Insight Emails<br/>(Relates to the option, on the Actions page, that causes a user to receive an email whenever another user assigns an Insight to them. | `cseConfiguration` |

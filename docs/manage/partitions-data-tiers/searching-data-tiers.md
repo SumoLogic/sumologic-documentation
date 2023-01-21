@@ -23,7 +23,7 @@ Even though you don't have to use `_dataTier` when you are querying selected par
 ## Examples
 
 | Example query	| Description |
-| -- | -- |
+| :-- | :-- |
 | `error` | Searches all partitions in the Continuous tier  for messages that contain the string “error”. |
 | `_dataTier=Frequent error` | Searches all partitions in the Frequent tier  for messages that contain the string “error”. |
 | `_dataTier=All error` | Searches all partitions in all tiers for messages that contain the string “error”. |

@@ -22,7 +22,7 @@ limit #
 
 ## Examples
 
-**Top 10 errors.**
+### Top 10 errors
 
 In this example, we simply query for the term "error" without using an aggregation operator, and limit will reduce the number of raw messages returned to 10.
 
@@ -34,7 +34,7 @@ error *
 The message tab displays only the first 10 error messages for the time
 range you have queried.
 
-**Count Top 5 errors for a source.**
+### Count Top 5 errors for a source
 
 In this query, you can search for errors, count by the `_sourceCategory`, sort by the count, and limit the results to the top 5 errors.
 

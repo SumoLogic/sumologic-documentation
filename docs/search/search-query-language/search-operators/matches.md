@@ -45,7 +45,7 @@ where !(<string expression> matches <pattern>)
 
 ## Examples
 
-#### Matching with regex to filter results
+### Matching with regex to filter results
 
 See a [case insensitive parse regex example](../parse-operators/parse-variable-patterns-using-regex.md).
 
@@ -65,7 +65,7 @@ With an if operator you can return an additional boolean field, in this example
 | if(ip matches /12\.1[34][1-5]\.12\.12[3-7]/, 1,0) as ip_group
 ```
 
-#### Identifying the browsers and operating systems used to access your website
+### Identifying the browsers and operating systems used to access your website
 
 Running a query containing a matches operator on Apache Access logs can show you the breakdown of the devices and browsers that are accessing your site. You can then create a Dashboard with this query. We have used a transpose operator in this query to allow us to name the axis of our column chart.
 
@@ -91,7 +91,7 @@ Produces aggregate results similar to the following, when you configure it to cr
 
 ![Matches](/img/search/searchquerylanguage/search-operators/matches.png)
 
-#### Viewing errors and warnings over time
+### Viewing errors and warnings over time
 
 In this example, we will run a query against Windows logs to see the distribution of errors and warnings over the previous hours. Using a timeslice operator in the query breaks the results into one-hour buckets.
 
@@ -113,7 +113,7 @@ Produces results similar to the following, when you configure it to be visualize
 
 ![Matches Event](/img/search/searchquerylanguage/search-operators/Matches_Ex.png)
 
-#### Matching against parsed field values
+### Matching against parsed field values
 
 The matches operator can match against your parsed fields by using the [concat](concat.md) operator to add wildcards to the necessary location of your parsed field. The following example is parsing the instance value and then concatenating wildcards to the beginning and end of the parsed field. This provides the matches operator the necessary wildcards to match against.
 

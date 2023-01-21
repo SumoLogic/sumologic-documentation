@@ -36,7 +36,9 @@ points.
 
 Using `diff` with `timeslice`, you can run a query similar to:
 
-`* | parse "bytes transmitted: '*'" as bytes | timeslice 1m | sum(bytes) as bytes by _timeslice | sort _timeslice | diff bytes as diff_bytes`
+```sql
+* | parse "bytes transmitted: '*'" as bytes | timeslice 1m | sum(bytes) as bytes by _timeslice | sort _timeslice | diff bytes as diff_bytes
+```
 
 to produce results similar to:
 
@@ -48,13 +50,17 @@ Note that there is no value for diff_bytes in line 1, as expected.
 included in a single query. For example, to calculate the diff of bytes
 and compressed bytes:
 
-`* | parse "data: '*'" as Bytes  | diff Bytes as b  | parse "compress: '*'" as Compressed  | diff Compressed as c`
+```sql
+* | parse "data: '*'" as Bytes  | diff Bytes as b  | parse "compress: '*'" as Compressed  | diff Compressed as c
+```
 
 **Adding a diff operator query to a Dashboard.** To add a query that
 includes a **diff** operator, make sure to structure your query similar
 to:
 
-`* | parse "encoded: '*'" as e  | parse "compressed: '*'" as c  | count by e,c  | diff e as d`
+```sql
+* | parse "encoded: '*'" as e  | parse "compressed: '*'" as c  | count by e,c  | diff e as d
+```
 
 If your query isn't compatible with a Dashboard, an error message
 appears when you attempt to add it.

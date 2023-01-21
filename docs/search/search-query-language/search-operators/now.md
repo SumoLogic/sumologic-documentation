@@ -14,9 +14,9 @@ It is important to note that the Now operator outputs the exact time (down to th
 now()
 ```
 
-## Example
+## Examples
 
-#### Return the current date
+### Return the current date
 
 This query returns a long version of the current date and time in milliseconds.
 
@@ -28,7 +28,7 @@ Which returns results similar to:
 
 ![Current date](/img/search/searchquerylanguage/search-operators/CurrentDate.png)
 
-#### Return the current date using formatDate.
+### Return the current date using formatDate
 
 Use the following query with formatDate to return results for the current date formatted as YYYY-MM-dd.
 

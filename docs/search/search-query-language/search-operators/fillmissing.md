@@ -81,7 +81,7 @@ fillmissing <keyFieldGenerator> [, <keyFieldGenerator> ]  [ with <nonKeyFieldSpe
 * The `keyFieldGenerator` generates key fields that the operator then references to ensure all specified combinations of values are present. Any missing values are filled based on the specified `nonKeyFieldSpecs`, one for each key field. Two generators are supported:
 
 | Generator | Syntax |
-| -- | -- |
+| :-- | :-- |
 | Timeslice | `timeslice[(<integer><time_period>)] [in <field>]`<br/><br/>If no time period is specified, the same time period from the previous timeslice operator is used. |
 | Values | `values("<value1>", "<value2>", ...) in <field>`<br/>or<br/>`values all in <field>`<br/><br/>The all option uses all the distinct values for the field from the query results. |
 

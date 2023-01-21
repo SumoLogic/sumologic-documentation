@@ -44,7 +44,7 @@ produces results like:
 
 ![rollingstd](/img/reuse/query-search/rollingstd_new.png)
 
-#### Find the rolling standard deviation of a field between time points
+### Find the rolling standard deviation of a field between time points
 
 Using rollingstd with timeslice, you can run a query similar to:
 
@@ -64,7 +64,7 @@ The aggregation table can be made into an area chart, like this:
 
 ![example 2](/img/reuse/query-search/rollingstd_example2.png)
 
-#### Specify a window length of 5, but only 4 data points are available
+### Specify a window length of 5, but only 4 data points are available
 
 Before 5 values are available, the rollingstd operator takes an average
 of whatever is available. For example:

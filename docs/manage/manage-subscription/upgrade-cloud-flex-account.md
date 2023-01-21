@@ -12,7 +12,7 @@ This page has information about upgrading a Sumo Logic CloudFlex account. The Cl
 This table summarizes upgrade options for different Cloud Flex account types.
 
 | Account Type | Upgrade Options |
-| -- | -- |
+| :-- | :-- |
 | Free or Trial  | <ul><li>Professional<li></li>Enterprise—Log ingest is capped at 20GB/day.</li></ul> |
 | Professional | <ul><li>You can increase or decrease the supported product variables while staying a Professional account.<li></li>Enterprise—Log ingest is capped at 20GB/day.</li></ul> |
 | Enterprise | <ul><li>You can increase or decrease the supported product variables; log ingest is capped at 20GB/day.</li></ul> |

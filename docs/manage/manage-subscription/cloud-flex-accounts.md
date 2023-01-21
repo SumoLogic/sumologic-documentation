@@ -31,7 +31,7 @@ Sumo Logic provides flexible account types within its Cloud Flex packaging for 
 The following table provides a summary list of key features by Sumo Logic Cloud Flex package accounts. 
 
 | Feature | Free | Trial | Professional | Enterprise |
-|:-- | -- | -- | -- | -- |
+|:-- | :-- | :-- | :-- | :-- |
 | Audit Index |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Audit Event Index |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) |
 | [Collector Management API](https://github.com/SumoLogic/sumo-api-doc/wiki/collectors) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |

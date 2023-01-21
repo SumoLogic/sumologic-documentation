@@ -6,7 +6,7 @@ sidebar_label: format
 
 The `format` operator allows you to format and combine data from parsed fields. Numbers, strings, and dates can be formatted into a user-defined string. This allows data in logs, such as dates or currency amounts, to be formatted as human readable, when otherwise it would be hard to decipher.
 
-The [Concat](concat.md) operator is a simpler version of the Format operator, and may be used instead for simpler use cases.
+The [`concat`](concat.md) operator is a simpler version of the Format operator, and may be used instead for simpler use cases.
 
 ## Syntax
 
@@ -65,8 +65,7 @@ This query does the same but also places thousands separators.
 
 ### Formatting dates
 
-Use the following query to format fields in a message log into a
-readable date.
+Use the following query to format fields in a message log into a readable date.
 
 ```sql
 | parse “*-*-*” “as year, month, day | format (“%d/%d/%d”, month, day, year) as date
@@ -97,4 +96,4 @@ In this query, we have a single value, like the average cache miss percentage, a
 | format("%.3f %s", avg_cache_miss_pct,"%") as avg_cache_miss_pct
 ```
 
-For more options, see [toLowerCase and toUpperCase](/docs/search/search-query-language/search-operators/tolowercase-touppercase).
+For more options, see [`toLowerCase` and `toUpperCase`](/docs/search/search-query-language/search-operators/tolowercase-touppercase).

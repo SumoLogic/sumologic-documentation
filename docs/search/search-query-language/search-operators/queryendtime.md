@@ -20,7 +20,7 @@ queryEndTime() as <field>
 
 * An alias is required.
 
-## Example
+## Examples
 
 To get a duration of your query:
 

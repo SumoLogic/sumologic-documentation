@@ -4,7 +4,7 @@ title: top Search Operator
 sidebar_label: top
 ---
 
-Use the `top` operator with the [`sort`](sort.md) operator, to reduce the number of sorted results returned.
+Use the `top` operator with the [`sort`](sort.md) operator to reduce the number of sorted results returned.
 
 :::tip
 We recommend you instead use the [`topk`](topk.md) operator so you can take advantage of its additional functionality.

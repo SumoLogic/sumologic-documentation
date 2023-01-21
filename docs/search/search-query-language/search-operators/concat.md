@@ -88,6 +88,6 @@ To use more than 16 inputs with the concat operator, you can combine operators, 
 ... | concat(concat(field1, field2, ...), field17, field18,...) as concatenated_fields
 ```
 
-## More Information
+## Formatting strings
 
-For information on formatting strings, see [Format](format.md) operator.
+For information on formatting strings, see [`format`](format.md) operator.

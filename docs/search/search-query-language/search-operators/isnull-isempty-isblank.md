@@ -57,7 +57,7 @@ Returns `true` if the string is null, empty, or only whitespace.
 
 ## Examples
 
-**Run a geo lookup query where we can find remote IP addresses that are not in the geo database.**
+### Run a geo lookup query where we can find remote IP addresses that are not in the geo database
 
 In this situation, no `country_code` will be associated with the IP address and the field value will be null.
 
@@ -73,9 +73,9 @@ uses the `isNull` operator to check the field value of `country_code` and if i
 
 ![isNull](/img/search/searchquerylanguage/search-operators/isNull.png)
 
-**Use [where](where.md) to check for null values.**
+### Use where to check for null values
 
-To check for null values from a lookup operation, use a query like:
+To check for null values from a lookup operation, use a query with [`where`](where.md), like:
 
 ```sql
 | parse "example_ip=*]" as ip

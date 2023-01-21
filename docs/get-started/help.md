@@ -94,7 +94,7 @@ For more information, click **Help > Service Status**. This will take you to a w
 The Service Status Indicator on the Help menu shows the severity of the outage.
 
 | Icon | Status |
-| -- | -- |
+| :-- | :-- |
 | NONE | **None.** All systems operational. |
 | ![](/img/reuse/outage_critical.png) | **Critical.** Major system outage. |
 | ![](/img/reuse/outage_major.png) | **Major.** Partial system outage.  |

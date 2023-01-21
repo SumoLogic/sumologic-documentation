@@ -93,7 +93,7 @@ Download the collector in either of the following ways:
 See the following table for commands:
 
 | Operating System | Command |
-| -- | -- |
+| :-- | :-- |
 | Linux | When upgrading on Ubuntu 16 and above using a shell executable file (.sh), Debian, or the Web UI you will need to manually restart the collector service after upgrading using the following command. See [Start or Stop a Collector](start-stop-collector-using-scripts.md) for details. <br/><br/> Command: `sudo ./collector start` |
 | Linux RPM | Upgrade command: `sudo rpm -U <pathToCollectorRPMFile>`<br/><br/>Downgrade command: `sudo rpm -U --oldpackage <pathToCollectorRPMFile>`<br/><br/>There may be a warning message regarding the deletion of the `safeRestart.cmd` file, this is safe to ignore. |
 | Linux Debian | Upgrade or downgrade command: `sudo dpkg -i <pathToCollectorDebianFile>` |

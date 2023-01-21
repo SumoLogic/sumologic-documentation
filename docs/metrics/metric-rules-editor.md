@@ -143,7 +143,7 @@ In the screenshot above, the following metric is selected: `collectd.kafka-forge
 This section describes error messages that can be issued by the Metric Rules Editor.
 
 | Error Message | Description |
-| -- | -- |
+| :-- | :-- |
 | Rule name already exists. | This message appears if you try to assign a name that is already assigned to a an existing rule to a different rule. To resolve this error, enter a different rule name. |
 | Rule already exists. | This message appears if you try to create a rule that has the same match expression and variable assignment(s) as an existing rule. |
 | $field was needed but not extracted.<br/>(Where $field is a variable that has not been extracted.) | This message appears if you refer to a variable that you have not extracted. |

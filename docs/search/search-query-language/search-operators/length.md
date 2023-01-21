@@ -21,7 +21,7 @@ length(<field>) [as <field>]
 
 ## Examples
 
-**Find only short queries.**
+### Find only short queries
 
 Use the following query to find queries under 20 characters.
 
@@ -31,7 +31,7 @@ _sourceCategory=apache error
 | where length(query) <= 20
 ```
 
-**Count by the length of the query.**
+### Count by the length of the query
 
 Use this query to count results by the length of the query.
 

@@ -323,7 +323,7 @@ service.
 Configure these parameters in **sumologic.auto.tfvars**.
 
 | Parameter | Description | Default |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | sumo_access_id | [Sumo Logic Access ID](/docs/manage/security/access-keys.md) | |
 | sumo_access_key | [Sumo Logic Access Key](/docs/manage/security/access-keys.md) |  |
 | deployment | [Sumo Logic Deployment](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) | us1 |
@@ -361,7 +361,7 @@ Configure these parameters in **sumologic.auto.tfvars**.
 Configure these parameters in **sumologic_fer.auto.tfvars**. There is a set of FER's for the SDO Apps. Each FER needs scope and a parse expression. In most cases default values will suffice, if required you can edit the scope and parse expression as per your requirements.
 
 | Parameter | Description |
-|:-- | --|
+|:-- | :--|
 | (app)_pull_request_fer_scope | A [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that points to the subset of logs you'd like to parse. For more details see [FER](/docs/manage/field-extractions/create-field-extraction-rule.md). |
 | (app)_pull_request_fer_parse | A valid parse expression with [supported parse and search operators.](/docs/manage/field-extractions/create-field-extraction-rule.md) For more details see [FER](/docs/manage/field-extractions/create-field-extraction-rule.md). |
 
