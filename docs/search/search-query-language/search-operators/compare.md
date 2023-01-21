@@ -4,12 +4,9 @@ title: compare Search Operator
 sidebar_label: compare
 ---
 
+The `compare` operator can be used with the **Time Compare** button in the Sumo interface, which automatically generates the appropriate syntax and adds it to your aggregate query. See [Time Compare](/docs/search/time-compare) for details. The following information can also be found documented in Time Compare.
 
-
-
-The compare operator can be used with the <strong>Time Compare</strong> button in the Sumo interface, which automatically generates the appropriate syntax and adds it to your aggregate query. See <a href="/docs/search/time-compare">Time Compare</a> for details. The following information can also be found documented in Time Compare.
-
-You can use compare to:
+You can use `compare` to:
 
 * Evaluate the performance metrics of a website, such as the latency or the number of exceptions, before and after a deployment.  
 * Track the root cause of a production issue quickly by tracking specific keywords, such as memory exceptions, and comparing them with historic data to find any anomalous trends.
@@ -103,7 +100,7 @@ Other examples:
 
 You can also do multiple different comparisons queries under the same compare operator by using multiple timeshift phrases separated by commas.
 ```
-... | compare\<comparison \>,\<comparison \>, ...
+... | compare\<comparison >,\<comparison >, ...
 ```
 
 For example:
@@ -124,7 +121,7 @@ For example:
 ... | compare timeshift 1d as yesterday, timeshift 1w 4 as last_four_weeks
 ```
 
-**Rules**
+## Rules
 
 * The compare operator must follow a group by aggregate operator, such as: `count`, `min`, `max`, or `sum`.
 * If you want to use timeslice with compare, don't alias timeslice.
@@ -157,7 +154,7 @@ For example:
 * Compare is not supported in Scheduled Views.
 * Compare can only be used once in a search query.
 
-**Examples**
+## Examples
 
 ### Compare time series data with past data
 
@@ -234,7 +231,7 @@ These results would create a line chart such as the following.
 
 ### Compare after a Transpose operation
 
-You can use the compare operator after a transpose operation, such as the following:
+You can use the `compare` operator after a `transpose` operation, such as the following:
 
 ```sql
 _sourceCategory=analytics

@@ -11,7 +11,7 @@ Metrics are an effective tool for monitoring, troubleshooting, and identifying t
 ## Availability
 
 | Account Type | Account Level       |
-|--------------|--------------------------|
+|:--------------|:--------------------------|
 | Cloud Flex   | Trial, Professional, Enterprise                                                 |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 

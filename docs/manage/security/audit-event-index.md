@@ -7,7 +7,7 @@ description: The Audit Event Index provides event logs in JSON on your account's
 ## Availability
 
 | Account Type | Account Level |
-|--|--|
+|:--|:--|
 | Cloud Flex | Trial, Enterprise |
 | Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -22,7 +22,7 @@ All available audited events are documented for your reference. This documentat
 Select the documentation link for your deployment:
 
 | Deployment | Documentation URL |
-|--|--|
+|:--|:--|
 | AU | https://service.au.sumologic.com/audit/docs  |
 | CA | https://service.ca.sumologic.com/audit/docs  |
 | DE | https://service.de.sumologic.com/audit/docs  |

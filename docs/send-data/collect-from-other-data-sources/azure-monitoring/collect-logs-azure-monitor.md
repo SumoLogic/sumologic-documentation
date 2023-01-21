@@ -95,7 +95,7 @@ Various Azure Services connect to Azure Monitor to send monitoring data to an Ev
 We will use **Azure Active Directory** Service as an example to push Audit logs to Event Hub with Azure Monitor.  
 
 1. Login into Azure Portal.
-1. Click **Azure Active Directory \> Activity \> Audit** logs.
+1. Click **Azure Active Directory > Activity > Audit** logs.
 1. Click **Export Settings**.
 1. You will see the **Diagnostic Settings** blade which will show all your existing settings if any already exist. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one. You can have a maximum of three settings.
 1. Check the **Stream to an event hub box** and click on **Event hub / Configure**.
@@ -184,7 +184,7 @@ The above error occurs in certain situations the runtime initiates a host shutdo
 
 If you're using this function for quite some time then we recommend redeploying the solution with new ARM templates.
 
-If the error still persists in BlobTaskProducer function and failure rate \> 1% then
+If the error still persists in BlobTaskProducer function and failure rate > 1% then
 
 \> Increase the time out of the BlobTaskProducer Function to 30 min in host.json by clicking on Appfiles 
 
@@ -192,7 +192,7 @@ If the error still persists in BlobTaskProducer function and failure rate \> 1% 
 
 \> Increase the number of min instances in app service plan of the BlobTaskProducer function
 
-1. Go to Monitor \> Autoscale
+1. Go to Monitor > Autoscale
 
 1. Select the resource group in which you deployed the ARM template and select app service plan `(SUMOBRProducerPlan\<suffix\>)` in resource type
 
@@ -202,7 +202,7 @@ If the error still persists in BlobTaskProducer function and failure rate \> 1% 
 
     ![azure-manual-scale](/img/send-data/azure-manual-scale.png)
 
-If the error still persists in BlobTaskConsumer function and failure rate \> 1% then you can migrate from Consumption plan to Premium plan by making changes in the ARM template 
+If the error still persists in BlobTaskConsumer function and failure rate > 1% then you can migrate from Consumption plan to Premium plan by making changes in the ARM template 
 
 ```
 {

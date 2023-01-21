@@ -10,13 +10,13 @@ sidebar_label: Troubleshooting
 If you believe some data that was uploaded to a source was not ingested, check the HTTP status codes for requests sent to the source. Each request should receive a 200 status code indicating the data was successfully received by Sumo. Status codes other than 200 may indicate an issue with the HTTP source. Key status codes are listed below.
 
 | Status Code | Description |
-|--|--|
+|:--|:--|
 | 200 | HTTP request received and processed successfully. |
 | 401 | HTTP request was rejected due to missing or invalid URL token. |
 | 408 | HTTP request was accepted, but timed out processing. For more information, see [Request Timeouts](#request-timeouts). |
 | 429 | HTTP request was rejected due to quota-based throttling. For more information, see [Throttling](#throttling), below. |
-| 503 | HTTP request was rejected due to server issues. Check the **Status** page in the Sumo web app (**Manage \> Collection \> Status**) for information about collector status. |
-| 504 | HTTP request was rejected due to server issue. Check the **Status** page in the Sumo web app (**Manage \> Collection \> Status**) for information about collector status. |
+| 503 | HTTP request was rejected due to server issues. Check the **Status** page in the Sumo web app (**Manage > Collection > Status**) for information about collector status. |
+| 504 | HTTP request was rejected due to server issue. Check the **Status** page in the Sumo web app (**Manage > Collection > Status**) for information about collector status. |
 
 ## Client not sending data
 
@@ -45,7 +45,7 @@ If there is are output buffer overflow errors, the query will return
 output like this:
 
 | #      |   _collector |   _source |  _count |
-|-------|------------------|--------------|-------------|
+|:-------|:------------------|:--------------|:-------------|
 | 1     | Alpha Production | source-alpha | 21          |
 | 2     | Beta Production  | source-beta  | 69          |
 | 3     | Delta Production | source-delta | 30,180      |

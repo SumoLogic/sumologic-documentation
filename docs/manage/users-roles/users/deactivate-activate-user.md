@@ -22,7 +22,7 @@ If you want to permanently remove a user, [you can delete them](delete-user.md)
 
 ## Deactivate a user
 
-1. Go to  **Administration** \> **Users and Roles** \> **Users**.
+1. Go to  **Administration** > **Users and Roles** > **Users**.
 
     ![user-options-menu.png](/img/users-roles/users-page.png)
 
@@ -33,7 +33,7 @@ point. The user is not notified of the change.
 
 ## Activate a user
 
-1. Go to  **Administration** \> **Users and Roles** \> **Users**.
+1. Go to  **Administration** > **Users and Roles** > **Users**.
 1. Select the row for the user you want to activate and choose **Activate** from the three-dot options menu.
 
 The user's icon changes from a red exclamation point to a green check

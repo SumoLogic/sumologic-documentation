@@ -72,7 +72,7 @@ Use the following steps to create a service application:
 1. Request the appropriate permissions for the application. Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**. From there select (or search for) the following permissions. An Administrator must approve (grant) these permissions before the integration will function.
 
 | API |  Account Type |  Permissions |
-|----------------|----------------------------------------|----------------------------|
+|:----------------|:----------------------------------------|:----------------------------|
 | Risk Detection | Delegated (work or school account)     | IdentityRiskEvent.Read.All |
 | Risk Detection | Delegated (personal Microsoft account) | Not supported.             |
 | Risk Detection | Application                            | IdentityRiskEvent.Read.All |
@@ -88,7 +88,7 @@ When you create a Microsoft Graph Identity Protection Source, you add it to a H
 
 To configure a Microsoft Graph Identity Protection Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 
@@ -126,7 +126,7 @@ To configure a Microsoft Graph Identity Protection Source:
 When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable                                                    | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
@@ -136,7 +136,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | config | JSON Object  | Yes | Contains the configuration parameters for the Source. |                |
 | schemaRef | JSON Object  | Yes | Set to `{"type":"MS Graph Identity Protection"}`. | not modifiable |
 | sourceType        | String       | Yes               | Set to `Universal`. | not modifiable |
@@ -145,7 +145,7 @@ The following table shows the **config** parameters for a Microsoft
 Graph Identity Protection Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |

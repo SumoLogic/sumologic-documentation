@@ -4,9 +4,7 @@ title: lookup Search Operator
 sidebar_label: lookup
 ---
 
-
-
-The lookup operator can return one or more fields from a lookup table hosted by Sumo Logic and add the fields to the log messages returned by your query. You create a lookup table using the lookup UI or the <a href="https://api.sumologic.com/docs/#tag/lookupManagement">Lookup API</a>. You can populate a lookup table by uploading a CSV file using the Lookup API, or by using the <a href="#save">save operator</a> to save the results of a log query. 
+The `lookup` operator can return one or more fields from a lookup table hosted by Sumo Logic and add the fields to the log messages returned by your query. You create a lookup table using the lookup UI or the <a href="https://api.sumologic.com/docs/#tag/lookupManagement">Lookup API</a>. You can populate a lookup table by uploading a CSV file using the Lookup API, or by using the <a href="#save">save operator</a> to save the results of a log query. 
 
 :::note
 New Lookup Tables are available in all deployments except Sumo Logic's Montreal deployment, pending AWS providing a required AWS service in the Montreal region.
@@ -157,7 +155,7 @@ In our example above, the first `lookup` finds the name, and the second finds th
 
 ### Handling null values
 
-To find a mismatch from a `lookup`  query, use the [isNull](#isNull) operator.
+To find a mismatch from a `lookup`  query, use the [isNull](/docs/search/search-query-language/search-operators/isnull-isempty-isblank#isnullstring) operator.
 
 For example:
 

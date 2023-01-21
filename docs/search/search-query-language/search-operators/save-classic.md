@@ -4,8 +4,7 @@ title: save (Classic) Search Operator
 sidebar_label: save (Classic)
 ---
 
-
-The save (classic) operator works with the classic Lookup Tables feature. For information about the new, more scalable Lookup Tables feature and the new save operator that works with it, see <a href="/docs/search/lookup-tables">Lookup Tables</a> and <a href="#save">save</a>. The new save operator allows you to merge new and changed rows, whereas, this classic save operator can only append to existing rows.
+The `save` (classic) operator works with the classic Lookup Tables feature. For information about the new, more scalable Lookup Tables feature and the new save operator that works with it, see <a href="/docs/search/lookup-tables">Lookup Tables</a> and <a href="#save">save</a>. The new save operator allows you to merge new and changed rows, whereas, this classic save operator can only append to existing rows.
 
 Using the **save** operator allows you to save the results of a query into the Sumo Logic file system. Later, you can use the lookup operator to access the saved data. The save operator saves data in a simple format to a location you choose.
 
@@ -17,12 +16,12 @@ You will need to remember the path where you point the save operator to put the 
 save [append]\<myFolder/mySubFolder/myFileNam\>
 ```
 
-**Rules**
+## Rules
 
 * The file size limit for saved data is 500MB.
 * Queries that use the Save operator can't be [pinned](/docs/get-started/library#search-the-library).
 
-**Examples**
+## Examples
 
 Let's say you want to save data about new user accounts created each day. Your Save operator could look like:
 
@@ -49,7 +48,7 @@ Aggregate results can also be saved with the save operator.
 
 #### Use the Fields operator to remove unnecessary fields
 
-When creating a save file, make sure that the file is as small as possible to work more quickly. A good way to do this is to remove unnecessary fields using the [Fields](#fields-operator) operator. This includes [built-in metadata fields](/docs/search/get-started-with-search/search-basics/built-in-metadata), like `_raw`.
+When creating a save file, make sure that the file is as small as possible to work more quickly. A good way to do this is to remove unnecessary fields using the [Fields](fields.md) operator. This includes [built-in metadata fields](/docs/search/get-started-with-search/search-basics/built-in-metadata), like `_raw`.
 
 #### Saving files to a shared location
 
@@ -65,7 +64,7 @@ To save a file to a shared location include the word **shared** at the beginnin
 ...save /shared/myFolder/mySubFolder/fileName
 ```
 
-For more information, see [Using Lookup to Access Saved Data](#lookup-classic).
+For more information, see [Using Lookup to Access Saved Data](lookup-classic.md).
 
 #### Appending to saved files
 

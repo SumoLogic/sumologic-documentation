@@ -30,7 +30,7 @@ A Jenkins pipeline needs to be configured/instrumented to send Deploy and Build 
 Data Schema of Deploy and Build Events can be described by the following fields :
 
 | Field | Explanation | Required/Optional |
-|--|--|--|
+|:--|:--|:--|
 | event_type | Enum Values: build, deploy, test, release | Required |
 | trace_id | This is the inner join key between deploy/build event and code merge event, it can be commit id
 This key will be used to join two events:<br/>Code Merge (PR) and Build<br/>Code Merge (PR) and Deploy | Required |

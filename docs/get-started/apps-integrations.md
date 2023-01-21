@@ -137,7 +137,7 @@ Searches from Enterprise Apps, which require a paid Professional Services contr
 
 To run a search from a Sumo Logic App:
 
-1. Find the Sumo Logic App for the data Source you would like to search in the App Catalog (**Library \> Apps** in the classic UI). For example, we've picked Cloud Passage Halo's **Outlier in Critical Issues**.
+1. Find the Sumo Logic App for the data Source you would like to search in the App Catalog (**Library > Apps** in the classic UI). For example, we've picked Cloud Passage Halo's **Outlier in Critical Issues**.
 
     ![Outlier in critical issues](/img/get-started/library/FindSearchInApp.png)
 

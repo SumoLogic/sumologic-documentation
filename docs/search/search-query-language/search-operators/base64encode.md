@@ -5,7 +5,7 @@ sidebar_label: base64encode
 ---
 
 
-The base64Encode operator takes an ASCII string and converts it to a base64 string.
+The `base64Encode` operator takes an ASCII string and converts it to a base64 string.
 
 ## Syntax
 
@@ -17,7 +17,7 @@ base64Encode("<string>") as <field>
 base64Encode(<string_field>) as <field>
 ```
 
-**Example**
+## Example
 
 ```sql
 | base64Encode("hello world") as base64

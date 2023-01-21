@@ -4,7 +4,7 @@ title: trace Search Operator
 sidebar_label: trace
 ---
 
-The trace operator acts as a highly sophisticated filter to connect the dots across different log messages. You can use any identifying value with a trace operator, such as a user ID, IP address, or session ID, to retrieve a comprehensive set of activity associated to that original ID.
+The `trace` operator acts as a highly sophisticated filter to connect the dots across different log messages. You can use any identifying value with a trace operator, such as a user ID, IP address, or session ID, to retrieve a comprehensive set of activity associated to that original ID.
 
 Trace operators require the following:
 

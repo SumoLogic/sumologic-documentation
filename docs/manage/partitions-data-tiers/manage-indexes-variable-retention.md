@@ -15,7 +15,7 @@ Retention is measured from the time that data was received, rather than the mess
 
 The minimum retention period is 1 day, and the maximum retention period is 5,000 days.
 
-On the **Manage Data** \> **Logs** page, there is a tab for **Partitions** and a tab for **Scheduled Views**.
+On the **Manage Data** > **Logs** page, there is a tab for **Partitions** and a tab for **Scheduled Views**.
 
 On the **Partitions** tab, the first entry is the Default Partition, which contains all ingested data that is not assigned to a partition or to views populated by Scheduled Searches. The default retention period of the Default Partition is 30 days.
 
@@ -39,7 +39,7 @@ actions:
 
 You may edit the retention period of Partitions and Scheduled Views. The minimum retention period is 1 day, and the maximum retention period is 5,000 days.
 
-1. Go to **Manage Data** \> **Logs**.
+1. Go to **Manage Data** > **Logs**.
 1. On the **Partitions** or **Scheduled Views** tab, hover over the item you would like to edit the retention period for.
 1. Click the three-dot icon on the right of the desired row, and from the menu select **Edit Retention Period**. (You may also edit the retention period from the expanded information dialog. Next to **Retention Period**, click **Edit**.)
 1. In the **Edit Retention Period** dialog, enter the new retention period in days. Alternatively, click the **Apply the retention period of the General Index** check box.

@@ -55,7 +55,7 @@ parse "eventSource\":\"*\"" as event_source
 **Resulting Fields:**
 
 | Field | Description | Example |
-|--|--|--|
+|:--|:--|:--|
 | event_source | The service that the request was made to | IAM |
 | source_ipaddress | The IP address that the request was made from | 34.87.4.6 |
 | event_name | The requested action, which is one of the actions in the API for that service | GetAccountPasswordPolicy |

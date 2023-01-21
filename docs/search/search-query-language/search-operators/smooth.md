@@ -4,8 +4,7 @@ title: smooth Search Operator
 sidebar_label: smooth
 ---
 
-
-The smooth operator calculates the rolling (or moving) average of a field, measuring the average of a value to "smooth" random variation. Smooth operator reveals trends in the data set you include in a query.
+The `smooth` operator calculates the rolling (or moving) average of a field, measuring the average of a value to "smooth" random variation. Smooth operator reveals trends in the data set you include in a query.
 
 Within a query that contains a smooth operator you will choose a window (described as window_length in the syntax below); the average of the values within the window creates a data point.
 
@@ -19,7 +18,7 @@ Adding a group by function to a smooth operator query produces a running average
 smooth <field> [, <window length>] [as <field>]
 ```
 
-**Rules**
+## Rules
 
 * An alias for smooth is optional. When an alias is not provided, `_smooth` is the default alias.
 * The specified field must contain numeric values.
@@ -27,7 +26,7 @@ smooth <field> [, <window length>] [as <field>]
 * The default window length is 10.
 * The maximum window length is 1000.
 
-**Example**
+## Example
 
 The following examples use the `sort` operator to sort the time prior to calculating the rolling average with `smooth`.
 

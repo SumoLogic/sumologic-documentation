@@ -4,10 +4,7 @@ title: matches Search Operator
 sidebar_label: matches
 ---
 
-
-
-
-The matches operator can be used to match a string to a wildcard pattern or an RE2 compliant regex. The operator returns a boolean value; the operator can be used with where or if operators.
+The `matches` operator can be used to match a string to a wildcard pattern or an RE2 compliant regex. The operator returns a boolean value; the operator can be used with where or if operators.
 
 Matches can be used in Dashboard Panels, and are very commonly used in conjunction with other operators to build robust queries.
 
@@ -41,12 +38,12 @@ where <string expression> matches /<regex>/
 where !(<string expression> matches <pattern>)
 ```
 
-**Rules**
+## Rules
 
 * Patterns use asterisks `*` as wildcards.
 * Regex must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax).
 
-**Examples**
+## Examples
 
 #### Matching with regex to filter results
 
@@ -118,7 +115,7 @@ Produces results similar to the following, when you configure it to be visualize
 
 #### Matching against parsed field values
 
-The matches operator can match against your parsed fields by using the [concat](#concat) operator to add wildcards to the necessary location of your parsed field. The following example is parsing the instance value and then concatenating wildcards to the beginning and end of the parsed field. This provides the matches operator the necessary wildcards to match against.
+The matches operator can match against your parsed fields by using the [concat](concat.md) operator to add wildcards to the necessary location of your parsed field. The following example is parsing the instance value and then concatenating wildcards to the beginning and end of the parsed field. This provides the matches operator the necessary wildcards to match against.
 
 ```sql
 | parse "instance \"*\"" as instance

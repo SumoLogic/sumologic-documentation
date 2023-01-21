@@ -38,7 +38,7 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
 
     ![lambda-python.png](/img/traces/lambda-python2.png)
 
-1. Navigate to the **Configuration \> Environment variables** section and set up the following environment variables:
+1. Navigate to the **Configuration > Environment variables** section and set up the following environment variables:
 
    * `AWS_LAMBDA_EXEC_WRAPPER= /opt/otel-instrument` enables auto-instrumentation.
 
@@ -70,7 +70,7 @@ If for whatever reason you can't disable this, configure X-Ray context propagati
 Go back to Step 3 (_In the Choose a layer menu_...).
 
 | AWS Region | ARN |
-|--|--|
+|:--|:--|
 | US East (N.Virginia) us-east-1          | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3      |
 | US East (Ohio) us-east-2                | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3      |
 | US West (N.Carolina) us-west-1          | arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:2      |
@@ -98,7 +98,7 @@ Go back to Step 3 (_In the Choose a layer menu_...).
 Go back to Step 3 (_In the Choose a layer menu_...).
 
 | AWS Region | ARN |
-|-----------------------------------------|-------------------------------------------------------------------------------------------|
+|:-----------------------------------------|:-------------------------------------------------------------------------------------------|
 | US East (N.Virginia) us-east-1          | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-python-arm64-ver-1-11-1:3      |
 | US East (Ohio) us-east-2                | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-python-arm64-ver-1-11-1:3      |
 | US West (Oregon) us-west-2              | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-python-arm64-ver-1-11-1:3      |
@@ -154,7 +154,7 @@ Instrumentation of container based AWS Lambda function requires some changes in 
 
 1. Deploy new function image.
 
-1. Navigate to the **Configuration \> Environment variables** section and set up the following environment variables:
+1. Navigate to the **Configuration > Environment variables** section and set up the following environment variables:
 
    * `AWS_LAMBDA_EXEC_WRAPPER = /opt/otel-instrument` enables auto-instrumentation.
    * `OTEL_TRACES_SAMPLER = always_on` - enables traces sampling.

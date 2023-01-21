@@ -18,7 +18,7 @@ If you specify a window length of 5, but only 4 data points are available, the r
 rollingstd <field> [, window_length] [as <field>]
 ```
 
-**Rules**
+## Rules
 
 * An alias for rollingstd is optional. When an alias is not provided, **`_rollingstd`** is the default alias.
 * Specified fields must contain numeric values.
@@ -26,7 +26,7 @@ rollingstd <field> [, window_length] [as <field>]
 * The default window length is 10.
 * The maximum window length is 1000.
 
-**Examples**
+## Examples
 
 **Use rollingstd to see the difference of fields between time points, grouped by source host**
 
@@ -82,4 +82,4 @@ which produces results like:
 
 ![data points](/img/reuse/query-search/rollingstd_new_data_points.png)
 
-Rollingstd is also used with the [Backshift](#backshift) operator.
+Rollingstd is also used with the [Backshift](backshift.md) operator.

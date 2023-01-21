@@ -4,7 +4,7 @@ title: Timeslice Join Results
 sidebar_label: Timeslice Join Results
 ---
 
-When you gather data using a [join](join.md) operator, you can slice data by time period using the [timeslice](timeslice.md) operator.
+When you gather data using a [`join`](join.md) operator, you can slice data by time period using the [`timeslice`](timeslice.md) operator.
 
 The `timeslice` operator uses the metadata field `_messagetime` to organize the logs by slices. In your query, you need to specify the `timeslice` operator before the `join`, because the `_messagetime` field will no longer exist after the join is performed.
 

@@ -4,8 +4,7 @@ title: predict Search Operator
 sidebar_label: predict
 ---
 
-
-Uses a series of time-stamped numerical values to predict future values. The predict operator can be useful in the following cases:
+Uses a series of time-stamped numerical values to `predict` future values. The predict operator can be useful in the following cases:
 <ul><li>As an early warning system, alerting you when a threshold is about to be reached.</li><li> For resource and capacity planning, helpful for determining seasonal impacts, like a Cyber Monday rush on an ecommerce site.</li>
 <li>Improved risk calculation.</li></ul>
 
@@ -17,7 +16,7 @@ The `predict` operator supports two predictive models:
 * Linear regression. Uses existing data over the query time range as a training set to generate a [linear model](http://en.wikipedia.org/wiki/Linear_regression), and then extrapolates future values using this model.
 
 :::note
-If a missing data point is encountered in the generated time series, Sumo uses a zero value and issues a warning to alert you. If you'd like to use customized values, you can do so with the [fillmissing](#fillmissing) operator.   
+If a missing data point is encountered in the generated time series, Sumo uses a zero value and issues a warning to alert you. If you'd like to use customized values, you can do so with the [fillmissing](fillmissing.md) operator.   
 :::
 
 ## Syntax
@@ -94,7 +93,7 @@ For example, if there is an hourly cyclical pattern, the following query will le
 
 In this query, the window size (15 consecutive data points) covers more than 1 hour (15 data points \* 5m interval = 75 minutes). So if there are cyclical patterns with a period of less than 75 minutes, the model will discover them.
 
-**Examples**
+## Examples
 
 #### predict using linear regression
 

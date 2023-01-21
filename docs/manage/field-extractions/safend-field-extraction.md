@@ -41,7 +41,7 @@ parse regex "Action: (?<action>[^,]*)" nodrop
 **Resulting Fields:**
 
 | Result Field |   |
-|--|--|
+|:--|:--|
 | action | Write |
 | alert_type | File Logging Alert details |
 | client_local_time | 10/9/2014 3:12:33 PM |

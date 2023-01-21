@@ -4,9 +4,7 @@ title: tolowercase, touppercase Search Operators
 sidebar_label: tolowercase, touppercase
 ---
 
-
-
-The toLowerCase operator takes a string and converts it to all lower case letters. The toUpperCase operator takes a string and converts it to all uppercase letters.
+The `toLowerCase` operator takes a string and converts it to all lower case letters. The `toUpperCase` operator takes a string and converts it to all uppercase letters.
 
 These operators can be useful for normalizing source logs with inconsistent capitalization, such as Windows Event logs, or changing file names and paths for files systems that require all lower case letters. They are especially useful for queries that include conditionals and grouping, in order to reduce the number of groups in the search results.
 
@@ -24,11 +22,11 @@ toLowerCase(<string>) [as <field>]
 toUpperCase(<string>) [as <field>]
 ```
 
-**Rules**
+## Rules
 
 * Non-string fields are not accepted.
 
-**Examples**
+## Examples
 
 #### Using toUpperCase with a conditional operator
 

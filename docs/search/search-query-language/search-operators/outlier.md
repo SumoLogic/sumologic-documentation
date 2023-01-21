@@ -4,10 +4,7 @@ title: outlier Search Operator
 sidebar_label: outlier
 ---
 
-
-
-
-Given a series of time-stamped numerical values, using the outlier operator in a query can identify values in a sequence that seem unexpected, and would identify an alert or violation, for example, for a scheduled search.
+Given a series of time-stamped numerical values, using the `outlier` operator in a query can identify values in a sequence that seem unexpected, and would identify an alert or violation, for example, for a scheduled search.
 
 To do this, the Outlier operator tracks the moving average and standard deviation of a numerical field. An outlier is identified based on a specified *threshold* of standard deviations around the expected value. If a data point is outside the threshold, it is considered to be an outlier.
 
@@ -63,17 +60,17 @@ For example, this query would set the following parameters:
 * **consecutive=2** : Trigger a violation by returning `<field>_violation=1` in the search results only if 2 or more consecutive indicator data points occur.
 * **direction=+-** : Uses positive or negative deviations.
 
-**Rules**
+## Rules
 
 * The outlier operator must appear after a group by aggregator, such as count, min, max, or sum.
 * The original target field must be numeric.
-* A [timeslice](#timeslice) is required.
+* A [timeslice](timeslice.md) is required.
 
 #### Limitations
 
 * Because the most recent time bucket in a query may have incomplete data, it is ignored by outlier. Consequently, if an alert is set to trigger on `<field>_violation` changing to 1, this alert will trigger one timeslice later.
 
-**Examples**
+## Examples
 
 #### IIS logs
 
@@ -203,7 +200,7 @@ To visualize your results, on the Search page, you can create a column chart, th
 
 This section provides two examples of how to display multidimensional outlier results in charts.
 
-**Example** 1: Outlier Distribution Across Time
+## Example 1: Outlier Distribution Across Time
 
 In this example, we’ll extract `_count_violation` from the multi-series outlier table and display that. This allows you to display the distribution of outliers among various time-series.
 
@@ -220,7 +217,7 @@ When you select a [line chart](/docs/dashboards-new/panels/line-charts), this ex
 
 ![Outlier Distribution](/img/search/searchquerylanguage/search-operators/OutlierDistri.png)
 
-**Example** 2: Outlier Ranking
+## Example 2: Outlier Ranking
 
 This example query uses the **`_count_error`** (distance from the expected value for that timeslice) and the value of the standard deviation for the baseline, then determines how many standard deviation a data point is from its expected value.
 

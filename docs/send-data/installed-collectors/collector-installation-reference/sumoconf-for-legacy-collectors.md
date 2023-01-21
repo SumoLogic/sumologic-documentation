@@ -35,7 +35,7 @@ The following parameters can be passed to Sumo Logic using `sumo.conf`.
 You cannot have blank values, like `name=` .
 
 | Parameter | Description | Example | Required/Optional |
-|--|--|--|--|
+|:--|:--|:--|:--|
 | `name` | Name used to register the Collector. If no name is specified, the hostname is used. The hostname can be a maximum of 128 characters. | `name=FirewallLogs` | Optional |
 | `accessid` | Access ID generated in the Security page. See [Access Keys](/docs/manage/security/access-keys.md) | `accessid=MboxeezMzN8S` | Required |
 | `accesskey` | Access ID generated in the Security page. See [Access Keys](/docs/manage/security/access-keys.md) | `accesskey=dBorwTn8TxF8ofounEXnsQ4hPpuqCzw` | Required |

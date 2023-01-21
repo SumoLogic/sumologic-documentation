@@ -40,7 +40,7 @@ You can click on the status icon to open a Health Events panel with details on e
 
 You need to have a Symantec Web Security Service username and password. To create a User API Key that serves as the username and password in the Sync API syntax follow these steps:
 
-1. Navigate to **Account Configuration \> API Credentials**.
+1. Navigate to **Account Configuration > API Credentials**.
 1. Click **Add API Credentials**.
 1. WSS displays the **Add API Credential** dialog, which contains the random characters **Username** and **Password**.<br/> ![Symantec generate api creds.png](/img/send-data/Symantec-generate-api-creds.png)
    1. Copy the **Username** and **Password** keys into a text file.
@@ -58,7 +58,7 @@ When you create a Symantec Web Security Service Source, you add it to a Hosted 
 
 To configure a Symantec Web Security Service Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Symantec Web Security Service**.<br/> ![symantec source icon.png](/img/send-data/symantec-source-icon.png)
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/> ![Symantec WSS version 1.2.3.png](/img/send-data/Symantec-WSS.png)

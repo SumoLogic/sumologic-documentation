@@ -26,7 +26,7 @@ Generally it’s best if your quantization interval is larger than your reportin
 If your quantization interval is 5 seconds, the visualization could be choppy because during some quantization intervals no metric data was received. 
 
 | For the quantization interval starting at... |  Sumo will plot... |
-|--|--|
+|:--|:--|
 | 12:00:00 | Sumo plots the average of the data points received between 12:00:00 up to 12:00:05. |
 | 12:00:05 | Nothing to plot, as no metrics were received in the last 5 seconds (from 12:00:05 up to 12:00:10). |
 | 12:00:10  | Nothing to plot, as no metrics were received in the last 5 seconds (between 12:00:10 pm up to 12:00:15). |

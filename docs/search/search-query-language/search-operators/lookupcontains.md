@@ -4,10 +4,7 @@ title: lookupContains Search Operator
 sidebar_label: lookupContains
 ---
 
-
-
-
-Use the lookupContains operator to determine whether a key exists in a lookup table. It will return a boolean value.
+Use the `lookupContains` operator to determine whether a key exists in a lookup table. It will return a boolean value.
 
 ## Syntax
 
@@ -33,7 +30,7 @@ Where:
 * `event-field` is a field in a log. 
 * `lookup-field` is a field in the lookup table.
 
-**Example** 1: Using lookupContains within a where expression to compare a single field
+## Example 1: Using lookupContains within a where expression to compare a single field
 
 The example below compares the value of the `userID` field in an event
 to values of the `user` field in the `suspicious-users` lookup table,
@@ -43,7 +40,7 @@ and returns `true` if the field values match.
 ... | where lookupContains(path://"/Library/Users/username@sumologic.com/suspicious-users", userID=user) | ...
 ```
 
-**Example** 2: Using lookupContains within a where expression to compare multiple fields
+## Example 2: Using lookupContains within a where expression to compare multiple fields
 
 The example below compares the value of the `userID` field in an event to values of the `user` field in the `suspicious-users` lookup table, and compares the value of the `userIP` field in the event to values of the `sourceIP` field in the lookup table and returns `true` if the both sets of field values match.
 

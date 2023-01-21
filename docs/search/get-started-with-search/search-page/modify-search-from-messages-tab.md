@@ -21,7 +21,7 @@ After running a search, you can make these changes in the **Messages** tab:
 After you select text and right click, you'll see a menu pop up with the following options:
 
 | Option | Added to Search |
-|--|--|
+|:--|:--|
 | Copy Selected Text | Copies the text to your computer clipboard. |
 | Parse selected text/key | `[search] | parse [selected text] as [fieldName]` |
 | Add selected text as AND | `[search] AND [selected text]` |
@@ -62,7 +62,7 @@ After running an [aggregate](/docs/search/search-query-language/group-aggregate-
 After you select text and right click, you'll see a menu pop up with the following options:
 
 | Option | Added to Search |
-|--|--|
+|:--|:--|
 | Copy Selected Text | Copies the text to your computer clipboard. |
 | Add selected text as AND | `[search] AND [selected text]` |
 | Add selected text as AND NOT | `[search] AND ! [selected text]` |

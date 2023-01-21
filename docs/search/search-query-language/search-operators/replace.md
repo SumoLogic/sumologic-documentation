@@ -4,9 +4,7 @@ title: replace Search Operator
 sidebar_label: replace
 ---
 
-
-
-The replace operator allows you to replace all instances of a specified string with another string. You can specify the string to replace with a matching regex or literal text. You might use it to find all instances of a name and change it to a new name or to replace punctuation in a field with different punctuation. This operator is useful anytime you need to rename something.
+The `replace` operator allows you to replace all instances of a specified string with another string. You can specify the string to replace with a matching regex or literal text. You might use it to find all instances of a name and change it to a new name or to replace punctuation in a field with different punctuation. This operator is useful anytime you need to rename something.
 
 
 ## Syntax
@@ -19,7 +17,7 @@ replace(<sourceString>, <searchString>, <replaceString>) as <field>
 replace(<sourceString>, /<regex>/, <replaceString>) as <field>
 ```
 
-**Rules**
+## Rules
 
 * An alias is required.
 * If any of the inputs are null, the output is null.
@@ -49,7 +47,7 @@ If the `<replaceString>` needs to include the dollar sign (`$`), it needs to be 
 * `\n` : replace with a new line character
 * `\t` : a tab character
 
-**Examples**
+## Examples
 
 #### Replace unique IDs in URLs with a regex
 
@@ -89,7 +87,7 @@ The regex has two capture groups and in the `<replaceString>` we have specified 
 
 #### Replace periods in a field with different punctuation
 
-To replace periods in a field with different punctuation, you'd use the following query. This query also uses the [Fields](#fields-operator) operator to display only the required fields.
+To replace periods in a field with different punctuation, you'd use the following query. This query also uses the [Fields](fields.md) operator to display only the required fields.
 
 ```sql
 error

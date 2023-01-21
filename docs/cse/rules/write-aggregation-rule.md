@@ -24,7 +24,7 @@ As an example, suppose you want to  fire a Signal when the ratio of failed to s
 The table below summarizes the rule configuration. Each row corresponds to an element of the sentence-style configuration UI for the **If Triggered** settings for an Aggregation rule.
 
 | Configuration setting | What it does |
-|--|--|
+|:--|:--|
 | When Records matching the expression<br/>`!isNull(http_response_statusCode)` | Filters the Records to which the rule will be applied: only Records that contain a non-null http_response_statusCode field. |
 | **grouped by** `device_ip` | Specifies the field by which aggregation results will be grouped: device_ip |
 | **within** 5 minutes | Specifies the duration across which Records will be evaluated. |

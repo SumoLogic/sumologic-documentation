@@ -4,8 +4,7 @@ title: substring Search Operator
 sidebar_label: substring
 ---
 
-
-The substring operator allows you to specify an offset that will output only part of a string, referred to as a substring. You can use this operator to output just a part of a string instead of the whole string, for example, if you wanted to output an employee’s initials instead of their whole name.
+The `substring` operator allows you to specify an offset that will output only part of a string, referred to as a substring. You can use this operator to output just a part of a string instead of the whole string, for example, if you wanted to output an employee’s initials instead of their whole name.
 
 ## Syntax
 
@@ -17,14 +16,14 @@ substring(<sourceString>, <startOffset>, <endOffset>) as <outputField>
 substring(<sourceString>, <startOffset>) as <outputField>
 ```
 
-**Rules**
+## Rules
 
 * The `startOffset` must be a non-negative integer and less than the ength of the sourceString.
 * The `endOffset` must be a non-negative integer that is equal to or greater than startOffset.
 * If the `endOffset` is not specified, the substring is taken from the startOffset until the very end of the sourceString.
 * The `endOffset` may be equal to or greater than the length of the sourceString, but it would behave the same as if the user did not specify an endOffset.
 
-**Example**
+## Example
 
 #### Output "world!" from "Hello world!"
 

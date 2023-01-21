@@ -104,7 +104,7 @@ This section describes how to create a Logs-to-Metrics rule.
 You must be a Sumo admin to create a Logs-to-Metrics rule, or have a role with the **Manage Logs-to-Metrics** capability, as described in the previous section.
 :::
 
-1. Go to **Manage Data \> Metrics \> Logs-to-Metrics** in the Sumo web app. The page displays a list of existing Logs-to-Metrics rules.
+1. Go to **Manage Data > Metrics > Logs-to-Metrics** in the Sumo web app. The page displays a list of existing Logs-to-Metrics rules.
 
     ![logs-to-metrics-rules.png](/img/metrics/log-to-metrics-add.png)
 

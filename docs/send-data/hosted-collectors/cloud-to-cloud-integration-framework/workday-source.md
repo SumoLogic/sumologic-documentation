@@ -14,7 +14,7 @@ The steps below assume that you have already configured in [Step 1 of this pa
 
 To configure a Workday Source:
 
-1. On the **Manage Data \> Collection \> Collection** page, click **Add Source** next to a Hosted Collector.
+1. On the **Manage Data > Collection > Collection** page, click **Add Source** next to a Hosted Collector.
 
 1. Select **Workday**.
 
@@ -98,7 +98,7 @@ On the Collection page, the [Health](/docs/manage/health-events#collection-page)
 When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/health-events.md). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally on account of invalid configuration. You will need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | FirstPartyGenericError |
@@ -108,7 +108,7 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/h
 Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/cse). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | config        | JSON Object | Yes          | Contains the [configuration parameters](#config-parameters) for the Source. |                |
 | schemaRef     | JSON Object | Yes          | Use {"type":"Salesforce"} for Workday Source.                                                 | not modifiable |
 | sourceType    | String      | Yes          | Use Universal for Workday Source. | not modifiable |
@@ -118,7 +118,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 The following table shows the **config** parameters for Workday Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |

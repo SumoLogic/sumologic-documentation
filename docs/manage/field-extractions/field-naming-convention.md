@@ -25,7 +25,7 @@ If you cannot use all the naming conventions for standard fields, we recommend t
 ## Source Information
 
 | Field Name | Description |
-|--|--|
+|:--|:--|
 | src_host | Source Host (name or IP) |
 | src_interface  | Source Interface |
 | src_ip | Source IP |
@@ -36,7 +36,7 @@ If you cannot use all the naming conventions for standard fields, we recommend t
 ## Destination Information
 
 | Field Name | Description |
-|--|--|
+|:--|:--|
 | dest_host | Destination Host (name or IP) |
 | dest_ip | Destination IP |
 | dest_port | Destination Port (string type) |
@@ -47,14 +47,14 @@ If you cannot use all the naming conventions for standard fields, we recommend t
 ## Reporting Device
 
 | Field Name | Description |
-|--|--|
+|:--|:--|
 | reporting_device | The hostname of the reporting device, such as a firewall, router, or switch |
 | reporting_device_ip | The IP address of the reporting device |
 
 ## Network Information
 
 | Field Name | Description |
-|--|--|
+|:--|:--|
 | bytes | Number of bytes sent and received |
 | bytes_recv | Bytes received |
 | bytes_sent | Bytes sent |
@@ -62,7 +62,7 @@ If you cannot use all the naming conventions for standard fields, we recommend t
 ## IDS
 
 | Field Name | Description |
-|--|--|
+|:--|:--|
 | application | Application |
 | category | Threat category, such as virus or Trojan |
 | threat | Threat name, for example, virus |
@@ -71,7 +71,7 @@ If you cannot use all the naming conventions for standard fields, we recommend t
 ## Antivirus
 
 | Field Name | Description |
-|--|--|
+|:--|:--|
 | application | Application |
 | category | Threat category, such as virus or Trojan |
 | threat | Threat name, for example, virus |
@@ -80,14 +80,14 @@ If you cannot use all the naming conventions for standard fields, we recommend t
 ## Activity
 
 | Field Name | Description |
-|--|--|
+|:--|:--|
 | action | Final action by the device, such as blocked, dropped, or passed by firewall |
 | orig_action | The original (first) action by the device |
 
 ## Miscellaneous
 
 | Field Name | Description |
-|--|--|
+|:--|:--|
 | count | Used to save some aggregated number (type: int) |
 | device_product | The product name, for example, Windows 2012 |
 | device_type | Values used include firewall or IDS |

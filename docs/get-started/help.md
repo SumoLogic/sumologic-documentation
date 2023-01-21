@@ -13,7 +13,7 @@ Our in-product **Help** menu provides links to quickly access Sumo Logic Suppo
 
 ## Documentation Support
 
-To access Sumo Logic online Help, click **Help \> Documentation**. The Sumo Logic online Help (this document) opens in a new browser window. Online Help covers all features of our product, and should be your first resource when you have any questions about the product.
+To access Sumo Logic online Help, click **Help > Documentation**. The Sumo Logic online Help (this document) opens in a new browser window. Online Help covers all features of our product, and should be your first resource when you have any questions about the product.
 
 The help is context-sensitive. If you are on a page in the Web UI, the help system will open to the appropriate topic when you select **Documentation** under the **Help** menu.
 
@@ -21,7 +21,7 @@ For questions or issues concerning Sumo Logic Help, contact our documentation te
 
 ## Tech Support
 
-If you haven't found the answer to your question in the online Help, go to **Help \> Support** , which provides access to the Sumo Logic **Support Center** at [https://support.sumologic.com](https://support.sumologic.com/).
+If you haven't found the answer to your question in the online Help, go to **Help > Support** , which provides access to the Sumo Logic **Support Center** at [https://support.sumologic.com](https://support.sumologic.com/).
 
 ![Help - Support.png](/img/get-started/Help-Support.png)
 
@@ -51,7 +51,7 @@ The self-paced program is easy to access directly from the product. Just go to t
 
 ## Feature Requests
 
-Do you have an idea for a new Sumo Logic feature? Go to **Help \> Feature Request** to access the **Ideas** portal. When you log in, you can enter your feature request by clicking the **Add a new idea** button.
+Do you have an idea for a new Sumo Logic feature? Go to **Help > Feature Request** to access the **Ideas** portal. When you log in, you can enter your feature request by clicking the **Add a new idea** button.
 
 ![Help-Feature Request.png](/img/get-started/Help-Feature-Request.png)
 
@@ -60,7 +60,7 @@ You can also search and view other feature requests, comment, and even vote on i
 
 ## Community
 
-Want to collaborate with other Sumo Logic users for tips and tricks and help with issues? Go to **Help \> Community** and visit the Sumo Dojo, the online community for users of Sumo Logic and aficionados of analytics. 
+Want to collaborate with other Sumo Logic users for tips and tricks and help with issues? Go to **Help > Community** and visit the Sumo Dojo, the online community for users of Sumo Logic and aficionados of analytics. 
 
 See the [Sumo Logic Community](https://community.sumologic.com) for more information.
 
@@ -69,12 +69,12 @@ See the [Sumo Logic Community](https://community.sumologic.com) for more informa
 
 ## Privacy Policy
 
-Use the **Help \> Privacy Policy** link to get instant access to the Sumo Logic's privacy statement, which describes how Sumo Logic collects and uses the personal information you provide on our website and our Services. It also describes the choices available to you regarding our use of your personal information and how you can access and update this information.
+Use the **Help > Privacy Policy** link to get instant access to the Sumo Logic's privacy statement, which describes how Sumo Logic collects and uses the personal information you provide on our website and our Services. It also describes the choices available to you regarding our use of your personal information and how you can access and update this information.
 
 
 ## Release Notes
 
-Use the **Help \> Release Notes** link to get instant access to the latest information on what's changed in Sumo Logic software.
+Use the **Help > Release Notes** link to get instant access to the latest information on what's changed in Sumo Logic software.
 
 
 ## Sumo Logic Status and Scheduled Maintenance
@@ -86,10 +86,10 @@ You can also go to http://status.sumologic.com/.
 If there has been an outage on your [deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) (or pod), the Service Status Indicator displays:
 
 1. At the top of the **Help** menu.
-1. Next to **Help \> Service Status**.
+1. Next to **Help > Service Status**.
 1. Next to the title of a [Dashboard](../dashboards/about.md).
 
-For more information, click **Help \> Service Status**. This will take you to a web page for your pod with details on any outages, incidents, or planned maintenance.
+For more information, click **Help > Service Status**. This will take you to a web page for your pod with details on any outages, incidents, or planned maintenance.
 
 The Service Status Indicator on the Help menu shows the severity of the outage.
 

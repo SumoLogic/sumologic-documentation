@@ -27,7 +27,7 @@ It depends on your current account type:
 
 ## Upgrade a Cloud Flex account
 
-1. Go to **Administration** \> **Account** \> **Manage Plan**.
+1. Go to **Administration** > **Account** > **Manage Plan**.
 
     ![manage-plan-cloudflex.png](/img/subscriptions/manage-plan-cloudflex.png)
 

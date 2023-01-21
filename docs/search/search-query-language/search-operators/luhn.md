@@ -4,9 +4,7 @@ title: luhn Search Operator
 sidebar_label: Luhn
 ---
 
-
-
-The luhn operator uses Luhn’s algorithm to check message logs for strings of numbers that may be credit card numbers and then validates them. It takes a string as an input, strips out all characters that are not numerals, and checks if the resulting string is a valid credit card number, returning true or false accordingly.
+The `luhn` operator uses Luhn’s algorithm to check message logs for strings of numbers that may be credit card numbers and then validates them. It takes a string as an input, strips out all characters that are not numerals, and checks if the resulting string is a valid credit card number, returning true or false accordingly.
 
 ## Syntax
 
@@ -18,7 +16,7 @@ luhn(<field>) [as <field>]
 luhn("<input string>") [as <field>]
 ```
 
-**Examples**
+## Examples
 
 #### Identify and verify credit card numbers in message logs
 

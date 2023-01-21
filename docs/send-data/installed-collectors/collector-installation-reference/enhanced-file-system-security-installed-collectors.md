@@ -47,7 +47,7 @@ Use the following commands for Windows:
 The following optional parameters are supported.
 
 | Parameter | Usage | Description |
-|--|--|--|
+|:--|:--|:--|
 | homeDir | `secureFiles`<br/>`unsecureFiles` | Root directory of Collector installation (if not specified, will use parent folder of this script located) |
 | runAs | `secureFiles` | Name of the account that launched the Collector. If not specified, use current user, or root if running `sudo` |
 

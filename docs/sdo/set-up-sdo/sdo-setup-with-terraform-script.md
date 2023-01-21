@@ -264,7 +264,7 @@ After completing configuration, instrument your DevOps pipeline to specially ide
 
 ### Bitbucket for build and deploy
 
-1. Access the Sumo Logic Platform and navigate to **Manage Data** \> **Collection** page.
+1. Access the Sumo Logic Platform and navigate to **Manage Data** > **Collection** page.
 
 1. Search for *Software Development Optimization* Collector.
 
@@ -275,7 +275,7 @@ After completing configuration, instrument your DevOps pipeline to specially ide
 
 1. Install the latest Jenkins Plugin as described [here](/docs/integrations/app-development/Jenkins#Collecting-Logs-and-Metrics-for-Jenkins)
 
-1. Access the Sumo Logic Platform and navigate to **Manage Data** \> **Collection** page.
+1. Access the Sumo Logic Platform and navigate to **Manage Data** > **Collection** page.
 
 1. Search for *Software Development Optimization* Collector.
 
@@ -361,7 +361,7 @@ Configure these parameters in **sumologic.auto.tfvars**.
 Configure these parameters in **sumologic_fer.auto.tfvars**. There is a set of FER's for the SDO Apps. Each FER needs scope and a parse expression. In most cases default values will suffice, if required you can edit the scope and parse expression as per your requirements.
 
 | Parameter | Description |
-|-- | --|
+|:-- | --|
 | (app)_pull_request_fer_scope | A [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that points to the subset of logs you'd like to parse. For more details see [FER](/docs/manage/field-extractions/create-field-extraction-rule.md). |
 | (app)_pull_request_fer_parse | A valid parse expression with [supported parse and search operators.](/docs/manage/field-extractions/create-field-extraction-rule.md) For more details see [FER](/docs/manage/field-extractions/create-field-extraction-rule.md). |
 
@@ -374,7 +374,7 @@ The App can be jira_cloud, jira_server, Github, GitLab, Bitbucket, PagerDuty, Op
 Configure these parameters in **atlassian.auto.tfvars**.
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | jira_cloud_url | Jira Cloud URL |
 | jira_cloud_user | Jira Cloud Username |
 | jira_cloud_password | Jira Cloud Password or [API Key](https://confluence.atlassian.com/cloud/api-tokens-938839638.html) |
@@ -388,7 +388,7 @@ Sumologic to Jira Webhook is in Beta. To participate, contact your Sumo account 
 Configure these parameters in **webhooks.auto.tfvars**.
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | jira_cloud_auth | To generate Authorization Header follow this [doc](/docs/alerts/webhook-connections/jira-cloud.md) |
 | jira_cloud_user | Jira Cloud Username |
 | jira_cloud_password | Jira Cloud Password or [API Key](https://confluence.atlassian.com/cloud/api-tokens-938839638.html) |
@@ -404,7 +404,7 @@ Sumologic to Jira Webhook is in Beta. To participate, contact your Sumo account 
 Configure these parameters in **webhooks.auto.tfvars**.
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | jira_servicedesk_url | Jira Service Desk URL, can be same as Jira Cloud URL |
 | jira_server_auth | [Basic Authorization Header](/docs/alerts/webhook-connections/jira-server.md) |
 | jira_server_projectkey | Jira Server [Project Key](https://confluence.atlassian.com/adminjiraserver/defining-a-project-938847066.html) |
@@ -420,7 +420,7 @@ This script configures Jira Server WebHooks and creates resources in Sumo Logic.
 :::
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | jira_server_access_logs_sourcecategory | Jira Server Access Logs Source Category, default "SDO/Jira/Server\*", refer to [this](/docs/integrations/app-development/Jira#Collecting-Logs-for-the-Jira-App) link. |
 | jira_server_url | Jira Server URL |
 | jira_server_user | Jira Server Username |
@@ -437,7 +437,7 @@ Sumologic to Jira Webhook is in Beta. To participate, contact your Sumo account 
 Configure these parameters in **webhooks.auto.tfvars**.
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | jira_server_auth | [Basic Authorization Header](/docs/alerts/webhook-connections/jira-server.md) |
 | jira_server_projectkey | Jira Server [Project Key](https://confluence.atlassian.com/adminjiraserver/defining-a-project-938847066.html) |
 | jira_server_issuetype  | Jira Server [Issue Type](https://confluence.atlassian.com/adminjiraserver/defining-issue-type-field-values-938847087.html), for example 'Bug' |
@@ -448,7 +448,7 @@ Configure these parameters in **webhooks.auto.tfvars**.
 Configure these parameters in **atlassian.auto.tfvars**.
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | bitbucket_cloud_user | Bitbucket Username |
 | bitbucket_cloud_password | Bitbucket password or [App Password](https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html) |
 | bitbucket_cloud_owner | The owner of the repositories. Can be you or any team having write access. |
@@ -461,7 +461,7 @@ Configure these parameters in **atlassian.auto.tfvars**.
 Configure these parameters in **atlassian.auto.tfvars**.
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | opsgenie_api_url | [Opsgenie API URL](https://docs.opsgenie.com/docs/api-overview). Do not add the trailing "/". If using the EU instance of Opsgenie, the URL needs to be\<https://api.eu.opsgenie.com\> for requests to be executed. |
 | opsgenie_key | [Opsgenie API Key](https://docs.opsgenie.com/docs/api-integration) |
 
@@ -474,7 +474,7 @@ Sumologic to Opsgenie Webhook is in Beta. To participate, contact your Sumo acco
 Configure these parameters in **webhooks.auto.tfvars**.
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | opsgenie_priority | [Opsgenie Alert Priority](https://docs.opsgenie.com/docs/priority-field) |
 
 ### PagerDuty
@@ -484,14 +484,14 @@ Configure these parameters in **pagerdutyv2.auto.tfvars** or **pagerdutyv3.auto
 For v2:
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | pagerduty_api_key | [Pagerduty API Key](https://support.pagerduty.com/docs/generating-api-keys#section-generating-a-general-access-rest-api-key). |
 | pagerduty_services_pagerduty_webhooks | List of Pagerduty Service IDs. Example: \["P1QWK8J","PK9FKW3"\]. You can get these from the URL after opening a specific service in Pagerduty. Webhooks are created for these services. |
 
 For v3:
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | pagerduty_api_key | [Pagerduty API Key](https://support.pagerduty.com/docs/generating-api-keys#section-generating-a-general-access-rest-api-key). |
 | pagerduty_services_pagerduty_webhooks | List of Pagerduty Service IDs. Example: \["P1QWK8J","PK9FKW3"\]. You can get these from the URL after opening a specific service in Pagerduty. Webhooks are created for these services. |
 | create_account_webhook | Bool value for creating a Pagerduty account webhook |
@@ -502,7 +502,7 @@ For v3:
 Configure these parameters in **webhooks.auto.tfvars**.
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | pagerduty_services_sumo_webhooks | [Sumo Logic to Pagerduty Webhook](/docs/alerts/webhook-connections/pagerduty.md). List of Pagerduty Service IDs. Example: \["P1QWK8J","PK9FKW3"\]. You can get these from the URL after opening a specific service in Pagerduty. Alerts are sent from Sumo to Pagerduty for these services. |
 
 ### GitHub
@@ -510,7 +510,7 @@ Configure these parameters in **webhooks.auto.tfvars**.
 Configure these parameters in **github.auto.tfvars**. If you do not wish to install the GitHub collection or application, rename the file github.tf to github.tf_backup.
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | github_token | [Github Token](https://github.com/settings/tokens) |
 | github_organization | Organization Name. |
 | github_repo_webhook_create | Create webhooks at repo level. Default "true". |
@@ -524,7 +524,7 @@ Configure these parameters in **github.auto.tfvars**. If you do not wish to inst
 Configure these parameters in **gitlab.auto.tfvars**. If you do not wish to install the Gitlab collection or application, rename the file gitlab.tf to gitlab.tf_backup.
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | gitlab_token | [GitLab Token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) |
 | gitlab_project_webhook_create | Create webhooks at project level. Default "true". |
 | gitlab_project_names | List of project names for which webhooks need to be created. Example, \["project1","project2"\] |
@@ -534,7 +534,7 @@ Configure these parameters in **gitlab.auto.tfvars**. If you do not wish to inst
 The Terraform script does not configure the Jenkins Sumo Logic plugin, it creates an HTTP source in Sumo Logic for Jenkins and configures the Jenkins FERs.
 
 | Parameter  | Description |
-|--|--|
+|:--|:--|
 | jenkins_sc | [Jenkins Source Category](/docs/integrations/app-development/Jenkins#Collecting-Logs-and-Metrics-for-Jenkins). |
 
 ### CircleCI
@@ -544,7 +544,7 @@ The Terraform script does not configure the CircleCI Sumo Logic plugin, it creat
 It also allows to install the CircleCI app that can be configured using a CircleCI webhook.
 
 | Parameter               | Description                          |
-|-------------------------|--------------------------------------|
+|:-------------------------|:--------------------------------------|
 | circlesi_app_sc         | CircleCI App Source Category         |
 | circleci_build_jobname  | CircleCI build job name for SDO FER  |
 | circleci_deploy_jobname | CircleCI deploy job name for SDO FER |

@@ -4,9 +4,7 @@ title: now Search Operator
 sidebar_label: now
 ---
 
-
-
-The now returns the current epoch time in milliseconds. It can be used with the formatDate operator to get the formatted current time.
+The `now` returns the current epoch time in milliseconds. It can be used with the formatDate operator to get the formatted current time.
 
 It is important to note that the Now operator outputs the exact time (down to the millisecond) each and every time it is executed. This means that if you use now with every message in a search, it will return slightly different results in every message, as messages are not all processed by your search at once.
 
@@ -16,7 +14,7 @@ It is important to note that the Now operator outputs the exact time (down to th
 now()
 ```
 
-**Example**
+## Example
 
 #### Return the current date
 
@@ -42,4 +40,4 @@ This returns the following results.
 
 ![Today](/img/search/searchquerylanguage/search-operators/Today.png)
 
-For more examples, see [formatDate](#formatDate) operator.
+For more examples, see [formatDate](formatdate.md) operator.

@@ -4,7 +4,6 @@ title: timeslice Search Operator
 sidebar_label: timeslice
 ---
 
-
 The `timeslice` operator aggregates data by time period, so you can create bucketed results based on a fixed interval (for example, five-minute buckets). Timeslice also supports creating a fixed-target number of buckets, for example, 150 buckets over the last 60 minutes.
 
 There are two primary use cases for this operator:
@@ -34,7 +33,7 @@ To group data by (M) month you can use the formatDate operator to format _timesl
 | <aggregating_operator> by _timeslice
 ```
 
-**Rules**
+## Rules
 
 * An alias for the timeslice field is optional. If an alias is not provided, a default `_timeslice` field is created that marks the start of the timeslice in milliseconds.
 * Creates a field named `__timeslice_end` that marks the end of the timeslice in milliseconds.
@@ -44,7 +43,7 @@ To group data by (M) month you can use the formatDate operator to format _timesl
 * If you use timeslice with the compare or outlier operators, **don't** alias timeslice. They expect _timeslice.
 * If no time period or bucket is specified it defaults to the time range of the Search.
 
-**Example**
+## Example
 
 Successful logins per hour.
 
@@ -85,7 +84,7 @@ Bucketing to 150 buckets over the search results.
 
 Fixed-size buckets of 1 minute each. The output field name is aliased to **`my_time_bucket_field_name`**.
 
-**Example** in queries
+## Example in queries
 
 This outputs a table in the Aggregates tab with columns `_count` and **`_timeslice`** with the timeslices spaced in 5 minute intervals:
 

@@ -4,9 +4,7 @@ title: base64decode Search Operator
 sidebar_label: base64decode
 ---
 
-
-
-The base64Decode operator takes a base64 string and converts it to an ASCII string. Input must be a valid base64 string. Invalid input is returned unaltered.
+The `base64Decode` operator takes a base64 string and converts it to an ASCII string. Input must be a valid base64 string. Invalid input is returned unaltered.
 
 ## Syntax
 
@@ -29,7 +27,7 @@ base64Decode(<string_field>[, "<encoding>"]) as <field>
 * UTF-32BE
 * UTF-32LE
 
-**Examples**
+## Examples
 
 The following example returns `V` with a value of `http://codec.apache.org/commmons`:
 

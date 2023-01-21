@@ -4,10 +4,7 @@ title: join Search Operator
 sidebar_label: join
 ---
 
-
-
-
-The `join `operator combines records of two or more data streams. Results are admitted on-the-fly to allow real time tables to be built. Values common to each table are then delivered as search results. The join operator in Sumo Logic works much like an <a href="https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join">inner SQL join</a>.
+The `join` operator combines records of two or more data streams. Results are admitted on-the-fly to allow real time tables to be built. Values common to each table are then delivered as search results. The join operator in Sumo Logic works much like an <a href="https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join">inner SQL join</a>.
 
 ## Syntax
 
@@ -43,7 +40,7 @@ on t1.a = t2.c
 | fields t1_a, t2_b
 ```
 
-**Rules**
+## Rules
 
 * Two or more tables must be created for a query.
 * The join expression can not specify a [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md) (scope), if provided it is ignored.
@@ -70,7 +67,7 @@ on t1.a = t2.c
     t1.a = t2.c OR t1.b = t2.d
     ```
 
-**Examples**
+## Examples
 
 #### Running a Join operator query
 
@@ -198,7 +195,7 @@ Assume you have a Join query, such as:
 on t1.a = t2.c
 ```
 
-After the Join statement, to use the T1.a and the T2.b fields in subsequent clauses, you'd instead refer to them as T1_a and T1_b. For example, to use the [fields operator](#fields-operator) to single out the T1.a and T2.b values, use the following query:
+After the Join statement, to use the T1.a and the T2.b fields in subsequent clauses, you'd instead refer to them as T1_a and T1_b. For example, to use the [fields operator](fields.md) to single out the T1.a and T2.b values, use the following query:
 
 ```sql
 * | join
