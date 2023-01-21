@@ -41,7 +41,7 @@ Sumo Logic has several deployment types, which vary by geographic location and t
 
 ## Service Map API
 
-The Service Map API allows you to fetch a graph representation of the Service Map, which is a high-level view of your application environment, automatically derived from tracing data. For more information see [Service Map](/docs/apm/traces/Working-with-Tracing-data/services-list-map).
+The Service Map API allows you to fetch a graph representation of the Service Map, which is a high-level view of your application environment, automatically derived from tracing data. For more information see [Service Map](/docs/apm/traces/services-list-map).
 
 
 ### Endpoints for API access  
