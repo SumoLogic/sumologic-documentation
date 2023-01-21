@@ -138,7 +138,7 @@ In our example above, the first operator finds the name, and the second finds th
 
 #### Handling null values
 
-To find a mismatch from a lookup operator query, use the [isNull](/docs/search/search-query-language/search-operators/isnull-isempty-isblank/) operator.
+To find a mismatch from a lookup operator query, use the [isNull](/docs/search/search-query-language/search-operators/isnull-isempty-isblank#isnullstring) operator.
 
 For example, running a query like:
 
