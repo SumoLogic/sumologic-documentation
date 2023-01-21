@@ -10,7 +10,7 @@ description: The Global Intelligence for Nginx app provides you with information
 This feature is available in the following account plans.
 
 | Account Type | Account Level                                  |
-|--------------|------------------------------------------------|
+|:--------------|:------------------------------------------------|
 | CloudFlex    | Trial, Enterprise                              |
 | Credits      | Trial, Enterprise Operations, Enterprise Suite |
 
@@ -18,7 +18,7 @@ This feature is available in the following account plans.
 application. It helps DevOps and infrastructure engineers to compare server, and user activity patterns associated with their Nginx servers against other Sumo Logic customer’s servers. Such comparisons can help diagnose potential load, throughput or error issues in Nginx clusters and avoid operational incidents arising from sub-optimal configurations of Nginx clusters. 
 
 | Dashboard | Description|
-|--|--|
+|:--|:--|
 | GI Nginx - 01 Golden Signals | This dashboard compares golden signals of load (requests per second), throughput (responses by type) and errors for a company’s Nginx servers compared to other servers. Unusual levels of these signals compared to benchmarks can indicate configuration or operational issues. |
 | GI Nginx - 02 Visitor Benchmarks | These panels compare unique visitor rates, bots and client platforms served by your company's Nginx servers versus Nginx servers of other companies to assess if unusual patterns in these indicators correlate with golden signals.  |
 

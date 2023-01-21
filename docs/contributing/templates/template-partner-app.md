@@ -17,7 +17,7 @@ App description: Describe the application, then fill in the following table.
 
 
 | Dashboard | Description |
-| -- | -- |
+| :-- | :-- |
 | "dashboard name" | "dashboard description" |
 
 ## "App Name" Page

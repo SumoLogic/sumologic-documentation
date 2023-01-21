@@ -48,7 +48,7 @@ Dashboard owners can add filters in Edit mode. Created filters can be viewed (n
 
 1. Click a filter to select it.
     * Filters in the list are identified with a T (text) or # (numeric) label. After adding numeric filters, you can restrict the range to display in the dashboard using the operators `=`,
-        `!=`, \>`, \<`, \>=`, or, \<=`.
+        `!=`, >`, \<`, >=`, or, \<=`.
     * If you started creating the filter by clicking the **Filter** icon at the top of the page (not for a specific panel), you can add only one filter at a time. Click **Add** to add the filter. To add additional filters, click the **Add Filter** button again. The new filter is linked to all applicable panels.
     * If you started creating the filter by clicking the **Filter** icon for a particular panel, you can add multiple filters at one time in the **Add Filter** dialog. When you select a filter to add, it is moved to the **Selected** area. Add additional filters as needed, and then click **Add**.
     * To find specific filters in the **Add Filter **dialog, enter a search string in the **Find** area and press **Return**.

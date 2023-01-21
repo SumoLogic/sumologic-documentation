@@ -7,7 +7,7 @@ description: Using SAML, you can use your Google Apps credentials to log into Su
 ## Availability
 
 | Account Type | Account Level                                                                   |
-|--------------|---------------------------------------------------------------------------------|
+|:--------------|:---------------------------------------------------------------------------------|
 | Cloud Flex   | Trial, Enterprise                                                               |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -22,7 +22,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 ### Configure SSO for a Custom App
 
 1. Log into the Google Admin Console.  
-1. Select **Apps \> SAML Apps**.
+1. Select **Apps > SAML Apps**.
 1. Select a new SAML app to be configured, or click the **+** at the bottom of the page.
 1. On the **Enable SSO for SAML Application** page, select **Setup my own Custom App** at the bottom of the page**.
 
@@ -49,7 +49,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 
 ### Configure Sumo Logic SAML
 
-1. In the Sumo web app, go to **Administration \> Security \> SAML**.
+1. In the Sumo web app, go to **Administration > Security > SAML**.
 1. Click **+ Add Configuration** to create a new configuration.
 
     ![add-config-icon.png](/img/security/add-config-icon.png)

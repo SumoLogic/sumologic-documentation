@@ -4,7 +4,7 @@ title: Sumo Logic Keyboard Shortcuts
 sidebar_label: Keyboard Shortcuts
 ---
 
-Sumo Logic keyboard shortcuts are enabled by default. To display the list of shortcuts from the UI, press **?** or choose **Help \> Shortcuts** from the left nav.
+Sumo Logic keyboard shortcuts are enabled by default. To display the list of shortcuts from the UI, press **?** or choose **Help > Shortcuts** from the left nav.
 
 For security, shortcuts for some pages are visible only for users with an Admin account.
 
@@ -18,7 +18,7 @@ To disable keyboard shortcuts, for example, if they conflict with an internation
 ## Keyboard Shortcuts on macOS
 
 | Shortcut  | Description |
-|-------------|---------------------------------------------------------------|
+|:-------------|:---------------------------------------------------------------|
 | alt+s       | Open a new Search tab                                         |
 | alt+shift+n | Duplicate current query in a new tab (search only)            |
 | alt+shift+d | Duplicate both the original query and time range in a new tab |
@@ -49,7 +49,7 @@ To disable keyboard shortcuts, for example, if they conflict with an internation
 ## Keyboard Shortcuts on Windows
 
 | Shortcut  | Description |
-|-------------|-----------------------------------------------------------------|
+|:-------------|:-----------------------------------------------------------------|
 | g s         | Open a new Search tab                                           |
 | alt+shift+n | Duplicate current query in a new tab (search only)              |
 | alt+shift+d | Duplicate both the original query and time range in the new tab |

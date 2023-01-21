@@ -37,7 +37,7 @@ including rules, threat intel, match lists, suppressed lists, and so on.
 The section labeled **c** contains four icons. 
 
 | Icon | Description |
-|--|--|
+|:--|:--|
 | ![gear.png](/img/cse/gear.png) | Click this icon to see a menu of CSE configuration options that you can use to manage incoming data, Entities, users and roles, integrations, and so on. |
 | ![help.png](/img/cse/help.png) | Click this icon to access CSE help, API documentation, release announcements, and service status. |
 | ![switch-apps.png](/img/cse/switch-apps.png) | Click this icon to open the Sumo Logic platform UI in a new tab. |

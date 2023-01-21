@@ -8,7 +8,7 @@ description: Learn how to create and use Ingest Budgets.
 ## Availability
 
 | Account Type | Account Level|
-|--|--|
+|:--|:--|
 | CloudFlex| Enterprise|
 | Credits| Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -28,7 +28,7 @@ Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic h
 Select the documentation link for your deployment:
 
 | Deployment | Documentation URL |
-|------------|------------------------------------------------------------------|
+|:------------|:------------------------------------------------------------------|
 | AU | https://api.au.sumologic.com/docs/#tag/ingestBudgetManagement  |
 | DE | https://api.de.sumologic.com/docs/#tag/ingestBudgetManagement |
 | EU | https://api.eu.sumologic.com/docs/#tag/ingestBudgetManagement  |
@@ -47,7 +47,7 @@ These parameters are from the Ingest Budget's API documentation, linked in the
 :::
 
 | Parameter | Description | Data Type |
-|--|--|--|
+|:--|:--|:--|
 | name (required) | Display name of the ingest budget. | string `[ 1 .. 128 ] characters` |
 | fieldValue (required) | Custom field value that is used to assign Collectors to the ingest budget. | string `[ 1 .. 1024 ] characters` |
 | capacityBytes (required) | Capacity of the ingest budget, in bytes.<br/>It takes a few minutes for Collectors to stop collecting when capacity is reached. We recommend setting a soft limit that is lower than your needed hard limit. | integer `<int64> >= 0` |
@@ -149,7 +149,7 @@ The following steps can be referenced in [Assign Collector to Ingest Budget](ass
 
 ### Use Collection page
 
-On the **Manage Data** \> **Collection** \> **[Collection](/docs/manage/collection)** page when editing an
+On the **Manage Data** > **Collection** > **[Collection](/docs/manage/collection)** page when editing an
 existing Collector or creating a new Hosted Collector there is a new option, **Assign to a Budget**, that allows you to assign an ingest budget to a Collector.
 
 ![assign to a budget dropdown option.png](/img/ingestion-volume/assign-budget-dropdown-option.png)
@@ -213,7 +213,7 @@ which returns
 Save the response JSON to a file. To assign the Collector to the budget specify the ingest budget's `fieldValue` with the field `_budget` using the `fields` parameter.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | fields | JSON Object  | No |   | JSON map of key-value fields (metadata) to apply to the Collector. To assign an ingest budget use the field `_budget` with its Field Value. | Modifiable |
 
 Modify your file to include the `_budget` field with the Field Value of the ingest budget to assign. In the following example, the Field Value of the ingest budget is `dev_30_gb` and the JSON file is named `updated_collector.json`.

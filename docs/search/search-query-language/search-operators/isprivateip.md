@@ -4,9 +4,7 @@ title: isPrivateIP Search Operator
 sidebar_label: isPrivateIP
 ---
 
-
-
-The isPrivateIP operator checks if an IPv4 address is private and returns a boolean.
+The `isPrivateIP` operator checks if an IPv4 address is private and returns a boolean.
 
 ## Syntax
 
@@ -18,7 +16,7 @@ isPrivateIP("<IPv4_string>") as <field>
 isPrivateIP(<IPv4_string_field>) [as <field>]
 ```
 
-**Rules**
+## Rules
 
 * Returns `true` if the input is a valid private IPv4 address.
 * Invalid IPv4 addresses are dropped from the results.
@@ -28,7 +26,7 @@ address is detected:
     
 ![isprivateip operator warning for dropped invalid ip addresses.png](/img/search/searchquerylanguage/search-operators/isprivateip-dropped-warning.png)
 
-**Examples**
+## Examples
 
 `| isPrivateIP(dest_host)`
 

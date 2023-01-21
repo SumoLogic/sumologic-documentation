@@ -18,7 +18,7 @@ For information about cancelling a Sumo Logic subscription, see [Close or Cancel
 You must be an admin to upgrade your CloudFlex Credits free or trial account.
 :::
 
-1. To initiate your account upgrade, click the **Upgrade** link at the top of the Sumo Logic UI in your account, or go to **Administration** \> **Account** \> **Manage Plan**.
+1. To initiate your account upgrade, click the **Upgrade** link at the top of the Sumo Logic UI in your account, or go to **Administration** > **Account** > **Manage Plan**.
 2. The **Manage Plan** page appears.
     ![step-1.png](/img/subscriptions/manage-plan-upgrade-to-essentials.png)
 3. Click **Upgrade**. The page refreshes to display the **Customize Plan** step.
@@ -51,7 +51,7 @@ When you update the product variables for a monthly plan (without changing to an
 
 **To update your Essentials plan**
 
-1. Go to **Administration** \> **Account** \> **Manage Plan**. The page displays information about your current plan: whether it’s monthly or annual, the billing cycle, the total credits for the plan, and the cost per period.
+1. Go to **Administration** > **Account** > **Manage Plan**. The page displays information about your current plan: whether it’s monthly or annual, the billing cycle, the total credits for the plan, and the cost per period.
     ![current-plan.png](/img/subscriptions/current-plan.png)
 2. Click **Upgrade**. The page refreshes to display the **Customize Plan** step.
     ![current-levels.png](/img/subscriptions/current-levels.png)

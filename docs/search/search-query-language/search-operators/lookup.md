@@ -4,9 +4,7 @@ title: lookup Search Operator
 sidebar_label: lookup
 ---
 
-
-
-The lookup operator can return one or more fields from a lookup table hosted by Sumo Logic and add the fields to the log messages returned by your query. You create a lookup table using the lookup UI or the <a href="https://api.sumologic.com/docs/#tag/lookupManagement">Lookup API</a>. You can populate a lookup table by uploading a CSV file using the Lookup API, or by using the <a href="#save">save operator</a> to save the results of a log query. 
+The `lookup` operator can return one or more fields from a lookup table hosted by Sumo Logic and add the fields to the log messages returned by your query. You create a lookup table using the lookup UI or the <a href="https://api.sumologic.com/docs/#tag/lookupManagement">Lookup API</a>. You can populate a lookup table by uploading a CSV file using the Lookup API, or by using the <a href="#save">save operator</a> to save the results of a log query. 
 
 :::note
 New Lookup Tables are available in all deployments except Sumo Logic's Montreal deployment, pending AWS providing a required AWS service in the Montreal region.
@@ -14,11 +12,11 @@ New Lookup Tables are available in all deployments except Sumo Logic's Montreal 
 
 For information about lookup tables, see [Create and Manage Lookup Tables](/docs/search/lookup-tables/create-lookup-table.md).
 
-## lookup requirements and limitations
+## Rules and limitations
 
 This section describes requirements and limitations for the `lookup` operator and .csv files that contain lookup data.
 
-### lookup requirements 
+### Requirements 
 
 * The size limit for a lookup table is 100 MB.
 * The `lookup` operator matches event field names and values to lookup table field names and values in a case-insensitive manner. 
@@ -33,7 +31,7 @@ These requirements apply to lookup tables that you upload in CSV format:
 
 For example:
 
-```
+```sql
 "id","name","time"
 "1","foo","6-15-12"
 "2","zoo","6-14-12"
@@ -60,7 +58,7 @@ In an interactive search, `lookup` will only use the real-time stock price to pl
 
 In other words, in live mode, `lookup` will use and retain the lookup data at that point in time when it ran. Whereas `lookup` in an interactive search will only use the data that was available when it ran.
 
-## Lookups tables and primary keys
+### Tables and primary keys
 
 You can only perform a lookup using fields defined as primary keys. If the key consists of multiple fields, use all of the primary key fields in the lookup. For example, if a lookup table has a composite key made up of:
 
@@ -74,7 +72,7 @@ your lookup query scope must include:
 ... on srcDevice_ip=srcDevice_ip and eventTime=eventTime and sourceCategory=sourceCategory
 ```
 
-## Lookup syntax 
+## Syntax 
 
 ```sql
 lookup <outputColumn-1> [as <field>] [,<outputColumn-2> [as <field>]] from path://"<filePath>" on <joinColumn-1> [,<joinColumn-2>]
@@ -100,7 +98,7 @@ Where:
 
     `name=userName, phone=cell`
 
-##Examples
+## Examples
 
 ### Return one field
 
@@ -157,7 +155,7 @@ In our example above, the first `lookup` finds the name, and the second finds th
 
 ### Handling null values
 
-To find a mismatch from a `lookup`  query, use the [isNull](#isNull) operator.
+To find a mismatch from a `lookup`  query, use the [isNull](/docs/search/search-query-language/search-operators/isnull-isempty-isblank#isnullstring) operator.
 
 For example:
 

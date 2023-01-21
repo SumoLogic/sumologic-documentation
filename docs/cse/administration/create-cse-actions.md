@@ -192,7 +192,7 @@ Lookups will consume RF API credits.
 
 #### Generate Recorded Future API token
 
-1. In Recorded Future, go to **User Settings \> API Access \> Generate New API Token**.
+1. In Recorded Future, go to **User Settings > API Access > Generate New API Token**.
 1. On the **Generate New Token** page:
     1. **Name**. Enter a name for the token. 
     1. **Integration**. Select “Sumologic” from the list of integrations.
