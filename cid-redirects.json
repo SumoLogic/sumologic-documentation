@@ -1200,7 +1200,7 @@
   "/Traces/01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry/Python_OpenTelemetry_auto-instrumentation": "/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python",
   "/Traces/01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry/Ruby_on_Rails_OpenTelemetry_auto-instrumentation": "/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby-on-rails",
   "/Traces/01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry/Ruby_OpenTelemetry_auto-instrumentation": "/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby",
-  "/Traces/02Working_with_Tracing_data": "/docs/apm/traces/",
+  "/Traces/02Working_with_Tracing_data": "/docs/apm/traces",
   "/Traces/02Working_with_Tracing_data/01Service_Map": "/docs/apm/traces/services-list-map",
   "/Traces/02Working_with_Tracing_data/02Tracing_Dashboards": "/docs/apm/traces/tracing-dashboards",
   "/Traces/02Working_with_Tracing_data/03View_and_investigate_traces": "/docs/apm/traces/view-and-investigate-traces",
