@@ -215,7 +215,7 @@ Select the documentation link for your deployment:
 
 ## Span Analytics API
 
-The Span Analytics API allows you to browse spans collected in the system. You can execute queries to find individual spans matching provided search criteria as well as run aggregated span queries and retrieve their results. For more information see [Spans](/docs/apm/traces/spans.md).
+The Span Analytics API allows you to browse spans collected in the system. You can execute queries to find individual spans matching provided search criteria as well as run aggregated span queries and retrieve their results. For more information, see [Spans](/docs/apm/traces/spans.md).
 
 
 ### Endpoints for API access  
