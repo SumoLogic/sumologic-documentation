@@ -4,7 +4,7 @@ title: save Search Operator
 sidebar_label: save
 ---
 
-The save operator allows you to save the results of a query to a lookup table you have already created, as described in <a href="/docs/search/lookup-tables/create-lookup-table">Create a Lookup Table</a>. You can use the <a href="#lookup">lookup</a> and <a href="#cat">cat</a> operator to access the saved data.
+The save operator allows you to save the results of a query to a lookup table you have already created, as described in <a href="/docs/search/lookup-tables/create-lookup-table">Create a Lookup Table</a>. You can use the [lookup](/docs/search/search-query-language/search-operators/lookup/) and [cat](/docs/search/search-query-language/search-operators/cat/) operator to access the saved data.
 
 You can use the `append` option with `save` to merge new and changed rows into a lookup table. If you use `save` without `append`, any existing rows in the lookup table will be overwritten by your search results. 
 
@@ -41,7 +41,7 @@ To determine the path to a lookup table, highlight the row for the table in the 
 
 #### Using save without append
 
-This example saves search results data about new user accounts to the lookup table on Sumo Logic  .
+This example saves search results data about new user accounts to the lookup table on Sumo Logic.
 
 ```sql
 | parse "name=*," as name
