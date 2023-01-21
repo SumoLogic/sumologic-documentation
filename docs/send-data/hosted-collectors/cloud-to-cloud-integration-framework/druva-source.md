@@ -80,7 +80,7 @@ When you create a Druva Source, you add it to a Hosted Collector. Before creatin
 1. **Name**. Enter a Name to display for the Source in the Sumo Logic web application.
 1. **Description**. (Optional)
 1. **Source Category**.(Optional) Enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. 1. Fields. (Optional) Click **+Add** to ad additional fields; each field needs a name (key) and value.
+1. Fields. (Optional) Click **+Add** to add additional fields; each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 8. **Base URL**. Choose the base url from the drop-down menu as per your requirements — [Data Governance Cloud](https://apis.druva.com) and [Data GovernanceGov Cloud](https://govcloudapis.druva.com).<br/><img src={useBaseUrl('img/send-data/base-url.png')} alt="base-url.png" width="400"/>
