@@ -55,7 +55,6 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 * Specify **Format** as `epoch`
 * Specify **Timestamp locator** as `\"timestamp\": (.*),`
 
-
 1. Click **Add**.
 
 
