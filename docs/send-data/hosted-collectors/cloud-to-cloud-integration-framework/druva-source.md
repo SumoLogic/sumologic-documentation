@@ -83,8 +83,8 @@ When you create a Druva Source, you add it to a Hosted Collector. Before creatin
 1. Fields. (Optional) Click **+Add** to add additional fields; each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
-8. **Base URL**. Choose the base url from the drop-down menu as per your requirements — [Data Governance Cloud](https://apis.druva.com) and [Data GovernanceGov Cloud](https://govcloudapis.druva.com).<br/><img src={useBaseUrl('img/send-data/base-url.png')} alt="base-url.png" width="400"/>
-9. **Client ID**. Enter your Client ID generated from your [Druva application](https://developer.druva.com/docs/authentication).
+1. **Base URL**. Choose the base url from the drop-down menu as per your requirements — [Data Governance Cloud](https://apis.druva.com) and [Data GovernanceGov Cloud](https://govcloudapis.druva.com).<br/><img src={useBaseUrl('img/send-data/base-url.png')} alt="base-url.png" width="400"/>
+1. **Client ID**. Enter your Client ID generated from your [Druva application](https://developer.druva.com/docs/authentication).
 1. **Secret Key**. Enter your Client secret key generated within your [Druva Application](https://developer.druva.com/docs/authentication).<br/><img src={useBaseUrl('img/send-data/druva-config.png')} alt="druva-config.png" width="600"/>
 
 ## Error types
