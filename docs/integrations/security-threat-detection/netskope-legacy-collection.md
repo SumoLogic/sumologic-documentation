@@ -111,10 +111,10 @@ Sumo Logic periodically makes changes to the collector. To make sure your collec
 * Check the latest version of the Netskope collector on this page: [https://pypi.org/project/sumologic-netskope-collector/#history](https://pypi.org/project/sumologic-netskope-collector/#history)
 * Check the version of the collector you have installed by running the following command: `pip show sumologic-netskope-collector`
 * If you are not running the latest collector, do the following:
-1. Disable your cron job.
-2. Stop all existing collector processes.
-3. Run the following command to upgrade your collector: `pip install sumologic-netskope-collector --upgrade`
-4. Enable the cron job.
+   1. Disable your cron job.
+   2. Stop all existing collector processes.
+   3. Run the following command to upgrade your collector: `pip install sumologic-netskope-collector --upgrade`
+   4. Enable the cron job.
 
 
 ### Advanced Configuration (DEPRECATED)
