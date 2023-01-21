@@ -117,7 +117,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `description` | String  | No | Type the description of the Source. | modifiable |
 | `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
 | `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
-| `baseURL` | String | Yes | The base URL from which the customer wants to retrieve event data.. | modifiable |
+| `baseURL` | String | Yes | The base URL from which the customer wants to retrieve event data. | modifiable |
 | `clientID` | String | Yes | Client ID key of an application. | modifiable |
 | `secretKey` | String | Secret key of an application | modifiable |
 
