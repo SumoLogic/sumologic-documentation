@@ -61,7 +61,7 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 ### Step 2: Getting a token from the Netskope Portal (DEPRECATED)
 
 Netskope REST APIs use an auth token to make authorized calls to the API. This section demonstrates how to obtain a token from the Netskope user interface (UI).
-**To obtain a Netskope auth token, do the following:
+To obtain a Netskope auth token, do the following:
 1. Login to Netskope as the Tenant Admin.
 2. Go to the API portion of the Netskope, **Settings > Tools > Rest API**.
 3. Copy the existing token to your clipboard, or you can generate a new token and copy that token.
