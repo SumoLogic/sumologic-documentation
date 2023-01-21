@@ -43,7 +43,7 @@ Instead, separate the **where** operator from the preceding **parse** operat
 * Multiple **where** operators are processed in the order they are specified, with each subsequent **where **operator further filtering results.
 * [Keyword expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md) can be used in the boolean expression, such as OR and AND.
 * If defining a [built-in metadata field](/docs/search/get-started-with-search/search-basics/built-in-metadata) value in the boolean expression you need to quote the value. If it is not wrapped in quotes the value is interpreted as a field name.
-* If you're using [**in**](#in-operator) or **not in** to match integers, [cast "x" to a number first](#casting-data-to-a-number-or-string).
+* If you're using [**in**](#in-operator) or **not in** to match integers, [cast "x" to a number first](/docs/search/search-query-language/search-operators/manually-cast-data-string-number).
 * The [matches](#matches) operator can be used in the boolean expression. You can use an [RE2 compliant](https://github.com/google/re2/wiki/Syntax) regular expression or use asterisks `*` as wildcards.
 * Any operator that returns a boolean value can be used in the boolean expression. Such as [compareCIDRPrefix](#CIDR), [contains](#contains), [in](#in-operator), [isBlank, isEmpty, isNull](#isnull-isempty-isblank), [isNumeric](#isNumeric), [isPrivateIP](#isPrivateIP), [isPublicIP](#isPublicIP), [isValidIP](#isvalidip-isvalidipv4-isvalidipv6), and [math expressions](/docs/search/search-query-language/math-expressions).
 

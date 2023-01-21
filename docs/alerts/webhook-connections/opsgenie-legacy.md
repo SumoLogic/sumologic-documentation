@@ -75,8 +75,7 @@ To create a webhook:
       "SourceURL": "{{SourceURL}}"
     }
     ```
-1. In the **Recovery Payload** section, you can customize your recovery notification.
-1. To test the connection, click **Test Alert or Test Recovery**. If successful, you'll see a `200 OK` response message.
+1. To test the connection, click **Test Alert**. If successful, you'll see a `200 OK` response message.
 1. Click **Save**.
 
 ### Configure a Scheduled Search

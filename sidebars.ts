@@ -354,7 +354,7 @@ module.exports = {
             'send-data/collect-from-other-data-sources/collect-logs-palo-alto-networks-cortex',
             {
               type: 'category',
-              label: 'Telegraf',
+              label: 'Collect Metrics from Telegraf',
               collapsible: true,
               collapsed: true,
               link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/collect-metrics-telegraf/index'},
@@ -1158,8 +1158,8 @@ module.exports = {
             'search/search-query-language/parse-operators/parse-xml-formatted-logs',
             'search/search-query-language/parse-operators/parse-field-option',
             'search/search-query-language/parse-operators/parse-nodrop-option',
-            'search/search-query-language/parse-operators/parse-date',
-            'search/search-query-language/parse-operators/parse-hex',
+            'search/search-query-language/parse-operators/parsedate',
+            'search/search-query-language/parse-operators/parsehex',
           ],
         },
         {
@@ -1308,6 +1308,7 @@ module.exports = {
         'metrics/metrics-operators/min',
         'metrics/metrics-operators/outlier',
         'metrics/metrics-operators/parse',
+        'metrics/metrics-operators/predict',
         'metrics/metrics-operators/pct',
         'metrics/metrics-operators/quantize',
         'metrics/metrics-operators/rate',
@@ -1451,7 +1452,7 @@ module.exports = {
         collapsed: true,
         link: {type: 'doc', id: 'apm/traces/working-with-tracing-data/index'},
         items: [
-          'apm/traces/working-with-tracing-data/service-map',
+          'apm/traces/working-with-tracing-data/services-list-map',
           'apm/traces/working-with-tracing-data/tracing-dashboards',
           'apm/traces/working-with-tracing-data/view-and-investigate-traces',
           'apm/traces/working-with-tracing-data/spans',

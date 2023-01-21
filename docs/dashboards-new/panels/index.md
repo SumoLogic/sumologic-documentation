@@ -147,7 +147,7 @@ In the panel, the link is displayed. 
 
 ![icon-service-map.png](/img/dashboards-new/panels/icon-service-map.png)
 
-The [Service Map](/docs/apm/traces/working-with-tracing-data/service-map) is a high-level view of your application environment, giving you a greater view and understanding of your application architecture and dependencies between monitored microservices.
+The [Service Map](/docs/apm/traces/working-with-tracing-data/services-list-map) is a high-level view of your application environment, giving you a greater view and understanding of your application architecture and dependencies between monitored microservices.
 
 The panel gives you a fully functioning map to zoom in and out and move through services. The size and color of application entities shows status and activity. Click on a service to open the Entity Inspector to drill down to traces, metrics, and the service dashboard.
 
