@@ -1,6 +1,7 @@
 ---
 id: set-up-traces-collection-for-other-environments
 title: Set up Traces Collection for Other Environments
+sidebar_label: Other Environments
 description: Sumo Logic leverages OpenTelemetry standards for trace collection.
 ---
 

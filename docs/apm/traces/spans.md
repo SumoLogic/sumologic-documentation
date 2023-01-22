@@ -1,7 +1,6 @@
 ---
 id: spans
-title: Analyze data on Span level
-sidebar_label: Analyze data on Span level
+title: Analyze Data on a Span Level
 description: Learn how to use the Spans page to explore your span data.
 ---
 

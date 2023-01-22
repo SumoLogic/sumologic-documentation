@@ -1,7 +1,6 @@
 ---
 id: working-with-span-attributes
-title: Working with Span attributes
-sidebar_label: Working with Span attributes
+title: Working with Span Attributes
 description: Learn how to modify the attributes of your spans.
 ---
 

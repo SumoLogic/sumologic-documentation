@@ -1,7 +1,6 @@
 ---
 id: view-and-investigate-traces
-title: View and investigate Traces
-sidebar_label: View and investigate Traces
+title: View and Investigate Traces
 description: Learn how to search and investigate your traces, trace views, and trace events.
 ---
 

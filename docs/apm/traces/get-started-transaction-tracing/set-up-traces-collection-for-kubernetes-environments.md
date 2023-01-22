@@ -1,6 +1,7 @@
 ---
 id: set-up-traces-collection-for-kubernetes-environments
 title: Set up Traces Collection for Kubernetes Environments
+sidebar_label: Kubernetes Environments
 ---
 
 After installing or upgrading your Sumo Logic Kubernetes Collection, you will be able to send your traces directly to its endpoint using OpenTelemetry (as well as older formats like Jaeger or Zipkin).
