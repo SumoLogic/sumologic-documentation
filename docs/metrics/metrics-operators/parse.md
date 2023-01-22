@@ -7,7 +7,7 @@ sidebar_label: parse
 The parse operator parses the specified field to create new fields to use in the metrics query.
 
 :::tip
-If you are querying Graphite metrics, and do not specify the field to be parsed, the metric name parsed.
+If you are querying Graphite metrics, and do not specify the field to be parsed, then the metric name will be parsed.
 :::
 
 Each wildcard in the pattern corresponds to a specified field. The parse operator supports both lazy (shortest match) and greedy (longest match wildcard matches.  Use '\*' for a lazy match, or '\*\*' for a greedy match.
