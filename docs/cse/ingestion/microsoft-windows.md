@@ -11,7 +11,7 @@ In this step, you configure a Local Windows Event Log Source to collect Microsof
 
 ### Configure an Installed Collector
 
-1. In the Sumo Logic platform, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Installed Collector**.
 1. The **Add Installed Collector** popup appears.

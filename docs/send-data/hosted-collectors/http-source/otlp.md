@@ -43,7 +43,7 @@ When you set up an OTLP/HTTP Source, a unique URL is assigned to the Source. Th
 The following table shows the URL format based on data types.
 
 | Data Type | URL Format                |
-|-----------|---------------------------|
+|:-----------|:---------------------------|
 | Logs      | `<source_url>/v1/logs`    |
 | Metrics   | `<source_url>/v1/metrics` |
 | Traces    | `<source_url>/v1/traces`  |

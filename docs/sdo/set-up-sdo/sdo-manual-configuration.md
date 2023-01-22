@@ -90,7 +90,7 @@ Complete the configuration for the build and deploy tool you use.
 
 ### Bitbucket for build and deploy
 
-1. Access the Sumo Logic Platform and navigate to **Manage Data** \> **Collection** page.
+1. Access the Sumo Logic Platform and navigate to **Manage Data** > **Collection** page.
 1. Search for *Software Development Optimization* Collector.
 1. Under this Collector, click on **Show URL** for the source **Bitbucket Cloud.** Make a note of this **URL** and use this URL to configure the Bitbucket CI/CD Pipeline to collect deploy events:
 
@@ -99,7 +99,7 @@ Complete the configuration for the build and deploy tool you use.
 ### Jenkins for build and deploy
 
 1. Install the latest Jenkins Plugin as described [here](/docs/integrations/app-development/Jenkins#Collecting-Logs-and-Metrics-for-Jenkins).
-1. Access the Sumo Logic Platform and navigate to **Manage Data** \> **Collection** page.
+1. Access the Sumo Logic Platform and navigate to **Manage Data** > **Collection** page.
 1. Search for *Software Development Optimization* Collector.
 1. Under this Collector, click on **Show URL** for the source **Jenkins.** Make a note of this **URL** and **Source Category,** you will use these to configure the Jenkins Plugin :
 
@@ -111,7 +111,7 @@ Complete the configuration for the build and deploy tool you use.
 
 If you're using CircleCI for Build and Deploy, do the following:
 
-1. Access the Sumo Logic Platform and navigate to **Manage Data** \> **Collection** page.
+1. Access the Sumo Logic Platform and navigate to **Manage Data** > **Collection** page.
 
 1. [Configure a hosted collector](/docs/send-data/hosted-collectors) to ingest CircleCI data into Sumo and call it ‘*Software Development Optimization*’.
 
@@ -128,7 +128,7 @@ If you're using CircleCI for Build and Deploy, do the following:
    * `WORKFLOW_HTTP_SOURCE = <url of workflow-collector source created above in step 3>`
 
 1. Add the [sumo orb](https://circleci.com/developer/orbs/orb/sumologic/sumologic) in the configuration file of the project to send custom-data elements to Sumo. You can find a sample config.yml file [here](https://sumologic-app-data.s3.amazonaws.com/SDO/config.yml.zip).
-1. Navigate to **Manage Data** \> **Logs** page. We select the Field Extraction Rules tab.
+1. Navigate to **Manage Data** > **Logs** page. We select the Field Extraction Rules tab.
 1. [Create two FERs](/docs/manage/field-extractions/create-field-extraction-rule.md) for CircleCI build and deploy events. The parse expression and the scope of the FERs is available [here](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
 
 ### Other Tools for build and deploy

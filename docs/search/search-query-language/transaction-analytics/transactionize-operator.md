@@ -41,7 +41,7 @@ Syntax section. For example, 
 ```
 
 | Parameter | Description |
-| -- | -- |
+| :-- | :-- |
 | `maxSpan = [time]` | The transaction ends if the transaction duration exceeds the specified time. Time may be specified in various units, such as 1s, 1m, and so on. |
 | `maxPause = [time]` | The transaction ends if the time between log messages exceeds the specified time. Time may be specified in various units, such as 1s, 1m, and so on. |
 | `maxLogs = [n]` | The transaction ends if the number of log messages in the transaction exceeds the specified number.

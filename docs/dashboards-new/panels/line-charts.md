@@ -25,7 +25,7 @@ which would produce results such as:
 
 **To add a panel with a line** chart:**
 
-1. Create or open a Dashboard (New) and click on **Add Panel \> Time Series**.  
+1. Create or open a Dashboard (New) and click on **Add Panel > Time Series**.  
 
     ![time series icon.png](/img/dashboards-new/panels/line-charts/time-series-icon.png)
 

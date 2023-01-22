@@ -11,7 +11,7 @@ Overall, yes. Alert Response is available in all the Sumo Logic packages. Howeve
 **Alert Details**
 
 | Package | Related Alerts | Monitor History | Playbooks |
-|--|--|--|--|
+|:--|:--|:--|:--|
 | Free | Yes | Yes | Yes |
 | Essentials | Yes | Yes | Yes |
 | Enterprise Security | Yes | Yes | Yes |
@@ -21,7 +21,7 @@ Overall, yes. Alert Response is available in all the Sumo Logic packages. Howeve
 **Alert Content**
 
 | Package  | Log Fluctuations | Dimensional Explanation | Anomaly | Benchmark |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | Free | Yes | Yes | No | No |
 | Essentials | Yes | Yes | No | No |
 | Enterprise Security | Yes | Yes | No | Yes |

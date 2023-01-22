@@ -13,7 +13,7 @@ Once changes are submitted, Sumo Logic will begin applies the new credit card f
 
 To change the billing information, do the following:
 
-1. Go to **Administration** \> **Account**.
+1. Go to **Administration** > **Account**.
 1. Select the **Billing** tab.
 1. Click **Use a New Credit Card**.
 1. Enter the new credit card information, or edit any of the billing address/contact information.

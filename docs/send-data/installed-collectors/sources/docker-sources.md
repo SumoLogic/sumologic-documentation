@@ -30,8 +30,8 @@ There are alternative methods for collecting Docker logs and metrics. See [Dock
 
 ## Add a Docker Logs Source
 
-1. In the Sumo web app, select **Manage Data \> Collection \> Collection**.
-1. Navigate to the collector you installed on the Docker host, and select **Add \> Add Source**.
+1. In the Sumo web app, select **Manage Data > Collection > Collection**.
+1. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 1. Select **Docker Logs**. The Docker Logs page appears.
 
     ![docker logs source.png](/img/send-data/docker-logs-source.png)
@@ -84,8 +84,8 @@ There are alternative methods for collecting Docker logs and metrics. See [Dock
 
 ## Add a Docker Stats Source
 
-1. In Sumo select **Manage Data \> Collection \> Collection**.
-1. Navigate to the collector you installed on the Docker host, and select **Add \> Add Source**.
+1. In Sumo select **Manage Data > Collection > Collection**.
+1. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 1. Select **Docker Stats.** The following Docker Stats page appears. There are two possible content types available, select **Metrics** to collect data as metrics, or select **Logs** (JSON) to collect data as JSON logs.
 
 :::note
@@ -130,7 +130,7 @@ To collect metrics for the Docker ULM App, select **Metrics** as the Content Ty
 **CPU**
 
 | Metrics Name | Unit | Description |
-|--|--|--|
+|:--|:--|:--|
 | `cpu_percentage` | Percent | Percentage of CPU used |
 | `online_cpus` | Count | Number of CPUs online (only available on API v1.27 or higher) |
 | `system_cpu_usage` | Nanoseconds | Host’s cumulative CPU usage |
@@ -146,7 +146,7 @@ To collect metrics for the Docker ULM App, select **Metrics** as the Content Ty
 **Memory**
 
 | Metrics Name | Unit | Description |
-|--|--|--|
+|:--|:--|:--|
 | `failcnt` | Count | Times of memory usage hit the limits |
 | `limit` | Bytes | Memory limit set on the container (or on the host if it's not set on container) |
 | `max_usage` | Bytes | Maximum of memory usage |
@@ -184,7 +184,7 @@ To collect metrics for the Docker ULM App, select **Metrics** as the Content Ty
 
 **Network - Scalable on API v1.21 or higher, with dimension "interface"**
 | Metrics Name | Unit | Description |
-|--|--|--|
+|:--|:--|:--|
 | `rx_bytes` | Bytes | Data volume (received) |
 | `rx_dropped` | Count | Number of dropped packets (received) |
 | `rx_errors` | Count | Number of error packets (received) |
@@ -197,7 +197,7 @@ To collect metrics for the Docker ULM App, select **Metrics** as the Content Ty
 **BlockIO - Scalable with "major" and "minor" id of devices**
 
 | Metrics Name | Unit | Description |
-|--|--|--|
+|:--|:--|:--|
 | `io_merged_recursive` | Count | Number of bios/requests merged into requests belonging to all the descendant cgroups |
 | `io_queue_recursive` | Count | Number of requests queued up at any given instant from all the descendant cgroups |
 | `io_service_bytes_recursive` | Bytes | Number of bytes transferred to/from the disk from all the descendant cgroups |
@@ -210,7 +210,7 @@ To collect metrics for the Docker ULM App, select **Metrics** as the Content Ty
 **PIDs**
 
 | Metrics Name | Unit | Description |
-|--|--|--|
+|:--|:--|:--|
 | `current` | Count | Number of PIDs (Not available on Windows) |
 
 ## More about defining container filters  
@@ -252,7 +252,7 @@ The table below defines the types of variables you can use.
 Docker engine events log data doesn't support the tagging with metadata.
 
 | Namespace/VAR_TYPE | Description | VAR_NAME |
-|--|--|--|
+|:--|:--|:--|
 | `container` | Container metadata fields provided by Docker for use in the --log-opt tag option. These are automatically added to data points. For more information, see [Log tags for logging driver](https://docs.docker.com/engine/admin/logging/log_tags/) in Docker help. | `ID` — The first 12 characters of the container ID.<br/>`FullID` — The full container ID.<br/>`Name` — The container name.<br/>`ImageID` — The first 12 characters of the container’s image ID.<br/>`ImageFullID` — The container’s full image ID.<br/>`ImageName` — The name of the image used by the container. |
 | `label` | User-defined labels, supplied with the  `--label flag` when starting a Docker container. This is automatically added to data points. | The name of the variable. Dot characters (.) are not supported. |
 | `env`| User-defined container environment variables that are set with `--env|-e` flags when starting a container. | The name of the variable. Dot characters (.) are not supported. |

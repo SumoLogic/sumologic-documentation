@@ -720,7 +720,7 @@ Use this dashboard to:
 ## Kafka Alerts
 
 | Alert Name                                  | Alert Description and conditions                                                                                                                        | Alert Condition | Recover Condition |
-|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|-------------------|
+|:---------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
 | Kafka - High CPU on Broker node             | This alert fires when we detect that the average CPU utilization for a broker node is high (>=85%) for an interval of 5 minutes.                        |                 |                   |
 | Kafka - High Broker Disk Utilization        | This alert fires when we detect that a disk on a broker node is more than 85% full.                                                                     | >=85            | < 85              |
 | Kafka - Garbage collection                  | This alert fires when we detect that the average Garbage Collection time on a given Kafka broker node over a 5 minute interval is more than one second. | > = 1           | < 1               |

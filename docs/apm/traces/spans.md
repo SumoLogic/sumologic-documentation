@@ -21,7 +21,7 @@ The Spans page allows you to filter and aggregate your trace data at the raw spa
 You need to have Tracing enabled in your account to use this functionality. Contact your account team if the only thing you see is an infographic.
 :::
 
-To open, go to **+ New \> Spans**.
+To open, go to **+ New > Spans**.
 
 ![open spans from menu.png](/img/traces/open-spans-from-menu.png)
 

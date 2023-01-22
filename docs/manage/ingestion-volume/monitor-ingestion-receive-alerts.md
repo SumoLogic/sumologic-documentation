@@ -33,7 +33,7 @@ You must update all of the indicated fields for the search to save successfully
     X as billing_end
     X as daily_gb_limit
     ```
-    You can find the correct values on the Account page. Click on your name in the left nav and go to **Administration** \> **Account** \> **Account Overview**. <br/><img src={useBaseUrl('img/ingestion-volume/account-overview.png')} alt="account overview" />
+    You can find the correct values on the Account page. Click on your name in the left nav and go to **Administration** > **Account** > **Account Overview**. <br/><img src={useBaseUrl('img/ingestion-volume/account-overview.png')} alt="account overview" />
 3. (Optional)  Modify the following line if you want to change the percentage threshold for generating the alert.
     ```sql
     | where pct_used > 85
@@ -141,11 +141,11 @@ This hourly alert is generated when both of the following occur:
 1. Enable the Data Volume Index. See [Enable and Manage the Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
 1. (Optional) To adjust the sensitivity of this alert, change either of the values from the following line of the query:
     ```sql
-    | where pct_increase  \> 30 and ingest_weight\> 30
+    | where pct_increase  > 30 and ingest_weight\> 30
     ```
     Example: Change the `pct_increase` value higher to make the alert less sensitive.
     ```sql
-    | where pct_increase  \> 50 and ingest_weight\> 30
+    | where pct_increase  > 50 and ingest_weight\> 30
     ```
 1. (Optional) To change the alert to evaluate a spike in a Collector or Source, do either of the following: 
     * To generate an alert on a spike in ingest for a Collector, change the first line of the query replacing `_sourceCategory="sourcecategory_volume"` with `_sourceCategory="collector_volume"`

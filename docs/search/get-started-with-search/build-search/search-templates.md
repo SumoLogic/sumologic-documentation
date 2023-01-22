@@ -30,7 +30,7 @@ From any query you create, or an existing one you manage, you can create a searc
 There are four data types to choose, based on how you want to define a valid parameter:
 
 | Data Type | Description |
-| -- | -- |
+| :-- | :-- |
 | Number | Numbers only. |
 | String | Considers as a single phrase and will wrap in double-quotes. For example “system errors”. |
 | Any | All characters. Best for substituting texts in paths. |

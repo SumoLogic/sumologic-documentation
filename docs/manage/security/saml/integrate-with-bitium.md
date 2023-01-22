@@ -7,7 +7,7 @@ description: You can integrate Bitium with Sumo Logic’s SAML 2.0 API to allow 
 ## Availability
 
 | Account Type | Account Level |
-|--------------|---------------------------------------------------------------------------------|
+|:--------------|:---------------------------------------------------------------------------------|
 | Cloud Flex   | Trial, Enterprise                                                               |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -55,7 +55,7 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
 ## Configure SAML in Sumo Logic
 
 1. Log into Sumo Logic as an administrator.
-1. Go to **Administration \> Security \> SAML**.
+1. Go to **Administration > Security > SAML**.
 1. Click **Configure**, and configure the SAML settings.
 1. **Configuration Name.** Type the name of the SSO policy (or another name used internally to describe the policy).
 1. **Debug Mode.** Select this option if you'd like to view additional details when an error occurs.

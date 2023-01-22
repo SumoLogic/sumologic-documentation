@@ -45,7 +45,7 @@ These are instructions for a Windows 2008r2 system for your convenience. If you 
 
 To create a new outbound rule for the Windows firewall:
 
-1. Go to **Administrative Tools \> Firewall Settings**.
+1. Go to **Administrative Tools > Firewall Settings**.
 1. Click **New Rule**.
 1. Select **Port** for the type of rule, and then click **Next**.
 1. Enter **443** for the port, and then click **Next**.

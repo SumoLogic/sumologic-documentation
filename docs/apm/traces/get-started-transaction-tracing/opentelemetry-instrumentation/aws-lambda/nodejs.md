@@ -38,7 +38,7 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
 
     ![lambda-nodejs2.png](/img/traces/lambda-nodejs2.png)
 
-1. Navigate to the **Configuration \> Environment variables** section and set up the following three **required** environment variables:
+1. Navigate to the **Configuration > Environment variables** section and set up the following three **required** environment variables:
 
    * `AWS_LAMBDA_EXEC_WRAPPER = /opt/otel-handler` enables auto-instrumentation.
    * `OTEL_TRACES_SAMPLER = always_on` - enables traces sampling.
@@ -63,7 +63,7 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
 The following are the Sumo Logic AWS Distro Lambda layers for AWS Region for amd64 (x86_64) architecture.
 
 | AWS Region | ARN |
-|--|--|
+|:--|:--|
 | US East (N.Virginia) us-east-1          | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1      |
 | US East (Ohio) us-east-2                | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1      |
 | US West (N.Carolina) us-west-1          | arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1      |
@@ -91,7 +91,7 @@ The following are the Sumo Logic AWS Distro Lambda layers for AWS Region for amd
 The following are the Sumo Logic AWS Distro Lambda layers for AWS Region for arm64.
 
 | AWS Region                              | ARN                                                                                      |
-|-----------------------------------------|------------------------------------------------------------------------------------------|
+|:-----------------------------------------|:------------------------------------------------------------------------------------------|
 | US East (N.Virginia) us-east-1          | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1      |
 | US East (Ohio) us-east-2                | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1      |
 | US West (Oregon) us-west-2              | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1      |
@@ -153,7 +153,7 @@ changes in the Dockerfile and image rebuild. You'll need the following:
 
 1. Deploy new function image.
 
-1. Navigate to the **Configuration \> Environment variables** section and set up the following environment variables:
+1. Navigate to the **Configuration > Environment variables** section and set up the following environment variables:
 
    * `AWS_LAMBDA_EXEC_WRAPPER = /opt/otel-handler` enables auto-instrumentation.
    * `OTEL_TRACES_SAMPLER = always_on` - enables traces sampling.

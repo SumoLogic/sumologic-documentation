@@ -8,7 +8,7 @@ description: Enable Single Sign-On (SSO) for user access to Sumo Logic.
 ## Availability
 
 | Account Type | Account Level |
-|--------------|---------------------------------------------------------------------------------|
+|:--------------|:---------------------------------------------------------------------------------|
 | Cloud Flex   | Trial, Enterprise                                                               |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -43,7 +43,7 @@ This means that if a user has been turned off on the SSO side, their access keys
 
 ## SAML does not provide a deprovisioning mechanism 
 
-This means that if a user is deleted or disabled in the SSO database, it will not be reflected in Sumo Logic. However, these users would no longer be able to login to Sumo Logic via SSO. Administrators can delete these users from the **Administration \> Users and Roles \> Users** page in Sumo Logic. For information about what happens when a user is deleted, and transferring a deleted user's content to another user, see [Delete a User](../../users-roles/users/delete-user.md).
+This means that if a user is deleted or disabled in the SSO database, it will not be reflected in Sumo Logic. However, these users would no longer be able to login to Sumo Logic via SSO. Administrators can delete these users from the **Administration > Users and Roles > Users** page in Sumo Logic. For information about what happens when a user is deleted, and transferring a deleted user's content to another user, see [Delete a User](../../users-roles/users/delete-user.md).
 
 ## Only one certificate for each SAML configuration is currently supported
 
@@ -61,7 +61,7 @@ Before provisioning SAML, make sure you have the following:
 
 Follow these steps to configure IdP-initiated login. After this procedure, you can enable optional SAML functionality, including SP-initiated login and on-demand provisioning, as described in [Optional Configurations](set-up-saml.md).
 
-1. Go to **Administration** \> **Security** \> **SAML**.
+1. Go to **Administration** > **Security** > **SAML**.
 1. Select an existing configuration, or click the plus (**+**) icon to create a new configuration.
 
     ![saml-config-list.png](/img/security/saml-config-list.png) 

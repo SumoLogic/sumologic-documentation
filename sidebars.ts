@@ -1878,6 +1878,7 @@ module.exports = {
         'integrations/security-threat-detection/f5-big-ip-ltm',
         'integrations/security-threat-detection/imperva-incapsula',
         'integrations/security-threat-detection/keeper-security',
+        'integrations/security-threat-detection/netskope-legacy-collection',
         'integrations/security-threat-detection/netskope',
         'integrations/security-threat-detection/observable-networks',
         'integrations/security-threat-detection/palo-alto-networks-6',
@@ -2216,8 +2217,8 @@ module.exports = {
           collapsible: true,
           collapsed: true,
           items: [
-            'contributing/templates/partner-app',
-            'contributing/templates/template-doc'
+            'contributing/templates/generic-doc',
+            'contributing/templates/partner-app-doc',
           ]
         }
       ],

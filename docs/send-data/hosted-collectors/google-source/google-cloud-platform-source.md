@@ -24,7 +24,7 @@ However, this is not recommended since you cannot define specific Source Categor
 
 This Source will be a Google Pub/Sub-only Source, which means that it will only be usable for log data formatted as data coming from Google Pub/Sub.
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic select **Manage Data > Collection > Collection**. 
 
 1. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
@@ -71,7 +71,7 @@ You need to configure a Pub/Sub Topic in GCP and add a subscription to the Sourc
 Google limits the volume of data sent from a Topic. Our testing resulted in the following data limits:
 
 | Topics | Megabytes per second | Payload size |
-|--------|----------------------|--------------|
+|:--------|:----------------------|:--------------|
 | One    | 18 MBps (1.5 TB/day) | 100 KB       |
 | One    | 6 MBps (0.5 TB/day)  | 2.5 KB       |
 

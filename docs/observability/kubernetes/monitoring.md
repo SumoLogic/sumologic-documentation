@@ -164,7 +164,7 @@ The following task shows you how to create a custom field for a collector. In 
 
 To add a custom field to a collector, do the following:
 
-1. From the main Sumo Logic page, select **Manage Data \> Collection** in the left menu bar.
+1. From the main Sumo Logic page, select **Manage Data > Collection** in the left menu bar.
 
     ![K8s_Key-value-pair_Collection-option.png](/img/kubernetes/K8s_Key-value-pair_Collection-option.png)
 

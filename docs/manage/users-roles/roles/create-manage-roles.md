@@ -18,7 +18,7 @@ Users with the Analyst role have a single capability: View Collectors. Its role 
 
 To create a role:
 
-1. Go to **Administration** \> **Users and Roles** \> **Roles**.
+1. Go to **Administration** > **Users and Roles** > **Roles**.
 1. Click **+ Add Role** on the upper right side of the page.
 1. The **Create New Role** pane appears on the right side of the page.
 
@@ -32,7 +32,7 @@ To create a role:
 
 ## Add a user to a role
 
-1. Go to **Administration** \> **Users and Roles** \> **Roles**.
+1. Go to **Administration** > **Users and Roles** > **Roles**.
 1. Navigate to the role and click the number in the **Users** column.
 
     ![user-in-role-count.png](/img/users-roles/user-in-role-count.png)
@@ -51,7 +51,7 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 
 ## Remove a user from a role
 
-1. Go to **Administration** \> **Users and Roles **\> **Roles**.
+1. Go to **Administration** > **Users and Roles **\> **Roles**.
 1. Navigate to the role and click the number in the **Users** column.
 
     ![role-list.png](/img/users-roles/role-list.png)
@@ -69,7 +69,7 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 
 ## See which users are assigned to a role
 
-1. Go to **Administration** \> **Users and Roles** \> **Roles**.
+1. Go to **Administration** > **Users and Roles** > **Roles**.
 
     ![user-in-role-count.png](/img/users-roles/user-in-role-count.png)
 1. Navigate to the role and click the number in the **Users** column to see a list of users assigned to the role.
@@ -78,7 +78,7 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 
 To edit a role:
 
-1. Go to **Administration** \> **Users and Roles** \> **Roles**.
+1. Go to **Administration** > **Users and Roles** > **Roles**.
 1. Click the row for the role you want to edit.
 1. The current configuration of the role appears in a pane on the right side of the page.
 1. Click **Edit** at the top of the right side of the page.
@@ -91,7 +91,7 @@ You can only delete a role to which no users are assigned. Before deleting a rol
 
 To delete a role:
 
-1. Go to **Administration** \> **Users and Roles** \> **Roles**.
+1. Go to **Administration** > **Users and Roles** > **Roles**.
 1. Click the row for the role you want to delete.
 1. The current configuration of the role appears in a pane on the right side of the page.
 1. Click **Delete** at the top of the right side of the page.

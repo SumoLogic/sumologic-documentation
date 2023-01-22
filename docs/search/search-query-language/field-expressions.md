@@ -51,7 +51,7 @@ This is a shorthand way to express scalar numeric values multiplied by common fa
 The list of supported suffixes, and the factor by which they multiply the numeric value, is below. Suffixes are case-sensitive. Both SI-style (1000-based) and ISO/IEC 80000-style (1024-based) suffixes are supported.
 
 | Suffix | Factor      | Suffix | Factor       |
-|------------|------------------|------------|------------------|
+|:------------|:------------------|:------------|:------------------|
 | K or k     | 1000             | Ki         | 1024             |
 | M          | 1000000          | Mi         | 1048576          |
 | G or B     | 1000000000       | Gi         | 1073741824       |
@@ -73,7 +73,7 @@ This is used to represent units of time. **The base unit of time returned is the
 The following time suffixes are supported:
 
 | Suffix | Time    |
-|------------|-------------|
+|:------------|:-------------|
 | ns         | Nanosecond  |
 | us         | Microsecond |
 | ms         | Millisecond |
@@ -122,7 +122,7 @@ Boolean expressions, those that evaluate to true or false, can be assigned to fi
 
 ### Comparison Operators
 
-Comparison operators include equals ("=" or "=="), \>", "\<", "\>=", "\<=", "\<\\>" (or "!=") and produce Boolean values. Examples:
+Comparison operators include equals ("=" or "=="), >", "\<", "\>=", "\<=", "\<\\>" (or "!=") and produce Boolean values. Examples:
 
 ```sql
 | x = 2 as duo            // same as x == 2 as duo

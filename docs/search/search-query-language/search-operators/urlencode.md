@@ -4,7 +4,7 @@ title: urlencode Search Operator
 sidebar_label: urlencode
 ---
 
-The urlencode operator encodes the URL into an ASCII character set. This is the standard format in which URLs can be sent over the internet.
+The `urlencode` operator encodes the URL into an ASCII character set. This is the standard format in which URLs can be sent over the internet.
 
 For example, if your URL looks like this:
 
@@ -28,7 +28,7 @@ urlencode(<url_field>) [as <field>]
 urlencode("<url string>") as <field>
 ```
 
-**Example**
+## Example
 
 To encode a URL in your PagerDuty logs, you can run this query:
 

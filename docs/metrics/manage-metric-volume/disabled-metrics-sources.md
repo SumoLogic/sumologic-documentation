@@ -93,7 +93,7 @@ This limit does not apply to the Kubernetes dimensions, Docker dimensions, or th
 * `label.com.docker.swarm.task.id`
 * `label.com.docker.swarm.task.name`
 
-For other dimensions that exceed the cardinality limit Sumo generates a metric transformation rule to exclude the dimension. The rule appears in the UI at **Manage Data \> Metrics \> Metric Transformation Rules**:
+For other dimensions that exceed the cardinality limit Sumo generates a metric transformation rule to exclude the dimension. The rule appears in the UI at **Manage Data > Metrics > Metric Transformation Rules**:
 
 You can delete the metric transformation rule, but you can’t disable or modify it. 
 

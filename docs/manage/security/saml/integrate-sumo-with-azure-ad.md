@@ -7,7 +7,7 @@ description: Enable Single Sign-On (SSO) to Sumo Logic with Azure Active Directo
 ## Availability
 
 | Account Type | Account Level |
-|--------------|-------------------------|
+|:--------------|:-------------------------|
 | Cloud Flex   | Trial, Enterprise                                                               |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -26,7 +26,7 @@ The steps below are for the new Azure Management Console. For general steps for 
 1. Select **Enterprise Applications**. 
 
     ![enterprise-applications.png](/img/security/enterprise-applications.png)
-1. Select **Manage \> All Applications.**
+1. Select **Manage > All Applications.**
 1. Click **New application** at the top of the **All applications** blade. 
 
     ![new-app-icon.png](/img/security/new-application-option.png)
@@ -68,7 +68,7 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
 
 ### Configure SAML in Sumo Logic
 
-1. Go to **Administration \> Security \> SAML**.
+1. Go to **Administration > Security > SAML**.
 1. Select an existing configuration, or click **Add Configuration** to create a new configuration.
 
     ![add-configuration.png](/img/security/add-configuration.png)
