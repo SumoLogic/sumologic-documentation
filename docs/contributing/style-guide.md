@@ -81,6 +81,13 @@ When writing instructions, it helps to always use active voice. This gives a cal
 | Build the query using the following... | Please build the query using the following... | We need them to complete a task. No need for please. |
 | To add a new collector:<br/>1. Access Sumo Logic and find the... | 1. When you need to add a new collector, access Sumo Logic and find the... | Introduce your instructions with the goal, then dive into the instructions. This is called a stem, and it helps focus the task and keeps you active. |
 
+## Abbreviations
+
+Avoid the use of abbreviations like “e.g.”, “i.e.”, and “etc.”.  Although they may be well understood, such abbreviations don’t support our goal of a conversational tone. In other words, don’t use language you wouldn’t use verbally.
+
+* Instead of "e.g.", use “for example”
+* Instead of "i.e.", use “that is”
+
 ## Acronyms
 
 An acronym uses the first initials of a word or phrase, for brevity. Our industry is full of them, and they can get confusing if their usage isn't clear. Acronyms should be capitalized, if not used directly in a query, etc. Unless the usage is clear from the context, for the first usage, spell out the phrase, then present the acronym in parenthesis. For example: Secure Shell (SSH).
@@ -91,7 +98,7 @@ For example, the first time you use AWS Application Load Balancer (ALB), you int
 
 ## Contractions
 
-Positive contractions are okay (e.g., we're). Do not use negative contractions (e.g., don't, can't, shouldn't), as they can be mistaken for the opposite meaning, especially if someone is reading quickly. Spell out those words.
+Using contractions contributes to our goals of striking a conversational, friendly tone. Use common contractions, like “don’t”, “won’t”, and “you’ll”. Avoid less common contractions, like “should’ve”, or “it’ll”. Do not use negative contractions (don't, can't, shouldn't), as they can be easily mistaken for the opposite meaning. Spell out those words.
 
 <!--
 ### UI Element Names
@@ -107,6 +114,15 @@ Not everything has an intuitive name. It's the very nature of working with a con
 | x                       | Recents             |
 | x                       | Library             |
 -->
+
+
+
+## Documenting processes
+
+When a topic provides instructions for a significant multi-step process, organize the content in sections with headings that signpost the nature of the information. Include "Step" in the heading to make it clear that the section is part of a larger configuration process. For example:
+
+<img src={useBaseUrl('img/contributing/style-steps-headings.png')} alt="headers with steps" width="300"/>
+
 
 ## Patents and trademarks
 
@@ -223,6 +239,12 @@ Use hashtags `#` to indicate the heading level and group content. Always start w
 Headings must be used in correct order. The subsection of an H2 header would be H3 - you wouldn't jump to an H4 or H5. Skipping over a header level affects search and SEO structures to search crawlers like Google. Malformed structures can reduce search and SEO for the page. Docusaurus carefully formats generated pages to ensure strong SEO.
 :::
 
+## Documenting processes
+
+When a topic provides instructions for a significant multi-step process, organize the content in sections with headings that signpost the nature of the information. Include "Step" in the heading to make it clear that the section is part of a larger configuration process. For example:
+
+<img src={useBaseUrl('img/contributing/style-steps-headings.png')} alt="headers with steps" width="300"/>
+
 ## Capitalization
 
 * Title case (initial cap) all doc titles.
@@ -279,7 +301,37 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 ## Lists
 
-You can mix ordered (or numbered) and unordered (or bulleted) lists together. Use extra lines and tabs (or 2 spaces) to move content under these bullets, including other bullets, paragraphs, images, and more. Be careful of tabbing over too far. A third tab will automatically render as code.
+You can mix ordered (or numbered) and unordered (or bulleted) lists together. Use extra lines and tabs (or 2 spaces) to move content under these bullets, including other bullets, paragraphs, images, and more. Be careful of indenting too much; three tab indents will automatically render as code.
+
+In a list item made up of an introductory word or phrase and an explanatory sentence or paragraph, separate the introductory text and the explanation with a period (**.**) rather than a dash (-). For example:
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+1. **Entity**. Select the Entity field in the Record that the resulting Signal should be associated with.
+1. **Description (Optional)**. Define the description for the Signal.
+```
+
+</TabItem>
+<TabItem value="Result">
+
+1. **Entity**. Select the Entity field in the Record that the resulting Signal should be associated with.
+1. **Description (Optional)**. Define the description for the Signal.
+
+</TabItem>
+</Tabs>
+
+
+
+
 
 ### Numbered Lists
 
@@ -589,9 +641,9 @@ In Docusaurus, you can add images, custom files, and embed videos.
 
 Images must be added to the `static/img` folders. The `img` folder structure currently mirrors the doc sections. To stay organized, always replace existing images, rather than adding new images appended with dates or version numbers.
 
-* Images should be in PNG or GIF format
-* Always include image alt text
-* Width parameters should be used to resize oversized and/or pixelated images
+* Must be in PNG or GIF format
+* Always include `alt text` parameter
+* Use `width` parameter to resize oversized and/or pixelated images
 
 1. Save your image(s) in the `/static/img` folder.
 2. Add the import line to the top of your doc, underneath the [front matter header](#front-matter).
@@ -605,7 +657,7 @@ Images must be added to the `static/img` folders. The `img` folder structure cur
    <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" width="<insert-pixel-number>"/>
    ```
 
-<details><summary>What is alt text?</summary>
+<details><summary>What is <code>alt text</code>?</summary>
 
 When you insert an image, describe the image in the Alt text, which explains what the image is meant to show. It is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download.
 
@@ -613,7 +665,7 @@ Alt text is not a caption and it doesn't need to describe the details of an imag
 
 Alt text of some kind is required under [US Government GSA Section 508](https://www.section508.gov/section508_faqs) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
 
-If you are editing and you come across an image without Alt text, add it.
+If you are editing and you come across an image without `alt text`, add it.
 
 </details>
 
@@ -639,6 +691,29 @@ If you are editing and you come across an image without Alt text, add it.
 </TabItem>
 </Tabs>
 
+When adding an image to a bulleted or sequential list, include it in-line with the list item, right after a `<br/>` element, like this:
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+1. Here is a list item. <br/><img src={useBaseUrl('img/image.png')} alt="alt-text" width="400"/>
+```
+
+</TabItem>
+<TabItem value="Result">
+
+1. Here is a list item. <br/><img src={useBaseUrl('img/image.png')} alt="alt-text" width="400"/>
+
+</TabItem>
+</Tabs>
 
 
 #### Screenshots
@@ -1089,7 +1164,11 @@ You can use a link to a file embedding the entire file, or embed a range of code
 
 ## Release Notes
 
-We keep our release notes (aka changelog) concise with links to documentation and images for updated UI elements. You can find the full list of supported frontmatter fields [here](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
+We keep our release notes concise with links to documentation and images for updated UI elements. You're welcome to add [frontmatter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog) such as tags and keywords.
+
+In release notes, do not use relative links when cross-referencing to doc topics. Use the full path, like this:
+
+`For more information, see [where Metrics Operator](https://help.sumologic.com/docs/metrics/metrics-operators/where/)`
 
 ### Text only
 
@@ -1144,7 +1223,7 @@ To add release notes with images:
 
 For Beta docs, we want to publish them, but exclude them from the nav and search engine results so that you need the physical link to access them.
 
-1. Underneath the frontmatter, add the [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) (to prevent search crawlers from picking it up) and the Sumo Beta badge.
+1. Underneath the frontmatter, add the [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) (to prevent search crawlers from picking it up) and the **Beta** badge.
   ```
   ---
   id: xyz-source
