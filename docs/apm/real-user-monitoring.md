@@ -86,7 +86,6 @@ To configure a RUM HTTP Traces source:
           }
         });
    ```
-   * **Environment** (Optional): You can set your `deployment.environment` to a value like `production` or `dev`.
    * **Probabilistic sampling rate** (Optional): Add a **Probabilistic sampling rate** for heavy traffic sites in a decimal value based on percentage, for example, 10% would be entered as `0.1`.
    * **Ignore urls** (Optional): Add a list of URLs not to collect trace data from. Supports regex. For example: `/^https:\/\/www.tracker.com\/.*/, /^https:\/\/api.mydomain.com\/log\/.*/`. Please make sure provided URLs are valid JavaScript flavor regexes.
    * **Custom Tags** (optional): Click **+Add** and enter a key and value for each **Custom Tags** to show in spans from instrumented browsers. This information is saved in the script for `name_of_your_web_service`.
@@ -367,8 +366,9 @@ The content then populates in **Sumo Logic RUM - default** dashboards (inside 
 Once you've installed the RUM app, use our [Explore view](/docs/dashboards-new/explore-view.md) to gain visibility into your web app's performance and end-user activity such as geographic location, browser type, operating systems used. These dashboards visualize RUM metrics gathered from browser tracing instrumentation.
 
 Explore organizes RUM data on four levels:
-* **Application**: corresponds to the value of the application tag set in your RUM JavaScript script above. This should correspond to your whole website defined by its business function, such as "Coffee shop".
-* **Service**: corresponds to the name of the service in your RUM JavaScript script above. This should correspond to a JS code executed in the browser, such as "coffee-shop-web". You can have multiple services for each application. 
+* **Application**: corresponds to the value of the application tag set in your [RUM JavaScript script](#step-2-add-script-to-your-page-header). This should correspond to your whole website defined by its business function, such as "Coffee shop".
+* **Service**: corresponds to the name of the service in your [RUM JavaScript script](#step-2-add-script-to-your-page-header). This should correspond to the JavaScript code executed in your browser, such as "coffee-shop-web". You can have multiple services for each application. 
+* **Environment**: corresponds to your development environment, like `prod` or `dev`. To enable this, add the `deployment.environment` tag and desired value to your [RUM JavaScript script](#step-2-add-script-to-your-page-header).
 * **Action Type**: can be one of:
    * **document loads**: representing loading of actual documents and their resources into the browser
    * **XHR actions**: representing any interaction with a page like click or submit that executes AJAX requests in the background to communicate with the backend, or
