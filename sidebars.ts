@@ -2239,8 +2239,8 @@ module.exports = {
           collapsible: true,
           collapsed: true,
           items: [
-            'contributing/templates/partner-app',
-            'contributing/templates/template-doc'
+            'contributing/templates/generic-doc',
+            'contributing/templates/partner-app-doc',
           ]
         }
       ],
