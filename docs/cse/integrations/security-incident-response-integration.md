@@ -53,7 +53,7 @@ Plugin installation can fail if another installation is running in the backgroun
 
 ## Step 3: Configure MITRE ATT&CK threat feed data
 
-This step is required only if you don’t already have MITRE ATT&CK threat feed data. To see if you do, Navigate to **Threat Intelligence \> MITRE ATT&CK Repository \> Techniques,** in ServiceNow. If you have MITRE data, the that page will contain data that looks like the table shown in substep 6 below, and you can proceed to [Step 4: Configure CI Lookup Rules](#step-4-configure-ci-lookup-rules). If the table is empty perform the steps in this section.
+This step is required only if you don’t already have MITRE ATT&CK threat feed data. To see if you do, Navigate to **Threat Intelligence > MITRE ATT&CK Repository > Techniques,** in ServiceNow. If you have MITRE data, the that page will contain data that looks like the table shown in substep 6 below, and you can proceed to [Step 4: Configure CI Lookup Rules](#step-4-configure-ci-lookup-rules). If the table is empty perform the steps in this section.
 
 1. Navigate to **Threat Intelligence** in the navigation bar. 
 1. Under **Threat Sources**, select **Sources**. 
@@ -121,7 +121,7 @@ After navigating to `sys_properties.list`, search for the properties by entering
 Double-click a property to edit it.
 
 | Property | Description |
-|--|--|
+|:--|:--|
 | `x_sul_sumo_logic_s.configuration_id` | An arbitrary ID assigned by the integration. Do not modify this setting unless recommended by Sumo Logic support. |
 | `x_sul_sumo_logic_s.integration_id` | An arbitrary ID assigned by the integration. Do not modify this setting unless recommended by Sumo Logic support. |
 | `x_sul_sumo_logic_s.sumo_debug` | Controls what level of logging is enabled. If “true” both info and debug level messages are logged. If “false” only error level messages are logged. |
@@ -148,7 +148,7 @@ After an Incident created by the integration is closed in ServiceNow, the Insigh
 
 To view log messages written by the integration:
 
-1. Choose **System Log \> All** in the ServiceNow left-nav pane.
+1. Choose **System Log > All** in the ServiceNow left-nav pane.
 1. Search the messages for “Sumo CSE”.
 
 ![messages-sumo-cse.png](/img/cse/messages-sumo-cse.png)

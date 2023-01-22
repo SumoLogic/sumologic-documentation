@@ -55,7 +55,7 @@ To obtain a Netskope REST API v2 auth token, do the following:
 
 1. Log in to Netskope as the Tenant Admin.
 1. Go to the API portion of the Netskope, **Settings** > **Tools** > **Rest API v2**.
-1. Click "New Token", provide the token name and expiration duration, then add the following endpoints with READ privilege: `/api/v2/events/dataexport/events/alert`, `/api/v2/events/dataexport/events/page`, `/api/v2/events/dataexport/events/infrastructure`, `/api/v2/events/dataexport/events/application`, `/api/v2/events/dataexport/events/network`, `/api/v2/events/dataexport/events/alert/audit`, and `/api/v2/events/data/alert`
+1. Click "New Token", provide the token name and expiration duration, then add the following endpoints with READ privilege: `/api/v2/events/dataexport/events/alert`, `/api/v2/events/dataexport/events/page`, `/api/v2/events/dataexport/events/infrastructure`, `/api/v2/events/dataexport/events/application`, `/api/v2/events/dataexport/events/network`, `/api/v2/events/dataexport/events/audit`, and `/api/v2/events/data/alert`
 1. Copy the token in the next dialog box and save it somewhere as it won't be visible after.
 
 ### Netskope REST API v1 (Deprecated)
@@ -80,7 +80,7 @@ When you create a Netskope Source, you add it to a Hosted Collector. Before cre
 
 To configure A Netskope Source
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 
 1. Select **Netskope**.
@@ -120,7 +120,7 @@ error would occur, if the Source attempts to retry, and the name of the
 event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
@@ -130,7 +130,7 @@ event log in the Health Event Index.
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | config                    | JSON Object          | Yes                       | Contains the configuration parameters for the Source. |                        |
 | schemaRef                 | JSON Object          | Yes                       | Use `{"type":"Netskope"}` for a Netskope Source.                                                | not modifiable         |
 | sourceType                | String               | Yes                       | Use `Universal` for a Netskope Source.                                                          | not modifiable         |
@@ -138,7 +138,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 The following table shows the **config** parameters for a Netskope Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |

@@ -13,7 +13,7 @@ For information on metrics retention, see [Metric Ingestion and Storage](metric-
 
 It is important to understand the volume of metrics that you are ingesting into Sumo Logic.
 
-For billing and reporting purposes, data volume for metrics is measured in Data Points per Minute (DPM). When the DPM limit is exceeded, data is cached on the host and the Source is throttled. To check your current account usage relative to your available DPM limit, see the **Account Overview** tab of the Account page, at **Administration \> Account**.
+For billing and reporting purposes, data volume for metrics is measured in Data Points per Minute (DPM). When the DPM limit is exceeded, data is cached on the host and the Source is throttled. To check your current account usage relative to your available DPM limit, see the **Account Overview** tab of the Account page, at **Administration > Account**.
 
 The calculation of DPM varies according to the type of metric Source.
 

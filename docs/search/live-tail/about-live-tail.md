@@ -59,7 +59,7 @@ You can start a Live Tail session in several ways.
 
 ### New Live Tail page
 
-1. Go to **+ New \> Live Tail**.  
+1. Go to **+ New > Live Tail**.  
 
     ![start live tail page.png](/img/search/livetail/About-Live-Tail/start-live-tail-page.png)
 
@@ -79,7 +79,7 @@ The **Run** button changes to **Running**, and log messages fill the screen.
 
 ### On the Home page
 
-1. Go to **Home \> Live Tail**.  
+1. Go to **Home > Live Tail**.  
 
     ![Live tail on home page.png](/img/search/livetail/About-Live-Tail/live-tail-on-home-page.png)
 

@@ -79,7 +79,7 @@ work with a subquery.
 For example, if the subquery generated the following results:
 
 | `_sourceHost`  | `_sourcecatagory` | `clientip`    |
-|---------------|------------------|-------------|
+|:---------------|:------------------|:-------------|
 | prod-search-1 | stream           | 1.1.1.1     |
 | prod-remix-1  | remix            | 10.10.10.10 |
 
@@ -115,7 +115,7 @@ The keywords clause is not supported with `where` and `if` operations.
 Specifying `keywords` will only return the values from the key-value pairs, where the key is the field name. For example, if the subquery generated the following results:
 
 | `_sourceHost`  | `_sourcecatagory` | `clientip` |
-|---------------|------------------|-------------|
+|:---------------|:------------------|:-------------|
 | prod-search-1 | stream           | 1.1.1.1     |
 | prod-remix-1  | remix            | 10.10.10.10 |
 

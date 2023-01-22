@@ -138,12 +138,12 @@ You must have administrative permissions to install a Windows service. Be sure t
 
 ## Windows service logging and troubleshooting
 
-When Telegraf runs as a Windows service, Telegraf logs messages to Windows event logs. If the Telegraf service fails to start, view error logs by selecting **Event Viewer \> Windows Logs \> Application**.
+When Telegraf runs as a Windows service, Telegraf logs messages to Windows event logs. If the Telegraf service fails to start, view error logs by selecting **Event Viewer > Windows Logs > Application**.
 
 ### Windows service commands
 
 | Command | Description |
-|------------------------------------|-------------------------------|
+|:------------------------------------|:-------------------------------|
 | `telegraf.exe --service install  ` | Install telegraf as a service |
 | `telegraf.exe --service uninstall` | Remove the telegraf service   |
 | `telegraf.exe --service start    ` | Start the telegraf service    |

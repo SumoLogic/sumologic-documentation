@@ -32,7 +32,7 @@ Metrics transformation rules are useful when:
 
 ### Create a Metrics Transformation Rule
 
-1. Navigate to **Manage Data \> Metrics \> Metrics Transformation Rules**. 
+1. Navigate to **Manage Data > Metrics > Metrics Transformation Rules**. 
 1. Click **Add**.  
 
     ![add-button.png](/img/metrics/add-button.png)
@@ -78,13 +78,13 @@ Metrics transformation rules are useful when:
 
 ### Edit a metrics transformation rule
 
-1. Navigate to **Manage Data \> Metrics \> Metrics Transformation Rules**. 
+1. Navigate to **Manage Data > Metrics > Metrics Transformation Rules**. 
 1. Click the rule you want to edit.
 1. Click **Edit** in the right hand pane. 
 
 ### Delete a metrics transformation rule
 
-1. Navigate to **Manage Data \> Metrics \> Metrics Transformation Rules**. 
+1. Navigate to **Manage Data > Metrics > Metrics Transformation Rules**. 
 1. Click the rule you want to delete.
 1. Click **Delete** in the right hand pane. 
 

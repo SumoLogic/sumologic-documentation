@@ -4,10 +4,7 @@ title: tourl Search Operator
 sidebar_label: tourl
 ---
 
-
-
-
-The tourl operator provides you the ability to assign a short name that describes the URL. It is similar to creating a href for the URL with a short name. URLs are generally long and they don't tell you what information is displayed when the URL is opened. A common benefit of using this operator is to provide a description of a URL to display in dashboards.
+The `tourl` operator provides you the ability to assign a short name that describes the URL. It is similar to creating a href for the URL with a short name. URLs are generally long and they don't tell you what information is displayed when the URL is opened. A common benefit of using this operator is to provide a description of a URL to display in dashboards.
 
 
 ## Syntax
@@ -27,7 +24,7 @@ Where:
 * `url_short_name_prefix` (optional) is the prefix, if any, to the short name. Requires suffix.
 * `url_short_name_suffix` (optional) is the suffix, if any, to the short name. Requires prefix.
 
-**Rules**
+## Rules
 
 * If you choose to specify one optional parameter, you must specify both the optional parameters - prefix and suffix. You should provide an empty string ("") if you don't have a value for one.
 * Only fully-formed URLs (for example, `https://google.com`) are supported as values for `url_column_name`.
@@ -47,7 +44,7 @@ If you don't see the menu it is not a supported link.
 * The URL must be from the same host.
 * The menu isn't available in full-screen mode. 
 
-**Example**
+## Example
 
 #### Providing a static name as short name
 

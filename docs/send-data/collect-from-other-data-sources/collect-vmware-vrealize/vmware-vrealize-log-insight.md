@@ -24,7 +24,7 @@ These instructions apply to vRealize Log Insight 8.0, may differ for earlier ver
 
 To set up vRealize Log Insight log collection for Sumo Logic, do the following:
 
-1. Log in to vRealize Log Insight UI, and navigate to **Management \> Event Forwarding**.
+1. Log in to vRealize Log Insight UI, and navigate to **Management > Event Forwarding**.
 
    ![vRealize_EventForwarding.png](/img/send-data/vRealize_EventForwarding.png)
 

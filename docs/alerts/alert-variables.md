@@ -16,7 +16,7 @@ The table below lists the variable descriptions along with which areas of the pr
 Variables must be enclosed by double curly brackets (`{{ }}`). Unresolved variables are given empty quotes `""` as a value. All variables are case-insensitive.
 
 | Variable | Description | Monitors | Scheduled Searches |
-| -- | -- | -- | -- |
+| :-- | :-- | :-- | :-- |
 | `{{Name}}` | The name of the alert. In the delivered payload, this variable is replaced with the Name you assigned to the alert when you created it. | &#9989;| &#9989;|
 | `{{Description}}` | The description of the alert. | &#9989;| &#9989;|
 | `{{MonitorType}}` | The type of alert, either `Logs` or `Metrics`. | &#9989;| &#9989;|
@@ -100,7 +100,7 @@ We recommend you use the new [common variables](alert-variables.md) instead of t
 :::
 
 | Variables | Description | Metrics Monitors | Scheduled Searches |
-| :-- | :-- | -- | -- |
+| :-- | :-- | :-- | :-- |
 |  `{{SearchName}}` | Description of the saved search or Monitor. In the delivered payload, this variable is replaced with the Name you assigned to the search or Monitor when you created it. | &#9989;| &#9989;|
 | `{{SearchDescription}}` | Description of the saved search or Monitor. In the delivered payload, this variable is replaced by the Description you assigned to the search or Monitor when you created it. | &#9989;| &#9989;|
 | `{{SearchQuery}}` | The query used to run the saved search. In the delivered payload, this variable is replaced by your saved search query or metric query. | &#9989;| &#9989;|

@@ -4,9 +4,7 @@ title: replace Search Operator
 sidebar_label: replace
 ---
 
-
-
-The replace operator allows you to replace all instances of a specified string with another string. You can specify the string to replace with a matching regex or literal text. You might use it to find all instances of a name and change it to a new name or to replace punctuation in a field with different punctuation. This operator is useful anytime you need to rename something.
+The `replace` operator allows you to replace all instances of a specified string with another string. You can specify the string to replace with a matching regex or literal text. You might use it to find all instances of a name and change it to a new name or to replace punctuation in a field with different punctuation. This operator is useful anytime you need to rename something.
 
 
 ## Syntax
@@ -19,7 +17,7 @@ replace(<sourceString>, <searchString>, <replaceString>) as <field>
 replace(<sourceString>, /<regex>/, <replaceString>) as <field>
 ```
 
-**Rules**
+## Rules
 
 * An alias is required.
 * If any of the inputs are null, the output is null.
@@ -28,7 +26,7 @@ replace(<sourceString>, /<regex>/, <replaceString>) as <field>
 * The string is case sensitive.
 * When using multiple replace operators on the same field you must use the same alias, see an [example below](#use-the-replace-operator-on-multiple-strings-within-one-field).
 
-#### Regex usage
+### Regex usage
 
 You can use a regex to define what you want to replace. Capture groups are optional. You can use named or numbered capture groups to then reference in the `<replaceString>`.
 
@@ -42,16 +40,16 @@ Where you'd reference the first capture group in the `<replaceString>` with `$1
 
 Using `$0` will reference the whole matching string.
 
-#### Required characters to escape
+### Required characters to escape
 
 If the `<replaceString>` needs to include the dollar sign (`$`), it needs to be escaped as `\\$`. Similarly, backslash itself needs to be escaped as `\\\\`. Some other escapable characters include:
 
 * `\n` : replace with a new line character
 * `\t` : a tab character
 
-**Examples**
+## Examples
 
-#### Replace unique IDs in URLs with a regex
+### Replace unique IDs in URLs with a regex
 
 If you have a URL and would like to see the number of times it was visited, but don't want to aggregate with unique IDs, you can replace the IDs with an empty string. Take the following URL, where in this example it belongs to a field named `url`:
 
@@ -69,7 +67,7 @@ This provides the URL like:
 
 This would allow you to count the number of times the URL was requested without the specific IDs.
 
-#### Replace with regex capture group
+### Replace with regex capture group
 
 Following on from the previous example, you can reference strings in a capture group from your regex to use in the replace string. Take the same URL:
 
@@ -87,9 +85,9 @@ This provides the URL like:
 
 The regex has two capture groups and in the `<replaceString>` we have specified $2 to have the second capture group's value included in the `<replaceString>`.
 
-#### Replace periods in a field with different punctuation
+### Replace periods in a field with different punctuation
 
-To replace periods in a field with different punctuation, you'd use the following query. This query also uses the [Fields](#fields-operator) operator to display only the required fields.
+To replace periods in a field with different punctuation, you'd use the following query. This query also uses the [Fields](fields.md) operator to display only the required fields.
 
 ```sql
 error
@@ -102,7 +100,7 @@ which provides results like:
 
 ![replace](/img/reuse/query-search/replace_operator_example.png)
 
-#### Remove underscores from a field to make it human readable
+### Remove underscores from a field to make it human readable
 
 If you had underscores in a field called `moduleName`, you'd use a query such as:
 
@@ -110,7 +108,7 @@ If you had underscores in a field called `moduleName`, you'd use a query such as
 ... | replace(moduleName, "_", " ") as humanReadableModuleName
 ```
 
-#### Replace periods in a phone number with dashes
+### Replace periods in a phone number with dashes
 
 To replace periods in a phone number with dashes, you'd use a query such as:
 
@@ -120,7 +118,7 @@ phone_num
 | replace(phone_num, ".", "-") as phone_num_dash
 ```
 
-#### Rename a deployment’s abbreviation with a full name
+### Rename a deployment’s abbreviation with a full name
 
 In this example, we have a field called `deploymentName` with values that are abbreviations for the different deployments in an environment, such as `apac-prod`, `eu-prod`, `us-prod`, and `us-dev`. To replace the abbreviations with full titles for each deployment, you'd use a query like this:
 
@@ -132,7 +130,7 @@ replace(deploymentName,"apac","Asia Pacific") as deploymentName
 | replace(deploymentName,"dev","Development") as deploymentName
 ```
 
-#### Use the Replace operator on multiple strings within one field
+### Use the Replace operator on multiple strings within one field
 
 For example, in multiple strings, to replace all number 5's with number 7's, and also replace all 4's with 2's, use multiple replace operations, as shown in the following query:
 

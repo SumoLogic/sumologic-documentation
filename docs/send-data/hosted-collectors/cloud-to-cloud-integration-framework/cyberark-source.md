@@ -24,7 +24,7 @@ When you create a CyberArk EPM Source, you add it to a Hosted Collector. Before 
 
 **To configure a CyberArk EPM Source**
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data > Collection > Collection**.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select **CyberArk EPM**. <br/><img src={useBaseUrl('img/send-data/cyberark-source.png')} alt="cyberark-source.png" width="450"/>
 1. **Name**. Enter a Name to display for the Source in the Sumo Logic web application.

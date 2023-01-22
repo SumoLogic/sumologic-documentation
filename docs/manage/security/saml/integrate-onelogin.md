@@ -7,7 +7,7 @@ description: Learn how to configure OneLogin and Sumo Logic to allow Sumo Logic 
 ## Availability
 
 | Account Type | Account Level |
-|--------------|---------------------------------------------------------------------------------|
+|:--------------|:---------------------------------------------------------------------------------|
 | Cloud Flex   | Trial, Enterprise |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -71,7 +71,7 @@ Read the "Limitations section" on [Set Up SAML for Single Sign-On](set-up-saml.
 
 This section has instructions for configuring SAML in Sumo Logic.
 
-1. Go to **Administration \> Security \> SAML**.
+1. Go to **Administration > Security > SAML**.
 1. Click **+ Add Configuration** to create a new configuration.    
 
     ![config-list.png](/img/security/config-list.png)

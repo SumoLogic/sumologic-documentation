@@ -62,7 +62,7 @@ The following examples use this sample log message:
 The JSON operator supports the following JSONPath expressions:
 
 | JSONPath  | Description |
-| -- | -- |
+| :-- | :-- |
 | $ | The root object or element. |
 | @ | The current object or element. |
 | . or \[\] | Child operator. |

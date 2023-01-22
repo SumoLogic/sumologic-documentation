@@ -27,7 +27,7 @@ To [create a metrics visualization](../metric-charts/create-metrics-visualizati
 Metrics queries are color-coded to help you identify key elements.
 
 | Color | Purpose |
-|-----------|---------------------------------|
+|:-----------|:---------------------------------|
 | Green     | Tag or Keyword (cluster, 404)   |
 | Blue      | Value (apache/access)           |
 | Purple    | Operators (avg, sum)            |

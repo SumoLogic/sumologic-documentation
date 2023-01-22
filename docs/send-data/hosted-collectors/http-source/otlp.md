@@ -1,19 +1,9 @@
 ---
 id: otlp
-title: OTLP/HTTP Source (Beta)
+title: OTLP/HTTP Source
+sidebar_label: OTLP
 description: Use an HTTP OTLP Source to collect OTLP formatted Logs, Metrics, and Traces data.
 ---
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-:::note
-This feature is in Beta. To participate, contact your Sumo account executive.
-:::
-
 
 An OTLP/HTTP Source is an endpoint for receiving OTLP formatted Logs, Metrics, and Traces. This is an alternative option to installing an OpenTelemetry Collector for sending OTLP data to Sumo Logic. 
 
@@ -21,7 +11,7 @@ An OTLP/HTTP Source is an endpoint for receiving OTLP formatted Logs, Metrics, 
 
 To configure an OTLP/HTTP Source:
 
-1. In the Sumo Logic web interface, select **Manage Data \> Collection \> Collection**. 
+1. In the Sumo Logic web interface, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **OTLP/HTTP**. <br/> ![OTLP:HTTP source icon.png](/img/send-data/OTLP-HTTP-source-icon.png)
 1. Enter a **Name** for the Source. A description is optional. <br/> ![OTLP:HTTP basic configuration settings.png](/img/send-data/OTLP-HTTP-basic-configuration-settings.png)
@@ -53,7 +43,7 @@ When you set up an OTLP/HTTP Source, a unique URL is assigned to the Source. Th
 The following table shows the URL format based on data types.
 
 | Data Type | URL Format                |
-|-----------|---------------------------|
+|:-----------|:---------------------------|
 | Logs      | `<source_url>/v1/logs`    |
 | Metrics   | `<source_url>/v1/metrics` |
 | Traces    | `<source_url>/v1/traces`  |

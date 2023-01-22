@@ -714,7 +714,7 @@ attribute.
 **Supported JSONPath syntax elements**
 
 | JSONPath  | Description                                                  |
-|-----------|--------------------------------------------------------------|
+|:-----------|:--------------------------------------------------------------|
 | $         | The root object or element.                                  |
 | . or \[\] | Child operator.                                              |
 | \*        | Wildcard. All objects or elements regardless of their names. |

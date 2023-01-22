@@ -1533,7 +1533,7 @@ module "sumo-module" {
 The following table provides a list of all source parameters and their default values. See the [sumologic-solution-templates/aws-observability-terraform/app-module/main.auto.tfvars](http://sumologic-solution-templates/aws-observability-terraform/app-module/main.auto.tfvars) file for complete code.
 
 | Parameter | Description | Default |
-|--|--|--|
+|:--|:--|:--|
 | `access_id` | Sumo Logic Access ID. See [Access Keys](access keyes) for information. Ignore this setting if you entered it in Source Parameters.	| Ignore if already configured in **main.auto.tfvars** file. |
 | `access_key` | Sumo Logic Access Key. See Access Keys for information. Ignore this setting if you entered it in Source Parameters. | Ignore if already configured in main.auto.tfvars file.
 | `environment` | Enter au, ca, de, eu, jp, us2, in, fed, or us1. See Sumo Logic Endpoints and Firewall Security for information. Ignore this setting if you entered it in Source Parameters. | Ignore if already configured in main.auto.tfvars file. |

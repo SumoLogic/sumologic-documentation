@@ -34,7 +34,7 @@ Complementary to the [action](schema-attributes.md) field, the `normalizedActio
 standard way across Records. `normalizedAction` is meant to describe an attempt to perform an action, using the success boolean as a modifier to indicate whether or not the action was successful. Note that `normalizedAction` should be used with [normalizedResource](cse-normalized-classification.md) to indicate where an action was attempted, or the resource or entity upon which the action was attempted.
 
 | Enforced Output Value | Description |
-|--|--|
+|:--|:--|
 | abort | Use for actions synonymous with "abort". For instance, in an event describing the attempt, successful or not, to interrupt an ongoing task. |
 | allow | Use for actions synonymous with "allow”. For instance, in an event describing the attempt, successful or not, to permit an object or the occurrence of an activity. This is common in actions pertaining to network traffic.                                            |
 | change | Use for actions synonymous with "change". For instance, in an event describing the attempt, successful or not, to modify a resource. |
@@ -68,7 +68,7 @@ standard way across Records. `normalizedAction` is meant to describe an attempt
 Complementary to the [resource](schema-attributes.md) field, this field describes the resource being acted upon or otherwise referenced within a Record in a standard way across Records. Intended to be used to provide further normalized context to a Record, particularly in tandem with [normalizedAction](cse-normalized-classification.md).
 
 | Enforced Output Value | Description |
-|--|--|
+|:--|:--|
 | network | Use where the resource being acted upon or referenced in a Record is or pertains to network traffic. |
 | email | Use where the resource being acted upon or referenced in a Record pertains to email or email delivery. |
 | malware | Use where the resource being acted upon or referenced in a Record pertains to malware itself or the prevention, detection, or removal of malware. |
@@ -93,7 +93,7 @@ Complementary to the [resource](schema-attributes.md) field, this field describe
 Complementary to the [cause](schema-attributes.md) \field, this field describes the reason for any particular outcome in a Record in a standard way.
 
 |  Enforced Output Value |  Description |
-|--|--|
+|:--|:--|
 | incorrect password | For a Record describing an authentication failure where the cause of the failure was an incorrect password. |
 | incorrect username | For a Record describing an authentication failure where the cause of the failure was an incorrect username. |
 | failed challenge | For a Record describing an authentication failure where the cause of the failure was a failed multi-factor authentication challenge or other secondary authentication challenge, such as a security question. |
@@ -114,7 +114,7 @@ Severity score on a scale of 0 to 10 with 0 being informational and 10 being cri
 #### Failed User Logon
 
 |                        |                    |
-|------------------------|--------------------|
+|:------------------------|:--------------------|
 | **Record Type**        | Authentication     |
 | **normalizedAction**   | logon              |
 | **normalizedResource** | account            |
@@ -124,7 +124,7 @@ Severity score on a scale of 0 to 10 with 0 being informational and 10 being cri
 #### Firewall Denied Traffic
 
 |                        |           |
-|------------------------|-----------|
+|:------------------------|:-----------|
 | **Record Type**        | Network   |
 | **normalizedResource** | network   |
 | **normalizedAction**   | deny      |
@@ -135,7 +135,7 @@ Severity score on a scale of 0 to 10 with 0 being informational and 10 being cri
 #### Successful Process Execution
 
 |                        |                 |
-|------------------------|-----------------|
+|:------------------------|:-----------------|
 | **Record Type**        | EndpointProcess |
 | **normalizedResource** | process         |
 | **normalizedAction**   | execute         |
@@ -144,7 +144,7 @@ Severity score on a scale of 0 to 10 with 0 being informational and 10 being cri
 #### Successful Account Management
 
 |                        |         |
-|------------------------|---------|
+|:------------------------|:---------|
 | **Record Type**        | Audit   |
 | **normalizedAction**   | change  |
 | **normalizedResource** | account |
