@@ -50,7 +50,7 @@ Throttling is in place to protect both our customers and Sumo Logic from sudden 
 The multiplier for the per day average ingestion total varies based on the account size. 
 
 | Account Size - Daily Average | Multiplier |
-|--|--|
+|:--|:--|
 | Less than or equal to 100GB per day. | 10x |
 | Greater than 100GB per day and less than or equal to 256GB per day.  | 8x |
 | Greater than 256GB per day and less than or equal to 512 GB per day. | 6x |

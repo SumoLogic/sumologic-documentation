@@ -7,7 +7,7 @@ description: Monitor the health of your Collectors and Sources.
 ## Availability
 
 | Account Type | Account Level |
-|--------------|---------------------------------------------------------------------------------|
+|:--------------|:---------------------------------------------------------------------------------|
 | CloudFlex | Professional, Enterprise |
 | Credits | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -38,7 +38,7 @@ The health events table allows you to easily view and investigate problems getti
 
 On the health events table, you can search, filter, and sort incidents by key aspects like severity, resource name, event name, resource type, and opened since date.
 
-The health events table is at **Manage Data** \> **Monitoring** \> **Health Events**.
+The health events table is at **Manage Data** > **Monitoring** > **Health Events**.
 
 ![health events table.png](/img/health-events/health-events-table.png)
 
@@ -67,7 +67,7 @@ area and provide details of the event. The following table shows the
 common parameters in the order that they are found in health event logs.
 
 | Parameter | Description | Data Type |
-|--|--|--|
+|:--|:--|:--|
 | status | Either `Healthy` or `Unhealthy` based on the event. | String |
 | details | The details of the event include the type as `trackerId`, the `name` of the event, and a `description`. | JSON object of Strings |
 | eventType | Health events have a value of `Health-Change`. | String |
@@ -127,7 +127,7 @@ Create a scheduled search to get alerts for specific health events.
 Creating a query that defines built-in metadata field values in the scope can help improve search performance and limit results to what you're investigating. [Metadata](../search/get-started-with-search/search-basics/built-in-metadata.md) fields are assigned to health event logs as follows:
 
 | **Metadata Field** | **Assignment Description** |
-|--|--|
+|:--|:--|
 | _sourceCategory | Value of the [common parameter](#common-parameters), `subsystem`. |
 | _sourceName | Value of the [common parameter](#common-parameters), `eventName`. |
 | _sourceHost | The remote IP address of the host that made the request. If not available the value will be `no_sourceHost`. |

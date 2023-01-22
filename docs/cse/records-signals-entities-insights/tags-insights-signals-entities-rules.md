@@ -27,7 +27,7 @@ CSE UI. Some can inherit tags from another item. The table below
 summarizes this behavior.
 
 | Type                     | Supports explicit tag assignment? | Items inherit tags from...      |
-|--------------------------|-----------------------------------|---------------------------------|
+|:--------------------------|:-----------------------------------|:---------------------------------|
 | Built-in rule            | yes                               | \-                              |
 | Custom rule              | yes                               | \-                              |
 | Custom Insight           | yes                               | \-                              |

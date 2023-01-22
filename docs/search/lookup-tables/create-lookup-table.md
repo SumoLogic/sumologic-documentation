@@ -54,7 +54,7 @@ Currently, the ability to reference a field in a new style Lookup Table in a
 The number of Lookup Tables you can have depends on what type of Sumo Logic account you have, as shown in the table below.
 
 | Account Type | Lookup Tables allowed per org |
-| -- | -- |
+| :-- | :-- |
 | Professional (Cloud Flex) | 10 |
 | Enterprise (Cloud Flex) | 100 |
 | Essentials (Cloud Flex Credits) | 10 |

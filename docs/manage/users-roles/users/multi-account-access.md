@@ -55,7 +55,7 @@ As an administrator using SAML, if you have users that need to view and switch t
 
 Sumo Logic Multi-account users may have access to organizations that use different [Password Policies](../../security/set-password-policy.md). With Multi-account, the password policy data from different organizations is centralized.
 
-There you can set the following account settings in **Administration \> Security \> Password Policy**:
+There you can set the following account settings in **Administration > Security > Password Policy**:
 
 * **Passwords expire in** (days)
 * **Password reuse after** (number of unique passwords you must use before you can reuse an old password)

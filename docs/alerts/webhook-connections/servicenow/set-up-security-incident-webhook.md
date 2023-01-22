@@ -28,7 +28,7 @@ To configure a Webhook connection, you must have a Sumo Logic role that grants y
 
 To set up a ServiceNow Security Incident Webhook connection:
 
-1. Go to **Manage Data \> Monitoring \> Connections**.
+1. Go to **Manage Data > Monitoring > Connections**.
 1. On the **Connections** page click **Add**.
 1. Click **Webhook**.
 1. In the **Create Connection** dialog, enter the **Name** of the connection.

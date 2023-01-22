@@ -42,7 +42,7 @@ When you create an AWS S3 Source, you add it to a Hosted Collector. Before crea
 
     Sumo Logic scans an S3 bucket based on the path expression supplied, or receives an SNS notification when a new file object is created. As part of this, we receive a file name (key) and the object's ID. It's compared against a list of file objects already ingested. If a matching file ID is not found the contents of the file are ingested in full.
 
-    When you overwrite a file in S3, the file object gets a new version ID and as a result, Sumo Logic sees it as a new file and ingests all of it. If with each version you post to S3 you are simply adding to the end of the file, then this will lead to duplicate messages ingested, one message for each version of the file you created in S1.   
+    When you overwrite a file in S3, the file object gets a new version ID and as a result, Sumo Logic sees it as a new file and ingests all of it. If with each version you post to S3 you are simply adding to the end of the file, then this will lead to duplicate messages ingested, one message for each version of the file you created in S3.   
 * Duplicate logs are collected when changing the AWS versioned APIs setting from Yes to No and the S3 bucket has versioning enabled.
 * Glacier objects will not be collected and are ignored.
 * If you're using SNS you need to create a separate topic and subscription for each Source.
@@ -81,7 +81,7 @@ import Iframe from 'react-iframe';
 
 ## Create an AWS S3 Source
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic select **Manage Data > Collection > Collection**. 
 1. On the **Collectors** page, click **Add Source** next to a Hosted** **Collector, either an existing Hosted Collector, or one you have created for this purpose.
 1. Select **Amazon S3**.
 1. Enter a name for the new Source. A description is optional.
@@ -137,12 +137,12 @@ import Iframe from 'react-iframe';
 
 The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](configure-your-aws-source-cloudformation.md).
 
-1. Go to **Services \>** **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step.
+1. Go to **Services >** **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step.
  Make sure that the topic and the bucket are in the same region.
 
-1. Again go to **Services \>** **Simple Notification Service** and click **Create Subscription**. Paste the **Topic ARN** from step B above. Select **HTTPS** as the protocol and enter the **Endpoint** URL provided while creating the S3 source in Sumo Logic. Click **Create subscription** and a confirmation request will be sent to Sumo Logic. The request will be automatically confirmed by Sumo Logic.
+1. Again go to **Services >** **Simple Notification Service** and click **Create Subscription**. Paste the **Topic ARN** from step B above. Select **HTTPS** as the protocol and enter the **Endpoint** URL provided while creating the S3 source in Sumo Logic. Click **Create subscription** and a confirmation request will be sent to Sumo Logic. The request will be automatically confirmed by Sumo Logic.
 
-1. Select the **Topic** created in step B and navigate to **Actions \> Edit Topic Policy**. Use the following policy template, replace the `SNS-topic-ARN` and `bucket-name` placeholders in the `Resource` section of the JSON policy with your actual SNS topic ARN and S3 bucket name:
+1. Select the **Topic** created in step B and navigate to **Actions > Edit Topic Policy**. Use the following policy template, replace the `SNS-topic-ARN` and `bucket-name` placeholders in the `Resource` section of the JSON policy with your actual SNS topic ARN and S3 bucket name:
 
     ```json
     {
@@ -165,7 +165,7 @@ The following steps use the AWS SNS Console. You may instead use AWS CloudForma
     }
     ```
 
-1. Go to **Services \> [S3](https://s3.console.aws.amazon.com/s3/buckets/)** and select the bucket to which you want to attach the notifications. Navigate to **Properties \> Events \> Add Notification**. Enter a **Name** for the event notification. In the **Events** section select **All object create events**. In the **Send to** section (notification destination) select **SNS Topic**. An **SNS** section becomes available, select the name of the topic you created in step B from the dropdown. Click **Save**.
+1. Go to **Services > [S3](https://s3.console.aws.amazon.com/s3/buckets/)** and select the bucket to which you want to attach the notifications. Navigate to **Properties > Events > Add Notification**. Enter a **Name** for the event notification. In the **Events** section select **All object create events**. In the **Send to** section (notification destination) select **SNS Topic**. An **SNS** section becomes available, select the name of the topic you created in step B from the dropdown. Click **Save**.
 
 ### Complete setup in Sumo Logic
 
@@ -198,7 +198,7 @@ Each topic needs a separate filter (prefix/suffix) so that collection does not o
 There is a [community supported script](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo-Logic-Tools/Event_Based_S3_Automation) available that configures event based object discovery on existing AWS Sources.
 :::
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic select **Manage Data > Collection > Collection**.
 1. On the Collection page navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided, you will use this in step 13.C when creating your subscription.
 1. Complete steps 13.B through 13.E for [configuring SNS Notifications](#set-up-sns-in-aws-highly-recommended).
 

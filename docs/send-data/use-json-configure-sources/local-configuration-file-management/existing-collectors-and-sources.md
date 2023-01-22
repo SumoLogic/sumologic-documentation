@@ -15,7 +15,7 @@ The Sumo web application can generate ready-to-use JSON for the Sources that 
 
 **To get the JSON configuration and create a configuration file**
 
-1. In the Sumo web app select **Manage Data \> Collection \> Collection**. 
+1. In the Sumo web app select **Manage Data > Collection > Collection**. 
 1. Select the information icon to the right of the Collector.
 1. Copy and paste the displayed JSON into a new text file. Name the text file `sources.json`, or any other name that makes sense. The file must have a `.json` extension
 1. Save the file to a location accessible by the Collector and make a note of the file path.
@@ -33,7 +33,7 @@ When a Collector starts it reads the `syncSources` parameter from the `user.pr
 Prior to version 19.137, the Collector used the `sumo.conf` file for Source configuration. If you are installing a legacy Collector, see [sumo.conf](/docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) for information.
 
 |  Parameter |  Type |  Description |
-|--|--|--|
+|:--|:--|:--|
 | syncSources   | String   | Sets the path to the JSON describing Sources to configure on registration, which will be continuously monitored and synchronized with the Collector configuration. |
 
 **To add the syncSources parameter**

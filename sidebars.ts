@@ -168,6 +168,7 @@ module.exports = {
               link: {type: 'doc', id: 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/index'},
               items: [
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
@@ -353,7 +354,7 @@ module.exports = {
             'send-data/collect-from-other-data-sources/collect-logs-palo-alto-networks-cortex',
             {
               type: 'category',
-              label: 'Telegraf',
+              label: 'Collect Metrics from Telegraf',
               collapsible: true,
               collapsed: true,
               link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/collect-metrics-telegraf/index'},
@@ -1899,6 +1900,7 @@ module.exports = {
         'integrations/security-threat-detection/f5-big-ip-ltm',
         'integrations/security-threat-detection/imperva-incapsula',
         'integrations/security-threat-detection/keeper-security',
+        'integrations/security-threat-detection/netskope-legacy-collection',
         'integrations/security-threat-detection/netskope',
         'integrations/security-threat-detection/observable-networks',
         'integrations/security-threat-detection/palo-alto-networks-6',
@@ -2237,8 +2239,8 @@ module.exports = {
           collapsible: true,
           collapsed: true,
           items: [
-            'contributing/templates/partner-app',
-            'contributing/templates/template-doc'
+            'contributing/templates/generic-doc',
+            'contributing/templates/partner-app-doc',
           ]
         }
       ],

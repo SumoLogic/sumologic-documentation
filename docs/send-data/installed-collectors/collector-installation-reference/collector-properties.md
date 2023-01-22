@@ -70,7 +70,7 @@ Collector versions 19.253-26+ support **wrapper** configuration parameters.
 :::
 
 | Parameter | Type | Description | Default Value |
-|--|--|--|--|
+|:--|:--|:--|:--|
 | alerts.ttl.min | integer  | Duration in minutes before deleting alerts stored in the Collector directory. | 180 |
 | aws.metadata.cache.enabled | boolean  | Enable fetching and caching AWS-specific local metadata. | true |
 | aws.metadata.cache.fetch.timeout.ms | integer  | HTTP connection timeout in milliseconds when attempting to fetch AWS-specific local metadata. | 1000 |

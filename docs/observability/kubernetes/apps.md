@@ -62,7 +62,7 @@ The following dashboard is an example of one of the many pre-configured app dash
 This feature is available in the following account plans.
 
 | Account Type | Account Level                                  |
-|--------------|------------------------------------------------|
+|:--------------|:------------------------------------------------|
 | CloudFlex    | Trial, Enterprise                              |
 | Credits      | Trial, Enterprise Operations, Enterprise Suite |
 

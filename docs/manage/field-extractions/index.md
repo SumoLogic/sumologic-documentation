@@ -17,7 +17,7 @@ You need the **Manage field extraction rules** [role capability](../users-roles
 
 ![FER page.png](/img/field-extraction-rules/fer-page.png)
 
-The **Manage Data** \> **Logs** \> **Field Extraction Rules** page displays the following information: 
+The **Manage Data** > **Logs** > **Field Extraction Rules** page displays the following information: 
 
 When hovering over a row in the table there are icons that appear on the far right for editing, disabling and deleting the rule.
 
@@ -31,7 +31,7 @@ When hovering over a row in the table there are icons that appear on the far ri
 
 You can view the fields created in your account and what features are referencing them on the [Fields](/docs/manage/fields.md) page.
 
-On the **Manage Data** \> **Logs** \> **Field Extraction Rules** page you can:
+On the **Manage Data** > **Logs** > **Field Extraction Rules** page you can:
 
 * Click **+ Add** to [create a Field Extraction Rule](create-field-extraction-rule.md).
 * Search Field Extraction Rules by name and scope.
@@ -62,7 +62,7 @@ import Iframe from 'react-iframe';
 
 Changes to Field Extraction Rules are implemented immediately.
 
-1. In Sumo Logic, go to **Manage Data** \> **Logs** \> **Field Extraction Rules.**
+1. In Sumo Logic, go to **Manage Data** > **Logs** > **Field Extraction Rules.**
 1. Find the rule in the table and click it. A window appears on the right of the table, click the **Edit** button.
 1. Make changes as needed and click **Save** when done.
 
@@ -70,7 +70,7 @@ Changes to Field Extraction Rules are implemented immediately.
 
 Deleting a Field Extraction Rule doesn't delete the fields it was parsing. You can delete any unwanted fields on the [Fields](/docs/manage/fields.md) page.
 
-1. In Sumo Logic, go to **Manage Data** \> **Logs** \> **Field Extraction Rules.**
+1. In Sumo Logic, go to **Manage Data** > **Logs** > **Field Extraction Rules.**
 1. Find the rule to delete in the table and click it. A window appears on the right of the table, click the **More Actions** button, and select **Delete**.
 
 import DocCardList from '@theme/DocCardList';

@@ -22,7 +22,7 @@ We recommend forking the repo, creating all content changes in branches, and sub
 
 Docusaurus requires the following to build on locals:
 
-* [NodeJS](https://nodejs.org/en/download/) version >= 14
+* [NodeJS](https://nodejs.org/en/download/) version >= 16.14
 * [Yarn](https://yarnpkg.com/en/) version >= 1.5, you can install with [Homebrew](https://brew.sh/) if you have that installed: `brew install yarn`
 
 The site includes translations into other languages. To build on your local:

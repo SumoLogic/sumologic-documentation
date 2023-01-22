@@ -21,7 +21,7 @@ You can check whether a given data source is already supported by reviewing its 
 The mapping requirements are:
 
 | Output field | Mapping requirement |
-|--|--|
+|:--|:--|
 | `objectType` | This field is populated as a result of the value selected for the Record Type in the log mapping. It must be set to *Authentication*. |
 | `normalizedAction` | Set to *logon* or *domainLogon* depending on the nature of the authentication attempt, as described in [Normalized Authentication Rules](normalized-authentication-rules.md), below. |
 | `success` | Set to *true* if the logon was successful, or *false* if it was not.  |
@@ -63,7 +63,7 @@ CSE determines which value of of `normalizedAction` is appropriate for a given l
 * Windows Event Codes 4624 and 4625 use the below table to dynamically assign values (Descriptions are based on official [Microsoft documentation](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4624)).
 
 | Logon Type | Logon Title | Description | Value of normalizedAction |
-|--|--|--|--|
+|:--|:--|:--|:--|
 | 1  | System | Used only by the System account, for example at system startup. | \<none\> |
 | 2  | Interactive | A user logged on to this computer. | *logon* |
 | 3  | Network | A user or computer logged on to this computer from the network. | *domainLogon* |

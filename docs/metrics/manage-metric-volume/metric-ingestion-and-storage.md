@@ -16,7 +16,7 @@ Sumo does not ingest metric data that is more than one week old.
 Metrics data is stored in Sumo Logic as raw data points and one-hour resolution roll-ups. The data is retained according to the following retention policy:
 
 | Data Type Retained | Retention Period |
-|------------------------|----------------------|
+|:------------------------|:----------------------|
 | Raw                    | 30 days               |
 | 1-hour resolution      | 13 months            |
 

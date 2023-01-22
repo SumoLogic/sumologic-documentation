@@ -111,7 +111,7 @@ To enable CSE to successfully process the log, we need to create the
 following fields listed in the table below.
 
 | Field          | Parse Expression                                                                                       |
-|----------------|--------------------------------------------------------------------------------------------------------|
+|:----------------|:--------------------------------------------------------------------------------------------------------|
 | `_siemMessage` | `json field=_raw "MESSAGE" as _siemMessage`                                                            |
 | `_siemEventId` | `json field=_raw "PROGRAM" as _siemEventId | parse regex field=_siemEventId "bro_(\<_siemEventI\>.*)"` |
 | `_siemFormat`  | `“bro” as _siemFormat`                                                                                 |
@@ -121,7 +121,7 @@ following fields listed in the table below.
 
 Perform these steps for each of the FERs.
 
-1. In the Sumo Logic UI, go to **Manage Data \> Logs \> Field Extraction Rules**.
+1. In the Sumo Logic UI, go to **Manage Data > Logs > Field Extraction Rules**.
 1. Click **Add Rule**.
 1. In the **Add Field Extraction Rule** pane:
 

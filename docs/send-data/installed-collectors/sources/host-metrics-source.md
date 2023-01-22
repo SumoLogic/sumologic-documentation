@@ -66,7 +66,7 @@ The following tables list the available host metrics.
 ### CPU Metrics
 
 |  Metric | Units |  Description |
-|---------------------|-----------|--------------------------------------------|
+|:---------------------|:-----------|:--------------------------------------------|
 | CPU_User            | %         | Total system cpu user time                 |
 | CPU_Sys             | %         | Total system cpu kernel time               |
 | CPU_Nice            | %         | Total system cpu nice time                 |
@@ -87,7 +87,7 @@ Load averages are not available on Windows platform
 ### Memory Metrics
 
 |  Metric | Units |  Description |
-|---------------------|-----------|--------------------------------------------|
+|:---------------------|:-----------|:--------------------------------------------|
 | Mem_Total | Bytes | Total amount of physical RAM |
 | Mem_Free | Bytes | The amount of physical RAM left unused by the system |
 | Mem_Used | Bytes | Total used system memory, calculated as<br/>`MemTotal - MemFree`<br/>This metric includes the space allocated in buffers and in the Page Cache, which can make it appear that a larger portion of physical RAM is being consumed than is actually in use. |
@@ -101,7 +101,7 @@ Load averages are not available on Windows platform
 ### TCP Metrics
 
 | Metric | Units | Description |
-|-------------------|-----------|----------------------------------|
+|:-------------------|:-----------|:----------------------------------|
 | TCP_InboundTotal  | Count     | TCP inbound connection count     |
 | TCP_OutboundTotal | Count     | TCP outbound connection count    |
 | TCP_Established   | Count     | TCP established connection count |
@@ -125,7 +125,7 @@ display these metrics as a rate per second
 Example: `metric=Net_InBytes Interface=eth0 | rate`
 
 |  Metric | Units | Description |
-|----------------|-----------|----------------------------|
+|:----------------|:-----------|:----------------------------|
 | Net_InPackets  | Packets   | Number of received packets |
 | Net_OutPackets | Packets   | Number of sent packets     |
 | Net_InBytes    | Bytes     | Number of received bytes   |
@@ -143,7 +143,7 @@ Disk metrics have two additional dimensions:
 Example: `metric=Disk_WriteBytes | rate`
 
 |  Metric |  Units |  Description |
-|------------------------|------------|---------------------------------------|
+|:------------------------|:------------|:---------------------------------------|
 | Disk_Reads             | Operations | Number of physical disk reads         |
 | Disk_ReadBytes         | Bytes      | Number of physical disk bytes read    |
 | Disk_Writes            | Operations | Number of physical disk writes        |

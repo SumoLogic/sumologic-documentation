@@ -51,7 +51,7 @@ After a partition is created in a given tier, you can't change its tier. If you 
 How you can search and use your ingested data varies by the Data Tier it resides in, as described in the following table. 
 
 | Feature support | Continuous Tier | Frequent Tier | Infrequent Tier |
-| -- | -- | -- | -- |
+| :-- | :-- | :-- | :-- |
 | Centralized, secure, multi-tenant cloud-native platform | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
 | Data replication across availability zones, data encryption | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
 | Interactive queries (UI) | ![check](/img/reuse/check.png)<br/>Partitions can be specified, but are optional. |![check](/img/reuse/check.png)<br/>Partition or `_dataTier` must be specified. |![check](/img/reuse/check.png)<br/>Partition or `_dataTier` must be specified. |

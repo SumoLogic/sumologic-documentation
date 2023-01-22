@@ -88,7 +88,7 @@ The system upon which you install the Network Sensor must have the following res
 below. 
 
 | Operating System                   | Cores (CPU) | Memory (RAM) | Storage (Disk) |
-|------------------------------------|-------------|--------------|----------------|
+|:------------------------------------|:-------------|:--------------|:----------------|
 | CentOS 6, 7, 8 or Ubuntu 16, 18,20 | 4           | 4GB          | 250GB          |
 
 :::note
@@ -111,7 +111,7 @@ reboot
 ### Throughput-dependent resource requirements
 
 | Throughput | Specs | Cores (CPU) | Memory (RAM) | Storage (Disk) |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | 250mbps | 4 | 4GB | 250GB |
 | 500mbps | 5 | 8GB | 250GB |
 | 750mbps | 6 | 12GB | 250GB |
