@@ -1,5 +1,5 @@
 ---
-id: python
+slug: /apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python
 title: Python OpenTelemetry auto-instrumentation
 sidebar_label: Python
 description: Learn how to configure OpenTelemetry Python instrumentation to capture data from the python written code applications.
@@ -32,7 +32,6 @@ opentelemetry-distro = "0.32b0" opentelemetry-exporter-otlp-proto-http = "1.12.0
 ## Application specific packages installation
 
 The next step is related to the installation of the instrumented packages used in the application. This step can be done by one simple command in the root directory of your Python application. Execution of the command below will install corresponding instrumented packages used by the application. This solution is recommended.
-
 ```bash
 $ opentelemetry-bootstrap --action=install
 ```
@@ -55,7 +54,7 @@ After successful installation of the packages it is important to properly config
    ```bash
    OTEL_EXPORTER_OTLP_ENDPOINT=http://HOSTNAME:4318
    ```
-   For Kubernetes environments, see the [available endpoints for a direct connection](../set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](../set-up-traces-collection-for-other-environments.md).
+   For Kubernetes environments, see the [available endpoints for a direct connection](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md).
 * Configures the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
    ```bash
    OTEL_SERVICE_NAME=SERVICE_NAME
@@ -85,7 +84,7 @@ By default, OpenTelemetry uses W3C context propagation standard. If application 
       ```bash
       export OTEL_PROPAGATORS=b3,b3multi,tracecontext,baggage
       ```
-* **AWS X-Ray**- common for applications running in AWS Services:
+* **AWS X-Ray** - common for applications running in AWS Services:
    * Propagator package installation:
       ```bash
       $ pip install opentelemetry-propagator-aws-xray==1.0.1
@@ -94,7 +93,7 @@ By default, OpenTelemetry uses W3C context propagation standard. If application 
       ```bash
       export OTEL_PROPAGATORS=xray,tracecontext,baggage
       ```
-* **Jaeger**- common for Jaeger instrumented applications  
+* **Jaeger** - common for Jaeger instrumented applications  
    * Propagator package installation:
       ```bash
       $ pip install opentelemetry-propagator-jaeger==1.12.0rc2
@@ -103,7 +102,7 @@ By default, OpenTelemetry uses W3C context propagation standard. If application 
       ```bash
       export OTEL_PROPAGATORS=jaeger,tracecontext,baggage
       ```
-* **OpenTracing**- common for OT instrumented applications  
+* **OpenTracing** - common for OT instrumented applications  
    * Propagator package installation:
       ```bash
       $ pip install opentelemetry-ot-trace==0.32b0
@@ -115,8 +114,8 @@ By default, OpenTelemetry uses W3C context propagation standard. If application 
 
 ## Instrumentation notes
 
-* For **Flask application** instrumentation, you'll need to disable debug mode (`debug=false`).
-* In case of **Django**, application server has to be run with the `--noreload` flag, for example:
+* For **Flask application** instrumentation debug mode has to be disabled (`debug=false`).
+* In case of **Django**, the application server has to be run with `--noreload` flag such as:
    ```bash
    opentelemetry-instrument python3 manage.py runserver ---noreload
    ```
