@@ -13,7 +13,7 @@ To configure this option, you must be a Sumo Logic Administrator or have the "M
 
 To configure a concurrent sessions limit:
 
-1. Go to **Administration** \> **Security** \> **Policies**.
+1. Go to **Administration** > **Security** > **Policies**.
 1. Click the checkbox in the **Per User Concurrent Sessions Limit** section.
 1. Enter a value from 1 to 100 in the **Number of concurrent sessions** field.   
 

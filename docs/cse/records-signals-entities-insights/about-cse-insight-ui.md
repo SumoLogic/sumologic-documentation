@@ -70,11 +70,11 @@ You can use the **Filters** area near the top of the page to narrow down the Ins
 
 ## Insight Details page
 
-This section describes the **Insight \> Details** page.
+This section describes the **Insight > Details** page.
 
 ### Insight details pane
 
-The left pane of the **Insight \> Details** page displays detailed information about the selected Insight. Some of the information that appears is the same as what’s in the row for an Insight on the **Insights** page, and is described in [List view,](#list-view) above. The additional information that appears in the **Details** pane is defined below.
+The left pane of the **Insight > Details** page displays detailed information about the selected Insight. Some of the information that appears is the same as what’s in the row for an Insight on the **Insights** page, and is described in [List view,](#list-view) above. The additional information that appears in the **Details** pane is defined below.
 
 ![insight](/img/cse/insight-details.png)
 

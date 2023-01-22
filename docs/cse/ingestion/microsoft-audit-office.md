@@ -17,7 +17,7 @@ In this step, you configure an Microsoft 365 Audit Source to collect Microsoft 3
 
 ### Configure a Hosted Collector
 
-1. In the Sumo Logic platform, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  

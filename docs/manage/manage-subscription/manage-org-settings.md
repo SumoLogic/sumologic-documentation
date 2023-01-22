@@ -9,17 +9,17 @@ description: An account owner can update org names, define customized subdomain 
 ## Availability
 
 | Account Type | Account Level |
-|--------------------|--------------------------------------------------------------|
+|:--------------------|:--------------------------------------------------------------|
 | Cloud Flex | Professional, Enterprise |
 | Cloud Flex Credits | Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-This page has information about the options available to your Sumo Logic account owner on the **Account Overview** tab of the **Administration** \> **Accounts** page. The options are at the bottom of the page.
+This page has information about the options available to your Sumo Logic account owner on the **Account Overview** tab of the **Administration** > **Accounts** page. The options are at the bottom of the page.
 
 ![manage-org-links.png](/img/subscriptions/manage-org-links.png)
 
 ## Change organization name
 
-1. In the left navigation bar of the UI, select **Administration** \> **Account**.
+1. In the left navigation bar of the UI, select **Administration** > **Account**.
 1. Under Manage Organization, click **Change Organization Name.**
 1. In the prompt dialog, enter a new organization name in the text field.
 1. Click **Change Organization Name.**
@@ -32,7 +32,7 @@ This page has information about the options available to your Sumo Logic account
 Once you make this change, you will not be able to edit the account owner.
 :::
 
-1. In the left navigation bar of the UI, select **Administration** \> **Account**.
+1. In the left navigation bar of the UI, select **Administration** > **Account**.
 1. Under Manage Organization, click **Change Account Owner.**
 1. In the prompt dialog, enter a new account owner in the text field.
 1. click **Change Account Owner**.
@@ -45,7 +45,7 @@ Once you make this change, you will not be able to edit the account owner.
 You can only delete an organization for Free and Trial accounts.
 :::
 
-1. In the left navigation bar of the UI, select **Administration** \> **Account**.
+1. In the left navigation bar of the UI, select **Administration** > **Account**.
 1. Under Manage Organization, click **Delete Org.**
 1. In the prompt dialog, enter **DELETE** in the text field to confirm the action.
 vclick **Delete**.
@@ -90,7 +90,7 @@ Before changing your account subdomain, consider the following:  
 You must be the account owner of the Sumo Logic account to change the account subdomain.
 :::
 
-1. Go to **Administration** \> **Account**.
+1. Go to **Administration** > **Account**.
 1. Click the **Change Account Subdomain** link at the bottom of the page.
 1. Enter a new subdomain name. The name must be between 4 and 63 characters in length at least four characters in length, and can contain lower case letters, numbers, and dashes only.
 

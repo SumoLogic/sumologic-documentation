@@ -20,7 +20,7 @@ The Slack Source uses the following Slack APIs to ingest web and audit events.
 The source collects the following API endpoints and routes.
 
 | API       | Req Scope        | Route                                                                        | Free      | Standard  | Plus      | Enterprise |
-|-----------|------------------|------------------------------------------------------------------------------|-----------|-----------|-----------|------------|
+|:-----------|:------------------|:------------------------------------------------------------------------------|:-----------|:-----------|:-----------|:------------|
 | Web API   | admin            | [team.accessLogs](https://api.slack.com/methods/team.accessLogs)             | Collected | Collected | Collected | Collected  |
 | Web API   | team:read        | [team.info](https://api.slack.com/methods/team.info)                         | Collected | Collected | Collected | Collected  |
 | Web API   |                  | [team.billableInfo](https://api.slack.com/methods/team.billableInfo)         | Collected | Collected | Collected | Collected  |
@@ -62,7 +62,7 @@ instructions later for migrating it. <br/><img src={useBaseUrl('img/send-data/sl
 Use the table below to reference the required scope permissions you need to add depending on the Slack API you want to collect along with your Slack account type:
 
 | Slack API | Slack Account Type   | Required Scopes                                                                                 |
-|:----------|----------------------|-------------------------------------------------------------------------------------------------|
+|:----------|:----------------------|:-------------------------------------------------------------------------------------------------|
 | Web API   | Free Plan            | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
 | Web API   | Pro                  | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
 | Web API   | Business+            | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |

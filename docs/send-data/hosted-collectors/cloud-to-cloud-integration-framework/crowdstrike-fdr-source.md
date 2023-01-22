@@ -46,7 +46,7 @@ You must contact the [CrowdStrike support team](https://supportportal.crowdstrik
 
 ### Authentication
 
-Once enabled, in the CrowdStrike console, navigate to **Support \> API Clients and Keys**. You need to **Create new credentials** to copy the **AWS Access Key ID**, **AWS Secret Access Key**, and **SQS Queue URL** to provide to Sumo Logic when creating your CrowdStrike FDR Source.
+Once enabled, in the CrowdStrike console, navigate to **Support > API Clients and Keys**. You need to **Create new credentials** to copy the **AWS Access Key ID**, **AWS Secret Access Key**, and **SQS Queue URL** to provide to Sumo Logic when creating your CrowdStrike FDR Source.
 
 ### Create a CrowdStrike FDR Source
 
@@ -54,7 +54,7 @@ When you create a CrowdStrike FDR Source, you add it to a Hosted Collector. Bef
 
 To configure a CrowdStrike FDR Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 
@@ -90,7 +90,7 @@ To configure a CrowdStrike FDR Source:
 When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
@@ -100,7 +100,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description| Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | config | JSON Object | Yes | Contains the [configuration parameters](#json-configuration) for the Source. |   |
 | schemaRef | JSON Object | Yes | Use `{"type":"Crowdstrike FDR"}` for a CrowdStrike FDR Source. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for a CrowdStrike FDR Source. | not modifiable |
@@ -108,7 +108,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 The following table shows the **config** parameters for a CrowdStrike FDR Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |

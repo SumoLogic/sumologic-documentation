@@ -4,8 +4,7 @@ title: as Search Operator
 sidebar_label: as
 ---
 
-
-The as operator is typically used in conjunction with other operators, but it can also be used alone to rename fields or to create new constant fields.
+The `as` operator is typically used in conjunction with other operators, but it can also be used alone to rename fields or to create new constant fields.
 
 ## Syntax
 
@@ -17,11 +16,12 @@ The as operator is typically used in conjunction with other operators, but it ca
 <literal> as <field>
 ```
 
-:::note
-Fields with characters not in the `a-zA-Z0-9_` character set or that begin with a number need to be escaped, see [reference a field with special characters](/docs/search/get-started-with-search/search-basics/reference-field-special-characters) for details.
-:::
+## Rules
 
-**Examples**
+Fields with characters not in the `a-zA-Z0-9_` character set or that begin with a number need to be escaped, see [reference a field with special characters](/docs/search/get-started-with-search/search-basics/reference-field-special-characters) for details.
+
+
+## Examples
 
 ### Rename a Field
 

@@ -31,7 +31,7 @@ To optimize search performance you can manually set up Dynamic Parsing by defin
 Run Time FERs have a scope, exactly like an Ingest Time FER, that defines which searches are applicable to Dynamic Parsing **Auto Parse Mode**. For Dynamic Parsing to work your query needs to have a scope that is defined in a Run Time FER, otherwise **Auto Parse Mode** will
 not be applicable.
 
-1. Go to **Manage Data** \> **Logs** \> **Field Extraction Rules**.
+1. Go to **Manage Data** > **Logs** > **Field Extraction Rules**.
 1. Click **+ Add** at top right of the table to create an FER.  
 
     ![Create Field extraction rule with dynamic parsing.png](/img/search/get-started-search/build-search/dynamic-parsing/create-FER-dynamic-parsing.png)

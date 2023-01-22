@@ -28,5 +28,5 @@ More search autocomplete tips and limitations:
 * Press **Alt + space** or **Esc** to open and close search autocomplete.
 * Press **Shift + Enter** to add a new line to your query in the text box.
 * Press **Alt + Esc** to disable the search autocomplete dialog from opening while you type. You can also disable this option in the [Preferences Page](../../../get-started/account-setup.md#my-preferences) page.
-* Search autocomplete is also supported on the **Manage \> Users** page in the **New Role** dialog in the **Query String** section.
+* Search autocomplete is also supported on the **Manage > Users** page in the **New Role** dialog in the **Query String** section.
 * Search autocomplete does not show Field Extraction Rules or values from HTTP headers. 

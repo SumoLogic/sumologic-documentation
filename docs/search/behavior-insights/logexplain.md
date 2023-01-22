@@ -20,7 +20,7 @@ set. The results indicate what entities correlate with the event you are inter
 The following table shows the fields that are returned in results.
 
 | _explanation | _relevance | _test_coverage | _control_coverage |
-| -- | -- | -- | -- |
+| :-- | :-- | :-- | :-- |
 | The fields and respective values from the comparison. | The probability that the explanation occurs in the event-of-interest data set.<br/><br/>Values are 0 to 1. | The percentage of data in the event-of-interest set that has the explanation.<br/><br/>The link opens a new search that drills down to these logs based on the related explanation. | The percentage of control data in the event-of-interest set that has the explanation.<br/><br/>The link opens a new search that drills down to these logs based on the related explanation. |
 
 :::note
@@ -45,7 +45,7 @@ With the provided results you can:
 ```
 
 | Parameter | Description |
-| -- | -- |
+| :-- | :-- |
 | `event_condition` | A boolean expression that defines the event of interest. |
 | `against_condition` | A boolean expression that defines the ideal comparison data set. If not provided the complement of `event_condition` is used. |
 | `fieldname` | A comma-separated list of fields to process against the conditions. |

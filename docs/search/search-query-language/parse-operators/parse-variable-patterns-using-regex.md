@@ -59,7 +59,7 @@ You can convert your normal regular expressions into named capturing groups with
 Wrap everything in parenthesis, and append “`?`” followed by a capturing group name enclosed within “\\>`”. Let's see an example below, the highlighted portions is what has been added.
 
 |  Normal Regex | Regex with named capturing group |
-|------------------|--------------------------------------|
+|:------------------|:--------------------------------------|
 | `\d{3}-[\w]*`    | `(?<regex>\d{3}-[\w]*)`              |
 
 If your regex contains a capturing group (part of the regex is enclosed within parentheses), then you have two options:
@@ -71,13 +71,13 @@ If your regex contains a capturing group (part of the regex is enclosed within p
     in your regex.
 
     | Normal Regex |   Regex with non-capturing group |
-    |------------------|------------------------------------|
+    |:------------------|:------------------------------------|
     | `(abc|\d{3})`    | `(?:abc|\d{3})`                    |
 
 1. If you want to extract out the value from your numbered capturing group to a named capturing group within your regex you can convert it into a named capturing group. Do this by appending a “`?`” and enclosing the name of the capturing group within “\\>`”. Sumo will generate a field with the same name that is specified in the named capturing group.
 
     |  Normal Regex |    Regex with named capturing group |
-    |------------------|--------------------------------------|
+    |:------------------|:--------------------------------------|
     | `(abc|\d{3})`    | `(\<test_grou\>abc|\d{3})`           |
 
 ## Examples 
@@ -110,8 +110,8 @@ The Sumo Logic query language requires groups that are not captured to an alias 
 To specify a list of alternative strings in a regular expression, use the group syntax. For example, for the following two log lines:
 
 ```
-    Oct 11 18:20:49 host123.example.com 16234563: Oct 11 18:20:49: %SEC-6-IPACCESSLOGP: list 101 denied tcp 10.1.2.3(1234) \> 10.1.2.4(5678), 1 packet
-    Oct 11 18:20:49 host123.example.com 16234564: Oct 11 18:20:49: %SEC-6-IPACCESSLOGP: list 101 accepted tcp 10.1.2.5(4321) \> 10.1.2.6(8765), 1 packet
+    Oct 11 18:20:49 host123.example.com 16234563: Oct 11 18:20:49: %SEC-6-IPACCESSLOGP: list 101 denied tcp 10.1.2.3(1234) > 10.1.2.4(5678), 1 packet
+    Oct 11 18:20:49 host123.example.com 16234564: Oct 11 18:20:49: %SEC-6-IPACCESSLOGP: list 101 accepted tcp 10.1.2.5(4321) > 10.1.2.6(8765), 1 packet
 ```
 
 you can write the following query to extract the "protocol":
@@ -172,7 +172,7 @@ Use the following parse regex expression to match the "error" in the logs. The *
  This would result in the following parsed fields
 
 | Exception | Message |
-|---------------|-----------------------------------------------------------|
+|:---------------|:-----------------------------------------------------------|
 | ERROR         | Line3: The following exception was reported: ERROR in log |
 | Error         | Line2: The following exception was reported: Error in log |
 | error         | Line1: The following exception was reported: error in log |

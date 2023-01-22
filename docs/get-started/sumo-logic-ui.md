@@ -96,7 +96,7 @@ To access additional Log Search, Metrics, and Live Tail options, do the followin
 The following table lists the options available for the Search, Metrics, and Live Tail tabs.
 
 | Option | Search tab  | Metrics tab  | Live Tail tab |
-|--|--|--|--|
+|:--|:--|:--|:--|
 | Pin | ![check](/img/reuse/check.png) | — | — |
 | Open a New Browser Tab | — | — | ![check](/img/reuse/check.png)  |
 | Rename | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |

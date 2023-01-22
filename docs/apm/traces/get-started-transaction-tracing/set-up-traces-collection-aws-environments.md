@@ -89,7 +89,7 @@ AWS OpenTelemetry Collector in both scenarios is installed as a sidecar. The ins
 
     ![task status running.png](/img/traces/task-status-running.png)
 
-1. Finally, click on the task and expand the **Containers** list. In he **Network Bindings \> External Link** section, you will find the information on where to send telemetry data.  
+1. Finally, click on the task and expand the **Containers** list. In he **Network Bindings > External Link** section, you will find the information on where to send telemetry data.  
 
     ![external links.png](/img/traces/external-links.png)
 
@@ -147,7 +147,7 @@ AWS OpenTelemetry Collector in both scenarios is installed as a sidecar. The ins
 
     ![task status es2 ecs.png](/img/traces/task-status-es2-ecs.png)
 
-1. Finally, click on the task and expand the **Containers** list. In the **Network \> Private IP** or **Public** **IP** sections, you will find the information on where to send telemetry data.  
+1. Finally, click on the task and expand the **Containers** list. In the **Network > Private IP** or **Public** **IP** sections, you will find the information on where to send telemetry data.  
 
     ![network ips.png](/img/traces/network-ips.png)
 

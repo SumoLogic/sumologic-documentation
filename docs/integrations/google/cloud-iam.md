@@ -167,7 +167,7 @@ You need to configure a Pub/Sub Topic in GCP and add a subscription to the Sourc
 Google limits the volume of data sent from a Topic. Our testing resulted in the following data limits:
 
 | Topics | Megabytes per second | Payload size |
-|--------|----------------------|--------------|
+|:--------|:----------------------|:--------------|
 | One    | 18 MBps (1.5 TB/day) | 100 KB       |
 | One    | 6 MBps (0.5 TB/day)  | 2.5 KB       |
 

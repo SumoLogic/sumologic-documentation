@@ -40,7 +40,7 @@ Future time expressions (for example, **now to +15m**) are supported and will r
 The table below contains examples of relative time-range expressions. 
 
 | Relative Expression | Definition |
-| -- | -- |
+| :-- | :-- |
 | -1d | From one day (24 hours) ago to now. |
 | -1d now | From one day ago to now. |
 | -1d -12h | From one day ago to 12 hours ago. |
@@ -58,7 +58,7 @@ There are many different ways to combine year, month, and days in an absolute ti
 The table below contains examples of absolute time-range expressions. 
 
 | Absolute Expression | Definition |
-| -- | -- |
+| :-- | :-- |
 | 04/01 | From the most recent April 1st to now. |
 | 04/01/2017 20:32:00 to 04/01/2017 20:35:00 | From April 1st, 2017 at 8:32 PM until April 1st, 2017 at 8:35 PM. |
 | 04/01 04/02 | From midnight April 1st to midnight April 2nd of the current year. |

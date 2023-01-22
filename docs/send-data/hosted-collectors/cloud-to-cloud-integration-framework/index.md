@@ -20,7 +20,7 @@ Currently, only selected Cloud-to-Cloud Sources are available in the Fed deploym
 The following table provides the static IP addresses used for Cloud-to-Cloud Integration Sources by deployment. These are provided in case you want to explicitly allow the IP addresses on your third-party target SaaS or Cloud platform.
 
 | Deployment | Static IP addresses                                                                |
-|------------|------------------------------------------------------------------------------------|
+|:------------|:------------------------------------------------------------------------------------|
 | AU         | 13.210.38.180, 54.253.14.8, 52.63.30.49                                            |
 | CA         | 3.96.85.212, 3.97.51.58, 3.96.95.249                                               |
 | DE         | 52.28.151.126, 18.193.176.46, 18.192.147.254                                       |

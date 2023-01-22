@@ -38,7 +38,7 @@ This Source is available in the Fed deployment.
 1. When [configuring the Azure Event Hubs Source](azure-event-hubs-source.md) in Sumo Logic, our input fields would be:
 
   | Field | Value  |
-  |----------------------------|----------------------|
+  |:----------------------------|:----------------------|
   | Azure Event Hubs Namespace | cnctest              |
   | Event Hubs Instance Name   | my-hub               |
   | Shared Access Policy Name  | SumoCollectionPolicy |
@@ -72,7 +72,7 @@ When you create an Azure Event Hubs Source, you add it to a Hosted Collector. Be
 
 To configure an Azure Event Hubs Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data > Collection > Collection**.
 1. On the Collectors page, click **Add Source** next to a **HostedCollector**.
 1. Select **Azure Event Hubs**.<br/> ![Azure Event Hubs Icon.png](/img/send-data/Azure-Event-Hubs-Icon.png)
 1. Enter a **Name** for the Source. The description is optional.<br/>  ![azure-event-hubs-input.png](/img/send-data/azure-event-hubs-input.png)
@@ -104,7 +104,7 @@ Logs that do not contain a category field are assigned category UNKNOWN.
 When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | ThirdPartyConfig | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | FirstPartyGenericError |
@@ -114,7 +114,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | config | JSON Object | Yes | Contains the [configuration parameters](azure-event-hubs-source.md) for the Source. |   |
 | schemaRef | JSON Object | Yes | Use `{"type":"Azure Event Hubs"}` for an Azure Event Hubs Source. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for an Azure Event Hubs Source. | not modifiable |
@@ -122,7 +122,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 The following table shows the **config** parameters for an Azure Event Hubs Source.
 
 | Parameter | Type | Required | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `name` | String | Yes	 |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |

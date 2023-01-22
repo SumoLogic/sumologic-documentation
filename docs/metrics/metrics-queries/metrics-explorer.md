@@ -57,7 +57,7 @@ This section is a brief introduction to the Basic Mode of the Metrics Explorer. 
 The key components of the UI are:
 
 | Element | Description |
-|--|--|
+|:--|:--|
 | A | In the **Metric** area, you select the metric you want to return. When you click in this area, you’re presented with a list of metrics. In our example query, we selected the `CPU_LoadAvg_15min` metric. As you enter changes to your query, a message displays indicating if you need to execute the query to see updated results. |
 | B | In the **Filters** area, you can narrow down the scope of your query, using metadata and metric dimensions. When you click in this area, you’re presented with a dropdown list of the metadata fields and dimensions associated with the metric you selected. When you select a metadata field or dimension, you’re presented with a list of values for the selected field or dimension. In our example query, we selected one metadata field, `_sourceCategory=bloomfilter`. The more metadata fields and dimensions you select, the narrower your query will be. After you've selected a filter and filter value, you can click the chip for the filter setting to edit it. |
 | C | In this area, you can apply one or more metric operators to metric query results. When you click **Add Operator**, you’re presented with a list of metric operators. In our example query, we selected the `topk` operator.     |

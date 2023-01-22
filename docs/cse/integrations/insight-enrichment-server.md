@@ -145,7 +145,7 @@ ${IP}, ${MAC}, ${USERNAME}, and ${HOSTNAME}, and for custom Entities, ${ENTITY}.
 The following parameters control general server behaviors, as opposed to enrichment-specific options.
 
 | Setting | Required? | Description |
-|--|--|--|
+|:--|:--|:--|
 | `URL` | yes | The URL for your API endpoint. For more information, see [Sumo Logic API Authentication, Endpoints, and Security](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security). |
 | `api_id` | yes | Enter your Sumo Logic Access ID. For more information, see [Manage your access keys on Preferences page](/docs/manage/security/access-keys.md#manage-your-access-keys-on-preferences-page). |
 | `api_key` | yes | Enter your Sumo Logic Access Key.|
@@ -162,7 +162,7 @@ The table below defines the settings you configure for each enrichment. 
 Each enrichment should be given its own section in the configuration file. The name of the section (for example `[name]`) corresponds to a given enrichment name as it appears within the UI. Each section must have an `enrichment_type` defined. Currently, the only supported `enrichment_type` is "command". Each enrichment supports the options defined in the table below.  
 
 | Setting | Required? | Description |
-|--|--|--|
+|:--|:--|:--|
 | `enrichment_type` | yes | Specifies the type of the enrichment. Currently, the only supported value is `command`. |
 | `entity_type` | yes | The type of entity to enrich. The Insight Enrichment server supports built-in entity types, including IP, mac, username, and hostname. (For a complete list, see [View and Manage Entities](docs/cse/records-signals-entities-insights/view-manage-entities.md). It also supports [custom entity types](../records-signals-entities-insights/create-custom-entity-type.md).  For custom entity types, the `entity_type` should match the unique Identifier assigned to the custom entity type.  |
 | `cache_time` | no | The length of time that the results of a specific enrichment for a specific entity will be cached and returned for other enrichment requests for that enrichment and entity.  This setting can be used to prevent an enrichment from running multiple times for the same entity. You can specify `cache_time` in hours (h), minutes (m), or seconds (s). If you specify a value without a unit, the value is treated as nanoseconds. <br/><br/>Default: none |
