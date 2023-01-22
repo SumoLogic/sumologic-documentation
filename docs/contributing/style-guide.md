@@ -1,6 +1,6 @@
 ---
 id: style-guide
-title: Sumo Logic Style Guide
+title: Sumo Docs Style Guide
 sidebar_label: Style Guide
 description: A guide to styling and formatting Sumo Logic Docs.
 ---
@@ -44,8 +44,8 @@ The Sumo Logic Docs team will review submissions, provide suggested edits, add n
 
 To create a new doc quickly, use a template. You can copy and paste the file, add your content, and submit a PR.
 
-* [Doc topic (generic) template](/docs/contributing/templates/template-doc.md)
-* [Partner app template](/docs/contributing/templates/template-partner-app.md)
+* [Doc topic (generic) template](/docs/contributing/templates/generic-doc)
+* [Partner app template](/docs/contributing/templates/partner-app)
 
 ## Voice and Tone
 
@@ -100,12 +100,12 @@ Not everything has an intuitive name. It's the very nature of working with a con
 
 | What does it look like? | What does Sumo call it? |
 |:------------------------|:--------------------|
-| x | Three-dot icon      |
-| x | Navigation Menu     |
-| x | Favorites           |
-| x | Personal Folder     |
-| x | Recents             |
-| x | Library             |
+| x                       | Three-dot icon     |
+| x                       | Navigation Menu     |
+| x                       | Favorites           |
+| x                       | Personal Folder     |
+| x                       | Recents             |
+| x                       | Library             |
 -->
 
 ## Patents and trademarks

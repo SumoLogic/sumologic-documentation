@@ -2238,8 +2238,8 @@ module.exports = {
           collapsible: true,
           collapsed: true,
           items: [
+            'contributing/templates/generic-doc',
             'contributing/templates/partner-app',
-            'contributing/templates/template-doc'
           ]
         }
       ],
