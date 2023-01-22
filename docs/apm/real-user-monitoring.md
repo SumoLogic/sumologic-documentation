@@ -366,8 +366,8 @@ The content then populates in **Sumo Logic RUM - default** dashboards (inside 
 Once you've installed the RUM app, use our [Explore view](/docs/dashboards-new/explore-view.md) to gain visibility into your web app's performance and end-user activity such as geographic location, browser type, operating systems used. These dashboards visualize RUM metrics gathered from browser tracing instrumentation.
 
 Explore organizes RUM data on four levels:
-* **Application**: corresponds to the value of the application tag set in your [RUM JavaScript script](#step-2-add-script-to-your-page-header). This should correspond to your whole website defined by its business function, such as "Coffee shop".
-* **Service**: corresponds to the name of the service in your [RUM JavaScript script](#step-2-add-script-to-your-page-header). This should correspond to the JavaScript code executed in your browser, such as "coffee-shop-web". You can have multiple services for each application. 
+* **Application**: corresponds to the value of the application tag set in your [RUM JavaScript script](#step-2-add-script-to-your-page-header). This should correspond to your whole website defined by its business function, such as `Coffee shop`.
+* **Service**: corresponds to the name of the service in your [RUM JavaScript script](#step-2-add-script-to-your-page-header). The value should correspond to the JavaScript code executed in your browser, such as `coffee-shop-web`. You can have multiple services for each application. 
 * **Environment**: corresponds to your development environment, like `prod` or `dev`. To enable this, add the `deployment.environment` tag and desired value to your [RUM JavaScript script](#step-2-add-script-to-your-page-header).
 * **Action Type**: can be one of:
    * **document loads**: representing loading of actual documents and their resources into the browser
