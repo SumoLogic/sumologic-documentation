@@ -28,12 +28,12 @@ These quick start guides help you connect, integrate, configure, and start using
       <p>This guide demonstrates how to measure application microservice performance.</p>
     </div>
   </div>
-<div className="box box4 card">
-  <div className="container">
-  <h3><a href="/docs/manage/ingestion-volume/ingest-budgets/quickstart">Ingest Budgets</a></h3>
-  <p>Learn how to create and use Ingest Budgets.</p>
+  <div className="box box4 card">
+    <div className="container">
+    <h3><a href="/docs/manage/ingestion-volume/ingest-budgets/quickstart">Ingest Budgets</a></h3>
+    <p>Learn how to create and use Ingest Budgets.</p>
+    </div>
   </div>
-</div>
 </div>
 
 <br/>
