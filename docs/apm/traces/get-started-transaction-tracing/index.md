@@ -23,7 +23,7 @@ Once you've set up collection, [learn how to analyze your traces in Sumo Logic](
 * [Go](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/go/index.md)
 * [JavaScript](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/javascript/index.md)
 * [Java](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java/index.md)
-* [Python](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python.md)
+* [Python](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python)
 * [Ruby](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby.md)
 * [Ruby on Rails](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby-on-rails.md)
 * [Istio](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/istio.md)
