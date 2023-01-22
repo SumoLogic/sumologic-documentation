@@ -2240,7 +2240,7 @@ module.exports = {
           collapsed: true,
           items: [
             'contributing/templates/generic-doc',
-            'contributing/templates/partner-app',
+            'contributing/templates/partner-app-doc',
           ]
         }
       ],

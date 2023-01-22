@@ -1,5 +1,5 @@
 ---
-id: partner-app
+id: partner-app-doc
 title: Partner App Template
 sidebar_label: Partner App Template
 description: Using the Sumo Logic Partner App Template.

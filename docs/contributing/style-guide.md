@@ -45,7 +45,7 @@ The Sumo Logic Docs team will review submissions, provide suggested edits, add n
 To create a new doc quickly, use a template. You can copy and paste the file, add your content, and submit a PR.
 
 * [Doc topic (generic) template](/docs/contributing/templates/generic-doc)
-* [Partner app template](/docs/contributing/templates/partner-app)
+* [Partner app template](/docs/contributing/templates/partner-app-doc)
 
 ## Voice and Tone
 
@@ -900,7 +900,7 @@ The [`sidebars.ts` file](https://github.com/SumoLogic/sumologic-documentation/bl
           collapsible: true,
           collapsed: false,
           items: [
-            'contributing/templates/partner-app'
+            'contributing/templates/partner-app-doc'
           ]
         }
       ],
