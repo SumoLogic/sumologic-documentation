@@ -83,7 +83,7 @@ When writing instructions, it helps to always use active voice. This gives a cal
 
 ## Abbreviations
 
-Avoid the use of abbreviations like “e.g.”, “i.e.”, and “.etc”.  Although they may be well understood, such abbreviations don’t support our goal of a conversational tone. In other words, don’t use language you wouldn’t use verbally.
+Avoid the use of abbreviations like “e.g.”, “i.e.”, and “etc.”.  Although they may be well understood, such abbreviations don’t support our goal of a conversational tone. In other words, don’t use language you wouldn’t use verbally.
 
 * Instead of "e.g.", use “for example”
 * Instead of "i.e.", use “that is”
