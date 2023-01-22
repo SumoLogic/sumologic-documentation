@@ -1,7 +1,7 @@
 ---
 id: quickstart
 title: Kubernetes Quickstart
-sidebar_label: Kubernetes Quickstart
+sidebar_label: Quickstart
 description: Get started with our Kubernetes solution in minutes.
 ---
 

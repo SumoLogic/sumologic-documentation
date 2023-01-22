@@ -4,7 +4,22 @@ title: Search Query Language
 description: The extensive Sumo Logic query options help you gain valuable insight into your log messages.
 ---
 
-For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quick Start Tutorial](/docs/quickstart).
+import Iframe from 'react-iframe';
+
+:::sumo
+Here's a step-by-step tutorial about creating Sumo Logic queries.
+
+<Iframe url="https://www.youtube.com/embed/nGRXj1w4juU?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+:::
 
 For a collection of customer-created search queries and their use cases, see the [Community Query Library](https://support.sumologic.com/hc/en-us/community/topics/200396738-Query-Library).
 
