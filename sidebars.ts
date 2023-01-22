@@ -31,6 +31,7 @@ module.exports = {
         'get-started/library',
         'get-started/sumo-logic-ui',
         'get-started/keyboard-shortcuts',
+        'get-started/quickstart',
         'get-started/help',
         'get-started/faq',
       ],
@@ -429,20 +430,6 @@ module.exports = {
         'send-data/data-enrichment',
         'send-data/best-practices',
         'send-data/collector-faq',
-        {
-    // *** QUICKSTARTS & TUTORIALS
-          type: 'category',
-          label: 'Quickstart Tutorials',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'quickstart/index'},
-          items: [
-            'observability/aws/quickstart',
-            'observability/kubernetes/quickstart',
-            'apm/traces/quickstart',
-            'manage/ingestion-volume/ingest-budgets/quickstart',
-          ],
-        },
       ],
     },
   ],

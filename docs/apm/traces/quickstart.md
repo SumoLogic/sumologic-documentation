@@ -1,7 +1,7 @@
 ---
 id: quickstart
-title: Sumo Logic Traces Quickstart
-sidebar_label: Traces Quickstart
+title: Traces Quickstart
+sidebar_label: Quickstart
 description: See how your application is behaving with trace analytics.
 ---
 
