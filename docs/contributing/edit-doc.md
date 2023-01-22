@@ -1,7 +1,7 @@
 ---
 id: edit-doc
 title: Edit and Publish Sumo Logic Document
-sidebar_label: Edit a Doc
+sidebar_label: Edit an Existing Doc
 description: Learn how to edit a doc, write content in markdown, and submit your changes to our repo.
 ---
 
