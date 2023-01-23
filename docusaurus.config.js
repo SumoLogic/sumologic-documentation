@@ -307,7 +307,7 @@ module.exports = {
                 activeBaseRegex: '^/docs/observability/about',
               },
               {
-                label: 'Traces',
+                label: 'Traces/APM/RUM',
                 to: '/docs/apm/traces',
                 activeBaseRegex: '^/docs/apm/.*',
               },

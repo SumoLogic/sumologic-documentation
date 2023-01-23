@@ -2848,6 +2848,12 @@
   "/Traces/Getting_Started_with_Transaction_Tracing/Working_with_spans_attributes": "/docs/apm/traces/advanced-configuration/working-with-span-attributes",
   "/Traces/Search_Query_Language_support_for_Traces": "/docs/apm/traces/search-query-language-support-for-traces",
   "/Traces/Spans": "/docs/apm/traces/spans",
+  "/docs/apm/traces/working-with-tracing-data": "/docs/apm/traces",
+  "/docs/apm/traces/working-with-tracing-data/services-list-map": "/docs/apm/traces/services-list-map",
+  "/docs/apm/traces/working-with-tracing-data/tracing-dashboards": "/docs/apm/traces/tracing-dashboards",
+  "/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces": "/docs/apm/traces/view-and-investigate-traces",
+  "/docs/apm/traces/working-with-tracing-data/spans": "/docs/apm/traces/spans",
+  "/docs/apm/traces/working-with-tracing-data/search-query-language-support-for-traces": "/docs/apm/traces/search-query-language-support-for-traces",
   "/Visualizations-and-Alerts/Alert-Grouping": "/docs/alerts/monitors/alert-grouping",
   "/Visualizations-and-Alerts/Alerts/01-Scheduled-Searches": "/docs/alerts/scheduled-searches"
 }

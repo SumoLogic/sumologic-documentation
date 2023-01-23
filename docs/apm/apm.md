@@ -1,7 +1,7 @@
 ---
 id: apm
 title: Application Performance Monitoring
-sidebar_label: App Performance Monitoring
+sidebar_label: APM/RUM and Traces
 description: Monitor user and app behavior with Sumo Logic trace analytics and real user monitoring.
 ---
 
@@ -16,7 +16,7 @@ Monitor user activity, span analytics, service maps, and transaction traces betw
   <div className="container">
   <img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="50"/>
   <h3><a href="/docs/apm/traces">Traces</a></h3>
-  <p>Learn how to work with your Tracing data, including dashboards, service map, span analytics, and queries.</p>
+  <p>Explore your Tracing data with Sumo Logic dashboards, service maps, span analytics, queries, and more.</p>
   </div>
 </div>
 <div className="box box2 card">
