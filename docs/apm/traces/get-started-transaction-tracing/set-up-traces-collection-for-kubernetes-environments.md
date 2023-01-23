@@ -175,7 +175,7 @@ After enabling and installing tracing, you should have additional Kubernetes res
 
 * There are no Kubernetes errors in the namespace sumologic.
 * There are running pods `<CHART_NAME>-sumologic-otelcol-instrumentation-<hash>, <CHART_NAME>-sumologic-traces-gateway-<hash>, <CHART_NAME>-sumologic-traces-sampler-<hash>`
-* Kubernetes metadata tags (pod, replicaset, etc.) should be applied to all spans.
+* Kubernetes metadata tags such as `pod` and `replicaset` should be applied to all spans.
 * The OpenTelemetry Collector can export metrics, which include information such as the number of spans exported. Several metrics starting with `otelcol_` will become available, such as `otelcol_exporter_sent_spans` and `otelcol_receiver_accepted_spans`.
 * **OpenTelemetry Collector can have logging exporter enabled.** This will put on the output contents of spans (with some sampling above a certain rate). To enable, apply the following flags when installing/upgrading the collector (appending logging to the list of exporters):
 
