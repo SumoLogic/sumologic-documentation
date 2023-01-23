@@ -151,7 +151,7 @@ For example, when the default release name (`collection`) and namespace (`sumolo
 
 After enabling and installing tracing, you should have additional Kubernetes resources:
 
-* `otelcol-instrumentation `- collector responsible for data collection and tagging
+* `otelcol-instrumentation` - collector responsible for data collection and tagging
     * StatefulSet: `collection-sumologic-otelcol-instrumentation`
     * Pod: `collection-sumologic-otelcol-instrumentation-<hash>`
     * Service: `collection-sumologic-otelagent`
