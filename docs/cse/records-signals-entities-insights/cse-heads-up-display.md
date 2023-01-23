@@ -37,7 +37,7 @@ including rules, threat intel, match lists, suppressed lists, and so on.
 The section labeled **c** contains four icons. 
 
 | Icon | Description |
-|--|--|
+|:--|:--|
 | ![gear.png](/img/cse/gear.png) | Click this icon to see a menu of CSE configuration options that you can use to manage incoming data, Entities, users and roles, integrations, and so on. |
 | ![help.png](/img/cse/help.png) | Click this icon to access CSE help, API documentation, release announcements, and service status. |
 | ![switch-apps.png](/img/cse/switch-apps.png) | Click this icon to open the Sumo Logic platform UI in a new tab. |
@@ -53,7 +53,7 @@ The default time range is 24 hours. You can change the time range using the drop
 
 The **Insight Metrics** section, labeled **e**, displays the following metrics for the currently selected time range:
 
-* **Dwell**. The average dwell time, which is the average period of time between when the first and last Records in an Insight were observed, in seconds. 
+* **Dwell**. The average dwell time, which is the average period of time between when the first event occurred (when the first Record in the Insight was generated) and when the Insight was generated, in seconds. 
 * **Response**. The average response time, which is the average time between when an Insight was generated and when its status was set to **In Progress**, in seconds. 
 * **Remediation**. The average remediation time, which is the average time between when the Insight was created and when its status was set to **Closed**, in seconds. 
 

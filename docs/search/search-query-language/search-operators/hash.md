@@ -4,9 +4,7 @@ title: hash Search Operator
 sidebar_label: hash
 ---
 
-
-
-The hash operator uses a cryptographic hash algorithm to obscure data into a random string value. The operator supports MD5, SHA1, SHA2, and MurmurHash3 algorithms. The default is MD5 if no algorithm is specified.
+The `hash` operator uses a cryptographic hash algorithm to obscure data into a random string value. The operator supports MD5, SHA1, SHA2, and MurmurHash3 algorithms. The default is MD5 if no algorithm is specified.
 
 This is helpful when working with sensitive data such as email addresses, usernames, credit cards, and social security numbers. Each unique value will have a unique hash code allowing you to maintain anonymity.
 
@@ -22,9 +20,9 @@ Where:
 
 * `<algorithm>` - Define the algorithm type as either `md5`, `sha1`, `sha2_256`, or `murmur3_128`. The default is `md5`.
 
-**Examples**
+## Examples
 
-##### Email address
+### Email address
 
 Hash a field of email addresses.
 
@@ -34,9 +32,9 @@ _sourceCategory=myLogs
 | hash("email_address", "md5") as hashed_email
 ```
 
-##### Username
+### Username
 
-Find a hashed username with the help of the [where](#where) and [matches](#matches) operators.
+Find a hashed username with the help of the [where](where.md) and [matches](matches.md) operators.
 
 ```sql
 _sourceCategory=myLogs
@@ -44,7 +42,7 @@ _sourceCategory=myLogs
 | where username matches hash("username", "md5")
 ```
 
-#### Source IP
+### Source IP
 
 Get the source IP addresses by user hashes.
 
@@ -56,7 +54,7 @@ _sourceCategory=myLogs
 | count by src_ip, user_hash
 ```
 
-#### Unique identifier
+### Unique identifier
 
 Create a unique identifier for each log message by concatenating the built-in metadata fields (image below) `_messagetime` and `_messageid`.
 

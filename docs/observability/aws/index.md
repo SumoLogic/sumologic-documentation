@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This feature is available in the following account plans.
 
 | Account Type | Account Level                                                                        |
-|--------------|--------------------------------------------------------------------------------------|
+|:--------------|:--------------------------------------------------------------------------------------|
 | Cloud Flex   | Trial and Enterprise    |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, and  Enterprise Suite |
 

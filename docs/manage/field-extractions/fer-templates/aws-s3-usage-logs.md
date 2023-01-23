@@ -26,7 +26,7 @@ parse "* * [*] * * * * * \"* HTTP/1.1\" * * * * * * * \"*\" *" as bucket_owner, 
 **Resulting Fields:**
 
 | Field | Description | Example |
-|--|--|--|
+|:--|:--|:--|
 | bucket_owner | The canonical user ID of the owner of the source bucket. | 6ec976a42247d687d5d1c87bb53e87c60c925765f87415f472d240c5d18337a7 |
 | bucket | The name of the bucket that the request was processed against | stag-bloomfilter-000000000000141d |
 | time | The time at which the request was received | 2017-07-13 |

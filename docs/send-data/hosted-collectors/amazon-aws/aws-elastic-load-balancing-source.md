@@ -23,7 +23,7 @@ By default, ELB logging is not enabled in your organization's AWS account. You c
 
 To enable logging in AWS:
 
-1. In the **AWS Management Console**, choose **EC2 \> Load Balancers**.
+1. In the **AWS Management Console**, choose **EC2 > Load Balancers**.
 1. Under **Access Logs**, click **Edit**.
 1. In the **Configure Access Logs** dialog box, click **Enable Access Logs**, then choose an Interval and S3 bucket. This is the S3 bucket that will upload logs to Sumo Logic.
 1. Click **Save**.

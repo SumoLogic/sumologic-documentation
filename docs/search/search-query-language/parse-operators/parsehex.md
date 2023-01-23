@@ -1,5 +1,5 @@
 ---
-id: parse-hex
+id: parsehex
 title: parseHex
 ---
 

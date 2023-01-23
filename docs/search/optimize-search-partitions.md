@@ -18,7 +18,7 @@ This example shows a customer that created three additional Partitions to separa
 Consider the following queries:
 
 | Query |  Partition Status | Path |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | Query 1   |   | `_sourceCategory=prod/security/snort`|
 | Query 2   | Partitions in place  | `_index=prod AND _sourceCategory=prod/security/snort` |
 | Query 3   | Partitions in place  | `_sourceCategory=prod/security/snort` |

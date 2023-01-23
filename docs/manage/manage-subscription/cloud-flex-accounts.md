@@ -31,7 +31,7 @@ Sumo Logic provides flexible account types within its Cloud Flex packaging for 
 The following table provides a summary list of key features by Sumo Logic Cloud Flex package accounts. 
 
 | Feature | Free | Trial | Professional | Enterprise |
-|-- | -- | -- | -- | -- |
+|:-- | :-- | :-- | :-- | :-- |
 | Audit Index |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Audit Event Index |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) |
 | [Collector Management API](https://github.com/SumoLogic/sumo-api-doc/wiki/collectors) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
@@ -133,7 +133,7 @@ The top panel of the Account Overview page provides an at-a-glance view of your
 To view the Account page, do the following:
 
 1. Log in to your Sumo Logic Cloud Flex account.
-1. In the left navigation bar of the UI, select **Administration** \> **Account**. The Account Overview tab of the Account page is shown by default.
+1. In the left navigation bar of the UI, select **Administration** > **Account**. The Account Overview tab of the Account page is shown by default.
 
     :::note
     You must have a role that grants you the Account Overview capability to view the Account Overview tab.
@@ -172,7 +172,7 @@ The following visual indicators apply:
 
 To switch between views and time interval displays, do the following:
 
-1. Log in to Sumo Logic and select **Administration** \> **Account** in the left navigation pane. The Account page appears with the Account Overview tab shown by default. The top panel shows account details and the bottom panel displays usage analytics.
+1. Log in to Sumo Logic and select **Administration** > **Account** in the left navigation pane. The Account page appears with the Account Overview tab shown by default. The top panel shows account details and the bottom panel displays usage analytics.
 
 ![CloudFlex-AccountPage.png](/img/subscriptions/pqs.png)
 

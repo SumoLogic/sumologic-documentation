@@ -26,7 +26,7 @@ The following open-source solutions are collected in Sumo Logic’s GitHub repos
 ## Logging Integration Libraries
 
 | Solution | Description |
-|-- |--|
+|:-- |:--|
 | [AWS Lambda](https://github.com/SumoLogic/sumologic-aws-lambda)  | Sumo Logic Lambda Functions are designed to collect and process data from a variety of sources and pass it onto the Sumo Logic platform. Here, the data can be stored, aggregated, searched, and visualized for a variety of insightful use cases. For complete details, see Collect CloudWatch Logs Using a Lambda Function.
 | [Azure](https://github.com/SumoLogic/sumologic-azure-function) |  This library provides a collection of Azure functions to collect and send data to Sumo Logic. |
 | [Docker](https://github.com/SumoLogic/sumologic-collector-docker) | This repository offers several variants of Docker images to run the Sumo Logic Collector. When images are run, the Collector automatically registers with the Sumo Logic service and create sources based on a sumo-sources.json file. The Collector is configured ephemeral. |
@@ -46,7 +46,7 @@ The following open-source solutions are collected in Sumo Logic’s GitHub repos
 ## Metrics Integration Libraries
 
 | Solution | Description |
-|-- |--|
+|:-- |:--|
 | [CollectD](https://github.com/SumoLogic/sumologic-collectd-plugin) | This plugin sends metrics to Sumo Logic via an HTTP endpoint.  |
 | [Prometheus](https://github.com/SumoLogic/sumologic-prometheus-scraper) | The Prometheus Scraper provides a configurable mechanism to send Prometheus formatted metrics to Sumo Logic.  |
 | [StatsD](/docs/send-data/Collect-from-Other-Data-Sources/Collect-StatsD-Metrics) | See [Collect StatsD Metrics](collect-statsd-metrics.md) for information. |
@@ -54,7 +54,7 @@ The following open-source solutions are collected in Sumo Logic’s GitHub repos
 ## Tools
 
 | Solution | Description |
-|-- |--|
+|:-- |:--|
 | [dmail](https://github.com/SumoLogic/dmail) | A simple way to capture a screenshot of a Sumo Logic Dashboard, which is then embedded into an email. |
 | [livetail-cli](https://github.com/SumoLogic/livetail-cli)                              | The Live Tail Command Line Interface (CLI) is a standalone application that allows you to start and use a Live Tail session from the command line, similar to tail -f The output is directed to stdout - so you can pipe the output to commands (grep, awk, etc.). For complete details, see Live Tail CLI. |
 | [sumo-report-generator](https://github.com/SumoLogic/sumo-report-generator)   | This tool allows a user to execute multiple searches, and compile the data in a single report. Currently, the only format is Excel. Each tab in Excel would correspond to a search executed in Sumo Logic. NOTE: You must have access to the Sumo Search API in order to use this tool.                     |
@@ -64,7 +64,7 @@ The following open-source solutions are collected in Sumo Logic’s GitHub repos
 ## API Clients and Management Scripts
 
 | Solution | Description |
-|-- |--|
+|:-- |:--|
 | [collector-management-client](https://github.com/SumoLogic/collector-management-client)| This solution is a Python script for quickly managing a subset of Installed Collectors. |
 | [sumo-collector-puppet-module](https://github.com/SumoLogic/sumo-collector-puppet-module)| This solution is a Puppet module for installing the Sumo Logic Collector. This downloads the Collector from the Internet, so Internet access is required on your machines.|
 | [sumo-java-client](https://github.com/SumoLogic/sumo-java-client)| This library provides a Java client to execute searches on the data collected by Sumo Logic. |

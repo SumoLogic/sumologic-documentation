@@ -31,6 +31,7 @@ module.exports = {
         'get-started/library',
         'get-started/sumo-logic-ui',
         'get-started/keyboard-shortcuts',
+        'get-started/quickstart',
         'get-started/help',
         'get-started/faq',
       ],
@@ -354,7 +355,7 @@ module.exports = {
             'send-data/collect-from-other-data-sources/collect-logs-palo-alto-networks-cortex',
             {
               type: 'category',
-              label: 'Telegraf',
+              label: 'Collect Metrics from Telegraf',
               collapsible: true,
               collapsed: true,
               link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/collect-metrics-telegraf/index'},
@@ -429,20 +430,6 @@ module.exports = {
         'send-data/data-enrichment',
         'send-data/best-practices',
         'send-data/collector-faq',
-        {
-    // *** QUICKSTARTS & TUTORIALS
-          type: 'category',
-          label: 'Quickstart Tutorials',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'quickstart/index'},
-          items: [
-            'observability/aws/quickstart',
-            'observability/kubernetes/quickstart',
-            'apm/traces/quickstart',
-            'manage/ingestion-volume/ingest-budgets/quickstart',
-          ],
-        },
       ],
     },
   ],
@@ -1158,8 +1145,8 @@ module.exports = {
             'search/search-query-language/parse-operators/parse-xml-formatted-logs',
             'search/search-query-language/parse-operators/parse-field-option',
             'search/search-query-language/parse-operators/parse-nodrop-option',
-            'search/search-query-language/parse-operators/parse-date',
-            'search/search-query-language/parse-operators/parse-hex',
+            'search/search-query-language/parse-operators/parsedate',
+            'search/search-query-language/parse-operators/parsehex',
           ],
         },
         {
@@ -1308,6 +1295,7 @@ module.exports = {
         'metrics/metrics-operators/min',
         'metrics/metrics-operators/outlier',
         'metrics/metrics-operators/parse',
+        'metrics/metrics-operators/predict',
         'metrics/metrics-operators/pct',
         'metrics/metrics-operators/quantize',
         'metrics/metrics-operators/rate',
@@ -1433,7 +1421,16 @@ module.exports = {
                   'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net/traceid-spanid-injection-into-logs',
                 ],
               },
-              'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python',
+              {
+                type: 'category',
+                label: 'Python',
+                collapsible: true,
+                collapsed: true,
+                link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python/index'},
+                items: [
+                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python/traceid-spanid-injection-into-logs',
+                ],
+              },
               'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby-on-rails',
               'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby',
             ],
@@ -1451,7 +1448,7 @@ module.exports = {
         collapsed: true,
         link: {type: 'doc', id: 'apm/traces/working-with-tracing-data/index'},
         items: [
-          'apm/traces/working-with-tracing-data/service-map',
+          'apm/traces/working-with-tracing-data/services-list-map',
           'apm/traces/working-with-tracing-data/tracing-dashboards',
           'apm/traces/working-with-tracing-data/view-and-investigate-traces',
           'apm/traces/working-with-tracing-data/spans',
@@ -1899,6 +1896,7 @@ module.exports = {
         'integrations/security-threat-detection/f5-big-ip-ltm',
         'integrations/security-threat-detection/imperva-incapsula',
         'integrations/security-threat-detection/keeper-security',
+        'integrations/security-threat-detection/netskope-legacy-collection',
         'integrations/security-threat-detection/netskope',
         'integrations/security-threat-detection/observable-networks',
         'integrations/security-threat-detection/palo-alto-networks-6',
@@ -2237,8 +2235,8 @@ module.exports = {
           collapsible: true,
           collapsed: true,
           items: [
-            'contributing/templates/partner-app',
-            'contributing/templates/template-doc'
+            'contributing/templates/generic-doc',
+            'contributing/templates/partner-app-doc',
           ]
         }
       ],

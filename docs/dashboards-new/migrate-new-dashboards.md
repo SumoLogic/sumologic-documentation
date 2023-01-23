@@ -27,7 +27,7 @@ We do not guarantee 100% conversion from classic to new dashboard although we do
 This table shows the complete list of features that are changed after the implementation of the **Migrate to New Dashboards** feature.
 
 | Features |  Supported    |   Not Supported   |
-| --------   | :-------------    |   :------------  |  
+| :--------   | :-------------    |   :------------  |  
 | Theme      | No effect, migrated as it is | NA  |
 | Dashboard Layout | <ul> <li>Panel position in the grid stay the same</li> <li>Panel heights might slightly differ</li> </ul> | NA |
 | Chart colors | <ul> <li>Exact color won’t be preserved, although color families will be preserved.</li> </ul> |  NA |

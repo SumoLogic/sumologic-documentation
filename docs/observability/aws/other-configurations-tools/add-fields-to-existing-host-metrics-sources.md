@@ -9,7 +9,7 @@ The AWS Observability Solution uses EC2 Host metrics collected using Sumo Logic 
 To make EC2 hosts part of the AWS Observability hierarchy, the EC2 host metrics sent to Sumo Logic need to be tagged with the following additional fields for them to be visible in the AWS Observability Solution dashboards.
 
 | Field Name | Description | Availability in Host Metrics |
-|--|--|--|
+|:--|:--|:--|
 | Account    | This is an alias for your AWS account—for example, production, development, or stage—that you supply when you install the solution. | No |
 | Namespace  | This is the name of the AWS service (AWS/EC2). | No |
 
@@ -50,7 +50,7 @@ This section provides a listing of configuration prompts for the CloudFormation 
 ### Sumo Logic Access Configuration (Required)
 
 | Prompt | Guideline |
-|--|--|
+|:--|:--|
 | Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, in, fed or us1. For more information on Sumo Logic deployments, see the [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) topic. |
 | Sumo Logic Access ID | Sumo Logic Access ID. For more information, see [Create an access key](/docs/manage/security/access-keys.md) in the Access Keys topic. |
 | Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. |
@@ -59,7 +59,7 @@ This section provides a listing of configuration prompts for the CloudFormation 
 ### AWS account alias (Required)
 
 | Prompt | Guideline |
-|--|--|
+|:--|:--|
 | Alias for your AWS account | Enter a name for the AWS environment from which you are collecting data. This name will appear in the Sumo Logic Explorer View, metrics, and logs.<br/>Do not include special characters in the alias. |
 | Force Update the Stack | Increment the value in case you want to force update the stack. |
 

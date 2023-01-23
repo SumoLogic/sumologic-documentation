@@ -7,7 +7,7 @@ description: Provides information on the internal events that occur in Sumo Logi
 ## Availability
 
 | Account Type | Account Level |
-|--------------|---------------------------------------------------------------------------------|
+|:--------------|:---------------------------------------------------------------------------------|
 | Cloud Flex   | Trial, Professional, Enterprise |
 | Credits | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -24,7 +24,7 @@ All users can access the data contained within the audit index, but only adminis
 
 ## Enable the audit index
 
-1. Go to **Administration** \> **Security** \> **Policies**.
+1. Go to **Administration** > **Security** > **Policies**.
 1. Next to **Sumo Logic Auditing**, select the **Enable** check box.
 
 :::important
@@ -52,7 +52,7 @@ The audit index must be enabled for a search to produce results.
 ## Audit index source categories
 
 | Event type | Source Category |
-|-----------------------|----------------------------|
+|:-----------------------|:----------------------------|
 | Account Management    | `account_management`       |
 | User Activity         | `user_activity`            |
 | Support User Activity | `support_account_activity` |
@@ -65,7 +65,7 @@ The audit index must be enabled for a search to produce results.
 The table below lists defines the fields returned for an audit event. Note that by default, only the event time and the raw message are displayed. You can display selected fields by clicking the box next to a field in the **Hidden Fields** section of the page.
 
 | Field | Description |
-|--|--|
+|:--|:--|
 | Time (_messagetime) | The time that the event occurred |
 | Message (_raw) | The raw log message written to the audit index.  |
 | Action | The action that was performed. Actions vary by event type. For more information, see [Audit event classes and actions](#audit-event-classes-and-actions).    |
@@ -94,7 +94,7 @@ _sourceCategory=account_management
 The table below shows the value of the `class` and `action` fields for account management events.
 
 | Class | Actions | Product Feature |
-|--|--|--|
+|:--|:--|:--|
 | ACCESS_KEY | CREATE<br/>ENABLE<br/>DISABLE<br/>DELETE | Access Keys |
 | COLLECTOR | CREATE<br/>UPDATE<br/>UPGRADE<br/>DELETE<br/>THROTTLE | Collection |
 | DATA_FORWARDING | ENABLE<br/>DISABLE | Data Forwarding |
@@ -206,7 +206,7 @@ _sourceCategory=user_activity
 The table below shows the value of the `class` and `action` fields for user activity events.
 
 | Class | Actions |
-|--|--|
+|:--|:--|
 | CONTENT_LIBRARY | CREATE<br/>DELETE<br/>MOVE<br/>COPY<br/>UPDATE (name or description)<br/>IMPORT<br/>EXPORT<br/>APP_INSTALLATION |
 | FOLDER | EXPORT<br/>INSTALL<br/>DELETE<br/>IMPORT<br/>MANAGE_PERMISSIONS<br/>CREATE<br/>MOVE<br/>COPY |
 | PASSWORD | MODIFY<br/>RESET |
@@ -257,7 +257,7 @@ Support account events are logged only if you have [enabled a support account](
 :::
 
 | Class | Actions |
-|--|--|
+|:--|:--|
 | SESSION | LOGIN<br/>LOGOUT |
 
 ### Scheduled search events
@@ -269,7 +269,7 @@ _sourceCategory=scheduled_search
 The table below shows the value of the `class` and `action` fields for scheduled search events SCHEDULED_SEARCH.
 
 | Actions | Description |
-|--|--|
+|:--|:--|
 | Create | Scheduled search was created. |
 | Start | Scheduled search started. |
 | Finish | Scheduled search finished successfully. |
@@ -291,7 +291,7 @@ _sourceCategory=metrics
 The table below shows the value of the `class` and `action` fields for metric events.
 
 | Class | Actions | Description |
-|--|--|--|
+|:--|:--|:--|
 | INGEST | TRUNCATE |  |
 | METRIC_EXTRACTION | SKIP | A logs-to-metrics rule extracted one or more dimensions that are longer than 250 character. For more information, see [Logs-to-Metrics](/docs/metrics/logs-to-metrics). |
 

@@ -4,10 +4,7 @@ title: decToHex Search Operator
 sidebar_label: decToHex
 ---
 
-
-
-
-The decToHex operator converts a long value of 16 or fewer digits to a hexadecimal string using Two's Complement for negative values.
+The `decToHex` operator converts a long value of 16 or fewer digits to a hexadecimal string using Two's Complement for negative values.
 
 :::note
 Hexadecimal string is always returned in upper-case.
@@ -23,7 +20,7 @@ decToHex(<long_field>) as <field>
 decToHex("<long_string>") as <field>
 ```
 
-**Examples**
+## Examples
 
 The following returns `V` with a value of `1337`:
 

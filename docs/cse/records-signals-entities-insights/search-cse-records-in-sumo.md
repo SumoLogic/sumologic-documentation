@@ -18,7 +18,7 @@ In CSE, normalized Records are categorized by [Record type](../schema/cse-record
 In Sumo Logic, Records are stored in partitions, which are indexes that enable better search performance. The table below shows which partition each Record type is stored in. Note that some partitions contain multiple Record types.
 
 | CSE Record type                   | Sumo Logic partition      |
-|-----------------------------------|---------------------------|
+|:-----------------------------------|:---------------------------|
 | Audit                             | sec_record_audit          |
 | AuditChange                       | sec_record_audit          |
 | AuditFile                         | sec_record_audit          |
@@ -44,7 +44,7 @@ There is a separate partition for forwarded raw messages for which Records were 
 ### Partitions for unmapped messages
 
 | CSE Record Type | Sumo Logic partition |
-|-----------------|----------------------|
+|:-----------------|:----------------------|
 | FailedRecord    | sec_record_failure   |
 
 ### Partition for CSE Signals 
@@ -63,7 +63,7 @@ When you query CSE Records or Signalsin a Sumo Logic log search tab, the content
 
 If you have the **View Partitions** role capability, you can search CSE partitions from the **Partitions** page in the Sumo Logic UI.
 
-1. Go to **Manage Data \> Logs \> Partitions**.
+1. Go to **Manage Data > Logs > Partitions**.
 1. The partitions that contain CSE Records begin with the string "sec_record".
 
     ![security-partitions.png](/img/cse/security-partitions.png)

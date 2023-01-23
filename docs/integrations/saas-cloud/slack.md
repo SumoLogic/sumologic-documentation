@@ -318,7 +318,7 @@ instructions later for migrating it. <br/><img src={useBaseUrl('img/send-data/sl
 Use the table below to reference the required scope permissions you need to add depending on the Slack API you want to collect along with your Slack account type:
 
 | Slack API | Slack Account Type   | Required Scopes                                                                                 |
-|:----------|----------------------|-------------------------------------------------------------------------------------------------|
+|:----------|:----------------------|:-------------------------------------------------------------------------------------------------|
 | Web API   | Free Plan            | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
 | Web API   | Pro                  | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
 | Web API   | Business+            | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |

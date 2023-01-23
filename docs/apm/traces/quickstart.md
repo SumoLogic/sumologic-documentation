@@ -1,7 +1,7 @@
 ---
 id: quickstart
-title: Sumo Logic Traces Quickstart
-sidebar_label: Traces Quickstart
+title: Traces Quickstart
+sidebar_label: Quickstart
 description: See how your application is behaving with trace analytics.
 ---
 
@@ -12,12 +12,12 @@ You can observe apps and microservices at the level of individual requests to p
 ## What You'll Need
 
 | Account Type | Account Level |
-|--|--|
+|:--|:--|
 | Credits | Enterprise Operations and Enterprise Suite. Essentials get up to 5 GB a day. |
 
 If your Sumo Logic service package has been upgraded to include Traces, you will see a **Traces** tab available in Sumo Logic.
 
-<img src={useBaseUrl('/img/traces/traces-menu-option.png')} alt="traces menu option" width="250"/>
+<img src={useBaseUrl('/img/traces/traces-menu-option.png')} alt="traces menu option" width="200"/>
 
 ## Microlesson
 
