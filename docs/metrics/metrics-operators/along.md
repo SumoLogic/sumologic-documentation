@@ -218,5 +218,5 @@ We use results from row #A here, both for comparison on a chart and as a filter 
 
 ## Troubleshooting tips
 
-1. **Misaligned quants**. If you see fewer results than expected (or no results at all), most likely you should most increase the size of the quantization bucket. For more information, see [Quantization and joined queries](#quantization-and-joined-queries).
-1. **Missing `along`**. If you see more results than expected (or unexpectedly exceed the maximum output cardinality), you probably forgot to add `along` to your query. For more information, see [Understanding `along`](#understanding-along).
+* **Misaligned quants**. If you see fewer results than expected (or no results at all), most likely you should most increase the size of the quantization bucket. For more information, see [Quantization and joined queries](#quantization-and-joined-queries).
+* **Missing `along`**. If you see more results than expected (or unexpectedly exceed the maximum output cardinality), you probably forgot to add `along` to your query. For more information, see [Understanding `along`](#understanding-along).
