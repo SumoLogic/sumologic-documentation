@@ -47,7 +47,7 @@ Zscaler offers a virtual appliance, called Nanolog Streaming Service (NSS) to st
 To stream logs to the Sumo Logic Syslog Source, perform steps A, B, and C detailed in the “NSS Configuration Guide” at: [https://support.zscaler.com/hc/en-us...guration-Guide](https://support.zscaler.com/hc/en-us/articles/205518405-NSS-Configuration-Guide).
 
 :::note
-Zscaler Log Streaming is an add on for customers that do not have it as part of an existing bundle. Please check your subscription and work with your Zscaler support team to see if CloudNSS is included in your bundle.
+Zscaler Log Streaming is an add-on for customers that do not have it as part of an existing bundle. Please check your subscription and work with your Zscaler support team to see if CloudNSS is included in your bundle.
 
 More information can be found at https://www.zscaler.com/pricing-and-plans
 :::
