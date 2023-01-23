@@ -116,7 +116,7 @@ A user wants to get an alert if all hosts from a given service has stopped sendi
 
 This alert can be useful if you suspect that one of your collectors has stopped sending data. Once you set this up, you'll get an alert about collector if it's stopped sending data. This alert will work without any issues, even if you add new collectors to your Sumo Logic account.
 
-**Query**:
+* **Query**:  
    ```
    _index=sumologic_volume AND _sourceCategory=collector_volume
    | parse regex "\"(?<collector>[^\"]+)\"\:\{\"sizeInBytes\"\:(?<bytes>\d+)\,\"count\"\:(?<events>\d+)\}" multi nodrop
