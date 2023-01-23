@@ -6,7 +6,7 @@ description: Local Configuration File Management is a straightforward way to get
 
 
 
-With local configuration file management, you cannot use the API or the web app for Source configuration. In the web app, the **Add Source** option is disabled on the **Manage Data \> Collection \> Collection** page.
+With local configuration file management, you cannot use the API or the web app for Source configuration. In the web app, the **Add Source** option is disabled on the **Manage Data > Collection > Collection** page.
 
 ## Step 1. Determine the Sources you need
 
@@ -28,7 +28,7 @@ There are two ways to implement local configuration file management:
 When installing the Collector, specify the `syncSources` parameter. See the topics in [Installed Collectors](/docs/send-data/installed-collectors/sources) for information on specifying parameters during installation.
 
 | Parameter | Type | Description |
-|--|--|--|
+|:--|:--|:--|
 | syncSources   | String   | Sets the JSON file describing sources to configure on registration, which will be continuously monitored and synchronized with the Collector's configuration. |
 
 For example, for command-line installation, supplying the Access ID and
@@ -36,7 +36,7 @@ Access Key, `syncSources`, and the Collector name:
 
 `sudo ./SumoCollector.sh -q -Vsumo.accessid\<accessI\> -Vsumo.accesskey\<accessKe\> -VsyncSources\<filepat\> -Vcollector.name\<name\>`
 
-For Collector versions prior to 19.137 add the `syncSources` parameter to the [**sumo.conf**](docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) file before starting the Collector for the first time.
+For Collector versions prior to 19.137 add the `syncSources` parameter to the [**sumo.conf**](/docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) file before starting the Collector for the first time.
 
 ## Making changes to the configuration files
 

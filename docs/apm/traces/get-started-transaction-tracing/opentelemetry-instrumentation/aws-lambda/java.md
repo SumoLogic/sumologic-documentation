@@ -17,7 +17,7 @@ You'll need the following:
 
 * Java8 (Corretto) or Java11 (Corretto)
 * Lambda layers add permissions
-* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [HTTP Traces Source](docs/apm/traces/get-started-transaction-tracing/http-traces-source.md).
+* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [HTTP Traces Source](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md).
 
 Sumo Logic AWS Distro Lambda Layer supports:
 
@@ -38,7 +38,7 @@ Sumo Logic AWS Distro Lambda Layer supports:
 
     ![lambda-java2.png](/img/traces/lambda-java2.png)
 
-1. Navigate to the **Configuration \> Environment variables** section and set up the following **required** environment variables:
+1. Navigate to the **Configuration > Environment variables** section and set up the following **required** environment variables:
 
    * `AWS_LAMBDA_EXEC_WRAPPER` environment variable configures the appropriate wrapper for a specific type of lambda handler function. Set the value appropriate for your handler:
 
@@ -55,11 +55,11 @@ Sumo Logic AWS Distro Lambda Layer supports:
 
         All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
 
-     * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](docs/apm/traces/get-started-transaction-tracing/http-traces-source.md). You can use an existing Source or create a new one if needed.  
+     * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md). You can use an existing Source or create a new one if needed.  
 
     ![img](/img/traces/lambda-java3.png)
 
-1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](docs/apm/traces/working-with-tracing-data/view-and-investigate-traces.md).
+1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces.md).
 
 ## Optional manual instrumentation
 
@@ -94,7 +94,7 @@ library.
 The following are Sumo Logic AWS Distro Lambda layers for AWS Region amd64 (x86_64) architecture.
 
 | AWS Region | ARN |
-|--|--|
+|:--|:--|
 | US East (N.Virginia) us-east-1 | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-java-x86_64-ver-1-12-1:1 |
 | US East (Ohio) us-east-2 | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-java-x86_64-ver-1-12-1:1      |
 | US West (N.Carolina) us-west-1 | arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-java-x86_64-ver-1-12-1:1      |
@@ -122,7 +122,7 @@ The following are Sumo Logic AWS Distro Lambda layers for AWS Region amd64 (x86_
 The following are Sumo Logic AWS Distro Lambda layers for AWS Region arm64 architecture.
 
 | AWS Region | ARN |
-|--|--|
+|:--|:--|
 | US East (N.Virginia) us-east-1          | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-java-arm64-ver-1-12-1:1      |
 | US East (Ohio) us-east-2                | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-java-arm64-ver-1-12-1:1      |
 | US West (Oregon) us-west-2              | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-java-arm64-ver-1-12-1:1      |

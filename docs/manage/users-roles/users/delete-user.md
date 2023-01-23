@@ -14,7 +14,7 @@ When you delete a user, a message is written to the Sumo Audit Index, if the aud
 If you prefer to prevent a user from accessing Sumo without transferring the user’s Library content, you can [deactivate a user](deactivate-activate-user.md).
 
 :::important
-A user designated as Account Owner cannot be deleted. To transfer ownership, the Account Owner must do this on the Account page. For more information, see the [Change the Account Owner](docs/manage/manage-subscription/manage-org-settings.md) section in the *Manage Organization* topic.
+A user designated as Account Owner cannot be deleted. To transfer ownership, the Account Owner must do this on the Account page. For more information, see the [Change the Account Owner](/docs/manage/manage-subscription/manage-org-settings.md) section in the *Manage Organization* topic.
 :::
 
 ## Before you begin
@@ -44,7 +44,7 @@ Before you begin, perform the steps in [Offboard a User.](offboard-user.md) The
 Use caution when deleting a user. This action can't be undone.
 :::
 
-1. Go to **Administration** \> **Users and Roles** \> **Users**.  
+1. Go to **Administration** > **Users and Roles** > **Users**.  
 
     ![user-options-menu.png](/img/users-roles/users-page.png)
 
@@ -61,7 +61,7 @@ Use caution when deleting a user. This action can't be undone.
 Use caution when deleting a user. This action can't be undone.
 :::
 
-1. Go to  **Administration** \> **Users and Roles** \> **Users**.  
+1. Go to  **Administration** > **Users and Roles** > **Users**.  
 
     ![users-page-2.png](/img/users-roles/users-page-2.png)
 

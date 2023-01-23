@@ -24,9 +24,7 @@ The [Before You Write a Custom Rule](before-writing-custom-rule.md) topic has us
 
 ## About tuning expressions
 
-Like a rule expression, a tuning expression is matched against incoming Records. The difference is, if a Record matches a Rule’s tuning expression in addition to its rule expression, the rule will not generate a Signal.
-
-As an example, consider the following rule expression, which detects that an attempt was made to clear the Windows Security Event Log.
+Like a rule expression, a tuning expression is matched against incoming Records. As an example, consider the following rule expression, which detects that an attempt was made to clear the Windows Security Event Log.
 
 ```sql
 metadata_vendor = 'Microsoft' and metadata_product = 'Windows' and metadata_deviceEventId = 'Security-1102' and fields['Provider.Name'] = 'Microsoft-Windows-Eventlog'
@@ -40,7 +38,7 @@ user_userId = !jdoe
 
 The tuning expression is AND’d with the rule expression—the rule will only generate a Signal if a Record matches both expressions. 
 
-Rule tuning expressions allow you to tailor the logic of a built-in rule without logic without replicating and modifying the rule. The benefit of using a tuning expression, over the copy and edit method, is that when CSE updates built-in rules, your tuning expressions are preserved. This division of logic means that you don’t need to create as many custom rules. If you use tuning expressions in combination with multi-entity rules you’ll further reduce the need for custom rules.   
+Rule tuning expressions allow you to tailor the logic of a built-in rule without replicating and modifying the rule. The benefit of using a tuning expression, over the copy and edit method, is that when CSE updates built-in rules, your tuning expressions are preserved. This division of logic means that you don’t need to create as many custom rules. If you use tuning expressions in combination with multi-entity rules you’ll further reduce the need for custom rules.   
 
 You create tuning expressions on the **Rule Tuning** page, which is available from the **Content** menu. When you create a tuning expression, you have the option of applying to all of your rules, or to selected rules. Or, you can apply tuning expressions when you create a rule. You can apply multiple tuning expressions to a rule. You can assign a tuning expression to selected rules, or to all of your rules. You can also create a tuning expression without immediately assigning it to any rules. For more information, see [Rule Tuning Expressions](rule-tuning-expressions.md).
 
@@ -74,7 +72,7 @@ metadata_vendor = 'Trend Micro' and metadata_product = 'Deep Security'  and meta
 Some of the key metadata fields are defined below.
 
 | Metadata field  | Type | Description |
-|--|--|
+|:--|:--|
 | `metadata_vendor` | string | The name of the company responsible for the data source. Note the name of the product is in the "product" field. |
 | `metadata_product` | string | The specific product name of the data source. Note the name of the company who created the product is the "vendor" field. |
 | `metadata_deviceEventId` | string | Event type given by the vendor for the log. |
@@ -93,7 +91,7 @@ This section describes what [Match Lists](/docs/cse/match-lists-suppressed-lists
 
 Match Lists are lists of important indicators and identifiers, typically configured by a CSE analyst. Match Lists are often used to define allowlists of entities, like IP addresses, URLs, and hostnames, and so on, that you want to exempt from ordinary rule processing. For example, you might want to prevent a rule from firing for Records that contain one of a certain set of IP addresses. 
 
-Here’s an example of a Match List in the CSE UI, at **Content \> Match Lists**. 
+Here’s an example of a Match List in the CSE UI, at **Content > Match Lists**. 
 
 ![example-match-list.png](/img/cse/example-match-list.png)
 
@@ -142,7 +140,7 @@ This example below checks a Record for a field named `listMatches` that contains
 
 CSE’s Threat Intel lists are very similar to Match Lists, and you leverage them in rules in the same way. Threat Intel lists contain values that, when encountered in a Record, are clear indicators of compromise. 
 
-Here’s an example of a Threat Intel list in the CSE UI, at **Content \> Threat Intel**. 
+Here’s an example of a Threat Intel list in the CSE UI, at **Content > Threat Intel**. 
 
 ![example-threat-intl.png](/img/cse/example-threat-intl.png)
 

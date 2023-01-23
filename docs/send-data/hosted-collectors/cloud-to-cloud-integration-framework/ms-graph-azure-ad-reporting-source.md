@@ -2,8 +2,8 @@
 id: ms-graph-azure-ad-reporting-source
 title: MS Graph Azure AD Reporting Source
 sidebar_label: MS Graph Azure AD Reporting
+description: The Microsoft Graph Azure AD Reporting Source collects Directory Audit, Sign-in, and Provisioning data from the Microsoft Graph API Security endpoint.
 ---
-
 
 The Microsoft Graph Azure AD Reporting Source collects [Directory Audit](https://docs.microsoft.com/en-us/graph/api/directoryaudit-list?view=graph-rest-1.0), [Sign-in](https://docs.microsoft.com/en-us/graph/api/signin-list?view=graph-rest-1.0), and [Provisioning](https://docs.microsoft.com/en-us/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0) data from the [Microsoft Graph API Azure AD activity reports](https://docs.microsoft.com/en-us/graph/api/resources/azure-ad-auditlog-overview?view=graph-rest-1.0). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -17,15 +17,15 @@ A Microsoft Graph Azure AD Reporting Source tracks errors, reports its health
 
 A Microsoft Graph Azure AD Reporting Source goes through the following states when created:
 
-1. **Pending**: Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
-1. **Started**: A collection task is created on the Hosted Collector.
-1. **Initialized**: The task configuration is complete in Sumo Logic.
-1. **Authenticated**: The Source successfully authenticated with Microsoft.
-1. **Collecting**: The Source is actively collecting data from Microsoft.
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
+1. **Started**. A collection task is created on the Hosted Collector.
+1. **Initialized**. The task configuration is complete in Sumo Logic.
+1. **Authenticated**. The Source successfully authenticated with Microsoft.
+1. **Collecting**. The Source is actively collecting data from Microsoft.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
-When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
 On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
 
@@ -45,7 +45,7 @@ The user creating the service application does not need to be an administrator.�
 
 Use the following steps to create a service application:
 
-1. Log in to the [Azure Active Directory Portal](https://aad.portal.azure.com/)
+1. Log in to the [Azure Active Directory Portal](https://aad.portal.azure.com/).
 1. Then select **Azure Active Directory** in the left menu.
 
     ![Azure AD step 2.png](/img/send-data/Azure-AD-step-2.png)
@@ -72,17 +72,17 @@ Use the following steps to create a service application:
 
 1. Request the appropriate permissions for the application. Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**. From there select (or search for) the following permissions. An Administrator must approve (grant) these permissions before the integration will function.
 
-| **API**         | **Account Type**                       | **Permissions**                          |
-|-----------------|----------------------------------------|------------------------------------------|
-| Directory Audit | Delegated (work or school account)     | AuditLog.Read.All and Directory.Read.All |
-| Directory Audit | Delegated (personal Microsoft account) | Not supported.                           |
-| Directory Audit | Application                            | AuditLog.Read.All and Directory.Read.All |
-| Sign-in         | Delegated (work or school account)     | AuditLog.Read.All and Directory.Read.All |
-| Sign-in         | Delegated (personal Microsoft account) | Not supported.                           |
-| Sign-in         | Application                            | AuditLog.Read.All and Directory.Read.All |
-| Provisioning    | Delegated (work or school account)     | AuditLog.Read.All and Directory.Read.All |
-| Provisioning    | Delegated (personal Microsoft account) | Not supported.                           |
-| Provisioning    | Application                            | AuditLog.Read.All                        |
+| **API**         | **Account Type**                       | **Permissions**                                                           |
+|:-----------------|:----------------------------------------|:---------------------------------------------------------------------------|
+| Directory Audit | Delegated (work or school account)     | AuditLog.Read.All and Directory.Read.All                                  |
+| Directory Audit | Delegated (personal Microsoft account) | Not supported.                                                            |
+| Directory Audit | Application                            | AuditLog.Read.All and Directory.Read.All                                  |
+| Sign-in         | Delegated (work or school account)     | AuditLog.Read.All and Directory.Read.All                                  |
+| Sign-in         | Delegated (personal Microsoft account) | Not supported.                                                            |
+| Sign-in         | Application                            | AuditLog.Read.All and Directory.Read.All and Policy.Read.ConditionalAccess|
+| Provisioning    | Delegated (work or school account)     | AuditLog.Read.All and Directory.Read.All                                  |
+| Provisioning    | Delegated (personal Microsoft account) | Not supported.                                                            |
+| Provisioning    | Application                            | AuditLog.Read.All                                                         |
 
 
 ![azure ad step 8.png](/img/send-data/azure-ad-step-8.png)
@@ -93,7 +93,7 @@ When you create a Microsoft Graph Azure AD Reporting Source, you add it to a Ho
 
 To configure a Microsoft Graph Azure AD Reporting Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data > Collection > Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **MS Graph Azure AD Reporting**.
 
@@ -125,14 +125,14 @@ To configure a Microsoft Graph Azure AD Reporting Source:
 
 1. **Supported APIs to collect**. Select one or more of the available APIs: **Directory Audit**, **Sign-in**, and **Provisioning**.
 
-1. When you are finished configuring the Source click **Submit**.
+1. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
 When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
@@ -142,7 +142,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | config | JSON Object  | Yes | Contains the [configuration parameters](okta-source.md) for the Source. |   |
 | schemaRef | JSON Object  | Yes | Set to `{"type":"MS Graph Azure AD Reporting"}`. | not modifiable |
 | sourceType | String | Yes | Set to `Universal`. | not modifiable |
@@ -150,7 +150,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 The following table shows the **config** parameters for a Microsoft
 Graph Azure AD Source.
 
-| Parameter | Type | Required? | Default | Description | Access ||--|--|--|--|--|--|
+| Parameter | Type | Required? | Default | Description | Access |
+|:--|:--|:--|:--|:--|:--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |

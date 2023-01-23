@@ -44,7 +44,9 @@ export const Feature = ({
             {title}
           </Typography>
         </Link>
-        <Typography>
+        <Typography
+          fontFamily='Lab Grotesque'
+        >
           {description}
         </Typography>
       </Box>

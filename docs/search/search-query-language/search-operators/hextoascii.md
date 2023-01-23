@@ -4,9 +4,7 @@ title: hexToAscii Search Operator
 sidebar_label: hexToAscii
 ---
 
-
-
-The hexToAscii operator converts a hexadecimal string to an ASCII string.
+The `hexToAscii` operator converts a hexadecimal string to an ASCII string.
 
 ## Syntax
 
@@ -18,7 +16,7 @@ hexToAscii(<hexadecimal_field>) as <field>
 hexToAscii("<hexadecimal string>") as <field>
 ```
 
-**Example**
+## Example
 
 The following returns `V` with a value of `hello world`:
 

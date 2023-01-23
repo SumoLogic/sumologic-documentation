@@ -28,9 +28,9 @@ Explore is an out-of-the-box Sumo Logic view that you can use to navigate a vis
 
 To open Explore, do the following:
 1. Log in to Sumo Logic and click **+ New** on the top menu bar.
-1. From the drop-down menu, choose **Explore**. 
+1. From the dropdown menu, choose **Explore**. 
 
-In order to start monitoring your Kubernetes environment, you first have to setup data collection and install the core Kubernetes dashboards by following the steps in our [quickstart](docs/observability/kubernetes/quickstart.md) guide.
+In order to start monitoring your Kubernetes environment, you first have to setup data collection and install the core Kubernetes dashboards by following the steps in our [quickstart](/docs/observability/kubernetes/quickstart.md) guide.
 
 To navigate Kubernetes environment and analyze the landscape, do the following:
 
@@ -38,7 +38,7 @@ To navigate Kubernetes environment and analyze the landscape, do the following:
 1. Click the arrow to the left of a content name to expand and view its contents.<br/> ![Explore_cluster_contents.png](/img/kubernetes/Explore_cluster_contents.png)
 1. Dead entities are shown faded:<br/> ![faded entityexplore.png](/img/kubernetes/faded-entity-explore.png)
 1. Drill down into the clusters to view the pods and containers. The data for your selection is displayed in the panels of the dashboard on the right.<br/> ![Explore_Drill-Down.png](/img/kubernetes/Explore_Drill-Down.png)
-1. Optional: Select another type of dashboard display from the drop-down menu at the top of the dashboard, and select another time interval.<br/>![Explore_Drill-Down_Dashboard_options.png](/img/kubernetes/Explore_Drill-Down_Dashboard_options.png)
+1. Optional: Select another type of dashboard display from the dropdown menu at the top of the dashboard, and select another time interval.<br/>![Explore_Drill-Down_Dashboard_options.png](/img/kubernetes/Explore_Drill-Down_Dashboard_options.png)
 
 
 <!--
@@ -164,7 +164,7 @@ The following task shows you how to create a custom field for a collector. In 
 
 To add a custom field to a collector, do the following:
 
-1. From the main Sumo Logic page, select **Manage Data \> Collection** in the left menu bar.
+1. From the main Sumo Logic page, select **Manage Data > Collection** in the left menu bar.
 
     ![K8s_Key-value-pair_Collection-option.png](/img/kubernetes/K8s_Key-value-pair_Collection-option.png)
 

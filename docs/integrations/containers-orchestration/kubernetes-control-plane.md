@@ -79,7 +79,7 @@ connection refused"}
 * Node-exporter Metrics
 * kube-state-metrics
 
-Metrics are collected using [Prometheus with FluentD](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-1-create-sumo-collector-and-deploy-fluentd). For additional information on metrics options you can configure for collection, see [this document](/docs/metrics/kubernetes-metrics.md).
+Metrics are collected using [Prometheus with FluentD](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#step-1-create-sumo-collector-and-deploy-fluentd). For additional information on metrics options you can configure for collection, see [this document](/docs/metrics/kubernetes-metrics.md).
 
 ### Sample Query
 
@@ -95,7 +95,7 @@ _sourceCategory = *controller*
 
 ## Collecting Logs and Metrics for the Kubernetes Control Plane App
 
-See [Sumo Logic Kubernetes Collection](docs/observability/kubernetes/collection-setup.md) for instructions on configuring log and metric collection for the Kubernetes Control Plane App.
+See [Sumo Logic Kubernetes Collection](/docs/observability/kubernetes/collection-setup.md) for instructions on configuring log and metric collection for the Kubernetes Control Plane App.
 
 :::caution
 Before installing the [Kubernetes Control Plane App](#installing-the-kubernetes-control-plane-app), you must set up collection for and install the [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes), which provides the services for managing and monitoring Kubernetes worker nodes.
@@ -212,7 +212,7 @@ Use this dashboard to:
 
 ### Security Audit Events
 
-This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `"falco:enabled"` as `"true"` in values.yaml as described [on this page](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Installation_with_Helm.md).
+This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `"falco:enabled"` as `"true"` in values.yaml as described [on this page](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).
 
 The **Kubernetes - Security Audit** Events dashboard provides insights into Kubernetes audit events collected by Falco.
 

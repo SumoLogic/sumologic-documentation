@@ -15,7 +15,7 @@ Sumo manages an elastic scaling set of syslog servers, which scales up and down
 syslog.collection.YOUR_DEPLOYMENT.sumologic.com
 ```
 
-where `YOUR_DEPLOYMENT` is `au`, `ca`, `de`, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. See endpoints for more information.
+where `YOUR_DEPLOYMENT` is `au`, `ca`, `de`, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For more information, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 :::important
 FIPS 140-2 compliance is not available for Cloud Syslog in the FedRAMP deployment.  
@@ -24,7 +24,9 @@ It is with great emphasis that you must recognize and understand that the respon
 :::
 
 In the procedure below, you configure a Cloud Syslog Source, this will generate a Sumo Logic token and the endpoint hostname. Then you set up TLS by downloading a cert to your server. Download the **DigiCert** certificate
-from https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt.
+from one of the following locations:
+* [https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt)
+* [https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt.pem](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt.pem)
 
 Sumo Logic supports syslog clients, including syslog-ng and rsyslog. Follow the instructions in the appropriate section below to configure your server to send syslog data. If syslog data does not appear in Sumo Logic, refer to
 [Troubleshooting](#troubleshooting) below.
@@ -39,8 +41,8 @@ The token is deleted if you delete the source. To change a token, use the **Rege
 
 To configure a cloud syslog source, do the following:
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
-1. On the **Collection** page, click **Add Source** next to a Hosted Collector.  See [Set up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for information on adding Hosted Collectors.
+1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. On the **Collection** page, click **Add Source** next to a Hosted Collector. See [Set up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for information on adding Hosted Collectors.
 1. Select **Cloud Syslog**.
 1. Enter a **Name** to display for this source in Sumo. Description is optional.
 1. (Optional) For **Source Host** and **Source Category**, enter any string to tag the output collected from this source. (Category metadata is stored in a searchable field called `_sourceCategory`.)

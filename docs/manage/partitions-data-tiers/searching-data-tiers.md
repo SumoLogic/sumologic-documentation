@@ -23,7 +23,7 @@ Even though you don't have to use `_dataTier` when you are querying selected par
 ## Examples
 
 | Example query	| Description |
-| -- | -- |
+| :-- | :-- |
 | `error` | Searches all partitions in the Continuous tier  for messages that contain the string “error”. |
 | `_dataTier=Frequent error` | Searches all partitions in the Frequent tier  for messages that contain the string “error”. |
 | `_dataTier=All error` | Searches all partitions in all tiers for messages that contain the string “error”. |
@@ -46,11 +46,11 @@ The `_dataTier` search modifier is not supported in:
 * Logs-to-Metrics rules
 * In scheduled searches, setting `_dataTier` to All, Frequent, or Infrequent is not supported.
 
-In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field](docs/manage/fields.md) or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
+In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field](/docs/manage/fields.md) or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
 
 ## Best practices
 
-* To query a single tier, use `_dataTier\<TierNam\>` in the scope of your query.
+* To query a single tier, use `_dataTier=<TierName>` (i.e. `_dataTier=Infrequent`) in the scope of your query.
 * To query all tiers, use `_dataTier=All`
 * When you run a query that will return data from the Infrequent tier, the best practice is to review the scan estimate after writing the query and before before running it. See the following section for more information.
 
@@ -85,7 +85,7 @@ Given these partitions:
 * `dashboardInfreq` in the Infrequent Tier
 
 | Role search filter  | Search query | Results | Notes |
-|--|--|--|--|
+|:--|:--|:--|:--|
 | `*` | `_index=dashboard*` | Results will include data from all three of the partitions  | Because the role search filter grants access to all partitions, regardless of tier, results are returned for each of the partitions. |
 | `_index=dashboard*` | `*` | Results will only include data from the `dashboardContinuous` partition. | Although the filter gives the user access to `dashboardCont`, `dashboardFreq` and `dashboardInfreq`. The search query "\*" means only continuous views, so of the three views the user has access to, the one in the Continuous tier will be the one selected. |
 

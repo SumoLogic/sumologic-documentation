@@ -70,7 +70,7 @@ Collector versions 19.253-26+ support **wrapper** configuration parameters.
 :::
 
 | Parameter | Type | Description | Default Value |
-|--|--|--|--|
+|:--|:--|:--|:--|
 | alerts.ttl.min | integer  | Duration in minutes before deleting alerts stored in the Collector directory. | 180 |
 | aws.metadata.cache.enabled | boolean  | Enable fetching and caching AWS-specific local metadata. | true |
 | aws.metadata.cache.fetch.timeout.ms | integer  | HTTP connection timeout in milliseconds when attempting to fetch AWS-specific local metadata. | 1000 |
@@ -127,8 +127,8 @@ Collector versions 19.253-26+ support **wrapper** configuration parameters.
 | LogSender.pause.override | boolean  | Pause sending HTTP data from the log sender to Sumo Logic. | false |
 | metadata.cache.expiration.sec | integer  | Duration in seconds to expire and retry fetching local metadata cached by the Collector. | 600 |
 | MetricsSender.pause.override | boolean  | Pause sending HTTP data from the metric sender to Sumo Logic. | false |
-| multiline.maxCharLength | integer  | Sets the size in KB the Collector reads up to for detecting multiline messages. See [Collecting Multiline Logs](docs/send-data/reference-information/collect-multiline-logs.md for details. | 524288                                                           |
-| multiline.maxLines | integer  | Sets the number of lines the Collector reads up to for detecting multiline messages. See [Collecting Multiline Logs](docs/send-data/reference-information/collect-multiline-logs.md) for details. | 2000 |
+| multiline.maxCharLength | integer  | Sets the size in KB the Collector reads up to for detecting multiline messages. See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs.md for details. | 524288                                                           |
+| multiline.maxLines | integer  | Sets the number of lines the Collector reads up to for detecting multiline messages. See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs.md) for details. | 2000 |
 | offline.numRetries | integer  | Number of retry attempts before entering offline collection mode on connection failure. | 3 |
 | paging.lowerbound.mb | integer  | Size in megabytes of free storage space available after which the Collector exits flushing mode. | 32 |
 | paging.upperbound.mb | integer  | Size in megabytes of free storage space available after which the collector enters flushing mode. | 2048 |

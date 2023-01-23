@@ -118,7 +118,7 @@ Before generating the template, the source’s configuration must have the AWS-s
    1. **External ID**. The External ID is formed from your Sumo Logic region identifier and your Sumo Logic account identifier in this format: *SumoDeployment:SumoAccountId* where:
 
       * *SumoDeployment* is your Sumo Logic deployment entered in lowercase such as au, ca, de, eu, fed, in, jp, us1, or us1. To find your deployment, see Sumo Logic Endpoints by Deployment and Firewall Security.
-      * *SumoAccountId* is the Organization ID shown on your **Account Overview** in the Sumo Logic UI. You can access it by going to **Administration \> Account \> Account Overview**.
+      * *SumoAccountId* is the Organization ID shown on your **Account Overview** in the Sumo Logic UI. You can access it by going to **Administration > Account > Account Overview**.
 
    1. **Require MFA**. Don’t select this option; it is not supported.
    1. Click **Next: Permissions**.
@@ -145,7 +145,7 @@ Before generating the template, the source’s configuration must have the AWS-s
 15. Enter tags, as desired, and click **Next: Review**.
 16. On the **Create role - Review** page, enter a Role name.
 17. Review the configuration of the role, and click Create role.
-18. After creating the role, you will be returned to the **IAM \> Roles** console. 
+18. After creating the role, you will be returned to the **IAM > Roles** console. 
 19. Enter the name of the newly created role, and then select the role.
 20. Copy the Role ARN. When you create your Sumo Logic source, enter it in the Role ARN field. The ARN will look something like   `arn:aws:iam::123456789:role/...`
 

@@ -41,7 +41,7 @@ Sumo Logic has several deployment types, which vary by geographic location and t
 
 ## Service Map API
 
-The Service Map API allows you to fetch a graph representation of the Service Map, which is a high-level view of your application environment, automatically derived from tracing data. For more information see [Service Map](/docs/apm/traces/Working-with-Tracing-data/Service-Map).
+The Service Map API allows you to fetch a graph representation of the Service Map, which is a high-level view of your application environment, automatically derived from tracing data. For more information see [Service Map](/docs/apm/traces/Working-with-Tracing-data/services-list-map).
 
 
 ### Endpoints for API access  
@@ -215,7 +215,7 @@ Select the documentation link for your deployment:
 
 ## Span Analytics API
 
-The Span Analytics API allows you to browse spans collected in the system. You can execute queries to find individual spans matching provided search criteria as well as run aggregated span queries and retrieve their results. For more information see [Spans](docs/apm/traces/working-with-tracing-data/spans.md).
+The Span Analytics API allows you to browse spans collected in the system. You can execute queries to find individual spans matching provided search criteria as well as run aggregated span queries and retrieve their results. For more information see [Spans](/docs/apm/traces/working-with-tracing-data/spans.md).
 
 
 ### Endpoints for API access  

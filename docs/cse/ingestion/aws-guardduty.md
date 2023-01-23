@@ -13,7 +13,7 @@ In this step, you configure an HTTP Source to collect AWS GuardDuty log messages
 
 ### Configure a Hosted Collector
 
-1. In the Sumo Logic platform, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  
@@ -32,7 +32,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 
 ### Configure an HTTP Source
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. Navigate to the Hosted Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 
@@ -79,7 +79,7 @@ In this step, you deploy the events processor. This will create the AWS resource
    * `SOURCE_HOST_OVERRIDE` (Optional). Override the `_sourceHost` value  configured for the HTTP source.
    * `SOURCE_NAME_OVERRIDE` (Optional). Override the `_sourceName` value configured for the HTTP source.
 
-## Step 3: Verify ingestion
+## Step 4: Verify ingestion
 
 In this step, you verify that your logs are successfully making it into CSE. 
 

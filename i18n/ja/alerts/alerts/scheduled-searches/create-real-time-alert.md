@@ -28,7 +28,7 @@ If the time zone of messages is set incorrectly, those logs won't be picked up b
 * A maximum of 120 emails are sent per day per Real Time Alert.
 * Aggregate real-time scheduled searches evaluate the first 1,000 results per search. For Example, if the scheduled search is supposed to return more than 1,000 results, reduce the scope of the search.
 * Non-Aggregate real-time scheduled searches evaluate the first 100 results per search. For Example, if the scheduled search is supposed to return more than 100 results, either convert it to aggregate scheduled search or reduce the scope of the search.
-* The [_dataTier](docs/manage/partitions-data-tiers/data-tiers.md) search modifier is not supported in Real Time Alert searches.
+* The [_dataTier](/docs/manage/partitions-data-tiers/data-tiers.md) search modifier is not supported in Real Time Alert searches.
 
 ### Notification Results
 
@@ -36,7 +36,7 @@ The results from your search will vary based on the type of alert selected. The 
 
 | Alert Type | Results in Notification |
 | -- | -- |
-| [Webhook](docs/manage/connections-integrations/webhook-connections/schedule-searches-webhook-connections.md) | If the **Send a separate alert for each search result checkbox** is selected (in step 6) only new results from subsequent searches are sent in the alert payload. Otherwise, all results are sent. |
+| [Webhook](/docs/alerts/webhook-connections/schedule-searches-webhook-connections) | If the **Send a separate alert for each search result checkbox** is selected (in step 6) only new results from subsequent searches are sent in the alert payload. Otherwise, all results are sent. |
 | [Save to Index](save-to-index.md) | All results are saved from an **aggregate** query.<br/>Only new results from subsequent searches are saved from a **non-aggregate** query. |
 | [Save to Lookup](save-to-lookup.md) | All results are saved. |
 

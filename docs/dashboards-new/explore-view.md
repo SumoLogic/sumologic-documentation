@@ -15,7 +15,7 @@ Explore is a navigation tool that provides an intuitive visual hierarchy of your
 To open Explore, do the following:
 
 1. Log in to Sumo Logic and click **+ New** on the top menu bar.
-2. From the drop-down menu, choose **Explore**.<br/><img src={useBaseUrl('img/dashboards-new/explore/Explore-open.png')} alt="Explore" />
+2. From the dropdown menu, choose **Explore**.<br/><img src={useBaseUrl('img/dashboards-new/explore/Explore-open.png')} alt="Explore" />
 3. In the **Explore By** navigation panel, select your desired category (e.g., AWS Observability), then drill down further until you find your desired component which you'd like to explore. Metrics will be displayed/visualized as dashboards. See [Application Components View](#Application-Components-View) for an example walkthrough.
 
 
@@ -55,7 +55,7 @@ This feature is currently supported only for Database apps. To learn more, go to
 
 ### Application Service Views
 
-Explore provides two Service and Application dashboard views accessible through the **Explore By** menu. This allows you to review tracing data by application (all or grouped) and services by top level and breaking down their health by application. This helps you review the most active operations performed on specified applications and services. See [Service Map Traces](/docs/apm/traces/working-with-tracing-data/service-map.md#Application_Service_Dashboards) and [Sumo Apps](/docs/integrations) for more info. <br/><img src={useBaseUrl('img/dashboards-new/explore/apm-service-view.png')} alt="Explore" />
+Explore provides two Service and Application dashboard views accessible through the **Explore By** menu. This allows you to review tracing data by application (all or grouped) and services by top level and breaking down their health by application. This helps you review the most active operations performed on specified applications and services. See [Service Map Traces](/docs/apm/traces/working-with-tracing-data/services-list-map.md#Application_Service_Dashboards) and [Sumo Apps](/docs/integrations) for more info. <br/><img src={useBaseUrl('img/dashboards-new/explore/apm-service-view.png')} alt="Explore" />
 
 
 ### Real User Monitoring
@@ -75,7 +75,7 @@ Explore provides the ability to filter your view so you can focus on specific en
 
   The **Filter** menu allows you to select a saved filter or write a new one. If you have any saved filters they are available in the dropdown menu **Filter**. The default value is **None Selected**. The **Clear All** button is available to clear any filters that are already applied.
 
-3. To create a new filter click in the **Enter a key value pair to create a filter** input area. A drop down will appear showing you available keys you can filter by. You may only provide a **value** without a key.<br/><img src={useBaseUrl('img/dashboards-new/explore/select-filter.png')} alt="Explore" />
+3. To create a new filter click in the **Enter a key value pair to create a filter** input area. A dropdown will appear showing you available keys you can filter by. You may only provide a **value** without a key.<br/><img src={useBaseUrl('img/dashboards-new/explore/select-filter.png')} alt="Explore" />
 
 4. Enter or select the keys you want to filter by then click **Apply**. Filters of the same key behave as an **OR** condition and different keys behave as an **AND** condition.<br/><img src={useBaseUrl('img/dashboards-new/explore/brand_theme_apply_filters.png')} alt="Explore" />
 
@@ -89,7 +89,7 @@ You can apply the filter as an exclusion or negation so the filter acts as a `no
 
 You can save filters so they are applied every time you explore the same Dashboards. To save, click the three-vertical dots icon and then click **Save**.<br/><img src={useBaseUrl('img/dashboards-new/explore/brand_theme_save_filters.png')} alt="Explore" />
 
-A pop up window is shown where you need to provide the filter a name. This name is what you'll see in the **Filter** drop down menu.<br/><img src={useBaseUrl('img/dashboards-new/explore/savefilter.png')} alt="Explore" />
+A pop up window is shown where you need to provide the filter a name. This name is what you'll see in the **Filter** dropdown menu.<br/><img src={useBaseUrl('img/dashboards-new/explore/savefilter.png')} alt="Explore" />
 
 We have named the filter "primary" in the above image. Once done click **Save**. When opening Explore you'll now see the **primary** filter as an option in the **Filter** menu.<br/><img src={useBaseUrl('img/dashboards-new/explore/select-saved-filters.png')} alt="Explore" />
 
@@ -105,7 +105,7 @@ Saved filters can be applied as a default filter, edited, or deleted.
 
 ### Remove Default Filter
 
-The default filter is displayed in the **Filter** drop down menu with a **Default** label. Select the **Remove default** text link to clear your set default filter.<br/><img src={useBaseUrl('img/dashboards-new/explore/removedefaultfilter.png')} alt="Explore" />
+The default filter is displayed in the **Filter** dropdown menu with a **Default** label. Select the **Remove default** text link to clear your set default filter.<br/><img src={useBaseUrl('img/dashboards-new/explore/removedefaultfilter.png')} alt="Explore" />
 
 
 ## Linking to Entities in Explore

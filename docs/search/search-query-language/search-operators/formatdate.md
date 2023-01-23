@@ -4,8 +4,11 @@ title: formatDate Search Operator
 sidebar_label: formatDate
 ---
 
+The `formatDate` operator allows you to format dates in log files as a string in the format you require, such as U.S. date formatting, European formatting, and timestamps. 
 
-The formatDate operator allows you to format dates in log files as a string in the format you require, such as US date formatting, European formatting, and timestamps. 
+:::note
+If you're looking to convert a date to a timestamp, use [`parseDate`](docs/search/search-query-language/parse-operators/parsedate.md).
+:::
 
 ## Syntax
 
@@ -13,23 +16,23 @@ The formatDate operator allows you to format dates in log files as a string in t
 formatDate(<date> [, <format> [, <timeZone>]]) as <field>
 ```
 
-**Returns:**
+### Returns
 
 A date String, in US-style date format if no format is specified. The date is in the local timezone of the user if no timeZone is specified.
 
-**Parameters:**
+### Parameters
 
-* **date** - milliseconds (13 digits), as a Long. You can also use formatDate with the [Now](#now) operator.
-* **format** - any valid date and time pattern String accepted by Java’s [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html). For more details about specifying the **format** see [Timestamps, Time  Zones, Time Ranges, and Date Formats](docs/send-data/reference-information/time-reference.md).
+* **date** - milliseconds (13 digits), as a Long. You can also use formatDate with the [Now](now.md) operator.
+* **format** - any valid date and time pattern String accepted by Java’s [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html). For more details about specifying the **format** see [Timestamps, Time  Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference.md).
 * **timeZone** - a String, such as "America/Los_Angeles" or "Europe/London"
 
 :::important
-Convert the date parameter to Long if necessary. Passing a String can produce the error: "Multiple definitions found for function formatDate(String, String)." The solution is to cast the date parameter using the [toLong](#casting-data-to-a-number-or-string) operator.
+Convert the date parameter to Long if necessary. Passing a String can produce the error: "Multiple definitions found for function formatDate(String, String)." The solution is to cast the date parameter using the [toLong](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) operator.
 :::
 
-**Examples**
+## Examples
 
-##### Date format yyyy-MM-dd
+### Date format yyyy-MM-dd
 
 Use the following query to return results for the current date using the date format **yyyy-MM-dd**.
 
@@ -41,7 +44,7 @@ This creates the today column, and returns the following results.
 
 ![FormatDate](/img/search/searchquerylanguage/search-operators/FormatDate.png)
 
-##### European date format** **dd-MM-yyyy
+### European date format** **dd-MM-yyyy
 
 Use the following query to create a **today** column, and return the results using the European date format of day, month, year, **dd-MM-yyyy**.
 
@@ -53,7 +56,7 @@ This returns the following results:
 
 ![EuropeanDateFormat](/img/search/searchquerylanguage/search-operators/EuropeanDateFormat.png)
 
-##### US date format with a timestamp
+### US date format with a timestamp
 
 This example creates a **today** column and uses the US date format with a timestamp, **MM-dd-yyyy HH:mm**.
 
@@ -65,7 +68,7 @@ Which returns results like:
 
 ![DateTimestamp](/img/search/searchquerylanguage/search-operators/DateTimestamp.png)
 
-##### Find messages with incorrect timestamps
+### Find messages with incorrect timestamps
 
 This query allows you to find messages with incorrect timestamps.
 
@@ -80,7 +83,7 @@ This query produces results like this:
 
 ![Incorrect Timestamp](/img/search/searchquerylanguage/search-operators/IncorrectTimestamp.png)
 
-##### Determine age of log messages
+### Determine age of log messages
 
 This query lets you determine the age of your log messages.
 
@@ -96,9 +99,9 @@ Which produces results like this:
 
 ![Message age](/img/search/searchquerylanguage/search-operators/MessageAge.png)
 
-##### Messages by Day of the Week
+### Messages by Day of the Week
 
-To get the day of the week from your logs, you can reference your log's timestamps, which are stored as the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_messageTime`. You can also parse out any dates in your logs and use the [formatDate](#formatDate) operator to get the day of the week.  
+To get the day of the week from your logs, you can reference your log's timestamps, which are stored as the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_messageTime`. You can also parse out any dates in your logs and use the [formatDate](formatdate.md) operator to get the day of the week.  
 
 Beginning with the `_messageTime` field, you can determine the day of the week, and then remove the days you don't want using the formatDate operator. This example query provides results only for Mondays:
 
@@ -120,7 +123,7 @@ If you don't use `_messageTime`, and instead parse out another timestamp, you c
 | parseDate(parsedtime, "MM/dd/yyyy HH:mm:ss a") as inMilliseconds
 ```
 
-##### Format a milliseconds (13 digits) epoch value
+### Format a milliseconds (13 digits) epoch value
 
 With the following example query:
 
@@ -133,14 +136,14 @@ _sourceCategory=sourceCategory
 You get the following results:
 
 | # | session | _count | _min | _max |
-|--||-|-|-|
+|:--||-|-|-|
 |  1     | 7oEmE+KLpk1nVYpF | 22          | 1.35844e+12 | 1.35844e+12 |
 |  2     | 6uklr9UDkTOg79je | 412         | 1.35844e+12 | 1.35844e+12 |
 |  3     | q0K6ztX9IvpZWh1p | 18          | 1.35844e+12 | 1.35844e+12 |
 
 In the results, the **`_min`** and **`_max`** values are displayed as an epoch value. You can format these epoch values into a readable date with an experimental operator, **`toLong`**.
 
-* [toLong](#casting-data-to-a-number-or-string) casts the data into a Long data type as milliseconds.
+* [toLong](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) casts the data into a Long data type as milliseconds.
 
 Normally, to convert the epoch time into a date formatted string you'd do something like this:
 
@@ -148,7 +151,7 @@ Normally, to convert the epoch time into a date formatted string you'd do somet
 * | formatDate(_messagetime, "``MM-dd-``yyyy`` HH:mm:ss") as myDate
 ```
 
-However, in the case where you are using **Min** and **Max** to get the first and last values, you also need to convert the return value to a "Long" value type using the experimental [toLong](#casting-data-to-a-number-or-string) operator. This is because when you run the **Min** and **Max** operators, the return value gets reformatted as a "Double" value type that the formatDate operator can't read.
+However, in the case where you are using **Min** and **Max** to get the first and last values, you also need to convert the return value to a "Long" value type using the experimental [toLong](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) operator. This is because when you run the **Min** and **Max** operators, the return value gets reformatted as a "Double" value type that the formatDate operator can't read.
 
 ```sql
 * | count, min(_messagetime) as mindate | formatDate(toLong(mindate))
@@ -164,7 +167,7 @@ _sourceCategory=sourceCategory
 | formatDate(toLong(maxdate),"MM-dd-yyyy HH:mm:ss:SSS") as maxdate
 ```
 
-##### Format a seconds (10 digits) epoch value
+### Format a seconds (10 digits) epoch value
 
 If your timestamp is a normal Unix timestamp it is in seconds since January 1, 1970 at 00:00:00 GMT. The formatDate operator requires your timestamp to be in milliseconds. Therefore, you need to convert by multiplying by 1,000 since there are 1,000 milliseconds in a second.
 

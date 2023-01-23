@@ -10,7 +10,7 @@ This section has instructions for collecting Corelight Zeek log messages and sen
 These instructions are for Corelight Zeek logs sent as JSON over syslog.
 
 :::note
-The [CSE Network Sensor](../sensors/cloud-sensor-guide.md) also utilizes Zeek, so If you're using the sensor, using Corelight Zeek would be redundant.
+The [CSE Network Sensor](../sensors/network-sensor-deployment-guide.md) also utilizes Zeek, so If you're using the sensor, using Corelight Zeek would be redundant.
 ::: 
 
 ## Step 1: Configure collection
@@ -19,7 +19,7 @@ In this step, you configure a Syslog Source to collect Corelight Zeek log messag
 
 ### Configure an Installed Collector
 
-1. In the Sumo Logic platform, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Installed Collector**.
 1. The **Add Installed Collector** popup appears.
@@ -33,12 +33,13 @@ In this step, you configure a Syslog Source to collect Corelight Zeek log messag
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
 1. **Fields**. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
 1. Click **Save**.
-
-It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+  :::note
+  It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+  :::
 
 ### Configure a Syslog Source
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. Navigate to the Installed Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 

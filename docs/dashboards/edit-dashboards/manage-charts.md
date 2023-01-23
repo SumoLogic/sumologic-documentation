@@ -221,7 +221,7 @@ To change the line properties of a chart, do the following:
 
 1. To use smooth lines in a chart, under **Line Style** select the **Enable smooth line** checkbox.
 1. Specify a **Line Thickness**.
-1. Under **Marker Style**, choose a **Marker Type** from the drop-down list and specify a **Size**.
+1. Under **Marker Style**, choose a **Marker Type** from the dropdown list and specify a **Size**.
 
     ![LineSettings_choose-options.png](/img/dashboards/LineSettings_choose-options.png)
 

@@ -48,12 +48,12 @@ An Installed Collector performs better when collecting larger sized log messages
 The columns are the Average CPU and Average Message Size.
 
 | Average CPU |  100 B |  512 B |   1 KB |   5 KB |   10 KB |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | **5%** | 1,500 | 900 | 500 | 150 | 100 |
 | **10%** | 3,800 | 2,000 | 1,500 | 400 | 200 |
-| **20%** | \> 7,500 | 3,900 | 2,000 | 750 | 450 |
+| **20%** | > 7,500 | 3,900 | 2,000 | 750 | 450 |
 | **50%** | 23,000 | 9,800 | 6,000 | 1,800 | 900 |
-| **90%** | \> 35,000 | 17,000 | 11,000 | 3,300 | 1,700 |
+| **90%** | > 35,000 | 17,000 | 11,000 | 3,300 | 1,700 |
 
 ### Number of Sources
 
@@ -62,7 +62,7 @@ Generally, as the number of Sources increases, the number of threads also increa
 **1,000 events per second with 1 KB message size:**
 
 | Number of Local File Sources  | Ubuntu Process CPU Usage | Windows Process CPU Usage |
-|--|--|--|
+|:--|:--|:--|
 | 1 | 5% | 3.5% |
 | 2 | 7.5% | 5% |
 | 4 | 15% | 12.5% |
@@ -73,7 +73,7 @@ Generally, as the number of Sources increases, the number of threads also increa
 **5,000 events per second with 1 KB message size:**
 
 | Number of Local File Sources | Ubuntu Process CPU Usage | Windows Process CPU Usage |
-|--|--|--|
+|:--|:--|:--|
 | 1 | 20% | 17.5% |
 | 2 | 40% | 35% |
 | 4 | 90% | 65% |
@@ -82,7 +82,7 @@ Generally, as the number of Sources increases, the number of threads also increa
 **10,000 events per second with 1 KB message size:**
 
 | Number of Local File Sources | Ubuntu & Windows Process CPU Usage |
-|--|--|
+|:--|:--|
 | 1 | 40% |
 | 2 | 82.5% |
 | 4 | 90% |
@@ -114,7 +114,7 @@ You can update the configuration of an Installed Collector using the Collector M
 
 You can set up as many as 1,000 Sources on a given Collector. A Source should be configured to collect similar data types. For example, you might set up three Local File Sources to collect router activity logs from three locations, and another Local File Source to collect logs from a web application.
 
-Each Source is tagged with its own metadata, as described in [Metadata Naming Conventions](docs/send-data/reference-information/metadata-naming-conventions.md). The more Sources you set up, the easier it is to isolate one of the Sources in a search since each Source can be identified by its metadata.
+Each Source is tagged with its own metadata, as described in [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md). The more Sources you set up, the easier it is to isolate one of the Sources in a search since each Source can be identified by its metadata.
 
 When you configure Sources that read from log files, you specify a path expression that defines what files to scan. You can optionally configure a denylist of files to exclude from collection.  
 

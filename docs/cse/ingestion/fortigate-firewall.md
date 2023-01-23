@@ -13,7 +13,7 @@ In this step, you configure a Syslog Source to collect FortiGate log messages. Y
 
 ### Configure an Installed Collector
 
-1. In the Sumo Logic platform, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Installed Collector**.
 1. The **Add Installed Collector** popup appears.
@@ -28,16 +28,14 @@ In this step, you configure a Syslog Source to collect FortiGate log messages. Y
 1. **Fields**. 
     * If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
     * If you are planning that all sources you add to this collector will use the same log parser (if they are the same type of log), click the **+Add Field** link, and add a field whose name is `_parser` with the value */Parsers/System/Fortinet/Fortigate/Fortigate-Syslog*. This will cause all sources on the collector to use the specified parser.
-
-        :::note
-        It’s also possible to configure individual sources to forward to CSE, as described in the following section.
-        :::
-
+    :::note
+    It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+    :::
 1. Click **Save**.
 
 ### Configure a Syslog Source
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. Navigate to the Installed Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 

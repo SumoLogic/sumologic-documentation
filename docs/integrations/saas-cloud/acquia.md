@@ -161,7 +161,7 @@ To create a new Sumo Logic hosted collector, do the following:
 7. Click the **+Add Field** link in the **Fields** section to define the [fields](/docs/manage/fields.md) you want to associate, each field needs a key and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-8. **Assign to a Budget** allows you to assign an [ingest budget](/docs/manage/ingestion-volume/ingest-budgets) to the Collector. The drop-down displays your ingest budgets in the following format:
+8. **Assign to a Budget** allows you to assign an [ingest budget](/docs/manage/ingestion-volume/ingest-budgets) to the Collector. The dropdown displays your ingest budgets in the following format:
   ```
   <budget name> (<field value>) (<allocated capacity>)
   ```
@@ -170,11 +170,9 @@ To create a new Sumo Logic hosted collector, do the following:
 
 After the Collector has been set up, it appears on the Collection page as a Hosted Collector.
 
-
 ### Step 2: Configure a source
 
 This task shows you how to configure a cloud syslog source for Acquia log collection.
-
 
 #### Before you begin
 
@@ -183,7 +181,6 @@ It's helpful to know the options you'll need to set before starting a procedure.
 * Source:
   * **Name**. (Required) A name is required, the Description is optional.
   * **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. Example: **Acquia**. For more information, see [Best Practices](/docs/send-data/best-practices).
-
 * Advanced
   * **Enable Timestamp Parsing**. True
   * **Time Zone**. Logs are in UTC by default
@@ -195,7 +192,9 @@ Be sure to copy and paste your **token** in a secure location. You'll need this 
 
 **Sumo Logic SSL certificate**
 
-In the procedure below, you configure a Cloud Syslog Source, this will generate a Sumo Logic token and the endpoint hostname. Then you set up TLS by downloading a cert to your server. Download the DigiCert certificate from [https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt).
+In the procedure below, you'll configure a Cloud Syslog Source. This will generate a Sumo Logic token and the endpoint hostname. Then you'll set up TLS by downloading a cert to your server. Download the DigiCert certificate from one of the following locations:
+* [https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt)
+* [https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt.pem](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt.pem)
 
 
 ### Configuring a cloud syslog source
@@ -208,7 +207,7 @@ The token is deleted if you delete the source. To change a token, use the **Rege
 
 To configure a cloud syslog source, do the following:
 1. In Sumo Logic select **Manage Data > Collection > Collection**.
-2. On the **Collection** page, click **Add Source** next to a Hosted Collector. See [Set up a Hosted Collector](#s823) for information on adding Hosted Collectors.
+2. On the **Collection** page, click **Add Source** next to a Hosted Collector. See [Set up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for information on adding Hosted Collectors.
 3. Select **Cloud Syslog**.
 4. Enter a **Name** to display for this source in Sumo. Description is optional.
 5. (Optional) For **Source Host** and **Source Category**, enter any string to tag the output collected from this source. (Category metadata is stored in a searchable field called `_sourceCategory`).
@@ -229,13 +228,12 @@ To configure a cloud syslog source, do the following:
 
   In the following example, the token is in the structured data field.
   ```
-  <165>1 2015-01-11T22:14:15.003Z mymachine.example.com evntslog - ID47 [YOUR_TOKEN] msg \
+  <165>1 2015-01-11T22:14:15.003Z mymachine.example.com evntslog - ID47 [YOUR_TOKEN] msg
   ```
   In the following example, the token is in the message body.
   ```
   <165>1 2015-01-11T22:14:15.003Z mymachine.example.com evntslog - ID47 - YOUR_TOKEN msg
   ```
-
   RFC 5424 limits the structured data field (SD-ID) to 32 characters, however our token is 64 characters long. If your logging client enforces this limit you will need to pass the token in the message body.
 11. After configuring the source, you can perform these token operations from the **Collectors and Sources** page:
    * Click **Show Token** to display the token for a cloud syslog source at any time.  
@@ -245,7 +243,7 @@ To configure a cloud syslog source, do the following:
 
 In order to start ingesting Acquia Cloud logs you must setup log forwarding in Acquia Cloud.  
 
-To configure Acquia log forwarding**, follow the instructions in the Acquia [documentation](https://docs.acquia.com/acquia-cloud/monitor/logs/forwarding/).
+To configure Acquia log forwarding, follow the instructions in the Acquia [documentation](https://docs.acquia.com/acquia-cloud/monitor/logs/forwarding/).
 
 
 

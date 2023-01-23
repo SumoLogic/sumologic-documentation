@@ -127,7 +127,7 @@ The predefined Dashboards on Azure Audit allow you to instantly monitor the acti
 
 Use this dashboard to get a high-level view of the Azure activity by location, and details of events.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Audit dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureAudit/Overview.png')} alt="Overview" />
 
 **Azure Activity by Source Location. **Performs a geo lookup operation to display the location of Azure activity by Source location on a map of the world for the last seven days.
 
@@ -146,7 +146,7 @@ Use this dashboard to get a high-level view of the Azure activity by location, a
 
 Use this dashboard to see the details on resource group and resource provider.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Audit dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureAudit/ResourceUsage.png')} alt="Resource Usage" />
 
 **Events by Resource Group. **Displays details on events by Resource Group across time in a stacked column chart on a timeline for the last seven days.
 
@@ -166,7 +166,7 @@ Use this dashboard to see the details on resource group and resource provider.
 ### Service Health
 Use this dashboard to see the details on Azure service health such as the level, status, and events.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Audit dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureAudit/ServiceHealth.png')} alt="Service Health" />
 
 
 **Level.** Displays information by level in a pie chart for the last seven days.
@@ -183,7 +183,7 @@ Use this dashboard to see the details on Azure service health such as the level,
 ### User Activity
 Use this dashboard to see the details on events, resources, and users.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Audit dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureAudit/UserActivity.png')} alt="User Activity" />
 
 **Events by Location.** Performs a geo lookup operation to display user activity events by IP address location on a map of the world for the last seven days.
 

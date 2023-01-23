@@ -130,7 +130,7 @@ To modify the labels on the chart, do the following:
 
     ![SVC_Settings-Menu.png](/img/dashboards/SVC_Settings-Menu.png)
 
-1. Select **Manage Labels**, from the drop-down list. 
+1. Select **Manage Labels**, from the dropdown list. 
 1. Do the following, as desired:
 
    * To add a chart **Title**, select the **Enable** check box and enter the Text for the title. The maximum length is 25 characters. The title text appears at the top of the chart, above the numerical value.

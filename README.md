@@ -22,7 +22,7 @@ We recommend forking the repo, creating all content changes in branches, and sub
 
 Docusaurus requires the following to build on locals:
 
-* [NodeJS](https://nodejs.org/en/download/) version >= 14
+* [NodeJS](https://nodejs.org/en/download/) version >= 16.14
 * [Yarn](https://yarnpkg.com/en/) version >= 1.5, you can install with [Homebrew](https://brew.sh/) if you have that installed: `brew install yarn`
 
 The site includes translations into other languages. To build on your local:
@@ -34,9 +34,9 @@ The site includes translations into other languages. To build on your local:
    * Use npm serve to test and review multi-languages: `npm run serve`. This build does not hot reload and requires a rebuild to test and review.
 1. To build locally and test your links, run `yarn build`.   
 
-The static files are generated in the `build` folder and run on your local machine at: `http://localhost:3000/`. To stop the build or served site, hit Ctrl + C to interupt. You can enter new commands in terminal, rebuild, and restart.
+The static files are generated in the `build` folder and run on your local machine at: `http://localhost:3000/`. To stop the build or served site, hit Ctrl + C to interrupt. You can enter new commands in terminal, rebuild, and restart.
 
-Sumo Docs was created using [Docusaurus 2](https://docusaurus.io/) with React, Rehype, and Remark plugin support.
+Sumo Docs was created using [Docusaurus 2](https://docusaurus.io/) with React, Rehype, and Remark plugin support. Our CLA bot was built using [cla-bot](https://colineberhardt.github.io/cla-bot/).
 
 ## Publishing Content
 

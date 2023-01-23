@@ -1,12 +1,13 @@
 ---
-id: integrate-azure-ad
+id: integrate-sumo-with-azure-ad
 title: Integrate Sumo with Azure AD
+description: Enable Single Sign-On (SSO) to Sumo Logic with Azure Active Directory (AD).
 ---
 
 ## Availability
 
 | Account Type | Account Level |
-|--------------|-------------------------|
+|:--------------|:-------------------------|
 | Cloud Flex   | Trial, Enterprise                                                               |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -25,7 +26,7 @@ The steps below are for the new Azure Management Console. For general steps for 
 1. Select **Enterprise Applications**. 
 
     ![enterprise-applications.png](/img/security/enterprise-applications.png)
-1. Select **Manage \> All Applications.**
+1. Select **Manage > All Applications.**
 1. Click **New application** at the top of the **All applications** blade. 
 
     ![new-app-icon.png](/img/security/new-application-option.png)
@@ -67,7 +68,7 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
 
 ### Configure SAML in Sumo Logic
 
-1. Go to **Administration \> Security \> SAML**.
+1. Go to **Administration > Security > SAML**.
 1. Select an existing configuration, or click **Add Configuration** to create a new configuration.
 
     ![add-configuration.png](/img/security/add-configuration.png)
@@ -79,7 +80,7 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
 1. **Issuer**. Enter the **Azure AD Identifier** that you noted in the substep 13 of [Configure Sumo as an Enterprise App in Azure AD](#configure-sumo-as-an-enterprise-app-in-azure-ad). 
 1. **X.509 Certificate**. Use a text editor to open the certificate file you downloaded in substep 12 of [Configure Sumo as an Enterprise App in Azure AD](#configure-sumo-as-an-enterprise-app-in-azure-ad). Copy and paste the contents of the file into the field. 
 1. **Attribute Mapping.** Select **Use SAML subject.**
-1. **Configure SP-initiated Login.** (Optional) This step has instructions for setting up SP-initiated login. When SP-initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page. SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](docs/manage/manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
+1. **Configure SP-initiated Login.** (Optional) This step has instructions for setting up SP-initiated login. When SP-initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page. SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
 
    1. Click **SP Initiated Login Configuration** in the **Optional Settings** section of the SAML configuration page. When you click this option, the following configurations appear.    
 

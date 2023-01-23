@@ -104,7 +104,7 @@ The number of threads can be controlled using a property `THREADSIZE_POOL` in th
 
 To collect performance metrics, do the following:
 
-1. Follow the instructions to configure a [Streaming Metrics Source](docs/send-data/installed-collectors/sources/streaming-metrics-source.md). Make sure that the Content-Type is set to Carbon1.
+1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source.md). Make sure that the Content-Type is set to Carbon1.
 
   ![VMware.png](/img/send-data/VMware.png)
 

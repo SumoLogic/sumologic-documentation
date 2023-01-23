@@ -35,7 +35,7 @@ To graph a log query and determine outliers, do the following:
     | outlier response_time window=5,threshold=3,consecutive=2,direction=+-
     ```
 
-1. Adjust the time interval as needed by selecting the **time display** next to the **clock icon** in the upper right corner and choosing an option from the drop-down list. We selected a 24 hour time interval for our example.
+1. Adjust the time interval as needed by selecting the **time display** next to the **clock icon** in the upper right corner and choosing an option from the dropdown list. We selected a 24 hour time interval for our example.
 
     ![select time range.png](/img/dashboards-new/locate-deviations/select-time-range.png)
 

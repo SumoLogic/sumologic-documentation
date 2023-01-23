@@ -110,7 +110,7 @@ This is a known issue regarding upgrading a Windows collector from versions 19.6
 
 1. Restart the Sumo Logic Collector service.
 
-When these steps are complete, in Sumo Logic, go to **Manage Data \> Collection \> Collection**, click **Upgrade Collectors**, and select the **Retry** option next to the failed Collector.
+When these steps are complete, in Sumo Logic, go to **Manage Data > Collection > Collection**, click **Upgrade Collectors**, and select the **Retry** option next to the failed Collector.
 
 
 ## Configure Limits for Collector Caching
@@ -190,7 +190,7 @@ It is also important to note that deleting data has no effect on the log ingest
 
 The 19.155 release of the Sumo Logic collector introduces a new collection approach for Remote Windows Event sources.  The new approach provides increased collection throughput, lower resource consumption, and easier configuration.
 
-However, [system configuration requirements for the new implementation](docs/send-data/installed-collectors/sources/preconfigure-machine-collect-remote-windows-events.md) differ from those of earlier collector versions. For the sake of compatibility, the new implementation is left as "opt-in" for version 19.155. This topic describes how to enable this new capability.
+However, [system configuration requirements for the new implementation](/docs/send-data/installed-collectors/sources/preconfigure-machine-collect-remote-windows-events.md) differ from those of earlier collector versions. For the sake of compatibility, the new implementation is left as "opt-in" for version 19.155. This topic describes how to enable this new capability.
 
 :::important
 This topic applies only to the 19.155 version of the Sumo Logic collector, and only relates to Remote Windows Event Log sources.
@@ -261,7 +261,7 @@ WrapperSimpleApp Error: java.lang.OutOfMemoryError: GC overhead limit exceeded
 
 #### New Collector
 
-When registering a new Collector you can specify the parameter `wrapper.java.maxmemory` in [user.properties](docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) with a higher memory value than the default 128MB. For example, a user.properties file with a memory setting of 2048MB would look like:
+When registering a new Collector you can specify the parameter `wrapper.java.maxmemory` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) with a higher memory value than the default 128MB. For example, a user.properties file with a memory setting of 2048MB would look like:
 
 ```
 name = My Collector
@@ -271,12 +271,12 @@ wrapper.java.maxmemory = 2048
 ```
 
 | Parameter | Description | Can be changed after installation? |
-|--|--|--|
+|:--|:--|:--|
 | `wrapper.java.maxmemory` | Sets the maximum java heap size, in MB.<br/>Default: 128 | Yes, with Collector restart. |
 
 #### Command line installer
 
-When using the [command line (shell script) installer](docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you can specify the parameter `-Vwrapper.java.maxmemory` with a higher memory value than the default 128MB. For details and example commands on Collector installation, see [Install a Collector on Linux](docs/send-data/installed-collectors/linux.md), [Install a Collector on MacOS](docs/send-data/installed-collectors/macos.md), and [Install a Collector on Windows](docs/send-data/installed-collectors/windows.md).
+When using the [command line (shell script) installer](/docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you can specify the parameter `-Vwrapper.java.maxmemory` with a higher memory value than the default 128MB. For details and example commands on Collector installation, see [Install a Collector on Linux](/docs/send-data/installed-collectors/linux.md), [Install a Collector on MacOS](/docs/send-data/installed-collectors/macos.md), and [Install a Collector on Windows](/docs/send-data/installed-collectors/windows.md).
 
 For example, the parameter with a memory setting of 2048MB would look like:
 
@@ -285,7 +285,7 @@ For example, the parameter with a memory setting of 2048MB would look like:
 ```
 
 | Parameter | Description | Can be changed after installation? |
-|--|--|--|
+|:--|:--|:--|
 | `wrapper.java.maxmemory` | Sets the maximum java heap size, in MB.<br/>Default: 128 | Yes, with Collector restart. |
 
 #### Existing Collector
@@ -414,7 +414,7 @@ Ingested old or historical data, especially when mixed with recent or real-time 
 
 This article describes the assumptions that Sumo makes about customer data, tips to help you make sure your data is handled correctly, and guidance on when to contact [Sumo Logic Support](https://support.sumologic.com) regarding historical data uploads.
 
-See [using _format for troubleshooting](docs/send-data/reference-information/time-reference.md) timestamps.
+See [using _format for troubleshooting](/docs/send-data/reference-information/time-reference.md) timestamps.
 
 #### Assumption: Data is less than 365 days old
 
@@ -442,7 +442,7 @@ This page explains the elements that can be involved in time
 discrepancies and offers solutions for troubleshooting your problem.
 
 :::tip
-See details on the supported [Timestamps, Time Zones, Time Ranges, and Date Formats](docs/send-data/reference-information/time-reference.md).
+See details on the supported [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference.md).
 :::
 
 #### Message time and receipt time
@@ -461,7 +461,7 @@ Large time discrepancies are typically related to time zone settings that were 
 Pay careful attention to the Time Zone specified for a Source. The **Use time zone from log file** option assumes that a time zone is part of the message timestamp and that it is in a supported [Java SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html), as shown below:
 
 | Letter | Date or Time Component | Example |
-|--|--|--|
+|:--|:--|:--|
 | z | Time zone (General time zone) | Pacific Standard; PST; GMT-08:00 |
 | Z | Time zone (RFC 822 time zone) | -0800 |
 
@@ -545,7 +545,7 @@ After installing a Collector and configuring a Source, your data should appear i
 
 #### Check the Status page of Sumo Logic
 
-In Sumo Logic select **Manage Data \> Collection \> Status** to view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
+In Sumo Logic select **Manage Data > Collection > Status** to view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
 
 As long as you see that some messages are present, your Sumo Logic account is up and running. 
 
@@ -580,11 +580,11 @@ To check a Collector's status:
 
 If your log files have missing or faulty time stamp data it can affect the log messages you'll see collected; search results are also affected if time stamp information is incorrect. For example, if a Collector is running on a computer that doesn't contain a UTC offset time (like UTC-0800), the time stamp could be off by several hours, so if you attempted to search logs within the past 15 minutes no search results will appear. 
 
-When you configure a Source, you can choose one of three timestamp options. First, make sure that your log data is using a [supported timestamp and date format](docs/send-data/reference-information/time-reference.md). 
+When you configure a Source, you can choose one of three timestamp options. First, make sure that your log data is using a [supported timestamp and date format](/docs/send-data/reference-information/time-reference.md). 
 
 To view Source settings:
 
-1. select **Manage Data \> Collection \> Collection**. 
+1. select **Manage Data > Collection > Collection**. 
 1. Click **Edit** to the right of the Source's name.
 1. Under **Advanced**, choose one of the following:
 
@@ -598,4 +598,4 @@ To view Source settings:
 Changes you make to this option aren't applied retroactively; they are applied to log messages moving forward. 
 :::
 
-For more information, see [Timestamps, Time Zones, Time Ranges, and Date Formats](docs/send-data/reference-information/time-reference.md). 
+For more information, see [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference.md). 

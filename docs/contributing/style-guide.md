@@ -1,6 +1,6 @@
 ---
 id: style-guide
-title: Sumo Logic Style Guide
+title: Sumo Docs Style Guide
 sidebar_label: Style Guide
 description: A guide to styling and formatting Sumo Logic Docs.
 ---
@@ -23,7 +23,7 @@ If you need help with a convention, word to use, or format to follow, we will ke
 * [Microsoft Manual of Style](https://docs.microsoft.com/en-us/style-guide/welcome/)
   * [User Input | Formatting Text in Instructions](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/formatting-text-in-instructions)
 
-For terminology usage guidance, see our [Word List](docs/contributing/word-list.md).
+For terminology usage guidance, see our [Word List](/docs/contributing/word-list.md).
 
 ## Writing Resources
 
@@ -39,16 +39,13 @@ Helpful blogs on tech writing:
 
 The Sumo Logic Docs team will review submissions, provide suggested edits, add new content into the navigation, and answer any questions you have.
 
-<!--
+
 ### Templates
 
-To quickly create a new doc, use a template. You can copy and paste the file, add your content, and submit a PR. If you need formats for specific code, see the formats template.
+To create a new doc quickly, use a template. You can copy and paste the file, add your content, and submit a PR.
 
-(coming soon)
-* Doc topic - Use for any documentation page
-* APIs - Use for API and code
-* Format template
--->
+* [Doc topic (generic) template](/docs/contributing/templates/generic-doc)
+* [Partner app template](/docs/contributing/templates/partner-app-doc)
 
 ## Voice and Tone
 
@@ -56,11 +53,15 @@ To quickly create a new doc, use a template. You can copy and paste the file, ad
 * The reader should feel confident and informed. We should strive to engage our customers, and show them where to get additional assistance when needed.
 * Describe Sumo Logic in a professional and truthful manner. Avoid generic, unsubstantial adjectives like "very" or phrases like "we're the best". Instead, illustrate these points by letting our product speak for itself.
 * Avoid using a stiff, institutional voice. Instead, write with an instructive and conversational tone. For example, when linking to the support site, use terms like "Need help? Let us know" instead of "Please email our support personnel" to give our company a friendly face.
-* Use the [active voice](#active-voice) whenever possible. For example, use "Brutus stabbed Caesar," not "Caesar was stabbed by Brutus."
+* Use the [active voice](#active-voice) whenever possible. For example, use "Sumo Logic ingests multiple streams of data", not "Multiple streams of data are ingested by Sumo Logic".
 * Instructional content and blog posts should be written at approximately the 8th-grade reading level, particularly in introductory sections, for readability and SEO. You can test your content [here](http://www.writingtester.com/tester/grade_level.php).
 * When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you are recommended to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Please use a different email or contact Sumo Logic for assistance."
 * We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orange juice", not "I had [eggs, toast and orange juice](https://www.verbicidemagazine.com/wp-content/uploads/2012/01/why-i-still-use-the-oxford-comma.jpg)".
 * We have a sense of humor! Conveying that we do serious work, but we don't take ourselves too seriously, makes Sumo Logic feel likable.
+
+:::tip
+See also: [Sumo Logic UX Style Guide](/files/UX-Sumo-Style.pdf).
+:::
 
 ## Structuring Content
 
@@ -80,6 +81,13 @@ When writing instructions, it helps to always use active voice. This gives a cal
 | Build the query using the following... | Please build the query using the following... | We need them to complete a task. No need for please. |
 | To add a new collector:<br/>1. Access Sumo Logic and find the... | 1. When you need to add a new collector, access Sumo Logic and find the... | Introduce your instructions with the goal, then dive into the instructions. This is called a stem, and it helps focus the task and keeps you active. |
 
+## Abbreviations
+
+Avoid the use of abbreviations like “e.g.”, “i.e.”, and “etc.”.  Although they may be well understood, such abbreviations don’t support our goal of a conversational tone. In other words, don’t use language you wouldn’t use verbally.
+
+* Instead of "e.g.", use “for example”
+* Instead of "i.e.", use “that is”
+
 ## Acronyms
 
 An acronym uses the first initials of a word or phrase, for brevity. Our industry is full of them, and they can get confusing if their usage isn't clear. Acronyms should be capitalized, if not used directly in a query, etc. Unless the usage is clear from the context, for the first usage, spell out the phrase, then present the acronym in parenthesis. For example: Secure Shell (SSH).
@@ -90,7 +98,7 @@ For example, the first time you use AWS Application Load Balancer (ALB), you int
 
 ## Contractions
 
-Positive contractions are okay (e.g., we're). Do not use negative contractions (e.g., don't, can't, shouldn't), as they can be mistaken for the opposite meaning, especially if someone is reading quickly. Spell out those words.
+Using contractions contributes to our goals of striking a conversational, friendly tone. Use common contractions, like “don’t”, “won’t”, and “you’ll”. Avoid less common contractions, like “should’ve”, or “it’ll”. Do not use negative contractions (don't, can't, shouldn't), as they can be easily mistaken for the opposite meaning. Spell out those words.
 
 <!--
 ### UI Element Names
@@ -99,13 +107,22 @@ Not everything has an intuitive name. It's the very nature of working with a con
 
 | What does it look like? | What does Sumo call it? |
 |:------------------------|:--------------------|
-| x | Three-dot icon      |
-| x | Navigation Menu     |
-| x | Favorites           |
-| x | Personal Folder     |
-| x | Recents             |
-| x | Library             |
+| x                       | Three-dot icon     |
+| x                       | Navigation Menu     |
+| x                       | Favorites           |
+| x                       | Personal Folder     |
+| x                       | Recents             |
+| x                       | Library             |
 -->
+
+
+
+## Documenting processes
+
+When a topic provides instructions for a significant multi-step process, organize the content in sections with headings that signpost the nature of the information. Include "Step" in the heading to make it clear that the section is part of a larger configuration process. For example:
+
+<img src={useBaseUrl('img/contributing/style-steps-headings.png')} alt="headers with steps" width="300"/>
+
 
 ## Patents and trademarks
 
@@ -222,6 +239,18 @@ Use hashtags `#` to indicate the heading level and group content. Always start w
 Headings must be used in correct order. The subsection of an H2 header would be H3 - you wouldn't jump to an H4 or H5. Skipping over a header level affects search and SEO structures to search crawlers like Google. Malformed structures can reduce search and SEO for the page. Docusaurus carefully formats generated pages to ensure strong SEO.
 :::
 
+## Documenting processes
+
+When a topic provides instructions for a significant multi-step process, organize the content in sections with headings that signpost the nature of the information. Include "Step" in the heading to make it clear that the section is part of a larger configuration process. For example:
+
+<img src={useBaseUrl('img/contributing/style-steps-headings.png')} alt="headers with steps" width="300"/>
+
+## Capitalization
+
+* Title case (initial cap) all doc titles.
+   * Example: `Global Intelligence for Apache Tomcat App`
+* Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case.
+   * Example: `Throughput signals and contributing factors`
 
 ## Punctuation
 
@@ -232,9 +261,7 @@ Punctuation is placed outside of quotation marks, British English style. For eve
 * Use _italics_ for:
   * Defining a term the first time. For example, when defining a collector the first time, you would italicize once with the definition.
   * Providing content to enter into a field.
-
 * Use **bold** for UI elements you interact with, such as a button or tab.
-
 * Never underline text
 
 <Tabs
@@ -274,7 +301,37 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 ## Lists
 
-You can mix ordered (or numbered) and unordered (or bulleted) lists together. Use extra lines and tabs (or 2 spaces) to move content under these bullets, including other bullets, paragraphs, images, and more. Be careful of tabbing over too far. A third tab will automatically render as code.
+You can mix ordered (or numbered) and unordered (or bulleted) lists together. Use extra lines and tabs (or 2 spaces) to move content under these bullets, including other bullets, paragraphs, images, and more. Be careful of indenting too much; three tab indents will automatically render as code.
+
+In a list item made up of an introductory word or phrase and an explanatory sentence or paragraph, separate the introductory text and the explanation with a period (**.**) rather than a dash (-). For example:
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+1. **Entity**. Select the Entity field in the Record that the resulting Signal should be associated with.
+1. **Description (Optional)**. Define the description for the Signal.
+```
+
+</TabItem>
+<TabItem value="Result">
+
+1. **Entity**. Select the Entity field in the Record that the resulting Signal should be associated with.
+1. **Description (Optional)**. Define the description for the Signal.
+
+</TabItem>
+</Tabs>
+
+
+
+
 
 ### Numbered Lists
 
@@ -473,7 +530,7 @@ For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/d
 
 
 
-## Notes (Admonitions)
+## Admonitions
 
 We refer to callout elements like Tip, Note, Warning, and Caution as admonitions.
 
@@ -584,9 +641,9 @@ In Docusaurus, you can add images, custom files, and embed videos.
 
 Images must be added to the `static/img` folders. The `img` folder structure currently mirrors the doc sections. To stay organized, always replace existing images, rather than adding new images appended with dates or version numbers.
 
-* Images should be in PNG or GIF format
-* Always include image alt text
-* Width parameters should be used to resize oversized and/or pixelated images
+* Must be in PNG or GIF format
+* Always include `alt text` parameter
+* Use `width` parameter to resize oversized and/or pixelated images
 
 1. Save your image(s) in the `/static/img` folder.
 2. Add the import line to the top of your doc, underneath the [front matter header](#front-matter).
@@ -600,7 +657,7 @@ Images must be added to the `static/img` folders. The `img` folder structure cur
    <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" width="<insert-pixel-number>"/>
    ```
 
-<details><summary>What is alt text?</summary>
+<details><summary>What is <code>alt text</code>?</summary>
 
 When you insert an image, describe the image in the Alt text, which explains what the image is meant to show. It is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download.
 
@@ -608,7 +665,7 @@ Alt text is not a caption and it doesn't need to describe the details of an imag
 
 Alt text of some kind is required under [US Government GSA Section 508](https://www.section508.gov/section508_faqs) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
 
-If you are editing and you come across an image without Alt text, add it.
+If you are editing and you come across an image without `alt text`, add it.
 
 </details>
 
@@ -634,6 +691,29 @@ If you are editing and you come across an image without Alt text, add it.
 </TabItem>
 </Tabs>
 
+When adding an image to a bulleted or sequential list, include it in-line with the list item, right after a `<br/>` element, like this:
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+1. Here is a list item. <br/><img src={useBaseUrl('img/image.png')} alt="alt-text" width="400"/>
+```
+
+</TabItem>
+<TabItem value="Result">
+
+1. Here is a list item. <br/><img src={useBaseUrl('img/image.png')} alt="alt-text" width="400"/>
+
+</TabItem>
+</Tabs>
 
 
 #### Screenshots
@@ -693,7 +773,7 @@ You need to explicitly add `?rel=0` to the end of the URL. This ensures that onl
 You can also add files such as custom code, json, yaml, and xml in the `static/files` folder. Supported file formats include .json, .js, .doc, and more. You link to the file using the file path of `/files` and file name:
 
 ```md
-![Download this Terraform](/files/terraform/script.tf)
+[Download this Terraform](/files/terraform/script.tf)
 ```
 
 If your file is available from another public Sumo Logic repo, please link to that file instead as a URL link. See [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets) for more information.
@@ -733,7 +813,7 @@ Tables use plain markdown with one header, default left aligned columns, and mul
 Colons can be used to align columns.
 
 | Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
+| :------------- |:-------------:| -----:|
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
@@ -743,7 +823,7 @@ The outer pipes (|) are optional, and you don't need to make the
 raw Markdown line up prettily. You can also use inline Markdown.
 
 Markdown | Less | Pretty
---- | --- | ---
+--- | :--- | :---
 *Still* | `renders` | **nicely**
 1 | 2 | 3
 ```
@@ -765,7 +845,7 @@ Markdown | Less | Pretty
 Colons can be used to align columns.
 
 | Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
+| :------------- |:-------------:| -----:|
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
@@ -775,7 +855,7 @@ The outer pipes (|) are optional, and you don't need to make the
 raw Markdown line up prettily. You can also use inline Markdown.
 
 Markdown | Less | Pretty
---- | --- | ---
+--- | :--- | :---
 *Still* | `renders` | **nicely**
 1 | 2 | 3
 
@@ -895,7 +975,7 @@ The [`sidebars.ts` file](https://github.com/SumoLogic/sumologic-documentation/bl
           collapsible: true,
           collapsed: false,
           items: [
-            'contributing/templates/partner-app'
+            'contributing/templates/partner-app-doc'
           ]
         }
       ],
@@ -905,7 +985,7 @@ The [`sidebars.ts` file](https://github.com/SumoLogic/sumologic-documentation/bl
 
 </details>
 
-* To add a category, or drop-down list of documentation, use the following format:
+* To add a category, or dropdown list of documentation, use the following format:
 
 <details><summary>Example: add sidebar category example with additional section</summary>
 
@@ -1084,7 +1164,11 @@ You can use a link to a file embedding the entire file, or embed a range of code
 
 ## Release Notes
 
-We keep our release notes (aka changelog) concise with links to documentation and images for updated UI elements. You can find the full list of supported frontmatter fields [here](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
+We keep our release notes concise with links to documentation and images for updated UI elements. You're welcome to add [frontmatter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog) such as tags and keywords.
+
+In release notes, do not use relative links when cross-referencing to doc topics. Use the full path, like this:
+
+`For more information, see [where Metrics Operator](https://help.sumologic.com/docs/metrics/metrics-operators/where/)`
 
 ### Text only
 
@@ -1092,7 +1176,6 @@ To add release notes without images:
 
 1. In the Blog folder, create a new markdown file with the following name format: `YYYY-MM-DD-product.md`.
 1. Add the following frontmatter:
-
     ```markdown
     ---
     title: Product or Feature Name
@@ -1108,7 +1191,6 @@ To add release notes without images:
         image_url: /img/release-notes/rss-orange.png
     ---
     ```
-
     * `title`: Name of the release notes including Product or Feature
     * `tags`: Add a comma-separated list of existing tags, including:
     * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
@@ -1124,7 +1206,6 @@ To add release notes with images:
 
 1. In the Blog folder, create a new folder with the following name format: `YYYY-MM-DD-product`.
 1. In the new folder, create a markdown file named `index.md`. Add your release notes with frontmatter:
-
     ```markdown
     ---
     title: Product or Feature Name
@@ -1132,7 +1213,6 @@ To add release notes with images:
     hide_table_of_contents: true
     ---
     ```
-
     * `title`: Name of the release notes including Product or Feature
     * `tags`: Add a comma-separated list of existing tags, including:
     * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
@@ -1143,7 +1223,7 @@ To add release notes with images:
 
 For Beta docs, we want to publish them, but exclude them from the nav and search engine results so that you need the physical link to access them.
 
-1. Underneath the frontmatter, add the [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) (to prevent search crawlers from picking it up) and the Sumo Beta badge.
+1. Underneath the frontmatter, add the [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) (to prevent search crawlers from picking it up) and the **Beta** badge.
   ```
   ---
   id: xyz-source

@@ -12,7 +12,7 @@ When an alert condition is satisfied Sumo Logic triggers the selected alert ty
 ## When to Use
 
 Only use real-time schedules when you know your data is ingested within a few minutes of its creation. The [receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time) should be within a few minutes of your log's [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata). See
-how to [troubleshoot timestamp discrepancies](docs/send-data/collector-faq#troubleshooting-time-discrepancies).
+how to [troubleshoot timestamp discrepancies](/docs/send-data/collector-faq#troubleshooting-time-discrepancies).
 
 Real-Time Alerts are not duplicated, which means that if a specific raw log message has triggered an alert once already, that same log message will not trigger an alert a second time.
 
@@ -27,7 +27,7 @@ If the time zone of messages is set incorrectly, those logs won't be picked up b
 To set up a Real-Time Alert:
 
 1. [Save a search](/docs/search/get-started-with-search/search-basics/save-search). 
-1. Click **Schedule this search**.<br/> ![RealTimeAlert.png](/img/alerts/RealTimeAlert.png)
+1. Click **Schedule this search**.<br/> ![RealTimeAlert](/img/alerts/save-real-time.png)
 1. **Run Frequency**. Select **Real Time**.
 1. For all other configuration options, see [Schedule a Search](schedule-search.md). 
 1. Click **Save**. 
@@ -48,7 +48,7 @@ The results from your search will vary based on the type of alert selected. The 
 
 | Alert Type | Results in Notification |
 | :-- | :-- |
-| [Webhook](docs/manage/connections-integrations/webhook-connections/schedule-searches-webhook-connections.md) | If the **Send a separate alert for each search result checkbox** is selected (in step 6) only new results from subsequent searches are sent in the alert payload. Otherwise, all results are sent. |
+| [Webhook](/docs/alerts/webhook-connections/schedule-searches-webhook-connections) | If the **Send a separate alert for each search result checkbox** is selected (in step 6), only new results from subsequent searches are sent in the alert payload. Otherwise, all results are sent. |
 | [Save to Index](save-to-index.md) | All results are saved from an **aggregate** query.<br/>Only new results from subsequent searches are saved from a **non-aggregate** query. |
 | [Save to Lookup](save-to-lookup.md) | All results are saved. |
 

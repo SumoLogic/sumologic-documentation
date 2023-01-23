@@ -51,7 +51,7 @@ which would produce results such as:
 
 To add a panel with a map chart:
 
-1. Create or open a Dashboard (New) and click on **Add Panel \> Map**.  
+1. Create or open a Dashboard (New) and click on **Add Panel > Map**.  
 
     ![map panel option.png](/img/dashboards-new/panels/map-charts/map-panel-option.png)
 

@@ -8,32 +8,26 @@ description: Learn how CSE correlates Signals by entity to create Insights.
 
 This page explains CSE's Insight generation process. 
 
-The concept of an *entity* is central to the process CSE uses to correlate Signals and create Insights. So, what is an entity? In CSE, an entity is a unique IP address, hostname, username, or MAC address encountered in an incoming message.
+The concept of an *entity* is central to the process CSE uses to correlate Signals and create Insights. So, what is an entity? In CSE, an entity is a actor, for example, a  hostname, username, or MAC address encountered in an incoming message. For more information about Entities and Entity types, see [View and Manage Entities](docs/cse/records-signals-entities-insights/view-manage-entities.md).
 
 ## Entities in messages are mapped to entity-type schema attributes
 
 During the next step of the [Record processing flow](../schema/record-processing-pipeline.md)—log mapping—message fields are mapped to CSE schema attributes. During this process, each entity field from a message is mapped to one of the following CSE schema entity attributes:
 
-* `device_hostname`
-* `device_hostname_raw`
-* `device_ip`
-* `device_mac`
-* `device_natIp`
-* `dns_replyIp`
-* `dstDevice_hostname`
-* `dstDevice_hostname_raw`
-* `dstDevice_ip`
-* `dstDevice_mac`
-* `dstDevice_natIp`
-* `fromUser_username`
-* `fromUser_username_raw`
-* `srcDevice_hostname`
-* `srcDevice_hostname_raw`
-* `srcDevice_ip`
-* `srcDevice_mac`
-* `srcDevice_natIp`
-* `user_username`
-* `user_username_raw`
+| Entity Type | Schema Attributes |
+|:----- |:----- |
+| Command | `commandLine` |
+| Domain | `http_referer_fqdn`, `http_url_fqdn` |
+| Email | `targetUser_email`, `user_email` |
+| File | `file_path`, `file_basename` |
+| Hash | `file_hash_imphash`, `file_hash_md5`, `file_hash_pehash`, `file_hash_sha1`, `file_hash_sha256`, `file_hash_ssdeep` |
+| Hostname | `device_hostname`, `device_hostname_raw`, `dstDevice_hostname`, `dstDevice_hostname_raw`, `srcDevice_hostname`, `srcDevice_hostname_raw` |
+| IP Address | `device_ip`, `device_natIp`, `dns_replyIp`, `dstDevice_ip`, `dstDevice_natIp`, `srcDevice_ip`, `srcDevice_natIp` |
+| MAC Address | `device_mac`, `dstDevice_mac`, `srcDevice_mac` |
+| Process | `baseImage`, `parentBaseImage` |
+| URL | `http_url` |
+| User Agent | `http_userAgent` |
+| Username | `fromUser_username`, `fromUser_username_raw`, `user_username`, `user_username_raw` |
 
 Which particular attribute an entity gets mapped to depends on the [field mappings](../schema/create-structured-log-mapping.md) in the log mapper for the message source. Given the example message above, “thedude” might be mapped to `user_username` and "185.35.135.245"
 to `srcDevice_ip`. 
@@ -120,7 +114,7 @@ By default the threshold Entity Activity Score for Insight generation is 12.The 
  
 
 | Insight Severity value | Activity Score |
-|------------------------|----------------|
+|:------------------------|:----------------|
 | Low                    | 13          |
 | Medium                 | 14 or 15          |
 | High                   | 16 or higher   |
@@ -128,7 +122,7 @@ By default the threshold Entity Activity Score for Insight generation is 12.The 
 If your Entity Activity Score threshold value is set to a value other than 12, you can work out the mapping yourself. If `t` is your configured threshold:
 
 ```
-Low = (t + 1) 
+Low = (t + 1)
 Medium = (t + 2) to (t + 3)
 High = (t + 4) or higher
 ```

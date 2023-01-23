@@ -28,7 +28,7 @@ _sourceCategory=service "message=User logged in" remote_ip
 
 To add a panel with a bubble chart:
 
-1. Create or open a Dashboard (New) and click on **Add Panel \> Categorical**.  
+1. Create or open a Dashboard (New) and click on **Add Panel > Categorical**.  
 
     ![categorical.png](/img/dashboards-new/panels/bubble-charts/categorical.png)
 

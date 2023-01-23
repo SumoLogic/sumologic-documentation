@@ -17,7 +17,7 @@ Collector versions 19.253-26+ support wrapper configuration parameters.
 The following table shows parameters that are unique to the Command Line Installer:
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | `-console` | Only has an effect when used with `-q`. Causes the installer to send progress messages to the console (whether you are running the installer in GUI or command-line mode.)<br/>On Windows, for this option to take effect, you must run the installer with start /wait. For example:<br/>`start /wait installer.exe -q -console` |
 | `-dir [directory]` | Sets a different installation directory than the default. |
 | `-q` | Causes the installer to run silently, which means you won't be prompted to supply installation parameters. For any installation parameter that you do not define at the command line, Sumo will use a default value. No output is sent to the console during installation, unless you also use the `-console` parameter.  Note that for a new Collector installation, even in a silent installation, you will be prompted to an authorization token, or an Access ID and Access Key. |
@@ -32,10 +32,10 @@ The following table shows parameters that relate to authenticating the
 Collector.
 
 | Parameter | Description |
-|--|--|
+|:--|:--|
 | `-VskipRegistration=[boolean]` | When specified as `true` the installer will skip registration.<br/>Collectors will normally register with Sumo Logic during the installation process, but you can pass the `‑VskipRegistration=true` flag to skip registration. This way, the Collector is installed as a service that will start and register automatically when the instance is launched. |
-| `-Vsumo.accessid=[accessId]`<br/>`-Vsumo.accesskey=[accessKey]` | An authentication option is required, either this option or the token option (see next entry in this table). If you have a Sumo Logic access ID and access key, include both. `-Vsumo.accessid` and `-Vsumo.accesskey` Admins can generate an access ID/access key pair on the Preferences page in the Web application. See [Access Keys](docs/manage/security/access-keys.md).<br/>Many operating systems allow a user to list information about processes that are owned by other users. This information could include command line arguments. For enhanced security, we recommend using the -varfile option to specify Sumo Logic credentials. |
-| `-Vsumo.token_and_url=[token]` | An authentication option is required, either this option or the access ID/access key option (see the above entry in the table).<br/>Token can be either an [Installation Token](docs/manage/security/installation-tokens.md) or Setup Wizard Token. |
+| `-Vsumo.accessid=[accessId]`<br/>`-Vsumo.accesskey=[accessKey]` | An authentication option is required, either this option or the token option (see next entry in this table). If you have a Sumo Logic access ID and access key, include both. `-Vsumo.accessid` and `-Vsumo.accesskey` Admins can generate an access ID/access key pair on the Preferences page in the Web application. See [Access Keys](/docs/manage/security/access-keys.md).<br/>Many operating systems allow a user to list information about processes that are owned by other users. This information could include command line arguments. For enhanced security, we recommend using the -varfile option to specify Sumo Logic credentials. |
+| `-Vsumo.token_and_url=[token]` | An authentication option is required, either this option or the access ID/access key option (see the above entry in the table).<br/>Token can be either an [Installation Token](/docs/manage/security/installation-tokens.md) or Setup Wizard Token. |
 
 ## user.properties parameters
 
@@ -49,7 +49,7 @@ There are a few parameters from user.properties that require specific
 formatting when used with the command line installer.
 
 | user.properties parameter format | Command line installer format |
-|--------------------------------------|-----------------------------------|
+|:--------------------------------------|:-----------------------------------|
 | `name` | `-Vcollector.name ` |
 | `url` | `-Vcollector.url` |
 | `proxyHost` | `-Vproxy.host ` |
@@ -67,7 +67,7 @@ For reference, see the available [collector.properties parameters](collector-pro
 <!-- Hidden table
 
 |  Parameter | Type | Description | Default Value |
-|--|--|--|--|
+|:--|:--|:--|:--|
 | -Valerts.ttl.min                                   | integer  | Duration in minutes before deleting alerts stored in the Collector directory.                                                                   | 180                                                              |
 | -Vaws.metadata.cache.enabled                       | boolean  | Enable fetching and caching AWS-specific local metadata.                                                                                        | true                                                             |
 | -Vaws.metadata.cache.fetch.timeout.ms              | integer  | HTTP connection timeout in milliseconds when attempting to fetch AWS-specific local metadata.                                                   | 1000                                                             |

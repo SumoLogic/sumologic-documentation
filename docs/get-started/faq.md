@@ -15,8 +15,8 @@ When you have full control over your logging format we recommend human readable
 Whatever you use follow these rules:
 
 * Use key-value pairs in a regular, defined format such as `key=value,` so they're easy to [parse](/docs/search/search-query-language/parse-operators).
-* Start logs with a regular, well-defined timestamp, ideally including a time zone. See [timestamp considerations and supported formats](docs/send-data/reference-information/time-reference.md) for details.
-* Start logs with a regular format to make automatically detecting message boundaries easier. See [collecting multiline logs](docs/send-data/installed-collectors/sources/define-boundary-regex-multiline-messages.md) for details.
+* Start logs with a regular, well-defined timestamp, ideally including a time zone. See [timestamp considerations and supported formats](/docs/send-data/reference-information/time-reference.md) for details.
+* Start logs with a regular format to make automatically detecting message boundaries easier. See [collecting multiline logs](/docs/send-data/installed-collectors/sources/define-boundary-regex-multiline-messages.md) for details.
 
 For example, from our own production logs, we use the following:
 
@@ -31,8 +31,8 @@ This is a key-value pair log, which is easy to parse and easy to read in Sumo.
 The following table lists data types and some of the popular sources that produce logs, which can be collected by Sumo Logic. This list is a sample only to provide a general idea of the possible sources of log data; it is not complete.
 
 | Data Type | Popular Log Sources |
-| -- | -- |
-| Custom App Code | <ul><li>Java</li><li>[Log4J](docs/send-data/collect-from-other-data-sources/sumo-logic-open-source-projects.md)</li><li>Log4J 2</li><li>Microsoft .NET</li><li>Rails</li></ul> |
+| :-- | :-- |
+| Custom App Code | <ul><li>Java</li><li>[Log4J](/docs/send-data/collect-from-other-data-sources/sumo-logic-open-source-projects.md)</li><li>Log4J 2</li><li>Microsoft .NET</li><li>Rails</li></ul> |
 | Open Source | <ul><li>Apache</li><li>[Apache Tomcat](/docs/integrations/web-servers/apache-tomcat)</li><li>Hadoop</li><li>Lucene</li></ul> |
 | Middleware | <ul><li>JBoss</li><li>Oracle WebLogic</li><li>webMethods</li><li>WebSphere</li></ul> |
 | Databases	 | <ul><li>IBM DB2</li><li>[MySQL](/docs/integrations/databases/mysql)</li><li>[Microsoft SQL Server](/docs/integrations/microsoft-azure/SQL-Server#Collecting-Logs-for-the-Microsoft-SQL-Server-App)</li><li>Oracle</li></ul> |
@@ -40,8 +40,8 @@ The following table lists data types and some of the popular sources that produc
 | Virtual | <ul><li>Citrix</li><li>Microsoft Hyper-V</li><li>VMware</li></ul> |
 | Network | <ul><li>[Cisco ASA](/docs/integrations/security-threat-detection/Cisco-ASA)</li><li>[Palo Alto Networks](/docs/integrations/security-threat-detection/Palo-Alto-Networks-6)</li><li>McAfee</li><li>Symantec</li></ul> |
 | Content Delivery | <ul><li>[Akamai](/docs/integrations/saas-cloud/Akamai-Cloud-Monitor)</li><li>[Amazon CloudFront](/docs/integrations/amazon-aws/CloudFront)</li><li>[Fastly](/docs/integrations/saas-cloud/Fastly)</li><li>Limelight Networks</li></ul> |
-| IaaS / PaaS | <ul><li>Amazon</li><li>[Heroku](docs/manage/connections-integrations/heroku.md)</li><li>Windows</li><li>[Google Audit](../cse/ingestion/google-g-suite-apps-audit.md)</li><li>[Google Cloud Platform (GCP)](docs/send-data/hosted-collectors/google-source/google-cloud-platform-source.md)</li></ul> |
-| SaaS | <ul><li>[Box](/docs/integrations/saas-cloud/Box)</li><li>[ServiceNow](docs/manage/connections-integrations/servicenow/set-up-connections.md)</li><li>[Salesforce](/docs/integrations/saas-cloud/salesforce)</li><li>[Microsoft Office 365](/docs/integrations/microsoft-azure/office-365)</li></ul> |
+| IaaS / PaaS | <ul><li>Amazon</li><li>[Heroku](/docs/manage/connections-integrations/heroku.md)</li><li>Windows</li><li>[Google Audit](../cse/ingestion/google-g-suite-apps-audit.md)</li><li>[Google Cloud Platform (GCP)](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source.md)</li></ul> |
+| SaaS | <ul><li>[Box](/docs/integrations/saas-cloud/Box)</li><li>[ServiceNow](/docs/alerts/webhook-connections/servicenow/set-up-connections.md)</li><li>[Salesforce](/docs/integrations/saas-cloud/salesforce)</li><li>[Microsoft Office 365](/docs/integrations/microsoft-azure/office-365)</li></ul> |
 | Security | <ul><li>Cisco</li><li>McAfee</li><li>Symantec</li><li>Qualys</li></ul> |
 
 ### Where is My Data Stored?
@@ -51,11 +51,12 @@ Account Owner selected when establishing your Sumo Logic account. 
 
 * Australia. Your data is stored in the AWS ap-southeast-2 (Sydney) region.
 * Canada. Your data is stored in the AWS ca-central-1 (Central) region.
-* Europe - Ireland. Your data is stored in the AWS eu-west-1 (Ireland) region.
-* Europe - Frankfurt. Your data is stored in the AWS eu-central-1 (Frankfurt) region.
-* India - Mumbai. Your data is stored in the AWS ap-south-1 (Mumbai) region.
+* Europe. Ireland. Your data is stored in the AWS eu-west-1 (Ireland) region.
+* Europe. Frankfurt. Your data is stored in the AWS eu-central-1 (Frankfurt) region.
+* India. Mumbai. Your data is stored in the AWS ap-south-1 (Mumbai) region.
 * Japan. Your data is stored in the AWS ap-northeast-1 (Tokyo) region.
 * North America. Your data is stored in the AWS us-east-1 (Northern Virginia) or us-west-2 (Oregon) region.
+* Federal. Your data is stored in the AWS us-east-1 (Northern Virginia) region.
 
 Your data is stored only in your region. 
 

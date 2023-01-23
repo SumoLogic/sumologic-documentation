@@ -135,7 +135,7 @@ Do the following to resolve:
 1. Close all app dashboards.
 2. In Sumo Logic, click **Manage Data > Logs** > [Fields](/docs/manage/fields.md#add-field) and delete the **x-gitlab-event field.**
 3. Add it again using the Dropped Fields section:
-    * At **Dropped Fields** drop-down, click on **x-gitlab-event**, then click **Create Field** to create the field.
+    * At **Dropped Fields** dropdown, click on **x-gitlab-event**, then click **Create Field** to create the field.
     * Wait for new events to be pushed from GitLab. The app should work without any `Field x-gitlab-event not found` errors.
 4. Re-open GitLab dashboards.
 

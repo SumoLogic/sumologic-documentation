@@ -54,7 +54,7 @@ The keys assigned to the Dashboard (New) Stack Linking would need to include tho
 
 To link a custom Dashboard (New) to your stack in Explore, do the following:
 
-1. From your custom dashboard, click the three-dot icon in the upper right corner of the window and select **Create Stack Linking** from the drop-down menu.
+1. From your custom dashboard, click the three-dot icon in the upper right corner of the window and select **Create Stack Linking** from the dropdown menu.
 
     ![Create Stack Linking option from Dashboard New.png](/img/dashboards-new/link-dashboard-explore/Create-Stack-Linking-option-from-Dashboard-New.png)
 
@@ -74,6 +74,6 @@ To link a custom Dashboard (New) to your stack in Explore, do the following:
 
 In Explore, when navigating to components you will have the option to select other dashboards that were linked. 
 
-From the **Dashboards** drop-down menu, select the name of the linked dashboard to load it in Explore. When hovering over available dashboards the tooltip provides the location and creator so it is easier to identify.
+From the **Dashboards** dropdown menu, select the name of the linked dashboard to load it in Explore. When hovering over available dashboards the tooltip provides the location and creator so it is easier to identify.
 
 ![explore with location tooltip.png](/img/dashboards-new/link-dashboard-explore/explore-with-location-tooltip.png)

@@ -103,7 +103,7 @@ If your search contains filtering criteria that could change each time the sear
 
 ## Aggregate before a lookup
 
-Whenever possible, you should aggregate data prior to doing a [lookup](docs/search/search-query-language/search-operators/lookup-classic). In some cases, this will significantly reduce the amount of data the lookup is referencing.
+Whenever possible, you should aggregate data prior to doing a [lookup](/docs/search/search-query-language/search-operators/lookup-classic). In some cases, this will significantly reduce the amount of data the lookup is referencing.
 
 **Best approach:**
 

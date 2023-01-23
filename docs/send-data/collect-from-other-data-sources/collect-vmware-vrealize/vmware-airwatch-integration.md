@@ -40,7 +40,7 @@ This section shows you how to integrate AirWatch with Sumo Logic and configure
 To enable integration and configure syslog, do the following:
 
 1. Log in to your AirWatch account.
-1. Navigate to **Monitor \> Reports and Analytics \> Events \> Syslog**.
+1. Navigate to **Monitor > Reports and Analytics > Events > Syslog**.
 
     ![Syslog_dialog.png](/img/send-data/Syslog_dialog.png)
 
@@ -51,7 +51,7 @@ To enable integration and configure syslog, do the following:
 1. Specify the following options in the Syslog dialog:
 
 | Setting | Description | Sumo Logic Specific Value |
-|--|--|--|
+|:--|:--|:--|
 | Syslog Integration | Enable/Disable | Enable |
 | Host Name | Host Name of Cloud Syslog | Host Name of the Sumo Logic Cloud Syslog:<br/>`syslog.collection.us1.sumologic.com` |
 | Protocol | UDP, TCP, Secure TCP | A secure TCP is required for Sumo Logic  |
@@ -63,7 +63,7 @@ To enable integration and configure syslog, do the following:
 5. Click the **Advanced** tab, and configure the following settings.
 
 | Setting | Description |
-|--|--|
+|:--|:--|
 | **Console Events** | Select whether to enable or disable the reporting of Console events. |
 | **Select Console Events to Send to Syslog** | For each subheading, select the specific events that you want to trigger a message to syslog. |
 | **Device Events** | Select whether to enable or disable the reporting of Device events. |

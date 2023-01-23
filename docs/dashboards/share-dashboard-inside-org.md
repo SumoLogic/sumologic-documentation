@@ -50,11 +50,11 @@ If you are going to grant different access rights to different users, be prepare
 
     ![share-with.png](/img/dashboards/share-with.png)
 
-1. Click the "Share with specific users and roles" field in the **Share with specific users and roles** area. A drop-down appears, listing your Org, and all the users and roles in the Org. 
+1. Click the "Share with specific users and roles" field in the **Share with specific users and roles** area. A dropdown appears, listing your Org, and all the users and roles in the Org. 
 
     1. If you want to share the dashboard with all users in your org, select **Your Entire Organization**. If you choose this option, note that all users in the org will have the access level you choose in step c, below. 
     1. Otherwise, select the individual roles and/or users with whom you want to share the dashboard.
-    1. In the **Access** area, select the level of access you want to grant—**Edit**, **View**, or **Manage**—from the drop-down list. As desired, select an advanced access option. For information about access levels and advanced access options, see the Available Permission Levels section of the [Share Content](/docs/manage/content-sharing) page.
+    1. In the **Access** area, select the level of access you want to grant—**Edit**, **View**, or **Manage**—from the dropdown list. As desired, select an advanced access option. For information about access levels and advanced access options, see the Available Permission Levels section of the [Share Content](/docs/manage/content-sharing) page.
     1. If you want to share the dashboard with another set of users, but with different  access permissions, click **Add users with another access level** and repeat the previous sub-steps, starting with b. 
 
 1. **To** **share a dashboard with filters** applied, click **Shareable URL** and toggle **Share with filter values**.   

@@ -11,7 +11,7 @@ This guide has information about creating and managing Sumo Logic roles. In Sumo
 To manage users and roles, you must have the administrator role or your role must have been assigned the [manage users and roles capability](role-capabilities.md).
 :::
 
-In Sumo Logic, you'll find pages for managing roles at **Administration \> Users and Roles \> Roles**.
+In Sumo Logic, you'll find pages for managing roles at **Administration > Users and Roles > Roles**.
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

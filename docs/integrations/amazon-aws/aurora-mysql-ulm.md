@@ -228,18 +228,18 @@ This section provides instructions for setting up AWS CloudTrail Source to colle
 To collect AWS CloudTrail events, do the following:
 1. Configure a [Hosted Collector.](/docs/send-data/hosted-collectors/configure-hosted-collector)
 2. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to the Hosted Collector, providing the following information:
-   * **Name** - Enter a name to display for the new Source.
-   * **Description** - Enter an optional description.
-   * **S3 Region** - Select the Amazon Region for your CloudTrail Aurora S3 bucket.
+   * **Name**. Enter a name to display for the new Source.
+   * **Description**.(Optional) Enter a description of the Source.
+   * **S3 Region**. Select the Amazon Region for your CloudTrail Aurora S3 bucket.
    * **Bucket Name** - Enter the exact name of your CloudTrail Aurora S3 bucket.
-   * **Path Expression** - Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions).)The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-   * **Source Category** - Enter a source category, for example, AWS/Cloudtrail.
+   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions).)The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+   * **Source Category**. Enter a source category, for example, AWS/Cloudtrail.
    * **Access Key ID and Secret Access Key** - Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
    * **Scan Interval**. Use the default of 5 minutes, or enter a time interval frequency at which Sumo Logic will scan your S3 bucket for new data.
-   * **Enable Timestamp Parsing** - Select the checkbox to enable.
-   * **Time Zone** - Deselect Ignore time zone from log file and instead select UTC.
-   * **Timestamp Format** - Select Automatically detect the format.
-   * **Enable Multiline Processing** - Select the checkbox to enable, and select Infer Boundaries.
+   * **Enable Timestamp Parsing**. Select the checkbox to enable.
+   * **Time Zone**. Deselect Ignore time zone from log file and instead select UTC.
+   * **Timestamp Format**. Select Automatically detect the format.
+   * **Enable Multiline Processing**. Select the checkbox to enable, and select **Infer Boundaries**.
 3. Click **Save**.
 
 
@@ -268,13 +268,13 @@ This section provides instructions setting up the collection of Aurora CloudWatc
 To collect Aurora CloudWatch metrics, do the following:
 1. Configure a [Hosted Collector.](/docs/send-data/hosted-collectors/configure-hosted-collector)
 2. Configure an [Amazon CloudWatch Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics), providing the following information:
-   * **Name** - Enter a name to display for the new Source.
-   * **Description** - Enter an optional description.
-   * **Regions** - Select your Amazon Regions for Amazon RDS.
-   * **Namespaces** - Select **AWS/RDS**.
-   * **Source Category** - Enter a source category, for example, AWS/RDS/Metric.
-   * **Access Key ID and Secret Access Key** - Enter your Amazon Access Key ID and Secret Access Key.
-   * **Scan Interval** - Accept the default of 5 minutes, or enter a time interval at which Sumo Logic will scan CloudWatch Sources for new data.
+   * **Name**. Enter a name to display for the new Source.
+   * **Description**. (Optional) Enter a description of the Source.
+   * **Regions**. Select your Amazon Regions for Amazon RDS.
+   * **Namespaces**. Select **AWS/RDS**.
+   * **Source Category**. Enter a source category, for example, AWS/RDS/Metric.
+   * **Access Key ID and Secret Access Key**. Enter your Amazon Access Key ID and Secret Access Key.
+   * **Scan Interval**. Accept the default of 5 minutes, or enter a time interval at which Sumo Logic will scan CloudWatch Sources for new data.
 3. Click **Save**.
 
 
@@ -312,7 +312,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Logs - Overview
 
-**Aurora MySQL ULM Logs - Overview Dashboard** allows you to view high-level overview of the following log types: Error, Slow Query, Audit and General.
+**Aurora MySQL ULM Logs - Overview Dashboard** allows you to view high-level overview of the following log types: Error, Slow Query, Audit, and General.
 
 Use this dashboard to:
 * Identify Authentication Failures. You can drill down for granular data by clicking any of the first row panels  to display the “Error Log” analysis dashboard.
@@ -328,7 +328,7 @@ Use this dashboard to:
 
 **Aurora MySQL ULM Logs - Error Logs Analysis Dashboard** allows you to view details for error logs, including failed authentications, error outliers, top and recent warnings, log levels, and aborted connections.
 
-This dashboard utilizes [Error Logs](https://dev.mysql.com/doc/refman/5.7/en/error-log.html) that have been ingested into Sumo Logic. Error Logs are by default enabled on Aurora MySQL.
+This dashboard uses [Error Logs](https://dev.mysql.com/doc/refman/5.7/en/error-log.html) that have been ingested into Sumo Logic. Error Logs are by default enabled on Aurora MySQL.
 
 Use this dashboard to:
 * Track diagnostic messages, such as errors, warnings and notes to effectively troubleshoot a situation.
@@ -337,14 +337,14 @@ Use this dashboard to:
 * Identify connection abort events.
 * Monitor database instance start up, ready for connection events.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL.png')} alt="Aurora MySQL ULM" />
 
 
 ### Logs - Slow Query
 
 **Aurora MySQL ULM Logs - Slow Query Dashboard** allows you to view log details on slow queries, including the number of slow queries, trends, execution times, time comparisons, command types, users, and IP addresses.
 
-This dashboard utilizes [SlowQuery Logs](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) that must be enabled and ingested into Sumo Logic.
+This dashboard uses [SlowQuery Logs](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html) that must be enabled and ingested into Sumo Logic.
 
 Use this dashboard to:
 * Identify queries that are taking longer to process than the time onfigured in DB Parameter Group.
@@ -360,7 +360,7 @@ Use this dashboard to:
 
 ### Logs - Audit Log Analysis
 
-**Aurora MySQL ULM Logs - Audit Log Analysis Dashboard** allows you to view an analysis of events, including accessed resources, destination and source addresses,  timestamps, and user login information. These logs are specifically enabled to audit activities that are of interest from an audit and compliance perspective.
+**Aurora MySQL ULM Logs - Audit Log Analysis Dashboard** allows you to view an analysis of events, including accessed resources, destination and source addresses, timestamps, and user login information. These logs are specifically enabled to audit activities that are of interest from an audit and compliance perspective.
 
 This dashboard works on Audit Logs that must be [turned on](https://aws.amazon.com/blogs/database/auditing-an-amazon-aurora-cluster/) enabled to be[ uploaded to cloudwatch](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.CloudWatch.html) and ingest into Sumo.
 
@@ -422,7 +422,7 @@ Use this dashboard to:
 * Users and the type of authentication method used.
 * Keep watch on reasons of failed activities to take corrective actions as the need be.
 
-To drill down for details, click on “Event Status” panel to get details of events in linked dashboard “Aurora MySQL ULM - CloudTrail Event - Details”.
+To drill down for details, click “Event Status” panel for details of events in the linked dashboard “Aurora MySQL ULM - CloudTrail Event - Details”.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_CloudTrailEvent_Overview.png')} alt="Aurora MySQL ULM" />
 

@@ -412,7 +412,7 @@ import TabItem from '@theme/TabItem';
 
 1. Do one of the following:
    * If you're configuring a new Source, proceed to the next step.
-   * To edit the timestamp settings for an existing Source, navigate to **Manage Data \> Collection \> Collection**. Then click **Edit** to the right of the Source name and go to step 2.
+   * To edit the timestamp settings for an existing Source, navigate to **Manage Data > Collection > Collection**. Then click **Edit** to the right of the Source name and go to step 2.
 1. Click **Advanced** (if the advanced settings are not already displaying).
 1. For **Timestamp Format**, select **Specify a format**.<br/> ![timestamp format specify input.png](/img/send-data/timestamp-format-specify-input.png)
 1. In the **Format** field, enter the timestamp format the Collector should use to parse timestamps in your log. If the timestamp format is in epoch time, enter "epoch" in the **Format** field. Your custom timestamp format must follow our supported [timestamp conventions](#timestamp-conventions).<br/>  ![multiple timestamp formats.png](/img/send-data/multiple-timestamp-formats.png)
@@ -441,7 +441,7 @@ import TabItem from '@theme/TabItem';
 
 1. Do one of the following:
    * If you're configuring a new Source, proceed to the next step.
-   * To edit the timestamp settings for an existing Source, navigate to **Manage Data \> Collection \> Collection**. Then click **Edit** to the right of the Source name and go to step 2.
+   * To edit the timestamp settings for an existing Source, navigate to **Manage Data > Collection > Collection**. Then click **Edit** to the right of the Source name and go to step 2.
 1. Navigate to the **Advanced Options for Logs** section.
 1. For **Timestamp Format**, select **Specify a format**.<br/> ![specify timestamp format.png](/img/send-data/specify-timestamp-format.png)
 1. In the **Format** field, enter the timestamp format the Collector should use to parse timestamps in your log. If the timestamp format is in epoch time, enter "epoch" in the **Format** field. Your custom timestamp format must follow our supported [timestamp conventions](time-reference.md).<br/>  ![timestamp format highlighted.png](/img/send-data/timestamp-format-highlighted.png)

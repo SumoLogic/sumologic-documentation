@@ -38,7 +38,7 @@ If you want to make any of the optional modifications described in this section,
 When you upload the template to AWS, it creates the AWS resources described in the table below.
 
 | Resource Name |  Description |
-|--|--|
+|:--|:--|
 | `SumoCWLogGroup` | A log group that has a subscription filter (`SumoCWLogSubsriptionFilter`)  associated with it that delivers real time logs to Sumo’s CloudWatch Lambda function (`SumoCWLogsLambda`). |
 | `SumoCWLogsLambda` | A Lambda function responsible for sending data to the Sumo HTTP Source URL. It is configured with a dead letter queue (SumoCWDeadLetterQueue) that receives messages that can’t be processed successfully. You can subscribe other logs to this function except its own log group. |
 | `SumoCWProcessDLQLambda` | A Lambda function responsible for reading messages from the dead letter queue and resending messages. This function is periodically triggered by AWS CloudWatch Events using a schedule rule (`SumoCWProcessDLQScheduleRule`). |
@@ -58,7 +58,7 @@ If you want to use the CloudFormation Template as is, proceed to [Create a stack
 The following AWS Lambda environment variables are supported in both the Lambda functions. Both the functions should have same environment variables values configured to avoid inconsistencies.
 
 |  Environment Variable | Description |
-|--|--|
+|:--|:--|
 | `SOURCE_CATEGORY_OVERRIDE` | (Optional) You can use this variable to override the `_sourceCategory` configured for the HTTP Source. |
 | `SOURCE_FIELDS_OVERRIDE` | (Optional) You can use this variable to override the custom metadata fields configured for the HTTP Source. Example: `key1=value1,key2=value2` |
 | `SOURCE_HOST_OVERRIDE` | (Optional) You can use this variable to override the  `_sourceHost` configured for the HTTP Source. |
@@ -240,7 +240,7 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 
 ### Auto-subscribe other log groups to SumoCWLogsLambda function
 
-If you want to collect logs from multiple Log Groups, you can use Sumo’s LogGroup Lambda Connector to subscribe additional Log Groups to the Lambda function. To do so, follow the instructions in [Auto-Subscribe AWS Log Groups to a Lambda Function](../autosubscribe-arn-destination.md).  When you edit the CloudFormation template for the connector, point the `LAMBDA_ARN` environment variable to the `SumoCWLogsLambda` function.
+If you want to collect logs from multiple Log Groups, you can use Sumo’s LogGroup Lambda Connector to subscribe additional Log Groups to the Lambda function. To do so, follow the instructions in [Auto-Subscribe AWS Log Groups to a Lambda Function](../autosubscribe-arn-destination.md). When you edit the connector parameters, set the `DestinationArnValue` parameter to the `SumoCWLogsLambda` function ARN.
 
 ## Alternate collection methods 
 

@@ -31,7 +31,7 @@ The following dashboard is an example of one of the many pre-configured app dash
 
 ## Amazon EKS - Control Plane
 
-The [Sumo Logic App for Amazon EKS - Control Plane](docs/integrations/amazon-aws/eks-control-plane.md) provides visibility into the EKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes. The app’s pre-configured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. This app works in conjunction with Sumo Logic Kubernetes app that provides visibility into worker node metrics and application logs.
+The [Sumo Logic App for Amazon EKS - Control Plane](/docs/integrations/amazon-aws/eks-control-plane.md) provides visibility into the EKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes. The app’s pre-configured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. This app works in conjunction with Sumo Logic Kubernetes app that provides visibility into worker node metrics and application logs.
 
 The following dashboard is an example of one of the many pre-configured app dashboards you can access to view and analyze data from your Kubernetes environment.
 
@@ -39,7 +39,7 @@ The following dashboard is an example of one of the many pre-configured app dash
 
 ## Azure Kubernetes System (AKS) - Control Plane
 
-The [Sumo Logic App for Azure Kubernetes Service (AKS) - Control Plane](docs/integrations/microsoft-azure/kubernetes.md) provides visibility into the AKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes. The pre-configured app dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. This app works in conjunction with Sumo Logic Kubernetes app that provides visibility into worker node metrics and application logs.
+The [Sumo Logic App for Azure Kubernetes Service (AKS) - Control Plane](/docs/integrations/microsoft-azure/kubernetes.md) provides visibility into the AKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes. The pre-configured app dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. This app works in conjunction with Sumo Logic Kubernetes app that provides visibility into worker node metrics and application logs.
 
 The following dashboard is an example of one of the many pre-configured app dashboards you can access to view and analyze data from your Kubernetes environment.
 
@@ -47,7 +47,7 @@ The following dashboard is an example of one of the many pre-configured app dash
 
 ## Google Kubernetes Engine (GKE) - Control Plane
 
-The [Sumo Logic App for Google Kubernetes Engine (GKE) - Control Plane](docs/integrations/google/kubernetes-engine.md) allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The App provides visibility into the GKE control plane with operational insights into the API server, control manager, and worker nodes. This app works in conjunction with Sumo Logic Kubernetes app that provides visibility into worker node metrics and application logs.
+The [Sumo Logic App for Google Kubernetes Engine (GKE) - Control Plane](/docs/integrations/google/kubernetes-engine.md) allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The App provides visibility into the GKE control plane with operational insights into the API server, control manager, and worker nodes. This app works in conjunction with Sumo Logic Kubernetes app that provides visibility into worker node metrics and application logs.
 
 The following dashboard is an example of one of the many pre-configured app dashboards you can access to view and analyze data from your Kubernetes environment.
 
@@ -62,7 +62,7 @@ The following dashboard is an example of one of the many pre-configured app dash
 This feature is available in the following account plans.
 
 | Account Type | Account Level                                  |
-|--------------|------------------------------------------------|
+|:--------------|:------------------------------------------------|
 | CloudFlex    | Trial, Enterprise                              |
 | Credits      | Trial, Enterprise Operations, Enterprise Suite |
 

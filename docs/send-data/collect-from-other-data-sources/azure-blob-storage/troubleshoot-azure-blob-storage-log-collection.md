@@ -64,7 +64,7 @@ Make sure that the resources you created in the [Collect Logs from Azure Blob S
 ## Verify Block Blob Create Events are getting published
 
 1. Click **All Services**. Go to Event Grid Subscription services. 
-1. Select Storage Account and region from the drop down.
+1. Select Storage Account and region from the dropdown.
 1. Select the Event Subscription created in Step 3 from the list.
 1. Click **Metrics.**
 1. On the Event Grid Metrics page, check that the **Publish Succeeded** and **Delivery Succeeded** counts are greater than zero.

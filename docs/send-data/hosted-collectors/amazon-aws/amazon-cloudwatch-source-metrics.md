@@ -18,7 +18,7 @@ A Sumo CloudWatch Source only supports CloudWatch metrics that are emitted at a 
 Sumo does support S3 Request Metrics. Since S3 does not publish the request metrics by default, you must enable them if you want to collect them. For more information, see [Monitoring Metrics with Amazon CloudWatch](http://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html) in AWS help.
 
 :::tip
-EC2 metrics have high latency and can increase the costs of your AWS account. For EC2 metrics, consider [Installing a Collector with a Host Metrics Source](docs/send-data/installed-collectors/sources/host-metrics-source.md). The advantage is near zero latency and more information at a lower overall cost.
+EC2 metrics have high latency and can increase the costs of your AWS account. For EC2 metrics, consider [Installing a Collector with a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source.md). The advantage is near zero latency and more information at a lower overall cost.
 :::
 
 ## About AWS tag filtering
@@ -91,7 +91,7 @@ AWS tag filtering is supported for the following AWS namespaces.
 ## Set up an Amazon CloudWatch source
 
 1. Before you begin, grant permission for Sumo Logic to list available metrics and get metric data points. See [Grant Access to an AWS Product](grant-access-aws-product.md) for details.
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic select **Manage Data > Collection > Collection**. 
 1. Click **Add Source** next to a Hosted Collector.
 1. Select **AWS CloudWatch Metrics**. 
 

@@ -1,6 +1,7 @@
 ---
 id: set-up-adfs-authenticate-users
 title: Set Up ADFS to Authenticate Sumo Logic Users
+description: Learn how to use ADFS to authenticate Sumo Logic users.
 ---
 
 :::important
@@ -16,7 +17,7 @@ To configure ADFS to authenticate Sumo Logic users, perform the following tasks.
 The relying party trust configuration is required for the connection between Sumo Logic and ADFS.
 
 1. Complete the provisioning steps in [Set Up SAML for Single Sign-On](set-up-saml.md).
-1. Open the ADFS Management application, select the Relying Party Trusts folder, and select **Actions \> Add a new Standard Relying Party Trust** to open the wizard. Click **Start**. 
+1. Open the ADFS Management application, select the Relying Party Trusts folder, and select **Actions > Add a new Standard Relying Party Trust** to open the wizard. Click **Start**. 
 
     ![Add relying party trust](/img/security/adfs01.png)
 1. In the **Select Data Source** window, select **Enter Data About the Party Manually** and click **Next**.
@@ -89,7 +90,7 @@ To create claim rules:
 
 There are a few relying party trust settings that aren’t accessible through the wizard.
 
-1. To specify these settings, select the relying party trust entry in the ADFS Management application and select **Actions \> Properties**.
+1. To specify these settings, select the relying party trust entry in the ADFS Management application and select **Actions > Properties**.
 
 1. On the **Identifiers** tab, enter a display name. Enter your relying party identifier and click **Add**.
 
@@ -122,6 +123,6 @@ You can now test the ADFS SSO implementation by attempting to log in
 from the login URL. If you have any trouble, return to Sumo Logic and
 perform the following steps:
 
-1. Choose **Administration \> Security \> SAML**.
+1. Choose **Administration > Security > SAML**.
 1. Select the **Debug Mode** check box and click **Save**.
 1. Test again.

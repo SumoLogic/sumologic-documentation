@@ -77,13 +77,11 @@ We use the term rollup to refer to the aggregation function Sumo uses when quant
   </tr>
 </table>
 
-
 Sumo quantizes metrics upon ingestion and at query time.
-
 
 ### Quantization at ingestion
 
-Upon ingestion, Sumo quantizes raw metric data points to one hour resolutions for all rollup types: `avg`, `min`, `max`, `sum`, and `count`. This data is stored in one hour rollup tables in Sumo. The raw data is stored in a table referred to as the baseline table. For information about retention times, see [Metric Ingestion and Storage](docs/metrics/manage-metric-volume/metric-ingestion-and-storage.md).
+Upon ingestion, Sumo quantizes raw metric data points to one hour resolutions for all rollup types: `avg`, `min`, `max`, `sum`, and `count`. This data is stored in one hour rollup tables in Sumo. The raw data is stored in a table referred to as the baseline table. For information about retention times, see [Metric Ingestion and Storage](/docs/metrics/manage-metric-volume/metric-ingestion-and-storage.md).
 
 ### Automatic quantization at query time
 
@@ -194,24 +192,25 @@ The table below shows how Sumo Logic selects a quantization interval based on qu
   </tr>
 </table>
 
-
-
 ### Explicit quantization at query time  
 
 When you run a metric query, you can optionally use the `quantize` operator to specify a quantization interval and rollup type, or both.
 
 When you run a query with the `quantize` operator, the way that Sumo quantizes your metric data points depends on the rollup type you specify, if any, in the `quantize` clause of your query.  Rollup types include `avg`, `min`, `max`, `sum`, and `count`. (Specifying rollup type is optional for the `quantize` operator.)
 
-
 #### Quantize with rollup type specified  
 
-If your metric query uses the `quantize` operator and specifies a rollup type, Sumo will only quantize metric data points accordingly. For example, given this query:
+To specify the rollup type for quantization, include the `quantize` operator as the first operator in your query (immediately after the selector), and specify the rolloup type with the `using` clause. For example, given this query:
 
 ```sql
 cpu | quantize to 15m using sum
 ```
 
-Sumo will quantize to the `sum`  rollup type.
+Sumo will quantize to the `sum` rollup type.
+
+:::note
+If the `quantize` operator in your query is preceded by another metrics operator, a rollup type you specify with `using` will be ignored – it will not be applied at the selector level.
+:::
 
 #### Quantize with no rollup type specified  
 
@@ -263,7 +262,6 @@ If your metric query uses the `quantize` operator without specifying a rollup ty
   </tr>
 </table>
 
-
 #### quantize operator is followed by a parse operator
 
 The descriptive points might be passed through without change. For example, the `parse` operator changes time series metadata but lets data points through unchanged. For example,
@@ -271,30 +269,3 @@ The descriptive points might be passed through without change. For example, the 
 ```sql
 ... | quantize to 5s | parse field=_sourceHost - as cluster,instance | ..
 ```
-
-
-
-#### quantize operator is followed by another quantize operator
-
-In this case, the first specified quantization function is used. For example,
-
-```sql
-... | quantize to 15s using max | quantize to 1m | ...
-```
-
-and
-
-```sql
-... | quantize to 15s | quantize to 1m using max | ...
-```
-
-
-both use `max` quantization.
-
-In the following example:
-
-```sql
-... | quantize to 15s using min | quantize to 1m using max | ...
-```
-
-the data is quantized to 15s using `min` quantization and then, `max` quantization is applied on top of the result of the previous step.

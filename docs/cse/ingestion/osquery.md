@@ -10,22 +10,20 @@ This section has instructions for collecting [osquery](https://osquery.io/) log 
 Sumo Logic CSE supports osquery logs sent in JSON format for the following log types:
 
 * Schedule results in Events format
-
-    :::note
-    Batch and Snapshot formats are not natively supported.
-    :::
-
+  :::note
+  Batch and Snapshot formats are not natively supported.
+  :::
 * Process Auditing
 * Anomaly Detection
 * File Integrity Monitoring
 
-## Configure CIP collection
+## Configure collection
 
 In this step, you configure an HTTP Source to collect osquery log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to Configure an HTTP Source below. Otherwise, create a new collector as described in Configure a hosted  collector below, and then create the HTTP Source on the collector.
 
 ### Configure a hosted collector
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Hosted Collector**.
 1. The **Add Hosted Collector** popup appears.  
@@ -36,14 +34,13 @@ In this step, you configure an HTTP Source to collect osquery log messages. You 
 1. **Fields**. 
     1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
     1. If all sources in this collector will be osquery sources, add an additional field with key `_parser` and value */Parsers/System/Osquery/Osquery JSON*.
-
-:::note
-It is also possible to configure individual sources to forward to CSE, as described in the following section.
-:::
+    :::note
+    It is also possible to configure individual sources to forward to CSE, as described in the following section.
+    :::
 
 ### Configure an HTTP Source
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. Navigate to the Hosted Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 

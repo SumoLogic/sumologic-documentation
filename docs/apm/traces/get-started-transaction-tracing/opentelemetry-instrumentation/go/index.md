@@ -1,5 +1,5 @@
 ---
-slug: /apm/traces/get-started-transaction-tracing/go
+slug: /apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/go
 title: Go OpenTelemetry auto-instrumentation
 sidebar_label: Go OpenTelemetry auto-instrumentation
 description: OpenTelemetry Golang instrumentation gives you the possibility to capture telemetry (metrics and traces) data from code written in Golang.
@@ -113,8 +113,8 @@ The last step is to configure few other things like:
 * `SERVICE_NAME` - insert the application service name. Ensure the string value represents its business logic, such as "SumoWebCall". This will appear as a tracing service name in Sumo Logic.
 * `APPLICATION_NAME` - insert the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
 * `ENDPOINT_ADDRESS` - OTLP HTTP (default port 4318) endpoint address must be provided with the location of the OpenTelemetry Collector/Agent (recommended for production) or [Sumo Logic HTTP Traces source](../../http-traces-source.md). Refer to the following setup instructions if you haven't yet installed a collector:
-   * [Set up traces collection for Kubernetes environments](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md)
-   * [Set up traces collection for other environments usage](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md)
+   * [Set up traces collection for Kubernetes environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md)
+   * [Set up traces collection for other environments usage](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md)
 
 All of them can be configured by [environment variables](https://github.com/open-telemetry/opentelemetry-go/tree/v1.4.0/exporters/otlp/otlptrace#otlptracehttp) specific for the exporter. For OTLP HTTP Exporter these are:
 

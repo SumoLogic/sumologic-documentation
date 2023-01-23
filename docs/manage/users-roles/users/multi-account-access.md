@@ -6,7 +6,7 @@ description: Multi-account Access allows you to log into multiple Sumo Logic acc
 
 
 :::note
-Sumo Logic now supports custom subdomains and recommends that as the best approach to providing access to multiple accounts: you can configure a custom subdomain for each of your Sumo Logic accounts. For more information, see [Set up a custom subdomain](docs/manage/manage-subscription/manage-org-settings.md).
+Sumo Logic now supports custom subdomains and recommends that as the best approach to providing access to multiple accounts: you can configure a custom subdomain for each of your Sumo Logic accounts. For more information, see [Set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings.md).
 :::
 
 Multi-account access allows you to log into multiple Sumo Logic accounts (also called organizations) using one username (email address) and password. If the same username already exists in more than one Sumo Logic organization, the accounts are linked automatically. No action is required, though initially, you will be asked to change your password. When you do, this will become your multi-account password.
@@ -22,7 +22,7 @@ For multi-account to work, your username (email address) must be the same in the
 If you would still like to have an account that is separate from your Sumo Logic Multi-account, simply use a different email address. This way, you can keep this account separate from your Multi-account username and password.
 
 :::note
-Your account owner can change the organizations' display name on the Account page. For more information, see [Cloud Flex Accounts](docs/manage/manage-subscription/cloud-flex-accounts.md) or [Cloud Flex Credits Accounts](docs/manage/manage-subscription/cloud-flex-credits-accounts.md) , depending on your Sumo Logic packaging.
+Your account owner can change the organizations' display name on the Account page. For more information, see [Cloud Flex Accounts](/docs/manage/manage-subscription/cloud-flex-accounts.md) or [Cloud Flex Credits Accounts](/docs/manage/manage-subscription/cloud-flex-credits-accounts.md) , depending on your Sumo Logic packaging.
 :::
 
 Single account users are unaffected by multi-account Access, and will not see this option in the UI.
@@ -55,7 +55,7 @@ As an administrator using SAML, if you have users that need to view and switch t
 
 Sumo Logic Multi-account users may have access to organizations that use different [Password Policies](../../security/set-password-policy.md). With Multi-account, the password policy data from different organizations is centralized.
 
-There you can set the following account settings in **Administration \> Security \> Password Policy**:
+There you can set the following account settings in **Administration > Security > Password Policy**:
 
 * **Passwords expire in** (days)
 * **Password reuse after** (number of unique passwords you must use before you can reuse an old password)

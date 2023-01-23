@@ -255,102 +255,7 @@ Sumo Logic's FedRAMP deployment is similar to our other deployments, such as US2
 
 ### AWS Region by Sumo Deployment
 
-The following table describes the AWS regions used by each Sumo Logic deployment. See the [AWS page on regions and endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html) for more information.
-
-<table><small>
-  <tr>
-   <td><strong>Sumo Logic Deployment</strong>
-   </td>
-   <td><strong>AWS Region Name</strong>
-   </td>
-   <td><strong>AWS Region</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>AU
-   </td>
-   <td>Asia Pacific (Sydney)
-   </td>
-   <td>ap-southeast-2
-   </td>
-  </tr>
-  <tr>
-   <td>CA
-   </td>
-   <td>Canada (Central)
-   </td>
-   <td>ca-central-1
-   </td>
-  </tr>
-  <tr>
-   <td>DE
-   </td>
-   <td>EU (Frankfurt)
-   </td>
-   <td>eu-central-1
-   </td>
-  </tr>
-  <tr>
-   <td>EU
-   </td>
-   <td>EU (Ireland)
-   </td>
-   <td>eu-west-1
-   </td>
-  </tr>
-  <tr>
-   <td>FED
-   </td>
-   <td>US East (N. Virginia)
-   </td>
-   <td>us-east-1
-   </td>
-  </tr>
-  <tr>
-   <td>IN
-   </td>
-   <td>Asia Pacific (Mumbai)
-   </td>
-   <td>ap-south-1
-   </td>
-  </tr>
-  <tr>
-   <td>JP
-   </td>
-   <td>Asia Pacific (Tokyo)
-   </td>
-   <td>ap-northeast-1
-   </td>
-  </tr>
-  <tr>
-   <td>US1
-   </td>
-   <td>US East (N. Virginia)
-   </td>
-   <td>us-east-1
-   </td>
-  </tr>
-  <tr>
-   <td>US2
-   </td>
-   <td>US West (Oregon)
-   </td>
-   <td>us-west-2
-   </td>
-  </tr></small>
-</table>
-
-[This link](https://ip-ranges.amazonaws.com/ip-ranges.json) provides the complete current list of AWS IP ranges or subnets or prefixes. You can limit the number of entries in a firewall by using just the IP prefixes against the AWS region that your account's Sumo deployment uses, as shown in the table.
-
-The list of IP ranges is shared infrastructure. It is not limited to Sumo Logic nodes and is subject to change over time.
-
-You can run the following query against the downloaded file in Sumo Logic to determine the IP addresses for each deployment.
-
-```sql
-| parse regex "\s+\"ip_prefix\":\s+\"(?<ip_prefix>.*?)\",\n\s+\"region\":\s+\"(?<region>.*?)\",\n\s+\"service\":\s+\"(?<service>.*?)\"" multi | where service="AMAZON" and (region="us-west-2" or region="us-east-1" or region="eu-west-1" or region="ap-southeast-2") | if (region="us-west-2", "US2", region) as region | if (region="us-east-1", "PROD", region) as region | if (region="eu-west-1", "EU", region) as region | if (region="ap-southeast-2", "AU", region) as region | count by ip_prefix, region, service | fields - _count | sort by region, ip_prefix
-```
-
-After configuring the firewall, Collector, and Sources, confirm that the Collector and Sources are working by verifying that you can receive a given type of message (such as syslog messages) at the specified location.
+{@import ../reuse/aws-region-by-sumo-deployment.md}
 
 
 ## Status Codes
@@ -425,7 +330,7 @@ The [Collector Management API](/docs/api/collectors) uses optimistic locking to 
 
 Sumo Logic provides notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
 
-The [Test Connection feature for webhooks](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md#Testing-a-connection) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
+The [Test Connection feature for webhooks](/docs/alerts/webhook-connections/set-up-webhook-connections#Testing-a-connection) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
 
 
 ## Beta APIs

@@ -46,7 +46,7 @@ The second query will return the results more efficiently because the first quer
 
 ### Use Field Extraction Rules
 
-If your admin has created Field Extraction Rules, [learn how to use them](docs/manage/field-extractions/edit-field-extraction-rules.md). Field Extraction Rules parse out fields from your organization's log files, meaning that you will not need to parse out fields in your query.
+If your admin has created Field Extraction Rules, [learn how to use them](/docs/manage/field-extractions/edit-field-extraction-rules.md). Field Extraction Rules parse out fields from your organization's log files, meaning that you will not need to parse out fields in your query.
 
 ### Include the most selective filters first
 

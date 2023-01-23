@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="75"/>
 
-This guide provides an end-to-end solution for deploying, managing, monitoring, and administering your Kubernetes environment. You can view topics from the following list in the order of your choice, or navigate the structured path at the top of the [About the Sumo Logic Kubernetes Solution](docs/observability/kubernetes/about.md) page for a complete end-to-end experience. 
+This guide provides an end-to-end solution for deploying, managing, monitoring, and administering your Kubernetes environment. You can view topics from the following list in the order of your choice, or navigate the structured path at the top of the [About the Sumo Logic Kubernetes Solution](/docs/observability/kubernetes/about.md) page for a complete end-to-end experience. 
 
 ## Guides
 
@@ -62,7 +62,7 @@ Once you've set up collection, installed Kubernetes apps, and familiarized yours
 
 Once you have completed the above steps, you'll have installed the collection as well as the core Kubernetes Dashboards and alerts. To get started, open a new **Explore** tab in Sumo Logic and view your Kubernetes App Dashboards.
 
-If you don't see data in Sumo Logic, review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Troubleshoot_Collection.md).
+If you don't see data in Sumo Logic, review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/troubleshoot-collection.md).
 
 #### Kubernetes Partner Apps
 

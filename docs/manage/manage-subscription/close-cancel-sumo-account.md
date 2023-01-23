@@ -17,7 +17,7 @@ This task deletes your Sumo Logic Organization, all users and data. **This acti
 
 To delete a Sumo Logic organization and close the account:
 
-1. In the Sumo Logic left navigation bar, go to **Administration** \> **Account**.
+1. In the Sumo Logic left navigation bar, go to **Administration** > **Account**.
 1. At the bottom of the page, under the section **Delete this Organization from Sumo Logic?**, click **Delete Org**.
 1. In the dialog **Delete This Organization from Sumo Logic?**, enter **DELETE** to confirm.
 1. Click **Delete Org**.
@@ -27,13 +27,6 @@ The Sumo Logic Organization, all users and data are deleted.
 :::note
 If you have a self service trial account, at the end of the trial, typically 30 days, if you do not upgrade to a paid subscription, your account reverts to a free plan.
 :::
-
-## Internal Only Information
-
-Deleting the data from an account is two-step process:
-
-1. **Mark the data to be deleted.** Once marked, the data cannot be searched. Data is marked to be deleted within one hour after the Org is disabled.
-1. **Physically delete the data.** There is no hard guarantee for this, but StorageGC does not lag by more than few hours. 
 
 ## Cancel a Sumo Logic licensed account
 

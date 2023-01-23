@@ -159,6 +159,21 @@ This section has instructions for collecting Amazon VPC Flow Logs using an AWS S
     2. In the **Processing Rules for Logs** section, add an **Exclude messages that match** processing rule to ignore the following file header lines: `version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`.
 
 
+## Field Extraction Rule(s) for VPC Flow logs
+
+Create Field Extraction Rule for VPC Flow Logs.
+```
+Rule Name: VPCFlowLogFER
+Applied at: Ingest Time
+Scope (Specific Data):
+_sourceCategory=<Source category for respective VPC flow log source>
+Parse Expression:
+json "message" as _rawvpc nodrop
+| if (_raw matches "{*", _rawvpc,_raw) as message
+| parse field=message "* * * * * * * * * * * * * *" as version,accountID,interfaceID,src_ip,dest_ip,src_port,dest_port,Protocol,Packets,bytes,StartSample,EndSample,Action,status
+| fields interfaceid,src_ip,dest_ip,src_port,dest_port,protocol,packets,bytes,action,status
+```
+
 ## Installing the Amazon VPC Flow Logs App
 
 Now that you have configured Amazon VPC Flow Logs, install the Sumo Logic App for Amazon VPC Flow Logs to take advantage of the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
@@ -194,7 +209,7 @@ The **Amazon VPC Flow Logs - Overview** dashboard provides an overview of IP tra
 
 **Use case**: Use this dashboard for an overview of traffic flowing through your network. It gives a list of top source and destination addresses, protocols and network interfaces which can be helpful in narrowing the ranges to only those IP addresses or protocols required for the application.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-vpc-flow-logs-overview.png')} alt="Amazon VPC Flow Logs Dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-VPC-Flow-Logs/Amazon-VPC-Flow-Logs-Overview.png')} alt="Amazon VPC Flow Logs Dashboards" />
 
 #### Filtering the Overview dashboard
 
@@ -206,7 +221,7 @@ You can filter the Overview dashboard by any combination of `DestinationIP`, `So
 
 **Use case:** Use this dashboard to track requests that are permitted by Security Groups and Network ACLs.One can compare bytes and packets received per minute with yesterday and last week. Similarly one can also track abnormal activity and volume spikes.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-vpc-flow-logs-accepts.png')} alt="AWS API Gateway" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-VPC-Flow-Logs/Amazon-VPC-Flow-Logs-Accepts.png')} alt="AWS API Gateway" />
 
 
 #### Filtering the Accepts dashboard
@@ -222,7 +237,7 @@ You can also filter Accepts dashboard by any combination of `DestinationIP`, `So
 
 **Use case**: Use this dashboard to track requests that are not permitted by Security Groups and Network ACLs.One can compare bytes and packets rejected per minute with yesterday and last week. One can monitor top source IP's and ports from where the requests are rejected.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-vpc-flow-logs-rejects.png')} alt="amazon-vpc-flow-logs" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-VPC-Flow-Logs/Amazon-VPC-Flow-Logs-Rejects.png')} alt="amazon-vpc-flow-logs" />
 
 
 #### Filtering the Rejects dashboard
@@ -239,7 +254,7 @@ You can also filter the Rejects dashboard by any combination of `DestinationIP`,
 
 **Use case description**: Use this dashboard for comparing the permissive and non permissive traffic based on ports, protocols and network interfaces. Also one can monitor abnormal behavior, current and future trends based on total packets and bytes flowing across the network. One can filter by Action to filter out data for permissive and non permissive traffic. Similarly one can filter by `interfaceid`, `src_ip`, `dest_ip`, `src_port`, `dest_port` to further filter out the traffic for analysis.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-vpc-flow-logs-traffic.png')} alt="amazon-vpc-flow-logs-traffic" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-VPC-Flow-Logs/Amazon-VPC-Flow-Logs-Traffic.png')} alt="amazon-vpc-flow-logs-traffic" />
 
 #### Filtering the Traffic dashboard
 
@@ -262,10 +277,20 @@ Key facts about this dashboard:
 
 **Use case:**  Use this dashboard for monitoring the traffic direction. Also use this dashboard for identifying over permissive and restrictive security groups.One can also use this to identify unused security groups and inbound rules by comparing the traffic associated with the security group to the security group rules in EC2 console.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-vpc-flow-logs-security-groups.png')} alt="amazon-vpc-flow-logs-security-groups" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-VPC-Flow-Logs/Amazon-VPC-Flow-Logs-Security-Groups.png')} alt="amazon-vpc-flow-logs-security-groups" />
 
 #### Filtering the Security Groups dashboard
 
 In the filters pane, you can can configure these parameters for the [outlier](/docs/search/search-query-language/search-operators/outlier) analysis performed by several panels:  Consecutive, Threshold, Window, and Timeslice.
 
 You can also filter the Security Groups dashboard by any combination of `DestinationIP`, `SourceIP`, `action`, `dest_port`, `interfaceid`, `protocol`, `security_grp_id`,  `src_port`, `subnet_id`, and `vpc_id`.
+
+### Outliers
+
+**Amazon VPC Flow Logs - Outliers** dashboard provides panels which show any outliers around Bytes, Packets and Accepted/Rejected traffic. In addition to this there is a separate section “Security Group” which has panels for outliers with respect to inbound and outbound traffic. This dashboard is populated only if you chose VPC-JSON option for LogFormat when you deployed the CloudFormation template.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-VPC-Flow-Logs/Amazon-VPC-Flow-Logs-Outliers.png')} alt="amazon-vpc-flow-logs-outliers" />
+
+#### Filtering the Outlier dashboard
+
+In the filters panel, you can configure these parameters for the outlier analysis performed by several panels: Consecutive, Threshold, Window, and Timeslice.

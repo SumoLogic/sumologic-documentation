@@ -101,7 +101,7 @@ Before you begin, make sure that you are collecting from an auth.log source, and
 **To parse authentication logs**
 
 1. From your Observable Networks portal, click **Settings (gear icon) > Integrations > Sumo Logic > Settings**.
-2. From the **Auth.log** drop-down, select the log configuration that represents the auth.log source.
+2. From the **Auth.log** dropdown, select the log configuration that represents the auth.log source.
 3. Click **Save**.
 
 

@@ -8,7 +8,7 @@ After installing or upgrading your Sumo Logic Kubernetes Collection, you will be
 Traces will be enhanced with Kubernetes metadata, similarly to the logs and metrics collected by the collector. See below for installation instructions.
 
 
-## Prerequisites:
+## Prerequisites
 
 * Kubernetes 1.20+
 * Helm 3.5+
@@ -31,7 +31,7 @@ Traces will be enhanced with Kubernetes metadata, similarly to the logs and metr
 :::
 
 
-## Installation process for Sumo Logic Tracing on Kubernetes
+## Installing Sumo Logic Tracing on Kubernetes
 
 Installation is the same as for the official [SumoLogic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection). The process follows using a Helm chart to set all required components. It will automatically download and configure [OpenTelemetry Collector,](https://github.com/SumoLogic/sumologic-otel-collector) which will collect, process, and export telemetry data to Sumo Logic.
 
@@ -43,15 +43,13 @@ In the following installation steps, we use the release name `collection` and th
 
 Tracing data from your services is sent through multiple local OpenTelemetry Collectors/Agents, deployed as a StatefulSet (`otelcol-instrumentation`), which buffers and sends data to a OpenTelemetry Collector gateway (`traces-gateway`). Finally, the data is sent to the OpenTelemetry Collector (`traces-sampler`) helping to shape and trim the traffic, both running as a Deployment.
 
-
-#### Setting up the most recent Sumo Logic Kubernetes Collection  
+### Installing or upgrading to the latest version
 
 Refer to [install/upgrade instructions](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/v3.0.0/docs/installation.md) for the current version. Tracing is enabled by default.
 
 If you plan to [auto-instrument your Java, Python and JS applications in K8s environments](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes.md), use the Helm command in that article.
 
-
-#### Using command line
+#### Using the command line
 
 ```bash
 helm upgrade --install collection sumologic/sumologic \
@@ -62,11 +60,9 @@ helm upgrade --install collection sumologic/sumologic \
   --set sumologic.clusterName="<MY_CLUSTER_NAME>"
 ```
 
+#### Using a configuration file
 
-### Using configuration file
-
-We recommend you create a new `values.yaml` file for each Kubernetes cluster you wish to install collection on and **setting only the properties you wish to override**. For example:
-
+We recommend creating a new `values.yaml` file for each Kubernetes cluster you wish to install collection on and **setting only the properties you wish to override**. For example:
 
 ```yaml
 sumologic:
@@ -75,9 +71,7 @@ sumologic:
   clusterName: <MY_CLUSTER_NAME>
 ```
 
-
-Once you have the config customized you can use the following commands to install or upgrade:
-
+Once you've customized your config, you can use the following commands to install or upgrade:
 
 ```bash
 helm upgrade --install collection sumologic/sumologic \
@@ -102,7 +96,7 @@ helm upgrade --install collection sumologic/sumologic \
 ```
 
 
-#### Using configuration file
+#### Using a configuration file
 
 The `values.yaml` file needs to have the relevant section enabled, such as:
 
@@ -116,7 +110,6 @@ sumologic:
 
 After updating the configuration file, the changes can be applied with the following:
 
-
 ```bash
 helm upgrade --install collection sumologic/sumologic \
   --namespace sumologic \
@@ -124,7 +117,7 @@ helm upgrade --install collection sumologic/sumologic \
 ```
 
 
-#### Pointing tracing clients (instrumentation exporters) to the agent collectors
+### Pointing tracing clients (instrumentation exporters) to the agent collectors
 
 Using OTLP HTTP is recommended:
 
@@ -150,12 +143,11 @@ For example, when the default release name (`collection`) and namespace (`sumolo
 * OTLP HTTP/deprecated: `collection-sumologic-otelagent.sumologic:55681`
 
 
-### Troubleshooting
+## Troubleshooting
 
 #### Desired Kubernetes installation state
 
-
-After enabling and installing tracing one should have additional Kubernetes resources:
+After enabling and installing tracing, you should have additional Kubernetes resources:
 
 * `otelcol-instrumentation `- collector responsible for data collection and tagging
     * StatefulSet: `collection-sumologic-otelcol-instrumentation`
@@ -177,7 +169,7 @@ After enabling and installing tracing one should have additional Kubernetes reso
     * Config Map: `collection-sumologic-traces-sampler`
 
 
-#### How to verify traces are installed and working?
+#### How to verify traces are installed and working
 
 * There are no Kubernetes errors in the namespace sumologic.
 * There are running pods `<CHART_NAME>-sumologic-otelcol-instrumentation-<hash>, <CHART_NAME>-sumologic-traces-gateway-<hash>, <CHART_NAME>-sumologic-traces-sampler-<hash>`

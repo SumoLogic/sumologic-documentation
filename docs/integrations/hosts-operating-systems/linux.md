@@ -11,6 +11,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo app for Linux allows you to view information about events, logins, and the security status of your Linux system. The app consists of predefined searches and three dashboards that provide visibility into your environment for real-time or historical analysis.
 
+:::note
+You may also be interested in the [Sumo Logic App for Linux Cloud Security Monitoring and Analytics](docs/integrations/cloud-security-monitoring-analytics/linux.md).
+:::
+
 
 ## Collecting Logs for Linux
 
@@ -143,7 +147,7 @@ The `_sourceCategory` fields shown in these sample queries are based on the foll
 
 * **Generic system log:** Typically named `/var/log/syslog` or `/var/log/messages`
 Meta field: `SourceCategory = OS/Linux/System`
-* Authentication log: Typically named `/var/log/auth` or `/var/log/auth.log` 
+* Authentication log: Typically named `/var/log/auth` or `/var/log/auth.log`
 Meta field: `SourceCategory=OS/Linux/Security`
 
 These logs might have also been collected by the Collector (if selected during its installation).

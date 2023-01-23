@@ -23,7 +23,7 @@ You need the **Manage S3 data forwarding** role capability to create an AWS Ar
 :::
 
 1. Follow the instructions on Grant Access to an AWS Product to grant Sumo permission to send data to the destination S3 bucket.
-1. In Sumo Logic, select **Manage Data \> Logs \> Data Forwarding**.
+1. In Sumo Logic, select **Manage Data > Logs > Data Forwarding**.
 1. Click **+** to add a new destination.
 1. Select **AWS Archive bucket** for **Destination Type**.  
     ![destinationType.png](/img/archive/destinationType.png)
@@ -36,7 +36,7 @@ You need the **Manage S3 data forwarding** role capability to create an AWS Ar
     :::
 
    * **Description**. You can provide a meaningful description of the connection.
-   * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. This was completed in step 1, [Grant Sumo Logic access to an AWS Product](docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
+   * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. This was completed in step 1, [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
 
       * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
       * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
@@ -62,14 +62,14 @@ To configure processing rules for Archive using the web application follow these
 You can use JSON to configure a processing rule, use the **Forward** filterType. See an example data forwarding rule.
 :::
 
-1. Go to **Manage Data \> Collection \> Collection**.
+1. Go to **Manage Data > Collection > Collection**.
 1. Search for the Source that you want to configure, and click the **Edit** link for the Source. The Source must be associated with an Installed Collector.
 1. Scroll down to the **Processing Rules** section and click the arrow to expand the section.
 1. Click **Add Rule**.
 1. Type a **Name** for this rule. (Names have a maximum of 32 characters.)
 1. For **Filter**, type a regular expression that defines the messages you want to filter. The rule must match the whole message. For multi-line log messages, to get the lines before and after the line containing your text, wrap the segment with **(?s).\* **such as: `(?s).*matching text(?s).*` Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax)
 1. Select **Archive messages that match** as the rule type. This option is visible only if you have defined at least one [**AWS Archive bucket** destination](#create-an-aws-archive-destination), as described in the previous section. 
-1. Select the Destination from the drop-down menu.  
+1. Select the Destination from the dropdown menu.  
 
     ![archive rule.png](/img/archive/archive-rule.png)
 
@@ -106,12 +106,12 @@ Example format of an Archived log message:
 
 ## Batching
 
-By default, the Collector will complete writing logs to an archive file once the uncompressed size of the file reaches 1 MB in size. You can configure the buffer size with the following [collector.properties](docs/send-data/installed-collectors/collector-installation-reference/collector-properties.md) parameter.
+By default, the Collector will complete writing logs to an archive file once the uncompressed size of the file reaches 1 MB in size. You can configure the buffer size with the following [collector.properties](/docs/send-data/installed-collectors/collector-installation-reference/collector-properties.md) parameter.
 
 ### collector.properties buffer parameter
 
 | Parameter | Description | Data Type | Default |
-|--|--|--|--|
+|:--|:--|:--|:--|
 | buffer.max.disk.bytes | The maximum size in bytes of the on-disk buffer per archive destination.<br/>When the maximum is reached the oldest modified file(s) are deleted. | Integer | 1073741824 |
 
 ## Ingest data from Archive
@@ -142,7 +142,7 @@ An AWS S3 Archive Source allows you to ingest your Archived data. Configure it 
 To use JSON to create an AWS S3 Archive Source reference our AWS Log Source parameters and use `AwsS3ArchiveBucket` as the value for `contentType`.
 :::
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic select **Manage Data > Collection > Collection**.
 1. On the **Collectors** page, click **Add Source** next to a Hosted** **Collector, either an existing Hosted Collector or one you have created for this purpose.
 1. Select **AWS S3 Archive**.  
     ![archive icon.png](/img/archive/archive-icon.png)
@@ -169,7 +169,7 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
     * For **Role-based access** enter** **the Role ARN that was provided by AWS after creating the role.   
     * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 1. Create any Processing Rules you'd like for the AWS Source.
-1. When you are finished configuring the Source click **Save**.
+1. When you are finished configuring the Source, click **Save**.
 
 ## Archive page
 
@@ -177,7 +177,7 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
 You need the Manage or View Collectors role capability to manage or view Archive.
 :::
 
-The Archive page provides a table of all the existing [AWS S3 Archive Sources](#create-an-aws-s3-archive-source) in your account and ingestion jobs. In Sumo Logic select **Manage Data \> Collection \> Archive**.
+The Archive page provides a table of all the existing [AWS S3 Archive Sources](#create-an-aws-s3-archive-source) in your account and ingestion jobs. In Sumo Logic select **Manage Data > Collection > Archive**.
 
 ![archive page.png](/img/archive/archive-page.png)
 
@@ -202,7 +202,7 @@ A maximum of 2 concurrent jobs is supported.
 
 An ingestion job is a request to pull data from your S3 bucket. The job begins immediately and provides statistics on its progress. To ingest from your Archive you need an AWS S3 Archive Source configured to access your AWS S3 bucket with the archived data.
 
-1. In Sumo Logic select **Manage Data \> Collection \> Archive**.
+1. In Sumo Logic select **Manage Data > Collection > Archive**.
 1. On the **Archive** page search and select the AWS S3 Archive Source that has access to your archived data.
 1. Click **New Ingestion** **Job** and a window appears where you:
     1. Define a mandatory job name that is unique to your account.
@@ -233,7 +233,7 @@ When you search for data in the Frequent or Infrequent Tier, you must explicitly
 The metadata field `_archiveJob` is automatically created in your account and assigned to ingested Archive data. This field does not count against your Fields limit. Ingested Archive data has the following metadata assignments:
 
 | Field          | Description                                                         |
-|----------------|---------------------------------------------------------------------|
+|:----------------|:---------------------------------------------------------------------|
 | _archiveJob   | The name of the ingestion job assigned to ingest your Archive data. |
 | _archiveJobId | The unique identifier of the ingestion job.                         |
 

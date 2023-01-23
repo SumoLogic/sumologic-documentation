@@ -83,7 +83,7 @@ You can define multiple Network Blocks in a .csv file and upload the file to CSE
 The table below defines the fields you can import for a Network Block.
 
 | Field | Description |
-|--|--|
+|:--|:--|
 | `address_block` | The IP address and subnet mask of the network block. For example:<br/>192.168.10.0/24 |
 | `label` | (Optional) A label of the network block (e.g. PCI network). If the label contains a comma, enclose it in double quotes (“). |
 | `internal` | (Optional) When true, all IPs matching this network block in the records will be marked as internal.<br/>Default: true |
@@ -104,7 +104,7 @@ The Label you assign to a Network Block is stored in an enrichment field that CS
 In the table below, the left column contains schema fields that contain IP addresses. The middle column contains the enrichment fields that are added to Records based on Network Block configuration. The enrichment fields in the middle column, which end in `_location`, are populated with the Label from a Network Block. Those in the rightmost column, which end in `_isInternal`, are populated with “yes”, indicating that the IP address is in a Network Block marked Internal. 
 
 | IP address field | _location enrichment field | _isInternal enrichment field |
-|--|--|--|
+|:--|:--|:--|
 | `device_ip` | `device_ip_location` | `device_ip_isInternal` |
 | `device_natIp` | `device_natIp_location` | `device_natIp_isInternal` |
 | `dns_replyIp` | `dns_replyIp_location` | `dns_replyIp_isInternal` |

@@ -24,14 +24,14 @@ You cannot restart a Collector if:
 * A software upgrade or downgrade is in progress.
 * A restart was triggered within the past five minutes.
 * The Collector version does not support restarts.
-* The Collector is not running or [offline](docs/send-data/installed-collectors).
+* The Collector is not running or [offline](/docs/send-data/installed-collectors).
 * The requesting user does not have the necessary privileges to perform a restart. 
 
 ## Restart a Collector
 
 To restart your Installed Collector in the Sumo Logic platform:
 
-1. Open the Collection page, go to **Manage Data \> Collection \> Collection**.
+1. Open the Collection page, go to **Manage Data > Collection > Collection**.
 1. Find the Installed Collector and click the information icon on the right of the row.
 1. The **API usage information** popup is displayed. Click the **Restart Collector** button on the bottom left.<br/>   ![restart collector button.png](/img/collector/restart-collector-button.png)
 1. Click **Confirm **to send the restart request.<br/>   ![restart confirmation.png](/img/collector/restart-confirmation.png)
@@ -40,7 +40,7 @@ To restart your Installed Collector in the Sumo Logic platform:
 
 ## Audit restarts
 
-The [Audit Event Index](docs/manage/security/audit-event-index.md) keeps
+The [Audit Event Index](/docs/manage/security/audit-event-index.md) keeps
 records of restart requests with the `getCollectorRestartRequested` event and restart completions with the `getCollectorRestartCompleted` event. The following is a simple [Search](/docs/search) query that returns these event logs:
 
 ```sql

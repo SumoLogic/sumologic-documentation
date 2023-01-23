@@ -106,7 +106,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 The first service in the pipeline is Telegraf. Telegraf collects metrics from RabbitMQ. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the RabbitMQ input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
 :::note Prerequisites
-It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
 :::
 
 
@@ -124,18 +124,18 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
     prometheus.io/scrape: "true"
     prometheus.io/port: "9273"
     telegraf.influxdata.com/inputs: |+
-[[inputs.rabbitmq]]
-url = "http://localhost:15672"
-username = "<username_CHANGE_ME>"
-password = "<password_CHANGE_ME>"
-insecure_skip_verify = false
-queue_name_include = []
-queue_name_exclude = []
-[inputs.rabbitmq.tags]
-     environment="prod_CHANGE_ME"
-     component="messaging"
-     messaging_system="rabbitmq"
-     messaging_cluster="rabbitmq_on_k8s_CHANGE_ME"
+      [[inputs.rabbitmq]]
+        url = "http://localhost:15672"
+        username = "<username_CHANGE_ME>"
+        password = "<password_CHANGE_ME>"
+        insecure_skip_verify = false
+        queue_name_include = []
+        queue_name_exclude = []
+      [inputs.rabbitmq.tags]
+        environment="prod_CHANGE_ME"
+        component="messaging"
+        messaging_system="rabbitmq"
+        messaging_cluster="rabbitmq_on_k8s_CHANGE_ME"
 ```
 
 Please enter values for the following parameters (marked in **`CHANGE_ME`** above):
@@ -427,7 +427,7 @@ connection_notifications = [
   ]
 ```
 
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
+For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/alerts/webhook-connections/set-up-webhook-connections).
 
 ```bash title="Email notifications example"
 email_notifications = [

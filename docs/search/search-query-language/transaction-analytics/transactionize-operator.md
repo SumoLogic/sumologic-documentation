@@ -41,7 +41,7 @@ Syntax section. For example, 
 ```
 
 | Parameter | Description |
-| -- | -- |
+| :-- | :-- |
 | `maxSpan = [time]` | The transaction ends if the transaction duration exceeds the specified time. Time may be specified in various units, such as 1s, 1m, and so on. |
 | `maxPause = [time]` | The transaction ends if the time between log messages exceeds the specified time. Time may be specified in various units, such as 1s, 1m, and so on. |
 | `maxLogs = [n]` | The transaction ends if the number of log messages in the transaction exceeds the specified number.
@@ -56,7 +56,7 @@ Syntax section. For example, 
     `The transactionize operator has reached its memory limit; transactions could be emitted prematurely.`  
 
     To address this situation, try one or more of these options:
-    * Reduce the [time range](docs/search/get-started-with-search/build-search/set-time-range.md) of your search to reduce the scope.
+    * Reduce the [time range](/docs/search/get-started-with-search/build-search/set-time-range.md) of your search to reduce the scope.
     * Reduce the scope of your search by using parameters (such as `maxlogs`, `maxspan`, or `endswith`) that are listed above in the [Parameters](#parameters) section.
     * Run a second transactionize operator immediately after your first one. This will take the potentially ungrouped messages of your first transactionize search and group them correctly.  
          

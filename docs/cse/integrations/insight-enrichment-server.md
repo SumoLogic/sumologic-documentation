@@ -16,7 +16,7 @@ This topic describes v1.5.0 of the Insight Enrichment Server.
 
 ## What the Insight Enrichment Server does
 
-The Insight Enrichment Server performs an external query on the entity for an Insight—an IP address, a hostname, username, or a MAC address—and adds the query results as an enrichment to the Insight.
+The Insight Enrichment Server performs an external query on the [Entity](docs/cse/records-signals-entities-insights/view-manage-entities.md) for an Insight—for example an IP address, a hostname, username, or a MAC address—and adds the query results as an enrichment to the Insight.
 
 You configure enrichments in the server’s configuration file. The key settings are the entity type to run the enrichment on, and the command and command arguments to run on. 
 
@@ -28,9 +28,9 @@ The enrichment shown below returned the IP address associated with the hostname 
 
 ## Create configuration file
 
-Before installing the server, create a configuration file named `config.ini`—options should be configured in this file before you install the server. See the [Example configuration](#example-configuration-file) file later in this topic. Refer to the [Configuration](#configuration) section for information about configuration options. 
+Before installing the server, create a configuration file named `config.ini`—options should be configured in this file before you install the server. See the [Example configuration](#example-configuration-file) file later in this topic. Refer to the [Configuration](#configuration) section for information about configuration options.
 
-## Install Insight Enrichment Server 
+## Install Insight Enrichment Server
 
 Follow the instructons for the deployment in which you're installing the Insight Enrichment Server.
 
@@ -66,11 +66,11 @@ The Insight Enrichment Server is packaged with an interactive installer. You’l
 
 At installation time, you can configure the Insight Enrichment Server to run under a different user (service) account. To do so, you provide the username and password of the preferred service account. That account must have the "Log in as Service" privilege. The installer will verify that the account has the appropriate permissions. 
 
-**Install the Insight Enrichment Server** 
+**Install the Insight Enrichment Server**
 
 Download the binary from [here](https://script-collection.s3.amazonaws.com/caravel/windows-enrichment-server-installer.exe). The checksum for the binary is [here](https://script-collection.s3.amazonaws.com/caravel/checksum.txt).
 
-Run the installer and follow the instructions. 
+Run the installer and follow the instructions.
 
 </TabItem>
 <TabItem value="fed">
@@ -81,13 +81,13 @@ Follow these instructions to install the Insight Enrichment Server on the fed de
 
 The FedRamp version of the Insight Enrichment Server requires Windows Server 2019 or later with JRE 11 or later.
 
-The Insight Enrichment Server might run on earlier Windows versions, such as Windows 2016 or Windows 10, but it has not been tested in those environments. 
+The Insight Enrichment Server might run on earlier Windows versions, such as Windows 2016 or Windows 10, but it has not been tested in those environments.
 
-### Installation process 
+### Installation process
 
 The Insight Enrichment Server is packaged with an interactive installer. You’ll be prompted to supply the following configuration options when you run the installer.
 
-* **Installation Directory**. By default, the Insight Enrichment Server will be installed in `C:\Windows\SumoLogic\EnrichmentServer`. Sumo Logic recommends that you accept this default. 
+* **Installation Directory**. By default, the Insight Enrichment Server will be installed in `C:\Windows\SumoLogic\EnrichmentServer`. Sumo Logic recommends that you accept this default.
 * **Configuration File**. The installer prompts you to provide the location of a configuration file with an .ini extension. The file must be a valid configuration file with the required configuration options. The configuration file will be copied to `C:\Windows\SumoLogic\EnrichmentServer` on your local machine.
 
 ### Step 1: Set up Java and environment variables
@@ -96,8 +96,8 @@ You can skip this step if you already have Java 11 or later installed.
 
 1. Download any Java 11 or later, for Windows, from [here](https://jdk.java.net/archive/).
 2. Extract the zip file to `C:\Program Files\Java`.
-3. Right-click the **Start** button and select **Search** to open the Windows search box. 
-4. Enter “advanced system settings” in the search box, and click **View advanced system settings**. 
+3. Right-click the **Start** button and select **Search** to open the Windows search box.
+4. Enter “advanced system settings” in the search box, and click **View advanced system settings**.
    <img src={useBaseUrl('img/cse/search-1.png')} alt="search" />
 5. Select the **Advanced** tab and click **Environment Variables**.
    <img src={useBaseUrl('img/cse/system-properties.png')} alt="search" />
@@ -106,18 +106,18 @@ You can skip this step if you already have Java 11 or later installed.
 7. In the **New System Variable** popup:
     1. **Variable name**. Enter <br/>
     _JAVA_PATH_.
-    2. **Variable value**. Enter the path to your JDK folder, for example<br/> 
-    _C:\Program Files\Java\jdk-X.X.X_. 
-    3. Click** OK**. 
+    2. **Variable value**. Enter the path to your JDK folder, for example<br/>
+    _C:\Program Files\Java\jdk-X.X.X_.
+    3. Click** OK**.
     <img src={useBaseUrl('img/cse/new-system-variable.png')} alt="search" />
-8. In the **System variables** area, select **Path**, and click **Edit**. 
+8. In the **System variables** area, select **Path**, and click **Edit**.
    <img src={useBaseUrl('img/cse/edit-path.png')} alt="search" />
-9.  On the **Edit environment variable** popup, click **New**. 
+9.  On the **Edit environment variable** popup, click **New**.
     <img src={useBaseUrl('img/cse/new.png')} alt="search" />
 10. Add the following path and click **OK**. <br/>
     _%JAVA_HOME%\bin_
     <img src={useBaseUrl('img/cse/java-path.png')} alt="search" />
-11. To verify that Java was successfully installed successfully, open a command prompt and run: 
+11. To verify that Java was successfully installed successfully, open a command prompt and run:
 `java --version`
 
 ### Step 2: Install the Insight Enrichment Server
@@ -126,27 +126,34 @@ Download the installer for Insight Enrichment Server for FedRamp from [here](htt
 
 The checksum for the binary is available [here](https://script-collection.s3.amazonaws.com/caravel/checksum.txt)
 
-Run the installer and follow the instructions. 
+Run the installer and follow the instructions.
 
 </TabItem>
 </Tabs>
 
 ## Configuration
 
+### Variables
+
+The Enrichment Server supports these variables:
+
+${IP}, ${MAC}, ${USERNAME}, and ${HOSTNAME}, and for custom Entities, ${ENTITY}.
+
+
 ### General settings
 
 The following parameters control general server behaviors, as opposed to enrichment-specific options.
 
 | Setting | Required? | Description |
-|--|--|--|
-| `URL` | yes | The URL of your CSE portal, for example, `https://XXXX.sumologic.com` |
-| `api_id` | yes | Enter your Sumo Logic Access ID. For more information, see [Manage your access keys on Preferences page](docs/manage/security/access-keys.md#manage-your-access-keys-on-preferences-page). |
+|:--|:--|:--|
+| `URL` | yes | The URL for your API endpoint. For more information, see [Sumo Logic API Authentication, Endpoints, and Security](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security). |
+| `api_id` | yes | Enter your Sumo Logic Access ID. For more information, see [Manage your access keys on Preferences page](/docs/manage/security/access-keys.md#manage-your-access-keys-on-preferences-page). |
 | `api_key` | yes | Enter your Sumo Logic Access Key.|
 | `log_level` | no | Log level the server should use. The options are:<br/><br/>-`error`. Only display error messages.<br/>-`info`. Display informational messages. This is the recommended value.<br/>-`debug`. Displays debug (or trace) data. Recommended only when debugging.<br/><br/>Default: `info` |
 | `poll_interval` | no | How often the Insight Enrichment Server should check for new Insights. You can specify the interval in seconds (s), minutes (m), or hours (h).<br/><br/>Default: 10s |
-| post_workers | no | The number of parallel workers (threads) posting enrichment results. Default: 6 |
+| `post_workers` | no | The number of parallel workers (threads) posting enrichment results. Default: 6 |
 | enrichment_workers | no | The number of parallel workers (threads) running enrichment tasks. <br/><br/>Default: 12 |
-| proxy_url | no | An HTTP proxy URL to use when communicating with the Sumo Logic backend. For example, http://my.proxy.myorg.com:3128 or http://username:password@my.proxy.myorg.com:3128. <br/><br/>Default: No proxy used |
+| `proxy_url` | no | An HTTP proxy URL to use when communicating with the Sumo Logic backend. For example,  `my.proxy.myorg.com:3128` or  `username:password@my.proxy.myorg.com:31281. <br/><br/>Default: No proxy used |
 
 ### Enrichment settings
 
@@ -155,9 +162,9 @@ The table below defines the settings you configure for each enrichment. 
 Each enrichment should be given its own section in the configuration file. The name of the section (for example `[name]`) corresponds to a given enrichment name as it appears within the UI. Each section must have an `enrichment_type` defined. Currently, the only supported `enrichment_type` is "command". Each enrichment supports the options defined in the table below.  
 
 | Setting | Required? | Description |
-|--|--|--|
+|:--|:--|:--|
 | `enrichment_type` | yes | Specifies the type of the enrichment. Currently, the only supported value is `command`. |
-| `entity_type` | yes | The type of entity to enrich. The Insight Enrichment server supports built-in entity types: IP, mac, username, and hostname. It also supports [custom entity types](../records-signals-entities-insights/create-custom-entity-type.md).  For custom entity types, the `entity_type` should match the unique Identifier assigned to the custom entity type.  |
+| `entity_type` | yes | The type of entity to enrich. The Insight Enrichment server supports built-in entity types, including IP, mac, username, and hostname. (For a complete list, see [View and Manage Entities](docs/cse/records-signals-entities-insights/view-manage-entities.md). It also supports [custom entity types](../records-signals-entities-insights/create-custom-entity-type.md).  For custom entity types, the `entity_type` should match the unique Identifier assigned to the custom entity type.  |
 | `cache_time` | no | The length of time that the results of a specific enrichment for a specific entity will be cached and returned for other enrichment requests for that enrichment and entity.  This setting can be used to prevent an enrichment from running multiple times for the same entity. You can specify `cache_time` in hours (h), minutes (m), or seconds (s). If you specify a value without a unit, the value is treated as nanoseconds. <br/><br/>Default: none |
 | `ip_range` | no | When `entity_type` is IP, you can specify a range of IP addresses that the enrichment will be limited to. Specify IP address ranges as a comma-separated list. For example:<br/><br/> 192.168.1.1-192.168.1.255, 192.168.5.1-192.168.8.120 |
 | `command_exe` | yes | The executable to run when enriching the entity. |

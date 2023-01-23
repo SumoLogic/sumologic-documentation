@@ -16,9 +16,8 @@ The Box API integration ingests events from the [Get Events API](https://develop
 
 ## Authentication
 
-You'll need a Box App Key, App Secret, and Access Code to provide to Sumo Logic.
+**To obtain credentials for accessing Box:**
 
-The following steps must be followed to get the credentials:
 1. Login into the [Box Account](https://app.box.com/login).
 2. Create and register a new app from the [App Console](https://app.box.com/developers/console). To register the App with Box follow [these](https://developer.box.com/guides/authentication/jwt/jwt-setup/#app-creation-steps) steps. Select **Server Authentication (with JWT) **as the authentication method. Note that use of a key pair requires  2-step verification to be enabled on Box.
 3. Generate `public private key pair` as described in the following steps [Key Pair](https://developer.box.com/guides/authentication/jwt/jwt-setup/#public-and-private-key-pair) and download the JSON file.
@@ -31,17 +30,17 @@ The following steps must be followed to get the credentials:
 A Box Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/Health-Events).
 
 A Box Source goes through the following states when created:
-1. **Pending**: Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
-2. **Started**: A collection task is created on the Hosted Collector.
-3. **Initialized**: The task configuration is complete in Sumo Logic.
-4. **Authenticated**: The Source successfully authenticated with Box.
-5. **Collecting**: The Source is actively collecting data from Box.
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
+2. **Started**. A collection task is created on the Hosted Collector.
+3. **Initialized**. The task configuration is complete in Sumo Logic.
+4. **Authenticated**. The Source successfully authenticated with Box.
+5. **Collecting**. The Source is actively collecting data from Box.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
-When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the Collection page, the [Health](/docs/manage/Health-Events#Collection_page) and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection.<br/><img src={useBaseUrl('img/send-data/box-source3.png')} alt="Box" />
+On the Collection page, the [Health](/docs/manage/health-events#collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection.<br/><img src={useBaseUrl('img/send-data/box-source3.png')} alt="Box" />
 
 You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/><img src={useBaseUrl('img/send-data/hover-c2c-error.png')} alt="Box" />
 
@@ -60,7 +59,7 @@ To configure a Box Source:
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) is stored in a searchable field called `_sourceCategory`.
 6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse).
 
-When configured with the **Forward to SIEM** option the following metadata fields are set:
+When configured with the **Forward to SIEM** option, the following metadata fields are set:
 
 <table>
   <tr>
@@ -103,7 +102,7 @@ Field Name
         * An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 2. Upload the JSON file.
 3. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/Processing-Rules/Create-Processing-Rule).
-4. When you are finished configuring the Source click **Submit**.
+4. When you are finished configuring the Source, click **Submit**.
 
 
 ## Error types
@@ -301,7 +300,7 @@ The following table shows the **config** parameters for a Box Source.
    </td>
    <td>
    </td>
-   <td>Its the authentication credentials to access Box platform.
+   <td>Authentication credentials to access Box platform.
    </td>
    <td>modifiable
    </td>

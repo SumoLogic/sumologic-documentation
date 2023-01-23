@@ -4,7 +4,7 @@ title: Create a Dashboard (New)
 description: Learn how to create your own custom Dashboard (New) with a panel and query, then customize a chart and add the chart to the dashboard.
 ---
 
-This page demonstrates how to create a Dashboard (New), add a query, and then add the chart to the dashboard. You create your Dashboard (New) by selecting template options from menus and drop-downs.
+This page demonstrates how to create a Dashboard (New), add a query, and then add the chart to the dashboard. You create your Dashboard (New) by selecting template options from menus and dropdowns.
 
 Dashboard (New) allows you to view logs and metrics data on the same dashboard in an integrated and seamless view. This gives you the same control over how your metrics and log data are visualized. Dashboard (New) template capabilities provide for easier data scoping and intuitive chart creation.
 
@@ -36,7 +36,7 @@ To create a Dashboard (New) with the **+ New** button, do the following:
 
     ![DataDojo_New_Dashboard.png](/img/dashboards-new/create-dashboard-new/DataDojo_New_Dashboard.png)
 
-1. Select **Dashboard (New)** from the drop-down list.  
+1. Select **Dashboard (New)** from the dropdown list.  
 
     ![new dashboard from new button.png](/img/dashboards-new/create-dashboard-new/new-dashboard-from-new-button.png)
 

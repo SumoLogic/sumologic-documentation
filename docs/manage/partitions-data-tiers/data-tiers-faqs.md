@@ -41,7 +41,7 @@ When you run a search In the Infrequent Tier, the cost of a search is based on h
 The table below shows how many credits would be consumed for the same query over multiple time ranges.
 
 | Query                  | Data Scanned | Credits Consumed   |
-|------------------------|--------------|--------------------|
+|:------------------------|:--------------|:--------------------|
 | Search 1/2 day of data | 500          | 500 \* 0.016 = 8   |
 | Search 1 day of data   | 1000         | 1000 \* 0.016 = 16 |
 | Search 2 days of data  | 2000         | 2000 \* 0.016 = 32 |
@@ -101,7 +101,7 @@ _index=ybase_partition (error and cluster=nxt)
 The table below should give you a sense of how the number of partitions you use and the query time range affects the volume of data scanned.  
 
 | Query Time Range | Number of Partitions Queried | Data Scanned |
-|------------------|------------------------------|--------------|
+|:------------------|:------------------------------|:--------------|
 | 1 day            | 1                            | 2 TB         |
 | 1/2 day          | 1                            | 1 TB         |
 | 4 day            | 1                            | 8 TB         |
@@ -127,4 +127,4 @@ See the [Searching Data Tiers](searching-data-tiers.md) topic.
 
 ## Will I be able to use Scheduled Searches on the lower data tiers?
 
-You can use Scheduled Searches on the Infrequent tier.  
+Currently, you can't use Scheduled Searches on the Infrequent tier.  

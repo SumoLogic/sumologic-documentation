@@ -235,7 +235,7 @@ This section shows you how to acquire MongoDB Atlas portal authentication inform
 3. Go to **Project Settings** > **Access Manager** > **API Keys** and then click on **Invite To Project** to add the API key created above for this project as shown in the following example.
 4. Specify **Project Data Access Read Only** permission, under **Project Settings > Access Manager > API Keys**, as shown in the following example.
 5. Go to your project, click **Settings**, and copy the **Project ID**, as shown in the following example.
-6. Go to your organization by using context drop down at the top, click **Settings**, and copy the **Organization ID**.
+6. Go to your organization by using context dropdown at the top, click **Settings**, and copy the **Organization ID**.
 7. Enable Database Auditing for the Atlas project for which you want to monitor logs, as described in [this Atlas document](https://docs.atlas.mongodb.com/database-auditing/#procedure). Leave **Database Auditing** set to **ON**, as shown in the following example.
 
 ### Step 2: Add a Hosted Collector and HTTP Source

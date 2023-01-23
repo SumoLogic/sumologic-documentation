@@ -6,7 +6,7 @@ description: This page lists the Kubernetes metrics that are collected when you 
 ---
 
 This page lists the Kubernetes metrics that are collected when you deploy the collection solution described in
-[sumologic-kubernetes-collection deployment guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy). 
+[sumologic-kubernetes-collection deployment guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy). 
 
 The metrics to be collected are specified in the [overrides.xml](https://github.com/SumoLogic/sumologic-kubernetes-collection) file. The deployment guide has information about filtering and relabeling metrics, and how to send custom Prometheus metrics to Sumo Logic.
 
@@ -53,7 +53,7 @@ This section lists recommended metrics to collect. For information about all kub
 
 ### View kube-state-metrics
 
-Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace. 
+Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace. 
 
 Run this command to start a proxy to the Kubernetes API server: 
 
@@ -79,7 +79,7 @@ You can collect kube-controller-manager metrics in a Kubernetes deployment you 
 
 ### View kube-controller-manager metrics 
 
-Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace.  
+Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace.  
 
 Run this command to start a proxy to the Kubernetes API server: 
 
@@ -105,7 +105,7 @@ You can collect kube-scheduler metrics in a Kubernetes deployment you manage you
 
 ### View kube-scheduler metrics 
 
-Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace.
+Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace.
 
 Run this command to start a proxy to the Kubernetes API server: 
 
@@ -132,7 +132,7 @@ A single worker should collect these to avoid duplication.
 ### View apiserver metrics
 
 
-Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace.
+Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace.
 
 Run this command to start a proxy to the Kubernetes API server: 
 
@@ -162,7 +162,7 @@ Collect from each node in the cluster.
 
 ### View kubelet metrics
 
-Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace.
+Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace.
 
 Run this command to start a proxy to the Kubernetes API server: 
 
@@ -204,7 +204,7 @@ By default, we exclude records where container_name is empty or POD and collect 
 * container_network_receive_errors_total
 * container_network_transmit_errors_total
 
-Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace.
+Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace.
 
 Run this command to start a proxy to the Kubernetes API server: 
 
@@ -224,7 +224,7 @@ You can collect Node Exporter metrics in managed Kubernetes environments, such a
 
 By default, Sumo Logic collects from each node in a cluster.
 
-For a full list of metrics scraped and forwarded by Sumo Logic Kubernetes, see [this table](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/scraped_metrics.md#metrics).
+For a full list of metrics scraped and forwarded by Sumo Logic Kubernetes, see [this table](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/scraped-metrics.md#metrics).
 The table lists the metric name, source, and if it is forwarded.
 
 ### Node Exporter metrics to collect
@@ -254,7 +254,7 @@ The table lists the metric name, source, and if it is forwarded.
 
 ### View Node Exporter metrics
 
-Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-2-configure-prometheus) in the sumologic namespace.
+Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#step-2-configure-prometheus) in the sumologic namespace.
 
 Run kubectl port-forward: 
 

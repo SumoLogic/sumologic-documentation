@@ -7,7 +7,7 @@ description: You can use Entity Groups to automatically group entities in terms 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-An administrator can use CSE’s _Entity Groups_ feature to define groups of Entities and to assign attributes to them at the group level. You can define the members of an Entity Group based on Entity name, an IP address range, or membership in a group in an Inventory system like Active Directory. Note that membership in an Entity Group is not configured by explicitly assigning individual Entities to the group. Instead you define an Entity Group in terms of criteria, like name or IP address, so that when Entities are created in the future, they will automatically inherit the properties of Entity Groups they match without manual edits.
+An administrator can use CSE’s _Entity Groups_ feature to define groups of Entities and to assign attributes to them at the group level. You can define the members of an Entity Group based on Entity name, an IP address range, or membership in a group in an Inventory system like Active Directory. Note that membership in an Entity Group is not configured by explicitly assigning individual Entities to the group. Instead you define an Entity Group in terms of criteria, like name or IP address, so that Entities will automatically inherit the properties of Entity Groups they match without manual edits.
 
 You can assign [criticality](entity-criticality.md), [tags](tags-insights-signals-entities-rules.md), and [suppression](about-signal-suppression.md) status to an Entity Group, and those settings will be applied to all of the Entities in the group.
 
@@ -48,6 +48,14 @@ Follow these instructions to create an Entity Group based on Entity name or whet
     * **MAC Address**
     * **Username**
     * **Hostname**
+    * **Process**
+    * **Command**
+    * **Hash**
+    * **Domain**
+    * **User Agent**
+    * **Email**
+    * **URL**
+    * **File**
 8. **Match Condition**. Select one of the following match types:
     * **Prefix**. After you select this option, a **Prefix** field appears. Enter a string that matches the leading characters of the names of the Entities you want to include in the group.
     * **Suffix**. After you select this option, a **Suffix **field appears. Enter a string that matches the the trailing characters of the names of the Entities you want to include in the group.
@@ -68,8 +76,7 @@ Follow these instructions to create an Entity Group that corresponds to a group 
     <img src={useBaseUrl('/img/cse/gear-menu-2.png')} alt="gear-menu.png" />
 2. On the **Entity Groups** page, click **Create**.
     <img src={useBaseUrl('/img/cse/Entity-Groups-List.png')} alt="Entity-Groups-List" />
-3. The **Create Entity Group** popup appears. (In the screenshot below, values are already entered.)
-    <img src={useBaseUrl('/img/cse/create-entity-group-inventory.png')} alt="create-entity-group-inventory.png" />
+3. The **Create Entity Group** popup appears. (In the screenshot below, values are already entered.) <br/><img src={useBaseUrl('/img/cse/create-entity-group-inventory.png')} alt="create-entity-group-inventory.png" />
 4. **Name**. Enter a name for the Entity Group
 5. **Description**. (Optional.)
 6. **Group Entities matching the following**. Select **Inventory**.
@@ -84,7 +91,7 @@ Follow these instructions to create an Entity Group that corresponds to a group 
 
 ## Using tags in CSE rule expressions
 
-If you've applied a tag to an Entity, you can use the tag in a [rule expression](docs/cse/rules/about-cse-rules.md#About_rule_expressions). For example, if you've attached a keyword tag "DB Server" to an Entity, this `array_contains` statement will return "true" if the Entity in a Record's `srcDevice_ip` field has the tag "DB Server"
+If you've applied a tag to an Entity, you can use the tag in a [rule expression](/docs/cse/rules/about-cse-rules.md#About_rule_expressions). For example, if you've attached a keyword tag "DB Server" to an Entity, this `array_contains` statement will return "true" if the Entity in a Record's `srcDevice_ip` field has the tag "DB Server"
 
 
 ```

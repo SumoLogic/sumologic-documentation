@@ -34,7 +34,7 @@ Your CSE role must allow you to use API keys and to retrieve and modify Insights
 
 In this step, you make a copy of your API credentials, which you'll need to supply when you install the SIR-CSE integration in [Step 5](#step-5-install-the-sir-cse-integration) below. 
 
-You’ll need to supply a Sumo Logic Access ID and Access Key. If necessary, you can create those on your **Preferences** page in the Sumo Logic UI. For more information, see [Create an access key on Preferences page](docs/manage/security/access-keys.md#create-an-access-keyon-preferences-page).
+You’ll need to supply a Sumo Logic Access ID and Access Key. If necessary, you can create those on your **Preferences** page in the Sumo Logic UI. For more information, see [Create an access key on Preferences page](/docs/manage/security/access-keys.md#create-an-access-keyon-preferences-page).
 
 ## Step 2: Install ServiceNow plugins
 
@@ -53,7 +53,7 @@ Plugin installation can fail if another installation is running in the backgroun
 
 ## Step 3: Configure MITRE ATT&CK threat feed data
 
-This step is required only if you don’t already have MITRE ATT&CK threat feed data. To see if you do, Navigate to **Threat Intelligence \> MITRE ATT&CK Repository \> Techniques,** in ServiceNow. If you have MITRE data, the that page will contain data that looks like the table shown in substep 6 below, and you can proceed to [Step 4: Configure CI Lookup Rules](#step-4-configure-ci-lookup-rules). If the table is empty perform the steps in this section.
+This step is required only if you don’t already have MITRE ATT&CK threat feed data. To see if you do, Navigate to **Threat Intelligence > MITRE ATT&CK Repository > Techniques,** in ServiceNow. If you have MITRE data, the that page will contain data that looks like the table shown in substep 6 below, and you can proceed to [Step 4: Configure CI Lookup Rules](#step-4-configure-ci-lookup-rules). If the table is empty perform the steps in this section.
 
 1. Navigate to **Threat Intelligence** in the navigation bar. 
 1. Under **Threat Sources**, select **Sources**. 
@@ -85,7 +85,7 @@ CI Lookup Rules are required to enable discovery of configuration items and avoi
 1. The **Sumo Logic SIR Configuration** popup appears.  
 
     ![config-page.png](/img/cse/api-credentials.png)
-1. **Host**. Enter the Sumo Logic service endpoint for your Sumo Logic deployment. To determine your endpoint, see [Sumo Logic Endpoints by Deployment and Firewall Security](docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. **Host**. Enter the Sumo Logic service endpoint for your Sumo Logic deployment. To determine your endpoint, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 1. **Access ID and Access Key**. Enter the Sumo Logic Access ID and Key you copied in [Step 1](#step-1-copy-your-api-credentials).
 1. **Default Incident State**. Enter the Incident State you want to assign to Incidents created by the integration. The value you enter must by a valid state in your ServiceNow account. To view available options in your environment, enter `sys_choice.list` in your **Environments** sidebar and filter for `table=sn_si_incident`, `inactive=false`. Alternatively, you can directly view the available options in the **State** dropdown in any Incident. This field is case-sensitive. If you supply an invalid value, it will be ignored. The  default state for your Incidents created by the integration will be set based on your business rules.  
@@ -121,7 +121,7 @@ After navigating to `sys_properties.list`, search for the properties by entering
 Double-click a property to edit it.
 
 | Property | Description |
-|--|--|
+|:--|:--|
 | `x_sul_sumo_logic_s.configuration_id` | An arbitrary ID assigned by the integration. Do not modify this setting unless recommended by Sumo Logic support. |
 | `x_sul_sumo_logic_s.integration_id` | An arbitrary ID assigned by the integration. Do not modify this setting unless recommended by Sumo Logic support. |
 | `x_sul_sumo_logic_s.sumo_debug` | Controls what level of logging is enabled. If “true” both info and debug level messages are logged. If “false” only error level messages are logged. |
@@ -148,7 +148,7 @@ After an Incident created by the integration is closed in ServiceNow, the Insigh
 
 To view log messages written by the integration:
 
-1. Choose **System Log \> All** in the ServiceNow left-nav pane.
+1. Choose **System Log > All** in the ServiceNow left-nav pane.
 1. Search the messages for “Sumo CSE”.
 
 ![messages-sumo-cse.png](/img/cse/messages-sumo-cse.png)

@@ -39,13 +39,9 @@ namespace=istio-system cluster={{cluster}}
 
 ## Collecting Logs and Metrics for the Istio App
 
-This section provides instructions for collecting logs and metrics for the Sumo App for Istio. Logs and metrics are collected with the Sumo Logic Helm chart. Istio [sample metrics](/#Sample-Metrics) and [sample log messages](#Sample-Log-Messages) are also provided, along with a [query sample](#Query-Sample).
+This section provides instructions for collecting logs and metrics for the Sumo App for Istio. Logs and metrics are collected with the Sumo Logic Helm chart. Istio [sample metrics](#Sample-Metrics) and [sample log messages](#Sample-Log-Messages) are also provided, along with a [query sample](#Query-Sample).
 
-This app supports Istio versions 1.8.x and 1.9.x+.
-
-The minimum version of Sumo Logic K8s Collection required is [V2.1.6](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v2.1.6).
-
-Configure log and metrics collection with the Sumo Logic Helm chart, using one of the following options:
+This app supports Istio versions 1.8.x and 1.9.x+. Configure log and metrics collection with the Sumo Logic Helm chart, using one of the following options:
 
 ### If your Kubernetes collection is already set up
 
@@ -102,7 +98,7 @@ helm upgrade --install <my-release-name> sumologic/sumologic -f sumologic-istio.
 
 ### If your Kubernetes collection has not been set up
 
-If you do not have Kubernetes set up, go [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy).
+If you do not have Kubernetes set up, go [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy).
 
 Log Collection:
 1. Enable [Access Logging](https://istio.io/latest/docs/tasks/observability/logs/access-log/#enable-envoy-s-access-logging) to write logs to stdout.
@@ -110,7 +106,7 @@ Log Collection:
   The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic.
 
 Metric Collection:
-1. Deploy using [Helm](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#installation-with-helm)
+1. Deploy using [Helm](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#installation-with-helm)
 2. Add **additionalScrapeConfigs** and **remoteWrite** rules to values.yaml
    * Add this **[additionalScrapeConfigs](https://sumologic-app-data.s3.amazonaws.com/Istio/sumologic-istio.yaml)** section to **prometheusSpec** field of `values.yaml`. These configs will scrape Istio endpoints for metrics. These configs will scrape Istio endpoints for metrics. You can read more about above scrape configs [here](https://istio.io/latest/docs/ops/integrations/prometheus/#option-2-customized-scraping-configurations).
 
@@ -158,7 +154,7 @@ Metric Collection:
 
 #### Validation Steps
 
-1. Do port forward via your terminal (`my-release` is my release I used while setting up [Sumo Logic helm chart](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Installation_with_Helm.md#installation-steps)):
+1. Do port forward via your terminal (`my-release` is my release I used while setting up [Sumo Logic helm chart](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md#installation-steps)):
 ```bash
 kubectl port-forward prometheus-my-release-kube-prometheus-prometheus-0 9090
 ```

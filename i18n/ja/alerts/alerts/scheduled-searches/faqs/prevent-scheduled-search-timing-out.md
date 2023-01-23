@@ -29,6 +29,6 @@ Reach out to the Sumo Logic Support team to get guidance on optimizing your quer
 Here are also a few additional things to consider when conducting your performance tests:
 
 * Use a time range outside of the last 24-hour period. For example, if you plan on saving a search with the relative timeframe of the **Last 24 hours**, run a test using the following time range instead: **-48h -24h** (48 hours ago to 24 hours ago). Doing this will trigger the same backend nodes that would be called to run your scheduled search.
-* [Optimize your searches](docs/search/optimize-search-performance.md) as much as possible.
+* [Optimize your searches](/docs/search/optimize-search-performance.md) as much as possible.
 * If the data you are testing against is not reflective of the actual volume you’ll be scanning on a recurring basis, then the test itself should be considered invalid. Similarly, avoid scheduling searches preemptively. Wait until you get a good sample size and make sure your live streaming is completely set up.
 * If there are plans to add more data to your account in the near future, please keep that in mind in your testing and include a buffer to make sure that your increased data volume won’t cause your scheduled search to time out.

@@ -31,6 +31,14 @@ module.exports = {
       src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
       async: true,
     },
+    {
+      src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+      async: true,
+    },
+    {
+      src: './src/helper/google-translate.js',
+      async: true,
+    },
   ],
   staticDirectories: ['static'],
   webpack: {
@@ -131,6 +139,16 @@ module.exports = {
     'docusaurus-plugin-sass',
     'plugin-image-zoom',
     'react-iframe',
+    ['@docusaurus/plugin-content-docs',
+      {
+        id: 'community',
+        path: './community',
+        routeBasePath: 'hackathon',
+        sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        breadcrumbs: false,
+        // ... other options
+      },
+    ],
     ['@docusaurus/plugin-content-blog',
       {
          id: 'blog-cse',
@@ -224,6 +242,22 @@ module.exports = {
     colorMode: {
       defaultMode: 'light',
     },
+    algolia: {
+      //The application ID provided by Algolia
+      appId: '2SJPGMLW1Q',
+      // Public API key: it is safe to commit it
+      apiKey: 'fb2f4e1fb40f962900631121cb365549',
+      indexName: 'crawler_sumodocs',
+      // Optional: see doc section below
+      contextualSearch: false,
+      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+      //externalUrlRegex: 'external\\.com|domain\\.com',
+      // Optional: Algolia search parameters
+      //searchParameters: {},
+      // Optional: path for search page that enabled by default (`false` to disable it)
+      searchPagePath: false,
+      //... other Algolia params
+    },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
@@ -236,12 +270,6 @@ module.exports = {
           src: 'img/sumo-logo-dark.svg',
         },
         items: [
-          {
-            label: 'Start a Free Trial',
-            to: 'https://www.sumologic.com/sign-up',
-            position: 'right',
-            className: 'navbar-trial',
-          },
           {
             label: 'Guides',
             position: 'left',
@@ -269,7 +297,7 @@ module.exports = {
                 activeBaseRegex: '^/docs/integrations/.*',
               },
               {
-                label: 'Manage Account',
+                label: 'Manage Sumo',
                 to: '/docs/manage',
                 activeBaseRegex: '^/docs/manage/.*',
               },
@@ -284,7 +312,7 @@ module.exports = {
                 activeBaseRegex: '^/docs/apm/.*',
               },
               {
-                label: 'Alerts',
+                label: 'Alerts/Monitors',
                 to: '/docs/alerts',
               },
               {
@@ -294,8 +322,8 @@ module.exports = {
               },
               {
                 label: 'Cloud SOAR',
-                href: 'https://www.sumologic.com/solutions/cloud-soar',
-                activeBaseRegex: '^/docs/security/.*',
+                to: '/docs/cloud-soar/',
+                activeBaseRegex: '^/docs/cloud-soar/.*',
               },
               {
                 label: 'CI/CD',
@@ -345,37 +373,19 @@ module.exports = {
             ]
           },
           {
-            label: 'Contribute to Docs',
+            label: 'Contribute',
             to: '/docs/contributing',
             position: 'left',
           },
           {
-            label: 'Help',
-            position: 'left',
-            to: '#',
-            type: 'dropdown',
-            items:[
-              {
-                label: 'Training',
-                href: 'https://www.sumologic.com/learn/training',
-              },
-              {
-                label: 'Support',
-                href: 'https://support.sumologic.com/hc/en-us',
-              },
-              {
-                label: 'Community',
-                href: 'https://support.sumologic.com/hc/en-us/community/topics',
-              },
-              {
-                label: 'Service Status',
-                href: 'https://status.sumologic.com',
-              },
-              {
-                label: 'Feature Requests',
-                href: 'http://ideas.sumologic.com',
-              },
-            ]
+            type: 'html',
+            position: 'right',
+            value: '<div id="google_translate_element"></div>',
+          },
+          {
+            to: 'https://www.sumologic.com/sign-up',
+            position: 'right',
+            className: 'header-login',
           },
           {
             className: 'header-github-link',
@@ -391,7 +401,7 @@ module.exports = {
           {
             items: [
               {
-                label: 'Get Certified for Free',
+                label: 'Training & Certifications',
                 href: 'https://www.sumologic.com/learn/training/',
               },
               {
@@ -400,7 +410,7 @@ module.exports = {
               },
               {
                 label: 'Request Demo',
-                href: 'https://www.sumologic.com/request-demo/',
+                href: 'https://www.sumologic.com/request-demo',
               },
             ],
             title: 'Learn',
@@ -408,19 +418,19 @@ module.exports = {
           {
             items: [
               {
-                label: 'About Us',
-                href: 'https://www.sumologic.com/company/about-us/',
-              },
-              {
-                label: 'Community',
-                href: 'https://support.sumologic.com/hc/en-us/community/topics',
+                label: 'Contact Support',
+                href: 'https://support.sumologic.com/hc/en-us',
               },
               {
                 label: 'Sumo Dojo Slack',
                 href: 'https://sumodojo.slack.com/',
               },
+              {
+                label: 'Community',
+                href: 'https://support.sumologic.com/hc/en-us/community/topics',
+              },
             ],
-            title: 'Sumo Community',
+            title: 'Help',
           },
           {
             items: [

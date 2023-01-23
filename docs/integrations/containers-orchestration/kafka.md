@@ -432,7 +432,7 @@ All monitors are disabled by default on installation, if you would like to enabl
 
 By default, the monitors are configured in a monitor folder called “Kafka”, if you would like to change the name of the folder, update the monitor folder name in this file.
 
-5. To send email or connection notifications, modify the file `notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See [this document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types.
+5. To send email or connection notifications, modify the file `notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See [this document](/docs/alerts/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types.
 
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [
@@ -720,7 +720,7 @@ Use this dashboard to:
 ## Kafka Alerts
 
 | Alert Name                                  | Alert Description and conditions                                                                                                                        | Alert Condition | Recover Condition |
-|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|-------------------|
+|:---------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
 | Kafka - High CPU on Broker node             | This alert fires when we detect that the average CPU utilization for a broker node is high (>=85%) for an interval of 5 minutes.                        |                 |                   |
 | Kafka - High Broker Disk Utilization        | This alert fires when we detect that a disk on a broker node is more than 85% full.                                                                     | >=85            | < 85              |
 | Kafka - Garbage collection                  | This alert fires when we detect that the average Garbage Collection time on a given Kafka broker node over a 5 minute interval is more than one second. | > = 1           | < 1               |

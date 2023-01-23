@@ -37,11 +37,11 @@ To share a dashboard within your organization, do the following:
 
     ![share icon.png](/img/dashboards-new/share-dashboard-new/share-icon.png)
 
-1. Click in the **Share with specific users and roles** field and select with whom to share the dashboard from the drop-down list. 
+1. Click in the **Share with specific users and roles** field and select with whom to share the dashboard from the dropdown list. 
 
     If you choose **Your Entire Organization**, all users in your organization will be granted the access permissions you specify in the next step. 
 
-1. In the **Access** area, select the user permissions you want to grant from the drop-down list: **Edit**, **View**, or **Manage.** 
+1. In the **Access** area, select the user permissions you want to grant from the dropdown list: **Edit**, **View**, or **Manage.** 
 1. Optionally, select **Advanced Access** option to allow users to grant view access to others. For more information, see the [Available Permission Levels](/docs/manage/content-sharing#available-permission-levels) section of the [Share Content](/docs/manage/content-sharing) page.
 
     ![ShareDashboard_Advanced_Access.png](/img/dashboards-new/share-dashboard-new/ShareDashboard_Advanced_Access.png)

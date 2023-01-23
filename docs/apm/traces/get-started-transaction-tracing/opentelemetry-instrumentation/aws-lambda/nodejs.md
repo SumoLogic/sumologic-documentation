@@ -24,7 +24,7 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
 
 * NodeJS v12.x or newer
 * Lambda layers add permissions
-* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [HTTP Traces Source](docs/apm/traces/get-started-transaction-tracing/http-traces-source.md).
+* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [HTTP Traces Source](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md).
 
 1. Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
 
@@ -38,7 +38,7 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
 
     ![lambda-nodejs2.png](/img/traces/lambda-nodejs2.png)
 
-1. Navigate to the **Configuration \> Environment variables** section and set up the following three **required** environment variables:
+1. Navigate to the **Configuration > Environment variables** section and set up the following three **required** environment variables:
 
    * `AWS_LAMBDA_EXEC_WRAPPER = /opt/otel-handler` enables auto-instrumentation.
    * `OTEL_TRACES_SAMPLER = always_on` - enables traces sampling.
@@ -52,7 +52,7 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
 
             All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
 
-     * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](docs/apm/traces/get-started-transaction-tracing/http-traces-source.md). You can use an existing Source or create a new one if needed.
+     * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md). You can use an existing Source or create a new one if needed.
 
     ![lambda-nodejs3.png](/img/traces/lambda-nodejs3.png)
 
@@ -63,7 +63,7 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
 The following are the Sumo Logic AWS Distro Lambda layers for AWS Region for amd64 (x86_64) architecture.
 
 | AWS Region | ARN |
-|--|--|
+|:--|:--|
 | US East (N.Virginia) us-east-1          | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1      |
 | US East (Ohio) us-east-2                | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1      |
 | US West (N.Carolina) us-west-1          | arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1      |
@@ -91,7 +91,7 @@ The following are the Sumo Logic AWS Distro Lambda layers for AWS Region for amd
 The following are the Sumo Logic AWS Distro Lambda layers for AWS Region for arm64.
 
 | AWS Region                              | ARN                                                                                      |
-|-----------------------------------------|------------------------------------------------------------------------------------------|
+|:-----------------------------------------|:------------------------------------------------------------------------------------------|
 | US East (N.Virginia) us-east-1          | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1      |
 | US East (Ohio) us-east-2                | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1      |
 | US West (Oregon) us-west-2              | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1      |
@@ -116,7 +116,7 @@ changes in the Dockerfile and image rebuild. You'll need the following:
 
  * Docker
  * NodeJS v12.x or newer
- * HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [HTTP Traces Source](docs/apm/traces/get-started-transaction-tracing/http-traces-source.md).
+ * HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [HTTP Traces Source](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md).
 
 ### Lambda function image changes
 
@@ -153,7 +153,7 @@ changes in the Dockerfile and image rebuild. You'll need the following:
 
 1. Deploy new function image.
 
-1. Navigate to the **Configuration \> Environment variables** section and set up the following environment variables:
+1. Navigate to the **Configuration > Environment variables** section and set up the following environment variables:
 
    * `AWS_LAMBDA_EXEC_WRAPPER = /opt/otel-handler` enables auto-instrumentation.
    * `OTEL_TRACES_SAMPLER = always_on` - enables traces sampling.
@@ -165,7 +165,7 @@ changes in the Dockerfile and image rebuild. You'll need the following:
 
         All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
 
-     * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](docs/apm/traces/get-started-transaction-tracing/http-traces-source.md). You can use an existing Source or create a new one if needed.
+     * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md). You can use an existing Source or create a new one if needed.
 
     ![lambda-nodejs4.png](/img/traces/lambda-nodejs4.png)
 

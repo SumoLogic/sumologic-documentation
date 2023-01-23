@@ -16,21 +16,6 @@ Related topics:
 * [Modify a Chart](modify-chart.md)
 * [Markdown Syntax](markdown-syntax.md)
 
-<Tabs
-  className="unique-tabs"
-  defaultValue="tab1"
-  values={[
-    {label: 'Time Series Panel', value: 'tab1'},
-    {label: 'Categorical Panel', value: 'tab2'},
-    {label: 'Single Value Panel', value: 'tab3'},
-    {label: 'Map Panel', value: 'tab4'},
-    {label: 'Text Panel', value: 'tab5'},
-    {label: 'Service Map Panel', value: 'tab6'},
-    {label: 'Trace List Panel', value: 'tab7'},
-  ]}>
-
-<TabItem value="tab1">
-
 ## Time Series Panel 
 
 ![time series panel.png](/img/dashboards-new/panels/time-series-panel.png)
@@ -76,9 +61,6 @@ The types of charts you’ll find in the time series panel include:
 * Table
 
 
-</TabItem>
-<TabItem value="tab2">
-
 ## Categorical Panel
 
 ![categorical icon.png](/img/dashboards-new/panels/categorical-icon.png)
@@ -97,11 +79,7 @@ Available chart types:
 * [Scatter](scatter-charts.md)
 * [Table](table-charts.md)
 
-The following image shows an example of Scatter and Bubble charts.  
-
-![scatter and bubble charts.png](/img/dashboards-new/panels/scatter-and-bubble-charts.png)
-</TabItem>
-<TabItem value="tab3">
+The following image shows an example of Scatter and Bubble charts.  <br/> ![scatter and bubble charts.png](/img/dashboards-new/panels/scatter-and-bubble-charts.png)
 
 ## Single Value Panel
 
@@ -109,11 +87,8 @@ The following image shows an example of Scatter and Bubble charts.
 
 Single Value Panels are great at providing high level overviews. They look great on executive dashboards and can provide at-a-glance information to help decide where to inspect and troubleshoot further.
 
-Only [single value charts](single-value-charts.md) are supported.
+Only [single value charts](single-value-charts.md) are supported.<br/>![single value charts.png](/img/dashboards-new/panels/single-value-charts.png)
 
-![single value charts.png](/img/dashboards-new/panels/single-value-charts.png)
-</TabItem>
-<TabItem value="tab4">
 
 ## Map Panel
 
@@ -125,11 +100,8 @@ Maps identify where requests are coming from. These are ideal for [geolocation]
 You may not see map panels render if hardware acceleration is disabled on your browser.
 :::
 
-Only [map charts](map-charts.md) are supported.
+Only [map charts](map-charts.md) are supported.<br/>![new map charts.png](/img/dashboards-new/panels/new-map-charts.png)
 
-![new map charts.png](/img/dashboards-new/panels/new-map-charts.png)
-</TabItem>
-<TabItem value="tab5">
 
 ## Text Panel
 
@@ -143,31 +115,16 @@ There is no limit to the number of Text Panels you can add to Dashboards. These 
 
 To add a Text Panel:
 
-1. With the Dashboard open, click the **Add Panel** button.  
-
-    ![add panel.png](/img/dashboards-new/panels/add-panel.png)
-
+1. With the Dashboard open, click the **Add Panel** button.  <br/> ![add panel.png](/img/dashboards-new/panels/add-panel.png)
 1. Choose **Text **as the Panel Type**.** 
-1. The **Text Editor** and **Visual Settings** are displayed.  
-
-    ![Display options.png](/img/dashboards-new/panels/Display-options.png)
-
+1. The **Text Editor** and **Visual Settings** are displayed.  <br/> ![Display options.png](/img/dashboards-new/panels/Display-options.png)
     1. Input your **Text** or **Markdown** syntax in the **Text Editor** pane. See [Markdown Syntax](markdown-syntax.md) for details on what is supported.
     1. The **Visual Settings** options allow you to adjust the font, colors, and alignment of your data.
     1. A title is optional, you can toggle its visibility in the **Panel Details** covered in the next section.
-
-1. Next, to set a Title, select the **General** menu icon to open the **Panel Details** pane.  
-
-    ![Panel details general icon.png](/img/dashboards-new/panels/Panel-details-general-icon.png)
-
+1. Next, to set a Title, select the **General** menu icon to open the **Panel Details** pane.  <br/> ![Panel details general icon.png](/img/dashboards-new/panels/Panel-details-general-icon.png)
     A title is optional. Use the toggle switch labeled **Show Title** to set if the title is displayed. If desired, enter a title and set the font size.
-1. The **Panel Preview** section displays your text panel based on your settings.  
-
-    ![Text Panel preview.png](/img/dashboards-new/panels/Text-Panel-preview.png)
-
-1. When you are done click **Add to Dashboard** at the top of the window.  
-
-    ![Add to Dashboard button.png](/img/dashboards-new/panels/Add-to-Dashboard-button.png)
+1. The **Panel Preview** section displays your text panel based on your settings.  <br/>   ![Text Panel preview.png](/img/dashboards-new/panels/Text-Panel-preview.png)
+1. When you are done, click **Add to Dashboard** at the top of the window.  <br/>   ![Add to Dashboard button.png](/img/dashboards-new/panels/Add-to-Dashboard-button.png)
 
 ### Add links to text panels
 
@@ -177,111 +134,79 @@ To add a link to a Panel in order to drill down to another Dashboard, see [Add 
 
 ### Syntax
 
-`[<Text>](<URL>)`
+```
+[<Text>](<URL>)
+```
 
 ![link syntax example Jan 2021.png](/img/dashboards-new/panels/link-syntax-example-Jan-2021.png)
 
 In the panel, the link is displayed. 
-</TabItem>
-<TabItem value="tab6">
+
 
 ## Service Map Panel
 
 ![icon-service-map.png](/img/dashboards-new/panels/icon-service-map.png)
 
-The [Service Map](/docs/apm/traces/working-with-tracing-data/service-map) is a high-level view of your application environment, giving you a greater view and understanding of your application architecture and dependencies between monitored microservices.
+The [Service Map](/docs/apm/traces/working-with-tracing-data/services-list-map) is a high-level view of your application environment, giving you a greater view and understanding of your application architecture and dependencies between monitored microservices.
 
 The panel gives you a fully functioning map to zoom in and out and move through services. The size and color of application entities shows status and activity. Click on a service to open the Entity Inspector to drill down to traces, metrics, and the service dashboard.
 
-You can filter the map according to application and service. See the [Dashboard (New)](/docs/dashboards-new/about) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
-
-![panel-service.png](/img/dashboards-new/panels/panel-service.png)
+You can filter the map according to application and service. See the [Dashboard (New)](/docs/dashboards-new/about) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.<br/> ![panel-service.png](/img/dashboards-new/panels/panel-service.png)
 
 To add a Service Map panel:
 
-1. With the Dashboard open, click the **Add Panel** button and select **Service Map**.   
-
-    ![add-servicemap.png](/img/dashboards-new/panels/add-servicemap.png)  
-
-    A panel configuration page opens.  
-
-    ![create-servicemap.png](/img/dashboards-new/panels/create-servicemap.png)
-
-1. Select from the drop-down menus to filter the Service Map by the following:  
-
-    ![filter-servicemap.png](/img/apm/traces/filter-servicemap.png)
-
-    * **Application** if your tracing data has the `application=[app-name]` tag
-    * **Service** 
+1. With the Dashboard open, click the **Add Panel** button and select **Service Map**. <br/> ![add-servicemap.png](/img/dashboards-new/panels/add-servicemap.png)  
+1. A panel configuration page opens.  <br/> ![create-servicemap.png](/img/dashboards-new/panels/create-servicemap.png)
+1. Select from the dropdown menus to filter the Service Map by the following:  <br/>   ![filter-servicemap.png](/img/apm/traces/filter-servicemap.png)
+    * **Application** if your tracing data has the `application=[app-name]`, tag **Service** 
     * To pass the variables from dashboard filters, set `application={{application}}` and/or `service={{service}}`
-
 1. Do not set the time. Service Map always shows last 72h of data.
 1. The **Chart Type** is set to Graph.
-1. Click the **General** tab to edit the Panel Details. Enter a name for the panel, set a **Title Font Size**, and add a short **Description**.  
-
-    ![tracelist-details.png](/img/apm/traces/tracelist-details.png)
-
+1. Click the **General** tab to edit the Panel Details. Enter a name for the panel, set a **Title Font Size**, and add a short **Description**.  <br/> ![tracelist-details.png](/img/apm/traces/tracelist-details.png)
 1. Click **Add to Dashboard**.
 
-</TabItem>
-<TabItem value="tab7">
+
 
 ## Trace List Panel
 
 ![icon-trace-list.png](/img/dashboards-new/panels/icon-trace-list.png)
 
-Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real-time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans](/docs/apm/traces/working-with-tracing-data/spans), and a breakdown of services. The panel panel displays the [Traces page] table to give at-a-glance tracking for traces through your Dashboard. To view transaction and service details, click a trace from the panel to open the [Trace View](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces). 
+Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real-time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans](/docs/apm/traces/working-with-tracing-data/spans), and a breakdown of services. The panel panel displays the [Traces page](/docs/apm/traces/) table to give at-a-glance tracking for traces through your Dashboard. To view transaction and service details ([Trace View](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces)), click a trace from the panel. 
 
 See the [Dashboard (New)](/docs/dashboards-new/about) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers and more.
 
 :::note
-You are limited to 3 Trace List panels in a dashboard.
+You are limited to three Trace List panels in a dashboard.
 :::
 
 ![panel-trace.png](/img/dashboards-new/panels/panel-trace.png)
 
 To add a Trace List panel:
 
-1. With the Dashboard open, click the **Add Panel** button.   
-
-    ![add-tracelist.png](/img/apm/traces/add-tracelist.png)  
-
-    A panel configuration page opens.  
-
-    ![create-tracelist.png](/img/dashboards-new/panels/create-tracelist.png)
-
+1. With the Dashboard open, click the **Add Panel** button. <br/> ![add-tracelist.png](/img/apm/traces/add-tracelist.png)  
+1. A panel configuration page opens. <br/> ![create-tracelist.png](/img/dashboards-new/panels/create-tracelist.png)
 1. Configure a [Trace query](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces) to search for desired set of traces. 
-
-1. Select a time range or [create a custom range](/docs/dashboards-new/set-custom-time-ranges) for the panel. You can set this when creating or at any time when viewing the Dashboard panel.  
-
-    ![timerange.png](/img/dashboards-new/panels/timerange.png)
-
-1. The **Chart Type** is set to Table.
-
+1. Select a time range or [create a custom range](/docs/dashboards-new/set-custom-time-ranges) for the panel. You can set this when creating or at any time when viewing the Dashboard panel.<br/> ![timerange.png](/img/dashboards-new/panels/timerange.png)
+1. Select **Chart Type** as either:
+   1. **Table**. showing table with traces.
+   1. **Breakdown chart**. showing aggregated Trace Duration Breakdown Chart.  
+   If you choose **Table**, complete the following steps:
 1. Enter the **Rows Per Page** for the panel, between 5 to 100. The default amount is 15. The panel automatically paginates traces to browse through and view all traces.
-
 1. Select the Table columns of trace data to load in the panel:
 
-| Column Name | Example Value | Description |
-| -- | -- | -- |
-| Trace ID | ffaf2f69ee8ad0c1 | The unique identifier of the trace. |
-| Root Service | api | The service that started the trace. |
-| Started At | 07/27/2020 09:01:04.533 | When the trace started. |
-| Duration | 12.582 ms | The amount of time the trace spans.  |
-| Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
-| Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![span hover](/img/apm/traces/span-hover-view.png) |
-| Number of errors | 0 | The number of errors in the trace. |
-| Status | 200 | The HTTP status code of the trace. |
+ | Column Name | Example Value | Description |
+ | :-- | :-- | :-- |
+ | Trace ID | ffaf2f69ee8ad0c1 | The unique identifier of the trace. |
+ | Root Service | api | The service that started the trace. |
+ | Started At | 07/27/2020 09:01:04.533 | When the trace started. |
+ | Duration | 12.582 ms | The amount of time the trace spans.  |
+ | Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
+ | Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![span hover](/img/apm/traces/span-hover-view.png) |
+ | Number of errors | 0 | The number of errors in the trace. |
+ | Status | 200 | The HTTP status code of the trace. |
 
-
-1. Click the **General** tab to edit the Panel Details. Enter a name for the panel, set a **Title Font Size**, and add a short **Description**.  
-
-    ![tracelist details](/img/apm/traces/tracelist-details.png)
-
+1. Click the **General** tab to edit the Panel Details. Enter a name for the panel, set a **Title Font Size**, and add a short **Description**. <br/> ![tracelist details](/img/apm/traces/tracelist-details.png)
 1. Click **Add to Dashboard**. 
-
-</TabItem>
-</Tabs>
 
 
 ## Delete a Panel
@@ -289,10 +214,5 @@ To add a Trace List panel:
 You can delete a panel that you no longer need.
 
 1. Go to the Dashboard (New) in Sumo Logic that has the panel you want to delete.
-1. Hover the cursor over the **Details** icon to display the pop-up menu.  
-
-    ![details option.png](/img/dashboards-new/panels/delete-panel/details-option.png)
-
-1. Select **Delete**.  
-
-    ![delete a panel.png](/img/dashboards-new/panels/delete-panel/delete-a-panel.png)
+1. Hover the cursor over the **Details** icon to display the pop-up menu. <br/> ![details option.png](/img/dashboards-new/panels/delete-panel/details-option.png)
+1. Select **Delete**. <br/> ![delete a panel.png](/img/dashboards-new/panels/delete-panel/delete-a-panel.png)

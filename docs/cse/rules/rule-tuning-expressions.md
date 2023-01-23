@@ -2,7 +2,7 @@
 id: rule-tuning-expressions
 title: Rule Tuning Expressions
 sidebar_label: Rule Tuning
-description: Rule tuning expressions allow you to tailor the logic of a built-in rule without logic without replicating and modifying the rule.
+description: Rule tuning expressions allow you to tailor the logic of a built-in rule without replicating and modifying the rule.
 ---
 
 This topic has instructions for creating and using tuning expressions for Rules.
@@ -31,7 +31,7 @@ You can apply multiple tuning expressions to a rule. You can assign a tuning exp
 
 ## Writing a tuning expression
 
-Writing a tuning expression is just like writing a rule expression. A tuning expression can use metadata, record fields, and CSE [rules language](docs/cse/rules/cse-rules-syntax.md) functions. For more information, see [About rule expressions](about-cse-rules.md#About_rule_expressions).
+Writing a tuning expression is just like writing a rule expression. A tuning expression can use metadata, record fields, and CSE [rules language](/docs/cse/rules/cse-rules-syntax.md) functions. For more information, see [About rule expressions](about-cse-rules.md#About_rule_expressions).
 
 ## Example tuning expression
 

@@ -40,7 +40,7 @@ To find content in the Library that has been shared with you:
 To share content from the Left-nav or the Library:
 
 1. Click the Details icon ![details](/img/content-sharing/details.png) for the content you want to share.
-1. Select **Share** from the drop-down menu.
+1. Select **Share** from the dropdown menu.
 
     ![Share Search](/img/content-sharing/share-search.png)
 
@@ -66,7 +66,7 @@ To share content from the Left-nav or the Library:
 Sumo provides a few ways to navigate your content based on what you want to view.
 
 | Icon | Tab Name | Definition |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | ![](/img/content-sharing/icon-recents.png) | Recents | Access recent content:<ul><li>Content you’ve recently accessed.</li><li>Content recently shared with you.</li></ul> |
 | ![](/img/content-sharing/icon-favorites.png) | Favorites | Content you’ve marked as favorite. |
 | ![](/img/content-sharing/icon-personal.png) | Personal | Content you manage. |
@@ -82,7 +82,7 @@ Consider carefully what level of permissions users and roles need with
 your content:
 
 | Permission Level | Default Permissions | Available Advanced Options/Restrictions |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | View | Users can see the content and grant access to others to view. | **Cannot Grant Access.** Prevents the user from sharing any access.<br/><br/>**Grant View Access.** User can grant view access to others. |
 | Edit | Users can make changes to the content and grant View or Edit access to others. | **Cannot Grant Access.** Prevents the user from sharing any access.<br/><br/>**Grant View Access.** User can grant View access to others.<br/><br/>**Grant Edit and View Access.** User can grant Edit and View access to users. |
 | Manage<br/>(Recommended for individual users only) | Designated users are considered co-managers of the content and can modify the content as well grant the right to other users to View, Edit, Manage, or Move the content. | **Cannot Grant Access.** Prevents the user from sharing view access.<br/><br/>**Grant View Access.** User can grant view access to others.<br/><br/>**Grant Edit and View Access.** User can grant View and Edit access to users.<br/><br/>**Grant Manage, Edit, and View Access.** User can grant Manage, Edit, and View access to users. |

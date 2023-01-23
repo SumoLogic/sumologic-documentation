@@ -4,6 +4,8 @@ title: Workday Source
 sidebar_label: Workday
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 When you create a Workday Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 :::note
@@ -12,19 +14,19 @@ The steps below assume that you have already configured in [Step 1 of this pa
 
 To configure a Workday Source:
 
-1. On the **Manage Data \> Collection \> Collection** page, click **Add Source** next to a Hosted Collector.
+1. On the **Manage Data > Collection > Collection** page, click **Add Source** next to a Hosted Collector.
 
 1. Select **Workday**.
 
   ![img](/img/send-data/workday-icon.jpg)
 
-1. Enter a **Name** for the Source in the Sumo Logic console. The description is optional
+1. Enter a **Name** for the Source in the Sumo Logic console. The description is optional.
 
-  ![img](/img/send-data/workday-source.jpg)
+  <img src={useBaseUrl('img/send-data/workday-source.jpg')} alt="workday-source" width="450"/>
 
-1. For **Source Category** (Optional), enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called _sourceCategory.
+1. For **Source Category** (Optional), enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called _sourceCategory.
 
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set automatically by the integration (Do not include below fields as custom log metadata Fields):
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse). When configured with the **Forward to SIEM** option the following metadata fields are set automatically by the integration (Do not include below fields as custom log metadata Fields):
 
    * `_siemVendor`: Workday
    * `_siemProduct`: Workday
@@ -36,27 +38,27 @@ To configure a Workday Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
-1. **SignOn Report URL**:  Paste the signon report url.
+1. **SignOn Report URL**: Paste the signon report url from [Step 1.5](/docs/integrations/saas-cloud/workday#step-1-5-create-a-custom-sign-on-report).
 
-1. **Integration System User Name**: Name of the account.
+1. **Integration System User Name**: Name of the account created in [Step 1.1](/docs/integrations/saas-cloud/workday#step-1-1-create-an-integration-system-user).
 
-1. **Integration System User Password**:  Paste the SumoLogic_ISU account password.
+1. **Integration System User Password**: Paste the SumoLogic_ISU account password copied from [Step 1.1](/docs/integrations/saas-cloud/workday#step-1-1-create-an-integration-system-user).
 
-1. **Workday Rest API Endpoint**:  Paste the Workday Rest API endpoint.
+1. **Workday Rest API Endpoint**: Paste the Workday Rest API endpoint copied from [Step 1.3](/docs/integrations/saas-cloud/workday#step-1-3--register-the-API-client).
 
-1. **Workday Refresh Token Endpoint**:  Paste the Workday Rest API endpoint.
+1. **Workday Refresh Token Endpoint**: Paste the Workday Rest API endpoint copied from [Step 1.3](/docs/integrations/saas-cloud/workday#step-1-3-register-the-API-client).
 
-1. **Client ID:** Paste the API Client ID.
+1. **Client ID:** Paste the API Client ID copied from [Step 1.3](/docs/integrations/saas-cloud/workday#step-1-3-register-the-API-client).
 
-1. **Client Secret**: Paste the API Client SECRET.
+1. **Client Secret**: Paste the API Client SECRET copied from [Step 1.3](/docs/integrations/saas-cloud/workday#step-1-3-register-the-API-client).
 
-1. **Refresh Token**:  Paste the generated Refresh token.
+1. **Refresh Token**:  Paste the generated Refresh token copied from [Step 1.3](/docs/integrations/saas-cloud/workday#step-1-3-register-the-API-client).
 
-1. **Collection Should begin** - Select the time range for how far back you want this source to start collecting data from Workday. Options available are: Now, 24 hours ago
+1. **Collection Should begin** - Select the time range for how far back you want this source to start collecting data from Workday. Options available are: **Now**, **24 hours ago**.
 
 15. **Polling Interval** (Optional)**:** Enter how often you want the Source to collect data from Workday. This is set to 10 minutes by default.
 
-16. When you are finished configuring the source click **Submit**.
+16. When you are finished configuring the source, click **Submit**.
 
 ### Polling Interval and Workday API rate limits
 
@@ -64,21 +66,21 @@ During each polling interval, the Workday Source will make a REST API request to
 
 ## States
 
-The Workday Source reports errors, its health, and initialization status. Other than indicating that the source is healthy, you are also informed, in real-time, if the source is running into trouble communicating with Workday REST API, or if there's an error that requires user action indicated by Sumo Logic Health Events.
+The Workday Source reports errors, its health, and initialization status. Other than indicating that the source is healthy, you are also informed, in real-time, if the source is running into trouble communicating with Workday REST API, or if there's an error that requires user action indicated by [Sumo Logic Health Events](/docs/manage/health-events.md).
 
 A Workday Source goes through the following states when created:
 
-1. **Pending**: Once the Source is submitted, details are stored and the source is placed in a **Pending** state.
+1. **Pending**. Once the Source is submitted, details are stored, and the source is placed in a **Pending** state.
 
-1. **Started**: A collection task is created on the hosted collector.
+1. **Started**. A collection task is created on the hosted collector.
 
-1. **Initialized**: Task configuration is complete in Sumo Logic.
+1. **Initialized**. Task configuration is complete in Sumo Logic.
 
-1. **Authenticated**: The Source has successfully authenticated with Workday
+1. **Authenticated**. The Source has successfully authenticated with Workday
 
-1. **Collecting**: The Source is actively collecting data from Workday.
+1. **Collecting**. The Source is actively collecting data from Workday.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
 ![Health and Status columns.png](/img/send-data/workday-error-state.jpg)
 
@@ -87,35 +89,37 @@ the detected issue.
 
 ![error status.png](/img/send-data/health-error-generic.png)
 
-When you delete the source it is placed in a **Stopping** state and when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection.
+On the Collection page, the [Health](/docs/manage/health-events#collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events.md) to investigate issues with collection.
 
 ### Error types
 
-When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/health-events.md). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally on account of invalid configuration. You will need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | FirstPartyGenericError |
 
 ### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/cse). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
-| config        | JSON Object | Yes          | Contains the configuration parameters for the Source. |                |
+|:--|:--|:--|:--|:--|
+| config        | JSON Object | Yes          | Contains the [configuration parameters](#config-parameters) for the Source. |                |
 | schemaRef     | JSON Object | Yes          | Use {"type":"Salesforce"} for Workday Source.                                                 | not modifiable |
 | sourceType    | String      | Yes          | Use Universal for Workday Source. | not modifiable |
+
+#### Config Parameters
 
 The following table shows the **config** parameters for Workday Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+|:--|:--|:--|:--|:--|:--|
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |

@@ -11,7 +11,7 @@ Metrics are an effective tool for monitoring, troubleshooting, and identifying t
 ## Availability
 
 | Account Type | Account Level       |
-|--------------|--------------------------|
+|:--------------|:--------------------------|
 | Cloud Flex   | Trial, Professional, Enterprise                                                 |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -49,17 +49,17 @@ Currently available metric sources are:
 
 * [HTTP Logs and Metrics source.](/docs/send-data/hosted-collectors/http-source/logs-metrics) You can use an HTTP source on hosted collector to collect Graphite, Carbon 2.0, and Prometheus metrics from environments where it is impractical to deploy an installed collector.
 
-* [Host Metrics source.](docs/send-data/installed-collectors/sources/host-metrics-source.md) You can use a host metrics source on an installed collector to collect CPU, memory, TCP, networking, and disk metrics on Linux and Windows machines.
+* [Host Metrics source.](/docs/send-data/installed-collectors/sources/host-metrics-source.md) You can use a host metrics source on an installed collector to collect CPU, memory, TCP, networking, and disk metrics on Linux and Windows machines.
 
-* [Amazon CloudWatch Source for Metrics.](docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) You can use a CloudWatch source on a hosted collector to collect metrics for a variety of AWS resources.  
+* [Amazon CloudWatch Source for Metrics.](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) You can use a CloudWatch source on a hosted collector to collect metrics for a variety of AWS resources.  
 
 * [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-Kinesis-Firehose-Metrics-Source). You can use the AWS Kinesis Firehose for Metrics source to ingest CloudWatch metrics from AWS Kinesis Data Firehose.
 
 * [Streaming Metrics Source.](../../../static/img/send-data/streaming-metrics-source.png) You can use Sumo’s streaming metrics source with an installed collector to collect metrics over TCP or UDP in Graphite, Carbon 2.0, or Prometheus format.
 
-* [AWS Metadata (Tag) Source for Metrics.](docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source.md) This is a special type of source, in that it doesn’t collect metrics, but instead collects tags from EC2 instances running on AWS. Sumo applies the collected tags to metrics ingested by two Sumo source types: the streaming metric source and the host metrics source. Tagging metrics with the EC2 tags allows you to query metrics using EC2 tags.
+* [AWS Metadata (Tag) Source for Metrics.](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source.md) This is a special type of source, in that it doesn’t collect metrics, but instead collects tags from EC2 instances running on AWS. Sumo applies the collected tags to metrics ingested by two Sumo source types: the streaming metric source and the host metrics source. Tagging metrics with the EC2 tags allows you to query metrics using EC2 tags.
 
-* [Docker Stats source.](docs/send-data/installed-collectors/sources/docker-sources.md) You can use the Docker Stats source on an installed collector to collect Docker container metrics, such as CPU usage, Memory usage, Network IO, and Disk IO.
+* [Docker Stats source.](/docs/send-data/installed-collectors/sources/docker-sources.md) You can use the Docker Stats source on an installed collector to collect Docker container metrics, such as CPU usage, Memory usage, Network IO, and Disk IO.
 
 ## Metric rules editor
 

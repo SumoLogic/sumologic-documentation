@@ -19,7 +19,7 @@ After data forwarding is configured, you should start to see file objects poste
 ## Prerequisites
 
 * An administrator role on the Partition where you want to set up forwarding.
-* Follow the instructions on [Grant Access to an AWS Product](docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md) to grant Sumo permission to send data to the destination S3 bucket.
+* Follow the instructions on [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md) to grant Sumo permission to send data to the destination S3 bucket.
 * A Partition or Scheduled View to push to AWS S3.
 
 ## Forwarding interval 
@@ -82,7 +82,7 @@ Where:
 
 ## Configure an S3 data forwarding destination
 
-1. In Sumo Logic, select **Manage Data** \> **Logs** \> **Data Forwarding**.
+1. In Sumo Logic, select **Manage Data** > **Logs** > **Data Forwarding**.
 1. Click **+ Destination** to add a new destination.
 1. The **Create New Destination** popup appears. <br/><img src={useBaseUrl('img/data-forwarding/create-S3-destination.png')} alt="create-S3-destination.png" width="450"/>
 1. **Destination Name**. Enter a name to identify the destination.
@@ -91,7 +91,7 @@ Where:
     You can create only one destination with a particular bucket name.  If you try to create a new destination with the bucket name of an existing destination, the new destination replaces the old one.
     :::
 1. **Description**. You can provide a meaningful description of the connection.
-1. **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
+1. **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
      * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
       * For **Key access** enter the **Access Key ID** and **Secret Access Key**. See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 1. **S3 Region**. Select the S3 region or keep the default value of Others. The S3 region must match the appropriate S3 bucket created in your Amazon account.
@@ -109,7 +109,7 @@ This section has instructions for enabling data forwarding for an existing Parti
 You can also enable Data Forwarding when you first create a Partition or Scheduled View by selecting the **Enable Data Forwarding** check box.
 :::
 
-1. In Sumo Logic, go to **Manage Data** \> **Logs** \> **Partitions**, or **Manage Data** \> **Logs** \> **Scheduled Views**, depending on whether you want to forward data from a Partition or a Scheduled View.
+1. In Sumo Logic, go to **Manage Data** > **Logs** > **Partitions**, or **Manage Data** > **Logs** > **Scheduled Views**, depending on whether you want to forward data from a Partition or a Scheduled View.
 1. Click on the Partition or View for which you want to enable data forwarding and click the **Edit** button. When editing, you'll see an option to **Enable Data Forwarding**. <br/><img src={useBaseUrl('img/data-forwarding/enable-option.png')} alt="enable-option.png" width="450"/>
 1. Click the **Enable Data Forwarding** checkbox.
 1. More options appear. <br/><img src={useBaseUrl('img/data-forwarding/specifiy-destination.png')} alt="specify-destination.png'" width="450"/>

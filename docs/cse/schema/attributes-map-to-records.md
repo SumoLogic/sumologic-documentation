@@ -9,13 +9,14 @@ description: Learn what CSE schema attributes you can map to Records.
 This topic lists the schema attributes that you can map to Records. Note that you can map any of the attributes defined below to any [record type](cse-record-types.md). For information about all schema attributes, including those that cannot be mapped to Records, for example enrichment fields, see [Schema Attributes](schema-attributes.md).  
 
 | Field | Type | Description |
-|--|--|--|
+|:--|:--|:--|
 | accountId | string   | Account identifiers used in logs from environments where multiple accounts can be used. This is common for cloud providers like AWS.                                                                                                                                                    |
 | action | string   | Indicates the action taken by the monitored product (the log producer) when something harmful occurred. For example, when a firewall log indicated a bad network packet, the firewall blocked the connection.                                                                           |
 | application | string   | The name of the software that is the subject of this message.   Of interest to those who write mappers: Sometimes this software is the source of the message. In other cases a single source may produce messages related to many different applications and must name them explicitly. |
 | baseImage | string   | The base image of a process (ie notepad.exe) |
 | bytesIn | long     | Amount of the data received in bytes. |
 | bytesOut | long     | Amount of the data sent in bytes. |
+| cause | string | Describes the reason for an outcome in a record in a common way. |
 | changeTarget | string   | The user account that was affected by a change. |
 | changeType | string   | Category of change the user made. |
 | commandLine | string   | The command run by the user using a shell. |

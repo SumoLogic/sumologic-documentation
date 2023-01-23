@@ -62,7 +62,7 @@ The following examples use this sample log message:
 The JSON operator supports the following JSONPath expressions:
 
 | JSONPath  | Description |
-| -- | -- |
+| :-- | :-- |
 | $ | The root object or element. |
 | @ | The current object or element. |
 | . or \[\] | Child operator. |
@@ -192,9 +192,9 @@ Next, if required, you can use the array elements to perform additional operati
 ```sql
 _sourceCategory=O365*
 | json field=_raw "CreationTime", "Id"
-| json "Actor[*].Type" as Actortype
-| extract field=ActorType"(\<Typ\>\d+)" multi
-| max(type) by CreationTime, Id
+| json "Actor[*].Type" as ActorType
+| extract field=ActorType"(?<Type>\d+)" multi
+| max(Type) by CreationTime, Id
 ```
 
 The result would look like this:

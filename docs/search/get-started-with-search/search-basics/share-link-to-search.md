@@ -39,7 +39,7 @@ To share a link to a search:
 
     **If the search is saved:** the Share Search dialog provides options to share the link and code in the following way:  
 
-    * Click inside the User and Roles field and make selections from the drop-down list.
+    * Click inside the User and Roles field and make selections from the dropdown list.
 
         ![Users and Roles options when sharing savedsearch.png](/img/search/get-started-search/search-basics/user-role-options.png)
 

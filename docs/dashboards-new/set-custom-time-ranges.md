@@ -1,96 +1,63 @@
 ---
 id: set-custom-time-ranges
-title: Set Customized Time Ranges
-description: Learn how to set custom time ranges for individual panels and the dashboard as a whole.
+title: Set Dashboard and Panel Time Ranges
+description: Learn how to set dashboard and panel time ranges.
 ---
 
-A new dashboard has a preset default time range for its panels and the dashboard as a whole. You can choose to customize the time range for individual panels, as well as setting a new time range for the dashboard. It's important that you review the time range override guidelines to ensure you achieve your expected results.
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Time range override guidelines
+This page has information about changing the time range for a dashboard and its panels.
 
-The following guidelines apply to customized time ranges for panels and a Dashboard (New) as a whole:
+A dashboard has a preset default time range. Often, the dashboard time range applies to all of the panels in the dashboards. Sometimes, individual panels may have a different time range than the dashboard time range. You can change the time range for a dashboard and for individual panels—the options for doing so are described in [Set time range](#set-time-range), below.
 
-* **A customized time range for a panel** persists until you once again change the setting.
-* **A customized time range for a dashboard** is only applied to panels that don't have customized time ranges. Panels with customized time ranges will maintain their customized setting.
+After changing the time range for a dashboard or panel, you can set the new range as the default time range. If you do, the default time range you’ve set will persist, even after you close and reopen the dashboard. For more information, see [Set default time range](#set-default-time-range).
 
-## Specify the time range for a panel
+## Set time range
 
-You can set the time range for a panel by selecting a predefined interval from a drop-down list, or by specifying custom dates and times for the interval. 
+You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times.
 
-To select a predefined time interval for a panel, do the following:
+### Set a predefined time range
 
-1. Navigate to the dashboard in Sumo Logic.
-1. In the panel you want to customize, click the time display next to the clock icon in the upper right corner. 
+**To select a predefined time range:**
 
-    ![TimeRange_Panel_TimeDisplay.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_Panel_TimeDisplay.png)
+1. Click the time range shown near the upper right corner of a dashboard or dashboard panel.<br/><img src={useBaseUrl('img/dashboards-new/set-custom-time-ranges/dashboard-setting-default.png')} alt="dash range" width="675"/>
+1. Select one of the time range options on the **Relative** tab.<br/><img src={useBaseUrl('img/dashboards-new/set-custom-time-ranges/relative-ranges.png')} alt="relative ranges" width="300"/>
 
-1. Select the desired time interval from the drop-down list. In our example, we selected 24 hours as the new time range.
 
-    ![time range dropdown.png](/img/dashboards-new/set-custom-time-ranges/time-range-dropdown.png)
+### Choose a recently used time range
 
-    The panel updates automatically to display the analytics for the newly specified time range.
+**To select a recently used time range:**
 
-    ![TimeRange_Panel_TimeDisplay_update.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_Panel_TimeDisplay_update.png)
+1. Click the time range shown near the upper right corner of a dashboard or dashboard panel.
+1. Click the **Recent** tab, and select a time range.<br/><img src={useBaseUrl('img/dashboards-new/set-custom-time-ranges/recent-time-ranges.png')} alt="dash range" width="300"/>
 
-To specify a custom time interval for a panel, do the following:
+### Set a custom time range
 
-1. Navigate to the dashboard in Sumo Logic.
-1. In the panel you want to customize, click the time display next to the clock icon in the upper right corner.  
+**To set a custom time range:**
 
-    ![TimeRange_Panel_TimeDisplay.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_Panel_TimeDisplay.png)
+1. Click the time range shown near the upper right corner of a dashboard or dashboard panel.
+1. Click the **Custom** tab. <br/><img src={useBaseUrl('img/dashboards-new/set-custom-time-ranges/custom-tab.png')} alt="custom range" width="300"/>
+1. Select start and stop dates on the calendar, and then enter start and stop times.
+1. Click **Apply**.
 
-1. Click the **Custom** tab in the dialog, select start and stop dates on the calendar, and then specify start and stop times.
+## Set default time ranges
 
-    ![TimeRange_Custom_MultipleDays.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_Custom_MultipleDays.png)
+A dashboard has a default time range defined by its creator. The default time range is shown in the upper right of a dashboard. The default time range is displayed in gray font.<br/><img src={useBaseUrl('img/dashboards-new/set-custom-time-ranges/dashboard-setting-default.png')} alt="dash range" width="675"/>
 
-    Likewise, you can specify a custom time range for a single day.
+### Modify time ranges
 
-    ![TimeRange_Custom_Panel.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_Custom_Panel.png)
+As a dashboard user, you can change the time range for the dashboard. After you do, the new time range is shown in blue, and a more options menu is available that allows you to revert back to the default, or make it the default time range. <br/><img src={useBaseUrl('img/dashboards-new/set-custom-time-ranges/dashboard-setting-modified.png')} alt="dash modified" width="675"/>
 
-1. Click **Apply**. 
+You can make the same time range changes to an individual panel on the dashboard—the behavior is identical. A modified panel time range appears in blue, and you can revert it to the default setting, or make it the new default time range for the panel.
 
-    The panel updates automatically to display the analytics for the newly specified time range.
+### Set default time ranges
 
-    ![TimeRange_Custom_Panel_results.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_Custom_Panel_results.png)
+As noted above, you can set a new default time range for a dashboard and individual panels. To do so, you open the options menu next to a modified time range (shown in blue), and click **Set as Default**.   
 
-### Inherit dashboard time range
+When you make a modified time range the default, the time range appears in grey, and the more options menu is no longer available.
 
-You can set panels to use the time range of the dashboard. You can manually select the **Inherit dashboard's time range** option or simply delete your existing time range setting.
+When you change the default time range for the dashboard, the new time range will automatically be applied to all panels on the dashboard, unless you have set a new default time range default for one or more of the dashboard panels. In that case, you’ll be offered the option to **Override custom panel time ranges** with the new dashboard default. If you don’t select that, the existing default time ranges for individual panels will be preserved.
 
-To manually select the option, click the time range setting on the panel
+<img src={useBaseUrl('img/dashboards-new/set-custom-time-ranges/set-as-dashboard-default.png')} alt="dashboard default" width="400"/>
 
-![TimeRange_Reset_2.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_Reset_2.png)
-
-and select the **Inherit dashboard's time range** option.
-
-![inherit time range.png](/img/dashboards-new/set-custom-time-ranges/inherit-time-range.png)
-
-#### Delete method
-
-With the cursor still in the time range field, press **Delete** then press **Return **to apply deletion. The time range automatically reverts to use the Dashboard time range.
-
-![TimeRange_Reset_3.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_Reset_3.png)
-
-## Specify the time range for the dashboard
-
-You can specify a time interval for a dashboard as a whole, and the changes are applied to all the panels on the dashboard that don't have customized time range settings.
-
-Panels with customized time range settings can't be overridden by a dashboard-level time range. Panels with customized time ranges maintain their customized setting .
-
-To specify a dashboard-level time range setting, do the following:
-
-1. In the upper right corner of your Sumo Logic dashboard, click the time display next to the clock icon.
-
-    ![TimeRange_2Panels_customized.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_2Panels_customized.png)
-
-1. Do one of the following:
-
-    * Select the desired time interval from the drop-down list. In our example, we selected 60 minutes as the new time range.
-    * Click the Custom tab in the dialog, select start and stop dates on the calendar, then specify start and stop times and click **Apply**.
-
-    ![TimeRange_Set_Dashboard_TimeRange.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_Set_Dashboard_TimeRange.png)
-
-Dashboard panels that don't have customized time intervals update to
-reflect the dashboard-level time range.
-
-![TimRange_Override_Results_Dashboard.png](/img/dashboards-new/set-custom-time-ranges/TimRange_Override_Results_Dashboard.png)
+When a default time range is set for a panel, the panel won’t inherit the dashboard’s time range setting. You can change the panel back to inheriting the dashboard's time range by selecting **Inherit dashboard's time range** for the panel, or using the **Override custom panel time ranges** option, which causes every dashboard panel to inherit the dashboard's time range selection.

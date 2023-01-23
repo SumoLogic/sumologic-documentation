@@ -1,13 +1,14 @@
 ---
 id: integrate-aws-sso
 title: Integrate Sumo with AWS Single Sign-On
+description: Learn how to configure  AWS Single Sign-On for Sumo Logic.
 ---
 
 
 ## Availability
 
 | Account Type | Account Level |
-|--------------|---------------------------------------------------------------------|
+|:--------------|:---------------------------------------------------------------------|
 | CloudFlex    | Enterprise |
 | Credits      | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -40,7 +41,7 @@ AWS Single Sign-On does not currently support sending assigned group names in a
 This section has instructions for configuring basic SAML in Sumo Logic.
 
 1. Open a new browser window and login to your Sumo Logic account. 
-1. Go to **Administration** \> **Security** \> **SAML**.
+1. Go to **Administration** > **Security** > **SAML**.
 1. Click **Add Configuration**.   
 
     ![sumo-saml-config-list.png](/img/security/sumo-saml-config-list.png) 

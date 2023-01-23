@@ -18,7 +18,7 @@ When you set up an HTTP Traces Source, a unique URL is assigned to that Source. 
 
 To configure an HTTP Traces Source:
 
-1. In the Sumo Logic web interface, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic web interface, select **Manage Data > Collection > Collection**.
 1. On the Collection page, click Add Source next to a Hosted Collector.
 1. Select **HTTP Traces**.
 
@@ -29,7 +29,7 @@ To configure an HTTP Traces Source:
     ![source](/img/send-data/traces-source-no-fields.png)
 
 1. (Optional) For **Source Host** and **Source Category**, enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields that allow you to organize your data.
-1. When you are finished configuring the Source click Save.
+1. When you are finished configuring the Source, click Save.
 
 ## View the endpoint URL
 If you need to access the Source's URL again, click **Show URL**.

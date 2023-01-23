@@ -59,7 +59,7 @@ If you use the Test Rule feature on a rule that has one or more [Rule Tuning Exp
 When you're configuring a Threshold and Chain rule, you don't supply a Signal name; a Signal fired by those rule types has the same name as the rule that fired it.
 :::
 
-1. **On Entity**. Select the Entity field—an IP address, MAC address, hostname, or username—in the Record that the resulting Signal should be associated with. (In CSE, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
+1. **On Entity**. Select the Entity field—for example, an IP address, MAC address, hostname, and so on—in the Record that the resulting Signal should be associated with. (In CSE, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
 1. **with the summary**.
 1. **with the description**. Define the description for the Signal. You can use text and Record fields. The Signal description should be a good indication of what the rule looks for.
 1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest).

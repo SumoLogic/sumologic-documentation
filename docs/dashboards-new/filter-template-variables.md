@@ -5,7 +5,7 @@ sidebar_label: Filtering with Template Variables
 description: Learn how to use template variables to dynamically filter dashboard data.
 ---
 
-Template variables are a feature of Dashboard (New) that allow you to analyze specific data on demand. They give you the ability to filter the data displayed on your dashboard so you can quickly troubleshoot a problem. Queries can be changed on the fly by choosing values for variables from drop-down lists without having to manually edit queries.
+Template variables are a feature of Dashboard (New) that allow you to analyze specific data on demand. They give you the ability to filter the data displayed on your dashboard so you can quickly troubleshoot a problem. Queries can be changed on the fly by choosing values for variables from dropdown lists without having to manually edit queries.
 
 This feature requires two parts to work:
 
@@ -122,7 +122,7 @@ To edit a template variable, do the following:
 
     ![options menu for variable.png](/img/dashboards-new/filter-template-variables/options-menu-for-variable.png)
 
-1. Click the **Details** icon and select **Edit** from the drop-down menu. The Edit Variable dialog appears.  
+1. Click the **Details** icon and select **Edit** from the dropdown menu. The Edit Variable dialog appears.  
 
     ![edit variable.png](/img/dashboards-new/filter-template-variables/edit-variable.png)
 
@@ -142,7 +142,7 @@ To delete a template variable, do the following:
 
     ![options menu for variable.png](/img/dashboards-new/filter-template-variables/options-menu-for-variable.png)
 
-1. Click the options icon and select **Delete** from the drop-down menu. The variable along with the resulting data transformations are automatically removed from the dashboard.  
+1. Click the options icon and select **Delete** from the dropdown menu. The variable along with the resulting data transformations are automatically removed from the dashboard.  
 
     ![delete variable.png](/img/dashboards-new/filter-template-variables/delete-variable.png)
 
@@ -161,7 +161,7 @@ To use a variable in a logs query, do the following:
 
     ![Logs_variable_query_example.png](/img/dashboards-new/filter-template-variables/Logs_variable_query_example.png)
 
-    At run time, the value inside the curly braces is replaced with the value of the variable you specified from the variable drop-down list.
+    At run time, the value inside the curly braces is replaced with the value of the variable you specified from the variable dropdown list.
 
 #### String literal
 
@@ -191,7 +191,7 @@ _sourceCategory=query
 To use a metrics variable in a query working with the structured query builder, do the following:
 
 1. In the structured query builder, enter the Key for the variable followed by an equals sign.
-1. Select the desired variable from the drop-down list. It appears in curly braces to indicate it is a variable.
+1. Select the desired variable from the dropdown list. It appears in curly braces to indicate it is a variable.
 
 ![Metrics_variable_query_example1.png](/img/dashboards-new/filter-template-variables/Metrics_variable_query_example1.png)
 
@@ -201,5 +201,5 @@ The variable is inserted into the query and will convert the variable into the 
 
 To use a metrics variable in a query working in advanced query mode, do the following:
 
-1. Locate the name of the variable you'd like to use in the drop-down list and copy it.
+1. Locate the name of the variable you'd like to use in the dropdown list and copy it.
 1. Go to your metrics query and insert *{{ var_name }}* in the query, substituting `var_name` with the actual name of the variable.

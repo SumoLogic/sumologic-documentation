@@ -6,7 +6,7 @@ sidebar_label: Metric Aggregation Tips
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-When you run a metrics query that returns high cardinality results, the [Metrics Explorer](docs/metrics/metrics-queries/metrics-explorer.md) displays a tip for how to use an aggregation clause to produce more readable results. An aggregation tip is displayed for a query based on the cardinality of the query. It is presented when a query’s cardinality exceeds these thresholds:
+When you run a metrics query that returns high cardinality results, the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer.md) displays a tip for how to use an aggregation clause to produce more readable results. An aggregation tip is displayed for a query based on the cardinality of the query. It is presented when a query’s cardinality exceeds these thresholds:
 
 
 <table>

@@ -18,7 +18,7 @@ Metrics you upload to an HTTP source must be in seconds or milliseconds. Metrics
 
 The table below lists the types of metrics you can upload to an HTTP Source and Content-Type header you must use when uploading metrics of each type. If you omit the Content-Type header, or set a value not listed below, the HTTP payload will be ingested as log data. 
 
-You must specify the Content-Type header value exactly as shown in the table below. If a Content-Type header value contains any extra text other one of the Content-Type values below, Sumo ignores the extraneous text. (Some metric frameworks  append or prepend  extra text in Content-Type headers.)
+You must specify the Content-Type header value exactly as shown in the table below. If a Content-Type header value contains any extra text other than one of the Content-Type values below, Sumo ignores the extraneous text. (Some metric frameworks  append or prepend  extra text in Content-Type headers.)
 
 So, Sumo will treat a `Content-Type` value of: 
 
@@ -35,7 +35,7 @@ application/vnd.sumologic.graphite
 Based on the Content-Type header specified, Sumo parses and interprets each line in the HTTP payload in the desired metric format.
 
 | Format | Content-Type Header |
-|--|--|
+|:--|:--|
 | [Graphite](http://graphite.readthedocs.io/en/latest/feeding-carbon.html#the-plaintext-protocol) | `application/vnd.sumologic.graphite` |
 | [Carbon 2.0](http://metrics20.org/implementations/) | `application/vnd.sumologic.carbon2` |
 | [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo](upload-metrics.md#prometheus-metrics-not-accepted-by-sumo). |
@@ -94,7 +94,7 @@ Overridden metadata field values are not returned with [Search Autocomplete](/do
 :::
 
 | Setting | Header Name | Header Value |
-|--|--|--|
+|:--|:--|:--|
 | Compressed data | `Content-Encoding` | gzip or deflate<br/>Required if you are uploading compressed data. |
 | Content Type (for Metrics) | Content-Type | `application/vnd.sumologic.graphite`<br/>`application/vnd.sumologic.carbon2`<br/>`application/vnd.sumologic.prometheus`<br/>Required if you are uploading metrics. |
 | Custom Source Name | `X-Sumo-Name` | Desired source name.<br/>Useful if you want to override the source name configured for the source. |

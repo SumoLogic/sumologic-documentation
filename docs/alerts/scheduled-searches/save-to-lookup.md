@@ -18,24 +18,15 @@ When you create a Scheduled Search, you can choose Save to Lookup as the Alert t
 ## Save the results of Scheduled Search to a Lookup table
 
 1. Create a log query.
-1. Click **Save As**.
-
-    ![save-as-link.png](/img/alerts/save-as-link.png)
-
-1. On the **Save Item** popup, click **Schedule this search**.
-
-    ![save-item-1.png](/img/alerts/save-item-1.png)
-
+1. Click the save icon.<br/>![save-as-link.png](/img/alerts/save-search.png)
+1. On the **Save Item** popup, click **Schedule this search**. <br/>![save-item-1.png](/img/alerts/save-item-1.png)
 1. Click in the **Run frequency** field, and select how frequently you want the search to run. For information, see [Schedule a Search](schedule-search.md). 
 1. On the **Save Item** popup:
-
    1. **Send Notification**. For information about this option , see [Schedule a Search](schedule-search.md).
    1. **Time range** and **Timezone**. For information about this option, see [Schedule a Search](schedule-search.md).
    1. **Alert Type**. Select **Save to Lookup**.
    1. **Save to Lookup Table**. Select the folder that contains the Lookup Table where you want the search results saved.
    1. **Save operation method**. 
-
       * **Full Replace**. Choose this option to completely replace the data in the Lookup Table with the scheduled search results each time the search runs.
       * **Merge**. Choose this option to update existing lookup tables rows with new values, or to add new rows to a lookup table. 
-
 1. Click **Save**.

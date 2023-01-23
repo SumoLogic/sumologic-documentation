@@ -23,10 +23,10 @@ A Record contains the information from an incoming message, transformed and enha
 
 For each incoming message, CSE creates a set of key-value pairs that reflect all of the information in the message. To accomplish this, CSE provides these ingestion routes:
 
-* **C2C Connector**. Sumo Logic’s Cloud-to-Cloud (C2C) Integration Framework is a fully-managed collection system that collects logs and events directly from SaaS and Cloud platforms. For a list of available C2C collectors, see [Cloud-to-Cloud Integration Framework](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
-* **Sumo Logic Parser**. For other data sources, the Sumo Logic’s built-in parsers that extract key-value pairs from messages. To see currently available parsers, go to Manage **Data \> Logs \> Parsers** in the Sumo Logic UI.  
+* **C2C Connector**. Sumo Logic’s Cloud-to-Cloud (C2C) Integration Framework is a fully-managed collection system that collects logs and events directly from SaaS and Cloud platforms. For a list of available C2C collectors, see [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
+* **Sumo Logic Parser**. For other data sources, the Sumo Logic’s built-in parsers that extract key-value pairs from messages. To see currently available parsers, go to Manage **Data > Logs > Parsers** in the Sumo Logic UI.  
 
-For more information on these alternatives, see [CSE Ingestion Best Practices](docs/cse/ingestion/cse-ingestion-best-practices.md).
+For more information on these alternatives, see [CSE Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices.md).
 
 The key-value pairs are input to the next step of the process: mapping.
 
@@ -55,7 +55,7 @@ The values of the following schema attributes are normalized into a standard for
 
 ## Entity Lookup Table processing
 
-[Entity Lookup Tables](docs/cse/records-signals-entities-insights/configure-entity-lookup-table.md) allow you to define your own hostname and username normalization rules. After the normalization described in the previous step is performed, any normalization you’ve configured in Entity Lookup Tables is applied. 
+[Entity Lookup Tables](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table.md) allow you to define your own hostname and username normalization rules. After the normalization described in the previous step is performed, any normalization you’ve configured in Entity Lookup Tables is applied. 
 
 ## Enrich Records with IP address, URL, and domain info
 

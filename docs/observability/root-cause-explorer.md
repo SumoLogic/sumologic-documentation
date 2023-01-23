@@ -8,7 +8,7 @@ description: Use Root Cause Explorer for AWS to troubleshoot incidents with apps
 ## Availability
 
 | Account Type | Account Level                                  |
-|--------------|------------------------------------------------|
+|:--------------|:------------------------------------------------|
 | Cloud Flex   | Trial, Enterprise                              |
 | Credits      | Trial, Enterprise Operations, Enterprise Suite |
 
@@ -346,10 +346,10 @@ The logs created from EOIs reside in a view called `sumologic_signals_anomalies`
 The attributes in the view are defined in the table below.
 
 | Attribute | Description |
-|--|--|
+|:--|:--|
 | `anomalyValues` | Statistics about the time series in the EOI window - min, max, avg.
 | `autoCorrelation` | A measure of the periodicity of the underlying time series.
-| `domain` | Identifies the source of the time series data:<ul><li>aws</li><li>k8s</li><li>app. Application services instrumented with Sumo Logic [Tracing](/docs/apm/traces).</li><li>host. A [Host Metrics source](docs/send-data/installed-collectors/sources/host-metrics-source.md) on a Sumo Logic Installed Collector.</li></ul> |
+| `domain` | Identifies the source of the time series data:<ul><li>aws</li><li>k8s</li><li>app. Application services instrumented with Sumo Logic [Tracing](/docs/apm/traces).</li><li>host. A [Host Metrics source](/docs/send-data/installed-collectors/sources/host-metrics-source.md) on a Sumo Logic Installed Collector.</li></ul> |
 | `drift` | The percentage deviation of the time series from the expected value. |
 | `endTime` | The end time of the EOI, in epoch milliseconds. |
 | `eventType` | The golden signal class for the EOI: Latency, Load, Bottleneck, Error, Throughput, Success, or Availability. For more information about golden signals, see the [Google SRE handbook](https://landing.google.com/sre/sre-book/chapters/preface/). |
@@ -506,7 +506,7 @@ event in groups to be returned.
 
 ### Amazon CloudWatch Source Metrics Source
 
-For information about Sumo Logic's CloudWatch source, see [Amazon CloudWatch Source for Metrics](docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md).
+For information about Sumo Logic's CloudWatch source, see [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md).
 
 ### AWS Inventory Source
 

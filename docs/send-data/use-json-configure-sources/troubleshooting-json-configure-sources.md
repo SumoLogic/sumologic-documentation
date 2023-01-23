@@ -11,7 +11,7 @@ Sources supplied via a JSON file may not be applied to a Collector for a few rea
 Before investigating your JSON file for issues check that you are using your method for managing Sources correctly. If you're using `syncSources` for [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management) or the Collector API to manage Sources review your steps for issues related to using the method. For example, if your Collector isn't configured to use Local Configuration File Management it won't monitor your JSON file.
 
 :::note
-You can [view and copy an existing JSON configuration](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) from the user interface for reference.
+You can [view and copy an existing JSON configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) from the user interface for reference.
 :::
 
 ## UTF-8 encoded
@@ -26,7 +26,7 @@ com.sumologic.scala.collector.auth.UpdateFailedException: * Could not synchroniz
 ```
 
  * To help verify the format of your JSON you can copy and paste the content into a JSON validation tool such as [jsonlint.com](https://support.sumologic.com/hc/en-us/articles/jsonlint.com). jsonlint.com will highlight any potential formatting errors such as missing commas, quotes, curly braces, brackets, etc.
- * We recommend using JSON from of an existing Collector to get a valid JSON configuration of Sources. See [View or Download Source JSON Configuration](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for details.
+ * We recommend using JSON from of an existing Collector to get a valid JSON configuration of Sources. See [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for details.
 
 ## Valid Source configuration
 

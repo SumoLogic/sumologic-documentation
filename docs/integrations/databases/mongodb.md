@@ -126,7 +126,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 The first service in the pipeline is Telegraf. Telegraf collects metrics from MongoDB. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the MongoDB input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
 :::note Prerequisites
-It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
 :::
 
 #### Configure Metrics Collection
@@ -415,15 +415,15 @@ At this point, MongoDB logs should start flowing into Sumo Logic.
 
 ## Installing MongoDB Monitors
 
-The next few sections have instructions for installing Sumo Logic Monitors for MongoDB, the app, and descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in the [Collect Logs and Metrics for MongoDB](#Collect-Logs-for-MongoDB) App page.
+The next few sections have instructions for installing Sumo Logic Monitors for MongoDB, the app, and descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in the [Collecting Logs and Metrics for MongoDB](#collecting-logs-and-metrics-for-mongodb).
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a MongoDB cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [MongoDB Alerts](#MongoDB-Alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a MongoDB cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [MongoDB Alerts](#mongodb-alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability.
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#rules) for details.
 
 ### Method A: Importing a JSON file
 
@@ -438,10 +438,10 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
+1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 3. Download the Sumo Logic Terraform package for MongoDB monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/MongoDB). You can either download it using the `git clone` command or as a zip file.
-4. Alert Configuration. After extracting the package , navigate to the  `terraform-sumologic-sumo-logic-monitor/monitor_packages/MongoDB/` directory. Edit the `MongoDB.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+4. Alert Configuration. After extracting the package , navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/MongoDB/` directory. Edit the `MongoDB.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
   ```bash
   access_id   = "<SUMOLOGIC ACCESS ID>"
   access_key  = "<SUMOLOGIC ACCESS KEY>"
@@ -474,7 +474,7 @@ connection_notifications = [
   ]
 ```
 
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
+For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/alerts/webhook-connections/set-up-webhook-connections).
 
 ```bash title="Email notifications example"
 email_notifications = [
@@ -606,11 +606,11 @@ Use this dashboard to:
 Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 | Name                                         | Description                                                                                                                                               | Trigger Type | Alert Conditions | Recover Conditions |
-|----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|------------------|--------------------|
+|:----------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------|:------------------|:--------------------|
 | MongoDB - Too Many Cursors Timeouts          | This alert fires when we detect that there are too many cursors (100) timing out on a MongoDB server within a 5 minute time interval.                     | Warning      | >= 100           | < 100              |
 | MongoDB - Too Many Cursors Open              | This alert fires when we detect that there are too many cursors (>10K) opened by MongoDB.                                                                 | Warning      | >= 10000         | < 10000            |
 | MongoDB - Missing Primary                    | This alert fires when we detect that a MongoDB cluster has no node marked as primary.                                                                     | Critical     | <= 0             | > 0                |
-| MongoDB - Instance Down                      | This alert fires when we detect that the MongoDB instance is down.                                                                                        | Missing Data | --               | --                 |
+| MongoDB - Instance Down                      | This alert fires when we detect that the MongoDB instance is down.                                                                                        | Missing Data | :--               | :--                 |
 | MongoDB - Replication Lag                    | This alert fires when we detect that the replica lag for a given MongoDB cluster is greater than 60 seconds. Please review the replication configuration. | Warning      | > 60             | <= 60              |
 | MongoDB - Replication Heartbeat Error        | This alert fires when we detect that the MongoDB Replication Heartbeat request has errors, which indicates replication is not working as expected.        | Warning      | > 0              | <= 0               |
 | MongoDB - Too Many Connections               | This alert fires when we detect a given MongoDB server has too many connections (over 80% of capacity).                                                   | Warning      | >= 80            | < 80               |

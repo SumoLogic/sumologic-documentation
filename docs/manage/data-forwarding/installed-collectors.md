@@ -29,7 +29,7 @@ You need the [Manage Collectors role capability](../users-roles/roles/role-capa
 
 To set up a data forwarding destination:
 
-1. Choose **Manage Data \> Collection \> Data Archiving**.
+1. Choose **Manage Data > Collection > Data Archiving**.
 1. Click **+ Destination** to add a new destination.
 1. Select one of these options for **Destination Type**. 
    * Hitachi
@@ -101,14 +101,14 @@ There are several methods you can use to configure processing rules: 
 
 **To configure processing rules for data forwarding using the web application**
 
-1. Go to **Manage Data** \> **Collection** \> **Collection**.
+1. Go to **Manage Data** > **Collection** > **Collection**.
 1. Search for the source that you want to configure, and click the **Edit** link for the source. The source must be associated with an Installed Collector.
 1. Scroll down to the **Processing Rules** section and click the arrow to expand the section.
 1. Click **Add Rule**.
 1. Enter a name to define the rule.
 1. In the Filter field, enter the regular expression that defines the messages you want to forward. The regular expression must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax). For example, the regular expression `.*ERROR.*` matches all messages that contain ERROR. For more information about creating processing rules, see [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
 1. Select **Forward messages that match** as the rule type. This option is visible only if you have defined at least one data forwarding destination, as described in the previous section. 
-1. Select the Destination from the drop-down menu. If a **Syslog Destination Type** is selected, an option to select **Transparent Forwarding** is provided. Syslog forwarding by default prepends a timestamp and hostname to messages to ensure they comply with RFC 3164. If your syslog messages already comply, you can enable **Transparent Forwarding** to disable the default prepending behavior. <br/>![transparent syslog forwarding option.png](/img/data-forwarding/transparent-syslog-forwarding-option.png)
+1. Select the Destination from the dropdown menu. If a **Syslog Destination Type** is selected, an option to select **Transparent Forwarding** is provided. Syslog forwarding by default prepends a timestamp and hostname to messages to ensure they comply with RFC 3164. If your syslog messages already comply, you can enable **Transparent Forwarding** to disable the default prepending behavior. <br/>![transparent syslog forwarding option.png](/img/data-forwarding/transparent-syslog-forwarding-option.png)
 1. Click **Apply**. The new rule is listed along with any other previously defined processing rules.
 1. Click **Add Rule** if you want to add another rule. <br/>![ProcessingRule.png](/img/data-forwarding/ProcessingRule.png)
 1. Click **Save** to save the rules you defined and start forwarding data that matches the rules.
@@ -139,7 +139,7 @@ You can add properties to the collector.properties file, in the Collector's /con
 After the memory and disk limits are reached, data will be dropped, so the limits should not be set too low
 
 | Property | Description |
-| -- | -- |
+| :-- | :-- |
 | `queue.rest.max.memory.mb` | Specifies the amount of memory allocated to the data forwarding queue for each REST destination.<br/><br/>Default: 8MB |
 | `queue.rest.max.disk.mb` | Specifies the amount of disk space allocated to the data forwarding queue for each REST destination.<br/><br/>Default: 500MB |
 | `queue.syslog.max.memory.mb` | Specifies the amount of memory allocated to the data forwarding queue for each Syslog destination.<br/><br/>Default: 8MB |

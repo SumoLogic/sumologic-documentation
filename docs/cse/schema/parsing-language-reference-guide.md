@@ -121,19 +121,19 @@ Although Java supports backtracking and possessive sequences as well, their use 
 JSON is parsed and flattened. Fields of sub-objects are prepended with the containing field name and separated with periods. For example,
 
 | This JSON                                     | Results in                                                    |
-|-----------------------------------------------|---------------------------------------------------------------|
+|:-----------------------------------------------|:---------------------------------------------------------------|
 | `{“foo”: {“bar”: 2, “barrier”: 3}, “baz”: 4}` | `foo.bar = 2             foo.barrier = 3             baz = 4` |
 
 List items have a one-based index number inserted between the containing field name and the sub-object field names. For example,
 
 | This JSON                                              | Results in                                                                                    |
-|--------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+|:--------------------------------------------------------|:-----------------------------------------------------------------------------------------------|
 | `{“foo”: [{“bar”: 1, “baz”: 2}, {“bar”: 3, “baz”: 4}]` | `foo.1.bar = 1             foo.1.baz = 2             foo.2.bar = 3             foo.2.baz = 4` |
 
 By default, an index number is inserted, even in a single element list. For example, 
 
 | This JSON                       | Results in            |
-|---------------------------------|-----------------------|
+|:---------------------------------|:-----------------------|
 | `{“test”: [{“field”:”value”}]}` | `test.1.field: value` |
 
 However, if you set the JSON_FLATTEN_SINGLE_LISTS flag to true, an index value *is not* inserted in the single element list. This is useful for collapsing redundant JSON elements from sources like AWS.
@@ -141,7 +141,7 @@ However, if you set the JSON_FLATTEN_SINGLE_LISTS flag to true, an index value *
 When JSON_FLATTEN_SINGLE_LISTS is true:
 
 | This JSON                       | Results in           |
-|---------------------------------|----------------------|
+|:---------------------------------|:----------------------|
 | `{“test”: [{“field”:”value”}]}` | `test.field: value,` |
 
 ### CSV parsing
@@ -587,7 +587,12 @@ Joins a list created by [ADD_VALUES](#add_values) with the separator mentioned. 
 Provides information that tells CSE which log mapper should process the parsed message. There are two ways to do that: 
 
 * Specify the log mapper UID.  If `MAPPER:uid` is specified with other MAPPER fields, mapping lookup will be performed by uid. 
-* Specify the `product`, `vendor`, and `event_id `for the message. If you identify the mapper using , all three are required: you’ll define three MAPPER attributes. Templating is allowed for each value. However, the most common and best practice is to define vendor and product using static strings. `event_id` often varies based on the log type so it's more common to use templating when defining that.
+* Specify the `product`, `vendor`, and `event_id `for the message. (All three attributes are required.) Templating is allowed for each value. However, the most common and best practice is to define `vendor` and `product` using static strings, for example:
+  * `MAPPER:vendor = AWS`
+  * `MAPPER:product = Inspector`
+
+  Templating is more typically used to define `event_id`, as event identifiers often vary based on the log type. For example:
+    * `MAPPER:event_id = {{eventType}}-{{eventName}}`
 
 :::note
 Looking up a mapper using `product`, `vendor`, and `event_id` will return all [structured mappings](create-structured-log-mapping.md) that are configured with the same attribute values, and could result in more than one Record being created. 

@@ -52,4 +52,4 @@ AWS S3 sources support the following encoding:
 
  * UTF-8
 
-For more information, see [AWS S3 Source](docs/send-data/hosted-collectors/amazon-aws/aws-s3-source.md).
+For more information, see [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source.md).

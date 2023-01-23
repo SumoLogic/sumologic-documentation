@@ -19,7 +19,7 @@ Our Work-from-Home Solution provides support in all areas of remote work managem
 
 * **SSO**: [Auth0](/docs/integrations/saml/auth0), [Duo](/docs/integrations/security-threat-detection/duo-security), [Okta](/docs/integrations/saml/Okta), [One Login](/docs/integrations/saml/OneLogin), [Azure Active Directory](/docs/integrations/microsoft-azure/active-directory-azure)
 * **Remote Access**: [Cisco Meraki](/docs/integrations/security-threat-detection/Cisco-Meraki), [Zscaler Web Security](/docs/integrations/security-threat-detection/zscaler-web-security)
-* **Productivity Apps**: [G Suite](docs/integrations/google/workspace/index.md),[Office 365](/docs/integrations/App-Development/Jira), [Salesforce](/docs/integrations/saas-cloud/Salesforce), [Slack](/docs/integrations/saas-cloud/Slack), [Zoom](/docs/integrations/saas-cloud/Zoom)
+* **Productivity Apps**: [G Suite](/docs/integrations/google/workspace/index.md),[Office 365](/docs/integrations/App-Development/Jira), [Salesforce](/docs/integrations/saas-cloud/Salesforce), [Slack](/docs/integrations/saas-cloud/Slack), [Zoom](/docs/integrations/saas-cloud/Zoom)
 * **Endpoint Security:** [Crowdstrike Falcon](/docs/integrations/security-threat-detection/CrowdStrike-Falcon-Endpoint-Protection), [Carbon Black](/docs/integrations/security-threat-detection/VMware-Carbon-Black), [Cylance](/docs/integrations/security-threat-detection/Cylance)
 
 
@@ -153,7 +153,7 @@ To install any of these apps, follow their directions:
 * [Crowdstrike Falcon](/docs/integrations/security-threat-detection/CrowdStrike-Falcon-Endpoint-Protection)
 * [Cylance](/docs/integrations/security-threat-detection/Cylance)
 * [Duo](/docs/integrations/security-threat-detection/duo-security)
-* [G Suite](docs/integrations/google/workspace/index.md)
+* [G Suite](/docs/integrations/google/workspace/index.md)
 * [Okta](/docs/integrations/saml/Okta)
 * [One Login](/docs/integrations/saml/OneLogin)
 * [Office 365](/docs/integrations/microsoft-azure/Office-365)

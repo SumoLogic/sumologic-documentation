@@ -20,11 +20,11 @@ The CyberArk EPM Source consumes Sets and admin audit events.
 * **Admin Audit Events** are events created by performing actions using the EPM console, after login in, either directed or remotely by API.
 
 ## Create a CyberArk EPM Source​
-When you create a CyberArk EPM Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](docs/send-data/hosted-collectors/configure-hosted-collector.md).
+When you create a CyberArk EPM Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 
 **To configure a CyberArk EPM Source**
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data > Collection > Collection**.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select **CyberArk EPM**. <br/><img src={useBaseUrl('img/send-data/cyberark-source.png')} alt="cyberark-source.png" width="450"/>
 1. **Name**. Enter a Name to display for the Source in the Sumo Logic web application.

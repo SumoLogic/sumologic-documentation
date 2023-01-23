@@ -4,10 +4,7 @@ title: queryTimeRange Search Operator
 sidebar_label: queryTimeRange()
 ---
 
-
-
-The queryTimeRange() operator returns the time duration for the query being executed in milliseconds. You can use it to establish time ranges for your continuous queries (CQs). This is a preferred operator for queries that are run in live dashboards or real time scheduled searches since it is more accurate than <a href="#queryStartTime">queryStartTime()</a> and <a href="#queryEndTime">queryEndTime()</a> operators in these cases.
-
+The `queryTimeRange()` operator returns the time duration for the query being executed in milliseconds. You can use it to establish time ranges for your continuous queries (CQs). This is a preferred operator for queries that are run in live dashboards or real time scheduled searches since it is more accurate than [queryStartTime](querystarttime.md) and [queryEndTime](queryendtime.md) operators in these cases.
 
 ## Syntax
 
@@ -15,11 +12,11 @@ The queryTimeRange() operator returns the time duration for the query being exec
 queryTimeRange() as <field>
 ```
 
-**Rules**
+## Rules
 
 * An alias is required.
 
-**Examples**
+## Examples
 
 To get the range of time for your query:
 

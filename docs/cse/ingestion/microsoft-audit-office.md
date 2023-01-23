@@ -17,7 +17,7 @@ In this step, you configure an Microsoft 365 Audit Source to collect Microsoft 3
 
 ### Configure a Hosted Collector
 
-1. In the Sumo Logic platform, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  
@@ -28,16 +28,15 @@ In this step, you configure an Microsoft 365 Audit Source to collect Microsoft 3
 1. **Fields**. 
     1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
     1. If all sources in this collector will be Microsoft 365 sources, add an additional field with key `_parser` and value */Parsers/System/Microsoft/Office 365.*
-
-:::note
-It’s also possible to configure individual sources to forward to CSE, as described in the following section.
-:::
+    :::note
+    It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+    :::
 
 ### Configure Office 365 Audit Source
 
 Each Microsoft 365 Content Type must have its own source. Follow these steps for each Microsoft 365 Content Type you wish to collect.
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. Navigate to the Hosted Collector where you want to create the source.
 1. Click **Add Source** next to  the Hosted Collector.
 1. Select **Office 365 Audit.** 

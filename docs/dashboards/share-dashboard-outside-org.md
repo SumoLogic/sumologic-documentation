@@ -24,7 +24,7 @@ Before you can share a dashboard with users external to your org, you must enabl
 
 In this step you enable sharing of dashboards outside your organization. You must have Admin privileges to enable the policy.
 
-1. Go to **Administration** \> **Security** \> **Policies**.
+1. Go to **Administration** > **Security** > **Policies**.
 1. Select the **Enable** check box for **Share Dashboards Outside of the Organization**.
 1. The policy is changed. It can take up to 5 minutes for the policy to go into effect.
 
@@ -35,11 +35,11 @@ You must have specific role capabilities to share a dashboard with external user
 * **Share Dashboards with the Allowlist.** Share dashboards with users on the allowlist.
 * The **Share Dashboards with the World.** Share dashboards with external user users. 
 
-If you do not already have a role that grants you the required capability, an Admin user can assign you one, as described on [Assign Roles to Users](docs/manage/users-roles/roles/add-remove-users-role.md) , or create a new one as necessary, as described on [Create a New Role](docs/manage/users-roles/roles/create-manage-roles.md). 
+If you do not already have a role that grants you the required capability, an Admin user can assign you one, as described on [Assign Roles to Users](/docs/manage/users-roles/roles/add-remove-users-role.md) , or create a new one as necessary, as described on [Create a New Role](/docs/manage/users-roles/roles/create-manage-roles.md). 
 
 ## Add external users to service allowlist
 
-If you want to share dashboards with specific external users, rather than the world, the service allowlist must be enabled, and you must provide the list of IPs or CIDRs that will be able to view dashboards without logging in. For instructions, see [Enable Dashboard Allowlist](docs/manage/security/create-allowlist-ip-cidr-addresses.md).
+If you want to share dashboards with specific external users, rather than the world, the service allowlist must be enabled, and you must provide the list of IPs or CIDRs that will be able to view dashboards without logging in. For instructions, see [Enable Dashboard Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses.md).
 
 :::note
 Administrator privileges are required to enable the service allowlist.
@@ -84,7 +84,7 @@ If you would like to embed the shared dashboard in a web page, you can get an i
 
 ## Logging for externally-shared dashboards
 
-If you have the [Audit Index](docs/manage/security/audit-index.md) enabled, Sumo logs key sharing events. 
+If you have the [Audit Index](/docs/manage/security/audit-index.md) enabled, Sumo logs key sharing events. 
 
 When a user shares a dashboard outside of the organization, Sumo logs the following information:
 
