@@ -43,7 +43,7 @@ For example, in Slack, you can add the following section to the alert payload:
 
 ![alertResponseURLExample.png](/img/monitors/alertResponseURLExample.png)
 
-Learn more about [Alert Variables](../alert-variables.md).
+Learn more about [Alert Variables](/docs/alerts/monitors/alert-variables).
 
 ## Where are the Log Fluctuation and Dimensional Explanation Cards for metrics-based Alerts?
 

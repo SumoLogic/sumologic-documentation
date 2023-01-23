@@ -224,7 +224,7 @@ When a trigger condition is met you can send notifications to other people and s
 
 Metric Monitors have an option to send notifications either as a group or separately. **Group Notifications** define whether you want single notifications per time series that match the Monitor query or you want group notifications where you receive a single notification for the entire Monitor. Log Monitors always group notifications.
 
-The **Connection Type** specifies the notification channel where you want to get notified, such as an email or webhook. See [Connections](/docs/manage/connections-integrations) for details. Monitor notifications support variables to reference its configuration settings or your raw data. See [alert variables](../alert-variables.md) for a table of the available variables.
+The **Connection Type** specifies the notification channel where you want to get notified, such as an email or webhook. See [Connections](/docs/manage/connections-integrations) for details. Monitor notifications support variables to reference its configuration settings or your raw data. See [alert variables](/docs/alerts/monitors/alert-variables) for a table of the available variables.
 * **Email**: Provide 1-100 recipient email addresses. You can customize the email subject and body.
 * **Webhook**: By default, the payload defined on the Connection is used. You can customize your payload for each notification if needed.
 

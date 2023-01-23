@@ -17,7 +17,7 @@ By assembling relevant context from prior alerts and by analyzing patterns in lo
 
 Email alerts automatically get a button labeled **View Alert** that opens the alert on the Alert page, shown in the below image.<br/> ![view alert from email.png](/img/monitors/view-alert-from-email.png)
 
-If you use [Webhook connections](/docs/alerts/webhook-connections) offered by Sumo Logic for receiving notifications, you'll need to provide the [`alertResponseUrl` variable](../alert-variables.md) in your notification payload of a Monitor to receive a link that opens Alert Response. When your Monitor is triggered, it will generate a URL and provide it in the alert notification payload, which you can use to open the Alert Response.
+If you use [Webhook connections](/docs/alerts/webhook-connections) offered by Sumo Logic for receiving notifications, you'll need to provide the [`alertResponseUrl` variable](/docs/alerts/monitors/alert-variables) in your notification payload of a Monitor to receive a link that opens Alert Response. When your Monitor is triggered, it will generate a URL and provide it in the alert notification payload, which you can use to open the Alert Response.
 
 The following is an example Slack payload with the variable:
 ```json

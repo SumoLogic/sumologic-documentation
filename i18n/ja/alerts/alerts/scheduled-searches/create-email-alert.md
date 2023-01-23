@@ -42,6 +42,6 @@ description: Create a Scheduled Search Email Alert.
 
 ## Alert Variables
 
-See [Alert Variables](../alert-variables.md) for more information and examples of variables to use in your email alerts.
+See [Alert Variables](/docs/alerts/monitors/alert-variables) for more information and examples of variables to use in your email alerts.
 
  
