@@ -69,7 +69,7 @@ A user wants to create a monitor to track CPU and be notified if any node within
 * **Query**: `metric=CPU_sys`
 * **Group Condition**: Service, env <br/><img src={useBaseUrl('img/monitors/usecase2.png')} alt="alert-grouping" />
 * **Alert Evaluation Logic**: If `CPU_sys` for any node within a service,env is greater than `60`, then an alert notification will be generated for that service within a given environment (if it was not already generated).
-* **Recovery Evaluation Logic**:
+* **Recovery Evaluation Logic:**
     * If `CPU_sys` for all the nodes within a service,env is less than equal to `60`, then recover the alert for that particular service within a given environment.
     * Chart below shows how the alert and recovery notification would have fired for some hypothetical service, env under various times (T0 -T3).
     * Red boxes shows that triggered the alert, and green boxes shows what resolved the alerts.<br/><img src={useBaseUrl('img/monitors/usecase2x.png')} alt="alert-grouping" />
