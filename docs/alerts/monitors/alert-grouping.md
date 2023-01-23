@@ -20,8 +20,8 @@ Alert Grouping works for both Logs and Metrics Monitors.
 
 ### Metrics
 
-1. Go to **Manage Data** > **Monitoring** > **Monitors**:
-2. Click **Add a New monitor**:
+1. Go to **Manage Data** > **Monitoring** > **Monitors**.
+2. Click **Add a New monitor**.
 3. Select **Metrics** as the type of Monitor.
 4. Enter your metrics query, then select your desired Alert Grouping option.
    * **One alert per monitor**: If you only want to receive a single alert for the entire monitor.
@@ -32,8 +32,8 @@ Alert Grouping works for both Logs and Metrics Monitors.
 
 ### Logs
 
-1. Go to **Manage Data** > **Monitoring** > **Monitors**:
-2. Click **Add a New monitor**:
+1. Go to **Manage Data** > **Monitoring** > **Monitors**.
+2. Click **Add a New monitor**.
 3. Select **Logs** as the type of Monitor.
 4. Enter your logs query, then select your desired Alert Grouping option:
    * **One alert per monitor**: Choose this option if you want to only receive a single alert for the entire monitor.
@@ -139,7 +139,7 @@ This scenario, which is only applicable for Logs Monitors (not for Metrics), can
 
 #### How does "One alert per [group]" impact Alert Audit Logs?  
 
-Each alert generated in Sumo Logic generates an **Alert Created** audit log entry. When an alert is generated for specific grouping condition, the grouping information is captured in the Audit Log under the **alertingGroup** > **groupKey**:<br/><img src={useBaseUrl('img/monitors/alertauditlogs.png')} alt="alert-grouping" />
+Each alert generated in Sumo Logic generates an **Alert Created** audit log entry. When an alert is generated for specific grouping condition, the grouping information is captured in the Audit Log under the **alertingGroup** > **groupKey**.<br/><img src={useBaseUrl('img/monitors/alertauditlogs.png')} alt="alert-grouping" />
 
 
 #### What happens if field(s) used in my Alert Grouping condition don’t exist or have null values?
