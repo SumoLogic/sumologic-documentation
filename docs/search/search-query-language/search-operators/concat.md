@@ -90,4 +90,4 @@ To use more than 16 inputs with the concat operator, you can combine operators, 
 
 ## Formatting strings
 
-For information on formatting strings, see [`format`](format.md) operator.
+For information on formatting strings, see the [`format`](format.md) operator.
