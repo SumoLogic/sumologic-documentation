@@ -232,11 +232,6 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 
 
     ![stream-to-aws-lambda.png](/img/send-data/stream-to-aws-lambda.png)
-1. Select the Lambda function that begins with "SumoCWLogsLambda", then click **Next**.
-
-    ![lambda-function.png](/img/send-data/lambda-function.png)
-1. On the **Create Lambda subscription filter** page, select a **Log format**, and enter a **Subscription filter pattern** and **Subscription filter name**.
-1. Select the log data to test, then click **Test pattern**. If test results look fine, click **Start Streaming**.
 
 ### Auto-subscribe other log groups to SumoCWLogsLambda function
 
