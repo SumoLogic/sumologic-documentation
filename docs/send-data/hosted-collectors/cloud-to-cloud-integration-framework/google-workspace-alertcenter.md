@@ -46,11 +46,11 @@ To create Google Workspace AlertCenter service account credentials:
    * [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2)
    * [Setting up OAuth 2.0](https://support.google.com/cloud/answer/6158849?hl=en)
   :::
-7. For delegated user email, you need to add the email of the user whom you want to delegate for API calls.
+1. For delegated user email, you need to add the email of the user whom you want to delegate for API calls.
 
 ## Step 2: Configure the Google Workspace AlertCenter Source
 
-1. In Sumo Logic, go to **Manage Data > Collection > Collection**.
+1. In Sumo Logic, go to **Manage Data** > **Collection** > **Collection**.
 1. On the **Collectors page**, click **Add Source** next to a Hosted Collector.
 1. Select **Google Workspace AlertCenter**. <br/> <img src={useBaseUrl('img/send-data/alertcenter-icon.png')} alt="<alertcenter-icon" width="140"/>
 1. **Name.** Enter a name for the Source
