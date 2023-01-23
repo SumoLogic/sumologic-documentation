@@ -107,7 +107,7 @@ A user wants to get an alert if all hosts from a given service has stopped sendi
 * **Query**: `metric=CPU_sys`
 * **Group Condition**: service <br/><img src={useBaseUrl('img/monitors/usecase5.png')} alt="alert-grouping" />
 * **Alert Evaluation Logic**: If all the hosts stop sending data (`CPU_sys` metric is not being sent) then generate an alert for a given service, then an alert notification will be generated for that service (if it was not already generated). The list of hosts for a service will be computed and updated on a periodic basis.
-* **Recovery Evaluation Logic**:
+* **Recovery Evaluation Logic:**
     * If any of the hosts for a given service start sending the data, then resolve the alert.
     * If a host stops sending data for more than 24 hours, then remove that host from the list of hosts for a service. Evaluate again if `missingData` is resolved based on the remaining hosts. If yes, then resolve; if not, then keep it open.<br/><img src={useBaseUrl('img/monitors/usecase5x.png')} alt="alert-grouping" />
 
