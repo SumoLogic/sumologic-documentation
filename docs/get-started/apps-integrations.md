@@ -21,7 +21,7 @@ Sumo Logic Apps address these common use cases:
 Learn how to install apps from the library and to multiple environments.
 
 | Account Type | Account Level |
-| -- | -- |
+| :-- | :-- |
 | Cloud Flex | Trial, Professional, Enterprise |
 | Credits | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -137,7 +137,7 @@ Searches from Enterprise Apps, which require a paid Professional Services contr
 
 To run a search from a Sumo Logic App:
 
-1. Find the Sumo Logic App for the data Source you would like to search in the App Catalog (**Library \> Apps** in the classic UI). For example, we've picked Cloud Passage Halo's **Outlier in Critical Issues**.
+1. Find the Sumo Logic App for the data Source you would like to search in the App Catalog (**Library > Apps** in the classic UI). For example, we've picked Cloud Passage Halo's **Outlier in Critical Issues**.
 
     ![Outlier in critical issues](/img/get-started/library/FindSearchInApp.png)
 
@@ -185,7 +185,7 @@ However, if you want to use multiple metadata fields as your filter criteria, f
 The table below has examples of custom data filters.
 
 | Custom Data Filter | Description |
-| -- | -- |
+| :-- | :-- |
 | `_sourceHost=stage-EMEA* AND _sourceCategory=Apache*` | App searches will return data whose source host begins with the string stage-EMEA and whose source category begins with the string Apache. |
 | `_sourceCategory=Apache* AND "dev-us"` | App searches will return log data that contains the string dev-us whose source category begins with the string Apache. |
 | `_sourcehost = "Jon Smith"` | App searches will return data whose source host is Jon Smith. If a metadata field value contains spaces, you must use quotes. |

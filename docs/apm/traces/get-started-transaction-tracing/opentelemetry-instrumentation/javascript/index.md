@@ -1,5 +1,5 @@
 ---
-slug: /apm/traces/get-started-transaction-tracing/javascript
+slug: /apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/javascript
 title: JavaScript OpenTelemetry auto-instrumentation
 sidebar_label: JavaScript OpenTelemetry auto-instrumentation
 description: Learn how to instrument your JavaScript/NodeJS services using the Sumo Logic distribution for OpenTelemetry JS (recommended) or the official OpenTelemetry distribution.

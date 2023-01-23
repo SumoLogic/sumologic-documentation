@@ -16,7 +16,7 @@ Fields specified in field extraction rules are automatically added and enabled i
 
 To create a Field Extraction Rule:
 
-1. Go to **Manage Data** \> **Logs** \> **Field Extraction Rules**.
+1. Go to **Manage Data** > **Logs** > **Field Extraction Rules**.
 1. Click the **+ Add** button on the top right of the table.
 1. The **Add Field Extraction Rule** form will appear:<br/> ![Create Field extraction rule with dynamic parsing.png](/img/field-extraction-rules/create-fer.png)
 1. Enter the following options:
@@ -76,7 +76,7 @@ parse "user=\"*\" action=\"*\" sessionId=\"*\"" as user, action, sessionid
 **Resulting Fields:**
 
 | Field Name | Description | Example |
-|--|--|--|
+|:--|:--|:--|
 | user | User Email Address | `test@email.com` |
 | action | Action performed by the user | Delete |
 | sessionId | Session ID for user action | 145623 |

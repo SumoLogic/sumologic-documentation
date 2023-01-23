@@ -23,7 +23,7 @@ parse regex "^[^#].*?(?<s_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<cs_method>\S
 **Resulting Fields:**
 
 | Field | Description | Example |
-|--|--|--|
+|:--|:--|:--|
 | s_ip | IP address of the server on which the log file entry was generated | 10.0.0.103 |
 | cs_method | Requested action | POST |
 | cs_uri_stem | Target of the action | /ConfigWeb/ManageUsers.aspx |

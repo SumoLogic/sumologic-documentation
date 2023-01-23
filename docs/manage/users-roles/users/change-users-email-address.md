@@ -7,7 +7,7 @@ description: As a Sumo Logic Administrator, you can change a user’s email addr
 
 As a Sumo Logic Administrator, you can change a user’s email address.
 
-1. Go to **Administration** \> **Users and Roles** \> **Users**.
+1. Go to **Administration** > **Users and Roles** > **Users**.
 
     ![user-options-menu.png](/img/users-roles/user-options-menu.png)
 

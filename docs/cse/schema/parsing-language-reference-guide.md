@@ -121,19 +121,19 @@ Although Java supports backtracking and possessive sequences as well, their use 
 JSON is parsed and flattened. Fields of sub-objects are prepended with the containing field name and separated with periods. For example,
 
 | This JSON                                     | Results in                                                    |
-|-----------------------------------------------|---------------------------------------------------------------|
+|:-----------------------------------------------|:---------------------------------------------------------------|
 | `{“foo”: {“bar”: 2, “barrier”: 3}, “baz”: 4}` | `foo.bar = 2             foo.barrier = 3             baz = 4` |
 
 List items have a one-based index number inserted between the containing field name and the sub-object field names. For example,
 
 | This JSON                                              | Results in                                                                                    |
-|--------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+|:--------------------------------------------------------|:-----------------------------------------------------------------------------------------------|
 | `{“foo”: [{“bar”: 1, “baz”: 2}, {“bar”: 3, “baz”: 4}]` | `foo.1.bar = 1             foo.1.baz = 2             foo.2.bar = 3             foo.2.baz = 4` |
 
 By default, an index number is inserted, even in a single element list. For example, 
 
 | This JSON                       | Results in            |
-|---------------------------------|-----------------------|
+|:---------------------------------|:-----------------------|
 | `{“test”: [{“field”:”value”}]}` | `test.1.field: value` |
 
 However, if you set the JSON_FLATTEN_SINGLE_LISTS flag to true, an index value *is not* inserted in the single element list. This is useful for collapsing redundant JSON elements from sources like AWS.
@@ -141,7 +141,7 @@ However, if you set the JSON_FLATTEN_SINGLE_LISTS flag to true, an index value *
 When JSON_FLATTEN_SINGLE_LISTS is true:
 
 | This JSON                       | Results in           |
-|---------------------------------|----------------------|
+|:---------------------------------|:----------------------|
 | `{“test”: [{“field”:”value”}]}` | `test.field: value,` |
 
 ### CSV parsing

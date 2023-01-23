@@ -90,7 +90,7 @@ Now that you have setup SAML successfully, update the Roles Attribute (Optional)
 
 To update the roles attribute:
 
-1. In Sumo Logic, go to **Administration \> Security \> SAML**.
+1. In Sumo Logic, go to **Administration > Security > SAML**.
 1. Click **Configure**.
 
     ![Roles attribute](/img/security/roles-attribute2.png)

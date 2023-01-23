@@ -120,7 +120,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Graphite](/docs/metrics/introduction/Metric-Formats#Graphite_example)**. A plaintext metric format where the thing you’re measuring is identified by a dot-separated string, referred to as a metric path. Sumo’s [HTTP source](/docs/send-data/hosted-collectors/HTTP-Source) and [Streaming Metric Source](/docs/send-data/installed-collectors/sources/Streaming-Metrics-Source) support Graphite metrics.
 
-**[Group](/docs/search/search-query-language/group-aggregate-operators)**. Group-by functions include count, count_distinct, sum, avg, stddev, max, min, last, and first. You can use "group" or "by" instead of "group by", so "count (*) group by user" is equivalent to "count by user". All group-by functions create a corresponding field preceded by an underscore, for example, _count.
+**[Group](/docs/search/search-query-language/group-aggregate-operators)**. Group-by functions include `count`, `count_distinct`, `sum`, `avg`, `stddev`, `max`, `min`, `last`, and `first`. You can use "group" or "by" instead of "group by", so `"count (*) group by user"` is equivalent to `"count by user"`. All group-by functions create a corresponding field preceded by an underscore, for example, `_count`.
 
 
 

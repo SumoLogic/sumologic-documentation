@@ -22,7 +22,7 @@ which would produce results such as:
 
 ## Create a pie chart
 
-1. Create or open a Dashboard (New) and click on **Add Panel \> Categorical**.
+1. Create or open a Dashboard (New) and click on **Add Panel > Categorical**.
 
     ![categorical.png](/img/dashboards-new/panels/pie-charts/categorical.png)
 

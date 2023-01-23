@@ -16,7 +16,7 @@ You must have a role that grants you the Manage Org Settings [capability](../use
 
 To enable that **Data Access Level for Shared Dashboards security policy:
 
-1. Go to **Administration \> **Security** \> **Policies**.
+1. Go to **Administration > **Security** > **Policies**.
 1. Click the checkbox in the **Data Access Level for Shared Dashboards** section.
 
  

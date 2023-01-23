@@ -15,7 +15,7 @@ Looking for instructions on resetting your own password? See [Changing Your Pas
 
 To reset a user's password follow these steps:
 
-1. Go to **Administration** \> **Users and Roles** \> **Users**.
+1. Go to **Administration** > **Users and Roles** > **Users**.
 
     ![user-options-menu.png](/img/users-roles/reset-password.png)
 

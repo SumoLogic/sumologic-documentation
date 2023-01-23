@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Security page is available only to administrators.
 
-This guide has information about the options available on the Security page. To access the Security page, go to **Administration** \> **Security**. 
+This guide has information about the options available on the Security page. To access the Security page, go to **Administration** > **Security**. 
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

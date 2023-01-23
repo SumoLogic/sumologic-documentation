@@ -158,7 +158,7 @@ _sourceCategory=OS/Windows 4624
 
 ### Consecutive failed logins on a local machine
 
-* Suggested Time Range:-15m; Save as a search to run every 15 minutes and return results if the number of messages is \>1.
+* Suggested Time Range:-15m; Save as a search to run every 15 minutes and return results if the number of messages is >1.
 
 ```sql
 _sourceCategory=OS/Windows 4625

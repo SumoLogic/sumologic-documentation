@@ -15,7 +15,7 @@ Although the Sumo Logic Service can be accessed on devices with Internet connec
 Sumo Logic tests the service on several browsers to ensure a consistent experience with each feature update and supports the following web browser versions:
 
 | Browser | Supported Versions |
-|------------------|------------------------|
+|:------------------|:------------------------|
 | Chrome\*         | Latest two versions    |
 | Firefox\*        | Latest two versions    |
 | Microsoft Edge\* | Latest two versions    |

@@ -22,7 +22,7 @@ To ensure that the appropriate threat rule or rules are applied to a message, th
 In the **Field Mappings** section of the log mapper, map these attributes.
 
 | Attribute             | Mapping instruction                           |
-|-----------------------|-----------------------------------------------|
+|:-----------------------|:-----------------------------------------------|
 | `threat_ruleType`     | Map to the value “intrusion”.                 |
 | `threat_name`         | Map to the intrusion system’s signature name. |
 | `normalizedSeverity ` | Map to the severity value from the message.   |
@@ -32,7 +32,7 @@ In the **Field Mappings** section of the log mapper, map these attributes.
 In the **Field Mappings** section of the log mapper, map these attributes.
 
 | Attribute            | Mapping instruction                                                       |
-|----------------------|---------------------------------------------------------------------------|
+|:----------------------|:---------------------------------------------------------------------------|
 | `threat_ruleType`    | Map to the value “malware”.                                               |
 | `threat_name`        | Map to the antivirus signature or virus name, for example “Trojan.Crypt”. |
 | `normalizedSeverity` | Map to the severity value from the message.                               |
@@ -43,7 +43,7 @@ In the **Field Mappings** section of the log mapper, map these
 attributes.
 
 | Attribute | Mapping instruction |
-|--|--|
+|:--|:--|
 | `threat_ruleType` | Map to the value “direct”. |
 | `threat_signalName` | Map this to the field or fields that should be used as the name of Signal generated for a message. You can do this with a standard field mapping. If you want to map to a formatted combination of message fields, use a format field mapping.<br/>Note When the built-in Normalized Security Signal rule fires a Signal, the Signal name will be the value of threat_signalName, resulting in Signal names of this form: `{threat_signalName}` |
 | `threat_name` | Map to the alert name contained in the message. |

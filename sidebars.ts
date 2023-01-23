@@ -31,6 +31,7 @@ module.exports = {
         'get-started/library',
         'get-started/sumo-logic-ui',
         'get-started/keyboard-shortcuts',
+        'get-started/quickstart',
         'get-started/help',
         'get-started/faq',
       ],
@@ -168,6 +169,7 @@ module.exports = {
               link: {type: 'doc', id: 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/index'},
               items: [
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
@@ -428,20 +430,6 @@ module.exports = {
         'send-data/data-enrichment',
         'send-data/best-practices',
         'send-data/collector-faq',
-        {
-    // *** QUICKSTARTS & TUTORIALS
-          type: 'category',
-          label: 'Quickstart Tutorials',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'quickstart/index'},
-          items: [
-            'observability/aws/quickstart',
-            'observability/kubernetes/quickstart',
-            'apm/traces/quickstart',
-            'manage/ingestion-volume/ingest-budgets/quickstart',
-          ],
-        },
       ],
     },
   ],
@@ -1433,7 +1421,16 @@ module.exports = {
                   'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net/traceid-spanid-injection-into-logs',
                 ],
               },
-              'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python',
+              {
+                type: 'category',
+                label: 'Python',
+                collapsible: true,
+                collapsed: true,
+                link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python/index'},
+                items: [
+                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python/traceid-spanid-injection-into-logs',
+                ],
+              },
               'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby-on-rails',
               'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby',
             ],
@@ -1899,6 +1896,7 @@ module.exports = {
         'integrations/security-threat-detection/f5-big-ip-ltm',
         'integrations/security-threat-detection/imperva-incapsula',
         'integrations/security-threat-detection/keeper-security',
+        'integrations/security-threat-detection/netskope-legacy-collection',
         'integrations/security-threat-detection/netskope',
         'integrations/security-threat-detection/observable-networks',
         'integrations/security-threat-detection/palo-alto-networks-6',
@@ -2237,8 +2235,8 @@ module.exports = {
           collapsible: true,
           collapsed: true,
           items: [
-            'contributing/templates/partner-app',
-            'contributing/templates/template-doc'
+            'contributing/templates/generic-doc',
+            'contributing/templates/partner-app-doc',
           ]
         }
       ],
