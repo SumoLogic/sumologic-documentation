@@ -44,7 +44,7 @@ Before you begin, perform the steps in [Offboard a User.](offboard-user.md) The
 Use caution when deleting a user. This action can't be undone.
 :::
 
-1. Go to **Administration** \> **Users and Roles** \> **Users**.  
+1. Go to **Administration** > **Users and Roles** > **Users**.  
 
     ![user-options-menu.png](/img/users-roles/users-page.png)
 
@@ -61,7 +61,7 @@ Use caution when deleting a user. This action can't be undone.
 Use caution when deleting a user. This action can't be undone.
 :::
 
-1. Go to  **Administration** \> **Users and Roles** \> **Users**.  
+1. Go to  **Administration** > **Users and Roles** > **Users**.  
 
     ![users-page-2.png](/img/users-roles/users-page-2.png)
 

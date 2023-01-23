@@ -1,5 +1,5 @@
 ---
-id: partner-app
+id: partner-app-doc
 title: Partner App Template
 sidebar_label: Partner App Template
 description: Using the Sumo Logic Partner App Template.
@@ -17,7 +17,7 @@ App description: Describe the application, then fill in the following table.
 
 
 | Dashboard | Description |
-| -- | -- |
+| :-- | :-- |
 | "dashboard name" | "dashboard description" |
 
 ## "App Name" Page
@@ -109,8 +109,6 @@ Replace this sample image with one of your App Dashboard, using red box callout:
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 Replace sample image with panel from your App Dashboard, using red box callout:
-
-
 
 Use the instructions from [Install Sumo Logic Apps](/docs/get-started/apps-integrations#install-apps-from-the-library) to install the "Partner" App.
 

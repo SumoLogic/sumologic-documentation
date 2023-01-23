@@ -9,7 +9,7 @@ You can visualize trace data through filtered trace lists and icicle charts. The
 
 ## Traces page
 
-Use Traces to search and view traces. To open, go to **+ New \> Traces**.
+Use Traces to search and view traces. To open, go to **+ New > Traces**.
 
 ![traces menu option.png](/img/traces/traces-menu-option.png)
 

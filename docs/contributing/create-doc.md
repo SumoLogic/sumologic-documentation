@@ -1,7 +1,7 @@
 ---
 id: create-doc
 title: Create and Publish Sumo Logic Document
-sidebar_label: Create a Doc
+sidebar_label: Create a New Doc
 description: Learn how to create a doc, write content in markdown, and submit your changes to our repo.
 ---
 

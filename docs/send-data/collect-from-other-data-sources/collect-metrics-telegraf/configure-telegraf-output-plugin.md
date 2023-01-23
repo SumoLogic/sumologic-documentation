@@ -113,7 +113,7 @@ The format of the metrics to be sent. The value you specify will be used to set 
 Supported values for `data_format` are: 
 
 | Value        | Content-Type                         |
-|--------------|--------------------------------------|
+|:--------------|:--------------------------------------|
 | “graphite”   | application/vnd.sumologic.graphite   |
 | “carbon2”    | application/vnd.sumologic.carbon2    |
 | “prometheus” | application/vnd.sumologic.prometheus |

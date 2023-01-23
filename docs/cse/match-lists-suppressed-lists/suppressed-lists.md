@@ -97,7 +97,7 @@ Perform the steps below to create a Suppressed List and add an indicator to it u
     ![suppressed-list-page-2.png](/img/cse/suppressed-list-page-2.png)
 
 1. Click the name of the Suppressed List to open it.
-1. On the **Suppressed List \> Details** page, click **ADD LIST ITEM**.
+1. On the **Suppressed List > Details** page, click **ADD LIST ITEM**.
 
     ![add-list-item.png](/img/cse/add-list-item.png)
 

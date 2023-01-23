@@ -176,7 +176,7 @@ You can use filters to drill down and examine the data on a granular level. Filt
 
 **Gmail Trace Logs - Security Overview**. This dashboard lets you monitor spam messages, malware threats, dropped messages, and rejected messages.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/tracelogsapp-overview.png')} alt="Gmail TraceLogs Overview" width="900"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/tracelogsapp-overview.png')} alt="Gmail Trace Logs Overview" width="900"/>
 
 **CrowdStrike Analysis**. To protect your organisation from threats, the app also scans the SHA256 hash of Gmail attachments with CrowdStrike's threat detection service.
 

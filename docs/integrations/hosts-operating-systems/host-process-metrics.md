@@ -493,7 +493,7 @@ Use this dashboard to:
 Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 | Alert Name                                    | Alert Description                                                                                                                        | Alert Condition | Recover Condition |
-|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|-----------------|-------------------|
+|:-----------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
 | Host Metrics - High CPU Utilization           | This alert fires when host CPU utilization is over 80%.                                                                                  | > 80 %          | <= 80 %           |
 | Host Metrics - High Network Errors            | This alert fires when a host has encountered network errors in the last five minutes.                                                    | > 1%            | <= 1%             |
 | Host Metrics - Unusual network throughput in  | This alert fires when host network interfaces are receiving an unusually high amount of data (> 100 MB/s) over a 5-minute time interval. | > 100 MB/sec    | <= 100 MB/sec     |
@@ -511,7 +511,7 @@ Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/d
 Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 | Alert Name                                   | Alert Description                                                                                                      | Alert Condition | Recover Condition |
-|----------------------------------------------|------------------------------------------------------------------------------------------------------------------------|-----------------|-------------------|
+|:----------------------------------------------|:------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
 | Process Metrics - High CPU Usage             | This alert fires when the CPU utilization of a process is over 80% of the system CPU.                                  | > 80 %          | <= 80 %           |
 | Process Metrics - High Read Rate             | This alert fires when a process is reading an unusually high amount of data (> 20 MB/s) over a 5-minute time interval. | > 50 MB/sec     | <= 50 MB/sec      |
 | Process Metrics - High Write Rate            | This alert fires when a process is writing an unusually high amount of data (> 20 MB/s) over a 5-minute time interval. | > 50 MB/sec     | <= 50 MB/sec      |

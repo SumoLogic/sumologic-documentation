@@ -8,7 +8,7 @@ description: Control the capacity of daily log ingestion volume sent to Sumo Log
 ## Availability
 
 | Account Type | Account Level |
-|--------------|---------------------------------------------------------------------|
+|:--------------|:---------------------------------------------------------------------|
 | CloudFlex | Enterprise |
 | Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -80,7 +80,7 @@ A few Sources on Hosted Collectors behave differently when instructed tostop col
 
 ### Manage ingest budgets
 
-Use the **Ingest Budgets** page to manage your ingest budgets. Toaccess the page go to **Manage Data** \> **Collection** \> **Ingest Budgets**.
+Use the **Ingest Budgets** page to manage your ingest budgets. Toaccess the page go to **Manage Data** > **Collection** > **Ingest Budgets**.
 
 ![metadata ingest budgetspage.png](/img/ingestion-volume/metadata-ingest-budgets-page.png)
 
@@ -114,7 +114,7 @@ When hovering over a row in the Ingest Budgets table there are icons that appear
 
 #### Create ingest budget
 
-1. In Sumo Logic select **Manage Data** \> **Collection** \> **Ingest Budgets**.
+1. In Sumo Logic select **Manage Data** > **Collection** > **Ingest Budgets**.
 1. Click the **+ Add Budget** button on the top right of the table. A panel named **Create Ingest Budget** appears to the right of the Ingest Budgets table.
 1. Provide the following information, all fields are required except Description.
 
@@ -143,19 +143,19 @@ When hovering over a row in the Ingest Budgets table there are icons that appear
 
 You can manually reset a budget at any time to set its capacity utilization tracking to zero. This won't affect the next scheduled reset time and can be done as many times as needed.
 
-1. In Sumo Logic select **Manage Data** \> **Collection** \> **Ingest Budgets**.
+1. In Sumo Logic select **Manage Data** > **Collection** > **Ingest Budgets**.
 1. In the table find the ingest budget you want to reset and click the row to open its details pane.
 1. Click the **Reset** button.
 
 #### Edit ingest budget
 
-1. In Sumo Logic select **Manage Data** \> **Collection** \> **Ingest Budgets**.
+1. In Sumo Logic select **Manage Data** > **Collection** > **Ingest Budgets**.
 1. In the table find the ingest budget you want to edit and click the edit icon ![pencil edit icon.png](/img/ingestion-volume/pencil-edit-icon.png) on the right of the row or click the row and then click the edit icon in the details panel.
 1. Make your changes and click **Update**.
 
 #### Delete ingest budget
 
-1. In Sumo Logic select ****Manage Data \> Collection \> Ingest Budgets****.
+1. In Sumo Logic select ****Manage Data > Collection > Ingest Budgets****.
 1. In the table find the ingest budget you want to delete and click the delete icon ![delete trash icon.png](/img/ingestion-volume/delete-trash-icon.png) on the right of the row or click the row and then click the delete icon in the details panel.
 1. You will get a confirmation prompt, ensure that you are deleting the desired ingest budget and then click **Delete**.
 

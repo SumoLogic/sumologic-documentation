@@ -86,7 +86,7 @@ parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\
 **Resulting Fields:**
 
 | Field | Description | Example |
-|-----------|-----------------|--------------|
+|:-----------|:-----------------|:--------------|
 | method    |   | GET |
 | status    |   | 200 |
 | origin    |   |   |

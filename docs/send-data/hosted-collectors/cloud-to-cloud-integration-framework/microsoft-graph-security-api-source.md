@@ -85,7 +85,7 @@ When you create a Microsoft Graph Security API Source, you add it to a Hosted C
 
 To configure a Microsoft Graph Security API Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 
@@ -138,7 +138,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | config | JSON Object | Yes | Contains the configuration parameters for the Source. |                                        |
 | schemaRef | JSON Object | Yes | Use `{"type":"Microsoft Graph Security API"}` for a Microsoft Graph Security API Source. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for a Microsoft Graph Security API Source. | not modifiable |
@@ -146,7 +146,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 The following table shows the **config** parameters for a Microsoft Graph Security API Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |

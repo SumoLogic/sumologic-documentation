@@ -107,7 +107,7 @@ We highly recommend you view these dashboards in the [Explore View](../deploy-us
 :::note
 To collect CacheHitCount and CacheMissCount metrics, the API cache should be enabled. Follow the steps below to check if your API cache is enabled:
 
-* On **AWS console**, Go to **API Gateway Service** and select Specific API \> **Stages**.
+* On **AWS console**, Go to **API Gateway Service** and select Specific API > **Stages**.
 * Select the Specific **Stage** and go to the **Settings** tab.
 * The API should have the "**Enable API Cache**" checkbox enabled to enable API caching and to collect the CacheHitCount and CacheMissCount metrics.
 :::

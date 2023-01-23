@@ -15,7 +15,7 @@ At this time, an administrator can:
 
 **To unlock a user's account**
 
-1. Go to **Administration \> Users and Roles \> Users**. 
+1. Go to **Administration > Users and Roles > Users**. 
 
     ![user-options-menu.png](/img/users-roles/user-options-menu.png)
 

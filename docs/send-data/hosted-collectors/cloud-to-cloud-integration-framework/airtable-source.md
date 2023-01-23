@@ -77,7 +77,7 @@ To configure an Airtable Source:
 When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs. | No | Not applicable | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | No | Not applicable | FirstPartyGenericError |
@@ -88,7 +88,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. |
 | `schemaRef` | JSON Object  | Yes | Use `{"type":"Airtable"}` for Airtable Source. | not modifiable |
 | `sourceType` | String | Yes | Use `Universal` for Airtable Source. | not modifiable |
@@ -97,7 +97,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ### Config Parameters
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | `name` | String | Yes | Type the desired name of the Source and it must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`.  | modifiable |
 | `description` | String  | No | Type the description of the Source. | modifiable |
 | `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |

@@ -1,12 +1,10 @@
 ---
 id: luhn
 title: luhn Search Operator
-sidebar_label: Luhn
+sidebar_label: luhn
 ---
 
-
-
-The luhn operator uses Luhn’s algorithm to check message logs for strings of numbers that may be credit card numbers and then validates them. It takes a string as an input, strips out all characters that are not numerals, and checks if the resulting string is a valid credit card number, returning true or false accordingly.
+The `luhn` operator uses Luhn’s algorithm to check message logs for strings of numbers that may be credit card numbers and then validates them. It takes a string as an input, strips out all characters that are not numerals, and checks if the resulting string is a valid credit card number, returning true or false accordingly.
 
 ## Syntax
 
@@ -18,9 +16,9 @@ luhn(<field>) [as <field>]
 luhn("<input string>") [as <field>]
 ```
 
-**Examples**
+## Examples
 
-#### Identify and verify credit card numbers in message logs
+### Identify and verify credit card numbers in message logs
 
 Use the following query to identify credit card numbers in message logs, and verify them using the Luhn operator:
 
@@ -35,7 +33,7 @@ which provides results such as:
 
 ![operator example](/img/reuse/query-search/luhn_operator_example.png)
 
-#### Search for and verify a specific credit card number
+### Search for and verify a specific credit card number
 
 Use the following query to search for a specific credit card number and verify it using the Luhn operator:
 
