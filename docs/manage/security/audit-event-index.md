@@ -66,6 +66,7 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 | Product Feature | _sourceCategory Value  |
 | :-- | :-- |
 | [Access Keys](access-keys.md) | `accessKeys` |
+| [Alerts](/docs/alerts/monitors/alert-response) | `alerts` |
 | [Collection](/docs/manage/collection) | `collection` |
 | [Content Sharing](/docs/manage/content-sharing) | `content` |
 | [Data Forwarding](/docs/manage/data-forwarding) | `dataForwarding` |

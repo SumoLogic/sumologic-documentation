@@ -69,7 +69,7 @@ A user wants to create a monitor to track CPU and be notified if any node within
 * **Query**: `metric=CPU_sys`
 * **Group Condition**: Service, env <br/><img src={useBaseUrl('img/monitors/usecase2.png')} alt="alert-grouping" />
 * **Alert Evaluation Logic**: If `CPU_sys` for any node within a service,env is greater than `60`, then an alert notification will be generated for that service within a given environment (if it was not already generated).
-* **Recovery Evaluation Logic**:
+* **Recovery Evaluation Logic:**
     * If `CPU_sys` for all the nodes within a service,env is less than equal to `60`, then recover the alert for that particular service within a given environment.
     * Chart below shows how the alert and recovery notification would have fired for some hypothetical service, env under various times (T0 -T3).
     * Red boxes shows that triggered the alert, and green boxes shows what resolved the alerts.<br/><img src={useBaseUrl('img/monitors/usecase2x.png')} alt="alert-grouping" />
@@ -107,7 +107,7 @@ A user wants to get an alert if all hosts from a given service has stopped sendi
 * **Query**: `metric=CPU_sys`
 * **Group Condition**: service <br/><img src={useBaseUrl('img/monitors/usecase5.png')} alt="alert-grouping" />
 * **Alert Evaluation Logic**: If all the hosts stop sending data (`CPU_sys` metric is not being sent) then generate an alert for a given service, then an alert notification will be generated for that service (if it was not already generated). The list of hosts for a service will be computed and updated on a periodic basis.
-* **Recovery Evaluation Logic**:
+* **Recovery Evaluation Logic:**
     * If any of the hosts for a given service start sending the data, then resolve the alert.
     * If a host stops sending data for more than 24 hours, then remove that host from the list of hosts for a service. Evaluate again if `missingData` is resolved based on the remaining hosts. If yes, then resolve; if not, then keep it open.<br/><img src={useBaseUrl('img/monitors/usecase5x.png')} alt="alert-grouping" />
 
@@ -116,7 +116,7 @@ A user wants to get an alert if all hosts from a given service has stopped sendi
 
 This alert can be useful if you suspect that one of your collectors has stopped sending data. Once you set this up, you'll get an alert about collector if it's stopped sending data. This alert will work without any issues, even if you add new collectors to your Sumo Logic account.
 
-**Query**:
+* **Query**:  
    ```
    _index=sumologic_volume AND _sourceCategory=collector_volume
    | parse regex "\"(?<collector>[^\"]+)\"\:\{\"sizeInBytes\"\:(?<bytes>\d+)\,\"count\"\:(?<events>\d+)\}" multi nodrop
