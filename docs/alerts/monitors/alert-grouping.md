@@ -1,6 +1,7 @@
 ---
 id: alert-grouping
 title: Alert Grouping
+description: Alert Grouping gives you the flexibility to customize how your alerts and notifications are generated from monitors, allowing you to specify a grouping condition based on specific fields.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -23,9 +24,9 @@ Alert Grouping works for both Logs and Metrics Monitors.
 2. Click **Add a New monitor**.
 3. Select **Metrics** as the type of Monitor.
 4. Enter your metrics query, then select your desired Alert Grouping option.
-   * **One** **alert per monitor:** If you only want to receive a single alert for the entire monitor.
-   * **One alert per time series**: To receive a single alert for each time-series that is present in the metric query
-   * **One alert per [group]**: allows you to receive one notification per each unique value of the grouping field(s). You can pick more than one field for the grouping condition. In the example below, user will receive one notification when CPU utilization is higher than the threshold for each unique AWS namespace within an account.<br/><img src={useBaseUrl('img/monitors/setup-metrics.png')} alt="alert-grouping" />
+   * **One** **alert per monitor**. If you only want to receive a single alert for the entire monitor.
+   * **One alert per time series**. To receive a single alert for each time-series that is present in the metric query
+   * **One alert per [group]**. allows you to receive one notification per each unique value of the grouping field(s). You can pick more than one field for the grouping condition. In the example below, user will receive one notification when CPU utilization is higher than the threshold for each unique AWS namespace within an account.<br/><img src={useBaseUrl('img/monitors/setup-metrics.png')} alt="alert-grouping" />
 5. Configure the rest of your Alert Condition per standard procedure. Refer to [Monitors ](/docs/alerts/monitors)for more details.
 
 
@@ -35,8 +36,8 @@ Alert Grouping works for both Logs and Metrics Monitors.
 2. Click **Add a New monitor**.
 3. Select **Logs** as the type of Monitor.
 4. Enter your logs query, then select your desired Alert Grouping option:
-   * **One alert per monitor**: Choose this option if you want to only receive a single alert for the entire monitor.
-   * **One alert per [group]**: Allows you to receive one notification per each unique value of the grouping field(s). You can pick more than one field for the grouping condition. In the example below, you would receive one alert for each `service` that has error count greater than 50. The input field has an auto-completion dropdown that allows you to select all the applicable fields from your query.<br/><img src={useBaseUrl('img/monitors/setup-logs.png')} alt="alert-grouping" />
+   * **One alert per monitor**. Choose this option if you want to only receive a single alert for the entire monitor.
+   * **One alert per [group]**. Allows you to receive one notification per each unique value of the grouping field(s). You can pick more than one field for the grouping condition. In the example below, you would receive one alert for each `service` that has error count greater than 50. The input field has an auto-completion dropdown that allows you to select all the applicable fields from your query.<br/><img src={useBaseUrl('img/monitors/setup-logs.png')} alt="alert-grouping" />
 5. Configure the rest of your Alert Condition per standard procedure. Refer to [Monitors ](/docs/alerts/monitors)for more details.
 
 The input field has an auto-completion dropdown that allows you to select all the applicable fields from your query.
@@ -51,10 +52,10 @@ Notifications will not be sent for alert groups that already have an active aler
 
 A user wants to create a monitor to track CPU across services, and wants to get notified if any node within a service has CPU > 60%.
 
-* **Query**: `metric=CPU_sys`
-* **Group Condition**: service <br/><img src={useBaseUrl('img/monitors/usecase1.png')} alt="alert-grouping" />
-* **Alert Evaluation Logic**: If `CPU_sys` for any node within a service is greater than `60`, then an alert notification will be generated for that service (if it was not already generated).
-* **Recovery Evaluation Logic**:
+* **Query**. `metric=CPU_sys`
+* **Group Condition**. service <br/><img src={useBaseUrl('img/monitors/usecase1.png')} alt="alert-grouping" />
+* **Alert Evaluation Logic**. If `CPU_sys` for any node within a service is greater than `60`, then an alert notification will be generated for that service (if it was not already generated).
+* **Recovery Evaluation Logic**.
     * If `CPU_sys` for all the nodes within a service is less than equal to `60`, then recover the alert for that particular service
     * Chart below shows how the alert and recovery notification would have fired for some hypothetical services under various times (t0–t3).
     * Red boxes show that triggered the alert, and green boxes show what resolved the alerts.<br/><img src={useBaseUrl('img/monitors/usecase1x.png')} alt="alert-grouping" />
@@ -65,10 +66,10 @@ A user wants to create a monitor to track CPU across services, and wants to get 
 
 A user wants to create a monitor to track CPU and be notified if any node within a service has CPU > 60%, for a given env.
 
-* **Query**: `metric=CPU_sys`
-* **Group Condition**: Service, env <br/><img src={useBaseUrl('img/monitors/usecase2.png')} alt="alert-grouping" />
-* **Alert Evaluation Logic**: If `CPU_sys` for any node within a service,env is greater than `60`, then an alert notification will be generated for that service within a given environment (if it was not already generated).
-* **Recovery Evaluation Logic:**
+* **Query**. `metric=CPU_sys`
+* **Group Condition**. Service, env <br/><img src={useBaseUrl('img/monitors/usecase2.png')} alt="alert-grouping" />
+* **Alert Evaluation Logic**. If `CPU_sys` for any node within a service,env is greater than `60`, then an alert notification will be generated for that service within a given environment (if it was not already generated).
+* **Recovery Evaluation Logic**.
     * If `CPU_sys` for all the nodes within a service,env is less than equal to `60`, then recover the alert for that particular service within a given environment.
     * Chart below shows how the alert and recovery notification would have fired for some hypothetical service, env under various times (T0 -T3).
     * Red boxes shows that triggered the alert, and green boxes shows what resolved the alerts.<br/><img src={useBaseUrl('img/monitors/usecase2x.png')} alt="alert-grouping" />
@@ -77,10 +78,10 @@ A user wants to create a monitor to track CPU and be notified if any node within
 
 A user wants to create a monitor to track errors and be notified if any service in a given env has more than 100 errors.
 
-* **Query**: `error`
-* **Group Condition**: service, env<br/><img src={useBaseUrl('img/monitors/usecase3.png')} alt="alert-grouping" />
-* **Alert Evaluation Logic**: If count of `errors` for any service,env is greater than `100`, then an alert notification will be generated for that service within a given environment (if it was not already generated).
-* **Recovery Evaluation Logic**:
+* **Query**. `error`
+* **Group Condition**. service, env<br/><img src={useBaseUrl('img/monitors/usecase3.png')} alt="alert-grouping" />
+* **Alert Evaluation Logic**. If count of `errors` for any service,env is greater than `100`, then an alert notification will be generated for that service within a given environment (if it was not already generated).
+* **Recovery Evaluation Logic**.
     * If count of errors for any service is less than or equal to `100`, then recover the alert for that particular service within a given environment.
     * Chart below shows how the alert and recovery notification would have fired for some hypothetical services under various times (t0–t3).
     * Red boxes show what triggered the alert, and green boxes show what resolved the alerts.<br/><img src={useBaseUrl('img/monitors/usecase3x.png')} alt="alert-grouping" />
@@ -90,10 +91,10 @@ A user wants to create a monitor to track errors and be notified if any service 
 
 A user wants to create a monitor to track latency from log messages, and wants to get notified if any service has more than 2-second latency.
 
-* **Query**: `* | parse Latency:*s as latency` (parse out latency field from logs)
-* **Group Condition**: service <br/><img src={useBaseUrl('img/monitors/usecase4.png')} alt="alert-grouping" />
-* **Alert Evaluation Logic**: If Latency field for any service is greater than 2 seconds, then an alert notification will be generated for that service (if it was not already generated).
-* **Recovery Evaluation Logic**:
+* **Query**. `* | parse Latency:*s as latency` (parse out latency field from logs)
+* **Group Condition**. service <br/><img src={useBaseUrl('img/monitors/usecase4.png')} alt="alert-grouping" />
+* **Alert Evaluation Logic**. If Latency field for any service is greater than 2 seconds, then an alert notification will be generated for that service (if it was not already generated).
+* **Recovery Evaluation Logic**.
     * If Latency field for any service is less than 2 seconds, then recover the alert for that particular service.
     * Chart below shows how the alert and recovery notification would have fired for some hypothetical services under various times (t0–t3)
     * Red boxes show what triggered the alert, and green boxes show what resolved the alerts.<br/><img src={useBaseUrl('img/monitors/usecase4x.png')} alt="alert-grouping" />
@@ -103,10 +104,10 @@ A user wants to create a monitor to track latency from log messages, and wants t
 
 A user wants to get an alert if all hosts from a given service has stopped sending data. User wants one part per service.
 
-* **Query**: `metric=CPU_sys`
-* **Group Condition**: service <br/><img src={useBaseUrl('img/monitors/usecase5.png')} alt="alert-grouping" />
-* **Alert Evaluation Logic**: If all the hosts stop sending data (`CPU_sys` metric is not being sent) then generate an alert for a given service, then an alert notification will be generated for that service (if it was not already generated). The list of hosts for a service will be computed and updated on a periodic basis.
-* **Recovery Evaluation Logic:**
+* **Query**. `metric=CPU_sys`
+* **Group Condition**. service <br/><img src={useBaseUrl('img/monitors/usecase5.png')} alt="alert-grouping" />
+* **Alert Evaluation Logic**. If all the hosts stop sending data (`CPU_sys` metric is not being sent) then generate an alert for a given service, then an alert notification will be generated for that service (if it was not already generated). The list of hosts for a service will be computed and updated on a periodic basis.
+* **Recovery Evaluation Logic**.
     * If any of the hosts for a given service start sending the data, then resolve the alert.
     * If a host stops sending data for more than 24 hours, then remove that host from the list of hosts for a service. Evaluate again if `missingData` is resolved based on the remaining hosts. If yes, then resolve; if not, then keep it open.<br/><img src={useBaseUrl('img/monitors/usecase5x.png')} alt="alert-grouping" />
 
@@ -115,7 +116,7 @@ A user wants to get an alert if all hosts from a given service has stopped sendi
 
 This alert can be useful if you suspect that one of your collectors has stopped sending data. Once you set this up, you'll get an alert about collector if it's stopped sending data. This alert will work without any issues, even if you add new collectors to your Sumo Logic account.
 
-* **Query**:  
+**Query**:
    ```
    _index=sumologic_volume AND _sourceCategory=collector_volume
    | parse regex "\"(?<collector>[^\"]+)\"\:\{\"sizeInBytes\"\:(?<bytes>\d+)\,\"count\"\:(?<events>\d+)\}" multi nodrop

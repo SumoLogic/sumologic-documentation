@@ -2579,7 +2579,7 @@
   "/Visualizations-and-Alerts": "/docs/alerts",
   "/Visualizations-and-Alerts/Alerts": "/docs/alerts",
   "/Visualizations-and-Alerts/Alerts/Alert_Grouping": "/docs/alerts/monitors/alert-grouping",
-  "/Visualizations-and-Alerts/Alerts/Alert_Variables": "/docs/alerts/alert-variables",
+  "/Visualizations-and-Alerts/Alerts/Alert_Variables": "/docs/alerts/monitors/alert-variables",
   "/Visualizations-and-Alerts/Alerts/Monitors": "/docs/alerts/monitors",
   "/Visualizations-and-Alerts/Alerts/Monitors/Monitor_FAQ": "/docs/alerts/monitors/monitor-faq",
   "/Visualizations-and-Alerts/Alerts/Monitors/Terminology": "/docs/alerts/monitors",

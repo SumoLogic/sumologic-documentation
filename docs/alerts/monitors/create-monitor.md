@@ -6,7 +6,7 @@ description: Learn how to create a Sumo Logic monitor.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This document shows you how to create a monitor.
+This topic shows you how to create a monitor.
 
 
 ## Step 1: Open New Monitor window

@@ -17,7 +17,9 @@ By assembling relevant context from prior alerts and by analyzing patterns in lo
 
 Email alerts automatically get a button labeled **View Alert** that opens the alert on the Alert page, shown in the below image.<br/> ![view alert from email.png](/img/monitors/view-alert-from-email.png)
 
-If you use [Webhook connections](/docs/alerts/webhook-connections) offered by Sumo Logic for receiving notifications you need to provide the [`alertResponseUrl` variable](../alert-variables.md) in your notification payload of a Monitor to receive a link that opens Alert Response. When your Monitor is triggered, it will generate a URL and provide it in the notification payload which you can use to open the Alert Response. The following is an example Slack payload with the variable:
+If you use [Webhook connections](/docs/alerts/webhook-connections) offered by Sumo Logic for receiving notifications, you'll need to provide the [`alertResponseUrl` variable](../alert-variables.md) in your notification payload of a Monitor to receive a link that opens Alert Response. When your Monitor is triggered, it will generate a URL and provide it in the alert notification payload, which you can use to open the Alert Response.
+
+The following is an example Slack payload with the variable:
 ```json
 {
 	"attachments":[
@@ -41,7 +43,7 @@ If you use [Webhook connections](/docs/alerts/webhook-connections) offered by Su
 
 ## Alert list
 
-Alert list shows all the Alerts from triggered Monitors within the past seven days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time.
+The Alert list shows all of your Alerts from Monitors triggered within the past seven days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time.
 
 To open the Alert list, click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="300"/>
 
@@ -49,7 +51,7 @@ To filter or sort by category (e.g., **Name**, **Severity**, **Status**), you c
 
 ### Resolve Alerts
 
-To resolve an alert, click a row to select it and click **Resolve**.
+To resolve an alert, click a row to select it, then click **Resolve**.
 
 
 ## Alert Page
@@ -76,40 +78,38 @@ The top of the page provides several details and buttons.
 * **A** - the title of the Monitor.
 * **B** - copy the link to the opened Alert page.
 * **C** - the type of Monitor trigger condition that triggered the alert, either Critical, Warning, or MissingData.
-* **D** - the status of the Alert, either Active or Resolved.
+* **D** - the status of the Alert, either **Active** or **Resolved**.
 * **E** - refreshes the Alert page.
 * **F** - opens the playbook associated with this Monitor. Playbooks allow admins to codify tribal knowledge for an on-call so they know what exactly to do when they receive an alert.<br/> ![playbook example.png](/img/monitors/playbook-example.png)<br/>
     You have the option to provide a playbook when creating a Monitor, as shown in the below image. Markdown is supported.<br/>  ![Montor playbook input.png](/img/monitors/monitor-playbook-input.png)
 * **G** - opens the Monitor that generated this alert.
 * **H** - resolves the Alert. This will also resolve the Monitor that generated the alert. The Monitor will fire again when the alert condition is met. <br/>
 :::note
-Sumo Logic also resolves the alert automatically, when the recovery condition defined on the monitor is met. This behavior is not configurable - that is, you cannot prevent Sumo Logic from resolving a monitor. Although technically you can set a recovery condition that will never allow Sumo Logic to recover a monitor, this is not recommended because it will suppress unrelated alerts from getting fired.
+Sumo Logic will resolve the alert automatically when the recovery condition defined on the monitor is met. This behavior is not configurable - that is, you cannot prevent Sumo Logic from resolving a monitor. Although technically you can set a recovery condition that will never allow Sumo Logic to recover a monitor, this is not recommended because it will suppress unrelated alerts from getting fired.
 ::: <br/>![alert page sep 23.png](/img/monitors/alert-page.png)
 * **K** - a panel with Related Alerts and the Monitor History. The exclamation mark indicates the alert is still active and a white checkmark in the gray circle indicates it's resolved.
-  * **Related Alerts** shows other alerts in the system that were triggered around the same time as this alert. This information is helpful to know what issues are happening in the system and whether the current problem is an isolated issue or a more systemic one. There are two types of relations that a related alert can have.<br/> ![related alerts.png](/img/monitors/related-alerts.png)
+  * **Related Alerts**: shows other alerts in the system that were triggered around the same time as this alert. This information is helpful to know what issues are happening in the system and whether the current problem is an isolated issue or a more systemic one. There are two types of relations that a related alert can have.<br/> ![related alerts.png](/img/monitors/related-alerts.png)
     * **Time**: Shows all the alerts that were triggered 30 minutes before or after the given alert that doesn't have another association.
     * **Entity**: Shows all the alerts that were triggered one hour before and after the given alert that happened on the same entity (node, pod, cluster, etc.). You can click the expand arrow ![expand arrow.png](/img/monitors/expand-arrow.png) to view the alert's trigger condition and the white arrow in the square ![open in new tab icon.png](/img/monitors/open-new-tab.png) to open the alert in its own Alert page.
-  * **Monitor History** shows the past 30 days of similar alerts that were triggered by the Monitor (that generated the current alert). Monitor History can be helpful to figure out the following:
-     * How frequently the alert fired in the past and whether it's a flaky alert or not.
-     * Quickly correlate whether the current problem is similar to a past one by comparing the information shared for the alert.
+  * **Monitor History**: shows the past 30 days of similar alerts that were triggered by the Monitor (that generated the current alert). Monitor History can be helpful to determine how frequently an alert has fired in the past and if the alert is flaky. You can then quickly correlate whether the current problem is similar to a past one by comparing the information shared for the alert.
 * **L** - the query of the Monitor.
 * **M** - a chart that visualizes the trend of the metric that was tracked as part of the alert condition of the monitor. The visualization tracks the *before* and *during* trends of the metric.
 * **N** - a table with the raw data that triggered the alert.
 
-Below this, as you scroll down on the page you'll see context cards covered in the next section.
+Below this, as you scroll down on the page, you'll see context cards covered in the next section.
 
 ### Context Cards
 
-**Alert Context** provides additional information about interesting insights that the system has automatically discovered by analyzing your data. The system uses artificial intelligence and machine learning to track your logs and metrics data to find interesting patterns in the data that might help explain the underlying issue and surfaces them in the form of context cards.
+**Alert Context** provides additional insights that the system has discovered automatically by analyzing your data. The system uses artificial intelligence and machine learning to track your logs and metrics data and find interesting patterns in the data that might help explain the underlying issue and surfaces them in the form of context cards.
 
-Depending on the type of data the alert was based on, metrics or logs, and the detection method, static or outlier, you'll see different context cards. You will see a progress spinner labeled *Analyzing alert content* at the bottom of the window when cards are still being loaded. It may take a minute for some cards to load.<br/> ![analyzing alert content.png](/img/monitors/analyzing-alert-content.png)
+Depending on the type of data an alert is based on (metrics or logs) and the detection method (static or outlier), you'll see different context cards. You will see a progress spinner labeled **Analyzing alert content** at the bottom of the window when cards are still being loaded. It may take a minute for some cards to load.<br/> ![analyzing alert content.png](/img/monitors/analyzing-alert-content.png)
 
 ### Log Fluctuations
 
 This card detects different signatures in your log messages using [LogReduce](/docs/search/logreduce) such as errors, exceptions, timeouts, and successes. It compares log signatures trends with a normal baseline period and surfaces noteworthy changes in signatures.
 
 * **New**: Log signatures that were only seen after the Alert was triggered but not one hour prior to the Alert start time.
-* **Gone**: Log signatures that are not present after the Alert was created but were present one hour prior to the Alert start time, such as, Transaction Succeeded or Success.
+* **Gone**: Log signatures that are not present after the Alert was created but were present one hour prior to the Alert start time, such as **Transaction Succeeded** or **Success**.
 * **Diff**: Log signatures whose counts have changed after the alert when compared to one hour prior to the Alert start time.
 
 :::note
@@ -128,7 +128,7 @@ Use the **Open** button to view the Log Search that provided the Log Fluctuation
 * **F** - option to collapse the expanded details.
 * **G** - opens a Log Search filtered to the Log messages that mapped to the given signature.
 
-#### Anomalies
+### Anomalies
 
 This card detects time series anomalies for entities related to the alert. These insights are powered by the [Root Cause Explorer](../../observability/root-cause-explorer.md).
 
@@ -137,7 +137,7 @@ Anomalies are grouped into [golden signals](https://sre.google/sre-book/monitor
 * **A** - the name of the card (Anomalies) and a short description of what it does.
 * **B** - count of anomalies belonging to each golden signal type.
 * **C** - a timeline view of anomalies with their start time and duration, the domain (e.g. AWS, Kubernetes), and the entity on which it was detected. Anomalies may be grouped based on connections between entities and similarity of metrics. For example, anomalies on EC2 instances that are members of an AutoScaling group may be grouped together. The count shown in each anomaly refers to the number of grouped anomalies.
-* **D** - a link to view the anomalies in the Root Cause Explorer.
+* **D** - a link to view the anomalies in the **Root Cause Explorer**.
 
 :::note
 Only Anomalies with a start time around 30 minutes before or after the Alert was created show up in the card.
@@ -145,9 +145,9 @@ Only Anomalies with a start time around 30 minutes before or after the Alert wa
 
 Hover over an EOI to view key information about the event.<br/> ![eoi-stats.png](/img/monitors/eoi-stats.png)
 
-Click on the EOI to open the Summary View and Entity Inspector.<br/> ![entity inspector.png](/img/monitors/entity-inspector.png)
+Click on the EOI to open the **Summary View** and **Entity Inspector**.<br/> ![entity inspector.png](/img/monitors/entity-inspector.png)
 
-#### Dimensional Explanations
+### Dimensional Explanations
 
 This card analyzes log data and surfaces dimensions or key-value pairs that drove it to an alerting state. For example, the card below has identified that ~80% of the alert logs have the field **log.Error** with the value `could not retrieve cart: rpc error: code` and is therefore a recommended item to investigate. <br/>![dimensional explanation.png](/img/monitors/dimensional-explanation.png)
 
@@ -159,17 +159,17 @@ This card analyzes log data and surfaces dimensions or key-value pairs that drov
 * **F** - option to collapse the expanded details.
 * **G** - opens a Log Search filtered to the Log messages that mapped to the given signature.
 
-#### Benchmark
+### Benchmark
 
 Benchmarks refer to baselines computed from anonymized and aggregated telemetry data from Sumo Logic customers in domains such as AWS. If the telemetry values for your entity during an alert period are unusual compared to benchmarks, you may have an unusual configuration change or other backend issues. 
 
-For example, the card below shows that “ServiceUnavailable” error is happening 32 times more often in your AWS account compared with other Sumo Logic customer’s accounts. This AWS error pertains to AWS API calls that are failing at a higher rate than what is expected based on cross-customer baselines. This particular error implies an AWS incident affecting the particular AWS resource type and API. <br/> ![benchmark card.png](/img/monitors/benchmark.png)
+For example, the card below shows that `ServiceUnavailable` error is happening 32 times more often in your AWS account compared with other Sumo Logic customer’s accounts. This AWS error pertains to AWS API calls that are failing at a higher rate than what is expected based on cross-customer baselines. This particular error implies an AWS incident affecting the particular AWS resource type and API. <br/> ![benchmark card.png](/img/monitors/benchmark.png)
 
 * **A** - the name of the card (Benchmark) and a short description of what it does.
 * **B** - count of unusual Benchmarks by golden signal type.
 * **C** - dimensional detail of the unusual telemetry value.
 * **D** - comparison of your telemetry value (red bar) against benchmarks computed from other customers (gray bar).
-* **E** - expand / collapse details panel.
+* **E** - expand/collapse details panel.
 * **F** - opens a Log Search filtered to the Log messages that match the dimensional details of the telemetry value
 
 ## Subscribe to Alert Monitors
@@ -187,7 +187,7 @@ A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to a
 
 #### From your Monitors list
 * Right-click on a row item > click **Subscribe**
-* Hover your mouse over a row > click the three-dot kebab menu > select **Subscribe**
+* Hover your mouse over a row > click the three-dot kebab menu > click **Subscribe**
 * Single-click on a row item > in the side panel (Monitor Details), click **More Actions** > **Subscribe**
 
 
@@ -205,6 +205,6 @@ Alert notification preferences give you granular control over specific monitor a
 
 ## Limitations
 
-* The [Alert list](#alert-list) page shows up to 1,000 alerts.
-* On the [Alert page](#alert-page), the Alert visualization, labeled M, is only shown for an alert that is less than 30 days old. 
-* On the [Alert page](#alert-page), Related Alerts and Monitor History show the top 250 alerts. 
+* The [Alert list](#alert-list) page displays up to 1,000 alerts.
+* On the [Alert page](#alert-page), the Alert visualization, labeled **M**, is only shown for alerts less than 30 days old. 
+* On the [Alert page](#alert-page), Related Alerts and Monitor History show the top 250 alerts.
