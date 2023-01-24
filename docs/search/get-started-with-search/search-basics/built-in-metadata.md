@@ -25,10 +25,10 @@ You can run queries using any of the following built-in metadata fields:
 
 | Name | Description |
 |:--|:--|
-| `_collector` | The name of the Collector (set when the Collector was installed) that received the log message. Shorthand: `?` |
-| `_messageCount` | A sequence number (per Source) added by the Collector when the message was received. Shorthand: `?`|
-| `_messageTime` | The parsed timestamp by the Collector from the log message in milliseconds. If the message does not have a timestamp, messageTime uses the receiptTime. Shorthand: `?`|
-| `_raw` | The raw log message. Shorthand: `?` |
+| `_collector` | The name of the Collector (set when the Collector was installed) that received the log message. |
+| `_messageCount` | A sequence number (per Source) added by the Collector when the message was received. |
+| `_messageTime` | The parsed timestamp by the Collector from the log message in milliseconds. If the message does not have a timestamp, messageTime uses the receiptTime. |
+| `_raw` | The raw log message. |
 | `_receiptTime` | The time the Collector received the message in milliseconds. |
 | `_size` | The size of the log message in bytes. Shorthand: `?`|
 | `_source` | The name of the Source, determined by the name you entered when you [configured the Source](/docs/send-data/choose-collector-source). Shorthand: `?`|
