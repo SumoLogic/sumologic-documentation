@@ -7,7 +7,7 @@ description: Alerts support variables allowing you to customize notifications wi
 
 Variables are used as parameters that allow you to customize the JSON payload object of your alert notifications. These variables are used to dynamically populate specific values from the alert configuration in the notification payload. It includes things like the TriggerType that gives the current monitor status in the notification. When a notification is sent, variables are replaced with values from the alert. For example, if you specified `{{Name}}` in your JSON payload, it would be replaced with the actual name of the alert in the delivered payload.
 
-## Available Template Variables
+## Available template variables
 
 You can use the following built-in variables when specifying the notification payload for log monitors, metric monitors, and scheduled searches. They allow you to reference specific configurations of your monitor.
 
@@ -40,7 +40,7 @@ Variables must be enclosed by double curly brackets (`{{ }}`). Unresolved variab
 | `{{Playbook}}` | Allows you to access the [playbook content](/docs/alerts/monitors#metrics-trigger-types) that was configured as part of the initial monitor setup. | &#9989;| &#9989;|
 
 :::caution
-When writing queries, do not define fields with built-in field names; their values will be overridden.
+When writing queries, do not define fields with [built-in metadata values](/docs/search/get-started-with-search/search-basics/built-in-metadata), as these will be overridden.
 :::
 
 ## Examples
