@@ -313,7 +313,7 @@ module.exports = {
               },
               {
                 label: 'Alerts/Monitors',
-                to: '/docs/alerts/.*',
+                to: '/docs/alerts',
               },
               {
                 label: 'Cloud SIEM',
