@@ -1460,7 +1460,18 @@ module.exports = {
       },
     ],
   },
-  'apm/real-user-monitoring'
+  {
+    type: 'category',
+    label: 'Real User Monitoring (RUM)',
+    collapsible: true,
+    collapsed: true,
+    link: {type: 'doc', id: 'apm/real-user-monitoring/index'},
+    items: [
+      'apm/real-user-monitoring/configure-data-collection',
+      'apm/real-user-monitoring/metrics',
+      'apm/real-user-monitoring/dashboards',
+    ],
+  },
 ],
 // *** OBSERVABILITY: aws, kubernetes, root cause analysis
   observability: [
