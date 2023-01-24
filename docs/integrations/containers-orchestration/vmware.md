@@ -52,8 +52,8 @@ _sourceCategory = Labs/VMWare6.5 and ("error" or "fail" or "critical")
 
 ## Prerequisites
 
-* **Supported Software Versions**: The VMware App works with vCenter and vSphere 6.5, 6.7, and 7.0.
-* **Sumo Logic Scripts for VMware**: The Sumo Logic scripts required to work with the app are located here: [sumo-vsphere-ulm.zip](https://s3.amazonaws.com/appdevstore/VMWare/sumo-vsphere-ulm.zip).
+* **Supported Software Versions**. The VMware App works with vCenter and vSphere 6.5, 6.7, and 7.0.
+* **Sumo Logic Scripts for VMware**. The Sumo Logic scripts required to work with the app are located here: [sumo-vsphere-ulm.zip](https://s3.amazonaws.com/appdevstore/VMWare/sumo-vsphere-ulm.zip).
 
 
 ## Collecting Logs and Metrics for the VMware App
