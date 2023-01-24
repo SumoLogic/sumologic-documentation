@@ -139,7 +139,7 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/H
 Sources to can be restarted when they are in ThirdPartyConfig errors.
 
 #### UI
-To restart your source in the Sumo Logic platform:
+To restart your source in the Sumo Logic platform, follow the steps below:
 
 1. Open the Collection page, and go to **Manage Data** > **Collection** > **Collection**.
 2. Select the source and click the **information** icon on the right side of the row.
