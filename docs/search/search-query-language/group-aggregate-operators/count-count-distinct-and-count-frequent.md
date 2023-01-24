@@ -81,9 +81,9 @@ _sourceCategory=*apache*
 | count_distinct(src_ip)
 ```
 
-By default, ordering is not defined inside of groups created using a group-by expression. To order your results, use the [**sort**](/docs/search/search-query-language/search-operators/sort) operator.
+By default, ordering is not defined inside of groups created using a group-by expression. To order your results, use the [`sort`](/docs/search/search-query-language/search-operators/sort) operator.
 
-If the number of distinct items returned is less than 100, the **count_distinct** function provides an exact number. If the number of distinct items returned is larger than 100, **count_distinct** instead uses an approximate algorithm, and displays a message that explains: `count_distinct saw more than 100 values, results may be approximate`
+If the number of distinct items returned is less than 100, the `count_distinct` function provides an exact number. If the number of distinct items returned is larger than 100, `count_distinct` instead uses an approximate algorithm, and displays a message that explains: `count_distinct saw more than 100 values, results may be approximate`
 
 The approximation algorithm uses a relative error parameter of 2%, for example:
 
@@ -93,7 +93,7 @@ The approximation algorithm uses a relative error parameter of 2%, for example:
 
 So for example, if the true count of distinct items is 1,000, the result returned by the approximation algorithm is between 950 and 1050 about 95% of the time.
 
-The error parameter value is important to making the **count_distinct** function return results quickly and in a scalable way.
+The error parameter value is important to making the `count_distinct` function return results quickly and in a scalable way.
 
 Also, note that when you want to count the distinct occurrences of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the _count_distinct fields. See this example:
 
@@ -119,7 +119,7 @@ count_frequent <field>[, <field2>, field3, ...]
 ### Rules
 
 * Creates field named `_approxcount`
-* Cannot be used with other aggregating functions like **sum** or **avg**.
+* Cannot be used with other aggregating functions like `sum` or `avg`.
 * Sort is built into the query and defaults to a most-to-least order.
 
 ### Example

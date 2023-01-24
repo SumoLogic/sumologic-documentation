@@ -5,7 +5,7 @@ sidebar_label: first, last
 ---
 
 
-The **`first`** and **`last`** operators return the first or last result relative to the sort order. By default, searches return results in descending chronological order (most recent descending to oldest).
+The `first` and `last` operators return the first or last result relative to the sort order. By default, searches return results in descending chronological order (most recent descending to oldest).
 
 For example, the following image shows a few results in the default sort order. The `#` column starts at one, and the `Time` values start with the most recent.
 
@@ -20,7 +20,7 @@ Using the [sort](/docs/search/search-query-language/search-operators/sort) opera
 
 #### Limitations
 
-First and last are not supported in Live Dashboards or any continuous query. Instead, use the `withtime` operator, see [most_recent and least_recent](/docs/search/search-query-language/group-aggregate-operators/most-recent-least-recent).
+First and last are not supported in Live Dashboards or any continuous query. Instead, use the `withtime` operator, see [`most_recent` and `least_recent`](/docs/search/search-query-language/group-aggregate-operators/most-recent-least-recent).
 
 ## first
 
@@ -90,7 +90,7 @@ disk*
 
 This query finds all messages that contain the term `disk\*` and parses out all that have a `diskutilization=` value. It then extracts the value of diskutilization into field `disk`. It then determines if that value is greater than 80% and will find the last occurrence of that value per host effectively producing a list of hosts that have disk utilization that is over 80%.
 
-Note that when you find the last occurrence of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the `_last` fields. See this example:
+Note that when you find the last occurrence of more than one field, you must create an alias using the [`as` operator](/docs/search/search-query-language/search-operators/as) to rename the `_last` fields. See this example:
 
 ```sql
 _sourceCategory=Apache/Access

@@ -2542,7 +2542,8 @@
   "/Other_Solutions/Software_Development_Optimization_Solution/03_Set_up_the_Software_Development_Optimization_Solution": "/docs/sdo/set-up-sdo",
   "/Other_Solutions/Software_Development_Optimization_Solution/03_Set_up_the_Software_Development_Optimization_Solution/SDO_Manual_Configuration": "/docs/sdo/set-up-sdo/sdo-manual-configuration",
   "/Other_Solutions/Software_Development_Optimization_Solution/03_Set_up_the_Software_Development_Optimization_Solution/SDO_Setup_with_Terraform_Script": "/docs/sdo/set-up-sdo/sdo-setup-with-terraform-script",
-  "/Other_Solutions/Software_Development_Optimization_Solution/04_View_the_Software_Development_Observability_Solution_Dashboards": "/docs/sdo/view-sdo-dashboards",
+  "/Other_Solutions/Software_Development_Optimization_Solution/04_View_the_Software_Development_Observability_Solution_Dashboards": "/docs/sdo/install-sdo-app-view-dashboards",
+  "/docs/sdo/view-sdo-dashboards": "/docs/sdo/install-sdo-app-view-dashboards",
   "/Other_Solutions/Software_Development_Optimization_Solution/04_View_the_Software_Development_Observability_Solution_Dashboards/Install_the_Software_Development_Optimization_App_and_view_the_Dashboards": "/docs/sdo/install-sdo-app-view-dashboards",
   "/Other_Solutions/Software_Development_Optimization_Solution/Integrate_Other_Tools_with_the_Software_Development_Optimization_Solution_(Optional)": "/docs/sdo/integrate-tools-with-sdo",
   "/Other_Solutions/Software_Development_Optimization_Solution/Jenkins_Plugin_-_Send_Build_and_Deploy_Event_to_Sumo_Logic_from_Jenkins_Pipeline": "/docs/sdo/jenkins-plugin-build-deploy-events",
@@ -2579,7 +2580,7 @@
   "/Visualizations-and-Alerts": "/docs/alerts",
   "/Visualizations-and-Alerts/Alerts": "/docs/alerts",
   "/Visualizations-and-Alerts/Alerts/Alert_Grouping": "/docs/alerts/monitors/alert-grouping",
-  "/Visualizations-and-Alerts/Alerts/Alert_Variables": "/docs/alerts/alert-variables",
+  "/Visualizations-and-Alerts/Alerts/Alert_Variables": "/docs/alerts/monitors/alert-variables",
   "/Visualizations-and-Alerts/Alerts/Monitors": "/docs/alerts/monitors",
   "/Visualizations-and-Alerts/Alerts/Monitors/Monitor_FAQ": "/docs/alerts/monitors/monitor-faq",
   "/Visualizations-and-Alerts/Alerts/Monitors/Terminology": "/docs/alerts/monitors",
@@ -2848,5 +2849,6 @@
   "/Traces/Search_Query_Language_support_for_Traces": "/docs/apm/traces/working-with-tracing-data/search-query-language-support-for-traces",
   "/Traces/Spans": "/docs/apm/traces/working-with-tracing-data/spans",
   "/Visualizations-and-Alerts/Alert-Grouping": "/docs/alerts/monitors/alert-grouping",
-  "/Visualizations-and-Alerts/Alerts/01-Scheduled-Searches": "/docs/alerts/scheduled-searches"
+  "/Visualizations-and-Alerts/Alerts/01-Scheduled-Searches": "/docs/alerts/scheduled-searches",
+  "/docs/alerts/alert-variables": "/docs/alerts/monitors/alert-variables"
 }
