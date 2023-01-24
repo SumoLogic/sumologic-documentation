@@ -1,7 +1,7 @@
 ---
 id: set-up-traces-collection-for-kubernetes-environments
 title: Set up Traces Collection for Kubernetes Environments
-sidebar_label: Kubernetes Environments
+sidebar_label: Kubernetes Environment Setup
 ---
 
 After installing or upgrading your Sumo Logic Kubernetes Collection, you will be able to send your traces directly to its endpoint using OpenTelemetry (as well as older formats like Jaeger or Zipkin).
@@ -40,7 +40,7 @@ In the following installation steps, we use the release name `collection` and th
 
 :::note
  If you're upgrading from Sumo Logic Kubernetes Collection `v2.x` to `v3.x`, see [Sumo Logic Kubernetes Collection Migration Guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
-::: 
+:::
 
 ### Collection architecture
 
@@ -156,7 +156,7 @@ After enabling and installing tracing, you should have additional Kubernetes res
     * StatefulSet: `collection-sumologic-otelcol-instrumentation`
     * Pod: `collection-sumologic-otelcol-instrumentation-<hash>`
     * Service: `collection-sumologic-otelagent`
-    * Service (**`deprecated`**): `collection-sumologic-otelcol` 
+    * Service (**`deprecated`**): `collection-sumologic-otelcol`
     * Config Map: `collection-sumologic-otelcol-instrumentation`
 * `traces-gateway` - collector responsible for traces load balancing
     * Deployment: `collection-sumologic-traces-gateway`
@@ -189,7 +189,7 @@ After enabling and installing tracing, you should have additional Kubernetes res
     ```
 
   Having this enabled, `kubectl logs -n sumologic collection-sumologic-traces-sampler-<ENTER ACTUAL POD ID>` might yield the following output:
-  
+
   ```yaml
       2020-03-09T10:47:28.861Z TraceData with 1 spans
       Node service name: carpogonial

@@ -1360,6 +1360,10 @@ module.exports = {
         collapsed: true,
         link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/index'},
         items: [
+          'apm/traces/get-started-transaction-tracing/set-up-traces-collection-aws-environments',
+          'apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments',
+          'apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments',
+          'apm/traces/get-started-transaction-tracing/http-traces-source',
           {
             type: 'category',
             label: 'OpenTelemetry App Instrumentation',
@@ -1435,16 +1439,12 @@ module.exports = {
               'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby',
             ],
           },
-          'apm/traces/get-started-transaction-tracing/set-up-traces-collection-aws-environments',
-          'apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments',
-          'apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments',
-          'apm/traces/get-started-transaction-tracing/http-traces-source',
         ],
       },
       'apm/traces/services-list-map',
       'apm/traces/view-and-investigate-traces',
-      'apm/traces/spans',
       'apm/traces/tracing-dashboards',
+      'apm/traces/spans',
       'apm/traces/search-query-language-support-for-traces',
       {
         type: 'category',

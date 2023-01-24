@@ -308,12 +308,12 @@ module.exports = {
               },
               {
                 label: 'Traces/APM/RUM',
-                to: '/docs/apm/traces',
+                to: '/docs/apm',
                 activeBaseRegex: '^/docs/apm/.*',
               },
               {
                 label: 'Alerts/Monitors',
-                to: '/docs/alerts',
+                to: '/docs/alerts/.*',
               },
               {
                 label: 'Cloud SIEM',
