@@ -135,6 +135,27 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/H
   </tr>
 </table>
 
+### Restart Sources
+Sources to can be restarted when they are in ThirdPartyConfig errors.
+
+#### UI
+To restart your source in the Sumo Logic platform:
+
+1. Open the Collection page, go to Manage Data > Collection > Collection.
+2. Find the source and click the information icon on the right of the row.
+3. The API usage information popup is displayed. Click the Restart Source button on the bottom left. <br>![restart source button.png](/img/collector/restart-source-button.png)</br>
+4. Click **Confirm** to send the restart request. <br>![restart source confirm.png](/img/collector/restart-source-confirm.png)</br>
+5. The bottom left of the platform will provide a notification informing you the request was successful.<br/>   ![source restart initiated.png](/img/collector/source-restart-initiated.png)
+
+#### API
+To restart your source via Sumo Management API
+
+Method: POST
+
+Example endpoint: https://api.sumologic.com/api/v1/collectors/{collector_id}/sources/{source_id}/action/restart
+
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. For example, an API endpoint in Europe would begin `api.eu.sumologic.com`.  A service endpoint in us2 (Western US) would begin service.us2.sumologic.com.  For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+
 
 ## JSON configuration
 
