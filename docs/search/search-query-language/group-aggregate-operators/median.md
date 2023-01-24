@@ -4,7 +4,7 @@ title: median Grouping Operator
 sidebar_label: median
 ---
 
-In order to calculate the median value for a particular field, you can utilize the [percentile (`pct`) operator](/docs/search/search-query-language/group-aggregate-operators/pct-percentile) with a percentile argument of 50.
+In order to calculate the median value for a particular field, you can utilize the [`pct` (percentile) operator](/docs/search/search-query-language/group-aggregate-operators/pct-percentile) with a percentile argument of 50.
 
 ## Syntax
 
