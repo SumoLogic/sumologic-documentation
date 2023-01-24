@@ -1612,7 +1612,6 @@ module.exports = {
           ],
         },
         `sdo/install-sdo-app-view-dashboards`,
-        'sdo/view-sdo-dashboards',
         'sdo/jenkins-plugin-build-deploy-events',
         'sdo/integrate-tools-with-sdo',
       ],

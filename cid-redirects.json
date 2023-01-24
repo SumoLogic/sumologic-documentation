@@ -2543,6 +2543,7 @@
   "/Other_Solutions/Software_Development_Optimization_Solution/03_Set_up_the_Software_Development_Optimization_Solution/SDO_Manual_Configuration": "/docs/sdo/set-up-sdo/sdo-manual-configuration",
   "/Other_Solutions/Software_Development_Optimization_Solution/03_Set_up_the_Software_Development_Optimization_Solution/SDO_Setup_with_Terraform_Script": "/docs/sdo/set-up-sdo/sdo-setup-with-terraform-script",
   "/Other_Solutions/Software_Development_Optimization_Solution/04_View_the_Software_Development_Observability_Solution_Dashboards": "/docs/sdo/view-sdo-dashboards",
+  "/docs/sdo/view-sdo-dashboards": "/docs/sdo/install-sdo-app-view-dashboards",
   "/Other_Solutions/Software_Development_Optimization_Solution/04_View_the_Software_Development_Observability_Solution_Dashboards/Install_the_Software_Development_Optimization_App_and_view_the_Dashboards": "/docs/sdo/install-sdo-app-view-dashboards",
   "/Other_Solutions/Software_Development_Optimization_Solution/Integrate_Other_Tools_with_the_Software_Development_Optimization_Solution_(Optional)": "/docs/sdo/integrate-tools-with-sdo",
   "/Other_Solutions/Software_Development_Optimization_Solution/Jenkins_Plugin_-_Send_Build_and_Deploy_Event_to_Sumo_Logic_from_Jenkins_Pipeline": "/docs/sdo/jenkins-plugin-build-deploy-events",
