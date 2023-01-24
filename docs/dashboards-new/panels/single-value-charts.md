@@ -14,7 +14,7 @@ A single value chart is useful for summarizing a time series in a single value. 
 
 To add a panel with a single value chart:
 
-1. Create or open a Dashboard (New) and click on **Add Panel \> Single Value**.  
+1. Create or open a Dashboard (New) and click on **Add Panel > Single Value**.  
 
     ![single value pane.png](/img/dashboards-new/panels/single-value-charts/single-value-pane.png)
 

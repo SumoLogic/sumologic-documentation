@@ -114,7 +114,7 @@ By default the threshold Entity Activity Score for Insight generation is 12.The 
  
 
 | Insight Severity value | Activity Score |
-|------------------------|----------------|
+|:------------------------|:----------------|
 | Low                    | 13          |
 | Medium                 | 14 or 15          |
 | High                   | 16 or higher   |

@@ -72,7 +72,7 @@ metadata_vendor = 'Trend Micro' and metadata_product = 'Deep Security'  and meta
 Some of the key metadata fields are defined below.
 
 | Metadata field  | Type | Description |
-|--|--|
+|:--|:--|
 | `metadata_vendor` | string | The name of the company responsible for the data source. Note the name of the product is in the "product" field. |
 | `metadata_product` | string | The specific product name of the data source. Note the name of the company who created the product is the "vendor" field. |
 | `metadata_deviceEventId` | string | Event type given by the vendor for the log. |
@@ -91,7 +91,7 @@ This section describes what [Match Lists](/docs/cse/match-lists-suppressed-lists
 
 Match Lists are lists of important indicators and identifiers, typically configured by a CSE analyst. Match Lists are often used to define allowlists of entities, like IP addresses, URLs, and hostnames, and so on, that you want to exempt from ordinary rule processing. For example, you might want to prevent a rule from firing for Records that contain one of a certain set of IP addresses. 
 
-Here’s an example of a Match List in the CSE UI, at **Content \> Match Lists**. 
+Here’s an example of a Match List in the CSE UI, at **Content > Match Lists**. 
 
 ![example-match-list.png](/img/cse/example-match-list.png)
 
@@ -140,7 +140,7 @@ This example below checks a Record for a field named `listMatches` that contains
 
 CSE’s Threat Intel lists are very similar to Match Lists, and you leverage them in rules in the same way. Threat Intel lists contain values that, when encountered in a Record, are clear indicators of compromise. 
 
-Here’s an example of a Threat Intel list in the CSE UI, at **Content \> Threat Intel**. 
+Here’s an example of a Threat Intel list in the CSE UI, at **Content > Threat Intel**. 
 
 ![example-threat-intl.png](/img/cse/example-threat-intl.png)
 

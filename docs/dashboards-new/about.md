@@ -112,7 +112,7 @@ The following table shows the availability of features for classic
 Dashboards and Dashboard (New).
 
 | Feature | Classic |Dashboard (New)|
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | Filtering a Dashboard | Filters | Variables |
 | Adding Queries to Dashboards | Add a Panel from Search or Metrics | Add a panel from Search or Metrics<br/>Ability to add panels inline through Add a Panel button |
 | Log Visualizations | Area Bar Box Plot<br/>Bubble is not supported<br/>Column<br/>Honeycomb is not supported<br/>Line<br/>Map - Cluster Map<br/>Pie<br/>Sankey Diagram<br/>Scatter is not supported<br/>Single Value<br/>Table | Area<br/><br/>Bar<br/>Bubble<br/>Column<br/>Honeycomb<br/>Line<br/>Map - Heat Map/Cluster Map<br/>Pie<br/>Scatter<br/>Single Value<br/>Table |

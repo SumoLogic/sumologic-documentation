@@ -7,7 +7,7 @@ description: The Entities page lists all of the Entities in CSE and their Activi
 
 This topic has information about the Entities page in CSE UI, which lists all of the Entities in CSE and their Activity Scores, and the **Entities > Details** page, which presents information about a particular Entity, including Signals and Insights associated with the Entity.
 
-The **Entities** page is useful for monitoring Entities that are close to having an Insight created. On the **Entities \> Details** page, you can view Signals and Insights for an Entity, and, as desired, manually create an Insight from Signals associated with the Entity.
+The **Entities** page is useful for monitoring Entities that are close to having an Insight created. On the **Entities > Details** page, you can view Signals and Insights for an Entity, and, as desired, manually create an Insight from Signals associated with the Entity.
 
 You can also update the [tags](tags-insights-signals-entities-rules.md), [suppression](about-signal-suppression.md) state, and [Criticality](entity-criticality.md) assigned to Entities, as described below in the [Update Multiple Entities](view-manage-entities.md) section below. 
 
@@ -43,7 +43,7 @@ Here’s a screenshot of the Entities page.
 ![entities-page-2.png](/img/cse/entities-page-2.png)
 
 | Letter | Description |
-|--|--|
+|:--|:--|
 | A | This area shows the total number of unique Entities in CSE. |
 | B | In the **Filters** area, you can filter the list of Entities by Activity Score, Hostname, IP Address, Username, Tags, Type, and Suppressed. |
 | C | In this area you can sort Entities by Activity Score, Name, or Type.  |
@@ -62,7 +62,7 @@ the Entity appears.
 ![entity-details-page.png](/img/cse/entity-details-page.png)
 
 | Letter | Description |
-|--|--|
+|:--|:--|
 | A | Suppression slider. Shows whether or not the Entity is currently suppressed. You can use the slider to suppress the Entity so that it is excluded from the Insight generation process.  |
 | B | **Tags**. Lists any [tags](tags-insights-signals-entities-rules.md) assigned to the Entity. You can add a new tag, select a tag to assign, or remove a tag from the Entity. |
 | C | **Criticality**. An Entity’s [Criticality](entity-criticality.md) is a setting that adjusts the severity of Signals that fire on the Entity, based on a risk factor or other consideration. You can reset the Criticality here. |
@@ -74,7 +74,7 @@ the Entity appears.
 | I | **Activity tab**. This tab displays a visualization of Signals on the Entity over time.The x-axis is time, the y-axis is severity. The icons represent Signals.
 | J | **Related Entities** tab. If related entities exist, this tab allows you to filter them by time. A related entity is a hostname or MAC address from which we have observed a Record in the log stream for which an IP and hostname or MAC appears in the same device within the Record. |
 | K | **Create Insight**. You can use this option to create an Insight on the Entity, as described below in [Create an Insight](#create-an-insight), below. |
-| L | The **Current State** section lists Signals that were generated for the Entity during the current [Detection Window](set-insight-generation-window-threshold.md) that are not already part of an Insight. (The Detection Window is the period over which CSE evaluates Signals, which is 14 days, by default. The Detection Window is configured on the Content \> Custom Insights page in the CSE UI.) |
+| L | The **Current State** section lists Signals that were generated for the Entity during the current [Detection Window](set-insight-generation-window-threshold.md) that are not already part of an Insight. (The Detection Window is the period over which CSE evaluates Signals, which is 14 days, by default. The Detection Window is configured on the Content > Custom Insights page in the CSE UI.) |
 | M | The **Prior Activity** section lists Signals that were generated for the Entity prior to the current Detection window, and all Insights for the Entity.  |
 
 ## Create an Insight
@@ -156,7 +156,7 @@ Note that:
 * If a row has a value in the `tags` column, it can’t have values in either the `tags_to_add` or the `tags_to_remove` column.
 
 | Column | Description |
-|--|--|
+|:--|:--|
 | `id` | **This field is required for Format 1.**<br/>To form the id field value, concatenate the Entity `type` and the value of the entity, separated by a dash character (-) where the Entity `type` is one of the following:<br/>`_ip`<br/>`_hostname`<br/>`_username`<br/>`_mac`<br/>`_process`<br/>`_command`<br/>`_hash`<br/>`_domain`<br/>`_useragent`<br/>`_email`<br/>`_url`<br/>`_file`<br/>`<CustomEntityTypeId>`<br/><br/>The `id` for an IP address would look like:<br/><br/>`_ip-1.2.3.4` <br/><br/>You can optionally specify an Entity’s sensor zone as a part of the `id` column, in this format:<br/><br/> `_<entity_type>-<sensor_zone>-<entity_value>`  <br/><br/>For example: <br/><br/> `_ip-zone1-172.18.20.3`|
 | `type` | **This field is required for Format 2.**<br/>Identifies the type of Entity, one of:<br/>`_ip`<br/>`_hostname`<br/>`_username`<br/>`_mac`<br/>`_process`<br/>`_command`<br/>`_hash`<br/>`_domain`<br/>`_useragent`<br/>`_email`<br/>`_url`<br/>`_file`<br/>`<CustomEntityTypeId>` |
 | `value` | **This field is required for Format 2.**<br/>The value of the Entity, for example, for an IP address:<br/>`1.2.3.4` |

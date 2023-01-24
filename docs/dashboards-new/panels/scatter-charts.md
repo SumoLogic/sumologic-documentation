@@ -29,7 +29,7 @@ _sourceCategory=service "message=User logged in" remote_ip
 
 To add a panel with a scatter chart:
 
-1. Create or open a Dashboard (New) and click on **Add Panel \>
+1. Create or open a Dashboard (New) and click on **Add Panel >
     Categorical**.  
 
     ![categorical.png](/img/dashboards-new/panels/scatter-charts/categorical.png)

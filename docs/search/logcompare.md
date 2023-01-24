@@ -116,7 +116,7 @@ A few examples:
 LogCompare generates and applies results to certain fields, shown in the following table. These fields are referenced to populate the data in the **Signatures** tab.
 
 | Field | Description |
-|---|---|
+|:---|:---|
 | _count | The number of log messages that belong to this cluster for this query. |
 | _deltaPercentage | The percent change of the signature, calculated as (targetPercentage - baselinePercentage) / baselinePercentage, where baselinePercentage is the number of logs matched to the signature divided by the total number of logs in the baseline, and similarly for targetPercentage. This is infinity for new signatures. |
 | _anomalyScore | The value is calculated using a symmetric version of [Kullback-Leibler divergence score](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence). |
@@ -188,7 +188,7 @@ Gone signatures look like the following:
 The following table illustrates the way **Count** results are calculated. For example, if the baseline query returns signatures A, B, C, and D while the target includes A, B, D, and E signatures, your results would look like the following:
 
 | Baseline | Target | Count (delta) |
-|---|---|---|
+|:---|:---|:---|
 | A | A | +/-% |
 | B | B | +/-% |
 | C |   | gone |
@@ -226,7 +226,7 @@ You can influence the algorithm by promoting, demoting, and splitting signatures
 The following table explains the icons in the **Actions** column.
 
 | Icon | Action |
-|---|---|
+|:---|:---|
 | ![promote](/img/search/logcompare/promote.png) | Promote a signature if the data included in the signature is relevant. Once promoted the thumbs-up icon turns blue. |
 | ![demote](/img/search/logcompare/demote.png) | Demote a signature if it's not relevant. Once demoted the thumbs-down icon turns blue. |
 | ![split](/img/search/logcompare/split.png) | Split a signature into multiple signatures to see more granular results. You'll notice that fewer wildcard asterisks will appear. Instead, specific values are included in the signatures. After splitting, the newly split signatures are highlighted. |
@@ -242,7 +242,7 @@ Logs are clustered into patterns, called signatures. The structure of logs is an
 The following table shows how the Time Range and Time Shift affect the Target and Baseline searches. The dates shown are based on a LogCompare search ran on May 10th.
 
 | Time Range | Time Shift | Target (current) | Baseline (historical) |
-|---|---|---|---|
+|:---|:---|:---|:---|
 | -1d | -30d | May 9-10 | April 9-10 |
 | -30d | -1d | April 10 - May 10 | April 9 - May 9 |
 

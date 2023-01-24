@@ -16,14 +16,14 @@ The Global Intelligence for Apache App is a companion to the [Apache](/docs/inte
 This feature is available in the following account plans.
 
 | Account Type | Account Level                           |
-|--------------|-----------------------------------------|
+|:--------------|:-----------------------------------------|
 | CloudFlex    | Enterprise                              |
 | Credits      | Enterprise Operations, Enterprise Suite |
 
 ## Dashboards
 
 | Dashboard | Description |
-|--|--|
+|:--|:--|
 | GI Apache - 01. Load Signals and Contributing Factors | This dashboard compares the golden signal of load (requests per second) for a company’s Apache servers to other servers. These signals are impacted by connections per second, requests per connection, the share of bot connections, and the share of HTTP POST/DELETE requests. These causal signals are also compared to the population of Apache servers. Use this dashboard to analyze unusual load spikes and the reasons for them. |
 | GI Apache - 02. Throughput Signals and Contributing Factors | This dashboard compares the golden signal of throughput (GB per second) for a company’s Apache servers to other servers. These signals are impacted by requests per second, GB per request, and error rate. These causal signals are also compared to the population of Apache servers. Use this dashboard to assess unusual throughput drops and the reasons for them such as increased errors or load spikes.  |
 | GI Apache - 03. Errors and Contributing Factors | This dashboard compares the golden signal of error rate for a company’s Apache servers to other servers. These signals are impacted by requests per second, connections per second, and GB per request. These causal signals are also compared to the population of Apache servers. Use this dashboard to assess unusual increases in error rate and the reasons for them such as increased load. |

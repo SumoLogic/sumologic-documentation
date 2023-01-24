@@ -23,7 +23,7 @@ If you're using AWS CLI use the below command:
 ```
 aws ssm put-parameter --region us-east-1 --cli-input-json '{
   "Name": "SUMO_ENDPOINT",
-  "Value": \<Paste the endpoint of the HTTP source created in step \>",
+  "Value": \<Paste the endpoint of the HTTP source created in step >",
   "Type": "SecureString"
 }'
 ```

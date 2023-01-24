@@ -17,7 +17,7 @@ If you’re going to use an existing collector, jump to [Configure a Syslog Sour
 
 ### Configure an Installed Collector
 
-1. In the Sumo Logic platform, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Installed Collector**.
 1. The **Add Installed Collector** popup appears.

@@ -80,7 +80,7 @@ Different classes have dot-delimited names of various lengths, so a match expres
 
 Here's how to create a metric rule using the metric rules editor in the Sumo UI:
 
-1. In the Sumo web app, go to **Manage Data \> Metrics \> Metric Rules**. The **Metric Rules** page lists the metric rules that have already been defined.<br/> ![named-rule.png](/img/metrics/named-rule.png)
+1. In the Sumo web app, go to **Manage Data > Metrics > Metric Rules**. The **Metric Rules** page lists the metric rules that have already been defined.<br/> ![named-rule.png](/img/metrics/named-rule.png)
 1. To add a new rule, click the plus sign (+) in the upper left of the **Metric Rules** page. The **Add Metric Rule** popup appears.<br/>  ![add-metric-rule-empty.png](/img/metrics/add-metric-rule-empty.png)
 1. In the **Rule name** field, enter a name for the new rule.
 1. In the **Metric match expression** field, enter one or more expressions that match the identifier of the metrics you want to tag. For example, this match expression: `collectd.*.*.*.*` matches Graphite strings in the `_rawName` field that begin with “collectd”, followed by four dot-separated segments.
@@ -143,7 +143,7 @@ In the screenshot above, the following metric is selected: `collectd.kafka-forge
 This section describes error messages that can be issued by the Metric Rules Editor.
 
 | Error Message | Description |
-| -- | -- |
+| :-- | :-- |
 | Rule name already exists. | This message appears if you try to assign a name that is already assigned to a an existing rule to a different rule. To resolve this error, enter a different rule name. |
 | Rule already exists. | This message appears if you try to create a rule that has the same match expression and variable assignment(s) as an existing rule. |
 | $field was needed but not extracted.<br/>(Where $field is a variable that has not been extracted.) | This message appears if you refer to a variable that you have not extracted. |

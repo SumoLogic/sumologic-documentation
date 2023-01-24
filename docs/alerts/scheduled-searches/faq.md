@@ -61,7 +61,7 @@ To create a Scheduled Search:
 1. **Run frequency.** Select **Every 4 hours**.
 1. Click **Schedule this search**. 
    * **Time range for the scheduled search.** Select **Today**.
-   * **Alert condition.** Select **Send notification only if the condition below is satisfied:** and enter **Number of results Greater than \> 0**.
+   * **Alert condition.** Select **Send notification only if the condition below is satisfied:** and enter **Number of results Greater than > 0**.
    * **Alert Type.** Select **Email**.
    * Enter the **email address** where you would like to be alerted.
 1. For all configuration options, see [Schedule a Search](/docs/alerts/scheduled-searches/schedule-search.md). 

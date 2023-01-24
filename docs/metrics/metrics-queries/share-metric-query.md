@@ -48,7 +48,7 @@ By default each permission level allows the user to grant that level of permissi
 Consider carefully what level of permissions users and roles need with your content:
 
 | Permission Level | Default Permissions | Available Advanced Options/Restrictions |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | View | Users can see the content and grant access to others to view. | **Cannot Grant Access.** Prevents the user from sharing any access.<br/>**Grant View Access.** User can grant view access to others. |
 | Edit | Users can make changes to the content and grant View or Edit access to others. | **Cannot Grant Access.** Prevents the user from sharing any access.<br/>**Grant View Access.** User can grant View access to others.<br/>**Grant Edit and View Access.** User can grant Edit and View access to users. |
 | Manage (Recommended for individual users only) | Designated users are considered co-managers of the content and can modify the content as well grant the right to other users to View, Edit, Manage, or Move the content. | **Cannot Grant Access.** Prevents the user from sharing view access.<br/>**Grant View Access.** User can grant view access to others.<br/>**Grant Edit and View Access.** User can grant View and Edit access to users..<br/>**Grant Manage, Edit, and View Access.** User can grant Manage, Edit, and View access to users. |

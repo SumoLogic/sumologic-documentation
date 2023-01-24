@@ -8,7 +8,7 @@ description: Learn how to use the Spans page to explore your span data.
 ## Availability
 
 | Account Type | Account Level                           |
-|--------------|-----------------------------------------|
+|:--------------|:-----------------------------------------|
 | Credits    | Enterprise Operations and Enterprise Suite<br/>Essentials get up to 5 GB a day |
 
 Sumo Logic Application Monitoring and Observability provides transactional intelligence for distributed workflows, by combining telemetry from traces, logs, and metrics in the context of real-time automatically tracked application topology.
@@ -21,7 +21,7 @@ The Spans page allows you to filter and aggregate your trace data at the raw spa
 You need to have Tracing enabled in your account to use this functionality. Contact your account team if the only thing you see is an infographic.
 :::
 
-To open, go to **+ New \> Spans**.
+To open, go to **+ New > Spans**.
 
 ![open spans from menu.png](/img/traces/open-spans-from-menu.png)
 

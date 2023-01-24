@@ -13,7 +13,7 @@ This operator does not automatically [parse](/docs/search/search-query-language/
 The following table shows the fields that are returned in results.
 
 | `_cluster_id` | `_signature` | `_count` |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | The unique hash value assigned to the signature. | The group of specified key-value pairs with their count and percentage of occurrence in relation to the group _count. | The number of logs that have the related signature. |
 
 The field is a clickable link that opens a new window with a query that drills down to the logs from the related schema.
@@ -31,7 +31,7 @@ With the provided results you can:
 ```
 
 | _cluster_id | _signature | _count |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | The unique hash value assigned to the signature. | The group of specified key-value pairs with their count and percentage of occurrence in relation to the group _count. | The number of logs that have the related signature.<br/><br/>The field is a clickable link that opens a new window with a query that drills down to the logs from the related schema. |
 
 ### Details option
@@ -61,7 +61,7 @@ There are two methods you have to use the details option:
 ```
 
 | Parameter   | Description | Default |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | keys | Comma separated list of keys that were parsed from structured data. | Null |
 | cluster_id  | The signature identifier that was provided from your initial LogReduce Values search. | Null |
 | shortcodeID | The unique hash value assigned to the initial LogReduce Values search.  | Null |

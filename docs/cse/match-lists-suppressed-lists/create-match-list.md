@@ -18,7 +18,7 @@ Here’s a use case for using a Match List to define an allow list:  Vulnerabil
 There’s no reason you can’t use a Match List to define “deny lists” of items. However, CSE’s Threat Intel feature is designed for exactly that purpose. Most of the time, but not always, you should use Threat Intel lists for negative indicators. For more information, see [Match Lists or Threat Intel: which to use?](#match-list-or-threat-intel-which-to-use).
 :::
 
-Here’s an example of a Match List in the CSE UI, at **Content \> Match Lists**. It is a list of trusted domains.  
+Here’s an example of a Match List in the CSE UI, at **Content > Match Lists**. It is a list of trusted domains.  
 
 ![example-match-list.png](/img/cse/example-match-list.png)
 
@@ -80,7 +80,7 @@ Perform the steps below to create a Match List in CSE.
 You can also create and manage Match Lists with CSE's REST [API](../administration/cse-apis.md).
 :::
 
-1. Go to **Content \> Match List** and click **Create**.
+1. Go to **Content > Match List** and click **Create**.
     ![match-list-create-icon.png](/img/cse/match-list-create-icon.png)
 1. On the **New Match List** popup, enter the following:
     * **Name**. Name of the Match list. If you are creating a standard Match List, make sure the name matches the standard Match List name. For more information, see [Standard Match Lists](standard-match-lists.md).   We recommend no embedded spaces in list names. For example, instead of *my list*, use *my_list*.
@@ -95,7 +95,7 @@ You can also create and manage Match Lists with CSE's REST [API](../administrati
 2. The Match List now appears on the **Match Lists** page. 
     ![match-list-added.png](/img/cse/match-list-added.png)
 3. Click the name of the Match List to open it.
-4. On the **Match List \> Details** page, click **ADD LIST ITEM**.
+4. On the **Match List > Details** page, click **ADD LIST ITEM**.
     ![match-list-add-item-icon.png](/img/cse/match-list-add-item-icon.png)
 5. On the **New Match List Item** popup, enter:
    * **Value**. The value of the entity. Make sure the value you enter is of the same type as the type you selected as the Target Column for the list. For example, if the Target Column is `Domain`, enter a domain.

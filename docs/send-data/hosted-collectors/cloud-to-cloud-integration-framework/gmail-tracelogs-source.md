@@ -34,7 +34,7 @@ You need to generate the **Service Account Key** JSON file to complete the autho
 Metadata fields will be set, if the integration is configured with the SIEM forward option. See **Metadata Fields** table below:
 
 | Fields     |    Value                    |
-| -------    |  :------------------------: |
+| :-------    |  :------------------------: |
 |_siemparser    |/Parsers/System/Google/GCP BigQuery Gmail
 
 

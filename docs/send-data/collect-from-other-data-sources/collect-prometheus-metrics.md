@@ -61,7 +61,7 @@ monitor_kubernetes_pods = true
 You can scrape for the following annotations:
 
 | Pod | Options |
-|--|--|
+|:--|:--|
 | prometheus.io/scrape | Enable scraping for this pod. |
 | prometheus.io/scheme | If the metrics endpoint is secured, you will need to set this to "https" and may need to set the tls config. |
 | prometheus.io/path   | If the metrics path is not /metrics, define it with this annotation. |
@@ -189,7 +189,7 @@ When unset, Telegraf will use the influx serializer by default which is current
 :::
 
 | Data Format | Content-Type Header |
-|--|--|
+|:--|:--|
 | [Graphite](http://graphite.readthedocs.io/en/latest/feeding-carbon.html#the-plaintext-protocol) | `application/vnd.sumologic.graphite` |
 | [Carbon2](http://metrics20.org/implementations/) | `application/vnd.sumologic.carbon2`<br/>This is the default setting. |
 | [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo](../hosted-collectors/http-source/upload-metrics.md#prometheus-metrics-not-accepted-by-sumo). |

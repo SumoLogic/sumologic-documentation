@@ -1,5 +1,5 @@
 ---
-slug: /apm/traces/get-started-transaction-tracing/net
+slug: /apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net
 title: .NET OpenTelemetry auto-instrumentation
 sidebar_label: .NET OpenTelemetry auto-instrumentation
 description: The simplest way to start capturing telemetry data is to implement the solution coming from OpenTelemetry-dotNet.

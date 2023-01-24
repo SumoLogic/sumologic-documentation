@@ -19,7 +19,7 @@ which would produce results such as:
 
 To add a panel with a table chart:
 
-1. Create or open a Dashboard (New) and click on **Add Panel \> Time Series** or **Add Panel \> Categorical**.   
+1. Create or open a Dashboard (New) and click on **Add Panel > Time Series** or **Add Panel > Categorical**.   
 
     ![time series or categorical.png](/img/dashboards-new/panels/table-charts/time-series-or-categorical.png)
 
