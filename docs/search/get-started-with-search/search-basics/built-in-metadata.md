@@ -30,13 +30,13 @@ You can run queries using any of the following built-in metadata fields:
 | `_messageTime` | The parsed timestamp by the Collector from the log message in milliseconds. If the message does not have a timestamp, messageTime uses the receiptTime. |
 | `_raw` | The raw log message. |
 | `_receiptTime` | The time the Collector received the message in milliseconds. |
-| `_size` | The size of the log message in bytes. Shorthand: `?`|
-| `_source` | The name of the Source, determined by the name you entered when you [configured the Source](/docs/send-data/choose-collector-source). Shorthand: `?`|
-| `_sourceCategory` | The category of the Source that collected the log message. This can be a maximum of 1,024 characters. Shorthand: `?`|
-| `_sourceHost` | The host name of the Source. For local Sources the name of the Source is set when you [configure the Source](/docs/send-data/choose-collector-source). For remote Collectors, this field uses the remote host's name. The `_sourceHost` metadata field is populated using a reverse DNS lookup. If the name can't be resolved, `_sourceHost` is displayed as `localhost`. This can be a maximum of 128 characters. Shorthand: `?`|
-| `_sourceName` | The name of the log file, determined by the path you entered when you [configured the Source](/docs/send-data/choose-collector-source). Shorthand: `Name`. |
-| `_format` | The pattern used for parsing the timestamp. See [here](/docs/send-data/reference-information/time-reference.md) for more details. Shorthand: `?`|
-| `_view` | The name of the index, view, or partition. Shorthand: `?`|
+| `_size` | The size of the log message in bytes. |
+| `_source` | The name of the Source, determined by the name you entered when you [configured the Source](/docs/send-data/choose-collector-source). |
+| `_sourceCategory` | The category of the Source that collected the log message. This can be a maximum of 1,024 characters. |
+| `_sourceHost` | The host name of the Source. For local Sources the name of the Source is set when you [configure the Source](/docs/send-data/choose-collector-source). For remote Collectors, this field uses the remote host's name. The `_sourceHost` metadata field is populated using a reverse DNS lookup. If the name can't be resolved, `_sourceHost` is displayed as `localhost`. This can be a maximum of 128 characters. |
+| `_sourceName` | The name of the log file, determined by the path you entered when you [configured the Source](/docs/send-data/choose-collector-source). |
+| `_format` | The pattern used for parsing the timestamp. See [here](/docs/send-data/reference-information/time-reference.md) for more details. |
+| `_view` | The name of the index, view, or partition. |
 
 ## Searching metadata
 
