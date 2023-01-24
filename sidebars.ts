@@ -1468,6 +1468,7 @@ module.exports = {
     link: {type: 'doc', id: 'apm/real-user-monitoring/index'},
     items: [
       'apm/real-user-monitoring/configure-data-collection',
+      'apm/real-user-monitoring/browser-traces',
       'apm/real-user-monitoring/metrics',
       'apm/real-user-monitoring/dashboards',
     ],
