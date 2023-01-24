@@ -17,10 +17,10 @@ grouping_function by <fieldname>
 ```
 
 :::important
-The **`withtime`**, **`most_recent`**, and **`least_recent`** operators are not considered standalone operators; they are designed to only be used as an alternative to the [first and last operators](/docs/search/search-query-language/group-aggregate-operators/first-last) in Live Dashboards or any continuous query where first and last are not supported.
+The `withtime`, `most_recent`, and `least_recent` operators are not considered standalone operators; they are designed to only be used as an alternative to the [first and last operators](/docs/search/search-query-language/group-aggregate-operators/first-last) in Live Dashboards or any continuous query where first and last are not supported.
 :::
 
-By default, the ordering is not defined inside of groups created using a group-by expression. To order your results, use the [**sort**](/docs/search/search-query-language/search-operators/sort) operator.
+By default, the ordering is not defined inside of groups created using a group-by expression. To order your results, use the [`sort`](/docs/search/search-query-language/search-operators/sort) operator.
 
 ## Syntax
 
@@ -35,7 +35,7 @@ You can use **by** instead of **group by** so `count group by user` is equ
 * Cannot be used with the [LogReduce](/docs/search/logreduce) operator.
 * When [parsing and naming (aliasing) fields](/docs/search/search-query-language/parse-operators/parse-field-option.md), avoid using the names of grouping functions or other operators as field names.
 * When using **count**, or any grouping function, remember to include the underscore before the field name (sort by `_count`).
-* Multiple **aggregation** functions can be on the same line but you can't include another function, such as a math function, on the same line of a query.
+* Multiple **aggregation** functions can be on the same line, but you can't include another function, such as a math function, on the same line of a query.
 
 For example, you can't use:
 
@@ -86,17 +86,15 @@ _sourceCategory=apache 
 | sort by _count
 ```
 
-
 ```sql title="Group by multiple fields"
 | count(field1), avg(field2) group by field1, _timeslice
 ```
-
 
 ```sql title="Use multiple aggregate operators"
 | max(amount) as amount_max, count(datetime) as datetime_count, sum(_size) as messages_size_sum, last(query) as last_query
 ```
 
-All Sumo Logic system-generated fields begin with an underscore (`_`). Group-by functions always create a Sumo Logic field named with a combination of an underscore (`_`) and the function name. Using the function **`count`** inserts a field into the pipeline called `_count`. The function **`count_distinct`** inserts a field into the pipeline called `_count_distinct`.
+All Sumo Logic system-generated fields begin with an underscore (`_`). Group-by functions always create a Sumo Logic field named with a combination of an underscore (`_`) and the function name. Using the function `count` inserts a field into the pipeline called `_count`. The function `count_distinct` inserts a field into the pipeline called `_count_distinct`.
 
 ## Guide Contents
 

@@ -1,7 +1,7 @@
 ---
 id: along
-title: along Metrics Operator
-sidebar_label: along
+title: along - Combining Results
+sidebar_label: along - Combining Results
 keywords:
     - metrics
     - along
@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can join metrics queries to combine, compare, and perform operations on the results of multiple queries.
 
-By using the `along` operator in joins, you can control what results are joined, based on the value of one or more result fields.  
+By using the `along` statement in joins, you can control what results are joined, based on the value of one or more result fields.  
 
 ## Syntax
 
@@ -20,7 +20,7 @@ By using the `along` operator in joins, you can control what results are joined,
 
 ## Why use along?​
 
-This section explains the benefit of using the `along` operator when you join metrics queries.
+This section explains the benefit of using `along` when you join metrics queries.
 
 In the Metrics Explorer you can run up to six separate queries and display and compare the query results on the same chart. The queries are labeled from #A to #F.
 
@@ -46,7 +46,7 @@ It’s a good idea to use `along` in your queries to exclude excessive results w
 
 As described above, if you simply use query IDs to reference results from multiple rows, you'll end up with _all_ combinations of the results.
 
-Using the `along` operator restricts operations on result rows such that computations are performed only for datasets having matching fields. This is similar to performing an SQL `inner join ON`.
+Using the `along` statement restricts operations on result rows such that computations are performed only for datasets having matching fields. This is similar to performing an SQL `inner join ON`.
 
 As an example, consider the sum of the rows returning metrics for dev, stage and prod accounts. The results of simply summing the query results (#A + #B) will include sums of metrics for different accounts, when our goal is to get the sums for metrics from each account separately.
 
@@ -88,6 +88,8 @@ Query #C returns 9 result sets
 (metric=CPU_User, account=prod) + (metric=CPU_Sys, account=prod)
 ```
 
+<img src={useBaseUrl('img/metrics/join-results-without-along.png')} alt="join-results-without-along.png"/>
+
 Including `along account` in the query ensures that only result sets in which the value of the `account` field match should be used for computation. This narrows down the result set list to the result sets expected.
 
 Queries with modified #C row:
@@ -105,7 +107,7 @@ return same result sets for row #A and #B and only three results for row #C:
 (metric=CPU_User, account=stage) + (metric=CPU_Sys, account=stage)
 (metric=CPU_User, account=prod) + (metric=CPU_Sys, account=prod)
 ```
-<img src={useBaseUrl('img/metrics/join-results-without-along.png')} alt="join-results-without-along.png"/>
+<img src={useBaseUrl('img/metrics/three-rows.png')} alt="three-rows.png"/>
 
 ## Quantization and joined queries
 
