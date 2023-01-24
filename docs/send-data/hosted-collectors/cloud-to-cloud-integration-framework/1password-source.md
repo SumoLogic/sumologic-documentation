@@ -141,7 +141,7 @@ Sources to can be restarted when they are in ThirdPartyConfig errors.
 #### UI
 To restart your source in the Sumo Logic platform:
 
-1. Open the Collection page, go to Manage Data > Collection > Collection.
+1. Open the Collection page, and go to **Manage Data** > **Collection** > **Collection**.
 2. Find the source and click the information icon on the right of the row.
 3. The API usage information popup is displayed. Click the Restart Source button on the bottom left. <br>![restart source button.png](/img/collector/restart-source-button.png)</br>
 4. Click **Confirm** to send the restart request. <br>![restart source confirm.png](/img/collector/restart-source-confirm.png)</br>
