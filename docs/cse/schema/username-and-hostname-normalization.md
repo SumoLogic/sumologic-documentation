@@ -32,7 +32,7 @@ Some of the common forms of hostname are:
 The following fields of the schema are normalized.
 
 | Schema Attribute     | Normalization Type |
-|----------------------|--------------------|
+|:----------------------|:--------------------|
 | `device_hostname`    | hostname           |
 | `dstDevice_hostname` | hostname           |
 | `fromUser_username`  | username           |
@@ -149,7 +149,7 @@ In this example, it is assumed the user has configured the system for “Primary
 Normalized Default Domain: sumo
 
 | Domain String | Base Domain |
-|---------------|-------------|
+|:---------------|:-------------|
 | SUMO          | sumo        |
 | sumologic.com | sumo        |
 | JASK          | jask        |
@@ -158,7 +158,7 @@ Normalized Default Domain: sumo
 Name forms matching the default domain would look like:
 
 | Username String (raw) | Normalized Value      |
-|-----------------------|-----------------------|
+|:-----------------------|:-----------------------|
 | `bob`                   | `bob`                   |
 | `SUMO\bob`              | `bob`                   |
 | `bob@sumologic.com`     | `bob`                   |

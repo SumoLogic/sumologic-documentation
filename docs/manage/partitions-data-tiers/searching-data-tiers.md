@@ -23,7 +23,7 @@ Even though you don't have to use `_dataTier` when you are querying selected par
 ## Examples
 
 | Example query	| Description |
-| -- | -- |
+| :-- | :-- |
 | `error` | Searches all partitions in the Continuous tier  for messages that contain the string “error”. |
 | `_dataTier=Frequent error` | Searches all partitions in the Frequent tier  for messages that contain the string “error”. |
 | `_dataTier=All error` | Searches all partitions in all tiers for messages that contain the string “error”. |
@@ -85,7 +85,7 @@ Given these partitions:
 * `dashboardInfreq` in the Infrequent Tier
 
 | Role search filter  | Search query | Results | Notes |
-|--|--|--|--|
+|:--|:--|:--|:--|
 | `*` | `_index=dashboard*` | Results will include data from all three of the partitions  | Because the role search filter grants access to all partitions, regardless of tier, results are returned for each of the partitions. |
 | `_index=dashboard*` | `*` | Results will only include data from the `dashboardContinuous` partition. | Although the filter gives the user access to `dashboardCont`, `dashboardFreq` and `dashboardInfreq`. The search query "\*" means only continuous views, so of the three views the user has access to, the one in the Continuous tier will be the one selected. |
 

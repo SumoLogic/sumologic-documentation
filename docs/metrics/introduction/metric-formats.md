@@ -131,7 +131,7 @@ http_requests_total{method="post",code="400"}    3 1395066363000
 See the table below for descriptions of the components of a Prometheus metric exposition.
 
 | Component | Description |
-|--|--|
+|:--|:--|
 | `metric_name` | Specifies the general feature of a system that is measured. For example: `http_requests_total` |
 | `metric_description` | An arbitrary description or category for the metric. For example: `requests` |
 | `metric_type` | the type of the metric, one of `counter`, `gauge`, `histogram`, `summary`, or `untyped`.

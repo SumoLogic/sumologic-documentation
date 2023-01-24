@@ -25,7 +25,7 @@ If you have a Sumo Logic Enterprise Suite account, you can take advantage of th
 
 ## Create a Partition
 
-1. In the Sumo left navigation bar, go to **Manage Data \> Logs**, then select the **Partitions** tab.
+1. In the Sumo left navigation bar, go to **Manage Data > Logs**, then select the **Partitions** tab.
 1. Click **+ Add Partition**.
 1. The **Create New Partition** pane appears.
 
@@ -102,7 +102,7 @@ Before changing the routing expression for a partition, consider the impact of t
 
 ## Edit a partition
 
-1. In the Sumo left navigation bar, go to **Manage Data** \> **Logs**, then select the **Partitions** tab.
+1. In the Sumo left navigation bar, go to **Manage Data** > **Logs**, then select the **Partitions** tab.
 1. Click the row with the partition you want to edit.
 1. The partition details are displayed on the right side of the page.
 1. Click **Edit **to open the pane for editing.<br/> ![edit-partition-pane.png](/img/partitions-data-tiers/edit-partition-pane.png)

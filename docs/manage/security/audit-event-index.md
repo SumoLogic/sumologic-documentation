@@ -7,7 +7,7 @@ description: The Audit Event Index provides event logs in JSON on your account's
 ## Availability
 
 | Account Type | Account Level |
-|--|--|
+|:--|:--|
 | Cloud Flex | Trial, Enterprise |
 | Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -22,7 +22,7 @@ All available audited events are documented for your reference. This documentat
 Select the documentation link for your deployment:
 
 | Deployment | Documentation URL |
-|--|--|
+|:--|:--|
 | AU | https://service.au.sumologic.com/audit/docs  |
 | CA | https://service.ca.sumologic.com/audit/docs  |
 | DE | https://service.de.sumologic.com/audit/docs  |
@@ -64,8 +64,9 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 ```
 
 | Product Feature | _sourceCategory Value  |
-| -- | -- |
+| :-- | :-- |
 | [Access Keys](access-keys.md) | `accessKeys` |
+| [Alerts](/docs/alerts/monitors/alert-response) | `alerts` |
 | [Collection](/docs/manage/collection) | `collection` |
 | [Content Sharing](/docs/manage/content-sharing) | `content` |
 | [Data Forwarding](/docs/manage/data-forwarding) | `dataForwarding` |
@@ -93,7 +94,7 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 [Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields are assigned to audit event logs as follows:
 
 | Metadata Field | Assignment Description |
-| -- | -- |
+| :-- | :-- |
 | _sourceCategory   | Value of the [common parameter](audit-event-index.md), `subsystem`. |
 | _sourceName | Value of the [common parameter](audit-event-index.md), `eventName`. |
 | _sourceHost | The remote IP address of the host that made the request. If not available the value will be `no_sourceHost`. |
@@ -103,7 +104,7 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 Each audit event log has common keys that categorize it to a product area and provide details of the event.
 
 | Parameter | Description | Data Type |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | accountId | The unique identifier of the organization. | String |
 | eventId | The unique identifier of the event. | String |
 | eventName | The name of the event. | String |

@@ -76,7 +76,7 @@ Sumo Logic built-in fields:
 The following is a table of automatically-parsed span attributes:
 
 | Span field | Description |
-|----------------|--------------------------------------------------------------------------------------------------|
+|:----------------|:--------------------------------------------------------------------------------------------------|
 | endtimestamp   | The end timestamp of the span                                                                    |
 | kind           | Either `internal`, `server`, or `client` as set by client instrumentation                        |
 | operation      | The operation name such as `url`, `SOA call`, or `db statement` as set by client instrumentation |

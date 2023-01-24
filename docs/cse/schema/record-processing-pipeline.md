@@ -24,7 +24,7 @@ A Record contains the information from an incoming message, transformed and enha
 For each incoming message, CSE creates a set of key-value pairs that reflect all of the information in the message. To accomplish this, CSE provides these ingestion routes:
 
 * **C2C Connector**. Sumo Logic’s Cloud-to-Cloud (C2C) Integration Framework is a fully-managed collection system that collects logs and events directly from SaaS and Cloud platforms. For a list of available C2C collectors, see [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
-* **Sumo Logic Parser**. For other data sources, the Sumo Logic’s built-in parsers that extract key-value pairs from messages. To see currently available parsers, go to Manage **Data \> Logs \> Parsers** in the Sumo Logic UI.  
+* **Sumo Logic Parser**. For other data sources, the Sumo Logic’s built-in parsers that extract key-value pairs from messages. To see currently available parsers, go to Manage **Data > Logs > Parsers** in the Sumo Logic UI.  
 
 For more information on these alternatives, see [CSE Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices.md).
 

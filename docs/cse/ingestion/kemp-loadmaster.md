@@ -37,7 +37,7 @@ In this step, you configure a Syslog Source to collect Kemp LoadMaster messages.
 
 ### Configure a Syslog Source
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. Navigate to the Installed Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 

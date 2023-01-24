@@ -13,14 +13,14 @@ For information on creating customized alerts, see [Monitors](/docs/alerts/monit
 :::
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | Recovery Condition |
-|--|--|--|--|--|
-| Kubernetes - etcd Insufficient Members | This alert is fired when we determine that etcd cluster has insufficient members. | Critical | \>0 | \<=0 |
+|:--|:--|:--|:--|:--|
+| Kubernetes - etcd Insufficient Members | This alert is fired when we determine that etcd cluster has insufficient members. | Critical | >0 | \<=0 |
 | Kubernetes -Kube API Down | This alert is fired when KubeAPI disappears from Prometheus target discovery. | Critical/MissingData | \<=0 | \\>0 |
 | Kubernetes -Kube Controller Manager Down | This alert is fired when KubeControllerManager disappears from Prometheus target discovery. | Critical | \<=0 | \\>0 |
 | Kubernetes -Kubelet Down | This alert is fired when Kubelet disappears from Prometheus target discovery. | Critical/MissingData | \<=0 | \\>0 |
 | Kubernetes -Kube Node Not Ready | This alert is fired when a node is not ready. | Critical/MissingData | \<=0 | \\>0 |
 | Kubernetes -Kube Scheduler Down | This alert is fired when Kube Scheduler disappears from Prometheus target discovery. | Critical/MissingData | \<=0 | \\>0 |
-| Kubernetes -Cluster CPU Utilization High | This alert is fired when Cluster CPU utlization is high. | Critical/Warning | \>0.90 | \<=0.90 |
+| Kubernetes -Cluster CPU Utilization High | This alert is fired when Cluster CPU utlization is high. | Critical/Warning | >0.90 | \<=0.90 |
 | Kubernetes -Prometheus Remote Storage Failures | This alert is fired when Prometheus fails to send samples to remote storage. | Critical | \\>1 | \<=1 |
 | Kubernetes -Multiple Terminated Pods (Errored Out) | This alert is fired when we determine that there are pods that have been terminated because of an error. | Critical | \\>5 | \<=5 |
 | Kubernetes - Multiple Terminated Pods (Container Cannot Run) | This alert is fired when we determine that there are pods that have been terminated because the container cannot run. | Critical | \\>5 | \<=5 |
@@ -32,4 +32,4 @@ For information on creating customized alerts, see [Monitors](/docs/alerts/monit
 | Kubernetes -DaemonSet Misscheduled | This alert is fired when DaemonSet pods are miss-scheduled. | Warning | \\>0 | \<=0 |
 | Kubernetes -StatefulSet Generation Mismatch | This alert is fired when StatefulSet generation mismatch is determined due to possible roll-back. | Warning | \\>0 | \<=0 |
 | Kubernetes -HPA Maxed Out | This alert is fired when HPA is running at maximum replicas. | Warning | \<=0 | \\>0 |
-| Kubernetes -Multiple Containers OOM Killed | This alert is fired when multiple containers are OOM Killed. | Warning | \>=5 | \<5 |
+| Kubernetes -Multiple Containers OOM Killed | This alert is fired when multiple containers are OOM Killed. | Warning | >=5 | \<5 |

@@ -110,7 +110,7 @@ This is a known issue regarding upgrading a Windows collector from versions 19.6
 
 1. Restart the Sumo Logic Collector service.
 
-When these steps are complete, in Sumo Logic, go to **Manage Data \> Collection \> Collection**, click **Upgrade Collectors**, and select the **Retry** option next to the failed Collector.
+When these steps are complete, in Sumo Logic, go to **Manage Data > Collection > Collection**, click **Upgrade Collectors**, and select the **Retry** option next to the failed Collector.
 
 
 ## Configure Limits for Collector Caching
@@ -271,7 +271,7 @@ wrapper.java.maxmemory = 2048
 ```
 
 | Parameter | Description | Can be changed after installation? |
-|--|--|--|
+|:--|:--|:--|
 | `wrapper.java.maxmemory` | Sets the maximum java heap size, in MB.<br/>Default: 128 | Yes, with Collector restart. |
 
 #### Command line installer
@@ -285,7 +285,7 @@ For example, the parameter with a memory setting of 2048MB would look like:
 ```
 
 | Parameter | Description | Can be changed after installation? |
-|--|--|--|
+|:--|:--|:--|
 | `wrapper.java.maxmemory` | Sets the maximum java heap size, in MB.<br/>Default: 128 | Yes, with Collector restart. |
 
 #### Existing Collector
@@ -461,7 +461,7 @@ Large time discrepancies are typically related to time zone settings that were 
 Pay careful attention to the Time Zone specified for a Source. The **Use time zone from log file** option assumes that a time zone is part of the message timestamp and that it is in a supported [Java SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html), as shown below:
 
 | Letter | Date or Time Component | Example |
-|--|--|--|
+|:--|:--|:--|
 | z | Time zone (General time zone) | Pacific Standard; PST; GMT-08:00 |
 | Z | Time zone (RFC 822 time zone) | -0800 |
 
@@ -545,7 +545,7 @@ After installing a Collector and configuring a Source, your data should appear i
 
 #### Check the Status page of Sumo Logic
 
-In Sumo Logic select **Manage Data \> Collection \> Status** to view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
+In Sumo Logic select **Manage Data > Collection > Status** to view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
 
 As long as you see that some messages are present, your Sumo Logic account is up and running. 
 
@@ -584,7 +584,7 @@ When you configure a Source, you can choose one of three timestamp options. Firs
 
 To view Source settings:
 
-1. select **Manage Data \> Collection \> Collection**. 
+1. select **Manage Data > Collection > Collection**. 
 1. Click **Edit** to the right of the Source's name.
 1. Under **Advanced**, choose one of the following:
 

@@ -28,7 +28,7 @@ As a Content Administrator,  you can switch to Admin mode at any time in order 
 To switch to Admin Mode:
 
 1. Go to the Library.
-1. Select **View as:** \> **Content Administrator.**
+1. Select **View as:** > **Content Administrator.**
 
     ![Content Admin.png](/img/content-sharing/content-admin.png)  
 

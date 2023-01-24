@@ -4,13 +4,10 @@ title: top Search Operator
 sidebar_label: top
 ---
 
-
-
-
-Use the top operator with the [sort](/docs/search/search-query-language/search-operators/sort) operator to reduce the number of sorted results returned.
+Use the `top` operator with the [`sort`](/docs/search/search-query-language/search-operators/sort) operator to reduce the number of sorted results returned.
 
 :::tip
-We recommend you instead use the [topk](/docs/search/search-query-language/search-operators/topk) operator so you can take advantage of its additional functionality.
+We recommend you instead use the [`topk`](/docs/search/search-query-language/search-operators/topk) operator so you can take advantage of its additional functionality.
 :::
 
 ## Syntax
@@ -19,7 +16,7 @@ We recommend you instead use the [topk](/docs/search/search-query-language/sear
 top <#> <field> [by <group_by_operator>]
 ```
 
-**Examples**
+## Examples
 
 #### List the Top 5 source categories with errors
 
