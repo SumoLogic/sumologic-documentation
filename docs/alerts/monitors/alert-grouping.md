@@ -1,6 +1,7 @@
 ---
 id: alert-grouping
 title: Alert Grouping
+description: Alert Grouping gives you the flexibility to customize how your alerts and notifications are generated from monitors, allowing you to specify a grouping condition based on specific fields.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -23,7 +24,7 @@ Alert Grouping works for both Logs and Metrics Monitors.
 2. Click **Add a New monitor**.
 3. Select **Metrics** as the type of Monitor.
 4. Enter your metrics query, then select your desired Alert Grouping option.
-   * **One** **alert per monitor:** If you only want to receive a single alert for the entire monitor.
+   * **One alert per monitor**: If you only want to receive a single alert for the entire monitor.
    * **One alert per time series**: To receive a single alert for each time-series that is present in the metric query
    * **One alert per [group]**: allows you to receive one notification per each unique value of the grouping field(s). You can pick more than one field for the grouping condition. In the example below, user will receive one notification when CPU utilization is higher than the threshold for each unique AWS namespace within an account.<br/><img src={useBaseUrl('img/monitors/setup-metrics.png')} alt="alert-grouping" />
 5. Configure the rest of your Alert Condition per standard procedure. Refer to [Monitors ](/docs/alerts/monitors)for more details.
