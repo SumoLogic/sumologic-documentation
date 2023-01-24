@@ -693,7 +693,6 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'alerts/index'},
       items: [
-        'alerts/alert-variables',
         'alerts/difference-from-scheduled-searches',
         {
           type: 'category',
@@ -705,6 +704,7 @@ module.exports = {
             'alerts/monitors/create-monitor',
             'alerts/monitors/edit-settings',
             'alerts/monitors/monitor-faq',
+            'alerts/monitors/alert-variables',
             'alerts/monitors/alert-response',
             'alerts/monitors/alert-grouping',
             'alerts/monitors/alert-response-faq',
@@ -1614,7 +1614,6 @@ module.exports = {
           ],
         },
         `sdo/install-sdo-app-view-dashboards`,
-        'sdo/view-sdo-dashboards',
         'sdo/jenkins-plugin-build-deploy-events',
         'sdo/integrate-tools-with-sdo',
       ],
