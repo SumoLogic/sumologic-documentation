@@ -40,7 +40,7 @@ Variables must be enclosed by double curly brackets (`{{ }}`). Unresolved variab
 | `{{Playbook}}` | Allows you to access the [playbook content](/docs/alerts/monitors#metrics-trigger-types) that was configured as part of the initial monitor setup. | &#9989;| &#9989;|
 
 :::caution
-When writing queries, do not define fields with built-in field names; their values will be overridden.
+When writing queries, do not define fields with [built-in metadata values](/docs/search/get-started-with-search/search-basics/built-in-metadata), as these will be overridden.
 :::
 
 ## Examples
