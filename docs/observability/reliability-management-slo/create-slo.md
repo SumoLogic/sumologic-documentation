@@ -118,7 +118,7 @@ Follow the instructions below based on the query type:
 10. Click **Save**. To create a monitor, click [Save and Create Monitor](#creating-slo-monitors).
 
 
-## Creating SLOs from Logs, Metrics, Monitors
+## Create a Log-based SLO
 
 You can create SLOs directly from your Sumo Logic log search. This allows you to validate queries, quickly create SLOs, and re-use queries from existing dashboard panels.
 
@@ -126,11 +126,37 @@ You can create SLOs directly from your Sumo Logic log search. This allows you to
 1. Click the **More Actions** (kebab icon) dropdown menu.<br/><img src={useBaseUrl('img/observability/slo-more-actions-kebab.png')} alt="More Actions" />
 1. Click **Create an SLO**.<br/><img src={useBaseUrl('img/observability/slo-create.png')} alt="Create an SLO" width="200"/>
 
-:::note Coming soon
-You'll be able to create SLOs from Metrics Explorer and Monitors.
+
+## Create a Monitor-based SLO
+
+Critical Monitors are good candidates to convert to SLOs. As an example, if you have an existing Monitor that's set to alert you to Critical conditions. For example, in Kubernetes env, more than 5 pods in terminated state in 5-minute interval.
+
+From the Monitor UI, you can create a window-based SLO for a given trigger condition (like Critical) given time period 1m window duration. To create a Monitor-based SLO:
+
+:::important
+Your Monitor must be in an active state prior to creating a Monitor-based SLO.
 :::
 
-## Creating SLO Monitors
+1. Open the alert panel > **More Actions** > **Create SLO**.
+1. In the **New SLO** window, you'll see that your Monitor conditions have auto-populated. You're welcome to revise and define additional SLI and SLO parameters here.
+1. When you're done, click **Save** (what does "Save and create Monitor do"?)
+
+To edit an SLO:
+1. Go to the SLO tab and locate your SLO (how do you know what folder it's in? do you have the option to save to a folder?).
+1. Edit definition and other parameters.
+
+To edit an SLO from a Monitor:
+1. Go to the **Monitors** tab and click on any Monitor.
+1. In the panel, click **SLO** to view the list of SLOs associated with that particular Monitor.
+
+
+## Create a Metrics-based SLO
+
+:::note Coming soon
+You'll be able to create SLOs from Metrics Explorer.
+:::
+
+## Create a SLO Monitor
 
 :::note
 [Alert Responses](/docs/alerts/monitors/alert-response) are not yet supported for SLO-based monitors. Notifications will provide information and links to SLO dashboards.
