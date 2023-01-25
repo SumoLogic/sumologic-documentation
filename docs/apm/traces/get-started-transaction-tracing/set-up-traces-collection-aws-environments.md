@@ -1,6 +1,7 @@
 ---
 id: set-up-traces-collection-aws-environments
 title: Set up Traces Collection for AWS Environments
+sidebar_label: AWS Environment Setup
 description: To collect traces in non-Kubernetes AWS environments like EC2 or ECS (including Fargate), you can install an OpenTelemetry Collector from the AWS Distro for OpenTelemetry.
 ---
 
