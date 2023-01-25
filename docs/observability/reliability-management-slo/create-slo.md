@@ -121,25 +121,33 @@ Follow the instructions below based on the query type:
 You can create SLOs directly from your Sumo Logic log search. This allows you to validate queries, quickly create SLOs, and re-use queries from existing dashboard panels.
 
 1. Enter a new **Log search** query (or use an existing one).<br/><img src={useBaseUrl('img/observability/log-search.png')} alt="log search" />
-1. Click the **More Actions** (kebab icon) dropdown menu.<br/><img src={useBaseUrl('img/observability/slo-more-actions-kebab.png')} alt="More Actions" />
-1. Click **Create an SLO**.<br/><img src={useBaseUrl('img/observability/slo-create.png')} alt="Create an SLO" width="200"/>
+1. Click the **More Actions** (kebab icon) dropdown menu.<br/><img src={useBaseUrl('img/observability/slo-more-actions-kebab.png')} alt="More Actions" width="400"/>
+1. Click **Create an SLO**.<br/><img src={useBaseUrl('img/observability/slo-create.png')} alt="Create an SLO" width="150"/>
 
+## Create a Metrics-based SLO
+
+:::note Coming soon
+You'll be able to create SLOs from Metrics Explorer.
+:::
 
 ## Create a Monitor-based SLO
 
 Critical Monitors are great candidates to convert to SLOs. From the **Monitors** section, you can create a Monitor- and window-based SLO for a given trigger condition.
 
-As an example, let's say you have an existing Monitor that's set to fire a **Critical** alert if more than 5 pods go into a terminated state in a 5-minute interval.
+As an example, let's say you have an existing Monitor that's set to fire a **Critical** alert if more than 5 pods go into a terminated state in a 5-minute interval. <-- what's the value of converting to SLO? additional measurements like error budget, etc.?
 
-1. Make sure your Monitor is in an **active** state prior to creating a Monitor-based SLO.
-1. Open the **Monitors** section > click on any Monitor.
-1. In the Monitor panel, click **More Actions** > **Create SLO**. This will open the **New SLO** window.
+:::caution
+Your Monitor must be in an **active** state prior to creating an SLO.
+:::
+
+1. Go to **Manage Data** > **Monitoring** > **Monitors** tab.
+1. Click on any active Monitor to open its panel, then click **More Actions** > **Create SLO**.<br/><img src={useBaseUrl('img/observability/more-actions-create-slo.png')} alt="Monitor-based SLO" width="500"/><br/> This will open the **New SLO** window.
 1. **Define your SLI**. Your Monitor's Source, Signal Type, and Trigger Conditions settings will auto-populate here. (can users override if they want?)<br/><img src={useBaseUrl('img/observability/new-slo1.png')} alt="Monitor-based SLO" />
-1. **Define your SLO**. Set your window-based threshold here.
+1. **Define your SLO**. Set your window-based threshold here.<br/><img src={useBaseUrl('img/observability/new-slo2.png')} alt="Monitor-based SLO" />
 1. **SLO Details**. ?
 1. When you're done, you can:
    * Click **Save**, which will ??
-   * Click **Save and Create Monitor**, which will create a new Monitor-based SLO behind the scenes. You'll be asked to define a new Monitor on top of that Monitor-based SLO. It's like a shortcut to create Monitor on top of Monitor-based SLO.<br/><img src={useBaseUrl('img/observability/new-slo4.png')} alt="Monitor-based SLO" />
+   * Click **Save and Create Monitor**, which will create a new Monitor-based SLO behind the scenes. You'll be asked to define a new Monitor on top of that Monitor-based SLO. It's like a shortcut to create Monitor on top of Monitor-based SLO.<br/><img src={useBaseUrl('img/observability/new-slo4.png')} alt="Monitor-based SLO" width="350" />
 
 To edit SLO parameters:
 1. Go to the SLO tab, locate your SLO and click on it. (If you're unable to find it, try applying filters or go to the search bar at the top and enter the SLO name or folder name.)
@@ -149,12 +157,6 @@ To edit SLO parameters from a Monitor:
 1. Go to the **Monitors** tab and click on any Monitor.<br/><img src={useBaseUrl('img/observability/monitors-panel-slo.png')} alt="Monitor-based SLO" width="500" />
 1. In the panel, click **Monitor-based SLO** to view the list of SLOs associated with that particular Monitor.<br/><img src={useBaseUrl('img/observability/monitor-based-slo-panel.png')} alt="Monitor-based SLO" />
 
-
-## Create a Metrics-based SLO
-
-:::note Coming soon
-You'll be able to create SLOs from Metrics Explorer.
-:::
 
 ## Create an SLO Monitor
 
