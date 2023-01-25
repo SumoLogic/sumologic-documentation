@@ -56,9 +56,9 @@ _index=sumologic_volume and sizeInBytes and _sourceCategory="sourcename_volume"
 | number(month)
 | formatDate(_timeslice, "dd") as day
 | number(day)
-| formatDate(now(), "MM") as current_month
+| formatDate(queryEndTime(), "MM") as current_month
 | number(current_month)
-| formatDate(now(), "dd") as current_day
+| formatDate(queryEndTime(), "dd") as current_day
 | number(current_day)
 | X as billing_start //Replace the X with your billing start day which can be found in Manage > Account.
 | X as billing_end //Replace the X with your billing end day which can be found in Manage > Account
@@ -209,7 +209,7 @@ _index=sumologic_volume sizeInBytes _sourceCategory="collector_volume"
 | parse regex "\"(?<collector>[^\"]+)\"\:\{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
 | first(_messagetime) as MostRecent, sum(bytes) as TotalVolumeBytes by collector
 | formatDate(fromMillis(MostRecent),"yyyy/MM/dd HH:mm:ss") as MostRecentTime
-| toMillis(now()) as currentTime
+| toMillis(queryEndTime()) as currentTime
 | formatDate(fromMillis(currentTime),"yyyy/MM/dd HH:mm:ss") as SearchTime
 | (currentTime-MostRecent) / 1000 / 60 as mins_since_last_logs
 | where mins_since_last_logs >= 60
