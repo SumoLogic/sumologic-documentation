@@ -30,4 +30,4 @@ If you need to access the Source's URL again, click **Show URL**.  <br/>   !
 
 ## Send a test trace to Sumo
 
-Now, that you have created an HTTP Traces Source you can send tracing data to it. Set up a collector and instrument your application with OpenTelemetry as described [here](/docs/apm/traces/get-started-transaction-tracing/) or test it quickly with [OpenTelemetry demo application](https://github.com/SumoLogic/opentelemetry-demo).
+Now that you have created an HTTP Traces Source, you can send tracing data to it. Set up a collector and instrument your application with OpenTelemetry as described [here](/docs/apm/traces/get-started-transaction-tracing) or test it quickly with our [OpenTelemetry demo application](https://github.com/SumoLogic/opentelemetry-demo).
