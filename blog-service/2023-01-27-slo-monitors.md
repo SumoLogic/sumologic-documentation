@@ -1,5 +1,5 @@
 ---
-title: Monitors-to-SLO
+title: Monitor-Based SLOs
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - monitors
