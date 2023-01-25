@@ -1,7 +1,7 @@
 ---
 id: create-slo
 title: Create an SLO
-description: Learn how to create a SLO for reliability management.
+description: Learn how to create an SLO for reliability management.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -25,9 +25,7 @@ The following table lists the available options for an SLO:
 | **Metrics-based SLO** | Ratio and Threshold | Ratio Only   |
 | **Logs-based SLO**   | Ratio and Threshold | Ratio and Threshold |
 
-## Create an SLO
-
-### General process
+## Create an SLO (General)
 
 1. Click **Manage Data**, then **Monitoring**. Select the **SLO** tab if not loaded.
 2. Click **Add**, then **New SLO**. Optionally, you can also:
@@ -118,7 +116,7 @@ Follow the instructions below based on the query type:
 10. Click **Save**. To create a monitor, click [Save and Create Monitor](#creating-slo-monitors).
 
 
-## Create a Log-based SLO
+## Create a Logs-based SLO
 
 You can create SLOs directly from your Sumo Logic log search. This allows you to validate queries, quickly create SLOs, and re-use queries from existing dashboard panels.
 
@@ -129,25 +127,27 @@ You can create SLOs directly from your Sumo Logic log search. This allows you to
 
 ## Create a Monitor-based SLO
 
-Critical Monitors are good candidates to convert to SLOs. As an example, if you have an existing Monitor that's set to alert you to Critical conditions. For example, in Kubernetes env, more than 5 pods in terminated state in 5-minute interval.
+Critical Monitors are great candidates to convert to SLOs. From the **Monitors** section, you can create a Monitor- and window-based SLO for a given trigger condition.
 
-From the Monitor UI, you can create a window-based SLO for a given trigger condition (like Critical) given time period 1m window duration. To create a Monitor-based SLO:
+As an example, let's say you have an existing Monitor that's set to fire a **Critical** alert if more than 5 pods go into a terminated state in a 5-minute interval.
 
-:::important
-Your Monitor must be in an active state prior to creating a Monitor-based SLO.
-:::
+1. Make sure your Monitor is in an **active** state prior to creating a Monitor-based SLO.
+1. Open the **Monitors** section > click on any Monitor.
+1. In the Monitor panel, click **More Actions** > **Create SLO**. This will open the **New SLO** window.
+1. **Define your SLI**. Your Monitor's Source, Signal Type, and Trigger Conditions settings will auto-populate here. (can users override if they want?)<br/><img src={useBaseUrl('img/observability/new-slo1.png')} alt="Monitor-based SLO" />
+1. **Define your SLO**. Set your window-based threshold here.
+1. **SLO Details**. ?
+1. When you're done, you can:
+   * Click **Save**, which will ??
+   * Click **Save and Create Monitor**, which will create a new Monitor-based SLO behind the scenes. You'll be asked to define a new Monitor on top of that Monitor-based SLO. It's like a shortcut to create Monitor on top of Monitor-based SLO.<br/><img src={useBaseUrl('img/observability/new-slo4.png')} alt="Monitor-based SLO" />
 
-1. Open the alert panel > **More Actions** > **Create SLO**.
-1. In the **New SLO** window, you'll see that your Monitor conditions have auto-populated. You're welcome to revise and define additional SLI and SLO parameters here.
-1. When you're done, click **Save** (what does "Save and create Monitor do"?)
-
-To edit an SLO:
-1. Go to the SLO tab and locate your SLO (how do you know what folder it's in? do you have the option to save to a folder?).
+To edit SLO parameters:
+1. Go to the SLO tab, locate your SLO and click on it. (If you're unable to find it, try applying filters or go to the search bar at the top and enter the SLO name or folder name.)
 1. Edit definition and other parameters.
 
-To edit an SLO from a Monitor:
-1. Go to the **Monitors** tab and click on any Monitor.
-1. In the panel, click **SLO** to view the list of SLOs associated with that particular Monitor.
+To edit SLO parameters from a Monitor:
+1. Go to the **Monitors** tab and click on any Monitor.<br/><img src={useBaseUrl('img/observability/monitors-panel-slo.png')} alt="Monitor-based SLO" width="500" />
+1. In the panel, click **Monitor-based SLO** to view the list of SLOs associated with that particular Monitor.<br/><img src={useBaseUrl('img/observability/monitor-based-slo-panel.png')} alt="Monitor-based SLO" />
 
 
 ## Create a Metrics-based SLO
@@ -156,21 +156,21 @@ To edit an SLO from a Monitor:
 You'll be able to create SLOs from Metrics Explorer.
 :::
 
-## Create a SLO Monitor
+## Create an SLO Monitor
 
 :::note
-[Alert Responses](/docs/alerts/monitors/alert-response) are not yet supported for SLO-based monitors. Notifications will provide information and links to SLO dashboards.
+[Alert Responses](/docs/alerts/monitors/alert-response) are not yet supported for SLO-based Monitors. Notifications will provide information and links to SLO dashboards.
 :::
 
-Create one or more monitors as needed for your SLO. We recommend creating separate monitors for SLI-based and Burn Rate-based condition types. You can access SLO monitors through your SLO Details or from the Monitors list page.
+Create one or more Monitors as needed for your SLO. We recommend creating separate Monitors for SLI-based and Burn Rate-based condition types. You can access SLO Monitors through your SLO Details or from the Monitors list page.
 
-You will receive notifications according to monitor configurations, such as email messages and Slack channel posts. Use the variable `{{SloDashboardUrl}}` in your connection payloads, which will generate an SLO dashboard link in notifications. This variable will be included automatically in email notifications.
+You will receive notifications according to Monitor configurations, such as email messages and Slack channel posts. Use the variable `{{SloDashboardUrl}}` in your connection payloads, which will generate an SLO dashboard link in notifications. This variable will be included automatically in email notifications.
 
-The Alert Response page is not supported for SLO-based monitors at this time. Notifications will provide access to the SLO dashboard when warning and critical triggers occur.
+The Alert Response page is not supported for SLO-based Monitors at this time. Notifications will provide access to the SLO dashboard when warning and critical triggers occur.
 
 Monitor notifications may auto-resolve. See [Auto-Resolving Notifications](/docs/observability/reliability-management-slo/create-slo/#auto-resolving-notifications) for details according to the evaluation type (Windows or Request) and compliance type (Calendar or Rolling).
 
-You can create one condition type for your SLO monitor, either an SLI trigger or Error Budget trigger. You can create one condition type for your SLO monitor, either a SLI condition or Error Budget condition. We support configuring a threshold value per critical and warning trigger for that condition type.
+You can create one condition type for your SLO Monitor, either an SLI trigger or Error Budget trigger. You can create one condition type for your SLO Monitor, either a SLI condition or Error Budget condition. We support configuring a threshold value per critical and warning trigger for that condition type.
 
 You have two options to create an SLO Monitor:
 * Select **Save and Create Monitor** when creating an SLO. <br/><img src={useBaseUrl('img/observability/button-save-create-monitor.png')} alt="Reliability Management SLO SLI" />
@@ -185,10 +185,10 @@ When you click **Save and Create Monitor**, a New Monitor dialog loads:
 
   For example, to set up a Slack notification, select **Slack** from the dropdown menu and edit the **Payload** as needed. The following information shows the default settings: <br/><img src={useBaseUrl('img/observability/slack-payload.png')} alt="Reliability Management SLO SLI" />
 4. For **Monitor Details**, enter the following information:
-    * **Name**. Name for the monitor.
-    * **Location**. Path for the monitor, default is /Monitor.
-    * **Description**. Optional description for the monitor.
-    * **Playbook**. Optional playbook for handling these monitors and situations if an issue occurs.<br/><img src={useBaseUrl('img/observability/slo-monitor-detals.png')} alt="Reliability Management SLO SLI" />
+    * **Name**. Name for the Monitor.
+    * **Location**. Path for the Monitor, default is /Monitor.
+    * **Description**. Optional description for the Monitor.
+    * **Playbook**. Optional playbook for handling these Monitors and situations if an issue occurs.<br/><img src={useBaseUrl('img/observability/slo-monitor-detals.png')} alt="Reliability Management SLO SLI" />
 5. Click **Save**.
 
 
@@ -214,7 +214,7 @@ SLO Monitors in a triggered state can auto-resolve. See the following table for 
    </td>
    <td>SLITrigger
    </td>
-   <td>No. SLI never recovers within the same compliance period as the triggered alert, but it can recover in a different compliance period. So the monitor can auto-resolve then. New alert is created for each compliance period. Monitor status is based on latest compliance period’s alert status.
+   <td>No. SLI never recovers within the same compliance period as the triggered alert, but it can recover in a different compliance period. So the Monitor can auto-resolve then. New alert is created for each compliance period. Monitor status is based on latest compliance period’s alert status.
    </td>
   </tr>
   <tr>
@@ -300,17 +300,17 @@ When a notification is sent, it includes information from the alert and a link t
 
 <img src={useBaseUrl('img/observability/resolution-email.png')} alt="Reliability Management SLO SLI" width="350"/>
 
-## Installing AWS SLO Alerts via Terraform
+### Installing AWS SLO Alerts via Terraform
 
-AWS ELB users can now install Sumo Logic out-of-the-box SLOs and associated monitors using [this Sumo Logic Terraform script](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/slo_packages/aws).
+AWS ELB users can now install Sumo Logic out-of-the-box SLOs and associated Monitors using [this Sumo Logic Terraform script](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/slo_packages/aws).
 
 The script allows you to install Sumo Logic SLOs in your specified AWS ELB directory and configure SLO alert notifications (e.g., latency limit breached, server error limit breached). Once installed, you can view and edit your SLO alerts via Terraform or from your Sumo Logic **Monitors** page.
 
 ## SLO as Code
 
-You can use the Sumo Logic Terraform provider to automate [SLO folder](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo_folder) and [SLO creation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo). This can be useful for organizations that want to templatize SLOs, standardize SLO configuration, monitors and dashboards and automate SLO-related workflows.
+You can use the Sumo Logic Terraform provider to automate [SLO folder](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo_folder) and [SLO creation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo). This can be useful for organizations that want to templatize SLOs, standardize SLO configuration, Monitors and dashboards and automate SLO-related workflows.
 
-Use the [Monitor Terraform provider](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) to create monitors associated with SLOs.
+Use the [Monitor Terraform provider](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) to create Monitors associated with SLOs.
 
 
 ## SLO as Log Messages

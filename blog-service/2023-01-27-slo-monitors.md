@@ -10,7 +10,7 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-You can now convert Monitors to Service-Level Objectives (SLOs).
+You can now create Service-Level Objectives (SLOs) directly from your Monitors.
 
 ...
 
