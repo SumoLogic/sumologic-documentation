@@ -1,7 +1,7 @@
 ---
 id: search-query-language-support-for-traces
-title: Search Query Language support for Traces
-sidebar_label: Search Query Language support for Traces
+title: Search Query Language Support for Traces
+sidebar_label: Search Query Language support
 description: Use our extensive Search Query Language to gain valuable insight into your traces.
 ---
 
