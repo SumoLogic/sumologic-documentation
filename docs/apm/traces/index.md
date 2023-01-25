@@ -16,7 +16,7 @@ Sumo Logic Application Monitoring and Observability provides transactional int
 This guide provides information to work with your tracing data, including
 the following:
 
-## Step 1: Set up Traces Collection
+### Step 1: Set up Traces Collection
 
 * [For AWS environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-aws-environments)
 * [For Kubernetes environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments)
@@ -25,7 +25,7 @@ the following:
 Once you've set up collection, you can begin to [analyze your traces in Sumo Logic](/docs/apm/traces/view-and-investigate-traces.md).
 
 
-## Step 2: Instrument Your Application with OpenTelemetry
+### Step 2: Instrument Your Application with OpenTelemetry
 
 * [.NET](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net/index.md)
 * [Go](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/go/index.md)
@@ -41,11 +41,11 @@ Once you've set up collection, you can begin to [analyze your traces in Sumo Log
   * [Python](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/python.md)
 * Kubernetes environments
   * [Java](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes/)
-  * [Python](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes/)
   * [JavaScript](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes/)
+  * [Python](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes/)
 
 
-## Optional: Advanced Configuration
+### Optional: Advanced Configuration
 
 * [Specify which data to send to Sumo Logic](/docs/apm/traces/Advanced-Configuration/Filter-Shape-Tracing-Data)
 * [Working with spans attributes](/docs/apm/traces/Advanced-Configuration/Working-with-Span-attributes)

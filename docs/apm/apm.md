@@ -7,8 +7,6 @@ description: Monitor user and app behavior with Sumo Logic trace analytics and r
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/apm.png')} alt="icon" width="75"/>
-
 Monitor user activity, span analytics, service maps, and transaction traces between microservices. Use our Root Cause Explorer to investigate usage and issues.
 
 <div className="box-wrapper" markdown="1">
@@ -21,7 +19,7 @@ Monitor user activity, span analytics, service maps, and transaction traces betw
 </div>
 <div className="box box2 card">
   <div className="container">
-  <img src={useBaseUrl('img/icons/business/customer-retention.png')} alt="Thumbnail icon" width="55"/>
+  <img src={useBaseUrl('img/icons/apm.png')} alt="icon" width="50"/>
   <h3><a href="/docs/apm/real-user-monitoring">Real User Monitoring</a></h3>
   <p>Understand how users interact with the digital interfaces of your business.</p>
   </div>
