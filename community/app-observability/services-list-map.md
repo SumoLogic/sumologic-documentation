@@ -1,6 +1,6 @@
 ---
-id: service-maps
-title: Service Maps
+id: services-list-map
+title: Services List and Map
 hide_table_of_contents: true
 ---
 

@@ -4,7 +4,7 @@ title: pct (percentile) Grouping Operator
 sidebar_label: pct
 ---
 
-The `pct` operator finds the specified percentiles of a given field. 
+The `pct` (percentile) operator finds the specified percentiles of a given field. 
 
 The operator works in two ways:
 

@@ -6,7 +6,7 @@ description: Add scheduled searches that monitor ingestion and send alerts. The 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic provides ingest alerts that you can schedule to get timely information about ingestion usage or throttling. With the excepting of the [Throttling alert](#throttling-alert) described below these alerts apply to logs only, not metrics. 
+Sumo Logic provides ingest alerts that you can schedule to get timely information about ingestion usage or throttling. With the exception of the [Throttling alert](#throttling-alert) described below, these alerts apply to logs only, not metrics. 
 
 For metrics volume queries use the [Metrics Data Volume Index](data-volume-index/metrics-data-volume-index.md).
 
@@ -26,7 +26,7 @@ You must update all of the indicated fields for the search to save successfully
 
 #### Setup
 
-1. Enable the Data Volume Index. See [Enable and Manage the Data Volume Index] for instructions.
+1. Enable the Data Volume Index. See [Enable and Manage the Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
 2. Substitute the correct values of `X` for the following parameters in the search query. For the billing start and end values, use the day of the month. For example, in the screenshot below, the value for `billing_start` is 17 so the updated line from the search becomes `17 as billing_start`.
     ```
     X as billing_start

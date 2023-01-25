@@ -1,6 +1,7 @@
 ---
-slug: /quickstart
+id: quickstart
 title: Quickstart your Sumo experience
+sidebar_label: Quickstart guides
 description: Get up and running with Sumo Logic in minutes.
 ---
 
@@ -21,10 +22,16 @@ These quick start guides help you connect, integrate, configure, and start using
   <p>Get up and running with the Sumo Logic Kubernetes solution in minutes.</p>
   </div>
 </div>
-<div className="box box4 card">
+<div className="box box3 card">
     <div className="container">
       <h3><a href="/docs/apm/traces#quickstart">Traces</a></h3>
       <p>This guide demonstrates how to measure application microservice performance.</p>
+    </div>
+  </div>
+  <div className="box box4 card">
+    <div className="container">
+    <h3><a href="/docs/manage/ingestion-volume/ingest-budgets/quickstart">Ingest Budgets</a></h3>
+    <p>Learn how to create and use Ingest Budgets.</p>
     </div>
   </div>
 </div>

@@ -1,15 +1,14 @@
 ---
 id: install-sdo-app-view-dashboards
-title: Install the Software Development Optimization App and view the Dashboards
-sidebar_label: App Installation
-description: Learn how to install the SDO Sumo Logic App and use pre-configured searches and dashboards that provide insights into your DevOps pipeline.
+title: SDO App and Dashboards
+description: Learn how to install the Sumo Logic SDO app and use pre-configured searches and dashboards that provide insights into your DevOps pipeline.
 ---
 
-If you have set up the Software Development Optimization (SDO) solution as defined [here](/docs/sdo/set-up-sdo) using Terraform, you can skip the manual installation of SDO App.
+If you've set up the Software Development Optimization (SDO) solution [using Terraform](/docs/sdo/set-up-sdo/sdo-setup-with-terraform-script), you can skip the manual installation of SDO app.
 
-## Install the App
+## Installing the SDO app
 
-Now that you have set up the configuration, collection for Software Development Optimization, install the Sumo Logic App for Software Development Optimization to use the pre-configured searches and dashboards that provide you insights and visibility into your DevOps phases and pipelines.
+Now that you've set up SDO configuration and collection, install the Sumo Logic App for Software Development Optimization to use the pre-configured searches and dashboards that provide you insights and visibility into your DevOps phases and pipelines.
 
 To install the app:
 
@@ -17,25 +16,36 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 1. From the **App Catalog**, search for and select the app.
 1. Select the version of the service you're using and click **Add to Library**.
-
     :::note
     Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
     :::
-
-3. To install the app, complete the following fields.
-
+1. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    * **Data Source.** Select either of these options for the data source.
-     * Choose **Source Category**, and select a source category from the list.
-     * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`).
-
+     * Choose **Source Category** and select a source category from the list.
+     * Choose **Enter a Custom Data Filter** and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`).
    * **Advanced.** Select the **Location in Library** (the default is the Personal folder in the library), or click New Folder to add a new folder.
-
 1. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+
+Each of the Software Development Optimization Solution apps provides a set of pre-configured dashboards that display real-time data from across your environment. Being able to access this information behind single-pane-of-glass allows you to more effectively monitor and troubleshoot your DevOps projects from inception through deployment.
+
+## Software Development Optimization App Dashboards
+
+The SDO solution comprises multiple apps listed below.
+
+* [Software Development Optimization](install-sdo-app-view-dashboards.md). Dashboards in this app provide insights into the four DORA metrics that help measure application release velocity and availability as well as help you monitor and troubleshoot issues in individual phases of your DevOps pipelines. 
+* [Jira Cloud App](/docs/integrations/app-development/Jira-Cloud) and [Jira (Server) App](/docs/integrations/app-development/Jira). Dashboards in these apps provide insights into the “Plan” phase of the DevOps plan phase that so as to enable you to more effectively plan, assign, track, report, and manage work across multiple teams. 
+* [Bitbucket App](/docs/integrations/app-development/Bitbucket). Dashboards in this app provide insights into Bitbucket issues, pull requests, builds, and deployments.
+* [Opsgenie App](/docs/integrations/saas-cloud/Opsgenie) and [PagerDuty App](/docs/integrations/saas-cloud/PagerDuty-V3). Dashboards in these apps provide insights into how production incidents are being created and resolved.
+* [GitHub App](/docs/integrations/app-development/GitHub). Dashboards in this app provide analytics around GitHub branch operations, issues, pull requests, user activity, and security events.
+* [Jenkins App](/docs/integrations/app-development/Jenkins). Dashboards in this app help you monitor build successes, failures, and Jenkins master and slave server performance.
+* [GitLab App](/docs/integrations/app-development/GitLab).  Dashboards in this app provide a complete overview of your GitLab’s builds, deployments, pipelines, issues, merge requests, and commits.
+* [CircleCI App](https://circleci.com/docs/2.0/insights-partnerships/#sumo-logic-integration). The CircleCI app for Sumo Logic provides advanced views to track the performance and health of your continuous integration and deployment pipelines.
+
 
 ## Dashboard Filter with Template Variables
 

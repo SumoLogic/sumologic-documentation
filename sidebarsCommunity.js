@@ -52,7 +52,7 @@ module.exports = {
       collapsed: true,
       items: [
         'app-observability/end-to-end',
-        'app-observability/service-maps',
+        'app-observability/services-list-map',
         'app-observability/real-user-monitoring',
       ],
     },

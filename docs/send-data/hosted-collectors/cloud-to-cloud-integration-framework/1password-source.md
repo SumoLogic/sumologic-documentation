@@ -7,6 +7,8 @@ description: The 1Password Source provides a secure endpoint to receive Sign-in 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="airtable-icon.png" width="150" />
+
 The 1Password Source provides a secure endpoint to receive Sign-in Attempts and Item Usage from the [1Password Event API](https://support.1password.com/events-api-reference/). It securely stores the required authentication, scheduling, and state tracking information.
 
 The 1Password Source ingests:
@@ -46,7 +48,7 @@ If the Source has any issues during any one of these states, it is placed in an 
 
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![1password-state](/img/send-data/1password-state.png)
+On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![1password state.png](/img/send-data/1password-state.png)
 
 Hover your mouse over the status icon to view a tooltip with details on the detected issue.<br/> ![1password](/img/send-data/health_error_generic.png)
 
@@ -59,7 +61,7 @@ To configure a 1Password Source:
 
 1. In Sumo Logic, select** Manage Data > Collection > Collection**.
 2. On the Collectors page, click **Add Source** next to a Hosted** **Collector.
-3. Select **1Password**.<br/> ![1password](/img/send-data/1password-source-icon.png)
+3. Select **1Password**.<br/><img src={useBaseUrl('img/send-data/1password-source-icon.png')} alt="1password-source-icon.png" width="150" />
 4. Enter a **Name** for the Source. The **description** is optional.<br/> ![1password-input](/img/send-data/1password-input.png)
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) is stored in a searchable field called `_sourceCategory`.
 6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse). When configured with the **Forward to SIEM** option, the following metadata fields are set:
@@ -134,6 +136,28 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/H
    </td>
   </tr>
 </table>
+
+### Restart Sources
+
+When Sources encounter ThirdPartyConfig errors, they can now be restarted. Both the Sumo Logic UI and Sumo Logic API allow you to restart the Sources.
+
+#### UI
+
+To restart your source in the Sumo Logic platform, follow the steps below:
+1. Open the Collection page, and go to **Manage Data** > **Collection** > **Collection**.
+2. Select the source and click the **information** icon on the right side of the row.
+3. The API usage information popup is displayed. Click the **Restart Source** button on the bottom left. <br/><img src={useBaseUrl('img/send-data/restart-source-button.png')} alt="restart-source-button.png" width="550" />
+4. Click **Confirm** to send the restart request. <br/><img src={useBaseUrl('img/send-data/restart-source-confirm.png')} alt="restart-source-confirm.png" width="550" />
+5. The bottom left of the platform will provide a notification informing you the request was successful.<br/><img src={useBaseUrl('img/send-data/source-restart-initiated.png')} alt="source-restart-initiated.png" width="550" />
+
+
+#### API
+
+To restart your source using the Sumo Management API, follow the instructions below:
+* Method: POST
+* Example endpoint: `https://api.sumologic.com/api/v1/collectors/{collector_id}/sources/{source_id}/action/restart`.
+
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. For example, an API endpoint in Europe would begin `api.eu.sumologic.com`.  A service endpoint in us2 (Western US) would begin service.us2.sumologic.com.  For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 
 ## JSON configuration
