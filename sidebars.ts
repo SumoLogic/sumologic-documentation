@@ -307,6 +307,7 @@ module.exports = {
                 'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-collector-script',
                 'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function',
                 'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-amazon-kinesis',
+                'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template',
               ],
             },
             'send-data/collect-from-other-data-sources/amazon-msk-prometheus-metrics-collection',
