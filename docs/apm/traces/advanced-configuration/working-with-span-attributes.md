@@ -8,7 +8,7 @@ You can add, delete, hash, or modify span attributes (metadata tags) on Collecto
 
 ## Attach logs to spans
 
-You can collect logs with traces attached to them by [inserting spanid/traceid from span context when writing to logs](../get-started-transaction-tracing/opentelemetry-instrumentation/java/traceid-spanid-injection-into-logs-configuration.md). If that's not possible, you can assign any of the following fields:
+You can collect logs with traces attached to them by [inserting `spanid` and `traceid` from span context when writing to logs](../get-started-transaction-tracing/opentelemetry-instrumentation/java/traceid-spanid-injection-into-logs-configuration.md). If that's not possible, you can assign any of the following fields:
 
  * error
  * error.kind
@@ -23,7 +23,7 @@ and they are displayed in the **Span logs** tab in [Details Pane](/docs/apm/tra
 
 ## Working with attributes on OpenTelemetry collector
 
-Regardless If you're using the Sumo Logic distribution of OpenTelemetry collector, an original installation, or the OpenTelemetry collector as part of Sumo Logic Kubernetes collection, you can use the attributes processor to add, modify, delete, or hash the values of attributes.
+Whether you're using the Sumo Logic OpenTelemetry collector distribution, an original installation, or the OpenTelemetry collector as part of Sumo Logic Kubernetes collection, you can use the attributes processor to add, modify, delete, or hash the values of attributes.
 
 Refer to the [OpenTelemetry collector attributes processor documentation](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/attributesprocessor) for examples.
 
