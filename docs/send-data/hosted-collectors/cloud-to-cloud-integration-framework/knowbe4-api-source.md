@@ -45,7 +45,7 @@ The **API security token** is used to authenticate with KnowBe4 HTTP API. To get
 
 ## Metadata
 
-If the Source is configured with the **SIEM forward** option, the metadata field `_siemparser`  will be set to */Parsers/System/KnowBe4/KnowBe4 KMSAT*.
+If the Source is configured with the **SIEM forward** option, the metadata field `_siemparser` will be set to */Parsers/System/KnowBe4/KnowBe4 KMSAT*.
 
 
 ## Data Sources
