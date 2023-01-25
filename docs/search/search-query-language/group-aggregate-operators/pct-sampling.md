@@ -5,8 +5,7 @@ sidebar_label: pct_sampling
 ---
 
 
-
-The percent sampling function,` pct_sampling`, finds the percentile of a given field. Multiple `pct_sampling` functions can be included in one query.
+The percent sampling function, `pct_sampling`, finds the percentile of a given field. Multiple `pct_sampling` functions can be included in one query.
 
 The `pct_sampling` function will return an approximate result for searches that produce large volumes of data.
 

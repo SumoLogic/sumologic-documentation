@@ -1,7 +1,7 @@
 ---
 id: sdo-setup-with-terraform-script
 title: SDO Setup with Terraform Script
-sidebar_label: Set up with Terraform
+sidebar_label: Terraform Configuration
 description: Learn how to set up the Software Development Optimization (SDO) Solution using a Terraform script.
 ---
 
@@ -23,7 +23,6 @@ Before setting up the SDO solution, you need to complete the following tasks:
 * Create or collect API Keys and credentials for Jira, Github, GitLab, Jenkins, Bitbucket, CircleCI, and Opsgenie with Webhook creation capabilities.
 * Get access to Jenkins with Manage Plugins permissions.
 * Make sure you have access to the Sumo logic console. The user account associated with a Sumo Logic role needs the following permissions:
-
   * Manage field extraction rules
   * View Fields
   * View field extraction rules
@@ -43,23 +42,15 @@ Review the following considerations before proceeding with the Terraform templat
 * With the Terraform script, you can easily manage the integration of Sumo Logic with Atlassian products (including Bitbucket, Jira, Jira Service Desk, and Opsgenie), GitHub, GitLab, CircleCI, and Pagerduty. If you would like to bring your own toolset, follow [this page to integrate your tool with the SDO solution](../integrate-tools-with-sdo.md).
 * The Terraform script allows you to quickly get started by installing a copy of the configured applications. After the initial setup, if you need additional copies of the Sumo Logic applications, you can install them from the Sumo Logic App catalog.
 * If you plan to integrate Jenkins with this solution, you need to complete additional configuration. The Terraform script does not configure Jenkins. See the following guides to install and configure the Jenkins Sumo Logic plugin:
-
   * [Install the Jenkins Plugin](/docs/integrations/app-development/Jenkins#Collecting-Logs-and-Metrics-for-Jenkins)
   * [Configure Jenkins Plugin](/docs/integrations/app-development/Jenkins#Collecting-Logs-and-Metrics-for-Jenkins)
   * [Optional - Advanced Configuration](/docs/integrations/app-development/Jenkins#Collecting-Logs-and-Metrics-for-Jenkins)
   * In [Configure Jenkins Plugin](/docs/integrations/app-development/Jenkins#Collecting-Logs-and-Metrics-for-Jenkins), a source category is configured which is utilized by the plugin.  Use this source category in the file **sumologic.auto.tfvars file**. The Jenkins source, app, and FERs are installed by Terraform.
-
 * This script configures Jira Server WebHooks and creates resources in Sumo Logic. Jira Server Logs collection needs to be configured as explained in Step 1 [here](/docs/integrations/app-development/Jira#Collecting-Logs-for-the-Jira-App). Configure the log collection and update the variable *jira_server_access_logs_sourcecategory* in **atlassian.auto.tfvars** with the selected source category.
 * If you plan to integrate CircleCI with the SDO solution, you need to complete additional configuration. The Terraform script does not configure CircleCI. Use the following steps configure the CircleCI Sumo Logic plugin. Once configured, this plugin will send CircleCI Workflow and Job related data to Sumo Logic: * Since the SDO dashboards require ‘environment’, ‘team’, and ‘service’ fields for lighting up panels, you need to send them as [*custom-data*](https://circleci.com/developer/orbs/orb/circleci/sumologic#usage-examples) in the configuration file of the pipeline.
-
-  * Add the [*sumo orb*](https://circleci.com/developer/orbs/orb/circleci/sumologic) in the configuration file of the project to send custom-data elements to Sumo:
-
-    ![circleci-custom-data.png](/img/sdo/circleci-custom-data.png)
-
+  * Add the [*sumo orb*](https://circleci.com/developer/orbs/orb/circleci/sumologic) in the configuration file of the project to send custom-data elements to Sumo:<br/>![circleci-custom-data.png](/img/sdo/circleci-custom-data.png)
     See [*this sample*](https://sumologic-app-data.s3.amazonaws.com/SDO/config.yml.zip) CircleCI Configuration file which sends CircleCI data, including custom-data, to Sumo Logic.
-
   * The Terraform script also allows you to only install the CircleCI app from the app catalog. It creates a source with placeholder value for _sourceCategory from the **sumologic.auto.tfvars** file.
-
 * Sumo Logic to Jira and Sumo Logic to Opsgenie Webhooks are in Beta. To participate, contact your Sumo account executive.
 
 ### SDO Script File Groups
@@ -67,7 +58,7 @@ Review the following considerations before proceeding with the Terraform templat
 The SDO solution script is organized into following groups of files ([GitHub repository](https://github.com/SumoLogic/sumologic-solution-templates)):
 
 | Group | Files |
-| | |
+| :-- |:-- |
 | Configuration Files | sumologic.auto.tfvars<br/>sumologic_fer.auto.tfvars<br/>sumologic_webhooks.auto.tfvars<br/>pagerdutyv2.auto.tfvars<br/>pagerdutyv3.auto.tfvars<br/>github.auto.tfvars<br/>gitlab.auto.tfvars<br/>atlassian.auto.tfvars<br/>circleci.auto.tfvars |
 | Sumo Logic Resource Creation Files | sumologic_collection_content.tf<br/>sumologic_fer.tf<br/>sumologic_webhooks.tf |
 | Other Systems Resource Creation Files | atlassian.tf<br/>pagerduty.tf<br/>pagerdutyv2.auto.tfvars<br/>pagerdutyv3.auto.tfvars<br/>github.tf<br/>gitlab.tf |
@@ -83,7 +74,6 @@ actions on a server machine of your choice:
 1. Install the latest version of [curl](https://curl.haxx.se/download.html).
 1. Install [Python](https://www.python.org/) version 2.7 or later.
 1. Install the following third-party Terraform providers:
-
     [Rest API Terraform Provider](https://github.com/Mastercard/terraform-provider-restapi) version 1.12 and above:
 
    1. Download terraform-provider-restapi binary from [Github](https://github.com/Mastercard/terraform-provider-restapi/releases)
@@ -96,12 +86,11 @@ actions on a server machine of your choice:
         ```
 
     If you plan to use Jira, install [Jira](https://github.com/fourplusone/terraform-provider-jira/releases) Terraform Provider version  0.1.11 and above:
-
    1. Download terraform-provider-jira binary from [GitHub](https://github.com/fourplusone/terraform-provider-jira/releases).
    1. Unzip the zip file.
    1. Move the **terraform-provider-jira** binary to **$HOME/.terraform.d/plugins** directory:
-
-        ```mkdir -p $HOME/.terraform.d/plugins
+        ```bash
+        mkdir -p $HOME/.terraform.d/plugins
         mv terraform-provider-jira $HOME/.terraform.d/plugins/terraform-provider-jira
         chmod +x terraform-provider-jira
         ```
@@ -120,49 +109,42 @@ The following Terraform providers with mentioned versions are automatically inst
 
 ## Configure the Terraform script
 
-1. Clone the [GitHub repository](https://github.com/SumoLogic/sumologic-solution-templates): `$ git clone https://github.com/SumoLogic/sumologic-solution-templates`
+1. Clone the [GitHub repository](https://github.com/SumoLogic/sumologic-solution-templates):  
+  ```
+  $ git clone https://github.com/SumoLogic/sumologic-solution-templates
+  ```
 1. Initialize the Terraform working directory by navigating to the directory **sumologic-solution-templates/software-development-optimization-terraform.** and running **terraform init**. This will install the required Terraform providers: [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [Template](https://www.terraform.io/docs/providers/template/index.html), [Null](https://www.terraform.io/docs/providers/null/index.html), [BitBucket Terraform Provider](https://www.terraform.io/docs/providers/bitbucket/index.html), [GitHub Terraform Provider](https://www.terraform.io/docs/providers/github/index.html), [GitLab Terraform](https://registry.terraform.io/providers/gitlabhq/gitlab/3.6.0) [Provider](https://registry.terraform.io/providers/gitlabhq/gitlab/3.6.0), and [Pagerduty Terraform Provider](https://www.terraform.io/docs/providers/pagerduty/index.html).
 1. Choose which Sumo Logic Applications to configure by updating the values of the following variables in the **sumologic.auto.tfvars** file:
-
    * install_jira_cloud
    * nstall_jira_server
    * install_bitbucket_cloud
    * install_opsgenie
    * install_github
    * install_gitlab
-
      * This is only used for installing Gitlab app from the app catalog and uses webhook.
      * Valid options for this are:
-
        * `all` - It’s a default option, for installing all the components of the setup.
        * `app` - This is for only installing the app
        * `collection` - for configuring collection in Sumo Logic (fers, the sources) and/or in other systems (webhooks).
        * `fer` - This will only create the fer.
        * `none` - for skipping the entire integration/installation.
-
      * install_pagerduty
      * install_pagerduty_version
        * The options for variable values are ‘v2’ and ‘v3’. Default is ‘v3’
      * install_jenkins
      * install_sdo
-
        * The options for variable values are `all`, `app`, `fer`, `collection`, and `none`. For SDO, `app` and `none` are the valid options.
        * For Jenkins, collection is not configured in Jenkins. Choosing `collection` will create the source in Sumo and set up the field extraction rules.
        * If you do not want to install the GitHub collection or application, rename the file **github.tf** to **github.tf_backup**.
        * If you do not want to install the GitLab collection or application, rename the file **gitlab.tf** to **gitlab.tf_backup**.
-
      * install_circleci
-
        * This is only used for installing the CircleCI app from the app catalog and uses a webhook.
        * Valid options for this values are : `all`, `app`, `collection`, and `none`. If you choose:
-
          * `all` - It’s a default option, for installing every component of the setup
          * `app` - for only installing the app
          * `collection` - for configuring collection in Sumo Logic (fers, the sources) and/or in other systems (webhooks)
          * `none` - for skipping the entire integration/installation
-
      * install_circleci_SDO_plugin
-
        * This is used to integrate CircleCI into the SDO solution.
        * valid options for this variable are:  `all` ,`none` ,`fer` and `collection`. If you choose:
          * `all`  - It’s a default option, for installing every component of the setup
@@ -170,14 +152,12 @@ The following Terraform providers with mentioned versions are automatically inst
          * `collection` - for configuring collection in Sumo Logic (fers, the sources) and/or in other systems (webhooks)
          * `none` - for skipping the entire integration/installation
          * Choosing `collection` will create two sources in Sumo and set up the field extraction rules.
-4.  You can choose which Webhooks to configure by updating the variables in **sumologic.auto.tfvars**. * install_sumo_to_opsgenie_webhook
-
+1.  You can choose which Webhooks to configure by updating the variables in **sumologic.auto.tfvars**. * install_sumo_to_opsgenie_webhook
     * install_sumo_to_jiraserver_webhook
     * install_sumo_to_jiraservicedesk_webhook 
     * install_sumo_to_jiracloud_webhook
     * install_sumo_to_pagerduty_webhook 
-
-5.  Update the following placeholder values in the **sumologic.auto.tfvars** file: **atlassian.auto.tfvars**, **pagerdutyv2.auto.tfvars**, **pagerdutyv3.auto.tfvars**,**github.auto.tfvars**, **gitlab.auto.tfvars**, **sumologic_fer.auto.tfvars**, and **sumologic_webhooks.auto.tfvars** so they correspond with your Sumo Logic, Atlassian, GitHub, GitLab, CircleCI, and Pagerduty environments. See [Configurable Parameters](#configurable-parameters) for the full list of input parameters.
+1.  Update the following placeholder values in the **sumologic.auto.tfvars** file: **atlassian.auto.tfvars**, **pagerdutyv2.auto.tfvars**, **pagerdutyv3.auto.tfvars**,**github.auto.tfvars**, **gitlab.auto.tfvars**, **sumologic_fer.auto.tfvars**, and **sumologic_webhooks.auto.tfvars** so they correspond with your Sumo Logic, Atlassian, GitHub, GitLab, CircleCI, and Pagerduty environments. See [Configurable Parameters](#configurable-parameters) for the full list of input parameters.
 
 ## Install the Software Development Optimization (SDO) Solution
 
@@ -195,11 +175,10 @@ This procedure will configure collection in other systems (for example Jira Clou
 3.  To install the outbound connections in Sumo Logic, configure the install_sumo_to_(app)_webhook variables as 'true' as defined in [this](#install-the-sumo-logic-outgoing-connections) section.
 4.  Configure required variables in **sumologic.auto.tfvars, atlassian.auto.tfvars**, **github.auto.tfvars**, **gitlab.auto.tfvars**, **pagerdutyv2.auto.tfvars**, **pagerdutyv3.auto.tfvars**,and **circleci.auto.tfvars**.
 5.  Navigate to the directory **sumologic-solution-templates/software-development-optimization-terraform** and execute the commands below:
-
-```bash
-$ terraform plan
-$ terraform apply
-```
+  ```bash
+  $ terraform plan
+  $ terraform apply
+  ```
 
 ### Option 2: Install one or more parts of the solution
 
@@ -223,11 +202,10 @@ To use existing sources, FERs/Fields, or configure these manually and install on
 1. Set install_sumo_to_(app)_webhook variables as ‘false’ for the Sumo Logic connections if you do not wish to configure the outgoing connections in Sumo Logic.
 1. For pagerduty, set install_pagerduty_version = “v2” or “v3” to install either version of the app.
 1. Navigate to the directory **sumologic-solution-templates/software-development-optimization-terraform** and execute the commands:
-
-```bash
-$ terraform plan
-$ terraform apply
-```
+  ```bash
+  $ terraform plan
+  $ terraform apply
+  ```
 
 ### Install FERs
 
@@ -239,11 +217,10 @@ To use existing sources and apps, or configure these manually:
 1. Set install_(app) variable as `fer` for the required applications in **sumologic.auto.tfvars**, as defined in [this](#configurable-parameters) section.
 1. Setting install_(app) variable as `fer` will result in FER configuration in Sumo Logic, it will not configure collection in other systems (for example Jira Cloud) and it will not create sources and Fields in Sumo Logic and will not install Apps.
 1. Navigate to the directory **sumologic-solution-templates/software-development-optimization-terraform** and execute the commands:
-
-```bash
-$ terraform plan
-$ terraform apply
-```
+  ```bash
+  $ terraform plan
+  $ terraform apply
+  ```
 
 ### Install the Sumo Logic outgoing connections
 
@@ -252,11 +229,10 @@ To configure the Sumo Logic connections only:
 1. Set install_sumo_to_(app)_webhook variables as ‘true’ for the Sumo Logic connections which should be configured in Sumo Logic.
 1. Configure required variables in **sumologic_webhooks.auto.tfvars.**
 1. Navigate to the directory **sumologic-solution-templates/software-development-optimization-terraform** and execute the commands:
-
-```bash
-$ terraform plan
-$ terraform apply
-```
+  ```bash
+  $ terraform plan
+  $ terraform apply
+  ```
 
 ## Complete Post-Setup Configurations
 
@@ -265,22 +241,16 @@ After completing configuration, instrument your DevOps pipeline to specially ide
 ### Bitbucket for build and deploy
 
 1. Access the Sumo Logic Platform and navigate to **Manage Data** > **Collection** page.
-
 1. Search for *Software Development Optimization* Collector.
-
 1. Under this Collector, click on **Show URL** for the source **Bitbucket Cloud.** Make a note of this **URL** and use this URL to configure the Bitbucket CI/CD Pipeline to collect deploy events:
  * **Deploy**: Follow the steps outlined in [this document](/docs/integrations/app-development/Bitbucket#Collecting-Logs-for-Bitbucket-app) to configure the Bitbucket CI/CD Pipeline to collect deploy events.
 
 ### Jenkins for build and deploy
 
 1. Install the latest Jenkins Plugin as described [here](/docs/integrations/app-development/Jenkins#Collecting-Logs-and-Metrics-for-Jenkins)
-
 1. Access the Sumo Logic Platform and navigate to **Manage Data** > **Collection** page.
-
 1. Search for *Software Development Optimization* Collector.
-
 1. Under this Collector, click on **Show URL** for the source **Jenkins.** Make a note of this **URL** and **Source Category,** you will use these to configure the Jenkins Plugin:
-
    * **Build Pipeline Stages**: Follow [Configure Jenkins Plugin,](/docs/integrations/app-development/Jenkins#Collecting-Logs-and-Metrics-for-Jenkins) and optionally [Optional - Advance Configuration](/docs/integrations/app-development/Jenkins#Collecting-Logs-and-Metrics-for-Jenkins) to configure the Jenkins Sumo Logic plugin.
    * **Build**: Follow [this](../jenkins-plugin-build-deploy-events.md) doc to modify your Jenkins plugin to explicitly identify, enrich, and send Build Events to Sumo Logic.
    * **Deploy**: Follow [this](../jenkins-plugin-build-deploy-events.md) doc to modify your Jenkins plugin to explicitly identify, enrich, and send Deploy Events to Sumo Logic.
@@ -288,30 +258,29 @@ After completing configuration, instrument your DevOps pipeline to specially ide
 ### CircleCI for build and deploy
 
 1. Create three environment variables in project settings of CircleCI environment:
-
-    * CIRCLE_TOKEN = \<[*API personal token*](https://circleci.com/docs/2.0/managing-api-tokens/) created in CircleCi\>
-    * JOB_HTTP_SOURCE = \<url of job-collector source created by the Terraform script output\>
-    * WORKFLOW_HTTP_SOURCE = \<url of workflow-collector source created by the Terraform script output\>
+    * `CIRCLE_TOKEN = <[*API personal token*](https://circleci.com/docs/2.0/managing-api-tokens/) created in CircleCi>`
+    * `JOB_HTTP_SOURCE = <url of job-collector source created by the Terraform script output>`
+    * `WORKFLOW_HTTP_SOURCE = <url of workflow-collector source created by the Terraform script output>`
 
 ### CircleCI app installation
 
 1. Create a [*webhook connection*](https://circleci.com/docs/2.0/webhooks/#setting-up-a-hook) in project settings of CircleCI environment: 
-
-    * Receiver URL = \<url of circleci source created by the Terraform script\>
+    * `Receiver URL = <url of circleci source created by the Terraform script>`
 
 ### Other Tools for build and deploy
 
 If you're using **tools other than Jenkins and Bitbucket pipelines** for Build and Deploy phases:
 
 1. **Build**: Configure your tool to construct and send events using the build event schema in the section Build Event. 
-
-1.  * **Deploy**: Configure your tool to construct events using the deploy event schema in the section Deploy Events.
+1. **Deploy**: Configure your tool to construct events using the deploy event schema in the section Deploy Events.
 
 ## Uninstalling the Solution
 
 To uninstall the solution, navigate to the directory **sumologic-solution-templates/software-development-optimization-terraform** and execute the command:
 
-`$ terraform destroy`
+```
+$ terraform destroy
+```
 
 ## Configurable Parameters
 
@@ -544,9 +513,7 @@ The Terraform script does not configure the CircleCI Sumo Logic plugin, it creat
 It also allows to install the CircleCI app that can be configured using a CircleCI webhook.
 
 | Parameter               | Description                          |
-|:-------------------------|:--------------------------------------|
-| circlesi_app_sc         | CircleCI App Source Category         |
-| circleci_build_jobname  | CircleCI build job name for SDO FER  |
-| circleci_deploy_jobname | CircleCI deploy job name for SDO FER |
-
- 
+|:------------------------|:-------------------------------------|
+| `circlesi_app_sc`         | CircleCI App Source Category         |
+| `circleci_build_jobname`  | CircleCI build job name for SDO FER  |
+| `circleci_deploy_jobname` | CircleCI deploy job name for SDO FER |

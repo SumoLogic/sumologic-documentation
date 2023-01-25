@@ -43,6 +43,10 @@ The **API security token** is used to authenticate with KnowBe4 HTTP API. To get
   When you reset the token, the previous token issued becomes invalid immediately.
   :::
 
+## Metadata
+
+If the Source is configured with the **SIEM forward** option, the metadata field `_siemparser` will be set to */Parsers/System/KnowBe4/KnowBe4 KMSAT*.
+
 
 ## Data Sources
 
@@ -65,7 +69,7 @@ If the Source has any issues during any one of these states, it is placed in an�
 
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the Collection page, the [Health](/docs/manage/health-events#collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection. <br/>![C2C error icon on collection page.png](/img/send-data/C2C-error-icon-on-collection-page.png)
+On the Collection page, the [Health](/docs/manage/health-events#collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection.
 
 Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings.<br/> ![hover c2c error.png](/img/send-data/hover-c2c-error.png)
 
