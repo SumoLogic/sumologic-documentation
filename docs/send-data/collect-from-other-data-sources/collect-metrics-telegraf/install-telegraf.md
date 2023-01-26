@@ -62,8 +62,8 @@ If you want to install Telegraf using a .deb file, or on Windows see [Manually i
 
     ```bash
     sudo apt-get update && sudo apt-get install telegraf
-    # update /etc/telegraf/telegraf.conf with your specific config
-    # settings then start the service
+    # update /etc/telegraf/telegraf.conf with your
+    # specific config settings, then start the service
     sudo systemctl start telegraf
     ```
 
