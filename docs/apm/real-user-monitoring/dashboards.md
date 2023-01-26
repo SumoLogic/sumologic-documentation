@@ -73,7 +73,7 @@ Overview dashboards on all Explore levels have a panel showing geographical user
 
 ### RUM TopN Application/Service
 
-The **RUM - TopN - Application** and **RUM - TopN - Application Service** dashboards show top N browsers, operating systems, and geographical locations by load time and requests for the selected **application** or **service**.
+The **RUM - TopN - Application** and **RUM - TopN - Application Service** dashboards show top N browsers, operating systems, and geographical locations by load time and requests for the selected **application**, **service**, or **environment**.
 
 Use these dashboards to:
 * Find out top N browsers, operating systems, and geolocations by load or requests.
