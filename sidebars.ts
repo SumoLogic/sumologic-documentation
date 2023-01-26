@@ -1355,11 +1355,15 @@ module.exports = {
         'apm/traces/quickstart',
         {
         type: 'category',
-        label: 'Getting Started with Traces',
+        label: 'Transaction Tracing Setup',
         collapsible: true,
         collapsed: true,
         link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/index'},
         items: [
+          'apm/traces/get-started-transaction-tracing/set-up-traces-collection-aws-environments',
+          'apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments',
+          'apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments',
+          'apm/traces/get-started-transaction-tracing/http-traces-source',
           {
             type: 'category',
             label: 'OpenTelemetry App Instrumentation',
@@ -1435,26 +1439,13 @@ module.exports = {
               'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby',
             ],
           },
-          'apm/traces/get-started-transaction-tracing/set-up-traces-collection-aws-environments',
-          'apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments',
-          'apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments',
-          'apm/traces/get-started-transaction-tracing/http-traces-source',
         ],
       },
-      {
-        type: 'category',
-        label: 'Working with Tracing Data',
-        collapsible: true,
-        collapsed: true,
-        link: {type: 'doc', id: 'apm/traces/working-with-tracing-data/index'},
-        items: [
-          'apm/traces/working-with-tracing-data/services-list-map',
-          'apm/traces/working-with-tracing-data/tracing-dashboards',
-          'apm/traces/working-with-tracing-data/view-and-investigate-traces',
-          'apm/traces/working-with-tracing-data/spans',
-          'apm/traces/working-with-tracing-data/search-query-language-support-for-traces',
-        ],
-      },
+      'apm/traces/services-list-map',
+      'apm/traces/view-and-investigate-traces',
+      'apm/traces/tracing-dashboards',
+      'apm/traces/spans',
+      'apm/traces/search-query-language-support-for-traces',
       {
         type: 'category',
         label: 'Advanced Configuration',
@@ -1469,7 +1460,19 @@ module.exports = {
       },
     ],
   },
-  'apm/real-user-monitoring'
+  {
+    type: 'category',
+    label: 'Real User Monitoring (RUM)',
+    collapsible: true,
+    collapsed: true,
+    link: {type: 'doc', id: 'apm/real-user-monitoring/index'},
+    items: [
+      'apm/real-user-monitoring/configure-data-collection',
+      'apm/real-user-monitoring/browser-traces',
+      'apm/real-user-monitoring/metrics',
+      'apm/real-user-monitoring/dashboards',
+    ],
+  },
 ],
 // *** OBSERVABILITY: aws, kubernetes, root cause analysis
   observability: [

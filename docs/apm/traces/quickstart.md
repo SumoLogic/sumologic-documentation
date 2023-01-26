@@ -36,7 +36,7 @@ The [Tracing micro lesson](https://www.youtube.com/watch?v=BTqufvTJ4vE&list=PLu
 
 import Iframe from 'react-iframe';
 
-Trace data is visualized through filtered trace lists and icicle charts allowing you to find and troubleshoot faulty transactions easily. See how easy it is to [view and investigate traces](working-with-tracing-data/view-and-investigate-traces.md).
+Trace data is visualized through filtered trace lists and icicle charts allowing you to find and troubleshoot faulty transactions easily. See how easy it is to [view and investigate traces](view-and-investigate-traces.md).
 
 Traces are collected with [SumoLogic Kubernetes Collection](https://github.com/open-telemetry/opentelemetry-collector) through an [HTTP Traces Source](get-started-transaction-tracing/http-traces-source.md). HTTP Trace Sources are set up automatically with Sumo Logic Kubernetes Collection version 1.1.0+. 
 
