@@ -47,7 +47,7 @@ This section has instructions for installing the latest stable version of Telegr
 If you want to install Telegraf using a .deb file, or on Windows see [Manually install Telegraf from a .deb file](#manually-install-telegraf-on-debian-from-a-deb-file) or [Install Telegraf on Windows](#install-telegraf-on-windows). Telegraf releases are available for all Operating Systems through the portal [downloads page](https://portal.influxdata.com/downloads/).
 :::
 
-1. Add the InfluxData repository on Ubuntu or Debian, run the following command in a terminal window.
+1. Add the InfluxData repository on Ubuntu or Debian, then run the following command in a terminal window:
 
     ```bash
     # influxdata-archive_compat.key GPG fingerprint:
