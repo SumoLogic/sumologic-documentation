@@ -65,13 +65,14 @@ To set up a Hosted Collector and specify a Sumo Logic Source, do the following:
 
 1. Follow the instructions for [Configuring a Hosted Collector in Sumo Logic to start collecting logs](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Follow the instructions for [Configure an Amazon S3 Source in Sumo Logic](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source). When setting up an S3 Source, it's important to specify the correct timestamp field. Follow the next steps to do so.
-3. Click **Advanced**, if the settings are not already shown.
-4. For Timestamp Format, select **Specify a format** and enter the following:
+3. To forward logs to Cloud SIEM Enterprise click +Add Field with the key `_parser` and value `/Parsers/System/Cloudflare/Cloudflare Logpush`
+5. Click **Advanced**, if the settings are not already shown.
+6. For Timestamp Format, select **Specify a format** and enter the following:
    * **Format:** `yyyy-MM-dd'T'HH:mm:ss'Z'`
    * **Timestamp Locator:** `\"EdgeStartTimestamp\"\s*:\s*\"(.*)\"`
-5. Click **Test**. A Test Timestamp Parsing dialog appears.
-6. Enter a sample log message in the Test Timestamp Parsing dialog, such as the following, and then click **Test**: **"EdgeStartTimestamp":"2018-12-19T23:38:10Z"**. A dialog confirming that your timestamp format matched should appear.
-7. Click **Done** and then click **Save** to save the timestamp parsing to the source.
+7. Click **Test**. A Test Timestamp Parsing dialog appears.
+8. Enter a sample log message in the Test Timestamp Parsing dialog, such as the following, and then click **Test**: **"EdgeStartTimestamp":"2018-12-19T23:38:10Z"**. A dialog confirming that your timestamp format matched should appear.
+9. Click **Done** and then click **Save** to save the timestamp parsing to the source.
 
 
 ## Installing the Cloudflare App
