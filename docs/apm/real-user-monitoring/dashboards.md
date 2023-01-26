@@ -29,29 +29,27 @@ The data will populate in your organization's **Sumo Logic RUM - default** das
 
 Once the RUM app has been installed, use our [Explore view](/docs/dashboards-new/explore-view.md) to gain visibility into your web app's performance and end-user activity, such as geographic location, browser type, operating systems used. These dashboards visualize RUM metrics gathered from browser tracing instrumentation.
 
-Explore organizes RUM data on five levels:
-* **Application**: corresponds to the value of the application tag set in your [RUM script](#step-2-add-script-to-your-page-header). This should correspond to your whole website defined by its business function, such as `Coffee shop`.
-* **Service**: corresponds to the name of the service in your [RUM script](#step-2-add-script-to-your-page-header). The value should correspond to the JavaScript code executed in your browser, such as `coffee-shop-web`. You can have multiple services for each application.
-* **Environment**: corresponds to your development environment, like `prod` or `dev`. To enable this, add the `deployment.environment` tag and desired value to your [RUM script](#step-2-add-script-to-your-page-header).
-* **Action Type**: can be one of:
-   * **document loads**: representing loading of actual documents and their resources into the browser
-   * **XHR actions**: representing any interaction with a page like click or submit that executes AJAX requests in the background to communicate with the backend, or
-   * **route changes**: single-page-app specific way to navigate to a new page/view without having to load a new document.
-* **Action Name**: automatically generated from URLs. No configuration is required. The specifics of it will depend on action type.
+1. Go to **+New** > **Explore**.
+1. Under **Explore By**, **click Real User Monitoring**.
+1. Select your desired dashboard from **Dashboard** dropdown menu in the header:<br/>![explore rum with red box.png](/img/rum/explore-rum-with-red-box.png)<br/> There are three dashboard types on the **Application** and **Service** level and a single one on the **Action type** and **Action** level.
+1. Set your desired filters. **Explore** organizes RUM data on five levels:
+   * **Application**: corresponds to the value of the application tag set in your [RUM script](#step-2-add-script-to-your-page-header). This should correspond to your whole website defined by its business function, such as `the-coffee-bar-app`.
+   * **Service**: corresponds to the name of the service in your [RUM script](#step-2-add-script-to-your-page-header). The value should correspond to the JavaScript code executed in your browser, such as `coffee-bar-frontend`. You can have multiple services for each application.
+   * **deployment.environment**: corresponds to your development environment. To enable this, add the `deployment.environment` tag and desired value (like `us-west-1`, `prod`, `dev`) to your [RUM script](#step-2-add-script-to-your-page-header).
+   * **Action Type**: can be one of:
+     * **document loads**: representing loading of actual documents and their resources into the browser
+     * **XHR actions**: representing any interaction with a page like click or submit that executes AJAX requests in the background to communicate with the backend, or
+     * **route changes**: single-page-app specific way to navigate to a new page/view without having to load a new document.
+   * **Action Name**: automatically generated from URLs. No configuration is required. The specifics of it will depend on action type. Action names can contain asterisks (`*`) to replace automatically-detected dynamic parts of the URL. If you have action names that overlap, the action name with an asterisk contains data for page loads NOT contained in more specific action names. For example, `http://www.site.com/path/page.htm` does not contain actions from `http://www.site.com/path/*`.
 
-Action names can contain asterisks (`*`) to replace automatically-detected dynamic parts of the URL. If you have action names that overlap, the action name with an asterisk contains data for page loads NOT contained in more specific action names:
-
-For example, `http://www.site.com/path/page.htm` does not contain actions from `http://www.site.com/path/*`.
-
-There are three dashboard types on the **Application** and **Service** level and a single one on the **Action type** and **Action** level. You can select the appropriate dashboard from dropdown menu in the header:<br/>![explore rum with red box.png](/img/rum/explore-rum-with-red-box.png)
+Example:<br/><img src={useBaseUrl('img/rum/explore-view-rum.png')} alt="Real User Monitoring" />
 
 
 ## Navigating RUM Dashboards
 
 ### RUM Overview Dashboards
 
-The **RUM Overview Application**, **Service**, **Action Type**, and **Action** dashboards dashboards show the user experience for performance and requests metrics for selected application, service, or action, broken down per top geo-locations, operating systems, and browsers.
-The RUM Overview dashboards show the user experience for performance and requests metrics for selected application, service, and actions, broken down per top geo-locations, operating systems, and browsers. These include:
+The RUM Overview dashboards show the user experience for performance and requests metrics for your selected application, service, and action. Data is broken down by top geo-locations, operating systems, and browsers. These dashboards include:
 * **RUM Overview - Application**
 * **RUM Overview - Application Service**
 * **RUM Overview - Navigation Action**
@@ -77,10 +75,10 @@ Overview dashboards on all Explore levels have a panel showing geographical user
 The **RUM - TopN - Application** and **RUM - TopN - Application Service** dashboards show top N browsers, operating systems, and geographical locations by load time and requests for the selected **application** or **service**.
 
 Use these dashboards to:
- * Find out top N browsers, operating systems, and geolocations by load or requests.
- * Understand the slowest and fastest browsers from a rendering perspective or geographical locations from a network perspective.
- * Understand XHR and log errors your users are experiencing.
- * Find out which browsers, operating systems are in use by your users and where are they are geographically located.
+* Find out top N browsers, operating systems, and geolocations by load or requests.
+* Understand the slowest and fastest browsers from a rendering perspective or geographical locations from a network perspective.
+* Understand XHR and log errors your users are experiencing.
+* Find out which browsers and operating systems are in use by your users and where are they are geographically located.
 
 You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts. You can also define the top N number for all charts.
 
