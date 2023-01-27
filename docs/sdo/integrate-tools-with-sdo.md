@@ -1,7 +1,7 @@
 ---
 id: integrate-tools-with-sdo
-title: Integrate Other Tools with the Software Development Optimization Solution (Optional)
-sidebar_label: Integrating Other DevOps Tools
+title: Integrate Other DevOps Tools with SDO (Optional)
+sidebar_label: Integrating Other Tools
 description: Learn how to integrate other tools with the Software Development Optimization Solution.
 ---
 
@@ -9,16 +9,16 @@ If your DevOps pipeline has tools which are not supported at present by the Soft
 
 ## Extending the current schema beyond the supported toolset OOTB toolset/FERs
 
-If your DevOps pipeline has tools that are not supported by out-of-the-box toolset of Software Development Optimization Solution then you can integrate your tool, and map it to the relevant schema model. 
+If your DevOps pipeline has tools that are not supported by the SDO out-of-the-box toolset, you can integrate your tool and map it to the relevant schema model. 
 
 For example, if you were to integrate Azure DevOps, which provides developer services to support teams to plan work, collaborate on code development, and build and deploy applications, with the SDO solution, you would first:
 
 1. Install the SDO solution as documented [here](install-sdo-app-view-dashboards.md).
-1. Add SDO field extraction rules, to map events from your tool to the SDO event schema.
+1. Add SDO field extraction rules to map events from your tool to the SDO event schema.
 
-For example, if you were to map AzureDevOps Pull Request Event to Software Development Optimization Pull Request Event Schema, you would create a new FER, and extract and map fields to the [pull request schema](supported-tools-schema.md). You can use the parse expressions defined to support out-of-the-box tools in [this JSON file.](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.json)
+For example, if you were to map an Azure DevOps Pull Request Event to an SDO Pull Request Event Schema, you would create a new FER, and extract and map fields to the [pull request schema](supported-tools-schema.md). You can use the parse expressions defined to support out-of-the-box tools in [this JSON file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.json).
 
-Please check the Sumo Logic Community Repo to make use of [community developed FERs](https://github.com/SumoLogic/sumologic-content/tree/master/Software-Development-Optimization).
+Refer to the Sumo Logic Community Repo to make use of [community developed FERs](https://github.com/SumoLogic/sumologic-content/tree/master/Software-Development-Optimization).
 
 ```sql
 json field=_raw "eventType"
@@ -30,5 +30,3 @@ json field=_raw "eventType"
 | toLong(closeddate_epoch)
 | "pull_request" as event_type
 ```
-
- 

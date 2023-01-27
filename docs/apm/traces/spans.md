@@ -1,7 +1,6 @@
 ---
 id: spans
-title: Analyze data on Span level
-sidebar_label: Analyze data on Span level
+title: Analyze Data on a Span Level
 description: Learn how to use the Spans page to explore your span data.
 ---
 
@@ -113,7 +112,7 @@ The table can be modified by the following:
 
 #### Facets
 
-This panel provides a list of all the metadata fields returned from your search. The content of the Facets panel is affected by your current active filters and time range, but shows any found metadata tag (span attribute) with its top 10 values, including any custom tags you may [add to your data](../get-started-transaction-tracing/opentelemetry-instrumentation/java/custom-tags-configuration.md). By default, the fields used in the query are shown in the Messages table.
+This panel provides a list of all the metadata fields returned from your search. The content of the Facets panel is affected by your current active filters and time range, but shows any found metadata tag (span attribute) with its top 10 values, including any custom tags you may [add to your data](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java/custom-tags-configuration). By default, the fields used in the query are shown in the Messages table.
 
 ![Facets expanded.png](/img/traces/Facets-expanded.png)
 
