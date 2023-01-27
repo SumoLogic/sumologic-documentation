@@ -72,7 +72,7 @@ To create a subscriber in Amazon Security Lake Console, follow the steps below:
 1. **Data Access method**. For your subscriber to access the data, choose **S3** as the data access mode.<br/><img src={useBaseUrl('img/send-data/data-access-method.png')} alt="data-access-method.png" width="400"/>
 1. **Subscriber Credentials**. Enter the **Account ID** and **External ID** from the [Step 1](#step-1-grant-sumo-logic-access-to-amazon-security-lake-console). <br/><img src={useBaseUrl('img/send-data/subscriber-credentials.png')} alt="subscriber-credentials.png" width="750"/>
 1. **Notifications (S3 only)**. You can specify how your subscribers should be notified. For the time being, let's use the **Subscription endpoint** as the notification mode. Enter the following fields as required:
-   * In **API destination role**, paste the `Role ARN` of the role from the [EventBridge API destinations](#role-2-eventbridge-api-destinations) section. The `Role ARN` of the role should be specific and meaningful something like `AmazonSecurityLakeRoleForEventBridge-accountid`.
+   * In **API destination role**, paste the `Role ARN` of the role from the [EventBridge API destinations](#role-2-eventbridge-api-destinations) section. The `Role ARN` of the role should be specific and meaningful, something like `AmazonSecurityLakeRoleForEventBridge-accountid`.
    * **Subscription endpoint**. The Subscription endpoint is intentionally left blank because it will be added to the subscriber in later steps.
    * **HTTPS key name** (Optional). Name of the server certificate that is used to authenticate the subscriber's connection to the AWS Security Lake.
    * **HTTPS key value**(Optional). Actual value or password associated with the key.
