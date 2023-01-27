@@ -248,7 +248,7 @@ module.exports = {
       // Optional: Algolia search parameters
       //searchParameters: {},
       // Optional: path for search page that enabled by default (`false` to disable it)
-      searchPagePath: false,
+      //searchPagePath: false,
       //... other Algolia params
     },
     prism: {
