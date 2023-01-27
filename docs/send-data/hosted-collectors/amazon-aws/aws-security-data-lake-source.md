@@ -82,7 +82,7 @@ To create a subscriber in Amazon Security Lake Console, follow the steps below:
 1. Navigate to the Subscribers tab on the left and select the recently created Subscriber.
 1. Copy and secure the AWS Role ID of the subscriber, you'll need it in later steps. <br/> <img src={useBaseUrl('img/send-data/aws-role-id.png')} alt="aws-role-id.png" width="600"/>
 
-Now, you're all set to add a new Amazon Security Lake Source in your Sumo Logic account.
+You're all set to add a new Amazon Security Lake Source to your Sumo Logic account.
 
 ### Step 3. Create Amazon Security Lake Source in Sumo Logic
 
