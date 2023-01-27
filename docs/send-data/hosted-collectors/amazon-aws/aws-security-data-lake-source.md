@@ -51,7 +51,7 @@ To grant Sumo Logic access to the Amazon Security Lake source, you need to provi
    * `SumoDeployment` is your Sumo Logic deployment that has to be entered in lowercase such as `au`, `ca`, `de`, `eu`, `fed`, `in`, `jp`, `us1`, or `us2`. To find your deployment, see [Sumo Logic API Authentication, Endpoints, and Security](/docs/api/getting-started.md).
    * `SumoAccountId` is the Organization ID shown on your Account Overview page in the Sumo Logic UI. You can access it by navigating to **Administration** > **Account**  > **Account Overview**.
 
-After the authentication is done successfully, you'll create the subscriber.
+After the authentication is successful, you can create the subscriber.
 
 ### Step 2. Set up subscriber in Amazon Security Lake console
 
