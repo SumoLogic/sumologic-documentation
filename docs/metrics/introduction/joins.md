@@ -174,7 +174,7 @@ This query adds `bytes_in` to `bytes_out` for each node, and creates the metric 
 
 ### Calculate percentages for nodes by cluster
 
-This query calculates `bytes_in` as a percentage of `bytes_total` for each node. The expression allows referring to the same series more than once in the expression: #A appears twice in the expression.
+This query calculates `bytes_in` as a percentage of `bytes_total` for each node. The expression allows referring to the same series more than once in the expression, in this example #A appears twice in the expression.
 
 ```sql
 #A: metric=bytes_in node=* cluster=*
