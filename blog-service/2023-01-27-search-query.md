@@ -2,9 +2,6 @@
 title: Bug Fix for Query Results
 image: https://www.sumologic.com/img/logo.svg
 keywords:
-  - sumo logic
-  - service release notes
-  - open source
   - search query optimization
 hide_table_of_contents: true
 authors:
