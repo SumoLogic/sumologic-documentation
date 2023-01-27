@@ -115,5 +115,5 @@ The next step is to update your Amazon Security Lake subscriber to fill in the s
 To update the Amazon Security Lake subscriber, follow the steps below:
 1. Navigate to the Subscribers page and click **My Subscribers**.
 2. Edit the subscriber created in the [Setup Subscriber](#step-2-set-up-subscriber-in-amazon-security-lake-console) section in step 2.
-3. Go to the **Subscription endpoint** field which you left it blank. Paste the subscription endpoint that you copied from the Amazon Security Lake source setup. See [Step 3.10](#step-3-create-amazon-security-lake-source-in-sumo-logic) section.
+3. Navigate to the **Subscription endpoint** field at the bottom which was left blank. Then, add the subscription URL from the Amazon Security Lake source setup. See [Step 3.10](#step-3-create-amazon-security-lake-source-in-sumo-logic) section.
 4. Click **Save**.
