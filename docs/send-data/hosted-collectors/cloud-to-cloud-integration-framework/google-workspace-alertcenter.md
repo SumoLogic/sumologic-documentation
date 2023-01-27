@@ -34,10 +34,10 @@ To create Google Workspace AlertCenter service account credentials:
 1. Enable **Google Workspace Alert Center API** for the Alert API. To locate this setting, you can search for "Google Workspace Alert Center API" in the search bar. Then select the **Enable** button. <br/><img src={useBaseUrl('img/send-data/google_workspace_alert_center_API_sdk.png')} alt="api-sdk" width="450"/>
 1. You will be redirected to the dashboard page. Select the **Credentials** tab in the left panel. <br/><img src={useBaseUrl('img/send-data/google_workspace_credentials.PNG')} alt="credentials" width="200"/>
 1. Click **Create Credentials**, and select **Service Account** to create service account credentials. Later you'll supply the account details and click **Done** to create a service account. <br/><img src={useBaseUrl('img/send-data/google_workspace_service_account.PNG')} alt="<service-account>" width="400"/>
-1. To create JSON for the service account, you must create a key. Click the service account email to go to the Keys tab.<br/> <img src={useBaseUrl('img/send-data/google_workspace_service_account_create_key.png')} alt="service-account-create_key.png" width="800"/>
+1. To create JSON for the service account, you must create a key. Click the service account email to navigate to the Keys tab.<br/> <img src={useBaseUrl('img/send-data/google_workspace_service_account_create_key.png')} alt="service-account-create_key.png" width="800"/>
 1. Click **Add key** and select **Create new key**. At the prompt, select **JSON** and click **Create** to create a key. After clicking on **create**, the JSON will get downloaded automatically. <br/><img src={useBaseUrl('img/send-data/google_workspace_service_account_key.png')} alt="service-account-key" width="600"/>
 1. JSON for the service account is automatically downloaded. To see what the JSON looks like, and how the JSON fields map to the fields you'll configure, see [Service account JSON](#example-of-service-account-json) below.
-1. You need to add domain-wide delegation to your service account using the client ID generated in step 5.
+1. Add domain-wide delegation to your service account using the client ID generated in step 5.
 1. From the Google admin console, add your OAuth scope to the service account using the instructions [here](https://developers.google.com/workspace/guides/create-credentials#optional_set_up_domain-wide_delegation_for_a_service_account) and select it in the input form. The OAuth scope for alert API is:
   ```
   https://www.googleapis.com/auth/apps.alerts
