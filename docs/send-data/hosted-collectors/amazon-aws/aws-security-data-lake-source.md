@@ -95,7 +95,7 @@ When you create an Amazon Security Lake source, you add it to a Hosted Collector
 1. Enter a name for the new **Source**. The **Description** is optional.
 1. In the **Source Category**, enter any string to tag the output collected from this distinct source. (Category metadata is stored in a searchable field called **_sourceCategory**).
 7. In **Fields**. Click the **+Add Field** link to add custom log metadata fields.
-8. Enter the required fields that you want to associate, each field needs a name (key) and value.
+8. Enter the required fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark shows up when a field exists and is enabled in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point shows up when the field doesn't exist or is disabled in the **Fields table schema**.
    :::important
