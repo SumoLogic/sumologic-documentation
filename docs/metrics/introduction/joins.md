@@ -75,7 +75,7 @@ metric=CPU_Sys, account=stage
 metric=CPU_Sys, account=prod
 ```
 
-Query #C returns 9 result sets
+Query #C returns 9 result sets:
 
 ```
 (metric=CPU_User, account=dev) + (metric=CPU_Sys, account=dev)
