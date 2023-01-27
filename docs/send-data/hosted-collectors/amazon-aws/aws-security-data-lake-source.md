@@ -20,68 +20,100 @@ Amazon Security Lake source provides a web services interface that can be used t
 
 This makes AWS log setup relatively easy. In addition, the data available from various AWS services is in the OCSF format, making it simple to parse and correlate across different sources.
 
-## Configure Amazon Security Lake Setup
+## Setup Relevant IAM Roles on Amazon Security Lake
 
+Before setting up your Amazon Security Lake account, you need to create the following IAM roles in AWS:
+
+### Role 1 (AmazonSecurityLakeMetaStoreManager)
+
+Create the `AmazonSecurityLakeMetaStoreManager` role in AWS Identity and Access Management (IAM). The role must carry this name and is necessary for Security Lake to support extract, transform, and load (ETL) jobs on raw log and event data that it receives from sources. Without creating and assuming this role, you cannot create your data lake or query data from Security Lake. One role can be used across Regions—there's no need to create a separate role for different Regions.
+
+ :::note
+ Before you create the role, you need to attach the AWS policies to your `AmazonSecurityLakeMetaStoreManager` role. See [AWS policy](https://docs.aws.amazon.com/security-lake/latest/userguide/getting-started.html#prerequisites).
+ :::
+
+### Role 2 (EventBridge API destinations)
+
+Create the `EventBridge API destinations` role for the data subscribers in AWS Identity and Access Management (IAM) that grants Amazon EventBridge permissions to invoke API destinations and send object notifications to the correct HTTPS endpoints. For more information, see creating IAM role for [EventBridge API destinations](https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-data-access.html#iam-role-subscriber).
+The role name must be in the format: `AmazonSecurityLakeRoleForEventBridge-[AWS Account ID]`. For example, AmazonSecurityLakeRoleForEventBridge-03039853141.
+3. After creating this IAM role, the Role ARN will be generated automatically.
+4. Copy and secure the Role ARN of the role as you'll need it to create the subscriber in later steps. It must be in this format something like `arn:aws:iam::account-is:role/role-name`. <br/><img src={useBaseUrl('img/send-data/role-arn-name.png')} alt="role-arn-name.png" width="1200"/>
+
+We assume that by following the above steps, you have successfully created the required IAM roles and generated a Role ARN. In the next step, you'll grant Sumo Logic access to Amazon Security Lake to use the services.
+
+## Configure Amazon Security Lake Setup
 
 ### Step 1. Grant Sumo logic access to Amazon Security Lake console
 
-Granting Sumo logic access to the Amazon Security Lake source  requires access to **Sumo Account ID** and **External ID**. Find the details below:
+To grant Sumo Logic access to the Amazon Security Lake source, you need to provide the Sumo Account ID and External ID.
+1. **Account ID**. Remember to copy and secure your `Sumo Logic ID`: `************`. You would require this ID in the further steps.
+2. **External ID**. The External ID is formed from your Sumo Logic region identifier. It is a unique identifier that is used to authenticate the connection between your Sumo Logic account and your Amazon Security Lake source. The format of your Sumo Logic account identifier is: `SumoDeployment`: `SumoAccountId` where:
+   * `SumoDeployment` is your Sumo Logic deployment that has to be entered in lowercase such as `au`, `ca`, `de`, `eu`, `fed`, `in`, `jp`, `us1`, or `us2`. To find your deployment, see [Sumo Logic API Authentication, Endpoints, and Security](/docs/api/getting-started.md).
+   * `SumoAccountId` is the Organization ID shown on your Account Overview page in the Sumo Logic UI. You can access it by navigating to **Administration** > **Account**  > **Account Overview**.
 
-1. **Account ID**. Remember to copy and secure your Sumo Logic ID: ************. It will be needed in the further steps.
-2. **External ID**. The External ID is formed from your Sumo Logic region identifier. The format of your Sumo Logic account identifier is: `<SumoDeployment>: <SumoAccountId>` where:
-   * **SumoDeployment** is your Sumo Logic deployment that has to be entered in lowercase such as au, ca, de, eu, fed, in, jp, us1, or us2. To find your deployment, see [Sumo Logic API Authentication, Endpoints, and Security](/docs/api/getting-started.md).
-   * **SumoAccountId** is the Organization ID shown on your Account Overview in the Sumo Logic UI. You can access it by going to **Administration** > **Account**  > **Account Overview**.
-
+After the authentication is done successfully, you'll create the subscriber.
 
 ### Step 2. Set up subscriber in Amazon Security Lake console
 
-Create a subscriber in Amazon Security Lake Console. To create a subscriber, follow the instructions below:
-1. Navigate to the Security Lake console.
-2. From the left navigation, click **Subscriber**.
-3. On the Subscribers page, under the **Add subscribers** tab click **Create custom subscriber**. <br/><img src={useBaseUrl('img/send-data/setup-subscriber.png')} alt="setup-subscriber" />
-4. (Optional) Provide the **Subscriber name** and **Description**.
-5. In the **Select Logs and events sources** section, you can select which resources you want to enable. There are two options:
-     * **All Logs and event sources**. All the logs and event sources will be selected if you select this option.
-     * **Specify log and event sources**. Only specific sources will be selected if you go with this option. For example, you select **Specific log and event sources**. In the next step, you will be able to view user activity, API usage in AWS services, IP traffic details, and log and event information from Amazon Route 53.
-6. In **Log and event sources**, you have these options:
-     * **CloudTrail**: View user activity and API usage in AWS services.
-     * **VPC flow logs**: View details about IP traffic to and from network interfaces in your VPC.
-     * **Route 53**: View Amazon Route 53 Resolver query logs.
-7. Access data.
-     * **S3** or **Lakeformation** is the storage option you can choose for how your subscribers will access the data.
-     :::note
-     Subscription URL will be added to the subscriber in the later step and is kept blank deliberately.
-     :::
+To create a subscriber in Amazon Security Lake Console, follow the steps below:
+1. Navigate to the Amazon Security Lake console.
+1. From the left navigation, click **Subscriber**.
+1. On the Subscribers page, under the **Add subscribers** tab, click **Create custom subscriber**. <br/><img src={useBaseUrl('img/send-data/setup-subscriber.png')} alt="setup-subscriber.png" width="700"/>
+1. **Subscription Name**. Provide the **Subscriber name**. You may skip the **Description**, it's optional.
+1. In the **Logs and events sources**, you can select which data sources you want to enable for the subscriber. Below are the two options:
+   * **All Logs and event sources**. It gives you access to all of the event and log sources you choose.
+   * **Specific log and event sources**. It gives you access to only the specific sources you select from the available sources. Below are the sources you may choose:
+      * **CloudTrail**. View user activity and API usage in AWS services.
+      * **VPC flow logs**. View details about IP traffic to and from network interfaces in your VPC.
+      * **Route 53**. View DNS queries made by resources within your Amazon Virtual Private Cloud (Amazon VPC).
+      * **Security Hub findings**. View Amazon Security findings from the Security Hub.
 
+  <br/><img src={useBaseUrl('img/send-data/log-event-sources.png')} alt="log-event-sources.png" width="950"/>
+1. **Data Access method**. For your subscriber to access the data, choose **S3** as the data access mode.<br/><img src={useBaseUrl('img/send-data/data-access-method.png')} alt="data-access-method.png" width="400"/>
+1. **Subscriber Credentials**. Enter the **Account ID** and **External ID** from the [Step 1](#step-1-grant-sumo-logic-access-to-amazon-security-lake-console). <br/><img src={useBaseUrl('img/send-data/subscriber-credentials.png')} alt="subscriber-credentials.png" width="750"/>
+1. **Notifications (S3 only)**. You can specify how your subscribers should be notified. For the time being, let's use the **Subscription endpoint** as the notification mode. Enter the following fields as required:
+   * In **API destination role**, paste the `Role ARN` of the role from the [EventBridge API destinations](#role-2-eventbridge-api-destinations) section. The `Role ARN` of the role should be specific and meaningful something like `AmazonSecurityLakeRoleForEventBridge-accountid`.
+   * **Subscription endpoint**. The Subscription endpoint is intentionally left blank because it will be added to the subscriber in a later steps.
+   * **HTTPS key name** (Optional). Name of the server certificate that is used to authenticate the subscriber's connection to the AWS Security Lake.
+   * **HTTPS key value**(Optional). Actual value or password associated with the key.
 
-### Step 3. Create Amazon Security Lake source in Sumo Logic
+  <img src={useBaseUrl('img/send-data/notifications.png')} alt="notifications.png" width="800"/>
+1. Click **Create**. A new subscriber will be created.
+1. Navigate to the Subscribers tab on the left and select the recently created Subscriber.
+1. Copy and secure the AWS Role ID of the subscriber, you'll need it in later steps. <br/> <img src={useBaseUrl('img/send-data/aws-role-id.png')} alt="aws-role-id.png" width="600"/>
+
+Now, you're all set to add a new Amazon Security Lake Source in your Sumo Logic account.
+
+### Step 3. Create Amazon Security Lake Source in Sumo Logic
 
 When you create an Amazon Security Lake source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use from the existing ones or create a new Hosted Collector, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-
-**To create an Amazon Security Lake source:**
-
+**To create an Amazon Security Lake Source:**
 1. In the Sumo Logic environment, go to **Manage Data** > **Collection** > **Collection**.
-2. On the **Collectors page, click **Add Source** next to a Hosted Collector.
-3. Select an existing Hosted Collector or the one you have just created. <br/><img src={useBaseUrl('img/send-data/aws-security-lake.png')} alt="amazon security lake" />
-4. Select **Amazon Security Lake**.
-5. Enter a name for the new **Source**. A **Description** is optional.
-6. In the **Source Category**, enter any string to tag the output collected from this distinct source. (Category metadata is stored in a searchable field called **_sourceCategory**).
+1. On the **Collectors page** click **Add Source** next to a Hosted Collector.
+1. Select an existing Hosted Collector or the one you have just created.
+1. Select **Amazon Security Lake**. <br/><img src={useBaseUrl('img/send-data/aws-security-lake.png')} alt="aws-security-lake.png" width="900"/>
+1. Enter a name for the new **Source**. The **Description** is optional.
+1. In the **Source Category**, enter any string to tag the output collected from this distinct source. (Category metadata is stored in a searchable field called **_sourceCategory**).
 7. In **Fields**. Click the **+Add Field** link to add custom log metadata fields.
 8. Enter the required fields that you want to associate, each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png)  A green circle with a checkmark shows up when a field exists and is enabled in the Fields table schema.
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark shows up when a field exists and is enabled in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point shows up when the field doesn't exist or is disabled in the **Fields table schema**.
    :::important
    In this case, an option to automatically add or enable the nonexistent fields to the **Fields table schema** is provided. If a field is sent to Sumo logic that does not exist in the **Fields table schema** or is disabled, it will be ignored and known as dropped field.
    :::
-9. In **Role ARN**: Copy and paste the AWS Role ARN from the Amazon Security Lake console.
-10. Click **Save**. A pop-up will appear with the subscription URL.
+1. In **Role ARN**: Paste the AWS Role ID from your Amazon Security Lake console, see above [Step 2.11](#step-2-set-up-subscriber-in-amazon-security-lake-console).<br/><img src={useBaseUrl('img/send-data/role-arn-id.png')} alt="role-arn-id.png" width="400"/>
+1. Click **Save**. A pop-up will appear with the subscription endpoint. <br/> <img src={useBaseUrl('img/send-data/subscription-endpoint.png')} alt="subscription-endpoint.png" width="400"/>
   :::note
-  Remember to copy and secure the subscription URL. If you closed the window and could not copy the URL, don't worry. Click on the **Edit** button under the list of sources and copy the URL.
+  Remember to copy and secure the subscription endpoint. If you closed the window and could not copy the URL, don't worry. Click on the **Edit** button under the list of sources and copy the URL.
   :::
-11. Optional: You can create any **Processing Rules** that you want for the Source. Refer to [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
+1. Optional: You can create any **Processing Rules** that you want for the Source. For more information, see [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
+
+The next step is to update your Amazon Security Lake subscriber to fill in the subscriber endpoint on the Subscribers page.
 
 ### Step 4: Update Amazon Security Lake subscriber
 
+To update the Amazon Security Lake subscriber, follow the steps below:
 1. Navigate to the Subscribers page and click **My Subscribers**.
 2. Edit the subscriber created in the [Setup Subscriber](#step-2-set-up-subscriber-in-amazon-security-lake-console) section in step 2.
-3. Add the subscription URL copied from the Amazon Security Lake source setup in [Create Amazon Security Lake Source](#step-3-create-amazon-security-lake-source-in-sumo-logic) section.
+3. Go to the **Subscription endpoint** field which you left it blank. Paste the subscription endpoint that you copied from the Amazon Security Lake source setup. See [Step 3.10](#step-3-create-amazon-security-lake-source-in-sumo-logic) section.
+4. Click **Save**.
