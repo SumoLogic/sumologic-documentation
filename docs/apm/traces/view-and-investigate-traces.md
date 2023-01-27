@@ -1,7 +1,6 @@
 ---
 id: view-and-investigate-traces
-title: View and investigate Traces
-sidebar_label: View and investigate Traces
+title: View and Investigate Traces
 description: Learn how to search and investigate your traces, trace views, and trace events.
 ---
 
@@ -9,7 +8,7 @@ You can visualize trace data through filtered trace lists and icicle charts. The
 
 ## Traces page
 
-Use Traces to search and view traces. To open, go to **+ New > Traces**.
+Use Traces to search and view traces. To open, go to **+ New** > **Traces**.
 
 ![traces menu option.png](/img/traces/traces-menu-option.png)
 
@@ -17,7 +16,7 @@ A new Traces page opens:
 
 ![trace-page.png](/img/traces/trace-page.png)
 
-You can view traces in a **Table.**
+You can view traces in a **Table**.
 
 ## Table
 
@@ -175,7 +174,7 @@ If the **Datapoint** is the same as **Now** the selector will not allow you
 
 [Monitors](/docs/alerts/monitors) track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications. The **Entities** tab shows any Monitors with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
 
-Alerts are only visible when the [Time Selector](../../../dashboards-new/drill-down-to-discover-root-causes.md#time-selector) is set to **Now.**
+Alerts are only visible when the [Time Selector](../../dashboards-new/drill-down-to-discover-root-causes.md#time-selector) is set to **Now.**
 
 Next to the Entity, you will see any of the following icons indicating the type of Monitor alert that has triggered.
 

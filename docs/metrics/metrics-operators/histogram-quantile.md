@@ -37,5 +37,5 @@ metric=apiserver_request_latencies_bucket | quantize using max | delta | histogr
 ```
 
 :::note
-You must include the `quantize` and delta clauses to get the same results as the PromQL query would produce.
+You must include the `quantize` and `delta` operators to get the same results as the PromQL query would produce.
 :::
