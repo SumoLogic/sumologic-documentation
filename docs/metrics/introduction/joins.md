@@ -126,7 +126,9 @@ Doing a quick comparison of metrics and average value over a short period can yi
 
 <img src={useBaseUrl('img/metrics/odd-join-results.png')} alt="odd-join-results.png"/>
 
-Note that query #C computed the two values of the average value.
+:::note
+ query #C computed the two values of the average value.
+::: 
 
 At the right end of each query row, you can see that that quantization period automatically optimized for the selected period is one second (`quantize 1s (avg)`). If the quantization bucket size (one second in this case) is less than the interval at which the metrics are reported, some of the buckets may not contain data points from both query #A and query #B. In our example, there were only two one-second buckets in which both hosts reported metrics.
 
