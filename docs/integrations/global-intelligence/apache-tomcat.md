@@ -1,7 +1,7 @@
 ---
 id: apache-tomcat
 title: Global Intelligence for Apache Tomcat App
-sidebar_label: Apache Tomcat
+sidebar_label: Global Intelligence for Tomcat
 description: The Global Intelligence for Apache Tomcat app helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache Tomcat servers.
 ---
 

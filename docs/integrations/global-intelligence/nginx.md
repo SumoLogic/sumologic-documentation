@@ -1,7 +1,7 @@
 ---
 id: nginx
-title: Global Intelligence for Nginx
-sidebar_label: Nginx
+title: Global Intelligence for Nginx App
+sidebar_label: Global Intelligence for Nginx 
 description: The Global Intelligence for Nginx app provides you with information regarding Golden Signals and Visitor Benchmarks for your company's Nginx servers, and compares them to all servers from all customers.
 ---
 

@@ -1853,6 +1853,10 @@ module.exports = {
           'integrations/global-intelligence/apache',
           'integrations/global-intelligence/apache-tomcat',
           'integrations/global-intelligence/nginx',
+          'cse/records-signals-entities-insights/global-intelligence-security-insights',
+          'integrations/amazon-aws/global-intelligence-cloudtrail-devops',
+          'integrations/amazon-aws/global-intelligence-cloudtrail-secops',
+          'integrations/amazon-aws/global-intelligence-guardduty',
         ],
       },
       {
@@ -1984,7 +1988,7 @@ module.exports = {
     'integrations/partner-ecosystem-apps',
     'integrations/partner-integrations',
   ],
-// OTHER FEATURES: Global Intelligence, SDO, CSE, SOAR
+// OTHER FEATURES: SDO, CSE, SOAR
   other: [
     {
       type: 'category',

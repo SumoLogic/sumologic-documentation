@@ -1,7 +1,7 @@
 ---
 id: apache
-title: Global Intelligence for Apache
-sidebar_label: Apache
+title: Global Intelligence for Apache App
+sidebar_label: Global Intelligence for Apache
 description: The Global Intelligence for Apache App is a companion to the Apache App and helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache servers against other Sumo Logic customer’s servers.
 ---
 
