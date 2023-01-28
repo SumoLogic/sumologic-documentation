@@ -374,6 +374,11 @@ module.exports = {
             ]
           },
           {
+            label: 'Contribute',
+            to: '/docs/contributing',
+            position: 'left',
+          },
+          {
             type: 'html',
             position: 'right',
             value: '<div id="google_translate_element"></div>',
