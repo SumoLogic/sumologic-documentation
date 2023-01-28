@@ -1,6 +1,7 @@
 ---
 id: tracing-dashboards
 title: Application Service APM/Tracing Dashboards
+sidebar_label: APM and Tracing Dashboards
 description: Create Tracing dashboards, install apps, and more.
 ---
 
@@ -8,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Out-of-the-box dashboards are available as three Explore hierarchies. You can access them in the **Explore By** dropdown menu.
 
-The **APM: Application View** groups services into higher-level applications based on the `application=[app-name]` custom tag that you may add to your tracing data if you want to leverage it fully. Without the tag, all services will belong to a "default" application. The fourth and last level of the hierarchy shows the top 50 most active operations executed on the service. See [Working with Span attributes](../advanced-configuration/working-with-span-attributes.md) to learn how to customize your span attributes and set up application name.
+The **APM: Application View** groups services into higher-level applications based on the `application=[app-name]` custom tag that you may add to your tracing data if you want to leverage it fully. Without the tag, all services will belong to a "default" application. The fourth and last level of the hierarchy shows the top 50 most active operations executed on the service. See [Working with Span attributes](/docs/apm/traces/advanced-configuration/working-with-span-attributes) to learn how to customize your span attributes and set up application name.
 
 The **APM: Service View** takes a contrary approach, displaying services by top level and breaking down their health by application. This view can be useful for shared services that support more than one application. The fourth level shows the top 50 most active operations performed on the selected service and application.
 
@@ -27,7 +28,7 @@ By clicking on any data point on the chart, you can view the side panel's **Enti
 ![Explore coffee app to drill down on infrastructure tab.png](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Application-Health-Across-Services.png)
 
 :::note
-Tracing metrics retention has [default metrics retention](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces/#time-range).
+Tracing metrics retention has [default metrics retention](/docs/apm/traces/view-and-investigate-traces/#time-range).
 :::
 
 ## Installing the Tracing App (Optional)
@@ -59,7 +60,7 @@ See the [Dashboard (New) guide](/docs/dashboards-new) for additional information
 
 The **Services Table** and **Services Graph** panels display a services list and services map, respectively, for filtered applications and services, with the ability to explore the environment.
 
-To add a Service Map panel to your Dashboard, see [Services Dashboard Panels](/docs/apm/traces/working-with-tracing-data/services-list-map/#services-dashboard-panels).
+To add a Service Map panel to your Dashboard, see [Services Dashboard Panels](/docs/apm/traces/services-list-map/#services-dashboard-panels).
 
 ### Trace List panel
 
