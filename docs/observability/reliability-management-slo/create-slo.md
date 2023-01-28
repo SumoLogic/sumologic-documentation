@@ -154,7 +154,7 @@ To edit SLO parameters:
 1. Edit definition and other parameters.
 
 To edit SLO parameters from a Monitor:
-1. Go to the **Monitors** tab and click on any Monitor.<br/><img src={useBaseUrl('img/observability/monitors-panel-slo.png')} alt="Monitor-based SLO" width="500" />
+1. Go to the **Monitors** tab and click on any Monitor.<br/><img src={useBaseUrl('img/observability/monitors-tab.png')} alt="Monitor-based SLO" width="500" />
 1. In the panel, click **Monitor-based SLO** to view the list of SLOs associated with that particular Monitor.<br/><img src={useBaseUrl('img/observability/monitor-based-slo-panel.png')} alt="Monitor-based SLO" />
 
 
