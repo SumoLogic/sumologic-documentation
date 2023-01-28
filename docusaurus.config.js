@@ -39,10 +39,6 @@ module.exports = {
       src: './src/helper/google-translate.js',
       async: true,
     },
-    {
-      src: 'https://unpkg.com/feedbackfin@^1',
-      defer: true,
-    },
   ],
   staticDirectories: ['static'],
   webpack: {
@@ -385,11 +381,6 @@ module.exports = {
             type: 'html',
             position: 'right',
             value: '<div id="google_translate_element"></div>',
-          },
-          {
-            type: 'html',
-            position: 'right',
-            value: '<button data-feedbackfin-button>Feedback</button>',
           },
           {
             to: 'https://www.sumologic.com/sign-up',
