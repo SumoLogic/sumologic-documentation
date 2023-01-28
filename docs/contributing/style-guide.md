@@ -68,7 +68,7 @@ See also: [Sumo Logic UX Style Guide](/files/UX-Sumo-Style.pdf).
 
 ### Active Voice
 
-When writing instructions, use the [active voice](#active-voice) whenever possible. For example, "Sumo Logic ingests multiple streams of data", not "Multiple streams of data are ingested by Sumo Logic".
+When writing instructions, use the active voice whenever possible. For example, "Sumo Logic ingests multiple streams of data", not "Multiple streams of data are ingested by Sumo Logic".
 
 This gives a call to action for the reader or user to effectively get something done. It also reduces word count and keeps instructions clear.
 
