@@ -13,8 +13,17 @@ The Sumo Logic Style Guide is a guide to language at Sumo Logic, so that we can 
 
 This is a living document. If you've wondered about the usage of the name of a component, a feature in the UI, or any other word usage, and you don't find that term here, please let us know. The Documentation team will look it up and add usage guidance. Likewise, if you disagree with any usage defined here, please let us know and we'll update as necessary.
 
+## Doc structure summary
 
-## Grammar and Style
+* [Frontmatter (metadata)](#metadata-frontmatter) goes at the top
+* Tell the user in the doc introduction (first paragraph) what the page teaches, why they should read it, and who should read it.
+* Let the user know what step/place they are in for a tutorial in the introduction/at top. The layout automatically provides a previous/next at the bottom of the page.
+* Link out to important concepts and overviews for additional reading. This is helpful for instruction pages or tutorials.
+* Keep instructions concise, easy to follow, not too many screenshots.
+* Include any notes, warnings, tips, or other admonitions.
+
+
+## Writing Resources
 
 If you need help with a convention, word to use, or format to follow, we will keep a cheatsheet of styles here. We also follow:
 
@@ -24,8 +33,6 @@ If you need help with a convention, word to use, or format to follow, we will ke
   * [User Input | Formatting Text in Instructions](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/formatting-text-in-instructions)
 
 For terminology usage guidance, see our [Word List](/docs/contributing/word-list.md).
-
-## Writing Resources
 
 If you're new to writing content or would like to learn more, check out these resources:
 * [Write the Docs](https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/) - Association of tech writers, developers, trainers, and more that have collected ideas, created training and guidelines, and actively discuss documentation.
@@ -39,13 +46,15 @@ Helpful blogs on tech writing:
 
 The Sumo Logic Docs team will review submissions, provide suggested edits, add new content into the navigation, and answer any questions you have.
 
-
-### Templates
-
+:::tip
 To create a new doc quickly, use a template. You can copy and paste the file, add your content, and submit a PR.
-
 * [Doc topic (generic) template](/docs/contributing/templates/generic-doc)
 * [Partner app template](/docs/contributing/templates/partner-app-doc)
+:::
+
+:::tip
+See also: [Sumo Logic UX Style Guide](/files/UX-Sumo-Style.pdf).
+:::
 
 ## Voice and Tone
 
@@ -53,33 +62,30 @@ To create a new doc quickly, use a template. You can copy and paste the file, ad
 * The reader should feel confident and informed. We should strive to engage our customers, and show them where to get additional assistance when needed.
 * Describe Sumo Logic in a professional and truthful manner. Avoid generic, unsubstantial adjectives like "very" or phrases like "we're the best". Instead, illustrate these points by letting our product speak for itself.
 * Avoid using a stiff, institutional voice. Instead, write with an instructive and conversational tone. For example, when linking to the support site, use terms like "Need help? Let us know" instead of "Please email our support personnel" to give our company a friendly face.
-* Use the [active voice](#active-voice) whenever possible. For example, use "Sumo Logic ingests multiple streams of data", not "Multiple streams of data are ingested by Sumo Logic".
 * Instructional content and blog posts should be written at approximately the 8th-grade reading level, particularly in introductory sections, for readability and SEO. You can test your content [here](http://www.writingtester.com/tester/grade_level.php).
 * When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you are recommended to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Please use a different email or contact Sumo Logic for assistance."
-* We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orange juice", not "I had [eggs, toast and orange juice](https://www.verbicidemagazine.com/wp-content/uploads/2012/01/why-i-still-use-the-oxford-comma.jpg)".
 * We have a sense of humor! Conveying that we do serious work, but we don't take ourselves too seriously, makes Sumo Logic feel likable.
 
-:::tip
-See also: [Sumo Logic UX Style Guide](/files/UX-Sumo-Style.pdf).
-:::
+### Active Voice
 
-## Structuring Content
+When writing instructions, use the [active voice](#active-voice) whenever possible. For example, "Sumo Logic ingests multiple streams of data", not "Multiple streams of data are ingested by Sumo Logic".
 
-* Tell the user in the doc introduction (first paragraph) what the page teaches, why they should read it, and who should read it.
-* Let the user know what step/place they are in for a tutorial in the introduction/at top. The layout automatically provides a previous/next at the bottom of the page.
-* Link out to important concepts and overviews for additional reading. This is helpful for instruction pages or tutorials.
-* Keep instructions concise, easy to follow, not too many screenshots.
-* Include any notes, warnings, tips, or other admonitions.
-
-## Active Voice
-
-When writing instructions, it helps to always use active voice. This gives a call to action for the reader or user to effectively get something done. It also reduces word count and keeps instructions clear.
+This gives a call to action for the reader or user to effectively get something done. It also reduces word count and keeps instructions clear.
 
 | Active &#9989; | Not Active &#10060; | Why? |
 | :-- | :-- | :-- |
 | Add a resource... | You can add a resource... | They know they can do a thing. Clearly state to do the thing. |
 | Build the query using the following... | Please build the query using the following... | We need them to complete a task. No need for please. |
 | To add a new collector:<br/>1. Access Sumo Logic and find the... | 1. When you need to add a new collector, access Sumo Logic and find the... | Introduce your instructions with the goal, then dive into the instructions. This is called a stem, and it helps focus the task and keeps you active. |
+
+### Inclusive language
+
+Use inclusive and culturally neutral language. Our audience is global. Do not use idioms or terminology only understood by a specific region or group, and avoid overly technical jargon.
+
+Address the reader as "you", as you would in conversation. For example, instead of saying, "The user must provide his or her API key" or "One must provide their API key", say, "You'll need to provide your API key".
+
+Unless you're referring to a specific person, do not use gender pronouns (he/she).
+
 
 ## Abbreviations
 
@@ -95,6 +101,117 @@ An acronym uses the first initials of a word or phrase, for brevity. Our industr
 All companies have numerous acronyms for product, features, solutions, and more. Our documentation includes acronyms for Sumo Logic and third party software. Always fully spell out the first instance of the acronym on the page, then you can use it throughout. Do not spell out in a heading, but in paragraphs or bullets.
 
 For example, the first time you use AWS Application Load Balancer (ALB), you introduce or use it like that the first time on the page. Through the rest of the page, you can use ALB.
+
+
+
+## Beta Releases
+
+For a Closed Beta release, you'll need to exclude it from the nav and search engine results so that users will need the link to access it:
+1. Underneath the frontmatter, add the [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) (to prevent search crawlers from picking it up) and the **Beta** badge.
+  ```
+  ---
+  id: xyz-source
+  title: XYZ Source (Beta)
+  description: The XYZ Source provides a secure endpoint to receive event data.
+  ---
+
+  <head>
+    <meta name="robots" content="noindex" />
+  </head>
+
+  <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+
+  First paragraph goes here...
+  ```
+1. Do _not_ add the doc to `sidebars.ts`.
+1. Publish the doc.
+1. When the feature is moved from Beta to GA, remove the Robots meta tag and Beta label, and add the doc to sidebars.ts.
+
+
+For an Open Beta release:
+1. Add the beta label.
+1. Omit the Robots meta tag.
+1. Include the doc in `sidebars.ts`.
+1. Publish the doc.
+1. When the feature is moved from Beta to GA, remove the Beta label.
+
+## Capitalization
+
+* Title case (initial cap) all doc titles.
+   * Example: `Global Intelligence for Apache Tomcat App`
+* Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case.
+   * Example: `Throughput signals and contributing factors`
+
+
+## Code (Inline)
+
+* Use \` \` single backticks to format inline code, such as commands, API method names, and code. For information on code blocks (scripts), see [Code Blocks](#code-blocks).
+
+Here's an example that encompasses all the above styles: If you are not parsing all sources in the hosted collector with the same parser, click the **+Add Field** link, and add a field whose name is `_parser` with value _/Parsers/System/Auth0/Auth0_.
+
+## Code Blocks
+
+Use code blocks to format scripts, such as the JSON example below. This is important for scripts and CLI. Always use these to format programming language scripts (i.e., SQL for Sumo queries, JSON for logs). Format blocks of code by placing triple backticks before and after the code.
+
+```json
+{  
+  "employee": {
+    "name": "Jane Smith",   
+    "team": "Operations",   
+    "manager": true  
+  }  
+}  
+```
+
+Markdown code blocks support Syntax highlighting. If you know the code language, include that in the first set of ticks. This applies code highlighting for the language. See [this list](https://prismjs.com/#supported-languages) of available languages.
+
+To highlight lines in the code, use `{#}` in the title line with lines numbers. This example highlights lines 2 through 6.
+
+```sql {2-6}
+_sourceCategory=reinvent/travel/checkout
+[subquery:_sourceCategory=reinvent/travel/nginx
+     | count by src_ip
+     | topk(1,_count)
+     | compose src_ip keywords
+]
+| json field=_raw "funcName"
+| where funcname in ("process_cart","charge")
+| if (funcname = "process_cart" , "Checkout", "Purchased") as funcname
+| count by funcname
+```
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+    ```jsx title="src/components/HelloDocusaurus.js"
+    function HelloDocusaurus() {
+        return (
+            <h1>Hello, Docusaurus!</h1>
+        )
+    }
+    ```
+
+</TabItem>
+<TabItem value="Result">
+
+```jsx title="src/components/HelloDocusaurus.js"
+function HelloDocusaurus() {
+  return <h1>Hello, Docusaurus!</h1>;
+}
+```
+
+</TabItem>
+</Tabs>
+
+For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/docs/markdown-cheat-sheet/code-blocks).
+
 
 ## Contractions
 
@@ -115,85 +232,71 @@ Not everything has an intuitive name. It's the very nature of working with a con
 | x                       | Library             |
 -->
 
+## Downloadable files
 
+You can also add files such as custom code, json, yaml, and xml in the `static/files` folder. Supported file formats include .json, .js, .doc, and more. You link to the file using the file path of `/files` and file name:
 
-## Documenting processes
-
-When a topic provides instructions for a significant multi-step process, organize the content in sections with headings that signpost the nature of the information. Include "Step" in the heading to make it clear that the section is part of a larger configuration process. For example:
-
-<img src={useBaseUrl('img/contributing/style-steps-headings.png')} alt="headers with steps" width="300"/>
-
-
-## Patents and trademarks
-
-Protecting our patents and trademarks is important to do correctly. We don't want to expose the company to a loss of trademark or patent just because we didn't list it correctly.
-
-This is a partial list of trademarked terms, which should be capitalized exactly as shown below.
-
-* Sumo Logic
-* Big Data for Real Time IT
-* Log Reduce
-* Elastic Log Processing
-* Push Analytics
-
-Never use Sumo Logic in the plural or possessive form.
-
-## SEO
-
-For clarity and search engine discoverability:
-
-* Doc titles are very important for SEO. Use primary target keywords, try to mention "Sumo Logic, and keep length under 60 characters.
-   * Example: ~~_Monitoring with the Observability Solution_~~ &rarr; _Monitoring with Sumo Logic Observability_
-* Use H2 sections to break up content and try to use primary keywords here as well.
-   * Example: _AWS Observability Solution_.
-* H3 and H4 headers don't impact SEO as much. Use short, meaningful titles for readability and search.
-   * Example: _System architecture and monitoring_.
-
-:::sumo For internal contributors
-* If you change a URL, set up a redirect so that users don’t get a 404 page.
-* Use Google Analytics to make data-driven decisions.
-:::
-
-
-## Markdown
-
-Markdown is a simple, text-based format you can write using text editors, IDEs, or the GitHub website to write content. We use Docusaurus to manage, style, and build our site. We use GitHub-flavored Markdown, with some additional options. You can find more info at:
-* [Docusaurus | Markdown Cheat Sheet](https://docusaurus.io/docs/markdown-features)
-* [Markdown Guide](https://www.markdownguide.org/)
-* [Markdown Cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
-
-## File Naming Convention
-
-A Markdown file has a filename and extension of .md. We recommend keeping the filename short. It does not affect the canonical link.
-
-## Metadata (Frontmatter)
-
-Markdown documents have metadata (e.g., title, description, and search keywords) at the top called [frontmatter](https://jekyllrb.com/docs/front-matter/). Every page should have an `id` used for sidebar navigation.
-
-```markdown
----
-id: page-id
-title: Page title
-sidebar_label: Navigation title
-description: Learn more about...
-keywords:
-    - metrics
-    - traces
-tags: [apm, metrics]  
----
+```md
+[Download this Terraform](/files/terraform/script.tf)
 ```
 
-| Parameter | Description |
-| :-- | :-- |
-| `id:` | **(Required)** Id for the page used in the sidebar and as the canonical link. Keep it short and only use dashes. |
-| `slug:` | (Optional) Overrides the `id:` for the canonical link. Best used for index pages for sections. |
-| `title:` | **(Required)** For SEO, be sure to sure main keywords in your title and keep it under 60 characters. This title is used in navigation if a `sidebar_label` is not included. |
-| `sidebar_label:` | (Optional) Use a different title for the side navigation. Keep this title short. It does not affect the canonical link or page title. |
-| `description:` | (Optional) 1-2 sentences describing what the user will find in the doc. It appears in search engine results. If omitted, search engines will pull first couple sentences instead. |
-| `keywords:` | (Optional) List of page keywords, which boosts SEO. |
-| `tags:` | (Optional) A string or list of tags that adds a label and permalink to tag to help with sorting. |
+If your file is available from another public Sumo Logic repo, please link to that file instead as a URL link. See [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets) for more information.
 
-For a full list of options, see [Docusaurus Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
+
+## Emphasis
+
+### Bold
+
+Use **bold** for UI elements you interact with, such as a button or tab.
+
+### Italics
+
+Use _italics_ for:
+* Defining a term the first time. For example, when defining a collector the first time, you would italicize once with the definition.
+* Providing content to enter into a field.
+
+### Underlines
+
+Never underline text.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```markdown
+Emphasis, aka italics, with *asterisks* or _underscores_.
+
+Strong emphasis, aka bold, with two **asterisks** or __underscores__.
+
+Combined emphasis with **asterisks and _underscores_**.
+
+Strikethrough uses two tildes. ~~Scratch this.~~
+```
+
+</TabItem>
+<TabItem value="Result">
+
+Emphasis, aka italics, with *asterisks* or _underscores_.
+
+Strong emphasis, aka bold, with two **asterisks** or __underscores__.
+
+Combined emphasis with **asterisks and _underscores_**.
+
+Strikethrough uses two tildes. ~~Scratch this.~~
+
+</TabItem>
+</Tabs>
+
+
+## Font
+
+We use Lab Grotesque in our docs site and across all Sumo Logic media.
 
 
 ## Headings
@@ -239,30 +342,77 @@ Use hashtags `#` to indicate the heading level and group content. Always start w
 Headings must be used in correct order. The subsection of an H2 header would be H3 - you wouldn't jump to an H4 or H5. Skipping over a header level affects search and SEO structures to search crawlers like Google. Malformed structures can reduce search and SEO for the page. Docusaurus carefully formats generated pages to ensure strong SEO.
 :::
 
-## Documenting processes
+### Documenting procedures
 
 When a topic provides instructions for a significant multi-step process, organize the content in sections with headings that signpost the nature of the information. Include "Step" in the heading to make it clear that the section is part of a larger configuration process. For example:
 
 <img src={useBaseUrl('img/contributing/style-steps-headings.png')} alt="headers with steps" width="300"/>
 
-## Capitalization
 
-* Title case (initial cap) all doc titles.
-   * Example: `Global Intelligence for Apache Tomcat App`
-* Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case.
-   * Example: `Throughput signals and contributing factors`
+## Hub pages
 
-## Punctuation
+To generated a full list of docs within a folder, add this code to the file:
 
-Punctuation is placed outside of quotation marks, British English style. For everything else (dates, times, spelling), we use American English style.
+```
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-## Bold, Italics, Underlines
+## Guide contents
 
-* Use _italics_ for:
-  * Defining a term the first time. For example, when defining a collector the first time, you would italicize once with the definition.
-  * Providing content to enter into a field.
-* Use **bold** for UI elements you interact with, such as a button or tab.
-* Never underline text
+In this section, we'll introduce the following concepts:
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
+
+This is best used in an index file, including a list of all files and folders in that folder to the file. See any category file for a section in the site for how this looks.
+
+
+<!--
+## Import GitHub Repo Files
+
+To embed a code sample from a file in a GitHub repository, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file.
+
+This code references a script file: ` ```bash reference`, for example:
+
+```bash reference
+https://github.com/ccaum/sumologic-solution-templates/blob/github_getting_started_guide/software-development-optimization-terraform/scripts/getting-started
+```
+
+You can use a link to a file embedding the entire file, or embed a range of code lines using `#L` and a line range at the end of the link, such as `#L105-108`.
+-->
+
+
+## Images
+
+Images must be added to the `static/img` folders. The `img` folder structure currently mirrors the doc sections. To stay organized, always replace existing images, rather than adding new images appended with dates or version numbers.
+
+* Must be in PNG or GIF format
+* Always include `alt text` parameter
+* Use `width` parameter to resize oversized and/or pixelated images
+
+1. Save your image(s) in the `/static/img` folder.
+2. Add the import line to the top of your doc, underneath the [front matter header](#front-matter).
+  ```
+  import useBaseUrl from '@docusaurus/useBaseUrl';
+  ```
+3. Paste the below code snippet where you want your image to appear.
+   * Replace with file path with your own and ensure it includes the correct subfolder name. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
+   * Add alt text and optionally, you can add width parameter to resize your image, if needed.
+   ```
+   <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" width="<insert-pixel-number>"/>
+   ```
+
+<details><summary>What is <code>alt text</code>?</summary>
+
+When you insert an image, describe the image in the Alt text, which explains what the image is meant to show. It is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download.
+
+Alt text is not a caption and it doesn't need to describe the details of an image. It's just a label: "Image properties dialog" or "Sumo Logic logo."
+
+Alt text of some kind is required under [US Government GSA Section 508](https://www.section508.gov/section508_faqs) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
+
+If you are editing and you come across an image without `alt text`, add it.
+
+</details>
 
 <Tabs
   className="unique-tabs"
@@ -274,29 +424,57 @@ Punctuation is placed outside of quotation marks, British English style. For eve
 
 <TabItem value="Markdown">
 
-```markdown
-Emphasis, aka italics, with *asterisks* or _underscores_.
-
-Strong emphasis, aka bold, with two **asterisks** or __underscores__.
-
-Combined emphasis with **asterisks and _underscores_**.
-
-Strikethrough uses two tildes. ~~Scratch this.~~
+```md
+<img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" width="150"/>
 ```
 
 </TabItem>
 <TabItem value="Result">
 
-Emphasis, aka italics, with *asterisks* or _underscores_.
-
-Strong emphasis, aka bold, with two **asterisks** or __underscores__.
-
-Combined emphasis with **asterisks and _underscores_**.
-
-Strikethrough uses two tildes. ~~Scratch this.~~
+<img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" width="150"/>
 
 </TabItem>
 </Tabs>
+
+When adding an image to a bulleted or sequential list, include it in-line with the list item, right after a `<br/>` element, like this:
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+1. Here is a list item. <br/><img src={useBaseUrl('img/image.png')} alt="alt-text" width="400"/>
+```
+
+</TabItem>
+<TabItem value="Result">
+
+1. Here is a list item. <br/><img src={useBaseUrl('img/image.png')} alt="alt-text" width="400"/>
+
+</TabItem>
+</Tabs>
+
+
+### Screenshots
+
+Capture screenshots using SnagIt in .png format. Use SnagIt's border effect to apply a gray (RGB 212, 212, 212) four-point border.
+
+By default, images that you insert into a page are set to be responsive - resized for the type of device the reader is using.
+
+
+### Masking sensitive information
+
+We mask sensitive information, like user names, email addresses, IP addresses, and so on. In [Snagit](https://www.techsmith.com/screen-capture.html) or a similar program, use the shape tool to mask the text using solid gray, (RGB 212, 212, 212).
+
+### Callouts
+
+Create callouts using the shape tool in SnagIt. Callouts should be red, 100% opacity, no drop shadow effect, 2 pts wide.
 
 
 ## Lists
@@ -328,9 +506,6 @@ In a list item made up of an introductory word or phrase and an explanatory sent
 
 </TabItem>
 </Tabs>
-
-
-
 
 
 ### Numbered Lists
@@ -459,78 +634,179 @@ Learn how to [sign up with Sumo](../get-started/sign-up.md).
 </TabItem>
 </Tabs>
 
-## Code (Inline)
 
-* Use \` \` single backticks to format inline code, such as commands, API method names, and code. For information on code blocks (scripts), see [Code Blocks](#code-blocks).
+## Markdown
 
-Here's an example that encompasses all the above styles: If you are not parsing all sources in the hosted collector with the same parser, click the **+Add Field** link, and add a field whose name is `_parser` with value _/Parsers/System/Auth0/Auth0_.
+Markdown is a simple, text-based format you can write using text editors, IDEs, or the GitHub website to write content. We use Docusaurus to manage, style, and build our site. We use GitHub-flavored Markdown, with some additional options. You can find more info at:
+* [Docusaurus | Markdown Cheat Sheet](https://docusaurus.io/docs/markdown-features)
+* [Markdown Guide](https://www.markdownguide.org/)
+* [Markdown Cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
 
-## Code Blocks
+### File naming convention
 
-Use code blocks to format scripts, such as the JSON example below. This is important for scripts and CLI. Always use these to format programming language scripts (i.e., SQL for Sumo queries, JSON for logs). Format blocks of code by placing triple backticks before and after the code.
+A Markdown file has a filename and extension of .md. We recommend keeping the filename short. It does not affect the canonical link.
 
-```json
-{  
-  "employee": {
-    "name": "Jane Smith",   
-    "team": "Operations",   
-    "manager": true  
-  }  
-}  
+## Metadata (Frontmatter)
+
+Markdown documents have metadata (e.g., title, description, and search keywords) at the top called [frontmatter](https://jekyllrb.com/docs/front-matter/). Every page should have an `id` used for sidebar navigation.
+
+```markdown
+---
+id: page-id
+title: Page title
+sidebar_label: Navigation title
+description: Learn more about...
+keywords:
+    - metrics
+    - traces
+tags: [apm, metrics]  
+---
 ```
 
-Markdown code blocks support Syntax highlighting. If you know the code language, include that in the first set of ticks. This applies code highlighting for the language. See [this list](https://prismjs.com/#supported-languages) of available languages.
+| Parameter | Description |
+| :-- | :-- |
+| `id:` | **(Required)** Id for the page used in the sidebar and as the canonical link. Keep it short and only use dashes. |
+| `slug:` | (Optional) Overrides the `id:` for the canonical link. Best used for index pages for sections. |
+| `title:` | **(Required)** For SEO, be sure to sure main keywords in your title and keep it under 60 characters. This title is used in navigation if a `sidebar_label` is not included. |
+| `sidebar_label:` | (Optional) Use a different title for the side navigation. Keep this title short. It does not affect the canonical link or page title. |
+| `description:` | (Optional) 1-2 sentences describing what the user will find in the doc. It appears in search engine results. If omitted, search engines will pull first couple sentences instead. |
+| `keywords:` | (Optional) List of page keywords, which boosts SEO. |
+| `tags:` | (Optional) A string or list of tags that adds a label and permalink to tag to help with sorting. |
 
-To highlight lines in the code, use `{#}` in the title line with lines numbers. This example highlights lines 2 through 6.
+For a full list of options, see [Docusaurus Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
 
-```sql {2-6}
-_sourceCategory=reinvent/travel/checkout
-[subquery:_sourceCategory=reinvent/travel/nginx
-     | count by src_ip
-     | topk(1,_count)
-     | compose src_ip keywords
-]
-| json field=_raw "funcName"
-| where funcname in ("process_cart","charge")
-| if (funcname = "process_cart" , "Checkout", "Purchased") as funcname
-| count by funcname
+
+
+## Navigation menus
+
+Top-level navigation content is controlled in our [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config) file.
+
+Our [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/main/sidebars.ts) file controls the sidebar navigation for the entire site. It consists of multiple sidebars and sections based on the Guides top navigation, drilling down per guide. A list of sections and advice on content is at the top of the sidebars file, with comments throughout.
+
+* To add a specific page, you include the directory path and topic id from the frontmatter. For example, this page is `contributing/style-guide`.
+* To add a section within a section, use a category section with page links in it (see below example).
+* To add an index for a section, create an index.md page in the folder. Give it a `slug: name` where the name is the folder for the entire section like contribution-guide. In the category, use a link line with the folder name and index for example: `link: {type: 'doc', id: 'contributing/index'},`.
+* To add a new page, make note of the file path and id. For example, this document is located in the folder `contributing` with an id of `create-document`. When adding this file to the sidebar, it would be added to the `contributing/create-document`.
+
+<details><summary>Example: add <code>contribution/create-document</code> to sidebars.ts</summary>
+
+```js title="sidebars.ts"
+//Contribution guide for documentation
+  contributing: [
+    {
+      type: 'category',
+      label: 'Contribution Guide',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'contributing/index'},
+      items: [
+        'contributing/create-document',
+        'contributing/build-deploy',
+        'contributing/translations',
+        {
+          type: 'category',
+          label: 'Templates',
+          collapsible: true,
+          collapsed: false,
+          items: [
+            'contributing/templates/partner-app-doc'
+          ]
+        }
+      ],
+    },
+  ],
 ```
 
-<Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
-  values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
-  ]}>
+</details>
 
-<TabItem value="Markdown">
+* To add a category, or dropdown list of documentation, use the following format:
 
-    ```jsx title="src/components/HelloDocusaurus.js"
-    function HelloDocusaurus() {
-        return (
-            <h1>Hello, Docusaurus!</h1>
-        )
-    }
-    ```
+<details><summary>Example: add sidebar category example with additional section</summary>
 
-</TabItem>
-<TabItem value="Result">
-
-```jsx title="src/components/HelloDocusaurus.js"
-function HelloDocusaurus() {
-  return <h1>Hello, Docusaurus!</h1>;
-}
+```js title="sidebars.ts"
+    {
+      type: 'category',
+      label: 'Name of Guide',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'foldername/id-first-page'},
+      items: [
+        'foldername/doc-id1',
+        'foldername/doc-id2',
+        {
+          type: 'category',
+          label: 'Section in Guide',
+          collapsible: true,
+          collapsed: false,
+          link: {type: 'doc', id: 'foldername/id-section'},
+          items: [
+            'foldername/doc-id3',
+            'foldername/doc-id4',
+          ]
+        }
+      ],
+    },
 ```
 
-</TabItem>
-</Tabs>
+</details>
 
-For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/docs/markdown-cheat-sheet/code-blocks).
+* To add a dedicated sidebar, use the following format:
+
+<details><summary>Example: adding a dedicated sidebar for a guide</summary>
+
+```js title="sidebars.ts"
+module.exports = {
+  sectionName: [
+    {
+      type: 'category',
+      label: 'Name of Guide',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'foldername/id-first-page'},
+      items: [
+        'foldername/doc-id1',
+        'foldername/doc-id2',
+        {
+          type: 'category',
+          label: 'Section in Guide',
+          collapsible: true,
+          collapsed: false,
+          link: {type: 'doc', id: 'foldername/id-section'},
+          items: [
+            'foldername/doc-id3',
+            'foldername/doc-id4',
+          ]
+        }
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Name of Another Guide',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'otherfoldername/id-first-page'},
+      items: [
+        'otherfoldername/doc-id1',
+        'otherfoldername/doc-id2',
+        {
+          type: 'category',
+          label: 'Section in Another Guide',
+          collapsible: true,
+          collapsed: false,
+          link: {type: 'doc', id: 'otherfoldername/id-section'},
+          items: [
+            'otherfoldername/doc-id3',
+            'otherfoldername/doc-id4',
+          ]
+        }
+      ],
+    },
+  ]
+```
+</details>
 
 
-
-## Admonitions
+## Notes and admonitions
 
 We refer to callout elements like Tip, Note, Warning, and Caution as admonitions.
 
@@ -633,151 +909,142 @@ Here's a cool tip.
 :::
 
 
-## Media Assets
+### Collapsible boxes
 
-In Docusaurus, you can add images, custom files, and embed videos.
+Use an [expander](https://docusaurus.io/docs/next/markdown-features#details) to collapse long content that can be searched but not displayed when loading a page. We recommend only using expanders for additional content and long code samples. Content required for instructions and steps should not be placed in an expander.
 
-### Images
+You can include markdown content in expanders including code samples, embedded videos, bulleted lists, and more.
 
-Images must be added to the `static/img` folders. The `img` folder structure currently mirrors the doc sections. To stay organized, always replace existing images, rather than adding new images appended with dates or version numbers.
+```html title="Copy and fill out for expanders"
+<details><summary>Title for the expander</summary>
 
-* Must be in PNG or GIF format
-* Always include `alt text` parameter
-* Use `width` parameter to resize oversized and/or pixelated images
+Place long lists or lots of content in this section. The reader can expand/collapse as needed.
 
-1. Save your image(s) in the `/static/img` folder.
-2. Add the import line to the top of your doc, underneath the [front matter header](#front-matter).
-  ```
-  import useBaseUrl from '@docusaurus/useBaseUrl';
-  ```
-3. Paste the below code snippet where you want your image to appear.
-   * Replace with file path with your own and ensure it includes the correct subfolder name. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
-   * Add alt text and optionally, you can add width parameter to resize your image, if needed.
-   ```
-   <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" width="<insert-pixel-number>"/>
-   ```
+Add all content after Summary and before the closing details tags.
 
-<details><summary>What is <code>alt text</code>?</summary>
+</details>
+```
 
-When you insert an image, describe the image in the Alt text, which explains what the image is meant to show. It is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download.
 
-Alt text is not a caption and it doesn't need to describe the details of an image. It's just a label: "Image properties dialog" or "Sumo Logic logo."
+<details>
 
-Alt text of some kind is required under [US Government GSA Section 508](https://www.section508.gov/section508_faqs) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
+<summary>Example expander</summary>
 
-If you are editing and you come across an image without `alt text`, add it.
+Place long lists or lots of content in this section. The reader can expand/collapse as needed.
+
+```json title="Code in a tip with line highlight" {11-16}
+"overrides": [
+    {
+    "series": [],
+    "queries": [
+        "A"
+        ],
+    "userProvidedChartType": false,
+    "properties": {
+        "type": "column"
+        },
+    "unsafeCanvasJSProperties": {
+        "bevelEnabled": true,
+        "indexLabelPlacement": "inside",
+        "indexLabel": "{y}",
+        "indexLabelOrientation": "vertical"
+        }
+    }
+]
+```
 
 </details>
 
-<Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
-  values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
-  ]}>
 
-<TabItem value="Markdown">
+## Patents and trademarks
 
-```md
-<img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" width="150"/>
+Protecting our patents and trademarks is important to do correctly. We don't want to expose the company to a loss of trademark or patent just because we didn't list it correctly.
+
+This is a partial list of trademarked terms, which should be capitalized exactly as shown below.
+
+* Sumo Logic
+* Big Data for Real Time IT
+* Log Reduce
+* Elastic Log Processing
+* Push Analytics
+
+Never use Sumo Logic in the plural or possessive form.
+
+
+## Punctuation
+
+Punctuation is placed outside of quotation marks, British English style. For everything else (dates, times, spelling), we use American English style.
+
+### Commas
+
+We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orange juice", not "I had [eggs, toast and orange juice](https://www.verbicidemagazine.com/wp-content/uploads/2012/01/why-i-still-use-the-oxford-comma.jpg)".
+
+
+## Release Notes
+
+We keep our release notes concise with links to documentation and images for updated UI elements. You're welcome to add [frontmatter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog) such as tags and keywords.
+
+In release notes, do not use relative links when cross-referencing to doc topics. Use the full path, like this:
+
+`For more information, see [where Metrics Operator](https://help.sumologic.com/docs/metrics/metrics-operators/where/)`
+
+### Text only
+
+To add release notes without images:
+
+1. In the Blog folder, create a new markdown file with the following name format: `YYYY-MM-DD-product.md`.
+1. Add the following frontmatter:
+    ```markdown
+    ---
+    title: Product or Feature Name
+    tags: [apps, tracing]
+    hide_table_of_contents: true
+    image: https://help.sumologic.com/img/sumo-square.png
+    keywords:
+      - sumo logic
+      - service release notes
+      - open source
+    authors:
+      - url: https://help.sumologic.com/release-notes-service/rss.xml
+        image_url: /img/release-notes/rss-orange.png
+    ---
+    ```
+    * `title`: Name of the release notes including Product or Feature
+    * `tags`: Add a comma-separated list of existing tags, including:
+    * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
+1. Document the release notes. Add links, bullets, and images as needed.
+
+#### Long Release Notes
+
+For lengthy release notes, we recommend introducing the notes and adding a truncate line (`<!--truncate-->`), followed by the full set of release notes.
+
+### Text and Images
+
+To add release notes with images:
+
+1. In the Blog folder, create a new folder with the following name format: `YYYY-MM-DD-product`.
+1. In the new folder, create a markdown file named `index.md`. Add your release notes with frontmatter:
+    ```markdown
+    ---
+    title: Product or Feature Name
+    tags: [apps, tracing]
+    hide_table_of_contents: true
+    ---
+    ```
+    * `title`: Name of the release notes including Product or Feature
+    * `tags`: Add a comma-separated list of existing tags, including:
+    * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
+1. Save images to this folder and add them to the markdown file: `![alt text](image-name.png)`.
+
+
+## Reusing Content
+
+You can create a section of content for reuse by creating a markdown file and saving it in `/docs/reuse`. If the file includes headings, they do not add to the right side page nav. You may want reuse to be just a section of content without headings.
+
+To add the file to another document, use this code with the reuse file name:
+```bash
+{@import ../../reuse/filename.md}
 ```
-
-</TabItem>
-<TabItem value="Result">
-
-<img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" width="150"/>
-
-</TabItem>
-</Tabs>
-
-When adding an image to a bulleted or sequential list, include it in-line with the list item, right after a `<br/>` element, like this:
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
-  values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
-  ]}>
-
-<TabItem value="Markdown">
-
-```md
-1. Here is a list item. <br/><img src={useBaseUrl('img/image.png')} alt="alt-text" width="400"/>
-```
-
-</TabItem>
-<TabItem value="Result">
-
-1. Here is a list item. <br/><img src={useBaseUrl('img/image.png')} alt="alt-text" width="400"/>
-
-</TabItem>
-</Tabs>
-
-
-#### Screenshots
-
-Capture screenshots using SnagIt in .png format. Use SnagIt's border effect to apply a gray (RGB 212, 212, 212) four-point border.
-
-By default, images that you insert into a page are set to be responsive - resized for the type of device the reader is using.
-
-
-#### Masking sensitive information
-
-We mask sensitive information, like user names, email addresses, IP addresses, and so on. In [Snagit](https://www.techsmith.com/screen-capture.html) or a similar program, use the shape tool to mask the text using solid gray, (RGB 212, 212, 212).
-
-#### Callouts
-
-Create callouts using the shape tool in SnagIt. Callouts should be red, 100% opacity, no drop shadow effect, 2 pts wide.
-
-
-### Videos
-
-You can embed YouTube videos to any page with the following code. Just copy and paste the following code into your page. Replace the URL ID with the video id. You only need the `import Iframe` line once on the page.
-
-```html
-<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe';
-```
-
-For example:
-
-<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe';
-
-You need to explicitly add `?rel=0` to the end of the URL. This ensures that only videos from the current YouTube channel will be suggested to the viewer after they've finished viewing the embedded video.
-
-### Downloadable Files
-
-You can also add files such as custom code, json, yaml, and xml in the `static/files` folder. Supported file formats include .json, .js, .doc, and more. You link to the file using the file path of `/files` and file name:
-
-```md
-[Download this Terraform](/files/terraform/script.tf)
-```
-
-If your file is available from another public Sumo Logic repo, please link to that file instead as a URL link. See [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets) for more information.
-
 
 
 ## Tables
@@ -944,309 +1211,62 @@ Info for the second tab would go here! Content can include markdown, code blocks
 </Tabs>
 
 
+## SEO
 
-## Sidebar Navigation Menu
+For clarity and search engine discoverability:
 
-The [`sidebars.ts` file](https://github.com/SumoLogic/sumologic-documentation/blob/main/sidebars.ts) controls the sidebar navigation for the entire site. It consists of multiple sidebars and sections based on the Guides top navigation, drilling down per guide. A list of sections and advice on content is at the top of the sidebars file, with comments throughout. This is different from the [`docusaurus.config.js` file](https://docusaurus.io/docs/api/docusaurus-config), which controls top-level navigation content.
+* Doc titles are very important for SEO. Use primary target keywords, try to mention "Sumo Logic, and keep length under 60 characters.
+   * Example: ~~_Monitoring with the Observability Solution_~~ &rarr; _Monitoring with Sumo Logic Observability_
+* Use H2 sections to break up content and try to use primary keywords here as well.
+   * Example: _AWS Observability Solution_.
+* H3 and H4 headers don't impact SEO as much. Use short, meaningful titles for readability and search.
+   * Example: _System architecture and monitoring_.
 
-* To add a specific page, you include the directory path and topic id from the frontmatter. For example, this page is `contributing/create-document`.
-* To add a section within a section, use a category section with page links in it (see below example).
-* To add an index for a section, create an index.md page in the folder. Give it a `slug: name` where the name is the folder for the entire section like contribution-guide. In the category, use a link line with the folder name and index for example: `link: {type: 'doc', id: 'contributing/index'},`.
-* To add a new page, make note of the file path and id. For example, this document is located in the folder `contributing` with an id of `create-document`. When adding this file to the sidebar, it would be added to the `contributing/create-document`.
+:::sumo For internal contributors
+* If you change a URL, set up a redirect so that users don’t get a 404 page.
+* Use Google Analytics to make data-driven decisions.
+:::
 
-<details><summary>Example: add <code>contribution/create-document</code> to sidebars.ts</summary>
+## Videos
 
-```js title="sidebars.ts"
-//Contribution guide for documentation
-  contributing: [
-    {
-      type: 'category',
-      label: 'Contribution Guide',
-      collapsible: true,
-      collapsed: false,
-      link: {type: 'doc', id: 'contributing/index'},
-      items: [
-        'contributing/create-document',
-        'contributing/build-deploy',
-        'contributing/translations',
-        {
-          type: 'category',
-          label: 'Templates',
-          collapsible: true,
-          collapsed: false,
-          items: [
-            'contributing/templates/partner-app-doc'
-          ]
-        }
-      ],
-    },
-  ],
+You can embed YouTube videos to any page with the following code. Just copy and paste the following code into your page. Replace the URL ID with the video id. You only need the `import Iframe` line once on the page.
+
+```html
+<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe';
 ```
 
-</details>
+For example:
 
-* To add a category, or dropdown list of documentation, use the following format:
+<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
 
-<details><summary>Example: add sidebar category example with additional section</summary>
+import Iframe from 'react-iframe';
 
-```js title="sidebars.ts"
-    {
-      type: 'category',
-      label: 'Name of Guide',
-      collapsible: true,
-      collapsed: false,
-      link: {type: 'doc', id: 'foldername/id-first-page'},
-      items: [
-        'foldername/doc-id1',
-        'foldername/doc-id2',
-        {
-          type: 'category',
-          label: 'Section in Guide',
-          collapsible: true,
-          collapsed: false,
-          link: {type: 'doc', id: 'foldername/id-section'},
-          items: [
-            'foldername/doc-id3',
-            'foldername/doc-id4',
-          ]
-        }
-      ],
-    },
-```
-
-</details>
-
-* To add a dedicated sidebar, use the following format:
-
-<details><summary>Example: adding a dedicated sidebar for a guide</summary>
-
-```js title="sidebars.ts"
-module.exports = {
-  sectionName: [
-    {
-      type: 'category',
-      label: 'Name of Guide',
-      collapsible: true,
-      collapsed: false,
-      link: {type: 'doc', id: 'foldername/id-first-page'},
-      items: [
-        'foldername/doc-id1',
-        'foldername/doc-id2',
-        {
-          type: 'category',
-          label: 'Section in Guide',
-          collapsible: true,
-          collapsed: false,
-          link: {type: 'doc', id: 'foldername/id-section'},
-          items: [
-            'foldername/doc-id3',
-            'foldername/doc-id4',
-          ]
-        }
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Name of Another Guide',
-      collapsible: true,
-      collapsed: false,
-      link: {type: 'doc', id: 'otherfoldername/id-first-page'},
-      items: [
-        'otherfoldername/doc-id1',
-        'otherfoldername/doc-id2',
-        {
-          type: 'category',
-          label: 'Section in Another Guide',
-          collapsible: true,
-          collapsed: false,
-          link: {type: 'doc', id: 'otherfoldername/id-section'},
-          items: [
-            'otherfoldername/doc-id3',
-            'otherfoldername/doc-id4',
-          ]
-        }
-      ],
-    },
-  ]
-```
-</details>
+You need to explicitly add `?rel=0` to the end of the URL. This ensures that only videos from the current YouTube channel will be suggested to the viewer after they've finished viewing the embedded video.
 
 
+## React components
 
-## Expand/Collapse Content
-
-Use an expander to collapse long content that can be searched but not displayed when loading a page. We recommend only using expanders for additional content and long code samples. Content required for instructions and steps should not be placed in an expander.
-
-You can include markdown content in expanders including code samples, embedded videos, bulleted lists, and more.
-
-```html title="Copy and fill out for expanders"
-<details><summary>Title for the expander</summary>
-
-Place long lists or lots of content in this section. The reader can expand/collapse as needed.
-
-Add all content after Summary and before the closing details tags.
-
-</details>
-```
-
-
-<details>
-
-<summary>Example expander</summary>
-
-Place long lists or lots of content in this section. The reader can expand/collapse as needed.
-
-```json title="Code in a tip with line highlight" {11-16}
-"overrides": [
-    {
-    "series": [],
-    "queries": [
-        "A"
-        ],
-    "userProvidedChartType": false,
-    "properties": {
-        "type": "column"
-        },
-    "unsafeCanvasJSProperties": {
-        "bevelEnabled": true,
-        "indexLabelPlacement": "inside",
-        "indexLabel": "{y}",
-        "indexLabelOrientation": "vertical"
-        }
-    }
-]
-```
-
-</details>
-
-
-## Reusing Content
-
-You can create a section of content for reuse by creating a markdown file and saving it in `/docs/reuse`. If the file includes headings, they do not add to the right side page nav. You may want reuse to be just a section of content without headings.
-
-To add the file to another document, use this code with the reuse file name:
-```bash
-{@import ../../reuse/filename.md}
-```
-
-
-## Hub Page Contents
-
-To generated a full list of docs within a folder, add this code to the file:
-
-```
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-## Guide contents
-
-In this section, we'll introduce the following concepts:
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```
-
-This is best used in an index file, including a list of all files and folders in that folder to the file. See any category file for a section in the site for how this looks.
-
-
-<!--
-## Import GitHub Repo Files
-
-To embed a code sample from a file in a GitHub repository, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file.
-
-This code references a script file: ` ```bash reference`, for example:
-
-```bash reference
-https://github.com/ccaum/sumologic-solution-templates/blob/github_getting_started_guide/software-development-optimization-terraform/scripts/getting-started
-```
-
-You can use a link to a file embedding the entire file, or embed a range of code lines using `#L` and a line range at the end of the link, such as `#L105-108`.
--->
-
-## Release Notes
-
-We keep our release notes concise with links to documentation and images for updated UI elements. You're welcome to add [frontmatter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog) such as tags and keywords.
-
-In release notes, do not use relative links when cross-referencing to doc topics. Use the full path, like this:
-
-`For more information, see [where Metrics Operator](https://help.sumologic.com/docs/metrics/metrics-operators/where/)`
-
-### Text only
-
-To add release notes without images:
-
-1. In the Blog folder, create a new markdown file with the following name format: `YYYY-MM-DD-product.md`.
-1. Add the following frontmatter:
-    ```markdown
-    ---
-    title: Product or Feature Name
-    tags: [apps, tracing]
-    hide_table_of_contents: true
-    image: https://help.sumologic.com/img/sumo-square.png
-    keywords:
-      - sumo logic
-      - service release notes
-      - open source
-    authors:
-      - url: https://help.sumologic.com/release-notes-service/rss.xml
-        image_url: /img/release-notes/rss-orange.png
-    ---
-    ```
-    * `title`: Name of the release notes including Product or Feature
-    * `tags`: Add a comma-separated list of existing tags, including:
-    * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
-1. Document the release notes. Add links, bullets, and images as needed.
-
-#### Long Release Notes
-
-For lengthy release notes, we recommend introducing the notes and adding a truncate line (`<!--truncate-->`), followed by the full set of release notes.
-
-### Text and Images
-
-To add release notes with images:
-
-1. In the Blog folder, create a new folder with the following name format: `YYYY-MM-DD-product`.
-1. In the new folder, create a markdown file named `index.md`. Add your release notes with frontmatter:
-    ```markdown
-    ---
-    title: Product or Feature Name
-    tags: [apps, tracing]
-    hide_table_of_contents: true
-    ---
-    ```
-    * `title`: Name of the release notes including Product or Feature
-    * `tags`: Add a comma-separated list of existing tags, including:
-    * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
-1. Save images to this folder and add them to the markdown file: `![alt text](image-name.png)`.
-
-
-## Beta Releases
-
-For Beta docs, we want to publish them, but exclude them from the nav and search engine results so that you need the physical link to access them.
-
-1. Underneath the frontmatter, add the [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) (to prevent search crawlers from picking it up) and the **Beta** badge.
-  ```
-  ---
-  id: xyz-source
-  title: XYZ Source (Beta)
-  description: The XYZ Source provides a secure endpoint to receive event data.
-  ---
-
-  <head>
-    <meta name="robots" content="noindex" />
-  </head>
-
-  <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-  First paragraph goes here...
-  ```
-1. Do _not_ add the doc to sidebars.ts.
-
-When the feature is moved from Beta to GA:
-1. Remove the Robots meta tag and Beta label.
-1. Add the doc to sidebars.ts.
-
-
-## MDX and React Components
+### MDX
 
 [MDX](https://mdxjs.com/) can make your documentation more **interactive** and allows using any **React components inside Markdown**:
 
@@ -1292,7 +1312,7 @@ This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
 
 This is <Highlight color="#1877F2">Facebook blue</Highlight> !
 
-## Mermaid Charts
+### Mermaid Charts
 
 Mermaid provides sequence diagrams, charts, and more. Use these charts to detail processes, workflows, inheritance, and more. See the [Mermaid guide](https://mermaid-js.github.io/mermaid/#/) for specifics and examples, and use the [live editor](https://mermaid-js.github.io/mermaid-live-editor/) to generate code.
 
