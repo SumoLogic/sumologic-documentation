@@ -1844,6 +1844,18 @@ module.exports = {
         ],
       },
       {
+        type: 'category',
+        label: 'Global Intelligence',
+        collapsible: true,
+        collapsed: true,
+        link: {type: 'doc', id: 'integrations/global-intelligence/index'},
+        items: [
+          'integrations/global-intelligence/apache',
+          'integrations/global-intelligence/apache-tomcat',
+          'integrations/global-intelligence/nginx',
+        ],
+      },
+      {
       type: 'category',
       label: 'SaaS and Cloud Apps',
       collapsible: true,
@@ -1972,50 +1984,8 @@ module.exports = {
     'integrations/partner-ecosystem-apps',
     'integrations/partner-integrations',
   ],
-// OTHER FEATURES: Global Intelligence, SDO, CSE
+// OTHER FEATURES: Global Intelligence, SDO, CSE, SOAR
   other: [
-    {
-      type: 'category',
-      label: 'Global Intelligence',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'global-intelligence/index'},
-      items: [
-        {
-          type: 'category',
-          label: 'Apache',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'global-intelligence/apache/index'},
-          items: [
-            'global-intelligence/apache/install-for-apache-view-dashboards',
-            'global-intelligence/apache/collect-logs-apache',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Apache Tomcat',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'global-intelligence/apache-tomcat-app/index'},
-          items: [
-            'global-intelligence/apache-tomcat-app/install-for-apache-tomcat-view-dashboards',
-            'global-intelligence/apache-tomcat-app/collect-logs-tomcat-app',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Nginx',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'global-intelligence/nginx/index'},
-          items: [
-            'global-intelligence/nginx/install-for-nginx-view-dashboards',
-            'global-intelligence/nginx/collect-logs-nginx',
-          ],
-        },
-      ],
-    },
     {
       type: 'category',
       label: 'Cloud SIEM Enterprise (CSE)',
@@ -2200,12 +2170,10 @@ module.exports = {
         },
       ],
     },
-  ],
-  cloudsoar: [
     {
       type: 'category',
       label: 'Cloud SOAR',
-      collapsible: false,
+      collapsible: true,
       collapsed: true,
       link: {type: 'doc', id: 'cloud-soar/index'},
       items: [
@@ -2217,6 +2185,7 @@ module.exports = {
       ],
     },
   ],
+
   //Contribution guide for documentation
   contributing: [
     {
