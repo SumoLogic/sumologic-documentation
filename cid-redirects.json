@@ -1536,7 +1536,7 @@
   "/cid/210604": "/docs/integrations/cloud-security-monitoring-analytics/windows",
   "/cid/210608": "/docs/integrations/databases/cassandra",
   "/cid/210615": "/docs/integrations/web-servers/nginx-plus-ingress",
-  "/cid/210616": "/docs/integrations/global-intelligence/apache-tomcat-app",
+  "/cid/210616": "/docs/integrations/global-intelligence/apache-tomcat",
   "/cid/210621": "/docs/integrations/security-threat-detection/zscaler-internet-access",
   "/cid/210622": "/docs/integrations/containers-orchestration/rabbitmq",
   "/cid/210629": "/docs/integrations/containers-orchestration/activemq",
