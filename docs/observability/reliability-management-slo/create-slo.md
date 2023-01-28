@@ -146,7 +146,7 @@ Your Monitor must be in an **active** state prior to creating an SLO.
 1. **Define your SLO**. Set your window-based threshold here.<br/><img src={useBaseUrl('img/observability/new-slo2.png')} alt="Monitor-based SLO" />
 1. **SLO Details**. ?
 1. When you're done, you can:
-   * Click **Save**, which will ??
+   * Click **Save**, which will save the SLO.
    * Click **Save and Create Monitor**, which will create a new Monitor-based SLO behind the scenes. You'll be asked to define a new Monitor on top of that Monitor-based SLO. It's like a shortcut to create Monitor on top of Monitor-based SLO.<br/><img src={useBaseUrl('img/observability/new-slo4.png')} alt="Monitor-based SLO" width="350" />
 
 To edit SLO parameters:
