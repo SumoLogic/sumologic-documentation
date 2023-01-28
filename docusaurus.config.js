@@ -297,7 +297,7 @@ module.exports = {
                 activeBaseRegex: '^/docs/search/.*',
               },
               {
-                label: 'Alerts & Monitors',
+                label: 'Alerts, Monitors',
                 to: '/docs/alerts',
                 activeBaseRegex: '^/docs/alerts/.*',
               },
