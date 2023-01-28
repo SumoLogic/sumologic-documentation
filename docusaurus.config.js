@@ -327,10 +327,6 @@ module.exports = {
                 label: 'Dashboards',
                 to: '/docs/dashboards-new',
               },
-              {
-                label: 'Contribute',
-                to: '/docs/contributing',
-              },
             ]
           },
           {
