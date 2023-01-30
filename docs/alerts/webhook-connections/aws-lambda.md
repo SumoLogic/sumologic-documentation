@@ -40,7 +40,7 @@ Configure the webhook connection to trigger the AWS Lambda function.
     * **Region.** Select your region.
     * **Service Name.** Enter **execute-api** as the service name.
     * (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
-    * **Alert Payload,** Under Alert Payload, which allows you to customize the alert notification, enter a JSON object accepted by your Lambda function. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
-    * **Recovery Payload,** Under Recovery Payload, which allows you to customize the recovery notification, enter a JSON object accepted by your Lambda function. 
+    * **Alert Payload.** Under Alert Payload, which allows you to customize the alert notification, enter a JSON object accepted by your Lambda function. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
+    * **Recovery Payload.** Under Recovery Payload, which allows you to customize the recovery notification, enter a JSON object accepted by your Lambda function. 
 1. Click **Test Alert or Test Recovery**. If the connection is made to your Lambda function successfully, you will see a 200 OK response message.
 1. Click **Save**.
