@@ -37,10 +37,6 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 
 ## Limitations
 
-:::note
-You cannot share monitors; instead, you must duplicate the monitor under another user.
-:::
-
 ### General
 
 * [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
