@@ -68,7 +68,9 @@ You can also click on any data-point on the charts to open a details panel and v
 
 Overview dashboards on all Explore levels have a panel showing geographical user activity for the selected entity. Geographic dashboards do not measure performance.
 
-![RUM_Overview.png](/img/rum/RUM_Overview.png)
+![RUM Overview](/img/rum/RUM-Overview.png)
+
+![RUM-Overview-Application-Service](/img/rum/RUM-Overview-Application-Service.png)
 
 ### RUM TopN Application/Service
 
