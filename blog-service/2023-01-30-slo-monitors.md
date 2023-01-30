@@ -12,4 +12,4 @@ authors:
 
 Critical Monitors that alert you to customer-critical service interruptions or lag are great candidates to convert to Service-Level Objectives (SLOs). We've made this easy: you can now create SLOs directly from your Monitors in just a couple of clicks. The thresholds you set in your Monitor will carry over automatically to your new SLO definition, saving you time and effort.
 
-[Learn more](/docs/observability/reliability-management-slo/create-slo/#creating-slos-from-monitors).
+[Learn more](https://help.sumologic.com/docs/observability/reliability-management-slo/create-slo/#creating-slos-from-monitors).
