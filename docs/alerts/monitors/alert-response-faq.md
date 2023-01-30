@@ -32,7 +32,7 @@ Overall, yes. Alert Response is available in all the Sumo Logic packages. Howeve
 
 If you have an existing [connection](/docs/alerts/webhook-connections) such as Slack, PagerDuty, or Generic, you may not see a link to the Alert page in notifications. The link to the Alert page is not added by default in any of the Connections. You will have to manually add that link. You can do that by updating the webhook payload by referencing the `{{AlertResponseUrl}}` variable (case insensitive).
 
-For example, in Slack, you can add the following section to the alert payload:
+For example, in Slack, you can add the following section to the **Alert Payload**:
 
 ```json
 {
