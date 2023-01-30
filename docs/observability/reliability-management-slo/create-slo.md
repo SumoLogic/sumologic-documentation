@@ -146,8 +146,7 @@ Your Monitor must be in an **active** state.
 This will open the **New SLO** window.
 1. **Define your SLI**. Your Monitor's **Source**, **Signal Type**, and **Trigger Event** settings will auto-populate here (you can override these if you need to).<br/><img src={useBaseUrl('img/observability/new-slo1.png')} alt="Monitor-based SLO" />
 1. **Define your SLO**. Set your window-based threshold here.<br/><img src={useBaseUrl('img/observability/new-slo2.png')} alt="Monitor-based SLO" />
-1. When you're done, click **Save**, which will save the SLO.
-   * The **Save and Create Monitor** button creates a new Monitor-based SLO behind the scenes. You'll be asked to define a new Monitor on top of that Monitor-based SLO. It's like a shortcut to create Monitor on top of Monitor-based SLO.<br/><img src={useBaseUrl('img/observability/new-slo4.png')} alt="Monitor-based SLO" width="350" />
+1. When you're done, click **Save**, which will save the SLO.<br/><img src={useBaseUrl('img/observability/new-slo4.png')} alt="Monitor-based SLO" width="350" />
 
 To edit SLO parameters:
 1. Go to the **SLO** tab, locate your SLO and click on it. (If you're unable to find it, try applying filters or go to the search bar at the top and enter the SLO name or folder name.)
