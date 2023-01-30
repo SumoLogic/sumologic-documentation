@@ -27,8 +27,8 @@ The following table lists the available options for an SLO:
 
 ## Create an SLO (General)
 
-1. Click **Manage Data**, then **Monitoring**. Select the **SLO** tab if not loaded.
-2. Click **Add**, then **New SLO**. Optionally, you can also:
+1. Click **Manage Data** > **Monitoring** > **SLO** tab.
+2. Click **Add** > **New SLO**. Optionally, you can also:
    * Create folders to manage your SLOs.
    * Import an SLO:
       1. To transfer data immediately and create an SLO using an import, you should first export JSON content to use that formatting. The Sumo Logic JSON format may change without notice. See [Export and Import Content in the Library](/docs/get-started/library#import-content) for complete details.
@@ -37,7 +37,7 @@ The following table lists the available options for an SLO:
       4. Enter a Name for the SLO.
       5. Copy and paste the JSON in the text editor.
       6. Click **Import**.<br/><img src={useBaseUrl('img/observability/slo-import.png')} alt="Reliability Management SLO SLI" />
-3. Select the Signal Type:
+3. Select the **Signal Type**:
     * **Latency**. Select to calculate the speed of services, lag time.
     * **Error**. Select to monitor for errors that occur in your services.
     * **Throughput**. Select to track the throughput of services and processing.
@@ -134,33 +134,38 @@ You'll be able to create SLOs from Metrics Explorer.
 
 Critical Monitors are great candidates to convert to SLOs. From the **Monitors** section, you can create a Monitor- and window-based SLO for a given trigger condition.
 
-As an example, let's say you have an existing Monitor that's set to fire a **Critical** alert if more than 5 pods go into a terminated state in a 5-minute interval. <-- what's the value of converting to SLO? additional measurements like error budget, etc.?
+As an example, say you have an existing Monitor that fires a **Critical** alert if the latency of a customer-critical service exceeds 500ms. By creating an SLO directly through this specific Monitor, those thresholds will automatically carry over into the new SLO, saving you time and effort.
 
-:::caution
-Your Monitor must be in an **active** state prior to creating an SLO.
+:::caution Prerequisite
+Your Monitor must be in an **active** state.
 :::
 
 1. Go to **Manage Data** > **Monitoring** > **Monitors** tab.
-1. Click on any active Monitor to open its panel, then click **More Actions** > **Create SLO**.<br/><img src={useBaseUrl('img/observability/more-actions-create-slo.png')} alt="Monitor-based SLO" width="500"/><br/> This will open the **New SLO** window.
-1. **Define your SLI**. Your Monitor's Source, Signal Type, and Trigger Conditions settings will auto-populate here. (can users override if they want?)<br/><img src={useBaseUrl('img/observability/new-slo1.png')} alt="Monitor-based SLO" />
+1. Click on any active Monitor to open its panel.
+1. Choose one of the methods below:<br/>Click **More Actions** > **Create SLO**.<br/><img src={useBaseUrl('img/observability/more-actions-create-slo.png')} alt="Monitor-based SLO" width="500"/>   <br/>Or, click <strong>Monitor-based SLO</strong> > <strong>Add Monitor-based SLO</strong>.<br/><img src={useBaseUrl('img/observability/add-monitor-based-slo.png')} alt="Monitor-based SLO" width="500"/><br/>
+This will open the **New SLO** window.
+1. **Define your SLI**. Your Monitor's **Source**, **Signal Type**, and **Trigger Event** settings will auto-populate here (you can override these if you need to).<br/><img src={useBaseUrl('img/observability/new-slo1.png')} alt="Monitor-based SLO" />
 1. **Define your SLO**. Set your window-based threshold here.<br/><img src={useBaseUrl('img/observability/new-slo2.png')} alt="Monitor-based SLO" />
-1. When you're done, you can:
-   * Click **Save**, which will save the SLO.
-   * Click **Save and Create Monitor**, which will create a new Monitor-based SLO behind the scenes. You'll be asked to define a new Monitor on top of that Monitor-based SLO. It's like a shortcut to create Monitor on top of Monitor-based SLO.<br/><img src={useBaseUrl('img/observability/new-slo4.png')} alt="Monitor-based SLO" width="350" />
+1. When you're done, click **Save**, which will save the SLO.
+   * The **Save and Create Monitor** button creates a new Monitor-based SLO behind the scenes. You'll be asked to define a new Monitor on top of that Monitor-based SLO. It's like a shortcut to create Monitor on top of Monitor-based SLO.<br/><img src={useBaseUrl('img/observability/new-slo4.png')} alt="Monitor-based SLO" width="350" />
 
 To edit SLO parameters:
-1. Go to the SLO tab, locate your SLO and click on it. (If you're unable to find it, try applying filters or go to the search bar at the top and enter the SLO name or folder name.)
+1. Go to the **SLO** tab, locate your SLO and click on it. (If you're unable to find it, try applying filters or go to the search bar at the top and enter the SLO name or folder name.)
 1. Edit definition and other parameters.
 
 To edit SLO parameters from a Monitor:
 1. Go to the **Monitors** tab and click on any Monitor.<br/><img src={useBaseUrl('img/observability/monitors-tab.png')} alt="Monitor-based SLO" width="500" />
 1. In the panel, click **Monitor-based SLO** to view the list of SLOs associated with that particular Monitor.<br/><img src={useBaseUrl('img/observability/monitor-based-slo-panel.png')} alt="Monitor-based SLO" />
 
+:::important
+Any Monitor update that changes the Monitor definition will lead to a change in the version of related SLOs. This means that the SLO history or SLI will get reset for the SLO. Example include trigger condition changes and evaluation delay changes. Changes unrelated to the definition like **Name**, **Description** will not affect the related SLOs.
+:::
 
 ## Create an SLO Monitor
 
-:::note
-[Alert Responses](/docs/alerts/monitors/alert-response) are not yet supported for SLO-based Monitors. Notifications will provide information and links to SLO dashboards.
+:::note Limitations
+* [Alert Responses](/docs/alerts/monitors/alert-response) are not yet supported for SLO-based Monitors. Notifications will provide information and links to SLO dashboards.
+* It is not possible to create an SLO on top of an SLO Monitor.
 :::
 
 Create one or more Monitors as needed for your SLO. We recommend creating separate Monitors for SLI-based and Burn Rate-based condition types. You can access SLO Monitors through your SLO Details or from the Monitors list page.
