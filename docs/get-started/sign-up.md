@@ -110,24 +110,27 @@ These accounts have the following limitations:
 ## Sign up through AWS Marketplace
 
 1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace) and search for Sumo Logic.
-1. Select **Sumo Logic** and click **Continue**.  
 
-    ![AWS Marketplace](/img/get-started/aws_marketplace.png)
+    ![AWS Marketplace](/img/get-started/aws_marketplace_new.png)
 
-1. Click **Subscribe**.  
+1. Select a Sumo Logic product and click **View purchase options** or **Try it for free**.
 
-    ![AWS Subscribe](/img/get-started/aws_marketplace_subscribe.png)
+    ![View purchase options](/img/get-started/aws_marketplace_view_purchase_options.png)
 
-1. Click **Set Up Your Account**.  
+1. Configure the software contract and click **Create contract**.  
 
-    ![AWS Setup](/img/get-started/aws_marketplace_setup.png)
+    ![Create contract](/img/get-started/aws_marketplace_create_contract.png)
+
+1. Finalize the software contract and click **Set up your account**.  
+
+    ![AWS setup](/img/get-started/aws_marketplace_setup_new.png)
 
 1. You are redirected to Sumo Logic to complete your account creation:
 
     - **Email** - Enter an email for your account. If you have an existing Sumo Logic account, use a different email address. Signing up through AWS Marketplace will create a new Sumo Logic organization.
-    - **Plan** - Select the plan that is right for your requirements.
     - **Region** - Select your region: North America, Europe, or Australia.
     - Review and accept the [Service License Agreement](https://www.sumologic.com/service-agreement/) to proceed.
+
 1. Click **Sign Up**.
 
 Sumo Logic sends you an email to activate your account, and the Sumo Logic Setup Wizard is displayed.
