@@ -116,4 +116,53 @@ info
 
 To convert a string to all lowercase or all uppercase letters, you can use the [toUpperCase and toLowerCase](/docs/search/search-query-language/search-operators/toLowerCase-toUpperCase) operators.
 
- 
+## Normalization of Phrase Queries
+
+Sumo Logic normalizes the way it matches raw messages to log query source expressions in the Infrequent and Frequent data tiers. This means that consecutive whitespace characters within quoted phrases are replaced with a single space character. This ensures consistency in query results when searching data in the continuous/frequent/infrequent tiers.
+
+Let’s understand the following terms:
+* **Payload**. Payload is the data that is stored as part of the raw (message) field. The `raw field` is where the raw ingested logs are stored.
+* **Source Expression**. Source Expression or the Search Expression of a query is the string that comes before the first pipe. The `_raw field` is matched against the source expression to filter the requested log lines.
+* **Whitespace Normalization**. Whitespace normalization means replacing a consecutive list of whitespace characters with a single space. We follow the Java convention of whitespace characters.
+
+:::tip Java convention of whitespace characters
+
+<details><summary>A character is a Java whitespace character if and only if it satisfies one of the following criteria (click to expand):</summary>
+
+It is a Unicode space character (SPACE_SEPARATOR, LINE_SEPARATOR, or PARAGRAPH_SEPARATOR) but is not also a non-breaking space ('\u00A0', '\u2007', '\u202F').
+```
+It is '\t', U+0009 HORIZONTAL TABULATION.
+It is '\n', U+000A LINE FEED.
+It is '\u000B', U+000B VERTICAL TABULATION.
+It is '\f', U+000C FORM FEED.
+It is '\r', U+000D CARRIAGE RETURN.
+It is '\u001C', U+001C FILE SEPARATOR.
+It is '\u001D', U+001D GROUP SEPARATOR.
+It is '\u001E', U+001E RECORD SEPARATOR.
+It is '\u001F', U+001F UNIT SEPARATOR
+```
+</details>
+:::
+
+**Types of multiple whitespace characters**
+
+* `“A__B”`  – determines the two spaces
+* `“A_B”`   – determines a single space
+* `“A\nB”`  – determines the new line character
+* `“A\n\tB”`– determines the new line character and horizontal tabulation
+
+**Examples showing multiple whitespace characters**
+
+* **Single space character**. The following query shows single space character:
+In this query, multiple whitespaces are replaced with a single whitespace that will return the desired search result.
+```
+sourceCategory=stream_thread_dumps "VM Periodic Task Thread"
+```
+
+* **n\t character**. The following query shows n\t character:
+In this query, there is a new line after the string `parking` and only a single space character is used to match the log line. This shows that a query string with a single space can match a log line that has a new line character.
+
+```
+_sourceCategory=stream_thread_dumps "java.lang.Thread.State: WAITING (parking) at jdk.internal.misc.Unsafe.park(java.base@11.0.18/Native Method)
+- parking to wait for  <0x0000000319195cc8> (a java.util.concurrent.SynchronousQueue$TransferStack)
+```
