@@ -4,6 +4,7 @@ image: https://www.sumologic.com/img/logo.svg
 keywords:
   - monitors
   - alerts
+  - slo
 hide_table_of_contents: true
 authors:
   - url: https://help.sumologic.com/release-notes-service/rss.xml
