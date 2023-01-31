@@ -91,7 +91,7 @@ The Sumo Global Intelligence for Kubernetes DevOps app provides insights into yo
 
 Follow the steps on the [Sumo Logic Kubernetes Deployment guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#metrics) to configure the collection for Kubernetes Benchmark metrics.
 
-#### Install the Global Intelligence for Kubernetes DevOps App and View the Dashboards
+### Install the Global Intelligence for Kubernetes DevOps App and View the Dashboards
 
 Below are the instructions for installing the Sumo App for Kubernetes DevOps as well as descriptions of each of the app dashboards. 
 
@@ -119,11 +119,11 @@ Deployment-container combinations that have no requests or limits set are not ca
 
 ### Concepts, Definitions and Methodology
 
-It is relatively well known that DevOps staff concerned about Out of Memory (OOM) and CPU throttling may set high memory, and CPU requests on their containers. This results in situations where Kubernetes clusters are over-provisioned compared to actual usage. Conversely, Kubernetes clusters may be underprovisioned leading to risk of OOM and throttling and resulting downtime. 
+It is relatively well known that DevOps staff concerned about Out of Memory (OOM) and CPU throttling may set high memory and CPU requests on their containers. This results in situations where Kubernetes clusters are over-provisioned compared to actual usage. Conversely, Kubernetes clusters may be underprovisioned, leading to risk of OOM and throttling and resulting downtime. 
 
 The slack is the difference between usage and requests measures cost for both cpu (cores) and memory (GB). Higher slack implies higher costs as cpu and memory used are less than what has been provisioned for a given container. Conversely negative slack, while saving costs, increase risk for container eviction due to memory overages or container throttling. These latter events impact application availability and performance and may lead to incidents. The cost-risk tradeoff is diagrammed below. 
 
-The input for the optimization is time series data for each container’s cpu, memory usage, and requests over the past eight days. A given container can behave differently depending on the pod in which it is deployed. For example, an nginx container in Pod A may behave differently from the same container in Pod B. As a result, GI Kubernetes DevOps detects unique deployment-container combinations called “container groups”, analyzes cpu and memory time series data for them and recommends optimal requests and limits based on the best combination of slack (or cost) and risk. The recommendations cover three scenarios; pick the one that best serves the needs of your application:
+The input for the optimization is time series data for each container’s cpu, memory usage, and requests over the past eight days. A given container can behave differently depending on the pod in which it is deployed. For example, an nginx container in Pod A may behave differently from the same container in Pod B. As a result, GI Kubernetes DevOps detects unique deployment-container combinations called "container groups", analyzes cpu and memory time series data for them and recommends optimal requests and limits based on the best combination of slack (or cost) and risk. The recommendations cover three scenarios; pick the one that best serves the needs of your application:
 
 * **Cost-optimized**: lowest slack (or cost) accompanied with relatively higher risk (measured by percent at-risk minutes for the deployment-container)
 * **Reliability-optimized**: highest slack (or cost) accompanied with relatively lower risk (measured by percent at-risk minutes for the deployment-container)
@@ -134,11 +134,11 @@ The input for the optimization is time series data for each container’s cpu, m
 Time series data for usage and requests is summarized for each deployment-container combination to compute slack as follows:
 
 * Time series are bucketed into 15m epochs and summarized using 15m averages.
-* Usage is represented by the p95 value over the calendar day over all deployment-container combinations. Let us call this usage_15m_p95_1d(deployment_container).
-* Request is represented by the average over the calendar day of 15m epochs for each deployment-container combination. Let us  call this request_15m_avg_1d(deployment_container).
-* Next, slack for a calendar day in any 15m epoch for any deployment-container combination is calculated as slack_15m_1d(deployment_container) =  request_15m_avg_1d(deployment_container) -  usage_15m_p95_1d(deployment_container)
-* Then, we calculate slack_8d(deployment_container) as average over  slack_15m_1d(deployment_container). slack_8d(deployment_container) is an estimate of the slack in any 15m interval for a given deployment-container combination based on 8d data.
-* To calculate the total slack in any 15 epochs in a deployment, we estimate the number of deployment-container instances using 8d data of running deployment-container combinations and multiply it by slack_8d(deployment_container). 
+* Usage is represented by the p95 value over the calendar day over all deployment-container combinations. Let us call this `usage_15m_p95_1d(deployment_container)`.
+* Request is represented by the average over the calendar day of 15m epochs for each deployment-container combination. Let us call this `request_15m_avg_1d(deployment_container)`.
+* Next, slack for a calendar day in any 15m epoch for any deployment-container combination is calculated as `slack_15m_1d(deployment_container) =  request_15m_avg_1d(deployment_container) -  usage_15m_p95_1d(deployment_container)`
+* Then, we calculate `slack_8d(deployment_container)` as average over  `slack_15m_1d(deployment_container)`. `slack_8d(deployment_container)` is an estimate of the slack in any 15m interval for a given deployment-container combination based on 8d data.
+* To calculate the total slack in any 15 epochs in a deployment, we estimate the number of deployment-container instances using 8d data of running deployment-container combinations and multiply it by `slack_8d(deployment_container)`. 
 
 Time series data for usage and requests is summarized for each deployment-container combination to compute risk minutes percent as follows:
 
@@ -157,9 +157,9 @@ Use this dashboard to:
 
 ![GI_Kubernetes_Adoption_Stats](/img/kubernetes/GI_Kubernetes_Adoption_Stats.png)
 
-#### Optimization 1- Summary for Kubernetes Deployment
+#### Optimization 1 - Summary for Kubernetes Deployment
 
-The **Optimization 1- Summary for Kubernetes Deployment** dashboard shows aggregate current risk percent and slack in a given deployment. In addition, the impact of applying recommended container requests and limits on aggregate slack and risk percent for the deployment. 
+The **Optimization 1 - Summary for Kubernetes Deployment** dashboard shows aggregate current risk percent and slack in a given deployment. In addition, the impact of applying recommended container requests and limits on aggregate slack and risk percent for the deployment. 
 
 Use this dashboard to:
 
@@ -168,9 +168,9 @@ Use this dashboard to:
 
 ![img](/img/kubernetes/Optimization_1_Summary_for_Kubernetes_Deployment.png)
 
-#### Optimization 2- Detail for Kubernetes Deployment 
+#### Optimization 2 - Detail for Kubernetes Deployment 
 
-The **Optimization 2- Detail for Kubernetes Deployment** dashboard provides recommendations for cpu and memory requests and limits for containers based on trading off risk against cost for a given deployment-container combination. 
+The **Optimization 2 - Detail for Kubernetes Deployment** dashboard provides recommendations for cpu and memory requests and limits for containers based on trading off risk against cost for a given deployment-container combination. 
 
 Use this dashboard to:
 
@@ -179,9 +179,9 @@ Use this dashboard to:
 
 ![img](/img/kubernetes/Optimization_2_Detail_for_Kubernetes_Deployment.png)
 
-#### Optimization 3.1- Action Plan for Kubernetes CPU 
+#### Optimization 3.1 - Action Plan for Kubernetes CPU 
 
-The **Optimization 3.1- Action Plan for Kubernetes CPU** dashboard provides recommendations for CPU requests and limits for containers in a deployment for the selected optimization scenario: Costs, Reliability or Balanced based on trading off risk percent and slack for memory over a 8d period. The current request (or limit) is compared to the recommended request (or limit) along with a percentage change in recommendations plotted on the secondary Y-axis.
+The **Optimization 3.1 - Action Plan for Kubernetes CPU** dashboard provides recommendations for CPU requests and limits for containers in a deployment for the selected optimization scenario: Costs, Reliability or Balanced based on trading off risk percent and slack for memory over a 8d period. The current request (or limit) is compared to the recommended request (or limit) along with a percentage change in recommendations plotted on the secondary Y-axis.
 
 Use this dashboard to:
 
@@ -194,9 +194,9 @@ This dashboard is launched by clicking on  a honeycomb cell in the Optimization
 
 ![img](/img/kubernetes/optimization-dashboard2.png)
 
-#### Optimization 3.2- Action Plan for Kubernetes Memory 
+#### Optimization 3.2 - Action Plan for Kubernetes Memory 
 
-The **Optimization 3.2- Action Plan for Kubernetes Memory** dashboard provides recommendations for Memory requests and limits for containers in a deployment for the selected optimization scenario: Costs, Reliability or Balanced based on trading off risk percent and slack for memory over a 8d period. The current request (or limit) is compared to the recommended request (or limit) along with a percentage change in recommendations plotted on the secondary Y-axis.
+The **Optimization 3.2 - Action Plan for Kubernetes Memory** dashboard provides recommendations for Memory requests and limits for containers in a deployment for the selected optimization scenario: Costs, Reliability or Balanced based on trading off risk percent and slack for memory over a 8d period. The current request (or limit) is compared to the recommended request (or limit) along with a percentage change in recommendations plotted on the secondary Y-axis.
 
 Use this dashboard to:
 
@@ -209,22 +209,22 @@ This dashboard is launched by clicking on  a honeycomb cell in the Optimization
 
 ![img](/img/kubernetes/action-plan-memory2.png)
 
-#### Optimization 4- Container Time Series
+#### Optimization 4 - Container Time Series
 
-The **Optimization 4- Container TIme Series** dashboard visualizes, for a given container, the impact of recommendations on CPU and memory 7d time series for the selected optimization scenario: Cost, Reliability or Balanced. Please fill in the recommended request and limit in GB for Memory and in Cores for CPU from **Optimization 3.1 or 3.2- Action Plan for Kubernetes CPU/Memory**
+The **Optimization 4 - Container Time Series** dashboard visualizes, for a given container, the impact of recommendations on CPU and memory 7d time series for the selected optimization scenario: Cost, Reliability or Balanced. Please fill in the recommended request and limit in GB for Memory and in Cores for CPU from **Optimization 3.1 or 3.2 - Action Plan for Kubernetes CPU/Memory**
 
 Use this dashboard to:
 
 * Compare 7d usage with current and recommended memory request and limit settings by container in an deployment
 * Compare 7d usage with current and recommended CPU request and limit settings by container in an deployment
 
-This dashboard is launched by clicking on a datapoint in the **Optimization 3.1 or 3.2- Action Plan for Kubernetes CPU/Memory** and viewing the Linked Dashboard.
+This dashboard is launched by clicking on a datapoint in the **Optimization 3.1 or 3.2 - Action Plan for Kubernetes CPU/Memory** and viewing the Linked Dashboard.
 
 ![img](/img/kubernetes/Container_Time_Series.png)
 
 #### Explore Integration
 
-Stack linking for the **Optimization 1- Summary for Kubernetes Deployment and Optimization 2 - Detail for Kubernetes Deployment** dashboards will appear with the Explore hierarchy associated with your Kubernetes deployment. If necessary, check stack linking settings as below. 
+Stack linking for the **Optimization 1 - Summary for Kubernetes Deployment and Optimization 2 - Detail for Kubernetes Deployment** dashboards will appear with the Explore hierarchy associated with your Kubernetes deployment. If necessary, check stack linking settings as below. 
 
 ![img](/img/kubernetes/explore-integration.png)
 
