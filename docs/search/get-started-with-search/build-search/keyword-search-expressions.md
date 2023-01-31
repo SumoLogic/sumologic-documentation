@@ -179,7 +179,7 @@ It is '\u001F', U+001F UNIT SEPARATOR
  The character `\n` is used to describe the new line whitespace character.
  :::
 
-* **New line tab charcater**. This character determines the new line and tab whitespace characters present in the payload or source expression.
+* **New line tab character**. This character determines the new line and tab whitespace characters present in the payload or source expression.
 
   For example, in the the following query there is a new line and tab character after the string `Task`, but normalisation returns the same result as a single space whitespace character. This shows that a query string with a single space can match a log line that has a new line and a tab whitespace character.
  ```
