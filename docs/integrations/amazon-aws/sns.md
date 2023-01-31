@@ -81,7 +81,9 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) or [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended).
-   * **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+3. Namespaces. Select **aws/sns**.
+4. **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Metadata%2Baccount.png')} alt="Metadata" />
 3. Click **Save**.
 
 
@@ -95,9 +97,12 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
     * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string.
       * DO NOT use a [leading forward slash](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions).
       * The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-    * **Source Category**. Enter a source category. For example, SNS_event.
-    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
-    * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
+    * **Source Category**. Enter a source category. For example, enter aws/observability/CloudTrail/logs.
+    * **Fields**. Add an account field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account" field.
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Fields.png')} alt="Fields" />
+3. Click **Save**.
+    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources).
+    * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure Log File Discovery [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
     * **Enable Timestamp Parsing**. Select the check box.
     * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
     * **Timestamp Format**. Select Automatically detect the format.
@@ -138,6 +143,24 @@ Scope (Specific Data): account=* eventname eventsource \"sns.amazonaws.com\"
 | if (isBlank(accountid), recipient_account_id, accountid) as accountid
 | "aws/sns" as namespace
 | fields region, namespace, topicname, accountid
+```
+
+
+## Centralized AWS CloudTrail Log Collection
+In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following **Field Extraction Rule** to map a proper AWS account(s) friendly name/alias. Create it if not already present/update it as required.
+
+* **Rule Name**: AWS Accounts
+* **Applied at**: Ingest Time
+* **Scope (Specific Data)**: _sourceCategory=aws/observability/cloudtrail/logs
+* **Parse Expression**: Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
+
+```
+| json "recipientAccountId"
+// Manually map your aws account id with the AWS account alias you setup earlier for individual child account
+| "" as account
+| if (recipientAccountId = "528560886094",  "dev", account) as account
+| if (recipientAccountId = "567680881046",  "prod", account) as account
+| fields account
 ```
 
 
