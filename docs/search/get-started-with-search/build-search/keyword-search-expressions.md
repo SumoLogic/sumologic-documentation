@@ -170,7 +170,7 @@ It is '\u001F', U+001F UNIT SEPARATOR
 
 * **New line character**. This character determines the new line whitespace character present in the payload or in the source expression.
 
- For example, in the following query there is a new line after the string `Task`, but normalisation returns the same result as a single space whitespace character. This shows that a query string with a single space can match a log line that has a new line character.
+ For example, in the following query, there is a new line after the string `Task`, but normalization returns the same result as a single space whitespace character. This shows that a query string with a single space can match a log line that has a new line character.
  ```
  sourceCategory=stream_thread_dumps "VM Periodic Task\nThread"
  ```
