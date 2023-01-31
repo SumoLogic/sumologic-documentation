@@ -92,7 +92,7 @@ You can select the timing metric type in the **statistic** dropdown on the dashb
 The **RUM Performance Analytics - Application** and **RUM Performance Analytics - Application Service** dashboards show the page performance and requests for a cohort of users specified by selecting the desired combination of dimensions.
 
 Use these dashboards to:
-* Filter data for specific combinations of application, browser, operating system, and/or geolocation.
+* Filter data for specific combinations of browser, operating system, and/or geolocation.
 * Understand XHR, load, timing metrics for the selected user cohort.
 * Compare your selected timings against data for a different time period by selecting the appropriate option in the compare_with dropdown.
 
