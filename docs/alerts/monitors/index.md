@@ -37,10 +37,6 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 
 ## Limitations
 
-:::note
-You cannot share monitors; instead, you must duplicate the monitor under another user.
-:::
-
 ### General
 
 * [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
@@ -64,10 +60,11 @@ You cannot share monitors; instead, you must duplicate the monitor under another
 
 ### Recovery
 
-* Recovery is based on the detection window, which is either the time range or the number of data points of the trigger condition. An alert is recovered (resolved) when the recovery condition is met for the entire duration of the detection window. For example, if an alert is triggered at 1 PM and the detection window is 15 minutes, the earliest the alert would recover is after 1:15 PM since the entire detection window must pass. This is to ensure there isn't an alert between the triggered and resolved state, especially for metrics that are volatile.
-* Auto Resolution is supported with Email, Lambda, Microsoft Teams, OpsGenie, PagerDuty, Slack, and generic webhook connections. Support for other connection types is coming soon.
-  * For Lambda and generic webhooks, the same payload for both alerts and recovery is used.
-  * Email, Microsoft Teams, OpsGenie, PagerDuty, and Slack recovery notifications are hardcoded by Sumo Logic and cannot be edited. The recovery payload is not the same as the alert payload.
+* Recovery is based on the detection window, which is either the time range or the number of data points of the trigger condition. An alert is recovered (resolved) when the recovery condition is met for the entire duration of the detection window.
+   * For example, if an alert is triggered at 1:00 PM and the detection window is 15 minutes, the earliest the alert would recover is after 1:15 PM since the entire detection window must pass. This is to ensure there isn't an alert between the triggered and resolved state, especially for metrics that are volatile.
+* Auto Resolution is supported with Email, Lambda, Microsoft Teams, OpsGenie, PagerDuty, Slack, and generic webhook connections.
+* **Recovery Payload** customization is supported for Slack, Microsoft Teams, AWS Lambda, Azure Functions, generic webhooks, PagerDuty, OpsGenie, and ServiceNow.
+* For the rest of our Connections, you can customize the **Alert Payload**, but not the **Recovery Payload**. What you enter for the **Alert Payload** will be used for both alerts and recovery.
 * The recovery notification is sent to the same channel where the corresponding Alert notifications were sent. In other words, you cannot have different channels where you receive alert and recovery notifications for a given trigger condition.
 * After one day without new data to an incident, the system automatically expires it. The incident is marked as resolved with the resolution set to **Expired**.
 
