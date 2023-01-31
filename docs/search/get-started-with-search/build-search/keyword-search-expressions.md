@@ -181,7 +181,7 @@ It is '\u001F', U+001F UNIT SEPARATOR
 
 * **New line tab character**. This character determines the new line and tab whitespace characters present in the payload or source expression.
 
-  For example, in the the following query there is a new line and tab character after the string `Task`, but normalisation returns the same result as a single space whitespace character. This shows that a query string with a single space can match a log line that has a new line and a tab whitespace character.
+  For example, in the the following query, there is a new line and tab character after the string `Task`, but normalization returns the same result as a single space whitespace character. This shows that a query string with a single space can match a log line that has a new line and a tab whitespace character.
  ```
  sourceCategory=stream_thread_dumps "VM Periodic Task\n\tThread"
  ```
