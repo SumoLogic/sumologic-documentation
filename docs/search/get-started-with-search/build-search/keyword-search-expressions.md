@@ -144,25 +144,52 @@ It is '\u001F', U+001F UNIT SEPARATOR
 </details>
 :::
 
-**Types of multiple whitespace characters**
+### Types of Whitespace Characters
 
-* `“A__B”`  – determines the two spaces
-* `“A_B”`   – determines a single space
-* `“A\nB”`  – determines the new line character
-* `“A\n\tB”`– determines the new line character and horizontal tabulation
+* **Multiple whitespace characters**. This character determines the multiple spaces present in the payload or in the source expression.
 
-**Examples showing multiple whitespace characters**
+ For example, in the following query, there are multiple space characters present in `"VM Periodic" and "Task Thread"`, but normalization returns the same result as a single space whitespace character.
+ ```
+  sourceCategory=stream_thread_dumps "VM Periodic_____Task Thread"
+ ```
 
-* **Single space character**. The following query shows single space character:
-In this query, multiple whitespaces are replaced with a single whitespace that will return the desired search result.
+ :::note
+ The character `___` is used to describe the multispace whitespace character.
+ :::
+
+* **Tab whitespace character**. This character determines the tab whitespace character present in the payload or in the source expression.
+
+ For example, in the the following query there is a tab character present in `"VM Periodic" and "Task Thread"`, but normalisation returns the same result as a single space whitespace character.
+ ```
+  sourceCategory=stream_thread_dumps "VM Periodic_Task Thread"
+ ```
+
+ :::note
+ The character `_` is used to describe the tab whitespace character.
+ :::
+
+* **New line character**. This character determines the new line whitespace character present in the payload or in the source expression.
+
+ For example, in the following query, there is a new line after the string `Task`, but normalization returns the same result as a single space whitespace character. This shows that a query string with a single space can match a log line that has a new line character.
+ ```
+ sourceCategory=stream_thread_dumps "VM Periodic Task\nThread"
+ ```
+
+ :::note
+ The character `\n` is used to describe the new line whitespace character.
+ :::
+
+* **New line tab character**. This character determines the new line and tab whitespace characters present in the payload or source expression.
+
+  For example, in the the following query, there is a new line and tab character after the string `Task`, but normalization returns the same result as a single space whitespace character. This shows that a query string with a single space can match a log line that has a new line and a tab whitespace character.
+ ```
+ sourceCategory=stream_thread_dumps "VM Periodic Task\n\tThread"
+ ```
+ :::note
+ The character `\n\t` is used to describe the new line + tab whitespace characters.
+ :::
+
+All of the above queries containing various whitespace characters will accept a single space whitespace character by default and return the desired results. See the query below.
 ```
 sourceCategory=stream_thread_dumps "VM Periodic Task Thread"
-```
-
-* **n\t character**. The following query shows n\t character:
-In this query, there is a new line after the string `parking` and only a single space character is used to match the log line. This shows that a query string with a single space can match a log line that has a new line character.
-
-```
-_sourceCategory=stream_thread_dumps "java.lang.Thread.State: WAITING (parking) at jdk.internal.misc.Unsafe.park(java.base@11.0.18/Native Method)
-- parking to wait for  <0x0000000319195cc8> (a java.util.concurrent.SynchronousQueue$TransferStack)
 ```
