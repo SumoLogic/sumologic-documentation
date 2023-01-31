@@ -1,13 +1,12 @@
 ---
 id: palo-alto-networks-10
 title: PCI Compliance App for Palo Alto Networks 10
-sidebar_label: Palo Alto Networks 10
 description: The Sumo Logic App for PCI Compliance for Palo Alto Networks 10 offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan9.png')} alt="thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
 
 The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Networks 10 offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 
