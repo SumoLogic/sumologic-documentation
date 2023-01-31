@@ -64,7 +64,7 @@ To configure a RUM HTTP Traces source:
    ```
    * **Probabilistic sampling rate** (optional): Add a **Probabilistic sampling rate** for heavy traffic sites in a decimal value based on percentage, for example, 10% would be entered as `0.1`.
    * **Ignore urls** (optional): Add a list of URLs not to collect trace data from. Supports regex. For example: `/^https:\/\/www.tracker.com\/.*/, /^https:\/\/api.mydomain.com\/log\/.*/`. Please make sure provided URLs are valid JavaScript flavor regexes.
-   * **Custom Tags** (optional): Click **+Add** and enter a key and value for each **Custom Tags** to show in spans from instrumented browsers. *replace removed example with another one like internal.version=0.1.21* This information is saved in the script for `name_of_your_web_service`.
+   * **Custom Tags** (optional): Click **+Add** and enter a key and value for each **Custom Tags** to show in spans from instrumented browsers. As an example, you could enter a key of `internal.version` with a value of `0.1.21`. This information is saved in the script for `name_of_your_web_service`.
    * **Propagate Trace Header Cors Urls** (recommended): Add a list of URLs or URL patterns that pass tracing context to construct traces end-to-end. This information is saved in the script for `list_of_urls_to_receive_trace_context`. Some examples are `/^https:\/\/api.mydomain.com\/apiv3\/.*/` and `/^https:\/\/www.3rdparty.com\/.*/.`. Please make sure provided URLs are valid JavaScript flavor regexes.
     :::caution **Propagate Trace Header Cors Urls**
     Sumo Logic cannot perform configuration validation of services of other origins. You should always enable context propagation and CORS configuration changes in a test environment before setting it up in production.
