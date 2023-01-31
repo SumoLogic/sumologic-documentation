@@ -278,7 +278,7 @@ Use this dashboard to:
 * Monitor top IAM Users, Assumed Role Users and User agents
 * Monitor distribution of Successful and failed events with the list of latest events.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Events-CloudTrail.png')} alt="AWS EC2" />
+![EC2-CW-Events](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/2.1-AWS-EC2-Events.png)
 
 
 ### CPU (CloudWatch Metrics)
