@@ -277,43 +277,29 @@ module.exports = {
             type: 'dropdown',
             items:[
               {
-                label: 'Send Data',
+                label: 'Start Here',
+                to: '/docs/get-started',
+                activeBaseRegex: '^/docs/get-started/.*',
+              },
+              {
+                label: 'Send Data (Collectors)',
                 to: '/docs/send-data',
                 activeBaseRegex: '^/docs/send-data/.*',
               },
               {
-                label: 'Search Logs',
-                to: '/docs/search',
-                activeBaseRegex: '^/docs/search/.*',
-              },
-              {
-                label: 'Metrics',
-                to: '/docs/metrics',
-                activeBaseRegex: '^/docs/metrics/.*',
-              },
-              {
-                label: 'Apps/Integrations',
+                label: 'App Catalog',
                 to: '/docs/integrations',
                 activeBaseRegex: '^/docs/integrations/.*',
               },
               {
-                label: 'Manage Sumo',
-                to: '/docs/manage',
-                activeBaseRegex: '^/docs/manage/.*',
+                label: 'Log Search',
+                to: '/docs/search',
+                activeBaseRegex: '^/docs/search/.*',
               },
               {
-                label: 'Observability',
-                to: '/docs/observability',
-                activeBaseRegex: '^/docs/observability/about',
-              },
-              {
-                label: 'Traces/APM/RUM',
-                to: '/docs/apm',
-                activeBaseRegex: '^/docs/apm/.*',
-              },
-              {
-                label: 'Alerts/Monitors',
+                label: 'Alerts, Monitors',
                 to: '/docs/alerts',
+                activeBaseRegex: '^/docs/alerts/.*',
               },
               {
                 label: 'Cloud SIEM',
@@ -322,13 +308,33 @@ module.exports = {
               },
               {
                 label: 'Cloud SOAR',
-                to: '/docs/cloud-soar/',
+                to: '/docs/cloud-soar',
                 activeBaseRegex: '^/docs/cloud-soar/.*',
               },
               {
-                label: 'CI/CD',
-                to: '/docs/sdo',
-                activeBaseRegex: '^/docs/(sdo)/.*',
+                label: 'Dashboards',
+                to: '/docs/dashboards-new',
+                activeBaseRegex: '^/docs/dashboards-new/.*',
+              },
+              {
+                label: 'Manage Sumo Acct',
+                to: '/docs/manage',
+                activeBaseRegex: '^/docs/manage/.*',
+              },
+              {
+                label: 'Metrics',
+                to: '/docs/metrics',
+                activeBaseRegex: '^/docs/metrics/.*',
+              },
+              {
+                label: 'Observability',
+                to: '/docs/observability',
+                activeBaseRegex: '^/docs/observability/about',
+              },
+              {
+                label: 'Traces, APM, RUM',
+                to: '/docs/apm',
+                activeBaseRegex: '^/docs/apm/.*',
               },
             ]
           },

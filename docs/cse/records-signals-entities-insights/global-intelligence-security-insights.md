@@ -1,7 +1,6 @@
 ---
 id: global-intelligence-security-insights
 title: Global Intelligence for Security Insights
-sidebar_label: Global Intelligence
 description: Insight Confidence scores, predicted by Sumo Logic’s Global Intelligence machine learning model, help you triage and prioritize Insights.
 ---
 
