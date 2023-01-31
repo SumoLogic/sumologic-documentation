@@ -49,7 +49,7 @@ Example:<br/><img src={useBaseUrl('img/rum/explore-view-rum.png')} alt="Real Use
 
 ### RUM Overview Dashboards
 
-The RUM Overview dashboards show the user experience for performance and requests metrics for your selected application, service, and action. Data is broken down by top geo-locations, operating systems, and browsers. These dashboards include:
+The **RUM Overview** dashboards (**Application**, **Service**, **Action Type**, and **Action**) show the user experience for performance and requests metrics for your selected application, service, environment, and action. Data is broken down by top geo-locations, operating systems, and browsers. These dashboards include:
 * **RUM Overview - Application**
 * **RUM Overview - Application Service**
 * **RUM Overview - Application Service with Environment**
