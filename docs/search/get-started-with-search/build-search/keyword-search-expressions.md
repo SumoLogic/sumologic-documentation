@@ -148,7 +148,7 @@ It is '\u001F', U+001F UNIT SEPARATOR
 
 * **Multiple whitespace characters**. This character determines the multiple spaces present in the payload or in the source expression.
 
- For example, in the following query there are multiple space characters present in `"VM Periodic" and "Task Thread"`, but normalisation returns the same result as a single space whitespace character.
+ For example, in the following query, there are multiple space characters present in `"VM Periodic" and "Task Thread"`, but normalization returns the same result as a single space whitespace character.
  ```
   sourceCategory=stream_thread_dumps "VM Periodic_____Task Thread"
  ```
