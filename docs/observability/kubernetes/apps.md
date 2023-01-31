@@ -53,7 +53,6 @@ The following dashboard is an example of one of the many pre-configured app dash
 
 ![GKE_Node_Logs.png](/img/kubernetes/GKE_Node_Logs.png)
 
-<!--
 
 ## Global Intelligence for Kubernetes DevOps App
 
@@ -232,5 +231,3 @@ Stack linking for the **Optimization 1- Summary for Kubernetes Deployment and Op
 Sumo Logic combines metrics, logs, and events to a create real-time unified view of the performance, uptime, and security of your Kubernetes environment, The Sumo Logic Kubernetes Solution leverages the standards endorsed by the Cloud Native Computing Foundation (CNCF), and utilizes the extensive ecosystem of existing integrations for monitoring and troubleshooting Kubernetes platforms. 
 
 Sumo Logic utilizes consistent tagging across logs, metrics, events, and security data, resulting in the centralization of enrichment data throughout your Kubernetes environment. Consistent tagging enables administrators to correlate data for metrics, logs, and events for their applications. They can then view the results in Sumo Logic App pre-defined dashboards for analysis and troubleshooting.
-
--->
