@@ -169,9 +169,9 @@ To configure a CloudTrail Source, perform these steps:
 ### Collect Amazon CloudWatch Metrics
 
 * Sumo Logic supports collecting metrics using two source types:
-    * Configure an AWS Kinesis Firehose for Metrics Source (Recommended)
-       or
     * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended)
+       or
+    * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 :::note
 Namespace for **Amazon Lambda** Service is **AWS/Lambda**.
 :::
