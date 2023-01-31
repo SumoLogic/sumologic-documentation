@@ -37,7 +37,7 @@ When creating or updating the configuration of a Streaming Metrics Source, a Hos
 
 ## Limitations
 
-* Fields created as log metadata and from Field Extraction Rules share the same quota of 400 fields. The Fields page shows how many fields your account is using out of the total available at the bottom of the table as Fields Capacity.
+* Fields created as log metadata and from Field Extraction Rules share the same quota of 200 fields. The Fields page shows how many fields your account is using out of the total available at the bottom of the table as Fields Capacity.
 
     ![fields capacity.png](/img/send-data/fields-capacity.png)
 
