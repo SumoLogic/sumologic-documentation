@@ -38,8 +38,6 @@ In addition, the app provides configuration guidance for key AWS services based 
 
 ## Prerequisites
 
-<p><span className="globalIntelligence">Global Intelligence App</span></p>
-
 This feature is available in the following account plans.
 
 | Account Type | Account Level
