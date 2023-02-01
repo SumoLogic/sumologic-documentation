@@ -53,7 +53,7 @@ When you create an Netskope WebTx API Source, you add it to a Hosted Collector. 
 1. On the Collection page, click **Add Source** next to a Hosted** **Collector.
 1. Select **Netskope WebTx API**.
 1. Enter a **Name** to display the Source in the Sumo web application. The description is optional.
-1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) is stored in a searchable field called `_sourceCategory`.
+1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
 2. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse). When configured with the **Forward to SIEM** option, the following metadata fields are set:
 
 <table>
@@ -246,7 +246,7 @@ The following table shows the **config** parameters for a Netskope WebTx API Sou
    </td>
    <td>
    </td>
-   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata</a> field <code>_source</code>.
+   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata</a> field <code>_source</code>.
    </td>
    <td>modifiable
    </td>
@@ -274,7 +274,7 @@ The following table shows the **config** parameters for a Netskope WebTx API Sou
    </td>
    <td>null
    </td>
-   <td>Type a category of the source. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata</a> field <code>_sourceCategory</code>. See <a href="/docs/send-data/best-practices#good-and-bad-source-categories">best practices</a> for details.
+   <td>Type a category of the source. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata</a> field <code>_sourceCategory</code>. See <a href="/docs/send-data/best-practices#good-and-bad-source-categories">best practices</a> for details.
    </td>
    <td>modifiable
    </td>
