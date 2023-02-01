@@ -153,7 +153,7 @@ DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-dat
 	10. **Enable Timestamp Parsing**. Select the check box.
 	11. **Time Zone**. Select Ignore time zone from the log file and instead use, and select UTC.
 	12. **Timestamp Format**. Select Automatically detect the format.
-	13. **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+	13. **Enable Multiline Processing**. Select the check box and select Infer Boundaries.
 	14. Click Save.
 
 
