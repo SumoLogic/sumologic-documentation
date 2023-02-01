@@ -302,24 +302,9 @@ module.exports = {
                 activeBaseRegex: '^/docs/alerts/.*',
               },
               {
-                label: 'Cloud SIEM',
-                to: '/docs/cse',
-                activeBaseRegex: '^/docs/(cse)/.*',
-              },
-              {
-                label: 'Cloud SOAR',
-                to: '/docs/cloud-soar',
-                activeBaseRegex: '^/docs/cloud-soar/.*',
-              },
-              {
-                label: 'Dashboards',
-                to: '/docs/dashboards-new',
-                activeBaseRegex: '^/docs/dashboards-new/.*',
-              },
-              {
-                label: 'Manage Sumo Acct',
-                to: '/docs/manage',
-                activeBaseRegex: '^/docs/manage/.*',
+                label: 'Traces, APM, RUM',
+                to: '/docs/apm',
+                activeBaseRegex: '^/docs/apm/.*',
               },
               {
                 label: 'Metrics',
@@ -332,9 +317,24 @@ module.exports = {
                 activeBaseRegex: '^/docs/observability/about',
               },
               {
-                label: 'Traces, APM, RUM',
-                to: '/docs/apm',
-                activeBaseRegex: '^/docs/apm/.*',
+                label: 'Dashboards',
+                to: '/docs/dashboards-new',
+                activeBaseRegex: '^/docs/dashboards-new/.*',
+              },
+              {
+                label: 'Manage Sumo Acct',
+                to: '/docs/manage',
+                activeBaseRegex: '^/docs/manage/.*',
+              },
+              {
+                label: 'Cloud SIEM',
+                to: '/docs/cse',
+                activeBaseRegex: '^/docs/(cse)/.*',
+              },
+              {
+                label: 'Cloud SOAR',
+                to: '/docs/cloud-soar',
+                activeBaseRegex: '^/docs/cloud-soar/.*',
               },
             ]
           },
