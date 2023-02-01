@@ -1584,6 +1584,7 @@
   "/cid/25613": "/docs/cse/ingestion/carbon-black",
   "/cid/25614": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source",
   "/cid/25615": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source",
+  "/cid/15631": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source",
   "/cid/25616": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source",
   "/cid/25617": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source",
   "/cid/25618": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source",
