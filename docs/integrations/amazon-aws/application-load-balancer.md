@@ -136,7 +136,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
     * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
     * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example -1w. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m). If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
 9. For **Source Category**, enter any string to tag the output collected from this Source (category metadata is stored in a searchable field called `_sourceCategory`).
-    * Example sourceCategory: **aws/observability/alb/logs**
+    * Example sourceCategory: `aws/observability/alb/logs`
 10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md). Add the following **Fields** in the source:
     * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried through the “account field”.
     * Add a **region** field and assign it the value of the respective AWS region where the Application Load Balancer exists.
