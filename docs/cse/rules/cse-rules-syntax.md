@@ -553,6 +553,20 @@ Here is an example of nesting the `if` operator.
 
 `| if(severity >= 10, "Critical", if(severity >= 5, "Moderate", "Low"))`
 
+## in
+
+Returns “true” if the value of an expression exists within the specified list of values.
+
+**Syntax**
+
+`expr IN ("value1", [, <value2>, ...])`
+
+**Example**
+
+`srcDevice_ip IN ("1.2.3.4", "2.3.4.5", "3.4.5.6") // true if the value of srcDevice_ip is "1.2.3.4" or any of the other specified values
+http_response_statusCode in (400, 500)   // true if the value of http_response_code equals 400 or 500
+null IN ("value1", "value2", "value3") // false`
+
 ## ipv4ToNumber
 
 Converts an Internet Protocol version 4 (IPv4) IP address from the octet dot-decimal format to a decimal format.
@@ -1161,20 +1175,6 @@ Filters results based on the value of a boolean expression.  
 **Example**
 
 `| where jsonArrayContains(field, “vuln_scanner”)`  
- 
-## in
-
-Returns “true” if the value of an expression exists within the specified list of values.
-
-**Syntax**
-
-`expr IN ("value1", [, <value2>, ...])`
-
-**Example**
-
-`srcDevice_ip IN ("1.2.3.4", "2.3.4.5", "3.4.5.6") // true if the value of srcDevice_ip is "1.2.3.4" or any of the other specified values
-http_response_statusCode in (400, 500)   // true if the value of http_response_code equals 400 or 500
-null IN ("value1", "value2", "value3") // false`
 
 ## CIP literals supported in CSE
 
