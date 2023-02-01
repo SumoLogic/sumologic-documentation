@@ -359,7 +359,7 @@ Use this dashboard to:
 The **AWS Application Load Balancer - Threat Intel** dashboard provides insights into incoming requests from malicious sources determined through [Sumo Logic’s Threat Intel feature](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
 
 Use this dashboard to:
-* Identify known malicious IPs that are access your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward
+* Identify known malicious IPs that access your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward
 * Monitor the malicious confidence level for all incoming malicious IP addresses the threats.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Application_Load_Balancer-Threat_Intel.png')} alt="AWS Application Load Balancer" />
