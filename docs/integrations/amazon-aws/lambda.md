@@ -193,7 +193,7 @@ AWS Lambda provides Provisoned Concurrency for greater control over the start up
 
 To collect these metrics in Sumo Logic, do the following:
 
-1. Complete [Step](#Collect-Logs-for-the-AWS-Lambda-App#collect-amazon-cloudwatch-metrics).
+1. Complete [Step](#collect-amazon-cloudwatch-metrics).
 2. Configure Provisioned Concurrency while creating a Lambda function in the AWS Management console, as shown in the following example:
 
 Once Provisioned Concurrency is enabled and you start collecting CloudWatch metrics, the following new metrics will be available:
@@ -305,7 +305,7 @@ Parse Expression:
 
 ## Installing the AWS Lambda App
 
-Now that you have set up collection for AWS Lambda, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage. To install the app:
+Now that you have set up collection for AWS Lambda, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-aws-lambda-dashboards) that provide visibility into your environment for real-time analysis of overall usage. To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
