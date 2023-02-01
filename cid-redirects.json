@@ -249,6 +249,11 @@
   "/05Search/Anomaly-Detection/Anomalies-Page/Drill-Down-into-Events": "/docs/dashboards-new/drill-down-to-discover-root-causes",
   "/05Search/Behavior_Insights": "/docs/search/behavior-insights",
   "/05Search/Behavior_Insights/LogExplain": "/docs/search/behavior-insights/logexplain",
+  "/03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration": "/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration",
+  "/05Search": "/docs/search",
+  "/05Search/Anomaly-Detection/Anomalies-Page/Drill-Down-into-Events": "/docs/dashboards-new/drill-down-to-discover-root-causes",
+  "/05Search/Behavior_Insights": "/docs/search/behavior-insights",
+  "/05Search/Behavior_Insights/LogExplain": "/docs/search/behavior-insights/logexplain",
   "/05Search/Behavior_Insights/LogReduce_Keys": "/docs/search/behavior-insights/logreduce-keys",
   "/05Search/Behavior_Insights/LogReduce_Values": "/docs/search/behavior-insights/logreduce-values",
   "/05Search/Get-Started-with-Search": "/docs/search/get-started-with-search",
@@ -2890,5 +2895,4 @@
   "/docs/global-intelligence/nginx/install-for-nginx-view-dashboards": "/docs/integrations/global-intelligence/nginx",
   "/docs/global-intelligence/nginx/collect-logs-nginx": "/docs/integrations/global-intelligence/nginx",
   "/release-notes-service/2022/11/21/alerts/": "/release-notes-service/2022/12/31/#november-21-2022-alerts"
-  
 }
