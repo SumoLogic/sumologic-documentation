@@ -74,7 +74,7 @@ The input for the optimization is time series data for each container’s cpu, m
 
 * **Cost-optimized**: lowest slack (or cost) accompanied with relatively higher risk (measured by percent at-risk minutes for the deployment-container)
 * **Reliability-optimized**. Highest slack (or cost) accompanied with relatively lower risk (measured by percent at-risk minutes for the deployment-container)
-* **Balanced**: strikes the balance between cost and risk; cost is relatively higher than the cost-optimized scenario while risks are relatively lower.
+* **Balanced**. Strikes the balance between cost and risk; cost is relatively higher than the cost-optimized scenario while risks are relatively lower.
 
 ![costs](/img/kubernetes/kubernetes-cost.png)
 
