@@ -15,13 +15,13 @@ In this section, we'll introduce the following concepts:
 <div className="box box1 card">
   <div className="container">
   <h4><a href="/docs/search/get-started-with-search/suggested-searches/">Apache Access Parser</a></h4>
-  <p>The following searches were built for use with the Apache Errors Parser.</p>
+  <p>The following searches were built for use with the Apache Access Parser.</p>
   </div>
 </div>
 <div className="box box2 card">
   <div className="container">
   <h4><a href="/docs/search/get-started-with-search/suggested-searches/">Apache Errors Parser</a></h4>
-  <p>The following searches were built for use with the Apache Access Parser.</p>
+  <p>The following searches were built for use with the Apache Errors Parser.</p>
   </div>
 </div>
 <div className="box box3 card">
