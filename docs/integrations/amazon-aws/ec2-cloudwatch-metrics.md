@@ -138,7 +138,7 @@ To configure a CloudTrail Source, perform these steps:
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic.
 	1. **Name**. Enter a name to display the new Source.
-	2. **Description**. Enter an optional description.
+	2. **Description**.  You may skip the description as it's optional.
 	3. **S3 Region**. Select the Amazon Region for your API Gateway S3 bucket.
 	4. **Bucket Name**. Enter the exact name of your API Gateway S3 bucket.
 	5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard `*` in this string.
