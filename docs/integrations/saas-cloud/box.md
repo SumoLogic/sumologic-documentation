@@ -258,7 +258,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
    </td>
    <td>Yes
    </td>
-   <td>Contains the<a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Duo-Source#configParameters"> configuration parameters</a> for the Source.
+   <td>Contains the<a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source#configParameters"> configuration parameters</a> for the Source.
    </td>
    <td>
    </td>

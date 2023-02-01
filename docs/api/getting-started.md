@@ -40,7 +40,7 @@ Sumo Logic APIs follow Representational State Transfer (REST) patterns and are o
   <tr>
    <td>Search Job
    </td>
-   <td><a href="https://api.de.sumologic.com/docs/">/docs/api/Search-Job-API</a>
+   <td><a href="https://api.de.sumologic.com/docs/">/docs/api/search-job-API</a>
    </td>
   </tr>
 </table>

@@ -18,7 +18,7 @@ This procedure explains how to collect metrics from a host machine and ingest th
 
 ### Configure a Collector
 
-Configure an [Installed Collector](/docs/send-data/Installed-Collectors). Collectors can be installed on Linux, Windows, or Mac OS hosts.
+Configure an [Installed Collector](/docs/send-data/installed-collectors). Collectors can be installed on Linux, Windows, or Mac OS hosts.
 
 
 ### Configure a Source
@@ -42,7 +42,7 @@ Available metrics include:
 * Network
 * Disk
 
-The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/Host-Metrics-Source#Collected_Metrics).
+The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-source#Collected_Metrics).
 
 Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar).
 
