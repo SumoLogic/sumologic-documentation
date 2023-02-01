@@ -72,7 +72,7 @@ The slack is the difference between usage and requests measures cost for both cp
 
 The input for the optimization is time series data for each container’s cpu, memory usage, and requests over the past eight days. A given container can behave differently depending on the pod in which it is deployed. For example, an nginx container in Pod A may behave differently from the same container in Pod B. As a result, GI Kubernetes DevOps detects unique deployment-container combinations called "container groups", analyzes cpu and memory time series data for them and recommends optimal requests and limits based on the best combination of slack (or cost) and risk. The recommendations cover three scenarios; pick the one that best serves the needs of your application:
 
-* **Cost-optimized**.  Lowest slack (or cost) accompanied with relatively higher risk (measured by percent at-risk minutes for the deployment-container)
+* **Cost-optimized**. Lowest slack (or cost) accompanied with relatively higher risk (measured by percent at-risk minutes for the deployment-container)
 * **Reliability-optimized**. Highest slack (or cost) accompanied with relatively lower risk (measured by percent at-risk minutes for the deployment-container)
 * **Balanced**. Strikes the balance between cost and risk; cost is relatively higher than the cost-optimized scenario while risks are relatively lower.
 
