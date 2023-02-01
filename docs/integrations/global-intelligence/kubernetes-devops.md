@@ -52,7 +52,7 @@ You can use filters to drill down and examine the data on a granular level. 
 
 ![img](/img/kubernetes/kubernetes-dashboard-filter.png)
 
-Select a **cluster**, **namespace**, and **deployment**. The **history_percent** represents the percent of 15m epocks over the prior 8 days over which Kubernetes metrics data was available for analysis for a given deployment-container combination. Percentages less than 100% represent deployment-container combinations that were new, transient or otherwise inactive for some portion of the prior 8 days.
+Select a **cluster**, **namespace**, and **deployment**. The **history_percent** represents the percent of 15m epochs over the prior 8 days over which Kubernetes metrics data was available for analysis for a given deployment-container combination. Percentages less than 100% represent deployment-container combinations that were new, transient or otherwise inactive for some portion of the prior 8 days.
 
 :::important
 The dashboard time range is used to fetch deployment-container combinations that have been active with Time Series data in the time range. Increasing the time range increases the number of such deployment-container combinations. To focus the optimization on the most active containers, start with a time range of 15m. For additional containers, gradually expand the time range.
