@@ -69,14 +69,17 @@ account={{account}} region={{region}} Namespace={{namespace}} loadbalancer={{loa
 
 ### Collecting Metrics
 
-* Sumo Logic supports collecting metrics using two source types
-	* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended) 
-		Or
-	* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+Sumo Logic supports collecting metrics using two source types
+
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended) 
+	Or
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+
 :::note
 Namespace for AWS Application Load Balancer Service is AWS/ApplicationELB
 :::
-	* **Metadata**. Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried through the “account field”.
+
+* **Metadata**. Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried through the “account field”.
 
 
 ### Collecting Access Logs
