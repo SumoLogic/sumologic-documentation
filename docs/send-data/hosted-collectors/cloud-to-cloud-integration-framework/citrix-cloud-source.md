@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Citrix Cloud Source provides a secure endpoint to receive System Log data from the [Citrix Cloud System Log API](https://developer.cloud.com/citrix-cloud/citrix-cloud---systemlog/apis/Records/GetRecords). It is a workspace management platform for IT administrators to design, deliver and manage virtual desktops and applications and other services, such as file sharing, on any device.
 
-
 ## Prerequisites
 
 To collect System logs from the Citrix Cloud platform, you must have an authorized Citrix Cloud account. Citrix Cloud APIs use an OAuth 2.0 authorization token to make authorized API calls. Get access to Citrix Cloud APIs [here](https://developer.cloud.com/citrix-cloud/citrix-cloud-api-overview/docs/get-started-with-citrix-cloud-apis). The steps must be taken exactly as directed.
@@ -17,7 +16,6 @@ To collect System logs from the Citrix Cloud platform, you must have an authoriz
 ## Data sources
 
 The Citrix Cloud API integration retrieves system logs every 5 minutes.
-
 
 ## Configuration
 
@@ -60,7 +58,6 @@ Remember, you will need to enter this key while creating the [Citric Cloud-to-Cl
 
 The Citrix Cloud API sends a maximum of 200 system log records in one page. For additional records, integration paginates the output using the continuation token received in the API response.
 
-
 ## States
 
 A Citrix Cloud Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing Health Events.
@@ -98,7 +95,6 @@ To configure the Citrix Cloud API:
 8. In **Client Secret**, authenticate your account by entering your Secret API key. Enter the **Secret** key you have generated and secured from [API Client](#api-client) section in step 5.
 9. When you are finished configuring the Source, click **Save**.
 
-
 ### Error types
 
 When Sumo Logic detects an issue, it is tracked by Health Events. The following table shows three possible error types. It tells the reason for the error, if the source attempts to retry, and the name of the event log in the Health Event Index.
@@ -109,7 +105,6 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 | ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which it quits.                               | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which it quits.                               | FirstPartyGenericError |
 
-
 ### JSON configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
@@ -119,7 +114,6 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. | na |
 | `schemaRef` | JSON Object  | Yes | Use `{"type":"Citrix Cloud"}` for Citrix Cloud Source. | not modifiable |
 | `sourceType` | String | Yes | Use `Universal` for Citrix Cloud Source. | not modifiable |
-
 
 ### Config Parameters
 
