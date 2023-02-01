@@ -2888,5 +2888,7 @@
   "/docs/global-intelligence/apache-tomcat-app/collect-logs-tomcat-app": "/docs/integrations/global-intelligence/apache-tomcat",
   "/docs/global-intelligence/nginx": "/docs/integrations/global-intelligence/nginx",
   "/docs/global-intelligence/nginx/install-for-nginx-view-dashboards": "/docs/integrations/global-intelligence/nginx",
-  "/docs/global-intelligence/nginx/collect-logs-nginx": "/docs/integrations/global-intelligence/nginx"
+  "/docs/global-intelligence/nginx/collect-logs-nginx": "/docs/integrations/global-intelligence/nginx",
+  "/release-notes-service/2022/11/21/alerts/": "/release-notes-service/2022/12/31/#november-21-2022-alerts"
+  
 }
