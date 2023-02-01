@@ -82,7 +82,7 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) or [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended).
 3. Namespaces. Select **aws/sns**.
-4. **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+4. **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. The **account** field allows you to query metrics.
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Metadata%2Baccount.png')} alt="Metadata" />
 3. Click **Save**.
 
