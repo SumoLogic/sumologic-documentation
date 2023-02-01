@@ -112,7 +112,7 @@ To convert a string to all lowercase or all uppercase letters, you can use the 
 
 ## Normalization of Phrase Queries
 
-Sumo Logic normalizes the way it matches raw messages to log query source expressions in the Infrequent and Frequent data tiers. This means that consecutive whitespace characters within quoted phrases are replaced with a single space character. This ensures consistency in query results when searching data in the continuous/frequent/infrequent tiers.
+Sumo Logic normalizes the way it matches raw messages to log query source expressions, regardless of the tier in which the data is stored. One of the effects/use-cases of normalization is the replacement of consecutive whitespace characters within quoted phrases with a single space character. This ensures that query results are consistent when searching data in the continuous/frequent/infrequent tiers.
 
 Let’s understand the following terms:
 * **Payload**. Payload is the data that is stored as part of the raw (message) field. The `raw field` is where the raw ingested logs are stored.
