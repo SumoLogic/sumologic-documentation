@@ -1886,6 +1886,7 @@ module.exports = {
           'integrations/saas-cloud/acquia',
           'integrations/saas-cloud/akamai-cloud-monitor',
           'integrations/saas-cloud/box',
+          'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/cloudflare',
           'integrations/saas-cloud/fastly',
           'integrations/saas-cloud/gmail-tracelogs',
