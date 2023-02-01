@@ -8,8 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 When creating an SLO, you'll need to define the following:
 
-* SLI metric you are tracking and target configuration using ratio- or threshold-based definitions
-* SLO defining the target and duration to monitor (for example the uptime for the target)
+* SLI (service level indicator) metric you are tracking and target configuration using ratio- or threshold-based definitions
+* SLO (service level objective) defining the target and duration to monitor (for example the uptime for the target)
 * Basic details for SLO name and description
 
 You have multiple configurations for creating SLOs:
@@ -159,6 +159,10 @@ To edit SLO parameters from a Monitor:
 :::important
 Any Monitor update that changes the Monitor definition will lead to a change in the version of related SLOs. This means that the SLO history or SLI will get reset for the SLO. Example include trigger condition changes and evaluation delay changes. Changes unrelated to the definition like **Name**, **Description** will not affect the related SLOs.
 :::
+
+### SLI calculation for Monitor-based SLOs
+
+SLIs for Monitor-based SLOs are calculated at a granularity of 1 minute. One minute is treated as unsuccessful if the Monitor was in triggered state at any point of time within that minute.
 
 ## Create an SLO Monitor
 
