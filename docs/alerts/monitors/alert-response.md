@@ -203,6 +203,10 @@ Alert notification preferences give you granular control over specific monitor a
 	 * **Enable "My subscriptions" as default filter**: your Alert list, by default, will only display alerts you're subscribed to<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" />
 3. Click **Save** when you're done.
 
+## Create a Monitor-based SLO
+
+See [Create an SLO](/docs/observability/reliability-management-slo/create-slo) to learn how.
+
 ## Limitations
 
 * The [Alert list](#alert-list) page displays up to 1,000 alerts.
