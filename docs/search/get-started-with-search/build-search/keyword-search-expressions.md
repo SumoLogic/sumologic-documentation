@@ -140,7 +140,7 @@ It is '\u001F', U+001F UNIT SEPARATOR
 
 ### Types of Whitespace Characters
 
-* **Multiple whitespace characters**. This character determines the multiple spaces present in the payload or in the source expression.
+* **Multiple space whitespace character**. This character determines the multiple spaces present in the payload or in the source expression.
 
  For example, in the following query, there are multiple space characters present in `"VM Periodic" and "Task Thread"`, but normalization returns the same result as a single space whitespace character.
  ```
