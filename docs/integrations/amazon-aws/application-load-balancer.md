@@ -138,7 +138,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 9. For **Source Category**, enter any string to tag the output collected from this Source (category metadata is stored in a searchable field called `_sourceCategory`).
     * Example sourceCategory: `aws/observability/alb/logs`
 10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md). Add the following **Fields** in the source:
-    * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried through the “account field”.
+    * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried using the **account** field”.
     * Add a **region** field and assign it the value of the respective AWS region where the Application Load Balancer exists.
     * Add an **accountId** field and assign it the value of the respective AWS account id which is being used.
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
