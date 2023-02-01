@@ -1571,11 +1571,11 @@ module.exports = {
           items: [
             'observability/kubernetes/about',
             'observability/kubernetes/quickstart',
-            'observability/kubernetes/monitoring',
-            'observability/kubernetes/troubleshoot-with-explore',
             'observability/kubernetes/collection-setup',
             'observability/kubernetes/apps',
             'observability/kubernetes/alerts',
+            'observability/kubernetes/monitoring',
+            'observability/kubernetes/troubleshoot-with-explore',
           ],
         },
         'observability/application-components',
@@ -1840,6 +1840,7 @@ module.exports = {
         items: [
           'integrations/global-intelligence/apache',
           'integrations/global-intelligence/apache-tomcat',
+          'integrations/global-intelligence/kubernetes-devops',
           'integrations/global-intelligence/nginx',
           'cse/records-signals-entities-insights/global-intelligence-security-insights',
           'integrations/amazon-aws/global-intelligence-cloudtrail-devops',
