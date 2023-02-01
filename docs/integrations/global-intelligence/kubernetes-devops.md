@@ -81,7 +81,7 @@ The input for the optimization is time series data for each container’s cpu, m
 Time series data for usage and requests is summarized for each deployment-container combination to compute slack as follows:
 
 * Time series are bucketed into 15m epochs and summarized using 15m averages.
-* Usage is represented by the p95 value over the calendar day over all deployment-container combinations. Let us call this `usage_15m_p95_1d(deployment_container)`.
+* Usage is represented by the p95 value over the calendar day over all deployment-container combinations. Let's call this `usage_15m_p95_1d(deployment_container)`.
 * Request is represented by the average over the calendar day of 15m epochs for each deployment-container combination. Let us call this `request_15m_avg_1d(deployment_container)`.
 * Next, slack for a calendar day in any 15m epoch for any deployment-container combination is calculated as `slack_15m_1d(deployment_container) =  request_15m_avg_1d(deployment_container) -  usage_15m_p95_1d(deployment_container)`
 * Then, we calculate `slack_8d(deployment_container)` as average over  `slack_15m_1d(deployment_container)`. `slack_8d(deployment_container)` is an estimate of the slack in any 15m interval for a given deployment-container combination based on 8d data.
