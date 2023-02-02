@@ -4,6 +4,7 @@ title: Google Workspace AlertCenter
 sidebar_label: Google Workspace AlertCenter
 description: Configure Google Workspace AlertCenter Cloud-to-Cloud connector.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <head>
@@ -79,6 +80,10 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
 
 ### JSON configuration
 

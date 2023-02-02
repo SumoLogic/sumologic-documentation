@@ -34,6 +34,7 @@ module.exports = {
         'get-started/quickstart',
         'get-started/help',
         'get-started/faq',
+        'get-started/certification-faq',
       ],
     },
     {

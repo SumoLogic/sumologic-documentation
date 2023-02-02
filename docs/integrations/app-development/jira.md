@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Jira provides insight into Jira usage, request activity, issues, security, sprint events, and user events.   
 
-The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/Jira-Cloud).
+The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/jira-cloud).
 
 
 ## Log Types
@@ -381,14 +381,14 @@ _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
 
 This section has instructions for collecting logs from Jira for the Sumo App for Jira.
 
-The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/Jira-Cloud).
+The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/jira-cloud).
 
 You will configure an installed collector on your Jira host with three local file sources, for collecting Jira access, security, and catalina logs. You also configure a hosted collector with an HTTP source for receiving webhook events from Jira.
 
 
 ### Set up local file sources on an installed collector
 
-1. Install a collector on the JIRA host. You can find the instructions for your operating system on [Installed Collectors](/docs/send-data/Installed-Collectors).
+1. Install a collector on the JIRA host. You can find the instructions for your operating system on [Installed Collectors](/docs/send-data/installed-collectors).
 2. Add a local file source to the collector for Jira access logs. Follow the steps on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), with these additional instructions:
     * **Filepath**. On Linux, access logs are typically found in `/var/log/apache2/*.log`.
     * **Source Category**. Set to:` Atlassian/Jira/Server/Access`
@@ -438,7 +438,7 @@ When you configure the webhook, enter the URL for the HTTP source you created in
 
 Now that you have set up collection for Jira, install the Jira app to use the pre-configured dashboards for insights into your data.
 
-The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/Jira-Cloud).
+The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/jira-cloud).
 
 To install the app, do the following:
 

@@ -17,7 +17,7 @@ The PCI Compliance for Linux App works with your existing Linux logs to identify
 
 To collect Linux logs, you'll need:
 
-* An [Installed Collector](/docs/send-data/Installed-Collectors). Choose the one right for your host environment.
+* An [Installed Collector](/docs/send-data/installed-collectors). Choose the one right for your host environment.
 * A Linux [Source](/docs/send-data/installed-collectors/sources), depending on your environment.
     * [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source)
     * [Remote File Source](/docs/send-data/installed-collectors/sources/Remote-File-Source)
