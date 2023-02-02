@@ -237,7 +237,7 @@ Formerly Monitors. Real-time Panels provide a graphical representation of your o
 
 ## R
 
-**[Receipt Time](/docs/search/Get-Started-with-Search/build-search/Use-Receipt-Time)**. You can display search results in the order that the Collector received the messages in milliseconds.
+**[Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time)**. You can display search results in the order that the Collector received the messages in milliseconds.
 
 **[RBAC](/docs/manage/users-roles)**. Sumo Logic supports Role-Based Access Control (RBAC) to allow Administrators to customize system access. With RBAC, Administrators create roles for groups of users who perform various job functions. Users are not assigned permissions directly, but inherit permissions through roles (or even through a single role). Role assignments can grant users permissions to access some data sets, or can restrict users from accessing types of data.
 

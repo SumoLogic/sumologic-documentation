@@ -516,7 +516,7 @@ Sumo Logic endpoints like `api.sumologic.com` are different in deployments outsi
    </td>
    <td>No
    </td>
-   <td>Define as <code>true</code> to run the search using<a href="/docs/search/Get-Started-with-Search/build-search/Use-Receipt-Time"> receipt time</a>. By default, searches do not run by receipt time.
+   <td>Define as <code>true</code> to run the search using<a href="/docs/search/get-started-with-search/build-search/use-receipt-time"> receipt time</a>. By default, searches do not run by receipt time.
    </td>
   </tr>
   <tr>
