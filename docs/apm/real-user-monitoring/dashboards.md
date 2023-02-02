@@ -60,7 +60,7 @@ You can select the timing metric type in the **statistic** dropdown on the dashb
 
 You can also click on any data-point on the charts to open a details panel and view the **Infrastructure** tab to drill down to traces representing user transactions from the selected time point.
 
-Overview dashboards on all Explore levels have a panel showing geographical user activity for the selected entity. Geographic dashboards do not measure performance.
+Overview dashboards on all Explore levels have a panel showing geographical user activity for the selected entity. Geographic dashboards  measure user activity as dot size and performance as a color.
 
 ![RUM Overview](/img/rum/RUM-Overview.png)
 
