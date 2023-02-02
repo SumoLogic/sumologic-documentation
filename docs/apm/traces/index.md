@@ -27,10 +27,10 @@ Once you've set up collection, you can begin to [analyze your traces in Sumo Log
 
 ### Step 2: Instrument Your Application with OpenTelemetry
 
-* [.NET](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net/index.md)
-* [Go](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/go/index.md)
-* [JavaScript](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/javascript/index.md)
-* [Java](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java/index.md)
+* [.NET](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net)
+* [Go](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/go)
+* [JavaScript](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/javascript)
+* [Java](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java)
 * [Python](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python)
 * [Ruby](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby.md)
 * [Ruby on Rails](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby-on-rails.md)
@@ -47,5 +47,5 @@ Once you've set up collection, you can begin to [analyze your traces in Sumo Log
 
 ### Optional: Advanced Configuration
 
-* [Specify which data to send to Sumo Logic](/docs/apm/traces/Advanced-Configuration/Filter-Shape-Tracing-Data)
-* [Working with spans attributes](/docs/apm/traces/Advanced-Configuration/Working-with-Span-attributes)
+* [Specify which data to send to Sumo Logic](/docs/apm/traces/advanced-configuration/filter-shape-tracing-data)
+* [Working with spans attributes](/docs/apm/traces/advanced-configuration/working-with-span-attributes)
