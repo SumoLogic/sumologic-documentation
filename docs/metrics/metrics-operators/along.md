@@ -16,11 +16,11 @@ The `along metrics` operator is useful when you join queries – it allows you t
 `<expression> [along <field>[, <field>, …]]`
 
 ## Example
-Queries #A and #B return the `CPU_User` and `CPU_Sys` metrics for time series whose `_sourceHost` dimension starts with the string *splitter-*. Query #C performs a summation for the pairs of time series from #A and #B whose `_sourceHost`  value matches.
+Queries #A and #B return the `Net_InBytes` and `Net_OutBytes` metrics with assigned `account` and averaged over `account`. Query #C calculates difference for the pairs of time series from #A and #B whose `account`  value matches.
 
 ```
-#A: metric=CPU_User _sourceHost=cplitter-*
-#B: metric=CPU_Sys _sourceHost=cplitter-*
-#C: #A + #B along _sourceHost
+#A: metric=Net_InBytes account=* | avg by account
+#B: metric=Net_OutBytes account=* | avg by account
+#C: #B - #A along account
 ```
 <img src={useBaseUrl('img/metrics/along-example.png')} alt="along-example.png"/>
