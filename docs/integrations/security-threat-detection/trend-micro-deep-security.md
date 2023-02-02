@@ -101,7 +101,7 @@ This section has instructions for collecting logs for the Trend Micro Deep Secur
 
 #### Step 1: Create a Cloud Syslog source on a hosted collector
 
-1. Select an existing [hosted collector](/docs/send-data/Hosted-Collectors), or create a new one.
+1. Select an existing [hosted collector](/docs/send-data/hosted-collectors), or create a new one.
 2. Add a [Cloud Syslog source](/docs/send-data/hosted-collectors/cloud-syslog-source) to the hosted collector.
 
     1. Give the source a name

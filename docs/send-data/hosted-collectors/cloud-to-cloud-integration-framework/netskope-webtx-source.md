@@ -45,7 +45,7 @@ Netskope Web Transactions integration needs to be configured using Netskope Stre
 
 ### Create an Netskope WebTx API Source
 
-When you create an Netskope WebTx API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/Hosted-Collectors/Configure-Hosted-Collector).
+When you create an Netskope WebTx API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 **To configure an Netskope WebTx API Source:**
 

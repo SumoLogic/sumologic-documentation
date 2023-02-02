@@ -131,7 +131,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Host Metrics](/docs/integrations/Hosts-Operating-Systems/Host-Metrics)**. The Sumo Logic app for Host Metrics allows you to collect local host metrics and display them using predefined search queries and dashboards. The app provides dashboards to display analysis of local host metrics for the CPU, disk, memory, network, and TCP.
 
-**[Hosted Collectors](/docs/send-data/Hosted-Collectors)**. Hosted Collectors don't require installation or registration, nor do Hosted Collectors have physical requirements, since they're hosted by Sumo in AWS.
+**[Hosted Collectors](/docs/send-data/hosted-collectors)**. Hosted Collectors don't require installation or registration, nor do Hosted Collectors have physical requirements, since they're hosted by Sumo in AWS.
 
 
 ## I

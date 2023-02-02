@@ -98,7 +98,7 @@ This section provides instructions for setting up event collection from Salesfor
 In this section, we will configure a collection of EventLogFiles and audit logs from Salesforce and send them to Sumo Logic via one of the methods listed below.
 
 * For non-FedRamp Sumo Logic deployments:
-    * [Create a Salesforce Cloud To Cloud Collector Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Salesforce-Source)
+    * [Create a Salesforce Cloud To Cloud Collector Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source)
 * If you're using the Sumo Logic FedRamp deployment:
     * [Configure a new SumoJanus installation for Salesforce](#configure-a-new-sumojanus-installation-for-salesforce-deprecated)
     * [Upgrade an existing SumoJanus installation for Salesforce](#upgrade-an-existing-sumojanus-installation-for-salesforce-deprecated)
