@@ -191,7 +191,7 @@ Continue with the process of [enabling Provisioned Concurrency configurations](#
 
 AWS Lambda provides Provisoned Concurrency for greater control over the start up time for Lambda functions. When enabled, Provisioned Concurrency keeps functions initialized and hyper-ready to respond in double-digit milliseconds. AWS Lambda provides additional metrics for provisioned concurrency with CloudWatch.
 
-To collect these metrics in Sumo Logic, do the following:
+To collect the metrics in Sumo Logic, follow the steps below:
 
 1. Complete this [Step](#collect-amazon-cloudwatch-metrics).
 2. Configure Provisioned Concurrency while creating a Lambda function in the AWS Management Console, as shown in the following example.
