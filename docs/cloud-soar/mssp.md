@@ -91,7 +91,7 @@ The Custom Fields page allows you to create and manage Custom Fields, and to pus
 
 The Synchronize icon indicates the status of the Custom Field - in terms of propagation. If the icon is highlighted in blue, the field has been synchronized with tenants. You can use the Push Field button to propagate the Custom Field, as necessary.  
 
-The screenshot below shows a list of Custom FIelds for Incidents. This page is very similar to the equivalent page in a standard Cloud SOAR instance, but note the addition of two action icons at the right side of each row. The circular icon is the Syncronize indicator. The arrow is the Push Field option.
+The screenshot below shows a list of Custom FIelds for Incidents. This page is very similar to the equivalent page in a standard Cloud SOAR instance, but note the addition of two action icons at the right side of each row. The circular icon is the Synchronize indicator. The arrow is the Push Field option.
 
 
 
