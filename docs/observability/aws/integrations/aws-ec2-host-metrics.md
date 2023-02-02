@@ -9,7 +9,7 @@ description: The Sumo Logic App for AWS EC2 Host Metrics allows you to collect l
 
 ## Metrics Types 
 
-Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](https://help.sumologic.com/docs/send-data/installed-collectors/sources/Host-Metrics-Source/#collected-metrics).
+Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](https://help.sumologic.com/docs/send-data/installed-collectors/sources/host-metrics-source/#collected-metrics).
 
 * [CPU Metrics](https://help.sumologic.com/docs/integrations/Hosts-Operating-Systems/Host-Metrics/#cpu-metrics)
 * [Memory Metrics](https://help.sumologic.com/docs/integrations/Hosts-Operating-Systems/Host-Metrics/#memory-metrics)

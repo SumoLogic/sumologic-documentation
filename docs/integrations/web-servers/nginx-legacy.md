@@ -72,7 +72,7 @@ Before you can configure Sumo Logic to ingest logs, you must configure the loggi
 
 Use one of the following Sumo Logic Collector options:
 
-1. To collect logs directly from the Nginx machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+1. To collect logs directly from the Nginx machine, configure an [Installed Collector](/docs/send-data/installed-collectors).
 2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 
 

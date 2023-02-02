@@ -63,7 +63,7 @@ To configure a 1Password Source:
 2. On the Collectors page, click **Add Source** next to a Hosted** **Collector.
 3. Select **1Password**.<br/><img src={useBaseUrl('img/send-data/1password-source-icon.png')} alt="1password-source-icon.png" width="150" />
 4. Enter a **Name** for the Source. The **description** is optional.<br/> ![1password-input](/img/send-data/1password-input.png)
-5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) is stored in a searchable field called `_sourceCategory`.
+5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
 6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse). When configured with the **Forward to SIEM** option, the following metadata fields are set:
   | Field Name | API | Value |
   |:---|:---|:---|
@@ -243,7 +243,7 @@ The following table shows the **config** parameters for a 1Password Source.
    </td>
    <td>
    </td>
-   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata field</a> <code>_source</code>.
+   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata field</a> <code>_source</code>.
    </td>
    <td>modifiable
    </td>
@@ -271,7 +271,7 @@ The following table shows the **config** parameters for a 1Password Source.
    </td>
    <td>null
    </td>
-   <td>Type a category of the source. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata field</a> field <code>_sourceCategory</code>. See <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">best practices</a> for details.
+   <td>Type a category of the source. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata field</a> field <code>_sourceCategory</code>. See <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">best practices</a> for details.
    </td>
    <td>modifiable
    </td>
