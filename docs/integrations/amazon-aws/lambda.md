@@ -305,7 +305,7 @@ Parse Expression:
 
 ## Installing the AWS Lambda App
 
-Now that you have set up collection for AWS Lambda, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-aws-lambda-dashboards) that provide visibility into your environment for real-time analysis of overall usage. To install the app:
+Now that you have set up collection for AWS Lambda, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-aws-lambda-dashboards) that provide visibility into your environment for real-time analysis of overall usage. To install the app, follow the steps below:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
