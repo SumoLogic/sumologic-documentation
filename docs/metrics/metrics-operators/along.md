@@ -16,7 +16,7 @@ The `along metrics` operator is useful when you join queries – it allows you t
 `<expression> [along <field>[, <field>, …]]`
 
 ## Example
-Queries #A and #B return the `Net_InBytes` and `Net_OutBytes` metrics with assigned `account` and averaged over `account`. Query #C calculates difference for the pairs of time series from #A and #B whose `account`  value matches.
+Queries #A and #B return the `Net_InBytes` and `Net_OutBytes` metrics with the assigned `account` and averaged over `account`. Query #C calculates the difference of the pairs of time series from #A and #B whose `account` value matches.
 
 ```
 #A: metric=Net_InBytes account=* | avg by account
