@@ -18,7 +18,7 @@ When you set up an HTTP Traces Source, a unique URL is assigned to that Source. 
 
 To configure an HTTP Traces Source:
 
-1. In the Sumo Logic web interface, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic web interface, select **Manage Data > Collection > Collection**.
 1. On the Collection page, click Add Source next to a Hosted Collector.
 1. Select **HTTP Traces**.
 

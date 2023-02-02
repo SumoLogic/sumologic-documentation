@@ -8,51 +8,48 @@ description: Learn how to send build and deploy events to Sumo Logic from Jenkin
 ## Prerequisites
 
 Use the latest [Sumo Logic Jenkins Plugin](https://plugins.jenkins.io/sumologic-publisher/#documentation)
-version of the plugin.You will be using [SumoUpload](https://github.com/SumoLogic/sumologic-jenkins-plugin#sumoupload)
+version of the plugin. You will be using [SumoUpload](https://github.com/SumoLogic/sumologic-jenkins-plugin#sumoupload)
 function to send an event to Sumo Logic from your DevOps pipeline.
 
 As an example: Upload a Key-Value map as JSON to Sumo Logic.
 
+```json
+"script"{
+	"deploy_event ="[
+		"event_name":"STAGE_NAME",
+		"result":"currentBuild.currentResult"
+	]
+}"SumoUpload(keyValueMap":"deploy_event)"
 ```
-script{
-      deploy_event = [
-        event_name: STAGE_NAME,
-        result: currentBuild.currentResult
-        ]
-    }
-    SumoUpload(keyValueMap: deploy_event)
-```
 
-## How to: Add a hook in your DevOps Pipeline to send Deploy and Build Events to Sumo Logic.
+## Add a hook in your DevOps Pipeline to send Deploy and Build Events to Sumo Logic
 
-A Jenkins pipeline needs to be configured/instrumented to send Deploy and Build events from your DevOps pipeline to Sumo Logic. This section explains how you can configure your pipeline to send Deploy and Build Events to Sumo Logic. These Events will be correlated with other Events such as Pull Request Merge to calculate Lead Time.  
+A Jenkins pipeline needs to be configured and instrumented to send Deploy and Build events from your DevOps pipeline to Sumo Logic.
 
-Data Schema of Deploy and Build Events can be described by the following fields :
+This section explains how you can configure your pipeline to send Deploy and Build Events to Sumo Logic. These Events will be correlated with other Events such as Pull Request Merge to calculate Lead Time.  
+
+Data Schema of Deploy and Build Events can be described by the following fields:
 
 | Field | Explanation | Required/Optional |
-|--|--|--|
-| event_type | Enum Values: build, deploy, test, release | Required |
-| trace_id | This is the inner join key between deploy/build event and code merge event, it can be commit id
-This key will be used to join two events:<br/>Code Merge (PR) and Build<br/>Code Merge (PR) and Deploy | Required |
-| link | Used so that we can provide links back into this SaaS tool, It can be PR link, Commit Link, Build/Deploy Result Link | Required |
-| DateTime | Date/Time in epoch milliseconds of an event | Required |
-| environment_name | Can be production; test, pre-prod, etc | Required for Deploy Events |
-| status | Status of Event. Enum Values: Success, Failure, Unstable, Unknown, Other Values | Required |
-commit_id | Required to tie Github data to Jenkin’s data. This is typically set as the merge commit hash or HEAD commit | Required |
-| team | Optional but highly recommended if you want to slice data by this dimension.<br/>Set N/A if not available. | Optional |
-| service | Optional but highly recommended if you want to slice data by this dimension.<br/>Set N/A if not available. | Optional |
-| user | User. Set N/A if not available. | Optional |
-| title | Title. It can be a job name, description of pipeline/stage, env. JOB_NAME<br/>Set N/A if not available. | Optional |
-| message | Any related message. Can be ${env.BUILD_NUMBER}<br/>Set N/A if not available. | Optional |
-| target_branch | Optional but highly recommended if you want to slice data by this dimension
-Set N/A if not available. | Optional |
-| repository_name | Optional but highly recommended if you want to slice data by this dimension
-Set N/A if not available. | Optional |
+|:--|:--|:--|
+| `event_type` | Enum Values: `build`, `deploy`, `test`, `release` | Required |
+| `trace_id` | This is the inner join key between deploy/build event and code merge event. It can be commit id. This key will be used to join two events: "Code Merge (PR) and Build" and "Code Merge (PR) and Deploy" | Required |
+| `link` | Used so that we can provide links back into this SaaS tool. It can be PR link, Commit Link, Build/Deploy Result Link | Required |
+| `DateTime` | Date/Time in epoch milliseconds of an event | Required |
+| `environment_name` | Can be `production`, `test`, `pre-prod`, and so on. | Required for Deploy Events |
+| `status` | Status of Event. Enum Values: Success, Failure, Unstable, Unknown, Other Values | Required |
+commit_id | Required to tie Github data to Jenkins data. This is typically set as the merge commit hash or HEAD commit | Required |
+| `team` | Optional but highly recommended if you want to slice data by this dimension. Set N/A if not available. | Optional |
+| `service` | Optional but highly recommended if you want to slice data by this dimension. Set N/A if not available. | Optional |
+| `user` | User. Set N/A if not available. | Optional |
+| `title` | Title. It can be a job name, description of pipeline/stage, env. JOB_NAME<br/>Set N/A if not available. | Optional |
+| `message` | Any related message. Can be `${env.BUILD_NUMBER}`. Set N/A if not available. | Optional |
+| `target_branch` | Optional but highly recommended if you want to slice data by this dimension. Set `N/A` if not available. | Optional |
+| `repository_name` | Optional but highly recommended if you want to slice data by this dimension. Set `N/A` if not available. | Optional |
 
 ## Method
 
-1. Define a wrapper function that calls  **SumoUpload** () in your common library.
-
+1. Define a wrapper function that calls `SumoUpload()` in your common library.
   ```json
   def sendDeliveryEvent(Map args) {
     def deliveryEvent = [
@@ -75,12 +72,8 @@ Set N/A if not available. | Optional |
     SumoUpload(keyValueMap: deliveryEvent)
   }
   ```
-
 1. Next, call the wrapper function from your pipeline in [Post Always script](https://www.jenkins.io/doc/book/pipeline/syntax/#post) after Deploy and Build Stages.
-
-  **For Deploy Event:**
-
-  ```json
+  ```json title="For Deploy Event"
   post{
     changed{
       script{
@@ -107,9 +100,7 @@ Set N/A if not available. | Optional |
   }
   ```
 
-  **For Build Event:**
-
-  ```json
+  ```json title="For Build Event"
   post{
     changed{
       script{
@@ -139,45 +130,45 @@ Set N/A if not available. | Optional |
 
 Once you configure your DevOps pipeline to send Build and Deploy Events to Sumo Logic. The payload of events will look something like this:
 
-**build Event:**
+### build Event
 
 ```json
 {
-"event_type":"build",
-"trace_id":"11ab83527ec2f318f8d229f1934f2a1913f6526e",
-"service":"core-platform",
-"team":"db-dev",
-"user":"alan",
-"link":"https://github.com/kubernetes/kubernetes/pull/94109",
-"title":"build # 6881",
-"timeStamp":1599863647237,
-"message":"Building artifacts... it may take few minutes. build # 6881",
-"env_name":"n/a",
-"result":"Failed",
-"target_branch":"test-master",
-"repository_name":"bluechip-backend",
-"commit_id":"11ab83527ec2f318f8d229f1934f2a1913f6526e"
+	"event_type":"build",
+	"trace_id":"11ab83527ec2f318f8d229f1934f2a1913f6526e",
+	"service":"core-platform",
+	"team":"db-dev",
+	"user":"alan",
+	"link":"https://github.com/kubernetes/kubernetes/pull/94109",
+	"title":"build # 6881",
+	"timeStamp":1599863647237,
+	"message":"Building artifacts... it may take few minutes. build # 6881",
+	"env_name":"n/a",
+	"result":"Failed",
+	"target_branch":"test-master",
+	"repository_name":"bluechip-backend",
+	"commit_id":"11ab83527ec2f318f8d229f1934f2a1913f6526e"
 }
 ```
 
-**deploy Event:**
+### deploy Event
 
 ```json
 {
-"event_type":"Deploy",
-"trace_id":"2e1306628215f083e4613a7f66b938d830296f56",
-"service":"core-platform",
-"team":"core-platform",
-"user":"alex",
-"link":"https://github.com/SumoLogic/sumolog...ction/pull/836",
-"title":"deployment # 6899",
-"timeStamp":1599863623591,
-"message":"deploying to...GCP deployment # 6899",
-"env_name":"test",
-"result":"Failed",
-"target_branch":"pre-prod-master",
-"repository_name":"bluechip-backend",
-"commit_id":"2e1306628215f083e4613a7f66b938d830296f56"
+	"event_type":"Deploy",
+	"trace_id":"2e1306628215f083e4613a7f66b938d830296f56",
+	"service":"core-platform",
+	"team":"core-platform",
+	"user":"alex",
+	"link":"https://github.com/SumoLogic/sumolog...ction/pull/836",
+	"title":"deployment # 6899",
+	"timeStamp":1599863623591,
+	"message":"deploying to...GCP deployment # 6899",
+	"env_name":"test",
+	"result":"Failed",
+	"target_branch":"pre-prod-master",
+	"repository_name":"bluechip-backend",
+	"commit_id":"2e1306628215f083e4613a7f66b938d830296f56"
 }
 ```
 
@@ -185,9 +176,7 @@ Once you configure your DevOps pipeline to send Build and Deploy Events to Sumo 
 
 This is a very basic Jenkins pipeline code which sends a deploy event to Sumo Logic using Sumo Logic Jenkins Plugin.
 
-In this example, I am creating a map deploy_event with a key-value pair of all fields (as explained in the above table), and using SumoUpload() to send that map to Sumo Logic as a json payload.
-
-**Snippet Code:**
+In this example, we'll create a map `deploy_event` with a key-value pair of all fields (as explained in the above table), and using `SumoUpload()` to send that map to Sumo Logic as a json payload.
 
 ```
 pipeline {

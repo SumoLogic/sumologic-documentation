@@ -175,7 +175,7 @@ The following table shows the **config** parameters for an AWS Cost Explorer Sou
    </td>
    <td>
    </td>
-   <td>Type the desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata</a> field _source.</td>
+   <td>Type the desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata</a> field _source.</td>
    <td>modifiable
    </td>
   </tr>
@@ -202,7 +202,7 @@ The following table shows the **config** parameters for an AWS Cost Explorer Sou
    </td>
    <td>Null
    </td>
-   <td>Type a category of the source. This value is assigned to the <a href="/docs/Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata</a> field <code>_sourceCategory</code>. See <a href="/docs/send-data/best-practices">best practices</a> for details.
+   <td>Type a category of the source. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata</a> field <code>_sourceCategory</code>. See <a href="/docs/send-data/best-practices">best practices</a> for details.
    </td>
    <td>modifiable
    </td>

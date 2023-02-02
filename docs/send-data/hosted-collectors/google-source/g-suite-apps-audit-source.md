@@ -17,6 +17,13 @@ A G Suite Apps Audit Source uses the [Google Apps Reports API](https://develop
  * Google+
  * Mobile
  * Rules
+ * Keep 
+ * Meet 
+ * Enterprise Group 
+ * Data Studio 
+ * SAML 
+ * Chat
+
 
 Only one Source should be configured per app. In other words, you’d set up one Source to collect Calendar audit logs, another to collect Token audit logs, and so on.
 
@@ -36,7 +43,7 @@ Once you've set up a Hosted Collector and have your credentials ready, you're a
 
 To configure a G Suite Apps Audit Source:
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic select **Manage Data \> Collection > Collection**. 
 1. In the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **G Suite Apps Audit**.
 1. For **Name**, type the name of the Source. Enter an optional Description.

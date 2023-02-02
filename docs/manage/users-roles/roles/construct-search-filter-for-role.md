@@ -225,7 +225,7 @@ When multiple roles filters are applied to a query, the least restrictive filter
 Assume the following role filters.
 
 | Role | Filter |
-|----------|--------------------------------------------|
+|:----------|:--------------------------------------------|
 | Role A   | `_source="GCP Audit" AND _collector="GCP"` |
 | Role B   | `_sourceCategory="Vx*"`                    |
 
@@ -247,7 +247,7 @@ The combined filters enable access to log data whose `_source` tag is “GCP Aud
 Assume the following role filters.
 
 | Role | Filter |
-|----------|-------------------|
+|:----------|:-------------------|
 | Role A   | `_collector=fee*` |
 | Role B   | `!_collector=fi*` |
 
@@ -268,7 +268,7 @@ When a user with Roles A and B runs a query, Sumo combines the two filters with 
 Assume the following role filters.
 
 | Role | Filter |
-|----------|----------------------------------|
+|:----------|:----------------------------------|
 | Role A   | `_sourceCategory=analytics-lab*` |
 | Role B   | `_sourceCategory=analytics*`     |
 
@@ -290,7 +290,7 @@ When a user with Roles A and B runs a query, Sumo combines the two filters with 
 Assume the following role filters.
 
 | Role | Filter |
-|----------|------------------------------|
+|:----------|:------------------------------|
 | Role A   | `_collector=prod*`           |
 | Role B   | `!_sourceCategory=*shoguns*` |
 
@@ -311,7 +311,7 @@ Role B is the least restrictive. Users with the combined role filter will be abl
 Assume the following role filters.
 
 | Role | Filter |
-|----------|----------------------|
+|:----------|:----------------------|
 | Role A   | `_index=sumologic*`  |
 | Role B   | Blank search filter  |
 

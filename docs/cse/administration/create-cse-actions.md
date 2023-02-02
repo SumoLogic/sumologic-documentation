@@ -38,7 +38,7 @@ What gets sent to the target system depends on the Action type. For some types�
 
 For the other Action types—AWS Simple Notification Service (SNS), Demisto (Corex XSOAR), HTTP POST v2, and Slack Webhook—the notification includes the Insight itself in JSON format, and in some cases Signals or Records, depending on how you configure the Action.
 
-## Sensor Actions 
+## Sensor Actions
 You can configure an Action to send a notification when any Network Sensor goes offline.
 
 ## Rule Actions
@@ -128,6 +128,9 @@ Once you select HTTP POST v2  in the Type field a new **Notification** option�
 in CSE.
 
 1. **URL**. The URL to send the POST to.
+   :::note
+   The allowed destination ports for the HTTP Post are: *80*, *8080*, *443*, *8443*, and *8000*. You can specify the port in the URL, but if the default port on the destination server is an allowable port, you don't need to.
+   :::
 1. **Username**. The username to use to access the URL.
 1. **Password**. The password to use to access the URL.
 1. **Extra Headers**. Additional HTTP headers to send with the POST.
@@ -192,7 +195,7 @@ Lookups will consume RF API credits.
 
 #### Generate Recorded Future API token
 
-1. In Recorded Future, go to **User Settings \> API Access \> Generate New API Token**.
+1. In Recorded Future, go to **User Settings > API Access > Generate New API Token**.
 1. On the **Generate New Token** page:
     1. **Name**. Enter a name for the token. 
     1. **Integration**. Select “Sumologic” from the list of integrations.

@@ -4,6 +4,8 @@ title: Proofpoint TAP Source
 sidebar_label: Proofpoint TAP
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Proofpoint TAP Source provides a secure endpoint to receive data from the Proofpoint [TAP SIEM API](https://help.proofpoint.com/Threat_Insight_Dashboard/API_Documentation/SIEM_API). It securely stores the required authentication, scheduling, and state tracking information.
 
 The Proofpoint integration supports the following four event types:
@@ -190,7 +192,7 @@ When you create a Proofpoint TAP Source, you add it to a Hosted Collector. Befo
 
 To configure a Proofpoint TAP Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 
@@ -240,12 +242,17 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/h
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. |ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |  
 
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
+
+
 ### JSON configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | config                    | JSON Object          | Yes | Contains the configuration parameters for the Source. |                        |
 | schemaRef                 | JSON Object          | Yes | Use `{"type":"Proofpoint"}` for a Proofpoint Source. | not modifiable         |
 | sourceType                | String               | Yes | Use `Universal` for a Proofpoint Source. | not modifiable         |
@@ -254,7 +261,7 @@ The following table shows the **config** parameters for a Proofpoint
 TAP Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |

@@ -4,6 +4,7 @@ title: Carbon Black Inventory Source
 sidebar_label: Carbon Black Inventory
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Carbon Black Inventory Source provides a secure endpoint to receive data from the [CB Devices API](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/devices-api/). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -39,7 +40,7 @@ When you create a Carbon Black Inventory Source, you add it to a Hosted Collect
 
 To configure a Carbon Black Inventory Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **Carbon Black Inventory**.<br/>  ![cb inventory icon.png](/img/send-data/cb-inventory-icon.png)
 1. Enter a **Name** for the Source. The description is optional.<br/> ![CB inventory create pane.png](/img/send-data/CB-inventory-create-pane.png)
@@ -68,6 +69,10 @@ When Sumo Logic detects an issue, it's tracked by [Health Events](/docs/manage/
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
 
 ### JSON configuration
 

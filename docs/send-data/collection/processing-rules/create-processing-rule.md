@@ -58,7 +58,7 @@ You can add a processing rule to an existing Source or create a processing rule 
 
 ## Original interface
 
-1. To create a processing rule for an existing Source, go to **Manage Data \> Collection \> Collection** and click **Edit** next to a Source. When configuring your new or existing Source, expand the **Processing Rules for Logs**** section and then click **Add Rule**.  
+1. To create a processing rule for an existing Source, go to **Manage Data > Collection > Collection** and click **Edit** next to a Source. When configuring your new or existing Source, expand the **Processing Rules for Logs**** section and then click **Add Rule**.  
 
     ![Add processing rule](/img/collector/processing-rules/create-a-processing-rule/no-rules.png)
 

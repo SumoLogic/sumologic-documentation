@@ -52,7 +52,7 @@ To configure syslog messages, do the following:
 1. Click **SYSLOG**. The SYSLOG dialog appears.
 1. Click the toggle to **Enable SYSLOG**.
 1. Enter the **Syslog Host URL** and **port** number.
-1. Click **Use SSL secure connection**, then click **Server certificate \> Upload** and browse to the location of the downloaded crt certificate file.
+1. Click **Use SSL secure connection**, then click **Server certificate > Upload** and browse to the location of the downloaded crt certificate file.
 1. Specify the following **Formatting** options:
 
    * **Information format**: Select **CEF2**

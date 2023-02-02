@@ -12,7 +12,7 @@ If you see a 401 (failed to authenticate) error message right after generating 
 
 To generate a new URL:
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic select **Manage Data > Collection > Collection**. 
 
 1. On the **Manage Collection** page, click **Regenerate URL** next to the HTTP source.
 

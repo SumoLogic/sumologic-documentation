@@ -4,6 +4,8 @@ title: Mimecast Source
 sidebar_label: Mimecast
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 The Mimecast Source supports collecting SIEM, DLP, Audit, and Hold Message List data from the [Mimecast API](https://www.mimecast.com/tech-connect/documentation/). It securely stores the required authentication, scheduling, and state
 tracking information.
@@ -47,7 +49,7 @@ the detected issue.
 
 ## Prerequisite
 
-The user account associated with your Mimecast credentials needs to have `basic administrator` access. In the Enhanced Logging section of the **Administration \> Account \> Account Settings** menu in the **Administration Console**, at least one of the fields should be enabled for email logging for at least one inbound, outbound, and internal emails.
+The user account associated with your Mimecast credentials needs to have `basic administrator` access. In the Enhanced Logging section of the **Administration > Account > Account Settings** menu in the **Administration Console**, at least one of the fields should be enabled for email logging for at least one inbound, outbound, and internal emails.
 
 See these [guidelines](https://community.mimecast.com/docs/DOC-3181) to create the necessary credentials you'll need to authenticate the Mimecast Source, which includes an Application Key, Secret Key, and Access Key.
 
@@ -61,7 +63,7 @@ When you create a Mimecast Source, you add it to a Hosted Collector. Before cre
 
 To configure a Mimecast Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 
@@ -108,17 +110,22 @@ To configure a Mimecast Source:
 When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
+
 
 ### JSON configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | config                    | JSON Object          | Yes                       | Contains the configuration parameters for the Source. |                        |
 | schemaRef                 | JSON Object          | Yes                       | Use `{"type":"Mimecast"}` for a Mimecast Source.                                      | not modifiable         |
 | sourceType                | String               | Yes                       | Use `Universal` for a Mimecast Source.                                                | not modifiable         |
@@ -127,7 +134,7 @@ The following table shows the **config** parameters for a Mimecast
 Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |

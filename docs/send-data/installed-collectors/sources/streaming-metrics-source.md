@@ -20,7 +20,7 @@ The procedure below assumes you will use an installed collector on each host fro
 Perform these steps on each host from which you want to collect metrics:
 
 1. Set up an [installed collector](/docs/send-data/installed-collectors). (Skip this step if you have already set up the collector.) 
-1. In Sumo select **Manage Data \> Collection \> Collection**.  
+1. In Sumo select **Manage Data > Collection > Collection**.  
 1. Click **Add**, and then **Add Source**.
 1. On the **Select Source for Collector** page, select **Streaming Metrics**. 
 1. On the source configuration page, supply the following fields:
@@ -141,7 +141,7 @@ See the table below for descriptions of the components of a Prometheus metric ex
 The streaming metrics source can receive Prometheus data as long as that data is pushed to it. This source cannot scrape Prometheus exporters. For that, we suggesting using Telegraf.
 
 | Component | Description |
-|--|--|
+|:--|:--|
 | `metric_name` | Specifies the general feature of a system that is measured. For example:<br/>`http_requests_total`  |
 | `metric_description` | An arbitrary description or category for the metric. For example:<br/>`requests`  |
 | `metric_type` | the type of the metric, one of `counter`, `gauge`, `histogram`, `summary`, or `untyped`.

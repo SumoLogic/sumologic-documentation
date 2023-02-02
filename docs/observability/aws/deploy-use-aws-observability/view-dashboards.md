@@ -10,7 +10,7 @@ description: Learn how to use Explore to navigate your AWS Observability infrast
 This feature is available in the following account plans.
 
 | Solution Component | CloudFlex | Credits |
-|--|--|--|
+|:--|:--|:--|
 | AWS Observability Dashboards | Trial, Professional, and Enterprise | Trial, Essentials, Enterprise Operations, Enterprise Security,  Enterprise Suite |
 | Root Cause Explorer | Trail, Enterprise | Trial, Enterprise Operations, Enterprise Suite |
 

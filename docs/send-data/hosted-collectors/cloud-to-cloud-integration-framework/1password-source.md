@@ -7,6 +7,8 @@ description: The 1Password Source provides a secure endpoint to receive Sign-in 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="75"/>
+
 The 1Password Source provides a secure endpoint to receive Sign-in Attempts and Item Usage from the [1Password Event API](https://support.1password.com/events-api-reference/). It securely stores the required authentication, scheduling, and state tracking information.
 
 The 1Password Source ingests:
@@ -46,7 +48,7 @@ If the Source has any issues during any one of these states, it is placed in an 
 
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![1password-state](/img/send-data/1password-state.png)
+On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![1password state.png](/img/send-data/1password-state.png)
 
 Hover your mouse over the status icon to view a tooltip with details on the detected issue.<br/> ![1password](/img/send-data/health_error_generic.png)
 
@@ -59,9 +61,9 @@ To configure a 1Password Source:
 
 1. In Sumo Logic, select** Manage Data > Collection > Collection**.
 2. On the Collectors page, click **Add Source** next to a Hosted** **Collector.
-3. Select **1Password**.<br/> ![1password](/img/send-data/1password-source-icon.png)
+3. Select **1Password**.<br/><img src={useBaseUrl('img/send-data/1password-source-icon.png')} alt="1password-source-icon.png" width="150" />
 4. Enter a **Name** for the Source. The **description** is optional.<br/> ![1password-input](/img/send-data/1password-input.png)
-5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) is stored in a searchable field called `_sourceCategory`.
+5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
 6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse). When configured with the **Forward to SIEM** option, the following metadata fields are set:
   | Field Name | API | Value |
   |:---|:---|:---|
@@ -134,6 +136,10 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/H
    </td>
   </tr>
 </table>
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
 
 
 ## JSON configuration
@@ -219,7 +225,7 @@ The following table shows the **config** parameters for a 1Password Source.
    </td>
    <td>
    </td>
-   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata field</a> <code>_source</code>.
+   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata field</a> <code>_source</code>.
    </td>
    <td>modifiable
    </td>
@@ -247,7 +253,7 @@ The following table shows the **config** parameters for a 1Password Source.
    </td>
    <td>null
    </td>
-   <td>Type a category of the source. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata field</a> field <code>_sourceCategory</code>. See <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">best practices</a> for details.
+   <td>Type a category of the source. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata field</a> field <code>_sourceCategory</code>. See <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">best practices</a> for details.
    </td>
    <td>modifiable
    </td>

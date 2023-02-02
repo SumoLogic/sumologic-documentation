@@ -32,7 +32,7 @@ To collect logs for Zscaler, perform these steps, detailed in the following sect
 
 To collect logs for Zscaler Web Security, do the following in Sumo Logic:
 
-1. Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+1. Configure an [Installed Collector](/docs/send-data/installed-collectors).
 2. Configure a [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source). For protocol, use **TCP**.
 
 Note the **Port** number, as you will need this to configure Zscaler NSS.  \
@@ -46,6 +46,9 @@ Zscaler offers a virtual appliance, called Nanolog Streaming Service (NSS) to st
 
 To stream logs to the Sumo Logic Syslog Source, perform steps A, B, and C detailed in the “NSS Configuration Guide” at: [https://support.zscaler.com/hc/en-us...guration-Guide](https://support.zscaler.com/hc/en-us/articles/205518405-NSS-Configuration-Guide).
 
+:::note
+Zscaler Log Streaming is an add-on for customers that do not have it as part of an existing bundle. Please check your [subscription](https://www.zscaler.com/pricing-and-plans) and work with your Zscaler support team to see if CloudNSS is included in your bundle.
+:::
 
 ### Step 3: Connect the Zscaler NSS Feed to Sumo Logic
 

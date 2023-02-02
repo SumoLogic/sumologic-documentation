@@ -7,7 +7,12 @@ description: You can use Entity Groups to automatically group entities in terms 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-An administrator can use CSE’s _Entity Groups_ feature to define groups of Entities and to assign attributes to them at the group level. You can define the members of an Entity Group based on Entity name, an IP address range, or membership in a group in an Inventory system like Active Directory. Note that membership in an Entity Group is not configured by explicitly assigning individual Entities to the group. Instead you define an Entity Group in terms of criteria, like name or IP address, so that Entities will automatically inherit the properties of Entity Groups they match without manual edits.
+An administrator can use CSE’s _Entity Groups_ feature to define groups of Entities and to assign attributes to them at the group level. You can define the members of an Entity Group in two ways:
+
+* Based on Entity name or an IP address range.
+* Based on membership in a group in an Inventory system like Active Directory.
+
+Note that membership in an Entity Group is not configured by explicitly assigning individual Entities to the group. Instead you define an Entity Group in terms of criteria, like name or IP address, so that Entities will automatically inherit the properties of Entity Groups they match without manual edits.
 
 You can assign [criticality](entity-criticality.md), [tags](tags-insights-signals-entities-rules.md), and [suppression](about-signal-suppression.md) status to an Entity Group, and those settings will be applied to all of the Entities in the group.
 
@@ -20,6 +25,13 @@ Each laptop in the “laptops” group will automatically inherit the criticalit
 
 Note that when an Insight is created, any tags that are assigned to the primary Entity in the Insight are automatically inherited by the Insight. So, tags that an Entity inherits from an Entity Group will also be inherited by Insights that fire on the Entity. (Such inheritance is not retro-active: Insights that fired on an Entity prior to the Entity being tagged won’t be tagged.)
 
+## Entity Group limits
+
+The number of Entity Groups you can configure per org varies by the type of the group:
+
+* You can configure a maximum of 50 Entity Groups based on membership in a group in an Inventory system.
+* You can configure a maximum of 1000 Entity Groups based on Entity name or an IP address range.
+
 
 ## Overlapping Entity Groups
 
@@ -30,7 +42,7 @@ It’s possible to define Entity Groups that overlap, in terms of the Entities t
 3. Entity Groups based on name are processed in order, by the length of the match string configured as either Prefix or Suffix, then alphabetically, by Entity Group name.
 
 
-#### Create an Entity Group based on Entity attributes
+## Create an Entity Group based on Entity attributes
 
 Follow these instructions to create an Entity Group based on Entity name or whether the Entity is within a specified range of IP addresses.
 

@@ -7,7 +7,7 @@ description: Learn which Tools and Schema are supported by Software Development 
 The Software Development Optimization (SDO) Solution comes bundled with Terraform support for the following tools in each phase of the DevOps lifecycle. While tools not listed in the table below lack Terraform support for automated installation, virtually any DevOps tool can be configured to work with SDO through manual configuration by transforming the structure of data ingested by these tools — using Sumo Logic Field Extraction Rules (FERs) — to adhere to the schema defined below.
 
 | DevOps Phases             | Supported with Terraform                                          |
-|---------------------------|-----------------------------------------------------------|
+|:---------------------------|:-----------------------------------------------------------|
 | Planning Phase            | Jira Cloud, Jira Server                                   |
 | Dev/Code                  | Github, Bitbucket, GitLab                                 |
 | Build/Test/Deploy/Release | Jenkins, Bitbucket Pipelines, CircleCI  Pipelines, GitLab |
@@ -37,22 +37,22 @@ The tables below show the schema for various events from DevOps pipeline. These 
 The table below shows how deploy events are defined in the schema:
 
 | Field | Explanation | Required/Optional |
-| -- | -- | -- |
-| event_type | This field indicates the type of DevOps log event. The value of this field should be set to “deploy” | Required |
-| trace_id | This field is used to establish correlations between a deploy/build event and a code merge event. For example, a commit-id can be used to join the events<br/>Code Merge (PR) and Build<br/>Code Merge (PR) and Deploy | Required |
-| link | This field is used to provide a URL pointer to the deploy event. | Required |
-| datetime_epoch | This field is used to indicate the date and time in UTC epoch milliseconds when the event occurred. | Required |
-| environment_name | This field is used to indicate the environment to which the deploy event occurred. Values for this field should be set to one of "production", “test”, “pre-prod”. You can also send in other values if applicable as well. | Required |
-| status | This field is used to indicate the status of the deploy event. Values for this field should be set to one of the following: "Success", "Failure", "Unstable", or "Unknown". You can also send in other values if applicable as well. | Required |
-| commit_id | This field is used to indicate the commit ID associated with a deploy event. This field is required to correlate code repository commit information with data from your CI tools and is typically set as the merge commit hash or HEAD commit. | Required |
-| target_branch | This field is used to indicate the target code branch associated with a deploy event.
+| :-- | :-- | :-- |
+| `event_type` | This field indicates the type of DevOps log event. The value of this field should be set to “deploy” | Required |
+| `trace_id` | This field is used to establish correlations between a deploy/build event and a code merge event. For example, a commit-id can be used to join the events<br/>Code Merge (PR) and Build<br/>Code Merge (PR) and Deploy | Required |
+| `link` | This field is used to provide a URL pointer to the deploy event. | Required |
+| `datetime_epoch` | This field is used to indicate the date and time in UTC epoch milliseconds when the event occurred. | Required |
+| `environment_name` | This field is used to indicate the environment to which the deploy event occurred. Values for this field should be set to one of "production", “test”, “pre-prod”. You can also send in other values if applicable as well. | Required |
+| `status` | This field is used to indicate the status of the deploy event. Values for this field should be set to one of the following: "Success", "Failure", "Unstable", or "Unknown". You can also send in other values if applicable as well. | Required |
+| `commit_id` | This field is used to indicate the commit ID associated with a deploy event. This field is required to correlate code repository commit information with data from your CI tools and is typically set as the merge commit hash or HEAD commit. | Required |
+| `target_branch` | This field is used to indicate the target code branch associated with a deploy event.
 Set the value of this field to “N/A” if not available. | Optional |
-| repository_name | This field is used to indicate the code repository associated with the deploy event. Set the value of this field to “N/A” if not available. | Optional |
-| message | This field is used to indicate any message Set the value of this field to “N/A” if not available.| Optional |
-| title | This field can be used to indicate a deploy job name, description of pipeline/stage. Set the value of this field to “N/A” if not available.	Optional |
-| user | This field indicates the user associated with a deploy event. Set the value of this field to “N/A” if not available. | Optional |
-| service | This field indicates the service that got deployed. Set the value of this field to “N/A” if not available. | Optional |
-| team | This field indicates the team for which a deploy event occurred. Set the value of this field to “N/A” if not available. | Optional |
+| `repository_name` | This field is used to indicate the code repository associated with the deploy event. Set the value of this field to “N/A” if not available. | Optional |
+| `message` | This field is used to indicate any message Set the value of this field to “N/A” if not available.| Optional |
+| `title` | This field can be used to indicate a deploy job name, description of pipeline/stage. Set the value of this field to “N/A” if not available.	Optional |
+| `user` | This field indicates the user associated with a deploy event. Set the value of this field to “N/A” if not available. | Optional |
+| `service` | This field indicates the service that got deployed. Set the value of this field to “N/A” if not available. | Optional |
+| `team` | This field indicates the team for which a deploy event occurred. Set the value of this field to “N/A” if not available. | Optional |
 
 **Build Event.** These events describe the chain of events when a  source code repository is compiled into executable artifacts, after which a series of automated unit and regressions tests are run.  
 
@@ -61,7 +61,7 @@ Set the value of this field to “N/A” if not available. | Optional |
 The table below shows how build events are defined in the schema:
 
 | Field | Explanation | Required/Optional |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | event_type | This field indicates the type of DevOps log event. The value of this field should be set to “build” | Required |
 | trace_id | his field is used to establish correlations between a deploy/build event and a code merge event. For example, a commit-id can be used to join the events<br/>Code Merge (PR) and Build<br/>Code Merge (PR) and Deploy | Required |
 | link | This field is used to provide a URL pointer to the build event. | Required |
@@ -85,7 +85,7 @@ Set the value of this field to “N/A” if not available. | Optional |
 The table below shows how Push events are represented in the schema:
 
 | Field | Explanation | Required/Optional |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | event_type | This field indicates the type of DevOps log event. The value of this field should be set to “push-request”  | Required |
 | head_commit_id | This field is used to indicate the commit_id of the head commit associated with a push event. | Required |
 | head_commit_epoch | This field is used to indicate the date and time in UTC epoch milliseconds when the event occurred. | Required |
@@ -103,7 +103,7 @@ The table below shows how Push events are represented in the schema:
 The table below shows how Pull Request events are represented in the schema: 
 
 | Field | Explanation | Required/Optional |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | event_type | This field indicates the type of DevOps log event. The value of this field should be set to “pull_request” | Required |
 | title | This field represents either a title, subject or description of a pull request. | Required |
 | link | This field is used to provide a URL pointer to the pull_request event. | Required |
@@ -128,7 +128,7 @@ Set the value of this field to “N/A” if not available. | Optional |
 The table below shows how Incident/Alert events are represented in the schema.
 
 | Field | Explanation | Required/Optional |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | event_type | This field indicates the type of DevOps log event. Enum Values : "alert_created", "alert_closed", or other values. | Required |
 | alert_id | This field represents the alert ID | Required |
 | priority | Values for this field should be set to one of: “high”, “medium”, “low”. You can also send in other values if applicable as well. | Required |
@@ -145,7 +145,7 @@ datetime_epoch	This field is used to indicate the date and time in UTC epoch mil
 The table below shows how Issue events are represented in the schema.
 
 | Field | Explanation | Required/Optional |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | link | This field is used to provide a URL pointer to the issue event. | Required |
 | issue_key | This field represents an issue ID or key | Required |
 | issue_type | This field indicates the type of DevOps log event. The value of this field should be set to “issue.” | Required |

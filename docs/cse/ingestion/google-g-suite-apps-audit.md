@@ -11,7 +11,7 @@ In this step, you configure an G Suite Apps Audit Source to collect G Suite log 
 
 ### Configure a Hosted Collector
 
-1. In Sv, select **Manage Data \> Collection \> Collection**.
+1. In Sv, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  
@@ -30,7 +30,7 @@ In this step, you configure an G Suite Apps Audit Source to collect G Suite log 
 
 Each G Suite App must have its own source. Follow these steps for each G Suite App you wish to collect.
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. Navigate to the Hosted Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to the Hosted Collector.
 1. Select **G Suite Apps Audit.** 

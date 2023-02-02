@@ -11,7 +11,7 @@ The page has information about viewing information about the scheduled views con
 You must have a role that grants you the View Scheduled Views [role capability](view-list-scheduled-views.md) in order to view information about scheduled views.
 :::
 
-1. Go to **Manage Data** \> **Logs** \> **Scheduled Views**.<br/> ![Scheduled Views page.png](/img/scheduled-views/Scheduled-Views-page.png)
+1. Go to **Manage Data** > **Logs** > **Scheduled Views**.<br/> ![Scheduled Views page.png](/img/scheduled-views/Scheduled-Views-page.png)
     * Status. Indicates whether the scheduled view is currently Completed, Failed, Not Started, Filling, or Paused.
     * **Name**. The name assigned to the scheduled view.
     * **Storage Consumed**. The total volume of uncompressed data ingested across the duration of the retention period.

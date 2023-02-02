@@ -35,13 +35,13 @@ application/vnd.sumologic.graphite
 Based on the Content-Type header specified, Sumo parses and interprets each line in the HTTP payload in the desired metric format.
 
 | Format | Content-Type Header |
-|--|--|
+|:--|:--|
 | [Graphite](http://graphite.readthedocs.io/en/latest/feeding-carbon.html#the-plaintext-protocol) | `application/vnd.sumologic.graphite` |
 | [Carbon 2.0](http://metrics20.org/implementations/) | `application/vnd.sumologic.carbon2` |
 | [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo](upload-metrics.md#prometheus-metrics-not-accepted-by-sumo). |
 
 :::note
-For information about metric formats, see [Metric Formats](/docs/metrics/introduction/Metric-Formats).
+For information about metric formats, see [Metric Formats](/docs/metrics/introduction/metric-formats).
 :::
 
 ## Sending multiple metrics in a single payload
@@ -94,7 +94,7 @@ Overridden metadata field values are not returned with [Search Autocomplete](/do
 :::
 
 | Setting | Header Name | Header Value |
-|--|--|--|
+|:--|:--|:--|
 | Compressed data | `Content-Encoding` | gzip or deflate<br/>Required if you are uploading compressed data. |
 | Content Type (for Metrics) | Content-Type | `application/vnd.sumologic.graphite`<br/>`application/vnd.sumologic.carbon2`<br/>`application/vnd.sumologic.prometheus`<br/>Required if you are uploading metrics. |
 | Custom Source Name | `X-Sumo-Name` | Desired source name.<br/>Useful if you want to override the source name configured for the source. |

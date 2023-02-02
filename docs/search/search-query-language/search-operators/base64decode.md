@@ -1,12 +1,10 @@
 ---
 id: base64decode
-title: base64decode Search Operator
-sidebar_label: base64decode
+title: base64Decode Search Operator
+sidebar_label: base64Decode
 ---
 
-
-
-The base64Decode operator takes a base64 string and converts it to an ASCII string. Input must be a valid base64 string. Invalid input is returned unaltered.
+The `base64Decode` operator takes a base64 string and converts it to an ASCII string. Input must be a valid base64 string. Invalid input is returned unaltered.
 
 ## Syntax
 
@@ -29,16 +27,12 @@ base64Decode(<string_field>[, "<encoding>"]) as <field>
 * UTF-32BE
 * UTF-32LE
 
-**Examples**
+## Examples
 
 The following example returns `V` with a value of `http://codec.apache.org/commmons`:
 
-```sql
-| base64Decode("aHR0cDovL2NvZGVjLmFwYWNoZS5vcmcvY29tbW1vbnM=") as V
-```   
+`| base64Decode("aHR0cDovL2NvZGVjLmFwYWNoZS5vcmcvY29tbW1vbnM=") as V`
 
 The following example returns `V` with a value of `This is a test string`:
 
-```sql
-| base64Decode("VABoAGkAcwAgAGkAcwAgAGEAIAB0AGUAcwB0ACAAcwB0AHIAaQBuAGcA", "UTF-16LE") as V
-```
+`| base64Decode("VABoAGkAcwAgAGkAcwAgAGEAIAB0AGUAcwB0ACAAcwB0AHIAaQBuAGcA", "UTF-16LE") as V`

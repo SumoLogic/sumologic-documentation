@@ -103,7 +103,7 @@ A restart is required for traffic collection to take effect.
 
 #### Step 2: Configure a Collector
 
-Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+Configure an [Installed Collector](/docs/send-data/installed-collectors).
 
 #### Step 3: Configure Sources
 
@@ -282,7 +282,7 @@ _sourceCategory = Labs/artifactory/*
 
 #### Step 2: Configure a collector
 
-Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+Configure an [Installed Collector](/docs/send-data/installed-collectors).
 
 
 #### Step 3: Configure sources

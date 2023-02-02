@@ -15,7 +15,7 @@ When you change the maximum timeout:
 
 To configure a maximum web session timeout for users in your org:
 
-1. Go to **Administration** \> **Security** \> **Policies**.
+1. Go to **Administration** > **Security** > **Policies**.
 
     ![set-session-timeout.png](/img/security/set-session-timeout.png)
 

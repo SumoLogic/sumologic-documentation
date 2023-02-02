@@ -82,7 +82,7 @@ Where:
 
 ## Configure an S3 data forwarding destination
 
-1. In Sumo Logic, select **Manage Data** \> **Logs** \> **Data Forwarding**.
+1. In Sumo Logic, select **Manage Data** > **Logs** > **Data Forwarding**.
 1. Click **+ Destination** to add a new destination.
 1. The **Create New Destination** popup appears. <br/><img src={useBaseUrl('img/data-forwarding/create-S3-destination.png')} alt="create-S3-destination.png" width="450"/>
 1. **Destination Name**. Enter a name to identify the destination.
@@ -109,7 +109,7 @@ This section has instructions for enabling data forwarding for an existing Parti
 You can also enable Data Forwarding when you first create a Partition or Scheduled View by selecting the **Enable Data Forwarding** check box.
 :::
 
-1. In Sumo Logic, go to **Manage Data** \> **Logs** \> **Partitions**, or **Manage Data** \> **Logs** \> **Scheduled Views**, depending on whether you want to forward data from a Partition or a Scheduled View.
+1. In Sumo Logic, go to **Manage Data** > **Logs** > **Partitions**, or **Manage Data** > **Logs** > **Scheduled Views**, depending on whether you want to forward data from a Partition or a Scheduled View.
 1. Click on the Partition or View for which you want to enable data forwarding and click the **Edit** button. When editing, you'll see an option to **Enable Data Forwarding**. <br/><img src={useBaseUrl('img/data-forwarding/enable-option.png')} alt="enable-option.png" width="450"/>
 1. Click the **Enable Data Forwarding** checkbox.
 1. More options appear. <br/><img src={useBaseUrl('img/data-forwarding/specifiy-destination.png')} alt="specify-destination.png'" width="450"/>

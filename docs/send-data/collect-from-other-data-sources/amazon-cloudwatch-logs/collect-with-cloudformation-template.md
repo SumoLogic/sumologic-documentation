@@ -1,10 +1,9 @@
 ---
 id: collect-with-cloudformation-template
-title: Collect CloudWatch Logs using a CloudFormation Template with secured Sumo Endpoint
+title: Collect Amazon CloudWatch Logs using a CloudFormation Template with Secured Sumo Endpoint
+sidebar_label: Collect Amazon CloudWatch Logs using a CloudFormation Template
 description: Learn how to collect Amazon CloudWatch Logs using a CloudFormation template with secured Sumo EndPoint.
 ---
-
-
 
 :::note
 The below steps assumes you have configured a Hosted collector and an HTTP Source as specified in this [section](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs).
@@ -23,7 +22,7 @@ If you're using AWS CLI use the below command:
 ```
 aws ssm put-parameter --region us-east-1 --cli-input-json '{
   "Name": "SUMO_ENDPOINT",
-  "Value": \<Paste the endpoint of the HTTP source created in step \>",
+  "Value": \<Paste the endpoint of the HTTP source created in step >",
   "Type": "SecureString"
 }'
 ```

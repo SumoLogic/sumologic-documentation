@@ -4,8 +4,7 @@ title: filter Search Operator
 sidebar_label: filter
 ---
 
-
-Use the filter operator to filter the output of a search based on the filtering criteria of a child query. The filter operator keeps only the records that match the filter criteria, allowing you to restrict search results to the most relevant information.
+Use the `filter` operator to filter the output of a search based on the filtering criteria of a child query. The `filter` operator keeps only the records that match the filter criteria, allowing you to restrict search results to the most relevant information.
 
 ## Syntax
 
@@ -15,20 +14,20 @@ Use the filter operator to filter the output of a search based on the filtering 
 <fieldname> ::= (name of a field)
 ```
 
-#### Caveats
+### Caveats
 
 * Filter operator must follow an aggregate operator.
 * All the fields must be present in the output fields for the child query.
 * The compare operator and filter operator are not supported in the child query. 
 * The filter operator can be used instead of the `where` operator.
 
-#### Limitations
+### Limitations
 
 The operator can process up to 100,000 data points for a single query. It automatically drops the data points that exceed the limit and issues a warning. 
 
-**Examples**
+## Examples
 
-##### Show all source hosts with outlier violations
+### Show all source hosts with outlier violations
 
 ```sql
 _sourceCategory=HttpServers
@@ -38,7 +37,7 @@ _sourceCategory=HttpServers
 | transpose row _timeslice column _sourcehost
 ```
 
-##### Show top two source hosts with the most messages
+### Show top two source hosts with the most messages
 
 ```sql
 _sourceCategory=HttpServers
@@ -48,7 +47,7 @@ _sourceCategory=HttpServers
 | transpose row _timeslice column _sourcehost
 ```
 
-##### Show top three source hosts with most outlier violations
+### Show top three source hosts with most outlier violations
 
 ```sql
 _sourceCategory=HttpServers

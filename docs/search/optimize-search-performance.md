@@ -60,7 +60,7 @@ Scheduled Views **backfill**, meaning that all data that extends back to the st
 Here's a quick look at how to choose the right indexed search optimization tool.
 
 | I want to... | Partition | Scheduled View |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | Run queries against a certain set of data | Choose if the quantity of data to be indexed is more than 2% of the total data. | Choose if the quantity of data to be indexed is less than 2% of the total data. |
 | Use data to identify long-term trends |   | Yes |
 | Segregate data by sourceCategory | Yes |   |

@@ -52,8 +52,8 @@ _sourceCategory = Labs/VMWare6.5 and ("error" or "fail" or "critical")
 
 ## Prerequisites
 
-* **Supported Software Versions**: The VMware App works with vCenter and vSphere 6.5, 6.7, and 7.0.
-* **Sumo Logic Scripts for VMware**: The Sumo Logic scripts required to work with the app are located here: [sumo-vsphere-ulm.zip](https://s3.amazonaws.com/appdevstore/VMWare/sumo-vsphere-ulm.zip).
+* **Supported Software Versions**. The VMware App works with vCenter and vSphere 6.5, 6.7, and 7.0.
+* **Sumo Logic Scripts for VMware**. The Sumo Logic scripts required to work with the app are located here: [sumo-vsphere-ulm.zip](https://s3.amazonaws.com/appdevstore/VMWare/sumo-vsphere-ulm.zip).
 
 
 ## Collecting Logs and Metrics for the VMware App
@@ -91,7 +91,7 @@ pip install pyvmomi==6.7.3
 
 An Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service. The Collector runs as a service and starts automatically after installing or rebooting.
 
-**To install a Collector to collect logs and metrics:** refer to this [link](/docs/send-data/Installed-Collectors) for installation instructions.
+**To install a Collector to collect logs and metrics:** refer to this [link](/docs/send-data/installed-collectors) for installation instructions.
 
 
 ### Step 3: Collect logs and metrics for the VMware App

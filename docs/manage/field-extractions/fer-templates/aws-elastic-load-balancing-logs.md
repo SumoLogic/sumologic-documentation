@@ -26,7 +26,7 @@ parse "* * *:* *:* * * * * * * * \"* *://*:*/* HTTP" as datetime, ELB_Server, cl
 **Resulting Fields:**
 
 | Field | Description | Example |
-|--|--|--|
+|:--|:--|:--|
 | datetime | Time when the load balancer received the request from the client | 2017-08-10T18:25:56 |
 | ELB_Server | Name of the load balancer | stag-www-lb |
 | clientIP | IP address of the requesting client | 137.190.87.41 |

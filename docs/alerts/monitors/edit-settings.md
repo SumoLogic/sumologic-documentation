@@ -18,7 +18,7 @@ The Monitors page (**Manage Data** > **Monitoring** > **Monitors**) allows you t
 
 ![monitors page](/img/monitors/monitors-page.png)
 
-To quickly open the [Alert List](alert-response.md) to view all of the triggered alerts from a Monitor, hover your cursor over its Status and click the icon.<br/> ![monitor shortcut.png](/img/monitors/monitors-shortcut.png)
+To quickly open the [Alert List](alert-response.md) to view all of the triggered alerts from a Monitor, hover your cursor over its **Status** and click the icon.<br/> ![monitor shortcut.png](/img/monitors/monitors-shortcut.png)
 
 At the top of the page, you can:
 * **Search Monitors**. Use the search field to filter Monitors by name and status. For example, you can view all Monitors that are currently triggered in the system by clicking the **Status: All Triggered**. <br/><img src={useBaseUrl('img/monitors/search-monitors-input.png')} alt="search monitors input" width="175"/>
@@ -68,7 +68,7 @@ In the details pane, you can see the following details for a Monitor:
 
 ## View Monitors History
 
-The history of alerts is available in the Monitor History tab of the details pane. This allows you to quickly see the history of all triggered alerts of the selected Monitor.<br/><img src={useBaseUrl('img/monitors/monitor-history.png')} alt="monitor-history.png" width="300"/>
+The history of alerts is available in the **Monitor History** tab of the details pane. This allows you to quickly see the history of all triggered alerts of the selected Monitor.<br/><img src={useBaseUrl('img/monitors/monitor-history.png')} alt="monitor-history.png" width="300"/>
 
 
 ## Monitors folder permissions
@@ -93,7 +93,7 @@ This option is present only if you have been granted **Manage** permission for t
     * You can click **Add Role** to add a role to the folder. You’ll be prompted with the "Your Entire Organization" option, and a list of roles. Select "Your Entire Organization" or one or more more roles, and checkmark the permissions you want to grant. If you grant access to a specific role in addition to "Your Entire Organization" users of that role will be granted the least restrictive access defined by the two permission sets.
     * You can remove a role that was explicitly added to the folder. To do so, mouse over the role in the edit popup, and click the **X** that appears.
 
-The permissions you set for a folder are inherited by that folder’s subfolders. When a user views permissions for such subfolders, the inherited permissions will be greyed out. It isn’t possible to deselect inherited permissions, but it is possible to add additional permissions. Inherited permissions can only be removed by removing them from the higher level folder where they were assigned.
+The permissions you set for a folder are inherited by that folder’s subfolders. When a user views permissions for such subfolders, the inherited permissions will be grayed out. It is not possible to deselect inherited permissions, but you can add additional permissions. Inherited permissions can only be removed by removing them from the higher level folder where they were assigned.
 
 
 ## Additional Information
