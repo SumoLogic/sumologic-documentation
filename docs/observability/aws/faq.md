@@ -119,7 +119,7 @@ Sumo Logic provides updates to the AWS Observability solution through CloudForma
 
 ### What are options to monitor EC2 Host Metrics?
 
-There are two ways EC2 can be monitored. One way is to use the [CloudWatch metrics for EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html) which are collected by default in the solution. Another way is to install [Sumo Logic Collector for Host Metrics](/docs/send-data/installed-collectors/sources/Host-Metrics-Source#collected-metrics) on EC2 instance. The list of metrics and their details from the two methods can be fetched using the embedded links. In addition to this, there are two Apps for EC2 which are provided out of the box with AWS Observability Solution :
+There are two ways EC2 can be monitored. One way is to use the [CloudWatch metrics for EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html) which are collected by default in the solution. Another way is to install [Sumo Logic Collector for Host Metrics](/docs/send-data/installed-collectors/sources/host-metrics-source#collected-metrics) on EC2 instance. The list of metrics and their details from the two methods can be fetched using the embedded links. In addition to this, there are two Apps for EC2 which are provided out of the box with AWS Observability Solution :
 
 * AWS EC2 - Uses CloudWatch Metrics for EC2 and CloudTrail events
 * Host Metrics (EC2) - Uses metrics from Installed Collector.

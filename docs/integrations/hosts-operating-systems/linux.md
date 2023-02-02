@@ -43,7 +43,7 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 
 ### Configure a Collector
 
-Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+Configure an [Installed Collector](/docs/send-data/installed-collectors).
 
 
 ### Configure a Source

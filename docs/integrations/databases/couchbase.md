@@ -233,7 +233,7 @@ The Sumo Logic Couchbase app supports the audit log, query log, error log, acces
 
 1. **Configure logging in Couchbase**. By default, the Couchbase will write the log to the log directory that was configured during installation. For example, on Linux, the log directory would be `/opt/couchbase/var/lib/couchbase/logs`. By default, the Audit log is disabled, you must enable the audit log following these [instructions](https://docs.couchbase.com/server/current/manage/manage-security/manage-auditing.html). Query log, error log, the access log will be enabled by default.
 2. **Configure a Collector**. Use one of the following Sumo Logic Collector options:
-   1. To collect logs directly from the Couchbase machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+   1. To collect logs directly from the Couchbase machine, configure an [Installed Collector](/docs/send-data/installed-collectors).
    2. If you're using a service like Fluentd, or you would like to upload your logs manually, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. **Configure a local file source**. Choose one of the options:
 
