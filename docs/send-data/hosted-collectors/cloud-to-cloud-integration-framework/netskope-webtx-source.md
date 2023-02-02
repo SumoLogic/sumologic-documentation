@@ -4,6 +4,7 @@ title: Netskope WebTx Source
 sidebar_label: Netskope WebTx
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The [Netskope WebTx API](https://docs.netskope.com/en/transaction-event-fields.html) integration ingests Web Transaction logs from Netskope Event Stream.
 
@@ -163,6 +164,11 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/H
    </td>
   </tr>
 </table>
+
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
 
 
 ## JSON configuration

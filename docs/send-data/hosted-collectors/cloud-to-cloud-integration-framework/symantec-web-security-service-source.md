@@ -4,6 +4,8 @@ title: Symantec Web Security Service Source
 sidebar_label: Symantec Web Security Service
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Symantec Web Security Service Source provides a secure endpoint to receive WSS Access logs from the Symantec WSS API. It securely stores the required authentication, scheduling, and state tracking information.
 
  * See the [Access Log Format](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/web-security-service/help/wss-reference/accesslogformats-ref.html) for reference.
@@ -83,6 +85,11 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/h
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
+
 
 ### JSON configuration
 
