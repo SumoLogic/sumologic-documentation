@@ -23,7 +23,7 @@ Before you begin setting up Druva source, you must meet the following requiremen
 
 ### Configure Druva inSync to export events
 
-Only an Druva inSync Cloud administrator can enable the option to export events and define the Events API settings. To get the event logs, follow the steps to enable the **Export Events**:
+Only Druva inSync Cloud administrator can enable the option to export events and define the Events API settings. To get the event logs, follow the steps to enable the **Export Events**:
 1. Log in to the Druva inSync Management Console with [inSync Cloud](https://login.druva.com/) account or [inSync GovCloud](https://loginfederal.druva.com/) account.
 2. On the [inSync Management Console](https://docs.druva.com/Endpoints/030_Set_up_inSync_for_Endpoints/010_Initial_Configuration/010_Sign_in_to_inSync_Management_Console/Sign_in_to_inSync_Management_Console) menu bar, click <img src={useBaseUrl('/img/send-data/wheel-icon.png')} alt="wheel-icon.png" width="20"/> icon > **Settings**. The Settings page appears.
 3. Click the **inSync APIs** tab.
