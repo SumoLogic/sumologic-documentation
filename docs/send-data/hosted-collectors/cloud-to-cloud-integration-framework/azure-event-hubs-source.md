@@ -4,6 +4,8 @@ title: Azure Event Hubs Source
 sidebar_label: Azure Event Hubs
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 :::note
 If you're using our new Cloud-to-Cloud source collection, please see [Migration from Azure function-based collection to Event Hub Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration).
 :::
