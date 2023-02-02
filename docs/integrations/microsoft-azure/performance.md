@@ -136,10 +136,10 @@ This section provides instructions for configuring log collection for the Window
 To collect logs for the Windows Performance App, you will need to configure an Installed Collector, and either a Local or Remote Windows Performance  Monitor Log Source.
 
 To collect logs for the Windows Performance App, do the following:
-1. Install a collector as described in [Installed Collector](/docs/send-data/Installed-Collectors).
+1. Install a collector as described in [Installed Collector](/docs/send-data/installed-collectors).
 2. Configure a Windows Performance Source, choosing the one appropriate for on your environment:
-    * [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Performance-Monitor-Log-Source).
-    * [Remote Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/Remote-Windows-Performance-Monitor-Log-Source).
+    * [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source).
+    * [Remote Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/remote-windows-performance-monitor-log-source).
 
 
 ### Add a Custom Query to the Windows Performance Source

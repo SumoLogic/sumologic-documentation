@@ -133,7 +133,7 @@ If the setup was successful, Active Directory domain and object information will
 
 ## Step 1: Configure a collector
 
-Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+Configure an [Installed Collector](/docs/send-data/installed-collectors).
 
 Make sure the collector is installed on a machine that belongs to the domain managed by Active Directory. You can install a single collector and use a remote source, but Sumo Logic recommends installing a collector on each of your domain controllers for performance.
 
