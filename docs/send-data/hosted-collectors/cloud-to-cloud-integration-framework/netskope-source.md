@@ -5,6 +5,8 @@ sidebar_label: Netskope
 description: The Netskope Source provides a secure endpoint to receive event data from the Netskope API.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Netskope Source provides a secure endpoint to receive event data from the [Netskope API](https://docs.netskope.com/en/get-events-data.html). It securely stores the required authentication, scheduling, and state tracking information.
 
 The following event types are available to collect:
@@ -46,10 +48,10 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 ## Getting a token from Netskope Portal
 
-### Netskope REST API v2 
+### Netskope REST API v2
 
 (This API is used by Sumo Logic Netskope source v2.0.0 and later).
-Netskope REST APIv2 provides an easy way to extend the Netskope platform to build to use-cases specific to your organization. Endpoints cover key areas such as Events, Alerts, Reports, Clients and more. 
+Netskope REST APIv2 provides an easy way to extend the Netskope platform to build to use-cases specific to your organization. Endpoints cover key areas such as Events, Alerts, Reports, Clients and more.
 
 To obtain a Netskope REST API v2 auth token, do the following:
 
@@ -60,9 +62,9 @@ To obtain a Netskope REST API v2 auth token, do the following:
 
 ### Netskope REST API v1 (Deprecated)
 
-:::caution Deprecated 
+:::caution Deprecated
 This is used only for Sumo Logic Netskope source v1.3.1 or lower, please upgrade to v2.0.0.
-::: 
+:::
 
 Netskope RESTv1 APIs use an auth token to make authorized calls to the
 API. This section demonstrates how to obtain a token from the Netskope
@@ -124,6 +126,11 @@ event log in the Health Event Index.
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
+
 
 #### JSON configuration 
 
