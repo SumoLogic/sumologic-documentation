@@ -63,7 +63,7 @@ To configure a 1Password Source:
 2. On the Collectors page, click **Add Source** next to a Hosted** **Collector.
 3. Select **1Password**.<br/><img src={useBaseUrl('img/send-data/1password-source-icon.png')} alt="1password-source-icon.png" width="150" />
 4. Enter a **Name** for the Source. The **description** is optional.<br/> ![1password-input](/img/send-data/1password-input.png)
-5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) is stored in a searchable field called `_sourceCategory`.
+5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
 6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse). When configured with the **Forward to SIEM** option, the following metadata fields are set:
   | Field Name | API | Value |
   |:---|:---|:---|
@@ -137,27 +137,9 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/H
   </tr>
 </table>
 
-### Restart Sources
+### Restarting your Source
 
-When Sources encounter ThirdPartyConfig errors, they can now be restarted. Both the Sumo Logic UI and Sumo Logic API allow you to restart the Sources.
-
-#### UI
-
-To restart your source in the Sumo Logic platform, follow the steps below:
-1. Open the Collection page, and go to **Manage Data** > **Collection** > **Collection**.
-2. Select the source and click the **information** icon on the right side of the row.
-3. The API usage information popup is displayed. Click the **Restart Source** button on the bottom left. <br/><img src={useBaseUrl('img/send-data/restart-source-button.png')} alt="restart-source-button.png" width="550" />
-4. Click **Confirm** to send the restart request. <br/><img src={useBaseUrl('img/send-data/restart-source-confirm.png')} alt="restart-source-confirm.png" width="550" />
-5. The bottom left of the platform will provide a notification informing you the request was successful.<br/><img src={useBaseUrl('img/send-data/source-restart-initiated.png')} alt="source-restart-initiated.png" width="550" />
-
-
-#### API
-
-To restart your source using the Sumo Management API, follow the instructions below:
-* Method: POST
-* Example endpoint: `https://api.sumologic.com/api/v1/collectors/{collector_id}/sources/{source_id}/action/restart`.
-
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. For example, an API endpoint in Europe would begin `api.eu.sumologic.com`.  A service endpoint in us2 (Western US) would begin service.us2.sumologic.com.  For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+{@import ../../../reuse/restart-c2c-source.md}
 
 
 ## JSON configuration
@@ -243,7 +225,7 @@ The following table shows the **config** parameters for a 1Password Source.
    </td>
    <td>
    </td>
-   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata field</a> <code>_source</code>.
+   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata field</a> <code>_source</code>.
    </td>
    <td>modifiable
    </td>
@@ -271,7 +253,7 @@ The following table shows the **config** parameters for a 1Password Source.
    </td>
    <td>null
    </td>
-   <td>Type a category of the source. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata field</a> field <code>_sourceCategory</code>. See <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">best practices</a> for details.
+   <td>Type a category of the source. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata field</a> field <code>_sourceCategory</code>. See <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">best practices</a> for details.
    </td>
    <td>modifiable
    </td>

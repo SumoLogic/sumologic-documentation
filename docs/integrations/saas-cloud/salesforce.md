@@ -135,7 +135,7 @@ To create a permission set and assign it to a user:
 
 In this section you will install a Sumo Logic collector and download the necessary SumoJanus package.
 
-1. **Install the collector**. In Sumo Logic, install a Collector (version i19.115 or later) on the system where you want to collect Salesforce Event Monitoring Logs. Configure an [Installed Collector](/docs/send-data/Installed-Collectors) on a Linux or Windows machine. By default the Collector will come with a Java Runtime Environment. To ensure that SumoJanus can locate Java, you may need to update the .bat or .bash file, as described below.
+1. **Install the collector**. In Sumo Logic, install a Collector (version i19.115 or later) on the system where you want to collect Salesforce Event Monitoring Logs. Configure an [Installed Collector](/docs/send-data/installed-collectors) on a Linux or Windows machine. By default the Collector will come with a Java Runtime Environment. To ensure that SumoJanus can locate Java, you may need to update the .bat or .bash file, as described below.
 2. **Download the SumoJanus package**. The SumoJanus file is required to collect logs from Salesforce. SumoJanus is a proprietary library used for script-based collection from applications such as Okta, Box, and Salesforce. Use the following SumoJanus package file that is appropriate for your system:
    * **For Linux**, download sumojanus-salesforce-dist.3.1.0.tar.gz from:
 [https://script-collection.s3.amazonaws.com/sfdc/r3.1.0/sumojanus-salesforce-dist.3.1.0.tar.gz](https://script-collection.s3.amazonaws.com/sfdc/r3.1.0/sumojanus-salesforce-dist.3.1.0.tar.gz).

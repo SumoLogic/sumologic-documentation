@@ -61,7 +61,7 @@ In this step, you configure a hosted collector with a Cloud Syslog source that w
 To configure a hosted collector with a Cloud Syslog source, do the following:
 
 1. Log in to Sumo Logic and [create a Hosted Collector](/docs/send-data/hosted-collectors#Create-a-Hosted-Collector).
-2. Create a [Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source) on the hosted collector, specifying the following:
+2. Create a [Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source) on the hosted collector, specifying the following:
    * Enter a Source Name.
    * Provide a Source Category: **NW/PAN/V9**
 3. Click **Save**.

@@ -41,7 +41,7 @@ Based on the Content-Type header specified, Sumo parses and interprets each line
 | [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo](upload-metrics.md#prometheus-metrics-not-accepted-by-sumo). |
 
 :::note
-For information about metric formats, see [Metric Formats](/docs/metrics/introduction/Metric-Formats).
+For information about metric formats, see [Metric Formats](/docs/metrics/introduction/metric-formats).
 :::
 
 ## Sending multiple metrics in a single payload
