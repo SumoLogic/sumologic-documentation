@@ -5,6 +5,7 @@ sidebar_label: Akamai SIEM API
 description: The Akamai SIEM API Source provides a secure endpoint to receive security events generated on the Akamai platform by leveraging the V1 SIEM API.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Akamai SIEM API Source provides a secure endpoint to receive security events generated on the Akamai platform by leveraging the [V1 SIEM API](https://developer.akamai.com/api/cloud_security/siem/v1.html). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -273,6 +274,10 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
 
 ## JSON configuration
 

@@ -58,9 +58,9 @@ If you see the message "Waiting for the Collector Installation", the spinner nev
 
 You will need to uninstall the old Collector manually, then try to install a new Collector again. Steps on installing and uninstalling based on the operating system the Collector is run on can be found in the following links,
 
-* [Linux](/docs/send-data/Installed-Collectors/linux)
+* [Linux](/docs/send-data/installed-collectors/linux)
 * [macOS](/docs/send-data/installed-collectors/macos)
-* [Windows](/docs/send-data/Installed-Collectors/windows)
+* [Windows](/docs/send-data/installed-collectors/windows)
 
 
 ### "It looks like you haven't activated your account..."
