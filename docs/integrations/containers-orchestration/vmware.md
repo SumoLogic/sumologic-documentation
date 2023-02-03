@@ -91,7 +91,7 @@ pip install pyvmomi==6.7.3
 
 An Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service. The Collector runs as a service and starts automatically after installing or rebooting.
 
-**To install a Collector to collect logs and metrics:** refer to this [link](/docs/send-data/Installed-Collectors) for installation instructions.
+**To install a Collector to collect logs and metrics:** refer to this [link](/docs/send-data/installed-collectors) for installation instructions.
 
 
 ### Step 3: Collect logs and metrics for the VMware App
