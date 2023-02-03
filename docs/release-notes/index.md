@@ -1,7 +1,7 @@
 ---
 slug: /release-notes
-title: Release Notes
-description: Sumo Logic Release Notes. Here you'll find a chronological list of the newest Sumo Logic features and bug fixes.
+title: Sumo Logic Release Notes
+description: Here you'll find a chronological list of the newest Sumo Logic features and bug fixes.
 ---
 
 | | |
