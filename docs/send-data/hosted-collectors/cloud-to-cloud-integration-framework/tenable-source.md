@@ -4,6 +4,7 @@ title: Tenable Source
 sidebar_label: Tenable
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Tenable Source provides a secure endpoint to ingest audit-log events, vulnerability, and asset data from the [Tenable.io APIs](https://developer.tenable.com). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -102,6 +103,11 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | Yes     | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs.                                     | Yes     | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes     | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | FirstPartyGenericError |
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
+
 
 #### JSON configuration
 

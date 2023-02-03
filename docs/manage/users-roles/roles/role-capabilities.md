@@ -62,13 +62,13 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>View field extraction rules
    </td>
-   <td>View <a href="/docs/manage/Field-Extractions">field extraction rules</a>, which speed the search process by automatically parsing fields as log messages are ingested.
+   <td>View <a href="/docs/manage/field-extractions">field extraction rules</a>, which speed the search process by automatically parsing fields as log messages are ingested.
    </td>
   </tr>
   <tr>
    <td>Manage field extraction rules
    </td>
-   <td><a href="/docs/manage/Field-Extractions">Manage field extractions</a>, which speed the search process by automatically parsing fields as log messages are ingested.
+   <td><a href="/docs/manage/field-extractions">Manage field extractions</a>, which speed the search process by automatically parsing fields as log messages are ingested.
 <p>Note that if you grant a role the Manage field extraction rules capability, users with that role will also have the Manage Fields, View Fields, and View field extraction rules capabilities.</p>
    </td>
   </tr>
@@ -186,7 +186,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Allowlist IP addresses
    </td>
-   <td><a href="/docs/manage/Security/create-allowlist-ip-cidr-addresses">Explicitly grant access</a> to specific IP addresses or address ranges.
+   <td><a href="/docs/manage/security/create-allowlist-ip-cidr-addresses">Explicitly grant access</a> to specific IP addresses or address ranges.
    </td>
   </tr>
   <tr>
@@ -198,7 +198,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage access keys
    </td>
-   <td><a href="/docs/manage/Security/Access-Keys">Set up, activate, deactivate, or delete access keys</a> for your organization.
+   <td><a href="/docs/manage/security/access-keys">Set up, activate, deactivate, or delete access keys</a> for your organization.
    </td>
   </tr>
   <tr>

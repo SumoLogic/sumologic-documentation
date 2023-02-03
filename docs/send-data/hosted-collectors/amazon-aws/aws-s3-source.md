@@ -186,6 +186,12 @@ The following steps use the AWS SNS Console. You may instead use AWS CloudForma
 
 ### SNS with one bucket and multiple Sources
 
+    :::important
+    S3 Event Notifications do not allow you to have overlapping suffixes in two rules if the prefixes are overlapping for the same event type.
+
+    In this scenario, you will likely need to have a single Event Notification for the suffix that sends to an SNS Topic, and then have multiple SNS Subscriptions to the same Topic. This will allow you to have parallel data streams for the same Event Notifications (i.e., one that points to a Sumo Endpoint, and one that points elsewhere).
+    :::
+
 When collecting from one AWS S3 bucket with multiple Sumo Sources you need to create a separate topic and subscription for each Source. Subscriptions and Sumo Sources should both map to only one endpoint. If you were to have multiple subscriptions Sumo would collect your objects multiple times.
 
 Each topic needs a separate filter (prefix/suffix) so that collection does not overlap. For example, the following image shows a bucket configured with two notifications that have filters (prefix/suffix) set to notify Sumo separately about new objects in different folders.

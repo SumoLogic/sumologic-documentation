@@ -545,85 +545,20 @@ html[data-theme='dark'] .navbar-item-github:before {
   border-radius: 1px;
 }
 
-//NAV BAR free trial button
-
-.navbar {
-  border-bottom: 1px solid var(--ifm-toc-border-color);
-}
-
-.navbar-trial {
-  background-color: #2aa1e6;
-  color: white;
-  padding: 2px 10px;
-  font-weight: 300;
-  font-size: 14px;
-  text-decoration: none;
-  margin-right: 10px;
-  border: 1px solid #2aa1e6;
-  cursor: pointer;
-  margin-right: 5px;
-  border-radius: 3px;
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  a:hover {
-    color: white;
-  }
-}
-
-.navbar-trial:hover {
-  background-color: #2aa1e6;
-  border: 1px solid #fff;
-  color: white;
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  a:hover {
-    color: white;
-  }
-}
-
-.navbar-trial-mobile {
-  background-color: #2aa1e6;
-  color: white;
-  padding: 8px 25px;
-  font-weight: 300;
-  text-decoration: none;
-  border: 1px solid #3578e5;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-@media screen and (max-width: 996px) {
-  .navbar-trial {
-    margin-right: 50px;
-  }
-}
-
-@media screen and (max-width: 479px) {
-  .navbar-trial {
-    display: none;
-  }
-}
-
 
 //Get Started button - homepage, 404 not found
 
-.homepage {
-  border-bottom: 1px solid #F1F1F1;
-}
+
 
 .homepage {
-  background-color: transparent;
+  background-color: #1976d2;
   color: white;
   padding: 12px 12px;
   font-weight: 300;
   font-size: 15px;
 //  filter: drop-shadow(-1px 2px 2px #64696C);
   text-decoration: none;
-  border: .5px solid #F1F1F1;
+  border: .5px solid #1976d2;
   border-radius: 5px;
   margin-right: 5px;
   margin-bottom: 10px;
@@ -658,7 +593,7 @@ html[data-theme='dark'] .navbar-item-github:before {
 }
 
 .homepage-mobile {
-  background-color: transparent;
+  background-color: #1976d2;
   color: white;
   padding: 8px 10px;
   font-weight: 300;
@@ -1508,16 +1443,6 @@ html[data-theme='dark'] .featureImage {
 
 // Sumo badges
 
-.globalIntelligence {
-  background: #940665;
-  color: var(--ds-gray-100);
-  font-weight: 750;
-  font-size: 14px;
-  padding: .4rem;
-  border-radius: 10px;
-}
-
-
 .beta {
   background: #C6007E;
   color: white;
@@ -1527,107 +1452,6 @@ html[data-theme='dark'] .featureImage {
   text-decoration: none;
   margin-right: 10px;
   border-radius: 10px;
-}
-
-.beta:hover {
-  background: #C6007E;
-  color: white;
-  font-weight: 600;
-  font-size: 16px;
-  padding: 8px 20px;
-  text-decoration: none;
-  margin-right: 10px;
-  border-radius: 10px;
-  border: .5px solid #FFFFFF;
-}
-
-
-.beta-static {
-  background: #C6007E;
-  color: white;
-  font-weight: 600;
-  font-size: 16px;
-  padding: 8px 20px;
-  text-decoration: none;
-  margin-right: 10px;
-  border-radius: 10px;
-}
-
-.essentials {
-  background: #1eb8cc;
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 8px 20px;
-  text-decoration: none;
-  margin-right: 10px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.essentials:hover {
-  background: #1eb8cc;
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 8px 20px;
-  text-decoration: none;
-  border: 1px solid #FFFFFF;
-}
-
-.free {
-  background: #5d5d5d;
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 8px 20px;
-  text-decoration: none;
-  margin-right: 10px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.free:hover {
-  background: #5d5d5d;
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 8px 20px;
-  text-decoration: none;
-  border: 1px solid #FFFFFF;
-}
-
-.enterprise-ops {
-  background: #0092d2;
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 8px 20px;
-  text-decoration: none;
-  margin-right: 10px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.enterprise-ops:hover {
-  background: #0092d2;
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 8px 20px;
-  text-decoration: none;
-  border: 1px solid #FFFFFF;
-}
-
-.deprecated {
-  background: #99750b;
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 8px 20px;
-  text-decoration: none;
-  margin-right: 10px;
-  border-radius: 20px;
 }
 
 .sl-embed {

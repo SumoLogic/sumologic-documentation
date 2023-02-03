@@ -67,6 +67,12 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs.                                     | Yes                                                   | The Source will retry indefinitely.                               | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry indefinitely.                               | FirstPartyGenericError |
 
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
+
+
 ## FAQ
 
 ### What specific API routes does this C2C collect?
