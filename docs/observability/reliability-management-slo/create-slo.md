@@ -162,7 +162,7 @@ Any Monitor update that changes the Monitor definition will lead to a change in 
 
 ### SLI calculation for Monitor-based SLOs
 
-SLIs for Monitor-based SLOs are calculated at a granularity of 1 minute. One minute is treated as unsuccessful if the Monitor was in triggered state at any point of time within that minute.
+SLIs for Monitor-based SLOs are calculated at a granularity of 1 minute. A minute is treated as unsuccessful if the Monitor threshold is violated at any point of time within that minute.
 
 ## Create an SLO Monitor
 
