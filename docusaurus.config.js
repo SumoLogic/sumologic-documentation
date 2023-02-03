@@ -239,9 +239,7 @@ module.exports = {
       defaultMode: 'light',
     },
     algolia: {
-      //The application ID provided by Algolia
       appId: '2SJPGMLW1Q',
-      // Public API key: it is safe to commit it
       apiKey: 'fb2f4e1fb40f962900631121cb365549',
       indexName: 'crawler_sumodocs',
       contextualSearch: false,
@@ -249,8 +247,7 @@ module.exports = {
         facetFilters: ['hierarchy.lvl0', 'hierarchy.lvl1', 'hierarchy.lvl2'],
       },
       // Optional: path for search page that enabled by default (`false` to disable it)
-      //searchPagePath: false,
-      //... other Algolia params
+      searchPagePath: false,
     },
     prism: {
       theme: lightCodeTheme,
