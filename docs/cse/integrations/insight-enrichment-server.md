@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The CSE Insight Enrichment Server is a component that automatically enriches CSE Insights.  
 
 :::note
-This topic describes v1.5.0 of the Insight Enrichment Server.
+This topic describes v1.5.0 of the non-FedRAMP version of the Insight Enrichment Server, and v1.0.3 for the FedRAMP version.
 :::
 
 ## What the Insight Enrichment Server does
@@ -58,9 +58,9 @@ The installation process requires a valid configuration file before the installa
 
 The Insight Enrichment Server is packaged with an interactive installer. You’ll be prompted to supply the following configuration options when you run the installer.
 
-* Installation Directory. By default, the Insight Enrichment Server will be installed in `C:\Windows\SumoLogic\EnrichmentServer`. Sumo Logic recommends that you accept this default.     
+* Installation Directory. By default, the Insight Enrichment Server will be installed in `C:\Windows\SumoLogic\EnrichmentService`. Sumo Logic recommends that you accept this default.     
 * Enrichment Service Credentials. If you need to run the server under a user with different privileges than the LocalService, provide them when prompted. See [Run the server under a service account](#run-the-server-under-a-service-account) below for account requirements.    
-* Configuration File. The installer prompts you to provide the location of a configuration file with an .ini extension. The file must be a valid configuration file with required configuration options. For an example, see [Example configuration file](#example-configuration-file). The file will be copied to `C:\Windows\SumoLogic\EnrichmentServer` on your local machine.
+* Configuration File. The installer prompts you to provide the location of a configuration file with an .ini extension. The file must be a valid configuration file with required configuration options. For an example, see [Example configuration file](#example-configuration-file). The file will be copied to `C:\Windows\SumoLogic\EnrichmentService` on your local machine.
 
 **Run the server under a service account**
 
@@ -87,8 +87,8 @@ The Insight Enrichment Server might run on earlier Windows versions, such as Win
 
 The Insight Enrichment Server is packaged with an interactive installer. You’ll be prompted to supply the following configuration options when you run the installer.
 
-* **Installation Directory**. By default, the Insight Enrichment Server will be installed in `C:\Windows\SumoLogic\EnrichmentServer`. Sumo Logic recommends that you accept this default.
-* **Configuration File**. The installer prompts you to provide the location of a configuration file with an .ini extension. The file must be a valid configuration file with the required configuration options. The configuration file will be copied to `C:\Windows\SumoLogic\EnrichmentServer` on your local machine.
+* **Installation Directory**. By default, the Insight Enrichment Server will be installed in `C:\Windows\SumoLogic\EnrichmentService`. Sumo Logic recommends that you accept this default.
+* **Configuration File**. The installer prompts you to provide the location of a configuration file with an .ini extension. The file must be a valid configuration file with the required configuration options. The configuration file will be copied to `C:\Windows\SumoLogic\EnrichmentService` on your local machine.
 
 ### Step 1: Set up Java and environment variables
 
@@ -105,7 +105,7 @@ You can skip this step if you already have Java 11 or later installed.
     <img src={useBaseUrl('img/cse/environment-variables.png')} alt="search" />   
 7. In the **New System Variable** popup:
     1. **Variable name**. Enter <br/>
-    _JAVA_PATH_.
+    _JAVA_HOME_.
     2. **Variable value**. Enter the path to your JDK folder, for example<br/>
     _C:\Program Files\Java\jdk-X.X.X_.
     3. Click** OK**.

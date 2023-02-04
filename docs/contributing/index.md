@@ -1,7 +1,7 @@
 ---
 slug: /contributing
 title: Contribute to Sumo Docs
-tags: [docs, open source, contribute, github]
+description: Learn how to provide feedback and contribute to Sumo Logic Docs, an open source project.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -42,4 +42,9 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 ## Contact Us
 
-Need to get in touch? You can find us on [Sumo Dojo Slack](https://sumodojo.slack.com).
+Need to get in touch? You can find us at:
+* [Sumo Dojo Slack](https://sumodojo.slack.com)
+* [Sumo Logic Support](https://support.sumologic.com/hc/en-us)
+* [Sumo Logic Community](https://support.sumologic.com/hc/en-us/community/topics)
+* [Sumo Docs GitHub](https://github.com/SumoLogic/sumologic-documentation)
+* [Sumo Logic GitHub](https://github.com/SumoLogic)
