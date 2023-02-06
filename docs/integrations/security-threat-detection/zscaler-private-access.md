@@ -115,9 +115,9 @@ Once you have deployed the App Connector, configure log receivers to send logs t
 You can also edit the log stream content within the text field in order to capture specific fields and create a **Custom **log template. To learn more, see[ Understanding the Log Stream Content Format](https://help.zscaler.com/zpa/understanding-log-stream-content-format).
  \
 Edit the the log stream content, paste the following text in the beginning of the template:
-    
+
     <165>1 - - - - - - <Syslog Token>
-    
+
 
 For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
 

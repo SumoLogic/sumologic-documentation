@@ -160,7 +160,9 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/H
   </tr>
 </table>
 
+### Restarting your Source
 
+{@import ../../../reuse/restart-c2c-source.md}
 
 #### JSON configuration
 
