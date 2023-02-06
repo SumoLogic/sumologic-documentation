@@ -346,7 +346,7 @@ These log messages will be delayed by one hour, as the system ensures consistenc
 
 ### Create an SLO Lookup Table
 
-If you have an existing [Lookup Table](/docs/search/lookup-tables) you can enrich it detailed SLO data using the `_view=sumologic_slo_output` snippet. Metrics such as sloName, signalType, sliQueryType, sloDescription, and more are supported.
+If you have an existing [Lookup Table](/docs/search/lookup-tables) you can enrich it detailed SLO data (such as sloName, signalType, sliQueryType, sloDescription) using the `_view=sumologic_slo_output` snippet.
 
 As an example, say you had a SLO [dashboard](/docs/dashboards-new) and wanted to see error budget burndown from several of your apps and services combined.<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="percent-error-remain" width="450"/>
 
