@@ -12,14 +12,17 @@ This topic shows you how to create a monitor.
 ## Step 1: Open New Monitor window
 
 #### From your Monitors page
+
 1. Go to the Monitors page by clicking **Manage Data** > **Monitoring** > **Monitors**.
 1. Click on the **Add** button > **New Monitor** to add a new Monitor. The creation dialog box will appear.
 
 #### From your Dashboard
+
 1. From a Dashboard, hover your mouse over a panel, click the kebab icon, then **Open in Log Search**.
 1. From your log search view, click the kebab icon in the upper right corner, then **Create a Monitor**.
 
 #### From your Log Search
+
 1. Click the kebab icon in the upper right corner, then **Create a Monitor**.
 
 ## Step 2: Select Monitor type and Detection Method
@@ -160,7 +163,7 @@ Recover
 
 Recovery condition is set by default to the opposite of the alert condition. If you need to change these settings, first switch the **Edit Recovery Settings** toggle and then adjust values for the recovery settings accordingly.
 
-![metrics trigger recovery toggle.png](/img/monitors/metrics-trigger-recovery-toggle.png)  
+![metrics trigger recovery toggle.png](/img/monitors/edit-recover-settings.png)  
 
 For example, when the alert is set to `> 10` the recovery would be set to `<= 10` when inferred.
 
@@ -172,6 +175,18 @@ Sumo Logic automatically resolves the incident when the resolution condition is 
 |:--|:--|
 | Threshold type | How you want the value compared. Select either greater than, greater than or equal, less than or equal, or less than. |
 | Threshold | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
+
+**Alert and recovery window**
+
+This setting controls the behavior of alert/recovery for sparse/intermittent/incomplete data sources.
+
+![metrics alert datapoints.png](/img/monitors/minimum-datapoints.png)
+
+`Alert and recovery require a minimum of <Count> data points for “at all times” evaluation windows`
+
+| Parameter | Description |
+|:--|:--|
+| Count | The minimum number of data points needed in alert and recovery `Time Range` for alert to trigger and resolve respectively. |  
 
 #### Outlier detection method
 

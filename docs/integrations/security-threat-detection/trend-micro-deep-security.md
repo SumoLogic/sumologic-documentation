@@ -101,17 +101,14 @@ This section has instructions for collecting logs for the Trend Micro Deep Secur
 
 #### Step 1: Create a Cloud Syslog source on a hosted collector
 
-1. Select an existing [hosted collector](/docs/send-data/Hosted-Collectors), or create a new one.
+1. Select an existing [hosted collector](/docs/send-data/hosted-collectors), or create a new one.
 2. Add a [Cloud Syslog source](/docs/send-data/hosted-collectors/cloud-syslog-source) to the hosted collector.
-
     1. Give the source a name
     2. Enter a Source Category.
     3. Deselect the **Enable Timestamp Parsing**.
     4. Click **Save**.
 3. The Cloud Syslog Source Token will be generated. You'll supply this information as input to the Log Source Identifier, Server Name, and Server Port within Deep Security.
 
-
-14
 Supply this information as input to the Log Source Identifier: Server Name, and Server Port within Deep Security.
 
 For Log Source Identifier field, use this format: `Deep Security Manager [token from Cloud Syslog source]`
@@ -121,8 +118,6 @@ Note the spaces with `Deep Security Manager`.
 
 
 #### Step 2: Configure Sumo as a syslog server in Trend Micro Deep Security.
-
-
 
 1. In the Deep Security Manager console, select **Policies > Common Objects.**
 2. Expand the **Other** node in the left pane.

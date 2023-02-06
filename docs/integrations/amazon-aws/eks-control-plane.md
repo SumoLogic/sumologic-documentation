@@ -167,7 +167,7 @@ The Sumo Logic Kubernetes App provides the services for managing and monitoring 
 ### Step 2. Configure CloudWatch log collection
 
 To configure Amazon CloudWatch log collection, do the following:
-1. Follow the instructions for [Collecting Logs using a CloudFormation Template](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs).
+1. Follow the instructions for [Collecting Logs using a CloudFormation Template](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs).
 2. Refer [Amazon EKS Logs](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html) for Amazon specific details.
 
 
