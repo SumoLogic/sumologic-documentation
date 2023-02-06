@@ -47,10 +47,8 @@ Run the installer on your server with root or Administrator privileges. If you a
 1. Browse to select a location for the Collector or accept the default and click **Next** to install the Collector files on your machine.
 1. The Installer displays the summary of the default settings. If you want to change any of these, click [Advanced UI Installer Settings](collector-installation-reference/advanced-ui-installer-settings.md)  and follow the instructions. Click **Next**.
 1. Choose an authentication method.
-
-* Access Key: If you have a Sumo Logic access ID and key, click **Next**, enter the access ID and key, and click **Next**.
-* Installation Token: The Setup Wizard has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the **Token String** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
-
+   * Access Key: If you have a Sumo Logic access ID and key, click **Next**, enter the access ID and key, and click **Next**.
+   * Installation Token: The Setup Wizard has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the **Token String** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
 1. Click **Finish** to complete the setup.
 1. In Sumo Logic select **Manage Data > Collection > Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the Collector, check the [Error Codes](collector-installation-reference/collector-installation-error-messages.md) list to help troubleshoot.
 
@@ -97,10 +95,8 @@ If you uninstall a Collector, no more data is sent to Sumo Logic from that machi
 Uninstalling a Sumo Logic installed Collector requires the following steps:
 
 1. Uninstall the Collector from the host machine using either of these methods.
-
-* [Uninstall using the installer](#uninstall-using-the-installer)
-* [Uninstall from the command line](#uninstall-from-the-command-line)
-
+   * [Uninstall using the installer](#uninstall-using-the-installer)
+   * [Uninstall from the command line](#uninstall-from-the-command-line)
 1. [Remove the Collector from Sumo Logic](#delete-the-collector-from-the-web-application).
 
 ### Uninstall using the installer
@@ -115,16 +111,13 @@ Uninstalling a Sumo Logic installed Collector requires the following steps:
 ### Uninstall from the command line
 
 1. In a terminal prompt, change the directory to the Collector installation directory.   Example:
-
-```bash
-cd /Applications/Sumo\ Logic\ Collector
-```
-
+   ```bash
+   cd /Applications/Sumo\ Logic\ Collector
+   ```
 1. Run the JavaApplicationStub binary with the **-q** option. The **-q** option executes the command without presenting additional prompts.   Example:
-
-```bash
-sudo Sumo\ Logic\ Collector\ Uninstaller.app/Contents/MacOS/JavaApplicationStub -q
-```
+   ```bash
+   sudo Sumo\ Logic\ Collector\ Uninstaller.app/Contents/MacOS/JavaApplicationStub -q
+   ```
 
 ### Delete the Collector from Sumo Logic
 
