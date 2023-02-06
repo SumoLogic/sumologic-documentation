@@ -128,7 +128,7 @@ Get to know about Installed Collector through our video "Install a Collector".
 
 ### Hosted Collectors
 
-[Basics](/docs/send-data/Hosted-Collectors). Review the hosted collector and its basic concepts. The hosted collector is not a literal collector agent (i.e. not an installed software agent), but rather a collection of endpoints and integration that collects logs from various cloud data sources.
+[Basics](/docs/send-data/hosted-collectors). Review the hosted collector and its basic concepts. The hosted collector is not a literal collector agent (i.e. not an installed software agent), but rather a collection of endpoints and integration that collects logs from various cloud data sources.
 
 Get to know about Hosted Collector through our video "Install a Hosted Collector".
 

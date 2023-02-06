@@ -41,7 +41,7 @@ To collect logs for Zscaler Private Access, perform these steps, detailed in the
 
 To collect logs for ZPA, do the following in Sumo Logic:
 
-1. Configure a [Hosted Collector](/docs/send-data/Hosted-Collectors).
+1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors).
 2. Perform the steps in[ Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
     * **Name**. (Required) A name is required. Description is optional.
     * **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources.
@@ -115,9 +115,9 @@ Once you have deployed the App Connector, configure log receivers to send logs t
 You can also edit the log stream content within the text field in order to capture specific fields and create a **Custom **log template. To learn more, see[ Understanding the Log Stream Content Format](https://help.zscaler.com/zpa/understanding-log-stream-content-format).
  \
 Edit the the log stream content, paste the following text in the beginning of the template:
-    
+
     <165>1 - - - - - - <Syslog Token>
-    
+
 
 For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
 

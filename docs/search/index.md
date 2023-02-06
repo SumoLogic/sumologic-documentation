@@ -1,6 +1,6 @@
 ---
 slug: /search
-title: Search and Logs
+title: Log Search
 description: Learn about the Sumo Logic search language, operators, and search features.
 ---
 
@@ -37,4 +37,3 @@ Traces are collected with SumoLogic Kubernetes Collection or a standalone OpenTe
 :::note
 To interact with other Sumo Logic users, post feedback, or ask a question, visit the Sumo Logic Community Search & Query Forum.
 :::
- 
