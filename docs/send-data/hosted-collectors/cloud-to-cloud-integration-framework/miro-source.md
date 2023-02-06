@@ -4,8 +4,8 @@ title: Miro Source
 sidebar_label: Miro
 description: Configure Miro Source Cloud-to-Cloud connector
 ---
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Miro Source API integration ingests audit logs obtained from the [Audit log API](https://developers.miro.com/reference/get-logs). You will be able to collect audit logs activity from your Miro platform using our new Miro Cloud-to-Cloud Source connector.
 

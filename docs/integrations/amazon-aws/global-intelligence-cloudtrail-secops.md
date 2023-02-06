@@ -1,7 +1,6 @@
 ---
 id: global-intelligence-cloudtrail-secops
 title: Global Intelligence for AWS CloudTrail SecOps
-sidebar_label: AWS CloudTrail SecOps Global Intelligence
 description: The Global Intelligence for AWS CloudTrail App enables you to detect potentially malicious configuration changes in your AWS account by comparing AWS CloudTrail events in your account against a cohort of AWS customers.
 ---
 

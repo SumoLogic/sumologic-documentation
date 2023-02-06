@@ -13,7 +13,7 @@ info:
     - Access ID and Access Key
     - Base64 encoded Access ID and Access Key
 
-    See [Access Keys](/docs/manage/Security/Access-Keys) to generate an Access Key. Make sure to copy the key you create, because it is displayed only once.
+    See [Access Keys](/docs/manage/security/access-keys) to generate an Access Key. Make sure to copy the key you create, because it is displayed only once.
     When you have an Access ID and Access Key you can execute requests such as the following:
       ```bash
       curl -u "<accessId>:<accessKey>" -X GET https://api.<deployment>.sumologic.com/api/v1/users
