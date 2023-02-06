@@ -342,3 +342,21 @@ _view=sumologic_slo_output sloId="<your-SLO-ID>"
 ```
 
 These log messages will be delayed by one hour, as the system ensures consistency to account for ingest delay of source telemetry.
+
+
+### Create an SLO Lookup Table
+
+If you have an existing [Lookup Table](/docs/search/lookup-tables) you can enrich it detailed SLO data using the `_view=sumologic_slo_output` snippet. Metrics such as sloName, signalType, sliQueryType, sloDescription, and more are supported.
+
+As an example, say you had a SLO [dashboard](/docs/dashboards-new) and wanted to see error budget burndown from several of your apps and services combined.<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="percent-error-remain" width="450"/>
+
+You would need to create a custom graphic that combines multiple SLOs from multiple services:
+
+1. Go to **Manage Data** > **Monitoring** > **SLO**.
+1. Click on any SLO line item.
+1. Hover over the **Percentage budget remaining** panel, then click the three-dot icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="open-in-logsearch" width="150"/>
+1. In the search field, enter the following snippet. This will join data from multiple sources for your lookup table.
+  ```
+  ??
+  ```
+1. Click **Add to Dashboard** (lower right corner).<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" width="200"/>
