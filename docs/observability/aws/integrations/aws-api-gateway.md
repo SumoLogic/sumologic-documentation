@@ -60,7 +60,7 @@ _sourceCategory=Labs/AWS/CloudTrail/APIGateway "apigateway.amazonaws.com" Namesp
 
 ## Collect Metrics for AWS API Gateway  
 
-1. Configure a [Hosted Collector](/docs/send-data/Hosted-Collectors/Configure-Hosted-Collector).
+1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/Amazon-CloudWatch-Source-Metrics).
    * **Name**. Enter a name to display for the new Source.
    * **Description**. Enter an optional description.
