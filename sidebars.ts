@@ -2192,6 +2192,7 @@ module.exports = {
         'cloud-soar/main-menu',
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
+        'cloud-soar/mssp',
       ],
     },
   ],
