@@ -110,7 +110,11 @@ Uninstalling a Sumo Logic installed Collector requires the following steps:
 
 ### Uninstall from the command line
 
+<<<<<<< Updated upstream
 1. In a terminal prompt, change the directory to the Collector installation directory.   Example:
+=======
+1. In a terminal prompt, change the directory to the Collector installation directory. Example:
+>>>>>>> Stashed changes
    ```bash
    cd /Applications/Sumo\ Logic\ Collector
    ```
