@@ -247,7 +247,7 @@ To collect AWS CloudTrail events, do the following:
 
 This section provides instructions for setting up the collection of AWS CloudWatch logs for ingest into Sumo Logic. To collect AWS CloudWatch logs, do the following:
 
-1. Follow the instructions for collecting [Amazon CloudWatch logs](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs). By default, Aurora MySQL Error Logs are enabled to be pushed to CloudWatch. However, you need to turn ON other log types, as explained in the following steps.
+1. Follow the instructions for collecting [Amazon CloudWatch logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs). By default, Aurora MySQL Error Logs are enabled to be pushed to CloudWatch. However, you need to turn ON other log types, as explained in the following steps.
 2. While configuring the log forwarding with Lambda function to Sumo Logic, set log format as **Others**.
 3. Create a **DB Parameters Group**, if not done already.
 4. Enable the following:

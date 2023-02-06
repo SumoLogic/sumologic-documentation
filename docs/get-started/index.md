@@ -82,7 +82,7 @@ Get to know the Collection process through our video "Data Collection Strategy".
 * [Retention](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention.md). Determine the average data retention for your account (total storage / daily ingest) and change the General Index retention period if necessary. The General Index settings can be found on the **Manage Data > Settings > Partitions** menu, which is explained in further detail on the Optimization Setup sheet of this document.
 * [Data Volume Index](/docs/manage/ingestion-volume/Data-Volume-Index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo tool.
 * [Audit Index](/docs/manage/Security/Audit-Index). Enable the audit index. This feature allows you to track user behavior, content changes, and scheduled search execution results.
-* [Data Volume App](/docs/integrations/sumo-apps/Data-Volume-Legacy). Install the Data Volume app in Sumo App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
+* [Data Volume App](/docs/integrations/sumo-apps/data-volume-Legacy). Install the Data Volume app in Sumo App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
 * [Audit App](/docs/integrations/sumo-apps/Audit). Install the Audit app and explore its content. You can use this to monitor user activity, content changes, as well as scheduled search changes and executions.
 
 
@@ -128,7 +128,7 @@ Get to know about Installed Collector through our video "Install a Collector".
 
 ### Hosted Collectors
 
-[Basics](/docs/send-data/Hosted-Collectors). Review the hosted collector and its basic concepts. The hosted collector is not a literal collector agent (i.e. not an installed software agent), but rather a collection of endpoints and integration that collects logs from various cloud data sources.
+[Basics](/docs/send-data/hosted-collectors). Review the hosted collector and its basic concepts. The hosted collector is not a literal collector agent (i.e. not an installed software agent), but rather a collection of endpoints and integration that collects logs from various cloud data sources.
 
 Get to know about Hosted Collector through our video "Install a Hosted Collector".
 
@@ -184,9 +184,9 @@ Before adding Field Extraction Rule (FER), consider the following:
 * **FER Scoping.** FERs are composed of a scoping statement and the parsing logic; scoping usually involves SourceCategory and possibly keywords.
 * **Limitations.** FERs can not extract every key/value pair but should be prioritized to the most commonly logged and searched key/value pairs.
 
-[FER Basics](/docs/manage/Field-Extractions). Field Extraction Rules are used to pre-parse key/value pairs from log messages as they're collected. They're best utilized on logs that have consistent formatting.
+[FER Basics](/docs/manage/field-extractions). Field Extraction Rules are used to pre-parse key/value pairs from log messages as they're collected. They're best utilized on logs that have consistent formatting.
 
-[Create a FER.](/docs/manage/Field-Extractions/create-field-extraction-rule) If applicable, identify a set of logs to be pre-parsed by a FER. Create the FER on the **Field Extraction Rules** page of the **Manage Data > Settings** menu. The rule will require a **Rule Name**, **Scope**, and the **Parse** **Expression** to be implemented.
+[Create a FER.](/docs/manage/field-extractions/create-field-extraction-rule) If applicable, identify a set of logs to be pre-parsed by a FER. Create the FER on the **Field Extraction Rules** page of the **Manage Data > Settings** menu. The rule will require a **Rule Name**, **Scope**, and the **Parse** **Expression** to be implemented.
 
 Get to know more about How to create a FER through our video "Creating a Field Extraction Rule".
 

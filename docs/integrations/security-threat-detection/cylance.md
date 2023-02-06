@@ -82,7 +82,7 @@ To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a H
 
 ### Step 2: Configure a Source
 
-1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
+1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
     1. **Name**. (Required) A name is required. Description is optional.
     2. **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources.
 Example: **prod/web/apache/access**.
@@ -112,7 +112,7 @@ Before your can configure Sumo Logic to ingest logs, you must set up remote log 
 8. Enter your **Port**.
 9. For **Severity,** select **Alert (1)**.
 10. For **Facility,** select **Internal (5)**.
-11. For **Custom Token,** enter the token from the Sumo Logic [Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
+11. For **Custom Token,** enter the token from the Sumo Logic [Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
 12. Click **Save**.
 
 

@@ -3,6 +3,7 @@ id: microsoft-graph-security-api-source
 title: Microsoft Graph Security API Source
 sidebar_label: Microsoft Graph Security API
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each
@@ -110,7 +111,7 @@ To configure a Microsoft Graph Security API Source:
    | _siemFormat	| JSON |
    | _siemEventID| 	This field is dynamically set based on the value of the category key in the log. <br/> `{{category}}` |
 
-  
+
 2. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
@@ -132,6 +133,10 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following 
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
 
 ### JSON configuration
 
