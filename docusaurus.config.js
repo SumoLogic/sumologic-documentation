@@ -247,7 +247,7 @@ module.exports = {
         facetFilters: ['hierarchy.lvl0', 'hierarchy.lvl1', 'hierarchy.lvl2'],
       },
       // Optional: path for search page that enabled by default (`false` to disable it)
-      searchPagePath: false,
+      //searchPagePath: false,
     },
     prism: {
       theme: lightCodeTheme,
