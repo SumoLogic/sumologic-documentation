@@ -1,5 +1,5 @@
 ---
-title: SLO Panels Log Search
+title: SLO Dashboard Panel Log Search
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - log search
