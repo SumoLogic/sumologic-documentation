@@ -62,15 +62,19 @@ Each dashboard contains the following information:<br/><img src={useBaseUrl('img
 </table>
 
 
-## Setting Granularity for SLO Time Ranges
+## Setting SLO Data Granularity
+
+### Time Ranges
 
 To modify the time range, select and drag across dates to zoom in further. This can be useful if you want to zoom in for granular details, especially for charts with larger compliance periods:<br/><img src={useBaseUrl('img/observability/2022-08-02_14-29-19.gif')} alt="Reliability Management SLO SLI" />
 
+### Compliance Period
+
 You can also filter by compliance period to view your past activity and plan ahead:<br/><img src={useBaseUrl('img/observability/compliance-period-filter.png')} alt="Reliability Management SLO SLI" />
 
-## Accessing Log Search
+### Accessing Log Search
 
-You can launch a Log Search session directly from SLO dashboard panels, giving you the ability to drill down into further granular details.
+You can launch a Log Search session directly from an SLO dashboard panel, giving you the ability to drill down into further granular details.
 
 1. Go to **Manage Data** > **Monitoring** > **SLO**.
 1. Click on any SLO line item.
