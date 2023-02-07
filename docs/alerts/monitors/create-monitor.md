@@ -176,17 +176,22 @@ Sumo Logic automatically resolves the incident when the resolution condition is 
 | Threshold type | How you want the value compared. Select either greater than, greater than or equal, less than or equal, or less than. |
 | Threshold | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
 
-**Alert and recovery window**
+#### Alert and recovery window
 
-This setting controls the behavior of alert/recovery for sparse/intermittent/incomplete data sources.
+This setting affects both the alert generation logic and the alert recovery logic.
 
 ![metrics alert datapoints.png](/img/monitors/minimum-datapoints.png)
 
-`Alert and recovery require a minimum of <Count> data points for “at all times” evaluation windows`
+`Alert and recovery require a minimum of <Count> data points for `at all times` evaluation windows`
 
 | Parameter | Description |
 |:--|:--|
-| Count | The minimum number of data points needed in alert and recovery `Time Range` for alert to trigger and resolve respectively. |  
+| Count | The minimum number of data points required within the 5-minute window to trigger an alert or recover from an alert. This means that if Sumo Logic receives fewer data points in a given window, no alert will be triggered (even if all those data points exceed the threshold).
+
+For example, you want to be alerted when the CPU usage is over 60% `at all times` within a 5-minute window. If you set the count to 3, this means that you will only get an alert if you have at least 3 data points showing CPU usage above 60% within that 5-minute window. If you only have 2 data points, even if both of them show CPU usage above 60%, you won't get an alert.
+:::note
+This setting only works when you choose `at all times within` as the type of occurrence for the alert.  
+:::  |
 
 #### Outlier detection method
 
