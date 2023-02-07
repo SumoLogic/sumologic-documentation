@@ -70,7 +70,7 @@ To modify the time range, select and drag across dates to zoom in further. This 
 
 ### Compliance Period
 
-You can also filter by compliance period to view your past activity and plan ahead:<br/><img src={useBaseUrl('img/observability/compliance-period-filter.png')} alt="Reliability Management SLO SLI" />
+You can also filter by compliance period to view your past activity and plan ahead.<br/><img src={useBaseUrl('img/observability/compliance-period-filter.png')} alt="Reliability Management SLO SLI" />
 
 ### Open in Log Search
 
