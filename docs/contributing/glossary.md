@@ -283,7 +283,7 @@ Formerly Monitors. Real-time Panels provide a graphical representation of your o
 
 **[Throttling](/docs/manage/ingestion-volume/log-ingestion.md)**. Slows the rate of ingestion across all Collectors in an account to not exceed the allowable rate.
 
-**[Time Compare](/docs/search/Time-Compare)**. Time Compare uses the compare operator to compare current aggregated search results with aggregated data from a past time period.
+**[Time Compare](/docs/search/time-compare)**. Time Compare uses the compare operator to compare current aggregated search results with aggregated data from a past time period.
 
 **Time series**. A set of timestamped values of a specific measurement.
 

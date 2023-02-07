@@ -198,7 +198,7 @@ $ python3 oracle-perf-monitor.py
 
 1. In Sumo Logic, go to **Manage Data > Collection > Collection**.
 2. Find the name of the installed collector to which you'd like to add a Source. Click **Add.** Then choose **Add Source** from the pop-up menu.
-3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
+3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
     1. For **Name** enter any name you like, for instance, Oracle Server Script
     2. The **Description** is optional.
     3. For **Source Category**, enter the desired category. It can be any value you like, for example, `DB/Oracle/DBQueryScript`.
@@ -347,7 +347,7 @@ oracle_script/sumooracle>python3 oracle-perf-monitor.py
 
 1. In Sumo Logic, go to **Manage Data > Collection > Collection**.
 2. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add.** Then choose **Add Source** from the pop-up menu.
-3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
+3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
     * For **Name** enter any name you like, for instance, **Oracle Server Script.**
     * The **Description** is optional.
     * For **Source Category**, enter the desired category. It can be any value you like, for example, `DB/Oracle/DBQueryScript`.
