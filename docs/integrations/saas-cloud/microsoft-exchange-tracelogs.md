@@ -75,7 +75,7 @@ The Sumo Logic App for Microsoft Exchange Tracelogs uses [MessageTrace reports](
 
 ### Sample Queries​
 
-```sql titile="Message Delivery Status"
+```sql title="Message Delivery Status"
 _sourceCategory="o365dummy"
 | json "Organization", "MessageId", "Received","SenderAddress", "RecipientAddress", "Subject", "Status", "ToIP", "FromIP", "Size", "MessageTraceId", "StartDate", "EndDate", "Index" as organization, message_id, received, sender_address, recipient_address, subject, status, toIP, fromIP, size, message_traceId, start_date, end_Date, index nodrop
 | where status matches"{{status}}"
