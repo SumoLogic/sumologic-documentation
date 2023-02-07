@@ -68,6 +68,13 @@ To modify the time range, select and drag across dates to zoom in further. This 
 
 You can also filter by compliance period to view your past activity and plan ahead:<br/><img src={useBaseUrl('img/observability/compliance-period-filter.png')} alt="Reliability Management SLO SLI" />
 
+## Accessing Log Search
+
+You can launch a Log Search session directly from SLO dashboard panels, giving you the ability to drill down into further granular details.
+
+1. Go to **Manage Data** > **Monitoring** > **SLO**.
+1. Click on any SLO line item.
+1. Hover over the panel > click the three-dot kebab icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="open-in-logsearch" width="150"/>
 
 ## Refreshing Your Data
 
