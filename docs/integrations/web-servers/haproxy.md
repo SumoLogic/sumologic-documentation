@@ -404,7 +404,7 @@ local2.=notice     /var/log/haproxy-notice.log
 
     **To add a Syslog Source source for HAProxy do the following**
 
-1. Add a [Syslog source](/docs/send-data/installed-collectors/sources/Syslog-Source) in the installed collector configured in the previous step.
+1. Add a [Syslog source](/docs/send-data/installed-collectors/sources/syslog-source) in the installed collector configured in the previous step.
 2. Configure the Syslog Source fields as follows:
     * **Name.** (Required)
     * **Description.** (Optional)

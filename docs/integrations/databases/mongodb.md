@@ -339,7 +339,7 @@ Based on your infrastructure and networking setup choose one of these methods to
 		   * the [`--syslog`](https://docs.mongodb.com/manual/reference/program/mongod/#std-option-mongod.--syslog) option for[ mongod](https://docs.mongodb.com/manual/reference/program/mongod/#mongodb-binary-bin.mongod) for _syslog_.
        * the [`--syslog`](https://docs.mongodb.com/manual/reference/program/mongos/#std-option-mongos.--syslog) option for[ mongos](https://docs.mongodb.com/manual/reference/program/mongos/#mongodb-binary-bin.mongos) for _syslog_.
 
-    To capture MongoDB logs using syslog, configure a [syslog source](/docs/send-data/installed-collectors/sources/Syslog-Source) on an [Installed collector](/docs/send-data/installed-collectors) as explained in the next section.
+    To capture MongoDB logs using syslog, configure a [syslog source](/docs/send-data/installed-collectors/sources/syslog-source) on an [Installed collector](/docs/send-data/installed-collectors) as explained in the next section.
 
 3. **Configuring a Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector](/docs/send-data/installed-collectors).
 4. **Configuring a Source**. To collect logs directly from your MongoDB machine, use a Local File Source and an Installed Collector.
@@ -376,7 +376,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB a
          * Infer Boundaries - Detect message boundaries automatically
       4. Click **Save**.
    2. To add a Syslog Source source for MongoDB, do the following:
-      1. Add a [Syslog source](/docs/send-data/installed-collectors/sources/Syslog-Source) in the installed collector configured in the previous step.
+      1. Add a [Syslog source](/docs/send-data/installed-collectors/sources/syslog-source) in the installed collector configured in the previous step.
       2. Configure the Syslog Source fields as follows:
          * **Name.** (Required)
          * **Description.** (Optional)
