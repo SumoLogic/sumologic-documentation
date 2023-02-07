@@ -14,7 +14,7 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
 <div className="box-wrapper" markdown="1">
 <div className="box box1 card">
   <div className="container">
-  <img src={useBaseUrl('static/img/integrations/amazon-aws/aws-aurora-logo.png')} alt="Thumbnail icon" width="70"/>
+  <img src={useBaseUrl('/../../../img/integrations/amazon-aws/aws-aurora-logo.png')} alt="Thumbnail icon" width="70"/>
   <h3><a href="/docs/integrations/amazon-aws/">Amazon Aurora MySQL ULM</a></h3>
   <p>A guide to the Sumo Logic app for Aurora MySQL ULM.</p>
   </div>
@@ -301,7 +301,7 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         </div>
         <div className="box box42 card">
           <div className="container">
-          <img src={useBaseUrl('img/integrations/amazon-aws/network-firewall.png')} alt="Thumbnail icon" width="70"/>
+          <img src={useBaseUrl('/img/integrations/amazon-aws/network-firewall.png')} alt="Thumbnail icon" width="70"/>
           <h3><a href="/docs/integrations/amazon-aws">AWS Network Firewall</a></h3>
           <p>A guide to the Sumo Logic app for AWS Network Firewall.</p>
           </div>
