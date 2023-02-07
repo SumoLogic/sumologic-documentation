@@ -313,7 +313,7 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
   <tr>
    <td>View Alerts
    </td>
-   <td>View <a href="/docs/alerts/Monitors/Alert-Response#Alert_List">Alerts</a> on the Alerts page.
+   <td>View <a href="/docs/alerts/monitors/alert-response#alert-list">Alerts</a> on the Alerts page.
    </td>
   </tr>
   <tr>
