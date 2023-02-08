@@ -21,7 +21,7 @@ To collect Linux logs, you'll need:
 * A Linux [Source](/docs/send-data/installed-collectors/sources), depending on your environment.
     * [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source)
     * [Remote File Source](/docs/send-data/installed-collectors/sources/Remote-File-Source)
-    * [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source)
+    * [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source)
 
 
 ## Installing the PCI Compliance for Linux App
