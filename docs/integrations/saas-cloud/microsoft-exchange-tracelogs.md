@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/istio.png')} alt="Thumbnail icon" width="50"/>
 
-The MessageTrace API offers insight into the handling of emails that have gone through Office 365 for an organization. The Sumo Logic Microsoft Exchange Trace Logs App provides information on the delivery status of messages including Delivered, Failed, Quarantined, Pending and Spam. The app dashboard analyzes message size, sender and receiver locations, and provides threat analysis by utilizing the CrowdStrike threat detection feed.
+The MessageTrace API offers insight into the handling of emails that have gone through Office 365 for an organization. The Sumo Logic Microsoft Exchange Trace Logs App provides information on the delivery status of messages including Delivered, Failed, Quarantined, Pending, and Spam. The app dashboard analyzes message size, sender and receiver locations, and provides threat analysis by utilizing the CrowdStrike threat detection feed.
 
 ## Log types
 
