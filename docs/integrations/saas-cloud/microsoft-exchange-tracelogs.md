@@ -88,7 +88,7 @@ _sourceCategory="o365dummy"
 | transpose row _timeslice column status
 ```
 
-## Collecting logs from Microsoft Exchange Tracelogs App
+## Collecting logs from Microsoft Exchange Trace Logs App
 
 This section provides instructions for setting up [Cloud-to-Cloud-Integration for Microsoft Exchange Tracelogs App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-tracelogs) to create the source and use the same source category while installing the app.
 
