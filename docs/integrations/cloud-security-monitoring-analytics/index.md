@@ -14,14 +14,14 @@ This guide has documentation for all five data source apps that Sumo provides: W
 <div className="box box1 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/guardduty.png')} alt="Thumbnail icon" width="65"/>
-  <h3><a href="/docs/integrations/amazon-aws/">Amazon GuardDuty</a></h3>
+  <h3><a href="/docs/integrations/cloud-security-monitoring-analytics/">Amazon GuardDuty</a></h3>
   <p>A guide to Amazon GuardDuty Cloud Security Monitoring and Analytics.</p>
   </div>
 </div>
 <div className="box box2 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_AWS_VPCFlow.png')} alt="Thumbnail icon" width="50"/>
-  <h3><a href="/docs/integrations/microsoft-azure/">Amazon VPC Flow</a></h3>
+  <h3><a href="/docs/integrations/cloud-security-monitoring-analytics/">Amazon VPC Flow</a></h3>
   <p>A guide to the Sumo Logic app for Amazon VPC Flow.</p>
   </div>
 </div>
@@ -35,7 +35,7 @@ This guide has documentation for all five data source apps that Sumo provides: W
     <div className="box box4 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/security-qs.png')} alt="Thumbnail icon" width="70"/>
-      <h3><a href="/docs/integrations/databases">AWS Security Hub</a></h3>
+      <h3><a href="/docs/integrations/dcloud-security-monitoring-analytics/">AWS Security Hub</a></h3>
       <p>A guide to the Sumo Logic app for AWS Security Hub.</p>
       </div>
     </div>
@@ -48,9 +48,37 @@ This guide has documentation for all five data source apps that Sumo provides: W
     </div>
     <div className="box box6 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/web-servers/SecMon_Linux.png')} alt="Thumbnail icon" width="50"/>
-      <h3><a href="/docs/integrations/web-servers/">Linux</a></h3>
+      <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Linux.png')} alt="Thumbnail icon" width="50"/>
+      <h3><a href="/docs/integrations/cloud-security-monitoring-analytics/">Linux</a></h3>
       <p>A guide to the Sumo Logic app for Linux Cloud Security Monitoring and Analytics.</p>
+      </div>
+    </div>
+    <div className="box box7 card">
+      <div className="container">
+      <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_PAN.png')} alt="Thumbnail icon" width="50"/>
+      <h3><a href="/docs/integrations/cloud-security-monitoring-analytics/">Palo Alto Firewall 9</a></h3>
+      <p>A guide to the Sumo Logic app for Palo Alto Firewall 9 - Cloud Security Monitoring and Analytics.</p>
+      </div>
+    </div>
+    <div className="box box8 card">
+      <div className="container">
+      <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_PAN.png')} alt="Thumbnail icon" width="50"/>
+      <h3><a href="/docs/integrations/cloud-security-monitoring-analytics/">Palo Alto Firewall 10</a></h3>
+      <p>A guide to the Sumo Logic app for Palo Alto Firewall 10 - Cloud Security Monitoring and Analytics.</p>
+      </div>
+    </div>
+    <div className="box box9 card">
+      <div className="container">
+      <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/ueba.png')} alt="Thumbnail icon" width="50"/>
+      <h3><a href="/docs/integrations/cloud-security-monitoring-analytics/">UEBA</a></h3>
+      <p>A guide to the Sumo Logic app for Palo Alto Firewall 10 - Cloud Security Monitoring and Analytics.</p>
+      </div>
+    </div>
+    <div className="box box10 card">
+      <div className="container">
+      <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Thumbnail icon" width="50"/>
+      <h3><a href="/docs/integrations/cloud-security-monitoring-analytics/">Windows</a></h3>
+      <p>A guide to the Sumo Logic app for Windows - Cloud Security Monitoring and Analytics.</p>
       </div>
     </div>
   </div>
