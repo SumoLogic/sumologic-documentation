@@ -91,7 +91,7 @@ _sourceCategory="o365dummy"
 
 ## Collecting logs from Microsoft Exchange Tracelogs App
 
-This section provides instructions for setting up [Cloud-to-Cloud-Integration for Microsoft Exchange Tracelogs App](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-tracelogs/) to create the source and use the same source category while installing the app.
+This section provides instructions for setting up [Cloud-to-Cloud-Integration for Microsoft Exchange Tracelogs App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-tracelogs) to create the source and use the same source category while installing the app.
 
 ## Installing the Gmail Trace Logs app
 
