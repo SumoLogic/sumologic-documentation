@@ -12,7 +12,7 @@ The MessageTrace API offers insight into the handling of emails that have gone t
 
 ## Log types
 
-The Sumo Logic App for Microsoft Exchange Tracelogs uses [MessageTrace reports](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15). To learn about the Microsoft Exchange Trace logs fields, see [Fields](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)#fields) page.
+The Sumo Logic App for Microsoft Exchange Tracelogs uses [MessageTrace reports](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15). To learn about the Microsoft Exchange Trace logs fields, see [Fields](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)#fields) documentation.
 
 ### Sample Log Messages
 
