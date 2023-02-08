@@ -7,7 +7,6 @@ description: This Sumo Logic App for Microsoft Exchange Tracelogs provides visib
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/istio.png')} alt="Thumbnail icon" width="50"/>
 
 The MessageTrace API offers insight into the handling of emails that have gone through Office 365 for an organization. The Sumo Logic Microsoft Exchange Trace Logs App provides information on the delivery status of messages including Delivered, Failed, Quarantined, Pending, and Spam. The app dashboard analyzes message size, sender and receiver locations, and provides threat analysis by utilizing the CrowdStrike threat detection feed.
 
@@ -93,7 +92,7 @@ _sourceCategory="o365dummy"
 
 This section provides instructions for setting up [Cloud-to-Cloud-Integration for Microsoft Exchange Tracelogs App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-tracelogs) to create the source and use the same source category while installing the app.
 
-## Installing the Gmail Trace Logs app
+## Installing the Microsoft Exchange Trace Logs app
 
 Locate and install the app from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
