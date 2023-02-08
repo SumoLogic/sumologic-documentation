@@ -37,7 +37,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage data volume feed
    </td>
-   <td><a href="/docs/manage/ingestion-volume/Data-Volume-Index">Enable and manage the data volume index</a> for your account to avoid using <a href="/docs/manage/manage-subscription/cloud-flex-accounts#Account-Capacity-Limitations">On-Demand Capacity</a>, and to determine when you need to upgrade your account.
+   <td><a href="/docs/manage/ingestion-volume/data-volume-index">Enable and manage the data volume index</a> for your account to avoid using <a href="/docs/manage/manage-subscription/cloud-flex-accounts#Account-Capacity-Limitations">On-Demand Capacity</a>, and to determine when you need to upgrade your account.
    </td>
   </tr>
   <tr>
@@ -124,7 +124,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>View Parsers
    </td>
-   <td>View <a href="/docs/cse/schema/Parser-Editor">Parsers</a>.
+   <td>View <a href="/docs/cse/schema/parser-editor">Parsers</a>.
    </td>
   </tr>
   <tr>
