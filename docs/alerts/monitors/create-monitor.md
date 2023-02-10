@@ -182,7 +182,7 @@ This setting affects both the alert generation logic and the alert recovery logi
 
 ![metrics alert datapoints.png](/img/monitors/minimum-datapoints.png)
 
-`Alert and recovery require a minimum of <Count> data points for `at all times` evaluation windows`
+`Alert and recovery require a minimum of <Count> data points for "at all times" evaluation windows`
 
 | Parameter | Description |
 |:--|:--|
