@@ -1,8 +1,8 @@
 ---
 id: microsoft-exchange-tracelogs
-title: Sumo Logic App for Microsoft Exchange Tracelogs
+title: Sumo Logic App for Microsoft Exchange Trace Logs
 sidebar_label: Microsoft Exchange Tracelogs
-description: This Sumo Logic App for Microsoft Exchange Tracelogs provides visibility into Delivered, Failed, Quarantined, Pending, and Spam messages.
+description: This Sumo Logic App for Microsoft Exchange Trace logs provides visibility into Delivered, Failed, Quarantined, Pending, and Spam messages.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,7 +12,7 @@ The MessageTrace API offers insight into the handling of emails that have gone t
 
 ## Log types
 
-The Sumo Logic App for Microsoft Exchange Tracelogs uses [MessageTrace reports](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15). To learn about the Microsoft Exchange Trace logs fields, see [Fields](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)#fields) documentation.
+The Sumo Logic App for Microsoft Exchange Trace logs uses [MessageTrace reports](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15). To learn about the Microsoft Exchange Trace logs fields, see the [Fields](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)#fields) documentation.
 
 ### Sample Log Messages
 
@@ -72,7 +72,7 @@ The Sumo Logic App for Microsoft Exchange Tracelogs uses [MessageTrace reports](
 }
 ```
 
-### Sample Queries​
+### Sample Queries
 
 ```sql title="Message Delivery Status"
 _sourceCategory="o365dummy"
@@ -90,7 +90,7 @@ _sourceCategory="o365dummy"
 
 ## Collecting logs from Microsoft Exchange Trace Logs App
 
-This section provides instructions for setting up [Cloud-to-Cloud-Integration for Microsoft Exchange Tracelogs App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-tracelogs) to create the source and use the same source category while installing the app.
+This section provides instructions for setting up Microsoft Exchange Trace logs App using the [Cloud-to-Cloud-Integration Microsoft Exchange Trace](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-tracelogs).
 
 ## Installing the Microsoft Exchange Trace Logs app
 
@@ -106,7 +106,7 @@ Version selection is applicable only to a few apps currently. For details, see t
    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
    2. **Data Source**. Select either of these options for the data source:
       * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example: `_sourceCategory=MyCategory`.
+      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example, `_sourceCategory=MyCategory`.
     3. **Advanced**. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 
@@ -117,11 +117,11 @@ The panels will begin to fill automatically. It's worth noting that each panel g
 
 ## Viewing Dashboards
 
-**All dashboard have a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+* All dashboard have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
 You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
 
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 ### Overview Dashboard
 
