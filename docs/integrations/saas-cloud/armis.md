@@ -187,9 +187,9 @@ _sourceCategory=ArmisDashboards id
 | count_distinct(id)
 ```
 
-## Collecting Logs for Armis Api
+## Collecting Logs for Armis API
 
-This section explains how to collect logs from Armis Api and ingest them into Sumo Logic. Refer to the [Armis Api Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source/) to create the source and use the same source category while installing the app.
+This section explains how to collect logs from Armis API and ingest them into Sumo Logic. Refer to the [Armis API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source/) to create the source and use the same source category while installing the app.
 
 ## Installing the Armis App
 
