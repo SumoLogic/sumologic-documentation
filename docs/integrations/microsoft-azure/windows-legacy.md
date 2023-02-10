@@ -77,7 +77,7 @@ To configure a collector and source, do the following:
 
 Events retain their default text format from Windows.
 
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/Remote-Windows-Event-Log-Source).
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/remote-windows-event-log-source).
 
 
 ## Installing the Windows Legacy App

@@ -93,7 +93,7 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
     * **S3 Region**. Select the Amazon Region for your SNS S3 bucket.
     * **Bucket Name**. Enter the exact name of your SNS S3 bucket.
     * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string.
-      * DO NOT use a [leading forward slash](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions).
+      * DO NOT use a [leading forward slash](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).
       * The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category**. Enter a source category. For example, SNS_event.
     * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
