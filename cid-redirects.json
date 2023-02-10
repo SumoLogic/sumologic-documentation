@@ -1478,7 +1478,7 @@
   "/cid/1959": "/docs/integrations/containers-orchestration/vmware",
   "/cid/1960": "/docs/integrations/saas-cloud/pagerduty-v2",
   "/cid/2122": "/docs/integrations/saas-cloud/gmail-tracelogs",
-  "/cid/21222": "/docs/integrations/saas-cloud/microsoft-exchange-tracelogs",
+  "/cid/2127": "/docs/integrations/saas-cloud/armis",
   "/cid/1961": "/docs/integrations/amazon-aws/elasticache",
   "/cid/1962": "/docs/integrations/saas-cloud/cloudflare",
   "/cid/1963": "/docs/integrations/sumo-apps/enterprise-audit",
