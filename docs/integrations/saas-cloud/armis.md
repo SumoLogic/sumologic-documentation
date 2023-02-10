@@ -223,11 +223,11 @@ The panels will begin to fill automatically. It's worth noting that each panel g
 * Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 
-## Alerts Overview Dashboard
+### Alerts Overview Dashboard
 
 **Armis - Alerts Overview** dashboard. The dashboard provides a comprehensive analysis of alerts, by categorizing them based on their severity, status, type, and presenting a trend of alerts over a specified period of time.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Armis-Alerts-Overview.png')} alt="Armis-Alerts-Overview.png" width="600"/>
 
 
-## Device Overview Dashboard
+### Device Overview Dashboard
 
 **Armis - Device Overview** dashboard. The dashboard provides a table view of last-seen devices with key information to protect your IT infrastructure and offers visibility into devices based on risk levels, types, and categories.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Armis-Device-Overview.png')} alt="Armis-Alerts-Overview.png" width="600"/>
