@@ -90,7 +90,7 @@ _sourceCategory="o365dummy"
 
 ## Collecting logs from Microsoft Exchange Trace Logs App
 
-This section provides instructions for setting up Microsoft Exchange Trace logs App using the [Cloud-to-Cloud-Integration Microsoft Exchange Trace](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-tracelogs).
+This section provides instructions for setting up Microsoft Exchange Trace logs App using the [Cloud-to-Cloud-Integration Microsoft Exchange Trace Logs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-tracelogs).
 
 ## Installing the Microsoft Exchange Trace Logs app
 
