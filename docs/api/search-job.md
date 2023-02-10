@@ -88,17 +88,17 @@ You can start requesting results asynchronously while the job is running and pag
   <tr>
    <td>Frequent
    </td>
-   <td>Can return up to 100 thousand records per search.
+   <td>Can return up to 10 million records per search.
    </td>
-   <td>Forcibly paused around 100 thousand messages.
+   <td>Can return up to 10 million messages per search.
    </td>
   </tr>
   <tr>
    <td>Infrequent
    </td>
-   <td>Can return up to 100 thousand records per search.
+   <td>Can return up to 10 million records per search.
    </td>
-   <td>Forcibly paused around 100 thousand messages.
+   <td>Can return up to 10 million messages per search.
    </td>
   </tr>
 </table>
