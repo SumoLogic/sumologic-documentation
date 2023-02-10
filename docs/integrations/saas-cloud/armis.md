@@ -2,7 +2,7 @@
 id: armis
 title: Sumo Logic App for Armis
 sidebar_label: Armis
-description: Allows you to monitor and manage alerts and device security and threats
+description: Sumo Logic App for Armis offers complete device security with alert analysis, device monitoring, and device information for IT infrastructure protection.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
