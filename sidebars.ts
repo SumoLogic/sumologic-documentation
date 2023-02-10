@@ -649,8 +649,8 @@ module.exports = {
       link: {type: 'doc', id: 'manage/security/index'},
       items: [
         'manage/security/about-two-step-verification',
-        'manage/security/two-step-for-admins',
-        'manage/security/two-step-for-users',
+        'manage/security/2-step-verification-admins',
+        'manage/security/2-step-verification-users',
         'manage/security/access-keys',
         'manage/security/audit-index',
         'manage/security/audit-event-index',
@@ -1894,6 +1894,7 @@ module.exports = {
           'integrations/saas-cloud/fastly',
           'integrations/saas-cloud/gmail-tracelogs',
           'integrations/saas-cloud/istio',
+          'integrations/saas-cloud/microsoft-exchange-tracelogs',
           'integrations/saas-cloud/opsgenie',
           'integrations/saas-cloud/pagerduty-v2',
           'integrations/saas-cloud/pagerduty-v3',
