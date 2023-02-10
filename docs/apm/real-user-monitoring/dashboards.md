@@ -33,9 +33,9 @@ Once the RUM app has been installed, use our [Explore view](/docs/dashboards-new
 1. Under **Explore By**, **click Real User Monitoring**.
 1. Select your desired dashboard from **Dashboard** dropdown menu in the header:<br/>![explore rum with red box.png](/img/rum/explore-rum-with-red-box.png)<br/> There are three dashboard types on the **Application**, **Service**, and **Environment** levels, and a single one on the **Action type** and **Action** levels.
 1. Set your desired filters. **Explore** organizes RUM data on five levels:
-   * **Application**: corresponds to the value of the application tag set in your [RUM script](#step-2-add-script-to-your-page-header). This should correspond to your whole website defined by its business function, such as `the-coffee-bar-app`.
-   * **Service**: corresponds to the name of the service in your [RUM script](#step-2-add-script-to-your-page-header). The value should correspond to the JavaScript code executed in your browser, such as `coffee-bar-frontend`. You can have multiple services for each application.
-   * **deployment.environment**: corresponds to your development environment. To enable this, add the `deployment.environment` tag and desired value (like `us-west-1`, `prod`, `dev`) to your [RUM script](#step-2-add-script-to-your-page-header).
+   * **Application**: corresponds to the value of the application tag set in your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). This should correspond to your whole website defined by its business function, such as `the-coffee-bar-app`.
+   * **Service**: corresponds to the name of the service in your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). The value should correspond to the JavaScript code executed in your browser, such as `coffee-bar-frontend`. You can have multiple services for each application.
+   * **deployment.environment**: corresponds to your development environment. To enable this, add the `deployment.environment` tag and desired value (like `us-west-1`, `prod`, `dev`) to your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header).
    * **Action Type**: can be one of:
      * **document loads**: representing loading of actual documents and their resources into the browser
      * **XHR actions**: representing any interaction with a page like click or submit that executes AJAX requests in the background to communicate with the backend, or
