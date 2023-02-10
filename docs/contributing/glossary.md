@@ -75,7 +75,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Data Type](/docs/get-started/faq)**. A Data Type is a specific type of log used with a Sumo Logic Source or App, such as Apache, MySQL, or Windows IIS. You can also use a custom Data Type for a custom application.
 
-**[Data Volume Index](/docs/manage/ingestion-volume/Data-Volume-Index)**. The Data Volume Index automatically provides data that allows you to understand your account’s data ingest volume in bytes and number of log messages processed overall. The Data Volume Index gives you better visibility into how much data you are sending to Sumo Logic, allowing you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription.
+**[Data Volume Index](/docs/manage/ingestion-volume/data-volume-index)**. The Data Volume Index automatically provides data that allows you to understand your account’s data ingest volume in bytes and number of log messages processed overall. The Data Volume Index gives you better visibility into how much data you are sending to Sumo Logic, allowing you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription.
 
 **[Deployment](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security#How_can_I_determine_which_endpoint_I_should_use.3F)**. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created.
 
@@ -131,7 +131,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Host Metrics](/docs/integrations/Hosts-Operating-Systems/Host-Metrics)**. The Sumo Logic app for Host Metrics allows you to collect local host metrics and display them using predefined search queries and dashboards. The app provides dashboards to display analysis of local host metrics for the CPU, disk, memory, network, and TCP.
 
-**[Hosted Collectors](/docs/send-data/Hosted-Collectors)**. Hosted Collectors don't require installation or registration, nor do Hosted Collectors have physical requirements, since they're hosted by Sumo in AWS.
+**[Hosted Collectors](/docs/send-data/hosted-collectors)**. Hosted Collectors don't require installation or registration, nor do Hosted Collectors have physical requirements, since they're hosted by Sumo in AWS.
 
 
 ## I
@@ -283,7 +283,7 @@ Formerly Monitors. Real-time Panels provide a graphical representation of your o
 
 **[Throttling](/docs/manage/ingestion-volume/log-ingestion.md)**. Slows the rate of ingestion across all Collectors in an account to not exceed the allowable rate.
 
-**[Time Compare](/docs/search/Time-Compare)**. Time Compare uses the compare operator to compare current aggregated search results with aggregated data from a past time period.
+**[Time Compare](/docs/search/time-compare)**. Time Compare uses the compare operator to compare current aggregated search results with aggregated data from a past time period.
 
 **Time series**. A set of timestamped values of a specific measurement.
 
