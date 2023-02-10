@@ -1888,6 +1888,7 @@ module.exports = {
         items: [
           'integrations/saas-cloud/acquia',
           'integrations/saas-cloud/akamai-cloud-monitor',
+          'integrations/saas-cloud/armis',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/cloudflare',
