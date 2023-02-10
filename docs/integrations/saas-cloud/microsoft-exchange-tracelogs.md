@@ -90,7 +90,7 @@ _sourceCategory="o365dummy"
 
 ## Collecting logs from Microsoft Exchange Trace Logs App
 
-This section provides instructions for setting up Microsoft Exchange Trace logs App using the [Cloud-to-Cloud-Integration Microsoft Exchange Trace Logs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-tracelogs).
+This section explains how to collect logs from Microsoft Exchange Trace logs Api and ingest them into Sumo Logic. Refer to the [Microsoft Exchange Trace logs Api Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-tracelogs) to create the source and use the same source category while installing the app.
 
 ## Installing the Microsoft Exchange Trace Logs app
 
@@ -125,7 +125,7 @@ You can use filters to drill down and examine the data on a granular level. Filt
 
 ### Overview Dashboard
 
-**Microsoft Exchange Trace Logs - Overview**. The Dashboard provides information on the delivery status of messages, including outliers, and a summary of the message size. It also shows the top organizations utilizing the service.<br/><img src={useBaseUrl('img/integrations/saas-cloud/microsoft-exchange-trace-logs-overview.png')} alt="Microsoft Exchange Trace Logs Overview" width="900"/>
+**Microsoft Exchange Trace Logs - Overview**. The Dashboard provides information on the delivery status of messages, including outliers, and a summary of the message size. <br/><img src={useBaseUrl('img/integrations/saas-cloud/microsoft-exchange-trace-logs-overview.png')} alt="Microsoft Exchange Trace Logs Overview" width="900"/>
 
 
 ### Message Monitoring Dashboard
