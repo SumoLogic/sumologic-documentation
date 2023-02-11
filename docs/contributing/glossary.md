@@ -75,7 +75,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Data Type](/docs/get-started/faq)**. A Data Type is a specific type of log used with a Sumo Logic Source or App, such as Apache, MySQL, or Windows IIS. You can also use a custom Data Type for a custom application.
 
-**[Data Volume Index](/docs/manage/ingestion-volume/Data-Volume-Index)**. The Data Volume Index automatically provides data that allows you to understand your account’s data ingest volume in bytes and number of log messages processed overall. The Data Volume Index gives you better visibility into how much data you are sending to Sumo Logic, allowing you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription.
+**[Data Volume Index](/docs/manage/ingestion-volume/data-volume-index)**. The Data Volume Index automatically provides data that allows you to understand your account’s data ingest volume in bytes and number of log messages processed overall. The Data Volume Index gives you better visibility into how much data you are sending to Sumo Logic, allowing you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription.
 
 **[Deployment](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security#How_can_I_determine_which_endpoint_I_should_use.3F)**. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created.
 
