@@ -12,7 +12,7 @@ The MessageTrace API offers insight into the handling of emails that have gone t
 
 ## Log types
 
-The Sumo Logic App for Microsoft Exchange Trace logs uses the [MessageTrace reports](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)). To learn about the Microsoft Exchange Trace logs fields, see the [Fields](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)#fields) documentation.
+The Sumo Logic App for Microsoft Exchange Trace Logs uses the [MessageTrace reports](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)). To learn about the Microsoft Exchange Trace logs fields, see the [Fields](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)#fields) documentation.
 
 ### Sample Log Messages
 
@@ -90,7 +90,7 @@ _sourceCategory="o365dummy"
 
 ## Collecting logs from Microsoft Exchange Trace Logs App
 
-This section explains how to collect logs from Microsoft Exchange Trace logs Api and ingest them into Sumo Logic. Refer to the [Microsoft Exchange Trace logs Api Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-tracelogs) to create the source and use the same source category while installing the app.
+This section explains how to collect logs from Microsoft Exchange Trace logs Api and ingest them into Sumo Logic. Refer to the [Microsoft Exchange Trace logs Api Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs) to create the source and use the same source category while installing the app.
 
 ## Installing the Microsoft Exchange Trace Logs app
 
@@ -115,19 +115,17 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but with some patience, you will be able to view full graphs and maps.
 
 
-## Viewing Dashboards
+## Viewing Microsoft Exchange Trace Logs Dashboards
 
 * All dashboard have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
-
+* You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
 * Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
-### Overview Dashboard
+### Overview
 
 **Microsoft Exchange Trace Logs - Overview**. The Dashboard provides information on the delivery status of messages, including outliers, and a summary of the message size. <br/><img src={useBaseUrl('img/integrations/saas-cloud/microsoft-exchange-trace-logs-overview.png')} alt="Microsoft Exchange Trace Logs Overview" width="900"/>
 
 
-### Message Monitoring Dashboard
+### Message Monitoring
 
 **Microsoft Exchange Trace Logs - Message Monitoring**. The Dashboard mainly focuses on the message traffic, including the number of unique senders and receivers and their domains. It shows the geographical locations of senders, receivers, and failed messages, and performs security threat analysis on the senders. Additionally, it displays the top 10 senders.<br/><img src={useBaseUrl('img/integrations/saas-cloud/microsoft-exchange-trace-logs-message-monitoring.png')} alt="Microsoft Exchange Trace Logs Message Monitoring" width="900"/>

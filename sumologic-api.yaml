@@ -5403,7 +5403,7 @@ paths:
       summary: Get Audit policy.
       description: "Get the Audit policy. This policy specifies whether audit records\
         \ for your account are enabled. You can access details about reported account\
-        \ events in the Sumo Logic Audit Index. [Learn More](/docs/manage/Security/Audit-Index)"
+        \ events in the Sumo Logic Audit Index. [Learn More](/docs/manage/security/audit-index)"
       operationId: getAuditPolicy
       responses:
         "200":
@@ -5424,7 +5424,7 @@ paths:
       summary: Set Audit policy.
       description: "Set the Audit policy. This policy specifies whether audit records\
         \ for your account are enabled. You can access details about reported account\
-        \ events in the Sumo Logic Audit Index. [Learn More](/docs/manage/Security/Audit-Index)"
+        \ events in the Sumo Logic Audit Index. [Learn More](/docs/manage/security/audit-index)"
       operationId: setAuditPolicy
       requestBody:
         content:
