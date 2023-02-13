@@ -30,7 +30,7 @@ The following table has details on the Document Load metrics collected from Java
 | `browser_time_to_interactive` | domComplete - span start time (fetch start) |
 | `browser_time_to_processing_end` | loadEventEnd - span start time (fetch start) |
 
-The above metrics, presented in the form of areas on the **Website Performance** panels on [RUM dashboards](#viewing-rum-dashboards), can help you understand the sequence of events (pictured below) from user clicks to a fully loaded document.<br/>![Navigation-metrics.png](/img/rum/Navigation-metrics.png)
+The above metrics, presented in the form of areas on the **Website Performance** panels on [RUM dashboards](/docs/apm/real-user-monitoring/dashboards), can help you understand the sequence of events (pictured below) from user clicks to a fully loaded document.<br/>![Navigation-metrics.png](/img/rum/Navigation-metrics.png)
 
 <a name="ttfb"><strong>*</strong> Time to first byte</a> (<code>browser_time_to_fb</code>): measures the delay between start of the page load and moment when the first byte of the response appears. It helps identify when a web server is too slow to respond to requests. You'll find this metric on the Navigation Timings chart.<br/><img src={useBaseUrl('img/rum/nav-timings.png')} alt="Real User Monitoring" />
 
