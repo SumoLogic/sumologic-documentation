@@ -1,6 +1,6 @@
 ---
 id: roles
-title: Sumo Logic Role Management APIs
+title: Role Management APIs
 sidebar_label: Roles
 description: The Role Management API allows you to manage roles from HTTP endpoints.
 ---
