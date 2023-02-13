@@ -1,6 +1,6 @@
 ---
 id: metrics-query
-title: Sumo Logic Metrics Query Management APIs
+title: Metrics Query Management APIs
 sidebar_label: Metrics Query
 description: The Metrics Query API allows you to execute queries on various metrics and retrieve multiple time-series (data-points) over time from HTTP endpoints.
 ---

@@ -322,7 +322,7 @@ module.exports = {
                 activeBaseRegex: '^/docs/dashboards-new/.*',
               },
               {
-                label: 'Manage Sumo Acct',
+                label: 'Manage Sumo Account',
                 to: '/docs/manage',
                 activeBaseRegex: '^/docs/manage/.*',
               },
