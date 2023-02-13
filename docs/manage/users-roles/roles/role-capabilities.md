@@ -37,7 +37,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage data volume feed
    </td>
-   <td><a href="/docs/manage/ingestion-volume/Data-Volume-Index">Enable and manage the data volume index</a> for your account to avoid using <a href="/docs/manage/manage-subscription/cloud-flex-accounts#Account-Capacity-Limitations">On-Demand Capacity</a>, and to determine when you need to upgrade your account.
+   <td><a href="/docs/manage/ingestion-volume/data-volume-index">Enable and manage the data volume index</a> for your account to avoid using <a href="/docs/manage/manage-subscription/cloud-flex-accounts#Account-Capacity-Limitations">On-Demand Capacity</a>, and to determine when you need to upgrade your account.
    </td>
   </tr>
   <tr>
@@ -124,7 +124,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>View Parsers
    </td>
-   <td>View <a href="/docs/cse/schema/Parser-Editor">Parsers</a>.
+   <td>View <a href="/docs/cse/schema/parser-editor">Parsers</a>.
    </td>
   </tr>
   <tr>
@@ -313,7 +313,7 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
   <tr>
    <td>View Alerts
    </td>
-   <td>View <a href="/docs/alerts/Monitors/Alert-Response#Alert_List">Alerts</a> on the Alerts page.
+   <td>View <a href="/docs/alerts/monitors/alert-response#alert-list">Alerts</a> on the Alerts page.
    </td>
   </tr>
   <tr>

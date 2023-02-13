@@ -553,13 +553,13 @@ html[data-theme='dark'] .navbar-item-github:before {
 .homepage {
   background-color: #1976d2;
   color: white;
-  padding: 12px 12px;
+  padding: 8px 10px;
   font-weight: 300;
-  font-size: 15px;
+  font-size: 14px;
 //  filter: drop-shadow(-1px 2px 2px #64696C);
   text-decoration: none;
   border: .5px solid #1976d2;
-  border-radius: 5px;
+  border-radius: 4px;
   margin-right: 5px;
   margin-bottom: 10px;
   transition: 0.5s;
@@ -576,9 +576,9 @@ html[data-theme='dark'] .navbar-item-github:before {
 .homepage:hover {
   background-color: #094cbf;
   color: #F1F1F1;
-  padding: 12px 12px;
+  padding: 8px 10px;
   font-weight: 300;
-  font-size: 15px;
+  font-size: 14px;
   transition: 0.5s;
   text-decoration: none;
   border: .5px solid #000;
