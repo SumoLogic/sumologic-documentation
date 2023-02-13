@@ -244,7 +244,7 @@ module.exports = {
       indexName: 'crawler_sumodocs',
       contextualSearch: false,
       searchParameters: {
-        facetFilters: ['hierarchy.lvl0', 'hierarchy.lvl1', 'hierarchy.lvl2'],
+        facetFilters: ['hierarchy.lvl0', 'hierarchy.lvl1', 'hierarchy.lvl2', 'hierarchy.lvl3'],
       },
       // Optional: path for search page that enabled by default (`false` to disable it)
       //searchPagePath: false,
