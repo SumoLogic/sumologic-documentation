@@ -6,8 +6,25 @@ title: Configuring RUM Data Collection
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Iframe from 'react-iframe';
 
 To collect [traces](/docs/apm/traces) from a browser, you'll first need to create a RUM HTTP Traces Source. The source will have an endpoint URL that you'll put in a script that sends trace data in [OTLP/JSON over HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp) protocol.
+
+:::sumo Micro Lesson
+See Real User Monitoring in action.
+
+<Iframe url="https://www.youtube.com/embed/CduT1sqSPmE?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
 
 ## Prerequisites
 XHR and navigation/route changes support as well as errors collection require RUM script in version 4 or higher (`https://rum.sumologic.com/sumologic-rum-v4.js`). Make sure you're using the correct version in your pages. For automatic updates, use `https://rum.sumologic.com/sumologic-rum.js`.
@@ -28,7 +45,7 @@ To configure a RUM HTTP Traces source:
    * **Source Host** and **Source Category**. (Optional) Enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md) fields that allow you to organize your data. We recommend you specify a Source Category indicating the data is from a browser.<br/><img src={useBaseUrl('/img/rum/RUM-HTTP-Traces-Source.png')} alt="Real User Monitoring" width="300"/>
 1. Enter **Advanced options for Browser RUM**. A list of FAQs on the page can provide help for these options. A table with all the available configuration parameters is available in the [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) README file.<br/><img src={useBaseUrl('img/rum/RUM-HTTP-Traces-Source-Advanced.png')} alt="Real User Monitoring" width="300"/>
    * **Application Name**. (Recommended) Add an **Application Name** tag of a text string to show for the app name in spans (for example, `bookings-app`). This groups services in the Application Service View. If left blank, services will belong to a "default" application. See [Application Service Dashboards](/docs/apm/traces/services-list-map.md) for more information. This setting is saved in the script for `name_of_your_web_application`.
-   * **Service Name**. ( Required) Add a **Service Name** of a text string to show for the service name in spans (for example, `bookings-web-app`). This setting is saved in the script for `name_of_your_web_service`.<br/><br/>To set up a service name dynamically (e.g., to have different service names for micro-frontend packages), leverage the `getOverriddenServiceName` function inside your page code to overwrite the default service name (requires RUM script v4.2.0 or higher). Service names should be of low cardinality and should describe parts of your website above page level. Here's an example code leveraging that function:
+   * **Service Name**. (Required) Add a **Service Name** of a text string to show for the service name in spans (for example, `bookings-web-app`). This setting is saved in the script for `name_of_your_web_service`.<br/><br/>To set up a service name dynamically (e.g., to have different service names for micro-frontend packages), leverage the `getOverriddenServiceName` function inside your page code to overwrite the default service name (requires RUM script v4.2.0 or higher). Service names should be of low cardinality and should describe parts of your website above page level. Here's an example code leveraging that function:
    ```javascript
         window.sumoLogicOpenTelemetryRum.initialize({
           collectionSourceUrl:
@@ -47,7 +64,7 @@ To configure a RUM HTTP Traces source:
    ```
    * **Probabilistic sampling rate** (optional): Add a **Probabilistic sampling rate** for heavy traffic sites in a decimal value based on percentage, for example, 10% would be entered as `0.1`.
    * **Ignore urls** (optional): Add a list of URLs not to collect trace data from. Supports regex. For example: `/^https:\/\/www.tracker.com\/.*/, /^https:\/\/api.mydomain.com\/log\/.*/`. Please make sure provided URLs are valid JavaScript flavor regexes.
-   * **Custom Tags** (optional): Click **+Add** and enter a key and value for each **Custom Tags** to show in spans from instrumented browsers. For example, click **+Add** and enter a key `deployment.environment` with a value of `production`. This information is saved in the script for `name_of_your_web_service`.
+   * **Custom Tags** (optional): Click **+Add** and enter a key and value for each **Custom Tags** to show in spans from instrumented browsers. As an example, you could enter a key of `internal.version` with a value of `0.1.21`. This information is saved in the script for `name_of_your_web_service`.
    * **Propagate Trace Header Cors Urls** (recommended): Add a list of URLs or URL patterns that pass tracing context to construct traces end-to-end. This information is saved in the script for `list_of_urls_to_receive_trace_context`. Some examples are `/^https:\/\/api.mydomain.com\/apiv3\/.*/` and `/^https:\/\/www.3rdparty.com\/.*/.`. Please make sure provided URLs are valid JavaScript flavor regexes.
     :::caution **Propagate Trace Header Cors Urls**
     Sumo Logic cannot perform configuration validation of services of other origins. You should always enable context propagation and CORS configuration changes in a test environment before setting it up in production.
@@ -76,9 +93,15 @@ To configure a RUM HTTP Traces source:
 
   This can be also replaced with an internal OpenTelemetry collector if you wish to redirect browser traffic over it. In this case, replace this URL with the OpenTelemetry collector OTLP/HTTP receiver endpoint as described in [Getting Started with Transaction Tracing](/docs/apm/traces/get-started-transaction-tracing). In this case, the OpenTelemetry collector exporter will send data to the RUM HTTP Traces Source URL.
 
-## Step 2: Add Script to Your Page Header
+## Step 2: Add RUM Script to Your Page Header
 
-Use the copied script in your page head inside the `<head>` `</head>` tags. The script sends trace data in [OTLP/JSON over HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp) protocol. The following are base script examples, populated when you create and configure a source in the above instructions.
+Use the copied script in your page head inside the `<head>` `</head>` tags. The script sends trace data in [OTLP/JSON over HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp) protocol. 
+
+:::tip
+You can view and copy a script anytime by clicking **Show script** for the source.<br/> ![show-script.png](/img/rum/show-script.png)
+:::
+
+The following are base script examples, populated when you create and configure a source in the above instructions.
 
 <Tabs
   className="unique-tabs"
@@ -169,7 +192,3 @@ The above script examples omit the version number and automatically uses most up
 * `https://rum.sumologic.com/sumologic-rum-vX.Y.Z.js` (e.g., https://rum.sumologic.com/sumologic-rum-v4.0.0.js) for patch version control (strict version control)
 
 RUM scripts can be also wrapped in the form of a browser extension/plugin for monitoring SaaS applications in environments where you can control user browser configuration (e.g., internal employees). To obtain a customized browser extension for your environment to monitor Real User Experience with Sumo Logic, contact your Account Team or Sumo Logic support.
-
-:::tip
-You can view and copy a script anytime by clicking **Show Script** for the source.<br/> ![show-script.png](/img/rum/show-script.png)
-:::

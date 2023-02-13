@@ -162,7 +162,7 @@ An event is an action that triggers an event message on a vCenter Server. Event 
 
 ### Step 1: Configure a Syslog Source for the Collector  
 
-A Sumo Logic [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source) operates like a Syslog server listening on the designated port to receive Syslog messages.
+A Sumo Logic [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) operates like a Syslog server listening on the designated port to receive Syslog messages.
 
 1. Go to **Manage Data > Collection > Collection**, and click **Add Source**.
 2. Select **Syslog** for the Source type.
