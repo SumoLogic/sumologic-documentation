@@ -1,6 +1,6 @@
 ---
 id: metrics
-title: Sumo Logic Metrics APIs
+title: Metrics APIs
 sidebar_label: Metrics
 description: Use HTTP endpoints to access your metric data.
 ---

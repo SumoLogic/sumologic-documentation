@@ -32,15 +32,15 @@ Let's get started!
 
 The journey of 10,000 logs begins with a single collector. You start your data analytics journey by sending your data to Sumo. You do this by setting up a local [Installed Collector](/docs/send-data/installed-collectors) or web-[Hosted Collector](/docs/send-data/hosted-collectors), then choosing the data sources that will provide the most value for you.
 
-- **You can set up a collector** by choosing **Manage Data > Collection** on the Sumo Home page, then selecting **Add Collector** in the **Collection** window. For more information, see the [Install a Collector] tutorial.
-- **You can set up a source** when your installed collector appears in the table on the Collection page, by navigating to the collector and selecting **Add > Add Source**. For more information, see the [Add a Source] tutorial.<br/> ![WTS_Collection_Page](/img/get-started/WTS_Collection_Page.png)
+- **You can set up a collector** by choosing **Manage Data > Collection** on the Sumo Home page, then selecting **Add Collector** in the **Collection** window. For more information, see [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collector-source/).
+- **You can set up a source** when your installed collector appears in the table on the Collection page, by navigating to the collector and selecting **Add > Add Source**. For more information, see [Sources for Installed Collectors](/docs/send-data/installed-collectors/sources/) and [Hosted Collectors](/docs/send-data/hosted-collectors/).<br/> ![WTS_Collection_Page](/img/get-started/WTS_Collection_Page.png)
 
 
 ## Step 2: Search and analyze your data
 
 Once your data is available in Sumo, you and your co-workers can search your logs and metrics to identify unusual conditions or errors that could indicate a problem. You do this by creating queries and parsing the resulting messages.
 
-You can start a log search, metrics search, or live tail from the Sumo Home page by clicking the respective icon. For walkthrough instructions on how to create a query and parse the messages, see the [Search Log Data] tutorial.
+You can start a log search, metrics search, or live tail from the Sumo Home page by clicking the respective icon. For walkthrough instructions on how to create a query and parse the messages, see [About Search Basics](/docs/search/get-started-with-search/search-basics/about-search-basics/).
 
 ![WTS Home Search Icons](/img/get-started/WTS_Home-Search-icons.png)
 
@@ -50,21 +50,21 @@ The [Setup Wizard](/docs/send-data/setup-wizard) is a quick way to get started l
 
 Not sure how to use your data to monitor and and troubleshoot your environment? Sumo Logic offers a variety of Apps with predefined queries and visualizations that help you get up and running quickly.
 
-- **You can peruse the library of available apps** by selecting **App Catalog** in the left navigation panel, then scrolling through the library or entering a name in the search field. For more information, see the [Install an App and View  Data] tutorial.
+- **You can peruse the library of available apps** by selecting **App Catalog** in the left navigation panel, then scrolling through the library or entering a name in the search field. For more information, see [Apps and Integrations](/docs/get-started/apps-integrations/).
 
 ![Apps Catalog](/img/get-started/WTS_Apps-Catalog.png)
 
-- **You can view your data with predefined searches and dashboards** that facilitate monitoring and troubleshooting. For more information, see the [Collect and Visualize Host Metrics] tutorial.
+- **You can view your data with predefined searches and dashboards** that facilitate monitoring and troubleshooting. For more information, see  [Get Started with Metrics](/docs/metrics/introduction/get-started-metrics/).
 
 ![View Dashboards](/img/get-started/WTS_View-Dashboards.png)
 
 ## Step 4: Share your findings with your team
 
-You have downloaded an app and analyzed your data with searches and dashboards. You may even have [modified your dashboards], and now you want to share your findings with your team. You can easily share a dashboard by clicking the share icon in the top menu bar.
+You have downloaded an app and analyzed your data with searches and dashboards. You may even have [modified your dashboards](/docs/dashboards/edit-dashboards/manage-dashboards/), and now you want to share your findings with your team. You can easily share a dashboard by clicking the share icon in the top menu bar.
 
 ![Share Dashboard](/img/get-started/WTS_Share-dashboard.png)
 
-You have the ability to share with individual users and groups with specific roles, setting the specific access permissions. You can edit the sharing permissions at any time, and share and revoke permissions as needed. For more information see the [Share Content] page.
+You have the ability to share with individual users and groups with specific roles, setting the specific access permissions. You can edit the sharing permissions at any time, and share and revoke permissions as needed. For more information see [Content Sharing in Sumo Logic](/docs/manage/content-sharing/).
 
 ## Adventures in Learning
 
