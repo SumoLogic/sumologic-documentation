@@ -1,6 +1,6 @@
 ---
 id: lookup-tables
-title: Sumo Logic Lookup Tables Management APIs
+title: Lookup Tables Management APIs
 sidebar_label: Lookup Tables
 tags: [library]
 description: Use HTTP endpoints to manage Lookup Tables.

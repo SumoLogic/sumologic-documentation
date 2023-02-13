@@ -1,9 +1,8 @@
 ---
 id: users
-title: Sumo Logic User Management APIs
+title: User Management APIs
 sidebar_label: Users
 description: The User Management API allows you to manage user accounts from HTTP endpoints.
-
 ---
 
 The User Management API allows you to [manage user accounts](/docs/manage/users-roles/users) from HTTP endpoints. To manage users, you must have the administrator role or your role must have been assigned the manage users and roles capability. For more information see [Manage Users](https://help.sumologic.com/?cid=1006).
