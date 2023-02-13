@@ -323,7 +323,7 @@ At this point, Redis metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for Redis running on a non-Kubernetes environment for the Sumo Logic App for Redis. By default, Redis logs are stored in a log file. Redis also supports forwarding of logs via Syslog.
 
-Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Sumo Logic Installed collectors](/docs/send-data/Installed-Collectors) which  requires you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work.
+Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/cloud-syslog-source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Sumo Logic Installed collectors](/docs/send-data/installed-collectors) which  requires you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work.
 
 Follow the instructions to set up log collection:
 
@@ -358,7 +358,7 @@ After determining the location of conf file modify the **redis.conf** configurat
 
 <details><summary>Option B: Configure Redis logs to stream data to a Syslog source</summary>
 
-With this option, Redis logs can be streamed to the [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source) of a Sumo Logic Installed Collector.
+With this option, Redis logs can be streamed to the [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) of a Sumo Logic Installed Collector.
 
 To configure the Redis syslog, locate your local **redis.conf** configuration file in the database directory.
 
@@ -386,7 +386,7 @@ After determining the location of conf file, modify the **redis.conf** configura
 
 </details>
 
-3. **Configure an Installed Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
+3. **Configure an Installed Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/installed-collectors)
 4. **Configure a Source**. To add a Local File Source source for Redis, do the following:
    1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:

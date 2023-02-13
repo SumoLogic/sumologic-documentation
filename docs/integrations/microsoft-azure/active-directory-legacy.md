@@ -133,14 +133,14 @@ If the setup was successful, Active Directory domain and object information will
 
 ## Step 1: Configure a collector
 
-Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+Configure an [Installed Collector](/docs/send-data/installed-collectors).
 
 Make sure the collector is installed on a machine that belongs to the domain managed by Active Directory. You can install a single collector and use a remote source, but Sumo Logic recommends installing a collector on each of your domain controllers for performance.
 
 
 ## Step 2: Configure event log sources
 
-If you have installed collectors on each domain controller, as recommended, configure a [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Event-Log-Source) on each one. Otherwise, configure a [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/Remote-Windows-Event-Log-Source) to collect events from each Active Directory server. For these Windows Event sources, set the source category to **OS/Windows** and **Event Format** as **Collect using legacy format**.
+If you have installed collectors on each domain controller, as recommended, configure a [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Event-Log-Source) on each one. Otherwise, configure a [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/remote-windows-event-log-source) to collect events from each Active Directory server. For these Windows Event sources, set the source category to **OS/Windows** and **Event Format** as **Collect using legacy format**.
 
 
 
@@ -157,7 +157,7 @@ To configure a script source, do the following:
 
 1. In Sumo Logic, select** Manage Data > Collection > Collection**.
 2. Find the name of the installed collector to which you'd like to add a Source. Click **Add...** then choose** Add Source **from the pop-up menu.
-3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
+3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 4. **Name**. Enter **DomainCollector** or **ADObjects**, depending on which script you are configuring. Description is optional.
 5. **Source Host** (optional). Enter the hostname or the IP address of the machine. The hostname is stored in a searchable field called `_sourceHost`. The hostname can be a maximum of 128 characters.
 6. **Source Category**. Enter a Source Category following the [Best Practices](/docs/send-data/best-practices) that allows you to include both the logs from these scripts and the logs from your Windows Event logs from the Domain Controller(s). For example, `DC/Windows/adObjects`, `DC/Windows/domainCollector`, and `DC/Windows/Event`. This will allow you to specify a query like `sourceCategory=DC/Windows/*` to bring in all AD-related logs.

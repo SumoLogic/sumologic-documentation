@@ -336,13 +336,13 @@ Sumo Logic recommends using a Local Windows Performance source whenever possible
 
 Use the appropriate source for your environment:
 
-* [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Performance-Monitor-Log-Source)
-* [Remote Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/Remote-Windows-Performance-Monitor-Log-Source)
+* [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source)
+* [Remote Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/remote-windows-performance-monitor-log-source)
 
 
 To configure a Source for IIS Performance Logs, do the following:  
 
-1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Performance-Monitor-Log-Source).
+1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source).
 2. Configure the Local Windows Performance Source Fields as follows:
 * **Name**: Required (for example, "IIS Performance")
 * **Source Category** (Required). For example, **Webserver/IIS/PerfCounter**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)

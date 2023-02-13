@@ -1,6 +1,6 @@
 ---
 id: scheduled-views
-title: Sumo Logic Scheduled Views Management APIs
+title: Scheduled Views Management APIs
 sidebar_label: Scheduled Views
 description: Use HTTP endpoints to manage Scheduled Views.
 tags: [settings]

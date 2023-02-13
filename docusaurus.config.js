@@ -277,14 +277,34 @@ module.exports = {
             type: 'dropdown',
             items:[
               {
-                label: 'Send Data',
+                label: 'Start Here',
+                to: '/docs/get-started',
+                activeBaseRegex: '^/docs/get-started/.*',
+              },
+              {
+                label: 'Send Data (Collectors)',
                 to: '/docs/send-data',
                 activeBaseRegex: '^/docs/send-data/.*',
               },
               {
-                label: 'Search Logs',
+                label: 'App Catalog',
+                to: '/docs/integrations',
+                activeBaseRegex: '^/docs/integrations/.*',
+              },
+              {
+                label: 'Log Search',
                 to: '/docs/search',
                 activeBaseRegex: '^/docs/search/.*',
+              },
+              {
+                label: 'Alerts, Monitors',
+                to: '/docs/alerts',
+                activeBaseRegex: '^/docs/alerts/.*',
+              },
+              {
+                label: 'Traces, APM, RUM',
+                to: '/docs/apm',
+                activeBaseRegex: '^/docs/apm/.*',
               },
               {
                 label: 'Metrics',
@@ -292,28 +312,19 @@ module.exports = {
                 activeBaseRegex: '^/docs/metrics/.*',
               },
               {
-                label: 'Apps/Integrations',
-                to: '/docs/integrations',
-                activeBaseRegex: '^/docs/integrations/.*',
-              },
-              {
-                label: 'Manage Sumo',
-                to: '/docs/manage',
-                activeBaseRegex: '^/docs/manage/.*',
-              },
-              {
                 label: 'Observability',
                 to: '/docs/observability',
                 activeBaseRegex: '^/docs/observability/about',
               },
               {
-                label: 'Traces',
-                to: '/docs/apm/traces',
-                activeBaseRegex: '^/docs/apm/.*',
+                label: 'Dashboards',
+                to: '/docs/dashboards-new',
+                activeBaseRegex: '^/docs/dashboards-new/.*',
               },
               {
-                label: 'Alerts/Monitors',
-                to: '/docs/alerts',
+                label: 'Manage Sumo Account',
+                to: '/docs/manage',
+                activeBaseRegex: '^/docs/manage/.*',
               },
               {
                 label: 'Cloud SIEM',
@@ -322,13 +333,8 @@ module.exports = {
               },
               {
                 label: 'Cloud SOAR',
-                to: '/docs/cloud-soar/',
+                to: '/docs/cloud-soar',
                 activeBaseRegex: '^/docs/cloud-soar/.*',
-              },
-              {
-                label: 'CI/CD',
-                to: '/docs/sdo',
-                activeBaseRegex: '^/docs/(sdo)/.*',
               },
             ]
           },
@@ -373,11 +379,6 @@ module.exports = {
             ]
           },
           {
-            label: 'Contribute',
-            to: '/docs/contributing',
-            position: 'left',
-          },
-          {
             type: 'html',
             position: 'right',
             value: '<div id="google_translate_element"></div>',
@@ -388,10 +389,21 @@ module.exports = {
             className: 'header-login',
           },
           {
-            className: 'header-github-link',
-            'aria-label': 'GitHub repository',
             position: 'right',
+            className: 'header-github-link',
+            type: 'dropdown',
+            'aria-label': 'GitHub repository',
             to: 'https://github.com/SumoLogic/sumologic-documentation',
+            items:[
+              {
+                label: 'Feedback',
+                href: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
+              },
+              {
+                label: 'Contribute',
+                href: '/docs/contributing',
+              },
+            ]
           },
         ],
       },
@@ -418,7 +430,7 @@ module.exports = {
           {
             items: [
               {
-                label: 'Contact Support',
+                label: 'Support',
                 href: 'https://support.sumologic.com/hc/en-us',
               },
               {
@@ -430,7 +442,7 @@ module.exports = {
                 href: 'https://support.sumologic.com/hc/en-us/community/topics',
               },
             ],
-            title: 'Help',
+            title: 'Contact Us',
           },
           {
             items: [

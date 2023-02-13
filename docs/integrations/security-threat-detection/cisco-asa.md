@@ -34,8 +34,8 @@ This section provides instructions for configuring log collection for the Cisco 
 
 To configure log collection, do the following:
 1. Configure your ASA to send its logs to a syslog server. ASA sends syslog on UDP port 514 by default, but you can set the protocol and port.
-2. Configure an [Installed Collector](/docs/send-data/Installed-Collectors) appropriate for right for your host environment.
-3. Configure a [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source) to the same port and protocol used by your ASA.
+2. Configure an [Installed Collector](/docs/send-data/installed-collectors) appropriate for right for your host environment.
+3. Configure a [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) to the same port and protocol used by your ASA.
 
 ### Field Extraction Rule
 

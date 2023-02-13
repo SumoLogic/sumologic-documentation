@@ -1,6 +1,6 @@
 ---
 id: search-job
-title: Sumo Logic Search Job APIs
+title: Search Job APIs
 sidebar_label: Search Job
 description: The Search Job API provides access to resources and log data from third-party scripts and applications.
 ---
@@ -72,8 +72,6 @@ You can start requesting results asynchronously while the job is running and pag
   <tr>
    <td>Data Tier
    </td>
-   <td>Aggregate Search (records)
-   </td>
    <td>Non-aggregate Search (messages)
    </td>
   </tr>
@@ -82,23 +80,17 @@ You can start requesting results asynchronously while the job is running and pag
    </td>
    <td>Can return up to 10 million records per search.
    </td>
-   <td>Forcibly paused around 100 thousand messages.
-   </td>
   </tr>
   <tr>
    <td>Frequent
    </td>
-   <td>Can return up to 100 thousand records per search.
-   </td>
-   <td>Forcibly paused around 100 thousand messages.
+   <td>Can return up to 10 million records per search.
    </td>
   </tr>
   <tr>
    <td>Infrequent
    </td>
-   <td>Can return up to 100 thousand records per search.
-   </td>
-   <td>Forcibly paused around 100 thousand messages.
+   <td>Can return up to 10 million records per search.
    </td>
   </tr>
 </table>
@@ -123,7 +115,7 @@ Once you reach the limit of 200 active searches, attempting an additional search
 This limit applies only to Search Job API searches, and does not take into account searches run from the Sumo UI, scheduled searches, or dashboard panel searches that are running at the same time. If the search job is not kept alive by API requests every 20-30 seconds, it is canceled.
 
 
-    You can reduce the number of active search jobs by explicitly deleting a search after you receive the results. Deleting searches manually will keep the number of active searches low, reducing the likelihood of hitting the Search Job API throttling limit. See [deleting a search job](/docs/api/Search-Job-API/About-the-Search-Job-API#Deleting_a_search_job) for details.
+You can reduce the number of active search jobs by explicitly deleting a search after you receive the results. Deleting searches manually will keep the number of active searches low, reducing the likelihood of hitting the Search Job API throttling limit. See [deleting a search job](#deleting-a-search-job) for details.
 
 
 
@@ -516,7 +508,7 @@ Sumo Logic endpoints like `api.sumologic.com` are different in deployments outsi
    </td>
    <td>No
    </td>
-   <td>Define as <code>true</code> to run the search using<a href="/docs/search/Get-Started-with-Search/build-search/Use-Receipt-Time"> receipt time</a>. By default, searches do not run by receipt time.
+   <td>Define as <code>true</code> to run the search using<a href="/docs/search/get-started-with-search/build-search/use-receipt-time"> receipt time</a>. By default, searches do not run by receipt time.
    </td>
   </tr>
   <tr>

@@ -113,7 +113,7 @@ Namespace for **Amazon SQS** Service is **AWS/SQS**
     * **Description**. Enter an optional description.
     * **S3 Region**. Select the Amazon Region for your SQS S3 bucket.
     * **Bucket Name**. Enter the exact name of your SQS S3 bucket.
-    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions).
+    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).
 
     :::note
     The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.

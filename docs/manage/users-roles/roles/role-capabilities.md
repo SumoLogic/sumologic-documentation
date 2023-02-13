@@ -37,7 +37,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage data volume feed
    </td>
-   <td><a href="/docs/manage/ingestion-volume/Data-Volume-Index">Enable and manage the data volume index</a> for your account to avoid using <a href="/docs/manage/manage-subscription/cloud-flex-accounts#Account-Capacity-Limitations">On-Demand Capacity</a>, and to determine when you need to upgrade your account.
+   <td><a href="/docs/manage/ingestion-volume/data-volume-index">Enable and manage the data volume index</a> for your account to avoid using <a href="/docs/manage/manage-subscription/cloud-flex-accounts#Account-Capacity-Limitations">On-Demand Capacity</a>, and to determine when you need to upgrade your account.
    </td>
   </tr>
   <tr>
@@ -62,13 +62,13 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>View field extraction rules
    </td>
-   <td>View <a href="/docs/manage/Field-Extractions">field extraction rules</a>, which speed the search process by automatically parsing fields as log messages are ingested.
+   <td>View <a href="/docs/manage/field-extractions">field extraction rules</a>, which speed the search process by automatically parsing fields as log messages are ingested.
    </td>
   </tr>
   <tr>
    <td>Manage field extraction rules
    </td>
-   <td><a href="/docs/manage/Field-Extractions">Manage field extractions</a>, which speed the search process by automatically parsing fields as log messages are ingested.
+   <td><a href="/docs/manage/field-extractions">Manage field extractions</a>, which speed the search process by automatically parsing fields as log messages are ingested.
 <p>Note that if you grant a role the Manage field extraction rules capability, users with that role will also have the Manage Fields, View Fields, and View field extraction rules capabilities.</p>
    </td>
   </tr>
@@ -124,7 +124,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>View Parsers
    </td>
-   <td>View <a href="/docs/cse/schema/Parser-Editor">Parsers</a>.
+   <td>View <a href="/docs/cse/schema/parser-editor">Parsers</a>.
    </td>
   </tr>
   <tr>
@@ -186,7 +186,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Allowlist IP addresses
    </td>
-   <td><a href="/docs/manage/Security/create-allowlist-ip-cidr-addresses">Explicitly grant access</a> to specific IP addresses or address ranges.
+   <td><a href="/docs/manage/security/create-allowlist-ip-cidr-addresses">Explicitly grant access</a> to specific IP addresses or address ranges.
    </td>
   </tr>
   <tr>
@@ -198,7 +198,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage access keys
    </td>
-   <td><a href="/docs/manage/Security/Access-Keys">Set up, activate, deactivate, or delete access keys</a> for your organization.
+   <td><a href="/docs/manage/security/access-keys">Set up, activate, deactivate, or delete access keys</a> for your organization.
    </td>
   </tr>
   <tr>
@@ -313,7 +313,7 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
   <tr>
    <td>View Alerts
    </td>
-   <td>View <a href="/docs/alerts/Monitors/Alert-Response#Alert_List">Alerts</a> on the Alerts page.
+   <td>View <a href="/docs/alerts/monitors/alert-response#alert-list">Alerts</a> on the Alerts page.
    </td>
   </tr>
   <tr>

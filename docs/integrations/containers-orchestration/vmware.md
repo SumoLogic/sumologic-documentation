@@ -91,7 +91,7 @@ pip install pyvmomi==6.7.3
 
 An Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service. The Collector runs as a service and starts automatically after installing or rebooting.
 
-**To install a Collector to collect logs and metrics:** refer to this [link](/docs/send-data/Installed-Collectors) for installation instructions.
+**To install a Collector to collect logs and metrics:** refer to this [link](/docs/send-data/installed-collectors) for installation instructions.
 
 
 ### Step 3: Collect logs and metrics for the VMware App
@@ -109,7 +109,7 @@ An event is an action that triggers an event message on a vCenter Server. Event 
 
 This procedure includes the following tasks:
 * [Configuring logs to be collected](#To_configure_logs_to_be_collected.2C_do_the_following:)—Test running a python script from the directory containing the Sumo Logic scripts.
-* [Configuring a syslog or a file source](#To_configure_a_syslog_source_for_the_Collector.2C_do_the_following:)—A Sumo Logic[ Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source) operates like a Syslog server listening on the designated port to receive Syslog messages. The script supports syslog server, as well as generating a text file that can be ingested using [Local](/docs/send-data/installed-collectors/sources/local-file-source) or [Remote](/docs/send-data/installed-collectors/sources/Remote-File-Source) file source. A local file source is recommended as it has several benefits over Syslog, including no need to worry about connection retry, reading from the last pointer in a file, no data loss in the case of collector failure, and so on. Based on your preference, you can configure a syslog source, or a local or remote file source.
+* [Configuring a syslog or a file source](#To_configure_a_syslog_source_for_the_Collector.2C_do_the_following:)—A Sumo Logic[ Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) operates like a Syslog server listening on the designated port to receive Syslog messages. The script supports syslog server, as well as generating a text file that can be ingested using [Local](/docs/send-data/installed-collectors/sources/local-file-source) or [Remote](/docs/send-data/installed-collectors/sources/Remote-File-Source) file source. A local file source is recommended as it has several benefits over Syslog, including no need to worry about connection retry, reading from the last pointer in a file, no data loss in the case of collector failure, and so on. Based on your preference, you can configure a syslog source, or a local or remote file source.
 
 To configure logs to be collected, do the following:
 

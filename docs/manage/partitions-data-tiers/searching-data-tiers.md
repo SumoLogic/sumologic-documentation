@@ -45,13 +45,14 @@ The `_dataTier` search modifier is not supported in:
 * Partition routing expressions
 * Logs-to-Metrics rules
 * In scheduled searches, setting `_dataTier` to All, Frequent, or Infrequent is not supported.
+* Searches against Cloud SIEM Enterprise data in Sumo Logic. Don't use `_dataTier` when searching CSE data. Instead, use `_index` to specify the security partition or partitions you want to access, as described in [Searching for CSE Records in Sumo Logic](docs/cse/records-signals-entities-insights/search-cse-records-in-sumo.md).
 
 In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field](/docs/manage/fields.md) or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
 
 ## Best practices
 
 * To query a single tier, use `_dataTier=<TierName>` (i.e. `_dataTier=Infrequent`) in the scope of your query.
-* To query all tiers, use `_dataTier=All`
+* To query all tiers, use `_dataTier=All`.
 * When you run a query that will return data from the Infrequent tier, the best practice is to review the scan estimate after writing the query and before before running it. See the following section for more information.
 
 ### Estimated and actual scan data for Infrequent queries
@@ -97,7 +98,7 @@ If you use `_dataTier` to specify a tier other than Continuous in a query of sch
 
 ### API Support with Rate Limiting
 
-The rate limits described in the [Rate limit throttling](/docs/api/Search-Job "About the Search Job API") section of the *About the Search Job API* topic apply to cross-tier searches with these concurrent active job limits: 
+The rate limits described in the [Rate limit throttling](/docs/api/search-job "About the Search Job API") section of the *About the Search Job API* topic apply to cross-tier searches with these concurrent active job limits: 
 
 * A limit of 200 active concurrent search jobs applies to your organization for the Continuous Tier (`_dataTier=Continuous`), the Infrequent Tier (`_dataTier=Infrequent`), and All Tiers (`_dataTier=All`).
 * When searching only the Frequent Tier (`_dataTier=Frequent`), a rate limit of 20 concurrent search jobs applies to your organization.

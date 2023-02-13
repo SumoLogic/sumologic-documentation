@@ -41,8 +41,8 @@ To collect logs for Zscaler Private Access, perform these steps, detailed in the
 
 To collect logs for ZPA, do the following in Sumo Logic:
 
-1. Configure a [Hosted Collector](/docs/send-data/Hosted-Collectors).
-2. Perform the steps in[ Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
+1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors).
+2. Perform the steps in[ Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
     * **Name**. (Required) A name is required. Description is optional.
     * **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources.
 For details see[ Best Practices](/docs/send-data/best-practices).
@@ -97,8 +97,8 @@ Once you have deployed the App Connector, configure log receivers to send logs t
 
 1. **Name**: Enter a name for the log receiver. The name cannot contain special characters, with the exception of periods (.), hyphens (-), and underscores ( _ ).
 2. **Description**: (Optional) Enter a description.
-3. **Domain or IP Address**: Enter the Domain name from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source).
-4. **TCP Port**: Enter the TCP port number from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source). Default: 6514
+3. **Domain or IP Address**: Enter the Domain name from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source).
+4. **TCP Port**: Enter the TCP port number from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source). Default: 6514
 5. **TLS Encryption**: Select Enabled.
 6. **Connector Groups**: Choose the App Connector groups that can forward logs to the receiver, and click **Done**. You can search for a specific group, click **Select All** to apply all groups, or click **Clear Selection** to remove all selections.
 7. Click **Next**.
@@ -115,11 +115,11 @@ Once you have deployed the App Connector, configure log receivers to send logs t
 You can also edit the log stream content within the text field in order to capture specific fields and create a **Custom **log template. To learn more, see[ Understanding the Log Stream Content Format](https://help.zscaler.com/zpa/understanding-log-stream-content-format).
  \
 Edit the the log stream content, paste the following text in the beginning of the template:
-    
-    <165>1 - - - - - - <Syslog Token>
-    
 
-For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
+    <165>1 - - - - - - <Syslog Token>
+
+
+For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
 
 
 
