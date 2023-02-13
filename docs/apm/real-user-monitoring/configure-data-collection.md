@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Iframe from 'react-iframe';
 
-To collect [traces](/docs/apm/traces) from a browser, you'll first need to create a RUM HTTP Traces Source. The source will have an endpoint URL that you'll put in a script that sends trace data in [OTLP/JSON over HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp) protocol.
+To collect [traces](/docs/apm/traces) and RUM mertrics from a browser, you'll first need to create a RUM HTTP Traces Source. The source will have an endpoint URL that you'll put in a script that sends trace data in [OTLP/JSON over HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp) protocol. Alternatively you can also use an intermediary OTel collector, if you require data to flow over your infrastructure rather than directly to Sumo Logic. Note however this will disable automatic geo-location recognition capabilities.
 
 :::sumo Micro Lesson
 See Real User Monitoring in action.
@@ -27,7 +27,7 @@ See Real User Monitoring in action.
 :::
 
 ## Prerequisites
-XHR and navigation/route changes support as well as errors collection require RUM script in version 4 or higher (`https://rum.sumologic.com/sumologic-rum-v4.js`). Make sure you're using the correct version in your pages. For automatic updates, use `https://rum.sumologic.com/sumologic-rum.js`.
+XHR and navigation/route changes support as well as errors collection require RUM script in version 4 or higher (`https://rum.sumologic.com/sumologic-rum-v4.js`). Make sure you're using the correct version in your pages. For automatic updates, use `https://rum.sumologic.com/sumologic-rum.js`. You can find more details about versioning control later in this document.
 
 For full end-to-end visibility, we recommended supplementing your RUM browser auto-instrumentation with the appropriate [back-end tracing instrumentation](/docs/apm/traces/get-started-transaction-tracing).
 
