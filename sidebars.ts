@@ -2084,6 +2084,7 @@ module.exports = {
             'cse/rules/before-writing-custom-rule',
             'cse/rules/write-match-rule',
             'cse/rules/write-chain-rule',
+            'cse/rules/write-first-seen-rule',
             'cse/rules/write-aggregation-rule',
             'cse/rules/write-threshold-rule',
             'cse/rules/cse-rules-syntax',
