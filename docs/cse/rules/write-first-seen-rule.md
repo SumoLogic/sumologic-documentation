@@ -7,12 +7,6 @@ description: First Seen rules allow you to generate a Signal when behavior by an
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 This topic has information about First Seen rules and how to create them in the CSE UI.
 :::tip
 If you are new to writing rules, see [About CSE Rules](/docs/cse/rules/about-cse-rules.md) for information about rule expressions and other rule options.
