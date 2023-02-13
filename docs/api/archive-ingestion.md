@@ -1,8 +1,8 @@
 ---
 id: archive-ingestion
-title: Sumo Logic Archive Ingestion Management APIs
+title: Archive Ingestion Management APIs
 sidebar_label: Archive Ingestion
-description: Use HTTP endpoints to manage Archive ingestion jobs. 
+description: Use HTTP endpoints to manage Archive ingestion jobs.
 ---
 
 The Archive Ingestion Management API allows you to ingest data from Archive destinations. You can use this API to ingest data from your Archive with an existing AWS S3 Archive Source. You need the Manage or View Collectors role capability to manage or view ingestion jobs. For more information see [Archive](https://help.sumologic.com/?cid=10011).
