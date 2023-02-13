@@ -344,9 +344,21 @@ _view=sumologic_slo_output sloId="<your-SLO-ID>"
 These log messages will be delayed by one hour, as the system ensures consistency to account for ingest delay of source telemetry.
 
 
-### Create an SLO Lookup Table
+### SLO Lookup Tables
 
-If you have an existing [Lookup Table](/docs/search/lookup-tables) you can enrich it detailed SLO data (such as sloName, signalType, sliQueryType, sloDescription) using the `_view=sumologic_slo_output` snippet.
+You can call a SLO Lookup Table to view all SLO metadata in your environment. These tables reside under a fixed path, `sumo://content/slos`. Data is managed and refreshed automatically on our end.
+
+There are two ways to use it:
+
+* To join the results of your SLO precomputed data from `_view = sumologic_slo_output` with your metadata contained in the internal lookup table based on the joining key (`sloId`, `sloVersion`):
+  ```
+  _view=sumologic_slo_output
+  | lookup * from sumo://content/slos on sloId, sloVersion
+  ```
+* To enlists the contents of the lookup table:
+  ```
+  cat sumo://content/slos
+  ```
 
 As an example, say you had a SLO [dashboard](/docs/dashboards-new) and wanted to see error budget burndown from several of your apps and services combined.<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="percent-error-remain" width="450"/>
 
