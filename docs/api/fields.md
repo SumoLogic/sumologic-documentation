@@ -1,7 +1,7 @@
 ---
 id: fields
-title: Sumo Logic Field Management APIs
-sidebar_label: Fields
+title: Field Management APIs
+sidebar_label: Field Management
 description: Use HTTP endpoints to manage your account's field table schema.
 tags: [settings]
 ---

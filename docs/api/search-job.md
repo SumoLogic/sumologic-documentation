@@ -1,6 +1,6 @@
 ---
 id: search-job
-title: Sumo Logic Search Job APIs
+title: Search Job APIs
 sidebar_label: Search Job
 description: The Search Job API provides access to resources and log data from third-party scripts and applications.
 ---

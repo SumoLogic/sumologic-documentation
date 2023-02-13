@@ -1,6 +1,6 @@
 ---
 id: data-forwarding
-title: Sumo Logic Data Forwarding Management APIs
+title: Data Forwarding Management APIs
 sidebar_label: Data Forwarding
 description: Use HTTP endpoints to manage Data Forwarding to S3.
 tags: [settings]

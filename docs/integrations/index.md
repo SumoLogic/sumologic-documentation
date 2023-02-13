@@ -1,7 +1,6 @@
 ---
 slug: /integrations
-title: Apps and Integrations
-sidebar_label: Apps and Integrations
+title: App Catalog
 description: Documentation for Sumo Logic apps and integrations.
 ---
 
