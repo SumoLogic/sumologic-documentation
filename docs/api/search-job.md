@@ -1,6 +1,6 @@
 ---
 id: search-job
-title: Sumo Logic Search Job APIs
+title: Search Job APIs
 sidebar_label: Search Job
 description: The Search Job API provides access to resources and log data from third-party scripts and applications.
 ---
@@ -72,8 +72,6 @@ You can start requesting results asynchronously while the job is running and pag
   <tr>
    <td>Data Tier
    </td>
-   <td>Aggregate Search (records)
-   </td>
    <td>Non-aggregate Search (messages)
    </td>
   </tr>
@@ -82,23 +80,17 @@ You can start requesting results asynchronously while the job is running and pag
    </td>
    <td>Can return up to 10 million records per search.
    </td>
-   <td>Forcibly paused around 100 thousand messages.
-   </td>
   </tr>
   <tr>
    <td>Frequent
    </td>
    <td>Can return up to 10 million records per search.
    </td>
-   <td>Can return up to 10 million messages per search.
-   </td>
   </tr>
   <tr>
    <td>Infrequent
    </td>
    <td>Can return up to 10 million records per search.
-   </td>
-   <td>Can return up to 10 million messages per search.
    </td>
   </tr>
 </table>
