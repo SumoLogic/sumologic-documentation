@@ -23,7 +23,7 @@ This guide has documentation for Sumo apps for database servers.
 </div>
 <div className="box box2 card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/databases/couchbase.png')} alt="Thumbnail icon" width="95"/>
+  <img src={useBaseUrl('img/integrations/databases/couchbase-logo.png')} alt="Thumbnail icon" width="75"/>
   <h3><a href="/docs/integrations/databases/couchbase">Couchbase</a></h3>
   <p>Helps you monitor Couchbase cluster activity, errors, and health.</p>
   </div>
