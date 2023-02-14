@@ -1,6 +1,6 @@
 ---
 id: cse
-title: Sumo Logic Cloud SIEM Enterprise APIs
+title: Cloud SIEM Enterprise APIs
 sidebar_label: Cloud SIEM Enterprise
 description: The Cloud SIEM Enterprise (CSE) API allows you to create and manage Entities, Custom Insights, log mappings, Match Lists, Network Blocks and other CSE features.
 ---

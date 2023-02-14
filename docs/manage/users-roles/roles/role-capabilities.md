@@ -112,7 +112,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage Tokens
    </td>
-   <td>Manage <a href="/docs/manage/Security/installation-tokens">Installation Tokens</a>.
+   <td>Manage <a href="/docs/manage/security/installation-tokens">Installation Tokens</a>.
    </td>
   </tr>
   <tr>
@@ -204,19 +204,19 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage support account access
    </td>
-   <td>Enable <a href="/docs/manage/Security/Enable-Support-Account">management of the Sumo Logic support account</a> for your organization.
+   <td>Enable <a href="/docs/manage/security/Enable-Support-Account">management of the Sumo Logic support account</a> for your organization.
    </td>
   </tr>
   <tr>
    <td>Manage audit data feed.
    </td>
-   <td><a href="/docs/manage/Security/Audit-Index">Enable and manage the Audit Index</a>, which provides information on the internal events that occur in your account associated with account management, user activity, and scheduled searches.
+   <td><a href="/docs/manage/security/audit-index">Enable and manage the Audit Index</a>, which provides information on the internal events that occur in your account associated with account management, user activity, and scheduled searches.
    </td>
   </tr>
   <tr>
    <td>Manage SAML
    </td>
-   <td><a href="/docs/manage/Security/SAML">Provision and manage SAML</a> for single sign-on to your Sumo Logic accounts.
+   <td><a href="/docs/manage/security/SAML">Provision and manage SAML</a> for single sign-on to your Sumo Logic accounts.
    </td>
   </tr>
   <tr>
@@ -228,7 +228,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage organization settings
    </td>
-   <td>Users with this capability can configure a <a href="/docs/manage/Security/set-limit-user-concurrent-sessions">concurrent user sessions limit</a> and enable the <a href="/docs/manage/Security/data-access-level-shared-dashboards">Data Access Level for Shared Dashboards</a> security policy.
+   <td>Users with this capability can configure a <a href="/docs/manage/security/set-limit-user-concurrent-sessions">concurrent user sessions limit</a> and enable the <a href="/docs/manage/security/data-access-level-shared-dashboards">Data Access Level for Shared Dashboards</a> security policy.
    </td>
   </tr>
   <tr>

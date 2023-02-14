@@ -238,7 +238,7 @@ An AWS Source must be associated with a Sumo Logic Hosted Collector. Before crea
 To add a hosted collector and AWS S3 source:
 1. [Grant Access to an AWS S3 Bucket.](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md)
 2. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector)
-3. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
+3. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
     1. Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
     2. Specify **Timestamp locator** as `.*"UpdatedAt":"(.*)".*`
     3. Click **Add**.

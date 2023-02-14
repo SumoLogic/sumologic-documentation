@@ -1,6 +1,6 @@
 ---
 id: field-extraction-rules
-title: Sumo Logic Field Extraction Rules Management APIs
+title: Field Extraction Rules Management APIs
 sidebar_label: Field Extraction Rules
 description: Use HTTP endpoints to configure Field Extraction Rules.
 tags: [settings]

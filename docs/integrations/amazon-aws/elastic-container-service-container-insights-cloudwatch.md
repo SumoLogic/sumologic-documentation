@@ -27,11 +27,11 @@ This page has instructions for collecting logs and metrics for the Amazon ECS Ap
 
 ### Creating Fields in Field Schema 
 
-Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the following fields: "**`account`**", "**`namespace`**", "**`region`**" field. If not present, create it. Learn how to create and manage fields [here](/Manage/Fields#manage-fields).
+Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the following fields: "**`account`**", "**`namespace`**", "**`region`**" field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields).
 
 ### Creating Field Extraction Rule(s)
 
-Create Field Extraction Rule for CloudTrail Logs [learn more](/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
+Create Field Extraction Rule for CloudTrail Logs [learn more](/docs/manage/field-extractions/create-field-extraction-rule).
 ```sql
 Rule Name: AwsObservabilityECSCloudTrailLogsFER
 Applied at: Ingest Time
