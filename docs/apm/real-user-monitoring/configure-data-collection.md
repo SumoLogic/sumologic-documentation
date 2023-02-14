@@ -27,7 +27,7 @@ See Real User Monitoring in action.
 :::
 
 ## Prerequisites
-XHR and navigation/route changes support as well as errors collection require RUM script in version 4 or higher (`https://rum.sumologic.com/sumologic-rum-v4.js`). Make sure you're using the correct version in your pages. For automatic updates, use `https://rum.sumologic.com/sumologic-rum.js`. You can find more details about versioning control later in this document.
+XHR and navigation/route changes support, and errors collection require the RUM script in version 4 or higher. To know more, refer to the link `https://rum.sumologic.com/sumologic-rum-v4.js`. Make sure you're using the correct version on your pages. For automatic updates, use `https://rum.sumologic.com/sumologic-rum.js`. You can find more details about versioning control later in this document.
 
 For full end-to-end visibility, we recommended supplementing your RUM browser auto-instrumentation with the appropriate [back-end tracing instrumentation](/docs/apm/traces/get-started-transaction-tracing).
 
