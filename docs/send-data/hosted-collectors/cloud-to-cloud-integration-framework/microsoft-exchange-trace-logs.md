@@ -1,5 +1,5 @@
 ---
-id: microsoft-exchange-tracelogs
+id: microsoft-exchange-trace-logs
 title: Microsoft Exchange Trace Logs
 sidebar_label: Microsoft Exchange Trace Logs
 ---
