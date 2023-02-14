@@ -1,9 +1,8 @@
 ---
 id: tracing
-title: Sumo Logic Tracing APIs
+title: Tracing APIs
 sidebar_label: Tracing
 description: The Tracing APIs give you the ability to browse and execute queries for traces and span analytics, and request a service map of your application environment.
-
 ---
 
 The Tracing APIs give you the ability to browse and execute queries for traces and span analytics, and request a service map of your application environment.

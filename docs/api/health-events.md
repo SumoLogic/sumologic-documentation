@@ -1,6 +1,6 @@
 ---
 id: health-events
-title: Sumo Logic Health Events Management APIs
+title: Health Events Management APIs
 sidebar_label: Health Events
 description: Use HTTP endpoints to view your account's health events.
 ---

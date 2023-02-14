@@ -1,9 +1,8 @@
 ---
 id: ingest-budget-v1
-title: Sumo Logic Ingest Budget Management APIs
+title: Ingest Budget Management APIs
 sidebar_label: Ingest Budget
 description: The Ingest Budget Management API allows you to manage ingest budgets from HTTP endpoints.
-
 ---
 
 The Ingest Budget Management API allows you to manage **V1** [ingest budgets](/docs/manage/ingestion-volume/Ingest-Budgets) that have a **Field Value** from HTTP endpoints.

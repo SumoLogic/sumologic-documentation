@@ -158,7 +158,7 @@ This section has instructions for collecting Amazon VPC Flow Logs using an AWS S
 1. [Grant Access to an AWS S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
 2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
 3. When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors#Create-a-Hosted-Collector).
-4. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source#AWS-Sources) for the S3 Source to Sumo Logic. When you configure the S3 source:
+4. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source#AWS-Sources) for the S3 Source to Sumo Logic. When you configure the S3 source:
     1. In the **Advanced Options for Logs** section, uncheck the **Detect messages spanning multiple lines** option.
     2. In the **Processing Rules for Logs** section, add an **Exclude messages that match** processing rule to ignore the following file header lines: `version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`.
 
