@@ -75,8 +75,8 @@ This section provides instructions for configuring log and metric collection for
 ### Step 1: Configure Fields in Sumo Logic
 
 Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
-  
-::: note
+
+:::note
 This step is not needed if you are using the application components solution terraform script.
 :::  
 
@@ -97,7 +97,7 @@ If you're using Redis in a Kubernetes environment, create the fields:
 * `pod_labels_db_cluster`
 * `pod_labels_db_cluster_address`
 * `pod_labels_db_cluster_port`
-  
+
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -427,8 +427,8 @@ After determining the location of conf file, modify the **redis.conf** configura
 
 
 ## Installing Redis Monitors/Alerts
-  
-::: note
+
+:::note
 This step is not needed if you are using the application components solution terraform script.
 :::  
 
@@ -441,7 +441,7 @@ For details on the individual monitors, please see [Alerts](#Redis-Alerts).
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing them via a JSON or via a Terraform script.
 
-::: note
+:::note
 There are limits for how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 :::  
 
