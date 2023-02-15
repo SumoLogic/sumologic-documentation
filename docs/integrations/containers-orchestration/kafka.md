@@ -325,7 +325,7 @@ This section provides instructions for configuring log collection for Kafka runn
      * **File Path (Required).** Enter the path to your server.log and controller.log. The files are typically located in `/opt/Kafka/kafka_<VERSION>/logs/*.log`.
      * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
      * **Source Category.** Enter any string to tag the output collected from this Source, such as **Kafka/Logs**. The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices/#good-and-bad-source-categories).
-     * **Fields.**Set the following fields. For more information on fields please see [this document](/docs/Manage/Fields):
+     * **Fields.**Set the following fields. For more information on fields please see [this document](/docs/manage/fields):
        ```    
        component = messaging
        messaging_system = kafka
