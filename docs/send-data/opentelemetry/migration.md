@@ -1373,7 +1373,7 @@ exporters:
 
 ### Host Metrics Source
 
-The equivalent of the Host Metrics Source is [the telegraf receiver][telegrafreceiver] with appropiate plugins.
+The equivalent of the Host Metrics Source is [the telegraf receiver][telegrafreceiver] with appropriate plugins.
 
 __Note: The are differences between the Installed Collector and the Openelemetry Collector host metrics.
 See [this document](comparison.md#host-metrics) to learn more.__
@@ -1998,11 +1998,11 @@ The following table shows the equivalent [user.properties][user.properties] for 
 | `fipsJce=true/false`                          | N/A                                                        |
 | `hostName=hostname`                           | `exporters.sumologic.source_host`                          |
 | `name=name`                                   | [extensions.sumologic.collector_name](#name)               |
-| `proxyHost=host`                              | [plese see OTC documentation][proxy]                       |
-| `proxyNtlmDomain=NTLM domain`                 | [plese see OTC documentation][proxy]                       |
-| `proxyPassword=password`                      | [plese see OTC documentation][proxy]                       |
-| `proxyPort=port`                              | [plese see OTC documentation][proxy]                       |
-| `proxyUser=username`                          | [plese see OTC documentation][proxy]                       |
+| `proxyHost=host`                              | [please see OTC documentation][proxy]                       |
+| `proxyNtlmDomain=NTLM domain`                 | [please see OTC documentation][proxy]                       |
+| `proxyPassword=password`                      | [please see OTC documentation][proxy]                       |
+| `proxyPort=port`                              | [please see OTC documentation][proxy]                       |
+| `proxyUser=username`                          | [please see OTC documentation][proxy]                       |
 | `skipAccessKeyRemoval=true/false`             | N/A                                                        |
 | `sources=absolute filepath or folderpath`     | N/A                                                        |
 | `syncSources=absolute filepath or folderpath` | N/A                                                        |
@@ -2061,7 +2061,7 @@ More useful information can be found in [Local File Source for Cloud Based Manag
 | The Installed Collector Parameter | The OpenTelemetry Collector Key                         |
 |-----------------------------------|---------------------------------------------------------|
 | `pathExpression`                  | element of [receivers.filelog.include](#file-path) list |
-| `denylist`                        | elemets of [receivers.filelog.exclude](#denylist) list  |
+| `denylist`                        | elements of [receivers.filelog.exclude](#denylist) list  |
 | `encoding`                        | [receivers.filelog.encoding](#encoding)                 |
 
 ### Remote File Source (RemoteFileV2)
@@ -2097,7 +2097,7 @@ Script Source is not supported by the OpenTelemetry Collector.
 
 ### Streaming Metrics Source (StreamingMetrics)
 
-The equivalent of the Streaming Metrics Source is [the telegraf receiver][telegrafreceiver] with appropiate plugins.
+The equivalent of the Streaming Metrics Source is [the telegraf receiver][telegrafreceiver] with appropriate plugins.
 More useful information can be found in [Streaming Metrics Source for Cloud Based Management](#streaming-metrics-source).
 
 | The Installed Collector Parameter | The OpenTelemetry Collector Key                                                                                 |
@@ -2111,7 +2111,7 @@ More useful information can be found in [Streaming Metrics Source for Cloud Base
 
 ### Host Metrics Source (SystemStats)
 
-The equivalent of the Host Metrics Source is [the telegraf receiver][telegrafreceiver] with appropiate plugins.
+The equivalent of the Host Metrics Source is [the telegraf receiver][telegrafreceiver] with appropriate plugins.
 More useful information can be found in [Host Metrics Source for Cloud Based Management](#host-metrics-source).
 
 __Note: The are differences between the Installed Collector and the Openelemetry Collector host metrics.
@@ -2122,7 +2122,7 @@ See [this document](comparison.md#host-metrics) to learn more.__
 | `name`                            | [exporters.sumologic.source_name](#name-4)                                                                      |
 | `description`                     | A description can be added as a comment just above the receiver name. [See the linked example.](#description-4) |
 | `category`                        | [exporters.sumologic.source_category](#source-category-3)                                                       |
-| `metrics`                         | [Appropiate plugins have to be configured.](#metrics) By default no metrics are being processed.                |
+| `metrics`                         | [Appropriate plugins have to be configured.](#metrics) By default no metrics are being processed.                |
 | `interval (ms)`                   | [receivers.telegraf.agent_config('agent'.interval)](#scan-interval)                                             |
 | `hostName`                        | [exporters.sumologic.source_host](#source-host-2)                                                               |
 

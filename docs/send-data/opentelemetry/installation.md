@@ -75,7 +75,7 @@ The following arguments can be passed to the script:
 | `--skip-installation-token`      | `k`        | Skips requirement for installation token. This option do not disable default configuration creation.                                                                         | no                         |
 | `--tag`                          | `t`        | Sets tag for collector. This argument can be use multiple times. One per tag.                                                                                                | yes, in `key=value` format |
 | `--download-only`                | `w`        | Download new binary only and skip configuration part.                                                                                                                        | no                         |
-| `--version`                      | `v`        | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By defult it gets latest version.                                                                 | yes, e.g. `0.57.2-sumo-1`  |
+| `--version`                      | `v`        | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version.                                                                 | yes, e.g. `0.57.2-sumo-1`  |
 | `--skip-config`                  | `s`        | Do not create default configuration                                                                                                                                          | no                         |
 | `--skip-systemd` | `d`        | Preserves from Systemd service installation.                                                                                                                                 | no                         |
 | `--fips`                          | `f`        | Install the FIPS-compliant binary. See [this document](fips.md) for more details.                                                                                                                                                  | no                         |
@@ -415,7 +415,7 @@ To run opentelemetry collector as Systemd Service please apply following steps:
    > However, if the user with name `otelcol-sumo` already exists, it won't be overwritten, so you should make sure that a home directory has been created for this user.
    >
    > If you don't want the user to have a home directory, you should use `useradd` without the `m` flag
-   > and explicitely change the directory for saving the credentials, for example:
+   > and explicitly change the directory for saving the credentials, for example:
    >
    > ```yaml
    > extensions:

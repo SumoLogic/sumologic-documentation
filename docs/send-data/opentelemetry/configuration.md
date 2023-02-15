@@ -42,7 +42,7 @@ The primary components that make it easy to send data to Sumo Logic are
 the [Sumo Logic Exporter][sumologicexporter_docs]
 and the [Sumo Logic Extension][sumologicextension_configuration].
 
-To create the `install_token` please follow [this documenation][sumologic_docs_install_token].
+To create the `install_token` please follow [this documentation][sumologic_docs_install_token].
 
 Here's a starting point for the configuration file that you will want to use:
 
@@ -296,7 +296,7 @@ For a list of all the configuration options for sumologicextension refer to
 
 The credentials are stored on local filesystem (by default in `$HOME/.sumologic-otel-collector`) to be reused when collector gets restarted.
 However, systemd services are often run as users without a home directory,
-so keep in mind that to store credentials either the user needs a home directory or the store location should be explicitely changed.
+so keep in mind that to store credentials either the user needs a home directory or the store location should be explicitly changed.
 
 More information about this feature can be found in the [extension's documentation][sumologicextension_store_credentials].
 
@@ -309,9 +309,7 @@ More information about this feature can be found in the [extension's documentati
 
 ### Using multiple Sumo Logic extensions
 
-If you want to register multiple collectors and/or send data to
-mutiple Sumo Logic accounts, mutiple `sumologicextension`s can be defined within the
-pipeline and used in exporter definitions.
+If you want to register multiple collectors and/or send data to multiple Sumo Logic accounts, multiple `sumologicextension`s can be defined within the pipeline and used in exporter definitions.
 
 In this case, you need to specify a custom authenticator name that points to
 the correct extension ID.

@@ -230,7 +230,7 @@ verifying feature parity for tracing as we migrate it to this distribution. The 
 are run by CircleCI on demand for `main` and release branches, and are defined [here][tracing_tests].
 
 In order to run the tests, go to the [CircleCI page][circleci], choose the branch you want, and manually
-approve the workflow to run. Note that you need commiter rights in this repository to run the tests.
+approve the workflow to run. Note that you need committer rights in this repository to run the tests.
 
 ![Approving the workflow in CircleCI][circleci_approve]
 
