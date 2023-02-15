@@ -31,7 +31,7 @@ For example, a normalized threat rule that looks for intrusions would work with 
 Ordinarily, rules define the log messages they’ll be applied to by specifying `metadata_vendor` and `metadata_product `in the rule expression. A normalized rule doesn’t specify these attributes. Instead, it looks at another attribute that is set during the log mapping process: `threat_ruleType`. In the log mapping process for a message type, the value of `threat_ruleType` is set  to a value that corresponds to a threat type, for example “intrusion”. Then, normalized threat rules can look for messages whose `threat_ruleType` field is “intrusion”, regardless of vendor or product. For information about mapping requirements for messages that describe security events, see [Field Mapping for Security Event Sources](../schema/field-mapping-security-event-sources.md).
 
 <!--
-threat_rules.csv comes from [threat_rules.csv](https://github.com/jasklabs/content-catalog/blob/master/rules/threat_rules.csv)
+threat_rules.csv comes from https://github.com/jasklabs/content-catalog/blob/master/rules/threat_rules.csv
 -->
 
 For a reference to the log mappers that participate in normalized threat rules and the data sources the rules support, see [threat_rules.csv](https://github.com/jasklabs/content-catalog/blob/master/rules/threat_rules.csv).
