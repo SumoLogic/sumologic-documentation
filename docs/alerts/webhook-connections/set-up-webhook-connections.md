@@ -253,7 +253,7 @@ The following valid JSON is sent in the payload of the POST request.
 Use HTTP Basic Authentication, this is a standard used across the world wide web, Sumo Logic doesn't require anything different or special. The username and password are concatenated, base64-encoded, and passed in the `Authorization` HTTP header. The Authorization field is constructed as follows:
 
 * Combine the username and password with a single colon.
-* Encode using the [RFC2045-MIME](https://www.ietf.org/rfc/rfc2045.txt) variant of Base64. You can use any encoder, including the [base64](/docs/search/search-query-language/search-operators/base64Encode) search operator to do this.
+* Encode using the [RFC2045-MIME](https://www.ietf.org/rfc/rfc2045.txt) variant of Base64. You can use any encoder, including the [base64](/docs/search/search-query-language/search-operators/base64encode) search operator to do this.
 * The authorization method and a space, such as "Basic " is then put before the encoded string.
 
 For example, if the user agent uses `Aladdin` as the username and `OpenSesame` as the password then the field could be formed with a

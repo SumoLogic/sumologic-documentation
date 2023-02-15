@@ -6,7 +6,7 @@ description: Use HTTP endpoints to manage Data Forwarding to S3.
 tags: [settings]
 ---
 
-The Data Forwarding Management API allows you to forward log data from a Partition or Scheduled View to an S3 bucket. For more information see [Forwarding Data to S3](/docs/manage/Data-Forwarding/amazon-s3-bucket).
+The Data Forwarding Management API allows you to forward log data from a Partition or Scheduled View to an S3 bucket. For more information see [Forwarding Data to S3](/docs/manage/data-forwarding/amazon-s3-bucket).
 
 Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 

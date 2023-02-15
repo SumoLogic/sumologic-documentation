@@ -74,7 +74,7 @@ _sourceCategory=Labs/AWS/CloudTrail/APIGateway "apigateway.amazonaws.com" Namesp
 
 ## Collect AWS API Gateway Events using CloudTrail
 
-1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-CloudTrail-Source).
+1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source).
    * **Name**. Enter a name to display for the new Source.
    * **Description**. Enter an optional description.
    * **S3 Region**. Select the Amazon Region for your DynamoDB S3 bucket.
