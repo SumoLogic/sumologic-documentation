@@ -53,7 +53,7 @@ Currently available metric sources are:
 
 * [Amazon CloudWatch Source for Metrics.](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) You can use a CloudWatch source on a hosted collector to collect metrics for a variety of AWS resources.  
 
-* [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-Kinesis-Firehose-Metrics-Source). You can use the AWS Kinesis Firehose for Metrics source to ingest CloudWatch metrics from AWS Kinesis Data Firehose.
+* [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source). You can use the AWS Kinesis Firehose for Metrics source to ingest CloudWatch metrics from AWS Kinesis Data Firehose.
 
 * [Streaming Metrics Source.](../../../static/img/send-data/streaming-metrics-source.png) You can use Sumo’s streaming metrics source with an installed collector to collect metrics over TCP or UDP in Graphite, Carbon 2.0, or Prometheus format.
 

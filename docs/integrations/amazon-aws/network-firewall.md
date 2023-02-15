@@ -35,7 +35,7 @@ This section has instructions for collecting logs for the Sumo Logic App for AWS
 
 ### Enable S3 Ingestion
 
-Follow steps to create [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source).
+Follow steps to create [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).
 
 The following is an example of a path expression that supports ingesting alerts.
 

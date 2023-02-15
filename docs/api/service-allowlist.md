@@ -1,13 +1,13 @@
 ---
 id: service-allowlist
-title: Sumo Logic Service Allowlist Management APIs
+title: Service Allowlist Management APIs
 sidebar_label: Service Allowlist
 tags: [security]
 description: Use HTTP endpoints to manage service allowlist settings.
 
 ---
 
-The [Service Allowlist](/docs/manage/Security/create-allowlist-ip-cidr-addresses) Management API allows you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
+The [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses) Management API allows you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
 
 
 

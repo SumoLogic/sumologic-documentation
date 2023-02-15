@@ -313,7 +313,7 @@ We use the Telegraf operator for Cassandra metric collection and Sumo Logic Inst
 
 This section provides instructions for configuring metrics collection for the Sumo Logic App for Cassandra.
 
-1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/Hosted-Collectors/Configure-Hosted-Collector) section of the Sumo Logic documentation.
+1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
 2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/hosted-collectors/HTTP-Source)Make a note of the **HTTP Source URL**.
 3. **Install Telegraf**. Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to install Telegraf.
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [jolokia2 input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
@@ -432,7 +432,7 @@ Once you have finalized your telegraf.conf file, you can start or reload the tel
 
 This section provides instructions for configuring log collection for Cassandra running on a non-Kubernetes environment.
 
-By default, Cassandra logs are stored in a log file. Sumo Logic supports collecting logs from a local log file by using a [local file source](/docs/send-data/installed-collectors/sources/Local-File-Source) via [Installed collectors](/docs/send-data/Installed-Collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/System-Requirements#Installed-Collector-Requirements).
+By default, Cassandra logs are stored in a log file. Sumo Logic supports collecting logs from a local log file by using a [local file source](/docs/send-data/installed-collectors/sources/Local-File-Source) via [Installed collectors](/docs/send-data/installed-collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/System-Requirements#Installed-Collector-Requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect Cassandra logs and follow the instructions below to set up log collection:
 
@@ -459,8 +459,8 @@ Based on your infrastructure and networking setup choose one of these methods to
     * Configure the `logback-test.xml` or `logback.xml` file installed with Cassandra.
     * Use the [JConsole](https://docs.datastax.com/en/cassandra-oss/3.0/cassandra/operations/opsMonitoring.html#opsMonitoringJconsole) tool to configure logging through JMX.
 
-  Logs from the Cassandra log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/Local-File-Source) as explained in the next section.
-3. **Configure a Collector** To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
+  Logs from the Cassandra log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/installed-collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/Local-File-Source) as explained in the next section.
+3. **Configure a Collector** To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](/docs/send-data/installed-collectors)
 4. **Configure a Local File Source**. To collect logs directly from your Cassandra machine, use an Installed Collector and a Local File Source.
    1. Add a[ Local File Source](/docs/send-data/installed-collectors/sources/Local-File-Source).
    2. Configure the Local File Source fields as follows:

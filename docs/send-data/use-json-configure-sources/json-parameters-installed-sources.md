@@ -34,14 +34,14 @@ Each Source can have its own unique fields in addition to the generic fields lis
 
 ### Local file source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources),
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types),
 the following parameters are for local file source. 
 
 | Parameter | Type | Required? | Default | Description |  Access |
 |:--|:--|:--|:--|:--|:--|
 | `sourceType` | String | Yes |  | LocalFile	not | modifiable |
 | `pathExpression` | String | Yes |  | A valid path expression (full path) of the file to collect. For files on Windows systems (not including Windows Events), enter the absolute path including the drive letter. Escape special characters and spaces with a backslash (\). If you are collecting from Windows using CIFS/SMB, see Prerequisites for Windows Log Collection. Use a single asterisk wildcard [*] for file or folder names. Example:[var/foo/*.log]. Use two asterisks [**]to recurse within directories and subdirectories. Example:  [var/**/*.log]. | modifiable |
-| `denylist` | String | Array | No | `[ ]` | Comma-separated list of valid path expressions from which logs will not be collected. <br/>Example: `"denylist":["/var/log/**/*.bak","/var/oldlog/*.log"]` | modifiable |
+| `denylist` | String Array | No | `[ ]` | Comma-separated list of valid path expressions from which logs will not be collected. <br/>Example: `"denylist":["/var/log/**/*.bak","/var/oldlog/*.log"]` | modifiable |
 | `encoding` | String | No | UTF-8 | Defines the encoding form. Default is "UTF-8"; options include "UTF-16"; "UTF-16BE"; "UTF-16LE". | modifiable |
 
 Local File Source JSON example with `cutoffTimestamp`:
@@ -69,7 +69,7 @@ Local File Source JSON example with `cutoffTimestamp`:
 
 ### Remote file source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for remote file source.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for remote file source.
 
 | Parameter | Type | Required? | Default | Description |  Access |
 |:--|:--|:--|:--|:--|:--|
@@ -116,7 +116,7 @@ Remote file source JSON example:
 
 ### Local Windows event log source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), except hostName, the following parameters are for local Windows event log source. The Source Host (_sourceHost) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), except hostName, the following parameters are for local Windows event log source. The Source Host (_sourceHost) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
@@ -148,7 +148,7 @@ Local Windows event log source JSON example:
 
 ### Remote Windows event log source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), except hostName, the following parameters are for remote Windows event log source. The Source Host (_sourceHost) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), except hostName, the following parameters are for remote Windows event log source. The Source Host (_sourceHost) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
@@ -191,7 +191,7 @@ Remote Windows event log source JSON example:
 
 ### Local Windows performance source 
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for local Windows performance source.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for local Windows performance source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
@@ -224,7 +224,7 @@ Example response:
 
 ### Remote Windows performance source 
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for remote Windows performance source.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for remote Windows performance source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
@@ -314,7 +314,7 @@ This example shows how to use WMI queries to collect performance metrics from W
 
 ### Windows Active Directory Source 
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for a Windows Active Directory Inventory Source.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for a Windows Active Directory Inventory Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
@@ -355,7 +355,7 @@ Windows Active Directory Inventory Source JSON example:
 
 ### Syslog source
 
-Syslog Sources do not support Multiline Detection, which means the [common parameters](/docs/send-data/use-json-configure-sources)` multilineProcessingEnabled`,` useAutolineMatching` and `manualPrefixRegexp` are not applicable. If you provide these in the Syslog Source configuration they are ignored.
+Syslog Sources do not support Multiline Detection, which means the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types)` multilineProcessingEnabled`,` useAutolineMatching` and `manualPrefixRegexp` are not applicable. If you provide these in the Syslog Source configuration they are ignored.
 
 :::note
 Syslog sources break a syslog message on each newline character and send each line as individual messages to the service.
@@ -385,7 +385,7 @@ Syslog source JSON example: 
 
 ### Script source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for script source.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for script source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
@@ -421,7 +421,7 @@ Script Source JSON Example: 
 
 ### Docker log source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for Docker log source.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for Docker log source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
@@ -476,7 +476,7 @@ Example source JSON with specified containers:
 
 ### Docker stats source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for Docker stats source.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for Docker stats source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|

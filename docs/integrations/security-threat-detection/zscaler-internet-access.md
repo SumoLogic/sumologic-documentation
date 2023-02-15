@@ -27,7 +27,7 @@ To collect logs for Zscaler, perform these steps, detailed in the following sect
 
 To collect logs for Zscaler Web Security, do the following in Sumo Logic:
 
-1. Configure an [Hosted Collector](/docs/send-data/Hosted-Collectors).
+1. Configure an [Hosted Collector](/docs/send-data/hosted-collectors).
 2. Configure an [Http Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
     1. For Source Category, enter any string to tag the output collected from this Source, such as **ZIA**.
     2. Click **Save** and make note of the HTTP address for the Source. You will need it when you configure the Zscaler Cloud NSS in the next section.
