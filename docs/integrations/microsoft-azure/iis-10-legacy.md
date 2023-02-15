@@ -303,7 +303,6 @@ After a few minutes, your new Source should be propagated down to the Collector 
 
 This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source), but the configuration is more complex.
 
-
 Sumo Logic recommends using a Local File Source whenever possible.
 
 To configure a local file source for HTTP Error Logs, do the following:
