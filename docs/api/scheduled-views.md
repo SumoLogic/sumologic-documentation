@@ -6,7 +6,7 @@ description: Use HTTP endpoints to manage Scheduled Views.
 tags: [settings]
 ---
 
-The [Scheduled View](/docs/manage/Scheduled-Views) Management API allows you to manage Scheduled Views from HTTP endpoints.
+The [Scheduled View](/docs/manage/scheduled-views) Management API allows you to manage Scheduled Views from HTTP endpoints.
 
 Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 

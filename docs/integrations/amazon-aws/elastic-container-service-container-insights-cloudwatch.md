@@ -81,7 +81,7 @@ Enter a parse expression to create an "account" field that maps to the alias you
 In this step, you set up an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics "Amazon CloudWatch Source for Metrics").
 
 1.  Grant permission for Sumo Logic to list available metrics and get metric data points. For instructions, see [Grant Access to an AWS Product](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product "Grant Access to an AWS Product").
-2.  Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector "Configure a Hosted Collector").
+2.  Configure a [Hosted Collector](https://help.sumologic.com/03send-data/hosted-collectors/Configure-a-Hosted-Collector "Configure a Hosted Collector").
 3.  In the Sumo web app, select **Manage Data > Collection > Collection**.
 4.  Navigate to the hosted collector you configured above and select **Add > Add Source**.
 5.  Select Amazon CloudWatch Source for Metrics.
@@ -113,7 +113,7 @@ In this step, you will enable Container Insights and set up a collection to inge
 
 ### Collect ECS events using CloudTrail
 
-In this step, you set up an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source "AWS CloudTrail Source") to collect ECS events.
+In this step, you set up an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/aws-cloudtrail-source "AWS CloudTrail Source") to collect ECS events.
 
 1.  [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html") in your AWS account. This will create an S3 bucket, if you so choose.
 2.  Grant Sumo Logic access to the Amazon S3 bucket.
@@ -171,11 +171,11 @@ Container Insights collects data as performance log events using [embedded me
 ### Collect Application Logs for Amazon ECS
 
 
-Setup the Container logs collection using the steps in following [docs](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/AWS_Fargate_log_collection). You can use awsfirelens driver and avoid sending logs to cloudwatch log groups.  Put account, region and namespace fields also while configuring the source.
+Setup the Container logs collection using the steps in following [docs](https://help.sumologic.com/03Send-Data/collect-from-other-data-sources/AWS_Fargate_log_collection). You can use awsfirelens driver and avoid sending logs to cloudwatch log groups.  Put account, region and namespace fields also while configuring the source.
 
 If your logs are already going to cloudwatch logs groups then you can create a subscription filter to subscribe the log groups to the delivery stream created in the previous step.
 
-![Note](https://help.sumologic.com/@api/deki/files/116/Note.png)Application logs do not contain regions, so you have to configure a new sumo logic source for each region if you want to avoid creating multiple sources, then you will have to put the [X-SUMO-Fields](https://help.sumologic.com/Manage/Fields#x-sumo-fields-http-header) header inside logConfiguration by creating a custom fluent bit image and specify a custom fluent bit configuration. For more information, see, [Create a custom Fluent Bit image](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/AWS_Fargate_log_collection#(Optional)_Create_a_custom_Fluent_Bit_image).
+![Note](https://help.sumologic.com/@api/deki/files/116/Note.png)Application logs do not contain regions, so you have to configure a new sumo logic source for each region if you want to avoid creating multiple sources, then you will have to put the [X-SUMO-Fields](https://help.sumologic.com/Manage/Fields#x-sumo-fields-http-header) header inside logConfiguration by creating a custom fluent bit image and specify a custom fluent bit configuration. For more information, see, [Create a custom Fluent Bit image](https://help.sumologic.com/03Send-Data/collect-from-other-data-sources/AWS_Fargate_log_collection#(Optional)_Create_a_custom_Fluent_Bit_image).
 
 ### Collect Traces for Amazon ECS
 
