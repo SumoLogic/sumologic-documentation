@@ -195,7 +195,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
    </td>
    <td>Yes
    </td>
-   <td>Contains the <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Okta-Source#configParameters">configuration parameters</a> for the Source.
+   <td>Contains the <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source#configParameters">configuration parameters</a> for the Source.
    </td>
    <td>
    </td>

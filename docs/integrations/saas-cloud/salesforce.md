@@ -346,7 +346,7 @@ If the browser does not connect to the salesforce instance and you are using Chr
 
 #### Step 7. Configure a script source (DEPRECATED)
 
-In Sumo Logic, configure a Script Source using the instructions in [Script Source](/docs/send-data/installed-collectors/sources/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
+In Sumo Logic, configure a Script Source using the instructions in [Script Source](/docs/send-data/installed-collectors/sources/script-source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
 
 To allow Script Sources you need to set the Collector parameter **`enableScriptSource=true` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 
