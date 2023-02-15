@@ -765,7 +765,7 @@ The equivalent of the Syslog Source is a combination of
 and [the sumologicsyslog processor][sumologicsyslog].
 
 __Note: The OpenTelemetry Collector provides also [Syslog Receiver][syslogreceiver].
-See [this document](comparison.md#syslog) for details.__
+See [this document](/docs/send-data/sumo-logic-opentelemetry/comparison#syslog) for details.__
 
 #### Overall example
 
@@ -1375,8 +1375,9 @@ exporters:
 
 The equivalent of the Host Metrics Source is [the telegraf receiver][telegrafreceiver] with appropriate plugins.
 
-__Note: The are differences between the Installed Collector and the Openelemetry Collector host metrics.
-See [this document](comparison.md#host-metrics) to learn more.__
+:::note
+There are differences between the Installed Collector and the OpenTelemetry Collector host metrics. See [this document](/docs/send-data/sumo-logic-opentelemetry/comparison#host-metrics) to learn more.
+:::
 
 #### Overall Example
 
@@ -2076,7 +2077,7 @@ and [the sumologicsyslog processor][sumologicsyslog].
 More useful information can be found in [Syslog Source for Cloud Based Management](#syslog-source).
 
 __Note: The OpenTelemetry Collector provides also [Syslog Receiver][syslogreceiver].
-See [this document](comparison.md#syslog) for details.__
+See [this document](/docs/send-data/sumo-logic-opentelemetry/comparison#syslog) for details.__
 
 | The Installed Collector Parameter | The OpenTelemetry Collector Key                                                                                      |
 |-----------------------------------|----------------------------------------------------------------------------------------------------------------------|
@@ -2114,8 +2115,8 @@ More useful information can be found in [Streaming Metrics Source for Cloud Base
 The equivalent of the Host Metrics Source is [the telegraf receiver][telegrafreceiver] with appropriate plugins.
 More useful information can be found in [Host Metrics Source for Cloud Based Management](#host-metrics-source).
 
-__Note: The are differences between the Installed Collector and the Openelemetry Collector host metrics.
-See [this document](comparison.md#host-metrics) to learn more.__
+__Note: The are differences between the Installed Collector and the OpenTelemetry Collector host metrics.
+See [this document](/docs/send-data/sumo-logic-opentelemetry/comparison#host-metrics) to learn more.__
 
 | The Installed Collector Parameter | The OpenTelemetry Collector Key                                                                                 |
 |-----------------------------------|-----------------------------------------------------------------------------------------------------------------|
@@ -2153,15 +2154,15 @@ Windows Active Directory Source is not supported by the OpenTelemetry Collector.
 [tcplogreceiver]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.33.0/receiver/tcplogreceiver
 [filelogreceiver]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.33.0/receiver/filelogreceiver
 [syslogreceiver]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.33.0/receiver/syslogreceiver
-[sumologicsyslog]: ../pkg/processor/sumologicsyslogprocessor/README.md
+[sumologicsyslog]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/processor/sumologicsyslogprocessor/README.md
 [network-semantic-convention]: https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/semantic_conventions/span-general.md#general-network-connection-attributes
-[sumologicextension]: ../pkg/extension/sumologicextension/README.md
-[sumologicexporter]: ../pkg/exporter/sumologicexporter/README.md
+[sumologicextension]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/extension/sumologicextension/README.md
+[sumologicexporter]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/exporter/sumologicexporter/README.md
 [user.properties]: https://help.sumologic.com/docs/send-data/installed-collectors/collector-installation-reference/user-properties
 [proxy]: https://opentelemetry.io/docs/collector/configuration/#proxy-support
 [common-parameters]: https://help.sumologic.com/docs/send-data/use-json-configure-sources#common-parameters-for-log-source-types
-[source-templates]: ../pkg/exporter/sumologicexporter/README.md#source-templates
-[telegrafreceiver]: ../pkg/receiver/telegrafreceiver/README.md
+[source-templates]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/exporter/sumologicexporter/README.md#source-templates
+[telegrafreceiver]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/receiver/telegrafreceiver/README.md
 [telegraf-socket_listener]: https://github.com/SumoLogic/telegraf/tree/v1.19.0-sumo-3/plugins/inputs/socket_listener#socket-listener-input-plugin
 [telegraf-input-formats]: https://github.com/SumoLogic/telegraf/tree/v1.19.0-sumo-3/plugins/parsers
 [telegraf-input-plugins]: https://github.com/SumoLogic/telegraf/tree/v1.19.0-sumo-3/plugins/inputs

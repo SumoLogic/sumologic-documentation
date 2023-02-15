@@ -4,18 +4,7 @@ title: Troubleshooting
 ---
 
 
-Make sure to read [OpenTelemetry Collector Troubleshooting][otc_troubleshooting] documentation for generic troubleshooting instructions.
-
-See below for more information.
-
-- [Accessing the collector's logs](#accessing-the-collectors-logs)
-- [Accessing the collector's metrics](#accessing-the-collectors-metrics)
-- [Accessing the collector's configuration](#accessing-the-collectors-configuration)
-- [Collector registration failure](#collector-registration-failure)
-- [Metrics port in use](#metrics-port-in-use)
-- [Error in OTC logs: `Dropping data because sending_queue is full`](#error-in-otc-logs-dropping-data-because-sending_queue-is-full)
-
-[otc_troubleshooting]: https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/troubleshooting.md
+Make sure to read the [OpenTelemetry Collector Troubleshooting](https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/troubleshooting.md) documentation for generic troubleshooting instructions.
 
 ## Accessing the collector's logs
 

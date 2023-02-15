@@ -104,7 +104,7 @@ It has the following features that can help with performance:
 - `sending_queue` with its `num_consumers`, `queue_size` settings,
 - `timeout`.
 
-Read more about these features in the [Sumo Logic Exporter docs](../pkg/exporter/sumologicexporter/README.md).
+Read more about these features in the [Sumo Logic Exporter docs](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/exporter/sumologicexporter/README.md).
 
 ### Batch Processor
 
@@ -123,8 +123,7 @@ Read more about these features in the [Batch Processor docs].
 
 ### Memory Limiter Processor
 
-The [`memorylimiterprocessor`][memorylimiterprocessor] prevents out-of-memory crashes for the collector process
-by monitoring the amount of memory used by the collector and forcing it to lower its memory consumption.
+The [`memorylimiterprocessor`][memorylimiterprocessor] prevents out-of-memory crashes for the collector process by monitoring the amount of memory used by the collector and forcing it to lower its memory consumption.
 
 Read more about its features in the [Memory Limiter Processor docs].
 

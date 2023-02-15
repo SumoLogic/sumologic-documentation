@@ -1,4 +1,7 @@
-# Configuration
+---
+id: configuration
+title: Configuration
+---
 
 - [Basic configuration](#basic-configuration)
   - [Basic configuration for logs](#basic-configuration-for-logs)
@@ -72,24 +75,20 @@ service:
 ```
 
 The Sumo Logic exporter automatically detects the Sumo Logic extension
-if it's added in the `service.extensions` property
-and uses it as the authentication provider to connect and send data to the Sumo Logic backend.
+if it's added in the `service.extensions` property and uses it as the authentication provider to connect and send data to the Sumo Logic backend.
 
-You add the receivers for the data you want to be collected
-and put them together in one pipeline.
-You can of course also add other components according to your needs -
-extensions, processors, other exporters etc.
+You add the receivers for the data you want to be collected and put them together in one pipeline. You can of course also add other components according to your needs - extensions, processors, other exporters etc.
 
 Let's look at some examples for configuring logs, metrics and traces to be sent to Sumo,
 and after that let's put that all together.
 
-> **IMPORTANT NOTE**:
-> It is recommended to limit access to the configuration file as it contains sensitive information.
-> You can change access permissions to the configuration file using:
->
-> ```bash
-> chmod 640 config.yaml
-> ```
+:::note
+It is recommended to limit access to the configuration file as it contains sensitive information.
+You can change access permissions to the configuration file using:
+```bash
+chmod 640 config.yaml
+```
+:::
 
 [sumologic_docs_install_token]: https://help.sumologic.com/docs/manage/security/installation-tokens
 
@@ -301,11 +300,11 @@ so keep in mind that to store credentials either the user needs a home directory
 More information about this feature can be found in the [extension's documentation][sumologicextension_store_credentials].
 
 [sumologic_webpage]: https://www.sumologic.com/
-[sumologicextension]: ../pkg/extension/sumologicextension/
-[sumologicexporter]: ../pkg/exporter/sumologicexporter/
+[sumologicextension]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/extension/sumologicextension/
+[sumologicexporter]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/exporter/sumologicexporter/README.md
 [hostmetricsreceiver]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.62.0/receiver/hostmetricsreceiver
-[sumologicextension_configuration]: ../pkg/extension/sumologicextension#configuration
-[sumologicextension_store_credentials]: ../pkg/extension/sumologicextension/README.md#storing-credentials
+[sumologicextension_configuration]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/extension/sumologicextension#configuration
+[sumologicextension_store_credentials]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/extension/sumologicextension/README.md#storing-credentials
 
 ### Using multiple Sumo Logic extensions
 
@@ -396,7 +395,7 @@ service:
       - hostmetrics
 ```
 
-[sumologicexporter_docs]: ../pkg/exporter/sumologicexporter/README.md
+[sumologicexporter_docs]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/exporter/sumologicexporter/README.md
 
 ## Collecting logs from files
 

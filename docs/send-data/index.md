@@ -27,7 +27,7 @@ Learn how to send data to Sumo Logic. In this section, we'll introduce the follo
   <ul>
   <li><a href="/docs/send-data/installed-collectors">Installed Collectors</a></li>
   <li><a href="/docs/send-data/installed-collectors/sources">Explore Installed Collector Sources</a></li>
-  <li><a href="/docs/send-data/sumo-distribution-opentelemetry">OpenTelemetry Distribution</a></li>
+  <li><a href="/docs/send-data/sumo-logic-opentelemetry">OpenTelemetry Distribution</a></li>
   </ul>
   </div>
 </div>

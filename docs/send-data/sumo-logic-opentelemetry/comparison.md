@@ -1,6 +1,7 @@
 ---
 id: comparison
 title: Comparison between the Installed Collector and OpenTelemetry Collector
+sidebar_label: OTEL Collector vs. Installed Collector
 ---
 
 
@@ -250,7 +251,7 @@ The Installed Collector and OpenTelemetry Collector have different
 codebases that cause some host metrics to have different names.
 
 Use the
-[translate_telegraf_attributes](../pkg/exporter/sumologicexporter/README.md#configuration)
+[translate_telegraf_attributes](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/exporter/sumologicexporter/README.md#configuration)
 Sumo Logic Exporter option to keep metric names compatible
 with Sumo Logic Apps and consistent with the Installed Collector.
 

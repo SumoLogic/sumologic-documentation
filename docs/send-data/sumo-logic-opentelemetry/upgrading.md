@@ -136,7 +136,7 @@ to make it behave like the Sumo Logic exporter.
 
 See the [Source processor documentation][sourceprocessor_docs] for more details.
 
-[sumologicexporter_docs]: ../pkg/exporter/sumologicexporter/README.md
+[sumologicexporter_docs]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/exporter/sumologicexporter/README.md
 [sourceprocessor_docs]: ../pkg/processor/sourceprocessor/README.md
 
 ## Upgrading to v0.56.0-sumo-0

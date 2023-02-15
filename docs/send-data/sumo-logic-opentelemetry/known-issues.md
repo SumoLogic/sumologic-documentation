@@ -3,12 +3,6 @@ id: known-issues
 title: Known Issues
 ---
 
-
-- [Changes to collector properties are not applied](#changes-to-collector-properties-are-not-applied)
-- [Collector fails to start when deleted from UI](#collector-fails-to-start-when-deleted-from-ui)
-- [Enabling `clobber` property re-registers collector on every restart](#enabling-clobber-property-re-registers-collector-on-every-restart)
-- [Cannot start reading file logs from specific point in time](#cannot-start-reading-file-logs-from-specific-point-in-time)
-
 ## Changes to collector properties are not applied
 
 After running the collector for the first time, changes to collector properties
@@ -73,8 +67,7 @@ it cannot be set to `end` for some files and to `beginning` for other files.
 Note that this can be worked around by creating two separate Filelog receivers,
 one reading from the beginning and one reading from the end.
 
-The other problem is that it is not currently possible for Filelog receiver to start reading files at a specific point,
-or only read files created or modified after a specific point in time.
+The other problem is that it is not currently possible for Filelog receiver to start reading files at a specific point, or only read files created or modified after a specific point in time.
 
 There is currently no workaround for this.
 

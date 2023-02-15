@@ -1,11 +1,11 @@
-# BoringCrypto and FIPS compliance
-
-## Introduction
+---
+id: fips
+title: BoringCrypto and FIPS compliance
+---
 
 BoringCrypto is a cryptographic module [validated against FIPS 140][boringcrypto_certs].
 
-Sumo OT distro can be built to use BoringCrypto instead of Go standard library crypto implementations.
-This document explains how to obtain FIPS-capable binaries and how to run them in FIPS-approved mode.
+Sumo OT distro can be built to use BoringCrypto instead of Go standard library crypto implementations. This document explains how to obtain FIPS-capable binaries and how to run them in FIPS-approved mode.
 
 ## Obtaining the binaries
 
@@ -42,8 +42,9 @@ The FIPS-approved version would be:
 docker pull public.ecr.aws/sumologic/sumologic-otel-collector:0.70.0-sumo-0-fips
 ```
 
-> **Note**
-> Currently FIPS-compliant builds are only available for Linux on amd64.
+:::note
+Currently, FIPS-compliant builds are only available for Linux on amd64.
+:::
 
 ## Running in FIPS-approved mode
 
@@ -52,13 +53,13 @@ extra configuration.
 
 For more information, see the relevant [Go module](https://go.googlesource.com/go/+/dev.boringcrypto/src/crypto/tls/fipsonly/fipsonly.go).
 
-> **Note**
-> The above module guarantees not only the use of the right ciphers, but also FIPS-approved settings for each cipher.
+:::note
+The above module guarantees not only the use of the right ciphers, but also FIPS-approved settings for each cipher.
+:::
 
 ## Validating use of BoringCrypto Symbols
 
-Sumo OT distro can be built with debug symbols intact, which makes it possible to verify that it indeed
-uses cryptographic functions from BoringCrypto:
+Sumo OT distro can be built with debug symbols intact, which makes it possible to verify that it indeed uses cryptographic functions from BoringCrypto:
 
 ```bash
 $ go tool nm otelcol-sumo-fips-linux_amd64 | grep "_Cfunc__goboringcrypto_"
@@ -71,18 +72,13 @@ $ go tool nm otelcol-sumo-fips-linux_amd64 | grep "_Cfunc__goboringcrypto_"
 [...]
 ```
 
-For more information on validating that a Go binary has been built against BoringCrypto, see the
-following: <https://go.googlesource.com/go/+/dev.boringcrypto/misc/boring/>
+For more information on validating that a Go binary has been built against BoringCrypto, see the following: <https://go.googlesource.com/go/+/dev.boringcrypto/misc/boring/>
 
 ## Validating TLS Handshake
 
-Depending on configuration, Otelcol can act as a TLS client, server, or both. More specifically,
-some receivers can accept data via a TLS-wrapped protocol like HTTP or GRPC. Similarly, some
-exporters can send data using such a protocol. The configuration is standardized and can be
-found [here](https://github.com/open-telemetry/opentelemetry-collector/blob/main/config/configtls/README.md).
+Depending on configuration, Otelcol can act as a TLS client, server, or both. More specifically, some receivers can accept data via a TLS-wrapped protocol like HTTP or GRPC. Similarly, some exporters can send data using such a protocol. The configuration is standardized and can be found [here](https://github.com/open-telemetry/opentelemetry-collector/blob/main/config/configtls/README.md).
 
-For the purpose of examining the TLS handshake in both of these situations, we'll use the following minimal
-configuration:
+For the purpose of examining the TLS handshake in both of these situations, we'll use the following minimal configuration:
 
 ```yaml
 receivers:
@@ -108,8 +104,9 @@ service:
       exporters: [otlphttp]
 ```
 
-> **Note**
-> Valid TLS credentials need to be present under `/etc/otel/server.crt` and `/etc/otel/server.key` for this configuration to be valid.
+:::note
+Valid TLS credentials need to be present under `/etc/otel/server.crt` and `/etc/otel/server.key` for this configuration to be valid.
+:::
 
 ### Validating the server configuration
 
