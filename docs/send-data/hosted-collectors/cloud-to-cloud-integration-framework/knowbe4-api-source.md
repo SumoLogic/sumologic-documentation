@@ -7,10 +7,10 @@ description: This document explains how to configure the KnowBe4 Cloud-to-Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The KnowBe4 API integration collects user data into Sumo Logic to store, analyze and alert. It ingests events data from the [Events API](https://developer.knowbe4.com/rest/userEvents#tag/Events/operation/listEvents).
+The KnowBe4 API integration collects user events data into Sumo Logic for storage, analysis, and alerting. It ingests events data from the [Events API](https://developer.knowbe4.com/rest/userEvents#tag/Events/operation/listEvents), phishing security tests from the [Phishing Security Tests API](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests/get), and recipient results from the [Recipient Results API](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests~1%7Bpst_id%7D~1recipients/get).
 
-:::note
-To access the Knowbe4 API, you must have either the Platinum or Diamond user plan.
+:::important
+Note that access to KnowBe4 APIs is limited to Platinum and Diamond customers, and the `_siemparser` is currently only available for the `External Events` source.
 :::
 
 ## Prerequisites
@@ -24,13 +24,13 @@ The **Base URL** is the URL where your **KnowBe4** account is located. To get th
 2. At the top of the browser, you will see the **Base URL** inside the address bar.
 3. Choose the Base URL from the table below. The following table contains the base URLs based on the location of your **KnowBe4** account:
 
-
   | Server location | Server located at  | Base URLs |
   | :---|:---|:---|
   | US Server |	training.knowbe4.com | `https://api.events.knowbe4.com` |
   | EU Server | eu.knowbe4.com | `https://api-eu.events.knowbe4.com` |
   | CA Server |	ca.knowbe4.com | `https://api-ca.events.knowbe4.com` |
-
+  | UK Server | uk.knowbe4.com | `https://uk.api.knowbe4.com`        |
+  | DE server | de.knowbe4.com | `https://de.api.knowbe4.com`        |
 
 ### API Token
 
@@ -39,19 +39,19 @@ The **API security token** is used to authenticate with KnowBe4 HTTP API. To get
 1. Navigate to the **Events** section from left panel and click **Settings**.
 1. Select **User Profile**. The **KnowBe4** Secure API token is displayed in the UI.
 1. You can copy the generated token for use, or click the **Reset Token** button to generate a new one.
-  :::note
-  When you reset the token, the previous token issued becomes invalid immediately.
-  :::
+:::note
+When you reset the token, the previous token issued becomes invalid immediately.
+:::
 
-## Metadata
+## Metadata Field
 
 If the Source is configured with the **SIEM forward** option, the metadata field `_siemparser` will be set to */Parsers/System/KnowBe4/KnowBe4 KMSAT*.
 
-
 ## Data Sources
 
-The KnowBe4 integration fetches all types of user events for the KnowBe4 account.
-
+The KnowBe4 integration fetches two types of data sources for the KnowBe4 account.
+1. **External Events**. Our integration retrieves all user events for the KnowBe4 account.
+2. **Phishing Tests**.  Our integration fetches a list of all recipients for each phishing security test on the KnowBe4 account.
 
 ## States
 
@@ -91,7 +91,6 @@ To configure the KnowBe4 API Source:
 8. In **API Key**, authenticate your account by entering your secret API key. You can access your API key or generate a new one from **User Event API Management Console**. See [API Token](#api-token) section.
 9. When you are finished configuring the Source, click **Save**.
 
-
 ### Error types
 
 When Sumo Logic detects an issue, it is tracked by Health Events. The following table shows three possible error types. It tells the reason for the error, if the source attempts to retry, and the name of the event log in the Health Event Index.
@@ -116,7 +115,6 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `schemaRef` | JSON Object  | Yes | Use `{"type":"KnowBe4"}` for KnowBe4 Source. | not modifiable |
 | `sourceType` | String | Yes | Use `Universal` for KnowBe4 Source. | not modifiable |
 
-
 ### Config Parameters
 
 | Parameter | Type | Required | Description | Access |
@@ -127,7 +125,6 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
 | `baseURL` | String | Yes | Region URL of the KnowBe4 application. | modifiable |
 | `apiKey` | String | Yes | Secret api key to authenticate your account. | modifiable |
-
 
 ### JSON Example
 
@@ -150,7 +147,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 
-
 ## Limitations
 
-The number of licensed users on your account can make a maximum of ten requests per day using the KnowBe4 API. You may access the APIs only four times per second.
+There are two limitations to access KnowBe4 APIs:
+* Access to the KnowBe4 Event APIs is limited to 10 requests per licensed user account per day, with a maximum of 4 requests per second.
+* Access to the KnowBe4 Phishing APIs is limited to 1,000 requests per day plus the number of licensed users on the account. The API allows a maximum of 4 requests per second, and has a burst limit of 50 requests per minute which starts around 5 minutes and the daily limit starts around 24 hours from the first API request.
