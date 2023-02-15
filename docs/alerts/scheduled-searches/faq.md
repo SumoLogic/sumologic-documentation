@@ -94,7 +94,7 @@ Scheduled Search failures could be the result of other factors, such as a spike
 
 * If you have a query that normally runs, but is close to reaching the [timeout period limit](#how-to-prevent-your-scheduled-search-from-timing-out), it could finally fail due to changes in your account, such as the content and size of log messages, or the volume or number of messages sent during a specific time range. Choosing a narrower time range can help.
 * Even if the query normally runs well within the timeout period limit, there a data surge could cause the need for more processing time
-* There could be normal growth factors within an account such as increased Collector deployment that would cause some Source Categories to have a data surge. You should test your Scheduled Searches for performance periodically to address this possibility.
+* There could be normal growth factors within an account, such as increased Collector deployment, that would cause some Source Categories to have a data surge. You should test your Scheduled Searches for performance periodically to address this possibility.
 
 See also, [What Happens When a Scheduled Search is Suspended?](#what-happens-when-a-scheduled-search-is-suspended).
 
