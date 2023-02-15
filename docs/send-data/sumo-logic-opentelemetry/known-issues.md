@@ -5,19 +5,16 @@ title: Known Issues
 
 ## Changes to collector properties are not applied
 
-After running the collector for the first time, changes to collector properties
-(e.g. collector description, category, fields) are not applied.
+After running the collector for the first time, changes to collector properties (e.g., collector description, category, fields) are not applied.
 
 To work around this, you need to delete the existing collector registration
-and register the collector again.
-To do this, you need to do two things:
+and register the collector again. To do this, you need to do two things:
 
 - Remove the collector in Sumo Logic UI
   - Log in to your Sumo Logic UI
   - Go to `Manage Data` - `Collection`
   - Find your collector
   - Click `Delete` on the right-hand side of the collector
-
 - Delete local collector registration file in `~/.sumologic-otel-collector/`.
 
 After that, the collector will register on next run.

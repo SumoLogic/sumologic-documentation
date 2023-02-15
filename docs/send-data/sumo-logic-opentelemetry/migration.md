@@ -3,7 +3,6 @@ id: migration
 title: Migration from Installed Collector
 ---
 
-
 The Installed Collector can gather data from several different types of Sources.
 You should manually migrate your Sources to an OpenTelemetry Configuration.
 
@@ -764,8 +763,10 @@ The equivalent of the Syslog Source is a combination of
 [the tcplog][tcplogreceiver] or [the udplog][udplogreceiver] receivers
 and [the sumologicsyslog processor][sumologicsyslog].
 
-__Note: The OpenTelemetry Collector provides also [Syslog Receiver][syslogreceiver].
-See [this document](/docs/send-data/sumo-logic-opentelemetry/comparison#syslog) for details.__
+:::note
+The OpenTelemetry Collector provides also [Syslog Receiver][syslogreceiver].
+See [this document](/docs/send-data/sumo-logic-opentelemetry/comparison#syslog) for details.
+:::
 
 #### Overall example
 
@@ -833,7 +834,7 @@ exporters:
     ## Set Source Name to be facility name
     source_name: "%{facility}"
     ## Set Source Host to `net.peer.name`
-    source_host: "%{net.peer.name}
+    source_host: "%{net.peer.name}"
 service:
   extensions:
   - sumologic
@@ -876,7 +877,7 @@ processor:
 
 Protocol is defined by receiver type. For UDP use [udplogreceiver][udplogreceiver] and for TCP use [tcplogreceiver][tcplogreceiver]. Port can be set by `listen_address`, for example to listen on port `6776` on all interfaces, use `listen_address: 0.0.0.0:6776`.
 
-You can use multiple receivers with different names nad ports like in the following example:
+You can use multiple receivers with different names and ports like in the following example:
 
 ```yaml
 receivers:
@@ -1067,9 +1068,7 @@ exporters:
 
 ##### Source Name
 
-The OpenTelemetry Collector requires the Source Name to be set manually.
-In the exporter configuration, use the [Sumologicsyslogprocessor][sumologicsyslog]
-to set the `facility` attribute.
+The OpenTelemetry Collector requires the Source Name to be set manually. In the exporter configuration, use the [Sumologicsyslogprocessor][sumologicsyslog] to set the `facility` attribute.
 
 For example:
 
@@ -1098,15 +1097,13 @@ exporters:
     ## Keep manually parsed timestamps
     clear_logs_timestamp: true
     ## Set Source Name to facility, which is set by sumologicsyslogprocessor
-    source_name: "%{facility}
+    source_name: "%{facility}"
 ```
 
 ##### Source Host
 
 The OpenTelemetry Collector requires the Source Host to be set manually.
-Set `add_attributes` to `true` for [tcplogreceiver][tcplogreceiver]/[udplogreceiver][udplogreceiver].
-This adds [connection related attributes][network-semantic-convention],
-especially `net.peer.name` which should be set as the Source Host.
+Set `add_attributes` to `true` for [tcplogreceiver][tcplogreceiver]/[udplogreceiver][udplogreceiver]. This adds [connection related attributes][network-semantic-convention], especially `net.peer.name`, which should be set as the Source Host.
 
 For example:
 
@@ -1627,7 +1624,7 @@ To get CPU metrics we are using the [inputs.cpu][telegraf-input-cpu]
 and the [inputs.system][telegraf-input-system] Telegraf plugins.
 
 | Metric Name       | Telegraf plugin | Telegraf metric name |
-|-------------------|-----------------|----------------------|
+|:-----------|:---------|:--------------|
 | CPU_User          | inputs.cpu      | cpu_usage_user       |
 | CPU_Sys           | inputs.cpu      | cpu_usage_System     |
 | CPU_Nice          | inputs.cpu      | cpu_usage_nice       |
@@ -1687,7 +1684,7 @@ exporters:
 To get CPU metrics we are using the [inputs.mem][telegraf-input-mem] Telegraf plugin.
 
 | Metric Name     | Telegraf plugin | Telegraf metric name  |
-|-----------------|-----------------|-----------------------|
+|:---------|:---------|:---------------|
 | Mem_Total       | inputs.mem      | mem_total             |
 | Mem_Used        | N/A             | N/A                   |
 | Mem_Free        | inputs.mem      | mem_free              |
@@ -1747,7 +1744,7 @@ exporters:
 To get TCP metrics we are using the [inputs.netstat][telegraf-input-netstat] Telegraf plugin.
 
 | Metric Name       | Telegraf plugin | Telegraf metric name    |
-|-------------------|-----------------|-------------------------|
+|:-----------|:---------|:-----------------|
 | TCP_InboundTotal  | N/A             | N/A                     |
 | TCP_OutboundTotal | N/A             | N/A                     |
 | TCP_Established   | inputs.netstat  | netstat_tcp_established |
@@ -1812,7 +1809,7 @@ exporters:
 To get network metrics we are using the [inputs.net][telegraf-input-net] Telegraf plugin.
 
 | Metric Name    | Telegraf plugin | Telegraf metric name |
-|----------------|-----------------|----------------------|
+|:--------|:---------|:--------------|
 | Net_InPackets  | inputs.net      | net_packets_recv     |
 | Net_OutPackets | inputs.net      | net_packets_sent     |
 | Net_InBytes    | inputs.net      | net_bytes_recv       |
@@ -1879,7 +1876,7 @@ To get disk metrics we are using the [inputs.diskio][telegraf-input-diskio]
 and the [inputs.disk][telegraf-input-disk] Telegraf plugins.
 
 | Metric Name          | Telegraf plugin | Telegraf metric name |
-|----------------------|-----------------|----------------------|
+|:--------------|:---------|:--------------|
 | Disk_Reads           | inputs.diskio   | diskio_reads         |
 | Disk_ReadBytes       | inputs.diskio   | diskio_read_bytes    |
 | Disk_Writes          | inputs.diskio   | diskio_writes        |
@@ -1982,21 +1979,21 @@ This section describes migration steps for an Installed Collector managed with a
 The following table shows the equivalent [user.properties][user.properties] for OpenTelemetry.
 
 | user.properties key                           | The OpenTelemetry Collector Key                            |
-|-----------------------------------------------|------------------------------------------------------------|
-| `wrapper.java.command=JRE Bin Location`       | N/A                                                        |
+|:---------------------------------------|:----------------------------------------------------|
+| `wrapper.java.command=JRE Bin Location`       | N/A                          |
 | ~~`accessid=accessId`~~                       | N/A, use `extensions.sumologic.install_token`              |
 | ~~`accesskey=accessKey`~~                     | N/A, use `extensions.sumologic.install_token`              |
 | `category=category`                           | [extensions.sumologic.collector_category](#category)       |
 | `clobber=true/false`                          | `extensions.sumologic.clobber`                             |
 | `description=description`                     | [extensions.sumologic.collector_description](#description) |
-| `disableActionSource=true/false`              | N/A                                                        |
-| `disableScriptSource=true/false`              | N/A                                                        |
-| `disableUpgrade=true/false`                   | N/A                                                        |
-| `enableActionSource=true/false`               | N/A                                                        |
-| `enableScriptSource=true/false`               | N/A                                                        |
-| `ephemeral=true/false`                        | N/A                                                        |
+| `disableActionSource=true/false`              | N/A                           |
+| `disableScriptSource=true/false`              | N/A                      |
+| `disableUpgrade=true/false`                   | N/A                     |
+| `enableActionSource=true/false`               | N/A                  |
+| `enableScriptSource=true/false`               | N/A                 |
+| `ephemeral=true/false`                        | N/A                              |
 | `fields=[list of fields]`                     | [processors.resource](#fields)                             |
-| `fipsJce=true/false`                          | N/A                                                        |
+| `fipsJce=true/false`             | N/A              |
 | `hostName=hostname`                           | `exporters.sumologic.source_host`                          |
 | `name=name`                                   | [extensions.sumologic.collector_name](#name)               |
 | `proxyHost=host`                              | [please see OTC documentation][proxy]                       |
@@ -2004,16 +2001,16 @@ The following table shows the equivalent [user.properties][user.properties] for 
 | `proxyPassword=password`                      | [please see OTC documentation][proxy]                       |
 | `proxyPort=port`                              | [please see OTC documentation][proxy]                       |
 | `proxyUser=username`                          | [please see OTC documentation][proxy]                       |
-| `skipAccessKeyRemoval=true/false`             | N/A                                                        |
-| `sources=absolute filepath or folderpath`     | N/A                                                        |
-| `syncSources=absolute filepath or folderpath` | N/A                                                        |
-| `targetCPU=target`                            | N/A                                                        |
+| `skipAccessKeyRemoval=true/false`             | N/A                               |
+| `sources=absolute filepath or folderpath`     | N/A                                    |
+| `syncSources=absolute filepath or folderpath` | N/A                                   |
+| `targetCPU=target`                            | N/A                                |
 | `timeZone=timezone`                           | [extensions.sumologic.time_zone](#time-zone)               |
-| `token=token`                                 | N/A                                                        |
+| `token=token`                                 | N/A                      |
 | `url=collection endpoint`                     | `extensions.sumologic.api.base.url`                        |
-| `wrapper.java.command=JRE Bin Location`       | N/A                                                        |
-| `wrapper.java.command=JRE Bin Location`       | N/A                                                        |
-| `wrapper.java.maxmemory=size`                 | N/A                                                        |
+| `wrapper.java.command=JRE Bin Location`       | N/A                                 |
+| `wrapper.java.command=JRE Bin Location`       | N/A                  |
+| `wrapper.java.maxmemory=size`                 | N/A                        |
 
 ### Common Parameters
 
@@ -2036,7 +2033,7 @@ This section describes migration steps for [common parameters][common-parameters
 - [ActiveDirectory](#windows-active-directory-source-activedirectory)
 
 | The Installed Collector Parameter | The OpenTelemetry Collector Key                                                                                 |
-|-----------------------------------|-----------------------------------------------------------------------------------------------------------------|
+|:---------------------------|:---------------------------------------------------------------------------------------------------------|
 | `name`                            | [exporters.sumologic.source_name](#name-1)                                                                      |
 | `description`                     | A description can be added as a comment just above the receiver name. [See the linked example.](#description-1) |
 | `fields`                          | Use the [resourceprocessor][resourceprocessor] to set custom fields. [See the linked example.](#fields-1)       |
@@ -2060,7 +2057,7 @@ The equivalent of the Local File Source is [the filelog receiver][filelogreceive
 More useful information can be found in [Local File Source for Cloud Based Management](#local-file-source).
 
 | The Installed Collector Parameter | The OpenTelemetry Collector Key                         |
-|-----------------------------------|---------------------------------------------------------|
+|:---------------------------|:-------------------------------------------------|
 | `pathExpression`                  | element of [receivers.filelog.include](#file-path) list |
 | `denylist`                        | elements of [receivers.filelog.exclude](#denylist) list  |
 | `encoding`                        | [receivers.filelog.encoding](#encoding)                 |
@@ -2076,11 +2073,13 @@ The equivalent of the Syslog Source is a combination of
 and [the sumologicsyslog processor][sumologicsyslog].
 More useful information can be found in [Syslog Source for Cloud Based Management](#syslog-source).
 
-__Note: The OpenTelemetry Collector provides also [Syslog Receiver][syslogreceiver].
-See [this document](/docs/send-data/sumo-logic-opentelemetry/comparison#syslog) for details.__
+:::note
+The OpenTelemetry Collector provides also [Syslog Receiver][syslogreceiver].
+See [this document](/docs/send-data/sumo-logic-opentelemetry/comparison#syslog) for details.
+:::
 
 | The Installed Collector Parameter | The OpenTelemetry Collector Key                                                                                      |
-|-----------------------------------|----------------------------------------------------------------------------------------------------------------------|
+|:---------------------------|:-------------------------------------|
 | `protocol`                        | using tcplog or udplog receiver. [See syslog explanation](#protocol-and-port)                                        |
 | `port`                            | `receivers.tcplog.listen_address` or `receivers.udplog.listen_address`. [See syslog explanation](#protocol-and-port) |
 
@@ -2098,11 +2097,10 @@ Script Source is not supported by the OpenTelemetry Collector.
 
 ### Streaming Metrics Source (StreamingMetrics)
 
-The equivalent of the Streaming Metrics Source is [the telegraf receiver][telegrafreceiver] with appropriate plugins.
-More useful information can be found in [Streaming Metrics Source for Cloud Based Management](#streaming-metrics-source).
+The equivalent of the Streaming Metrics Source is the [telegraf receiver][telegrafreceiver] with appropriate plugins. More useful information can be found in [Streaming Metrics Source for Cloud Based Management](#streaming-metrics-source).
 
 | The Installed Collector Parameter | The OpenTelemetry Collector Key                                                                                 |
-|-----------------------------------|-----------------------------------------------------------------------------------------------------------------|
+|:---------------------------|:-----------------------|
 | `name`                            | [exporters.sumologic.source_name](#name-3)                                                                      |
 | `description`                     | A description can be added as a comment just above the receiver name. [See the linked example.](#description-3) |
 | `category`                        | [exporters.sumologic.source_category](#source-category-2)                                                       |
@@ -2115,11 +2113,12 @@ More useful information can be found in [Streaming Metrics Source for Cloud Base
 The equivalent of the Host Metrics Source is [the telegraf receiver][telegrafreceiver] with appropriate plugins.
 More useful information can be found in [Host Metrics Source for Cloud Based Management](#host-metrics-source).
 
-__Note: The are differences between the Installed Collector and the OpenTelemetry Collector host metrics.
-See [this document](/docs/send-data/sumo-logic-opentelemetry/comparison#host-metrics) to learn more.__
+:::note
+The are differences between the Installed Collector and the OpenTelemetry Collector host metrics. See [this document](/docs/send-data/sumo-logic-opentelemetry/comparison#host-metrics) to learn more.
+:::
 
 | The Installed Collector Parameter | The OpenTelemetry Collector Key                                                                                 |
-|-----------------------------------|-----------------------------------------------------------------------------------------------------------------|
+|:---------------------------|:---------------------------------------------------------------------------------------------------------|
 | `name`                            | [exporters.sumologic.source_name](#name-4)                                                                      |
 | `description`                     | A description can be added as a comment just above the receiver name. [See the linked example.](#description-4) |
 | `category`                        | [exporters.sumologic.source_category](#source-category-3)                                                       |
