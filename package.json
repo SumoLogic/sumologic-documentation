@@ -40,6 +40,7 @@
     "@mui/lab": "^5.0.0-alpha.108",
     "@mui/material": "^5.10.14",
     "@popperjs/core": "^2.11.6",
+    "cacheable-request": "^10.2.7",
     "clsx": "^1.1.1",
     "codespell": "^1.1.7",
     "docusaurus-plugin-sass": "^0.2.1",
