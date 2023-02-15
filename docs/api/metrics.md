@@ -391,7 +391,7 @@ The result will be a JSON document containing results (or an error) for each que
    </td>
    <td>int
    </td>
-   <td>Original user-supplied desired granularity of temporal <a href="/docs/metrics/metric-charts/Interacting-Metric-Charts#Adjust_the_quantization_interval">quantization</a> (if supplied).
+   <td>Original user-supplied desired granularity of temporal <a href="/docs/metrics/metric-charts/interacting-metric-charts#Adjust_the_quantization_interval">quantization</a> (if supplied).
    </td>
   </tr>
   <tr>
