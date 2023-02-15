@@ -149,8 +149,7 @@ We can differentiate four types of modules:
 To use those configured modules, they need to be mentioned in the `service` section.
 `service` consists of `extensions` (they are global across collector) and `pipelines`.
 `Pipelines` can be `logs`, `metrics`, and `traces` and each of them can have
-`receivers`, `processors` and `exporters`. Multiple pipelines of one type can be configured using aliases,
-such as `example pipeline` for `logs` in the example above.
+`receivers`, `processors` and `exporters`. Multiple pipelines of one type can be configured using aliases, such as `example pipeline` for `logs` in the example above.
 
 ## Collector
 
@@ -181,8 +180,7 @@ extensions:
 
 ### Host Name
 
-Host name can be set in the sumologic exporter configuration.
-The exporter will set the host name for every record sent to Sumo Logic:
+Host name can be set in the sumologic exporter configuration. The exporter will set the host name for every record sent to Sumo Logic:
 
 ```yaml
 extensions:
@@ -213,9 +211,7 @@ exporters:
 
 ### Fields
 
-Fields in the Opentelemetry Collector can be added with the [resourceprocessor][resourceprocessor].
-For example, to add a field with the key `author` with the value `me` to every record,
-you could use the following configuration:
+Fields in the OpenTelemetry Collector can be added with the [resourceprocessor][resourceprocessor]. For example, to add a field with the key `author` with the value `me` to every record, you could use the following configuration:
 
 ```yaml
 extensions:
@@ -237,7 +233,7 @@ exporters:
 
 ### Assign to an Ingest Budget
 
-Assignment to an Ingest Budget is not supported by Opentelemetry Collector.
+Assignment to an Ingest Budget is not supported by OpenTelemetry Collector.
 
 ### Time Zone
 
@@ -267,11 +263,11 @@ exporters:
 
 #### CPU Target
 
-CPU Target is not supported by the Opentelemetry Collector.
+CPU Target is not supported by the OpenTelemetry Collector.
 
 #### Collector Management
 
-Currently, the Opentelemetry Collector can only be managed with Local Configuration File Management.
+Currently, the OpenTelemetry Collector can only be managed with Local Configuration File Management.
 Depending on your setup, follow the steps in [Cloud Based Management](#cloud-based-management)
 or [Local Configuration File](#local-configuration-file) for migration details.
 
@@ -318,7 +314,7 @@ receivers:
     ## List of supported encodings:
     ## https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.33.0/receiver/filelogreceiver
     encoding: utf-8
-    ## multiline is Opentelemetry Collector substitute for `Enable Multiline Processing`.
+    ## multiline is OpenTelemetry Collector substitute for `Enable Multiline Processing`.
     ## As multiline detection behaves slightly different than in Installed Collector
     ## the following section in filelog documentation is recommended to read:
     ## https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.33.0/receiver/filelogreceiver#multiline-configuration
@@ -712,7 +708,7 @@ exporters:
 
 ##### Multiline Processing
 
-Multiline processing in the Opentelemetry Collector is set manually. There is no automatic boundary detection.
+Multiline processing in the OpenTelemetry Collector is set manually. There is no automatic boundary detection.
 
 The following snippet sets the boundary regex as `^\d{4}-\d{2}-\d{2}` to match, for example, `2021-06-06`):
 
@@ -755,13 +751,11 @@ More information is available in [filelogreceiver documentation][multiline].
 
 ### Remote File Source
 
-Remote File Source is not supported by the Opentelemetry Collector.
+Remote File Source is not supported by the OpenTelemetry Collector.
 
 ### Syslog Source
 
-The equivalent of the Syslog Source is a combination of
-[the tcplog][tcplogreceiver] or [the udplog][udplogreceiver] receivers
-and [the sumologicsyslog processor][sumologicsyslog].
+The equivalent of the Syslog Source is a combination of [the tcplog][tcplogreceiver] or [the udplog][udplogreceiver] receivers and [the sumologicsyslog processor][sumologicsyslog].
 
 :::note
 The OpenTelemetry Collector provides also [Syslog Receiver][syslogreceiver].

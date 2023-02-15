@@ -89,16 +89,13 @@ Follow the steps for your platform below.
     ```
 1. [Verify the installation](#verify-the-installation)
 1. Prepare the configuration according to [this](/docs/send-data/sumo-logic-opentelemetry/configuration) document and save it in `config.yaml`.
-
    :::note
    It is recommended to limit access to the configuration file as it contains sensitive information. You can change access permissions to the configuration file using:
    ```bash
    chmod 640 config.yaml
    ```
    :::
-
 1. Run Sumo Logic Distribution for OpenTelemetry Collector:
-
    ```bash
    otelcol-sumo --config config.yaml
    ```
@@ -162,7 +159,6 @@ Follow the steps for your platform below.
     chmod +x otelcol-sumo
     sudo mv otelcol-sumo /usr/local/bin/otelcol-sumo    
     ```
-
 1. [Verify the installation](#verify-the-installation)
 1. Prepare the configuration according to [this](/docs/send-data/sumo-logic-opentelemetry/configuration) document and save it in `config.yaml`.
    :::note
@@ -292,7 +288,7 @@ You can read more about the above described mechanism in
 Make sure that the user that will run the `otelcol-sumo` process has access to
 any directories within your filesystem that have been used in you configuration.
 
-For instance, using [filestorage extension][filestorage_help] in your configuration like so:
+For instance, using [filestorage extension][filestorage_help] in your configuration, like so:
 ```yaml
 extensions:
   file_storage/custom_settings:
@@ -378,7 +374,9 @@ To run opentelemetry collector as Systemd Service, apply following steps:
    WantedBy=multi-user.target
    ```
 
-   _Note: adjust memory configuration to your setup._
+   :::note
+   You'll need to adjust memory configuration to your setup.
+   :::
 
 1. Enable autostart of the service:
 
@@ -396,15 +394,12 @@ To run opentelemetry collector as Systemd Service, apply following steps:
 
 ## Ansible
 
-Example installation of Sumo Logic Distribution for OpenTelemetry Collector with Ansible is described in
-[examples/ansible](../examples/ansible/README.md).
+Example installation of Sumo Logic Distribution for OpenTelemetry Collector with Ansible is described in [examples/ansible](../examples/ansible/README.md).
 
 ## Puppet
 
-Example installation of Sumo Logic Distribution for OpenTelemetry Collector with Puppet is described in
-[examples/puppet](../examples/puppet/README.md).
+Example installation of Sumo Logic Distribution for OpenTelemetry Collector with Puppet is described in [examples/puppet](../examples/puppet/README.md).
 
 ## Chef
 
-Example installation of Sumo Logic Distribution for OpenTelemetry Collector with Chef is described in
-[examples/chef](../examples/chef/README.md).
+Example installation of Sumo Logic Distribution for OpenTelemetry Collector with Chef is described in [examples/chef](../examples/chef/README.md).

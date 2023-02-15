@@ -44,9 +44,7 @@ The collector will re-register on next run.
 
 ## Enabling `clobber` property re-registers collector on every restart
 
-If you set the `extensions.sumologic.clobber` property to `true`,
-a new collector registration that replaces the previously existing registration
-will be created on every run of the collector.
+If you set the `extensions.sumologic.clobber` property to `true`, a new collector registration that replaces the previously existing registration will be created on every run of the collector.
 
 This affects the `_collectorId` attribute, which is different for every new collector registration.
 

@@ -7,8 +7,7 @@ title: Best Practices
 
 [Batch processor][batchprocessor] can be used to transform processed data into batches greater than given size or from given time interval. This helps better compress the data and reduce the number of requests sent by the exporters.
 
-It is highly recommended to use this processor in every pipeline. It should be defined after [memory limiter processor][memorylimiterprocessor]
-and any processors that drop the data, such as [filter processor][filterprocessor].
+It is highly recommended to use this processor in every pipeline. It should be defined after [memory limiter processor][memorylimiterprocessor] and any processors that drop the data, such as [filter processor][filterprocessor].
 
 Besides setting the lower limit for batch size, it is also possible to set a maximal size for a batch. We highly recommend to set that limit to avoid sudden increase of request sizes in case more data is being received temporarily. The value we recommend to set is `2 * send_batch_size`.
 

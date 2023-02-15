@@ -247,19 +247,13 @@ Attributes:
 
 ### Host Metrics
 
-The Installed Collector and OpenTelemetry Collector have different
-codebases that cause some host metrics to have different names.
+The Installed Collector and OpenTelemetry Collector have different codebases that cause some host metrics to have different names.
 
-Use the
-[translate_telegraf_attributes](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/exporter/sumologicexporter/README.md#configuration)
-Sumo Logic Exporter option to keep metric names compatible
-with Sumo Logic Apps and consistent with the Installed Collector.
+Use the [translate_telegraf_attributes](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/exporter/sumologicexporter/README.md#configuration) Sumo Logic Exporter option to keep metric names compatible with Sumo Logic Apps and consistent with the Installed Collector.
 
-There may be differences between metric values calculated by the Installed Collector
-and OpenTelemetry Collector since they use different calculation formulas.
+There may be differences between metric values calculated by the Installed Collector and OpenTelemetry Collector since they use different calculation formulas.
 
-The following list has the metrics gathered by the Installed Collector
-that don't have equivalents in the OpenTelemetry Collector:
+The following list has the metrics gathered by the Installed Collector that don't have equivalents in the OpenTelemetry Collector:
 
 - `Mem_Used`
 - `Mem_PhysicalRam`

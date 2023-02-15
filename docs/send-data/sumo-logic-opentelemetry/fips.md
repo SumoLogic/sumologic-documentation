@@ -1,6 +1,7 @@
 ---
 id: fips
-title: BoringCrypto and FIPS compliance
+title: BoringCrypto and FIPS Compliance
+sidebar_label: FIPS Compliance
 ---
 
 BoringCrypto is a cryptographic module [validated against FIPS 140][boringcrypto_certs].
@@ -13,13 +14,11 @@ For general installation instructions, see [here](installation.md).
 
 ### Using the install script
 
-Pass the `--fips` flag to the [script](./installation.md#installation-using-script). If you try to do this on an unsupported platform,
-the script will error.
+Pass the `--fips` flag to the [script](./installation.md#installation-using-script). If you try to do this on an unsupported platform, the script will error.
 
 ### Get the binaries directly
 
-The binaries can be downloaded from OT release pages. They are distinguished from others by containing the
-`-fips-` infix. More specifically, the binary name follow the format:
+The binaries can be downloaded from OT release pages. They are distinguished from others by containing the `-fips-` infix. More specifically, the binary name follow the format:
 
 ```text
 otelcol-sumo-${VERSION}-fips-${OS}-${ARCH}
@@ -29,8 +28,7 @@ For example: <https://github.com/SumoLogic/sumologic-otel-collector/releases/dow
 
 ### Docker images
 
-Docker images containing the binaries have their tag suffixed with `-fips`. For example, where the normal image for
-version `0.70.0-sumo-0` is:
+Docker images containing the binaries have their tag suffixed with `-fips`. For example, where the normal image for version `0.70.0-sumo-0` is:
 
 ```text
 docker pull public.ecr.aws/sumologic/sumologic-otel-collector:0.70.0-sumo-0
@@ -48,8 +46,7 @@ Currently, FIPS-compliant builds are only available for Linux on amd64.
 
 ## Running in FIPS-approved mode
 
-The FIPS-compliant build statically enforces the use of FIPS-approved algorithms in TLS cipher suites, and doesn't require any
-extra configuration.
+The FIPS-compliant build statically enforces the use of FIPS-approved algorithms in TLS cipher suites, and doesn't require any extra configuration.
 
 For more information, see the relevant [Go module](https://go.googlesource.com/go/+/dev.boringcrypto/src/crypto/tls/fipsonly/fipsonly.go).
 
@@ -59,7 +56,7 @@ The above module guarantees not only the use of the right ciphers, but also FIPS
 
 ## Validating use of BoringCrypto Symbols
 
-Sumo OT distro can be built with debug symbols intact, which makes it possible to verify that it indeed uses cryptographic functions from BoringCrypto:
+Sumo Logic OT distro can be built with debug symbols intact, which makes it possible to verify that it indeed uses cryptographic functions from BoringCrypto:
 
 ```bash
 $ go tool nm otelcol-sumo-fips-linux_amd64 | grep "_Cfunc__goboringcrypto_"
@@ -110,8 +107,7 @@ Valid TLS credentials need to be present under `/etc/otel/server.crt` and `/etc/
 
 ### Validating the server configuration
 
-We can use a tool like [cipherscan](https://github.com/mozilla/cipherscan) to enumerate all of a server's
-supported ciphersuites. See the abridged cipherscan output for the test configuration below:
+We can use a tool like [cipherscan](https://github.com/mozilla/cipherscan) to enumerate all of a server's supported ciphersuites. See the abridged cipherscan output for the test configuration below:
 
 ```bash
 $ ./cipherscan localhost:4317
