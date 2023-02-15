@@ -1462,7 +1462,7 @@ exporters:
     source_category: example category
     ## Installed Collector substitute for `Source Host`.
     source_host: example host
-    ## Ensure compability with Installed Colllector metric name
+    ## Ensure compatibility with Installed Collector metric name
     translate_telegraf_attributes: true
 service:
   extensions:
