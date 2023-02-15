@@ -137,7 +137,7 @@ to make it behave like the Sumo Logic exporter.
 See the [Source processor documentation][sourceprocessor_docs] for more details.
 
 [sumologicexporter_docs]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/exporter/sumologicexporter/README.md
-[sourceprocessor_docs]: ../pkg/processor/sourceprocessor/README.md
+[sourceprocessor_docs]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/processor/sourceprocessor/README.md
 
 ## Upgrading to v0.56.0-sumo-0
 
@@ -214,8 +214,8 @@ service:
 
 **Note**: By default, the `sumologicschema` processor also performs other actions. Please see a corresponding warning in paragraph [`sumologic` exporter: drop support for translating attributes](#sumologic-exporter-drop-support-for-translating-attributes) for more information.
 
-[sumologicschema_processor]: ../pkg/processor/sumologicschemaprocessor/
-[sumologicschema_processor_readme]: ../pkg/processor/sumologicschemaprocessor/README.md
+[sumologicschema_processor]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/processor/sumologicschemaprocessor/
+[sumologicschema_processor_readme]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/processor/sumologicschemaprocessor/README.md
 
 ## Upgrading to v0.55.0-sumo-0
 

@@ -39,11 +39,11 @@ Sumo Logic Distribution for OpenTelemetry Collector is a static Go binary. To ru
     It is going to perform the following operations:
 
       - install or upgrade operation by placing the latest version as `/usr/local/bin/otelcol-sumo`,
-      - get [static configuration](../examples/sumologic.yaml) and place it as `/etc/otelcol-sumo/sumologic.yaml`
+      - get [static configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/sumologic.yaml) and place it as `/etc/otelcol-sumo/sumologic.yaml`
       - create user configuration directory (`/etc/otelcol-sumo/conf.d`) with `common.yaml` file which will contain installation token
       - for Systemd:
 
-        - the script is going to get [Systemd service configuration](../examples/systemd/otelcol-sumo.service) and place it as `/etc/systemd/system/otelcol-sumo.service`
+        - the script is going to get [Systemd service configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/systemd/otelcol-sumo.service) and place it as `/etc/systemd/system/otelcol-sumo.service`
         - create a `otelcol-sumo` user and group which will be used to run the service
         - enable `otelcol-sumo` service
         - start `otelcol-sumo` service
@@ -187,7 +187,7 @@ Before running the newer version, make sure to check the [release notes][github_
    ```bash
    otelcol-sumo --version
    ```
-1. In order to validate the installation, [the example configuration](../examples/verify_installation.yaml) can be used. It instructs the Sumo Logic Distribution to read logs from `/tmp/sumologic-demo.log` and send them to Sumo Logic.
+1. In order to validate the installation, [the example configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/verify_installation.yaml) can be used. It instructs the Sumo Logic Distribution to read logs from `/tmp/sumologic-demo.log` and send them to Sumo Logic.
    :::tip
    For more details on configuring OT, check out the [following document](/docs/send-data/sumo-logic-opentelemetry/configuration).
    :::
@@ -394,12 +394,12 @@ To run opentelemetry collector as Systemd Service, apply following steps:
 
 ## Ansible
 
-Example installation of Sumo Logic Distribution for OpenTelemetry Collector with Ansible is described in [examples/ansible](../examples/ansible/README.md).
+Example installation of Sumo Logic Distribution for OpenTelemetry Collector with Ansible is described in [examples/ansible](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/ansible/README.md).
 
 ## Puppet
 
-Example installation of Sumo Logic Distribution for OpenTelemetry Collector with Puppet is described in [examples/puppet](../examples/puppet/README.md).
+Example installation of Sumo Logic Distribution for OpenTelemetry Collector with Puppet is described in [examples/puppet](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/puppet/README.md).
 
 ## Chef
 
-Example installation of Sumo Logic Distribution for OpenTelemetry Collector with Chef is described in [examples/chef](../examples/chef/README.md).
+Example installation of Sumo Logic Distribution for OpenTelemetry Collector with Chef is described in [examples/chef](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/chef/README.md).

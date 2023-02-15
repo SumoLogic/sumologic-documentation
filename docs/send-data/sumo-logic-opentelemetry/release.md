@@ -250,14 +250,14 @@ make update-journalctl
 [tracing_tests]: ../.circleci/config.yml
 [circleci]: https://app.circleci.com/pipelines/github/SumoLogic/sumologic-otel-collector
 [circleci_approve]: ../images/circleci_approve_workflow.png
-[changelog]: ../CHANGELOG.md
+[changelog]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/CHANGELOG.md
 [upgrading]: ./upgrading.md
 [journaldreceiver]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.51.0/receiver/journaldreceiver
 [debian_versions]: https://hub.docker.com/_/debian/?tab=description
 [otelcol_components]: https://github.com/open-telemetry/opentelemetry-collector-releases/blob/main/distributions/otelcol/manifest.yaml
 [otelcol_contrib_components]: https://github.com/open-telemetry/opentelemetry-collector-releases/blob/main/distributions/otelcol-contrib/manifest.yaml
 [OTC_repository]: https://github.com/open-telemetry/opentelemetry-collector-contrib
-[README.md]: ../README.md
+[README.md]: https://github.com/SumoLogic/sumologic-otel-collector#readme
 [#604]: https://github.com/SumoLogic/sumologic-otel-collector/pull/604/files
 [OTC_release]: https://github.com/open-telemetry/opentelemetry-collector-contrib/releases
 [OT_release]: https://github.com/open-telemetry/opentelemetry-collector/releases

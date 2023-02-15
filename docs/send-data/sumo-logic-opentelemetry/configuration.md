@@ -162,7 +162,7 @@ service:
       exporters: [sumologic]
 ```
 
-[telegrafreceiver_docs]: ../pkg/receiver/telegrafreceiver/README.md
+[telegrafreceiver_docs]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main//pkg/receiver/telegrafreceiver/README.md
 
 ### Basic configuration for traces
 
@@ -512,8 +512,8 @@ However, please bear in mind that the source processor is going to be removed in
 If you want data from different sources to have different source categories, you'll need to set a resource attribute named `_sourceCategory` earlier in the pipeline. See below for examples on how to do this in various scenarios.
 
 [source_category_docs]: https://help.sumologic.com/docs/send-data/reference-information/metadata-naming-conventions#source-categories
-[source_proc]: ../pkg/processor/sourceprocessor
-[source_proc_templates]: ../pkg/processor/sourceprocessor/README.md#source-templates
+[source_proc]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/processor/sourceprocessor
+[source_proc_templates]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/processor/sourceprocessor/README.md#source-templates
 
 ### Setting source category on logs from files
 
