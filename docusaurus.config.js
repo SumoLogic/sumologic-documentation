@@ -239,19 +239,13 @@ module.exports = {
       defaultMode: 'light',
     },
     algolia: {
-      //The application ID provided by Algolia
       appId: '2SJPGMLW1Q',
-      // Public API key: it is safe to commit it
       apiKey: 'fb2f4e1fb40f962900631121cb365549',
       indexName: 'crawler_sumodocs',
-      // Optional: see doc section below
       contextualSearch: false,
-      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      //externalUrlRegex: 'external\\.com|domain\\.com',
-      // Optional: Algolia search parameters
       //searchParameters: {},
       // Optional: path for search page that enabled by default (`false` to disable it)
-      //searchPagePath: false,
+      searchPagePath: false,
     },
     prism: {
       theme: lightCodeTheme,
