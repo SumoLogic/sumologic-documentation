@@ -58,7 +58,7 @@ make add-tag push-tag
 
 #### Remove tag in case of a failed release job
 
-Pushing a new version tag to GitHub starts the [release build](../.github/workflows/release_builds.yml) jobs.
+Pushing a new version tag to GitHub starts the [release build](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/.github/workflows/release_builds.yml) jobs.
 
 If one of these jobs fails for whatever reason (real world example: failing to notarize the MacOS binary),
 you might need to remove the created tags, perhaps change something, and create the tags again.
@@ -72,7 +72,7 @@ make delete-tag delete-remote-tag
 
 ### Publish GitHub release
 
-The GitHub release is created as draft by the [create-release](../.github/workflows/release_builds.yml) GitHub Action.
+The GitHub release is created as draft by the [create-release](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/.github/workflows/release_builds.yml) GitHub Action.
 
 After the release draft is created, go to [GitHub releases](https://github.com/SumoLogic/sumologic-otel-collector/releases),
 edit the release draft and fill in missing information:
