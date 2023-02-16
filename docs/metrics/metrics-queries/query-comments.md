@@ -6,34 +6,16 @@ sidebar_label: Using Comments in Queries
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-In the Metrics Explorer, in [Advanced Mode](/docs/metrics/metrics-queries/Metrics-Explorer#Switch-between-Basic-and-Advanced-Mode) you can add comments to a metrics query and comment out portions of the query by using comment formatting.
+In the Metrics Explorer, in [Advanced Mode](/docs/metrics/metrics-queries/metrics-explorer#Switch-between-Basic-and-Advanced-Mode) you can add comments to a metrics query and comment out portions of the query by using comment formatting.
 
 Comments are helpful for troubleshooting during query development, and also for other users who may use or edit your queries at a later date—comments you add will be visible in saved and shared queries.
 
 You can’t add or view comments in Basic Mode, but any comments that were added in Advanced Mode persist when you switch to Basic Mode—you just can’t see them in Basic Mode.
 
-<table>
-  <tr>
-   <td>Comment characters
-   </td>
-   <td>Usage
-   </td>
-  </tr>
-  <tr>
-   <td><code>//</code>
-   </td>
-   <td>You can comment out part of a line or a complete line by prefacing it with two forward slashes. <strong>Tip</strong>: You can insert the comment characters with <code>cmd /</code> on macOS or <code>ctrl /</code> on Windows.
-   </td>
-  </tr>
-  <tr>
-   <td><code>/*  */</code>
-   </td>
-   <td>You can comment out multiple lines by putting <code>/*</code> and
-   <code>*/</code> before and after the lines.
-   </td>
-  </tr>
-</table>
-
+| Comment characters | Usage |
+|:---|:---|
+| `//` | You can comment out part of a line or a complete line by prefacing it with two forward slashes. Tip: You can insert the comment characters with `cmd /` on macOS or `ctrl /` on Windows. |
+| `/* */` | You can comment out multiple lines by putting `/*` and `*/` before and after the lines. |
 
 When you comment out part of your metrics query, the commented text appears in gray italics. If the query is valid without the line that is commented out, it will execute when you run the query.
 

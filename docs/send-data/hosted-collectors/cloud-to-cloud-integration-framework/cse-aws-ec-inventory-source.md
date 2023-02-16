@@ -4,6 +4,8 @@ title: CSE AWS EC2 Inventory Source
 sidebar_label: CSE AWS EC2 Inventory
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The CSE AWS EC2 Inventory Source provides a secure endpoint to receive event data from the [EC2 describe instances API](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html). It securely stores the required authentication, scheduling, and state tracking information.
 
 For information on how inventory data is used in Cloud SIEM Enterprise, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data.md).
@@ -54,6 +56,10 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following 
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
 
 ### JSON configuration
 

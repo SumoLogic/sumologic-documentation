@@ -57,7 +57,7 @@ Sumo Logic automatically redirects Installed Collectors to the correct collecti
 
 Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See our table of [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security) for details.
 
-Also, see how to [Test Connectivity of Sumo Logic Collectors](/docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors.md).
+Also, see how to [Test Connectivity of Sumo Logic Collectors](/docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors).
 
 ### Virtual Memory
 

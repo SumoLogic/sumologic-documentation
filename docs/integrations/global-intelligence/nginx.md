@@ -14,7 +14,7 @@ This feature is available in the following account plans.
 | CloudFlex    | Trial, Enterprise                              |
 | Credits      | Trial, Enterprise Operations, Enterprise Suite |
 
-[Nginx](https://www.nginx.com/) is a web server that is used as a reverse proxy, load balancer, mail proxy, and HTTP cache. Global Intelligence for Nginx, is a companion to the [Nginx ULM](/docs/integrations/web-servers/Nginx-Legacy)
+[Nginx](https://www.nginx.com/) is a web server that is used as a reverse proxy, load balancer, mail proxy, and HTTP cache. Global Intelligence for Nginx, is a companion to the [Nginx ULM](/docs/integrations/web-servers/nginx-legacy)
 application. It helps DevOps and infrastructure engineers to compare server, and user activity patterns associated with their Nginx servers against other Sumo Logic customer’s servers. Such comparisons can help diagnose potential load, throughput or error issues in Nginx clusters and avoid operational incidents arising from sub-optimal configurations of Nginx clusters. 
 
 | Dashboard | Description|

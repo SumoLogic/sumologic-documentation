@@ -273,7 +273,7 @@ This section demonstrates how to configure sources for the following log types:
 
 #### Configure Source for IIS Access Logs
 
-This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/Remote-File-Source), but the configuration is more complex.
+This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#configure-a-collector). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source), but the configuration is more complex.
 
 Sumo Logic recommends using a Local File Source whenever possible.
 
@@ -301,8 +301,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
 
 #### Configure Source for HTTP Error Logs
 
-This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/Remote-File-Source), but the configuration is more complex.
-
+This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#configure-a-collector). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source), but the configuration is more complex.
 
 Sumo Logic recommends using a Local File Source whenever possible.
 
@@ -336,13 +335,13 @@ Sumo Logic recommends using a Local Windows Performance source whenever possible
 
 Use the appropriate source for your environment:
 
-* [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Performance-Monitor-Log-Source)
-* [Remote Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/Remote-Windows-Performance-Monitor-Log-Source)
+* [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source)
+* [Remote Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/remote-windows-performance-monitor-log-source)
 
 
 To configure a Source for IIS Performance Logs, do the following:  
 
-1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Performance-Monitor-Log-Source).
+1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source).
 2. Configure the Local Windows Performance Source Fields as follows:
 * **Name**: Required (for example, "IIS Performance")
 * **Source Category** (Required). For example, **Webserver/IIS/PerfCounter**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)

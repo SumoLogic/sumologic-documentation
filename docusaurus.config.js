@@ -302,24 +302,9 @@ module.exports = {
                 activeBaseRegex: '^/docs/alerts/.*',
               },
               {
-                label: 'Cloud SIEM',
-                to: '/docs/cse',
-                activeBaseRegex: '^/docs/(cse)/.*',
-              },
-              {
-                label: 'Cloud SOAR',
-                to: '/docs/cloud-soar',
-                activeBaseRegex: '^/docs/cloud-soar/.*',
-              },
-              {
-                label: 'Dashboards',
-                to: '/docs/dashboards-new',
-                activeBaseRegex: '^/docs/dashboards-new/.*',
-              },
-              {
-                label: 'Manage Sumo Acct',
-                to: '/docs/manage',
-                activeBaseRegex: '^/docs/manage/.*',
+                label: 'Traces, APM, RUM',
+                to: '/docs/apm',
+                activeBaseRegex: '^/docs/apm/.*',
               },
               {
                 label: 'Metrics',
@@ -332,9 +317,24 @@ module.exports = {
                 activeBaseRegex: '^/docs/observability/about',
               },
               {
-                label: 'Traces, APM, RUM',
-                to: '/docs/apm',
-                activeBaseRegex: '^/docs/apm/.*',
+                label: 'Dashboards',
+                to: '/docs/dashboards-new',
+                activeBaseRegex: '^/docs/dashboards-new/.*',
+              },
+              {
+                label: 'Manage Sumo Account',
+                to: '/docs/manage',
+                activeBaseRegex: '^/docs/manage/.*',
+              },
+              {
+                label: 'Cloud SIEM',
+                to: '/docs/cse',
+                activeBaseRegex: '^/docs/(cse)/.*',
+              },
+              {
+                label: 'Cloud SOAR',
+                to: '/docs/cloud-soar',
+                activeBaseRegex: '^/docs/cloud-soar/.*',
               },
             ]
           },
@@ -379,11 +379,6 @@ module.exports = {
             ]
           },
           {
-            label: 'Contribute',
-            to: '/docs/contributing',
-            position: 'left',
-          },
-          {
             type: 'html',
             position: 'right',
             value: '<div id="google_translate_element"></div>',
@@ -394,10 +389,21 @@ module.exports = {
             className: 'header-login',
           },
           {
-            className: 'header-github-link',
-            'aria-label': 'GitHub repository',
             position: 'right',
+            className: 'header-github-link',
+            type: 'dropdown',
+            'aria-label': 'GitHub repository',
             to: 'https://github.com/SumoLogic/sumologic-documentation',
+            items:[
+              {
+                label: 'Feedback',
+                href: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
+              },
+              {
+                label: 'Contribute',
+                href: '/docs/contributing',
+              },
+            ]
           },
         ],
       },
@@ -424,7 +430,7 @@ module.exports = {
           {
             items: [
               {
-                label: 'Contact Support',
+                label: 'Support',
                 href: 'https://support.sumologic.com/hc/en-us',
               },
               {
@@ -436,7 +442,7 @@ module.exports = {
                 href: 'https://support.sumologic.com/hc/en-us/community/topics',
               },
             ],
-            title: 'Help',
+            title: 'Contact Us',
           },
           {
             items: [

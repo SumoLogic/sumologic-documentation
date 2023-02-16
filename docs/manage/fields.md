@@ -4,7 +4,7 @@ title: Sumo Logic Fields
 sidebar_label: Fields
 description: Learn how to define and manage the assignment of metadata to your logs.
 ---
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. Fields may be referred to as Log Metadata Fields.
 
@@ -37,7 +37,7 @@ When creating or updating the configuration of a Streaming Metrics Source, a Hos
 
 ## Limitations
 
-* Fields created as log metadata and from Field Extraction Rules share the same quota of 400 fields. The Fields page shows how many fields your account is using out of the total available at the bottom of the table as Fields Capacity.
+* Fields created as log metadata and from Field Extraction Rules share the same quota of 200 fields. The Fields page shows how many fields your account is using out of the total available at the bottom of the table as Fields Capacity.
 
     ![fields capacity.png](/img/send-data/fields-capacity.png)
 
@@ -211,7 +211,7 @@ Fields in your account are manageable at **Manage Data** > **Logs** > **Fields*
 You need the **Manage Fields** [role capability](users-roles/roles/role-capabilities.md) to manage fields. 
 :::
 
-![manage fields page.png](/img/fields/manage-fields-page.png)
+<img src={useBaseUrl('img/fields/manage-fields-page.png')} alt="Manage Fields" width="850"/>
 
 The **Manage Data** > **Logs** > **Fields** page displays the following information: 
 
