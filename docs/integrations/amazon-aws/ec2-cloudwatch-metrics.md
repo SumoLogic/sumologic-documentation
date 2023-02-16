@@ -150,7 +150,7 @@ To configure a CloudTrail Source, perform these steps:
 7. **Access Key ID and Secret Access Key**. Enter your [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
 8. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure Log File Discovery [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
 9. **Enable Timestamp Parsing**. Select the check box.
-10. **Time Zone**. Select Ignore time zone from the log file and instead use, and select UTC.
+10. **Time Zone**. Select **Ignore time zone** from the log file and instead select UTC.
 11. **Timestamp Format**. Select Automatically detect the format.
 12. **Enable Multiline Processing**. Select the check box and select Infer Boundaries.
 13. Click **Save**.
