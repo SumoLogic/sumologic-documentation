@@ -126,7 +126,7 @@ Sumo Logic supports collecting metrics using two source types:
 Namespace for **Amazon EC2** Service is **AWS/EC2**.
 :::
 
-* **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried through the “account” field.
+* **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried through the **account** field.
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/Metadata+account.png')} alt="Metadata" />
 
 ### Collect CloudTrail EC2 Data Events
