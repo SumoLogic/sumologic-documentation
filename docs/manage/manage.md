@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A series of features and options gives you administration over accounts, roles, collectors, content sharing, field extraction rules, and much more. For a detailed overview, see the following:
 
-* [Collection](/docs/manage/collection)
+* [Collection](/docs/send-data/collection)
 * [Connections and Integrations](/docs/manage/connections-integrations)
 * [Content Sharing](/docs/manage/content-sharing)
 * [Data Forwarding](/docs/manage/data-forwarding)

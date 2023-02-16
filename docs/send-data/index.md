@@ -15,7 +15,7 @@ Learn how to send data to Sumo Logic. In this section, we'll introduce the follo
   <h3>Design Your Deployment</h3>
   <ul>
   <li><a href="/docs/send-data/choose-collector-source">Choose a Collector and Source</a></li>
-  <li><a href="/docs/manage/collection">Understanding the Collector and Source UI</a></li>
+  <li><a href="/docs/send-data/collection">Understanding the Collector and Source UI</a></li>
   </ul>
   </div>
 </div>
