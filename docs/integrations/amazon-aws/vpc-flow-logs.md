@@ -56,9 +56,9 @@ To enable Amazon Virtual Private Cloud (VPC) Flow Logs from the AWS console:
 3. Under **Advanced Options for Logs**, for **Timestamp Format**, click **Specify a format**.
 4. **Format**. Enter: `epoch`
 5. **Timestamp locator**. Enter:
-```
-\s(\d{10,13})\s\d{10,13}
-```
+  ```
+  \s(\d{10,13})\s\d{10,13}
+  ```
 6. Click **Save**.
 
 

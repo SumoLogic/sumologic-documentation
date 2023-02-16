@@ -2,7 +2,7 @@
 id: aws-dynamodb
 title: AWS DynamoDB
 sidebar_label: AWS DynamoDB
-description: The Sumo App for AWS Observability DynamoDB is a unified logs and metrics (ULM) App that provides operational insights into DynamoDB instances across your infrastructure. 
+description: The Sumo App for AWS Observability DynamoDB is a unified logs and metrics (ULM) App that provides operational insights into DynamoDB instances across your infrastructure.
 ---
 
 [AWS DynamoDB](https://aws.amazon.com/dynamodb/) is a fast and flexible NoSQL database service that provides consistent, single-digit millisecond latency at any scale. 
@@ -63,7 +63,7 @@ The app collects DynamoDB logs and metrics for the following:
 
 All IP Threat Count:
 
-```sql
+```
 _sourceCategory=Labs/AWS/DynamoDB account=* namespace=* "\"eventSource\":\"dynamodb.amazonaws.com\""
 | json "eventName", "awsRegion", "requestParameters.tableName", "sourceIPAddress", "userIdentity.userName" as event_name, Region, entity, ip_address, user
 | where Region matches "*" and tolowercase(entity) matches "*"
