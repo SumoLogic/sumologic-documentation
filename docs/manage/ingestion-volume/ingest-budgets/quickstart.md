@@ -149,7 +149,7 @@ The following steps can be referenced in [Assign Collector to Ingest Budget](ass
 
 ### Use Collection page
 
-On the **Manage Data** > **Collection** > **[Collection](/docs/manage/collection)** page when editing an
+On the **Manage Data** > **Collection** > **[Collection](/docs/send-data/collection)** page when editing an
 existing Collector or creating a new Hosted Collector there is a new option, **Assign to a Budget**, that allows you to assign an ingest budget to a Collector.
 
 ![assign to a budget dropdown option.png](/img/ingestion-volume/assign-budget-dropdown-option.png)
