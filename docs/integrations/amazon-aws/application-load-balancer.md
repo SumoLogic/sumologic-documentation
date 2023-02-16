@@ -69,7 +69,7 @@ account={{account}} region={{region}} Namespace={{namespace}} loadbalancer={{loa
 
 ### Collecting Metrics
 
-Sumo Logic supports collecting metrics using two source types
+Sumo Logic supports collecting metrics using two source types:
 
 * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended) 
 	Or
