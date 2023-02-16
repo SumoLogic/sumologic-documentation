@@ -1,15 +1,17 @@
 ---
-id: certification-faq
-title: Sumo Logic Training and Certification FAQ
+id: training-certification-faq
+title: Sumo Logic Training and Certification
 sidebar_label: Training and Certification
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Learning at Sumo Logic will help you build the skills necessary to achieve your organization's goals using our platform to make the world’s apps reliable and secure.
 
 We offer courses in different delivery formats including online (live and on-demand) and in-person training, **for free**. Customized training is also available through our private offering.
 
 
-## Available learning resources
+## Learning resources available
 
 From your Sumo Logic service account, you have access to the entire training curriculum. You will be provided with:
 
@@ -42,27 +44,27 @@ We also have more information on certifications on [our external site](https://w
 
 ### When clicking the Get Certified link nothing happens, the Training Portal does not come up
 
-Within Sumo Logic, several links that connect to third-party services.
-
-For security reasons, Sumo logic users may only access these third-party services once you verify your email address. If you have a Sumo Logic username and password, then your email address is verified.
+Sumo Logic contains several links that connect to third-party services. For security reasons, you must must verify your email address in order to access these services. If you have a working Sumo Logic username and password, then your email address is considered verified.
 
 Users that do not authenticate to Sumo Logic using a username and password are required to complete the email verification process. This usually applies to users that log in using a third-party Single Sign-On (SSO) service implementing SAML, users that access Sumo Logic from the Heroku add-on, and users of other Sumo Logic integration partners that provide SSO.
 
-**For Partners**: Dedicated technical training for partners is available at [https://partnertraining.sumologic.com](https://partnertraining.sumologic.com). You'll need an access code to register the first time. Contact your account manager for the access code.
+:::sumo For Partners
+Dedicated technical training for Sumo Logic partners is available at [https://partnertraining.sumologic.com](https://partnertraining.sumologic.com). You'll need an access code to register the first time. Contact your account manager for the access code.
+:::
 
 
 ### How do I verify my email?
 
-* Go to **Help** > **Community** (Support or Feature Request will work as well).
-* You will be prompted to verify your email. Click **Send Verification Email**.
-* Check your email for the Sumo Logic Email Verification Request.
-* Open the email and click **Verify Your Email**.
-* Your email is verified, and you will be given access to the third-party service.
+1. Go to **Help** > **Community** (Support or Feature Request will work as well).
+1. You will be prompted to verify your email. Click **Send Verification Email**.
+1. Check your email for the Sumo Logic Email Verification Request.
+1. Open the email and click **Verify Your Email**.
+1. Your email is verified, and you will be given access to the third-party service.
 
 (image2.gif "image_tooltip")
 
 
-Secure Third-Party Access and New Organizations
+### Secure Third-Party Access and New Organizations
 
 When you create a new Sumo Logic organization, you will be logged in automatically the first time without using a password. This account is not yet activated or verified for SSO third-party access, but an activation email will be sent to you automatically.
 
@@ -77,23 +79,25 @@ To activate your account:
 
 ## Training Lab Environment
 
-The Training Lab Environment will enable you to get hands-on practice following the lessons covered in our learning experiences. A Sumo Logic environment curated to work with the examples and lab exercises provided with our courses is available 24x7 all year round for you to practice.
+The Training Lab Environment will enable you to get hands-on practice following the lessons covered in our learning experiences. A Sumo Logic environment curated to work with the examples and lab exercises provided with our courses is available 24/7 all year round for you to practice.
 
 ### How do I access the Training Lab Environment?
 
 1. Choose a number between 001 and 999. Remember this number, since you'll use it in all your labs.
 1. Open a new window in a different browser. For example, if you're reading this on Chrome, open a Firefox window. Using separate browsers will keep you logged in to your regular Sumo Logic account and the training lab environment at the same time.
 1. Navigate to **`https://service.sumologic.com`** in the new browser window you opened in Step 2.
-1. Enter the credentials found at the top of the **Become a Sumo Expert** page of the **Training Portal**. Note: the password changes monthly, so you may have to check back there often.
+1. Enter the credentials found at the top of the **Become a Sumo Expert** page of the **Training Portal**.
+  :::note
+  The Training Lab Environment password changes monthly, so you may have to check back there often.
+  :::
 1. You'll know you have access when you see "Sumo Logic Training" when you hover over the user in the bottom left corner.
 1. Save your training username for use during this training. It's a good idea to have both the Sumo Logic training lab environment and this self-paced program open in separate windows, so you can toggle between them. Be careful not to take exams or self-paced courses with training account credentials!
 
-## Where can I find the credentials to access the training lab environment to complete the hands-on activities?
+### Where can I find the credentials to access the training lab environment to complete the hands-on activities?
 
-Credentials change monthly, we post them on the training portal in the **Become a Sumo Logic Expert** section
+Credentials change monthly. We post them on the training portal in the **Become a Sumo Logic Expert** section.
 
 (image3.gif "image_tooltip")
-
 
 
 ## Self-Paced Training
@@ -115,7 +119,7 @@ Everybody learns differently, we offer different options to adapt to your learni
 
 **Learning Paths:** you can learn at your own pace guided by our product oriented **Learning Paths**.
 
-The following **Learning Paths** are available under the **Become a Sumo Logic  Expert** section of our **Training Portal**:
+The following **Learning Paths** are available under the **Become a Sumo Logic Expert** section of our **Training Portal**:
 
 * General
 * Observability
@@ -123,10 +127,10 @@ The following **Learning Paths** are available under the **Become a Sumo Logic  
 
 **Micro Lessons:** access our growing, curated library of quick tutorials, short demos and best practices, learn something new in just minutes. Check out the **Learn New Skills** section from our **Training Portal** to access this content.
 
-**Recorded Live Training** did you miss a Cert Jam or a workshop? Watch recordings of past sessions, download the student lab guide and a copy of the slides
+**Recorded Live Training** did you miss a Cert Jam or a workshop? Watch recordings of past sessions, download the student lab guide and a copy of the slides.
 
 
-## How do I register for a Self-Paced course?
+### How do I register for a Self-Paced course?
 
 1. Navigate to your course of interest.
 2. Select the course by clicking on it.
@@ -142,7 +146,7 @@ The following **Learning Paths** are available under the **Become a Sumo Logic  
 1. Click **Register**.
 -->
 
-## How do I navigate inside a Self-Paced course?
+### How do I navigate inside a Self-Paced course?
 
 1. Select the course.
 2. Select the section your want to review.
@@ -173,25 +177,26 @@ The following **Learning Paths** are available under the **Become a Sumo Logic  
 -->
 
 
-## I get an error message when starting a new lesson
+### I get an error message when starting a new lesson
 
-If your screen shows this following error, this is typically due to a browser setting.
+If you're seeing the following error, this is typically due to a browser setting.
 
-* Refresh your browser. Clear your browser’s cookies and cache
-* Close and reopen your browser
-* Browser or network settings disable or block Third Party Cookies. The training portal will use Cookies to authorize access to specific learning content. To solve this error add **`[*.]sj-cdn.net (about:blank)`** as a trusted site in your browser's privacy settings or update browser settings to allow third-party cookies.
-* Confirm your internet connection
-* Attempt to play the video or reload the lesson in an Incognito or Private window by clicking your browser's menu button and selecting "New Incognito/Private Window"
-  * If the content successfully loads in the new window, this is an indicator that a browser extension is likely preventing the content from loading.
-* For troubleshooting Video Error Code 232011 or "Cannot load M3U8: Crossdomain access denied" error messages, work with your IT network team to check on your firewall status.
-    * If you have a firewall, you can allow a particular HTTP header: `Access-Control-Allow-Origin: *`
+<img src={useBaseUrl('img/get-started/error.png')} alt="icon" width="300"/>
+
+* Refresh your browser. Clear your browser’s cookies and cache.
+* Close and reopen your browser.
+* Browser or network settings disable or block Third Party Cookies. The training portal will use Cookies to authorize access to specific learning content. To solve this error, add **`[*.]sj-cdn.net (about:blank)`** as a trusted site in your browser's privacy settings or update browser settings to allow third-party cookies.
+* Confirm your internet connection.
+* Attempt to play the video or reload the lesson in an Incognito or Private window by clicking your browser's menu button and selecting "New Incognito/Private Window".
+   * If the content successfully loads in the new window, this is an indicator that a browser extension is likely preventing the content from loading.
+* For troubleshooting Video Error Code 232011 or `Cannot load M3U8: Crossdomain access denied` error messages, work with your IT network team to check on your firewall status.
+   * If you have a firewall, you can allow a particular HTTP header: `Access-Control-Allow-Origin: *`
 
 (image6.png "image_tooltip")
 
 ### How do I complete a course?
 
 Make sure you have completed all sections of the course.
-
 
 
 ## Certification
@@ -267,6 +272,7 @@ It depends on how you like to learn. We have:
 Instructor-led options:
 * Attend one of the free certification sessions (Cert Jams) we host year-round globally, either online or in-person
 * Invite us to come to your location for a private customized session for your team.
+
 <!--
 * Free scheduled virtual-led sessions. Registration found under "Live, Instructor-Led Courses" on [this page](https://www.sumologic.com/learn/training).
 * Learn in-person (when COVID restrictions are over)
@@ -277,6 +283,7 @@ Instructor-led options:
 Self-paced option:
 * Learn on your own time at your own pace at no cost to you.
 * Self-Paced courses, lesson recordings and labs are accessible in Sumo Logic Once you understand the materials in the lesson recordings and have conducted the labs, you should be ready for the exam.
+
 <!--
 * Learn on your own time at your own pace at no cost to you. Lesson recordings and labs are accessible in Sumo Logic using the certification page as indicated in the image below. Once you understand the materials in the lesson recordings and have conducted the labs, you should be ready for the exam.
 -->
@@ -320,9 +327,9 @@ Fundamentals will expire two years after being issued. All other certifications
 * Answer all the exam questions.
 * Click **Submit all answers**.
 * Click **Close course** to record the results. Skipping this step will mark the exam as incomplete.
-* If you pass, your certificate will be e-mailed to you. If you failed, you can try again.
+* If you pass, your certificate will be emailed to you. If you failed, you can try again.
 
-## How do I view my certificate?
+### How do I view my certificate?
 
 * Click your profile in the upper right corner.
 * Select My Profile from the dropdown.
@@ -342,12 +349,12 @@ We have QR codes that allow you to share your score with anyone who wants to val
 ![view cert](/img/get-started/view-cert.gif)
 -->
 
-## How do I share my certificate with others?
+### How do I share my certificate with others?
 
 Every Sumo Logic Certificate has a QR code and a link to a verification site so you can share your score with anyone who wants to validate your certification status.
 
 
-## How do I share my certificate on LinkedIn?
+### How do I share my certificate on LinkedIn?
 
 * Click your profile in the upper right corner.
 * Select **My Profile** from the dropdown.

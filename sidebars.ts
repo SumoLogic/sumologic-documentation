@@ -33,8 +33,8 @@ module.exports = {
         'get-started/keyboard-shortcuts',
         'get-started/quickstart',
         'get-started/help',
+        'get-started/training-certification-faq',
         'get-started/faq',
-        'get-started/certification-faq',
       ],
     },
     {
