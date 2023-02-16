@@ -152,7 +152,7 @@ To configure a CloudTrail Source, perform these steps:
 9. **Enable Timestamp Parsing**. Select the check box.
 10. **Time Zone**. Select **Ignore time zone** from the log file and instead select UTC.
 11. **Timestamp Format**. Select Automatically detect the format.
-12. **Enable Multiline Processing**. Select the check box and select Infer Boundaries.
+12. **Enable Multiline Processing**. Select the check box and select **Infer Boundaries**.
 13. Click **Save**.
 
 
