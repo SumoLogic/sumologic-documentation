@@ -244,10 +244,10 @@ export DEBIAN_VERSION=11.3
 make update-journalctl
 ```
 
-[builder_config]: ../otelcolbuilder/.otelcol-builder.yaml
-[release_job]: ../.github/workflows/release_builds.yml
+[builder_config]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/otelcolbuilder/.otelcol-builder.yaml
+[release_job]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/.github/workflows/release_builds.yml
 [ot_fork]: https://github.com/SumoLogic/opentelemetry-collector-contrib
-[tracing_tests]: ../.circleci/config.yml
+[tracing_tests]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/.circleci/config.yml
 [circleci]: https://app.circleci.com/pipelines/github/SumoLogic/sumologic-otel-collector
 [circleci_approve]: ../images/circleci_approve_workflow.png
 [changelog]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/CHANGELOG.md

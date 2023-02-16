@@ -479,7 +479,7 @@ Span ID:
 Flags: 0
 ```
 
-Example configuration with example log can be found in [/examples/logs_json/](/examples/logs_json/) directory.
+Example configuration with example log can be found in the [/examples/logs_json](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/examples/logs_json) directory.
 
 [json_parser]: https://github.com/open-telemetry/opentelemetry-log-collection/blob/main/docs/operators/json_parser.md
 [filelogreceiver_readme]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.62.0/receiver/filelogreceiver

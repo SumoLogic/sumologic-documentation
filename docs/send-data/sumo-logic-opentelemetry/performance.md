@@ -95,8 +95,7 @@ There are a couple configuration options that can help with performance in speci
 
 ### Sumo Logic Exporter
 
-The [`sumologicexporter`](../pkg/exporter/sumologicexporter)
-sends data to Sumo Logic.
+The [`sumologicexporter`](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/exporter/sumologicexporter) sends data to Sumo Logic.
 
 It has the following features that can help with performance:
 

@@ -23,7 +23,7 @@ In this section, we'll introduce the following concepts:
 - [Differences between Installed Collector and OpenTelemetry Collector](/docs/send-data/sumo-logic-opentelemetry/comparison)
 - [Performance](/docs/send-data/sumo-logic-opentelemetry/performance)
 - [Best Practices](/docs/send-data/sumo-logic-opentelemetry/best-practices)
-- [Mapping OpenTelemetry concepts to Sumo Logic](/docs/send-data/sumo-logic-opentelemetry/open-telemetry-concepts)
+- [Mapping OpenTelemetry concepts to Sumo Logic](/docs/send-data/sumo-logic-opentelemetry/opentelemetry-concepts)
 - [FIPS compliance](/docs/send-data/sumo-logic-opentelemetry/fips)
 - [Known Issues](/docs/send-data/sumo-logic-opentelemetry/known-issues)
 - [Troubleshooting](/docs/send-data/sumo-logic-opentelemetry/troubleshooting)
