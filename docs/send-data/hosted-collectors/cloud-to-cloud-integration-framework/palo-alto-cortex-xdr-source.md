@@ -5,6 +5,8 @@ sidebar_label: Palo Alto Cortex XDR
 ---
 
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Palo Alto Cortex XDR Source provides a secure endpoint to receive alerts from the [Get Alerts Incident Management API](https://docs.paloaltonetworks.com/cortex/cortex-xdr/cortex-xdr-api/cortex-xdr-apis/incident-management/get-alerts.html#idbad18e18-5c). It securely stores the required authentication, scheduling, and state tracking information.
 
 ## States
@@ -92,6 +94,11 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | FirstPartyGenericError |
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
+
 
 ### JSON configuration
 

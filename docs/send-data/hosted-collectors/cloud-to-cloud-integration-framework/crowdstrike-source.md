@@ -4,6 +4,7 @@ title: CrowdStrike Source
 sidebar_label: CrowdStrike
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The CrowdStrike Source provides a secure endpoint to receive event data from the CrowdStrike [Streams API](https://falcon.crowdstrike.com/support/documentation/89/event-streams-apis). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -93,6 +94,10 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | FirstPartyGenericError |
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
 
 ### JSON configuration 
 

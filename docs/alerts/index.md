@@ -1,7 +1,6 @@
 ---
 slug: /alerts
-title: Sumo Logic Alerts
-sidebar_label: Alerts
+title: Alerts
 description: Create Monitors and Scheduled Searches to notify users of changing conditions.
 ---
 

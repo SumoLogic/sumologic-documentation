@@ -13,7 +13,7 @@ info:
     - Access ID and Access Key
     - Base64 encoded Access ID and Access Key
 
-    See [Access Keys](/docs/manage/Security/Access-Keys) to generate an Access Key. Make sure to copy the key you create, because it is displayed only once.
+    See [Access Keys](/docs/manage/security/access-keys) to generate an Access Key. Make sure to copy the key you create, because it is displayed only once.
     When you have an Access ID and Access Key you can execute requests such as the following:
       ```bash
       curl -u "<accessId>:<accessKey>" -X GET https://api.<deployment>.sumologic.com/api/v1/users
@@ -5403,7 +5403,7 @@ paths:
       summary: Get Audit policy.
       description: "Get the Audit policy. This policy specifies whether audit records\
         \ for your account are enabled. You can access details about reported account\
-        \ events in the Sumo Logic Audit Index. [Learn More](/docs/manage/Security/Audit-Index)"
+        \ events in the Sumo Logic Audit Index. [Learn More](/docs/manage/security/audit-index)"
       operationId: getAuditPolicy
       responses:
         "200":
@@ -5424,7 +5424,7 @@ paths:
       summary: Set Audit policy.
       description: "Set the Audit policy. This policy specifies whether audit records\
         \ for your account are enabled. You can access details about reported account\
-        \ events in the Sumo Logic Audit Index. [Learn More](/docs/manage/Security/Audit-Index)"
+        \ events in the Sumo Logic Audit Index. [Learn More](/docs/manage/security/audit-index)"
       operationId: setAuditPolicy
       requestBody:
         content:

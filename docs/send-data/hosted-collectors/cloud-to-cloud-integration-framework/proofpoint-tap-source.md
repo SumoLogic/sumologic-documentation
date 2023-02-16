@@ -4,6 +4,8 @@ title: Proofpoint TAP Source
 sidebar_label: Proofpoint TAP
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Proofpoint TAP Source provides a secure endpoint to receive data from the Proofpoint [TAP SIEM API](https://help.proofpoint.com/Threat_Insight_Dashboard/API_Documentation/SIEM_API). It securely stores the required authentication, scheduling, and state tracking information.
 
 The Proofpoint integration supports the following four event types:
@@ -239,6 +241,11 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/h
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable |ThirdPartyConfigError  |   
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. |ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |  
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
+
 
 ### JSON configuration
 

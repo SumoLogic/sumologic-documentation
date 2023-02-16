@@ -69,7 +69,7 @@ To configure a collector and source, do the following:
 
 Collect using legacy format.** Events retain their default text format from Windows.
 
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/Remote-Windows-Event-Log-Source).
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/local-windows-event-log-source) and [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/remote-windows-event-log-source).
 
 Make sure to set the Source Category when configuring the Windows Event Log source. For example:  OS/Windows/Events.
 

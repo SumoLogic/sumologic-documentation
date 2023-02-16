@@ -82,7 +82,7 @@ Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hoste
 
 When you have set up a Hosted Collector and have your credentials ready, you're all set to configure the Sources. Perform the steps below for each Google Workspace App you want to monitor.  Before you configure the Sources, choose one of the source category strategies described in [About Source Configuration](#About_Source_Configuration), above.
 
-::note
+:::note
 We recommend that you use the same single Source Category for each Google Workspace Apps Audit Source. For example, **google_apps**.
 :::
 
@@ -204,4 +204,3 @@ _sourceCategory=google*
 ## Collect Logs for Google Workspace AlertCenter
 
 To collect logs for Google Workspace AlertCenter, follow the instructions in [Google Workspace AlertCenter](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter.md).
-

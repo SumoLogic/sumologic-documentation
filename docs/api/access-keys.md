@@ -1,13 +1,12 @@
 ---
 id: access-keys
-title: Sumo Logic Access Keys Management APIs
+title: Access Keys Management APIs
 sidebar_label: Access Keys
 tags: [security]
 description: Use HTTP endpoints to manage access keys.
-
 ---
 
-The [Access Keys](/docs/manage/Security/Access-Keys) Management API allows you to securely register new Collectors or access Sumo Logic APIs.
+The [Access Keys](/docs/manage/security/access-keys) Management API allows you to securely register new Collectors or access Sumo Logic APIs.
 
 Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 

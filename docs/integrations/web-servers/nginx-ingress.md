@@ -94,7 +94,7 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 
 ## Installing Nginx Ingress Monitors
 
-After [setting up collection](/docs/integrations/web-servers/Nginx-Legacy), you can proceed to installing the Nginx Ingress monitors, App, and view examples of each of dashboard.
+After [setting up collection](/docs/integrations/web-servers/nginx-legacy), you can proceed to installing the Nginx Ingress monitors, App, and view examples of each of dashboard.
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
 

@@ -4,6 +4,8 @@ title: Salesforce Source
 sidebar_label: Salesforce
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Salesforce Source provides a secure endpoint to receive event data from the Salesforce through its [Rest API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm). The source securely stores the required authentication, scheduling, and state tracking information.
 
 :::note
@@ -119,6 +121,11 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable                                                                                      | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | FirstPartyGenericError |
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
+
 
 ### JSON Configuration
 

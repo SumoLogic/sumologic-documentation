@@ -1,6 +1,6 @@
 ---
 id: content-permissions
-title: Sumo Logic Content Permissions Management APIs
+title: Content Permissions Management APIs
 sidebar_label: Content Permissions
 tags: [library]
 description: Use HTTP endpoints to manage content permissions.

@@ -94,7 +94,7 @@ Collect using JSON format.** Events are formatted into JSON that is designed to 
   * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown.
 **Complete Message** will ingest the entire event content along with metadata.
 
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/Remote-Windows-Event-Log-Source).
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/local-windows-event-log-source) and [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/remote-windows-event-log-source).
 
 ## Installing the Active Directory JSON App
 
