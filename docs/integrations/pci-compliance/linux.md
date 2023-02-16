@@ -20,7 +20,7 @@ To collect Linux logs, you'll need:
 * An [Installed Collector](/docs/send-data/installed-collectors). Choose the one right for your host environment.
 * A Linux [Source](/docs/send-data/installed-collectors/sources), depending on your environment.
     * [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source)
-    * [Remote File Source](/docs/send-data/installed-collectors/sources/Remote-File-Source)
+    * [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source)
     * [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source)
 
 

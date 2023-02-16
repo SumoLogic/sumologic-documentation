@@ -1,12 +1,11 @@
 ---
 id: tokens
-title: Sumo Logic Token Management APIs
-sidebar_label: Tokens
+title: Token Management APIs
+sidebar_label: Token Management
 description: Use HTTP endpoints to manage Installation Tokens.
-
 ---
 
-The Tokens Management API allows you to manage [Installation Tokens](/docs/manage/Security/installation-tokens) from HTTP endpoints to organize your content.
+The Tokens Management API allows you to manage [Installation Tokens](/docs/manage/security/installation-tokens) from HTTP endpoints to organize your content.
 
 Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
 

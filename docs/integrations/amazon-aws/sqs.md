@@ -199,7 +199,7 @@ Amazon Simple Queue Service (Amazon SQS) is a fully managed message queuing serv
 The Sumo Logic App for Amazon SQS provides operational insights into your Amazon SQS utilization. The App’s preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
 
 :::note
-We highly recommend you view these dashboards in the [Explore View](https://help.sumologic.com/Beta/AWS_Observability_Solution/07_View_AWS_Observability_Solution_Dashboards) of  the AWS Observability solution.
+We recommend using the [AWS Observability solution Explore View dashboards](/docs/observability/aws/deploy-use-aws-observability/view-dashboards).
 :::
 
 ### Overview

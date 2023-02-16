@@ -1,6 +1,6 @@
 ---
 id: partitions
-title: Sumo Logic Partition Management APIs
+title: Partition Management APIs
 sidebar_label: Partitions
 description: Use HTTP endpoints to manage Partitions.
 tags: [settings]

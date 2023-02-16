@@ -2,6 +2,9 @@
 id: create-slo
 title: Create an SLO
 description: Learn how to create an SLO for reliability management.
+keywords:
+    - _view=sumologic_slo_output
+    - sloVersion
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
