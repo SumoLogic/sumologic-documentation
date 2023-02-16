@@ -923,7 +923,7 @@
   "/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Istio": "/docs/integrations/saas-cloud/istio",
   "/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Istio/Collect_logs_and_metrics_for_the_Istio_App": "/docs/integrations/saas-cloud/istio",
   "/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Istio/Install_the_Istio_App_and_view_the_Dashboards": "/docs/integrations/saas-cloud/istio",
-  "/docs/integrations/saas-cloud/microsoft-exchange-tracelogs": "docs/integrations/saas-cloud/microsoft-exchange-trace-logs",
+  "/docs/integrations/saas-cloud/microsoft-exchange-tracelogs": "/docs/integrations/saas-cloud/microsoft-exchange-trace-logs",
   "/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Opsgenie": "/docs/integrations/saas-cloud/opsgenie",
   "/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Opsgenie/Collect_Logs_for_Opsgenie": "/docs/integrations/saas-cloud/opsgenie",
   "/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Opsgenie/Install_the_Opsgenie_App_and_view_the_Dashboards": "/docs/integrations/saas-cloud/opsgenie",
