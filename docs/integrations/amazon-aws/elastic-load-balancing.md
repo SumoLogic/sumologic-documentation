@@ -24,7 +24,7 @@ ELB logs are stored as .log files in the buckets you specify when you enable log
 datetime, ELB_Server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path
 ```
 
-For information on unified logs and metrics for AWS Elastic Load Balancing App, see the [AWS Elastic Load Balancing ULM Application](/docs/integrations/amazon-aws/Application-Load-Balancer).
+For information on unified logs and metrics for AWS Elastic Load Balancing App, see the [AWS Elastic Load Balancing ULM Application](/docs/integrations/amazon-aws/application-load-balancer).
 
 
 ### Sample Log Message
