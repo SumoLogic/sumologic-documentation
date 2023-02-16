@@ -21,7 +21,7 @@ You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise S
 * **Essentials**  accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-cloud-flex-account.md) from a Essential account to either Enterprise Operations, Enterprise Security, or Enterprise Suite accounts  at any time.
 * **Enterprise** **Operations** accounts are optimized for best practice operational monitoring at any ingest volume.
 * **Enterprise** **Security** accounts include advanced security capabilities. Enterprise Security is ideal for security operation centers (SOCs). SOC teams can leverage the latest PCI compliance application frameworks and threat detection capabilities.  
-* **Enterprise** **Suite** accounts are optimized to address the most advanced data insight challenges. Enterprise Suite accounts include all of Sumo Logic’s industry leading capabilities including Sumo Logic’s Tiered Analytics.
+* **Enterprise** **Suite** accounts are optimized to address the most advanced data insight challenges. Enterprise Suite accounts include all of Sumo Logic’s industry-leading capabilities including Sumo Logic’s Tiered Analytics.
   :::important
   [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) are only available for Enterprise Operations, Enterprise Security, and Enterprise Suite accounts. Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from collectors.
 
