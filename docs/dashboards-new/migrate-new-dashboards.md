@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Overview
 
-The new **Migrate to New Dashboards** functionality allows you to switch to **New Dashboards** from the **Classic Dashboards** with the help of a single click**. Migrate to New Dashboards lets you transform any of your classic dashboards into a new dashboard format, with minimal intervention from post-migration activity. It lets you analyze metrics and log data on the same dashboard, in a streamlined user experience.It lets you analyze metrics and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to monitor and manage a Kubernetes environment effectively.
+The new **Migrate to New Dashboards** functionality allows you to switch to **New Dashboards** from the **Classic Dashboards** with the help of a single click. Migrate to New Dashboards lets you transform any of your classic dashboards into a new dashboard format, with minimal intervention from post-migration activity. It lets you analyze metrics and log data on the same dashboard, in a streamlined user experience.It lets you analyze metrics and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to monitor and manage a Kubernetes environment effectively.
 
 This gives you control over the visual display of metric and logs data. Dashboard (New) streamlines dashboard configuration and on-the-fly analytic visualizations with its new templating features.
 

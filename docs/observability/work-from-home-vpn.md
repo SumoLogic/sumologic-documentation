@@ -27,8 +27,8 @@ Our Work-from-Home Solution provides support in all areas of remote work managem
 
 All of these apps are available in our App Catalog. To get your data collection configured, you need to use one of the following collectors:
 
-* [Installed Collectors ](/docs/send-data/Installed-Collectors) are deployed in your environment, on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
-* [Hosted Collectors](/docs/send-data/Hosted-Collectors) reside in the Cloud, allowing for seamless collection from cloud sources.
+* [Installed Collectors ](/docs/send-data/installed-collectors) are deployed in your environment, on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
+* [Hosted Collectors](/docs/send-data/hosted-collectors) reside in the Cloud, allowing for seamless collection from cloud sources.
 
 Apps in the Work-from-Home Enterprise solution package use the following collector types:
 

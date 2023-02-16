@@ -1,7 +1,6 @@
 ---
 slug: /integrations
-title: Apps and Integrations
-sidebar_label: Apps and Integrations
+title: App Catalog
 description: Documentation for Sumo Logic apps and integrations.
 ---
 
@@ -9,14 +8,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/integrations.png')} alt="icon" width="50"/>
 
-This category has documentation for Sumo Logic apps and integrations. Several of the guides below are partner-specific: Amazon and AWS, Microsoft and Azure, and Google. The rest of the app content is organized by functionality.
+This category has documentation for Sumo Logic apps, which you can find in our **App Catalog**. Apps help you get started gaining insights from your data sources by providing example searches and dashboards for common use cases. They are customized with your source configurations and populated in a folder selected by you. Feel free to edit them to get the results you want.
 
-Apps help you get started gaining insights from your data source by providing example searches and dashboards for common use cases. They are customized with your source configurations and populated in a folder selected by you. Feel free to edit them to get the results you want.
+Several of the guides below are partner-specific: Amazon/AWS, Microsoft/Azure, and Google. The rest of the app content is organized by functionality. We support a wide variety of data sources.
 
 To determine if an app is supported by your pricing plan, see [Apps and Sumo Logic Account Plans](/docs/integrations/account-plans).
-
-Sumo Logic supports a wide variety of data sources. To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Apps and Integrations Forum](https://support.sumologic.com/hc/en-us/community/topics/200263058-Applications-and-Integrations). ​
-
 
 <div className="box-wrapper" markdown="1">
 <div className="box box1 card">
@@ -62,3 +58,8 @@ Sumo Logic supports a wide variety of data sources. To interact with other Sumo 
       </div>
     </div>
   </div>
+
+
+:::tip
+To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Apps and Integrations Forum](https://support.sumologic.com/hc/en-us/community/topics/200263058-Applications-and-Integrations). ​
+:::

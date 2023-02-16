@@ -145,7 +145,7 @@ Configure an [Installed Collector (Windows)](/docs/send-data/installed-collector
 
 ### Step 2: Configure a Source
 
-To collect logs from IIS 7, use an Installed Collector and a Local File Source. You may also configure a [Remote File Source](/docs/send-data/installed-collectors/sources/Remote-File-Source), but the configuration is more complex. Sumo Logic recommends using a Local File Source if possible.
+To collect logs from IIS 7, use an Installed Collector and a Local File Source. You may also configure a [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source), but the configuration is more complex. Sumo Logic recommends using a Local File Source if possible.
 
 1. Configure a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 2. Configure the Local File Source Fields as follows:

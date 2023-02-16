@@ -32,9 +32,9 @@ Ordinarily, rules define the log messages they’ll be applied to by specifying 
 
 <!--
 threat_rules.csv comes from https://github.com/jasklabs/content-catalog/blob/master/rules/threat_rules.csv
--->
 
 For a reference to the log mappers that participate in normalized threat rules and the data sources the rules support, see [threat_rules.csv](https://github.com/jasklabs/content-catalog/blob/master/rules/threat_rules.csv).
+-->
 
 ## Types of normalized threat rules 
 

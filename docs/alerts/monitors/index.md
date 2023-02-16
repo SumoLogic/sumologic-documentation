@@ -2,7 +2,7 @@
 slug: /alerts/monitors
 title: Monitors
 sidebar_label: Monitors
-description: Monitors continuously query your logs or metrics and send notifications when specific events occur, such as critical, warning, and missing data.
+description: Sumo Logic Monitors continuously query your logs or metrics and send notifications when specific events occur, such as critical, warning, and missing data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -24,7 +24,7 @@ Learn how [Monitors differ from Scheduled Searches](/docs/alerts/difference-from
 * To manage and/or view monitors, you'll need the **Manage** and **View Monitors** [role capabilities](/docs/manage/users-roles/roles/role-capabilities.md). [Learn more](/docs/alerts/monitors/edit-settings/#monitors-folder-permissions) about controlling permissions at the monitor or folder level.
 * The frequency a Monitor executes depends upon a variety of factors such as the underlying query, the operators used, and the detection window. It can vary from a couple of seconds to a few minutes. If for example, the detection window of your alert is one day it will be evaluated every couple of minutes, whereas if the detection window of the monitor is 15 minutes then it will be evaluated every couple of seconds.
 * Log Monitors use the [role search filter](/docs/manage/users-roles/roles/construct-search-filter-for-role.md) of their creator.
-* Log Monitors delay execution by two minutes. This means it won't evaluate data from the current time, but evaluate data from two minutes ago.  This ensures that any delays in ingestion are factored in and won't generate false positive or false negative alerts.
+* Log Monitors delay execution by two minutes. This means it won't evaluate data from the current time, but evaluate data from two minutes ago. This ensures that any delays in ingestion are factored in and won't generate false positive or false negative alerts.
 * Metric Monitors delay execution by one minute.
 * Depending on your account type, you can have up to a certain number of Log and Metric Monitors.
   * Enterprise and Trial can have up to 1,000 Log Monitors and 1,500 Metric Monitors.
@@ -60,10 +60,11 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 
 ### Recovery
 
-* Recovery is based on the detection window, which is either the time range or the number of data points of the trigger condition. An alert is recovered (resolved) when the recovery condition is met for the entire duration of the detection window. For example, if an alert is triggered at 1 PM and the detection window is 15 minutes, the earliest the alert would recover is after 1:15 PM since the entire detection window must pass. This is to ensure there isn't an alert between the triggered and resolved state, especially for metrics that are volatile.
-* Auto Resolution is supported with Email, Lambda, Microsoft Teams, OpsGenie, PagerDuty, Slack, and generic webhook connections. Support for other connection types is coming soon.
-  * For Lambda and generic webhooks, the same payload for both alerts and recovery is used.
-  * Email, Microsoft Teams, OpsGenie, PagerDuty, and Slack recovery notifications are hardcoded by Sumo Logic and cannot be edited. The recovery payload is not the same as the alert payload.
+* Recovery is based on the detection window, which is either the time range or the number of data points of the trigger condition. An alert is recovered (resolved) when the recovery condition is met for the entire duration of the detection window.
+   * For example, if an alert is triggered at 1:00 PM and the detection window is 15 minutes, the earliest the alert would recover is after 1:15 PM since the entire detection window must pass. This is to ensure there isn't an alert between the triggered and resolved state, especially for metrics that are volatile.
+* Auto Resolution is supported with Email, Lambda, Microsoft Teams, OpsGenie, PagerDuty, Slack, and generic webhook connections.
+* **Recovery Payload** customization is supported for Slack, Microsoft Teams, AWS Lambda, Azure Functions, generic webhooks, PagerDuty, OpsGenie, and ServiceNow.
+* For the rest of our Connections, you can customize the **Alert Payload**, but not the **Recovery Payload**. What you enter for the **Alert Payload** will be used for both alerts and recovery.
 * The recovery notification is sent to the same channel where the corresponding Alert notifications were sent. In other words, you cannot have different channels where you receive alert and recovery notifications for a given trigger condition.
 * After one day without new data to an incident, the system automatically expires it. The incident is marked as resolved with the resolution set to **Expired**.
 

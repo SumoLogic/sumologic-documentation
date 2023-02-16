@@ -17,6 +17,13 @@ A G Suite Apps Audit Source uses the [Google Apps Reports API](https://develop
  * Google+
  * Mobile
  * Rules
+ * Keep 
+ * Meet 
+ * Enterprise Group 
+ * Data Studio 
+ * SAML 
+ * Chat
+
 
 Only one Source should be configured per app. In other words, you’d set up one Source to collect Calendar audit logs, another to collect Token audit logs, and so on.
 

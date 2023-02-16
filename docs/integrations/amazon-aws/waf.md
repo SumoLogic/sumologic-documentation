@@ -84,12 +84,12 @@ In this step you set up AWS WAF to send log data to an S3 bucket using an Kinesi
 ### Configure a Sumo collector and source to receive AWS WAF logs
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. To your Hosted Collector, add an [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source).
+2. To your Hosted Collector, add an [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).
     * **Name**. Enter a name to display for the new Source.
     * **Description**. Enter an optional description.
     * **S3 Region**. Select the Amazon Region for your S3 bucket.
     * **Bucket Name**. Enter the exact name of your S3 bucket.
-    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category**. Enter a source category. For example, AWS/WAF.
     * **Access Method**. Select the appropriate AWS access control mechanism.
     * **Scan Interval**. Use the default of Automatic, or select a scan interval from the pulldown.

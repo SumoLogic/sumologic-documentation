@@ -37,7 +37,7 @@ enable Signal generation:
   * Reconnaissance
   * Resource Development
     :::important
-    If the `stage` field contains a Tactic that isn't in the MITRE ATT&CK framework, a Signal will not be generated. 
+    If the `stage` field contains a Tactic that isn't in the MITRE ATT&CK framework, a Signal will not be generated, but a Record will be. 
     :::
 * At least one entity field:
 

@@ -72,8 +72,8 @@ Collection > Collection** page, or from the list below.
 1. Set up auto-registration details for the Collector:  
 
    * [Create a New User account](/docs/manage/users-roles/users/create-edit-users) with Administrator permissions or a role with permissions to "Manage Collectors."  
-   * Create an [installation token](/docs/manage/Security/installation-tokens).
-   * Or, create an [Access Key and Access Id](/docs/manage/Security/Access-Keys) for this user, which will be used to register the collector.
+   * Create an [installation token](/docs/manage/security/installation-tokens).
+   * Or, create an [Access Key and Access Id](/docs/manage/security/access-keys) for this user, which will be used to register the collector.
 
 1. As root, run the installer with the following arguments:
 

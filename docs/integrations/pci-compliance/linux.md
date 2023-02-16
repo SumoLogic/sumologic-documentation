@@ -1,15 +1,14 @@
 ---
 id: linux
-title: PCI Compliance App for Linux
-sidebar_label: Linux
+title: PCI Compliance for Linux
 dashboard: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Linux offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
 
-This guide helps you set up Sumo Logic Collectors, install the PCI Compliance for application, and create dashboards from samples so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
+This guide helps you set up Sumo Logic Collectors, install the PCI Compliance for Linux App, and create dashboards from samples so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 
 
 ## Collect Logs for PCI Compliance for Linux
@@ -18,11 +17,11 @@ The PCI Compliance for Linux App works with your existing Linux logs to identify
 
 To collect Linux logs, you'll need:
 
-* An [Installed Collector](/docs/send-data/Installed-Collectors). Choose the one right for your host environment.
+* An [Installed Collector](/docs/send-data/installed-collectors). Choose the one right for your host environment.
 * A Linux [Source](/docs/send-data/installed-collectors/sources), depending on your environment.
     * [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source)
-    * [Remote File Source](/docs/send-data/installed-collectors/sources/Remote-File-Source)
-    * [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source)
+    * [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source)
+    * [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source)
 
 
 ## Installing the PCI Compliance for Linux App

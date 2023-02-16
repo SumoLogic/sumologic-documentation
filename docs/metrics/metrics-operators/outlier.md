@@ -7,7 +7,7 @@ sidebar_label: outlier
 
 The metrics `outlier` operator identifies metrics data points that are outside the range of expected values. Outliers help you spot unusual behavior in your metrics visualizations and track the behavior over time.
 
-The `outlier` operator tracks the moving average and standard deviation of a time series over a specified time window, and calculates a threshold band, outside of which data points are considered outliers. You can use optional qualifiers to specify the time window, the number of standard deviations beyond which a data point is considered an outlier, and the directionality of the deviation.
+`outlier` tracks the moving average and standard deviation of a time series over a specified time window, and calculates a threshold band, outside of which data points are considered outliers. You can use optional qualifiers to specify the time window, the number of standard deviations beyond which a data point is considered an outlier, and the directionality of the deviation.
 
 At this time, using the `outlier` operator in a metric monitor is not supported.
 
@@ -17,7 +17,9 @@ At this time, using the `outlier` operator in a metric monitor is not supported.
 
 Where:
 
-* `window` is the time window, in minutes, over which to calculate the moving average and standard deviation of the time series. Default: 5m If you include the `window` qualifier, be sure to explicitly specify the units, for example `window=5m`.
+* `window` is the range over which to calculate the moving average and standard deviation of the time series. `window` can be specified with time units (s, m, h), or it can be specified without time units.  Default: 5m.
+:::note
+If you use `outlier` in the Classic Metrics UI, if you specify the `window` parameter without supplying a unit of time, the window duration applied will be in the units used in the [quantization](docs/metrics/introduction/metric-quantization.md) of the query.
 * `threshold` is the number of standard deviations from the moving average that defines the threshold band. Default: 3
 * `direction` specifies what deviation direction should trigger violations: positive deviations (+), negative deviations (-), or both (+-). Default: +-
 

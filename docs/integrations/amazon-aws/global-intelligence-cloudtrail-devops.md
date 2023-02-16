@@ -1,7 +1,6 @@
 ---
 id: global-intelligence-cloudtrail-devops
 title: Global Intelligence for AWS CloudTrail DevOps
-sidebar_label: AWS CloudTrail DevOps Global Intelligence
 description: Global Intelligence for AWS CloudTrail - DevOps provides insights for on-call engineers, SRE, and DevOps users to help minimize AWS errors and maximize app availability.
 ---
 
@@ -38,8 +37,6 @@ In addition, the app provides configuration guidance for key AWS services based 
 * An action plan helps users focus their attention on specific microservices in particular AWS accounts that might be experiencing errors.
 
 ## Prerequisites
-
-<p><span className="globalIntelligence">Global Intelligence App</span></p>
 
 This feature is available in the following account plans.
 

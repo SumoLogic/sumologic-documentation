@@ -113,7 +113,7 @@ Namespace for **Amazon SQS** Service is **AWS/SQS**
     * **Description**. Enter an optional description.
     * **S3 Region**. Select the Amazon Region for your SQS S3 bucket.
     * **Bucket Name**. Enter the exact name of your SQS S3 bucket.
-    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions).
+    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).
 
     :::note
     The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
@@ -199,7 +199,7 @@ Amazon Simple Queue Service (Amazon SQS) is a fully managed message queuing serv
 The Sumo Logic App for Amazon SQS provides operational insights into your Amazon SQS utilization. The App’s preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
 
 :::note
-We highly recommend you view these dashboards in the [Explore View](https://help.sumologic.com/Beta/AWS_Observability_Solution/07_View_AWS_Observability_Solution_Dashboards) of  the AWS Observability solution.
+We recommend using the [AWS Observability solution Explore View dashboards](/docs/observability/aws/deploy-use-aws-observability/view-dashboards).
 :::
 
 ### Overview

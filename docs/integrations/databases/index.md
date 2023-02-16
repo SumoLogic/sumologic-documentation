@@ -23,7 +23,7 @@ This guide has documentation for Sumo apps for database servers.
 </div>
 <div className="box box2 card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/databases/couchbase.png')} alt="Thumbnail icon" width="95"/>
+  <img src={useBaseUrl('img/integrations/databases/couchbase-logo.png')} alt="Thumbnail icon" width="75"/>
   <h3><a href="/docs/integrations/databases/couchbase">Couchbase</a></h3>
   <p>Helps you monitor Couchbase cluster activity, errors, and health.</p>
   </div>
@@ -37,7 +37,7 @@ This guide has documentation for Sumo apps for database servers.
     </div>
     <div className="box box4 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/databases/mariadb.png')} alt="Thumbnail icon" width="110"/>
+      <img src={useBaseUrl('img/integrations/databases/mariadb.png')} alt="Thumbnail icon" width="95"/>
       <h3><a href="/docs/integrations/databases/elasticsearch">MariaDB</a></h3>
       <p>Helps you monitor the availability, performance, and resource utilization of your MariaDB clusters.</p>
       </div>
@@ -51,7 +51,7 @@ This guide has documentation for Sumo apps for database servers.
     </div>
     <div className="box box6 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/databases/mongodb.png')} alt="Thumbnail icon" width="75"/>
+      <img src={useBaseUrl('img/integrations/databases/mongodb.png')} alt="Thumbnail icon" width="150"/>
       <h3><a href="/docs/integrations/databases/mongodb">MongoDB</a></h3>
       <p>Insight into overall system health, queries, logins, connections, errors and warnings, replication, and sharding.</p>
       </div>
@@ -72,7 +72,7 @@ This guide has documentation for Sumo apps for database servers.
     </div>
     <div className="box box9 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="Thumbnail icon" width="75"/>
+      <img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="Thumbnail icon" width="58"/>
       <h3><a href="/docs/integrations/databases/postgresql">PostgreSQL</a></h3>
       <p>Track your performance, logins, connections, errors, and overall system health.</p>
       </div>

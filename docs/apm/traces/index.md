@@ -2,7 +2,7 @@
 slug: /apm/traces
 title: Traces
 sidebar_label: Traces
-description: See how your application is behaving with trace analytics.
+description: See how your application is behaving with trace analytics. Learn how to work with your Tracing data including dashboards, Service Map, Spans, and queries.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,11 +11,41 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic Application Monitoring and Observability provides transactional intelligence for distributed workflows, by combining telemetry from traces, logs, and metrics in the context of real-time automatically tracked application topology.
 
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
 ## Monitoring Apps and Microservices with Sumo Logic Traces
 
-In this section, we'll introduce the following concepts:
+This guide provides information to work with your tracing data, including
+the following:
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+### Step 1: Set up Traces Collection
+
+* [For AWS environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-aws-environments)
+* [For Kubernetes environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments)
+* [For other environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments)
+
+Once you've set up collection, you can begin to [analyze your traces in Sumo Logic](/docs/apm/traces/view-and-investigate-traces.md).
+
+
+### Step 2: Instrument Your Application with OpenTelemetry
+
+* [.NET](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net)
+* [Go](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/go)
+* [JavaScript](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/javascript)
+* [Java](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java)
+* [Python](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python)
+* [Ruby](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby.md)
+* [Ruby on Rails](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby-on-rails.md)
+* [Istio](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/istio.md)
+* AWS Lambda
+  * [Java](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/java.md)
+  * [NodeJS](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/nodejs.md)
+  * [Python](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/python.md)
+* Kubernetes environments
+  * [Java](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes/)
+  * [JavaScript](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes/)
+  * [Python](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes/)
+
+
+### Optional: Advanced Configuration
+
+* [Specify which data to send to Sumo Logic](/docs/apm/traces/advanced-configuration/filter-shape-tracing-data)
+* [Working with spans attributes](/docs/apm/traces/advanced-configuration/working-with-span-attributes)

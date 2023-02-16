@@ -82,6 +82,9 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 | ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs. | No | Not applicable | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | No | Not applicable | FirstPartyGenericError |
 
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
 
 ## JSON configuration
 
