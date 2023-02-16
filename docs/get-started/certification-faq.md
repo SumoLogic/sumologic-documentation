@@ -1,7 +1,7 @@
 ---
 id: certification-faq
 title: Certification Frequently Asked Questions
-sidebar_label: FAQ
+sidebar_label: Certification FAQ
 ---
 
 
