@@ -111,20 +111,15 @@ Fundamentals will expire two years after being issued. All other certifications
 
 Learning at Sumo Logic will help you build the skills necessary to achieve your organization's goals using our platform to make the world’s apps reliable and secure.
 
-We offer courses in different delivery formats including online (live and on-demand) and in-person training, for free. Customized training is also available through our private offering.
+We offer courses in different delivery formats including online (live and on-demand) and in-person training, **for free**. Customized training is also available through our private offering.
 
 
 ## What learning resources are available?
 
 From your Sumo Logic service account, you have access to the entire training curriculum. You will be provided with:
 
-* **The Sumo Logic Training Portal. **The **Training Portal** is available in your Sumo Logic account  from the **Certification** tab.
-
+* **The Sumo Logic Training Portal**. The Training Portal is available in your Sumo Logic account from the **Certification** tab.
 * **The Sumo Logic Training Lab Environment**. The Training Lab environment is a separate instance of Sumo Logic that has been curated and set up to work along with our training curriculum.
-
-## What is the cost associated with each training?
-
-It’s free.
 
 
 ## Training Portal
@@ -132,18 +127,13 @@ It’s free.
 
 ### How do I access the Training Portal?
 
-Access to self-paced training is available only from the product, from our **Training Portal**
+Access to self-paced training is available only from the product, from our **Training Portal**.
 
-The **Training Portal** is available in Sumo Logic  from the **Certification** tab as shown below:
+The **Training Portal** is available in Sumo Logic from the **Certification** tab as shown below:
 
-
-1. From the **Home** page, go to **Certification** tab
-
-2. Click **Get Certified**
-
-3. You will be navigated to the portal page: **learn.sumologic.com**
-
-![alt_text](images/image1.gif "image_tooltip")
+1. From the **Home** page, go to **Certification** tab.
+2. Click **Get Certified**.
+3. You will be navigated to the portal page: **learn.sumologic.com**. <br/> (image1.gif "image_tooltip")
 
 
 
@@ -166,7 +156,7 @@ Users that do not authenticate to Sumo Logic using a username and password are r
 * Open the email and click **Verify Your Email**.
 * Your email is verified, and you will be given access to the third-party service.
 
-![alt_text](images/image2.gif "image_tooltip")
+(image2.gif "image_tooltip")
 
 
 Secure Third-Party Access and New Organizations
@@ -181,11 +171,12 @@ To activate your account:
 2. You will be prompted to activate your account.
 3. Click **Send Activation Email**.
 
-# Training Lab Environment
 
-## The Training Lab Environment will enable you to get hands-on practice following the lessons covered in our learning experiences. A Sumo Logic environment curated to work with the examples and lab exercises provided with our courses is available 24x7 all year round for you to practice.
+## Training Lab Environment
 
-## How do I access the Training Lab Environment?
+The Training Lab Environment will enable you to get hands-on practice following the lessons covered in our learning experiences. A Sumo Logic environment curated to work with the examples and lab exercises provided with our courses is available 24x7 all year round for you to practice.
+
+### How do I access the Training Lab Environment?
 
 * Choose a number between 001 and 999. Remember this number, since you'll use it in all your labs.
 * Open a new window in a different browser. For example, if you're reading this on Chrome, open a Firefox window. Using separate browsers will keep you logged in to your regular Sumo Logic account and the training lab environment at the same time.
@@ -198,38 +189,35 @@ To activate your account:
 
 Credentials change monthly, we post them on the training portal  in the **Become a Sumo Logic Expert** section
 
-
-![alt_text](images/image3.gif "image_tooltip")
-
+(image3.gif "image_tooltip")
 
 
-# Self-Paced Training
 
+## Self-Paced Training
 
-## With our Self-Paced eLearning, you can learn at your own pace, anywhere, without constraints. Our comprehensive product training as well as certification course will help you prepare  to pass the certification exams.
+With our Self-Paced eLearning, you can learn at your own pace, anywhere, without constraints. Our comprehensive product training as well as certification course will help you prepare  to pass the certification exams.
 
-
-## How do I access Self-Paced training?
+### How do I access Self-Paced training?
 
 Access to self-paced training is available only from the product, from our **Training Portal**.
 
 The **Training Portal** is available in Sumo Logic from the **Certification** tab as shown below:
 
-![alt_text](images/image4.gif "image_tooltip")
+(image4.gif "image_tooltip")
 
 
-## What content is available Self-Paced?
+### What content is available Self-Paced?
 
 Everybody learns differently, we offer different options to adapt to your learning needs:
 
-**Learning Paths:**  you can learn at your own pace guided by our product oriented **Learning Paths**.
+**Learning Paths:** you can learn at your own pace guided by our product oriented **Learning Paths**.
 
-The following **Learning Paths** are available under the **Become a Sumo Logic  Expert **section of our **Training Portal:**
-
+The following **Learning Paths** are available under the **Become a Sumo Logic  Expert** section of our **Training Portal**:
 
 * General
 * Observability
 * Security
+
 **Micro Lessons:** access our growing, curated library of quick tutorials, short demos and best practices, learn something new in just minutes. Check out the **Learn New Skills** section from our **Training Portal** to access this content.
 
 **Recorded Live Training** did you miss a Cert Jam or a workshop? Watch recordings of past sessions, download the student lab guide and a copy of the slides
@@ -241,7 +229,7 @@ The following **Learning Paths** are available under the **Become a Sumo Logic  
 2. Select the course by clicking on it.
 3. Click **Register**.
 
-![alt_text](images/image5.gif "image_tooltip")
+(image5.gif "image_tooltip")
 
 ## How do I navigate inside a Self-Paced course?
 
@@ -270,26 +258,24 @@ If your screen shows this following error, this is typically due to a browser se
 * For troubleshooting Video Error Code 232011 or "Cannot load M3U8: Crossdomain access denied" error messages, work with your IT network team to check on your firewall status.
     * If you have a firewall, you can allow a particular HTTP header: `Access-Control-Allow-Origin: *`
 
-
-![alt_text](images/image6.png "image_tooltip")
-
+(image6.png "image_tooltip")
 
 
-# Certification
 
-## We’ve done studies that show when you are Sumo Logic Certified, you gain greater insight into your data, search more efficiently and build impactful dashboards.
+## Certification
 
+We’ve done studies that show when you are Sumo Logic Certified, you gain greater insight into your data, search more efficiently and build impactful dashboards.
 
-## How do I access an exam?
+### How do I access an exam?
 
 Access to our certification exams is available only from the product, from our **Training Portal **under the **Get Certified **section.
 
 The **Training Portal** is available in Sumo Logic  from the **Certification** tab as shown below:
 
-![alt_text](images/image7.gif "image_tooltip")
+(image7.gif "image_tooltip")
 
 
-## What certifications do we offer?
+### What certifications do we offer?
 
 **Sumo Logic Certified - Fundamentals**: Gain broad knowledge analyzing logs and metrics with the Fundamentals Certification. Get Sumo Logic up and running and learn to do simple filtering, data parsing, and analysis.
 
@@ -312,11 +298,11 @@ The **Training Portal** is available in Sumo Logic  from the **Certification** t
 **Sumo Logic Certified - Observability Administration**: Deploy the AWS Observability solution using Cloudformation Template, gathering metrics from a Kubernetes cluster, and establishing trace points to gather trace data using Open Telemetry.
 
 
-## Do I have to take the certifications in order?
+### Do I have to take the certifications in order?
 
 No, but we highly recommend passing the examination for Fundamentals before continuing onto any other certifications.
 
-## What can I do to prepare for the exams?
+### What can I do to prepare for the exams?
 
 It depends on how you like to learn. We have:
 
@@ -332,36 +318,36 @@ Learn on your own time at your own pace at no cost to you.
 Self-Paced courses, lesson recordings and labs are accessible in Sumo Logic Once you understand the materials in the lesson recordings and have conducted the labs, you should be ready for the exam.
 
 
-## How long does it take to complete an exam?
+### How long does it take to complete an exam?
 
 While the majority of our certification exams have a duration of 60-minute 30-question, we recommend checking the exam description beforehand.
 
 On average, most candidates finish in 30 minutes.
 
 
-## What is the pass rate for the exams?
+### What is the pass rate for the exams?
 
 While the majority of our certification exams require you to answer 75% of the questions correctly to get certification, we recommend checking the exam description beforehand.
 
 
-## What type of questions should I expect in the exam?
+### What type of questions should I expect in the exam?
 
 Most questions are multiple choice.
 
 Exams are open-book, open-note, and open-internet. You are encouraged to use our documentation site during the exam. You have multiple attempts to pass an exam. Questions may be different and reordered on subsequent attempts.
 
 
-## Do I need to schedule an appointment to take an exam?
+### Do I need to schedule an appointment to take an exam?
 
 You are free to take the exam whenever and wherever you like at no cost to you.
 
 
-## When do certifications expire?
+### When do certifications expire?
 
 Fundamentals will expire two years after being issued. All other certifications will expire after one year. You will receive two email notifications about expiration: one when your certification is 30 days from expiration, and another when your certification expires.
 
 
-## How do I complete an exam?
+### How do I complete an exam?
 
 * Answer all the exam questions.
 * Click **Submit all answers**.
@@ -374,7 +360,7 @@ Fundamentals will expire two years after being issued. All other certifications 
 * Select My Profile from the dropdown.
 * Find the exam you completed and click View certificate.
 
-![alt_text](images/image8.gif "image_tooltip")
+(image8.gif "image_tooltip")
 
 ## How do I share my certificate with others?
 
@@ -391,4 +377,4 @@ Every Sumo Logic Certificate has a QR code and a link to a verification site so 
 * Continue moving between tabs to copy all the information.
 * When you’re finished, click **Save**.
 
-![alt_text](images/image9.gif "image_tooltip")
+(image9.gif "image_tooltip")
