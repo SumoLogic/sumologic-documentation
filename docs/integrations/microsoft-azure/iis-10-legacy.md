@@ -273,7 +273,7 @@ This section demonstrates how to configure sources for the following log types:
 
 #### Configure Source for IIS Access Logs
 
-This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source), but the configuration is more complex.
+This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#configure-a-collector). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source), but the configuration is more complex.
 
 Sumo Logic recommends using a Local File Source whenever possible.
 
@@ -301,7 +301,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
 
 #### Configure Source for HTTP Error Logs
 
-This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source), but the configuration is more complex.
+This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#configure-a-collector). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source), but the configuration is more complex.
 
 Sumo Logic recommends using a Local File Source whenever possible.
 
