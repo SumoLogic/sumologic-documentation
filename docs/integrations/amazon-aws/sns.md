@@ -98,7 +98,7 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
       * DO NOT use a [leading forward slash](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions).
       * The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category**. Enter a source category. For example, enter aws/observability/CloudTrail/logs.
-    * **Fields**. Add an account field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account" field.
+    * **Fields**. Add an account field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried using the **account** field.
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Fields.png')} alt="Fields" />
 3. Click **Save**.
     * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources).
