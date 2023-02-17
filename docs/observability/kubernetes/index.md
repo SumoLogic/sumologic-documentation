@@ -2,6 +2,7 @@
 slug: /observability/kubernetes
 title: Kubernetes Solution
 description: This guide provides and end-to-end solution for deploying, managing, monitoring, and administering your Kubernetes environment.
+tags: [kubernetes]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
