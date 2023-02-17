@@ -1,7 +1,8 @@
 ---
 id: library
 title: Managing Your Sumo Logic Library
-sidebar_label: Manage Your Library
+sidebar_label: Managing your library
+description: Managing your Library in Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

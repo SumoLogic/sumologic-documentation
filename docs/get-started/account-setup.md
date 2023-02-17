@@ -1,7 +1,7 @@
 ---
 id: account-setup
 title: Setting Up Your Sumo Logic Account
-sidebar_label: Account Setup
+sidebar_label: Account setup
 description: Update and manage your Sumo Logic account.
 ---
 
