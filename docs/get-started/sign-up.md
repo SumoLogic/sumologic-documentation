@@ -1,6 +1,7 @@
 ---
 id: sign-up
-title: Sign Up and Activate
+title: Sign Up and Activate Your Account
+sidebar_label: Signup and activation
 description: Sign Up with Sumo Logic, creating and activating your account.
 ---
 
@@ -31,7 +32,7 @@ You have a couple options to create and activate an account:
 * [Free Trial Account](#free-trial-accounts) through the Sumo Logic site
 * [AWS Marketplace](#aws-marketplace) through AWS and completes through Sumo Logic
 
-:::sumo 
+:::sumo
 For Sumo Logic terms and conditions, see https://www.sumologic.com/support-terms.
 :::
 
