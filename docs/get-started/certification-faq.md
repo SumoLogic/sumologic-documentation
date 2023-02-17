@@ -1,9 +1,7 @@
 ---
 id: certification-faq
-title: Certification Frequently Asked Questions
-sidebar_label: Certification FAQ
+title: Training and Certification FAQ
 ---
-
 
 ## How do I get to certifications and training?
 
