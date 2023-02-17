@@ -31,7 +31,7 @@ The **Base URL** is the URL where your **Citrix Cloud** account is located. To g
 
   | Server location | Server located at  | Base URLs |
   | :---|:---|:---|
-  | US  Server | United States | `https://api-ap-us.cloud.com` |
+  | US  Server | United States | `https://api-us.cloud.com` |
   | APAC Server |Asia Pacific South|  `https://api-ap-s.cloud.com` |
   | EU Server | European Union | `https://api-eu.cloud.com` |
   | JP Server |  Japan | `https://api.citrixcloud.jp` |
