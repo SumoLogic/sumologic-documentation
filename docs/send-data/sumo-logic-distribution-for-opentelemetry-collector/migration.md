@@ -759,7 +759,7 @@ The equivalent of the Syslog Source is a combination of [the tcplog][tcplogrecei
 
 :::note
 The OpenTelemetry Collector provides also [Syslog Receiver][syslogreceiver].
-See [this document](/docs/send-data/sumo-logic-opentelemetry/comparison#syslog) for details.
+See [this document](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/comparison#syslog) for details.
 :::
 
 #### Overall example
@@ -1367,7 +1367,7 @@ exporters:
 The equivalent of the Host Metrics Source is [the telegraf receiver][telegrafreceiver] with appropriate plugins.
 
 :::note
-There are differences between the Installed Collector and the OpenTelemetry Collector host metrics. See [this document](/docs/send-data/sumo-logic-opentelemetry/comparison#host-metrics) to learn more.
+There are differences between the Installed Collector and the OpenTelemetry Collector host metrics. See [this document](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/comparison#host-metrics) to learn more.
 :::
 
 #### Overall Example
@@ -2069,7 +2069,7 @@ More useful information can be found in [Syslog Source for Cloud Based Managemen
 
 :::note
 The OpenTelemetry Collector provides also [Syslog Receiver][syslogreceiver].
-See [this document](/docs/send-data/sumo-logic-opentelemetry/comparison#syslog) for details.
+See [this document](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/comparison#syslog) for details.
 :::
 
 | The Installed Collector Parameter | The OpenTelemetry Collector Key                                                                                      |
@@ -2108,7 +2108,7 @@ The equivalent of the Host Metrics Source is [the telegraf receiver][telegrafrec
 More useful information can be found in [Host Metrics Source for Cloud Based Management](#host-metrics-source).
 
 :::note
-The are differences between the Installed Collector and the OpenTelemetry Collector host metrics. See [this document](/docs/send-data/sumo-logic-opentelemetry/comparison#host-metrics) to learn more.
+The are differences between the Installed Collector and the OpenTelemetry Collector host metrics. See [this document](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/comparison#host-metrics) to learn more.
 :::
 
 | The Installed Collector Parameter | The OpenTelemetry Collector Key                                                                                 |
