@@ -1,7 +1,7 @@
 ---
 id: onboarding
 title: Getting Started with Sumo Logic
-sidebar_label: Getting Started
+sidebar_label: Getting started
 description: Get started quickly with Sumo Logic.
 tags: [get started, getting started]
 ---
