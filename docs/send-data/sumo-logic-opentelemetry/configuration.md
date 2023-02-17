@@ -1,6 +1,6 @@
 ---
 id: configuration
-title: Configuration
+title: OpenTelemetry Configuration
 ---
 
 - [Basic configuration](#basic-configuration)
@@ -24,7 +24,6 @@ title: Configuration
 - [Proxy Support](#proxy-support)
 - [Keeping Prometheus format using OTLP exporter](#keeping-prometheus-format-using-otlp-exporter)
 
----
 
 ## Basic configuration
 
@@ -34,13 +33,13 @@ The only required option to run the collector is `--config`, which points to the
 otelcol-sumo --config config.yaml
 ```
 
-For all the available command line options, see [Command-line configuration options](#command-line-configuration-options).
+To view all available command line options, see [Command-line configuration options](#command-line-configuration-options).
 
 The file `config.yaml` is a regular OpenTelemetry Collector configuration file that contains a pipeline with some receivers, processors and exporters. If you are new to OpenTelemetry Collector, you can familiarize yourself with the terms reading the [upstream documentation](https://opentelemetry.io/docs/collector/configuration/).
 
 The primary components that make it easy to send data to Sumo Logic are the [Sumo Logic Exporter][sumologicexporter_docs] and the [Sumo Logic Extension][sumologicextension_configuration].
 
-To create the `install_token`, please follow [this documentation][sumologic_docs_install_token].
+To create the `install_token`, see the [Install Token documentation][sumologic_docs_install_token].
 
 Here's a starting point for the configuration file that you will want to use:
 
@@ -517,8 +516,7 @@ If you want data from different sources to have different source categories, you
 
 ### Setting source category on logs from files
 
-The [Filelog receiver][filelogreceiver_readme] allows to set attributes on received data.
-Here's an example on how to attach different source categories to logs from different files with the Filelog receiver:
+The [Filelog receiver][filelogreceiver_readme] allows to set attributes on received data. Here's an example on how to attach different source categories to logs from different files with the Filelog receiver:
 
 ```yaml
 exporters:

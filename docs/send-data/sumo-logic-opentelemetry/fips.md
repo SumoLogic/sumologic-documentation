@@ -20,7 +20,7 @@ Pass the `--fips` flag to the [script](./installation.md#installation-using-scri
 
 The binaries can be downloaded from OT release pages. They are distinguished from others by containing the `-fips-` infix. More specifically, the binary name follow the format:
 
-```text
+```bash
 otelcol-sumo-${VERSION}-fips-${OS}-${ARCH}
 ```
 
@@ -30,13 +30,13 @@ For example: <https://github.com/SumoLogic/sumologic-otel-collector/releases/dow
 
 Docker images containing the binaries have their tag suffixed with `-fips`. For example, where the normal image for version `0.70.0-sumo-0` is:
 
-```text
+```bash
 docker pull public.ecr.aws/sumologic/sumologic-otel-collector:0.70.0-sumo-0
 ```
 
 The FIPS-approved version would be:
 
-```text
+```bash
 docker pull public.ecr.aws/sumologic/sumologic-otel-collector:0.70.0-sumo-0-fips
 ```
 
@@ -131,11 +131,7 @@ prio  ciphersuite                  protocols              pfs                 cu
 
 ### Validating the client configuration
 
-A TLS client sends all of its supported ciphersuites as part of the handshake, in the `ClientHello` message.
-Examining this message requires some additional work, as we need to set up a TLS server with a valid
-certificate that will print it to stdout for us. For the purposes of this document, we're going to use a
-small [Go utility](https://github.com/rgl/tls-dump-clienthello) to do this, but it's also possible with
-OpenSSL's `s_server` command.
+A TLS client sends all of its supported ciphersuites as part of the handshake, in the `ClientHello` message. Examining this message requires some additional work, as we need to set up a TLS server with a valid certificate that will print it to stdout for us. For the purposes of this document, we're going to use a small [Go utility](https://github.com/rgl/tls-dump-clienthello) to do this, but it's also possible with OpenSSL's `s_server` command.
 
 ```bash
 $ ./tls-dump-clienthello_$(go env GOOS)_$(go env GOARCH)_$(go env GOAMD64)/tls-dump-clienthello
@@ -176,8 +172,7 @@ client point: uncompressed (0)
 
 While [FIPS 140][fips] doesn't, strictly speaking, mandate a specific TLS version, it is nonetheless a good practice to use a recent version. Otelcol allows TLS to be configured for each component individually, in a standardized manner. You can find the details [here](https://github.com/open-telemetry/opentelemetry-collector/blob/main/config/configtls/README.md).
 
-By default, the minimum TLS version for otel components is `1.2`. This is a good default that is compliant with the standard. At the moment, there is some uncertainty as to
-whether BoringCrypto is FIPS-compliant when using TLS `1.3`, so we recommend staying with the default.
+By default, the minimum TLS version for otel components is `1.2`. This is a good default that is compliant with the standard. At the moment, there is some uncertainty as to whether BoringCrypto is FIPS-compliant when using TLS `1.3`, so we recommend staying with the default.
 
 If you nonetheless want to use `1.3`, here's an example for the `otlp` exporter:
 

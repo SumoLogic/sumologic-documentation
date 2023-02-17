@@ -3,12 +3,9 @@ id: opentelemetry-concepts
 title: Mapping OpenTelemetry concepts to Sumo Logic
 ---
 
-
-
 ## Data model considerations
 
-OpenTelemetry has a [rich data model], which is internally constructed out of several layers. For all signals,
-these can be broken down into following:
+OpenTelemetry has a [rich data model], which is internally constructed out of several layers. For all signals, these can be broken down into following:
 
 - **Resource** - includes Attributes describing the resource from which given set of data comes from.
   Should follow [resource semantic conventions].
@@ -30,10 +27,8 @@ Looking from the OpenTelemetry standpoint, Fields are a good match for Resource-
 while Log Record-level attributes are good fit for [structured representation of the log via JSON], which
 is automatically supported by Sumo Logic Search.
 
-All resource-level attributes are stored as fields. If a matching field is not defined, it will be skipped (the list
-of ignored fields can be checked via [dropped fields view]).
-When log contains record-level attributes, they are stored as JSON representation. Body, if present, is then
-stored under `log` key.
+All resource-level attributes are stored as fields. If a matching field is not defined, it will be skipped (the list of ignored fields can be checked via [dropped fields view]).
+When log contains record-level attributes, they are stored as JSON representation. Body, if present, is then stored under `log` key.
 
 ### Examples
 

@@ -1,6 +1,6 @@
 ---
 id: comparison
-title: Comparison between the Installed Collector and OpenTelemetry Collector
+title: Comparing the Installed Collector and OpenTelemetry Collector
 sidebar_label: OTEL Collector vs. Installed Collector
 ---
 

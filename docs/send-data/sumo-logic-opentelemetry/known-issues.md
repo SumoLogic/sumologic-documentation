@@ -1,6 +1,6 @@
 ---
 id: known-issues
-title: Known Issues
+title: Known Issues with the OpenTelemetry Collector
 ---
 
 ## Changes to collector properties are not applied
@@ -22,16 +22,12 @@ After that, the collector will register on next run.
 If you delete the collector in the UI but not delete the local registration file,
 the collector will fail to start - see [Collector fails to start when deleted from UI](#collector-fails-to-start-when-deleted-from-ui).
 
-On the other hand, if you only delete the local registration file
-and do not delete the collector in the UI,
-a new collector will be created with current timestamp as a suffix,
-to prevent overwriting the existing collector.
+On the other hand, if you only delete the local registration file and do not delete the collector in the UI, a new collector will be created with current timestamp as a suffix, to prevent overwriting the existing collector.
 
 ## Collector fails to start when deleted from UI
 
 After successful registration of collector, if you delete the collector in Sumo Logic UI,
-the collector will fail to start on next run.
-The error message is similar to the below:
+the collector will fail to start on next run. The error message is similar to the below:
 
 ```console
 2021-08-24T10:52:38.639Z  error  sumologicextension@v0.31.0/extension.go:373  Heartbeat error  {"kind": "extension", "name": "sumologic", "collector_name": "<your-collector-name>", "collector_id": "0000000001A2B3C4", "error": "collector heartbeat request failed, status code: 401, body: {\n\"servlet\":\"rest\",\n\"message\":\"Could not authenticate.\",\n\"url\":\"/api/v1/collector/heartbeat\",\n\"status\":\"401\"\n}"}
@@ -39,8 +35,7 @@ github.com/open-telemetry/opentelemetry-collector-contrib/extension/sumologicext
   github.com/open-telemetry/opentelemetry-collector-contrib/extension/sumologicextension@v0.31.0/extension.go:373
 ```
 
-To work around this, delete the local collector registration file at `~/.sumologic-otel-collector/`.
-The collector will re-register on next run.
+To work around this, delete the local collector registration file at `~/.sumologic-otel-collector/`. The collector will re-register on next run.
 
 ## Enabling `clobber` property re-registers collector on every restart
 
