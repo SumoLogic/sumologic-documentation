@@ -45,20 +45,16 @@ This can be done by following the steps below:
 
   ![Step1.1.png](/img/observability/Step1-1.png)
 
-### Validate the **namespace** and **region **metadata tags 
+### Validate the namespace and region metadata tags 
 
-The namespace and region tags are generally present in AWS CloudWatch
-metrics when collecting metrics using the Sumo Logic AWS CloudWatch
-metrics source. 
+The `namespace` and `region` tags are generally present in AWS CloudWatch metrics when collecting metrics using the Sumo Logic AWS CloudWatch metrics source. 
 
 For the desired AWS Service, go to your Sumo Logic AWS Cloudwatch Metric
 source and check the metric data.
 
 1. Go to Sumo Logic account
 1. Open a metrics tab and run a query to get metrics data for the AWS Service you wish to add to AWS Observability
-1. Check the data in the Legend tab and ensure **namespace** and **region** metadata tags are present. If these are not present, you will not be able to add this service to the AWS Observability solution.
-
-  ![Step2.png](/img/observability/Step2.png)
+1. Check the data in the Legend tab and ensure **namespace** and **region** metadata tags are present. If these are not present, you will not be able to add this service to the AWS Observability solution.<br/> ![Step2.png](/img/observability/Step2.png)
 
 ### Identify the AWS Resource Name field
 
@@ -81,7 +77,7 @@ steps below to update the existing hierarchy :
 
 1. Run the below curl command to get the existing AWS Observability hierarchy.
 
-  ```terminal
+  ```bash
   curl -s -H "Content-Type: application/json" --user
   "<ACCESS_ID>:<ACCESS_KEY>" -X GET
   https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies | json_pp
@@ -94,7 +90,7 @@ steps below to update the existing hierarchy :
 
   The output of the command will look something like below (it is trimmed output, the actual output can vary as per your hierarchy):
 
-  ```
+  ```json
   {
     "filter": null,
     "id": "0000000000000278",
@@ -134,7 +130,7 @@ steps below to update the existing hierarchy :
 
 1. If the AWS Service namespace is not present in the output JSON, update the JSON as below. We are taking AWS/SQS as an example here.
 
-  ```
+  ```json
   {
     "filter": null,
     "id": "0000000000000278",
@@ -182,7 +178,7 @@ steps below to update the existing hierarchy :
 
 1. Update the hierarchy using the below command.
 
-  ```terminal
+  ```bash
   curl -s -H "Content-Type: application/json" --user
   "<ACCESS_ID>:<ACCESS_KEY>" -X PUT
   https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies/<ID> -d
@@ -227,7 +223,7 @@ We will take AWS/SQS as an example. For SQS, we selected QueueName as our resour
 
 Scope:
 
-```
+```sql
 (_sourceCategory=aws/observability/cloudtrail/logs "eventSource":"sqs.amazonaws.com")
 ```
 
@@ -254,39 +250,23 @@ Depending on different log types, you can create a FER to extract region, namesp
 To add any dashboard to the hierarchy, perform the below steps:
 
 1. Go to your dashboard in the Sumo Logic account. 
-1. Select **Create Stack Linking** as per the below screenshot.
-
-  ![Step5.png](/img/observability/Step5.png)
+1. Select **Create Stack Linking** as per the below screenshot.<br/> ![Step5.png](/img/observability/Step5.png)
 1. In the pop-up, add the fields shown below to make it part of AWS Observability in the hierarchy.
-
-  * account: *
-  * region: *
+  * account: `*`
+  * region: `*`
   * namespace: `<namespace of aws service>` Example for SQS Service provide value as aws/sqs
   * AWS Resource name: * For example, if you were to use SQS, the Key here will be `“queuename”`
-
   :::note
   The number of keys added decides the dashboards placement in Hierarchy. For example, if you add **account** and **region** in stack linking, dashboards will be present at the **region** level in the hierarchy.  
   :::
 
 Consider the example of an SQS dashboard:  
-
 1. Add dashboard at the namespace level.
- * Add account, region, namespace in stack linking.    
-
-  ![Step5.1.png](/img/observability/Step5-1.png)
- * Go to AWS Observability view to look at the dashboard on namespace level.    
-
-  ![Step5.2.png](/img/observability/Step5-2.png)
-
+   * Add account, region, namespace in stack linking. <br/>  ![Step5.1.png](/img/observability/Step5-1.png)
+   * Go to AWS Observability view to look at the dashboard on namespace level. <br/>  ![Step5.2.png](/img/observability/Step5-2.png)
 1. Add dashboard at queuename level.
-
-   * Add account, region, namespace, and queuename in stack linking.    
-
-  ![Dasboard_Stack_Linking.png](/img/observability/Dasboard_Stack_Linking.png)
-
-   * Go to AWS Observability view to look at the dashboard on queuename level    
-
-  ![queuename_level.png](/img/observability/queuename_level.png)
+   * Add account, region, namespace, and queuename in stack linking.<br/>  ![Dasboard_Stack_Linking.png](/img/observability/Dasboard_Stack_Linking.png)
+   * Go to AWS Observability view to look at the dashboard on queuename level. <br/>  ![queuename_level.png](/img/observability/queuename_level.png)
 
 ### Add Template Variables (Optional)
 
@@ -296,9 +276,7 @@ Follow the steps to add variables to the dashboards:
 
 1. Go to the dashboard.
 1. Click **+** button near the ”Create a template variable” text.
-1. Add a template variable as shown below:
-
-  ![Step6.1.png](/img/observability/Step6-1.png)
+1. Add a template variable as shown below:<br/>![Step6.1.png](/img/observability/Step6-1.png)
 
 Refer to this document for further details on how to use filters with template variables.
 
@@ -323,7 +301,7 @@ the data. Please see this document help doc for details
 
 You can add a variable to your queries by using
 
-```
+```sql
 <key name> = {{variable name}}
 ```
 
