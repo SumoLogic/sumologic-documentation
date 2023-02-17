@@ -154,7 +154,7 @@ You configured two sources for collection, docker logs and docker stats, and the
 
 To install the Docker EE App, do the following:
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. To install the app, click **Add to Library.**
 3. You retain the default **App Name**, or enter a name of your choice for the app.
 4. Select the following  options for the **Docker Log source.**

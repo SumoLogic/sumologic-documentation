@@ -109,7 +109,7 @@ An event is an action that triggers an event message on a vCenter Server. Event 
 
 This procedure includes the following tasks:
 * [Configuring logs to be collected](#To_configure_logs_to_be_collected.2C_do_the_following:)—Test running a python script from the directory containing the Sumo Logic scripts.
-* [Configuring a syslog or a file source](#To_configure_a_syslog_source_for_the_Collector.2C_do_the_following:)—A Sumo Logic[ Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) operates like a Syslog server listening on the designated port to receive Syslog messages. The script supports syslog server, as well as generating a text file that can be ingested using [Local](/docs/send-data/installed-collectors/sources/local-file-source) or [Remote](/docs/send-data/installed-collectors/sources/Remote-File-Source) file source. A local file source is recommended as it has several benefits over Syslog, including no need to worry about connection retry, reading from the last pointer in a file, no data loss in the case of collector failure, and so on. Based on your preference, you can configure a syslog source, or a local or remote file source.
+* [Configuring a syslog or a file source](#To_configure_a_syslog_source_for_the_Collector.2C_do_the_following:)—A Sumo Logic[ Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) operates like a Syslog server listening on the designated port to receive Syslog messages. The script supports syslog server, as well as generating a text file that can be ingested using [Local](/docs/send-data/installed-collectors/sources/local-file-source) or [Remote](/docs/send-data/installed-collectors/sources/remote-file-source) file source. A local file source is recommended as it has several benefits over Syslog, including no need to worry about connection retry, reading from the last pointer in a file, no data loss in the case of collector failure, and so on. Based on your preference, you can configure a syslog source, or a local or remote file source.
 
 To configure logs to be collected, do the following:
 
@@ -193,7 +193,7 @@ python3 events.py  -s 192.168.23.242 -t vcenterhost -to 1514 -bT '2012-10-08 00:
 For a file source, configure a local or remote file source in one of the following ways:
 
 * **If the script and the Sumologic collector are on the same server,** configure a local file source by following [these](/docs/send-data/installed-collectors/sources/local-file-source) steps. Configure the **File Path** for local file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using **-f** flag, for example: `/var/log/vmware/output/`
-* **If the script and the Sumologic collector are on different servers**, configure a remote file source by following [these](/docs/send-data/installed-collectors/sources/Remote-File-Source) steps. Configure the **Path Expression** for Remote file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using **-f** flag, for example: `/var/log/vmware/output/`
+* **If the script and the Sumologic collector are on different servers**, configure a remote file source by following [these](/docs/send-data/installed-collectors/sources/remote-file-source) steps. Configure the **Path Expression** for Remote file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using **-f** flag, for example: `/var/log/vmware/output/`
 
 **For a syslog source, configure the syslog source in the following way:**
 
@@ -226,7 +226,7 @@ SSL_CAPATH: Certificate absolute path if SSL_VERIFY is True
 
 To collect performance metrics, do the following:
 
-1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/installed-collectors/sources/Streaming-Metrics-Source).
+1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source).
 2. Edit the properties in the bundled sumo.json properties file, as necessary.
 3. Go to the directory for the Sumo Logic scripts, and run the **esx_perf_metrics_6_5.py** script—which queries the vCenter Server for metrics—from that location (this script queries the vCenter Server for events) with the following command:
 ```bash
@@ -375,8 +375,8 @@ To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+1. From the **App Catalog**, search for and select the app.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

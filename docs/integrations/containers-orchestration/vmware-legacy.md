@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/vmware.png')} alt="VMware dashboards" width="50" />
 
-A newer app, [VMware ULM](/docs/integrations/containers-orchestration/VMware), is available. The App on this page is based on the vMA technology running on legacy vSphere versions 6.0 and prior. The vMA technology is no longer supported by VMware.
+A newer app, [VMware ULM](/docs/integrations/containers-orchestration/vmware), is available. The App on this page is based on the vMA technology running on legacy vSphere versions 6.0 and prior. The vMA technology is no longer supported by VMware.
 
 The Sumo Logic App for VMware allows you to:
 
@@ -26,7 +26,7 @@ The Sumo Logic App for VMware works with vCenter and vSphere 5.0, 5.1.0.1, 5.0.0
 * For vCenter and vSphere 5.5, use vMA 5.5.
 * For vCenter and vSphere 6.0, use vMA 6.0.
 
-For vSphere 6.5 and later please use [Sumo Logic App for VMware ULM](/docs/integrations/containers-orchestration/VMware).
+For vSphere 6.5 and later please use [Sumo Logic App for VMware ULM](/docs/integrations/containers-orchestration/vmware).
 
 Because vSphere CLI 5.1 has known issues with resxtop and SSL certifications, be sure to use vMA 5.1 Patch 1 (5.1.0.1). (The known issues in 5.1 are documented in the [Release Notes](https://www.vmware.com/support/developer/vcli/vcli51/vsp5_51_vcli_relnotes.html#knownissues).)
 
@@ -35,7 +35,7 @@ Because vSphere CLI 5.1 has known issues with resxtop and SSL certifications, be
 
 The Sumo Logic App for VMware collects logs from vCenter Servers to analyze vCenter Server Events and Performance Data in real time to enable monitoring and detect important events within your virtual environment.
 
-For information on collecting unified logs and metrics for VMware, see [VMware ULM](/docs/integrations/containers-orchestration/VMware).
+For information on collecting unified logs and metrics for VMware, see [VMware ULM](/docs/integrations/containers-orchestration/vmware).
 
 
 ## Sample Log Message
@@ -77,7 +77,7 @@ Make sure to download the package for your version of vMA and vCenter.
 
 ## Collect logs for the VMware (Legacy) App
 
-A newer app, [VMware ULM](/docs/integrations/containers-orchestration/VMware), is available. The App on this page is based on the vMA technology running on legacy vSphere versions 6.0 and prior. The vMA technology is no longer supported by VMware.
+A newer app, [VMware ULM](/docs/integrations/containers-orchestration/vmware), is available. The App on this page is based on the vMA technology running on legacy vSphere versions 6.0 and prior. The vMA technology is no longer supported by VMware.
 
 The logs collected from vCenter Servers enable you to use the Sumo Logic Application for VMware search, visualize, and analyze vCenter Server Events and Performance Data in real time to enable monitoring and detect important events within your virtual environment.
 
@@ -353,7 +353,7 @@ Once you are satisfied with the time it takes for collecting data for a segment,
 
 ## Install the VMware (Legacy) App
 
-A newer app, [VMware ULM](/docs/integrations/containers-orchestration/VMware), is available. The App on this page is based on the vMA technology running on legacy vSphere versions 6.0 and prior. The vMA technology is no longer supported by VMware.
+A newer app, [VMware ULM](/docs/integrations/containers-orchestration/vmware), is available. The App on this page is based on the vMA technology running on legacy vSphere versions 6.0 and prior. The vMA technology is no longer supported by VMware.
 
 Now that you have set up collection, install the Sumo Logic App for VMware to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
@@ -361,8 +361,8 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+1. From the **App Catalog**, search for and select the app.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

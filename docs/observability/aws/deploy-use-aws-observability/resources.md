@@ -6,7 +6,7 @@ description: Learn more about AWS Observability resources created and modified a
 ---
 
 
-The CloudFormation template (CFN) creates a number of resources at deployment, in AWS, and in Sumo Logic. You will use the template when setting up the solution. See [Before You Deploy](/docs/observability/aws/deploy-use-aws-observability/Before-You-Deploy) for prerequisites and instructions to configure.
+The CloudFormation template (CFN) creates a number of resources at deployment, in AWS, and in Sumo Logic. You will use the template when setting up the solution. See [Before You Deploy](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy) for prerequisites and instructions to configure.
 
 * For more information on the solution and features, see [About AWS Observability](/docs/observability/aws/about).
 

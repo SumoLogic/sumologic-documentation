@@ -21,16 +21,46 @@ The AWS API Gateway ULM app uses the following logs and metrics:
 ### Sample CloudTrail Log Message
 
 ```json
-{"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"A12445W32RZN24HABCD12",
-"arn":"arn:aws:iam::123408221234:user/bob","accountId":"123408221234","accessKeyId":
-"ASIAZ123456Y3IMWK7X5","userName":"bob","sessionContext":{"sessionIssuer":{},"webIdFederationData":
-{},"attributes":{"mfaAuthenticated":"true","creationDate":"2020-02-17T08:08:01Z"}},"invokedBy":
-"signin.amazonaws.com"},"eventTime":"2020-02-17T08:08:01Z","eventSource":"apigateway.amazonaws.com",
-"eventName":"GetRestApi","awsRegion":"us-east-1","sourceIPAddress":"149.236.17.11","userAgent":
-"signin.amazonaws.com","requestParameters":{"restApiId":"w1234nsgjxf","template":false},
-"responseElements":null,"requestID":"1234169e-e70a-44a1-a691-3cd3f857092a","eventID":
-"051572b0-83ef-49a3-82f6-bbef1ac8c488","readOnly":true,"eventType":"AwsApiCall","recipientAccountId":
-"123408221234"}
+{
+	"eventVersion":"1.05",
+	"userIdentity":{
+		"type":"IAMUser",
+		"principalId":"A12445W32RZN24HABCD12",
+		"arn":"arn:aws:iam::123408221234:user/bob",
+		"accountId":"123408221234",
+		"accessKeyId":"ASIAZ123456Y3IMWK7X5",
+		"userName":"bob",
+		"sessionContext":{
+			"sessionIssuer":{
+
+			},
+			"webIdFederationData":{
+
+			},
+			"attributes":{
+				"mfaAuthenticated":"true",
+				"creationDate":"2020-02-17T08:08:01Z"
+			}
+		},
+		"invokedBy":"signin.amazonaws.com"
+	},
+	"eventTime":"2020-02-17T08:08:01Z",
+	"eventSource":"apigateway.amazonaws.com",
+	"eventName":"GetRestApi",
+	"awsRegion":"us-east-1",
+	"sourceIPAddress":"149.236.17.11",
+	"userAgent":"signin.amazonaws.com",
+	"requestParameters":{
+		"restApiId":"w1234nsgjxf",
+		"template":false
+	},
+	"responseElements":null,
+	"requestID":"1234169e-e70a-44a1-a691-3cd3f857092a",
+	"eventID":"051572b0-83ef-49a3-82f6-bbef1ac8c488",
+	"readOnly":true,
+	"eventType":"AwsApiCall",
+	"recipientAccountId":"123408221234"
+}
 ```
 
 ### Sample Query (Metric based)
@@ -74,7 +104,7 @@ _sourceCategory=Labs/AWS/CloudTrail/APIGateway "apigateway.amazonaws.com" Namesp
 
 ## Collect AWS API Gateway Events using CloudTrail
 
-1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-CloudTrail-Source).
+1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source).
    * **Name**. Enter a name to display for the new Source.
    * **Description**. Enter an optional description.
    * **S3 Region**. Select the Amazon Region for your DynamoDB S3 bucket.
@@ -125,9 +155,7 @@ Use this dashboard to:
 
 ### Audit Events
 
-**AWS API Gateway - Audit Events** dashboard provides detailed audit
-insights into API Gateway events by various dimensions including event
-names, trends, regions, user agents, and recipient account IDs.
+**AWS API Gateway - Audit Events** dashboard provides detailed audit insights into API Gateway events by various dimensions including event names, trends, regions, user agents, and recipient account IDs.
 
 Use this dashboard to:
 
@@ -140,9 +168,7 @@ Use this dashboard to:
 
 ### Latency, Cache
 
-**AWS API Gateway - Latency, Cache** dashboard provides insights into
-API Gateway performance including API requests, latency, API cache hits,
-and back-end cache misses.
+**AWS API Gateway - Latency, Cache** dashboard provides insights into API Gateway performance including API requests, latency, API cache hits, and back-end cache misses.
 
 Use this dashboard to:
 
@@ -170,17 +196,10 @@ Use this dashboard to:
 
 ### Enhanced Monitoring
 
-**AWS API Gateway - Enhanced Monitoring** dashboard provides detailed
-insights into API Gateway performance throughout your infrastructure,
-including the number and types of API calls, API resources, cache hits
-and misses, latency averages, and errors by HTTP method. 
+**AWS API Gateway - Enhanced Monitoring** dashboard provides detailed insights into API Gateway performance throughout your infrastructure, including the number and types of API calls, API resources, cache hits and misses, latency averages, and errors by HTTP method. 
 
 :::note
-For your API Gateway instance to send enhanced metrics, you must
-have explicitly enabled detailed CloudWatch metrics. You can do this in
-the AWS management console under a Stage settings tab by selecting
-Enable CloudWatch Metrics. Alternatively, you can call the update-stage
-AWS CLI command to update the metricsEnabled property to True.
+For your API Gateway instance to send enhanced metrics, you must have explicitly enabled detailed CloudWatch metrics. You can do this in the AWS management console under a Stage settings tab by selecting Enable CloudWatch Metrics. Alternatively, you can call the update-stage AWS CLI command to update the `metricsEnabled` property to True.
 :::
 
 Use this dashboard to:
@@ -192,6 +211,3 @@ Use this dashboard to:
 * Monitor the total number of client-side and server-side errors based on HTTP methods.
 
 ![3. AWS API Gateway - Enhanced Monitoring.png](/img/observability/api-gateway-monitoring.png)
-
-
- 
