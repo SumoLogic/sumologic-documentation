@@ -80,9 +80,10 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 ### Collecting Metrics for Amazon SNS  
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) or [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended).
-   * **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
-3. Click **Save**.
+2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) or [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended).
+3. Namespaces. Select **aws/sns**.
+4. **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. The **account** field allows you to query metrics.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Metadata%2Baccount.png')} alt="Metadata" />
+5. Click **Save**.
 
 
 ### Collecting Amazon SNS Events using CloudTrail
@@ -92,9 +93,9 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
     * **Description**. Enter an optional description.
     * **S3 Region**. Select the Amazon Region for your SNS S3 bucket.
     * **Bucket Name**. Enter the exact name of your SNS S3 bucket.
-    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string.
-      * DO NOT use a [leading forward slash](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).
-      * The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string.
+       * DO NOT use a [leading forward slash](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).
+       * The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category**. Enter a source category. For example, SNS_event.
     * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
     * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
@@ -107,7 +108,7 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 
 ### Field in Field Schema
 
-Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the `"topicname"` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
+Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the `"topicname"` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
 
 ### Field Extraction Rule(s)
@@ -149,7 +150,7 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. To install the app, click **Add to Library** and complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     * Enter the **SNS Metrics Source**.
@@ -210,7 +211,7 @@ Use this dashboard to:
 
 ### Amazon SNS - Threat Intel  
 
-The**  Amazon SNS - **Threat Intel** **dashboard provides insights across threat locations, count, malicious confidence and details.
+The **Amazon SNS - Threat Intel** dashboard provides insights across threat locations, count, malicious confidence and details.
 
 **Use this dashboard to**:
 * Monitor details of threat locations and count .
@@ -223,7 +224,7 @@ The**  Amazon SNS - **Threat Intel** **dashboard provides insights across threat
 
 ### Amazon SNS - Audit Events Details
 
-The **Amazon SNS - Audit Events Details** **dashboard provides insights across topics, subscriptions, read only and non read only events.
+The **Amazon SNS - Audit Events Details** dashboard provides insights across topics, subscriptions, read only and non read only events.
 
 Use this dashboard to:
 * Monitor details of topics created and deleted.
