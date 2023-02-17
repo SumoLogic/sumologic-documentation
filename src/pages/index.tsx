@@ -34,6 +34,7 @@ export const Home = () => {
       >
         <Box
           component={SumoLogicDocsLogo}
+          alt="Sumo Logic Docs logo"
           height={{
             md: 36,
             xs: 28,
@@ -47,6 +48,7 @@ export const Home = () => {
         sx={{
           bgcolor: 'white',
           backgroundImage: `url(${bgImage})`,
+          alt: 'hero image',
           backgroundPosition: {
             md: 'top',
             xs: 'left center',
@@ -104,7 +106,7 @@ export const Home = () => {
                   fontFamily='Lab Grotesque'
                   pb={2}
                   textAlign='left'
-                  variant='subtitle2'
+                  variant='p'
                 >
                   Get started quickly with our search, visualization, and analytics capabilities.
                 </Typography>
@@ -161,6 +163,7 @@ export const Home = () => {
             >
               <Box
                 component='img'
+                alt='hero background image'
                 src={heroImage}
                 width={{
                   lg: 450,

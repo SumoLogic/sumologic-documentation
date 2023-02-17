@@ -138,6 +138,7 @@ export const Footer = () => {
               alt: 'Sumo Logic YouTube',
               color: '#e3e3e3',
               href: 'https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw',
+              'aria-label': 'Sumo Logic YouTube',
               icon: faYoutube,
               size: 'lg',
               sx: {
@@ -151,6 +152,7 @@ export const Footer = () => {
               alt: 'Sumo Logic Twitter',
               color: '#e3e3e3',
               href: 'https://twitter.com/SumoLogic',
+              'aria-label': 'Sumo Logic Twitter',
               icon: faTwitter,
               size: 'lg',
               sx: {
@@ -162,7 +164,7 @@ export const Footer = () => {
             },
           ].map(({ alt, href, ...other }) => (
             <Tooltip key={href} title={alt}>
-              <Link rel='noreferrer noopener'>
+              <Link rel='noreferrer noopener' >
                 <Box
                   component={FontAwesomeIcon}
                   {...other}
