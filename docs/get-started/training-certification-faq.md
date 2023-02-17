@@ -41,11 +41,14 @@ For security reasons, you must must [verify your email address](#how-do-i-verify
 
 ### How do I obtain third-party service access?
 
-When you create a new organization in Sumo Logic, you will be logged in automatically the first time without using a password. This account is not yet activated or verified for SSO third-party access. An activation email will be sent to you automatically.
+When you create a new organization in Sumo Logic, you will be logged in automatically the first time (without using a password). After that, you'll receive an email asking you to activate your account. This step is required in order to:
 
-Users that do not authenticate to Sumo Logic using a username and password are required to complete the email verification process. This usually applies to users that access Sumo Logic through a third-party Single Sign-On (SSO) service implementing SAML, from the Heroku add-on, or from other Sumo Logic integration partners that provide SSO.
+* Access Sumo Logic through a third-party single sign-on (SSO) service implementing SAML.
+* Log into Sumo Logic through the Heroku add-on.
+* Log in using other Sumo Logic integration partners that provide SSO.
+* Access our in-product third-party services like **Community**, which lives on Salesforce.
 
-If you've not yet activated your account, you won't be able to access Help menu links connecting to third-party services like **Community** (Salesforce). Here's how to activate your account:
+Users that do not authenticate to Sumo Logic using a username and password are required to complete the email verification process. Here's how to activate your account:
 
 1. Go to **Help** > **Community**.
 2. You will be prompted to activate your account.
