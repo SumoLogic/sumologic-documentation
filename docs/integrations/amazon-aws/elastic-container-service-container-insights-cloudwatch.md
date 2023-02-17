@@ -470,7 +470,7 @@ Now that you have set up a [collection](https://help.sumologic.com/07Sumo-Logic
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1.  From the **App Catalog**, search for and select the app**.** 
+1.  From the **App Catalog**, search for and select the app. 
 2.  Select the **With Container Insights and Traces** version and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the [Install the Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
 3.  To install the app, complete the following fields.
     * **App Name.** You can retain the existing name or enter the app's name of your choice. 
