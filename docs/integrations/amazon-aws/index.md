@@ -334,5 +334,3 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
           <p>A guide to the Sumo Logic app for AWS Threat Intel.</p>
           </div>
         </div>                                                                                                                
-    </div>
-  </div>
