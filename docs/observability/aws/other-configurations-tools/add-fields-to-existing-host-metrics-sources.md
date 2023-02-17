@@ -69,25 +69,11 @@ An existing stack can be updated using a new version of CloudFormation Template 
 
 To update an existing stack, please follow the steps below:
 
-1. Locate the **Main Stack** created using CloudFormation template and Click **Update**.  
-
-    ![Step3.png](/img/observability/add-fields3.png)
-
-1. Select ‘Use Current Template’ and select **Next**.  
-
-    ![Step4.png](/img/observability/add-fields4.png)
-
-1. Add 1 to the ‘Force Update the Stack’ parameter value and click **Next.**  
-
-    ![Step5.png](/img/observability/add-fields5.png)
-
-1. On the **Review** page, check the C**hange set preview** for potential updates.  
-
-    ![Step6.png](/img/observability/add-fields6.png)
-
-1. Select the capabilities and Click **Update stack**.  
-
-    ![Step7.png](/img/observability/add-fields7.png)
+1. Locate the **Main Stack** created using CloudFormation template and Click **Update**.  <br/>  ![Step3.png](/img/observability/add-fields3.png)
+1. Select ‘Use Current Template’ and select **Next**.<br/>  ![Step4.png](/img/observability/add-fields4.png)
+1. Add 1 to the ‘Force Update the Stack’ parameter value and click **Next.** <br/>  ![Step5.png](/img/observability/add-fields5.png)
+1. On the **Review** page, check the C**hange set preview** for potential updates. <br/>  ![Step6.png](/img/observability/add-fields6.png)
+1. Select the capabilities and Click **Update stack**. <br/>  ![Step7.png](/img/observability/add-fields7.png)
 
 1. After the update is completed successfully, you can see **UPDATE_COMPLETE** status. If the update is not successful, please correct the errors and run the CloudFormation template again. 
 
@@ -102,31 +88,13 @@ Complete the prerequisites for StackSets as outlined in the [AWS documentation](
 Below are the steps to use the CloudFormation template with Stack Sets :
 
 1. Go to [Stack Sets](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacksets) in your AWS account.
-
 1. Click **Create StackSet**.  
-
     ![Step8.png](/img/observability/add-fields8.png)
-
-1. Paste the URL - https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.3.0/hostmetricsfields/host_metrics_add_fields.template.yaml in the Amazon S3 URL option and select **Next**.  
-1.
-    ![Step9.png](/img/observability/add-fields9.png)
-
+1. Paste the URL - https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.3.0/hostmetricsfields/host_metrics_add_fields.template.yaml in the Amazon S3 URL option and select **Next**. <br/>  ![Step9.png](/img/observability/add-fields9.png)
 1. Provide a Stack Set Name, provide the parameters as explained in the section above, and click **Next**.
-
-1. Add Tags if needed, select the Administrator role defined in the pre-requisites above, and click **Next**.
-
-    ![Step10.png](/img/observability/add-fields10.png)
-
-1. Provide the current account ID and select all the regions in the current account where you would like to deploy the template.  
-
-    ![Step11.png](/img/observability/add-fields11.png)
-
-1. In the Deployment options, keep the default values and click **Next**.  
-
-    ![Step12.png](/img/observability/add-fields12.png)
-
-1. Review the details, select the capabilities, and click **Submit**.  
-
-    ![Step13.png](/img/observability/add-fields13.png)
+1. Add Tags if needed, select the Administrator role defined in the pre-requisites above, and click **Next**.<br/>  ![Step10.png](/img/observability/add-fields10.png)
+1. Provide the current account ID and select all the regions in the current account where you would like to deploy the template.<br/>  ![Step11.png](/img/observability/add-fields11.png)
+1. In the Deployment options, keep the default values and click **Next**. <br/>  ![Step12.png](/img/observability/add-fields12.png)
+1. Review the details, select the capabilities, and click **Submit**. <br/>  ![Step13.png](/img/observability/add-fields13.png)
 
 Once you hit submit, the CloudFormation template installation will execute in all the regions of the account sequentially.

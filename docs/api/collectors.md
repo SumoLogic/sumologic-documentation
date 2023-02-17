@@ -184,7 +184,7 @@ The following table lists the API response fields for installed and hosted Colle
    </td>
    <td>JSON map of key-value <a href="/docs/manage/fields">fields</a> (metadata) to apply to the Collector.
 
-<p>To assign an <a href="/docs/manage/ingestion-volume/Ingest-Budgets">Ingest Budget</a> to the Collector use the field <code>_budget</code> with the Field Value of the Ingest Budget to assign. For example, if you have a budget with a Field Value of <code>Dev_20GB</code>, you would add:</p>
+<p>To assign an <a href="/docs/manage/ingestion-volume/ingest-budgets">Ingest Budget</a> to the Collector use the field <code>_budget</code> with the Field Value of the Ingest Budget to assign. For example, if you have a budget with a Field Value of <code>Dev_20GB</code>, you would add:</p>
 
 <code>fields=_budget=Dev_20GB</code>
    </td>

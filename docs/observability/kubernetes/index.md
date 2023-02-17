@@ -64,19 +64,19 @@ Once you have completed the above steps, you'll have installed the collection as
 
 If you don't see data in Sumo Logic, review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/troubleshoot-collection.md).
 
-#### Kubernetes Partner Apps
+### Kubernetes Partner Apps
 
 We provide an array of Partner Apps designed specifically for Kubernetes. The following CI/CD Partner Apps are initially available.
 ![K8s_PartnerApps_CI-CD.png](/img/kubernetes/K8s_PartnerApps_CI-CD.png)
 
 
-#### Sumo Logic Security Partner Apps
+### Sumo Logic Security Partner Apps
 
 We also provide a selection of security-focused Partner Apps with specialized detection and investigation features. The following a few of the Security Partner Apps that are initially available.
 ![K8s_PartnerApps_Security.png](/img/kubernetes/K8s_PartnerApps_Security.png)
 
 
-#### Get Certified
+### Get Certified
 
 The Sumo Kubernetes Analyst Certification is a hands-on class that shows you how to expand your knowledge of Kubernetes by solving common use cases.
 ![K8s_Kubernetes_Analyst_Cert.png](/img/kubernetes/K8s_Kubernetes_Analyst_Cert.png)
