@@ -67,7 +67,7 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 | :-- | :-- |
 | [Access Keys](access-keys.md) | `accessKeys` |
 | [Alerts](/docs/alerts/monitors/alert-response) | `alerts` |
-| [Collection](/docs/manage/collection) | `collection` |
+| [Collection](/docs/send-data/collection) | `collection` |
 | [Content Sharing](/docs/manage/content-sharing) | `content` |
 | [Data Forwarding](/docs/manage/data-forwarding) | `dataForwarding` |
 | [Field Extractions](/docs/manage/field-extractions) | `fieldExtractionRules` |

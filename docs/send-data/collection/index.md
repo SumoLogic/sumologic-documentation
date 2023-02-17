@@ -1,5 +1,5 @@
 ---
-slug: /manage/collection
+slug: /send-data/collection
 title: Using the Sumo Logic Collection UI
 description: Learn how to manage Collectors, Sources, and processing rules.
 ---

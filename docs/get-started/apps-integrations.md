@@ -1,10 +1,11 @@
 ---
 id: apps-integrations
 title: Apps and Integrations
+sidebar_label: Apps and integrations
 ---
 
 
-With apps we give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you.
+Sumo Logic apps give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you.
 
 ![app catalog](/img/get-started/library/App-Catalog.png)
 

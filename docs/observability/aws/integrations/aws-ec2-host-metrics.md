@@ -21,7 +21,7 @@ Host metrics are gathered by the open-source [SIGAR library](https://github.com/
 
 The time interval determines how frequently the source is scanned for metrics data. Sumo Logic supports pre-specified time intervals (10 seconds, 15 seconds, 30 seconds, 1 minute, and 5 minutes).
 
-You can also specify a time interval in JSON by using the interval parameter, as follows: "interval" : 60000
+You can also specify a time interval in JSON by using the interval parameter, as follows: `"interval" : 60000`.
 
 The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or longer granularity. Specifying a shorter interval will increase the message volume and could cause your deployment to incur additional charges.
 
@@ -135,8 +135,7 @@ The **AWS EC2 - Events** dashboard provides detailed insights into all CloudTrai
 Use this dashboard to:
 
 * Monitor all EC2-related audit logs available via CloudTrail events.
-* Monitor incoming user activity locations for both successful and failed events with failure reasons, location of incoming user activity, top IAM users, AssumedRole
-  users, and user agents to ensure they match expectations.
+* Monitor incoming user activity locations for both successful and failed events with failure reasons, location of incoming user activity, top IAM users, AssumedRole users, and user agents to ensure they match expectations.
 * Quickly identify top error codes to diagnose any outages.
 * Monitor trends around failed events to identify potential service disruptions that could warrant deeper investigation.
 * Monitor requests coming in from known malicious IP addresses detected via Sumo Logic Threat Intel.
