@@ -1,6 +1,7 @@
 ---
 slug: /get-started
 title: Welcome to Sumo Logic
+tags: [get started, getting started]
 ---
 
 import Iframe from 'react-iframe';
