@@ -12,7 +12,7 @@ Sumo Logic supports data enrichment using metadata and lookups.
 ## Using Metadata
 Metadata is typically from your system or environment, and adds context about what or where the data came from and any associated services or apps. Logs and metrics use metadata that can be customized to anything you need.
 
-* **Log metadata**. In addition to having more data to reference in query operations, this allows you to define a more specific scope of data in search expressions, improving search performance, and allows more specific search filters in Roles and routing expressions in Partitions.
+* **Log metadata**. In addition to having more data to reference in query operations, this allows you to define a more specific scope of data in search expressions, improve search performance, and allows more specific search filters in Roles and routing expressions in Partitions.
   * Log metadata is configured in Sumo as [fields](/docs/manage/fields) consisting of key-value pairs that are tagged to logs during collection.
     * You can define fields with [Field Extraction Rules](/docs/manage/field-extractions) by parsing fields when log messages are ingested.
     * You can define fields on data sent to Sumo by manually defining them on Sources and Collectors.
