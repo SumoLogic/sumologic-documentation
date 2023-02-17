@@ -1,7 +1,7 @@
 ---
 id: onboarding-checklists
 title: Getting Started Checklists for Administrators
-sidebar_label: Onboarding Checklists
+sidebar_label: Onboarding checklists
 ---
 
 Click each link to go to each Help topic for all the details, then come back to this checklist to continue.
