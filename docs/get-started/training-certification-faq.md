@@ -1,6 +1,6 @@
 ---
 id: training-certification-faq
-title: Sumo Logic Training and Certification
+title: Sumo Logic Training and Certification FAQ
 sidebar_label: Training and Certification
 ---
 
@@ -8,71 +8,46 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Learning at Sumo Logic will help you build the skills necessary to achieve your organization's goals using our platform to make the world’s apps reliable and secure.
 
-We offer courses in different delivery formats including online (live and on-demand) and in-person training, **for free**. Customized training is also available through our private offering.
+We offer courses online (live and on-demand) and in-person **for free**. Customized training is also available through our private offering.
 
-
-## Learning resources available
-
-From your Sumo Logic service account, you have access to the entire training curriculum. You will be provided with:
-
-* **The Sumo Logic Training Portal**. The Training Portal is available in your Sumo Logic account from the **Certification** tab.
-* **The Sumo Logic Training Lab Environment**. The Training Lab environment is a separate instance of Sumo Logic that has been curated and set up to work along with our training curriculum.
-
+* [**Sumo Logic Training Portal**](#training-portal), only available in-product, where you'll find our courses and certifications. To browse our certification descriptions, see [Sumo Logic Training and Certifications](https://www.sumologic.com/learn/certifications).
+* [**Sumo Logic Training Lab Environment**](#training-lab-environment), curated and set up to work along with our training curriculum.
+* [**Sumo Logic Partner Training**](https://partnertraining.sumologic.com), dedicated technical training for Sumo Logic partners. To sign up, you'll need an access code, which you can obtain from your account manager.
 
 ## Training Portal
 
 ### How do I access the Training Portal?
 
-Access to self-paced training is available only from the product, from our **Training Portal**.
+1. First, log in to Sumo Logic.
+1. From the **Home** page, click the **Certification** tab.
+1. Click **Get Certified**. You'll be redirected to the portal page, where you can access all courses and certifications.
 
-The **Training Portal** is available in Sumo Logic from the **Certification** tab as shown below:
+<details><summary><strong>Get Certified</strong> link not working? Make sure to verify your email address.</summary>
 
-1. From the **Home** page, go to **Certification** tab.
-2. Click **Get Certified**.
-3. You will be navigated to the portal page: **learn.sumologic.com**. <br/> (image1.gif "image_tooltip")
+For security reasons, you must must [verify your email address](#how-do-i-verify-my-email-address) in order to access [third-party services within Sumo Logic](#how-do-i-obtain-third-party-service-access). If you have a working Sumo Logic username and password, then your email address is considered verified.
 
-<!--
-### How do I get to certifications and training?
-
-You must access certifications from the product. The certification page is available in the Sumo Logic service by clicking **Certification** along the top of the **Home** tab.
+</details>
 
 ![certs](/img/get-started/certifications.gif)
 
-We also have more information on certifications on [our external site](https://www.sumologic.com/learn/certifications).
--->
 
+### How do I verify my email address?
 
-### When clicking the Get Certified link nothing happens, the Training Portal does not come up
-
-Sumo Logic contains several links that connect to third-party services. For security reasons, you must must verify your email address in order to access these services. If you have a working Sumo Logic username and password, then your email address is considered verified.
-
-Users that do not authenticate to Sumo Logic using a username and password are required to complete the email verification process. This usually applies to users that log in using a third-party Single Sign-On (SSO) service implementing SAML, users that access Sumo Logic from the Heroku add-on, and users of other Sumo Logic integration partners that provide SSO.
-
-:::sumo For Partners
-Dedicated technical training for Sumo Logic partners is available at [https://partnertraining.sumologic.com](https://partnertraining.sumologic.com). You'll need an access code to register the first time. Contact your account manager for the access code.
-:::
-
-
-### How do I verify my email?
-
-1. Go to **Help** > **Community** (Support or Feature Request will work as well).
+1. Go to **Help** > **Community**.<br/> ![verify-email](/img/get-started/verify-email.gif)
 1. You will be prompted to verify your email. Click **Send Verification Email**.
-1. Check your email for the Sumo Logic Email Verification Request.
+1. Check your email inbox for the verification request.
 1. Open the email and click **Verify Your Email**.
-1. Your email is verified, and you will be given access to the third-party service.
+1. Now that your email is verified, you'll be able access to third-party services.
 
-(image2.gif "image_tooltip")
+### How do I obtain third-party service access?
 
+When you create a new organization in Sumo Logic, you will be logged in automatically the first time without using a password. This account is not yet activated or verified for SSO third-party access. An activation email will be sent to you automatically.
 
-### Secure Third-Party Access and New Organizations
+Users that do not authenticate to Sumo Logic using a username and password are required to complete the email verification process. This usually applies to users that access Sumo Logic through a third-party Single Sign-On (SSO) service implementing SAML, from the Heroku add-on, or from other Sumo Logic integration partners that provide SSO.
 
-When you create a new Sumo Logic organization, you will be logged in automatically the first time without using a password. This account is not yet activated or verified for SSO third-party access, but an activation email will be sent to you automatically.
+If you've not yet activated your account, you won't be able to access Help menu links connecting to third-party services like **Community** (Salesforce). Here's how to activate your account:
 
-If you have not yet activated your account, if you try to access a link in the Help menu connected to third-party services, such as Community (Salesforce), you will be prompted to activate your account, and a new activation email will be sent. You must activate your account via the email before you can access a third-party service through Sumo Logic.
-
-To activate your account:
-
-1. Go to **Help** > **Community**
+1. Go to **Help** > **Community**.
 2. You will be prompted to activate your account.
 3. Click **Send Activation Email**.
 
@@ -81,23 +56,26 @@ To activate your account:
 
 The Training Lab Environment will enable you to get hands-on practice following the lessons covered in our learning experiences. A Sumo Logic environment curated to work with the examples and lab exercises provided with our courses is available 24/7 all year round for you to practice.
 
-### How do I access the Training Lab Environment?
+### How do I access the Training Lab environment?
 
-1. Choose a number between 001 and 999. Remember this number, since you'll use it in all your labs.
+1. Choose a number between 001 and 999. Remember this number, since you'll use it in all of your labs.
 1. Open a new window in a different browser. For example, if you're reading this on Chrome, open a Firefox window. Using separate browsers will keep you logged in to your regular Sumo Logic account and the training lab environment at the same time.
-1. Navigate to **`https://service.sumologic.com`** in the new browser window you opened in Step 2.
+1. In the new browser window, go to [https://service.sumologic.com](https://service.sumologic.com).
 1. Enter the credentials found at the top of the **Become a Sumo Expert** page of the **Training Portal**.
   :::note
   The Training Lab Environment password changes monthly, so you may have to check back there often.
   :::
-1. You'll know you have access when you see "Sumo Logic Training" when you hover over the user in the bottom left corner.
-1. Save your training username for use during this training. It's a good idea to have both the Sumo Logic training lab environment and this self-paced program open in separate windows, so you can toggle between them. Be careful not to take exams or self-paced courses with training account credentials!
+1. You'll know you have access when you see **Sumo Logic Training** when you hover over the user in the bottom left corner.
+1. Save your training username for use during this training. It's a good idea to have both the Sumo Logic training lab environment and this self-paced program open in separate windows, so you can toggle between them.
+  :::important
+  Be careful not to take exams or self-paced courses with training account credentials!
+  :::
 
-### Where can I find the credentials to access the training lab environment to complete the hands-on activities?
+### Where can I find the Training Lab credentials?
 
 Credentials change monthly. We post them on the training portal in the **Become a Sumo Logic Expert** section.
 
-(image3.gif "image_tooltip")
+![credentials](/img/get-started/credentials.gif)
 
 
 ## Self-Paced Training
@@ -106,37 +84,25 @@ With our Self-Paced eLearning, you can learn at your own pace, anywhere, without
 
 ### How do I access Self-Paced training?
 
-Access to self-paced training is available only from the product, from our **Training Portal**.
-
-The **Training Portal** is available in Sumo Logic from the **Certification** tab as shown below:
-
-(image4.gif "image_tooltip")
-
+Self-paced training is available in our [Training Portal](#how-do-i-access-the-training-portal).
 
 ### What content is available Self-Paced?
 
 Everybody learns differently, we offer different options to adapt to your learning needs:
 
-**Learning Paths:** you can learn at your own pace guided by our product oriented **Learning Paths**.
-
-The following **Learning Paths** are available under the **Become a Sumo Logic Expert** section of our **Training Portal**:
-
-* General
-* Observability
-* Security
-
-**Micro Lessons:** access our growing, curated library of quick tutorials, short demos and best practices, learn something new in just minutes. Check out the **Learn New Skills** section from our **Training Portal** to access this content.
-
-**Recorded Live Training** did you miss a Cert Jam or a workshop? Watch recordings of past sessions, download the student lab guide and a copy of the slides.
+* **Learning Paths**: you can learn at your own pace guided by our product oriented **Learning Paths**. The following **Learning Paths** are available under the **Become a Sumo Logic Expert** section of our **Training Portal**:
+   * General
+   * Observability
+   * Security
+* **Micro Lessons**: access our growing, curated library of quick tutorials, short demos and best practices, learn something new in just minutes. Check out the **Learn New Skills** section from our **Training Portal** to access this content.
+* **Recorded Live Training**: did you miss a Cert Jam or a workshop? Watch recordings of past sessions, download the student lab guide and a copy of the slides.
 
 
 ### How do I register for a Self-Paced course?
 
-1. Navigate to your course of interest.
-2. Select the course by clicking on it.
-3. Click **Register**.
+Navigate to your course of interest and click on it, then click **Register**.
 
-(image5.gif "image_tooltip")
+![register](/img/get-started/register.gif)
 
 <!--
 ## How do I register for a course or exam?
@@ -149,82 +115,52 @@ The following **Learning Paths** are available under the **Become a Sumo Logic E
 ### How do I navigate inside a Self-Paced course?
 
 1. Select the course.
-2. Select the section your want to review.
-3. View all the materials, correctly answer all knowledge checks and complete all progress checks to be able to advance to the next section in the course.
-4. Click **Next** or **Submit** after each section so your progress is tracked by the system.
-5. Click **Go to results** when you get to the end of the section.
-6. If you passed the section, you will get a congratulations message.
-7. Click **Submit Results**.
-8. Rate the section and submit a review. Tell us what you liked or didn’t
-9. After your feedback is recorded you can click **Close Course** to update your progress.
-10. Verify your results were submitted correctly by looking for the blue checkmark next to the section you just completed.
-11. Continue with the next section of the course until you finish all sections available.
+1. Select the section your want to review.
+1. View all the materials, correctly answer all knowledge checks, and complete all progress checks to be able to advance to the next section in the course.
+1. Click **Next** or **Submit** after each section so your progress is tracked by the system.
+1. When you get to the end of the section, click **Go to results**. If you've passed the section, you will get a congratulations message.
+1. Click **Submit Results**.
+1. Rate the section and submit a review. Tell us what you liked or didn’t like.
+1. After your feedback is recorded, you can click **Close Course** to update your progress.
+1. Verify your results were submitted correctly by looking for the blue checkmark next to the section you just completed. This will unlock the next section of the course.
+1. Continue with the next section of the course until you finish all sections available.
 
-<!--
-## How do I navigate inside a course?
+![exam navigate](/img/get-started/exam-navigate.gif)
 
-1. Select the course you want to take.
-1. Select the section you want to study.
-1. View all the materials, correctly answer all knowledge checks, and complete all progress checks. Click **Next** or **Submit** after each section.
-1. Click **Go to results** when you get to the last section.
-1. If you passed the class, you’ll get a congratulations message. Click **Submit results**.
-1. Rate the section and submit a review. Tell us what you liked or didn’t like. Then click **Submit**. 
-1. After your feedback, you can click **Close course**. 
-1. Verify your results were submitted correctly by looking for the blue checkmark next to the section you just completed. 
-1. You’ve unlocked the next section. Continue through until the end of the course.
-
-    ![exam navigate](/img/get-started/exam-navigate.gif)
--->
-
-
-### I get an error message when starting a new lesson
-
-If you're seeing the following error, this is typically due to a browser setting.
-
-<img src={useBaseUrl('img/get-started/error.png')} alt="icon" width="300"/>
-
-* Refresh your browser. Clear your browser’s cookies and cache.
-* Close and reopen your browser.
-* Browser or network settings disable or block Third Party Cookies. The training portal will use Cookies to authorize access to specific learning content. To solve this error, add **`[*.]sj-cdn.net (about:blank)`** as a trusted site in your browser's privacy settings or update browser settings to allow third-party cookies.
-* Confirm your internet connection.
-* Attempt to play the video or reload the lesson in an Incognito or Private window by clicking your browser's menu button and selecting "New Incognito/Private Window".
-   * If the content successfully loads in the new window, this is an indicator that a browser extension is likely preventing the content from loading.
-* For troubleshooting Video Error Code 232011 or `Cannot load M3U8: Crossdomain access denied` error messages, work with your IT network team to check on your firewall status.
-   * If you have a firewall, you can allow a particular HTTP header: `Access-Control-Allow-Origin: *`
-
-(image6.png "image_tooltip")
 
 ### How do I complete a course?
 
-Make sure you have completed all sections of the course.
+Make sure to complete all sections of the course.
 
 
-## Certification
+### How do I fix the Data Pipeline error?
+
+If you're seeing the following error when starting a new lesson, this is typically due to a browser setting.
+
+<img src={useBaseUrl('img/get-started/error.png')} alt="error" />
+
+Here are some fixes:
+
+* Refresh your browser. Clear your browser’s cookies and cache.
+* Close and reopen your browser.
+* Browser or network settings disable or block Third Party Cookies. The training portal will use Cookies to authorize access to specific learning content. To solve this error, add `[*.]sj-cdn.net (about:blank)` as a trusted site in your browser's privacy settings or update browser settings to allow third-party cookies.
+* Confirm your internet connection.
+* Attempt to play the video or reload the lesson in an Incognito or Private window by clicking your browser's menu button and selecting "New Incognito/Private Window".
+   * If the content successfully loads in the new window, this is an indicator that a browser extension is likely preventing the content from loading.
+* For troubleshooting `Video Error Code 232011` or `Cannot load M3U8: Crossdomain access denied` error messages, work with your IT network team to check on your firewall status.
+   * If you have a firewall, you can allow a particular HTTP header: `Access-Control-Allow-Origin: *`
+
+
+## Certifications
 
 We’ve done studies that show when you are Sumo Logic Certified, you gain greater insight into your data, search more efficiently and build impactful dashboards.
 
 ### How do I access an exam?
 
-Access to our certification exams is available only from the product, from our **Training Portal **under the **Get Certified **section.
+Access to our certification exams is available in our [Training Portal](#how-do-i-access-the-training-portal).
 
-The **Training Portal** is available in Sumo Logic  from the **Certification** tab as shown below:
 
-(image7.gif "image_tooltip")
-
-<!--
-### How do I complete an exam?
-
-Not much has changed but be sure to **Close course** to record your score!
-
-1. Answer all the exam questions. 
-1. Click **Submit all answers**.
-1. Click **Close course** to record the results.
-1. If you passed, you can now get your certificate. If you failed, you can try again.
-
-![complete exam](/img/get-started/complete-exam.gif)
--->
-
-### What certifications do we offer?
+### What certifications does Sumo Logic offer?
 
 **Sumo Logic Certified - Fundamentals**: Gain broad knowledge analyzing logs and metrics with the Fundamentals Certification. Get Sumo Logic up and running and learn to do simple filtering, data parsing, and analysis.
 
@@ -234,23 +170,19 @@ Not much has changed but be sure to **Close course** to record your score!
 
 **Sumo Logic Certified - Administration**: Receive critical Administration expertise on how to set up your organization with Sumo Logic as well as how to optimize and manage queries and content to make the whole team more effective.
 
-**Sumo Logic Certified - Cloud Security Analytics:** Learn how our Threat Intelligence can help you stay on top of your environment by matching IOCs like IP address, domain names, email addresses, and MD5 hashes. Also learn how to analyze AWS data to monitor account usage and monitor security groups effectively.
+**Sumo Logic Certified - Cloud Security Analytics**: Learn how our Threat Intelligence can help you stay on top of your environment by matching IOCs like IP address, domain names, email addresses, and MD5 hashes. Also learn how to analyze AWS data to monitor account usage and monitor security groups effectively.
 
-**Sumo Logic Certified - Cloud SIEM Fundamentals:** Learn how Cloud SIEM ingests your data and turns it into actionable security Insights. Get hands-on practice with threat investigation, take actions on Insights, and learn the basics of SOC content creation, like writing rules and custom Insights.
+**Sumo Logic Certified - Cloud SIEM Fundamentals**: Learn how Cloud SIEM ingests your data and turns it into actionable security Insights. Get hands-on practice with threat investigation, take actions on Insights, and learn the basics of SOC content creation, like writing rules and custom Insights.
 
-**Sumo Logic Certified - Cloud SIEM Administration:**Learn how to set up data ingestion for Cloud SIEM, including writing custom log and ingest mappings. Customize your environment with a deep dive into custom rules and Insight Actions.
+**Sumo Logic Certified - Cloud SIEM Administration**:Learn how to set up data ingestion for Cloud SIEM, including writing custom log and ingest mappings. Customize your environment with a deep dive into custom rules and Insight Actions.
 
-**Sumo Logic Certified - Kubernetes on Sumo Logic:** Swiftly navigate through Kubernetes cluster name spaces, services, nodes, and deployments and master monitoring and troubleshooting Kubernetes from alerts and dashboards to customized templates to address key use cases.
+**Sumo Logic Certified - Kubernetes on Sumo Logic**: Swiftly navigate through Kubernetes cluster name spaces, services, nodes, and deployments and master monitoring and troubleshooting Kubernetes from alerts and dashboards to customized templates to address key use cases.
 
 **Sumo Logic Certified - Observability Fundamentals**: Learn about Sumo Logic’s three pillars of the observability solution including Metrics, Tracing, and Logs and will become conversant with the use of the tools that will help you identify the root cause of an outage and trace the incidents to troubleshoot an issue.
 
-**Sumo Logic Certified - Observability Administration**: Deploy the AWS Observability solution using Cloudformation Template, gathering metrics from a Kubernetes cluster, and establishing trace points to gather trace data using Open Telemetry.
+**Sumo Logic Certified - Observability Administration**: Deploy the AWS Observability solution using CloudFormation Template, gathering metrics from a Kubernetes cluster, and establishing trace points to gather trace data using Open Telemetry.
 
 <!--
-### What certifications do we offer?
-
-We currently offer these certifications:
-
 * **Fundamentals** (Formerly "Level 1: Sumo Pro User") -  Certified Users possess broad knowledge around analyzing logs and metrics and have familiarity with the Sumo Logic service related to simple data searching, filtering, parsing and analyzing. Certified users can use Apps for out-of-the-box content that monitors their data, identifies trends, and keeps their users on top of critical events.
 * **Search Mastery** - Certified Users exhibit deep technical knowledge on how to analyze and correlate their logs and metrics to easily identify those critical events that are important to their organizations. In addition to taking advantage of out-of-the-box content, Certified Sumo Power Users can build Dashboards and Alerts for their custom apps, unlocking the power of Sumo Logic to analyze, measure and monitor the health of their environments.
 * **Metrics Mastery** - Certified Users exhibit deep technical knowledge on how to analyze and correlate their logs and metrics to easily identify those critical events that are important to their organizations. Build on the knowledge gained in Fundamentals to do more in-depth analysis with metrics. Identify critical events with ease and create the dashboards and alerts necessary to monitor your environment.
@@ -258,7 +190,6 @@ We currently offer these certifications:
 * **Cloud Security Analytics** - In this course, you'll create starter SOC queries as dashboard panels. These advanced operator queries help you monitor user activity across the globe, failed logins, land speed violations, brute force attacks, and more. You will create parameterized lookup tables for easy panel or dashboard pivots. You will learn how to export the starter SOC dashboard you created for use in your own environment. Lastly, you will be able to detect and investigate IOCs with the use of our embedded CrowdStrike database, which monitors malicious IPs addresses, and apply scheduled views as a best practice.
 * **Advanced Metrics with Kubernetes** - Certified users swiftly navigate through their Kubernetes cluster name spaces, services, nodes, and deployments. They quickly master Kubernetes for their organization with Sumo Logic from alerts and dashboards to customized templates to address key use cases.
 -->
-
 
 ### Do I have to take the certifications in order?
 
@@ -281,23 +212,21 @@ Instructor-led options:
 -->
 
 Self-paced option:
-* Learn on your own time at your own pace at no cost to you.
-* Self-Paced courses, lesson recordings and labs are accessible in Sumo Logic Once you understand the materials in the lesson recordings and have conducted the labs, you should be ready for the exam.
+* Learn on your own time, at your own pace, at no cost to you.
+* Self-Paced courses, lesson recordings, and labs are accessible in Sumo Logic. Once you understand the materials in the lesson recordings and have conducted the labs, you should be ready for the exam.
 
 <!--
-* Learn on your own time at your own pace at no cost to you. Lesson recordings and labs are accessible in Sumo Logic using the certification page as indicated in the image below. Once you understand the materials in the lesson recordings and have conducted the labs, you should be ready for the exam.
+* Lesson recordings and labs are accessible in Sumo Logic using the certification page as indicated in the image below.
 -->
 
 ### How long does it take to complete an exam?
 
-While the majority of our certification exams have a duration of 60-minute 30-question, we recommend checking the exam description beforehand.
+The majority of our certification exams have a duration of 60 minutes (30 questions). We recommend checking the exam description beforehand.
 
 On average, most candidates finish in 30 minutes.
 
 <!--
-### What are the exams like?
-
-All certifications have an online 60-minute 30-question examination. Most questions are multiple choice, and most people finish in 30 minutes on average. You're required to answer 75% of the questions correctly to get certification. You are free to take the exam whenever and wherever you like at no cost to you. Exams are open-book, open-note, and open-internet. You are encouraged to use this documentation site during the exam. You have multiple amount of attempts to pass an exam. Questions may be different and reordered on subsequent attempts.
+You are free to take the exam whenever and wherever you like at no cost to you. Exams are open-book, open-note, and open-internet. You are encouraged to use this documentation site during the exam. You have multiple amount of attempts to pass an exam. Questions may be different and reordered on subsequent attempts.
 -->
 
 ### What is the pass rate for the exams?
@@ -307,61 +236,52 @@ While the majority of our certification exams require you to answer 75% of the q
 
 ### What type of questions should I expect in the exam?
 
-Most questions are multiple choice.
-
-Exams are open-book, open-note, and open-internet. You are encouraged to use our documentation site during the exam. You have multiple attempts to pass an exam. Questions may be different and reordered on subsequent attempts.
+Most questions are multiple choice. Exams are open-book, open-note, and open-internet. You are encouraged to use our documentation site during the exam. You have multiple attempts to pass an exam. Questions may be different and reordered on subsequent attempts.
 
 
 ### Do I need to schedule an appointment to take an exam?
-
-You are free to take the exam whenever and wherever you like at no cost to you.
+No. You are free to take the exam whenever and wherever you like at no cost to you.
 
 
 ### When do certifications expire?
 
-Fundamentals will expire two years after being issued. All other certifications will expire after one year. You will receive two email notifications about expiration: one when your certification is 30 days from expiration, and another when your certification expires. 
+Fundamentals certifications expire two years after being issued. All other certifications expire after one year.
+
+You'll notified by email 30 days before a certification expires, and again immediately after a certification expires.
 
 
 ### How do I complete an exam?
 
 * Answer all the exam questions.
 * Click **Submit all answers**.
-* Click **Close course** to record the results. Skipping this step will mark the exam as incomplete.
-* If you pass, your certificate will be emailed to you. If you failed, you can try again.
+* Be sure to click **Close course** to record your results. Skipping this step will mark the exam as incomplete.
+* When you pass a course, your certificate will be emailed to you. If you've failed, you can try again.
+
+![complete exam](/img/get-started/complete-exam.gif)
 
 ### How do I view my certificate?
 
-* Click your profile in the upper right corner.
-* Select My Profile from the dropdown.
-* Find the exam you completed and click View certificate.
-
-(image8.gif "image_tooltip")
-
-<!--
-## How do I view my certificate?
-
-We have QR codes that allow you to share your score with anyone who wants to validate your cert.
-
 1. Click your profile in the upper right corner.
 1. Select **My Profile** from the dropdown.
-1. Find the exam you completed and click **View certificate.**
+1. Find the exam you completed and click **View certificate**.
 
 ![view cert](/img/get-started/view-cert.gif)
--->
+
 
 ### How do I share my certificate with others?
 
-Every Sumo Logic Certificate has a QR code and a link to a verification site so you can share your score with anyone who wants to validate your certification status.
+Each Sumo Logic certificate has a QR code and link to a verification site so you can share your score with anyone who wants to validate your certification status.
 
+![share cert](/img/get-started/share-cert.gif)
 
 ### How do I share my certificate on LinkedIn?
 
-* Click your profile in the upper right corner.
-* Select **My Profile** from the dropdown.
-* Find the exam you completed and click **Add to profile**.
-* Copy one piece of information, then click Launch LinkedIn in a new tab.
-* Paste the information in the LinkedIn form.
-* Continue moving between tabs to copy all the information.
-* When you’re finished, click **Save**.
+1. Click your profile in the upper right corner.
+1. Select **My Profile** from the dropdown.
+1. Find the exam you completed and click **Add to profile**.
+1. Copy one piece of information, then click Launch LinkedIn in a new tab.
+1. Paste the information in the LinkedIn form.
+1. Continue moving between tabs to copy all the information.
+1. When you’re finished, click **Save**.
 
-![share cert](/img/get-started/share-cert.gif)
+![linkedin](/img/get-started/linkedin.gif)
