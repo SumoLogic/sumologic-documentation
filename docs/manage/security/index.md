@@ -1,6 +1,6 @@
 ---
 slug: /manage/security
-title: Sumo Logic Security
+title: Security
 description: Learn how to set up security for Sumo Logic accounts.
 tags: [security]
 ---
