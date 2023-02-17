@@ -22,6 +22,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'get-started/index'},
       items: [
+        'get-started/overview',
         'get-started/onboarding',
         'get-started/sign-up',
         'get-started/account-setup',
@@ -32,9 +33,9 @@ module.exports = {
         'get-started/system-requirements',
         'get-started/keyboard-shortcuts',
         'get-started/quickstart',
+        'get-started/training-certification-faq',
         'get-started/help',
         'get-started/faq',
-        'get-started/certification-faq',
       ],
     },
     {
