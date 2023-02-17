@@ -30,15 +30,6 @@ For security reasons, you must must [verify your email address](#how-do-i-verify
 
 ![certs](/img/get-started/certifications.gif)
 
-
-### How do I verify my email address?
-
-1. Go to **Help** > **Community**.<br/> ![verify-email](/img/get-started/verify-email.gif)
-1. You will be prompted to verify your email. Click **Send Verification Email**.
-1. Check your email inbox for the verification request.
-1. Open the email and click **Verify Your Email**.
-1. Now that your email is verified, you'll be able access to third-party services.
-
 ### How do I obtain third-party service access?
 
 When you create a new organization in Sumo Logic, you will be logged in automatically the first time (without using a password). After that, you'll receive an email asking you to activate your account. This step is required in order to:
@@ -46,14 +37,20 @@ When you create a new organization in Sumo Logic, you will be logged in automati
 * Access Sumo Logic through a third-party single sign-on (SSO) service implementing SAML.
 * Log into Sumo Logic through the Heroku add-on.
 * Log in using other Sumo Logic integration partners that provide SSO.
-* Access our in-product third-party services like **Community**, which lives on Salesforce.
+* Access our in-product third-party services like **Get Certified** and **Community**
 
-Users that do not authenticate to Sumo Logic using a username and password are required to complete the email verification process. Here's how to activate your account:
+Users that do not authenticate to Sumo Logic using a username and password are required to complete the email verification process.
 
-1. Go to **Help** > **Community**.
-2. You will be prompted to activate your account.
-3. Click **Send Activation Email**.
+### How do I verify my email address?
 
+To activate/verify your account:
+
+1. Go to **Help** > **Community**.<br/> ![verify-email](/img/get-started/verify-email.gif)
+1. You will be prompted to activate your account.
+1. Click **Send Activation/Verification Email**.
+1. Open the email and click **Verify Your Email**.
+
+Now that your email is verified, you'll be able access to third-party services.
 
 ## Training Lab Environment
 

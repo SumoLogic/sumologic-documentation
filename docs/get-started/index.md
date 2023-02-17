@@ -13,13 +13,13 @@ Sumo Logic is an all-in-one platform for monitoring, analyzing, troubleshooting,
   <div className="container">
   <img src={useBaseUrl('img/icons/business/video.png')} alt="icon" width="50"/>
   <h3><a href="/docs/get-started/overview">Quickstart videos</a></h3>
-  <p>Before diving in, check out our quickstart microlesson videos.</p>
+  <p>Before diving in, check out our quickstart microlessons.</p>
   </div>
 </div>
 <div className="box box2 card">
   <div className="container">
   <img src={useBaseUrl('img/icons/general/check-mark.png')} alt="icon" width="50"/>
-  <h3><a href="/docs/get-started/onboarding">Getting Started</a></h3>
+  <h3><a href="/docs/get-started/onboarding">Getting started</a></h3>
   <p>Get up and running quickly with Sumo Logic.</p>
   </div>
 </div>
@@ -33,7 +33,7 @@ Sumo Logic is an all-in-one platform for monitoring, analyzing, troubleshooting,
 <div className="box box4 card">
   <div className="container">
     <img src={useBaseUrl('img/icons/general/check-mark.png')} alt="icon" width="50"/>
-  <h3><a href="/docs/get-started/sign-up">Sign up and activation</a></h3>
+  <h3><a href="/docs/get-started/sign-up">Signup and activation</a></h3>
   <p>Sign up and activate your Sumo Logic account.</p>
   </div>
 </div>
