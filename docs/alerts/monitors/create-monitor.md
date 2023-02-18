@@ -191,7 +191,7 @@ This setting affects both the alert generation logic and the alert recovery logi
 For example, you want to be alerted when the CPU usage is over 60% `at all times` within a 5-minute window. If you set the count to 3, this means that you will only get an alert if you have at least 3 data points showing CPU usage above 60% within that 5-minute window. If you only have 2 data points, even if both of them show CPU usage above 60%, you won't get an alert.
 :::note
 This setting only works when you choose `at all times within` as the type of occurrence for the alert.  
-:::  |
+:::
 
 #### Outlier detection method
 
