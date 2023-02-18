@@ -7,6 +7,8 @@ sidebar_label: Help
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
+<img src={useBaseUrl('img/icons/business/support.png')} alt="icon" width="50"/>
+
 Our in-product **Help** menu provides links to quickly access Sumo Logic Support, feature requests, website, and more. Select **Help** in the left nav.
 
 <img src={useBaseUrl('img/get-started/help-menu.png')} alt="Help menu" width="400"/>
