@@ -354,12 +354,12 @@ You can call a SLO Lookup Table to view all SLO metadata in your environment. Th
 There are two ways to use it:
 
 * To join the results of your SLO precomputed data from `_view = sumologic_slo_output` with your metadata contained in the internal lookup table based on the joining key (`sloId`, `sloVersion`):
-  ```
+  ```sql
   _view=sumologic_slo_output
   | lookup * from sumo://content/slos on sloId, sloVersion
   ```
 * To enlists the contents of the lookup table:
-  ```
+  ```sql
   cat sumo://content/slos
   ```
 
@@ -371,7 +371,16 @@ You would need to create a custom graphic that combines multiple SLOs from multi
 1. Click on any SLO line item.
 1. Hover over the **Percentage budget remaining** panel, then click the three-dot icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="open-in-logsearch" width="150"/>
 1. In the search field, enter the following snippet. This will join data from multiple sources for your lookup table.
+  ```sql
+  _view=sumologic_slo_output
+  | lookup * from sumo: //content/slos on sloId, sloVersion
+  | where !isBlank (sloname) and slofolderpath matches "*"
+  | concat (sloname, " (", sloId, ")") as sloUniqueName
+  | sum (goodCount) as goodEvents, sum(totalCount) as totalEvents, last (compliancetarget) as target, last(slofolderpath) as sloPath, last(sliwindowsize) as sliwindowsize, last(slievaluationtype) as evaluationType by s1oUniqueName
+  | totalEvents - goodEvents as badEvents
+  | if (evaluationType = "Window", queryTimeRange() / 1000 / sliwindowsize, totalEvents) as denominator
+  | 100 * (1 - badEvents / denominator) as sli
+  | 100 * (sli - target) / (100 - target) as budgetRemaining
+  | fields sloUniqueName, budgetRemaining
   ```
-  ??
-  ```
-1. Click **Add to Dashboard** (lower right corner).<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" width="200"/>
+1. Click **Add to Dashboard**.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" width="200"/>
