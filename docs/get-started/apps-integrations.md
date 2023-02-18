@@ -35,25 +35,14 @@ Applications can be installed only by users with a Sumo Logic Professional or a
 To install an application:
 
 1. From the left nav, select **App Catalog**.
-1. Click the name of the app you'd like to install.
-
-    ![App_Catalog.png](/img/get-started/library/App-Catalog.png)
-
-1. Select the version of the service you're using and click **Add to Library.**  Version selection is applicable only to a few apps currently.
-
-    ![Install_App_Version.png](/img/get-started/library/Install_App_Version.png)
-
-1. In the the **Add to Library** popup:
-
-    ![App_Add-to-Library_Dialog.png](/img/get-started/library/App_Add-to-Library_Dialog.png)
-
-    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-    * **Log Source.** Select either of these options for the data source.
-
+1. Click the name of the app you'd like to install.<br/>  ![App_Catalog.png](/img/get-started/library/App-Catalog.png)
+1. Select the version of the service you're using and click **Add to Library.**  Version selection is applicable only to a few apps currently.<br/> ![Install_App_Version.png](/img/get-started/library/Install_App_Version.png)
+1. In the the **Add to Library** popup:<br/>  ![App_Add-to-Library_Dialog.png](/img/get-started/library/App_Add-to-Library_Dialog.png)
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
+   * **Log Source.** Select either of these options for the data source.
       * Choose **Source Category**, and select a source category from the list.
       * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). For more information see [Custom Data Filters](#custom-data-filters). 
-    * **Advanced**. (Optional) Select the **Location in Library**, the default is the Personal folder in the library.
-
+   * **Advanced**. (Optional) Select the **Location in Library**, the default is the Personal folder in the library.
 1. Click **Add to Library**.
 
 Once an app is installed, it will appear in the folder you selected. Your **Personal** folder is selected by default. From here, you can share it with your organization.
@@ -68,7 +57,7 @@ If you have multiple environments generating data that you want to monitor using
 1. Perform any prerequisites required for the particular Sumo Logic App in that environment. Each Sumo Logic App has unique requirements, so make sure to follow the specific instructions for that App.
 1. Install an instance of the Sumo Logic App for each environment, configure it to accept data from that environment, and rename the App to reflecting the deployed environment.
 
-Your data comes in from each of your environments (production, development, testing, etc.) into the corresponding installed Sumo Logic App. The environment data and its Sources are identified by Host Names and Source Categories as configured by you or your administrators.
+Your data comes in from each of your environments (like production, development, testing) into the corresponding installed Sumo Logic App. The environment data and its Sources are identified by Host Names and Source Categories as configured by you or your administrators.
 
 ### Example Installation
 
@@ -91,18 +80,13 @@ Each Sumo Logic App has unique requirements, so make sure to follow the specific
 #### Install an Instance of the Sumo Logic App for each Environment
 
 1. Install an instance of the Sumo Logic App for the first environment, **qa**.
-
    * If you have used Source Host to identify the environment, in the **Install Application** dialog, you can configure the app with a custom data filter using `_sourceHost=qa`.
    * If you have used a Source Category to delineate the deployment, when installing the app, you could configure it using the Source Category `_sourceCategory=qa-abc`.
    * Rename the title of the App to denote the environment it is configured for, for example, **Windows-QA**.
-
 1. Next, install an instance of the Sumo Logic app for the **prod** environment.
-
    * In the **Install Application** dialog, indicate the name of the environment in the Source Host, such as `_sourceHost=prod`.
    * Rename the title of the App to denote the environment it is configured for, for example, **Windows-Prod**.
-
 1. Finally, install an instance of the Sumo Logic app for the **perf** environment.
-
    * In the **Install Application** dialog, indicate the name of the environment in the Source Host, such as `_sourceHost=perf`.
    * Rename the title of the App to denote the environment it is configured for, for example, **Windows-Perf**.
 
@@ -117,8 +101,6 @@ Apps are dependent on the Source Category [metadata](/docs/search/get-started-w
 To change the Source Category used by an app, you can simply reinstall the same app. Currently, apps cannot be uninstalled or edited in any other way.
 
 For more information, see [Custom Data Filters](#custom-data-filters).
-
-
 
 ## Run Searches from Sumo Logic Apps
 
@@ -138,15 +120,9 @@ Searches from Enterprise Apps, which require a paid Professional Services contr
 
 To run a search from a Sumo Logic App:
 
-1. Find the Sumo Logic App for the data Source you would like to search in the App Catalog (**Library > Apps** in the classic UI). For example, we've picked Cloud Passage Halo's **Outlier in Critical Issues**.
-
-    ![Outlier in critical issues](/img/get-started/library/FindSearchInApp.png)
-
+1. Find the Sumo Logic App for the data Source you would like to search in the App Catalog (**Library > Apps** in the classic UI). For example, we've picked Cloud Passage Halo's **Outlier in Critical Issues**.<br/>  ![Outlier in critical issues](/img/get-started/library/FindSearchInApp.png)
 1. Find the search you want to run and click it.
-1. In the **Run Search** dialog, select a **Source Category** or enter a **Custom data filter** to run the search against.
-
-    ![Run a Search from an app](/img/get-started/library/RunSearch.png)
-
+1. In the **Run Search** dialog, select a **Source Category** or enter a **Custom data filter** to run the search against.<br/>  ![Run a Search from an app](/img/get-started/library/RunSearch.png)
 1. Click **Run Search**.
 
 The **Search** page opens, the search populates a new tab, and the search runs using the query's time range. If you would like to use a different time range, stop the search and reset it.
@@ -154,8 +130,7 @@ The **Search** page opens, the search populates a new tab, and the search runs
 If you don't have data that matches the requirements of the search query, or if you select the incorrect Source Category or data filter, you will either get no results, or bad results.
 
 :::note
-Searches included with the [Sumo Logic App for Data Volume](/docs/integrations/sumo-apps/data-volume-legacy "Data Volume App") do
-not require you to select a Source Category.
+Searches included with the [Sumo Logic App for Data Volume](/docs/integrations/sumo-apps/data-volume-legacy "Data Volume App") do not require you to select a Source Category.
 :::
 
 ### Custom Data Filters
@@ -169,17 +144,9 @@ However, if you want to use multiple metadata fields as your filter criteria, f
 #### Define a custom data filter
 
 1. In the App Catalog, select the application you want to install and click **Add to Library**.
-1. The **Add \<*AppName\>* to Library** popup, click the down arrow next to **Source Category**.
-
-    ![Custom Data Filter](/img/get-started/library/add-apache.png)
-
-1. A **Custom Data Filter** option appears. Click the option.
-
-    ![apache-custom-filter.png](/img/get-started/library/apache-custom-filter.png)
-
-1. Enter a filter expression in the **Custom Data Filter** field. For example filters, see [Example custom data filters](#example-custom-data-filters), below. 
-
-    ![apache-custom-filter-field.png](/img/get-started/library/apache-custom-filter-field.png)
+1. The **Add `<AppName>` to Library** popup, click the down arrow next to **Source Category**.<br/>  ![Custom Data Filter](/img/get-started/library/add-apache.png)
+1. A **Custom Data Filter** option appears. Click the option.<br/>  ![apache-custom-filter.png](/img/get-started/library/apache-custom-filter.png)
+1. Enter a filter expression in the **Custom Data Filter** field. For example filters, see [Example custom data filters](#example-custom-data-filters), below.<br/> ![apache-custom-filter-field.png](/img/get-started/library/apache-custom-filter-field.png)
 
 #### Example custom data filters
 
@@ -204,16 +171,11 @@ To install the app:
 
 1. From **App Catalog**, search for the **Log Analysis QuickStart App** app.
 1. Click **Log Analysis QuickStart App**.
-1. Click **Add to Library**, this will open a window.
-
-    ![LogAnalysis.png](/img/get-started/library/LogAnalysis.png)
-
+1. Click **Add to Library**, this will open a window.<br/> ![LogAnalysis.png](/img/get-started/library/LogAnalysis.png)
     :::note
     If you do not select the correct _sourceCategory, data will not be loaded into the app. If you don't know which _sourceCategory to select, ask the administrator who configured the Source.
     :::
-
-    **Select from _sourceCategory values.** Choose an existing _sourceCategory present in your account used for your Sumo Logic data.
-
+1. **Select from `_sourceCategory` values**. Choose an existing `_sourceCategory` present in your account used for your Sumo Logic data.
 1. Click on **Advanced**, choose either the Personal folder or a subfolder in the Personal folder. (Click the blue + to create a new subfolder).
 1. Click **Add to Library**. A dialog will confirm the app is installed successfully.
 
