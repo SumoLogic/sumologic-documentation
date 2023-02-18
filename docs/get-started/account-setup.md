@@ -7,6 +7,8 @@ description: Update and manage your Sumo Logic account.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="50"/>
+
 You can review and update your account settings at any time through the **Preferences** page.
 
 ## Forgot Password

@@ -1,9 +1,13 @@
 ---
 id: overview
-title: About Sumo Logic
+title: Sumo Logic Overview
+sidebar_label: Sumo Logic overview
 ---
 
 import Iframe from 'react-iframe';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/business/video.png')} alt="icon" width="50"/>
 
 Sumo Logic is a cloud data analytics platform that focuses on Security, Operations, and Business Intelligence use cases. It also provides elastic processing to collect, manage, and analyze the log data, regardless of type, volume, or location. Sumo Logic provides real-time insights into online operations and customer behavior.
 
