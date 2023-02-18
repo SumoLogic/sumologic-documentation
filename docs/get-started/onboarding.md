@@ -9,7 +9,7 @@ tags: [get started, getting started]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/get-started.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/get-started.png')} alt="Thumbnail icon" width="40"/>
 
 Sumo Logic is an all-in-one platform for monitoring, analyzing, troubleshooting, and visualizing data from your application and network environment. This Onboarding Checklist provides the tasks you'll need to start your Sumo Logic experience.
 
