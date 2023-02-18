@@ -1,7 +1,7 @@
 ---
 id: system-requirements
 title: Sumo Logic System Requirements
-sidebar_label: System Requirements
+sidebar_label: System requirements
 description: Supported Browsers and other requirements for running Sumo Logic.
 ---
 
@@ -21,9 +21,8 @@ Sumo Logic tests the service on several browsers to ensure a consistent experie
 | Microsoft Edge\* | Latest two versions    |
 | Safari\*\*       | Latest two versions    |
 
-\*For non-Safari browsers we support the last two major versions; that is, if the latest browser version is 25.1.5, we support versions from 24.0.0 to 25.1.1.
-
-\*\*For Safari we support the last two minor versions; that is, if the latest browser version is 25.2.5, we support versions from 25.1.0 to 25.2.1. If the latest version is 25.0.5 and the last 24.x version was 24.4.3, we support versions from 24.4.0 to 25.1.5.
+* For non-Safari browsers, we support the last two major versions; that is, if the latest browser version is 25.1.5, we support versions from 24.0.0 to 25.1.1.
+* For Safari, we support the last two minor versions; that is, if the latest browser version is 25.2.5, we support versions from 25.1.0 to 25.2.1. If the latest version is 25.0.5 and the last 24.x version was 24.4.3, we support versions from 24.4.0 to 25.1.5.
 
 ## Installed Collector Requirements
 

@@ -40,7 +40,6 @@ values={[
   helm repo add sumologic https://sumologic.github.io/sumologic-kubernetes-collection
   helm repo update
   ```
-
 1. Get your [Sumo Logic Access ID and Access Key](/docs/manage/security/access-keys) and run the following command:
   ```shell
   helm upgrade --install my-release sumologic/sumologic \
@@ -77,7 +76,6 @@ If you're adding additional configuration, we recommend using the [helm values f
   --set "sumologic.setup.monitors.notificationEmails={EMAIL ADDRESS}"
   | tee sumologic.yaml
   ```
-
 1. Install the required CRDs and apply the generated YAML:
   ```shell
   kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_probes.yaml \

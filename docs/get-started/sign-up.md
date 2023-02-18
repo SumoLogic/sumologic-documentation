@@ -1,9 +1,9 @@
 ---
 id: sign-up
-title: Sign Up and Activate
+title: Sign Up and Activate Your Account
+sidebar_label: Signup and activation
 description: Sign Up with Sumo Logic, creating and activating your account.
 ---
-
 
 Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data—without having to manage and scale any hardware or storage. With Sumo Logic Free, you can open a free account and start using Sumo Logic right away.
 
@@ -31,7 +31,7 @@ You have a couple options to create and activate an account:
 * [Free Trial Account](#free-trial-accounts) through the Sumo Logic site
 * [AWS Marketplace](#aws-marketplace) through AWS and completes through Sumo Logic
 
-:::sumo 
+:::sumo
 For Sumo Logic terms and conditions, see https://www.sumologic.com/support-terms.
 :::
 
