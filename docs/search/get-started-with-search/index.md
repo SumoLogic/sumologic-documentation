@@ -27,7 +27,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <h4><a href="/docs/search/get-started-with-search/search-page">How to use the Search Page</a></h4>
+  <h4><a href="/docs/search/get-started-with-search/search-page">Using the Search Page</a></h4>
   <p>Understand the basic components of the Search window and how they can help you investigate your issues.</p>
   </div>
 </div>
