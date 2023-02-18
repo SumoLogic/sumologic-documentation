@@ -43,10 +43,14 @@ The **Preferences** page contains settings that apply just to your account. Opti
 
 Under **My Profile**, the following information is displayed:
 
-* **Organization ID** - Your Sumo Logic org ID
-* **Username** - Your username is the email address associated with the account
+* **Organization ID**. Your Sumo Logic org ID.
+* **Username** - Your username is the email address associated with the account.
 * **Password** -The password you entered when activating your account. You can reset your password.
-* **Roles** - The Sumo Logic roles assigned to your user account
+* **Roles** - The Sumo Logic roles assigned to your user account.
+
+#### For Administrators
+
+[Learn more](/docs/get-started/onboarding-checklists/#users-roles-and-security) about managing users/roles and more Administrator settings.
 
 ### My Security Settings
 
