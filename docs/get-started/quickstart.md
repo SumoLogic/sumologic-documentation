@@ -12,7 +12,7 @@ These quick start guides help you connect, integrate, configure, and start using
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <h3><a href="/docs/observability/aws/quickstart"><br/>AWS Observ.</a></h3>
+  <h3><a href="/docs/observability/aws/quickstart"><br/>AWS Observe.</a></h3>
   <p>Set up our AWS Observability integration in minutes.</p>
   </div>
 </div>
