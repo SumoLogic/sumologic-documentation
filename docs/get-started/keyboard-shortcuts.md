@@ -18,7 +18,7 @@ To disable keyboard shortcuts, for example, if they conflict with an internation
 ## Keyboard Shortcuts on macOS
 
 | Shortcut  | Description |
-|:-------------|:---------------------------------------------------------------|
+|:----------|:-------------------------------------------------------------|
 | alt+s       | Open a new Search tab                                         |
 | alt+shift+n | Duplicate current query in a new tab (search only)            |
 | alt+shift+d | Duplicate both the original query and time range in a new tab |
