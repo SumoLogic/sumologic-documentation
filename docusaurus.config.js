@@ -137,7 +137,6 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
-    'plugin-image-zoom',
     'react-iframe',
     ['@docusaurus/plugin-content-docs',
       {
