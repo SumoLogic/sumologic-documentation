@@ -5,7 +5,6 @@ sidebar_label: Signup and activation
 description: Sign Up with Sumo Logic, creating and activating your account.
 ---
 
-
 Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data—without having to manage and scale any hardware or storage. With Sumo Logic Free, you can open a free account and start using Sumo Logic right away.
 
 Users who sign up for a free account are automatically signed up for a Sumo Logic Trial account, and after 30 days they are switched over to a Sumo Logic Free account. Users can upgrade at any time.

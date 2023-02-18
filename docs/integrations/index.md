@@ -2,6 +2,7 @@
 slug: /integrations
 title: App Catalog
 description: Documentation for Sumo Logic apps and integrations.
+tags: [app, app catalog]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
