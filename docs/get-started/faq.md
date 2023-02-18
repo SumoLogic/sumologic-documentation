@@ -1,11 +1,11 @@
 ---
 id: faq
-title: Sumo Logic Frequently Asked Questions
+title: Sumo Logic FAQ
 sidebar_label: FAQ
 ---
 
 
-See the following FAQS on Sumo Logic.
+Frequently asked questions about Sumo Logic.
 
 ## What is the optimal log format to use with Sumo Logic?
 

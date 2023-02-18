@@ -4,10 +4,13 @@ title: Apps and Integrations
 sidebar_label: Apps and integrations
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/cloud/apps.png')} alt="icon" width="50"/>
 
 Sumo Logic apps give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you.
 
-![app catalog](/img/get-started/library/App-Catalog.png)
+<a href="/docs/integrations"><img src={useBaseUrl('img/get-started/library/App-Catalog.png')} alt="app catalog" /></a>
 
 Sumo Logic Apps address these common use cases:
 
@@ -65,11 +68,7 @@ In this example, a company has three environments: qa, prod, and perf. You will 
 
 #### Set up Sumo Logic Collectors and Sources
 
-Before installing any applications, define your Collectors in each environment so that Source Host metadata indicates the deployment. For example, name them something like:
-
-* abc13-qa-cluster01
-* acb10-prof-cluster03
-* abc01-prod-cluster12
+Before installing any applications, define your Collectors in each environment so that Source Host metadata indicates the deployment. For example, name them something like `abc13-qa-cluster01`, `acb10-prof-cluster03`, or `abc01-prod-cluster12`.
 
 Optionally, you can set a Source Category to indicate these names as well, depending on how Sumo Logic is architected at your company.
 
@@ -189,7 +188,7 @@ The Visits Dashboards displays identifying information about external and intern
 * **Frequent IP Addresses.** Shows a list of the most frequently used IP addresses by visitors.
 * **Logins Over Time.** Displays the successful and failed logins over the past three hours.
 * **Frequent Email Addresses.** Displays the most frequently used email addresses.
-* **Sessions.** Monitors** **errors across all sessions in your deployment.
+* **Sessions.** Monitor errors across all sessions in your deployment.
 * **Observed IP Addresses by Type.** Displays IP addresses used by internal and external visitors.
 
 ### Keywords and Metadata
