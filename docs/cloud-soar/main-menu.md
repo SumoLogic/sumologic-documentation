@@ -4,8 +4,7 @@ title: Cloud SOAR Main Menu
 sidebar_label: Main Menu
 ---
 
-Cloud SOAR is a pure web-based application which does not require an
-additional add-on or client to deploy. The main menu consists of all operational sections of Cloud SOAR, including Incidents, Triage (if enabled), Operations, and incoming Data Sources.
+Cloud SOAR is a pure web-based application which does not require an additional add-on or client to deploy. The main menu consists of all operational sections of Cloud SOAR, including Incidents, Triage (if enabled), Operations, and incoming Data Sources.
 
 ![main menu](/img/cloud-soar/image25.png)
 

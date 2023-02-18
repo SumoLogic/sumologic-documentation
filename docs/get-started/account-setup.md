@@ -1,11 +1,13 @@
 ---
 id: account-setup
 title: Setting Up Your Sumo Logic Account
-sidebar_label: Account Setup
+sidebar_label: Account setup
 description: Update and manage your Sumo Logic account.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="50"/>
 
 You can review and update your account settings at any time through the **Preferences** page.
 
@@ -41,10 +43,14 @@ The **Preferences** page contains settings that apply just to your account. Opti
 
 Under **My Profile**, the following information is displayed:
 
-* **Organization ID** - Your Sumo Logic org ID
-* **Username** - Your username is the email address associated with the account
+* **Organization ID**. Your Sumo Logic org ID.
+* **Username** - Your username is the email address associated with the account.
 * **Password** -The password you entered when activating your account. You can reset your password.
-* **Roles** - The Sumo Logic roles assigned to your user account
+* **Roles** - The Sumo Logic roles assigned to your user account.
+
+#### For Administrators
+
+[Learn more](/docs/get-started/onboarding-checklists/#users-roles-and-security) about managing users/roles and more Administrator settings.
 
 ### My Security Settings
 

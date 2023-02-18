@@ -1,7 +1,7 @@
 ---
 id: onboarding-checklists
-title: Getting Started Checklists for Administrators
-sidebar_label: Onboarding Checklists
+title: Getting Started Checklists for Analysts and Administrators
+sidebar_label: Onboarding checklists
 ---
 
 Click each link to go to each Help topic for all the details, then come back to this checklist to continue.
@@ -128,7 +128,7 @@ Search optimization tools speed the search process, delivering query results in 
 * [Field Browser]/field-browser): The Field Browser allows you to zero in on just the fields of interest in a search by displaying or hiding selected fields without having to parse them. You can focus on the fields you’re interested in, avoiding the “noise” of fields you don’t want to see.
 * [Search Templates](../search/get-started-with-search/build-search/search-templates.md): You can set up search templates to simplify searches for your users. Search templates shield users from search syntax and allow them to select search parameter values from a selector list.  
 
-### Users, roles and security
+### Users, roles, and security
 
 Sumo provides a number of tools for managing users' access to Sumo and
 configuring security policies. You can:
