@@ -2190,6 +2190,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'cloud-soar/index'},
       items: [
+        'cloud-soar/overview',
         'cloud-soar/architecture',
         'cloud-soar/global-functions-menu',
         'cloud-soar/main-menu',
