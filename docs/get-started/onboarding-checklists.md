@@ -88,7 +88,7 @@ These topics provide basic information about administrator Sumo Logic accounts, 
 * [Choose a Collector Type](/docs/send-data/choose-collector-source) Depending on your use case, you may need to use Installed or Hosted Collectors. Use this topic to help you determine what your organization will need.
 * [Best Practices: Local and Centralized Data Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Which method is right for you? 
 * [System Requirements](system-requirements.md). These topics include information on basic hardware requirements for Sumo Logic Collectors, supported web browsers for best performance, and supported log encoding.
-* [Preferences Page](account-settings-preferences).  Set the Preferences on your personal Sumo Logic account for settings such as your password, web session timeout, default time zone, and more.
+* [Preferences Page](/docs/get-started/account-settings-preferences).  Set the Preferences on your personal Sumo Logic account for settings such as your password, web session timeout, default time zone, and more.
 
 ### Collecting logs and metrics
 
