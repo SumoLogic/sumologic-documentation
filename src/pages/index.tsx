@@ -108,23 +108,23 @@ export const Home = () => {
                   textAlign='left'
                   variant='p'
                 >
-                  Get started quickly with our search, visualization, and analytics capabilities.
+                  Get started quickly with our search, visualization, analytics, and security capabilities.
                 </Typography>
                 {[
                   {
-                    children: '1. Set up account',
-                    description: 'Set up account',
-                    href: '/docs/get-started',
+                    children: '1. Set up collector and source',
+                    description: 'Set up a Sumo Logic collector and source',
+                    href: 'https://help.sumologic.com/docs/get-started/onboarding/#step-1-get-your-data-into-sumo',
                   },
                   {
-                    children: '2. Install data collector',
-                    description: 'install data collector',
-                    href: '/docs/send-data',
-                  },
-                  {
-                    children: '3. Explore your insights',
+                    children: '2. Explore your data insights',
                     description: 'Explore your insights',
-                    href: '/docs/get-started/sumo-logic-ui',
+                    href: 'https://help.sumologic.com/docs/get-started/onboarding/#step-2-search-and-analyze-your-data',
+                  },
+                  {
+                    children: '3. Monitor and secure your environment',
+                    description: 'Monitor, troubleshoot, and secure your environment',
+                    href: 'https://help.sumologic.com/docs/get-started/onboarding/#step-3-monitor-and-troubleshoot-your-environment',
                   },
                 ].map(({ children, ...rest }) => (
                   <Button

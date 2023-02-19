@@ -137,7 +137,6 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
-    'plugin-image-zoom',
     'react-iframe',
     ['@docusaurus/plugin-content-docs',
       {
@@ -270,6 +269,8 @@ module.exports = {
           src: 'img/sumo-logo-dark.svg',
         },
         items: [
+        // activeregex controls the top nav content
+        // icon uses Google Material name code https://fonts.google.com/icons?query=material
           {
             label: 'Guides',
             position: 'left',
@@ -277,64 +278,70 @@ module.exports = {
             type: 'dropdown',
             items:[
               {
+                type: 'docSidebar',
+                sidebarId: 'getstarted',
                 label: 'Start Here',
-                to: '/docs/get-started',
-                activeBaseRegex: '^/docs/get-started/.*',
+                icon: 'rocket',
               },
               {
+                type: 'docSidebar',
+                sidebarId: 'senddata',
                 label: 'Send Data (Collectors)',
-                to: '/docs/send-data',
-                activeBaseRegex: '^/docs/send-data/.*',
+                icon: 'cloud_upload',
               },
               {
-                label: 'App Catalog',
-                to: '/docs/integrations',
-                activeBaseRegex: '^/docs/integrations/.*',
-              },
-              {
+                type: 'docSidebar',
+                sidebarId: 'searchlogs',
                 label: 'Log Search',
-                to: '/docs/search',
-                activeBaseRegex: '^/docs/search/.*',
+                icon: 'search',
               },
               {
+                type: 'docSidebar',
+                sidebarId: 'integrations',
+                label: 'App Catalog',
+                icon: 'apps',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'manage',
+                label: 'Manage Account',
+                icon: 'manage_accounts',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'dashboards',
                 label: 'Alerts, Monitors',
-                to: '/docs/alerts',
-                activeBaseRegex: '^/docs/alerts/.*',
+                icon: 'notifications_active',
               },
               {
-                label: 'Traces, APM, RUM',
-                to: '/docs/apm',
-                activeBaseRegex: '^/docs/apm/.*',
-              },
-              {
+                type: 'docSidebar',
+                sidebarId: 'metricslogs',
                 label: 'Metrics',
-                to: '/docs/metrics',
-                activeBaseRegex: '^/docs/metrics/.*',
+                icon: 'timeline',
               },
               {
+                type: 'docSidebar',
+                sidebarId: 'apm',
+                label: 'Traces, RUM, APM',
+                icon: 'account_tree',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'observability',
                 label: 'Observability',
-                to: '/docs/observability',
-                activeBaseRegex: '^/docs/observability/about',
+                icon: 'query_stats',
               },
               {
+                type: 'docSidebar',
+                sidebarId: 'security',
+                label: 'Cloud SIEM/SOAR',
+                icon: 'security',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'dashboards',
                 label: 'Dashboards',
-                to: '/docs/dashboards-new',
-                activeBaseRegex: '^/docs/dashboards-new/.*',
-              },
-              {
-                label: 'Manage Sumo Account',
-                to: '/docs/manage',
-                activeBaseRegex: '^/docs/manage/.*',
-              },
-              {
-                label: 'Cloud SIEM',
-                to: '/docs/cse',
-                activeBaseRegex: '^/docs/(cse)/.*',
-              },
-              {
-                label: 'Cloud SOAR',
-                to: '/docs/cloud-soar',
-                activeBaseRegex: '^/docs/cloud-soar/.*',
+                icon: 'dashboard',
               },
             ]
           },
@@ -345,12 +352,15 @@ module.exports = {
             type: 'dropdown',
             items:[
               {
-                label: 'Docs',
-                to: '/docs/api',
+                type: 'docSidebar',
+                sidebarId: 'api',
+                label: 'API Docs',
+                icon: 'hub',
               },
               {
-                label: 'Reference',
+                label: 'API Reference',
                 href: 'https://api.sumologic.com/docs/',
+                icon: 'code',
               },
             ]
           },
@@ -363,18 +373,22 @@ module.exports = {
               {
                 label: 'Service',
                 to: 'release-notes-service',
+                icon: 'rss_feed',
               },
               {
                 label: 'Cloud SIEM',
                 to: 'release-notes-cse',
+                icon: 'rss_feed',
               },
               {
                 label: 'Collector',
                 to: 'release-notes-collector',
+                icon: 'rss_feed',
               },
               {
                 label: 'Developer',
                 to: 'release-notes-developer',
+                icon: 'rss_feed',
               },
             ]
           },
@@ -396,11 +410,11 @@ module.exports = {
             to: 'https://github.com/SumoLogic/sumologic-documentation',
             items:[
               {
-                label: 'Feedback',
+                label: 'Send Feedback',
                 href: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
               },
               {
-                label: 'Contribute',
+                label: 'Contribute to Docs',
                 href: '/docs/contributing',
               },
             ]

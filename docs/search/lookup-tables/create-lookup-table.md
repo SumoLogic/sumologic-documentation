@@ -167,7 +167,7 @@ As you name your fields, note the information in [Reserved keywords](#reserved-k
 
 1. Go to the Sumo Logic Library.  
 
-    ![library-icon.png](/img/search/lookup-tables/library-icon.png)
+    ![library-icon.png](/img/reuse/library-icon.png)
 
 1. Click in the search bar, and select **Lookups** from the dropdown.  
 

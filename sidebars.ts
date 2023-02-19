@@ -14,7 +14,7 @@
  */
 
 module.exports = {
-  docs: [
+  getstarted: [
     {
       type: 'category',
       label: 'Welcome to Sumo Logic',
@@ -23,10 +23,10 @@ module.exports = {
       link: {type: 'doc', id: 'get-started/index'},
       items: [
         'get-started/overview',
-        'get-started/onboarding',
         'get-started/sign-up',
-        'get-started/account-setup',
+        'get-started/onboarding',
         'get-started/onboarding-checklists',
+        'get-started/account-setup',
         'get-started/apps-integrations',
         'get-started/library',
         'get-started/sumo-logic-ui',
@@ -38,8 +38,10 @@ module.exports = {
         'get-started/faq',
       ],
     },
+  ],
+  // *** SEND DATA
+  senddata: [
     {
-// *** SEND DATA
       type: 'category',
       label: 'Send Data',
       collapsible: true,
@@ -439,9 +441,15 @@ module.exports = {
   ],
 // *** MANAGE CONTENT: Admin level options, collection, connections, etc
   manage: [
-    'manage/manage',
-    'manage/fields',
-    'manage/health-events',
+  {
+    type: 'category',
+    label: 'Manage',
+    collapsible: true,
+    collapsed: false,
+    link: {type: 'doc', id: 'manage/manage'},
+    items: [
+      'manage/fields',
+      'manage/health-events',
     {
       type: 'category',
       label: 'Field Extractions',
@@ -684,10 +692,12 @@ module.exports = {
         'manage/security/set-password-policy',
         'manage/security/set-limit-user-concurrent-sessions',
         'manage/security/set-max-web-session-timeout',
-      ]
-    },
+       ]
+     },
     'manage/archive',
-  ],
+   ],
+  },
+],
 // *** DASHBOARDS and VISUALS:
   dashboards: [
     {
@@ -893,7 +903,13 @@ module.exports = {
   ],
 // *** SEARCHES & LOGS: all search functionality
   searchlogs: [
-    'search/index',
+  {
+    type: 'category',
+    label: 'Log Search',
+    collapsible: true,
+    collapsed: false,
+    link: {type: 'doc', id: 'search/index'},
+    items: [
     {
       type: 'category',
       label: 'Get Started with Search',
@@ -987,63 +1003,6 @@ module.exports = {
         },
       ],
     },
-    {
-      type: 'category',
-      label: 'Behavior Insights',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'search/behavior-insights/index'},
-      items: [
-        'search/behavior-insights/logexplain',
-        'search/behavior-insights/logreduce-keys',
-        'search/behavior-insights/logreduce-values',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Live Tail',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'search/live-tail/index'},
-      items: [
-        'search/live-tail/about-live-tail',
-        'search/live-tail/filter-live-tail',
-        'search/live-tail/live-tail-cli',
-        'search/live-tail/live-tail-highlighting',
-        'search/live-tail/live-tail-preferences',
-        'search/live-tail/live-tail-show-in-search',
-        'search/live-tail/multiple-live-tails',
-      ],
-    },
-    'search/logcompare',
-    {
-      type: 'category',
-      label: 'LogReduce',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'search/logreduce/index'},
-      items: [
-        'search/logreduce/logreduce-operator',
-        'search/logreduce/detect-patterns-with-logreduce',
-        'search/logreduce/influence-the-logreduce-outcome',
-        'search/logreduce/understand-the-logreduce-relevance-column',
-      ],
-    },
-    'search/time-compare',
-    {
-      type: 'category',
-      label: 'Lookup Tables',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'search/lookup-tables/index'},
-      items: [
-        'search/lookup-tables/create-lookup-table',
-        'search/lookup-tables/manage-update-lookup-tables',
-      ],
-    },
-    'search/optimize-search-performance',
-    'search/optimize-search-partitions',
-    'search/subqueries',
     {
       type: 'category',
       label: 'Search Query Language',
@@ -1155,19 +1114,6 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Search Cheat Sheets',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'search/search-cheat-sheets/index'},
-          items: [
-            'search/search-cheat-sheets/general-search-examples',
-            'search/search-cheat-sheets/grep-searching-with-sumo',
-            'search/search-cheat-sheets/iis-search-examples',
-            'search/search-cheat-sheets/log-operators',
-          ],
-        },
-        {
-          type: 'category',
           label: 'Group or Aggregate Operators',
           collapsible: true,
           collapsed: true,
@@ -1239,11 +1185,89 @@ module.exports = {
         },
       ],
     },
+    {
+      type: 'category',
+      label: 'Search Cheat Sheets',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'search/search-cheat-sheets/index'},
+      items: [
+        'search/search-cheat-sheets/general-search-examples',
+        'search/search-cheat-sheets/grep-searching-with-sumo',
+        'search/search-cheat-sheets/iis-search-examples',
+        'search/search-cheat-sheets/log-operators',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Behavior Insights',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'search/behavior-insights/index'},
+      items: [
+        'search/behavior-insights/logexplain',
+        'search/behavior-insights/logreduce-keys',
+        'search/behavior-insights/logreduce-values',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Live Tail',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'search/live-tail/index'},
+      items: [
+        'search/live-tail/about-live-tail',
+        'search/live-tail/filter-live-tail',
+        'search/live-tail/live-tail-cli',
+        'search/live-tail/live-tail-highlighting',
+        'search/live-tail/live-tail-preferences',
+        'search/live-tail/live-tail-show-in-search',
+        'search/live-tail/multiple-live-tails',
+      ],
+    },
+    'search/logcompare',
+    {
+      type: 'category',
+      label: 'LogReduce',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'search/logreduce/index'},
+      items: [
+        'search/logreduce/logreduce-operator',
+        'search/logreduce/detect-patterns-with-logreduce',
+        'search/logreduce/influence-the-logreduce-outcome',
+        'search/logreduce/understand-the-logreduce-relevance-column',
+      ],
+    },
+    'search/time-compare',
+    {
+      type: 'category',
+      label: 'Lookup Tables',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'search/lookup-tables/index'},
+      items: [
+        'search/lookup-tables/create-lookup-table',
+        'search/lookup-tables/manage-update-lookup-tables',
+      ],
+    },
+    'search/optimize-search-performance',
+    'search/optimize-search-partitions',
+    'search/subqueries',
     'search/faq',
-  ],
+    ],
+  },
+],
 // *** METRICS & LOGS: all metrics content
   metricslogs: [
-    'metrics/metrics',
+    {
+      type: 'category',
+      label: 'Metrics',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'metrics/metrics'},
+      items: [
     {
       type: 'category',
       label: 'Introduction to Metrics',
@@ -1343,13 +1367,21 @@ module.exports = {
         'metrics/metric-charts/metrics-outliers',
         'metrics/metric-charts/add-metrics-visualization-to-dashboard',
         'metrics/metric-charts/log-overlay-analyze-metrics-visualizations',
-      ],
-    },
-  ],
+       ],
+     },
+   ],
+  },
+],
   // *** SEND DATA: collectors, sources
   // *** APM: RUM and Traces
   apm: [
-    'apm/apm',
+  {
+    type: 'category',
+    label: 'APM, Traces, RUM',
+    collapsible: true,
+    collapsed: false,
+    link: {type: 'doc', id: 'apm/apm'},
+    items: [
     {
       type: 'category',
       label: 'Traces',
@@ -1476,8 +1508,10 @@ module.exports = {
       'apm/real-user-monitoring/browser-traces',
       'apm/real-user-monitoring/metrics',
       'apm/real-user-monitoring/dashboards',
-    ],
-  },
+     ],
+   },
+ ],
+},
 ],
 // *** OBSERVABILITY: aws, kubernetes, root cause analysis
   observability: [
@@ -1626,8 +1660,14 @@ module.exports = {
     },
   ],
 // *** Sumo Logic Apps
-  integrations: [
-    'integrations/index',
+integrations: [
+  {
+    type: 'category',
+    label: 'App Catalog',
+    collapsible: true,
+    collapsed: false,
+    link: {type: 'doc', id: 'integrations/index'},
+    items: [
     {
       type: 'category',
       label: 'Amazon and AWS',
@@ -1996,9 +2036,12 @@ module.exports = {
     'integrations/account-plans',
     'integrations/partner-ecosystem-apps',
     'integrations/partner-integrations',
-  ],
+   ],
+ },
+],
+
 // OTHER FEATURES: SDO, CSE, SOAR
-  other: [
+  security: [
     {
       type: 'category',
       label: 'Cloud SIEM Enterprise (CSE)',
@@ -2190,6 +2233,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'cloud-soar/index'},
       items: [
+        'cloud-soar/overview',
         'cloud-soar/architecture',
         'cloud-soar/global-functions-menu',
         'cloud-soar/main-menu',

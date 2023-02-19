@@ -3,7 +3,6 @@ id: subqueries
 title: Subqueries
 ---
 
-
 Subqueries allow you to filter and evaluate conditions for a query when you may not be sure of the exact filter or condition criteria but you can write a short query to set them for you. Subqueries use one query to pass results back to another query to narrow down or evaluate the set of messages that are searched in that query. Sometimes this offers a faster approach than a join, where you'd have to unite large sets of data and then search through the results to form a conclusion. If you can do some processing to narrow down the scope of data, you can form a subquery.
 
 Subqueries are not supported in live dashboards, real-time Scheduled Searches, Field Extraction Rules, and Scheduled Views.
