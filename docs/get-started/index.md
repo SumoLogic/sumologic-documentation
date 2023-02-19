@@ -17,7 +17,7 @@ Sumo Logic is an all-in-one platform for monitoring, analyzing, troubleshooting,
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <a href="/docs/get-started/overview"><img src={useBaseUrl('img/icons/business/video.png')} alt="icon" width="50"/><h4>Quickstart videos</h4></a>
+  <a href="/docs/get-started/overview"> <img src={useBaseUrl('img/icons/business/video.png')} alt="icon" width="50"/><h4>Quickstart videos</h4></a>
   <p>Before diving in, check out our quickstart microlesson videos.</p>
   </div>
 </div>
@@ -29,14 +29,14 @@ Sumo Logic is an all-in-one platform for monitoring, analyzing, troubleshooting,
 </div>
 <div className="box smallbox4 card">
   <div className="container">
-  <a href="/docs/get-started/sign-up"><img src={useBaseUrl('img/icons/general/check-mark.png')} alt="icon" width="50"/><h4>Account activation</h4></a>
+  <a href="/docs/get-started/sign-up"><img src={useBaseUrl('img/icons/general/mail.png')} alt="icon" width="50"/><h4>Sign up</h4></a>
   <p>Sign up and activate your Sumo Logic account.</p>
   </div>
 </div>
 <div className="box smallbox5 card">
   <div className="container">
-  <a href="/docs/get-started/account-setup"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="50"/><h4>Account Setup</h4></a>
-  <p>Account preferences, access keys, security settings, and more.</p>
+  <a href="/docs/get-started/account-settings-preferences"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="50"/><h4>Account Preferences</h4></a>
+  <p>Set your account preferences and manage your credentials.</p>
   </div>
 </div>
 <div className="box smallbox6 card">
