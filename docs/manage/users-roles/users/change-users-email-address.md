@@ -20,4 +20,4 @@ As a Sumo Logic Administrator, you can change a user’s email address.
 1. Click **Save**.
 1. A confirmation message is displayed, and an email with an activation link is sent to the user’s new email address. The user must click the link in the email within seven days to complete the email address change, or the link will expire.    
 
-To change your own email address, see [Change Your Email Address](../../../get-started/account-setup.md). 
+To change your own email address, see [Change Your Email Address](../../../get-started/account-settings-preferences.md). 

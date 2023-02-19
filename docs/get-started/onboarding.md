@@ -18,6 +18,10 @@ Here you will learn how to:
 * Monitor and troubleshoot your environment
 * Share your findings with your team
 
+:::tip Start a free trial
+You can sign up through Sumo Logic or AWS Marketplace. [Learn more](/docs/get-started/sign-up).
+:::
+
 :::sumo Need help?
 Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or enter a [support ticket](https://support.sumologic.com/hc/en-us).
 :::
