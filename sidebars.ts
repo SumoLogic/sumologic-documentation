@@ -1375,7 +1375,13 @@ module.exports = {
   // *** SEND DATA: collectors, sources
   // *** APM: RUM and Traces
   apm: [
-    'apm/apm',
+  {
+    type: 'category',
+    label: 'APM, Traces, RUM',
+    collapsible: true,
+    collapsed: false,
+    link: {type: 'doc', id: 'apm/apm'},
+    items: [
     {
       type: 'category',
       label: 'Traces',
@@ -1502,8 +1508,10 @@ module.exports = {
       'apm/real-user-monitoring/browser-traces',
       'apm/real-user-monitoring/metrics',
       'apm/real-user-monitoring/dashboards',
-    ],
-  },
+     ],
+   },
+ ],
+},
 ],
 // *** OBSERVABILITY: aws, kubernetes, root cause analysis
   observability: [
