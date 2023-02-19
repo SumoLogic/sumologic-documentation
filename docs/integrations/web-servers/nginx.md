@@ -17,6 +17,25 @@ This App is tested with the following Nginx versions:
 * Kubernetes environments: Nginx version 1.21.4
 * Non-Kubernetes environments: Nginx version 1.19.8
 
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+Tutorial: Set up NGINX for non-Kubernetes Sources.
+
+<Iframe url="https://www.youtube.com/embed/X_6f0MDVTxo?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
+
+
 ## Collecting Logs for the Nginx App
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx. The following tasks are required:
