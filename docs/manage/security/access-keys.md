@@ -12,6 +12,25 @@ In Sumo Logic, you must use an access key to:
 
 You can create and manage your own access keys on the **Preferences** page in the Sumo web app. If your role grants you the **Manage Access Keys** capability, you can manage access keys created by other Sumo users on the **Administration** > **Security** > **Access Keys** page.
 
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+
+Managing Access Keys (how to).
+
+<Iframe url="https://www.youtube.com/embed/1UY7vQiJwQ4?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
+
 ## CORS support
 
 Sumo supports cross-origin resource sharing (CORS), a mechanism that uses additional HTTP headers to tell a browser to let a web application running at one origin (domain) have permission to access selected resources from a server at a different origin. 
