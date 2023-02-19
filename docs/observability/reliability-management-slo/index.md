@@ -15,6 +15,24 @@ In complex systems, apps, service, and infrastructure can fail in unpredictable 
 
 Sumo Logic Reliability Management helps site reliability engineers (SREs) and product teams define and monitor SLOs through alerts and dashboards.
 
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+Reliability Management Using SLOs.
+
+<Iframe url="https://www.youtube.com/embed/jCGqfqEDXto?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
+
 
 ## Prerequisites
 

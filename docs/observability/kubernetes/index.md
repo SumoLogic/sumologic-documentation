@@ -10,6 +10,26 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This guide provides an end-to-end solution for deploying, managing, monitoring, and administering your Kubernetes environment. You can view topics from the following list in the order of your choice, or navigate the structured path at the top of the [About the Sumo Logic Kubernetes Solution](/docs/observability/kubernetes/about.md) page for a complete end-to-end experience. 
 
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+
+Quick Onboarding with Kubernetes.
+
+<Iframe url="https://www.youtube.com/embed/lLRtK1FaTgM?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
+
+
 ## Guides
 
 In this section, we'll introduce the following concepts:

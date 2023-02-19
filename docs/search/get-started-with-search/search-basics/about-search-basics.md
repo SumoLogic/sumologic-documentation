@@ -4,11 +4,28 @@ title: About Search Basics
 description: Sumo Logic search syntax is based on a funnel or "pipeline" concept and it uses logical and familiar operators letting you to create ad hoc queries quickly.
 ---
 
-
-
 Our Search Syntax is based on a funnel or "pipeline" concept. The wide mouth of the funnel begins with all your current Sumo Logic data, and
 you narrow the funnel by entering keywords and operators separated by pipes (`|`). Each operator acts on the results from the previous
 operator so that you can progressively filter and pinpoint your search until you find exactly what you’re looking for.
+
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+
+How to search data using the Basic Search Mode in Sumo Logic.
+
+<Iframe url="https://www.youtube.com/embed/Ps2YperJyZo?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
 
 In the **Search** tab, a search query is typically formatted something like this:
 
