@@ -256,12 +256,12 @@ html[data-theme='light'] {
 }
 
 .header-login::before {
-  content: 'Start a Free Trial';
+  content: 'Start free trial';
   border: 1px solid #2aa1e6;
   color: #FFF;
   border-radius: 3px;
-  padding: 2px 10px;
-  font-size: 13px;
+  padding: 5px 10px;
+  font-size: 14px;
   display: inline-flex;
   background: #2aa1e6;
 }
@@ -482,6 +482,10 @@ html[data-theme='light'] .table-of-contents__left-border {
 .navbar__logo {
   align-items: center;
   display: flex;
+}
+
+.navbar__logo img {
+  height: 70%;
 }
 
 .navbar-item-github:hover {

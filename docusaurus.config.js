@@ -302,10 +302,10 @@ module.exports = {
                 icon: 'apps',
               },
               {
+                type: 'docSidebar',
+                sidebarId: 'manage',
                 label: 'Manage Account',
-                to: '/docs/manage',
                 icon: 'manage_accounts',
-                activeBaseRegex: '^/docs/manage/.*',
               },
               {
                 type: 'docSidebar',
