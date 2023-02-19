@@ -11,32 +11,32 @@ Sumo Logic is an all-in-one platform for monitoring, analyzing, troubleshooting,
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/get-started/onboarding"><img src={useBaseUrl('img/icons/business/mission.png')} alt="icon" width="50"/><h4>Getting started</h4></a>
-  <p>Get up and running quickly with Sumo Logic.</p>
+  <a href="/docs/get-started/sign-up"><img src={useBaseUrl('img/icons/general/mail.png')} alt="icon" width="50"/><h4>Sign up</h4></a>
+  <p>Sign up for a free trial and activate your account.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <a href="/docs/get-started/overview"> <img src={useBaseUrl('img/icons/business/video.png')} alt="icon" width="50"/><h4>Quickstart videos</h4></a>
-  <p>Before diving in, check out our quickstart microlesson videos.</p>
+  <a href="/docs/get-started/onboarding"><img src={useBaseUrl('img/icons/business/mission.png')} alt="icon" width="50"/><h4>Getting started</h4></a>
+  <p>Get up and running quickly with Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="/docs/get-started/onboarding-checklists"><img src={useBaseUrl('img/icons/general/check-mark.png')} alt="icon" width="50"/><h4>Onboarding</h4></a>
-  <p>Setting up and managing your Sumo Logic account.</p>
+  <a href="/docs/get-started/overview"> <img src={useBaseUrl('img/icons/business/video.png')} alt="icon" width="50"/><h4>Quickstart videos</h4></a>
+  <p>Before diving in, check out our microlesson videos.</p>
   </div>
 </div>
 <div className="box smallbox4 card">
   <div className="container">
-  <a href="/docs/get-started/sign-up"><img src={useBaseUrl('img/icons/general/mail.png')} alt="icon" width="50"/><h4>Sign up</h4></a>
-  <p>Sign up and activate your Sumo Logic account.</p>
+  <a href="/docs/get-started/onboarding-checklists"><img src={useBaseUrl('img/icons/general/check-mark.png')} alt="icon" width="50"/><h4>Onboarding Tasks</h4></a>
+  <p>Must-do onboarding tasks for users and admins.</p>
   </div>
 </div>
 <div className="box smallbox5 card">
   <div className="container">
   <a href="/docs/get-started/account-settings-preferences"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="50"/><h4>Account Preferences</h4></a>
-  <p>Set your account preferences and manage your credentials.</p>
+  <p>Account settings, access keys, and credentials.</p>
   </div>
 </div>
 <div className="box smallbox6 card">
@@ -47,8 +47,8 @@ Sumo Logic is an all-in-one platform for monitoring, analyzing, troubleshooting,
 </div>
 <div className="box smallbox7 card">
   <div className="container">
-  <a href="/docs/get-started/apps-integrations"><img src={useBaseUrl('img/icons/cloud/apps.png')} alt="icon" width="50"/><h4>App Catalog</h4></a>
-  <p>Overview of Sumo Logic apps and integrations.</p>
+  <a href="/docs/get-started/apps-integrations"><img src={useBaseUrl('img/icons/cloud/apps.png')} alt="icon" width="50"/><h4>App Installation</h4></a>
+  <p>How to install Sumo Logic apps and integrations.</p>
   </div>
 </div>
 <div className="box smallbox8 card">

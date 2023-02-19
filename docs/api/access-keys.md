@@ -2,7 +2,6 @@
 id: access-keys
 title: Access Keys Management APIs
 sidebar_label: Access Keys
-tags: [security]
 description: Use HTTP endpoints to manage access keys.
 ---
 
