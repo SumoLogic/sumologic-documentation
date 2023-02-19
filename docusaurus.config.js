@@ -320,15 +320,9 @@ module.exports = {
                 activeBaseRegex: '^/docs/metrics/.*',
               },
               {
-                label: 'Traces',
+                label: 'Traces, RUM',
                 to: '/docs/apm/traces',
                 icon: 'account_tree',
-                activeBaseRegex: '^/docs/apm/.*',
-              },
-              {
-                label: 'Real User Monitoring',
-                to: '/docs/apm/real-user-monitoring',
-                icon: 'contacts',
                 activeBaseRegex: '^/docs/apm/.*',
               },
               {
