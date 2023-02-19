@@ -14,7 +14,7 @@
  */
 
 module.exports = {
-  docs: [
+  getstarted: [
     {
       type: 'category',
       label: 'Welcome to Sumo Logic',
@@ -38,8 +38,10 @@ module.exports = {
         'get-started/faq',
       ],
     },
+  ],
+  // *** SEND DATA
+  senddata: [   
     {
-// *** SEND DATA
       type: 'category',
       label: 'Send Data',
       collapsible: true,
@@ -1998,7 +2000,7 @@ module.exports = {
     'integrations/partner-integrations',
   ],
 // OTHER FEATURES: SDO, CSE, SOAR
-  other: [
+  security: [
     {
       type: 'category',
       label: 'Cloud SIEM Enterprise (CSE)',
