@@ -8,6 +8,25 @@ After you have created a custom Dashboard (New) you may also want to share it 
 
 Currently, you can only share a Dashboard (New) within your organization.
 
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+
+Share a Dashboard (New) Inside Your Organization.
+
+<Iframe url="https://www.youtube.com/embed/nQOAYaMad4Q"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+:::
+
+
 ## Sharing a dashboard within your organization
 
 Sharing dashboards allow you to extend the insights you gain from Sumo Logic with others within your organization. You can specify specific permissions for the user with whom you share the dashboard, as well as controlling the data that appears in the dashboard. 

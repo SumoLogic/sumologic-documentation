@@ -1,33 +1,31 @@
 ---
 id: sign-up
 title: Sign Up and Activate Your Account
-sidebar_label: Signup and activation
+sidebar_label: Sign up
 description: Sign Up with Sumo Logic, creating and activating your account.
 ---
 
-
 Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data—without having to manage and scale any hardware or storage. With Sumo Logic Free, you can open a free account and start using Sumo Logic right away.
 
-Users who sign up for a free account are automatically signed up for a Sumo Logic Trial account, and after 30 days they are switched over to a Sumo Logic Free account. Users can upgrade at any time.
+When you sign up for your initial free trial, you're automatically signed up for a Sumo Logic **Trial account**. After 30 days, you'll be switched over automatically to a Sumo Logic **Free account**. You can upgrade to a plan at any time.
 
-Trial accounts allow access to:
+|             | Trial accounts | Free accounts
+|:------------|:---------------|:------------
+| Data volume daily | 1GB | 500MB
+| Users | 20 users max. | 3 users max.
+| Data retention <sup>1</sup>| 30 days | 7 days
+| Metrics <sup>2</sup> | &#9989; | &#10060;
+| Data Forwarding <sup>3</sup> | &#9989; | &#10060;
+| Real-time alerts <sup>4</sup> | &#9989; | &#10060;
 
-- 1GB of data volume daily
-- Data uploaded to the Sumo Logic Cloud are only retained for 30 days
-- A maximum of 20 users
-- Metrics — Search through and visualize your data in near real-time, with up to 1000 data points per minute
-- Data Forwarding — Forwards your logs to an S3 bucket after being collected and analyzed in Sumo Logic
-- Real Time Alerts — Notifies you in real-time when errors occur on your systems
-
-Free accounts are limited to:
-
-- 500MB of data volume daily
-- Data uploaded to the Sumo Logic Cloud are only retained for seven days
-- A maximum of three users
+<sup>1</sup> Data uploaded to the Sumo Logic Cloud.<br/>
+<sup>2</sup> Search through and visualize your data in near real-time, with up to 1000 data points per minute.<br/>
+<sup>3</sup> Forwards your logs to an S3 bucket after being collected and analyzed in Sumo Logic.<br/>
+<sup>4</sup> Notifies you in real-time when errors occur on your systems.
 
 For more information, see **Sumo Logic Account Usage**.
 
-You have a couple options to create and activate an account:
+You have a couple of options to create and activate an account:
 
 * [Free Trial Account](#free-trial-accounts) through the Sumo Logic site
 * [AWS Marketplace](#aws-marketplace) through AWS and completes through Sumo Logic
@@ -54,7 +52,6 @@ Remember your deployment region selection. You may need it when integrating apps
 :::
 
 1. Visit [sumologic.com](https://sumologic.com) and create a trial account by clicking **Start free trial**.
-
 1. Once your account is activated, click the ![close](/img/get-started/github/close-icon.png) at the top right of the *Welcome to Sumo Logic* web page. You will not need to follow the in-application guide.
 
 Sumo Logic sends you an email to activate your account, and the [Sumo Logic Setup Wizard](/docs/send-data/setup-wizard) is displayed.
@@ -75,14 +72,14 @@ To activate your Sumo Logic Free Trial account:
 
     In a few minutes, your account is activated and the Sumo Logic Setup Wizard displays in a new browser tab.
 
-Next, use the [Setup Wizard] to send your logs to Sumo Logic.
+Next, use the Setup Wizard to send your logs to Sumo Logic.
 
 ## AWS Marketplace
 
 Signing up for a Sumo Logic account through the AWS Marketplace creates a new Sumo Logic organization and account. It allows you to pay your bill using your Amazon account. All you need to sign up is a company email address and your location: North America, Europe, or Australia.
 
 :::note Valid Emails
-Please don't use a Google or Yahoo email account to create your Sumo Logic account.
+Do not use a Google or Yahoo email account to create your Sumo Logic account.
 :::
 
 Select the plan that fits your usage requirements. The first 30 days are free of charge. All Sumo Logic features are supported for your Account Type, based on your subscription plan.

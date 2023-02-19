@@ -3,7 +3,7 @@ id: sumo-logic-ui
 title: Tour the Sumo Logic UI
 ---
 
-[**Get Started**](/docs/get-started) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, then sharing your findings with your colleagues. This page will help you get to know the Sumo Logic user interface (UI).
+[**Getting Started**](/docs/get-started/onboarding) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, then sharing your findings with your colleagues. This page will help you get to know the Sumo Logic user interface (UI).
 
 ## Using the Left Navigation Bar
 
@@ -13,10 +13,10 @@ When you first log in, you'll land on the Sumo Logic Home page. The **Left Na
 
 The **Left Nav Bar** provides easy access to libraries, personal collections of dashboards, searches, and folders. Click the icons at the top of the Left Nav Bar (left to right) to view:
 
-* **Recent** dashboards and searches,
-* a list of your **Favorites** (dashboards and searches),
-* your **Personal** library of dashboards and searches, and
-* a **Library** of shared dashboards and searches (within your organization) respectively.
+* **Recent** dashboards and searches
+* A list of your **Favorites** (dashboards and searches)
+* Your **Personal** library of dashboards and searches,
+* A **Library** of shared dashboards and searches (within your organization) respectively.
 
 ![TUI_Left_Nav.png](/img/get-started/ui/TUI_Left_Nav.png)
 
