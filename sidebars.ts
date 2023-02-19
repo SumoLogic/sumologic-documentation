@@ -23,10 +23,10 @@ module.exports = {
       link: {type: 'doc', id: 'get-started/index'},
       items: [
         'get-started/overview',
-        'get-started/onboarding',
         'get-started/sign-up',
-        'get-started/account-setup',
+        'get-started/onboarding',
         'get-started/onboarding-checklists',
+        'get-started/account-setup',
         'get-started/apps-integrations',
         'get-started/library',
         'get-started/sumo-logic-ui',
@@ -1181,7 +1181,7 @@ module.exports = {
         'search/search-cheat-sheets/iis-search-examples',
         'search/search-cheat-sheets/log-operators',
       ],
-    },    
+    },
     {
       type: 'category',
       label: 'Behavior Insights',
