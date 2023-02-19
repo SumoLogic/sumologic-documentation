@@ -1,7 +1,7 @@
 ---
 id: apps-integrations
 title: Apps and Integrations
-sidebar_label: Apps and integrations
+sidebar_label: Apps Catalog
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

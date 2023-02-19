@@ -326,6 +326,12 @@ module.exports = {
                 activeBaseRegex: '^/docs/apm/.*',
               },
               {
+                label: 'Real User Monitoring',
+                to: '/docs/apm/real-user-monitoring',
+                icon: 'contacts',
+                activeBaseRegex: '^/docs/apm/.*',
+              },
+              {
                 label: 'Observability',
                 to: '/docs/observability',
                 icon: 'query_stats',

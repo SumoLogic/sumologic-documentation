@@ -1,7 +1,7 @@
 ---
 id: quickstart
 title: Quickstart your Sumo experience
-sidebar_label: Quickstart guides
+sidebar_label: Quickstart Guides
 description: Get up and running with Sumo Logic in minutes.
 ---
 
@@ -39,5 +39,5 @@ These quick start guides help you connect, integrate, configure, and start using
 <br/>
 
 :::sumo Sumo Logic Training
-See more quickstart tutorials in the [Sumo Logic Training Portal](https://learn.sumologic.com/).
+See more quickstart tutorials in the [Sumo Logic Training Portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-training-portal).
 :::
