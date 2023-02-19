@@ -22,11 +22,11 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'get-started/index'},
       items: [
-        'get-started/overview',
         'get-started/sign-up',
         'get-started/onboarding',
+        'get-started/overview',
         'get-started/onboarding-checklists',
-        'get-started/account-setup',
+        'get-started/account-settings-preferences',
         'get-started/apps-integrations',
         'get-started/library',
         'get-started/sumo-logic-ui',
