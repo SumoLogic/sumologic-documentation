@@ -7,7 +7,7 @@ tags: [observability]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="75"/>
+<img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="50"/>
 
 The Sumo Logic Observability solution provides tools that work together to ensure you are able to efficiently monitor, troubleshoot, and diagnose issues across a variety of environments. 
 
