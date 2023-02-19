@@ -7,7 +7,9 @@ description: The extensive Sumo Logic query options help you gain valuable insig
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-:::sumo
+<img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="50"/>
+
+:::sumo Micro Lesson
 Here's a step-by-step tutorial about creating Sumo Logic queries.
 
 <Iframe url="https://www.youtube.com/embed/nGRXj1w4juU?rel=0"
