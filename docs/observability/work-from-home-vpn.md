@@ -1,8 +1,6 @@
 ---
 id: work-from-home-vpn
 title: Work-from-Home VPN Solution
-sidebar_label: VPN Monitoring
-tags: [work from home, vpn]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
