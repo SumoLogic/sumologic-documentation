@@ -1,7 +1,7 @@
 ---
 id: keyboard-shortcuts
 title: Sumo Logic Keyboard Shortcuts
-sidebar_label: Keyboard shortcuts
+sidebar_label: Keyboard Shortcuts
 ---
 
 Sumo Logic keyboard shortcuts are enabled by default. To display the list of shortcuts from the UI, press **?** or choose **Help > Shortcuts** from the left nav.

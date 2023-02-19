@@ -1,7 +1,7 @@
 ---
 id: overview
-title: Sumo Logic Overview
-sidebar_label: Sumo Logic overview
+title: Introduction to Sumo Logic
+sidebar_label: Intro to Sumo Logic
 ---
 
 import Iframe from 'react-iframe';
