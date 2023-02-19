@@ -792,14 +792,9 @@ module.exports = {
       link: {type: 'doc', id: 'dashboards-new/index'},
       items: [
         'dashboards-new/about',
-        'dashboards-new/migrate-to-new-dashboards',
         'dashboards-new/create-dashboard-new',
-        'dashboards-new/faq',
-        'dashboards-new/drill-down-to-discover-root-causes',
-        'dashboards-new/export-dashboard-new',
-        'dashboards-new/link-dashboards',
-        'dashboards-new/filter-template-variables',
         'dashboards-new/explore-view',
+        'dashboards-new/drill-down-to-discover-root-causes',
         {
           type: 'category',
           label: 'Panels',
@@ -825,7 +820,12 @@ module.exports = {
         },
         'dashboards-new/locate-deviations-time-series',
         'dashboards-new/set-custom-time-ranges',
+        'dashboards-new/export-dashboard-new',
+        'dashboards-new/link-dashboards',
         'dashboards-new/share-dashboard-new',
+        'dashboards-new/filter-template-variables',
+        'dashboards-new/migrate-to-new-dashboards',
+        'dashboards-new/faq',
       ],
     },
     {
