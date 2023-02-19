@@ -4,6 +4,7 @@ id: metrics
 title: Metrics
 sidebar_label: Metrics
 description: Sumo Logic Metrics can measure infrastructure, application performance or custom business and operational data.
+tags: [metrics]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
