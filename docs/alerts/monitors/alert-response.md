@@ -7,6 +7,8 @@ description: Quickly investigate and resolve issues you've been alerted about wi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/icons/operations/alert-and-notify.png')} alt="alert-and-notify.png" width="60"/>
+
 Alert Response provides contextual insights about triggered alerts to minimize the time needed to investigate and resolve application failures.
 
 On-call engineers are tasked with firefighting production issues and recovering quickly. They have to investigate issues and try to identify the root cause and fix it, which requires deep knowledge about the production systems, troubleshooting tools, and tons of experience as on-calls. 

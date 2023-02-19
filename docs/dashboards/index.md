@@ -9,8 +9,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Dashboards are a powerful forensic tool to create searches and view search results based on data available through a search.
 
-:::sumo New Dashboards
-A [new dashboard platform](/docs/dashboards-new) is available that allows you to analyze metric and log data on the same dashboard, in a streamlined user experience.
+:::sumo
+You're viewing our legacy dashboard solution. [Dashboards (New)](/docs/dashboards-new) allows you to analyze metric and log data on the same dashboard, in a streamlined user experience.
 :::
 
 <Iframe url="https://www.youtube.com/embed/FWzqVitfAfo"
