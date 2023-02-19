@@ -2,7 +2,6 @@
 id: password-policy
 title: Password Policy Management APIs
 sidebar_label: Password Policy
-tags: [security]
 description: Use HTTP endpoints to manage your account's password policy.
 ---
 
