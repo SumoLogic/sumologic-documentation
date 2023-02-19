@@ -6,7 +6,7 @@ description: This guide provides and end-to-end solution for deploying, managing
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="75"/>
+<img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="60"/>
 
 This guide provides an end-to-end solution for deploying, managing, monitoring, and administering your Kubernetes environment. You can view topics from the following list in the order of your choice, or navigate the structured path at the top of the [About the Sumo Logic Kubernetes Solution](/docs/observability/kubernetes/about.md) page for a complete end-to-end experience. 
 
@@ -15,40 +15,40 @@ This guide provides an end-to-end solution for deploying, managing, monitoring,
 In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper" markdown="1">
-<div className="box box1 card">
+<div className="box smallbox1 card">
   <div className="container">
-  <h3><a href="/docs/observability/kubernetes/about">Overview</a></h3>
+  <h4><a href="/docs/observability/kubernetes/about">Overview</a></h4>
   <p>Learn how Sumo Logic brings ease-of-use to Kubernetes, how to get the Kubernetes Solution, and the Sumo Logic apps that are available for Kubernetes platforms.</p>
   </div>
 </div>
-<div className="box box2 card">
+<div className="box smallbox2 card">
   <div className="container">
-  <h3><a href="/docs/observability/kubernetes/quickstart">Quickstart</a></h3>
+  <h4><a href="/docs/observability/kubernetes/quickstart">Quickstart</a></h4>
   <p>Get up and running with our Kubernetes solution in minutes.</p>
   </div>
 </div>
-<div className="box box3 card">
+<div className="box smallbox3 card">
     <div className="container">
-      <h3><a href="/docs/observability/kubernetes/collection-setup">Setting up Data Collection</a></h3>
+      <h4><a href="/docs/observability/kubernetes/collection-setup">Data Collection</a></h4>
       <p>Overview of Kubernetes collection process for Kubernetes environments, and configuring logs and metrics collection.</p>
       </div>
     </div>
-    <div className="box box4 card">
+    <div className="box smallbox4 card">
       <div className="container">
-      <h3><a href="/docs/observability/kubernetes/apps">Apps</a></h3>
+      <h4><a href="/docs/observability/kubernetes/apps">Kubernetes Apps</a></h4>
       <p>Sumo Logic provides Kubernetes apps across a variety of platforms, each
       with a set of predefined dashboards.</p>
       </div>
     </div>
-    <div className="box box5 card">
+    <div className="box smallbox5 card">
       <div className="container">
-      <h3><a href="/docs/observability/kubernetes/alerts">Setting Alerts</a></h3>
+      <h4><a href="/docs/observability/kubernetes/alerts">Setting Alerts</a></h4>
       <p>To help determine if the Kubernetes cluster is available and performing well, the Sumo Logic monitors are provided with out-of-box alerts.</p>
       </div>
     </div>
-    <div className="box box6 card">
+    <div className="box smallbox6 card">
       <div className="container">
-      <h3><a href="/docs/observability/kubernetes/monitoring">Monitor effectively</a></h3>
+      <h4><a href="/docs/observability/kubernetes/monitoring">Monitoring K8s</a></h4>
       <p>Learn more about effectively monitoring your Kubernetes environment architecture with Sumo Logic.</p>
       </div>
     </div>
