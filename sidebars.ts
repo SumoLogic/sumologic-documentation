@@ -40,7 +40,7 @@ module.exports = {
     },
   ],
   // *** SEND DATA
-  senddata: [   
+  senddata: [
     {
       type: 'category',
       label: 'Send Data',
@@ -441,9 +441,15 @@ module.exports = {
   ],
 // *** MANAGE CONTENT: Admin level options, collection, connections, etc
   manage: [
-    'manage/manage',
-    'manage/fields',
-    'manage/health-events',
+  {
+    type: 'category',
+    label: 'Manage',
+    collapsible: true,
+    collapsed: false,
+    link: {type: 'doc', id: 'manage/manage'},
+    items: [
+      'manage/fields',
+      'manage/health-events',
     {
       type: 'category',
       label: 'Field Extractions',
@@ -686,10 +692,12 @@ module.exports = {
         'manage/security/set-password-policy',
         'manage/security/set-limit-user-concurrent-sessions',
         'manage/security/set-max-web-session-timeout',
-      ]
-    },
+       ]
+     },
     'manage/archive',
-  ],
+   ],
+  },
+],
 // *** DASHBOARDS and VISUALS:
   dashboards: [
     {
@@ -895,7 +903,13 @@ module.exports = {
   ],
 // *** SEARCHES & LOGS: all search functionality
   searchlogs: [
-    'search/index',
+  {
+    type: 'category',
+    label: 'Log Search',
+    collapsible: true,
+    collapsed: false,
+    link: {type: 'doc', id: 'search/index'},
+    items: [
     {
       type: 'category',
       label: 'Get Started with Search',
@@ -1242,10 +1256,18 @@ module.exports = {
     'search/optimize-search-partitions',
     'search/subqueries',
     'search/faq',
-  ],
+    ],
+  },
+],
 // *** METRICS & LOGS: all metrics content
   metricslogs: [
-    'metrics/metrics',
+    {
+      type: 'category',
+      label: 'Metrics',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'metrics/metrics'},
+      items: [
     {
       type: 'category',
       label: 'Introduction to Metrics',
@@ -1345,9 +1367,11 @@ module.exports = {
         'metrics/metric-charts/metrics-outliers',
         'metrics/metric-charts/add-metrics-visualization-to-dashboard',
         'metrics/metric-charts/log-overlay-analyze-metrics-visualizations',
-      ],
-    },
-  ],
+       ],
+     },
+   ],
+  },
+],
   // *** SEND DATA: collectors, sources
   // *** APM: RUM and Traces
   apm: [
@@ -1628,8 +1652,14 @@ module.exports = {
     },
   ],
 // *** Sumo Logic Apps
-  integrations: [
-    'integrations/index',
+integrations: [
+  {
+    type: 'category',
+    label: 'App Catalog',
+    collapsible: true,
+    collapsed: false,
+    link: {type: 'doc', id: 'integrations/index'},
+    items: [
     {
       type: 'category',
       label: 'Amazon and AWS',
@@ -1998,7 +2028,10 @@ module.exports = {
     'integrations/account-plans',
     'integrations/partner-ecosystem-apps',
     'integrations/partner-integrations',
-  ],
+   ],
+ },
+],
+
 // OTHER FEATURES: SDO, CSE, SOAR
   security: [
     {
