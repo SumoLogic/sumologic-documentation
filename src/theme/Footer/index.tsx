@@ -164,7 +164,7 @@ export const Footer = () => {
             },
           ].map(({ alt, href, ...other }) => (
             <Tooltip key={href} title={alt}>
-              <Link rel='noreferrer noopener' >
+              <Link rel='noreferrer noopener'>
                 <Box
                   component={FontAwesomeIcon}
                   {...other}
