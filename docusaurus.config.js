@@ -269,6 +269,8 @@ module.exports = {
           src: 'img/sumo-logo-dark.svg',
         },
         items: [
+        // activeregex controls the top nav content
+        // icon uses Google Material name code https://fonts.google.com/icons?query=material
           {
             label: 'Guides',
             position: 'left',
@@ -278,62 +280,80 @@ module.exports = {
               {
                 label: 'Start Here',
                 to: '/docs/get-started',
+                icon: 'rocket',
                 activeBaseRegex: '^/docs/get-started/.*',
               },
               {
                 label: 'Send Data (Collectors)',
                 to: '/docs/send-data',
+                icon: 'cloud_upload',
                 activeBaseRegex: '^/docs/send-data/.*',
-              },
-              {
-                label: 'App Catalog',
-                to: '/docs/integrations',
-                activeBaseRegex: '^/docs/integrations/.*',
               },
               {
                 label: 'Log Search',
                 to: '/docs/search',
+                icon: 'search',
                 activeBaseRegex: '^/docs/search/.*',
+              },
+              {
+                label: 'App Catalog',
+                to: '/docs/integrations',
+                icon: 'apps',
+                activeBaseRegex: '^/docs/integrations/.*',
+              },
+              {
+                label: 'Manage Account',
+                to: '/docs/manage',
+                icon: 'manage_accounts',
+                activeBaseRegex: '^/docs/manage/.*',
               },
               {
                 label: 'Alerts, Monitors',
                 to: '/docs/alerts',
+                icon: 'notifications_active',
                 activeBaseRegex: '^/docs/alerts/.*',
-              },
-              {
-                label: 'Traces, APM, RUM',
-                to: '/docs/apm',
-                activeBaseRegex: '^/docs/apm/.*',
               },
               {
                 label: 'Metrics',
                 to: '/docs/metrics',
+                icon: 'timeline',
                 activeBaseRegex: '^/docs/metrics/.*',
+              },
+              {
+                label: 'Traces',
+                to: '/docs/apm/traces',
+                icon: 'account_tree',
+                activeBaseRegex: '^/docs/apm/.*',
+              },
+              {
+                label: 'Real User Monitoring',
+                to: '/docs/apm/real-user-monitoring',
+                icon: 'contacts',
+                activeBaseRegex: '^/docs/apm/.*',
               },
               {
                 label: 'Observability',
                 to: '/docs/observability',
+                icon: 'query_stats',
                 activeBaseRegex: '^/docs/observability/about',
-              },
-              {
-                label: 'Dashboards',
-                to: '/docs/dashboards-new',
-                activeBaseRegex: '^/docs/dashboards-new/.*',
-              },
-              {
-                label: 'Manage Sumo Account',
-                to: '/docs/manage',
-                activeBaseRegex: '^/docs/manage/.*',
               },
               {
                 label: 'Cloud SIEM',
                 to: '/docs/cse',
+                icon: 'security',
                 activeBaseRegex: '^/docs/(cse)/.*',
               },
               {
                 label: 'Cloud SOAR',
                 to: '/docs/cloud-soar',
+                icon: 'grid_4x4',
                 activeBaseRegex: '^/docs/cloud-soar/.*',
+              },
+              {
+                label: 'Dashboards',
+                icon: 'dashboard',
+                to: '/docs/dashboards-new',
+                activeBaseRegex: '^/docs/dashboards-new/.*',
               },
             ]
           },
@@ -344,12 +364,14 @@ module.exports = {
             type: 'dropdown',
             items:[
               {
-                label: 'Docs',
+                label: 'API Docs',
                 to: '/docs/api',
+                icon: 'hub',
               },
               {
-                label: 'Reference',
+                label: 'API Reference',
                 href: 'https://api.sumologic.com/docs/',
+                icon: 'code',
               },
             ]
           },
@@ -362,18 +384,22 @@ module.exports = {
               {
                 label: 'Service',
                 to: 'release-notes-service',
+                icon: 'rss_feed',
               },
               {
                 label: 'Cloud SIEM',
                 to: 'release-notes-cse',
+                icon: 'rss_feed',
               },
               {
                 label: 'Collector',
                 to: 'release-notes-collector',
+                icon: 'rss_feed',
               },
               {
                 label: 'Developer',
                 to: 'release-notes-developer',
+                icon: 'rss_feed',
               },
             ]
           },
