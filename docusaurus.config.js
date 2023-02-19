@@ -343,7 +343,7 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'api',
-                label: 'Docs',
+                label: 'API Docs',
                 icon: 'hub',
               },
               {
@@ -399,11 +399,11 @@ module.exports = {
             to: 'https://github.com/SumoLogic/sumologic-documentation',
             items:[
               {
-                label: 'Feedback',
+                label: 'Send Feedback',
                 href: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
               },
               {
-                label: 'Contribute',
+                label: 'Contribute to Docs',
                 href: '/docs/contributing',
               },
             ]
