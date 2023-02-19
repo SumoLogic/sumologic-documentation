@@ -84,7 +84,7 @@ export const Footer = () => {
                     primaryTypographyProps={{
                       color: '#e3e3e3',
                       fontFamily: 'Lab Grotesque',
-                      fontSize: 14,
+                      fontSize: 16,
                     }}
                   >
                     {label}

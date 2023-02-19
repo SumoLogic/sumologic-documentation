@@ -11,14 +11,14 @@ Sumo Logic is an all-in-one platform for monitoring, analyzing, troubleshooting,
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/get-started/overview"> <img src={useBaseUrl('img/icons/business/video.png')} alt="icon" width="50"/><h4>Quickstart videos</h4></a>
-  <p>Before diving in, check out our quickstart microlesson videos.</p>
+  <a href="/docs/get-started/onboarding"><img src={useBaseUrl('img/icons/business/mission.png')} alt="icon" width="50"/><h4>Getting started</h4></a>
+  <p>Get up and running quickly with Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <a href="/docs/get-started/onboarding"><img src={useBaseUrl('img/icons/business/mission.png')} alt="icon" width="50"/><h4>Getting started</h4></a>
-  <p>Get up and running quickly with Sumo Logic.</p>
+  <a href="/docs/get-started/overview"><img src={useBaseUrl('img/icons/business/video.png')} alt="icon" width="50"/><h4>Quickstart videos</h4></a>
+  <p>Before diving in, check out our quickstart microlesson videos.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
