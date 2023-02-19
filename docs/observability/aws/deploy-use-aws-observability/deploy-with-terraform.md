@@ -83,7 +83,7 @@ server machine of your choice:
    * `sumologic_environment`: [Sumo Logic Deployment](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) Enter au, ca, de, eu, jp, us2, in, fed or us1.
    * `sumologic_access_id`: [Sumo Logic Access ID](/docs/manage/security/access-keys.md) Sumo Logic Access ID.
    * `sumologic_access_key`: [Sumo Logic Access Key](/docs/manage/security/access-keys.md) Sumo Logic Access Key used for Sumo Logic API calls.
-   * `sumologic_organization_id`: [Sumo Logic Organization ID](../../../get-started/account-setup.md) You can find your org on the Preferences page in the Sumo Logic UI. For more information, see [Preferences Page](../../../get-started/account-setup.md). Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.
+   * `sumologic_organization_id`: [Sumo Logic Organization ID](../../../get-started/account-settings-preferences.md) You can find your org on the Preferences page in the Sumo Logic UI. For more information, see [Preferences Page](../../../get-started/account-settings-preferences.md). Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.
    * `aws_account_alias`: The Name/Alias for the AWS environment from which you are collecting data. This name will appear in the Sumo Logic Explorer View, metrics, and logs. Please leave this blank if you are going to deploy the solution in multiple AWS accounts. Do not include special characters in the alias.
     :::note
     See the [variables.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/variables.tf) file and README in that folder for configuration information with permissible values for these variables. 

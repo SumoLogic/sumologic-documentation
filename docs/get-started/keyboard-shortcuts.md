@@ -1,14 +1,19 @@
 ---
 id: keyboard-shortcuts
-title: Sumo Logic Keyboard Shortcuts
+title: Keyboard Shortcuts
 sidebar_label: Keyboard Shortcuts
+description: Sumo Logic keyboard shortcuts.
 ---
 
-Sumo Logic keyboard shortcuts are enabled by default. To display the list of shortcuts from the UI, press **?** or choose **Help > Shortcuts** from the left nav.
+Sumo Logic keyboard shortcuts are enabled by default. To display the list of shortcuts from the UI, select **Help** > **Shortcuts** from the left nav.
+
+:::tip
+You can also press the **?** key to display the list of keyboard shortcuts.
+:::
 
 For security, shortcuts for some pages are visible only for users with an Admin account.
 
-To disable keyboard shortcuts, for example, if they conflict with an international keyboard, click your name in the left nav, select **[Preferences](account-setup.md#my-preferences)**, and deselect **Enable keyboard shortcuts**.
+To disable keyboard shortcuts, for example, if they conflict with an international keyboard, click your name in the left nav, select **Preferences**, then deselect **Enable keyboard shortcuts**.
 
 ## Limitations
 
@@ -18,7 +23,7 @@ To disable keyboard shortcuts, for example, if they conflict with an internation
 ## Keyboard Shortcuts on macOS
 
 | Shortcut  | Description |
-|:----------|:-------------------------------------------------------------|
+|:----------|:--------------------|
 | alt+s       | Open a new Search tab                                         |
 | alt+shift+n | Duplicate current query in a new tab (search only)            |
 | alt+shift+d | Duplicate both the original query and time range in a new tab |
@@ -49,7 +54,7 @@ To disable keyboard shortcuts, for example, if they conflict with an internation
 ## Keyboard Shortcuts on Windows
 
 | Shortcut  | Description |
-|:-------------|:-----------------------------------------------------------------|
+|:-------------|:-----------------------|
 | g s         | Open a new Search tab                                           |
 | alt+shift+n | Duplicate current query in a new tab (search only)              |
 | alt+shift+d | Duplicate both the original query and time range in the new tab |
