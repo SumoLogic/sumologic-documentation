@@ -1,6 +1,6 @@
 ---
 id: aws-vpc-flow
-title: AWS VPC Flow
+title: AWS VPC Flow - Cloud SIEM
 sidebar_label: AWS VPC Flow
 description: Configure collection and ingestion of VPC Flow logs from an S3 bucket to be parsed by CSE's AWS VPC  Flow system parser.
 ---

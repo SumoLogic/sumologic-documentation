@@ -5,8 +5,6 @@ sidebar_label: TAXII Feed
 description: Learn how to integrate CSE with a TAXII feed.
 ---
 
-
-
 This topic has instructions for integrating CSE with a TAXII threat intelligence feed. In this configuration, CSE is a TAXII client, and polls a TAXII Server. 
 
 :::note
@@ -27,18 +25,10 @@ CSE supports TAXII v1.1 and v1.2. 
 
 ## Configure the integration
 
-1. Click the content menu, and select **Threat Intelligence**.
-
-    ![gear-threat-intel.png](/img/cse/gear-threat-intel.png)
-1. On the **Threat Intelligence** page, click **Add Source**.
-
-    ![threat-intel-page.png](/img/cse/threat-intel-page.png)
-1. On the **Add New Source** popup, click **TAXII Feed**.
-
-    ![taxii-feed-option.png](/img/cse/taxii-feed-option.png)
-1. The **Add Source** page appears.
-
-    ![add-new-source.png](/img/cse/add-new-source.png)
+1. Click the content menu, and select **Threat Intelligence**. <br/>  ![gear-threat-intel.png](/img/cse/gear-threat-intel.png)
+1. On the **Threat Intelligence** page, click **Add Source**. <br/>  ![threat-intel-page.png](/img/cse/threat-intel-page.png)
+1. On the **Add New Source** popup, click **TAXII Feed**. <br/>  ![taxii-feed-option.png](/img/cse/taxii-feed-option.png)
+1. The **Add Source** page appears. <br/>  ![add-new-source.png](/img/cse/add-new-source.png)
 1. **Name**. Enter a name for the feed.
 1. **Description**. Enter a description of the feed.
 1. **URL**. Enter the URL for the feed provider’s TAXII discovery service endpoint.
@@ -47,8 +37,8 @@ CSE supports TAXII v1.1 and v1.2. 
 1. **Max Lookback days**. You can use this option to tell CSE how many days of data to fetch the first time you populate your list of indicators. By default, the first time you populate the list, CSE will look for all data from the feed for all time. Note that on subsequent updates, CSE will only consider data added to the feed since the last time it was polled.
 1. **Collections**. You can optionally enter a comma-separated list of the specific collections of indicators that you want to retrieve. (The collections available depend on your threat intel provider.) If you leave this field blank, all indicators will be queried.)
 1. **Subscription ID**. As required, an subscription ID to send to the TAXII provider in the poll request.
-12. **Username**. Enter the username for accessing the TAXII server.
-13. **Password**. Enter the password for accessing the TAXII server.
-14. **Certificate**. If required, drop the certificate for accessing the TAXII server into this field. 
-15. **Certificate Password**. Enter the password for the certificate.
-16. Click **Add TAXII Feed Source**.
+1. **Username**. Enter the username for accessing the TAXII server.
+1. **Password**. Enter the password for accessing the TAXII server.
+1. **Certificate**. If required, drop the certificate for accessing the TAXII server into this field. 
+1. **Certificate Password**. Enter the password for the certificate.
+1. Click **Add TAXII Feed Source**.

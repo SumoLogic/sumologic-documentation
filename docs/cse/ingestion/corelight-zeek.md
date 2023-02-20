@@ -1,6 +1,6 @@
 ---
 id: corelight-zeek
-title: Corelight Zeek
+title: Corelight Zeek - Cloud SIEM
 sidebar_label: Corelight Zeek
 description: Configure a syslog source to ingest Corelight Zeek log messages and send them to the CSE Corelight log mapper.
 ---

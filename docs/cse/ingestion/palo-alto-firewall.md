@@ -1,6 +1,6 @@
 ---
 id: palo-alto-firewall
-title: Palo Alto Firewall
+title: Palo Alto Firewall - Cloud SIEM
 sidebar_label: Palo Alto Firewall
 description: Configure collection of Palo Alto Firewall log messages to be parsed by CSE's system parser for Palo Alto Firewall.
 ---
