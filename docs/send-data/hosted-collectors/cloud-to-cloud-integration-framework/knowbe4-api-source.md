@@ -50,7 +50,7 @@ If the Source is configured with the **SIEM forward** option, the metadata field
 ## Data Sources
 
 The KnowBe4 integration fetches two types of data sources for the KnowBe4 account.
-1. **External Events**. Our integration retrieves all user external events for the KnowBe4 account. This data type is disabled by default and can only be enabled on request; contact Sumo Logic Support for more information.
+1. **External Events**. Our integration retrieves all user events for the KnowBe4 account. This data type is disabled by default and can only be enabled on request; contact Sumo Logic Support for more information.
 2. **Phishing Tests**.  Our integration fetches a list of all recipients for each phishing security test on the KnowBe4 account.
 
 ## States
@@ -81,7 +81,7 @@ To configure the KnowBe4 API Source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select **KnowBe4** icon.  <br/>  <img src={useBaseUrl('img/send-data/knowbe4-icon.png')} alt="knowbe4-icon.png" width="120" />
-4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional. <br/>   <img src={useBaseUrl('img/send-data/knowbe4-config-main.png')} alt="knowbe4-config-main.png" width="450" />
+4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional. <br/>   <img src={useBaseUrl('img/send-data/knowbe4-config-main.png')} alt="knowbe4-config-main.png" width="480" />
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 6. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
@@ -89,7 +89,7 @@ To configure the KnowBe4 API Source:
 7. In **Base URL**, choose the URL where your KnowBe4 account is located. See [Base URL](#base-url) section to know your base URL.
 1. In **API Key**, authenticate your account by entering your secret API key. You can access your API key or generate a new one from **User Event API Management Console**. See [API Token](#api-token) section.
 1. In **Data Types**, you can select the **Phishing Tests** data type to fetch a list of all recipients for each phishing security test on the KnowBe4 account. To retrieve the **External User events** data, you need to raise a request to Sumo Logic support to enable this data type.
-1. In **Phishing Poll Interval**, Enter the phishing poll interval frequency, which must be between 1 hour and 24 hours.
+1. In **Phishing Poll Interval**, enter the phishing poll interval frequency, which must be between 1 hour and 24 hours.
 1. When you are finished configuring the Source, click **Save**.
 
 ### Error types
@@ -113,7 +113,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | Parameter | Type | Required | Description | Access |
 |:--|:--|:--|:--|:--|
 | `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. | na |
-| `schemaRef` | JSON Object  | Yes | Use `{"type":"KnowBe4"}` for KnowBe4 Source. | not modifiable |
+| `schemaRef` | JSON Object  | Yes | Use `{"type":"KnowBe4 KMSAT"}` for KnowBe4 Source. | not modifiable |
 | `sourceType` | String | Yes | Use `Universal` for KnowBe4 Source. | not modifiable |
 
 ### Config Parameters
