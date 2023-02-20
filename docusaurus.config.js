@@ -245,6 +245,9 @@ module.exports = {
       //searchParameters: {},
       // Optional: path for search page that enabled by default (`false` to disable it)
       searchPagePath: false,
+      getMissingResultsUrl({ query }) {
+        return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
+      },
     },
     prism: {
       theme: lightCodeTheme,
