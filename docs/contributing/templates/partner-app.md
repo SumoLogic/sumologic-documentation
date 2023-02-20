@@ -5,10 +5,9 @@ sidebar_label: Partner App Template
 description: Using the Sumo Logic Partner App Template.
 ---
 
-:::sumo
-Copy this file and edit it for your App integration. These guides should be added to the
+:::tip
+Copy this file and edit it for your App integration.
 :::
-
 
 This application has been developed and is supported by "Partner Name". In case of technical questions, please contact "Partner Name" support at "email address" or "phone number".
 

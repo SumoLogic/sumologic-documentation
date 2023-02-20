@@ -4,8 +4,7 @@ title: Manage Organizational Settings
 description: An account owner can update org names, define customized subdomain names, delete orgs, and change the account owner.
 keywords:
     - subdomain
-    - orgs
-tags: [subdomain, orgs]  
+    - orgs 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

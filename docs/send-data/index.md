@@ -11,20 +11,23 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Learn how to send data to Sumo Logic. In this section, we'll introduce the following concepts:
 
-<div className="box boxwidetop card">
-  <div className="container">
-  <h3>Design Your Deployment</h3>
+<div className="box smallboxwidetop card">
+  <div className="container"><br/>
+  <img src={useBaseUrl('img/icons/data-collection.png')} alt="icon" width="55"/>
+  <h4>Design Your Deployment</h4>
   <ul>
   <li><a href="/docs/send-data/choose-collector-source">Choose a Collector and Source</a></li>
-  <li><a href="/docs/send-data/collection">Understanding the Collector and Source UI</a></li>
+  <li><a href="/docs/send-data/collection">Navigating the Collector and Source UI</a></li>
   </ul>
   </div>
 </div>
 
+<br/>
+
 <div className="box-wrapper" markdown="1">
-<div className="box box1 card">
+<div className="box smallbox1 card">
   <div className="container">
-  <h3>Installed Agents</h3>
+  <h4>Installed Agents</h4>
   <ul>
   <li><a href="/docs/send-data/installed-collectors">Installed Collectors</a></li>
   <li><a href="/docs/send-data/installed-collectors/sources">Explore Installed Collector Sources</a></li>
@@ -32,18 +35,18 @@ Learn how to send data to Sumo Logic. In this section, we'll introduce the follo
   </ul>
   </div>
 </div>
-<div className="box box2 card">
+<div className="box smallbox2 card">
   <div className="container">
-  <h3>Hosted Collectors</h3>
+  <h4>Hosted Collectors</h4>
   <ul>
   <li><a href="/docs/send-data/hosted-collectors/configure-hosted-collector">Configuring Hosted Collectors</a></li>
   <li><a href="/docs/send-data/hosted-collectors">Explore Hosted Collector Sources (Amazon, Google, C2C, HTTP, and more)</a></li>
   </ul>
   </div>
 </div>
-  <div className="box box3 card">
+  <div className="box smallbox3 card">
   <div className="container">
-  <h3>Other Data Sources</h3>
+  <h4>Other Data Sources</h4>
   <ul>
   <li><a href="/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs">Amazon Cloudwatch Logs</a></li>
   <li><a href="/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf">Collect Metrics from Telegraf</a></li>
@@ -51,9 +54,9 @@ Learn how to send data to Sumo Logic. In this section, we'll introduce the follo
   </ul>
   </div>
 </div>
-<div className="box box4 card">
+<div className="box smallbox4 card">
   <div className="container">
-  <h3>JSON Configuration</h3>
+  <h4>JSON Configuration</h4>
   <ul>
   <li><a href="/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources">For Hosted Collector Sources</a></li>
   <li><a href="/docs/send-data/use-json-configure-sources/json-parameters-installed-sources">For Installed Collector Sources</a></li>
@@ -61,18 +64,18 @@ Learn how to send data to Sumo Logic. In this section, we'll introduce the follo
   </ul>
   </div>
 </div>
-  <div className="box box5 card">
+  <div className="box smallbox5 card">
     <div className="container">
-    <h3>Source Reference Information</h3>
+    <h4>Source Reference Information</h4>
     <ul>
     <li><a href="/docs/send-data/reference-information/time-reference">Timestamps, Time Zones, Time Ranges, Date Formats</a></li>
     <li><a href="/docs/send-data/reference-information/use-wildcards-paths">Using Wildcards in Paths</a></li>
     </ul>
     </div>
   </div>
-  <div className="box box6 card">
+  <div className="box smallbox6 card">
     <div className="container">
-    <h3>Troubleshooting & More</h3>
+    <h4>Troubleshooting & More</h4>
     <ul>
     <li><a href="/docs/send-data/best-practices">Best Practices</a></li>
     <li><a href="/docs/send-data/collector-faq">Collector Troubleshooting and FAQ</a></li>

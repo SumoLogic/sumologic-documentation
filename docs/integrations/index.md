@@ -16,46 +16,46 @@ Several of the guides below are partner-specific: Amazon/AWS, Microsoft/Azure, a
 To determine if an app is supported by your pricing plan, see [Apps and Sumo Logic Account Plans](/docs/integrations/account-plans).
 
 <div className="box-wrapper" markdown="1">
-<div className="box box1 card">
+<div className="box smallbox1 card">
   <div className="container">
   <img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Thumbnail icon" width="65"/>
-  <h3><a href="/docs/integrations/amazon-aws/">Amazon and AWS</a></h3>
-  <p>A guide to Sumo Logic apps for Amazon and AWS products.</p>
+  <h3><a href="/docs/integrations/amazon-aws/">Amazon / AWS</a></h3>
+  <p>A guide to our apps for Amazon and AWS products.</p>
   </div>
 </div>
-<div className="box box2 card">
+<div className="box smallbox2 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure.png')} alt="Thumbnail icon" width="50"/>
-  <h3><a href="/docs/integrations/microsoft-azure/">Microsoft and Azure</a></h3>
-  <p>A guide to Sumo Logic apps for Microsoft and Azure.</p>
+  <h3><a href="/docs/integrations/microsoft-azure/">Microsoft / Azure</a></h3>
+  <p>A guide to our apps for Microsoft and Azure.</p>
   </div>
 </div>
-    <div className="box box3 card">
+    <div className="box smallbox3 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/google/google.png')} alt="Thumbnail icon" width="50"/>
+      <img src={useBaseUrl('img/integrations/google/google.png')} alt="Thumbnail icon" width="40"/>
       <h3><a href="/docs/integrations/google/">Google</a></h3>
-      <p>A guide to Sumo Logic apps for Google products, such as Google Workspace.</p>
+      <p>A guide to our apps for Google products, such as Google Workspace.</p>
       </div>
     </div>
-    <div className="box box4 card">
+    <div className="box smallbox4 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/databases/databases-icon.png')} alt="Thumbnail icon" width="70"/>
+      <img src={useBaseUrl('img/integrations/databases/databases-icon.png')} alt="Thumbnail icon" width="55"/>
       <h3><a href="/docs/integrations/databases">Database Servers</a></h3>
       <p>Integrations for database servers, such as Oracle and MongoDB.</p>
       </div>
     </div>
-    <div className="box box5 card">
+    <div className="box smallbox5 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/containers-orchestration/containers.png')} alt="Thumbnail icon" width="50"/>
       <h3><a href="/docs/integrations/cloud-security-monitoring-analytics/">Containers</a></h3>
-      <p>A guide to Sumo Logic apps for container management, such as Kubernetes and Docker.</p>
+      <p>A guide to our apps for container management, such as Kubernetes and Docker.</p>
       </div>
     </div>
-    <div className="box box6 card">
+    <div className="box smallbox6 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/web-servers/web-servers.png')} alt="Thumbnail icon" width="50"/>
       <h3><a href="/docs/integrations/web-servers/">Web Servers</a></h3>
-      <p>A guide to Sumo Logic apps for web servers, such as Apache, Nginx, and Squid Proxy.</p>
+      <p>A guide to our apps for web servers, such as Apache, Nginx, and Squid Proxy.</p>
       </div>
     </div>
   </div>

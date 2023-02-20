@@ -3,8 +3,6 @@ id: optimize-search-performance
 title: Optimize Search Performance
 ---
 
-
-
 Search optimization tools speed the search process, delivering query results in less time and improving productivity for forensic analysis and log management.
 
 Search speed generally depends on the amount of data and the type of query run against the data. Search optimization tools segment the data and queue it up for quick results.

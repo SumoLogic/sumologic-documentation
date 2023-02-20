@@ -4,8 +4,6 @@ title: Install a Collector on MacOS
 description: Install or uninstall a Collector on a MacOS system.
 ---
 
-
-
 Follow the steps in this topic to install or uninstall a Collector on MacOS. See [Installed Collectors](/docs/send-data/installed-collectors) for information on other OSs.
 
 ## System Requirements
