@@ -353,7 +353,7 @@ You can call a SLO Lookup Table to view all SLO metadata in your environment. Th
 
 There are two ways to use it:
 
-* To join the results of your SLO precomputed data from `_view = sumologic_slo_output` with your metadata contained in the internal lookup table based on the joining key (`sloId`, `sloVersion`):
+* To join the results of your SLO precomputed data from `_view=sumologic_slo_output` with your metadata contained in the internal lookup table based on the joining key (`sloId`, `sloVersion`):
   ```sql
   _view=sumologic_slo_output
   | lookup * from sumo://content/slos on sloId, sloVersion
