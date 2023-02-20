@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The KnowBe4 API integration collects user events data into Sumo Logic for storage, analysis, and alerting. It ingests events data from the [Events API](https://developer.knowbe4.com/rest/userEvents#tag/Events/operation/listEvents), phishing security tests from the [Phishing Security Tests API](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests/get), and recipient results from the [Recipient Results API](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests~1%7Bpst_id%7D~1recipients/get).
 
 :::important
-Note that access to KnowBe4 APIs is limited to Platinum and Diamond customers, and the `_siemparser` is currently only available for the `External Events` source.
+Note that access to KnowBe4 APIs is limited to Platinum and Diamond customers, and the `_siemparser` is currently only available for the External Events source.
 :::
 
 ## Prerequisites
@@ -26,11 +26,11 @@ The **Base URL** is the URL where your **KnowBe4** account is located. To get th
 
   | Server location | Server located at  | Base URLs |
   | :---|:---|:---|
-  | US Server |	training.knowbe4.com | `https://api.events.knowbe4.com` |
-  | EU Server | eu.knowbe4.com | `https://api-eu.events.knowbe4.com` |
-  | CA Server |	ca.knowbe4.com | `https://api-ca.events.knowbe4.com` |
-  | UK Server | uk.knowbe4.com | `https://uk.api.knowbe4.com`        |
-  | DE server | de.knowbe4.com | `https://de.api.knowbe4.com`        |
+  | US Server |	training.knowbe4.com | `https://us.api.knowbe4.com` |
+  | EU Server | eu.knowbe4.com | `https://eu.api.knowbe4.com` |
+  | CA Server |	ca.knowbe4.com | `https://ca.api.knowbe4.com` |
+  | UK Server | uk.knowbe4.com | `https://uk.api.knowbe4.com` |
+  | DE server | de.knowbe4.com | `https://de.api.knowbe4.com` |
 
 ### API Token
 
@@ -50,7 +50,7 @@ If the Source is configured with the **SIEM forward** option, the metadata field
 ## Data Sources
 
 The KnowBe4 integration fetches two types of data sources for the KnowBe4 account.
-1. **External Events**. Our integration retrieves all user events for the KnowBe4 account.
+1. **External Events**. Our integration retrieves all user external events for the KnowBe4 account. This data type is disabled by default and can only be enabled on request; contact Sumo Logic Support for more information.
 2. **Phishing Tests**.  Our integration fetches a list of all recipients for each phishing security test on the KnowBe4 account.
 
 ## States
@@ -73,7 +73,6 @@ On the Collection page, the [Health](/docs/manage/health-events#collection-page)
 
 Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings.<br/> ![hover c2c error.png](/img/send-data/hover-c2c-error.png)
 
-
 ## Set up KnowBe4 Source
 
 When you create a KnowBe4 API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
@@ -88,8 +87,10 @@ To configure the KnowBe4 API Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 7. In **Base URL**, choose the URL where your KnowBe4 account is located. See [Base URL](#base-url) section to know your base URL.
-8. In **API Key**, authenticate your account by entering your secret API key. You can access your API key or generate a new one from **User Event API Management Console**. See [API Token](#api-token) section.
-9. When you are finished configuring the Source, click **Save**.
+1. In **API Key**, authenticate your account by entering your secret API key. You can access your API key or generate a new one from **User Event API Management Console**. See [API Token](#api-token) section.
+1. In **Data Types**, you can select the **Phishing Tests** data type to fetch a list of all recipients for each phishing security test on the KnowBe4 account. To retrieve the **External User events** data, you need to raise a request to Sumo Logic support to enable this data type.
+1. In **Phishing Poll Interval**, Enter the phishing poll interval frequency, which must be between 1 hour and 24 hours.
+1. When you are finished configuring the Source, click **Save**.
 
 ### Error types
 
@@ -98,8 +99,8 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
 |:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable                                                    | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which it quits.                               | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which it quits.                               | FirstPartyGenericError |
+| ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs.                                     | Yes                                                   | The Source will retry indefinitely.                    | ThirdPartyGenericError |
+| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry indefinitely.                    | FirstPartyGenericError |
 
 ### Restarting your Source
 
@@ -125,6 +126,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
 | `baseURL` | String | Yes | Region URL of the KnowBe4 application. | modifiable |
 | `apiKey` | String | Yes | Secret api key to authenticate your account. | modifiable |
+| `dataTypes` | Array | Yes | Data sources to fetch from KnowBe4. | modifiable |
+| `phishingPollInterval` | Integer | Yes | The Polling interval for phishing data requests. The minimum interval is 1 hour, and the maximum is 24 hours. | modifiable |
 
 ### JSON Example
 
@@ -136,11 +139,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
   		"name": "KnowBe4",
  	 	"description": "Test Source",
   		"category": "source_category",
-  		"baseURL": "https://api.events.knowbe4.com",
-  		"apiKey": "************"
+  		"baseURL": "https://us.api.knowbe4.com",
+  		"apiKey": "************",
+		"dataTypes": [
+    		         "phishingTests"
+  		],
+		"phishingPollInterval": 1
           },
         "schemaRef": {
-            "type": "KnowBe4"
+            "type": "KnowBe4 KMSAT"
         },
         "sourceType": "Universal"
     }
@@ -152,3 +159,4 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 There are two limitations to access KnowBe4 APIs:
 * Access to the KnowBe4 Event APIs is limited to 10 requests per licensed user account per day, with a maximum of 4 requests per second.
 * Access to the KnowBe4 Phishing APIs is limited to 1,000 requests per day plus the number of licensed users on the account. The API allows a maximum of 4 requests per second, and has a burst limit of 50 requests per minute which starts around 5 minutes and the daily limit starts around 24 hours from the first API request.
+* Access to the **External Events Data type** is disabled by default, and can be enabled on requests. Contact Sumo Logic support to enable this data type.
