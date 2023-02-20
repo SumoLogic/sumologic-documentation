@@ -1,7 +1,7 @@
 ---
 id: training-certification-faq
 title: Sumo Logic Training and Certification FAQ
-sidebar_label: Training and certification
+sidebar_label: Training and Certification
 description: Learn more about the Sumo Logic Training and Certification Program.
 ---
 

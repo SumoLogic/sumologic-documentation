@@ -1,7 +1,7 @@
 ---
 id: library
 title: Managing Your Sumo Logic Library
-sidebar_label: Managing your library
+sidebar_label: Managing your Library
 description: Managing your Library in Sumo Logic.
 ---
 

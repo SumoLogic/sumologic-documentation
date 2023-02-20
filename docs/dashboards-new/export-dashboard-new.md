@@ -1,7 +1,7 @@
 ---
 id: export-dashboard-new
 title: Exporting Sumo Logic Dashboards (New)
-sidebar_label: Export Dashboard (New)
+sidebar_label: Export a Dashboard (New)
 description: Learn how to export your Dashboard (New) as a PDF or PNG file.
 ---
 

@@ -10,7 +10,7 @@ This topic describes how to reset another user's password. When you reset a user
 The **Reset Password** option is only available if you are an admin, and is not available when SAML is [locked down](../../security/saml/set-up-saml.md).
 
 :::note
-Looking for instructions on resetting your own password? See [Changing Your Password.](../../../get-started/account-setup.md)
+Looking for instructions on resetting your own password? See [Changing Your Password.](../../../get-started/account-settings-preferences.md)
 :::
 
 To reset a user's password follow these steps:

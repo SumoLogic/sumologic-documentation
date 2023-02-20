@@ -5,6 +5,10 @@ sidebar_label: Overview
 description: Learn how Sumo Logic brings ease-of-use to Kubernetes, how to get the Kubernetes Solution, and the Sumo Logic apps that are available for Kubernetes platforms.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/operations/kubernetes-explorer.png')} alt="icon" width="60"/>
+
 The Sumo Logic Kubernetes Solution provides an end-to-end experience that takes you from configuring collection and installing apps, to monitoring, managing, and troubleshooting your Kubernetes environment.
 
 ## What is Kubernetes?
