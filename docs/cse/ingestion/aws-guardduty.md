@@ -1,6 +1,6 @@
 ---
 id: aws-guardduty
-title: AWS GuardDuty
+title: AWS GuardDuty - Cloud SIEM
 sidebar_label: AWS GuardDuty
 description: Configure an HTTP source to ingest AWS GuardDuty log messages and send them to GuardDuty system parser.
 ---

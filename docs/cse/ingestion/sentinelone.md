@@ -1,6 +1,6 @@
 ---
 id: sentinelone
-title: SentinelOne
+title: SentinelOne - Cloud SIEM
 sidebar_label: SentinelOne
 description: Learn how to collect SentinelOne log messages and send them to Sumo Logic to be ingested by CSE.
 ---

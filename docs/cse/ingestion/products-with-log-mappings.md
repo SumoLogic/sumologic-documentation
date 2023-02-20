@@ -1,6 +1,6 @@
 ---
 id: products-with-log-mappings
-title: Products with Log Mappings
+title: Products with Log Mappings - Cloud SIEM
 sidebar_label: Products with Log Mappings
 description: See the product and services that CSE supports with log mappings and parsers.
 ---
