@@ -15,6 +15,25 @@ You can also see the [OT Distro GitHub repository](https://github.com/SumoLogic
 Instrument your applications with OpenTelemetry using our [OpenTelemetry Libraries](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation).
 :::
 
+
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+Introducing OpenTelemetry.
+
+<Iframe url="https://www.youtube.com/embed/XLgCW0WYN5Q?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
+
 <!--
 In this section, we'll introduce the following concepts:
 
