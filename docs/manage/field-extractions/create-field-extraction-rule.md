@@ -4,7 +4,7 @@ title: Create a Field Extraction Rule
 description: Field Extraction Rules (FER) tell Sumo Logic which fields to parse out automatically.
 ---
 
-You can create a field extraction rule of your own from scratch by following the instructions below. We also provide [data-source-specific templates](/docs/manage/field-extractions/fer-templates/index.md) for AWS, Apache, and more.
+You can create a field extraction rule of your own from scratch by following the instructions below. We also provide [data-source-specific templates](/docs/manage/field-extractions/field-extraction-rule-templates/index.md) for AWS, Apache, and more.
 
 You need the **Manage field extraction rules** [role capability](../users-roles/roles/role-capabilities.md) to create a field extraction rule.
 
