@@ -2286,7 +2286,6 @@
   "/Cloud_SIEM_Enterprise/CSE_Rules/Normalized_Threat_Rules": "/docs/cse/rules/normalized-threat-rules",
   "/Cloud_SIEM_Enterprise/CSE_Rules/Rule_Tuning_Expressions": "/docs/cse/rules/rule-tuning-expressions",
   "/Cloud_SIEM_Enterprise/CSE_Rules/Tailor_a_Global_Rule": "/docs/cse/rules/tailor-global-rule",
-  "/docs/cse/rules/first-seen-rule": "/docs/cse/rules/write-first-seen-rule",
   "/Cloud_SIEM_Enterprise/CSE_Schema/": "/docs/cse/schema",
   "/Cloud_SIEM_Enterprise/CSE_Schema/00_Record_Processing_Pipeline": "/docs/cse/schema/record-processing-pipeline",
   "/Cloud_SIEM_Enterprise/CSE_Schema/01_Schema_Attributes": "/docs/cse/schema/schema-attributes",
