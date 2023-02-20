@@ -13,7 +13,7 @@ LogReduce.
 
 Watch our video on LogReduce. 
 
-<Iframe url="https://www.youtube.com/embed/bT02WPBToLk"
+<Iframe url="https://www.youtube.com/embed/NlnIZvfYO2w"
         width="854px"
         height="480px"
         id="myId"
