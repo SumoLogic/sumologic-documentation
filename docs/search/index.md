@@ -2,6 +2,7 @@
 slug: /search
 title: Log Search
 description: Learn about the Sumo Logic search language, operators, and search features.
+tags: [log search, search]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,6 +10,73 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/icons/search.png')} alt="icon" width="50"/>
 
 Search allows you to query and analyze log data sent to Sumo Logic. There are many features to help you use our robust Search Query Language, such as LogCompare, LogReduce, LogExplain, Lookup Tables, Subqueries, and Time Compare. See [Get Started with Search](/docs/search/get-started-with-search) to begin exploring your data in Sumo Logic.
+
+## Guides
+
+In this section, we'll introduce the following concepts:
+
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <h4><a href="/docs/search/get-started-with-search">Getting started with Log Search</a></h4>
+  <p>Start here to begin exploring your data in Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox2 card">
+  <div className="container">
+  <h4><a href="/docs/search/search-query-language">Search Query Language</a></h4>
+  <p>The extensive Sumo Logic query options help you gain valuable insight into your log messages.</p>
+  </div>
+</div>
+<div className="box smallbox3 card">
+  <div className="container">
+  <h4><a href="/docs/search/search-cheat-sheets">Search Cheat Sheets</a></h4>
+  <p>Cheat sheets provide examples of useful search queries for different use cases.</p>
+  </div>
+</div>
+<div className="box smallbox4 card">
+  <div className="container">
+  <h4><a href="/docs/search/logreduce">LogReduce</a></h4>
+  <p>Quickly assess activity patterns for things like a range of devices or traffic on a website.</p>
+  </div>
+</div>
+<div className="box smallbox5 card">
+  <div className="container">
+  <h4><a href="/docs/search/logcompare">LogCompare</a></h4>
+  <p>Easily compare log data from different time periods to detect major changes or anomalies.</p>
+  </div>
+</div>
+<div className="box smallbox6 card">
+  <div className="container">
+  <h4><a href="/docs/search/lookup-tables">Lookup Tables</a></h4>
+  <p>Learn about Lookup tables and the search operators you can use with them.</p>
+  </div>
+</div>
+<div className="box smallbox7 card">
+  <div className="container">
+  <h4><a href="/docs/search/live-tail">LiveTail</a></h4>
+  <p>Real-time live feed of log events associated with a Source or Collector, which you can use for development or troubleshooting.</p>
+  </div>
+</div>
+<div className="box smallbox8 card">
+  <div className="container">
+  <h4><a href="/docs/search/behavior-insights">Behavior Insights</a></h4>
+  <p>Gain behavioral insight of your environment using LogReduce operators.</p>
+  </div>
+</div>
+<div className="box smallbox9 card">
+  <div className="container">
+  <h4><a href="/docs/search/subqueries">Subqueries</a></h4>
+  <p>Filter and evaluate conditions for a query when you may not be sure of the exact filter or condition criteria.</p>
+  </div>
+</div>
+</div>
+
+<br/>
+
+:::note
+To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Search & Query Forum](https://support.sumologic.com/hc/en-us/community/topics).
+:::
 
 ## Partitions and Views
 
@@ -32,8 +100,4 @@ To search specific Data Tiers. See [Searching Data Tiers](/docs/manage/partition
 Traces are collected with SumoLogic Kubernetes Collection or a standalone OpenTelemetry collector through an HTTP Traces Source.
 
 * Search raw spans from tracing data from the last seven days. See [Search Query Language support for Traces](get-started-with-search/search-basics/view-traces-search-results.md).
-* View tracing data from search log messages by right-clicking an entry and selecting **Open Trace**. See [View Traces] from Search Results.
-
-:::note
-To interact with other Sumo Logic users, post feedback, or ask a question, visit the Sumo Logic Community Search & Query Forum.
-:::
+* View tracing data from search log messages by right-clicking an entry and selecting **Open Trace**. See [View Traces](/docs/apm/traces/view-and-investigate-traces) from Search Results.

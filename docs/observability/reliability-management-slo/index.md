@@ -2,6 +2,7 @@
 slug: /observability/reliability-management-slo
 title: Reliability Management (SLOs/SLIs)
 description: Learn how to use Sumo Logic Reliability Management, including creating SLO monitors, configuring queries, setting SLIs, and using dashboards.
+tags: [Reliability Management, SLO]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,6 +14,24 @@ A reliable end user experience is the key goal for observability.
 In complex systems, apps, service, and infrastructure can fail in unpredictable ways, resulting in a storm of potentially meaningless alerts. Reliability, as formalized in Service Level Objectives (SLOs), helps developers focusing on monitoring and troubleshooting user experience by measuring what matters to end users.
 
 Sumo Logic Reliability Management helps site reliability engineers (SREs) and product teams define and monitor SLOs through alerts and dashboards.
+
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+Reliability Management Using SLOs.
+
+<Iframe url="https://www.youtube.com/embed/jCGqfqEDXto?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
 
 
 ## Prerequisites

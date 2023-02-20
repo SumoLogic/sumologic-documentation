@@ -12,7 +12,48 @@ In Sumo Logic, you must use an access key to:
 
 You can create and manage your own access keys on the **Preferences** page in the Sumo web app. If your role grants you the **Manage Access Keys** capability, you can manage access keys created by other Sumo users on the **Administration** > **Security** > **Access Keys** page.
 
-## CORS support
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+
+Managing Access Keys (how to).
+
+<Iframe url="https://www.youtube.com/embed/1UY7vQiJwQ4?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
+
+
+## Create your access key
+
+### From the Preferences page
+
+If you have the **Create Access Keys** role capability, you can use the **Preferences** page to create access keys.
+
+To create your own access keys:
+
+1. In Sumo Logic, click your name in the left-nav and open the **Preferences** page.
+1. In the **My Access Keys** section, click **+ Add Access Key**.<br/>  ![access-key-preferences-page-2.png](/img/security/access-key-preferences-page-2.png)
+1. The **Create a Sumo Logic Access Key** window appears.<br/>  ![create-access-key.png](/img/security/create-access-key.png)
+1. Enter a name for the access key in the **Name** field. If you don’t want to create an allowlist of domains from which the access key can be used to access Sumo APIs, go to step 7 below.
+1. (Optional) In this step, you can define one or more domains that may use the access key to access Sumo APIs.
+  :::note
+  Enter a domain in the **Allowlisted CORS Domains** field and click **Add**. Enter the domains in the [Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) format described in Mozilla help. The URL pattern must include the HTTPS protocol and a domain name, a port is optional.
+  :::
+  ![create-access-key-2.png](/img/security/create-access-key-2.png)
+1. The window updates, and displays the domain you added.Repeat steps 5 and 6 to add additional domains to the allowlist.
+1. Click **Create Key** to generate the key. 
+1. The window displays the generated Access ID and Access Key. Copy both before clicking **Done**. After you press **Done**, you will not be able to recover the Access ID and Access Key.<br/> ![generated-access-key.png](/img/security/generated-access-key.png)
+
+### CORS support
 
 Sumo supports cross-origin resource sharing (CORS), a mechanism that uses additional HTTP headers to tell a browser to let a web application running at one origin (domain) have permission to access selected resources from a server at a different origin. 
 
@@ -36,28 +77,9 @@ Sumo accepts:
 When Sumo accepts a request, the response includes the ORIGIN header in
 an Access-Control-Allow-Origin header.
 
-## Manage your access keys on Preferences page
 
-### Create an access key on Preferences page
 
-If you have the **Create Access Keys** role capability, you can use the **Preferences** page to create access keys.
-
-To create your own access keys:
-
-1. In Sumo Logic, click your name in the left-nav and open the **Preferences** page.
-1. In the **My Access Keys** section, click **+ Add Access Key**.<br/>  ![access-key-preferences-page-2.png](/img/security/access-key-preferences-page-2.png)
-1. The **Create a Sumo Logic Access Key** window appears.<br/>  ![create-access-key.png](/img/security/create-access-key.png)
-1. Enter a name for the access key in the **Name** field. If you don’t want to create an allowlist of domains from which the access key can be used to access Sumo APIs, go to step 7 below.
-1. (Optional) In this step, you can define one or more domains that may use the access key to access Sumo APIs.
-  :::note
-  Enter a domain in the **Allowlisted CORS Domains** field and click **Add**. Enter the domains in the [Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) format described in Mozilla help. The URL pattern must include the HTTPS protocol and a domain name, a port is optional.
-  :::
-  ![create-access-key-2.png](/img/security/create-access-key-2.png)
-1. The window updates, and displays the domain you added.Repeat steps 5 and 6 to add additional domains to the allowlist.
-1. Click **Create Key** to generate the key. 
-1. The window displays the generated Access ID and Access Key. Copy both before clicking **Done**. After you press **Done**, you will not be able to recover the Access ID and Access Key.<br/> ![generated-access-key.png](/img/security/generated-access-key.png)
-
-### Edit, deactivate, or delete an access key on Preferences page
+## Edit, deactivate, or delete an access key
 
 You can use the **Preferences** page to edit, activate, deactivate, and delete your access keys. 
 
@@ -72,15 +94,15 @@ When you mouse over an access key on the **Preferences** page, several controls 
 
 ## Manage all users’ access keys on Access Keys page
 
-If you have the **Manage Access Keys** capability you can use the **Access Keys** page to create and edit your own access keys. You can also manage access keys that were created by other Sumo users: you can edit, deactivate, and delete any access key.  
+If you have the [**Manage Access Keys** role capability](/docs/manage/users-roles/roles/role-capabilities/#security), you can manage access keys created by other Sumo Logic users in your organization: you can edit, deactivate, and delete any access key. You can use the **Access Keys** page to create and edit your own access keys. 
 
-### Generate an access key on the Access Keys page 
+### Generate an access key 
 
 1. Go to **Administration** > **Security** > **Access Keys**.<br/>  ![access-key-security-page.png](/img/security/access-key-security-page.png)
 1. At the top right of the table, click **+ Add Access Key**.
 1. Follow the steps in [Manage your own access keys on Preferences page](#manage-your-access-keys-on-preferences-page) above, starting with step 3.
 
-### Edit, deactivate, or delete access keys
+### Edit, deactivate, or delete an access key
 
 The **Security** > **Access Keys** page lists all access keys in your account. 
 

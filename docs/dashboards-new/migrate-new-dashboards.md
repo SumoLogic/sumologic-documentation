@@ -1,26 +1,21 @@
 ---
 id: migrate-to-new-dashboards
-title: Migrate New Dashboards
-sidebar_label: Migrate to New Dashboards
-description: This document explains the new Migration Dashboards functionality.
+title: Migrate to Dashboards (New)
+description: This document explains the how to migrate Dashboard (Classic) to Dashboards (New) functionality.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Overview
-
-The new **Migrate to New Dashboards** functionality allows you to switch to **New Dashboards** from the **Classic Dashboards** with the help of a single click. Migrate to New Dashboards lets you transform any of your classic dashboards into a new dashboard format, with minimal intervention from post-migration activity. It lets you analyze metrics and log data on the same dashboard, in a streamlined user experience.It lets you analyze metrics and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to monitor and manage a Kubernetes environment effectively.
-
-This gives you control over the visual display of metric and logs data. Dashboard (New) streamlines dashboard configuration and on-the-fly analytic visualizations with its new templating features.
-
-:::note
-We do not guarantee 100% conversion from classic to new dashboard although we do provide an exhaustive list of incompatibilities that need to be taken care of. Customers can still keep their old dashboard after migration.
-:::
+The **Migrate to New Dashboards** functionality allows you to transform **Dashboards (Classic)** to the **Dashboards (New)** format, with minimal intervention from post-migration activity.
 
 ## Advantages
 
-* New dashboards are constantly developed for new feature additions.
-* New dashboard provides the unique ability to display metrics metadata and logs data on the same dashboard in an integrated seamless view.
-* New dashboard streamlines dashboard configuration and on-the-fly analytic visualizations with its new templating features.
+**Dashboards (New)**:
+
+* Are continuously released and updated with new feature additions.
+* Provide the unique ability to analyze metrics metadata and logs data on the same dashboard, in an integrated seamless view. This is exactly what you need to monitor and manage a Kubernetes environment effectively.
+* Give you control over the visual display of metric and logs data.
+* Streamline dashboard configuration and on-the-fly analytic visualizations with its new templating features.
 
 ## Changes after migration
 
@@ -51,6 +46,10 @@ This table shows the complete list of features that are changed after the implem
 
 
 ## Migration Steps
+
+:::caution
+We do not guarantee 100% conversion from classic to new dashboard, although we do provide an exhaustive list of incompatibilities that need to be taken care of. You can still keep your old dashboard after migration.
+:::
 
 This section explains to you the step-by-step process to migrate your dashboards.
 
