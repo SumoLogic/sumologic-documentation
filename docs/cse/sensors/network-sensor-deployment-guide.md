@@ -21,7 +21,6 @@ The sensor uses [PF_RING](https://www.ntop.org/products/packet-capture/pf_ring/)
 
 1. Determine the appropriate location for each sensor, based on anticipated traffic.
 1. For each location you designate:
-
    1. Determine the amount of throughput you will get with this placement.
    1. Use the scaling guide to determine the CPU and memory requirements for the VM or hardware. Confirm that their firewall rules are in place.
    1. Confirm that there is traffic flowing on the interface.

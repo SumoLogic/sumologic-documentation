@@ -1,6 +1,6 @@
 ---
 id: okta
-title: Okta
+title: Okta - Cloud SIEM
 sidebar_label: Okta
 description: Configure an HTTP source to ingest Okta log messages and send them to CSE’s Okta system parser.
 ---

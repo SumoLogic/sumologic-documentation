@@ -1,6 +1,6 @@
 ---
 id: onelogin
-title: OneLogin
+title: OneLogin - Cloud SIEM
 sidebar_label: OneLogin
 description: Learn how to collect OneLogin log messages and send them to Sumo Logic to be ingested by CSE.
 ---

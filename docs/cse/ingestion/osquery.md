@@ -1,6 +1,6 @@
 ---
 id: osquery
-title: Osquery
+title: Osquery - Cloud SIEM
 sidebar_label: Osquery
 description: Configure an HTTP source to ingest osquery log messages and send them to the osquery system parser.
 ---

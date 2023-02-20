@@ -1,6 +1,6 @@
 ---
 id: sumo-logic-ingest-mapping
-title: Configure a Sumo Logic Ingest Mapping
+title: Configure a Sumo Logic Ingest Mapping - Cloud SIEM
 sidebar_label: Configure a Sumo Logic Ingest Mapping
 description: Learn how to configure Sumo Logic and CSE to enable Sumo Logic to send log messages to CSE, and CSE to select a mapper to process the messages it receives from Sumo Logic.
 ---

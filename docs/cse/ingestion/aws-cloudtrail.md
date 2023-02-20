@@ -1,6 +1,6 @@
 ---
 id: aws-cloudtrail
-title: AWS CloudTrail
+title: AWS CloudTrail - Cloud SIEM
 sidebar_label: AWS CloudTrail
 description: Configure a CloudTrail source on a hosted collector to ingest CloudTrail log messages to be parsed by CSE's CloudTrail system parser.
 ---
