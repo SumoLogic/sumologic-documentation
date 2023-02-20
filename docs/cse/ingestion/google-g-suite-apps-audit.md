@@ -1,6 +1,6 @@
 ---
 id: google-g-suite-apps-audit
-title: Google G Suite Apps Audit
+title: Google G Suite Apps Audit - Cloud SIEM
 sidebar_label: Google G Suite Apps Audit
 description: Configure an G Suite Apps Audit Source to collect G Suite log messages to be parsed by CSE's system parser for G Suite Audit.
 ---

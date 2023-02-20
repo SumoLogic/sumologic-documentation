@@ -1,6 +1,6 @@
 ---
 id: aws-application-load-balancer
-title: AWS Application Load Balancer
+title: AWS Application Load Balancer - Cloud SIEM
 sidebar_label: AWS Application Load Balancer
 description: Configure collection and ingestion of AWS Application Load Balancer (ALB) log messages from an S3 bucket to be parsed by CSE's AWS ALB system parser.
 ---

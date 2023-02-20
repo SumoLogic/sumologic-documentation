@@ -15,9 +15,3 @@ Roles and capabilities are managed on the Sumo Logic platform. For instructions,
   :::
 
 * [Create and Edit Users](/docs/manage/users-roles/users/create-edit-users.md). Follow the instructions in this topic to create user accounts. When you create a user account, you'll assign roles to it.
-
-
-
-
-
- 

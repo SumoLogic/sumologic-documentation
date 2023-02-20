@@ -1,6 +1,6 @@
 ---
 id: carbon-black
-title: Carbon Black Cloud
+title: Carbon Black Cloud - Cloud SIEM
 sidebar_label: Carbon Black Cloud
 description: Configure collection of Carbon Black Cloud logs messages from an S3 bucket to be parsed by CSE's system parser for Carbon Black Cloud.
 ---
