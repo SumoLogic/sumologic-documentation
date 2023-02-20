@@ -29,8 +29,8 @@ The **Base URL** is the URL where your **KnowBe4** account is located. To get th
   | US Server |	training.knowbe4.com | `https://us.api.knowbe4.com` |
   | EU Server | eu.knowbe4.com | `https://eu.api.knowbe4.com` |
   | CA Server |	ca.knowbe4.com | `https://ca.api.knowbe4.com` |
-  | UK Server | uk.knowbe4.com | `https://uk.api.knowbe4.com`        |
-  | DE server | de.knowbe4.com | `https://de.api.knowbe4.com`        |
+  | UK Server | uk.knowbe4.com | `https://uk.api.knowbe4.com` |
+  | DE server | de.knowbe4.com | `https://de.api.knowbe4.com` |
 
 ### API Token
 
@@ -39,9 +39,9 @@ The **API security token** is used to authenticate with KnowBe4 HTTP API. To get
 1. Navigate to the **Events** section from left panel and click **Settings**.
 1. Select **User Profile**. The **KnowBe4** Secure API token is displayed in the UI.
 1. You can copy the generated token for use, or click the **Reset Token** button to generate a new one.
-  :::note
-  When you reset the token, the previous token issued becomes invalid immediately.
-  :::
+:::note
+When you reset the token, the previous token issued becomes invalid immediately.
+:::
 
 ## Metadata Field
 
@@ -72,7 +72,6 @@ When you delete the Source, it is placed in a **Stopping** state. When it has 
 On the Collection page, the [Health](/docs/manage/health-events#collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection.
 
 Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings.<br/> ![hover c2c error.png](/img/send-data/hover-c2c-error.png)
-
 
 ## Set up KnowBe4 Source
 
@@ -129,7 +128,6 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `apiKey` | String | Yes | Secret api key to authenticate your account. | modifiable |
 | `dataTypes` | Array | Yes | Data sources to fetch from KnowBe4. | modifiable |
 | `phishingPollInterval` | Integer | Yes | The Polling interval for phishing data requests. The minimum interval is 1 hour, and the maximum is 24 hours. | modifiable |
-
 
 ### JSON Example
 
