@@ -23,11 +23,12 @@ In this section, we'll introduce the following concepts:
 
 - [Installation](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/installation)
 - [Configuration](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/configuration)
-- [Migration from Installed Collector](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/migration)
+- [Migration from Installed Collector](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/migration.md)
 - [Differences between Installed Collector and OpenTelemetry Collector](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/comparison)
 - [Performance](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/performance)
 - [Best Practices](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/best-practices)
 - [Mapping OpenTelemetry concepts to Sumo Logic](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/opentelemetry-concepts)
+- [Contributing](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/CONTRIBUTING.md)
 - [FIPS compliance](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/fips)
 - [Known Issues](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/known-issues)
 - [Troubleshooting](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/troubleshooting)
