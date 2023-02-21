@@ -120,7 +120,7 @@ On the Search page, if you want to be prompted with a confirmation dialog before
 
 ### Automatically open the search autocomplete dialog when editing
 
-Use `<Esc>` or `<Alt>` `<Space>` to open it manually) Keep this option selected if you'd like to open the [search autocomplete] dialog when you are editing a query. Deselect the option to disable the search autocomplete dialog.
+Use `<Esc>` or `<Alt>` `<Space>` to open it manually) Keep this option selected if you'd like to open the [search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete) dialog when you are editing a query. Deselect the option to disable the search autocomplete dialog.
 
 ### On login, reopen the tabs from your previous session
 
