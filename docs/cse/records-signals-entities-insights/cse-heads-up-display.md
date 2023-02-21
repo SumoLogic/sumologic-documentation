@@ -13,7 +13,7 @@ The left side of the HUD is a compact view of Insight activity and status in yo
 
 The middle part of the HUD—the radar—visualizes the Record, Signal, and Insight volumes that are summarized on the left side of the page. It’s a circular timeline. The outer blue ring shows Record volume. Just inside the ring of Records is a histogram-like view of Signal volume. Nearest to the center are triangles that represent Insights. As you mouse around the radar, small popups provide a count of the Records, Signals, or Insights in that timeslice, depending on your focus.
 
-The right side of the HUD contains a list of recent Insight activity. The card above the list shows key information about  the latest new Insight with the highest severity. 
+The right side of the HUD contains a list of recent Insight activity. The card above the list shows key information about the latest new Insight with the highest severity. 
 
 See the sections below for more details on each element of the HUD.
 
@@ -27,10 +27,7 @@ The search bar, labeled **a** in the screenshot, is where you search for Insight
 
 A set of tabs appear in the area labeled **b** in the screenshot. 
 
-The **Insights**, **Signals**, **Entities**, **Records** tabs open pages
-that display those types in a list view. The **Content** tab provides
-dropdown access to pages for viewing and managing content items,
-including rules, threat intel, match lists, suppressed lists, and so on.
+The **Insights**, **Signals**, **Entities**, **Records** tabs open pages that display those types in a list view. The **Content** tab provides dropdown access to pages for viewing and managing content items, including rules, threat intel, match lists, suppressed lists, and so on.
 
 ## Command center
 
@@ -96,6 +93,3 @@ The card at the top of the pane provides key information about the latest new In
 * **Review** button. Click this button to view Insight details
 * **Close** button. Click this button to close the Insight.
 * Today’s Insight activity. The list in the lower part of the pane contains recent Insight changes: Insights created today, and status changes and comments made today, in chronological order, with the newest first.
-
-
- 

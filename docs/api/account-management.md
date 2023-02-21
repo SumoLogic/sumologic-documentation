@@ -2,7 +2,6 @@
 id: account-management
 title: Account Management APIs
 sidebar_label: Account Management
-tags: [security]
 description: Use HTTP endpoints to manage subdomains.
 ---
 

@@ -7,11 +7,32 @@ description: Quickly investigate and resolve issues you've been alerted about wi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/icons/operations/alert-and-notify.png')} alt="alert-and-notify.png" width="60"/>
+
 Alert Response provides contextual insights about triggered alerts to minimize the time needed to investigate and resolve application failures.
 
 On-call engineers are tasked with firefighting production issues and recovering quickly. They have to investigate issues and try to identify the root cause and fix it, which requires deep knowledge about the production systems, troubleshooting tools, and tons of experience as on-calls. 
 
 By assembling relevant context from prior alerts and by analyzing patterns in logs and metrics underlying alerts, Alert Response enables on-call engineers to cut down the time spent piecing together insights during an incident from various sources and accelerate recovery.
+
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+
+Using Alert Response.
+
+<Iframe url="https://www.youtube.com/embed/3FHomBuFyV8?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
 
 ## Setting up Alert Response
 

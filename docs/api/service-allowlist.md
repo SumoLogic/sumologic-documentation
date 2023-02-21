@@ -2,7 +2,6 @@
 id: service-allowlist
 title: Service Allowlist Management APIs
 sidebar_label: Service Allowlist
-tags: [security]
 description: Use HTTP endpoints to manage service allowlist settings.
 
 ---

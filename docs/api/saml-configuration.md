@@ -2,7 +2,6 @@
 id: saml-configuration
 title: SAML Configuration Management APIs
 sidebar_label: SAML Configuration
-tags: [security]
 description: Use HTTP endpoints to manage your SAML configuration.
 ---
 
