@@ -2,7 +2,7 @@
 id: tracing-dashboards
 title: Application Service APM/Tracing Dashboards
 sidebar_label: APM and Tracing Dashboards
-description: Create Tracing dashboards, install apps, and more.
+description: Explore and create Tracing dashboards, install apps, and more.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
