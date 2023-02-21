@@ -159,7 +159,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 ### Metric Rules
 
-Create the following two Metric Rules for the aws/rds namespace if not already created. Learn how to create a Metric Rule [here](/docs/metrics/metric-rules-editor#create-a-metric-rule).
+Create the following two Metric Rules for the aws/rds namespace if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metric-rule).
 
 ```sql title="Rule 1"
 Rule name: AwsObservabilityRDSClusterMetricsEntityRule
