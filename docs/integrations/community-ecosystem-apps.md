@@ -33,9 +33,43 @@ More information on this initiative and how to contribute can be found [here](#f
 Sumo Logic Community Ecosystem Apps are provided and supported by our internal and external user and creator community. Generally these apps should be viewed as open source content, and we strive to ensure that they are proactively reviewed by our community to ensure usability, use case coverage, and technical quality. If you have a question not covered here, please reach out to **TBD**.
 
 ### What is this?
+
 A central place to list community content from the internal and external Sumo Community to enable more rapid time to value for customers.
 
-### How do I add a review/rating to an app?
+### How do I contribute/submit my own content?
+
+Please follow the guidelines outlined in the [Sumo Logic Community Content Submission](https://forms.gle/KQBLBuMuUw85xtRi9) form if you would like to contribute your own content to this repository and have our team review it for publishing.
+
+**Alternative Submission:**
+Follow the "fork-and-pull" Git workflow:
+- **Fork** the repo on GitHub
+- **Clone** the project to your own machine
+- **Create** any new folders/subfolders necessary for your content
+	- Add your content to these folders
+	- Verify that all sensitive data has been removed BEFORE submitting a PR. This includes PII, Credentials, and Network data. Screenshots included (either blurr or mark over).
+	- All application, dashboard and search content should be in JSON format (exported from Sumo Logic). Please use a descriptive naming convention (Company-Product-Function. Ex: AWS-Kinesis-Errors.json)
+	- When possible, include a screenshot of your dashboards in .png or .jpg format. Name your screenshots the same as their respective JSON content. If there is more than one, please place these images in a Screenshots folder.
+	- Create README.md file within each subfolder to track descriptions of the app, guidance on setting up the data collection, authors, versions, dates, and links to 3rd party docs
+- **Commit** the changes on your local machine to your own fork/branch
+- **Push** your work back up to your fork
+- **Submit** a pull request so that we can review your changes and publish
+
+
+### What are the guidelines for submitting my own content?
+
+Content can include vendor-based/custom applications, dashboards, search queries, field extraction rules (FERs), tooling, etc. Please complete each of the required fields in the [Sumo Logic Community Content Submission](https://forms.gle/KQBLBuMuUw85xtRi9) form, and follow the guidelines below:
+- Verify that all sensitive data has been removed BEFORE submitting content. This includes PII, Credentials, Network data, etc. If you provided screenshots, either blur or mark over this sensitive data.
+- All application, dashboard, and search content should be in JSON format (exported from Sumo Logic). Please use a descriptive naming convention for files (Company-Product-Function. Ex: AWS-Kinesis-Errors.json).
+- When possible, include a screenshot of your dashboards in .png or .jpg format. Name your screenshots the same as their respective JSON content.
+- If you have notes on how to collect data for specific content, please provide those steps as well.
+- If you have a GitHub Repository for your content already, please feel free to provide the link to this repository, and make sure it has Public access.
+Once submitted, Sumo Logic will review your content for publishing to our Community Ecosystem repository.
+
+### Can my content be anonymous?
+
+Yes. When you submit content via the [Sumo Logic Community Content Submission](https://forms.gle/KQBLBuMuUw85xtRi9) form, you have the option to select if you would like your submission to be anonymous.
+
+### How do I add comments, reviews, and ratings to an App?
 
 1. Open the folder of the App you want to review.
 2. Open the **Comments** folder.
@@ -58,3 +92,7 @@ A central place to list community content from the internal and external Sumo Co
 7. Submit Pull Request.
 
 Code owners will review and merge your rating to our repo.
+
+### Where do I submit bugs and enhancement requests?
+
+Support for this content is provided by our community on a volunteer basis. Submit [GitHub Issues](https://github.com/SumoLogic/sumologic-content/issues) for bugs and enhancement requests.
