@@ -28,7 +28,7 @@ To see the custom columns that have been defined in your environment:
 1. On the **Custom Columns** page, click **Create**.
 1. The **Create Match List Column** popup appears. <br/>  ![create-column.png](/img/cse/create-column.png)
 1. **Name**. Enter a name for the custom column.
-1. **Fields**. Click the chevron icon to display a selector list of CSE attributes. You can select multiple attributes. Click the icon next to Show field guide to view more information, such as data type, about attributes. 
+1. **Fields**. Click the chevron icon to display a selector list of CSE attributes. You can select multiple attributes. If multiple attributes are selected, the match list will match if the list item value matches a Record value for any of the custom column attributes. Click the icon next to Show field guide to view more information, such as data type, about attributes. 
 1. Click **Create** to add the new column.
 
 ## Edit a custom column

@@ -103,7 +103,6 @@ module.exports = {
           showReadingTime: false,
           feedOptions: {
             type: 'rss',
-            // https://help.sumologic.com/release-notes-service/rss.xml
             title: 'Sumo Logic Service Release Notes',
             description: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
             copyright: `Copyright ©${new Date().getFullYear()} Sumo Logic`,
@@ -117,19 +116,6 @@ module.exports = {
         },
       }),
     ],
-  //  [
-  //    'redocusaurus',
-  //    {
-  //      specs: [
-  //        {
-  //          id: 'sumoapi',
-  //          //specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
-  //          spec: 'sumologic-api.yaml',
-  //          route: '/sumoapi/',
-  //        },
-  //      ],
-  //    },
-  //  ],
   ],
   plugins: [
     'docusaurus-plugin-sass',
@@ -141,7 +127,6 @@ module.exports = {
         routeBasePath: 'hackathon',
         sidebarPath: require.resolve('./sidebarsCommunity.js'),
         breadcrumbs: false,
-        // ... other options
       },
     ],
     ['@docusaurus/plugin-content-blog',
@@ -158,7 +143,6 @@ module.exports = {
          showReadingTime: false,
          feedOptions: {
            type: 'rss',
-           // https://help.sumologic.com/release-notes-cse/rss.xml
            title: 'Sumo Logic Cloud SIEM Release Notes',
            description: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -179,7 +163,6 @@ module.exports = {
           showReadingTime: false,
           feedOptions: {
             type: 'rss',
-            // https://help.sumologic.com/release-notes-developer/rss.xml
             title: 'Sumo Logic Developer Release Notes',
             description: 'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -200,7 +183,6 @@ module.exports = {
           showReadingTime: false,
           feedOptions: {
             type: 'rss',
-            // https://help.sumologic.com/release-notes-collector/rss.xml
             title: 'Sumo Logic Collector Release Notes',
             description: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
