@@ -35,7 +35,7 @@ To generate a 1Password API token follow these steps:
 
 ## States
 
-A 1Password Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/Health-Events).
+A 1Password Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events).
 
 A 1Password Source goes through the following states when created:
 1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
@@ -48,7 +48,7 @@ If the Source has any issues during any one of these states, it is placed in an 
 
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![1password state.png](/img/send-data/1password-state.png)
+On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![1password state.png](/img/send-data/1password-state.png)
 
 Hover your mouse over the status icon to view a tooltip with details on the detected issue.<br/> ![1password](/img/send-data/health_error_generic.png)
 
@@ -84,7 +84,7 @@ To configure a 1Password Source:
 
 ## Error types
 
-When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/Health-Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/health-events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 <table>
   <tr>
