@@ -48,13 +48,13 @@ Here’s what the example tuning expression looks like in the CSE UI.
 1. The **New Rule Tuning Expression** page appears.
     ![annotated-expression.png](/img/cse/annotated-expression.png)
 1. **Name**. Enter a name for the tuning expression. 
-1. In the **Tune \[selected\|all\] Rules** section: 
+1. In the **Tune [selected|all] Rules** section: 
    * To apply the expression to all rules, choose **all**.
    * To apply the expression to some but not all rules, choose **selected**. In the **Type to add a rule area**, enter a search string that matches Rule names or Rule IDs. To search by Rule name, you can enter a string that the Rule name contains. To search by Rule ID, you can enter the complete ID, or a subset of the ID, starting with the leading character.  The name and ID of rules that match will appear on the page..
 1. In the **To \[include|exclude\]... area**:
    * Leave **include** selected if you want Signals to be fired for Records that match both the rule expression and the tuning expression.
    * Select **exclude** from the pulldown if you want Signals to be fired for Records that match the rule expression and don't match the tuning expression.
-1. Enter a tuning expression. 
+1. Enter a tuning expression.
 2. Click **Submit**.
    ![new-expression.png](/img/cse/new-expression.png)
 

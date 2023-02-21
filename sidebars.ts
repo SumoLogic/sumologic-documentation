@@ -1413,13 +1413,13 @@ module.exports = {
       type: 'category',
       label: 'Traces',
       collapsible: true,
-      collapsed: true,
+      collapsed: false,
       link: {type: 'doc', id: 'apm/traces/index'},
       items: [
         'apm/traces/quickstart',
         {
         type: 'category',
-        label: 'Transaction Tracing Setup',
+        label: 'Get Started with Transaction Tracing',
         collapsible: true,
         collapsed: true,
         link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/index'},
@@ -1638,6 +1638,7 @@ module.exports = {
             'observability/kubernetes/apps',
             'observability/kubernetes/alerts',
             'observability/kubernetes/monitoring',
+            'metrics/kubernetes-metrics',
             'observability/kubernetes/troubleshoot-with-explore',
           ],
         },

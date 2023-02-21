@@ -1,6 +1,6 @@
 ---
 id: microsoft-audit-office
-title: Microsoft 365 Audit (Office 365 Audit)
+title: Microsoft 365 Audit (Office 365 Audit) - Cloud SIEM
 sidebar_label: Microsoft 365 Audit (Office 365 Audit)
 description: Configure collection of Microsoft 365 log messages to be parsed by CSE's system parser for Microsoft 365. 
 ---
