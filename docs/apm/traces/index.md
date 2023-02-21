@@ -3,7 +3,7 @@ slug: /apm/traces
 title: Traces
 sidebar_label: Traces
 description: See how your application is behaving with trace analytics. Learn how to work with your Tracing data including dashboards, Service Map, Spans, and queries.
-tags: [traces, tracing]
+tags: [traces, trace, tracing]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
