@@ -31,7 +31,7 @@ CSE will include a set of more than twenty First Seen Rules out of the box. Thes
 
 For more information about how to use First Seen Rules, see the online [documentation](https://help.sumologic.com/docs/cse/rules/write-first-seen-rule/). You can also see an introduction to the feature by navigating to a new First Seen Rule in the CSE UI.
 
-### Entity Timeline ###
+### Entity Timeline
 
 Another new feature that will help analysts investigate unusual activity with user accounts is the Entity Timeline:
 
