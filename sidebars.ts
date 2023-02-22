@@ -2139,6 +2139,7 @@ integrations: [
             'cse/rules/write-chain-rule',
             'cse/rules/write-aggregation-rule',
             'cse/rules/write-threshold-rule',
+            'cse/rules/write-first-seen-rule',
             'cse/rules/cse-rules-syntax',
             'cse/rules/cse-built-in-rules',
             'cse/rules/import-yara-rules',
