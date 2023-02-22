@@ -123,7 +123,7 @@ Learn how to install and configure OpenTelemetry distributed tracing for AWS Lam
 
 ### Kubernetes environments
 
-Setting up Tracing instrumentation for applications deployed in Kubernetes just got easier. In a few steps, you can automatically instrument your app using the [OpenTelemetry-Operator](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-operator) and send your Traces to Sumo Logic.
+Setting up Tracing instrumentation for applications deployed in Kubernetes just got easier. In a few steps, you can automatically instrument your app using the [OpenTelemetry Operator](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-operator) and send your Traces to Sumo Logic.
 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">

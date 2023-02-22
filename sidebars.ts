@@ -1388,7 +1388,7 @@ module.exports = {
     label: 'APM, Traces, RUM',
     collapsible: true,
     collapsed: false,
-    link: {type: 'doc', id: 'apm/apm'},
+    link: {type: 'doc', id: 'apm/index'},
     items: [
     {
       type: 'category',

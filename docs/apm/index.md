@@ -1,5 +1,5 @@
 ---
-id: apm
+slug: /apm
 title: Application Performance Monitoring
 sidebar_label: APM, RUM, and Traces
 description: Monitor user and app behavior with Sumo Logic trace analytics and real user monitoring.
@@ -14,7 +14,7 @@ Monitor user activity, span analytics, service maps, and transaction traces betw
 <div className="box smallbox1 card">
   <div className="container">
   <a href="/docs/apm/traces"><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="40"/><h4>Traces</h4></a>
-  <p>Learn how to work with your application tracing data using dashboards, Services and Lists and Maps, Spans, and queries.</p>
+  <p>Learn how to work with application tracing data using dashboards, Services Lists and Maps, Spans, and queries.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
@@ -25,8 +25,8 @@ Monitor user activity, span analytics, service maps, and transaction traces betw
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation"><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="40"/><h4>OTEL App Instrumentation</h4></a>
-  <p>OpenTelemetry provides a wide range of ready to use componentry to get you started with distributed tracing.</p>
+  <a href="/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation"><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="40"/><h4>OpenTelemetry App Instrumentation</h4></a>
+  <p>OpenTelemetry provides a wide range of componentry to get you started with distributed tracing.</p>
   </div>
 </div>
 <div className="box smallbox4 card">
@@ -37,7 +37,7 @@ Monitor user activity, span analytics, service maps, and transaction traces betw
 </div>
 <div className="box smallbox5 card">
   <div className="container">
-  <a href="/docs/apm/real-user-monitoring/configure-data-collection">  <img src={useBaseUrl('img/icons/apm.png')} alt="icon" width="50"/><h4>Configuring RUM Data Collection</h4></a>
+  <a href="/docs/apm/real-user-monitoring/configure-data-collection">  <img src={useBaseUrl('img/icons/apm.png')} alt="icon" width="50"/><h4>Configure RUM Data Collection</h4></a>
   <p>Learn how to collect Traces and RUM metrics from a browser using a RUM HTTP Traces Source.</p>
   </div>
 </div>

@@ -11,13 +11,13 @@ This guide provides advanced configuration options for Application Performance M
 <div className="box smallbox1 card">
   <div className="container">
   <h4><a href="/docs/apm/traces/advanced-configuration/correlate-logs">Correlating Logs and Traces</a></h4>
-  <p>Learn how to link your traces and logs together to better understand your environment.</p>
+  <p>Link your traces and logs to better understand your environment.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
   <h4><a href="/docs/apm/traces/advanced-configuration/filter-shape-tracing-data">Filter and Shape Your Trace Data</a></h4>
-  <p>Learn how to create and apply custom rules to shape tracing data.</p>
+  <p>Create and apply custom rules to filter and shape your tracing data.</p>
   </div>
 </div>
   <div className="box smallbox3 card">
