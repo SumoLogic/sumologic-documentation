@@ -3,6 +3,13 @@ id: write-first-seen-rule
 title: Write a First Seen rule
 sidebar_label: First Seen Rule
 description: First Seen rules allow you to generate a Signal when behavior by an Entity (user) is encountered that hasn't been seen before.
+keywords:
+  - sumo logic
+  - cloud siem
+  - cse
+  - first seen rule
+  - ueba
+  - behavioral analytics
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
