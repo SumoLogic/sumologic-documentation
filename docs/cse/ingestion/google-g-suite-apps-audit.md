@@ -11,14 +11,7 @@ In this step, you configure an G Suite Apps Audit Source to collect G Suite log 
 
 ### Configure a Hosted Collector
 
-1. In Sv, select **Manage Data > Collection > Collection**.
-1. Click **Add Collector**.
-1. Click **Hosted Collector.**
-1. The **Add Hosted Collector** popup appears.  
-    ![add-hosted-collector.png](/img/cse/add-hosted-collector.png)
-1. **Name**. Provide a Name for the Collector.
-1. **Description**. (Optional)
-1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
+1. To create a new hosted collector, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 1. **Fields**. 
     1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
     1. If all sources in this collector will be G Suite Audit sources, add an additional field with key `_parser` and value */Parsers/System/Google/G Suite Audit*.
@@ -28,18 +21,7 @@ In this step, you configure an G Suite Apps Audit Source to collect G Suite log 
 
 ### Configure G Suite Apps Audit Source
 
-Each G Suite App must have its own source. Follow these steps for each G Suite App you wish to collect.
-
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
-1. Navigate to the Hosted Collector where you want to create the source.
-1. On the **Collectors** page, click **Add Source** next to the Hosted Collector.
-1. Select **G Suite Apps Audit.** 
-1. The page refreshes.  
-    ![gsuite-apps-audit-source.png](/img/cse/gsuite-apps-audit-source.png)
-1. **Name**. Enter a name for the source. 
-1. **Description**. (Optional) 
-1. **Application**. Select the G Suite app you wish to collect using this source. Steps may be repeated for each G Suite app you want to collect from.
-1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory.`
+1. To configure G suite source, see [Configure a G-suite Apps Audit Source] (/docs/send-data/hosted-collectors/google-source/g-suite-apps-audit-source/#configuring-a-g-suite-apps-auditsource).
 1. **Fields**.
     1. If you have not configured the Hosted Collector to forward all sources in the collector to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*.
     1. If you are not parsing all sources in the hosted collector with the same parser, **+Add Field** named `_parser` with value */Parsers/System/Google/G Suite Audit.*
