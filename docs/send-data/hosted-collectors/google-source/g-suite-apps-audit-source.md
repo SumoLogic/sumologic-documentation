@@ -37,6 +37,15 @@ When creating or modifying a Google Apps Audit Source, you will be required to a
 Authentication must be with a new G Suite Apps Audit Source, we do not support re-authenticating existing sources.
 :::
 
+### Manage Third party app access
+In order to provide Sumo logic access to google services, please follow the manage third-party app access steps as follows. See Google's [Manage Third party App Access](https://support.google.com/a/answer/7281227#zippy=%2Cstep-manage-third-party-app-access-to-google-services-add-apps) documentation for more details. 
+1. In the Admin console, go to Menu —> Security -> Access and data control -> API controls.
+1. In App access control, click Manage Third-Party App Access.
+1. Click “Add app” and search for sumo logic o-auth client.
+1. Select sumo o-auth client and click change access. 
+1. Choose the trusted option to allow access to all google services. 
+1. Click change. 
+
 ## Configuring a G Suite Apps Audit Source
 
 Once you've set up a Hosted Collector and have your credentials ready, you're all set to configure the Source.
