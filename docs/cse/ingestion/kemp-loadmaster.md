@@ -1,6 +1,6 @@
 ---
 id: kemp-loadmaster
-title: Kemp LoadMaster
+title: Kemp LoadMaster - Cloud SIEM
 sidebar_label: Kemp LoadMaster
 description: Configure a syslog source to ingest Kemp LoadMaster messages to be parsed by CSE’s system parser for Kemp LoadMaster.
 ---

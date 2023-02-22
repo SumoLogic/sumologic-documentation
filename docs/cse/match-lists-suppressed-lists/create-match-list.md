@@ -4,8 +4,6 @@ title: Create a Match List
 description: Learn about Match Lists and how to create a Match List.
 ---
 
-
-
 This topic has information about Match Lists, their purpose and usage, and how to create them. 
 
 ## About Match Lists
@@ -66,7 +64,7 @@ Another difference between Match Lists and Threat Intel lists is the **Target Co
 
 A Match List can contain up to 100,000 items.
 
-## Matching behavior 
+## Matching behavior
 When comparing a field value to items on a Match List, CSE generally requires an exact match. There are two exceptions to that rule.
 
 *  Match Lists that contain IP addresses can list either explicit IP addresses, CIDR blocks of IP addresses, (for example `1.2.3.4/24`), or both.
@@ -80,8 +78,7 @@ Perform the steps below to create a Match List in CSE.
 You can also create and manage Match Lists with CSE's REST [API](../administration/cse-apis.md).
 :::
 
-1. Go to **Content > Match List** and click **Create**.
-    ![match-list-create-icon.png](/img/cse/match-list-create-icon.png)
+1. Go to **Content > Match List** and click **Create**. <br/>  ![match-list-create-icon.png](/img/cse/match-list-create-icon.png)
 1. On the **New Match List** popup, enter the following:
     * **Name**. Name of the Match list. If you are creating a standard Match List, make sure the name matches the standard Match List name. For more information, see [Standard Match Lists](standard-match-lists.md).   We recommend no embedded spaces in list names. For example, instead of *my list*, use *my_list*.
     * **Description**. Enter a description for the list. Descriptions for standard Match Lists can be found in [Standard Match Lists](standard-match-lists.md).
@@ -92,20 +89,20 @@ You can also create and manage Match Lists with CSE's REST [API](../administrati
      :::
     * Click **Create**.    
     ![new-match-list.png](/img/cse/new-match-list.png)
-2. The Match List now appears on the **Match Lists** page. 
+1. The Match List now appears on the **Match Lists** page. 
     ![match-list-added.png](/img/cse/match-list-added.png)
-3. Click the name of the Match List to open it.
-4. On the **Match List > Details** page, click **ADD LIST ITEM**.
+1. Click the name of the Match List to open it.
+1. On the **Match List > Details** page, click **ADD LIST ITEM**.
     ![match-list-add-item-icon.png](/img/cse/match-list-add-item-icon.png)
-5. On the **New Match List Item** popup, enter:
+1. On the **New Match List Item** popup, enter:
    * **Value**. The value of the entity. Make sure the value you enter is of the same type as the type you selected as the Target Column for the list. For example, if the Target Column is `Domain`, enter a domain.
    * **Description**. (Optional) Enter a description of the entity instance you entered.
    * **Expiration**. (Optional) The date and time at which the list item should be removed from the list.
    * Click **Add** to add the item to the list.    
     ![new-match-list-item.png](/img/cse/new-match-list-item.png)
-6. The item now appears in the Match List.
+1. The item now appears in the Match List.
     ![item-added.png](/img/cse/item-added.png)
-7. Repeat steps 3 and 4 to add additional items to the list.
+1. Repeat steps 3 and 4 to add additional items to the list.
 
 ## Import a Match List
 
@@ -161,4 +158,3 @@ Select a default TTL for Match Lists that make sense. For example, a Match List 
 When creating custom Match Lists, we recommend a general purpose approach to naming and populating them so that they’re broadly applicable across your infrastructure.
 
 It’s better to have one generic Match List for similar resource types than multiple vendor-specific lists. For example, creating the “vuln_scanners” list is better than having one for each type you have, like “Qualys Scanners”, “Tenable Vulnerability Scanners”, and so on.   
- 

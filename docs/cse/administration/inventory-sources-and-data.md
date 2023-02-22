@@ -39,8 +39,8 @@ Some inventory sources provide user inventory information, some provide computer
 | [Microsoft Azure AD Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source.md) | Cloud-to-Cloud | Computer and User |
 | [Carbon Black Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source.md) | Cloud-to-Cloud | Computer |
 | [Google Workspace Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source.md) | Cloud-to-Cloud | User |
-| [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) | Cloud-to-Cloud] | User |
-| [Sailpoint Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source.md) | Cloud-to-Cloud] | User |
+| [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) | Cloud-to-Cloud | User |
+| [Sailpoint Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source.md) | Cloud-to-Cloud | User |
 | [SentinelOne Mgmt API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source.md) | Cloud-to-Cloud | Computer |
 | [Tenable Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source.md) | Cloud-to-Cloud | Computer |  
 |[Windows Active Directory Inventory Source](/docs/send-data/installed-collectors/sources/windows-active-directory-inventory-source.md) | Part of Installed Collector | Computer and User |  
