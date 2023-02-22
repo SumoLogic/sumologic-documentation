@@ -226,7 +226,7 @@ module.exports = {
       contextualSearch: false,
       //searchParameters: {},
       // Optional: path for search page that enabled by default (`false` to disable it)
-      searchPagePath: false,
+      //searchPagePath: false,
       getMissingResultsUrl({ query }) {
         return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
       },
