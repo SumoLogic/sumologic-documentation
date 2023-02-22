@@ -46,7 +46,7 @@ Follow the "fork-and-pull" Git workflow:
 - **Clone** the project to your own machine
 - **Create** any new folders/subfolders necessary for your content
 	- Add your content to these folders
-	- Verify that all sensitive data has been removed BEFORE submitting a PR. This includes PII, Credentials, and Network data. Screenshots included (either blur or mark over).
+	- Verify that all sensitive data has been removed  or redacted BEFORE submitting a PR. This includes PII, Credentials, and Network data. Screenshots included (either blur or mark over).
 	- All application, dashboard and search content should be in JSON format (exported from Sumo Logic). Please use a descriptive naming convention (Company-Product-Function. Ex: AWS-Kinesis-Errors.json)
 	- When possible, include a screenshot of your dashboards in .png or .jpg format. Name your screenshots the same as their respective JSON content. If there is more than one, please place these images in a Screenshots folder.
 	- Create README.md file within each subfolder to track descriptions of the app, guidance on setting up the data collection, authors, versions, dates, and links to 3rd party docs
