@@ -470,7 +470,7 @@ module.exports = {
     label: 'Manage',
     collapsible: true,
     collapsed: false,
-    link: {type: 'doc', id: 'manage/manage'},
+    link: {type: 'doc', id: 'manage/index'},
     items: [
       'manage/fields',
       'manage/health-events',
@@ -1407,7 +1407,7 @@ module.exports = {
     label: 'APM, Traces, RUM',
     collapsible: true,
     collapsed: false,
-    link: {type: 'doc', id: 'apm/apm'},
+    link: {type: 'doc', id: 'apm/index'},
     items: [
     {
       type: 'category',
@@ -1419,7 +1419,7 @@ module.exports = {
         'apm/traces/quickstart',
         {
         type: 'category',
-        label: 'Get Started with Transaction Tracing',
+        label: 'Setup and Configuration',
         collapsible: true,
         collapsed: true,
         link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/index'},
@@ -1505,8 +1505,8 @@ module.exports = {
           },
         ],
       },
-      'apm/traces/services-list-map',
       'apm/traces/view-and-investigate-traces',
+      'apm/traces/services-list-map',
       'apm/traces/tracing-dashboards',
       'apm/traces/spans',
       'apm/traces/search-query-language-support-for-traces',

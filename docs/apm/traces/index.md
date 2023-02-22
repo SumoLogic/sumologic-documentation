@@ -10,43 +10,58 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="50"/>
 
-Sumo Logic Application Monitoring and Observability provides transactional intelligence for distributed workflows, by combining telemetry from traces, logs, and metrics in the context of real-time automatically tracked application topology.
+Monitoring apps and microservices with Sumo Logic Traces provides transactional intelligence for distributed workflows, by combining telemetry from traces, logs, and metrics in the context of real-time automatically tracked application topology.
 
-## Monitoring Apps and Microservices with Sumo Logic Traces
-
-This guide provides information to work with your tracing data, including
-the following:
-
-### Step 1: Set up Traces Collection
-
-* [For AWS environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-aws-environments)
-* [For Kubernetes environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments)
-* [For other environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments)
-
-Once you've set up collection, you can begin to [analyze your traces in Sumo Logic](/docs/apm/traces/view-and-investigate-traces.md).
+This guide provides information to work with your tracing data.
 
 
-### Step 2: Instrument Your Application with OpenTelemetry
-
-* [.NET](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net)
-* [Go](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/go)
-* [JavaScript](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/javascript)
-* [Java](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java)
-* [Python](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python)
-* [Ruby](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby.md)
-* [Ruby on Rails](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/ruby-on-rails.md)
-* [Istio](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/istio.md)
-* AWS Lambda
-  * [Java](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/java.md)
-  * [NodeJS](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/nodejs.md)
-  * [Python](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/aws-lambda/python.md)
-* Kubernetes environments
-  * [Java](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes/)
-  * [JavaScript](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes/)
-  * [Python](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes/)
-
-
-### Optional: Advanced Configuration
-
-* [Specify which data to send to Sumo Logic](/docs/apm/traces/advanced-configuration/filter-shape-tracing-data)
-* [Working with spans attributes](/docs/apm/traces/advanced-configuration/working-with-span-attributes)
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <a href="/docs/apm/traces/get-started-transaction-tracing/"><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Setup and Configuration</h4></a>
+  <p>Learn how to send traces to Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox2 card">
+  <div className="container">
+  <a href="/docs/apm/traces/quickstart"><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Quickstart</h4></a>
+  <p>Get up and running quickly with and explore how your application is behaving with Trace analytics.</p>
+  </div>
+</div>
+<div className="box smallbox3 card">
+  <div className="container">
+  <a href="/docs/apm/traces/view-and-investigate-traces"><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>View and Investigate Traces</h4></a>
+  <p>Learn how to search and investigate your traces, trace views, and trace events.</p>
+  </div>
+</div>
+<div className="box smallbox4 card">
+  <div className="container">
+  <a href="/docs/apm/traces/advanced-configuration/working-with-span-attributes"><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Services List and Services Map</h4></a>
+  <p>View your application topology and investigate microservice interactions.</p>
+  </div>
+</div>
+<div className="box smallbox5 card">
+  <div className="container">
+  <a href="/docs/apm/traces/advanced-configuration/working-with-span-attributes"><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Application Service APM and Tracing Dashboards</h4></a>
+  <p>Explore and create Tracing dashboards, install apps, and more.</p>
+  </div>
+</div>
+<div className="box smallbox6 card">
+  <div className="container">
+  <a href="/docs/apm/traces/spans"><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Span Analytics and Distributed Tracing Data</h4></a>
+  <p>Use our extensive Search Query Language to gain valuable insight into your traces.</p>
+  </div>
+</div>
+<div className="box smallbox7 card">
+  <div className="container">
+  <a href="/docs/apm/traces/search-query-language-support-for-traces"><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Search Query Language Support for Traces</h4></a>
+  <p>Use our Search Query Language to gain valuable insight into your traces.</p>
+  </div>
+</div>
+<div className="box smallbox8 card">
+  <div className="container">
+  <a href="/docs/apm/traces/advanced-configuration"><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Advanced Configuration</h4></a>
+  <p>Learn how to link logs and traces, modify span attributes, and mask sensitive site information.</p>
+  </div>
+</div>
+</div>
