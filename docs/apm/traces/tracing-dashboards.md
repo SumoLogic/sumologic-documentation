@@ -64,7 +64,7 @@ To add a Service Map panel to your Dashboard, see [Services Dashboard Panels](/d
 
 ### Trace List panel
 
-The Trace List panel displays the [Traces page](view-and-investigate-traces.md) table to give at-a-glance tracking for traces. To view deeper details, click a trace from the panel to open the [Trace View](view-and-investigate-traces.md). 
+The Trace List panel displays the [Traces page](view-and-investigate-traces.md) table to give at-a-glance tracking for traces. To view deeper details, click a trace from the panel to open the [Trace View](/docs/apm/traces/trace-view). 
 
 :::note
 You are limited to three Trace List panels in a dashboard.

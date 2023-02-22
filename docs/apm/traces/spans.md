@@ -1,7 +1,7 @@
 ---
 id: spans
-title: Span Analytics and Distributed Tracing Data
-sidebar_label: Span Analytics
+title: Span Analytics and Queries
+sidebar_label: Span Analytics and Queries
 description: Learn how to use the Spans page to explore your span data.
 ---
 
@@ -112,7 +112,7 @@ You can pause or stop your search by clicking the appropriate icons below the se
 
 ### Messages
 
-The Messages table shows your raw span data. You can click on any row to open right-side Details pane showing details of the span (similar to the one in [Trace View](view-and-investigate-traces.md)) and providing abilities to navigate to other parts of the system from there.
+The Messages table shows your raw span data. You can click on any row to open right-side Details pane showing details of the span (similar to the one in [Trace View](/docs/apm/traces/trace-view)) and providing abilities to navigate to other parts of the system from there.
 
 ![messages results.png](/img/traces/messages-results.png)
 
