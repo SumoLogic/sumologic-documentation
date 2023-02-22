@@ -15,7 +15,7 @@ authors:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-### First Seen Rules ###
+### First Seen Rules
 
 Sumo Logic is pleased to announce new features in Cloud SIEM Enterprise (CSE) that deliver enhanced **User and Entity Behavioral Analytics (UEBA)** capabilities. These new UEBA capabilities enable additional methods to detect and investigate anomalous or unexpected behavior that may signify a security threat.
 
