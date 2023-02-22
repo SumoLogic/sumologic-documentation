@@ -67,12 +67,12 @@ Metrics transformation rules are useful when:
 
         `container_memory_usage_byte_agg_by_svc`
 
-        :::note
-        * If a `metric` is not present among dimensions a rule aggregates on, you **must** explicitly add it to the transformations.
-        * If you use mustache templates to form the name of a dimension you are adding or replacing, you can use a maximum of 10 templates.
-        * A metrics transform rule is limited to 10 transformations.
-        * The name you assign to a transformed dimension, and the values returned for transformed dimensions are each limited to 4096 characters. If the dimension key or value is longer than 4096 characters, Sumo will truncate the key or value, retaining only the first 4096 characters.
-        :::
+    :::note
+    * If a `metric` is not present among dimensions a rule aggregates on, you **must** explicitly add it to the transformations.
+    * If you use mustache templates to form the name of a dimension you are adding or replacing, you can use a maximum of 10 templates.
+    * A metrics transform rule is limited to 10 transformations.
+    * The name you assign to a transformed dimension, and the values returned for transformed dimensions are each limited to 4096 characters. If the dimension key or value is longer than 4096 characters, Sumo will truncate the key or value, retaining only the first 4096 characters.
+    :::
 
 1. Click **Save**.
 
@@ -110,7 +110,7 @@ You can use a transformation rule to aggregate high cardinality data from ephem
 
 Here’s what the rule does:
 
-1. The rule is applied to metrics that match the selector metric=container_\*.  (Metrics whose name begin with “container_”.)  For this example, assume that these are the matching metrics:  
+1. The rule is applied to metrics that match the selector `metric=container_*`.  (Metrics whose name begin with “container_”.)  For this example, assume that these are the matching metrics:  
 
     ```sql
     metric=container_memory_usage_bytes service=foo container=1234 pod=abcd
