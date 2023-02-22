@@ -1,6 +1,5 @@
 ---
 id: write-first-seen-rule
-hide_table_of_contents: false
 title: Write a First Seen rule
 sidebar_label: First Seen Rule
 description: First Seen rules allow you to generate a Signal when behavior by an Entity (user) is encountered that hasn't been seen before.
