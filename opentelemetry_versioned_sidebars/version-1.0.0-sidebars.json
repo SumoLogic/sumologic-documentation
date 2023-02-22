@@ -1,0 +1,27 @@
+{
+  "opentelemetry": [
+    {
+      "type": "category",
+      "label": "OpenTelemetry Distro Collector",
+      "collapsible": true,
+      "collapsed": false,
+      "link": {
+        "type": "doc",
+        "id": "index"
+      },
+      "items": [
+        "download-collector",
+        "installation",
+        "configuration",
+        "comparison",
+        "performance",
+        "best-practices",
+        "opentelemetry-concepts",
+        "fips",
+        "known-issues",
+        "troubleshooting",
+        "upstream-relation"
+      ]
+    }
+  ]
+}

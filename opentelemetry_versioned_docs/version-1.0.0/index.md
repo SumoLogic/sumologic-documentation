@@ -1,5 +1,5 @@
 ---
-slug: /send-data/sumo-logic-distribution-for-opentelemetry-collector
+id: index
 title: Sumo Logic Distribution for OpenTelemetry Collector
 description: Use our Sumo Logic Distribution for OpenTelemetry to send data to Sumo Logic.
 ---
@@ -18,7 +18,8 @@ Instrument your applications with OpenTelemetry using our [OpenTelemetry Librari
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
+:::tip Micro Lesson
+
 Introducing OpenTelemetry.
 
 <Iframe url="https://www.youtube.com/embed/XLgCW0WYN5Q?rel=0"

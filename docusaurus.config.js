@@ -133,6 +133,15 @@ module.exports = {
         breadcrumbs: false,
       },
     ],
+    ['@docusaurus/plugin-content-docs',
+      {
+        id: 'opentelemetry',
+        path: './opentelemetry',
+        routeBasePath: 'sumo-logic-distribution-for-opentelemetry-collector',
+        sidebarPath: require.resolve('./sidebarsOTEL.js'),
+        breadcrumbs: false,
+      },
+    ],
     ['@docusaurus/plugin-content-blog',
       {
          id: 'blog-cse',
@@ -371,6 +380,10 @@ module.exports = {
                 icon: 'rss_feed',
               },
             ]
+          },
+          {
+            type: 'docsVersionDropdown',
+            docsPluginId: 'opentelemetry',
           },
           {
             type: 'html',

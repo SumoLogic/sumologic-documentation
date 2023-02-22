@@ -1,0 +1,19 @@
+{
+  "opentelemetry": [
+    {
+      "type": "category",
+      "label": "OpenTelemetry Distro Collector",
+      "collapsible": true,
+      "collapsed": false,
+      "link": {
+        "type": "doc",
+        "id": "index"
+      },
+      "items": [
+        "installation",
+        "configuration",
+        "best-practices"
+      ]
+    }
+  ]
+}

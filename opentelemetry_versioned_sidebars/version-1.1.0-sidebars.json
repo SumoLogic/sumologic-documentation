@@ -1,0 +1,16 @@
+{
+  "opentelemetry": [
+    {
+      "type": "category",
+      "label": "Sumo Logic Distribution for OpenTelemetry Collector",
+      "collapsible": true,
+      "collapsed": false,
+      "items": [
+        "overview",
+        "installation",
+        "configuration",
+        "best-practices"
+      ]
+    }
+  ]
+}

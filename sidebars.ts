@@ -273,26 +273,7 @@ module.exports = {
             },
           ],
         },
-        {
-          type: 'category',
-          label: 'OpenTelemetry Distro Collector',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'send-data/sumo-logic-distribution-for-opentelemetry-collector/index'},
-          items: [
-            'send-data/sumo-logic-distribution-for-opentelemetry-collector/download-collector',
-            'send-data/sumo-logic-distribution-for-opentelemetry-collector/installation',
-            'send-data/sumo-logic-distribution-for-opentelemetry-collector/configuration',
-            'send-data/sumo-logic-distribution-for-opentelemetry-collector/comparison',
-            'send-data/sumo-logic-distribution-for-opentelemetry-collector/performance',
-            'send-data/sumo-logic-distribution-for-opentelemetry-collector/best-practices',
-            'send-data/sumo-logic-distribution-for-opentelemetry-collector/opentelemetry-concepts',
-            'send-data/sumo-logic-distribution-for-opentelemetry-collector/fips',
-            'send-data/sumo-logic-distribution-for-opentelemetry-collector/known-issues',
-            'send-data/sumo-logic-distribution-for-opentelemetry-collector/troubleshooting',
-            'send-data/sumo-logic-distribution-for-opentelemetry-collector/upstream-relation',
-          ],
-        },
+  // OTEL Collector 
         {
           type: 'category',
           label: 'Use JSON to Configure Sources',

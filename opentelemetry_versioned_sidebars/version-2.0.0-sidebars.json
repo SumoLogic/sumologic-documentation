@@ -1,0 +1,15 @@
+{
+  "opentelemetry": [
+    {
+      "type": "category",
+      "label": "OTEL Collector",
+      "collapsible": true,
+      "collapsed": false,
+      "items": [
+        "overview",
+        "installation",
+        "configuration"
+      ]
+    }
+  ]
+}
