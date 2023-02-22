@@ -65,7 +65,7 @@ Each query is labeled with a letter. In the following screenshot, the first quer
 
 Use the eye icon to toggle the visibility of results from a query. When hidden, the traces returned from the query in the row are not displayed in your results.<br/>![trace-hide-show.png](/img/traces/trace-hide-show.png)
 
-### Time range 
+### Set Time Range
 
 Results are returned for the time range selected. The traces available (retention) in Trace query is 15 days. See [Time Range Expressions](/docs/search/get-started-with-search/search-basics/time-range-expressions) for details on defining a time range.
 

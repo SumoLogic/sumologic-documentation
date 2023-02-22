@@ -10,32 +10,29 @@ Trace View shows the time flow of a single trace by its spans. With drilldowns t
 * Investigate the lifetime of your transactions
 * Understand calls dependencies
 * Troubleshoot long duration and errors
+* Visualize all of your different services, each represented in a different color
 
-To begin, click on a trace row in the Traces [table](/docs/apm/traces/view-and-investigate-traces/#traces-table-view). Each color represents a different service.<br/> ![trace-view.png](/img/traces/trace-view.png)
+![trace-view.png](/img/traces/trace-view.png)
+
+To begin, go to your [Traces table](/docs/apm/traces/view-and-investigate-traces/#traces-table-view) and click on a trace row.
 
 ## Trace Icicle Chart
 
 Here, you can understand the relationships between the spans across your transaction.
 
 :::tip
-Changes to the View are preserved when switching between other tabs.
+Changes to your View are preserved when switching between other tabs.
 :::
 
-* Use your mouse to drag and zoom in and out. Or use the buttons in the bottom left to reset the view, zoom in, and zoom out.<br/>  ![trace-zooms.png](/img/traces/trace-zooms.png)
+* To zoom in and out on Spans, use your mouse to drag and pan, or use the buttons in the bottom left, where you can also reset the view.<br/>  ![trace-zooms.png](/img/traces/trace-zooms.png)
 * You can click the **Critical path contribution by service** bar at the top to filter out the services that are of less interest. The critical path is the sequence of span segments that contribute to the total trace duration.  <br/>  ![critical path on trace view.png](/img/traces/critical-path-on-trace-view.png)
    * Quickly understand how each service contributes to the total trace execution time. Each colored segment summarizes all span fragments from a single service, where there was no child span activity.
 * Use the **Error Spans Only** toggle to hide or show error spans and the **Hide all services** button to hide services.  <br/> ![toggle and button hide.png](/img/traces/toggle-and-button-hide.png)
 * Hover over a span to view the parent span information and relationship, including the service, operation, relative start in milliseconds, and duration in milliseconds. <br/>  ![trace-hover.png](/img/traces/trace-hover.png)
 
-### span segment
+## Span Details Panel
 
-Click on any span segment below
-
-Explore the displayed spans by clicking on the span segment. A details panel containing further information will open.
-
-### Span Details Panel
-
-Click on any span to open a side panel with details.<br/> ![trace-view-details.png](/img/traces/trace-view-details.png)
+Click on any span segment to open the **Details** side panel containing further information.<br/> ![trace-view-details.png](/img/traces/trace-view-details.png)
 
 The details pane provides the following tabs:
 
@@ -111,7 +108,9 @@ Hide all services and select a specific service from the critical path breakdown
 
 ## Span Events
 
-Span Events describe and contextualize the work being done under a Span by tracing and displaying that data in Trace Views. Events are optional time-stamped strings which are made up of timestamp, name, and (optional) key-value pair attributes. Select a marker in the timeline or a span to review the Span Event data. All details and attributes display in the **Metadata** tab with pop-up **Details** for additional event messages and attribute details. 
+Span Events describe and contextualize the work being done under a Span by tracing and displaying that data in Trace Views. Events are optional time-stamped strings, which are made up of timestamp, name, and (optional) key-value pair attributes.
+
+Select a marker in the timeline or a span to review the Span Event data. All details and attributes display in the **Metadata** tab with pop-up **Details** for additional event messages and attribute details. 
 
 For example, during OpenTelemetry Java or Python auto-instrumentation, any exceptions may be traced and attach the exception details automatically onto the relevant span as a Span Event.
 
@@ -138,10 +137,12 @@ A **Details** link displays if additional information is available that may be
 
 ## Span Links
 
-Tracing focuses on the parent-child relationship between spans which are described by a Span ID, a parent Span ID, and a Trace ID. You can establish more casual relationships between Traces using Span Links.
+Tracing focuses on the parent-child relationship between spans, which are described by a Span ID, a parent Span ID, and a Trace ID. You can establish more casual relationships between Traces using Span Links.
 
-To give Spans context, links can point to Spans inside a trace or across different traces. For example, with links you can represent batch operations, where a Span is initiated by multiple initiating spans, each representing one item being processed in the batch. The links give you the relationship between the originating and the following trace. Span Links are added by tracing instrumentation at the client side and are automatically shown when detected in data. For details on configuring Span Links, see the [OpenTelemetry specification](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/overview.md#links-between-spans).<br/> ![links.png](/img/traces/links.png)
+To give Spans context, links can point to Spans inside a trace or across different traces. For example, with links you can represent batch operations, where a Span is initiated by multiple initiating spans, each representing one item being processed in the batch. The links give you the relationship between the originating and the following trace.
 
-You can copy the Span ID, by selecting the Clipboard icon next to the span link.
+Span Links are added by tracing instrumentation at the client side and are automatically shown when detected in data. For details on configuring Span Links, see the [OpenTelemetry specification](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/overview.md#links-between-spans).<br/> ![links.png](/img/traces/links.png)
 
-You can select the Traces icon to view all other traces that link to this Span ID, and it will take you to the Trace View with the linkedSpanId as a filter criteria.<br/> ![links.png](/img/traces/links2.png)
+You can copy the Span ID by selecting the Clipboard icon next to the span link.
+
+You can select the Traces icon to view all other traces that link to this Span ID, and it will take you to the Trace View with the `linkedSpanId` as a filter criteria.<br/> ![links.png](/img/traces/links2.png)
