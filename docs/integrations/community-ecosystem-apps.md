@@ -27,25 +27,16 @@ More information on this initiative and how to contribute can be found [here](#f
 
 Community content is stored in our [Community Content Repository](https://github.com/SumoLogic/sumologic-content). Please visit the following links to access related content:
 
-[EC2 Host Metrics for OpenTelemetry](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/EC2/Host_Metrics_OTEL)
-
-[Fortinet Fortigate Firewall](https://github.com/SumoLogic/sumologic-content/tree/master/Fortinet/Fortigate_Firewall)
-
-[GCP Loud Balancer Metrics](https://github.com/SumoLogic/sumologic-content/tree/master/GCP/Load_Balancer_Metrics)
-
-[JAMF](https://github.com/SumoLogic/sumologic-content/tree/master/JAMF)
-
-[Palo Alto Cortex XDR](https://github.com/SumoLogic/sumologic-content/tree/master/Palo_Alto_Networks/Cortex_XDR)
-
-[Proofpoint Targeted Attack Protection (TAP)](https://github.com/SumoLogic/sumologic-content/tree/master/Proofpoint/Proofpoint_TAP)
-
-[Symantec Web Security Service (WSS)](https://github.com/SumoLogic/sumologic-content/tree/master/Symantec/WSS)
-
-[Sumo Logic Traces](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo_Logic_Native/Traces)
-
-[Tenable.io](https://github.com/SumoLogic/sumologic-content/tree/master/Tenable/Tenable_IO)
-
-[Qualys VMDR & Inventory](https://github.com/SumoLogic/sumologic-content/tree/master/Qualys)
+* [EC2 Host Metrics for OpenTelemetry](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/EC2/Host_Metrics_OTEL)
+* [Fortinet Fortigate Firewall](https://github.com/SumoLogic/sumologic-content/tree/master/Fortinet/Fortigate_Firewall)
+* [GCP Loud Balancer Metrics](https://github.com/SumoLogic/sumologic-content/tree/master/GCP/Load_Balancer_Metrics)
+* [JAMF](https://github.com/SumoLogic/sumologic-content/tree/master/JAMF)
+* [Palo Alto Cortex XDR](https://github.com/SumoLogic/sumologic-content/tree/master/Palo_Alto_Networks/Cortex_XDR)
+* [Proofpoint Targeted Attack Protection (TAP)](https://github.com/SumoLogic/sumologic-content/tree/master/Proofpoint/Proofpoint_TAP)
+* [Symantec Web Security Service (WSS)](https://github.com/SumoLogic/sumologic-content/tree/master/Symantec/WSS)
+* [Sumo Logic Traces](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo_Logic_Native/Traces)
+* [Tenable.io](https://github.com/SumoLogic/sumologic-content/tree/master/Tenable/Tenable_IO)
+* [Qualys VMDR & Inventory](https://github.com/SumoLogic/sumologic-content/tree/master/Qualys)
 
 
 ## Contributing Guidelines
