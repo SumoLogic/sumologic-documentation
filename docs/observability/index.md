@@ -3,6 +3,9 @@ slug: /observability
 title: Observability
 description: The Sumo Logic Observability solution provides tools that work together to ensure you are able to efficiently monitor, troubleshoot, and diagnose issues across a variety of environments.
 tags: [observability]
+algolia: {
+  priority: 1
+}
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
