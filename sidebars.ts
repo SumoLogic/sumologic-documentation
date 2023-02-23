@@ -467,7 +467,7 @@ module.exports = {
         'manage/field-extractions/edit-field-extraction-rules',
         {
           type: 'category',
-          label: 'Field Extractions',
+          label: 'FER Templates',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'manage/field-extractions/fer-templates/index'},
@@ -1274,7 +1274,7 @@ module.exports = {
       label: 'Metrics',
       collapsible: true,
       collapsed: false,
-      link: {type: 'doc', id: 'metrics/metrics'},
+      link: {type: 'doc', id: 'metrics/index'},
       items: [
     {
       type: 'category',
@@ -2140,6 +2140,7 @@ integrations: [
             'cse/rules/write-chain-rule',
             'cse/rules/write-aggregation-rule',
             'cse/rules/write-threshold-rule',
+            'cse/rules/write-first-seen-rule',
             'cse/rules/cse-rules-syntax',
             'cse/rules/cse-built-in-rules',
             'cse/rules/import-yara-rules',
