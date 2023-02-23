@@ -86,7 +86,7 @@ You can add Trace Duration Breakdown Chart as a dashboard panel to a new or exis
 1. Add the required trace query filters
 1. Under **Visual Settings** > **Chart type**, select **Trace Duration Breakdown Chart**.
 
-### Traces matching queries
+### Traces Matching Queries table
 
 In the **Traces matching queries** table, Traces are displayed in the following columns:
 
@@ -105,17 +105,20 @@ In the **Traces matching queries** table, Traces are displayed in the following
 Changes to your View are preserved when switching between other tabs.
 :::
 
+Next, open Trace View by clicking on any row.<br/> ![traces-table-row.png](/img/traces/traces-table-row.png)
+
+
 ## Trace View
 
-Trace View shows the time flow of a single trace by its spans. With log drilldowns and infrastructure metrics, Trace View helps you:
+Trace View shows the time flow of a single trace by its spans, and displays the relationships between the spans across your transaction.
+
+![trace-view.png](/img/traces/trace-view.png)
+
+ With log drilldowns and infrastructure metrics, Trace View helps you:
 * Investigate the lifetime of your transactions
 * Understand calls dependencies
 * Troubleshoot long duration and errors
 * Visualize all of your different services, each represented in a different color
-
-To open Trace View, go to your click on any row in your **Traces matching queries** table.<br/> ![traces-table-row.png](/img/traces/traces-table-row.png)
-
-This Trace Icicle Chart displays the relationships between the spans across your transaction. ![trace-view.png](/img/traces/trace-view.png)
 
 Navigation tips:
 * Zoom in and out on Spans using your mouse to drag and pan, or use the buttons in the bottom left, where you can also reset the view.<br/> <img src={useBaseUrl('img/traces/trace-zooms.png')} alt="trace-zooms.png" width="100"/>
@@ -124,11 +127,11 @@ Navigation tips:
 * Hover over a span segment to view the parent span information and relationship, including the service, operation, relative start in milliseconds, and duration in milliseconds. <br/> ![trace-view-details.png](/img/traces/trace-view-details2.png) ![trace-view-details.png](/img/traces/trace-view-details.png)
 * Hide services that are of less interest by clicking on a segment underneath the **Critical path contribution by service** label. This section displays the sequence of service span segments that contribute to the total trace execution time. Each colored segment summarizes all span fragments from a single service, where there was no child span activity. <br/>![critical path on trace view.png](/img/traces/critical-path-on-trace-view.png)
 
-Click on a span segment to open the details side panel, which contains the following tabs:
+Click on a span segment to open the details side panel, which contains the following tabs.
 
 ### Summary
 
-The details of the span are provided. contains general information about the span and you can drilldown to logs by span or trace IDs (if present in logs)
+The details of the span are provided. contains general information about the span and you can drilldown to logs by span or trace IDs (if present in logs).
 
 #### Logs
 
@@ -196,40 +199,28 @@ You can select the Traces icon to view all other traces that link to this Span I
 
 ### Entities
 
-The **Entities** tab provides troubleshooting links for related Entities and Environments, as well as any [Monitors](/docs/alerts/monitors) with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
+The **Entities** tab provides an overview of a span's supporting infrastructure health with the ability to contextually drill down to logs and metrics. Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, and Host domains are supported.
 
-provides an overview of a span's supporting infrastructure health with the ability to contextually drilldowns to logs and metrics.
-
-![entities tab.png](/img/dashboards-new/drill-root-causes/entities-tab.png)
-
-Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, and Host domains are supported.
-
-#### Troubleshoot links
-
-To investigate, click the **Open In** button, then select an icon to launch another feature against the entity or environment. An icon is not available if it is not a valid launch.<br/><img src={useBaseUrl('img/dashboards-new/drill-root-causes/infrastructure-tab-with-RCE-link.png')} alt="infrastructure tab with RCE link.png" width="350"/>
+<img src={useBaseUrl('img/dashboards-new/drill-root-causes/entities-tab.png')} alt="entities-tab.png" width="450"/>
 
 #### Time selector
 
-Use the time selector to set if data is related to the "now" moment of time or the moment of time around the data point you clicked on. <br/><img src={useBaseUrl('img/dashboards-new/drill-root-causes/entities-time-selector.png')} alt="entities-time-selector.png" width="450"/>
+Use the time selector to set if data is related to the **Now** moment of time or the moment of time around the data point you clicked on. <br/><img src={useBaseUrl('img/dashboards-new/drill-root-causes/entities-time-selector.png')} alt="entities-time-selector.png" width="450"/>
 
-:::note
 If the **Datapoint** is the same as **Now**, the selector will not allow you to select **Now**.
-:::
 
 #### Triggered monitors
-
-[Monitors](/docs/alerts/monitors) track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications. The **Entities** tab shows any Monitors with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.<br/>![monitor types.png](/img/dashboards-new/drill-root-causes/monitor-types.png)
 
 :::note
 Alerts are only visible when the [Time Selector](../../dashboards-new/drill-down-to-discover-root-causes.md#time-selector) is set to **Now.**
 :::
 
+Monitors track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications. The **Entities** tab shows any Monitors with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.<br/>![monitor types.png](/img/dashboards-new/drill-root-causes/monitor-types.png)
+
 Next to the Entity, you will see any of the following icons indicating the type of Monitor alert that has triggered. Click the **Triggered monitors** row to view the related Monitors. You can click on them to view the Monitor on the [Monitors](/docs/alerts/monitors) page.
 
-![triggered monitors.png](/img/dashboards-new/drill-root-causes/triggered-monitors.png)
+<img src={useBaseUrl('img/dashboards-new/drill-root-causes/triggered-monitors.png')} alt="triggered-monitors.png" width="300"/>
 
-## Next Steps
+#### Troubleshoot links
 
-Click the **Traces** title dropdown to explore [Span Analytics](/docs/apm/traces/spans) and other APM and RUM data:
-
-![trace-dropdown](/img/traces/dropdown.png)
+This tab also displays troubleshooting links for related Entities and Environments. To investigate, click the **Open In** button, then select an icon to launch another feature against the entity or environment. An icon is not available if it is not a valid launch.<br/><img src={useBaseUrl('img/dashboards-new/drill-root-causes/infrastructure-tab-with-RCE-link.png')} alt="infrastructure tab with RCE link.png" width="350"/>

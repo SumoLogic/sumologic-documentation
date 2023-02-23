@@ -4,6 +4,24 @@ title: Span Analytics and Queries
 description: Learn how to use the Spans page to explore your span data.
 ---
 
+The **Spans** page allows you to filter and aggregate your trace data at the raw span level so you can understand the performance and behavior of your application services.
+
+## Spans page
+
+To open, go to **+ New** > **Spans**.<br/> ![open spans from menu.png](/img/traces/open-spans-from-menu.png)
+
+A new Spans page opens. Data is displayed once you run a query.
+
+![Spans page.png](/img/traces/Spans-page.png)
+
+From here, you can filter and aggregate by any standard or custom span attribute (tag) and create charts to visualize results. If you find something interesting, you can quickly explore your raw span records in the **Messages** tab.
+
+For more advanced use cases, you can further enhance your query by clicking the [Open in Search](#open-in-search) button, which opens a new Log Search of your spans based on your query. Here, you can use [Search Query Language](search-query-language-support-for-traces.md) to investigate further.
+
+:::note
+Tracing must be enabled in your account to use this functionality. Contact your account team if the only thing you see is an infographic.
+:::
+
 import Iframe from 'react-iframe';
 
 :::sumo Micro Lesson
@@ -24,28 +42,10 @@ This micro lesson provides an overview of Span Analytics, and describes the term
 :::
 
 
-## Spans page
-
-The Spans page allows you to filter and aggregate your trace data at the raw span level so you can understand the performance and behavior of your application services. You can filter and aggregate by any standard or custom span attribute (tag) and create charts to visualize results. If you find something interesting, you can quickly explore your raw span records in the **Messages** tab.
-
-You can also further enhance your query for more advanced use cases using the [Open in Search](#open-in-search) button. This opens a new Search of your spans based on your query where you can investigate further by utilizing the [Search Query Language](search-query-language-support-for-traces.md).
-
-:::note
-You need to have Tracing enabled in your account to use this functionality. Contact your account team if the only thing you see is an infographic.
-:::
-
-To open, go to **+ New** > **Spans**.
-
-![open spans from menu.png](/img/traces/open-spans-from-menu.png)
-
-A new Spans page opens. Data is displayed once you run a query.
-
-![Spans page.png](/img/traces/Spans-page.png)
-
 
 ## Spans query
 
-You build a spans query by using the provided input fields. By default, you'll see an input for **Filters** and **Visualize**.
+You can build a spans query using the provided input fields. By default, you'll see an input for **Filters** and **Visualize**.
 
 ![blank spans query.png](/img/traces/blank-spans-query.png)
 
@@ -61,7 +61,7 @@ Each Trace includes up to 10,000 spans to better support monitoring for long-run
 
 ### Aggregate your data
 
-To aggregate raw spans for better insights, you'll select the subject to visualize and the type of aggregation.
+Aggregating raw spans can produce better insights by selecting the subject you want to visualize and the type of aggregation.
 
 **Visualize** sets the metric to aggregate the filtered data by. The two default options are:
 
@@ -75,7 +75,7 @@ You can instead use custom numeric metrics from your data by typing the name of
 You can visualize multiple different metrics at once.
 
 * If you define **Visualize**, you'll see another option to set **Group By** value. You can have the aggregated results grouped by time or other fields.
-   * If you want to display a time series you need to Group By time and select the granularity.
+   * If you want to display a time series, you need to Group By time and select the granularity.
    * If you prefer to have aggregated data without a time dimension, pick the appropriate dimensions to Group By.
    * You can group by time and other fields at the same time. When you do time and another dimension, you can create a stacked bar time series.
 * If you define **Group By** you'll see another option to set a **Limit** value. This allows you to reduce the number of results by an order.
@@ -156,7 +156,9 @@ three vertical-dots icon on the top right of the Spans page and select **Open 
 
 ### Examples
 
-1. To compare the performance of different release versions defined by a custom tag `assemblyVersion`, you can graph the 95th percentile of latency of a microservice in the function of time by version.
+#### Compare performance of different release versions
+
+To compare the performance of different release versions defined by a custom tag `assemblyVersion`, you can graph the 95th percentile of latency of a microservice in the function of time by version.
 
 Use the **filters** or **facets** features to find the appropriate service in the dropdown and select it. Then, select to visualize duration’s 95th percentile and pick a group by time, for example, 1-minute granularity and the `assemblyVersion` custom tag that carries version information. That’s it!
 
@@ -164,7 +166,9 @@ Use the **filters** or **facets** features to find the appropriate service in t
 
 You can customize your chart by picking different visualization types and colors.
 
-1. Next, let’s see how to find the distribution of different HTTP errors among our services. Not as a time series, just a pie chart to find which service and status codes are most common.
+#### Find HTTP errors distribution
+
+Next, let’s see how to find the distribution of different HTTP errors among our services. Not as a time series, just a pie chart to find which service and status codes are most common.
 
 Here is the simple query we used to visualize that data:
 
