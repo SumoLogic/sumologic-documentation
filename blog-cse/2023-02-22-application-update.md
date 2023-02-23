@@ -23,7 +23,7 @@ The first feature is called a **First Seen Rule**. With this new rule type, CSE 
 
 First Seen Rules are defined like any other rule type, through the Content menu in CSE.
 
-<img src={useBaseUrl('img/release-notes/cse/first-seen-rule-rn.png')} alt="A First Seen Rule definition"/>
+<img src={useBaseUrl('img/release-notes/cse/first-seen-rule.png')} alt="A First Seen Rule definition"/>
 
 First Seen Rules operate based on a **baseline**. During this period of time - typically between 7 and 30 days - the system will learn what normal and expected behavior looks like. After the baseline is established, CSE will begin generating Signals when unusual behavior is detected compared to that baseline. Baselines can be per-entity or global. (Note that the longer the baseline, the more accurate the model will be.)
 
@@ -35,7 +35,7 @@ For more information about how to use First Seen Rules, see the online [document
 
 Another new feature that will help analysts investigate unusual activity with user accounts is the Entity Timeline:
 
-<img src={useBaseUrl('img/release-notes/cse/entity-timeline-rn.png')} alt="The Entity Timeline"/>
+<img src={useBaseUrl('img/release-notes/cse/entity-timeline.png')} alt="The Entity Timeline"/>
 
 This feature visualizes all activity for a user – including all normalized records – in an easy-to-read timeline, eliminating the need to perform manual record searches.
 
