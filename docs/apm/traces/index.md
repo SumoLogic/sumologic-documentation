@@ -1,9 +1,11 @@
 ---
 slug: /apm/traces
 title: Traces
-sidebar_label: Traces
 description: See how your application is behaving with trace analytics. Learn how to work with your Tracing data including dashboards, Service Map, Spans, and queries.
 tags: [traces, trace, tracing]
+algolia: {
+  priority: 1
+}
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
