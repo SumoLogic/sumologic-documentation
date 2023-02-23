@@ -51,7 +51,7 @@ Community content is stored in our [Community Content Repository](https://github
 ## Contributing Guidelines
 
 Content can include vendor-based/custom applications, dashboards, search queries, field extraction rules (FERs), tooling, etc. Please complete each of the required fields in the [Sumo Logic Community Content Submission](https://forms.gle/KQBLBuMuUw85xtRi9) form, and follow the guidelines below:
-- Verify that all sensitive data has been removed or redacted BEFORE submitting content. This includes PII, Credentials, Network data, etc. If you provided screenshots, either blur or mark over this sensitive data.
+- Verify that all sensitive data has been removed or redacted BEFORE submitting content. This includes PII, credentials, network data, etc. If you provided screenshots, either blur or mark over this sensitive data.
 - All application, dashboard, and search content should be in JSON format (exported from Sumo Logic). Please use a descriptive naming convention for files (Company-Product-Function. Ex: AWS-Kinesis-Errors.json).
 - When possible, include a screenshot of your dashboards in .png or .jpg format. Name your screenshots the same as their respective JSON content.
 - If you have notes on how to collect data for specific content, please provide those steps as well.
