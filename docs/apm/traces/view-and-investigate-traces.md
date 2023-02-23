@@ -4,34 +4,34 @@ title: View and Investigate Traces
 description: Learn how to search and investigate your traces, trace views, and trace events.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 You can visualize trace data through filtered trace lists and icicle charts. These visualizations will help you find and troubleshoot faulty transactions easily.
 
 ## Traces page
 
-Use Traces to search and view traces. To open, go to **+ New** > **Traces**.
+Use Traces to search and view traces. To open, go to **+ New** > **Traces**.<br/> <img src={useBaseUrl('img/traces/traces-menu-option.png')} alt="traces menu option.png" width="300"/>
 
-![traces menu option.png](/img/traces/traces-menu-option.png)
+A new Traces page opens. You can then view your traces in a **Table**.
 
-A new Traces page opens:
+## Traces Table view
+
+Click on any **Trace ID** row in your table to open the [Trace View](#trace-view).
 
 ![trace-page.png](/img/traces/trace-page.png)
 
-You can view traces in a **Table**.
-
-## Table
-
-Click on any row to open the [Trace View](#trace-view). Traces are displayed in the following columns:
+Traces are displayed in the following columns:
 
 | Column name | Example value | Description |
 |:--|:--|:--|
-| Trace ID | ffaf2f69ee8ad0c1 | The unique identifier of the trace. |
-| Root Service | api | The service that started the trace. |
-| Started At | 07/27/2020 09:01:04.533 | When the trace started. |
-| Duration | 12.582 ms | The amount of time the trace spans.  |
-| Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
+| Trace ID | `ffaf2f69ee8ad0c1` | The unique identifier of the trace. |
+| Root Service | `api` | The service that started the trace. |
+| Started At | `07/27/2020 09:01:04.533` | When the trace started. |
+| Duration | `12.582 ms` | The amount of time the trace spans.  |
+| Number of spans | `35` | A trace consists of spans. This number tells you how many spans are in the trace. |
 | Duration Breakdown | ![breakdown](/img/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![img](/img/traces/span-hover-view.png) |
-| Number of errors | 0 | The number of errors in the trace. |
-| Status | 200 | The HTTP status code of the trace. A menu is available in this column when hovering on a row. The menu has an option to **Show similar traces**.<br/>![img](/img/traces/similar-traces-menu.png) |
+| Number of errors | `0` | The number of errors in the trace. |
+| Status | `200` | The HTTP status code of the trace. A menu is available in this column when hovering on a row. The menu has an option to **Show similar traces**.<br/>![img](/img/traces/similar-traces-menu.png) |
 
 ## Trace query
 
@@ -54,6 +54,8 @@ All metadata in all spans are automatically indexed and searchable up to followi
 * tags with values over 4096 chars are not indexed  
 * `spanid` and `parentspanid` are not indexed in Traces search, but searchable through Span analytics
 
+### Write a Trace query
+
 To write a query, click on the **Choose filters** input line. You can select the desired filter type and value from the dropdown menu or manually type them. Multiple filters are allowed in a query row, `AND` is implicit.<br/>![filters.png](/img/traces/trace-filters.png)
 
 You can add more queries by clicking the **+** icon on the right of the query row:<br/>![Add trace query.png](/img/traces/Add-trace-query.png)
@@ -75,8 +77,6 @@ The results are not automatically updated. If you want to refresh traces, click
 
 ## Trace Duration Breakdown Chart
 
-![breakdown](/img/traces/breakdown2.png)
-
 This chart helps you understand average trace durations in every time bucket as well as time every service contributed to the end to end duration. Use this chart to:
 
 * Quickly understand intermittent duration spikes or slowdowns
@@ -84,15 +84,14 @@ This chart helps you understand average trace durations in every time bucket as 
 
 ### Navigation  
 
+![breakdown](/img/traces/breakdown2.png)
+
 For best results, filter your traces to represent similar traces (traces of same transaction like login). Running this chart for different transaction types will not provide the insights you want. For the same reason, running the chart for all data without any filters is disabled.
 
-The height of the bar represents the average trace duration for each time bucket.
-
-Each segment represent a Critical Path Contribution of each service from each trace. Services not present in certain traces do not contribute to the value.
-
-Click on any of the color segments to focus on this service and drill down to selected timeframe.
-
-Click and drag on the chart to zoom.
+* The height of the bar represents the average trace duration for each time bucket.
+* Each segment represent a Critical Path Contribution of each service from each trace. Services not present in certain traces do not contribute to the value.
+* Click on any of the color segments to focus on this service and drill down to selected timeframe.
+* Click and drag on the chart to zoom in.
 
 Multiple query rows are not supported currently. Charts shows data for first active (visible) row only.
 
@@ -101,9 +100,9 @@ You can add Trace Duration Breakdown Chart as a dashboard panel. In other to do 
 
 ## Trace View
 
-Trace View shows the time flow of a single trace by its spans. To open, click on a trace row in the Traces [table](#table). Each color represents a different service.<br/> ![trace-view.png](/img/traces/trace-view.png)
+Trace View shows the time flow of a single trace by its spans. To open, click on a trace row in the Traces [table](#table-view). Each color represents a different service.<br/> ![trace-view.png](/img/traces/trace-view.png)
 
-### Navigate
+### Navigation
 
 :::tip
 Changes to the View are preserved when switching between other tabs.
@@ -123,7 +122,7 @@ The details pane provides the following tabs:
 #### Summary
 The details of the span are provided.
 
-To drill down further into your data, the **Logs** section has links to run searches against related log data. Top links for span/trace IDs work if you have span and trace IDs injected into logs. Lower section links are available and work automatically if [SumoLogic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy) is installed.  <br/> ![Logs links.png](/img/traces/Logs-links.png)
+To drill down further into your data, the **Logs** section has links to run searches against related log data. Top links for span/trace IDs work if you have span and trace IDs injected into logs. Lower section links are available and work automatically if you've installed the [Sumo Logic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy).  <br/> ![Logs links.png](/img/traces/Logs-links.png)
 
 #### Service Color
 

@@ -451,7 +451,7 @@ module.exports = {
     label: 'Manage',
     collapsible: true,
     collapsed: false,
-    link: {type: 'doc', id: 'manage/manage'},
+    link: {type: 'doc', id: 'manage/index'},
     items: [
       'manage/fields',
       'manage/health-events',
@@ -467,7 +467,7 @@ module.exports = {
         'manage/field-extractions/edit-field-extraction-rules',
         {
           type: 'category',
-          label: 'Field Extractions',
+          label: 'FER Templates',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'manage/field-extractions/fer-templates/index'},
@@ -1274,7 +1274,7 @@ module.exports = {
       label: 'Metrics',
       collapsible: true,
       collapsed: false,
-      link: {type: 'doc', id: 'metrics/metrics'},
+      link: {type: 'doc', id: 'metrics/index'},
       items: [
     {
       type: 'category',
@@ -1388,7 +1388,7 @@ module.exports = {
     label: 'APM, Traces, RUM',
     collapsible: true,
     collapsed: false,
-    link: {type: 'doc', id: 'apm/apm'},
+    link: {type: 'doc', id: 'apm/index'},
     items: [
     {
       type: 'category',
@@ -1400,7 +1400,7 @@ module.exports = {
         'apm/traces/quickstart',
         {
         type: 'category',
-        label: 'Get Started with Transaction Tracing',
+        label: 'Setup and Configuration',
         collapsible: true,
         collapsed: true,
         link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/index'},
@@ -1486,8 +1486,8 @@ module.exports = {
           },
         ],
       },
-      'apm/traces/services-list-map',
       'apm/traces/view-and-investigate-traces',
+      'apm/traces/services-list-map',
       'apm/traces/tracing-dashboards',
       'apm/traces/spans',
       'apm/traces/search-query-language-support-for-traces',
@@ -2139,6 +2139,7 @@ integrations: [
             'cse/rules/write-chain-rule',
             'cse/rules/write-aggregation-rule',
             'cse/rules/write-threshold-rule',
+            'cse/rules/write-first-seen-rule',
             'cse/rules/cse-rules-syntax',
             'cse/rules/cse-built-in-rules',
             'cse/rules/import-yara-rules',
