@@ -3,6 +3,8 @@
 // Tip: swizzle the SearchBar from the Algolia theme for inspiration:
 // npm run swizzle @docusaurus/theme-search-algolia SearchBar
 export {default} from '@docusaurus/Noop';
+import 'instantsearch.css/themes/satellite.css';
+
 import algoliasearch from 'algoliasearch/lite';
 import {
   InstantSearch,
@@ -18,9 +20,9 @@ const searchClient = algoliasearch('2SJPGMLW1Q', 'fb2f4e1fb40f962900631121cb3655
 
 function App() {
   return (
-    <InstantSearch searchClient={searchClient} indexName="instant_search">
+    <InstantSearch searchClient={searchClient} indexName="crawler_sumodocs">
       <SearchBox />
-      <RefinementList attribute="brand" />
+      <RefinementList attribute="tags" />
       <Hits hitComponent={Hit} />
     </InstantSearch>
   );
