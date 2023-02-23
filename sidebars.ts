@@ -1487,7 +1487,6 @@ module.exports = {
         ],
       },
       'apm/traces/view-and-investigate-traces',
-      'apm/traces/trace-view',
       'apm/traces/spans',
       'apm/traces/services-list-map',
       'apm/traces/tracing-dashboards',

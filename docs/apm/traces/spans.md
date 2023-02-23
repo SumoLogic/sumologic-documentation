@@ -1,7 +1,6 @@
 ---
 id: spans
 title: Span Analytics and Queries
-sidebar_label: Span Analytics and Queries
 description: Learn how to use the Spans page to explore your span data.
 ---
 

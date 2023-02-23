@@ -8,32 +8,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can visualize your Traces data through filtered trace lists and icicle charts. These visualizations will help you find and troubleshoot faulty transactions easily.
 
-## Traces Table view
+## Traces page
 
-The **Traces** page is where you'll start. Go to **+ New** > **Traces**.<br/> <img src={useBaseUrl('img/traces/traces-menu-option.png')} alt="traces menu option.png" width="300"/>
+To get to the main **Traces** page, go to **+ New** > **Traces**.<br/> <img src={useBaseUrl('img/traces/traces-menu-option.png')} alt="traces menu option.png" width="300"/>
 
-A new Traces page opens, where you can search and view your Traces in a table.
+Here, you can run a Trace query, view your **Trace Duration Breakdown Chart**, and explore your **Traces matching queries** table.
 
 ![trace-page.png](/img/traces/trace-page.png)
 
-Traces are displayed in the following columns:
-
-| Column name | Example value | Description |
-|:--|:--|:--|
-| Trace ID | `ffaf2f69ee8ad0c1` | The unique identifier of the trace. |
-| Root Service | `api` | The service that started the trace. |
-| Started At | `07/27/2020 09:01:04.533` | When the trace started. |
-| Duration | `12.582 ms` | The amount of time the trace spans.  |
-| Number of spans | `35` | A trace consists of spans. This number tells you how many spans are in the trace. |
-| Duration Breakdown | ![breakdown](/img/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![img](/img/traces/span-hover-view.png) |
-| Number of errors | `0` | The number of errors in the trace. |
-| Status | `200` | The HTTP status code of the trace. A menu is available in this column when hovering on a row. The menu has an option to **Show similar traces**.<br/>![img](/img/traces/similar-traces-menu.png) |
-
-:::tip
-To drill down further into a Trace, click on any row in your table to open the [Trace View](/docs/apm/traces/trace-view).
-:::
-
-## Trace queries
+### Trace queries
 
 Just above the Traces table, you'll see an input field for you to write a Trace query. Trace queries allows you to search for traces representing transaction flows through your system, using the following filters:
 
@@ -52,20 +35,19 @@ As well as any other metadata standard or custom we may find in spans. All metad
 * tags with values over 4096 chars are not indexed  
 * `spanid` and `parentspanid` are not indexed in Traces search, but searchable through Span analytics
 
-### Write a Trace query
+#### Write a Trace query
 
-To write a Trace query:
+To write a Trace query, click on the **Choose filters** input line. You can select the desired filter type and value from the dropdown menu or manually type them. Multiple filters are allowed in a query row, `AND` is implicit.<br/>![filters.png](/img/traces/trace-filters.png)
 
-1. Click on the **Choose filters** input line. You can select the desired filter type and value from the dropdown menu or manually type them. Multiple filters are allowed in a query row, `AND` is implicit.<br/>![filters.png](/img/traces/trace-filters.png)
-1. (Optional): You can add more queries by clicking the **+** icon on the right of the query row.<br/>![Add trace query.png](/img/traces/Add-trace-query.png)
+You can add more queries by clicking the **+** icon on the right of the query row.<br/>![Add trace query.png](/img/traces/Add-trace-query.png)
 
 Each query is labeled with a letter. In the following screenshot, the first query on the top row is labeled **#A** and the second query is labeled **#B**.<br/>![trace-queries.png](/img/traces/trace-queries.png)
 
-### Visibility
+#### Visibility
 
 Use the eye icon to toggle the visibility of results from a query. When hidden, the traces returned from the query in the row are not displayed in your results.<br/>![trace-hide-show.png](/img/traces/trace-hide-show.png)
 
-### Set Time Range
+#### Set Time Range
 
 Results are returned for the time range selected. The traces available (retention) in Trace query is 15 days. See [Time Range Expressions](/docs/search/get-started-with-search/search-basics/time-range-expressions) for details on defining a time range.
 
@@ -73,32 +55,29 @@ Results are returned for the time range selected. The traces available (retentio
 Queries above 7 days may be slower to load.
 :::
 
-### Refresh
+#### Refresh results
 
 The results are not automatically updated. If you want to refresh traces, click the refresh button on the top right corner of the page.<br/>![Refresh.png](/img/traces/Refresh.png)
 
-
-## Trace Duration Breakdown Chart
+### Trace Duration Breakdown Chart
 
 The Trace Duration Breakdown Chart helps you understand average trace durations in every time bucket as well as the amount of time each service contributed to the end-to-end duration. Use this chart to:
 
 * Quickly understand intermittent duration spikes or slowdowns.
 * Immediately spot the offending service by comparing CPC contribution by service.
 
-### Navigation  
-
 ![breakdown](/img/traces/breakdown2.png)
 
 For best results, filter your traces to represent similar traces (traces of same transaction like login). Running this chart for different transaction types will not provide the insights you want. For the same reason, running the chart for all data without any filters is disabled.
 
 * The height of the bar represents the average trace duration for each time bucket.
-* Each segment represent a Critical Path Contribution of each service from each trace. Services not present in certain traces do not contribute to the value.
+* Each segment represents a Critical Path Contribution of each service from each trace. Services not present in certain traces do not contribute to the value.
 * Click on any of the color segments to focus on this service and drill down to selected timeframe.
 * Click and drag on the chart to zoom in.
 
 Multiple query rows are not supported currently. Charts show data for first active (visible) row only.
 
-### Dashboard Panel support
+#### Dashboard Panel support
 
 You can add Trace Duration Breakdown Chart as a dashboard panel to a new or existing dashboard. From a new dashboard:
 
@@ -106,3 +85,151 @@ You can add Trace Duration Breakdown Chart as a dashboard panel to a new or exis
 1. Click the **Traces** panel type.
 1. Add the required trace query filters
 1. Under **Visual Settings** > **Chart type**, select **Trace Duration Breakdown Chart**.
+
+### Traces matching queries
+
+In the **Traces matching queries** table, Traces are displayed in the following columns:
+
+| Column name | Example value | Description |
+|:--|:--|:--|
+| Trace ID | `ffaf2f69ee8ad0c1` | The unique identifier of the trace. |
+| Root Service | `api` | The service that started the trace. |
+| Started At | `07/27/2020 09:01:04.533` | When the trace started. |
+| Duration | `12.582 ms` | The amount of time the trace spans.  |
+| Number of spans | `35` | A trace consists of spans. This number tells you how many spans are in the trace. |
+| Duration Breakdown | ![breakdown](/img/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![img](/img/traces/span-hover-view.png) |
+| Number of errors | `0` | The number of errors in the trace. |
+| Status | `200` | The HTTP status code of the trace. A menu is available in this column when hovering on a row. The menu has an option to **Show similar traces**.<br/>![img](/img/traces/similar-traces-menu.png) |
+
+:::note
+Changes to your View are preserved when switching between other tabs.
+:::
+
+## Trace View
+
+Trace View shows the time flow of a single trace by its spans. With log drilldowns and infrastructure metrics, Trace View helps you:
+* Investigate the lifetime of your transactions
+* Understand calls dependencies
+* Troubleshoot long duration and errors
+* Visualize all of your different services, each represented in a different color
+
+To open Trace View, go to your click on any row in your **Traces matching queries** table.<br/> ![traces-table-row.png](/img/traces/traces-table-row.png)
+
+This Trace Icicle Chart displays the relationships between the spans across your transaction. ![trace-view.png](/img/traces/trace-view.png)
+
+Navigation tips:
+* Zoom in and out on Spans using your mouse to drag and pan, or use the buttons in the bottom left, where you can also reset the view.<br/> <img src={useBaseUrl('img/traces/trace-zooms.png')} alt="trace-zooms.png" width="100"/>
+* Use the **Filters** bar to filter by values of metadata tags in spans.
+* Use the **Error Spans Only** toggle to hide or show error spans and the **Hide all services** button to hide services.<br/> <img src={useBaseUrl('img/traces/toggle-and-button-hide.png')} alt="toggle-and-button-hide.png" width="300"/>
+* Hover over a span segment to view the parent span information and relationship, including the service, operation, relative start in milliseconds, and duration in milliseconds. <br/> ![trace-view-details.png](/img/traces/trace-view-details2.png) ![trace-view-details.png](/img/traces/trace-view-details.png)
+* Hide services that are of less interest by clicking on a segment underneath the **Critical path contribution by service** label. This section displays the sequence of service span segments that contribute to the total trace execution time. Each colored segment summarizes all span fragments from a single service, where there was no child span activity. <br/>![critical path on trace view.png](/img/traces/critical-path-on-trace-view.png)
+
+Click on a span segment to open the details side panel, which contains the following tabs:
+
+### Summary
+
+The details of the span are provided. contains general information about the span and you can drilldown to logs by span or trace IDs (if present in logs)
+
+#### Logs
+
+To drill down further into your data, the **Logs** section has links to run searches against related log data. Top links for span/trace IDs work if you have span and trace IDs injected into logs. Lower section links are available and work automatically if you've installed the [Sumo Logic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy).
+
+![Logs links.png](/img/traces/Logs-links.png)
+
+If no logs are produced for this spanID, results may come back empty. [Learn how to add spanID to logs](/docs/apm/traces/advanced-configuration/correlate-logs).
+
+#### Service color
+
+You can change the color of a **Service** by clicking the colored box and selecting a defined swatch or custom color.
+
+<img src={useBaseUrl('img/traces/service-color-traces-span.png')} alt="service color traces span.png" width="400"/>
+
+### Metadata
+
+Lists all of the related service entities involved in the span, including a complete set of span's tags. You can click on the clipboard icon to copy the value to your computer's clipboard.
+
+<img src={useBaseUrl('img/traces/trace-details-metadata.png')} alt="trace-details-metadata.png" width="300"/>
+
+The Metadata includes a [Span Event](#span-events) section.
+
+#### Span Events
+
+Span Events describe and contextualize the work being done under a Span by tracing and displaying that data in Trace Views. Events are optional time-stamped strings, which are made up of timestamp, name, and (optional) key-value pair attributes.
+
+![span-event-select.png](/img/traces/span-event-select.png)
+
+You can also get to the **Metadata** tab > **Span Events** section by selecting a span event marker ![span-event-marker.png](/img/traces/span-event-marker.png) in the timeline or a span with an event. <br/>
+![span-event-markers.gif](/img/traces/span-event-markers.gif)
+
+Span Event data includes:
+
+* Name for the event.
+* Timestamp when it occurred.
+* A metric or measurement.
+* Additional attributes (short or long), displayed in multiple formats
+* Captured errors with codes and additional details if available.
+
+All details and attributes display in the **Metadata** tab with pop-up **Details** for additional event messages and attribute details. For example, during OpenTelemetry Java or Python auto-instrumentation, any exceptions may be traced and attach the exception details automatically onto the relevant span as a Span Event.
+
+Each event tracks a marker in the span timeline showing the start, end, and amount of passed time in a span. For many events that occur in spans, zoom in to expand and review event markers helping them to space out if overlapping or close together. As you hover and select events, associated spans highlight and provide a view of the event in all spans affected.
+
+If additional information is available that may be too large for the tab view area, such as a metric attributes and error message, the **Details** link displays. Click to review this information.
+
+![span-event-more1.png](/img/traces/span-event-more1.png)
+
+![span-event-more2.png](/img/traces/span-event-more2.png)
+
+
+You can also manually create Span Events, such as this [example from Ruby](https://opentelemetry.io/docs/instrumentation/ruby/events/). 
+
+
+#### Span Links
+
+Tracing focuses on the parent-child relationship between spans, which are described by a Span ID, a parent Span ID, and a Trace ID. You can establish more casual relationships between Traces using Span Links.
+
+**Span Links**, listed under the Metadata tab, give Spans context. Links can point to Spans inside a trace or across different traces. For example, with links you can represent batch operations, where a Span is initiated by multiple initiating spans, each representing one item being processed in the batch. The links give you the relationship between the originating and the following trace. You can copy the Span ID by selecting the Clipboard icon next to the span link.<br/> ![links.png](/img/traces/links.png)
+
+Span Links are added by tracing instrumentation at the client side and are automatically shown when detected in data. For details on configuring Span Links, see the [OpenTelemetry specification](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/overview.md#links-between-spans).
+
+You can select the Traces icon to view all other traces that link to this Span ID, and it will take you to the Trace View with the `linkedSpanId` as a filter criteria.<br/> ![links.png](/img/traces/links2.png)
+
+
+### Entities
+
+The **Entities** tab provides troubleshooting links for related Entities and Environments, as well as any [Monitors](/docs/alerts/monitors) with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
+
+provides an overview of a span's supporting infrastructure health with the ability to contextually drilldowns to logs and metrics.
+
+![entities tab.png](/img/dashboards-new/drill-root-causes/entities-tab.png)
+
+Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, and Host domains are supported.
+
+#### Troubleshoot links
+
+To investigate, click the **Open In** button, then select an icon to launch another feature against the entity or environment. An icon is not available if it is not a valid launch.<br/><img src={useBaseUrl('img/dashboards-new/drill-root-causes/infrastructure-tab-with-RCE-link.png')} alt="infrastructure tab with RCE link.png" width="350"/>
+
+#### Time selector
+
+Use the time selector to set if data is related to the "now" moment of time or the moment of time around the data point you clicked on. <br/><img src={useBaseUrl('img/dashboards-new/drill-root-causes/entities-time-selector.png')} alt="entities-time-selector.png" width="450"/>
+
+:::note
+If the **Datapoint** is the same as **Now**, the selector will not allow you to select **Now**.
+:::
+
+#### Triggered monitors
+
+[Monitors](/docs/alerts/monitors) track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications. The **Entities** tab shows any Monitors with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.<br/>![monitor types.png](/img/dashboards-new/drill-root-causes/monitor-types.png)
+
+:::note
+Alerts are only visible when the [Time Selector](../../dashboards-new/drill-down-to-discover-root-causes.md#time-selector) is set to **Now.**
+:::
+
+Next to the Entity, you will see any of the following icons indicating the type of Monitor alert that has triggered. Click the **Triggered monitors** row to view the related Monitors. You can click on them to view the Monitor on the [Monitors](/docs/alerts/monitors) page.
+
+![triggered monitors.png](/img/dashboards-new/drill-root-causes/triggered-monitors.png)
+
+## Next Steps
+
+Click the **Traces** title dropdown to explore [Span Analytics](/docs/apm/traces/spans) and other APM and RUM data:
+
+![trace-dropdown](/img/traces/dropdown.png)
