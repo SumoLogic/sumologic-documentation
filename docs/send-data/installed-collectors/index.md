@@ -8,7 +8,7 @@ An Installed Collector is a Java agent that receives logs and metrics from its S
 
 A Sumo Source is an object configured for a specific Collector that sends data to Sumo Logic. There are a number of Source types that work with Installed Collectors. For a list of all Sources supported by Installed Collectors, see [Sources for Installed Collectors](/docs/send-data/installed-collectors/sources).
 
-For details on supported operating systems and hardware restrictions see Installed Collector requirements.
+For details on supported operating systems and hardware restrictions, see [Installed Collector requirements](/docs/get-started/system-requirements/#installed-collector-requirements).
 
 See [how to choose a collector](/docs/send-data/choose-collector-source) for guidance on when to use a single or multiple Installed Collectors.
 
