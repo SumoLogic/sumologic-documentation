@@ -48,7 +48,7 @@ To configure a G Suite Apps Audit Source:
 1. Select **G Suite Apps Audit**.
 1. For **Name**, type the name of the Source. Enter an optional Description.
 1. For **Application**, Select the G Suite app you wish to collect using this source. Steps may be repeated for each G Suite app you want to collect from.
-1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory.`
+1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
