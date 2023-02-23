@@ -77,7 +77,7 @@ Follow the "fork-and-pull" Git workflow:
 
 ## FAQ
 
-Sumo Logic Community Ecosystem Apps are provided and supported by our internal and external user and creator community. Generally these apps should be viewed as open source content, and we strive to ensure that they are proactively reviewed by our community to ensure usability, use case coverage, and technical quality.
+Sumo Logic Community Ecosystem Apps are provided and supported by our internal and external user and creator community. Generally, these apps should be viewed as open source content, and we strive to ensure that they are proactively reviewed by our community to ensure usability, use case coverage, and technical quality.
 
 ### What is this?
 
