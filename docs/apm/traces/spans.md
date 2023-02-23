@@ -108,7 +108,7 @@ You can pause or stop your search by clicking the appropriate icons below the se
 
 ### Messages tab
 
-The **Messages** table shows your raw span data. You can click on any row to open a right-side Details pane (similar to the one in [Trace View](/docs/apm/traces/trace-view)) showing span details and options to navigate to other parts of the system from there.
+The **Messages** table shows your raw span data. You can click on any row to open a right-side Details pane (similar to the one in [Trace View](/docs/apm/traces/view-and-investigate-traces)) showing span details and options to navigate to other parts of the system from there.
 
 ![messages results.png](/img/traces/messages-results.png)
 
