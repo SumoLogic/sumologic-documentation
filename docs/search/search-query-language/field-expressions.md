@@ -5,8 +5,7 @@ sidebar_label: Field Expressions
 description: Overview of the expressions that create user-defined numeric, boolean, or string fields.
 ---
 
-
-The Sumo Query Language can be used to create fields based on calculated expressions, such as:
+The Sumo Logic Query Language can be used to create fields based on calculated expressions, such as:
 
 ```sql
 | 3 + 2 as val
@@ -14,19 +13,19 @@ The Sumo Query Language can be used to create fields based on calculated express
 | 34 % 10 as remainder
 ```
 
-Expressions are created by literal values, field names, or search query language operators acting as functions, such as [concat()](/docs/search/search-query-language/search-operators/concat) or pow(). Fields created in this way appear in results as virtual columns with the same value on each row, and they can be used in where and other clauses.
+Expressions are created by literal values, field names, or search query language operators acting as functions, such as [`concat()`](/docs/search/search-query-language/search-operators/concat) or `pow()`. Fields created in this way appear in results as virtual columns with the same value on each row, and they can be used in where and other clauses.
 
 Expressions can be used to create fields that are Numeric, Boolean, or String values.
 
 ## Numeric Expressions
 
-Numbers can be calculated using combinations of addition, subtraction, multiplication, division, modulo, and unary negation. Operators like "+" or "/" can be applied to numeric literals, numeric fields, operators that act as numeric functions (such as abs() or pow()), or nested numeric expressions. For more information about numeric functions, see [Math Expressions](/docs/search/search-query-language/math-expressions).
+Numbers can be calculated using combinations of addition, subtraction, multiplication, division, modulo, and unary negation. Operators like "+" or "/" can be applied to numeric literals, numeric fields, operators that act as numeric functions (such as `abs()` or `pow()`), or nested numeric expressions. For more information about numeric functions, see [Math Expressions](/docs/search/search-query-language/math-expressions).
 
 ## Numeric Literals
 
 In our Query Language, a number, or numeric literal, is a set of digits containing no spaces, with an optional decimal point. Commas are not allowed, and leading and trailing zeros are ignored.  We also allow scientific notation using "e+" or "e-" to divide the number from the exponent. Here are some examples of simple numeric literals:
 
-```
+```sql
 | 537 as a
 | 3.14e+4 as bigpi
 | -42.300 as b
@@ -60,7 +59,7 @@ The list of supported suffixes, and the factor by which they multiply the numeri
 
 ## Time suffix
 
-This is used to represent units of time. **The base unit of time returned is the millisecond.** For example, 1.5s would be returned as 1,500. One and a half seconds converted to the base unit of milliseconds. Some examples of time suffixes:
+This is used to represent units of time. **The base unit of time returned is the millisecond**. For example, 1.5s would be returned as 1,500. One and a half seconds converted to the base unit of milliseconds. Some examples of time suffixes:
 
 ```sql
 | 1w as oneWeek
@@ -144,4 +143,4 @@ Characters quoted with double quotes (not single quotes) are string literals. Us
 | concat("Hello, ", "world") as welcome
 ```
 
-Use string functions, such as [concat()](/docs/search/search-query-language/search-operators/concat), to combine strings. There are no string operators like "+" or ".". The [format()](/docs/search/search-query-language/search-operators/format) operator can create string fields in a specified format. Use [substring()](/docs/search/search-query-language/search-operators/substring) to extract portions of a string.
+Use string functions, such as [concat()](/docs/search/search-query-language/search-operators/concat), to combine strings. There are no string operators like "+" or ".". The [`format()`](/docs/search/search-query-language/search-operators/format) operator can create string fields in a specified format. Use [`substring()`](/docs/search/search-query-language/search-operators/substring) to extract portions of a string.

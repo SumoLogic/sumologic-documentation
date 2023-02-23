@@ -23,15 +23,12 @@ To convert an epoch timestamp to a human-readable format, use the [`formatDate`
 
 ## Examples
 
-1. Given the date `2019-11-18T19:00:00.000-08:00` you'd specify the `dateFormat` as `yyyy-MM-dd'T'HH:mm:ss.SSSXXX`. For example,  
-
+Given the date `2019-11-18T19:00:00.000-08:00` you'd specify the `dateFormat` as `yyyy-MM-dd'T'HH:mm:ss.SSSXXX`. For example,  
     ```sql
     | parseDate(date, "yyyy-MM-dd'T'HH:mm:ss.SSSXXX") as milliseconds
-    ```  
+    ```     
 
-     
-1. Given a log message such as:
-
+Given a log message such as:
     ```
     instance of Win32_NTLogEvent
     {
@@ -47,7 +44,7 @@ To convert an epoch timestamp to a human-readable format, use the [`formatDate`
 
 The following query returns TimeGenerated as a timestamp in milliseconds, in this example 1500534030000.
 
-```sql
+```
 | parse "TimeGenerated = \"*.000000-000" as dd
 | parseDate(dd, "yyyyMMddHHmmss") as milliseconds
 ```
@@ -57,5 +54,3 @@ To specify a time zone:
 ```sql
 | parseDate(dd, "yyyyMMddHHmmss", "etc/utc") as milliseconds
 ```
-
- 
