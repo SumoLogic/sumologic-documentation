@@ -1274,7 +1274,7 @@ module.exports = {
       label: 'Metrics',
       collapsible: true,
       collapsed: false,
-      link: {type: 'doc', id: 'metrics/metrics'},
+      link: {type: 'doc', id: 'metrics/index'},
       items: [
     {
       type: 'category',
