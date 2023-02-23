@@ -1,32 +1,48 @@
 ---
 id: spans
-title: Analyze Data on a Span Level
+title: Span Analytics and Distributed Tracing Data
+sidebar_label: Span Analytics
 description: Learn how to use the Spans page to explore your span data.
 ---
 
-## Availability
+import Iframe from 'react-iframe';
 
-| Account Type | Account Level                           |
-|:--------------|:-----------------------------------------|
-| Credits    | Enterprise Operations and Enterprise Suite<br/>Essentials get up to 5 GB a day |
+:::sumo Micro Lesson
 
-Sumo Logic Application Monitoring and Observability provides transactional intelligence for distributed workflows, by combining telemetry from traces, logs, and metrics in the context of real-time automatically tracked application topology.
+This micro lesson provides an overview of Span Analytics, and describes the term Span in the distributed tracing and the benefits of Span Analytics. It also explains how to perform Span Analytics in Sumo Logic UI.
+
+<Iframe url="https://www.youtube.com/embed/2cp_0pmzD-A"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
+
 
 ## Spans page
 
-The Spans page allows you to filter and aggregate your trace data at the raw span level so you can understand the performance and behavior of your application services. You can filter and aggregate by any standard or custom span attribute (tag) and create charts to visualize results. If you find something interesting, you can quickly explore your raw span records in the **Messages** tab. You can also further enhance your query for more advanced use cases using the [Open in Search](#open-in-search) button. This opens a new Search of your spans based on your query where you can investigate further by utilizing the [Search Query Language](search-query-language-support-for-traces.md).
+The Spans page allows you to filter and aggregate your trace data at the raw span level so you can understand the performance and behavior of your application services. You can filter and aggregate by any standard or custom span attribute (tag) and create charts to visualize results. If you find something interesting, you can quickly explore your raw span records in the **Messages** tab.
+
+You can also further enhance your query for more advanced use cases using the [Open in Search](#open-in-search) button. This opens a new Search of your spans based on your query where you can investigate further by utilizing the [Search Query Language](search-query-language-support-for-traces.md).
 
 :::note
 You need to have Tracing enabled in your account to use this functionality. Contact your account team if the only thing you see is an infographic.
 :::
 
-To open, go to **+ New > Spans**.
+To open, go to **+ New** > **Spans**.
 
 ![open spans from menu.png](/img/traces/open-spans-from-menu.png)
 
 A new Spans page opens. Data is displayed once you run a query.
 
 ![Spans page.png](/img/traces/Spans-page.png)
+
 
 ## Spans query
 

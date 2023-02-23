@@ -2,6 +2,7 @@
 id: dashboards
 title: Real User Monitoring Dashboards
 sidebar_label: RUM Dashboards
+description: Learn how to use the Sumo Logic Real User Monitoring (RUM) Dashboards to gain visibility into application performance and end-user activity such as geographic location, browser type, operating systems used.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

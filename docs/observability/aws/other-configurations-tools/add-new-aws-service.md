@@ -294,7 +294,7 @@ account={{account}} namespace={{namespace}} region={{region}} queuename={{queuen
 | count by event_name
 ```
 
-### Improve queries to include variables in metric queries (Optional)
+### Improve queries to include variables in metrics queries (Optional)
 
 You can add the created template variable to queries to better filter
 the data. Please see this document help doc for details

@@ -59,8 +59,7 @@ being looked up. For example, given these two Network Blocks:
 * `10.0.0.0/8` with Label "foo"
 * `10.0.10./24` with Label "bar"
 
-When CSE looks for the Network Block the address `10.0.10.1`, it will
-will return the more-specific block, "bar".
+When CSE looks for the Network Block the address `10.0.10.1`, it will return the more-specific block, "bar".
 
 ## Create a Network Block manually
 

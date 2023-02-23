@@ -5,7 +5,7 @@ sidebar_label: Search Query Language support
 description: Use our extensive Search Query Language to gain valuable insight into your traces.
 ---
 
-You can use the Search Query Language in a log search to query raw spans from tracing data for the same period as the default partition.
+You can use our [Search Query Language](/docs/search/search-query-language) in a log search to query raw spans from tracing data for the same period as the default partition.
 
 Tracing data retention in `_trace_spans` index is the same as default log index retention.
 
@@ -76,7 +76,7 @@ Sumo Logic built-in fields:
 The following is a table of automatically-parsed span attributes:
 
 | Span field | Description |
-|:----------------|:--------------------------------------------------------------------------------------------------|
+|:----------------|:----------------|
 | endtimestamp   | The end timestamp of the span                                                                    |
 | kind           | Either `internal`, `server`, or `client` as set by client instrumentation                        |
 | operation      | The operation name such as `url`, `SOA call`, or `db statement` as set by client instrumentation |
