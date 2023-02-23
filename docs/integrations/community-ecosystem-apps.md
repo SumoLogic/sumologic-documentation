@@ -85,7 +85,7 @@ A central place to list community content from the internal and external Sumo Co
 
 ### How do I use this content?
 
-Methods to using each piece of content are outlined their corresponding locations. For content like Apps, Log Searches, and FERs, you can use Sumo Logic's [import](https://help.sumologic.com/docs/get-started/library/#import-content) feature to add this content to your Sumo Logic Library.
+Methods to using each piece of content are outlined their corresponding locations. For content like Apps, Log Searches, and FERs, you can use Sumo Logic's [import](/docs/get-started/library/#import-content) feature to add this content to your Sumo Logic Library.
 
 ### Can my content be anonymous?
 
