@@ -50,13 +50,13 @@ This guide provides information to work with your tracing data.
 </div>
 <div className="box smallbox6 card">
   <div className="container">
-  <a href="/docs/apm/traces/spans"><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Span Analytics and Distributed Tracing Data</h4></a>
-  <p>Use our extensive Search Query Language to gain valuable insight into your traces.</p>
+  <a href="/docs/apm/traces/spans"><img src={useBaseUrl('img/icons/operations/distributed-operations.png')} alt="icon" width="30"/><h4>Span Analytics and Queries</h4></a>
+  <p>Learn how to use the Spans page to explore your span data.</p>
   </div>
 </div>
 <div className="box smallbox7 card">
   <div className="container">
-  <a href="/docs/apm/traces/search-query-language-support-for-traces"><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Search Query Language Support for Traces</h4></a>
+  <a href="/docs/apm/traces/search-query-language-support-for-traces"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="30"/><h4>Search Query Language Support for Traces</h4></a>
   <p>Use our Search Query Language to gain valuable insight into your traces.</p>
   </div>
 </div>
