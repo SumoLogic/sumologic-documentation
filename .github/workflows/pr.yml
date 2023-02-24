@@ -9,7 +9,7 @@ jobs:
     deploy-to-review:
       uses: SumoLogic/sumologic-documentation/.github/workflows/build_and_deploy.yml@main
       with:
-        hostname: https://helpstaging.sumologic.com
+        hostname: https://d2t1s0ah22jxsa.cloudfront.net
         base_url: /${{ github.ref_name }}/
         environment: review/${{ github.ref_name }}
       secrets:
