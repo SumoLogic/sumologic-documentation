@@ -11,10 +11,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-:::caution Under construction
-&#128679; This doc is under construction &#128679;
-:::
-
 <img src={useBaseUrl('img/icons/general/community.png')} alt="Thumbnail icon" width="60"/>
 
 Sumo Logic Community Ecosystem Apps are provided and supported by our internal and external users and creator community.
