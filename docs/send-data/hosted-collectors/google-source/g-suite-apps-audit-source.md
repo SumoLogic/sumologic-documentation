@@ -47,7 +47,7 @@ To configure a G Suite Apps Audit Source:
 1. In the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **G Suite Apps Audit**.
 1. For **Name**, type the name of the Source. Enter an optional Description.
-1. For **Application**, Select the G Suite app you wish to collect using this source. Steps may be repeated for each G Suite app you want to collect from.
+1. For **Application**, select the G Suite app that you’d like this Source to collect data from. Steps may be repeated for each G Suite app you want to collect data from.
 1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
