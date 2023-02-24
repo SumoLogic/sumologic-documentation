@@ -39,7 +39,7 @@ Authentication must be with a new G Suite Apps Audit Source, we do not support 
 
 ## Configuring a G Suite Apps Audit Source
 
-Once you've set up a Hosted Collector and have your credentials ready, you're all set to configure the Source. Each G Suite App must have its own source. Follow these steps for each G Suite App you wish to collect.
+Once you've set up a Hosted Collector and have your credentials ready, you're all set to configure the Source. Each G Suite App must have its own source. For each G Suite App you wish to collect, follow the steps below.
 
 To configure a G Suite Apps Audit Source:
 
