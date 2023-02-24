@@ -73,7 +73,7 @@ The bulk migration feature is an extension to the dashboard migration feature th
     * The dashboard's blue names are clickable and open up the dashboard.<br/><img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/Bulk+Migration/Screenshot-4.png')} alt="dashboard" width="600"/>
 
 :::important
-Choosing more that fifty dashboards will disable the migrate button.<br/><img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/Bulk+Migration/Screenshot-5.png')} alt="dashboard" width="600"/>
+Choosing more than fifty dashboards will disable the **Migrate** button.<br/><img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/Bulk+Migration/Screenshot-5.png')} alt="dashboard" width="600"/>
 :::
 
 ## Limitations
