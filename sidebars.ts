@@ -486,7 +486,7 @@ module.exports = {
         'manage/field-extractions/edit-field-extraction-rules',
         {
           type: 'category',
-          label: 'Field Extractions',
+          label: 'FER Templates',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'manage/field-extractions/fer-templates/index'},
@@ -1293,7 +1293,7 @@ module.exports = {
       label: 'Metrics',
       collapsible: true,
       collapsed: false,
-      link: {type: 'doc', id: 'metrics/metrics'},
+      link: {type: 'doc', id: 'metrics/index'},
       items: [
     {
       type: 'category',
@@ -1506,9 +1506,9 @@ module.exports = {
         ],
       },
       'apm/traces/view-and-investigate-traces',
+      'apm/traces/spans',
       'apm/traces/services-list-map',
       'apm/traces/tracing-dashboards',
-      'apm/traces/spans',
       'apm/traces/search-query-language-support-for-traces',
       {
         type: 'category',
@@ -2062,6 +2062,7 @@ integrations: [
       },
     'integrations/1password',
     'integrations/account-plans',
+    'integrations/community-ecosystem-apps',
     'integrations/partner-ecosystem-apps',
     'integrations/partner-integrations',
    ],
@@ -2158,6 +2159,7 @@ integrations: [
             'cse/rules/write-chain-rule',
             'cse/rules/write-aggregation-rule',
             'cse/rules/write-threshold-rule',
+            'cse/rules/write-first-seen-rule',
             'cse/rules/cse-rules-syntax',
             'cse/rules/cse-built-in-rules',
             'cse/rules/import-yara-rules',

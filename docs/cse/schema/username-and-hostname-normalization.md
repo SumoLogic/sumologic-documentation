@@ -19,7 +19,7 @@ Some of the common forms for username are:
 * `AD-DOMAIN\username`
 * `username@AD-DOMAIN.X` (the AD domain format that’s more fully qualified)
 * `username@EMAIL-DOMAIN` (FQDN)
-* `arn:aws:iam::<USER_ID>:user/username or arn:aws:iam::<USER_ID>:user/username@FQDN`
+* `arn:aws(-us-gov)?:iam::<USER_ID>:user/username` or `arn:aws(-us-gov)?:iam::<USER_ID>:user/username@FQDN`
 * `AROA<AWS_ID>:username@FQDN` or `arn:aws:iam::<USER_ID>:user/username@FQDN`
 
 Some of the common forms of hostname are:

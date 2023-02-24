@@ -3,9 +3,7 @@ id: parse-delimited-logs-using-split
 title: Parse Delimited Logs Using Split
 ---
 
-
-
-The **split** operator allows you to split strings into multiple strings, and parse delimited log entries, such as space-delimited formats.
+The **`split`** operator allows you to split strings into multiple strings, and parse delimited log entries, such as space-delimited formats.
 
 To parse log entries from CSV files, you can use the simpler [CSV operator](parse-csv-formatted-logs.md).
 
