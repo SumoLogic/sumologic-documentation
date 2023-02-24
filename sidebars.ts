@@ -2043,6 +2043,7 @@ integrations: [
       },
     'integrations/1password',
     'integrations/account-plans',
+    'integrations/community-ecosystem-apps',
     'integrations/partner-ecosystem-apps',
     'integrations/partner-integrations',
    ],
