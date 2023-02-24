@@ -69,7 +69,7 @@ The bulk migration feature is an extension to the dashboard migration feature th
 3. The bottom right corner shows real-time information on the migration process.<br/><img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/Bulk+Migration/Screenshot-3.png')} alt="dashboard" width="600"/>
 4. The following information is populated once the migration is complete.
     * Summary of the process.
-    * Hovering on the error (if any) shows the error information in the tooltip
+    * Hovering on the error (if any) shows the error information in the tooltip.
     * The dashboard's blue names are clickable and open up the dashboard.<br/><img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/Bulk+Migration/Screenshot-4.png')} alt="dashboard" width="600"/>
 
 :::important
