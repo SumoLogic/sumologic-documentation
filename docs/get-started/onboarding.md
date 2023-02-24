@@ -1,11 +1,10 @@
 ---
 id: onboarding
 title: Getting Started with Sumo Logic
-sidebar_label: Getting started
+sidebar_label: Getting Started
 description: Get started quickly with Sumo Logic.
 tags: [get started, getting started]
 ---
-
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -18,6 +17,10 @@ Here you will learn how to:
 * Search and analyze your data
 * Monitor and troubleshoot your environment
 * Share your findings with your team
+
+:::tip Start a free trial
+You can sign up through Sumo Logic or AWS Marketplace. [Learn more](/docs/get-started/sign-up).
+:::
 
 :::sumo Need help?
 Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or enter a [support ticket](https://support.sumologic.com/hc/en-us).

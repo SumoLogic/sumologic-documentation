@@ -1,6 +1,6 @@
 ---
 id: microsoft-azure-activity-log
-title: Microsoft Azure Activity Log
+title: Microsoft Azure Activity Log - Cloud SIEM
 sidebar_label: Microsoft Azure Activity Log
 description: Configure an HTTP Source to ingest Microsoft Azure Activity Log messages and to be parsered by CSE's system parser for Azure Activity Log.
 ---

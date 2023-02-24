@@ -1,12 +1,12 @@
 ---
 slug: /cse
 title: Cloud SIEM Enterprise
-tags: [cse, cloud siem]
+tags: [cse, cloud siem, security]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="75"/>
+<img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="60"/>
 
 Cloud SIEM Enterprise (CSE) is a cloud-based SIEM that provides the following functionality: 
 

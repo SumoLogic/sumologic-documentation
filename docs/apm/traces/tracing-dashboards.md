@@ -2,7 +2,7 @@
 id: tracing-dashboards
 title: Application Service APM/Tracing Dashboards
 sidebar_label: APM and Tracing Dashboards
-description: Create Tracing dashboards, install apps, and more.
+description: Explore and create Tracing dashboards, install apps, and more.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -64,7 +64,7 @@ To add a Service Map panel to your Dashboard, see [Services Dashboard Panels](/d
 
 ### Trace List panel
 
-The Trace List panel displays the [Traces page](view-and-investigate-traces.md) table to give at-a-glance tracking for traces. To view deeper details, click a trace from the panel to open the [Trace View](view-and-investigate-traces.md). 
+The Trace List panel displays the [Traces page](view-and-investigate-traces.md) table to give at-a-glance tracking for traces. To view deeper details, click a trace from the panel to open the [Trace View](view-and-investigate-traces.md). 
 
 :::note
 You are limited to three Trace List panels in a dashboard.

@@ -1,6 +1,6 @@
 ---
 id: fortigate-firewall
-title: Fortigate Firewall
+title: Fortigate Firewall - Cloud SIEM
 sidebar_label: Fortigate Firewall
 description: Configure a syslog source to ingest Fortigate Firewall log messages to be parsed by CSE’s system parser for Fortigate Firewall.
 ---

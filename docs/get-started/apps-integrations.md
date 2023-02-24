@@ -1,14 +1,15 @@
 ---
 id: apps-integrations
-title: Apps and Integrations
-sidebar_label: Apps and integrations
+title: Installing Apps and Integrations
+sidebar_label: Installing Apps
+description: Learn how to install apps to your Library and to multiple environments.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/cloud/apps.png')} alt="icon" width="50"/>
 
-Sumo Logic apps give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you.
+Sumo Logic apps give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you. In this doc, you'll learn how to install apps from the App Catalog to your Library and how to manage them in multiple environments.
 
 <a href="/docs/integrations"><img src={useBaseUrl('img/get-started/library/App-Catalog.png')} alt="app catalog" /></a>
 
@@ -20,9 +21,7 @@ Sumo Logic Apps address these common use cases:
 * **Decrease app time to market.** With Sumo Logic, companies can implement a consistent release process resulting in on-time releases. They can easily identify application issues and configuration changes across development, test and deployment environments.
 * **Enforce compliance.** Sumo Logic delivers a simple, proactive and automated process to audit and investigate operational, security and regulatory compliance incidents. All data is centralized, secured, and easily analyzed in real-time through a single, highly scalable solution.
 
-## Install Apps from the Library
-
-Learn how to install apps from the library and to multiple environments.
+## Install Apps to your Library
 
 | Account Type | Account Level |
 | :-- | :-- |
@@ -54,7 +53,7 @@ Panels will start and fill automatically. Each Panel slowly fills with data matc
 
 ## Install Apps in Multiple Environments
 
-If you have multiple environments generating data that you want to monitor using Sumo Logic Apps—for example, environments for production, development, and testing—you’ll need to perform the following steps in each environment:
+If you have multiple environments generating data that you want to monitor using Sumo Logic Apps — for example, environments for production, development, and testing — you’ll need to perform the following steps in each environment:
 
 1. Set up Sumo Logic Collectors and Sources for each environment. Make sure that Source Hosts and Source Categories are named correctly in order to clearly indicate the environment name to the Apps when they are installed.
 1. Perform any prerequisites required for the particular Sumo Logic App in that environment. Each Sumo Logic App has unique requirements, so make sure to follow the specific instructions for that App.
@@ -114,8 +113,6 @@ After the search has run, you can [save the search](/docs/search/get-started-wi
 :::important
 Searches from Enterprise Apps, which require a paid Professional Services contract, are not included.
 :::
-
-### Run a Search
 
 To run a search from a Sumo Logic App:
 
@@ -207,23 +204,8 @@ This Dashboard provides several ways to monitor your logs based on the metadata 
 
 ### Collectors and Source Monitoring
 
-The Panels in the Collector and Source Monitoring Dashboard help you
-keep an eye on the machines running Collectors and Sources. If a machine begins to have issues (such as no logs being uploaded to Sumo Logic) you'll know at a glance.
+The Panels in the Collector and Source Monitoring Dashboard help you keep an eye on the machines running Collectors and Sources. If a machine begins to have issues (such as no logs being uploaded to Sumo Logic) you'll know at a glance.
 
 * **Issues by Collector.** This Panel displays the number of log messages that contain error, exception, or failure terms by Collector.
 * **Issues by Source.** Shows the number of log messages that contain error, exception, or failure terms by each Collector's Source.
 * **Collector Issue Monitoring.** Displays warnings generated over time for each Collector in your deployment.
-
-
-
-## Preview Apps
-
-Preview Apps are Sumo Logic Apps that are currently under development, but are not yet released or officially supported. They appear in the Library under the **Preview** tab. You can install and use Preview Apps to test how well their use cases work for you, and provide feedback to Sumo Logic.
-
-Preview Apps that have the highest customer adoption rate will become the first in the queue to be adopted and moved to the Apps tab, where they will be officially supported by Sumo Logic.
-
-As Preview Apps are iterated, updated, and finally released, you will need to reinstall the App to get the latest version.
-
-:::sumo Sumo Logic Community
-Because Preview Apps are not fully developed, they are not officially supported by Sumo Logic Support, and documentation instructions are not final. To provide feedback, report a bug, or get help, log into the [Sumo Logic Community](https://community.sumologic.com/s/topic/0TOE0000000g6auOAA/Apps), and post to the topic for your Preview App. 
-:::

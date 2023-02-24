@@ -31,15 +31,15 @@ Here’s one row from the List view. The numbered definitions below correspond t
 1. **Dwell time**. The time between when the first event occurred (when the first Record in the Insight was generated) and when the Insight was generated. 
 1. **Age**. The elapsed time since the Insight was created in minutes, hours, and so on.
 1. **Insight name**. The Insight name, made up of the Insight ID, and the MITRE stage or stages associated with the Signals in the Insight. 
-2. **Global Confidence**. If sufficient data is available, a [Global Confidence score](global-intelligence-security-insights.md) for the Insight is shown. 
-3. **Assignee**. The analyst assigned to the Incident.
-4. **Severity**. The severity of the Insight. The value is a function of the configured Entity Activity Score threshold for Insight generation. For more information, see [Insight Severity](insight-generation-process.md).
-5. **Entity**. The Entity associated with the Insight.
-6. **Signal data**. This area has three bits of information:
+1. **Global Confidence**. If sufficient data is available, a [Global Confidence score](global-intelligence-security-insights.md) for the Insight is shown. 
+1. **Assignee**. The analyst assigned to the Incident.
+1. **Severity**. The severity of the Insight. The value is a function of the configured Entity Activity Score threshold for Insight generation. For more information, see [Insight Severity](insight-generation-process.md).
+1. **Entity**. The Entity associated with the Insight.
+1. **Signal data**. This area has three bits of information:
    * The count of Signals that caused the Insight to be created.
    * The total count of Signals on the Insight Entity during the detection window.
    * How long it's been since the last Signal fired associated with the Insight fired.
-7. The visualization plots the Insight's Signals over time (x-axis) by severity (y-axis).
+1. The visualization plots the Insight's Signals over time (x-axis) by severity (y-axis).
 
 ### Board view
 

@@ -2,7 +2,7 @@
 slug: /integrations/amazon-aws
 title: Amazon and AWS
 sidebar_label: Amazon and AWS
-description: Amazon and AWS
+description: Sumo Logic apps for Amazon and AWS.
 tags: [amazon, aws]
 ---
 

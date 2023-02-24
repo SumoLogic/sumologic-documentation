@@ -14,7 +14,7 @@
  */
 
 module.exports = {
-  docs: [
+  getstarted: [
     {
       type: 'category',
       label: 'Welcome to Sumo Logic',
@@ -22,11 +22,11 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'get-started/index'},
       items: [
-        'get-started/overview',
-        'get-started/onboarding',
         'get-started/sign-up',
-        'get-started/account-setup',
+        'get-started/onboarding',
+        'get-started/overview',
         'get-started/onboarding-checklists',
+        'get-started/account-settings-preferences',
         'get-started/apps-integrations',
         'get-started/library',
         'get-started/sumo-logic-ui',
@@ -38,8 +38,10 @@ module.exports = {
         'get-started/faq',
       ],
     },
+  ],
+  // *** SEND DATA
+  senddata: [
     {
-// *** SEND DATA
       type: 'category',
       label: 'Send Data',
       collapsible: true,
@@ -74,6 +76,9 @@ module.exports = {
                 'send-data/installed-collectors/sources/local-windows-performance-monitor-log-source',
                 'send-data/installed-collectors/sources/streaming-metrics-source',
                 'send-data/installed-collectors/sources/syslog-source',
+                'send-data/installed-collectors/sources/define-boundary-regex-multiline-messages',
+                'send-data/installed-collectors/sources/preconfigure-machine-collect-remote-windows-events',
+                'send-data/installed-collectors/sources/preconfigure-machine-collect-remote-windows-performance-monitoring-logs',
                 'send-data/installed-collectors/sources/windows-active-directory-inventory-source',
                 'send-data/installed-collectors/sources/remote-windows-event-log-source',
                 'send-data/installed-collectors/sources/remote-windows-performance-monitor-log-source',
@@ -258,6 +263,7 @@ module.exports = {
               link: {type: 'doc', id: 'send-data/hosted-collectors/http-source/index'},
               items: [
                 'send-data/hosted-collectors/http-source/logs-metrics',
+                'send-data/hosted-collectors/http-source/otlp',
                 'send-data/hosted-collectors/http-source/upload-logs',
                 'send-data/hosted-collectors/http-source/upload-metrics',
                 'send-data/hosted-collectors/http-source/generate-new-url',
@@ -316,6 +322,7 @@ module.exports = {
             'send-data/collect-from-other-data-sources/amazon-msk-prometheus-metrics-collection',
             'send-data/collect-from-other-data-sources/autosubscribe-arn-destination',
             'send-data/collect-from-other-data-sources/aws-fargate-log-collection',
+            'send-data/collect-from-other-data-sources/performance-impact-failover-handling',
             {
               type: 'category',
               label: 'Azure Blob Storage',
@@ -439,9 +446,15 @@ module.exports = {
   ],
 // *** MANAGE CONTENT: Admin level options, collection, connections, etc
   manage: [
-    'manage/manage',
-    'manage/fields',
-    'manage/health-events',
+  {
+    type: 'category',
+    label: 'Manage',
+    collapsible: true,
+    collapsed: false,
+    link: {type: 'doc', id: 'manage/index'},
+    items: [
+      'manage/fields',
+      'manage/health-events',
     {
       type: 'category',
       label: 'Field Extractions',
@@ -454,7 +467,7 @@ module.exports = {
         'manage/field-extractions/edit-field-extraction-rules',
         {
           type: 'category',
-          label: 'Field Extractions',
+          label: 'FER Templates',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'manage/field-extractions/fer-templates/index'},
@@ -684,10 +697,12 @@ module.exports = {
         'manage/security/set-password-policy',
         'manage/security/set-limit-user-concurrent-sessions',
         'manage/security/set-max-web-session-timeout',
-      ]
-    },
+       ]
+     },
     'manage/archive',
-  ],
+   ],
+  },
+],
 // *** DASHBOARDS and VISUALS:
   dashboards: [
     {
@@ -782,14 +797,9 @@ module.exports = {
       link: {type: 'doc', id: 'dashboards-new/index'},
       items: [
         'dashboards-new/about',
-        'dashboards-new/migrate-to-new-dashboards',
         'dashboards-new/create-dashboard-new',
-        'dashboards-new/faq',
-        'dashboards-new/drill-down-to-discover-root-causes',
-        'dashboards-new/export-dashboard-new',
-        'dashboards-new/link-dashboards',
-        'dashboards-new/filter-template-variables',
         'dashboards-new/explore-view',
+        'dashboards-new/drill-down-to-discover-root-causes',
         {
           type: 'category',
           label: 'Panels',
@@ -815,7 +825,12 @@ module.exports = {
         },
         'dashboards-new/locate-deviations-time-series',
         'dashboards-new/set-custom-time-ranges',
+        'dashboards-new/export-dashboard-new',
+        'dashboards-new/link-dashboards',
         'dashboards-new/share-dashboard-new',
+        'dashboards-new/filter-template-variables',
+        'dashboards-new/migrate-to-new-dashboards',
+        'dashboards-new/faq',
       ],
     },
     {
@@ -888,12 +903,19 @@ module.exports = {
         'dashboards/share-dashboard-inside-org',
         'dashboards/share-dashboard-outside-org',
         'dashboards/restricted-operators-dashboards',
+        'dashboards/troubleshoot-dashboards',
       ],
     },
   ],
 // *** SEARCHES & LOGS: all search functionality
   searchlogs: [
-    'search/index',
+  {
+    type: 'category',
+    label: 'Log Search',
+    collapsible: true,
+    collapsed: false,
+    link: {type: 'doc', id: 'search/index'},
+    items: [
     {
       type: 'category',
       label: 'Get Started with Search',
@@ -912,6 +934,7 @@ module.exports = {
             'search/get-started-with-search/search-basics/built-in-metadata',
             'search/get-started-with-search/search-basics/chart-search-results',
             'search/get-started-with-search/search-basics/comments-search-queries',
+            'search/get-started-with-search/search-basics/export-search-results',
             'search/get-started-with-search/search-basics/pause-cancel-search',
             'search/get-started-with-search/search-basics/quick-search-collectors-sources',
             'search/get-started-with-search/search-basics/reference-field-special-characters',
@@ -987,63 +1010,6 @@ module.exports = {
         },
       ],
     },
-    {
-      type: 'category',
-      label: 'Behavior Insights',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'search/behavior-insights/index'},
-      items: [
-        'search/behavior-insights/logexplain',
-        'search/behavior-insights/logreduce-keys',
-        'search/behavior-insights/logreduce-values',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Live Tail',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'search/live-tail/index'},
-      items: [
-        'search/live-tail/about-live-tail',
-        'search/live-tail/filter-live-tail',
-        'search/live-tail/live-tail-cli',
-        'search/live-tail/live-tail-highlighting',
-        'search/live-tail/live-tail-preferences',
-        'search/live-tail/live-tail-show-in-search',
-        'search/live-tail/multiple-live-tails',
-      ],
-    },
-    'search/logcompare',
-    {
-      type: 'category',
-      label: 'LogReduce',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'search/logreduce/index'},
-      items: [
-        'search/logreduce/logreduce-operator',
-        'search/logreduce/detect-patterns-with-logreduce',
-        'search/logreduce/influence-the-logreduce-outcome',
-        'search/logreduce/understand-the-logreduce-relevance-column',
-      ],
-    },
-    'search/time-compare',
-    {
-      type: 'category',
-      label: 'Lookup Tables',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'search/lookup-tables/index'},
-      items: [
-        'search/lookup-tables/create-lookup-table',
-        'search/lookup-tables/manage-update-lookup-tables',
-      ],
-    },
-    'search/optimize-search-performance',
-    'search/optimize-search-partitions',
-    'search/subqueries',
     {
       type: 'category',
       label: 'Search Query Language',
@@ -1155,19 +1121,6 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Search Cheat Sheets',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'search/search-cheat-sheets/index'},
-          items: [
-            'search/search-cheat-sheets/general-search-examples',
-            'search/search-cheat-sheets/grep-searching-with-sumo',
-            'search/search-cheat-sheets/iis-search-examples',
-            'search/search-cheat-sheets/log-operators',
-          ],
-        },
-        {
-          type: 'category',
           label: 'Group or Aggregate Operators',
           collapsible: true,
           collapsed: true,
@@ -1239,11 +1192,90 @@ module.exports = {
         },
       ],
     },
+    {
+      type: 'category',
+      label: 'Search Cheat Sheets',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'search/search-cheat-sheets/index'},
+      items: [
+        'search/search-cheat-sheets/general-search-examples',
+        'search/search-cheat-sheets/grep-searching-with-sumo',
+        'search/search-cheat-sheets/iis-search-examples',
+        'search/search-cheat-sheets/log-operators',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Behavior Insights',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'search/behavior-insights/index'},
+      items: [
+        'search/behavior-insights/logexplain',
+        'search/behavior-insights/logreduce-keys',
+        'search/behavior-insights/logreduce-values',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Live Tail',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'search/live-tail/index'},
+      items: [
+        'search/live-tail/about-live-tail',
+        'search/live-tail/filter-live-tail',
+        'search/live-tail/live-tail-cli',
+        'search/live-tail/live-tail-highlighting',
+        'search/live-tail/live-tail-preferences',
+        'search/live-tail/live-tail-show-in-search',
+        'search/live-tail/multiple-live-tails',
+        'search/live-tail/troubleshooting-live-tail',
+      ],
+    },
+    'search/logcompare',
+    {
+      type: 'category',
+      label: 'LogReduce',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'search/logreduce/index'},
+      items: [
+        'search/logreduce/logreduce-operator',
+        'search/logreduce/detect-patterns-with-logreduce',
+        'search/logreduce/influence-the-logreduce-outcome',
+        'search/logreduce/understand-the-logreduce-relevance-column',
+      ],
+    },
+    'search/time-compare',
+    {
+      type: 'category',
+      label: 'Lookup Tables',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'search/lookup-tables/index'},
+      items: [
+        'search/lookup-tables/create-lookup-table',
+        'search/lookup-tables/manage-update-lookup-tables',
+      ],
+    },
+    'search/optimize-search-performance',
+    'search/optimize-search-partitions',
+    'search/subqueries',
     'search/faq',
-  ],
+    ],
+  },
+],
 // *** METRICS & LOGS: all metrics content
   metricslogs: [
-    'metrics/metrics',
+    {
+      type: 'category',
+      label: 'Metrics',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'metrics/index'},
+      items: [
     {
       type: 'category',
       label: 'Introduction to Metrics',
@@ -1343,24 +1375,32 @@ module.exports = {
         'metrics/metric-charts/metrics-outliers',
         'metrics/metric-charts/add-metrics-visualization-to-dashboard',
         'metrics/metric-charts/log-overlay-analyze-metrics-visualizations',
-      ],
-    },
-  ],
+       ],
+     },
+   ],
+  },
+],
   // *** SEND DATA: collectors, sources
   // *** APM: RUM and Traces
   apm: [
-    'apm/apm',
+  {
+    type: 'category',
+    label: 'APM, Traces, RUM',
+    collapsible: true,
+    collapsed: false,
+    link: {type: 'doc', id: 'apm/index'},
+    items: [
     {
       type: 'category',
       label: 'Traces',
       collapsible: true,
-      collapsed: true,
+      collapsed: false,
       link: {type: 'doc', id: 'apm/traces/index'},
       items: [
         'apm/traces/quickstart',
         {
         type: 'category',
-        label: 'Transaction Tracing Setup',
+        label: 'Setup and Configuration',
         collapsible: true,
         collapsed: true,
         link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/index'},
@@ -1446,10 +1486,10 @@ module.exports = {
           },
         ],
       },
-      'apm/traces/services-list-map',
       'apm/traces/view-and-investigate-traces',
-      'apm/traces/tracing-dashboards',
       'apm/traces/spans',
+      'apm/traces/services-list-map',
+      'apm/traces/tracing-dashboards',
       'apm/traces/search-query-language-support-for-traces',
       {
         type: 'category',
@@ -1476,8 +1516,10 @@ module.exports = {
       'apm/real-user-monitoring/browser-traces',
       'apm/real-user-monitoring/metrics',
       'apm/real-user-monitoring/dashboards',
-    ],
-  },
+     ],
+   },
+ ],
+},
 ],
 // *** OBSERVABILITY: aws, kubernetes, root cause analysis
   observability: [
@@ -1577,6 +1619,7 @@ module.exports = {
             'observability/kubernetes/apps',
             'observability/kubernetes/alerts',
             'observability/kubernetes/monitoring',
+            'metrics/kubernetes-metrics',
             'observability/kubernetes/troubleshoot-with-explore',
           ],
         },
@@ -1626,8 +1669,14 @@ module.exports = {
     },
   ],
 // *** Sumo Logic Apps
-  integrations: [
-    'integrations/index',
+integrations: [
+  {
+    type: 'category',
+    label: 'App Catalog',
+    collapsible: true,
+    collapsed: false,
+    link: {type: 'doc', id: 'integrations/index'},
+    items: [
     {
       type: 'category',
       label: 'Amazon and AWS',
@@ -1994,11 +2043,15 @@ module.exports = {
       },
     'integrations/1password',
     'integrations/account-plans',
+    'integrations/community-ecosystem-apps',
     'integrations/partner-ecosystem-apps',
     'integrations/partner-integrations',
-  ],
+   ],
+ },
+],
+
 // OTHER FEATURES: SDO, CSE, SOAR
-  other: [
+  security: [
     {
       type: 'category',
       label: 'Cloud SIEM Enterprise (CSE)',
@@ -2087,6 +2140,7 @@ module.exports = {
             'cse/rules/write-chain-rule',
             'cse/rules/write-aggregation-rule',
             'cse/rules/write-threshold-rule',
+            'cse/rules/write-first-seen-rule',
             'cse/rules/cse-rules-syntax',
             'cse/rules/cse-built-in-rules',
             'cse/rules/import-yara-rules',
@@ -2113,6 +2167,7 @@ module.exports = {
             'cse/schema/field-mapping-security-event-sources',
             'cse/schema/parser-editor',
             'cse/schema/username-and-hostname-normalization',
+            'cse/schema/parser-troubleshooting-tips',
           ],
         },
         {

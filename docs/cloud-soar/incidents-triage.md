@@ -13,7 +13,9 @@ The **Incident** section lists all Cloud SOAR incidents. Clicking on any of the 
 
 <img src={useBaseUrl('img/cloud-soar/image140.png')} alt="incidents"/>
 
-:::sumo Microlesson: Cloud SOAR Incidents
+:::sumo Micro Lesson
+
+Watch a quick overview of Incidents in Cloud SOAR.
 
 <Iframe url="https://www.youtube.com/embed/GDWFGJ8JOqA"
         width="854px"
@@ -125,7 +127,9 @@ The Incident Overview section contains all the pertinent information for a speci
 
 The Operations section contains all the investigative information for a specific incident and is broken out into the following sections: **War Room**, **playbook**, **Tasks**, and **Notes**.
 
-:::sumo Microlesson: Security Automation with Cloud SOAR Playbooks
+:::sumo Micro Lesson
+
+Security Automation with Cloud SOAR Playbooks.
 
 <Iframe url="https://www.youtube.com/embed/ZGSxFsfyrdI"
         width="854px"
