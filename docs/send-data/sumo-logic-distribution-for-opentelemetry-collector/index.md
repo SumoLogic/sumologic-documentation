@@ -19,6 +19,7 @@ Instrument your applications with OpenTelemetry using our [OpenTelemetry Librari
 import Iframe from 'react-iframe';
 
 :::sumo Micro Lesson
+
 Introducing OpenTelemetry.
 
 <Iframe url="https://www.youtube.com/embed/XLgCW0WYN5Q?rel=0"

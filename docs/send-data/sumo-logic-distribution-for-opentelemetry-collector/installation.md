@@ -148,7 +148,7 @@ Follow the steps for your platform below.
    otelcol-sumo --config config.yaml
    ```
 
-#### MacOS on arm64 (Apple M1) (x86-64)
+#### MacOS on arm64 (Apple Silicon)
 
 1. Download the release binary:
     ```bash
