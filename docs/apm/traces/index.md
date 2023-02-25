@@ -10,7 +10,7 @@ algolia: {
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/traces/traces.png')} alt="icon" width="50"/>
 
 Monitoring apps and microservices with Sumo Logic Traces provides transactional intelligence for distributed workflows, by combining telemetry from traces, logs, and metrics in the context of real-time automatically tracked application topology.
 
@@ -38,13 +38,13 @@ This guide provides information to work with your tracing data.
 </div>
 <div className="box smallbox4 card">
   <div className="container">
-  <a href="/docs/apm/traces/advanced-configuration/working-with-span-attributes"><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Services List and Services Map</h4></a>
+  <a href="/docs/apm/traces/services-list-map"><img src={useBaseUrl('img/traces/servicemap.png')} alt="icon" width="33"/><h4>Services List and Services Map</h4></a>
   <p>View your application topology and investigate microservice interactions.</p>
   </div>
 </div>
 <div className="box smallbox5 card">
   <div className="container">
-  <a href="/docs/apm/traces/advanced-configuration/working-with-span-attributes"><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Application Service APM and Tracing Dashboards</h4></a>
+  <a href="/docs/apm/traces/tracing-dashboards"><img src={useBaseUrl('img/icons/traces.png')} alt="icon" width="30"/><h4>Application Service APM and Tracing Dashboards</h4></a>
   <p>Explore and create Tracing dashboards, install apps, and more.</p>
   </div>
 </div>

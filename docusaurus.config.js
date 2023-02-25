@@ -273,7 +273,7 @@ module.exports = {
                 type: 'docSidebar',
                 sidebarId: 'searchlogs',
                 label: 'Log Search',
-                icon: 'manage_search',
+                icon: 'article',
               },
               {
                 type: 'docSidebar',
@@ -290,14 +290,14 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'dashboards',
-                label: 'Alerts, Monitors',
+                label: 'Alerts',
                 icon: 'notifications',
               },
               {
                 type: 'docSidebar',
                 sidebarId: 'metricslogs',
                 label: 'Metrics',
-                icon: 'timeline',
+                icon: 'stacked_line_chart',
               },
               {
                 type: 'docSidebar',
