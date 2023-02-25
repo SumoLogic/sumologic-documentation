@@ -84,12 +84,12 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 3. Namespaces. Select **aws/sns**.
 4. **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. The **account** field allows you to query metrics.
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Metadata%2Baccount.png')} alt="Metadata" />
-3. Click **Save**.
+5. Click **Save**.
 
 
 ### Collecting Amazon SNS Events using CloudTrail
 
-1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md).
+1. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to your Hosted Collector.
     * **Name**. Enter a name to display for the new Source.
     * **Description**. Enter an optional description.
     * **S3 Region**. Select the Amazon Region for your SNS S3 bucket.
@@ -97,10 +97,9 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
     * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string.
       * DO NOT use a [leading forward slash](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions).
       * The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-    * **Source Category**. Enter a source category. For example, enter aws/observability/CloudTrail/logs.
+    * **Source Category**. Enter a source category. For example, enter `aws/observability/CloudTrail/logs`.
     * **Fields**. Add an account field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried using the **account** field. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Fields.png')} alt="Fields" />
-3. Click **Save**.
-    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources).
+    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
     * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure Log File Discovery [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
     * **Enable Timestamp Parsing**. Select the check box.
     * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
@@ -165,7 +164,7 @@ In case, you have a centralized collection of CloudTrail logs and are ingesting 
 
 ## Installing the Amazon SNS App
 
-Now that you have set up collection for Amazon SNS, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon SNS, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -190,11 +189,11 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Overview
 
-The **Amazon SNS - Overview** dashboard provides insights across Cloudtrail events and metrics .
+The **Amazon SNS - Overview** dashboard provides insights across Cloudtrail events and metrics.
 
 **Use this dashboard to:**
 
-* Monitor events by status, type, topic names and  users.** **
+* Monitor events by status, type, topic names and users.
 * Monitor number of messages and messages by publish size.
 * Monitor delivered and failed notifications.
 
@@ -203,12 +202,12 @@ The **Amazon SNS - Overview** dashboard provides insights across Cloudtrail even
 
 ### Amazon SNS - Audit Events  
 
-The**  Amazon SNS - Audit Events **dashboard provides insights across Cloudtrail events across location, status, and topic names.
+The **Amazon SNS - Audit Events** dashboard provides insights across Cloudtrail events across location, status, and topic names.
 
 Use this dashboard to:
 
 * Monitor successful and failed events by location.
-* Get trends of events by status, type.** **
+* Get trends of events by status, type.
 * Monitor successful and error events with error code in detail.
 * Get details of active topic names and users of both successful and error events.
 
@@ -217,7 +216,7 @@ Use this dashboard to:
 
 ### Amazon SNS - Messages, Notifications  
 
-The**  Amazon SNS - **Messages, Notifications** **dashboard provides insights across metrics by messages, notifications, SMS rates.
+The **Amazon SNS - Messages, Notifications** dashboard provides insights across metrics by messages, notifications, SMS rates.
 
 Use this dashboard to:
 * Monitor details of messages published and message size .
@@ -232,20 +231,19 @@ Use this dashboard to:
 
 ### Amazon SNS - Threat Intel  
 
-The**  Amazon SNS - **Threat Intel** **dashboard provides insights across threat locations, count, malicious confidence and details.
+The **Amazon SNS - **Threat Intel** dashboard provides insights across threat locations, count, malicious confidence and details.
 
 **Use this dashboard to**:
-* Monitor details of threat locations and count .
+* Monitor details of threat locations and count.
 * Get details of threats by malicious confidence and malicious IPs.
 * Get details of all threats by IPs.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Threat-Intel.png')} alt="Amazon SNS" />
 
 
-
 ### Amazon SNS - Audit Events Details
 
-The **Amazon SNS - Audit Events Details** **dashboard provides insights across topics, subscriptions, read only and non read only events.
+The **Amazon SNS - Audit Events Details** dashboard provides insights across topics, subscriptions, read only and non read only events.
 
 Use this dashboard to:
 * Monitor details of topics created and deleted.
