@@ -6,7 +6,7 @@ description: Data Forwarding allows you to forward selected data to an external 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/send-data.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/send-data.png')} alt="icon" width="50"/>
 
 Data Forwarding is not currently supported for data in the [Infrequent Tier](../partitions-data-tiers/data-tiers.md).
 

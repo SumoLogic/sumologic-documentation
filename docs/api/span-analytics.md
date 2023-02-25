@@ -27,95 +27,9 @@ An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
 
 While the span analytics query is running you need to request the query status based on the query ID. The API keeps the query alive by either polling for status or gathering results. If the search job is not kept alive by API requests, it is canceled after fifteen minutes. When a query is canceled after fifteen minutes of inactivity, you will get a 404 status.
 
+## Errors
 
-## Errors  
-
-The APIs return operation failures with a description and error code, including the following generic errors that apply to all APIs:
-
-
-<table>
-  <tr>
-   <td><strong>Code</strong>
-   </td>
-   <td><strong>Error</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>301
-   </td>
-   <td>moved
-   </td>
-   <td>The requested resource SHOULD be accessed through returned URI in Location Header.
-   </td>
-  </tr>
-  <tr>
-   <td>401
-   </td>
-   <td>unauthorized
-   </td>
-   <td>Credential could not be verified.
-   </td>
-  </tr>
-  <tr>
-   <td>403
-   </td>
-   <td>forbidden
-   </td>
-   <td>This operation is not allowed for your account type.
-   </td>
-  </tr>
-  <tr>
-   <td>404
-   </td>
-   <td>notfound
-   </td>
-   <td>Requested resource could not be found.
-   </td>
-  </tr>
-  <tr>
-   <td>405
-   </td>
-   <td>method.unsupported
-   </td>
-   <td>Unsupported method for URL.
-   </td>
-  </tr>
-  <tr>
-   <td>415
-   </td>
-   <td>contenttype.invalid
-   </td>
-   <td>Invalid content type.
-   </td>
-  </tr>
-  <tr>
-   <td>429
-   </td>
-   <td>rate.limit.exceeded
-   </td>
-   <td>The API request rate is higher than 4 request per second.
-   </td>
-  </tr>
-  <tr>
-   <td>500
-   </td>
-   <td>internal.error
-   </td>
-   <td>Internal server error.
-   </td>
-  </tr>
-  <tr>
-   <td>503
-   </td>
-   <td>service.unavailable
-   </td>
-   <td>Service is currently unavailable.
-   </td>
-  </tr>
-</table>
-
+{@import ../reuse/api-errors.md}
 
 ## Documentation   
 
@@ -123,65 +37,14 @@ Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic ha
 
 Select the documentation link for your deployment:
 
-<table>
-  <tr>
-   <td>Deployment
-   </td>
-   <td>Documentation URL
-   </td>
-  </tr>
-  <tr>
-   <td>AU
-   </td>
-   <td>https://api.au.sumologic.com/docs/#tag/spanAnalytics
-   </td>
-  </tr>
-  <tr>
-   <td>CA
-   </td>
-   <td>https://api.ca.sumologic.com/docs/#tag/spanAnalytics
-   </td>
-  </tr>
-  <tr>
-   <td>DE
-   </td>
-   <td>https://api.de.sumologic.com/docs/#tag/spanAnalytics
-   </td>
-  </tr>
-  <tr>
-   <td>EU
-   </td>
-   <td>https://api.eu.sumologic.com/docs/#tag/spanAnalytics
-   </td>
-  </tr>
-  <tr>
-   <td>FED
-   </td>
-   <td>https://api.fed.sumologic.com/docs/#tag/spanAnalytics
-   </td>
-  </tr>
-  <tr>
-   <td>IN
-   </td>
-   <td>https://api.in.sumologic.com/docs/#tag/spanAnalytics
-   </td>
-  </tr>
-  <tr>
-   <td>JP
-   </td>
-   <td>https://api.jp.sumologic.com/docs/#tag/spanAnalytics
-   </td>
-  </tr>
-  <tr>
-   <td>US1
-   </td>
-   <td>https://api.sumologic.com/docs/#tag/spanAnalytics
-   </td>
-  </tr>
-  <tr>
-   <td>US2
-   </td>
-   <td>https://api.us2.sumologic.com/docs/#tag/spanAnalytics
-   </td>
-  </tr>
-</table>
+| Deployment | Documentation URL                                     |
+|:------------|:-------------------------------------------------------|
+| AU         | https://api.au.sumologic.com/docs/#tag/spanAnalytics  |
+| CA         | https://api.ca.sumologic.com/docs/#tag/spanAnalytics  |
+| DE         | https://api.de.sumologic.com/docs/#tag/spanAnalytics  |
+| EU         | https://api.eu.sumologic.com/docs/#tag/spanAnalytics  |
+| FED        | https://api.fed.sumologic.com/docs/#tag/spanAnalytics |
+| IN         | https://api.in.sumologic.com/docs/#tag/spanAnalytics  |
+| JP         | https://api.jp.sumologic.com/docs/#tag/spanAnalytics  |
+| US1        | https://api.sumologic.com/docs/#tag/spanAnalytics     |
+| US2        | https://api.us2.sumologic.com/docs/#tag/spanAnalytics |

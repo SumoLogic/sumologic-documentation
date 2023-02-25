@@ -271,59 +271,18 @@ Sumo Logic's FedRAMP deployment is similar to our other deployments, such as US2
 ## Status Codes
 
 Generic status codes that apply to all our APIs. See the [HTTP status code registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) for reference.
-  <table>
-    <tr>
-      <td> <strong>HTTP Status Code</strong> </td>
-      <td> <strong>Error Code</strong> </td>
-      <td> <strong>Description</strong> </td>
-    </tr>
-    <tr>
-      <td> 301 </td>
-      <td> moved </td>
-      <td> The requested resource SHOULD be accessed through returned URI in Location Header. See [troubleshooting](/docs/api/troubleshooting) for details.</td>
-    </tr>
-    <tr>
-      <td> 401 </td>
-      <td> unauthorized </td>
-      <td> Credential could not be verified.</td>
-    </tr>
-    <tr>
-      <td> 403 </td>
-      <td> forbidden </td>
-      <td> This operation is not allowed for your account type or the user doesn't have the role capability to perform this action. See [troubleshooting](/docs/api/troubleshooting) for details.</td>
-    </tr>
-    <tr>
-      <td> 404 </td>
-      <td> notfound </td>
-      <td> Requested resource could not be found. </td>
-    </tr>
-    <tr>
-      <td> 405 </td>
-      <td> method.unsupported </td>
-      <td> Unsupported method for URL. </td>
-    </tr>
-    <tr>
-      <td> 415 </td>
-      <td> contenttype.invalid </td>
-      <td> Invalid content type. </td>
-    </tr>
-    <tr>
-      <td> 429 </td>
-      <td> rate.limit.exceeded </td>
-      <td> The API request rate is higher than 4 request per second or in-flight API requests are higher than 10 request per second. </td>
-    </tr>
-    <tr>
-      <td> 500 </td>
-      <td> internal.error </td>
-      <td> Internal server error. </td>
-    </tr>
-    <tr>
-      <td> 503 </td>
-      <td> service.unavailable </td>
-      <td> Service is currently unavailable. </td>
-    </tr>
-  </table>
 
+| HTTP Status Code | Error Code          | Description                 
+|:------------------|:---------------------|:-------------------------------------|
+| 301              | moved               | The requested resource SHOULD be accessed through returned URI in Location Header. See [troubleshooting](/docs/api/troubleshooting) for details.                                       |
+| 401              | unauthorized        | Credential could not be verified.                                                                                                                                                      |
+| 403              | forbidden           | This operation is not allowed for your account type or the user doesn't have the role capability to perform this action. See [troubleshooting](/docs/api/troubleshooting) for details. |
+| 404              | notfound            | Requested resource could not be found.                                                                                                                                                 |
+| 405              | method.unsupported  | Unsupported method for URL.                                                                                                                                                            |
+| 415              | contenttype.invalid | Invalid content type.                                                                                                                                                                  |
+| 429              | rate.limit.exceeded | The API request rate is higher than 4 request per second or in-flight API requests are higher than 10 request per second.                                                              |
+| 500              | internal.error      | Internal server error.                                                                                                                                                                 |
+| 503              | service.unavailable | Service is currently unavailable.                                                                                                                                                      |
 
 ## Rate limiting
 

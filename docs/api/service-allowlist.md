@@ -14,66 +14,14 @@ The [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses
 
 {@import ../reuse/api-intro.md}
 
-
-<table>
-  <tr>
-   <td>Deployment
-   </td>
-   <td>Documentation URL
-   </td>
-  </tr>
-  <tr>
-   <td>AU
-   </td>
-   <td><a href="https://api.au.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.au.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>CA
-   </td>
-   <td><a href="https://api.ca.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.ca.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>DE
-   </td>
-   <td><a href="https://api.de.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.de.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>EU
-   </td>
-   <td><a href="https://api.eu.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.eu.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>FED
-   </td>
-   <td><a href="https://api.fed.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.fed.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>IN
-   </td>
-   <td><a href="https://api.in.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.in.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>JP
-   </td>
-   <td><a href="https://api.jp.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.jp.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>US1
-   </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>US2
-   </td>
-   <td><a href="https://api.us2.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.us2.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
-   </td>
-  </tr>
-</table>
+| Deployment | Documentation URL                                                  |
+|:------------|:--------------------------------------------------------------------|
+| AU         | https://api.au.sumologic.com/docs/#tag/serviceAllowlistManagement  |
+| CA         | https://api.ca.sumologic.com/docs/#tag/serviceAllowlistManagement  |
+| DE         | https://api.de.sumologic.com/docs/#tag/serviceAllowlistManagement  |
+| EU         | https://api.eu.sumologic.com/docs/#tag/serviceAllowlistManagement  |
+| FED        | https://api.fed.sumologic.com/docs/#tag/serviceAllowlistManagement |
+| IN         | https://api.in.sumologic.com/docs/#tag/serviceAllowlistManagement  |
+| JP         | https://api.jp.sumologic.com/docs/#tag/serviceAllowlistManagement  |
+| US1        | https://api.sumologic.com/docs/#tag/serviceAllowlistManagement     |
+| US2        | https://api.us2.sumologic.com/docs/#tag/serviceAllowlistManagement |

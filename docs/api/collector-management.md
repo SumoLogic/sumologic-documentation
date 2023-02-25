@@ -578,7 +578,6 @@ Response:
 
 ### Get Collector by ID  
 
-
 Get the Collector with the specified Identifier.
 
 **Method:** `GET Path: /collectors/[id]`
@@ -614,15 +613,12 @@ Get the Collector with the specified Identifier.
 
 
 #### Example  
-13
-
 
 This example gets the Collector with an ID of 25.
 
 Request:
 
-
-```
+```sh
 curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collectors/25
 ```
 
@@ -652,8 +648,6 @@ Response:
 
 
 ### Get Collector by Name  
-15
-
 
 **Method:** `GET Path: /collectors/name/[name]`
 
@@ -688,10 +682,6 @@ Response:
 
 
 #### Rules
-16
-
-
-
 
 * Names with special characters are not supported, such as `;` `/` `%` `\` even if they are URL encoded.
 * Spaces in names are supported when they are URL encoded. A space character URL encoded is `%20`. For example, a Collector named `Staging Area` would be encoded as `https://api.sumologic.com/api/v1/collectors/name/Staging%20Area`.
@@ -699,8 +689,6 @@ Response:
 
 
 #### Example  
-17
-
 
 This example gets the Collector with the name test.
 
@@ -738,42 +726,30 @@ Response:
 
 
 ## POST methods
-19
-
-
 
 ### Create Hosted Collector
-20
-
 
 Use the POST method with a JSON file to create a new Hosted Collector. The required parameters can be referenced in the [Response fields](#Response_fields) table above. Note that "id" field should be omitted when creating a new Hosted Collector.
 
-
-21
 This method can only be used to create Hosted Collectors. You must [install a Collector manually](/docs/send-data/installed-collectors/sources) to create an Installed Collector.
 
 **Method: `POST Path: /collectors`**
 
 
 #### Example
-22
-
 
 This example creates a new Hosted Collector using the parameters in the JSON file.
 
 Request:
 
-
 ```bash
 curl -u '<accessId>:<accessKey>' -X POST -H "Content-Type: application/json" -T hosted_collector.json https://api.sumologic.com/api/v1/collectors
 ```
 
-
-
 Request JSON (hosted_collector.json):
 
 
-```
+```json
 {
   "collector":{
     "collectorType":"Hosted",
@@ -816,13 +792,9 @@ Response:
 
 
 ## PUT methods  
-24
-
 
 
 ### Update a Collector  
-25
-
 
 Use the PUT method with your JSON file to update an existing Collector. Available parameters can be referenced in the [Response fields](#Response-fields) table above. The JSON request file must specify values for all required fields. Not modifiable fields must match their current values in the system. This is in accordance with HTTP 1.1 RFC-2616 Section 9.6.
 
@@ -861,8 +833,6 @@ Updating a Collector also requires the "If-Match" header to be specified with th
 
 
 #### Example  
-26
-
 
 This example changes the Collector to set the parameter "ephemeral" to true.
 
@@ -964,7 +934,6 @@ Response:
 
 
 ### Delete Collector by ID
-29
 
 
 Use the DELETE method to delete an existing Collector.
@@ -1015,8 +984,6 @@ Response: There will be no response body, only a 200 OK response code.
 
 
 ### Delete Offline Collectors
-31
-
 
 Delete **Installed** Collectors last seen alive before a specified number of days.
 
@@ -1055,7 +1022,6 @@ Must be at least 1 day.
 
 
 #### Example
-32
 
 
 In this example, setting `aliveBeforeDays=10` deletes all the Installed Collectors that have been offline for at least 10 days.
@@ -1285,8 +1251,6 @@ Response:
 
 
 ### Get Source by ID
-42
-
 
 Gets information about a specified Collector and Source.
 
@@ -1347,8 +1311,6 @@ Gets information about a specified Collector and Source.
 
 
 #### Examples
-43
-
 
 This example gets data for a Source with a specified ID.
 
@@ -1424,13 +1386,9 @@ Response:
 
 
 ## POST methods
-45
-
 
 
 ### Create Source
-46
-
 
 Creates a new Source for a Collector. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for required fields for the request JSON file.
 
@@ -1465,14 +1423,10 @@ Creates a new Source for a Collector. See [Use JSON to Configure Sources](/docs/
 </table>
 
 
-
-47
 POST creates a single Source per request.
 
 
 #### Example
-48
-
 
 This example creates a new Host Metrics Source on Collector with ID 10 using the parameters in the JSON file.
 
@@ -1543,18 +1497,12 @@ Note that the filter value shown above is an example for excluding a keyword. Fi
 
 
 ## PUT methods
-50
-
 
 
 ### Update Source
-51
-
 
 Updates an existing source. All modifiable fields must be provided, and all not modifiable fields must match those existing in the system.
 
-
-52
 You need to include the `id` parameter in your JSON file.
 
 Updating a Source also requires the "If-Match" header to be specified with the "ETag" provided in the headers of a previous GET request.
@@ -1604,8 +1552,6 @@ Updating a Source also requires the "If-Match" header to be specified with the "
 
 
 #### Example
-53
-
 
 This example updates the Host Metrics Source created in the previous example with "interval" = 15000.
 
@@ -1772,8 +1718,6 @@ Method: `DELETE Path: /collectors/[collectorId]/sources/[sourceId]`
 
 
 #### Example
-58
-
 
 This example deletes a Source.
 
@@ -2039,8 +1983,6 @@ Sample response:
 
 
 ### Get available builds
-63
-
 
 **Method: `GET`**
 
@@ -2073,11 +2015,9 @@ Sample response:
 
 **Query Parameters**
 
-
-    None
+None
 
 **Status Code**
-
 
 <table>
   <tr>
@@ -2166,8 +2106,6 @@ Sample response:
 
 
 ## Create an upgrade or downgrade task
-64
-
 
 **Method:** `POST`
 
@@ -2200,8 +2138,7 @@ Sample response:
 
 **Query Parameters**
 
-
-    None
+None
 
 **JSON Payload Parameters**
 

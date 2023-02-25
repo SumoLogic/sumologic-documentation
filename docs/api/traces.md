@@ -15,22 +15,6 @@ Tracing APIs give you the ability to browse and execute queries for traces and s
 
 {@import ../reuse/api-intro.md}
 
-<table>
-  <tr>
-   <td>API
-   </td>
-   <td>Documentation URL
-   </td>
-  </tr>
-  <tr>
-   <td>Traces
-   </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/traces">https://api.sumologic.com/docs/#tag/traces</a>
-   </td>
-  </tr>
-</table>
-
-
 ## Endpoints for API access  
 
 Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
@@ -45,91 +29,7 @@ While the trace search query is running you need to request the query status bas
 
 ## Errors  
 
-The APIs return operation failures with a description and error code, including the following generic errors that apply to all APIs:
-
-<table>
-  <tr>
-   <td><strong>Code</strong>
-   </td>
-   <td><strong>Error</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>301
-   </td>
-   <td>moved
-   </td>
-   <td>The requested resource SHOULD be accessed through returned URI in Location Header.
-   </td>
-  </tr>
-  <tr>
-   <td>401
-   </td>
-   <td>unauthorized
-   </td>
-   <td>Credential could not be verified.
-   </td>
-  </tr>
-  <tr>
-   <td>403
-   </td>
-   <td>forbidden
-   </td>
-   <td>This operation is not allowed for your account type.
-   </td>
-  </tr>
-  <tr>
-   <td>404
-   </td>
-   <td>notfound
-   </td>
-   <td>Requested resource could not be found.
-   </td>
-  </tr>
-  <tr>
-   <td>405
-   </td>
-   <td>method.unsupported
-   </td>
-   <td>Unsupported method for URL.
-   </td>
-  </tr>
-  <tr>
-   <td>415
-   </td>
-   <td>contenttype.invalid
-   </td>
-   <td>Invalid content type.
-   </td>
-  </tr>
-  <tr>
-   <td>429
-   </td>
-   <td>rate.limit.exceeded
-   </td>
-   <td>The API request rate is higher than 4 request per second.
-   </td>
-  </tr>
-  <tr>
-   <td>500
-   </td>
-   <td>internal.error
-   </td>
-   <td>Internal server error.
-   </td>
-  </tr>
-  <tr>
-   <td>503
-   </td>
-   <td>service.unavailable
-   </td>
-   <td>Service is currently unavailable.
-   </td>
-  </tr>
-</table>
-
+{@import ../reuse/api-errors.md}
 
 ## Rate limit throttling  
 
@@ -147,65 +47,14 @@ Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic ha
 
 Select the documentation link for your deployment:
 
-<table>
-  <tr>
-   <td>Deployment
-   </td>
-   <td>Documentation URL
-   </td>
-  </tr>
-  <tr>
-   <td>AU
-   </td>
-   <td>https://api.au.sumologic.com/docs/#tag/traces
-   </td>
-  </tr>
-  <tr>
-   <td>CA
-   </td>
-   <td>https://api.ca.sumologic.com/docs/#tag/traces
-   </td>
-  </tr>
-  <tr>
-   <td>DE
-   </td>
-   <td>https://api.de.sumologic.com/docs/#tag/traces
-   </td>
-  </tr>
-  <tr>
-   <td>EU
-   </td>
-   <td>https://api.eu.sumologic.com/docs/#tag/traces
-   </td>
-  </tr>
-  <tr>
-   <td>FED
-   </td>
-   <td>https://api.fed.sumologic.com/docs/#tag/traces
-   </td>
-  </tr>
-  <tr>
-   <td>IN
-   </td>
-   <td>https://api.in.sumologic.com/docs/#tag/traces
-   </td>
-  </tr>
-  <tr>
-   <td>JP
-   </td>
-   <td>https://api.jp.sumologic.com/docs/#tag/traces
-   </td>
-  </tr>
-  <tr>
-   <td>US1
-   </td>
-   <td>https://api.sumologic.com/docs/#tag/traces
-   </td>
-  </tr>
-  <tr>
-   <td>US2
-   </td>
-   <td>https://api.us2.sumologic.com/docs/#tag/traces
-   </td>
-  </tr>
-</table>
+| Deployment | Documentation URL                              |
+|:------------|:------------------------------------------------|
+| AU         | https://api.au.sumologic.com/docs/#tag/traces  |
+| CA         | https://api.ca.sumologic.com/docs/#tag/traces  |
+| DE         | https://api.de.sumologic.com/docs/#tag/traces  |
+| EU         | https://api.eu.sumologic.com/docs/#tag/traces  |
+| FED        | https://api.fed.sumologic.com/docs/#tag/traces |
+| IN         | https://api.in.sumologic.com/docs/#tag/traces  |
+| JP         | https://api.jp.sumologic.com/docs/#tag/traces  |
+| US1        | https://api.sumologic.com/docs/#tag/traces     |
+| US2        | https://api.us2.sumologic.com/docs/#tag/traces |
