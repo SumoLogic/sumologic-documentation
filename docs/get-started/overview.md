@@ -29,7 +29,7 @@ Get to know Sumo Logic through our video on "Introduction to Sumo Logic".
 
 ## Sumo Logic Benefits
 
-Sumo Logic helps businesses building, running, and securing modern applications. Get to know about benefits through our video "Benefits of Using Sumo Logic".
+Sumo Logic helps businesses build, run, and secure modern applications. Get to know about benefits through our video "Benefits of Using Sumo Logic".
 
 <Iframe url="https://www.youtube.com/embed/D4WO5DlqD6o"
         width="854px"
@@ -52,7 +52,7 @@ A Collector is a small application that gathers log data from your servers and s
 
 Sumo Logic [Installed Collectors](/docs/send-data/installed-collectors/sources) receive data from one or more [Sources](/docs/send-data/choose-collector-source).
 
-Collectors collect raw log data, compress it, encrypt it, and send it to the Sumo Cloud, in real time. A single Sumo Logic Collector can collect up to 15,000 events per second or more and has fault tolerance during network or service outages. If you'd like to collect non-traditional machine data, a [Script Source](/docs/send-data/installed-collectors/sources/script-source) or [Script Action](/docs/send-data/installed-collectors/sources/script-action) provide a great deal of flexibility to collect files.
+Collectors collect raw log data, compress it, encrypt it, and send it to the Sumo Cloud, in real time. A single Sumo Logic Collector can collect up to 15,000 events per second or more and has fault tolerance during network or service outages. If you'd like to collect non-traditional machine data, [Script Sources](/docs/send-data/installed-collectors/sources/script-source) and [Script Actions](/docs/send-data/installed-collectors/sources/script-action) can provide a great deal of flexibility to collect files.
 
 For system requirement details, see [Installed Collector Requirements](system-requirements.md).
 
@@ -149,7 +149,7 @@ Get to know about Hosted Collector through our video "Install a Hosted Collector
 
 ## Optimization Setup
 
-Partitions stores your data in custom indexes separate from the rest of your account's data so you can optimize the searches. When you run a search against an index, results are returned more quickly and efficiently because the search runs against a smaller data set.
+Partitions store your data in custom indexes, separate from the rest of your account's data, so that you can optimize your searches. When you run a search against an index, results are returned more quickly and efficiently because the search runs against a smaller data set.
 
 Get to know more about the Partitions through our video "Partitions Basics".
 
@@ -167,9 +167,9 @@ Get to know more about the Partitions through our video "Partitions Basics".
 
 Before adding Partitions, consider the following:
 
-* **Query Performance.** Partitions can help to reduce query runtimes across the platform. By isolating subsets of data, the system will filter these logs and exclude irrelevant data from both the partitions and user queries.
-* **Query Rewriting.** The query service will automatically detect routing expressions for partitions in the backend. No scoping changes are required for existing content to use partitions.
-* **Overlap Consequences.** Data should NEVER fall into multiple partitions. This will cause the data to be duplicated across the service and will increase the cost of ingesting the data.
+* **Query Performance**. Partitions can help to reduce query runtimes across the platform. By isolating subsets of data, the system will filter these logs and exclude irrelevant data from both the partitions and user queries.
+* **Query Rewriting**. The query service will automatically detect routing expressions for partitions in the backend. No scoping changes are required for existing content to use partitions.
+* **Overlap Consequences**. Data should NEVER fall into multiple partitions. This will cause the data to be duplicated across the service and will increase the cost of ingesting the data.
 
 [Basics.](/docs/search/optimize-search-partitions) The **Partitions** page can be found under the **Manage Data** > **Settings** menu. Partitions are tools that can be used to route data into smaller subsets of the overall data ingest. These datasets can be isolated for either query performance reasons or for log retention purposes.
 
@@ -178,19 +178,19 @@ Before adding Partitions, consider the following:
 [Variable Retention.](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention.md) Each Partition has its own retention period. This allows for some logs to be retained for longer, while others are discarded more quickly.
 
 
-## Field Extraction Rule Setup
+## Field Extraction Rule setup
 
 Before adding Field Extraction Rule (FER), consider the following:  
 
-* **Query Performance.** FERs reduce query runtime by running the parsing logic during collection rather than during search execution.
-* **Query Simplification.** FERs simplify queries by removing the need for parse logic in the query. Since the logs are pre-parsed, the parse statements are removed from the relevant searches.
-* **Field Naming.** FERs standardize the names of the key/value pairs that they parse, creating a uniform naming convention for all users to leverage.
-* **FER Scoping.** FERs are composed of a scoping statement and the parsing logic; scoping usually involves SourceCategory and possibly keywords.
-* **Limitations.** FERs can not extract every key/value pair but should be prioritized to the most commonly logged and searched key/value pairs.
+* **Query Performance**. FERs reduce query runtime by running the parsing logic during collection rather than during search execution.
+* **Query Simplification**. FERs simplify queries by removing the need for parse logic in the query. Since the logs are pre-parsed, the parse statements are removed from the relevant searches.
+* **Field Naming**. FERs standardize the names of the key/value pairs that they parse, creating a uniform naming convention for all users to leverage.
+* **FER Scoping**. FERs are composed of a scoping statement and the parsing logic; scoping usually involves SourceCategory and possibly keywords.
+* **Limitations**. FERs can not extract every key/value pair but should be prioritized to the most commonly logged and searched key/value pairs.
 
 [FER Basics](/docs/manage/field-extractions). Field Extraction Rules are used to pre-parse key/value pairs from log messages as they're collected. They're best utilized on logs that have consistent formatting.
 
-[Create a FER.](/docs/manage/field-extractions/create-field-extraction-rule) If applicable, identify a set of logs to be pre-parsed by a FER. Create the FER on the **Field Extraction Rules** page of the **Manage Data > Settings** menu. The rule will require a **Rule Name**, **Scope**, and the **Parse** **Expression** to be implemented.
+[Create an FER.](/docs/manage/field-extractions/create-field-extraction-rule) If applicable, identify a set of logs to be pre-parsed by a FER. To create the FER, go to **Manage Data** > **Settings** > **Field Extraction Rules**. The rule will require you to implement a **Rule Name**, **Scope**, and **Parse Expression**.
 
 Get to know more about How to create a FER through our video "Creating a Field Extraction Rule".
 

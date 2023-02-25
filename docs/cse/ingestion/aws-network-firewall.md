@@ -1,6 +1,6 @@
 ---
 id: aws-network-firewall
-title: AWS Network Firewall
+title: AWS Network Firewall - Cloud SIEM
 sidebar_label: AWS Network Firewall
 description: Configure collection and ingestion of AWS Network Firewall log messages from an S3 bucket to be parsed by CSE's AWS Network Firewall system parser.
 ---
