@@ -23,16 +23,20 @@ More information on this initiative and how to contribute can be found [here](#f
 
 Community content is stored in our [Community Content Repository](https://github.com/SumoLogic/sumologic-content). Please visit the following links to access related content:
 
-* [EC2 Host Metrics for OpenTelemetry](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/EC2/Host_Metrics_OTEL)
-* [Fortinet Fortigate Firewall](https://github.com/SumoLogic/sumologic-content/tree/master/Fortinet/Fortigate_Firewall)
-* [GCP Loud Balancer Metrics](https://github.com/SumoLogic/sumologic-content/tree/master/GCP/Load_Balancer_Metrics)
-* [JAMF](https://github.com/SumoLogic/sumologic-content/tree/master/JAMF)
-* [Palo Alto Cortex XDR](https://github.com/SumoLogic/sumologic-content/tree/master/Palo_Alto_Networks/Cortex_XDR)
-* [Proofpoint Targeted Attack Protection (TAP)](https://github.com/SumoLogic/sumologic-content/tree/master/Proofpoint/Proofpoint_TAP)
-* [Symantec Web Security Service (WSS)](https://github.com/SumoLogic/sumologic-content/tree/master/Symantec/WSS)
-* [Sumo Logic Traces](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo_Logic_Native/Traces)
-* [Tenable.io](https://github.com/SumoLogic/sumologic-content/tree/master/Tenable/Tenable_IO)
-* [Qualys VMDR & Inventory](https://github.com/SumoLogic/sumologic-content/tree/master/Qualys)
+:::note
+The overall ratings for content are listed on a scale of 0 to 5, with 5 being the highest. You can view detailed ratings and comments on the Community Content Repository.
+:::
+
+* [EC2 Host Metrics for OpenTelemetry](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/EC2/Host_Metrics_OTEL) (Rating: 4)
+* [Fortinet Fortigate Firewall](https://github.com/SumoLogic/sumologic-content/tree/master/Fortinet/Fortigate_Firewall) (Rating: 4.5)
+* [GCP Loud Balancer Metrics](https://github.com/SumoLogic/sumologic-content/tree/master/GCP/Load_Balancer_Metrics) (Rating: 4)
+* [JAMF](https://github.com/SumoLogic/sumologic-content/tree/master/JAMF) (Rating: 3.5)
+* [Palo Alto Cortex XDR](https://github.com/SumoLogic/sumologic-content/tree/master/Palo_Alto_Networks/Cortex_XDR) (Rating: 3.5)
+* [Proofpoint Targeted Attack Protection (TAP)](https://github.com/SumoLogic/sumologic-content/tree/master/Proofpoint/Proofpoint_TAP) (Rating: 4)
+* [Symantec Web Security Service (WSS)](https://github.com/SumoLogic/sumologic-content/tree/master/Symantec/WSS) (Rating: 4)
+* [Sumo Logic Traces](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo_Logic_Native/Traces) (Rating: 4)
+* [Tenable.io](https://github.com/SumoLogic/sumologic-content/tree/master/Tenable/Tenable_IO) (Rating: 4.5)
+* [Qualys VMDR & Inventory](https://github.com/SumoLogic/sumologic-content/tree/master/Qualys) (Rating: 4)
 
 
 ## Contributing Guidelines
