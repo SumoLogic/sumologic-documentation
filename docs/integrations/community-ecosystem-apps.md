@@ -24,7 +24,7 @@ More information on this initiative and how to contribute can be found [here](#f
 Community content is stored in our [Community Content Repository](https://github.com/SumoLogic/sumologic-content). Please visit the following links to access related content:
 
 :::note
-The overall ratings for content are listed on a scale of 0-5. Full ratings and comments can get found within the Community Content Repository.
+The overall ratings for content are listed on a scale of 0 to 5, with 5 being the highest. You can view detailed ratings and comments on the Community Content Repository.
 :::
 
 * [EC2 Host Metrics for OpenTelemetry](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/EC2/Host_Metrics_OTEL) (Rating: 4)
