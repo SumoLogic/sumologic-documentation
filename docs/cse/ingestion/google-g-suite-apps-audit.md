@@ -21,7 +21,7 @@ In this step, you configure an G Suite Apps Audit Source to collect G Suite log 
 
 ### Configure G Suite Apps Audit Source
 
-1. To configure G suite source, see [Configure a G-suite Apps Audit Source](/docs/send-data/hosted-collectors/google-source/g-suite-apps-audit-source/#configuring-a-g-suite-apps-auditsource).
+1. To configure G Suite source, see [Configure a G Suite Apps Audit Source](/docs/send-data/hosted-collectors/google-source/g-suite-apps-audit-source/#configuring-a-g-suite-apps-auditsource).
 1. **Fields**.
     1. If you have not configured the Hosted Collector to forward all sources in the collector to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*.
     1. If you are not parsing all sources in the hosted collector with the same parser, **+Add Field** named `_parser` with value */Parsers/System/Google/G Suite Audit.*
