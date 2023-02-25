@@ -1487,9 +1487,9 @@ module.exports = {
         ],
       },
       'apm/traces/view-and-investigate-traces',
+      'apm/traces/spans',
       'apm/traces/services-list-map',
       'apm/traces/tracing-dashboards',
-      'apm/traces/spans',
       'apm/traces/search-query-language-support-for-traces',
       {
         type: 'category',
@@ -2043,6 +2043,7 @@ integrations: [
       },
     'integrations/1password',
     'integrations/account-plans',
+    'integrations/community-ecosystem-apps',
     'integrations/partner-ecosystem-apps',
     'integrations/partner-integrations',
    ],
