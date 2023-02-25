@@ -2,6 +2,7 @@
 id: linux
 title: Install a Collector on Linux
 description: Install or uninstall a Collector on a Linux system.
+tags: [installed collectors]
 ---
 
 Follow the steps in this topic to install or uninstall a collector on Linux. See [Installed Collectors](/docs/send-data/installed-collectors/sources) for information on other OSs.

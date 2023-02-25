@@ -17,11 +17,11 @@ The PCI Compliance for Linux App works with your existing Linux logs to identify
 
 To collect Linux logs, you'll need:
 
-* An [Installed Collector](/docs/send-data/Installed-Collectors). Choose the one right for your host environment.
+* An [Installed Collector](/docs/send-data/installed-collectors). Choose the one right for your host environment.
 * A Linux [Source](/docs/send-data/installed-collectors/sources), depending on your environment.
     * [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source)
-    * [Remote File Source](/docs/send-data/installed-collectors/sources/Remote-File-Source)
-    * [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source)
+    * [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source)
+    * [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source)
 
 
 ## Installing the PCI Compliance for Linux App
@@ -32,8 +32,8 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+1. From the **App Catalog**, search for and select the app.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

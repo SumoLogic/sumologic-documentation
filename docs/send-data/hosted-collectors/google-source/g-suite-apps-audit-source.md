@@ -17,6 +17,13 @@ A G Suite Apps Audit Source uses the [Google Apps Reports API](https://develop
  * Google+
  * Mobile
  * Rules
+ * Keep 
+ * Meet 
+ * Enterprise Group 
+ * Data Studio 
+ * SAML 
+ * Chat
+
 
 Only one Source should be configured per app. In other words, you’d set up one Source to collect Calendar audit logs, another to collect Token audit logs, and so on.
 
@@ -32,16 +39,16 @@ Authentication must be with a new G Suite Apps Audit Source, we do not support 
 
 ## Configuring a G Suite Apps Audit Source
 
-Once you've set up a Hosted Collector and have your credentials ready, you're all set to configure the Source.
+Once you've set up a Hosted Collector and have your credentials ready, you're all set to configure the Source. Each G Suite App must have its own source. For each G Suite App you wish to collect, follow the steps below.
 
 To configure a G Suite Apps Audit Source:
 
-1. In Sumo Logic select **Manage Data \> Collection > Collection**. 
+1. In Sumo Logic select **Manage Data** > **Collection** > **Collection**. 
 1. In the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **G Suite Apps Audit**.
 1. For **Name**, type the name of the Source. Enter an optional Description.
-1. For **Application**, select the app that you’d like this Source to collect data from.
-1. Type the **Source Category** you’d like to use to later search the data collected from this Source.
+1. For **Application**, select the G Suite app that you’d like this Source to collect data from. Steps may be repeated for each G Suite app you want to collect data from.
+1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.

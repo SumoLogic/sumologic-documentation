@@ -117,14 +117,16 @@ The Sumo Logic App for AWS EC2 (CloudWatch Metrics) allows you to collect your E
 [CloudTrail EC2 Data Events](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events) allow you to continuously monitor the execution activity of your EC2 instance and record details of all the related events.
 
 
-### Collect Amazon CloudWatch Metrics
+### Collect Amazon CloudWatch EC2 Metrics
 
-To collect Amazon CloudWatch Metrics, see [Amazon CloudWatch Source For Metrics.](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+Sumo Logic supports collecting metrics using two source types:
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) **(recommended)**
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+:::note
+Namespace for **Amazon EC2** Service is **AWS/EC2**.
+:::
 
-AWS Namespace tag to filter in source for EC2 will be - **AWS/EC2**.
-
-* **Metadata:** Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
-
+* **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried through the **account** field.
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/Metadata+account.png')} alt="Metadata" />
 
 ### Collect CloudTrail EC2 Data Events
@@ -135,10 +137,23 @@ To configure a CloudTrail Source, perform these steps:
 2. [Configure DataEvents with CloudTrail](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/using-cloudtrail.html) in your AWS account.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic.
-5. While configuring the cloud trail log source, following Field can be added in the source:
-    1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
-
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/Fields.png')} alt="Fields" />
+   1. **Name**. Enter a name to display the new Source.
+   2. **Description**.  You may skip the description as it's optional.
+   3. **S3 Region**. Select the Amazon Region for your API Gateway S3 bucket.
+   4. **Bucket Name**. Enter the exact name of your API Gateway S3 bucket.
+   5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard `*` in this string.
+   :::note
+   DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions). The S3 bucket name is not part of the path. Don’t include the S3 bucket name when you are setting the Path Expression.
+   :::
+5. **Source Category**. Enter `aws/observability/cloud trail/logs`.
+6. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried through the **account** field. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/Fields.png')} alt="Fields" />
+7. **Access Key ID and Secret Access Key**. Enter your [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
+8. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure Log File Discovery [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
+9. **Enable Timestamp Parsing**. Select the check box.
+10. **Time Zone**. Select **Ignore time zone** from the log file and instead select UTC.
+11. **Timestamp Format**. Select Automatically detect the format.
+12. **Enable Multiline Processing**. Select the check box and select **Infer Boundaries**.
+13. Click **Save**.
 
 
 ### Field in Field Schema
@@ -209,7 +224,7 @@ To install the app:
 
 Locate and install the AWS EC2 app from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. To install the app, click **Add to Library** and complete the following fields.
     * **App Name.** You can retain the existing name or enter a name of your choice for the app. 
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
@@ -259,10 +274,10 @@ Use this dashboard to:
 * Monitor the geo location for successful and failed events
 * Observed the event status and top error codes
 * Track distribution and top event types and trends
-* Monitor top IAM Users, Assumed Role Users and User agents
+* Monitor top IAM Users, Assumed Role Users, and User agents
 * Monitor distribution of Successful and failed events with the list of latest events.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Events-CloudTrail.png')} alt="AWS EC2" />
+![EC2-CW-Events](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/2.1-AWS-EC2-Events.png)
 
 
 ### CPU (CloudWatch Metrics)

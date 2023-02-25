@@ -136,10 +136,10 @@ This section provides instructions for configuring log collection for the Window
 To collect logs for the Windows Performance App, you will need to configure an Installed Collector, and either a Local or Remote Windows Performance  Monitor Log Source.
 
 To collect logs for the Windows Performance App, do the following:
-1. Install a collector as described in [Installed Collector](/docs/send-data/Installed-Collectors).
+1. Install a collector as described in [Installed Collector](/docs/send-data/installed-collectors).
 2. Configure a Windows Performance Source, choosing the one appropriate for on your environment:
-    * [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Performance-Monitor-Log-Source).
-    * [Remote Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/Remote-Windows-Performance-Monitor-Log-Source).
+    * [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source).
+    * [Remote Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/remote-windows-performance-monitor-log-source).
 
 
 ### Add a Custom Query to the Windows Performance Source
@@ -169,8 +169,8 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+1. From the **App Catalog**, search for and select the app.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

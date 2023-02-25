@@ -82,7 +82,7 @@ To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a H
 
 ### Step 2: Configure a Source
 
-1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
+1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
     1. **Name**. (Required) A name is required. Description is optional.
     2. **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources.
 Example: **prod/web/apache/access**.
@@ -112,7 +112,7 @@ Before your can configure Sumo Logic to ingest logs, you must set up remote log 
 8. Enter your **Port**.
 9. For **Severity,** select **Alert (1)**.
 10. For **Facility,** select **Internal (5)**.
-11. For **Custom Token,** enter the token from the Sumo Logic [Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
+11. For **Custom Token,** enter the token from the Sumo Logic [Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
 12. Click **Save**.
 
 
@@ -209,11 +209,11 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**.
 
 20
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

@@ -318,7 +318,7 @@ At this point, Elasticsearch metrics should start flowing into Sumo Logic.
 
 #### Configure Logs Collection
 
-This section provides instructions for configuring log collection for Sumo Logic App for Elasticsearch, running on a non-Kubernetes environment. By default, Elasticsearch logs are stored in a log file. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see [this page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+This section provides instructions for configuring log collection for Sumo Logic App for Elasticsearch, running on a non-Kubernetes environment. By default, Elasticsearch logs are stored in a log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see [this page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 1. **Configure logging in Elasticsearch**. Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set loglevel to one of:
    * `debug`: a lot of information, useful for development/testing
@@ -326,8 +326,8 @@ This section provides instructions for configuring log collection for Sumo Logic
    * `notice` (default value): moderately verbose, ideal for production environments
    * `warning`: only very important/critical messages are logged
 
-  All logging settings are located in [Elasticsearch.conf](https://www.elastic.co/guide/en/elasticsearch/reference/current/logging.html). By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`. The default directory for log files is listed in the Elasticsearch.conf file. Logs from the Elasticsearch log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) as explained in the next section.
-2. **Configure an Installed Collector**. To collect logs directly from the Elasticsearch machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors) and a Local File Source.
+  All logging settings are located in [Elasticsearch.conf](https://www.elastic.co/guide/en/elasticsearch/reference/current/logging.html). By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`. The default directory for log files is listed in the Elasticsearch.conf file. Logs from the Elasticsearch log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/installed-collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) as explained in the next section.
+2. **Configure an Installed Collector**. To collect logs directly from the Elasticsearch machine, configure an [Installed Collector](/docs/send-data/installed-collectors) and a Local File Source.
 3. Configure a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), editing the fields as follows:
    * **Name.** (Required)
    * **Description.** (Optional)
@@ -448,8 +448,8 @@ email_notifications = [
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+1. From the **App Catalog**, search for and select the app.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

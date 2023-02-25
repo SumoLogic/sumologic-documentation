@@ -17,6 +17,25 @@ This App is tested with the following Nginx versions:
 * Kubernetes environments: Nginx version 1.21.4
 * Non-Kubernetes environments: Nginx version 1.19.8
 
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+Tutorial: Set up NGINX for non-Kubernetes Sources.
+
+<Iframe url="https://www.youtube.com/embed/X_6f0MDVTxo?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
+
+
 ## Collecting Logs for the Nginx App
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx. The following tasks are required:
@@ -218,7 +237,7 @@ Nginx app supports the default access logs and error logs format.
 1. **Configure logging in Nginx.** Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following [documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/)
 2. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
 3. **Configure a Collector** Use one of the following Sumo Logic Collector options:
-    1. To collect logs directly from the Nginx machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+    1. To collect logs directly from the Nginx machine, configure an [Installed Collector](/docs/send-data/installed-collectors).
     2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/hosted-collectors#create-a-hosted-collector).
 4. **Configure a local file source**. Choose a method:
 

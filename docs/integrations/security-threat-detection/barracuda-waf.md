@@ -75,7 +75,7 @@ Cloud syslog collection supports Barracuda Firmware version 9.2.1 or later. You 
 This section shows you how to configure a source for log collection. In this task you specify the Source Category metadata field, which is a fundamental building block for organizing and labeling sources.
 
 To configure a source, do the following:
-1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
+1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
     1. **Name**. (Required) Enter a name. The description is optional.
     2. **Source Category**. (Required) Provide a realistic Source Category for this data type. For example: **prod/barracuda/waf**. For more information, see [Best Practices](/docs/send-data/best-practices).
 2. In the Advanced section, specify the following configurations:
@@ -167,10 +167,10 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

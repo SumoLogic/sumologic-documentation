@@ -35,7 +35,7 @@ To generate a 1Password API token follow these steps:
 
 ## States
 
-A 1Password Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/Health-Events).
+A 1Password Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events).
 
 A 1Password Source goes through the following states when created:
 1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
@@ -48,14 +48,14 @@ If the Source has any issues during any one of these states, it is placed in an 
 
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![1password state.png](/img/send-data/1password-state.png)
+On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![1password state.png](/img/send-data/1password-state.png)
 
 Hover your mouse over the status icon to view a tooltip with details on the detected issue.<br/> ![1password](/img/send-data/health_error_generic.png)
 
 
 ## Create a 1Password Source
 
-When you create a 1Password Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
+When you create a 1Password Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors#Create_a_Hosted_Collector).
 
 To configure a 1Password Source:
 
@@ -63,28 +63,30 @@ To configure a 1Password Source:
 2. On the Collectors page, click **Add Source** next to a Hosted** **Collector.
 3. Select **1Password**.<br/><img src={useBaseUrl('img/send-data/1password-source-icon.png')} alt="1password-source-icon.png" width="150" />
 4. Enter a **Name** for the Source. The **description** is optional.<br/> ![1password-input](/img/send-data/1password-input.png)
-5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) is stored in a searchable field called `_sourceCategory`.
+5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
 6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse). When configured with the **Forward to SIEM** option, the following metadata fields are set:
-  | Field Name | API | Value |
-  |:---|:---|:---|
-  | `_siemVendor` | Sign-in, Item | `1Password` |
-  | `_siemProduct` | Sign-in, Item | `1Password` |
-  | `_siemFormat` | Sign-in, Item | `JSON` |
-  | `_siemEventID` | Sign-in | `signin-{{category}}` |
-  | `_siemEventID` | Item | `item_usage-{{action}}` |
+
+| Field Name | API | Value |
+|:---|:---|:---|
+| `_siemVendor` | Sign-in, Item | `1Password` |
+| `_siemProduct` | Sign-in, Item | `1Password` |
+| `_siemFormat` | Sign-in, Item | `JSON` |
+| `_siemEventID` | Sign-in | `signin-{{category}}` |
+| `_siemEventID` | Item | `item_usage-{{action}}` |
+
 7. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
    * Define the fields you want to associate, each field needs a name (key) and value.
       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 8. **Base URL**. Provide your 1Password customer-specific domain, for example `events.1password.com`.
-9. **API Token**. Enter the token you got from creating your 1Password API token in the [Authentication section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1Password-Source#Authentication) above.
+9. **API Token**. Enter the token you got from creating your 1Password API token in the [Authentication section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source#Authentication) above.
 10. **Supported APIs to collect**. Select one or more of the available APIs, **Item Usage** and **Sign-in Attempts**.
 11. When you are finished configuring the Source, click **Submit**.
 
 
 ## Error types
 
-When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/Health-Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/health-events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 <table>
   <tr>
@@ -137,27 +139,9 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/H
   </tr>
 </table>
 
-### Restart Sources
+### Restarting your Source
 
-When Sources encounter ThirdPartyConfig errors, they can now be restarted. Both the Sumo Logic UI and Sumo Logic API allow you to restart the Sources.
-
-#### UI
-
-To restart your source in the Sumo Logic platform, follow the steps below:
-1. Open the Collection page, and go to **Manage Data** > **Collection** > **Collection**.
-2. Select the source and click the **information** icon on the right side of the row.
-3. The API usage information popup is displayed. Click the **Restart Source** button on the bottom left. <br/><img src={useBaseUrl('img/send-data/restart-source-button.png')} alt="restart-source-button.png" width="550" />
-4. Click **Confirm** to send the restart request. <br/><img src={useBaseUrl('img/send-data/restart-source-confirm.png')} alt="restart-source-confirm.png" width="550" />
-5. The bottom left of the platform will provide a notification informing you the request was successful.<br/><img src={useBaseUrl('img/send-data/source-restart-initiated.png')} alt="source-restart-initiated.png" width="550" />
-
-
-#### API
-
-To restart your source using the Sumo Management API, follow the instructions below:
-* Method: POST
-* Example endpoint: `https://api.sumologic.com/api/v1/collectors/{collector_id}/sources/{source_id}/action/restart`.
-
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. For example, an API endpoint in Europe would begin `api.eu.sumologic.com`.  A service endpoint in us2 (Western US) would begin service.us2.sumologic.com.  For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+{@import ../../../reuse/restart-c2c-source.md}
 
 
 ## JSON configuration
@@ -243,7 +227,7 @@ The following table shows the **config** parameters for a 1Password Source.
    </td>
    <td>
    </td>
-   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata field</a> <code>_source</code>.
+   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata field</a> <code>_source</code>.
    </td>
    <td>modifiable
    </td>
@@ -271,7 +255,7 @@ The following table shows the **config** parameters for a 1Password Source.
    </td>
    <td>null
    </td>
-   <td>Type a category of the source. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata field</a> field <code>_sourceCategory</code>. See <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">best practices</a> for details.
+   <td>Type a category of the source. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata field</a> field <code>_sourceCategory</code>. See <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">best practices</a> for details.
    </td>
    <td>modifiable
    </td>

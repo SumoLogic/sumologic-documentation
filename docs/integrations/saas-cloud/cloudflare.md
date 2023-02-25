@@ -64,7 +64,7 @@ To send Cloudflare logs to Sumo Logic, you must first configure Cloudflare Logs 
 To set up a Hosted Collector and specify a Sumo Logic Source, do the following:
 
 1. Follow the instructions for [Configuring a Hosted Collector in Sumo Logic to start collecting logs](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Follow the instructions for [Configure an Amazon S3 Source in Sumo Logic](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source). When setting up an S3 Source, it's important to specify the correct timestamp field. Follow the next steps to do so.
+2. Follow the instructions for [Configure an Amazon S3 Source in Sumo Logic](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source). When setting up an S3 Source, it's important to specify the correct timestamp field. Follow the next steps to do so.
 3. To forward logs to Cloud SIEM Enterprise, click **+Add Field** with the key `_parser` and value `/Parsers/System/Cloudflare/Cloudflare Logpush`
 5. Click **Advanced**, if the settings are not already shown.
 6. For Timestamp Format, select **Specify a format** and enter the following:
@@ -85,8 +85,8 @@ To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+1. From the **App Catalog**, search for and select the app.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

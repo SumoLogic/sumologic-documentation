@@ -34,8 +34,8 @@ This section provides instructions for configuring log collection for the Cisco 
 
 To configure log collection, do the following:
 1. Configure your ASA to send its logs to a syslog server. ASA sends syslog on UDP port 514 by default, but you can set the protocol and port.
-2. Configure an [Installed Collector](/docs/send-data/Installed-Collectors) appropriate for right for your host environment.
-3. Configure a [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source) to the same port and protocol used by your ASA.
+2. Configure an [Installed Collector](/docs/send-data/installed-collectors) appropriate for right for your host environment.
+3. Configure a [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) to the same port and protocol used by your ASA.
 
 ### Field Extraction Rule
 
@@ -103,8 +103,8 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 
 This section provides instructions on how to install the Cisco ASA App. Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+1. From the **App Catalog**, search for and select the app.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 

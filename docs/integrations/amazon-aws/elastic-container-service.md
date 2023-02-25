@@ -327,7 +327,7 @@ In this step, you set up an [AWS CloudTrail Source](/docs/send-data/hosted-colle
 8. **Description.** Enter an optional description.
 9. **S3 Region.** Select the Amazon Region for your ECS S3 bucket.
 10. **Bucket Name.** Enter the exact name of your ECS S3 bucket.
-11. **Path Expression.** Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+11. **Path Expression.** Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category.** Enter **ecs_event**.
     * **AWS Access**. There are two options for AWS access:
         * Role-based access. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).  For Role-based access enter the Role ARN that was provided by AWS after creating the role.  \
@@ -348,8 +348,8 @@ Now that you have set up collection for Amazon ECS, install the Sumo Logic App f
 To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+1. From the **App Catalog**, search for and select the app.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     * **Data Source.** Select either of these options for the data source. 

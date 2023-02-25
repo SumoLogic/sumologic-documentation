@@ -1,6 +1,6 @@
 ---
 id: nginx-access-logs
-title: Nginx Access Logs
+title: Nginx Access Logs - Cloud SIEM
 sidebar_label: Nginx Access Logs
 description: Configure a syslog source to ingest Nginx Access log messages to be parsed by CSE’s system parser for Nginx.
 ---

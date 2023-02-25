@@ -1,8 +1,7 @@
 ---
 id: saml-configuration
-title: Sumo Logic SAML Configuration Management APIs
+title: SAML Configuration Management APIs
 sidebar_label: SAML Configuration
-tags: [security]
 description: Use HTTP endpoints to manage your SAML configuration.
 ---
 

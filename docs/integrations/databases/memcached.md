@@ -295,7 +295,7 @@ At this point, Memcached metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for Memcached running on a non-Kubernetes environment for the Sumo Logic App for Memcached.
 
-By default, Memcached logs are stored in a log file. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#Sumo-Logic-Endpoints-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+By default, Memcached logs are stored in a log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#Sumo-Logic-Endpoints-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 1. **Configure logging in Memcached**. By default, the installation of Memcached will not write any request logs to disk. To add a log file for Memcached, you can use the following syntax:
   ```bash
@@ -311,7 +311,7 @@ By default, Memcached logs are stored in a log file. Local log files can be coll
   OPTIONS="-vv >> /var/log/memcached/memcached.log 2>&1"
   ```
   Save the file and  restart Memcached.
-2. **Configuring a Collector** To collect logs directly from the Memcached machine, configure an[ Installed Collector](/docs/send-data/Installed-Collectors).
+2. **Configuring a Collector** To collect logs directly from the Memcached machine, configure an[ Installed Collector](/docs/send-data/installed-collectors).
 3. **Configuring a Source** To collect logs directly from your Memcached machine, use an Installed Collector and a Local File Source.
     1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
     2. Configure the Local File Source fields as follows:
@@ -444,7 +444,7 @@ This section demonstrates how to install the Memcached App.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name or enter a name of your choice. 

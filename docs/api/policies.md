@@ -1,8 +1,7 @@
 ---
 id: policies
-title: Sumo Logic Policies Management APIs
+title: Policies Management APIs
 sidebar_label: Policies
-tags: [security]
 description: Use HTTP endpoints to manage your account's security policies.
 ---
 

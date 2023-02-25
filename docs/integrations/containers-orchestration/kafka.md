@@ -149,7 +149,7 @@ Here’s an explanation for additional values set by this configuration that we 
 
 For more information on all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
-For more information on configuring the Joloka input plugin for Telegraf see[ this doc] (https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2).
+For more information on configuring the Joloka input plugin for Telegraf, see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2).
 
 3. Configure your Kafka Pod to use the Jolokia Telegraf Input Plugin. Jolokia agent needs to be available to the Kafka Pods. Starting Kubernetes 1.10.0, you can store a binary file in a [configMap](https://kubernetes.io/docs/concepts/storage/volumes/#configmap). This makes it very easy to load the Jolokia jar file, and make it available to your pods.
 4. Download the latest version of the **Jolokia JVM-Agent** from [Jolokia](https://jolokia.org/download.html).
@@ -316,7 +316,7 @@ At this point, Kafka metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for Kafka running on a non-Kubernetes environment for the Sumo Logic App for Kafka. By default, Kafka logs are stored in a log file. Perform the steps outlined below for each Kafka Broker node.
 1. Configure logging in Kafka. By default Kafka logs (server.log and controller.log) are stored in the directory: `/opt/Kafka/kafka_<VERSION>/logs`. Make a note of the above logs directory.
-2. Configure an Installed Collector. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
+2. Configure an Installed Collector. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/installed-collectors)
 3. Configuring a Source. To add a Local File Source source for Kafka do the following:
    1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:
@@ -325,7 +325,7 @@ This section provides instructions for configuring log collection for Kafka runn
      * **File Path (Required).** Enter the path to your server.log and controller.log. The files are typically located in `/opt/Kafka/kafka_<VERSION>/logs/*.log`.
      * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
      * **Source Category.** Enter any string to tag the output collected from this Source, such as **Kafka/Logs**. The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices/#good-and-bad-source-categories).
-     * **Fields.**Set the following fields. For more information on fields please see [this document](/docs/Manage/Fields):
+     * **Fields.**Set the following fields. For more information on fields please see [this document](/docs/manage/fields):
        ```    
        component = messaging
        messaging_system = kafka

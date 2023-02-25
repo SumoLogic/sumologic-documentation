@@ -43,17 +43,9 @@ Let’s say you’re going to write a rule that fires every time a successful Wi
 To find and review a log mapping:
 
 1. Click the gear icon and select **Log Mappings**.
-1. You can use the filter area at the top of the **Log Mappings** page to search for a mapping by various options. The screenshot below shows the results we enter the filter **Name matches wildcard pattern \*46...**
-
-    Two mappings match. For each mapping, you can see how many times it’s been used in the last 24 hrs and also over the last 7 days. We’ll select the one that has been in use, rather than the one that hasn’t.
-
-    ![matching-mappings.png](/img/cse/matching-mappings.png)
-1. Once you’ve opened the mapping, you’ll see the top of the page shows the Vendor, Product, and Event ID that is written to the Records produced by the mapping.  
-
-    ![selected-mapping-top.png](/img/cse/selected-mapping-top.png)
-1. The **Fields** section of the page shows how raw message fields are mapped to CSE schema attributes. In this mapping, `EventData.LogonProcessName` is mapped to `application`, `EventData.WorkstationName` is mapped to `device_hostname`, and so on. 
-
-    ![selected-mapping-bottom.png](/img/cse/selected-mapping-bottom.png)
+1. You can use the filter area at the top of the **Log Mappings** page to search for a mapping by various options. The screenshot below shows the results we enter the filter **Name matches wildcard pattern *46...**. Two mappings match. For each mapping, you can see how many times it’s been used in the last 24 hrs and also over the last 7 days. We’ll select the one that has been in use, rather than the one that hasn’t.docs/cse/records-signals-entities-insights/global-intelligence-security-insights.md  ![matching-mappings.png](/img/cse/matching-mappings.png)
+1. Once you’ve opened the mapping, you’ll see the top of the page shows the Vendor, Product, and Event ID that is written to the Records produced by the mapping.  docs/cse/records-signals-entities-insights/global-intelligence-security-insights.md  ![selected-mapping-top.png](/img/cse/selected-mapping-top.png)
+1. The **Fields** section of the page shows how raw message fields are mapped to CSE schema attributes. In this mapping, `EventData.LogonProcessName` is mapped to `application`, `EventData.WorkstationName` is mapped to `device_hostname`, and so on. docs/cse/records-signals-entities-insights/global-intelligence-security-insights.md  ![selected-mapping-bottom.png](/img/cse/selected-mapping-bottom.png)
 
 Now that we understand the mapping in CSE, we can see we will want to be looking for logs where the `metadata_vendor` is “Microsoft”, `metadata_product` is “Windows”, and `metadata_deviceEventId` is “Security-4624”, and we will also want to use the `user_username` field to find users that don’t match our naming convention.
 
@@ -114,5 +106,3 @@ Now we have a query we can use as the rule expression for our rule. Note that
 You can use an expression like this example in any rule type. Here is an example Match rule with the expression, shown in the Rules Editor.
 
 ![example-in-editor.png](/img/cse/example-in-editor.png)
-
- 

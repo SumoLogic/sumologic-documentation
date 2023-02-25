@@ -6,6 +6,24 @@ description: Learn how to search specific Data Tiers.
 
 This page has information about how to search different Data Tiers, and when you should use `_dataTier`, a *search modifier* that restricts your search to a single tier. 
 
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+Searching Data Tiers.
+
+<Iframe url="https://www.youtube.com/embed/w0H8upLpCwU?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
+
 ## About the _dataTier search modifier
 
 In Sumo Logic, a search modifier is a tag that gives the Sumo Logic backend information about how to process a query. The `_dataTier` modifier tells Sumo Logic which Data Tier a query should run against: Continuous, Frequent, or Infrequent.
@@ -98,7 +116,7 @@ If you use `_dataTier` to specify a tier other than Continuous in a query of sch
 
 ### API Support with Rate Limiting
 
-The rate limits described in the [Rate limit throttling](/docs/api/Search-Job "About the Search Job API") section of the *About the Search Job API* topic apply to cross-tier searches with these concurrent active job limits: 
+The rate limits described in the [Rate limit throttling](/docs/api/search-job "About the Search Job API") section of the *About the Search Job API* topic apply to cross-tier searches with these concurrent active job limits: 
 
 * A limit of 200 active concurrent search jobs applies to your organization for the Continuous Tier (`_dataTier=Continuous`), the Infrequent Tier (`_dataTier=Infrequent`), and All Tiers (`_dataTier=All`).
 * When searching only the Frequent Tier (`_dataTier=Frequent`), a rate limit of 20 concurrent search jobs applies to your organization.

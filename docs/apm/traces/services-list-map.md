@@ -6,6 +6,8 @@ description: View your application topology and investigate microservice interac
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/traces/servicemap.png')} alt="icon" width="45"/>
+
 To open the Services List and Map, click **+ New** > **Services**.
 
 <img src={useBaseUrl('img/traces/open-service-map.png')} alt="open servicemap" width="400"/>

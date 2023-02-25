@@ -1,7 +1,8 @@
 ---
 id: library
 title: Managing Your Sumo Logic Library
-sidebar_label: Manage Your Library
+sidebar_label: Managing your Library
+description: Managing your Library in Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -27,7 +28,7 @@ Once you've made your choice of what you want to see, you can enter a string in 
 
 To open the **Library** page, click the **Library** icon at the top of the UI.
 
-![library icon](/img/get-started/library/library-icon.png)
+![library icon](/img/reuse/library-icon.png)
 
 * Select **Personal** to select your own saved searches and dashboards or **Org** to select those shared by others in your organization.
 * Enter a search string to display matching search results.<br/>![search-string.png](/img/get-started/library/search-string.png)  

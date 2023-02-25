@@ -1,6 +1,6 @@
 ---
 id: symantec-proxy-secure-gateway-blue-coat-proxy
-title: Symantec Proxy Secure Gateway (Blue Coat Proxy)
+title: Symantec Proxy Secure Gateway (Blue Coat Proxy) - Cloud SIEM
 sidebar_label: Symantec Proxy Secure Gateway
 description: Learn how to configure a Syslog source to collect and send Symantec Proxy Secure Gateway (ProxySG) log messages to Sumo Logic to be ingested by CSE.
 ---

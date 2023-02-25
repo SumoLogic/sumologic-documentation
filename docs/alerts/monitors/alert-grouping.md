@@ -135,7 +135,7 @@ You can select up to a maximum of 10 fields. This applies to both Logs and Metri
 
 #### My field is not appearing under "One alert per [group]" fields dropdown. Why is that?
 
-This scenario, which is only applicable for Logs Monitors (not for Metrics), can happen if you have [dynamically parsed fields](/docs/search/Get-Started-with-Search/build-search/Dynamic-Parsing) in your query. The auto-complete system uses a 15-minute time range to parse out all the dynamically parsed fields. If those fields are not present in the last 15-minute query, they will not show up in the dropdown. To resolve this, you could manually type in the name of the field, and it should work fine at runtime.<br/><img src={useBaseUrl('img/monitors/alertsdropdown.png')} alt="alert-grouping" width="350" />
+This scenario, which is only applicable for Logs Monitors (not for Metrics), can happen if you have [dynamically parsed fields](/docs/search/get-started-with-search/build-search/dynamic-parsing) in your query. The auto-complete system uses a 15-minute time range to parse out all the dynamically parsed fields. If those fields are not present in the last 15-minute query, they will not show up in the dropdown. To resolve this, you could manually type in the name of the field, and it should work fine at runtime.<br/><img src={useBaseUrl('img/monitors/alertsdropdown.png')} alt="alert-grouping" width="350" />
 
 #### How does "One alert per [group]" impact Alert Audit Logs?  
 

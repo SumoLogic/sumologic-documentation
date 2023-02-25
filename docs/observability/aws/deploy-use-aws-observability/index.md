@@ -14,3 +14,7 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
+
+:::tip
+Click [here](https://youtu.be/_5JHkxG7ZMo) to watch a micro lesson on deploying the AWS Observability Solution. 
+:::

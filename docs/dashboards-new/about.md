@@ -7,7 +7,7 @@ description: Learn the benefits of Dashboard (New) and how it seamlessly integra
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="75"/>
+<img src={useBaseUrl('img/dashboards-new/about-dashboard-new/dashboards-new.png')} alt="icon" width="50"/>
 
 Dashboard (New) allows you to analyze metric and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to effectively monitor and manage a Kubernetes environment.
 
@@ -77,7 +77,7 @@ A list of the refresh interval rates is provided for you to select from.
 
 ## Dark Theme
 
-Dashboards have two themes available: Light (which is the default) and Dark. You can toggle between the two themes within the dashboard by clicking the three-dot icon. The following image shows the option to **Switch to Dark Theme**.
+Dashboards have two themes available: Light mode (which is the default) and Dark mode. You can toggle between the two themes within the dashboard by clicking the three-dot icon. The following image shows the option to **Switch to Dark Theme**.
 
 ![dark theme switch](/img/dashboards-new/about-dashboard-new/dark-theme-switch.png)
 

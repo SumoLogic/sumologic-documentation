@@ -6,6 +6,8 @@ sidebar_label: Architecture
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/icons/cloud/multi-tenant.png')} alt="icon" width="50"/>
+
 Sumo Logic Cloud SOAR provides Security Operations and Automation Incident Response Platform to facilitate and expedite timely management of Incident Response with a rich library of customizable playbooks for different threats and use cases of incident response scenarios expediting and automating response time to incident response events.
 
 This solution additionally provides capabilities to support incident

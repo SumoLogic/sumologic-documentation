@@ -1,8 +1,7 @@
 ---
 id: account-management
-title: Sumo Logic Account Management APIs
+title: Account Management APIs
 sidebar_label: Account Management
-tags: [security]
 description: Use HTTP endpoints to manage subdomains.
 ---
 

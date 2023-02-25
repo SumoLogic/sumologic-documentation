@@ -82,8 +82,7 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) or [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended).
 3. Namespaces. Select **aws/sns**.
-4. **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. The **account** field allows you to query metrics.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Metadata%2Baccount.png')} alt="Metadata" />
+4. **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. The **account** field allows you to query metrics.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Metadata%2Baccount.png')} alt="Metadata" />
 5. Click **Save**.
 
 
@@ -110,7 +109,7 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 
 ### Field in Field Schema
 
-Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the `"topicname"` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
+Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the `"topicname"` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
 
 ### Field Extraction Rule(s)
@@ -170,7 +169,7 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. To install the app, click **Add to Library** and complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     * Enter the **SNS Metrics Source**.
@@ -231,7 +230,7 @@ Use this dashboard to:
 
 ### Amazon SNS - Threat Intel  
 
-The **Amazon SNS - **Threat Intel** dashboard provides insights across threat locations, count, malicious confidence and details.
+The **Amazon SNS - Threat Intel** dashboard provides insights across threat locations, count, malicious confidence and details.
 
 **Use this dashboard to**:
 * Monitor details of threat locations and count.

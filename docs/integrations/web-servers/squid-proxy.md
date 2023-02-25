@@ -362,7 +362,7 @@ Squid Proxy app supports the default access logs and cache logs format.
 1. **Configure logging in Squid Proxy.** By default, the squid proxy will write the access log to the log directory that was configured during installation. For example, on Linux, the log directory would be `/var/log/squid/access.log`. If the access log is disabled then you must enable the access log following these [instructions](https://wiki.squid-cache.org/SquidFaq/SquidLogs).
 2. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
 3. **Configure a Collector**. Use one of the following Sumo Logic Collector options:
-   1. To collect logs directly from the Squid Proxy machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+   1. To collect logs directly from the Squid Proxy machine, configure an [Installed Collector](/docs/send-data/installed-collectors).
    2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 4. **Configure a local file source**. Choose a method:
 
@@ -754,7 +754,7 @@ This section demonstrates how to install the Squid Proxy App.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
