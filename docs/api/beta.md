@@ -7,7 +7,7 @@ title: APIs (Beta)
 
 See the latest advancements in Sumo Logic APIs.
 
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
+Refer to [Getting Started](/docs/api/authentication-endpoints-security) for Authentication and Endpoint information.
 
 ## In Open Beta
 
@@ -93,4 +93,4 @@ Our API documentation is hosted on each Sumo deployment. You need to select the 
   </tr></small>
 </table>
 
-​​​If you're unsure, see [How to determine which endpoint to use](/docs/api/getting-started#which-endpoint-should-i-should-use).
+​​​If you're unsure, see [How to determine which endpoint to use](/docs/api/authentication-endpoints-security#which-endpoint-should-i-should-use).

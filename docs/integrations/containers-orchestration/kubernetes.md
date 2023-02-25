@@ -127,7 +127,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys). Please identify which deployment your Sumo Logic account is in, using this /docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security"> link.
+1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys). Please identify which deployment your Sumo Logic account is in, using this /docs/api/authentication-endpoints-security#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security"> link.
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 3. Download the Sumo Logic Terraform package for Kubernetes alerts. The alerts package is available in the [Sumo Logic github repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/kubernetes). You can either download it through the `git clone` command or as a zip file.
 4. Alert Configuration. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/`.
@@ -159,7 +159,7 @@ connection_notifications_critical = [
   ]
 ```
 
-  Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](/docs/api/monitors).
+  Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](/docs/api/monitors-management).
 
   For overriding payload for different connection types, refer to [this document](/docs/alerts/webhook-connections/set-up-webhook-connections).
 

@@ -3,16 +3,16 @@ id: service-allowlist
 title: Service Allowlist Management APIs
 sidebar_label: Service Allowlist
 description: Use HTTP endpoints to manage service allowlist settings.
-
+hide_table_of_contents: true
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/security/unlock.png')} alt="icon" width="50"/>
 
 The [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses) Management API allows you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
 
-
-
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
-
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+{@import ../reuse/api-intro.md}
 
 
 <table>

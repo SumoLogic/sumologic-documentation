@@ -318,7 +318,7 @@ At this point, Elasticsearch metrics should start flowing into Sumo Logic.
 
 #### Configure Logs Collection
 
-This section provides instructions for configuring log collection for Sumo Logic App for Elasticsearch, running on a non-Kubernetes environment. By default, Elasticsearch logs are stored in a log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see [this page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+This section provides instructions for configuring log collection for Sumo Logic App for Elasticsearch, running on a non-Kubernetes environment. By default, Elasticsearch logs are stored in a log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/authentication-endpoints-security#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see [this page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 1. **Configure logging in Elasticsearch**. Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set loglevel to one of:
    * `debug`: a lot of information, useful for development/testing
@@ -393,7 +393,7 @@ To install these monitors, you must have the **Manage Monitors** role capability
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 3. Download the Sumo Logic Terraform package for Elasticsearch monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Elasticsearch). You can either download it using the git clone command or as a zip file.
 4. Alert Configuration. After extracting the package, navigate to the  `terraform-sumologic-sumo-logic-monitor/monitor_packages/Elasticsearch/` directory.
-   * Edit the `Elasticsearch.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+   * Edit the `Elasticsearch.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/authentication-endpoints-security#sumo-logic-endpoints-by-deployment-and-firewall-security).
    ```bash
    access_id   = "<SUMOLOGIC ACCESS ID>"
    access_key  = "<SUMOLOGIC ACCESS KEY>"

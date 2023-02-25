@@ -1,16 +1,14 @@
 ---
-id: folders
+id: folder-management
 title: Folder Management APIs
-sidebar_label: Folders
-tags: [library]
+sidebar_label: Folder Management
+hide_table_of_contents: true
 description: Use HTTP endpoints to manage folders in the Library.
 ---
 
 The Folder Management API allows you to add folders and subfolders to the [Library](/docs/get-started/library) from HTTP endpoints to organize your content.
 
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
-
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+{@import ../reuse/api-intro.md}
 
 <table>
   <tr>

@@ -20,7 +20,7 @@ When one or more collectors in your Sumo Logic account are eligible for an u
 ![Upgrade collectors](/img/collector/upgrade-collectors-icon.png)
 
 :::important
-The user interface will show up to 50 Collectors at a time. After upgrading one or more Collectors you can close and reopen the 'Upgrade Collectors' window to display other upgradable Collectors. You may consider conducting upgrades with the [Collector Management API](/docs/api/collectors#Upgrade-or-Downgrade-Collectors-Using-the-API).
+The user interface will show up to 50 Collectors at a time. After upgrading one or more Collectors you can close and reopen the 'Upgrade Collectors' window to display other upgradable Collectors. You may consider conducting upgrades with the [Collector Management API](/docs/api/collector-management#Upgrade-or-Downgrade-Collectors-Using-the-API).
 :::
 
 ### Upgrade collectors to the latest build
@@ -88,7 +88,7 @@ The steps to upgrade an Installed Collector using the command line are similar t
 Download the collector in either of the following ways:
 
 * In Sumo Logic select **Manage Data > Collection > Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the collector to begin the download.
-* Open a browser and enter the static URL for your Sumo deployment. See [how to determine which endpoint to use](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url.md) for a list of the URLs for your Linux version and deployment pod.
+* Open a browser and enter the static URL for your Sumo deployment. See [how to determine which endpoint to use](/docs/api/authentication-endpoints-security.md#sumo-logic-endpoints-by-deployment-and-firewall-security) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url.md) for a list of the URLs for your Linux version and deployment pod.
 
 See the following table for commands:
 

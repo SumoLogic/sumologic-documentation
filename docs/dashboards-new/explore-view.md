@@ -130,7 +130,7 @@ https://<endpoint>/ui/#/explore/[@<start>,<end>]@<entityKey>=<entityValue>[@<ent
 ```
 
 Required:
-* `<endpoint>` is your Sumo Logic service endpoint. See [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the endpoint URLs.
+* `<endpoint>` is your Sumo Logic service endpoint. See [Sumo Logic Endpoints and Firewall Security](/docs/api/authentication-endpoints-security#sumo-logic-endpoints-by-deployment-and-firewall-security) for the endpoint URLs.
 * `<entityKey>` is the type of entity you want to explore, such as cluster, deployment, service, node, account, region, namespace, or pod.
 * `<entityValue>` is the value of the entity to explore.
 
@@ -153,7 +153,7 @@ Dashboard:
 
 Let’s create a URL to open Explore on the `primary-eks `cluster, `kube-system` namespace, and `metrics-server` service.
 
-The custom URL that launches this log query in the Sumo Logic Search page would be similar to the following. The exact URL would depend on your Sumo Logic account endpoint, as listed in [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+The custom URL that launches this log query in the Sumo Logic Search page would be similar to the following. The exact URL would depend on your Sumo Logic account endpoint, as listed in [Sumo Logic Endpoints and Firewall Security](/docs/api/authentication-endpoints-security#sumo-logic-endpoints-by-deployment-and-firewall-security).
 ```bash
 https://service.us2.sumologic.com/ui/#/explore/@cluster=primary-eks@namespace=kube-system@service=metrics-server
 ```

@@ -1,18 +1,18 @@
 ---
-id: users
+id: user-management
 title: User Management APIs
-sidebar_label: Users
+sidebar_label: User Management
 description: The User Management API allows you to manage user accounts from HTTP endpoints.
+hide_table_of_contents: true
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="50"/>
 
 The User Management API allows you to [manage user accounts](/docs/manage/users-roles/users) from HTTP endpoints. To manage users, you must have the administrator role or your role must have been assigned the manage users and roles capability. For more information see [Manage Users](https://help.sumologic.com/?cid=1006).
 
-
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
-
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
-
-
+{@import ../reuse/api-intro.md}
 
 
 <table>

@@ -154,7 +154,7 @@ The following parameters control general server behaviors, as opposed to enrichm
 
 | Setting | Required? | Description |
 |:--|:--|:--|
-| `URL` | yes | The URL for your API endpoint. For more information, see [Sumo Logic API Authentication, Endpoints, and Security](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security). |
+| `URL` | yes | The URL for your API endpoint. For more information, see [Sumo Logic API Authentication, Endpoints, and Security](/docs/api/authentication-endpoints-security.md#sumo-logic-endpoints-by-deployment-and-firewall-security). |
 | `api_id` | yes | Enter your Sumo Logic Access ID. For more information, see [Manage your access keys on Preferences page](/docs/manage/security/access-keys.md#manage-your-access-keys-on-preferences-page). |
 | `api_key` | yes | Enter your Sumo Logic Access Key.|
 | `log_level` | no | Log level the server should use. The options are:<br/><br/>-`error`. Only display error messages.<br/>-`info`. Display informational messages. This is the recommended value.<br/>-`debug`. Displays debug (or trace) data. Recommended only when debugging.<br/><br/>Default: `info` |

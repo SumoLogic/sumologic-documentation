@@ -159,8 +159,8 @@ Sumo supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To l
 
 For customers with Enterprise accounts, Sumo Logic provides different APIs to interact with third-party scripts and applications.
 
-* [Sumo Logic Endpoints](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security). Sumo Logic has five deployments, or pods, that are assigned depending on the geographic location and the date a Sumo Logic account is created.
-* [Collector Management API](/docs/api/collectors). The Collector Management API allows you to define an initial Source configuration for your Collectors using a JSON file. It also allows you to create, update, and delete Collectors and Sources from an HTTP endpoint.
+* [Sumo Logic Endpoints](/docs/api/authentication-endpoints-security.md#sumo-logic-endpoints-by-deployment-and-firewall-security). Sumo Logic has five deployments, or pods, that are assigned depending on the geographic location and the date a Sumo Logic account is created.
+* [Collector Management API](/docs/api/collector-management). The Collector Management API allows you to define an initial Source configuration for your Collectors using a JSON file. It also allows you to create, update, and delete Collectors and Sources from an HTTP endpoint.
 * [Search Job API](/docs/api/search-job). Sumo Logic exposes the Search Job API for access to resources and log data from third-party scripts and applications. The API follows Representational State Transfer (REST) patterns and is optimized for ease of use and consistency.
 
 ## Sumo Logic apps

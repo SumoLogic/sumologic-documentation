@@ -3,13 +3,12 @@ id: password-policy
 title: Password Policy Management APIs
 sidebar_label: Password Policy
 description: Use HTTP endpoints to manage your account's password policy.
+hide_table_of_contents: true
 ---
 
 The Password Policy Management API allows you to manage the [password policy](/docs/manage/security/set-password-policy.md) for your Sumo Logic users.
 
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
-
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+{@import ../reuse/api-intro.md}
 
 <table>
   <tr>

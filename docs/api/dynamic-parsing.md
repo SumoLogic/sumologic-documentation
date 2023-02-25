@@ -3,14 +3,16 @@ id: dynamic-parsing
 title: Dynamic Parsing Management APIs
 sidebar_label: Dynamic Parsing
 description: The Dynamic Parsing Management API allows you to configure Run Time Field Extraction Rules from HTTP endpoints.
-tags: [settings]
+hide_table_of_contents: true
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/operations/parsing-data.png')} alt="icon" width="50"/>
 
 The Dynamic Parsing Management API allows you to configure Run Time Field Extraction Rules from HTTP endpoints. Dynamic Parsing allows automatic field extraction from your log messages when you run a search. This allows you to view fields from logs without having to manually specify parsing logic. For more information see [Dynamic Parsing](https://help.sumologic.com/?cid=20011).
 
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
-
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+{@import ../reuse/api-intro.md}
 
 <table>
   <tr>

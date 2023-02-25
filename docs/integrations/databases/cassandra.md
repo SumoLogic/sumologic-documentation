@@ -432,7 +432,7 @@ Once you have finalized your telegraf.conf file, you can start or reload the tel
 
 This section provides instructions for configuring log collection for Cassandra running on a non-Kubernetes environment.
 
-By default, Cassandra logs are stored in a log file. Sumo Logic supports collecting logs from a local log file by using a [local file source](/docs/send-data/installed-collectors/sources/Local-File-Source) via [Installed collectors](/docs/send-data/installed-collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/System-Requirements#Installed-Collector-Requirements).
+By default, Cassandra logs are stored in a log file. Sumo Logic supports collecting logs from a local log file by using a [local file source](/docs/send-data/installed-collectors/sources/Local-File-Source) via [Installed collectors](/docs/send-data/installed-collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/authentication-endpoints-security#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/System-Requirements#Installed-Collector-Requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect Cassandra logs and follow the instructions below to set up log collection:
 
@@ -557,7 +557,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later and install it.
 3. Download the Sumo Logic Terraform package for Cassandra monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Memcached). You can either download it using the git clone command or as a zip file.
 4. Alert Configuration. After extracting the package, navigate to the  `terraform-sumologic-sumo-logic-monitor/monitor_packages/Cassandra/` directory.
-5. Edit the Cassandra.auto.tfvars file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+5. Edit the Cassandra.auto.tfvars file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/authentication-endpoints-security#sumo-logic-endpoints-by-deployment-and-firewall-security).
 ```bash
 access_id   = "<SUMOLOGIC ACCESS ID>"
 access_key  = "<SUMOLOGIC ACCESS KEY>"

@@ -87,7 +87,7 @@ With this association, you can search for `cluster=k8s.dev` to return your logs
 
 ### Using Collector API
 
-Use the `fields` parameter with the [Collector API](/docs/api/collectors) to define fields on a Collector or Source.
+Use the `fields` parameter with the [Collector API](/docs/api/collector-management) to define fields on a Collector or Source.
 
 | Parameter | Type | Required? | Description | Access |
 |:--|:--|:--|:--|:--|

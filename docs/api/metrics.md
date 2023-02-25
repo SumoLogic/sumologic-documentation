@@ -9,9 +9,7 @@ The Metrics Query API lets you execute Metrics queries from third-party scripts 
 
 This API follows Representational State Transfer (REST) patterns and is optimized for ease of use and consistency.
 
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
-
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+{@import ../reuse/api-intro.md}
 
 ## Before You Begin
 
@@ -25,7 +23,7 @@ You will need:
 
 Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
 
-See [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
+See [Sumo Logic Endpoints](/docs/api/authentication-endpoints-security#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
 
 An `HTTP 301 Moved` error suggests that the wrong endpoint was specified.
 
@@ -134,7 +132,7 @@ To execute a metrics query, send a JSON request to the endpoint.
 
 **Example endpoint:** [https://api.sumologic.com/api/v1/metrics/results](https://api.sumologic.com/api/v1/metrics/results)
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. For example, an API endpoint in Europe would begin `api.eu.sumologic.com`.  A service endpoint in us2 (Western US) would begin service.us2.sumologic.com.  For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. For example, an API endpoint in Europe would begin `api.eu.sumologic.com`.  A service endpoint in us2 (Western US) would begin service.us2.sumologic.com.  For more information, see [Sumo Logic Endpoints](/docs/api/authentication-endpoints-security#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 
 ### Headers

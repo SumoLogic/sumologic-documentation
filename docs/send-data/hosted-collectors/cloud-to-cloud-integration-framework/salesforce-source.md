@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Salesforce Source provides a secure endpoint to receive event data from the Salesforce through its [Rest API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm). The source securely stores the required authentication, scheduling, and state tracking information.
 
 :::note
-This Source is available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+This Source is available in the [Fed deployment](/docs/api/authentication-endpoints-security/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## Prerequisites: Generate the Salesforce API token

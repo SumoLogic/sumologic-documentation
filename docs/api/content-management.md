@@ -2,15 +2,13 @@
 id: content-management
 title: Content Management APIs
 sidebar_label: Content Management
-tags: [library]
+hide_table_of_contents: true
 description: The Content Management API allows you to manage content in your organization’s Library from HTTP endpoints.
 ---
 
 The Content Management API allows you to manage content in your organization’s [Library](/docs/get-started/library) from HTTP endpoints.
 
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
-
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+{@import ../reuse/api-intro.md}
 
 <table>
   <tr>

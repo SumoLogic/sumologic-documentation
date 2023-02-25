@@ -3,14 +3,12 @@ id: field-extraction-rules
 title: Field Extraction Rules Management APIs
 sidebar_label: Field Extraction Rules
 description: Use HTTP endpoints to configure Field Extraction Rules.
-tags: [settings]
+hide_table_of_contents: true
 ---
 
 The Field Extraction Rules (FER) Management API allows you to configure FERs from HTTP endpoints. Field extractions allow you to parse [fields](/docs/manage/fields) from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. With FERs in place, you can use the pre-parsed fields for ad-hoc searches, scheduled searches, real-time alerts, and dashboards. In addition, FERs help standardize field names and searches, simplify the search syntax and scope definition, and improve search performance. For more information see [Field Extractions](/docs/manage/field-extractions).
 
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
-
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+{@import ../reuse/api-intro.md}
 
 <table>
   <tr>

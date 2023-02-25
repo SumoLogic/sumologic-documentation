@@ -1,20 +1,20 @@
 ---
-id: roles
+id: role-management
 title: Role Management APIs
-sidebar_label: Roles
+sidebar_label: Role Management
 description: The Role Management API allows you to manage roles from HTTP endpoints.
+hide_table_of_contents: true
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="icon" width="50"/>
 
 Roles determine the functions that users are able to perform in Sumo Logic. The Role Management API allows you to [manage roles](/docs/manage/users-roles/roles/create-manage-roles) from HTTP endpoints.
 
 To manage roles, you must have an administrator role or your role must have been assigned the manage users and roles capability. For more information see [Manage Roles](https://help.sumologic.com/?cid=5234).
 
-
-
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
-
-
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+{@import ../reuse/api-intro.md}
 
 
 <table>

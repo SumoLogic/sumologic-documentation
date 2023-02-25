@@ -1,60 +1,16 @@
 The following table describes the AWS regions used by each Sumo Logic deployment. See the [AWS page on regions and endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html) for more information.
 
-<table><small>
-  <tr>
-   <td><strong>Sumo Logic Deployment</strong></td>
-   <td><strong>AWS Region Name</strong></td>
-   <td><strong>AWS Region</strong></td>
-  </tr>
-  <tr>
-   <td>AU</td>
-   <td>Asia Pacific (Sydney)</td>
-   <td>ap-southeast-2</td>
-  </tr>
-  <tr>
-   <td>CA
-   </td>
-   <td>Canada (Central)</td>
-   <td>ca-central-1</td>
-  </tr>
-  <tr>
-   <td>DE</td>
-   <td>EU (Frankfurt)</td>
-   <td>eu-central-1</td>
-  </tr>
-  <tr>
-   <td>EU
-   </td>
-   <td>EU (Ireland)</td>
-   <td>eu-west-1</td>
-  </tr>
-  <tr>
-   <td>FED
-   </td>
-   <td>US East (N. Virginia)</td>
-   <td>us-east-1</td>
-  </tr>
-  <tr>
-   <td>IN</td>
-   <td>Asia Pacific (Mumbai)</td>
-   <td>ap-south-1</td>
-  </tr>
-  <tr>
-   <td>JP</td>
-   <td>Asia Pacific (Tokyo)</td>
-   <td>ap-northeast-1</td>
-  </tr>
-  <tr>
-   <td>US1</td>
-   <td>US East (N. Virginia)</td>
-   <td>us-east-1</td>
-  </tr>
-  <tr>
-   <td>US2</td>
-   <td>US West (Oregon)</td>
-   <td>us-west-2</td>
-  </tr></small>
-</table>
+| Sumo Deployment | AWS Region Name | AWS Region |
+|:---|:---|:---|
+| AU | Asia Pacific (Sydney) | ap-southeast-2 |
+| CA | Canada (Central) | ca-central-1 |
+| DE | EU (Frankfurt) | eu-central-1 |
+| EU | EU (Ireland) | eu-west-1 |
+| FED | US East (N. Virginia) | us-east-1 |
+| IN | Asia Pacific (Mumbai) | ap-south-1 |
+| JP | Asia Pacific (Tokyo) | ap-northeast-1 |
+| US1 | US East (N. Virginia) | us-east-1 |
+| US2 | US West (Oregon) | us-west-2 |
 
 [This link](https://ip-ranges.amazonaws.com/ip-ranges.json) provides the complete current list of AWS IP ranges or subnets or prefixes. You can limit the number of entries in a firewall by using just the IP prefixes against the AWS region that your account's Sumo deployment uses, as shown in the table.
 

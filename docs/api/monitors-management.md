@@ -1,20 +1,18 @@
 ---
-id: monitors
+id: monitors-management
 title: Monitor Management APIs
-sidebar_label: Monitors
+sidebar_label: Monitors Management
 description: Use HTTP endpoints to manage your account's Monitors.
+hide_table_of_contents: true
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/alerts.png')} alt="icon" width="40"/>
 
 The Monitors Management API allows you to manage Monitors from HTTP endpoints. Monitors continuously query your data to monitor and send notifications when specific events occur. For more information see [Monitors](https://help.sumologic.com/?cid=10020).
 
-
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
-
-
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
-
-
-
+{@import ../reuse/api-intro.md}
 
 
 <table>

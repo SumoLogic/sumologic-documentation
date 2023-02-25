@@ -3,15 +3,12 @@ id: saml-configuration
 title: SAML Configuration Management APIs
 sidebar_label: SAML Configuration
 description: Use HTTP endpoints to manage your SAML configuration.
+hide_table_of_contents: true
 ---
 
 The [SAML Configuration](/docs/manage/security/saml/set-up-saml) Management API allows you to provision Security Assertion Markup Language (SAML) 2.0 to enable Single Sign-On (SSO) for user access to Sumo Logic.
 
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
-
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
-
-
+{@import ../reuse/api-intro.md}
 
 <table>
   <tr>

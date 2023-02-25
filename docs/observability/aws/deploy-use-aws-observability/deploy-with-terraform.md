@@ -80,7 +80,7 @@ server machine of your choice:
     ```
     This will install the required Terraform providers, including [Null](https://www.terraform.io/docs/providers/null/index.html), [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs), [Time Provider](https://registry.terraform.io/providers/hashicorp/time/latest/docs), [Random Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs).
 1. Configure the following mandatory parameters in the **main.auto.tfvars** file.
-   * `sumologic_environment`: [Sumo Logic Deployment](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) Enter au, ca, de, eu, jp, us2, in, fed or us1.
+   * `sumologic_environment`: [Sumo Logic Deployment](/docs/api/authentication-endpoints-security#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) Enter au, ca, de, eu, jp, us2, in, fed or us1.
    * `sumologic_access_id`: [Sumo Logic Access ID](/docs/manage/security/access-keys.md) Sumo Logic Access ID.
    * `sumologic_access_key`: [Sumo Logic Access Key](/docs/manage/security/access-keys.md) Sumo Logic Access Key used for Sumo Logic API calls.
    * `sumologic_organization_id`: [Sumo Logic Organization ID](../../../get-started/account-settings-preferences.md) You can find your org on the Preferences page in the Sumo Logic UI. For more information, see [Preferences Page](../../../get-started/account-settings-preferences.md). Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.

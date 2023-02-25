@@ -3,14 +3,16 @@ id: data-forwarding
 title: Data Forwarding Management APIs
 sidebar_label: Data Forwarding
 description: Use HTTP endpoints to manage Data Forwarding to S3.
-tags: [settings]
+hide_table_of_contents: true
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/send-data.png')} alt="icon" width="50"/>
 
 The Data Forwarding Management API allows you to forward log data from a Partition or Scheduled View to an S3 bucket. For more information see [Forwarding Data to S3](/docs/manage/data-forwarding/amazon-s3-bucket).
 
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
-
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+{@import ../reuse/api-intro.md}
 
 <table>
   <tr>

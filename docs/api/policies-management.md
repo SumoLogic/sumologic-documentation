@@ -1,16 +1,14 @@
 ---
-id: policies
+id: policies-management
 title: Policies Management APIs
-sidebar_label: Policies
+sidebar_label: Policies Management
 description: Use HTTP endpoints to manage your account's security policies.
+hide_table_of_contents: true
 ---
 
 The Policies Management API allows you to control the security and share settings of your organization. For more information see [Security](https://help.sumologic.com/?cid=4041).
 
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
-
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
-
+{@import ../reuse/api-intro.md}
 
 
 <table>

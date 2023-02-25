@@ -6,10 +6,10 @@ info:
     Welcome to the Sumo Logic API reference. You can use these APIs to interact with the Sumo Logic platform. For API information on collectors, search, and more, see [Sumo API Docs](/docs/api).
 
     ### API Endpoints
-    Sumo Logic has several deployments in different geographic locations. See [API endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for full details on determining the right endpoint for your geographic location.
+    Sumo Logic has several deployments in different geographic locations. See [API endpoints](/docs/api/authentication-endpoints-security#sumo-logic-endpoints-by-deployment-and-firewall-security) for full details on determining the right endpoint for your geographic location.
 
     ### Authentication
-    See [Sumo Logic API authentication](/docs/api/getting-started#authentication) for full details. We support the following options for API authentication:
+    See [Sumo Logic API authentication](/docs/api/authentication-endpoints-security#authentication) for full details. We support the following options for API authentication:
     - Access ID and Access Key
     - Base64 encoded Access ID and Access Key
 
@@ -26,10 +26,10 @@ info:
       curl -H "Authorization: Basic <encoded>" -X GET https://api.<deployment>.sumologic.com/api/v1/users
       ```
 
-    Refer to [API Authentication](/docs/api/getting-started#authentication) for a Base64 example.
+    Refer to [API Authentication](/docs/api/authentication-endpoints-security#authentication) for a Base64 example.
 
     ## Status Codes
-    For a list of generic status codes that apply to all our APIs, see [Sumo Logic API Status Codes](/docs/api/getting-started#status-codes). See the [HTTP status code registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) for reference.
+    For a list of generic status codes that apply to all our APIs, see [Sumo Logic API Status Codes](/docs/api/authentication-endpoints-security#status-codes). See the [HTTP status code registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) for reference.
 
     ## Filtering
     Some API endpoints support filtering results on a specified set of fields. Each endpoint that supports filtering will list the fields that can be filtered. Multiple fields can be combined by using an ampersand `&` character.
@@ -328,7 +328,7 @@ tags:
   x-displayName: Ingest Budgets V2
 - name: partitionManagement
   description: |
-    [Partition management API](/docs/api/partitions.md): Creating a Partition allows you to improve search performance by searching over a smaller number of messages. For more information see [Manage Partitions](https://help.sumologic.com/?cid=5231).
+    [Partition management API](/docs/api/partition-management.md): Creating a Partition allows you to improve search performance by searching over a smaller number of messages. For more information see [Manage Partitions](https://help.sumologic.com/?cid=5231).
   x-displayName: Partitions
 - name: logsDataForwardingManagement
   description: |
@@ -336,7 +336,7 @@ tags:
   x-displayName: Logs Data Forwarding
 - name: roleManagement
   description: |
-    [Role management API](/docs/api/roles.md): Roles determine the functions that users are able to perform in Sumo Logic. To manage roles, you must have an administrator role or your role must have been assigned the manage users and roles capability. For more information see [Manage Roles](https://help.sumologic.com/?cid=5234).
+    [Role management API](/docs/api/role-management.md): Roles determine the functions that users are able to perform in Sumo Logic. To manage roles, you must have an administrator role or your role must have been assigned the manage users and roles capability. For more information see [Manage Roles](https://help.sumologic.com/?cid=5234).
   x-displayName: Roles
 - name: lookupManagement
   description: |
@@ -348,7 +348,7 @@ tags:
   x-displayName: Scheduled Views
 - name: tokensLibraryManagement
   description: |
-    [Tokens management API](/docs/api/tokens.md): Tokens are associated with your organization to authorize specific operations. Currently, we support collector registration tokens, which can be used to register Installed Collectors. Managing tokens requires the Manage Tokens role capability. For more information see [Installation Tokens](https://help.sumologic.com/?cid=0100).
+    [Tokens management API](/docs/api/token-management.md): Tokens are associated with your organization to authorize specific operations. Currently, we support collector registration tokens, which can be used to register Installed Collectors. Managing tokens requires the Manage Tokens role capability. For more information see [Installation Tokens](https://help.sumologic.com/?cid=0100).
   x-displayName: Tokens
 - name: transformationRuleManagement
   description: |
@@ -396,7 +396,7 @@ tags:
   x-displayName: Password Policy
 - name: policiesManagement
   description: |
-    [Policies management API](/docs/api/policies.md): Policies control the security and share settings of your organization. For more information see [Security](https://help.sumologic.com/?cid=4041).
+    [Policies management API](/docs/api/policies-management.md): Policies control the security and share settings of your organization. For more information see [Security](https://help.sumologic.com/?cid=4041).
   x-displayName: Policies
 - name: traces
   description: |
@@ -412,7 +412,7 @@ tags:
   x-displayName: Service Map
 - name: monitorsLibraryManagement
   description: |
-    [Monitor Management API](/docs/api/monitors.md): Monitors continuously query your data to monitor and send notifications when specific events occur.
+    [Monitor Management API](/docs/api/monitors-management.md): Monitors continuously query your data to monitor and send notifications when specific events occur.
     For more information see [Monitors](https://help.sumologic.com/?cid=10020).
   x-displayName: Monitors
 - name: slosLibraryManagement
