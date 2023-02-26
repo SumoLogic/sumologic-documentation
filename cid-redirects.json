@@ -105,7 +105,7 @@
   "/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Metrics_from_Azure_Monitor": "/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor",
   "/03Send-Data/Collect-from-Other-Data-Sources/Collect_AWS_Lambda_Logs_using_an_Extension": "/docs/send-data/collect-from-other-data-sources/collect-aws-lambda-logs-extension",
   "/03Send-Data/Collect-from-Other-Data-Sources/Collect_AWS_Lambda_Logs_using_an_Extension/Performance_Impact_and_Failover_Handling": "/docs/send-data/collect-from-other-data-sources/performance-impact-failover-handling",
-  "/03Send-Data/Collect-from-Other-Data-Sources/Collect_from_VMware_vRealize": "/docs/send-data/collect-from-other-data-sources/collect-vmware-vrealize",
+  "/03Send-Data/Collect-from-Other-Data-Sources/Collect_from_VMware_vRealize": "/docs/send-data/collect-from-other-data-sources/vmware-vrealize-log-insight",
   "/03Send-Data/Collect-from-Other-Data-Sources/Collect_from_VMware_vRealize/Collect_metrics_from_VMware_vRealize_Operations_Manager_8_Enterprise": "/docs/send-data/collect-from-other-data-sources/collect-metrics-vrealize-operations-manager",
   "/03Send-Data/Collect-from-Other-Data-Sources/Collect_from_VMware_vRealize/VMware_AirWatch_Integration_for_Sumo_Logic": "/docs/send-data/collect-from-other-data-sources/vmware-airwatch-integration",
   "/03Send-Data/Collect-from-Other-Data-Sources/Collect_from_VMware_vRealize/VMware_vRealize_Log_Insight": "/docs/send-data/collect-from-other-data-sources/vmware-vrealize-log-insight",
