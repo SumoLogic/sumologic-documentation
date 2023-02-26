@@ -1256,7 +1256,6 @@
   "/docs/api/collectors": "/docs/api/collector-management",
   "/docs/api/fields": "/docs/api/field-management",
   "/docs/api/folders": "/docs/api/folder-management",
-  "/docs/api/getting-started": "/docs/api/getting-started",
   "/docs/api/monitors": "/docs/api/monitors-management",
   "/docs/api/partitions": "/docs/api/partition-management",
   "/docs/api/policies": "/docs/api/policies-management",
