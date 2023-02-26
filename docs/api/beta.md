@@ -3,11 +3,11 @@ id: beta
 title: APIs (Beta)
 ---
 
-<img src={useBaseUrl('img/icons/business/beta.png')} alt="icon" width="55"/>
+<p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
 
 See the latest advancements in Sumo Logic APIs.
 
-{@import ../reuse/api-intro.md}
+Refer to [Getting Started](/docs/api/authentication-endpoints-security) for Authentication and Endpoint information.
 
 ## In Open Beta
 
