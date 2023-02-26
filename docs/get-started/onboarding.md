@@ -23,7 +23,7 @@ Sign up for free trial through [Sumo Logic or AWS Marketplace](/docs/get-started
 :::
 
 :::sumo Need help?
-Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [contact support](https://support.sumologic.com/hc/en-us).
+Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/hc/en-us).
 :::
 
 ## Your Sumo Logic Journey
