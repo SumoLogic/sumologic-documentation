@@ -21,9 +21,9 @@ The help is context-sensitive. If you are on a page in the Web UI, the help syst
 
 For questions or issues concerning Sumo Logic Help, contact our documentation team at [documentation@sumologic.com](mailto:documentation@sumologic.com).
 
-## Tech Support
+## Support
 
-If you haven't found the answer to your question in the online Help, go to **Help > Support** , which provides access to the Sumo Logic **Support Center** at [https://support.sumologic.com](https://support.sumologic.com/).
+If you haven't found the answer to your question in the online Help, go to **Help > Support**, which provides access to the Sumo Logic **Support Center** at [https://support.sumologic.com](https://support.sumologic.com/).
 
 ![Help - Support.png](/img/get-started/Help-Support.png)
 
@@ -41,6 +41,10 @@ Depending on your account type, you may also log a ticket with Sumo Logic Suppor
         allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+
+:::sumo
+For Sumo Logic terms and conditions, see https://www.sumologic.com/support-terms.
+:::
 
 ## Training and Certification
 

@@ -1,26 +1,20 @@
 ---
 id: sign-up
 title: Sign Up and Activate Your Account
-sidebar_label: Sign Up
 description: Sign Up with Sumo Logic, creating and activating your account.
 ---
 
-Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data—without having to manage and scale any hardware or storage. With Sumo Logic Free, you can open a free account and start using Sumo Logic right away.
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-When you sign up for your initial free trial, you're given a Sumo Logic **Trial account**: 30 days of Enterprise account access to review and use features. After 30 days, if you don't choose to purchase a plan, you will continue with a Sumo Logic **Free account**. You can [upgrade to a plan](https://www.sumologic.com/pricing) at any time.
+Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data — without having to manage and scale any hardware or storage.
 
-You have a couple of options to create and activate an account:
+By signing up for a trial, you can open a free account and start using Sumo Logic right away. With this trial account, you're given 30 days of Enterprise account access to review and use features.
 
-* [Trial Account](#trial-accounts) through the Sumo Logic site
-* [AWS Marketplace](#aws-marketplace) through AWS and completes through Sumo Logic
+You can create a Sumo Logic Trial account through [through our site](#sign-up-through-sumo-logic) or [AWS Marketplace](#aws-marketplace).
 
-:::sumo
-For Sumo Logic terms and conditions, see https://www.sumologic.com/support-terms.
-:::
+## Sign up through Sumo Logic
 
-## Create a Sumo Logic Trial account
-
-Sign up and activate within minutes:
+Sign up for a Trial account and start using Sumo Logic in minutes:
 
 1. Click the **Start free trial** button in the Docs nav bar.
 1. Follow the sign-up steps to register and create your free Sumo Logic instance with a business address.
@@ -28,29 +22,35 @@ Sign up and activate within minutes:
 Sumo Logic sends you an email to activate your account, and the [Sumo Logic Setup Wizard](/docs/send-data/setup-wizard) is displayed.
 
 :::note
-Remember your deployment region selection (for example, `us-west-1`). You may need it when integrating apps and features.
+You have three days to activate or it will be removed. You can sign up again if you miss activating your account.
 :::
 
 ### Activate your account
 
 To activate your Sumo Logic Trial account:
 
-1. Check your inbox for the activation Sumo Logic email, then click **Activate Now**. If you don't see it, check your Spam and Trash folders.
-1. Fill out the **Activate Your Account** form.
-1. Click **Activate**.
-1. Once your account is activated, click the ![close](/img/get-started/github/close-icon.png) at the top right of the *Welcome to Sumo Logic* web page. You will not need to follow the in-application guide.
+1. In the Sumo Logic activation email, click **Activate account**. If you don't see it, check your Spam and Trash folders.
+1. Fill out the **Activate Your Account** form, then click **Activate**.
 
-In a few minutes, your account is activated and the Sumo Logic Setup Wizard displays in a new browser tab. You can **Collect, See, and Act** to monitor, troubleshoot, and secure your app.
+Next, you'll be taken to a brief two-step data collector installation process, which will get you up and running with insights in a couple of minutes.
 
-Next, use the Setup Wizard to send your logs to Sumo Logic.
+### Install Data Collector
 
-:::note
-You have three days to activate or it will be removed. You can sign up again if you miss activating your account.
-:::
+1. Select the platform (Linux, Windows, macOS, or AWS) where you'd like to install the Sumo Logic OpenTelemetry collector. <br/><img src={useBaseUrl('img/get-started/data-collection.png')} alt="icon" width="400" />
+1. Copy, paste, and run the provided command to your PowerShell or Terminal. This will install the collector, app, and dashboards. When finished, click **Start using Sumo**. <br/><img src={useBaseUrl('img/get-started/install-otel.png')} alt="icon" width="400" />
+1. Next, you'll be taken to your onboarding checklist guide, where you can view your Dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
 
-## Free account
+Congrats! You can now collect, see, and act to monitor, troubleshoot, and secure your app.
 
-When your Trial account expires (after 30 days), your account will convert to a Sumo Logic **Free account**. You'll continue will our monitoring and continuous intelligence services, but more limited features. You can [upgrade to a paid plan](https://www.sumologic.com/pricing) at any time. For more information, see [Sumo Logic Account Usage](/docs/manage/manage-subscription).
+#### Resources
+
+* [Getting started with Sumo Logic](/docs/get-started/onboarding)
+* [Onboarding checklists](/docs/get-started/onboarding-checklists)
+* [Setup Wizard](/docs/send-data/setup-wizard)
+
+### Upgrade or continue with Free account
+
+After 30 days, your Sumo Logic **Trial account** will convert to a **Free account**. You can continue using our monitoring and continuous intelligence services, but with limited features. You can [upgrade to a paid plan](https://www.sumologic.com/pricing) at any time.
 
 |             | Trial accounts | Free accounts
 |:------------|:---------------|:------------
@@ -66,12 +66,14 @@ When your Trial account expires (after 30 days), your account will convert to a 
 <sup>3</sup> Forwards your logs to an S3 bucket after being collected and analyzed in Sumo Logic.<br/>
 <sup>4</sup> Notifies you in real-time when errors occur on your systems.
 
+For more information, see [Sumo Logic Account Usage](/docs/manage/manage-subscription).
+
 ## Sign up through AWS Marketplace
 
 Signing up for a Sumo Logic account through the AWS Marketplace creates a new Sumo Logic organization and account. It allows you to pay your bill using your Amazon account. All you need to sign up is a company email address and your location: North America, Europe, or Australia.
 
 :::info Valid Emails
-Do not use a Google or Yahoo email account to create your Sumo Logic account.
+Do not use a Gmail or Yahoo email account to create your Sumo Logic account.
 :::
 
 Select the plan that fits your usage requirements. The first 30 days are free of charge. All Sumo Logic features are supported for your Account Type, based on your subscription plan.
@@ -111,7 +113,7 @@ To sign up through AWS Marketplace:
 
 Sumo Logic sends you an email to activate your account, and the Sumo Logic Setup Wizard is displayed.
 
-### Activate Your Sumo Logic Account
+### Activate your account
 
 Activate your account using the email from Sumo Logic. If you did not find an email, check your Spam and Trash folders.
 
@@ -119,7 +121,7 @@ Activate your account using the email from Sumo Logic. If you did not find an em
 You have three days to activate or it will be removed. You can sign up again if you miss activating your account.
 :::
 
-To activate your Sumo Logic Free Trial account:
+To activate your Sumo Logic Trial account:
 
 1. Locate and review the activation Sumo Logic email, then click **Activate Now**.
 1. Fill out the **Activate Your Account** form.
@@ -129,13 +131,15 @@ In a few minutes, your account is activated and the Sumo Logic Setup Wizard disp
 
 Next, use the [Setup Wizard](/docs/send-data/setup-wizard) to send your logs to Sumo Logic.
 
-### Cancel your Account through AWS Marketplace
+#### Cancel your account
+
+Should you decide to cancel, you can do it through AWS Marketplace.
 
 1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace) and access your account.
 1. Go to **Manage your software subscriptions** and select **Sumo Logic**.<br/>  ![AWS Cancel](/img/get-started/aws_marketplace_cancel.png)
 1. Click **Cancel subscription**.
 
-Your subscription is cancelled immediately.
+Your subscription will be cancelled immediately.
 
 ### Upgrade Your Account
 
