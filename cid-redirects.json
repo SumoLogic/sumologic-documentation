@@ -1229,7 +1229,6 @@
   "/APIs/General_API_Information/Sumo_Logic_Endpoints_and_Firewall_Security": "/docs/api/getting-started",
   "/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security": "/docs/api/getting-started",
   "/APIs/General-API-Information/Sumo-Logic-Endpoints-and-Firewall-Security": "/docs/api/getting-started",
-  "/docs/api/getting-started": "/docs/api/getting-started",
   "/APIs/Partition_Management_API": "/docs/api/partition-management",
   "/APIs/Password_Policy_Management_API": "/docs/api/password-policy",
   "/APIs/Policies_Management_API": "/docs/api/policies-management",
