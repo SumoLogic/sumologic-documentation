@@ -15,7 +15,7 @@ Sumo manages an elastic scaling set of syslog servers, which scales up and down
 syslog.collection.YOUR_DEPLOYMENT.sumologic.com
 ```
 
-where `YOUR_DEPLOYMENT` is `au`, `ca`, `de`, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For more information, see [Sumo Logic Endpoints and Firewall Security](/docs/api/authentication-endpoints-security#sumo-logic-endpoints-by-deployment-and-firewall-security).
+where `YOUR_DEPLOYMENT` is `au`, `ca`, `de`, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For more information, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 :::important
 FIPS 140-2 compliance is not available for Cloud Syslog in the FedRAMP deployment.  

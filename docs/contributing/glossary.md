@@ -77,7 +77,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Data Volume Index](/docs/manage/ingestion-volume/data-volume-index)**. The Data Volume Index automatically provides data that allows you to understand your account’s data ingest volume in bytes and number of log messages processed overall. The Data Volume Index gives you better visibility into how much data you are sending to Sumo Logic, allowing you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription.
 
-**[Deployment](/docs/api/authentication-endpoints-security#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security#How_can_I_determine_which_endpoint_I_should_use.3F)**. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created.
+**[Deployment](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security#How_can_I_determine_which_endpoint_I_should_use.3F)**. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created.
 
 **Dimension**. In [Carbon 2.0](/docs/metrics/introduction/metric-formats#Carbon_2.0) and [Prometheus](/docs/metrics/introduction/metric-formats#Prometheus) metrics, dimensions are the one or more space-separated key-value pairs that uniquely identify what is being measured. Dimensions are also referred to as intrinsic tags and labels.
 
@@ -92,7 +92,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Ephemeral](/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral.md)**. Refers to data sources, such as containers, that are created and destroyed as appropriate, resulting in a high volume log data or metrics. In Sumo Logic, you can set a collector to be ephemeral—Sumo deletes an ephemeral collector automatically after it has been offline for 12 hours.
 
-**[Endpoints](/docs/api/authentication-endpoints-security#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)**. Sumo Logic has several pods that are assigned depending on the geographic location and the date an account is created. Sumo Logic redirects your browser to the correct login URL and also redirects Collectors to the correct endpoint. However, if you're using an API you'll need to manually direct requests to the correct API endpoint; API calls are not redirected to another endpoint.
+**[Endpoints](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)**. Sumo Logic has several pods that are assigned depending on the geographic location and the date an account is created. Sumo Logic redirects your browser to the correct login URL and also redirects Collectors to the correct endpoint. However, if you're using an API you'll need to manually direct requests to the correct API endpoint; API calls are not redirected to another endpoint.
 
 **[Exclude rule](/docs/send-data/collection/Processing-Rules/Include-and-Exclude-Rules)**. Exclude rules are a type of Processing Rule that specifies log messages that you don't want to send to Sumo Logic, think of it as an "allowlist" filter.
 

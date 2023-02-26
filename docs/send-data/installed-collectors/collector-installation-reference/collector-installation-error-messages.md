@@ -19,7 +19,7 @@ For additional information, see Collector Management API.
 This happens when the Collector installer is unable to successfully reach Sumo Logic to translate a customer's username and password to obtain a one-time registration token.
 
 * Verify Internet connectivity / proxy / URL settings are correct.
-* Attempt to access the appropriate [Sumo endpoint](/docs/api/authentication-endpoints-security#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) manually.
+* Attempt to access the appropriate [Sumo endpoint](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) manually.
 
 **It's taking longer than expected to register your Collector with Sumo Logic. Please check your settings and try again.**
 

@@ -48,7 +48,7 @@ The Terraform script performs the following actions:
    * Manage connections
    * Manage Content
 If you want to deploy in the Admin Recommended folder, you may need [Content Admin](/docs/manage/content-sharing/admin-mode) role.
-1. Using these [instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. To identify which deployment your Sumo Logic account is using, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/authentication-endpoints-security#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. Using these [instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. To identify which deployment your Sumo Logic account is using, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 1. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 
@@ -78,7 +78,7 @@ If you want to deploy in the Admin Recommended folder, you may need [Content Adm
 
 **Parameter**: `sumologic_environment`<br/>
 **Required**: Yes <br/>
-**Description**: This is your Sumo Logic Deployment. Enter au, ca, de, eu, jp, us2, in, fed or us1. See <a href="/docs/api/authentication-endpoints-security#sumo-logic-endpoints-by-deployment-and-firewall-security">Sumo Logic Endpoints</a> for more information.
+**Description**: This is your Sumo Logic Deployment. Enter au, ca, de, eu, jp, us2, in, fed or us1. See <a href="/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security">Sumo Logic Endpoints</a> for more information.
 
 ---
 **Parameter**: `sumologic_access_id`<br/>
@@ -180,7 +180,7 @@ As part of configuring the Application Components solution, we need to create fi
  export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
  export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
  ```
- Provide your Sumo Logic deployment for the `SUMOLOGIC_ENV` variable. For example: au, ca, de, eu, jp, us2, in, fed or us1. For more information on Sumo Logic deployments, see [Sumo Logic Endpoints and Firewall Security](/docs/api/authentication-endpoints-security/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+ Provide your Sumo Logic deployment for the `SUMOLOGIC_ENV` variable. For example: au, ca, de, eu, jp, us2, in, fed or us1. For more information on Sumo Logic deployments, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 * Run fields.sh using this command:
  ```
  sh fields.sh

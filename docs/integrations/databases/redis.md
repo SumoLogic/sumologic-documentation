@@ -323,7 +323,7 @@ At this point, Redis metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for Redis running on a non-Kubernetes environment for the Sumo Logic App for Redis. By default, Redis logs are stored in a log file. Redis also supports forwarding of logs via Syslog.
 
-Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/cloud-syslog-source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Sumo Logic Installed collectors](/docs/send-data/installed-collectors) which  requires you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/authentication-endpoints-security#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work.
+Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/cloud-syslog-source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Sumo Logic Installed collectors](/docs/send-data/installed-collectors) which  requires you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work.
 
 Follow the instructions to set up log collection:
 
@@ -463,7 +463,7 @@ Monitors are disabled by default. Once you have installed the alerts via this me
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using[ these](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page) instructions. Please identify which deployment your Sumo Logic account is in,[ using](/docs/api/authentication-endpoints-security#sumo-logic-endpoints-by-deployment-and-firewall-security) this link.
+1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using[ these](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page) instructions. Please identify which deployment your Sumo Logic account is in,[ using](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) this link.
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 3. Download the Sumo Logic Terraform package for Redis alerts. The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/redis). You can either download it via the “git clone” command or as a zip file.
 4. Monitor Configuration. After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**redis**/

@@ -2293,7 +2293,7 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'api/index'},
       items: [
-        'api/authentication-endpoints-security',
+        'api/getting-started',
         'api/access-keys',
         'api/account-management',
         'api/archive-ingestion',

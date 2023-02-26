@@ -16,14 +16,14 @@ This tutorial provides the steps to create and use ingest budgets. Details about
 
 ## Requirements
 
-API requests require authentication with an access id and key. In the following steps, the requests have the argument \<accessid:accesskey\> where you need to specify these. See [API authentication](/docs/api/authentication-endpoints-security#authentication) for details.
+API requests require authentication with an access id and key. In the following steps, the requests have the argument \<accessid:accesskey\> where you need to specify these. See [API authentication](/docs/api/getting-started#authentication) for details.
 
 In addition, you need to specify the correct endpoint to send your API requests. The following steps have the
-argument `<your deployment>` where you need to specify either us1, us2, eu, de, jp, or au. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/authentication-endpoints-security.md#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
+argument `<your deployment>` where you need to specify either us1, us2, eu, de, jp, or au. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 ## Ingest Budgets API Documentation
 
-Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](/docs/api/authentication-endpoints-security.md#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security") if you are unsure.
+Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security") if you are unsure.
 
 Select the documentation link for your deployment:
 

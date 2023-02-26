@@ -85,7 +85,7 @@ To view the status of the Sumo Logic service, find information on any outages, a
 
 You can also go to http://status.sumologic.com/.
 
-If there has been an outage on your [deployment](/docs/api/authentication-endpoints-security#sumo-logic-endpoints-by-deployment-and-firewall-security) (or pod), the Service Status Indicator displays:
+If there has been an outage on your [deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) (or pod), the Service Status Indicator displays:
 
 1. At the top of the **Help** menu.
 1. Next to **Help > Service Status**.

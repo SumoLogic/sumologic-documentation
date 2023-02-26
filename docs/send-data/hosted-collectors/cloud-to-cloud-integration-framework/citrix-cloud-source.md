@@ -124,7 +124,7 @@ To restart your source using the Sumo Management API, follow the instructions be
 * Method: POST
 * Example endpoint: `https://api.sumologic.com/api/v1/collectors/{collector_id}/sources/{source_id}/action/restart`.
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside `us1`. For example, an API endpoint in Europe would begin `api.eu.sumologic.com`. A service endpoint in `us2` (Western U.S.) would begin `service.us2.sumologic.com`. For more information, see [Sumo Logic Endpoints](/docs/api/authentication-endpoints-security#sumo-logic-endpoints-by-deployment-and-firewall-security).
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside `us1`. For example, an API endpoint in Europe would begin `api.eu.sumologic.com`. A service endpoint in `us2` (Western U.S.) would begin `service.us2.sumologic.com`. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 ### JSON configuration
 

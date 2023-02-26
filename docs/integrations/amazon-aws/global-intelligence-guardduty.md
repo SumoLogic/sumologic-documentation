@@ -170,7 +170,7 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 4. In **Configure application parameters** panel, enter the following parameters:
     * Access ID(Required): Sumo Logic Access ID generated from Step 1.
     * Access Key(Required): Sumo Logic Access Key generated from Step 1.
-    * Deployment Name(Required): Deployment name (environment name in lower case as per [docs](/docs/api/authentication-endpoints-security#sumo-logic-endpoints-by-deployment-and-firewall-security)).
+    * Deployment Name(Required): Deployment name (environment name in lower case as per [docs](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security)).
     * Collector Name: Enter the name of the Hosted Collector which will be created in Sumo Logic.
     * Source Name: Enter the name of the HTTP Source which will be created within the collector.
     * Source Category Name: Enter the name of the Source Category which will be used for writing search queries.
