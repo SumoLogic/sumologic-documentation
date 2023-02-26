@@ -10,22 +10,12 @@ The Ingest Budget Management API **V2** allows you to manage metadata-based [ing
 
 See [V1 API](/docs/api/ingest-budget-v1) for management of ingest budgets with a Field Value.
 
-To manage ingest budgets you must have the **Manage Ingest Budgets** [role capability](/docs/manage/users-roles/roles/role-capabilities). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them. For more information, see [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets).
+To manage ingest budgets, you must have the **Manage Ingest Budgets** [role capability](/docs/manage/users-roles/roles/role-capabilities). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them. For more information, see [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets).
 
-<table>
-  <tr>
-   <td>Account Type</td>
-  <td>Account Level</td>
-  </tr>
-  <tr>
-   <td>CloudFlex</td>
-   <td>Enterprise</td>
-  </tr>
-  <tr>
-   <td>Credits</td>
-   <td>Trial, Enterprise Operations, Enterprise Security, Enterprise Suite</td>
-  </tr>
-</table>
+| Account Type | Account Level          |
+|:--------------|:--------------|
+| CloudFlex    | Enterprise      |
+| Credits      | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
 {@import ../reuse/api-intro.md}
 
