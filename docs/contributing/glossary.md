@@ -65,7 +65,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Dashboard](/docs/dashboards-new)**. Dashboards contain a collection of real time Panels that provide a graphical representation of your organization's data. Panels are created by running search queries. From the resulting data in the Search page's Aggregates tab, you can display that data using different types of charts. Once Panels are created, they are saved to a Dashboard.
 
-**[Dashboard Theme](/docs/dashboards/edit-dashboards/manage-dashboard)**. In Dashboards, you can toggle the background color scheme from Light mode to Dark mode.
+**[Dashboard Theme](/docs/dashboards/edit-dashboards/manage-dashboards)**. In Dashboards, you can toggle the background color scheme from Light mode to Dark mode.
 
 **[Data access level](/docs/dashboards/get-started/set-data-access-level-dashboard)**. The data access level for a dashboard determines what data a user with whom the dashboard is shared can view in the dashboard.
 
