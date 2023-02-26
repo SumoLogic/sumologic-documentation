@@ -1,5 +1,5 @@
 ---
-id: traces
+id: tracing
 title: Traces APIs
 sidebar_label: Traces
 description: Tracing APIs give you the ability to browse and execute queries for traces and span analytics, and request a service map of your application environment.

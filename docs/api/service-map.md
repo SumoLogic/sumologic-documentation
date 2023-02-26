@@ -8,7 +8,7 @@ description: The Service Map API allows you to fetch a graph representation of t
 The Service Map API allows you to fetch a graph representation of the Service Map, which is a high-level view of your application environment, automatically derived from tracing data. For more information, see [Service Map](/docs/apm/traces/services-list-map).
 
 :::tip Other Tracing APIs
-See also: [Span Analytics APIs](/docs/api/span-analytics) and [Traces APIs](/docs/api/traces).
+See also: [Span Analytics APIs](/docs/api/span-analytics) and [Traces APIs](/docs/api/tracing).
 
 Tracing APIs give you the ability to browse and execute queries for traces and span analytics, and request a service map of your application environment.
 :::

@@ -2336,7 +2336,7 @@ integrations: [
         'api/span-analytics',
         'api/service-allowlist',
         'api/token-management',
-        'api/traces',
+        'api/tracing',
         'api/user-management',
         'api/troubleshooting',
         'api/beta',

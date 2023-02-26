@@ -8,7 +8,7 @@ description: The Span Analytics API allows you to browse spans collected in the 
 The Span Analytics API allows you to browse spans collected in the system. You can execute queries to find individual spans matching provided search criteria as well as run aggregated span queries and retrieve their results. For more information, see [Spans](/docs/apm/traces/spans).
 
 :::tip Other Tracing APIs
-See also: [Service Map APIs](/docs/api/service-map) and [Traces APIs](/docs/api/traces).
+See also: [Service Map APIs](/docs/api/service-map) and [Traces APIs](/docs/api/tracing).
 
 Tracing APIs give you the ability to browse and execute queries for traces and span analytics, and request a service map of your application environment.
 :::
