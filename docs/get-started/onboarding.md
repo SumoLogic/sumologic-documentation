@@ -77,7 +77,7 @@ You have downloaded an app and analyzed your data with searches and dashboards. 
 
 ![Share Dashboard](/img/get-started/WTS_Share-dashboard.png)
 
-You have the ability to share with individual users and groups with specific roles, setting the specific access permissions. You can edit the sharing permissions at any time, and share and revoke permissions as needed. For more information see [Content Sharing in Sumo Logic](/docs/manage/content-sharing/).
+You have the ability to share with individual users and groups with specific roles, setting the specific access permissions. You can edit the sharing permissions at any time, and share and revoke permissions as needed. For more information, see [Content Sharing in Sumo Logic](/docs/manage/content-sharing/).
 
 ## Get Training and Certification for free
 

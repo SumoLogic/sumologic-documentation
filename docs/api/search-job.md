@@ -7,13 +7,11 @@ description: The Search Job API provides access to resources and log data from t
 
 The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication.
 
-:::note
+:::caution
 Search Job APIs are not yet built with OpenAPI specifications and therefore not documented with the rest of the APIs. Instead, refer to the instructions below for details.
 :::
 
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
-
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+{@import ../reuse/api-intro.md}
 
 ## Before You Begin
 
@@ -47,7 +45,7 @@ Sumo Logic has deployments that are assigned depending on the geographic locatio
 
 See [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
 
-An HTTP 301 Moved error suggests that the wrong endpoint was specified.
+An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
 
 ## Session Timeout
 

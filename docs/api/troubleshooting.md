@@ -3,6 +3,7 @@ id: troubleshooting
 title: Troubleshooting Sumo Logic APIs
 sidebar_label: Troubleshooting
 description: This guide provides information to help you troubleshoot errors you may find when using the Sumo APIs.
+hide_table_of_contents: true
 ---
 
 This guide provides information to help you troubleshoot errors you may find when using the Sumo APIs.

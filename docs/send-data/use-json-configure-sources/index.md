@@ -12,7 +12,7 @@ JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.or
 
 See the following topics for additional information:
 
- * [Collector Management API](/docs/api/collectors)
+ * [Collector Management API](/docs/api/collector-management)
  * [JSON Source Parameters for Hosted Collectors](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources)
  * [JSON Source Parameters for Installed Collectors](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources)
  * [View or Download Collector or Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md)
