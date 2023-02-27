@@ -1,7 +1,6 @@
 ---
 id: cse-apis
 title: CSE APIs
-sidebar_label: APIs
 description: Learn how to access CSE APIs and API documentation.
 ---
 

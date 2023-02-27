@@ -1,6 +1,7 @@
 ---
 id: existing-collectors-and-sources
 title: Local Configuration File Management for Existing Collectors and Sources
+sidebar_label: For Existing Collectors and Sources
 description: Managing existing deployments means making changes only to a JSON file.
 ---
 

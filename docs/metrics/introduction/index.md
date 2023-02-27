@@ -37,13 +37,13 @@ Raw data points are individual data points. We sometimes refer to the raw data p
 
 While the baseline table contains raw data, rollup tables contain *aggregated* metric values. Sumo has two sets of rollup tables: one with the metric values for each time series aggregated by minute and one by hour. Sumo performs five types of aggregation on raw data points: avg, max, min, count, and sum. (The average value of the data points, the maximum value of the data points, the minimum value, the number of data points, and the sum of all the values.)
 
-The process of calculating aggregated values for the individual data points in a time bucket is called *quantization*. The quantization process is described in detail on [Metric Quantization](metric-quantization.md).
+The process of calculating aggregated values for the individual data points in a time bucket is called *quantization*. The quantization process is described in detail on [Metrics Quantization](metric-quantization.md).
 
-## Metric formats
+## Metrics formats
 
-Sumo supports the Graphite, Carbon 2.0, and Prometheus metric formats. For more information, see [Metric Formats](/docs/metrics/introduction/metric-formats).
+Sumo supports the Graphite, Carbon 2.0, and Prometheus metric formats. For more information, see [Metrics Formats](/docs/metrics/introduction/metric-formats).
 
-## Metric sources
+## Metrics sources
 
 Currently available metric sources are:
 
@@ -61,7 +61,7 @@ Currently available metric sources are:
 
 * [Docker Stats source.](/docs/send-data/installed-collectors/sources/docker-sources.md) You can use the Docker Stats source on an installed collector to collect Docker container metrics, such as CPU usage, Memory usage, Network IO, and Disk IO.
 
-## Metric rules editor
+## Metrics rules editor
 
 You can can use Sumo’s metric rules editor to tag metrics with key-value pairs derived from the metrics. Then, you can use those key-value pairs in metric queries. This is especially useful if you ingest Graphite-formatted metrics. For example, given a Graphite metric like this one:
 
@@ -78,9 +78,9 @@ measurement = cpu-idle
 
 Sumo creates a key-value pair for each dot-separated segment of the metric path. This makes it a lot easier to query Graphite metrics.
 
-For more information, see [About Metric Rules](/docs/metrics/metric-rules-editor#about-metrics-rules).
+For more information, see [About Metrics Rules](/docs/metrics/metric-rules-editor#about-metrics-rules).
 
-## Metric queries
+## Metrics queries
 
 To query metrics in Sumo, you open the Metrics Explorer by clicking **+ New**, and selecting **Metrics**. In the screenshot below, the Metrics Explorer show the results of two queries.
 
@@ -90,28 +90,28 @@ To query metrics in Sumo, you open the Metrics Explorer by clicking **+ New**, a
 
 A metric query consists of a metric, one or more filters and optionally, one or more metric operators. Strictly speaking, both filters and operators are optional. In practice, your metric queries will almost always contain filters that narrow the scope of your query. 
 
-### Metric
+#### Metric
 
 When you create a metric query in the Metrics Explorer, the first thing you do is select a metric. When you click in the **Metrics** field, a list of metrics appears. 
 
-### Filters  
+#### Filters  
 
 Filters, sometimes referred to as selectors, narrow the scope of your query. If you don't include one or more filters in a metric query or apply an aggregation operator, it's possible that the query will return too many results to display.  A filter can be one or more key-value pairs, or a keyword string, or a combination of key-value pairs and keywords. When you click in the **Filters** field, a list of metadata fields appears, for example, `_sourceCategory`, `_collector`, `availabilityzone`, and so on. After you select a metadata field, a list of values appear. Here are two examples of filters:
 
 * `cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu-idle`
 * `_sourceCategory=hostmetrics`
 
-### Operators
+#### Operators
 
 You can use metric operators of various sorts to process the metric data that matches your selectors. For example, you can use aggregation operators like `avg`, `max`, `min`, `sum`, and `count`; statistical operators like `pct` and `rate`;  and select time series that have the highest or lowest values of a particular metric using `topk` and `bottomk`. 
 
-For more information, see [Metric Operators](/docs/metrics/metrics-operators).
+For more information, see [Metrics Operators](/docs/metrics/metrics-operators).
 
 ## Creating a query
 
 For instructions on how to create a metric query, see [Metrics Explorer](../metrics-queries/metrics-explorer.md). 
 
-### Metric monitors
+### Metricmonitors
 
 You can configure a metric monitor for a metric query so that Sumo will send an alert notification, when the query results match the rules that you define for the monitor. There are two notification types: email and WebHook. 
 
@@ -119,20 +119,13 @@ You can set up several types of monitors: Critical, Warning, and Missing Data. C
 
 For more information, see [Monitors](/docs/alerts/monitors).
 
-## Metric throttling
+## Metrics throttling
 
-With Sumo metrics, an account has Data Points per Minute (DPM) limit, which is shown on the **Account Page** in the Sumo web app. To allow for spikes in metrics ingestion, Sumo applies a multiplier to your DPM limit to allow you send metrics at a higher rate, referred as your DPM burst limit, before Sumo starts to throttle your sources. The multiplier depends on your daily DPM account limit. When you exceed your DPM burst limit, Sumo throttles your metric sources—your ingestion will be slowed down until the rate of ingestion returns is within the allowable contracted limits. For more information, see [Metric Throttling](../manage-metric-volume/metric-throttling.md).
+With Sumo metrics, an account has Data Points per Minute (DPM) limit, which is shown on the **Account Page** in the Sumo web app. To allow for spikes in metrics ingestion, Sumo applies a multiplier to your DPM limit to allow you send metrics at a higher rate, referred as your DPM burst limit, before Sumo starts to throttle your sources. The multiplier depends on your daily DPM account limit. When you exceed your DPM burst limit, Sumo throttles your metric sources—your ingestion will be slowed down until the rate of ingestion returns is within the allowable contracted limits. For more information, see [Metrics Throttling](../manage-metric-volume/metric-throttling.md).
 
 ## Metrics ingest data volume index
 
 An account’s metrics ingestion volume in data points is tracked in Sumo’s metrics ingest data volume index. You can query the index to see the total data points that were ingested over a time range, by collector, source, source name, source category, and source host. For more information, see Metrics Ingest Data Volume Index. 
-
-
-
-
-
-
-
 
 
 ## Guides

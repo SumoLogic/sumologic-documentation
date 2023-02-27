@@ -2,7 +2,7 @@
 id: line-area-metric-charts
 title: Create and Tailor Line and Area Metrics Charts
 sidebar_label: Line and Area Metrics Charts
-description: How to tailor line charts and area charts for metric queries.
+description: How to tailor line charts and area charts for metrics queries.
 ---
 
 :::note
@@ -11,9 +11,9 @@ This topic pertains to our Classic Metrics UI (Legacy). For information about 
 
 This section has instructions for configuring the look and feel of line and area charts. 
 
-## About metric charts
+## About metrics charts
 
-There are three types of charts you can use to visualize metric queries:  line charts, area charts, and singe-value charts. By default, when you run a metric query, Sumo presents the query results as a line chart. You can change any line chart to an area chart, as described in [Set Chart Type](#set-chart-type) below. However, you can only use a single value chart if your metric query returns a single time series.  
+There are three types of charts you can use to visualize metrics queries:  line charts, area charts, and singe-value charts. By default, when you run a metrics query, Sumo presents the query results as a line chart. You can change any line chart to an area chart, as described in [Set Chart Type](#set-chart-type) below. However, you can only use a single value chart if your metrics query returns a single time series.  
 
 ## Default chart styles and options
 
@@ -29,24 +29,24 @@ The screenshots below shows a line chart and an area chart for the same query, 
 
 ## Set chart-level options
 
-On the **Settings** tab for a metric query you can set the chart type, and configure a number of options that affect the chart as a whole, like the colors used, the width of lines, and for chart axes, the label, scale, and value ranges that are displayed.
+On the **Settings** tab for a metrics query you can set the chart type, and configure a number of options that affect the chart as a whole, like the colors used, the width of lines, and for chart axes, the label, scale, and value ranges that are displayed.
 
 To view the Settings tab:
 
-1. Run a metric query.
+1. Run a metrics query.
 1. Select the **Settings** tab.  
 
     ![line-chart-settings.png](/img/metrics/line-chart-settings.png)
 
 ### Set chart type
 
-Run a metric query, and click the **Settings** tab.
+Run a metrics query, and click the **Settings** tab.
 
 To change the chart type, click the down arrow next to **Chart Type**, and select the desired chart type.
 
 ### Set color palette for a chart
 
-Run a metric query, and click the **Settings** tab.
+Run a metrics query, and click the **Settings** tab.
 
 To change the color palette, click the down arrow and select a palette.
 

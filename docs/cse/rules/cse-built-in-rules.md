@@ -2706,7 +2706,7 @@ Rubeus is a utility  that provides Kerberos abuse capabilities. This rule is loo
 ## Ryuk Ransomware Endpoint Indicator
 
 
- Indicates a process has started with charachteristics that are highly similar to the Ryuk ransomware's execution behavior.
+ Indicates a process has started with characteristics that are highly similar to the Ryuk ransomware's execution behavior.
 
  # SC Exe Manipulating Windows Services
 

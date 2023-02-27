@@ -4,6 +4,10 @@ title: Sumo Logic Live Tail
 description: Sumo Logic Live Tail allows you to see a real-time live feed of log events associated with a Source or Collector, which you can use as a tool for development and troubleshooting.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/search/livetail/livetail.png')} alt="icon" width="50"/>
+
 Sumo Logic Live Tail allows you to see a real-time live feed of log messages associated with a Source or Collector, which you can use as a tool for development and troubleshooting.
 
 import DocCardList from '@theme/DocCardList';

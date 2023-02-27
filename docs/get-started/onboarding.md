@@ -1,11 +1,10 @@
 ---
 id: onboarding
 title: Getting Started with Sumo Logic
-sidebar_label: Getting started
+sidebar_label: Getting Started
 description: Get started quickly with Sumo Logic.
 tags: [get started, getting started]
 ---
-
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -19,8 +18,12 @@ Here you will learn how to:
 * Monitor and troubleshoot your environment
 * Share your findings with your team
 
+:::tip
+Sign up for free trial through [Sumo Logic or AWS Marketplace](/docs/get-started/sign-up).
+:::
+
 :::sumo Need help?
-Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or enter a [support ticket](https://support.sumologic.com/hc/en-us).
+Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/hc/en-us).
 :::
 
 ## Your Sumo Logic Journey
@@ -74,7 +77,7 @@ You have downloaded an app and analyzed your data with searches and dashboards. 
 
 ![Share Dashboard](/img/get-started/WTS_Share-dashboard.png)
 
-You have the ability to share with individual users and groups with specific roles, setting the specific access permissions. You can edit the sharing permissions at any time, and share and revoke permissions as needed. For more information see [Content Sharing in Sumo Logic](/docs/manage/content-sharing/).
+You have the ability to share with individual users and groups with specific roles, setting the specific access permissions. You can edit the sharing permissions at any time, and share and revoke permissions as needed. For more information, see [Content Sharing in Sumo Logic](/docs/manage/content-sharing/).
 
 ## Get Training and Certification for free
 

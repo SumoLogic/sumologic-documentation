@@ -5,7 +5,6 @@ sidebar_label: ThreatQ Source
 description: Learn how to set up a ThreatQ source.
 ---
 
-
 This topic has information about configuring a ThreatQ source in CSE.
 
 ThreatQ is a threat intelligence platform that centrally manages and correlates external sources of threat intel information. 
@@ -16,18 +15,10 @@ To do so, you simply configure a ThreatQ source in CSE. You supply the informati
 
 ## Configure a ThreatQ source
 
-1. In the CSE UI, select **Threat Intelligence** from the **Content** menu.
-
-    ![threat-intel-icon.png](/img/cse/threat-intel-icon.png)
-1. On the **Threat Intelligence** page, click **Add Source**.
-
-    ![threatq-add-source-icon.png](/img/cse/threatq-add-source-icon.png)
-1. On the **Add New Source** page, click **Create** in the ThreatQ tile.
-
-    ![threatq-create-icon.png](/img/cse/threatq-create-icon.png)
-1. The **Add New Source** page updates.
-
-    ![threatq-add-source.png](/img/cse/threatq-add-source.png)
+1. In the CSE UI, select **Threat Intelligence** from the **Content** menu. <br/>![threat-intel-icon.png](/img/cse/threat-intel-icon.png)
+1. On the **Threat Intelligence** page, click **Add Source**. <br/>  ![threatq-add-source-icon.png](/img/cse/threatq-add-source-icon.png)
+1. On the **Add New Source** page, click **Create** in the ThreatQ tile. <br/>  ![threatq-create-icon.png](/img/cse/threatq-create-icon.png)
+1. The **Add New Source** page updates. <br/>  ![threatq-add-source.png](/img/cse/threatq-add-source.png)
 1. **Name**. Enter a name for the source.
 1. **Description**. (Optional) Enter a description of the source.
 1. **Enabled**. By default, the new source will be enabled. Use the slider if you want to disable it.
@@ -35,7 +26,7 @@ To do so, you simply configure a ThreatQ source in CSE. You supply the informati
 1. **Client ID**. Enter your ThreatQ Client ID.
 1. **Client Secret**. Enter your ThreatQ Client Secret.
 1. **Poll Interval**. Enter how frequently, in minutes, that you want CSE to collect indicators from ThreatQ.
-1. **Custom Filters JSON**. (Optional) If you want, you can enter a JSON filter to specify the indicators you want to collect from ThreatQ. The example shown in the screenshot above, \[{“score”:{“+gte”:3}}\], will select indicators whose score is greater than or equal to 3.
+1. **Custom Filters JSON**. (Optional) If you want, you can enter a JSON filter to specify the indicators you want to collect from ThreatQ. The example shown in the screenshot above, `[{“score”:{“+gte”:3}}]`, will select indicators whose score is greater than or equal to 3.
 1. **Certificate**. (Optional) A PKCS format certificate is required to authenticate to your environment if you have an SSL API gateway in front of your on-premise ThreatQ service.
 
 ## ThreatQ sources in the CSE UI

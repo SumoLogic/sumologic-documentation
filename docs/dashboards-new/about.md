@@ -7,7 +7,7 @@ description: Learn the benefits of Dashboard (New) and how it seamlessly integra
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="75"/>
+<img src={useBaseUrl('img/dashboards-new/about-dashboard-new/dashboards-new.png')} alt="icon" width="50"/>
 
 Dashboard (New) allows you to analyze metric and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to effectively monitor and manage a Kubernetes environment.
 

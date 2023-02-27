@@ -1,6 +1,7 @@
 ---
 id: collect-ruby-on-rails-logs
 title: Collect Ruby on Rails Logs
+sidebar_label: Ruby on Rails
 description: Learn how to collect logs produced by Ruby on Rails applications.
 ---
 

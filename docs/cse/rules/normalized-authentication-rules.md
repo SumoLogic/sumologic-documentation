@@ -76,7 +76,3 @@ CSE determines which value of of `normalizedAction` is appropriate for a given l
 | 11 | CachedInteractive   | A user logged on to this computer with network credentials that were stored locally on the computer. The domain controller was not contacted to verify the credentials. | *logon* |
 | 12 | CachedRemoteInteractive | Same as RemoteInteractive. This is used for internal auditing. | *logon* |
 | 13 | CachedUnlock | Workstation logon. | \<none\> |
-
-
-
- 

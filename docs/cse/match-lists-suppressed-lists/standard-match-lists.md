@@ -4,7 +4,6 @@ title: Entity Tags and Standard Match Lists
 description: Learn about Entity Tags and standard Match Lists in CSE.
 ---
 
-
 This topic has information about how you can identify specific Entities or indicators that should be treated differently during CSE rule processing. For example, you might want to prevent a rule from firing for Records that contain one of a certain set of IP addresses. Conversely, you might want to only fire a Signal if a user Entity belongs to a certain group, such as domain admins. There are currently two methods of achieving this sort of allowlist/denylist behavior:
 
 * Schema key tags for Entities. This is the recommended approach. You simply apply predefined [schema key tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules.md) to new Entities once they come into CSE. See [Schema tag keys for Entities](#schema-tag-keys-for-entities) for information about which tag:value pairs to use for different Entities.  

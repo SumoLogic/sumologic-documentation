@@ -27,7 +27,7 @@ The Box API integration ingests events from the [Get Events API](https://develop
 
 ## States
 
-A Box Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/Health-Events).
+A Box Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events).
 
 A Box Source goes through the following states when created:
 1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
@@ -40,7 +40,7 @@ If the Source has any issues during any one of these states, it is placed in an 
 
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the Collection page, the [Health](/docs/manage/health-events#collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection.<br/><img src={useBaseUrl('img/send-data/box-source3.png')} alt="Box" />
+On the Collection page, the [Health](/docs/manage/health-events#collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection.<br/><img src={useBaseUrl('img/send-data/box-source3.png')} alt="Box" />
 
 You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/><img src={useBaseUrl('img/send-data/hover-c2c-error.png')} alt="Box" />
 
@@ -107,7 +107,7 @@ Field Name
 
 ## Error types
 
-When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/Health-Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/health-events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 <table>
   <tr>
@@ -166,7 +166,7 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/H
 
 #### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collectors). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 <table>
   <tr>

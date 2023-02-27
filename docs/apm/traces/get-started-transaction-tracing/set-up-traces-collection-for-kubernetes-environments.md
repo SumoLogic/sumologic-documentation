@@ -2,6 +2,7 @@
 id: set-up-traces-collection-for-kubernetes-environments
 title: Set up Traces Collection for Kubernetes Environments
 sidebar_label: Kubernetes Environment Setup
+description: Learn how to install the Sumo Logic Kubernetes Collection and send enhanced traces using OpenTelemetry.
 ---
 
 After installing or upgrading your Sumo Logic Kubernetes Collection, you will be able to send your traces directly to its endpoint using OpenTelemetry (as well as older formats like Jaeger or Zipkin).
@@ -14,22 +15,9 @@ Traces will be enhanced with Kubernetes metadata, similarly to the logs and metr
 * Kubernetes 1.20+
 * Helm 3.5+
 
-:::sumo availability
-
-<table>
-<tr>
-<td>Account Type</td>
-<td>Account Level</td>
-</tr>
-<tr>
-<td rowspan="2">Credits</td>
-<td>Enterprise Operations and Enterprise Suite</td>
-</tr>
-<tr>
-<td>Essentials get up to 5 GB a day </td>
-</tr>
-</table>
-:::
+| Account Type | Account Level         |
+|:--------------|:--------------------------|
+| Credits    | Enterprise Operations and Enterprise Suite<br/>Essentials get up to 5 GB a day |
 
 
 ## Installing Sumo Logic Tracing on Kubernetes

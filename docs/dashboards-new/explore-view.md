@@ -1,14 +1,19 @@
 ---
 id: explore-view
-title: Navigating Sumo Logic Dashboards with Explore
-sidebar_label: Explore View
+title: Explore
 description: Explore gives you an easy way to view and navigate the hierarchy of your environment.
 ---
 
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Explore is a navigation tool that provides an intuitive visual hierarchy of your environment. Use Explore to facilitate successful monitoring, managing, and troubleshooting.
+<img src={useBaseUrl('img/dashboards-new/explore/explore.png')} alt="Explore" width="50"/>
+
+**Explore** is a navigation tool that provides an intuitive visual hierarchy of your environment. Use Explore to facilitate successful monitoring, managing, and troubleshooting.
+
+:::note
+If you're looking for our Root Cause Explorer observability tool, [click here](/docs/observability/root-cause-explorer).
+:::
 
 ## Navigating Explore
 
