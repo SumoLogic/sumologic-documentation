@@ -31,13 +31,13 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage Ingest Budgets
    </td>
-   <td>Manage <a href="/docs/manage/ingestion-volume/Ingest-Budgets">ingest budgets</a>. Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them.
+   <td>Manage <a href="/docs/manage/ingestion-volume/ingest-budgets">ingest budgets</a>. Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them.
    </td>
   </tr>
   <tr>
    <td>Manage data volume feed
    </td>
-   <td><a href="/docs/manage/ingestion-volume/Data-Volume-Index">Enable and manage the data volume index</a> for your account to avoid using <a href="/docs/manage/manage-subscription/cloud-flex-accounts#Account-Capacity-Limitations">On-Demand Capacity</a>, and to determine when you need to upgrade your account.
+   <td><a href="/docs/manage/ingestion-volume/data-volume-index">Enable and manage the data volume index</a> for your account to avoid using <a href="/docs/manage/manage-subscription/cloud-flex-accounts#Account-Capacity-Limitations">On-Demand Capacity</a>, and to determine when you need to upgrade your account.
    </td>
   </tr>
   <tr>
@@ -75,32 +75,32 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>View Partitions
    </td>
-   <td>View <a href="/docs/manage/Partitions-Data-Tiers">Partitions</a>.
+   <td>View <a href="/docs/manage/partitions-data-tiers">Partitions</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Partitions
    </td>
-   <td>View, create, edit, and delete <a href="/docs/manage/Partitions-Data-Tiers">Partitions</a>.
+   <td>View, create, edit, and delete <a href="/docs/manage/partitions-data-tiers">Partitions</a>.
 <p>Note that if you grant a role the Manage Partitions capability, users with that role will also have View Partitions and Manage S3 data forwarding capabilities.</p>
    </td>
   </tr>
   <tr>
    <td>View Scheduled Views
    </td>
-   <td>View <a href="/docs/manage/Scheduled-Views">Scheduled Views</a>.
+   <td>View <a href="/docs/manage/scheduled-views">Scheduled Views</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Scheduled Views
    </td>
-   <td>View, create, edit, and delete <a href="/docs/manage/Scheduled-Views">Scheduled Views</a>. Note that if you grant a role the Manage Schedule View capability, users with that role will also have View Scheduled View capabilities.
+   <td>View, create, edit, and delete <a href="/docs/manage/scheduled-views">Scheduled Views</a>. Note that if you grant a role the Manage Schedule View capability, users with that role will also have View Scheduled View capabilities.
    </td>
   </tr>
   <tr>
    <td>Manage S3 data forwarding
    </td>
-   <td><a href="/docs/manage/Data-Forwarding/amazon-s3-bucket">Manage S3 data forwarding</a> from Sumo Logic to an S3 bucket.
+   <td><a href="/docs/manage/data-forwarding/amazon-s3-bucket">Manage S3 data forwarding</a> from Sumo Logic to an S3 bucket.
    </td>
   </tr>
   <tr>
@@ -112,7 +112,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage Tokens
    </td>
-   <td>Manage <a href="/docs/manage/Security/installation-tokens">Installation Tokens</a>.
+   <td>Manage <a href="/docs/manage/security/installation-tokens">Installation Tokens</a>.
    </td>
   </tr>
   <tr>
@@ -124,13 +124,13 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>View Parsers
    </td>
-   <td>View <a href="/docs/cse/schema/Parser-Editor">Parsers</a>.
+   <td>View <a href="/docs/cse/schema/parser-editor">Parsers</a>.
    </td>
   </tr>
   <tr>
    <td>Download Search Results
    </td>
-   <td><a href="/docs/search/Get-Started-with-Search/Search-Basics/Export-Search-Results">Export</a> log query results to a .csv file.
+   <td><a href="/docs/search/get-started-with-search/search-basics/export-search-results">Export</a> log query results to a .csv file.
    </td>
   </tr>
 </table>
@@ -204,19 +204,19 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage support account access
    </td>
-   <td>Enable <a href="/docs/manage/Security/Enable-Support-Account">management of the Sumo Logic support account</a> for your organization.
+   <td>Enable <a href="/docs/manage/security/Enable-Support-Account">management of the Sumo Logic support account</a> for your organization.
    </td>
   </tr>
   <tr>
    <td>Manage audit data feed.
    </td>
-   <td><a href="/docs/manage/Security/Audit-Index">Enable and manage the Audit Index</a>, which provides information on the internal events that occur in your account associated with account management, user activity, and scheduled searches.
+   <td><a href="/docs/manage/security/audit-index">Enable and manage the Audit Index</a>, which provides information on the internal events that occur in your account associated with account management, user activity, and scheduled searches.
    </td>
   </tr>
   <tr>
    <td>Manage SAML
    </td>
-   <td><a href="/docs/manage/Security/SAML">Provision and manage SAML</a> for single sign-on to your Sumo Logic accounts.
+   <td><a href="/docs/manage/security/SAML">Provision and manage SAML</a> for single sign-on to your Sumo Logic accounts.
    </td>
   </tr>
   <tr>
@@ -228,7 +228,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage organization settings
    </td>
-   <td>Users with this capability can configure a <a href="/docs/manage/Security/set-limit-user-concurrent-sessions">concurrent user sessions limit</a> and enable the <a href="/docs/manage/Security/data-access-level-shared-dashboards">Data Access Level for Shared Dashboards</a> security policy.
+   <td>Users with this capability can configure a <a href="/docs/manage/security/set-limit-user-concurrent-sessions">concurrent user sessions limit</a> and enable the <a href="/docs/manage/security/data-access-level-shared-dashboards">Data Access Level for Shared Dashboards</a> security policy.
    </td>
   </tr>
   <tr>
@@ -299,27 +299,27 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
   <tr>
    <td>View Monitors
    </td>
-   <td>View <a href="/docs/alerts/Monitors">Monitors</a>.
-<p>If <a href="/docs/alerts/Monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions </a>are enabled for your org, users with this capability can view folders on the <a href="/docs/alerts/Monitors">Monitors</a> page to which they've been granted View access, and the Monitors contained in those folders.</p>
+   <td>View <a href="/docs/alerts/monitors">Monitors</a>.
+<p>If <a href="/docs/alerts/monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions </a>are enabled for your org, users with this capability can view folders on the <a href="/docs/alerts/monitors">Monitors</a> page to which they've been granted View access, and the Monitors contained in those folders.</p>
    </td>
   </tr>
   <tr>
    <td>Manage Monitors
    </td>
-   <td>A user with this capability can create new folders and <a href="/docs/alerts/Monitors">Monitors</a>, and grant other roles permissions to the folders they create.
-<p>If <a href="/docs/alerts/Monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions</a> are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.</p>
+   <td>A user with this capability can create new folders and <a href="/docs/alerts/monitors">Monitors</a>, and grant other roles permissions to the folders they create.
+<p>If <a href="/docs/alerts/monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions</a> are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.</p>
    </td>
   </tr>
   <tr>
    <td>View Alerts
    </td>
-   <td>View <a href="/docs/alerts/Monitors/Alert-Response#Alert_List">Alerts</a> on the Alerts page.
+   <td>View <a href="/docs/alerts/monitors/alert-response#alert-list">Alerts</a> on the Alerts page.
    </td>
   </tr>
   <tr>
    <td>Admin Monitors
    </td>
-   <td>If <a href="/docs/alerts/Monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions</a> are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the <a href="/docs/alerts/Monitors">Monitors</a> page. This is similar to the Content Administrator capability of the Content Library.
+   <td>If <a href="/docs/alerts/monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions</a> are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the <a href="/docs/alerts/monitors">Monitors</a> page. This is similar to the Content Administrator capability of the Content Library.
    </td>
   </tr>
 </table>
@@ -338,7 +338,7 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
   <tr>
    <td>View Organizations
    </td>
-   <td>View the <a href="/docs/manage/Manage-Subscription/create-manage-orgs">Organizations</a> UI.
+   <td>View the <a href="/docs/manage/manage-subscription/create-manage-orgs">Organizations</a> UI.
    </td>
   </tr>
   <tr>
@@ -414,7 +414,7 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>Invoke Insights Actions
    </td>
-   <td>Choose and run an <a href="/docs/cse/Administration/Create-CSE-Actions">Action</a> from the Actions menu for an Insight.
+   <td>Choose and run an <a href="/docs/cse/administration/Create-CSE-Actions">Action</a> from the Actions menu for an Insight.
    </td>
   </tr>
   <tr>
@@ -480,13 +480,13 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>View File Analysis
    </td>
-   <td>View <a href="/docs/cse/rules/Import-YARA-Rules">file analysis</a> (YARA) rules.
+   <td>View <a href="/docs/cse/rules/import-yara-rules">file analysis</a> (YARA) rules.
    </td>
   </tr>
   <tr>
    <td>Manage File Analysis
    </td>
-   <td>Create, edit, and delete <a href="/docs/cse/rules/Import-YARA-Rules">file analysis</a> (YARA) rules.
+   <td>Create, edit, and delete <a href="/docs/cse/rules/import-yara-rules">file analysis</a> (YARA) rules.
    </td>
   </tr>
   <tr>
@@ -504,13 +504,13 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>View Network Blocks
    </td>
-   <td>View <a href="/docs/cse/Administration/Create-Use-Network-Blocks">network blocks</a>.
+   <td>View <a href="/docs/cse/administration/Create-Use-Network-Blocks">network blocks</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Network Blocks
    </td>
-   <td>Create, edit, and delete <a href="/docs/cse/Administration/Create-Use-Network-Blocks">network blocks</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/administration/Create-Use-Network-Blocks">network blocks</a>.
    </td>
   </tr>
   <tr>
@@ -540,31 +540,31 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>View Workflow
    </td>
-   <td>View Insight <a href="/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold">detection settings</a>, custom Insight <a href="/docs/cse/Administration/Manage-Custom-Insight-Statuses">statuses</a> and <a href="/docs/cse/Administration/Manage-Custom-Insight-Resolutions">resolutions</a>, and <a href="/docs/cse/Administration/Create-a-Custom-Tag-Schema">tag schemas</a>.
+   <td>View Insight <a href="/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold">detection settings</a>, custom Insight <a href="/docs/cse/administration/Manage-Custom-Insight-Statuses">statuses</a> and <a href="/docs/cse/administration/Manage-Custom-Insight-Resolutions">resolutions</a>, and <a href="/docs/cse/administration/Create-a-Custom-Tag-Schema">tag schemas</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Workflow
    </td>
-   <td>Create, edit, and delete Insight <a href="/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold">detection settings</a>, custom Insight <a href="/docs/cse/Administration/Manage-Custom-Insight-Statuses">statuses</a> and <a href="/docs/cse/Administration/Manage-Custom-Insight-Resolutions">resolutions</a>, and <a href="/docs/cse/Administration/Create-a-Custom-Tag-Schema">tag schemas</a>.
+   <td>Create, edit, and delete Insight <a href="/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold">detection settings</a>, custom Insight <a href="/docs/cse/administration/Manage-Custom-Insight-Statuses">statuses</a> and <a href="/docs/cse/administration/Manage-Custom-Insight-Resolutions">resolutions</a>, and <a href="/docs/cse/administration/Create-a-Custom-Tag-Schema">tag schemas</a>.
    </td>
   </tr>
   <tr>
    <td>View Context Actions
    </td>
-   <td>View <a href="/docs/cse/Administration/Create-CSE-Context-Actions">Context Actions</a>.
+   <td>View <a href="/docs/cse/administration/Create-CSE-Context-Actions">Context Actions</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Context Actions
    </td>
-   <td>Create, edit, and delete <a href="/docs/cse/Administration/Create-CSE-Context-Actions">Context Actions</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/administration/Create-CSE-Context-Actions">Context Actions</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Actions
    </td>
-   <td>View, create, edit, and delete <a href="/docs/cse/Administration/Create-CSE-Actions">Actions</a>.
+   <td>View, create, edit, and delete <a href="/docs/cse/administration/Create-CSE-Actions">Actions</a>.
    </td>
   </tr>
   <tr>

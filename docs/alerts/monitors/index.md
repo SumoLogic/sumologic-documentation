@@ -2,7 +2,8 @@
 slug: /alerts/monitors
 title: Monitors
 sidebar_label: Monitors
-description: Monitors continuously query your logs or metrics and send notifications when specific events occur, such as critical, warning, and missing data.
+description: Sumo Logic Monitors continuously query your logs or metrics and send notifications when specific events occur, such as critical, warning, and missing data.
+tags: [monitor, monitors]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -24,7 +25,7 @@ Learn how [Monitors differ from Scheduled Searches](/docs/alerts/difference-from
 * To manage and/or view monitors, you'll need the **Manage** and **View Monitors** [role capabilities](/docs/manage/users-roles/roles/role-capabilities.md). [Learn more](/docs/alerts/monitors/edit-settings/#monitors-folder-permissions) about controlling permissions at the monitor or folder level.
 * The frequency a Monitor executes depends upon a variety of factors such as the underlying query, the operators used, and the detection window. It can vary from a couple of seconds to a few minutes. If for example, the detection window of your alert is one day it will be evaluated every couple of minutes, whereas if the detection window of the monitor is 15 minutes then it will be evaluated every couple of seconds.
 * Log Monitors use the [role search filter](/docs/manage/users-roles/roles/construct-search-filter-for-role.md) of their creator.
-* Log Monitors delay execution by two minutes. This means it won't evaluate data from the current time, but evaluate data from two minutes ago.  This ensures that any delays in ingestion are factored in and won't generate false positive or false negative alerts.
+* Log Monitors delay execution by two minutes. This means it won't evaluate data from the current time, but evaluate data from two minutes ago. This ensures that any delays in ingestion are factored in and won't generate false positive or false negative alerts.
 * Metric Monitors delay execution by one minute.
 * Depending on your account type, you can have up to a certain number of Log and Metric Monitors.
   * Enterprise and Trial can have up to 1,000 Log Monitors and 1,500 Metric Monitors.

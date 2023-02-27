@@ -1,9 +1,10 @@
 ---
 id: fields
-title: Sumo Logic Fields
+title: Fields
 sidebar_label: Fields
 description: Learn how to define and manage the assignment of metadata to your logs.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. Fields may be referred to as Log Metadata Fields.
@@ -86,7 +87,7 @@ With this association, you can search for `cluster=k8s.dev` to return your logs
 
 ### Using Collector API
 
-Use the `fields` parameter with the [Collector API](/docs/api/collectors) to define fields on a Collector or Source.
+Use the `fields` parameter with the [Collector API](/docs/api/collector-management) to define fields on a Collector or Source.
 
 | Parameter | Type | Required? | Description | Access |
 |:--|:--|:--|:--|:--|

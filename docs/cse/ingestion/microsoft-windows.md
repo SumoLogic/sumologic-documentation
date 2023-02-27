@@ -1,6 +1,6 @@
 ---
 id: microsoft-windows
-title: Microsoft Windows
+title: Microsoft Windows - Cloud SIEM
 sidebar_label: Microsoft Windows
 description: Configure collection of Windows Event Log messages and send them to the CSE Windows Event Log mapper.
 ---

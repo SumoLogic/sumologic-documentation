@@ -1,13 +1,17 @@
 ---
 id: getting-started
-title: Sumo Logic API Authentication, Endpoints, and Security
+title: API Authentication, Endpoints, and Security
 sidebar_label: Authentication and Endpoints
 description: This guide contains information about API authentication and the Sumo Logic endpoints to use for your API client.
 ---
 
-This guide contains information about API authentication and the Sumo Logic endpoints to use for your API client.
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic APIs follow Representational State Transfer (REST) patterns and are optimized for ease of use and consistency. All API docs have been developed with the [OpenAPI Specification](https://www.openapis.org/), unless otherwise stated. You can generate client libraries in many languages and explore automated testing.
+<img src={useBaseUrl('img/icons/security/security-and-compliance.png')} alt="icon" width="40"/>
+
+This guide describes API authentication and the Sumo Logic endpoints to use for your API client.
+
+Sumo Logic APIs follow Representational State Transfer (REST) patterns and are optimized for ease of use and consistency. Our [API docs](https://api.sumologic.com/docs) have been developed with the [OpenAPI Specification](https://www.openapis.org/), unless otherwise stated.
 
 <!--
 #### Infrequent Data Tier
@@ -53,11 +57,12 @@ Sumo Logic supports the following options for API authentication:
 * Access ID and access key
 * Base64 encoded access id and access key
 
-See [Access Keys](/docs/manage/security/access-keys.md) to learn how to generate an access key. Make sure to copy the key you create, because it is displayed only once.
+See [Access Keys](/docs/manage/security/access-keys) to learn how to generate an access key. Make sure to copy the key you create, because it is displayed only once.
 
 ### Access ID and Access Key
 
-When you have an `accessId` and `accessKey` you can execute requests such as the following:
+When you have an `accessId` and `accessKey`, you can execute requests like the following:
+
 ```bash
 curl -u "<accessId>:<accessKey>" -X GET <API Endpoint>
 ```
@@ -66,18 +71,18 @@ Where `<API Endpoint>` is the Sumo Logic API URL you're sending requests to. For
 
 ### Basic Access (Base64 encoded)
 
-If you prefer to use [basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication), you can do a Base64 encoding of your `<accessId>:<accessKey>` to authenticate your HTTPS request. The following is an example request, replace the placeholder `<encoded>` with your encoded access id and access key string:
+If you prefer to use [basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication), you can do a Base64 encoding of your `<accessId>:<accessKey>` to authenticate your HTTPS request. The following is an example request. Replace the placeholder `<encoded>` with your encoded access id and access key string:
 
 ```bash
 curl -H "Authorization: Basic <encoded>" -X GET <API Endpoint>
 ```
 
-The spacing in the "Authorization" field is required.
+The spacing in the **Authorization** field is required.
 
 
 #### Base64 example
 
-In most Linux distributions you can use the 'base64' command. If the access id was `Aladdin` and your access key was `OpenSesame` then the command would be as follows:
+In most Linux distributions, you can use the `base64` command. As an example, if your access id is `Aladdin` and your access key is `OpenSesame`, then the command would be as follows:
 
 ```bash
 echo -n "Aladdin:OpenSesame" | base64 --wrap 0
@@ -93,6 +98,8 @@ This would yield a Base64 encoded string `QWxhZGRpbjpPcGVuU2VzYW1l` that is used
 
 
 ## Sumo Logic Endpoints by Deployment and Firewall Security
+
+<img src={useBaseUrl('img/icons/operations/firewall.png')} alt="icon" width="50"/>
 
 Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created.
 
@@ -231,9 +238,7 @@ https://endpoint9.collection.us2.sumologic.com/</td>
 
 ### Which endpoint should I should use?
 
-To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `in`, `ca`, or `au` you're on one of those pods. The US1 pod uses `service.sumologic.com`.
-
-The following image has an example URL from the US2 pod.
+To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `in`, `ca`, or `au`, you're on one of those pods. The only exception is the US1 pod, which uses `service.sumologic.com`.
 
 The specific collection endpoint will vary per account. The general format is: `endpoint[N].collection.[deploymentID].sumologic.com`.
 
@@ -242,12 +247,17 @@ You can also determine which deployment pod your account is using by creating an
 
 ### Securing access to Sumo Logic infrastructure via DNS name or IP address
 
-See the [static IP addresses for Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework#Static-IP-addresses) Sources.
+See the [static IP addresses for Cloud-to-Cloud Integration Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework#static-ip-addresses).
 
 For collection to work, your firewall must allow outbound traffic to Sumo Logic. Refer to [Test Connectivity for Sumo Logic Collectors](/docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors) for instructions on allowing outbound traffic over port 443.
 
-* If your firewall allows DNS entries, add the following to the allowlist in your firewall to allow outbound traffic to sumologic.com: `*.sumologic.com`. By default, the Collector contacts `collectors.sumologic.com` before it is redirected to a deployment-specific endpoint such as `collectors.us2.sumologic.com` and `endpoint[N].collection.[deploymentID].[sumologic.com]`.
-* If your firewall doesn’t allow DNS entries, you must allowlist all of the IP addresses for your deployment region. The addresses to allowlist depend on your Sumo Logic deployment. To determine the IP addresses that require allowlisting, download the JSON object provided by Amazon Web Services (AWS). Amazon advises that this file will change several times a week. For details on how the file is updated, its usage, its syntax, and downloading the JSON file see [AWS IP Address Ranges](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html).
+* If your firewall allows DNS entries, add the following to the allowlist in your firewall to allow outbound traffic to sumologic.com:
+   ```
+   *.sumologic.com
+   ```
+   * By default, the Collector contacts `collectors.sumologic.com` before it is redirected to a deployment-specific endpoint such as `collectors.us2.sumologic.com` and `endpoint[N].collection.[deploymentID].[sumologic.com]`.
+* If your firewall doesn’t allow DNS entries, you must allowlist all of the IP addresses for your deployment region. The addresses to allowlist depend on your Sumo Logic deployment.
+   * To determine the IP addresses that require allowlisting, download the JSON object provided by Amazon Web Services (AWS). Amazon advises that this file will change several times a week. For details on how the file is updated, its usage, its syntax, and how to download the JSON file, see [AWS IP Address Ranges](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html).
 
 ### FedRAMP Deployment
 
@@ -259,60 +269,20 @@ Sumo Logic's FedRAMP deployment is similar to our other deployments, such as US2
 
 
 ## Status Codes
-Generic status codes that apply to all our APIs. See the [HTTP status code registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) for reference.
-  <table>
-    <tr>
-      <td> <strong>HTTP Status Code</strong> </td>
-      <td> <strong>Error Code</strong> </td>
-      <td> <strong>Description</strong> </td>
-    </tr>
-    <tr>
-      <td> 301 </td>
-      <td> moved </td>
-      <td> The requested resource SHOULD be accessed through returned URI in Location Header. See [troubleshooting](/docs/api/troubleshooting) for details.</td>
-    </tr>
-    <tr>
-      <td> 401 </td>
-      <td> unauthorized </td>
-      <td> Credential could not be verified.</td>
-    </tr>
-    <tr>
-      <td> 403 </td>
-      <td> forbidden </td>
-      <td> This operation is not allowed for your account type or the user doesn't have the role capability to perform this action. See [troubleshooting](/docs/api/troubleshooting) for details.</td>
-    </tr>
-    <tr>
-      <td> 404 </td>
-      <td> notfound </td>
-      <td> Requested resource could not be found. </td>
-    </tr>
-    <tr>
-      <td> 405 </td>
-      <td> method.unsupported </td>
-      <td> Unsupported method for URL. </td>
-    </tr>
-    <tr>
-      <td> 415 </td>
-      <td> contenttype.invalid </td>
-      <td> Invalid content type. </td>
-    </tr>
-    <tr>
-      <td> 429 </td>
-      <td> rate.limit.exceeded </td>
-      <td> The API request rate is higher than 4 request per second or in-flight API requests are higher than 10 request per second. </td>
-    </tr>
-    <tr>
-      <td> 500 </td>
-      <td> internal.error </td>
-      <td> Internal server error. </td>
-    </tr>
-    <tr>
-      <td> 503 </td>
-      <td> service.unavailable </td>
-      <td> Service is currently unavailable. </td>
-    </tr>
-  </table>
 
+Generic status codes that apply to all our APIs. See the [HTTP status code registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) for reference.
+
+| HTTP Status Code | Error Code          | Description                 
+|:------------------|:---------------------|:-------------------------------------|
+| 301              | moved               | The requested resource SHOULD be accessed through returned URI in Location Header. See [troubleshooting](/docs/api/troubleshooting) for details.                                       |
+| 401              | unauthorized        | Credential could not be verified.                                                                                                                                                      |
+| 403              | forbidden           | This operation is not allowed for your account type or the user doesn't have the role capability to perform this action. See [troubleshooting](/docs/api/troubleshooting) for details. |
+| 404              | notfound            | Requested resource could not be found.                                                                                                                                                 |
+| 405              | method.unsupported  | Unsupported method for URL.                                                                                                                                                            |
+| 415              | contenttype.invalid | Invalid content type.                                                                                                                                                                  |
+| 429              | rate.limit.exceeded | The API request rate is higher than 4 request per second or in-flight API requests are higher than 10 request per second.                                                              |
+| 500              | internal.error      | Internal server error.                                                                                                                                                                 |
+| 503              | service.unavailable | Service is currently unavailable.                                                                                                                                                      |
 
 ## Rate limiting
 
@@ -323,16 +293,15 @@ If a rate is exceeded, a `rate limit exceeded 429` status code is returned.
 
 ## Versioning and Conflict Detection  
 
-The [Collector Management API](/docs/api/collectors) uses optimistic locking to deal with versioning and conflict detection. Any response that returns a single entity will have an ETag header which identifies the version of that entity. Subsequent updates (`PUT` requests) to that entity must provide the value of the `ETag` header in an If-Match header; if the header is missing or no longer corresponds to the latest version of the entity, the request will fail (with `403 Forbidden` or `412 Precondition Failed`, respectively). Clients must be prepared to handle such failures if they anticipate concurrent updates to the entities. Additionally, the value of the `ETag` header may be provided in an `If-None-Match` header in future `GET` requests for caching purposes.
+The [Collector Management API](/docs/api/collector-management) uses optimistic locking to deal with versioning and conflict detection. Any response that returns a single entity will have an ETag header which identifies the version of that entity.
+
+Subsequent updates (`PUT` requests) to that entity must provide the value of the `ETag` header in an If-Match header; if the header is missing or no longer corresponds to the latest version of the entity, the request will fail (with `403 Forbidden` or `412 Precondition Failed`, respectively).
+
+Clients must be prepared to handle such failures if they anticipate concurrent updates to the entities. Additionally, the value of the `ETag` header may be provided in an `If-None-Match` header in future `GET` requests for caching purposes.
 
 
 ## Sumo Logic alerts from static IP addresses
 
 Sumo Logic provides notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
 
-The [Test Connection feature for webhooks](/docs/alerts/webhook-connections/set-up-webhook-connections#Testing-a-connection) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
-
-
-## Beta APIs
-
-Check out our [APIs in beta](/docs/api/beta).
+The [Test Connection feature for webhooks](/docs/alerts/webhook-connections/set-up-webhook-connections#test-a-connection) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.

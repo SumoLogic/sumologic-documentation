@@ -140,7 +140,7 @@ Make sure the collector is installed on a machine that belongs to the domain man
 
 ## Step 2: Configure event log sources
 
-If you have installed collectors on each domain controller, as recommended, configure a [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Event-Log-Source) on each one. Otherwise, configure a [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/Remote-Windows-Event-Log-Source) to collect events from each Active Directory server. For these Windows Event sources, set the source category to **OS/Windows** and **Event Format** as **Collect using legacy format**.
+If you have installed collectors on each domain controller, as recommended, configure a [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/local-windows-event-log-source) on each one. Otherwise, configure a [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/remote-windows-event-log-source) to collect events from each Active Directory server. For these Windows Event sources, set the source category to **OS/Windows** and **Event Format** as **Collect using legacy format**.
 
 
 
@@ -157,7 +157,7 @@ To configure a script source, do the following:
 
 1. In Sumo Logic, select** Manage Data > Collection > Collection**.
 2. Find the name of the installed collector to which you'd like to add a Source. Click **Add...** then choose** Add Source **from the pop-up menu.
-3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
+3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 4. **Name**. Enter **DomainCollector** or **ADObjects**, depending on which script you are configuring. Description is optional.
 5. **Source Host** (optional). Enter the hostname or the IP address of the machine. The hostname is stored in a searchable field called `_sourceHost`. The hostname can be a maximum of 128 characters.
 6. **Source Category**. Enter a Source Category following the [Best Practices](/docs/send-data/best-practices) that allows you to include both the logs from these scripts and the logs from your Windows Event logs from the Domain Controller(s). For example, `DC/Windows/adObjects`, `DC/Windows/domainCollector`, and `DC/Windows/Event`. This will allow you to specify a query like `sourceCategory=DC/Windows/*` to bring in all AD-related logs.
@@ -197,10 +197,10 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. To install the app, click **Add to Library** and complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    * **Data Source.** Select **Enter a Custom Data Filter** and enter a filter that references the Windows Event Logs source and the script sources" (configured as described in [Collect Active Directory Log Files](/docs/integrations/microsoft-azure/Active-Directory-Legacy#Collect_Log_Files_for_the_Active_Directory_Legacy_App)). For example: `(_sourceCategory=OS/Windows OR _sourcecategory=*adscripts*)`.
+    * **Data Source.** Select **Enter a Custom Data Filter** and enter a filter that references the Windows Event Logs source and the script sources" (configured as described in [Collect Active Directory Log Files](/docs/integrations/microsoft-azure/active-directory-legacy#Collect_Log_Files_for_the_Active_Directory_Legacy_App)). For example: `(_sourceCategory=OS/Windows OR _sourcecategory=*adscripts*)`.
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 3. Click **Add to Library**.
 
@@ -218,7 +218,7 @@ The Sumo Logic application for Windows Active Directory (AD) includes several Da
 
 ### Information Dashboard
 
-This Dashboard will not display data unless you have downloaded and deployed the scripts, as described in [Collecting Active Directory log files](/docs/integrations/microsoft-azure/Active-Directory-Legacy#Collect_Log_Files_for_the_Active_Directory_Legacy_App).
+This Dashboard will not display data unless you have downloaded and deployed the scripts, as described in [Collecting Active Directory log files](/docs/integrations/microsoft-azure/active-directory-legacy#Collect_Log_Files_for_the_Active_Directory_Legacy_App).
 
 
 By default the time range for these panels is two hours. If your source only pulls in data every 12-24 hours, you may see a No Data Available error.  Adjust the time range for the panels in this dashboard to match your source.

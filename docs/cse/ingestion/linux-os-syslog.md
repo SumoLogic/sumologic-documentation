@@ -1,6 +1,6 @@
 ---
 id: linux-os-syslog
-title: Linux OS Syslog
+title: Linux OS Syslog - Cloud SIEM
 sidebar_label: Linux OS Syslog
 description: Configure a syslog source to ingest Linux OS log messages to be parsed by CSE’s system parser for Linux OS Syslog.
 ---

@@ -35,7 +35,7 @@ To generate a 1Password API token follow these steps:
 
 ## States
 
-A 1Password Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/Health-Events).
+A 1Password Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events).
 
 A 1Password Source goes through the following states when created:
 1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
@@ -48,14 +48,14 @@ If the Source has any issues during any one of these states, it is placed in an 
 
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![1password state.png](/img/send-data/1password-state.png)
+On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![1password state.png](/img/send-data/1password-state.png)
 
 Hover your mouse over the status icon to view a tooltip with details on the detected issue.<br/> ![1password](/img/send-data/health_error_generic.png)
 
 
 ## Create a 1Password Source
 
-When you create a 1Password Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
+When you create a 1Password Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors#Create_a_Hosted_Collector).
 
 To configure a 1Password Source:
 
@@ -65,26 +65,28 @@ To configure a 1Password Source:
 4. Enter a **Name** for the Source. The **description** is optional.<br/> ![1password-input](/img/send-data/1password-input.png)
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
 6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse). When configured with the **Forward to SIEM** option, the following metadata fields are set:
-  | Field Name | API | Value |
-  |:---|:---|:---|
-  | `_siemVendor` | Sign-in, Item | `1Password` |
-  | `_siemProduct` | Sign-in, Item | `1Password` |
-  | `_siemFormat` | Sign-in, Item | `JSON` |
-  | `_siemEventID` | Sign-in | `signin-{{category}}` |
-  | `_siemEventID` | Item | `item_usage-{{action}}` |
+
+| Field Name | API | Value |
+|:---|:---|:---|
+| `_siemVendor` | Sign-in, Item | `1Password` |
+| `_siemProduct` | Sign-in, Item | `1Password` |
+| `_siemFormat` | Sign-in, Item | `JSON` |
+| `_siemEventID` | Sign-in | `signin-{{category}}` |
+| `_siemEventID` | Item | `item_usage-{{action}}` |
+
 7. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
    * Define the fields you want to associate, each field needs a name (key) and value.
       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 8. **Base URL**. Provide your 1Password customer-specific domain, for example `events.1password.com`.
-9. **API Token**. Enter the token you got from creating your 1Password API token in the [Authentication section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1Password-Source#Authentication) above.
+9. **API Token**. Enter the token you got from creating your 1Password API token in the [Authentication section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source#Authentication) above.
 10. **Supported APIs to collect**. Select one or more of the available APIs, **Item Usage** and **Sign-in Attempts**.
 11. When you are finished configuring the Source, click **Submit**.
 
 
 ## Error types
 
-When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/Health-Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/health-events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 <table>
   <tr>
@@ -144,7 +146,7 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/H
 
 ## JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collectors). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 <table>
   <tr>

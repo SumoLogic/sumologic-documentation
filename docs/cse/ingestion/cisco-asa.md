@@ -1,6 +1,6 @@
 ---
 id: cisco-asa
-title: Cisco ASA
+title: Cisco ASA - Cloud SIEM
 sidebar_label: Cisco ASA
 description: Configure a syslog source to ingest Cisco ASA log messages to be parsed by CSE’s system parser for Cisco ASA.
 ---

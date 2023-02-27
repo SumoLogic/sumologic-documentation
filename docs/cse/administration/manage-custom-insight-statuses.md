@@ -27,8 +27,7 @@ To create a custom Insight status:
 
 1. Click the gear icon near the top of the CSE UI and choose **Workflow** under **Users**.
 1. On the **Workflow** page, click **Create Status**.
-1. On the **New Status** popup, enter a name and description for the status.  
-    ![new-status.png](/img/cse/new-status.png)
+1. On the **New Status** popup, enter a name and description for the status.  <br/>  ![new-status.png](/img/cse/new-status.png)
 1. Click **Create**.
 
 ## Change the order of Insight statuses
@@ -42,8 +41,7 @@ To change the order that the statuses appear in the **Status** dropdown, you can
 To change the order of Insight statuses:
 
 1. Click the gear icon near the top of the CSE UI and choose **Workflow** under **Users**.
-1. On the **Workflow** page, each status that can be moved has a handle to the left of its name.  
-    ![reorder-icons.png](/img/cse/reorder-icons.png)
+1. On the **Workflow** page, each status that can be moved has a handle to the left of its name.  <br/>  ![reorder-icons.png](/img/cse/reorder-icons.png)
 1. To move a status to a different location on the list, use your mouse to drag it to the desired location.
 
 ## Edit or delete a custom Insight status

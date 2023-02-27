@@ -1,7 +1,7 @@
 ---
 id: edit-settings
 title: Edit Monitor Settings and View Activity
-sidebar_label: Monitor Settings and Activity
+sidebar_label: Edit Monitor Settings
 description: Monitors continuously query your logs or metrics and send notifications when specific events occur, such as critical, warning, and missing data.
 ---
 
@@ -66,10 +66,6 @@ In the details pane, you can see the following details for a Monitor:
   * **Subscribe**
   * **Copy Link**.<br/><img src={useBaseUrl('img/monitors/monitor-actions.png')} alt="monitor more actions" width="400"/>
 
-## View Monitors History
-
-The history of alerts is available in the **Monitor History** tab of the details pane. This allows you to quickly see the history of all triggered alerts of the selected Monitor.<br/><img src={useBaseUrl('img/monitors/monitor-history.png')} alt="monitor-history.png" width="300"/>
-
 
 ## Monitors folder permissions
 
@@ -95,8 +91,11 @@ This option is present only if you have been granted **Manage** permission for t
 
 The permissions you set for a folder are inherited by that folder’s subfolders. When a user views permissions for such subfolders, the inherited permissions will be grayed out. It is not possible to deselect inherited permissions, but you can add additional permissions. Inherited permissions can only be removed by removing them from the higher level folder where they were assigned.
 
+## Monitor History
+
+In the **Monitor History** tab, you can view the history of all triggered alerts of your selected Monitor.<br/><img src={useBaseUrl('img/monitors/monitor-history.png')} alt="monitor-history.png" width="300"/>
 
 ## Additional Information
 
 * [Monitor resource in Terraform](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) 
-* [Monitor Management API](/docs/api/monitors)
+* [Monitor Management API](/docs/api/monitors-management)

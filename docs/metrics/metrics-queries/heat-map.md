@@ -3,7 +3,6 @@ id: heat-map
 title: Create a Heat Map
 sidebar_label: Heat Maps
 description: A heat map chart visualizes the count of data points returned by a metrics query within specified value ranges over time intervals of a specified duration.
-tags: [metrics, heat map]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

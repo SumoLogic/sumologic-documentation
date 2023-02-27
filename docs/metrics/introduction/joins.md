@@ -27,7 +27,7 @@ In the Metrics Explorer you can run up to six separate queries and display and c
 
 <img src={useBaseUrl('img/metrics/multiple-queries.png')} alt="multiple-queries.png"/>
 
-You can combine (join) the results of multiple queries, or use values from one query to filter values from from another.
+You can combine (join) the results of multiple queries, or use values from one query to filter values from another.
 
 Here’s an example of a simple join that sums two metrics:
 
@@ -128,7 +128,7 @@ Doing a quick comparison of metrics and average value over a short period can yi
 
 :::note
 query `#C` computed the two values of the average value.
-::: 
+:::
 
 At the right end of each query row, you can see that that quantization period automatically optimized for the selected period is one second (`quantize 1s (avg)`). If the quantization bucket size (one second in this case) is less than the interval at which the metrics are reported, some of the buckets may not contain data points from both query #A and query #B. In our example, there were only two one-second buckets in which both hosts reported metrics.
 

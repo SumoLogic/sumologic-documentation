@@ -1,7 +1,7 @@
 ---
 id: citrix-cloud-source
 title: Citrix Cloud Source
-sidebar_label: Citrix Cloud
+sidebar_label: Citrix Cloud Source
 description: This document explains how to collect System Log from the Citrix Cloud and send it to Sumo Logic.
 ---
 
@@ -31,7 +31,7 @@ The **Base URL** is the URL where your **Citrix Cloud** account is located. To g
 
   | Server location | Server located at  | Base URLs |
   | :---|:---|:---|
-  | US  Server | United States | `https://api-ap-us.cloud.com` |
+  | US  Server | United States | `https://api-us.cloud.com` |
   | APAC Server |Asia Pacific South|  `https://api-ap-s.cloud.com` |
   | EU Server | European Union | `https://api-eu.cloud.com` |
   | JP Server |  Japan | `https://api.citrixcloud.jp` |
@@ -92,8 +92,8 @@ To configure the Citrix Cloud API:
 7. In **Base URL**, choose the URL where your Citrix Cloud account is located. See [Base URL](#base-url) section to know your base URL.
 8. In **Customer ID**, enter the Customer ID you generated and secured from the [API Client](#api-client) section in step 6.
 9. In **Client ID**, enter the Client ID you generated and secured from the [API Client](#api-client) section in step 5.
-8. In **Client Secret**, authenticate your account by entering your Secret API key. Enter the **Secret** key you have generated and secured from [API Client](#api-client) section in step 5.
-9. When you are finished configuring the Source, click **Save**.
+10. In **Client Secret**, authenticate your account by entering your Secret API key. Enter the **Secret** key you have generated and secured from [API Client](#api-client) section in step 5.
+11. When you are finished configuring the Source, click **Save**.
 
 ### Error types
 
@@ -102,12 +102,33 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
 |:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable                                                    | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which it quits.                               | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which it quits.                               | FirstPartyGenericError |
+| ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs.                                     | Yes                                                   | The Source will retry indefinitely.                               | ThirdPartyGenericError |
+| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry indefinitely.                   | FirstPartyGenericError |
 
 ### Restarting your Source
 
-{@import ../../../reuse/restart-c2c-source.md}
+If your Source encounters ThirdPartyConfig errors, you can restart it from either the Sumo Logic UI or Sumo Logic API.
+
+#### UI
+
+To restart your source in the Sumo Logic platform, follow the steps below:
+1. Open the Collection page, and go to **Manage Data** > **Collection** > **Collection**.
+2. Select the source and click the **information** icon on the right side of the row.
+3. The API usage information popup is displayed. Click the **Restart Source** button on the bottom left. <br/><img src={useBaseUrl('img/send-data/restart-source-button.png')} alt="restart-source-button.png" width="550" />
+4. Click **Confirm** to send the restart request. <br/><img src={useBaseUrl('img/send-data/restart-source-confirm.png')} alt="restart-source-confirm.png" width="550" />
+5. The bottom left of the platform will provide a notification informing you the request was successful.<br/><img src={useBaseUrl('img/send-data/source-restart-initiated.png')} alt="source-restart-initiated.png" width="550" />
+
+#### API
+
+To restart your source using the Sumo Management API, follow the instructions below:
+* Method: POST
+* Example endpoint: `https://api.sumologic.com/api/v1/collectors/{collector_id}/sources/{source_id}/action/restart`.
+
+<details><summary>Which API endpoint should I use?</summary>
+
+{@import ../../../reuse/api-endpoints.md}
+
+</details>
 
 ### JSON configuration
 

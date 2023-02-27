@@ -37,7 +37,7 @@ If you're using Oracle in a Kubernetes environment, create the fields:
 * `pod_labels_db_cluster`
 * `pod_labels_db_cluster_address`
 * `pod_labels_db_cluster_port`
-  
+
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -424,8 +424,8 @@ Pivoting to Tracing data from Entity Inspector is possible only for “Oracle ad
 
 The instructions for setting up the Oracle performance metrics script vary by operating system:
 
-* For Linux, see [Set Up Oracle Performance Metrics Script on Linux](/docs/integrations/databases/Oracle/performance-metrics#linux)
-* For Windows, see[ Set Up Oracle Performance Metrics Script on Windows](/docs/integrations/databases/Oracle/performance-metrics#windows)
+* For Linux, see [Set Up Oracle Performance Metrics Script on Linux](/docs/integrations/databases/oracle/performance-metrics#linux)
+* For Windows, see[ Set Up Oracle Performance Metrics Script on Windows](/docs/integrations/databases/oracle/performance-metrics#windows)
 
 
 #### Configure Metrics Collection

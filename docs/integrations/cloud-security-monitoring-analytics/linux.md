@@ -115,7 +115,7 @@ You can use the RPM or Debian package to install a Collector on a Linux 64-bit s
 
 :::note
 * Starting with collector 19.170+, the installation directory is secured to users belonging to the `sumologic_collector` group.
-* Modifying user.properties may require sudo privileges. For more information see Enhanced File System Security for Installed Collectors.
+* Modifying user.properties may require sudo privileges. For more information, see Enhanced File System Security for Installed Collectors.
 :::
 
 3. (Optional) Provide a JSON Source information. You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See Using JSON to configure Sources. Alternatively, you can configure Sources at any time by using the Sumo web app. See Sources.
@@ -279,7 +279,7 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the Install the Apps from the Library.
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

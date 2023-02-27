@@ -107,7 +107,7 @@ This section provides instructions for configuring log collection for the Cisco 
 In this task, you configure an installed collector with a Syslog source that acts as a Syslog server to receive logs and events from Cisco Meraki.
 
 1. Configure an [Installed Collector](/docs/send-data/installed-collectors).
-2. Add a [Syslog source](/docs/send-data/installed-collectors/sources/Syslog-Source) to the installed collector:
+2. Add a [Syslog source](/docs/send-data/installed-collectors/sources/syslog-source) to the installed collector:
    * **Name**. (Required) A name is required.
    * **Description.** Optional.
    * **Protocol**. UDP or TCP.  Choose the protocol you configured in Cisco Meraki for Syslog forwarding.
@@ -136,8 +136,8 @@ To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+1. From the **App Catalog**, search for and select the app.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     *  **Data Source.** Select either of these options for the data source. 

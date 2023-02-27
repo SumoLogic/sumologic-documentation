@@ -1,6 +1,6 @@
 ---
 id: signal-sciences-waf
-title: Signal Sciences WAF
+title: Signal Sciences WAF - Cloud SIEM
 sidebar_label: Signal Sciences WAF
 description: Lean how to collect Signal Sciences WAF log messages and sending them to Sumo Logic to be ingested by CSE.
 ---

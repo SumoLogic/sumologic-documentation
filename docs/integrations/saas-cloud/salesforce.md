@@ -98,7 +98,7 @@ This section provides instructions for setting up event collection from Salesfor
 In this section, we will configure a collection of EventLogFiles and audit logs from Salesforce and send them to Sumo Logic via one of the methods listed below.
 
 * For non-FedRamp Sumo Logic deployments:
-    * [Create a Salesforce Cloud To Cloud Collector Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Salesforce-Source)
+    * [Create a Salesforce Cloud To Cloud Collector Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source)
 * If you're using the Sumo Logic FedRamp deployment:
     * [Configure a new SumoJanus installation for Salesforce](#configure-a-new-sumojanus-installation-for-salesforce-deprecated)
     * [Upgrade an existing SumoJanus installation for Salesforce](#upgrade-an-existing-sumojanus-installation-for-salesforce-deprecated)
@@ -346,9 +346,9 @@ If the browser does not connect to the salesforce instance and you are using Chr
 
 #### Step 7. Configure a script source (DEPRECATED)
 
-In Sumo Logic, configure a Script Source using the instructions in [Script Source](/docs/send-data/installed-collectors/sources/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
+In Sumo Logic, configure a Script Source using the instructions in [Script Source](/docs/send-data/installed-collectors/sources/script-source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
 
-To allow Script Sources you need to set the Collector parameter **`enableScriptSource=true` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
+To allow Script Sources you need to set the Collector parameter **`enableScriptSource=true` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 
 For the Sumo Logic App for Salesforce, use the following configuration settings:
 
@@ -395,8 +395,8 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+1. From the **App Catalog**, search for and select the app.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

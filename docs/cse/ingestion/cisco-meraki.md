@@ -1,6 +1,6 @@
 ---
 id: cisco-meraki
-title: Cisco Meraki
+title: Cisco Meraki - Cloud SIEM
 sidebar_label: Cisco Meraki
 description: Configure a syslog source to ingest Cisco Meraki log messages to be parsed by CSE’s system parser for Cisco Meraki.
 ---

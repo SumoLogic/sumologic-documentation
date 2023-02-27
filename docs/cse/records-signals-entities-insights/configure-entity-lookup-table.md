@@ -64,20 +64,13 @@ After you’ve created your Entity Lookup Table in the Sumo Logic Library, you c
 1. Click the gear icon in the CSE UI, and choose **Normalization**, under **Entities**.
 1. On the **Entity Normalization** page, click **Lookup Tables**.
 1. Click **Create** on the **Lookup Tables** tab.
-1. The **Existing Lookup Table** popup appears.
-
-    ![existing-lookup-table.png](/img/cse/existing-lookup-table.png)
-
+1. The **Existing Lookup Table** popup appears.<br/>  ![existing-lookup-table.png](/img/cse/existing-lookup-table.png)
 1. **Type**. Choose the type of normalization you want to set up.
-
    * **Host ID to Normalized Hostname**. Maps unique host IDs to recognizable hostnames.
    * **User ID to Normalized Username**. Maps unique user IDs to recognizable usernames.
    * **Username to Normalized Username**. Maps a username in one format to a username in another format.  
-
 1. **Lookup Column Name**. Enter the name of the Lookup Table column that contains the primary key for the table.
 1. **Substitution Column Name**. Enter the name of the Lookup Table column that contains the value you want to substitute for the lookup column.
 1. **Source Category**. (Optional) If you enter a source category, the lookup substitution will only be applied to Records that are tagged with that source category.
-1. **Table Path**. Enter the path to the existing Lookup Table in the Sumo Logic Library. For example: `/Library/Admin Recommended/NormalizedHostNames` You can copy the path to the Lookup Table in the Sumo Logic Library. Hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot more options menu.
-
-    ![tree-dot.png](/img/cse/tree-dot.png)
+1. **Table Path**. Enter the path to the existing Lookup Table in the Sumo Logic Library. For example: `/Library/Admin Recommended/NormalizedHostNames` You can copy the path to the Lookup Table in the Sumo Logic Library. Hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot more options menu.<br/>  ![tree-dot.png](/img/cse/tree-dot.png)
 1. Click **Create**.     
