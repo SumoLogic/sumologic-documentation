@@ -4,8 +4,6 @@ title: VMware vRealize Log Insight
 description: This page shows you how to configure log collection for VMware vRealize Log Insight and then forward your logs to Sumo Logic. VMware vRealize Log Insight is a log management and analytics tool.
 ---
 
-
-
 This page shows you how to configure log collection for VMware vRealize Log Insight and then forward your logs to Sumo Logic. VMware vRealize Log Insight is a log management and analytics tool.
 
 ## Prerequisites
