@@ -21,17 +21,11 @@ You can use the following simple queries to identify possible values for your ex
 
 We discourage the use of `*`, as it does not provide much value, but in this exception, it is an easy way to identify all messages received in the last 5 minutes, and provide an approximate volume for each.
 
-For Source Categories:
+For Source Categories: `* | count_frequent(_sourceCategory)`
 
-`* | count_frequent(_sourceCategory)`
+For Source Hosts: `* | count_frequent(_sourceHost)`
 
-For Source Hosts:
-
-`* | count_frequent(_sourceHost)`
-
-For Source Names:
-
-`* | count_frequent(_sourceName)`
+For Source Names: `* | count_frequent(_sourceName)`
 
 ## Write Efficient Search Queries
 
@@ -54,7 +48,8 @@ It is best to filter data as early as possible in the query, using the most sele
 
 For example, look at the following queries:
 
-* `* | parse "queryTime=* " as queryTime | parse "uid=* " as uid | where queryTime\> 10000`
-* `* | parse "queryTime=* " as queryTime | where queryTime\> 10000 | parse "uid=* " as ``uid`
+`* | parse "queryTime=* " as queryTime | parse "uid=* " as uid | where queryTime\> 10000`
+
+`* | parse "queryTime=* " as queryTime | where queryTime\> 10000 | parse "uid=* " as ``uid`
 
 Because most log lines have a `uid`, but only a small fraction have `queryTime > 10000`, the second query is more efficient.
