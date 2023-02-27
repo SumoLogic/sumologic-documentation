@@ -1,6 +1,5 @@
 {
   "/01Start-Here": "/docs/get-started",
-  "/01Start-here": "/docs/get-started",
   "/01Start-Here/01-Welcome_to_Sumo_Logic": "/docs/get-started",
   "/01Start-Here/02Tour_the_Sumo_Logic_UI": "/docs/get-started/sumo-logic-ui",
   "/01Start-Here/04Getting-Started/01-How-to-Sign-Up-for-Sumo-Logic": "/docs/get-started/sign-up",
@@ -96,7 +95,7 @@
   "/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs/Collect-Amazon-CloudWatch-Logs-using-Amazon-Kinesis": "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-amazon-kinesis",
   "/03Send-Data/Collect-from-Other-Data-Sources/Auto-Subscribe_AWS_Log_Groups_to_a_Lambda_Function": "/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination",
   "/03Send-Data/Collect-from-Other-Data-Sources/AWS_Fargate_log_collection": "/docs/send-data/collect-from-other-data-sources/aws-fargate-log-collection",
-  "/03Send-Data/collect-from-other-data-sources/AWS_Fargate_log_collection": "/docs/send-data/collect-from-other-data-sources/aws-fargate-log-collection",
+  "/03Send-Data/Collect-from-Other-Data-Sources/AWS_Fargate_log_collection": "/docs/send-data/collect-from-other-data-sources/aws-fargate-log-collection",
   "/03Send-Data/Collect-from-Other-Data-Sources/Azure_Blob_Storage": "/docs/send-data/collect-from-other-data-sources/azure-blob-storage",
   "/03Send-Data/Collect-from-Other-Data-Sources/Azure_Blob_Storage/Collect_Logs_from_Azure_Blob_Storage": "/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage",
   "/03Send-Data/Collect-from-Other-Data-Sources/Azure_Blob_Storage/Troubleshoot_Azure_Blob_Storage_Log_Collection": "/docs/send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-azure-blob-storage-log-collection",
@@ -2937,7 +2936,6 @@
   "/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kafka/Install_the_Kafka_App,_Alerts,_and_view_the_Dashboards": "/docs/integrations/containers-orchestration/kafka",
   "/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kafka/Kafka_Alerts": "/docs/integrations/containers-orchestration/kafka",
   "/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes_core/Install_the_Kubernetes_App_and_view_the_Dashboards": "/docs/integrations/containers-orchestration/kubernetes",
-  "/docs/integrations/containers-orchestration/Kubernetes": "/docs/integrations/containers-orchestration/kubernetes",
   "/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Install_the_Kubernetes_App_and_view_the_Dashboards": "/docs/integrations/containers-orchestration/kubernetes",
   "/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Install_the_Kubernetes_App,_Alerts,_and_view_the_Dashboards": "/docs/integrations/containers-orchestration/kubernetes",
   "/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Kubernetes_Alerts": "/docs/integrations/containers-orchestration/kubernetes",
