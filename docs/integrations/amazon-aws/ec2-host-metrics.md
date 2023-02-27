@@ -53,7 +53,7 @@ This step is not necessary if you already have an Installed Collector and Host M
 Perform these steps for each EC2 host:
 
 1. Set up an Installed Collector. For instructions, see [Installed Collectors](/docs/send-data/installed-collectors).
-2. Add a Host Metrics Source to the Installed Collector. For instructions, see [Manually Configure a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source#Manually-Configure-a-Host-Metrics-Source). In the **Fields** portion of the configuration::
+2. Add a Host Metrics Source to the Installed Collector. For instructions, see [Manually Configure a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source). In the **Fields** portion of the configuration::
    * Add a field named **account**, and set it to your AWS account alias.
    * Add a field named **namespace** and set it to **aws/ec2**.
 

@@ -149,7 +149,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage Logs-to-Metrics
    </td>
-   <td>Create, edit, or delete <a href="/docs/metrics/Logs-to-Metrics">Logs-to-Metrics</a> rules.
+   <td>Create, edit, or delete <a href="/docs/metrics/logs-to-metrics">Logs-to-Metrics</a> rules.
    </td>
   </tr>
   <tr>
@@ -161,7 +161,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage Metric Rules
    </td>
-   <td>Create, edit, or delete <a href="/docs/metrics/Metric-Rules-Editor">Metric Rules</a>.
+   <td>Create, edit, or delete <a href="/docs/metrics/metric-rules-editor">Metric Rules</a>.
    </td>
   </tr>
 </table>
@@ -204,7 +204,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage support account access
    </td>
-   <td>Enable <a href="/docs/manage/security/Enable-Support-Account">management of the Sumo Logic support account</a> for your organization.
+   <td>Enable <a href="/docs/manage/security/enable-support-account">management of the Sumo Logic support account</a> for your organization.
    </td>
   </tr>
   <tr>
@@ -216,7 +216,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage SAML
    </td>
-   <td><a href="/docs/manage/security/SAML">Provision and manage SAML</a> for single sign-on to your Sumo Logic accounts.
+   <td><a href="/docs/manage/security/saml">Provision and manage SAML</a> for single sign-on to your Sumo Logic accounts.
    </td>
   </tr>
   <tr>
@@ -414,7 +414,7 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>Invoke Insights Actions
    </td>
-   <td>Choose and run an <a href="/docs/cse/administration/Create-CSE-Actions">Action</a> from the Actions menu for an Insight.
+   <td>Choose and run an <a href="/docs/cse/administration/create-cse-actions">Action</a> from the Actions menu for an Insight.
    </td>
   </tr>
   <tr>
@@ -528,43 +528,43 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>View Mappings
    </td>
-   <td>View <a href="/docs/cse/schema/Create-Structured-Log-Mapping">log mappings</a> and <a href="/docs/cse/Ingestion/sumo-logic-ingest-mapping">ingest mappings.</a>
+   <td>View <a href="/docs/cse/schema/create-structured-log-mapping">log mappings</a> and <a href="/docs/cse/ingestion/sumo-logic-ingest-mapping">ingest mappings.</a>
    </td>
   </tr>
   <tr>
    <td>Manage Mappings
    </td>
-   <td>Create, edit, and delete <a href="/docs/cse/schema/Create-Structured-Log-Mapping">log mappings</a> and <a href="/docs/cse/Ingestion/sumo-logic-ingest-mapping">ingest mappings</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/schema/create-structured-log-mapping">log mappings</a> and <a href="/docs/cse/ingestion/sumo-logic-ingest-mapping">ingest mappings</a>.
    </td>
   </tr>
   <tr>
    <td>View Workflow
    </td>
-   <td>View Insight <a href="/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold">detection settings</a>, custom Insight <a href="/docs/cse/administration/Manage-Custom-Insight-Statuses">statuses</a> and <a href="/docs/cse/administration/Manage-Custom-Insight-Resolutions">resolutions</a>, and <a href="/docs/cse/administration/Create-a-Custom-Tag-Schema">tag schemas</a>.
+   <td>View Insight <a href="/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold">detection settings</a>, custom Insight <a href="/docs/cse/administration/manage-custom-insight-statuses">statuses</a> and <a href="/docs/cse/administration/manage-custom-insight-resolutions">resolutions</a>, and <a href="/docs/cse/administrationcreate-a-custom-tag-schema">tag schemas</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Workflow
    </td>
-   <td>Create, edit, and delete Insight <a href="/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold">detection settings</a>, custom Insight <a href="/docs/cse/administration/Manage-Custom-Insight-Statuses">statuses</a> and <a href="/docs/cse/administration/Manage-Custom-Insight-Resolutions">resolutions</a>, and <a href="/docs/cse/administration/Create-a-Custom-Tag-Schema">tag schemas</a>.
+   <td>Create, edit, and delete Insight <a href="/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold">detection settings</a>, custom Insight <a href="/docs/cse/administration/manage-custom-insight-statuses/">statuses</a> and <a href="/docs/cse/administration/manage-custom-insight-resolutions">resolutions</a>, and <a href="/docs/cse/administration/create-a-custom-tag-schema">tag schemas</a>.
    </td>
   </tr>
   <tr>
    <td>View Context Actions
    </td>
-   <td>View <a href="/docs/cse/administration/Create-CSE-Context-Actions">Context Actions</a>.
+   <td>View <a href="/docs/cse/administration/create-cse-context-actions">Context Actions</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Context Actions
    </td>
-   <td>Create, edit, and delete <a href="/docs/cse/administration/Create-CSE-Context-Actions">Context Actions</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/administration/create-cse-context-actions">Context Actions</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Actions
    </td>
-   <td>View, create, edit, and delete <a href="/docs/cse/administration/Create-CSE-Actions">Actions</a>.
+   <td>View, create, edit, and delete <a href="/docs/cse/administration/create-cse-actions">Actions</a>.
    </td>
   </tr>
   <tr>
@@ -594,13 +594,13 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>View Entity Normalization
    </td>
-   <td>View the configurations on CSE’s <a href="/docs/cse/schema/Username-and-Hostname-Normalization">Domain Normalization</a> page.
+   <td>View the configurations on CSE’s <a href="/docs/cse/schema/username-and-hostname-normalization">Domain Normalization</a> page.
    </td>
   </tr>
   <tr>
    <td>Manage Entity Normalization
    </td>
-   <td>Update the configurations on CSE’s <a href="/docs/cse/schema/Username-and-Hostname-Normalization">Domain Normalization</a> page.
+   <td>Update the configurations on CSE’s <a href="/docs/cse/schema/username-and-hostname-normalization">Domain Normalization</a> page.
    </td>
   </tr>
   <tr>
@@ -636,13 +636,13 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>View Entity Groups
    </td>
-   <td>View <a href="/docs/cse/records-signals-entities-insights/Create-an-Entity-Group">Entity Groups</a>.
+   <td>View <a href="/docs/cse/records-signals-entities-insights/create-an-entity-group">Entity Groups</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Entity Groups
    </td>
-   <td>Create, edit, and delete <a href="/docs/cse/records-signals-entities-insights/Create-an-Entity-Group">Entity Groups</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/records-signals-entities-insights/create-an-entity-group">Entity Groups</a>.
    </td>
   </tr>
 </table>

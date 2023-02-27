@@ -5,4 +5,4 @@ image: /img/sumo-square.png
 tags: [api]
 ---
 
-New - The Data Forwarding Management API allows you to forward log data from a Partition or Scheduled View to an S3 bucket. [Learn more](https://help.sumologic.com/docs/api/data-forwarding/).
+New - The Data Forwarding Management API allows you to forward log data from a Partition or Scheduled View to an S3 bucket. [Learn more](/docs/api/data-forwarding/).
