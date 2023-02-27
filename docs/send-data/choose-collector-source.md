@@ -47,15 +47,13 @@ Consider having more than one Installed Collector if:
 
 * You expect the Collector to ingest from at least 500 separate files.
 * Your hardware has memory or CPU limitations.
-* You expect combined logging traffic for one Collector to be higher
-    than 15,000 events per second.
+* You expect combined logging traffic for one Collector to be higher than 15,000 events per second.
 * Your network clusters or regions are geographically separated.
-* You prefer to install many Collectors, for example, one per machine
-    to collect local files.
+* You prefer to install many Collectors, for example, one per machine to collect local files.
 
 To help design your deployment see [how Installed Collectors work](/docs/send-data/installed-collectors) and [Best Practices: Local and Centralized Data Collection](/docs/send-data/best-practices#local-and-centralized-data-collection).
 
-For details on system requirements, see Installed Collector requirements.
+For details on system requirements, see [Installed Collector requirements](/docs/get-started/system-requirements/#installed-collector-requirements).
 
 ### Hosted Collectors
 

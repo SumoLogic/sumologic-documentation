@@ -12,7 +12,7 @@ There are two built-in roles in a Sumo Logic account: Administrator and Analyst.
 
 The Administrator role is a super user. It has all of the [capabilities](role-capabilities.md) that can be assigned to a role, and its [role search filter]v enables access to all data in Sumo Logic. You cannot edit or delete the Administrator role. 
 
-Users with the Analyst role have a single capability: View Collectors. Its role search filter enables access to all data in Sumo Logic. You can edit the Analyst role filter to change the capabilities assigned to it and to make the role filter more restrictive. You can also delete the Analyst role if desired. For more information see [Edit a role](#create-a-role) and [Delete a role](#delete-a-role) below.
+Users with the Analyst role have a single capability: View Collectors. Its role search filter enables access to all data in Sumo Logic. You can edit the Analyst role filter to change the capabilities assigned to it and to make the role filter more restrictive. You can also delete the Analyst role if desired. For more information, see [Edit a role](#create-a-role) and [Delete a role](#delete-a-role) below.
 
 ## Create a role
 

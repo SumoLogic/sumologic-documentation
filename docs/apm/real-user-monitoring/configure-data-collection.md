@@ -1,6 +1,7 @@
 ---
 id: configure-data-collection
 title: Configuring RUM Data Collection
+description: Learn how to collect Traces and RUM metrics from a browser using a RUM HTTP Traces Source.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

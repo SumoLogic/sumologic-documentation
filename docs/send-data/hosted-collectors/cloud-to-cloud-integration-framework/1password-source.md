@@ -65,13 +65,15 @@ To configure a 1Password Source:
 4. Enter a **Name** for the Source. The **description** is optional.<br/> ![1password-input](/img/send-data/1password-input.png)
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
 6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse). When configured with the **Forward to SIEM** option, the following metadata fields are set:
-  | Field Name | API | Value |
-  |:---|:---|:---|
-  | `_siemVendor` | Sign-in, Item | `1Password` |
-  | `_siemProduct` | Sign-in, Item | `1Password` |
-  | `_siemFormat` | Sign-in, Item | `JSON` |
-  | `_siemEventID` | Sign-in | `signin-{{category}}` |
-  | `_siemEventID` | Item | `item_usage-{{action}}` |
+
+| Field Name | API | Value |
+|:---|:---|:---|
+| `_siemVendor` | Sign-in, Item | `1Password` |
+| `_siemProduct` | Sign-in, Item | `1Password` |
+| `_siemFormat` | Sign-in, Item | `JSON` |
+| `_siemEventID` | Sign-in | `signin-{{category}}` |
+| `_siemEventID` | Item | `item_usage-{{action}}` |
+
 7. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
    * Define the fields you want to associate, each field needs a name (key) and value.
       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
@@ -144,7 +146,7 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/h
 
 ## JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collectors). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 <table>
   <tr>
