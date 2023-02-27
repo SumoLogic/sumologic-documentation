@@ -30,7 +30,7 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
 <div className="box smallbox3 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/cloudfront.png')} alt="Thumbnail icon" width="55"/>
-  <h4><a href="/docs/integrations/amazon-aws/amazon-aws/cloudfront">Amazon CloudFront</a></h4>
+  <h4><a href="/docs/integrations/amazon-aws/cloudfront">Amazon CloudFront</a></h4>
   <p>A guide to the Sumo Logic app for Amazon CloudFront.</p>
   </div>
 </div>
