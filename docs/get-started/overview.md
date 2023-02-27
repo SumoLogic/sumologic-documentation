@@ -206,9 +206,12 @@ Get to know more about How to create a FER through our video "Creating a Field E
         />
 
 
-## Training and Certification
+## Additional Resources
 
-The [Sumo Logic Training and Certification](https://www.sumologic.com/learn/training/) program is offered to you at no cost. You can grow your understanding of Sumo Logic through interactive tutorials, instructor-led training, and a wide range of certifications. Certification benefits include improved complex operator usage as well as a better understanding of our search optimization techniques. Your training options are:
+The [Sumo Logic Training and Certification](https://www.sumologic.com/learn/training/) program is offered to you at no cost. You can grow your understanding of Sumo Logic through interactive tutorials, instructor-led training, self-paced traininig and a wide range of certifications. 
+We’ve done studies that show when you are Sumo Logic Certified, you gain greater insight into your data, search more efficiently and build impactful dashboards
+
+Our Instructor-Led Training options are:
 
 [Cert Jams.](https://www.sumologic.com/learn/training/#workshops) We deliver in-person public training classes called Cert Jams that train users and help them attain various certifications.
 
@@ -216,4 +219,5 @@ The [Sumo Logic Training and Certification](https://www.sumologic.com/learn/trai
 
 Professional Services. For professional services and offerings, [contact our sales team](mailto:sales@sumologic.com) or your account representative.
 
-[Sumo Logic Fundamentals.](https://www.sumologic.com/learn/certifications/) All users should begin with the Fundamentals certification. This is a prerequisite for all learning pathways and all additional certification levels.
+
+
