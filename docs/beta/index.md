@@ -1,6 +1,6 @@
 ---
 slug: /beta
-title: Sumo Logic Beta Features
+title: Beta Features
 ---
 
 import DocCardList from '@theme/DocCardList';

@@ -7,7 +7,7 @@ tags: [dashboards, dashboard]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="75"/>
+<img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="50"/>
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

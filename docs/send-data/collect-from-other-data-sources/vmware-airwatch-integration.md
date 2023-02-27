@@ -1,12 +1,11 @@
 ---
 id: vmware-airwatch-integration
 title: VMware AirWatch Integration for Sumo Logic
+sidebar_label: VMware AirWatch
 description: This page shows you how to configure AirWatch cloud syslog events for use with Sumo Logic.
 ---
 
-
-
-[VMware AirWatch](https://www.air-watch.com/ "https://www.air-watch.com/") is an enterprise mobility management (EMM) software and standalone management systems for content, applications and email. Sumo Logic integrates with VMware AirWatch to provide visibility for monitoring enterprise mobility management in your deployment. The unified digital workspace platform simplifies and secures app access and IT management throughout your environment.
+[VMware AirWatch](https://www.air-watch.com) is an enterprise mobility management (EMM) software and standalone management systems for content, applications and email. Sumo Logic integrates with VMware AirWatch to provide visibility for monitoring enterprise mobility management in your deployment. The unified digital workspace platform simplifies and secures app access and IT management throughout your environment.
 
 VMware Airwatch is an integral part of [Workspace ONE](https://www.air-watch.com/why-workspace-one-airwatch/), an any app, any device experience that provides 1-click workflows with a virtual assistant for an intuitive and engaging experience.
 

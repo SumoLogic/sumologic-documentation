@@ -3,6 +3,13 @@ id: write-first-seen-rule
 title: Write a First Seen rule
 sidebar_label: First Seen Rule
 description: First Seen rules allow you to generate a Signal when behavior by an Entity (user) is encountered that hasn't been seen before.
+keywords:
+  - sumo logic
+  - cloud siem
+  - cse
+  - first seen rule
+  - ueba
+  - behavioral analytics
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -56,7 +63,14 @@ The settings in the **If triggered** section determine what Records the rule wil
 
 For instructions, see [Configure “Then Create a Signal” settings](/docs/cse/rules/write-match-rule.md#configure-then-create-a-signal-settings) section of the Match Rule topic.
 
+:::tip
+Sumo Logic ensures that Rule processing does not impact the reliability of production environments through the implementation of "circuit breakers." If a Rule matches too many records in too short a period of time, the circuit breaker will trip and the rule will move to a degraded state, and First Seen Rules are no exception. 
+
+On the Rule detail page, if you hover over the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment. 
+:::
+
 ## Use case: Monitor login from first seen geolocation
+
 This section shows how the same first seen rule would function with each of the two baselining strategies.
 
 Our example rule expression is:

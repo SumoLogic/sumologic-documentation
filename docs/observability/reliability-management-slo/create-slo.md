@@ -358,7 +358,7 @@ There are two ways to use it:
   _view=sumologic_slo_output
   | lookup * from sumo://content/slos on sloId, sloVersion
   ```
-* To enlists the contents of the lookup table:
+* To enlist the contents of the lookup table:
   ```sql
   cat sumo://content/slos
   ```
