@@ -22,14 +22,14 @@ This guide has documentation for Sumo Logic apps for PCI Compliance.
 <div className="box smallbox2 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/integrations/pci-compliance/cloudtrail-pci-compliance">PCI Compliance for AWS CloudTrail(Legacy)</a></h4>
+  <h4><a href="/docs/integrations/amazon-aws/cloudtrail-pci-compliance">PCI Compliance for AWS CloudTrail(Legacy)</a></h4>
   <p>A guide to the Sumo Logic app for PCI Compliance for AWS CloudTrail(Legacy).</p>
   </div>
 </div>
 <div className="box smallbox3 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="55"/>
-  <h4><a href="/docs/integrations/pci-compliance//vpc-flow-logs-pci-compliance">PCI Compliance for Amazon VPC Flow Logs</a></h4>
+  <h4><a href="/docs/integrations/amazon-aws/vpc-flow-logs-pci-compliance">PCI Compliance for Amazon VPC Flow Logs</a></h4>
   <p>A guide to the Sumo Logic app for PCI Compliance for Amazon VPC Flow Logs.</p>
   </div>
 </div>
@@ -57,14 +57,14 @@ This guide has documentation for Sumo Logic apps for PCI Compliance.
     <div className="box smallbox7 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="55"/>
-      <h4><a href="/docs/integrations/pci-compliance/windows-json-pci-compliance">PCI Compliance for Windows JSON</a></h4>
+      <h4><a href="/docs/integrations/microsoft-azure/windows-json-pci-compliance">PCI Compliance for Windows JSON</a></h4>
       <p>A guide to the Sumo Logic app for PCI Compliance for Windows JSON.</p>
       </div>
     </div>
     <div className="box smallbox8 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="50"/>
-      <h4><a href="/docs/integrations/pci-compliance/windows-legacy-pci-compliance">PCI Compliance for Windows Legacy</a></h4>
+      <h4><a href="/docs/integrations/microsoft-azure/windows-legacy-pci-compliance">PCI Compliance for Windows Legacy</a></h4>
       <p>A guide to the Sumo Logic app for PCI Compliance for Windows Legacy.</p>
       </div>
     </div>
