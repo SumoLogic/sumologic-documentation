@@ -4,8 +4,11 @@ title: Manage Roles
 description: Roles determine the functions that users are able to perform in Sumo Logic and the data they can view.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This guide has information about creating and managing Sumo Logic roles. In Sumo Logic, an administrator controls access to capabilities and data by assigning capabilities and search filters to roles, and then assigning user to roles. For more information see [Role-Based Access Control](role-based-access-control.md).
+<img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="icon" width="50"/>
+
+This guide has information about creating and managing Sumo Logic roles. In Sumo Logic, an administrator controls access to capabilities and data by assigning capabilities and search filters to roles, and then assigning user to roles. For more information, see [Role-Based Access Control](role-based-access-control.md).
 
 :::note
 To manage users and roles, you must have the administrator role or your role must have been assigned the [manage users and roles capability](role-capabilities.md).

@@ -113,4 +113,4 @@ In the **Monitor History** tab, you can view the history of all triggered alerts
 ## Additional Information
 
 * [Monitor resource in Terraform](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) 
-* [Monitor Management API](/docs/api/monitors)
+* [Monitor Management API](/docs/api/monitors-management)

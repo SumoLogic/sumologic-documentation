@@ -43,7 +43,7 @@ When a username is normalized, the original, un-normalized name is placed in a `
 
 It’s important to note, that if no name normalization configuration exists, the name attribute will consist of the original (non-normalized) form and the system will continue to operate as it does today, with the exception that that `_raw` attribute will also be populated. 
 
-If a name normalization configuration exists, the name attribute will be populated with the form `<username>:<friendly_domain>` where the `<friendly domain name>` portion is not populated for the normalized default domain.  When name normalization is enabled all name fields (not-raw) will be lowercase. For more information see [Example - single Domain](#example---single-domain) and [Example - multiple domains](#example---multiple-domains), below.
+If a name normalization configuration exists, the name attribute will be populated with the form `<username>:<friendly_domain>` where the `<friendly domain name>` portion is not populated for the normalized default domain.  When name normalization is enabled all name fields (not-raw) will be lowercase. For more information, see [Example - single Domain](#example---single-domain) and [Example - multiple domains](#example---multiple-domains), below.
 
 ## Configuration
 

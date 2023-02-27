@@ -12,9 +12,7 @@ For more information about Telegraf input plugins, see [Configure Telegraf Input
 
 ## List mbeans
 
-To list all available mbeans, and their methods and attributes, call the
-Jolokia agent endpoint, which in this example is exposed on port 8778 on
-localhost.
+To list all available mbeans, and their methods and attributes, call the Jolokia agent endpoint, which in this example is exposed on port 8778 on localhost.
 
 ```bash
 curl 127.0.0.1:8778/jolokia/list | jq '.'

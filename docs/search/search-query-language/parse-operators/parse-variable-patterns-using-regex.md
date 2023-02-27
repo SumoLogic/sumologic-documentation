@@ -24,12 +24,9 @@ You can use the alternate term `extract`:
 
 ## Options
 
-* `field=<field_name>` 
-    The `field=fieldname` option allows you to specify a field to parse other than the default message. For details, see [Parse field](parse-field-option.md). 
-* `nodrop` 
-    The `nodrop` option forces results to also include messages that don't match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md).
-* `multi` 
-    The `multi` option allows you to parse multiple values *within* a single log message.
+* `field=<field_name>`. This option allows you to specify a field to parse other than the default message. For details, see [Parse field](parse-field-option.md). 
+* `nodrop`. This option forces results to also include messages that don't match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md).
+* `multi`. This option allows you to parse multiple values *within* a single log message.
 
 :::note
 `parse multi` is not supported in [Field Extraction Rules (FERs)](/docs/manage/field-extractions).
@@ -49,28 +46,20 @@ You can use the alternate term `extract`:
 You can convert your normal regular expressions into named capturing groups with the following steps:  
 
 Wrap everything in parenthesis, and append `?` followed by a capturing group name enclosed within `< >`. Let's see an example below, the highlighted portions is what has been added.
-
-|  Normal Regex | Regex with named capturing group |
-|:------------------|:--------------------------------------|
-| `\d{3}-[\w]*`    | `(?<regex>\d{3}-[\w]*)`              |
+* Normal Regex: `\d{3}-[\w]*`
+* Regex with named capturing group: `(?<regex>\d{3}-[\w]*)`
 
 If your regex contains a capturing group (part of the regex is enclosed within parentheses), then you have two options:
 
-1. You can convert it into a non-capturing group. In this case we will not extract out that part of your regex into a Sumo field. You can convert these easily by appending `?:` to the group right after the starting parenthesis.
+You can convert it into a non-capturing group. In this case we will not extract out that part of your regex into a Sumo Logic field. You can convert these easily by appending `?:` to the group right after the starting parenthesis.
 
-    This approach will not work in cases where you only have non-capturing
-    groups in your regex. You need to have at least one capturing group
-    in your regex.
+This approach will not work in cases where you only have non-capturing groups in your regex. You need to have at least one capturing group in your regex.
+* Normal Regex: `(abc|\d{3})`
+* Regex with non-capturing group: `(?:abc|\d{3})`
 
-    | Normal Regex |   Regex with non-capturing group |
-    |:------------------|:------------------------------------|
-    | `(abc|\d{3})`    | `(?:abc|\d{3})`                    |
-
-1. If you want to extract out the value from your numbered capturing group to a named capturing group within your regex you can convert it into a named capturing group. Do this by appending a `?` and enclosing the name of the capturing group within `< >`. Sumo will generate a field with the same name that is specified in the named capturing group.
-
-    |  Normal Regex |    Regex with named capturing group |
-    |:------------------|:--------------------------------------|
-    | `(abc|\d{3})`    | `(?<test_group>abc|\d{3})`           |
+If you want to extract out the value from your numbered capturing group to a named capturing group within your regex you can convert it into a named capturing group. Do this by appending a `?` and enclosing the name of the capturing group within `< >`. Sumo Logic will generate a field with the same name that is specified in the named capturing group.
+* Normal Regex: `(abc|\d{3})`
+* Regex with named capturing group: `(?<test_group>abc|\d{3})`
 
 ## Examples 
 
@@ -147,7 +136,7 @@ The output looks like:
 
 ### Case insensitive parse regex
 
-You can tell the parser to use case insensitivity by supplying the regex parameter of **(?i)**. For example, let's say we have the following log messages:
+You can tell the parser to use case insensitivity by supplying the regex parameter of `(?i)`. For example, let's say we have the following log messages:
 
 `Line1: The following exception was reported: error in log`
 
@@ -155,7 +144,7 @@ You can tell the parser to use case insensitivity by supplying the regex paramet
 
 `Line3: The following exception was reported: ERROR in log`
 
-Use the following parse regex expression to match the "error" in the logs. The **(?i)** tells the parser to ignore case for the trailing expression.
+Use the following parse regex expression to match the "error" in the logs. The `(?i)` tells the parser to ignore case for the trailing expression.
 
 ```sql
 | parse regex "reported:\s(?<exception>(?i)error)\s"
