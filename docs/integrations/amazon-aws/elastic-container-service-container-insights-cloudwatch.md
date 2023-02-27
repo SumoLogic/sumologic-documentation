@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Amazon Elastic Container Service (Amazon ECS) is a container management service that allows you to manage Docker containers on a cluster of Amazon EC2 instances. The Sumo Logic App for Amazon ECS provides preconfigured searches and Dashboards that allow you to monitor various metrics (CPU and Memory Utilization, CPU and Memory Reservation) across ECS clusters and services. The App also monitors API calls made by or on behalf of Amazon ECS in your AWS account.
 
 We offer two different ECS versions, which have separate data collection steps:
-* [Collect Logs and Metrics for ECS](/docs/integrations/aws-amazon/elastic-container-service). This version collects [ECS CloudWatch Metrics](http://docs.aws.amazon.com/AmazonECS...ch-metrics.htm) and [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)
+* [Collect Logs and Metrics for ECS](/docs/integrations/amazon-aws/elastic-container-service). This version collects [ECS CloudWatch Metrics](http://docs.aws.amazon.com/AmazonECS...ch-metrics.htm) and [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)
 * [Collect Logs, Metrics (Container Insights+CloudWatch) and Traces for ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail) - This version collects[ ](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)[ECS CloudWatch Metrics](http://docs.aws.amazon.com/AmazonECS...ch-metrics.htm), [Container Insights Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-metrics-ECS.html), [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail), Application Logs and Traces. Metrics collected by Container Insights are charged as custom metrics. For more information about CloudWatch pricing, see[ Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/). This solution enables you to monitor both ec2 and fargate based ecs deployments.
 
 This page has instructions for collecting logs and metrics for the Amazon ECS App. It uses the following data:
@@ -142,7 +142,7 @@ Container Insights collects data as performance log events using [embedded me
 
 In this step, you'll create a source to collect Task and Container level performance events, which are not converted as CloudWatch metrics.
 
-1.  Configure an [AWS Kinesis Firehose for Logs Source](/docs/send-data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Logs_Source). Add the fields account, region and namespace as shown below. <br/><img src={useBaseUrl('img/integrations/amazon-aws/ecs2.png')} alt="ECS" />
+1.  Configure an [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source). Add the fields account, region and namespace as shown below. <br/><img src={useBaseUrl('img/integrations/amazon-aws/ecs2.png')} alt="ECS" />
 2.  Copy the `KinesisLogsRoleARN` and `KinesisLogsDeliveryStreamARN` values from the outputs tab of Cloudformation. <br/><img src={useBaseUrl('img/integrations/amazon-aws/ecs3.png')} alt="ECS" />
 3.  Go to your CloudWatch > Log Groups and click on your CloudWatch log group `/aws/ecs/containerinsights/<cluster>/performance`. <br/> <img src={useBaseUrl('img/integrations/amazon-aws/ecs4.png')} alt="ECS" />
 4.  Click on Create and in opened window fill in the below parameters
@@ -459,7 +459,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app. 
-2. Select the **With Container Insights and Traces** version and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
+2. Select the **With Container Insights and Traces** version and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library).
 3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name or enter the app's name of your choice. 
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
