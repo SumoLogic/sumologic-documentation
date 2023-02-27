@@ -1,7 +1,7 @@
 ---
 id: collect-with-cloudformation-template
 title: Collect Amazon CloudWatch Logs using a CloudFormation Template with Secured Sumo Endpoint
-sidebar_label: Collect Amazon CloudWatch Logs using a CloudFormation Template
+sidebar_label: Collect Logs using CloudFormation
 description: Learn how to collect Amazon CloudWatch Logs using a CloudFormation template with secured Sumo EndPoint.
 ---
 

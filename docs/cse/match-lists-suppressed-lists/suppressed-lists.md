@@ -83,7 +83,7 @@ Perform the steps below to create a Suppressed List and add an indicator to it u
    1. **Time to Live (hours)**. (Optional) Enter the number of hours after which the entries on the list should expire.
    1. **Target Column**. The type of Record field to which items on the list should be compared.
     :::note
-    If you want to create a custom Target Column, click **Manage Custom Columns**. For more information see [Custom Match List Columns](custom-match-list-columns.md).
+    If you want to create a custom Target Column, click **Manage Custom Columns**. For more information, see [Custom Match List Columns](custom-match-list-columns.md).
     :::
    1. Click **Create**.
 1. The Suppressed List now appears on the **Suppressed Lists** page.  <br/>  ![suppressed-list-page-2.png](/img/cse/suppressed-list-page-2.png)

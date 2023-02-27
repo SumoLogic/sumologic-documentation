@@ -1,9 +1,9 @@
 ---
 id: collect-with-collector-script
 title: Collect Amazon CloudWatch Logs using a Collector Script
+sidebar_label: Collect Logs using a Collector Script
 description: For small data volumes, you can use an installed Sumo Logic Collector with a script Source instead of using AWS lambda or Amazon Kinesis to collect Amazon CloudWatch logs.
 ---
-
 
 
 For small data volumes, you can use an installed Sumo Logic Collector with a script Source instead of using AWS lambda or Amazon Kinesis to collect Amazon CloudWatch logs.

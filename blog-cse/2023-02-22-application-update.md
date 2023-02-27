@@ -8,9 +8,8 @@ keywords:
   - cse
 tags: [cloud siem release notes, application update]
 authors:
-  - name: Peter Kazmir
-    title: Principal Product Manager, Security Applications
-    url: https://github.com/pkazmir-sumo
+  - url: https://help.sumologic.com/release-notes-cse/rss.xml
+    image_url: /img/release-notes/rss-orange.png
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

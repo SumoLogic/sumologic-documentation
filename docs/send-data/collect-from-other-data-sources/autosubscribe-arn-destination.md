@@ -1,6 +1,7 @@
 ---
 id: autosubscribe-arn-destination
 title: Auto-Subscribe ARN (Amazon Resource Name) Destination
+sidebar_label: Amazon Resource Names (ARNs)
 description: You can use an Amazon CloudWatch Log Group subscription to access log events from CloudWatch Logs in real time, and send them to Sumo Logic.
 ---
 
@@ -55,7 +56,7 @@ This section describes the parameters you can configure for the Lambda function.
 
   :::note
   * Don't use forward slashes (`/`) to encapsulate the regex. While normally they are needed for raw code, it's not necessary here.
-  * For auto-subscribing all log groups, please use regex `.*`. 
+  * For auto-subscribing all log groups, please use regex `.*`.
   :::
 
 * **UseExistingLogs**—Controls whether this function will be used to create subscription filters for existing log groups. Select "True" if you want to use the function for subscribing to existing log groups.

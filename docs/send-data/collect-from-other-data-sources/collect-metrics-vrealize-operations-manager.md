@@ -1,17 +1,13 @@
 ---
 id: collect-metrics-vrealize-operations-manager
-title: Collect metrics from VMware vRealize Operations Manager 8 Enterprise
+title: Collect Metrics from VMware vRealize Operations Manager 8 Enterprise
+sidebar_label: VMware vRealize Operations Manager
 description: This page provides instructions for collecting metrics from vRops.
 ---
 
+With vRealize Operations Manager (vRops) software, you can proactively identify and solve emerging issues with predictive analysis and smart alerts, ensuring optimal performance and availability of system resources - across physical, virtual, and cloud infrastructures. 
 
-With vRealize Operations Manager (vRops) software, you can proactively
-identify and solve emerging issues with predictive analysis and smart
-alerts, ensuring optimal performance and availability of system
-resources - across physical, virtual, and cloud infrastructures. 
-
-This section provides instructions for collecting metrics from vRops. Click
-a link to jump to a topic:
+This section provides instructions for collecting metrics from vRops. Click a link to jump to a topic:
 
  * [Step 1: Set up a server, host, or VM to collect data](#step-1-set-up-a-server-host-or-vm-to-collect-data)
  * [Step 2: Download and install the Collector](#step-2-download-and-install-the-collector)
@@ -117,13 +113,13 @@ To collect performance metrics, do the following:
 
   **Example 1:** Using metrics streaming source and specific log directory with a specific log file prefix.
 
-  ```bash
+  ```
   # python3 $SCRIPT_PATH/sumologic-vrops-metric-collection.py -s 192.168.124.29 -t sumologic_host -to sumologic_host_port -u vropsadmin -p vropsadmin -l /var/log/vmware/log/metrics
   ```
 
   **Example 2:** Using specific log directory with a specific log file prefix and encrypted Password.
 
-  ```bash
+  ```
   # python3 $SCRIPT_PATH/sumologic-vrops-metric-collection.py -s 192.168.124.29 -t sumologic_host -to sumologic_host_port -u vropsadmin -cf $SCRIPT_PATH/custom_config.json -l /var/log/vmware/log/vrops_metrics -pK 'xgb8NJ3ZYPJbzX6vWHySZbLd73bKWPsGMKoSnry7hL4=' -p 'gAAAAABb6asvlRfxEj_ZQTKOyrqnGNMbfo_kpxrqv4DCO6TorS4FmKFzrepe0_xtiMT67ZT6OOf5bfrVZXNnUDFNlwPWrpFSfg==' -pE True
   ```
 

@@ -379,7 +379,7 @@ To configure the Jenkins Plugin, do the following:
 
 ### Step 5: Optional - Advanced Configuration
 
-This section provides instructions for configuring Sumo Logic Jenkins Plugin for specific projects using Jenkins **configuration as code**. For more information see [configuration as code](https://jenkins.io/projects/jcasc/).
+This section provides instructions for configuring Sumo Logic Jenkins Plugin for specific projects using Jenkins **configuration as code**. For more information, see [configuration as code](https://jenkins.io/projects/jcasc/).
 
 To configure Sumo Logic Jenkins Plugin for specific projects using configuration as code, do the following:
 

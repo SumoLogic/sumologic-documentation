@@ -6,7 +6,7 @@ description: Manage user accounts, Collectors and Sources, security, SEO, and ot
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/manage.png')} alt="icon" width="75"/>
+<img src={useBaseUrl('img/icons/manage.png')} alt="icon" width="50"/>
 
 :::tip
 See [Collection](/docs/send-data/collection) to learn about Collectors, Sources, and processing rules.

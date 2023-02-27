@@ -1,6 +1,7 @@
 ---
 id: collect-logs-aws-fargate
 title: Collect Logs from AWS Fargate
+sidebar_label: AWS Fargate
 description: Learn how to collect logs from AWS Fargate.
 ---
 
