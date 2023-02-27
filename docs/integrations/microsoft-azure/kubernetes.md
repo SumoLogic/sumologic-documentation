@@ -64,7 +64,7 @@ The AKS - Control Plane App uses Azure managed master node logs in your Azure Ku
 
 
 
-The Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/Kubernetes) works in conjunction with the AKS - Control Plane App and allows you to monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
+The Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes) works in conjunction with the AKS - Control Plane App and allows you to monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
 
 
 ### Collection process
@@ -74,7 +74,7 @@ Configuring logs and metrics for the AKS - Control Plane App is a two step proce
 * Setting up collection and installing the Sumo Logic Kubernetes App.
 * Configuring Azure monitor and enabling the master node logs in AKS.
 
-The Sumo Logic[ Kubernetes App](/docs/integrations/containers-orchestration/Kubernetes) allows you to  monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
+The Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes) allows you to  monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
 
 
 #### Step 1. Setup and Install the Sumo Logic Kubernetes App  
@@ -82,7 +82,7 @@ The Sumo Logic[ Kubernetes App](/docs/integrations/containers-orchestration/Kube
 
 The Sumo Logic Kubernetes App provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and  install the Kubernetes App before configuring collection for the AKS - Control Plane App. You will configure log and metric collection during this process.
 
-**To set up and install the Kubernetes App**, follow the instructions in [this document](/docs/integrations/containers-orchestration/Kubernetes).
+**To set up and install the Kubernetes App**, follow the instructions in [this document](/docs/integrations/containers-orchestration/kubernetes).
 
 
 #### Step 2. Configure Azure Monitor and enable logs in AKS
