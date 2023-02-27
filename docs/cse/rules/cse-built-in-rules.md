@@ -71,7 +71,7 @@ This IOC detects indicators associated with the ADPassHunt Tool. This tool is us
 ## AWS CloudTrail - IAM Privileged Policy Applied to Group
 
 
- This rule identifies both 'attach' and 'put' actions with this privileged policy.  The difference between 'attach' and 'put' is that 'attach' actions apply a managed policy to an item, where a 'put' action indicates the policy is defined in-line and is part of the items definition. Applying privileged policies to items could indicate hostile action that attempts to increase the privilege level of a user or set of users.  Because there are legitimate times when this will occur, consider this signal in context of other activities that may indicate suspicious behavior.
+ This rule identifies both 'attach' and 'put' actions with this privileged policy. The difference between 'attach' and 'put' is that 'attach' actions apply a managed policy to an item, where a 'put' action indicates the policy is defined in-line and is part of the items definition. Applying privileged policies to items could indicate hostile action that attempts to increase the privilege level of a user or set of users. Because there are legitimate times when this will occur, consider this signal in context of other activities that may indicate suspicious behavior.
 
 ## AWS CloudTrail - IAM Privileged Policy Applied to Group (Username)
 
