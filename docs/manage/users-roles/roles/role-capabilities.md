@@ -540,7 +540,7 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>View Workflow
    </td>
-   <td>View Insight <a href="/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold">detection settings</a>, custom Insight <a href="/docs/cse/administration/manage-custom-insight-statuses">statuses</a> and <a href="/docs/cse/administration/manage-custom-insight-resolutions">resolutions</a>, and <a href="/docs/cse/administrationcreate-a-custom-tag-schema">tag schemas</a>.
+   <td>View Insight <a href="/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold">detection settings</a>, custom Insight <a href="/docs/cse/administration/manage-custom-insight-statuses">statuses</a> and <a href="/docs/cse/administration/manage-custom-insight-resolutions">resolutions</a>, and <a href="/docs/cse/administration/create-a-custom-tag-schema">tag schemas</a>.
    </td>
   </tr>
   <tr>
