@@ -1,11 +1,14 @@
 ---
 id: troubleshooting-live-tail
 title: Troubleshooting Live Tail
+sidebar_label: Troubleshooting
 description: Troubleshooting tips for Sumo Logic Live Tail.
 ---
 
 
+:::note
 Data ingested from Amazon S3 can't be tailed.
+:::
 
 ## No messages appear in a Live Tail session
 
