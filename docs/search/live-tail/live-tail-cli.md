@@ -14,19 +14,14 @@ The Live Tail CLI supports the following operating systems:
 
 ## Limitations
 
-The limitations for the Live Tail CLI are the same as the [Live Tail](about-live-tail.md) feature in Sumo Logic, but for these exceptions:
+The limitations for the Live Tail CLI are the same as the [Live Tail](about-live-tail.md) feature in Sumo Logic, with some exceptions:
 
 * You can tail logs ingested from Sources configured on Installed Collectors and from HTTP and Cloud Syslog Sources on Hosted Collectors.
-
   :::note
   Data ingested from Amazon S3 can't be tailed because of restrictions from Amazon.
   :::
-
 * The Live Tail CLI session will expire after 30 minutes of inactivity. This is to provide the best performance possible. If a Live Tail session has expired, you can restart it at any time.
-
 * `_view` and `_index` are not supported in Live Tail queries.
-
-For complete details, see [Live Tail](about-live-tail.md).
 
 ## Install and use the Live Tail CLI
 
@@ -105,16 +100,12 @@ When you start a Live Tail CLI session, it first checks the version of the Live 
 
 ### Major update
 
-If a major version update exists, you will see the error:
-
-> Incompatible version of Live Tail CLI. Please download the latest version from \<link\>.
+If a major version update exists, you will see the error: `Incompatible version of Live Tail CLI. Please download the latest version from <link>.`
 
 You must download the latest version before you can start a new Live Tail CLI session.
 
 ### Minor update
 
-If a minor version update exists, you will see the error:
+If a minor version update exists, you will see the error: `A newer version of Live Tail CLI is available, but your current version will still function. If you'd like to download the latest version, go to <link>.`
 
-> A newer version of Live Tail CLI is available, but your current version will still function. If you'd like to download the latest version, go to \<link\>
-
-Downloading the latest version to start a new Live Tail will allow you to take advantage of the latest bug fixes and features.
+Although not required, downloading the latest version to start a new Live Tail will allow you to take advantage of the latest bug fixes and features.
