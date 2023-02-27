@@ -2,6 +2,7 @@
 slug: /apm/real-user-monitoring
 title: Real User Monitoring (RUM)
 description: Real User Monitoring (RUM) gives you insights into the quality of customer interactions with the digital interfaces of your business.
+tags: [real user monitoring, rum]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

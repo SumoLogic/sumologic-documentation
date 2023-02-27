@@ -1,11 +1,13 @@
 ---
 id: help
-title: Contact Us
+title: Help
 sidebar_label: Help
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
+
+<img src={useBaseUrl('img/icons/business/support.png')} alt="icon" width="50"/>
 
 Our in-product **Help** menu provides links to quickly access Sumo Logic Support, feature requests, website, and more. Select **Help** in the left nav.
 
@@ -13,7 +15,7 @@ Our in-product **Help** menu provides links to quickly access Sumo Logic Suppo
 
 ## Documentation Support
 
-To access Sumo Logic online Help, click **Help > Documentation**. The Sumo Logic online Help (this document) opens in a new browser window. Online Help covers all features of our product, and should be your first resource when you have any questions about the product.
+To access docs in Sumo Logic, click **Help** > **Documentation**. Online Help covers all features of our product, and should be your first resource when you have any questions about the product.
 
 The help is context-sensitive. If you are on a page in the Web UI, the help system will open to the appropriate topic when you select **Documentation** under the **Help** menu.
 
@@ -42,7 +44,7 @@ Depending on your account type, you may also log a ticket with Sumo Logic Suppor
 
 ## Training and Certification
 
-Sumo Logic provides training for your enterprise needs. For more information on upcoming training classes, visit [www.sumologic.com/training](https://www.sumologic.com/training/) or email [training@sumologic.com](mailto:training@sumologic.com).
+Sumo Logic provides training for your enterprise needs. For more information on upcoming training classes, visit [www.sumologic.com/training](https://www.sumologic.com/training/), our [Training FAQ](/docs/get-started/certification-faq), or email [training@sumologic.com](mailto:training@sumologic.com).
 
 You can learn Sumo Logic courses at your own pace, anywhere, without time constraints, with our Self-Paced eLearning. By the end of the self-paced program, you will be prepared to pass your Sumo Logic certification exam.
 
