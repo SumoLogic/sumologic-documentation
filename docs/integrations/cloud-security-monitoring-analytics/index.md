@@ -14,28 +14,28 @@ This guide has documentation for all five data source apps that Sumo provides: W
 <div className="box smallbox1 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/guardduty.png')} alt="Thumbnail icon" width="60"/>
-  <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/">Amazon GuardDuty</a></h4>
+  <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/amazon-guardduty/">Amazon GuardDuty</a></h4>
   <p>A guide to Amazon GuardDuty Cloud Security Monitoring and Analytics.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_AWS_VPCFlow.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/">Amazon VPC Flow</a></h4>
+  <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/amazon-vpc-flow/">Amazon VPC Flow</a></h4>
   <p>A guide to the Sumo Logic app for Amazon VPC Flow.</p>
   </div>
 </div>
     <div className="box smallbox3 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/CloudTrail_PCI_Compliance.png')} alt="Thumbnail icon" width="70"/>
-      <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/">AWS CloudTrail PCI Compliance</a></h4>
+      <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/aws-cloudtrail-pci-compliance/">AWS CloudTrail PCI Compliance</a></h4>
       <p>A guide to the Sumo Logic app for Amazon CloudTrail PCI Compliance.</p>
       </div>
     </div>
     <div className="box smallbox4 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/security-qs.png')} alt="Thumbnail icon" width="50"/>
-      <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/">AWS Security Hub</a></h4>
+      <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/aws-security-hub/">AWS Security Hub</a></h4>
       <p>A guide to the Sumo Logic app for AWS Security Hub.</p>
       </div>
     </div>
