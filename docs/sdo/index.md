@@ -1,7 +1,7 @@
 ---
 slug: /sdo
 title: Sumo Logic Software Development Optimization Solution
-description: Software Development Optimization solution helps you increase release velocity, improve reliability, and comprehensively monitor your software development pipelines with industry-leading metrics and actionable insights generated automatically from development tools such as Jira, GitHub, Jenkins, PagerDuty, Bitbucket, Opsgenie, and more.
+description: Software Development Optimization helps you increase release velocity, improve reliability, and comprehensively monitor your software development pipelines with actionable insights generated automatically from development tools such as Jira, GitHub, Jenkins, PagerDuty, Bitbucket, Opsgenie, and more.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

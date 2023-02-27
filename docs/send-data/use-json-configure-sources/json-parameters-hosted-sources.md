@@ -4,8 +4,6 @@ title: JSON Parameters for Hosted Sources
 description: This topic describes JSON Source parameters for hosted Collectors.
 ---
 
-
-
 This topic describes JSON Source parameters for Hosted Collectors. See the following topics for additional information:
 
  * [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.
@@ -19,6 +17,7 @@ JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.o
 
 :::note Common Parameters
 See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for a list of common parameters.
+:::
 
 ## Source types for Hosted Collectors
 

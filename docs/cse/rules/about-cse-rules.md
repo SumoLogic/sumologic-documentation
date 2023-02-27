@@ -16,7 +16,7 @@ The following rule expression, which looks for any event that stops AWS CloudTra
 
 `metadata_vendor = 'AWS' and metadata_product = 'CloudTrail' and fields.eventName = "DeleteTrail" or fields.eventName = "StopLogging" or fields.eventName = "UpdateTrail"`
 
-Rule expressions can also use regular expressions and CSE rules language functions, which include SQL-like and domain-specific functions. For more information see [CSE Rules Syntax](cse-rules-syntax.md).
+Rule expressions can also use regular expressions and CSE rules language functions, which include SQL-like and domain-specific functions. For more information, see [CSE Rules Syntax](cse-rules-syntax.md).
 
 :::note
 The [Before You Write a Custom Rule](before-writing-custom-rule.md) topic has useful information about how to prototype a rule expression in CIP.

@@ -33,7 +33,7 @@ Users that have the required role capabilities can create child orgs under a par
 
 ## About CSE provisioning
 
-You can enable and provision CSE for a child org. Note that the process of provisioning CSE can take up to 24 hours. For more information see [Monitor CSE Provisioning](#monitor-cse-provisioning), below.
+You can enable and provision CSE for a child org. Note that the process of provisioning CSE can take up to 24 hours. For more information, see [Monitor CSE Provisioning](#monitor-cse-provisioning), below.
 
 ## Requirements for creating and managing orgs
 

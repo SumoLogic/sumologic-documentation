@@ -43,7 +43,7 @@ To install an application:
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    * **Log Source.** Select either of these options for the data source.
       * Choose **Source Category**, and select a source category from the list.
-      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). For more information see [Custom Data Filters](#custom-data-filters). 
+      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). For more information, see [Custom Data Filters](#custom-data-filters). 
    * **Advanced**. (Optional) Select the **Location in Library**, the default is the Personal folder in the library.
 1. Click **Add to Library**.
 
