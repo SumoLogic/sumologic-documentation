@@ -326,7 +326,10 @@ Use this dashboard to:
 The **Kubernetes - Health Check** dashboard displays the collection status from all the components in the Kubernetes cluster.
 
 Use this dashboard to:  
-* Monitor the health of FluentD and FluentBit pods in your Kubernetes environment (note: currently in default configurations [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) is used instead of FluentD and Fluent Bit)
+* Monitor the health of FluentD and FluentBit pods in your Kubernetes environment
+  :::note 
+  Currently, in default configurations, [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) is used instead of FluentD and Fluent Bit.
+  :::
 * Gain insights into Prometheus metric collection endpoint status.
 * Get insight into resource utilization and fine-tune configurations accordingly.
 * View logs and errors and investigate potential issues.
