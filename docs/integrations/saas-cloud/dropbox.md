@@ -8,6 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <br/><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-icon.png')} alt="dropbox-icon.png" width="100"/>
 
+## Overview
+
 The Dropbox App for Sumo Logic allows you to monitor and analyse Dropbox usage data for your organization, offering insight into user activity, file access, sharing, and collaboration. This app is based on the Cloud-to-Cloud Dropbox Source, which allows Dropbox and Sumo Logic to work together seamlessly.
 
 The Dropbox App makes it simple to import data from your Dropbox account into Sumo Logic, where you can perform real-time analysis and create dashboards to visualize key metrics. You can gather information about user activity and file access, track changes in file and folder ownership, and track collaboration across your organization.
@@ -21,10 +23,9 @@ The Dropbox App for Sumo Logic offers several useful features:
 
 To help you get started quickly, the app provides pre-built dashboards and searches that display important Dropbox usage metrics like top users, file access patterns, and shared files. In summary, the Dropbox App for Sumo Logic provides you with the necessary tools to monitor and analyze your organization's Dropbox usage data, giving you valuable insights into user behavior and potential security risks.
 
-## Log types
+## Log Types
 
 The Dropbox App for Sumo Logic uses [Team events from Dropbox](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events) to generate logs that can be used for monitoring and analysis. To access more information about the specific fields for the v2 version of Dropbox events, refer to the [Migration guide](https://www.dropbox.com/developers/reference/events-migration-guide), which provides a comprehensive list of available log types.
-
 
 ### Sample Log Messages
 
@@ -92,7 +93,7 @@ The Dropbox App for Sumo Logic uses [Team events from Dropbox](https://www.dropb
 }
 ```
 
-### Sample Query
+### Sample Queries
 
 ```sql title="Active Team Members"
 _sourceCategory="dropboxSource"
@@ -116,10 +117,9 @@ _sourceCategory="dropboxSource"
 
 This section provides instructions for setting up [Cloud-to-Cloud-Integration for Dropbox Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source.md) to create the source and use the same source category while installing the app.
 
-## Installing the App​
+## Installing the Dropbox app​
 
-This section has instructions for installing the Cisco Umbrella App for Sumo and descriptions of each of the dashboards.
-
+This section has instructions for installing the Dropbox App for Sumo Logic and descriptions of each of the dashboards.
 1. Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. From the App Catalog, search for and select the app.
 1. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently.For more information, see the [Install the Apps from the Library](https://help.sumologic.com/docs/get-started/apps-integrations#install-apps-from-the-library).
@@ -128,14 +128,14 @@ This section has instructions for installing the Cisco Umbrella App for Sumo and
     1. **Data Source.** Select either of these options for the data source. 
       * Choose **Source Category**, and select a source category from the list. 
       * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: `_sourceCategory=MyCategory`. 
-    3. **Advanced**. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
+    1. **Advanced**. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
 5. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-## Viewing Dropbox Dashboards​
+## Viewing the Dropbox Dashboards​
 
 * All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
@@ -143,7 +143,7 @@ You can use filters to drill down and examine the data on a granular level. Filt
 
 * Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
-### Overview
+###  Dropbox Dashboard Overview
 
 **Dropbox - Overview**.
 This dashboard provides valuable insights on the activities of active members, uniquely linked applications, and login events. It also offers a summary of user agent activity, analyzes the distribution of all event categories within Dropbox, displays the geolocations of all events, identifies the most frequent event types within important event categories, and tracks recently added team members.
