@@ -57,7 +57,7 @@ The **View in Metrics Explorer** button on the Monitors Details page allows you 
 
 To view the thresholds translating values in your metrics explorer, follow the steps below:
 1. Select Monitor from the **Monitoring** page.
-1. On the Monitors Details page, navigate to the **Trigger Conditions** section and note the thresholds values defined for Critical and Warning data conditions. All other parameters will be set to default, such as the window to 15 minutes and the "at all times" box checked. <br/><img src={useBaseUrl('/img/monitors/view-in-explorer-page.png')} alt="view-in-explorer-page" width="450" />
+1. On the Monitors Details pane, navigate to the **Trigger Conditions** section and note the thresholds values defined for Critical and Warning data conditions. All other parameters will be set to default, such as the window to 15 minutes and the "at all times" box checked. <br/><img src={useBaseUrl('img/monitors/view-in-explorer-page.png')} alt="view-in-explorer-page" width="450" />
 1. Click the **View in Metrics Explorer** <img src={useBaseUrl('/img/monitors/view-in-explorer-icon.png')} alt="view-in-explorer-icon" width="150" /> button. The Metrics Explorer page will display with the same threshold values applied to the panel and graph.
 1. On the **Panel settings** page, click threshold <img src={useBaseUrl('/img/monitors/thresholds-icon.png')} alt="thresholds-icon"
 width="40" /> icon to view the values that you have defined for the Monitor.
