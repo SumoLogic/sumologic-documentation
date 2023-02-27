@@ -68,7 +68,7 @@ To set up 2-Step Verification, you will need to install a Time-based One-Time Pa
 
 ## My Access Keys
 
-Users with a role that grants the **Create Access Keys** capability can create and manage their own Access Keys. For more information see [Access Keys](/docs/manage/security/access-keys).
+Users with a role that grants the **Create Access Keys** capability can create and manage their own Access Keys. For more information, see [Access Keys](/docs/manage/security/access-keys).
 
 ## My Preferences
 
@@ -120,7 +120,7 @@ On the Search page, if you want to be prompted with a confirmation dialog before
 
 ### Automatically open the search autocomplete dialog when editing
 
-Use `<Esc>` or `<Alt>` `<Space>` to open it manually) Keep this option selected if you'd like to open the [search autocomplete] dialog when you are editing a query. Deselect the option to disable the search autocomplete dialog.
+Use `<Esc>` or `<Alt>` `<Space>` to open it manually) Keep this option selected if you'd like to open the [search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete) dialog when you are editing a query. Deselect the option to disable the search autocomplete dialog.
 
 ### On login, reopen the tabs from your previous session
 

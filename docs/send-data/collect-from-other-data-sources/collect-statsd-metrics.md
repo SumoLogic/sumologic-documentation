@@ -1,6 +1,7 @@
 ---
 id: collect-statsd-metrics
 title: Collect StatsD Metrics
+sidebar_label: StatsD
 description: Steps to use the collectd agent with the StatsD plugin and Sumo’s collectd output plugin to send StatsD metrics to the Sumo service.
 ---
 

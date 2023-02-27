@@ -15,7 +15,7 @@ In this step, you configure AWS CloudTrail logging in AWS as described
 in AWS Help.
 
 1. Unless you’ve already done so, [Configure CloudTrail in AWS](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html).
-1. Before configuring collection, you need to grant Sumo Logic permission to access your AWS data. For more information see Grant Access to an AWS Product.
+1. Before configuring collection, you need to grant Sumo Logic permission to access your AWS data. For more information, see Grant Access to an AWS Product.
 
 ## Step 2: Configure collection
 

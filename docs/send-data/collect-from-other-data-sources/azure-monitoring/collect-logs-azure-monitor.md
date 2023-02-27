@@ -1,6 +1,7 @@
 ---
 id: collect-logs-azure-monitor
 title: Collect Logs from Azure Monitor
+sidebar_label: Collecting Logs
 description: Instructions for configuring a pipeline for shipping logs available from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP source on an hosted collector in Sumo Logic.
 ---
 
