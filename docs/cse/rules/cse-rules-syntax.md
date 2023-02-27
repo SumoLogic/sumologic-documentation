@@ -736,7 +736,6 @@ attribute.
 **Syntax notes**
 
 * In CIP, you can use the `json` operator without specifying a field to parse, in which case the operation is performed against the `_raw` field.
-
     :::note
     Currently, to use the `json` operator in CSE you must supply a field and an alias, as shown in the syntax above. Currently, the `json` operator is the only Sumo Logic search operator that you can use an alias with in CSE.
     :::
@@ -749,7 +748,7 @@ attribute.
 
   * `| json field=fields "foo.bar['baz']" as nestedKey`
   * `| json field=fields "foo[0]" as indexKey`
-  * `json field=fields "foo[*]" as asteriskKey`
+  * `| json field=fields "foo[*]" as asteriskKey`
 
         Works for arrays, not maps.
 
