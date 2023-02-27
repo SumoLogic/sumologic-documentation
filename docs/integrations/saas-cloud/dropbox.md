@@ -115,7 +115,7 @@ _sourceCategory="dropboxSource"
 
 ## Collecting Logs for Dropbox app
 
-This section provides instructions for setting up [Cloud-to-Cloud-Integration for Dropbox Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source.md) to create the source and use the same source category while installing the app.
+This section provides instructions for setting up [Cloud-to-Cloud-Integration for Dropbox Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source) to create the source and use the same source category while installing the app.
 
 ## Installing the Dropbox app​
 
