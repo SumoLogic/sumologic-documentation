@@ -20,9 +20,9 @@ This guide has documentation for Sumo apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/akamai">
+  <a href="/docs/integrations/saas-cloud/akamai-cloud-monitor">
   <img src={useBaseUrl('img/integrations/saas-cloud/akamai.png')} alt="icon" width="50"/><h4>Akamai Cloud Monitor</h4></a>
-  <p>A guide to the Sumo Logic App for Akamai.</p>
+  <p>A guide to the Sumo Logic App for Akamai Cloud Monitor.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
@@ -41,7 +41,7 @@ This guide has documentation for Sumo apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox5 card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/cisco-umbrella ">
+  <a href="/docs/integrations/saas-cloud/cisco-umbrella">
   <img src={useBaseUrl('img/integrations/saas-cloud/cisco-icon.png')} alt="icon" width="50"/><h4>Cisco Umbrella</h4></a>
   <p>A guide to the Sumo Logic App for Cisco Umbrella.</p>
   </div>
