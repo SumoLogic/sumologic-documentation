@@ -68,3 +68,4 @@ This guide has documentation for Sumo Logic apps for PCI Compliance.
       <p>A guide to the Sumo Logic app for PCI Compliance for Windows Legacy.</p>
       </div>
     </div>
+</div>
