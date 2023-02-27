@@ -25,7 +25,8 @@ See the following topics for additional information:
 
 There is a community-supported script available on GitHub that allows you to conduct bulk actions to Collectors, see [Collector Management Script](https://github.com/SumoLogic/collector-management-client).
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com` you would specify <strong>`YOUR_DEPLOYMENT`</strong> as either `au`, `ca`, `de`, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+{@import ../../reuse/api-endpoints.md}
+
 
 ## Collector API Methods and Examples
 

@@ -1,6 +1,7 @@
 ---
 id: collect-with-amazon-kinesis
 title: Collect Amazon CloudWatch Logs using Amazon Kinesis
+sidebar_label: Collect Logs using Amazon Kinesis
 description: The Sumo Logic App for Amazon VPC Flow Logs provides a community-supported collection method using Kinesis stream to retrieve Amazon VPC Flow logs.
 ---
 
