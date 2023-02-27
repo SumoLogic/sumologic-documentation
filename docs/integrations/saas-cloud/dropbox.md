@@ -8,7 +8,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <br/><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-icon.png')} alt="dropbox-icon.png" width="100"/>
 
-## Overview
 
 The Dropbox App for Sumo Logic allows you to monitor and analyse Dropbox usage data for your organization, offering insight into user activity, file access, sharing, and collaboration. This app is based on the Cloud-to-Cloud Dropbox Source, which allows Dropbox and Sumo Logic to work together seamlessly.
 
