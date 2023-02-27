@@ -247,7 +247,6 @@
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/MS_Graph_Azure_AD_Reporting_Source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/MS_Graph_Identity_Protection_Source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Netskope_Source": "/docs/integrations/security-threat-detection/netskope",
-  "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Netskope-Source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Okta_Source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Palo_Alto_Cortex_XDR_Source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Proofpoint_On_Demand_Source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source",
