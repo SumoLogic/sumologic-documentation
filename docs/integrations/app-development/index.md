@@ -74,4 +74,3 @@ Sumo provides apps for platforms and tools that support software development pro
       </div>
     </div>
   </div>
-  
