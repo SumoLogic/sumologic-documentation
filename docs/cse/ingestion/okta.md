@@ -11,7 +11,7 @@ In this step, you configure an Okta Source to collect Okta log messages. You can
 
 ### Configure a Hosted Collector
 
-1. To configure a hosted collector, please see [Configure a Hosted Collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/#step-1-configure-hosted-collector).  
+1. To configure a hosted collector, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/#step-1-configure-hosted-collector).  
 1. **Fields**. 
     1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
     1. If all sources in this collector will be Okta sources, add an additional field with key `_parser` and value */Parsers/System/Okta/Okta*.
