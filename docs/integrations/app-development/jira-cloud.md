@@ -1,6 +1,6 @@
 ---
 id: jira-cloud
-title: Sumo Logic App for Jira Cloud
+title: Jira Cloud
 sidebar_label: Jira Cloud
 description: The Sumo Logic App for Jira Cloud provides insights into project management issues that enable you to more effectively plan, assign, track, report, and manage work across multiple teams.
 ---

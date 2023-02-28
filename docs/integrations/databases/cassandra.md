@@ -1,6 +1,6 @@
 ---
 id: cassandra
-title: Sumo Logic App for Cassandra
+title: Cassandra
 sidebar_label: Cassandra
 description: Documentation for the Sumo Logic Cassandra app.
 ---

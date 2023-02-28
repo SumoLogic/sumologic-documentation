@@ -1,7 +1,6 @@
 ---
 id: cis-aws-foundations-benchmark
-title: CIS AWS Foundations Benchmark App
-sidebar_label: CIS AWS Foundations Benchmark App
+title: CIS AWS Foundations Benchmark
 description: Gain operational visibility into your AWS security posture using the Sumo Logic for CIS AWS Foundations Benchmark App, which maps to Section 3 (Monitoring) of the CIS AWS Benchmarks Foundation recommendations.
 ---
 

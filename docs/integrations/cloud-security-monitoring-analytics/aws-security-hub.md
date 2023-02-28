@@ -1,6 +1,6 @@
 ---
 id: aws-security-hub
-title: Sumo Logic App for AWS Security Hub Cloud Security Monitoring and Analytics
+title: AWS Security Hub Cloud Security Monitoring and Analytics
 sidebar_label: AWS Security Hub
 description: The Sumo Logic AWS Security Hub app is designed to extract key findings from the AWS Security Hub, which is designed to centrally view and manage security alerts and automate security checks.
 ---

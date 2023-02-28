@@ -1,6 +1,6 @@
 ---
 id: kubernetes-control-plane
-title: Sumo Logic App for Kubernetes Control Plane
+title: Kubernetes Control Plane
 sidebar_label: Kubernetes Control Plane
 description: The Sumo Logic Kubernetes Control Plane App manages the master node control plane, including the API server, etcd, kube-system and worker nodes.
 ---

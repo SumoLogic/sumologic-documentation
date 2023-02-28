@@ -1,6 +1,6 @@
 ---
 id: jmx
-title: Sumo Logic App for Java Management Extensions (JMX)
+title: Java Management Extensions (JMX)
 sidebar_label: JMX
 description: The Sumo Logic App for Java Management Extensions (JMX) allows you to analyze and gain insights about Java applications.
 ---

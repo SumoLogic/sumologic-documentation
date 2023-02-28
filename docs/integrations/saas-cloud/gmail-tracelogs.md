@@ -1,6 +1,6 @@
 ---
 id: gmail-tracelogs
-title: Sumo Logic App for Gmail Trace Logs
+title: Gmail Trace Logs
 sidebar_label: Gmail Trace Logs
 description: The Sumo Logic App for Gmail Trace Logs monitors spam, malware threats, dropped messages, and rejected messages.
 ---
