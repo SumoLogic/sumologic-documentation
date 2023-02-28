@@ -2120,6 +2120,7 @@
   "/cid/6001": "/docs/integrations/app-development/github",
   "/cid/6002": "/docs/integrations/microsoft-azure/sql-server",
   "/cid/6003": "/docs/integrations/security-threat-detection/observable-networks",
+  "/cid/60047": "/docs/integrations/saas-cloud/dropbox",
   "/cid/6004": "/docs/integrations/saas-cloud/salesforce",
   "/cid/6005": "/docs/integrations/google/workspace/install-app-dashboards",
   "/cid/6006": "/docs/cse/ingestion/microsoft-audit-office",
