@@ -1,6 +1,6 @@
 ---
 id: elasticsearch
-title: Sumo Logic App for Elasticsearch
+title: Elasticsearch
 sidebar_label: Elasticsearch
 description: The Elasticsearch app helps you monitor the availability, performance, health, and resource utilization of your Elasticsearch clusters.
 ---

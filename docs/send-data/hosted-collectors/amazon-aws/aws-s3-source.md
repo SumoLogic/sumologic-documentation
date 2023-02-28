@@ -26,7 +26,7 @@ Files are transferred in their compressed form and decompressed when ingested. 
 
 ## Configure an Amazon S3 Source
 
-1. [Grant Sumo Logic access](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product/) to an Amazon S3 bucket.
+1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product/) to an Amazon S3 bucket.
 1. [Enable logging in AWS](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html) using the Amazon Console.
 1. Confirm that logs are being delivered to the Amazon S3 bucket.
 1. Add an AWS S3 Source to collect objects from your Amazon S3 bucket. See below for details.

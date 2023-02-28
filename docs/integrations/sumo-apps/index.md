@@ -24,7 +24,6 @@ You may upgrade your account at any time. In these instances, an admin can reque
 
 Once a request has been submitted, a support ticket is automatically opened. A representative from Sumo Logic will respond to your request as soon as possible, generally between one and two business days. Depending on the app that's been requested, Sumo Logic may need additional information, or may need to work with your organization to change the account type to enable some apps.
 
-## Table of Contents
 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
@@ -58,7 +57,7 @@ Once a request has been submitted, a support ticket is automatically opened. A r
     <div className="box smallbox5 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/sumo-apps/Enterprise_Audit.png')} alt="Thumbnail icon" width="50"/>
-      <h4><a href="/docs/integrations/sumo-apps/enterprise-audit">Enterprise Audit(multiple apps)</a></h4>
+      <h4><a href="/docs/integrations/sumo-apps/enterprise-audit">Enterprise Audit (multiple apps)</a></h4>
       <p>A guide to the Sumo Logic app for Enterprise Audit.</p>
       </div>
     </div>

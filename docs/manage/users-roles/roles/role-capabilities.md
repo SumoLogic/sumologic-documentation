@@ -106,7 +106,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage Content
    </td>
-   <td>Manage the content for your organization. This provides access to <a href="/docs/manage/Content-Sharing/Admin-Mode">Admin Mode</a> in the Library.
+   <td>Manage the content for your organization. This provides access to <a href="/docs/manage/content-sharing/admin-mode">Admin Mode</a> in the Library.
    </td>
   </tr>
   <tr>
@@ -149,19 +149,19 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage Logs-to-Metrics
    </td>
-   <td>Create, edit, or delete <a href="/docs/metrics/Logs-to-Metrics">Logs-to-Metrics</a> rules.
+   <td>Create, edit, or delete <a href="/docs/metrics/logs-to-metrics">Logs-to-Metrics</a> rules.
    </td>
   </tr>
   <tr>
    <td>Manage Metrics Transformation Rules
    </td>
-   <td>Create, edit, or delete <a href="/docs/metrics/Metrics-Transformation-Rules">Metrics Transformation rules</a>.
+   <td>Create, edit, or delete <a href="/docs/metrics/metrics-transformation-rules">Metrics Transformation rules</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Metric Rules
    </td>
-   <td>Create, edit, or delete <a href="/docs/metrics/Metric-Rules-Editor">Metric Rules</a>.
+   <td>Create, edit, or delete <a href="/docs/metrics/metric-rules-editor">Metric Rules</a>.
    </td>
   </tr>
 </table>
@@ -204,7 +204,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage support account access
    </td>
-   <td>Enable <a href="/docs/manage/security/Enable-Support-Account">management of the Sumo Logic support account</a> for your organization.
+   <td>Enable <a href="/docs/manage/security/enable-support-account">management of the Sumo Logic support account</a> for your organization.
    </td>
   </tr>
   <tr>
@@ -216,7 +216,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage SAML
    </td>
-   <td><a href="/docs/manage/security/SAML">Provision and manage SAML</a> for single sign-on to your Sumo Logic accounts.
+   <td><a href="/docs/manage/security/saml">Provision and manage SAML</a> for single sign-on to your Sumo Logic accounts.
    </td>
   </tr>
   <tr>
@@ -253,13 +253,13 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Share dashboards with the allowlist
    </td>
-   <td><a href="/docs/dashboards/share-dashboard-inside-org#Share_Dashboards_outside_your_organization">Share dashboards</a> in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your <a href="/docs/dashboards/share-dashboard-inside-org#Enable_the_service_whitelist">service allowlist</a>.
+   <td><a href="/docs/dashboards/share-dashboard-inside-org">Share dashboards</a> in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your <a href="/docs/manage/security/create-allowlist-ip-cidr-addresses/#enable-dashboard-allowlist">service allowlist</a>.
    </td>
   </tr>
   <tr>
    <td>Share dashboards with the world
    </td>
-   <td><a href="/docs/dashboards/share-dashboard-inside-org#Share_Dashboards_outside_your_organization">Share dashboards</a> in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.
+   <td><a href="/docs/dashboards/share-dashboard-outside-org">Share dashboards</a> in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.
    </td>
   </tr>
 </table>
@@ -299,15 +299,14 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
   <tr>
    <td>View Monitors
    </td>
-   <td>View <a href="/docs/alerts/monitors">Monitors</a>.
-<p>If <a href="/docs/alerts/monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions </a>are enabled for your org, users with this capability can view folders on the <a href="/docs/alerts/monitors">Monitors</a> page to which they've been granted View access, and the Monitors contained in those folders.</p>
+   <td>If <a href="/docs/alerts/monitors/edit-settings/#monitors-folder-permissions">Monitor folder permissions</a> are enabled for your org, users with this capability can view folders on the <a href="/docs/alerts/monitors">Monitors</a> page to which they've been granted View access, and the Monitors contained in those folders.
    </td>
   </tr>
   <tr>
    <td>Manage Monitors
    </td>
    <td>A user with this capability can create new folders and <a href="/docs/alerts/monitors">Monitors</a>, and grant other roles permissions to the folders they create.
-<p>If <a href="/docs/alerts/monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions</a> are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.</p>
+<p>If <a href="/docs/alerts/monitors/edit-settings/#monitors-folder-permissions">Monitor folder permissions</a> are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.</p>
    </td>
   </tr>
   <tr>
@@ -319,7 +318,7 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
   <tr>
    <td>Admin Monitors
    </td>
-   <td>If <a href="/docs/alerts/monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions</a> are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the <a href="/docs/alerts/monitors">Monitors</a> page. This is similar to the Content Administrator capability of the Content Library.
+   <td>If <a href="/docs/alerts/monitors/edit-settings/#monitors-folder-permissions">Monitor folder permissions</a> are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the <a href="/docs/alerts/monitors">Monitors</a> page. This is similar to the Content Administrator capability of the Content Library.
    </td>
   </tr>
 </table>
@@ -414,7 +413,7 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>Invoke Insights Actions
    </td>
-   <td>Choose and run an <a href="/docs/cse/administration/Create-CSE-Actions">Action</a> from the Actions menu for an Insight.
+   <td>Choose and run an <a href="/docs/cse/administration/create-cse-actions">Action</a> from the Actions menu for an Insight.
    </td>
   </tr>
   <tr>
@@ -492,79 +491,79 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>View Custom Insights
    </td>
-   <td>View <a href="/docs/cse/records-signals-entities-insights/Configure-Custom-Insight">custom Insight</a> configurations.
+   <td>View <a href="/docs/cse/records-signals-entities-insights/configure-custom-insight">custom Insight</a> configurations.
    </td>
   </tr>
   <tr>
    <td>Manage Custom Insights
    </td>
-   <td>Create, edit, and delete <a href="/docs/cse/records-signals-entities-insights/Configure-Custom-Insight">custom Insight</a> configurations.
+   <td>Create, edit, and delete <a href="/docs/cse/records-signals-entities-insights/configure-custom-insight">custom Insight</a> configurations.
    </td>
   </tr>
   <tr>
    <td>View Network Blocks
    </td>
-   <td>View <a href="/docs/cse/administration/Create-Use-Network-Blocks">network blocks</a>.
+   <td>View <a href="/docs/cse/administration/create-use-network-blocks">network blocks</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Network Blocks
    </td>
-   <td>Create, edit, and delete <a href="/docs/cse/administration/Create-Use-Network-Blocks">network blocks</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/administration/create-use-network-blocks">network blocks</a>.
    </td>
   </tr>
   <tr>
    <td>View Suppressed Entities
    </td>
-   <td>View <a href="/docs/cse/records-signals-entities-insights/About-Signal-Suppression">Suppressed</a> Entities.
+   <td>View <a href="/docs/cse/records-signals-entities-insights/about-signal-suppression">Suppressed</a> Entities.
    </td>
   </tr>
   <tr>
    <td>Manage Suppressed Entities
    </td>
-   <td><a href="/docs/cse/records-signals-entities-insights/About-Signal-Suppression">Suppress</a> and unsuppress Entities.
+   <td><a href="/docs/cse/records-signals-entities-insights/about-signal-suppression">Suppress</a> and unsuppress Entities.
    </td>
   </tr>
   <tr>
    <td>View Mappings
    </td>
-   <td>View <a href="/docs/cse/schema/Create-Structured-Log-Mapping">log mappings</a> and <a href="/docs/cse/Ingestion/sumo-logic-ingest-mapping">ingest mappings.</a>
+   <td>View <a href="/docs/cse/schema/create-structured-log-mapping">log mappings</a> and <a href="/docs/cse/ingestion/sumo-logic-ingest-mapping">ingest mappings.</a>
    </td>
   </tr>
   <tr>
    <td>Manage Mappings
    </td>
-   <td>Create, edit, and delete <a href="/docs/cse/schema/Create-Structured-Log-Mapping">log mappings</a> and <a href="/docs/cse/Ingestion/sumo-logic-ingest-mapping">ingest mappings</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/schema/create-structured-log-mapping">log mappings</a> and <a href="/docs/cse/ingestion/sumo-logic-ingest-mapping">ingest mappings</a>.
    </td>
   </tr>
   <tr>
    <td>View Workflow
    </td>
-   <td>View Insight <a href="/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold">detection settings</a>, custom Insight <a href="/docs/cse/administration/Manage-Custom-Insight-Statuses">statuses</a> and <a href="/docs/cse/administration/Manage-Custom-Insight-Resolutions">resolutions</a>, and <a href="/docs/cse/administration/Create-a-Custom-Tag-Schema">tag schemas</a>.
+   <td>View Insight <a href="/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold">detection settings</a>, custom Insight <a href="/docs/cse/administration/manage-custom-insight-statuses">statuses</a> and <a href="/docs/cse/administration/manage-custom-insight-resolutions">resolutions</a>, and <a href="/docs/cse/administration/create-a-custom-tag-schema">tag schemas</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Workflow
    </td>
-   <td>Create, edit, and delete Insight <a href="/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold">detection settings</a>, custom Insight <a href="/docs/cse/administration/Manage-Custom-Insight-Statuses">statuses</a> and <a href="/docs/cse/administration/Manage-Custom-Insight-Resolutions">resolutions</a>, and <a href="/docs/cse/administration/Create-a-Custom-Tag-Schema">tag schemas</a>.
+   <td>Create, edit, and delete Insight <a href="/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold">detection settings</a>, custom Insight <a href="/docs/cse/administration/manage-custom-insight-statuses/">statuses</a> and <a href="/docs/cse/administration/manage-custom-insight-resolutions">resolutions</a>, and <a href="/docs/cse/administration/create-a-custom-tag-schema">tag schemas</a>.
    </td>
   </tr>
   <tr>
    <td>View Context Actions
    </td>
-   <td>View <a href="/docs/cse/administration/Create-CSE-Context-Actions">Context Actions</a>.
+   <td>View <a href="/docs/cse/administration/create-cse-context-actions">Context Actions</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Context Actions
    </td>
-   <td>Create, edit, and delete <a href="/docs/cse/administration/Create-CSE-Context-Actions">Context Actions</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/administration/create-cse-context-actions">Context Actions</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Actions
    </td>
-   <td>View, create, edit, and delete <a href="/docs/cse/administration/Create-CSE-Actions">Actions</a>.
+   <td>View, create, edit, and delete <a href="/docs/cse/administration/create-cse-actions">Actions</a>.
    </td>
   </tr>
   <tr>
@@ -594,13 +593,13 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>View Entity Normalization
    </td>
-   <td>View the configurations on CSE’s <a href="/docs/cse/schema/Username-and-Hostname-Normalization">Domain Normalization</a> page.
+   <td>View the configurations on CSE’s <a href="/docs/cse/schema/username-and-hostname-normalization">Domain Normalization</a> page.
    </td>
   </tr>
   <tr>
    <td>Manage Entity Normalization
    </td>
-   <td>Update the configurations on CSE’s <a href="/docs/cse/schema/Username-and-Hostname-Normalization">Domain Normalization</a> page.
+   <td>Update the configurations on CSE’s <a href="/docs/cse/schema/username-and-hostname-normalization">Domain Normalization</a> page.
    </td>
   </tr>
   <tr>
@@ -636,13 +635,13 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>View Entity Groups
    </td>
-   <td>View <a href="/docs/cse/records-signals-entities-insights/Create-an-Entity-Group">Entity Groups</a>.
+   <td>View <a href="/docs/cse/records-signals-entities-insights/create-an-entity-group">Entity Groups</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Entity Groups
    </td>
-   <td>Create, edit, and delete <a href="/docs/cse/records-signals-entities-insights/Create-an-Entity-Group">Entity Groups</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/records-signals-entities-insights/create-an-entity-group">Entity Groups</a>.
    </td>
   </tr>
 </table>

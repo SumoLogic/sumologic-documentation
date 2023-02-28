@@ -1,6 +1,6 @@
 ---
 id: mysql
-title: Sumo Logic App for MySQL
+title: MySQL
 sidebar_label: MySQL
 description: Provides insight into the health of your MySQL servers, replication status, and errors.
 ---

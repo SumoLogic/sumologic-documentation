@@ -1,6 +1,6 @@
 ---
 id: auth0
-title: Sumo Logic App for Auth0
+title: Auth0
 sidebar_label: Auth0
 description: The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs, and provides insight into security and operational issues.
 ---

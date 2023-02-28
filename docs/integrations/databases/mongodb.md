@@ -1,6 +1,6 @@
 ---
 id: mongodb
-title: Sumo Logic App for MongoDB
+title: MongoDB
 sidebar_label: MongoDB
 description: The Sumo Logic App for MongoDB provides insight into your MongoDB environment, allowing you to track overall system health, queries, logins and connections, errors and warnings, replication, and sharding.
 ---
