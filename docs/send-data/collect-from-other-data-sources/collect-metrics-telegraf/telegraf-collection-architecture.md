@@ -51,7 +51,7 @@ To summarize, here's how to collect metrics using the Telegraf Operator:
 1. User adds annotations to the pods where they want Telegraf to collect data from.
 1. Prometheus connects to Telegraf via the user's annotations. Sumo Logic preconfigures Prometheus to fetch the metrics.
 1. Prometheus then sends metrics to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
-2. [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) processes metrics, enriches metadata, and sends metrics to Sumo Logic.
+2. The [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) processes metrics, enriches metadata, and sends metrics to Sumo Logic.
 
 ### Metrics collection pipeline
 
