@@ -26,7 +26,60 @@ Once a request has been submitted, a support ticket is automatically opened. A r
 
 ## Table of Contents
 
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/sumo-apps/Audit_Img.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/sumo-apps/audit">Audit</a></h4>
+  <p>A guide to the Sumo Logic app for Audit.</p>
+  </div>
+</div>
+<div className="box smallbox2 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/sumo-apps/')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/sumo-apps/cse">Cloud SIEM</a></h4>
+  <p>A guide to the Sumo Logic app for Cloud SIEM.</p>
+  </div>
+</div>
+<div className="box smallbox3 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/sumo-apps/data-volume">Data Volume</a></h4>
+  <p>A guide to the Sumo Logic app for Data Volume.</p>
+  </div>
+</div>
+<div className="box smallbox4 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/sumo-apps/data-volume-legacy">Data Volume (Legacy)</a></h4>
+  <p>A guide to the Sumo Logic app for Data Volume Legacy.</p>
+  </div>
+</div>
+    <div className="box smallbox5 card">
+      <div className="container">
+      <img src={useBaseUrl('img/integrations/sumo-apps/Enterprise_Audit.png')} alt="Thumbnail icon" width="50"/>
+      <h4><a href="/docs/integrations/sumo-apps/enterprise-audit">Enterprise Audit(multiple apps)</a></h4>
+      <p>A guide to the Sumo Logic app for Enterprise Audit.</p>
+      </div>
+    </div>
+    <div className="box smallbox6 card">
+      <div className="container">
+      <img src={useBaseUrl('img/integrations/sumo-apps/sumologic_EnterpriseSearchAudit.png')} alt="Thumbnail icon" width="55"/>
+      <h4><a href="/docs/integrations/sumo-apps/enterprise-search-audit">Enterprise Search Audit</a></h4>
+      <p>A guide to the Sumo Logic app for Enterprise Search Audit.</pSearch >
+      </div>
+    </div>
+    <div className="box smallbox7 card">
+      <div className="container">
+      <img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Thumbnail icon" width="55"/>
+      <h4><a href="/docs/integrations/sumo-apps/infrequent-data-tier">Infrequent Data Tier</a></h4>
+      <p>A guide to the Sumo Logic app for Infrequent Data Tier.</pSearch >
+      </div>
+    </div>
+    <div className="box smallbox8 card">
+      <div className="container">
+      <img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics.png')} alt="Thumbnail icon" width="55"/>
+      <h4><a href="/docs/integrations/sumo-apps/security-analytics">Security Analytics</a></h4>
+      <p>A guide to the Sumo Logic app for Security Analytics.</pSearch >
+      </div>
+    </div>
