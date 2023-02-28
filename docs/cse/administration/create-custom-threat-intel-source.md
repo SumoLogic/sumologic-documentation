@@ -14,7 +14,7 @@ You can set up and populate custom threat intel sources interactively from the C
 When CSE encounters an indicator from your threat source in an incoming
 Record it adds relevant information to the Record. Because threat intel
 information is persisted within Records, you can reference it downstream
-in both rules and search.The built-in rules that come with CSE
+in both rules and search. The built-in rules that come with CSE
 automatically create a Signal for Records that have been enriched in
 this way.
 
@@ -22,7 +22,7 @@ Rule authors can also write rules that look for threat intel information
 in Records. To leverage the information in a rule, you can extend your
 custom rule expression, or add a Rule Turning Expression to a built-in
 rule. For a more detailed explanation of how to use threat intel
-information in rules, see [Threat Intel](../rules/about-cse-rules.md) in the
+information in rules, see [Threat Intel](../rules/about-cse-rules/#threat-intel) in the
 *About CSE Rules* topic.
 
 ### Create a threat intel source from CSE UI
