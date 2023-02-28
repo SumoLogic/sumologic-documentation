@@ -18,79 +18,44 @@ To determine if an app is supported by your pricing plan, see [Apps and Sumo Log
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Thumbnail icon" width="50"/>
-  <h3><a href="/docs/integrations/web-servers/apache">Apache</a></h3>
-  <p>A guide to the Sumo Logic app for Apache.</p>
+  <img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Thumbnail icon" width="65"/>
+  <h3><a href="/docs/integrations/amazon-aws/">Amazon / AWS</a></h3>
+  <p>A guide to our apps for Amazon and AWS products.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/web-servers/apache-tomcat.png')} alt="Thumbnail icon" width="50"/>
-  <h3><a href="/docs/integrations/web-servers/apache-tomcat">Apache Tomcat</a></h3>
-  <p>A guide to the Sumo Logic app for Apache Tomcat.</p>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure.png')} alt="Thumbnail icon" width="50"/>
+  <h3><a href="/docs/integrations/microsoft-azure/">Microsoft / Azure</a></h3>
+  <p>A guide to our apps for Microsoft and Azure.</p>
   </div>
 </div>
     <div className="box smallbox3 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/web-servers/haproxy.png')} alt="Thumbnail icon" width="40"/>
-      <h3><a href="/docs/integrations/web-servers/haproxy">HAProxy</a></h3>
-      <p>A guide to the Sumo Logic app for HAProxy.</p>
+      <img src={useBaseUrl('img/integrations/google/google.png')} alt="Thumbnail icon" width="40"/>
+      <h3><a href="/docs/integrations/google/">Google</a></h3>
+      <p>A guide to our apps for Google products, such as Google Workspace.</p>
       </div>
     </div>
     <div className="box smallbox4 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/web-servers/microsoft_iis_10.png')} alt="Thumbnail icon" width="55"/>
-      <h3><a href="/docs/integrations/web-servers/iis-10">IIS 10</a></h3>
-      <p>A guide to the Sumo Logic app for IIS 10.</p>
+      <img src={useBaseUrl('img/integrations/databases/databases-icon.png')} alt="Thumbnail icon" width="55"/>
+      <h3><a href="/docs/integrations/databases">Database Servers</a></h3>
+      <p>Integrations for database servers, such as Oracle and MongoDB.</p>
       </div>
     </div>
     <div className="box smallbox5 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Thumbnail icon" width="55"/>
-      <h3><a href="/docs/integrations/web-servers/nginx">Nginx</a></h3>
-      <p>A guide to the Sumo Logic app for Nginx.</p>
+      <img src={useBaseUrl('img/integrations/containers-orchestration/containers.png')} alt="Thumbnail icon" width="50"/>
+      <h3><a href="/docs/integrations/containers-orchestration">Containers</a></h3>
+      <p>A guide to our apps for container management, such as Kubernetes and Docker.</p>
       </div>
     </div>
     <div className="box smallbox6 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/web-servers/nginx-ingress.png')} alt="Thumbnail icon" width="50"/>
-      <h3><a href="/docs/integrations/web-servers/nginx-ingress">Nginx Ingress</a></h3>
-      <p>A guide to the Sumo Logic app for Nginx Ingress.</p>
-      </div>
-    </div>
-    <div className="box smallbox7 card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/web-servers/nginx-legacy.png')} alt="Thumbnail icon" width="40"/>
-      <h3><a href="/docs/integrations/web-servers/nginx-legacy">Nginx (Legacy)</a></h3>
-      <p>A guide to the Sumo Logic app for Nginx (Legacy).</p>
-      </div>
-    </div>
-    <div className="box smallbox8 card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/web-servers/nginx-plus.png')} alt="Thumbnail icon" width="40"/>
-      <h3><a href="/docs/integrations/web-servers/nginx-plus">Nginx Plus</a></h3>
-      <p>A guide to the Sumo Logic app for Nginx Plus.</p>
-      </div>
-    </div>
-    <div className="box smallbox9 card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/web-servers/.png')} alt="Thumbnail icon" width="55"/>
-      <h3><a href="/docs/integrations/web-servers/nginx-plus-ingress">Nginx Plus Ingress</a></h3>
-      <p>A guide to the Sumo Logic app for Nginx Plus Ingress.</p>
-      </div>
-    </div>
-    <div className="box smallbox10 card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/web-servers/squid-proxy.png')} alt="Thumbnail icon" width="55"/>
-      <h3><a href="/docs/integrations/web-servers/squid-proxy">Squid Proxy</a></h3>
-      <p>A guide to the Sumo Logic app for Squid Proxy.</p>
-      </div>
-    </div>
-    <div className="box smallbox11 card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/web-servers/varnish.png')} alt="Thumbnail icon" width="55"/>
-      <h3><a href="/docs/integrations/web-servers/varnish">Varnish</a></h3>
-      <p>A guide to the Sumo Logic app for Varnish.</p>
+      <img src={useBaseUrl('img/integrations/web-servers/web-servers.png')} alt="Thumbnail icon" width="50"/>
+      <h3><a href="/docs/integrations/web-servers/">Web Servers</a></h3>
+      <p>A guide to our apps for web servers, such as Apache, Nginx, and Squid Proxy.</p>
       </div>
     </div>
   </div>
