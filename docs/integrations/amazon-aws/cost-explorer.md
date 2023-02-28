@@ -1,6 +1,6 @@
 ---
 id: cost-explorer
-title: Sumo Logic App for AWS Cost Explorer
+title: AWS Cost Explorer
 sidebar_label: AWS Cost Explorer
 ---
 

@@ -14,7 +14,7 @@ VMware does NOT recommend setting up a Cloud-to-Cloud integration for Carbon Bla
 
 ### Step 1: Configure collection
 
-In this step, you configure an AWS S3 Source to collect Carbon Black Cloud log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an AWS S3 Source below](#Configure-an-AWS-S3-Source). Otherwise, create a new collector as described in Configure a hosted collector below, and then create the source on the collector.
+In this step, you configure an AWS S3 Source to collect Carbon Black Cloud log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an AWS S3 Source below](#configure-an-aws-s3-source). Otherwise, create a new collector as described in Configure a hosted collector below, and then create the source on the collector.
 
 
 #### Configure a hosted collector

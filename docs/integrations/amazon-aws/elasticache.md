@@ -1,6 +1,6 @@
 ---
 id: elasticache
-title: Sumo Logic App for Amazon Elasticache
+title: Amazon Elasticache
 sidebar_label: Amazon Elasticache
 description: The Sumo Logic App for Amazon ElastiCache Redis ULM is a unified logs and metrics (ULM) App that provides visibility into key event and performance analytics to enable proactive diagnosis and response to system and environment issues. The app provides preconfigured dashboards for high-level analysis of event status and trends, locations, and system health and performance metrics.
 ---
@@ -162,7 +162,7 @@ Scope (Specific Data): account=* eventname eventsource "elasticache.amazonaws.co
 
 ### Centralized AWS CloudTrail Log Collection
 
-In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
+In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
 
 ```sql
 Rule Name: AWS Accounts
