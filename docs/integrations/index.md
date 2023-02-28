@@ -47,7 +47,7 @@ To determine if an app is supported by your pricing plan, see [Apps and Sumo Log
     <div className="box smallbox5 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/containers-orchestration/containers.png')} alt="Thumbnail icon" width="50"/>
-      <h3><a href="/docs/integrations/cloud-security-monitoring-analytics/">Containers</a></h3>
+      <h3><a href="/docs/integrations/containers-orchestration">Containers</a></h3>
       <p>A guide to our apps for container management, such as Kubernetes and Docker.</p>
       </div>
     </div>
