@@ -2,7 +2,7 @@
 slug: /observability/reliability-management-slo
 title: Reliability Management (SLOs/SLIs)
 description: Learn how to use Sumo Logic Reliability Management, including creating SLO monitors, configuring queries, setting SLIs, and using dashboards.
-tags: [Reliability Management, SLO]
+keywords: [reliability management, slo]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

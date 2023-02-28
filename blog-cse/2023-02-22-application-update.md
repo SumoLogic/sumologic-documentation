@@ -6,7 +6,7 @@ keywords:
   - service release notes
   - cloud siem
   - cse
-tags: [cloud siem release notes, application update]
+tags: [application update]
 authors:
   - url: https://help.sumologic.com/release-notes-cse/rss.xml
     image_url: /img/release-notes/rss-orange.png

@@ -6,7 +6,7 @@ keywords:
   - service release notes
   - cloud siem
   - cse
-tags: [cloud siem release notes, application update]
+tags: [application update]
 authors:
   - name: Peter Kazmir
     title: Principal Product Manager, Security Applications
@@ -25,7 +25,7 @@ This panel lists the top five most active entities, ranked by **Signal Severity 
 
 The count of Active Signals (Signals within the detection window that have not been included in an Insight) is also listed.
 
-When hovering over the Entity value, the Entity’s type will be displayed. The Entity value is a link to that Entity’s details page. 
+When hovering over the Entity value, the Entity’s type will be displayed. The Entity value is a link to that Entity’s details page.
 
 Analysts can use this tool to investigate what appears to be risky activity and potentially  proactively security issues before they are raised to the level of an Insight.
 
@@ -35,7 +35,7 @@ Analysts can use this tool to investigate what appears to be risky activity and 
 * [New] An attribute `attackStage` has been added to the new `sec_signal` index. This attribute summarizes the Mitre attack stage represented by the rule which triggered the signal. The value is defined the same way as the `attack_stage` attribute included in the older Signal forwarding feature.
 * [Updated] The `subResolution` attribute is now included in the Insight payload for **http v2** actions.
 * [Updated] The way Release Notes are listed in the CSE UI is changing. There is no longer a “bell” item on the top menu; it has been replaced with a link to the Release Notes page in the Help menu. In addition, Release Notes are now directly visible in the UI when they are published.
-* [New] When executing a context action on a Signal, fields will now be passed to the context action if they are available based on the record(s) in context. 
+* [New] When executing a context action on a Signal, fields will now be passed to the context action if they are available based on the record(s) in context.
 
 ### Bug Fixes ###
 

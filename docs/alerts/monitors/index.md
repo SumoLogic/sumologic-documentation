@@ -3,7 +3,7 @@ slug: /alerts/monitors
 title: Monitors
 sidebar_label: Monitors
 description: Sumo Logic Monitors continuously query your logs or metrics and send notifications when specific events occur, such as critical, warning, and missing data.
-tags: [monitor, monitors]
+keywords: [monitor, monitors]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

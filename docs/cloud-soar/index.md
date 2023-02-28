@@ -1,7 +1,7 @@
 ---
 slug: /cloud-soar
 title: Cloud SOAR
-tags: [security]
+keywords: [security]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

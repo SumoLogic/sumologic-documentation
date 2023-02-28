@@ -2,7 +2,7 @@
 slug: /apm/traces
 title: Traces
 description: See how your application is behaving with trace analytics. Learn how to work with your Tracing data including dashboards, Service Map, Spans, and queries.
-tags: [traces, trace, tracing]
+keywords: [traces, trace, tracing]
 algolia: {
   priority: 1
 }

@@ -2,7 +2,7 @@
 slug: /dashboards-new
 title: Dashboard (New)
 description: The Dashboard (New) platform allows you to analyze metric and log data on the same dashboard, in a streamlined user experience.
-tags: [dashboards, dashboard]
+keywords: [dashboards, dashboard]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

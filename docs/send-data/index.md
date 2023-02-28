@@ -2,7 +2,7 @@
 slug: /send-data
 title: Send Data
 description: Sumo Logic can ingest data from almost any kind of data source.
-tags: [send data, collectors, collection]
+keywords: [send data, collectors, collection]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -1,7 +1,10 @@
 ---
 slug: /cse
 title: Cloud SIEM Enterprise
-tags: [cse, cloud siem, security]
+keywords:
+   - cse
+   - cloud siem
+   - security
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

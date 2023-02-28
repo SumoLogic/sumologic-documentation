@@ -2,7 +2,7 @@
 slug: /search
 title: Log Search
 description: Learn about the Sumo Logic search language, operators, and search features.
-tags: [log search, search]
+keywords: [log search, search]
 algolia: {
   priority: 1
 }

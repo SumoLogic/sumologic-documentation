@@ -2,7 +2,7 @@
 slug: /alerts
 title: Alerts
 description: Create Monitors and Scheduled Searches to notify users of changing conditions.
-tags: [alerts, alert]
+keywords: [alerts, alert]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

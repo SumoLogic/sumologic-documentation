@@ -6,7 +6,7 @@ keywords:
   - service release notes
   - cloud siem
   - cse
-tags: [cloud siem release notes, application update]
+tags: [application update]
 authors:
   - name: Peter Kazmir
     title: Principal Product Manager, Security Applications
@@ -25,5 +25,5 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Resolved Issues
 
-* Some Insights could not be closed via the UI (though they could via API). 
+* Some Insights could not be closed via the UI (though they could via API).
 * In the consolidated (parent/child) Insight view, in “Board” mode, scrolling was not working properly. In addition, links to other orgs had an error in the URL (a duplicate “/sec”).

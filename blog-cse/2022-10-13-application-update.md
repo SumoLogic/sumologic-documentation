@@ -7,7 +7,7 @@ keywords:
   - service release notes
   - cloud siem
   - cse
-tags: [cloud siem release notes, application update, announcement]
+tags: [application update]
 authors:
   - name: Peter Kazmir
     title: Principal Product Manager, Security Applications
