@@ -81,7 +81,7 @@ To authenticate to the Cortex XDR APIs, follow the steps below:
 ### Getting Cortex XDR FQDN
 
 1. Once you have obtained the API key and ID, the next step is to retrieve your FQDN.
-1. Navigate to the API Keys page where you can view all the APIs you have created. Right-click on the API ID you have generated and select **View Examples** from the options that appear .From the API keys page, you can see all the APIs created. Right click on the API ID you have generated, click **View Examples** from the options that appear. <br/> <img src={useBaseUrl('img/send-data/cortex-fqdn.png')} alt="cortex-fqdn.png" width="500" />
+1. Navigate to the API Keys page where you can view all the APIs you have created. Right-click on the API ID you have generated and select **View Examples** from the options that appear. From the API keys page, you can see all the APIs created. Right click on the API ID you have generated, click **View Examples** from the options that appear. <br/> <img src={useBaseUrl('img/send-data/cortex-fqdn.png')} alt="cortex-fqdn.png" width="500" />
 1. The API Example window will appear, and your FQDN can be found in the Curl example that starts from `sumologic-partner.xdr.us.paloaltonetworks.com`<br/> <img src={useBaseUrl('img/send-data/fqdn-name.png')} alt="fqdn-name.png" width="900" />
 
 :::note
