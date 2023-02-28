@@ -331,7 +331,7 @@ Configure these parameters in **sumologic_fer.auto.tfvars**. There is a set of 
 
 | Parameter | Description |
 |:-- | :--|
-| (app)_pull_request_fer_scope | A [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions) that points to the subset of logs you'd like to parse. For more details see [FER](/docs/manage/field-extractions/create-field-extraction-rule.md). |
+| (app)_pull_request_fer_scope | A [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions) that points to the subset of logs you'd like to parse. For more details see [FER](/docs/manage/field-extractions/create-field-extraction-rule). |
 | (app)_pull_request_fer_parse | A valid parse expression with [supported parse and search operators.](/docs/manage/field-extractions/create-field-extraction-rule.md) For more details see [FER](/docs/manage/field-extractions/create-field-extraction-rule.md). |
 
 :::note
