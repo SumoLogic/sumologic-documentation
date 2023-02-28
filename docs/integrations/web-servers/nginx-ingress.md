@@ -1,6 +1,6 @@
 ---
 id: nginx-ingress
-title: Sumo Logic App for Nginx Ingress
+title: Nginx Ingress
 sidebar_label: Nginx Ingress
 description: The Sumo Logic App for Nginx Ingress helps you monitor webserver activity in Nginx Ingress Controller.
 ---

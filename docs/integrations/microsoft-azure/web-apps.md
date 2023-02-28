@@ -1,6 +1,6 @@
 ---
 id: web-apps
-title: Sumo Logic App for Azure Web Apps
+title: Azure Web Apps
 sidebar_label: Azure Web Apps
 description: The Sumo Logic App for Azure Web Apps allows you to collect Azure web server and application diagnostics logs and monitor the health of your Azure Web Apps environment.
 ---

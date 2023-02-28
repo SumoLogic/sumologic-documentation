@@ -1,13 +1,13 @@
 ---
 id: kubernetes-control-plane
-title: Sumo Logic App for Kubernetes Control Plane
+title: Kubernetes Control Plane
 sidebar_label: Kubernetes Control Plane
 description: The Sumo Logic Kubernetes Control Plane App manages the master node control plane, including the API server, etcd, kube-system and worker nodes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="k8s logo" width="75"/>  
+<img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="k8s logo" width="50"/>  
 
 The Sumo Logic Kubernetes Control Plane App manages the master node control plane, including the API server, etcd, kube-system and worker nodes. The App utilizes [Falco](https://falco.org/docs/) Kubernetes Audit events to monitor and detect notable or suspicious activity such as creating pods that are privileged, mount sensitive host paths, use host networking, and the like. Seamlessly integrated with the Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes), preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
 

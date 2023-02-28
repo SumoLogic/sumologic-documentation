@@ -1,6 +1,6 @@
 ---
 id: zoom
-title: Sumo Logic App for Zoom
+title: Zoom
 sidebar_label: Zoom
 description: The Sumo Logic App for Zoom provides visibility into how Zoom is being used across your organization, displaying analytics on performance, availability, security, and user activity.
 ---

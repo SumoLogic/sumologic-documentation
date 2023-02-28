@@ -1,8 +1,8 @@
 ---
 id: sql
-title: Sumo Logic App for Azure SQL
+title: Azure SQL
 sidebar_label: Azure SQL
-description: The Sumo Logic app for Azure SQL helps you monitor activity in Azure SQL.
+description: The Sumo Logic app for Azure SQL Database helps you monitor activity in Azure SQL.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

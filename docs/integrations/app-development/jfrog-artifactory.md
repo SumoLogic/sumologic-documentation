@@ -1,6 +1,6 @@
 ---
 id: jfrog-artifactory
-title: Sumo Logic App for JFrog Artifactory
+title: JFrog Artifactory
 sidebar_label: JFrog Artifactory
 description: Provides insight into your JFrog Artifactory binary repository.
 ---
