@@ -58,7 +58,7 @@ Once a request has been submitted, a support ticket is automatically opened. A r
     <div className="box smallbox5 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/sumo-apps/Enterprise_Audit.png')} alt="Thumbnail icon" width="50"/>
-      <h4><a href="/docs/integrations/sumo-apps/enterprise-audit">Enterprise Audit(multiple apps)</a></h4>
+      <h4><a href="/docs/integrations/sumo-apps/enterprise-audit">Enterprise Audit (multiple apps)</a></h4>
       <p>A guide to the Sumo Logic app for Enterprise Audit.</p>
       </div>
     </div>
