@@ -1,6 +1,6 @@
 ---
 id: network-firewall
-title: Sumo Logic App for AWS Network Firewall
+title: AWS Network Firewall
 sidebar_label: AWS Network Firewall
 description: The Sumo Logic App for Amazon ElastiCache allows you to set up, run, and scale popular open-source compatible in-memory data stores in the cloud.
 ---

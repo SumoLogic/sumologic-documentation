@@ -1,6 +1,6 @@
 ---
 id: guardduty-benchmark
-title: Sumo Logic App for Amazon GuardDuty Benchmark
+title: Amazon GuardDuty Benchmark
 sidebar_label: Amazon GuardDuty Benchmark
 description: The Sumo Logic Amazon GuardDuty Benchmark App integrates Global Intelligence Service (GIS) with Amazon GuardDuty for continuous machine learning and statistical baselines for KPIs (key performance indicators) and KRIs (key risk indicators).
 ---

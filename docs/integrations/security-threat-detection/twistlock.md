@@ -1,6 +1,6 @@
 ---
 id: twistlock
-title: Sumo Logic App for Twistlock
+title: Twistlock
 sidebar_label: Twistlock and Twistlock Classic
 description: The Sumo Logic App for Twistlock provides comprehensive monitoring and analysis solution for detecting vulnerabilities and potential threats throughout your environment, including hosts, containers, images, registry.
 ---

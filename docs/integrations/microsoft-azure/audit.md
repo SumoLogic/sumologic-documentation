@@ -1,6 +1,6 @@
 ---
 id: audit
-title: Sumo Logic App for Azure Audit
+title: Azure Audit
 sidebar_label: Azure Audit
 description: The Sumo Logic App for Azure Audit allows you to collect Azure Audit logs and monitor the health of your Azure environment.
 ---

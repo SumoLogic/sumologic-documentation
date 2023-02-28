@@ -1,6 +1,6 @@
 ---
 id: elasticache
-title: Sumo Logic App for Amazon Elasticache
+title: Amazon Elasticache
 sidebar_label: Amazon Elasticache
 description: The Sumo Logic App for Amazon ElastiCache Redis ULM is a unified logs and metrics (ULM) App that provides visibility into key event and performance analytics to enable proactive diagnosis and response to system and environment issues. The app provides preconfigured dashboards for high-level analysis of event status and trends, locations, and system health and performance metrics.
 ---

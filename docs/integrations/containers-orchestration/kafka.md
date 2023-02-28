@@ -1,6 +1,6 @@
 ---
 id: kafka
-title: Sumo Logic App for Kafka
+title: Kafka
 sidebar_label: Kafka
 description: This guide provides an overview of Kafka related features and technologies.
 ---

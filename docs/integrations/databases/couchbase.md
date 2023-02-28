@@ -1,6 +1,6 @@
 ---
 id: couchbase
-title: Sumo Logic App for Couchbase
+title: Couchbase
 sidebar_label: Couchbase
 description: Couchbase is a distributed document database with a powerful search engine and in-built operational and analytical capabilities.
 ---

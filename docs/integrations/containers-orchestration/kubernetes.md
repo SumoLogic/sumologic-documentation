@@ -1,6 +1,6 @@
 ---
 id: kubernetes
-title: Sumo Logic App for Kubernetes
+title: Kubernetes
 sidebar_label: Kubernetes
 description: The Sumo Logic Kubernetes App provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes.
 ---

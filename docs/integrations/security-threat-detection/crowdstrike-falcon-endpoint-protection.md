@@ -1,6 +1,6 @@
 ---
 id: crowdstrike-falcon-endpoint-protection
-title: Sumo Logic App for CrowdStrike Falcon Endpoint Protection
+title: CrowdStrike Falcon Endpoint Protection
 sidebar_label: CrowdStrike Falcon Endpoint Protection
 description: The CrowdStrike Falcon Endpoint Protection App provides visibility into the security posture of your endpoints as analyzed by the CrowdStrike Falcon Endpoint Protection platform.
 ---
