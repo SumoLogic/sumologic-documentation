@@ -106,7 +106,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage Content
    </td>
-   <td>Manage the content for your organization. This provides access to <a href="/docs/manage/Content-Sharing/Admin-Mode">Admin Mode</a> in the Library.
+   <td>Manage the content for your organization. This provides access to <a href="/docs/manage/content-sharing/admin-mode">Admin Mode</a> in the Library.
    </td>
   </tr>
   <tr>
@@ -155,7 +155,7 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Manage Metrics Transformation Rules
    </td>
-   <td>Create, edit, or delete <a href="/docs/metrics/Metrics-Transformation-Rules">Metrics Transformation rules</a>.
+   <td>Create, edit, or delete <a href="/docs/metrics/metrics-transformation-rules">Metrics Transformation rules</a>.
    </td>
   </tr>
   <tr>
@@ -253,13 +253,13 @@ You can assign any of the following capabilities when you [create roles](creat
   <tr>
    <td>Share dashboards with the allowlist
    </td>
-   <td><a href="/docs/dashboards/share-dashboard-inside-org#Share_Dashboards_outside_your_organization">Share dashboards</a> in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your <a href="/docs/dashboards/share-dashboard-inside-org#Enable_the_service_whitelist">service allowlist</a>.
+   <td><a href="/docs/dashboards/share-dashboard-inside-org">Share dashboards</a> in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your <a href="/docs/manage/security/create-allowlist-ip-cidr-addresses/#enable-dashboard-allowlist">service allowlist</a>.
    </td>
   </tr>
   <tr>
    <td>Share dashboards with the world
    </td>
-   <td><a href="/docs/dashboards/share-dashboard-inside-org#Share_Dashboards_outside_your_organization">Share dashboards</a> in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.
+   <td><a href="/docs/dashboards/share-dashboard-outside-org">Share dashboards</a> in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.
    </td>
   </tr>
 </table>
@@ -299,15 +299,14 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
   <tr>
    <td>View Monitors
    </td>
-   <td>View <a href="/docs/alerts/monitors">Monitors</a>.
-<p>If <a href="/docs/alerts/monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions </a>are enabled for your org, users with this capability can view folders on the <a href="/docs/alerts/monitors">Monitors</a> page to which they've been granted View access, and the Monitors contained in those folders.</p>
+   <td>If <a href="/docs/alerts/monitors/edit-settings/#monitors-folder-permissions">Monitor folder permissions</a> are enabled for your org, users with this capability can view folders on the <a href="/docs/alerts/monitors">Monitors</a> page to which they've been granted View access, and the Monitors contained in those folders.
    </td>
   </tr>
   <tr>
    <td>Manage Monitors
    </td>
    <td>A user with this capability can create new folders and <a href="/docs/alerts/monitors">Monitors</a>, and grant other roles permissions to the folders they create.
-<p>If <a href="/docs/alerts/monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions</a> are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.</p>
+<p>If <a href="/docs/alerts/monitors/edit-settings/#monitors-folder-permissions">Monitor folder permissions</a> are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.</p>
    </td>
   </tr>
   <tr>
@@ -319,7 +318,7 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
   <tr>
    <td>Admin Monitors
    </td>
-   <td>If <a href="/docs/alerts/monitors#Grant_permissions_to_Monitors_folders">Monitor folder permissions</a> are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the <a href="/docs/alerts/monitors">Monitors</a> page. This is similar to the Content Administrator capability of the Content Library.
+   <td>If <a href="/docs/alerts/monitors/edit-settings/#monitors-folder-permissions">Monitor folder permissions</a> are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the <a href="/docs/alerts/monitors">Monitors</a> page. This is similar to the Content Administrator capability of the Content Library.
    </td>
   </tr>
 </table>
@@ -492,37 +491,37 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>View Custom Insights
    </td>
-   <td>View <a href="/docs/cse/records-signals-entities-insights/Configure-Custom-Insight">custom Insight</a> configurations.
+   <td>View <a href="/docs/cse/records-signals-entities-insights/configure-custom-insight">custom Insight</a> configurations.
    </td>
   </tr>
   <tr>
    <td>Manage Custom Insights
    </td>
-   <td>Create, edit, and delete <a href="/docs/cse/records-signals-entities-insights/Configure-Custom-Insight">custom Insight</a> configurations.
+   <td>Create, edit, and delete <a href="/docs/cse/records-signals-entities-insights/configure-custom-insight">custom Insight</a> configurations.
    </td>
   </tr>
   <tr>
    <td>View Network Blocks
    </td>
-   <td>View <a href="/docs/cse/administration/Create-Use-Network-Blocks">network blocks</a>.
+   <td>View <a href="/docs/cse/administration/create-use-network-blocks">network blocks</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Network Blocks
    </td>
-   <td>Create, edit, and delete <a href="/docs/cse/administration/Create-Use-Network-Blocks">network blocks</a>.
+   <td>Create, edit, and delete <a href="/docs/cse/administration/create-use-network-blocks">network blocks</a>.
    </td>
   </tr>
   <tr>
    <td>View Suppressed Entities
    </td>
-   <td>View <a href="/docs/cse/records-signals-entities-insights/About-Signal-Suppression">Suppressed</a> Entities.
+   <td>View <a href="/docs/cse/records-signals-entities-insights/about-signal-suppression">Suppressed</a> Entities.
    </td>
   </tr>
   <tr>
    <td>Manage Suppressed Entities
    </td>
-   <td><a href="/docs/cse/records-signals-entities-insights/About-Signal-Suppression">Suppress</a> and unsuppress Entities.
+   <td><a href="/docs/cse/records-signals-entities-insights/about-signal-suppression">Suppress</a> and unsuppress Entities.
    </td>
   </tr>
   <tr>

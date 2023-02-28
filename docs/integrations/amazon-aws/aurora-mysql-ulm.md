@@ -217,8 +217,8 @@ This section provides instructions for collecting logs and metrics for ingest in
 Before you configure log and metric sources for the Sumo Logic App for Aurora MySQL ULM, you must decide upon the source category to assign to each source.  Taking a hierarchical approach allows you to make use of wildcards when performing searches, as shown in the following examples:
 
 * For the AWS CloudTrail source for CloudTrail Events, you could specify a source category of AWS/CloudTrail
-* For the AWS CloudWatch Metric source to collect cloudwatch metric, you could specify a source category of AWS/RDS/Metric.
-* For the AWS CloudWatch Logs source to collect various Aurora MySQL cloudwatch logs (Error, SlowQuery, Audit and General), you could specify a source category of AWS/RDS/Aurora/MySQL/Error, AWS/RDS/Aurora/MySQL/SlowQuery, AWS/RDS/Aurora/MySQL/Audit, AWS/RDS/Aurora/MySQL/General
+* For the AWS CloudWatch Metric source to collect CloudWatch metrics, you could specify a source category of AWS/RDS/Metric.
+* For the AWS CloudWatch Logs source to collect various Aurora MySQL CloudWatch logs (Error, SlowQuery, Audit and General), you could specify a source category of AWS/RDS/Aurora/MySQL/Error, AWS/RDS/Aurora/MySQL/SlowQuery, AWS/RDS/Aurora/MySQL/Audit, AWS/RDS/Aurora/MySQL/General
 
 
 ### Step 2: Collect AWS CloudTrail events using AWS CloudTrail Source  
