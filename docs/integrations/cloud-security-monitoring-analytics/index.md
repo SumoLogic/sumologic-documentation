@@ -13,7 +13,7 @@ This guide has documentation for all five data source apps that Sumo provides: W
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/guardduty.png')} alt="Thumbnail icon" width="60"/>
+  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/guardduty.png')} alt="Thumbnail icon" width="50"/>
   <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/amazon-guardduty/">Amazon GuardDuty</a></h4>
   <p>A guide to Amazon GuardDuty Cloud Security Monitoring and Analytics.</p>
   </div>
@@ -27,7 +27,7 @@ This guide has documentation for all five data source apps that Sumo provides: W
 </div>
     <div className="box smallbox3 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/CloudTrail_PCI_Compliance.png')} alt="Thumbnail icon" width="70"/>
+      <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/CloudTrail_PCI_Compliance.png')} alt="Thumbnail icon" width="80"/>
       <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/aws-cloudtrail-pci-compliance">AWS CloudTrail PCI Compliance</a></h4>
       <p>A guide to the Sumo Logic app for Amazon CloudTrail PCI Compliance.</p>
       </div>
