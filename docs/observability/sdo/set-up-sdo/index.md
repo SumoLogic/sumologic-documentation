@@ -1,5 +1,5 @@
 ---
-slug: /sdo/set-up-sdo
+slug: /observability/sdo/set-up-sdo
 title: Set up the Software Development Optimization Solution
 description: This page provides instruction for setting up the Software Development Optimization Solution including manual, Terraform, and Atlassian Marketplace.
 ---

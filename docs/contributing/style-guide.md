@@ -982,11 +982,8 @@ We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orang
 
 ## Release Notes
 
-We keep our release notes concise with links to documentation and images for updated UI elements. You're welcome to add [frontmatter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog) such as tags and keywords.
+Keep release notes concise with links to documentation and images for updated UI elements. You're welcome to add [frontmatter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog) such as tags and keywords.
 
-In release notes, do not use relative links when cross-referencing to doc topics. Use the full path, like this:
-
-`For more information, see [where Metrics Operator](https://help.sumologic.com/docs/metrics/metrics-operators/where/)`
 
 ### Text only
 

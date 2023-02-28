@@ -78,7 +78,7 @@ When it comes to Source Host metadata, it's usually best to stick to your organi
 
 ## Source Name
 
-The metadata field called Source Name  (_**sourceName**) contains the file path entered when you created your Source. If your Source points to more than one file path, then messages from each file path are tagged with the specific path from which they were collected.
+The metadata field called Source Name (`_sourceName`) contains the file path entered when you created your Source. If your Source points to more than one file path, then messages from each file path are tagged with the specific path from which they were collected.
 
 ## Best Practices
 

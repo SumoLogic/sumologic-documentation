@@ -1,6 +1,6 @@
 ---
 slug: /integrations/databases/oracle
-title: Sumo Logic App for Oracle
+title: Oracle
 sidebar_label: Oracle
 description: The Sumo Logic App for Oracle provides insight into the health and activity of your Oracle database. The app consists of predefined dashboards that present information about errors, ORA messages, listener activity, connections, security monitoring, and the syslog and XML audit trails.
 ---

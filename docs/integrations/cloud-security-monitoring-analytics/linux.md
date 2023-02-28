@@ -1,6 +1,6 @@
 ---
 id: linux
-title: Sumo Logic App for Linux Cloud Security Monitoring and Analytics
+title: Linux Cloud Security Monitoring and Analytics
 sidebar_label: Linux
 description: Introduction to Linux Cloud Security Monitoring and Analytics.
 ---

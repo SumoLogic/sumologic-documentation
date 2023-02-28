@@ -1,6 +1,6 @@
 ---
 id: bitbucket
-title: Sumo Logic App for Bitbucket
+title: Bitbucket
 sidebar_label: Bitbucket
 description: The Sumo Logic App for Bitbucket provides insights into project management to more effectively plan the deployments. It helps you to understand the state of deployment, builds and the issues associated with it.
 ---
