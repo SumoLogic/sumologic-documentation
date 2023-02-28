@@ -1933,6 +1933,7 @@ integrations: [
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/cloudflare',
+          'integrations/saas-cloud/dropbox',
           'integrations/saas-cloud/fastly',
           'integrations/saas-cloud/gmail-tracelogs',
           'integrations/saas-cloud/istio',
