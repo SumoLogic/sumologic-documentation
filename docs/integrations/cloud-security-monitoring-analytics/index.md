@@ -27,9 +27,9 @@ This guide has documentation for all five data source apps that Sumo provides: W
 </div>
     <div className="box smallbox3 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/CloudTrail_PCI_Compliance.png')} alt="Thumbnail icon" width="80"/>
-      <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/aws-cloudtrail-pci-compliance">AWS CloudTrail PCI Compliance</a></h4>
-      <p>A guide to the Sumo Logic app for Amazon CloudTrail PCI Compliance.</p>
+      <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/cloudtrail-security.png')} alt="Amazon CloudTrail - Cloud Security Monitoring and Analytics icon" width="55"/>
+      <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/aws-cloudtrail">Amazon CloudTrail</a></h4>
+      <p>A guide to the Sumo Logic app for Amazon CloudTrail - Cloud Security Monitoring and Analytics</p>
       </div>
     </div>
     <div className="box smallbox4 card">

@@ -1,6 +1,6 @@
 ---
 id: rds
-title: Sumo Logic App for Amazon RDS
+title: Amazon RDS
 sidebar_label: Amazon RDS
 description: The Sumo Logic App for Amazon RDS Metrics provides visibility into your Amazon Relational Database Service (RDS) Metrics collected via a CloudWatch Metrics Source.
 ---

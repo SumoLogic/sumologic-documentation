@@ -1,6 +1,6 @@
 ---
 id: s3-audit
-title: Sumo Logic App for Amazon S3 Audit
+title: Amazon S3 Audit
 sidebar_label: Amazon S3 Audit
 description: Provides a simple web services interface that can be used to store and retrieve any amount of data from anywhere on the web.
 ---
