@@ -1,6 +1,6 @@
 ---
 id: onelogin
-title: Sumo Logic App for OneLogin
+title: OneLogin
 sidebar_label: OneLogin
 description: The Sumo Logic App for OneLogin provides real-time visibility and analysis of OneLogin user activity through event data, such as user logins, administrative operations, and provisioning.
 ---

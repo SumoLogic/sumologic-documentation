@@ -1,6 +1,6 @@
 ---
 id: amazon-vpc-flow
-title: Sumo Logic App for Amazon VPC Flow Cloud Security Monitoring and Analytics
+title: Amazon VPC Flow Cloud Security Monitoring and Analytics
 sidebar_label: Amazon VPC Flow
 description: The Amazon VPC (Virtual Private Cloud) Flow - Cloud Security Monitoring and Analytics app thoroughly assess Amazon VPC Flow logs to gain a better understanding of your environment and associated traffic patterns.
 ---

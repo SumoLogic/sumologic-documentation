@@ -1,6 +1,6 @@
 ---
 id: okta
-title: Sumo Logic App for Okta
+title: Okta
 sidebar_label: Okta
 description: The Sumo Logic App for Okta helps you monitor the admin actions, failed logins, successful logins, and user activities to your applications through Okta.
 ---

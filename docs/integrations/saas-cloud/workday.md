@@ -1,6 +1,6 @@
 ---
 id: workday
-title: Sumo Logic App for Workday
+title: Workday
 sidebar_label: Workday
 description: The Sumo Logic App for Workday provides insights into the user account and admin activities. It provides a complete secure monitoring solution and preconfigured dashboards for visibility into login activity, user activity, and admin activity.
 ---

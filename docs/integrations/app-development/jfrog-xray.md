@@ -1,6 +1,6 @@
 ---
 id: jfrog-xray
-title: Sumo Logic App for JFrog Xray
+title: JFrog Xray
 sidebar_label: JFrog Xray
 description: Page notifications Off Share The JFrog Xray app provides visibility into the state of artifacts and components in your JFrog Artifactory repository.
 ---
