@@ -1,13 +1,13 @@
 ---
 id: kubernetes
-title: Sumo Logic App for Kubernetes
+title: Kubernetes
 sidebar_label: Kubernetes
 description: The Sumo Logic Kubernetes App provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="k8s logo" width="75"/>  
+<img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="k8s logo" width="50"/>  
 
 The Sumo Logic Kubernetes App provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes. The App is a single-pane-of-glass through which you can monitor and troubleshoot container health, replication, load balancing, pod state and hardware resource allocation. It utilizes [Falco](https://falco.org/docs/) events to monitor and detect anomalous container, application, host, and network activity.
 
