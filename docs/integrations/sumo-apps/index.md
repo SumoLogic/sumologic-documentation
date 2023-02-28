@@ -66,20 +66,20 @@ Once a request has been submitted, a support ticket is automatically opened. A r
       <div className="container">
       <img src={useBaseUrl('img/integrations/sumo-apps/sumologic_EnterpriseSearchAudit.png')} alt="Thumbnail icon" width="55"/>
       <h4><a href="/docs/integrations/sumo-apps/enterprise-search-audit">Enterprise Search Audit</a></h4>
-      <p>A guide to the Sumo Logic app for Enterprise Search Audit.</pSearch >
+      <p>A guide to the Sumo Logic app for Enterprise Search Audit.</p>
       </div>
     </div>
     <div className="box smallbox7 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Thumbnail icon" width="55"/>
       <h4><a href="/docs/integrations/sumo-apps/infrequent-data-tier">Infrequent Data Tier</a></h4>
-      <p>A guide to the Sumo Logic app for Infrequent Data Tier.</pSearch >
+      <p>A guide to the Sumo Logic app for Infrequent Data Tier.</p>
       </div>
     </div>
     <div className="box smallbox8 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics.png')} alt="Thumbnail icon" width="55"/>
       <h4><a href="/docs/integrations/sumo-apps/security-analytics">Security Analytics</a></h4>
-      <p>A guide to the Sumo Logic app for Security Analytics.</pSearch >
+      <p>A guide to the Sumo Logic app for Security Analytics.</p>
       </div>
     </div>
