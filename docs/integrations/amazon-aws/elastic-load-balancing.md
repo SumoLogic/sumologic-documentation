@@ -1,6 +1,6 @@
 ---
 id: elastic-load-balancing
-title: Sumo Logic App for AWS Elastic Load Balancing
+title: AWS Elastic Load Balancing
 sidebar_label: AWS Elastic Load Balancing
 description: Distributes incoming application traffic across multiple Amazon EC2 instances in the AWS Cloud.
 ---

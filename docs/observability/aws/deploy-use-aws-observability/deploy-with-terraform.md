@@ -554,7 +554,7 @@ Source Parameters define how collectors and their sources are set up in Sumo Log
 
 The following examples override the following:
 
-* Example 1 overrides the cloudtrail_source_details parameter to collect Cloudtrail logs from a user-provided s3 bucket. Cloudtrail logs are already stored in the user-provided s3 bucket. The default parameter will always create new S3 buckets, forward cloudtrail logs to it and collect cloudtrail logs from the newly created s3 bucket.
+* Example 1 overrides the cloudtrail_source_details parameter to collect Cloudtrail logs from a user-provided s3 bucket. Cloudtrail logs are already stored in the user-provided s3 bucket. The default parameter will always create new S3 buckets, forward CloudTrail logs to it and collect CloudTrail logs from the newly created s3 bucket.
 
 * Example 2 overrides the auto_enable_access_logs variable to skip automatic access log enablement for an Application Load Balancer resource. By default, it is set to “Both”, which automatically enables access logging for new and existing ALB resources.
 

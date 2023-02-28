@@ -15,28 +15,28 @@ This guide has documentation for all of the apps that Sumo provides for Microsof
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/AD-small.png')} alt="Thumbnail icon" width="100"/>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="50"/>
   <h4><a href="/docs/integrations/microsoft-azure/active-directory-json">Active Directory JSON</a></h4>
   <p>A guide to the Sumo Logic app for Active Directory JSON.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/win-ad-legacy.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="50"/>
   <h4><a href="/docs/integrations/microsoft-azure/active-directory-json">Active Directory (Legacy)</a></h4>
   <p>A guide to the Sumo Logic app for Active Directory (Legacy).</p>
   </div>
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="Thumbnail icon" width="25"/>
-  <h4><a href="/docs/integrations/microsoft-azure/active-directory-azure">Active Directory Azure</a></h4>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/microsoft-azure/active-directory-azure">Azure Active Directory</a></h4>
   <p>A guide to the Sumo Logic app for Active Directory Azure.</p>
   </div>
 </div>
 <div className="box smallbox4 card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-audit_2.png')} alt="Thumbnail icon" width="50"/>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-audit.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/audit">Azure Audit</a></h4>
   <p>A guide to the Sumo Logic app for Azure Audit.</p>
   </div>

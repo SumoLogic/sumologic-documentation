@@ -1,6 +1,6 @@
 ---
 id: activemq
-title: Sumo Logic App for ActiveMQ
+title: ActiveMQ
 sidebar_label: ActiveMQ
 description: The ActiveMQ app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your ActiveMQ messaging clusters.
 ---
