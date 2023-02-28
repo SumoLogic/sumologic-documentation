@@ -217,7 +217,7 @@ Add account field by adding fields to your log source as shown below:
 
 To enrich the logs data with namespace, region, and aws resource name, we will create a Field Extraction Rule that will add metadata to the logs.
 
-We will take AWS/SQS as an example. For SQS, we selected QueueName as our resource name in metrics data. We will create below FER to extract region, namespace, and queuename from cloudtrail logs.
+We will take AWS/SQS as an example. For SQS, we selected QueueName as our resource name in metrics data. We will create below FER to extract region, namespace, and queuename from CloudTrail logs.
 
 **Name: AwsObservabilitySqsFieldExtractionRule**
 
