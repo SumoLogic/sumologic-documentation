@@ -56,7 +56,7 @@ You can click on the status icon to open a Health Events panel with details on e
 
 ## Setup & Configuration
 
-In this configuration, you will set up a Cortex XDR source account and configure it to be authorized and authenticated to use device logs and alerts from the Cortex XDR API. The Palo Alto Cortex XDR Source requires you to provide an **API Key**, **API Key ID**, and an **FQDN**(excluding protocol and trailing slash). These are needed to use the Cortex XDR API.
+In this configuration, you will set up a Cortex XDR source account and configure it to be authorized and authenticated to use device logs and alerts from the Cortex XDR API. The Palo Alto Cortex XDR Source requires you to provide an **API Key**, **API Key ID**, and an **FQDN** (excluding protocol and trailing slash). These are needed to use the Cortex XDR API.
 
 ### Getting Cortex XDR API key
 
