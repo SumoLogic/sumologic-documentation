@@ -6,9 +6,9 @@ description: Learn about Sumo apps for Security and Threat Detection.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/detect-insider-threats.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/icons/security/detect-insider-threats.png')} alt="thumbnail icon" width="45"/>
 
-Sumo provides a variety of apps for security products and platforms, from firewalls and endpoint protection to security automation and orchestration. This guide has documentation for those apps.  
+Sumo Logic provides a variety of apps for security products and platforms, from firewalls and endpoint protection to security automation and orchestration. This guide has documentation for those apps.  
 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
@@ -131,53 +131,55 @@ Sumo provides a variety of apps for security products and platforms, from firewa
 </div>
 <div className="box smallbox20 card">
   <div className="container">
-  <a href="/docs/integrations/security-threat-detection/sailpoint"><img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} /><h4>SailPoint</h4></a>
+  <a href="/docs/integrations/security-threat-detection/sailpoint"><img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} width="150"/><h4>SailPoint</h4></a>
   <p>A guide to the Sumo Logic app for SailPoint.</p>
   </div>
 </div>
 <div className="box smallbox21 card">
   <div className="container">
   <a href="/docs/integrations/security-threat-detection/threat-intel-quick-analysis"><img src={useBaseUrl('img/integrations/security-threat-detection/threatintel.png')} alt="thumbnail icon" width="45"/><h4>Threat Intel Quick Analysis</h4></a>
-  <p>A guide to the Sumo Logic app for Threat Intel Quick Analysis</p>
+  <p>A guide to the Sumo Logic app for Threat Intel Quick Analysis.</p>
   </div>
 </div>
 <div className="box smallbox22 card">
   <div className="container">
   <a href="/docs/integrations/security-threat-detection/trend-micro-deep-security"><img src={useBaseUrl('img/integrations/security-threat-detection/trend.png')} alt="thumbnail icon" width="85"/><h4>Trend Micro Deep Security</h4></a>
-  <p>A guide to the Sumo Logic app for Trend Micro Deep Security</p>
+  <p>A guide to the Sumo Logic app for Trend Micro Deep Security.</p>
   </div>
 </div>
 <div className="box smallbox23 card">
   <div className="container">
-  <a href="/docs/integrations/security-threat-detection/twistlock"><img src={useBaseUrl('img/integrations/security-threat-detection/twistlock.png')} alt="thumbnail icon" width="125"/><h4>Twistlock</h4></a>
-  <p>A guide to the Sumo Logic app for Twistlock</p>
+  <a href="/docs/integrations/security-threat-detection/twistlock"><img src={useBaseUrl('img/integrations/security-threat-detection/twistlock.png')} alt="thumbnail icon" width="150"/><h4>Twistlock</h4></a>
+  <p>A guide to the Sumo Logic app for Twistlock.</p>
   </div>
 </div>
 <div className="box smallbox24 card">
   <div className="container">
   <a href="/docs/integrations/security-threat-detection/zscaler-internet-access"><img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="35"/><h4>Zscaler Internet Access</h4></a>
-  <p>A guide to the Sumo Logic app for Zscaler Internet Access</p>
+  <p>A guide to the Sumo Logic app for Zscaler Internet Access.</p>
   </div>
 </div>
 <div className="box smallbox25 card">
   <div className="container">
   <a href="/docs/integrations/security-threat-detection/zscaler-internet-access"><img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="thumbnail icon" width="95"/><h4>Zscaler Internet Access</h4></a>
-  <p>A guide to the Sumo Logic app for Zscaler Internet Access</p>
+  <p>A guide to the Sumo Logic app for Zscaler Internet Access.</p>
   </div>
 </div>
 <div className="box smallbox26 card">
   <div className="container">
   <a href="/docs/integrations/security-threat-detection/zscaler-private-access"><img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="thumbnail icon" width="95"/><h4>Zscaler Private Access</h4></a>
-  <p>A guide to the Sumo Logic app for Zscaler Private Access</p>
+  <p>A guide to the Sumo Logic app for Zscaler Private Access.</p>
   </div>
 </div>
 <div className="box smallbox26 card">
   <div className="container">
   <a href="/docs/integrations/security-threat-detection/zscaler-web-security"><img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="thumbnail icon" width="95"/><h4>Zscaler Web Security</h4></a>
-  <p>A guide to the Sumo Logic app for Zscaler Web Security</p>
+  <p>A guide to the Sumo Logic app for Zscaler Web Security.</p>
   </div>
 </div>
 </div>
+
+<br/>
 
 :::note
 If you're looking for an app for AWS, Microsoft, or Google, see [Amazon and AWS](/docs/integrations/amazon-aws), [Microsoft and Azure](/docs/integrations/microsoft-azure), or [Google](/docs/integrations/google).
