@@ -1,6 +1,6 @@
 ---
 id: jira
-title: Sumo Logic App for Jira
+title: Jira
 sidebar_label: Jira
 description: The Sumo Logic App for Jira provides insight into Jira user access, request activity, issues, security, sprint events, and user events.
 ---

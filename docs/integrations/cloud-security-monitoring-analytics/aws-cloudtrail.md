@@ -1,13 +1,13 @@
 ---
-id: aws-cloudtrail-pci-compliance
-title: Sumo Logic App for PCI Compliance for AWS CloudTrail
-sidebar_label: AWS CloudTrail PCI Compliance
+id: aws-cloudtrail
+title: Amazon CloudTrail - Cloud Security Monitoring and Analytics
+sidebar_label: Amazon CloudTrail
 description: Introduction to Amazon CloudTrail - Cloud Security Monitoring and Analytics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/PCI-compliance.png')} alt="PCI Compliance icon" width="100"/>
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/cloudtrail-security.png')} alt="Amazon CloudTrail - Cloud Security Monitoring and Analytics icon" width="60"/>
 
 This set of CloudTrail monitoring and analytics dashboards provide one dashboard for the most critical analytics. Think of this bundle of dashboards as a good starting place to see trends and outliers on specific aspects of your CloudTrail data -- including access monitoring, login activity, system monitoring, privileged activity, and threat intelligence.
 
@@ -16,18 +16,18 @@ This set of CloudTrail monitoring and analytics dashboards provide one dashboard
 
 This section has instructions for configuring log collection for the AWS CloudTrail app.
 
-If you intend to use the AWS CloudTrail app in multiple environments, see Configure the AWS CloudTrail App in Multiple Environments.
+If you intend to use the AWS CloudTrail app in multiple environments, see [Configure the AWS CloudTrail App in Multiple Environments](/docs/integrations/amazon-aws/cloudtrail/#configuring-the-aws-cloudtrail-app-in-multiple-environments).
 
 To configure an AWS CloudTrail Source, perform these steps:
 
 1. [Configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_started_top_level.html) in your AWS account.
 2. Confirm that logs are being delivered to the Amazon S3 bucket.
-3. Add an AWS CloudTrail Source to Sumo Logic.
-4. Grant Sumo Logic access to an Amazon S3 bucket.
+3. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source) to Sumo Logic.
+4. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
    * Generate the Role-Based Access CloudFormation template in Sumo Logic and download the template.
    * Create the CloudFormation stack in AWS Management Console using the template.
-   * Copy the Role ARN from the Outputs tab and paste it in the Role ARN field in Sumo Logic CloudTrail Source created in step 3. For more information, refer Configuring your AWS source with CloudFormation.
-5. Enable Sumo to track AWS Admin activity. This step is optional, but if you don't do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
+   * Copy the Role ARN from the Outputs tab and paste it in the Role ARN field in Sumo Logic CloudTrail Source created in step 3. For more information, see [Configuring your AWS source with CloudFormation](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation).
+5. [Enable Sumo to track AWS Admin activity](/docs/integrations/amazon-aws/cloudtrail/#enable-sumo-logic-to-track-aws-admin-activity). This step is optional, but if you don't do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
 6. Install the Sumo Logic App for AWS CloudTrail.
 
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can upgrade your account at any time.
@@ -84,12 +84,12 @@ _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
 | sort _count
 ```
 
-In some cases, your query results may show `"HIDDEN_DUE_TO_SECURITY_REASONS"` as the value of the userName field. That's because AWS does not log the user name that was entered when a sign-in failure is caused by an incorrect user name.
+In some cases, your query results may show `"HIDDEN_DUE_TO_SECURITY_REASONS"` as the value of the `userName` field. That's because AWS does not log the user name that was entered when a sign-in failure is caused by an incorrect user name.
 
 
 ## Installing the PCI Compliance AWS CloudTrail App
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance for AWS CloudTrail to use the preconfigured searches and Dashboards that provide insight into your data.
+Now that you have set up collection, install the Amazon CloudTrail - Cloud Security Monitoring and Analytics app to use the preconfigured searches and Dashboards that provide insight into your data.
 
 To install the app:
 
@@ -110,7 +110,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing AWS CloudTrail PCI Compliance Dashboards
+## Viewing AWS CloudTrail Dashboards
 
 The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashboards that you can modify for your specific security operational needs.
 

@@ -1,6 +1,6 @@
 ---
 id: redis
-title: Sumo Logic App for Redis
+title: Redis
 sidebar_label: Redis
 description: The Sumo Logic App for Redis helps you monitor the state of your database cluster.
 ---

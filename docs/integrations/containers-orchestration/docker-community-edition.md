@@ -1,6 +1,6 @@
 ---
 id: docker-community-edition
-title: Sumo Logic App for Docker Community Edition
+title: Docker Community Edition
 sidebar_label: Docker Community Edition
 description: The Docker App monitors Docker container logs and metrics (stats) in log format, providing operational insight into your Docker containers.
 ---
