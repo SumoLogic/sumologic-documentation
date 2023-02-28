@@ -209,7 +209,7 @@ Get to know more about How to create a FER through our video "Creating a Field E
 ## Additional Resources
 
 The [Sumo Logic Training and Certification](https://www.sumologic.com/learn/training/) program is offered to you at no cost. You can grow your understanding of Sumo Logic through interactive tutorials, instructor-led training, self-paced training, and a wide range of certifications. 
-We’ve done studies that show when you are Sumo Logic Certified, you gain greater insight into your data, search more efficiently and build impactful dashboards
+We’ve done studies showing that when you are Sumo Logic Certified, you gain greater insight into your data, search more efficiently, and build impactful dashboards.
 
 Our Instructor-Led Training options are:
 
