@@ -29,7 +29,7 @@ The integration consumes alert data by default and provides the option to select
 Metadata fields will be set, if the integration is configured with the SIEM forward option. See **Metadata Fields** table below:
 
 | Fields         |    Value                    |
-| :-------       |  :------------------------: |
+| :-------       |  :------------------------ |
 | `_siemVendor`	 |  Palo Alto Networks |
 | `_siemProduct` |	Cortex XDR |
 | `_siemFormat`	 |  JSON |
@@ -46,11 +46,11 @@ A Palo Alto Cortex XDR Source goes through the following states when created:
 1. **Authenticated**. The Source successfully authenticated with Palo Alto Cortex XDR.
 1. **Collecting**. The Source is actively collecting data from Palo Alto Cortex XDR.
 
-If the Source has any issues during any one of these states, it is placed in an **Error** state.
-When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
+If the Source has any issues during any one of these states, it is placed in an **Error** state. When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection.
-![Cortex XDR error.png](/img/send-data/Cortex-XDR-error.png). Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings. ![hover c2c error.png](/img/send-data/hover-cortex-error.png)
+On the **Collection** page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection.<br/>![Cortex XDR error.png](/img/send-data/Cortex-XDR-error.png)
+
+Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings. <br/> <img src={useBaseUrl('img/send-data/hover-cortex-error.png')} alt="hover-cortex-error.png" width="150" />
 
 You can click on the status icon to open a Health Events panel with details on each detected issue.
 
