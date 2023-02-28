@@ -2,6 +2,7 @@
 id: palo-alto-cortex-xdr-source
 title: Palo Alto Cortex XDR Source
 sidebar_label: Palo Alto Cortex XDR
+description: The Cortex Cloud-to-Cloud Source Integration allows you to ingest alerts and incidents from your Cortex XDR application.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
