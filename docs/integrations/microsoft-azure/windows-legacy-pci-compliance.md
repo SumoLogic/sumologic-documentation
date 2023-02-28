@@ -1,6 +1,7 @@
 ---
 id: windows-legacy-pci-compliance
 title: PCI Compliance for Windows Legacy
+sidebar_label: PCI Compliance For Windows (Legacy)
 description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Windows offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 
