@@ -20,7 +20,7 @@ Redis logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https
 
 ##Redis Log Types
 
-This Sumo Logic App for Redis supports Logs for Redis in Cluster or Standalone mode. The Redis logs are generated in files as configured in the cluster node configuration files in `/etc/redis/redis.conf`. For more details on Redis logs, [click here](https://redislabs.com/ebook/part-2-core-concepts/chapter-5-using-redis-for-application-support/5-1-logging-to-redis/).
+This Sumo Logic App for Redis supports logs for Redis in Cluster or Standalone mode. The Redis logs are generated in files as configured in the cluster node configuration files in `/etc/redis/redis.conf`. For more details on Redis logs, [click here](https://redislabs.com/ebook/part-2-core-concepts/chapter-5-using-redis-for-application-support/5-1-logging-to-redis/).
 
 ##Fields creation in Sumo Logic for Redis
 
