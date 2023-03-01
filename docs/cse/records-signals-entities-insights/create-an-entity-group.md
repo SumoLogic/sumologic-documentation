@@ -105,11 +105,10 @@ Follow these instructions to create an Entity Group that corresponds to a group 
 
 If you've applied a tag to an Entity, you can use the tag in a [rule expression](/docs/cse/rules/about-cse-rules.md#About_rule_expressions). For example, if you've attached a keyword tag "DB Server" to an Entity, this `array_contains` statement will return "true" if the Entity in a Record's `srcDevice_ip` field has the tag "DB Server"
 
-
 ```
 array_contains(fieldTags["srcDevice_ip"], "DB Server")
 ```
 
 ## API support
 
-You can use the CSE `/entity-group-configuration` API to create, read, update and delete Entity Groups. For more information, see [CSE APIs](/docs/cse/administration/CSE-APIs).
+You can use the CSE `/entity-group-configuration` API to create, read, update and delete Entity Groups. For more information, see [CSE APIs](/docs/cse/administration/cse-apis).

@@ -25,6 +25,27 @@ This topic shows you how to create a monitor.
 
 1. Click the kebab icon in the upper right corner, then **Create a Monitor**.
 
+#### From your Metrics Explorer
+
+Creating a monitor based on the threshold values defined in the Metrics page can save time and effort. By using the pre-filled monitor editor, you can quickly create a monitor with the same threshold values as defined in the Metrics page. This will ensure that the monitor is using the same criteria as the Metrics page, providing consistency in monitoring.
+
+To create a monitor from the Metrics Explorer, follow the steps below:
+
+1. Open the Metrics Explorer page and enter the metrics query to create a monitor from it.
+1. In the **Threshold** section, define the critical and warning thresholds for your metrics query.<br/> <img src={useBaseUrl('img/monitors/metrics-explorer-view.png')} alt="metrics-explorer-view" width="800"/>
+1. Click the **Create a Monitor** button located at the top right of the page.<br/> <img src={useBaseUrl('img/monitors/create-monitor.png')} alt="create-monitor" width="400"/>
+1. The Monitor Editor will open with prefilled data based on the threshold values set on the Metrics page.<br/> <img src={useBaseUrl('img/monitors/new-monitor-window.png')} alt="create-monitor" width="600"/>
+1. In the **Trigger Type** section of the monitor editor, enable the checkbox that corresponds to the threshold value that you want to use (either "Critical", "Warning", or both).
+1. The threshold values will be the same as defined in the Metrics page for both Critical and Warning thresholds.
+1. All other parameters should be set to default, including the window (15 minutes) and the "at all times" box.
+1. Ensure that the Recover value is set to the default, which is the opposite of the Alert value. The Edit Recovery button should be off.
+1. Once all values have been set, click on **Save** to create the monitor.
+1. The same threshold will also be applied to the histogram chart.
+
+:::note
+Note that the same threshold translating functionality supports to [Opening Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/edit-settings/#view-in-metrics-explorer).
+:::
+
 ## Step 2: Select Monitor type and Detection Method
 
 1. Select a **Monitor Type** (Logs, Metrics, or SLO). <br/><img src={useBaseUrl('img/monitors/trigger-conditions-monitor.png')} alt="icon" width="300"/>
@@ -176,17 +197,22 @@ Sumo Logic automatically resolves the incident when the resolution condition is 
 | Threshold type | How you want the value compared. Select either greater than, greater than or equal, less than or equal, or less than. |
 | Threshold | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
 
-**Alert and recovery window**
+#### Alert and recovery window
 
-This setting controls the behavior of alert/recovery for sparse/intermittent/incomplete data sources.
+This setting affects both the alert generation logic and the alert recovery logic.
 
 ![metrics alert datapoints.png](/img/monitors/minimum-datapoints.png)
 
-`Alert and recovery require a minimum of <Count> data points for “at all times” evaluation windows`
+`Alert and recovery require a minimum of <Count> data points for "at all times" evaluation windows`
 
 | Parameter | Description |
 |:--|:--|
-| Count | The minimum number of data points needed in alert and recovery `Time Range` for alert to trigger and resolve respectively. |  
+| Count | The minimum number of data points required within the configured window to trigger an alert or recover from an alert. This means that if Sumo Logic receives fewer data points in a given window, no alert will be triggered (even if all those data points exceed the threshold).
+
+For example, you want to be alerted when the CPU usage is over 60% `at all times` within a 5-minute window. If you set the count to 3, this means that you will only get an alert if you have at least 3 data points showing CPU usage above 60% within that 5-minute window. If you only have 2 data points, even if both of them show CPU usage above 60%, you won't get an alert.
+:::note
+This setting only works when you choose `at all times within` as the type of occurrence for the alert.  
+:::
 
 #### Outlier detection method
 

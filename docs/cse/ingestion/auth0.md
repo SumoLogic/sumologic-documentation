@@ -1,6 +1,6 @@
 ---
 id: auth0
-title: Auth0
+title: Auth0 - Cloud SIEM
 sidebar_label: Auth0 system parser
 description: Configure an HTTP source to ingest Auth0 log messages and send them to CSE’s Auth0 system parser.
 ---

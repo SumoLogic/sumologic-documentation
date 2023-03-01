@@ -1,10 +1,13 @@
 ---
 id: training-certification-faq
 title: Sumo Logic Training and Certification FAQ
-sidebar_label: Training and certification
+sidebar_label: Training and Certification
+description: Learn more about the Sumo Logic Training and Certification Program.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/general/training.png')} alt="icon" width="50"/> <img src={useBaseUrl('img/icons/general/certification.png')} alt="icon" width="50"/>
 
 Learning at Sumo Logic will help you build the skills necessary to achieve your organization's goals using our platform to make the world’s apps reliable and secure.
 
@@ -90,12 +93,12 @@ Self-paced training is available in our [Training Portal](#how-do-i-access-the-t
 
 Everybody learns differently, we offer different options to adapt to your learning needs:
 
-* **Learning Paths**: you can learn at your own pace guided by our product oriented **Learning Paths**. The following **Learning Paths** are available under the **Become a Sumo Logic Expert** section of our **Training Portal**:
+* **Learning Paths**. you can learn at your own pace guided by our product oriented **Learning Paths**. The following **Learning Paths** are available under the **Become a Sumo Logic Expert** section of our **Training Portal**:
    * General
    * Observability
    * Security
-* **Micro Lessons**: access our growing, curated library of quick tutorials, short demos and best practices, learn something new in just minutes. Check out the **Learn New Skills** section from our **Training Portal** to access this content.
-* **Recorded Live Training**: did you miss a Cert Jam or a workshop? Watch recordings of past sessions, download the student lab guide and a copy of the slides.
+* **Micro Lessons**. access our growing, curated library of quick tutorials, short demos and best practices, learn something new in just minutes. Check out the **Learn New Skills** section from our **Training Portal** to access this content.
+* **Recorded Live Training**. did you miss a Cert Jam or a workshop? Watch recordings of past sessions, download the student lab guide and a copy of the slides.
 
 
 ### How do I register for a Self-Paced course?
@@ -155,25 +158,25 @@ Access to our certification exams is available in our [Training Portal](#how-do-
 
 ### What certifications does Sumo Logic offer?
 
-**Sumo Logic Certified - Fundamentals**: Gain broad knowledge analyzing logs and metrics with the Fundamentals Certification. Get Sumo Logic up and running and learn to do simple filtering, data parsing, and analysis.
+**Sumo Logic Certified - Fundamentals**. Gain broad knowledge analyzing logs and metrics with the Fundamentals Certification. Get Sumo Logic up and running and learn to do simple filtering, data parsing, and analysis.
 
 <!--
 Certified Users possess broad knowledge around analyzing logs and metrics and have familiarity with the Sumo Logic service related to simple data searching, filtering, parsing and analyzing. Certified users can use Apps for out-of-the-box content that monitors their data, identifies trends, and keeps their users on top of critical events.
 -->
 
-**Sumo Logic Certified - Search Mastery**: Build on the knowledge gained in Fundamentals to do more in-depth analysis of logs and metrics. Identify critical events with ease and create the dashboards and alerts necessary to monitor your environment.
+**Sumo Logic Certified - Search Mastery**. Build on the knowledge gained in Fundamentals to do more in-depth analysis of logs and metrics. Identify critical events with ease and create the dashboards and alerts necessary to monitor your environment.
 
 <!--
 Certified Users exhibit deep technical knowledge on how to analyze and correlate their logs and metrics to easily identify those critical events that are important to their organizations. In addition to taking advantage of out-of-the-box content, Certified Sumo Power Users can build Dashboards and Alerts for their custom apps, unlocking the power of Sumo Logic to analyze, measure and monitor the health of their environments.
 -->
 
-**Sumo Logic Certified - Metrics Mastery**: Build on the knowledge gained in Fundamentals to do more in-depth analysis with metrics. Identify critical events with ease and create the dashboards and alerts necessary to monitor your environment.
+**Sumo Logic Certified - Metrics Mastery**. Build on the knowledge gained in Fundamentals to do more in-depth analysis with metrics. Identify critical events with ease and create the dashboards and alerts necessary to monitor your environment.
 
 <!--
 Certified Users exhibit deep technical knowledge on how to analyze and correlate their logs and metrics to easily identify those critical events that are important to their organizations. Build on the knowledge gained in Fundamentals to do more in-depth analysis with metrics. Identify critical events with ease and create the dashboards and alerts necessary to monitor your environment.
 -->
 
-**Sumo Logic Certified - Administration**: Gain critical Administration expertise on how to set up your organization with Sumo Logic as well as how to optimize and manage queries and content to make the whole team more effective.
+**Sumo Logic Certified - Administration**. Gain critical Administration expertise on how to set up your organization with Sumo Logic as well as how to optimize and manage queries and content to make the whole team more effective.
 
 <!--
 Certified users become technical experts on setting up, managing and optimizing their Sumo Logic solution. In addition to securing and managing their Sumo Logic environment, they can design and deploy a data collection strategy that fits their infrastructure. Keeping an eye on the pulse of their usage, they can also optimize data querying to fit their searching patterns.
@@ -186,15 +189,15 @@ Certified users become technical experts on setting up, managing and optimizing 
 In this course, you'll create starter SOC queries as dashboard panels. These advanced operator queries help you monitor user activity across the globe, failed logins, land speed violations, brute force attacks, and more. You will create parameterized lookup tables for easy panel or dashboard pivots. You will learn how to export the starter SOC dashboard you created for use in your own environment. Lastly, you will be able to detect and investigate IOCs with the use of our embedded CrowdStrike database, which monitors malicious IPs addresses, and apply scheduled views as a best practice.
 -->
 
-**Sumo Logic Certified - Cloud SIEM Fundamentals**: Learn how Cloud SIEM ingests your data and turns it into actionable security Insights. Get hands-on practice with threat investigation, take actions on Insights, and learn the basics of SOC content creation, like writing rules and custom Insights.
+**Sumo Logic Certified - Cloud SIEM Fundamentals**. Learn how Cloud SIEM ingests your data and turns it into actionable security Insights. Get hands-on practice with threat investigation, take actions on Insights, and learn the basics of SOC content creation, like writing rules and custom Insights.
 
-**Sumo Logic Certified - Cloud SIEM Administration**: Learn how to set up data ingestion for Cloud SIEM, including writing custom log and ingest mappings. Customize your environment with a deep dive into custom rules and Insight Actions.
+**Sumo Logic Certified - Cloud SIEM Administration**. Learn how to set up data ingestion for Cloud SIEM, including writing custom log and ingest mappings. Customize your environment with a deep dive into custom rules and Insight Actions.
 
-**Sumo Logic Certified - Kubernetes on Sumo Logic**: Swiftly navigate through Kubernetes cluster name spaces, services, nodes, and deployments and master monitoring and troubleshooting Kubernetes from alerts and dashboards to customized templates to address key use cases.
+**Sumo Logic Certified - Kubernetes on Sumo Logic**. Swiftly navigate through Kubernetes cluster name spaces, services, nodes, and deployments and master monitoring and troubleshooting Kubernetes from alerts and dashboards to customized templates to address key use cases.
 
-**Sumo Logic Certified - Observability Fundamentals**: Learn about Sumo Logic’s three pillars of the observability solution - Metrics, Tracing, and Logs. You'll also become conversant with the use of the tools to help you identify the root cause of an outage and trace the incidents to troubleshoot an issue.
+**Sumo Logic Certified - Observability Fundamentals**. Learn about Sumo Logic’s three pillars of the observability solution - Metrics, Tracing, and Logs. You'll also become conversant with the use of the tools to help you identify the root cause of an outage and trace the incidents to troubleshoot an issue.
 
-**Sumo Logic Certified - Observability Administration**: Deploy the AWS Observability solution using CloudFormation Template, gathering metrics from a Kubernetes cluster, and establishing trace points to gather trace data using OpenTelemetry.
+**Sumo Logic Certified - Observability Administration**. Deploy the AWS Observability solution using CloudFormation Template, gathering metrics from a Kubernetes cluster, and establishing trace points to gather trace data using OpenTelemetry.
 
 <!--
 * **Advanced Metrics with Kubernetes** - Certified users swiftly navigate through their Kubernetes cluster name spaces, services, nodes, and deployments. They quickly master Kubernetes for their organization with Sumo Logic from alerts and dashboards to customized templates to address key use cases.

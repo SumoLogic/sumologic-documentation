@@ -5,14 +5,9 @@ sidebar_label: Root Cause Explorer
 description: Use Root Cause Explorer for AWS to troubleshoot incidents with apps and microservices running on AWS, public cloud hosts, and Kubernetes.
 ---
 
-## Availability
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-| Account Type | Account Level                                  |
-|:--------------|:------------------------------------------------|
-| Cloud Flex   | Trial, Enterprise                              |
-| Credits      | Trial, Enterprise Operations, Enterprise Suite |
-
-## Overview
+<img src={useBaseUrl('img/observability/rootcause.png')} alt="rootcause.png" width="50"/>
 
 **Root Cause Explorer** (RCE) helps on-call staff, DevOps, and infrastructure engineers accelerate troubleshooting and root cause isolation for incidents in their apps and microservices running on AWS, public cloud hosts, and Kubernetes.
 
@@ -48,6 +43,13 @@ Root Cause Explorer also supports:
 The screenshot below shows the Root Cause Explorer UI.
 
 ![rce-top-entities.png](/img/rce/rce-top-entities.png)
+
+## Availability
+
+| Account Type | Account Level                                  |
+|:--------------|:------------------------------------------------|
+| Cloud Flex   | Trial, Enterprise                              |
+| Credits      | Trial, Enterprise Operations, Enterprise Suite |
 
 ## Troubleshooting concepts
 

@@ -1,6 +1,6 @@
 ---
 id: check-point-firewall
-title: Check Point Firewall
+title: Check Point Firewall - Cloud SIEM
 sidebar_label: Check Point Firewall
 description: Configure a syslog source to ingest Check Point Firewall log messages to be parsed by CSE’s system parser for Check Point Firewall.
 ---

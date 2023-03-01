@@ -23,7 +23,7 @@ The mapping requirements are:
 | Output field | Mapping requirement |
 |:--|:--|
 | `objectType` | This field is populated as a result of the value selected for the Record Type in the log mapping. It must be set to *Authentication*. |
-| `normalizedAction` | Set to *logon* or *domainLogon* depending on the nature of the authentication attempt, as described in [Normalized Authentication Rules](normalized-authentication-rules.md), below. |
+| `normalizedAction` | Set to *logon* or *domainLogon* depending on the nature of the authentication attempt, as described in Normalized Authentication Rules, below. |
 | `success` | Set to *true* if the logon was successful, or *false* if it was not.  |
 | `mfa` | If the log message contains a field that indicates multi-factor authentication usage, set `mfa` to *true* if MFA is used or *false* if not. |
 | `user_username ` | `user_username` must be mapped to the input field that contains the user identity. If an alternative input field also contains the user identity, that field should be mapped as an alternate input field. |
@@ -76,7 +76,3 @@ CSE determines which value of of `normalizedAction` is appropriate for a given l
 | 11 | CachedInteractive   | A user logged on to this computer with network credentials that were stored locally on the computer. The domain controller was not contacted to verify the credentials. | *logon* |
 | 12 | CachedRemoteInteractive | Same as RemoteInteractive. This is used for internal auditing. | *logon* |
 | 13 | CachedUnlock | Workstation logon. | \<none\> |
-
-
-
- 

@@ -256,12 +256,12 @@ html[data-theme='light'] {
 }
 
 .header-login::before {
-  content: 'Start a Free Trial';
+  content: 'Start free trial';
   border: 1px solid #2aa1e6;
   color: #FFF;
   border-radius: 3px;
-  padding: 2px 10px;
-  font-size: 13px;
+  padding: 5px 10px;
+  font-size: 14px;
   display: inline-flex;
   background: #2aa1e6;
 }
@@ -317,10 +317,10 @@ html[data-theme='light'] {
     font-size: 1.3rem !important;
   }
   h4 {
-    font-size: 1.15rem !important;
+    font-size: 1.1rem !important;
   }
   h5 {
-    font-size: 1rem !important;
+    font-size: .9rem !important;
   }
 }
 
@@ -482,6 +482,10 @@ html[data-theme='light'] .table-of-contents__left-border {
 .navbar__logo {
   align-items: center;
   display: flex;
+}
+
+.navbar__logo img {
+  height: 70%;
 }
 
 .navbar-item-github:hover {
@@ -926,7 +930,7 @@ html[data-theme='dark'] .node polygon {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: minmax(150px, 2fr);
-  grid-gap: 30px;
+  grid-gap: 10px;
 }
 
 .box1 h3,
@@ -975,57 +979,57 @@ html[data-theme='dark'] .node polygon {
 }
 
 .box3 {
-  grid-column: 1;
-  grid-row: 2;
+  grid-column: 3;
+  grid-row: 1;
   padding: 4px;
   font-size: .9rem;
 }
 
 .box4 {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 2;
   padding: 4px;
   font-size: .9rem;
 }
 
 .box5 {
-  grid-column: 1;
-  grid-row: 3;
+  grid-column: 2;
+  grid-row: 2;
   padding: 4px;
   font-size: .9rem;
 }
 
 .box6 {
-  grid-column: 2;
-  grid-row: 3;
+  grid-column: 3;
+  grid-row: 2;
   padding: 4px;
   font-size: .9rem;
 }
 
 .box7 {
   grid-column: 1;
-  grid-row: 4;
+  grid-row: 3;
   padding: 4px;
   font-size: .9rem;
 }
 
 .box8 {
   grid-column: 2;
-  grid-row: 4;
+  grid-row: 3;
   padding: 4px;
   font-size: .9rem;
 }
 
 .box9 {
-  grid-column: 1;
-  grid-row: 5;
+  grid-column: 3;
+  grid-row: 3;
   padding: 4px;
   font-size: .9rem;
 }
 
 .box10 {
-  grid-column: 2;
-  grid-row: 5;
+  grid-column: 1;
+  grid-row: 4;
   padding: 4px;
   font-size: .9rem;
 }
@@ -1042,9 +1046,6 @@ html[data-theme='dark'] .node polygon {
   font-size: .9rem;
 }
 
-
-
-
 .smallbox1 h4,
 .smallbox2 h4,
 .smallbox3 h4,
@@ -1054,10 +1055,44 @@ html[data-theme='dark'] .node polygon {
 .smallbox7 h4,
 .smallbox8 h4,
 .smallbox9 h4,
-.smallbox10 h4
-.smallbox11 h4
-.smallbox12 h4 {
-  margin-top: 20px;
+.smallbox10 h4,
+.smallbox11 h4,
+.smallbox12 h4,
+.smallbox13 h4,
+.smallbox14 h4,
+.smallbox15 h4,
+.smallbox16 h4,
+.smallbox17 h4,
+.smallbox18 h4,
+.smallbox19 h4,
+.smallbox20 h4,
+.smallbox21 h4,
+.smallbox22 h4,
+.smallbox23 h4,
+.smallbox24 h4,
+.smallbox25 h4,
+.smallbox26 h4,
+.smallbox27 h4,
+.smallbox28 h4,
+.smallbox29 h4,
+.smallbox30 h4,
+.smallbox31 h4,
+.smallbox32 h4,
+.smallbox33 h4,
+.smallbox34 h4,
+.smallbox35 h4,
+.smallbox36 h4,
+.smallbox37 h4,
+.smallbox38 h4,
+.smallbox39 h4,
+.smallbox40 h4,
+.smallbox41 h4,
+.smallbox42 h4,
+.smallbox43 h4,
+.smallbox44 h4,
+.smallbox45 h4,
+.smallbox46 h4, {
+  margin-top: 10px;
 }
 
 .smallbox1 img,
@@ -1069,9 +1104,43 @@ html[data-theme='dark'] .node polygon {
 .smallbox7 img,
 .smallbox8 img,
 .smallbox9 img,
-.smallbox10 img
-.smallbox11 img
-.smallbox12 img {
+.smallbox10 img,
+.smallbox11 img,
+.smallbox12 img,
+.smallbox13 img,
+.smallbox14 img,
+.smallbox15 img,
+.smallbox16 img,
+.smallbox17 img,
+.smallbox18 img,
+.smallbox19 img,
+.smallbox20 img,
+.smallbox21 img,
+.smallbox22 img,
+.smallbox23 img,
+.smallbox24 img,
+.smallbox25 img,
+.smallbox26 img,
+.smallbox27 img,
+.smallbox28 img,
+.smallbox29 img,
+.smallbox30 img,
+.smallbox31 img,
+.smallbox32 img,
+.smallbox33 img,
+.smallbox34 img,
+.smallbox35 img,
+.smallbox36 img,
+.smallbox37 img,
+.smallbox38 img,
+.smallbox39 img,
+.smallbox40 img,
+.smallbox41 img,
+.smallbox42 img,
+.smallbox43 img,
+.smallbox44 img,
+.smallbox45 img,
+.smallbox46 img, {
   margin-top: 16px;
 }
 
@@ -1170,7 +1239,276 @@ html[data-theme='dark'] .node polygon {
   padding: 1px;
   font-size: .9rem;
 }
+.smallbox13 {
+  grid-column: 1;
+  grid-row: 5;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
 
+.smallbox14 {
+  grid-column: 2;
+  grid-row: 5;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox15 {
+  grid-column: 3;
+  grid-row: 5;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox16 {
+  grid-column: 1;
+  grid-row: 6;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+.smallbox17 {
+  grid-column: 2;
+  grid-row: 6;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox18 {
+  grid-column: 3;
+  grid-row: 6;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox19 {
+  grid-column: 1;
+  grid-row: 7;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox20 {
+  grid-column: 2;
+  grid-row: 7;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox21 {
+  grid-column: 3;
+  grid-row: 7;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox22 {
+  grid-column: 1;
+  grid-row: 8;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox23 {
+  grid-column: 2;
+  grid-row: 8;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox24 {
+  grid-column: 3;
+  grid-row: 8;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox25 {
+  grid-column: 1;
+  grid-row: 9;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox26 {
+  grid-column: 2;
+  grid-row: 9;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox27 {
+  grid-column: 3;
+  grid-row: 9;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox28 {
+  grid-column: 1;
+  grid-row: 10;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox29 {
+  grid-column: 2;
+  grid-row: 10;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox30 {
+  grid-column: 3;
+  grid-row: 10;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox31 {
+  grid-column: 1;
+  grid-row: 11;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox32 {
+  grid-column: 2;
+  grid-row: 11;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox33 {
+  grid-column: 3;
+  grid-row: 11;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox34 {
+  grid-column: 1;
+  grid-row: 12;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox35 {
+  grid-column: 2;
+  grid-row: 12;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox36 {
+  grid-column: 3;
+  grid-row: 12;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox37 {
+  grid-column: 1;
+  grid-row: 13;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox38 {
+  grid-column: 2;
+  grid-row: 13;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox39 {
+  grid-column: 3;
+  grid-row: 13;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox40 {
+  grid-column: 1;
+  grid-row: 14;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox41 {
+  grid-column: 2;
+  grid-row: 14;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox42 {
+  grid-column: 3;
+  grid-row: 14;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox43 {
+  grid-column: 1;
+  grid-row: 15;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox44 {
+  grid-column: 2;
+  grid-row: 15;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox45 {
+  grid-column: 3;
+  grid-row: 15;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox46 {
+  grid-column: 1;
+  grid-row: 16;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
 
 .card {
   transition: 0.3s;
@@ -1236,6 +1574,7 @@ html[data-theme='dark'] .card:hover {
 
 .dropdown__menu {
   padding: 0;
+  max-height: 100vh;
 }
 
 

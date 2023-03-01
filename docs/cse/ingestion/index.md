@@ -5,9 +5,7 @@ sidebar_label: CSE Ingestion
 description: Learn how to configure ingestion for supported products and services.
 ---
 
-The topics in this section provide data ingestion guides for supported
-products and services.
-
+The topics in this section provide data ingestion guides for supported products and services.
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

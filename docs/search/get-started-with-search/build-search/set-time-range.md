@@ -1,10 +1,9 @@
 ---
 id: set-time-range
-title: Set the Time Range
+title: Set the Time Range of a Search
+sidebar_label: Set the Time Range
 description: You can adjust the time range for searches and metrics to get the information that will be of most use.
 ---
-
-
 
 To set the time range for searches or metrics visualizations, click the time area.
 
@@ -34,7 +33,7 @@ The following general rules apply to time ranges:
 * If you enter a date, the assumed time for the date is midnight of that day. (00:00:00).
 * For relative time, use these shorthand entries: d=day, h=hour, m=minute, and s=second.
 * You can enter relative time ranges like this: "-1d -12h" for the range between one day ago and 12 hours ago.
-* Time ranges use either the default timezone set in your web browser, or the [Default Timezone](../../../get-started/account-setup.md#my-preferences) setting on the **Preferences** page, if you have set it.
+* Time ranges use either the default timezone set in your web browser, or the [Default Timezone](../../../get-started/account-settings-preferences.md) setting on the **Preferences** page, if you have set it.
 * The timezone offset is displayed in the time range selector pop-up dialog. For example, in the previous screenshot, +1100 is added to display the offset for Australia, including DST.
 * The timezone offset is also displayed in the **Time** column of the **Messages** tab in search results.
 * The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.

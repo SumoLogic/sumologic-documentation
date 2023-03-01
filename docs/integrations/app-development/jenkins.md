@@ -1,6 +1,6 @@
 ---
 id: jenkins
-title: Sumo Logic App for Jenkins
+title: Jenkins
 sidebar_label: Jenkins
 description: The Sumo Logic App for Jenkins helps you monitor build successes, failures, and performance, ensuring that you know—before committing code to the repository—whether the code will work.
 ---
@@ -379,7 +379,7 @@ To configure the Jenkins Plugin, do the following:
 
 ### Step 5: Optional - Advanced Configuration
 
-This section provides instructions for configuring Sumo Logic Jenkins Plugin for specific projects using Jenkins **configuration as code**. For more information see [configuration as code](https://jenkins.io/projects/jcasc/).
+This section provides instructions for configuring Sumo Logic Jenkins Plugin for specific projects using Jenkins **configuration as code**. For more information, see [configuration as code](https://jenkins.io/projects/jcasc/).
 
 To configure Sumo Logic Jenkins Plugin for specific projects using configuration as code, do the following:
 

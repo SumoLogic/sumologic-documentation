@@ -1,6 +1,6 @@
 ---
 id: inspector-classic
-title: Sumo Logic App for Amazon Inspector - Classic
+title: Amazon Inspector - Classic
 sidebar_label: Amazon Inspector App - Classic
 description: Allows you to monitor your AWS resources for potential security risks.
 ---

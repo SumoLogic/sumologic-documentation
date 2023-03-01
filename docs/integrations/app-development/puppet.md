@@ -1,6 +1,6 @@
 ---
 id: puppet
-title: Sumo Logic App for Puppet
+title: Puppet
 sidebar_label: Puppet
 description: The Sumo Logic App for Puppet helps you monitor Puppet metrics and events.
 ---
@@ -210,11 +210,11 @@ This section has instructions for setting up a Script source that runs a shell s
 The following requirements apply to the script source:
 
 * The user running the collector process must have read and write access to the Puppet Reports directory.
-* The collector executes the script as the user running the collector process. The script outputs data to your machine's stdout or stderror output streams to be collected. For more information see [Script Source](/docs/send-data/installed-collectors/sources/script-source).
+* The collector executes the script as the user running the collector process. The script outputs data to your machine's stdout or stderror output streams to be collected. For more information, see [Script Source](/docs/send-data/installed-collectors/sources/script-source).
 * The machine where you run the script must have Ruby installed.
 * The script generates a log in the configured working directory that you can review in case of issues.
 
-For more information see [Script Source](/docs/send-data/installed-collectors/sources/script-source).
+For more information, see [Script Source](/docs/send-data/installed-collectors/sources/script-source).
 
 #### To set up a script source
 

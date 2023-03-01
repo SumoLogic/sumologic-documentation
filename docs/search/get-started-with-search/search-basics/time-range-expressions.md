@@ -4,8 +4,6 @@ title: Time Range Expressions
 description: When you are building a search query, you have the option to add a time range expression in the time range field.
 ---
 
-
-
 When you are building a search query, you have the option to add a time range expression in the time range field.
 
 The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.
@@ -14,7 +12,7 @@ The last millisecond of the defined time range is not searched. For example, a
 
 Preset values are available to choose from, with **Last 15 Minutes** as the default start value and "now" being the implied end time. In cases where more control of the start and end time is required, you can type a time range expression directly into the time range field.
 
-Search time ranges use either the default timezone set in your web browser, or the [Default Timezone](../../../get-started/account-setup.md#my-preferences) setting on the **Preferences** page, if you have set it.
+Search time ranges use either the default timezone set in your web browser, or the [Default Timezone](../../../get-started/account-settings-preferences.md) setting on the **Preferences** page, if you have set it.
 
 ![time-range-expressions.png](/img/search/get-started-search/search-basics/time-range-expressions.png)
 
@@ -53,7 +51,7 @@ While relative expressions are useful, sometimes it is more important to express
 
 To avoid indeterminate values, always enter the year in the format YYYY.
 
-There are many different ways to combine year, month, and days in an absolute time range expression. Search time ranges use either the default **date format** set in your web browser or the [Date Format](../../../get-started/account-setup.md#my-preferences) setting on the **Preferences** page, if you have set it.
+There are many different ways to combine year, month, and days in an absolute time range expression. Search time ranges use either the default **date format** set in your web browser or the [Date Format](../../../get-started/account-settings-preferences.md) setting on the **Preferences** page, if you have set it.
 
 The table below contains examples of absolute time-range expressions. 
 

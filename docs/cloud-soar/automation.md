@@ -21,7 +21,9 @@ While browsing available integrations, you can check the details and all the act
 
 ## Playbook
 
-:::sumo Microlesson: Create Custom Playbooks in Cloud SOAR
+:::sumo Micro Lesson
+
+Create Custom Playbooks in Cloud SOAR.
 
 <Iframe url="https://www.youtube.com/embed/pcDm71wGyGs"
         width="854px"

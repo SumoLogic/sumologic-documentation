@@ -1,6 +1,6 @@
 ---
 id: zscaler-nss
-title: ZScaler NSS
+title: ZScaler NSS - Cloud SIEM
 sidebar_label: ZScaler NSS
 description: Configure collection of ZScaler NSS log messages to be parsed by CSE's system parser for ZScaler NSS.
 ---

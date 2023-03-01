@@ -42,8 +42,8 @@ Enhancements / Updates:
 
 Bug Fixes:
 
-* Fixed lambda cloudwatch logs FER (AwsObservabilityLambdaCloudWatchLogsFER)
-* Added new FER (AwsObservabilityGenericCloudWatchLogsFER) to handle generic cloudwatch logs namespace identification.
+* Fixed lambda CloudWatch logs FER (AwsObservabilityLambdaCloudWatchLogsFER)
+* Added new FER (AwsObservabilityGenericCloudWatchLogsFER) to handle generic CloudWatch logs namespace identification.
 * Fixed creation of extra resources with terraform when user selects none to deployed
 * Fixed issue with collection of generic aws namespace metric
 * Fixed query for “Network Bytes In” panel in Amazon Elasticache dashboard

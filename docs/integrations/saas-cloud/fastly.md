@@ -1,6 +1,6 @@
 ---
 id: fastly
-title: Sumo Logic App for Fastly
+title: Fastly
 sidebar_label: Fastly
 description: Fastly is a content delivery network (CDN) that provides you control over how and where you serve content, access to real-time performance analytics, and the ability to cache unpredictably changing content at the edge.
 ---

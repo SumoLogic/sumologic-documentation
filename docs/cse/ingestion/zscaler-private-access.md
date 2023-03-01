@@ -1,6 +1,6 @@
 ---
 id: zscaler-private-access
-title: Zscaler Private Access
+title: Zscaler Private Access - Cloud SIEM
 sidebar_label: Zscaler Private Access
 description: Configure an HTTP source to ingest Zscaler Private Access  log messages and send them to CSE’s Zscaler Private Access system parser.
 ---
@@ -48,11 +48,11 @@ Otherwise, create a new collector as described in [Configure a Hosted Collector]
 1. Click **Save**.
 1. Make a note of the HTTP Source URL that is displayed. You’ll supply it in [Step 2](#step-2-configure-zscaler-private-access) below.
 
-### Step 2: Configure Zscaler Private Access
+## Step 2: Configure Zscaler Private Access
 
 In this step you configure Zscaler Private Access to send log messages to CIP. For instructions, see [Configuring a Log Receiver](https://help.zscaler.com/zpa/configuring-log-receiver) in ZPA Help.
 
-### Step 3: Verify ingestion
+## Step 3: Verify ingestion
 
 In this step, you verify that your logs are successfully making it into CSE. 
 

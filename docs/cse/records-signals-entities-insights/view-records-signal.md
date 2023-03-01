@@ -26,8 +26,3 @@ To view additional Records that matched the rule conditions during the time wind
 The Records are retrieved in real time. The query is limited to the time window of the Signal. So, the list of Records may change over time; if you run the query occurs during the Signal’s time window, new Records could still be occurring, and if the query occurs after the retention period for records (by default, 90 days), it’s possible that no additional Records could be returned. 
 
 ![queried-records-results.png](/img/cse/queried-records-results.png)
-
- 
-
-
- 
