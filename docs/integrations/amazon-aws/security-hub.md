@@ -1,7 +1,6 @@
 ---
 id: security-hub
 title: AWS Security Hub
-sidebar_label: AWS Security Hub
 description: The Sumo Logic App for AWS Security Hub leverages findings data from Security Hub and visually displays the data in Dashboards.
 ---
 

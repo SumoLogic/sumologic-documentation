@@ -51,8 +51,8 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
   <div className="box smallbox6 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/elasticache.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/integrations/amazon-aws/elasticache">Amazon Elasticache</a></h4>
-  <p>A guide to the Sumo Logic app for Amazon Elasticache.</p>
+  <h4><a href="/docs/integrations/amazon-aws/elasticache">Amazon ElastiCache</a></h4>
+  <p>A guide to the Sumo Logic app for Amazon ElastiCache.</p>
   </div>
 </div>
     <div className="box smallbox7 card">

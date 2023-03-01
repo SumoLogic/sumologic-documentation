@@ -2,7 +2,7 @@
 id: ec2-cloudwatch-metrics
 title: AWS EC2 CW Metrics
 sidebar_label: AWS EC2 CW Metrics
-description: Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) Cloud. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage.
+description: The Sumo Logic app for AWS EC2 allows you to collect your EC2 instance metrics and view dashboards that display analysis of CPU, disk, network, EBS, Health Status Check, and EC2 CloudTrail Events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
