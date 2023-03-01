@@ -74,7 +74,7 @@ This will generate a command that can be executed in the machine that needs moni
 
 OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collector/configuration/) yaml file with all the details concerning the data that needs to be collected. For example, it specifies the location of a log file that is read and sent to the Sumo Logic platform.
 
-In this step we will be configuring the yaml required for Redis Collection.
+In this step, we will be configuring the yaml required for Redis Collection.
 
 The log file path configured to capture redis logs must be given here.
 
