@@ -9,7 +9,7 @@ This topic has instructions for creating and using tuning expressions for Rules.
 
 ## What’s a rule tuning expression?
 
-Every CSE rule has a rule expression, to which incoming Records are compared. When a Record matches a rule expression, and other rule criteria are satisfied, the rule generates a Signal. A rule tuning expressing allows you to extend a rule expression. A rule tuning expression is combined with a rule expression—either with a logical AND or NOT—and the rule will only generate a Signal if a Record matches the combined expression.  
+Every CSE rule has a rule expression, to which incoming Records are compared. When a Record matches a rule expression, and other rule criteria are satisfied, the rule generates a Signal. A rule tuning expression allows you to extend a rule expression. A rule tuning expression is combined with a rule expression—either with a logical AND or NOT—and the rule will only generate a Signal if a Record matches the combined expression.  
 
 As an example, consider the following rule expression, which detects that an attempt was made to clear the Windows Security Event Log.
 
@@ -60,7 +60,7 @@ Here’s what the example tuning expression looks like in the CSE UI.
 
 ### Create tuning expression without applying it to rules
 
-If you want to create a tuning expression and not apply it to any rules immediately, follow the instructions in [Apply tuning expression to selected rules](#apply-tuning-expression-to-selected-rules), but do not enter anything in the **Type to add a rule** area.
+If you want to create a tuning expression and not apply it to any rules immediately, follow the instructions in [Create a tuning expression](#create-a-tuning-expression), but do not enter anything in the **Type to add a rule** area.
 
 ## Create and manage tuning expressions on rule page
 

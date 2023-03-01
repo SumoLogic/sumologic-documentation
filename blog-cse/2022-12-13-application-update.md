@@ -59,7 +59,7 @@ To do this, simply expand the **Full Details** view, hover to the left of the fi
 * [Updated] The previously announced migration of our out-of-the-box rules from standard match lists to Entity tags has been postponed. New dates for this migration will be announced in the near future.
 * [New] Service providers using the Consolidated Insight List can now see Insights from client organizations across deployments.
 * [Updated] The usability of filters for list views when searching for an object that includes a specific tag schema has been enhanced.
-* [Removed] The link to download the Insight Enrichment Service has been removed from the **Enrichment** page. The link is specified in the [installation instructions](https://help.sumologic.com/docs/cse/integrations/insight-enrichment-server/) online.
+* [Removed] The link to download the Insight Enrichment Service has been removed from the **Enrichment** page. The link is specified in the [installation instructions](/docs/cse/integrations/insight-enrichment-server/) online.
 * [New] Users can now filter Records by Sensor Zone.
 
 ### Resolved Issues
@@ -72,4 +72,4 @@ To do this, simply expand the **Full Details** view, hover to the left of the fi
 * Users were unable to filter the Signals list based on severity.
 * IP addresses in the 198.18.0.0/15 and 169.254.0.0/15 ranges were not being marked as private subnets per RFC1918.
 * Users without the proper permissions were able to add comments and Signals to Insights.
-* Regular expressions ending with an asterisk `*` were not working properly in search/list filters. 
+* Regular expressions ending with an asterisk `*` were not working properly in search/list filters.

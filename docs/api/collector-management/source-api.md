@@ -28,7 +28,9 @@ See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) 
 
 Gets information about all Sources for a specified Collector.
 
-**Method:** `GET Path: /collectors/[collectorId]/sources`
+**Method:** `GET`
+
+**Path:** `/collectors/[collectorId]/sources`
 
 
 <table>
@@ -155,7 +157,9 @@ Response:
 
 Gets information about a specified Collector and Source.
 
-**Method:** `GET Path: /collectors/[collectorId]/sources/[sourceId]`
+**Method:** `GET`
+
+**Path:** `/collectors/[collectorId]/sources/[sourceId]`
 
 
 <table>
@@ -293,7 +297,9 @@ Response:
 
 Creates a new Source for a Collector. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for required fields for the request JSON file.
 
-**Method: `POST Path: /collectors/[collectorId]/sources`**
+**Method**: `POST`
+
+**Path**: `/collectors/[collectorId]/sources`
 
 
 <table>
@@ -394,7 +400,7 @@ Response:
 ```
 
 
-Note that the filter value shown above is an example for excluding a keyword. Filter values are specified to do batch edits to Processing Rules for Sources. For details on the different types of filters available, see [Creating Processing Rules Using a JSON File](/docs/send-data/use-json-configure-sources#Creating_Processing_Rules_Using_a_JSON_File).
+Note that the filter value shown above is an example for excluding a keyword. Filter values are specified to do batch edits to Processing Rules for Sources. For details on the different types of filters available, see [Creating Processing Rules Using a JSON File](/docs/send-data/use-json-configure-sources/#creating-processing-rules-using-json).
 
 
 ## PUT methods
@@ -408,7 +414,9 @@ You need to include the `id` parameter in your JSON file.
 
 Updating a Source also requires the "If-Match" header to be specified with the "ETag" provided in the headers of a previous GET request.
 
-**Method: `PUT Path: /collectors/[collectorId]/sources/[sourceId]`**
+**Method**: `PUT`
+
+**Path**: `/collectors/[collectorId]/sources/[sourceId]`
 
 
 <table>
@@ -528,7 +536,7 @@ Request JSON (updated_host_metrics.json)
 ```
 
 
-Note that the filter value shown above is an example for excluding a keyword. Filter values are specified to do batch edits to Processing Rules for Sources. For details on the different types of filters available, see [Creating Processing Rules Using a JSON File](/docs/send-data/use-json-configure-sources#Creating_Processing_Rules_Using_a_JSON_File).
+Note that the filter value shown above is an example for excluding a keyword. Filter values are specified to do batch edits to Processing Rules for Sources. For details on the different types of filters available, see [Creating Processing Rules Using a JSON File](/docs/send-data/use-json-configure-sources/#creating-processing-rules-using-json).
 
 Response:
 
@@ -574,7 +582,9 @@ Deletes the specified Source from the specified Collector.
 
 Requests to delete Sources from the [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework) are asynchronous. When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector. Use a GET request to track the Source's state.
 
-Method: `DELETE Path: /collectors/[collectorId]/sources/[sourceId]`
+**Method**: `DELETE`
+
+**Path**: `/collectors/[collectorId]/sources/[sourceId]`
 
 
 <table>

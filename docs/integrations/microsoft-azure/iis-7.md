@@ -1,6 +1,6 @@
 ---
 id: iis-7
-title: Sumo Logic App for IIS 7
+title: IIS 7
 sidebar_label: IIS 7
 description: Allows you to manage your Microsoft Internet Information Services (IIS) server operations errors, request response times, as well as visitors and traffic insights.
 ---

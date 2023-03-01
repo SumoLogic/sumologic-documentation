@@ -154,14 +154,14 @@ This section has instructions for collecting logs and metrics for the Sumo App f
 * Setting up collection and installing the Sumo Logic Kubernetes App.
 * Configuring CloudWatch log collection.
 
-The Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/Kubernetes) allows you to monitor worker node logs, as well as metrics for the EKS master and worker nodes.
+The Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes) allows you to monitor worker node logs, as well as metrics for the EKS master and worker nodes.
 
 
 ### Step 1. Set up and install the Kubernetes App  
 
 The Sumo Logic Kubernetes App provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and install the Kubernetes App before configuring collection for the EKS - Control Plane App. You will configure log and metric collection during this process.
 
-**To set up and install the Kubernetes app**, follow the instructions in [this document](/docs/integrations/containers-orchestration/Kubernetes).
+**To set up and install the Kubernetes app**, follow the instructions in [this document](/docs/integrations/containers-orchestration/kubernetes).
 
 
 ### Step 2. Configure CloudWatch log collection

@@ -1,6 +1,6 @@
 ---
 id: cisco-umbrella
-title: Sumo Logic App for Cisco Umbrella
+title: Cisco Umbrella
 sidebar_label: Cisco Umbrella
 description: Provides analytics on DNS, Proxy, and Audit admin activities
 ---
@@ -70,7 +70,7 @@ This section has instructions for installing the Cisco Umbrella App for Sumo and
 
 1. Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. From the App Catalog, search for and select the app.
-1. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently.For more information, see the [Install the Apps from the Library](https://help.sumologic.com/docs/get-started/apps-integrations#install-apps-from-the-library).
+1. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently.For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     1. **Data Source.** Select either of these options for the data source. 

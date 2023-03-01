@@ -238,7 +238,7 @@ https://endpoint9.collection.us2.sumologic.com/</td>
 
 ### Which endpoint should I should use?
 
-To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `in`, `ca`, or `au`, you're on one of those pods. The US1 pod uses `service.sumologic.com`.
+To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `in`, `ca`, or `au`, you're on one of those pods. The only exception is the US1 pod, which uses `service.sumologic.com`.
 
 The specific collection endpoint will vary per account. The general format is: `endpoint[N].collection.[deploymentID].sumologic.com`.
 

@@ -1,6 +1,6 @@
 ---
 id: kubernetes-engine
-title: Sumo Logic App for Google Kubernetes Engine
+title: Google Kubernetes Engine
 sidebar_label: Google Kubernetes Engine (GKE)
 description: The Sumo Logic App for Google Kubernetes Engine (GKE) - Control Plane allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The app provides visibility into the GKE control plane with operat
 ---
@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine/) provides a managed environment where you can easily deploy, manage, and scale your container-based applications using the Google Cloud infrastructure.
 
-The Sumo Logic App for Google Kubernetes Engine (GKE) - Control Plane allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The app provides visibility into the GKE control plane with operational insights into the API server, control manager, and worker nodes. This App works in conjunction with [Sumo Logic Kubernetes app](/docs/integrations/containers-orchestration/Kubernetes), that provides visibility into worker node metrics and application logs.
+The Sumo Logic App for Google Kubernetes Engine (GKE) - Control Plane allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The app provides visibility into the GKE control plane with operational insights into the API server, control manager, and worker nodes. This App works in conjunction with [Sumo Logic Kubernetes app](/docs/integrations/containers-orchestration/kubernetes), that provides visibility into worker node metrics and application logs.
 
 
 ## Supported versions
@@ -239,7 +239,7 @@ By default, GKE clusters are natively integrated with Cloud Logging (and Monitor
 
 ### Install the App
 
-**To set up and install the Kubernetes app**, follow the instructions in [this document](/docs/integrations/containers-orchestration/Kubernetes).
+**To set up and install the Kubernetes app**, follow the instructions in [this document](/docs/integrations/containers-orchestration/kubernetes).
 
 
 ### Configure a Google Cloud Platform Source  

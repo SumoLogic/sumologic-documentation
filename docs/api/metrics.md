@@ -7,8 +7,6 @@ description: Use HTTP endpoints to access your metric data.
 
 The Metrics Query API lets you execute Metrics queries from third-party scripts and applications so that you can reformat the results as desired.
 
-This API follows Representational State Transfer (REST) patterns and is optimized for ease of use and consistency.
-
 {@import ../reuse/api-intro.md}
 
 ## Before You Begin
@@ -48,7 +46,11 @@ To execute a metrics query, send a JSON request to the endpoint.
 
 **Example endpoint:** [https://api.sumologic.com/api/v1/metrics/results](https://api.sumologic.com/api/v1/metrics/results)
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. For example, an API endpoint in Europe would begin `api.eu.sumologic.com`.  A service endpoint in us2 (Western US) would begin service.us2.sumologic.com.  For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+<details><summary>Which API endpoint should I use?</summary>
+
+{@import ../reuse/api-endpoints.md}
+
+</details>
 
 
 ### Headers

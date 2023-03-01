@@ -50,7 +50,7 @@ The screenshot below shows a rule whose "On Entity" attributes are `srcDevice
 
 ![on-entity.png](/img/cse/on-entity.png)
 
-When an incoming Record meets a rule's conditions, a Signal is generated for each of the rule's On Entity attributes found in the Record. When the example rule above fires, it generates two Signals: one on the IP address one held in the `srcDevice_ip` attribute, and  another on the IP address held in the `dstDevice_ip` attribute.
+When an incoming Record meets a rule's conditions, a Signal is generated for each of the rule's On Entity attributes found in the Record. When the example rule above fires, it generates two Signals: one on the IP address held in the `srcDevice_ip` attribute, and  another on the IP address held in the `dstDevice_ip` attribute.
 
 ## Rule types
 
@@ -161,7 +161,7 @@ where:
 * The name of the threat intel source, with embedded spaces replaced by underscore characters (_).
 * `source:My_Threat_Intel_List` identifies the threat intel list.
 * `column:Ip` identifies the type of the field where the match was found.
-* `column:SrcI`p identifies the name of the field where the match was found.
+* `column:SrcIp` identifies the name of the field where the match was found.
 * `threat `is a string that CSE uses to indicate that the Record field matched a threat source, rather than another type of list.
   
 Because the threat intel information is persisted within Records, you can reference it downstream in both rules and search. To leverage the information in a rule, you extend your rule expression with the `array_contains` function. The syntax is:
