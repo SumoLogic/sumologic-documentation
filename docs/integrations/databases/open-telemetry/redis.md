@@ -24,7 +24,7 @@ This Sumo Logic App for Redis supports logs for Redis in Cluster or Standalone m
 
 ##Fields creation in Sumo Logic for Redis
 
-Following are the [Fields](https://help.sumologic.com/docs/manage/fields/), which will be created as part of Redis App install if not already present.
+Following are the [Fields](https://help.sumologic.com/docs/manage/fields/), which will be created as part of the Redis App install if not already present.
 
 **db.cluster.name** - User configured. Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
 **db.system** - Has fixed value of redis
