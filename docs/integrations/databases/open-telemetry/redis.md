@@ -88,7 +88,7 @@ Click on the "Download YAML File" button to get the yaml file.
 
 Once you have the yaml file downloaded in step 2, please follow the below steps based on your environment
 
-####Linux
+#### Linux
 
 1.  Copy the yaml at `/etc/otelcol-sumo/conf.d/` folder in the Redis instance which needs to be monitored.
 2.  Restart the otelcol-sumo process using the below command `sudo systemctl restart otelcol-sumo`
