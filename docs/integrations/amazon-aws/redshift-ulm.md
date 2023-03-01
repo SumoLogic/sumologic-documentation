@@ -1,7 +1,6 @@
 ---
 id: redshift-ulm
 title: Amazon Redshift ULM
-sidebar_label: Amazon Redshift ULM
 description: The Sumo Logic App for Amazon Redshift ULM helps you monitor activity in Amazon Redshift.
 ---
 
