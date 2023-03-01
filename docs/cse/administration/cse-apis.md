@@ -6,7 +6,7 @@ description: Learn how to access CSE APIs and API documentation.
 
 This page has information about accessing the CSE APIs and API documentation.
 
-Your API endpoint depends on your Sumo Logic deployment. For a list of Sumo Logic API endpoints by deployment, see Sumo Logic Endpoints and Firewall Security. Your endpoint will look something like this:
+Your API endpoint depends on your Sumo Logic deployment. For a list of Sumo Logic API endpoints by deployment, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). Your endpoint will look something like this:
 
 `https://api.us2.sumologic.com/api/`
 
@@ -20,4 +20,4 @@ For example:
 
 `https://api.us2.sumologic.com/api/sec/v1/custom-insights`
 
-API requests must be authenticated. For authentication options and information about rate limiting, see API Authentication. 
+API requests must be authenticated. For authentication options and information about rate limiting, see [API Authentication, Endpoints, and Security](/docs/api/getting-started/). 
