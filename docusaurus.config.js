@@ -40,6 +40,15 @@ module.exports = {
       async: true,
     },
   ],
+  i18n: {
+    // https://docusaurus.io/docs/i18n/tutorial
+    defaultLocale: 'en',
+    locales: ['en', 'ja'],
+    localeConfigs: {
+      en: { label: 'English' },
+      ja: { label: '日本語' },
+    },
+  },
   staticDirectories: ['static'],
   webpack: {
     jsLoader: (isServer) => ({
@@ -371,6 +380,11 @@ module.exports = {
                 icon: 'rss_feed',
               },
             ]
+          },
+          {
+          // i18n
+            type: 'localeDropdown',
+            position: 'right',
           },
           {
             type: 'html',
