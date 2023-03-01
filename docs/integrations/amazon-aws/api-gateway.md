@@ -146,7 +146,7 @@ Parse Expression:
 
 ### Centralized AWS CloudTrail Log Collection
 
-In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
+In case you have a centralized collection of CloudTraillogs and are ingesting them from all accounts into a single Sumo Logic CloudTraillog source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
 ```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time

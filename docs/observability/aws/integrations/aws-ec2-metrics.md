@@ -9,13 +9,13 @@ description: The Sumo Logic App for AWS EC2 allows you to display and gain insig
 
 ## Metrics Types 
 
-Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-Source#Collected-Metrics).
+Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-source).
 
-* [CPU Metrics](/docs/integrations/hosts-operating-systems/host-metrics#CPU-Metrics)
-* [Memory Metrics](/docs/integrations/hosts-operating-systems/host-metrics#Memory-Metrics)
+* [CPU Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#cpu-metrics)
+* [Memory Metrics](/docs/integrations/hosts-operating-systems/host-metrics#memory-metrics)
 * [TCP Metrics](/docs/integrations/hosts-operating-systems/host-metrics#TCP-Metrics)
-* [Networking Metrics](/docs/integrations/hosts-operating-systems/host-metrics#networking-metrics)
-* [Disk Metrics](/docs/integrations/hosts-operating-systems/host-metrics#disk-metrics)
+* [Networking Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#networking-metrics)
+* [Disk Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#disk-metrics)
 
 
 ### Time Intervals

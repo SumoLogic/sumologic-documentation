@@ -1,6 +1,6 @@
 ---
 id: iis-10-legacy
-title: Sumo Logic App for IIS 10 Legacy App
+title: IIS 10 Legacy App
 sidebar_label: IIS 10 (Legacy)
 description: IIS 10 App allows you to manage your Microsoft Internet Information Services (IIS) server operations errors, request response times, as well as visitors and traffic insights.
 ---
