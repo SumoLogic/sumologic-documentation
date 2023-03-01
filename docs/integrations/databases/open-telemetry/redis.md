@@ -84,7 +84,7 @@ Click on the "Download YAML File" button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/configuration-screenshot.png')} alt="Configuration" />
 
-###Step3: Sending logs to Sumo
+### Step 3: Sending logs to Sumo Logic
 
 Once you have the yaml file downloaded in step 2, please follow the below steps based on your environment
 
