@@ -1,7 +1,7 @@
 ---
 id: cost-explorer
 title: AWS Cost Explorer
-sidebar_label: AWS Cost Explorer
+description: The Sumo Logic App for AWS Cost Explorer lets you visualize, understand, and manage your AWS costs and usage over time.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

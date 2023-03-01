@@ -16,7 +16,7 @@ Global Intelligence for AWS CloudTrail - DevOps provides insights for on-call en
 * Amazon RDS
 * Amazon Redshift
 * Amazon DynamoDB
-* Amazon Elasticache
+* Amazon ElastiCache
 * AWS Lambda
 * AWS Auto Scaling
 
@@ -297,7 +297,7 @@ The **GI CloudTrail DevOps - 05. Configuration Benchmarks** dashboard provides i
 * Amazon RDS
 * Amazon Redshift
 * Amazon DynamoDB
-* Amazon Elasticache
+* Amazon ElastiCache
 
 Three types of configurations are benchmarked to help users understand the common values of each setting in the Sumo Logic population for a given AWS service:
 

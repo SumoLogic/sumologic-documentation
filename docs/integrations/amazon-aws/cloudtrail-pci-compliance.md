@@ -1,7 +1,6 @@
 ---
 id: cloudtrail-pci-compliance
-title: PCI Compliance for AWS CloudTrail App
-sidebar_label: PCI Compliance For AWS CloudTrail
+title: PCI Compliance For AWS CloudTrail
 description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for AWS CloudTrail App offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 

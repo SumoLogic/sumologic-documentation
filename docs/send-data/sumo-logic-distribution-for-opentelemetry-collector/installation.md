@@ -101,7 +101,7 @@ Follow the steps for your platform below.
     sudo mv otelcol-sumo /usr/local/bin/otelcol-sumo
     ```
 1. [Verify the installation](#verify-the-installation)
-1. Prepare the configuration according to [this](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/configuration) document and save it in `config.yaml`.
+1. Prepare the configuration according to [this document](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/configuration-sources) and save it in `config.yaml`.
    :::note
    It is recommended to limit access to the configuration file as it contains sensitive information. You can change access permissions to the configuration file using:
    ```bash
@@ -311,7 +311,7 @@ extensions:
 
 will require that the user running the process has access to `/var/lib/otelcol/mydir`.
 
-[filestorage_help]: ./configuration.md#file-storage-extension
+[filestorage_help]: ./configuration-sources.md#file-storage-extension
 
 To run opentelemetry collector as Systemd Service, apply following steps:
 
