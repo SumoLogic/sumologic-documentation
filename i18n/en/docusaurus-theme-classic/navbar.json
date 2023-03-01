@@ -1,0 +1,90 @@
+{
+  "item.label.Guides": {
+    "message": "Guides",
+    "description": "Navbar item with label Guides"
+  },
+  "item.label.API": {
+    "message": "API",
+    "description": "Navbar item with label API"
+  },
+  "item.label.Release Notes": {
+    "message": "Release Notes",
+    "description": "Navbar item with label Release Notes"
+  },
+  "item.label.Start Here": {
+    "message": "Start Here",
+    "description": "Navbar item with label Start Here"
+  },
+  "item.label.Send Data (Collectors)": {
+    "message": "Send Data (Collectors)",
+    "description": "Navbar item with label Send Data (Collectors)"
+  },
+  "item.label.Log Search": {
+    "message": "Log Search",
+    "description": "Navbar item with label Log Search"
+  },
+  "item.label.App Catalog": {
+    "message": "App Catalog",
+    "description": "Navbar item with label App Catalog"
+  },
+  "item.label.Manage Account": {
+    "message": "Manage Account",
+    "description": "Navbar item with label Manage Account"
+  },
+  "item.label.Alerts": {
+    "message": "Alerts",
+    "description": "Navbar item with label Alerts"
+  },
+  "item.label.Metrics": {
+    "message": "Metrics",
+    "description": "Navbar item with label Metrics"
+  },
+  "item.label.Traces, RUM, APM": {
+    "message": "Traces, RUM, APM",
+    "description": "Navbar item with label Traces, RUM, APM"
+  },
+  "item.label.Observability": {
+    "message": "Observability",
+    "description": "Navbar item with label Observability"
+  },
+  "item.label.Cloud SIEM/SOAR": {
+    "message": "Cloud SIEM/SOAR",
+    "description": "Navbar item with label Cloud SIEM/SOAR"
+  },
+  "item.label.Dashboards": {
+    "message": "Dashboards",
+    "description": "Navbar item with label Dashboards"
+  },
+  "item.label.API Docs": {
+    "message": "API Docs",
+    "description": "Navbar item with label API Docs"
+  },
+  "item.label.API Reference": {
+    "message": "API Reference",
+    "description": "Navbar item with label API Reference"
+  },
+  "item.label.Service": {
+    "message": "Service",
+    "description": "Navbar item with label Service"
+  },
+  "item.label.Cloud SIEM": {
+    "message": "Cloud SIEM",
+    "description": "Navbar item with label Cloud SIEM"
+  },
+  "item.label.Collector": {
+    "message": "Collector",
+    "description": "Navbar item with label Collector"
+  },
+  "item.label.Developer": {
+    "message": "Developer",
+    "description": "Navbar item with label Developer"
+  },
+  "item.label.Send Feedback": {
+    "message": "Send Feedback",
+    "description": "Navbar item with label Send Feedback"
+  },
+  "item.label.Contribute to Docs": {
+    "message": "Contribute to Docs",
+    "description": "Navbar item with label Contribute to Docs"
+  }
+}

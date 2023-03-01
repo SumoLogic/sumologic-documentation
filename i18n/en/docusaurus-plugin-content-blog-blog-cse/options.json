@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Sumo Logic Cloud SIEM Release Notes",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "All posts",
+    "description": "The label for the left sidebar"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "link.title.Learn": {
+    "message": "Learn",
+    "description": "The title of the footer links column with title=Learn in the footer"
+  },
+  "link.title.Contact Us": {
+    "message": "Contact Us",
+    "description": "The title of the footer links column with title=Contact Us in the footer"
+  },
+  "link.title.Open Source": {
+    "message": "Open Source",
+    "description": "The title of the footer links column with title=Open Source in the footer"
+  },
+  "link.item.label.Training & Certifications": {
+    "message": "Training & Certifications",
+    "description": "The label of footer link with label=Training & Certifications linking to https://www.sumologic.com/learn/training/"
+  },
+  "link.item.label.Events & Webinars": {
+    "message": "Events & Webinars",
+    "description": "The label of footer link with label=Events & Webinars linking to https://www.sumologic.com/events/"
+  },
+  "link.item.label.Request Demo": {
+    "message": "Request Demo",
+    "description": "The label of footer link with label=Request Demo linking to https://www.sumologic.com/request-demo"
+  },
+  "link.item.label.Support": {
+    "message": "Support",
+    "description": "The label of footer link with label=Support linking to https://support.sumologic.com/hc/en-us"
+  },
+  "link.item.label.Sumo Dojo Slack": {
+    "message": "Sumo Dojo Slack",
+    "description": "The label of footer link with label=Sumo Dojo Slack linking to https://sumodojo.slack.com/"
+  },
+  "link.item.label.Community": {
+    "message": "Community",
+    "description": "The label of footer link with label=Community linking to https://support.sumologic.com/hc/en-us/community/topics"
+  },
+  "link.item.label.Docs GitHub": {
+    "message": "Docs GitHub",
+    "description": "The label of footer link with label=Docs GitHub linking to https://github.com/SumoLogic/sumologic-documentation"
+  },
+  "link.item.label.Sumo Logic GitHub": {
+    "message": "Sumo Logic GitHub",
+    "description": "The label of footer link with label=Sumo Logic GitHub linking to https://github.com/SumoLogic"
+  },
+  "link.item.label.Sumo Labs Projects": {
+    "message": "Sumo Labs Projects",
+    "description": "The label of footer link with label=Sumo Labs Projects linking to https://github.com/SumoLogic-Labs"
+  },
+  "copyright": {
+    "message": "Copyright © 2023 by Sumo Logic, Inc.",
+    "description": "The footer copyright"
+  }
+}

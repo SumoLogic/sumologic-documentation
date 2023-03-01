@@ -97,7 +97,7 @@ export const Home = () => {
                   fontWeight={700}
                   variant='h2'
                 >
-                  New to Sumo?
+                  Sumo Logic は初めてですか?
                 </Typography>
                 <Typography
                   color='#e3e3e3'
@@ -106,7 +106,7 @@ export const Home = () => {
                   textAlign='left'
                   variant='subtitle2'
                 >
-                  Get started quickly with our search, visualization, analytics, and security capabilities.
+                  検索、視覚化、分析、およびセキュリティ機能をすぐに開始できます。
                 </Typography>
                 {[
                   {
@@ -195,7 +195,7 @@ export const Home = () => {
             textAlign='center'
             variant='h4'
           >
-            Explore our product guides
+            製品ガイドをご覧ください
           </Typography>
           <Typography
             component='p'
@@ -204,7 +204,7 @@ export const Home = () => {
             textAlign='center'
             variant='subtitle1'
           >
-            Ensure app reliability and security with modern cloud-native monitoring and observability.
+            最新のクラウドネイティブな監視と可観測性により、アプリの信頼性とセキュリティを確保します。
           </Typography>
 
           <TabContext value={tab}>

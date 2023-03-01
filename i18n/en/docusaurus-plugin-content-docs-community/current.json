@@ -1,0 +1,38 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.hackathon.category.🌐Amazon Web Services": {
+    "message": "🌐Amazon Web Services",
+    "description": "The label for category 🌐Amazon Web Services in sidebar hackathon"
+  },
+  "sidebar.hackathon.category.🛞Kubernetes": {
+    "message": "🛞Kubernetes",
+    "description": "The label for category 🛞Kubernetes in sidebar hackathon"
+  },
+  "sidebar.hackathon.category.🪵Log Management and Analytics": {
+    "message": "🪵Log Management and Analytics",
+    "description": "The label for category 🪵Log Management and Analytics in sidebar hackathon"
+  },
+  "sidebar.hackathon.category.⚙️Infrastructure Monitoring": {
+    "message": "⚙️Infrastructure Monitoring",
+    "description": "The label for category ⚙️Infrastructure Monitoring in sidebar hackathon"
+  },
+  "sidebar.hackathon.category.📱App Observability": {
+    "message": "📱App Observability",
+    "description": "The label for category 📱App Observability in sidebar hackathon"
+  },
+  "sidebar.hackathon.category.🛡️Security": {
+    "message": "🛡️Security",
+    "description": "The label for category 🛡️Security in sidebar hackathon"
+  },
+  "sidebar.hackathon.category.📈Platform Capabilities": {
+    "message": "📈Platform Capabilities",
+    "description": "The label for category 📈Platform Capabilities in sidebar hackathon"
+  },
+  "sidebar.hackathon.link.Log in to Sumo": {
+    "message": "Log in to Sumo",
+    "description": "The label for link Log in to Sumo in sidebar hackathon, linking to https://service.sumologic.com"
+  }
+}

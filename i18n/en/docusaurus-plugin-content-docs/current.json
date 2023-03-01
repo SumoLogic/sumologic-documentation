@@ -1,0 +1,530 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.getstarted.category.Welcome to Sumo Logic": {
+    "message": "Welcome to Sumo Logic",
+    "description": "The label for category Welcome to Sumo Logic in sidebar getstarted"
+  },
+  "sidebar.senddata.category.Send Data": {
+    "message": "Send Data",
+    "description": "The label for category Send Data in sidebar senddata"
+  },
+  "sidebar.senddata.category.Installed Collectors & Sources": {
+    "message": "Installed Collectors & Sources",
+    "description": "The label for category Installed Collectors & Sources in sidebar senddata"
+  },
+  "sidebar.senddata.category.Sources": {
+    "message": "Sources",
+    "description": "The label for category Sources in sidebar senddata"
+  },
+  "sidebar.senddata.category.Remote File Source": {
+    "message": "Remote File Source",
+    "description": "The label for category Remote File Source in sidebar senddata"
+  },
+  "sidebar.senddata.category.Script Source": {
+    "message": "Script Source",
+    "description": "The label for category Script Source in sidebar senddata"
+  },
+  "sidebar.senddata.category.Collector Installation Reference": {
+    "message": "Collector Installation Reference",
+    "description": "The label for category Collector Installation Reference in sidebar senddata"
+  },
+  "sidebar.senddata.category.Hosted Collectors & Sources": {
+    "message": "Hosted Collectors & Sources",
+    "description": "The label for category Hosted Collectors & Sources in sidebar senddata"
+  },
+  "sidebar.senddata.category.Amazon/AWS Sources": {
+    "message": "Amazon/AWS Sources",
+    "description": "The label for category Amazon/AWS Sources in sidebar senddata"
+  },
+  "sidebar.senddata.category.Cloud-to-Cloud Integration Framework Sources": {
+    "message": "Cloud-to-Cloud Integration Framework Sources",
+    "description": "The label for category Cloud-to-Cloud Integration Framework Sources in sidebar senddata"
+  },
+  "sidebar.senddata.category.Google Sources": {
+    "message": "Google Sources",
+    "description": "The label for category Google Sources in sidebar senddata"
+  },
+  "sidebar.senddata.category.Microsoft Sources": {
+    "message": "Microsoft Sources",
+    "description": "The label for category Microsoft Sources in sidebar senddata"
+  },
+  "sidebar.senddata.category.Cloud Syslog Sources": {
+    "message": "Cloud Syslog Sources",
+    "description": "The label for category Cloud Syslog Sources in sidebar senddata"
+  },
+  "sidebar.senddata.category.HTTP Sources for Logs, Metrics, Traces, OTLP": {
+    "message": "HTTP Sources for Logs, Metrics, Traces, OTLP",
+    "description": "The label for category HTTP Sources for Logs, Metrics, Traces, OTLP in sidebar senddata"
+  },
+  "sidebar.senddata.category.Use JSON to Configure Sources": {
+    "message": "Use JSON to Configure Sources",
+    "description": "The label for category Use JSON to Configure Sources in sidebar senddata"
+  },
+  "sidebar.senddata.category.Local Configuration File Management": {
+    "message": "Local Configuration File Management",
+    "description": "The label for category Local Configuration File Management in sidebar senddata"
+  },
+  "sidebar.senddata.category.Collect From Other Data Sources": {
+    "message": "Collect From Other Data Sources",
+    "description": "The label for category Collect From Other Data Sources in sidebar senddata"
+  },
+  "sidebar.senddata.category.Amazon CloudWatch Logs": {
+    "message": "Amazon CloudWatch Logs",
+    "description": "The label for category Amazon CloudWatch Logs in sidebar senddata"
+  },
+  "sidebar.senddata.category.Azure Blob Storage": {
+    "message": "Azure Blob Storage",
+    "description": "The label for category Azure Blob Storage in sidebar senddata"
+  },
+  "sidebar.senddata.category.Azure Monitoring": {
+    "message": "Azure Monitoring",
+    "description": "The label for category Azure Monitoring in sidebar senddata"
+  },
+  "sidebar.senddata.category.Telegraf": {
+    "message": "Telegraf",
+    "description": "The label for category Telegraf in sidebar senddata"
+  },
+  "sidebar.senddata.category.Using the Collection Page": {
+    "message": "Using the Collection Page",
+    "description": "The label for category Using the Collection Page in sidebar senddata"
+  },
+  "sidebar.senddata.category.Processing Rules": {
+    "message": "Processing Rules",
+    "description": "The label for category Processing Rules in sidebar senddata"
+  },
+  "sidebar.senddata.category.Source Reference Information": {
+    "message": "Source Reference Information",
+    "description": "The label for category Source Reference Information in sidebar senddata"
+  },
+  "sidebar.manage.category.Manage": {
+    "message": "Manage",
+    "description": "The label for category Manage in sidebar manage"
+  },
+  "sidebar.manage.category.Field Extractions": {
+    "message": "Field Extractions",
+    "description": "The label for category Field Extractions in sidebar manage"
+  },
+  "sidebar.manage.category.FER Templates": {
+    "message": "FER Templates",
+    "description": "The label for category FER Templates in sidebar manage"
+  },
+  "sidebar.manage.category.Partitions and Data Tiers": {
+    "message": "Partitions and Data Tiers",
+    "description": "The label for category Partitions and Data Tiers in sidebar manage"
+  },
+  "sidebar.manage.category.Connections and Integrations": {
+    "message": "Connections and Integrations",
+    "description": "The label for category Connections and Integrations in sidebar manage"
+  },
+  "sidebar.manage.category.Users and Roles": {
+    "message": "Users and Roles",
+    "description": "The label for category Users and Roles in sidebar manage"
+  },
+  "sidebar.manage.category.Manage Roles": {
+    "message": "Manage Roles",
+    "description": "The label for category Manage Roles in sidebar manage"
+  },
+  "sidebar.manage.category.Manage Users": {
+    "message": "Manage Users",
+    "description": "The label for category Manage Users in sidebar manage"
+  },
+  "sidebar.manage.category.Manage Subscription": {
+    "message": "Manage Subscription",
+    "description": "The label for category Manage Subscription in sidebar manage"
+  },
+  "sidebar.manage.category.Content Sharing": {
+    "message": "Content Sharing",
+    "description": "The label for category Content Sharing in sidebar manage"
+  },
+  "sidebar.manage.category.Data Forwarding": {
+    "message": "Data Forwarding",
+    "description": "The label for category Data Forwarding in sidebar manage"
+  },
+  "sidebar.manage.category.Ingestion and Volume": {
+    "message": "Ingestion and Volume",
+    "description": "The label for category Ingestion and Volume in sidebar manage"
+  },
+  "sidebar.manage.category.Data Volume Index": {
+    "message": "Data Volume Index",
+    "description": "The label for category Data Volume Index in sidebar manage"
+  },
+  "sidebar.manage.category.Ingest Budgets": {
+    "message": "Ingest Budgets",
+    "description": "The label for category Ingest Budgets in sidebar manage"
+  },
+  "sidebar.manage.category.Scheduled Views": {
+    "message": "Scheduled Views",
+    "description": "The label for category Scheduled Views in sidebar manage"
+  },
+  "sidebar.manage.category.Security": {
+    "message": "Security",
+    "description": "The label for category Security in sidebar manage"
+  },
+  "sidebar.manage.category.SAML": {
+    "message": "SAML",
+    "description": "The label for category SAML in sidebar manage"
+  },
+  "sidebar.dashboards.category.Alerts": {
+    "message": "Alerts",
+    "description": "The label for category Alerts in sidebar dashboards"
+  },
+  "sidebar.dashboards.category.Monitors": {
+    "message": "Monitors",
+    "description": "The label for category Monitors in sidebar dashboards"
+  },
+  "sidebar.dashboards.category.Scheduled Searches": {
+    "message": "Scheduled Searches",
+    "description": "The label for category Scheduled Searches in sidebar dashboards"
+  },
+  "sidebar.dashboards.category.Webhook Connections": {
+    "message": "Webhook Connections",
+    "description": "The label for category Webhook Connections in sidebar dashboards"
+  },
+  "sidebar.dashboards.category.ServiceNow": {
+    "message": "ServiceNow",
+    "description": "The label for category ServiceNow in sidebar dashboards"
+  },
+  "sidebar.dashboards.category.Dashboards (New)": {
+    "message": "Dashboards (New)",
+    "description": "The label for category Dashboards (New) in sidebar dashboards"
+  },
+  "sidebar.dashboards.category.Panels": {
+    "message": "Panels",
+    "description": "The label for category Panels in sidebar dashboards"
+  },
+  "sidebar.dashboards.category.Dashboards (Classic)": {
+    "message": "Dashboards (Classic)",
+    "description": "The label for category Dashboards (Classic) in sidebar dashboards"
+  },
+  "sidebar.dashboards.category.Get Started": {
+    "message": "Get Started",
+    "description": "The label for category Get Started in sidebar dashboards"
+  },
+  "sidebar.dashboards.category.Chart Panel Types": {
+    "message": "Chart Panel Types",
+    "description": "The label for category Chart Panel Types in sidebar dashboards"
+  },
+  "sidebar.dashboards.category.Edit Dashboards and Panels": {
+    "message": "Edit Dashboards and Panels",
+    "description": "The label for category Edit Dashboards and Panels in sidebar dashboards"
+  },
+  "sidebar.searchlogs.category.Log Search": {
+    "message": "Log Search",
+    "description": "The label for category Log Search in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.Get Started with Search": {
+    "message": "Get Started with Search",
+    "description": "The label for category Get Started with Search in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.Search Basics": {
+    "message": "Search Basics",
+    "description": "The label for category Search Basics in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.How to Use the Search Page": {
+    "message": "How to Use the Search Page",
+    "description": "The label for category How to Use the Search Page in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.Field Browser": {
+    "message": "Field Browser",
+    "description": "The label for category Field Browser in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.Build Searches": {
+    "message": "Build Searches",
+    "description": "The label for category Build Searches in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.Suggested Searches": {
+    "message": "Suggested Searches",
+    "description": "The label for category Suggested Searches in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.Search Query Language": {
+    "message": "Search Query Language",
+    "description": "The label for category Search Query Language in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.Search Operators": {
+    "message": "Search Operators",
+    "description": "The label for category Search Operators in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.Parse Operators": {
+    "message": "Parse Operators",
+    "description": "The label for category Parse Operators in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.Group or Aggregate Operators": {
+    "message": "Group or Aggregate Operators",
+    "description": "The label for category Group or Aggregate Operators in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.Math Expressions": {
+    "message": "Math Expressions",
+    "description": "The label for category Math Expressions in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.Transaction Analytics": {
+    "message": "Transaction Analytics",
+    "description": "The label for category Transaction Analytics in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.Search Cheat Sheets": {
+    "message": "Search Cheat Sheets",
+    "description": "The label for category Search Cheat Sheets in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.Behavior Insights": {
+    "message": "Behavior Insights",
+    "description": "The label for category Behavior Insights in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.Live Tail": {
+    "message": "Live Tail",
+    "description": "The label for category Live Tail in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.LogReduce": {
+    "message": "LogReduce",
+    "description": "The label for category LogReduce in sidebar searchlogs"
+  },
+  "sidebar.searchlogs.category.Lookup Tables": {
+    "message": "Lookup Tables",
+    "description": "The label for category Lookup Tables in sidebar searchlogs"
+  },
+  "sidebar.metricslogs.category.Metrics": {
+    "message": "Metrics",
+    "description": "The label for category Metrics in sidebar metricslogs"
+  },
+  "sidebar.metricslogs.category.Introduction to Metrics": {
+    "message": "Introduction to Metrics",
+    "description": "The label for category Introduction to Metrics in sidebar metricslogs"
+  },
+  "sidebar.metricslogs.category.Metrics Queries": {
+    "message": "Metrics Queries",
+    "description": "The label for category Metrics Queries in sidebar metricslogs"
+  },
+  "sidebar.metricslogs.category.Metrics Operators": {
+    "message": "Metrics Operators",
+    "description": "The label for category Metrics Operators in sidebar metricslogs"
+  },
+  "sidebar.metricslogs.category.Managing Metrics Volume": {
+    "message": "Managing Metrics Volume",
+    "description": "The label for category Managing Metrics Volume in sidebar metricslogs"
+  },
+  "sidebar.metricslogs.category.Metrics Charts (Classic)": {
+    "message": "Metrics Charts (Classic)",
+    "description": "The label for category Metrics Charts (Classic) in sidebar metricslogs"
+  },
+  "sidebar.apm.category.APM, Traces, RUM": {
+    "message": "APM, Traces, RUM",
+    "description": "The label for category APM, Traces, RUM in sidebar apm"
+  },
+  "sidebar.apm.category.Traces": {
+    "message": "Traces",
+    "description": "The label for category Traces in sidebar apm"
+  },
+  "sidebar.apm.category.Setup and Configuration": {
+    "message": "Setup and Configuration",
+    "description": "The label for category Setup and Configuration in sidebar apm"
+  },
+  "sidebar.apm.category.OpenTelemetry App Instrumentation": {
+    "message": "OpenTelemetry App Instrumentation",
+    "description": "The label for category OpenTelemetry App Instrumentation in sidebar apm"
+  },
+  "sidebar.apm.category.AWS Lambda": {
+    "message": "AWS Lambda",
+    "description": "The label for category AWS Lambda in sidebar apm"
+  },
+  "sidebar.apm.category.Go": {
+    "message": "Go",
+    "description": "The label for category Go in sidebar apm"
+  },
+  "sidebar.apm.category.JavaScript": {
+    "message": "JavaScript",
+    "description": "The label for category JavaScript in sidebar apm"
+  },
+  "sidebar.apm.category.Java": {
+    "message": "Java",
+    "description": "The label for category Java in sidebar apm"
+  },
+  "sidebar.apm.category..NET": {
+    "message": ".NET",
+    "description": "The label for category .NET in sidebar apm"
+  },
+  "sidebar.apm.category.Python": {
+    "message": "Python",
+    "description": "The label for category Python in sidebar apm"
+  },
+  "sidebar.apm.category.Advanced Configuration": {
+    "message": "Advanced Configuration",
+    "description": "The label for category Advanced Configuration in sidebar apm"
+  },
+  "sidebar.apm.category.Real User Monitoring (RUM)": {
+    "message": "Real User Monitoring (RUM)",
+    "description": "The label for category Real User Monitoring (RUM) in sidebar apm"
+  },
+  "sidebar.observability.category.Observability": {
+    "message": "Observability",
+    "description": "The label for category Observability in sidebar observability"
+  },
+  "sidebar.observability.category.AWS Observability": {
+    "message": "AWS Observability",
+    "description": "The label for category AWS Observability in sidebar observability"
+  },
+  "sidebar.observability.category.Deploy and Use AWS Observability": {
+    "message": "Deploy and Use AWS Observability",
+    "description": "The label for category Deploy and Use AWS Observability in sidebar observability"
+  },
+  "sidebar.observability.category.Deploy with AWS CloudFormation": {
+    "message": "Deploy with AWS CloudFormation",
+    "description": "The label for category Deploy with AWS CloudFormation in sidebar observability"
+  },
+  "sidebar.observability.category.Other Configuration and Tools": {
+    "message": "Other Configuration and Tools",
+    "description": "The label for category Other Configuration and Tools in sidebar observability"
+  },
+  "sidebar.observability.category.AWS Observability Apps": {
+    "message": "AWS Observability Apps",
+    "description": "The label for category AWS Observability Apps in sidebar observability"
+  },
+  "sidebar.observability.category.Kubernetes Observability": {
+    "message": "Kubernetes Observability",
+    "description": "The label for category Kubernetes Observability in sidebar observability"
+  },
+  "sidebar.observability.category.Reliability Management (SLO)": {
+    "message": "Reliability Management (SLO)",
+    "description": "The label for category Reliability Management (SLO) in sidebar observability"
+  },
+  "sidebar.observability.category.Software Dev Optimization (SDO)": {
+    "message": "Software Dev Optimization (SDO)",
+    "description": "The label for category Software Dev Optimization (SDO) in sidebar observability"
+  },
+  "sidebar.observability.category.Setting Up SDO": {
+    "message": "Setting Up SDO",
+    "description": "The label for category Setting Up SDO in sidebar observability"
+  },
+  "sidebar.integrations.category.App Catalog": {
+    "message": "App Catalog",
+    "description": "The label for category App Catalog in sidebar integrations"
+  },
+  "sidebar.integrations.category.Amazon and AWS": {
+    "message": "Amazon and AWS",
+    "description": "The label for category Amazon and AWS in sidebar integrations"
+  },
+  "sidebar.integrations.category.Microsoft and Azure": {
+    "message": "Microsoft and Azure",
+    "description": "The label for category Microsoft and Azure in sidebar integrations"
+  },
+  "sidebar.integrations.category.Google": {
+    "message": "Google",
+    "description": "The label for category Google in sidebar integrations"
+  },
+  "sidebar.integrations.category.Google Workspace": {
+    "message": "Google Workspace",
+    "description": "The label for category Google Workspace in sidebar integrations"
+  },
+  "sidebar.integrations.category.App Development": {
+    "message": "App Development",
+    "description": "The label for category App Development in sidebar integrations"
+  },
+  "sidebar.integrations.category.Containers and Orchestration": {
+    "message": "Containers and Orchestration",
+    "description": "The label for category Containers and Orchestration in sidebar integrations"
+  },
+  "sidebar.integrations.category.Cloud Security Monitoring and Analytics": {
+    "message": "Cloud Security Monitoring and Analytics",
+    "description": "The label for category Cloud Security Monitoring and Analytics in sidebar integrations"
+  },
+  "sidebar.integrations.category.Databases": {
+    "message": "Databases",
+    "description": "The label for category Databases in sidebar integrations"
+  },
+  "sidebar.integrations.category.Oracle": {
+    "message": "Oracle",
+    "description": "The label for category Oracle in sidebar integrations"
+  },
+  "sidebar.integrations.category.Global Intelligence": {
+    "message": "Global Intelligence",
+    "description": "The label for category Global Intelligence in sidebar integrations"
+  },
+  "sidebar.integrations.category.Hosts and Operating Systems": {
+    "message": "Hosts and Operating Systems",
+    "description": "The label for category Hosts and Operating Systems in sidebar integrations"
+  },
+  "sidebar.integrations.category.PCI Compliance": {
+    "message": "PCI Compliance",
+    "description": "The label for category PCI Compliance in sidebar integrations"
+  },
+  "sidebar.integrations.category.SaaS and Cloud Apps": {
+    "message": "SaaS and Cloud Apps",
+    "description": "The label for category SaaS and Cloud Apps in sidebar integrations"
+  },
+  "sidebar.integrations.category.SAML": {
+    "message": "SAML",
+    "description": "The label for category SAML in sidebar integrations"
+  },
+  "sidebar.integrations.category.Security and Threat Detection": {
+    "message": "Security and Threat Detection",
+    "description": "The label for category Security and Threat Detection in sidebar integrations"
+  },
+  "sidebar.integrations.category.Sumo Logic Apps": {
+    "message": "Sumo Logic Apps",
+    "description": "The label for category Sumo Logic Apps in sidebar integrations"
+  },
+  "sidebar.integrations.category.Web Servers": {
+    "message": "Web Servers",
+    "description": "The label for category Web Servers in sidebar integrations"
+  },
+  "sidebar.security.category.Cloud SIEM Enterprise (CSE)": {
+    "message": "Cloud SIEM Enterprise (CSE)",
+    "description": "The label for category Cloud SIEM Enterprise (CSE) in sidebar security"
+  },
+  "sidebar.security.category.Administration": {
+    "message": "Administration",
+    "description": "The label for category Administration in sidebar security"
+  },
+  "sidebar.security.category.Ingestion": {
+    "message": "Ingestion",
+    "description": "The label for category Ingestion in sidebar security"
+  },
+  "sidebar.security.category.Rules": {
+    "message": "Rules",
+    "description": "The label for category Rules in sidebar security"
+  },
+  "sidebar.security.category.Schema": {
+    "message": "Schema",
+    "description": "The label for category Schema in sidebar security"
+  },
+  "sidebar.security.category.Sensors": {
+    "message": "Sensors",
+    "description": "The label for category Sensors in sidebar security"
+  },
+  "sidebar.security.category.Integrations": {
+    "message": "Integrations",
+    "description": "The label for category Integrations in sidebar security"
+  },
+  "sidebar.security.category.Match Lists and Suppressed Lists": {
+    "message": "Match Lists and Suppressed Lists",
+    "description": "The label for category Match Lists and Suppressed Lists in sidebar security"
+  },
+  "sidebar.security.category.Records, Signals, Entities, and Insights": {
+    "message": "Records, Signals, Entities, and Insights",
+    "description": "The label for category Records, Signals, Entities, and Insights in sidebar security"
+  },
+  "sidebar.security.category.Cloud SOAR": {
+    "message": "Cloud SOAR",
+    "description": "The label for category Cloud SOAR in sidebar security"
+  },
+  "sidebar.contributing.category.Contribution Guide": {
+    "message": "Contribution Guide",
+    "description": "The label for category Contribution Guide in sidebar contributing"
+  },
+  "sidebar.contributing.category.Templates": {
+    "message": "Templates",
+    "description": "The label for category Templates in sidebar contributing"
+  },
+  "sidebar.api.category.API": {
+    "message": "API",
+    "description": "The label for category API in sidebar api"
+  },
+  "sidebar.api.category.Collector Management": {
+    "message": "Collector Management",
+    "description": "The label for category Collector Management in sidebar api"
+  },
+  "sidebar.beta.category.Beta": {
+    "message": "Beta",
+    "description": "The label for category Beta in sidebar beta"
+  }
+}
