@@ -1,6 +1,6 @@
 ---
 id: elasticsearch
-title: Sumo Logic App for Elasticsearch
+title: Elasticsearch
 sidebar_label: Elasticsearch
 description: The Elasticsearch app helps you monitor the availability, performance, health, and resource utilization of your Elasticsearch clusters.
 ---
@@ -110,9 +110,14 @@ If you're using Elasticsearch in a non-Kubernetes environment, create the fields
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Elasticsearch in a Kubernetes environment. Four services in the architecture shown below make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.<br/><img src={useBaseUrl('img/integrations/databases/elasticsearchk8s.png')} alt="elasticsearch" />
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Elasticsearch in a Kubernetes environment. Four services in the architecture shown below make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
-The first service in the pipeline is Telegraf. Telegraf collects metrics from Elasticsearch. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Elasticsearch input plugin to obtain metrics. For simplicity, the diagram doesn’t show the input plugins. The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
+<br/><img src={useBaseUrl('img/integrations/databases/elasticsearchk8s.png')} alt="elasticsearch" />
+
+The first service in the metrics pipeline is Telegraf. Telegraf collects metrics from Elasticsearch. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Elasticsearch input plugin to obtain metrics. For simplicity, the diagram doesn’t show the input plugins. The injection of the Telegraf sidecar container is done by the Telegraf Operator.
+Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) which enriches metadata and sends metrics to Sumo Logic.
+
+In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 Follow the below instructions to set up the logs and metric collection:
 
@@ -148,7 +153,7 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
       * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
       * `db_system: “elasticsearch”`- This value identifies the database system.
     * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
-   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit here](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit here](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
    4. Verify logs in Sumo Logic.
 2. **(Optional) Collecting Elasticsearch Logs from a Log File**. Follow the steps below to capture Elasticsearch logs from a log file on Kubernetes.
    1. Determine the location of the Elasticsearch log file on Kubernetes. This can be determined from the log4j.properties for your Elasticsearch cluster along with the mounts on the Elasticsearch pods.

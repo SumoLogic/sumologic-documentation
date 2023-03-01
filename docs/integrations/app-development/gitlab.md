@@ -1,6 +1,6 @@
 ---
 id: gitlab
-title: Sumo Logic App for GitLab
+title: GitLab
 sidebar_label: GitLab
 description: Provides you a complete overview of your GitLab’s builds, deployments, pipelines, issues, merge requests, and commits.
 ---

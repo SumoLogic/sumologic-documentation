@@ -1,6 +1,6 @@
 ---
 id: box
-title: Sumo Logic App for Box
+title: Box
 sidebar_label: Box
 description: Provides insight into user behavior patterns, monitors resources, and even tracks administrative activities.
 ---

@@ -1,6 +1,6 @@
 ---
 id: ueba
-title: Sumo Logic App for UEBA Cloud Security Monitoring and Analytics
+title: UEBA Cloud Security Monitoring and Analytics
 sidebar_label: UEBA
 description: Install the Sumo Logic UEBA  app to monitor baseline user and entity and report on detected patterns.
 ---

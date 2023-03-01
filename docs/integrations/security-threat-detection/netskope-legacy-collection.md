@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/>
 
 :::note
-This document contains our legacy collection method for non-Fedramp Sumo logic deployments. If you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Netskope-Source) to create the source and use the same source category while installing the app.
+This document contains our legacy collection method for non-Fedramp Sumo logic deployments. If you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) to create the source and use the same source category while installing the app.
 :::
 
 The Netskope App provides visibility into the security posture of your applications and helps you determine the overall usage of software and SaaS applications.
