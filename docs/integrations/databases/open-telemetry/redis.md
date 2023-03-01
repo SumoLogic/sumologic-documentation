@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 [Redis](https://redis.io/docs/about/) is an in-memory data structure implementing a distributed, in-memory key-value database with optional durability.
 
-The Sumo Logic App for Redis helps you monitor the Redis database cluster. The preconfigured dashboards provide detailed analysis based on logs. The panels provide details such as RDBMemory Usage, events, RDB and AOF events.
+The Sumo Logic App for Redis helps you monitor the Redis database cluster. The preconfigured dashboards provide detailed analysis based on logs. The panels provide details such as RDBMemory Usage, events, RDB, and AOF events.
 
 Redis logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
