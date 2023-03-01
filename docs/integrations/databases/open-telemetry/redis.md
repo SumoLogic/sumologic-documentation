@@ -93,7 +93,7 @@ Once you have the yaml file downloaded in step 2, please follow the below steps 
 1.  Copy the yaml at `/etc/otelcol-sumo/conf.d/` folder in the Redis instance which needs to be monitored.
 2.  Restart the otelcol-sumo process using the below command `sudo systemctl restart otelcol-sumo`
 
-####Mac
+#### Mac
 
 1.  Copy the yaml at `/etc/otelcol-sumo/conf.d/` folder in the Redis instance which needs to be monitored.
 2.  Restart the otelcol-sumo process using the command `otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --conf "glob:/etc/otelcol-sumo/conf.d/*.yaml"`
