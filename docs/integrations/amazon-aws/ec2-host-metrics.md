@@ -1,8 +1,8 @@
 ---
 id: ec2-host-metrics
 title: AWS EC2 Host Metrics
-sidebar_label: AWS EC2 Host Metrics
-description: You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage.
+sidebar_label: Host Metrics (EC2)
+description: The Sumo Logic App for Host Metrics (EC2) allows you to collect your EC2 instance metrics and display them using predefined dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

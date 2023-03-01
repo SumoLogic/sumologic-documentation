@@ -137,7 +137,7 @@ The **Amazon ElastiCache - Audit Event Details** dashboard provides detailed ins
 Use this dashboard to:
 
 * Quickly determine changes made to your ElastiCache clusters while troubleshooting production outages
-* Determine if any nodes hosting your Elasticache clusters were rebooted
+* Determine if any nodes hosting your ElastiCache clusters were rebooted
 
 ![img](/img/observability/audit-event-details.png)
 

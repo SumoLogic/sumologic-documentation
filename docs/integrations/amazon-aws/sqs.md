@@ -1,8 +1,7 @@
 ---
 id: sqs
 title: Amazon SQS
-sidebar_label: Amazon SQS
-description: The Sumo Logic App for Amazon SQS is a unified logs and metrics (ULM) App that provides operational insights into your Amazon SQS utilization. The preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
+description: The Sumo Logic App for Amazon SQS is a unified logs and metrics (ULM) App that provides operational insights into your Amazon SQS utilization.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -4,7 +4,7 @@ title: SDO App and Dashboards
 description: Learn how to install the Sumo Logic SDO app and use pre-configured searches and dashboards that provide insights into your DevOps pipeline.
 ---
 
-If you've set up the Software Development Optimization (SDO) solution [using Terraform](/docs/sdo/set-up-sdo/sdo-setup-with-terraform-script), you can skip the manual installation of SDO app.
+If you've set up the Software Development Optimization (SDO) solution [using Terraform](/docs/observability/sdo/set-up-sdo/sdo-setup-with-terraform-script), you can skip the manual installation of SDO app.
 
 ## Installing the SDO app
 
@@ -49,7 +49,7 @@ The SDO solution comprises multiple apps listed below.
 
 ## Dashboard Filter with Template Variables
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](../dashboards-new/filter-template-variables.md) help page.
+Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](../../dashboards-new/filter-template-variables.md) help page.
 
 :::tip
 You can use template variables to drill down and examine the data on a granular level.

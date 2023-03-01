@@ -1,8 +1,7 @@
 ---
 id: dynamodb
 title: Amazon DynamoDB
-sidebar_label: Amazon DynamoDB
-description: The Sumo App for DynamoDB provides operational insight into your database environment. The app includes Dashboards that allow you to view the events, errors, latency, and capacity of your DynamoDB environment.
+description: The Sumo Logic app for DynamoDB provides operational insight into your database environment and Dashboards displaying the events, errors, latency, and capacity of your DynamoDB environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

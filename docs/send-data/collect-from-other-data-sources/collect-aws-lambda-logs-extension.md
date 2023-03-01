@@ -16,7 +16,7 @@ To learn more please see the following links:
 * [How to build AWS Lambda Extensions](https://aws.amazon.com/blogs/compute/building-extensions-for-aws-lambda-in-preview/)
 * [Sending logs to custom destinations](https://aws.amazon.com/blogs/compute/using-aws-lambda-extensions-to-send-logs-to-custom-destinations/)
 
-To review and submit enhancements for this extension, please visit the [Sumo Logic Github repository.](https://github.com/SumoLogic/sumologic-lambda-extensions)
+To review and submit enhancements for this extension, please visit the [Sumo Logic GitHub repository](https://github.com/SumoLogic/sumologic-lambda-extensions).
 
 ## AWS Lambda Supported Runtimes
 
@@ -82,7 +82,7 @@ To add the Sumo Logic Lambda Extension to your AWS Lambda function, please follo
 
 To package the Sumo Logic Lambda Extension with the AWS Lambda function created using [container images](https://aws.amazon.com/blogs/aws/new-for-aws-lambda-container-image-support/), please follow the steps below:
 
-1. Download the latest binary tar file from the [Github Release page](https://github.com/SumoLogic/sumologic-lambda-extensions).
+1. Download the latest binary tar file from the [GitHub Release page](https://github.com/SumoLogic/sumologic-lambda-extensions).
 
    * For functions based on the x86_64 architecture:
 
