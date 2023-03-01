@@ -19,7 +19,7 @@ Redis logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/schematics-redis.png')} alt="Redis Schematics" />
 
-##Redis Log Types
+## Redis Log Types
 
 This Sumo Logic App for Redis supports logs for Redis in Cluster or Standalone mode. The Redis logs are generated in files as configured in the cluster node configuration files in `/etc/redis/redis.conf`. For more details on Redis logs, [click here](https://redislabs.com/ebook/part-2-core-concepts/chapter-5-using-redis-for-application-support/5-1-logging-to-redis/).
 
