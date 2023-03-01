@@ -122,7 +122,7 @@ db.cluster.name=* sumo.datasource="redis"
 | fields message
 ```
 
-##Viewing Redis Dashboards
+## Viewing Redis Dashboards
 
 ### Logs
 
