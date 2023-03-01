@@ -27,7 +27,7 @@ This screenshot shows the **Entity Details** page; inventory data is displayed f
 
 ## About inventory data sources
 
-Sumo Logic provides a number of [Sources](/docs/send-data/choose-collector-source) you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. Each inventory source is listed in the Inventory Source Mapping section below. The mapping table for each source shows the inventory attributes that are populated and the associated data source field or fields for each.
+Sumo Logic provides a number of [Sources](/docs/send-data/choose-collector-source) you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. Each inventory source is listed in the [Inventory Source Mappings](#inventory-source-mappings) section below. The mapping table for each source shows the inventory attributes that are populated and the associated data source field or fields for each.
 
 Some of the inventory sources are strictly for collecting inventory data—such sources usually include “Inventory” in the source name, for example the **Microsoft Azure AD Inventory Source**. A few of the sources that collect inventory data also collect event data. For example, the **Sailpoint Source** collects inventory data about users and also collects events from the SalePoint Search API.
 
