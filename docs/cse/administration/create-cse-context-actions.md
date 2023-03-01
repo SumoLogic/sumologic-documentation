@@ -13,14 +13,13 @@ A Context Action is an option that a CSE analyst can use to query an external sy
 
 An authorized user can configure Context Actions and assign them to particular Entity types, Record fields, or common IOC types.
 
-* **Context Actions on Entity types**. You can assign a Context Action to one or more Entity types, including custom Entity types. An action assigned to an Entity type will be available on any instance of that type in the **Entities** page, or in Insights or Signals that contain Entities of the selected type. For an example, see the screenshot in [How a user accesses Context Actions](create-cse-context-actions.md).  
+* **Context Actions on Entity types**. You can assign a Context Action to one or more Entity types, including custom Entity types. An action assigned to an Entity type will be available on any instance of that type in the **Entities** page, or in Insights or Signals that contain Entities of the selected type. For an example, see the screenshot in [How a user accesses Context Actions](#how-a-user-accesses-contextactions).  
 
     An action you assign to an Entity type will also be available for Record fields that contain the Entity type. For example, an action assigned to the Hostname Entity type will be available for the `srcDevice_hostname`, `dstDevice_hostname`, and `device_hostname` Record fields.  
      
 * **Context Actions on Record fields**. You can assign a Context Action to selected Record fields, or all Record fields. In the CSE UI, the action will be available on the Context Action menu for selected fields.  
      
-* **Context Actions on IOC Types**. You can assign a Context Action
-    can be assigned to one or more of the following IOC data types:
+* **Context Actions on IOC Types**. You can assign a Context Action to one or more of the following IOC data types:
     * Domain
     * IP Address
     * URL
@@ -41,7 +40,7 @@ If an action name is shown in red font, that indicates that the action depends 
 
 ## Configure a Context Action
 
-1. Click the gear icon and the top of the CSE UI and choose **Context Actions** under **Integrations**.
+1. Click the gear icon at the top of the CSE UI and choose **Context Actions** under **Integrations**.
 1. On the **Context Actions** page click **Create**.
 1. This annotated screenshot shows a previously configured Context Action in edit mode.  
 
