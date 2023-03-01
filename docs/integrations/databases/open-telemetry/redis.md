@@ -58,7 +58,7 @@ Once the logs are configured to be written to a local file, follow the steps bel
 
 As part of setting up the collection process and app installation, you can select the App from **App Catalog** and click **Install App**.  Follow the steps below:
 
-### Step1: Set up Collector
+### Step 1: Set up Collector
 
 If you want to use an existing OpenTelemetry Collector, then this step can be skipped by selecting the option of using an existing Collector.
 
