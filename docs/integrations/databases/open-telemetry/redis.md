@@ -1,3 +1,4 @@
+---
 id: redis
 title: Sumo Logic Open Telemetry App for Redis
 sidebar_label: Redis
