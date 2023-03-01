@@ -33,7 +33,7 @@ Following are the [Fields](https://help.sumologic.com/docs/manage/fields/), whic
 
 ##Prerequisite
 
-This section provides instructions for configuring log collection for Redis running on a non-Kubernetes environment for the Sumo Logic App for Redis. By default, Redis logs are stored in a log file.
+This section provides instructions for configuring log collection for Redis running on a non-Kubernetes environment. By default, Redis logs are stored in a log file.
 
 Follow the instructions to set up log collection:
 
