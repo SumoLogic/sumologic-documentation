@@ -1,7 +1,6 @@
 ---
 id: aurora-postgresql-ulm
 title: Aurora PostgreSQL ULM
-sidebar_label: Aurora PostgreSQL ULM
 description: The Sumo Logic App for Aurora PostgreSQL uses unified logs and metrics (ULM) to monitor your Aurora PostgreSQL database.
 ---
 

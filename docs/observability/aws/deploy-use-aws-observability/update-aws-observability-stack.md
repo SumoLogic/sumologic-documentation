@@ -9,7 +9,7 @@ You can update an existing observability stack using Terraform or an AWS CloudFo
 
 ## Update with Terraform
 
-The AWS Observability Terraform scripts reside in Github and updates will be posted on the [Change Log](changelog.md).
+The AWS Observability Terraform scripts reside in GitHub and updates will be posted on the [Change Log](changelog.md).
 
 To update the deployed solution:
 

@@ -27,7 +27,7 @@ Root Cause Explorer supports the following AWS namespaces by processing CloudWa
 * AWS/Dynamodb
 * AWS/API Gateway
 * AWS/ECS 
-* AWS/Elasticache 
+* AWS/ElastiCache 
 * AWS/SQS
 * AWS/SNS 
 * AWS X-ray (for service metrics and service topology)
@@ -158,7 +158,7 @@ You set up Root Cause Explorer using an [AWS CloudFormation template](https://su
 * AWS/Dynamodb
 * AWS/API Gateway
 * AWS/ECS 
-* AWS/Elasticache
+* AWS/ElastiCache
 * AWS/Autoscaling. Auto Scaling data is used only for topology inference. CloudWatch metrics related to Auto Scaling groups are not supported at this time.
 
 If you don’t already have the Sumo Logic CloudWatch Source for Metrics configured, the template will install the source to collect AWS CloudWatch metrics from the account permissioned by the credential provided in the template. The CloudFormation template gives you the option to configure an AWS X-Ray source, if required. 
