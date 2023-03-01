@@ -66,7 +66,7 @@ If you want to create a new Collector, please select the "Add a new Collector" o
 
 Select the platform for which you want to install the Sumo OpenTelemetry Collector.
 
-This will generate a command that can be executed in the machine that needs monitoring. Once executed, it will install the Sumo Logic OpenTelemetry Collector agent.
+This will generate a command that can be executed in the machine that needs monitoring. Once executed, it will install the Sumo Logic OpenTelemetry Collector agent. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/collector-screenshot.png')} alt="Collector" />
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/collector-screenshot.png')} alt="Collector" />
 
