@@ -22,7 +22,7 @@ Rule authors can also write rules that look for threat intel information
 in Records. To leverage the information in a rule, you can extend your
 custom rule expression, or add a Rule Turning Expression to a built-in
 rule. For a more detailed explanation of how to use threat intel
-information in rules, see [Threat Intel](../rules/about-cse-rules/#threat-intel) in the
+information in rules, see [Threat Intel](/docs/cse/rules/about-cse-rules/#threat-intel) in the
 *About CSE Rules* topic.
 
 ### Create a threat intel source from CSE UI
