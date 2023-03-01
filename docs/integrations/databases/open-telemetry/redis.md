@@ -50,7 +50,7 @@ After determining the location of conf file modify the `redis.conf` configuratio
       *   notice (moderately verbose, what you want in production probably)
       *   warning (only very important/critical messages are logged) loglevel notice
     *   Specify the log file name. Also the empty string can be used to force Redis to log on the standard output. Note that if you use the standard output for logging but daemonize, logs will be sent to `/dev/null` logfile
-  *   Save the `redis.conf` file and restart the redis server using command : `sudo  service redis-server restart`
+  *   Save the `redis.conf` file and restart the Redis server using the command: `sudo  service redis-server restart`
 
 Once the logs are configured to be written to a local file, follow the below step to configure collection in Sumo.
 
