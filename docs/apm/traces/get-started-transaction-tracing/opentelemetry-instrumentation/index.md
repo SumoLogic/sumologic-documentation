@@ -5,7 +5,7 @@ description: OpenTelemetry provides a wide range of ready to use componentry to 
 ---
 
 :::tip
-Looking for our OTEL collector? The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector) provides a single unified agent to send Logs, Metrics, Traces, and metadata to Sumo Logic for observability.
+Looking for our OTEL collector? The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) provides a single unified agent to send Logs, Metrics, Traces, and metadata to Sumo Logic for observability.
 :::
 
 OpenTelemetry provides a wide range of ready to use componentry to get you started with distributed tracing. We recommend auto-instrumentation if you prefer not to change application code and are using the following language frameworks:

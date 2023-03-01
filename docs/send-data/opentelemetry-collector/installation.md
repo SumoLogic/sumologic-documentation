@@ -101,7 +101,7 @@ Follow the steps for your platform below.
     sudo mv otelcol-sumo /usr/local/bin/otelcol-sumo
     ```
 1. [Verify the installation](#verify-the-installation)
-1. Prepare the configuration according to [this document](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/configuration-sources) and save it in `config.yaml`.
+1. Prepare the configuration according to [this document](/docs/send-data/opentelemetry-collector/configuration-sources) and save it in `config.yaml`.
    :::note
    It is recommended to limit access to the configuration file as it contains sensitive information. You can change access permissions to the configuration file using:
    ```bash
@@ -125,7 +125,7 @@ Follow the steps for your platform below.
     sudo mv otelcol-sumo /usr/local/bin/otelcol-sumo
     ```
 1. [Verify the installation](#verify-the-installation)
-1. Prepare the configuration according to [this document](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/configuration-sources) and save it in `config.yaml`.
+1. Prepare the configuration according to [this document](/docs/send-data/opentelemetry-collector/configuration-sources) and save it in `config.yaml`.
    :::note
    It is recommended to limit access to the configuration file as it contains sensitive information. You can change access permissions to the configuration file using:
    ```bash
@@ -149,7 +149,7 @@ Follow the steps for your platform below.
     sudo mv otelcol-sumo /usr/local/bin/otelcol-sumo
     ```
 1. [Verify the installation](#verify-the-installation)
-1. Prepare the configuration according to [this](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/configuration-sources) document and save it in `config.yaml`.
+1. Prepare the configuration according to [this](/docs/send-data/opentelemetry-collector/configuration-sources) document and save it in `config.yaml`.
    :::note
    It is recommended to limit access to the configuration file as it contains sensitive information. You can change access permissions to the configuration file using:
    ```bash
@@ -173,7 +173,7 @@ Follow the steps for your platform below.
     sudo mv otelcol-sumo /usr/local/bin/otelcol-sumo    
     ```
 1. [Verify the installation](#verify-the-installation)
-1. Prepare the configuration according to [this](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/configuration-sources) document and save it in `config.yaml`.
+1. Prepare the configuration according to [this](/docs/send-data/opentelemetry-collector/configuration-sources) document and save it in `config.yaml`.
    :::note
    It is recommended to limit access to the configuration file as it contains sensitive information. You can change access permissions to the configuration file using:
    ```bash
@@ -202,7 +202,7 @@ Before running the newer version, make sure to check the [release notes][github_
    ```
 1. In order to validate the installation, [the example configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/verify_installation.yaml) can be used. It instructs the Sumo Logic Distribution to read logs from `/tmp/sumologic-demo.log` and send them to Sumo Logic.
    :::tip
-   For more details on configuring OT, check out the [following document](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/configuration-sources).
+   For more details on configuring OT, check out the [following document](/docs/send-data/opentelemetry-collector/configuration-sources).
    :::
    The example configuration:
    ```yaml
@@ -262,7 +262,7 @@ repository.
    ```bash
    export RELEASE_VERSION=0.57.2-sumo-1
    ```
-1. Prepare your configuration according to [this document](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/configuration-sources) and save it in `config.yaml`.
+1. Prepare your configuration according to [this document](/docs/send-data/opentelemetry-collector/configuration-sources) and save it in `config.yaml`.
    :::note
    It is recommended to limit access to the configuration file as it contains sensitive information. You can change access permissions to the configuration file using:
    ```bash
