@@ -3,7 +3,6 @@ id: troubleshooting
 title: Troubleshooting
 ---
 
-
 Make sure to read the [OpenTelemetry Collector Troubleshooting](https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/troubleshooting.md) documentation for generic troubleshooting instructions.
 
 ## Accessing the collector's logs

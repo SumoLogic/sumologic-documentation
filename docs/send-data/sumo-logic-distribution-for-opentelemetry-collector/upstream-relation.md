@@ -3,7 +3,8 @@ id: upstream-relation
 title: Upstream Relation
 ---
 
-This document describes what is purpose of this repository, why do we provide another OpenTelemetry Collector distribution, and how look like our versioning and breaking changes policies.
+This document describes the purpose of this repository, why we provide our own OpenTelemetry Collector distribution, and how to navigate our versioning and breaking changes policies.
+
 
 ## Purpose of Sumo Logic Distribution for OpenTelemetry Collector
 
