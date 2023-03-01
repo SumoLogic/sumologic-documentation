@@ -56,7 +56,7 @@ Once the logs are configured to be written to a local file, follow the steps bel
 
 ##Collection Configuration & App installation
 
-As part of setting up the collection process and app installation user can select the App from App Catalog and click Install App. Please follow the steps below:
+As part of setting up the collection process and app installation, you can select the App from **App Catalog** and click **Install App**.  Follow the steps below:
 
 ### Step1: Set up Collector
 
