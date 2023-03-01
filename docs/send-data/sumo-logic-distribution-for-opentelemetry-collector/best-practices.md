@@ -1,6 +1,7 @@
 ---
 id: best-practices
-title: Best Practices
+title: Best Practices for Sumo Logic OpenTelemetry
+sidebar_label: Best Practices
 ---
 
 ## Using batch processor to batch data

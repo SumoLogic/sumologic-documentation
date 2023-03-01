@@ -20,9 +20,9 @@ sidebar_label: OTEL Collector vs. Installed Collector
 - use CSE due to lack of Windows support
 - require remote management and remote configuration
 - require FIPS support
-- require Ingest Budgets
-- use the Collector Management API (e.g. for Health Events or CRUD operations)
-- require CPU target
+- require [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets)
+- use the [Collector Management API](/docs/api/collector-management) (e.g., for Health Events or CRUD operations)
+- require [CPU target](/docs/send-data/collection/set-collector-cpu-usage-target)
 
 ## Support Matrix
 
@@ -37,15 +37,12 @@ sidebar_label: OTEL Collector vs. Installed Collector
    <td>
 <ul>
   <li>Linux</li>
-  <li>MacOS</li>
+  <li>macOS</li>
+  <li>Windows OS</li>
   <li>Kubernetes</li>
 </ul>
    </td>
-   <td>
-<ul>
-  <li>Windows OS</li>
-</ul>
-  </td>
+   <td>-</td>
   </tr>
   <tr>
    <td><strong>Supported Sources</strong>

@@ -1,15 +1,28 @@
 ---
 id: installation
 title: Installation
+description: Learn how to install the Sumo Logic Distribution for OpenTelemetry Collector.
 ---
 
 You can run the Sumo Logic Distribution for OpenTelemetry Collector using either the binary file (available in our [GitHub releases][github_releases]) or
 the container images (stored in the [AWS Public ECR](https://gallery.ecr.aws/sumologic/sumologic-otel-collector)).
 
+To begin your Sumo Logic OpenTelemetry journey:
+
+1. In the Sumo Logic UI, to **Manage Data** > **Collection**, then select the **Collection** tab.
+1. Click **Add Collector**.<br/>![add-collector-link.png](/img/send-data/add-collector-link.png)
+1. Select **Sumo Logic Distribution for OpenTelemetry Collector**.
+1. Select the download link for the operating system where you're going to install it.<br/> ![otdistro-osversion.png](/img/send-data/otdistro-osversion.png)
+
+## Additional Resources
+
+* [Sumo Logic Collection page](/docs/send-data/collection)
+* [Sumo Logic Distribution for OpenTelemetry](https://github.com/SumoLogic/sumologic-otel-collector/releases): contains all releases available to download
+
+
 ## Standalone
 
-Sumo Logic Distribution for OpenTelemetry Collector is a static Go binary. To run it as a standalone process, you only need to run the binary file downloaded from
-[GitHub releases][github_releases] with an appropriate configuration.
+Sumo Logic Distribution for OpenTelemetry Collector is a static Go binary. To run it as a standalone process, you only need to run the binary file downloaded from [GitHub releases][github_releases] with an appropriate configuration.
 
 ### Installation using script
 

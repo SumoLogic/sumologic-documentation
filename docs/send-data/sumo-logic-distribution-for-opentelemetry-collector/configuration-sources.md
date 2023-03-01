@@ -1,29 +1,10 @@
 ---
-id: configuration
-title: OpenTelemetry Configuration
+id: configuration-sources
+title: OpenTelemetry Configuration and Sources
+sidebar_label: Configuration and Sources
 ---
 
-- [Basic configuration](#basic-configuration)
-  - [Basic configuration for logs](#basic-configuration-for-logs)
-  - [Basic configuration for metrics](#basic-configuration-for-metrics)
-  - [Basic configuration for traces](#basic-configuration-for-traces)
-  - [Putting it all together](#putting-it-all-together)
-- [Authentication](#authentication)
-  - [Running the collector as systemd service](#running-the-collector-as-systemd-service)
-  - [Using multiple Sumo Logic extensions](#using-multiple-sumo-logic-extensions)
-- [Persistence](#persistence)
-- [Collecting logs from files](#collecting-logs-from-files)
-  - [Keeping track of position in files](#keeping-track-of-position-in-files)
-  - [Parsing JSON logs](#parsing-json-logs)
-- [Setting source category](#setting-source-category)
-  - [Setting source category on logs from files](#setting-source-category-on-logs-from-files)
-  - [Setting source category on Prometheus metrics](#setting-source-category-on-prometheus-metrics)
-  - [Setting source category with the Resource processor](#setting-source-category-with-the-resource-processor)
-- [Setting source host](#setting-source-host)
-- [Command-line configuration options](#command-line-configuration-options)
-- [Proxy Support](#proxy-support)
-- [Keeping Prometheus format using OTLP exporter](#keeping-prometheus-format-using-otlp-exporter)
-
+Learn how to configure sources for the Sumo Logic Distribution for OpenTelemetry.
 
 ## Basic configuration
 
@@ -439,7 +420,9 @@ Filelog Receiver with [json_parser][json_parser] operator can be used for parsin
 For example when logs has following form in the file:
 
 ```json
-{"message": "{\"key\": \"val\"}"}
+{
+	"message":"{\"key\": \"val\"}"
+}
 ```
 
 then configuration to extract JSON which is represented as string (`{\"key\": \"val\"}`) has following form:
@@ -487,10 +470,9 @@ Example configuration with example log can be found in the [/examples/logs_json]
 
 ## Setting source category
 
-For many Sumo Logic customers the [source category][source_category_docs] is a crucial piece of metadata that allows to differentiate data coming from different sources. This section describes how to configure the Sumo Logic Distribution of OpenTelemetry to decorate data with this attribute.
+For many Sumo Logic customers the [source category][source_category_docs] is a crucial piece of metadata that allows to differentiate data coming from different sources. This section describes how to configure the Sumo Logic Distribution for OpenTelemetry to decorate data with this attribute.
 
-To decorate all the data from the collector with the same source category,
-set the `source_category` property on the [source processor][source_proc] like this:
+To decorate all the data from the collector with the same source category, set the `source_category` property on the [source processor][source_proc] like this:
 
 ```yaml
 processors:
@@ -656,8 +638,7 @@ processors:
 
 But this is most likely not what you want. You'd rather have the collector retrieve the name of the host from the operating system, instead of needing to manually hardcode it in the config.
 
-This is what the [Resource Detection processor][resourcedetectionprocessor_docs] does.
-Use its built-in [`system` detector][resourcedetectionprocessor_system_detector] to set the OpenTelemetry standard `host.name` resource attribute to the name of the host that the collector is running on. After that is set, you need to add the `_sourceHost` attribute with the value from the `host.name` attribute.
+This is what the [Resource Detection processor][resourcedetectionprocessor_docs] does. Use its built-in [`system` detector][resourcedetectionprocessor_system_detector] to set the OpenTelemetry standard `host.name` resource attribute to the name of the host that the collector is running on. After that is set, you need to add the `_sourceHost` attribute with the value from the `host.name` attribute.
 
 ```yaml
 exporters:

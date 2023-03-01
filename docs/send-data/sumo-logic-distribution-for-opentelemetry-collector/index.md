@@ -4,8 +4,7 @@ title: Sumo Logic Distribution for OpenTelemetry Collector
 description: Use our Sumo Logic Distribution for OpenTelemetry to send data to Sumo Logic.
 ---
 
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 OpenTelemetry is the future of agent-based collection for Sumo Logic and the Sumo Logic Distribution for OpenTelemetry Collector is our next generation collector built on OpenTelemetry. It provides a single unified agent to send Logs, Metrics, Traces, and Metadata for Observability to Sumo Logic.
 
@@ -14,7 +13,6 @@ You can also see the [OT Distro GitHub repository](https://github.com/SumoLogic
 :::tip
 Instrument your applications with OpenTelemetry using our [OpenTelemetry Libraries](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation).
 :::
-
 
 import Iframe from 'react-iframe';
 
@@ -35,23 +33,53 @@ Introducing OpenTelemetry.
 
 :::
 
-<!--
-In this section, we'll introduce the following concepts:
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
--->
-
-- [Installation](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/installation)
-- [Configuration](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/configuration)
-- [Migration from Installed Collector](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/migration.md)
-- [Differences between Installed Collector and OpenTelemetry Collector](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/comparison)
-- [Performance](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/performance)
-- [Best Practices](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/best-practices)
-- [Mapping OpenTelemetry concepts to Sumo Logic](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/opentelemetry-concepts)
-- [Contributing](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/CONTRIBUTING.md)
-- [FIPS compliance](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/fips)
-- [Known Issues](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/known-issues)
-- [Troubleshooting](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/troubleshooting)
-- [Purpose of Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/upstream-relation#purpose-of-sumo-logic-distribution-for-opentelemetry-collector)
-- [Versioning policy](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/upstream-relation#versioning-policy)
-- [Breaking changes policy](/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/upstream-relation#breaking-changes-policy)
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <a href="/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/comparison"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>OTEL Use Cases</h4></a>
+  <p>When to use our OTEL Collector over Installed Collector.</p>
+  </div>
+</div>
+  <div className="box smallbox2 card">
+    <div className="container">
+    <a href="/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/installation"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>Installation</h4></a>
+    <p>How to install the Sumo OTel collector on various platforms.</p>
+    </div>
+    </div>
+    <div className="box smallbox3 card">
+      <div className="container">
+      <a href="/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/configuration-sources"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>Sources and Configuration</h4></a>
+      <p>-</p>
+      </div>
+    </div>
+    <div className="box smallbox4 card">
+      <div className="container">
+      <a href="/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/best-practices"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>Best Practices</h4></a>
+      <p>Best practices for using the Otel collector.</p>
+      </div>
+    </div>
+    <div className="box smallbox5 card">
+      <div className="container">
+      <a href="/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/troubleshooting"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>Troubleshooting</h4></a>
+      <p>Common OTel collector troubleshooting questions.</p>
+      </div>
+    </div>
+    <div className="box smallbox6 card">
+      <div className="container">
+      <a href="/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/opentelemetry-concepts"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>OTEL Data for Sumo</h4></a>
+      <p>Mapping OTEL concepts to Sumo Logic.</p>
+      </div>
+    </div>
+    <div className="box smallbox7 card">
+      <div className="container">
+      <a href="/docs/integrations/app-development/jira-cloud"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>Sumo OTEL vs OTEL</h4></a>
+      <p>Learn how Sumo Logic OTEL differs from OTEL.</p>
+      </div>
+    </div>
+    <div className="box smallbox8 card">
+      <div className="container">
+      <a href="/docs/send-data/sumo-logic-distribution-for-opentelemetry-collector/upstream-relation"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>FAQ</h4></a>
+      <p>List of frequently asked questions by users.</p>
+      </div>
+    </div>
+  </div>

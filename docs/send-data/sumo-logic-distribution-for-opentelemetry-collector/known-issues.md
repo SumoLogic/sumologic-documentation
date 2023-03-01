@@ -1,6 +1,7 @@
 ---
 id: known-issues
 title: Known Issues with the OpenTelemetry Collector
+sidebar_label: Known Issues
 ---
 
 ## Changes to collector properties are not applied
@@ -26,8 +27,7 @@ On the other hand, if you only delete the local registration file and do not del
 
 ## Collector fails to start when deleted from UI
 
-After successful registration of collector, if you delete the collector in Sumo Logic UI,
-the collector will fail to start on next run. The error message is similar to the below:
+After successful registration of collector, if you delete the collector in Sumo Logic UI, the collector will fail to start on next run. The error message is similar to the below:
 
 ```console
 2021-08-24T10:52:38.639Z  error  sumologicextension@v0.31.0/extension.go:373  Heartbeat error  {"kind": "extension", "name": "sumologic", "collector_name": "<your-collector-name>", "collector_id": "0000000001A2B3C4", "error": "collector heartbeat request failed, status code: 401, body: {\n\"servlet\":\"rest\",\n\"message\":\"Could not authenticate.\",\n\"url\":\"/api/v1/collector/heartbeat\",\n\"status\":\"401\"\n}"}
@@ -53,9 +53,7 @@ The [Filelog receiver][filelogreceiver_docs] currently supports only two modes o
 - `start_at: end`: Only ingest newly added lines.
 
 The `start_at` property is common to all the files read by the receiver -
-it cannot be set to `end` for some files and to `beginning` for other files.
-Note that this can be worked around by creating two separate Filelog receivers,
-one reading from the beginning and one reading from the end.
+it cannot be set to `end` for some files and to `beginning` for other files. Note that this can be worked around by creating two separate Filelog receivers, one reading from the beginning and one reading from the end.
 
 The other problem is that it is not currently possible for Filelog receiver to start reading files at a specific point, or only read files created or modified after a specific point in time.
 

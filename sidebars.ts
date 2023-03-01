@@ -280,10 +280,9 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'send-data/sumo-logic-distribution-for-opentelemetry-collector/index'},
           items: [
-            'send-data/sumo-logic-distribution-for-opentelemetry-collector/download-collector',
-            'send-data/sumo-logic-distribution-for-opentelemetry-collector/installation',
-            'send-data/sumo-logic-distribution-for-opentelemetry-collector/configuration',
             'send-data/sumo-logic-distribution-for-opentelemetry-collector/comparison',
+            'send-data/sumo-logic-distribution-for-opentelemetry-collector/installation',
+            'send-data/sumo-logic-distribution-for-opentelemetry-collector/configuration-sources',
             'send-data/sumo-logic-distribution-for-opentelemetry-collector/performance',
             'send-data/sumo-logic-distribution-for-opentelemetry-collector/best-practices',
             'send-data/sumo-logic-distribution-for-opentelemetry-collector/opentelemetry-concepts',
