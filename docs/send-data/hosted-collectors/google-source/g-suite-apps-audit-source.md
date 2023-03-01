@@ -5,6 +5,7 @@ sidebar_label: G Suite Apps Audit
 description: Add a Google Apps Audit Source to ingest audit logs from Google apps.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A G Suite Apps Audit Source uses the [Google Apps Reports API](https://developers.google.com/admin-sdk/reports/v1/get-start/getting-started) to ingest all audit logs through watchpoints. [Activity from the following Google apps](https://developers.google.com/admin-sdk/reports/v1/reference/activities/list) can be collected:
 
@@ -17,11 +18,11 @@ A G Suite Apps Audit Source uses the [Google Apps Reports API](https://develop
  * Google+
  * Mobile
  * Rules
- * Keep 
- * Meet 
- * Enterprise Group 
- * Data Studio 
- * SAML 
+ * Keep
+ * Meet
+ * Enterprise Group
+ * Data Studio
+ * SAML
  * Chat
 
 
@@ -34,17 +35,17 @@ This Source uses OAuth to integrate with the Google Apps Reports API. Therefore,
 When creating or modifying a Google Apps Audit Source, you will be required to authenticate with Google using the credentials of a user that has access rights to the account, and to the Reports API. See Google's [Reports API: Prerequisites](https://developers.google.com/admin-sdk/reports/v1/guides/prerequisites) documentation for more details. During Google's OAuth consent flow, you will also be asked to grant the Sumo Logic app permission to use the Reports API.
 
 :::important
-Authentication must be with a new G Suite Apps Audit Source, we do not support re-authenticating existing sources.
+Authentication must be with a new G Suite Apps Audit Source. We do not support re-authenticating existing sources.
 :::
 
 ### Manage Third party app access
-In order to provide Sumo logic access to google services, please follow the manage third-party app access steps as follows. See Google's [Manage Third-party App Access](https://support.google.com/a/answer/7281227#zippy=%2Cstep-manage-third-party-app-access-to-google-services-add-apps) documentation for more details. 
+In order to provide Sumo logic access to google services, please follow the manage third-party app access steps as follows. See Google's [Manage Third-party App Access](https://support.google.com/a/answer/7281227#zippy=%2Cstep-manage-third-party-app-access-to-google-services-add-apps) documentation for more details.
 1. In the Admin console, go to **Menu** > **Security** > **Access and data control** > **API controls**.
 1. In App access control, click **Manage Third-Party App Access**.
-1. Click **Add app** and search for Sumo Logic o-auth client.
-1. Select Sumo Logic o-auth client and click **Change access**. 
-1. Choose the trusted option to allow access to all Google services. 
-1. Click **Change**. 
+1. Click **Add app** and search for Sumo Logic OAuth client.
+1. Select Sumo Logic OAuth client, then click **Change access**.
+1. Choose the **Trusted** option to allow access to all Google services. <img src={useBaseUrl('img/send-data/g-suite-change-access.png')} alt="g-suite-change-access" />
+1. Click **Change**.
 
 ## Configuring a G Suite Apps Audit Source
 
