@@ -1,7 +1,6 @@
 ---
 id: application-load-balancer
 title: AWS Application Load Balancer
-sidebar_label: AWS Application Load Balancer
 description: The Sumo Logic App for AWS Elastic Load Balancing ULM - Application is a unified logs and metrics (ULM) App that gives you visibility into the health of your Application Load Balancer and target groups.
 ---
 
@@ -71,7 +70,7 @@ account={{account}} region={{region}} Namespace={{namespace}} loadbalancer={{loa
 
 Sumo Logic supports collecting metrics using two source types:
 
-* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended) 
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended)
 	Or
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 

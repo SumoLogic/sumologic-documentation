@@ -1,6 +1,6 @@
 ---
 id: pagerduty-v2
-title: Sumo Logic App for PagerDuty V2
+title: PagerDuty V2
 sidebar_label: PagerDuty V2
 description: The Sumo Logic App for PagerDuty V2 collects incident messages from your PagerDuty account via a webhook, and displays that incident data in pre-configured Dashboards so you can monitor and analyze the activity of your PagerDuty account and Services.
 ---

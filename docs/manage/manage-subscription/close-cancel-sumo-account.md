@@ -30,4 +30,4 @@ If you have a self service trial account, at the end of the trial, typically 30 
 
 ## Cancel a Sumo Logic licensed account
 
-If you'd like to cancel your organization's Sumo Logic account, please open a ticket with [Sumo Logic Support.](https://support.sumologic.com/hc/en-us/requests/news) Our Support Team will process your request in a timely manner.
+If you'd like to cancel your organization's Sumo Logic account, please open a ticket with [Sumo Logic Support](https://support.sumologic.com/hc/en-us/requests/new), and we will process your request in a timely manner.

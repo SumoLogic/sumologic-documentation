@@ -1,10 +1,9 @@
 ---
 id: set-time-range
-title: Set the Time Range
+title: Set the Time Range of a Search
+sidebar_label: Set the Time Range
 description: You can adjust the time range for searches and metrics to get the information that will be of most use.
 ---
-
-
 
 To set the time range for searches or metrics visualizations, click the time area.
 

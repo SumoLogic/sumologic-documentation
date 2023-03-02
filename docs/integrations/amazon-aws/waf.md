@@ -1,7 +1,6 @@
 ---
 id: waf
-title: Sumo Logic App for AWS WAF
-sidebar_label: AWS WAF
+title: AWS WAF
 description: The Sumo Logic App for AWS Web Application Firewall (WAF) analyzes traffic flowing through AWS WAF and automatically detects threats via Sumo Logic Threat Intel.
 ---
 

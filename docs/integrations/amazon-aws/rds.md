@@ -1,7 +1,6 @@
 ---
 id: rds
-title: Sumo Logic App for Amazon RDS
-sidebar_label: Amazon RDS
+title: Amazon RDS
 description: The Sumo Logic App for Amazon RDS Metrics provides visibility into your Amazon Relational Database Service (RDS) Metrics collected via a CloudWatch Metrics Source.
 ---
 
@@ -136,7 +135,7 @@ Scope (Specific Data): account=* eventname eventsource "rds.amazonaws.com"
 
 ### Centralized AWS CloudTrail Log Collection
 
-In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
+In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
 
 ```sql
 Rule Name: AWS Accounts

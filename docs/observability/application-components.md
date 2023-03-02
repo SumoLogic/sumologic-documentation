@@ -149,7 +149,7 @@ email_notifications_critical = [
 ---
 **Parameters**: `connection_notifications_critical`, `connection_notifications_warning`, `connection_notifications_missingdata` <br/>
 **Required**: No <br/>
-**Description**: To configure notification via pagerduty or webhook set these parameters for critical, warning and missing data monitors respectively. See this <a href="https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections">document</a> for creating payloads with other connection types.
+**Description**: To configure notification via pagerduty or webhook set these parameters for critical, warning and missing data monitors respectively. See this <a href="/docs/alerts/webhook-connections/set-up-webhook-connections">document</a> for creating payloads with other connection types.
 ```json
 connection_notifications_critical = [
     {

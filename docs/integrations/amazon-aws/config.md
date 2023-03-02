@@ -1,7 +1,6 @@
 ---
 id: config
-title: Sumo Logic App for AWS Config
-sidebar_label: AWS Config
+title: AWS Config
 description: Provides a simple web services interface that can be used to track modifications made to the resources that belong to an AWS account.
 ---
 

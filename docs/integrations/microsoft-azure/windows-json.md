@@ -1,6 +1,6 @@
 ---
 id: windows-json
-title: Sumo Logic App for Windows JSON
+title: Windows JSON
 sidebar_label: Windows JSON
 description: The Windows JSON App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment.
 ---
