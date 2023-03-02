@@ -1,7 +1,6 @@
 ---
 id: inspector
-title: Sumo Logic App for Amazon Inspector
-sidebar_label: Amazon Inspector
+title: Amazon Inspector
 description: The Sumo Logic Inspector App helps reveal trends and identify anomalies from these AWS Inspector findings.
 ---
 

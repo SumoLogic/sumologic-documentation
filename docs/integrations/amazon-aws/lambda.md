@@ -1,7 +1,6 @@
 ---
 id: lambda
-title: Sumo Logic App for AWS Lambda
-sidebar_label: AWS Lambda
+title: AWS Lambda
 description: The AWS Lambda App helps you monitor the operational and performance trends in all the Lambda functions in your account. The App uses two data sources - AWS CloudWatch logs for Lambda, and CloudTrail Lambda Data Events.
 ---
 
@@ -267,7 +266,7 @@ Scope (Specific Data): account=* eventname eventsource "lambda.amazonaws.com"
 
 ### Centralized AWS CloudTrail Log Collection
 
-In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
+In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
 
 ```yml
 Rule Name: AWS Accounts

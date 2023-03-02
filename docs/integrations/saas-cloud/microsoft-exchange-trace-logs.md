@@ -1,6 +1,6 @@
 ---
 id: microsoft-exchange-trace-logs
-title: Sumo Logic App for Microsoft Exchange Trace Logs
+title: Microsoft Exchange Trace Logs
 sidebar_label: Microsoft Exchange Trace Logs
 description: This Sumo Logic App for Microsoft Exchange Trace logs provides visibility into Delivered, Failed, Quarantined, Pending, and Spam messages.
 ---

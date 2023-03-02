@@ -1,6 +1,6 @@
 ---
 id: amazon-guardduty
-title: Sumo Logic App for Amazon GuardDuty Cloud Security Monitoring and Analytics
+title: Amazon GuardDuty Cloud Security Monitoring and Analytics
 sidebar_label: Amazon GuardDuty
 description: Guide to Amazon GuardDuty Cloud Security Monitoring and Analytics.
 ---

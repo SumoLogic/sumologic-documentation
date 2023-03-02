@@ -4,13 +4,15 @@ title: Timestamps, Time Zones, Time Ranges, and Date Formats
 description: Learn how Sumo Logic manages timestamps, time zones, time ranges, and dates, and the configuration options that are available.
 ---
 
-We support several options for timestamps, time zones, time ranges, and dates. When collecting log data, the timestamp attached to messages is vital, both for the integrity of the data in your account, and for accurate query results. Because of the importance of timestamps, Sumo Logic indexes the timestamp of each message, making sure that data relevant to a query’s time range is returned properly in search results, which allows you to reconstruct a correct event timeline.
+We support several options for timestamps, time zones, time ranges, and dates. When collecting log data, the timestamp attached to messages is vital, both for the integrity of the data in your account, and for accurate query results.
+
+Because of the importance of timestamps, Sumo Logic indexes the timestamp of each message, making sure that data relevant to a query’s time range is returned properly in search results, which allows you to reconstruct a correct event timeline.
 
 ## Timestamps
 
 The timestamp is the part of a log message that marks the time that an event occurred. During ingestion, we can detect the message timestamp, convert it to Unix epoch time (the number of milliseconds since midnight, January 1, 1970 UTC), and index it. The timestamp is parsed either using the default timestamp parsing settings, or a custom format that you specify, including the time zone.
 
-When configuring a Source you can choose to use the default timestamp parsing settings, or you can specify a custom format for us to parse timestamps in your log messages. The **Enable Timestamp Parsing** option is selected by default. If it's deselected, no timestamp information is parsed at all. Instead, we stamp logs with the time at which the messages are processed.
+When configuring a Source, you can choose to use the default timestamp parsing settings, or you can specify a custom format for us to parse timestamps in your log messages. The **Enable Timestamp Parsing** option is selected by default. If it's deselected, no timestamp information is parsed at all. Instead, we stamp logs with the time at which the messages are processed.
 
 ### Timestamp considerations
 
@@ -364,7 +366,7 @@ Unix epoch timestamps are supported in the following formats:
 * 10 digit epoch time format surrounded by brackets (or followed by a comma). The digits must be at the very start of the message. For example, [1234567890] or [1234567890, other] followed by the rest of the message.
 * 13 digit epoch time. The 13 digits must be at the very start of the message. For example, 1234567890123... followed by the rest of the message.
 * 16 digit epoch time. The 16 digits must be at the very start of the message. For example, 1234567890123... followed by the rest of the message.
-* 19-digit epoch time. The 19 digits must be at the very start of the message. For example,  1496756806.655123456…. followed by the rest of the message.
+* 19-digit epoch time. The 19 digits must be at the very start of the message. For example, 1496756806.655123456…. followed by the rest of the message.
 * We also recognize the time format for the Akamai log delivery service. The format is 13 digits with a period before the last three (ms) digits: 1234567890.123
 * Comma separated values where the 5th value from the start of the message is a 10 digit epoch time. For example, field1, field2, field3, field4, 1234567890
 * JSON formatted property called "timestamp" followed by a 13 digit epoch time. For example, "timestamp":"123456789013".
@@ -402,12 +404,39 @@ import TabItem from '@theme/TabItem';
 
 <Tabs
   className="unique-tabs"
-  defaultValue="classic"
+  defaultValue="new"
   values={[
-    {label: 'Classic UI', value: 'classic'},
     {label: 'New UI', value: 'new'},
+    {label: 'Classic UI (Legacy)', value: 'classic'},
   ]}>
 
+<TabItem value="new">
+
+1. Do one of the following:
+   * If you're configuring a new Source, proceed to the next step.
+   * To edit the timestamp settings for an existing Source, navigate to **Manage Data > Collection > Collection**. Then click **Edit** to the right of the Source name and go to step 2.
+1. Navigate to the **Advanced Options for Logs** section.
+1. For **Timestamp Format**, select **Specify a format**.<br/> ![specify timestamp format.png](/img/send-data/specify-timestamp-format.png)
+1. In the **Format** field, enter the timestamp format the Collector should use to parse timestamps in your log. If the timestamp format is in epoch time, enter "epoch" in the **Format** field. Your custom timestamp format must follow our supported [timestamp conventions](time-reference.md).<br/>  ![timestamp format highlighted.png](/img/send-data/timestamp-format-highlighted.png)
+1. The **Timestamp locator** is a regular expression with a capture group matching the timestamp in your log messages.<br/>  ![timestamp locator highlighted.png](/img/send-data/timestamp-locator-highlighted.png) The timestamp locator must:
+    * be provided for 16-digit epoch or 19-digit epoch timestamps. Otherwise, this field is not necessary.
+    * be a valid Java regular expression. Otherwise, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex is invalid. The timestamp locator regex your-regex  uses matching features which are not supported. `
+    * be an [RE2-compliant](https://github.com/google/re2/wiki/Syntax) regular expression, for example: `\[time=(.*?)\]`. Otherwise, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex uses matching features which are not supported.`
+    * contain one unnamed capture group. When we extract timestamps, we only scan the portion of each log message that is captured by this group. If a log message does not match the locator expression, then your timestamp format cannot be applied to that message. If the regex doesn't contain one unnamed capture group, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex does not contain a single unnamed capture group. The timestamp locator regex your-regex uses matching features which are not supported`
+    :::tip
+    If you use quotes in the timestamp locator regular expression, you may see issues in the display after you save. The regular expression is not actually changed and can still be used to locate your timestamp.
+    :::
+1. If you have more than one custom timestamp format that you want to add, click **+ Add**. The ordering of formats is significant. Each provided timestamp format is tested, in the order specified, until a matching format is found. The first matching format determines the final message timestamp. If none of the provided formats match a particular message, the Collector will attempt to automatically determine the message's timestamp.
+1. Next, it's recommended to test a few log lines from your data against your specified formats and locators. Enter sample log messages to test the timestamp formats you want to extract.<br/>  ![timestamp format test examples.png](/img/send-data/timestamp-format-test-examples.png)
+1. Click **Test** once your log lines are entered. The results display with the timestamp parsed and format matches (if any).<br/>  ![timestamp format test results.png](/img/send-data/timestamp-format-test-results.png)
+    You should see one of the following messages:  
+    * **Format matched.**  In this example, the format of `yyyy/MM/dd HH:mm:ss` was matched and highlighted in green. This was the first format provided so it returns as `1(format: yyyy/MM/dd HH:mm:ss locator: \[time=(.*?)\])` The **Effective message time** would be 2022-01-15 02:12.000 +0000.
+    * **None of the custom timestamp format was matched.**  While the custom formats were not found in the log, there's still an auto detected timestamp highlighted in orange, 2022-06-01 02:12:12.259667 that we can use. **The Effective message** time is going to be 2022-06-01 02:12:12.259 +0000  
+    * **Unable to parse any timestamp**. No part of the sample log line "This line shouldn't parse" has a parseable timestamp and so the timestamp will be the current time.
+1. Make any edits as needed to ensure your timestamps are parsed correctly.
+1. Click **Save** to save your custom timestamp formats.
+
+</TabItem>
 <TabItem value="classic">
 
 1. Do one of the following:
@@ -434,33 +463,6 @@ import TabItem from '@theme/TabItem';
     * **Unable to parse any timestamp**. No part of the sample log line "This line shouldn't parse" has a parseable timestamp and so the timestamp will be the current time.
 1. Optional. If you want to make changes to your log line, click **Edit** and you can provide other log lines to test**.**
 1. Click **Done** to exit **Test Timestamp Parsing**.
-1. Click **Save** to save your custom timestamp formats.
-
-</TabItem>
-<TabItem value="new">
-
-1. Do one of the following:
-   * If you're configuring a new Source, proceed to the next step.
-   * To edit the timestamp settings for an existing Source, navigate to **Manage Data > Collection > Collection**. Then click **Edit** to the right of the Source name and go to step 2.
-1. Navigate to the **Advanced Options for Logs** section.
-1. For **Timestamp Format**, select **Specify a format**.<br/> ![specify timestamp format.png](/img/send-data/specify-timestamp-format.png)
-1. In the **Format** field, enter the timestamp format the Collector should use to parse timestamps in your log. If the timestamp format is in epoch time, enter "epoch" in the **Format** field. Your custom timestamp format must follow our supported [timestamp conventions](time-reference.md).<br/>  ![timestamp format highlighted.png](/img/send-data/timestamp-format-highlighted.png)
-1. The **Timestamp locator** is a regular expression with a capture group matching the timestamp in your log messages.<br/>  ![timestamp locator highlighted.png](/img/send-data/timestamp-locator-highlighted.png) The timestamp locator must:
-    * be provided for 16-digit epoch or 19-digit epoch timestamps. Otherwise, this field is not necessary.
-    * be a valid Java regular expression. Otherwise, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex is invalid. The timestamp locator regex your-regex  uses matching features which are not supported. `
-    * be an [RE2-compliant](https://github.com/google/re2/wiki/Syntax) regular expression, for example: `\[time=(.*?)\]`. Otherwise, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex uses matching features which are not supported.`
-    * contain one unnamed capture group. When we extract timestamps, we only scan the portion of each log message that is captured by this group. If a log message does not match the locator expression, then your timestamp format cannot be applied to that message. If the regex doesn't contain one unnamed capture group, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex does not contain a single unnamed capture group. The timestamp locator regex your-regex uses matching features which are not supported`
-    :::tip
-    If you use quotes in the timestamp locator regular expression, you may see issues in the display after you save. The regular expression is not actually changed and can still be used to locate your timestamp.
-    :::
-1. If you have more than one custom timestamp format that you want to add, click **+ Add**. The ordering of formats is significant. Each provided timestamp format is tested, in the order specified, until a matching format is found. The first matching format determines the final message timestamp. If none of the provided formats match a particular message, the Collector will attempt to automatically determine the message's timestamp.
-1. Next, it's recommended to test a few log lines from your data against your specified formats and locators. Enter sample log messages to test the timestamp formats you want to extract.<br/>  ![timestamp format test examples.png](/img/send-data/timestamp-format-test-examples.png)
-1. Click **Test** once your log lines are entered. The results display with the timestamp parsed and format matches (if any).<br/>  ![timestamp format test results.png](/img/send-data/timestamp-format-test-results.png)
-    You should see one of the following messages:  
-    * **Format matched.**  In this example, the format of `yyyy/MM/dd HH:mm:ss` was matched and highlighted in green. This was the first format provided so it returns as `1(format: yyyy/MM/dd HH:mm:ss locator: \[time=(.*?)\])` The **Effective message time** would be 2022-01-15 02:12.000 +0000.
-    * **None of the custom timestamp format was matched.**  While the custom formats were not found in the log, there's still an auto detected timestamp highlighted in orange, 2022-06-01 02:12:12.259667 that we can use. **The Effective message** time is going to be 2022-06-01 02:12:12.259 +0000  
-    * **Unable to parse any timestamp**. No part of the sample log line "This line shouldn't parse" has a parseable timestamp and so the timestamp will be the current time.
-1. Make any edits as needed to ensure your timestamps are parsed correctly.
 1. Click **Save** to save your custom timestamp formats.
 
 </TabItem>
@@ -700,13 +702,15 @@ They will see the same data, just displayed using their custom set time zone. Fo
 
 The **Time Range** field on the **Search** page uses the time zone that is set for the Sumo Logic user interface. This is either the default time zone used in the web browser and set by the operating system, or the **Default Timezone** setting on the **Preferences** page, if you have set this option.
 
-When you create a **Scheduled Search** or a **Real Time Alert**, the time range of the search that you save uses the time zone that is set for the Sumo Logic user interface. If you have changed the time zone using the **Default Timezone** setting, this time zone will be used for your Scheduled Searches and Real Time Alerts.
+When you create a [**Scheduled Search**](/docs/alerts/scheduled-searches) or a [**Real-Time Alert**](/docs/alerts/scheduled-searches/create-real-time-alert), the time range of the search that you save uses the time zone that is set for the Sumo Logic user interface. If you have changed the time zone using the **Default Timezone** setting, this time zone will be used for your Scheduled Searches and Real Time Alerts.
 
-The **Default Timezone** setting does not automatically update the configurations of existing Scheduled Searches or Real Time Alerts. So it is important to note that if you would like your Scheduled Searches and Real Time Alerts to use the same time zone as your user interface, you will need to edit them to do so, and save them.
+:::note
+The **Default Timezone** setting does not automatically update the configurations of existing Scheduled Searches or Real-Time Alerts. If you'd like your Scheduled Searches and Real-Time Alerts to use the same time zone as your user interface, you'll need to edit them to do so, and save them.
+:::
 
-For more information on time ranges, see Set the Time Range of a Search.
+For more information on time ranges, see [Set the Time Range of a Search](/docs/search/get-started-with-search/build-search/set-time-range).
 
-Search Time Ranges can also search all data with any and all timestamps. For details, see Use Receipt Time.
+Search Time Ranges can also search all data with any and all timestamps. For details, see [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time).
 
 ## Date Format
 

@@ -1,6 +1,6 @@
 ---
 id: nginx-legacy
-title: Sumo Logic App for Nginx (Legacy)
+title: Nginx (Legacy)
 sidebar_label: Nginx (Legacy)
 description: The Sumo Logic App for Nginx (Legacy) helps you monitor webserver activity in Nginx.
 ---

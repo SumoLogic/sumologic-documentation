@@ -1,6 +1,6 @@
 ---
 id: network-watcher
-title: Sumo Logic App for Azure Network Watcher
+title: Azure Network Watcher
 sidebar_label: Azure Network Watcher
 description: The Sumo Logic App for Azure Network Watcher leverages Network Security Group (NSG) flow logs to provide real-time visibility and analysis of your Azure Network.
 ---

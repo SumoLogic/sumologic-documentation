@@ -1,6 +1,6 @@
 ---
 id: apache-tomcat
-title: Sumo Logic App for Apache Tomcat
+title: Apache Tomcat
 sidebar_label: Apache Tomcat
 description: Monitors server operations, assists in troubleshooting issues, and provides insight into website visitor behavior patterns across entire web server farms
 ---
@@ -272,7 +272,7 @@ Enter in values for the following parameters (marked `CHANGEME` in the snippet a
 
     For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
-1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
+1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
 2. Verify logs in Sumo Logic.
 1. **(Optional) Collecting Apache Tomcat Logs from a Log File**
 
