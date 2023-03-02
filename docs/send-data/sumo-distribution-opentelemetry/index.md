@@ -1,5 +1,5 @@
 ---
-slug: /send-data/opentelemetry-collector
+slug: /send-data/sumo-distribution-opentelemetry
 title: Sumo Logic Distribution for OpenTelemetry Collector
 description: Use our Sumo Logic Distribution for OpenTelemetry to send data to Sumo Logic.
 ---
@@ -36,37 +36,37 @@ Introducing OpenTelemetry.
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/send-data/opentelemetry-collector/comparison"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>OTEL Use Cases</h4></a>
+  <a href="/docs/send-data/sumo-distribution-opentelemetry/comparison"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>OTEL Use Cases</h4></a>
   <p>When to use our OTEL Collector over Installed Collector.</p>
   </div>
 </div>
   <div className="box smallbox2 card">
     <div className="container">
-    <a href="/docs/send-data/opentelemetry-collector/installation"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>Installation</h4></a>
+    <a href="/docs/send-data/sumo-distribution-opentelemetry/installation"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>Installation</h4></a>
     <p>How to install the Sumo OTel collector on various platforms.</p>
     </div>
     </div>
     <div className="box smallbox3 card">
       <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/configuration-sources"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>Sources and Configuration</h4></a>
+      <a href="/docs/send-data/sumo-distribution-opentelemetry/configuration-sources"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>Sources and Configuration</h4></a>
       <p>-</p>
       </div>
     </div>
     <div className="box smallbox4 card">
       <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/best-practices"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>Best Practices</h4></a>
+      <a href="/docs/send-data/sumo-distribution-opentelemetry/best-practices"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>Best Practices</h4></a>
       <p>Best practices for using the Otel collector.</p>
       </div>
     </div>
     <div className="box smallbox5 card">
       <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/troubleshooting"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>Troubleshooting</h4></a>
+      <a href="/docs/send-data/sumo-distribution-opentelemetry/troubleshooting"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>Troubleshooting</h4></a>
       <p>Common OTel collector troubleshooting questions.</p>
       </div>
     </div>
     <div className="box smallbox6 card">
       <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/opentelemetry-concepts"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>OTEL Data for Sumo</h4></a>
+      <a href="/docs/send-data/sumo-distribution-opentelemetry/opentelemetry-concepts"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>OTEL Data for Sumo</h4></a>
       <p>Mapping OTEL concepts to Sumo Logic.</p>
       </div>
     </div>
@@ -78,7 +78,7 @@ Introducing OpenTelemetry.
     </div>
     <div className="box smallbox8 card">
       <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/upstream-relation"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>FAQ</h4></a>
+      <a href="/docs/send-data/sumo-distribution-opentelemetry/upstream-relation"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="40"/><h4>FAQ</h4></a>
       <p>List of frequently asked questions by users.</p>
       </div>
     </div>

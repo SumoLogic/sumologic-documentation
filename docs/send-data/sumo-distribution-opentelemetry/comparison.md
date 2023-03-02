@@ -1,9 +1,10 @@
 ---
 id: comparison
-title: Comparing the Installed Collector and OpenTelemetry Collector
+title: Comparing the OpenTelemetry Collector and Installed Collector
 sidebar_label: OTEL Collector vs. Installed Collector
 ---
 
+This page provides guidance on when to use the Sumo Logic OpenTelemetry Collector versus our Installed Collector.
 
 ## When to use OpenTelemetry
 
