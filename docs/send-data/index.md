@@ -7,7 +7,7 @@ tags: [send data, collectors, collection]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Learn how to send data to Sumo Logic, the starting point to using our observability and security solutions. In this section, we'll introduce the following concepts:
+Learn how to send data to Sumo Logic and get started with our observability and security solutions. In this section, we'll introduce the following concepts:
 
 :::tip Designing your Deployment
 * [How to choose a Collector and Source](/docs/send-data/choose-collector-source)
