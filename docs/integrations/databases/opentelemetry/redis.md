@@ -48,7 +48,7 @@ Follow the instructions to set up log collection:
     1. Specify the log file name. Also the empty string can be used to force Redis to log on the standard output. If you use the standard output for logging but daemonize, logs will be sent to `/dev/null` logfile.
 1. Save the `redis.conf` file and restart the Redis server using the command: `sudo  service redis-server restart`.
 
-Once the logs are configured to be written to a local file, follow the steps below to configure the collection in Sumo Logic.
+Once the logs are configured to write to a local file, follow the steps below to configure the collection in Sumo Logic.
 
 ## Configuring Collection and Installing the Redis App
 
