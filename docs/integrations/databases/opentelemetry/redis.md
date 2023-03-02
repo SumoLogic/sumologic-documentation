@@ -21,16 +21,16 @@ Redis logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https
 
 ## Log Types
 
-This Sumo Logic App for Redis supports logs for Redis in Cluster or Standalone mode. The Redis logs are generated in files as configured in the cluster node configuration files in `/etc/redis/redis.conf`. For more details on Redis logs, [click here](https://redislabs.com/ebook/part-2-core-concepts/chapter-5-using-redis-for-application-support/5-1-logging-to-redis/).
+This app supports logs for Redis in Cluster mode or Standalone mode. The Redis logs are generated in files as configured in the cluster node configuration files in `/etc/redis/redis.conf`. For more details on Redis logs, [click here](https://redislabs.com/ebook/part-2-core-concepts/chapter-5-using-redis-for-application-support/5-1-logging-to-redis/).
 
 ## Creating Fields in Sumo Logic for Redis
 
-Following are the [Fields](https://help.sumologic.com/docs/manage/fields/), which will be created as part of the Redis App install if not already present.
+The following are [Fields](https://help.sumologic.com/docs/manage/fields/) that will be created as part of the Redis App install if not already present.
 
-**db.cluster.name** - User configured. Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
-**db.system** - Has fixed value of redis
-**deployment.environment** - User configured. This is the deployment environment where the Redis cluster resides. For example: dev, prod or qa.
-**sumo.datasource** - has fixed value of redis
+* **`db.cluster.name`** - User configured. Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
+* **`db.system`** - Has fixed value of redis.
+* **`deployment.environment`** - User configured. This is the deployment environment where the Redis cluster resides. For example: dev, prod or qa.
+* **`sumo.datasource`** - has fixed value of redis.
 
 ## Prerequisite
 
@@ -40,12 +40,12 @@ Follow the instructions to set up log collection:
 
 1. To configure the Redis log file, locate your local `[redis.conf](https://download.redis.io/redis-stable/redis.conf)` configuration file in the database directory. By default, Redis logs are stored in `/var/log/redis/redis-server.log`.
 1. After determining the location of conf file, open your `redis.conf` configuration file in a text editor to modify its logging parameters as such:
-   1. Specify the server verbosity level. The value loglevel in conf file can be set to one of the following:
+   1. Specify the server verbosity level. The value `loglevel` in conf file can be set to one of the following:
       * debug (a lot of information, useful for development/testing)
       * verbose (many rarely useful info, but not a mess like the debug level)
       * notice (moderately verbose, what you want in production probably)
       * warning (only very important/critical messages are logged) loglevel notice
-    1. Specify the log file name. Also the empty string can be used to force Redis to log on the standard output. Note that if you use the standard output for logging but daemonize, logs will be sent to `/dev/null` logfile
+    1. Specify the log file name. Also the empty string can be used to force Redis to log on the standard output. If you use the standard output for logging but daemonize, logs will be sent to `/dev/null` logfile.
 1. Save the `redis.conf` file and restart the Redis server using the command: `sudo  service redis-server restart`.
 
 Once the logs are configured to be written to a local file, follow the steps below to configure the collection in Sumo Logic.
