@@ -73,7 +73,7 @@ For more information, see [Sumo Logic Account Usage](/docs/manage/manage-subscri
 Signing up for a Sumo Logic account through the AWS Marketplace creates a new Sumo Logic organization and account. It allows you to pay your bill using your Amazon account. All you need to sign up is a company email address and your location: North America, Europe, or Australia.
 
 :::info Valid Emails
-Do not use a Gmail or Yahoo email account to create your Sumo Logic account.
+Do not use a Google or Yahoo email account to create your Sumo Logic account.
 :::
 
 Select the plan that fits your usage requirements. The first 30 days are free of charge. All Sumo Logic features are supported for your Account Type, based on your subscription plan.
