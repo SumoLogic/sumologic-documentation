@@ -6,11 +6,9 @@ description: Sign Up with Sumo Logic, creating and activating your account.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data — without having to manage and scale any hardware or storage.
+Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data—without having to manage and scale any hardware or storage. With Sumo Logic Free, you can open a free account and start using Sumo Logic right away.
 
-By signing up for a trial, you can open a free account and start using Sumo Logic right away. With this trial account, you're given 30 days of Enterprise account access to review and use features.
-
-You can create a Sumo Logic Trial account through [through our site](#sign-up-through-sumo-logic) or [AWS Marketplace](#aws-marketplace).
+When you sign up for your Sumo Logic **Trial account**, which you can do through [through our site](#sign-up-through-sumo-logic) or [AWS Marketplace](#aws-marketplace), you're given 30 days of Enterprise account access to review and use features. After 30 days, if you don't choose to purchase a plan, you will continue with a Sumo Logic **Free account**. You can [upgrade to a plan](https://www.sumologic.com/pricing) at any time.
 
 ## Sign up through Sumo Logic
 
@@ -18,14 +16,13 @@ Sign up for a Trial account and start using Sumo Logic in minutes:
 
 1. Click the **Start free trial** button in the Docs nav bar.
 1. Follow the sign-up steps to register and create your free Sumo Logic instance with a business address.
-
-Sumo Logic sends you an email to activate your account, and the [Sumo Logic Setup Wizard](/docs/send-data/setup-wizard) is displayed.
-
-:::note
-You have three days to activate or it will be removed. You can sign up again if you miss activating your account.
-:::
+1. Sumo Logic sends you an email to activate your account.
 
 ### Activate your account
+
+:::note
+The link in your account activation email will expire after 3 days. If the link has expired, you'll need to complete the signup process again.
+:::
 
 To activate your Sumo Logic Trial account:
 
@@ -134,6 +131,8 @@ Next, use the [Setup Wizard](/docs/send-data/setup-wizard) to send your logs to 
 #### Cancel your account
 
 Should you decide to cancel, you can do it through AWS Marketplace.
+
+Should you decide to cancel, you can do this through AWS Marketplace.
 
 1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace) and access your account.
 1. Go to **Manage your software subscriptions** and select **Sumo Logic**.<br/>  ![AWS Cancel](/img/get-started/aws_marketplace_cancel.png)
