@@ -1848,6 +1848,15 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/databases/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/databases/opentelemetry/redis',
+            ],
+          },
           'integrations/databases/cassandra',
           'integrations/databases/couchbase',
           'integrations/databases/elasticsearch',
