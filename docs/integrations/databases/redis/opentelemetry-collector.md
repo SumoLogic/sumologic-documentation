@@ -1,7 +1,7 @@
 ---
-id: redis
-title: Sumo Logic OpenTelemetry App for Redis
-sidebar_label: Redis
+id: opentelemetry-collector
+title: Redis - OpenTelemetry Collector
+sidebar_label: Redis - OTel Collector
 description: Documentation for OpenTelemetry App for Redis.
 ---
 
@@ -44,7 +44,7 @@ Follow the instructions to set up log collection:
    1. Specify the log file name. Also the empty string can be used to force Redis to log on the standard output. If you use the standard output for logging but daemonize, logs will be sent to `/dev/null` logfile.
 1. Save the `redis.conf` file and restart the Redis server using the command: `sudo service redis-server restart`.
 
-Once the logs are configured to be written to a local file, follow the steps below to configure the collection in Sumo Logic.
+Once the logs are configured to write to a local file, follow the steps below to configure the collection in Sumo Logic.
 
 ## Configuring Collection and Installing the Redis App
 
@@ -79,6 +79,7 @@ Click on the **Download YAML File** button to get the yaml file.
 ### Step 3: Sending logs to Sumo Logic
 
 Once you've downloaded the yaml file (in step 2), follow the below steps based on your environment.
+
 <Tabs
   className="unique-tabs"
   defaultValue="Linux"
@@ -113,7 +114,7 @@ Results will be available after a while. It is important to note that each panel
 
 ## Sample Log Message
 
-Here's a sample log message in Non-Kubernetes environment.
+Here's a sample log message in a non-Kubernetes environment.
 
 `5275:S 17 Mar 2021  19:13:38.138 * MASTER <-> REPLICA sync: Finished with success`
 
