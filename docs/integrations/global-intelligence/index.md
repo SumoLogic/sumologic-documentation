@@ -15,7 +15,7 @@ This category is about Global Intelligence for Sumo Logic apps.
 <div className="box smallbox1 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/global-intelligence/gi-apache1.png')} alt="Thumbnail icon" width="50"/>
-  <h3><a href="/docs/integrations/global-intelligence/apache">Global Intelligence for Apache </a></h3>
+  <h3><a href="/docs/integrations/global-intelligence/apache">Global Intelligence for Apache</a></h3>
   <p>A guide to the Sumo Logic app for Global Intelligence for Apache.</p>
   </div>
 </div>
