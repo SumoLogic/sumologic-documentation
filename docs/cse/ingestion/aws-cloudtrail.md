@@ -34,7 +34,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 
 ### Configure an AWS CloudTrail Source
 
-1. To configure a CloudTrail Source, see [Configure an AWS CloudTrail source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudtrail-source.md).
+1. To configure a CloudTrail Source, see [Configure an AWS CloudTrail source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md).
 1. Configure fields as shown below to forward CloudTrail logs to the Cloud SIEM platform.
     1. If you are not forwarding all sources in the hosted collector to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
     1. Add another field named `_parser` with value */Parsers/System/AWS/CloudTrail*.
