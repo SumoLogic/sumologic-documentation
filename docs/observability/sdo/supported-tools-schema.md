@@ -9,7 +9,7 @@ The Software Development Optimization (SDO) Solution comes bundled with Terrafor
 | DevOps Phases             | Supported with Terraform                                          |
 |:---------------------------|:-----------------------------------------------------------|
 | Planning Phase            | Jira Cloud, Jira Server                                   |
-| Dev/Code                  | Github, Bitbucket, GitLab                                 |
+| Dev/Code                  | GitHub, Bitbucket, GitLab                                 |
 | Build/Test/Deploy/Release | Jenkins, Bitbucket Pipelines, CircleCI  Pipelines, GitLab |
 | Monitor/Operate           | PagerDuty, Opsgenie                                       |
 
