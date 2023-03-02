@@ -96,7 +96,7 @@ Once you have the yaml file downloaded in step 2, please follow the below steps 
 1. Copy the yaml at `/etc/otelcol-sumo/conf.d/` folder in the Redis instance which needs to be monitored.
 2. Restart the otelcol-sumo process using the command `otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --conf "glob:/etc/otelcol-sumo/conf.d/*.yaml"`
 
-Sumo Logic will start receiving data from your host machine when the above command is successfully executed.
+Sumo Logic will receive data from your host machine when the above command is successfully executed.
 
 This will install the app and dashboards to your Sumo Logic org.
 
