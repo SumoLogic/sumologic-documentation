@@ -104,7 +104,7 @@ Results will be available after a while. It is important to note that each panel
 
 ## Sample Log Message
 
-Here's a sample log message in Non-Kubernetes environment.
+Here's a sample log message in a non-Kubernetes environment.
 
 `5275:S 17 Mar 2021  19:13:38.138 * MASTER <-> REPLICA sync: Finished with success`
 
