@@ -18,4 +18,4 @@ Beta - To prepare for Dashboards (Classic) deprecation in late 2023, we've relea
 
 <img src={useBaseUrl('img/release_notes/service/DashboardMigration.png')} alt="Migrate Dashboard switch" />
 
-For more information, including the current limitations of the tool, see [Migrate Dashboards](/docs/dashboards-new/migrate-to-new-dashboards).  We will deprecate Classic dashboard in the second half of 2023.  Start planning and migrating your Classic dashboards now. You can learn more from [our Community page](https://support.sumologic.com/hc/en-us/articles/12796506964247-All-aboard-Moving-forward-with-Sumo-Logic-s-new-dashboards).
+For more information, including the current limitations of the tool, see [Migrate Dashboards](/docs/dashboards-new/migrate-to-new-dashboards). Start planning and migrating your Classic dashboards now. You can learn more from [our Community page](https://support.sumologic.com/hc/en-us/articles/12796506964247-All-aboard-Moving-forward-with-Sumo-Logic-s-new-dashboards).
