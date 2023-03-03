@@ -1729,6 +1729,16 @@ integrations: [
        collapsed: true,
        link: {type: 'doc', id: 'integrations/microsoft-azure/index'},
        items: [
+         {
+           type: 'category',
+           label: 'OpenTelemetry',
+           collapsible: true,
+           collapsed: true,
+           items: [
+             'integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry',
+             'integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry',
+           ],
+         },
          'integrations/microsoft-azure/active-directory-json',
          'integrations/microsoft-azure/active-directory-legacy',
          'integrations/microsoft-azure/active-directory-azure',

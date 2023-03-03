@@ -1,6 +1,6 @@
 ---
 id: active-directory-json
-title: Active Directory JSON
+title: Active Directory JSON - Classic Collector
 sidebar_label: Active Directory (JSON)
 description: The Active Directory JSON App helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format.
 ---
