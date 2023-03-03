@@ -9,9 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/cloud/core-platform.png')} alt="icon" width="60"/>
 
-
-## What is Sumo Logic?
-
 Get to know Sumo Logic through our video, "Introduction to Sumo Logic".
 
 <Iframe url="https://www.youtube.com/embed/wlwo-RLKRIQ"
@@ -28,7 +25,9 @@ Get to know Sumo Logic through our video, "Introduction to Sumo Logic".
 
 ## Benefits of Using Sumo Logic
 
-Sumo Logic helps businesses build, run, and secure modern applications through flexible and scalable solutions for organizations of all sizes. The collection of logs in Sumo Logic is managed by the collectors and they help in designing the best Sumo Logic deployment. There are various factors to consider when making a decision to implement a Sumo Logic solution in your organizations based on the different collection strategies.
+Sumo Logic helps businesses build, run, and secure modern applications through flexible and scalable solutions for organizations of all sizes. The collection of logs in Sumo Logic is managed by the collectors and they help in designing the best Sumo Logic deployment.
+
+There are various factors to consider when implementing a Sumo Logic solution in your organization, based on the different collection strategies.
 
 Get to know about benefits through our video, "Benefits of Using Sumo Logic".
 
@@ -113,7 +112,11 @@ Sumo Logic provides access from anywhere since it is fully browser based. It als
 
 ## Account Configuration
 
-* [Retention](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention). Determine the average data retention for your account (total storage and daily ingest) and change the General Index retention period if necessary. The General Index settings can be found on the **Manage Data** > **Settings** > **Partitions** menu, which is explained in further detail on the Optimization Setup sheet of this document.
+Once you've set up a collector and source, read these tips on configuring and managing your Sumo Logic account.
+
+### Data Volume and Retention
+
+* [Data Retention](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention). Determine the average data retention for your account (total storage and daily ingest) and change the General Index retention period if necessary. The General Index settings can be found on the **Manage Data** > **Settings** > **Partitions** menu, which is explained in further detail on the Optimization Setup sheet of this document.
 * [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo tool.
 * [Audit Index](/docs/manage/security/audit-index). Enable the audit index. This feature allows you to track user behavior, content changes, and scheduled search execution results.
 * [Data Volume App](/docs/integrations/sumo-apps/data-volume-Legacy). Install the Data Volume app in Sumo App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
@@ -122,7 +125,7 @@ Sumo Logic provides access from anywhere since it is fully browser based. It als
 
 ### Optimizing Partitions
 
-Partitions store your data in custom indexes, separate from the rest of your account's data, so that you can optimize your searches. When you run a search against an index, results are returned more quickly and efficiently because the search runs against a smaller data set.
+[Partitions](/docs/search/optimize-search-partitions) store your data in custom indexes, separate from the rest of your account's data, so that you can optimize your searches. When you run a search against an index, results are returned more quickly and efficiently because the search runs against a smaller data set.
 
 Before adding Partitions, consider the following:
 
@@ -130,16 +133,17 @@ Before adding Partitions, consider the following:
 * **Query Rewriting**. The query service will automatically detect routing expressions for partitions in the backend. No scoping changes are required for existing content to use partitions.
 * **Overlap Consequences**. Data should NEVER fall into multiple partitions. This will cause the data to be duplicated across the service and will increase the cost of ingesting the data.
 
-[Basics.](/docs/search/optimize-search-partitions) The **Partitions** page can be found under the **Manage Data** > **Settings** menu. Partitions are tools that can be used to route data into smaller subsets of the overall data ingest. These datasets can be isolated for either query performance reasons or for log retention purposes.
+The **Partitions** page can be found under the **Manage Data** > **Settings** menu. Partitions are tools that can be used to route data into smaller subsets of the overall data ingest. These datasets can be isolated for either query performance reasons or for log retention purposes.
 
-[Routing Expression.](/docs/manage/partitions-data-tiers) Each partition's contents are determined by the routing expression, which will be scoped using metadata and/or keywords.
-
-[Variable Retention.](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention.md) Each Partition has its own retention period. This allows for some logs to be retained for longer, while others are discarded more quickly.
+* [Routing Expression.](/docs/manage/partitions-data-tiers) Each partition's contents are determined by the routing expression, which will be scoped using metadata and/or keywords.
+* [Variable Retention.](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention.md) Each Partition has its own retention period. This allows for some logs to be retained for longer, while others are discarded more quickly.
 
 
 ### Field Extraction Rule setup
 
-Before adding Field Extraction Rule (FER), consider the following:  
+[Field Extraction Rules](/docs/manage/field-extractions) (FERs) are used to pre-parse key/value pairs from log messages as they're collected. They're best utilized on logs that have consistent formatting.
+
+Before creating a Field Extraction Rule (FER), consider the following:  
 
 * **Query Performance**. FERs reduce query runtime by running the parsing logic during collection rather than during search execution.
 * **Query Simplification**. FERs simplify queries by removing the need for parse logic in the query. Since the logs are pre-parsed, the parse statements are removed from the relevant searches.
@@ -147,23 +151,7 @@ Before adding Field Extraction Rule (FER), consider the following:
 * **FER Scoping**. FERs are composed of a scoping statement and the parsing logic; scoping usually involves SourceCategory and possibly keywords.
 * **Limitations**. FERs can not extract every key/value pair but should be prioritized to the most commonly logged and searched key/value pairs.
 
-[FER Basics](/docs/manage/field-extractions). Field Extraction Rules are used to pre-parse key/value pairs from log messages as they're collected. They're best utilized on logs that have consistent formatting.
-
-[Create an FER.](/docs/manage/field-extractions/create-field-extraction-rule) If applicable, identify a set of logs to be pre-parsed by a FER. To create the FER, go to **Manage Data** > **Settings** > **Field Extraction Rules**. The rule will require you to implement a **Rule Name**, **Scope**, and **Parse Expression**.
-
-Learn how to create a FER through our video, "Creating a Field Extraction Rule".
-
-<Iframe url="https://www.youtube.com/embed/QWm8hR7SmxE"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
+If applicable, identify a set of logs to be pre-parsed by a FER. To [create the FER](/docs/manage/field-extractions/create-field-extraction-rule), go to **Manage Data** > **Settings** > **Field Extraction Rules**. The rule will require you to implement a **Rule Name**, **Scope**, and **Parse Expression**.
 
 ## Training and Certification
 

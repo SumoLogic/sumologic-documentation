@@ -23,6 +23,7 @@ module.exports = {
       link: {type: 'doc', id: 'get-started/index'},
       items: [
         'get-started/overview',
+        'get-started/sign-up',
         'get-started/quickstart',
         'get-started/onboarding-checklists',
         'get-started/account-settings-preferences',
