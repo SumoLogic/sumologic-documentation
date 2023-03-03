@@ -1878,8 +1878,8 @@ integrations: [
             'integrations/databases/oracle/alerts',
           ],
         },
-        'integrations/databases/redis',
         'integrations/databases/postgresql',
+        'integrations/databases/redis',
         ],
       },
       {
