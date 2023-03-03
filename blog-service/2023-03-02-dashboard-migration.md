@@ -12,7 +12,9 @@ authors:
   - url: https://help.sumologic.com/release-notes-service/rss.xml
     image_url: /img/release-notes/rss-orange.png
 ---
-An automatic migration tool is now in Beta. It is available to assist you with Classic dashboard migration.  This tool can be accessed directly from a Classic dashboard page by clicking on the **Migrate to new dashboards** link toward the top of the page. 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+Beta - To prepare for Dashboards (Classic) deprecation in late 2023, we've released a tool to assist you with migrating from Dashboards (Classic) to Dashboards (New). You can access this tool directly from a Classic dashboard page by clicking on the **Migrate to new dashboards** link toward the top of the page. 
 
 <img src={useBaseUrl('img/release_notes/service/DashboardMigration.png')} alt="Migrate Dashboard switch" />
 
