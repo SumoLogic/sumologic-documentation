@@ -1,6 +1,6 @@
 ---
 id: linux-os-syslog
-title: Linux OS Syslog
+title: Linux OS Syslog - Cloud SIEM
 sidebar_label: Linux OS Syslog
 description: Configure a syslog source to ingest Linux OS log messages to be parsed by CSE’s system parser for Linux OS Syslog.
 ---
@@ -41,7 +41,7 @@ In this step, you configure a Syslog Source to collect Linux OS log messages. Yo
 
 ### Configure an Installed Collector
 
-1. In the Sumo Logic platform, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Installed Collector**.
 1. The **Add Installed Collector** popup appears.
@@ -62,7 +62,7 @@ In this step, you configure a Syslog Source to collect Linux OS log messages. Yo
 
 ### Configure a Syslog Source
 
-1. In Sumo Logic, select **Manage Data \> Collection \>
+1. In Sumo Logic, select **Manage Data > Collection >
     Collection**. 
 1. Navigate to the Installed Collector where you want to create the
     source.

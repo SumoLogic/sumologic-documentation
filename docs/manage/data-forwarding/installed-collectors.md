@@ -29,7 +29,7 @@ You need the [Manage Collectors role capability](../users-roles/roles/role-capa
 
 To set up a data forwarding destination:
 
-1. Choose **Manage Data \> Collection \> Data Archiving**.
+1. Choose **Manage Data > Collection > Data Archiving**.
 1. Click **+ Destination** to add a new destination.
 1. Select one of these options for **Destination Type**. 
    * Hitachi
@@ -96,12 +96,12 @@ There are several methods you can use to configure processing rules: 
 
 * In Sumo Logic - See the instructions below.
 * With JSON - See [Creating Processing Rules Using a JSON File](/docs/send-data/use-json-configure-sources). 
-* Collector Management API - See [Collector Management API](/docs/api/collectors) for instructions on using the API to configure sources for Data Forwarding.
+* Collector Management API - See [Collector Management API](/docs/api/collector-management) for instructions on using the API to configure sources for Data Forwarding.
 * Local Source configuration files -  See [Local File Configuration Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management) for general information on managing sources using local file configuration.
 
 **To configure processing rules for data forwarding using the web application**
 
-1. Go to **Manage Data** \> **Collection** \> **Collection**.
+1. Go to **Manage Data** > **Collection** > **Collection**.
 1. Search for the source that you want to configure, and click the **Edit** link for the source. The source must be associated with an Installed Collector.
 1. Scroll down to the **Processing Rules** section and click the arrow to expand the section.
 1. Click **Add Rule**.
@@ -139,7 +139,7 @@ You can add properties to the collector.properties file, in the Collector's /con
 After the memory and disk limits are reached, data will be dropped, so the limits should not be set too low
 
 | Property | Description |
-| -- | -- |
+| :-- | :-- |
 | `queue.rest.max.memory.mb` | Specifies the amount of memory allocated to the data forwarding queue for each REST destination.<br/><br/>Default: 8MB |
 | `queue.rest.max.disk.mb` | Specifies the amount of disk space allocated to the data forwarding queue for each REST destination.<br/><br/>Default: 500MB |
 | `queue.syslog.max.memory.mb` | Specifies the amount of memory allocated to the data forwarding queue for each Syslog destination.<br/><br/>Default: 8MB |

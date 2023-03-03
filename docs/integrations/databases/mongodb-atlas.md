@@ -1,6 +1,6 @@
 ---
 id: mongodb-atlas
-title: Sumo Logic App for MongoDB Atlas
+title: MongoDB Atlas
 sidebar_label: MongoDB Atlas
 description: The Sumo Logic App for MongoDB Atlas provides visibility into the security posture of your clusters and allows for easy monitoring of performance KPIs and database operational activities with predefined dashboards for visibility into MongoDB alerts and user activity audit logs, insights into slow queries, database and hardware metrics, and monitoring database operations.
 ---
@@ -290,7 +290,7 @@ In this section, you deploy the SAM application, which creates the necessary res
 10. We go to the mongo console, click on Organization Access>Access Manager > API Keys, and click on ‘...’ of the API Key as mentioned in step 2. Then click on Edit Permissions.
 11. Click Next > Add Access List Entry. Enter the elastic IPs noted above and, then click Save to save the elastic IPs, and click on Done to apply the settings.
 
-The lambda function should be working now in sending logs to Sumo. You can check the cloudwatch logs in Monitor>Logs to see the logs of the function.
+The lambda function should be working now in sending logs to Sumo. You can check the CloudWatch logs in Monitor > Logs to see the logs of the function.
 
 
 
@@ -684,8 +684,8 @@ To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+1. From the **App Catalog**, search for and select the app.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 

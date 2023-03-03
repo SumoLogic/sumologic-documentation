@@ -38,7 +38,7 @@ Sumo Logic AWS Distro Lambda Layer supports:
 
     ![lambda-java2.png](/img/traces/lambda-java2.png)
 
-1. Navigate to the **Configuration \> Environment variables** section and set up the following **required** environment variables:
+1. Navigate to the **Configuration > Environment variables** section and set up the following **required** environment variables:
 
    * `AWS_LAMBDA_EXEC_WRAPPER` environment variable configures the appropriate wrapper for a specific type of lambda handler function. Set the value appropriate for your handler:
 
@@ -59,7 +59,7 @@ Sumo Logic AWS Distro Lambda Layer supports:
 
     ![img](/img/traces/lambda-java3.png)
 
-1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces.md).
+1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces.md).
 
 ## Optional manual instrumentation
 
@@ -94,7 +94,7 @@ library.
 The following are Sumo Logic AWS Distro Lambda layers for AWS Region amd64 (x86_64) architecture.
 
 | AWS Region | ARN |
-|--|--|
+|:--|:--|
 | US East (N.Virginia) us-east-1 | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-java-x86_64-ver-1-12-1:1 |
 | US East (Ohio) us-east-2 | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-java-x86_64-ver-1-12-1:1      |
 | US West (N.Carolina) us-west-1 | arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-java-x86_64-ver-1-12-1:1      |
@@ -122,7 +122,7 @@ The following are Sumo Logic AWS Distro Lambda layers for AWS Region amd64 (x86_
 The following are Sumo Logic AWS Distro Lambda layers for AWS Region arm64 architecture.
 
 | AWS Region | ARN |
-|--|--|
+|:--|:--|
 | US East (N.Virginia) us-east-1          | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-java-arm64-ver-1-12-1:1      |
 | US East (Ohio) us-east-2                | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-java-arm64-ver-1-12-1:1      |
 | US West (Oregon) us-west-2              | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-java-arm64-ver-1-12-1:1      |
@@ -185,4 +185,4 @@ Instrumentation of container-based AWS Lambda function requires some changes in 
      * **application=YOUR_APPLICATION_NAME** - the string value, if the function is a part of complex system/application then set it for all other functions/applications.
      * **cloud.account.id=YOUR_CLOUD_ACCOUNT_ID** - set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data. All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, **OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012**.
    * **SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL** has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](/docs/apm/traces/get-started-transaction-tracing/http-traces-source#view-the-endpoint-url). You can use an existing Source or create a new one if needed. <br/><img src={useBaseUrl('img/traces/image2.png')} alt="otel" />
-4. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces). The instructions above instrument only requests related to the handler function. To instrument other calls like HTTP calls, DB calls additional libraries have to be added to the Docker image. See [supported libraries, frameworks and application servers](https://github.com/open-telemetry/opentelemetry-java-instrumentation#supported-libraries-frameworks-and-application-servers).
+4. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces). The instructions above instrument only requests related to the handler function. To instrument other calls like HTTP calls, DB calls additional libraries have to be added to the Docker image. See [supported libraries, frameworks and application servers](https://github.com/open-telemetry/opentelemetry-java-instrumentation#supported-libraries-frameworks-and-application-servers).

@@ -1,6 +1,7 @@
 ---
 id: docker-collection-methods
 title: Docker Collection Methods
+sidebar_label: Docker
 description: Learn about methods for collecting logs and metrics from Docker.
 ---
 
@@ -16,7 +17,7 @@ While Kubernetes can run Docker, it supports multiple container runtime systems 
 The following table summarizes what you can collect with each collection method. 
 
 | Collection Methods | Logs | Metrics |
-|--|--|--|
+|:--|:--|:--|
 | Docker Logging Driver	 | ![check](/img/reuse/check.png) |  |
 | Installed Collector on Docker Host<br/>(with Docker Log source and Docker Stats source)| ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Collector as a Container<br/>(with Docker Log source and Docker Stats source)	 | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
@@ -83,7 +84,7 @@ The Docker Logging Driver is supported with Docker Version 18.03.0-ce or higher 
 :::
 
 | Platform | Installed Collector On Docker | Host | Collector As Container | Docker Logging Driver |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | Docker<br/>(not managed service) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
 | ECS | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
 | Docker Swarm | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |

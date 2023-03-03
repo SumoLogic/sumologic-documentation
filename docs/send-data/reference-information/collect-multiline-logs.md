@@ -4,15 +4,13 @@ title: Collecting Multiline Logs
 description: Sumo Logic Sources can be configured to detect log boundaries automatically or with a regular expression.
 ---
 
-
-
 Sumo Logic Sources by default have multiline processing enabled. Multiline processing is used to ensure a log message that is made up of multiple lines, separated by a line break or carriage return, are properly grouped as a single log message when ingested into Sumo Logic.
 
 Multiline processing requires your logs to have line breaks or carriage returns between messages. If the logs are part of a larger individual message (for example, JSON array or XML) Sumo Logic will in most cases not be able to break these into individual logs.
 
 ## Multiline Processing Caveats
 
-Multiline messages that are more than 2,000** **lines or 512KB in size will get flushed and collected as single log lines due to the default log message size limitations. Depending on the Collector's available memory you may be able to increase this limit, please contact Support for assistance by navigating to 'Help' \> 'Support' in the Sumo
+Multiline messages that are more than 2,000** **lines or 512KB in size will get flushed and collected as single log lines due to the default log message size limitations. Depending on the Collector's available memory you may be able to increase this limit, please contact Support for assistance by navigating to 'Help' > 'Support' in the Sumo
 menu.
 
 Messages will be further broken down when they are received and indexed. When collecting log messages that are larger than 64KB in size, Sumo Logic slices the messages into a stream of smaller message chunks. Chunks are ideally created at a line break depending on the Source type, protocol, and size of the message. Each section of the large messages is annotated with metadata to keep the message in order when viewing or searching the log. Review the relevant Source's documentation for additional information.
@@ -34,7 +32,9 @@ The Collector will attempt to use the first 1,000 lines, or as many lines as app
 
 You can specify the boundary between messages using a regular expression. Enter a regular expression for the full first line of every multi-line message in your log files.
 
-In cases where a single Source is being used to collect multiple different types of files of varying formats or if no consistent pattern is detected within the messages being received then it is possible for each line to be flushed as a single message or some messages to be improperly grouped into a single message. Even when ingesting a single Source type auto detection is not guaranteed to work for all cases, this is noted within the Source configuration with the following text "*Please note, Infer Boundaries may not be accurate for all log types.*" In this case, a custom **Boundary Regex** expression may be required for detecting the start of each log message.
+In cases where a single Source is being used to collect multiple different types of files of varying formats or if no consistent pattern is detected within the messages being received then it is possible for each line to be flushed as a single message or some messages to be improperly grouped into a single message.
+
+Even when ingesting a single Source type, auto detection is not guaranteed to work for all cases, this is noted within the Source configuration with the following text: `Please note, Infer Boundaries may not be accurate for all log types`. In this case, a custom **Boundary Regex** expression may be required for detecting the start of each log message.
 
 When the option for **Boundary Regex** is used with the multiline detection the Collector will use the supplied regular expression to try and match the first line of a multiline message.
 

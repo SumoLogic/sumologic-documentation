@@ -15,7 +15,7 @@ A user designated as Account Owner cannot be deleted. To transfer ownership, the
 
 ## Check for allowlisted IP addresses
 
-Verify if the user has an IP address that should be removed under **Administration** \> **Security**.
+Verify if the user has an IP address that should be removed under **Administration** > **Security**.
 
 ## Check for access to any shared Access IDs and Keys
 

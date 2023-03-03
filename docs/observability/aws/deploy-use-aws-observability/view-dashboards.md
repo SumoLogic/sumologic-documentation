@@ -10,7 +10,7 @@ description: Learn how to use Explore to navigate your AWS Observability infrast
 This feature is available in the following account plans.
 
 | Solution Component | CloudFlex | Credits |
-|--|--|--|
+|:--|:--|:--|
 | AWS Observability Dashboards | Trial, Professional, and Enterprise | Trial, Essentials, Enterprise Operations, Enterprise Security,  Enterprise Suite |
 | Root Cause Explorer | Trail, Enterprise | Trial, Enterprise Operations, Enterprise Suite |
 
@@ -89,9 +89,7 @@ To view the app dashboards outside of Explorer, do the following:
 
 1. Navigate to your Sumo Logic personal folder. 
 1. Click an app folder to list the dashboard pages.
-1. Click a page link to view the dashboard in the window on the right.   
-
-    ![App_folder.png](/img/observability/add-new-service.jpeg)
+1. Click a page link to view the dashboard in the window on the right.   <br/>  ![App_folder.png](/img/observability/add-new-service.jpeg)
 
 Click a link for information on the individual app dashboards:
 

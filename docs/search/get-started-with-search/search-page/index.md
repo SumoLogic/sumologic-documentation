@@ -5,14 +5,14 @@ description: Understand the basic components of the Search window and how they c
 ---
 
 
-On the Search page you can enter [simple or complex queries] FIX (../search-basics/about-search-basics.md)to search your entire Sumo Logic data repository. You can save and select searches from your [Library](/docs/get-started/library). After running a search your results are displayed in either the **Messages** tab (for raw message data) or the **Aggregates** tab (for grouped results). See [how to navigate through search results](navigate-messages-in-search-results.md).
+On the Search page, you can enter [simple or complex queries](../search-basics/about-search-basics.md) to search your entire Sumo Logic data repository. You can save and select searches from your [Library](/docs/get-started/library). After running a search, your results are displayed in either the **Messages** tab (for raw message data) or the **Aggregates** tab (for grouped results). See [how to navigate through search results](navigate-messages-in-search-results.md).
 
 You can [run a saved search](../search-basics/save-search.md), [pause, or stop searches](../search-basics/pause-cancel-search.md), or [schedule a search to run periodically](../../../alerts/scheduled-searches/schedule-search.md) and notify you of the results.
 
 ![search page feb 2022.png](/img/search/get-started-search/search-page/search-page.png)
 
 | Letter | Purpose |
-|--|--|
+|:--|:--|
 | A | [Basic or Advanced mode](search-modes.md) search text box. Advanced mode searches are limited to a maximum of 15,000 characters in length.<br/><br/>Click the clock icon to see recent searches. Previously run searches are saved automatically for your reference. Instead of recreating your search, you can select it from the dropdown.<br/><br/>As you make changes, a message displays if you have not pressed enter to execute the query: ![query detected](/img/search/get-started-search/search-page/query-changes-detected.png) |
 | B | [Time range](../build-search/set-time-range.md) of the search. |
 | C | Start the search. |
@@ -38,7 +38,7 @@ In your search query, you'll see that we have separated out important terms in a
 ![Query Sample Colors](/img/search/get-started-search/search-page/query-with-colors.png)
 
 | Color | Purpose |
-|--|--|
+|:--|:--|
 | Blue | Boolean operators (and, or, not) |
 | Red | Quoted string |
 | Purple | Sumo first operators (parse, nodrop, etc.) and secondary operators (row, column) |

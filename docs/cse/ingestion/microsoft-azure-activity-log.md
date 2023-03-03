@@ -1,6 +1,6 @@
 ---
 id: microsoft-azure-activity-log
-title: Microsoft Azure Activity Log
+title: Microsoft Azure Activity Log - Cloud SIEM
 sidebar_label: Microsoft Azure Activity Log
 description: Configure an HTTP Source to ingest Microsoft Azure Activity Log messages and to be parsered by CSE's system parser for Azure Activity Log.
 ---
@@ -13,7 +13,7 @@ In this step, you configure an HTTP Source to collect Azure Activity log message
 
 ### Configure a Hosted Collector
 
-1. In the Sumo Logic platform, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  

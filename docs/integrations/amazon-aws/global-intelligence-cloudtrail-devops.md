@@ -1,7 +1,6 @@
 ---
 id: global-intelligence-cloudtrail-devops
 title: Global Intelligence for AWS CloudTrail DevOps
-sidebar_label: AWS CloudTrail DevOps Global Intelligence
 description: Global Intelligence for AWS CloudTrail - DevOps provides insights for on-call engineers, SRE, and DevOps users to help minimize AWS errors and maximize app availability.
 ---
 
@@ -17,7 +16,7 @@ Global Intelligence for AWS CloudTrail - DevOps provides insights for on-call en
 * Amazon RDS
 * Amazon Redshift
 * Amazon DynamoDB
-* Amazon Elasticache
+* Amazon ElastiCache
 * AWS Lambda
 * AWS Auto Scaling
 
@@ -38,8 +37,6 @@ In addition, the app provides configuration guidance for key AWS services based 
 * An action plan helps users focus their attention on specific microservices in particular AWS accounts that might be experiencing errors.
 
 ## Prerequisites
-
-<p><span className="globalIntelligence">Global Intelligence App</span></p>
 
 This feature is available in the following account plans.
 
@@ -174,10 +171,10 @@ To configure log collection for Global Intelligence for AWS CloudTrail, follow t
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -300,7 +297,7 @@ The **GI CloudTrail DevOps - 05. Configuration Benchmarks** dashboard provides i
 * Amazon RDS
 * Amazon Redshift
 * Amazon DynamoDB
-* Amazon Elasticache
+* Amazon ElastiCache
 
 Three types of configurations are benchmarked to help users understand the common values of each setting in the Sumo Logic population for a given AWS service:
 

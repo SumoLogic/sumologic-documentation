@@ -1,6 +1,6 @@
 ---
 id: puppet
-title: Sumo Logic App for Puppet
+title: Puppet
 sidebar_label: Puppet
 description: The Sumo Logic App for Puppet helps you monitor Puppet metrics and events.
 ---
@@ -210,11 +210,11 @@ This section has instructions for setting up a Script source that runs a shell s
 The following requirements apply to the script source:
 
 * The user running the collector process must have read and write access to the Puppet Reports directory.
-* The collector executes the script as the user running the collector process. The script outputs data to your machine's stdout or stderror output streams to be collected. For more information see [Script Source](/docs/send-data/installed-collectors/sources/Script-Source).
+* The collector executes the script as the user running the collector process. The script outputs data to your machine's stdout or stderror output streams to be collected. For more information, see [Script Source](/docs/send-data/installed-collectors/sources/script-source).
 * The machine where you run the script must have Ruby installed.
 * The script generates a log in the configured working directory that you can review in case of issues.
 
-For more information see [Script Source](/docs/send-data/installed-collectors/sources/Script-Source).
+For more information, see [Script Source](/docs/send-data/installed-collectors/sources/script-source).
 
 #### To set up a script source
 
@@ -222,7 +222,7 @@ The script requires Ruby on the host machine.
 
 1. In the Sumo web app, select **Manage Data > Collection > Collection**.
 2. Navigate to the collector you installed on the Puppet Master host, and select **Add > Add Source**.
-3. Select **Script**. New Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
+3. Select **Script**. New Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 4. **Name**. (Required).
 5. **Description**. (Optional).
 6. **Source Host**. Enter the hostname or IP address of the source host. The hostname can be a maximum of 128 characters.

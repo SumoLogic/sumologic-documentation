@@ -1,6 +1,6 @@
 ---
 id: carbon-black-cloud
-title: Sumo Logic App for Carbon Black Cloud
+title: Carbon Black Cloud
 sidebar_label: Carbon Black Cloud
 description: The Carbon Black Cloud App analyzes alert and event data from the Endpoint Standard and Enterprise EDR products. App dashboards provide visibility into threats, TTPs, devices, and more.
 ---
@@ -81,7 +81,7 @@ As a prerequisite, [Grant Sumo Logic access](/docs/send-data/hosted-collectors/a
 
 #### S3 Source for event logs
 
-Follow these steps to set up an S3 Source to collect event logs from your S3 bucket. (For detailed instruction on S3 Source configuration options, see [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source).)
+Follow these steps to set up an S3 Source to collect event logs from your S3 bucket. (For detailed instruction on S3 Source configuration options, see [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).
 
 
 1. In Sumo Logic select** Manage Data > Collection > Collection**.

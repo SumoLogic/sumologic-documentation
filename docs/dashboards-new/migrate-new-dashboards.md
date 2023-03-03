@@ -1,33 +1,28 @@
 ---
 id: migrate-to-new-dashboards
-title: Migrate New Dashboards
-sidebar_label: Migrate to New Dashboards
-description: This document explains the new Migration Dashboards functionality.
+title: Migrate to Dashboards (New)
+description: This document explains the how to migrate Dashboard (Classic) to Dashboards (New) functionality.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Overview
-
-The new **Migrate to New Dashboards** functionality allows you to switch to **New Dashboards** from the **Classic Dashboards** with the help of a single click**. Migrate to New Dashboards lets you transform any of your classic dashboards into a new dashboard format, with minimal intervention from post-migration activity. It lets you analyze metrics and log data on the same dashboard, in a streamlined user experience.It lets you analyze metrics and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to monitor and manage a Kubernetes environment effectively.
-
-This gives you control over the visual display of metric and logs data. Dashboard (New) streamlines dashboard configuration and on-the-fly analytic visualizations with its new templating features.
-
-:::note
-We do not guarantee 100% conversion from classic to new dashboard although we do provide an exhaustive list of incompatibilities that need to be taken care of. Customers can still keep their old dashboard after migration.
-:::
+The **Migrate to New Dashboards** functionality allows you to transform **Dashboards (Classic)** to the **Dashboards (New)** format, with minimal intervention from post-migration activity.
 
 ## Advantages
 
-* New dashboards are constantly developed for new feature additions.
-* New dashboard provides the unique ability to display metrics metadata and logs data on the same dashboard in an integrated seamless view.
-* New dashboard streamlines dashboard configuration and on-the-fly analytic visualizations with its new templating features.
+**Dashboards (New)**:
+
+* Are continuously released and updated with new feature additions.
+* Provide the unique ability to analyze metrics metadata and logs data on the same dashboard, in an integrated seamless view. This is exactly what you need to monitor and manage a Kubernetes environment effectively.
+* Give you control over the visual display of metric and logs data.
+* Streamline dashboard configuration and on-the-fly analytic visualizations with its new templating features.
 
 ## Changes after migration
 
 This table shows the complete list of features that are changed after the implementation of the **Migrate to New Dashboards** feature.
 
 | Features |  Supported    |   Not Supported   |
-| --------   | :-------------    |   :------------  |  
+| :--------   | :-------------    |   :------------  |  
 | Theme      | No effect, migrated as it is | NA  |
 | Dashboard Layout | <ul> <li>Panel position in the grid stay the same</li> <li>Panel heights might slightly differ</li> </ul> | NA |
 | Chart colors | <ul> <li>Exact color won’t be preserved, although color families will be preserved.</li> </ul> |  NA |
@@ -52,14 +47,34 @@ This table shows the complete list of features that are changed after the implem
 
 ## Migration Steps
 
+:::caution
+We do not guarantee 100% conversion from classic to new dashboard, although we do provide an exhaustive list of incompatibilities that need to be taken care of. You can still keep your old dashboard after migration.
+:::
+
 This section explains to you the step-by-step process to migrate your dashboards.
 
 1. Navigate to any of your classic dashboards or create a new one. Click **Migrate to new dashboards** link.<br/><img src={useBaseUrl('img/dashboards-new/migrate-dashboard1.png')} alt="dashboard" width="600"/>
 2. A dialog box appears. Click **Migrate to New Dashboard** as shown below.<br/><img src={useBaseUrl('img/dashboards-new/migrate-dashboard2.png')} alt="dashboard" width="600"/>
-3. Click **Open Dashboard** to view the migrated dashboard, given the migration is successful.<br/><img src={useBaseUrl('img/dashboards-new/migrate-dashboard3.png')} alt="dashboard" width="600"/>.<br/>The following dialog can have 2 other states:
+3. Click **Open Dashboard** to view the migrated dashboard, given the migration is successful.<br/><img src={useBaseUrl('img/dashboards-new/migrate-dashboard3.png')} alt="dashboard" width="600"/> <br/>The following dialog can have 2 other states:
     1. **Warning State.** Showing any warnings during migrations: warnings don’t fail the migration process, however, it might be something that you have to fix on your own or is a feature that is not yet supported on the new dashboard.<br/><img src={useBaseUrl('img/dashboards-new/migrate-dashboard4.png')} alt="dashboard" width="600"/>
     2. **Error State.** The process can sometimes run into an error state, this fails the migration and the new dashboard is not created.<br/><img src={useBaseUrl('img/dashboards-new/migrate-dashboard5.png')} alt="dashboard" width="600"/>
 
+
+### Bulk Migration
+
+The bulk migration feature is an extension to the dashboard migration feature that allows the user to migrate multiple classic dashboards at once:
+
+1. Go to **Library**, and select two or more **Dashboards**. Click **Migrate Dashboards** link.<br/><img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/Bulk+Migration/Screenshot-1.png')} alt="dashboard" width="600"/>
+2. A dialog box appears. Click **Migrate to New Dashboard** as shown.<br/><img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/Bulk+Migration/Screenshot-2.png')} alt="dashboard" width="600"/>
+3. The bottom right corner shows real-time information on the migration process.<br/><img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/Bulk+Migration/Screenshot-3.png')} alt="dashboard" width="600"/>
+4. The following information is populated once the migration is complete.
+    * Summary of the process.
+    * Hovering on the error (if any) shows the error information in the tooltip.
+    * The dashboard's blue names are clickable and open up the dashboard.<br/><img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/Bulk+Migration/Screenshot-4.png')} alt="dashboard" width="600"/>
+
+:::important
+Choosing more than fifty dashboards will disable the **Migrate** button.<br/><img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/Bulk+Migration/Screenshot-5.png')} alt="dashboard" width="600"/>
+:::
 
 ## Limitations
 

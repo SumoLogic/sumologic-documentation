@@ -1,6 +1,6 @@
 ---
 id: aws-application-load-balancer
-title: AWS Application Load Balancer
+title: AWS Application Load Balancer - Cloud SIEM
 sidebar_label: AWS Application Load Balancer
 description: Configure collection and ingestion of AWS Application Load Balancer (ALB) log messages from an S3 bucket to be parsed by CSE's AWS ALB system parser.
 ---
@@ -13,7 +13,7 @@ Sumo Logic CSE supports the default AWS Application Load Balancer log format whi
 
 By default, ALB logging is not enabled in your organization's AWS account. You can find additional assistance for enabling logging in [AWS Documentation](http://aws.amazon.com/documentation/elastic-load-balancing/).
 
-1. In the AWS Management Console, choose **EC2 \> Load Balancers**.
+1. In the AWS Management Console, choose **EC2 > Load Balancers**.
 1. Under **Access Logs**, click **Edit**.
 1. In the **Configure Access Logs** dialog box, click **Enable Access Logs**, then choose an Interval and S3 bucket. This is the S3 bucket that will upload logs to Sumo Logic.
 1. Click **Save**.
@@ -25,7 +25,7 @@ In this step, you configure an HTTP Source to collect AWS ALB log messages. Yo
 
 ### Configure a hosted collector
 
-1. In the Sumo Logic platform, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  
@@ -43,7 +43,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 
 ### Configure an AWS S3 Source
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. Navigate to the Hosted Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select Amazon S3. 

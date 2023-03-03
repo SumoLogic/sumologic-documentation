@@ -37,7 +37,7 @@ AWS Observability provides a view across AWS accounts, regions, namespaces, and
 Adding a service requires:
 
 * The AWS Observability solution must be installed for at least one supported service.
-* Collect metrics for your service using a [Sumo Logic AWS Cloudwatch  metrics source](/docs/send-data/hosted-collectors/amazon-aws/Amazon-CloudWatch-Source-Metrics) for an AWS account currently monitored by the AWS Observability solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
+* Collect metrics for your service using a [Sumo Logic AWS Cloudwatch  metrics source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) for an AWS account currently monitored by the AWS Observability solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
 * Create at least one Sumo Logic dashboard based on CloudWatch metrics and log data to monitor the operations of the AWS Service.
 
 See [Add a New AWS Service to the AWS Observability Explore Hierarchy](/docs/observability/aws/other-configurations-tools/add-new-aws-service.md) to add a new service to the AWS Observability hierarchy. 
@@ -119,7 +119,7 @@ Sumo Logic provides updates to the AWS Observability solution through CloudForma
 
 ### What are options to monitor EC2 Host Metrics?
 
-There are two ways EC2 can be monitored. One way is to use the [CloudWatch metrics for EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html) which are collected by default in the solution. Another way is to install [Sumo Logic Collector for Host Metrics](/docs/send-data/installed-collectors/sources/Host-Metrics-Source#collected-metrics) on EC2 instance. The list of metrics and their details from the two methods can be fetched using the embedded links. In addition to this, there are two Apps for EC2 which are provided out of the box with AWS Observability Solution :
+There are two ways EC2 can be monitored. One way is to use the [CloudWatch metrics for EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html) which are collected by default in the solution. Another way is to install [Sumo Logic Collector for Host Metrics](/docs/send-data/installed-collectors/sources/host-metrics-source#collected-metrics) on EC2 instance. The list of metrics and their details from the two methods can be fetched using the embedded links. In addition to this, there are two Apps for EC2 which are provided out of the box with AWS Observability Solution :
 
 * AWS EC2 - Uses CloudWatch Metrics for EC2 and CloudTrail events
 * Host Metrics (EC2) - Uses metrics from Installed Collector.
@@ -184,7 +184,7 @@ See [Root Cause Explorer](/docs/observability/root-cause-explorer.md) for more d
 
 Sumo Logic Root Cause Explorer analyzes and correlates metrics from all supported AWS Observability services and EBS, Autoscaling, X-ray, SNS, and SQS. These services include the following:
 
-* AWS CloudWatch metrics for ALB, NLB, API Gateway, EC2, EBS, Lambda, ECS, RDS, DynamoDB, Elasticache, Autoscaling groups
+* AWS CloudWatch metrics for ALB, NLB, API Gateway, EC2, EBS, Lambda, ECS, RDS, DynamoDB, ElastiCache, Autoscaling groups
 * AWS Simple Notification Service (SNS)
 * AWS Simple Queueing Service (SQS)
 * AWS X-ray

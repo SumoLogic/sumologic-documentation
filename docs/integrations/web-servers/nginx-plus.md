@@ -1,6 +1,6 @@
 ---
 id: nginx-plus
-title: Sumo Logic App for Nginx Plus
+title: Nginx Plus
 sidebar_label: Nginx Plus
 description: The Nginx Plus app is an unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of your Nginx Plus web servers.
 ---
@@ -167,7 +167,7 @@ This section provides instructions for configuring log collection for the Sumo L
 
 1. **Configure logging in Nginx**. Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following documentation: [https://www.nginx.com/resources/admin-guide/logging-and-monitoring/](https://www.nginx.com/resources/admin-guide/logging-and-monitoring/)
 2. **Configure a Collector**. Use one of the following Sumo Logic Collector options:
-   * To collect logs directly from the Nginx Plus machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+   * To collect logs directly from the Nginx Plus machine, configure an [Installed Collector](/docs/send-data/installed-collectors).
    * If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 3. **Configure a Source**. Choose a method:
 
@@ -374,7 +374,7 @@ This section has instructions for installing the Sumo App for Nginx Plus. The in
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

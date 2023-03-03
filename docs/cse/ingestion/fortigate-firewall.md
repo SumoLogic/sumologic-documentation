@@ -1,6 +1,6 @@
 ---
 id: fortigate-firewall
-title: Fortigate Firewall
+title: Fortigate Firewall - Cloud SIEM
 sidebar_label: Fortigate Firewall
 description: Configure a syslog source to ingest Fortigate Firewall log messages to be parsed by CSE’s system parser for Fortigate Firewall.
 ---
@@ -35,7 +35,7 @@ In this step, you configure a Syslog Source to collect FortiGate log messages. Y
 
 ### Configure a Syslog Source
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. Navigate to the Installed Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 

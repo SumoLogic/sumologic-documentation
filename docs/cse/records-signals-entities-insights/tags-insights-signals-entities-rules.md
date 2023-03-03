@@ -27,7 +27,7 @@ CSE UI. Some can inherit tags from another item. The table below
 summarizes this behavior.
 
 | Type                     | Supports explicit tag assignment? | Items inherit tags from...      |
-|--------------------------|-----------------------------------|---------------------------------|
+|:--------------------------|:-----------------------------------|:---------------------------------|
 | Built-in rule            | yes                               | \-                              |
 | Custom rule              | yes                               | \-                              |
 | Custom Insight           | yes                               | \-                              |
@@ -133,29 +133,17 @@ Note that in addition to tags that you manually assign to an Insight, an Insight
 
 ### Search Insights, Signals, or Entities by tag
 
-1. Click in the search area and then click the funnel icon.
-
-    ![funnel-icon.png](/img/cse/funnel-icon.png)
-1. Select **Insights**, **Signals**, or **Entities** from the **Sources** list.
-
-    ![sources.png](/img/cse/sources.png)
-1. Select **Tags** from the **Fields** list.
-
-    ![tags-field.png](/img/cse/tags-field.png)
-1. Choose **contain** or **do not contain** from the **Operators** list.
-
-    ![operators.png](/img/cse/operators.png)
+1. Click in the search area and then click the funnel icon.<br/>  ![funnel-icon.png](/img/cse/funnel-icon.png)
+1. Select **Insights**, **Signals**, or **Entities** from the **Sources** list.<br/>  ![sources.png](/img/cse/sources.png)
+1. Select **Tags** from the **Fields** list.<br/> ![tags-field.png](/img/cse/tags-field.png)
+1. Choose **contain** or **do not contain** from the **Operators** list.<br/>  ![operators.png](/img/cse/operators.png)
 1. Select a tag from either the **Schema Keys** or **Keyword Tags** list. If you select a tag from the **Schema Keys** list, you are prompted to select a value, and items that match are listed. If you select a tag from the **Keywords list**, items that match are listed.
 
 ### Search Rules by tag
 
 1. Select **Rules** from the **Content** menu.
-1. Click in the **Filters** area and select **Tags** from the **Fields** list.
-
-    ![search-rules-by-tag.png](/img/cse/search-rules-by-tag.png)
-1. Choose **contain** or **do not contain** from the **Operators** list.
-
-    ![operators.png](/img/cse/operators.png)
+1. Click in the **Filters** area and select **Tags** from the **Fields** list.<br/>  ![search-rules-by-tag.png](/img/cse/search-rules-by-tag.png)
+1. Choose **contain** or **do not contain** from the **Operators** list.<br/>  ![operators.png](/img/cse/operators.png)
 1. Select a tag from either the **Schema Keys** or **Keyword Tags** list. If you select a tag from the **Schema Keys** list, you are prompted to select a value, and items that match are listed. If you select a tag from the **Keywords Tags** list, items that match are listed. Note that if an item has a Mitre-related tag, an icon appears next to it. Click the icon to view a Mitre page on the Tactic or Technique.
 
     ![search-results.png](/img/cse/search-results.png)

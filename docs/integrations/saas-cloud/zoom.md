@@ -1,6 +1,6 @@
 ---
 id: zoom
-title: Sumo Logic App for Zoom
+title: Zoom
 sidebar_label: Zoom
 description: The Sumo Logic App for Zoom provides visibility into how Zoom is being used across your organization, displaying analytics on performance, availability, security, and user activity.
 ---
@@ -136,7 +136,7 @@ Now that you have set up collection for the Zoom events, install the Sumo Logic 
 To install the app, do the following:
 
 1. Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-2. From the **App Catalog**, search for and select the app**.**
+2. From the **App Catalog**, search for and select the app.
 3. To install the app, click **Add to Library** and complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

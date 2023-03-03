@@ -1,6 +1,6 @@
 ---
 id: redis
-title: Sumo Logic App for Redis
+title: Redis
 sidebar_label: Redis
 description: The Sumo Logic App for Redis helps you monitor the state of your database cluster.
 ---
@@ -75,8 +75,8 @@ This section provides instructions for configuring log and metric collection for
 ### Step 1: Configure Fields in Sumo Logic
 
 Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
-  
-::: note
+
+:::note
 This step is not needed if you are using the application components solution terraform script.
 :::  
 
@@ -97,7 +97,7 @@ If you're using Redis in a Kubernetes environment, create the fields:
 * `pod_labels_db_cluster`
 * `pod_labels_db_cluster_address`
 * `pod_labels_db_cluster_port`
-  
+
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -128,9 +128,14 @@ Sumo Logic supports collection of logs and metrics data from Redis in both Kuber
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).The diagram below illustrates how data is collected from Redis in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.<br/><img src={useBaseUrl('img/integrations/databases/redis-flow.png')} alt="redis-flow" />
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).The diagram below illustrates how data is collected from Redis in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
-The first service in the pipeline is Telegraf. Telegraf collects metrics from Redis. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: that is, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Redis input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
+<br/><img src={useBaseUrl('img/integrations/databases/redis-flow.png')} alt="redis-flow" />
+
+The first service in the metrics pipeline is Telegraf. Telegraf collects metrics from Redis. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: that is, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Redis input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator.
+Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) which enriches metadata and sends metrics to Sumo Logic.
+
+In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 #### Configure Metrics Collection
 
@@ -222,7 +227,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “Redis add
        * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
        * `db_system: “redis”` - This value identifies the database system.
      * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
-   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, see [this page](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, see [this page](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
 2. Collect Redis logs written to log files (Optional). If your Redis helm chart/pod is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to standard out. To do this:
    1. Determine the location of the Redis log file on Kubernetes. This can be determined from the redis.conf for your Redis cluster along with the mounts on the Redis pods.
    2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
@@ -323,7 +328,7 @@ At this point, Redis metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for Redis running on a non-Kubernetes environment for the Sumo Logic App for Redis. By default, Redis logs are stored in a log file. Redis also supports forwarding of logs via Syslog.
 
-Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Sumo Logic Installed collectors](/docs/send-data/Installed-Collectors) which  requires you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work.
+Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/cloud-syslog-source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Sumo Logic Installed collectors](/docs/send-data/installed-collectors) which  requires you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work.
 
 Follow the instructions to set up log collection:
 
@@ -358,7 +363,7 @@ After determining the location of conf file modify the **redis.conf** configurat
 
 <details><summary>Option B: Configure Redis logs to stream data to a Syslog source</summary>
 
-With this option, Redis logs can be streamed to the [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source) of a Sumo Logic Installed Collector.
+With this option, Redis logs can be streamed to the [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) of a Sumo Logic Installed Collector.
 
 To configure the Redis syslog, locate your local **redis.conf** configuration file in the database directory.
 
@@ -386,7 +391,7 @@ After determining the location of conf file, modify the **redis.conf** configura
 
 </details>
 
-3. **Configure an Installed Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
+3. **Configure an Installed Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/installed-collectors)
 4. **Configure a Source**. To add a Local File Source source for Redis, do the following:
    1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:
@@ -427,8 +432,8 @@ After determining the location of conf file, modify the **redis.conf** configura
 
 
 ## Installing Redis Monitors/Alerts
-  
-::: note
+
+:::note
 This step is not needed if you are using the application components solution terraform script.
 :::  
 
@@ -441,7 +446,7 @@ For details on the individual monitors, please see [Alerts](#Redis-Alerts).
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing them via a JSON or via a Terraform script.
 
-::: note
+:::note
 There are limits for how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 :::  
 
@@ -534,7 +539,7 @@ This section demonstrates how to install the Redis ULM App.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

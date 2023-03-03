@@ -5,7 +5,6 @@ sidebar_label: Before You Deploy
 description: Learn prerequisites and guidelines for deploying the AWS Observability Solution to a single AWS account and region.
 ---
 
-
 This page describes prerequisites and guidelines for deploying Sumo Logic’s AWS Observability Solution. 
 
 ## Prerequisites
@@ -14,8 +13,7 @@ This page describes prerequisites and guidelines for deploying Sumo Logic’s AW
 * **Sumo Logic Collectors and Sources**. The AWS Observability Solution relies upon an Installed Collector with a Host Metrics Source on each of your AWS EC2 hosts. The solution relies upon host metrics collection rather than AWS CloudWatch EC2 metrics because AWS EC2 metrics from Cloudwatch have high latency and can increase the costs of your AWS account. Host metrics have the advantage of near-zero latency and more information at a lower cost. Instructions are provided in [Configure Host Metric Source](#before-you-deploy) below.
 * Make sure you have access to the Sumo Logic console and as a user that is associated with Sumo Logic role and required role capabilities.
 * **Role capabilities**. Make sure you have a Sumo Logic role that have the following capabilities:
-
-  * Manage field extraction rules
+* Manage field extraction rules
   * Manage connections
   * View Account Overview
   * View Fields
@@ -29,7 +27,6 @@ This page describes prerequisites and guidelines for deploying Sumo Logic’s AW
   * View Monitors
   * Manage Entity Type Configs
   * Create access keys
-
 * **Sumo Logic Access ID and Key**. When you deploy the solution, you’ll need to supply a Sumo Logic Access ID and Access Key, which enable you to use Sumo Logic APIs. Make sure you have the role capabilities listed above before generating the Access ID and Key.
 * **AWS credentials**. To deploy the solution, you will need to log onto the AWS Console. For the CloudFormation template deployment option, your AWS role must have the permissions described by this [JSON file](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/AWSObservabilityCFTemplatePermissions.json). As necessary, you may add JSON text to an existing or a new policy associated with an AWS IAM role as described in the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html). For Terraform deployment options, see the \*.tmpl files in this folder [aws-observability-terraform/source-module/templates/](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform/source-module/templates).
 * Set up the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) and configure the AWS CLI as described in the [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) if you would like to use an AWS profile for Terraform script based deployment.
@@ -107,7 +104,7 @@ Going forward, you can also build your EC2 AMI machine image with these fields a
 
 Here’s a sample `sources.json` file that you can include in your AMI.
 
-```
+```json
 {
   "api.version": "v1",
    "source": {
@@ -156,17 +153,10 @@ Before setting up the AWS Observability solution we recommend testing permission
 
 1. Invoke the AWS CloudFormation template at this [URL](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.4.0/permissionchecker/permissioncheck.template.yaml).
 1. Select the desired AWS region to test.
-1. Enter a Stack Name, Sumo Logic Deployment, and Sumo Logic Access ID and Access Key.
-
-    ![Testing_sumo_Permission_1.png](/img/observability/Testing_sumo_Permission_1.png)
-
+1. Enter a Stack Name, Sumo Logic Deployment, and Sumo Logic Access ID and Access Key.<br/>  ![Testing_sumo_Permission_1.png](/img/observability/Testing_sumo_Permission_1.png)
 1. Click **Create Stack.**
 1. Verify that the AWS CloudFormation template has executed successfully in a CREATE_COMPLETE status.
-
     * This indicates that you have all the right permissions on both the Sumo Logic and the AWS side to proceed with the installation of the solution. 
-    * All the resources (Sumo Logic and AWS) created by template are also deleted.
-
-    ![Testing_sumo_Permission_2.png](/img/observability/Testing_sumo_Permission_2.png)
-
-1. If the AWS CloudFormation template has not executed successfully, identify and fix any permission errors till the stack completes with a CREATE_COMPLETE status. 
+    * All the resources (Sumo Logic and AWS) created by template are also deleted.<br/>  ![Testing_sumo_Permission_2.png](/img/observability/Testing_sumo_Permission_2.png)
+1. If the AWS CloudFormation template has not executed successfully, identify and fix any permission errors till the stack completes with a `CREATE_COMPLETE` status. 
 1. Once the AWS CloudFormation stack has executed successfully, delete the AWS CloudFormation Stack.

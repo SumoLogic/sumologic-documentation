@@ -16,7 +16,7 @@ Local Windows Event Log Sources are only for collecting Windows Event Logs. All
 
 To configure a Local Windows Event Log Source:
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic select **Manage Data > Collection > Collection**.
 
 1. Find the name of the installed collector to which you'd like to add a Source. Click **Add** and then choose** Add Source** from the pop-up menu.
 
@@ -78,9 +78,9 @@ To configure a Local Windows Event Log Source:
 
    * **Collection should begin**. Choose or enter how far back you'd like to begin collecting historical logs. You can either:
 
-        :::note
+        
         When updating the **Collection should begin** setting you will need to restart the Collector.
-        :::
+       
 
      * Choose a predefined value from dropdown list, ranging from “Now” to “24 hours ago” to “All Time”.
      * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example “-1w”. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h) and minutes (m).

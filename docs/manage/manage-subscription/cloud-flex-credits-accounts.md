@@ -21,7 +21,7 @@ You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise S
 * **Essentials**  accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-cloud-flex-account.md) from a Essential account to either Enterprise Operations, Enterprise Security, or Enterprise Suite accounts  at any time.
 * **Enterprise** **Operations** accounts are optimized for best practice operational monitoring at any ingest volume.
 * **Enterprise** **Security** accounts include advanced security capabilities. Enterprise Security is ideal for security operation centers (SOCs). SOC teams can leverage the latest PCI compliance application frameworks and threat detection capabilities.  
-* **Enterprise** **Suite** accounts are optimized to address the most advanced data insight challenges. Enterprise Suite accounts include all of Sumo Logic’s industry leading capabilities including Sumo Logic’s Tiered Analytics.
+* **Enterprise** **Suite** accounts are optimized to address the most advanced data insight challenges. Enterprise Suite accounts include all of Sumo Logic’s industry-leading capabilities including Sumo Logic’s Tiered Analytics.
   :::important
   [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) are only available for Enterprise Operations, Enterprise Security, and Enterprise Suite accounts. Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from collectors.
 
@@ -32,7 +32,7 @@ You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise S
 The following table provides a summary list of key features by Sumo Logic Cloud Flex Credits package accounts. For Free and Trial account details, see the details for [Cloud Flex accounts](cloud-flex-accounts.md).
 
 | Feature | Free | Trial | Essentials | Enterprise Operations | Enterprise Security | Enterprise Suite |
-|-- | -- | -- | -- | -- | -- | -- |
+|:-- | :-- | :-- | :-- | :-- | :-- | :-- |
 | Audit Index | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Audit Event Index |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | CrowdStrike Threat Intel |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
@@ -58,7 +58,7 @@ The following table provides a summary list of key features by Sumo Logic Cloud 
 | Search Job API |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Support |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Sumo Logic Apps | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| Traces | ![check](/img/reuse/check.png)<br/>Up to 1.5GB per day* | ![check](/img/reuse/check.png)<br/>Up to 5GB per day | ![check](/img/reuse/check.png)<br/>5GB per day | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| Traces | ![check](/img/reuse/check.png)<br/>Up to 1.5GB per day* | ![check](/img/reuse/check.png)<br/>Up to 5GB per day | ![check](/img/reuse/check.png)<br/>5GB per day | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) |
 | User and Role APIs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 
 \* Contact Sumo Logic Sales to customize your account to meet your organization's needs.
@@ -109,7 +109,7 @@ For example, if the your contract period is licensed for 100,000 credits and 1
 To view the Account page, do the following:
 
 1. Log in to your Sumo Logic Cloud Flex Credits account.
-1. In the left navigation bar, select **Administration** \> **Account**. The Account Overview tab is shown by default.
+1. In the left navigation bar, select **Administration** > **Account**. The Account Overview tab is shown by default.
 
     :::note
     You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
@@ -162,7 +162,7 @@ Red text indicates that you are exceeding your contract capacity.
 
 To switch between views and time interval displays, do the following:
 
-1. Log in to Sumo Logic and select **Administration \> Account** in the left navigation pane.
+1. Log in to Sumo Logic and select **Administration > Account** in the left navigation pane.
 
     The Account page appears with the Account Overview tab shown by default. The top panel shows account details and the bottom panel displays usage details for all data types by default. The total number of credits used and a breakdown of how the credits were used is shown in the donut graph on the right.
 

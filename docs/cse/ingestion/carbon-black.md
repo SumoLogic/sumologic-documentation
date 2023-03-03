@@ -1,6 +1,6 @@
 ---
 id: carbon-black
-title: Carbon Black Cloud
+title: Carbon Black Cloud - Cloud SIEM
 sidebar_label: Carbon Black Cloud
 description: Configure collection of Carbon Black Cloud logs messages from an S3 bucket to be parsed by CSE's system parser for Carbon Black Cloud.
 ---
@@ -14,7 +14,7 @@ VMware does NOT recommend setting up a Cloud-to-Cloud integration for Carbon Bla
 
 ### Step 1: Configure collection
 
-In this step, you configure an AWS S3 Source to collect Carbon Black Cloud log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an AWS S3 Source below](#Configure-an-AWS-S3-Source). Otherwise, create a new collector as described in Configure a hosted collector below, and then create the source on the collector.
+In this step, you configure an AWS S3 Source to collect Carbon Black Cloud log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an AWS S3 Source below](#configure-an-aws-s3-source). Otherwise, create a new collector as described in Configure a hosted collector below, and then create the source on the collector.
 
 
 #### Configure a hosted collector
@@ -36,7 +36,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 
 #### Configure an AWS S3 Source
 
-If you have issues performing the steps below, see the [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source) topic for more information.
+If you have issues performing the steps below, see the [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) topic for more information.
 
 The bucket you designate for Carbon Black Cloud data must be exclusively used for this data source. Note also that the Sumo Logic collector does not support collection of logs that are edited after being stored in S3 and prior to being polled for ingestion to the CIP platform.
 
@@ -62,7 +62,7 @@ The bucket you designate for Carbon Black Cloud data must be exclusively used fo
     * **Role-based access**. Enter the Role ARN that was provided by AWS after creating the role.<br/> <img src={useBaseUrl('img/cse/role-arn.png')} alt="add-hosted-collector" />
     * **Key access**. Enter the Access Key ID and Secret Access Key. See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 18. **Log File Discovery**. These settings allow Sumo Logic to automatically collect logs from the specified S3 bucket when an Amazon SNS message is received (highly recommended). Alternatively, an automatic scan interval for new log files can be configured.
-19. **Advanced Options for Logs.** For information about the optional advanced options you can configure, see [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source).
+19. **Advanced Options for Logs.** For information about the optional advanced options you can configure, see [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).
 20. Click **Save**.
 
 

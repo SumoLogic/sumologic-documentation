@@ -4,6 +4,8 @@ title: Carbon Black Cloud Source
 sidebar_label: Carbon Black Cloud
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Carbon Black Cloud Source provides a secure endpoint to receive data from the Carbon Black Cloud, Enriched Event Search, and Alerts APIs. It securely stores the required authentication, scheduling, and state tracking information.
 
 :::tip
@@ -82,9 +84,13 @@ When Sumo Logic detects an issue, it's tracked by [Health Events](/docs/manage/
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
 
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
+
 #### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collectors). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required? | Description | Access |
 |:--|:--|:--|:--|:--|

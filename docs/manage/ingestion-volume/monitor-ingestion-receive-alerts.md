@@ -6,7 +6,7 @@ description: Add scheduled searches that monitor ingestion and send alerts. The 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic provides ingest alerts that you can schedule to get timely information about ingestion usage or throttling. With the excepting of the [Throttling alert](#throttling-alert) described below these alerts apply to logs only, not metrics. 
+Sumo Logic provides ingest alerts that you can schedule to get timely information about ingestion usage or throttling. With the exception of the [Throttling alert](#throttling-alert) described below, these alerts apply to logs only, not metrics. 
 
 For metrics volume queries use the [Metrics Data Volume Index](data-volume-index/metrics-data-volume-index.md).
 
@@ -26,14 +26,14 @@ You must update all of the indicated fields for the search to save successfully
 
 #### Setup
 
-1. Enable the Data Volume Index. See [Enable and Manage the Data Volume Index] for instructions.
+1. Enable the Data Volume Index. See [Enable and Manage the Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
 2. Substitute the correct values of `X` for the following parameters in the search query. For the billing start and end values, use the day of the month. For example, in the screenshot below, the value for `billing_start` is 17 so the updated line from the search becomes `17 as billing_start`.
     ```
     X as billing_start
     X as billing_end
     X as daily_gb_limit
     ```
-    You can find the correct values on the Account page. Click on your name in the left nav and go to **Administration** \> **Account** \> **Account Overview**. <br/><img src={useBaseUrl('img/ingestion-volume/account-overview.png')} alt="account overview" />
+    You can find the correct values on the Account page. Click on your name in the left nav and go to **Administration** > **Account** > **Account Overview**. <br/><img src={useBaseUrl('img/ingestion-volume/account-overview.png')} alt="account overview" />
 3. (Optional)  Modify the following line if you want to change the percentage threshold for generating the alert.
     ```sql
     | where pct_used > 85
@@ -56,9 +56,9 @@ _index=sumologic_volume and sizeInBytes and _sourceCategory="sourcename_volume"
 | number(month)
 | formatDate(_timeslice, "dd") as day
 | number(day)
-| formatDate(now(), "MM") as current_month
+| formatDate(queryEndTime(), "MM") as current_month
 | number(current_month)
-| formatDate(now(), "dd") as current_day
+| formatDate(queryEndTime(), "dd") as current_day
 | number(current_day)
 | X as billing_start //Replace the X with your billing start day which can be found in Manage > Account.
 | X as billing_end //Replace the X with your billing end day which can be found in Manage > Account
@@ -141,11 +141,11 @@ This hourly alert is generated when both of the following occur:
 1. Enable the Data Volume Index. See [Enable and Manage the Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
 1. (Optional) To adjust the sensitivity of this alert, change either of the values from the following line of the query:
     ```sql
-    | where pct_increase  \> 30 and ingest_weight\> 30
+    | where pct_increase  > 30 and ingest_weight\> 30
     ```
     Example: Change the `pct_increase` value higher to make the alert less sensitive.
     ```sql
-    | where pct_increase  \> 50 and ingest_weight\> 30
+    | where pct_increase  > 50 and ingest_weight\> 30
     ```
 1. (Optional) To change the alert to evaluate a spike in a Collector or Source, do either of the following: 
     * To generate an alert on a spike in ingest for a Collector, change the first line of the query replacing `_sourceCategory="sourcecategory_volume"` with `_sourceCategory="collector_volume"`
@@ -189,7 +189,7 @@ This type of alert isn't suitable for ephemeral environments and can send false 
 
 #### Setup
 
-**Prerequisite**. All collectors must be sending data **before** you set this alert. This alert will trigger if *any* collectors do not send data in the specified time range. If you want to identify collectors that are not ingesting for a long time or have not ingested at all, you can use the [Collector API](/docs/api/collectors#Collector-API-Methods-and-Examples "Collector API Methods and Examples")
+**Prerequisite**. All collectors must be sending data **before** you set this alert. This alert will trigger if *any* collectors do not send data in the specified time range. If you want to identify collectors that are not ingesting for a long time or have not ingested at all, you can use the [Collector API](/docs/api/collector-management#Collector-API-Methods-and-Examples "Collector API Methods and Examples")
 attributes `alive` and `LastSeenAlive`.
 
 1. Enable the Data Volume Index.  See [Enable and Manage the Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
@@ -209,7 +209,7 @@ _index=sumologic_volume sizeInBytes _sourceCategory="collector_volume"
 | parse regex "\"(?<collector>[^\"]+)\"\:\{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
 | first(_messagetime) as MostRecent, sum(bytes) as TotalVolumeBytes by collector
 | formatDate(fromMillis(MostRecent),"yyyy/MM/dd HH:mm:ss") as MostRecentTime
-| toMillis(now()) as currentTime
+| toMillis(queryEndTime()) as currentTime
 | formatDate(fromMillis(currentTime),"yyyy/MM/dd HH:mm:ss") as SearchTime
 | (currentTime-MostRecent) / 1000 / 60 as mins_since_last_logs
 | where mins_since_last_logs >= 60

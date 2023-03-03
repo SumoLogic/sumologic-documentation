@@ -16,7 +16,7 @@ The following rule expression, which looks for any event that stops AWS CloudTra
 
 `metadata_vendor = 'AWS' and metadata_product = 'CloudTrail' and fields.eventName = "DeleteTrail" or fields.eventName = "StopLogging" or fields.eventName = "UpdateTrail"`
 
-Rule expressions can also use regular expressions and CSE rules language functions, which include SQL-like and domain-specific functions. For more information see [CSE Rules Syntax](cse-rules-syntax.md).
+Rule expressions can also use regular expressions and CSE rules language functions, which include SQL-like and domain-specific functions. For more information, see [CSE Rules Syntax](cse-rules-syntax.md).
 
 :::note
 The [Before You Write a Custom Rule](before-writing-custom-rule.md) topic has useful information about how to prototype a rule expression in CIP.
@@ -50,7 +50,7 @@ The screenshot below shows a rule whose "On Entity" attributes are `srcDevice
 
 ![on-entity.png](/img/cse/on-entity.png)
 
-When an incoming Record meets a rule's conditions, a Signal is generated for each of the rule's On Entity attributes found in the Record. When the example rule above fires, it generates two Signals: one on the IP address one held in the `srcDevice_ip` attribute, and  another on the IP address held in the `dstDevice_ip` attribute.
+When an incoming Record meets a rule's conditions, a Signal is generated for each of the rule's On Entity attributes found in the Record. When the example rule above fires, it generates two Signals: one on the IP address held in the `srcDevice_ip` attribute, and  another on the IP address held in the `dstDevice_ip` attribute.
 
 ## Rule types
 
@@ -72,7 +72,7 @@ metadata_vendor = 'Trend Micro' and metadata_product = 'Deep Security'  and meta
 Some of the key metadata fields are defined below.
 
 | Metadata field  | Type | Description |
-|--|--|
+|:--|:--|
 | `metadata_vendor` | string | The name of the company responsible for the data source. Note the name of the product is in the "product" field. |
 | `metadata_product` | string | The specific product name of the data source. Note the name of the company who created the product is the "vendor" field. |
 | `metadata_deviceEventId` | string | Event type given by the vendor for the log. |
@@ -91,7 +91,7 @@ This section describes what [Match Lists](/docs/cse/match-lists-suppressed-lists
 
 Match Lists are lists of important indicators and identifiers, typically configured by a CSE analyst. Match Lists are often used to define allowlists of entities, like IP addresses, URLs, and hostnames, and so on, that you want to exempt from ordinary rule processing. For example, you might want to prevent a rule from firing for Records that contain one of a certain set of IP addresses. 
 
-Here’s an example of a Match List in the CSE UI, at **Content \> Match Lists**. 
+Here’s an example of a Match List in the CSE UI, at **Content > Match Lists**. 
 
 ![example-match-list.png](/img/cse/example-match-list.png)
 
@@ -140,7 +140,7 @@ This example below checks a Record for a field named `listMatches` that contains
 
 CSE’s Threat Intel lists are very similar to Match Lists, and you leverage them in rules in the same way. Threat Intel lists contain values that, when encountered in a Record, are clear indicators of compromise. 
 
-Here’s an example of a Threat Intel list in the CSE UI, at **Content \> Threat Intel**. 
+Here’s an example of a Threat Intel list in the CSE UI, at **Content > Threat Intel**. 
 
 ![example-threat-intl.png](/img/cse/example-threat-intl.png)
 
@@ -161,7 +161,7 @@ where:
 * The name of the threat intel source, with embedded spaces replaced by underscore characters (_).
 * `source:My_Threat_Intel_List` identifies the threat intel list.
 * `column:Ip` identifies the type of the field where the match was found.
-* `column:SrcI`p identifies the name of the field where the match was found.
+* `column:SrcIp` identifies the name of the field where the match was found.
 * `threat `is a string that CSE uses to indicate that the Record field matched a threat source, rather than another type of list.
   
 Because the threat intel information is persisted within Records, you can reference it downstream in both rules and search. To leverage the information in a rule, you extend your rule expression with the `array_contains` function. The syntax is:

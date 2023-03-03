@@ -21,7 +21,7 @@ Querying the index returns results only if the index is enabled.
 The following table provides details on the fields returned by the index:
 
 | Field  | Description |
-|--|--|
+|:--|:--|
 | `time` | The time when the audit log was generated. |
 | `analytics_tier` | The data tier associated with the audit message. Learn more about [Data Tiers](../partitions-data-tiers/data-tiers.md).* |
 | `data_retreived_bytes` | Amount of data retrieved by the search query. This represents the approximate size of messages that match the source expression of the query and are retrieved from scanning. |
@@ -45,7 +45,7 @@ The following table provides details on the fields returned by the index:
 The table below shows the possible values for the field, query_type.
 
 | query_type value | Description |
-|--|--|
+|:--|:--|
 | Search API | Search queries run by users using the Sumo Search Job API only. |
 | Interactive Search | Search queries run from the Search tab in the UI only. |
 | Interactive Dashboard | Search queries run from dashboards in the UI only. |
@@ -56,6 +56,7 @@ The table below shows the possible values for the field, query_type.
 | Compare | Search queries that are run as part of the logreduce operator or compare timeshift operators in the search query. The corresponding parent search query can be identified by the same session_id. |
 | Subquery | Subqueries are run as a separate search and corresponding attributes are captured in the Search Audit Index. The corresponding parent search query can be identified by the same session_id.      |
 | Monitor | Queries associated with [monitors](/docs/alerts/monitors). |
+| Span Analytics | Queries are run for filtering and aggregating trace data based on span attributes to understand application services performance. Queries can be built using input fields, with filters and visualized results available.  |
 
 ## Index retention period
 

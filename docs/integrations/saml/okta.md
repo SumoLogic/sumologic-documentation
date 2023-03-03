@@ -1,6 +1,6 @@
 ---
 id: okta
-title: Sumo Logic App for Okta
+title: Okta
 sidebar_label: Okta
 description: The Sumo Logic App for Okta helps you monitor the admin actions, failed logins, successful logins, and user activities to your applications through Okta.
 ---
@@ -183,19 +183,14 @@ _sourceCategory = "okta" "user.mfa.factor.deactivate"
 ```
 
 
-
-## Configuring Okta Log Collection for Non-FedRamp Deployments
+## Configuring Okta Log Collection
 
 Use the [new Cloud to Cloud Integration for Okta](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) to create the source and use the same source category while installing the app.
 
-The sections below are available for FedRamp Sumo Logic deployments to meet FedRamp's specific compliance requirements. If you're using the Sumo Logic FedRamp deployment, you must use the sections below to configure collection for this app.
-
-
-## Configuring Okta Log Collection for FedRamp Deployments
-
 :::note 
-Okta Log Collection configuration via SumoJanus is no longer applicable; instead, we offer Okta collection via hosted source for Fed deployment. Follow the instructions [here](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source/). The steps must be completed in the order they are presented.
+The Okta Log Collection configuration via SumoJanus is no longer applicable and deprecated. We recommend switching to [Cloud-to-Cloud integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) to configure the Okta Log collection. The steps must be completed in the order they are presented.
 :::
+
 
 ## Installing the Okta App
 
@@ -205,10 +200,10 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

@@ -1,6 +1,7 @@
 ---
 id: configure-telegraf-output-plugin
 title: Configure Telegraf Output Plugin for Sumo Logic
+sidebar_label: Configure Telegraf Output Plugin
 description: Learn how to configure the Telegraf output plugin for Sumo Logic to send metrics to Sumo Logic.
 ---
 
@@ -113,7 +114,7 @@ The format of the metrics to be sent. The value you specify will be used to set 
 Supported values for `data_format` are: 
 
 | Value        | Content-Type                         |
-|--------------|--------------------------------------|
+|:--------------|:--------------------------------------|
 | “graphite”   | application/vnd.sumologic.graphite   |
 | “carbon2”    | application/vnd.sumologic.carbon2    |
 | “prometheus” | application/vnd.sumologic.prometheus |

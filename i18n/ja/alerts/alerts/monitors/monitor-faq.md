@@ -53,7 +53,7 @@ And so on.
 
 ## Can I reference my monitor configuration in the notification?
 
-Yes, you can use [Alert Variables](../alert-variables.md) to reference various monitor configurations in your custom payload.
+Yes, you can use [Alert Variables](/docs/alerts/monitors/alert-variables) to reference various monitor configurations in your custom payload.
 
 ## Does Sumo Logic let me get alerts from a specific static IP address that I can allowlist?
 

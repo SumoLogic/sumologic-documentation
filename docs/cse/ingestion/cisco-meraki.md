@@ -1,6 +1,6 @@
 ---
 id: cisco-meraki
-title: Cisco Meraki
+title: Cisco Meraki - Cloud SIEM
 sidebar_label: Cisco Meraki
 description: Configure a syslog source to ingest Cisco Meraki log messages to be parsed by CSE’s system parser for Cisco Meraki.
 ---
@@ -13,7 +13,7 @@ In this step, you configure a Syslog Source to collect Cisco Meraki log messages
 
 ### Configure an Installed Collector
 
-1. In the Sumo Logic platform, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Installed Collector**.
 1. The **Add Installed Collector** popup appears.
@@ -36,7 +36,7 @@ In this step, you configure a Syslog Source to collect Cisco Meraki log messages
 
 ### Configure a Syslog Source
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. Navigate to the Installed Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 

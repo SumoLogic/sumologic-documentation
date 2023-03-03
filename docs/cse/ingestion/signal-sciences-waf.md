@@ -1,6 +1,6 @@
 ---
 id: signal-sciences-waf
-title: Signal Sciences WAF
+title: Signal Sciences WAF - Cloud SIEM
 sidebar_label: Signal Sciences WAF
 description: Lean how to collect Signal Sciences WAF log messages and sending them to Sumo Logic to be ingested by CSE.
 ---
@@ -13,7 +13,7 @@ In this step, you configure an HTTP Source to collect Signal Sciences WAF log me
 
 ### Configure a Hosted Collector
 
-1. In the Sumo Logic platform, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  
@@ -47,7 +47,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 
 In this step you configure Signal Sciences WAF to send log messages to the Sumo Logic platform.
 
-1. Go to the **SigSci Site Tools \> Integrations** in the **SigSci** dashboard.
+1. Go to the **SigSci Site Tools > Integrations** in the **SigSci** dashboard.
 1. Click **Add** for **Generic Webhook**.
 1. Paste the HTTP Source URL from the previous step into the **Webhook URL** field and click **Add**.
 

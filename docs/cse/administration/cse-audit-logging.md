@@ -20,7 +20,7 @@ The audit logging documentation is hosted on each Sumo Logic deployment. Sumo Lo
 Select the documentation link for your deployment:
 
 | Deployment | Location      | Documentation URL                                   |
-|------------|---------------|-----------------------------------------------------|
+|:------------|:---------------|:-----------------------------------------------------|
 | AU         | Australia     |https://service.au.sumologic.com/audit/docs/sec  |
 | JP         | Japan         |https://service.jp.sumologic.com/audit/docs/sec  |
 | IN         | India         |https://service.in.sumologic.com/audit/docs/sec  |
@@ -55,7 +55,7 @@ For information about other fields you can use in Audit Index searches, see auto
 The table below shows the `_sourceCategory` that is assigned to event logs by CSE feature.
 
 | Product Feature | _sourceCategory Value |
-| -- | -- |
+| :-- | :-- |
 | [Action](create-cse-actions.md) | `cseAction` |
 | [Aggregation Rule](/docs/cse/rules/write-aggregation-rule.md) | `cseRule` |
 | Configure Assigned Insight Emails<br/>(Relates to the option, on the Actions page, that causes a user to receive an email whenever another user assigns an Insight to them. | `cseConfiguration` |
@@ -63,7 +63,7 @@ The table below shows the `_sourceCategory` that is assigned to event logs by CS
 | Cloud SOAR Incident | `cseCloudSoar` |
 | [Context Action](create-cse-context-actions.md)  | `cseContextAction` |
 | [Custom Entity Type](../records-signals-entities-insights/create-custom-entity-type.md) | `cseCustomEntityType` |
-| [Custom Insight](cse-audit-logging.md) | `cseCustomInsight` |
+| [Custom Insight](../records-signals-entities-insights/configure-custom-insight.md) | `cseCustomInsight` |
 | [Custom Match List Column](../match-lists-suppressed-lists/custom-match-list-columns.md) | `cseCustomMatchListColumn` |
 | [Custom Tag Schema](create-a-custom-tag-schema.md) | `cseCustomTagSchema` |
 | [Customer Sourced Entity Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table.md) | `cseCustomerSourcedEntityLookupTable` |
@@ -93,7 +93,7 @@ The `_sourceName` and `_sourceHost` fields are assigned to audit event
 logs as follows.
 
 | Metadata Field | Assignment Description |
-|--|--|
+|:--|:--|
 | `_sourceName` | Value of the common parameter, `eventName`. |
 | `_sourceHost` | The remote IP address of the host that made the request. If not available the value will be `no_sourceHost`. |
 
@@ -103,13 +103,13 @@ Each audit event log has common keys that categorize it to a product
 area and provide details of the event.
 
 | Parameter | Description | Data Type |
-|--|--|--|
+|:--|:--|:--|
 | `accountId` | The unique identifier of the organization. | String |
 | `eventId` | The unique identifier of the event. | String |
 | `eventName` | The name of the event. | String |
 | `eventTime` | The event timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. | String |
 | `eventFormatVersion` | The event log format version. | String |
-| `operator` | Information of who did the operation. If its missing, the Sumo service was the operator. | JSON object of Strings |
+| `operator` | Information of who did the operation. If it's missing, the Sumo service was the operator. | JSON object of Strings |
 | `subsystem` | The product area of the event. | String |
 
 ## Search the Audit Event Index 
@@ -118,7 +118,7 @@ To search the Audit Event Index for logs that describe CSE events:
 
 1. Open a search tab in the Sumo Logic UI by clicking **+ New** and choosing **Log Search**.  
    <img src={useBaseUrl('img/cse/new-log-search.png')} alt="new-log-search.png" />
-2. In the search tab, enter a search using `_index` to specify the partition you want to search, other metadata or fields to further scope you search. For example:  
+2. In the search tab, enter a search using `_index` to specify the partition you want to search, and other metadata or fields to further scope your search. For example:  
     ```sql
     _index=sumologic_system_events
     | json auto
@@ -133,6 +133,6 @@ Here is an example `InsightCreated` event log.<br/><img src={useBaseUrl('img/cse
 
 ## Index retention period 
 
-By default, the retention period of the Audit Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Edit a Partition](/docs/manage/partitions-data-tiers/create-edit-partition.md).  
+By default, the retention period of the Audit Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Create and Edit a Partition](/docs/manage/partitions-data-tiers/create-edit-partition).  
    
  

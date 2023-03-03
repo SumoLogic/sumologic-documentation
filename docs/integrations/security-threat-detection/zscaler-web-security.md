@@ -1,6 +1,6 @@
 ---
 id: zscaler-web-security
-title: Sumo Logic App for Zscaler Web Security
+title: Zscaler Web Security
 sidebar_label: Zscaler Web Security
 description: The Zscaler Web Security App collects logs from Zscaler with Nanolog Streaming Service (NSS) to populate pre-configured searches and Dashboards. The dashboards provide easy-to-access visual insights into web traffic behaviors, security, user browsing activities, and risk.
 ---
@@ -32,8 +32,8 @@ To collect logs for Zscaler, perform these steps, detailed in the following sect
 
 To collect logs for Zscaler Web Security, do the following in Sumo Logic:
 
-1. Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
-2. Configure a [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source). For protocol, use **TCP**.
+1. Configure an [Installed Collector](/docs/send-data/installed-collectors).
+2. Configure a [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source). For protocol, use **TCP**.
 
 Note the **Port** number, as you will need this to configure Zscaler NSS.  \
 
@@ -46,6 +46,9 @@ Zscaler offers a virtual appliance, called Nanolog Streaming Service (NSS) to st
 
 To stream logs to the Sumo Logic Syslog Source, perform steps A, B, and C detailed in the “NSS Configuration Guide” at: [https://support.zscaler.com/hc/en-us...guration-Guide](https://support.zscaler.com/hc/en-us/articles/205518405-NSS-Configuration-Guide).
 
+:::note
+Zscaler Log Streaming is an add-on for customers that do not have it as part of an existing bundle. Please check your [subscription](https://www.zscaler.com/pricing-and-plans) and work with your Zscaler support team to see if CloudNSS is included in your bundle.
+:::
 
 ### Step 3: Connect the Zscaler NSS Feed to Sumo Logic
 
@@ -138,7 +141,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**.
 
 

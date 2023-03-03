@@ -335,7 +335,7 @@ You can then use this query to build the scheduled search email alert.
     ![Save Item.png](/img/search/timecompare/Save-Item.png)
 
 1. For **Send notification**, select **if the following condition is met**.
-1. For **Alert condition**, select **Greater than \>,** and for **Number of results **enter **5**.
+1. For **Alert condition**, select **Greater than >,** and for **Number of results **enter **5**.
 1. For **Alert Type**, select **Email**.
 1. Enter the email address you want the alert email to go to.
 1. Click **Save**.

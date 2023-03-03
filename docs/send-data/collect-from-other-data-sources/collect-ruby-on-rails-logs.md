@@ -1,6 +1,7 @@
 ---
 id: collect-ruby-on-rails-logs
 title: Collect Ruby on Rails Logs
+sidebar_label: Ruby on Rails
 description: Learn how to collect logs produced by Ruby on Rails applications.
 ---
 
@@ -31,7 +32,7 @@ and the multiline setup.
 
 1. Click **Save**. 
 
-1. In Sumo Logic, go to **Manage Data \> Collection \> Status** to verify that the logs are being ingested. If you don't see any data coming in after 2-3 minutes, check that your file path is correct, that the Sumo Logic Collector has read access to the logs, and that your time zone is configured correctly.
+1. In Sumo Logic, go to **Manage Data > Collection > Status** to verify that the logs are being ingested. If you don't see any data coming in after 2-3 minutes, check that your file path is correct, that the Sumo Logic Collector has read access to the logs, and that your time zone is configured correctly.
 
 ## Parsing RoR Logs
 

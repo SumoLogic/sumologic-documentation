@@ -1,6 +1,6 @@
 ---
 id: symantec-proxy-secure-gateway
-title: Symantec Proxy Secure Gateway
+title: Symantec Proxy Secure Gateway - Cloud SIEM
 sidebar_label: Symantec Proxy Secure Gateway
 description: Configure a syslog source to ingest Symantec Proxy Secure Gateway log messages to be parsed by CSE’s system parser for Symantec Proxy Secure Gateway.
 ---

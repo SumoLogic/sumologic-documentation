@@ -1,8 +1,8 @@
 # Default owners for everything in the repo.
-* @stacykor @MariePMcGarry @kimsauce @nmohantyctr @JainM6
+* @stacykor @kimsauce @nmohantyctr @JainM6
 
 # Owners of all files in the `/docs` directory and its subdirectories.
-/docs/   @kimsauce @nmohantyctr @stacykor @MariePMcGarry @JainM6
+/docs/   @kimsauce @nmohantyctr @stacykor @JainM6
 
 # GitHub workflow owners
 /.github/workflows/ @SumoLogic/open-source-collection-team

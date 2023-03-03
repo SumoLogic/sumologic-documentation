@@ -4,7 +4,7 @@ title: accum Search Operator
 sidebar_label: accum
 ---
 
-The accum operator calculates the cumulative sum of a field. It can be used to find a count by a specific time interval and can be used to find a total running count across all intervals.
+The `accum` operator calculates the cumulative sum of a field. It can be used to find a count by a specific time interval and can be used to find a total running count across all intervals.
 
 ## Syntax
 
@@ -12,7 +12,7 @@ The accum operator calculates the cumulative sum of a field. It can be used to f
 accum <field> [as <field>] [by <field1>, <field2>, ...]
 ```
 
-**Rules**
+## Rules
 
 * An alias for accum is optional. When an alias is not provided, `_accum` is the default alias.
 * Specified fields must contain numeric values.
@@ -20,9 +20,10 @@ accum <field> [as <field>] [by <field1>, <field2>, ...]
 * To add a query that includes an accum operator to a Dashboard, you
     must add a group by function before the accum operator.
 
-**Examples**
+## Examples
 
-**Requests by running total**. With the accum operator, we can find the number of requests by a user as a running total. Running a query similar to:
+### Requests by running total
+With the accum operator, we can find the number of requests by a user as a running total. Running a query similar to:
 
 ```sql
 _sourceCategory=IIS/Access (Wyatt OR Luke)
@@ -37,7 +38,9 @@ produces results of a running total of all requests, similar to:
 
 ![Accum](/img/search/searchquerylanguage/search-operators/Accum.png)
 
-**Running total by user name.** Another option is to find a running
+### Running total by user name
+
+Another option is to find a running
 total for each user's requests. Running a query similar to:
 
 ```sql

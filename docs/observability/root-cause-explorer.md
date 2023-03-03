@@ -5,14 +5,9 @@ sidebar_label: Root Cause Explorer
 description: Use Root Cause Explorer for AWS to troubleshoot incidents with apps and microservices running on AWS, public cloud hosts, and Kubernetes.
 ---
 
-## Availability
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-| Account Type | Account Level                                  |
-|--------------|------------------------------------------------|
-| Cloud Flex   | Trial, Enterprise                              |
-| Credits      | Trial, Enterprise Operations, Enterprise Suite |
-
-## Overview
+<img src={useBaseUrl('img/observability/rootcause.png')} alt="rootcause.png" width="50"/>
 
 **Root Cause Explorer** (RCE) helps on-call staff, DevOps, and infrastructure engineers accelerate troubleshooting and root cause isolation for incidents in their apps and microservices running on AWS, public cloud hosts, and Kubernetes.
 
@@ -32,7 +27,7 @@ Root Cause Explorer supports the following AWS namespaces by processing CloudWa
 * AWS/Dynamodb
 * AWS/API Gateway
 * AWS/ECS 
-* AWS/Elasticache 
+* AWS/ElastiCache 
 * AWS/SQS
 * AWS/SNS 
 * AWS X-ray (for service metrics and service topology)
@@ -48,6 +43,13 @@ Root Cause Explorer also supports:
 The screenshot below shows the Root Cause Explorer UI.
 
 ![rce-top-entities.png](/img/rce/rce-top-entities.png)
+
+## Availability
+
+| Account Type | Account Level                                  |
+|:--------------|:------------------------------------------------|
+| Cloud Flex   | Trial, Enterprise                              |
+| Credits      | Trial, Enterprise Operations, Enterprise Suite |
 
 ## Troubleshooting concepts
 
@@ -156,7 +158,7 @@ You set up Root Cause Explorer using an [AWS CloudFormation template](https://su
 * AWS/Dynamodb
 * AWS/API Gateway
 * AWS/ECS 
-* AWS/Elasticache
+* AWS/ElastiCache
 * AWS/Autoscaling. Auto Scaling data is used only for topology inference. CloudWatch metrics related to Auto Scaling groups are not supported at this time.
 
 If you don’t already have the Sumo Logic CloudWatch Source for Metrics configured, the template will install the source to collect AWS CloudWatch metrics from the account permissioned by the credential provided in the template. The CloudFormation template gives you the option to configure an AWS X-Ray source, if required. 
@@ -346,7 +348,7 @@ The logs created from EOIs reside in a view called `sumologic_signals_anomalies`
 The attributes in the view are defined in the table below.
 
 | Attribute | Description |
-|--|--|
+|:--|:--|
 | `anomalyValues` | Statistics about the time series in the EOI window - min, max, avg.
 | `autoCorrelation` | A measure of the periodicity of the underlying time series.
 | `domain` | Identifies the source of the time series data:<ul><li>aws</li><li>k8s</li><li>app. Application services instrumented with Sumo Logic [Tracing](/docs/apm/traces).</li><li>host. A [Host Metrics source](/docs/send-data/installed-collectors/sources/host-metrics-source.md) on a Sumo Logic Installed Collector.</li></ul> |

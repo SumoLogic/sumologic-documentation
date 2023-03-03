@@ -1,6 +1,6 @@
 ---
 id: microsoft-audit-office
-title: Microsoft 365 Audit (Office 365 Audit)
+title: Microsoft 365 Audit (Office 365 Audit) - Cloud SIEM
 sidebar_label: Microsoft 365 Audit (Office 365 Audit)
 description: Configure collection of Microsoft 365 log messages to be parsed by CSE's system parser for Microsoft 365. 
 ---
@@ -17,7 +17,7 @@ In this step, you configure an Microsoft 365 Audit Source to collect Microsoft 3
 
 ### Configure a Hosted Collector
 
-1. In the Sumo Logic platform, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  

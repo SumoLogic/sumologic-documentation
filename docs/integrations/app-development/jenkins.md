@@ -1,6 +1,6 @@
 ---
 id: jenkins
-title: Sumo Logic App for Jenkins
+title: Jenkins
 sidebar_label: Jenkins
 description: The Sumo Logic App for Jenkins helps you monitor build successes, failures, and performance, ensuring that you know—before committing code to the repository—whether the code will work.
 ---
@@ -379,7 +379,7 @@ To configure the Jenkins Plugin, do the following:
 
 ### Step 5: Optional - Advanced Configuration
 
-This section provides instructions for configuring Sumo Logic Jenkins Plugin for specific projects using Jenkins **configuration as code**. For more information see [configuration as code](https://jenkins.io/projects/jcasc/).
+This section provides instructions for configuring Sumo Logic Jenkins Plugin for specific projects using Jenkins **configuration as code**. For more information, see [configuration as code](https://jenkins.io/projects/jcasc/).
 
 To configure Sumo Logic Jenkins Plugin for specific projects using configuration as code, do the following:
 
@@ -412,8 +412,8 @@ To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+1. From the **App Catalog**, search for and select the app.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     *  **Data Source.** Select either of these options for the data source. 
@@ -543,7 +543,7 @@ Use this dashboard to:
 The **Jenkins - Build Information** dashboard provides detailed information about a specific build. Panels show information on build parameters, source control management, commit details, test cases, pipeline stages, console logs, and configuration changes prior to a build.
 
 Use this dashboard to:
-* Monitor parameters used for the build and source control management, such as Github Repository, to understand recent commits that have been added to the build.
+* Monitor parameters used for the build and source control management, such as GitHub Repository, to understand recent commits that have been added to the build.
 * Investigate possible causes for build failure using configuration change before build details, test case failure, commit changes, pipeline stage failure, and console logs.
 * Investigate the cause for failed test cases by analyzing stack traces.
 * Investigate configuration changes before the build by comparing the old configuration and current configurations.

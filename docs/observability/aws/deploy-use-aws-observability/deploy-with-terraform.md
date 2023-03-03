@@ -41,21 +41,19 @@ For this setup, complete the following:
 The AWS Observability solution script is organized into the following groups of files and folders:
 
 * Main Configuration file: [main.auto.tfvars](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.auto.tfvars)
-
 * The Resource Creation file [main.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.tf) internally invokes two modules: 
-
-  * **app-module**: This module provides a mechanism to set up all the AWS Observability apps and associated content like Fields, Field Extraction Rules, Metric Rules, apps, monitors and the explore hierarchy in your Sumo Logic account.
-  * **source-module**: This module sets up the hosted collector, sources (for logs and metrics) and associated tags to Sumo logic sources as required for the solution.
+   * **app-module**: This module provides a mechanism to set up all the AWS Observability apps and associated content like Fields, Field Extraction Rules, Metric Rules, apps, monitors and the explore hierarchy in your Sumo Logic account.
+   * **source-module**: This module sets up the hosted collector, sources (for logs and metrics) and associated tags to Sumo logic sources as required for the solution.
 
 
 System Files:
 
 * [versions.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/versions.tf): Provides the Terraform block that specifies the required provider version and required Terraform version for this configuration. See [Lock and Upgrade Provider Versions](https://learn.hashicorp.com/tutorials/terraform/provider-versioning) for more information.
- * [providers.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/providers.tf): Provides Terraform configurations to declare the providers they require to have Terraform install and use them. See [Providers Configuration Language](https://www.terraform.io/docs/language/providers/index.html) for more information.
- * [variables.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/variables.tf): Provides parameters for a Terraform module, allowing aspects of the module to be customized without altering the module's own source code, and allowing modules to be shared between different configurations. See [Input Variables](https://www.terraform.io/docs/language/values/variables.html) for more information.
- * [output.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/output.tf): Provides specific return values for a Terraform module. See [Output Values](https://www.terraform.io/docs/language/values/outputs.html) for more information.
- * [field.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/field.tf): creates fields and FERs in sumo logic field schema 
- * [fields.sh](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/fields.sh): This script imports the existing fields and FERs (required by AWS Observability Solution) present in the user's Sumo Logic account.
+* [providers.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/providers.tf): Provides Terraform configurations to declare the providers they require to have Terraform install and use them. See [Providers Configuration Language](https://www.terraform.io/docs/language/providers/index.html) for more information.
+* [variables.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/variables.tf): Provides parameters for a Terraform module, allowing aspects of the module to be customized without altering the module's own source code, and allowing modules to be shared between different configurations. See [Input Variables](https://www.terraform.io/docs/language/values/variables.html) for more information.
+* [output.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/output.tf): Provides specific return values for a Terraform module. See [Output Values](https://www.terraform.io/docs/language/values/outputs.html) for more information.
+* [field.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/field.tf): creates fields and FERs in sumo logic field schema 
+* [fields.sh](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/fields.sh): This script imports the existing fields and FERs (required by AWS Observability Solution) present in the user's Sumo Logic account.
   
 ## Step 1: Set up the Terraform environment
 
@@ -63,63 +61,45 @@ Before you run the Terraform script, perform the following actions on a
 server machine of your choice:
 
 1. Install [Terraform](https://www.terraform.io/) version [0.13.0](https://releases.hashicorp.com/terraform/) or later. To check the installed Terraform version, run the following command:
-
-    ```terminal
+    ```bash
     $ terraform --version
     ```
-
 1. Install the latest version of [curl](https://curl.haxx.se/download.html).
-
 1. Install [Python](https://www.python.org/) version 3.7 or later.
-
 1. Install the latest version of [jq](https://github.com/stedolan/jq/wiki/Installation) command-line JSON parser. This is required for running the fields.sh batch file.
 
 ## Step 2: Configure the Terraform script
 
 1. Clone the repository https://github.com/SumoLogic/sumologic-solution-template:
-
-    ```terminal
+    ```bash
     $ git clone https://github.com/SumoLogic/sumologic-solution-templates
     ```
-
-1. Initialize the Terraform working directory by navigating to the directory [sumologic-solution-templates/aws-observability-terraform](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) and running `terraform init`.
-
-    ```terminal
+1. Initialize the Terraform working directory by navigating to the directory [sumologic-solution-templates/aws-observability-terraform](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) and running:
+    ```bash
     $ terraform init
     ```
-
     This will install the required Terraform providers, including [Null](https://www.terraform.io/docs/providers/null/index.html), [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs), [Time Provider](https://registry.terraform.io/providers/hashicorp/time/latest/docs), [Random Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs).
-
 1. Configure the following mandatory parameters in the **main.auto.tfvars** file.
-
    * `sumologic_environment`: [Sumo Logic Deployment](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) Enter au, ca, de, eu, jp, us2, in, fed or us1.
    * `sumologic_access_id`: [Sumo Logic Access ID](/docs/manage/security/access-keys.md) Sumo Logic Access ID.
    * `sumologic_access_key`: [Sumo Logic Access Key](/docs/manage/security/access-keys.md) Sumo Logic Access Key used for Sumo Logic API calls.
-   * `sumologic_organization_id`: [Sumo Logic Organization ID](../../../get-started/account-setup.md) You can find your org on the Preferences page in the Sumo Logic UI. For more information, see [Preferences Page](../../../get-started/account-setup.md). Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.
+   * `sumologic_organization_id`: [Sumo Logic Organization ID](../../../get-started/account-settings-preferences.md) You can find your org on the Preferences page in the Sumo Logic UI. For more information, see [Preferences Page](../../../get-started/account-settings-preferences.md). Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.
    * `aws_account_alias`: The Name/Alias for the AWS environment from which you are collecting data. This name will appear in the Sumo Logic Explorer View, metrics, and logs. Please leave this blank if you are going to deploy the solution in multiple AWS accounts. Do not include special characters in the alias.
-
     :::note
-    See the [variables.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/variables.tf) file and README in that folder for configuration information with
-    permissible values for these variables. 
+    See the [variables.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/variables.tf) file and README in that folder for configuration information with permissible values for these variables. 
     :::
-
 1. As part of configuring the AWS Observability solution, we need to [create fields](../about.md) in Sumo Logic org. To import any fields that are already present in Sumo Logic into our Terraform state, we need to run a script. To do so, navigate to the **sumologic-solution-templates/aws-observability-terraform** folder and do the following:
-
    * Set the following environment variables using the commands below:
-
-        ```bash
-        export SUMOLOGIC_ENV="YOUR_SUMOLOGIC_DEPLOYMENT"
-        export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
-        export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
-        ```
-
-        Provide your Sumo Logic deployment for the SUMOLOGIC_ENV variable. For example: au, ca, de, eu, jp, us2, in, fed or us1. For more information on Sumo Logic deployments, see *Sumo Logic Endpoints and Firewall Security*. 
-
+    ```bash
+    export SUMOLOGIC_ENV="YOUR_SUMOLOGIC_DEPLOYMENT"
+    export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
+    export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
+    ```
+    Provide your Sumo Logic deployment for the SUMOLOGIC_ENV variable. For example: au, ca, de, eu, jp, us2, in, fed or us1. For more information on Sumo Logic deployments, see *Sumo Logic Endpoints and Firewall Security*. 
    * Run fields.sh using this command:
-
-        ```bash
-        $ sh fields.sh
-        ```
+      ```bash
+      $ sh fields.sh
+      ```
 
 :::important
 Going forward, please do not modify these fields outside of Terraform.
@@ -574,7 +554,7 @@ Source Parameters define how collectors and their sources are set up in Sumo Log
 
 The following examples override the following:
 
-* Example 1 overrides the cloudtrail_source_details parameter to collect Cloudtrail logs from a user-provided s3 bucket. Cloudtrail logs are already stored in the user-provided s3 bucket. The default parameter will always create new S3 buckets, forward cloudtrail logs to it and collect cloudtrail logs from the newly created s3 bucket.
+* Example 1 overrides the cloudtrail_source_details parameter to collect Cloudtrail logs from a user-provided s3 bucket. Cloudtrail logs are already stored in the user-provided s3 bucket. The default parameter will always create new S3 buckets, forward CloudTrail logs to it and collect CloudTrail logs from the newly created s3 bucket.
 
 * Example 2 overrides the auto_enable_access_logs variable to skip automatic access log enablement for an Application Load Balancer resource. By default, it is set to “Both”, which automatically enables access logging for new and existing ALB resources.
 
@@ -1533,7 +1513,7 @@ module "sumo-module" {
 The following table provides a list of all source parameters and their default values. See the [sumologic-solution-templates/aws-observability-terraform/app-module/main.auto.tfvars](http://sumologic-solution-templates/aws-observability-terraform/app-module/main.auto.tfvars) file for complete code.
 
 | Parameter | Description | Default |
-|--|--|--|
+|:--|:--|:--|
 | `access_id` | Sumo Logic Access ID. See [Access Keys](access keyes) for information. Ignore this setting if you entered it in Source Parameters.	| Ignore if already configured in **main.auto.tfvars** file. |
 | `access_key` | Sumo Logic Access Key. See Access Keys for information. Ignore this setting if you entered it in Source Parameters. | Ignore if already configured in main.auto.tfvars file.
 | `environment` | Enter au, ca, de, eu, jp, us2, in, fed, or us1. See Sumo Logic Endpoints and Firewall Security for information. Ignore this setting if you entered it in Source Parameters. | Ignore if already configured in main.auto.tfvars file. |
@@ -1550,7 +1530,7 @@ The following table provides a list of all source parameters and their default v
 | `ec2metrics_monitors_disabled` | Indicates if the EC2 Metrics Apps monitors should be enabled or disabled.
 `true` |
 | `ecs_monitors_disabled` | Indicates if the ECS Apps monitors should be enabled or disabled. | `true` |
-| `elasticache_monitors_disabled` | Indicates if the Elasticache Apps monitors should be enabled or disabled. | `true` |
+| `elasticache_monitors_disabled` | Indicates if the ElastiCache Apps monitors should be enabled or disabled. | `true` |
 | `lambda_monitors_disabled` | Indicates if the Lambda Apps monitors should be enabled or disabled. | `true` |
 | `nlb_monitors_disabled` | Indicates if the NLB Apps monitors should be enabled or disabled. | `true` |
 | `rds_monitors_disabled` | Indicates if the RDS Apps monitors should be enabled or disabled. | `true` |

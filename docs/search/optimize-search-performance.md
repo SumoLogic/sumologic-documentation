@@ -3,8 +3,6 @@ id: optimize-search-performance
 title: Optimize Search Performance
 ---
 
-
-
 Search optimization tools speed the search process, delivering query results in less time and improving productivity for forensic analysis and log management.
 
 Search speed generally depends on the amount of data and the type of query run against the data. Search optimization tools segment the data and queue it up for quick results.
@@ -60,7 +58,7 @@ Scheduled Views **backfill**, meaning that all data that extends back to the st
 Here's a quick look at how to choose the right indexed search optimization tool.
 
 | I want to... | Partition | Scheduled View |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | Run queries against a certain set of data | Choose if the quantity of data to be indexed is more than 2% of the total data. | Choose if the quantity of data to be indexed is less than 2% of the total data. |
 | Use data to identify long-term trends |   | Yes |
 | Segregate data by sourceCategory | Yes |   |

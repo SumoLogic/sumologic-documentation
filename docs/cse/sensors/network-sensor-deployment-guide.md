@@ -21,7 +21,6 @@ The sensor uses [PF_RING](https://www.ntop.org/products/packet-capture/pf_ring/)
 
 1. Determine the appropriate location for each sensor, based on anticipated traffic.
 1. For each location you designate:
-
    1. Determine the amount of throughput you will get with this placement.
    1. Use the scaling guide to determine the CPU and memory requirements for the VM or hardware. Confirm that their firewall rules are in place.
    1. Confirm that there is traffic flowing on the interface.
@@ -88,7 +87,7 @@ The system upon which you install the Network Sensor must have the following res
 below. 
 
 | Operating System                   | Cores (CPU) | Memory (RAM) | Storage (Disk) |
-|------------------------------------|-------------|--------------|----------------|
+|:------------------------------------|:-------------|:--------------|:----------------|
 | CentOS 6, 7, 8 or Ubuntu 16, 18,20 | 4           | 4GB          | 250GB          |
 
 :::note
@@ -111,7 +110,7 @@ reboot
 ### Throughput-dependent resource requirements
 
 | Throughput | Specs | Cores (CPU) | Memory (RAM) | Storage (Disk) |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | 250mbps | 4 | 4GB | 250GB |
 | 500mbps | 5 | 8GB | 250GB |
 | 750mbps | 6 | 12GB | 250GB |

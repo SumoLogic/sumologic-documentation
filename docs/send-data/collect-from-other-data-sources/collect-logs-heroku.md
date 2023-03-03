@@ -1,6 +1,7 @@
 ---
 id: collect-logs-heroku
 title: Collect Logs from Heroku
+sidebar_label: Heroku
 description: Learn how to upload data from your Heroku app directly to the Sumo Logic Cloud by pointing a Heroku log drain to the URL for an HTTP Source.
 ---
 
@@ -48,7 +49,7 @@ You can determine the drain identifier by running the heroku drains command for
 
 Then, define an FER in Sumo.
 
-1. Go to **Manage Data \> Logs \> Field Extraction Rules**.
+1. Go to **Manage Data > Logs > Field Extraction Rules**.
 1. **Rule Name**. Enter a name for the FER.
 1. **Scope**. Specify the _sourceCategory defined for the source to which you will be forwarding Heroku application logs. For example, if the _sourceCategory is "heroku", enter:
 

@@ -1,10 +1,8 @@
 ---
 id: global-intelligence-security-insights
 title: Global Intelligence for Security Insights
-sidebar_label: Global Intelligence
 description: Insight Confidence scores, predicted by Sumo Logic’s Global Intelligence machine learning model, help you triage and prioritize Insights.
 ---
-
 
 This page describes Global Intelligence for Security Insights, implemented in CSE as Global Confidence scores. This feature helps security analysts triage and prioritize Insights.
 
@@ -31,4 +29,3 @@ The Global Confidence score is a valuable data point to consider when prioritizi
 An Insight’s Confidence score is shown for each Insight on the Insights list page. You can sort the Insight list by the Global Confidence score, as well as by Severity.
 
 ![insight-list-confidence.png](/img/cse/Confidence-Screenshot.png)  
- 

@@ -124,7 +124,7 @@ If you have a dashboard that contains a panel that has more than 1440 groups, i
 
 ### Dashboard Timezones
 
-Dashboards use the **Default Timezone** setting found on the [Preferences page](../get-started/account-setup.md). The dashboard's timezone cannot be edited once it is created.
+Dashboards use the **Default Timezone** setting found on the [Preferences page](../get-started/account-settings-preferences.md). The dashboard's timezone cannot be edited once it is created.
 
 ### Sumo Logic free accounts
 

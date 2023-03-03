@@ -1,7 +1,6 @@
 ---
 id: inspector
-title: Sumo Logic App for Amazon Inspector
-sidebar_label: Amazon Inspector
+title: Amazon Inspector
 description: The Sumo Logic Inspector App helps reveal trends and identify anomalies from these AWS Inspector findings.
 ---
 
@@ -36,7 +35,7 @@ To add a hosted collector and AWS S3 source:
 
 1. [Grant Access to an AWS S3 Bucket.](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product)
 2. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector)
-3. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
+3. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source#awss3-source) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
     * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
     * Specify **Timestamp locator** as `.*"UpdatedAt":"(.*)".*`
     * Click **Add**.

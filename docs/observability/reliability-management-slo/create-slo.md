@@ -1,15 +1,18 @@
 ---
 id: create-slo
 title: Create an SLO
-description: Learn how to create a SLO for reliability management.
+description: Learn how to create an SLO for reliability management.
+keywords:
+    - _view=sumologic_slo_output
+    - sloVersion
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 When creating an SLO, you'll need to define the following:
 
-* SLI metric you are tracking and target configuration using ratio- or threshold-based definitions
-* SLO defining the target and duration to monitor (for example the uptime for the target)
+* SLI (service level indicator) metric you are tracking and target configuration using ratio- or threshold-based definitions
+* SLO (service level objective) defining the target and duration to monitor (for example the uptime for the target)
 * Basic details for SLO name and description
 
 You have multiple configurations for creating SLOs:
@@ -25,12 +28,10 @@ The following table lists the available options for an SLO:
 | **Metrics-based SLO** | Ratio and Threshold | Ratio Only   |
 | **Logs-based SLO**   | Ratio and Threshold | Ratio and Threshold |
 
-## Create an SLO
+## Create an SLO (General)
 
-### General process
-
-1. Click **Manage Data**, then **Monitoring**. Select the **SLO** tab if not loaded.
-2. Click **Add**, then **New SLO**. Optionally, you can also:
+1. Click **Manage Data** > **Monitoring** > **SLO** tab.
+2. Click **Add** > **New SLO**. Optionally, you can also:
    * Create folders to manage your SLOs.
    * Import an SLO:
       1. To transfer data immediately and create an SLO using an import, you should first export JSON content to use that formatting. The Sumo Logic JSON format may change without notice. See [Export and Import Content in the Library](/docs/get-started/library#import-content) for complete details.
@@ -39,7 +40,7 @@ The following table lists the available options for an SLO:
       4. Enter a Name for the SLO.
       5. Copy and paste the JSON in the text editor.
       6. Click **Import**.<br/><img src={useBaseUrl('img/observability/slo-import.png')} alt="Reliability Management SLO SLI" />
-3. Select the Signal Type:
+3. Select the **Signal Type**:
     * **Latency**. Select to calculate the speed of services, lag time.
     * **Error**. Select to monitor for errors that occur in your services.
     * **Throughput**. Select to track the throughput of services and processing.
@@ -118,33 +119,70 @@ Follow the instructions below based on the query type:
 10. Click **Save**. To create a monitor, click [Save and Create Monitor](#creating-slo-monitors).
 
 
-## Creating SLOs from Logs, Metrics, Monitors
+## Create a Logs-based SLO
 
 You can create SLOs directly from your Sumo Logic log search. This allows you to validate queries, quickly create SLOs, and re-use queries from existing dashboard panels.
 
 1. Enter a new **Log search** query (or use an existing one).<br/><img src={useBaseUrl('img/observability/log-search.png')} alt="log search" />
-1. Click the **More Actions** (kebab icon) dropdown menu.<br/><img src={useBaseUrl('img/observability/slo-more-actions-kebab.png')} alt="More Actions" />
-1. Click **Create an SLO**.<br/><img src={useBaseUrl('img/observability/slo-create.png')} alt="Create an SLO" width="200"/>
+1. Click the **More Actions** (kebab icon) dropdown menu.<br/><img src={useBaseUrl('img/observability/slo-more-actions-kebab.png')} alt="More Actions" width="400"/>
+1. Click **Create an SLO**.<br/><img src={useBaseUrl('img/observability/slo-create.png')} alt="Create an SLO" width="150"/>
+
+## Create a Metrics-based SLO
 
 :::note Coming soon
-You'll be able to create SLOs from Metrics Explorer and Monitors.
+You'll be able to create SLOs from Metrics Explorer.
 :::
 
-## Creating SLO Monitors
+## Create a Monitor-based SLO
 
-:::note
-[Alert Responses](/docs/alerts/monitors/alert-response) are not yet supported for SLO-based monitors. Notifications will provide information and links to SLO dashboards.
+Critical Monitors are great candidates to convert to SLOs. From the **Monitors** section, you can create a Monitor- and window-based SLO for a given trigger condition.
+
+As an example, say you have an existing Monitor that fires a **Critical** alert if the latency of a customer-critical service exceeds 500ms. By creating an SLO directly through this specific Monitor, those thresholds will automatically carry over into the new SLO, saving you time and effort.
+
+:::caution Prerequisite
+Your Monitor must be in an **active** state.
 :::
 
-Create one or more monitors as needed for your SLO. We recommend creating separate monitors for SLI-based and Burn Rate-based condition types. You can access SLO monitors through your SLO Details or from the Monitors list page.
+1. Go to **Manage Data** > **Monitoring** > **Monitors** tab.
+1. Click on any active Monitor to open its panel.
+1. Choose one of the methods below:<br/>Click **More Actions** > **Create SLO**.<br/><img src={useBaseUrl('img/observability/more-actions-create-slo.png')} alt="Monitor-based SLO" width="500"/>   <br/>Or, click <strong>Monitor-based SLO</strong> > <strong>Add Monitor-based SLO</strong>.<br/><img src={useBaseUrl('img/observability/add-monitor-based-slo.png')} alt="Monitor-based SLO" width="500"/><br/>
+This will open the **New SLO** window.
+1. **Define your SLI**. Your Monitor's **Source**, **Signal Type**, and **Trigger Event** settings will auto-populate here (you can override these if you need to).<br/><img src={useBaseUrl('img/observability/new-slo1.png')} alt="Monitor-based SLO" />
+1. **Define your SLO**. Set your window-based threshold here.<br/><img src={useBaseUrl('img/observability/new-slo2.png')} alt="Monitor-based SLO" />
+1. When you're done, click **Save**, which will save the SLO.<br/><img src={useBaseUrl('img/observability/new-slo4.png')} alt="Monitor-based SLO" width="350" />
 
-You will receive notifications according to monitor configurations, such as email messages and Slack channel posts. Use the variable `{{SloDashboardUrl}}` in your connection payloads, which will generate an SLO dashboard link in notifications. This variable will be included automatically in email notifications.
+To edit SLO parameters:
+1. Go to the **SLO** tab, locate your SLO and click on it. (If you're unable to find it, try applying filters or go to the search bar at the top and enter the SLO name or folder name.)
+1. Edit definition and other parameters.
 
-The Alert Response page is not supported for SLO-based monitors at this time. Notifications will provide access to the SLO dashboard when warning and critical triggers occur.
+To edit SLO parameters from a Monitor:
+1. Go to the **Monitors** tab and click on any Monitor.<br/><img src={useBaseUrl('img/observability/monitors-tab.png')} alt="Monitor-based SLO" width="500" />
+1. In the panel, click **Monitor-based SLO** to view the list of SLOs associated with that particular Monitor.<br/><img src={useBaseUrl('img/observability/monitor-based-slo-panel.png')} alt="Monitor-based SLO" />
+
+:::important
+Any Monitor update that changes the Monitor definition will lead to a change in the version of related SLOs. This means that the SLO history or SLI will get reset for the SLO. Example include trigger condition changes and evaluation delay changes. Changes unrelated to the definition like **Name**, **Description** will not affect the related SLOs.
+:::
+
+### SLI calculation for Monitor-based SLOs
+
+SLIs for Monitor-based SLOs are calculated at a granularity of 1 minute. A minute is treated as unsuccessful if the Monitor threshold is violated at any point of time within that minute.
+
+## Create an SLO Monitor
+
+:::note Limitations
+* [Alert Responses](/docs/alerts/monitors/alert-response) are not yet supported for SLO-based Monitors. Notifications will provide information and links to SLO dashboards.
+* It is not possible to create an SLO on top of an SLO Monitor.
+:::
+
+Create one or more Monitors as needed for your SLO. We recommend creating separate Monitors for SLI-based and Burn Rate-based condition types. You can access SLO Monitors through your SLO Details or from the Monitors list page.
+
+You will receive notifications according to Monitor configurations, such as email messages and Slack channel posts. Use the variable `{{SloDashboardUrl}}` in your connection payloads, which will generate an SLO dashboard link in notifications. This variable will be included automatically in email notifications.
+
+The Alert Response page is not supported for SLO-based Monitors at this time. Notifications will provide access to the SLO dashboard when warning and critical triggers occur.
 
 Monitor notifications may auto-resolve. See [Auto-Resolving Notifications](/docs/observability/reliability-management-slo/create-slo/#auto-resolving-notifications) for details according to the evaluation type (Windows or Request) and compliance type (Calendar or Rolling).
 
-You can create one condition type for your SLO monitor, either an SLI trigger or Error Budget trigger. You can create one condition type for your SLO monitor, either a SLI condition or Error Budget condition. We support configuring a threshold value per critical and warning trigger for that condition type.
+You can create one condition type for your SLO Monitor, either an SLI trigger or Error Budget trigger. You can create one condition type for your SLO Monitor, either a SLI condition or Error Budget condition. We support configuring a threshold value per critical and warning trigger for that condition type.
 
 You have two options to create an SLO Monitor:
 * Select **Save and Create Monitor** when creating an SLO. <br/><img src={useBaseUrl('img/observability/button-save-create-monitor.png')} alt="Reliability Management SLO SLI" />
@@ -159,10 +197,10 @@ When you click **Save and Create Monitor**, a New Monitor dialog loads:
 
   For example, to set up a Slack notification, select **Slack** from the dropdown menu and edit the **Payload** as needed. The following information shows the default settings: <br/><img src={useBaseUrl('img/observability/slack-payload.png')} alt="Reliability Management SLO SLI" />
 4. For **Monitor Details**, enter the following information:
-    * **Name**. Name for the monitor.
-    * **Location**. Path for the monitor, default is /Monitor.
-    * **Description**. Optional description for the monitor.
-    * **Playbook**. Optional playbook for handling these monitors and situations if an issue occurs.<br/><img src={useBaseUrl('img/observability/slo-monitor-detals.png')} alt="Reliability Management SLO SLI" />
+    * **Name**. Name for the Monitor.
+    * **Location**. Path for the Monitor, default is /Monitor.
+    * **Description**. Optional description for the Monitor.
+    * **Playbook**. Optional playbook for handling these Monitors and situations if an issue occurs.<br/><img src={useBaseUrl('img/observability/slo-monitor-detals.png')} alt="Reliability Management SLO SLI" />
 5. Click **Save**.
 
 
@@ -188,7 +226,7 @@ SLO Monitors in a triggered state can auto-resolve. See the following table for 
    </td>
    <td>SLITrigger
    </td>
-   <td>No. SLI never recovers within the same compliance period as the triggered alert, but it can recover in a different compliance period. So the monitor can auto-resolve then. New alert is created for each compliance period. Monitor status is based on latest compliance period’s alert status.
+   <td>No. SLI never recovers within the same compliance period as the triggered alert, but it can recover in a different compliance period. So the Monitor can auto-resolve then. New alert is created for each compliance period. Monitor status is based on latest compliance period’s alert status.
    </td>
   </tr>
   <tr>
@@ -274,17 +312,17 @@ When a notification is sent, it includes information from the alert and a link t
 
 <img src={useBaseUrl('img/observability/resolution-email.png')} alt="Reliability Management SLO SLI" width="350"/>
 
-## Installing AWS SLO Alerts via Terraform
+### Installing AWS SLO Alerts via Terraform
 
-AWS ELB users can now install Sumo Logic out-of-the-box SLOs and associated monitors using [this Sumo Logic Terraform script](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/slo_packages/aws).
+AWS ELB users can now install Sumo Logic out-of-the-box SLOs and associated Monitors using [this Sumo Logic Terraform script](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/slo_packages/aws).
 
 The script allows you to install Sumo Logic SLOs in your specified AWS ELB directory and configure SLO alert notifications (e.g., latency limit breached, server error limit breached). Once installed, you can view and edit your SLO alerts via Terraform or from your Sumo Logic **Monitors** page.
 
 ## SLO as Code
 
-You can use the Sumo Logic Terraform provider to automate [SLO folder](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo_folder) and [SLO creation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo). This can be useful for organizations that want to templatize SLOs, standardize SLO configuration, monitors and dashboards and automate SLO-related workflows.
+You can use the Sumo Logic Terraform provider to automate [SLO folder](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo_folder) and [SLO creation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo). This can be useful for organizations that want to templatize SLOs, standardize SLO configuration, Monitors and dashboards and automate SLO-related workflows.
 
-Use the [Monitor Terraform provider](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) to create monitors associated with SLOs.
+Use the [Monitor Terraform provider](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) to create Monitors associated with SLOs.
 
 
 ## SLO as Log Messages
@@ -307,3 +345,42 @@ _view=sumologic_slo_output sloId="<your-SLO-ID>"
 ```
 
 These log messages will be delayed by one hour, as the system ensures consistency to account for ingest delay of source telemetry.
+
+
+### SLO Lookup Tables
+
+You can call a SLO Lookup Table to view all SLO metadata in your environment. These tables reside under a fixed path, `sumo://content/slos`. Data is managed and refreshed automatically on our end.
+
+There are two ways to use it:
+
+* To join the results of your SLO precomputed data from `_view=sumologic_slo_output` with your metadata contained in the internal lookup table based on the joining key (`sloId`, `sloVersion`):
+  ```sql
+  _view=sumologic_slo_output
+  | lookup * from sumo://content/slos on sloId, sloVersion
+  ```
+* To enlist the contents of the lookup table:
+  ```sql
+  cat sumo://content/slos
+  ```
+
+As an example, say you had a SLO [dashboard](/docs/dashboards-new) and wanted to see error budget burndown from several of your apps and services combined.<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="percent-error-remain" width="450"/>
+
+You would need to create a custom graphic that combines multiple SLOs from multiple services:
+
+1. Go to **Manage Data** > **Monitoring** > **SLO**.
+1. Click on any SLO line item.
+1. Hover over the **Percentage budget remaining** panel, then click the three-dot icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="open-in-logsearch" width="150"/>
+1. In the search field, enter the following snippet. This will join data from multiple sources for your lookup table.
+  ```sql
+  _view=sumologic_slo_output
+  | lookup * from sumo: //content/slos on sloId, sloVersion
+  | where !isBlank (sloname) and slofolderpath matches "*"
+  | concat (sloname, " (", sloId, ")") as sloUniqueName
+  | sum (goodCount) as goodEvents, sum(totalCount) as totalEvents, last (compliancetarget) as target, last(slofolderpath) as sloPath, last(sliwindowsize) as sliwindowsize, last(slievaluationtype) as evaluationType by s1oUniqueName
+  | totalEvents - goodEvents as badEvents
+  | if (evaluationType = "Window", queryTimeRange() / 1000 / sliwindowsize, totalEvents) as denominator
+  | 100 * (1 - badEvents / denominator) as sli
+  | 100 * (sli - target) / (100 - target) as budgetRemaining
+  | fields sloUniqueName, budgetRemaining
+  ```
+1. Click **Add to Dashboard**.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" width="200"/>

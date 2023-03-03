@@ -1,6 +1,6 @@
 ---
 id: corelight-zeek
-title: Corelight Zeek
+title: Corelight Zeek - Cloud SIEM
 sidebar_label: Corelight Zeek
 description: Configure a syslog source to ingest Corelight Zeek log messages and send them to the CSE Corelight log mapper.
 ---
@@ -19,7 +19,7 @@ In this step, you configure a Syslog Source to collect Corelight Zeek log messag
 
 ### Configure an Installed Collector
 
-1. In the Sumo Logic platform, select **Manage Data \> Collection \> Collection**.
+1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
 1. Click **Add Collector**.
 1. Click **Installed Collector**.
 1. The **Add Installed Collector** popup appears.

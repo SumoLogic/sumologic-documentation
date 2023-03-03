@@ -46,7 +46,7 @@ When you configure a Microsoft Office 365 Audit Source in Sumo you will need t
 Using the Global Administrator role is recommended:
 
 | Role  |   Description |
-|-----------------------|------------------------------------------------------------------------------------------|
+|:-----------------------|:------------------------------------------------------------------------------------------|
 | Global Administrator  | This role enables access to all administrative features in your Office 365 subscription. |
 
 You could take a different, more granular, approach to assign roles to
@@ -85,7 +85,7 @@ You must configure a separate Source for each Office 365 application you want to
 During the configuration, you will need to authenticate to Microsoft using standard OAuth v2. The user who authenticates must have Microsoft Office 365 admin rights for the content that is being audited. Refer to the API references in this article for additional information on Microsoft admin rights.
 :::
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic select **Manage Data > Collection > Collection**. 
 1. Click **Add Source** next to a Hosted Collector. See [Set Up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for instructions on setting up a new Hosted Collector.
 1. Select **Office 365 Audit**. 
 1. Enter a name to identify the Source. **Description** is optional.

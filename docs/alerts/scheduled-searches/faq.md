@@ -61,7 +61,7 @@ To create a Scheduled Search:
 1. **Run frequency.** Select **Every 4 hours**.
 1. Click **Schedule this search**. 
    * **Time range for the scheduled search.** Select **Today**.
-   * **Alert condition.** Select **Send notification only if the condition below is satisfied:** and enter **Number of results Greater than \> 0**.
+   * **Alert condition.** Select **Send notification only if the condition below is satisfied:** and enter **Number of results Greater than > 0**.
    * **Alert Type.** Select **Email**.
    * Enter the **email address** where you would like to be alerted.
 1. For all configuration options, see [Schedule a Search](/docs/alerts/scheduled-searches/schedule-search.md). 
@@ -93,9 +93,8 @@ Failures can be seen across many Scheduled Searches due to backend infrastructur
 Scheduled Search failures could be the result of other factors, such as a spike in data being processed by the Scheduled Search. 
 
 * If you have a query that normally runs, but is close to reaching the [timeout period limit](#how-to-prevent-your-scheduled-search-from-timing-out), it could finally fail due to changes in your account, such as the content and size of log messages, or the volume or number of messages sent during a specific time range. Choosing a narrower time range can help.
-* You have a lot of scheduled searches running today. 6,000 per person is the maximum.
-* Even if the query normally runs well within the timeout period limit, there a data surge could cause the need for more processing time
-* There could be normal growth factors within an account such as increased Collector deployment that would cause some Source Categories to have a data surge. You should test your Scheduled Searches for performance periodically to address this possibility.
+* Even if the query normally runs within the timeout period limit, there could be a data surge that causes more processing time to be needed.
+* There could be normal growth factors within an account, such as increased Collector deployment, that would cause some Source Categories to have a data surge. You should test your Scheduled Searches for performance periodically to address this possibility.
 
 See also, [What Happens When a Scheduled Search is Suspended?](#what-happens-when-a-scheduled-search-is-suspended).
 
@@ -193,6 +192,9 @@ When a Scheduled Search query fails Sumo Logic attempts to run the query again 
 
 The [Audit Index](/docs/manage/security/audit-index.md) stores events on your scheduled search events.
 
+### Is there a limit on number of scheduled searches?
+
+A maximum of 6000 scheduled searches are allowed per account.
 
 ### Examples of Scheduled Search suspensions
 

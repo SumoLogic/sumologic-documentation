@@ -4,8 +4,6 @@ title: JSON Parameters for Hosted Sources
 description: This topic describes JSON Source parameters for hosted Collectors.
 ---
 
-
-
 This topic describes JSON Source parameters for Hosted Collectors. See the following topics for additional information:
 
  * [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.
@@ -19,6 +17,7 @@ JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.o
 
 :::note Common Parameters
 See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for a list of common parameters.
+:::
 
 ## Source types for Hosted Collectors
 
@@ -29,7 +28,7 @@ The G Suite Apps Audit Source cannot be created with JSON. This Source requires
 ## Log Sources for Installed Collectors
 
 | Field Type | Type Value |
-|--|--|
+|:--|:--|
 | [Local File Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-file-source) | LocalFile |
 | [Remote File Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#remote-file-source) | RemoteFileV2 |
 | [Local Windows Event Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#local-windows-event-log-source) | LocalWindowsEventLog |
@@ -45,7 +44,7 @@ The G Suite Apps Audit Source cannot be created with JSON. This Source requires
 ## Metric Sources for Installed Collectors
 
 | Field Type | Type Value |
-|--|--|
+|:--|:--|
 | [Host Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#host-metrics-source)  | SystemStats |
 | [Streaming Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#streaming-metrics-source) | StreamingMetrics |
 
@@ -53,7 +52,7 @@ The G Suite Apps Audit Source cannot be created with JSON. This Source requires
 ### Log Sources for Hosted Collectors
 
 | Field Type | Type Value |
-|--|--|
+|:--|:--|
 | [Akamai SIEM API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source.md) | Universal |
 | [Amazon S3 Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#amazon-s3-source) | Polling |
 | [AWS S3 Archive Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-s3-archive-source) | Polling |
@@ -89,7 +88,7 @@ The G Suite Apps Audit Source cannot be created with JSON. This Source requires
 ### Metrics sources for hosted collectors
 
 | Field Type | Type Value |
-|--|--|
+|:--|:--|
 | [AWS CloudWatch Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudwatch-source) | Polling |
 
 ## Log Source parameters for Hosted Collectors
@@ -99,7 +98,7 @@ The G Suite Apps Audit Source cannot be created with JSON. This Source requires
 In addition to the common parameters, the following parameters are for an HTTP Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `fields` | JSON Object | No |  | Enable Extended HTTP Metadata Collection by adding `_convertHeadersToFields=true`. | modifiable |
 | `sourceType` | String | Yes |  | HTTP | not modifiable |
 | `messagePerRequest` | Boolean | Yes |  | When set to `true`, only a single message will be sent for each HTTP request. To disable this feature, set to `false`. <br/>You need to specify the common parameter `multilineProcessingEnabled` as false when setting `messagePerRequest` to `true`. | modifiable |
@@ -125,7 +124,7 @@ In addition to the common parameters, the following parameters are for an HTTP 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for a Cloud Syslog Source.
 
 | Parameter | Type |  Required? | Default | Description | Access |
-|---------------|----------|---------------|-------------|-----------------|----------------|
+|:---------------|:----------|:---------------|:-------------|:-----------------|:----------------|
 | sourceType    | String   | Yes           |             | Cloudsyslog     | not modifiable |
 
 Cloud Syslog Source JSON example: 
@@ -146,7 +145,7 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-sourc
 the following parameters are for a Google Cloud Platform Source.
 
 | Parameter | Type |  Required? | Default | Description | Access |
-|---------------|----------|---------------|-------------|-----------------|----------------|
+|:---------------|:----------|:---------------|:-------------|:-----------------|:----------------|
 | `sourceType` | String | Yes | 	HTTP | not modifiable |
 | `thirdPartyRef` | Nested | JSON | Yes |  | Specify the the serviceType as GoogleCloudLogs. | not modifiable |
 
@@ -173,7 +172,7 @@ Google Cloud Platform Source JSON example: 
 In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for all AWS log Sources except Kinesis.
 
 | Parameter | Type |  Required? | Default | Description | Access |
-|---------------|----------|---------------|-------------|-----------------|----------------|
+|:---------------|:----------|:---------------|:-------------|:-----------------|:----------------|
 | `sourceType` | String | Yes |  | Polling | not modifiable |
 | `contentType` | String | No |  | Define based on the AWS Source you are creating.<br/>[Archive](#awss3-archive-source): AwsS3ArchiveBucket<br/>[S3](#amazon-s3-source): AwsS3Bucket<br/>[S3 Audit](#amazon-s3-audit-source): AwsS3AuditBucket<br/>[CloudFront](#aws-cloudfront-source): AwsCloudFrontBucket<br/>[CloudTrail](#aws-cloudtrail-source): AwsCloudTrailBucket<br/>[ELB](#aws-elastic-load-balancing-source): AwsElbBucket<br/>[Metadata](#aws-metadata-tag-source): AwsMetadata<br/>[Kinesis](#aws-kinesis-firehose-for-logs-source): KinesisLog	| not modifiable |
 | `scanInterval` | Long | Yes | 300000 | Time interval of S3 bucket scans for new data, in milliseconds. Minimum value:  1000<br/>For Automatic assign to: -1 | modifiable |
@@ -519,7 +518,7 @@ To disable S3 Replay use the `NoPathExpression` placeholder for `path` and `a
 The following parameters are for an AWS CloudWatch Source.
 
 | Parameter | Type |  Required? | Default | Description | Access |
-|---------------|----------|---------------|-------------|-----------------|----------------|
+|:---------------|:----------|:---------------|:-------------|:-----------------|:----------------|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See best practices for details. | modifiable |

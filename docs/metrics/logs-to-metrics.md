@@ -76,7 +76,7 @@ Once you save a Logs-to-Metrics rule, Sumo will commence creating metrics. Sumo 
 
 ### Supported and unsupported parsing operators
 
-Not all Sumo parsing operators are supported. For more information see [Create a Logs-to-Metrics rule](logs-to-metrics.md).
+Not all Sumo parsing operators are supported. For more information, see [Create a Logs-to-Metrics rule](logs-to-metrics.md).
 
 ### Scheduled views and indexes are not supported
 
@@ -84,7 +84,9 @@ You can't use a scheduled view or an index in the scope of a Logs-to-Metrics rul
 
 ### Using Logs-to-Metrics in the frequent or infrequent tier
 
-If you want to create a Logs-to-Metrics rule for logs in the frequent or infrequent tier, you must create the rule with the same log search scope as the partition where the data lives, because you cannot use `_index`  in a Logs-to-Metrics rule. For example, if you have a partition, `_index=foo`, whose routing expression is `_sourceCategory=foo`, then you should use that same routing expression, `_sourceCategory=foo`, to scope the Logs-to-Metrics rule.
+Since `_index` is not accepted in logs-to-metrics rules, you can just skip it and still get results for the data assigned to frequent and infrequent tier.
+
+If you want to create a Logs-to-Metrics rule for the scope of frequent or infrequent tier partition, you can create the rule with the same log search scope as the partition where the data lives. For example, if you have a partition, `_index=foo`, whose routing expression is `_sourceCategory=foo`, then you should use the same routing expression, `_sourceCategory=foo`, to scope the Logs-to-Metrics rule.
 
 ### _dataTier search modifier is not supported
 
@@ -102,7 +104,7 @@ This section describes how to create a Logs-to-Metrics rule.
 You must be a Sumo admin to create a Logs-to-Metrics rule, or have a role with the **Manage Logs-to-Metrics** capability, as described in the previous section.
 :::
 
-1. Go to **Manage Data \> Metrics \> Logs-to-Metrics** in the Sumo web app. The page displays a list of existing Logs-to-Metrics rules.
+1. Go to **Manage Data > Metrics > Logs-to-Metrics** in the Sumo web app. The page displays a list of existing Logs-to-Metrics rules.
 
     ![logs-to-metrics-rules.png](/img/metrics/log-to-metrics-add.png)
 

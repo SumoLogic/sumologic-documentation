@@ -9,20 +9,20 @@ description: The Sumo Logic App for AWS EC2 allows you to display and gain insig
 
 ## Metrics Types 
 
-Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-Source#Collected-Metrics).
+Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-source).
 
-* [CPU Metrics](/docs/integrations/hosts-operating-systems/host-metrics#CPU-Metrics)
-* [Memory Metrics](/docs/integrations/hosts-operating-systems/host-metrics#Memory-Metrics)
+* [CPU Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#cpu-metrics)
+* [Memory Metrics](/docs/integrations/hosts-operating-systems/host-metrics#memory-metrics)
 * [TCP Metrics](/docs/integrations/hosts-operating-systems/host-metrics#TCP-Metrics)
-* [Networking Metrics](/docs/integrations/hosts-operating-systems/host-metrics#networking-metrics)
-* [Disk Metrics](/docs/integrations/hosts-operating-systems/host-metrics#disk-metrics)
+* [Networking Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#networking-metrics)
+* [Disk Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#disk-metrics)
 
 
 ### Time Intervals
 
 The time interval determines how frequently the source is scanned for metrics data. Sumo Logic supports pre-specified time intervals (10 seconds, 15 seconds, 30 seconds, 1 minute, and 5 minutes).
 
-You can also specify a time interval in JSON by using the interval parameter, as follows: "interval" : 60000
+You can also specify a time interval in JSON by using the interval parameter, as follows: `"interval" : 60000`.
 
 The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or longer granularity. Specifying a shorter interval will increase the message volume and could cause your deployment to incur additional charges.
 

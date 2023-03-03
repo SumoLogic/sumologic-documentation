@@ -1,6 +1,6 @@
 ---
 id: jmx
-title: Sumo Logic App for Java Management Extensions (JMX)
+title: Java Management Extensions (JMX)
 sidebar_label: JMX
 description: The Sumo Logic App for Java Management Extensions (JMX) allows you to analyze and gain insights about Java applications.
 ---
@@ -179,7 +179,7 @@ The following steps assume you are collecting JMX metrics from a Kubernetes envi
 1. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md)
 2. On your Pods, add the following annotations to configure Telegraf.
 
-Ensure that Prometheus passes all metrics to Sumo Logic. If you use the below annotations to configure the Telegraf, it should work well, otherwise, refer to this [doc](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/additional-prometheus-configuration.md#update-the-prometheus-overridesyaml-file-to-forward-the-metrics-to-fluentd).
+Ensure that Prometheus passes all metrics to Sumo Logic. If you use the below annotations to configure Telegraf, it should work correctly, otherwise, refer to this [doc](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-application-metrics.md).
 
 ```sql
 annotations:
@@ -311,10 +311,10 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
+Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

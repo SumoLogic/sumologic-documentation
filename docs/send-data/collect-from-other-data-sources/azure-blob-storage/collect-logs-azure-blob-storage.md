@@ -1,6 +1,7 @@
 ---
 id: collect-logs-azure-blob-storage
 title: Collect Logs from Azure Blob Storage
+sidebar_label: Collecting Metrics
 description: Instructions for configuring a pipeline for shipping logs available from Azure Blob Storage to an Event Hub, on to an Azure Function, and finally to an HTTP source on an hosted collector in Sumo Logic.
 ---
 
@@ -118,7 +119,7 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 This section describes how to push logs from an Azure service to Azure Blob Storage by configuring Diagnostic Logs. The instructions use the Azure Web Apps Service as an example. 
 
 1. Login to the Azure Portal.
-1. Click **AppServices \> Your Function App \> Diagnostic Logs** under **Monitoring**.
+1. Click **AppServices > Your Function App > Diagnostic Logs** under **Monitoring**.
 1. You will see the Diagnostic Logs blade. Enable Application Logging, Web Server Logging, or both, and click **Storage Settings**.
 1. Select the Storage Account whose connection string you configured in [Step 1](#step-1-configure-azure-storage-account). 
 1. In the Containers blade, select the container you created in [Step 1](#step-1-configure-azure-storage-account).
@@ -244,7 +245,7 @@ Assuming you have used the modified template which uses standard/premium plan fo
 1. Create a subnet in a virtual network using the instructions in the [doc](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet#add-a-subnet). If you have multiple accounts in the same region you can skip step 2 below and use the same subnet and add it to the storage account as mentioned in step 3.
 1. Perform below steps for both BlobTaskConsumer and [DLQTaskConsumer](https://portal.azure.com/#blade/WebsitesExtension/FunctionMenuBlade/resourceId/%2Fsubscriptions%2Fc088dc46-d692-42ad-a4b6-9a542d28ad2a%2FresourceGroups%2Fleast%2Fproviders%2FMicrosoft.Web%2Fsites%2FSUMOBRDLQProcessorekbxzlepnhs4g%2Ffunctions%2FDLQTaskConsumer) function apps.
 
-   1. Go to **Function App \> Networking**. 
+   1. Go to **Function App > Networking**. 
    1. Under Outbound traffic, click on Vnet Integration. 
 
     ![azureblob-outbound](/img/send-data/azureblob-outbound.png)

@@ -4,7 +4,9 @@ title: LogCompare
 description: LogCompare allows you to easily compare log data from different time periods to detect major changes or anomalies.
 ---
 
-LogCompare allows you to easily compare log data from different time periods to detect major changes or anomalies. LogCompare runs a delta analysis that helps you troubleshoot and discover root causes. For example, you could determine what was different right before a failure compared to the previous day or previous week. Or, you could easily check if a new release introduced a new issue by reviewing the difference in log streams across time.
+LogCompare allows you to easily compare log data from different time periods to detect major changes or anomalies. LogCompare runs a delta analysis that helps you troubleshoot and discover root causes.
+
+For example, you could determine what was different right before a failure compared to the previous day or previous week. Or, you could easily check if a new release introduced a new issue by reviewing the difference in log streams across time.
 
 
 ## How LogCompare works
@@ -15,18 +17,18 @@ For example, a 24-hour LogCompare, which is the default time shift, allows you t
 
 LogCompare reports the variance between the baseline and the target, allowing you to see the change in patterns of log messages over time. This way, you can compare log messages from today with the same time range from yesterday, and see the percentage of changes in your log message signatures, as well as new signatures that have appeared, and signatures that are now gone.
 
-**Search time**
+### Search time
 
 Depending on the time range you have selected for the search, the LogCompare operation may take a long time to complete, due to the multiple operations it is performing. For this reason, we suggest that you select as small a time range as practical.
 
 If the baseline query does not finish within two hours, it will timeout.
 
-**Compare vs. LogCompare**
+### Compare vs. LogCompare
 
 The [compare](/docs/search/time-compare) and logcompare operators are very similar in syntax and functionality, but they handle different types of data:
 
-*   **compare** is used for aggregated numeric data, such as analyzing results from a [group by](/docs/search/search-query-language/group-aggregate-operators) query or a query with aggregation operators like count, sum, and avg.
-*   **logcompare** is used for log signature counts based on your raw log data.
+* **compare** is used for aggregated numeric data, such as analyzing results from a [group by](/docs/search/search-query-language/group-aggregate-operators) query or a query with aggregation operators like count, sum, and avg.
+* **logcompare** is used for log signature counts based on your raw log data.
 
 
 ## Use LogCompare
@@ -65,19 +67,16 @@ In the **Custom LogCompare** dialog, you can specify the target and baseline q
 The Time Shift can take a single value, such as -2d, or it can take a range. It must be a valid range, with a start date older or smaller than the end date.
 :::
 
-*   **Target Query.** Originally, the Target Query is the same as the Baseline Query. But you can edit it to compare against a new target. Here we’ve added   
-    `_sourceCategory=analysis` to compare it to`_sourceCategory=stream`.
+*   **Target Query.** Originally, the Target Query is the same as the Baseline Query. But you can edit it to compare against a new target. Here we’ve added `_sourceCategory=analysis` to compare it to `_sourceCategory=stream`.
 *   **Time Range.** The Time Range pertains to both the Target Query and the Baseline Query. You can enter a preconfigured, relative, or absolute time range, similar to the time range on the Search page. The Time Range can be specified by timeshift (start_time = now - timeshift) or (start_time + end_time).
     *   For the target, if the end_time is not specified, it is implicitly set to now if not specified.
-    *   For the baseline, if the end_time is not specified, it is implicitly set as: (end_time = start_time + range_length.) The (range_length = end_time - start_time) using the target times.
+    *   For the baseline, if the end_time is not specified, it is implicitly set as: (`end_time = start_time + range_length`). The (`range_length = end_time - start_time`) using the target times.
 
 :::note
 See the [Time Shift versus Time Range example](#time-shift-versus-time-range-example) for a table showing how these settings affect the Target and Baseline queries.
 :::
 
-Click **Run** to add the logcompare operator, timeshift, and baseline to your query, for example:
-
-`_sourceCategory=analysis | logcompare timeshift -2d baseline (_sourceCategory=stream)`
+Click **Run** to add the logcompare operator, timeshift, and baseline to your query, for example: `_sourceCategory=analysis | logcompare timeshift -2d baseline (_sourceCategory=stream)`
 
 Results appear in the **Signatures** tab.
 
@@ -89,38 +88,45 @@ The LogCompare operator is used the same as a search operator. This section exp
 
 #### Syntax
 
-*   `<target query> | logcompare timeshift <time> [baseline (<baseline query>)]`
+`<target query> | logcompare timeshift <time> [baseline (<baseline query>)]`
 
 where
 
-*   `<target query>` is the target (current) query.
-*   `<time>` is the time shift you want for the baseline query.
-*   `<baseline query>` is the baseline (historical) query.
+*  `<target query>` is the target (current) query.
+*  `<time>` is the time shift you want for the baseline query.
+*  `<baseline query>` is the baseline (historical) query.
 
 A few examples:
 
-*   `... | logcompare timeshift -24h`
-    Compare the result of a query with the result of the same query for a time range shifted by 24 hours.  
+Compare the result of a query with the result of the same query for a time range shifted by 24 hours.  
+```sql
+... | logcompare timeshift -24h
+```
+Compare the result of a query with the result of the same query for a time range shifted by 1 day. (Same as previous example.)  
+```sql
+... | logcompare timeshift -1d
+```
 
-*   `... | logcompare timeshift -1d`  
-    Compare the result of a query with the result of the same query for a time range shifted by 1 day. (Same as previous example.)  
+Compare the result of a query with the result of the same query for a time range specified by `start_time` and `end_time`. This must be a valid time range.
+```sql
+... | logcompare start_time 2021-01-06T12:00:00-08:00 end_time 2021-01-07T12:00:00-08:00.
+```
 
-*   `... | logcompare start_time 2021-01-06T12:00:00-08:00 end_time 2021-01-07T12:00:00-08:00`  
-    Compare the result of a query with the result of the same query for a time range specified by start_time and end_time. This must be a valid time range.
-
-*   `_sourceHost=cluster-1| logcompare timeshift -0s baseline(_sourceHost=cluster-2)`  
-    Compare logs on two different hosts (cluster-1 and cluster-2) for the same time period.
+Compare logs on two different hosts (cluster-1 and cluster-2) for the same time period.
+```sql
+_sourceHost=cluster-1| logcompare timeshift -0s baseline(_sourceHost=cluster-2)
+```
 
 ### Output fields
 
 LogCompare generates and applies results to certain fields, shown in the following table. These fields are referenced to populate the data in the **Signatures** tab.
 
 | Field | Description |
-|---|---|
-| _count | The number of log messages that belong to this cluster for this query. |
-| _deltaPercentage | The percent change of the signature, calculated as (targetPercentage - baselinePercentage) / baselinePercentage, where baselinePercentage is the number of logs matched to the signature divided by the total number of logs in the baseline, and similarly for targetPercentage. This is infinity for new signatures. |
-| _anomalyScore | The value is calculated using a symmetric version of [Kullback-Leibler divergence score](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence). |
-| _isNew | Values are Boolean.1 if the cluster is new, otherwise 0. |
+|:---|:---|
+| `_count` | The number of log messages that belong to this cluster for this query. |
+| `_deltaPercentage` | The percent change of the signature, calculated as (targetPercentage - baselinePercentage) / baselinePercentage, where baselinePercentage is the number of logs matched to the signature divided by the total number of logs in the baseline, and similarly for targetPercentage. This is infinity for new signatures. |
+| `_anomalyScore` | The value is calculated using a symmetric version of [Kullback-Leibler divergence score](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence). |
+| `_isNew` | Values are Boolean.1 if the cluster is new, otherwise 0. |
 
 #### Use LogCompare fields
 
@@ -134,7 +140,7 @@ The following are examples that use fields generated from LogCompare.
 
 Use the where operator against the **`_isNew`** field to return only new clusters:
 
-```
+```sql
 error | logcompare timeshift -1d   
 | where (_isNew)
 ```
@@ -143,14 +149,14 @@ error | logcompare timeshift -1d 
 
 And in this example, the logcompare operator shows only clusters that no longer include any messages:
 
-```
+```sql
 error | logcompare timeshift -1d   
 | where _count ==0
 ```
 
 **Show signatures with a count greater than 50, is not new, and has a delta percentage greater than 90.**
 
-```
+```sql
 error | logcompare timeshift -1d  
 | where _deltapercentage>90 and !_isnew and _count>50
 ```
@@ -188,7 +194,7 @@ Gone signatures look like the following:
 The following table illustrates the way **Count** results are calculated. For example, if the baseline query returns signatures A, B, C, and D while the target includes A, B, D, and E signatures, your results would look like the following:
 
 | Baseline | Target | Count (delta) |
-|---|---|---|
+|:---|:---|:---|
 | A | A | +/-% |
 | B | B | +/-% |
 | C |   | gone |
@@ -226,7 +232,7 @@ You can influence the algorithm by promoting, demoting, and splitting signatures
 The following table explains the icons in the **Actions** column.
 
 | Icon | Action |
-|---|---|
+|:---|:---|
 | ![promote](/img/search/logcompare/promote.png) | Promote a signature if the data included in the signature is relevant. Once promoted the thumbs-up icon turns blue. |
 | ![demote](/img/search/logcompare/demote.png) | Demote a signature if it's not relevant. Once demoted the thumbs-down icon turns blue. |
 | ![split](/img/search/logcompare/split.png) | Split a signature into multiple signatures to see more granular results. You'll notice that fewer wildcard asterisks will appear. Instead, specific values are included in the signatures. After splitting, the newly split signatures are highlighted. |
@@ -242,7 +248,7 @@ Logs are clustered into patterns, called signatures. The structure of logs is an
 The following table shows how the Time Range and Time Shift affect the Target and Baseline searches. The dates shown are based on a LogCompare search ran on May 10th.
 
 | Time Range | Time Shift | Target (current) | Baseline (historical) |
-|---|---|---|---|
+|:---|:---|:---|:---|
 | -1d | -30d | May 9-10 | April 9-10 |
 | -30d | -1d | April 10 - May 10 | April 9 - May 9 |
 

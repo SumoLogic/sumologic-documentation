@@ -4,8 +4,6 @@ title: Modify a Search from the results table
 description: After running a search, you can modify subsequent searches by selecting text displayed in the Messages tab.
 ---
 
-
-
 When you run a search your results are provided in a **Messages** tab. If the search conducted an aggregation you'll also get an **Aggregates** tab. The options to modify your search will differ depending on the tab you're viewing.
 
 ## Messages tab
@@ -21,9 +19,9 @@ After running a search, you can make these changes in the **Messages** tab:
 After you select text and right click, you'll see a menu pop up with the following options:
 
 | Option | Added to Search |
-|--|--|
+|:--|:--|
 | Copy Selected Text | Copies the text to your computer clipboard. |
-| Parse selected text/key | `[search] | parse [selected text] as [fieldName]` |
+| Parse selected text/key | `[search] parse [selected text] as [fieldName]` |
 | Add selected text as AND | `[search] AND [selected text]` |
 | Add selected text as AND NOT | `[search] AND ! [selected text]` |
 | Add selected text as OR | `[search] OR [selected text]` |
@@ -37,22 +35,12 @@ If you come across text that you'd like to [parse as a field](../../search-que
 
 To parse a field from message text:
 
-1. In the search results, select the text or string you'd like to parse, right click, and click **Parse selected text**.
-
-    ![parse selected text](/img/search/get-started-search/search-page/parse-selected-text.png)    
-
-1. In the **Parse Text** dialog box, select any text that you don't want to include in the parsed field. Then click **Extract this value**. For example, to parse just the client URL, select the unique client URL, then select **Click to extract this value.**
-
-    ![extract value](/img/search/get-started-search/search-page/extract-value.png)  
-      
-1. Type a name for the **Field**. This name appears at the top of the parsed column. (Field names can contain alphanumeric characters and underscores (_). The name must start and end with an alphabet character.) Then click **Submit**.
-
-    :::note
-    If you don't enter a field name, you'll see an error in the **Search** tab.
-    :::
-
-    ![parse text](/img/search/get-started-search/search-page/parse-text.png)
-
+1. In the search results, select the text or string you'd like to parse, right click, and click **Parse selected text**.<br/>  ![parse selected text](/img/search/get-started-search/search-page/parse-selected-text.png)    
+1. In the **Parse Text** dialog box, select any text that you don't want to include in the parsed field. Then click **Extract this value**. For example, to parse just the client URL, select the unique client URL, then select **Click to extract this value.**<br/>  ![extract value](/img/search/get-started-search/search-page/extract-value.png)      
+1. Type a name for the **Field**. This name appears at the top of the parsed column. Field names can contain alphanumeric characters and underscores (`_`). The name must start and end with an alphabet character. Then click **Submit**.<br/>![parse text](/img/search/get-started-search/search-page/parse-text.png)
+  :::note
+  If you don't enter a field name, you'll see an error in the **Search** tab.
+  :::
 1. In the **Search** tab, click **Start** to being the search.
 
 ## Aggregates tab
@@ -62,7 +50,7 @@ After running an [aggregate](/docs/search/search-query-language/group-aggregate-
 After you select text and right click, you'll see a menu pop up with the following options:
 
 | Option | Added to Search |
-|--|--|
+|:--|:--|
 | Copy Selected Text | Copies the text to your computer clipboard. |
 | Add selected text as AND | `[search] AND [selected text]` |
 | Add selected text as AND NOT | `[search] AND ! [selected text]` |

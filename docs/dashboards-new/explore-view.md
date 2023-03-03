@@ -1,14 +1,19 @@
 ---
 id: explore-view
-title: Navigating Sumo Logic Dashboards with Explore
-sidebar_label: Explore View
+title: Explore
 description: Explore gives you an easy way to view and navigate the hierarchy of your environment.
 ---
 
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Explore is a navigation tool that provides an intuitive visual hierarchy of your environment. Use Explore to facilitate successful monitoring, managing, and troubleshooting.
+<img src={useBaseUrl('img/dashboards-new/explore/explore.png')} alt="Explore" width="50"/>
+
+**Explore** is a navigation tool that provides an intuitive visual hierarchy of your environment. Use Explore to facilitate successful monitoring, managing, and troubleshooting.
+
+:::note
+If you're looking for our Root Cause Explorer observability tool, [click here](/docs/observability/root-cause-explorer).
+:::
 
 ## Navigating Explore
 
@@ -16,7 +21,7 @@ To open Explore, do the following:
 
 1. Log in to Sumo Logic and click **+ New** on the top menu bar.
 2. From the dropdown menu, choose **Explore**.<br/><img src={useBaseUrl('img/dashboards-new/explore/Explore-open.png')} alt="Explore" />
-3. In the **Explore By** navigation panel, select your desired category (e.g., AWS Observability), then drill down further until you find your desired component which you'd like to explore. Metrics will be displayed/visualized as dashboards. See [Application Components View](#Application-Components-View) for an example walkthrough.
+3. In the **Explore By** navigation panel, select your desired category (e.g., AWS Observability), then drill down further until you find your desired component which you'd like to explore. Metrics will be displayed/visualized as dashboards. See [Application Components View](/docs/dashboards-new/explore-view/#application-components-view) for an example walkthrough.
 
 
 ## Explore Dashboard Categories
@@ -55,7 +60,7 @@ This feature is currently supported only for Database apps. To learn more, go to
 
 ### Application Service Views
 
-Explore provides two Service and Application dashboard views accessible through the **Explore By** menu. This allows you to review tracing data by application (all or grouped) and services by top level and breaking down their health by application. This helps you review the most active operations performed on specified applications and services. See [Service Map Traces](/docs/apm/traces/working-with-tracing-data/services-list-map.md#Application_Service_Dashboards) and [Sumo Apps](/docs/integrations) for more info. <br/><img src={useBaseUrl('img/dashboards-new/explore/apm-service-view.png')} alt="Explore" />
+Explore provides two Service and Application dashboard views accessible through the **Explore By** menu. This allows you to review tracing data by application (all or grouped) and services by top level and breaking down their health by application. This helps you review the most active operations performed on specified applications and services. See [Service Map Traces](/docs/apm/traces/services-list-map) and [Sumo Logic Apps](/docs/integrations) for more info. <br/><img src={useBaseUrl('img/dashboards-new/explore/apm-service-view.png')} alt="Explore" />
 
 
 ### Real User Monitoring

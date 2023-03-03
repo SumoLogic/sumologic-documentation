@@ -47,15 +47,13 @@ Consider having more than one Installed Collector if:
 
 * You expect the Collector to ingest from at least 500 separate files.
 * Your hardware has memory or CPU limitations.
-* You expect combined logging traffic for one Collector to be higher
-    than 15,000 events per second.
+* You expect combined logging traffic for one Collector to be higher than 15,000 events per second.
 * Your network clusters or regions are geographically separated.
-* You prefer to install many Collectors, for example, one per machine
-    to collect local files.
+* You prefer to install many Collectors, for example, one per machine to collect local files.
 
 To help design your deployment see [how Installed Collectors work](/docs/send-data/installed-collectors) and [Best Practices: Local and Centralized Data Collection](/docs/send-data/best-practices#local-and-centralized-data-collection).
 
-For details on system requirements, see Installed Collector requirements.
+For details on system requirements, see [Installed Collector requirements](/docs/get-started/system-requirements/#installed-collector-requirements).
 
 ### Hosted Collectors
 
@@ -92,7 +90,7 @@ Depending on the method you'd like to collect logs, and the types of logs you'd
 The following table shows the major differences between them.
 
 | Installed Collector | Hosted Collector |
-|--|--|
+|:--|:--|
 | <ul><li>Installed on a system within your deployment locally or remotely.</li><li>Sources collect data available in your deployment.</li><li>Easy to troubleshoot based on Collector logs.</li><li>Supports using Local Configuration File Management so you can use JSON files to configure Sources.</li></ul> | <ul><li>Hosted by Sumo Logic. Agentless: no software to install or activate on a system in your deployment.</li><li>Hosts Sources to collect seamlessly from AWS, Google, and Microsoft products.</li><li>Can receive logs and metrics uploaded via a URL.</li></ul> |
 
 

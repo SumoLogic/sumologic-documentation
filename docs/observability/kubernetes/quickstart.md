@@ -1,22 +1,21 @@
 ---
 id: quickstart
 title: Kubernetes Quickstart
-sidebar_label: Kubernetes Quickstart
+sidebar_label: Quickstart
 description: Get started with our Kubernetes solution in minutes.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This guide will walk you through setting up the [Sumo Logic Kubernetes solution](https://www.sumologic.com/solutions/kubernetes/) in two easy steps. This will:
+This guide will walk you through setting up the [Sumo Logic Kubernetes solution](https://github.com/SumoLogic/sumologic-kubernetes-collection) in two easy steps. This will:
 * Set up data collection for your Kubernetes environment (orchestration, infrastructure, and app data)
 * Install the relevant app dashboards to view data from your Kubernetes environment, and share it with others in your org
-* Install the necessary alert monitors to get alerted of any issues 
+* Install the necessary alert monitors to get alerted of any issues
 
 :::tip
 As an alternative to this quickstart, you can use our Kubernetes Setup Quickstart Wizard, located at **App Catalog** > **Kubernetes** > **Begin Integration**.
 :::
-
 
 ## Before you begin
 * A Sumo Logic account (if you don't have one, [sign up for a free trial](/get-started/sign-up.md#create-a-trial-account))
@@ -40,7 +39,6 @@ values={[
   helm repo add sumologic https://sumologic.github.io/sumologic-kubernetes-collection
   helm repo update
   ```
-
 1. Get your [Sumo Logic Access ID and Access Key](/docs/manage/security/access-keys) and run the following command:
   ```shell
   helm upgrade --install my-release sumologic/sumologic \
@@ -77,7 +75,6 @@ If you're adding additional configuration, we recommend using the [helm values f
   --set "sumologic.setup.monitors.notificationEmails={EMAIL ADDRESS}"
   | tee sumologic.yaml
   ```
-
 1. Install the required CRDs and apply the generated YAML:
   ```shell
   kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_probes.yaml \
@@ -97,11 +94,12 @@ If you're adding additional configuration, we recommend using the [helm values f
 
 ## Next Steps
 
-Once you have completed the above steps, you'll have installed the collection, as well as the core Kubernetes Dashboards](/docs/observability/kubernetes/monitoring.md) and [alerts](/docs/observability/kubernetes/alerts.md). To get started, open a new Explore tab in Sumo Logic and view your Kubernetes App Dashboards.
+Once you have completed the above steps, you'll have installed the collection, as well as the core [Kubernetes Dashboards](/docs/observability/kubernetes/monitoring.md) and [alerts](/docs/observability/kubernetes/alerts). To get started, open a new Explore tab in Sumo Logic and view your Kubernetes App Dashboards.
 
 If you're not seeing data in Sumo Logic, you can review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/troubleshoot-collection.md).
 
-You will have to install other K8s-related apps depending upon whether you want to monitor specific aspects of Kubernetes control plane provided by different cloud vendors. For more details, see [Sumo Logic K8s Apps](/docs/observability/kubernetes/apps.md).
+You will have to install other K8s-related apps depending upon whether you want to monitor specific aspects of Kubernetes control plane provided by different cloud vendors.
+For more details, see [Sumo Logic Kubernetes Apps](/docs/observability/kubernetes/apps).
 
 ## Additional Resources
 

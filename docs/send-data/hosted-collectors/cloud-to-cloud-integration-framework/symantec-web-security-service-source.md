@@ -4,6 +4,8 @@ title: Symantec Web Security Service Source
 sidebar_label: Symantec Web Security Service
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Symantec Web Security Service Source provides a secure endpoint to receive WSS Access logs from the Symantec WSS API. It securely stores the required authentication, scheduling, and state tracking information.
 
  * See the [Access Log Format](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/web-security-service/help/wss-reference/accesslogformats-ref.html) for reference.
@@ -40,7 +42,7 @@ You can click on the status icon to open a Health Events panel with details on e
 
 You need to have a Symantec Web Security Service username and password. To create a User API Key that serves as the username and password in the Sync API syntax follow these steps:
 
-1. Navigate to **Account Configuration \> API Credentials**.
+1. Navigate to **Account Configuration > API Credentials**.
 1. Click **Add API Credentials**.
 1. WSS displays the **Add API Credential** dialog, which contains the random characters **Username** and **Password**.<br/> ![Symantec generate api creds.png](/img/send-data/Symantec-generate-api-creds.png)
    1. Copy the **Username** and **Password** keys into a text file.
@@ -58,7 +60,7 @@ When you create a Symantec Web Security Service Source, you add it to a Hosted 
 
 To configure a Symantec Web Security Service Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Symantec Web Security Service**.<br/> ![symantec source icon.png](/img/send-data/symantec-source-icon.png)
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/> ![Symantec WSS version 1.2.3.png](/img/send-data/Symantec-WSS.png)
@@ -84,9 +86,14 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/h
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
 
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
+
+
 ### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collectors). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |:--|:--|:--|:--|:--|

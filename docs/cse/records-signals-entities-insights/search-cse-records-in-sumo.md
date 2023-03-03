@@ -8,7 +8,7 @@ description: Learn how to search the Sumo Logic platform for CSE Records.
 
 This topic has information about how to search the Sumo Logic platform for Records and Signals that have been forwarded from CSE. For more information about performing log searches in Sumo Logic, see [Search Basics](/docs/search/get-started-with-search/search-basics).
 
-## Partitions with CSE data 
+## Partitions with CSE data
 This section has information about the Sumo Logic partitions that contain CSE data.
 
 ### Partitions for CSE Records
@@ -18,7 +18,7 @@ In CSE, normalized Records are categorized by [Record type](../schema/cse-record
 In Sumo Logic, Records are stored in partitions, which are indexes that enable better search performance. The table below shows which partition each Record type is stored in. Note that some partitions contain multiple Record types.
 
 | CSE Record type                   | Sumo Logic partition      |
-|-----------------------------------|---------------------------|
+|:-----------------------------------|:---------------------------|
 | Audit                             | sec_record_audit          |
 | AuditChange                       | sec_record_audit          |
 | AuditFile                         | sec_record_audit          |
@@ -44,12 +44,12 @@ There is a separate partition for forwarded raw messages for which Records were 
 ### Partitions for unmapped messages
 
 | CSE Record Type | Sumo Logic partition |
-|-----------------|----------------------|
+|:-----------------|:----------------------|
 | FailedRecord    | sec_record_failure   |
 
-### Partition for CSE Signals 
+### Partition for CSE Signals
 
-CSE Signals are retained in the **sec_signal** partition. Signals are saved in JSON format, and support search by keyword and nested attributes. 
+CSE Signals are retained in the **sec_signal** partition. Signals are saved in JSON format, and support search by keyword and nested attributes.
 
 The **sec_signal** partition is automatically generated, and its contents are retained for two years, at no additional cost.
 
@@ -63,10 +63,8 @@ When you query CSE Records or Signalsin a Sumo Logic log search tab, the content
 
 If you have the **View Partitions** role capability, you can search CSE partitions from the **Partitions** page in the Sumo Logic UI.
 
-1. Go to **Manage Data \> Logs \> Partitions**.
-1. The partitions that contain CSE Records begin with the string "sec_record".
-
-    ![security-partitions.png](/img/cse/security-partitions.png)
+1. Go to **Manage Data > Logs > Partitions**.
+1. The partitions that contain CSE Records begin with the string "sec_record".<br/>  ![security-partitions.png](/img/cse/security-partitions.png)
 2. To search for all content in the partition, click the icon that appears next to a Partition name when you hover over a row.  
 3. A log search tab opens with a query, like `_index=PartitionName`, that returns all of the logs created within the currently selected time range, 15 minutes by default. For a description of the results, see [Search all Records in a partition](#search-all-record-partitions), below.
 
@@ -97,11 +95,11 @@ Note that:
 
 You can use the `fields` operator to choose the fields you want to be displayed when you run the search. You can add additional fields to those that are displayed by default. 
 
-**To add display fields**
+To add display fields:
 
 This query adds the `objectType` (which contains the Record type) and the `user_username` fields to the displayed output:
 
-```
+```sql
 _index = sec_record_audit
 | fields objectType, user_username
 ```
@@ -110,26 +108,22 @@ _index = sec_record_audit
 
 **To save a search**
 
-1. To save the query for future use, choose **Save As** from the three-dot more options menu in the search bar.
-
-    ![save-as.png](/img/cse/save-as.png)
-2. On the **Save Item** popup, name the query, choose a folder location, and then click **Save**.
-
-    ![save.png](/img/cse/save.png)
+1. To save the query for future use, choose **Save As** from the three-dot more options menu in the search bar.<br/>  ![save-as.png](/img/cse/save-as.png)
+2. On the **Save Item** popup, name the query, choose a folder location, and then click **Save**.<br/>  ![save.png](/img/cse/save.png)
 
 ## Search multiple partitions
 
 You can search multiple partitions by using `OR` in the query. For example, to search all Records in the `sec_record_audit` and `sec_record_network` partitions: 
 
-```
+```sql
 _index = sec_record_audit OR _index = sec_record_network
 ```
 
 ## Search all Record partitions
 
-To search all Records in all of the in partitions that contain CSE Records, use an asterisk (\*)wildcard.
+To search all Records in all of the in partitions that contain CSE Records, use an asterisk (`*`)wildcard.
 
-```
+```sql
 _index = sec_record_*
 ```
 
@@ -137,7 +131,7 @@ _index = sec_record_*
 
 The `objectType` field in a Record indicates its Record type. To restrict results to a particular Record type, use `_index` to identify the partition that contains that Record type, and `objectType` to specify the Record type. For example, to search for NetworkHTTP Records in the `sec_record_network` partition:
 
-```
+```sql
 _index = sec_record_network objectType=NetworkHTTP
 ```
 
@@ -178,4 +172,4 @@ _index=sec_record_authentication
     ```
     _index = sec_record_* srcDevice_ip=*
     ```  
-* The partitions that contain CSE Records and Signals are stored in a dedicated security data tier. You can’t access data in the security indexes and data in other data tiers (Continuous, Frequent, or Infrequent) in the same query. 
+* The partitions that contain CSE Records and Signals are stored in a dedicated security data tier. You can’t access data in the security indexes and data in other data tiers (Continuous, Frequent, or Infrequent) in the same query.

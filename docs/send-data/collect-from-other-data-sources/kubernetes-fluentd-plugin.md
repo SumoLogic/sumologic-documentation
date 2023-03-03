@@ -4,10 +4,10 @@ title: Kubernetes Fluentd plugin
 description: Information on using the Sumo Kubernetes Fluentd plugin to collect logs from Kubernetes.
 ---
 
-
 :::warning solution deprecated
-The configuration described on this page is deprecated. Sumo Logic recommends using the comprehensive Kubernetes solution instead.  
+The configuration described on this page is deprecated. We recommend using our [comprehensive Kubernetes solution](/docs/observability/kubernetes) instead.  
 :::
+
 
 To monitor Kubernetes, Sumo recommends using the open source FluentD agent to collect log data, rather than a Sumo collector.  
 
@@ -86,7 +86,7 @@ Logs should begin flowing into Sumo within a few minutes of plugin installation.
 Environment variables may not apply to all Fluentd sources. See the table following the environment variable definitions for information about which Fluentd sources are affected by each variable.
 
 | Environment variable | Description |
-|--|--|
+|:--|:--|
 | `CONCAT_SEPARATOR` | The character to use to delimit lines within the final concatenated message. Most multi-line messages contain a newline at the end of each line.<br/>Default: `""` |
 | `EXCLUDE_CONTAINER_REGEX` | A regular expression for containers. Matching containers will be excluded from Sumo. The logs will still be sent to Fluentd. |
 | `EXCLUDE_FACILITY_REGEX` | A regular expression for syslog facilities. Matching facilities will be excluded from Sumo. The logs will still be sent to Fluentd. |
@@ -126,7 +126,7 @@ The following table show which environment variables affect which
 Fluentd sources.
 
 | **Environment Variable** | **Containers** | **Docker    ** | **Kubernetes** | **Systemd** |
-|--------------------------|----------------|----------------|----------------|-------------|
+|:--------------------------|:----------------|:----------------|:----------------|:-------------|
 | `EXCLUDE_CONTAINER_REGEX`  | ![check](/img/reuse/check.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) |
 | `EXCLUDE_FACILITY_REGEX`   | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![check](/img/reuse/check.png) |
 | `EXCLUDE_HOST_REGEX` | ![check](/img/reuse/check.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![check](/img/reuse/check.png) |

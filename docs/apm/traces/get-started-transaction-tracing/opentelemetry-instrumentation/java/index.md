@@ -1,5 +1,5 @@
 ---
-slug: /apm/traces/get-started-transaction-tracing/java
+slug: /apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java
 title: Java OpenTelemetry auto-instrumentation
 sidebar_label: Java OpenTelemetry auto-instrumentation
 description: OpenTelemetry Instrumentation for Java automatically detects when one of the popular libraries is being used in the service and injects the instrumentation without writing any code.
@@ -10,6 +10,25 @@ Perhaps the most convenient way to start capturing telemetry from Java (or, gene
 :::tip
 If the OTLP Java exporter fails due to missing system libraries, we recommend using the Zipkin exporter.
 :::
+
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+Tutorial: Auto-instrumentation of a Java app by OpenTelemetry for K8s Environment.
+
+<Iframe url="https://www.youtube.com/embed/P_74rhI1M30?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
+
 
 ## Installation
 
@@ -49,7 +68,7 @@ OTEL_SERVICE_NAME=SERVICE_NAME
 OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME
 ```
 
-### Option 2: Cchanging the java command line
+### Option 2: Changing the java command line
 
 The command line of the service needs to be appended with the following
 attributes:

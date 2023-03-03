@@ -75,7 +75,7 @@ _sourceCategory=*cisco*asa* AND "built inbound"
 
 Returns all attacks detected by the IPS.
 
-* Suggested Time Range: -15m; run as a scheduled search to return results only if number of messages is \> 0
+* Suggested Time Range: -15m; run as a scheduled search to return results only if number of messages is > 0
 
 ```sql
 _sourceCategory=*cisco*asa* ": ``ips``:" AND ("attack" OR "Proxied RPC Request" OR "buffer overflow" OR "IP Impossible Packet" OR "IP Fragments Overlap" OR "Fragmented ICMP Traffic" OR "Large ICMP Traffic" OR "TCP NULL flags" OR "TCP SYN+FIN flags" OR "TCP FIN only flags") | parse using public/cisco/``asa
