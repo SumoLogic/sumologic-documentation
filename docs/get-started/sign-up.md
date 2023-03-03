@@ -1,7 +1,6 @@
 ---
 id: sign-up
 title: Sign Up and Activate Your Account
-sidebar_label: Sign Up
 description: Sign Up with Sumo Logic, creating and activating your account.
 ---
 
@@ -30,9 +29,9 @@ The link in your account activation email will expire after 3 days. If the link 
 
 To activate your Sumo Logic Trial account:
 
-1. Check your inbox for the activation Sumo Logic email, then click **Activate Now**. If you don't see it, check your Spam and Trash folders.
-1. Fill out the **Activate Your Account** form.
-1. Click **Activate**.
+1. Check your email inbox for the activation Sumo Logic email. If you don't see it, check your Spam and Trash folders.
+1. In the email, click **Activate Now**. 
+1. Fill out the **Activate Your Account** form, then click **Activate**.
 1. Once your account is activated, click the ![close](/img/get-started/github/close-icon.png) at the top right of the *Welcome to Sumo Logic* web page. You will not need to follow the in-application guide.
 
 In a few minutes, your account is activated and you can use the [Setup Wizard](/docs/send-data/setup-wizard) to start sending your logs to Sumo Logic and dive in to our monitoring, troubleshooting, and security functionality.
@@ -121,17 +120,7 @@ In a few minutes, your account is activated and the Sumo Logic Setup Wizard disp
 
 Next, use the [Setup Wizard](/docs/send-data/setup-wizard) to send your logs to Sumo Logic.
 
-### Cancel your Account through AWS Marketplace
-
-Should you decide to cancel, you can do this through AWS Marketplace.
-
-1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace) and access your account.
-1. Go to **Manage your software subscriptions** and select **Sumo Logic**.<br/>  ![AWS Cancel](/img/get-started/aws_marketplace_cancel.png)
-1. Click **Cancel subscription**.
-
-Your subscription will be cancelled immediately.
-
-### Upgrade Your Account
+### Upgrade your account
 
 If upgrades are allowed for your AWS account, you can upgrade your active account directly from Sumo Logic.
 
@@ -142,8 +131,17 @@ To upgrade:
 
 1. Click **Upgrade** on the left navigation pane in Sumo Logic.
 1. The **Upgrade** button is visible if you have an active AWS account for which upgrades are permitted.
-1. On the Upgrade request form, enter Log Ingest level you want to upgrade to. Within 24 to 48 hours, your account will be updated to reflect the change. Once the account is upgraded, the AWS Marketplace will be notified of the change.
+1. On the Upgrade request form, enter the Log Ingest level you want to upgrade to. Within 24 to 48 hours, your account will be updated to reflect the change. Once the account is upgraded, the AWS Marketplace will be notified of the change.
 
+### Cancel your account
+
+Should you decide to cancel, you can do this through AWS Marketplace.
+
+1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace) and access your account.
+1. Go to **Manage your software subscriptions** and select **Sumo Logic**.
+1. Click **Cancel subscription**.<br/>  ![AWS Cancel](/img/get-started/aws_marketplace_cancel.png)
+
+Your subscription will be cancelled immediately.
 
 ## Resources
 
