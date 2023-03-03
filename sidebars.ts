@@ -1853,7 +1853,8 @@ integrations: [
             collapsible: true,
             collapsed: true,
             items: [
-              'integrations/databases/opentelemetry/opentelemetry-couchbase',
+              'integrations/databases/opentelemetry/couchbase-opentelemetry',
+              'integrations/databases/opentelemetry/redis-opentelemetry',
             ],
           },
           'integrations/databases/cassandra',
