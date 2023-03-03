@@ -2,7 +2,7 @@
 id: redis-opentelemetry
 title: Redis - OpenTelemetry Collector
 sidebar_label: Redis - OTel Collector
-description: Documentation for OpenTelemetry App for Redis.
+description: Learn about the Sumo Logic OpenTelemetry App for Redis.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
