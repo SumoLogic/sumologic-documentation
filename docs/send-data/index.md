@@ -30,7 +30,7 @@ Learn how to send data to Sumo Logic and get started with our observability and 
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/configure-hosted-collector"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Hosted Collectors</h4></a>
+  <a href="/docs/send-data/hosted-collectors"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Hosted Collectors</h4></a>
   <p>Learn how to configure a Sumo-hosted collector and add Sources from a variety of services.</p>
   </div>
 </div>
