@@ -128,9 +128,7 @@ In a few minutes, your account is activated and the Sumo Logic Setup Wizard disp
 
 Next, use the [Setup Wizard](/docs/send-data/setup-wizard) to send your logs to Sumo Logic.
 
-#### Cancel your account
-
-Should you decide to cancel, you can do it through AWS Marketplace.
+### Cancel your Account through AWS Marketplace
 
 Should you decide to cancel, you can do this through AWS Marketplace.
 
