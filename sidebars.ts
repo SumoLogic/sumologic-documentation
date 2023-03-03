@@ -2019,6 +2019,17 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/web-servers/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/web-servers/opentelemetry/apache-opentelemetry',
+              'integrations/web-servers/opentelemetry/haproxy-opentelemetry',
+              'integrations/web-servers/opentelemetry/iis-10-opentelemetry',
+            ],
+          },
           'integrations/web-servers/apache',
           'integrations/web-servers/apache-tomcat',
           'integrations/web-servers/haproxy',
