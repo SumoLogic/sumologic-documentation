@@ -1848,6 +1848,15 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/databases/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/databases/opentelemetry/redis-opentelemetry',
+            ],
+          },
           'integrations/databases/cassandra',
           'integrations/databases/couchbase',
           'integrations/databases/elasticsearch',
@@ -1869,16 +1878,7 @@ integrations: [
             'integrations/databases/oracle/alerts',
           ],
         },
-        {
-          type: 'category',
-          label: 'Redis',
-          collapsible: true,
-          collapsed: true,
-          items: [
-            'integrations/databases/redis/opentelemetry-collector',
-            'integrations/databases/redis/classic-collector',
-          ],
-        },
+        'integrations/databases/redis',
         'integrations/databases/postgresql',
         ],
       },

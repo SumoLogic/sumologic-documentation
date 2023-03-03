@@ -1,5 +1,5 @@
 ---
-id: opentelemetry-collector
+id: redis-opentelemetry
 title: Redis - OpenTelemetry Collector
 sidebar_label: Redis - OTel Collector
 description: Documentation for OpenTelemetry App for Redis.
