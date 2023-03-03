@@ -1816,6 +1816,7 @@ integrations: [
             collapsed: true,
             items: [
               'integrations/containers-orchestration/opentelemetry/rabbitmq-opentelemetry',
+              'integrations/containers-orchestration/opentelemetry/kafka-opentelemetry',
             ],
           },
           'integrations/containers-orchestration/activemq',

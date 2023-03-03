@@ -1,6 +1,6 @@
 ---
 id: kafka
-title: Kafka
+title: Kafka - Classic Collector
 sidebar_label: Kafka
 description: This guide provides an overview of Kafka related features and technologies.
 ---
