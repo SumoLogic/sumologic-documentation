@@ -1,5 +1,5 @@
 ---
-id: classic-collector
+id: redis
 title: Redis - Classic Collector
 description: The Sumo Logic App for Redis helps you monitor the state of your database cluster.
 ---
