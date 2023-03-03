@@ -74,7 +74,7 @@ If you have additional questions, a [Sumo Logic sales representative](https://w
 
 ### Compare Installed and Hosted Collectors
 
-Depending on the method you'd like to collect logs, and the types of logs you'd like to collect, Sumo Logic has two types of Collectors you can choose from.
+Depending on the method you'd like to collect logs, and the types of logs you'd like to collect, Sumo Logic has two types of Collectors you can choose from. Learn how to choose your collector that's right for your environment through our video, "Choosing Your Collector Type".
 
 <Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
         width="854px"
