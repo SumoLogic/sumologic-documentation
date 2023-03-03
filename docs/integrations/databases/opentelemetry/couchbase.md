@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 [Couchbase](https://developer.couchbase.com/what-is-couchbase/), a modern database for enterprise applications, is a distributed document database with a powerful search engine and in-built operational and analytical capabilities. It brings the power of NoSQL to the edge and provides fast, efficient bidirectional synchronization of data between the edge and the cloud.
 
-The Sumo Logic app for Couchbase helps you monitor activity in Couchbase. The pre-configured dashboards provide insight into the Error, events and HTTP Access patter that help you understand your clusters.
+The Sumo Logic app for Couchbase helps you monitor activity in Couchbase. The pre-configured dashboards provide insight into the Error, events and HTTP Access pattern that help you understand your clusters.
 
 Couchbase logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
