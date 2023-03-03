@@ -37,7 +37,7 @@ Next, you'll be taken to a brief two-step data collector installation process, w
 1. Copy, paste, and run the provided command to your PowerShell or Terminal. This will install the collector and relevant dashboards. When finished, click **Start using Sumo**. <br/><img src={useBaseUrl('img/get-started/install-otel.png')} alt="icon" width="400" />
 1. Next, you'll be taken to your onboarding checklist guide, where you can view your Dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
 
-Congrats! You can now collect, see, and act to monitor, troubleshoot, and secure your app.
+Congrats! You can now set up with Sumo Logic.
 
 #### Resources
 
