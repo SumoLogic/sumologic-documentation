@@ -100,7 +100,7 @@ This section explains the steps to collect SQL Server metrics from a Kubernetes 
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. [Learn more](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
-1. **[Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)**
+1. **[Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)**.
 2. **Add annotations on your SQL Server pods**. Before you add annotations, you need to create a login on every SQL Server pod  you want to monitor, with following script:
   ```sql
   USE master;
@@ -169,7 +169,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 
 This section explains the steps to collect SQL Server logs from a Kubernetes environment.
 
-1. **(Recommended Method) Add labels on your SQL server pods to capture logs from standard output.**. Make sure that the logs from SQL Server are sent to stdout. Follow the instructions below to capture SQL Server logs from stdout on Kubernetes.
+1. **(Recommended Method) Add labels on your SQL server pods to capture logs from standard output**. Make sure that the logs from SQL Server are sent to stdout. Follow the instructions below to capture SQL Server logs from stdout on Kubernetes.
 
 1. Apply following labels to the SQL server pods:
    ```sql
@@ -226,30 +226,27 @@ kubectl describe pod <SQLserver_pod_name>
 ```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. Verify logs in Sumo Logic.
-1. Add a FER to normalize the fields in Kubernetes environments. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-1. Go to Manage Data > Logs > Field Extraction Rules.
-2. Click the + Add button on the top right of the table.
-3. The **Add Field Extraction Rule** form will appear:
-
-
-4. Enter the following options:
-* **Rule Name**. Enter the name as **App Observability - Proxy**.
-* **Applied At.** Choose **Ingest Time**
-* **Scope**. Select **Specific Data**
-    * **Scope**: Enter the following keyword search expression:
-```sql
-pod_labels_environment=* pod_labels_component=database
-pod_labels_db_system=*
-pod_labels_db_cluster=*
-```
-* **Parse Expression**. Enter the following parse expression:
-```sql
-if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-| pod_labels_component as component
-| pod_labels_db_system as db_system
-| if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
-```
-
+4. Add a FER to normalize the fields in Kubernetes environments. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
+  1. Go to Manage Data > Logs > Field Extraction Rules.
+  2. Click the + Add button on the top right of the table.
+  3. The **Add Field Extraction Rule** form will appear.
+  4. Enter the following options:
+   * **Rule Name**. Enter the name as **App Observability - Proxy**.
+   * **Applied At**. Choose **Ingest Time**
+   * **Scope**. Select **Specific Data**
+   * **Scope**. Enter the following keyword search expression:
+  ```sql
+   pod_labels_environment=* pod_labels_component=database
+   pod_labels_db_system=*
+   pod_labels_db_cluster=*
+  ```
+  * **Parse Expression**. Enter the following parse expression:
+ ```sql
+ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
+ | pod_labels_component as component
+ | pod_labels_db_system as db_system
+ | if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
+ ```
 5. Click **Save** to create the rule.
 
 </TabItem>
