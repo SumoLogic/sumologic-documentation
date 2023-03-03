@@ -15,16 +15,16 @@ Note that access to KnowBe4 APIs is limited to Platinum and Diamond customers, a
 
 ## Prerequisites
 
-Before you begin setting up your **KnowBe4** Source, which is required to connect to the KnowBe4 API, you'll need to configure your integration with the **Base URL** and **KnowBe4 API Token**.
+Before you begin setting up your **KnowBe4** Source, which is required to connect to the KnowBe4 API, you'll need to configure your integration with the **Region** and **KnowBe4 API Token**.
 
-### Base URL
+### Region
 
-The **Base URL** is the URL where your **KnowBe4** account is located. To get the base URL, follow the steps below:
+The **Region** is the region where your **KnowBe4** account is located. To know your region, follow the steps below:
 1. Log in to the **KnowBe4** application.
-2. At the top of the browser, you will see the **Base URL** inside the address bar.
-3. Choose the Base URL from the table below. The following table contains the base URLs based on the location of your **KnowBe4** account:
+2. At the top of the browser, you will see the **Region** inside the address bar.
+3. Choose the **Region** from the table below. The following table contains the regions based on the location of your **KnowBe4** account:
 
-  | Server location | Server located at  | Base URLs |
+  | Server location | Server located at  | Region |
   | :---|:---|:---|
   | US Server |	training.knowbe4.com | `https://us.api.knowbe4.com` |
   | EU Server | eu.knowbe4.com | `https://eu.api.knowbe4.com` |
@@ -50,8 +50,8 @@ If the Source is configured with the **SIEM forward** option, the metadata field
 ## Data Sources
 
 The KnowBe4 integration fetches two types of data sources for the KnowBe4 account.
-1. **External Events**. Our integration retrieves all user events for the KnowBe4 account. This data type is disabled by default and can only be enabled on request; contact Sumo Logic Support for more information.
-2. **Phishing Tests**.  Our integration fetches a list of all recipients for each phishing security test on the KnowBe4 account.
+1. **Phishing Tests**.  Our integration fetches a list of all recipients for each phishing security test on the KnowBe4 account.
+1. **External Events**. Our integration retrieves all user events for the KnowBe4 account. This data type is disabled by default.
 
 ## States
 
@@ -86,7 +86,7 @@ To configure the KnowBe4 API Source:
 6. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-7. In **Base URL**, choose the URL where your KnowBe4 account is located. See [Base URL](#base-url) section to know your base URL.
+7. In **Region**, choose the region where your KnowBe4 account is located. See [Region](#region) section to know your Region.
 1. In **API Key**, authenticate your account by entering your secret API key. You can access your API key or generate a new one from **User Event API Management Console**. See [API Token](#api-token) section.
 1. In **Data Types**, you can select the **Phishing Tests** data type to fetch a list of all recipients for each phishing security test on the KnowBe4 account. To retrieve the **External User events** data, you need to raise a request to Sumo Logic support to enable this data type.
 1. In **Phishing Poll Interval**, enter the phishing poll interval frequency, which must be between 1 hour and 24 hours.
@@ -122,9 +122,9 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 |:---|:---|:---|:---|:---|
 | `name` | String | Yes | Type the desired name of the Source and it must be unique per Collector. This value is assigned to the `metadata field _source`.  | modifiable |
 | `description` | String  | No | Type the description of the Source. | modifiable |
-| `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
+| `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable
 | `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
-| `baseURL` | String | Yes | Region URL of the KnowBe4 application. | modifiable |
+| `region` | String | Yes | Region of the KnowBe4 application. | modifiable |
 | `apiKey` | String | Yes | Secret api key to authenticate your account. | modifiable |
 | `dataTypes` | Array | Yes | Data sources to fetch from KnowBe4. | modifiable |
 | `phishingPollInterval` | Integer | Yes | The Polling interval for phishing data requests. The minimum interval is 1 hour, and the maximum is 24 hours. | modifiable |
@@ -139,7 +139,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
   		"name": "KnowBe4",
  	 	"description": "Test Source",
   		"category": "source_category",
-  		"baseURL": "https://us.api.knowbe4.com",
+  		"region": "US",
   		"apiKey": "************",
 		"dataTypes": [
     		         "phishingTests"
