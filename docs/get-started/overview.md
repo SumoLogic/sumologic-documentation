@@ -83,17 +83,23 @@ Get to know the Collection process through our video, "Data Collection Strategy"
 
 :::
 
-#### Installed Collectors
+
+#### OpenTelemetry Collector (recommended)
+
+The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/sumo-distribution-opentelemetry) is our next-generation collector, built on OpenTelemetry, that provides a single unified agent to send Logs, Metrics, Traces, and Metadata for Observability to Sumo Logic.
+
+#### Installed Collector
 
 Sumo Logic [Installed Collectors](/docs/send-data/installed-collectors/sources) receive data from one or more [Sources](/docs/send-data/choose-collector-source). Collectors collect raw log data, compress it, encrypt it, and send it to the Sumo Cloud in real time. A single Sumo Logic Collector can collect up to 15,000 events per second and has fault tolerance during network or service outages. See [Installed Collector System Requirements](system-requirements.md).
 
 If you'd like to collect non-traditional machine data, [Script Sources](/docs/send-data/installed-collectors/sources/script-source) and [Script Actions](/docs/send-data/installed-collectors/sources/script-action) can provide a great deal of flexibility to collect files.
 
-#### Hosted Collectors
+#### Hosted Collector
 
 Sumo Logic [Hosted Collectors](/docs/send-data/hosted-collectors) are hosted in the Sumo Cloud and receive data from one or more [Sources](/docs/send-data/choose-collector-source). You can configure it to collect data from various cloud services like Amazon Web Services, Google Cloud Platform, G Suite, and Microsoft Office 365. It offers [Cloud Syslog Sources](/docs/send-data/hosted-collectors/cloud-syslog-source) to receive syslog data and [HTTP Sources](/docs/send-data/hosted-collectors/http-source/logs-metrics) to receive logs and metrics.
 
 The Hosted Collector is not an installed software agent, but rather a collection of endpoints and integration that collects logs from various cloud data sources.
+
 
 ### (B) Sumo Logic Cloud
 

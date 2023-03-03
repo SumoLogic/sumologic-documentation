@@ -35,10 +35,10 @@ To activate your Sumo Logic Trial account:
 
 Next, you'll be taken to a brief two-step data collector installation process, which will get you up and running with insights in a couple of minutes.
 
-### Install Data Collector
+### Set up Collector
 
-1. Select the platform (Linux, Windows, macOS, or AWS) from where you'd like to collect the data. <br/><img src={useBaseUrl('img/get-started/data-collection.png')} alt="icon" width="400" />
-1. Copy, paste, and run the provided command to your PowerShell or Terminal. This will install the collector and relevant dashboards. When finished, click **Start using Sumo**. <br/><img src={useBaseUrl('img/get-started/install-otel.png')} alt="icon" width="400" />
+1. Select the platform (Linux, Windows, macOS, or AWS) from where you'd like to collect the data.<br/><img src={useBaseUrl('img/get-started/data-collection.png')} alt="icon" width="400" />
+1. Copy, paste, and run the provided command to your PowerShell or Terminal. This will install the OpenTelemetry collector and relevant dashboards. When finished, click **Start using Sumo**. <br/><img src={useBaseUrl('img/get-started/install-otel.png')} alt="icon" width="400" />
 
 That's it - congrats! Next, you'll be taken to your onboarding checklist guide, where you can view your Dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
 

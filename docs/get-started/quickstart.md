@@ -20,10 +20,6 @@ What you'll learn:
 * Monitor and troubleshoot your environment
 * Share your findings with your team
 
-:::tip
-Sign up for free trial through [Sumo Logic or AWS Marketplace](/docs/get-started/sign-up).
-:::
-
 :::sumo Need help?
 Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/hc/en-us).
 :::
@@ -36,11 +32,15 @@ Let's get started!
 
 ## Step 1: Get your data into Sumo
 
+:::tip
+If you haven't yet, sign up for free trial through [Sumo Logic or AWS Marketplace](/docs/get-started/sign-up).
+:::
+
 The journey of 10,000 logs begins with a single collector. Your data analytics journey starts by sending your data to Sumo.
 
 ### Set up Collector
 
-From the Sumo Home page, go to **Manage Data** > **Collection** > **Collection** tab, and select **Add Collector**. Next, choose from a local [Installed Collector](/docs/send-data/installed-collectors) or web-[Hosted Collector](/docs/send-data/hosted-collectors). Next, you'll choose the data sources that will provide the most value for you.
+From the Sumo Home page, go to **Manage Data** > **Collection** > **Collection** tab, and select **Add Collector**. Next, choose from a local [Installed Collector](/docs/send-data/installed-collectors), web-[Hosted Collector](/docs/send-data/hosted-collectors), or our [OpenTelemetry Collector](/docs/send-data/sumo-distribution-opentelemetry). Next, you'll choose the data sources that will provide the most value for you.
 
 ### Set up Source
 
