@@ -19,18 +19,18 @@ Learn how to send data to Sumo Logic and get started with our observability and 
 <div className="box smallbox1 card">
   <div className="container">
   <a href="/docs/send-data/sumo-distribution-opentelemetry"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="icon" width="40"/><h4>Sumo Logic Distro for OpenTelemetry</h4></a>
-  <p>Our OTel distro is a single unified agent to send Logs, Metrics, Traces, and more.</p>
+  <p>Our OpenTelemetry Distribution is a single unified agent to send Logs, Metrics, Traces, and more.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
   <a href="/docs/send-data/installed-collectors"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Installed Collectors</h4></a>
-  <p>Install a collector in your environment to receive logs and metrics from your Sources.</p>
+  <p>Installed collector is our proprietary agent that you can deploy in your environment to collect logs and some metrics sources.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/configure-hosted-collector"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Hosted Collectors</h4></a>
+  <a href="/docs/send-data/hosted-collectors"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Hosted Collectors</h4></a>
   <p>Learn how to configure a Sumo-hosted collector and add Sources from a variety of services.</p>
   </div>
 </div>
