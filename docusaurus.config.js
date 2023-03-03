@@ -216,7 +216,6 @@ module.exports = {
       id: 'announcementBar',
       content: `🔎 Algolia site search coming March 15. <a href="https://d2t1s0ah22jxsa.cloudfront.net/1248/merge">Click here to preview</a>.`,
     },
-    
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
