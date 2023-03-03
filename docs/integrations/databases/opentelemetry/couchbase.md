@@ -25,22 +25,22 @@ Non-Kubernetes: Couchbase version: 7.0.2
 
 ## Fields creation in Sumo Logic for Couchbase
 
-Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of Couchbase App install if not already present:
+Following are the [Fields](/docs/manage/fields/) which will be created as part of Couchbase App install if not already present:
 
 **`db.cluster.name`** - User configured. Enter a name to identify this Couchbase cluster. This cluster name will be shown in the Sumo Logic dashboards.
 **`db.system`** - Has a fixed value of **couchbase**.
-**`deployment.environment`** - User configured. Through this  Couchbase cluster is identified by the environment where it resides. For example: dev, prod or qa.
+**`deployment.environment`** - User configured. Through this Couchbase cluster is identified by the environment where it resides. For example: dev, prod or qa.
 **`sumo.datasource`** - has a fixed value of **couchbase**.
 
 ### Prerequisite
 
-By default, the Couchbase will write the log to the log directory that was configured during installation. For example, on Linux, the log directory would be /opt/couchbase/var/lib/couchbase/logs. By default, the Audit log is disabled, you must enable the audit log following these [instructions](https://docs.couchbase.com/server/current/manage/manage-security/manage-auditing.html). Query log, error log, the access log will be enabled by default.
+By default, the Couchbase will write the log to the log directory that was configured during installation. For example, on Linux, the log directory would be `/opt/couchbase/var/lib/couchbase/logs`. By default, the Audit log is disabled, you must enable the audit log following these [instructions](https://docs.couchbase.com/server/current/manage/manage-security/manage-auditing.html). Query log, error log, the access log will be enabled by default.
 
 ## Configure Couchbase Logs Collection
 
 ### Step 1: Set up Collector
 
-If you want to use an existing OTel Collector then this step can be skipped by selecting the option of using an existing Collector.
+If you want to use an existing OTel Collector, this step can be skipped by selecting the option of using an existing Collector.
 
 If you want to create a new Collector please select **Add a new Collector** option.
 
@@ -56,10 +56,10 @@ In this step we will be configuring the yaml file required for Couchbase Log Col
 
 The files are typically located in folder `/opt/couchbase/var/lib/couchbase/logs`.
 
-  * For Audit Log: `/opt/couchbase/var/lib/couchbase/logs/audit.log`
-  * For Error Log: `/opt/couchbase/var/lib/couchbase/logs/error.log`
-  * For Access Log: `/opt/couchbase/var/lib/couchbase/logs/http_access.log`
-  * For Query Log: `/opt/couchbase/var/lib/couchbase/logs/query.log`
+* For Audit Log: `/opt/couchbase/var/lib/couchbase/logs/audit.log`
+* For Error Log: `/opt/couchbase/var/lib/couchbase/logs/error.log`
+* For Access Log: `/opt/couchbase/var/lib/couchbase/logs/http_access.log`
+* For Query Log: `/opt/couchbase/var/lib/couchbase/logs/query.log`
 
 Click on the **Download YAML File** button to get the yaml file.
 
