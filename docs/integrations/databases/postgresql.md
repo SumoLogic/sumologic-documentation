@@ -1,6 +1,6 @@
 ---
 id: postgresql
-title: PostgreSQL
+title: PostgreSQL - Classic Collector
 sidebar_label: PostgreSQL
 description: The Sumo Logic App for PostgreSQL is a unified logs and metrics app for monitoring your PostgreSQL database. The app consists of predefined dashboards that allow you to track performance, logins, connections, errors, and overall system health.
 ---

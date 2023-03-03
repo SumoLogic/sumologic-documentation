@@ -1,6 +1,6 @@
 ---
 id: mariadb
-title: MariaDB
+title: MariaDB - Classic Collector
 sidebar_label: MariaDB
 description: The Sumo Logic App for MariaDB is a unified logs and metrics app that helps you monitor the availability, performance and resource utilization of MariaDB database clusters.
 ---
