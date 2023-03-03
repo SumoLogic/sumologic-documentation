@@ -1,5 +1,5 @@
 ---
-title: Dashboard New Migration Tool (Beta)
+title: Dashboard (New) Migration Tool (Beta)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - sumo logic
