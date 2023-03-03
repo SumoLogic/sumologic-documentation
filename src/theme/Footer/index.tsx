@@ -139,7 +139,7 @@ export const Footer = () => {
               color: '#e3e3e3',
               href: 'https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw',
               'aria-label': 'Sumo Logic YouTube',
-              icon: faYoutube,
+              icon: 'faYoutube', 'aria-hidden': "true",
               size: 'lg',
               sx: {
                 cursor: 'pointer',
@@ -153,7 +153,7 @@ export const Footer = () => {
               color: '#e3e3e3',
               href: 'https://twitter.com/SumoLogic',
               'aria-label': 'Sumo Logic Twitter',
-              icon: faTwitter,
+              icon: 'faTwitter', 'aria-hidden': "true",
               size: 'lg',
               sx: {
                 cursor: 'pointer',

@@ -35,7 +35,7 @@ export const Home = () => {
         <Box
           component={SumoLogicDocsLogo}
           alt="Sumo Logic Docs logo"
-          role="img"
+          role="<img>"
           aria-hidden="true"
           height={{
             md: 36,
