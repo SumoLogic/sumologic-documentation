@@ -29,7 +29,7 @@ The link in your account activation email will expire after 3 days. If the link 
 
 To activate your Sumo Logic Trial account:
 
-1. Check your email inbox for the activation Sumo Logic email. (If you don't see it, check your Spam and Trash folders.)
+1. Check your email inbox for the activation Sumo Logic email. If you don't see it, check your Spam and Trash folders.
 1. In the email, click **Activate Now**.
 1. Fill out the **Activate Your Account** form, then click **Activate**.
 
