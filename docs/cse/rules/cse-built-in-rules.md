@@ -1475,8 +1475,7 @@ This signal fires when Fortinet detects a high risk application within the envir
 
 ## GitHub Raw URL Resource Request
 
-
- Github.com is the most popular code repo site on the internet. Typically users of GitHub will look at the code from the Github.com website or clone it locally to their system. You can however request a raw version of a individual file directly. Attackers like to use GitHub as well to host their malicious code and will often download malicious files and scripts directly from the site which uses the domain raw.githubusercontent.com instead of github.com. This signal looks for HTTP requests to that raw domain to monitor individual file downloads from the site.
+ GitHub.com is the most popular code repo site on the internet. Typically, users of GitHub will look at the code from the GitHub.com website or clone it locally to their system. You can however request a raw version of a individual file directly. Attackers like to use GitHub as well to host their malicious code and will often download malicious files and scripts directly from the site which uses the domain raw.githubusercontent.com instead of github.com. This signal looks for HTTP requests to that raw domain to monitor individual file downloads from the site.
 
 ## Global YARA Rule
 

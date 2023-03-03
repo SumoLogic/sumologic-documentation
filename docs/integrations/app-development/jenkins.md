@@ -543,7 +543,7 @@ Use this dashboard to:
 The **Jenkins - Build Information** dashboard provides detailed information about a specific build. Panels show information on build parameters, source control management, commit details, test cases, pipeline stages, console logs, and configuration changes prior to a build.
 
 Use this dashboard to:
-* Monitor parameters used for the build and source control management, such as Github Repository, to understand recent commits that have been added to the build.
+* Monitor parameters used for the build and source control management, such as GitHub Repository, to understand recent commits that have been added to the build.
 * Investigate possible causes for build failure using configuration change before build details, test case failure, commit changes, pipeline stage failure, and console logs.
 * Investigate the cause for failed test cases by analyzing stack traces.
 * Investigate configuration changes before the build by comparing the old configuration and current configurations.
