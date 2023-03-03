@@ -85,7 +85,12 @@ You have downloaded an app and analyzed your data with searches and dashboards. 
 
 You have the ability to share with individual users and groups with specific roles, setting the specific access permissions. You can edit the sharing permissions at any time, and share and revoke permissions as needed. For more information, see [Content Sharing in Sumo Logic](/docs/manage/content-sharing).
 
-## Get Training and Certification for free
+## Have fun with Sumo Logic
+
+Learning and mastering Sumo skills is important, but so is having fun. Enjoy the Sumo journey. The journey is its own reward when you empower others along the way.
+
+
+## Training and Certification
 
 Knowledge is power, and Sumo Logic provides tools for you to empower yourself. Within Sumo Logic, you have easy access to training, help, and a community of other Sumo Logic users. [Learn more](/docs/get-started/training-certification-faq).
 
@@ -100,41 +105,11 @@ From the Sumo Logic Home page, click the **Learn** tab to access:
 Don't just learn it - master it! Get recognized as a Sumo Logic expert by completing the courses in the [Sumo Logic Certification Program](/docs/get-started/training-certification-faq/#what-certifications-does-sumo-logic-offer). We’re happy to help you get certified right from the product.
 
 
-## Have fun with Sumo Logic
+## More Resources
 
-Learning and mastering Sumo skills is important, but so is having fun. Enjoy the Sumo journey. The journey is its own reward when you empower others along the way.
+* [AWS Observability Quickstart](/docs/observability/aws/quickstart). This guide will walk you through setting up the Sumo Logic AWS Observability integration.
+* [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart). Get up and running with the Sumo Logic Kubernetes solution in minutes.
+* [Traces Quickstart](docs/apm/traces#quickstart). This guide demonstrates how to measure application microservice performance.
+* [Ingest Budgets Quickstart](/docs/manage/ingestion-volume/ingest-budgets/quickstart). Learn how to create and use Ingest Budgets.
 
-
-
-## More Quickstart Resources
-
-<div className="box-wrapper" markdown="1">
-<div className="box smallbox1 card">
-  <div className="container">
-  <h4><a href="/docs/observability/aws/quickstart">AWS Observability</a></h4>
-  <p>This guide will walk you through setting up the Sumo Logic AWS Observability integration.</p>
-  </div>
-</div>
-<div className="box smallbox2 card">
-  <div className="container">
-  <h4><a href="/docs/observability/kubernetes/quickstart">Kubernetes</a></h4>
-  <p>Get up and running with the Sumo Logic Kubernetes solution in minutes.</p>
-  </div>
-</div>
-<div className="box smallbox3 card">
-  <div className="container">
-    <h4><a href="/docs/apm/traces#quickstart">Traces</a></h4>
-  <p>This guide demonstrates how to measure application microservice performance.</p>
-  </div>
-</div>
-<div className="box smallbox4 card">
-    <div className="container">
-    <h4><a href="/docs/manage/ingestion-volume/ingest-budgets/quickstart">Ingest Budgets</a></h4>
-    <p>Learn how to create and use Ingest Budgets.</p>
-    </div>
-  </div>
-</div>
-
-:::tip Training and Certification
 See more quickstart tutorials in the [Sumo Logic Training Portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-training-portal).
-:::
