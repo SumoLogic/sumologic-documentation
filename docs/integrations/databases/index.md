@@ -80,7 +80,7 @@ This guide has documentation for Sumo apps for database servers.
     <div className="box smallbox10 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/databases/redis.png')} alt="Thumbnail icon" width="75"/>
-      <h3><a href="/docs/integrations/databases/redis">Redis</a></h3>
+      <h3><a href="/docs/integrations/databases/redis/classic-collector">Redis</a></h3>
       <p>Helps you monitor the state of your database cluster.</p>
       </div>
     </div>
