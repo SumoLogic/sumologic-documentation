@@ -20,7 +20,7 @@ The Terraform script requires a set of parameters to be configured.
 ## Before you begin
 Before setting up the SDO solution, you need to complete the following tasks:
 
-* Create or collect API Keys and credentials for Jira, Github, GitLab, Jenkins, Bitbucket, CircleCI, and Opsgenie with Webhook creation capabilities.
+* Create or collect API Keys and credentials for Jira, GitHub, GitLab, Jenkins, Bitbucket, CircleCI, and Opsgenie with Webhook creation capabilities.
 * Get access to Jenkins with Manage Plugins permissions.
 * Make sure you have access to the Sumo logic console. The user account associated with a Sumo Logic role needs the following permissions:
   * Manage field extraction rules
@@ -76,7 +76,7 @@ actions on a server machine of your choice:
 1. Install the following third-party Terraform providers:
     [Rest API Terraform Provider](https://github.com/Mastercard/terraform-provider-restapi) version 1.12 and above:
 
-   1. Download terraform-provider-restapi binary from [Github](https://github.com/Mastercard/terraform-provider-restapi/releases)
+   1. Download terraform-provider-restapi binary from [GitHub](https://github.com/Mastercard/terraform-provider-restapi/releases)
    1. Move the **terraform-provider-restapi** binary to **$HOME/.terraform.d/plugins** directory:
 
         ```
@@ -102,9 +102,9 @@ The following Terraform providers with mentioned versions are automatically inst
 * [Null](https://www.terraform.io/docs/providers/null/index.html) version 2.1 and above.
 * [BitBucket Terraform Provider](https://www.terraform.io/docs/providers/bitbucket/index.html) version 1.2 and above.
 * [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html) version 2.1.00 and above.
-* [Github Terraform Provider](https://www.terraform.io/docs/providers/github/index.html) version 2.8 and above.
+* [GitHub Terraform Provider](https://www.terraform.io/docs/providers/github/index.html) version 2.8 and above.
 * [Pagerduty Terraform Provider](https://www.terraform.io/docs/providers/pagerduty/index.html) version 1.7 and above.
-* [Gitlab Terraform Provider](https://registry.terraform.io/providers/gitlabhq/gitlab/3.6.0) version 3.6.0.
+* [GitLab Terraform Provider](https://registry.terraform.io/providers/gitlabhq/gitlab/3.6.0) version 3.6.0.
 :::
 
 ## Configure the Terraform script
@@ -121,7 +121,7 @@ The following Terraform providers with mentioned versions are automatically inst
    * install_opsgenie
    * install_github
    * install_gitlab
-     * This is only used for installing Gitlab app from the app catalog and uses webhook.
+     * This is only used for installing GitLab app from the app catalog and uses webhook.
      * Valid options for this are:
        * `all` - It’s a default option, for installing all the components of the setup.
        * `app` - This is for only installing the app
@@ -302,8 +302,8 @@ Configure these parameters in **sumologic.auto.tfvars**.
 | install_jira_server | Install [Sumo Logic Application and WebHooks for Jira Server](/docs/integrations/app-development/jira). Options: app, collection, fer, all, and none. | all |
 | install_bitbucket_cloud | Install [Sumo Logic Application and WebHooks for BitBucket Cloud](/docs/integrations/app-development/bitbucket). Options: app, collection, fer, all, and none. | all |
 | install_opsgenie | Install [Sumo Logic Application and WebHooks for Opsgenie](/docs/integrations/saas-cloud/Opsgenie). Options: app, collection, fer, all, and none. | all |
-| install_github | Install [Sumo Logic Application and WebHooks for Github](/docs/integrations/app-development/github). Options: app, collection, fer, all, and none.  If you do not wish to install the GitHub collection or application, rename the file github.tf to github.tf_backup. | all |
-| install_gitlab | Install [Sumo Logic Application and WebHooks for GitLab](/docs/integrations/app-development/gitlab). Options: app, collection, fer, all, and none.  If you do not wish to install the Gitlab collection or application, rename the file gitlab.tf to gitlab.tf_backup. | all |
+| install_github | Install [Sumo Logic Application and WebHooks for GitHub](/docs/integrations/app-development/github). Options: app, collection, fer, all, and none.  If you do not wish to install the GitHub collection or application, rename the file github.tf to github.tf_backup. | all |
+| install_gitlab | Install [Sumo Logic Application and WebHooks for GitLab](/docs/integrations/app-development/gitlab). Options: app, collection, fer, all, and none.  If you do not wish to install the GitLab collection or application, rename the file gitlab.tf to gitlab.tf_backup. | all |
 | install_pagerduty | Install [Sumo Logic Application and WebHooks for Pagerduty](/docs/integrations/saas-cloud/PagerDuty-V2). Options: app, collection, fer, all, and none. | all |
 | install_pagerduty_version | Lets you install either v2 or v3 alertFER/app version. | v3  |
 | install_jenkins | Install [Sumo Logic Application for Jenkins](/docs/integrations/app-development/jenkins). Options: app, collection, fer, all, and none. The Terraform script does not configure the Jenkins Sumo Logic plugin, choosing `collection` will create http source in Sumo Logic for Jenkins and will configure the Jenkins FERs. | all |
@@ -320,8 +320,8 @@ Configure these parameters in **sumologic.auto.tfvars**.
 | bitbucket_sc | Source Category for [BitBucket Cloud](/docs/integrations/app-development/bitbucket) | SDO/Bitbucket |
 | opsgenie_sc | Source Category for [Opsgenie](/docs/integrations/saas-cloud/Opsgenie) | SDO/Opsgenie |
 | pagerduty_sc | Source Category for [Pagerduty](/docs/integrations/saas-cloud/PagerDuty-V2) | SDO/Pagerduty |
-| github_sc | Source Category for [GitHub](/docs/integrations/app-development/github) | SDO/Github |
-| gitlab_sc | Source Category for [GitLab](/docs/integrations/app-development/gitlab) | SDO/Gitlab |
+| github_sc | Source Category for [GitHub](/docs/integrations/app-development/github) | SDO/GitHub |
+| gitlab_sc | Source Category for [GitLab](/docs/integrations/app-development/gitlab) | SDO/GitLab |
 | jenkins_sc | Source Category for [Jenkins](/docs/integrations/app-development/jenkins) | SDO/Jenkins |
 | circlecl_app_sc | Source Category for CircleCI | SDO/CircleCI |
 
@@ -331,11 +331,11 @@ Configure these parameters in **sumologic_fer.auto.tfvars**. There is a set of 
 
 | Parameter | Description |
 |:-- | :--|
-| (app)_pull_request_fer_scope | A [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that points to the subset of logs you'd like to parse. For more details see [FER](/docs/manage/field-extractions/create-field-extraction-rule.md). |
+| (app)_pull_request_fer_scope | A [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions) that points to the subset of logs you'd like to parse. For more details see [FER](/docs/manage/field-extractions/create-field-extraction-rule). |
 | (app)_pull_request_fer_parse | A valid parse expression with [supported parse and search operators.](/docs/manage/field-extractions/create-field-extraction-rule.md) For more details see [FER](/docs/manage/field-extractions/create-field-extraction-rule.md). |
 
 :::note
-The App can be jira_cloud, jira_server, Github, GitLab, Bitbucket, PagerDuty, Opsgenie, Jenkins, or CircleCI.
+The App can be jira_cloud, jira_server, GitHub, GitLab, Bitbucket, PagerDuty, Opsgenie, Jenkins, or CircleCI.
 :::
 
 ### Jira Cloud
@@ -480,7 +480,7 @@ Configure these parameters in **github.auto.tfvars**. If you do not wish to inst
 
 | Parameter | Description |
 |:--|:--|
-| github_token | [Github Token](https://github.com/settings/tokens) |
+| github_token | [GitHub Token](https://github.com/settings/tokens) |
 | github_organization | Organization Name. |
 | github_repo_webhook_create | Create webhooks at repo level. Default "true". |
 | github_repository_names | List of repository names for which webhooks need to be created. Example, \["repo1","repo2"\] |
@@ -490,7 +490,7 @@ Configure these parameters in **github.auto.tfvars**. If you do not wish to inst
 
 ### GitLab
 
-Configure these parameters in **gitlab.auto.tfvars**. If you do not wish to install the Gitlab collection or application, rename the file gitlab.tf to gitlab.tf_backup.
+Configure these parameters in **gitlab.auto.tfvars**. If you do not wish to install the GitLab collection or application, rename the file gitlab.tf to gitlab.tf_backup.
 
 | Parameter | Description |
 |:--|:--|

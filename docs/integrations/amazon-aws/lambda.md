@@ -1,7 +1,6 @@
 ---
 id: lambda
 title: AWS Lambda
-sidebar_label: AWS Lambda
 description: The AWS Lambda App helps you monitor the operational and performance trends in all the Lambda functions in your account. The App uses two data sources - AWS CloudWatch logs for Lambda, and CloudTrail Lambda Data Events.
 ---
 
