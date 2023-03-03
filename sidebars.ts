@@ -22,9 +22,8 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'get-started/index'},
       items: [
-        'get-started/sign-up',
-        'get-started/onboarding',
         'get-started/overview',
+        'get-started/quickstart',
         'get-started/onboarding-checklists',
         'get-started/account-settings-preferences',
         'get-started/apps-integrations',
@@ -32,7 +31,6 @@ module.exports = {
         'get-started/sumo-logic-ui',
         'get-started/system-requirements',
         'get-started/keyboard-shortcuts',
-        'get-started/quickstart',
         'get-started/training-certification-faq',
         'get-started/help',
         'get-started/faq',

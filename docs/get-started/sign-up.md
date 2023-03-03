@@ -151,7 +151,7 @@ Your subscription will be cancelled immediately.
 
 ## Resources
 
-* [Getting started with Sumo Logic](/docs/get-started/onboarding)
+* [Sumo Logic Quickstart](/docs/get-started/quickstart)
 * [Onboarding checklists](/docs/get-started/onboarding-checklists)
 * [Free Sumo Logic Training and Certification](/docs/get-started/training-certification-faq)
 * [Sumo Logic terms and conditions](https://www.sumologic.com/support-terms)
