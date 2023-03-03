@@ -1,6 +1,6 @@
 ---
 id: jfrog-artifactory
-title: JFrog Artifactory
+title: JFrog Artifactory - Classic Collector
 sidebar_label: JFrog Artifactory
 description: Provides insight into your JFrog Artifactory binary repository.
 ---

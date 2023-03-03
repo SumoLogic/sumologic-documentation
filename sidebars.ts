@@ -1790,6 +1790,16 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/app-development/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/app-development/opentelemetry/puppet-opentelemetry',
+              'integrations/app-development/opentelemetry/jfrog-artifactory-opentelemetry',
+            ],
+          },
           'integrations/app-development/bitbucket',
           'integrations/app-development/github',
           'integrations/app-development/gitlab',
