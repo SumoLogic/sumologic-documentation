@@ -32,7 +32,6 @@ To activate your Sumo Logic Trial account:
 1. Check your email inbox for the activation Sumo Logic email. If you don't see it, check your Spam and Trash folders.
 1. In the email, click **Activate Now**.
 1. Fill out the **Activate Your Account** form, then click **Activate**.
-1. Once your account is activated, click the ![close](/img/get-started/github/close-icon.png) at the top right of the *Welcome to Sumo Logic* web page. You will not need to follow the in-application guide.
 
 Next, you'll be taken to a brief two-step data collector installation process, which will get you up and running with insights in a couple of minutes.
 
