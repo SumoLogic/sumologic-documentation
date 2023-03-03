@@ -122,8 +122,7 @@ Here's a sample log message in a non-Kubernetes environment.
 
 This sample query is from the **Redis - Logs** dashboard > Logs panel.
 
-```sql
-Query String
+```sql title="Query string"
 db.cluster.name=* sumo.datasource="redis"
 | json auto maxdepth 1 nodrop
 | if  (isEmpty(log), _raw, log)  as message
