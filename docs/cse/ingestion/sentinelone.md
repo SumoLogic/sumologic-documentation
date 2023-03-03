@@ -1,6 +1,6 @@
 ---
 id: sentinelone
-title: SentinelOne
+title: SentinelOne - Cloud SIEM
 sidebar_label: SentinelOne
 description: Learn how to collect SentinelOne log messages and send them to Sumo Logic to be ingested by CSE.
 ---
@@ -50,7 +50,7 @@ In this step, you configure a Cloud Syslog Source to collect SentinelOne log mes
 
 ## Step 2: Configure SentinelOne
 
-In this step you configure SentinelOne to send log messages to the Sumo Logic platform. If you have a SentinelOne account, you can follow directions on the SentinelOne Support [knowledge base](https://support.sentinelone.com/hc/en-us/articles/360007044894-Syslog-Integration-with-Sumo-Logic), or the instructions in Step 2 of *Collecting Logs for SentinelOne* topic.
+In this step you configure SentinelOne to send log messages to the Sumo Logic platform. If you have a SentinelOne account, you can follow directions on the SentinelOne Support [knowledge base](https://support.sentinelone.com/hc/en-us/articles/360007044894-Syslog-Integration-with-Sumo-Logic), or the instructions in Step 2 of [Collecting Logs for SentinelOne](/docs/send-data/collect-from-other-data-sources/collect-logs-sentinelone/#step-2-configure-syslog-messages) topic.
 
 ## Step 3: Verify ingestion
 

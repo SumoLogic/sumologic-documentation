@@ -4,8 +4,6 @@ title: Time Range Expressions
 description: When you are building a search query, you have the option to add a time range expression in the time range field.
 ---
 
-
-
 When you are building a search query, you have the option to add a time range expression in the time range field.
 
 The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.

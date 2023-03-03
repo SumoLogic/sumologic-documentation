@@ -1,6 +1,7 @@
 ---
 id: deploy-collectors-aws-opsworks
 title: Deploy Sumo Logic Collectors on AWS OpsWorks
+sidebar_label: AWS OpsWorks
 description: Learn how to deploy Sumo Logic Collectors on AWS OpsWorks.
 ---
 
@@ -9,12 +10,9 @@ AWS OpsWorks provides a simple platform that allows you to easily create and man
 
 For more information, see [Getting Started](http://docs.aws.amazon.com/opsworks/latest/userguide/gettingstarted-opscm.html) for AWS OpsWorks.
 
-## Deploy Collectors on AWS OpsWorks
-
-1. Add [\<https://github.com/SumoLogic/sumologic-collector-chef-cookbook.gi\>](https://github.com/SumoLogic/sumologic-collector-chef-cookbook.git) toyour layer.
+1. Add https://github.com/SumoLogic/sumologic-collector-chef-cookbook.git to your layer.
 1. Enter sumologic-collector as the recipe for Setup.
 1. Enter the following JSON as Custom JSON in your stack:
-
     ```json
     {
     "opsworks": {
@@ -45,5 +43,4 @@ For more information, see [Getting Started](http://docs.aws.amazon.com/opsworks/
     }
     }
     ```
-
 1. Deploy the Collector to AWS OpsWorks.

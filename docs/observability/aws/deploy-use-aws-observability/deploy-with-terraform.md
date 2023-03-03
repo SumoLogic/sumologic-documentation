@@ -554,7 +554,7 @@ Source Parameters define how collectors and their sources are set up in Sumo Log
 
 The following examples override the following:
 
-* Example 1 overrides the cloudtrail_source_details parameter to collect Cloudtrail logs from a user-provided s3 bucket. Cloudtrail logs are already stored in the user-provided s3 bucket. The default parameter will always create new S3 buckets, forward cloudtrail logs to it and collect cloudtrail logs from the newly created s3 bucket.
+* Example 1 overrides the cloudtrail_source_details parameter to collect Cloudtrail logs from a user-provided s3 bucket. Cloudtrail logs are already stored in the user-provided s3 bucket. The default parameter will always create new S3 buckets, forward CloudTrail logs to it and collect CloudTrail logs from the newly created s3 bucket.
 
 * Example 2 overrides the auto_enable_access_logs variable to skip automatic access log enablement for an Application Load Balancer resource. By default, it is set to “Both”, which automatically enables access logging for new and existing ALB resources.
 
@@ -1530,7 +1530,7 @@ The following table provides a list of all source parameters and their default v
 | `ec2metrics_monitors_disabled` | Indicates if the EC2 Metrics Apps monitors should be enabled or disabled.
 `true` |
 | `ecs_monitors_disabled` | Indicates if the ECS Apps monitors should be enabled or disabled. | `true` |
-| `elasticache_monitors_disabled` | Indicates if the Elasticache Apps monitors should be enabled or disabled. | `true` |
+| `elasticache_monitors_disabled` | Indicates if the ElastiCache Apps monitors should be enabled or disabled. | `true` |
 | `lambda_monitors_disabled` | Indicates if the Lambda Apps monitors should be enabled or disabled. | `true` |
 | `nlb_monitors_disabled` | Indicates if the NLB Apps monitors should be enabled or disabled. | `true` |
 | `rds_monitors_disabled` | Indicates if the RDS Apps monitors should be enabled or disabled. | `true` |

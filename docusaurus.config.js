@@ -107,7 +107,6 @@ module.exports = {
           showReadingTime: false,
           feedOptions: {
             type: 'rss',
-            // https://help.sumologic.com/release-notes-service/rss.xml
             title: 'Sumo Logic Service Release Notes',
             description: 'Latest features and bug fixes for Sumo Logic apps, alerts, security, search, observability, data collectors, and more.',
             copyright: `Copyright ©${new Date().getFullYear()} Sumo Logic`,
@@ -121,19 +120,6 @@ module.exports = {
         },
       }),
     ],
-  //  [
-  //    'redocusaurus',
-  //    {
-  //      specs: [
-  //        {
-  //          id: 'sumoapi',
-  //          //specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
-  //          spec: 'sumologic-api.yaml',
-  //          route: '/sumoapi/',
-  //        },
-  //      ],
-  //    },
-  //  ],
   ],
   plugins: [
     'docusaurus-plugin-sass',
@@ -145,7 +131,6 @@ module.exports = {
         routeBasePath: 'hackathon',
         sidebarPath: require.resolve('./sidebarsCommunity.js'),
         breadcrumbs: false,
-        // ... other options
       },
     ],
     ['@docusaurus/plugin-content-blog',
@@ -162,7 +147,6 @@ module.exports = {
          showReadingTime: false,
          feedOptions: {
            type: 'rss',
-           // https://help.sumologic.com/release-notes-cse/rss.xml
            title: 'Sumo Logic Cloud SIEM Release Notes',
            description: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -183,7 +167,6 @@ module.exports = {
           showReadingTime: false,
           feedOptions: {
             type: 'rss',
-            // https://help.sumologic.com/release-notes-developer/rss.xml
             title: 'Sumo Logic Developer Release Notes',
             description: 'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -204,7 +187,6 @@ module.exports = {
           showReadingTime: false,
           feedOptions: {
             type: 'rss',
-            // https://help.sumologic.com/release-notes-collector/rss.xml
             title: 'Sumo Logic Collector Release Notes',
             description: 'New Sumo Logic Collector features and relevant bug fixes for each release.',
             copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
@@ -230,6 +212,10 @@ module.exports = {
       },
     // SEO Global Metadata
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
+    announcementBar: {
+      id: 'announcementBar',
+      content: `🔎 Algolia site search coming March 15. <a href="https://d2t1s0ah22jxsa.cloudfront.net/1248/merge">Click here to preview</a>.`,
+    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -242,9 +228,7 @@ module.exports = {
       defaultMode: 'light',
     },
     algolia: {
-      //The application ID provided by Algolia
       appId: '2SJPGMLW1Q',
-      // Public API key: it is safe to commit it
       apiKey: 'fb2f4e1fb40f962900631121cb365549',
       indexName: 'crawler_sumodocs',
       // Optional: see doc section below
@@ -293,7 +277,7 @@ module.exports = {
                 type: 'docSidebar',
                 sidebarId: 'searchlogs',
                 label: 'Log Search',
-                icon: 'search',
+                icon: 'article',
               },
               {
                 type: 'docSidebar',
@@ -310,14 +294,14 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'dashboards',
-                label: 'Alerts, Monitors',
-                icon: 'notifications_active',
+                label: 'Alerts',
+                icon: 'notifications',
               },
               {
                 type: 'docSidebar',
                 sidebarId: 'metricslogs',
                 label: 'Metrics',
-                icon: 'timeline',
+                icon: 'stacked_line_chart',
               },
               {
                 type: 'docSidebar',

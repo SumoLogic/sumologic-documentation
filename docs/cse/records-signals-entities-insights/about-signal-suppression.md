@@ -40,7 +40,7 @@ You can suppress Signals on all of the IP addresses in a Network Block. You can 
 
 ![network-block-page.png](/img/cse/network-block-page.png)
 
-For more information see [Create and Use Network Blocks](../administration/create-use-network-blocks.md).
+For more information, see [Create and Use Network Blocks](../administration/create-use-network-blocks.md).
 
 ## Automatic suppression of redundant Signals
 

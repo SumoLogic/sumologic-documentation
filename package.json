@@ -14,7 +14,7 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@braintree/sanitize-url": "^6.0.0",
+    "@braintree/sanitize-url": "^6.0.1",
     "@docusaurus/core": "^2.3.1",
     "@docusaurus/cssnano-preset": "2.3.1",
     "@docusaurus/plugin-client-redirects": "2.3.1",
@@ -64,7 +64,6 @@
     "react-dom": "^17.0.1",
     "react-fast-compare": "^3.2.0",
     "react-iframe": "^1.8.0",
-    "redocusaurus": "^1.4.0",
     "remark-code-import": "^0.3.0",
     "remark-import-partial": "^0.0.2",
     "sass": "^1.44.0",

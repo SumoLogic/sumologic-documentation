@@ -43,7 +43,7 @@ To install an application:
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    * **Log Source.** Select either of these options for the data source.
       * Choose **Source Category**, and select a source category from the list.
-      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). For more information see [Custom Data Filters](#custom-data-filters). 
+      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). For more information, see [Custom Data Filters](#custom-data-filters). 
    * **Advanced**. (Optional) Select the **Location in Library**, the default is the Personal folder in the library.
 1. Click **Add to Library**.
 
@@ -204,23 +204,8 @@ This Dashboard provides several ways to monitor your logs based on the metadata 
 
 ### Collectors and Source Monitoring
 
-The Panels in the Collector and Source Monitoring Dashboard help you
-keep an eye on the machines running Collectors and Sources. If a machine begins to have issues (such as no logs being uploaded to Sumo Logic) you'll know at a glance.
+The Panels in the Collector and Source Monitoring Dashboard help you keep an eye on the machines running Collectors and Sources. If a machine begins to have issues (such as no logs being uploaded to Sumo Logic) you'll know at a glance.
 
 * **Issues by Collector.** This Panel displays the number of log messages that contain error, exception, or failure terms by Collector.
 * **Issues by Source.** Shows the number of log messages that contain error, exception, or failure terms by each Collector's Source.
 * **Collector Issue Monitoring.** Displays warnings generated over time for each Collector in your deployment.
-
-
-
-## Preview Apps
-
-Preview Apps are Sumo Logic Apps that are currently under development, but are not yet released or officially supported. They appear in the Library under the **Preview** tab. You can install and use Preview Apps to test how well their use cases work for you, and provide feedback to Sumo Logic.
-
-Preview Apps that have the highest customer adoption rate will become the first in the queue to be adopted and moved to the Apps tab, where they will be officially supported by Sumo Logic.
-
-As Preview Apps are iterated, updated, and finally released, you will need to reinstall the App to get the latest version.
-
-:::sumo Sumo Logic Community
-Because Preview Apps are not fully developed, they are not officially supported by Sumo Logic Support, and documentation instructions are not final. To provide feedback, report a bug, or get help, log into the [Sumo Logic Community](https://community.sumologic.com/s/topic/0TOE0000000g6auOAA/Apps), and post to the topic for your Preview App. 
-:::

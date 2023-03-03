@@ -1,6 +1,6 @@
 ---
 id: g-suite-alert-center
-title: G Suite Alert Center
+title: G Suite Alert Center - Cloud SIEM
 sidebar_label: G Suite Alert Center
 description: Collect log messages from G Suite Alert Center to be parsed by CSE's system parser for G Suite Alert Center.
 ---

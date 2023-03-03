@@ -39,17 +39,32 @@ The quick menu allows you to make changes to the Monitor without opening the Det
 
 The details pane provides additional information about a selected Monitor, like its query, trigger conditions, and notification preferences. For the monitors listed, select a row to view its details. A details pane appears to the right of the table.<br/><img src={useBaseUrl('img/monitors/monitor-details.png')} alt="monitor-details.png" width="300"/>
 
-In the details pane, you can see the following details for a Monitor:
+In the details pane, you'll see the following details for a Monitor:
 
-* **Name** of the Monitor.
-* **Status** of the Monitor - **Normal, Critical, Warning, or Missing Data**. A Monitor can be in multiple states at the same time.
-* **Description** of the Monitor.
-* **Type** of Monitor, either Logs or Metrics.
-* **Path** is the Library location where the Monitor is stored.
-* **Query** used to track your data. 
-* **Trigger Conditions** that are set on the Monitor. Applicable values include Critical, Warning, and Missing Data.
-* **Notifications** configured on the Monitor.
+* **Name**. Shows the name of the Monitor.
+* **Status**. Shows the status of the Monitor - **Normal, Critical, Warning, or Missing Data**. A Monitor can be in multiple states at the same time.
+* **Description**. Shows the description, if any.
+* **Type**. Shows the type of Monitor, either Logs or Metrics.
+* **Path**. Shows the Library location where the monitor is located.
+* **Query**. It is used to track your data. 
+* **Trigger Conditions** Thresholds value that must met for Monitor to trigger an alert. These values are set when you create a monitor and can be based on a variety of metrics such as CPU usage, network latency, application response time. . Applicable values include Critical, Warning, and Missing Data.
+* **Notifications**. These are configured on the Monitor.
 * The timestamp and user that **Created** and last **Modified** the Monitor.
+
+### View in Metrics Explorer
+
+The **View in Metrics Explorer** button on the Monitors Details page allows you to view the threshold values of a monitor in Metrics Explorer. When you click on this button, it takes you to the Metrics Explorer page with the same thresholds values applied. This helps you to see how your monitor's thresholds values are translating into the metrics, and easily compare the threshold values set in Monitor with the data displayed in the Metrics Explorer graph.
+
+To view the thresholds translating values in your metrics explorer, follow the steps below:
+1. Select Monitor from the **Monitoring** page.
+1. On the Monitors Details pane, navigate to the **Trigger Conditions** section and note the thresholds values defined for Critical and Warning data conditions. All other parameters will be set to default, such as the window to 15 minutes and the "at all times" box checked. <br/><img src={useBaseUrl('img/monitors/view-in-explorer-page.png')} alt="view-in-explorer-page" width="450" />
+1. Click the **View in Metrics Explorer** button <img src={useBaseUrl('img/monitors/view-in-explorer-icon.png')} alt="view-in-explorer-icon" width="150" />. The Metrics Explorer page will display with the same threshold values applied to the panel and graph.
+1. On the **Panel settings** page, click threshold <img src={useBaseUrl('img/monitors/thresholds-icon.png')} alt="thresholds-icon" width="40" /> icon to view the values that you have defined for the Monitor.
+1. To view the values on chart, you may need to change the window time range in the graph to some other as the default is 15 minutes. <br/><img src={useBaseUrl('img/monitors/thresholds-graph.png')} alt="thresholds-graph" width="950" />
+
+:::note
+Note that the same threshold translating functionality supports to [Creating Monitor from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-your-metrics-explorer) and [Opening Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds)
+:::
 
 ## Edit, Disable, More Actions
 
@@ -65,7 +80,6 @@ In the details pane, you can see the following details for a Monitor:
   * **Delete**.
   * **Subscribe**
   * **Copy Link**.<br/><img src={useBaseUrl('img/monitors/monitor-actions.png')} alt="monitor more actions" width="400"/>
-
 
 ## Monitors folder permissions
 
@@ -98,4 +112,4 @@ In the **Monitor History** tab, you can view the history of all triggered alerts
 ## Additional Information
 
 * [Monitor resource in Terraform](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) 
-* [Monitor Management API](/docs/api/monitors)
+* [Monitor Management API](/docs/api/monitors-management)
