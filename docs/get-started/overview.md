@@ -27,7 +27,7 @@ Get to know Sumo Logic through our video, "Introduction to Sumo Logic".
 
 Sumo Logic helps businesses build, run, and secure modern applications through flexible and scalable solutions for organizations of all sizes. The collection of logs in Sumo Logic is managed by the collectors and they help in designing the best Sumo Logic deployment.
 
-There are various factors to consider when implementing a Sumo Logic solution in your organization, based on the different collection strategies.
+There are various factors to consider whenu implementing a Sumo Logic solution in your organization, based on the different collection strategies.
 
 Get to know about benefits through our video, "Benefits of Using Sumo Logic".
 
