@@ -1,7 +1,6 @@
 ---
 id: kinesis-streams
-title: Sumo Logic App for Amazon Kinesis Streams
-sidebar_label: Amazon Kinesis - Streams
+title: Amazon Kinesis - Streams
 description: The Sumo Logic App for Amazon Kinesis - Streams is a unified logs and metrics (ULM) App which provides information on the events and metrics. The preconfigured dashboards help you monitor the events, API calls, errors, incoming and outgoing records, latencies, and throughput of Kinesis.
 ---
 

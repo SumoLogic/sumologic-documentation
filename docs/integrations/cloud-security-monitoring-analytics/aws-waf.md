@@ -1,6 +1,6 @@
 ---
 id: aws-waf
-title: Sumo Logic App for AWS WAF Cloud Security Monitoring and Analytics
+title: AWS WAF Cloud Security Monitoring and Analytics
 sidebar_label: AWS WAF
 description: A guide to the Sumo Logic AWS WAF Security Analytics App.
 ---

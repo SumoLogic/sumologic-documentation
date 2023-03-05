@@ -38,7 +38,7 @@ Data Schema of Deploy and Build Events can be described by the following fields:
 | `DateTime` | Date/Time in epoch milliseconds of an event | Required |
 | `environment_name` | Can be `production`, `test`, `pre-prod`, and so on. | Required for Deploy Events |
 | `status` | Status of Event. Enum Values: Success, Failure, Unstable, Unknown, Other Values | Required |
-commit_id | Required to tie Github data to Jenkins data. This is typically set as the merge commit hash or HEAD commit | Required |
+commit_id | Required to tie GitHub data to Jenkins data. This is typically set as the merge commit hash or HEAD commit | Required |
 | `team` | Optional but highly recommended if you want to slice data by this dimension. Set N/A if not available. | Optional |
 | `service` | Optional but highly recommended if you want to slice data by this dimension. Set N/A if not available. | Optional |
 | `user` | User. Set N/A if not available. | Optional |

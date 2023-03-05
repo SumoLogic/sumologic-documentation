@@ -16,15 +16,15 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
 <div className="box smallbox1 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/aws-aurora-logo.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/integrations/amazon-aws/aurora-mysql-ulm">Amazon Aurora MySQL ULM</a></h4>
-  <p>A guide to the Sumo Logic app for Amazon Aurora MySQL ULM.</p>
+  <h4><a href="/docs/integrations/amazon-aws/aurora-mysql-ulm">Aurora MySQL ULM</a></h4>
+  <p>A guide to the Sumo Logic app for Aurora MySQL ULM.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/aws-aurora-logo.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/integrations/amazon-aws/aurora-postgresql-ulm">Amazon Aurora PostgreSQL ULM </a></h4>
-  <p>A guide to the Sumo Logic app for Amazon Aurora PostgreSQL.</p>
+  <h4><a href="/docs/integrations/amazon-aws/aurora-postgresql-ulm">Aurora PostgreSQL ULM </a></h4>
+  <p>A guide to our app for Aurora PostgreSQL.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
@@ -51,8 +51,8 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
   <div className="box smallbox6 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/elasticache.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/integrations/amazon-aws/elasticache">Amazon Elasticache</a></h4>
-  <p>A guide to the Sumo Logic app for Amazon Elasticache.</p>
+  <h4><a href="/docs/integrations/amazon-aws/elasticache">Amazon ElastiCache</a></h4>
+  <p>A guide to the Sumo Logic app for Amazon ElastiCache.</p>
   </div>
 </div>
     <div className="box smallbox7 card">
@@ -66,7 +66,7 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
   <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/ecs.png')} alt="Thumbnail icon" width="50"/>
   <h4><a href="/docs/integrations/amazon-aws/elastic-container-service-container-insights-cloudwatch">Amazon ECS CW</a></h4>
-  <p>A guide to the Sumo Logic app for Amazon ECS with Container Insights and CloudWatch.</p>
+  <p>A guide to our app for Amazon ECS CloudWatch.</p>
     </div>
   </div>
     <div className="box smallbox9 card">
@@ -108,7 +108,7 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         <div className="container">
         <img src={useBaseUrl('img/integrations/amazon-aws/kinesis.png')} alt="Thumbnail icon" width="50"/>
         <h4><a href="/docs/integrations/amazon-aws/kinesis-streams">Amazon Kinesis - Streams Classic</a></h4>
-        <p>A guide to the Sumo Logic app for Amazon Kinesis - Streams.</p>
+        <p>A guide to our app for Amazon Kinesis - Streams.</p>
         </div>
       </div>
       <div className="box smallbox15 card">
@@ -129,14 +129,14 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         <div className="container">
         <img src={useBaseUrl('img/integrations/amazon-aws/redshift.png')} alt="Thumbnail icon" width="50"/>
         <h4><a href="/docs/integrations/amazon-aws/redshift-ulm">Amazon Redshift ULM</a></h4>
-        <p>A guide to the Sumo Logic app for Amazon Redshift ULM.</p>
+        <p>A guide to our app for Amazon Redshift ULM.</p>
         </div>
       </div>
       <div className="box smallbox18 card">
         <div className="container">
         <img src={useBaseUrl('img/integrations/amazon-aws/route53.png')} alt="Thumbnail icon" width="50"/>
-        <h4><a href="/docs/integrations/amazon-aws/route-53-resolver-security">Amazon Route53 Resolver Security</a></h4>
-        <p>A guide to the Sumo Logic app for Amazon Route53 Resolver Security.</p>
+        <h4><a href="/docs/integrations/amazon-aws/route-53-resolver-security">Route53 Resolver Security</a></h4>
+        <p>A guide to our app for Route53 Resolver Security.</p>
         </div>
       </div>
       <div className="box smallbox19 card">
@@ -150,7 +150,7 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         <div className="container">
         <img src={useBaseUrl('img/integrations/amazon-aws/security-qs.png')} alt="Thumbnail icon" width="50"/>
         <h4><a href="/docs/integrations/amazon-aws/security-quickstart">Amazon Security QuickStart</a></h4>
-        <p>A guide to the Sumo Logic app for Amazon Security QuickStart.</p>
+        <p>A guide to our Security QuickStart app.</p>
         </div>
       </div>
           <div className="box smallbox21 card">
@@ -177,15 +177,15 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         <div className="box smallbox24 card">
           <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/vpcflowlogs.png')} alt="Thumbnail icon" width="50"/>
-          <h4><a href="/docs/integrations/amazon-aws/vpc-flow-logs">Amazon VPC Flow Logs</a></h4>
+          <h4><a href="/docs/integrations/amazon-aws/vpc-flow-logs">VPC Flow Logs</a></h4>
           <p>A guide to the Sumo Logic app for Amazon VPC Flow Logs.</p>
           </div>
         </div>
         <div className="box smallbox25 card">
           <div className="container">
-          <img src={useBaseUrl('img/integrations/amazon-aws/vpcflowlogs.png')} alt="Thumbnail icon" width="50"/>
+          <img src={useBaseUrl('img/integrations/amazon-aws/pci-icon.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href="/docs/integrations/amazon-aws/vpc-flow-logs-pci-compliance">PCI Compliance - VPC Flow Logs</a></h4>
-          <p>A guide to the Sumo Logic app for PCI Compliance for Amazon VPC Flow Logs.</p>
+          <p>A guide to our PCI app for VPC Flow Logs.</p>
           </div>
         </div>
         <div className="box smallbox26 card">
@@ -198,15 +198,15 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         <div className="box smallbox27 card">
           <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/alb.png')} alt="Thumbnail icon" width="50"/>
-          <h4><a href="/docs/integrations/amazon-aws/application-load-balancer">AWS Application Load Balancer</a></h4>
-          <p>A guide to the Sumo Logic app for AWS Application Load Balancer.</p>
+          <h4><a href="/docs/integrations/amazon-aws/application-load-balancer">AWS ALB</a></h4>
+          <p>A guide to our AWS Application Load Balancer app.</p>
           </div>
         </div>
         <div className="box smallbox28 card">
           <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/clb.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href="/docs/integrations/amazon-aws/classic-load-balancer">AWS Classic Load Balancer</a></h4>
-          <p>A guide to the Sumo Logic app for AWS Classic Load Balancer.</p>
+          <p>A guide to our Classic Load Balancer app.</p>
           </div>
         </div>
         <div className="box smallbox29 card">
@@ -234,7 +234,7 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
           <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/pci-icon.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href="/docs/integrations/amazon-aws/cloudtrail-pci-compliance">PCI Compliance - CloudTrail</a></h4>
-          <p>A guide to the PCI Compliance - AWS CloudTrail app.</p>
+          <p>A guide to our PCI CloudTrail app.</p>
           </div>
         </div>
         <div className="box smallbox33 card">
@@ -255,35 +255,35 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
           <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/AWS_EC2_CW_Metrics.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href="/docs/integrations/amazon-aws/ec2-cloudwatch-metrics">AWS EC2 CW Metrics</a></h4>
-          <p>A guide to the Sumo Logic app for AWS EC2 CW Metrics.</p>
+          <p>A guide to our app for AWS EC2 CW Metrics.</p>
           </div>
         </div>
         <div className="box smallbox36 card">
           <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/AWS_EC2_CW_Metrics.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href="/docs/integrations/amazon-aws/ec2-host-metrics">AWS EC2 Host Metrics</a></h4>
-          <p>A guide to the Sumo Logic app for AWS EC2 Host Metrics.</p>
+          <p>A guide to our app for AWS EC2 Host Metrics.</p>
           </div>
         </div>
         <div className="box smallbox37 card">
           <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/elb.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href="/docs/integrations/amazon-aws/elastic-load-balancer-app">AWS Elastic Load Balancer</a></h4>
-          <p>A guide to the Sumo Logic app for AWS Elastic Load Balancer.</p>
+          <p>A guide to the Sumo Logic app for AWS ELB.</p>
           </div>
         </div>
         <div className="box smallbox38 card">
           <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/alb.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href="/docs/integrations/amazon-aws/elastic-load-balancing">AWS Elastic Load Balancing</a></h4>
-          <p>A guide to the Sumo Logic app for AWS Elastic Load Balancing.</p>
+          <p>A guide to the Sumo Logic app for AWS ELB.</p>
           </div>
         </div>
         <div className="box smallbox39 card">
           <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/elb-classic.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href="/docs/integrations/amazon-aws/elastic-load-balancing-classic">AWS Elastic Load Balancing - Classic</a></h4>
-          <p>A guide to the Sumo Logic app for AWS Elastic Load Balancing - Classic.</p>
+          <p>A guide to the Sumo Logic app for AWS ELB - Classic.</p>
           </div>
         </div>
         <div className="box smallbox40 card">
@@ -304,7 +304,7 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
           <div className="container">
           <img src={useBaseUrl('/img/integrations/amazon-aws/network-firewall.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href="/docs/integrations/amazon-aws/network-firewall">AWS Network Firewall</a></h4>
-          <p>A guide to the Sumo Logic app for AWS Network Firewall.</p>
+          <p>A guide to our app for AWS Network Firewall.</p>
           </div>
         </div>
         <div className="box smallbox43 card">
@@ -325,7 +325,7 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
     <div className="container">
     <img src={useBaseUrl('img/integrations/amazon-aws/waf.png')} alt="Thumbnail icon" width="50"/>
     <h5><a href="/docs/integrations/amazon-aws/cis-aws-foundations-benchmark">CIS AWS Foundations Benchmark App</a></h5>
-    <p>A guide to the Sumo Logic app for CIS AWS Foundations Benchmark.</p>
+    <p>A guide to our CIS AWS Foundations Benchmark app.</p>
     </div>
   </div>
   <div className="box smallbox46 card">

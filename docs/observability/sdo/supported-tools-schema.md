@@ -9,7 +9,7 @@ The Software Development Optimization (SDO) Solution comes bundled with Terrafor
 | DevOps Phases             | Supported with Terraform                                          |
 |:---------------------------|:-----------------------------------------------------------|
 | Planning Phase            | Jira Cloud, Jira Server                                   |
-| Dev/Code                  | Github, Bitbucket, GitLab                                 |
+| Dev/Code                  | GitHub, Bitbucket, GitLab                                 |
 | Build/Test/Deploy/Release | Jenkins, Bitbucket Pipelines, CircleCI  Pipelines, GitLab |
 | Monitor/Operate           | PagerDuty, Opsgenie                                       |
 
@@ -163,7 +163,7 @@ The table below shows how Issue events are represented in the schema.
 
 The mapping of events from tool sets to this event schema is achieved via Sumo Logic [FERs](/docs/manage/field-extractions/create-field-extraction-rule.md). For Example, For [PagerDuty V2 Incidents](https://developer.pagerduty.com/docs/webhooks/v2-overview/), we map the incident payload to the alert event schema using the following **Parse Expression.**
 
-```sql
+```
 parse regex "(?<event>\{\"event\":\"incident\..+?\}(?=,\{\"event\":\"incident\..+|\]\}$))"
 |json  field=event "event", "created_on", "incident" as alert_type, dateTime, incident
 |json field=incident "id",  "service.name" , "urgency", "teams[0].summary", "html_url"  as alert_id, service, priority, team, link
@@ -186,9 +186,8 @@ Examples of mapping field extraction rules to the other out-of-the-box tools ca
 You can add additional fields such as project, product, or server names to the above schema by following the steps below: 
 
 1. Modify the existing set of FERs, by adding a new field in the definition of that FER . For example, if you are modifying the Sumo Logic Jenkins FER, then you can add this field either in:
-
     * The [SumoUpload](https://github.com/jenkinsci/sumologic-publisher-plugin#sumoupload) function in the Jenkins plugin.
     * Add [metadata fields](/docs/manage/fields) at the Sumo Logic source.  
 1. Write and test Sumo Logic searches using this new field to derive the insights you want.
 1. Add [panels](/docs/dashboards-new/panels) based on the above searches to the existing set of dashboards.
-1. Add [filters](../dashboards/edit-dashboards/use-filters-dashboards.md) to the dashboards.
+1. Add [filters](../../dashboards/edit-dashboards/use-filters-dashboards.md) to the dashboards.

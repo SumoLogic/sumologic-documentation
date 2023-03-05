@@ -1,6 +1,6 @@
 ---
 id: cloud-firewall
-title: Sumo Logic App for Google Cloud Firewall
+title: Google Cloud Firewall
 sidebar_label: Google Cloud Firewall
 description: The Google Cloud Firewall App enables you to monitor request activity and the effect of your firewall rules. Google Cloud Platform (GCP) firewall rules can allow or deny traffic to and from VMs in a Google VPC network.
 ---

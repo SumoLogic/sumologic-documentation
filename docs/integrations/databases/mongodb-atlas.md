@@ -1,6 +1,6 @@
 ---
 id: mongodb-atlas
-title: Sumo Logic App for MongoDB Atlas
+title: MongoDB Atlas
 sidebar_label: MongoDB Atlas
 description: The Sumo Logic App for MongoDB Atlas provides visibility into the security posture of your clusters and allows for easy monitoring of performance KPIs and database operational activities with predefined dashboards for visibility into MongoDB alerts and user activity audit logs, insights into slow queries, database and hardware metrics, and monitoring database operations.
 ---
