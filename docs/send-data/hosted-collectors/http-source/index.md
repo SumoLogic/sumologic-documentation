@@ -20,7 +20,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox2 card">
   <div className="container">
   <img src={useBaseUrl('img/send-data/OTLP-HTTP.png')} alt="Thumbnail icon" width="50"/>
-  <h3><a href="/docs/send-data/hosted-collectors/http-source/otlp">OTLP/a></h3>
+  <h3><a href="/docs/send-data/hosted-collectors/http-source/otlp">OTLP</a></h3>
   <p>Use an HTTP OTLP Source to collect OTLP formatted Logs, Metrics, and Traces data.</p>
   </div>
 </div>
