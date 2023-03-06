@@ -30,7 +30,7 @@ The following are [Fields](https://help.sumologic.com/docs/manage/fields/) that 
 * **`db.cluster.name`** - User configured. Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * **`db.system`** - Has fixed value of redis.
 * **`deployment.environment`** - User configured. This is the deployment environment where the Redis cluster resides. For example: dev, prod or qa.
-* **`sumo.datasource`** - has fixed value of redis.
+* **`sumo.datasource`** - Has fixed value of redis.
 
 ## Prerequisite
 
