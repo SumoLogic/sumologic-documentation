@@ -108,7 +108,8 @@ Once you've downloaded the yaml file (in step 2), follow the below steps based o
 </TabItem>
 </Tabs>
 
-Sumo Logic will start receiving data from your host machine when the above command is successfully executed. This will install the app and dashboards to your Sumo Logic org.
+Sumo Logic will start receiving data from your host machine when the above command is successfully executed. 
+Press **Next** . This will install the app and dashboards to your Sumo Logic org.
 
 Results will be available after a while. It is important to note that each panel slowly and automatically fills with data matching the time range query received since the panel was created. Your data should appear in the dashboard within 20 minutes, and you will see complete graphs and maps.
 
