@@ -21,7 +21,7 @@ We recommend using the Active Directory JSON App in combination with the Windows
 
 Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of Active Directory App install if not already present.
 
-**`sumo.datasource`** - has fixed value of activeDirectory
+**`sumo.datasource`** - Has fixed value of **activeDirectory**
 
 ### Event Logs Used by Active Directory App
 
