@@ -70,7 +70,7 @@ OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collect
 In this step, you will configure the yaml file required for Redis Collection.
 
 The log file path configured to capture redis logs must be given here. The files are typically located in `/var/log/redis/redis-server.log`. If you are using a customized path, check the [`redis.conf`](https://download.redis.io/redis-stable/redis.conf) file for this information.
-
+You can add any custom fields which you want to tag along with the data ingested in sumo.
 Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/configuration-screenshot.png')} alt="Configuration" />
