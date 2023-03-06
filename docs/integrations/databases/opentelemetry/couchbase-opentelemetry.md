@@ -60,6 +60,7 @@ The files are typically located in folder `/opt/couchbase/var/lib/couchbase/logs
 * For Error Log: `/opt/couchbase/var/lib/couchbase/logs/error.log`
 * For Access Log: `/opt/couchbase/var/lib/couchbase/logs/http_access.log`
 * For Query Log: `/opt/couchbase/var/lib/couchbase/logs/query.log`
+
 You can add any custom fields which you want to tag along with the data ingested in sumo.
 Click on the **Download YAML File** button to get the yaml file.
 
