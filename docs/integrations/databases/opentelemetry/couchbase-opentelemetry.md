@@ -17,7 +17,7 @@ The Sumo Logic app for Couchbase helps you monitor activity in Couchbase. The pr
 
 Couchbase logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-This App has been tested with the following version of Couchbase:
+This App has been tested with Couchbase version 7.0.2
 
 Non-Kubernetes: Couchbase version: 7.0.2
 
