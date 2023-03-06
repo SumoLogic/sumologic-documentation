@@ -59,3 +59,4 @@ In this section, we'll introduce the following concepts:
       <p>An HTTP Traces Source is an endpoint for receiving trace data.</p>
       </div>
     </div>
+    </div>
