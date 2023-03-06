@@ -30,7 +30,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 **`db.cluster.name`** - User configured. Enter a name to identify this Couchbase cluster. This cluster name will be shown in the Sumo Logic dashboards.
 **`db.system`** - Has a fixed value of **couchbase**.
 **`deployment.environment`** - User configured. Through this Couchbase cluster is identified by the environment where it resides. For example: dev, prod or qa.
-**`sumo.datasource`** - has a fixed value of **couchbase**.
+**`sumo.datasource`** - Has a fixed value of **couchbase**.
 
 ### Prerequisite
 
