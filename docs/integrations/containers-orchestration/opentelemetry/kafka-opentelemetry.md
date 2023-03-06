@@ -33,7 +33,6 @@ The Sumo Logic App for Kafka assumes:
 ```
 [2021-03-10 20:12:28,742] INFO [KafkaServer id=0]
 started (kafka.server.KafkaServer)
-'
 ```
 
 ### Sample Log Query
