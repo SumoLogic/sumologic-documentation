@@ -119,7 +119,7 @@ Below the Signal timeline, you’ll see a list of Signals. By default, only atta
 
 ![signal-list-area.png](/img/cse/signal-list-area.png)
 
-If you click the **Show Related** checkbox, the page updates and also displays any Related Signals or Related Insights
+If you click the **Show Related** checkbox, the page updates and also displays any Related Signals or Related Insights.
 
 * A *Related Signal* is a Signal that isn’t part of the current Insight (it’s not attached),  but fired on the same Entity as the current Insight’s attached Signals within 7 days of the current Insight’s attached Signals. 
 * A *Related Insight* is an Insight that a Related Signal is attached to.
