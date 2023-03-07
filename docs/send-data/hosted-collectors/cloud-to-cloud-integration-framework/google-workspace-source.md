@@ -2,7 +2,7 @@
 id: google-workspace-source
 title: Google Workspace Source
 sidebar_label: Google Workspace
-decription: This document explains Google Workspace Source setup and configuration information.
+description: This document explains Google Workspace Source setup and configuration information.
 keywords:
     - google-workspace
     - cloud-SIEM-enterprise
