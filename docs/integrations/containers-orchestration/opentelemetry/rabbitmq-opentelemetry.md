@@ -131,7 +131,7 @@ This sample Query is from the **RabbitMQ - Logs dashboard** > **Events** by Seve
 Query String
 
 ```sql
- %"sumo.datasource"="rabbitmq" %"messaging.cluster"=* (_sourceHost=* or host=*) 
+ %"sumo.datasource"="rabbitmq" %"messaging.cluster.name"=* host.name=*
 | json "log" as _rawlog nodrop
 | if(isEmpty(_rawlog),_raw,_rawlog) as _raw
 | parse "* * [*]" as date,time,severity | count by severity
