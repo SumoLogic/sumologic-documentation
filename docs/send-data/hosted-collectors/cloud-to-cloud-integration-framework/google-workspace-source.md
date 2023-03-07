@@ -55,7 +55,7 @@ To set up a Google Workspace account, you need to configure Google service accou
 
 To create service account credentials, follow the steps below:
 1. Navigate to the [Google Console service account](https://console.cloud.google.com/projectselector2/iam-admin/serviceaccounts?pli=1&supportedpurview=project) page.
-1. Login with your credentials.
+1. Log in with your credentials.
 1. Create a new project or select from the existing projects.<br/> <img src={useBaseUrl('img/send-data/workspace-setup1.png')} alt="workspace-setup1.png" width="600" />
 1. Enable **Admin SDK API** to have an administrator access. To locate this setting, you can search for **Admin SDK** in the search bar. Then select the **Enable** button.<br/> <img src={useBaseUrl('img/send-data/workspace-setup2.png')} alt="workspace-setup2.png" width="500" />
 1. You will be redirected to the Admin dashboard page. Select the **Credentials** option from the left navigation. <br/> <img src={useBaseUrl('img/send-data/select-credentials.png')} alt="select-credentials.png" width="700" />
