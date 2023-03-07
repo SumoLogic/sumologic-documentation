@@ -239,5 +239,5 @@ When you select an Entity on the page, the right pane displays details about tha
 
 #### Accessing related Entities using the API
 
-You can access related Entity information using the CSE API. For more information, see [CSE APIs](/docs/cse/administration/cse-apis.md).
+You can access related Entity information using the CSE API. For more information, see [CSE APIs](/docs/cse/administration/cse-apis).
 
