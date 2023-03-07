@@ -1,6 +1,6 @@
 ---
 id: airtable
-title: Sumo logic App for Airtable
+title: Sumo Logic App for Airtable
 sidebar_label: Airtable
 description: The Sumo Logic App for the Airtable App offers functionality for monitoring and analyzing your organization's Airtable audit logs.
 ---
@@ -13,7 +13,6 @@ The Airtable App for Sumo Logic monitors and analyzes your organization's Airtab
 The Airtable App makes it simple to import data from your Airtable audit logs into Sumo Logic, where you can perform real-time analysis and build dashboards to visualize key metrics. You can monitor security events and gain insights into user activity across your organization.
 
 The Airtable App allows you to:
-
 * Keep track of user activity within your Airtable account in real-time.
 * Analyze user actions, identify failed executions, and track trends over time.
 * View a summary of audit logs in table format, enabling you to identify anomalous behavior and potential security threats.
@@ -77,11 +76,15 @@ Before you begin, collect logs from Airtable API and ingest them into Sumo Logic
 
 To install the app, follow the steps below:
 1. From the **App Catalog**, search for the app and select it.
-2. Select **Add Integration** button to install the app.
-3. Complete ingesting of Airtable App data using the [Airtable Cloud-to-Cloud Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/).
-4. In **Data Source**. Select either of these options for the data source:
+1. Select **Add Integration** button to install the app.
+1. Configure **Airtable App** using the steps described in the [Airtable Cloud-to-Cloud Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/). If you already have set up your data, skip this step by clicking on **Next**.
+1. Complete the following fields:
+   1. **Data Source**. Select either of these options for the data source:
       * Choose **Source Category** and then choose a source category from the list.
       * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example, `_sourceCategory=MyCategory`.
+    2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app. 
+    3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
+1. Click **Next**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
 
