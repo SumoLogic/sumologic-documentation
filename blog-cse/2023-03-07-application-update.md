@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 We are excited to announce the new Entity Relationship Graph. With this feature, you can now see a graphical visualization of all related Entities in an Insight, as well as additional relationships beyond the Insight. This enables you to more quickly understand relationships among Entities and the larger context behind a potential security threat.
 
 :::note
-This feature is available to all customers but is currently in **Beta**. If you encounter any issues with this feature, please report them to Sumo Logic Support. Thank you!
+This feature is available to all customers but is currently in **Beta**. If you encounter any issues with this feature,  report them to Sumo Logic Support. We appreciate your feedback.
 :::
 
 The Entity Relationship Graph (and the Related Entities list) displays all Entities involved in the Insight (those referred to in a record in a Signal in the Insight) as well as additional Entity relationships (for example, if CSE detects an IP address may also have had a specific hostname at the time the Insight was generated). 
