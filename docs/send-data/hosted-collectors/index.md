@@ -9,7 +9,12 @@ import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 import Iframe from 'react-iframe';
 
-With a **Hosted Collector**, Sumo Logic hosts the Collector and its Sources on our end (in AWS). No need to install it on a local system in your deployment. You can create Sources to collect data from a variety of services. A single Hosted Collector can be configured with any number of Sources.
+*Hosted Collectors* allow you to send data to Sumo Logic without deploying an agent. We host the Collector and its Sources on our end, in AWS — no need to install it on a local system in your deployment.
+
+With a single Hosted Collector, you can create and configure Sources to collect data from any number of Sources, for example:
+
+* Cloud-to-Cloud collection from AWS, Azure, Google Cloud Platform, and more SaaS tools
+* Send data directly to Sumo endpoint using your custom collection method
 
 Data collection flow for S3 buckets and HTTP requests:<br/>![team built hosted diagram.png](/img/send-data/team-built-hosted-diagram.png)
 
