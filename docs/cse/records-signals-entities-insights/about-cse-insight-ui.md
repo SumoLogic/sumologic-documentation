@@ -121,7 +121,7 @@ Below the Signal timeline, you’ll see a list of Signals. By default, only atta
 
 If you click the **Show Related** checkbox, the page updates and also displays any Related Signals or Related Insights.
 
-* A *Related Signal* is a Signal that isn’t part of the current Insight (it’s not attached),  but fired on the same Entity as the current Insight’s attached Signals within 7 days of the current Insight’s attached Signals. 
+* A *Related Signal* is a Signal that isn’t part of the current Insight (it’s not attached), but fired on the same Entity as the current Insight’s attached Signals within 7 days of the current Insight’s attached Signals. 
 * A *Related Insight* is an Insight that a Related Signal is attached to.
 
 Here is an example of what a Related Signal and Related Insight look like in the Signal list. Note that, to distinguish between Signals that are attached as opposed to related, an Attached Signal has a blue vertical “ornament” on the left side of the row. A Related Signal does not.
