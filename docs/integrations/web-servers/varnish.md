@@ -112,7 +112,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 <img src={useBaseUrl('img/integrations/web-servers/varnish-k8s.png')} alt="Varnish" />
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Varnish. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Varnish input plugin to obtain metrics. For simplicity, the diagram doesn’t show the input plugins.The injection of the Telegraf sidecar container is done by the Telegraf Operator.
-Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) which enriches metadata and sends metrics to Sumo Logic.
+Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector), which enriches metadata and sends metrics to Sumo Logic.
 
 In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 

@@ -169,7 +169,7 @@ The first service in the pipeline is Telegraf. Telegraf collects metrics from Ap
 
 Telegraf uses the [Apache input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache) to obtain metrics. For simplicity, the diagram doesn’t show the input plugins.
 The injection of the Telegraf sidecar container is done by the Telegraf Operator.
-Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) which enriches metadata and sends metrics to Sumo Logic.
+Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector), which enriches metadata and sends metrics to Sumo Logic.
 
 In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
