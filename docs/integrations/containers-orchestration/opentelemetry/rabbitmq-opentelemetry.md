@@ -65,7 +65,7 @@ In this step we will be configuring the yaml file required for RabbitMQ Collecti
 Path of the log file configured to capture RabbitMQ logs is needed to be given here.
 
 The files are typically located in `/var/log/rabbitmq/rabbit@<hostname>.log`.
-
+You can add any custom fields which you want to tag along with the data ingested in sumo.
 Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-YAML.png')} alt="YAML" />
