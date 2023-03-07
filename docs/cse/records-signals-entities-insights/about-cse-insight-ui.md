@@ -190,7 +190,7 @@ The cumulative severity value is color coded: cyan for less than 12, orange for 
 #### About the Entities tab graph view
 
 :::note
-This section describes a feature which is available to all customers but is currently in Beta. If you encounter any issues with this feature, report them to Sumo Logic Support. 
+This section describes a feature which is available to all customers but is currently in Beta. If you encounter any issues with this feature, please report them to Sumo Logic Support. Thank you!
 :::
 
 The screenshot below shows the **Entities** tab **graph** view for an Insight.
