@@ -40,16 +40,12 @@ A Google Workspace Source goes through the following states when created:
 
 If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
-When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
-
-On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection. Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings.
-
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector. On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection. Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings.
 You can click on the status icon to open a Health Events panel with details on each detected issue.
 
 ## Set up and Configurations
 
-In this configuration, you will set up a Google Workspace source account and configure it to be authorized and authenticated to use Google Workspace.
-To set up a Google Workspace account, you need to configure Google service account credentials.
+In this configuration, you will set up a Google Workspace source account and configure it to be authorized and authenticated to use Google Workspace. To set up a Google Workspace account, you need to configure Google service account credentials. You may refer to the [Google Documentation](https://developers.google.com/admin-sdk/directory/v1/guides/delegation) for more information.
 
 ### Creating Service Account
 
@@ -62,9 +58,9 @@ To create service account credentials, follow the steps below:
 1. Click the <img src={useBaseUrl('img/send-data/create-cred-button.png')} alt="create-cred-button.png" width="150" /> button at the menu bar of the Google Console page, and select Service account from the options that appear.<br/> <img src={useBaseUrl('img/send-data/create-credentials-service.png')} alt="create-credentials-service.png" width="600" />
 1. After entering the service account details, you may leave the **Optional** fields and continue to click **Done**. <br/> <img src={useBaseUrl('img/send-data/service-account-details.png')} alt="login-service-account-details.png" width="500" />
 1. To create JSON for the service account, you must create a key. Select the service account email to navigate to the **Keys** tab.<br/><img src={useBaseUrl('img/send-data/google_workspace_service_account_create_key.png')} alt="google_workspace_service_account_create_key.png" width="600" />.
-1. Click **Keys** tab on the same service account page. <br/><img src={useBaseUrl('img/send-data/add-key.png')} alt="google_workspace_service_account_create_key.png" width="500" />
+1. Click **Keys** tab on the same service account page. <br/><img src={useBaseUrl('img/send-data/add-key.png')} alt="add-key.png" width="500" />
 1. From **Add Key** dropdown, select **Create new key**. At the prompt, select **JSON** and click **Create** to create a key <br/><img src={useBaseUrl('img/send-data/generate-key.png')} alt="generate-key.png" width="600" />
-1. JSON for the service account is automatically downloaded. To see what the JSON looks like, and how the JSON fields map to the fields you'll configure, see the [Service account JSON](#example-of-service-account-json) example below.<br/><img src={useBaseUrl('img/send-data/private-key.png')} alt="private_key.png" width="600" />.
+1. JSON for the service account is automatically downloaded. To see what the JSON looks like, and how the JSON fields map to the fields you'll configure, see the [JSON Example](#json-example) below.  
 
 ### Domain-wide Delegation
 
@@ -81,7 +77,7 @@ To add domain-wide delegation to your service account using the client ID or Key
 ### Adding OAuth Scope
 
 OAuth Scope enables delegated access to a user's resources on a service, such as Google, without exposing the user's credentials to the third-party application. By adding the necessary OAuth scopes, you are specifying the level of access the service account has to your resources, while also ensuring security and privacy.
-1. From the [Google admin console](https://console.cloud.google.com/projectselector2/iam-admin), go to **Security** section, then click **API Control**. <br/><img src={useBaseUrl('img/send-data/google_workspace_adding_scope1.png')} alt="google_workspace_adding_scope1.png" width="800" />
+1. From the [Google admin console](https://console.cloud.google.com/projectselector2/iam-admin), go to **Security** section, then click **API Controls**. <br/><img src={useBaseUrl('img/send-data/google_workspace_adding_scope1.png')} alt="google_workspace_adding_scope1.png" width="800" />
 1. To add the OAuth scopes, locate the settings under **Manage Domain Wide Delegation** section. <br/><img src={useBaseUrl('img/send-data/manage-domainwide-delegation.png')} alt="manage-domainwide-delegation.png" width="700" />
 1. Click **Add new**.
 1. In the **Client ID** field, paste the client ID you copied in step 5 of the [Creating Service Account](#creating-service-account) section.
@@ -109,13 +105,10 @@ When you create a Google Workspace Source, you add it to a Hosted Collector. Be
 
 To configure a Google Workspace Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
-1. Select **Google Workspace**.
-
-  ![google workspace icon.png](/img/send-data/google-workspace-icon.png)
-1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.  
-  ![google workspace oct 28 2021.png](/img/send-data/google-workspace.png)
+1. Select **Google Workspace**.<br/><img src={useBaseUrl('img/send-data/google-workspace-icon.png')} alt="google-workspace-icon.png" width="100" />
+1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/><img src={useBaseUrl('img/send-data/google-workspace.png')} alt="google-workspace.png" width="400" />  
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise and become part of User Inventory. When configured with the **Forward to SIEM** option the following metadata fields are set:
   * `_siemVendor`: Google
@@ -176,22 +169,27 @@ The following table shows the **config** parameters for a Google Workspace Sou
 customerID | String | No | my_customer | The unique ID for the customer's Google Workspace account.	modifiable
 | `domain` | String | No | (except when queryParam is set to false.) | The domain name. Use this field to get fields from only one domain.	modifiable |
 
-Google Workspace Source JSON example:
+### JSON Example
 
 ```json
 {
-  "name": "google workspace",
-  "description": "description",
-  "category": "souce_category",
-  "fields": {
-    "_siemForward": true
-  },
-  "privateKey": "****************",
-  "clientEmail": "example@abc-google.com",
-  "delegatedUserEmail": "example@abc.com",
-  "tokenURL": "https://example_token_url.com",
-  "queryParam": false,
-  "scope": "https://www.googleapis.com/auth/admin.directory.user.readonly",
-  "domain": "some_domain"
+  "type": "service_account",
+  "project_id": "sample_project",
+  "private_key_id": "asdfgh1234556",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nsample_private_key\n-----END PRIVATE KEY-----\n",
+  "client_email": "sample_project@sample_service_account.com",
+  "client_id": "12345678",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sample_url.com"
 }
 ```
+
+Mapping of fields from the above JSON to the input form.
+
+| Fields of above JSON Example   |    Input Fields     |
+| :-------    |  :------------------------: |
+| client_email |	Client Email
+| private_key	 | Private Key |
+| token_uri	 | Token URL |
