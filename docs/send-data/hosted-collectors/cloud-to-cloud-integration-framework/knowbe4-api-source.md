@@ -34,14 +34,13 @@ The **Region** is the region where your **KnowBe4** account is located. To know 
 
 ### API Token
 
-The **API security token** is used to authenticate with KnowBe4 HTTP API. To get the **KnowBe4 API token**, follow the steps below:
-1. Log in to the **KnowBe4** application.
-1. Navigate to the **Events** section from left panel and click **Settings**.
-1. Select **User Profile**. The **KnowBe4** Secure API token is displayed in the UI.
-1. You can copy the generated token for use, or click the **Reset Token** button to generate a new one.
-:::note
-When you reset the token, the previous token issued becomes invalid immediately.
-:::
+The **API security token** is used to authenticate with KnowBe4 API. To get the **KnowBe4 API token**, follow the steps below:
+1. Log in to the **KnowBe4** application as an Admin user.
+1. Navigate to the **Account Settings**.
+1. Click **Account Integrations** from the left menu, and then click **API** option.
+1. Under the API section, checkmark the **Enable Reporting API Access**. The **KnowBe4** Secure API token is displayed.
+1. Save this API key to use while configuring the Source.
+1. Click **Save Changes**.
 
 ## Metadata Field
 
@@ -90,7 +89,7 @@ To configure the KnowBe4 API Source:
 1. In **API Key**, authenticate your account by entering your secret API key. You can access your API key or generate a new one from **User Event API Management Console**. See [API Token](#api-token) section.
 1. In **Data Types**, you can select the **Phishing Tests** data type to fetch a list of all recipients for each phishing security test on the KnowBe4 account. To retrieve the **External User events** data, you need to raise a request to Sumo Logic support to enable this data type.
 1. In **Phishing Poll Interval**, enter the phishing poll interval frequency, which must be between 1 hour and 24 hours.
-1. When you are finished configuring the Source, click **Save**.
+1. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
