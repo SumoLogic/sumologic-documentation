@@ -2030,6 +2030,8 @@ integrations: [
               'integrations/web-servers/opentelemetry/haproxy-opentelemetry',
               'integrations/web-servers/opentelemetry/iis-10-opentelemetry',
               'integrations/web-servers/opentelemetry/nginx-opentelemetry',
+              'integrations/web-servers/opentelemetry/squid-proxy-opentelemetry',
+              'integrations/web-servers/opentelemetry/varnish-opentelemetry'
             ],
           },
           'integrations/web-servers/apache',
