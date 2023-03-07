@@ -170,7 +170,7 @@ webengine.system=apache webengine.cluster.name=* HTTP (40* OR 41* OR 42* OR 43* 
 
 ### Sample Metric query
 
-Sample query from **Waiting** panel in Request State Analysis dashboard
+Sample query from **Waiting** panel in **Request State Analysis** dashboard
 
 ```
 sumo.datasource=apache metric=apache.scoreboard state=waiting webengine.cluster=* server_name=* | sum by webengine.cluster
