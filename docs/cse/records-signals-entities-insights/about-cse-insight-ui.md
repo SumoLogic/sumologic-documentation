@@ -197,7 +197,7 @@ The screenshot below shows the **Entities** tab **graph** view for an Insight.
 
 ![related-entity-graph.png](/img/cse/related-entity-graph.jpg)
 
-By default, this view shows the same entities that are displayed on the list view. However, the system will look for additional relationships outside of the Insight during the detection window to aide in deeper investigation.
+By default, this view shows the same entities that are displayed on the list view. However, the system will look for additional relationships outside of the Insight during the detection window to aid in deeper investigation.
 
 To switch between the list and graph view, click the chooser in the upper-right corner of the panel **(1)**.
 
