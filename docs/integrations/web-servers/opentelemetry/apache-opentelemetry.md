@@ -26,7 +26,7 @@ The Sumo Logic App for Apache assumes:
 Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of Apache App install if not already present.
 
 - **`webengine.cluster.name`** - User configured.Enter a name to uniquely identify your Apache web server cluster. This web server cluster name will be shown in the Sumo Logic dashboards.
-- **`webengine.system`** - Has fixed value of apache
+- **`webengine.system`** - Has fixed value of **apache**
 - **`sumo.datasource`** - Has fixed value of apache
 - **`webengine.node.name`** - Has the value of host name of the machine which is being monitored
 
