@@ -189,7 +189,6 @@ Use this dashboard to:
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Logs.png')} alt="Logs" />
 
 ### Kafka - Metrics
-===============
 
 This dashboard helps you to monitor unsynchronized partition replicas and consumer groups.
 
