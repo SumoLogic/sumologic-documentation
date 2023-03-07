@@ -6,7 +6,13 @@ tags: [get started, getting started]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic is an all-in-one platform for monitoring, analyzing, troubleshooting, and visualizing data from your application and network environment. The onboarding steps provides the tasks you'll need to start your Sumo Logic experience.
+Sumo Logic is an all-in-one cloud data analytics platform focused on Security, Operations, and Business Intelligence use cases. We provide:
+
+* Monitoring, analyzing, troubleshooting, and visualizing data from your application and network environment.
+* Elastic processing to collect, manage, and analyze the log data, regardless of type, volume, or location.
+* Real-time insights into online operations and customer behavior.
+
+Follow the onboarding steps below to start your Sumo Logic journey.
 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
@@ -17,14 +23,14 @@ Sumo Logic is an all-in-one platform for monitoring, analyzing, troubleshooting,
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <a href="/docs/get-started/onboarding"><img src={useBaseUrl('img/icons/business/mission.png')} alt="icon" width="50"/><h4>Getting started</h4></a>
+  <a href="/docs/get-started/quickstart"><img src={useBaseUrl('img/icons/business/mission.png')} alt="icon" width="50"/><h4>Sumo Quickstart</h4></a>
   <p>Get up and running quickly with Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="/docs/get-started/overview"> <img src={useBaseUrl('img/icons/business/video.png')} alt="icon" width="50"/><h4>Quickstart videos</h4></a>
-  <p>Before diving in, check out our microlesson videos.</p>
+  <a href="/docs/get-started/overview"> <img src={useBaseUrl('img/icons/cloud/core-platform.png')} alt="icon" width="50"/><h4>Sumo Overview</h4></a>
+  <p>Before diving in, check out our Sumo Logic overview and micro lessons.</p>
   </div>
 </div>
 <div className="box smallbox4 card">

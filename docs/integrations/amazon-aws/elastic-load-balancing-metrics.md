@@ -1,7 +1,6 @@
 ---
 id: elastic-load-balancing-metrics
 title: AWS Elastic Load Balancing Metrics
-sidebar_label: AWS Elastic Load Balancing Metrics
 description: The Sumo Logic App for AWS Elastic Load Balancing (ELB) Metrics lets you analyze the CloudWatch ELB metrics for the Application Load Balancer (ALB), and the Classic Load Balancer (CLB).
 ---
 

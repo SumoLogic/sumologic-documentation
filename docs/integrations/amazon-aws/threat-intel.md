@@ -1,7 +1,6 @@
 ---
 id: threat-intel
 title: AWS Threat Intel
-sidebar_label: AWS Threat Intel
 description: The Threat Intel for AWS App correlates CrowdStrike threat intelligence data with your AWS log data, allowing for real-time security analytics to help detect threats in your environment and protect against cyber-attacks.
 ---
 

@@ -10,7 +10,7 @@ These instructions help you prepare and set up the Software Development Optimiza
 ## Before you begin
 Before setting up the SDO solution, you need to complete the following tasks:
 
-* Ensure that you have permissions to configure software and platforms used in your DevOps toolchain that will emit data to Sumo using webhooks (for example, Jira, Github, GitLab, Bitbucket, CircleCI, PagerDuty, Opsgenie, and so on).
+* Ensure that you have permissions to configure software and platforms used in your DevOps toolchain that will emit data to Sumo using webhooks (for example, Jira, GitHub, GitLab, Bitbucket, CircleCI, PagerDuty, Opsgenie, and so on).
 * If you use Jenkins, ensure that you have access to Jenkins with Manage Plugins permissions.
 * Make sure you have access to the Sumo logic web app. The user account associated with a Sumo Logic role needs the following permissions:
 
