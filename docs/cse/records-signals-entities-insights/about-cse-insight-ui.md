@@ -211,7 +211,7 @@ The graph view has several controls **(2)**:
 * A **filter** control, which enables you to view only specific Entity types in the graph
 * A **time frame** control, which controls what time frame to use when searching for and viewing relationships outside of the Insight
 
-Each node in the graph represents a single Entity. The primary Entity for this Insight will be larger and centered by default **(3)**. Entities that are part of this Insight will have an Insight icon on their upper-left edge **(4)**. 
+Each node in the graph represents a single Entity and will include an icon representing the Entity type and the value (name). The primary Entity for this Insight will be larger and centered by default **(3)**. Entities that are related to this Insight will have an Insight icon on their upper-left edge **(4)**. 
 
 When you select an Entity, it will be highlighted in blue **(5)** and the Entity details pane will appear on the right.
 
