@@ -21,6 +21,8 @@ IIS logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https:/
 
 Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of IIS App install if not already present.
 
+- **`webengine.cluster.name`** - User configured.Enter a name to uniquely identify your IIS web server cluster. This web server cluster name will be shown in the Sumo Logic dashboards.
+- **`webengine.system`** - Has fixed value of **iis**
 - **`sumo.datasource`** - Has fixed value of **iis**.
 
 ## Prerequisites
