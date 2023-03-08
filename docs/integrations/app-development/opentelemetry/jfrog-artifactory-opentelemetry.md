@@ -148,7 +148,7 @@ Query String
 "
 ```
 
-## Viewing IIS Dashboards
+## Viewing JFrog Artifactory Dashboards
 
 ### Artifactory-Overview
 
