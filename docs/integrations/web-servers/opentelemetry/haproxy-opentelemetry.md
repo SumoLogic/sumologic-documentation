@@ -38,7 +38,7 @@ This section provides instructions for configuring log collection for HAProxy ru
 
 By default, HAProxy logs are forwarded to Syslog. This needs to be changed to send the logs to files. Configuration in the file /etc/haproxy/haproxy.cfg is needed to be modified to send logs to files.
 
-Haproxy logs have six levels of verbosity. To select a level, set loglevel to one of:
+HAProxy logs have six levels of verbosity. To select a level, set loglevel to one of:
 
 -   emerg - Errors such as running out of operating system file descriptors.
 -   alert - Some rare cases where something unexpected has happened, such as being unable to cache a response.
