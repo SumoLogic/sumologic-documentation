@@ -49,7 +49,7 @@ Haproxy logs have six levels of verbosity. To select a level, set loglevel to on
 -   debug - Complete information, useful for development/testing.
 
 All logging settings are located in [Haproxy.conf](https://www.haproxy.com/blog/introduction-to-haproxy-logging/).
-For the dashboards to work properly, must set log format
+For the dashboards to work properly, you'll need to set the log format.
 
 ```
 %ci:%cp\ [%tr]\ %ft\ %b/%s\ %TR/%Tw/%Tc/%Tr/%Ta\ %ST\ %B\ %CC\ %CS\ %tsc\ %ac/%fc/%bc/%sc/%rc\ %sq/%bq\ %hr\ %hs\ %{+Q}r
