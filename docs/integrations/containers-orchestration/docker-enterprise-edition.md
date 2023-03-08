@@ -96,7 +96,7 @@ _sourceCategory=docker _sourceName= ucp-kube-controller-manager (fail* or error 
 
 ## Collecting Logs and Metrics for Docker EE
 
-This section has instructions for collecting logs for the Sumo App for Docker EE. This app works in conjunction with the Docker ULM App, and the first step is to configure collection for Docker ULM App. Then, since Docker EE uses Kubernetes for orchestration, you install and deploy the Sumo Logic Fluentd plugin for collection of Docker EE specific components.
+This section has instructions for collecting logs for the Sumo App for Docker EE. This app works in conjunction with the Docker ULM App, and the first step is to configure collection for Docker ULM App. Then, since Docker EE uses Kubernetes for orchestration, you install and deploy the [Sumo Logic Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection) for collection of Docker EE specific components.
 
 
 ### Step 1. Collect Logs and Metrics for the Docker ULM App
@@ -110,25 +110,9 @@ To configure log and metric collection for the Docker ULM App, do the following:
 1. Follow the instructions to [Collect Logs and Metrics for Docker ULM](/docs/integrations/containers-orchestration/docker-ulm#collecting-logs-and-metrics-for-docker-ulm). Use the same `_sourceCategory` for each host on your cluster.
 1. Follow the instructions to [Install the Docker ULM App](/docs/integrations/containers-orchestration/docker-ulm#installing-the-docker-ulm-app) and dashboards.
 
+### Step 2. Deploy Sumo Logic Collection Helm Chart to collect logs and metrics
 
-### Step 2. Deploy FluentD and FluentBit to collect logs
-
-Follow the instructions in this section to create Sumo Logic fields and collector, then deploy Fluentd and FluentBit on Manager Node.
-
-You don’t need to deploy Prometheus. Plus, docker EE collection has been tested with Helm Version 2.12. For a non-Helm version go [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#non-helm-installation).
-
-1. [Before you start](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#before-you-start)
-2. [Create Sumo Fields and a collector](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#create-sumo-fields-a-collector)
-    * [Automatic Source Creation and Setup YAML](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#automatic-source-creation-and-setup-yaml)
-    * [Manual Source Creation and Setup](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#manual-source-creation-and-setup)
-        * [Create the namespace and secret](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#create-the-namespace-and-secret)
-        * [Create a Hosted Collector and an HTTP Source](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#create-a-hosted-collector-and-an-http-source)
-3. [Deploy Fluentd](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#deploy-fluentd)
-    * [Use default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#use-default-configuration)
-    * [Customize configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#customize-configuration)
-    * [Verify the pods are running](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#verify-the-pods-are-running)
-4. [Deploy FluentBit](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/non-helm-installation.md#deploy-fluentbit)
-
+For details please see [Kubernetes Observability](/docs/observability/kubernetes) and check [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart.md) to see installation instruction.
 
 #### Troubleshooting
 
