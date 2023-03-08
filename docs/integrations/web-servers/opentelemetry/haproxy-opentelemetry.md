@@ -31,7 +31,7 @@ Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which
 
 - **webengine.cluster.name** - User configured. Enter a name to identify the Haproxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - **`webengine.system`** - Has fixed value of **haproxy**
-- **sumo.datasource** - has fixed value of haproxy
+- **sumo.datasource** - Has fixed value of **haproxy**
 
 ## Prerequisite
 
