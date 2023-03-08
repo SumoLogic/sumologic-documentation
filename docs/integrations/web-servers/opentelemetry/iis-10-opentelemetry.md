@@ -99,7 +99,7 @@ This will generate a command which can be executed in the machine which needs to
 In this step we will be configuring the yaml required for IIS Collection.
 
 Path of the different log file configured to capture IIS logs is needed to be given here.
-
+You can add any custom fields which you want to tag along with the data ingested in sumo.
 Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-YAML.png')} alt="YAML" />
