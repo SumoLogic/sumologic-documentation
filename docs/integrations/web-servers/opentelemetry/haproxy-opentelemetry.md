@@ -165,7 +165,7 @@ May 13 08:24:43 localhost haproxy[21813]:
 This query example is from the HAProxy - Overview dashboard > Top 5 URLs with Errors panel:
 
 ```
-%"proxy.cluster"=* %"sumo.datasource"=haproxy
+webengine.cluster.name=* %"sumo.datasource"=haproxy
 | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as haproxy_log_message
 | parse regex field=haproxy_log_message "(?<syslog_host>.*)\]:\s+" nodrop
