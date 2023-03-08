@@ -71,7 +71,7 @@ This will generate a command that can be executed in the machine that needs to g
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml required for Apache Collection.
+In this step, we will be configuring the yaml required for Apache Collection.
 
 Below are the input required:
 
