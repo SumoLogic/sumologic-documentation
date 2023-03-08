@@ -110,7 +110,7 @@ In this step we will be configuring the yaml required for HAProxy Collection.
 Path of the log file configured to capture haproxy logs is needed to be given here.
 
 The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the haproxy.conf file for this information.
-
+You can add any custom fields which you want to tag along with the data ingested in sumo.
 Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png')} alt="YAML" />
