@@ -79,7 +79,7 @@ Below are the input required:
 -   **Access File log Path** - Enter the path to the Access log file for your mysql instance.
 -   **Error file log path** - Enter the path to the error log file for your mysql instance.
 -   Fields - **webengine.cluster.name**
-
+You can add any custom fields which you want to tag along with the data ingested in sumo.
 Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-YAML.png')} alt="YAML" />
