@@ -74,7 +74,7 @@ Path of the different log file configured to capture Artifactory logs is needed 
 -   `request.log`
 -   `traffic.*.log`
 
-You can add any custom fields which you want to be tagged with the data ingested in sumo.
+You can add any custom fields which you want to tag along with the data ingested in sumo.
 
 Click on the **Download YAML File** button to get the yaml file.
 
