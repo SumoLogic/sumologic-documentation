@@ -41,7 +41,7 @@ Sumo Logic reads logs in the directory `/var/opt/jfrog/artifactory/logs`:
 -   `request.log`
 -   `traffic.*.log`
 
-To activate the `traffic.log` file, add the following parameter to your `artifactory.system.properties` file, located under `$ARTIFACTORY/`etc:
+To activate the `traffic.log` file, add the following parameter to your `artifactory.system.properties` file, located under `$ARTIFACTORY/etc` :
 
 artifactory.traffic.collectionActive=true
 
