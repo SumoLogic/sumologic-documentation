@@ -19,7 +19,7 @@ The Sumo Logic App for Artifactory provides insight into your [JFrog Artifactory
 
 Following are the Tags which will be created as part of Artifactory App install if not already present.
 
-**sumo.datasource** - has fixed value of artifactory
+**sumo.datasource** - Has fixed value of **artifactory**
 
 ## Prerequisite
 
