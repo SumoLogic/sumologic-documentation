@@ -115,7 +115,7 @@ This sample Query is from the Squid Proxy - HTTP Response Analysis > URLs Experi
 Query String
 
 ```sql
-%"sumo.datasource"=squidproxy %"webengine.cluster.name"=* (_sourcehost=* or host=*) %"webengine.system"=squidproxy
+%"sumo.datasource"=squidproxy %"webengine.cluster.name"=*  host.name=* %"webengine.system"=squidproxy
 | json "log" as message nodrop 
 | if (isEMpty(message), _raw, message) as message
 | parse regex field = message "(?<time>[\d.]+)\s+(?<elapsed>[\d]+)\s+(?<remotehost>[^\s]+)\s+(?<action>[^/]+)/(?<status_code>[\d]+)\s+(?<bytes>[\d]+)\s+(?<method>[^\s]+)\s+(?<url>[^\s]+)\s(?<rfc931>[^\s]+)\s+(?<peerstatus>[^/]+)/(?<peerhost>[^\s]+)\s+(?<type>[^\s|$]+?)(?:\s+|$)" nodrop | parse field = message "Connection: *\\r\\n" as connection_status nodrop | parse field = message "Host: *\\r\\n" as host nodrop | parse field = message "User-Agent: *\\r\\n" as user_agent nodrop | parse field = message "TE: *\\r\\n" as te nodrop
