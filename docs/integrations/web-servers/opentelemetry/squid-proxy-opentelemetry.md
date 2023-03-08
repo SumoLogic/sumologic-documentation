@@ -42,8 +42,6 @@ If you want to use an existing OpenTelemetry Collector, you can skip this step b
 1. Select the **Add a new Collector** option.
 2. Select the platform for which you want to install the Sumo OpenTelemetry Collector.
 
-Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
 This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.  
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Collector.png')} alt="Collector" />
