@@ -55,7 +55,9 @@ This will generate a command which can be executed in the machine which needs to
 
 ### Step 2: Configure integration
 
-In this step a user needs to provide the path to the SQL Server log file configured in the above steps.
+The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in:
+
+C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*
 
 Click on the **Download YAML File** button to get the yaml file.
 
