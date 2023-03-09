@@ -53,7 +53,7 @@ This will generate a command which can be executed in the windows machine which 
 
 In this step we will be configuring the yaml required for Active Directory Collection.
 
-You can add any additional fields which you want to tag as part of the data collected.
+You can add any custom fields which you want to tag along with the data ingested in sumo.
 
 Click on the **Download YAML File** button to get the yaml file.
 
