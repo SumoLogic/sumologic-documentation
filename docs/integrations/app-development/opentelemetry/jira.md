@@ -50,7 +50,7 @@ In this step, you create a host collector to receive webhooks from Jira, and set
     <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Datasource.png')} alt="Datasource" />
     -   Make a note of the HTTP address for the source. You will supply it when you configure a Jira webhook in the next step.
 
-## Register webhook in Jira[
+## Register webhook in Jira
 
 
 Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jira/platform/webhooks/) in Jira help to register a webhook for the following events:
