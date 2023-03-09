@@ -22,7 +22,7 @@ Before you begin setting up your **KnowBe4** Source, which is required to connec
 The **Region** is the region where your **KnowBe4** account is located. To know your region, follow the steps below:
 1. Log in to the **KnowBe4** application.
 2. At the top of the browser, you will see the **Region** inside the address bar.
-3. Choose the **Region** from the dropdown, based on the location of your **KnowBe4** account. The following regions are supported:
+3. Choose the **Region** from the dropdown based on the location of your **KnowBe4** account. The following are the supported regions:
    * US
    * EU
    * CA
