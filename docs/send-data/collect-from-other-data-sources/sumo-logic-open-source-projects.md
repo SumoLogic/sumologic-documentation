@@ -51,6 +51,12 @@ The following open-source solutions are collected in Sumo Logic’s GitHub repos
 | [Prometheus](https://github.com/SumoLogic/sumologic-prometheus-scraper) | The Prometheus Scraper provides a configurable mechanism to send Prometheus formatted metrics to Sumo Logic.  |
 | [StatsD](/docs/send-data/collect-from-other-data-sources/Collect-StatsD-Metrics) | See [Collect StatsD Metrics](collect-statsd-metrics.md) for information. |
 
+## Tracing Integration Libraries
+
+| Solution | Description |
+|:-- |:--|
+| [Autotel](https://github.com/SumoLogic-Labs/autotel) | This project adds the OpenTelemetry instrumentation for Go applications by automatically modifying their source code in similar way as compiler. It can instrument any golang project. It depends only on standard libraries and is platform agnostic. |
+
 ## Tools
 
 | Solution | Description |
