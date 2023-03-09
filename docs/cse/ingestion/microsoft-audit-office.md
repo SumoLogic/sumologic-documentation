@@ -17,14 +17,7 @@ In this step, you configure an Microsoft 365 Audit Source to collect Microsoft 3
 
 ### Configure a Hosted Collector
 
-1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
-1. Click **Add Collector**.
-1. Click **Hosted Collector.**
-1. The **Add Hosted Collector** popup appears.  
-    ![add-hosted-collector.png](/img/cse/add-hosted-collector.png)
-1. **Name**. Provide a Name for the Collector.
-1. **Description**. (Optional)
-1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
+1. To create a new hosted collector, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 1. **Fields**. 
     1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
     1. If all sources in this collector will be Microsoft 365 sources, add an additional field with key `_parser` and value */Parsers/System/Microsoft/Office 365.*
@@ -34,19 +27,8 @@ In this step, you configure an Microsoft 365 Audit Source to collect Microsoft 3
 
 ### Configure Office 365 Audit Source
 
-Each Microsoft 365 Content Type must have its own source. Follow these steps for each Microsoft 365 Content Type you wish to collect.
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
-1. Navigate to the Hosted Collector where you want to create the source.
-1. Click **Add Source** next to  the Hosted Collector.
-1. Select **Office 365 Audit.** 
-1. The page refreshes.  
-    ![office-365-audit-source.png](/img/cse/office-365-audit-source.png)
-1. **Name**. Enter a name for the source. 
-1. **Description.** (Optional) 
-1. **O365 Region**. Region corresponding with your Microsoft 365 subscription.
-1. **Content Type**. Select the O365 content type you wish to collect using this source. Steps may be repeated for each O365 content type you want to collect from.
-1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
+1. To configure Microsoft office 365 audit source, see [Configure a Microsoft Office 365 Audit source](https://help.sumologic.com/docs/send-data/hosted-collectors/ms-office-audit-source/#configure-a-microsoft-office-365-audit-source). 
 1. **Fields**.
     1. If you have not configured the Hosted Collector to forward all sources in the collector to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*.
     1. If you are not parsing all sources in the hosted collector with the same parser, click **+Add Field** and add a field named `_parser` with value */Parsers/System/Microsoft/Office 365*.
