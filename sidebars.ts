@@ -1927,6 +1927,7 @@ integrations: [
         link: {type: 'doc', id: 'integrations/saas-cloud/index'},
         items: [
           'integrations/saas-cloud/acquia',
+          'integrations/saas-cloud/airtable',
           'integrations/saas-cloud/akamai-cloud-monitor',
           'integrations/saas-cloud/armis',
           'integrations/saas-cloud/box',
