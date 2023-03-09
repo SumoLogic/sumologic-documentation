@@ -23,6 +23,13 @@ Browse the official [Sumo Logic GitHub repository](https://github.com/SumoLogic)
 
 The following open-source solutions are collected in Sumo Logic’s GitHub repository at https://github.com/SumoLogic. For complete documentation of each solution, see the readme file.
 
+## Collectors
+
+| Solution | Description |
+|:-- |:--|
+| [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) | Sumo Logic Distribution for OpenTelemetry Collector is a Sumo Logic-supported distribution of the OpenTelemetry Collector. It is a single agent to send logs, metrics and traces to Sumo Logic. |
+| [Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection) | Sumo Logic Helm Chart lets you collect Kubernetes logs, metrics, traces and events; enrich them with deployment, pod, and service level metadata; and send them to Sumo Logic. |
+
 ## Logging Integration Libraries
 
 | Solution | Description |
