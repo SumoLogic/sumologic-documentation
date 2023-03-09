@@ -1,6 +1,6 @@
 ---
 id: citrix
-title: Citrix
+title: Sumo Logic for Citrix App
 sidebar_label: Citrix
 description: The Sumo Logic App for Citrix offers complete device security with alert analysis, device monitoring, and device information for IT infrastructure protection.
 ---
@@ -12,7 +12,7 @@ The Citrix Cloud is a platform that manages and hosts various Citrix cloud servi
 
 ## Log Types
 
-This Citrix App uses [SystemLog](https://developer.cloud.com/citrix-cloud/citrix-cloud---systemlog/apis/Records/GetRecords) records from Citrix Cloud. To learn about the Citrix Cloud API fields, see the [Event Data Fields](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/system-log/events.html#event-data-descriptions)#fields) documentation.
+This Citrix App uses [SystemLog](https://developer.cloud.com/citrix-cloud/citrix-cloud---systemlog/apis/Records/GetRecords) records from the Citrix Cloud. To learn about the Citrix Cloud API fields, see the [Event Data Fields](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/system-log/events.html#event-data-descriptions)#fields) documentation.
 
 ### Sample Logs
 
@@ -97,4 +97,4 @@ The panels will begin to fill automatically. It's worth noting that each panel g
 
 In addition to the above, the Dashboard provides a summary of all the Administrator events, allowing you to quickly assess the overall state of your Citrix Cloud account. With this Dashboard, you can easily monitor and analyze administrator activity, ensuring that your Citrix Cloud account remains secure and compliant with your organization's policies and regulations.<br/><img src={useBaseUrl('img/integrations/saas-cloud/citrix-admin-overview.png')} alt="citrix-admin-overview" width="750"/>
 
-**Citrix Cloud - Client, Group Administrative Overview** This Dashboard provides detailed information about newly added and recently deleted clients and group administrators from your Citrix Cloud account. It also indicates whether any group administrators' roles/permissions have been updated. It also provides a summary of all Administrator events.<br/><img src={useBaseUrl('img/integrations/saas-client-group-admin-overview.png')} alt="client-group-admin-overview" width="750"/>
+**Citrix Cloud - Client, Group Administrative Overview** dashboard provides detailed information about newly added and recently deleted clients and group administrators from your Citrix Cloud account. It also indicates whether any group administrators' roles/permissions have been updated. It also provides a summary of all Administrator events.<br/><img src={useBaseUrl('img/integrations/saas-client-group-admin-overview.png')} alt="client-group-admin-overview" width="750"/>
