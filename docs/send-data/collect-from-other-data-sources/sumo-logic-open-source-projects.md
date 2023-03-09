@@ -66,6 +66,7 @@ The following open-source solutions are collected in Sumo Logic’s GitHub repos
 | [sumo-report-generator](https://github.com/SumoLogic/sumo-report-generator)   | This tool allows a user to execute multiple searches, and compile the data in a single report. Currently, the only format is Excel. Each tab in Excel would correspond to a search executed in Sumo Logic. NOTE: You must have access to the Sumo Search API in order to use this tool.                     |
 | [sumobot](https://github.com/SumoLogic/sumobot) | This solution is a Sumo Logic Slack bot. |
 | [Terraform](https://github.com/SumoLogic/terraform-provider-sumologic "https://github.com/SumoLogic/terraform-provider-sumologic") | Terraform provider for Sumo Logic. |
+| [Tailing Sidecar](https://github.com/SumoLogic/tailing-sidecar) | Tailing Sidecar is a streaming sidecar container, the cluster-level logging agent for Kubernetes. |
 
 ## API Clients and Management Scripts
 
