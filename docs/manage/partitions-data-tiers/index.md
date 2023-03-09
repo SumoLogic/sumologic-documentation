@@ -31,16 +31,12 @@ You define the data that will reside in a partition by defining a routing expres
 * To create and manage partitions, you must be an Admin or you must have the Manage Partitions [role capability](../users-roles/roles/role-capabilities.md). 
 * There is a limit of 50 partitions per account.
 * You can make the following edits to an existing partition:
-
-  * You can change the routing expression, unless the partition is decommissioned.
-
+   * You can change the routing expression, unless the partition is decommissioned.
 * You cannot make the following changes to a partition: 
-
-  * You can’t change or reuse a partition name.
-  * You can’t change the data tier the partition resides in.
-
+   * You can’t change or reuse a partition name.
+   * You can’t change the data tier the partition resides in.
 * Partitions cannot be deleted, although you can [decommission](decommission-partition.md) them. This is because a partition may include log messages that aren’t stored anywhere else, so if it’s deleted, messages will be lost. If you no longer need a partition, you can decommission it.
-* A Partition name cannot start with `sumologic_` or an underscore `_`. 
+* Partition names cannot start with `sumologic_` or an underscore `_`. 
 
 ## Micro Lesson: Partitions Basics
 

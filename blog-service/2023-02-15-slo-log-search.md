@@ -13,6 +13,6 @@ authors:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can now launch a Log Search session directly from an SLO dashboard panel, giving you the ability to drill down further into your SLO data. You can also add Log Search results to any other Sumo Logic dashboard, allowing you to correlate SLO performance data with other categories of data. [Learn more](https://help.sumologic.com/docs/observability/reliability-management-slo/dashboards).
+You can now launch a Log Search session directly from an SLO dashboard panel, giving you the ability to drill down further into your SLO data. You can also add Log Search results to any other Sumo Logic dashboard, allowing you to correlate SLO performance data with other categories of data. [Learn more](/docs/observability/reliability-management-slo/dashboards).
 
 <img src={useBaseUrl('img/observability/slo-open-logsearch.gif')} alt="SLO Open Log Search" />
