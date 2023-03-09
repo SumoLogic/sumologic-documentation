@@ -112,7 +112,7 @@ To configure log and metric collection for the Docker ULM App, do the following:
 
 ### Step 2. Deploy Sumo Logic Collection Helm Chart to collect logs and metrics
 
-For details please see [Kubernetes Observability](/docs/observability/kubernetes) and check [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart.md) to see installation instruction.
+For details see [Kubernetes Observability](/docs/observability/kubernetes) and check the [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart.md) for installation instructions.
 
 #### Troubleshooting
 
