@@ -1932,6 +1932,7 @@ integrations: [
           'integrations/saas-cloud/armis',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cisco-umbrella',
+          'integrations/saas-cloud/citrix',
           'integrations/saas-cloud/cloudflare',
           'integrations/saas-cloud/dropbox',
           'integrations/saas-cloud/fastly',
