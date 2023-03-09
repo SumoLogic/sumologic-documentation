@@ -34,6 +34,9 @@ export const Home = () => {
       >
         <Box
           component={SumoLogicDocsLogo}
+          alt="Sumo Logic Docs logo"
+          role="<img>"
+          aria-hidden="true"
           height={{
             md: 36,
             xs: 28,
@@ -47,6 +50,7 @@ export const Home = () => {
         sx={{
           bgcolor: 'white',
           backgroundImage: `url(${bgImage})`,
+          alt: 'hero image',
           backgroundPosition: {
             md: 'top',
             xs: 'left center',
@@ -104,7 +108,7 @@ export const Home = () => {
                   fontFamily='Lab Grotesque'
                   pb={2}
                   textAlign='left'
-                  variant='subtitle2'
+                  variant='p'
                 >
                   Get started quickly with our search, visualization, analytics, and security capabilities.
                 </Typography>
@@ -112,17 +116,17 @@ export const Home = () => {
                   {
                     children: '1. Set up collector and source',
                     description: 'Set up a Sumo Logic collector and source',
-                    href: 'https://help.sumologic.com/docs/get-started/onboarding/#step-1-get-your-data-into-sumo',
+                    href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-1-get-your-data-into-sumo',
                   },
                   {
                     children: '2. Explore your data insights',
                     description: 'Explore your insights',
-                    href: 'https://help.sumologic.com/docs/get-started/onboarding/#step-2-search-and-analyze-your-data',
+                    href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-2-search-and-analyze-your-data',
                   },
                   {
                     children: '3. Monitor and secure your environment',
                     description: 'Monitor, troubleshoot, and secure your environment',
-                    href: 'https://help.sumologic.com/docs/get-started/onboarding/#step-3-monitor-and-troubleshoot-your-environment',
+                    href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-3-monitor-and-troubleshoot-your-environment',
                   },
                 ].map(({ children, ...rest }) => (
                   <Button
@@ -161,6 +165,8 @@ export const Home = () => {
             >
               <Box
                 component='img'
+                alt='hero background image'
+                aria-hidden='true'
                 src={heroImage}
                 width={{
                   lg: 450,
