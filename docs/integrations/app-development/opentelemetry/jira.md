@@ -27,7 +27,7 @@ Following are the Tags which will be created as part of Jira App install if not 
 
 This section provides instructions for configuring log collection for Jira running on a non-Kubernetes environment for the Sumo Logic App for Jira. Sumo Logic supports the collection of logs from Jira server in standalone environments.
 
-Follow the instructions to set up log collection:
+Follow the instructions to set up log collection.
 
 The Jira app uses the following log types:
 
