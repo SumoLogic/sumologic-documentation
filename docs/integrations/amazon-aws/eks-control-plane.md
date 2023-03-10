@@ -13,28 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Prerequisites
 
-Minimum supported requirements for this app:
-
-<table>
-  <tr>
-   <td>Name
-   </td>
-   <td>Supported versions
-   </td>
-  </tr>
-  <tr>
-   <td>Kubernetes
-   </td>
-   <td>1.10 and later
-   </td>
-  </tr>
-  <tr>
-   <td>Amazon EKS
-   </td>
-   <td>1.13.8, 1.11.10
-   </td>
-  </tr>
-</table>
+List of supported platforms can be found [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs#support-matrix).
 
 ## Log Types
 

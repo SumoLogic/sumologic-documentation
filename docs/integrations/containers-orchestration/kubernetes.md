@@ -21,16 +21,8 @@ For an end-to-end solution for deploying, managing, monitoring, and administerin
 
 ## Supported versions
 
-The following are the minimum supported requirements for this application:
-* Kubernetes
-   * 1.10 and later
-* Kops
-   * 1.13.10-k8s
-   * 1.13.10-kops
-   * 1.12.8-k8s
-   * 1.12.2-kops
-   * 1.10.13-k8s
-   * 1.10.0-kops
+The Sumo Logic Kubernetes App is compatible with [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection).
+List of supported platforms can be found [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs#support-matrix).
 
 ## Log and Metric Types
 
