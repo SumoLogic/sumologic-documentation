@@ -30,7 +30,7 @@ Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which
 * **`deployment.environment`** - User configured. This is the deployment environment where the SQL Server cluster resides. For example dev, prod, or qa.
 **`sumo.datasource`** - Has a fixed value of **sqlserver**.
 
-## Prerequisite
+## Prerequisites
 
 Make sure logging is turned on in SQL Server. Follow [this documentation](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/scm-services-configure-sql-server-error-logs?view=sql-server-ver15) to enable it.
 The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in:
