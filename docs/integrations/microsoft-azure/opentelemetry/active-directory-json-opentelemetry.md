@@ -30,7 +30,6 @@ This section provides instructions for configuring log collection for Active Dir
 #### Log Types
 
 Standard Windows event channels include:
-
 -   **Security**
 -   **System**
 -   **Application**
