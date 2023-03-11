@@ -65,7 +65,7 @@ Once you have the yaml file downloaded in step 2, follow the steps below.
 1.  Copy the yaml at *C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d*  folder in the machine which needs to be monitored.
 2.  restart the collector using the command `Restart-Service -Name`.
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine.
+After the successful execution of the above command, Sumo Logic will start receiving the data from your host machine.
 
 Press **Next** . This will install the app to your Sumo Logic Org. The app consists of Dashboards.
 
