@@ -51,7 +51,7 @@ This will generate a command which can be executed in the windows machine which 
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml required for Active Directory Collection.
+In this step, we will be configuring the yaml required for Active Directory Collection.
 
 You can add any custom fields which you want to tag along with the data ingested in sumo.
 
