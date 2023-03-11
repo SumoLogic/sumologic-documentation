@@ -44,6 +44,7 @@ To configure an HTTP Logs and Metrics Source:
     **Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. Check this option if you're working with multiline messages (for example, log4J messages or exception stack traces). De-select this option if you want to avoid unnecessary processing when collecting single-message-per-line files such as a Linux `system.log`.
 
       * **Infer Message Boundaries.**
+      
        * **Detect Automatically.** By default, the Source is configured to automatically detect which lines belong to the same message.  
        * **Add Boundary Regex.** You can provide a Regular Expression to detect the entire first line of multi-line messages. The expression must match the **entire first line of each log message** within the file.
 
