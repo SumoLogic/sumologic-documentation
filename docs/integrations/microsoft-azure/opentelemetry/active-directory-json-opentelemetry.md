@@ -62,7 +62,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 Once you have the yaml file downloaded in step 2, please follow the below steps
 
-1.  Copy the yaml at `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+1.  Copy the yaml at *C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d*  folder in the machine which needs to be monitored.
 2.  restart the collector using the command `Restart-Service -Name`.
 
 After successful execution of the above command, Sumo will start receiving the data from your host machine.
