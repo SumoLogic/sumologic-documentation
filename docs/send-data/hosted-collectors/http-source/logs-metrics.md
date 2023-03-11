@@ -40,14 +40,12 @@ To configure an HTTP Logs and Metrics Source:
 
       * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
       * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
-
-
-    **Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. Check this option if you're working with multiline messages (for example, log4J messages or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files such as a Linux `system.log`.
+      
+    **Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. Check this option if you're working with multiline messages (for example, log4J messages or exception stack traces). De-select this option if you want to avoid unnecessary processing when collecting single-message-per-line files such as a Linux `system.log`.
 
       * **Infer Message Boundaries.**
-
-        * **Detect Automatically**. By default, the Source is configured to automatically detect which lines belong to the same message.  
-        * **Add Boundary Regex.** You can provide a Regular Expression to detect the entire first line of multi-line messages. The expression must match the **entire first line of each log message** within the file.
+       * **Detect Automatically**. By default, the Source is configured to automatically detect which lines belong to the same message.  
+       * **Add Boundary Regex.** You can provide a Regular Expression to detect the entire first line of multi-line messages. The expression must match the **entire first line of each log message** within the file.
 
     **One Message Per Request.** Select this option if you'll be sending a single message with each HTTP request. For more information, see [Multiline options in HTTP sources](#multiline-options-in-http-sources). 
 
