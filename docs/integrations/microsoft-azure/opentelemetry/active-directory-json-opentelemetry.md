@@ -132,7 +132,7 @@ This sample Query is from the Active Directory - Active Directory Service Activi
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-Service-Activity.png')} alt="Service Activity" />
 
-### Active Directory Service Failures:
+### Active Directory Service Failures
 
 -   The **Active Directory Service Failures** dashboard provides an at-a-glance view of success, failures, and audit failures overtime.
 
