@@ -25,7 +25,7 @@ SQL Server logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](
 
 Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of SQL Server App install if not already present.
 
-**`db.cluster.name`** - User configured. Enter a name to identify this SQL Server cluster. This cluster name will be shown in the Sumo Logic dashboards.
+* **`db.cluster.name`** - User configured. Enter a name to identify this SQL Server cluster. This cluster name will be shown in the Sumo Logic dashboards.
 **`db.system`** - Has a fixed value of **sqlserver**.
 **`deployment.environment`** - User configured. This is the deployment environment where the SQL Server cluster resides. For example: dev, prod or qa.
 **`sumo.datasource`** - Has a fixed value of **sqlserver**.
