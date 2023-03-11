@@ -60,7 +60,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ### Step 3: Sending logs to Sumo
 
-Once you have the yaml file downloaded in step 2, please follow the below steps
+Once you have the yaml file downloaded in step 2, follow the steps below.
 
 1.  Copy the yaml at *C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d*  folder in the machine which needs to be monitored.
 2.  restart the collector using the command `Restart-Service -Name`.
