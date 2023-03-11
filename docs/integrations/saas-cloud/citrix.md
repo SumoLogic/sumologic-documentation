@@ -1,8 +1,8 @@
 ---
-id: citrix
-title: Citrix
-sidebar_label: Citrix
-description: The Sumo Logic App for Citrix offers monitoring and analyzing any changes in the configurations or actions that had an impact on the environment and other account administrators.
+id: citrix-cloud
+title: Citrix Cloud
+sidebar_label: Citrix Cloud
+description: The Sumo Logic App for Citrix Cloud offers monitoring and analyzing any changes in the configurations or actions that had an impact on the environment and other account administrators.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,7 +13,7 @@ The Citrix Cloud is a platform that manages and hosts various Citrix cloud servi
 
 ## Log Types
 
-This Citrix App uses [SystemLog](https://developer.cloud.com/citrix-cloud/citrix-cloud---systemlog/apis/Records/GetRecords) records from the Citrix Cloud. To learn about the Citrix Cloud API fields, see the [Event Data Fields](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/system-log/events.html#event-data-descriptions#fields) documentation.
+This Citrix Cloud App uses [SystemLog](https://developer.cloud.com/citrix-cloud/citrix-cloud---systemlog/apis/Records/GetRecords) records from the Citrix Cloud. To learn about the Citrix Cloud API fields, see the [Event Data Fields](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/system-log/events.html#event-data-descriptions#fields) documentation.
 
 ### Sample Logs
 
@@ -66,16 +66,16 @@ sourceCategory="citrixCloudSource"
 | top 50 time,name,message,access_type by time
 ```
 
-## Installing the Citrix App
+## Installing the Citrix Cloud App
 
 Locate and install the app from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-Before you begin, collect logs from Citrix API and ingest them into Sumo Logic. Refer to the [Citrix API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source/) to create the source and use the same source category while installing the app.
+Before you begin, collect logs from Citrix Cloud API and ingest them into Sumo Logic. Refer to the [Citrix Cloud API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source/) to create the source and use the same source category while installing the app.
 
 To install the app, follow the steps below:
 1. From the **App Catalog**, search for the app and select it.
 1. Select **Add Integration** button to install the app.
-1. Configure **Citrix App** using the steps described in the [Citrix Cloud-to-Cloud Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source/). If you already have set up your data, skip this step by clicking on **Next**.
+1. Configure **Citrix Cloud App** using the steps described in the [Citrix Cloud-to-Cloud Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source/). If you already have set up your data, skip this step by clicking on **Next**.
 1. Complete the following fields:
    1. **Data Source**. Select either of these options for the data source:
       * Choose **Source Category** and then choose a source category from the list.
@@ -88,7 +88,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but with some patience, you will be able to view full graphs and maps.
 
-## Viewing the Citrix Dashboards
+## Viewing the Citrix Cloud Dashboards
 
 * All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
