@@ -1928,10 +1928,12 @@ integrations: [
         link: {type: 'doc', id: 'integrations/saas-cloud/index'},
         items: [
           'integrations/saas-cloud/acquia',
+          'integrations/saas-cloud/airtable',
           'integrations/saas-cloud/akamai-cloud-monitor',
           'integrations/saas-cloud/armis',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cisco-umbrella',
+          'integrations/saas-cloud/citrix-cloud',
           'integrations/saas-cloud/cloudflare',
           'integrations/saas-cloud/dropbox',
           'integrations/saas-cloud/fastly',
