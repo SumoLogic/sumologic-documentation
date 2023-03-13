@@ -13,13 +13,13 @@ Histograms are data structures that aggregate potentially unlimited numbers of m
 This feature is only available for APM and RUM metrics.
 :::
 
-Key points to remember:
-* Histograms can compute any percentile with a high level of accuracy
-* Histograms can be safely aggregated with other histograms using specific query methods
-* Histograms are more efficient than aggregating pre-computed raw percentiles
-* Histograms store an approximate representation of the data that provides enough information to calculate percentiles with the specified * accuracy, as well as exact values for other aggregations like average, sum, count, minimum, and maximum.
+Some of the reasons to use Histograms:
+* It is capable of accurately computing any percentile.
+* It can be safely combined with other histograms using specific query methods.
+* Histograms are more efficient than aggregating pre-computed raw percentiles.
+* They store an approximate representation of the data that provides enough information to calculate percentiles with the specified accuracy, as well as exact values for other aggregations such as average, sum, count, minimum, and maximum.
 
-To use histograms in your metrics queries, you'll need to include `metric.type=exponential_histogram` in the selector part of the query. You can then use operators like quantize to calculate percentiles for each time series separately or aggregated by selected dimensions.
+To use histograms in your metrics queries, you'll need to include `metric.type=exponential_histogram` in the selector part of the query. You can then use operators like `quantize`, `pct(<p>)` to calculate percentiles for each time series separately or aggregated by selected dimensions.
 
 ## Syntax
 
@@ -40,8 +40,8 @@ Here's an example of what your metrics query might look like:
 
 This query selects data from a specific source category and service, and then calculates a histogram using exponential binning. It then quantizes the data to 1 minute intervals using the histogram.
 
- The histogram below shows the distribution of values over time for the selected metric.<br/> <img src={useBaseUrl('img/metrics/metric-histogram.png')} alt="metric-histogram.png" width="800" />
- 
+ The histogram below shows the distribution of values over time for the selected metric.<br/> <img src={useBaseUrl('img/metrics/metric-histogram.png')} alt="metric-histogram.png" width="800" />.
+
 ## Why use Histograms?
 
 With histograms, you don't need to predefine any special cases for calculating percentiles. You can use the histogram to compute any percentile based on the raw measurements captured. Moreover, querying histograms is efficient and space-saving as compared to storing all the raw data.
