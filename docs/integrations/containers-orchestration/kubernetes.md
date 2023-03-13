@@ -21,7 +21,7 @@ For an end-to-end solution for deploying, managing, monitoring, and administerin
 
 ## Supported versions
 
-The Sumo Logic Kubernetes App is compatible with [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection).
+The Sumo Logic Kubernetes App is compatible with the [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection).
 A list of supported platforms can be found [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs#support-matrix).
 
 ## Log and Metric Types
