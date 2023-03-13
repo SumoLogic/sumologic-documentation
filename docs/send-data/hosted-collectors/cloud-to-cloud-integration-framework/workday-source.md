@@ -19,6 +19,7 @@ The Workday integration ingests the user activity logs and sign-on activity repo
 ## Metadata Fields
 
 Metadata fields will be set if the integration is configured with the SIEM forward option. See the **Metadata Fields** table below:
+
 | Field Name | Value | 
 | :--- | :--- |
 | `_siemVendor` | Workday | 
@@ -70,7 +71,7 @@ To configure a Workday Source, follow the steps below:
 
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The **description** is optional.
 
-  <img src={useBaseUrl('img/send-data/workday-source.jpg')} alt="workday-source" width="450"/>
+  <img src={useBaseUrl('img/send-data/workday-source.png')} alt="workday-source" width="450"/>
 
 5. For **Source Category** (Optional), enter any string to tag the output collected from the Source. Category [metadata](https://help.sumologic.com/docs/search/get-started-with-search/search-basics/built-in-metadata/) is stored in a searchable field called `_sourceCategory`.
 
@@ -163,7 +164,7 @@ The following table shows the **config** parameters for Workday Source.
       "description": "Testing the workday source",
       "category": "General",
       "signOnReportURL": "https://wd2-impl-services1.workday.com...-_Copy",
-      "isuUsername": "Sumo Logic",
+      "isuUsername": "SumoLogic",
       "isuPassword": "**********",
       "refreshTokenURL": "https://wd2-impl-services1.workday.com...token",
       "clientID": "sldfsjdflk230sdflnk2342cxcoijs0",
