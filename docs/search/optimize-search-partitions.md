@@ -24,7 +24,7 @@ Consider the following queries:
 | Query 3   | Partitions in place  | `_sourceCategory=prod/security/snort` |
 | Query 4   | Partitions in place  | `_sourceCategory=stage/aws/cloudtrail` OR `_sourceCategory=prod/security/snort` |
 
-* **Query 1**: There are no custom Partitions created and you only have the Default Index, 100% of your data is scanned in order to find all production log messages for the Snort security app.
+* **Query 1**: There are no custom Partitions created and you only have the Default Index, 100% of your data across all partitions is scanned in order to find all production log messages for the Snort security app.
 * **Query 2**: Partitions do exist, `_index=prod` limits the scope of the query and only about 40% of the data is scanned to get the same results as Query 1. But it is redundant.
 * **Query 3**: You can take advantage of Partitions without having to rewrite your existing queries. Sumo Logic's behind-the-scenes Query Rewriting, performed for queries run against data, is smart enough to understand that the scope of what you are looking for is included within `_index=prod`; therefore at runtime, it will rewrite the query as Query 2. 
 * **Query 4**: We want to search for data that is in a custom Partition, as well as data that exists in the Default Index. However, query rewriting does not have the ability to OR indexes together. Instead, another behind-the-scenes feature, Inverse View Rewriting kicks in, we know that the data is NOT contained in the DEV and QA index, so those will be skipped.  This query will only scan the Prod index and the Default Index.
