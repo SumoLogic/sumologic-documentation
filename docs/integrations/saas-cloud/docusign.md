@@ -177,7 +177,7 @@ To install the app, follow the steps below:
 1. Complete the following fields:
    1. **Data Source**. Select either of these options for the data source:
       * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example, `_sourceCategory=MyCategory`.
+      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For example, `_sourceCategory=MyCategory`.
     2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app. 
     3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
 1. Click **Next**.
