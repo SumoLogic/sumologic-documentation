@@ -131,7 +131,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 | schemaRef     | JSON Object | Yes          | Use {“type”: “Workday”} for Workday Source.                                                 | not modifiable |
 | sourceType    | String      | Yes          | Use Universal for Workday Source. | not modifiable |
 
-#### Config Parameters
+### Config Parameters
 
 The following table shows the **config** parameters for Workday Source.
 
