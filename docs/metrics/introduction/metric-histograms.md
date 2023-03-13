@@ -26,7 +26,8 @@ To use histograms in your metrics queries, you'll need to include `metric.type=e
 To query histogram data, it is necessary to include `metric.type=exponential_histogram` in the selector part of the query. The following syntax is used:
 
 `<selector> metric.type=exponential_histogram [| <operator>]*`
-where `<operator>` typically is:
+
+ where `<operator>` typically is:
 
 * `quantize to pct(<p>)` - to calculate the desired percentile for each time series separately.
 * `pct(<p>) by <dimensions>` - to calculate desired percentile aggregated by selected dimension(s).
@@ -68,13 +69,13 @@ This will calculate the 50th percentile for each histogram, taking all existing 
 
 To calculate percentiles for the histograms, you can use three different methods: calculating percentiles individually for each histogram, grouping histograms by a specific parameter, and aggregating histograms.
 
-* Individual
-* GroupBy
-* Aggregated
+* [Individual](#individual-histograms)
+* [GroupBy](#percentiles-grouped-by-a-specific-dimension)
+* [Aggregated](#aggregated-percentile-for-all-histograms)
 
 Consider you have the following four dataset with histograms, each associated with a specific browser type, a countryCode, and raw measurements to calculate the percentiles in histograms.
 
-Metric | 	Browser	| CountryCode	| Raw measurements used to create the histogram (Value) |
+metric | 	browser	| countryCode	| value (raw measurements used to create the histogram) |
 ------ | --------- | --------    | ------------|
 browser_cls_histogram |	Chrome 109	| POL	 | 1000, 2000, 3000 |
 browser_cls_histogram	 | Safari 16 |	POL	| 500, 3100 |
@@ -87,7 +88,7 @@ To calculate the 50th percentile for each histogram individually, use `pct_50` q
 
 **Example 1**. Consider a histogram `browser_cls_histogram` for Chrome 109 in Poland with raw measurements of 1000, 2000, 3000.
 
-Metric     | Browser | CountryCode   | Value |
+metric     | browser | countryCode   | value |
 ------ |  -------------- | ---------- |
 browser_cls_histogram| Chrome 109 | POL    |  1000, 2000, 3000 |
 
@@ -99,13 +100,13 @@ The query uses the `browser_cls_histogram` metric and specifies that it is an `e
 
 **Output**. The result will be.
 
-metric      countryCode    pct_50.0 |
+metric      countryCode    | pct_50.0 |
 ------- | ------------| ------- |
 browser_cls_histogram | POL   |       2000± 5% |
 
 **Example 2**. Consider a `browser_cls_histogram` histogram for Safari 16 in the USA with raw measurements of 500 and 3100.
 
-Metric     | Browser | CountryCode   | Value |
+metric     | browser | countryCode   | value |
 ---------  | -------- |  ---------- | -----  |
 browser_cls_histogram| Safari 16 | POL   | 500, 3100 |
 
@@ -156,7 +157,7 @@ metric | value
 ----- | ----- |
 pct_50.0 | 750 ± 5% |
 
-### Additional Supported Quantization methods
+### Additional Supported Quantization Methods
 
 Histograms support a variety of quantizations such as `avg`, `min`, `max`, `sum`, `count`, and `rate` in addition to `histogram` and `pct`. The following aggregations can also be calculated on top of histogram data
 * `avg`
