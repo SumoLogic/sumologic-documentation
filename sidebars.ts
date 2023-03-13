@@ -1934,6 +1934,7 @@ integrations: [
           'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/citrix',
           'integrations/saas-cloud/cloudflare',
+          'integrations/saas-cloud/docusign',
           'integrations/saas-cloud/dropbox',
           'integrations/saas-cloud/fastly',
           'integrations/saas-cloud/gmail-tracelogs',
