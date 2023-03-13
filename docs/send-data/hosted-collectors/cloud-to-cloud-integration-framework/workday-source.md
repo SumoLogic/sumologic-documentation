@@ -85,21 +85,21 @@ To configure a Workday Source, follow the steps below:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
-8. **SignOn Report URL**. Paste the SignOn Report URL from [Step 1.5](/docs/integrations/saas-cloud/workday#step-1-5-create-a-custom-sign-on-report).
+8. **SignOn Report URL**. Paste the SignOn Report URL from [Step 1.5](/docs/integrations/saas-cloud/workday#step-15-create-a-custom-sign-on-report).
 
-9. **Integration System User Name**. Name of the account (SumoLogic_ISU) created in [Step 1.1](/docs/integrations/saas-cloud/workday#step-1-1-create-an-integration-system-user).
+9. **Integration System User Name**. Name of the account (SumoLogic_ISU) created in [Step 1.1](/docs/integrations/saas-cloud/workday#step-11-create-an-integration-system-user).
 
-10. **Integration System User Password**. The password of the account created in [Step 1.1](/docs/integrations/saas-cloud/workday#step-1-1-create-an-integration-system-user).
+10. **Integration System User Password**. The password of the account created in [Step 1.1](/docs/integrations/saas-cloud/workday#step-11-create-an-integration-system-user).
 
-11. **Refresh Token URL**. Paste the Token endpoint copied from [Step 1.3](/docs/integrations/saas-cloud/workday#step-1-3-register-the-API-client).
+11. **Refresh Token URL**. Paste the Token endpoint copied from [Step 1.3](/docs/integrations/saas-cloud/workday#step-13-register-the-API-client).
 
-12. **Client ID**. Paste the Client ID copied from [Step 1.3](/docs/integrations/saas-cloud/workday#step-1-3-register-the-API-client).
+12. **Client ID**. Paste the Client ID copied from [Step 1.3](/docs/integrations/saas-cloud/workday#step-13-register-the-API-client).
 
-13. **Client Secret**. Paste the Client Secret copied from [Step 1.3](/docs/integrations/saas-cloud/workday#step-1-3-register-the-API-client).
+13. **Client Secret**. Paste the Client Secret copied from [Step 1.3](/docs/integrations/saas-cloud/workday#step-13-register-the-API-client).
 
-14. **Refresh Token**. Paste the generated Refresh Token copied from [Step 1.3](/docs/integrations/saas-cloud/workday#step-1-3-register-the-API-client).
+14. **Refresh Token**. Paste the generated Refresh Token copied from [Step 1.3](/docs/integrations/saas-cloud/workday#step-13-register-the-API-client).
 
-15. **REST API URL**. Take the Workday Rest API endpoint copied in [Step 1.3](/docs/integrations/saas-cloud/workday#step-1-3--register-the-API-client) and modify it to match the format `https://<host>/ccx/api/privacy/v1/<tenant>/activityLogging`. Provide the modified URL here.
+15. **REST API URL**. Take the Workday Rest API endpoint copied in [Step 1.3](/docs/integrations/saas-cloud/workday#step-13--register-the-API-client) and modify it to match the format `https://<host>/ccx/api/privacy/v1/<tenant>/activityLogging`. Provide the modified URL here.
 
 16. **Collection Should begin** (Optional). Select the time range for how far back you want this source to start collecting data from Workday. This is set to **24 Hours ago** by default.
 
@@ -111,7 +111,7 @@ To configure a Workday Source, follow the steps below:
 
 During each polling interval, the Workday Source will make a REST API request to fetch audit activity logs and another request to the RAAS API to fetch the SignOn logs. The REST API can fetch a maximum of 1000 records at a time and the RAAS API has a limit of 2GB. We recommend you set polling intervals of 10 mins. 
 
-### Error types
+### Error Types
 
 When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/health-events.md). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
