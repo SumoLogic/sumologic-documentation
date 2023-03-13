@@ -34,13 +34,17 @@ where `<operator>` typically is:
 
 Note that `<p>` should be replaced with the desired percentile value, such as 50 for the 50th percentile or 99 for the 99th percentile. These operators allow you to specify the percentile you want to calculate, as well as any dimensions you want to aggregate by.
 
+Here's an example of what your metrics query might look like:
+
+`_sourceCategory="MetricFromTrace" service="productcatalogservice" metric.type=exponential_histogram | quantize to 1m using histogram`
+
+This query selects data from a specific source category and service, and then calculates a histogram using exponential binning. It then quantizes the data to 1 minute intervals using the histogram.
+
+ The histogram below shows the distribution of values over time for the selected metric.<br/> <img src={useBaseUrl('img/metrics/metric-histogram.png')} alt="metric-histogram.png" width="800" />
+ 
 ## Why use Histograms?
 
 With histograms, you don't need to predefine any special cases for calculating percentiles. You can use the histogram to compute any percentile based on the raw measurements captured. Moreover, querying histograms is efficient and space-saving as compared to storing all the raw data.
-
-Here's an example of what your metrics query might look like:
-
-`_sourceCategory="MetricFromTrace" service="productcatalogservice" metric.type=exponential_histogram | avg`
 
 ## Querying Histograms
 
@@ -182,7 +186,7 @@ Histogram type metrics support a limited set of operators and statements, which 
 * `quantize using histogram or pct(), avg, min, max, count, and rate`.
 *  aggregation: `avg`, `min`, `max`, `sum`, `count`.
 
-Using any unsupported operator will result in a query failure. <br/> <img src={useBaseUrl('img/metrics/metric-failure.png')} alt="metric-failure.png"/>
+Using any unsupported operator will result in a query failure. <br/> <img src={useBaseUrl('img/metrics/metric-failure.png')} alt="metric-failure.png" width="550" />
 
 However, you can use other operators after applying a histogram operator. For example, you can use the `pct(99)` operator with a histogram metric and filter the results based on a specific threshold by running this query.
 

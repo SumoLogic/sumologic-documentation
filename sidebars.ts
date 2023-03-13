@@ -1277,6 +1277,7 @@ module.exports = {
         'metrics/introduction/built-in-metadata',
         'metrics/introduction/metric-formats',
         'metrics/introduction/joins',
+        'metrics/introduction/metric-historgams',
         'metrics/introduction/metric-quantization',
       ],
     },
