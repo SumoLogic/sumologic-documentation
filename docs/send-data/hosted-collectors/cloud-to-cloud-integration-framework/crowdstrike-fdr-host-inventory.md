@@ -21,7 +21,7 @@ To collect device data from the CrowdStrike platform, you must have an authorize
 
 CrowdStrike FDR Host Inventory retrieves device information every 24 hours. The source will fetch device information that was seen in the last 30 days for the first time. Afterward, it will only fetch information about devices that have been modified.
 
-## Configuration
+## Setup and Configuration
 
 In this configuration, you will set up the CrowdStrike FDR account and configure it to be authorized and authenticated to use device information from CrowdStrike FDR API. To obtain the auth token, you will need the following parameters:
 
