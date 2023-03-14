@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - JainM6-patch3
 
 jobs:
   deploy-to-staging:
