@@ -12,7 +12,7 @@ When you set up an HTTP Traces Source, a unique URL is assigned to that Source. 
 ## Limitations
 
 * [Zipkin JSON v2](https://zipkin.io/zipkin-api/) and [OTLP/HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp) are the only supported formats.
-* Traces up to 1,000 spans are supported. This includes metadata. Traces above 1,000 spans per trace may be throttled and/or the critical path by service may be inaccurate.
+* Traces up to 10,000 spans are supported. This includes metadata. Traces above 10,000 spans per trace may be throttled and/or the critical path by service may be inaccurate.
 
 ## Create an HTTP Traces Source
 
