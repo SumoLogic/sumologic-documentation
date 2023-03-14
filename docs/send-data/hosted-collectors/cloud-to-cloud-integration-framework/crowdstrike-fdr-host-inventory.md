@@ -30,7 +30,6 @@ In this configuration, you will set up the CrowdStrike FDR account and configure
 The **API security token** is used to authenticate with CrowdStrike FDR API. After successfully creating the API client, you will get the **Client Id**, **Client Secret**, and **Base URL**.
 To get the **CrowdStrike API Client**, follow the steps below:
 1. Access the [CrowdStrike FDR Platform](https://falcon.crowdstrike.com/login/)
-
 1. Enter your login credentials, including your email ID and password, to log in. You will be directed to the application dashboard once you've completed the two-factor authentication.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-login-screen.png')} alt="crowdstrike-fdr-host-inventory-login-screen.png" width="600" />
 
 1. From the CrowdStrike FDR Console, on the left-hand panel of the dashboard, locate the Menu option and click on it.<br/>
