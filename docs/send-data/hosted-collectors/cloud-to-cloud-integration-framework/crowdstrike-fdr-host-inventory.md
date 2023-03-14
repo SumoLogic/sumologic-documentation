@@ -16,6 +16,7 @@ The CrowdStrike API documentation is not public and can only be accessed by par
 ## Prerequisites
 
 To collect device data from the CrowdStrike platform, you must have an authorized CrowdStrike account. CrowdStrike APIs use an OAuth 2.0 authorization token to make authorized API calls. CrowdStrike API Client is required to get the OAuth 2.0 authorization token. To define a CrowdStrike API client, you must be designated as a `CrowdStrike Falcon Administrator` role.
+
 ## Data sources
 
 The CrowdStrike FDR Host Inventory retrieves device information every 24 hours. The source will fetch device information that was seen in the last 30 days for the first time. Afterward, it will only fetch information of devices that have been modified.
