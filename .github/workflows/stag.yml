@@ -6,7 +6,7 @@ on:
       - main
   pull_request:
     branches:
-      - JainM6-patch3
+      - JainM6-patch-3
 
 jobs:
   deploy-to-staging:
