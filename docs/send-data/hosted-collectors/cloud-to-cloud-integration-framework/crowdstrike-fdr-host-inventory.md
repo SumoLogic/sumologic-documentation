@@ -25,7 +25,7 @@ CrowdStrike FDR Host Inventory retrieves device information every 24 hours. The 
 
 In this configuration, you will set up the CrowdStrike FDR account and configure it to be authorized and authenticated to use device information from CrowdStrike FDR API. To obtain the auth token, you will need the following parameters.
 
-### API client and API secret
+### API Client and API Secret
 
 The **API security token** is used to authenticate with CrowdStrike FDR API. After successfully creating the API client, you will get the **Client Id**, **Client Secret**, and **Base URL**.
 To get the **CrowdStrike API Client**, follow the steps below:
