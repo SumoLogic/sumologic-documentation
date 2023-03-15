@@ -83,7 +83,7 @@ Follow these steps to configure IdP-initiated login. After this procedure, you c
 
 ## Review SAML configuration
 
-To view the details of your configuration, select it from the **Configuration List**. The right side of the page displays the configuration details. For any SAML configuration, you'll see an **Assertion Consumer** URL. If you configure SP-initiated login, you'll also see an **Authentication Request** URL and **Entity ID**.
+To view the details of your configuration, select it from the **Configuration List**. The right side of the page displays the configuration details. For any SAML configuration, you'll see an **Assertion Consumer** URL. If you configure SP-initiated login, you'll also see an **Entity ID**.
 
 ![config list](/img/security/config-list.png)
 
