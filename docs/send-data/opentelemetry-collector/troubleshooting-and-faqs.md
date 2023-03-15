@@ -86,11 +86,11 @@ I don’t have a root or admin permissions. Can I still install the Sumo OpenTel
 
 ### Answer
 
-Yes, you can install it manually (https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/installation.md#manual-installation) by placing it in a local directory in your PATH ($HOME/bin is often used for this). Note that some functionalities will be unavailable when running as non-root, specific host metrics, for example.
+If you do not have root or admin permissions, you can still install the Sumo OpenTelemetry Collector manually by copying the Collector binary to a local directory in your PATH. The steps for manual installation are detailed in the [official repository's documentation](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/installation.md#manual-installation). However, note that some functionalities, such as certain host metrics, may not be available when running the Collector as a non-root user.
 
 ### Question
 
-On MacOS, the Collector stops sending data after some time ?
+On MacOS, the Collector stops sending data after some time?
 
 ### Answer
 
@@ -229,7 +229,7 @@ How does an OpenTelemetry Collector send information to the Sumo Logic service?
 
 ### Answer
 
-It uses the [OTLP protocol](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/otlp.md.an)
+The OpenTelemetry Collector uses the [OTLP protocol](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/otlp.md.an) to send data to the Sumo Logic service.
 
 ## Question
 
@@ -251,7 +251,7 @@ The collector caches data when it’s unable to send it to the Sumo backend at t
 
 ### Question
 
-Does the OpenTelemetry Collector get throttled? Under what circumstances does this happen ?
+Does the OpenTelemetry Collector get throttled? Under what circumstances does this happen?
 
 ### Answer
 
@@ -259,7 +259,7 @@ The behavior is the same as for any other collection method.
 
 ### Question
 
-Does the Sumo Logic backend know when a OpenTelemetry Collector is down ? How does that work ?
+Does the Sumo Logic backend know when a OpenTelemetry Collector is down? How does that work?
 
 ### Answer
 
@@ -271,7 +271,7 @@ How to Ingest Old or Historical Data​
 
 ### Answer
 
-To ingest old or historical data is to use a [Filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) for log collection. By default, the filelog receiver starts reading logs from the end of the file. However, this can be changed by adjusting the configuration file to start reading from the beginning of the file by setting `start_at: beginning`.
+To ingest old or historical data is to use a [Filelog Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) for log collection. By default, the Filelog Receiver starts reading logs from the end of the file. However, this can be changed by adjusting the configuration file to start reading from the beginning of the file by setting `start_at: beginning`.
 
 ### Question
 
@@ -283,7 +283,7 @@ How to send data to multiple Sumo Logic accounts from a single collector?
 
 ### Answer
 
-To send data to multiple Sumo Logic accounts from a single collector, configure the Sumo Logic OpenTelemetry Collector with multiple extensions, each with its own access ID and key. For more information, refer to the [Multiple Sumo Logic Extensions](​​https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/configuration.md#using-multiple-sumo-logic-extensions) documentation.
+To send data to multiple Sumo Logic accounts from a single collector, configure the Sumo Logic OpenTelemetry Collector with multiple extensions, each with its own access ID and key. For more information, refer to the [Multiple Sumo Logic Extensions](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/configuration.md#using-multiple-sumo-logic-extensions) documentation.
 
 ### Question
 
@@ -294,5 +294,33 @@ Unable to install the OpenTelemetry agent using the `curl` command on Linux. Get
 This typically can happen when there is a slowdown on the network, or due to some issues on Github the side. Add the following parameter to the installation command. It will increase the timeout from default 180 seconds to 300 seconds. You can adjust the value to your needs.
 
 `--download-timeout 300`
+### Questions
+What can I do if I get the error "Failed to bind to address" while installing or restarting the collector on a Mac platform?
+
+### Answers
+
+This error typically occurs if another process is already using the required port or IP address. You can check if any existing otel-sumo service is running in the background by running the following command:
+
+`$ ps -ef | grep sumo`
+
+If this command returns any running process related to Sumo Logic, you should kill it before attempting to install or restart the collector. Once you've confirmed that no other Sumo Logic processes are running, you can attempt to install or restart the collector again.
+
+### Questions
+
+How can I uninstall the Sumo OpenTelemetry Collector?
+
+### Answers
+
+To uninstall the Collector, you can run the following command:
+
+`curl -s https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/scripts/install.sh | sudo -E bash -s -- --uninstall --purge --yes`
+
+This will completely remove the Collector from your system, including any associated configuration files.
+
+If you are using a Mac, you can also run the following command to clear the cache:
+
+`sudo rm -rf /var/cache/otelcol-sumo`
+
+This will remove any cached data associated with the Collector.
 
 </details>
