@@ -355,4 +355,4 @@ After configuring your Source, you should check the status of the source in the 
 To resolve these errors:
 - Make sure the Base URL matches your domain.
 - Make sure correct API Token is used to configure the source.
-- If you're still seeing the `401 Unauthorized error` in the **Status** column, then regenerate the API Token by following [Authentication steps](#authentication), and update the API Token for the source.
+- If you're still seeing the `401 Unauthorized error` in the **Status** column, regenerate the API Token by following [these Authentication steps](#authentication) and then updating the API Token for the source.
