@@ -21,6 +21,16 @@ To collect device data from the CrowdStrike platform, you must have an authorize
 
 CrowdStrike FDR Host Inventory retrieves device information every 24 hours. The source will fetch device information that was seen in the last 30 days for the first time. Afterward, it will only fetch information about devices that have been modified.
 
+## Metadata Field
+
+Metadata fields will be set. See **Metadata Fields** table below:
+
+| Fields     |    Value                    |
+| :-------    |  :------------------------: |
+| `_siemVendor`	| CrowdStrike |
+| `_siemProduct` | FDR Host Inventory |
+| `_siemDataType`| Inventory  |
+
 ## Setup and Configuration
 
 In this configuration, you will set up the CrowdStrike FDR account and configure it to be authorized and authenticated to use device information from CrowdStrike FDR API. To obtain the auth token, you will need the following parameters.
@@ -29,21 +39,19 @@ In this configuration, you will set up the CrowdStrike FDR account and configure
 
 The **API security token** is used to authenticate with CrowdStrike FDR API. After successfully creating the API client, you will get the **Client Id**, **Client Secret**, and **Base URL**.
 To get the **CrowdStrike API Client**, follow the steps below:
-1. Access the [CrowdStrike FDR Platform](https://falcon.crowdstrike.com/login/)
-1. Enter your login credentials, including your email ID and password, to log in. You will be directed to the application dashboard once you've completed the two-factor authentication.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-login-screen.png')} alt="crowdstrike-fdr-host-inventory-login-screen.png" width="600" />
+1. Access the [CrowdStrike FDR Platform](https://falcon.crowdstrike.com/login/).
+1. Log in using your email address and password. After you've completed the two-factor authentication, you'll be directed to the application dashboard.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-login-screen.png')} alt="crowdstrike-fdr-host-inventory-login-screen.png" width="600" />
 1. From the CrowdStrike FDR Console, on the left-hand panel of the dashboard, locate the Menu option and click on it.<br/>
 <img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-open-menu.png')} alt="<crowdstrike-fdr-host-inventory-open-menu.png>" width="600" />
-1. Select the **Support and resources** option from the menu.
-<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-support-and-resources.png')} alt="<crowdstrike-fdr-host-inventory-support-and-resources.png>" width="600" />
-1. Navigate to **API clients and keys** and click on it. From there, you can view existing clients or
-add new API clients.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-api-key-client.png')} alt="<crowdstrike-fdr-host-inventory-api-key-client.png>" width="600" />
+1. Select the **Support and resources** option from the menu.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-support-and-resources.png')} alt="<crowdstrike-fdr-host-inventory-support-and-resources.png>" width="600" />
+1. Navigate to and click on **API clients and keys**. You can then view existing clients or add new API clients from there.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-api-key-client.png')} alt="<crowdstrike-fdr-host-inventory-api-key-client.png>" width="600" />
 1. Click **Add new API client**. You will be prompted to give a descriptive name and select the appropriate API scopes.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-new-client.png')} alt="<crowdstrike-fdr-host-inventory-new-client.png>" width="600" />
 1. Provide a proper name and description and select the **Read Hosts Scope**. Click on `ADD` to complete the process.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-add-client.png')} alt="<crowdstrike-fdr-host-inventory-add-client.png>" width="600" />
-1. After you click on `ADD` a dialogue box will appear with the **Client ID**, **Client Secret** and **Base URL**. Copy and paste the Client Id, Client Secret and Base URL to a folder location because you will need them when creating the [CrowdStrike FDR Host Inventory Source](#set-up-crowdstrike-fdr-host-inventory-source). <br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-copy-creds.png')} alt="<crowdstrike-fdr-host-inventory-copy-creds.png>" width="600" />
+1. After you click on `ADD` a dialogue box will appear with the **Client ID**, **Client Secret** and **Base URL**. Copy and paste the Client Id, Client Secret and Base URL to a folder location because you will need them when creating the [CrowdStrike FDR Host Inventory Source](#set-up-crowdstrike-fdr-host-inventory-source).<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-copy-creds.png')} alt="<crowdstrike-fdr-host-inventory-copy-creds.png>" width="600" />
 
 ### Region
 
-1. Identify your **Region** based on your **Base URL**. The region can be from the following. 
+1. Identify your **Region** based on your **Base URL**. The region can be selected from the list below. 
 
    | Region | Base URL                    |
    | ------ | --------------------------- |
@@ -88,7 +96,7 @@ To configure the CrowdStrike FDR Host Inventory API:
 9. In **Client Secret**, enter the Client Secret you generated and secured from the [API Secret](#api-client-and-api-secret) section.
 10. When you are finished configuring the Source, click **Save**.
 
-### Error types
+## Error types
 
 When Sumo Logic detects an issue, it is tracked by Health Events. The following table shows three possible error types. It tells the reason for the error, if the source attempts to retry, and the name of the event log in the Health Event Index.
 
@@ -109,7 +117,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | Parameter | Type | Required | Description | Access |
 |:--|:--|:--|:--|:--|
 | `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. | na |
-| `schemaRef` | JSON Object  | Yes | Use `{"type":"CrowdStrike Inventory"}` for CrowdStrike FDR Host Inventory Source. | not modifiable |
+| `schemaRef` | JSON Object  | Yes | Use `{"type":"CrowdStrike FDR Host Inventory"}` for CrowdStrike FDR Host Inventory Source. | not modifiable |
 | `sourceType` | String | Yes | Use `Universal` for CrowdStrike FDR Host Inventory Source. | not modifiable |
 
 ### Config Parameters
