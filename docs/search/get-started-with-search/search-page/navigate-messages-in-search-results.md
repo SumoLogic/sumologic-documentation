@@ -6,7 +6,7 @@ description: When you run a search query, messages display in the Message, Aggre
 
 
 
-When you run a search your results are provided in a **Messages** tab. If the search conducted an aggregation you'll also get an **Aggregates** tab.
+When you run a search, the results are displayed in the **Messages** tab. If the search includes an aggregation, an **Aggregates** tab will also be displayed.
 
 ![Messages and Aggregates tab.png](/img/search/get-started-search/search-page/messages-aggregates-tab.png)
 
