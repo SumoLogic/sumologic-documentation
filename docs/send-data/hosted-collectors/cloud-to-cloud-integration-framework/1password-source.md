@@ -341,3 +341,24 @@ The following table shows the **config** parameters for a 1Password Source.
     "sourceType":"Universal"
   }
 }
+```
+
+## Troubleshooting
+
+After you configure your Source, you should check the status of the
+source in the Collectors page. In case the Source is not functioning as
+expected, you may see an error next to the Source Category column as
+shown below: 
+
+![troubleshooting.jpg](/img/send-data/1password-troubleshooting.jpg)
+
+The following section details how you can resolve various errors: 
+
+**Error Code:**  401 <br />
+**Error Details:**  {"Error":{"Message":"Unauthorized"}}
+
+To resolve this:
+
+- Make sure Base URL is as per your domain.
+- Make sure correct API Token is used to configure the source.
+- If you still see the 401 Unauthorized error in the Status column, then regenerate the API Token by following [Authentication](#authentication) steps, and update the API Token for the source.
