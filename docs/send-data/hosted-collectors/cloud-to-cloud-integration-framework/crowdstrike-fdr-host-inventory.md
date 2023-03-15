@@ -53,7 +53,7 @@ To get the **CrowdStrike API Client**, follow the steps below:
 1. Identify your **Region** based on your **Base URL**. The region can be selected from the list below. 
 
    | Region | Base URL                    |
-   | ------ | --------------------------- |
+   | :------ | :-------------------------- |
    | US-1    | https://api.crowdstrike.com |
    | US-2    | https://api.us-2.crowdstrike.com  |
    | EU-1    | https://api.eu-1.crowdstrike.com  |
