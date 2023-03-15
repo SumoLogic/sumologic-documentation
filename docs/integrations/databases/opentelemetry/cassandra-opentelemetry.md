@@ -26,7 +26,6 @@ Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which
 
 ## Prerequisite
 
-The app supports Logs from the open-source version of Cassandra. The App is tested on the 3.11.10 version of Cassandra.
 
 Cassandra has three main logs: system.log, debug.log, and gc.log which hold general logging messages, debugging logging messages, and java garbage collection logs respectively.
 
