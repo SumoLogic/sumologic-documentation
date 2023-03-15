@@ -1,7 +1,6 @@
 ---
 id: classic-load-balancer
-title: Sumo Logic App for AWS Classic Load Balancer
-sidebar_label: AWS Classic Load Balancer
+title: AWS Classic Load Balancer
 description: The Sumo Logic App for AWS Elastic Load Balancing Classic is a unified logs and metrics (ULM) App which helps you monitor the classic load balancer.
 ---
 

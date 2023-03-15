@@ -1,7 +1,6 @@
 ---
 id: s3-audit
-title: Sumo Logic App for Amazon S3 Audit
-sidebar_label: Amazon S3 Audit
+title: Amazon S3 Audit
 description: Provides a simple web services interface that can be used to store and retrieve any amount of data from anywhere on the web.
 ---
 
@@ -168,7 +167,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 
 When collecting from one AWS S3 bucket with multiple Sumo Sources you need to create a separate topic and subscription for each Source. Subscriptions and Sumo Sources should both map to only one endpoint. If you were to have multiple subscriptions Sumo would collect your objects multiple times.
 
-Each topic needs a separate filter (prefix/suffix) so that collection does not overlap. 
+Each topic needs a separate filter (prefix/suffix) so that collection does not overlap.
 
 
 #### Update Source to use S3 Event Notifications

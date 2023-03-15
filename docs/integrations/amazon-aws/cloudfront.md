@@ -1,7 +1,6 @@
 ---
 id: cloudfront
-title: Sumo Logic App for Amazon CloudFront
-sidebar_label: Amazon CloudFront
+title: Amazon CloudFront
 description: The Sumo Logic App for Amazon CloudFront provides analytics on visitor information, rates and statistics, content being served, and other metrics.
 ---
 

@@ -1,7 +1,6 @@
 ---
 id: network-load-balancer
-title: Sumo Logic App for AWS Network Load Balancer
-sidebar_label: AWS Network Load Balancer
+title: AWS Network Load Balancer
 description: The Sumo Logic App for AWS Network Load Balancer is using metrics to provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy, and to quickly identify errors.
 ---
 

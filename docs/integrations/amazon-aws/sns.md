@@ -1,7 +1,6 @@
 ---
 id: sns
-title: Sumo Logic App for Amazon SNS
-sidebar_label: Amazon SNS
+title: Amazon SNS
 description: The Sumo Logic App for Amazon SNS is a unified logs and metrics app that provides insights into the operations and utilization of your SNS service.
 ---
 

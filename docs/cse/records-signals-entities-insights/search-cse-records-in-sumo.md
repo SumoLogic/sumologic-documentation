@@ -153,7 +153,7 @@ You can search CSE fields by keyword, for example:
 
 ### Referencing nested JSON fields
 
-The **Security Record Details** field contains a JSON object with all of the fields from the underlying Record or Signal. Some of the data is nested in one or more sub-objects, like the `fields` object for Record., shown expanded in the screenshot below. The fields object contains the contents of the [fields](../schema/schema-attributes.md) field in the underlying Record, which is all of the unnormalized data from the original log message before it was normalized to the CSE schema.
+The **Security Record Details** field contains a JSON object with all of the fields from the underlying Record or Signal. Some of the data is nested in one or more sub-objects, like the `fields` object for Record., shown expanded in the screenshot below. The fields object contains the contents of the [fields](/docs/cse/schema/schema-attributes) field in the underlying Record, which is all of the unnormalized data from the original log message before it was normalized to the CSE schema.
 
 ![nested-fields.png](/img/cse/nested-fields.png)
 

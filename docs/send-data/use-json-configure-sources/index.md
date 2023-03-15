@@ -46,7 +46,9 @@ See [Options for specifying sources in local configuration file(s)](/docs/send-d
 
 Each source can have its own unique fields in addition to the generic fields listed in the previous table. The next table lists the valid field types. The sections that follow list the unique parameters for each and the associated JSON examples.
 
-## Log Sources for Installed Collectors
+## Installed Collectors
+
+### Log Sources
 
 | Field Type | Type Value |
 |:--|:--|
@@ -60,17 +62,18 @@ Each source can have its own unique fields in addition to the generic fields lis
 | [Syslog Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#syslog-source)	 | Syslog |
 | [Script Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#script-source) | Script |
 | [Docker Log Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#docker-log-source) | DockerLog |
-| [Docker Stats Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#docker-stats-source) | DockerStats |
 
-## Metric Sources for Installed Collectors
+### Metrics Sources
 
 | Field Type | Type Value |
 |:--|:--|
 | [Host Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#host-metrics-source)  | SystemStats |
 | [Streaming Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#streaming-metrics-source) | StreamingMetrics |
+| [Docker Stats Source](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources#docker-stats-source) | DockerStats |
 
+## Hosted Collectors
 
-### Log Sources for Hosted Collectors
+### Log Sources
 
 | Field Type | Type Value |
 |:--|:--|
@@ -106,11 +109,12 @@ Each source can have its own unique fields in addition to the generic fields lis
 | [Sophos Central Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source) | Universal |
 | [Tenable Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source) | Universal |
 
-### Metrics sources for hosted collectors
+### Metrics Sources
 
 | Field Type | Type Value |
 |:--|:--|
 | [AWS CloudWatch Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudwatch-source) | Polling |
+| [AWS Kinesis Firehose for Metrics Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources/#aws-kinesis-firehose-for-metricssource) | HTTP |
 
 ## Common parameters for log source types
 

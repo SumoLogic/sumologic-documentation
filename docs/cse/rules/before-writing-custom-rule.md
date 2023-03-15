@@ -17,7 +17,7 @@ Before you create a custom rule, check to see if there is a [built-in rule](cse-
 The following topics provide information that’s relevant to the process of writing a custom rule:
 
 * [Record Processing Pipeline](../schema/record-processing-pipeline.md) — This topic describes how CSE creates Records for incoming messages. It provides facts about how message fields are mapped to CSE schema attributes; about the attributes CSE adds to Records to enrich and provide context about IP address, URLs, and domains; “list” features, like Match Lists and Suppress Lists that allow you to include or exclude Records based on indentiers found in Records; how to leverage threat intel data and more.
-* [Schema Attributes](../schema/schema-attributes.md) — This topic defines the Record attributes you can reference in rules.
+* [Schema Attributes](/docs/cse/schema/schema-attributes) — This topic defines the Record attributes you can reference in rules.
 * [CSE Rules Syntax](cse-rules-syntax.md) — This topic describes rules language functions and syntax, which you’ll use in writing rule expressions.
 * [Searching for CSE Records in Sumo Logic](../records-signals-entities-insights/search-cse-records-in-sumo.md) — This topic explains how to search CSE Records in the Sumo Logic platform. Typically, you’ll build and refine your rule expressions in Sumo Logic. Once you’re happy with the results, you’ll copy the query into the rule expression field in the Rules Editor.
 
@@ -38,12 +38,12 @@ CSE has four types of rules:
 
 Before you write a rule, you’ll want to verify what attributes are available in the Records created from the target data source. You can do this by reviewing the log mapping for the data source.  
 
-Let’s say you’re going to write a rule that fires every time a successful Windows login from a user account that doesn’t match your standard account naming convention. You know, maybe because you’ve checked Microsoft documentation, that the Windows event that records successful logins is Security Log Event ID 4624. So, you’ll take a look at the CSE log mapping for that event, assuming there is one.
+Let’s say you’re going to write a rule that fires every time a successful Windows login occurs from a user account that doesn’t match your standard account naming convention. You know, maybe because you’ve checked Microsoft documentation, that the Windows event that records successful logins is Security Log Event ID 4624. So, you’ll take a look at the CSE log mapping for that event, assuming there is one.
 
 To find and review a log mapping:
 
 1. Click the gear icon and select **Log Mappings**.
-1. You can use the filter area at the top of the **Log Mappings** page to search for a mapping by various options. The screenshot below shows the results we enter the filter **Name matches wildcard pattern *46...**. Two mappings match. For each mapping, you can see how many times it’s been used in the last 24 hrs and also over the last 7 days. We’ll select the one that has been in use, rather than the one that hasn’t.docs/cse/records-signals-entities-insights/global-intelligence-security-insights.md  ![matching-mappings.png](/img/cse/matching-mappings.png)
+1. You can use the filter area at the top of the **Log Mappings** page to search for a mapping by various options. The screenshot below shows the results when we enter the filter **Name matches wildcard pattern *46...**. Two mappings match. For each mapping, you can see how many times it’s been used in the last 24 hrs and also over the last 7 days. We’ll select the one that has been in use, rather than the one that hasn’t.docs/cse/records-signals-entities-insights/global-intelligence-security-insights.md  ![matching-mappings.png](/img/cse/matching-mappings.png)
 1. Once you’ve opened the mapping, you’ll see the top of the page shows the Vendor, Product, and Event ID that is written to the Records produced by the mapping.  docs/cse/records-signals-entities-insights/global-intelligence-security-insights.md  ![selected-mapping-top.png](/img/cse/selected-mapping-top.png)
 1. The **Fields** section of the page shows how raw message fields are mapped to CSE schema attributes. In this mapping, `EventData.LogonProcessName` is mapped to `application`, `EventData.WorkstationName` is mapped to `device_hostname`, and so on. docs/cse/records-signals-entities-insights/global-intelligence-security-insights.md  ![selected-mapping-bottom.png](/img/cse/selected-mapping-bottom.png)
 

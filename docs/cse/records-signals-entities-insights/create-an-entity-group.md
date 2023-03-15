@@ -111,4 +111,4 @@ array_contains(fieldTags["srcDevice_ip"], "DB Server")
 
 ## API support
 
-You can use the CSE `/entity-group-configuration` API to create, read, update and delete Entity Groups. For more information, see [CSE APIs](/docs/cse/administration/CSE-APIs).
+You can use the CSE `/entity-group-configuration` API to create, read, update and delete Entity Groups. For more information, see [CSE APIs](/docs/cse/administration/cse-apis).
