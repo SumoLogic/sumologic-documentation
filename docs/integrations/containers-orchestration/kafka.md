@@ -65,7 +65,7 @@ messaging_cluster=* messaging_system="kafka" \
 
 ## Collecting Logs and Metrics for Kafka
 
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for Kakfa.
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for Kafka.
 
 ### Configure Fields in Sumo Logic
 
@@ -661,7 +661,7 @@ Use this dashboard to:
 The **Kafka Broker - Garbage Collection** dashboard shows key Garbage Collector statistics like the duration of the last GC run, objects collected, threads used, and memory cleared in the last GC run of your java virtual machine.
 
 Use this dashboard to:
-* Understand the amount of time spent in garbage collection. If this time keeps increasing, your Kakfa brokers may have more CPU usage.
+* Understand the amount of time spent in garbage collection. If this time keeps increasing, your Kafka brokers may have more CPU usage.
 * Understand the amount of memory cleared by garbage collectors across memory pools and their impact on the Heap memory.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Garbage-Collection.png')} alt="Kafka dashboards" />
