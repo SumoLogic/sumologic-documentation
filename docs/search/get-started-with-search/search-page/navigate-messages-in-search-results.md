@@ -42,7 +42,7 @@ The **Messages** tab allows you to right-click a table cell to copy the raw mess
 
 ![copy message option.png](/img/search/get-started-search/search-page/copy-message-option.png)
 
-## Keyboard Accessibility
+## Keyboard accessibility
 
 Click anywhere on the table in the **Messages** or **Aggregates** tab and you can use the up and down keyboard keys to navigate your results.
 
