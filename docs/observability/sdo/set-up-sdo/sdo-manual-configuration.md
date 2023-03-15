@@ -36,7 +36,7 @@ To set up the SDO solution manually, configure collection and install apps for 
 * [PagerDuty](/docs/integrations/saas-cloud/PagerDuty-V2)
 * [Opsgenie](/docs/integrations/saas-cloud/Opsgenie)
 * [GitLab](/docs/integrations/app-development/gitlab)
-* [CircleCI](https://circleci.com/docs/2.0/insights-partnerships/#sumo-logic-integration)
+* [CircleCI](https://circleci.com/docs/sumo-logic-integration/)
 
 ## Create New FERs
 
