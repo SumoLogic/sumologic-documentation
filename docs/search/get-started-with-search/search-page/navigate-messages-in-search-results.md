@@ -36,7 +36,7 @@ By default, the **Messages** tab shows the collapsed version of messages with ea
 
 Click **Expand/Collapse** on the upper right side of the **Messages** table, then select **Collapse All Rows** to switch back to the initial collapsed view.
 
-## Copy Message
+## Copy message
 
 The **Messages** tab allows you to right-click a table cell to copy the raw message to your clipboard.
 
