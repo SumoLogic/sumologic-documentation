@@ -1,7 +1,7 @@
 ---
 id: install-collector-on-macos
-title: Installing Collector on Mac OS
-sidebar_label: Install Collector on MacOS
+title: Installing Collector on macOS
+sidebar_label: Install Collector on macOS
 description: Learn how to install Collector
 ---
 
