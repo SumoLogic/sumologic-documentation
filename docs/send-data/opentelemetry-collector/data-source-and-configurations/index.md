@@ -1,7 +1,7 @@
 ---
-slug: /send-data/opentelemetry-distro-collector/data-source-and-configurations
+slug: /send-data/opentelemetry-collector/data-source-and-configurations
 title: Data Source and Configurations
-description: Learn about Sources in Sumo Logic Otel collectors
+description: Learn about Sources in Sumo Logic Otel Collectors
 ---
 
 

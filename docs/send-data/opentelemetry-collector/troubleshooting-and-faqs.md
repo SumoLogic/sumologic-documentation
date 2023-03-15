@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This document contains common troubleshooting scenarios and frequently asked questions about Sumo Logic Open Telemetry Collector from our customers and field teams (SE, TAM, Support Engineers).
 
-<details><summary>Troubleshooting: Sumo Logic Connection Issues</summary>
+<details><summary>Solutions to OpenTelemetry Connection Issues</summary>
 
 ## Collector fails to connect to Sumo Logic
 
@@ -100,7 +100,7 @@ Because the Collector is connected to the terminal, it will stop reporting data 
 
 <details>
 
-<summary>Troubleshooting App Installation</summary>
+<summary>Troubleshoot App Installation</summary>
 
 ## Installing Apps Errors
 
@@ -117,7 +117,7 @@ If you are not using the **Sumo Logic Open Telemetry collector**, and using the 
 
 <details>
 
-<summary>Sumo Logic Connection: Answers to Common Questions</summary>
+<summary>OpenTelemetry Collection: Answers to Common Questions</summary>
 
 ## Frequently Asked Questions
 

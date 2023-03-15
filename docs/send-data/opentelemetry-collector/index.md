@@ -1,7 +1,6 @@
 ---
-slug: /send-data/opentelemetry-distro-collector
-title: OpenTelemetry Distro Collector
-description: You can also collect logs from Heroku and deploy a Sumo Logic Collector on AWS OpsWorks.
+slug: /send-data/opentelemetry-collector
+title: OpenTelemetry Collector
 ---
 
 OpenTelemetry is the future of agent-based collection for Sumo Logic.
