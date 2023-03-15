@@ -70,9 +70,7 @@ The DocuSign App for Sumo Logic uses [Events](https://developers.docusign.com/do
 }
 ```
 
-**Sample Alerts Log Message**
-
-```json
+```json title="Sample Alerts Log Message"
 {
  "timestamp": "2023-02-20T10:42:19.8996904Z",
  "eventId": "285e7634-07fd-4877-ac12-b921d0e4b626",
