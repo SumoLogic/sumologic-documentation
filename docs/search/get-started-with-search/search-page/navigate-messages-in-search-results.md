@@ -30,7 +30,7 @@ After you’ve pinned a column, the pin icon has a slash through it. You can cli
 
 ## Expand and Collapse
 
-By default, the **Messages** tab shows the collapsed version of messages with each row showing up to 10 lines. Click **Expand/Collapse** on the upper right side of the **Messages** table to select  **Expand All Rows** or  **Expand All Rows And JSON** option view the full contents of all your log messages including JSON logs.
+By default, the **Messages** tab shows the collapsed version of messages with each row showing up to 10 lines. To see the full contents of all log messages, including JSON logs, click the **Expand/Collapse** button on the upper right side of the **Messages** table and choose either **Expand All Rows** or **Expand All Rows And JSON** option.
 
 ![expand message option.png](/img/search/get-started-search/search-page/expand-message-option.png)
 
