@@ -57,7 +57,7 @@ This will generate a command which can be executed in the machine which needs to
 
 The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in:
 
-C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*
+`C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`
 
 You can add any custom fields which you want to tag along with the data ingested in sumo.
 Click on the **Download YAML File** button to get the yaml file.
