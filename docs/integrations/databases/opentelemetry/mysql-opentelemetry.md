@@ -95,7 +95,6 @@ To create a new Collector:
 	
 This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
 
-Select the platform for which you want to install the Sumo OpenTelemetry collector.
 
 This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry collector agent.  
 
