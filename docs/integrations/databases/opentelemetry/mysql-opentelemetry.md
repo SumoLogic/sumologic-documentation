@@ -69,7 +69,7 @@ Configure MySQL to log to a local file(s). MySQL logs written to a log file can 
     long_query_time=2
 ```
 
-[Error Logs](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html). By default, error logs are enabled and are logged at file specified by the log_error key.
+[Error Logs](https://dev.mysql.com/doc/refman/8.0/en/error-log.html). By default, error logs are enabled and are logged at file specified by the log_error key.
 
 [Slow Query Logs](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html). slow_query_log=1 enables logging of slow queries to the file specified by `slow_query_log_file`. Setting `long_query_time=2` will cause queries that take more than two seconds to execute to be logged. The default value of `long_query_time` is 10 seconds.
 
