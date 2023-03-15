@@ -5,8 +5,7 @@ sidebar_label: Troubleshooting and Faqs
 description: Troubleshooting and Faqs
 ---
 
-Document is created with the goal of answering common troubleshooting scenarios as well as Frequently asked questions related to Open Telemetry Collector, that our customers and our field teams (SE, TAM, Support Engineers) have. This section provides frequently asked questions about collecting data into Sumo Logic and the answers you need.
-
+This document contains common troubleshooting scenarios and frequently asked questions about Sumo Logic Open Telemetry Collector from our customers and field teams (SE, TAM, Support Engineers).
 
 ## Collector fails to connect to Sumo
 
