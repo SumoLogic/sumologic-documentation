@@ -74,7 +74,7 @@
     "trim": "^0.0.3",
     "url-loader": "^4.1.1",
     "use-sync-external-store": "1.2.0",
-    "webpack": "^5.73.0"
+    "webpack": "^5.76.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.3.1",

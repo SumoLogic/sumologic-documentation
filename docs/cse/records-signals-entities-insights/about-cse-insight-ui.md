@@ -82,7 +82,7 @@ The left pane of the **Insight > Details** page displays detailed information ab
 1. **Close Insight.** Use this option to close an Insight. When you click this option, you’re prompted to select an Insight resolution.
 1. **Delete Icon.** Use this option to delete an Insight. You’ll be prompted to confirm your choice.
 1. **Status.** Current status of the Insight.
-1. **Assignee and Assign to me.** Shows the current assignee, and allows you to assign yourself the Insight.
+1. **Assignee and Assign to me.** Shows the current assignee and allows you to assign yourself the Insight.
 1. **Entity.** The Entity the Insight fired on.
 1. **Severity.** Severity of the Insight. Mouse over it to see an icon you can click to change the Insight severity.
 1. **Global Confidence.** The Global Confidence score for the Insight, if available.
@@ -100,9 +100,9 @@ At the top of the **Insight** > **Details** page, you’ll see a Signal timeline
 
 ![top-bit.png](/img/cse/top-bit.png)
 
-1. **Signals**.The Signals link allows you to switch back to the Signals view from the Enrichments view, described below. 
-2. **Enrichments**. Click this tab to view any any enrichments that have been added to the Insight, includin the output of  [Insight Enrichment Server](../integrations/insight-enrichment-server.md).
-3. **Signal timeline**. The timeline shows how spread apart each Signal in the Insight is. You can use the timeline to visualize how long these events are spread over and how frequently the Signals fire. 
+1. **Signals**. The Signals link allows you to switch back to the Signals view from the Enrichments view, described below. 
+2. **Enrichments**. Click this tab to view any enrichments that have been added to the Insight, including the output of the [Insight Enrichment Server](../integrations/insight-enrichment-server.md).
+3. **Signal timeline**. The timeline shows how spread apart each Signal in the Insight is. You can use the timeline to visualize how long these events are spread over and how often the Signals fire. 
 4. **Timeline controls**. The arrows on the far left and right sides allow you to toggle between each Signal to show the details on each. You can also click a specific Signal on the timeline to jump to those details. 
 5. **Legend**. Key to the symbols used to represent the Signals:
    * Anomalies—Signals that were triggered by User and Entity Behavior Analytics (UEBA) rules.
@@ -113,30 +113,48 @@ At the top of the **Insight** > **Details** page, you’ll see a Signal timeline
 7. **Sort options**. You can sort the Signals list by Content Type, Event Time, Created Time, Name, or Severity. Note that you can further sort by ascending or descending value.
 8. **Add Signals**. Click this option if you want to add a Signal to the Insight. You’ll be prompted with a list of Signals that have the same Entity as the current Insight (if there are any), and are not already attached to another Insight. A Signal that you add to an Insight manually is considered an Attached Signal.
 
+### Signal list area 
+
+Below the Signal timeline, you’ll see a list of Signals. By default, only attached Signals are displayed.  
+
+![signal-list-area.png](/img/cse/signal-list-area.png)
+
+If you click the **Show Related** checkbox, the page updates and also displays any Related Signals or Related Insights.
+
+* A *Related Signal* is a Signal that isn’t part of the current Insight (it’s not attached), but fired on the same Entity as the current Insight’s attached Signals within 7 days of the current Insight’s attached Signals. 
+* A *Related Insight* is an Insight that a Related Signal is attached to.
+
+Here is an example of what a Related Signal and Related Insight look like in the Signal list. Note that, to distinguish between Signals that are attached as opposed to related, an Attached Signal has a blue vertical “ornament” on the left side of the row. A Related Signal does not.
+
+![related-signal.png](/img/cse/related-signal.png)  
+
 ### Entities tab
 
-The **Entities** tab displays a list of one or more _Related Entities_, which help a security analyst more quickly investigate the Insight and to better understand the scope of a security issue that the Insight reveals.
+The **Entities** tab displays a list of one or more _Related Entities_. This view helps a security analyst more quickly investigate the Insight to better understand the scope of a security issue that the Insight reveals. Many times, the most interesting Entity (perhaps the malicious actor) in an Insight is one of these related Entities.
 
-Related Entities extend the information available to the analyst beyond the data captured in an Insight. An Insight focuses on a primary Entity: the username, hostname, IP address, or MAC address that’s found in each of the Insight’s Signals. Related Entities expand the analyst’s view to include other Entities listed in the Records that belong to Signals in an Insight as well as Entities that aren’t in those Records but have a relationship to Entities that are.
+An Insight is focused on a primary Entity. For example, the username or IP address that's found in each of the Insight's Signals. Related Entities expand the analyst’s view to include additional Entities that could be relevant to the Insight because they are either listed in the Records that belong to Signals in that Insight or CSE has determined that they are the same Entity as one included in the Insight. For example, CSE has determined that an IP address may have been associated with a specific hostname at the time the relevant Signal was generated.
 
-The screenshot below shows the **Entities** tab for an Insight.
+The **Entities** tab includes two views, the **list** view and the **graph** view. Both views start with the same list of Related Entities. However, the **graph** view can show additional Entity relationships extending "outside" of the Insight. 
 
-![related-entities.png](/img/cse/related-entities.png)
+#### About the Entities tab list view
 
-#### About the Entities tab
+The screenshot below shows the **Entities** tab **list** view for an Insight.
 
-The **Entities** tab for an Insight lists all Entities involved in an Insight, and other Entities that CSE has determined are related to them.
+![related-entities.png](/img/cse/related-entities.jpg)
 
-Note that in the list of Entities, some are not indented, and others are indented below another Entity. The first unindented Entity listed is the primary Entity for the Insight–the Entity which is common to all of the Signals in the Insight. The other unindented Entities in the list are Entities contained in one or more Records that belong to Signals in the Insight.
+In this view, the primary Entity is always displayed first. (This is the Entity common to each of the Signals in the Insight). Below the primary Entity all of the related Entities are listed.
 
-The indented Entities in the list are referred to as related Entities. How does that work? For each Entity in the Insight—including the primary Entity and other Entities in the Insights’s Signals—CSE searches for Entities that, although not found within the Insight’s Signals, seem to be related to an Entity in the Insight. This search is run across a time range that corresponds to the span of time during which there was activity on the Insight. For example, if the first Record in an Insight was created at 8 am on Wednesday and the last Record at 10pm on Friday, CSE searches for related Entities during that time range. A related Entity that CSE finds is shown below the Entity to which it’s related with a dotted line, and labeled **May also be.**  
+The related Entities fall into two categories. The category, sometimes referred to as _Involved Entities_, are those Entities that aren't the primary Entity but are listed in one or more Records in the Signal(s) in the Insight. So, for example, while the primary Entity for an insight could be a username, a Record in one of the Signals in that Insight could also include an IP address. That address would be included in this list.
 
+Other Entities could be included due to _Detected Entity Relationships_. For each Entity in the Insight — including the primary Entity and other involved Entities — CSE searches for other Entities that seem to be related (across all Records, not just that Insight's). This search is run across a time range that corresponds to the span of time during which there was activity on the Insight. So, for example, if the first Record in an Insight was created at 8 AM on Wednesday and the last Record at 10 PM on Friday, CSE might detect that the IP address listed in the Insight was associated with a specific hostname (in another record) at that point. 
+
+Involved Entities are connected to the primary Entity with dashed lines. Entities whose relationships are detected are labeled "**May also be**", indented, and connected with solid lines.
 
 :::note
-If an Entity is in the Record and is _also_ a related Entity (is labeled **May also be**) it could be either indented or not indented, based on the number of Signals that mention the Entity (the higher the number, the more likely it is to be unindented.
+It's possible for a related Entity to both be involved and detected. In that case, it typically be displayed as detected unless it is in a number of the Insight's Signals.
 :::
 
-How does CSE look for related Entities? Within the time range of the Insight, described above, CSE searches for related Entities in the following normalized Record fields:
+How does CSE detect Entity relationships outside of the Insight? Within the time range of the Insight, described above, CSE searches for related Entities in the following normalized Record fields:
 
 * `*_ip`
 * `*_hostname`
@@ -166,36 +184,60 @@ The detection window is 14 days by default, but can be configured to be a differ
 :::
 * The number of Signals that fired during the Insight generation detection window, in which the current Entity is the primary Entity, and the sum of the severities for those Signals.
 :::note
-The cumulative severity value is color coded: cyan for less than 12, orange for 12-23, and red for 24 and above, assuming your Insight generation threshold is 12. If the Insight threshold is set to a value other than the default of 12, the color coding will be adjusted to match
+The cumulative severity value is color coded: cyan for less than 12, orange for 12-23, and red for 24 and above, assuming your Insight generation threshold is 12. If the Insight threshold is set to a value other than the default of 12, the color coding will be adjusted to match. 
 :::
+
+#### About the Entities tab graph view
+
+:::note
+This section describes a feature which is available to all customers but is currently in Beta. If you encounter any issues with this feature, please report them to Sumo Logic Support. Thank you!
+:::
+
+The screenshot below shows the **Entities** tab **graph** view for an Insight.
+
+![related-entity-graph.png](/img/cse/related-entity-graph.jpg)
+
+By default, this view shows the same entities that are displayed on the list view. However, the system will look for additional relationships outside of the Insight during the detection window to aid in deeper investigation.
+
+To switch between the list and graph view, click the chooser in the upper-right corner of the panel **(1)**.
+
+The graph view has several controls **(2)**:
+
+* A **key** that explains how to read the graph
+* **Zoom** controls (you can also use your mouse wheel)
+* A **screen size** control, which toggles between the center pane view and a full browser window view
+* A **reset** control, which resets the view to the original default
+* A link to **help**
+* A **filter** control, which enables you to view only specific Entity types in the graph
+* A **time frame** control, which controls what time frame to use when searching for and viewing relationships outside of the Insight
+
+Each node in the graph represents a single Entity and will include an icon representing the Entity type and the value (name). The primary Entity for this Insight will be larger and centered by default **(3)**. Entities that are related to this Insight will have an Insight icon on their upper-left edge **(4)**. 
+
+When you select an Entity, it will be highlighted in blue **(5)** and the Entity details pane will appear on the right.
+
+As on the list view, the Involved Entities will be connected with dashed lines **(6)** and Entities with detected relationships will be connected with solid lines **(7)**. 
+
+If you hover over an Entity, it and all connections to it will be highlighted in blue **(8)** and if its value is not fully visible by default, the full value will be displayed.
+
+Any Entity with an Indicator will have an additional icon in the upper right **(9)** and if the Indicator is Malicious or Suspicious, the Entity will be highlighted in red or yellow accordingly.
+
+Finally, if CSE has detected additional relationships *outside* of the Insight during the selected time frame, an expand/contract control **(10)** will appear on the Entity. Clicking on that control will reveal (or hide) those additional relationships. 
 
 #### Entity details in the right pane
 
-When you select an Entity in the center pane, the right pane displays details about that Entity. The information displayed depends on what type of Entity is selected (username, hostname, IP address, MAC address, or custom) and can include:
+When you select an Entity on the page, the right pane displays details about that Entity. The information displayed depends on what type of Entity is selected and can include:
 
-* A link to the Entity’s details page.
-* [Entity Criticality](/docs/cse/records-signals-entities-insights/entity-criticality.md), if it is set to something other than the default.
+* A Threat indicator (if any)
+* A link to the Entity’s details page
+* Geographic location
+* Suppression Status
+* Tags
+* [Entity Criticality](/docs/cse/records-signals-entities-insights/entity-criticality.md), if it is set to something other than the default
 * Metadata such as geographic location, Inventory information, the [Network Blocks](/docs/cse/administration/create-use-network-blocks.md) it falls within, as applicable, and so on.
-* A Signal graph that shows when the Signals were created on the horizontal axis (which is at most 14 days—the detection window), the severity of each Signal on the vertical axis, and the Signal type based on the icon/color of each point.
+* A Signal graph if the Entity was the primary Entity in any Signals during the detection window (time/date is the horizontal axis and severity of each Signal is the vertical axis; the icon/color for each point depends on the Signal type)
 * Lists of the recent Signals and Insights the Entity has been associated with, and links to each object’s details page.
 
 #### Accessing related Entities using the API
 
-You can access related Entity information using the CSE API. For more information, see [CSE APIs](/docs/cse/administration/cse-apis.md).
+You can access related Entity information using the CSE API. For more information, see [CSE APIs](/docs/cse/administration/cse-apis).
 
-
-### Signal list area 
-
-Below the Signal timeline, you’ll see a list of Signals. By default, only attached Signals are displayed.  
-
-![signal-list-area.png](/img/cse/signal-list-area.png)
-
-If you click the **Show Related** checkbox, the page updates and also displays any Related Signals or Related Insights
-
-* A *Related Signal* is a Signal that isn’t part of the current Insight (it’s not attached),  but fired on the same Entity as the current Insight’s attached Signals within 7 days of the current Insight’s attached Signals. 
-* A *Related Insight* is an Insight that a Related Signal is attached to.
-
-Here is an example of what a Related Signal and Related Insight look like in the Signal list. Note that, to distinguish between Signals that are attached as opposed to related, an Attached Signal has a blue vertical “ornament” on the left side of the row. A Related Signal does not.
-
-![related-signal.png](/img/cse/related-signal.png)  
- 

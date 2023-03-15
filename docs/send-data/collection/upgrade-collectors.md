@@ -20,7 +20,7 @@ When one or more collectors in your Sumo Logic account are eligible for an u
 ![Upgrade collectors](/img/collector/upgrade-collectors-icon.png)
 
 :::important
-The user interface will show up to 50 Collectors at a time. After upgrading one or more Collectors you can close and reopen the 'Upgrade Collectors' window to display other upgradable Collectors. You may consider conducting upgrades with the [Collector Management API](/docs/api/collector-management#Upgrade-or-Downgrade-Collectors-Using-the-API).
+The user interface will show up to 50 Collectors at a time. After upgrading one or more Collectors you can close and reopen the 'Upgrade Collectors' window to display other upgradable Collectors. You may consider conducting upgrades with the [Collector Management API](/docs/api/collector-management/upgrade-downgrade-collectors).
 :::
 
 ### Upgrade collectors to the latest build

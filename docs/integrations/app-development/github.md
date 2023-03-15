@@ -124,8 +124,9 @@ In this step, you configure a Hosted Collector to receive Webhook Events from Gi
 2. Configure an[ HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) on the Hosted Collector.
     * For Source Category, enter any string to tag the output collected from this Source, such as **GitHub**.
     * Click **+Add Field** and provide the following:
-        * **Field Name.** `_convertHeadersToFields`
-        * **Value.** true
+        * **Field Name**. `_convertHeadersToFields`
+        * **Value**. `true`
+    * Expand **Advanced Options for Logs (Optional)** section, then **uncheck (disable)** option, then **Extract timestamp information from log file entries** in **Timestamp Parsing** 
     * Click **Save** and make note of the HTTP address for the Source. You will supply it when you configure the GitHub Webhook in the next section.<br/><img src={useBaseUrl('img/integrations/app-development/Field_GitHub.png')} alt="Field_GitHub" />
 
 ### Configure a GitHub Webhook
