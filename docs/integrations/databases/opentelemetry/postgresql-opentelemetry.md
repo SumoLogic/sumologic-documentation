@@ -58,7 +58,7 @@ Configure logging in PostgreSQL
 ```
 5.  Save the `postgresql.conf` file and restart the postgresql server: `sudo  service postgresql restart`
 
-## Installing the App for PostgreSQL
+## Collecting Logs, Metrics & installing App for Postgresql
 
 
 :::note
