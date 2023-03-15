@@ -49,7 +49,6 @@ Click anywhere on the table in the **Messages** or **Aggregates** tab and you ca
 ## Pages
 
 If you have many pages of results, you have several options for navigation:
-
 * Scroll down to see more results. The header is static. 
 * Type a page number into the page number field and hit enter.
 * For the **Messages** tab only, click into a block in the histogram to jump to the page containing the first message from that block. In the default sort order, the message is the most recent message from the block. In a reverse sort order, clicking into the histogram takes you to the page containing the oldest message from that block.
