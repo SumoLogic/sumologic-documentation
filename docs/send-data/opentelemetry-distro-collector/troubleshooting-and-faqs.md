@@ -9,6 +9,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This document contains common troubleshooting scenarios and frequently asked questions about Sumo Logic Open Telemetry Collector from our customers and field teams (SE, TAM, Support Engineers).
 
+<details><summary>Troubleshooting: Sumo Logic Connection Issues</summary>
+
 ## Collector fails to connect to Sumo Logic
 
 ### Question
@@ -94,7 +96,13 @@ On MacOS, the Collector stops sending data after some time ?
 
 Because the Collector is connected to the terminal, it will stop reporting data when you log off, close the terminal, or put the computer to sleep.
 
-## App Installation Troubleshooting
+</details>
+
+<details>
+
+<summary>Troubleshooting App Installation</summary>
+
+## Installing Apps Errors
 
 ### Question
 
@@ -104,6 +112,12 @@ When installing an App I get the error “Could not receive data” even though 
 
 If you are not using the **Sumo Logic Open Telemetry collector**, and using the **Upstream Open Telemetry collector**, and have a custom `config.yaml` file to collect data, then you might see this error because Sumo Logic expects specific tags on the data, which the Sumo Logic distribution for Open Telemetry Collector creates by default.
 
+</details>
+
+
+<details>
+
+<summary>Sumo Logic Connection: Answers to Common Questions</summary>
 
 ## Frequently Asked Questions
 
@@ -169,10 +183,6 @@ OpenTelemetry Collector might work on other OS platforms and versions but those 
 
 ### Question
 
-What to do if MacOS restart command doesn’t work (following error)?
-
-### Question
-
 What to do if the MacOS restart command doesn’t work?
 
 ### Answer
@@ -191,7 +201,7 @@ For example:
 
 ### Question
 
-I am seeing some errors related to Sumo Logic OpenTelemetry Collector stating that `Unable to collect from a file`. Does this mean my collector is not collecting any data? <br/> <img src={useBaseUrl('img/send-data/error-faq.png')} alt="error-faq.png" width="250" />
+I am seeing some errors related to Sumo Logic OpenTelemetry Collector stating that `Unable to collect from a file`. Does this mean my collector is not collecting any data? <br/> <img src={useBaseUrl('img/send-data/error-faq.png')} alt="error-faq.png" width="750" />
 
 ### Answer
 
@@ -199,7 +209,7 @@ In this case, this means that the collector couldn’t find the file you wanted 
 
 ### Question
 
-I am seeing some errors related to Sumo Logic OpenTelemetry Collector stating that `Unable to get a heartbeat`. Does this mean my collector is not collecting any data? <br/> <img src={useBaseUrl('img/send-data/error2-faq.png')} alt="error2-faq.png" width="250" />
+I am seeing some errors related to Sumo Logic OpenTelemetry Collector stating that `Unable to get a heartbeat`. Does this mean my collector is not collecting any data? <br/> <img src={useBaseUrl('img/send-data/error2-faq.png')} alt="error2-faq.png" width="750" />
 
 ### Answer
 
@@ -207,7 +217,7 @@ This means the collector is having trouble connecting to the Sumo Logic backend.
 
 ### Question
 
-Why am I receiving an error when collecting data from the Sumo Logic OpenTelemetry Collector? It is unable to read Process Data (PID, process name, and so on)? <br/> <img src={useBaseUrl('img/send-data/error2-faq.png')} alt="error2-faq.png" width="550" />
+Why am I receiving an error when collecting data from the Sumo Logic OpenTelemetry Collector? It is unable to read Process Data (PID, process name, and so on)? <br/> <img src={useBaseUrl('img/send-data/error2-faq.png')} alt="error2-faq.png" width="750" />
 
 ### Answer
 
@@ -284,3 +294,5 @@ Unable to install the OpenTelemetry agent using the `curl` command on Linux. Get
 This typically can happen when there is a slowdown on the network, or due to some issues on Github the side. Add the following parameter to the installation command. It will increase the timeout from default 180 seconds to 300 seconds. You can adjust the value to your needs.
 
 `--download-timeout 300`
+
+</details>
