@@ -7,10 +7,10 @@ description: This document provides information on how to use histograms to calc
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Histograms are data structures that aggregate potentially unlimited numbers of measurements. They allow for the calculation of percentiles with a certain accuracy (>=95% in this case), as well as other aggregations such as avg, sum, count, min, and max. his means you can quickly and easily analyze large amounts of data and get insights into its distribution.
+Histograms are data structures that aggregate potentially unlimited numbers of measurements. They allow for the calculation of percentiles with a certain accuracy (>=95% in this case), as well as other aggregations such as avg, sum, count, min, and max. This means you can quickly and easily analyze large amounts of data and get insights into its distribution.
 
 :::note
-This feature is only available for APM and RUM metrics.
+This feature is only available for [APM](/docs/apm/traces/tracing-dashboards/) and [RUM](/docs/apm/real-user-monitoring/dashboards/) metrics.
 :::
 
 Some of the reasons to use Histograms:
@@ -56,7 +56,7 @@ When querying histogram data in Sumo Logic, you can use the `metric.type=exponen
 
 As a result, it is not possible to access both histogram and non-histogram data in a single query.
 
-Currently, the only metric types that generate histograms in Sumo Logic are APM and RUM metrics used in [Application Service APM/Tracing Dashboards](https://help.sumologic.com/docs/apm/traces/tracing-dashboards/) and [RUM Dashboards](https://help.sumologic.com/docs/apm/real-user-monitoring/dashboards/). Specifically, these are metrics of the `_contenttype=metricfromtrace` and `_contenttype=rummetricfromtrace` types.
+Currently, the only metric types that generate histograms in Sumo Logic are APM and RUM metrics used in [Application Service APM/Tracing Dashboards](/docs/apm/traces/tracing-dashboards/) and [RUM Dashboards](/docs/apm/real-user-monitoring/dashboards/). Specifically, these are metrics of the `_contenttype=metricfromtrace` and `_contenttype=rummetricfromtrace` types.
 
 ## Calculating Percentiles
 
