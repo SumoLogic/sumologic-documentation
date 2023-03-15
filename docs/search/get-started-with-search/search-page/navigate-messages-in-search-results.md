@@ -19,7 +19,7 @@ The **Signatures** tab is shown when using [LogReduce](/docs/search/logreduce).
 The table columns can be modified by the following:
 
 * **Move a Column.** Hold click and drag a column from the header row to a different location in the table.
-* **Change column width.** Hold click and drag the vertical line in between the columns to adjust the width. <br/>![resize column.png](/img/search/get-started-search/search-page/resize-column.png)
+* **Change column width**. To adjust the column width, click and hold the vertical line separating the columns, and drag it left or right. <br/>![resize column.png](/img/search/get-started-search/search-page/resize-column.png)
 * **Change column height.** Double click the vertical line to the right of a column name to automatically resize the width to fit the content.
 * **Pin columns**: You can pin columns in the table, either in the **Messages** tab or the **Aggregates** tab. When a column is pinned you can scroll to the right and still view it. To pin a column, hover over the column header, and click the pin icon that appears.
 
