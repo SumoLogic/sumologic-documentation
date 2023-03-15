@@ -34,7 +34,7 @@ By default, the **Messages** tab shows the collapsed version of messages with ea
 
 ![expand message option.png](/img/search/get-started-search/search-page/expand-message-option.png)
 
-Click  **Expand/Collapse** on the upper right side of the **Messages** table and select  **Collapse All Rows**  to switch back the initial collapsed view.
+Click  **Expand/Collapse** on the upper right side of the **Messages** table and select  **Collapse All Rows**  to switch back to the initial collapsed view.
 
 ## Copy Message
 
