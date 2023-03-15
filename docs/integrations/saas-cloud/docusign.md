@@ -14,7 +14,6 @@ The DocuSign App for Sumo Logic helps you monitor and secure your DocuSign accou
 The app leverages the DocuSign Monitor API to collect and analyze data from your DocuSign account, including document access and modification, user activity, authentication activity, and system events. You can set up custom alerts for critical events and user activity, and receive notifications in real-time when potential security threats are detected.
 
 With the DocuSign App, you can:
-
 * Monitor who accesses and changes important documents and detect any instances of unauthorized access or modifications to sensitive documents.
 * Monitor user actions to identify any suspicious behavior, including attempts to access unauthorized data or engage in malicious activity.
 * Monitor login activity to identify any abnormal or suspicious login attempts or unusual patterns of activity.
