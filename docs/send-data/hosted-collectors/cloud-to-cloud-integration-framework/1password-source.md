@@ -349,8 +349,8 @@ After configuring your Source, you should check the status of the source in the 
 
 ![troubleshooting.jpg](/img/send-data/1password-troubleshooting.jpg)
 
-**Error Code**:  `401` <br />
-**Error Details**:  `{"Error":{"Message":"Unauthorized"}}`
+**Error Code**: `401` <br />
+**Error Details**: `{"Error":{"Message":"Unauthorized"}}`
 
 To resolve these errors:
 - Make sure the Base URL matches your domain.
