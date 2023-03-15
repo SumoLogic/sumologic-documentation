@@ -63,7 +63,7 @@ CSE provides the following normalized intrusion rules:
 
 **Requirements for Intrusion Signature rules:**
 
-The rules that detect intrusion signatures from internal IP addresses rely upon the [normalizedSeverity](../schema/schema-attributes.md) attribute in Records being mapped as follows:
+The rules that detect intrusion signatures from internal IP addresses rely upon the [normalizedSeverity](/docs/cse/schema/schema-attributes) attribute in Records being mapped as follows:
 
 * critical = 10
 * high = 9

@@ -95,9 +95,9 @@ The URL and supported payload are different based on the version of the PagerDut
 	}
 
   ```
-   * You can update the `details` section, if you want to customize the PagerDuty recovery notification.
+   * You can update the `custom_details` section, if you want to customize the PagerDuty recovery notification.
      :::note
-     Do not update the `service_key`, `event_type`, and `incident_key` fields, otherwise recovery notifications will not be generated.
+     Do not update the `routing_key`, `event_action`, and `dedup_key` fields, otherwise recovery notifications will not be generated.
      :::
 1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
 1. Click **Save**.
