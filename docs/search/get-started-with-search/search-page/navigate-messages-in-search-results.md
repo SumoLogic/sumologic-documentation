@@ -14,7 +14,7 @@ The **Signatures** tab is shown when using [LogReduce](/docs/search/logreduce).
 
 ![Signatures tab.png](/img/search/get-started-search/search-page/signatures-tab.png)
 
-## Column Adjustments
+## Column adjustments
 
 The table columns can be modified by the following:
 
