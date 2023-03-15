@@ -199,7 +199,7 @@ The panels will begin to fill automatically. It's worth noting that each panel g
 
 **DocuSign - Overview** dashboard gives you information about the records of recently added users and administrators. It gives insights regarding total alerts fired, new templates created, envelopes signed, documents downloaded, and new groups created in the organization. It also provides geo-location and trends of all the events. The App visualizes the distribution of all the operations happening in the organization. 
  
-In addition to the above, the App summarizes the most frequent events, alerts, sources, activities from high-risk countries, and document modifications. Overall, this dashboard offers comprehensive information about the team's activity and facilitates efficient monitoring of various important events.<br/><img src={useBaseUrl('img/integrations/saas-cloud/docusign-overview.png')} alt="docusign-overview.png" width="900"/>
+In addition to the above, the App summarizes the most frequent events, alerts, sources, activities from high-risk countries, and document modifications. Overall, this dashboard offers comprehensive information about the team's activity and facilitates efficient monitoring of various important events.<br/><img src={useBaseUrl('img/integrations/saas-cloud/docusign-overview.png')} alt="docusign-overview.png" width="800"/>
 
 ### DocuSign - Alerts Dashboard
 
