@@ -22,7 +22,7 @@ Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which
 - **`db.cluster.name`** - User configured. Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - **`db.system`** - Has fixed value of **cassandra**.
 - **`deployment.environment`** - User configured. Through this Cassandra cluster is identified by the environment where it resides. For example: dev, prod or qa.
-- **`sumo.datasource`** - has fixed value of **cassandra**.
+- **`sumo.datasource`** - Has fixed value of **cassandra**.
 
 ## Prerequisite
 
