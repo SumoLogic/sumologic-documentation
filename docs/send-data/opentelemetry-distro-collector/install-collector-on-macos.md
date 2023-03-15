@@ -5,17 +5,17 @@ sidebar_label: Install Collector on MacOS
 description: Learn how to install Collector
 ---
 
-Follow the steps in this topic to install or uninstall an OpenTelemetry Collector on MacOS. See [OpenTelemetry Collector](/docs/send-data/opentelemetry-distro-collector) for information on other OSs.
+Follow the steps in this topic to install or uninstall an OpenTelemetry Collector on macOS. See [OpenTelemetry Collector](/docs/send-data/opentelemetry-distro-collector) for information on other operating systems.
 
 ## System Requirements​
 
 TODO - add some info about system and hardware
 
-OpenTelemetry Collector is supported both on amd64 and arm64 architectures.
+The Sumo Logic OpenTelemetry Collector is supported on both amd64 and arm64 architectures.
 
 ## Install
 
-Install the OpenTelemetry Collector using either of the following methods:
+You can install our OpenTelemetry Collector using either of the following methods:
 
 * [Install script](#install-script)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
@@ -24,7 +24,7 @@ Install the OpenTelemetry Collector using either of the following methods:
 
 #### Get the installation token
 
-Get your [installation token](https://help.sumologic.com/docs/manage/security/installation-tokens) if you don't have it already and assign it to environment variable:
+Get your [installation token](https://help.sumologic.com/docs/manage/security/installation-tokens) if you don't have it already and assign it to an environment variable:
 
 ```bash
 export SUMOLOGIC_INSTALLATION_TOKEN=<TOKEN>
@@ -49,7 +49,7 @@ You can run the script in two ways:
 
 The `-E` argument to `sudo` is needed to preserve the `SUMOLOGIC_INSTALLATION_TOKEN` environment variable in `sudo` session.
 
-The `-d` argument to the script is needed on MacOS. It will skip Systemd installation, which is not supported on MacOS.
+The `-d` argument to the script is needed on macOS. It will skip Systemd installation, which is not supported on macOS.
 
 It is going to perform the following operations:
 
@@ -190,6 +190,6 @@ and [contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib/
 
 List of breaking changes specific to Sumo Logic distribution of OpenTelemetry Collector can be found [here](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/upgrading.md).
 
-## Troubleshooting specific to MacOS
+## Troubleshooting specific to macOS
 
 TODO
