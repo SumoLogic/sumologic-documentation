@@ -41,8 +41,7 @@ The **API security token** is used to authenticate with CrowdStrike FDR API. Aft
 To get the **CrowdStrike API Client**, follow the steps below:
 1. Access the [CrowdStrike FDR Platform](https://falcon.crowdstrike.com/login/).
 1. Log in using your email address and password. After you've completed the two-factor authentication, you'll be directed to the application dashboard.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-login-screen.png')} alt="crowdstrike-fdr-host-inventory-login-screen.png" width="600" />
-1. From the CrowdStrike FDR Console, on the left-hand panel of the dashboard, locate the Menu option and click on it.<br/>
-<img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-open-menu.png')} alt="<crowdstrike-fdr-host-inventory-open-menu.png>" width="600" />
+1. From the CrowdStrike FDR Console, on the left-hand panel of the dashboard, locate the Menu option and click on it.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-open-menu.png')} alt="<crowdstrike-fdr-host-inventory-open-menu.png>" width="600" />
 1. Select the **Support and resources** option from the menu.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-support-and-resources.png')} alt="<crowdstrike-fdr-host-inventory-support-and-resources.png>" width="600" />
 1. Navigate to and click on **API clients and keys**. You can then view existing clients or add new API clients from there.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-api-key-client.png')} alt="<crowdstrike-fdr-host-inventory-api-key-client.png>" width="600" />
 1. Click **Add new API client**. You will be prompted to give a descriptive name and select the appropriate API scopes.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-new-client.png')} alt="<crowdstrike-fdr-host-inventory-new-client.png>" width="600" />
