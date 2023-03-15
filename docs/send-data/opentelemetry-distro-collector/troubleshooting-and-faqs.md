@@ -70,7 +70,7 @@ I updated/added a new config file on the Sumo Otel Collector, and it is not star
 
 ### Answer
 
-Most likely the issue is because the `config.YAML` file is misformed. Make sure that it is a valid YAML with appropriate indentation.
+Most likely the issue is because the `config.YAML` file is malformed. Make sure that it is a valid YAML with appropriate indentation.
 
 ### Question
 
