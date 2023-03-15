@@ -167,7 +167,7 @@ To use a variable in a logs query, do the following:
 
 Wrap string literal variables in quotes `"{\<variable_nam\>}}"`. If your values are text you need to wrap the variable in quotes.
 
-When including** **the option to select all values (\*), use the [matches](/docs/search/search-query-language/search-operators/matches) operator. Otherwise `*` will not do an "all" filter, it will filter against the literal asterisk "\*" string.
+When including the option to select all values, use the [matches](/docs/search/search-query-language/search-operators/matches) operator. Otherwise `*` will not do an "all" filter, it will filter against the literal asterisk "\*" string.
 
 For example,
 

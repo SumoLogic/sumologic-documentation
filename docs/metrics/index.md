@@ -42,7 +42,7 @@ Metrics are an effective tool for monitoring, troubleshooting, and identifying t
 </div>
 <div className="box smallbox4 card">
   <div className="container">
-  <a href="/docs/metrics/manage-metric-volume/manage-metric-volume"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Managing Metrics Volume</h4></a>
+  <a href="/docs/metrics/manage-metric-volume"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Managing Metrics Volume</h4></a>
   <p>Metric ingestion and storage, metric data limits, and metrics throttling.</p>
   </div>
 </div>
