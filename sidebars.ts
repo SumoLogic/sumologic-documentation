@@ -1906,6 +1906,17 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/hosts-operating-systems/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry',
+              'integrations/hosts-operating-systems/opentelemetry/macos-opentelemetry',
+              'integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry',
+            ],
+          },
           'integrations/hosts-operating-systems/host-metrics',
           'integrations/hosts-operating-systems/host-process-metrics',
           'integrations/hosts-operating-systems/linux',
