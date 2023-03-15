@@ -51,6 +51,7 @@ Following are the tags which will be created as part of MySql App install if not
 
 ## Prerequisites
 
+**For metric collection** 
 For metric collection [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlreceiver#prerequisites) are the prerequisites.
 
 For log collection 
