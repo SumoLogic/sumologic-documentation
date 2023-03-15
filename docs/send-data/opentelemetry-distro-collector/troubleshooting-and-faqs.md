@@ -62,7 +62,7 @@ The install script is not working for me. How can I install the Sumo Logic Colle
 
 ### Answer
 
-To install the script on your OS, refer to the [Installation Script documenation](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/installation.md#manual-installation). You will need to manage configuration files on your own.
+To install the script on your OS, refer to the [Installation Script documentation](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/installation.md#manual-installation). You will need to manage configuration files on your own.
 
 ### Question
 
