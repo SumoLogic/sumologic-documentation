@@ -46,7 +46,7 @@ Following are the tags which will be created as part of MySql App install if not
 
 - `db.cluster.name` - User configured. Enter a name to identify this MySql cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - `db.system` - Has fixed value of **mysql**
-- `sumo.datasource` - has fixed value of **mysql**
+- `sumo.datasource` - Has fixed value of **mysql**
 - `db.node.name` - Has the value of host name of the machine which is being monitored
 
 ## Prerequisites
