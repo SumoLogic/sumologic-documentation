@@ -19,7 +19,7 @@ This App supports Postgresql  version 9.6+.
 
 We use the OpenTelemetry collector for Postgresql metric collection and for collecting Postgresql logs.
 
-The diagram below illustrates the components of the PostgreSQL collection for each database server. OpenTelemetry collector runs on the same host as PostgreSQL, and uses the [Postgresql receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/postgresqlreceiver) to obtain MySQL metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. MySQL logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+The diagram below illustrates the components of the PostgreSQL collection for each database server. OpenTelemetry collector runs on the same host as PostgreSQL, and uses the [Postgresql receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/postgresqlreceiver) to obtain Postgresql metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. MySQL logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Schematics.png')} alt="Schematics" />
 
