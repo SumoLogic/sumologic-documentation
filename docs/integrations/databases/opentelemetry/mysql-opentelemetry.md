@@ -205,7 +205,7 @@ db.system=mysql db.cluster.name={{db.cluster.name}} "User@Host"  "Query_time" 
 
 This sample query is from the panel - FSync Op Count
 ```sql
-deployment.environment=* metric=mysql.operations operation=fsyncs db_cluster=* | sum
+sumo.datasource=mysql deployment.environment=* db.cluster.name=* db.node.name=* metric=mysql.operations operation=fsyncs  | sum
 ```
 
 ## Viewing MySQL Dashboards
