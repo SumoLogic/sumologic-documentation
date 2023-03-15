@@ -26,7 +26,7 @@ CrowdStrike FDR Host Inventory retrieves device information every 24 hours. The 
 Metadata fields will be set. See **Metadata Fields** table below:
 
 | Fields     |    Value                    |
-| :-------    |  :------------------------: |
+| :-------    |  :------------------------ |
 | `_siemVendor`	| CrowdStrike |
 | `_siemProduct` | FDR Host Inventory |
 | `_siemDataType`| Inventory  |
