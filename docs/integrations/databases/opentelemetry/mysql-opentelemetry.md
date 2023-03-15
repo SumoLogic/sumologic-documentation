@@ -54,7 +54,7 @@ Following are the tags which will be created as part of MySql App install if not
 **For metric collection** 
 For metric collection [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlreceiver#prerequisites) are the prerequisites.
 
-For log collection 
+**For log collection** 
 
 Configure MySQL to log to a local file(s). MySQL logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector. To configure the MySQL log file(s), locate your local my.cnf configuration file in the database directory.
 
