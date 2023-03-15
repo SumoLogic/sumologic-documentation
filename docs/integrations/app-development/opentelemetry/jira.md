@@ -19,7 +19,7 @@ Jira logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https:
 
 ## Fields creation in Sumo Logic for Jira
 
-Following are the Tags which will be created as part of Jira App install if not already present. 
+Following are the tags which will be created as part of the Jira App install if not already present. 
 
 `sumo.datasource` - Has fixed value of **jira**.
 
