@@ -111,6 +111,8 @@ Below is the required input:
 -   **Slow Transaction file log path** - enter the path to the slow log file for your mysql instance.
 -   **Tags** : `db.cluster.name`
 
+You can add any custom fields which you want to tag along with the data ingested in sumo.
+
 Click on the **Download YAML File** button to get the yaml file.
 
 For linux platform - Click on **Download Environment Variables File** button to get the file with the password which is supposed to be set as environment variable.
