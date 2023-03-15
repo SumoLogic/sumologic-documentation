@@ -42,7 +42,7 @@ The MySQL app dashboards dependent on error logs are based on the message types 
 
 ## Fields creation in Sumo Logic for Mysql
 
-Following are the tags which will be created as part of MySql App install if not already present. 
+Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of MySql App install if not already present. 
 
 - `db.cluster.name` - User configured. Enter a name to identify this MySql cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - `db.system` - Has fixed value of **mysql**
