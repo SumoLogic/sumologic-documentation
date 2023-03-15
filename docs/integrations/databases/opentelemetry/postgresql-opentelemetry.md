@@ -84,6 +84,8 @@ Below is the required input:
 -   **UserName** - enter the PostgreSQL username.
 -   **Password** - password for the user name which is being used for scrapping the PostgreSQL metrics.
 
+You can add any custom fields which you want to tag along with the data ingested in sumo.
+
 Click on the **Download YAML File** button to get the yaml file.
 
 For linux platform - Click on **Download Environment Variables File** button to get the file with the password which is supposed to be set as environment variable.
