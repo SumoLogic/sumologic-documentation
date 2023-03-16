@@ -129,7 +129,8 @@ Restart-Service -Name OtelcolSumo
 </TabItem>
 </Tabs>
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine. This will install the app to your Sumo Logic Org. 
+After successful execution of the above command, Sumo will start receiving the data from your host machine. 
+Click **Next**. This will install the app to your Sumo Logic Org. 
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
 
