@@ -44,7 +44,7 @@ Following is the query from Errors panel of Memcached app's overview Dashboard :
 Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of Memcached App install if not already present.
 
 - **`db.cluster.name`** - User configured. Enter a name to identify this Memcache cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- **`db.system`** - Has a fixed value of memcached
+- **`db.system`** - Has a fixed value of **memcached**
 - **`deployment.environment`** - User configured. This is the deployment environment where the Memcache cluster resides. For example: dev, prod or qa.
 - **`sumo.datasource`** - Has a fixed value of memcached
 
