@@ -83,7 +83,7 @@ In this step we will be configuring the yaml file required for Mysql collection.
 Below is the required input:
 
 -   **Error Log Path** - enter the path of the error log file for your PostgreSQL instance.
--   **Endpoint** - enter the url of the server which needs to be monitored.
+-   **Endpoint** - enter the url of the server which needs to be monitored. Default endpoint is `localhost:5432`
 -   **UserName** - enter the PostgreSQL username.
 -   **Password** - password for the user name which is being used for scrapping the PostgreSQL metrics.
 
