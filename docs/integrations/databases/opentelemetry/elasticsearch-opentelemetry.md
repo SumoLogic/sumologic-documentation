@@ -172,7 +172,7 @@ Log query from  the panel : Errors
 
 Metric query from the panel : JVM Memory Used (MB)
 ```sql
- deployment.environment=* metric=jvm.memory.heap.used  db.cluster.name=* elasticsearch.node.name=* | sum by db.cluster.name, elasticsearch.node.name
+ deployment.environment=* metric=jvm.memory.heap.used  db.cluster.name=* db.node.name=* | sum by db.cluster.name, db.node.name
 ```
 
 ## Viewing Elasticsearch Dashboards
