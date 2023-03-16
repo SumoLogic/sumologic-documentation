@@ -71,7 +71,7 @@ This will generate a command which can be executed in the machine which needs to
 
 In this step the user needs to provide the path to the mongo db log file configured as part of above steps. Typically the logs are located at the location: `/var/log/mongodb/mongodb.log`.
 
-Any additional custom tags can be added in this step. These tags will be tagged along with the data ingested.
+You can add any custom fields which you want to tag along with the data ingested in sumo.
 
 Click on the **Download YAML File** button to get the yaml file.
 
