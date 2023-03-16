@@ -281,7 +281,7 @@ We recommend to keep install token in environmental variable for Systemd install
 
 #### Running Binary Manually
 
-If your system does not support Systemd, or you don't want to crate a service, you can run collector manually.
+If your system does not support Systemd, or you don't want to create a service, you can run Collector manually.
 
 ```bash
 sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
