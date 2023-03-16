@@ -75,7 +75,7 @@ Below are the input required:
 -   **Elasticsearch cluster log path** : By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`.
 -   **Tags** : `db.cluster.name`.
 
-You can include additional metadata which you want to be tagged along with the data ingested to Sumo Logic.
+You can add any custom fields which you want to tag along with the data ingested in sumo.
 
 Click on the **Download YAML File** button to get the yaml file.
 
