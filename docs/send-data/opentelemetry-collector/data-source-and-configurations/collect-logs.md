@@ -54,7 +54,7 @@ The `log.file.path_resolved` attribute should be moved to resource and we use [G
 The remaining processors in pipeline are from `sumologic.yaml` file and should be applied for better performance of collector and use of Sumo Logic platform.
 
 :::Note
-Receiver (`filelog/custom_files`) and pipeline (`logs/custom_files:`) names should be unique across all configuration files to avoid conflicts and unexpected bahavior
+Receiver (`filelog/custom_files`) and pipeline (`logs/custom_files:`) names should be unique across all configuration files to avoid conflicts and unexpected behavior.
 :::
 
 ### Keeping track of position in files
