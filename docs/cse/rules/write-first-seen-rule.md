@@ -28,7 +28,7 @@ First Seen rules allow you to generate a Signal when behavior by an Entity (such
 * High severity EDR alert seen for the first time
 * MFA acceptance from first seen device
 
-A First Seen rule is different from other CSE rule types in that you don’t define the criteria for firing a Signal. Instead, the rule expression in a First Seen rule is simply a filter condition that defines what incoming Records the rule will apply to. For each First Seen rule, CSE automatically creates a baseline model of normal behavior evidenced by Records that match the Rule Expression. After the baseline period is completed, when an incoming Record includes matching activity not seen during the baseline period, the rule creates a Signal.
+A First Seen rule is different from other CSE rule types in that you don’t define the criteria for firing a Signal. Instead, the rule expression in a First Seen rule is simply a filter condition that defines what incoming Records the rule will apply to. For each First Seen rule, CSE automatically creates a baseline model of normal behavior evidenced by Records that match the Rule Expression. After the baseline learning period is completed, when an incoming Record includes matching activity not seen during the baseline learning period, the rule creates a Signal.
 
 For example, for the “First time a user logged in from a new geographic location” use case, CSE will build a baseline model of all the geolocations from where a logon event is seen for the Entity (user). Once the baselining period is complete, CSE will create a Signal for every new geolocation detected and incrementally add to the baseline.
 
@@ -53,10 +53,10 @@ The settings in the **If triggered** section determine what Records the rule wil
    :::
 1. **for the following Entity(ies)**. If you selected **per Entity** above, you’ll be prompted to select one or Record fields for which you want baselines built.
 1. Set the baseline and retention settings:
-   1. **Data Retention**. The number of days after which the data points in the baseline will expire (be dropped from the baseline). The default is 90 days. You can decrease this period, but not increase it.
-   1. **Baseline Period**. The minimum amount of time for which data points should be collected before firing a Signal. The default is 30 days.
+   1. **Baseline Retention Period (days)**. The number of days after which the data points in the baseline will expire (be dropped from the baseline). The default is 90 days. You can decrease this period, but not increase it.
+   1. **Baseline Learning Period (days)**. The minimum amount of time for which data points should be collected before firing a Signal. The default is 30 days.
    :::note
-   The **Baseline Period** must be shorter than the **Data Retention** period. Also be aware that short baseline periods can potentially generate false positive Signals.
+   The **Baseline Learning Period** must be shorter than the **Baseline Retention Period**. Also be aware that short baseline learning periods can potentially generate false positive Signals.
    :::
 
 ### Then create a Signal
@@ -81,12 +81,12 @@ with **has a new value for the field(s)** set to `srcDeviceIP_countryName`
 
 ### With a global baseline
 
-With a global baseline, and the default baseline period of 30 days, the rule will baseline all geolocations that users are logging in for a period of 30 days. After the 30 day baseline is completed, if a new geolocation is detected, a Signal will be created. Then, if a new hire (that wasn’t part of the 30 day baseline) logs in from any geolocation, a Signal
+With a global baseline, and the default baseline learning period of 30 days, the rule will baseline all geolocations that users are logging in for a period of 30 days. After the 30 day baseline is completed, if a new geolocation is detected, a Signal will be created. Then, if a new hire (that wasn’t part of the 30 day baseline) logs in from any geolocation, a Signal
 will be created. As a global baseline, the 30 day baseline is shared across all Entities.
 
 ### With per-Entity baselines
 
-With a per-Entity baseline, and the default baseline period of 30 days, the rule will baseline all geolocations on a per-Entity basis for 30 days. It will generate a Signal when a new geolocation is not part of a user’s historic baseline. On a new hire’s first login, a 30 day baseline will begin building. After the 30 day baseline is created, if that user logs on from a new geolocation, the rule will create a Signal.
+With a per-Entity baseline, and the default baseline learning period of 30 days, the rule will baseline all geolocations on a per-Entity basis for 30 days. It will generate a Signal when a new geolocation is not part of a user’s historic baseline. On a new hire’s first login, a 30 day baseline will begin building. After the 30 day baseline is created, if that user logs on from a new geolocation, the rule will create a Signal.
 
 :::tip
 If you are unsure whether to use a per-Entity or a global baseline, consider your use case. If you’re inclined to select `user_username` in the **Has a new value for the field(s)** prompt, you’re better off creating a global baseline for that behavior. Alternatively, if you want to track a new value for a non-Entity Record field, a per-Entity baseline is appropriate.
