@@ -33,7 +33,7 @@ We are using the following organisation of files within configuration directory:
 By default configuration is loaded in the following order:
 
 - `sumologic.yaml`
-- all configuration files from `conf.d` sorted alphabeticaly
+- all configuration files from `conf.d` sorted alphabetically
 
 :::Note
 Configuration which is loaded later in the order is going to be merged with previous one. Let's consider the following example configuration files:
