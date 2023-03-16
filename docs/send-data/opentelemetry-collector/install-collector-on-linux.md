@@ -404,7 +404,7 @@ sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/lat
 
 :::Note
 You need to restart collector process manually in order to apply changes
-"""
+:::
 
 #### Manual step-by-step installation
 
