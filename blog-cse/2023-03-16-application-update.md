@@ -1,12 +1,9 @@
 ---
 title: March 16, 2023 - Application Update
-hide_table_of_contents: false
 keywords:
-  - sumo logic
-  - service release notes
   - cloud siem
-  - cse
-tags: [cloud siem release notes, application update]
+  - entity timeline
+tags: [application update]
 authors:
   - url: https://help.sumologic.com/release-notes-cse/rss.xml
     image_url: /img/release-notes/rss-orange.png
