@@ -35,7 +35,7 @@ By default configuration is loaded in the following order:
 - `sumologic.yaml`
 - all configuration files from `conf.d` sorted alphabetically
 
-:::Note
+:::note
 Configuration which is loaded later in the order is going to be merged with previous one. Let's consider the following example configuration files:
 
 `conf.d/0-base.yaml`:
