@@ -26,7 +26,7 @@ We are using the following organisation of files within configuration directory:
 └── sumologic.yaml
 ```
 
-- `sumologic.yaml` is provided by Sumo Logic and shouldn't be changed, as it can be overriden during installation/upgrade
+- `sumologic.yaml` is provided by Sumo Logic and shouldn't be changed, as it can be overridden during installation/upgrade
 - `conf.d` is intended to be changed by customers if they need to customize OpenTelemetry Collector behavior
 - `env` is intended to contain environmental variable files
 
