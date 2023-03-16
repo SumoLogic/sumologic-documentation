@@ -28,7 +28,7 @@ Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which
 - **`db.cluster.name`** - User configured. Enter a name to identify this MongoDb cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - **`db.system`** - Has fixed value of **mongodb**.
 - **`deployment.environment`** - User configured. This is the deployment environment where the Mongodb cluster resides. For example: dev, prod or qa.
-- **`sumo.datasource`** - has a fixed value of mongodb.
+- **`sumo.datasource`** - has a fixed value of **mongodb**.
 
 ## Prerequisites
 
