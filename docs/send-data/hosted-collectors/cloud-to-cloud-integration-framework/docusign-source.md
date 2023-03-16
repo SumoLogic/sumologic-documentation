@@ -14,12 +14,12 @@ The DocuSign provides a secure endpoint to receive customer event data from the
 ## Prerequisites
 
 To collect customer event data from the DocuSign Monitor, you must meet the following criteria:
-* Administrator access to an organization: To call the DocuSign Monitor endpoint, you must impersonate a user with administrator access to your organization.
-* Your organization must have access to DocuSign Monitor to call the endpoint.
-* Integration Key: An integration key identifies your integration and links to its configuration values. [Create an integration key](https://developers.docusign.com/platform/configure-app/#how-to-get-an-integration-key)
-* Redirect Uri: The redirect URI is the URI (URL) to which DocuSign will redirect the browser after authentication. [Set a redirect URI](https://developers.docusign.com/platform/configure-app/#how-to-set-a-redirect-uri)
-* RSA Key Pair: [Add the RSA key pair](https://developers.docusign.com/platform/configure-app/#add-the-rsa-key-pair)
-* Application Consent: Refer Step-1 of [Get an access token with JWT Grant](https://developers.docusign.com/platform/auth/jwt/jwt-get-token/)
+* **Administrator access to an organization**. To call the DocuSign Monitor endpoint, you must impersonate a user with administrator access to your organization.
+   * Your organization must have access to DocuSign Monitor to call the endpoint.
+* **Integration Key**. An integration key identifies your integration and links to its configuration values. [Create an integration key](https://developers.docusign.com/platform/configure-app/#how-to-get-an-integration-key)
+* **Redirect Uri**. The redirect URI is the URI (URL) to which DocuSign will redirect the browser after authentication. [Set a redirect URI](https://developers.docusign.com/platform/configure-app/#how-to-set-a-redirect-uri)
+* **RSA Key Pair**. [Add the RSA key pair](https://developers.docusign.com/platform/configure-app/#add-the-rsa-key-pair)
+* **Application Consent**. Refer Step-1 of [Get an access token with JWT Grant](https://developers.docusign.com/platform/auth/jwt/jwt-get-token/)
 
 ## Data sources
 
@@ -27,14 +27,13 @@ The DocuSign API integration retrieves events data every 5 minutes.
 
 ## Configuration
 
-In this configuration, you will set up the DocuSign account and configure it to be authorized and authenticated to use customer event data from DocuSign Monitor API.
-To obtain the DocuSign auth token and customer event data, you will need the following parameters:
+In this configuration, you will set up the DocuSign account and configure it to be authorized and authenticated to use customer event data from DocuSign Monitor API. To obtain the DocuSign auth token and customer event data, you will need the following parameters:
 
 ### User ID
 
 To get the User ID, follow the steps below:
-1. Login to **DocuSign** account
-2. Go to **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="600" />
+1. Log in to **DocuSign** account.
+2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="600" />
 3. Locate and copy **User ID** available under **My Account Information**. <br/> <img src={useBaseUrl('img/send-data/docusign-user-id.png')} alt="<docusign-user-id.png>" width="600" />
 :::note
 You'll need to provide your DocuSign User ID while creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
@@ -43,24 +42,24 @@ You'll need to provide your DocuSign User ID while creating the [DocuSign Cloud-
 ### App
 
 You must first create an app to get integration key and configure RSA Key Pair and Redirect URI. This key is required to get access token which will be used to authenticate DocuSign API. To create an app follow the steps below:
-1. Login to **DocuSign** account
-2. Go to **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="600" />
+1. Log in to your **DocuSign** account.
+2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="600" />
 3. Navigate to **ADD APP AND INTEGRATION KEY**. <br/> <img src={useBaseUrl('img/send-data/docusign-add-app-integration-key.png')} alt="<docusign-add-app-integration-key.png>" width="600" />
 4. Enter value for **App Name** in a dialog box, and click on **CREATE APP**. <br/> <img src={useBaseUrl('img/send-data/docusign-create-app.png')} alt="<docusign-create-app.png>" width="600" />
-5. After app creation, you will be redirected to app configuration page. Copy **Integration Key**. <br/> <img src={useBaseUrl('img/send-data/docusign-integration-key.png')} alt="<docusign-integration-key.png>" width="600" />
+5. After creating your app, you'll be redirected to the app configuration page. Copy **Integration Key**. <br/> <img src={useBaseUrl('img/send-data/docusign-integration-key.png')} alt="<docusign-integration-key.png>" width="600" />
 :::note
-Remember, you will need integration key while requesting [application consent](#app-consent) and creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
+You'll need to provide your integration key while requesting [application consent](#app-consent) and creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
 :::
-7. Click on **GENERATE RSA** under **Service Integration** to create new private and public key pair. <br/> <img src={useBaseUrl('img/send-data/docusign-generate-rsa.png')} alt="<docusign-generate-rsa.png>" width="600" />
-8. Copy **Private Key** from dialog and close the dialog. <br/> <img src={useBaseUrl('img/send-data/docusign-private-key.png')} alt="<docusign-private-key.png>" width="600" />
+6. Click on **GENERATE RSA** under **Service Integration** to create new private and public key pair. <br/> <img src={useBaseUrl('img/send-data/docusign-generate-rsa.png')} alt="<docusign-generate-rsa.png>" width="600" />
+7. Copy **Private Key** from dialog and close the dialog. <br/> <img src={useBaseUrl('img/send-data/docusign-private-key.png')} alt="<docusign-private-key.png>" width="600" />
 :::note
-Remember, you will need RSA private key while creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
+You'll need to provide RSA private key while creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
 :::
-9. Click on **ADD URI** under **Redirect URIs** and enter redirect uri to add new redirect uri. <br/> <img src={useBaseUrl('img/send-data/docusign-redirect-uri.png')} alt="<docusign-redirect-uri.png>" width="600" />
+8. Click on **ADD URI** under **Redirect URIs** and enter redirect uri to add new redirect uri. <br/> <img src={useBaseUrl('img/send-data/docusign-redirect-uri.png')} alt="<docusign-redirect-uri.png>" width="600" />
 :::note
-Remember, you will need redirect uri while requesting [application consent](#app-consent).
+You'll need redirect uri while requesting [application consent](#app-consent).
 :::
-10. Click on **SAVE** to finish new app configuration.
+9. Click **SAVE** to finish new app configuration.
 
 ### App Consent
 
@@ -103,7 +102,7 @@ To configure the DocuSign source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 7. In **DocuSign Environment**, choose the environment of your DocuSign account.
-8. In **User ID**, enter the User ID of your account. See [User ID](#user-id) section to know your User ID.
+8. In **User ID**, enter the User ID of your account. See [User ID](#user-id) section to help find your User ID.
 9. In **Integration Key**, enter the integration key you generated. See step 5 of [App](#app) section.
 10. In **RSA Private Key**, enter the rsa private key you generated. See step 7 of [App](#app) section.
 11. When you are finished configuring the Source, click **Save**.
