@@ -101,7 +101,7 @@ This will generate a command which can be executed in the machine which needs to
 
 In this step we will be configuring the yaml required for IIS Collection.
 
-Path of the different log file configured to capture IIS logs is needed to be given here.
+Path of the different log file configured to capture IIS logs is needed to be given here. Please refer to the "Prerequisite" section of this page.
 You can add any custom fields which you want to tag along with the data ingested in sumo.
 Click on the **Download YAML File** button to get the yaml file.
 
