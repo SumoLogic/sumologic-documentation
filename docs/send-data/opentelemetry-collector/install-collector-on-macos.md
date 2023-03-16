@@ -127,27 +127,74 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 
 ### UI Installation via App Catalog
 
-Go to app catalog
+1. Go to app catalog and select `macOS - OpenTelemetry application`
 
-Install App
+![macOS in app catalog](/static/img/send-data/opentelemetry-collector/app-catalog-mac-os.png)
 
-Select installation token
+1. Select `Add New Collector` and click `Next`
 
-customise your tags
+![set up collector](/static/img/send-data/opentelemetry-collector/app-catalog-macos-set-up-collector.png)
 
-copy command
+1. Select installation token and customise your tags
+
+![add new collector](/static/img/send-data/opentelemetry-collector/app-catalog-macos-add-new-collector.png)
+
+1. Copy command and execute it in your system terminal
+
+![execute command in terminal](/static/img/send-data/opentelemetry-collector/macos-terminal.png)
+
+1. Wait for installation to be completed
+
+![collector successfuly registered](/static/img/send-data/opentelemetry-collector/app-catalog-macos-success-registration.png)
+
+1. Customize source configuration, download it, place it in `/etc/otelcol-sumo/conf.d` and then restart collector manually
+
+![source customisation](/static/img/send-data/opentelemetry-collector/app-catalog-macos-source-creation.png)
+
+1. Wait for finishing the installation
+
+![application installed successfuly](/static/img/send-data/opentelemetry-collector/app-catalog-macos-success-installation.png)
 
 ### Additional settings
 
-TODO
+This section describes common customer customsations:
+
+* [Using Proxy](#using-proxy)
+* [FIPS](#fips)
 
 #### Using Proxy
 
-TODO
+Exporters leverage the HTTP communication and respect the following proxy environment variables:
+
+* `HTTP_PROXY`
+* `HTTPS_PROXY`
+* `NO_PROXY`
+
+You may either export proxy environment variables locally e.g.
+
+```bash
+export NO_PROXY=<ADDRESS>:<PORT>
+export HTTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
+export HTTPS_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
+```
+
+or make them available globally for all users, e.g.
+
+```bash
+tee -a /etc/profile << END
+export NO_PROXY=<ADDRESS>:<PORT>
+export HTTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
+export HTTPS_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
+END
+```
 
 #### FIPS
 
-TODO
+To install FIPS compliant binary, you should add `--fips` switch to installation command, so it will look like the following:
+
+```yaml
+sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | SUMOLOGIC_INSTALLATION_TOKEN="TOKEN" sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default" --fips && sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+```
 
 ## Uninstall
 
@@ -183,11 +230,15 @@ First, you have to upgrade the Collector's version. The way you should do it, de
 
 #### Install script
 
-If you installed the Collector with the install script, you can use it to upgrade the Collector by using `-w` flag:
+Running install script will simply upgrade collector to the latest version:
 
 ```bash
-sudo bash ./install.sh -w -v 0.73.0-sumo-1
+sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y
 ```
+
+:::Note
+You need to restart collector process manually in order to apply changes
+"""
 
 #### Manual step-by-step installation
 
