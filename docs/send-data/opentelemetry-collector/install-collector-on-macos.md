@@ -157,7 +157,7 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 
 ### Additional settings
 
-This section describes common customer customsations:
+This section describes common customer customisations:
 
 * [Using Proxy](#using-proxy)
 * [FIPS](#fips)
