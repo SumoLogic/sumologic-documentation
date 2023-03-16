@@ -63,7 +63,7 @@ In this step we will be configuring the yaml required for Varnish Collection.
 
 Path of the log file configured to capture Varnish logs needs to be given here.
 
-The files are located in `/var/log/varnish/varnishncsa.log` by default.
+The files are located in `/var/log/varnish/varnishncsa.log` by default. For more details please refer "Prerequisite" section of this page.
 You can add any custom fields which you want to tag along with the data ingested in sumo.
 Click on the **Download YAML File** button to get the yaml file.
 
