@@ -89,7 +89,7 @@ In this step we will be configuring the yaml file required for Memcached Collect
 
 The files are typically located in `/var/log/memcached/memcached.log`. If you're using a customized path, check the respective conf file (default location : `/etc/memcached.conf`  ) for this information.
 
-Any additional custom tags can be added in this step. These tags will be tagged along with the data ingested.
+You can add any custom fields which you want to tag along with the data ingested in sumo.
 
 Click on the **Download YAML File** button to get the yaml file.
 
