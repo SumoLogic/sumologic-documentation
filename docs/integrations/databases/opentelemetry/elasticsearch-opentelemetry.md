@@ -34,7 +34,7 @@ This receiver supports Elasticsearch versions 7.9+
 
 If Elasticsearch security features are enabled, you must have either the monitor or manage cluster privilege. See the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/authorization.html) for more information on authorization and [Security privileges](https://www.elastic.co/guide/en/elasticsearch/reference/current/security-privileges.html).
 
-Configure logging in Elasticsearch. Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set loglevel to one of:
+**Configure logging in Elasticsearch.** Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set loglevel to one of:
 
 1.  debug: a lot of information, useful for development/testing
 2.  verbose: includes information not often needed, but logs less than debug
