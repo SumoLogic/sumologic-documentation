@@ -5,6 +5,8 @@ sidebar_label: Install Collector on Linux
 description: Learn how to install Collector
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Follow the steps in this topic to install or uninstall an OpenTelemetry Collector on Linux. See [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) for information on other operating systems.
 
 ## System Requirements​
