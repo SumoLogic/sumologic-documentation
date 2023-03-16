@@ -157,7 +157,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 2021-04-01 08:30:20.002 UTC [11916] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
 ```
 
-This sample query is from the **Fatal Errors** panel of the **PostgreSQL - Overview** dashboard.
 
 ### Log Query String
 This sample query is from the **Fatal Errors** panel of the **PostgreSQL - Overview** dashboard.
