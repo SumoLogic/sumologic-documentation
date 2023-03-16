@@ -77,5 +77,5 @@ extensions:
       - element 4
 ```
 
-Notice that list has been overriden and maps have been merged.
+Notice that the list has been overridden and maps have been merged.
 :::
