@@ -152,7 +152,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 This sample query is from the **Fatal Errors** panel of the **PostgreSQL - Overview** dashboard.
 
-### Query String
+### Log Query String
+This sample query is from the **Fatal Errors** panel of the **PostgreSQL - Overview** dashboard.
+
 
 ```sql
 sumo.datasource=postgresql db.cluster.name=*
