@@ -402,7 +402,7 @@ Running install script will simply upgrade collector to the latest version:
 sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y
 ```
 
-:::Note
+:::note
 You need to restart collector process manually in order to apply changes
 :::
 
