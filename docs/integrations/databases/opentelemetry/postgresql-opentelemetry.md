@@ -151,7 +151,7 @@ Click **Next**. This will install the app to your Sumo Logic Org. The app consis
 
 Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
 
-## Sample Logs and Log Queries
+### Sample Logs
 
 ```sql
 2021-04-01 08:30:20.002 UTC [11916] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
