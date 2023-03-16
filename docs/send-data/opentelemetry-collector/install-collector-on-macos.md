@@ -61,20 +61,20 @@ It is going to perform the following operations:
 
 The following arguments can be passed to the script:
 
-| long name                        | short name | description                                                                                                                                                                  | takes value                |
-|----------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
-| `--skip-installation-token`      | `k`        | Skips requirement for installation token. This option do not disable default configuration creation.                                                                         | no                         |
-| `--tag`                          | `t`        | Sets tag for collector. This argument can be use multiple times. One per tag.                                                                                                | yes, in `key=value` format |
-| `--download-only`                | `w`        | Download new binary only and skip configuration part.                                                                                                                        | no                         |
-| `--version`                      | `v`        | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version.                                                                 | yes, e.g. `0.71.0-sumo-0`  |
-| `--skip-config`                  | `s`        | Do not create default configuration                                                                                                                                          | no                         |
-| `--skip-systemd` | `d`        | Preserves from Systemd service installation.                                                                                                                                 | no                         |
-| `--fips`                          | `f`        | Install the FIPS-compliant binary. See [this document](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) for more details.                                                                                                                                                  | no                         |
-| `--install-hostmetrics`          | `H`        | Install the hostmetrics configuration to collect host metrics.                                                                                                               | no                         |
-| `--yes`                          | `y`        | Disable confirmation asks.                                                                                                                                                   | no                         |
-| `--uninstall`                    | `u`        | Removes Sumo Logic Distribution for OpenTelemetry Collector from the system and disable Systemd service eventually. Use with `--purge` to remove all configurations as well. | no                         |
-| `--purge`                        | `p`        | It has to be used with `--uninstall`. It removes all Sumo Logic Distribution for OpenTelemetry Collector related configuration and data.                                     | no                         |
-| `--help`                         | `h`        | Prints help and usage.                                                                                                                                                       | no                         |
+| long name                   | short name | description                                                                                                                                                                  | takes value                |
+|-----------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
+| `--skip-installation-token` | `k`        | Skips requirement for installation token. This option do not disable default configuration creation.                                                                         | no                         |
+| `--tag`                     | `t`        | Sets tag for collector. This argument can be use multiple times. One per tag.                                                                                                | yes, in `key=value` format |
+| `--download-only`           | `w`        | Download new binary only and skip configuration part.                                                                                                                        | no                         |
+| `--version`                 | `v`        | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version.                                                               | yes, e.g. `0.71.0-sumo-0`  |
+| `--skip-config`             | `s`        | Do not create default configuration                                                                                                                                          | no                         |
+| `--skip-systemd`            | `d`        | Preserves from Systemd service installation.                                                                                                                                 | no                         |
+| `--fips`                    | `f`        | Install the FIPS-compliant binary. See [this document](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) for more details.                       | no                         |
+| `--install-hostmetrics`     | `H`        | Install the hostmetrics configuration to collect host metrics.                                                                                                               | no                         |
+| `--yes`                     | `y`        | Disable confirmation asks.                                                                                                                                                   | no                         |
+| `--uninstall`               | `u`        | Removes Sumo Logic Distribution for OpenTelemetry Collector from the system and disable Systemd service eventually. Use with `--purge` to remove all configurations as well. | no                         |
+| `--purge`                   | `p`        | It has to be used with `--uninstall`. It removes all Sumo Logic Distribution for OpenTelemetry Collector related configuration and data.                                     | no                         |
+| `--help`                    | `h`        | Prints help and usage.                                                                                                                                                       | no                         |
 
 The following env variables can be used along with script:
 
@@ -91,13 +91,13 @@ Examples for OpenTelemetry Collector version `0.73.0-sumo-0`.
 ##### amd64 (x86-64)
 
 ```bash
-curl -sLo otelcol-sumo "https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.73.0-sumo-0/otelcol-sumo-0.73.0-sumo-0-linux_amd64"
+curl -sLo otelcol-sumo "https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.73.0-sumo-0/otelcol-sumo-0.73.0-sumo-0-darwin_amd64"
 ```
 
 ##### arm64 (Apple Silicon)
 
 ```bash
-curl -sLo otelcol-sumo "https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.73.0-sumo-0/otelcol-sumo-0.73.0-sumo-0-linux_arm64"
+curl -sLo otelcol-sumo "https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.73.0-sumo-0/otelcol-sumo-0.73.0-sumo-0-darwin_arm64"
 ```
 
 #### Move the binary to your `PATH` environment
@@ -129,31 +129,31 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 
 1. Go to app catalog and select `macOS - OpenTelemetry application`
 
-![macOS in app catalog](/static/img/send-data/opentelemetry-collector/app-catalog-mac-os.png)
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-mac-os.png')} alt="macOS in app catalog" />
 
 1. Select `Add New Collector` and click `Next`
 
-![set up collector](/static/img/send-data/opentelemetry-collector/app-catalog-macos-set-up-collector.png)
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-set-up-collector.png')} alt="set up collector" />
 
 1. Select installation token and customise your tags
 
-![add new collector](/static/img/send-data/opentelemetry-collector/app-catalog-macos-add-new-collector.png)
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-add-new-collector.png')} alt="add new collector" />
 
 1. Copy command and execute it in your system terminal
 
-![execute command in terminal](/static/img/send-data/opentelemetry-collector/macos-terminal.png)
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-terminal.png')} alt="execute command in terminal" />
 
 1. Wait for installation to be completed
 
-![collector successfuly registered](/static/img/send-data/opentelemetry-collector/app-catalog-macos-success-registration.png)
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-success-registration.png')} alt="collector successfuly registered" />
 
 1. Customize source configuration, download it, place it in `/etc/otelcol-sumo/conf.d` and then restart collector manually
 
-![source customisation](/static/img/send-data/opentelemetry-collector/app-catalog-macos-source-creation.png)
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-source-creation.png')} alt="source customisation" />
 
 1. Wait for finishing the installation
 
-![application installed successfuly](/static/img/send-data/opentelemetry-collector/app-catalog-macos-success-installation.png)
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-success-installation.png')} alt="application installed successfuly" />
 
 ### Additional settings
 
