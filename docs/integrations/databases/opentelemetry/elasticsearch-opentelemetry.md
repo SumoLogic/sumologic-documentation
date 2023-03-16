@@ -41,7 +41,7 @@ If Elasticsearch security features are enabled, you must have either the monitor
 3.  notice (default value): moderately verbose, ideal for production environments
 4.  warning: only very important/critical messages are logged
 
-All logging settings are located in [Elasticsearch.conf](https://www.elastic.co/guide/en/elasticsearch/reference/current/logging.html). By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`. The default directory for log files is listed in the Elasticsearch.conf file. Logs from the
+All logging settings are located in [Elasticsearch.conf](https://www.elastic.co/guide/en/elasticsearch/reference/current/logging.html). By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`. The default directory for log files is listed in the Elasticsearch.conf file.
 
 ## Collecting Logs, Metrics & installing Elasticsearch app
 
