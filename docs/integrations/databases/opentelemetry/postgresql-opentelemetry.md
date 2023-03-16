@@ -171,7 +171,6 @@ sumo.datasource=postgresql db.cluster.name=*
 {"queryId":"A","_source":"postgresql-metric-otel","source":"idx_read","db.table":"company","_sourceName":"Http Input","host":"ip-172-31-91-203.ec2.internal","os.type":"linux","sumo.datasource":"postgresql","db.system":"postgresql","postgresql.database.name":"postgres","_sourceCategory":"Labs/postgresql-otel/metric","deployment.environment":"postgresqlEnvanema","_contentType":"Carbon2","metric":"postgresql.blocks_read","_collectorId":"000000000CD05E30","db.schema":"public","_sourceId":"000000004453F6D9","unit":"1","db.cluster.name":"postgresqlOtelClusteranema","postgresql.table.name":"public.company","_collector":"Labs - postgresql-otel","max":5,"min":0,"avg":1.92,"sum":115,"latest":0,"count":60}
 ```
 
-This sample query is from the **Number of Active Databases** panel of the **PostgreSQL - Database Metrics dashboard**.
 
 ### Query String
 
