@@ -34,16 +34,16 @@ export SUMOLOGIC_INSTALLATION_TOKEN=<TOKEN>
 
 You can run the script in two ways:
 
-- by piping `curl` straight into `bash`:
+* by piping `curl` straight into `bash`:
 
    ```bash
-   curl -s https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/scripts/install.sh | sudo -E bash -s -- -d
+   sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -d
    ```
 
-- by first downloading the script, inspecting its contents for security, and then running it:
+* by first downloading the script, inspecting its contents for security, and then running it:
 
    ```bash
-   curl -o install-otelcol-sumo.sh https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/scripts/install.sh
+   curl -Lso install-otelcol-sumo.sh https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh
    sudo -E bash ./install-otelcol-sumo.sh -d
    ```
 
@@ -53,9 +53,9 @@ The `-d` argument to the script is needed on macOS. It will skip Systemd install
 
 It is going to perform the following operations:
 
-- install or upgrade operation by placing the latest version as `/usr/local/bin/otelcol-sumo`,
-- get [static configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/sumologic.yaml) and place it as `/etc/otelcol-sumo/sumologic.yaml`
-- create user configuration directory (`/etc/otelcol-sumo/conf.d`) with `common.yaml` file which will contain installation token
+* install or upgrade operation by placing the latest version as `/usr/local/bin/otelcol-sumo`,
+* get [static configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/sumologic.yaml) and place it as `/etc/otelcol-sumo/sumologic.yaml`
+* create user configuration directory (`/etc/otelcol-sumo/conf.d`) with `common.yaml` file which will contain installation token
 
 #### Script options
 
@@ -78,9 +78,9 @@ The following arguments can be passed to the script:
 
 The following env variables can be used along with script:
 
-| name                      | description                                                                  |
-|---------------------------|------------------------------------------------------------------------------|
-| `SUMOLOGIC_INSTALLATION_TOKEN` | Installation token                                                      |
+| name                           | description        |
+|--------------------------------|--------------------|
+| `SUMOLOGIC_INSTALLATION_TOKEN` | Installation token |
 
 ### Manual step-by-step installation
 
@@ -111,15 +111,31 @@ sudo mv otelcol-sumo /usr/local/bin/otelcol-sumo
 
 #### Verify the installation
 
-TODO
+In order to verify installation please run OpenTelemetry Collector.
 
-#### How to download binary from Sumo UI
+```bash
+otelcol-sumo --version
+```
 
-TODO - probably should not be done
+#### Running Binary
+
+As for now we do not support installation of OpenTelemetry Collector as service for macOS. It needs to be run manually.
+
+```bash
+sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+```
 
 ### UI Installation via App Catalog
 
-TODO
+Go to app catalog
+
+Install App
+
+Select installation token
+
+customise your tags
+
+copy command
 
 ### Additional settings
 
@@ -142,13 +158,13 @@ The recommended way to uninstall the OpenTelemetry Collector depends on how you 
 If you installed the Collector with the install script, you can use it to uninstall the Collector:
 
 ```bash
-sudo bash ./install.sh -u
+sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y
 ```
 
 You can also use flag `-p` to remove all existing configurations as well:
 
 ```bash
-sudo bash ./install.sh -u -p
+sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
 ```
 
 ### Manual step-by-step installation
@@ -177,8 +193,8 @@ sudo bash ./install.sh -w -v 0.73.0-sumo-1
 
 If you installed the Collector manually, the simplest way to upgrade is to follow these steps:
 
-- [Uninstall the Collector manually](#manual-step-by-step-installation-1)
-- [Install the Collector again with a new version](#manual-step-by-step-installation)
+* [Uninstall the Collector manually](#manual-step-by-step-installation-1)
+* [Install the Collector again with a new version](#manual-step-by-step-installation)
 
 ### Update your config
 
