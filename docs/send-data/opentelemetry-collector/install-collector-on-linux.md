@@ -291,35 +291,35 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 
 1. Go to app catalog and select `Linux`
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux.png')} alt="linux in app catalog" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux.png')} alt="linux in app catalog" />
 
 1. Select `Add New Collector` and click `Next`
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-collector.png')} alt="set up collector" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-collector.png')} alt="set up collector" />
 
 1. Select installation token and customise your tags
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-register-collector.png')} alt="add new collector" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-register-collector.png')} alt="add new collector" />
 
 1. Copy command and execute it in your system terminal
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal-installation.png')} alt="execute command in terminal" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal-installation.png')} alt="execute command in terminal" />
 
 1. Wait for installation to be completed
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-registration-success.png')} alt="application installed successfuly" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-registration-success.png')} alt="application installed successfuly" />
 
 1. Read the prerequisite section
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-prerequisite.png')} alt="collector successfuly registered" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-prerequisite.png')} alt="collector successfuly registered" />
 
 1. Customize source configuration, download it, place it in `/etc/otelcol-sumo/conf.d` and then restart collector
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-configure.png')} alt="source customisation" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-configure.png')} alt="source customisation" />
 
 1. Wait for installation to be completed
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-success.png')} alt="application installed successfuly" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-success.png')} alt="application installed successfuly" />
 
 ### Additional settings
 
