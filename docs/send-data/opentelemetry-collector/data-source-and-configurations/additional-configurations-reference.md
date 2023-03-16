@@ -7,14 +7,11 @@ description: Learn about Configurations Reference
 
 ## OpenTelemetry Configuration
 
-All Configuration files are following the OpenTelemetry Collector configuration schema.
-Configuration contains service consisting of pipelines with some receivers, processors and exporters. If you are new to OpenTelemetry Collector, you can familiarize yourself with the terms reading the [upstream documentation].
-
-[upstream documentation]: https://opentelemetry.io/docs/collector/configuration/
+All configuration files in this setup follow the schema for OpenTelemetry Collector configuration, which comprises a service consisting of pipelines with receivers, processors, and exporters. If you are new to OpenTelemetry Collector, you can refer to the [upstream documentation](https://opentelemetry.io/docs/collector/configuration/) to become familiar with the terms.
 
 ## Sumo Logic Distribution for OpenTelemetry Collector Configuration Structure
 
-We are using the following organisation of files within configuration directory:
+We are using the following organization of files within configuration directory:
 
 ```txt
 .
@@ -36,7 +33,10 @@ By default configuration is loaded in the following order:
 - all configuration files from `conf.d` sorted alphabetically
 
 :::note
-Configuration which is loaded later in the order is going to be merged with previous one. Let's consider the following example configuration files:
+If a configuration is loaded later in the order, it will be merged with the previous configuration.
+:::
+
+Let's consider the following example configuration files.
 
 `conf.d/0-base.yaml`:
 
@@ -78,4 +78,3 @@ extensions:
 ```
 
 Notice that the list has been overridden and maps have been merged.
-:::
