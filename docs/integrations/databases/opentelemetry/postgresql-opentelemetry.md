@@ -67,6 +67,9 @@ If you want to use an existing OpenTelemetry Collector, you can skip this step b
 
 ### Step 1: Set up Collector
 
+:::note
+If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
+:::
 Select the platform for which you want to install the Sumo OpenTelemetry collector.
 
 This will generate a command which can be executed in the machine which needs to be monitored. Once executed it will install the Sumo Logic OpenTelemetry collector agent.  
