@@ -5,7 +5,7 @@ sidebar_label: Install Collector on macOS
 description: Learn how to install Collector
 ---
 
-Follow the steps in this topic to install or uninstall an OpenTelemetry Collector on macOS. See [OpenTelemetry Collector](/docs/send-data/opentelemetry-distro-collector) for information on other operating systems.
+Follow the steps in this topic to install or uninstall an OpenTelemetry Collector on macOS. See [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) for information on other operating systems.
 
 ## System Requirements​
 
@@ -156,7 +156,7 @@ sudo bash ./install.sh -u -p
 If you installed the Collector manually, simply remove the binary from the directory you have placed it in:
 
 ```bash
-sudo rm /usr/local/bin/otelcol-sumo 
+sudo rm /usr/local/bin/otelcol-sumo
 ```
 
 ## Upgrading the collector
