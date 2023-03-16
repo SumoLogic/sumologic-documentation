@@ -65,7 +65,6 @@ If you want to create a new Collector please select **Add a new Collector** opti
 
 Select the platform for which you want to install the Sumo OpenTelemetry Collector.
 
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector.  
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Collector.png')} alt="Collector" />
 
