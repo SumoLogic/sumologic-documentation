@@ -1,6 +1,6 @@
 ---
 id: qualys-vmdr
-title: Sumo Logic App for Qualys VMDR
+title: Qualys VMDR
 sidebar_label: Qualys VMDR
 description: The Sumo Logic App for Qualys VMDR provides vulnerability summary across your IT infrastructure.
 ---

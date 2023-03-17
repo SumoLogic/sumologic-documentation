@@ -37,7 +37,7 @@ AWS Observability provides a view across AWS accounts, regions, namespaces, and
 Adding a service requires:
 
 * The AWS Observability solution must be installed for at least one supported service.
-* Collect metrics for your service using a [Sumo Logic AWS Cloudwatch  metrics source](/docs/send-data/hosted-collectors/amazon-aws/Amazon-CloudWatch-Source-Metrics) for an AWS account currently monitored by the AWS Observability solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
+* Collect metrics for your service using a [Sumo Logic AWS Cloudwatch  metrics source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) for an AWS account currently monitored by the AWS Observability solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
 * Create at least one Sumo Logic dashboard based on CloudWatch metrics and log data to monitor the operations of the AWS Service.
 
 See [Add a New AWS Service to the AWS Observability Explore Hierarchy](/docs/observability/aws/other-configurations-tools/add-new-aws-service.md) to add a new service to the AWS Observability hierarchy. 
@@ -184,7 +184,7 @@ See [Root Cause Explorer](/docs/observability/root-cause-explorer.md) for more d
 
 Sumo Logic Root Cause Explorer analyzes and correlates metrics from all supported AWS Observability services and EBS, Autoscaling, X-ray, SNS, and SQS. These services include the following:
 
-* AWS CloudWatch metrics for ALB, NLB, API Gateway, EC2, EBS, Lambda, ECS, RDS, DynamoDB, Elasticache, Autoscaling groups
+* AWS CloudWatch metrics for ALB, NLB, API Gateway, EC2, EBS, Lambda, ECS, RDS, DynamoDB, ElastiCache, Autoscaling groups
 * AWS Simple Notification Service (SNS)
 * AWS Simple Queueing Service (SQS)
 * AWS X-ray

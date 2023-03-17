@@ -1,6 +1,6 @@
 ---
 id: cloud-vpc
-title: Sumo Logic App for Google Cloud VPC
+title: Google Cloud VPC
 sidebar_label: Google Cloud VPC
 description: The Sumo Logic App for Google Cloud VPC provides visibility into the activities, traffic, and VPC flow in GCP.
 ---
