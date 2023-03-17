@@ -28,10 +28,6 @@ module.exports = {
   ],
   scripts: [
     {
-      src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
-      async: true,
-    },
-    {
       src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
       async: true,
     },
@@ -212,10 +208,6 @@ module.exports = {
       },
     // SEO Global Metadata
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
-    announcementBar: {
-      id: 'announcementBar',
-      content: `🔎 Algolia site search coming March 15. <a href="https://d2t1s0ah22jxsa.cloudfront.net/1248/merge">Click here to preview</a>.`,
-    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -231,15 +223,12 @@ module.exports = {
       appId: '2SJPGMLW1Q',
       apiKey: 'fb2f4e1fb40f962900631121cb365549',
       indexName: 'crawler_sumodocs',
-      // Optional: see doc section below
       contextualSearch: false,
-      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      //externalUrlRegex: 'external\\.com|domain\\.com',
-      // Optional: Algolia search parameters
-      //searchParameters: {},
       // Optional: path for search page that enabled by default (`false` to disable it)
-      searchPagePath: false,
-      //... other Algolia params
+      //searchPagePath: false,
+      getMissingResultsUrl({ query }) {
+        return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
+      },
     },
     prism: {
       theme: lightCodeTheme,
@@ -255,6 +244,11 @@ module.exports = {
         items: [
         // activeregex controls the top nav content
         // icon uses Google Material name code https://fonts.google.com/icons?query=material
+          {
+            to: 'https://www.sumologic.com/sign-up',
+            position: 'left',
+            className: 'header-trial',
+          },
           {
             label: 'Guides',
             position: 'left',
@@ -377,14 +371,13 @@ module.exports = {
             ]
           },
           {
+            type: 'search',
+            position: 'left',
+          },
+          {
             type: 'html',
             position: 'right',
             value: '<div id="google_translate_element"></div>',
-          },
-          {
-            to: 'https://www.sumologic.com/sign-up',
-            position: 'right',
-            className: 'header-login',
           },
           {
             position: 'right',
@@ -395,11 +388,13 @@ module.exports = {
             items:[
               {
                 label: 'Send Feedback',
-                href: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
+                to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
+                icon: 'rate_review',
               },
               {
                 label: 'Contribute to Docs',
-                href: '/docs/contributing',
+                to: '/docs/contributing',
+                icon: 'edit_note',
               },
             ]
           },

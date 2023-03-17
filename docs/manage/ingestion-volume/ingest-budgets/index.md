@@ -41,7 +41,7 @@ The value supports a single wildcard, such as `_sourceCategory=prod*payment`.
 
 For example, a **scope** expression like `_sourceCategory=/dev/catalog/*` implies that all incoming logs ingested into Sumo Logic with a matching _sourceCategory will fall under the scope of the given budget.
 
-See more [budget assignment examples](#budget-assignment) below and review the [rules](#rules) above.
+See more [budget assignment examples](#budget-assignment-examples) below and review the [rules](#rules) above.
 
 ### Versions
 

@@ -95,3 +95,13 @@ service:
       ...
       exporters: [otlphttp]
 ```
+
+### Auto-Instrumentation
+
+If your application is configured using [OpenTelemetry auto-instrumentation](https://opentelemetry.io/docs/concepts/instrumenting/#automatic-instrumentation), you can also configure the OTLP endpoint using environment variables:
+```bash
+export OTEL_METRICS_EXPORTER=otlp
+export OTEL_TRACES_EXPORTER=otlp
+export OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf
+export OTEL_EXPORTER_OTLP_ENDPOINT=<source_url>
+```
