@@ -370,7 +370,7 @@ The panels will begin to fill automatically. It's worth noting that each panel g
 
 * Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
-### Agent Overview Dashboard
+### Agent Overview
 
 **SentinelOne - Agent Overview** provides valuable insights related to SentinelOne agents deployed across an organization. The dashboard includes widgets that display key information on the total number of agents, active threats, and infected agents. It also provides information on the distribution of agents by mitigation, machine type, and scan status.
 
