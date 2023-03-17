@@ -245,6 +245,11 @@ module.exports = {
         // activeregex controls the top nav content
         // icon uses Google Material name code https://fonts.google.com/icons?query=material
           {
+            to: 'https://www.sumologic.com/sign-up',
+            position: 'left',
+            className: 'header-trial',
+          },
+          {
             label: 'Guides',
             position: 'left',
             to: '#',
@@ -367,17 +372,12 @@ module.exports = {
           },
           {
             type: 'search',
-            position: 'right',
+            position: 'left',
           },
           {
             type: 'html',
             position: 'right',
             value: '<div id="google_translate_element"></div>',
-          },
-          {
-            to: 'https://www.sumologic.com/sign-up',
-            position: 'right',
-            className: 'header-login',
           },
           {
             position: 'right',
@@ -388,11 +388,13 @@ module.exports = {
             items:[
               {
                 label: 'Send Feedback',
-                href: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
+                to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
+                icon: 'rate_review',
               },
               {
                 label: 'Contribute to Docs',
-                href: '/docs/contributing',
+                to: '/docs/contributing',
+                icon: 'edit_note',
               },
             ]
           },
