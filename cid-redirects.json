@@ -1557,6 +1557,7 @@
   "/cid/1959": "/docs/integrations/containers-orchestration/vmware",
   "/cid/1960": "/docs/integrations/saas-cloud/pagerduty-v2",
   "/cid/19600": "/docs/integrations/saas-cloud/citrix-cloud",
+  "/cid/60046": "/docs/integrations/saas-cloud/sentinelone",
   "/cid/2122": "/docs/integrations/saas-cloud/gmail-tracelogs",
   "/cid/21202": "/docs/integrations/saas-cloud/airtable",
   "/cid/2127": "/docs/integrations/saas-cloud/armis",

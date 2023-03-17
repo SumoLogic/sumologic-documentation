@@ -1946,6 +1946,7 @@ integrations: [
           'integrations/saas-cloud/pagerduty-v3',
           'integrations/saas-cloud/qualys-vmdr',
           'integrations/saas-cloud/salesforce',
+          'integrations/saas-cloud/sentinelone',
           'integrations/saas-cloud/slack',
           'integrations/saas-cloud/workday',
           'integrations/saas-cloud/zoom',
