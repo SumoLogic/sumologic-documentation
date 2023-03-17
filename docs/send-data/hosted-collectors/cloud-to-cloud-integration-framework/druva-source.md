@@ -1,6 +1,6 @@
 ---
 id: druva-source
-title: Druva
+title: Druva Source
 sidebar_label: Druva
 description: This document explains how to configure the Druva Cloud-to-Cloud source setup on the Sumo logic environment.
 ---
