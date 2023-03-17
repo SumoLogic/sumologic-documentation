@@ -189,7 +189,7 @@ service:
 It is going to collect logs from application, security and system channels and send them to Sumo Logic.
 
 :::note
-Refer to [OpenTelemetry documentation] for more information about Windows Event Log receiver.
+Refer to [OpenTelemetry documentation][windowseventlogreceiver] for more information about Windows Event Log receiver.
 :::
 
 :::note
