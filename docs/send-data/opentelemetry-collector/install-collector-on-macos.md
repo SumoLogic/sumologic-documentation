@@ -175,7 +175,7 @@ Exporters leverage the HTTP communication and respect the following proxy enviro
 You may either export proxy environment variables locally e.g.
 
 ```bash
-export NO_PROXY=<ADDRESS>:<PORT>
+export FTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
 export HTTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
 export HTTPS_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
 ```
@@ -184,11 +184,15 @@ or make them available globally for all users, e.g.
 
 ```bash
 tee -a /etc/profile << END
-export NO_PROXY=<ADDRESS>:<PORT>
+export FTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
 export HTTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
 export HTTPS_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
 END
 ```
+
+To exclude a specific domain or IP address from using the proxy, you can add it to the `NO_PROXY` environment variable. For example, to exclude the domain `sumologic.com` from using the proxy, you can add the following command:
+
+`export NO_PROXY=sumologic.com`
 
 #### FIPS
 
@@ -238,7 +242,7 @@ Running install script will simply upgrade collector to the latest version:
 sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y
 ```
 
-:::Note
+:::note
 You need to restart collector process manually in order to apply changes
 :::
 
@@ -257,6 +261,6 @@ To see changes in upstream OpenTelemetry components, refer to the [core changelo
 
 List of breaking changes specific to Sumo Logic distribution of OpenTelemetry Collector can be found [here](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/upgrading.md).
 
-## Troubleshooting specific to macOS
+## Troubleshooting
 
-TODO
+Refer to [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-and-faqs/#installing-apps-errors)

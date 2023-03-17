@@ -50,6 +50,10 @@ service:
 
 :::
 
+:::note
+Refer to [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-and-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration
+:::
+
 ## Instrument your application with OpenTelemetry
 
-Refer to [Instrument your application with OpenTelemetry](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/) for details about application instrumentation.
+Refer to [Instrument your application with OpenTelemetry](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/) for detailed explanation of application instrumentation.
