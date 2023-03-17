@@ -49,7 +49,7 @@ jobs:
       - name: Build the Docusaurus site
         env:
           NODE_OPTIONS: "--max-old-space-size=8192"
-          run: yarn build
+         run: yarn build
       - name: Deploy the Docusaurus site
         env:
           S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
