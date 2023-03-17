@@ -331,7 +331,7 @@ _sourceCategory=sentinelone  threatInfo
 
 ### Sample Query for Agents
 
-```sql="Total Agents"
+```sql title="Total Agents"
 _sourceCategory=sentinelone  uuid
 | Json "uuid","scanStatus","siteName","mitigationMode","infected","firewallEnabled","activeThreats","installerType","osName","mitigationModeSuspicious","isPendingUninstall","networkStatus","osType","isActive","isUninstalled","isDecommissioned","externalIp","modelName","machineType" as id,scan_status,site_name,mitigation_mode,infected,firewall_enabled,active_threats,installer_type,os_name,mitigation,is_pending_uninstall,network_status,os_type,is_active,is_uninstalled,is_decommissioned,ip,model_name,machine_type nodrop
 | where site_name matches "{{site}}" or isNull(site_name)
