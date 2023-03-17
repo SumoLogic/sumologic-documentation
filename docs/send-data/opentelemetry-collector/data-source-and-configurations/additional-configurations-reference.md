@@ -211,7 +211,7 @@ stored under `log` key.
 
 Consider following input log:
 
-```
+```text
   Resource:
     Attributes:
       "indexed-field": "some value"
@@ -223,7 +223,7 @@ Consider following input log:
 
 Such log will be stored as following set of data at Sumo Logic:
 
-```
+```text
   Fields:
     "indexed-field": "some value"
 
@@ -239,7 +239,7 @@ ToDo: add screenshots
 
 In case of no log-level attributes, body is stored inline. I.e. for following input:
 
-```
+```text
   Resource:
     Attributes:
       "indexed-field": "some value"
@@ -249,7 +249,7 @@ In case of no log-level attributes, body is stored inline. I.e. for following in
 
 The output is stored as:
 
-```
+```text
   Fields:
     "indexed-field": "some value"
 
@@ -268,5 +268,49 @@ ToDo: add screenshots
 
 ### Data Tagging recommendations
 
-ToDo: Data Tagging recommendations. Also mention default tags from Sumo, and why they are important.  
-_sourceName and so on
+Please read [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions/) to became more familiar with the following terms:
+
+* Source Category (`_sourceCategory`)
+* Source Host (`_sourceHost`)
+* Source Name (`_sourceName`)
+
+The above attributes are taken from the resource attributes and in case they are not set, they are taken from collector configuration.
+
+See the following example which shows how to set them using Resource Attributes processor:
+
+```yaml
+processors:
+  resource/static fields:
+    attributes:
+    - key: _sourceName
+      value: my source name
+      ## upsert will override existing _sourceName field
+      action: upsert
+```
+
+For more advanced cases you can use Transform processor. For example you can concatenate multiple resource attributes into `_sourceCategory` concatenated with `/`
+
+```yaml
+processors:
+  transform/custom fields:
+    log_statements:
+    - context: resource
+      statements:
+      - set(attributes["_sourceCategory"], Concat([attributes["service.name"], attributes["http.method"]], "/"))
+```
+
+In addition to special tags, you can also create your own. We simply treat all resource attributes as tags.
+You can set default tags in collector configuration using `collector_fields` option:
+
+```yaml
+extensions:
+  sumologic:
+    collector_fields:
+      cluster: staging
+```
+
+Tags are useful for building the queries and helps to correlate the different signals (metrics, logs and traces) with each other.
+
+:::note
+Refer to [Fields](/docs/manage/fields/) for more information on fields and how to use them.
+:::
