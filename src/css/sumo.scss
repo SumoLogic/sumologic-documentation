@@ -220,6 +220,7 @@ html[data-theme='light'] {
 
 .DocSearch-Button-Placeholder {
   font-size: .85rem !important;
+  min-width: 85px;
 }
 
 .header-github-link:hover {
@@ -248,27 +249,27 @@ html[data-theme='light'] {
 
 
 
-.header-login:hover {
+.header-trial:hover {
   opacity: 0.85;
 }
 
-.header-login::before {
+.header-trial::before {
   content: 'Start free trial';
   border: 1px solid #2aa1e6;
   color: #FFF;
   border-radius: 3px;
-  padding: 5px 10px;
+  padding: 4px 10px;
   font-size: 14px;
   display: inline-flex;
   background: #2aa1e6;
 }
 
-.header-login::after {
+.header-trial::after {
     display: none !important;
     content: none !important;
 }
 
-[data-theme='dark'] .header-login::before {
+[data-theme='dark'] .header-trial::before {
   background: transparent;
   border: 1px solid #2aa1e6;
   color: #FFF;
@@ -276,26 +277,6 @@ html[data-theme='light'] {
   background: #2aa1e6;
 }
 
-
-
-.header-search-link:hover {
-  opacity: 0.6;
-}
-
-.header-search-link::before {
-  content: '';
-  width: 30px;
-  height: 30px;
-  margin-top: 9px;
-  display: inline-flex;
-  background: url("../../static/img/icons/magnifying-glass-header.png")
-    no-repeat;
-}
-
-.header-search-link::after {
-    display: none !important;
-    content: none !important;
-}
 
 .markdown {
   h1 {

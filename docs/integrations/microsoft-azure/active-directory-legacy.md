@@ -208,7 +208,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-Sumo Logic recommends using the Sumo Logic App for Active Directory in combination with the [Sumo Logic App for Windows](/docs/integrations/microsoft-azure/Windows-Legacy).
+Sumo Logic recommends using the Sumo Logic App for Active Directory in combination with the [Sumo Logic App for Windows](/docs/integrations/microsoft-azure/windows-legacy).
 
 
 ## Viewing Active Directory Legacy Dashboards
