@@ -173,7 +173,7 @@ Refer to [OpenTelemetry documentation](https://github.com/open-telemetry/opentel
 [batchprocessor]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/batchprocessor
 [memorylimiterprocessor]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor
 [filterprocessor]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/filterprocessor
-[sumologicexporter]: ../pkg/exporter/sumologicexporter
+[sumologicexporter]: https://github.com/SumoLogic/sumologic-otel-collector/pkg/exporter/sumologicexporter
 
 ### Mapping OpenTelemetry concepts to Sumo Logic
 
