@@ -53,7 +53,7 @@ If an action name is shown in red font, that indicates that the action depends 
         For instructions, see:
         * [Create a Sumo Logic search URL](create-cse-context-actions.md#create-a-sumo-logic-search-url)
         * [Create a URL to external service](create-cse-context-actions.md#create-an-url-to-an-external-service)
-    1. If you chose Sumo Logic Query above, the **Timestamp offset** option appears, which set the query time range. The offset can be either -30m or +30m, and it will be applied to the timestamp in the target Record’s [timestamp](../schema/schema-attributes.md) field.
+    1. If you chose Sumo Logic Query above, the **Timestamp offset** option appears, which set the query time range. The offset can be either -30m or +30m, and it will be applied to the timestamp in the target Record’s [timestamp](/docs/cse/schema/schema-attributes) field.
     1. Choose the Entity types to which the Context Action will apply. Use the pulldown to display a list of built-in Entity types, and any custom Entity types defined in your environment. Your Context Action will be available for any Entities of the type or types you select. 
         * Hostname
         * IP address 
@@ -116,15 +116,15 @@ Assuming your CSE instance is configured to communicate with the Sumo Logic plat
 
 ### Timestamp
 
-When you run an action on a CSE Record, if that Record has a [timestamp](../schema/schema-attributes.md) field value, you can insert the timestamp in UTC format into the URL using the `{{timestamp}}` parameter.
+When you run an action on a CSE Record, if that Record has a [timestamp](/docs/cse/schema/schema-attributes) field value, you can insert the timestamp in UTC format into the URL using the `{{timestamp}}` parameter.
 
 ### Formatted timestamp
 
-To insert a Record’s [timestamp](../schema/schema-attributes.md) field value into the action URL as a Unix timestamp, use `{{timestamp [ms]}}`.
+To insert a Record’s [timestamp](/docs/cse/schema/schema-attributes) field value into the action URL as a Unix timestamp, use `{{timestamp [ms]}}`.
 
 ### Timestamp with delta
 
-If desired, you can insert a timestamp value that is some offset of the Record’s [timestamp](../schema/schema-attributes.md) field in the action URL, for example: 
+If desired, you can insert a timestamp value that is some offset of the Record’s [timestamp](/docs/cse/schema/schema-attributes) field in the action URL, for example: 
 
 `{{timestamp-5h}}`
 
