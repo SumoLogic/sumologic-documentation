@@ -13,7 +13,7 @@ The DocuSign provides a secure endpoint to receive customer event data from the
 
 ## Prerequisites
 
-To collect customer event data from the DocuSign Monitor, you must meet the following criteria:
+To collect event data from the DocuSign Monitor, you must meet the following criteria:
 * **Administrator access to an organization**. To call the DocuSign Monitor endpoint, you must impersonate a user with administrator access to your organization.
    * Your organization must have access to DocuSign Monitor to call the endpoint.
 * **Integration Key**. An integration key identifies your integration and links to its configuration values. [Create an integration key](https://developers.docusign.com/platform/configure-app/#how-to-get-an-integration-key)
@@ -21,11 +21,11 @@ To collect customer event data from the DocuSign Monitor, you must meet the foll
 * **RSA Key Pair**. [Add the RSA key pair](https://developers.docusign.com/platform/configure-app/#add-the-rsa-key-pair)
 * **Application Consent**. Refer Step-1 of [Get an access token with JWT Grant](https://developers.docusign.com/platform/auth/jwt/jwt-get-token/)
 
-## Data sources
+## Data Source
 
 The DocuSign API integration retrieves events data every 5 minutes.
 
-## Configuration
+## Setup and Configuration
 
 In this configuration, you will set up the DocuSign account and configure it to be authorized and authenticated to use customer event data from DocuSign Monitor API. To obtain the DocuSign auth token and customer event data, you will need the following parameters:
 
@@ -34,7 +34,7 @@ In this configuration, you will set up the DocuSign account and configure it to 
 To get the User ID, follow the steps below:
 1. Log in to **DocuSign** account.
 2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="600" />
-3. Locate and copy **User ID** available under **My Account Information**. <br/> <img src={useBaseUrl('img/send-data/docusign-user-id.png')} alt="<docusign-user-id.png>" width="600" />
+3. Locate and copy the **User ID** available under **My Account Information**. <br/> <img src={useBaseUrl('img/send-data/docusign-user-id.png')} alt="<docusign-user-id.png>" width="600" />
 :::note
 You'll need to provide your DocuSign User ID while creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
 :::
@@ -47,28 +47,33 @@ You must first create an app to get integration key and configure RSA Key Pair a
 3. Navigate to **ADD APP AND INTEGRATION KEY**. <br/> <img src={useBaseUrl('img/send-data/docusign-add-app-integration-key.png')} alt="<docusign-add-app-integration-key.png>" width="600" />
 4. Enter value for **App Name** in a dialog box, and click on **CREATE APP**. <br/> <img src={useBaseUrl('img/send-data/docusign-create-app.png')} alt="<docusign-create-app.png>" width="600" />
 5. After creating your app, you'll be redirected to the app configuration page. Copy **Integration Key**. <br/> <img src={useBaseUrl('img/send-data/docusign-integration-key.png')} alt="<docusign-integration-key.png>" width="600" />
+
 :::note
 You'll need to provide your integration key while requesting [application consent](#app-consent) and creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
 :::
+
 6. Click on **GENERATE RSA** under **Service Integration** to create new private and public key pair. <br/> <img src={useBaseUrl('img/send-data/docusign-generate-rsa.png')} alt="<docusign-generate-rsa.png>" width="600" />
 7. Copy **Private Key** from dialog and close the dialog. <br/> <img src={useBaseUrl('img/send-data/docusign-private-key.png')} alt="<docusign-private-key.png>" width="600" />
+
 :::note
 You'll need to provide RSA private key while creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
 :::
+
 8. Click on **ADD URI** under **Redirect URIs** and enter redirect uri to add new redirect uri. <br/> <img src={useBaseUrl('img/send-data/docusign-redirect-uri.png')} alt="<docusign-redirect-uri.png>" width="600" />
+
 :::note
 You'll need redirect uri while requesting [application consent](#app-consent).
 :::
+
 9. Click **SAVE** to finish new app configuration.
 
 ### App Consent
 
-For requesting application consent, follow below steps:
-1. Copy below url based on your account environment in browser and press enter, replace **INTEGRATION_KEY**, **REDIRECT_URI** with the values you copied at step 5 and step 8 of [App](#app) section respectively.
-   - For Development (Demo) Environment, https://account-d.docusign.com/oauth/auth?response_type=code&scope=signature&client_id=INTEGRATION_KEY&redirect_uri=REDIRECT_URI
-   - For Producstion Environment, https://account.docusign.com/oauth/auth?response_type=code&scope=signature&client_id=INTEGRATION_KEY&redirect_uri=REDIRECT_URI
-2.  Click on **ALLOW ACCESS** to provide your consent. This should redirect you to **REDIRECT_URI**.
-
+For requesting application consent, follow the steps below:
+1. Copy the below URL based on your account environment in the browser and press enter, replace **INTEGRATION_KEY**, and **REDIRECT_URI** with the values you copied at step 5 and step 8 of [App](#app) section respectively.
+   * For Development (Demo) Environment, `https://account-d.docusign.com/oauth/auth?response_type=code&scope=signature&client_id=INTEGRATION_KEY&redirect_uri=REDIRECT_URI`
+   * For Production Environment, `https://account.docusign.com/oauth/auth?response_type=code&scope=signature&client_id=INTEGRATION_KEY&redirect_uri=REDIRECT_URI`
+2.  Click **ALLOW ACCESS** to provide your consent. This should redirect you to **REDIRECT_URI**.
 
 ## States
 
@@ -96,7 +101,7 @@ To configure the DocuSign source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select **DocuSign** icon.  <br/>  <img src={useBaseUrl('img/send-data/docusign-icon.svg')} alt="docusign-icon.svg" width="120" />
-4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional. <br/>   <img src={useBaseUrl('img/send-data/docusign-config-main.png')} alt="docusign-config-main.png" width="400" />
+4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional. <br/>   <img src={useBaseUrl('img/send-data/docusign-config-main.png')} alt="docusign-config-main.png" width="600" />
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 6. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
@@ -126,9 +131,9 @@ If your Source encounters ThirdPartyConfig errors, you can restart it from eithe
 To restart your source in the Sumo Logic platform, follow the steps below:
 1. Open the Collection page, and go to **Manage Data** > **Collection** > **Collection**.
 2. Select the source and click the **information** icon on the right side of the row.
-3. The API usage information popup is displayed. Click the **Restart Source** button on the bottom left. <br/><img src={useBaseUrl('img/send-data/restart-source-button.png')} alt="restart-source-button.png" width="550" />
-4. Click **Confirm** to send the restart request. <br/><img src={useBaseUrl('img/send-data/restart-source-confirm.png')} alt="restart-source-confirm.png" width="550" />
-5. The bottom left of the platform will provide a notification informing you the request was successful.<br/><img src={useBaseUrl('img/send-data/restart-source-initiated.png')} alt="restart-source-initiated.png" width="550" />
+3. The API usage information popup is displayed. Click the **Restart Source** button on the bottom left. <br/><img src={useBaseUrl('img/send-data/restart-source-button.png')} alt="restart-source-button.png" width="600" />
+4. Click **Confirm** to send the restart request. <br/><img src={useBaseUrl('img/send-data/restart-source-confirm.png')} alt="restart-source-confirm.png" width="600" />
+5. The bottom left of the platform will provide a notification informing you the request was successful.<br/><img src={useBaseUrl('img/send-data/restart-source-initiated.png')} alt="restart-source-initiated.png" width="600" />
 
 #### API
 
@@ -142,7 +147,7 @@ To restart your source using the Sumo Management API, follow the instructions be
 
 </details>
 
-### JSON configuration
+### JSON Configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
@@ -165,7 +170,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `integrationKey` | String | Yes | Integration Key of the app. | modifiable |
 | `rsaPrivateKey` | String | Yes | RSA Private Key for the app. | modifiable |
 
-### JSON example
+### JSON Example
 
 ```json
 {
