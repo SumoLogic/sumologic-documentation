@@ -311,7 +311,7 @@ The following IOC types are available from CrowdStrike:
 
 #### Do IOCs and Threats expire?
 
-IOCs and Threats will often remain in the system because an IOC, such as an IP address, could go dormant and they reappear as part of another threat The last valid one can be found under **labels > Last_valid_on**. Be aware that over the period, their Malicious Confidence can be downgraded or upgraded depending upon recent activity.
+IOCs and Threats will often remain in the system because an IOC, such as an IP address, could go dormant and they reappear as part of another threat. The last valid one can be found under **labels** > **Last_valid_on**. Be aware that over the period, their Malicious Confidence can be downgraded or upgraded depending upon recent activity.
 
 
 #### I found an IOC in VirusTotal (or any other third-party threat feed), but I can’t find that IOC in CrowdStrike using the Sumo Logic Lookup?
