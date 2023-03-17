@@ -2,7 +2,7 @@
 id: knowbe4-api-source
 title: KnowBe4 API Source
 sidebar_label: KnowBe4 API Source
-description: This document explains how to configure the KnowBe4 Cloud-to-Cloud source setup using the Sumo logic environment.
+description: Learn how to configure the KnowBe4 Cloud-to-Cloud source setup using the Sumo logic environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
