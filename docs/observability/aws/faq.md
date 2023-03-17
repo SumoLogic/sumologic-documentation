@@ -184,7 +184,7 @@ See [Root Cause Explorer](/docs/observability/root-cause-explorer.md) for more d
 
 Sumo Logic Root Cause Explorer analyzes and correlates metrics from all supported AWS Observability services and EBS, Autoscaling, X-ray, SNS, and SQS. These services include the following:
 
-* AWS CloudWatch metrics for ALB, NLB, API Gateway, EC2, EBS, Lambda, ECS, RDS, DynamoDB, Elasticache, Autoscaling groups
+* AWS CloudWatch metrics for ALB, NLB, API Gateway, EC2, EBS, Lambda, ECS, RDS, DynamoDB, ElastiCache, Autoscaling groups
 * AWS Simple Notification Service (SNS)
 * AWS Simple Queueing Service (SQS)
 * AWS X-ray

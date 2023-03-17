@@ -1,5 +1,5 @@
 ---
-slug: manage-metric-volume
+slug: /metrics/manage-metric-volume
 title: Understand and Manage Metric Volume
 sidebar_label: Understand and Manage Metric Volume
 description: Learn about how metric ingestion and storage, metric data limits, and how metric throttling works.

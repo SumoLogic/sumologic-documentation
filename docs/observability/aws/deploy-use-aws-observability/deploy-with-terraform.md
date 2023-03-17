@@ -1531,7 +1531,7 @@ The following table provides a list of all source parameters and their default v
 | `ec2metrics_monitors_disabled` | Indicates if the EC2 Metrics Apps monitors should be enabled or disabled.
 `true` |
 | `ecs_monitors_disabled` | Indicates if the ECS Apps monitors should be enabled or disabled. | `true` |
-| `elasticache_monitors_disabled` | Indicates if the Elasticache Apps monitors should be enabled or disabled. | `true` |
+| `elasticache_monitors_disabled` | Indicates if the ElastiCache Apps monitors should be enabled or disabled. | `true` |
 | `lambda_monitors_disabled` | Indicates if the Lambda Apps monitors should be enabled or disabled. | `true` |
 | `nlb_monitors_disabled` | Indicates if the NLB Apps monitors should be enabled or disabled. | `true` |
 | `rds_monitors_disabled` | Indicates if the RDS Apps monitors should be enabled or disabled. | `true` |

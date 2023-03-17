@@ -16,9 +16,9 @@ Each set up and configuration method includes a list of prerequisites.
 
 These include:
 
-* API Keys/Creds for Jira, Github, GitLab, Jenkins, Bitbucket, CircleCI, Opsgenie with Webhook creation capabilities. 
+* API Keys/Creds for Jira, GitHub, GitLab, Jenkins, Bitbucket, CircleCI, Opsgenie with Webhook creation capabilities. 
 * Access to Jenkins (Manage Plugins permissions)
-* Make sure you have access to the Sumo logic console and as a user that is associated with a Sumo Logic role that has the following permissions:
+* Make sure you have access to the Sumo Logic console and as a user that is associated with a Sumo Logic role that has the following permissions:
   * Manage field extraction rules
   * View Fields
   * View field extraction rules

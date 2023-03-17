@@ -46,7 +46,7 @@ Bug Fixes:
 * Added new FER (AwsObservabilityGenericCloudWatchLogsFER) to handle generic CloudWatch logs namespace identification.
 * Fixed creation of extra resources with terraform when user selects none to deployed
 * Fixed issue with collection of generic aws namespace metric
-* Fixed query for “Network Bytes In” panel in Amazon Elasticache dashboard
+* Fixed query for “Network Bytes In” panel in Amazon ElastiCache dashboard
 * Fixed / updated documentation for Terraform solution
 
 Deprecation:
@@ -73,7 +73,7 @@ Enhancements / Updates:
 * Updated “AWS Account Overview” and “AWS Region Overview” dashboards to monitor newly added AWS Classic ELB Service.
 * Added a new “AWS EC2 - Events” dashboard for AWS CloudTrail audit log monitoring.
 * Enhanced Lambda dashboards to monitor Lambda functions cold start duration.
-* Updated FERs for application load balancer access logs, ECS AWS CloudTrail logs, Elasticache CloudTrail logs and created a new EC2 related AWS CloudTrail logs FER.
+* Updated FERs for application load balancer access logs, ECS AWS CloudTrail logs, ElastiCache CloudTrail logs and created a new EC2 related AWS CloudTrail logs FER.
 
 Bug Fixes:
 
@@ -90,7 +90,7 @@ Updates:
 * Provide Terraform Support for setting up the AWS Observability Solution
 * Allow for rapid on-boarding of multiple AWS accounts via CloudFormation templates and CSV files that map AWS account-ids to account aliases
 * Allow for collection of CloudWatch metrics data from all possible AWS namespaces
-* Updated ECS, Elasticache, EC2, RDS and Lambda dashboards with minor cosmetic changes
+* Updated ECS, ElastiCache, EC2, RDS and Lambda dashboards with minor cosmetic changes
 
 Bug Fixes:
 

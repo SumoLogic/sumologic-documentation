@@ -1,8 +1,7 @@
 ---
 id: eks-control-plane
 title: Amazon EKS - Control Plane
-sidebar_label: Amazon EKS - Control Plane
-description: The Sumo Logic App for Amazon EKS - Control Plane App provides visibility into the EKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes. The app’s preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
+description: The Sumo Logic App for Amazon EKS - Control Plane App provides visibility into the EKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -14,28 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Prerequisites
 
-Minimum supported requirements for this app:
-
-<table>
-  <tr>
-   <td>Name
-   </td>
-   <td>Supported versions
-   </td>
-  </tr>
-  <tr>
-   <td>Kubernetes
-   </td>
-   <td>1.10 and later
-   </td>
-  </tr>
-  <tr>
-   <td>Amazon EKS
-   </td>
-   <td>1.13.8, 1.11.10
-   </td>
-  </tr>
-</table>
+The list of supported platforms can be found [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs#support-matrix).
 
 ## Log Types
 

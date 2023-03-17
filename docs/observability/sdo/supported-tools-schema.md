@@ -9,7 +9,7 @@ The Software Development Optimization (SDO) Solution comes bundled with Terrafor
 | DevOps Phases             | Supported with Terraform                                          |
 |:---------------------------|:-----------------------------------------------------------|
 | Planning Phase            | Jira Cloud, Jira Server                                   |
-| Dev/Code                  | Github, Bitbucket, GitLab                                 |
+| Dev/Code                  | GitHub, Bitbucket, GitLab                                 |
 | Build/Test/Deploy/Release | Jenkins, Bitbucket Pipelines, CircleCI  Pipelines, GitLab |
 | Monitor/Operate           | PagerDuty, Opsgenie                                       |
 
@@ -45,8 +45,7 @@ The table below shows how deploy events are defined in the schema:
 | `environment_name` | This field is used to indicate the environment to which the deploy event occurred. Values for this field should be set to one of "production", “test”, “pre-prod”. You can also send in other values if applicable as well. | Required |
 | `status` | This field is used to indicate the status of the deploy event. Values for this field should be set to one of the following: "Success", "Failure", "Unstable", or "Unknown". You can also send in other values if applicable as well. | Required |
 | `commit_id` | This field is used to indicate the commit ID associated with a deploy event. This field is required to correlate code repository commit information with data from your CI tools and is typically set as the merge commit hash or HEAD commit. | Required |
-| `target_branch` | This field is used to indicate the target code branch associated with a deploy event.
-Set the value of this field to “N/A” if not available. | Optional |
+| `target_branch` | This field is used to indicate the target code branch associated with a deploy event. Set the value of this field to “N/A” if not available. | Optional |
 | `repository_name` | This field is used to indicate the code repository associated with the deploy event. Set the value of this field to “N/A” if not available. | Optional |
 | `message` | This field is used to indicate any message Set the value of this field to “N/A” if not available.| Optional |
 | `title` | This field can be used to indicate a deploy job name, description of pipeline/stage. Set the value of this field to “N/A” if not available.	Optional |
@@ -68,10 +67,8 @@ The table below shows how build events are defined in the schema:
 | datetime_epoch | This field is used to indicate the date and time in UTC epoch milliseconds when the event occurred. | Required |
 | status | This field is used to indicate the status of the build event. Values for this field should be set to one of the following: "Success", "Failure", "Unstable", or "Unknown". You can also send in other values if applicable as well. | Required |
 | commit_id | This field is used to indicate the commit ID associated with a build event. This field is required to correlate code repository commit information with data from your CI tools and is typically set as the merge commit hash or HEAD commit. | Required | 	 	 
-| target_branch | This field is used to indicate the target code branch associated with a build event.
-Set the value of this field to “N/A” if not available. | Optional |
-| repository_name | This field is used to indicate the code repository associated with the build event.
-Set the value of this field to “N/A” if not available. | Optional |
+| target_branch | This field is used to indicate the target code branch associated with a build event. Set the value of this field to “N/A” if not available. | Optional |
+| repository_name | This field is used to indicate the code repository associated with the build event. Set the value of this field to “N/A” if not available. | Optional |
 | message | This field is used to indicate any message Set the value of this field to “N/A” if not available. | Optional |
 | title | This field can be used to indicate a build job name, description of pipeline/stage. Set the value of this field to “N/A” if not available. | Optional |
 | user | This field indicates the user associated with a build event. Set the value of this field to “N/A” if not available. | Optional |
@@ -114,8 +111,7 @@ The table below shows how Pull Request events are represented in the schema: 
 | status | This field represents the status of the pull request event. Values for this field should be set to one of: “merged”, “declined” or “created”. You can also send in other values if applicable as well. | Required |
 | closeddate_epoch | This field indicates the date and time when a pull request was either merged or closed time represented in epoch milliseconds. For pull requests events that do not represent merge or closed PRs (e.g.  created, declined, or other PRs), this field can be empty, "n/a",or "000000" | Required |
 | updateddatetime_epoch | This field is used to indicate the last updated date and time in UTC epoch milliseconds of the event. | Required |
-| target_branch | This field is used to indicate the target code branch associated with a pull_request event.
-Set the value of this field to “N/A” if not available. | Optional |
+| target_branch | This field is used to indicate the target code branch associated with a pull_request event. Set the value of this field to “N/A” if not available. | Optional |
 | user | This field indicates the user associated with a pull_request event. Set the value of this field to “N/A” if not available. | Optional |
 | team | This field indicates the team for which a pull_request event occurred. Set the value of this field to “N/A” if not available. | Optional |
 | service | This field indicates the service that got pull_request. Set the value of this field to “N/A” if not available. | Optional |

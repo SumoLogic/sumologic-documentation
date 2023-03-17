@@ -2,7 +2,7 @@
 id: armis-api-source
 title: Armis API Integration
 sidebar_label: Armis API Source
-description: This document explains how to fetch device and alerts logs from Armis platform and send it to Sumo Logic.
+description: Learn how to fetch device and alerts logs from Armis platform and send it to Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
