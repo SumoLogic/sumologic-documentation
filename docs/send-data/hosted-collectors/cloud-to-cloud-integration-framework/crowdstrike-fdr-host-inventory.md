@@ -2,7 +2,7 @@
 id: crowdstrike-fdr-host-inventory-source
 title: CrowdStrike FDR Host Inventory
 sidebar_label: CrowdStrike FDR Host Inventory
-description: This document explains how to collect device information from the CrowdStrike FDR and send it to Sumo Logic.
+description: Learn how to collect device information from the CrowdStrike FDR and send it to Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

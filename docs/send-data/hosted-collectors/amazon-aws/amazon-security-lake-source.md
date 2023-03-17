@@ -1,7 +1,7 @@
 ---
 id: amazon-security-lake-source
 title: Amazon Security Lake Source (Beta)
-description: This document explains how to configure the Amazon Security Lake source setup using the Sumo logic environment.
+description: Learn how to configure the Amazon Security Lake source setup using the Sumo logic environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
