@@ -366,6 +366,10 @@ module.exports = {
             ]
           },
           {
+            type: 'search',
+            position: 'right',
+          },
+          {
             type: 'html',
             position: 'right',
             value: '<div id="google_translate_element"></div>',
