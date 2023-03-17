@@ -29,17 +29,9 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-20.04
-    environment:
-      name: ${{ inputs.environment }}
-      url: ${{ inputs.hostname }}${{ inputs.base_url }}
     env:
       CI: true
       NODE_ENV: production
-      AWS_PAGER: ""
-      HOSTNAME: ${{ inputs.hostname }}
-      BASE_URL: ${{ inputs.base_url }}
-      AWS_DEFAULT_REGION: us-east-1
-      AWS_EC2_METADATA_DISABLED: "true"
     steps:
       - uses: actions/checkout@v3
       - name: Set up Node.js
@@ -52,16 +44,12 @@ jobs:
         with:
           path: node_modules/.cache
           key: ${{ runner.os }}-webpack-cache
-      - name: Install awscli
-        uses: unfor19/install-aws-cli-action@v1
-      - name: Install jq
-        run: sudo apt-get install jq
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build the Docusaurus site
         env:
           NODE_OPTIONS: "--max-old-space-size=8192"
-        run: yarn build
+          run: yarn build
       - name: Deploy the Docusaurus site
         env:
           S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
