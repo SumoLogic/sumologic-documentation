@@ -11,7 +11,10 @@ Follow the steps in this topic to install or uninstall an OpenTelemetry Collect
 
 ## System Requirements
 
-TODO - add some info about system and hardware
+Minimal resource requirements are the following:
+
+* 200 MB of disk space
+* 64 MB of RAM
 
 ## Install
 
