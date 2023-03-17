@@ -5,11 +5,11 @@ sidebar_label: Collect Logs
 description: Learn how to collecting logs
 ---
 
-Sumo Logic Distribution for OpenTelemetry Collector provides multiple receivers for log collection. Full list of them is available in [our repository].
+Sumo Logic Distribution for OpenTelemetry Collector provides various receivers for log collection. Full list of them is available in [our repository].
 This document explains with more details, the receivers which are the most commonly used for logs:
 
-- [Filelog Receiver](#filelog-receiver)
-- [Windows Log Event Receiver](#windows-log-event-receiver)
+* [Filelog Receiver](#filelog-receiver)
+* [Windows Log Event Receiver](#windows-log-event-receiver)
 
 ## Filelog Receiver
 
@@ -53,7 +53,7 @@ The `log.file.path_resolved` attribute should be moved to resource and we use [G
 
 The remaining processors in pipeline are from `sumologic.yaml` file and should be applied for better performance of collector and use of Sumo Logic platform.
 
-:::Note
+:::note
 Receiver (`filelog/custom_files`) and pipeline (`logs/custom_files:`) names should be unique across all configuration files to avoid conflicts and unexpected behavior.
 :::
 
@@ -150,8 +150,55 @@ service:
       - sumologic
 ```
 
+## Windows Log Event Receiver
+
+Windows Log Event Receiver tails and parses logs from windows event log API.
+
+Lets consider the following example usage of [Windows Event Log receiver][windowseventlogreceiver]
+
+```yaml
+receivers:
+  windowseventlog/application/localhost:
+    channel: Application
+  windowseventlog/security/localhost:
+    channel: Security
+  windowseventlog/system/localhost:
+    channel: System
+processors:
+  resource/windows_resource_attributes/localhost:
+    attributes:
+      - key: sumo.datasource
+        value: windows
+        action: insert
+service:
+  pipelines:
+    logs/windows/localhost:
+      receivers:
+        - windowseventlog/application/localhost
+        - windowseventlog/system/localhost
+        - windowseventlog/security/localhost
+      processors:
+        - memory_limiter
+        - resourcedetection/system
+        - resource/windows_resource_attributes/localhost
+        - batch
+      exporters:
+        - sumologic
+```
+
+It is going to collect logs from application, security and system channels and send them to Sumo Logic.
+
+:::note
+Refer to [OpenTelemetry documentation] for more information about Windows Event Log receiver.
+:::
+
+:::note
+Refer to [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-and-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration
+:::
+
 [json_parser]: https://github.com/open-telemetry/opentelemetry-log-collection/blob/main/docs/operators/json_parser.md
 [filelogreceiver_readme]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver
 [filestorageextension_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/extension/storage/filestorage
 [groupbyattrprocessor]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/groupbyattrsprocessor#group-by-attributes-processor
 [our repository]: https://github.com/SumoLogic/sumologic-otel-collector/tree/main#components
+[windowseventlogreceiver]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver/README.md

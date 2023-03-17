@@ -42,7 +42,7 @@ If you want to make these variables available globally for all users, you can ad
 `export HTTPS_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>`
 `END`
 
-To exclude a specific domain or IP address from using the proxy, you can add it to the NO_PROXY environment variable. For example, to exclude the domain sumologic.com from using the proxy, you can add the following command:
+To exclude a specific domain or IP address from using the proxy, you can add it to the `NO_PROXY` environment variable. For example, to exclude the domain `sumologic.com` from using the proxy, you can add the following command:
 
 `export NO_PROXY=sumologic.com`
 

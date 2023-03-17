@@ -156,15 +156,16 @@ If you installed the Collector with the install script, you can use it to upgrad
 ```bash
 sudo bash ./install.sh -w -v 0.73.0-sumo-1
 ```
+
 #### Manual Step-by-Step Installation
 
 If you installed the Collector manually, the simplest way to upgrade is to follow these steps:
 
-- [Uninstall the Collector manually](#manual-step-by-step-installation-1)
-- [Install the Collector again with a new version](#manual-step-by-step-installation)
+* [Uninstall the Collector manually](#manual-step-by-step-installation-1)
+* [Install the Collector again with a new version](#manual-step-by-step-installation)
 
-## Troubleshooting specific to Windows
+## Troubleshooting
 
-TODO
+Refer to [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-and-faqs/#installing-apps-errors)
 
 #### Script options
