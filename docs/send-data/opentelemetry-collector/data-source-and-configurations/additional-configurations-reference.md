@@ -47,7 +47,7 @@ We are using the following organization of files within configuration directory:
 * `conf.d` is intended to be changed by customers if they need to customize OpenTelemetry Collector behavior
 * `env` is intended to contain environmental variable files
 
-By default configuration is loaded in the following order:
+By default, configuration is loaded in the following order.
 
 * `sumologic.yaml`
 * all configuration files from `conf.d` sorted alphabetically
@@ -103,27 +103,27 @@ Notice that the list has been overridden and maps have been merged.
 
 ### Configuration Location
 
-All Sumo Logic preconfigured components are stored in `sumologic.yaml` file. This file is managed by installation script and never shouldn't be changed manually.
+All Sumo Logic preconfigured components are stored in `sumologic.yaml` file. This file is managed by the installation script and should never be changed manually.
 
 We recommend to keep configuration of all components which are intended to be reused in `conf.d/common.yaml`.
 
 Specific configurations should be grouped by pipelines in meaningfully named files in `conf.d` directory.
-For example `conf.d/mysql.yaaml` may contain MySQL receiver with all processors intended to modify collected data before sending it to sumologic.
+For example `conf.d/mysql.yaaml` may contain MySQL receiver with all processors intended to modify collected data before sending it to Sumo Logic.
 
 ### Custom Pipeline
 
-There are few processors provided in `sumologic.yaml` which are intended to be used in every pipeline:
+There are few processors provided in `sumologic.yaml` which are intended to be used in every pipeline.
 
 * The memory limiter processor is used to prevent out of memory situations on the collector. It should be always first on the processors list.
-  
+
   Refer to [OpenTelemetry documentation](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor#memory-limiter-processor) for more details.
-  
+
 * The batch processor accepts spans, metrics, or logs and places them into batches. Batching helps better compress the data and reduce the number of outgoing connections required to transmit the data.
-  
+
   See [Using batch processor to batch data](#using-batch-processor-to-batch-data) for more details.
 
 * TODO: verify this point -> The Sumo Logic Schema processor modifies the metadata on logs, metrics and traces sent to Sumo Logic so that the Sumo Logic apps can make full use of the ingested data.
-  
+
   Refer to [Sumo Logic repository](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/processor/sumologicschemaprocessor#sumo-logic-schema-processor) for more details.
 
 We also expect Sumo Logic exporter to be included in exporters section.
@@ -156,7 +156,7 @@ Besides setting the lower limit for batch size, it is also possible to set a max
 We highly recommend to set that limit to avoid sudden increase of request sizes in case more data is being received temporarily.
 The value we recommend to set is `2 * send_batch_size`.
 
-Overall, we recommend the following default configuration for this processor:
+Overall, we recommend the following default configuration for this processor.
 
 ```yaml
 batch:
@@ -165,10 +165,12 @@ batch:
   send_batch_max_size: 2_048 ## = 2 * 1024
 ```
 
-**NOTE**: when using [Sumo Logic exporter][sumologicexporter] and sending data that is **not** in otlp format,
+:::note
+when using [Sumo Logic exporter][sumologicexporter] and sending data that is **not** in otlp format,
 you can explicitly limit size of the requests in bytes using config option `max_request_body_size`.
+:::
 
-Refer to [OpenTelemetry documentation](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/batchprocessor#batch-processor) for more details.
+Refer to the [OpenTelemetry documentation](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/batchprocessor#batch-processor) for more details.
 
 [batchprocessor]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/batchprocessor
 [memorylimiterprocessor]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor
@@ -179,8 +181,7 @@ Refer to [OpenTelemetry documentation](https://github.com/open-telemetry/opentel
 
 OpenTelemetry has a [rich data model], which is internally constructed out of several layers. For all signals,
 these can be broken down into following:
-
-* **Resource** - includes Attributes describing the resource from which given set of data comes from.
+* **Resource** - includes attributes describing the resource from which given set of data comes from.
   Should follow [resource semantic conventions].
 * **Instrumentation Scope** - additional information about the scope of data (e.g. instrumentation library name).
 * **Record** - specific record (Log, Span, Metric) that also includes its own set of Attributes. May follow given

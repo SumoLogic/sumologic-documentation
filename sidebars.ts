@@ -136,7 +136,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'OpenTelemetry-Collector',
+          label: 'OpenTelemetry Collector',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'send-data/opentelemetry-collector/index'},
