@@ -13,13 +13,13 @@ Follow the steps in this topic to install or uninstall an OpenTelemetry Collect
 
 TODO - add some info about system and hardware
 
-
 ## Install
 
 You can install our OpenTelemetry Collector using either of the following methods:
 
 * [Install script](#install-script)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
+* [UI Installation via App Catalog](#ui-installation-via-app-catalog)
 
 ### Install Script
 
@@ -27,145 +27,172 @@ A single line installation powered by Install Script.
 
 #### Get the Installation Token
 
-Get your [installation token](https://help.sumologic.com/docs/manage/security/installation-tokens) if you don't have it already and assign it to environment variable.
-
-```bash
-export SUMOLOGIC_INSTALLATION_TOKEN=<TOKEN>
-```
+Get your [installation token](https://help.sumologic.com/docs/manage/security/installation-tokens) if you don't have it already. We are going to refer to this token as `<TOKEN>` in next streps.
 
 #### Run Installation Script
 
-You can run the script in two ways:
+Run the following command in the same PowerShell window, replacing `<TOKEN>` with your token from previous step:
 
-* by piping `curl` straight into `bash`:
-
-```bash
-curl -s https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/scripts/install.sh | sudo -E bash -s
+```sh
+Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/scripts/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -InstallationToken "<TOKEN>" -Tags @{"host.group" = "default"; "deployment.environment" = "default"}
 ```
 
-* by first downloading the script, inspecting its contents for security, and then running it.
+The scipts is going to perform the following operations:
 
-```bash
-curl -o install-otelcol-sumo.sh https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/scripts/install.sh`sudo -E bash ./install-otelcol-sumo.sh`
-```
-
-The `-E` argument to sudo is needed to preserve the `SUMOLOGIC_INSTALLATION_TOKEN` environment variable in `sudo` session. It is going to perform the following operations:
-* install or upgrade operation by placing the latest version as `/usr/local/bin/otelcol-sumo`
-* get [static configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/sumologic.yaml) and place it as `/etc/otelcol-sumo/sumologic.yaml`
-* create user configuration directory (`/etc/otelcol-sumo/conf.d`) with `common.yaml` file which will contain installation token
-* configure Systemd:
-  * the script will retrieve the [Systemd service configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/systemd/otelcol-sumo.service) and place it as `/etc/systemd/system/otelcol-sumo.service`
-  * create a `otelcol-sumo` user and group which will be used to run the service
-  * enable `otelcol-sumo` service
-  * start `otelcol-sumo` service
+* install or upgrade operation by placing the latest version as `C:\Program Files\Sumo Logic\OpenTelemetry Collector\bin`
+* get [static configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/sumologic.yaml) and place it as `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\sumologic.yaml`
+* create user configuration directory (`C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d`) with `common.yaml` file which will contain installation token
+* create `OtelcolSumo` (`Sumo Logic OpenTelemetry Collector`) service
 
 #### Script Options
 
-| Long Name                       | Short Name | Description                                                                                                  | Takes Value                  |
-|--------------------------------|------------|--------------------------------------------------------------------------------------------------------------|------------------------------|
-| --skip-installation-token      | k          | Skips requirement for installation token. This option does not disable default configuration creation.       | no                           |
-| --tag                          | t          | Sets tag for collector. This argument can be used multiple times. One per tag.                               | yes, in key=value format     |
-| --download-only                | w          | Download new binary only and skip configuration part.                                                        | no                           |
-| --version                      | v          | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets the latest version. | yes, e.g. 0.71.0-sumo-0      |
-| --skip-config                  | s          | Do not create default configuration.                                                                          | no                           |
-| --skip-systemd                 | d          | Preserves from Systemd service installation.                                                                  | no                           |
-| --fips                         | f          | Install the FIPS-compliant binary. See [this document](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) for more details.                                        | no                           |
-| --install-hostmetrics          | H          | Install the hostmetrics configuration to collect host metrics.                                               | no                           |
-| --yes                          | y          | Disable confirmation asks.                                                                                    | no                           |
-| --uninstall                    | u          | Removes Sumo Logic Distribution for OpenTelemetry Collector from the system and disables Systemd service eventually. Use with --purge to remove all configurations as well. | no                           |
-| --purge                        | p          | It has to be used with --uninstall. It removes all Sumo Logic Distribution for OpenTelemetry Collector related configuration and data.                      | no                           |
-| --help                         | h          | Prints help and usage.                                                                                        |                              |
-
-The following env variables can be used along with script:
-
-| Name                          | Description                          |
-|-------------------------------|--------------------------------------|
-| `SUMOLOGIC_INSTALLATION_TOKEN`  | Installation token                   |
+| Name               | Description                                             | Takes Value                                                                          |
+|--------------------|---------------------------------------------------------|--------------------------------------------------------------------------------------|
+| -InstallationToken | Installation token                                      | yes                                                                                  |
+| -Tags              | Sets tags for collector. This argument should be a map. | yes, for example `@{"host.group" = "default"; "deployment.environment" = "default"}` |
 
 ### Manual Step-by-Step Installation
 
-1. Go to the [latest release documentation](https://github.com/SumoLogic/sumologic-otel-collector/releases/tag/v0.73.0-sumo-1).
-2. Download `otelcol-sumo_x.y.z.0_en-US.x64.msi` from the `Assets` section. <br/><img src={useBaseUrl('img/send-data/windows-installation.png')} alt="windows-installation.png" width="550" />
+1. Go to the [latest release documentation](https://github.com/SumoLogic/sumologic-otel-collector/releases/latest).
+2. Download `otelcol-sumo_x.y.z.0_en-US.x64.msi` from the `Assets` section.
+
+   <img src={useBaseUrl('img/send-data/windows-installation.png')} alt="windows-installation.png" width="550" />
+
 3. Run Installer.
+
+   <img src={useBaseUrl('img/send-data/windows-installation-1.png')} alt="windows-installation-1.png" width="550" />
+
 4. Read and accept End-User License Agreement.
+
+   <img src={useBaseUrl('img/send-data/windows-installation-2.png')} alt="windows-installation-2.png" width="550" />
+
 5. Select binary destination.
+
+   <img src={useBaseUrl('img/send-data/windows-installation-3.png')} alt="windows-installation-3.png" width="550" />
+
 6. Set Installation Token and Tags properties.
+
+   <img src={useBaseUrl('img/send-data/windows-installation-4.png')} alt="windows-installation-4.png" width="550" />
+
 7. Click Install to begin installation.
+
+   <img src={useBaseUrl('img/send-data/windows-installation-5.png')} alt="windows-installation-5.png" width="550" />
+
 8. Wait for installation to be completed.
+
+   <img src={useBaseUrl('img/send-data/windows-installation-6.png')} alt="windows-installation-6.png" width="550" />
+
 9. You can modify configuration, which should be placed in `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config` directory.
 
-  `C:\ProgramData` directory is hidden by default.
+   <img src={useBaseUrl('img/send-data/windows-installation-7.png')} alt="windows-installation-7.png" width="550" />
 
+   :::note
+   `C:\ProgramData` directory is hidden by default.
+   :::
 
 ### Verify the Installation
 
-TODO
+Run the following command in PowerShell:
+
+```sh
+> Get-Service OtelcolSumo
+
+Status   Name               DisplayName
+------   ----               -----------
+Running  OtelcolSumo        Sumo Logic OpenTelemetry Collector
+```
 
 ### UI Installation via App Catalog
 
-TODO
+1. Go to App Catalog and  select `find Windows 2012+ - OpenTelemetry`
+
+   <img src={useBaseUrl('img/send-data/windows-ui-installation-1.png')} alt="windows-ui-installation-1.png" width="550" />
+
+1. Click `Install App`
+
+   <img src={useBaseUrl('img/send-data/windows-ui-installation-2.png')} alt="windows-ui-installation-2.png" width="550" />
+
+1. Select `Add New Collector` and click `Next`
+
+   <img src={useBaseUrl('img/send-data/windows-ui-installation-3.png')} alt="windows-ui-installation-3.png" width="550" />
+
+1. Select installation token and customise your tags
+
+   <img src={useBaseUrl('img/send-data/windows-ui-installation-4.png')} alt="windows-ui-installation-4.png" width="550" />
+
+1. Open Powershell
+
+   <img src={useBaseUrl('img/send-data/windows-ui-installation-5.png')} alt="windows-ui-installation-5.png" width="550" />
+
+1. Copy installation command to PowerShell, run it, and click `Next` after successful installation
+
+   <img src={useBaseUrl('img/send-data/windows-ui-installation-6.png')} alt="windows-ui-installation-6.png" width="550" />
+
+1. Customise configuration, download it and save into desired location
+
+   <img src={useBaseUrl('img/send-data/windows-ui-installation-7.png')} alt="windows-ui-installation-7.png" width="550" />
+
+1. Open Powershell as Administrator and restart service using provided command
+
+   <img src={useBaseUrl('img/send-data/windows-ui-installation-8.png')} alt="windows-ui-installation-8.png" width="550" />
+
+1. Wait for dasboards to be installed and for data to be ingested into Sumo Logic
+
+   <img src={useBaseUrl('img/send-data/windows-ui-installation-9.png')} alt="windows-ui-installation-9.png" width="550" />
 
 ## Additional Settings
 
-TODO
+This section describes common OpenTelemetry customisations:
+
+* [Using Proxy](#using-proxy)
+* [FIPS](#fips)
 
 #### Using Proxy
 
-TODO
+TODO: how to set PROXY env for windows service?
 
 #### FIPS
 
-TODO
+We currently do not build FIPS binary for Windows.
 
 ### Uninstall
 
-The recommended way to uninstall the OpenTelemetry Collector depends on how you installed it.
+1. Go to `add or remove programs`
 
-### Install Script
+   <img src={useBaseUrl('img/send-data/windows-uninstallation-1.png')} alt="windows-uninstallation-1.png" width="550" />
 
-If you installed the Collector with the install script, you can use it to uninstall the Collector.
+1. Find `OpenTelemetry Collector` and click `Uninstall`
 
-```bash
-sudo bash ./install.sh -u
-```
+   <img src={useBaseUrl('img/send-data/windows-uninstallation-2.png')} alt="windows-uninstallation-2.png" width="550" />
 
-You can also use flag `-p` to remove all existing configurations as well.
+1. Confirm uninstallation
 
-```bash
-sudo bash ./install.sh -u -p
-```
-
-### Manual Step-by-Step Installation
-
-If you installed the Collector manually, simply remove the binary from the directory you have placed it in:
-
-```bash
-sudo rm /usr/local/bin/otelcol-sumo
-```
+   <img src={useBaseUrl('img/send-data/windows-uninstallation-3.png')} alt="windows-uninstallation-3.png" width="550" />
 
 ## Upgrading the Collector
 
-### Upgrade OpenTelemetry Collector
-
-First, you have to upgrade the Collector's version. The way you should do it, depends on how you installed it.
-
-#### Install Script
-
-If you installed the Collector with the install script, you can use it to upgrade the Collector by using `-w` flag:
-
-```bash
-sudo bash ./install.sh -w -v 0.73.0-sumo-1
-```
-
-#### Manual Step-by-Step Installation
-
-If you installed the Collector manually, the simplest way to upgrade is to follow these steps:
-
-* [Uninstall the Collector manually](#manual-step-by-step-installation-1)
-* [Install the Collector again with a new version](#manual-step-by-step-installation)
+To upgrade the collector perform installation step and it will automatically upgrade the binary in-place.
 
 ## Troubleshooting
 
-Refer to [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-and-faqs/#installing-apps-errors)
+### Cannot restart service during installation
 
-#### Script options
+If you get the following output while restarting the service:
+
+```shell
+> Restart-Service -Name OtelcolSumo
+Restart-Service : Service 'Sumo Logic OpenTelemetry Collector (OtelcolSumo)' cannot be stopped due to the following
+error: Cannot open OtelcolSumo service on computer '.'.
+At line:1 char:1
++ Restart-Service -Name OtelcolSumo
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (System.ServiceProcess.ServiceController:ServiceController) [Restart-Service
+   ], ServiceCommandException
+    + FullyQualifiedErrorId : CouldNotStopService,Microsoft.PowerShell.Commands.RestartServiceCommand
+```
+
+Please make sure that you run PowerShell as Administrator
+
+### More troubleshooting
+
+Refer to [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-and-faqs/#installing-apps-errors)

@@ -323,12 +323,14 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 
 ### Additional settings
 
-This section describes common customer customisations:
+This section describes common OpenTelemetry customisations:
 
 * [Using Proxy](#using-proxy)
 * [FIPS](#fips)
 
 #### Using Proxy
+
+ToDo: fix it for systemd
 
 Exporters leverage the HTTP communication and respect the following proxy environment variables:
 

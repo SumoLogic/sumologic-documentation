@@ -159,7 +159,7 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 
 ### Additional settings
 
-This section describes common customer customisations:
+This section describes common OpenTelemetry customisations:
 
 * [Using Proxy](#using-proxy)
 * [FIPS](#fips)
@@ -196,11 +196,7 @@ To exclude a specific domain or IP address from using the proxy, you can add it 
 
 #### FIPS
 
-To install FIPS compliant binary, you should add `--fips` switch to installation command, so it will look like the following:
-
-```yaml
-sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | SUMOLOGIC_INSTALLATION_TOKEN="TOKEN" sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default" --fips && sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-```
+We currently do not build FIPS binary for macOS.
 
 ## Uninstall
 
