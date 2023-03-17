@@ -6,7 +6,7 @@ description: Learn about Sumo Logic Open Telemetry vs Open Telemetry Upstream Re
 ---
 
 This document describes what is purpose of Sumo Logic Distribution for OpenTelemetry Collector,
-why do we provide another OpenTelemetry Collector distrubution and
+why do we provide another OpenTelemetry Collector distribution and
 how look like our versioning and breaking changes policies.
 
 ## Purpose of Sumo Logic Distribution for OpenTelemetry Collector
@@ -45,6 +45,6 @@ but changed suffix, e.g. `v0.47.0-sumo-1`.
 
 ## Breaking changes policy
 
-As the OpenTelemetry Collector is constanly changing they can be some breaking changes between releases,
+As the OpenTelemetry Collector is constantly changing they can be some breaking changes between releases,
 and we inherit them. In addition we follow the same policy, so every minor update can contain breaking changes.
 Due to that every upgrade should be preceded with careful reading of release notes.

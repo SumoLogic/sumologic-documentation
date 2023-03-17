@@ -37,7 +37,7 @@ Run the following command in the same PowerShell window, replacing `<TOKEN>` wit
 Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/scripts/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -InstallationToken "<TOKEN>" -Tags @{"host.group" = "default"; "deployment.environment" = "default"}
 ```
 
-The scipts is going to perform the following operations:
+The script is going to perform the following operations:
 
 * install or upgrade operation by placing the latest version as `C:\Program Files\Sumo Logic\OpenTelemetry Collector\bin`
 * get [static configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/sumologic.yaml) and place it as `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\sumologic.yaml`
@@ -136,7 +136,7 @@ Running  OtelcolSumo        Sumo Logic OpenTelemetry Collector
 
    <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-installation-8.png')} alt="windows-ui-installation-8.png" width="550" />
 
-1. Wait for dasboards to be installed and for data to be ingested into Sumo Logic
+1. Wait for dashboards to be installed and for data to be ingested into Sumo Logic
 
    <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-installation-9.png')} alt="windows-ui-installation-9.png" width="550" />
 
