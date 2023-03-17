@@ -2,7 +2,7 @@
 id: citrix-cloud-source
 title: Citrix Cloud Source
 sidebar_label: Citrix Cloud Source
-description: This document explains how to collect System Log from the Citrix Cloud and send it to Sumo Logic.
+description: Learn how to collect System Log from the Citrix Cloud and send it to Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
