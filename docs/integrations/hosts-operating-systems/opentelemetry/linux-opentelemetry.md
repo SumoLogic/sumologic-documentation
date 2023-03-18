@@ -205,9 +205,9 @@ The **Process Metrics - Details** dashboard gives you a detailed view of key pro
 
 Use this dashboard to:
 
--   Determine the number of open file descriptors in all hosts. If the number of open file descriptors reaches the maximum file descriptor limits, it can cause IOException errors.
--   Identify anomalies in CPU usage, memory usage, major/minor page faults and reads/writes over time.
--   Troubleshoot memory leaks using the resident set memory trend chart.
+- Determine the number of open file descriptors in all hosts. If the number of open file descriptors reaches the maximum file descriptor limits, it can cause IOException errors.
+- Identify anomalies in CPU usage, memory usage, major/minor page faults and reads/writes over time.
+- Troubleshoot memory leaks using the resident set memory trend chart.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Process-Metrics-Details.png')} alt="Process Metrics - Details" />
 
