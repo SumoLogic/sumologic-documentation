@@ -121,7 +121,7 @@ Alert deduplication or merging can be achieved by utilizing ARK OIF enrichment a
 
 Triage is a customizable section which can be used for enriching and preprocessing multiple different scenarios.
 
-By dispatching the ingested alerts into Triage events, Cloud SOAR can automatically enrich each event, deduplicate them based on the logic configured in our associated Playbooks (which can invoke Ark OIF enrichment) and decide if Cloud SOAR should aggregate multiple entries in 1 unique incident, create multiple incidents for each event or if a similar incident has already been created, to update the existing incident with updated information.
+By dispatching the ingested alerts into Triage events, Cloud SOAR can automatically enrich each event, deduplicate them based on the logic configured in our associated Playbooks (which can invoke Ark OIF enrichment) and decide if Cloud SOAR should aggregate multiple entries in one unique incident, create multiple incidents for each event or if a similar incident has already been created, to update the existing incident with updated information.
 
 Cloud SOAR is also able to correlate existing incidents in order to check if specific data is already present in Cloud SOAR Database or not. Merging or deduplication must be done prior to conversion of an alert into incident, for example, as a Triage event which allows you to invoke 1 or multiple playbooks for each Triage event created.
 
