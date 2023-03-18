@@ -167,7 +167,7 @@ The SQL Server - Backup Restore Mirroring provides information about:
 
 ### Operations
 
-The SQL Server - Operations displays recent server configuration changes, number & type of configuration updates, error and warnings, high severity error, and warning trends.
+The SQL Server - Operations displays recent server configuration changes, number and type of configuration updates, error and warnings, high severity error, and warning trends.
 
 Use this dashboard to:
 
