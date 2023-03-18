@@ -40,7 +40,7 @@ log.file = rabbitmq.log
 log.file.level = debug
 ```
 
-Once the logs are configured to be written to a local file follow the below steps to configure collection in sumo.
+Once the logs are configured to be written to a local file follow the below steps to configure collection in Sumo.
 
 ## Collection configuration & App installation
 
