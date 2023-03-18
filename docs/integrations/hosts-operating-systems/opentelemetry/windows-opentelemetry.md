@@ -44,7 +44,14 @@ As part of the setting up the collection process and app installation user can s
 
 ### Step 1: Set up Collector
 
-If you want to use an existing Otel Collector then this step can be skipped by selecting the option of using an existing Collector.
+:::note
+If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the "Use an existing Collector" option.
+:::
+
+To create a new Collector:
+
+1. Select the **Add a new Collector** option.
+2. Select the platform for which you want to install the Sumo OpenTelemetry Collector.
 
 If you want to create a new Collector please select **Add a new Collector** option.
 
