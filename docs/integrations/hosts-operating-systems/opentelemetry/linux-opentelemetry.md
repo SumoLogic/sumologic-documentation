@@ -148,8 +148,8 @@ The Host Metrics - CPU dashboard provides a detailed analysis based on CPU metri
 
 Use this dashboard to:
 
--   Identify hosts and processes with high CPU utilization.
--   Examine CPU usage by type and identify anomalies over time.
+- Identify hosts and processes with high CPU utilization.
+- Examine CPU usage by type and identify anomalies over time.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-CPU.png')} alt="Host Metrics - CPU" />
 
