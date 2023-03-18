@@ -12,7 +12,7 @@ This document provides static URLs to download our [Installed Collector](/docs/s
 
 
 1. Open a terminal window or command prompt, depending on your host type.
-1. Invoke a web request utility such as wget or Invoke-WebRequest.   For example if you're on a Linux 64-bit host, you can wget the Collector from the command line:
+1. Invoke a web request utility such as wget or Invoke-WebRequest.   For example, if you're on a Linux 64-bit host, you can wget the Collector from the command line:
 
   ```bash
   wget "https://collectors.sumologic.com/rest/download/linux/64" -O SumoCollector.sh && chmod +x SumoCollector.sh

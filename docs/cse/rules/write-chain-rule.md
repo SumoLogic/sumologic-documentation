@@ -51,7 +51,7 @@ If you use the Test Rule feature on a rule that has one or more [Rule Tuning Exp
 
 ## Configure “Then Create a Signal” settings
 
-1. **On Entity**. Define the Entity field—for example an IP address, hostname, and so on—in the Record that the resulting Signal should be associated with. (In CSE, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
+1. **On Entity**. Define the Entity field—for example, an IP address, hostname, and so on—in the Record that the resulting Signal should be associated with. (In CSE, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
 1. **with the summary.**
 1. **with the description**. Enter a description for the Signal. The Signal description should be a good indication of what the rule looks for.
 1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest).

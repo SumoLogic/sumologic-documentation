@@ -123,7 +123,7 @@ Triage is a customizable section which can be used for enriching and preprocessi
 
 By dispatching the ingested alerts into Triage events, Cloud SOAR can automatically enrich each event, deduplicate them based on the logic configured in our associated Playbooks (which can invoke Ark OIF enrichment) and decide if Cloud SOAR should aggregate multiple entries in 1 unique incident, create multiple incidents for each event or if a similar incident has already been created, to update the existing incident with updated information.
 
-Cloud SOAR is also able to correlate existing incidents in order to check if specific data is already present in Cloud SOAR Database or not. Merging or deduplication must be done prior to conversion of an alert into incident, for example as a Triage event which allows you to invoke 1 or multiple playbooks for each Triage event created.
+Cloud SOAR is also able to correlate existing incidents in order to check if specific data is already present in Cloud SOAR Database or not. Merging or deduplication must be done prior to conversion of an alert into incident, for example, as a Triage event which allows you to invoke 1 or multiple playbooks for each Triage event created.
 
 ## Settings
 
@@ -252,7 +252,7 @@ Cloud SOAR platform are displayed. These permissions are as follows:
 - **Incident** refer to the **Main Menu** modules highlighted previously. Configuring these permissions will determine what access a user has to different areas of the Incident section.
 - **Settings** refer to the **Settings** module located in the Global Functions menu. Configuring these permissions will determine what modules under Settings the user can view/modify.
 - **Search and Reporting** refer to the Home section located in the Main Menu.
-- **Automation** refers to the Automation Section in the settings menu. Configuring these permissions will determine for example what integrations can be viewed or modified
+- **Automation** refers to the Automation Section in the settings menu. Configuring these permissions will determine for example, what integrations can be viewed or modified
 - **Entities** refers to the Entities section located in the Global Functions menu. Configuring these permissions will determine what the user can view/modify within the entities module.
 
 #### Groups

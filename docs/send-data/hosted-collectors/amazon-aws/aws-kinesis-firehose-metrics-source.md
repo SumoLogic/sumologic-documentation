@@ -38,7 +38,7 @@ The benefits of a streaming source over a polling source include:
 * High resolution—The Kinesis Firehose streams all metrics at a 1-minute resolution. The AWS CloudWatch Metrics source supports scans as low as 1 minute, but that resolution can result in AWS account throttling and higher AWS bills
 
 :::note
-The AWS CloudWatch Metrics source uses AWS’s [GetMetricStatistics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html) API and as a result, supports the `Unit` parameter. (When a request includes the `Unit` parameter, only metrics with the unit specified, for example Bytes, Microseconds, and so on, are reported. The Kinesis Firehose for Metrics does not currently support the `Unit` parameter.
+The AWS CloudWatch Metrics source uses AWS’s [GetMetricStatistics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html) API and as a result, supports the `Unit` parameter. (When a request includes the `Unit` parameter, only metrics with the unit specified, for example, bytes, Microseconds, and so on, are reported. The Kinesis Firehose for Metrics does not currently support the `Unit` parameter.
 :::
 
 ## Step 1: Set up the source

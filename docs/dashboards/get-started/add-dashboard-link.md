@@ -132,7 +132,7 @@ Probably more common than linking a Dashboard to a Dashboard is linking a Dash
 
 Threat data provided by the GuardDuty provides a lot of data into threats you are facing. With a linked dashboard, we can drill down into one particular threat to understand it better. 
 
-For example we can modify the  default Amazon GuardDuty - Threat Details Benchmark dashboard of the GuardDuty app, making the threatName column a link to threatDetails.
+For example, we can modify the  default Amazon GuardDuty - Threat Details Benchmark dashboard of the GuardDuty app, making the threatName column a link to threatDetails.
 
 ![image1.png](/img/dashboards/amazon-guarddog.png)
 
