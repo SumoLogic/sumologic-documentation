@@ -194,7 +194,7 @@ This dashboard helps you to monitor unsynchronized partition replicas and consum
 
 Use this dashboard to:
 
--   Monitor consumer Group Lag by Topic
--   Identify unsynchronized partition replicas
+-   Monitor consumer Group Lag by Topic.
+-   Identify unsynchronized partition replicas.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Metrics.png')} alt="Metrics" />
