@@ -125,7 +125,7 @@ Once you download the yaml file, please follow the below steps based on your pla
 
 <TabItem value="Linux">
 
-1.  Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder for the Kafka instance which needs to be monitored.
+1.  Copy the yaml to the`/etc/otelcol-sumo/conf.d/` folder for the Kafka instance which needs to be monitored.
 2.  Restart the collector using:
   ```sh
   sudo systemctl restart otelcol-sumo
