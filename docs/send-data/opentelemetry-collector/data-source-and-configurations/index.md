@@ -79,7 +79,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   </div>
   <div class="box smallbox4 card">
     <div class="container">
-    <a href="/docs/send-data/opentelemetry-collector/data-sources-and-configurations/additional-configurations-reference"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Additional Configurations Reference</h4></a>
+    <a href="/docs/send-data/opentelemetry-collector/data-source-and-configurations/additional-configurations-reference"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Additional Configurations Reference</h4></a>
       <p>Reference for additional configurations you can use with the OpenTelemetry collector.</p>
     </div>
   </div>

@@ -55,7 +55,7 @@ In this section, we'll introduce the following concepts:
   </div>
   <div className="box smallbox5 card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream">
+      <a href="/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship">
         <img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" />
         <h4>Sumo Logic OpenTelemetry vs OpenTelemetry Upstream Relationship</h4>
       </a>
