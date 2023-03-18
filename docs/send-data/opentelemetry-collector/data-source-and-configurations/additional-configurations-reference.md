@@ -44,7 +44,7 @@ The following is the file structure used in our configuration directory:
 When the collector is started, it loads the configuration in the following order:
 
 * `sumologic.yaml`. This is the default configuration file provided by Sumo Logic. It contains the default settings for the collector.
-* All configuration files from `conf.d`, sorted alphabetically - these files contain additional configuration settings that can be customized by customers. If there are any conflicts between the files, the last loaded configuration file will take precedence.
+* All configuration files from `conf.d`, sorted alphabetically. These files contain additional configuration settings that can be customized by customers. If there are any conflicts between the files, the last loaded configuration file will take precedence.
 
 :::note
 If a configuration is loaded later in the order, it will be merged with the previous configuration.
