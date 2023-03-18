@@ -89,7 +89,7 @@ The following arguments can be passed to the script:
 The following env variables can be used along with script:
 
 | name                           | description        |
-|--------------------------------|--------------------|
+|:---------------------|:-----------------|
 | `SUMOLOGIC_INSTALLATION_TOKEN` | Installation token |
 
 ### Manual step-by-step Installation
