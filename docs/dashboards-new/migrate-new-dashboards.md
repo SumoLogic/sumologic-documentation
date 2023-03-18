@@ -1,7 +1,7 @@
 ---
 id: migrate-to-new-dashboards
 title: Migrate to Dashboards (New)
-description: This document explains the how to migrate Dashboard (Classic) to Dashboards (New) functionality.
+description: Learn how to migrate Dashboards (Classic) to Dashboards (New) functionality.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

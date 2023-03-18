@@ -2,7 +2,7 @@
 id: airtable-source
 title: Airtable Source
 sidebar_label: Airtable Source
-description: This document explains how to retrieve Airtable audit logs into the Sumo Logic environment.
+description: Learn how to retrieve Airtable audit logs into the Sumo Logic environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
