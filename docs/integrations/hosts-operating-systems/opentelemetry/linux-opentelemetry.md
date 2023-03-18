@@ -171,9 +171,9 @@ The Host Metrics - Memory dashboard provides detailed information on host memory
 
 Use this dashboard to:
 
--   Identify hosts with high memory utilization.
--   Examine memory distribution (free, buffered-cache, used, total) for a given host.
--   Monitor abnormal spikes in memory and swap utilization.
+- Identify hosts with high memory utilization.
+- Examine memory distribution (free, buffered-cache, used, total) for a given host.
+- Monitor abnormal spikes in memory and swap utilization.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Memory.png')} alt="Host Metrics - Memory" />
 
