@@ -106,7 +106,7 @@ For example, a file named `conf.d/mysql.yaml` can contain the MySQL receiver alo
 
 There are few processors provided in `sumologic.yaml` which are intended to be used in every pipeline.
 
-* The memory limiter processor is used to prevent out of memory situations on the collector. It should be always first on the processors list. For mroe information, refer to the [OpenTelemetry documentation](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor#memory-limiter-processor).
+* The memory limiter processor is used to prevent out of memory situations on the collector. It should be always first on the processors list. For more information, refer to the [OpenTelemetry documentation](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor#memory-limiter-processor).
 
 * The batch processor accepts spans, metrics, or logs and places them into batches. Batching helps better compress the data and reduce the number of outgoing connections required to transmit the data. See [Using batch processor to batch data](#using-batch-processor-to-batch-data) for more information.
 
