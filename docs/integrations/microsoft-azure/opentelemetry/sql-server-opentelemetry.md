@@ -136,7 +136,7 @@ The SQL Server - Overview dashboard provides a snapshot overview of your SQL Ser
 
 Use this dashboard to:
 
--   Keeping track of Counts like - Deadlock, Error, Backup failure,mirroring errors and insufficient space issue.
+-   Keep track of Counts like - Deadlock, Error, Backup failure, mirroring errors and insufficient space issue.
 -   Examine Login activities, failures, and failure reasons.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Overview.png')} alt="Overview" />
