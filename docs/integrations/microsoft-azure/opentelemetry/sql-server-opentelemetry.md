@@ -98,7 +98,7 @@ Once you have the yaml file downloaded in step 2, you can copy it to the machine
 <TabItem value="macOS">
 
 1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the SQL Server instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command 
+2.  Restart the otelcol-sumo process using the below command:
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
   ```
