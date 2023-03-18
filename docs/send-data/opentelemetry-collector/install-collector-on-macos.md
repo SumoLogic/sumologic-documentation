@@ -162,7 +162,7 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 
 ### Additional settings
 
-This section describes common OpenTelemetry customisations:
+This section describes common OpenTelemetry customizations:
 
 * [Using Proxy](#using-proxy)
 * [FIPS](#fips)
