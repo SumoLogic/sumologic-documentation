@@ -138,7 +138,7 @@ The Host Metrics - Overview dashboard gives you an at-a-glance view of the key m
 
 Use this dashboard to:
 
--   Identify hosts with high CPU, disk, memory utilization, and identify anomalies over time.
+- Identify hosts with high CPU, disk, memory utilization, and identify anomalies over time.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Overview.png')} alt="Host Metrics - Overview" />
 
