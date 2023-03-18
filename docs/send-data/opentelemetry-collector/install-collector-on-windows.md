@@ -30,7 +30,7 @@ A single line installation powered by Install Script.
 
 #### Get the Installation Token
 
-Get your [installation token](https://help.sumologic.com/docs/manage/security/installation-tokens) if you don't have it already. We are going to refer to this token as `<TOKEN>` in next streps.
+Get your [installation token](/docs/manage/security/installation-tokens) if you don't have it already. We are going to refer to this token as `<TOKEN>` in next streps.
 
 #### Run Installation Script
 
@@ -87,8 +87,6 @@ The script is going to perform the following operations:
 
 9. You can modify configuration, which should be placed in `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config` directory.
 
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-7.png')} alt="windows-installation-7.png" width="550" />
-
    :::note
    `C:\ProgramData` directory is hidden by default.
    :::
@@ -107,41 +105,41 @@ Running  OtelcolSumo        Sumo Logic OpenTelemetry Collector
 
 ### UI Installation via App Catalog
 
-1. Go to App Catalog and  select `find Windows 2012+ - OpenTelemetry`
+1. Go to **App Catalog** and  select **find Windows 2012+ - OpenTelemetry**.
 
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-installation-1.png')} alt="windows-ui-installation-1.png" width="550" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-1.png')} alt="windows-ui-installation-1.png" width="550" />
 
-1. Click `Install App`
+1. Click **Install App**.
 
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-installation-2.png')} alt="windows-ui-installation-2.png" width="550" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-2.png')} alt="windows-ui-installation-2.png" width="550" />
 
-1. Select `Add New Collector` and click `Next`
+1. Select **Add New Collector** and click **Next**.
 
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-installation-3.png')} alt="windows-ui-installation-3.png" width="550" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-3.png')} alt="windows-ui-installation-3.png" width="550" />
 
-1. Select installation token and customise your tags
+1. Select the installation token and customize your tags.
 
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-installation-4.png')} alt="windows-ui-installation-4.png" width="550" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-4.png')} alt="windows-ui-installation-4.png" width="550" />
 
-1. Open Powershell
+1. Open Powershell.
 
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-installation-5.png')} alt="windows-ui-installation-5.png" width="550" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-5.png')} alt="windows-ui-installation-5.png" width="550" />
 
-1. Copy installation command to PowerShell, run it, and click `Next` after successful installation
+1. Copy the installation command to PowerShell, run it, and click **Next** after the successful installation.
 
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-installation-6.png')} alt="windows-ui-installation-6.png" width="550" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-6.png')} alt="windows-ui-installation-6.png" width="550" />
 
-1. Customise configuration, download it and save into desired location
+1. Customize the configuration, download it, and save it in the desired location.
 
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-installation-7.png')} alt="windows-ui-installation-7.png" width="550" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-7.png')} alt="windows-ui-installation-7.png" width="550" />
 
-1. Open Powershell as Administrator and restart service using provided command
+1. Open **Powershell** as an Administrator and restart the service by running this command.
 
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-installation-8.png')} alt="windows-ui-installation-8.png" width="550" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-8.png')} alt="windows-ui-installation-8.png" width="550" />
 
-1. Wait for dashboards to be installed and for data to be ingested into Sumo Logic
+1. Wait for the dashboards to be installed and for data to be ingested into Sumo Logic.
 
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-installation-9.png')} alt="windows-ui-installation-9.png" width="550" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-9.png')} alt="windows-ui-installation-9.png" width="550" />
 
 ## Additional Settings
 
@@ -160,17 +158,17 @@ We currently do not build FIPS binary for Windows.
 
 ### Uninstall
 
-1. Go to `add or remove programs`
+1. Go to **add or remove programs**.
 
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstallation-1.png')} alt="windows-uninstallation-1.png" width="550" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-1.png')} alt="windows-uninstallation-1.png" width="550" />
 
 1. Find `OpenTelemetry Collector` and click `Uninstall`
 
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstallation-2.png')} alt="windows-uninstallation-2.png" width="550" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-2.png')} alt="windows-uninstallation-2.png" width="550" />
 
-1. Confirm uninstallation
+1. Confirm the uninstallation.
 
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstallation-3.png')} alt="windows-uninstallation-3.png" width="550" />
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-3.png')} alt="windows-uninstallation-3.png" width="550" />
 
 ## Upgrading the Collector
 
@@ -178,7 +176,7 @@ To upgrade the collector perform installation step and it will automatically upg
 
 ## Troubleshooting
 
-### Cannot restart service during installation
+### Cannot restart service during Installation
 
 If you get the following output while restarting the service:
 
@@ -194,8 +192,8 @@ At line:1 char:1
     + FullyQualifiedErrorId : CouldNotStopService,Microsoft.PowerShell.Commands.RestartServiceCommand
 ```
 
-Please make sure that you run PowerShell as Administrator
+Ensure that you run **PowerShell** as an Administrator.
 
-### More troubleshooting
+### More Troubleshooting
 
-Refer to [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-and-faqs/#installing-apps-errors)
+To know more about troubleshooting and solutions, refer to the [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-and-faqs/#installing-apps-errors).
