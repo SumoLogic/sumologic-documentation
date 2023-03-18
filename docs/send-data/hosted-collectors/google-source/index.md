@@ -29,5 +29,5 @@ In this section, we'll introduce the following concepts:
   <img src={useBaseUrl('img/send-data/Google Cloud Platform-icon.png')} alt="icon" width="100"/><h4>Google Cloud Platform</h4></a>
   <p>You can export, in real time, the data collected by Stackdriver to Google Cloud Pub/Sub.</p>
   </div>
-</div>
+</div></div>
 </div>
