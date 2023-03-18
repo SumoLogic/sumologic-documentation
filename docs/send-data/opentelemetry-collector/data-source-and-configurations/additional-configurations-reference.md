@@ -106,13 +106,11 @@ For example, a file named `conf.d/mysql.yaml` can contain the MySQL receiver alo
 
 There are few processors provided in `sumologic.yaml` which are intended to be used in every pipeline.
 
-* The memory limiter processor is used to prevent out of memory situations on the collector. It should be always first on the processors list. For more information, refer to the [OpenTelemetry documentation](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor#memory-limiter-processor).
+* **Memory limiter processor**. It is used to prevent out-of-memory situations on the collector. It should be always first on the processor's list. For more information, refer to the [OpenTelemetry documentation](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor#memory-limiter-processor).
+* **Batch processor **. It accepts spans, metrics, or logs and places them into batches. Batching helps better compress the data and reduce the number of outgoing connections required to transmit the data. See [Using batch processor to batch data](#using-batch-processor-to-batch-data) for more information.
+<!-- * TODO: verify this point -> The Sumo Logic Schema processor modifies the metadata on logs, metrics, and traces sent to Sumo Logic so that the Sumo Logic apps can make full use of the ingested data.  -->
 
-* The batch processor accepts spans, metrics, or logs and places them into batches. Batching helps better compress the data and reduce the number of outgoing connections required to transmit the data. See [Using batch processor to batch data](#using-batch-processor-to-batch-data) for more information.
-
-* TODO: verify this point -> The Sumo Logic Schema processor modifies the metadata on logs, metrics and traces sent to Sumo Logic so that the Sumo Logic apps can make full use of the ingested data.
-
-  Refer to [Sumo Logic repository](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/processor/sumologicschemaprocessor#sumo-logic-schema-processor) for more details.
+Refer to the [Sumo Logic repository](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/processor/sumologicschemaprocessor#sumo-logic-schema-processor) for more details.
 
 We also expect Sumo Logic exporter to be included in exporters section.
 
