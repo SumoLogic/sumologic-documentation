@@ -165,13 +165,11 @@ Learn more about these processors:
 
 OpenTelemetry has a [rich data model](https://github.com/open-telemetry/opentelemetry-proto/tree/main/opentelemetry/proto), which is internally constructed out of several layers. For all signals,
 these can be broken down into following:
-* **Resource** - includes attributes describing the resource from which given set of data comes from.
-  Should follow [resource semantic conventions](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/resource/semantic_conventions).
-* **Instrumentation Scope** - additional information about the scope of data. For example, instrumentation library name.
-* **Record** - refers to a specific entry of data, such as a Log, Span, or Metric. Each Record has its own set of attributes, which may include key/value pairs that are specific to the context of the Record. Some Record types may follow certain conventions for signal types, such as [trace](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/trace/semantic_conventions), [metrics](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/metrics/semantic_conventions), or [logs](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/logs/semantic_conventions). Logs, in particular, can also include attributes in the body of the Record.
+* **Resource**. Includes attributes describing the resource from which given set of data comes from. Should follow [resource semantic conventions](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/resource/semantic_conventions).
+* **Instrumentation Scope**. Additional information about the scope of data. For example, instrumentation library name.
+* **Record**. Refers to a specific entry of data, such as a Log, Span, or Metric. Each Record has its own set of attributes, which may include key/value pairs that are specific to the context of the Record. Some Record types may follow certain conventions for signal types, such as [trace](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/trace/semantic_conventions), [metrics](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/metrics/semantic_conventions), or [logs](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/logs/semantic_conventions). Logs, in particular, can also include attributes in the body of the Record.
 
-As can be observed, while attributes can be present at both **Resource** and **Record level** currently, they are not created
-equal and should be interpreted separately. The Resource-Level attribute context is much broader, and they identify where data comes from, whereas Record-Level attributes concern just one record, often with many keys and values.
+As can be observed, while attributes can be present at both **Resource** and **Record level** currently, they are not created equal and should be interpreted separately. The Resource-Level attribute context is much broader, and they identify where data comes from, whereas Record-Level attributes concern just one record, often with many keys and values.
 
 At Sumo Logic, there is a concept of [Fields](https://help.sumologic.com/docs/manage/fields) for log data. Fields offer
 a powerful capability to associate indexable metadata with logs, though only limited number of them can be used at a given time. Also, they need to be defined first.
