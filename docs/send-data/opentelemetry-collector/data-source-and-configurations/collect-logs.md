@@ -46,10 +46,7 @@ service:
 ```
 
 The `include_file_name: false` prevents the receiver from adding `log.file.name` attribute to the logs.
-Instead, we are using `include_file_path_resolved: true`,
-which adds a `log.file.path_resolved` attribute to the logs
-that contains the whole path of the file, as opposed to just the name of the file.
-The `log.file.path_resolved` attribute should be moved to resource and we use [Group by Attributes processor][groupbyattrprocessor] for that.
+Instead, we are using `include_file_path_resolved: true`, which adds a `log.file.path_resolved` attribute to the logs that contain the whole path of the file, as opposed to just the name of the file. The `log.file.path_resolved` attribute should be moved to resource and we use [Group by Attributes processor][groupbyattrprocessor] for that.
 
 The remaining processors in pipeline are from `sumologic.yaml` file and should be applied for better performance of collector and use of Sumo Logic platform.
 
