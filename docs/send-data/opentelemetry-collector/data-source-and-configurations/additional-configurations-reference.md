@@ -10,13 +10,9 @@ description: Learn about Configurations Reference
 All configuration files in this setup follow the schema for OpenTelemetry Collector configuration, which comprises a service consisting of pipelines with receivers, processors, and exporters:
 
 * A **Receiver**, which can be push or pull based, is how data gets into the Collector. Receivers may support one or more data sources. For more information, refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#receivers).
-
-* A **Processors** are run on data between being received and being exported. Processors are optional though some are recommended. With processors, you can filter your data, add custom fields, modify content, and much more. For more information refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#processors).
-
+* A **Processor** is run on data between being received and being exported. Processors are optional though some are recommended. With processors, you can filter your data, add custom fields, modify content, and much more. For more information refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#processors).
 * An **Exporter** is how you transmit data to one or more backends/destinations, specifically Sumo Logic. It can be push or pull based. For more information, refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#exporters).
-
-* An **Extensions** are available primarily for tasks that do not involve processing telemetry data. Examples of extensions include health monitoring, service discovery, and data forwarding. Sumo Logic has its own extension, which registers and manage your Sumo Logic collector. For more information, refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#extensions).
-
+* An **Extension** is available primarily for tasks that do not involve processing telemetry data. Examples of extensions include health monitoring, service discovery, and data forwarding. Sumo Logic has its own extension, which registers and manage your Sumo Logic collector. For more information, refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#extensions).
 * A **Pipeline** is configured through the service stanza. For more information, refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#service) to become more familiar with this concept.
 
 ## Sumo Logic Distribution for OpenTelemetry Collector Configuration Structure
