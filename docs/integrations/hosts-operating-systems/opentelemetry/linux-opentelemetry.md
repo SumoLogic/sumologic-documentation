@@ -201,7 +201,7 @@ Use this dashboard to:
 
 ### Process Metrics - Details
 
-The Process Metrics - Details dashboard gives you a detailed view of key process related metrics such as CPU and memory utilization, disk read/write throughput, and major/minor page faults.
+The **Process Metrics - Details** dashboard gives you a detailed view of key process related metrics such as CPU and memory utilization, disk read/write throughput, and major/minor page faults.
 
 Use this dashboard to:
 
