@@ -2,7 +2,7 @@
 id: sentinelone
 title: Sumo Logic App for SentinelOne
 sidebar_label: SentinelOne
-description: The Sumo Logic App for the SentinelOne App offers functionality for monitoring and analyzing your organization's SentinelOne Threats and Agents logs.
+description: The Sumo Logic App for SentinelOne offers functionality for monitoring and analyzing your organization's SentinelOne Threats and Agents logs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
