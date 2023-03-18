@@ -39,13 +39,13 @@ export SUMOLOGIC_INSTALLATION_TOKEN=<TOKEN>
 
 You can run the script in two ways:
 
-* by piping `curl` straight into `bash`:
+* By piping `curl` straight into `bash`:
 
    ```bash
    sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s --
    ```
 
-* by first downloading the script, inspecting its contents for security, and then running it:
+* By first downloading the script, inspecting its contents for security, and then running it:
 
    ```bash
    curl -Lso install-otelcol-sumo.sh https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh
@@ -127,7 +127,7 @@ In order to verify installation, run OpenTelemetry Collector.
 otelcol-sumo --version
 ```
 
-#### Step 4. Systemd service
+#### Step 4. Run OpenTelemetry Collector as Systemd Service
 
 We recommend using the [installation script](#install-script) as it supports Systemd scenario.
 
@@ -148,11 +148,9 @@ For example, if you use the [file_storage extension](https://github.com/open-tel
 
 Then the user running the process must have access to `/var/lib/otelcol/mydir`.
 
-##### Run Opentelemetry Collector as Systemd Service
-
 To run Opentelemetry Collector as Systemd Service, follow the steps below:
 
-1. Run the following command to ensure that `otelcol-sumo` has been installed into `/usr/local/bin/otelcol-sumo`.
+1. Ensure that `otelcol-sumo` has been installed into `/usr/local/bin/otelcol-sumo` by running this command.
 
    ```bash
    /usr/local/bin/otelcol-sumo --version
@@ -193,9 +191,9 @@ To run Opentelemetry Collector as Systemd Service, follow the steps below:
   collector_credentials_directory: /var/lib/otelcol-sumo/credentials
   ```
 
-For more information, refer to the documentation of [sumologic extension].
+   For more information, refer to the documentation of [sumologic extension].
 
-1. Run the following command to ensure that the configuration can be accessed by `otelcol-sumo` user which will be used to run the service.
+1. Ensure that the configuration can be accessed by `otelcol-sumo` user which will be used to run the service by running this command.
 
    ```bash
    $ sudo find /etc/otelcol-sumo/ -type 'f' | sudo xargs ls -al
@@ -237,7 +235,7 @@ For more information, refer to the documentation of [sumologic extension].
 
 We recommend keeping the install token in environmental variable for `Systemd` installation:
 
-1. Run the following command to ensure that the service file `/etc/systemd/system/otelcol-sumo.service` contains `EnvironmentFile=-/etc/otelcol-sumo/env/*.env`.
+1. Ensure that the service file `/etc/systemd/system/otelcol-sumo.service` contains `EnvironmentFile=-/etc/otelcol-sumo/env/*.env` by running this command.
 
    ```shell
    $ sudo cat /etc/systemd/system/otelcol-sumo.service
@@ -246,13 +244,13 @@ We recommend keeping the install token in environmental variable for `Systemd` i
    EnvironmentFile=-/etc/otelcol-sumo/env/*.env
    ```
 
-1. Run the following command to ensure that the `/etc/otelcol-sumo/env` directory exists.
+1. Ensure that the `/etc/otelcol-sumo/env` directory exists by running this command.
 
    ```bash
    sudo mkdir -p /etc/otelcol-sumo/env
    ```
 
-1. Run the following command to create `/etc/otelcol-sumo/env/token.env` directory with your installation token, for example.
+1. Create `/etc/otelcol-sumo/env/token.env` directory with your installation token, for example.
 
    ```text
    SUMOLOGIC_INSTALLATION_TOKEN=<your token>
@@ -260,7 +258,7 @@ We recommend keeping the install token in environmental variable for `Systemd` i
 
    We use `SUMOLOGIC_INSTALLATION_TOKEN` in example, as it will be automatically used by the recommended configuration.
 
-1. Run the following command to ensure that the file has the correct owner and permissions.
+1. Ensure that the file has the correct owner and permissions by running this command.
 
    ```bash
    sudo chmod 440 /etc/otelcol-sumo/env/token.env
@@ -274,7 +272,7 @@ We recommend keeping the install token in environmental variable for `Systemd` i
    /etc/otelcol-sumo/conf.d/common.yaml:3:    install_token: <some token>
    ```
 
-1. Restart `otelcol-sumo` service by running the following command:
+1. Restart `otelcol-sumo` service by running this command.
 
    ```bash
    sudo systemctl restart otelcol-sumo

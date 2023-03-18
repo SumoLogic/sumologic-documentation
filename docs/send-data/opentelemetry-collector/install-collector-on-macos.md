@@ -25,9 +25,9 @@ You can install our OpenTelemetry Collector using either of the following method
 * [Install script](#install-script)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
 
-### Install script
+### Install Script
 
-#### Get the installation token
+#### Get the Installation token
 
 Get your [installation token](https://help.sumologic.com/docs/manage/security/installation-tokens) if you don't have it already and assign it to an environment variable:
 
@@ -62,7 +62,7 @@ It is going to perform the following operations:
 * get [static configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/sumologic.yaml) and place it as `/etc/otelcol-sumo/sumologic.yaml`
 * create user configuration directory (`/etc/otelcol-sumo/conf.d`) with `common.yaml` file which will contain installation token
 
-#### Script options
+#### Script Options
 
 The following arguments can be passed to the script:
 
@@ -87,9 +87,9 @@ The following env variables can be used along with script:
 |--------------------------------|--------------------|
 | `SUMOLOGIC_INSTALLATION_TOKEN` | Installation token |
 
-### Manual step-by-step installation
+### Manual step-by-step Installation
 
-#### Download the binary
+#### Step 1. Download the binary
 
 Examples for OpenTelemetry Collector version `0.73.0-sumo-0`.
 
@@ -105,7 +105,7 @@ curl -sLo otelcol-sumo "https://github.com/SumoLogic/sumologic-otel-collector/re
 curl -sLo otelcol-sumo "https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.73.0-sumo-0/otelcol-sumo-0.73.0-sumo-0-darwin_arm64"
 ```
 
-#### Move the binary to your `PATH` environment
+#### Step 2. Move the binary to your `PATH` environment
 
 Move the downloaded binary into a directory from your `PATH` environment, so that it can be used by simply invoking `otelcol-sumo`.
 
@@ -114,15 +114,15 @@ chmod +x otelcol-sumo
 sudo mv otelcol-sumo /usr/local/bin/otelcol-sumo
 ```
 
-#### Verify the installation
+#### Step 3. Verify the Installation
 
-In order to verify installation please run OpenTelemetry Collector.
+To verify installation, run OpenTelemetry Collector.
 
 ```bash
 otelcol-sumo --version
 ```
 
-#### Running Binary
+#### Step 4. Running Binary
 
 As for now we do not support installation of OpenTelemetry Collector as service for macOS. It needs to be run manually.
 
