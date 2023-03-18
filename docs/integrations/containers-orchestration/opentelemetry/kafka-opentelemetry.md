@@ -110,7 +110,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-YAML.png')} alt="YAML" />
 
-### Step3: Sending logs and metric to Sumo
+### Step 3: Sending logs and metric to Sumo
 
 Once you download the yaml file, please follow the below steps based on your platform.
 
