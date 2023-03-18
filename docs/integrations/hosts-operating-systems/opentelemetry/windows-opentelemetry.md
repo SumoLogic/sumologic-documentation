@@ -65,7 +65,7 @@ This will generate a command which can be executed in the machine which needs to
 
 In this step we will be configuring the yaml file required for Windows event logs and metrics Collection.
 
-Any custom tags can be added as part of this step.
+Any custom fields can be tagged along with the data in this step.
 
 Once the details are filled in, click on the **Download YAML File** button to get the yaml file.
 
