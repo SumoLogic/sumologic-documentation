@@ -3,7 +3,8 @@ slug: /send-data/hosted-collectors/google-source
 title: Google Sources for Sumo Logic
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 Sumo Logic offers hosted Sources to collect from these Google products.
 
