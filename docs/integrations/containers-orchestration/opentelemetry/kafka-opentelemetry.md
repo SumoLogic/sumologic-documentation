@@ -143,7 +143,7 @@ Once you download the yaml file, please follow the below steps based on your pla
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder in the Kafka instance which needs to be monitored.
+1.  Copy the yaml to the `/etc/otelcol-sumo/conf.d/` folder in the Kafka instance which needs to be monitored.
 2.  Restart the otelcol-sumo process using the below command 
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
