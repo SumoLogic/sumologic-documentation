@@ -183,9 +183,9 @@ The Host Metrics - Network dashboard provides detailed information on host netwo
 
 Use this dashboard to:
 
--   Determine top hosts with network errors and dropped packets.
--   Monitor abnormal spikes in incoming/outgoing packets and bytes sent and received.
--   Use dashboard filters to compare throughput across the interface of a host.
+- Determine top hosts with network errors and dropped packets.
+- Monitor abnormal spikes in incoming/outgoing packets and bytes sent and received.
+- Use dashboard filters to compare throughput across the interface of a host.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Network.png')} alt="Host Metrics - Network" />
 
