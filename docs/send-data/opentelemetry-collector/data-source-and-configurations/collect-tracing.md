@@ -23,8 +23,7 @@ receivers:
 ```
 
 :::note
-The configuration is going to be applied for `metrics/default`, `logs/default` and `traces/default` defined in `sumologic.yaml`.
-If you would like to create new independent pipeline, use rather the following content for `conf.d/expose-otlp.yaml`
+The configuration is going to be applied for `metrics/default`, `logs/default`, and `traces/default` defined in `sumologic.yaml`. If you'd like to create a new independent pipeline, use the following content for `conf.d/expose-otlp.yaml`
 
 ```yaml
 receivers:
