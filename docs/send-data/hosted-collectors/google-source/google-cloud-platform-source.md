@@ -5,6 +5,9 @@ sidebar_label: Google Cloud Platform
 description: You can export in real time all of the data collected by Stackdriver to Google Cloud Pub/Sub. Sumo Logic uses the Pub/Sub integration to push logs to our platform in real time.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/gcp-icon.png')} alt="icon" width="50"/>
 
 Log data for Google Cloud Platform (GCP) services is collected and exposed through the Google Cloud Stackdriver service. You can export, in real time, the data collected by [Stackdriver](https://cloud.google.com/stackdriver/) to Google Cloud Pub/Sub. We use this Pub/Sub integration to push logs to Sumo Logic in real time.
 
@@ -44,8 +47,6 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. **Advanced Options for Logs**.
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
   <img src={useBaseUrl('img/send-data/GCP-advanced-options.png')} alt="GCP advanced options" width="70"/>
 
