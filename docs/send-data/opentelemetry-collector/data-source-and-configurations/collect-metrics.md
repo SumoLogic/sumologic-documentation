@@ -5,7 +5,7 @@ sidebar_label: Collect Metrics
 description: Learn how to collecting metrics
 ---
 
-Sumo Logic Distribution for OpenTelemetry Collector provides various receivers for metrics collection. Full list of them is available in [our repository].
+Sumo Logic Logic Distribution for OpenTelemetry Collector provides various receivers for metrics collection. The full list of them is available in [our repository].
 
 To use the receiver, you need to define it in the `receivers:` section and then use it in the pipeline.
 Let's consider the following example usage of [Host Metrics receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver#host-metrics-receiver):
