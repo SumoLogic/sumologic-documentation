@@ -195,7 +195,7 @@ The Host Metrics - TCP dashboard provides detailed information around inbound, o
 
 Use this dashboard to:
 
--   Identify abnormal spikes in inbound, outbound, open, or established connections.
+- Identify abnormal spikes in inbound, outbound, open, or established connections.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-TCP.png')} alt="Host Metrics - TCP" />
 
