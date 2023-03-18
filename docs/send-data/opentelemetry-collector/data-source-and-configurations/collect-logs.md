@@ -5,8 +5,9 @@ sidebar_label: Collect Logs
 description: Learn how to collecting logs
 ---
 
-Sumo Logic Distribution for OpenTelemetry Collector provides various receivers for log collection. Full list of them is available in [our repository].
-This document explains with more details, the receivers which are the most commonly used for logs:
+Sumo Logic Logic Distribution for OpenTelemetry Collector provides various receivers for log collection. You can find the full list in [our repository].
+
+This document explains with more detail, the receivers most commonly used for logs:
 
 * [Filelog Receiver](#filelog-receiver)
 * [Windows Log Event Receiver](#windows-log-event-receiver)
