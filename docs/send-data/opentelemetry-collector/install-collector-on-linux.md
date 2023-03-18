@@ -2,7 +2,7 @@
 id: install-collector-on-linux
 title: Installing Collector on Linux
 sidebar_label: Install Collector on Linux
-description: Learn how to install Collector
+description: Learn how to install the Sumo Logic OpenTelemetry Collector.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
