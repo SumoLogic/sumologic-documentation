@@ -45,7 +45,7 @@ The ERRORLOG is typically in UTF-16LE encoding, but verify the file encoding use
 
 If you want to use an existing Otel Collector then this step can be skipped by selecting the option of using an existing Collector.
 
-If you want to create a new Collector please select **Add a new Collector** option.
+If you want to create a new Collector, select the **Add a new Collector** option.
 
 Select the platform for which you want to install the Sumo OpenTelemetry Collector.
 
