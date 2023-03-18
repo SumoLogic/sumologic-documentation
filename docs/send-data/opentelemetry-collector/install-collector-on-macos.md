@@ -2,7 +2,7 @@
 id: install-collector-on-macos
 title: Installing Collector on macOS
 sidebar_label: Install Collector on macOS
-description: Learn how to install Collector
+description: Learn how to install the Sumo Logic OpenTelemetry Collector on macOS.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
