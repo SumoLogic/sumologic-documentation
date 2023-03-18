@@ -182,7 +182,7 @@ This dashboard helps you quickly analyze your Kafka error logs across all cluste
 Use this dashboard to:
 
 -   Identify critical events in your Kafka broker and controller logs.
--   Examine trends to detect spikes in Error or Fatal events
+-   Examine trends to detect spikes in Error or Fatal events.
 -   Monitor Broker added/started and shutdown events in your cluster.
 -   Quickly determine patterns across all logs in a given Kafka cluster.
 
