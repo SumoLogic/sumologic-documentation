@@ -67,7 +67,7 @@ It is going to perform the following operations:
 The following arguments can be passed to the script:
 
 | long name                   | short name | description                                                                                                                                                                  | takes value                |
-|-----------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
+|:----------------------------|:------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------|
 | `--skip-installation-token` | `k`        | Skips requirement for installation token. This option do not disable default configuration creation.                                                                         | no                         |
 | `--tag`                     | `t`        | Sets tag for collector. This argument can be use multiple times. One per tag.                                                                                                | yes, in `key=value` format |
 | `--download-only`           | `w`        | Download new binary only and skip configuration part.                                                                                                                        | no                         |
