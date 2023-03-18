@@ -86,7 +86,7 @@ Once you have the yaml file downloaded in step 2, you can copy it to the machine
 <TabItem value="Linux">
 
 1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the RabbitMQ instance which needs to be monitored.
-2.  restart the collector using
+2.  Restart the collector using:
 ```sh
  sudo systemctl restart otelcol-sumo
 ```
