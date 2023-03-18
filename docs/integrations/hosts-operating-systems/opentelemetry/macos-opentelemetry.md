@@ -91,7 +91,7 @@ sumo.datasource=mac host=* device=* metric=system.filesystem.utilization | sum b
 ## Sample Open Telemetry metric 
 
 ```sql
-{"queryId":"A","_source":"anema-mac-dc8d7942-8038-46f0-af33-9a3a06a73f72","state":"LAST_ACK","_sourceName":"anemamacsyslog","host":"anema-mac","os.type":"darwin","sumo.datasource":"mac","_sourceCategory":"anema/mac/sys/logs","metric":"system.network.connections","_collectorId":"000000000CAADE8D","_sourceId":"0000000000000000","unit":"{connections}","_sourceHost":"anema-mac","_collector":"anema-mac-dc8d7942-8038-46f0-af33-9a3a06a73f72","protocol":"tcp","max":0,"min":0,"avg":0,"sum":0,"latest":0,"count":14}
+{"queryId":"A","_source":"sumo-mac-dc8d7942-8038-46f0-af33-9a3a06a73f72","state":"LAST_ACK","_sourceName":"sumomacsyslog","host":"sumo-mac","os.type":"darwin","sumo.datasource":"mac","_sourceCategory":"sumo/mac/sys/logs","metric":"system.network.connections","_collectorId":"000000000CAADE8D","_sourceId":"0000000000000000","unit":"{connections}","_sourceHost":"sumo-mac","_collector":"sumo-mac-dc8d7942-8038-46f0-af33-9a3a06a73f72","protocol":"tcp","max":0,"min":0,"avg":0,"sum":0,"latest":0,"count":14}
 ```
 
 ## Viewing Linux Dashboards
