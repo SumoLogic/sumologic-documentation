@@ -213,7 +213,7 @@ The table below lists attributes most typically used in user inventory records. 
   <tr>
    <td><code>groups </code>
    </td>
-   <td>The directory service (for example, azure AD) group that the inventory item belongs to.
+   <td>The directory service (for example, Azure AD) group that the inventory item belongs to.
    </td>
   </tr>
   <tr>
