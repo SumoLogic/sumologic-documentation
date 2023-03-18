@@ -59,13 +59,9 @@ Receiver (`filelog/custom_files`) and pipeline (`logs/custom_files:`) names shou
 
 ### Keeping track of position in files
 
-By default, the Filelog receiver watches files starting at their end
-(`start_at: end` is the [default][filelogreceiver_readme]),
-so nothing will be read after the otelcol process starts until new data is added to the files.
-To change this, add `start_at: beginning` to the receiver's configuration.
-To prevent the receiver from reading the same data over and over again on each otelcol restart,
-also add the [File Storage extension][filestorageextension_docs] which is already defined in `sumologic.yaml`, that will allow Filelog receiver to persist the current
-position in watched files between otelcol restarts. Here's an example of such configuration:
+By default, the Filelog receiver watches files starting at their end (`start_at: end` is the [default][filelogreceiver_readme]), so nothing will be read after the otelcol process starts until new data is added to the files. To change this, add `start_at: beginning` to the receiver's configuration.
+
+To prevent the receiver from reading the same data over and over again on each otelcol restart, also add the [File Storage extension][filestorageextension_docs] which is already defined in `sumologic.yaml`, that will allow Filelog receiver to persist the current position in watched files between otelcol restarts. Here's an example of such configuration:
 
 ```yaml
 receivers:
