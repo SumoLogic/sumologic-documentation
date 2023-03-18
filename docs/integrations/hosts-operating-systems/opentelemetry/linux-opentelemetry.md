@@ -53,20 +53,19 @@ The app requires path for system log file, based on the Linux version used:
 
 The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with Ubuntu:
 
--   `auth.log`
--   `syslog`
--   `daemon.log`
--   `dpkg.log`
--   `kern.log`
+- `auth.log`
+- `syslog`
+- `daemon.log`
+- `dpkg.log`
+- `kern.log`
 
 #### Required Logs for CentOS, Amazon Linux, and Red Hat
 
 The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with CentOS, Amazon Linux, and most Red Hat forks:
-
--   audit/audit.log
--   secure
--   Messages
--   yum.log
+- audit/audit.log
+- secure
+- Messages
+- yum.log
 
 Click on the **Download YAML File** button to get the yaml file.
 
