@@ -49,8 +49,8 @@ The script is going to perform the following operations:
 
 #### Script Options
 
-| Name               | Description                                             | Takes Value                                                                          |
-|--------------------|---------------------------------------------------------|--------------------------------------------------------------------------------------|
+| Name               | Description                            | Takes Value                                               |
+|:-------------------|:-----------------------------------------|:-------------------------------------|
 | -InstallationToken | Installation token                                      | yes                                                                                  |
 | -Tags              | Sets tags for collector. This argument should be a map. | yes, for example `@{"host.group" = "default"; "deployment.environment" = "default"}` |
 
