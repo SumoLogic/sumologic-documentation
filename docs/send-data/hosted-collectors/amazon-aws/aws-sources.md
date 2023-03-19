@@ -1,9 +1,8 @@
 ---
 id: aws-sources
-title: AWS Sources
+title: Getting Started with AWS Sources
 description: These configuration instructions apply to all AWS Source types.
 ---
-
 
 When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 

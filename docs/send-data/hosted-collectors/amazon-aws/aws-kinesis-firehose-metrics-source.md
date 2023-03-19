@@ -5,6 +5,9 @@ sidebar_label: AWS Kinesis Firehose Metrics
 description: Learn how to use the AWS Kinesis Firehose for Metrics source to ingest CloudWatch metrics from the AWS Kinesis Data Firehose.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/aws-kinesis-firehose-metrics.png')} alt="icon" width="50"/>
 
 This page has information about Sumo Logic’s AWS Kinesis Firehose for Metrics source.
 
