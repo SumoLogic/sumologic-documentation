@@ -9,6 +9,8 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/sentinelone-logo.svg')} alt="icon" width="140"/>
+
 The SentinelOne Mgmt API Source collects data from the SentinelOne Management Console. It securely stores the required authentication, scheduling, and state tracking information.
 
 Data from the following object types are collected from [SentinelOne APIs](https://usea1-partners.sentinelone.net/api-doc/overview):

@@ -6,6 +6,8 @@ sidebar_label: Box
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/box-logo.svg')} alt="box-logo.svg" width="60" />
+
 The Box API integration ingests events from the [Get Events API](https://developer.box.com/reference/get-events/). It securely stores the required authentication, scheduling, and state tracking information.
 
 ## Rules
