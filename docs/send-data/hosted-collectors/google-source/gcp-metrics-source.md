@@ -7,7 +7,7 @@ description: Create a Sumo Logic GCP Metrics Source to view and monitor Google C
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/gcp-icon.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/gcp-icon.png')} alt="icon" width="40"/>
 
 The Sumo Logic GCP Metrics Source gives you complete visibility into all Google Cloud Platform (GCP) infrastructure and managed services using an integrated Google Service account.
 

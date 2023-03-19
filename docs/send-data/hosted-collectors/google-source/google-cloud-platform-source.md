@@ -7,7 +7,7 @@ description: You can export in real time all of the data collected by Stackdrive
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/gcp-icon.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/gcp-icon.png')} alt="icon" width="40"/>
 
 Log data for Google Cloud Platform (GCP) services is collected and exposed through the Google Cloud Stackdriver service. You can export, in real time, the data collected by [Stackdriver](https://cloud.google.com/stackdriver/) to Google Cloud Pub/Sub. We use this Pub/Sub integration to push logs to Sumo Logic in real time.
 

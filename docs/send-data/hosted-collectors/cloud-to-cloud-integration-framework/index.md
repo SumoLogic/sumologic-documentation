@@ -7,15 +7,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cloud-to-Cloud Integration Framework is a fully-managed collection system that collects logs and events directly from SaaS and Cloud platforms. This data often includes custom events and user data critical for operations monitoring, security, and compliance use cases. As a fully managed collection system, integrations running within the Cloud-to-Cloud Integration Framework provide a secure endpoint to receive event data in your account. Integration authentication, scheduling, and state tracking are all managed by the framework.
 
-:::note
-Currently, only selected Cloud-to-Cloud Sources are available in the Fed deployment.
-:::
 
 ## Limitations
 
 * The number of Cloud-to-Cloud Sources is limited to 20 for free accounts, and 50 for all other accounts.
 * You are warned when you reach 80% of the limit (16 Sources for free accounts, and 40 Sources for other accounts).
 * You are notified when you have reached the Source limit.
+* In the [Fed deployment](/docs/api/troubleshooting#deployments-and-sumo-logic-endpoints), supported Cloud-to-Cloud Sources are limited.
 
 ## Static IP addresses
 
