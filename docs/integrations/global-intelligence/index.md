@@ -41,28 +41,28 @@ Learn about the Sumo Logic apps for Global Intelligence.
   <div className="box smallbox5 card">
   <div className="container">
   <img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="50"/>
-  <h4><a href="/docs/integrations/global-intelligence/global-intelligence-security-insights">Global Intelligence for Security Insights</a></h4>
+  <h4><a href="/docs/cse/records-signals-entities-insights/global-intelligence-security-insights">Global Intelligence for Security Insights</a></h4>
   <p>A guide to the Sumo Logic app for GI for Security Insights (Cloud SIEM).</p>
   </div>
 </div>
   <div className="box smallbox6 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/integrations/global-intelligence/global-intelligence-cloudtrail-devops">Global Intelligence for AWS CloudTrail DevOps</a></h4>
+  <h4><a href="/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops">Global Intelligence for AWS CloudTrail DevOps</a></h4>
   <p>A guide to the Sumo Logic app for GI for AWS CloudTrail DevOps.</p>
   </div>
 </div>
   <div className="box smallbox7 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/gi-secops.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/integrations/global-intelligence/global-intelligence-cloudtrail-secops">Global Intelligence for AWS CloudTrail SecOps</a></h4>
+  <h4><a href="/docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops">Global Intelligence for AWS CloudTrail SecOps</a></h4>
   <p>A guide to the Sumo Logic app for GI for AWS CloudTrail SecOps.</p>
   </div>
 </div>
   <div className="box smallbox8 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/gi-guardduty.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/integrations/global-intelligence/global-intelligence-guardduty">Global Intelligence for Amazon GuardDuty</a></h4>
+  <h4><a href="/docs/integrations/amazon-aws/global-intelligence-guardduty">Global Intelligence for Amazon GuardDuty</a></h4>
   <p>A guide to the Sumo Logic app for GI for Amazon GuardDuty.</p>
   </div>
   </div>

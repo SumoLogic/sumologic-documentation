@@ -21,7 +21,7 @@ This guide has documentation for Sumo apps for web servers.
 <div className="box smallbox2 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/web-servers/apache-tomcat.png')} alt="Thumbnail icon" width="55"/>
-  <h4><a href="/docs/integrations/apache-tomcat">Apache Tomcat</a></h4>
+  <h4><a href="/docs/integrations/web-servers/apache-tomcat">Apache Tomcat</a></h4>
   <p>The Apache Tomcat app monitors server operations, assists in troubleshooting issues, and provides insight into website visitor behavior patterns across entire web server farms.</p>
   </div>
 </div>
