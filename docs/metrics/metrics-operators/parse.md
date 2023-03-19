@@ -44,7 +44,7 @@ The `parse` operator creates fields named `type`, `name`, and `id` that have the
 
 ### Use a parsed field in a query
 
-You can use the field(s) you’ve parsed within the same query, after the `parse` operator. For example this query parses the `name` field out of the  `LoadBalancer` field, returns the average value of the `HTTPCode_Target_2XX_Count` metric by the `name` field.
+You can use the field(s) you’ve parsed within the same query, after the `parse` operator. for example, this query parses the `name` field out of the  `LoadBalancer` field, returns the average value of the `HTTPCode_Target_2XX_Count` metric by the `name` field.
 
 ```
 AvailabilityZone=us-west-1a metric=HTTPCode_Target_2XX_Count | parse field=LoadBalancer */*/* as type, name, id | avg by name
