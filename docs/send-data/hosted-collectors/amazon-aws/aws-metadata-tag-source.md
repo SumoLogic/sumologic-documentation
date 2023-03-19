@@ -20,7 +20,7 @@ Tags are automatically applied to:
 * Metrics ingested by [host metric sources](/docs/send-data/installed-collectors/sources/host-metrics-source.md) on Installed Collectors.
 * Graphite and Carbon 2.0 metrics ingested by [streaming metric sources](/docs/send-data/installed-collectors/sources/streaming-metrics-source.md) on Installed Collectors.
 
-You can also apply AWS tags to Graphite and Carbon 2.0 metrics ingested by an HTTP source. To enable tagging of metrics from an HTTP source, you must specify the `InstanceID` and `Region` tags in the header using `X-Sumo-Dimensions` or `X-Sumo-Metadata` as well as to the metric itself. For reference see [Supported HTTP Headers](../http-source/upload-metrics.md).
+You can also apply AWS tags to Graphite and Carbon 2.0 metrics ingested by an HTTP source. To enable tagging of metrics from an HTTP source, you must specify the `InstanceID` and `Region` tags in the header using `X-Sumo-Dimensions` or `X-Sumo-Metadata` as well as to the metric itself. For reference see [Supported HTTP Headers](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics).
 
 ## Logs
 
