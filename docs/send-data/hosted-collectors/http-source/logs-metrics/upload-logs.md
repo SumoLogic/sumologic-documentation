@@ -7,7 +7,7 @@ sidebar_label: Uploading Logs
 After you have added an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source) to a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) you can begin uploading data. You can upload both logs and metrics to the same HTTP source, however not in the same HTTP request. This document provides instructions on uploading logs, if you are uploading metrics see [Upload Metrics to an HTTP Source](upload-metrics.md).
 
 :::tip
-To immediately validate the reception of log data use Live Tail. Data sent to an HTTP source may take some time to show up in Search due to indexing delay. If your source does not seem to be receiving data, see [Troubleshooting HTTP Sources](troubleshooting.md).
+To immediately validate the reception of log data use Live Tail. Data sent to an HTTP source may take some time to show up in Search due to indexing delay. If your source does not seem to be receiving data, see [Troubleshooting HTTP Sources](../troubleshooting.md).
 :::
 
 ## Upload log data
@@ -21,23 +21,18 @@ Data needs to be in UTF-8 encoding.
 To upload log data with a POST request, include the complete data payload as the request body. Any query parameters will be ignored.
 
 :::important
-We recommend that the POST data payload have a size, before compression, of 100KB to 1MB. See [data payload considerations](/docs/send-data/hosted-collectors/http-source/logs-metrics/#data-payload-considerations)  for details.
+We recommend that the POST data payload have a size, before compression, of 100KB to 1MB. See [data payload considerations](/docs/send-data/hosted-collectors/http-source/logs-metrics/#data-payload-considerations) for details.
 :::
 
 * Data payload:
-
   * Data line 1
   * Data line 2
   * Data line 3
-
 * Method: POST
 * URL: `https://[SumoEndpoint]/receiver/v1/http/[UniqueHTTPCollectorCode]` where
-
   * [SumoEndpoint] is your Sumo collection endpoint
-  * [UniqueHTTPCollectorCode] is the string that follows the last forward slash (/) in the upload URL for the HTTP source
-
+  * [UniqueHTTPCollectorCode] is the string that follows the last forward slash (`/`) in the upload URL for the HTTP source
 * Body
-
   * Data line 1
   * Data line 2
   * Data line 3
@@ -46,7 +41,7 @@ We recommend that the POST data payload have a size, before compression, of 100K
 
 The following parameters can be specified via headers when sending data to an HTTP Source. The settings will apply to all messages in the request. For Source Name, Host, and Category, the header value will override any default value already specified for the source and/or collector.
 
-You can configure your Source to process HTTP Headers into metadata fields. See [HTTP Source fields](/docs/manage/fields.md) for details.
+You can configure your Source to process HTTP Headers into metadata fields. See [HTTP Source fields](/docs/manage/fields) for details.
 
 :::note
 Overridden metadata field values are not returned with [Search Autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete).

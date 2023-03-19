@@ -25,14 +25,14 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/http-source/upload-logs"><img src={useBaseUrl('img/icons/logs.png')} alt="Thumbnail icon" width="40"/>
+  <a href="/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs"><img src={useBaseUrl('img/icons/logs.png')} alt="Thumbnail icon" width="40"/>
   <h4>Upload Logs to HTTP Source</h4></a>
   <p>This guide provides instructions on uploading logs to an HTTP Source.</p>
   </div>
 </div>
   <div className="box smallbox4 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/http-source/upload-metrics"><img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="40"/>
+  <a href="/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics"><img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="40"/>
   <h4>Upload Metrics to HTTP Source</h4></a>
   <p>This guide provides instructions on uploading logs to an HTTP Source.</p>
   </div>
