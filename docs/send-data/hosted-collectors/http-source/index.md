@@ -39,7 +39,7 @@ In this section, we'll introduce the following concepts:
 </div>
   <div className="box smallbox5 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/http-source/generate-new-url"><img src={useBaseUrl('img/icons/api2.png')} alt="Thumbnail icon" width="40"/>
+  <a href="/docs/send-data/hosted-collectors/http-source/generate-new-url"><img src={useBaseUrl('img/icons/logs.png')} alt="Thumbnail icon" width="40"/>
   <h4>Generate HTTP Source URL</h4></a>
   <p>You can generate a new URL for an HTTP Source at any time. Generating a new URL completely invalidates the old URL.</p>
   </div>
@@ -59,7 +59,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox8 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/http-source/troubleshooting"><img src={useBaseUrl('img/icons/troubleshoot.png')} alt="Thumbnail icon" width="40"/>
+  <a href="/docs/send-data/hosted-collectors/http-source/troubleshooting"><img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Thumbnail icon" width="40"/>
   <h4>HTTP Source Troubleshooting</h4></a>
   <p>Check the HTTP status codes.</p>
   </div>
