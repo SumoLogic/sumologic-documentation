@@ -1,7 +1,7 @@
 ---
 id: upload-metrics
 title: Upload Metrics to an HTTP Source
-sidebar_label: Upload Metrics HTTP Source
+sidebar_label: Uploading Metrics
 ---
 
 After you have added an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source) to a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) you can begin uploading data. You can upload both logs and metrics to the same HTTP source, however not in the same HTTP request. This document provides instructions on uploading metrics, if you are uploading logs see [Upload Logs to an HTTP Source](/docs/send-data/hosted-collectors/http-source).
