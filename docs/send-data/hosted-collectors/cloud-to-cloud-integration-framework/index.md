@@ -136,7 +136,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox14 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectorscloud-to-cloud-integration-framework/crowdstrike-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>Crowdstrike</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>Crowdstrike</h4></a>
   <p>The CrowdStrike Source provides a secure endpoint to receive event data from the CrowdStrike Streams API.</p>
   </div>
 </div>
@@ -220,7 +220,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox28 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectorscloud-to-cloud-integration-framework/ms-graph-identity-protection-source"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Identity Protection</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Identity Protection</h4></a>
   <p>The Microsoft Graph Identity Protection Source collects Risk Detection and Risky User data from the Microsoft Graph Identity Protection API.</p>
   </div>
 </div>
