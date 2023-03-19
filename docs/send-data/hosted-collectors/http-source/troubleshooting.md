@@ -23,7 +23,7 @@ If you believe some data that was uploaded to a source was not ingested, check t
 You can use Live Tail to check whether a specific HTTP Source is receiving data. For instructions, see [Live Tail](/docs/search/live-tail). If a Source is not receiving data, the problem may be:
 
 * You are sending log data that is encoded in an unsupported format or has been compressed using an unsupported method. HTTP sources support UTF-8 data only. The supported compression methods are gzip and deflate.
-* Your HTTP request is malformed. For more information, see upload [logs](upload-logs.md) and [metrics](upload-metrics.md).
+* Your HTTP request is malformed. For more information, see upload [logs](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs) and [metrics](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics).
 
 ## Heroku output buffer overflow errors
 
@@ -58,7 +58,7 @@ When an Ingest Budget instructs a Hosted Collector to stop collecting data HTT
 
 ## Missing or unsupported Content-Type header
 
-When you send metrics to an HTTP source, if you don’t specify a Content-Type header or set it to an unsupported value, the data payload will be ingested as log data, rather than metrics. For more information, see [Upload Metrics to an HTTP Source](upload-metrics.md).
+When you send metrics to an HTTP source, if you don’t specify a Content-Type header or set it to an unsupported value, the data payload will be ingested as log data, rather than metrics. For more information, see [Upload Metrics to an HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics).
 
 ## Request timeouts
 
