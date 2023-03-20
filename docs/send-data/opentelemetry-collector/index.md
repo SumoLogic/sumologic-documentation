@@ -12,24 +12,11 @@ Once the data is collected, the Sumo Logic platform provides powerful analytics 
 
 ## Performance
 
-- [Benchmarks](#benchmarks)
-  - [Logs](#logs)
-    - [Benchmark setup](#benchmark-setup)
-    - [CPU usage guidelines](#cpu-usage-guidelines)
-      - [Benchmark - CPU usage for particular average message size and EPS](#benchmark---cpu-usage-for-particular-average-message-size-and-eps)
-      - [Benchmark - EPS for average message size and CPU usage](#benchmark---eps-for-average-message-size-and-cpu-usage)
-    - [Memory usage guidelines](#memory-usage-guidelines)
-      - [Benchmark - memory usage for particular average message size and EPS](#benchmark---memory-usage-for-particular-average-message-size-and-eps)
-- [Fine Tuning](#fine-tuning)
-  - [Sumo Logic Exporter](#sumo-logic-exporter)
-  - [Batch Processor](#batch-processor)
-  - [Memory Limiter Processor](#memory-limiter-processor)
+### [Benchmarks](#benchmarks)
 
-### Benchmarks
+#### [Logs](#logs)
 
-#### Logs
-
-##### Benchmark setup
+##### [Benchmark setup](#benchmark-setup)
 
 The following benchmark has been compiled on an Amazon `m4.large`
 instance (which has 2 CPU cores and 8 GB of memory available).
@@ -39,9 +26,9 @@ using [`filelogreceiver`][filelogreceiver].
 
 [filelogreceiver]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver
 
-##### CPU usage guidelines
+##### [CPU usage guidelines](#cpu-usage-guidelines)
 
-###### Benchmark - CPU usage for particular average message size and EPS
+###### [Benchmark - CPU usage for particular average message size and EPS](#benchmark---cpu-usage-for-particular-average-message-size-and-eps)
 
 Measured CPU usage for particular Events Per Second (EPS) average message size.
 
@@ -55,7 +42,7 @@ Measured CPU usage for particular Events Per Second (EPS) average message size.
 | **1500** | 7.08% | 7.29% | 7.99%  | 16.93% | 27.96% |
 | **2000** | 9.64% | 9.56% | 10.39% | 22.51% | 36.59% |
 
-###### Benchmark - EPS for average message size and CPU usage
+###### [Benchmark - EPS for average message size and CPU usage](#benchmark---eps-for-average-message-size-and-cpu-usage)
 
 Events Per Second (EPS) achieved for a particular average message size and CPU usage.
 
@@ -68,22 +55,18 @@ Events Per Second (EPS) achieved for a particular average message size and CPU u
 |        **50%**        | 14000 | 10100 | 8500 |  -*  |  -*  |
 |        **90%**        |  -*   | 19100 |  -*  |  -*  |  -*  |
 
-\* - cells without a resulting EPS come from the fact that the CPU utilization
-didn't reach the designated CPU utilization during the benchmark run.
+* cells without a resulting EPS come from the fact that the CPU utilization didn't reach the designated CPU utilization during the benchmark run. The above table can be interpreted in the following way:
 
-The above table can be interpreted in the following way:
-
-For an average CPU usage of 5%
-
-- 10 KB logs can be ingested at 200 logs/sec (2000 KB/sec).
-- 1 KB logs can be ingested at 1000 logs/sec (1000 KB/sec).
+ For an average CPU usage of 5%.
+* 10 KB logs can be ingested at 200 logs/sec (2000 KB/sec).
+* 1 KB logs can be ingested at 1000 logs/sec (1000 KB/sec).
 
 This shows that the collector performs better when it is made to ingest bigger
 log entries (which is expected due to less overhead coming from timestamp parsing etc.).
 
-##### Memory usage guidelines
+##### [Memory usage guidelines](#memory-usage-guidelines)
 
-###### Benchmark - memory usage for particular average message size and EPS
+###### [Benchmark - memory usage for particular average message size and EPS](#benchmark---memory-usage-for-particular-average-message-size-and-eps)
 
 Measured memory usage (in MB) for particular Events Per Second (EPS) average message size.
 
@@ -97,11 +80,11 @@ Measured memory usage (in MB) for particular Events Per Second (EPS) average mes
 | **1500** | 128.54 | 131.9  | 137.69 | 95.21  | 113.89 |
 | **2000** | 130.62 | 125.27 | 144.59 | 98.62  | 134.61 |
 
-### Fine Tuning
+### [Fine Tuning](#fine-tuning)
 
 There are a couple configuration options that can help with performance in specific scenarios.
 
-#### Sumo Logic Exporter
+#### [Sumo Logic Exporter](#sumo-logic-exporter)
 
 The [Sumo Logic Exporter](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/exporter/sumologicexporter)
 sends data to Sumo Logic.
@@ -114,7 +97,7 @@ It has the following features that can help with performance:
 
 Read more about these features in the [Sumo Logic Exporter docs](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/exporter/sumologicexporter/README.md).
 
-#### Batch Processor
+#### [Batch Processor](#batch-processor)
 
 The [Batch Processor][batchprocessor] joins records of each type in batches.
 
@@ -129,7 +112,7 @@ Read more about these features in the [Batch Processor docs].
 [batchprocessor]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/batchprocessor
 [Batch Processor docs]: https://github.com/open-telemetry/opentelemetry-collector/blob/main/processor/batchprocessor/README.md
 
-#### Memory Limiter Processor
+#### [Memory Limiter Processor](#memory-limiter-processor)
 
 The [Memory Limiter Processor][memorylimiterprocessor] prevents out-of-memory crashes for the collector process
 by monitoring the amount of memory used by the collector and forcing it to lower its memory consumption.
@@ -156,7 +139,7 @@ In this section, we'll introduce the following concepts:
   <div className="box smallbox2 card">
     <div className="container">
       <a href="/docs/send-data/opentelemetry-collector/install-collector-on-macos">
-        <img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" />
+        <img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="60" />
         <h4>Install Collector on macOS</h4>
       </a>
       <p>Step-by-step instructions for installing the OpenTelemetry collector on macOS.</p>

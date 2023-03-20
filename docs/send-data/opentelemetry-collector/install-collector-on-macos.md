@@ -133,9 +133,9 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 
 ### UI Installation via App Catalog
 
-1. Go to app catalog and select `macOS - OpenTelemetry application`.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-mac-os.png')} alt="macOS in app catalog" />
+1. Go to app catalog and select **macOS - OpenTelemetry application**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-mac-os.png')} alt="macOS in app catalog" />
 1. Click **Install App** for your first installation, or **View Details**, then **More Actions** and finally **Add another Host** for next installation.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-overview.png')} alt="macOS app overview" width="550" />
-1. Select `Add New Collector` and click `Next`.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-set-up-collector.png')} alt="set up collector" />
+1. Select **Add New Collector** and click **Next**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-set-up-collector.png')} alt="set up collector" />
 1. Select installation token and customize your tags.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-add-new-collector.png')} alt="add new collector" />
 1. Copy command and execute it in your system terminal.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-terminal.png')} alt="execute command in terminal" />
 1. Wait for installation to be completed.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-success-registration.png')} alt="collector successfully registered" />
@@ -244,4 +244,4 @@ List of breaking changes specific to Sumo Logic distribution of OpenTelemetry Co
 
 ## Troubleshooting
 
-Refer to [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-and-faqs/#installing-apps-errors)
+To know about troubleshooting and solutions, refer to [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-and-faqs/)

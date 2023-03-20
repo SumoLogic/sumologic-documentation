@@ -161,6 +161,4 @@ At line:1 char:1
 
 Ensure that you run **PowerShell** as an Administrator.
 
-### More Troubleshooting
-
-To know more about troubleshooting and solutions, refer to the [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-and-faqs/#installing-apps-errors).
+To know more troubleshooting and solutions, refer to the [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-and-faqs/).

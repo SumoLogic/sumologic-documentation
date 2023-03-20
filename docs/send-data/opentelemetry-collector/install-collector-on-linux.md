@@ -293,7 +293,7 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 1. Click **Install App** for your first installation, or **View Details**, then **More Actions** and finally **Add another Host** for next installation. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-overview.png')} alt="linux app overview" width="550" />
 1. Select `Add New Collector` and click `Next`. <br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-collector.png')} alt="set up collector" />
 1. Select installation token and customize your tags.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-register-collector.png')} alt="add new collector" />
-1. Copy command and execute it in your system terminal.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal-installation.png')} alt="execute command in terminal" />
+1. Copy command and execute it in your system terminal.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal-installation.png')} alt="execute command in terminal" width="900"/>
 1. Wait for THE installation to be completed.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-registration-success.png')} alt="application installed successfully" />
 1. Read the prerequisite section.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-prerequisite.png')} alt="collector successfully registered" />
 1. Customize source configuration, download it, and place it in the directory `/etc/otelcol-sumo/conf.d`, and then restart collector.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-configure.png')} alt="source customisation" />
@@ -410,7 +410,7 @@ List of breaking changes specific to Sumo Logic distribution of OpenTelemetry Co
 
 ## Troubleshooting
 
-Refer to the [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-and-faqs/#installing-apps-errors)
+To know about troubleshooting and solutions, refer to the [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-and-faqs/)
 
 [sumologic extension]: https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/extension/sumologicextension#configuration
 [service file]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/systemd/otelcol-sumo.service
