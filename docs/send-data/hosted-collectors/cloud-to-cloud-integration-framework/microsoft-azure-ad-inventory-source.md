@@ -5,6 +5,7 @@ sidebar_label: Microsoft Azure AD Inventory
 keywords:
     - microsoft-azure-ad-inventory
     - cloud-SIEM-enterprise
+description: The Microsoft Azure AD Inventory Source collects user and device data from the Microsoft Graph API Security endpoint.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

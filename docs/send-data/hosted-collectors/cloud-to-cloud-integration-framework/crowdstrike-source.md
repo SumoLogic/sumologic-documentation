@@ -2,6 +2,7 @@
 id: crowdstrike-source
 title: CrowdStrike Source
 sidebar_label: CrowdStrike
+description: The CrowdStrike Source provides a secure endpoint to receive event data from the CrowdStrike Streams API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

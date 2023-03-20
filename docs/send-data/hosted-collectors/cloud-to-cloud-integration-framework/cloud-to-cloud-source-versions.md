@@ -2,6 +2,7 @@
 id: cloud-to-cloud-source-versions
 title: Cloud-to-Cloud Source Versions
 sidebar_label: Cloud-to-Cloud Versions
+description: Learn how to continuously update your Sources in the Cloud-to-Cloud Integration Framework to maintain data collection.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
