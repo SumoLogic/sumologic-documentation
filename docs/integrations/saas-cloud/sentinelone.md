@@ -219,7 +219,6 @@ _sourceCategory=sentinelone  threatInfo
 | count_distinct(id)
 ```
 
-**Sample Agents Log Messages**
 
 ```json title="Sample Agents Log Messages"
 {
