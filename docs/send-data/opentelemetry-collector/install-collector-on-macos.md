@@ -24,6 +24,7 @@ You can install our OpenTelemetry Collector using either of the following method
 
 * [Install script](#install-script)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
+* [UI Installation via App Catalog](#ui-installation-via-app-catalog)
 
 ### Install Script
 
