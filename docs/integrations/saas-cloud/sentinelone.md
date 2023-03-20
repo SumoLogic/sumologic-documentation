@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="sentinelone-icon.png" width="100" />
 
-The SentinelOne App for Sumo Logic is designed to provide security professionals with a comprehensive view of their organization's security posture. Based on Sumo Logic’s SentinelOne Source, this app allows you to quickly ingest data from your SentinelOne agents into Sumo Logic for real-time analysis.
+The SentinelOne App for Sumo Logic provides security professionals with a comprehensive view of their organization's security posture. The app, based on Sumo Logic’s SentinelOne Source, allows you to quickly ingest data from your SentinelOne agents into Sumo Logic for real-time analysis.
 
 With the SentinelOne App, you can gain valuable insights into your endpoint security data, including threat intelligence, endpoint activity, and system health. You can monitor your endpoints for suspicious behavior and quickly respond to any security incidents that may arise. 
 
