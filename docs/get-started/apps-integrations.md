@@ -135,7 +135,7 @@ When you install a Sumo Logic app, you tell Sumo what data to search and present
 
 Most typically, you specify the source category that was assigned to the logs or metrics source when data collection was set up for the app. 
 
-However, if you want to use multiple metadata fields as your filter criteria, for example both source category and source host, you must define a custom data filter. The app will prefix its searches with your custom data filter. 
+However, if you want to use multiple metadata fields as your filter criteria, for example, both source category and source host, you must define a custom data filter. The app will prefix its searches with your custom data filter. 
 
 #### Define a custom data filter
 

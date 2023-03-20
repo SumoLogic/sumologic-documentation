@@ -140,7 +140,7 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
     db_cluster_port = `ENV_TO_BE_CHANGED`
     ```
    2. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` above):
-    * `environment` - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
+    * `environment` - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example, dev, prod, or QA. While this value is optional we highly recommend setting it.
     * `db_cluster` - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
     * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
     * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
@@ -303,7 +303,7 @@ This section provides instructions for configuring logs and metrics collection f
         :::note
         `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
 
-        For example if your application uses “elasticsearch-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=elasticsearch-prod.sumologic.com db_cluster_port=3306`.
+        For example, if your application uses “elasticsearch-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=elasticsearch-prod.sumologic.com db_cluster_port=3306`.
 
         If your application connects directly to a given elasticsearch node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=elasticsearch-prod.sumologic.com`.
 
@@ -349,7 +349,7 @@ This section provides instructions for configuring log collection for Sumo Logic
       :::note
       `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
 
-      For example if your application uses “elasticsearch-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=elasticsearch-prod.sumologic.com db_cluster_port=3306`
+      For example, if your application uses “elasticsearch-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=elasticsearch-prod.sumologic.com db_cluster_port=3306`
 
       If your application connects directly to a given elasticsearch node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=elasticsearch-prod.sumologic.com`
 

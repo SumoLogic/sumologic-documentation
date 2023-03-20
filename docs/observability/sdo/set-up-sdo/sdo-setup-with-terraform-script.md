@@ -168,7 +168,7 @@ You have the following available methods to install the Software Development Opt
 
 ### Option 1: Install the complete SDO solution
 
-This procedure will configure collection in other systems (for example Jira Cloud) and create sources and FERs/Fields and connections in Sumo Logic along with App installation:
+This procedure will configure collection in other systems (for example, Jira Cloud) and create sources and FERs/Fields and connections in Sumo Logic along with App installation:
 
 1.  Set install_(app) variables as `all` for the required applications in **sumologic.auto.tfvars**, as defined in [this](#configurable-parameters) section. This configuration will result in installing Sumo Logic apps, configuring collectors, and creating field extraction rules and fields in Sumo Logic.
 2.  Set install_(app) variable as `none` for the tools that are not applicable to your environment.
@@ -197,7 +197,7 @@ To use existing sources, FERs/Fields, or configure these manually and install on
 1. Other than the SDO app, configure collection in Sumo Logic if not already done Based on the app documentation
 1. Populate source categories that you set up during the collection phase in **sumologic.auto.tfvars**, as defined in [this](#configurable-parameters) section.
 1. Set install_(app) variables as `app` for the required applications in **sumologic.auto.tfvars**, as defined in [this](#configurable-parameters) section.
-1. Setting this flag as `app` will result in app installation in Sumo Logic, it will not configure collection in other systems (for example Jira Cloud) and it will not create sources and FERs/Fields in Sumo Logic.
+1. Setting this flag as `app` will result in app installation in Sumo Logic, it will not configure collection in other systems (for example, Jira Cloud) and it will not create sources and FERs/Fields in Sumo Logic.
 1. Set install_(app) variables as ‘none’ for the applications which should not be configured.
 1. Set install_sumo_to_(app)_webhook variables as ‘false’ for the Sumo Logic connections if you do not wish to configure the outgoing connections in Sumo Logic.
 1. For pagerduty, set install_pagerduty_version = “v2” or “v3” to install either version of the app.
@@ -212,10 +212,10 @@ To use existing sources, FERs/Fields, or configure these manually and install on
 To use existing sources and apps, or configure these manually:
 
 1. Configure sources and source categories in Sumo Logic.
-1. Configure collection in respective systems for example Jira Cloud.
+1. Configure collection in respective systems for example, Jira Cloud.
 1. Populate source categories in **sumologic.auto.tfvars**, as defined in [this](#configurable-parameters) section.
 1. Set install_(app) variable as `fer` for the required applications in **sumologic.auto.tfvars**, as defined in [this](#configurable-parameters) section.
-1. Setting install_(app) variable as `fer` will result in FER configuration in Sumo Logic, it will not configure collection in other systems (for example Jira Cloud) and it will not create sources and Fields in Sumo Logic and will not install Apps.
+1. Setting install_(app) variable as `fer` will result in FER configuration in Sumo Logic, it will not configure collection in other systems (for example, Jira Cloud) and it will not create sources and Fields in Sumo Logic and will not install Apps.
 1. Navigate to the directory **sumologic-solution-templates/software-development-optimization-terraform** and execute the commands:
   ```bash
   $ terraform plan

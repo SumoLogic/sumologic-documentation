@@ -131,7 +131,7 @@ annotations:
 
      :::note
      `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
-     For example if your application uses “couchbase-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=couchbase-prod.sumologic.com db_cluster_port=3306`
+     For example, if your application uses “couchbase-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=couchbase-prod.sumologic.com db_cluster_port=3306`
 
      If your application connects directly to a given Couchbase node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=couchbase-prod.sumologic.com`
 
@@ -171,7 +171,7 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
     * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
     :::note
     `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
-    For example if your application uses `“couchbase-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=couchbase-prod.sumologic.com db_cluster_port=3306`.
+    For example, if your application uses `“couchbase-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=couchbase-prod.sumologic.com db_cluster_port=3306`.
 
     If your application connects directly to a given Couchbase node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=couchbase-prod.sumologic.com`.
 
@@ -357,7 +357,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
   :::note
   `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
-  For example if your application uses `“couchbase-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=couchbase-prod.sumologic.com db_cluster_port=3306`.
+  For example, if your application uses `“couchbase-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=couchbase-prod.sumologic.com db_cluster_port=3306`.
 
   If your application connects directly to a given Couchbase node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=couchbase-prod.sumologic.com`
 
