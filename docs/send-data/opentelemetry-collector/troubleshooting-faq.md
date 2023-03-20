@@ -1,5 +1,5 @@
 ---
-id: troubleshooting-and-faqs
+id: troubleshooting-faq
 title: Troubleshooting and FAQ
 description: Frequently asked questions about Sumo Logic OpenTelemetry Collector from our customers and field teams.
 ---
