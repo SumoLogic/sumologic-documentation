@@ -168,8 +168,7 @@ As can be observed, while attributes can be present at both **Resource** and **R
 At Sumo Logic, there is a concept of [Fields](https://help.sumologic.com/docs/manage/fields) for log data. Fields offer
 a powerful capability to associate indexable metadata with logs, though only limited number of them can be used at a given time. Also, they need to be defined first.
 
-Looking from the OpenTelemetry standpoint, [Fields](https://help.sumologic.com/docs/manage/fields) are a good match for the **Resource-level** attributes, while Log Record-level attributes are good fit for the [structured representation of the log via JSON](https://help.sumologic.com/docs/search/get-started-with-search/search-basics/view-search-results-json-logs), which
-is automatically supported by Sumo Logic Search.
+Looking from the OpenTelemetry standpoint, [Fields](/docs/manage/fields) are a good match for the **Resource-level** attributes, while Log Record-level attributes are good fit for the [structured representation of the log via JSON](/docs/search/get-started-with-search/search-basics/view-search-results-json-logs), which is automatically supported by Sumo Logic Search.
 
 All **Resource-level** attributes are stored as fields. and any attributes that don't match a defined field will be skipped. You can check the list of ignored fields using the [dropped fields view](https://help.sumologic.com/docs/manage/fields/#view-dropped-fields). When a log contains attributes at the **Record-level** , they are stored as JSON, and if there is a body, it will be stored under the `log` key.
 
