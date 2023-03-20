@@ -6,6 +6,7 @@ sidebar_label: Mimecast
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/Mimecast-icon.png')} alt="icon" width="50"/>
 
 The Mimecast Source supports collecting SIEM, DLP, Audit, and Hold Message List data from the [Mimecast API](https://www.mimecast.com/tech-connect/documentation/). It securely stores the required authentication, scheduling, and state
 tracking information.

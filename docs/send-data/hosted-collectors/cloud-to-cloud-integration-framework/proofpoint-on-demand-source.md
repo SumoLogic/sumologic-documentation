@@ -2,10 +2,12 @@
 id: proofpoint-on-demand-source
 title: Proofpoint On Demand Source
 sidebar_label: Proofpoint On Demand
+description: The Proofpoint On Demand (PoD) Source collects data from the Proofpoint On Demand (PoD) Log Service and uses the secure WebSocket (WSS) protocol to stream logs.
 ---
 
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="140"/>
 
 The Proofpoint On Demand (PoD) Source collects data from the Proofpoint On Demand (PoD) Log Service and uses the secure WebSocket (WSS) protocol to stream logs. It securely stores the required authentication, scheduling, and state tracking information.
 
