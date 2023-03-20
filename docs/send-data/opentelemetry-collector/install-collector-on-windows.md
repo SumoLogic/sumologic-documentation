@@ -105,41 +105,15 @@ Running  OtelcolSumo        Sumo Logic OpenTelemetry Collector
 
 ### UI Installation via App Catalog
 
-1. Go to **App Catalog** and  select **find Windows 2012+ - OpenTelemetry**.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-1.png')} alt="windows-ui-installation-1.png" width="550" />
-
-1. Click **Install App**.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-2.png')} alt="windows-ui-installation-2.png" width="550" />
-
-1. Select **Add New Collector** and click **Next**.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-3.png')} alt="windows-ui-installation-3.png" width="550" />
-
-1. Select the installation token and customize your tags.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-4.png')} alt="windows-ui-installation-4.png" width="550" />
-
-1. Open Powershell.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-5.png')} alt="windows-ui-installation-5.png" width="550" />
-
-1. Copy the installation command to PowerShell, run it, and click **Next** after the successful installation.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-6.png')} alt="windows-ui-installation-6.png" width="550" />
-
-1. Customize the configuration, download it, and save it in the desired location.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-7.png')} alt="windows-ui-installation-7.png" width="550" />
-
-1. Open **Powershell** as an Administrator and restart the service by running this command.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-8.png')} alt="windows-ui-installation-8.png" width="550" />
-
-1. Wait for the dashboards to be installed and for data to be ingested into Sumo Logic.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-9.png')} alt="windows-ui-installation-9.png" width="550" />
+1. Go to **App Catalog** and  select **find Windows 2012+ - OpenTelemetry**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-1.png')} alt="windows-ui-installation-1.png" width="550" />
+1. Click **Install App**.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-2.png')} alt="windows-ui-installation-2.png" width="550" />
+1. Select **Add New Collector** and click **Next**.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-3.png')} alt="windows-ui-installation-3.png" width="550" />
+1. Select the installation token and customize your tags.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-4.png')} alt="windows-ui-installation-4.png" width="550" />
+1. Open Powershell.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-5.png')} alt="windows-ui-installation-5.png" width="550" />
+1. Copy the installation command to PowerShell, run it, and click **Next** after the successful installation.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-6.png')} alt="windows-ui-installation-6.png" width="550" />
+1. Customize the configuration, download it, and save it in the desired location.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-7.png')} alt="windows-ui-installation-7.png" width="550" />
+1. Open **Powershell** as an Administrator and restart the service by running this command.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-8.png')} alt="windows-ui-installation-8.png" width="550" />
+1. Wait for the dashboards to be installed and for data to be ingested into Sumo Logic.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-9.png')} alt="windows-ui-installation-9.png" width="550" />
 
 ## Additional Settings
 
