@@ -145,22 +145,22 @@ module.exports = {
             'send-data/opentelemetry-collector/install-collector-on-macos',
             'send-data/opentelemetry-collector/install-collector-on-windows',
             {
-          type: 'category',
-          label: 'Data Source and Configurations',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'send-data/opentelemetry-collector/data-source-and-configurations/index'},
-          items:[
-            'send-data/opentelemetry-collector/data-source-and-configurations/collect-logs',
-            'send-data/opentelemetry-collector/data-source-and-configurations/collect-metrics',
-            'send-data/opentelemetry-collector/data-source-and-configurations/collect-tracing',
-            'send-data/opentelemetry-collector/data-source-and-configurations/additional-configurations-reference',
+              type: 'category',
+              label: 'Data Source and Configurations',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'send-data/opentelemetry-collector/data-source-and-configurations/index'},
+              items:[
+                'send-data/opentelemetry-collector/data-source-and-configurations/collect-logs',
+                'send-data/opentelemetry-collector/data-source-and-configurations/collect-metrics',
+                'send-data/opentelemetry-collector/data-source-and-configurations/collect-tracing',
+                'send-data/opentelemetry-collector/data-source-and-configurations/additional-configurations-reference',
+              ]
+            },
+            'send-data/opentelemetry-collector/troubleshooting-and-faqs',
+            'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
           ]
         },
-        'send-data/opentelemetry-collector/troubleshooting-and-faqs',
-        'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
-    ]
-    },
         {
           type: 'category',
           label: 'Hosted Collectors & Sources',
