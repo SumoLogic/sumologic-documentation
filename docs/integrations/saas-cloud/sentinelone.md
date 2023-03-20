@@ -27,7 +27,6 @@ The Sumo Logic App for SentinelOne consumes Threats and Agents logs, refer to th
 
 ### Sample Log Messages
 
-**Sample Threats Log Messages**
 
 ```json title="Sample Threats Log Messages"
 {
