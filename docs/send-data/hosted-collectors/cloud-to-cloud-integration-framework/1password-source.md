@@ -7,7 +7,7 @@ description: The 1Password Source provides a secure endpoint to receive Sign-in 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="55"/>
 
 The 1Password Source provides a secure endpoint to receive Sign-in Attempts and Item Usage from the [1Password Event API](https://support.1password.com/events-api-reference/). It securely stores the required authentication, scheduling, and state tracking information.
 

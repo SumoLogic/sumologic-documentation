@@ -1,11 +1,13 @@
 ---
 id: qualys-vmdr-source
-title: Qualys VMDR
+title: Qualys VMDR Source
 sidebar_label: Qualys VMDR
 description: The Qualys VMDR Source tracks errors, reports its health, and start-up progress.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="qualys-icon.png" width="120" />
 
 The Qualys VMDR ingests vulnerability data from [Vulnerability API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf), knowledgeBase data from [KnowledgeBase API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf), and asset data from [Asset API](https://www.qualys.com/docs/qualys-global-ai-api-v2-user-guide.pdf)
 

@@ -95,22 +95,22 @@ For more information about using Live Tail, see [Live Tail](/docs/search/Live-Ta
 1. Go to Application Insights.<br/>  ![app-insights](/img/send-data/app-insights.png)
 1. Go to Failures section.<br/>  ![failures.png](/img/send-data/failures.png)
 1. Click on the Function Name under Operation Name
-1. In the top 3 exception types click on the count it will open a sample exception.
+1. In the top 3 exception types, click on the count it will open a sample exception.
 1. Click on any exception it will open an end to end transaction details page where you can click on View all telemetry to view all the logs for that execution.<br/>  ![end-transaction.png](/img/send-data/end-transaction.png)
 
 ### Common Azure function errors
 
-ExitCode C0000005
+`ExitCode C0000005
 
 ExitCodeString NATIVE ACCESS VIOLATION
 
 Managed Exception = System.AccessViolationException:Attempted to read or
 write protected memory. This is often an indication that other memory is corrupt.
 
-CallStack - Managed Exception
+CallStack - Managed Exception`
 
-The above error occurs in certain situations the runtime initiates a host shutdown via HostingEnvironment.InitiateShutdown, for example when an unhandled global exception occurs, when a function TimeoutException is thrown, or when performance counter thresholds are exceeded
-(HostHealthMonitor)
+The above error occurs in certain situations the runtime initiates a host shutdown via `HostingEnvironment.InitiateShutdown`, for example, when an unhandled global exception occurs, when a function `TimeoutException` is thrown, or when performance counter thresholds are exceeded
+(`HostHealthMonitor`).
 
 If you're using this function for quite some time then we recommend redeploying the solution with new ARM templates.
 
@@ -147,9 +147,9 @@ If the error still persists, then
     ```
 2. If you want to collect only logs from Azure Monitor, we recommend switching to new [Cloud to Cloud collection for Event hub](../../hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md)
 
-Exception while executing function:  Functions.BlobTaskProducer
+`Exception while executing function:  Functions.BlobTaskProducer
 StorageError: The table specified does not exists 
 
-RequestId: 87039a85-e002-0042-252ddb36f8000000 Time:2021-02-12T21:12:23
+RequestId: 87039a85-e002-0042-252ddb36f8000000 Time:2021-02-12T21:12:23`
 
 This error occurs when the FileOffsetMap table is not created inside Table service.

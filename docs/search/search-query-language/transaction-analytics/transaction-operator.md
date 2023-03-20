@@ -219,7 +219,7 @@ There are two fields created by the transaction operator,  `_start_time` and `_
 The fields are assigned a timestamp in milliseconds.
 :::
 
-For example in the query:
+For example, in the query:
 
 ```sql
 _source=Syslog (New session) OR (Session deleted)
