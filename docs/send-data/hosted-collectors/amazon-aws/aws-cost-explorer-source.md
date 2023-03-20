@@ -4,6 +4,10 @@ title: AWS Cost Explorer Source
 sidebar_label: AWS Cost Explorer
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src='https://s3.amazonaws.com/app_icons/AWS_Cost_Explorer.png' alt="icon" width="50"/>
+
 The AWS Cost Explorer Source collects cost and usage reports from [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/). You have the option to collect from one or more specific [AWS cost types](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-exploring-data.html) and set how often reports are collected.
 
 ## Create an AWS Cost Explorer Source

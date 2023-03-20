@@ -275,7 +275,7 @@ domain_name\user_name password:
 */15 * * * * LD_LIBRARY_PATH=:/opt/vmware/vma/lib64:/opt/vmware/vma/lib /var/log/vmware/cron_vcenter_perf.sh
 ```
 
-7. Create a cron job to periodically run the **cron_vcenter_perf.sh** script. For example to run the script every 15 minutes, it would look like:
+7. Create a cron job to periodically run the **cron_vcenter_perf.sh** script. For example, to run the script every 15 minutes, it would look like:
 
 ## Understand vCenter Scripts
 

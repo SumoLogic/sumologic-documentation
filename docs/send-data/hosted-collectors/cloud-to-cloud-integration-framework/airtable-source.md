@@ -1,13 +1,13 @@
 ---
 id: airtable-source
 title: Airtable Source
-sidebar_label: Airtable Source
+sidebar_label: Airtable
 description: Learn how to retrieve Airtable audit logs into the Sumo Logic environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="airtable-icon.png" width="150" />
+<img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="airtable-icon.png" width="50" />
 
 The Airtable API integration ingests audit logs periodically from the Airtable app platform into the Sumo Logic environment for storing and analyzing data.
 

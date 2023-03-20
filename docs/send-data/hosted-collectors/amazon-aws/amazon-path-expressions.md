@@ -1,6 +1,7 @@
 ---
 id: amazon-path-expressions
 title: Amazon Path Expressions
+sidebar_label: Path Expressions
 description: See examples of path expressions you can use to collect data from Amazon Sources.
 ---
 

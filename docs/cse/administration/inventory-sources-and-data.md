@@ -29,7 +29,7 @@ This screenshot shows the **Entity Details** page; inventory data is displayed f
 
 Sumo Logic provides a number of [Sources](/docs/send-data/choose-collector-source) you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. Each inventory source is listed in the [Inventory Source Mappings](#inventory-source-mappings) section below. The mapping table for each source shows the inventory attributes that are populated and the associated data source field or fields for each.
 
-Some of the inventory sources are strictly for collecting inventory data—such sources usually include “Inventory” in the source name, for example the **Microsoft Azure AD Inventory Source**. A few of the sources that collect inventory data also collect event data. For example, the **Sailpoint Source** collects inventory data about users and also collects events from the SalePoint Search API.
+Some of the inventory sources are strictly for collecting inventory data—such sources usually include “Inventory” in the source name, for example, the **Microsoft Azure AD Inventory Source**. A few of the sources that collect inventory data also collect event data. For example, the **Sailpoint Source** collects inventory data about users and also collects events from the SalePoint Search API.
 
 Some inventory sources provide user inventory information, some provide computer inventory information, and some provide both. The table below lists currently available inventory sources.
 
@@ -51,7 +51,7 @@ Sumo Logic Sources that collect inventory data generally have a configuration se
 
 ## Searching inventory data
 
-You can search the inventory data collected by inventory sources in a log search tab in Sumo Logic. You can scope your search using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md), for example by specifying the source category assigned to the inventory source:
+You can search the inventory data collected by inventory sources in a log search tab in Sumo Logic. You can scope your search using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md), for example, by specifying the source category assigned to the inventory source:
 
 ```
 _sourceCategory=AD_inventory
