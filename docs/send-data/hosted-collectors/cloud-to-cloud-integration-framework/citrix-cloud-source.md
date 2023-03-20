@@ -1,11 +1,13 @@
 ---
 id: citrix-cloud-source
 title: Citrix Cloud Source
-sidebar_label: Citrix Cloud Source
+sidebar_label: Citrix Cloud
 description: Learn how to collect System Log from the Citrix Cloud and send it to Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="citrix-cloud-icon" width="80"/>
 
 The Citrix Cloud Source provides a secure endpoint to receive System Log data from the [Citrix Cloud System Log API](https://developer.cloud.com/citrix-cloud/citrix-cloud---systemlog/apis/Records/GetRecords). It is a workspace management platform for IT administrators to design, deliver and manage virtual desktops and applications and other services, such as file sharing, on any device.
 
@@ -83,7 +85,7 @@ When you create a Citrix Cloud Source, you add it to a Hosted Collector. Before 
 To configure the Citrix Cloud API:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
-3. Select **Citrix Cloud** icon.  <br/>  <img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="citrix-cloud-icon.png" width="120" />
+3. Select **Citrix Cloud** icon.  <br/>  <img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="citrix-cloud-icon.svg" width="120" />
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional. <br/>   <img src={useBaseUrl('img/send-data/citrix-cloud-config-main.png')} alt="citrix-cloud-config-main.png" width="400" />
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 6. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.

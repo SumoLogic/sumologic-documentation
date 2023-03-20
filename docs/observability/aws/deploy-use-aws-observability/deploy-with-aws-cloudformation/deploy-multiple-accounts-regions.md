@@ -28,7 +28,7 @@ You need to install apps and determine account aliases before deploying.
 
 ## Step 2: Determine Account Aliases
 
-If you are going to deploy the solution in multiple AWS accounts, we highly recommend that you prepare a CSV file that maps your AWS Account-ids to account aliases. These aliases should be something that makes it easy for you to identify what this AWS account is being used for (for example dev, prod, billing, and marketplace). These names will appear in the Sumo Logic Explorer View, metrics, and logs and can be queried using the “account field”.
+If you are going to deploy the solution in multiple AWS accounts, we highly recommend that you prepare a CSV file that maps your AWS Account-ids to account aliases. These aliases should be something that makes it easy for you to identify what this AWS account is being used for (for example, dev, prod, billing, and marketplace). These names will appear in the Sumo Logic Explorer View, metrics, and logs and can be queried using the “account field”.
 
 The following is an example of the CSV file format to use:
 

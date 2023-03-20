@@ -6,6 +6,8 @@ sidebar_label: Duo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="thumbnail icon" width="55"/>
+
 The Duo Source provides a secure endpoint to receive authentication logs from the Duo [Authentication Logs API](https://duo.com/docs/adminapi#logs). It securely stores the required authentication, scheduling, and state tracking information.
 
 :::note

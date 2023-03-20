@@ -139,7 +139,7 @@ python3 $SCRIPT_PATH/events.py -s 192.168.124.29 -t sumologic_host -to sumologic
 python3 $SCRIPT_PATH/events.py -s 192.168.124.29 -t sumologic_host -to sumologic_host_port -u sumoadmin -pK 'xgb8NJ3ZYPJbzX6vWHySZbLd73bKWPsGMKoSnry7hL4=' -p 'gAAAAABb6asvlRfxEj_ZQTKOyrqnGNMbfo_kpxrqv4DCO6TorS4FmKFzrepe0_xtiMT67ZT6OOf5bfrVZXNnUDFNlwPWrpFSfg==' -pE True -l /var/log/vmware/log/vsphere_events
 ```
 
-By default, script starts collecting data for the past 24 hours, to retrieve data for smaller time range for testing purposes set the parameter -bT to the time from when to start data collection for example one hour earlier:
+By default, script starts collecting data for the past 24 hours, to retrieve data for smaller time range for testing purposes set the parameter -bT to the time from when to start data collection, for example, one hour earlier:
 
 ```bash
 python3 events.py -s <vcenter server> -t <syslog host> -to <syslog host port> -bT <time>

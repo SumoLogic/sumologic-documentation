@@ -59,7 +59,7 @@ Details option syntax:
 `... | logreduce | details\<signatureI\>`
 
 :::important
-Once a LogReduce query has run with the details operator, you can't use that query again, for example in a separate Search tab.
+Once a LogReduce query has run with the details operator, you can't use that query again, for example, in a separate Search tab.
 :::
 
 ### Optimize option
