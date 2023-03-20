@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 When creating an SLO, you'll need to define the following:
 
 * SLI (service level indicator) metric you are tracking and target configuration using ratio- or threshold-based definitions
-* SLO (service level objective) defining the target and duration to monitor (for example the uptime for the target)
+* SLO (service level objective) defining the target and duration to monitor (for example, the uptime for the target)
 * Basic details for SLO name and description
 
 You have multiple configurations for creating SLOs:

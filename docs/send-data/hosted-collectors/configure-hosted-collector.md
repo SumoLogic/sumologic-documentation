@@ -2,7 +2,7 @@
 id: configure-hosted-collector
 title: Configure a Hosted Collector and Source
 sidebar_label: Configure a Hosted Collector and Source
-description: Set up Hosted Collectors so you can move data from an Amazon S3 bucket or HTTP Source to Sumo Logic.
+description: Set up Hosted Collectors so you can move data to Sumo Logic from an Amazon S3 bucket and other sources like Microsoft, Cloud Syslog, Google, and HTTP.
 ---
 
 import DocCardList from '@theme/DocCardList';

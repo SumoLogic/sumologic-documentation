@@ -6,6 +6,8 @@ sidebar_label: Sophos Central
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="60"/>
+
 The Sophos Central Source provides a secure endpoint to receive authentication logs from the [Sophos Central APIs](https://developer.sophos.com/). It securely stores the required authentication, scheduling, and state tracking information.
 
 The Sophos Central Source ingests:

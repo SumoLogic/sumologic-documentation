@@ -7,7 +7,7 @@ description: The Sumo Logic App for Qualys VMDR provides vulnerability summary a
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="qualys-icon.png" width="150" />
+<img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="qualys-icon.png" width="120" />
 
 Qualys VMDR app is a new Sumo Logic app based on the [Qualys VMDR Cloud-to-Cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source/), which tracks errors, reports its health, and start-up progress. It provides a cloud security, compliance, and vulnerability management solutions across your IT infrastructure.
 

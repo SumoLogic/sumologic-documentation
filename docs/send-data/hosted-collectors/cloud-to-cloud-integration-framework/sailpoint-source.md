@@ -6,6 +6,8 @@ sidebar_label: SailPoint
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} width="100"/>
+
 The SailPoint Source provides a secure endpoint to receive Events and User Inventory data from the [IdentityNow V3 API](https://developer.sailpoint.com/apis/v3/). It securely stores the required authentication, scheduling, and state tracking information.
 
 The SailPoint Source ingests:

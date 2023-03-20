@@ -6,6 +6,8 @@ sidebar_label: Netskope WebTx
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/>
+
 The [Netskope WebTx API](https://docs.netskope.com/en/transaction-event-fields.html) integration ingests Web Transaction logs from Netskope Event Stream.
 
 ## States

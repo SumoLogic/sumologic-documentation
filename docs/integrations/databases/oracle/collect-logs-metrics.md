@@ -171,7 +171,7 @@ Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` in the 
         :::note
         `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
-        For example if your application uses `“oracle-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=oracle-prod.sumologic.com db_cluster_port=3306`
+        For example, if your application uses `“oracle-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=oracle-prod.sumologic.com db_cluster_port=3306`
 
         If your application connects directly to a given oracle node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=oracle-prod.sumologic.com`
 

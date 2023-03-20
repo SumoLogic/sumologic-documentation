@@ -6,6 +6,8 @@ sidebar_label: Carbon Black Inventory
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="55"/>
+
 The Carbon Black Inventory Source provides a secure endpoint to receive data from the [CB Devices API](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/devices-api/). It securely stores the required authentication, scheduling, and state tracking information.
 
 [See how inventory data is used in Cloud SIEM Enterprise](/docs/cse/records-signals-entities-insights/view-manage-entities.md).
