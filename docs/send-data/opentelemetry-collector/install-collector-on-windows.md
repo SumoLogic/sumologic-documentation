@@ -132,17 +132,9 @@ We currently do not build FIPS binary for Windows.
 
 ### Uninstall
 
-1. Go to **add or remove programs**.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-1.png')} alt="windows-uninstallation-1.png" width="550" />
-
-1. Find `OpenTelemetry Collector` and click `Uninstall`
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-2.png')} alt="windows-uninstallation-2.png" width="550" />
-
-1. Confirm the uninstallation.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-3.png')} alt="windows-uninstallation-3.png" width="550" />
+1. Go to **add or remove programs**.<br/>   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-1.png')} alt="windows-uninstallation-1.png" width="550" />
+1. Find `OpenTelemetry Collector` and click `Uninstall`.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-2.png')} alt="windows-uninstallation-2.png" width="550" />
+1. Confirm the uninstallation.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-3.png')} alt="windows-uninstallation-3.png" width="550" />
 
 ## Upgrading the Collector
 
