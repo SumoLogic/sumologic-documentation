@@ -133,33 +133,13 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 
 ### UI Installation via App Catalog
 
-1. Go to app catalog and select `macOS - OpenTelemetry application`
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-mac-os.png')} alt="macOS in app catalog" />
-
-1. Select `Add New Collector` and click `Next`
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-set-up-collector.png')} alt="set up collector" />
-
-1. Select installation token and customise your tags
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-add-new-collector.png')} alt="add new collector" />
-
-1. Copy command and execute it in your system terminal
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-terminal.png')} alt="execute command in terminal" />
-
-1. Wait for installation to be completed
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-success-registration.png')} alt="collector successfully registered" />
-
-1. Customize source configuration, download it, place it in `/etc/otelcol-sumo/conf.d` and then restart collector manually
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-source-creation.png')} alt="source customisation" />
-
-1. Wait for finishing the installation
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-success-installation.png')} alt="application installed successfully" />
+1. Go to app catalog and select `macOS - OpenTelemetry application`.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-mac-os.png')} alt="macOS in app catalog" />
+1. Select `Add New Collector` and click `Next`.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-set-up-collector.png')} alt="set up collector" />
+1. Select installation token and customize your tags.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-add-new-collector.png')} alt="add new collector" />
+1. Copy command and execute it in your system terminal.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-terminal.png')} alt="execute command in terminal" />
+1. Wait for installation to be completed.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-success-registration.png')} alt="collector successfully registered" />
+1. Customize source configuration, download it, place it in `/etc/otelcol-sumo/conf.d` and then restart collector manually.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-source-creation.png')} alt="source customization" />
+1. Wait for finishing the installation.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-success-installation.png')} alt="application installed successfully" />
 
 ### Additional settings
 
