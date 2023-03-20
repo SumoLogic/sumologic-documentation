@@ -308,8 +308,6 @@ This section describes common OpenTelemetry customizations:
 
 #### Using Proxy
 
-ToDo: fix it for systemd
-
 Exporters leverage the HTTP communication and respect the following proxy environment variables:
 
 * `HTTP_PROXY`
@@ -337,6 +335,11 @@ END
 To exclude a specific domain or IP address from using the proxy, you can add it to the `NO_PROXY` environment variable. For example, to exclude the domain `sumologic.com` from using the proxy, you can add the following command:
 
 `export NO_PROXY=sumologic.com`
+
+:::note
+For Systemd service, the variables can be placed in `/etc/otelcol-sumo/env/proxy.env`, as default configruation (`EnvironmentFile=-/etc/otelcol-sumo/env/*.env`) will load them automatically.
+Service need to be restarted in order to apply the changes.
+:::
 
 #### FIPS
 
