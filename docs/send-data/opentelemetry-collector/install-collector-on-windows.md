@@ -57,34 +57,13 @@ The script is going to perform the following operations:
 ### Manual Step-by-Step Installation
 
 1. Go to the [latest release documentation](https://github.com/SumoLogic/sumologic-otel-collector/releases/latest).
-2. Download `otelcol-sumo_x.y.z.0_en-US.x64.msi` from the `Assets` section.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation.png')} alt="windows-installation.png" width="550" />
-
-3. Run Installer.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-1.png')} alt="windows-installation-1.png" width="550" />
-
-4. Read and accept End-User License Agreement.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-2.png')} alt="windows-installation-2.png" width="550" />
-
-5. Select binary destination.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-3.png')} alt="windows-installation-3.png" width="550" />
-
-6. Set Installation Token and Tags properties.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-4.png')} alt="windows-installation-4.png" width="550" />
-
-7. Click Install to begin installation.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-5.png')} alt="windows-installation-5.png" width="550" />
-
-8. Wait for installation to be completed.
-
-   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-6.png')} alt="windows-installation-6.png" width="550" />
-
+2. Download `otelcol-sumo_x.y.z.0_en-US.x64.msi` from the `Assets` section.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation.png')} alt="windows-installation.png" width="550" />
+3. Run Installer.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-1.png')} alt="windows-installation-1.png" width="550" />
+4. Read and accept End-User License Agreement.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-2.png')} alt="windows-installation-2.png" width="550" />
+5. Select binary destination.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-3.png')} alt="windows-installation-3.png" width="550" />
+6. Set Installation Token and Tags properties.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-4.png')} alt="windows-installation-4.png" width="550" />
+7. Click Install to begin installation.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-5.png')} alt="windows-installation-5.png" width="550" />
+8. Wait for installation to be completed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-6.png')} alt="windows-stallation-6.png" width="550" />
 9. You can modify configuration, which should be placed in `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config` directory.
 
    :::note
