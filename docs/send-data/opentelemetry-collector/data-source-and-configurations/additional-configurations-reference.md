@@ -126,7 +126,7 @@ service:
         - sumologic
 ```
 
-### Using batch processor to batch data
+### Using Batch processor to batch data
 
 The [Batch processor][batchprocessor] can be utilized to convert the processed data into batches that are larger than a specified size or time interval. This can aid in compressing the data more effectively and minimizing the number of requests sent by the exporters.
 
