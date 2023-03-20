@@ -293,6 +293,10 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 
 <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux.png')} alt="linux in app catalog" />
 
+1. Click **Install App** for your first installation, or **View Details**, then **More Actions** and finally **Add another Host** for next installation
+
+   <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-overview.png')} alt="linux app overview" width="550" />
+
 1. Select `Add New Collector` and click `Next`. <br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-collector.png')} alt="set up collector" />
 1. Select installation token and customize your tags.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-register-collector.png')} alt="add new collector" />
 1. Copy command and execute it in your system terminal.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal-installation.png')} alt="execute command in terminal" />
