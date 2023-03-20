@@ -337,7 +337,7 @@ To exclude a specific domain or IP address from using the proxy, you can add it 
 `export NO_PROXY=sumologic.com`
 
 :::note
-For Systemd service, the variables can be placed in `/etc/otelcol-sumo/env/proxy.env`, as default configruation (`EnvironmentFile=-/etc/otelcol-sumo/env/*.env`) will load them automatically.
+For Systemd service, the variables can be placed in `/etc/otelcol-sumo/env/proxy.env`, as default configuration (`EnvironmentFile=-/etc/otelcol-sumo/env/*.env`) will load them automatically.
 Service need to be restarted in order to apply the changes.
 :::
 
