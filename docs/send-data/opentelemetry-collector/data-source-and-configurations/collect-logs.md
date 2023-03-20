@@ -103,7 +103,7 @@ For example when logs has following form in the file:
 {"message": "{\"key\": \"val\"}"}
 ```
 
-then configuration to extract JSON which is represented as string (`{\"key\": \"val\"}`) has following form:
+Then configuration to extract JSON which is represented as string (`{\"key\": \"val\"}`) has following form:
 
 ```yaml
 receivers:
