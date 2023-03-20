@@ -101,7 +101,7 @@ Consider the following input log:
     Attributes:
       "indexed-field": "some value"
   Log:
-    Body: "sample body"
+    Body: "Sample body"
     Attributes:
       "log-level-attribute": 42
 ```
@@ -113,12 +113,12 @@ Such log will be stored as the following set of data at Sumo Logic:
     "indexed-field": "some value"
 
   _raw (JSON): {
-    "log": "sample body",
+    "log": "Sample body",
     "log-level-attribute": "42"
   }
 ```
 
-ToDo: add screenshots
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-and-record-level-attributes.png')} alt="resource and record attributes in Sumo Logic" />
 
 ##### Log with Resource-level attributes only
 
@@ -129,7 +129,7 @@ If no log-level attributes are present, the log body is stored inline. For examp
     Attributes:
       "indexed-field": "some value"
   Log:
-    Body: "sample body"
+    Body: "Sample body"
 ```
 
 The output is stored as:
@@ -138,10 +138,10 @@ The output is stored as:
   Fields:
     "indexed-field": "some value"
 
-  _raw: "sample body"
+  _raw: "Sample body"
 ```
 
-ToDo: add screenshots
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-attributes-only.png')} alt="resource attributes only in Sumo Logic" />
 
 ### Data Tagging Recommendations
 
