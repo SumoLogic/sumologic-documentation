@@ -20,11 +20,11 @@ All configuration files in this setup follow the schema for OpenTelemetry Collec
 The configuration directory has three main components:
 
 * The `sumologic.yaml` is provided by Sumo Logic and shouldn't be changed, as it can be overridden during installation or upgrades.
-   * `common.yaml` file contains configuration settings that are common to all collectors.
-   * `hostmetrics.yaml` file contains configuration settings that are specific to host metrics collectors.
+  * `common.yaml` file contains configuration settings that are common to all collectors.
+  * `hostmetrics.yaml` file contains configuration settings that are specific to host metrics collectors.
 * The `conf.d` directory is where customers can customize the behavior of the OpenTelemetry Collector. It contains configuration files that can be changed according to specific needs.
 * The `env` directory contains environmental variable files that can be used to configure settings for the collector.
-   * `token.env` file contains configuration settings related to authentication and authorization for the collector.
+  * `token.env` file contains configuration settings related to authentication and authorization for the collector.
 
 The following is the file structure used in our configuration directory:
 
@@ -37,6 +37,7 @@ The following is the file structure used in our configuration directory:
 │   └── token.env
 └── sumologic.yaml
 ```
+
 When the collector is started, it loads the configuration in the following order:
 
 * `sumologic.yaml`. This is the default configuration file provided by Sumo Logic. It contains the default settings for the collector.
@@ -103,7 +104,7 @@ For example, a file named `conf.d/mysql.yaml` can contain the MySQL receiver alo
 There are few processors provided in `sumologic.yaml` which are intended to be used in every pipeline.
 
 * **Memory limiter processor**. It is used to prevent out-of-memory situations on the collector. It should be always first on the processor's list. For more information, refer to the [OpenTelemetry documentation](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor#memory-limiter-processor).
-* **Batch processor **. It accepts spans, metrics, or logs and places them into batches. Batching helps better compress the data and reduce the number of outgoing connections required to transmit the data. See [Using batch processor to batch data](#using-batch-processor-to-batch-data) for more information.
+* **Batch processor**. It accepts spans, metrics, or logs and places them into batches. Batching helps better compress the data and reduce the number of outgoing connections required to transmit the data. See [Using batch processor to batch data](#using-batch-processor-to-batch-data) for more information.
 <!-- * TODO: verify this point -> The Sumo Logic Schema processor modifies the metadata on logs, metrics, and traces sent to Sumo Logic so that the Sumo Logic apps can make full use of the ingested data.  -->
 
 Refer to the [Sumo Logic repository](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/processor/sumologicschemaprocessor#sumo-logic-schema-processor) for more details.
@@ -159,6 +160,7 @@ Learn more about these processors:
 
 OpenTelemetry has a [rich data model](https://github.com/open-telemetry/opentelemetry-proto/tree/main/opentelemetry/proto), which is internally constructed out of several layers. For all signals,
 these can be broken down into following:
+
 * **Resource**. Includes attributes describing the resource from which given set of data comes from. Should follow [resource semantic conventions](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/resource/semantic_conventions).
 * **Instrumentation Scope**. Additional information about the scope of data. For example, instrumentation library name.
 * **Record**. Refers to a specific entry of data, such as a Log, Span, or Metric. Each Record has its own set of attributes, which may include key/value pairs that are specific to the context of the Record. Some Record types may follow certain conventions for signal types, such as [trace](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/trace/semantic_conventions), [metrics](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/metrics/semantic_conventions), or [logs](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/logs/semantic_conventions). Logs, in particular, can also include attributes in the body of the Record.
@@ -227,6 +229,7 @@ ToDo: add screenshots
 ### Data Tagging Recommendations
 
 We recommend reading the [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions/) document before continuing to become more familiar with the terms used below. The following terms are important for data tagging:
+
 * Source Category (`_sourceCategory`)
 * Source Host (`_sourceHost`)
 * Source Name (`_sourceName`)
