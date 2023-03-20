@@ -289,10 +289,8 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 
 ### UI Installation via App Catalog
 
-1. Go to **App Catalog** and select `Linux`.
-
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux.png')} alt="linux in app catalog" />
-
+1. Go to **App Catalog** and select `Linux`. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux.png')} alt="linux in app catalog" />
+1. Click **Install App** for your first installation, or **View Details**, then **More Actions** and finally **Add another Host** for next installation. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-overview.png')} alt="linux app overview" width="550" />
 1. Select `Add New Collector` and click `Next`. <br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-collector.png')} alt="set up collector" />
 1. Select installation token and customize your tags.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-register-collector.png')} alt="add new collector" />
 1. Copy command and execute it in your system terminal.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal-installation.png')} alt="execute command in terminal" />
@@ -309,8 +307,6 @@ This section describes common OpenTelemetry customizations:
 * [FIPS](#fips)
 
 #### Using Proxy
-
-ToDo: fix it for systemd
 
 Exporters leverage the HTTP communication and respect the following proxy environment variables:
 
@@ -339,6 +335,11 @@ END
 To exclude a specific domain or IP address from using the proxy, you can add it to the `NO_PROXY` environment variable. For example, to exclude the domain `sumologic.com` from using the proxy, you can add the following command:
 
 `export NO_PROXY=sumologic.com`
+
+:::note
+For Systemd service, the variables can be placed in `/etc/otelcol-sumo/env/proxy.env`, as default configruation (`EnvironmentFile=-/etc/otelcol-sumo/env/*.env`) will load them automatically.
+Service need to be restarted in order to apply the changes.
+:::
 
 #### FIPS
 

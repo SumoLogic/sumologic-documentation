@@ -5,88 +5,6 @@ sidebar_label: Additional Configurations Reference
 description: Learn about Configurations Reference
 ---
 
-## OpenTelemetry Configuration
-
-All configuration files in this setup follow the schema for OpenTelemetry Collector configuration, which comprises a service consisting of pipelines with receivers, processors, and exporters:
-
-* A **Receiver**, which can be push or pull based, is how data gets into the Collector. Receivers may support one or more data sources. For more information, refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#receivers).
-* A **Processor** is run on data between being received and being exported. Processors are optional though some are recommended. With processors, you can filter your data, add custom fields, modify content, and much more. For more information refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#processors).
-* An **Exporter** is how you transmit data to one or more backends/destinations, specifically Sumo Logic. It can be push or pull based. For more information, refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#exporters).
-* An **Extension** is available primarily for tasks that do not involve processing telemetry data. Examples of extensions include health monitoring, service discovery, and data forwarding. Sumo Logic has its own extension, which registers and manage your Sumo Logic collector. For more information, refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#extensions).
-* A **Pipeline** is configured through the service stanza. For more information, refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#service) to become more familiar with this concept.
-
-## Sumo Logic Distribution for OpenTelemetry Collector Configuration Structure
-
-The configuration directory has three main components:
-
-* The `sumologic.yaml` is provided by Sumo Logic and shouldn't be changed, as it can be overridden during installation or upgrades.
-   * `common.yaml` file contains configuration settings that are common to all collectors.
-   * `hostmetrics.yaml` file contains configuration settings that are specific to host metrics collectors.
-* The `conf.d` directory is where customers can customize the behavior of the OpenTelemetry Collector. It contains configuration files that can be changed according to specific needs.
-* The `env` directory contains environmental variable files that can be used to configure settings for the collector.
-   * `token.env` file contains configuration settings related to authentication and authorization for the collector.
-
-The following is the file structure used in our configuration directory:
-
-```txt
-.
-├── conf.d
-│   ├── common.yaml
-│   └── hostmetrics.yaml
-├── env
-│   └── token.env
-└── sumologic.yaml
-```
-When the collector is started, it loads the configuration in the following order:
-
-* `sumologic.yaml`. This is the default configuration file provided by Sumo Logic. It contains the default settings for the collector.
-* All configuration files from `conf.d`, sorted alphabetically. These files contain additional configuration settings that can be customized by customers. If there are any conflicts between the files, the last loaded configuration file will take precedence.
-
-:::note
-If a configuration is loaded later in the order, it will be merged with the previous configuration.
-:::
-
-For example, if two configuration files define the same key, the value from the later file will overwrite the value from the earlier file. If a list or map is defined in multiple configuration files, the lists or maps are merged, with values from the later configuration file taking precedence.
-
-Let's consider the following example configuration files:
-
-```yaml title="conf.d/0-base.yaml"
-extensions:
-  sumologic:
-    collector_description: "My OpenTelemetry Collector"
-    collector_fields:
-      cluster: "cluster-1"
-    some_list:
-      - element 1
-      - element 2
-```
-
-```yaml title="conf.d/1-override.yaml"
-extensions:
-  sumologic:
-    collector_fields:
-      zone: "eu"
-    some_list:
-      - element 3
-      - element 4
-```
-
-The effective configuration will look like the following:
-
-```yaml
-extensions:
-  sumologic:
-    collector_description: "My OpenTelemetry Collector"
-    collector_fields:
-      cluster: "cluster-1"
-      zone: "eu"
-    some_list:
-      - element 3
-      - element 4
-```
-
-Note that the list has been overridden and maps have been merged.
-
 ## Best Practices
 
 ### Configuration Location
@@ -103,7 +21,7 @@ For example, a file named `conf.d/mysql.yaml` can contain the MySQL receiver alo
 There are few processors provided in `sumologic.yaml` which are intended to be used in every pipeline.
 
 * **Memory limiter processor**. It is used to prevent out-of-memory situations on the collector. It should be always first on the processor's list. For more information, refer to the [OpenTelemetry documentation](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor#memory-limiter-processor).
-* **Batch processor **. It accepts spans, metrics, or logs and places them into batches. Batching helps better compress the data and reduce the number of outgoing connections required to transmit the data. See [Using batch processor to batch data](#using-batch-processor-to-batch-data) for more information.
+* **Batch processor**. It accepts spans, metrics, or logs and places them into batches. Batching helps better compress the data and reduce the number of outgoing connections required to transmit the data. See [Using batch processor to batch data](#using-batch-processor-to-batch-data) for more information.
 <!-- * TODO: verify this point -> The Sumo Logic Schema processor modifies the metadata on logs, metrics, and traces sent to Sumo Logic so that the Sumo Logic apps can make full use of the ingested data.  -->
 
 Refer to the [Sumo Logic repository](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/processor/sumologicschemaprocessor#sumo-logic-schema-processor) for more details.
@@ -159,6 +77,7 @@ Learn more about these processors:
 
 OpenTelemetry has a [rich data model](https://github.com/open-telemetry/opentelemetry-proto/tree/main/opentelemetry/proto), which is internally constructed out of several layers. For all signals,
 these can be broken down into following:
+
 * **Resource**. Includes attributes describing the resource from which given set of data comes from. Should follow [resource semantic conventions](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/resource/semantic_conventions).
 * **Instrumentation Scope**. Additional information about the scope of data. For example, instrumentation library name.
 * **Record**. Refers to a specific entry of data, such as a Log, Span, or Metric. Each Record has its own set of attributes, which may include key/value pairs that are specific to the context of the Record. Some Record types may follow certain conventions for signal types, such as [trace](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/trace/semantic_conventions), [metrics](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/metrics/semantic_conventions), or [logs](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/logs/semantic_conventions). Logs, in particular, can also include attributes in the body of the Record.
@@ -182,7 +101,7 @@ Consider the following input log:
     Attributes:
       "indexed-field": "some value"
   Log:
-    Body: "sample body"
+    Body: "Sample body"
     Attributes:
       "log-level-attribute": 42
 ```
@@ -194,12 +113,12 @@ Such log will be stored as the following set of data at Sumo Logic:
     "indexed-field": "some value"
 
   _raw (JSON): {
-    "log": "sample body",
+    "log": "Sample body",
     "log-level-attribute": "42"
   }
 ```
 
-ToDo: add screenshots
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-and-record-level-attributes.png')} alt="resource and record attributes in Sumo Logic" />
 
 ##### Log with Resource-level attributes only
 
@@ -210,7 +129,7 @@ If no log-level attributes are present, the log body is stored inline. For examp
     Attributes:
       "indexed-field": "some value"
   Log:
-    Body: "sample body"
+    Body: "Sample body"
 ```
 
 The output is stored as:
@@ -219,14 +138,15 @@ The output is stored as:
   Fields:
     "indexed-field": "some value"
 
-  _raw: "sample body"
+  _raw: "Sample body"
 ```
 
-ToDo: add screenshots
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-attributes-only.png')} alt="resource attributes only in Sumo Logic" />
 
 ### Data Tagging Recommendations
 
 We recommend reading the [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions/) document before continuing to become more familiar with the terms used below. The following terms are important for data tagging:
+
 * Source Category (`_sourceCategory`)
 * Source Host (`_sourceHost`)
 * Source Name (`_sourceName`)
