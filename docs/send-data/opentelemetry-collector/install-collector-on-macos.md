@@ -57,7 +57,7 @@ The `-E` argument to `sudo` is needed to preserve the `SUMOLOGIC_INSTALLATION_TO
 
 The `-d` argument to the script is needed on macOS. It will skip Systemd installation, which is not supported on macOS.
 
-It is going to perform the following operations:
+It will perform the following operations:
 
 * install or upgrade operation by placing the latest version as `/usr/local/bin/otelcol-sumo`,
 * get [static configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/sumologic.yaml) and place it as `/etc/otelcol-sumo/sumologic.yaml`
