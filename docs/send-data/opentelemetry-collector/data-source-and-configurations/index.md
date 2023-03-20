@@ -33,27 +33,88 @@ Some of the sources supported by Sumo Logic OoenTelemetry Collectors include:
 
 Overall, receivers and sources are key components in the Sumo Logic Otel collector that work together to ingest and process data from various sources and protocols.
 
-## OpenTelemetry Configuration (ToDo: it duplicates with additional-configurations-reference)
+## OpenTelemetry Configuration
 
-OpenTelemetry (Otel) configuration is the process of setting up and configuring the Otel collector to collect telemetry data (e.g., logs, metrics, traces) from different sources and export it to different destinations. The Otel collector provides a number of pre-built configurations that can be used as a starting point, and these configurations can be customized based on the specific needs of your environment.
+All configuration files in this setup follow the schema for OpenTelemetry Collector configuration, which comprises a service consisting of pipelines with receivers, processors, and exporters:
 
-### Components
+* A **Receiver**, which can be push or pull based, is how data gets into the Collector. Receivers may support one or more data sources. For more information, refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#receivers).
+* A **Processor** is run on data between being received and being exported. Processors are optional though some are recommended. With processors, you can filter your data, add custom fields, modify content, and much more. For more information refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#processors).
+* An **Exporter** is how you transmit data to one or more backends/destinations, specifically Sumo Logic. It can be push or pull based. For more information, refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#exporters).
+* An **Extension** is available primarily for tasks that do not involve processing telemetry data. Examples of extensions include health monitoring, service discovery, and data forwarding. Sumo Logic has its own extension, which registers and manage your Sumo Logic collector. For more information, refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#extensions).
+* A **Pipeline** is configured through the service stanza. For more information, refer to the [OpenTelemetry documentation](https://opentelemetry.io/docs/collector/configuration/#service) to become more familiar with this concept.
 
-The OpenTelemetry configuration is composed of the following building blocks.
+## Sumo Logic Distribution for OpenTelemetry Collector Configuration Structure
 
-* **Receivers**. Receivers are the components that listen for data coming in from different sources. Receivers can be configured to accept data from a wide range of sources, including log files, network sockets, and cloud platforms like Amazon Web Services (AWS) and Microsoft Azure.
+The configuration directory has three main components:
 
-* **Processors**. Processors are the components that transform and enrich data before it is sent to the next component in the pipeline. Processors can be used to add or remove attributes, filter data, or perform other actions on data.
+* The `sumologic.yaml` is provided by Sumo Logic and shouldn't be changed, as it can be overridden during installation or upgrades.
+  * `common.yaml` file contains configuration settings that are common to all collectors.
+  * `hostmetrics.yaml` file contains configuration settings that are specific to host metrics collectors.
+* The `conf.d` directory is where customers can customize the behavior of the OpenTelemetry Collector. It contains configuration files that can be changed according to specific needs.
+* The `env` directory contains environmental variable files that can be used to configure settings for the collector.
+  * `token.env` file contains configuration settings related to authentication and authorization for the collector.
 
-* **Exporters**. Exporters are the components that send telemetry data to different destinations, such as Sumo Logic, Prometheus, or Amazon Simple Storage Service (S3).
+The following is the file structure used in our configuration directory:
 
-* **Extensions**. Extensions are the components that provide additional functionality to the Otel collector, such as adding support for new protocols or integrating with other systems.
+```txt
+.
+├── conf.d
+│   ├── common.yaml
+│   └── hostmetrics.yaml
+├── env
+│   └── token.env
+└── sumologic.yaml
+```
 
-Otel configuration can be done using a configuration file or through environment variables. The configuration file is a YAML or JSON file that defines the configuration of the Otel collector, including the receivers, processors, exporters, and extensions. The environment variables can be used to set specific configuration options at runtime.
+When the collector is started, it loads the configuration in the following order:
 
-## Sumo Logic Otel Configuration structure (ToDo: it duplicates with additional-configurations-reference)
+* `sumologic.yaml`. This is the default configuration file provided by Sumo Logic. It contains the default settings for the collector.
+* All configuration files from `conf.d`, sorted alphabetically. These files contain additional configuration settings that can be customized by customers. If there are any conflicts between the files, the last loaded configuration file will take precedence.
 
-Refer to [Sumo Logic Distribution for OpenTelemetry Collector Configuration Structure](/docs/send-data/opentelemetry-collector/data-source-and-configurations/additional-configurations-reference#sumo-logic-distribution-for-opentelemetry-collector-configuration-structure).
+:::note
+If a configuration is loaded later in the order, it will be merged with the previous configuration.
+:::
+
+For example, if two configuration files define the same key, the value from the later file will overwrite the value from the earlier file. If a list or map is defined in multiple configuration files, the lists or maps are merged, with values from the later configuration file taking precedence.
+
+Let's consider the following example configuration files:
+
+```yaml title="conf.d/0-base.yaml"
+extensions:
+  sumologic:
+    collector_description: "My OpenTelemetry Collector"
+    collector_fields:
+      cluster: "cluster-1"
+    some_list:
+      - element 1
+      - element 2
+```
+
+```yaml title="conf.d/1-override.yaml"
+extensions:
+  sumologic:
+    collector_fields:
+      zone: "eu"
+    some_list:
+      - element 3
+      - element 4
+```
+
+The effective configuration will look like the following:
+
+```yaml
+extensions:
+  sumologic:
+    collector_description: "My OpenTelemetry Collector"
+    collector_fields:
+      cluster: "cluster-1"
+      zone: "eu"
+    some_list:
+      - element 3
+      - element 4
+```
+
+Note that the list has been overridden and maps have been merged.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
