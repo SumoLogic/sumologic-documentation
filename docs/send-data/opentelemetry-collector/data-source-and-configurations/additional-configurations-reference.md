@@ -5,6 +5,8 @@ sidebar_label: Additional Configurations Reference
 description: Learn about Configurations Reference
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## Best Practices
 
 ### Configuration Location
