@@ -7,9 +7,9 @@ description: The DocuSign App for Sumo Logic helps you monitor and secure your D
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="Thumbnail icon" width="40"/>
 
-The Sumo Logic app for DocuSign helps you monitor and secure your DocuSign account by providing real-time actionable insights into critical events, alerts, and user activity, allowing you to identify and address potential security threats before they can cause harm. With the DocuSign app, you can also protect data loss, identify suspicious activity, maintain the security of your DocuSign account, and prevent data breaches - all from a single, centralized platform. 
+The Sumo Logic app for DocuSign helps you monitor and secure your DocuSign account by providing real-time actionable insights into critical events, alerts, and user activity, allowing you to identify and address potential security threats before they can cause harm. With the DocuSign app, you can also protect data loss, identify suspicious activity, maintain the security of your DocuSign account, and prevent data breaches - all from a single, centralized platform.
 
 The app leverages the DocuSign Monitor API to collect and analyze data from your DocuSign account, including document access and modification, user activity, authentication activity, and system events. You can set up custom alerts for critical events and user activity, and receive notifications in real-time when potential security threats are detected.
 
@@ -21,8 +21,6 @@ With the DocuSign App, you can:
 * Protect data loss by closely monitoring access, changes, and unauthorized activity.
 * Analyze user behavior to identify potential security threats by looking for deviations from normal patterns of activity.
 
-The Sumo Logic DocuSign App is designed to help you maintain the security of your DocuSign account and prevent data breaches. With powerful monitoring and analytics capabilities, the app provides actionable insights into user activity and critical alerts, allowing you to identify and address potential security threats before they can cause harm.
-
 ## Log Types
 
 The DocuSign App for Sumo Logic uses [Events](https://developers.docusign.com/docs/monitor-api/monitor101/events-alerts/events-list) and [Alerts](https://developers.docusign.com/docs/monitor-api/monitor101/events-alerts/alerts-list) data to generate logs that can be used for monitoring and analysis.
@@ -31,101 +29,101 @@ The DocuSign App for Sumo Logic uses [Events](https://developers.docusign.com/do
 
 ```json title="Sample Events Log Message"
 {
- "timestamp": "2023-03-03T09:10:06.0512813Z",
- "eventId": "a8010d32-b9f5-4948-9195-50c867d7c3a5",
- "site": "DEMO",
- "accountId": "8949bd2a-f1fc-4c95-ae8e-9e294b2af5b7",
- "organizationId": "9e294b2af5b7-f1fc-4c95-8949bd2a",
- "userId": "9cfb472b-ef1f-4116-8df2-17c53841fd6c",
- "integratorKey": "##DOCUSIGN_INTERNAL_NOT_USED##",
- "userAgent": "",
- "ipAddress": "162.248.186.11",
- "ipAddressLocation": {
-   "latitude": 47.6,
-   "longitude": -122.33,
-   "country": "india",
-   "state": "gujarat",
-   "city": "akota"
- },
- "object": "Account",
- "action": "UserAdded",
- "property": "",
- "field": "",
- "result": "",
- "source": "API",
- "referencedUserId": "2020ac66-26b5-4367-aff3-f33bd9a007b7",
- "proxyStatus": "",
- "proxyType": "",
- "proxyLevel": "",
- "latitude": 47.6,
- "longitude": -122.33,
- "city": "akota",
- "state": "gujarat",
- "country": "india",
- "data": {
-   "AffectedUserId": "2020ac66-26b5-4367-aff3-f33bd9a007b7",
-   "AffectedMembershipId": "4da49358-8de5-4f62-9e9a-6029259723bc",
-   "PermissionProfileId": "14414475"
- }
+	"timestamp":"2023-03-03T09:10:06.0512813Z",
+	"eventId":"a8010d32-b9f5-4948-9195-50c867d7c3a5",
+	"site":"DEMO",
+	"accountId":"8949bd2a-f1fc-4c95-ae8e-9e294b2af5b7",
+	"organizationId":"9e294b2af5b7-f1fc-4c95-8949bd2a",
+	"userId":"9cfb472b-ef1f-4116-8df2-17c53841fd6c",
+	"integratorKey":"##DOCUSIGN_INTERNAL_NOT_USED##",
+	"userAgent":"",
+	"ipAddress":"162.248.186.11",
+	"ipAddressLocation":{
+		"latitude":47.6,
+		"longitude":-122.33,
+		"country":"india",
+		"state":"gujarat",
+		"city":"akota"
+	},
+	"object":"Account",
+	"action":"UserAdded",
+	"property":"",
+	"field":"",
+	"result":"",
+	"source":"API",
+	"referencedUserId":"2020ac66-26b5-4367-aff3-f33bd9a007b7",
+	"proxyStatus":"",
+	"proxyType":"",
+	"proxyLevel":"",
+	"latitude":47.6,
+	"longitude":-122.33,
+	"city":"akota",
+	"state":"gujarat",
+	"country":"india",
+	"data":{
+		"AffectedUserId":"2020ac66-26b5-4367-aff3-f33bd9a007b7",
+		"AffectedMembershipId":"4da49358-8de5-4f62-9e9a-6029259723bc",
+		"PermissionProfileId":"14414475"
+	}
 }
 ```
 
 ```json title="Sample Alerts Log Message"
 {
- "timestamp": "2023-02-20T10:42:19.8996904Z",
- "eventId": "285e7634-07fd-4877-ac12-b921d0e4b626",
- "site": "DEMO",
- "accountId": "",
- "organizationId": "7f46f1ee-828e-41d4-9d85-755fa1814fd4",
- "userId": "9cfb472b-ef1f-4116-8df2-17c53841fd6c",
- "integratorKey": "",
- "userAgent": "",
- "ipAddress": "103.108.207.58",
- "ipAddressLocation": {
-   "latitude": 23.02,
-   "longitude": 72.57,
-   "country": "india",
-   "state": "gujarat",
-   "city": "ahmedabad"
- },
- "object": "Alert",
- "action": "IpAddressOutsideAllowedRanges",
- "property": "",
- "field": "",
- "result": "",
- "source": "Other",
- "referencedUserId": "",
- "proxyStatus": "",
- "proxyType": "",
- "proxyLevel": "",
- "latitude": 23.02,
- "longitude": 72.57,
- "city": "ahmedabad",
- "state": "gujarat",
- "country": "india",
- "data": {
-   "EventIds": [
-     "16b4a651-1e21-42a3-90ea-f5227224b591",
-     "1addc090-d227-4166-a279-dc6c5277247b",
-     "1e0f0d65-ab89-4b74-9f85-6f80b0cd59b4",
-     "205bb7fe-bada-4331-bfcb-73a81d0bebfd",
-     "260ff2b6-c818-409a-813b-91d4b5afee27",
-     "374f01a9-c86e-4600-b8e5-d20cd699fc65",
-     "3a28a286-b041-42e8-aaac-fdb8234951f1",
-     "3bc218bd-b8d6-4861-b471-f642c4b5aaca",
-     "40c2e748-bd09-45c9-958b-e89e3280f716",
-     "44badf68-6b7b-4294-b6bb-e1943dc0095b",
-     "88cd1d2f-87a5-49e5-92cf-39cdf9550be1",
-     "897bf5dc-2902-4270-a67e-dfd25fe98893",
-     "9cc9a7f1-a853-45ab-95c1-22c7e7834e1d",
-     "aaf22d31-9afa-48f3-880e-6287e4179daf",
-     "b4cc9614-6606-4fd9-86df-fad67b2f6181",
-     "de8ebe47-9e94-42e4-86db-4d56f882ab0a",
-     "e9e27037-213f-46db-9976-2b22c1b36bc9",
-     "f767e823-9722-49ef-8da5-b0d9f8dd13b6"
-   ],
-   "Count": "18"
- }
+	"timestamp":"2023-02-20T10:42:19.8996904Z",
+	"eventId":"285e7634-07fd-4877-ac12-b921d0e4b626",
+	"site":"DEMO",
+	"accountId":"",
+	"organizationId":"7f46f1ee-828e-41d4-9d85-755fa1814fd4",
+	"userId":"9cfb472b-ef1f-4116-8df2-17c53841fd6c",
+	"integratorKey":"",
+	"userAgent":"",
+	"ipAddress":"103.108.207.58",
+	"ipAddressLocation":{
+		"latitude":23.02,
+		"longitude":72.57,
+		"country":"india",
+		"state":"gujarat",
+		"city":"ahmedabad"
+	},
+	"object":"Alert",
+	"action":"IpAddressOutsideAllowedRanges",
+	"property":"",
+	"field":"",
+	"result":"",
+	"source":"Other",
+	"referencedUserId":"",
+	"proxyStatus":"",
+	"proxyType":"",
+	"proxyLevel":"",
+	"latitude":23.02,
+	"longitude":72.57,
+	"city":"ahmedabad",
+	"state":"gujarat",
+	"country":"india",
+	"data":{
+		"EventIds":[
+			"16b4a651-1e21-42a3-90ea-f5227224b591",
+			"1addc090-d227-4166-a279-dc6c5277247b",
+			"1e0f0d65-ab89-4b74-9f85-6f80b0cd59b4",
+			"205bb7fe-bada-4331-bfcb-73a81d0bebfd",
+			"260ff2b6-c818-409a-813b-91d4b5afee27",
+			"374f01a9-c86e-4600-b8e5-d20cd699fc65",
+			"3a28a286-b041-42e8-aaac-fdb8234951f1",
+			"3bc218bd-b8d6-4861-b471-f642c4b5aaca",
+			"40c2e748-bd09-45c9-958b-e89e3280f716",
+			"44badf68-6b7b-4294-b6bb-e1943dc0095b",
+			"88cd1d2f-87a5-49e5-92cf-39cdf9550be1",
+			"897bf5dc-2902-4270-a67e-dfd25fe98893",
+			"9cc9a7f1-a853-45ab-95c1-22c7e7834e1d",
+			"aaf22d31-9afa-48f3-880e-6287e4179daf",
+			"b4cc9614-6606-4fd9-86df-fad67b2f6181",
+			"de8ebe47-9e94-42e4-86db-4d56f882ab0a",
+			"e9e27037-213f-46db-9976-2b22c1b36bc9",
+			"f767e823-9722-49ef-8da5-b0d9f8dd13b6"
+		],
+		"Count":"18"
+	}
 }
 ```
 
@@ -175,8 +173,8 @@ To install the app, follow the steps below:
    1. **Data Source**. Select either of these options for the data source:
       * Choose **Source Category** and then choose a source category from the list.
       * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For example, `_sourceCategory=MyCategory`.
-    2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app. 
-    3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
+   2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app. 
+   3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
 1. Click **Next**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
@@ -193,8 +191,8 @@ Each panel has a set of filters that are applied to the results for that panel o
 
 ### DocuSign - Overview
 
-**DocuSign - Overview** dashboard gives you information about the records of recently added users and administrators. It gives insights regarding total alerts fired, new templates created, envelopes signed, documents downloaded, and new groups created in the organization. It also provides geo-location and trends of all the events. The App visualizes the distribution of all the operations happening in the organization. 
- 
+**DocuSign - Overview** dashboard gives you information about the records of recently added users and administrators. It gives insights regarding total alerts fired, new templates created, envelopes signed, documents downloaded, and new groups created in the organization. It also provides geo-location and trends of all the events. The App visualizes the distribution of all the operations happening in the organization.
+
 In addition to the above, the App summarizes the most frequent events, alerts, sources, activities from high-risk countries, and document modifications. Overall, this dashboard offers comprehensive information about the team's activity and facilitates efficient monitoring of various important events.<br/><img src={useBaseUrl('img/integrations/saas-cloud/docusign-overview.png')} alt="docusign-overview.png" width="800"/>
 
 ### DocuSign - Alerts
