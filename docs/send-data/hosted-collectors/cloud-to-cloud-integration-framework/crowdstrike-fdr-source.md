@@ -6,6 +6,8 @@ sidebar_label: Crowdstrike FDR
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
+
 The CrowdStrike Falcon Data Replicator (FDR) Source provides a secure endpoint to ingest [Falcon Data Replicator](https://falcon.crowdstrike.com/support/documentation/9/falcon-data-replicator) events using the S3 ingestion capability by consumed SQS notifications of new S3 objects. It securely stores the required authentication, scheduling, and state tracking information.
 
 :::important

@@ -6,9 +6,11 @@ sidebar_label: Azure Event Hubs
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::note
-If you're using our new Cloud-to-Cloud source collection, please see [Migration from Azure function-based collection to Event Hub Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration).
+:::info
+If you're using our new Cloud-to-Cloud source collection, see [Migrating from Azure function-based collection to Event Hub Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration).
 :::
+
+<img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/>
 
 The Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs. It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -29,7 +31,7 @@ This Source is available in the Fed deployment.
 1. [Create an Event Hub using the Azure portal](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create) by navigating to Event Hubs in the Azure Portal.<br/> ![AzureEventHubstep1.png](/img/send-data/AzureEventHubstep1.png)
 1. Create an Event Hubs namespace. In this example, Namespace is set to **cnctest**:<br/>![AzureEventHubstep2.png](/img/send-data/AzureEventHubstep2.png)<br/> ![AzureEventHubstep3.png](/img/send-data/AzureEventHubstep3.png)
 1. Create an Event Hub Instance.<br/> ![AzureEventHubstep4.png](/img/send-data/AzureEventHubstep4.png)
-    Shared Access Policies can be set up for the entire namespace. These policies can be used to access/manage all hubs in the namespace. A policy for the namespace is created by default: **RootManageSharedAccessKey** <br/>![AzureEventHubstep5.png](/img/send-data/AzureEventHubstep5.png)
+    * Shared Access Policies can be set up for the entire namespace. These policies can be used to access/manage all hubs in the namespace. A policy for the namespace is created by default: **RootManageSharedAccessKey** <br/>![AzureEventHubstep5.png](/img/send-data/AzureEventHubstep5.png)
     In this example, Event Hub Instance is set to **my-hub**.
 1. Create a [Shared Access Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) with the **Listen** claim to the newly created Event Hub Instance:<br/>  ![AzureEventHubstep6.png](/img/send-data/AzureEventHubstep6.png)<br/>
     ![AzureEventHubstep7.png](/img/send-data/AzureEventHubstep7.png)<br/>

@@ -1,34 +1,34 @@
 ---
 slug: /integrations/saas-cloud
 title: SaaS and Cloud Apps
-description: Docs for Sumo apps for SaaS and Cloud applications.
+description: Learn about the Sumo Logic apps for SaaS and Cloud applications.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/business/SaaS.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/icons/business/SaaS.png')} alt="Thumbnail icon" width="40"/>
 
-This guide has documentation for Sumo apps for SaaS and Cloud applications.
+Learn about the Sumo Logic apps for SaaS and Cloud applications.
 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/acquia">
-  <img src={useBaseUrl('img/integrations/saas-cloud/acquia.png')} alt="icon" width="100"/><h4>Acquia</h4></a>
+  <img src={useBaseUrl('img/integrations/saas-cloud/acquia.png')} alt="icon" width="120"/><h4>Acquia</h4></a>
   <p>A guide to the Sumo Logic App for Acquia.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/akamai-cloud-monitor">
-  <img src={useBaseUrl('img/integrations/saas-cloud/akamai.png')} alt="icon" width="80"/><h4>Akamai Cloud Monitor</h4></a>
+  <img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="icon" width="85"/><h4>Akamai Cloud Monitor</h4></a>
   <p>A guide to the Sumo Logic App for Akamai Cloud Monitor.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/armis">
-  <img src={useBaseUrl('img/integrations/saas-cloud/armis-icon.png')} alt="icon" width="50"/><h4>Armis</h4></a>
+  <img src={useBaseUrl('img/send-data/armis-icon.png')} alt="armis-icon.png" width="75" /><h4>Armis</h4></a>
   <p>A guide to the Sumo Logic App for Armis.</p>
   </div>
 </div>
@@ -53,17 +53,24 @@ This guide has documentation for Sumo apps for SaaS and Cloud applications.
   <p>A guide to the Sumo Logic App for Cloudflare.</p>
   </div>
 </div>
+<div className="box smallbox6 card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/dropbox">
+  <img src={useBaseUrl('img/integrations/saas-cloud/dropbox-icon.svg')} alt="dropbox-icon.png" width="45"/><h4>Dropbox</h4></a>
+  <p>Monitor and analyze your Dropbox usage data.</p>
+  </div>
+</div>
 <div className="box smallbox7 card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/fastly">
-  <img src={useBaseUrl('img/integrations/saas-cloud/fastly.png')} alt="icon" width="50"/><h4>Fastly</h4></a>
-  <p>A guide to the Sumo Logic App for Fastly.</p>
+  <a href="/docs/integrations/saas-cloud/docusign">
+  <img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="Thumbnail icon" width="40"/><h4>DocuSign</h4></a>
+  <p>Monitor and secure your DocuSign account</p>
   </div>
 </div>
 <div className="box smallbox8 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/gmail-tracelogs">
-  <img src={useBaseUrl('img/integrations/saas-cloud/gmail-icon.png')} alt="icon" width="60"/><h4>Gmail Trace Logs</h4></a>
+  <img src={useBaseUrl('img/integrations/saas-cloud/gmail-icon.png')} alt="icon" width="55"/><h4>Gmail Trace Logs</h4></a>
   <p>A guide to the Sumo Logic App for Gmail Trace Logs.</p>
   </div>
 </div>
@@ -98,21 +105,21 @@ This guide has documentation for Sumo apps for SaaS and Cloud applications.
 <div className="box smallbox13 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/pagerduty-v3">
-  <img src={useBaseUrl('img/integrations/saas-cloud/pagerduty.png')} alt="icon" width="60"/><h4>PagerDuty V3</h4></a>
+  <img src={useBaseUrl('img/integrations/saas-cloud/pagerduty.png')} alt="icon" width="45"/><h4>PagerDuty V3</h4></a>
   <p>A guide to the Sumo Logic App for PagerDuty V3.</p>
   </div>
 </div>
 <div className="box smallbox14 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/qualys-vmdr">
-  <img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="icon" width="60"/><h4>Qualys VMDR</h4></a>
+  <img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="icon" width="120"/><h4>Qualys VMDR</h4></a>
   <p>A guide to the Sumo Logic App for Qualys VMDR.</p>
   </div>
 </div>
 <div className="box smallbox15 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/salesforce">
-  <img src={useBaseUrl('img/integrations/saas-cloud/saleforce.png')} alt="Thumbnail icon" width="60"/><h4>Salesforce</h4></a>
+  <img src={useBaseUrl('img/integrations/saas-cloud/salesforce-logo.svg')} alt="Thumbnail icon" width="50"/><h4>Salesforce</h4></a>
   <p>A guide to the Sumo Logic App for Salesforce.</p>
   </div>
 </div>

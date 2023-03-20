@@ -1,11 +1,13 @@
 ---
 id: crowdstrike-fdr-host-inventory-source
-title: CrowdStrike FDR Host Inventory
+title: CrowdStrike FDR Host Inventory Source
 sidebar_label: CrowdStrike FDR Host Inventory
 description: Learn how to collect device information from the CrowdStrike FDR and send it to Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
 
 The CrowdStrike FDR Host Inventory Source provides a secure endpoint to receive device data from the CrowdStrike [Host-And-Host-Group-Management-APIs](https://falcon.crowdstrike.com/documentation/84/host-and-host-group-management-apis#managing-hosts). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -50,7 +52,7 @@ To get the **CrowdStrike API Client**, follow the steps below:
 
 ### Region
 
-1. Identify your **Region** based on your **Base URL**. The region can be selected from the list below. 
+1. Identify your **Region** based on your **Base URL**. The region can be selected from the list below.
 
    | Region | Base URL                    |
    | :------ | :-------------------------- |

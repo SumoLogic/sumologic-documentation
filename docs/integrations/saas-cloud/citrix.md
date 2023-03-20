@@ -7,7 +7,7 @@ description: The Sumo Logic App for Citrix Cloud offers monitoring and analyzing
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="citrix-cloud-icon" width="100"/>
+<img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="citrix-cloud-icon" width="80"/>
 
 The Citrix Cloud is a platform that manages and hosts various Citrix cloud services. The Citrix Cloud App for Sumo Logic allows you to keep track of any modifications made to configurations or actions that have affected your environment and other account administrators. This app is built on the Citrix Cloud source, which ensures effortless integration between Citrix Cloud and Sumo Logic. Through real-time analysis, the App offers dashboards to display critical metrics, enabling you to understand administrator, client administrator, and group administrator activities within your Active Directory or Azure Active Directory (AD).
 
