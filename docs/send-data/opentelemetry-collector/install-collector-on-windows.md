@@ -124,7 +124,29 @@ This section describes common OpenTelemetry customisations:
 
 #### Using Proxy
 
-TODO: how to set PROXY env for windows service?
+Exporters leverage the HTTP communication and respect the following proxy environment variables:
+
+* `HTTP_PROXY`
+* `HTTPS_PROXY`
+* `NO_PROXY`
+
+You can set it by adding the following properties to Windows Registry key `HKLM:\SYSTEM\CurrentControlSet\Services\OtelcolSumo\Environment`:
+
+```text
+FTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
+HTTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
+HTTPS_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
+```
+
+To exclude a specific domain or IP address from using the proxy, you can add it to the `NO_PROXY` environment variable. For example, to exclude the domain `sumologic.com` from using the proxy, you can add the following line:
+
+```text
+NO_PROXY=sumologic.com
+```
+
+::: note
+Restart `Sumo Logic OpenTelemetry Collector` (`OtelcolSumo`) service to apply the changes.
+:::
 
 #### FIPS
 
