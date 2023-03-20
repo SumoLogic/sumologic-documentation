@@ -2,7 +2,7 @@
 id: docusign-source
 title: DocuSign
 sidebar_label: DocuSign
-description: This document explains how to collect customer event data from the DocuSign and send it to Sumo Logic.
+description: Learn how to collect customer event data from the DocuSign and send it to Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
