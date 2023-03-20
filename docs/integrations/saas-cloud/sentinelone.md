@@ -376,7 +376,7 @@ The panels will begin to fill automatically. It's worth noting that each panel g
 
 Additionally, the dashboard includes information on the frequency of agents by installer type and the top 10 agents' operating systems and group summary. With this dashboard, security teams can easily monitor the performance of agents and ensure that they are adequately protecting their organization from potential threats.
 
-The SentinelOne - Agent Overview enables organizations to quickly identify any issues with agent deployment or performance and take corrective action to improve their overall security posture. It is a powerful tool for any organization looking to ensure the effectiveness and efficiency of their threat protection solutions.
+The SentinelOne Agent Overview enables organizations to quickly identify any issues with agent deployment or performance and take corrective action to improve their overall security posture. It is a powerful tool for any organization looking to ensure the effectiveness and efficiency of its threat protection solutions.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Agent-Overview.png')} alt="SentinelOne-Agent-Overview.png" width="600"/>
 
