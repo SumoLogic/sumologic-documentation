@@ -1,11 +1,13 @@
 ---
 id: google-workspace-alertcenter
-title: Google Workspace AlertCenter
+title: Google Workspace AlertCenter Source
 sidebar_label: Google Workspace AlertCenter
 description: Configure Google Workspace AlertCenter Cloud-to-Cloud connector.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="150"/>
 
 <head>
   <meta name="robots" content="noindex" />

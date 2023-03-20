@@ -4,6 +4,10 @@ title: Migrating to Azure Event Hubs Cloud-to-Cloud Source
 sidebar_label: Azure Event Hubs C2C Source Migration
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/>
+
 As **Cloud-to-Cloud Event Hub source** supports logs, you can migrate your [ARM-based Azure Monitor Logs Collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor) (functions prefixed with SUMOAzureLogs). This source is available in all deployments, including FedRAMP.
 
 Cloud-to-Cloud sources have several advantages, including:

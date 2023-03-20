@@ -6,6 +6,8 @@ sidebar_label: Symantec Web Security Service
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="125"/>
+
 The Symantec Web Security Service Source provides a secure endpoint to receive WSS Access logs from the Symantec WSS API. It securely stores the required authentication, scheduling, and state tracking information.
 
  * See the [Access Log Format](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/web-security-service/help/wss-reference/accesslogformats-ref.html) for reference.

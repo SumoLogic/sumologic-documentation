@@ -1,7 +1,7 @@
 ---
 id: upload-metrics
 title: Upload Metrics to an HTTP Source
-sidebar_label: Upload Metrics HTTP Source
+sidebar_label: Uploading Metrics
 ---
 
 After you have added an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source) to a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) you can begin uploading data. You can upload both logs and metrics to the same HTTP source, however not in the same HTTP request. This document provides instructions on uploading metrics, if you are uploading logs see [Upload Logs to an HTTP Source](/docs/send-data/hosted-collectors/http-source).
@@ -18,19 +18,9 @@ Metrics you upload to an HTTP source must be in seconds or milliseconds. Metrics
 
 The table below lists the types of metrics you can upload to an HTTP Source and Content-Type header you must use when uploading metrics of each type. If you omit the Content-Type header, or set a value not listed below, the HTTP payload will be ingested as log data. 
 
-You must specify the Content-Type header value exactly as shown in the table below. If a Content-Type header value contains any extra text other than one of the Content-Type values below, Sumo ignores the extraneous text. (Some metric frameworks  append or prepend  extra text in Content-Type headers.)
+You must specify the Content-Type header value exactly as shown in the table below. If a Content-Type header value contains any extra text other than one of the Content-Type values below, Sumo ignores the extraneous text. (Some metric frameworks append or prepend extra text in Content-Type headers.)
 
-So, Sumo will treat a `Content-Type` value of: 
-
-```
-application/vnd.sumologic.graphite; charset=utf8
-```
-
-as 
-
-```
-application/vnd.sumologic.graphite
-```
+So, Sumo Logic will treat a `Content-Type` value of `application/vnd.sumologic.graphite; charset=utf8` as `application/vnd.sumologic.graphite`.
 
 Based on the Content-Type header specified, Sumo parses and interprets each line in the HTTP payload in the desired metric format.
 
