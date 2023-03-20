@@ -2,6 +2,7 @@
 id: microsoft-exchange-trace-logs
 title: Microsoft Exchange Trace Logs
 sidebar_label: Microsoft Exchange Trace Logs
+description: The Microsoft Exchange Trace Logs Source collects email trace logs from the Office 365 reporting web service.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

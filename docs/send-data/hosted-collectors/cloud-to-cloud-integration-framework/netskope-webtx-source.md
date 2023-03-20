@@ -2,6 +2,7 @@
 id: netskope-webtx-source
 title: Netskope WebTx Source
 sidebar_label: Netskope WebTx
+description: Our Netskope WebTx API integration ingests Web Transaction logs from Netskope Event Stream.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

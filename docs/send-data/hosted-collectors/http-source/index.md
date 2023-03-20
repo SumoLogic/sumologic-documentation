@@ -46,7 +46,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox6 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/http-source/traces"><img src={useBaseUrl('img/send-data/http-traces.png')} alt="Thumbnail icon" width="60"/><h4>HTTP Traces</h4></a>
+  <a href="/docs/send-data/hosted-collectors/http-source/traces"><img src={useBaseUrl('img/send-data/http-traces.png')} alt="Thumbnail icon" width="40"/><h4>HTTP Traces</h4></a>
   <p>An HTTP Traces Source is an endpoint for receiving trace data.</p>
   </div>
 </div>
