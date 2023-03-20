@@ -7,6 +7,8 @@ description: Learn how to configure the Druva Cloud-to-Cloud source setup in you
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="thumbnail icon" width="85"/>
+
 The Druva source provides the ability to analyze and fetch event logs from the **Druva inSync** API and sends it to Sumo Logic. The **Druva inSync** backs up endpoint data and cloud applications, such as Microsoft Office 365 and Salesforce. It also provides archiving, data compliance monitoring, legal hold management, monitoring, and detection tools to discover ransomware and eDiscovery.
 
 This integration accesses the Druva inSync API to retrieve audit events. API documents can be found
