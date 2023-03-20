@@ -165,8 +165,7 @@ these can be broken down into following:
 
 As can be observed, while attributes can be present at both **Resource** and **Record level** currently, they are not created equal and should be interpreted separately. The Resource-Level attribute context is much broader, and they identify where data comes from, whereas Record-Level attributes concern just one record, often with many keys and values.
 
-At Sumo Logic, there is a concept of [Fields](https://help.sumologic.com/docs/manage/fields) for log data. Fields offer
-a powerful capability to associate indexable metadata with logs, though only limited number of them can be used at a given time. Also, they need to be defined first.
+At Sumo Logic, there is a concept of [Fields](/docs/manage/fields) for log data. Fields offer a powerful capability to associate indexable metadata with logs, though only a limited number of them can be used at a given time, and you must define them first.
 
 Looking from the OpenTelemetry standpoint, [Fields](/docs/manage/fields) are a good match for the **Resource-level** attributes, while Log Record-level attributes are good fit for the [structured representation of the log via JSON](/docs/search/get-started-with-search/search-basics/view-search-results-json-logs), which is automatically supported by Sumo Logic Search.
 
