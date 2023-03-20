@@ -13,7 +13,7 @@ This section has information about the Sumo Logic partitions that contain CSE da
 
 ### Partitions for CSE Records
 
-In CSE, normalized Records are categorized by [Record type](../schema/cse-record-types.md), for example Audit, Authentication, Network, NetworkDHCP, and so on.
+In CSE, normalized Records are categorized by [Record type](../schema/cse-record-types.md), for example, Audit, Authentication, Network, NetworkDHCP, and so on.
 
 In Sumo Logic, Records are stored in partitions, which are indexes that enable better search performance. The table below shows which partition each Record type is stored in. Note that some partitions contain multiple Record types.
 

@@ -6,6 +6,8 @@ sidebar_label: Microsoft Exchange Trace Logs
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/microsoft-exchange-logo.svg')} alt="icon" width="150"/>
+
 The Microsoft Exchange Trace Logs Source collects email trace logs from the Office 365 reporting web service via the MessageTrace report under “Exchange reports”. Specific API reference information can be found [here](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15)).
 
 :::note

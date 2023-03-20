@@ -5,6 +5,10 @@ sidebar_label: AWS CloudTrail
 description: Add an AWS CloudTrail Source to upload messages to Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/cloudtrail-source.png')} alt="Thumbnail icon" width="50"/>
+
 AWS CloudTrail records API calls made to AWS. This includes calls made using the AWS Management Console, AWS SDKs, command line tools, and higher-level AWS services. Add an AWS CloudTrail Source to upload these messages to Sumo Logic. The AWS CloudTrail Source automatically parses the logs prior to upload.
 
 :::important

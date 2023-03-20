@@ -21,7 +21,7 @@ This guide has documentation for Sumo apps for SaaS and Cloud applications.
 <div className="box smallbox2 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/akamai-cloud-monitor">
-  <img src={useBaseUrl('img/integrations/saas-cloud/akamai.png')} alt="icon" width="80"/><h4>Akamai Cloud Monitor</h4></a>
+  <img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="icon" width="80"/><h4>Akamai Cloud Monitor</h4></a>
   <p>A guide to the Sumo Logic App for Akamai Cloud Monitor.</p>
   </div>
 </div>
