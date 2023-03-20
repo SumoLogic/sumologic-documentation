@@ -40,7 +40,6 @@ service:
       - memory_limiter
       - groupbyattrs/file path resolved
       - resourcedetection/system
-      - sumologic_schema
       - batch
       exporters:
       - sumologic
@@ -83,7 +82,6 @@ service:
       - memory_limiter
       - groupbyattrs/file path resolved
       - resourcedetection/system
-      - sumologic_schema
       - batch
       exporters:
       - sumologic
@@ -138,7 +136,6 @@ service:
       - memory_limiter
       - groupbyattrs/file path resolved
       - resourcedetection/system
-      - sumologic_schema
       - batch
       exporters:
       - sumologic

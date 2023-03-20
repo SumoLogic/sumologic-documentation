@@ -42,7 +42,6 @@ service:
         - memory_limiter
         # you can add custom processors here, if you would like to filter or modify the data
         - batch
-        - sumologic_schema
       exporters:
         - sumologic
 ```
