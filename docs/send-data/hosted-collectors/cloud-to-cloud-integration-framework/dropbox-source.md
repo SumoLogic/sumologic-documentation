@@ -4,8 +4,9 @@ title: Dropbox Source
 sidebar_label: Dropbox
 ---
 
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/saas-cloud/dropbox-icon.svg')} alt="dropbox-icon.png" width="50"/>
 
 The Dropbox Source provides a secure endpoint to receive team events from the [Get Events API](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events). It securely stores the required authentication, scheduling, and state tracking information.
 

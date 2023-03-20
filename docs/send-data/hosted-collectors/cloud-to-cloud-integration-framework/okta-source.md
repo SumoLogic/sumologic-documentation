@@ -10,6 +10,8 @@ description: The Okta Source provides a secure endpoint to receive event data fr
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Thumbnail icon" width="75"/>
+
 The Okta Source provides a secure endpoint to receive event data from the Okta [System Log API](https://developer.okta.com/docs/reference/api/system-log/) and [Users API](https://developer.okta.com/docs/reference/api/users/).
 It securely stores the required authentication, scheduling, and state tracking information.
 

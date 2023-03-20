@@ -307,7 +307,7 @@ To authenticate the installation, do the following:
 
 #### If your browser doesn't open
 
-If the target environment does not have a GUI, for example if you are remoting into the environment, SumoJanus won't be able to open a browser and will print out a link to the CLI instead. Copy that link and paste into a browser. Then follow the authentication and approval process with Salesforce, until you get a URL back that looks like this:
+If the target environment does not have a GUI, for example, if you are remoting into the environment, SumoJanus won't be able to open a browser and will print out a link to the CLI instead. Copy that link and paste into a browser. Then follow the authentication and approval process with Salesforce, until you get a URL back that looks like this:
 ```xml
 http://localhost:8080/?code=<some_value>&state=<some_value>
 ```

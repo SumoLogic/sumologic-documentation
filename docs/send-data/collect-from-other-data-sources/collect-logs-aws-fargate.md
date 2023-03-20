@@ -227,7 +227,7 @@ If you receive an alarm email like the one shown in the previous section, the n
 
  * `SumoCWProcessDLQLambda` may not be able to process messages as quickly as the messages are received. In this case, you may want to use the Lambda console to increase the number of workers specified by the `NUM_OF_WORKERS` environment variable.
 
- * `SumoCWProcessDLQLambda` may be unable process incoming messages because of an error in the message format or a configuration problem, for example an error in the HTTP endpoint configuration. Test the function with the message in the Lambda console to see whether it is able to process the message and send it to Sumo.
+ * `SumoCWProcessDLQLambda` may be unable process incoming messages because of an error in the message format or a configuration problem, for example, an error in the HTTP endpoint configuration. Test the function with the message in the Lambda console to see whether it is able to process the message and send it to Sumo.
 
 ## Subscribe SumoCWLogsLambda to CloudWatch Log Groups
 

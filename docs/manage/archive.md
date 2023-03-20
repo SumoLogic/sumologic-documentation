@@ -143,7 +143,7 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
 :::
 
 1. In Sumo Logic select **Manage Data > Collection > Collection**.
-1. On the **Collectors** page, click **Add Source** next to a Hosted** **Collector, either an existing Hosted Collector or one you have created for this purpose.
+1. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector or one you have created for this purpose.
 1. Select **AWS S3 Archive**.  
     ![archive icon.png](/img/archive/archive-icon.png)
 1. Enter a name for the new Source. A description is optional.

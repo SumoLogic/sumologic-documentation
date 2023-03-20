@@ -1,6 +1,9 @@
 name: deploy-to-review
 
-on: workflow_dispatch
+on:
+    pull_request:
+      branches:
+        - main
 
 jobs:
   deploy-to-review:
