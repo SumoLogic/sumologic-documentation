@@ -15,7 +15,7 @@ With the SentinelOne App, you can gain valuable insights into your endpoint secu
 
 The app provides pre-built dashboards that enable you to quickly visualize your SentinelOne data and gain insights into your organization's security posture. You can customize these dashboards to meet your specific needs and monitor the metrics that matter most. With the SentinelOne App for Sumo Logic, you can:
 * Ingest data from SentinelOne agents into Sumo Logic for real-time analysis and response
-* Monitor your endpoints for suspicious behaviour and respond to security incidents in real-time
+* Monitor your endpoints for suspicious behavior and respond to security incidents in real-time
 * Gain valuable insights into your organization's security posture with pre-built dashboards
 * Customize dashboards to meet your specific needs and monitor the metrics that matter most to you
 
@@ -29,7 +29,7 @@ The Sumo Logic App for SentinelOne consumes Threats and Agents logs, refer to th
 
 **Sample Threats Log Messages**
 
-```json
+```json title="Sample Threats Log Messages"
 {
     "agentDetectionInfo": {
         "accountId": "11384404",
@@ -208,7 +208,7 @@ The Sumo Logic App for SentinelOne consumes Threats and Agents logs, refer to th
 
 ### Sample Query for Threats
 
-```sql="Suspicious threats detected"
+```sql title="Suspicious threats detected"
 _sourceCategory=sentinelone  threatInfo
 | json "id", "threatInfo.incidentStatus", "threatInfo.classificationSource", "threatInfo.confidenceLevel", "threatInfo.detectionEngines", "threatInfo.initiatedBy", "threatInfo.rebootRequired", "threatInfo.createdAt", "threatInfo.detectionType", "threatInfo.mitigationStatus", "threatInfo.analystVerdict", "threatInfo.threatName", "agentRealtimeInfo.siteName","agentRealtimeInfo.agentOsType", "agentRealtimeInfo.agentMachineType" as id, incidentStatus, classificationSource, confidenceLevel, detectionEngines, initiatedBy, rebootRequired, createdAt, detectionType, mitigationStatus, analystVerdict, threatName, siteName, agentOsType, agentMachineType nodrop
 | where siteName matches "{{site}}" or isNull(siteName)
@@ -222,7 +222,7 @@ _sourceCategory=sentinelone  threatInfo
 
 **Sample Agents Log Messages**
 
-```json
+```json title="Sample Agents Log Messages"
 {
     "accountId": "113841926404",
     "accountName": "Health Lobby",
@@ -377,16 +377,19 @@ The panels will begin to fill automatically. It's worth noting that each panel g
 Additionally, the dashboard includes information on the frequency of agents by installer type and the top 10 agents' operating systems and group summary. With this dashboard, security teams can easily monitor the performance of agents and ensure that they are adequately protecting their organization from potential threats.
 
 The SentinelOne - Agent Overview enables organizations to quickly identify any issues with agent deployment or performance and take corrective action to improve their overall security posture. It is a powerful tool for any organization looking to ensure the effectiveness and efficiency of their threat protection solutions.
-<br/><img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Agent-Overview.png')} alt="SentinelOne-Agent-Overview.png" width="600"/>
 
-### Threat Overview Dashboard
+<img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Agent-Overview.png')} alt="SentinelOne-Agent-Overview.png" width="600"/>
+
+### Threat Overview
 
 **SentinelOne - Threat Overview** provides a comprehensive overview of threats detected by SentinelOne, a threat intelligence and response platform. The dashboard includes widgets that display key information on unresolved threats, suspicious threats detected, threats to be mitigated, resolved threats, and threats that require a reboot. The dashboard also provides insights into the types of threats detected, their current status, and their classification source. With this dashboard, security teams can quickly identify and respond to potential security threats, minimizing the risk of security breaches and data loss.
-<br/><img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Threat-Overview.png')} alt="SentinelOne-Threat-Overview.png" width="600"/>
 
-### Threat Analysis Dashboard
+<img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Threat-Overview.png')} alt="SentinelOne-Threat-Overview.png" width="600"/>
+
+### Threat Analysis
 
 **SentinelOne - Threat Analysis** provides a comprehensive view of the threat landscape and enables security teams to quickly identify and respond to potential threats. The dashboard includes widgets that display key information on the confidence level of threats detected, their location across various sites, the top initiated threats, and the engines used to detect them. The dashboard also provides insights into the status of threats over time, recent incidents, and the most infected devices.
 
 With the information provided by this dashboard, security teams can effectively prioritize and manage their response to potential security threats. They can quickly identify the most critical threats, monitor the effectiveness of their threat detection engines, and respond to the most heavily infected devices. The "SentinelOne - Threat Analysis" is a valuable tool for any organization looking to proactively manage their cybersecurity risk.
-<br/><img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Threat-Analysis.png')} alt="SentinelOne-Threat-Analysis.png" width="600"/>
+
+<img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Threat-Analysis.png')} alt="SentinelOne-Threat-Analysis.png" width="600"/>
