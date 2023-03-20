@@ -2,12 +2,12 @@
 id: druva-source
 title: Druva Source
 sidebar_label: Druva
-description: This document explains how to configure the Druva Cloud-to-Cloud source setup on the Sumo logic environment.
+description: Learn how to configure the Druva Cloud-to-Cloud source setup in your Sumo Logic environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Druva source provides the ability to analyze and fetch event logs from the **Druva inSync** API and send it to Sumo Logic. The **Druva inSync** backs up endpoint data and cloud applications, such as Microsoft Office 365 and Salesforce. It also provides archiving, data compliance monitoring, legal hold management, monitoring and detection tools to discover ransomware and E-discovery.
+The Druva source provides the ability to analyze and fetch event logs from the **Druva inSync** API and sends it to Sumo Logic. The **Druva inSync** backs up endpoint data and cloud applications, such as Microsoft Office 365 and Salesforce. It also provides archiving, data compliance monitoring, legal hold management, monitoring, and detection tools to discover ransomware and eDiscovery.
 
 This integration accesses the Druva inSync API to retrieve audit events. API documents can be found
 [here](https://developer.druva.com/docs/event-apis).
@@ -23,7 +23,11 @@ Before you begin setting up Druva source, you must meet the following requiremen
 
 ### Configure Druva inSync to export events
 
-Only Druva inSync Cloud administrator can enable the option to export events and define the Events API settings. To get the event logs, follow the steps to enable the **Export Events**:
+:::note
+You must be a Druva inSync Cloud administrator to enable the option to export events and define the Events API settings.
+:::
+
+To get the event logs, follow the steps to enable the **Export Events**:
 1. Log in to the Druva inSync Management Console with [inSync Cloud](https://login.druva.com/) account or [inSync GovCloud](https://loginfederal.druva.com/) account.
 2. On the [inSync Management Console](https://docs.druva.com/Endpoints/030_Set_up_inSync_for_Endpoints/010_Initial_Configuration/010_Sign_in_to_inSync_Management_Console/Sign_in_to_inSync_Management_Console) menu bar, click <img src={useBaseUrl('/img/send-data/druva-wheel-icon.png')} alt="druva-wheel-icon.png" width="20"/> icon > **Settings**. The Settings page appears.
 3. Click the **inSync APIs** tab.
@@ -38,7 +42,7 @@ Only Druva inSync Cloud administrator can enable the option to export events and
 
 Druva supports OAuth 2.0-based authentication for incoming requests. Every use of Druva APIs requires authentication to ensure that only authorized users can interact with Druva APIs.
 
-All the requests to Druva APIs are authenticated using OAuth 2.0 access token which you receive in exchange of every authorization grant request you make. The OAuth token will expire after 30 minutes for [Data Governance Cloud](https://apis.druva.com/) and 15 minutes for [Data Governance GovCloud](https://govcloudapis.druva.com/).
+All requests to Druva APIs are authenticated using OAuth 2.0 access tokens which you receive in exchange of every authorization grant request you make. The OAuth token will expire after 30 minutes for [Data Governance Cloud](https://apis.druva.com/) and 15 minutes for [Data Governance GovCloud](https://govcloudapis.druva.com/).
 
 The Druva Source requires you to provide a **Client ID**, **Client Secret Key**, **Base URL**. To get these, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials).
 
@@ -69,7 +73,7 @@ On the [Collection page](/docs/manage/health-events#collection-page), the Health
 
 ## Setup and configuration Source
 
-When you create a Druva Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
+When you create a Druva Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Druva Source:
 
@@ -99,7 +103,7 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 
 ## JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [How to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 | Parameter | Type | Required | Description | Access |
 |:--|:--|:--|:--|:--|
