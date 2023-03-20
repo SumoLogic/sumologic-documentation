@@ -201,6 +201,6 @@ In addition to the above, the App summarizes the most frequent events, alerts, s
 
 **DocuSign - Alerts** dashboard keeps track of when some bulk action is performed or multiple login sessions from different locations happen. Also, it gives you insights about high, medium, and low alerts. It further summarizes all the alerts based on their severity over time.<br/><img src={useBaseUrl('img/integrations/saas-cloud/docusign-alerts.png')} alt="docusign-alerts.png" width="900"/>
 
-### DocuSign - Users Dashboard
+### DocuSign - Users
 
 **DocuSign - Users** dashboard gives you detailed information regarding the operations performed by the users of the organizations. It gives you the geo-locations of all the user logins and login activity from high-risk locations. Also, it gives visibility into user login activity and distribution of sources of user activity. Furthermore, it summarizes the critical updates in settings, roles, and permissions.<br/><img src={useBaseUrl('img/integrations/saas-cloud/docusign-users.png')} alt="docusign-users.png" width="900"/>
