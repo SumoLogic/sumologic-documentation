@@ -2,6 +2,7 @@
 id: duo-source
 title: Duo Source
 sidebar_label: Duo
+description: The Duo Source provides a secure endpoint to receive authentication logs from the Duo Authentication Logs API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

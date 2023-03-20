@@ -200,19 +200,19 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox25 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source"><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="90"/><h4>KnowBe4 API Source</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source"><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="120"/><h4>KnowBe4 API Source</h4></a>
   <p>Collects user events data into Sumo Logic for storage, analysis, and alerting.</p>
   </div>
 </div>
 <div className="box smallbox26 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source"><img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="35"/><h4>Microsoft Azure AD Inventory(Tag)</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source"><img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="25"/><h4>Microsoft Azure AD Inventory(Tag)</h4></a>
   <p>Collects user and device data from the Microsoft Graph API Security endpoint.</p>
   </div>
 </div>
 <div className="box smallbox27 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs"><img src={useBaseUrl('img/send-data/microsoft-exchange-logo.svg')} alt="icon" width="150"/><h4>Microsoft Exchange Trace Logs</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs"><img src={useBaseUrl('img/send-data/microsoft-exchange-logo.svg')} alt="icon" width="120"/><h4>Microsoft Exchange Trace Logs</h4></a>
   <p>Collects email trace logs from the Office 365 reporting web service.</p>
   </div>
 </div>
@@ -290,7 +290,7 @@ In this section, we'll introduce the following concepts:
 </div>
     <div className="box smallbox40 card">
     <div className="container">
-    <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source"><img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} width="150"/><h4>SailPoint</h4></a>
+    <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source"><img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} width="120"/><h4>SailPoint</h4></a>
     <p>Provides a secure endpoint to receive Events and User Inventory data from the IdentityNow V3 API.</p>
     </div>
   </div>
