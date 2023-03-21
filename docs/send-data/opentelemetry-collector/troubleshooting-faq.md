@@ -338,10 +338,7 @@ or reach out to Sumo support to increase the quota.
 If the exporter is not being throttled the best option might be
 to increase the number of consumers sending data from queue to Sumo with `sending_queue.num_consumers`.
 
-The `sumologicexporter` sends data to Sumo in batches.
-If the batches are small, more requests need to be performed to send data.
-If you have set the `max_request_body_size` setting to a low value, consider increasing it
-to make batches bigger and in effect make sending more efficient.
+The `sumologicexporter` sends data to Sumo in batches. If the batches are small, more requests need to be performed to send data. If you have set the `max_request_body_size` setting to a low value, consider increasing it to make batches bigger and in effect make sending more efficient.
 
 
 ## App installation errors
