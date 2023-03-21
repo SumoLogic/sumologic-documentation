@@ -25,7 +25,7 @@ The following are the [Fields](/docs/manage/fields) that will be created as part
 - **`webengine.system`** - Has a fixed value of **tomcat**.
 - **`sumo.datasource`** - Has a fixed value of **tomcat**.
 
-## Prerequisite
+## Prerequisites
 
 The Sumo Logic App for Apache Tomcat uses three types of logs
 
